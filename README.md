@@ -1,0 +1,1 @@
+run `build.bat` (needs windows 10 & powershell with script support installed)
