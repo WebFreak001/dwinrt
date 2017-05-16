@@ -8,3 +8,4 @@ dub.selections.json
 *.pdb
 *.exe
 *.appx
+source/core/sys/windows
