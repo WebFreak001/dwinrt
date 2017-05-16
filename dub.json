@@ -22,5 +22,8 @@
 		"/NOLOGO",
 		"/WINMDFILE:dwinrt.winmd",
 		"/TLBID:1"
+	],
+	"postBuildCommands": [
+		"cmd /c copy dwinrt.exe dist\\dwinrt.exe"
 	]
 }
