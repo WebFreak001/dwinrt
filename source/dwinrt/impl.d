@@ -4,6 +4,7 @@ import dwinrt;
 
 import std.meta;
 import core.stdc.config;
+import core.sys.windows.wtypes;
 
 struct traits(T)
 {
@@ -12,7 +13,7 @@ struct traits(T)
 
 struct accessors(T)
 {
-	static abi!T get(in T object) nothrow
+	static abi!T get(T object) nothrow
 	{
 		return cast(abi!T) object;
 	}
@@ -22,12 +23,12 @@ struct accessors(T)
 		return cast(abi!T*)(&object);
 	}
 
-	static void copy_from(ref T object, in abi!T value) nothrow
+	static void copy_from(ref T object, abi!T value) nothrow
 	{
 		object = cast(T) value;
 	}
 
-	static void copy_to(in T object, ref abi!T value) nothrow
+	static void copy_to(T object, ref abi!T value) nothrow
 	{
 		*(cast(T*)&value) = object;
 	}
@@ -195,7 +196,8 @@ interface not_specialized_type(T)
 
 interface not_specialized(T)
 {
-	static assert(not_specialized_type!T.value, "This generic interface has not been specialized. "
+	static assert(not_specialized_type!T.value,
+			"This generic interface has not been specialized. "
 			~ "Each distinct instantiation of this generic interface requires a corresponding UUID. "
 			~ "This UUID must be provided by a template specialization.");
 }
@@ -203,142 +205,6 @@ interface not_specialized(T)
 alias abi_arg_in(T) = dwinrt.ABI.arg_in!(abi!T);
 alias abi_arg_out(T) = dwinrt.ABI.arg_out!(abi!T);
 alias abi_default_interface(T) = dwinrt.ABI.default_interface!(abi!T);
-
-struct ComPtr(T)
-{
-	alias type = abi!T;
-
-	this(typeof(null))
-	{
-	}
-
-	this(U)(in ComPtr!U other)
-	{
-		m_ptr = other.m_ptr;
-		addref();
-	}
-
-	this(U)(ref ComPtr!U other)
-	{
-		m_ptr = other.m_ptr;
-		other.m_ptr = null;
-	}
-
-	~this()
-	{
-		release();
-	}
-
-	ref ComPtr!T opAssign(U)(in ComPtr!U other) nothrow
-	{
-		copy(other.m_ptr);
-		return this;
-	}
-
-	ref ComPtr!T opAssign(U)(ref ComPtr!U other) nothrow
-	{
-		if (m_ptr != other.m_ptr)
-		{
-			release();
-			m_ptr = other.m_ptr;
-			other.m_ptr = null;
-		}
-		return this;
-	}
-
-	T opCast(T : bool)() nothrow
-	{
-		return m_ptr != null;
-	}
-
-	auto opUnary(string op : "*")()
-	{
-		return *m_ptr;
-	}
-
-	auto getNoRef() nothrow
-	{
-		return cast(no_ref!type*) m_ptr;
-	}
-
-	alias getNoRef this;
-
-	auto as(U)() const
-	{
-		static if (is(U : Windows.Foundation.IUnknown))
-			alias Temp = U;
-		else
-			alias Temp = ComPtr!U;
-		Temp temp = null;
-		check_hresult(m_ptr.QueryInterface(uuidOf!(abi_default_interface!U),
-				cast(void**) put_abi(temp)));
-		return temp;
-	}
-
-	auto try_as(U)() const
-	{
-		static if (is(U : Windows.Foundation.IUnknown))
-			alias Temp = U;
-		else
-			alias Temp = ComPtr!U;
-		Temp temp = null;
-		m_ptr.QueryInterface(uuidOf!(abi_default_interface!U), cast(void**) put_abi(temp));
-		return temp;
-	}
-
-	void copy_from(type* other) nothrow
-	{
-		copy(other);
-	}
-
-	void copy_to(type** other) const nothrow
-	{
-		addref();
-		*other = m_ptr;
-	}
-
-	bool opEquals(ComPtr!T b)
-	{
-		return get_abi(this) == get_abi(b);
-	}
-
-	int opCmp(ComPtr!T b)
-	{
-		if (opEquals(b))
-			return 0;
-		return get_abi(this) < get_abi(b) ? -1 : 1;
-	}
-
-private:
-	void copy(type* other) nothrow
-	{
-		if (m_ptr != other)
-		{
-			release();
-			m_ptr = other;
-			addref();
-		}
-	}
-
-	void addref() const nothrow
-	{
-		if (m_ptr)
-			m_ptr.AddRef();
-	}
-
-	void release() nothrow
-	{
-		type* temp = m_ptr;
-
-		if (temp)
-		{
-			m_ptr = null;
-			temp.Release();
-		}
-	}
-
-	type* m_ptr;
-}
 
 ComPtr!T.type* impl_get(T)(ComPtr!T object) nothrow
 {
@@ -367,7 +233,7 @@ void swap(T)(ref ComPtr!T left, ref ComPtr!T right) nothrow
 
 struct accessors(Ptr) if (is(Ptr : ComPtr!T, T))
 {
-	static auto get(in Ptr object) nothrow
+	static auto get(Ptr object) nothrow
 	{
 		return impl_get(object);
 	}
@@ -396,7 +262,7 @@ HSTRING duplicate_string(HSTRING other)
 	return result;
 }
 
-HSTRING create_string(const(wchar)* value, in uint length)
+HSTRING create_string(const(wchar)* value, uint length)
 {
 	HSTRING result = null;
 	check_hresult(WindowsCreateString(value, length, &result));
@@ -500,7 +366,7 @@ struct accessors(T : hstring_view)
 
 struct accessors(T : const(wchar)*)
 {
-	static HSTRING detach(in const(wchar_t)* value)
+	static HSTRING detach(const(wchar_t)* value)
 	{
 		return create_string(value, cast(uint) wcslen(value));
 	}
@@ -508,8 +374,195 @@ struct accessors(T : const(wchar)*)
 
 struct accessors(T : wstring)
 {
-	static HSTRING detach(in wstring value)
+	static HSTRING detach(wstring value)
 	{
 		return create_string(value.ptr, cast(uint) value.length);
 	}
+}
+
+interface heap_traits : handle_traits!(wchar*)
+{
+	static void close(type value) nothrow
+	{
+		WINRT_VERIFY(HeapFree(GetProcessHeap(), 0, value));
+	}
+}
+
+interface bstr_traits : handle_traits!(BSTR)
+{
+	static void close(type value)
+	{
+		SysFreeString(value);
+	}
+}
+
+pragma(inline, true) hstring trim_hresult_message(wchar[] message) nothrow
+{
+	import std.string : stripRight;
+
+	try
+	{
+		message = message.stripRight;
+	}
+	catch (Exception)
+	{
+	}
+	hstring result;
+	WindowsCreateString(message.ptr, cast(uint) message.length, put_abi(result));
+	return result;
+}
+
+struct array_size_proxy(T)
+{
+	@disable void opEquals(array_size_proxy!T);
+
+	this(com_array!T* value)
+	{
+		m_value = value;
+	}
+
+	~this() nothrow
+	{
+		impl_put_size(*m_value, m_size);
+	}
+
+	U opCast(U : uint*)()
+	{
+		return &m_size;
+	}
+
+	U opCast(U : ulong*)()
+	{
+		return cast(ulong*)&m_size;
+	}
+
+private:
+	com_array!T* m_value;
+	uint m_size;
+}
+
+struct com_array_proxy(T)
+{
+	this(uint* size, abi_arg_out!T* value) nothrow
+	{
+		m_size = size;
+		m_value = value;
+	}
+
+	~this() nothrow
+	{
+		auto t = impl_detach(m_temp);
+		*m_size = t[0];
+		*m_value = t[1];
+	}
+
+	U opCast(U : com_array!T*)()
+	{
+		return m_temp;
+	}
+
+	this(this) nothrow
+	{
+		assert(false);
+	}
+
+	ref com_array_proxy!T opAssign(com_array_proxy!T) nothrow
+	{
+		assert(false);
+	}
+
+private:
+
+	uint32_t* m_size;
+	abi_arg_out!T* m_value;
+	com_array!T m_temp;
+}
+
+struct accessors(Array) if (is(Array : com_array!T, T))
+{
+	static auto put(ref Array object) nothrow
+	{
+		return impl_put(object);
+	}
+
+	static array_size_proxy!T put_size(ref Array object) nothrow
+	{
+		return array_size_proxy!T(object);
+	}
+
+	static auto detach(ref Array object) nothrow
+	{
+		return impl_detach(object);
+	}
+
+	static auto data(ref Array object) nothrow
+	{
+		return impl_data(object);
+	}
+}
+
+struct accessors(Array) if (is(Array : array_view!T, T))
+{
+	static auto get(Array object) nothrow
+	{
+		return cast()(cast(T*) object.data);
+	}
+}
+
+struct traits(T : Windows.Foundation.IUnknown)
+{
+	alias abi = IUnknown;
+}
+
+struct accessors(T) if (is(T : Windows.Foundation.IUnknown))
+{
+	static auto get(T object) nothrow
+	{
+		return cast(abi_arg_in!T) impl_get(object);
+	}
+
+	static auto put(ref T object) nothrow
+	{
+		return cast(abi_arg_out!T) impl_put(object);
+	}
+
+	static void attach(ref T object, abi_arg_in!T value) nothrow
+	{
+		object = null;
+		*put(object) = value;
+	}
+
+	static void copy_from(ref T object, abi_arg_in!T value) nothrow
+	{
+		object = null;
+
+		if (value)
+		{
+			value.AddRef();
+			*put(object) = value;
+		}
+	}
+
+	static void copy_to(V)(T object, ref V value) nothrow
+	{
+		if (object)
+		{
+			value = get(object);
+			value.AddRef();
+		}
+		else
+		{
+			value = null;
+		}
+	}
+
+	static auto detach(ref T object) nothrow
+	{
+		return cast(abi_arg_in!T) impl_detach(object);
+	}
+}
+
+struct traits(T : Windows.Foundation.IInspectable)
+{
+	alias abi = ABI.Windows.Foundation.IInspectable;
 }

@@ -1,140 +1,193 @@
 module Windows.Foundation;
 
+import dwinrt;
+
 class IUnknown
 {
-	/*
-	IUnknown() noexcept = default;
-	IUnknown(std::nullptr_t) noexcept {}
-	void *operator new(size_t) = delete;
-
-	IUnknown(const IUnknown &other) noexcept : m_ptr(other.m_ptr)
+	this(typeof(null)) nothrow
 	{
-			impl_addref();
 	}
 
-	IUnknown(IUnknown &&other) noexcept : m_ptr(other.m_ptr)
+	this(IUnknown other) nothrow
 	{
-			other.m_ptr = nullptr;
+		m_ptr = other.m_ptr;
+		impl_addref();
 	}
 
-	~IUnknown() noexcept
+	this(ref IUnknown other) nothrow
 	{
-			impl_release();
+		m_ptr = other.m_ptr;
+		other.m_ptr = null;
 	}
 
-	IUnknown &operator=(const IUnknown &other) noexcept
+	~this() nothrow
 	{
-			impl_copy(other);
-			return *this;
+		impl_release();
 	}
 
-	IUnknown &operator=(IUnknown &&other) noexcept
+	auto opAssign(typeof(null) val)
 	{
-			impl_move(std::forward<IUnknown>(other));
-			return *this;
+		impl_release();
+		return this;
 	}
 
-	explicit operator bool() const noexcept
+	T opCast(T : bool)()
 	{
-			return nullptr != m_ptr;
+		return m_ptr !is null;
 	}
 
-	IUnknown &operator=(std::nullptr_t) noexcept
+	auto as(U)()
 	{
-			impl_release();
-			return *this;
+		static if (is(U : IUnknown))
+			U temp;
+		else
+			ComPtr!U temp;
+		check_hresult(m_ptr.QueryInterface(uuidOf!(dwinrt.impl.abi_default_interface!U),
+				cast(void**)(put_abi(temp))));
+		return temp;
 	}
 
-	template <typename U>
-	auto as() const
+	auto try_as(U)()
 	{
-			std::conditional_t<impl::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-			check_hresult(m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp))));
-			return temp;
+		static if (is(U : IUnknown))
+			U temp;
+		else
+			ComPtr!U temp;
+		m_ptr.QueryInterface(uuidOf!(dwinrt.impl.abi_default_interface!U),
+				cast(void**)(put_abi(temp)));
+		return temp;
 	}
 
-	template <typename U>
-	auto try_as() const
+	bool opEquals(IUnknown b)
 	{
-			std::conditional_t<impl::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-			m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp)));
-			return temp;
+		if (get_abi(this) == get_abi(b))
+			return true;
+		if (!this || !b)
+			return false;
+		return get_abi(as!IUnknown) == get_abi(b.as!IUnknown);
 	}
 
-	friend auto impl_get(const IUnknown &object) noexcept
+	int opCmp(IUnknown b)
 	{
-			return object.m_ptr;
-	}
-
-	friend auto impl_put(IUnknown &object) noexcept
-	{
-			WINRT_ASSERT(!object);
-			return &object.m_ptr;
-	}
-
-	friend auto impl_detach(IUnknown &object) noexcept
-	{
-			auto temp = object.m_ptr;
-			object.m_ptr = nullptr;
-			return temp;
-	}
-
-	friend void swap(IUnknown &left, IUnknown &right) noexcept
-	{
-			std::swap(left.m_ptr, right.m_ptr);
+		if (get_abi(this) == get_abi(b))
+			return 0;
+		if (!this || !b)
+			return get_abi(this) < get_abi(b) ? -1 : 1;
+		return get_abi(as!IUnknown) < get_abi(b.as!IUnknown) ? -1 : 1;
 	}
 
 protected:
-	void impl_copy(::IUnknown *other) noexcept
+	void impl_copy(.IUnknown* other) nothrow
 	{
-			if (m_ptr != other)
-			{
-					impl_release();
-					m_ptr = other;
-					impl_addref();
-			}
+		if (m_ptr != other)
+		{
+			impl_release();
+			m_ptr = other;
+			impl_addref();
+		}
 	}
 
-	void impl_copy(const IUnknown &other) noexcept
+	void impl_copy(IUnknown other) nothrow
 	{
-			if (this != &other)
-			{
-					impl_release();
-					m_ptr = other.m_ptr;
-					impl_addref();
-			}
+		if (this != other)
+		{
+			impl_release();
+			m_ptr = other.m_ptr;
+			impl_addref();
+		}
 	}
 
-	void impl_move(IUnknown &&other) noexcept
+	void impl_move(ref IUnknown other) nothrow
 	{
-			if (this != &other)
-			{
-					impl_release();
-					m_ptr = other.m_ptr;
-					other.m_ptr = nullptr;
-			}
+		if (this != other)
+		{
+			impl_release();
+			m_ptr = other.m_ptr;
+			other.m_ptr = nullptr;
+		}
 	}
 
-	::IUnknown *m_ptr = nullptr;
+	.IUnknown* m_ptr = null;
 
 private:
-	void impl_addref() const noexcept
+	void impl_addref() const nothrow
 	{
-			if (m_ptr)
-			{
-					m_ptr->AddRef();
-			}
+		if (m_ptr)
+		{
+			m_ptr.AddRef();
+		}
 	}
 
-	void impl_release() noexcept
+	void impl_release() nothrow
 	{
-			auto temp = m_ptr;
+		auto temp = m_ptr;
 
-			if (temp)
-			{
-					m_ptr = nullptr;
-					temp->Release();
-			}
+		if (temp)
+		{
+			m_ptr = null;
+			temp.Release();
+		}
 	}
-	*/
+}
+
+auto impl_get(IUnknown object) nothrow
+{
+	return object.m_ptr;
+}
+
+auto impl_put(ref IUnknown object) nothrow
+{
+	assert(!object);
+	return &object.m_ptr;
+}
+
+auto impl_detach(ref IUnknown object) nothrow
+{
+	auto temp = object.m_ptr;
+	object.m_ptr = null;
+	return temp;
+}
+
+void swap(ref IUnknown left, ref IUnknown right) nothrow
+{
+	auto tmp = left.m_ptr;
+	left.m_ptr = right.m_ptr;
+	right.m_ptr = tmp;
+}
+
+enum TrustLevel
+{
+	BaseTrust,
+	PartialTrust,
+	FullTrust
+}
+
+class IInspectable : IUnknown
+{
+	this(typeof(null))
+	{
+		super(null);
+	}
+}
+
+com_array!GUID GetIids(IInspectable object)
+{
+	com_array!GUID value;
+	check_hresult((*cast(abi!IInspectable**)&object)
+			.abi_GetIids(dwinrt.impl.put_size_abi(value), put_abi(value)));
+	return value;
+}
+
+hstring GetRuntimeClassName(IInspectable object)
+{
+	hstring value;
+	check_hresult((*cast(abi!IInspectable**)&object).abi_GetRuntimeClassName(put_abi(value)));
+	return value;
+}
+
+TrustLevel GetTrustLevel(IInspectable object)
+{
+	TrustLevel value;
+	check_hresult((*cast(abi!IInspectable**)&object).abi_GetTrustLevel(&value));
+	return value;
 }
