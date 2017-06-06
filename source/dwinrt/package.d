@@ -4,6 +4,8 @@ public import core.sys.windows.windows;
 public import dwinrt.winstring;
 public import dwinrt.eventhandler;
 
+import core.atomic;
+
 pragma(lib, "User32");
 pragma(lib, "windowsapp");
 pragma(lib, "uuid");
@@ -67,16 +69,13 @@ extern (Windows)
 	{
 		version (Win32)
 		{
-			pragma(mangle, "GetRestrictedErrorInfo@4") HRESULT GetRestrictedErrorInfo(
-					IUnknown** info);
+			pragma(mangle, "GetRestrictedErrorInfo@4") HRESULT GetRestrictedErrorInfo(IUnknown** info);
 			pragma(mangle, "RoGetActivationFactory@12") HRESULT RoGetActivationFactory(HSTRING classId,
 					const ref GUID iid, void** factory);
 			pragma(mangle, "RoInitialize@4") HRESULT RoInitialize(uint type);
-			pragma(mangle, "RoOriginateError@8") BOOL RoOriginateError(HRESULT error,
-					HSTRING message);
+			pragma(mangle, "RoOriginateError@8") BOOL RoOriginateError(HRESULT error, HSTRING message);
 			pragma(mangle, "RoUninitialize@0") void RoUninitialize();
-			pragma(mangle, "SetRestrictedErrorInfo@4") HRESULT SetRestrictedErrorInfo(
-					IUnknown* info);
+			pragma(mangle, "SetRestrictedErrorInfo@4") HRESULT SetRestrictedErrorInfo(IUnknown* info);
 		}
 		else
 		{
@@ -180,14 +179,9 @@ struct hstring
 		m_handle = value.m_handle;
 	}
 
-	this(in string_type value)
+	this(in wstring value)
 	{
-		this(value.ptr, cast(size_type) value.length);
-	}
-
-	this(const(wchar_t)* value)
-	{
-		this(value, cast(size_type) wcslen(value));
+		this(cast(const_pointer) value.ptr, cast(size_type) value.length);
 	}
 
 	this(const(wchar_t)* value, in size_type size)
@@ -238,7 +232,7 @@ struct hstring
 
 	wstring d_str() nothrow
 	{
-		return begin[0 .. length].idup;
+		return cast(wstring) begin[0 .. length].idup;
 	}
 
 	const_iterator begin() nothrow
@@ -327,18 +321,18 @@ T factory(T : IUnknown)()
 {
 	T p;
 	auto id = uuidOf!T;
-	pragma(msg, factoryNameOf!T);
 	auto result = RoGetActivationFactory(hstring(factoryNameOf!T).handle, id, cast(void**)&p);
 	assert(result == S_OK);
 	return p;
 }
 
-abstract class Inspectable(T) : IInspectable
+class Inspectable(T) : IInspectable
 {
 extern (Windows):
 	HRESULT GetIids(uint* iidCount, GUID** iids)
 	{
-		import std.traits;
+		import std.traits : InterfacesTuple;
+		import core.exception : AssertError;
 
 		GUID[] arr;
 		foreach (Base; InterfacesTuple!T)
@@ -354,13 +348,14 @@ extern (Windows):
 
 		*iidCount = cast(uint) arr.length;
 		*iids = arr.ptr;
+		return S_OK;
 	}
 
 	HRESULT GetRuntimeClassName(HSTRING* className)
 	{
 		import std.traits;
 
-		*className = hstring(fullyQualifiedName!T).value;
+		*className = hstring(fullyQualifiedName!T).handle;
 		return S_OK;
 	}
 
@@ -369,6 +364,45 @@ extern (Windows):
 		*trustLevel = TrustLevel.BaseTrust;
 		return S_OK;
 	}
+
+	HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		if (*riid == IID_IUnknown)
+		{
+			*ppv = cast(void*) cast(IUnknown) this;
+			AddRef();
+			return S_OK;
+		}
+		else
+		{
+			*ppv = null;
+			return E_NOINTERFACE;
+		}
+	}
+
+	ULONG AddRef()
+	{
+		return atomicOp!"+="(*cast(shared)&count, 1);
+	}
+
+	ULONG Release()
+	{
+		LONG lRef = atomicOp!"-="(*cast(shared)&count, 1);
+		if (lRef == 0)
+		{
+			// free object
+
+			// If we delete this object, then the postinvariant called upon
+			// return from Release() will fail.
+			// Just let the GC reap it.
+			//delete this;
+
+			return 0;
+		}
+		return cast(ULONG) lRef;
+	}
+
+	LONG count = 0; // object reference count
 }
 
 public static import Windows.UI.Xaml;
