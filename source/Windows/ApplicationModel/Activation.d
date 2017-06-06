@@ -1,0 +1,1 @@
+module Windows.ApplicationModel.Activation;
