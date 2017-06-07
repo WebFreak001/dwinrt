@@ -48,8 +48,7 @@ extern (Windows):
 	HRESULT remove_Suspending(EventRegistrationToken token);
 	HRESULT add_Resuming(EventHandler!(IInspectable)* value, EventRegistrationToken* token);
 	HRESULT remove_Resuming(EventRegistrationToken token);
-	HRESULT Run();
-	HRESULT Exit();
+	HRESULT abi_Exit();
 }
 
 @winrtFactory!IApplication @uuid("93bbe361-be5a-4ee3-b4a3-95118dc97a89")

@@ -1,9 +1,12 @@
 import core.runtime;
 import core.thread;
 import std.string;
+import std.conv;
 
 import dwinrt;
 
+import Windows.ApplicationModel.Core;
+import Windows.UI.Core;
 import Windows.UI.Xaml;
 
 extern (Windows) int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
@@ -22,7 +25,7 @@ extern (Windows) int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		import core.sys.windows.windows;
 
 		MessageBoxA(null, e.toString().toStringz(), null, MB_ICONEXCLAMATION);
-		result = 0; // failed
+		result = 1; // failed
 	}
 
 	return result;
@@ -37,69 +40,65 @@ int myWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int
 	return 0;
 }
 
-class DerivedApp : Inspectable!DerivedApp, IApplicationOverrides
+class App : Inspectable!App, IFrameworkViewSource, IFrameworkView
 {
 extern (Windows):
-	override HRESULT OnInitialize()
+	override HRESULT abi_CreateView(IFrameworkView* viewProvider)
 	{
-		inner.OnInitialize();
+		Debug.WriteLine("CreateView");
+		*viewProvider = this;
 		return S_OK;
 	}
 
-	override HRESULT OnActivated(IActivatedEventArgs args)
+	override HRESULT abi_Initialize(ICoreApplicationView v)
 	{
-		inner.OnActivated(args);
+		Debug.WriteLine("Initialize %s", v);
 		return S_OK;
 	}
 
-	override HRESULT OnLaunched(ILaunchActivatedEventArgs args)
+	override HRESULT abi_SetWindow(ICoreWindow window)
 	{
-		static wstring content = `<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><TextBlock>Hello World</TextBlock></Grid>`;
-		auto winStatic = dwinrt.factory!IWindowStatics;
-		auto readerStatic = dwinrt.factory!IXamlReaderStatics;
-
-		IInspectable tmp;
-		assert(readerStatic.Load(hstring(content).handle, &tmp) == S_OK);
-		winStatic.Current.Content = cast(IUIElement) tmp;
-		inner.OnLaunched(args);
+		Debug.WriteLine("SetWindow");
 
 		return S_OK;
 	}
 
-	override HRESULT OnFileActivated(IFileActivatedEventArgs args)
+	override HRESULT abi_Load(HSTRING entryPoint)
 	{
-		inner.OnFileActivated(args);
+		Debug.WriteLine("Load");
 		return S_OK;
 	}
 
-	override HRESULT OnSearchActivated(ISearchActivatedEventArgs args)
+	override HRESULT abi_Run()
 	{
-		inner.OnSearchActivated(args);
+		Debug.WriteLine("Run");
+		ICoreWindow window;
+		auto fac = dwinrt.factory!ICoreWindowStatic;
+		Debug.WriteLine("Factory %s", fac);
+		assert(fac.abi_GetForCurrentThread(&window) == S_OK);
+
+		Debug.WriteLine("Window %s", window);
+		assert(window.abi_Activate() == S_OK);
+		Debug.WriteLine("Window Activated");
+
+		ICoreDispatcher dispatcher;
+		assert(window.get_Dispatcher(&dispatcher) == S_OK);
+		assert(dispatcher.abi_ProcessEvents(CoreProcessEventOptions.ProcessUntilQuit) == S_OK);
+
 		return S_OK;
 	}
 
-	override HRESULT OnSharingTargetActivated(IShareTargetActivatedEventArgs args)
+	override HRESULT abi_Uninitialize()
 	{
-		inner.OnSharingTargetActivated(args);
-		return S_OK;
-	}
-
-	override HRESULT OnFilePickerActivated(IFilePickerActivatedEventArgs args)
-	{
-		inner.OnFilePickerActivated(args);
+		Debug.WriteLine("Uninitialize");
 		return S_OK;
 	}
 
 private:
-	IApplicationOverrides inner;
 }
 
 void run()
 {
-	auto fac = factory!IApplicationFactory;
-	IInspectable inner;
-	DerivedApp outer = new DerivedApp();
-	IApplication app;
-	assert(fac.CreateInstance(outer, &inner, &app) == S_OK);
-	assert(app.Run() == S_OK);
+	//MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
+	assert(factory!ICoreApplication.abi_Run(new App) == S_OK);
 }

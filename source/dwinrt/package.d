@@ -69,13 +69,16 @@ extern (Windows)
 	{
 		version (Win32)
 		{
-			pragma(mangle, "GetRestrictedErrorInfo@4") HRESULT GetRestrictedErrorInfo(IUnknown** info);
+			pragma(mangle, "GetRestrictedErrorInfo@4") HRESULT GetRestrictedErrorInfo(
+					IUnknown** info);
 			pragma(mangle, "RoGetActivationFactory@12") HRESULT RoGetActivationFactory(HSTRING classId,
 					const ref GUID iid, void** factory);
 			pragma(mangle, "RoInitialize@4") HRESULT RoInitialize(uint type);
-			pragma(mangle, "RoOriginateError@8") BOOL RoOriginateError(HRESULT error, HSTRING message);
+			pragma(mangle, "RoOriginateError@8") BOOL RoOriginateError(HRESULT error,
+					HSTRING message);
 			pragma(mangle, "RoUninitialize@0") void RoUninitialize();
-			pragma(mangle, "SetRestrictedErrorInfo@4") HRESULT SetRestrictedErrorInfo(IUnknown* info);
+			pragma(mangle, "SetRestrictedErrorInfo@4") HRESULT SetRestrictedErrorInfo(
+					IUnknown* info);
 		}
 		else
 		{
@@ -85,6 +88,39 @@ extern (Windows)
 			BOOL RoOriginateError(HRESULT error, HSTRING message);
 			void RoUninitialize();
 			HRESULT SetRestrictedErrorInfo(IUnknown* info);
+		}
+	}
+}
+
+struct Debug
+{
+	static void Write(Char, Args...)(in Char[] message, Args args) nothrow
+	{
+		import std.format : format;
+		import std.string : toStringz;
+
+		try
+		{
+			OutputDebugStringA(format(message, args).toStringz);
+		}
+		catch (Exception)
+		{
+			OutputDebugStringA(message.toStringz);
+		}
+	}
+
+	static void WriteLine(Char, Args...)(in Char[] message, Args args) nothrow
+	{
+		import std.format : format;
+		import std.string : toStringz;
+
+		try
+		{
+			OutputDebugStringA((format(message, args) ~ '\n').toStringz);
+		}
+		catch (Exception)
+		{
+			OutputDebugStringA((message ~ '\n').toStringz);
 		}
 	}
 }
@@ -307,9 +343,16 @@ enum TrustLevel
 interface IInspectable : IUnknown
 {
 extern (Windows):
-	HRESULT GetIids(uint* iidCount, GUID** iids);
-	HRESULT GetRuntimeClassName(HSTRING* className);
-	HRESULT GetTrustLevel(TrustLevel* trustLevel);
+	HRESULT abi_GetIids(uint* iidCount, GUID** iids);
+	HRESULT abi_GetRuntimeClassName(HSTRING* className);
+	HRESULT abi_GetTrustLevel(TrustLevel* trustLevel);
+}
+
+@uuid("00000035-0000-0000-c000-000000000046")
+interface IActivationFactory : IInspectable
+{
+extern (Windows):
+	HRESULT abi_ActivateInstance(IInspectable* instance);
 }
 
 struct EventRegistrationToken
@@ -326,10 +369,50 @@ T factory(T : IUnknown)()
 	return p;
 }
 
+Interface factory(Class : IUnknown, Interface : IUnknown)()
+{
+	Interface factory;
+	auto id = uuidOf!Interface;
+	auto result = RoGetActivationFactory(hstring(winrtNameOf!Class).handle,
+			id, cast(void**)&factory);
+	assert(result == S_OK);
+	return factory;
+}
+
+auto tryAs(U : IUnknown, T : IUnknown)(T base)
+{
+	U tmp = null;
+	auto id = uuidOf!U;
+	base.QueryInterface(&id, cast(void**)&tmp);
+	return tmp;
+}
+
+Interface activationFactory(Class : IUnknown, Interface : IUnknown = IActivationFactory)()
+{
+	return factory!(Class, Interface);
+}
+
+T activate(T : IUnknown)()
+{
+	T f;
+	assert(activationFactory!T.abi_ActivateInstance(cast(IInspectable*)&f) == S_OK);
+	return f;
+}
+
+@uuid("4edb8ee2-96dd-49a7-94f7-4607ddab8e3c")
+interface IGetActivationFactory : IInspectable
+{
+}
+
+@uuid("94ea2b94-e9cc-49e0-c0ff-ee64ca8f5b90")
+interface IAgileObject : IUnknown
+{
+}
+
 class Inspectable(T) : IInspectable
 {
 extern (Windows):
-	HRESULT GetIids(uint* iidCount, GUID** iids)
+	HRESULT abi_GetIids(uint* iidCount, GUID** iids)
 	{
 		import std.traits : InterfacesTuple;
 		import core.exception : AssertError;
@@ -351,7 +434,7 @@ extern (Windows):
 		return S_OK;
 	}
 
-	HRESULT GetRuntimeClassName(HSTRING* className)
+	HRESULT abi_GetRuntimeClassName(HSTRING* className)
 	{
 		import std.traits;
 
@@ -359,7 +442,7 @@ extern (Windows):
 		return S_OK;
 	}
 
-	HRESULT GetTrustLevel(TrustLevel* trustLevel)
+	HRESULT abi_GetTrustLevel(TrustLevel* trustLevel)
 	{
 		*trustLevel = TrustLevel.BaseTrust;
 		return S_OK;
@@ -404,5 +487,11 @@ extern (Windows):
 
 	LONG count = 0; // object reference count
 }
+
+public static import Windows.ApplicationModel.Core;
+
+public static import Windows.Foundation;
+
+public static import Windows.Foundation.Collections;
 
 public static import Windows.UI.Xaml;
