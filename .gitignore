@@ -9,3 +9,5 @@ dub.selections.json
 *.exe
 *.appx
 source/core/sys/windows
+processed/
+tmp/

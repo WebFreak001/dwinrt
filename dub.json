@@ -25,5 +25,8 @@
 	],
 	"postBuildCommands-windows": [
 		"cmd /c copy dwinrt.exe dist\\dwinrt.exe"
+	],
+	"subPackages": [
+		"generator"
 	]
 }
