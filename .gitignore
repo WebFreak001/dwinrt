@@ -11,3 +11,4 @@ dub.selections.json
 source/core/sys/windows
 processed/
 tmp/
+*.lib

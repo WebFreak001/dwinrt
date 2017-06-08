@@ -10,7 +10,8 @@ import idl.grammar;
 
 Module[] modules;
 string[] ignored = [
-	"activation.idl", "AsyncInfo.idl", "EventToken.idl", "hstring.idl", "inspectable.idl", "DocumentSource.idl"
+	"activation.idl", "AsyncInfo.idl", "EventToken.idl", "hstring.idl",
+	"inspectable.idl", "DocumentSource.idl"
 ];
 
 string[] defines;
@@ -24,6 +25,11 @@ void main(string[] args)
 		return;
 	}
 
+	if (!exists("processed"))
+		mkdir("processed");
+	if (!exists("tmp"))
+		mkdir("tmp");
+
 	dirEntries("base", SpanMode.shallow).each!(processIDL);
 	//modules.each!()
 	writeln(modules);
@@ -34,7 +40,7 @@ void processIDL(string file)
 	if (ignored.canFind(file.baseName))
 		return;
 
-	//if (file.baseName != "windows.devices.spi.idl")
+	//if (file.baseName != "windows.ui.xaml.customattributes.idl")
 	//	return;
 
 	writeln("Processing ", file);
@@ -56,7 +62,7 @@ void processIDL(string file)
 		{
 			if (striped.startsWith("#include"))
 			{
-				writeln("Skipping preprocessing " ~ striped ~ " in file " ~ file ~ ".");
+				writeln("Skipping preprocessing " ~ striped.stripRight ~ " in file " ~ file ~ ".");
 			}
 			else if (striped.startsWith("#ifdef "))
 			{
@@ -73,20 +79,24 @@ void processIDL(string file)
 			else if (striped.startsWith("#endif"))
 				include = true;
 		}
-		else if (striped.length >= 2 && striped[0] == striped[1] && striped[1] == '/')
-		{
-			// comment
-		}
 		else if (include)
 		{
 			prev = dchar.init;
 			size_t start;
+			bool lineComment = false;
 			foreach (i, c; line)
 			{
 				if (c == '\\')
 					escape = !escape;
 				else if (c == '"' && !escape)
 					inString = !inString;
+				else if (!inString && prev == '/' && c == '/')
+				{
+					lineComment = true;
+					code ~= line[start .. i - 1] ~ '\n';
+					escape = false;
+					break;
+				}
 				else if (!inString && prev == '/' && c == '*')
 				{
 					inComment = true;
@@ -102,12 +112,12 @@ void processIDL(string file)
 					escape = false;
 				prev = c;
 			}
-			if (!inComment)
+			if (!inComment && !lineComment)
 				code ~= line[start .. $];
 		}
 	}
 
-	//std.file.write("processed/" ~ file[5 .. $], code);
+	std.file.write("processed/" ~ file[5 .. $], code);
 	auto parsed = parseIDL(code);
 	std.file.write("tmp/" ~ file[5 .. $], parsed.toString);
 }
