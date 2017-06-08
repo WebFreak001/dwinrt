@@ -78,8 +78,8 @@ IDL:
 	# Added delegate
 	delegate_         <  "delegate" ( op_dcl / identifier )
 	# Added runtimeclass
-	forward_dcl       <  ( "abstract" / "local" )? ( "interface" / "runtimeclass") identifier
-	interface_header  <  ( "abstract" / "local" )? ( "interface" / "runtimeclass") identifier interface_inheritance_spec? interface_require_spec?
+	forward_dcl       <  ( "interface" / "runtimeclass") identifier
+	interface_header  <  ( "interface" / "runtimeclass") identifier interface_inheritance_spec? interface_require_spec?
 	interface_body    <  export_*
 	export_           <  type_dcl ";"
 	                   / const_dcl ";"
