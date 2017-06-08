@@ -65,7 +65,7 @@ void main(string[] args)
 		return;
 	}
 
-	dirEntries("base", SpanMode.shallow).each!(processIDL);
+	dirEntries("base", SpanMode.shallow).array.sort!"a < b".each!(processIDL);
 	foreach (ref mod; modules)
 		mod.fixTypes;
 	foreach (mod; modules)
