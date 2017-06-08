@@ -2,6 +2,24 @@ module Windows.ApplicationModel.Background;
 
 import dwinrt;
 
+@uuid("a6c4bac0-51f8-4c57-ac3f-156dd1680c4f")
+interface BackgroundTaskCanceledEventHandler
+{
+	HRESULT abi_Invoke(Windows.ApplicationModel.Background.IBackgroundTaskInstance sender, Windows.ApplicationModel.Background.BackgroundTaskCancellationReason reason);
+}
+
+@uuid("5b38e929-a086-46a7-a678-439135822bcf")
+interface BackgroundTaskCompletedEventHandler
+{
+	HRESULT abi_Invoke(Windows.ApplicationModel.Background.BackgroundTaskRegistration sender, Windows.ApplicationModel.Background.BackgroundTaskCompletedEventArgs args);
+}
+
+@uuid("46e0683c-8a88-4c99-804c-76897f6277a6")
+interface BackgroundTaskProgressEventHandler
+{
+	HRESULT abi_Invoke(Windows.ApplicationModel.Background.BackgroundTaskRegistration sender, Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs args);
+}
+
 @uuid("d0dd4342-e37b-4823-a5fe-6b31dfefdeb0")
 @WinrtFactory("Windows.ApplicationModel.Background.ActivitySensorTrigger")
 interface IActivitySensorTrigger : IInspectable
@@ -204,7 +222,7 @@ extern(Windows):
 	HRESULT get_Progress(UINT32* return_value);
 	HRESULT set_Progress(UINT32 value);
 	HRESULT get_TriggerDetails(IInspectable* return_triggerDetails);
-	HRESULT add_Canceled(Windows.ApplicationModel.Background.BackgroundTaskCanceledEventHandler* cancelHandler, EventRegistrationToken* return_cookie);
+	HRESULT add_Canceled(Windows.ApplicationModel.Background.BackgroundTaskCanceledEventHandler cancelHandler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Canceled(EventRegistrationToken cookie);
 	HRESULT get_SuspendedCount(UINT32* return_value);
 	HRESULT abi_GetDeferral(Windows.ApplicationModel.Background.BackgroundTaskDeferral* return_deferral);
@@ -247,9 +265,9 @@ interface IBackgroundTaskRegistration : IInspectable
 extern(Windows):
 	HRESULT get_TaskId(GUID* return_value);
 	HRESULT get_Name(HSTRING* return_value);
-	HRESULT add_Progress(Windows.ApplicationModel.Background.BackgroundTaskProgressEventHandler* handler, EventRegistrationToken* return_cookie);
+	HRESULT add_Progress(Windows.ApplicationModel.Background.BackgroundTaskProgressEventHandler handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Progress(EventRegistrationToken cookie);
-	HRESULT add_Completed(Windows.ApplicationModel.Background.BackgroundTaskCompletedEventHandler* handler, EventRegistrationToken* return_cookie);
+	HRESULT add_Completed(Windows.ApplicationModel.Background.BackgroundTaskCompletedEventHandler handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Completed(EventRegistrationToken cookie);
 	HRESULT abi_Unregister(bool cancelTask);
 }
@@ -281,9 +299,9 @@ interface IBackgroundTaskRegistrationGroup : IInspectable
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_Name(HSTRING* return_value);
-	HRESULT add_BackgroundActivated(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup*,Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_BackgroundActivated(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup, Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_BackgroundActivated(EventRegistrationToken token);
-	HRESULT get_AllTasks(Windows.Foundation.Collections.IMapView!(GUID,Windows.ApplicationModel.Background.BackgroundTaskRegistration*)* return_value);
+	HRESULT get_AllTasks(Windows.Foundation.Collections.IMapView!(GUID, Windows.ApplicationModel.Background.BackgroundTaskRegistration)* return_value);
 }
 
 @uuid("83d92b69-44cf-4631-9740-03c7d8741bc5")
@@ -304,7 +322,7 @@ interface IBackgroundTaskRegistrationStatics : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_AllTasks(Windows.Foundation.Collections.IMapView!(GUID,Windows.ApplicationModel.Background.IBackgroundTaskRegistration*)* return_tasks);
+	HRESULT get_AllTasks(Windows.Foundation.Collections.IMapView!(GUID, Windows.ApplicationModel.Background.IBackgroundTaskRegistration)* return_tasks);
 }
 
 @uuid("174b671e-b20d-4fa9-ad9a-e93ad6c71e01")
@@ -314,7 +332,7 @@ interface IBackgroundTaskRegistrationStatics2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_AllTaskGroups(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup*)* return_value);
+	HRESULT get_AllTaskGroups(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup)* return_value);
 	HRESULT abi_GetTaskGroup(HSTRING groupId, Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup* return_value);
 }
 

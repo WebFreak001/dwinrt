@@ -71,11 +71,11 @@ extern(Windows):
 	HRESULT get_RfcommServices(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService)* return_value);
 	HRESULT get_ConnectionStatus(Windows.Devices.Bluetooth.BluetoothConnectionStatus* return_value);
 	HRESULT get_BluetoothAddress(UINT64* return_value);
-	HRESULT add_NameChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_NameChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_NameChanged(EventRegistrationToken token);
-	HRESULT add_SdpRecordsChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SdpRecordsChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SdpRecordsChanged(EventRegistrationToken token);
-	HRESULT add_ConnectionStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ConnectionStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ConnectionStatusChanged(EventRegistrationToken token);
 }
 
@@ -249,11 +249,11 @@ extern(Windows):
 	HRESULT get_BluetoothAddress(UINT64* return_value);
 	deprecated("Use GetGattServicesForUuidAsync instead of GetGattService.	For more information, see MSDN.")
 	HRESULT abi_GetGattService(GUID serviceUuid, Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService* return_service);
-	HRESULT add_NameChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_NameChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_NameChanged(EventRegistrationToken token);
-	HRESULT add_GattServicesChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_GattServicesChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_GattServicesChanged(EventRegistrationToken token);
-	HRESULT add_ConnectionStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ConnectionStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ConnectionStatusChanged(EventRegistrationToken token);
 }
 

@@ -164,7 +164,7 @@ extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_ControllerDisplayName(HSTRING* return_value);
-	HRESULT add_Disconnected(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSession*,Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Disconnected(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSession, Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Disconnected(EventRegistrationToken token);
 	HRESULT abi_CreateParticipantWatcher(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher* return_result);
 	HRESULT abi_SendInvitationAsync(Windows.System.RemoteSystems.RemoteSystem invitee, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -187,7 +187,7 @@ interface IRemoteSystemSessionController : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_JoinRequested(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionController*,Windows.System.RemoteSystems.RemoteSystemSessionJoinRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_JoinRequested(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionController, Windows.System.RemoteSystems.RemoteSystemSessionJoinRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_JoinRequested(EventRegistrationToken token);
 	HRESULT abi_RemoveParticipantAsync(Windows.System.RemoteSystems.RemoteSystemSessionParticipant pParticipant, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_CreateSessionAsync(Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystemSessionCreationResult)* return_operation);
@@ -255,7 +255,7 @@ interface IRemoteSystemSessionInvitationListener : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_InvitationReceived(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionInvitationListener*,Windows.System.RemoteSystems.RemoteSystemSessionInvitationReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_InvitationReceived(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionInvitationListener, Windows.System.RemoteSystems.RemoteSystemSessionInvitationReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_InvitationReceived(EventRegistrationToken token);
 }
 
@@ -313,7 +313,7 @@ extern(Windows):
 	HRESULT abi_BroadcastValueSetAsync(Windows.Foundation.Collections.ValueSet messageData, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_SendValueSetAsync(Windows.Foundation.Collections.ValueSet messageData, Windows.System.RemoteSystems.RemoteSystemSessionParticipant participant, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_SendValueSetToParticipantsAsync(Windows.Foundation.Collections.ValueSet messageData, Windows.Foundation.Collections.IIterable!(Windows.System.RemoteSystems.RemoteSystemSessionParticipant) participants, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT add_ValueSetReceived(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel*,Windows.System.RemoteSystems.RemoteSystemSessionValueSetReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ValueSetReceived(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel, Windows.System.RemoteSystems.RemoteSystemSessionValueSetReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ValueSetReceived(EventRegistrationToken token);
 }
 
@@ -380,11 +380,11 @@ extern(Windows):
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
 	HRESULT get_Status(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcherStatus* return_value);
-	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher*,Windows.System.RemoteSystems.RemoteSystemSessionParticipantAddedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantAddedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Added(EventRegistrationToken token);
-	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher*,Windows.System.RemoteSystems.RemoteSystemSessionParticipantRemovedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantRemovedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Removed(EventRegistrationToken token);
-	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_EnumerationCompleted(EventRegistrationToken token);
 }
 
@@ -439,11 +439,11 @@ extern(Windows):
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
 	HRESULT get_Status(Windows.System.RemoteSystems.RemoteSystemSessionWatcherStatus* return_value);
-	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher*,Windows.System.RemoteSystems.RemoteSystemSessionAddedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionAddedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Added(EventRegistrationToken token);
-	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher*,Windows.System.RemoteSystems.RemoteSystemSessionUpdatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionUpdatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Updated(EventRegistrationToken token);
-	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher*,Windows.System.RemoteSystems.RemoteSystemSessionRemovedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionRemovedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Removed(EventRegistrationToken token);
 }
 
@@ -509,11 +509,11 @@ interface IRemoteSystemWatcher : IInspectable
 extern(Windows):
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
-	HRESULT add_RemoteSystemAdded(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher*,Windows.System.RemoteSystems.RemoteSystemAddedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RemoteSystemAdded(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemAddedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RemoteSystemAdded(EventRegistrationToken token);
-	HRESULT add_RemoteSystemUpdated(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher*,Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RemoteSystemUpdated(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RemoteSystemUpdated(EventRegistrationToken token);
-	HRESULT add_RemoteSystemRemoved(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher*,Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RemoteSystemRemoved(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RemoteSystemRemoved(EventRegistrationToken token);
 }
 

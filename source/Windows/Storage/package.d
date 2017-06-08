@@ -2,6 +2,18 @@ module Windows.Storage;
 
 import dwinrt;
 
+@uuid("a05791e6-cc9f-4687-acab-a364fd785463")
+interface ApplicationDataSetVersionHandler
+{
+	HRESULT abi_Invoke(Windows.Storage.SetVersionRequest setVersionRequest);
+}
+
+@uuid("fef6a824-2fe1-4d07-a35b-b77c50b5f4cc")
+interface StreamedFileDataRequestedHandler
+{
+	HRESULT abi_Invoke(Windows.Storage.StreamedFileDataRequest stream);
+}
+
 @uuid("c3da6fb7-b744-4b45-b0b8-223a0938d0dc")
 @WinrtFactory("Windows.Storage.ApplicationData")
 interface IApplicationData : IInspectable
@@ -10,7 +22,7 @@ interface IApplicationData : IInspectable
 
 extern(Windows):
 	HRESULT get_Version(UINT32* return_value);
-	HRESULT abi_SetVersionAsync(UINT32 desiredVersion, Windows.Storage.ApplicationDataSetVersionHandler* handler, Windows.Foundation.IAsyncAction* return_setVersionOperation);
+	HRESULT abi_SetVersionAsync(UINT32 desiredVersion, Windows.Storage.ApplicationDataSetVersionHandler handler, Windows.Foundation.IAsyncAction* return_setVersionOperation);
 	HRESULT abi_ClearAllAsync(Windows.Foundation.IAsyncAction* return_clearOperation);
 	HRESULT abi_ClearAsync(Windows.Storage.ApplicationDataLocality locality, Windows.Foundation.IAsyncAction* return_clearOperation);
 	HRESULT get_LocalSettings(Windows.Storage.ApplicationDataContainer* return_value);
@@ -18,7 +30,7 @@ extern(Windows):
 	HRESULT get_LocalFolder(Windows.Storage.StorageFolder* return_value);
 	HRESULT get_RoamingFolder(Windows.Storage.StorageFolder* return_value);
 	HRESULT get_TemporaryFolder(Windows.Storage.StorageFolder* return_value);
-	HRESULT add_DataChanged(Windows.Foundation.TypedEventHandler!(Windows.Storage.ApplicationData*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DataChanged(Windows.Foundation.TypedEventHandler!(Windows.Storage.ApplicationData, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DataChanged(EventRegistrationToken token);
 	HRESULT abi_SignalDataChanged();
 	HRESULT get_RoamingStorageQuota(UINT64* return_value);
@@ -56,7 +68,7 @@ extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Locality(Windows.Storage.ApplicationDataLocality* return_value);
 	HRESULT get_Values(Windows.Foundation.Collections.IPropertySet* return_value);
-	HRESULT get_Containers(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.Storage.ApplicationDataContainer*)* return_value);
+	HRESULT get_Containers(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Storage.ApplicationDataContainer)* return_value);
 	HRESULT abi_CreateContainer(HSTRING name, Windows.Storage.ApplicationDataCreateDisposition disposition, Windows.Storage.ApplicationDataContainer* return_container);
 	HRESULT abi_DeleteContainer(HSTRING name);
 }
@@ -304,8 +316,8 @@ interface IStorageFileStatics : IInspectable
 extern(Windows):
 	HRESULT abi_GetFileFromPathAsync(HSTRING path, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
 	HRESULT abi_GetFileFromApplicationUriAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
-	HRESULT abi_CreateStreamedFileAsync(HSTRING displayNameWithExtension, Windows.Storage.StreamedFileDataRequestedHandler* dataRequested, Windows.Storage.Streams.IRandomAccessStreamReference thumbnail, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
-	HRESULT abi_ReplaceWithStreamedFileAsync(Windows.Storage.IStorageFile fileToReplace, Windows.Storage.StreamedFileDataRequestedHandler* dataRequested, Windows.Storage.Streams.IRandomAccessStreamReference thumbnail, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
+	HRESULT abi_CreateStreamedFileAsync(HSTRING displayNameWithExtension, Windows.Storage.StreamedFileDataRequestedHandler dataRequested, Windows.Storage.Streams.IRandomAccessStreamReference thumbnail, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
+	HRESULT abi_ReplaceWithStreamedFileAsync(Windows.Storage.IStorageFile fileToReplace, Windows.Storage.StreamedFileDataRequestedHandler dataRequested, Windows.Storage.Streams.IRandomAccessStreamReference thumbnail, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
 	HRESULT abi_CreateStreamedFileFromUriAsync(HSTRING displayNameWithExtension, Windows.Foundation.Uri uri, Windows.Storage.Streams.IRandomAccessStreamReference thumbnail, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
 	HRESULT abi_ReplaceWithStreamedFileFromUriAsync(Windows.Storage.IStorageFile fileToReplace, Windows.Foundation.Uri uri, Windows.Storage.Streams.IRandomAccessStreamReference thumbnail, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
 }
@@ -421,7 +433,7 @@ extern(Windows):
 	HRESULT abi_RequestRemoveFolderAsync(Windows.Storage.StorageFolder folder, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT get_Folders(Windows.Foundation.Collections.IObservableVector!(Windows.Storage.StorageFolder)* return_value);
 	HRESULT get_SaveFolder(Windows.Storage.StorageFolder* return_value);
-	HRESULT add_DefinitionChanged(Windows.Foundation.TypedEventHandler!(Windows.Storage.StorageLibrary*,IInspectable*) handler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_DefinitionChanged(Windows.Foundation.TypedEventHandler!(Windows.Storage.StorageLibrary, IInspectable) handler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_DefinitionChanged(EventRegistrationToken eventCookie);
 }
 

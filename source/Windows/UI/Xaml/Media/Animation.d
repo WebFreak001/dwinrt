@@ -2,6 +2,18 @@ module Windows.UI.Xaml.Media.Animation;
 
 import dwinrt;
 
+struct KeyTime
+{
+	Windows.Foundation.TimeSpan TimeSpan;
+}
+
+struct RepeatBehavior
+{
+	double Count;
+	Windows.Foundation.TimeSpan Duration;
+	Windows.UI.Xaml.Media.Animation.RepeatBehaviorType Type;
+}
+
 @uuid("e47796e7-f805-4a8f-81c9-38e6472caa94")
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.BackEase")
 interface IBackEase : IInspectable
@@ -188,7 +200,7 @@ interface IConnectedAnimation : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Animation.ConnectedAnimation*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_Completed(EventRegistrationToken token);
 	HRESULT abi_TryStart(Windows.UI.Xaml.UIElement destination, bool* return_returnValue);
 	HRESULT abi_Cancel();

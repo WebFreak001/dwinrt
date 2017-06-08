@@ -125,7 +125,7 @@ extern(Windows):
 	HRESULT get_VisualElements(Windows.UI.StartScreen.SecondaryTileVisualElements* return_value);
 	HRESULT set_RoamingEnabled(bool value);
 	HRESULT get_RoamingEnabled(bool* return_value);
-	HRESULT add_VisualElementsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.StartScreen.SecondaryTile*,Windows.UI.StartScreen.VisualElementsRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_VisualElementsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_VisualElementsRequested(EventRegistrationToken token);
 }
 

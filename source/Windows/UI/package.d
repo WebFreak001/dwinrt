@@ -2,6 +2,14 @@ module Windows.UI;
 
 import dwinrt;
 
+struct Color
+{
+	BYTE A;
+	BYTE R;
+	BYTE G;
+	BYTE B;
+}
+
 @uuid("8504dbea-fb6a-4144-a6c2-33499c9284f5")
 @WinrtFactory("Windows.UI.ColorHelper")
 interface IColorHelperStatics : IInspectable

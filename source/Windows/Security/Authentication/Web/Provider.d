@@ -32,8 +32,8 @@ interface IWebAccountManagerStatics : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_UpdateWebAccountPropertiesAsync(Windows.Security.Credentials.WebAccount webAccount, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING,HSTRING) additionalProperties, Windows.Foundation.IAsyncAction* return_asyncInfo);
-	HRESULT abi_AddWebAccountAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING,HSTRING) props, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
+	HRESULT abi_UpdateWebAccountPropertiesAsync(Windows.Security.Credentials.WebAccount webAccount, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) additionalProperties, Windows.Foundation.IAsyncAction* return_asyncInfo);
+	HRESULT abi_AddWebAccountAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
 	HRESULT abi_DeleteWebAccountAsync(Windows.Security.Credentials.WebAccount webAccount, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_FindAllProviderWebAccountsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.WebAccount))* return_asyncInfo);
 	HRESULT abi_PushCookiesAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.HttpCookie) cookies, Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -62,9 +62,9 @@ interface IWebAccountManagerStatics3 : IInspectable
 
 extern(Windows):
 	HRESULT abi_FindAllProviderWebAccountsForUserAsync(Windows.System.User user, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.WebAccount))* return_operation);
-	HRESULT abi_AddWebAccountForUserAsync(Windows.System.User user, HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING,HSTRING) props, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_operation);
-	HRESULT abi_AddWebAccountWithScopeForUserAsync(Windows.System.User user, HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING,HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_operation);
-	HRESULT abi_AddWebAccountWithScopeAndMapForUserAsync(Windows.System.User user, HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING,HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, HSTRING perUserWebAccountId, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_operation);
+	HRESULT abi_AddWebAccountForUserAsync(Windows.System.User user, HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_operation);
+	HRESULT abi_AddWebAccountWithScopeForUserAsync(Windows.System.User user, HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_operation);
+	HRESULT abi_AddWebAccountWithScopeAndMapForUserAsync(Windows.System.User user, HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, HSTRING perUserWebAccountId, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_operation);
 }
 
 @uuid("e8fa446f-3a1b-48a4-8e90-1e59ca6f54db")
@@ -74,7 +74,7 @@ interface IWebAccountMapManagerStatics : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_AddWebAccountWithScopeAndMapAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING,HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, HSTRING perUserWebAccountId, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
+	HRESULT abi_AddWebAccountWithScopeAndMapAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, HSTRING perUserWebAccountId, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
 	HRESULT abi_SetPerAppToPerUserAccountAsync(Windows.Security.Credentials.WebAccount perAppAccount, HSTRING perUserWebAccountId, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_GetPerUserFromPerAppAccountAsync(Windows.Security.Credentials.WebAccount perAppAccount, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
 	HRESULT abi_ClearPerUserFromPerAppAccountAsync(Windows.Security.Credentials.WebAccount perAppAccount, Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -212,7 +212,7 @@ interface IWebAccountScopeManagerStatics : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_AddWebAccountWithScopeAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING,HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
+	HRESULT abi_AddWebAccountWithScopeAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
 	HRESULT abi_SetScopeAsync(Windows.Security.Credentials.WebAccount webAccount, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_GetScope(Windows.Security.Credentials.WebAccount webAccount, Windows.Security.Authentication.Web.Provider.WebAccountScope* return_scope_);
 }

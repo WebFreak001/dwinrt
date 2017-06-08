@@ -10,7 +10,7 @@ interface IRadio : IInspectable
 
 extern(Windows):
 	HRESULT abi_SetStateAsync(Windows.Devices.Radios.RadioState value, Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.RadioAccessStatus)* return_retval);
-	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Radios.Radio*,IInspectable*) handler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Radios.Radio, IInspectable) handler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_StateChanged(EventRegistrationToken eventCookie);
 	HRESULT get_State(Windows.Devices.Radios.RadioState* return_value);
 	HRESULT get_Name(HSTRING* return_value);

@@ -2,6 +2,19 @@ module Windows.UI.Xaml.Markup;
 
 import dwinrt;
 
+struct XamlBinaryWriterErrorInformation
+{
+	UINT32 InputStreamIndex;
+	UINT32 LineNumber;
+	UINT32 LinePosition;
+}
+
+struct XmlnsDefinition
+{
+	HSTRING XmlNamespace;
+	HSTRING Namespace;
+}
+
 @uuid("f6790987-e6e5-47f2-92c6-eccce4ba159a")
 interface IComponentConnector : IInspectable
 {

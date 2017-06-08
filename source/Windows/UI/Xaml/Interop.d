@@ -2,6 +2,24 @@ module Windows.UI.Xaml.Interop;
 
 import dwinrt;
 
+struct TypeName
+{
+	HSTRING Name;
+	Windows.UI.Xaml.Interop.TypeKind Kind;
+}
+
+@uuid("624cd4e1-d007-43b1-9c03-af4d3e6258c4")
+interface BindableVectorChangedEventHandler
+{
+	HRESULT abi_Invoke(Windows.UI.Xaml.Interop.IBindableObservableVector vector, IInspectable e);
+}
+
+@uuid("ca10b37c-f382-4591-8557-5e24965279b0")
+interface NotifyCollectionChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Interop.NotifyCollectionChangedEventArgs e);
+}
+
 @uuid("036d2c08-df29-41af-8aa2-d774be62ba6f")
 interface IBindableIterable : IInspectable
 {
@@ -28,7 +46,7 @@ interface IBindableObservableVector : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_VectorChanged(Windows.UI.Xaml.Interop.BindableVectorChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_VectorChanged(Windows.UI.Xaml.Interop.BindableVectorChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_VectorChanged(EventRegistrationToken token);
 }
 
@@ -67,7 +85,7 @@ interface INotifyCollectionChanged : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_CollectionChanged(Windows.UI.Xaml.Interop.NotifyCollectionChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_CollectionChanged(Windows.UI.Xaml.Interop.NotifyCollectionChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_CollectionChanged(EventRegistrationToken token);
 }
 

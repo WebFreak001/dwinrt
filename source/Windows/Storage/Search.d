@@ -2,6 +2,12 @@ module Windows.Storage.Search;
 
 import dwinrt;
 
+struct SortEntry
+{
+	HSTRING PropertyName;
+	bool AscendingOrder;
+}
+
 @uuid("b1767f8d-f698-4982-b05f-3a6e8cab01a2")
 @WinrtFactory("Windows.Storage.Search.ContentIndexer")
 interface IContentIndexer : IInspectable
@@ -14,7 +20,7 @@ extern(Windows):
 	HRESULT abi_DeleteAsync(HSTRING contentId, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_DeleteMultipleAsync(Windows.Foundation.Collections.IIterable!(HSTRING) contentIds, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_DeleteAllAsync(Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT abi_RetrievePropertiesAsync(HSTRING contentId, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*))* return_operation);
+	HRESULT abi_RetrievePropertiesAsync(HSTRING contentId, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))* return_operation);
 	HRESULT get_Revision(UINT64* return_value);
 }
 
@@ -26,8 +32,8 @@ interface IContentIndexerQuery : IInspectable
 
 extern(Windows):
 	HRESULT abi_GetCountAsync(Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
-	HRESULT abi_GetPropertiesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)))* return_operation);
-	HRESULT abi_GetPropertiesRangeAsync(UINT32 startIndex, UINT32 maxItems, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)))* return_operation);
+	HRESULT abi_GetPropertiesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)))* return_operation);
+	HRESULT abi_GetPropertiesRangeAsync(UINT32 startIndex, UINT32 maxItems, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)))* return_operation);
 	HRESULT abi_GetAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.Search.IIndexableContent))* return_operation);
 	HRESULT abi_GetRangeAsync(UINT32 startIndex, UINT32 maxItems, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.Search.IIndexableContent))* return_operation);
 	HRESULT get_QueryFolder(Windows.Storage.StorageFolder* return_value);
@@ -64,7 +70,7 @@ interface IIndexableContent : IInspectable
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT set_Id(HSTRING value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMap!(HSTRING,IInspectable*)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)* return_value);
 	HRESULT get_Stream(Windows.Storage.Streams.IRandomAccessStream* return_value);
 	HRESULT set_Stream(Windows.Storage.Streams.IRandomAccessStream value);
 	HRESULT get_StreamContentType(HSTRING* return_value);
@@ -137,7 +143,7 @@ interface IStorageFileQueryResult2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_GetMatchingPropertiesWithRanges(Windows.Storage.StorageFile file, Windows.Foundation.Collections.IMap!(HSTRING,Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment))* return_result);
+	HRESULT abi_GetMatchingPropertiesWithRanges(Windows.Storage.StorageFile file, Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment))* return_result);
 }
 
 @uuid("cb43ccc9-446b-4a4f-be97-757771be5203")
@@ -206,9 +212,9 @@ interface IStorageQueryResultBase : IInspectable
 extern(Windows):
 	HRESULT abi_GetItemCountAsync(Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
 	HRESULT get_Folder(Windows.Storage.StorageFolder* return_container);
-	HRESULT add_ContentsChanged(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase*,IInspectable*) handler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_ContentsChanged(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) handler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ContentsChanged(EventRegistrationToken eventCookie);
-	HRESULT add_OptionsChanged(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase*,IInspectable*) changedHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_OptionsChanged(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) changedHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_OptionsChanged(EventRegistrationToken eventCookie);
 	HRESULT abi_FindStartIndexAsync(IInspectable value, Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
 	HRESULT abi_GetCurrentQueryOptions(Windows.Storage.Search.QueryOptions* return_value);

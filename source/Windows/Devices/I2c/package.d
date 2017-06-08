@@ -2,6 +2,12 @@ module Windows.Devices.I2c;
 
 import dwinrt;
 
+struct I2cTransferResult
+{
+	Windows.Devices.I2c.I2cTransferStatus Status;
+	UINT32 BytesTransferred;
+}
+
 @uuid("f2db1307-ab6f-4639-a767-54536dc3460f")
 @WinrtFactory("Windows.Devices.I2c.I2cConnectionSettings")
 interface II2cConnectionSettings : IInspectable

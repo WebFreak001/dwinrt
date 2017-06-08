@@ -13,9 +13,9 @@ extern(Windows):
 	HRESULT get_Device(Windows.Media.Casting.CastingDevice* return_value);
 	HRESULT get_Source(Windows.Media.Casting.CastingSource* return_value);
 	HRESULT set_Source(Windows.Media.Casting.CastingSource value);
-	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Casting.CastingConnection*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Casting.CastingConnection, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StateChanged(EventRegistrationToken token);
-	HRESULT add_ErrorOccurred(Windows.Foundation.TypedEventHandler!(Windows.Media.Casting.CastingConnection*,Windows.Media.Casting.CastingConnectionErrorOccurredEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ErrorOccurred(Windows.Foundation.TypedEventHandler!(Windows.Media.Casting.CastingConnection, Windows.Media.Casting.CastingConnectionErrorOccurredEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ErrorOccurred(EventRegistrationToken token);
 	HRESULT abi_RequestStartCastingAsync(Windows.Media.Casting.CastingSource value, Windows.Foundation.IAsyncOperation!(Windows.Media.Casting.CastingConnectionErrorStatus)* return_operation);
 	HRESULT abi_DisconnectAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Casting.CastingConnectionErrorStatus)* return_operation);
@@ -55,9 +55,9 @@ interface ICastingDevicePicker : IInspectable
 extern(Windows):
 	HRESULT get_Filter(Windows.Media.Casting.CastingDevicePickerFilter* return_value);
 	HRESULT get_Appearance(Windows.Devices.Enumeration.DevicePickerAppearance* return_value);
-	HRESULT add_CastingDeviceSelected(Windows.Foundation.TypedEventHandler!(Windows.Media.Casting.CastingDevicePicker*,Windows.Media.Casting.CastingDeviceSelectedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_CastingDeviceSelected(Windows.Foundation.TypedEventHandler!(Windows.Media.Casting.CastingDevicePicker, Windows.Media.Casting.CastingDeviceSelectedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CastingDeviceSelected(EventRegistrationToken token);
-	HRESULT add_CastingDevicePickerDismissed(Windows.Foundation.TypedEventHandler!(Windows.Media.Casting.CastingDevicePicker*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_CastingDevicePickerDismissed(Windows.Foundation.TypedEventHandler!(Windows.Media.Casting.CastingDevicePicker, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CastingDevicePickerDismissed(EventRegistrationToken token);
 	HRESULT abi_Show(Windows.Foundation.Rect selection);
 	HRESULT abi_ShowWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement);

@@ -2,6 +2,72 @@ module Windows.UI.Xaml.Input;
 
 import dwinrt;
 
+@uuid("3124d025-04a7-4d45-825e-8204a624dbf4")
+interface DoubleTappedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e);
+}
+
+@uuid("ecae8ccd-8e5e-4fbe-9846-30a6370afcdf")
+interface HoldingEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.HoldingRoutedEventArgs e);
+}
+
+@uuid("7c63d2e5-7a0e-4e12-b96a-7715aa6ff1c8")
+interface KeyEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e);
+}
+
+@uuid("38ef4b0f-14f8-42df-9a1e-a4bcc4af77f4")
+interface ManipulationCompletedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs e);
+}
+
+@uuid("aa1160cb-dfb9-4c56-abdc-711b63c8eb94")
+interface ManipulationDeltaEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs e);
+}
+
+@uuid("d39d6322-7c9c-481b-827b-c8b2d9bb6fc7")
+interface ManipulationInertiaStartingEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs e);
+}
+
+@uuid("f88345f8-e0a3-4be2-b90c-dc20e6d8beb0")
+interface ManipulationStartedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs e);
+}
+
+@uuid("10d0b04e-bfe4-42cb-823c-3fecd8770ef8")
+interface ManipulationStartingEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs e);
+}
+
+@uuid("e4385929-c004-4bcf-8970-359486e39f88")
+interface PointerEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e);
+}
+
+@uuid("2532a062-f447-4950-9c46-f1e34a2c2238")
+interface RightTappedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs e);
+}
+
+@uuid("68d940cc-9ff0-49ce-b141-3f07ec477b97")
+interface TappedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e);
+}
+
 @uuid("0c079e55-13fe-4d03-a61d-e12f06567286")
 @WinrtFactory("Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs")
 interface IAccessKeyDisplayRequestedEventArgs : IInspectable
@@ -31,7 +97,7 @@ interface IAccessKeyManagerStatics : IInspectable
 
 extern(Windows):
 	HRESULT get_IsDisplayModeEnabled(bool* return_value);
-	HRESULT add_IsDisplayModeEnabledChanged(Windows.Foundation.TypedEventHandler!(IInspectable*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_IsDisplayModeEnabledChanged(Windows.Foundation.TypedEventHandler!(IInspectable, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_IsDisplayModeEnabledChanged(EventRegistrationToken token);
 	HRESULT abi_ExitDisplayMode();
 }

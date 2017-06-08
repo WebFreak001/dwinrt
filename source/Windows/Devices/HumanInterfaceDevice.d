@@ -79,7 +79,7 @@ extern(Windows):
 	HRESULT abi_SendFeatureReportAsync(Windows.Devices.HumanInterfaceDevice.HidFeatureReport featureReport, Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
 	HRESULT abi_GetBooleanControlDescriptions(Windows.Devices.HumanInterfaceDevice.HidReportType reportType, UINT16 usagePage, UINT16 usageId, Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidBooleanControlDescription)* return_value);
 	HRESULT abi_GetNumericControlDescriptions(Windows.Devices.HumanInterfaceDevice.HidReportType reportType, UINT16 usagePage, UINT16 usageId, Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidNumericControlDescription)* return_value);
-	HRESULT add_InputReportReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.HumanInterfaceDevice.HidDevice*,Windows.Devices.HumanInterfaceDevice.HidInputReportReceivedEventArgs*) reportHandler, EventRegistrationToken* return_token);
+	HRESULT add_InputReportReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.HumanInterfaceDevice.HidDevice, Windows.Devices.HumanInterfaceDevice.HidInputReportReceivedEventArgs) reportHandler, EventRegistrationToken* return_token);
 	HRESULT remove_InputReportReceived(EventRegistrationToken token);
 }
 

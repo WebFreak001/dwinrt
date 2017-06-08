@@ -80,10 +80,10 @@ interface ISpatialSurfaceObserver : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_GetObservedSurfaces(Windows.Foundation.Collections.IMapView!(GUID,Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo*)* return_value);
+	HRESULT abi_GetObservedSurfaces(Windows.Foundation.Collections.IMapView!(GUID, Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo)* return_value);
 	HRESULT abi_SetBoundingVolume(Windows.Perception.Spatial.SpatialBoundingVolume bounds);
 	HRESULT abi_SetBoundingVolumes(Windows.Foundation.Collections.IIterable!(Windows.Perception.Spatial.SpatialBoundingVolume) bounds);
-	HRESULT add_ObservedSurfacesChanged(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ObservedSurfacesChanged(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ObservedSurfacesChanged(EventRegistrationToken token);
 }
 

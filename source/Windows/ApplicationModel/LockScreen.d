@@ -10,7 +10,7 @@ interface ILockApplicationHost : IInspectable
 
 extern(Windows):
 	HRESULT abi_RequestUnlock();
-	HRESULT add_Unlocking(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockApplicationHost*,Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Unlocking(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockApplicationHost, Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Unlocking(EventRegistrationToken token);
 }
 
@@ -45,16 +45,16 @@ interface ILockScreenInfo : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_LockScreenImageChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_LockScreenImageChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_LockScreenImageChanged(EventRegistrationToken token);
 	HRESULT get_LockScreenImage(Windows.Storage.Streams.IRandomAccessStream* return_value);
-	HRESULT add_BadgesChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_BadgesChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_BadgesChanged(EventRegistrationToken token);
 	HRESULT get_Badges(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.LockScreen.LockScreenBadge)* return_value);
-	HRESULT add_DetailTextChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DetailTextChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DetailTextChanged(EventRegistrationToken token);
 	HRESULT get_DetailText(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
-	HRESULT add_AlarmIconChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AlarmIconChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AlarmIconChanged(EventRegistrationToken token);
 	HRESULT get_AlarmIcon(Windows.Storage.Streams.IRandomAccessStream* return_value);
 }

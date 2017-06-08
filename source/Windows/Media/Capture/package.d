@@ -2,6 +2,25 @@ module Windows.Media.Capture;
 
 import dwinrt;
 
+struct WhiteBalanceGain
+{
+	double R;
+	double G;
+	double B;
+}
+
+@uuid("2014effb-5cd8-4f08-a314-0d360da59f14")
+interface MediaCaptureFailedEventHandler
+{
+	HRESULT abi_Invoke(Windows.Media.Capture.MediaCapture sender, Windows.Media.Capture.MediaCaptureFailedEventArgs errorEventArgs);
+}
+
+@uuid("3fae8f2e-4fe1-4ffd-aaba-e1f1337d4e53")
+interface RecordLimitationExceededEventHandler
+{
+	HRESULT abi_Invoke(Windows.Media.Capture.MediaCapture sender);
+}
+
 @uuid("f072728b-b292-4491-9d41-99807a550bbf")
 @WinrtFactory("Windows.Media.Capture.AdvancedCapturedPhoto")
 interface IAdvancedCapturedPhoto : IInspectable
@@ -33,9 +52,9 @@ interface IAdvancedPhotoCapture : IInspectable
 extern(Windows):
 	HRESULT abi_CaptureAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto)* return_operation);
 	HRESULT abi_CaptureWithContextAsync(IInspectable context, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto)* return_operation);
-	HRESULT add_OptionalReferencePhotoCaptured(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AdvancedPhotoCapture*,Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_OptionalReferencePhotoCaptured(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AdvancedPhotoCapture, Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_OptionalReferencePhotoCaptured(EventRegistrationToken token);
-	HRESULT add_AllPhotosCaptured(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AdvancedPhotoCapture*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AllPhotosCaptured(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AdvancedPhotoCapture, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AllPhotosCaptured(EventRegistrationToken token);
 	HRESULT abi_FinishAsync(Windows.Foundation.IAsyncAction* return_operation);
 }
@@ -58,7 +77,7 @@ extern(Windows):
 	HRESULT set_ViewerCount(UINT32 value);
 	HRESULT get_ViewerCount(UINT32* return_value);
 	HRESULT abi_TerminateBroadcast(Windows.Media.Capture.AppBroadcastTerminationReason reason, UINT32 providerSpecificReason);
-	HRESULT add_HeartbeatRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundService*,Windows.Media.Capture.AppBroadcastHeartbeatRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_HeartbeatRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundService, Windows.Media.Capture.AppBroadcastHeartbeatRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_HeartbeatRequested(EventRegistrationToken token);
 	HRESULT get_TitleId(HSTRING* return_value);
 }
@@ -78,7 +97,7 @@ extern(Windows):
 	HRESULT get_AuthenticationResult(Windows.Security.Authentication.Web.WebAuthenticationResult* return_value);
 	HRESULT set_UserName(HSTRING value);
 	HRESULT get_UserName(HSTRING* return_value);
-	HRESULT add_SignInStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo*,Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SignInStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo, Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SignInStateChanged(EventRegistrationToken token);
 }
 
@@ -97,11 +116,11 @@ extern(Windows):
 	HRESULT set_AudioCodec(HSTRING value);
 	HRESULT get_AudioCodec(HSTRING* return_value);
 	HRESULT get_BroadcastStreamReader(Windows.Media.Capture.AppBroadcastStreamReader* return_value);
-	HRESULT add_StreamStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo*,Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StreamStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StreamStateChanged(EventRegistrationToken token);
-	HRESULT add_VideoEncodingResolutionChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_VideoEncodingResolutionChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_VideoEncodingResolutionChanged(EventRegistrationToken token);
-	HRESULT add_VideoEncodingBitrateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_VideoEncodingBitrateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_VideoEncodingBitrateChanged(EventRegistrationToken token);
 }
 
@@ -241,7 +260,7 @@ extern(Windows):
 	HRESULT abi_StopPreview();
 	HRESULT get_PreviewState(Windows.Media.Capture.AppBroadcastPreviewState* return_value);
 	HRESULT get_ErrorCode(Windows.Foundation.IReference!(UINT32)* return_value);
-	HRESULT add_PreviewStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastPreview*,Windows.Media.Capture.AppBroadcastPreviewStateChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_PreviewStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastPreview, Windows.Media.Capture.AppBroadcastPreviewStateChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_PreviewStateChanged(EventRegistrationToken token);
 	HRESULT get_PreviewStreamReader(Windows.Media.Capture.AppBroadcastPreviewStreamReader* return_value);
 }
@@ -270,7 +289,7 @@ extern(Windows):
 	HRESULT get_VideoBitmapPixelFormat(Windows.Graphics.Imaging.BitmapPixelFormat* return_value);
 	HRESULT get_VideoBitmapAlphaMode(Windows.Graphics.Imaging.BitmapAlphaMode* return_value);
 	HRESULT abi_TryGetNextVideoFrame(Windows.Media.Capture.AppBroadcastPreviewStreamVideoFrame* return_frame);
-	HRESULT add_VideoFrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastPreviewStreamReader*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_VideoFrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastPreviewStreamReader, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_VideoFrameArrived(EventRegistrationToken token);
 }
 
@@ -386,17 +405,17 @@ extern(Windows):
 	HRESULT get_SignInState(Windows.Media.Capture.AppBroadcastSignInState* return_value);
 	HRESULT get_TerminationReason(Windows.Media.Capture.AppBroadcastTerminationReason* return_value);
 	HRESULT get_TerminationReasonPlugInSpecific(UINT32* return_value);
-	HRESULT add_ViewerCountChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState*,Windows.Media.Capture.AppBroadcastViewerCountChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_ViewerCountChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastViewerCountChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ViewerCountChanged(EventRegistrationToken token);
-	HRESULT add_MicrophoneCaptureStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState*,Windows.Media.Capture.AppBroadcastMicrophoneCaptureStateChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_MicrophoneCaptureStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastMicrophoneCaptureStateChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_MicrophoneCaptureStateChanged(EventRegistrationToken token);
-	HRESULT add_CameraCaptureStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState*,Windows.Media.Capture.AppBroadcastCameraCaptureStateChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_CameraCaptureStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastCameraCaptureStateChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_CameraCaptureStateChanged(EventRegistrationToken token);
-	HRESULT add_PlugInStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState*,Windows.Media.Capture.AppBroadcastPlugInStateChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PlugInStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastPlugInStateChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PlugInStateChanged(EventRegistrationToken token);
-	HRESULT add_StreamStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState*,Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StreamStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StreamStateChanged(EventRegistrationToken token);
-	HRESULT add_CaptureTargetClosed(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_CaptureTargetClosed(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_CaptureTargetClosed(EventRegistrationToken token);
 }
 
@@ -441,9 +460,9 @@ extern(Windows):
 	HRESULT get_VideoHeight(UINT32* return_value);
 	HRESULT get_VideoBitrate(UINT32* return_value);
 	HRESULT abi_TryGetNextVideoFrame(Windows.Media.Capture.AppBroadcastStreamVideoFrame* return_frame);
-	HRESULT add_AudioFrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastStreamReader*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_AudioFrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastStreamReader, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_AudioFrameArrived(EventRegistrationToken token);
-	HRESULT add_VideoFrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastStreamReader*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_VideoFrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastStreamReader, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_VideoFrameArrived(EventRegistrationToken token);
 }
 
@@ -512,7 +531,7 @@ interface IAppCapture : IInspectable
 extern(Windows):
 	HRESULT get_IsCapturingAudio(bool* return_value);
 	HRESULT get_IsCapturingVideo(bool* return_value);
-	HRESULT add_CapturingChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCapture*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_CapturingChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCapture, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CapturingChanged(EventRegistrationToken token);
 }
 
@@ -630,11 +649,11 @@ extern(Windows):
 	HRESULT get_Duration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
 	HRESULT get_File(Windows.Storage.StorageFile* return_value);
 	HRESULT get_IsFileTruncated(Windows.Foundation.IReference!(bool)* return_value);
-	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation*,Windows.Media.Capture.AppCaptureRecordingStateChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureRecordingStateChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_StateChanged(EventRegistrationToken token);
-	HRESULT add_DurationGenerated(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation*,Windows.Media.Capture.AppCaptureDurationGeneratedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_DurationGenerated(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureDurationGeneratedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_DurationGenerated(EventRegistrationToken token);
-	HRESULT add_FileGenerated(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation*,Windows.Media.Capture.AppCaptureFileGeneratedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_FileGenerated(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureFileGeneratedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_FileGenerated(EventRegistrationToken token);
 }
 
@@ -773,9 +792,9 @@ extern(Windows):
 	HRESULT abi_RestartMicrophoneCapture();
 	HRESULT get_MicrophoneCaptureState(Windows.Media.Capture.AppCaptureMicrophoneCaptureState* return_value);
 	HRESULT get_MicrophoneCaptureError(UINT32* return_value);
-	HRESULT add_MicrophoneCaptureStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureState*,Windows.Media.Capture.AppCaptureMicrophoneCaptureStateChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_MicrophoneCaptureStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureState, Windows.Media.Capture.AppCaptureMicrophoneCaptureStateChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_MicrophoneCaptureStateChanged(EventRegistrationToken token);
-	HRESULT add_CaptureTargetClosed(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureState*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_CaptureTargetClosed(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureState, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_CaptureTargetClosed(EventRegistrationToken token);
 }
 
@@ -925,7 +944,7 @@ extern(Windows):
 	HRESULT get_SessionId(HSTRING* return_value);
 	HRESULT get_AppBroadcastServices(Windows.Media.Capture.AppBroadcastServices* return_value);
 	HRESULT get_AppCaptureServices(Windows.Media.Capture.AppCaptureServices* return_value);
-	HRESULT add_CommandReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.GameBarServices*,Windows.Media.Capture.GameBarServicesCommandEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_CommandReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.GameBarServices, Windows.Media.Capture.GameBarServicesCommandEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_CommandReceived(EventRegistrationToken token);
 }
 
@@ -947,7 +966,7 @@ interface IGameBarServicesManager : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_GameBarServicesCreated(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.GameBarServicesManager*,Windows.Media.Capture.GameBarServicesManagerGameBarServicesCreatedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_GameBarServicesCreated(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.GameBarServicesManager, Windows.Media.Capture.GameBarServicesManagerGameBarServicesCreatedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_GameBarServicesCreated(EventRegistrationToken token);
 }
 
@@ -1039,7 +1058,7 @@ extern(Windows):
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_StopAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_FinishAsync(Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT add_PhotoCaptured(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.LowLagPhotoSequenceCapture*,Windows.Media.Capture.PhotoCapturedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PhotoCaptured(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.LowLagPhotoSequenceCapture, Windows.Media.Capture.PhotoCapturedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PhotoCaptured(EventRegistrationToken token);
 }
 
@@ -1064,9 +1083,9 @@ extern(Windows):
 	HRESULT abi_ClearEffectsAsync(Windows.Media.Capture.MediaStreamType mediaStreamType, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_SetEncoderProperty(Windows.Media.Capture.MediaStreamType mediaStreamType, GUID propertyId, IInspectable propertyValue);
 	HRESULT abi_GetEncoderProperty(Windows.Media.Capture.MediaStreamType mediaStreamType, GUID propertyId, IInspectable* return_propertyValue);
-	HRESULT add_Failed(Windows.Media.Capture.MediaCaptureFailedEventHandler* errorEventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_Failed(Windows.Media.Capture.MediaCaptureFailedEventHandler errorEventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_Failed(EventRegistrationToken eventCookie);
-	HRESULT add_RecordLimitationExceeded(Windows.Media.Capture.RecordLimitationExceededEventHandler* recordLimitationExceededEventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_RecordLimitationExceeded(Windows.Media.Capture.RecordLimitationExceededEventHandler recordLimitationExceededEventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_RecordLimitationExceeded(EventRegistrationToken eventCookie);
 	HRESULT get_MediaCaptureSettings(Windows.Media.Capture.MediaCaptureSettings* return_value);
 	HRESULT get_AudioDeviceController(Windows.Media.Devices.AudioDeviceController* return_value);
@@ -1103,9 +1122,9 @@ interface IMediaCapture3 : IInspectable
 
 extern(Windows):
 	HRESULT abi_PrepareVariablePhotoSequenceCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties type, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture)* return_operation);
-	HRESULT add_FocusChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture*,Windows.Media.Capture.MediaCaptureFocusChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_FocusChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFocusChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_FocusChanged(EventRegistrationToken token);
-	HRESULT add_PhotoConfirmationCaptured(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture*,Windows.Media.Capture.PhotoConfirmationCapturedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PhotoConfirmationCaptured(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.PhotoConfirmationCapturedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PhotoConfirmationCaptured(EventRegistrationToken token);
 }
 
@@ -1120,12 +1139,12 @@ extern(Windows):
 	HRESULT abi_AddVideoEffectAsync(Windows.Media.Effects.IVideoEffectDefinition definition, Windows.Media.Capture.MediaStreamType mediaStreamType, Windows.Foundation.IAsyncOperation!(Windows.Media.IMediaExtension)* return_op);
 	HRESULT abi_PauseRecordAsync(Windows.Media.Devices.MediaCapturePauseBehavior behavior, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_ResumeRecordAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
-	HRESULT add_CameraStreamStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_CameraStreamStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CameraStreamStateChanged(EventRegistrationToken token);
 	HRESULT get_CameraStreamState(Windows.Media.Devices.CameraStreamState* return_streamState);
 	HRESULT abi_GetPreviewFrameAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame)* return_operation);
 	HRESULT abi_GetPreviewFrameCopyAsync(Windows.Media.VideoFrame destination, Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame)* return_operation);
-	HRESULT add_ThermalStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ThermalStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ThermalStatusChanged(EventRegistrationToken token);
 	HRESULT get_ThermalStatus(Windows.Media.Capture.MediaCaptureThermalStatus* return_value);
 	HRESULT abi_PrepareAdvancedPhotoCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties encodingProperties, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedPhotoCapture)* return_operation);
@@ -1141,7 +1160,7 @@ extern(Windows):
 	HRESULT abi_RemoveEffectAsync(Windows.Media.IMediaExtension effect, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_PauseRecordWithResultAsync(Windows.Media.Devices.MediaCapturePauseBehavior behavior, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCapturePauseResult)* return_operation);
 	HRESULT abi_StopRecordWithResultAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCaptureStopResult)* return_operation);
-	HRESULT get_FrameSources(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.Media.Capture.Frames.MediaFrameSource*)* return_value);
+	HRESULT get_FrameSources(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Media.Capture.Frames.MediaFrameSource)* return_value);
 	HRESULT abi_CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader)* return_value);
 	HRESULT abi_CreateFrameReaderWithSubtypeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader)* return_value);
 	HRESULT abi_CreateFrameReaderWithSubtypeAndSizeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader)* return_value);
@@ -1154,7 +1173,7 @@ interface IMediaCapture6 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_CaptureDeviceExclusiveControlStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture*,Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_CaptureDeviceExclusiveControlStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CaptureDeviceExclusiveControlStatusChanged(EventRegistrationToken token);
 	HRESULT abi_CreateMultiSourceFrameReaderAsync(Windows.Foundation.Collections.IIterable!(Windows.Media.Capture.Frames.MediaFrameSource) inputSources, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader)* return_value);
 }

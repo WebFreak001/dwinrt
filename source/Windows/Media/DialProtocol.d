@@ -57,11 +57,11 @@ interface IDialDevicePicker : IInspectable
 extern(Windows):
 	HRESULT get_Filter(Windows.Media.DialProtocol.DialDevicePickerFilter* return_value);
 	HRESULT get_Appearance(Windows.Devices.Enumeration.DevicePickerAppearance* return_value);
-	HRESULT add_DialDeviceSelected(Windows.Foundation.TypedEventHandler!(Windows.Media.DialProtocol.DialDevicePicker*,Windows.Media.DialProtocol.DialDeviceSelectedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DialDeviceSelected(Windows.Foundation.TypedEventHandler!(Windows.Media.DialProtocol.DialDevicePicker, Windows.Media.DialProtocol.DialDeviceSelectedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DialDeviceSelected(EventRegistrationToken token);
-	HRESULT add_DisconnectButtonClicked(Windows.Foundation.TypedEventHandler!(Windows.Media.DialProtocol.DialDevicePicker*,Windows.Media.DialProtocol.DialDisconnectButtonClickedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DisconnectButtonClicked(Windows.Foundation.TypedEventHandler!(Windows.Media.DialProtocol.DialDevicePicker, Windows.Media.DialProtocol.DialDisconnectButtonClickedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DisconnectButtonClicked(EventRegistrationToken token);
-	HRESULT add_DialDevicePickerDismissed(Windows.Foundation.TypedEventHandler!(Windows.Media.DialProtocol.DialDevicePicker*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DialDevicePickerDismissed(Windows.Foundation.TypedEventHandler!(Windows.Media.DialProtocol.DialDevicePicker, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DialDevicePickerDismissed(EventRegistrationToken token);
 	HRESULT abi_Show(Windows.Foundation.Rect selection);
 	HRESULT abi_ShowWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement);

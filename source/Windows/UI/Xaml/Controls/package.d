@@ -2,6 +2,102 @@ module Windows.UI.Xaml.Controls;
 
 import dwinrt;
 
+@uuid("fa9bc21f-9892-482e-abf6-eb2d607d32de")
+interface BackClickEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.BackClickEventArgs e);
+}
+
+@uuid("8d745891-4de3-49cb-974b-083871a3afe6")
+interface CalendarViewDayItemChangingEventHandler
+{
+	HRESULT abi_Invoke(Windows.UI.Xaml.Controls.CalendarView sender, Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs e);
+}
+
+@uuid("cacad0d6-0f0d-4870-884d-f2dedf674288")
+interface CleanUpVirtualizedItemEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.CleanUpVirtualizedItemEventArgs e);
+}
+
+@uuid("df945151-745c-4446-b2fc-216d765847a0")
+interface ContextMenuOpeningEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.ContextMenuEventArgs e);
+}
+
+@uuid("3aaeab4c-14cb-4434-becc-88a8585c2f89")
+interface DragItemsStartingEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.DragItemsStartingEventArgs e);
+}
+
+@uuid("afe17b9b-9c63-4583-88e4-c59019b7f49d")
+interface HubSectionHeaderClickEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.HubSectionHeaderClickEventArgs e);
+}
+
+@uuid("3df6d14e-e18a-4a75-9395-627c5f3cd489")
+interface ItemClickEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.ItemClickEventArgs e);
+}
+
+@uuid("6af5da76-7e8b-4a91-9a56-460cb47d523f")
+interface ListViewItemToKeyHandler
+{
+	HRESULT abi_Invoke(IInspectable item, HSTRING* return_returnValue);
+}
+
+@uuid("26fd5855-b530-4688-b9f0-428249178ef8")
+interface ListViewKeyToItemHandler
+{
+	HRESULT abi_Invoke(HSTRING key, Windows.Foundation.IAsyncOperation!(IInspectable)* return_returnValue);
+}
+
+@uuid("c2fdd1f8-7105-4a74-a109-de29dff56b98")
+interface NotifyEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.NotifyEventArgs e);
+}
+
+@uuid("6becaa6a-63f8-47ff-b6ac-76e7da247d67")
+interface SectionsInViewChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.SectionsInViewChangedEventArgs e);
+}
+
+@uuid("e1a05352-5aa0-42ca-9cd9-068a14db6e68")
+interface SelectionChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.SelectionChangedEventArgs e);
+}
+
+@uuid("1fa9161d-5d73-44fb-81ac-d1c9384919d4")
+interface SemanticZoomViewChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.SemanticZoomViewChangedEventArgs e);
+}
+
+@uuid("8eb35b97-ad87-40e8-818b-77db24759566")
+interface TextChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.TextChangedEventArgs e);
+}
+
+@uuid("d56db359-6f77-4296-ab9c-794939444365")
+interface TextControlPasteEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.TextControlPasteEventArgs e);
+}
+
+@uuid("a31eafe1-41dc-47f8-ae22-9706c8f143d4")
+interface WebViewNavigationFailedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.WebViewNavigationFailedEventArgs e);
+}
+
 @uuid("7b0fc253-86a5-4b43-9872-0b8a6234b74b")
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBar")
 interface IAppBar : IInspectable
@@ -290,9 +386,9 @@ extern(Windows):
 	HRESULT set_AutoMaximizeSuggestionArea(bool value);
 	HRESULT get_TextBoxStyle(Windows.UI.Xaml.Style* return_value);
 	HRESULT set_TextBoxStyle(Windows.UI.Xaml.Style value);
-	HRESULT add_SuggestionChosen(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.AutoSuggestBox*,Windows.UI.Xaml.Controls.AutoSuggestBoxSuggestionChosenEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_SuggestionChosen(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.AutoSuggestBox, Windows.UI.Xaml.Controls.AutoSuggestBoxSuggestionChosenEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_SuggestionChosen(EventRegistrationToken token);
-	HRESULT add_TextChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.AutoSuggestBox*,Windows.UI.Xaml.Controls.AutoSuggestBoxTextChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TextChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.AutoSuggestBox, Windows.UI.Xaml.Controls.AutoSuggestBoxTextChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TextChanged(EventRegistrationToken token);
 }
 
@@ -305,7 +401,7 @@ interface IAutoSuggestBox2 : IInspectable
 extern(Windows):
 	HRESULT get_QueryIcon(Windows.UI.Xaml.Controls.IconElement* return_value);
 	HRESULT set_QueryIcon(Windows.UI.Xaml.Controls.IconElement value);
-	HRESULT add_QuerySubmitted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.AutoSuggestBox*,Windows.UI.Xaml.Controls.AutoSuggestBoxQuerySubmittedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_QuerySubmitted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.AutoSuggestBox, Windows.UI.Xaml.Controls.AutoSuggestBoxQuerySubmittedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_QuerySubmitted(EventRegistrationToken token);
 }
 
@@ -572,9 +668,9 @@ extern(Windows):
 	HRESULT set_IsOutOfScopeEnabled(bool value);
 	HRESULT get_IsGroupLabelVisible(bool* return_value);
 	HRESULT set_IsGroupLabelVisible(bool value);
-	HRESULT add_CalendarViewDayItemChanging(Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_CalendarViewDayItemChanging(Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_CalendarViewDayItemChanging(EventRegistrationToken token);
-	HRESULT add_DateChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarDatePicker*,Windows.UI.Xaml.Controls.CalendarDatePickerDateChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_DateChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarDatePicker, Windows.UI.Xaml.Controls.CalendarDatePickerDateChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_DateChanged(EventRegistrationToken token);
 	HRESULT add_Opened(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_Opened(EventRegistrationToken token);
@@ -758,9 +854,9 @@ extern(Windows):
 	HRESULT set_CalendarItemBorderThickness(Windows.UI.Xaml.Thickness value);
 	HRESULT get_CalendarViewDayItemStyle(Windows.UI.Xaml.Style* return_value);
 	HRESULT set_CalendarViewDayItemStyle(Windows.UI.Xaml.Style value);
-	HRESULT add_CalendarViewDayItemChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView*,Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_CalendarViewDayItemChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_CalendarViewDayItemChanging(EventRegistrationToken token);
-	HRESULT add_SelectedDatesChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView*,Windows.UI.Xaml.Controls.CalendarViewSelectedDatesChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_SelectedDatesChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewSelectedDatesChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_SelectedDatesChanged(EventRegistrationToken token);
 	HRESULT abi_SetDisplayDate(Windows.Foundation.DateTime date);
 	HRESULT abi_SetYearDecadeDisplayDimensions(INT32 columns, INT32 rows);
@@ -789,8 +885,8 @@ extern(Windows):
 	HRESULT get_InRecycleQueue(bool* return_value);
 	HRESULT get_Item(Windows.UI.Xaml.Controls.CalendarViewDayItem* return_value);
 	HRESULT get_Phase(UINT32* return_value);
-	HRESULT abi_RegisterUpdateCallback(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView*,Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs*) callback);
-	HRESULT abi_RegisterUpdateCallbackWithPhase(UINT32 callbackPhase, Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView*,Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs*) callback);
+	HRESULT abi_RegisterUpdateCallback(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs) callback);
+	HRESULT abi_RegisterUpdateCallbackWithPhase(UINT32 callbackPhase, Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs) callback);
 }
 
 @uuid("62112bdc-1d2f-4e44-9baf-1665749521f2")
@@ -1208,7 +1304,7 @@ extern(Windows):
 	HRESULT set_OverflowButtonVisibility(Windows.UI.Xaml.Controls.CommandBarOverflowButtonVisibility value);
 	HRESULT get_IsDynamicOverflowEnabled(bool* return_value);
 	HRESULT set_IsDynamicOverflowEnabled(bool value);
-	HRESULT add_DynamicOverflowItemsChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CommandBar*,Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_DynamicOverflowItemsChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CommandBar, Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_DynamicOverflowItemsChanging(EventRegistrationToken token);
 }
 
@@ -1300,8 +1396,8 @@ extern(Windows):
 	HRESULT get_Phase(UINT32* return_value);
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
-	HRESULT abi_RegisterUpdateCallback(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase*,Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs*) callback);
-	HRESULT abi_RegisterUpdateCallbackWithPhase(UINT32 callbackPhase, Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase*,Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs*) callback);
+	HRESULT abi_RegisterUpdateCallback(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs) callback);
+	HRESULT abi_RegisterUpdateCallbackWithPhase(UINT32 callbackPhase, Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs) callback);
 }
 
 @uuid("a26dd1dc-cd44-435c-be94-01d6241c231c")
@@ -1395,15 +1491,15 @@ extern(Windows):
 	HRESULT set_IsPrimaryButtonEnabled(bool value);
 	HRESULT get_IsSecondaryButtonEnabled(bool* return_value);
 	HRESULT set_IsSecondaryButtonEnabled(bool value);
-	HRESULT add_Closing(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog*,Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_Closing(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_Closing(EventRegistrationToken token);
-	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog*,Windows.UI.Xaml.Controls.ContentDialogClosedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogClosedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_Closed(EventRegistrationToken token);
-	HRESULT add_Opened(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog*,Windows.UI.Xaml.Controls.ContentDialogOpenedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_Opened(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogOpenedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_Opened(EventRegistrationToken token);
-	HRESULT add_PrimaryButtonClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog*,Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_PrimaryButtonClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_PrimaryButtonClick(EventRegistrationToken token);
-	HRESULT add_SecondaryButtonClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog*,Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_SecondaryButtonClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_SecondaryButtonClick(EventRegistrationToken token);
 	HRESULT abi_Hide();
 	HRESULT abi_ShowAsync(Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Controls.ContentDialogResult)* return_returnValue);
@@ -1430,7 +1526,7 @@ extern(Windows):
 	HRESULT set_CloseButtonStyle(Windows.UI.Xaml.Style value);
 	HRESULT get_DefaultButton(Windows.UI.Xaml.Controls.ContentDialogButton* return_value);
 	HRESULT set_DefaultButton(Windows.UI.Xaml.Controls.ContentDialogButton value);
-	HRESULT add_CloseButtonClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog*,Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_CloseButtonClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_CloseButtonClick(EventRegistrationToken token);
 }
 
@@ -1760,7 +1856,7 @@ extern(Windows):
 	HRESULT get_BorderBrush(Windows.UI.Xaml.Media.Brush* return_value);
 	HRESULT set_BorderBrush(Windows.UI.Xaml.Media.Brush value);
 	HRESULT get_FocusState(Windows.UI.Xaml.FocusState* return_value);
-	HRESULT add_IsEnabledChanged(Windows.UI.Xaml.DependencyPropertyChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_IsEnabledChanged(Windows.UI.Xaml.DependencyPropertyChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_IsEnabledChanged(EventRegistrationToken token);
 	HRESULT abi_ApplyTemplate(bool* return_returnValue);
 	HRESULT abi_Focus(Windows.UI.Xaml.FocusState value, bool* return_returnValue);
@@ -1811,9 +1907,9 @@ extern(Windows):
 	HRESULT set_XYFocusDown(Windows.UI.Xaml.DependencyObject value);
 	HRESULT get_ElementSoundMode(Windows.UI.Xaml.ElementSoundMode* return_value);
 	HRESULT set_ElementSoundMode(Windows.UI.Xaml.ElementSoundMode value);
-	HRESULT add_FocusEngaged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Control*,Windows.UI.Xaml.Controls.FocusEngagedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_FocusEngaged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.FocusEngagedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_FocusEngaged(EventRegistrationToken token);
-	HRESULT add_FocusDisengaged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Control*,Windows.UI.Xaml.Controls.FocusDisengagedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_FocusDisengaged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.FocusDisengagedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_FocusDisengaged(EventRegistrationToken token);
 	HRESULT abi_RemoveFocusEngagement();
 }
@@ -2118,7 +2214,7 @@ extern(Windows):
 	HRESULT set_MinYear(Windows.Foundation.DateTime value);
 	HRESULT get_MaxYear(Windows.Foundation.DateTime* return_value);
 	HRESULT set_MaxYear(Windows.Foundation.DateTime value);
-	HRESULT add_DatePicked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.DatePickerFlyout*,Windows.UI.Xaml.Controls.DatePickedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_DatePicked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.DatePickerFlyout, Windows.UI.Xaml.Controls.DatePickedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_DatePicked(EventRegistrationToken token);
 	HRESULT abi_ShowAtAsync(Windows.UI.Xaml.FrameworkElement target, Windows.Foundation.IAsyncOperation!(Windows.Foundation.IReference!(Windows.Foundation.DateTime))* return_returnValue);
 }
@@ -2463,13 +2559,13 @@ extern(Windows):
 	HRESULT get_SourcePageType(Windows.UI.Xaml.Interop.TypeName* return_value);
 	HRESULT set_SourcePageType(Windows.UI.Xaml.Interop.TypeName value);
 	HRESULT get_BackStackDepth(INT32* return_value);
-	HRESULT add_Navigated(Windows.UI.Xaml.Navigation.NavigatedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Navigated(Windows.UI.Xaml.Navigation.NavigatedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Navigated(EventRegistrationToken token);
-	HRESULT add_Navigating(Windows.UI.Xaml.Navigation.NavigatingCancelEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Navigating(Windows.UI.Xaml.Navigation.NavigatingCancelEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Navigating(EventRegistrationToken token);
-	HRESULT add_NavigationFailed(Windows.UI.Xaml.Navigation.NavigationFailedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_NavigationFailed(Windows.UI.Xaml.Navigation.NavigationFailedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_NavigationFailed(EventRegistrationToken token);
-	HRESULT add_NavigationStopped(Windows.UI.Xaml.Navigation.NavigationStoppedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_NavigationStopped(Windows.UI.Xaml.Navigation.NavigationStoppedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_NavigationStopped(EventRegistrationToken token);
 	HRESULT abi_GoBack();
 	HRESULT abi_GoForward();
@@ -2762,9 +2858,9 @@ extern(Windows):
 	HRESULT get_Sections(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection)* return_value);
 	HRESULT get_SectionsInView(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection)* return_value);
 	HRESULT get_SectionHeaders(Windows.Foundation.Collections.IObservableVector!(IInspectable)* return_value);
-	HRESULT add_SectionHeaderClick(Windows.UI.Xaml.Controls.HubSectionHeaderClickEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_SectionHeaderClick(Windows.UI.Xaml.Controls.HubSectionHeaderClickEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_SectionHeaderClick(EventRegistrationToken token);
-	HRESULT add_SectionsInViewChanged(Windows.UI.Xaml.Controls.SectionsInViewChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_SectionsInViewChanged(Windows.UI.Xaml.Controls.SectionsInViewChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_SectionsInViewChanged(EventRegistrationToken token);
 	HRESULT abi_ScrollToSection(Windows.UI.Xaml.Controls.HubSection section);
 }
@@ -2912,9 +3008,9 @@ extern(Windows):
 	HRESULT set_NineGrid(Windows.UI.Xaml.Thickness value);
 	deprecated("PlayToSource may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource.")
 	HRESULT get_PlayToSource(Windows.Media.PlayTo.PlayToSource* return_value);
-	HRESULT add_ImageFailed(Windows.UI.Xaml.ExceptionRoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ImageFailed(Windows.UI.Xaml.ExceptionRoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ImageFailed(EventRegistrationToken token);
-	HRESULT add_ImageOpened(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ImageOpened(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ImageOpened(EventRegistrationToken token);
 }
 
@@ -2989,14 +3085,14 @@ extern(Windows):
 	HRESULT set_IsRulerButtonChecked(bool value);
 	HRESULT get_TargetInkCanvas(Windows.UI.Xaml.Controls.InkCanvas* return_value);
 	HRESULT set_TargetInkCanvas(Windows.UI.Xaml.Controls.InkCanvas value);
-	HRESULT add_ActiveToolChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_ActiveToolChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_ActiveToolChanged(EventRegistrationToken token);
-	HRESULT add_InkDrawingAttributesChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_InkDrawingAttributesChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_InkDrawingAttributesChanged(EventRegistrationToken token);
-	HRESULT add_EraseAllClicked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_EraseAllClicked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_EraseAllClicked(EventRegistrationToken token);
 	deprecated("InkToolbarRulerButton is replaced by InkToolbarStencilButton starting from Windows 10 Creators Update. For more info, see MSDN.")
-	HRESULT add_IsRulerButtonCheckedChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_IsRulerButtonCheckedChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, IInspectable) value, EventRegistrationToken* return_token);
 	deprecated("InkToolbarRulerButton is replaced by InkToolbarStencilButton starting from Windows 10 Creators Update. For more info, see MSDN.")
 	HRESULT remove_IsRulerButtonCheckedChanged(EventRegistrationToken token);
 	HRESULT abi_GetToolButton(Windows.UI.Xaml.Controls.InkToolbarTool tool, Windows.UI.Xaml.Controls.InkToolbarToolButton* return_returnValue);
@@ -3016,7 +3112,7 @@ extern(Windows):
 	HRESULT set_ButtonFlyoutPlacement(Windows.UI.Xaml.Controls.InkToolbarButtonFlyoutPlacement value);
 	HRESULT get_Orientation(Windows.UI.Xaml.Controls.Orientation* return_value);
 	HRESULT set_Orientation(Windows.UI.Xaml.Controls.Orientation value);
-	HRESULT add_IsStencilButtonCheckedChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar*,Windows.UI.Xaml.Controls.InkToolbarIsStencilButtonCheckedChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_IsStencilButtonCheckedChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, Windows.UI.Xaml.Controls.InkToolbarIsStencilButtonCheckedChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_IsStencilButtonCheckedChanged(EventRegistrationToken token);
 	HRESULT abi_GetMenuButton(Windows.UI.Xaml.Controls.InkToolbarMenuKind menu, Windows.UI.Xaml.Controls.InkToolbarMenuButton* return_returnValue);
 }
@@ -3188,9 +3284,9 @@ extern(Windows):
 	HRESULT set_Kind(Windows.UI.Xaml.Controls.InkToolbarFlyoutItemKind value);
 	HRESULT get_IsChecked(bool* return_value);
 	HRESULT set_IsChecked(bool value);
-	HRESULT add_Checked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbarFlyoutItem*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_Checked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbarFlyoutItem, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_Checked(EventRegistrationToken token);
-	HRESULT add_Unchecked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbarFlyoutItem*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_Unchecked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbarFlyoutItem, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_Unchecked(EventRegistrationToken token);
 }
 
@@ -3492,7 +3588,7 @@ interface IItemContainerGenerator : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ItemsChanged(Windows.UI.Xaml.Controls.Primitives.ItemsChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ItemsChanged(Windows.UI.Xaml.Controls.Primitives.ItemsChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ItemsChanged(EventRegistrationToken token);
 	deprecated("ItemFromContainer may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.ItemFromContainer.")
 	HRESULT abi_ItemFromContainer(Windows.UI.Xaml.DependencyObject container, IInspectable* return_returnValue);
@@ -3907,7 +4003,7 @@ extern(Windows):
 	HRESULT get_SelectedValuePath(HSTRING* return_value);
 	HRESULT set_SelectedValuePath(HSTRING value);
 	HRESULT get_SelectedItems(Windows.Foundation.Collections.IVector!(IInspectable)* return_value);
-	HRESULT add_ItemsPicked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListPickerFlyout*,Windows.UI.Xaml.Controls.ItemsPickedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_ItemsPicked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListPickerFlyout, Windows.UI.Xaml.Controls.ItemsPickedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ItemsPicked(EventRegistrationToken token);
 	HRESULT abi_ShowAtAsync(Windows.UI.Xaml.FrameworkElement target, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(IInspectable))* return_returnValue);
 }
@@ -3953,9 +4049,9 @@ extern(Windows):
 	HRESULT set_IncrementalLoadingThreshold(double value);
 	HRESULT get_IncrementalLoadingTrigger(Windows.UI.Xaml.Controls.IncrementalLoadingTrigger* return_value);
 	HRESULT set_IncrementalLoadingTrigger(Windows.UI.Xaml.Controls.IncrementalLoadingTrigger value);
-	HRESULT add_ItemClick(Windows.UI.Xaml.Controls.ItemClickEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ItemClick(Windows.UI.Xaml.Controls.ItemClickEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ItemClick(EventRegistrationToken token);
-	HRESULT add_DragItemsStarting(Windows.UI.Xaml.Controls.DragItemsStartingEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_DragItemsStarting(Windows.UI.Xaml.Controls.DragItemsStartingEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_DragItemsStarting(EventRegistrationToken token);
 	HRESULT abi_ScrollIntoView(IInspectable item);
 	HRESULT abi_SelectAll();
@@ -3978,7 +4074,7 @@ interface IListViewBase2 : IInspectable
 extern(Windows):
 	HRESULT get_ShowsScrollingPlaceholders(bool* return_value);
 	HRESULT set_ShowsScrollingPlaceholders(bool value);
-	HRESULT add_ContainerContentChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase*,Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_ContainerContentChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ContainerContentChanging(EventRegistrationToken token);
 	HRESULT abi_SetDesiredContainerUpdateDuration(Windows.Foundation.TimeSpan duration);
 	HRESULT get_Footer(IInspectable* return_value);
@@ -4010,11 +4106,11 @@ extern(Windows):
 	HRESULT get_SelectedRanges(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Data.ItemIndexRange)* return_value);
 	HRESULT get_IsMultiSelectCheckBoxEnabled(bool* return_value);
 	HRESULT set_IsMultiSelectCheckBoxEnabled(bool value);
-	HRESULT add_DragItemsCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase*,Windows.UI.Xaml.Controls.DragItemsCompletedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_DragItemsCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.DragItemsCompletedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_DragItemsCompleted(EventRegistrationToken token);
-	HRESULT add_ChoosingItemContainer(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase*,Windows.UI.Xaml.Controls.ChoosingItemContainerEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_ChoosingItemContainer(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ChoosingItemContainerEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ChoosingItemContainer(EventRegistrationToken token);
-	HRESULT add_ChoosingGroupHeaderContainer(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase*,Windows.UI.Xaml.Controls.ChoosingGroupHeaderContainerEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_ChoosingGroupHeaderContainer(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ChoosingGroupHeaderContainerEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ChoosingGroupHeaderContainer(EventRegistrationToken token);
 	HRESULT abi_SelectRange(Windows.UI.Xaml.Data.ItemIndexRange itemIndexRange);
 	HRESULT abi_DeselectRange(Windows.UI.Xaml.Data.ItemIndexRange itemIndexRange);
@@ -4166,8 +4262,8 @@ interface IListViewPersistenceHelperStatics : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_GetRelativeScrollPosition(Windows.UI.Xaml.Controls.ListViewBase listViewBase, Windows.UI.Xaml.Controls.ListViewItemToKeyHandler* itemToKeyHandler, HSTRING* return_returnValue);
-	HRESULT abi_SetRelativeScrollPositionAsync(Windows.UI.Xaml.Controls.ListViewBase listViewBase, HSTRING relativeScrollPosition, Windows.UI.Xaml.Controls.ListViewKeyToItemHandler* keyToItemHandler, Windows.Foundation.IAsyncAction* return_returnValue);
+	HRESULT abi_GetRelativeScrollPosition(Windows.UI.Xaml.Controls.ListViewBase listViewBase, Windows.UI.Xaml.Controls.ListViewItemToKeyHandler itemToKeyHandler, HSTRING* return_returnValue);
+	HRESULT abi_SetRelativeScrollPositionAsync(Windows.UI.Xaml.Controls.ListViewBase listViewBase, HSTRING relativeScrollPosition, Windows.UI.Xaml.Controls.ListViewKeyToItemHandler keyToItemHandler, Windows.Foundation.IAsyncAction* return_returnValue);
 }
 
 @uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353")
@@ -4228,25 +4324,25 @@ extern(Windows):
 	HRESULT get_Stereo3DVideoRenderMode(Windows.UI.Xaml.Media.Stereo3DVideoRenderMode* return_value);
 	HRESULT set_Stereo3DVideoRenderMode(Windows.UI.Xaml.Media.Stereo3DVideoRenderMode value);
 	HRESULT get_IsStereo3DVideo(bool* return_value);
-	HRESULT add_MediaOpened(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_MediaOpened(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_MediaOpened(EventRegistrationToken token);
-	HRESULT add_MediaEnded(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_MediaEnded(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_MediaEnded(EventRegistrationToken token);
-	HRESULT add_MediaFailed(Windows.UI.Xaml.ExceptionRoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_MediaFailed(Windows.UI.Xaml.ExceptionRoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_MediaFailed(EventRegistrationToken token);
-	HRESULT add_DownloadProgressChanged(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_DownloadProgressChanged(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_DownloadProgressChanged(EventRegistrationToken token);
-	HRESULT add_BufferingProgressChanged(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_BufferingProgressChanged(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_BufferingProgressChanged(EventRegistrationToken token);
-	HRESULT add_CurrentStateChanged(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_CurrentStateChanged(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_CurrentStateChanged(EventRegistrationToken token);
-	HRESULT add_MarkerReached(Windows.UI.Xaml.Media.TimelineMarkerRoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_MarkerReached(Windows.UI.Xaml.Media.TimelineMarkerRoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_MarkerReached(EventRegistrationToken token);
-	HRESULT add_RateChanged(Windows.UI.Xaml.Media.RateChangedRoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_RateChanged(Windows.UI.Xaml.Media.RateChangedRoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_RateChanged(EventRegistrationToken token);
-	HRESULT add_VolumeChanged(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_VolumeChanged(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_VolumeChanged(EventRegistrationToken token);
-	HRESULT add_SeekCompleted(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_SeekCompleted(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_SeekCompleted(EventRegistrationToken token);
 	HRESULT abi_Stop();
 	HRESULT abi_Play();
@@ -4289,7 +4385,7 @@ interface IMediaElement3 : IInspectable
 extern(Windows):
 	HRESULT get_TransportControls(Windows.UI.Xaml.Controls.MediaTransportControls* return_value);
 	HRESULT set_TransportControls(Windows.UI.Xaml.Controls.MediaTransportControls value);
-	HRESULT add_PartialMediaFailureDetected(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.MediaElement*,Windows.UI.Xaml.Media.PartialMediaFailureDetectedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_PartialMediaFailureDetected(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.MediaElement, Windows.UI.Xaml.Media.PartialMediaFailureDetectedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_PartialMediaFailureDetected(EventRegistrationToken token);
 	HRESULT abi_SetPlaybackSource(Windows.Media.Playback.IMediaPlaybackSource source);
 	HRESULT abi_GetAsCastingSource(Windows.Media.Casting.CastingSource* return_returnValue);
@@ -4504,7 +4600,7 @@ extern(Windows):
 	HRESULT set_IsPreviousTrackButtonVisible(bool value);
 	HRESULT get_FastPlayFallbackBehaviour(Windows.UI.Xaml.Media.FastPlayFallbackBehaviour* return_value);
 	HRESULT set_FastPlayFallbackBehaviour(Windows.UI.Xaml.Media.FastPlayFallbackBehaviour value);
-	HRESULT add_ThumbnailRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.MediaTransportControls*,Windows.UI.Xaml.Media.MediaTransportControlsThumbnailRequestedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_ThumbnailRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.MediaTransportControls, Windows.UI.Xaml.Media.MediaTransportControlsThumbnailRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ThumbnailRequested(EventRegistrationToken token);
 }
 
@@ -4617,7 +4713,7 @@ extern(Windows):
 	HRESULT set_Command(Windows.UI.Xaml.Input.ICommand value);
 	HRESULT get_CommandParameter(IInspectable* return_value);
 	HRESULT set_CommandParameter(IInspectable value);
-	HRESULT add_Click(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Click(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Click(EventRegistrationToken token);
 }
 
@@ -4880,9 +4976,9 @@ extern(Windows):
 	HRESULT set_IsPasswordRevealButtonEnabled(bool value);
 	HRESULT get_MaxLength(INT32* return_value);
 	HRESULT set_MaxLength(INT32 value);
-	HRESULT add_PasswordChanged(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_PasswordChanged(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_PasswordChanged(EventRegistrationToken token);
-	HRESULT add_ContextMenuOpening(Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ContextMenuOpening(Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ContextMenuOpening(EventRegistrationToken token);
 	HRESULT abi_SelectAll();
 }
@@ -4904,7 +5000,7 @@ extern(Windows):
 	HRESULT set_SelectionHighlightColor(Windows.UI.Xaml.Media.SolidColorBrush value);
 	HRESULT get_PreventKeyboardDisplayOnProgrammaticFocus(bool* return_value);
 	HRESULT set_PreventKeyboardDisplayOnProgrammaticFocus(bool value);
-	HRESULT add_Paste(Windows.UI.Xaml.Controls.TextControlPasteEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Paste(Windows.UI.Xaml.Controls.TextControlPasteEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Paste(EventRegistrationToken token);
 }
 
@@ -5005,7 +5101,7 @@ extern(Windows):
 	HRESULT set_Content(Windows.UI.Xaml.UIElement value);
 	HRESULT get_ConfirmationButtonsVisible(bool* return_value);
 	HRESULT set_ConfirmationButtonsVisible(bool value);
-	HRESULT add_Confirmed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.PickerFlyout*,Windows.UI.Xaml.Controls.PickerConfirmedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_Confirmed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.PickerFlyout, Windows.UI.Xaml.Controls.PickerConfirmedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_Confirmed(EventRegistrationToken token);
 	HRESULT abi_ShowAtAsync(Windows.UI.Xaml.FrameworkElement target, Windows.Foundation.IAsyncOperation!(bool)* return_returnValue);
 }
@@ -5040,15 +5136,15 @@ extern(Windows):
 	HRESULT set_SelectedItem(IInspectable value);
 	HRESULT get_IsLocked(bool* return_value);
 	HRESULT set_IsLocked(bool value);
-	HRESULT add_SelectionChanged(Windows.UI.Xaml.Controls.SelectionChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_SelectionChanged(Windows.UI.Xaml.Controls.SelectionChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_SelectionChanged(EventRegistrationToken token);
-	HRESULT add_PivotItemLoading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot*,Windows.UI.Xaml.Controls.PivotItemEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_PivotItemLoading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_PivotItemLoading(EventRegistrationToken token);
-	HRESULT add_PivotItemLoaded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot*,Windows.UI.Xaml.Controls.PivotItemEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_PivotItemLoaded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_PivotItemLoaded(EventRegistrationToken token);
-	HRESULT add_PivotItemUnloading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot*,Windows.UI.Xaml.Controls.PivotItemEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_PivotItemUnloading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_PivotItemUnloading(EventRegistrationToken token);
-	HRESULT add_PivotItemUnloaded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot*,Windows.UI.Xaml.Controls.PivotItemEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_PivotItemUnloaded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_PivotItemUnloaded(EventRegistrationToken token);
 }
 
@@ -5377,11 +5473,11 @@ extern(Windows):
 	HRESULT get_Document(Windows.UI.Text.ITextDocument* return_value);
 	HRESULT get_InputScope(Windows.UI.Xaml.Input.InputScope* return_value);
 	HRESULT set_InputScope(Windows.UI.Xaml.Input.InputScope value);
-	HRESULT add_TextChanged(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_TextChanged(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_TextChanged(EventRegistrationToken token);
-	HRESULT add_SelectionChanged(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_SelectionChanged(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_SelectionChanged(EventRegistrationToken token);
-	HRESULT add_ContextMenuOpening(Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ContextMenuOpening(Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ContextMenuOpening(EventRegistrationToken token);
 }
 
@@ -5404,7 +5500,7 @@ extern(Windows):
 	HRESULT set_PreventKeyboardDisplayOnProgrammaticFocus(bool value);
 	HRESULT get_IsColorFontEnabled(bool* return_value);
 	HRESULT set_IsColorFontEnabled(bool value);
-	HRESULT add_Paste(Windows.UI.Xaml.Controls.TextControlPasteEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Paste(Windows.UI.Xaml.Controls.TextControlPasteEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Paste(EventRegistrationToken token);
 }
 
@@ -5415,19 +5511,19 @@ interface IRichEditBox3 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_TextCompositionStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox*,Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TextCompositionStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TextCompositionStarted(EventRegistrationToken token);
-	HRESULT add_TextCompositionChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox*,Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TextCompositionChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TextCompositionChanged(EventRegistrationToken token);
-	HRESULT add_TextCompositionEnded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox*,Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TextCompositionEnded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TextCompositionEnded(EventRegistrationToken token);
 	HRESULT get_TextReadingOrder(Windows.UI.Xaml.TextReadingOrder* return_value);
 	HRESULT set_TextReadingOrder(Windows.UI.Xaml.TextReadingOrder value);
 	HRESULT get_DesiredCandidateWindowAlignment(Windows.UI.Xaml.Controls.CandidateWindowAlignment* return_value);
 	HRESULT set_DesiredCandidateWindowAlignment(Windows.UI.Xaml.Controls.CandidateWindowAlignment value);
-	HRESULT add_CandidateWindowBoundsChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox*,Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_CandidateWindowBoundsChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_CandidateWindowBoundsChanged(EventRegistrationToken token);
-	HRESULT add_TextChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox*,Windows.UI.Xaml.Controls.RichEditBoxTextChangingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TextChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.RichEditBoxTextChangingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TextChanging(EventRegistrationToken token);
 }
 
@@ -5584,9 +5680,9 @@ extern(Windows):
 	HRESULT get_SelectionStart(Windows.UI.Xaml.Documents.TextPointer* return_value);
 	HRESULT get_SelectionEnd(Windows.UI.Xaml.Documents.TextPointer* return_value);
 	HRESULT get_BaselineOffset(double* return_value);
-	HRESULT add_SelectionChanged(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_SelectionChanged(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_SelectionChanged(EventRegistrationToken token);
-	HRESULT add_ContextMenuOpening(Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ContextMenuOpening(Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ContextMenuOpening(EventRegistrationToken token);
 	HRESULT abi_SelectAll();
 	HRESULT abi_Select(Windows.UI.Xaml.Documents.TextPointer start, Windows.UI.Xaml.Documents.TextPointer end);
@@ -6057,15 +6153,15 @@ extern(Windows):
 	HRESULT set_FocusOnKeyboardInput(bool value);
 	HRESULT get_ChooseSuggestionOnEnter(bool* return_value);
 	HRESULT set_ChooseSuggestionOnEnter(bool value);
-	HRESULT add_QueryChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox*,Windows.UI.Xaml.Controls.SearchBoxQueryChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_QueryChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxQueryChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_QueryChanged(EventRegistrationToken token);
-	HRESULT add_SuggestionsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox*,Windows.UI.Xaml.Controls.SearchBoxSuggestionsRequestedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_SuggestionsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxSuggestionsRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_SuggestionsRequested(EventRegistrationToken token);
-	HRESULT add_QuerySubmitted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox*,Windows.UI.Xaml.Controls.SearchBoxQuerySubmittedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_QuerySubmitted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxQuerySubmittedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_QuerySubmitted(EventRegistrationToken token);
-	HRESULT add_ResultSuggestionChosen(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox*,Windows.UI.Xaml.Controls.SearchBoxResultSuggestionChosenEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_ResultSuggestionChosen(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxResultSuggestionChosenEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ResultSuggestionChosen(EventRegistrationToken token);
-	HRESULT add_PrepareForFocusOnKeyboardInput(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox*,Windows.UI.Xaml.RoutedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_PrepareForFocusOnKeyboardInput(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.RoutedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_PrepareForFocusOnKeyboardInput(EventRegistrationToken token);
 	HRESULT abi_SetLocalContentSuggestionSettings(Windows.ApplicationModel.Search.LocalContentSuggestionSettings settings);
 }
@@ -6191,9 +6287,9 @@ extern(Windows):
 	HRESULT set_IsZoomedInViewActive(bool value);
 	HRESULT get_CanChangeViews(bool* return_value);
 	HRESULT set_CanChangeViews(bool value);
-	HRESULT add_ViewChangeStarted(Windows.UI.Xaml.Controls.SemanticZoomViewChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ViewChangeStarted(Windows.UI.Xaml.Controls.SemanticZoomViewChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ViewChangeStarted(EventRegistrationToken token);
-	HRESULT add_ViewChangeCompleted(Windows.UI.Xaml.Controls.SemanticZoomViewChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ViewChangeCompleted(Windows.UI.Xaml.Controls.SemanticZoomViewChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ViewChangeCompleted(EventRegistrationToken token);
 	HRESULT abi_ToggleActiveView();
 	HRESULT get_IsZoomOutButtonEnabled(bool* return_value);
@@ -6279,7 +6375,7 @@ extern(Windows):
 	HRESULT get_IconSource(Windows.UI.Xaml.Media.ImageSource* return_value);
 	HRESULT set_IconSource(Windows.UI.Xaml.Media.ImageSource value);
 	HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.SettingsFlyoutTemplateSettings* return_value);
-	HRESULT add_BackClick(Windows.UI.Xaml.Controls.BackClickEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_BackClick(Windows.UI.Xaml.Controls.BackClickEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_BackClick(EventRegistrationToken token);
 	HRESULT abi_Show();
 	HRESULT abi_ShowIndependent();
@@ -6412,9 +6508,9 @@ extern(Windows):
 	HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.SplitViewTemplateSettings* return_value);
 	HRESULT get_PaneBackground(Windows.UI.Xaml.Media.Brush* return_value);
 	HRESULT set_PaneBackground(Windows.UI.Xaml.Media.Brush value);
-	HRESULT add_PaneClosing(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SplitView*,Windows.UI.Xaml.Controls.SplitViewPaneClosingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_PaneClosing(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SplitView, Windows.UI.Xaml.Controls.SplitViewPaneClosingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_PaneClosing(EventRegistrationToken token);
-	HRESULT add_PaneClosed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SplitView*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_PaneClosed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SplitView, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_PaneClosed(EventRegistrationToken token);
 }
 
@@ -6601,7 +6697,7 @@ interface ISwapChainPanel : IInspectable
 extern(Windows):
 	HRESULT get_CompositionScaleX(FLOAT* return_value);
 	HRESULT get_CompositionScaleY(FLOAT* return_value);
-	HRESULT add_CompositionScaleChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SwapChainPanel*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_CompositionScaleChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SwapChainPanel, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_CompositionScaleChanged(EventRegistrationToken token);
 	HRESULT abi_CreateCoreIndependentInputSource(Windows.UI.Core.CoreInputDeviceTypes deviceTypes, Windows.UI.Core.CoreIndependentInputSource* return_returnValue);
 }
@@ -6702,9 +6798,9 @@ extern(Windows):
 	HRESULT get_SelectionStart(Windows.UI.Xaml.Documents.TextPointer* return_value);
 	HRESULT get_SelectionEnd(Windows.UI.Xaml.Documents.TextPointer* return_value);
 	HRESULT get_BaselineOffset(double* return_value);
-	HRESULT add_SelectionChanged(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_SelectionChanged(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_SelectionChanged(EventRegistrationToken token);
-	HRESULT add_ContextMenuOpening(Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ContextMenuOpening(Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ContextMenuOpening(EventRegistrationToken token);
 	HRESULT abi_SelectAll();
 	HRESULT abi_Select(Windows.UI.Xaml.Documents.TextPointer start, Windows.UI.Xaml.Documents.TextPointer end);
@@ -6855,11 +6951,11 @@ extern(Windows):
 	HRESULT set_IsTextPredictionEnabled(bool value);
 	HRESULT get_InputScope(Windows.UI.Xaml.Input.InputScope* return_value);
 	HRESULT set_InputScope(Windows.UI.Xaml.Input.InputScope value);
-	HRESULT add_TextChanged(Windows.UI.Xaml.Controls.TextChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_TextChanged(Windows.UI.Xaml.Controls.TextChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_TextChanged(EventRegistrationToken token);
-	HRESULT add_SelectionChanged(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_SelectionChanged(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_SelectionChanged(EventRegistrationToken token);
-	HRESULT add_ContextMenuOpening(Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ContextMenuOpening(Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ContextMenuOpening(EventRegistrationToken token);
 	HRESULT abi_Select(INT32 start, INT32 length);
 	HRESULT abi_SelectAll();
@@ -6885,7 +6981,7 @@ extern(Windows):
 	HRESULT set_PreventKeyboardDisplayOnProgrammaticFocus(bool value);
 	HRESULT get_IsColorFontEnabled(bool* return_value);
 	HRESULT set_IsColorFontEnabled(bool value);
-	HRESULT add_Paste(Windows.UI.Xaml.Controls.TextControlPasteEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Paste(Windows.UI.Xaml.Controls.TextControlPasteEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Paste(EventRegistrationToken token);
 }
 
@@ -6896,19 +6992,19 @@ interface ITextBox3 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_TextCompositionStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox*,Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TextCompositionStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TextCompositionStarted(EventRegistrationToken token);
-	HRESULT add_TextCompositionChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox*,Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TextCompositionChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TextCompositionChanged(EventRegistrationToken token);
-	HRESULT add_TextCompositionEnded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox*,Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TextCompositionEnded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TextCompositionEnded(EventRegistrationToken token);
 	HRESULT get_TextReadingOrder(Windows.UI.Xaml.TextReadingOrder* return_value);
 	HRESULT set_TextReadingOrder(Windows.UI.Xaml.TextReadingOrder value);
 	HRESULT get_DesiredCandidateWindowAlignment(Windows.UI.Xaml.Controls.CandidateWindowAlignment* return_value);
 	HRESULT set_DesiredCandidateWindowAlignment(Windows.UI.Xaml.Controls.CandidateWindowAlignment value);
-	HRESULT add_CandidateWindowBoundsChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox*,Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_CandidateWindowBoundsChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_CandidateWindowBoundsChanged(EventRegistrationToken token);
-	HRESULT add_TextChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox*,Windows.UI.Xaml.Controls.TextBoxTextChangingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TextChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextBoxTextChangingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TextChanging(EventRegistrationToken token);
 }
 
@@ -7117,7 +7213,7 @@ extern(Windows):
 	HRESULT set_Time(Windows.Foundation.TimeSpan value);
 	HRESULT get_MinuteIncrement(INT32* return_value);
 	HRESULT set_MinuteIncrement(INT32 value);
-	HRESULT add_TimePicked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TimePickerFlyout*,Windows.UI.Xaml.Controls.TimePickedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TimePicked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TimePickerFlyout, Windows.UI.Xaml.Controls.TimePickedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TimePicked(EventRegistrationToken token);
 	HRESULT abi_ShowAtAsync(Windows.UI.Xaml.FrameworkElement target, Windows.Foundation.IAsyncOperation!(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan))* return_returnValue);
 }
@@ -7222,7 +7318,7 @@ extern(Windows):
 	HRESULT get_OffContentTemplate(Windows.UI.Xaml.DataTemplate* return_value);
 	HRESULT set_OffContentTemplate(Windows.UI.Xaml.DataTemplate value);
 	HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.ToggleSwitchTemplateSettings* return_value);
-	HRESULT add_Toggled(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Toggled(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Toggled(EventRegistrationToken token);
 }
 
@@ -7273,9 +7369,9 @@ extern(Windows):
 	HRESULT get_VerticalOffset(double* return_value);
 	HRESULT set_VerticalOffset(double value);
 	HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.ToolTipTemplateSettings* return_value);
-	HRESULT add_Closed(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Closed(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Closed(EventRegistrationToken token);
-	HRESULT add_Opened(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Opened(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Opened(EventRegistrationToken token);
 }
 
@@ -7475,7 +7571,7 @@ extern(Windows):
 	HRESULT set_AreScrollSnapPointsRegular(bool value);
 	HRESULT get_Orientation(Windows.UI.Xaml.Controls.Orientation* return_value);
 	HRESULT set_Orientation(Windows.UI.Xaml.Controls.Orientation value);
-	HRESULT add_CleanUpVirtualizedItemEvent(Windows.UI.Xaml.Controls.CleanUpVirtualizedItemEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_CleanUpVirtualizedItemEvent(Windows.UI.Xaml.Controls.CleanUpVirtualizedItemEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_CleanUpVirtualizedItemEvent(EventRegistrationToken token);
 }
 
@@ -7521,13 +7617,13 @@ extern(Windows):
 	deprecated("Use CaptureSelectedContentToDataPackageAsync instead of DataTransferPackage. For more info, see MSDN.")
 	HRESULT get_DataTransferPackage(Windows.ApplicationModel.DataTransfer.DataPackage* return_value);
 	deprecated("LoadCompleted may be altered or unavailable for releases after Windows 8.1. Instead, use NavigationCompleted.")
-	HRESULT add_LoadCompleted(Windows.UI.Xaml.Navigation.LoadCompletedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_LoadCompleted(Windows.UI.Xaml.Navigation.LoadCompletedEventHandler value, EventRegistrationToken* return_token);
 	deprecated("LoadCompleted may be altered or unavailable for releases after Windows 8.1. Instead, use NavigationCompleted.")
 	HRESULT remove_LoadCompleted(EventRegistrationToken token);
-	HRESULT add_ScriptNotify(Windows.UI.Xaml.Controls.NotifyEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ScriptNotify(Windows.UI.Xaml.Controls.NotifyEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ScriptNotify(EventRegistrationToken token);
 	deprecated("NavigationFailed may be altered or unavailable for releases after Windows 8.1. Instead, use NavigationCompleted.")
-	HRESULT add_NavigationFailed(Windows.UI.Xaml.Controls.WebViewNavigationFailedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_NavigationFailed(Windows.UI.Xaml.Controls.WebViewNavigationFailedEventHandler value, EventRegistrationToken* return_token);
 	deprecated("NavigationFailed may be altered or unavailable for releases after Windows 8.1. Instead, use NavigationCompleted.")
 	HRESULT remove_NavigationFailed(EventRegistrationToken token);
 	deprecated("Use InvokeScriptAsync instead of InvokeScript. For more info, see MSDN.")
@@ -7546,11 +7642,11 @@ extern(Windows):
 	HRESULT get_CanGoBack(bool* return_value);
 	HRESULT get_CanGoForward(bool* return_value);
 	HRESULT get_DocumentTitle(HSTRING* return_value);
-	HRESULT add_NavigationStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,Windows.UI.Xaml.Controls.WebViewNavigationStartingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_NavigationStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationStartingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_NavigationStarting(EventRegistrationToken token);
-	HRESULT add_ContentLoading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,Windows.UI.Xaml.Controls.WebViewContentLoadingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_ContentLoading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewContentLoadingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ContentLoading(EventRegistrationToken token);
-	HRESULT add_DOMContentLoaded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,Windows.UI.Xaml.Controls.WebViewDOMContentLoadedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_DOMContentLoaded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewDOMContentLoadedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_DOMContentLoaded(EventRegistrationToken token);
 	HRESULT abi_GoForward();
 	HRESULT abi_GoBack();
@@ -7563,21 +7659,21 @@ extern(Windows):
 	HRESULT abi_BuildLocalStreamUri(HSTRING contentIdentifier, HSTRING relativePath, Windows.Foundation.Uri* return_returnValue);
 	HRESULT get_DefaultBackgroundColor(Windows.UI.Color* return_value);
 	HRESULT set_DefaultBackgroundColor(Windows.UI.Color value);
-	HRESULT add_NavigationCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_NavigationCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_NavigationCompleted(EventRegistrationToken token);
-	HRESULT add_FrameNavigationStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,Windows.UI.Xaml.Controls.WebViewNavigationStartingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_FrameNavigationStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationStartingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_FrameNavigationStarting(EventRegistrationToken token);
-	HRESULT add_FrameContentLoading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,Windows.UI.Xaml.Controls.WebViewContentLoadingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_FrameContentLoading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewContentLoadingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_FrameContentLoading(EventRegistrationToken token);
-	HRESULT add_FrameDOMContentLoaded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,Windows.UI.Xaml.Controls.WebViewDOMContentLoadedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_FrameDOMContentLoaded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewDOMContentLoadedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_FrameDOMContentLoaded(EventRegistrationToken token);
-	HRESULT add_FrameNavigationCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_FrameNavigationCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_FrameNavigationCompleted(EventRegistrationToken token);
-	HRESULT add_LongRunningScriptDetected(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_LongRunningScriptDetected(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_LongRunningScriptDetected(EventRegistrationToken token);
-	HRESULT add_UnsafeContentWarningDisplaying(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_UnsafeContentWarningDisplaying(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_UnsafeContentWarningDisplaying(EventRegistrationToken token);
-	HRESULT add_UnviewableContentIdentified(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,Windows.UI.Xaml.Controls.WebViewUnviewableContentIdentifiedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_UnviewableContentIdentified(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewUnviewableContentIdentifiedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_UnviewableContentIdentified(EventRegistrationToken token);
 	HRESULT abi_NavigateWithHttpRequestMessage(Windows.Web.Http.HttpRequestMessage requestMessage);
 	HRESULT abi_Focus(Windows.UI.Xaml.FocusState value, bool* return_returnValue);
@@ -7591,7 +7687,7 @@ interface IWebView3 : IInspectable
 
 extern(Windows):
 	HRESULT get_ContainsFullScreenElement(bool* return_value);
-	HRESULT add_ContainsFullScreenElementChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_ContainsFullScreenElementChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_ContainsFullScreenElementChanged(EventRegistrationToken token);
 }
 
@@ -7605,11 +7701,11 @@ extern(Windows):
 	HRESULT get_ExecutionMode(Windows.UI.Xaml.Controls.WebViewExecutionMode* return_value);
 	HRESULT get_DeferredPermissionRequests(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.WebViewDeferredPermissionRequest)* return_value);
 	HRESULT get_Settings(Windows.UI.Xaml.Controls.WebViewSettings* return_value);
-	HRESULT add_UnsupportedUriSchemeIdentified(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,Windows.UI.Xaml.Controls.WebViewUnsupportedUriSchemeIdentifiedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_UnsupportedUriSchemeIdentified(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewUnsupportedUriSchemeIdentifiedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_UnsupportedUriSchemeIdentified(EventRegistrationToken token);
-	HRESULT add_NewWindowRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,Windows.UI.Xaml.Controls.WebViewNewWindowRequestedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_NewWindowRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNewWindowRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_NewWindowRequested(EventRegistrationToken token);
-	HRESULT add_PermissionRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView*,Windows.UI.Xaml.Controls.WebViewPermissionRequestedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_PermissionRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewPermissionRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_PermissionRequested(EventRegistrationToken token);
 	HRESULT abi_AddWebAllowedObject(HSTRING name, IInspectable pObject);
 	HRESULT abi_DeferredPermissionRequestById(UINT32 id, Windows.UI.Xaml.Controls.WebViewDeferredPermissionRequest* return_returnValue);

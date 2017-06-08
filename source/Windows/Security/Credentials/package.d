@@ -125,7 +125,7 @@ interface IWebAccount2 : IInspectable
 
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING,HSTRING)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING)* return_value);
 	HRESULT abi_GetPictureAsync(Windows.Security.Credentials.WebAccountPictureSize desizedSize, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream)* return_asyncInfo);
 	HRESULT abi_SignOutAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_SignOutWithClientIdAsync(HSTRING clientId, Windows.Foundation.IAsyncAction* return_asyncInfo);

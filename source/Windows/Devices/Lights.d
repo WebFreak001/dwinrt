@@ -17,7 +17,7 @@ extern(Windows):
 	HRESULT get_IsColorSettable(bool* return_value);
 	HRESULT get_Color(Windows.UI.Color* return_value);
 	HRESULT set_Color(Windows.UI.Color value);
-	HRESULT add_AvailabilityChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Lights.Lamp*,Windows.Devices.Lights.LampAvailabilityChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AvailabilityChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Lights.Lamp, Windows.Devices.Lights.LampAvailabilityChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AvailabilityChanged(EventRegistrationToken token);
 }
 

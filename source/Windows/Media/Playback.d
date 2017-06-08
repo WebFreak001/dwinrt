@@ -93,13 +93,13 @@ interface IMediaBreakManager : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_BreaksSeekedOver(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager*,Windows.Media.Playback.MediaBreakSeekedOverEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_BreaksSeekedOver(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSeekedOverEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_BreaksSeekedOver(EventRegistrationToken token);
-	HRESULT add_BreakStarted(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager*,Windows.Media.Playback.MediaBreakStartedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_BreakStarted(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakStartedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_BreakStarted(EventRegistrationToken token);
-	HRESULT add_BreakEnded(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager*,Windows.Media.Playback.MediaBreakEndedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_BreakEnded(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakEndedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_BreakEnded(EventRegistrationToken token);
-	HRESULT add_BreakSkipped(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager*,Windows.Media.Playback.MediaBreakSkippedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_BreakSkipped(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSkippedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_BreakSkipped(EventRegistrationToken token);
 	HRESULT get_CurrentBreak(Windows.Media.Playback.MediaBreak* return_value);
 	HRESULT get_PlaybackSession(Windows.Media.Playback.MediaPlaybackSession* return_value);
@@ -114,7 +114,7 @@ interface IMediaBreakSchedule : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ScheduleChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakSchedule*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ScheduleChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakSchedule, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ScheduleChanged(EventRegistrationToken token);
 	HRESULT abi_InsertMidrollBreak(Windows.Media.Playback.MediaBreak mediaBreak);
 	HRESULT abi_RemoveMidrollBreak(Windows.Media.Playback.MediaBreak mediaBreak);
@@ -206,25 +206,25 @@ extern(Windows):
 	HRESULT get_AutoRepeatModeBehavior(Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior* return_value);
 	HRESULT get_PositionBehavior(Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior* return_value);
 	HRESULT get_RateBehavior(Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior* return_value);
-	HRESULT add_PlayReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager*,Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PlayReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PlayReceived(EventRegistrationToken token);
-	HRESULT add_PauseReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager*,Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PauseReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PauseReceived(EventRegistrationToken token);
-	HRESULT add_NextReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager*,Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_NextReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_NextReceived(EventRegistrationToken token);
-	HRESULT add_PreviousReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager*,Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PreviousReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PreviousReceived(EventRegistrationToken token);
-	HRESULT add_FastForwardReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager*,Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_FastForwardReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_FastForwardReceived(EventRegistrationToken token);
-	HRESULT add_RewindReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager*,Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RewindReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RewindReceived(EventRegistrationToken token);
-	HRESULT add_ShuffleReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager*,Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ShuffleReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ShuffleReceived(EventRegistrationToken token);
-	HRESULT add_AutoRepeatModeReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager*,Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AutoRepeatModeReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AutoRepeatModeReceived(EventRegistrationToken token);
-	HRESULT add_PositionReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager*,Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PositionReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PositionReceived(EventRegistrationToken token);
-	HRESULT add_RateReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager*,Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RateReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RateReceived(EventRegistrationToken token);
 }
 
@@ -252,7 +252,7 @@ extern(Windows):
 	HRESULT get_IsEnabled(bool* return_value);
 	HRESULT get_EnablingRule(Windows.Media.Playback.MediaCommandEnablingRule* return_value);
 	HRESULT set_EnablingRule(Windows.Media.Playback.MediaCommandEnablingRule value);
-	HRESULT add_IsEnabledChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_IsEnabledChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_IsEnabledChanged(EventRegistrationToken token);
 }
 
@@ -374,11 +374,11 @@ interface IMediaPlaybackItem : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_AudioTracksChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem*,Windows.Foundation.Collections.IVectorChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AudioTracksChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AudioTracksChanged(EventRegistrationToken token);
-	HRESULT add_VideoTracksChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem*,Windows.Foundation.Collections.IVectorChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_VideoTracksChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_VideoTracksChanged(EventRegistrationToken token);
-	HRESULT add_TimedMetadataTracksChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem*,Windows.Foundation.Collections.IVectorChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_TimedMetadataTracksChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_TimedMetadataTracksChanged(EventRegistrationToken token);
 	HRESULT get_Source(Windows.Media.Core.MediaSource* return_value);
 	HRESULT get_AudioTracks(Windows.Media.Playback.MediaPlaybackAudioTrackList* return_value);
@@ -486,11 +486,11 @@ interface IMediaPlaybackList : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ItemFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList*,Windows.Media.Playback.MediaPlaybackItemFailedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ItemFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemFailedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ItemFailed(EventRegistrationToken token);
-	HRESULT add_CurrentItemChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList*,Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_CurrentItemChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CurrentItemChanged(EventRegistrationToken token);
-	HRESULT add_ItemOpened(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList*,Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ItemOpened(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ItemOpened(EventRegistrationToken token);
 	HRESULT get_Items(Windows.Foundation.Collections.IObservableVector!(Windows.Media.Playback.MediaPlaybackItem)* return_value);
 	HRESULT get_AutoRepeatEnabled(bool* return_value);
@@ -537,25 +537,25 @@ interface IMediaPlaybackSession : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_PlaybackStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_PlaybackStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_PlaybackStateChanged(EventRegistrationToken token);
-	HRESULT add_PlaybackRateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_PlaybackRateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_PlaybackRateChanged(EventRegistrationToken token);
-	HRESULT add_SeekCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_SeekCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_SeekCompleted(EventRegistrationToken token);
-	HRESULT add_BufferingStarted(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_BufferingStarted(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_BufferingStarted(EventRegistrationToken token);
-	HRESULT add_BufferingEnded(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_BufferingEnded(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_BufferingEnded(EventRegistrationToken token);
-	HRESULT add_BufferingProgressChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_BufferingProgressChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_BufferingProgressChanged(EventRegistrationToken token);
-	HRESULT add_DownloadProgressChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_DownloadProgressChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_DownloadProgressChanged(EventRegistrationToken token);
-	HRESULT add_NaturalDurationChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_NaturalDurationChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_NaturalDurationChanged(EventRegistrationToken token);
-	HRESULT add_PositionChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_PositionChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_PositionChanged(EventRegistrationToken token);
-	HRESULT add_NaturalVideoSizeChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_NaturalVideoSizeChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_NaturalVideoSizeChanged(EventRegistrationToken token);
 	HRESULT get_MediaPlayer(Windows.Media.Playback.MediaPlayer* return_value);
 	HRESULT get_NaturalDuration(Windows.Foundation.TimeSpan* return_value);
@@ -584,13 +584,13 @@ interface IMediaPlaybackSession2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_BufferedRangesChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_BufferedRangesChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_BufferedRangesChanged(EventRegistrationToken token);
-	HRESULT add_PlayedRangesChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_PlayedRangesChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_PlayedRangesChanged(EventRegistrationToken token);
-	HRESULT add_SeekableRangesChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_SeekableRangesChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_SeekableRangesChanged(EventRegistrationToken token);
-	HRESULT add_SupportedPlaybackRatesChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_SupportedPlaybackRatesChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_SupportedPlaybackRatesChanged(EventRegistrationToken token);
 	HRESULT get_SphericalVideoProjection(Windows.Media.Playback.MediaPlaybackSphericalVideoProjection* return_value);
 	HRESULT get_IsMirroring(bool* return_value);
@@ -627,7 +627,7 @@ interface IMediaPlaybackTimedMetadataTrackList : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_PresentationModeChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList*,Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PresentationModeChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList, Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PresentationModeChanged(EventRegistrationToken token);
 	HRESULT abi_GetPresentationMode(UINT32 index, Windows.Media.Playback.TimedMetadataTrackPresentationMode* return_value);
 	HRESULT abi_SetPresentationMode(UINT32 index, Windows.Media.Playback.TimedMetadataTrackPresentationMode value);
@@ -670,36 +670,36 @@ extern(Windows):
 	HRESULT set_Volume(double value);
 	deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.	For more info, see MSDN.")
 	HRESULT get_PlaybackMediaMarkers(Windows.Media.Playback.PlaybackMediaMarkerSequence* return_value);
-	HRESULT add_MediaOpened(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_MediaOpened(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_MediaOpened(EventRegistrationToken token);
-	HRESULT add_MediaEnded(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_MediaEnded(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_MediaEnded(EventRegistrationToken token);
-	HRESULT add_MediaFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer*,Windows.Media.Playback.MediaPlayerFailedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_MediaFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerFailedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_MediaFailed(EventRegistrationToken token);
 	deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")
-	HRESULT add_CurrentStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_CurrentStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable) value, EventRegistrationToken* return_token);
 	deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")
 	HRESULT remove_CurrentStateChanged(EventRegistrationToken token);
 	deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.	For more info, see MSDN.")
-	HRESULT add_PlaybackMediaMarkerReached(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer*,Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_PlaybackMediaMarkerReached(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs) value, EventRegistrationToken* return_token);
 	deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.	For more info, see MSDN.")
 	HRESULT remove_PlaybackMediaMarkerReached(EventRegistrationToken token);
 	deprecated("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.	For more info, see MSDN.")
-	HRESULT add_MediaPlayerRateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer*,Windows.Media.Playback.MediaPlayerRateChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_MediaPlayerRateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerRateChangedEventArgs) value, EventRegistrationToken* return_token);
 	deprecated("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.	For more info, see MSDN.")
 	HRESULT remove_MediaPlayerRateChanged(EventRegistrationToken token);
-	HRESULT add_VolumeChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_VolumeChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_VolumeChanged(EventRegistrationToken token);
 	deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.	 For more info, see MSDN.")
-	HRESULT add_SeekCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_SeekCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable) value, EventRegistrationToken* return_token);
 	deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.	 For more info, see MSDN.")
 	HRESULT remove_SeekCompleted(EventRegistrationToken token);
 	deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")
-	HRESULT add_BufferingStarted(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_BufferingStarted(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable) value, EventRegistrationToken* return_token);
 	deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")
 	HRESULT remove_BufferingStarted(EventRegistrationToken token);
 	deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")
-	HRESULT add_BufferingEnded(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_BufferingEnded(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable) value, EventRegistrationToken* return_token);
 	deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")
 	HRESULT remove_BufferingEnded(EventRegistrationToken token);
 	HRESULT abi_Play();
@@ -729,9 +729,9 @@ interface IMediaPlayer3 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_IsMutedChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_IsMutedChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_IsMutedChanged(EventRegistrationToken token);
-	HRESULT add_SourceChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_SourceChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_SourceChanged(EventRegistrationToken token);
 	HRESULT get_AudioBalance(double* return_value);
 	HRESULT set_AudioBalance(double value);
@@ -771,7 +771,7 @@ interface IMediaPlayer5 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_VideoFrameAvailable(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_VideoFrameAvailable(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_VideoFrameAvailable(EventRegistrationToken token);
 	HRESULT get_IsVideoFrameServerEnabled(bool* return_value);
 	HRESULT set_IsVideoFrameServerEnabled(bool value);

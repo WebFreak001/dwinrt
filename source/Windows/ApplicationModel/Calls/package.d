@@ -61,9 +61,9 @@ interface ILockScreenCallUI : IInspectable
 
 extern(Windows):
 	HRESULT abi_Dismiss();
-	HRESULT add_EndRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.LockScreenCallUI*,Windows.ApplicationModel.Calls.LockScreenCallEndRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_EndRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.LockScreenCallUI, Windows.ApplicationModel.Calls.LockScreenCallEndRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_EndRequested(EventRegistrationToken token);
-	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.LockScreenCallUI*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.LockScreenCallUI, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Closed(EventRegistrationToken token);
 	HRESULT get_CallTitle(HSTRING* return_value);
 	HRESULT set_CallTitle(HSTRING value);
@@ -231,7 +231,7 @@ interface IVoipCallCoordinator : IInspectable
 
 extern(Windows):
 	HRESULT abi_ReserveCallResourcesAsync(HSTRING taskEntryPoint, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.VoipPhoneCallResourceReservationStatus)* return_operation);
-	HRESULT add_MuteStateChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipCallCoordinator*,Windows.ApplicationModel.Calls.MuteChangeEventArgs*) muteChangeHandler, EventRegistrationToken* return_token);
+	HRESULT add_MuteStateChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipCallCoordinator, Windows.ApplicationModel.Calls.MuteChangeEventArgs) muteChangeHandler, EventRegistrationToken* return_token);
 	HRESULT remove_MuteStateChanged(EventRegistrationToken token);
 	HRESULT abi_RequestNewIncomingCall(HSTRING context, HSTRING contactName, HSTRING contactNumber, Windows.Foundation.Uri contactImage, HSTRING serviceName, Windows.Foundation.Uri brandingImage, HSTRING callDetails, Windows.Foundation.Uri ringtone, Windows.ApplicationModel.Calls.VoipPhoneCallMedia media, Windows.Foundation.TimeSpan ringTimeout, Windows.ApplicationModel.Calls.VoipPhoneCall* return_call);
 	HRESULT abi_RequestNewOutgoingCall(HSTRING context, HSTRING contactName, HSTRING serviceName, Windows.ApplicationModel.Calls.VoipPhoneCallMedia media, Windows.ApplicationModel.Calls.VoipPhoneCall* return_call);
@@ -260,15 +260,15 @@ interface IVoipPhoneCall : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_EndRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall*,Windows.ApplicationModel.Calls.CallStateChangeEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_EndRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_EndRequested(EventRegistrationToken token);
-	HRESULT add_HoldRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall*,Windows.ApplicationModel.Calls.CallStateChangeEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_HoldRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_HoldRequested(EventRegistrationToken token);
-	HRESULT add_ResumeRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall*,Windows.ApplicationModel.Calls.CallStateChangeEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ResumeRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ResumeRequested(EventRegistrationToken token);
-	HRESULT add_AnswerRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall*,Windows.ApplicationModel.Calls.CallAnswerEventArgs*) acceptHandler, EventRegistrationToken* return_token);
+	HRESULT add_AnswerRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallAnswerEventArgs) acceptHandler, EventRegistrationToken* return_token);
 	HRESULT remove_AnswerRequested(EventRegistrationToken token);
-	HRESULT add_RejectRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall*,Windows.ApplicationModel.Calls.CallRejectEventArgs*) rejectHandler, EventRegistrationToken* return_token);
+	HRESULT add_RejectRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallRejectEventArgs) rejectHandler, EventRegistrationToken* return_token);
 	HRESULT remove_RejectRequested(EventRegistrationToken token);
 	HRESULT abi_NotifyCallHeld();
 	HRESULT abi_NotifyCallActive();

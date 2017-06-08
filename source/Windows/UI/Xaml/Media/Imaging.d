@@ -2,6 +2,12 @@ module Windows.UI.Xaml.Media.Imaging;
 
 import dwinrt;
 
+@uuid("1abaee23-74ee-4cc7-99ba-b171e3cda61e")
+interface DownloadProgressEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Media.Imaging.DownloadProgressEventArgs e);
+}
+
 @uuid("31af3271-e3b4-442d-a341-4c0226b2725b")
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.BitmapImage")
 interface IBitmapImage : IInspectable
@@ -17,11 +23,11 @@ extern(Windows):
 	HRESULT set_DecodePixelWidth(INT32 value);
 	HRESULT get_DecodePixelHeight(INT32* return_value);
 	HRESULT set_DecodePixelHeight(INT32 value);
-	HRESULT add_DownloadProgress(Windows.UI.Xaml.Media.Imaging.DownloadProgressEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_DownloadProgress(Windows.UI.Xaml.Media.Imaging.DownloadProgressEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_DownloadProgress(EventRegistrationToken token);
-	HRESULT add_ImageOpened(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ImageOpened(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ImageOpened(EventRegistrationToken token);
-	HRESULT add_ImageFailed(Windows.UI.Xaml.ExceptionRoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ImageFailed(Windows.UI.Xaml.ExceptionRoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ImageFailed(EventRegistrationToken token);
 }
 
@@ -200,9 +206,9 @@ extern(Windows):
 	HRESULT set_RasterizePixelWidth(double value);
 	HRESULT get_RasterizePixelHeight(double* return_value);
 	HRESULT set_RasterizePixelHeight(double value);
-	HRESULT add_Opened(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource*,Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_Opened(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_Opened(EventRegistrationToken token);
-	HRESULT add_OpenFailed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource*,Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_OpenFailed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_OpenFailed(EventRegistrationToken token);
 	HRESULT abi_SetSourceAsync(Windows.Storage.Streams.IRandomAccessStream streamSource, Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus)* return_returnValue);
 }

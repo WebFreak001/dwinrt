@@ -25,7 +25,7 @@ extern(Windows):
 	HRESULT set_Description(HSTRING value);
 	HRESULT get_PercentProgress(UINT32* return_value);
 	HRESULT set_PercentProgress(UINT32 value);
-	HRESULT add_Revoked(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Revoked(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Revoked(EventRegistrationToken token);
 	HRESULT abi_RequestExtensionAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionResult)* return_operation);
 }

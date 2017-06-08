@@ -18,7 +18,7 @@ extern(Windows):
 	HRESULT abi_RetrieveStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_operation);
 	HRESULT abi_GetSupportedProfiles(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 	HRESULT abi_IsProfileSupported(HSTRING profile, bool* return_isSupported);
-	HRESULT add_StatusUpdated(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.BarcodeScanner*,Windows.Devices.PointOfService.BarcodeScannerStatusUpdatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StatusUpdated(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.BarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerStatusUpdatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StatusUpdated(EventRegistrationToken token);
 }
 
@@ -282,7 +282,7 @@ extern(Windows):
 	HRESULT abi_ClaimDrawerAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedCashDrawer)* return_operation);
 	HRESULT abi_CheckHealthAsync(Windows.Devices.PointOfService.UnifiedPosHealthCheckLevel level, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
 	HRESULT abi_GetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
-	HRESULT add_StatusUpdated(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawer*,Windows.Devices.PointOfService.CashDrawerStatusUpdatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StatusUpdated(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawer, Windows.Devices.PointOfService.CashDrawerStatusUpdatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StatusUpdated(EventRegistrationToken token);
 }
 
@@ -316,7 +316,7 @@ extern(Windows):
 	HRESULT get_BeepDuration(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_BeepDelay(Windows.Foundation.TimeSpan value);
 	HRESULT get_BeepDelay(Windows.Foundation.TimeSpan* return_value);
-	HRESULT add_AlarmTimeoutExpired(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerCloseAlarm*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AlarmTimeoutExpired(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerCloseAlarm, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AlarmTimeoutExpired(EventRegistrationToken token);
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncOperation!(bool)* return_result);
 }
@@ -328,9 +328,9 @@ interface ICashDrawerEventSource : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_DrawerClosed(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerEventSource*,Windows.Devices.PointOfService.CashDrawerClosedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DrawerClosed(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerClosedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DrawerClosed(EventRegistrationToken token);
-	HRESULT add_DrawerOpened(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerEventSource*,Windows.Devices.PointOfService.CashDrawerOpenedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DrawerOpened(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerOpenedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DrawerOpened(EventRegistrationToken token);
 }
 
@@ -404,9 +404,9 @@ extern(Windows):
 	HRESULT abi_RetainDevice();
 	HRESULT abi_SetActiveSymbologiesAsync(Windows.Foundation.Collections.IIterable!(UINT32) symbologies, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_ResetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories, Windows.Foundation.IAsyncAction* return_result);
-	HRESULT abi_UpdateStatisticsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING,HSTRING)) statistics, Windows.Foundation.IAsyncAction* return_result);
+	HRESULT abi_UpdateStatisticsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) statistics, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_SetActiveProfileAsync(HSTRING profile, Windows.Foundation.IAsyncAction* return_result);
-	HRESULT add_DataReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner*,Windows.Devices.PointOfService.BarcodeScannerDataReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DataReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerDataReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DataReceived(EventRegistrationToken token);
 	HRESULT add_TriggerPressed(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner) handler, EventRegistrationToken* return_token);
 	HRESULT remove_TriggerPressed(EventRegistrationToken token);
@@ -414,9 +414,9 @@ extern(Windows):
 	HRESULT remove_TriggerReleased(EventRegistrationToken token);
 	HRESULT add_ReleaseDeviceRequested(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReleaseDeviceRequested(EventRegistrationToken token);
-	HRESULT add_ImagePreviewReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner*,Windows.Devices.PointOfService.BarcodeScannerImagePreviewReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ImagePreviewReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerImagePreviewReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ImagePreviewReceived(EventRegistrationToken token);
-	HRESULT add_ErrorOccurred(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner*,Windows.Devices.PointOfService.BarcodeScannerErrorOccurredEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ErrorOccurred(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerErrorOccurredEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ErrorOccurred(EventRegistrationToken token);
 }
 
@@ -458,8 +458,8 @@ extern(Windows):
 	HRESULT abi_DisableAsync(Windows.Foundation.IAsyncOperation!(bool)* return_result);
 	HRESULT abi_RetainDeviceAsync(Windows.Foundation.IAsyncOperation!(bool)* return_result);
 	HRESULT abi_ResetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories, Windows.Foundation.IAsyncOperation!(bool)* return_result);
-	HRESULT abi_UpdateStatisticsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING,HSTRING)) statistics, Windows.Foundation.IAsyncOperation!(bool)* return_result);
-	HRESULT add_ReleaseDeviceRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedCashDrawer*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT abi_UpdateStatisticsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) statistics, Windows.Foundation.IAsyncOperation!(bool)* return_result);
+	HRESULT add_ReleaseDeviceRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedCashDrawer, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReleaseDeviceRequested(EventRegistrationToken token);
 }
 
@@ -489,7 +489,7 @@ extern(Windows):
 	HRESULT get_DeviceServiceVersion(HSTRING* return_value);
 	HRESULT get_DefaultWindow(Windows.Devices.PointOfService.LineDisplayWindow* return_value);
 	HRESULT abi_RetainDevice();
-	HRESULT add_ReleaseDeviceRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedLineDisplay*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReleaseDeviceRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedLineDisplay, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReleaseDeviceRequested(EventRegistrationToken token);
 }
 
@@ -534,16 +534,16 @@ extern(Windows):
 	HRESULT abi_DeAuthenticateDeviceAsync(UINT32 __responseTokenSize, BYTE* responseToken, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_UpdateKeyAsync(HSTRING key, HSTRING keyName, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_ResetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories, Windows.Foundation.IAsyncAction* return_result);
-	HRESULT abi_UpdateStatisticsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING,HSTRING)) statistics, Windows.Foundation.IAsyncAction* return_result);
-	HRESULT add_BankCardDataReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader*,Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT abi_UpdateStatisticsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) statistics, Windows.Foundation.IAsyncAction* return_result);
+	HRESULT add_BankCardDataReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_BankCardDataReceived(EventRegistrationToken token);
-	HRESULT add_AamvaCardDataReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader*,Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AamvaCardDataReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AamvaCardDataReceived(EventRegistrationToken token);
-	HRESULT add_VendorSpecificDataReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader*,Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_VendorSpecificDataReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_VendorSpecificDataReceived(EventRegistrationToken token);
 	HRESULT add_ReleaseDeviceRequested(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReleaseDeviceRequested(EventRegistrationToken token);
-	HRESULT add_ErrorOccurred(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader*,Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ErrorOccurred(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ErrorOccurred(EventRegistrationToken token);
 }
 
@@ -570,8 +570,8 @@ extern(Windows):
 	HRESULT abi_DisableAsync(Windows.Foundation.IAsyncOperation!(bool)* return_result);
 	HRESULT abi_RetainDeviceAsync(Windows.Foundation.IAsyncOperation!(bool)* return_result);
 	HRESULT abi_ResetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories, Windows.Foundation.IAsyncOperation!(bool)* return_result);
-	HRESULT abi_UpdateStatisticsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING,HSTRING)) statistics, Windows.Foundation.IAsyncOperation!(bool)* return_result);
-	HRESULT add_ReleaseDeviceRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedPosPrinter*,Windows.Devices.PointOfService.PosPrinterReleaseDeviceRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT abi_UpdateStatisticsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) statistics, Windows.Foundation.IAsyncOperation!(bool)* return_result);
+	HRESULT add_ReleaseDeviceRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedPosPrinter, Windows.Devices.PointOfService.PosPrinterReleaseDeviceRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReleaseDeviceRequested(EventRegistrationToken token);
 }
 
@@ -767,7 +767,7 @@ extern(Windows):
 	HRESULT abi_ClaimReaderAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader)* return_operation);
 	HRESULT abi_RetrieveStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_operation);
 	HRESULT abi_GetErrorReportingType(Windows.Devices.PointOfService.MagneticStripeReaderErrorReportingType* return_value);
-	HRESULT add_StatusUpdated(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.MagneticStripeReader*,Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StatusUpdated(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.MagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StatusUpdated(EventRegistrationToken token);
 }
 
@@ -889,7 +889,7 @@ extern(Windows):
 	HRESULT get_Track2(Windows.Devices.PointOfService.MagneticStripeReaderTrackData* return_value);
 	HRESULT get_Track3(Windows.Devices.PointOfService.MagneticStripeReaderTrackData* return_value);
 	HRESULT get_Track4(Windows.Devices.PointOfService.MagneticStripeReaderTrackData* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING,HSTRING)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING)* return_value);
 	HRESULT get_CardAuthenticationData(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_CardAuthenticationDataLength(UINT32* return_value);
 	HRESULT get_AdditionalSecurityInformation(Windows.Storage.Streams.IBuffer* return_value);
@@ -965,7 +965,7 @@ extern(Windows):
 	HRESULT abi_ClaimPrinterAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedPosPrinter)* return_operation);
 	HRESULT abi_CheckHealthAsync(Windows.Devices.PointOfService.UnifiedPosHealthCheckLevel level, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
 	HRESULT abi_GetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
-	HRESULT add_StatusUpdated(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.PosPrinter*,Windows.Devices.PointOfService.PosPrinterStatusUpdatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StatusUpdated(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.PosPrinter, Windows.Devices.PointOfService.PosPrinterStatusUpdatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StatusUpdated(EventRegistrationToken token);
 }
 

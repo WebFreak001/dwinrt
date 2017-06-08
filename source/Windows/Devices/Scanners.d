@@ -2,6 +2,12 @@ module Windows.Devices.Scanners;
 
 import dwinrt;
 
+struct ImageScannerResolution
+{
+	FLOAT DpiX;
+	FLOAT DpiY;
+}
+
 @uuid("53a88f78-5298-48a0-8da3-8087519665e0")
 @WinrtFactory("Windows.Devices.Scanners.ImageScanner")
 interface IImageScanner : IInspectable
@@ -17,7 +23,7 @@ extern(Windows):
 	HRESULT get_AutoConfiguration(Windows.Devices.Scanners.ImageScannerAutoConfiguration* return_value);
 	HRESULT abi_IsPreviewSupported(Windows.Devices.Scanners.ImageScannerScanSource scanSource, bool* return_result);
 	HRESULT abi_ScanPreviewToStreamAsync(Windows.Devices.Scanners.ImageScannerScanSource scanSource, Windows.Storage.Streams.IRandomAccessStream targetStream, Windows.Foundation.IAsyncOperation!(Windows.Devices.Scanners.ImageScannerPreviewResult)* return_operation);
-	HRESULT abi_ScanFilesToFolderAsync(Windows.Devices.Scanners.ImageScannerScanSource scanSource, Windows.Storage.StorageFolder storageFolder, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Devices.Scanners.ImageScannerScanResult*,UINT32)* return_operation);
+	HRESULT abi_ScanFilesToFolderAsync(Windows.Devices.Scanners.ImageScannerScanSource scanSource, Windows.Storage.StorageFolder storageFolder, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Devices.Scanners.ImageScannerScanResult, UINT32)* return_operation);
 }
 
 @uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67")

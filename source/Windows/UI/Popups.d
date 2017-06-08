@@ -2,6 +2,12 @@ module Windows.UI.Popups;
 
 import dwinrt;
 
+@uuid("daf77a4f-c27a-4298-9ac6-2922c45e7da6")
+interface UICommandInvokedHandler
+{
+	HRESULT abi_Invoke(Windows.UI.Popups.IUICommand command);
+}
+
 @uuid("33f59b01-5325-43ab-9ab3-bdae440e4121")
 @WinrtFactory("Windows.UI.Popups.MessageDialog")
 interface IMessageDialog : IInspectable
@@ -55,8 +61,8 @@ interface IUICommand : IInspectable
 extern(Windows):
 	HRESULT get_Label(HSTRING* return_value);
 	HRESULT set_Label(HSTRING value);
-	HRESULT get_Invoked(Windows.UI.Popups.UICommandInvokedHandler** return_value);
-	HRESULT set_Invoked(Windows.UI.Popups.UICommandInvokedHandler* value);
+	HRESULT get_Invoked(Windows.UI.Popups.UICommandInvokedHandler* return_value);
+	HRESULT set_Invoked(Windows.UI.Popups.UICommandInvokedHandler value);
 	HRESULT get_Id(IInspectable* return_value);
 	HRESULT set_Id(IInspectable value);
 }
@@ -69,8 +75,8 @@ interface IUICommandFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_Create(HSTRING label, Windows.UI.Popups.UICommand* return_instance);
-	HRESULT abi_CreateWithHandler(HSTRING label, Windows.UI.Popups.UICommandInvokedHandler* action, Windows.UI.Popups.UICommand* return_instance);
-	HRESULT abi_CreateWithHandlerAndId(HSTRING label, Windows.UI.Popups.UICommandInvokedHandler* action, IInspectable commandId, Windows.UI.Popups.UICommand* return_instance);
+	HRESULT abi_CreateWithHandler(HSTRING label, Windows.UI.Popups.UICommandInvokedHandler action, Windows.UI.Popups.UICommand* return_instance);
+	HRESULT abi_CreateWithHandlerAndId(HSTRING label, Windows.UI.Popups.UICommandInvokedHandler action, IInspectable commandId, Windows.UI.Popups.UICommand* return_instance);
 }
 
 interface MessageDialog

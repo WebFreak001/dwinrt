@@ -14,7 +14,7 @@ extern(Windows):
 	HRESULT set_ReportInterval(UINT32 value);
 	HRESULT get_ReportInterval(UINT32* return_value);
 	HRESULT get_DeviceId(HSTRING* return_value);
-	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Custom.CustomSensor*,Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadingChanged(EventRegistrationToken token);
 }
 
@@ -26,7 +26,7 @@ interface ICustomSensorReading : IInspectable
 
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
 }
 
 @uuid("6b202023-cffd-4cc1-8ff0-e21823d76fcc")

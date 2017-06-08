@@ -29,7 +29,7 @@ interface IDeviceAccessInformation : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_AccessChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceAccessInformation*,Windows.Devices.Enumeration.DeviceAccessChangedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_AccessChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceAccessInformation, Windows.Devices.Enumeration.DeviceAccessChangedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_AccessChanged(EventRegistrationToken cookie);
 	HRESULT get_CurrentStatus(Windows.Devices.Enumeration.DeviceAccessStatus* return_status);
 }
@@ -78,7 +78,7 @@ extern(Windows):
 	HRESULT get_IsEnabled(bool* return_value);
 	HRESULT get_IsDefault(bool* return_value);
 	HRESULT get_EnclosureLocation(Windows.Devices.Enumeration.EnclosureLocation* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
 	HRESULT abi_Update(Windows.Devices.Enumeration.DeviceInformationUpdate updateInfo);
 	HRESULT abi_GetThumbnailAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceThumbnail)* return_asyncOp);
 	HRESULT abi_GetGlyphThumbnailAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceThumbnail)* return_asyncOp);
@@ -105,7 +105,7 @@ extern(Windows):
 	HRESULT abi_PairAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
 	HRESULT abi_PairWithProtectionLevelAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
 	HRESULT abi_PairWithProtectionLevelAndSettingsAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Devices.Enumeration.IDevicePairingSettings devicePairingSettings, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
-	HRESULT add_PairingRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceInformationCustomPairing*,Windows.Devices.Enumeration.DevicePairingRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PairingRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceInformationCustomPairing, Windows.Devices.Enumeration.DevicePairingRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PairingRequested(EventRegistrationToken token);
 }
 
@@ -185,7 +185,7 @@ interface IDeviceInformationUpdate : IInspectable
 
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
 }
 
 @uuid("5d9d148c-a873-485e-baa6-aa620788e3cc")
@@ -234,11 +234,11 @@ extern(Windows):
 	HRESULT get_Filter(Windows.Devices.Enumeration.DevicePickerFilter* return_filter);
 	HRESULT get_Appearance(Windows.Devices.Enumeration.DevicePickerAppearance* return_value);
 	HRESULT get_RequestedProperties(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
-	HRESULT add_DeviceSelected(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker*,Windows.Devices.Enumeration.DeviceSelectedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DeviceSelected(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceSelectedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DeviceSelected(EventRegistrationToken token);
-	HRESULT add_DisconnectButtonClicked(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker*,Windows.Devices.Enumeration.DeviceDisconnectButtonClickedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DisconnectButtonClicked(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceDisconnectButtonClickedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DisconnectButtonClicked(EventRegistrationToken token);
-	HRESULT add_DevicePickerDismissed(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DevicePickerDismissed(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DevicePickerDismissed(EventRegistrationToken token);
 	HRESULT abi_Show(Windows.Foundation.Rect selection);
 	HRESULT abi_ShowWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement placement);
@@ -309,15 +309,15 @@ interface IDeviceWatcher : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher*,Windows.Devices.Enumeration.DeviceInformation*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformation) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Added(EventRegistrationToken token);
-	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher*,Windows.Devices.Enumeration.DeviceInformationUpdate*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Updated(EventRegistrationToken token);
-	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher*,Windows.Devices.Enumeration.DeviceInformationUpdate*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Removed(EventRegistrationToken token);
-	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_EnumerationCompleted(EventRegistrationToken token);
-	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Stopped(EventRegistrationToken token);
 	HRESULT get_Status(Windows.Devices.Enumeration.DeviceWatcherStatus* return_status);
 	HRESULT abi_Start();

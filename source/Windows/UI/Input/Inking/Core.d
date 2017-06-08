@@ -9,19 +9,19 @@ interface ICoreInkIndependentInputSource : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_PointerEntering(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerEntering(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerEntering(EventRegistrationToken cookie);
-	HRESULT add_PointerHovering(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerHovering(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerHovering(EventRegistrationToken cookie);
-	HRESULT add_PointerExiting(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerExiting(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerExiting(EventRegistrationToken cookie);
-	HRESULT add_PointerPressing(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerPressing(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerPressing(EventRegistrationToken cookie);
-	HRESULT add_PointerMoving(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerMoving(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerMoving(EventRegistrationToken cookie);
-	HRESULT add_PointerReleasing(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerReleasing(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerReleasing(EventRegistrationToken cookie);
-	HRESULT add_PointerLost(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerLost(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerLost(EventRegistrationToken cookie);
 	HRESULT get_InkPresenter(Windows.UI.Input.Inking.InkPresenter* return_value);
 }
@@ -56,15 +56,15 @@ interface ICoreWetStrokeUpdateSource : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_WetStrokeStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource*,Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_WetStrokeStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_WetStrokeStarting(EventRegistrationToken cookie);
-	HRESULT add_WetStrokeContinuing(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource*,Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_WetStrokeContinuing(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_WetStrokeContinuing(EventRegistrationToken cookie);
-	HRESULT add_WetStrokeStopping(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource*,Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_WetStrokeStopping(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_WetStrokeStopping(EventRegistrationToken cookie);
-	HRESULT add_WetStrokeCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource*,Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_WetStrokeCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_WetStrokeCompleted(EventRegistrationToken cookie);
-	HRESULT add_WetStrokeCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource*,Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_WetStrokeCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_WetStrokeCanceled(EventRegistrationToken cookie);
 	HRESULT get_InkPresenter(Windows.UI.Input.Inking.InkPresenter* return_value);
 }

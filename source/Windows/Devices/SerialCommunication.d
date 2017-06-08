@@ -58,9 +58,9 @@ extern(Windows):
 	HRESULT set_WriteTimeout(Windows.Foundation.TimeSpan value);
 	HRESULT get_InputStream(Windows.Storage.Streams.IInputStream* return_value);
 	HRESULT get_OutputStream(Windows.Storage.Streams.IOutputStream* return_value);
-	HRESULT add_ErrorReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.SerialCommunication.SerialDevice*,Windows.Devices.SerialCommunication.ErrorReceivedEventArgs*) reportHandler, EventRegistrationToken* return_token);
+	HRESULT add_ErrorReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.ErrorReceivedEventArgs) reportHandler, EventRegistrationToken* return_token);
 	HRESULT remove_ErrorReceived(EventRegistrationToken token);
-	HRESULT add_PinChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.SerialCommunication.SerialDevice*,Windows.Devices.SerialCommunication.PinChangedEventArgs*) reportHandler, EventRegistrationToken* return_token);
+	HRESULT add_PinChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.PinChangedEventArgs) reportHandler, EventRegistrationToken* return_token);
 	HRESULT remove_PinChanged(EventRegistrationToken token);
 }
 

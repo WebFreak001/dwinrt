@@ -11,7 +11,7 @@ interface IAccessibilitySettings : IInspectable
 extern(Windows):
 	HRESULT get_HighContrast(bool* return_value);
 	HRESULT get_HighContrastScheme(HSTRING* return_value);
-	HRESULT add_HighContrastChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.AccessibilitySettings*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_HighContrastChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.AccessibilitySettings, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_HighContrastChanged(EventRegistrationToken cookie);
 }
 
@@ -45,7 +45,7 @@ extern(Windows):
 	HRESULT set_Title(HSTRING value);
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT get_Id(INT32* return_value);
-	HRESULT add_Consolidated(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView*,Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Consolidated(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Consolidated(EventRegistrationToken token);
 }
 
@@ -61,7 +61,7 @@ extern(Windows):
 	deprecated("Use the TryEnterFullScreen method and IsFullScreenMode property instead of SuppressSystemOverlays. For more info, see MSDN.")
 	HRESULT set_SuppressSystemOverlays(bool value);
 	HRESULT get_VisibleBounds(Windows.Foundation.Rect* return_value);
-	HRESULT add_VisibleBoundsChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_VisibleBoundsChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_VisibleBoundsChanged(EventRegistrationToken token);
 	HRESULT abi_SetDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode boundsMode, bool* return_success);
 	HRESULT get_DesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode* return_value);
@@ -288,9 +288,9 @@ interface IInputPane : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Showing(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane*,Windows.UI.ViewManagement.InputPaneVisibilityEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Showing(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Showing(EventRegistrationToken token);
-	HRESULT add_Hiding(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane*,Windows.UI.ViewManagement.InputPaneVisibilityEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Hiding(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Hiding(EventRegistrationToken token);
 	HRESULT get_OccludedRect(Windows.Foundation.Rect* return_value);
 }
@@ -397,7 +397,7 @@ interface IUISettings2 : IInspectable
 
 extern(Windows):
 	HRESULT get_TextScaleFactor(double* return_value);
-	HRESULT add_TextScaleFactorChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_TextScaleFactorChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_TextScaleFactorChanged(EventRegistrationToken cookie);
 }
 
@@ -409,7 +409,7 @@ interface IUISettings3 : IInspectable
 
 extern(Windows):
 	HRESULT abi_GetColorValue(Windows.UI.ViewManagement.UIColorType desiredColor, Windows.UI.Color* return_value);
-	HRESULT add_ColorValuesChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_ColorValuesChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ColorValuesChanged(EventRegistrationToken cookie);
 }
 
@@ -421,7 +421,7 @@ interface IUISettings4 : IInspectable
 
 extern(Windows):
 	HRESULT get_AdvancedEffectsEnabled(bool* return_value);
-	HRESULT add_AdvancedEffectsEnabledChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_AdvancedEffectsEnabledChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_AdvancedEffectsEnabledChanged(EventRegistrationToken cookie);
 }
 

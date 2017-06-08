@@ -22,9 +22,9 @@ extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT set_Title(HSTRING value);
 	HRESULT get_UpdateTarget(Windows.Storage.Provider.CachedFileTarget* return_value);
-	HRESULT add_FileUpdateRequested(Windows.Foundation.TypedEventHandler!(Windows.Storage.Provider.CachedFileUpdaterUI*,Windows.Storage.Provider.FileUpdateRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_FileUpdateRequested(Windows.Foundation.TypedEventHandler!(Windows.Storage.Provider.CachedFileUpdaterUI, Windows.Storage.Provider.FileUpdateRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_FileUpdateRequested(EventRegistrationToken token);
-	HRESULT add_UIRequested(Windows.Foundation.TypedEventHandler!(Windows.Storage.Provider.CachedFileUpdaterUI*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_UIRequested(Windows.Foundation.TypedEventHandler!(Windows.Storage.Provider.CachedFileUpdaterUI, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_UIRequested(EventRegistrationToken token);
 	HRESULT get_UIStatus(Windows.Storage.Provider.UIStatus* return_value);
 }

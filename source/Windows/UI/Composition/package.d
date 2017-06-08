@@ -80,7 +80,7 @@ interface ICompositionCapabilities : IInspectable
 extern(Windows):
 	HRESULT abi_AreEffectsSupported(bool* return_value);
 	HRESULT abi_AreEffectsFast(bool* return_value);
-	HRESULT add_Changed(Windows.Foundation.TypedEventHandler!(Windows.UI.Composition.CompositionCapabilities*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Changed(Windows.Foundation.TypedEventHandler!(Windows.UI.Composition.CompositionCapabilities, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Changed(EventRegistrationToken token);
 }
 
@@ -137,7 +137,7 @@ interface ICompositionCommitBatch : IInspectable
 extern(Windows):
 	HRESULT get_IsActive(bool* return_value);
 	HRESULT get_IsEnded(bool* return_value);
-	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Composition.CompositionBatchCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Completed(EventRegistrationToken token);
 }
 
@@ -219,7 +219,7 @@ interface ICompositionGraphicsDevice : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateDrawingSurface(Windows.Foundation.Size sizePixels, Windows.Graphics.DirectX.DirectXPixelFormat pixelFormat, Windows.Graphics.DirectX.DirectXAlphaMode alphaMode, Windows.UI.Composition.CompositionDrawingSurface* return_result);
-	HRESULT add_RenderingDeviceReplaced(Windows.Foundation.TypedEventHandler!(Windows.UI.Composition.CompositionGraphicsDevice*,Windows.UI.Composition.RenderingDeviceReplacedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RenderingDeviceReplaced(Windows.Foundation.TypedEventHandler!(Windows.UI.Composition.CompositionGraphicsDevice, Windows.UI.Composition.RenderingDeviceReplacedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RenderingDeviceReplaced(EventRegistrationToken token);
 }
 
@@ -367,7 +367,7 @@ extern(Windows):
 	HRESULT abi_End();
 	HRESULT abi_Resume();
 	HRESULT abi_Suspend();
-	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Composition.CompositionBatchCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Completed(EventRegistrationToken token);
 }
 

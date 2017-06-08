@@ -39,11 +39,11 @@ extern(Windows):
 	HRESULT abi_TrySetNoteSize(INT32 noteViewId, Windows.Foundation.Size size, bool* return_succeeded);
 	HRESULT abi_SetFocusToNextView();
 	HRESULT abi_SetNotesThumbnailAsync(Windows.Storage.Streams.IBuffer thumbnail, Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT add_SystemLockStateChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SystemLockStateChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SystemLockStateChanged(EventRegistrationToken token);
-	HRESULT add_NotePlacementChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview*,Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_NotePlacementChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_NotePlacementChanged(EventRegistrationToken token);
-	HRESULT add_NoteVisibilityChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview*,Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_NoteVisibilityChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_NoteVisibilityChanged(EventRegistrationToken token);
 }
 

@@ -50,7 +50,7 @@ interface IGameChatOverlayMessageSource : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Gaming.UI.GameChatOverlayMessageSource*,Windows.Gaming.UI.GameChatMessageReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_MessageReceived(EventRegistrationToken token);
 	HRESULT abi_SetDelayBeforeClosingAfterMessageReceived(Windows.Foundation.TimeSpan value);
 }

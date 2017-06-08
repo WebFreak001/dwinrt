@@ -11,11 +11,11 @@ interface IHttpDiagnosticProvider : IInspectable
 extern(Windows):
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
-	HRESULT add_RequestSent(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Diagnostics.HttpDiagnosticProvider*,Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestSentEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RequestSent(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Diagnostics.HttpDiagnosticProvider, Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestSentEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RequestSent(EventRegistrationToken token);
-	HRESULT add_ResponseReceived(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Diagnostics.HttpDiagnosticProvider*,Windows.Web.Http.Diagnostics.HttpDiagnosticProviderResponseReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ResponseReceived(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Diagnostics.HttpDiagnosticProvider, Windows.Web.Http.Diagnostics.HttpDiagnosticProviderResponseReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ResponseReceived(EventRegistrationToken token);
-	HRESULT add_RequestResponseCompleted(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Diagnostics.HttpDiagnosticProvider*,Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestResponseCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RequestResponseCompleted(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Diagnostics.HttpDiagnosticProvider, Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestResponseCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RequestResponseCompleted(EventRegistrationToken token);
 }
 

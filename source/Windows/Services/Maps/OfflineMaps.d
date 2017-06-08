@@ -14,7 +14,7 @@ extern(Windows):
 	HRESULT get_EnclosingRegionName(HSTRING* return_value);
 	HRESULT get_EstimatedSizeInBytes(UINT64* return_value);
 	HRESULT remove_StatusChanged(EventRegistrationToken token);
-	HRESULT add_StatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.OfflineMaps.OfflineMapPackage*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_StatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT abi_RequestStartDownloadAsync(Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadResult)* return_value);
 }
 

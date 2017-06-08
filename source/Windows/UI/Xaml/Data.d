@@ -2,6 +2,23 @@ module Windows.UI.Xaml.Data;
 
 import dwinrt;
 
+struct LoadMoreItemsResult
+{
+	UINT32 Count;
+}
+
+@uuid("f3888db8-139f-4dce-8dc9-f7f1444d1185")
+interface CurrentChangingEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Data.CurrentChangingEventArgs e);
+}
+
+@uuid("50f19c16-0a22-4d8e-a089-1ea9951657d2")
+interface PropertyChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Data.PropertyChangedEventArgs e);
+}
+
 @uuid("3f7a0c6b-d00f-4730-8c1d-48e16c46f9ca")
 @WinrtFactory("Windows.UI.Xaml.Data.Binding")
 interface IBinding : IInspectable
@@ -98,7 +115,7 @@ extern(Windows):
 	HRESULT get_HasMoreItems(bool* return_value);
 	HRESULT add_CurrentChanged(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_CurrentChanged(EventRegistrationToken token);
-	HRESULT add_CurrentChanging(Windows.UI.Xaml.Data.CurrentChangingEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_CurrentChanging(Windows.UI.Xaml.Data.CurrentChangingEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_CurrentChanging(EventRegistrationToken token);
 	HRESULT abi_MoveCurrentTo(IInspectable item, bool* return_returnValue);
 	HRESULT abi_MoveCurrentToPosition(INT32 index, bool* return_returnValue);
@@ -245,7 +262,7 @@ interface INotifyPropertyChanged : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_PropertyChanged(Windows.UI.Xaml.Data.PropertyChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_PropertyChanged(Windows.UI.Xaml.Data.PropertyChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_PropertyChanged(EventRegistrationToken token);
 }
 

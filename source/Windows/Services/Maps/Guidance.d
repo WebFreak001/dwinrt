@@ -78,19 +78,19 @@ extern(Windows):
 	HRESULT set_AudioMeasurementSystem(Windows.Services.Maps.Guidance.GuidanceAudioMeasurementSystem value);
 	HRESULT get_AudioNotifications(Windows.Services.Maps.Guidance.GuidanceAudioNotifications* return_value);
 	HRESULT set_AudioNotifications(Windows.Services.Maps.Guidance.GuidanceAudioNotifications value);
-	HRESULT add_GuidanceUpdated(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator*,Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_GuidanceUpdated(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_GuidanceUpdated(EventRegistrationToken token);
-	HRESULT add_DestinationReached(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DestinationReached(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DestinationReached(EventRegistrationToken token);
-	HRESULT add_Rerouting(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Rerouting(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Rerouting(EventRegistrationToken token);
-	HRESULT add_Rerouted(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator*,Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Rerouted(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Rerouted(EventRegistrationToken token);
-	HRESULT add_RerouteFailed(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RerouteFailed(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RerouteFailed(EventRegistrationToken token);
-	HRESULT add_UserLocationLost(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_UserLocationLost(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_UserLocationLost(EventRegistrationToken token);
-	HRESULT add_UserLocationRestored(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_UserLocationRestored(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_UserLocationRestored(EventRegistrationToken token);
 	HRESULT abi_SetGuidanceVoice(INT32 voiceId, HSTRING voiceFolder);
 	HRESULT abi_UpdateUserLocation(Windows.Devices.Geolocation.Geocoordinate userLocation);
@@ -104,7 +104,7 @@ interface IGuidanceNavigator2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_AudioNotificationRequested(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator*,Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_AudioNotificationRequested(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_AudioNotificationRequested(EventRegistrationToken token);
 	HRESULT get_IsGuidanceAudioMuted(bool* return_value);
 	HRESULT set_IsGuidanceAudioMuted(bool value);

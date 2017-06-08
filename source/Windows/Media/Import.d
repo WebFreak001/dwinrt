@@ -2,6 +2,15 @@ module Windows.Media.Import;
 
 import dwinrt;
 
+struct PhotoImportProgress
+{
+	UINT32 ItemsImported;
+	UINT32 TotalItemsToImport;
+	UINT64 BytesImported;
+	UINT64 TotalBytesToImport;
+	double ImportProgress;
+}
+
 @uuid("f4e112f8-843d-428a-a1a6-81510292b0ae")
 @WinrtFactory("Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult")
 interface IPhotoImportDeleteImportedItemsFromSourceResult : IInspectable
@@ -59,10 +68,10 @@ extern(Windows):
 	HRESULT get_SelectedSiblingsSizeInBytes(UINT64* return_value);
 	HRESULT get_SelectedTotalCount(UINT32* return_value);
 	HRESULT get_SelectedTotalSizeInBytes(UINT64* return_value);
-	HRESULT add_SelectionChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult*,Windows.Media.Import.PhotoImportSelectionChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_SelectionChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_SelectionChanged(EventRegistrationToken token);
-	HRESULT abi_ImportItemsAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportImportItemsResult*,Windows.Media.Import.PhotoImportProgress)* return_operation);
-	HRESULT add_ItemImported(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult*,Windows.Media.Import.PhotoImportItemImportedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT abi_ImportItemsAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportImportItemsResult, Windows.Media.Import.PhotoImportProgress)* return_operation);
+	HRESULT add_ItemImported(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ItemImported(EventRegistrationToken token);
 }
 
@@ -96,7 +105,7 @@ extern(Windows):
 	HRESULT get_SiblingsSizeInBytes(UINT64* return_value);
 	HRESULT get_TotalCount(UINT32* return_value);
 	HRESULT get_TotalSizeInBytes(UINT64* return_value);
-	HRESULT abi_DeleteImportedItemsFromSourceAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult*,DOUBLE)* return_result);
+	HRESULT abi_DeleteImportedItemsFromSourceAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult, double)* return_result);
 }
 
 @uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e")
@@ -152,9 +161,9 @@ interface IPhotoImportOperation : IInspectable
 extern(Windows):
 	HRESULT get_Stage(Windows.Media.Import.PhotoImportStage* return_value);
 	HRESULT get_Session(Windows.Media.Import.PhotoImportSession* return_value);
-	HRESULT get_ContinueFindingItemsAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportFindItemsResult*,UINT32)* return_operation);
-	HRESULT get_ContinueImportingItemsAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportImportItemsResult*,Windows.Media.Import.PhotoImportProgress)* return_operation);
-	HRESULT get_ContinueDeletingImportedItemsFromSourceAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult*,DOUBLE)* return_operation);
+	HRESULT get_ContinueFindingItemsAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportFindItemsResult, UINT32)* return_operation);
+	HRESULT get_ContinueImportingItemsAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportImportItemsResult, Windows.Media.Import.PhotoImportProgress)* return_operation);
+	HRESULT get_ContinueDeletingImportedItemsFromSourceAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult, double)* return_operation);
 }
 
 @uuid("10461782-fa9d-4c30-8bc9-4d64911572d5")
@@ -184,7 +193,7 @@ extern(Windows):
 	HRESULT get_SubfolderCreationMode(Windows.Media.Import.PhotoImportSubfolderCreationMode* return_value);
 	HRESULT set_DestinationFileNamePrefix(HSTRING value);
 	HRESULT get_DestinationFileNamePrefix(HSTRING* return_value);
-	HRESULT abi_FindItemsAsync(Windows.Media.Import.PhotoImportContentTypeFilter contentTypeFilter, Windows.Media.Import.PhotoImportItemSelectionMode itemSelectionMode, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportFindItemsResult*,UINT32)* return_operation);
+	HRESULT abi_FindItemsAsync(Windows.Media.Import.PhotoImportContentTypeFilter contentTypeFilter, Windows.Media.Import.PhotoImportItemSelectionMode itemSelectionMode, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportFindItemsResult, UINT32)* return_operation);
 }
 
 @uuid("2a526710-3ec6-469d-a375-2b9f4785391e")

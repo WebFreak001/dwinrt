@@ -2,6 +2,12 @@ module Windows.Devices.I2c.Provider;
 
 import dwinrt;
 
+struct ProviderI2cTransferResult
+{
+	Windows.Devices.I2c.Provider.ProviderI2cTransferStatus Status;
+	UINT32 BytesTransferred;
+}
+
 @uuid("61c2bb82-4510-4163-a87c-4e15a9558980")
 interface II2cControllerProvider : IInspectable
 {

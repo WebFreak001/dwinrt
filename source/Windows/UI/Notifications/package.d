@@ -9,7 +9,7 @@ interface IAdaptiveNotificationContent : IInspectable
 
 extern(Windows):
 	HRESULT get_Kind(Windows.UI.Notifications.AdaptiveNotificationContentKind* return_value);
-	HRESULT get_Hints(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_Hints(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 }
 
 @uuid("46d4a3be-609a-4326-a40b-bfde872034a3")
@@ -174,7 +174,7 @@ extern(Windows):
 	HRESULT set_Template(HSTRING value);
 	HRESULT get_Language(HSTRING* return_value);
 	HRESULT set_Language(HSTRING value);
-	HRESULT get_Hints(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_Hints(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT abi_GetTextElements(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.AdaptiveNotificationText)* return_result);
 }
 
@@ -185,7 +185,7 @@ interface INotificationData : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_Values(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_Values(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT get_SequenceNumber(UINT32* return_value);
 	HRESULT set_SequenceNumber(UINT32 value);
 }
@@ -197,8 +197,8 @@ interface INotificationDataFactory : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_CreateNotificationDataWithValuesAndSequenceNumber(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING,HSTRING)) initialValues, UINT32 sequenceNumber, Windows.UI.Notifications.NotificationData* return_result);
-	HRESULT abi_CreateNotificationDataWithValues(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING,HSTRING)) initialValues, Windows.UI.Notifications.NotificationData* return_result);
+	HRESULT abi_CreateNotificationDataWithValuesAndSequenceNumber(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) initialValues, UINT32 sequenceNumber, Windows.UI.Notifications.NotificationData* return_result);
+	HRESULT abi_CreateNotificationDataWithValues(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) initialValues, Windows.UI.Notifications.NotificationData* return_result);
 }
 
 @uuid("68835b8e-aa56-4e11-86d3-5f9a6957bc5b")
@@ -530,11 +530,11 @@ extern(Windows):
 	HRESULT get_Content(Windows.Data.Xml.Dom.XmlDocument* return_value);
 	HRESULT set_ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value);
 	HRESULT get_ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
-	HRESULT add_Dismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification*,Windows.UI.Notifications.ToastDismissedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_Dismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Dismissed(EventRegistrationToken cookie);
-	HRESULT add_Activated(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_Activated(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Activated(EventRegistrationToken cookie);
-	HRESULT add_Failed(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification*,Windows.UI.Notifications.ToastFailedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Failed(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Failed(EventRegistrationToken token);
 }
 

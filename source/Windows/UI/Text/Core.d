@@ -2,6 +2,12 @@ module Windows.UI.Text.Core;
 
 import dwinrt;
 
+struct CoreTextRange
+{
+	INT32 StartCaretPosition;
+	INT32 EndCaretPosition;
+}
+
 @uuid("1f34ebb6-b79f-4121-a5e7-fda9b8616e30")
 @WinrtFactory("Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs")
 interface ICoreTextCompositionCompletedEventArgs : IInspectable
@@ -51,23 +57,23 @@ extern(Windows):
 	HRESULT set_IsReadOnly(bool value);
 	HRESULT get_InputPaneDisplayPolicy(Windows.UI.Text.Core.CoreTextInputPaneDisplayPolicy* return_value);
 	HRESULT set_InputPaneDisplayPolicy(Windows.UI.Text.Core.CoreTextInputPaneDisplayPolicy value);
-	HRESULT add_TextRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext*,Windows.UI.Text.Core.CoreTextTextRequestedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_TextRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_TextRequested(EventRegistrationToken cookie);
-	HRESULT add_SelectionRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext*,Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_SelectionRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_SelectionRequested(EventRegistrationToken cookie);
-	HRESULT add_LayoutRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext*,Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_LayoutRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_LayoutRequested(EventRegistrationToken cookie);
-	HRESULT add_TextUpdating(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext*,Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_TextUpdating(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_TextUpdating(EventRegistrationToken cookie);
-	HRESULT add_SelectionUpdating(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext*,Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_SelectionUpdating(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_SelectionUpdating(EventRegistrationToken cookie);
-	HRESULT add_FormatUpdating(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext*,Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_FormatUpdating(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_FormatUpdating(EventRegistrationToken cookie);
-	HRESULT add_CompositionStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext*,Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_CompositionStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_CompositionStarted(EventRegistrationToken cookie);
-	HRESULT add_CompositionCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext*,Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_CompositionCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_CompositionCompleted(EventRegistrationToken cookie);
-	HRESULT add_FocusRemoved(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_FocusRemoved(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_FocusRemoved(EventRegistrationToken cookie);
 	HRESULT abi_NotifyFocusEnter();
 	HRESULT abi_NotifyFocusLeave();
@@ -83,7 +89,7 @@ interface ICoreTextEditContext2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_NotifyFocusLeaveCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_NotifyFocusLeaveCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_NotifyFocusLeaveCompleted(EventRegistrationToken cookie);
 }
 
@@ -187,7 +193,7 @@ interface ICoreTextServicesManager : IInspectable
 
 extern(Windows):
 	HRESULT get_InputLanguage(Windows.Globalization.Language* return_value);
-	HRESULT add_InputLanguageChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextServicesManager*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_InputLanguageChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextServicesManager, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_InputLanguageChanged(EventRegistrationToken cookie);
 	HRESULT abi_CreateEditContext(Windows.UI.Text.Core.CoreTextEditContext* return_value);
 }

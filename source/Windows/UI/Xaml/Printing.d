@@ -2,6 +2,24 @@ module Windows.UI.Xaml.Printing;
 
 import dwinrt;
 
+@uuid("d4b57970-57a0-4209-847c-c093b54bc729")
+interface AddPagesEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Printing.AddPagesEventArgs e);
+}
+
+@uuid("ccb3e9ed-9c11-4e50-ab49-e98086bbfdef")
+interface GetPreviewPageEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Printing.GetPreviewPageEventArgs e);
+}
+
+@uuid("0cc05b61-811b-4a32-9965-13eb78dbb01b")
+interface PaginateEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Printing.PaginateEventArgs e);
+}
+
 @uuid("e2e52be5-056c-4420-9795-cb3526ce0c20")
 @WinrtFactory("Windows.UI.Xaml.Printing.AddPagesEventArgs")
 interface IAddPagesEventArgs : IInspectable
@@ -41,11 +59,11 @@ interface IPrintDocument : IInspectable
 
 extern(Windows):
 	HRESULT get_DocumentSource(Windows.Graphics.Printing.IPrintDocumentSource* return_value);
-	HRESULT add_Paginate(Windows.UI.Xaml.Printing.PaginateEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Paginate(Windows.UI.Xaml.Printing.PaginateEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Paginate(EventRegistrationToken token);
-	HRESULT add_GetPreviewPage(Windows.UI.Xaml.Printing.GetPreviewPageEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_GetPreviewPage(Windows.UI.Xaml.Printing.GetPreviewPageEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_GetPreviewPage(EventRegistrationToken token);
-	HRESULT add_AddPages(Windows.UI.Xaml.Printing.AddPagesEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_AddPages(Windows.UI.Xaml.Printing.AddPagesEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_AddPages(EventRegistrationToken token);
 	HRESULT abi_AddPage(Windows.UI.Xaml.UIElement pageVisual);
 	HRESULT abi_AddPagesComplete();

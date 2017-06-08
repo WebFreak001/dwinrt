@@ -67,7 +67,7 @@ interface IGattServiceProviderConnectionStatics : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_AllServices(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.Devices.Bluetooth.Background.GattServiceProviderConnection*)* return_value);
+	HRESULT get_AllServices(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Devices.Bluetooth.Background.GattServiceProviderConnection)* return_value);
 }
 
 @uuid("ae8c0625-05ff-4afb-b16a-de95f3cf0158")

@@ -2,6 +2,24 @@ module Windows.UI.ApplicationSettings;
 
 import dwinrt;
 
+@uuid("61c0e185-0977-4678-b4e2-98727afbeed9")
+interface CredentialCommandCredentialDeletedHandler
+{
+	HRESULT abi_Invoke(Windows.UI.ApplicationSettings.CredentialCommand command);
+}
+
+@uuid("1ee6e459-1705-4a9a-b599-a0c3d6921973")
+interface WebAccountCommandInvokedHandler
+{
+	HRESULT abi_Invoke(Windows.UI.ApplicationSettings.WebAccountCommand command, Windows.UI.ApplicationSettings.WebAccountInvokedArgs args);
+}
+
+@uuid("b7de5527-4c8f-42dd-84da-5ec493abdb9a")
+interface WebAccountProviderCommandInvokedHandler
+{
+	HRESULT abi_Invoke(Windows.UI.ApplicationSettings.WebAccountProviderCommand command);
+}
+
 @uuid("81ea942c-4f09-4406-a538-838d9b14b7e6")
 @WinrtFactory("Windows.UI.ApplicationSettings.AccountsSettingsPane")
 interface IAccountsSettingsPane : IInspectable
@@ -9,7 +27,7 @@ interface IAccountsSettingsPane : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_AccountCommandsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.AccountsSettingsPane*,Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_AccountCommandsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_AccountCommandsRequested(EventRegistrationToken cookie);
 }
 
@@ -69,7 +87,7 @@ interface ICredentialCommand : IInspectable
 
 extern(Windows):
 	HRESULT get_PasswordCredential(Windows.Security.Credentials.PasswordCredential* return_value);
-	HRESULT get_CredentialDeleted(Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler** return_value);
+	HRESULT get_CredentialDeleted(Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler* return_value);
 }
 
 @uuid("27e88c17-bc3e-4b80-9495-4ed720e48a91")
@@ -80,7 +98,7 @@ interface ICredentialCommandFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateCredentialCommand(Windows.Security.Credentials.PasswordCredential passwordCredential, Windows.UI.ApplicationSettings.CredentialCommand* return_instance);
-	HRESULT abi_CreateCredentialCommandWithHandler(Windows.Security.Credentials.PasswordCredential passwordCredential, Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler* deleted, Windows.UI.ApplicationSettings.CredentialCommand* return_instance);
+	HRESULT abi_CreateCredentialCommandWithHandler(Windows.Security.Credentials.PasswordCredential passwordCredential, Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler deleted, Windows.UI.ApplicationSettings.CredentialCommand* return_instance);
 }
 
 @uuid("68e15b33-1c83-433a-aa5a-ceeea5bd4764")
@@ -90,7 +108,7 @@ interface ISettingsCommandFactory : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_CreateSettingsCommand(IInspectable settingsCommandId, HSTRING label, Windows.UI.Popups.UICommandInvokedHandler* handler, Windows.UI.ApplicationSettings.SettingsCommand* return_instance);
+	HRESULT abi_CreateSettingsCommand(IInspectable settingsCommandId, HSTRING label, Windows.UI.Popups.UICommandInvokedHandler handler, Windows.UI.ApplicationSettings.SettingsCommand* return_instance);
 }
 
 @uuid("749ae954-2f69-4b17-8aba-d05ce5778e46")
@@ -111,7 +129,7 @@ interface ISettingsPane : IInspectable
 
 extern(Windows):
 	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT add_CommandsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.SettingsPane*,Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_CommandsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs) handler, EventRegistrationToken* return_cookie);
 	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT remove_CommandsRequested(EventRegistrationToken cookie);
 }
@@ -161,7 +179,7 @@ interface IWebAccountCommand : IInspectable
 
 extern(Windows):
 	HRESULT get_WebAccount(Windows.Security.Credentials.WebAccount* return_value);
-	HRESULT get_Invoked(Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler** return_value);
+	HRESULT get_Invoked(Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler* return_value);
 	HRESULT get_Actions(Windows.UI.ApplicationSettings.SupportedWebAccountActions* return_value);
 }
 
@@ -172,7 +190,7 @@ interface IWebAccountCommandFactory : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_CreateWebAccountCommand(Windows.Security.Credentials.WebAccount webAccount, Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler* invoked, Windows.UI.ApplicationSettings.SupportedWebAccountActions actions, Windows.UI.ApplicationSettings.WebAccountCommand* return_instance);
+	HRESULT abi_CreateWebAccountCommand(Windows.Security.Credentials.WebAccount webAccount, Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler invoked, Windows.UI.ApplicationSettings.SupportedWebAccountActions actions, Windows.UI.ApplicationSettings.WebAccountCommand* return_instance);
 }
 
 @uuid("e7abcc40-a1d8-4c5d-9a7f-1d34b2f90ad2")
@@ -193,7 +211,7 @@ interface IWebAccountProviderCommand : IInspectable
 
 extern(Windows):
 	HRESULT get_WebAccountProvider(Windows.Security.Credentials.WebAccountProvider* return_value);
-	HRESULT get_Invoked(Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler** return_value);
+	HRESULT get_Invoked(Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler* return_value);
 }
 
 @uuid("d5658a1b-b176-4776-8469-a9d3ff0b3f59")
@@ -203,7 +221,7 @@ interface IWebAccountProviderCommandFactory : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_CreateWebAccountProviderCommand(Windows.Security.Credentials.WebAccountProvider webAccountProvider, Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler* invoked, Windows.UI.ApplicationSettings.WebAccountProviderCommand* return_instance);
+	HRESULT abi_CreateWebAccountProviderCommand(Windows.Security.Credentials.WebAccountProvider webAccountProvider, Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler invoked, Windows.UI.ApplicationSettings.WebAccountProviderCommand* return_instance);
 }
 
 interface AccountsSettingsPane

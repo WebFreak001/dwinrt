@@ -2,6 +2,12 @@ module Windows.ApplicationModel.Store;
 
 import dwinrt;
 
+@uuid("d4a50255-1369-4c36-832f-6f2d88e3659b")
+interface LicenseChangedEventHandler
+{
+	HRESULT abi_Invoke();
+}
+
 @uuid("d52dc065-da3f-4685-995e-9b482eb5e603")
 @WinrtFactory("Windows.ApplicationModel.Store.CurrentApp")
 interface ICurrentApp : IInspectable
@@ -126,11 +132,11 @@ interface ILicenseInformation : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_ProductLicenses(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.ApplicationModel.Store.ProductLicense*)* return_value);
+	HRESULT get_ProductLicenses(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Store.ProductLicense)* return_value);
 	HRESULT get_IsActive(bool* return_value);
 	HRESULT get_IsTrial(bool* return_value);
 	HRESULT get_ExpirationDate(Windows.Foundation.DateTime* return_value);
-	HRESULT add_LicenseChanged(Windows.ApplicationModel.Store.LicenseChangedEventHandler* handler, EventRegistrationToken* return_cookie);
+	HRESULT add_LicenseChanged(Windows.ApplicationModel.Store.LicenseChangedEventHandler handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_LicenseChanged(EventRegistrationToken cookie);
 }
 
@@ -143,7 +149,7 @@ interface IListingInformation : IInspectable
 extern(Windows):
 	HRESULT get_CurrentMarket(HSTRING* return_value);
 	HRESULT get_Description(HSTRING* return_value);
-	HRESULT get_ProductListings(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.ApplicationModel.Store.ProductListing*)* return_value);
+	HRESULT get_ProductListings(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Store.ProductListing)* return_value);
 	HRESULT get_FormattedPrice(HSTRING* return_value);
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_AgeRating(UINT32* return_value);

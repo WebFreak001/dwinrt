@@ -78,12 +78,12 @@ extern(Windows):
 	HRESULT set_RelevantDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value);
 	HRESULT get_RelevantDateDisplayMessage(HSTRING* return_value);
 	HRESULT set_RelevantDateDisplayMessage(HSTRING value);
-	HRESULT get_TransactionHistory(Windows.Foundation.Collections.IMap!(HSTRING,Windows.ApplicationModel.Wallet.WalletTransaction*)* return_value);
-	HRESULT get_RelevantLocations(Windows.Foundation.Collections.IMap!(HSTRING,Windows.ApplicationModel.Wallet.WalletRelevantLocation*)* return_value);
+	HRESULT get_TransactionHistory(Windows.Foundation.Collections.IMap!(HSTRING, Windows.ApplicationModel.Wallet.WalletTransaction)* return_value);
+	HRESULT get_RelevantLocations(Windows.Foundation.Collections.IMap!(HSTRING, Windows.ApplicationModel.Wallet.WalletRelevantLocation)* return_value);
 	HRESULT get_IsMoreTransactionHistoryLaunchable(bool* return_value);
 	HRESULT set_IsMoreTransactionHistoryLaunchable(bool value);
-	HRESULT get_DisplayProperties(Windows.Foundation.Collections.IMap!(HSTRING,Windows.ApplicationModel.Wallet.WalletItemCustomProperty*)* return_value);
-	HRESULT get_Verbs(Windows.Foundation.Collections.IMap!(HSTRING,Windows.ApplicationModel.Wallet.WalletVerb*)* return_value);
+	HRESULT get_DisplayProperties(Windows.Foundation.Collections.IMap!(HSTRING, Windows.ApplicationModel.Wallet.WalletItemCustomProperty)* return_value);
+	HRESULT get_Verbs(Windows.Foundation.Collections.IMap!(HSTRING, Windows.ApplicationModel.Wallet.WalletVerb)* return_value);
 }
 
 @uuid("b94b40f3-fa00-40fd-98dc-9de46697f1e7")
@@ -151,7 +151,7 @@ interface IWalletItemStore2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ItemsChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Wallet.WalletItemStore*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_ItemsChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Wallet.WalletItemStore, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ItemsChanged(EventRegistrationToken cookie);
 }
 

@@ -25,15 +25,15 @@ extern(Windows):
 	HRESULT get_InboundBitsPerSecond(UINT64* return_value);
 	HRESULT get_InboundBitsPerSecondWindow(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_InboundBitsPerSecondWindow(Windows.Foundation.TimeSpan value);
-	HRESULT add_DownloadBitrateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource*,Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DownloadBitrateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DownloadBitrateChanged(EventRegistrationToken token);
-	HRESULT add_PlaybackBitrateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource*,Windows.Media.Streaming.Adaptive.AdaptiveMediaSourcePlaybackBitrateChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PlaybackBitrateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourcePlaybackBitrateChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PlaybackBitrateChanged(EventRegistrationToken token);
-	HRESULT add_DownloadRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource*,Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DownloadRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DownloadRequested(EventRegistrationToken token);
-	HRESULT add_DownloadCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource*,Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DownloadCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DownloadCompleted(EventRegistrationToken token);
-	HRESULT add_DownloadFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource*,Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DownloadFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DownloadFailed(EventRegistrationToken token);
 }
 
@@ -136,7 +136,7 @@ interface IAdaptiveMediaSourceDiagnostics : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_DiagnosticAvailable(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnostics*,Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticAvailableEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DiagnosticAvailable(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnostics, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticAvailableEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DiagnosticAvailable(EventRegistrationToken token);
 }
 

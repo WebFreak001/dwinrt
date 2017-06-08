@@ -11,7 +11,7 @@ interface IBattery : IInspectable
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT abi_GetReport(Windows.Devices.Power.BatteryReport* return_result);
-	HRESULT add_ReportUpdated(Windows.Foundation.TypedEventHandler!(Windows.Devices.Power.Battery*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReportUpdated(Windows.Foundation.TypedEventHandler!(Windows.Devices.Power.Battery, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReportUpdated(EventRegistrationToken token);
 }
 

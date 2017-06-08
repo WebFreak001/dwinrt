@@ -13,9 +13,9 @@ extern(Windows):
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
 	HRESULT set_ReportInterval(UINT32 value);
 	HRESULT get_ReportInterval(UINT32* return_value);
-	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Accelerometer*,Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadingChanged(EventRegistrationToken token);
-	HRESULT add_Shaken(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Accelerometer*,Windows.Devices.Sensors.AccelerometerShakenEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Shaken(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerShakenEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Shaken(EventRegistrationToken token);
 }
 
@@ -128,7 +128,7 @@ extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_SupportedActivities(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivityType)* return_value);
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
-	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.ActivitySensor*,Windows.Devices.Sensors.ActivitySensorReadingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.ActivitySensor, Windows.Devices.Sensors.ActivitySensorReadingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadingChanged(EventRegistrationToken token);
 }
 
@@ -200,7 +200,7 @@ extern(Windows):
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
 	HRESULT set_ReportInterval(UINT32 value);
 	HRESULT get_ReportInterval(UINT32* return_value);
-	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Altimeter*,Windows.Devices.Sensors.AltimeterReadingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Altimeter, Windows.Devices.Sensors.AltimeterReadingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadingChanged(EventRegistrationToken token);
 }
 
@@ -247,7 +247,7 @@ extern(Windows):
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
 	HRESULT set_ReportInterval(UINT32 value);
 	HRESULT get_ReportInterval(UINT32* return_value);
-	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Barometer*,Windows.Devices.Sensors.BarometerReadingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Barometer, Windows.Devices.Sensors.BarometerReadingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadingChanged(EventRegistrationToken token);
 }
 
@@ -293,7 +293,7 @@ extern(Windows):
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
 	HRESULT set_ReportInterval(UINT32 value);
 	HRESULT get_ReportInterval(UINT32* return_value);
-	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Compass*,Windows.Devices.Sensors.CompassReadingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Compass, Windows.Devices.Sensors.CompassReadingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadingChanged(EventRegistrationToken token);
 }
 
@@ -371,7 +371,7 @@ extern(Windows):
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
 	HRESULT set_ReportInterval(UINT32 value);
 	HRESULT get_ReportInterval(UINT32* return_value);
-	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Gyrometer*,Windows.Devices.Sensors.GyrometerReadingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Gyrometer, Windows.Devices.Sensors.GyrometerReadingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadingChanged(EventRegistrationToken token);
 }
 
@@ -440,7 +440,7 @@ extern(Windows):
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
 	HRESULT set_ReportInterval(UINT32 value);
 	HRESULT get_ReportInterval(UINT32* return_value);
-	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Inclinometer*,Windows.Devices.Sensors.InclinometerReadingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Inclinometer, Windows.Devices.Sensors.InclinometerReadingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadingChanged(EventRegistrationToken token);
 }
 
@@ -540,7 +540,7 @@ extern(Windows):
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
 	HRESULT set_ReportInterval(UINT32 value);
 	HRESULT get_ReportInterval(UINT32* return_value);
-	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.LightSensor*,Windows.Devices.Sensors.LightSensorReadingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.LightSensor, Windows.Devices.Sensors.LightSensorReadingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadingChanged(EventRegistrationToken token);
 }
 
@@ -596,7 +596,7 @@ extern(Windows):
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
 	HRESULT set_ReportInterval(UINT32 value);
 	HRESULT get_ReportInterval(UINT32* return_value);
-	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Magnetometer*,Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Magnetometer, Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadingChanged(EventRegistrationToken token);
 }
 
@@ -666,7 +666,7 @@ extern(Windows):
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
 	HRESULT set_ReportInterval(UINT32 value);
 	HRESULT get_ReportInterval(UINT32* return_value);
-	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.OrientationSensor*,Windows.Devices.Sensors.OrientationSensorReadingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.OrientationSensor, Windows.Devices.Sensors.OrientationSensorReadingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadingChanged(EventRegistrationToken token);
 }
 
@@ -767,7 +767,7 @@ extern(Windows):
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
 	HRESULT set_ReportInterval(UINT32 value);
 	HRESULT get_ReportInterval(UINT32* return_value);
-	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Pedometer*,Windows.Devices.Sensors.PedometerReadingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Pedometer, Windows.Devices.Sensors.PedometerReadingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadingChanged(EventRegistrationToken token);
 }
 
@@ -778,7 +778,7 @@ interface IPedometer2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_GetCurrentReadings(Windows.Foundation.Collections.IMapView!(Windows.Devices.Sensors.PedometerStepKind,Windows.Devices.Sensors.PedometerReading*)* return_value);
+	HRESULT abi_GetCurrentReadings(Windows.Foundation.Collections.IMapView!(Windows.Devices.Sensors.PedometerStepKind, Windows.Devices.Sensors.PedometerReading)* return_value);
 }
 
 @uuid("cbad8f50-7a54-466b-9010-77a162fca5d7")
@@ -849,7 +849,7 @@ extern(Windows):
 	HRESULT get_MaxDistanceInMillimeters(Windows.Foundation.IReference!(UINT32)* return_value);
 	HRESULT get_MinDistanceInMillimeters(Windows.Foundation.IReference!(UINT32)* return_value);
 	HRESULT abi_GetCurrentReading(Windows.Devices.Sensors.ProximitySensorReading* return_value);
-	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.ProximitySensor*,Windows.Devices.Sensors.ProximitySensorReadingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadingChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.ProximitySensor, Windows.Devices.Sensors.ProximitySensorReadingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadingChanged(EventRegistrationToken token);
 	HRESULT abi_CreateDisplayOnOffController(Windows.Devices.Sensors.ProximitySensorDisplayOnOffController* return_controller);
 }
@@ -957,7 +957,7 @@ interface ISimpleOrientationSensor : IInspectable
 
 extern(Windows):
 	HRESULT abi_GetCurrentOrientation(Windows.Devices.Sensors.SimpleOrientation* return_value);
-	HRESULT add_OrientationChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.SimpleOrientationSensor*,Windows.Devices.Sensors.SimpleOrientationSensorOrientationChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_OrientationChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.SimpleOrientationSensor, Windows.Devices.Sensors.SimpleOrientationSensorOrientationChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_OrientationChanged(EventRegistrationToken token);
 }
 

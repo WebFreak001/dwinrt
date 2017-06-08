@@ -9,11 +9,11 @@ interface IAtomPubClient : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_RetrieveServiceDocumentAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.AtomPub.ServiceDocument*,Windows.Web.Syndication.RetrievalProgress)* return_operation);
-	HRESULT abi_RetrieveMediaResourceAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream*,Windows.Web.Syndication.RetrievalProgress)* return_operation);
-	HRESULT abi_RetrieveResourceAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationItem*,Windows.Web.Syndication.RetrievalProgress)* return_operation);
-	HRESULT abi_CreateResourceAsync(Windows.Foundation.Uri uri, HSTRING description, Windows.Web.Syndication.SyndicationItem item, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationItem*,Windows.Web.Syndication.TransferProgress)* return_operation);
-	HRESULT abi_CreateMediaResourceAsync(Windows.Foundation.Uri uri, HSTRING mediaType, HSTRING description, Windows.Storage.Streams.IInputStream mediaStream, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationItem*,Windows.Web.Syndication.TransferProgress)* return_operation);
+	HRESULT abi_RetrieveServiceDocumentAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.AtomPub.ServiceDocument, Windows.Web.Syndication.RetrievalProgress)* return_operation);
+	HRESULT abi_RetrieveMediaResourceAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, Windows.Web.Syndication.RetrievalProgress)* return_operation);
+	HRESULT abi_RetrieveResourceAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationItem, Windows.Web.Syndication.RetrievalProgress)* return_operation);
+	HRESULT abi_CreateResourceAsync(Windows.Foundation.Uri uri, HSTRING description, Windows.Web.Syndication.SyndicationItem item, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationItem, Windows.Web.Syndication.TransferProgress)* return_operation);
+	HRESULT abi_CreateMediaResourceAsync(Windows.Foundation.Uri uri, HSTRING mediaType, HSTRING description, Windows.Storage.Streams.IInputStream mediaStream, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationItem, Windows.Web.Syndication.TransferProgress)* return_operation);
 	HRESULT abi_UpdateMediaResourceAsync(Windows.Foundation.Uri uri, HSTRING mediaType, Windows.Storage.Streams.IInputStream mediaStream, Windows.Foundation.IAsyncActionWithProgress!(Windows.Web.Syndication.TransferProgress)* return_operation);
 	HRESULT abi_UpdateResourceAsync(Windows.Foundation.Uri uri, Windows.Web.Syndication.SyndicationItem item, Windows.Foundation.IAsyncActionWithProgress!(Windows.Web.Syndication.TransferProgress)* return_operation);
 	HRESULT abi_UpdateResourceItemAsync(Windows.Web.Syndication.SyndicationItem item, Windows.Foundation.IAsyncActionWithProgress!(Windows.Web.Syndication.TransferProgress)* return_operation);

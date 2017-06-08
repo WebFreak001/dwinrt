@@ -2,6 +2,30 @@ module Windows.Networking.Proximity;
 
 import dwinrt;
 
+@uuid("efa9da69-f6e1-49c9-a49e-8e0fc58fb911")
+interface DeviceArrivedEventHandler
+{
+	HRESULT abi_Invoke(Windows.Networking.Proximity.ProximityDevice sender);
+}
+
+@uuid("efa9da69-f6e2-49c9-a49e-8e0fc58fb911")
+interface DeviceDepartedEventHandler
+{
+	HRESULT abi_Invoke(Windows.Networking.Proximity.ProximityDevice sender);
+}
+
+@uuid("efab0782-f6e2-4675-a045-d8e320c24808")
+interface MessageReceivedHandler
+{
+	HRESULT abi_Invoke(Windows.Networking.Proximity.ProximityDevice sender, Windows.Networking.Proximity.ProximityMessage message);
+}
+
+@uuid("efaa0b4a-f6e2-4d7d-856c-78fc8efc021e")
+interface MessageTransmittedHandler
+{
+	HRESULT abi_Invoke(Windows.Networking.Proximity.ProximityDevice sender, INT64 messageId);
+}
+
 @uuid("eb6891ae-4f1e-4c66-bd0d-46924a942e08")
 @WinrtFactory("Windows.Networking.Proximity.ConnectionRequestedEventArgs")
 interface IConnectionRequestedEventArgs : IInspectable
@@ -28,13 +52,13 @@ extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT set_DisplayName(HSTRING value);
 	HRESULT get_SupportedDiscoveryTypes(Windows.Networking.Proximity.PeerDiscoveryTypes* return_value);
-	HRESULT get_AlternateIdentities(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_AlternateIdentities(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT abi_Start();
 	HRESULT abi_StartWithMessage(HSTRING peerMessage);
 	HRESULT abi_Stop();
-	HRESULT add_TriggeredConnectionStateChanged(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_TriggeredConnectionStateChanged(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_TriggeredConnectionStateChanged(EventRegistrationToken cookie);
-	HRESULT add_ConnectionRequested(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.Networking.Proximity.ConnectionRequestedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_ConnectionRequested(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.Networking.Proximity.ConnectionRequestedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ConnectionRequested(EventRegistrationToken cookie);
 	HRESULT abi_FindAllPeersAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Proximity.PeerInformation))* return_asyncOp);
 	HRESULT abi_ConnectAsync(Windows.Networking.Proximity.PeerInformation peerInformation, Windows.Foundation.IAsyncOperation!(Windows.Networking.Sockets.StreamSocket)* return_asyncOp);
@@ -93,15 +117,15 @@ interface IPeerWatcher : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher*,Windows.Networking.Proximity.PeerInformation*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Added(EventRegistrationToken token);
-	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher*,Windows.Networking.Proximity.PeerInformation*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Removed(EventRegistrationToken token);
-	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher*,Windows.Networking.Proximity.PeerInformation*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Updated(EventRegistrationToken token);
-	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_EnumerationCompleted(EventRegistrationToken token);
-	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Stopped(EventRegistrationToken token);
 	HRESULT get_Status(Windows.Networking.Proximity.PeerWatcherStatus* return_status);
 	HRESULT abi_Start();
@@ -115,18 +139,18 @@ interface IProximityDevice : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_SubscribeForMessage(HSTRING messageType, Windows.Networking.Proximity.MessageReceivedHandler* messageReceivedHandler, INT64* return_subscriptionId);
+	HRESULT abi_SubscribeForMessage(HSTRING messageType, Windows.Networking.Proximity.MessageReceivedHandler messageReceivedHandler, INT64* return_subscriptionId);
 	HRESULT abi_PublishMessage(HSTRING messageType, HSTRING message, INT64* return_messageId);
-	HRESULT abi_PublishMessageWithCallback(HSTRING messageType, HSTRING message, Windows.Networking.Proximity.MessageTransmittedHandler* messageTransmittedHandler, INT64* return_messageId);
+	HRESULT abi_PublishMessageWithCallback(HSTRING messageType, HSTRING message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler, INT64* return_messageId);
 	HRESULT abi_PublishBinaryMessage(HSTRING messageType, Windows.Storage.Streams.IBuffer message, INT64* return_messageId);
-	HRESULT abi_PublishBinaryMessageWithCallback(HSTRING messageType, Windows.Storage.Streams.IBuffer message, Windows.Networking.Proximity.MessageTransmittedHandler* messageTransmittedHandler, INT64* return_messageId);
+	HRESULT abi_PublishBinaryMessageWithCallback(HSTRING messageType, Windows.Storage.Streams.IBuffer message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler, INT64* return_messageId);
 	HRESULT abi_PublishUriMessage(Windows.Foundation.Uri message, INT64* return_messageId);
-	HRESULT abi_PublishUriMessageWithCallback(Windows.Foundation.Uri message, Windows.Networking.Proximity.MessageTransmittedHandler* messageTransmittedHandler, INT64* return_messageId);
+	HRESULT abi_PublishUriMessageWithCallback(Windows.Foundation.Uri message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler, INT64* return_messageId);
 	HRESULT abi_StopSubscribingForMessage(INT64 subscriptionId);
 	HRESULT abi_StopPublishingMessage(INT64 messageId);
-	HRESULT add_DeviceArrived(Windows.Networking.Proximity.DeviceArrivedEventHandler* arrivedHandler, EventRegistrationToken* return_cookie);
+	HRESULT add_DeviceArrived(Windows.Networking.Proximity.DeviceArrivedEventHandler arrivedHandler, EventRegistrationToken* return_cookie);
 	HRESULT remove_DeviceArrived(EventRegistrationToken cookie);
-	HRESULT add_DeviceDeparted(Windows.Networking.Proximity.DeviceDepartedEventHandler* departedHandler, EventRegistrationToken* return_cookie);
+	HRESULT add_DeviceDeparted(Windows.Networking.Proximity.DeviceDepartedEventHandler departedHandler, EventRegistrationToken* return_cookie);
 	HRESULT remove_DeviceDeparted(EventRegistrationToken cookie);
 	HRESULT get_MaxMessageBytes(UINT32* return_value);
 	HRESULT get_BitsPerSecond(UINT64* return_value);

@@ -2,6 +2,18 @@ module Windows.Devices.Gpio;
 
 import dwinrt;
 
+struct GpioChangeCount
+{
+	UINT64 Count;
+	Windows.Foundation.TimeSpan RelativeTime;
+}
+
+struct GpioChangeRecord
+{
+	Windows.Foundation.TimeSpan RelativeTime;
+	Windows.Devices.Gpio.GpioPinEdge Edge;
+}
+
 @uuid("cb5ec0de-6801-43ff-803d-4576628a8b26")
 @WinrtFactory("Windows.Devices.Gpio.GpioChangeCounter")
 interface IGpioChangeCounter : IInspectable
@@ -103,7 +115,7 @@ interface IGpioPin : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ValueChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Gpio.GpioPin*,Windows.Devices.Gpio.GpioPinValueChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ValueChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ValueChanged(EventRegistrationToken token);
 	HRESULT get_DebounceTimeout(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_DebounceTimeout(Windows.Foundation.TimeSpan value);

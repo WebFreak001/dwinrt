@@ -13,7 +13,7 @@ extern(Windows):
 	HRESULT abi_GetPrintModelPackage(IInspectable* return_printModelPackage);
 	HRESULT get_IsPrintReady(bool* return_value);
 	HRESULT set_IsPrintReady(bool value);
-	HRESULT add_PrintRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.Print3DWorkflow*,Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_PrintRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_PrintRequested(EventRegistrationToken eventCookie);
 }
 
@@ -24,7 +24,7 @@ interface IPrint3DWorkflow2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_PrinterChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.Print3DWorkflow*,Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_PrinterChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_PrinterChanged(EventRegistrationToken eventCookie);
 }
 
@@ -81,7 +81,7 @@ interface IPrintTaskConfiguration : IInspectable
 
 extern(Windows):
 	HRESULT get_PrinterExtensionContext(IInspectable* return_context);
-	HRESULT add_SaveRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.PrintTaskConfiguration*,Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_SaveRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.PrintTaskConfiguration, Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_SaveRequested(EventRegistrationToken eventCookie);
 }
 

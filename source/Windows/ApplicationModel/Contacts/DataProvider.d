@@ -9,9 +9,9 @@ interface IContactDataProviderConnection : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_SyncRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection*,Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SyncRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SyncRequested(EventRegistrationToken token);
-	HRESULT add_ServerSearchReadBatchRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection*,Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ServerSearchReadBatchRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ServerSearchReadBatchRequested(EventRegistrationToken token);
 	HRESULT abi_Start();
 }

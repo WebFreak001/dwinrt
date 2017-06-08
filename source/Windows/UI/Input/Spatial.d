@@ -9,33 +9,33 @@ interface ISpatialGestureRecognizer : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_RecognitionStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialRecognitionStartedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RecognitionStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionStartedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RecognitionStarted(EventRegistrationToken token);
-	HRESULT add_RecognitionEnded(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialRecognitionEndedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RecognitionEnded(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionEndedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RecognitionEnded(EventRegistrationToken token);
-	HRESULT add_Tapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialTappedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Tapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialTappedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Tapped(EventRegistrationToken token);
-	HRESULT add_HoldStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialHoldStartedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_HoldStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldStartedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_HoldStarted(EventRegistrationToken token);
-	HRESULT add_HoldCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialHoldCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_HoldCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_HoldCompleted(EventRegistrationToken token);
-	HRESULT add_HoldCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialHoldCanceledEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_HoldCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCanceledEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_HoldCanceled(EventRegistrationToken token);
-	HRESULT add_ManipulationStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialManipulationStartedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ManipulationStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationStartedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ManipulationStarted(EventRegistrationToken token);
-	HRESULT add_ManipulationUpdated(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialManipulationUpdatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ManipulationUpdated(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationUpdatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ManipulationUpdated(EventRegistrationToken token);
-	HRESULT add_ManipulationCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialManipulationCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ManipulationCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ManipulationCompleted(EventRegistrationToken token);
-	HRESULT add_ManipulationCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialManipulationCanceledEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ManipulationCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCanceledEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ManipulationCanceled(EventRegistrationToken token);
-	HRESULT add_NavigationStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialNavigationStartedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_NavigationStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationStartedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_NavigationStarted(EventRegistrationToken token);
-	HRESULT add_NavigationUpdated(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialNavigationUpdatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_NavigationUpdated(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationUpdatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_NavigationUpdated(EventRegistrationToken token);
-	HRESULT add_NavigationCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialNavigationCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_NavigationCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_NavigationCompleted(EventRegistrationToken token);
-	HRESULT add_NavigationCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer*,Windows.UI.Input.Spatial.SpatialNavigationCanceledEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_NavigationCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCanceledEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_NavigationCanceled(EventRegistrationToken token);
 	HRESULT abi_CaptureInteraction(Windows.UI.Input.Spatial.SpatialInteraction interaction);
 	HRESULT abi_CancelPendingGestures();
@@ -154,17 +154,17 @@ interface ISpatialInteractionManager : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_SourceDetected(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager*,Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SourceDetected(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SourceDetected(EventRegistrationToken token);
-	HRESULT add_SourceLost(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager*,Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SourceLost(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SourceLost(EventRegistrationToken token);
-	HRESULT add_SourceUpdated(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager*,Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SourceUpdated(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SourceUpdated(EventRegistrationToken token);
-	HRESULT add_SourcePressed(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager*,Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SourcePressed(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SourcePressed(EventRegistrationToken token);
-	HRESULT add_SourceReleased(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager*,Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SourceReleased(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SourceReleased(EventRegistrationToken token);
-	HRESULT add_InteractionDetected(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager*,Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_InteractionDetected(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_InteractionDetected(EventRegistrationToken token);
 	HRESULT abi_GetDetectedSourcesAtTimestamp(Windows.Perception.PerceptionTimestamp timeStamp, Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Spatial.SpatialInteractionSourceState)* return_value);
 }

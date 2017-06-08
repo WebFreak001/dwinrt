@@ -2,6 +2,48 @@ module Windows.UI.Xaml.Controls.Primitives;
 
 import dwinrt;
 
+struct GeneratorPosition
+{
+	INT32 Index;
+	INT32 Offset;
+}
+
+@uuid("36b28888-19ac-4b4e-9137-a6cf2b023883")
+interface DragCompletedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.DragCompletedEventArgs e);
+}
+
+@uuid("4ac24f9f-ac28-49e9-9189-dccffeb66472")
+interface DragDeltaEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.DragDeltaEventArgs e);
+}
+
+@uuid("d2eea48a-c65a-495d-a2f1-72c66989142d")
+interface DragStartedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.DragStartedEventArgs e);
+}
+
+@uuid("178257be-a304-482f-8bf0-b9d2e39612a3")
+interface ItemsChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.ItemsChangedEventArgs e);
+}
+
+@uuid("e3906fd9-4d1b-4ac8-a43c-c3b908742799")
+interface RangeBaseValueChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e);
+}
+
+@uuid("8860b0a4-a383-4c83-b306-a1c39d7db87f")
+interface ScrollEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.ScrollEventArgs e);
+}
+
 @uuid("bcc2a863-eb35-423c-8389-d7827be3bf67")
 @WinrtFactory("Windows.UI.Xaml.Controls.Primitives.AppBarTemplateSettings")
 interface IAppBarTemplateSettings : IInspectable
@@ -33,7 +75,7 @@ extern(Windows):
 	HRESULT set_Command(Windows.UI.Xaml.Input.ICommand value);
 	HRESULT get_CommandParameter(IInspectable* return_value);
 	HRESULT set_CommandParameter(IInspectable value);
-	HRESULT add_Click(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Click(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Click(EventRegistrationToken token);
 }
 
@@ -289,7 +331,7 @@ extern(Windows):
 	HRESULT set_AllowFocusWhenDisabled(bool value);
 	HRESULT get_ElementSoundMode(Windows.UI.Xaml.ElementSoundMode* return_value);
 	HRESULT set_ElementSoundMode(Windows.UI.Xaml.ElementSoundMode value);
-	HRESULT add_Closing(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Primitives.FlyoutBase*,Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_Closing(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_Closing(EventRegistrationToken token);
 }
 
@@ -738,7 +780,7 @@ extern(Windows):
 	HRESULT set_ItemHeight(INT32 value);
 	HRESULT get_ItemTemplate(Windows.UI.Xaml.DataTemplate* return_value);
 	HRESULT set_ItemTemplate(Windows.UI.Xaml.DataTemplate value);
-	HRESULT add_SelectionChanged(Windows.UI.Xaml.Controls.SelectionChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_SelectionChanged(Windows.UI.Xaml.Controls.SelectionChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_SelectionChanged(EventRegistrationToken token);
 }
 
@@ -953,7 +995,7 @@ extern(Windows):
 	HRESULT set_LargeChange(double value);
 	HRESULT get_Value(double* return_value);
 	HRESULT set_Value(double value);
-	HRESULT add_ValueChanged(Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ValueChanged(Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ValueChanged(EventRegistrationToken token);
 }
 
@@ -1041,7 +1083,7 @@ extern(Windows):
 	HRESULT set_ViewportSize(double value);
 	HRESULT get_IndicatorMode(Windows.UI.Xaml.Controls.Primitives.ScrollingIndicatorMode* return_value);
 	HRESULT set_IndicatorMode(Windows.UI.Xaml.Controls.Primitives.ScrollingIndicatorMode value);
-	HRESULT add_Scroll(Windows.UI.Xaml.Controls.Primitives.ScrollEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Scroll(Windows.UI.Xaml.Controls.Primitives.ScrollEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Scroll(EventRegistrationToken token);
 }
 
@@ -1101,7 +1143,7 @@ extern(Windows):
 	HRESULT set_SelectedValuePath(HSTRING value);
 	HRESULT get_IsSynchronizedWithCurrentItem(Windows.Foundation.IReference!(bool)* return_value);
 	HRESULT set_IsSynchronizedWithCurrentItem(Windows.Foundation.IReference!(bool) value);
-	HRESULT add_SelectionChanged(Windows.UI.Xaml.Controls.SelectionChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_SelectionChanged(Windows.UI.Xaml.Controls.SelectionChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_SelectionChanged(EventRegistrationToken token);
 }
 
@@ -1189,11 +1231,11 @@ interface IThumb : IInspectable
 
 extern(Windows):
 	HRESULT get_IsDragging(bool* return_value);
-	HRESULT add_DragStarted(Windows.UI.Xaml.Controls.Primitives.DragStartedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_DragStarted(Windows.UI.Xaml.Controls.Primitives.DragStartedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_DragStarted(EventRegistrationToken token);
-	HRESULT add_DragDelta(Windows.UI.Xaml.Controls.Primitives.DragDeltaEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_DragDelta(Windows.UI.Xaml.Controls.Primitives.DragDeltaEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_DragDelta(EventRegistrationToken token);
-	HRESULT add_DragCompleted(Windows.UI.Xaml.Controls.Primitives.DragCompletedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_DragCompleted(Windows.UI.Xaml.Controls.Primitives.DragCompletedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_DragCompleted(EventRegistrationToken token);
 	HRESULT abi_CancelDrag();
 }
@@ -1240,11 +1282,11 @@ extern(Windows):
 	HRESULT set_IsChecked(Windows.Foundation.IReference!(bool) value);
 	HRESULT get_IsThreeState(bool* return_value);
 	HRESULT set_IsThreeState(bool value);
-	HRESULT add_Checked(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Checked(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Checked(EventRegistrationToken token);
-	HRESULT add_Unchecked(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Unchecked(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Unchecked(EventRegistrationToken token);
-	HRESULT add_Indeterminate(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Indeterminate(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Indeterminate(EventRegistrationToken token);
 }
 

@@ -2,6 +2,24 @@ module Windows.Media.Protection;
 
 import dwinrt;
 
+@uuid("95da643c-6db9-424b-86ca-091af432081c")
+interface ComponentLoadFailedEventHandler
+{
+	HRESULT abi_Invoke(Windows.Media.Protection.MediaProtectionManager sender, Windows.Media.Protection.ComponentLoadFailedEventArgs e);
+}
+
+@uuid("64e12a45-973b-4a3a-b260-91898a49a82c")
+interface RebootNeededEventHandler
+{
+	HRESULT abi_Invoke(Windows.Media.Protection.MediaProtectionManager sender);
+}
+
+@uuid("d2d690ba-cac9-48e1-95c0-d38495a84055")
+interface ServiceRequestedEventHandler
+{
+	HRESULT abi_Invoke(Windows.Media.Protection.MediaProtectionManager sender, Windows.Media.Protection.ServiceRequestedEventArgs e);
+}
+
 @uuid("95972e93-7746-417e-8495-f031bbc5862c")
 @WinrtFactory("Windows.Media.Protection.ComponentLoadFailedEventArgs")
 interface IComponentLoadFailedEventArgs : IInspectable
@@ -20,7 +38,7 @@ interface IComponentRenewalStatics : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_RenewSystemComponentsAsync(Windows.Media.Protection.RevocationAndRenewalInformation information, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Protection.RenewalStatus,UINT32)* return_operation);
+	HRESULT abi_RenewSystemComponentsAsync(Windows.Media.Protection.RevocationAndRenewalInformation information, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Protection.RenewalStatus, UINT32)* return_operation);
 }
 
 @uuid("718845e9-64d7-426d-809b-1be461941a2a")
@@ -33,7 +51,7 @@ extern(Windows):
 	HRESULT abi_IsEffectiveProtectionAtLeast(Windows.Media.Protection.HdcpProtection protection, bool* return_value);
 	HRESULT abi_GetEffectiveProtection(Windows.Foundation.IReference!(Windows.Media.Protection.HdcpProtection)* return_value);
 	HRESULT abi_SetDesiredMinProtectionAsync(Windows.Media.Protection.HdcpProtection protection, Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.HdcpSetProtectionResult)* return_value);
-	HRESULT add_ProtectionChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.HdcpSession*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ProtectionChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.HdcpSession, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ProtectionChanged(EventRegistrationToken token);
 }
 
@@ -44,11 +62,11 @@ interface IMediaProtectionManager : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ServiceRequested(Windows.Media.Protection.ServiceRequestedEventHandler* handler, EventRegistrationToken* return_cookie);
+	HRESULT add_ServiceRequested(Windows.Media.Protection.ServiceRequestedEventHandler handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ServiceRequested(EventRegistrationToken cookie);
-	HRESULT add_RebootNeeded(Windows.Media.Protection.RebootNeededEventHandler* handler, EventRegistrationToken* return_cookie);
+	HRESULT add_RebootNeeded(Windows.Media.Protection.RebootNeededEventHandler handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_RebootNeeded(EventRegistrationToken cookie);
-	HRESULT add_ComponentLoadFailed(Windows.Media.Protection.ComponentLoadFailedEventHandler* handler, EventRegistrationToken* return_cookie);
+	HRESULT add_ComponentLoadFailed(Windows.Media.Protection.ComponentLoadFailedEventHandler handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ComponentLoadFailed(EventRegistrationToken cookie);
 	HRESULT get_Properties(Windows.Foundation.Collections.IPropertySet* return_value);
 }

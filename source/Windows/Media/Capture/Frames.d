@@ -70,7 +70,7 @@ extern(Windows):
 	HRESULT get_MajorType(HSTRING* return_value);
 	HRESULT get_Subtype(HSTRING* return_value);
 	HRESULT get_FrameRate(Windows.Media.MediaProperties.MediaRatio* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(GUID,IInspectable*)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(GUID, IInspectable)* return_value);
 	HRESULT get_VideoFormat(Windows.Media.Capture.Frames.VideoMediaFrameFormat* return_value);
 }
 
@@ -81,7 +81,7 @@ interface IMediaFrameReader : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_FrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MediaFrameReader*,Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_FrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MediaFrameReader, Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_FrameArrived(EventRegistrationToken token);
 	HRESULT abi_TryAcquireLatestFrame(Windows.Media.Capture.Frames.MediaFrameReference* return_value);
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReaderStartStatus)* return_operation);
@@ -99,7 +99,7 @@ extern(Windows):
 	HRESULT get_Format(Windows.Media.Capture.Frames.MediaFrameFormat* return_value);
 	HRESULT get_SystemRelativeTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
 	HRESULT get_Duration(Windows.Foundation.TimeSpan* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(GUID,IInspectable*)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(GUID, IInspectable)* return_value);
 	HRESULT get_BufferMediaFrame(Windows.Media.Capture.Frames.BufferMediaFrame* return_value);
 	HRESULT get_VideoMediaFrame(Windows.Media.Capture.Frames.VideoMediaFrame* return_value);
 	HRESULT get_CoordinateSystem(Windows.Perception.Spatial.SpatialCoordinateSystem* return_value);
@@ -117,7 +117,7 @@ extern(Windows):
 	HRESULT get_SupportedFormats(Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.Frames.MediaFrameFormat)* return_value);
 	HRESULT get_CurrentFormat(Windows.Media.Capture.Frames.MediaFrameFormat* return_value);
 	HRESULT abi_SetFormatAsync(Windows.Media.Capture.Frames.MediaFrameFormat format, Windows.Foundation.IAsyncAction* return_value);
-	HRESULT add_FormatChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MediaFrameSource*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_FormatChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MediaFrameSource, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_FormatChanged(EventRegistrationToken token);
 	HRESULT abi_TryGetCameraIntrinsics(Windows.Media.Capture.Frames.MediaFrameFormat format, Windows.Media.Devices.Core.CameraIntrinsics* return_value);
 }
@@ -192,7 +192,7 @@ extern(Windows):
 	HRESULT get_SourceKind(Windows.Media.Capture.Frames.MediaFrameSourceKind* return_value);
 	HRESULT get_SourceGroup(Windows.Media.Capture.Frames.MediaFrameSourceGroup* return_value);
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(GUID,IInspectable*)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(GUID, IInspectable)* return_value);
 	HRESULT get_CoordinateSystem(Windows.Perception.Spatial.SpatialCoordinateSystem* return_value);
 }
 
@@ -203,7 +203,7 @@ interface IMultiSourceMediaFrameReader : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_FrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader*,Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_FrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader, Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_FrameArrived(EventRegistrationToken token);
 	HRESULT abi_TryAcquireLatestFrame(Windows.Media.Capture.Frames.MultiSourceMediaFrameReference* return_value);
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReaderStartStatus)* return_operation);

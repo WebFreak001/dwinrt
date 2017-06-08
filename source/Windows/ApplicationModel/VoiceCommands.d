@@ -10,7 +10,7 @@ interface IVoiceCommand : IInspectable
 
 extern(Windows):
 	HRESULT get_CommandName(HSTRING* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.Foundation.Collections.IVectorView!(HSTRING))* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Foundation.Collections.IVectorView!(HSTRING))* return_value);
 	HRESULT get_SpeechRecognitionResult(Windows.Media.SpeechRecognition.SpeechRecognitionResult* return_value);
 }
 
@@ -79,7 +79,7 @@ interface IVoiceCommandDefinitionManagerStatics : IInspectable
 
 extern(Windows):
 	HRESULT abi_InstallCommandDefinitionsFromStorageFileAsync(Windows.Storage.StorageFile file, Windows.Foundation.IAsyncAction* return_installAction);
-	HRESULT get_InstalledCommandDefinitions(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition*)* return_voiceCommandDefinitions);
+	HRESULT get_InstalledCommandDefinitions(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition)* return_voiceCommandDefinitions);
 }
 
 @uuid("ecc68cfe-c9ac-45df-a8ea-feea08ef9c5e")
@@ -137,7 +137,7 @@ extern(Windows):
 	HRESULT abi_ReportFailureAsync(Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse response, Windows.Foundation.IAsyncAction* return_action);
 	HRESULT abi_RequestAppLaunchAsync(Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse response, Windows.Foundation.IAsyncAction* return_action);
 	HRESULT get_Language(Windows.Globalization.Language* return_language);
-	HRESULT add_VoiceCommandCompleted(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection*,Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_VoiceCommandCompleted(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection, Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_VoiceCommandCompleted(EventRegistrationToken token);
 }
 

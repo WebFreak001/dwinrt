@@ -2,6 +2,30 @@ module Windows.Media.Devices;
 
 import dwinrt;
 
+@uuid("596f759f-50df-4454-bc63-4d3d01b61958")
+interface CallControlEventHandler
+{
+	HRESULT abi_Invoke(Windows.Media.Devices.CallControl sender);
+}
+
+@uuid("5abbffdb-c21f-4bc4-891b-257e28c1b1a4")
+interface DialRequestedEventHandler
+{
+	HRESULT abi_Invoke(Windows.Media.Devices.CallControl sender, Windows.Media.Devices.DialRequestedEventArgs e);
+}
+
+@uuid("e637a454-c527-422c-8926-c9af83b559a0")
+interface KeypadPressedEventHandler
+{
+	HRESULT abi_Invoke(Windows.Media.Devices.CallControl sender, Windows.Media.Devices.KeypadPressedEventArgs e);
+}
+
+@uuid("baf257d1-4ebd-4b84-9f47-6ec43d75d8b1")
+interface RedialRequestedEventHandler
+{
+	HRESULT abi_Invoke(Windows.Media.Devices.CallControl sender, Windows.Media.Devices.RedialRequestedEventArgs e);
+}
+
 @uuid("08f3863a-0018-445b-93d2-646d1c5ed05c")
 @WinrtFactory("Windows.Media.Devices.AdvancedPhotoCaptureSettings")
 interface IAdvancedPhotoCaptureSettings : IInspectable
@@ -146,7 +170,7 @@ interface IAudioDeviceModulesManager : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ModuleNotificationReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Devices.AudioDeviceModulesManager*,Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ModuleNotificationReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Devices.AudioDeviceModulesManager, Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ModuleNotificationReceived(EventRegistrationToken token);
 	HRESULT abi_FindAllById(HSTRING moduleId, Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AudioDeviceModule)* return_modules);
 	HRESULT abi_FindAll(Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AudioDeviceModule)* return_modules);
@@ -174,17 +198,17 @@ extern(Windows):
 	HRESULT abi_IndicateActiveCall(UINT64 callToken);
 	HRESULT abi_EndCall(UINT64 callToken);
 	HRESULT get_HasRinger(bool* return_value);
-	HRESULT add_AnswerRequested(Windows.Media.Devices.CallControlEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_AnswerRequested(Windows.Media.Devices.CallControlEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_AnswerRequested(EventRegistrationToken token);
-	HRESULT add_HangUpRequested(Windows.Media.Devices.CallControlEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_HangUpRequested(Windows.Media.Devices.CallControlEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_HangUpRequested(EventRegistrationToken token);
-	HRESULT add_DialRequested(Windows.Media.Devices.DialRequestedEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_DialRequested(Windows.Media.Devices.DialRequestedEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_DialRequested(EventRegistrationToken token);
-	HRESULT add_RedialRequested(Windows.Media.Devices.RedialRequestedEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_RedialRequested(Windows.Media.Devices.RedialRequestedEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_RedialRequested(EventRegistrationToken token);
-	HRESULT add_KeypadPressed(Windows.Media.Devices.KeypadPressedEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_KeypadPressed(Windows.Media.Devices.KeypadPressedEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_KeypadPressed(EventRegistrationToken token);
-	HRESULT add_AudioTransferRequested(Windows.Media.Devices.CallControlEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_AudioTransferRequested(Windows.Media.Devices.CallControlEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_AudioTransferRequested(EventRegistrationToken token);
 }
 
@@ -506,9 +530,9 @@ extern(Windows):
 	HRESULT abi_GetVideoCaptureSelector(HSTRING* return_selector);
 	HRESULT abi_GetDefaultAudioCaptureId(Windows.Media.Devices.AudioDeviceRole role, HSTRING* return_deviceId);
 	HRESULT abi_GetDefaultAudioRenderId(Windows.Media.Devices.AudioDeviceRole role, HSTRING* return_deviceId);
-	HRESULT add_DefaultAudioCaptureDeviceChanged(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.Media.Devices.DefaultAudioCaptureDeviceChangedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_DefaultAudioCaptureDeviceChanged(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.Media.Devices.DefaultAudioCaptureDeviceChangedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_DefaultAudioCaptureDeviceChanged(EventRegistrationToken cookie);
-	HRESULT add_DefaultAudioRenderDeviceChanged(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.Media.Devices.DefaultAudioRenderDeviceChangedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_DefaultAudioRenderDeviceChanged(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.Media.Devices.DefaultAudioRenderDeviceChangedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_DefaultAudioRenderDeviceChanged(EventRegistrationToken cookie);
 }
 

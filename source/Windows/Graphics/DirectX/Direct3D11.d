@@ -2,6 +2,20 @@ module Windows.Graphics.DirectX.Direct3D11;
 
 import dwinrt;
 
+struct Direct3DMultisampleDescription
+{
+	INT32 Count;
+	INT32 Quality;
+}
+
+struct Direct3DSurfaceDescription
+{
+	INT32 Width;
+	INT32 Height;
+	Windows.Graphics.DirectX.DirectXPixelFormat Format;
+	Windows.Graphics.DirectX.Direct3D11.Direct3DMultisampleDescription MultisampleDescription;
+}
+
 @uuid("a37624ab-8d5f-4650-9d3e-9eae3d9bc670")
 interface IDirect3DDevice : IInspectable
 {

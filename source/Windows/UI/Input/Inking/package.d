@@ -168,9 +168,9 @@ extern(Windows):
 	HRESULT abi_UpdateDefaultDrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes value);
 	HRESULT abi_ActivateCustomDrying(Windows.UI.Input.Inking.InkSynchronizer* return_inkSynchronizer);
 	HRESULT abi_SetPredefinedConfiguration(Windows.UI.Input.Inking.InkPresenterPredefinedConfiguration value);
-	HRESULT add_StrokesCollected(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkPresenter*,Windows.UI.Input.Inking.InkStrokesCollectedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_StrokesCollected(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkPresenter, Windows.UI.Input.Inking.InkStrokesCollectedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_StrokesCollected(EventRegistrationToken cookie);
-	HRESULT add_StrokesErased(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkPresenter*,Windows.UI.Input.Inking.InkStrokesErasedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_StrokesErased(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkPresenter, Windows.UI.Input.Inking.InkStrokesErasedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_StrokesErased(EventRegistrationToken cookie);
 }
 
@@ -396,7 +396,7 @@ extern(Windows):
 	HRESULT abi_PasteFromClipboard(Windows.Foundation.Point position, Windows.Foundation.Rect* return_invalidatedRectangle);
 	HRESULT abi_CanPasteFromClipboard(bool* return_canPaste);
 	HRESULT abi_LoadAsync(Windows.Storage.Streams.IInputStream inputStream, Windows.Foundation.IAsyncActionWithProgress!(UINT64)* return_loadAction);
-	HRESULT abi_SaveAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.Foundation.IAsyncOperationWithProgress!(UINT32,UINT32)* return_outputStreamOperation);
+	HRESULT abi_SaveAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32)* return_outputStreamOperation);
 	HRESULT abi_UpdateRecognitionResults(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) recognitionResults);
 	HRESULT abi_GetStrokes(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke)* return_strokeView);
 	HRESULT abi_GetRecognitionResults(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)* return_recognitionResults);
@@ -420,7 +420,7 @@ interface IInkStrokeContainer3 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_SaveWithFormatAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.UI.Input.Inking.InkPersistenceFormat inkPersistenceFormat, Windows.Foundation.IAsyncOperationWithProgress!(UINT32,UINT32)* return_outputStreamOperation);
+	HRESULT abi_SaveWithFormatAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.UI.Input.Inking.InkPersistenceFormat inkPersistenceFormat, Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32)* return_outputStreamOperation);
 	HRESULT abi_GetStrokeById(UINT32 id, Windows.UI.Input.Inking.InkStroke* return_stroke);
 }
 
@@ -431,13 +431,13 @@ interface IInkStrokeInput : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_StrokeStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_StrokeStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_StrokeStarted(EventRegistrationToken cookie);
-	HRESULT add_StrokeContinued(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_StrokeContinued(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_StrokeContinued(EventRegistrationToken cookie);
-	HRESULT add_StrokeEnded(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_StrokeEnded(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_StrokeEnded(EventRegistrationToken cookie);
-	HRESULT add_StrokeCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_StrokeCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_StrokeCanceled(EventRegistrationToken cookie);
 	HRESULT get_InkPresenter(Windows.UI.Input.Inking.InkPresenter* return_value);
 }
@@ -496,19 +496,19 @@ interface IInkUnprocessedInput : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_PointerEntered(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerEntered(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerEntered(EventRegistrationToken cookie);
-	HRESULT add_PointerHovered(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerHovered(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerHovered(EventRegistrationToken cookie);
-	HRESULT add_PointerExited(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerExited(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerExited(EventRegistrationToken cookie);
-	HRESULT add_PointerPressed(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerPressed(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerPressed(EventRegistrationToken cookie);
-	HRESULT add_PointerMoved(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerMoved(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerMoved(EventRegistrationToken cookie);
-	HRESULT add_PointerReleased(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerReleased(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerReleased(EventRegistrationToken cookie);
-	HRESULT add_PointerLost(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerLost(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerLost(EventRegistrationToken cookie);
 	HRESULT get_InkPresenter(Windows.UI.Input.Inking.InkPresenter* return_value);
 }

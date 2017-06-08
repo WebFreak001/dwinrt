@@ -14,8 +14,8 @@ extern(Windows):
 	HRESULT get_ServiceId(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId* return_value);
 	HRESULT get_ProtectionLevel(Windows.Networking.Sockets.SocketProtectionLevel* return_value);
 	HRESULT get_MaxProtectionLevel(Windows.Networking.Sockets.SocketProtectionLevel* return_value);
-	HRESULT abi_GetSdpRawAttributesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(UINT32,Windows.Storage.Streams.IBuffer*))* return_asyncOp);
-	HRESULT abi_GetSdpRawAttributesWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(UINT32,Windows.Storage.Streams.IBuffer*))* return_asyncOp);
+	HRESULT abi_GetSdpRawAttributesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(UINT32, Windows.Storage.Streams.IBuffer))* return_asyncOp);
+	HRESULT abi_GetSdpRawAttributesWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(UINT32, Windows.Storage.Streams.IBuffer))* return_asyncOp);
 }
 
 @uuid("536ced14-ebcd-49fe-bf9f-40efc689b20d")
@@ -111,7 +111,7 @@ interface IRfcommServiceProvider : IInspectable
 
 extern(Windows):
 	HRESULT get_ServiceId(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId* return_value);
-	HRESULT get_SdpRawAttributes(Windows.Foundation.Collections.IMap!(UINT32,Windows.Storage.Streams.IBuffer*)* return_value);
+	HRESULT get_SdpRawAttributes(Windows.Foundation.Collections.IMap!(UINT32, Windows.Storage.Streams.IBuffer)* return_value);
 	HRESULT abi_StartAdvertising(Windows.Networking.Sockets.StreamSocketListener listener);
 	HRESULT abi_StopAdvertising();
 }

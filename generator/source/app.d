@@ -24,36 +24,6 @@ string[] blockedInterfaces = [
 	"IMetaDataImport", "IMetaDataImport2"
 ];
 
-string foundationSuffix = q{
-struct Point
-{
-	float X, Y;
-}
-
-struct Size
-{
-	float Width, Height;
-}
-
-struct Rect
-{
-	float X;
-	float Y;
-	float Width;
-	float Height;
-}
-
-struct TimeSpan
-{
-	long duration;
-}
-
-struct DateTime
-{
-	long universalTime;
-}
-};
-
 string[] defines;
 
 void main(string[] args)
@@ -84,7 +54,7 @@ void processIDL(string file)
 	if (ignored.canFind(file.baseName))
 		return;
 
-	//if (file.baseName != "windows.ui.core.idl")
+	//if (file.baseName != "Windows.ApplicationModel.datatransfer.idl")
 	//	return;
 
 	writeln("Processing ", file);
@@ -169,6 +139,22 @@ void processIDL(string file)
 
 	void process(ParseTree[] children, ParseTree[] attributes = [])
 	{
+		void fetchUUID(out string uuid)
+		{
+			foreach_reverse (attrib; attributes)
+			{
+				foreach_reverse (content; attrib.children)
+				{
+					enforce(content.name == "IDL.definition_content");
+					if (content.children.length == 1 && content.children[0].name == "IDL.uuid")
+					{
+						uuid = content.children[0].children.map!(a => a.matches[0]).join("-").toLower;
+						return;
+					}
+				}
+			}
+		}
+
 		foreach (node; children)
 		{
 			switch (node.name)
@@ -217,7 +203,17 @@ void processIDL(string file)
 				if (node.children.length == 0)
 					return;
 				enforce(node.children[0].name == "IDL.op_dcl");
-				writeln("TODO ", node);
+				Interface obj;
+				fetchUUID(obj.uuid);
+				auto method = parseInterfaceMethod(node.children[0]);
+				obj.name = method.name;
+				string globName = (namespace.length ? namespace.join(".") ~ "." : "") ~ obj.name;
+				if (!pointerTypes.canFind(globName))
+					pointerTypes ~= globName;
+				method.name = "Invoke";
+				obj.methods ~= method;
+				obj.isDelegate = true;
+				makeMod(namespace).interfaces ~= obj;
 				break;
 			case "IDL.declare":
 				writeln("TODO ", node);
@@ -267,18 +263,7 @@ void processIDL(string file)
 				obj.name = name;
 				if (blockedInterfaces.canFind(obj.name))
 					break;
-			uuid_search: foreach_reverse (attrib; attributes)
-				{
-					foreach_reverse (content; attrib.children)
-					{
-						enforce(content.name == "IDL.definition_content");
-						if (content.children.length == 1 && content.children[0].name == "IDL.uuid")
-						{
-							obj.uuid = content.children[0].children.map!(a => a.matches[0]).join("-").toLower;
-							break uuid_search;
-						}
-					}
-				}
+				fetchUUID(obj.uuid);
 			exclusiveto_search: foreach_reverse (attrib; attributes)
 				{
 					foreach_reverse (content; attrib.children)
@@ -327,7 +312,6 @@ void processIDL(string file)
 							fn.children = fn.children[0 .. i] ~ fn.children[i + 1 .. $];
 						}
 					}
-					writeln(attributes);
 					enforce(fn.children.length == 1, fn.toString);
 					auto opdcl = fn.children[0];
 					if (opdcl.name == "IDL.cpp_quote")
@@ -337,125 +321,7 @@ void processIDL(string file)
 						writeln("TODO nested interface ", opdcl);
 						continue;
 					}
-					enforce(opdcl.name == "IDL.op_dcl", opdcl.toString);
-					int skip = 0;
-					InterfaceMethod method;
-					method.type = InterfaceType.call;
-					bool countSkip = true;
-					foreach (child; opdcl.children)
-					{
-						if (countSkip)
-							skip += child.matches.length;
-						if (child.name == "IDL.type")
-						{
-							method.returnType = child.matches.join("").translateType;
-							countSkip = false;
-						}
-						else if (child.name == "IDL.op_attribute")
-						{
-							foreach (spec; child.children)
-							{
-								enforce(spec.name == "IDL.op_attribute_spec");
-								if (spec.children.length == 0)
-								{
-									switch (spec.matches[0])
-									{
-									case "propget":
-										method.type = InterfaceType.propget;
-										break;
-									case "propput":
-										method.type = InterfaceType.propset;
-										break;
-									case "eventadd":
-										method.type = InterfaceType.eventadd;
-										break;
-									case "eventremove":
-										method.type = InterfaceType.eventremove;
-										break;
-									case "oneway":
-									case "default_overload":
-										break;
-									default:
-										throw new Exception("Unknown method attribute " ~ spec.matches[0]);
-									}
-								}
-								else
-								{
-									if (spec.children.length == 1
-											&& spec.children[0].name == "IDL.op_overload_attribute")
-									{
-										enforce(spec.children[0].children.length == 1);
-										method.name = spec.children[0].children[0].parseString;
-									}
-									else if (spec.children.length == 1 && spec.children[0].name == "IDL.deprecation")
-									{
-										enforce(spec.children[0].children.length >= 1);
-										method.deprecation = spec.children[0].children[0].parseString(true);
-									}
-									else
-										throw new Exception("Attribute not implemented: " ~ spec.toString);
-								}
-							}
-						}
-						else if (child.name == "IDL.parameter_dcls")
-						{
-							foreach (param; child.children)
-							{
-								enforce(param.name == "IDL.param_dcl");
-								InterfaceArgument argument;
-								foreach (spec; param.children)
-								{
-									if (spec.name == "IDL.param_attribute")
-									{
-										foreach (attr; spec.children)
-										{
-											enforce(attr.name == "IDL.param_attr_spec", spec.toString);
-											if (attr.matches.length == 1)
-											{
-												switch (attr.matches[0])
-												{
-												case "in":
-													argument.direction |= ArgumentDirection.in_;
-													break;
-												case "out":
-													argument.direction |= ArgumentDirection.out_;
-													break;
-												case "inout":
-													argument.direction |= ArgumentDirection.in_ | ArgumentDirection.out_;
-													break;
-												case "retval":
-													argument.direction |= ArgumentDirection.retval;
-													break;
-												case "string":
-												case "unique":
-													break;
-												default:
-													throw new Exception("Invalid parameter attribute: " ~ attr.matches[0]);
-												}
-											}
-										}
-									}
-									else if (spec.name == "IDL.type")
-									{
-										argument.type = spec.matches.join("").translateType;
-									}
-									else if (spec.name == "IDL.simple_declarator")
-									{
-										enforce(spec.matches.length == 1 || spec.matches.length >= 3, spec.toString);
-										argument.name = spec.matches[0];
-										if (spec.matches.length >= 3)
-										{
-											enforce(spec.matches[1] == "[");
-											enforce(spec.matches[$ - 1] == "]");
-											argument.type ~= spec.matches[1 .. $].join("");
-										}
-									}
-								}
-								method.arguments ~= argument;
-							}
-						}
-					}
-					method.name = fn.matches[skip];
+					auto method = parseInterfaceMethod(opdcl);
 					obj.methods ~= method;
 				}
 				makeMod(namespace).interfaces ~= obj;
@@ -470,6 +336,13 @@ void processIDL(string file)
 					addAlias(type.children[1].matches.join(""), type.children[0].matches.join(""));
 					break;
 				case "IDL.struct_type":
+					enforce(type.children.length == 1, type.toString);
+					enforce(type.children[0].name == "IDL.member_list", type.toString);
+					StructMember[] members;
+					parseMemberList(type.children[0], members);
+					string name = type.matches[1];
+					makeMod(namespace).structs ~= Struct(name, members);
+					break;
 				case "IDL.union_type":
 				case "IDL.constr_forward_decl":
 					writeln("TODO ", type);
@@ -560,6 +433,134 @@ void parseMemberList(ParseTree memberList, ref StructMember[] members)
 		mem.type = type.matches.join("").translateType;
 		members ~= mem;
 	}
+}
+
+InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
+{
+	enforce(opdcl.name == "IDL.op_dcl", opdcl.toString);
+	InterfaceMethod method;
+	method.type = InterfaceType.call;
+	int skip;
+	bool countSkip = true;
+	foreach (child; opdcl.children)
+	{
+		if (countSkip)
+			skip += child.matches.length;
+		if (child.name == "IDL.type")
+		{
+			method.returnType = child.matches.join("").translateType;
+			countSkip = false;
+		}
+		else if (child.name == "IDL.op_attribute")
+		{
+			foreach (spec; child.children)
+			{
+				enforce(spec.name == "IDL.op_attribute_spec");
+				if (spec.children.length == 0)
+				{
+					switch (spec.matches[0])
+					{
+					case "propget":
+						method.type = InterfaceType.propget;
+						break;
+					case "propput":
+						method.type = InterfaceType.propset;
+						break;
+					case "eventadd":
+						method.type = InterfaceType.eventadd;
+						break;
+					case "eventremove":
+						method.type = InterfaceType.eventremove;
+						break;
+					case "oneway":
+					case "default_overload":
+						break;
+					default:
+						throw new Exception("Unknown method attribute " ~ spec.matches[0]);
+					}
+				}
+				else
+				{
+					if (spec.children.length == 1 && spec.children[0].name == "IDL.op_overload_attribute")
+					{
+						enforce(spec.children[0].children.length == 1);
+						method.name = spec.children[0].children[0].parseString;
+					}
+					else if (spec.children.length == 1 && spec.children[0].name == "IDL.deprecation")
+					{
+						enforce(spec.children[0].children.length >= 1);
+						method.deprecation = spec.children[0].children[0].parseString(true);
+					}
+					else
+						throw new Exception("Attribute not implemented: " ~ spec.toString);
+				}
+			}
+		}
+		else if (child.name == "IDL.parameter_dcls")
+		{
+			foreach (param; child.children)
+			{
+				enforce(param.name == "IDL.param_dcl");
+				InterfaceArgument argument;
+				foreach (spec; param.children)
+				{
+					if (spec.name == "IDL.param_attribute")
+					{
+						foreach (attr; spec.children)
+						{
+							enforce(attr.name == "IDL.param_attr_spec", spec.toString);
+							if (attr.matches.length == 1)
+							{
+								switch (attr.matches[0])
+								{
+								case "in":
+									argument.direction |= ArgumentDirection.in_;
+									break;
+								case "out":
+									argument.direction |= ArgumentDirection.out_;
+									break;
+								case "inout":
+									argument.direction |= ArgumentDirection.in_ | ArgumentDirection.out_;
+									break;
+								case "retval":
+									argument.direction |= ArgumentDirection.retval;
+									break;
+								case "string":
+								case "unique":
+									break;
+								default:
+									throw new Exception("Invalid parameter attribute: " ~ attr.matches[0]);
+								}
+							}
+						}
+					}
+					else if (spec.name == "IDL.type")
+					{
+						argument.type = spec.matches.join("").translateType;
+					}
+					else if (spec.name == "IDL.simple_declarator")
+					{
+						enforce(spec.matches.length == 1 || spec.matches.length >= 3, spec.toString);
+						argument.name = spec.matches[0];
+						if (spec.matches.length >= 3)
+						{
+							enforce(spec.matches[1] == "[");
+							enforce(spec.matches[$ - 1] == "]");
+							argument.type ~= spec.matches[1 .. $].join("");
+						}
+					}
+				}
+				method.arguments ~= argument;
+			}
+		}
+	}
+	method.name = opdcl.matches[skip];
+	assert(method.name.length > 0);
+	import std.ascii : isAlphaNum;
+
+	foreach (c; method.name)
+		assert(isAlphaNum(c) || c == '_');
+	return method;
 }
 
 string parseString(ParseTree obj, bool raw = false)
@@ -794,6 +795,7 @@ struct Interface
 	string[] requires;
 	string uuid;
 	string exclusiveto;
+	bool isDelegate;
 
 	void fixTypes()
 	{
@@ -814,7 +816,7 @@ struct Interface
 		if (inherits.length)
 			ret ~= " : " ~ inherits.join(", ");
 		ret ~= "\n{\n";
-		if (methods.length)
+		if (methods.length && !isDelegate)
 			ret ~= "\tmixin(generateRTMethods!(typeof(this)));\n\nextern(Windows):\n";
 		foreach (method; methods)
 			ret ~= method.toString.indent ~ "\n";
@@ -901,10 +903,14 @@ void fixType(ref string type)
 	if (exclIndex != -1 && type[exclIndex + 1] == '(')
 	{
 		auto close = type.lastIndexOf(')');
-		enforce(close != -1);
-		string member = type[exclIndex + 2 .. close];
-		member.fixType();
-		type = type[0 .. exclIndex + 2] ~ member ~ type[close .. $];
+		enforce(close != -1, type);
+		string[] members = type[exclIndex + 2 .. close].splitTypes;
+		foreach (ref member; members)
+		{
+			member = member.strip;
+			member.fixType();
+		}
+		type = type[0 .. exclIndex + 2] ~ members.join(", ") ~ type[close .. $];
 	}
 	if (isConst)
 		type = "const(" ~ type ~ ")";
@@ -912,6 +918,24 @@ void fixType(ref string type)
 		type ~= "*";
 	if (wholeConst)
 		type = "const " ~ type;
+}
+
+string[] splitTypes(string type)
+{
+	int depth = 0;
+	string[] ret = [""];
+	foreach (c; type)
+	{
+		if (c == '(')
+			depth++;
+		if (c == ')')
+			depth--;
+		if (c == ',' && depth == 0)
+			ret.length++;
+		else
+			ret[$ - 1] ~= c;
+	}
+	return ret;
 }
 
 enum ArgumentDirection
@@ -968,3 +992,82 @@ Alias[] aliases = [
 	Alias("unsigned", "uint"), Alias("ULONG32", "uint"), Alias("__int3264",
 		"size_t"), Alias("DOUBLE", "double")
 ];
+
+string foundationSuffix = q{
+struct ComCallData
+{
+	DWORD dwDispid;
+	DWORD dwReserved;
+	void* pUserDefined;
+}
+
+enum AsyncStatus
+{
+	Started,
+	Completed,
+	Canceled,
+	Error,
+}
+
+alias ContextCallbackCallback = extern (Windows) HRESULT function(ComCallData* pParam);
+
+@uuid("000001da-0000-0000-c000-000000000046")
+interface IContextCallback : IUnknown
+{
+extern (Windows):
+	HRESULT ContextCallback(ContextCallbackCallback pCallback,
+			ComCallData* pParam, REFIID riid, int iMethod, IUnknown* pUnk);
+}
+
+struct IAsyncOperation(Async) if (IsAsync!Async)
+{
+	Async async;
+	private void delegate() callback = null;
+
+	bool await_ready() const
+	{
+		return async.Status == AsyncStatus.Completed;
+	}
+
+	void await_suspend(void delegate() f)
+	{
+		if (callback !is null)
+			assert(false, "Can't await multiple times on one object");
+
+		callback = f;
+		IContextCallback context;
+		assert(CoGetObjectContext(uuidOf!IContextCallback, cast(void**)&context) == S_OK);
+
+		async.Completed((AsyncStatus) {
+			ComCallData data;
+			data.pUserDefined = cast(void*)&callback;
+
+			ContextCallbackCallback cb = (data) {
+				(*cast(void delegate()*) data.pUserDefined)();
+				return S_OK;
+			};
+
+			assert(context.ContextCallback(cb, &data,
+				IID_ICallbackWithNoReentrancyToApplicationSTA, 5, null) == S_OK);
+		});
+	}
+
+	auto await_resume() const
+	{
+		return async.GetResults;
+	}
+}
+
+IAsyncOperation!Async await(Async)(auto ref Async async) if (IsAsync!Async)
+{
+	return IAsyncOperation!Async(async);
+}
+
+enum IsAsync(T) = is(T == struct) && __traits(compiles, {
+		T async;
+		AsyncStatus status = async.Status;
+		async.Completed((AsyncStatus) {  });
+		auto res = async.GetResults;
+		static assert(!is(typeof(res) == void));
+	});
+};

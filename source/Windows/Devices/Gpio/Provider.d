@@ -18,7 +18,7 @@ interface IGpioPinProvider : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ValueChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Gpio.Provider.IGpioPinProvider*,Windows.Devices.Gpio.Provider.GpioPinProviderValueChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ValueChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Gpio.Provider.IGpioPinProvider, Windows.Devices.Gpio.Provider.GpioPinProviderValueChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ValueChanged(EventRegistrationToken token);
 	HRESULT get_DebounceTimeout(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_DebounceTimeout(Windows.Foundation.TimeSpan value);

@@ -31,7 +31,7 @@ extern(Windows):
 	HRESULT set_Priority(UINT16 value);
 	HRESULT get_Weight(UINT16* return_value);
 	HRESULT set_Weight(UINT16 value);
-	HRESULT get_TextAttributes(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_TextAttributes(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT abi_RegisterStreamSocketListenerAsync1(Windows.Networking.Sockets.StreamSocketListener socket, Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult)* return_result);
 	HRESULT abi_RegisterStreamSocketListenerAsync2(Windows.Networking.Sockets.StreamSocketListener socket, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult)* return_result);
 	HRESULT abi_RegisterDatagramSocketAsync1(Windows.Networking.Sockets.DatagramSocket socket, Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult)* return_result);
@@ -55,11 +55,11 @@ interface IDnssdServiceWatcher : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher*,Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Added(EventRegistrationToken token);
-	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_EnumerationCompleted(EventRegistrationToken token);
-	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Stopped(EventRegistrationToken token);
 	HRESULT get_Status(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcherStatus* return_status);
 	HRESULT abi_Start();

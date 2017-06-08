@@ -2,6 +2,13 @@ module Windows.Devices.Geolocation;
 
 import dwinrt;
 
+struct BasicGeoposition
+{
+	double Latitude;
+	double Longitude;
+	double Altitude;
+}
+
 @uuid("a8567a1a-64f4-4d48-bcea-f6b008eca34c")
 @WinrtFactory("Windows.Devices.Geolocation.CivicAddress")
 interface ICivicAddress : IInspectable
@@ -156,9 +163,9 @@ extern(Windows):
 	HRESULT get_LocationStatus(Windows.Devices.Geolocation.PositionStatus* return_value);
 	HRESULT abi_GetGeopositionAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition)* return_value);
 	HRESULT abi_GetGeopositionAsyncWithAgeAndTimeout(Windows.Foundation.TimeSpan maximumAge, Windows.Foundation.TimeSpan timeout, Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition)* return_value);
-	HRESULT add_PositionChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator*,Windows.Devices.Geolocation.PositionChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PositionChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PositionChanged(EventRegistrationToken token);
-	HRESULT add_StatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator*,Windows.Devices.Geolocation.StatusChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StatusChanged(EventRegistrationToken token);
 }
 

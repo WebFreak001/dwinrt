@@ -2,6 +2,12 @@ module Windows.UI.Xaml.Controls.Maps;
 
 import dwinrt;
 
+struct MapZoomLevelRange
+{
+	double Min;
+	double Max;
+}
+
 @uuid("65da384a-2db1-4be1-b155-3d0c9ecf4799")
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource")
 interface ICustomMapTileDataSource : IInspectable
@@ -9,7 +15,7 @@ interface ICustomMapTileDataSource : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_BitmapRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource*,Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_BitmapRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_BitmapRequested(EventRegistrationToken token);
 }
 
@@ -32,10 +38,10 @@ interface IHttpMapTileDataSource : IInspectable
 extern(Windows):
 	HRESULT get_UriFormatString(HSTRING* return_value);
 	HRESULT set_UriFormatString(HSTRING value);
-	HRESULT get_AdditionalRequestHeaders(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_AdditionalRequestHeaders(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT get_AllowCaching(bool* return_value);
 	HRESULT set_AllowCaching(bool value);
-	HRESULT add_UriRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource*,Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_UriRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_UriRequested(EventRegistrationToken token);
 }
 
@@ -59,7 +65,7 @@ interface ILocalMapTileDataSource : IInspectable
 extern(Windows):
 	HRESULT get_UriFormatString(HSTRING* return_value);
 	HRESULT set_UriFormatString(HSTRING value);
-	HRESULT add_UriRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource*,Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_UriRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_UriRequested(EventRegistrationToken token);
 }
 
@@ -237,23 +243,23 @@ extern(Windows):
 	HRESULT get_MapElements(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.Maps.MapElement)* return_value);
 	HRESULT get_Routes(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.Maps.MapRouteView)* return_value);
 	HRESULT get_TileSources(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.Maps.MapTileSource)* return_value);
-	HRESULT add_CenterChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_CenterChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_CenterChanged(EventRegistrationToken token);
-	HRESULT add_HeadingChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_HeadingChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_HeadingChanged(EventRegistrationToken token);
-	HRESULT add_LoadingStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_LoadingStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_LoadingStatusChanged(EventRegistrationToken token);
-	HRESULT add_MapDoubleTapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapInputEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_MapDoubleTapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_MapDoubleTapped(EventRegistrationToken token);
-	HRESULT add_MapHolding(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapInputEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_MapHolding(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_MapHolding(EventRegistrationToken token);
-	HRESULT add_MapTapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapInputEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_MapTapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_MapTapped(EventRegistrationToken token);
-	HRESULT add_PitchChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_PitchChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_PitchChanged(EventRegistrationToken token);
-	HRESULT add_TransformOriginChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_TransformOriginChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_TransformOriginChanged(EventRegistrationToken token);
-	HRESULT add_ZoomLevelChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_ZoomLevelChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_ZoomLevelChanged(EventRegistrationToken token);
 	HRESULT abi_FindMapElementsAtOffset(Windows.Foundation.Point offset, Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement)* return_returnValue);
 	HRESULT abi_GetLocationFromOffset(Windows.Foundation.Point offset, Windows.Devices.Geolocation.Geopoint* out_location);
@@ -293,19 +299,19 @@ extern(Windows):
 	HRESULT get_TargetCamera(Windows.UI.Xaml.Controls.Maps.MapCamera* return_value);
 	HRESULT get_CustomExperience(Windows.UI.Xaml.Controls.Maps.MapCustomExperience* return_value);
 	HRESULT set_CustomExperience(Windows.UI.Xaml.Controls.Maps.MapCustomExperience value);
-	HRESULT add_MapElementClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapElementClickEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_MapElementClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementClickEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_MapElementClick(EventRegistrationToken token);
-	HRESULT add_MapElementPointerEntered(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapElementPointerEnteredEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_MapElementPointerEntered(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementPointerEnteredEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_MapElementPointerEntered(EventRegistrationToken token);
-	HRESULT add_MapElementPointerExited(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapElementPointerExitedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_MapElementPointerExited(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementPointerExitedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_MapElementPointerExited(EventRegistrationToken token);
-	HRESULT add_ActualCameraChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapActualCameraChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_ActualCameraChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ActualCameraChanged(EventRegistrationToken token);
-	HRESULT add_ActualCameraChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_ActualCameraChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ActualCameraChanging(EventRegistrationToken token);
-	HRESULT add_TargetCameraChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TargetCameraChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TargetCameraChanged(EventRegistrationToken token);
-	HRESULT add_CustomExperienceChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapCustomExperienceChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_CustomExperienceChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapCustomExperienceChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_CustomExperienceChanged(EventRegistrationToken token);
 	HRESULT abi_StartContinuousRotate(double rateInDegreesPerSecond);
 	HRESULT abi_StopContinuousRotate();
@@ -331,7 +337,7 @@ interface IMapControl3 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_MapRightTapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_MapRightTapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_MapRightTapped(EventRegistrationToken token);
 }
 
@@ -362,7 +368,7 @@ extern(Windows):
 	HRESULT set_StyleSheet(Windows.UI.Xaml.Controls.Maps.MapStyleSheet value);
 	HRESULT get_ViewPadding(Windows.UI.Xaml.Thickness* return_value);
 	HRESULT set_ViewPadding(Windows.UI.Xaml.Thickness value);
-	HRESULT add_MapContextRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapContextRequestedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_MapContextRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapContextRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_MapContextRequested(EventRegistrationToken token);
 	HRESULT abi_FindMapElementsAtOffsetWithRadius(Windows.Foundation.Point offset, double radius, Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement)* return_returnValue);
 	HRESULT abi_GetLocationFromOffsetWithReferenceSystem(Windows.Foundation.Point offset, Windows.Devices.Geolocation.AltitudeReferenceSystem desiredReferenceSystem, Windows.Devices.Geolocation.Geopoint* out_location);
@@ -419,13 +425,13 @@ interface IMapControlDataHelper : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_BusinessLandmarkClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkClickEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_BusinessLandmarkClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkClickEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_BusinessLandmarkClick(EventRegistrationToken token);
-	HRESULT add_TransitFeatureClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureClickEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TransitFeatureClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureClickEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TransitFeatureClick(EventRegistrationToken token);
-	HRESULT add_BusinessLandmarkRightTapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkRightTappedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_BusinessLandmarkRightTapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkRightTappedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_BusinessLandmarkRightTapped(EventRegistrationToken token);
-	HRESULT add_TransitFeatureRightTapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureRightTappedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TransitFeatureRightTapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureRightTappedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TransitFeatureRightTapped(EventRegistrationToken token);
 }
 
@@ -436,13 +442,13 @@ interface IMapControlDataHelper2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_BusinessLandmarkPointerEntered(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_BusinessLandmarkPointerEntered(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_BusinessLandmarkPointerEntered(EventRegistrationToken token);
-	HRESULT add_TransitFeaturePointerEntered(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TransitFeaturePointerEntered(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TransitFeaturePointerEntered(EventRegistrationToken token);
-	HRESULT add_BusinessLandmarkPointerExited(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_BusinessLandmarkPointerExited(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_BusinessLandmarkPointerExited(EventRegistrationToken token);
-	HRESULT add_TransitFeaturePointerExited(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl*,Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TransitFeaturePointerExited(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TransitFeaturePointerExited(EventRegistrationToken token);
 }
 
@@ -539,7 +545,7 @@ interface IMapControlTransitFeatureClickEventArgs : IInspectable
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
-	HRESULT get_TransitProperties(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)* return_value);
+	HRESULT get_TransitProperties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
 }
 
 @uuid("73911a4e-ec4f-479e-94a1-36e081d0d897")
@@ -551,7 +557,7 @@ interface IMapControlTransitFeaturePointerEnteredEventArgs : IInspectable
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
-	HRESULT get_TransitProperties(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)* return_value);
+	HRESULT get_TransitProperties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
 }
 
 @uuid("6a11258d-448d-44e7-bc69-d13d497154e9")
@@ -563,7 +569,7 @@ interface IMapControlTransitFeaturePointerExitedEventArgs : IInspectable
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
-	HRESULT get_TransitProperties(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)* return_value);
+	HRESULT get_TransitProperties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
 }
 
 @uuid("aea1cc49-a729-4eae-a59a-3ec9a125a028")
@@ -575,7 +581,7 @@ interface IMapControlTransitFeatureRightTappedEventArgs : IInspectable
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
-	HRESULT get_TransitProperties(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)* return_value);
+	HRESULT get_TransitProperties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
 }
 
 @uuid("7a403fb5-a1b1-4e7f-921e-3e6b8d8ebed6")
@@ -878,7 +884,7 @@ interface IMapScene : IInspectable
 
 extern(Windows):
 	HRESULT get_TargetCamera(Windows.UI.Xaml.Controls.Maps.MapCamera* return_value);
-	HRESULT add_TargetCameraChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapScene*,Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_TargetCameraChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapScene, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TargetCameraChanged(EventRegistrationToken token);
 }
 

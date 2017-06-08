@@ -61,7 +61,7 @@ extern(Windows):
 	HRESULT abi_AddLoggingChannelWithLevel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel, Windows.Foundation.Diagnostics.LoggingLevel maxLevel);
 	HRESULT abi_RemoveLoggingChannel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel);
 	HRESULT abi_CloseAndSaveToFileAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
-	HRESULT add_LogFileGenerated(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.IFileLoggingSession*,Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_LogFileGenerated(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_LogFileGenerated(EventRegistrationToken token);
 }
 
@@ -133,7 +133,7 @@ extern(Windows):
 	HRESULT abi_LogMessageWithLevel(HSTRING eventString, Windows.Foundation.Diagnostics.LoggingLevel level);
 	HRESULT abi_LogValuePair(HSTRING value1, INT32 value2);
 	HRESULT abi_LogValuePairWithLevel(HSTRING value1, INT32 value2, Windows.Foundation.Diagnostics.LoggingLevel level);
-	HRESULT add_LoggingEnabled(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.ILoggingChannel*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_LoggingEnabled(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_LoggingEnabled(EventRegistrationToken token);
 }
 

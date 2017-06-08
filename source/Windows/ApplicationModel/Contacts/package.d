@@ -462,7 +462,7 @@ extern(Windows):
 	HRESULT get_SyncManager(Windows.ApplicationModel.Contacts.ContactListSyncManager* return_value);
 	HRESULT get_SupportsServerSearch(bool* return_value);
 	HRESULT get_UserDataAccountId(HSTRING* return_value);
-	HRESULT add_ContactChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactList*,Windows.ApplicationModel.Contacts.ContactChangedEventArgs*) value, EventRegistrationToken* return_returnValue);
+	HRESULT add_ContactChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactList, Windows.ApplicationModel.Contacts.ContactChangedEventArgs) value, EventRegistrationToken* return_returnValue);
 	HRESULT remove_ContactChanged(EventRegistrationToken value);
 	HRESULT abi_SaveAsync(Windows.Foundation.IAsyncAction* return_returnValue);
 	HRESULT abi_DeleteAsync(Windows.Foundation.IAsyncAction* return_returnValue);
@@ -563,7 +563,7 @@ extern(Windows):
 	HRESULT get_LastSuccessfulSyncTime(Windows.Foundation.DateTime* return_value);
 	HRESULT get_LastAttemptedSyncTime(Windows.Foundation.DateTime* return_value);
 	HRESULT abi_SyncAsync(Windows.Foundation.IAsyncOperation!(bool)* return_result);
-	HRESULT add_SyncStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactListSyncManager*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SyncStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactListSyncManager, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SyncStatusChanged(EventRegistrationToken token);
 }
 
@@ -748,9 +748,9 @@ extern(Windows):
 	HRESULT abi_ClosePanel();
 	HRESULT get_HeaderColor(Windows.Foundation.IReference!(Windows.UI.Color)* return_value);
 	HRESULT set_HeaderColor(Windows.Foundation.IReference!(Windows.UI.Color) value);
-	HRESULT add_LaunchFullAppRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactPanel*,Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_LaunchFullAppRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_LaunchFullAppRequested(EventRegistrationToken token);
-	HRESULT add_Closing(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactPanel*,Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Closing(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Closing(EventRegistrationToken token);
 }
 
@@ -938,7 +938,7 @@ interface IContactStore2 : IInspectable
 
 extern(Windows):
 	HRESULT get_ChangeTracker(Windows.ApplicationModel.Contacts.ContactChangeTracker* return_value);
-	HRESULT add_ContactChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactStore*,Windows.ApplicationModel.Contacts.ContactChangedEventArgs*) value, EventRegistrationToken* return_returnValue);
+	HRESULT add_ContactChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactStore, Windows.ApplicationModel.Contacts.ContactChangedEventArgs) value, EventRegistrationToken* return_returnValue);
 	HRESULT remove_ContactChanged(EventRegistrationToken value);
 	HRESULT get_AggregateContactManager(Windows.ApplicationModel.Contacts.AggregateContactManager* return_value);
 	HRESULT abi_FindContactListsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactList))* return_value);

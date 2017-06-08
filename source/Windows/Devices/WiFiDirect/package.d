@@ -37,7 +37,7 @@ interface IWiFiDirectAdvertisementPublisher : IInspectable
 extern(Windows):
 	HRESULT get_Advertisement(Windows.Devices.WiFiDirect.WiFiDirectAdvertisement* return_value);
 	HRESULT get_Status(Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatus* return_value);
-	HRESULT add_StatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisher*,Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatusChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisher, Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatusChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StatusChanged(EventRegistrationToken token);
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
@@ -61,7 +61,7 @@ interface IWiFiDirectConnectionListener : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ConnectionRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectConnectionListener*,Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ConnectionRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectConnectionListener, Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ConnectionRequested(EventRegistrationToken token);
 }
 
@@ -127,7 +127,7 @@ interface IWiFiDirectDevice : IInspectable
 extern(Windows):
 	HRESULT get_ConnectionStatus(Windows.Devices.WiFiDirect.WiFiDirectConnectionStatus* return_value);
 	HRESULT get_DeviceId(HSTRING* return_value);
-	HRESULT add_ConnectionStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectDevice*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ConnectionStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectDevice, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ConnectionStatusChanged(EventRegistrationToken token);
 	HRESULT abi_GetConnectionEndpointPairs(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)* return_value);
 }

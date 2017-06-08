@@ -11,7 +11,7 @@ interface IUserNotificationListener : IInspectable
 extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus)* return_result);
 	HRESULT abi_GetAccessStatus(Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus* return_accessStatus);
-	HRESULT add_NotificationChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.Management.UserNotificationListener*,Windows.UI.Notifications.UserNotificationChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_NotificationChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.Management.UserNotificationListener, Windows.UI.Notifications.UserNotificationChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_NotificationChanged(EventRegistrationToken token);
 	HRESULT abi_GetNotificationsAsync(Windows.UI.Notifications.NotificationKinds kinds, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.UserNotification))* return_result);
 	HRESULT abi_GetNotification(UINT32 notificationId, Windows.UI.Notifications.UserNotification* return_result);

@@ -117,7 +117,7 @@ interface IHyperlink : IInspectable
 extern(Windows):
 	HRESULT get_NavigateUri(Windows.Foundation.Uri* return_value);
 	HRESULT set_NavigateUri(Windows.Foundation.Uri value);
-	HRESULT add_Click(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.Hyperlink*,Windows.UI.Xaml.Documents.HyperlinkClickEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_Click(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_Click(EventRegistrationToken token);
 }
 
@@ -167,9 +167,9 @@ extern(Windows):
 	HRESULT set_XYFocusLeftNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value);
 	HRESULT get_XYFocusRightNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value);
 	HRESULT set_XYFocusRightNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value);
-	HRESULT add_GotFocus(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_GotFocus(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_GotFocus(EventRegistrationToken token);
-	HRESULT add_LostFocus(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_LostFocus(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_LostFocus(EventRegistrationToken token);
 	HRESULT abi_Focus(Windows.UI.Xaml.FocusState value, bool* return_returnValue);
 }
@@ -385,11 +385,11 @@ extern(Windows):
 	HRESULT set_KeyTipHorizontalOffset(double value);
 	HRESULT get_KeyTipVerticalOffset(double* return_value);
 	HRESULT set_KeyTipVerticalOffset(double value);
-	HRESULT add_AccessKeyDisplayRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement*,Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_AccessKeyDisplayRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_AccessKeyDisplayRequested(EventRegistrationToken token);
-	HRESULT add_AccessKeyDisplayDismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement*,Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_AccessKeyDisplayDismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_AccessKeyDisplayDismissed(EventRegistrationToken token);
-	HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement*,Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_AccessKeyInvoked(EventRegistrationToken token);
 }
 

@@ -12,7 +12,7 @@ extern(Windows):
 	HRESULT get_NetworkAdapter(Windows.Networking.Connectivity.NetworkAdapter* return_value);
 	HRESULT abi_ScanAsync(Windows.Foundation.IAsyncAction* return_value);
 	HRESULT get_NetworkReport(Windows.Devices.WiFi.WiFiNetworkReport* return_value);
-	HRESULT add_AvailableNetworksChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFi.WiFiAdapter*,IInspectable*) args, EventRegistrationToken* return_eventCookie);
+	HRESULT add_AvailableNetworksChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFi.WiFiAdapter, IInspectable) args, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_AvailableNetworksChanged(EventRegistrationToken eventCookie);
 	HRESULT abi_ConnectAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult)* return_value);
 	HRESULT abi_ConnectWithPasswordCredentialAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential, Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult)* return_value);

@@ -16,7 +16,7 @@ extern(Windows):
 	deprecated("DesiredFields may be altered or unavailable for releases after Windows 8.1. Instead, use DesiredFieldsWithContactFieldType.")
 	HRESULT get_DesiredFields(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 	HRESULT get_SelectionMode(Windows.ApplicationModel.Contacts.ContactSelectionMode* return_value);
-	HRESULT add_ContactRemoved(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.Provider.ContactPickerUI*,Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ContactRemoved(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.Provider.ContactPickerUI, Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ContactRemoved(EventRegistrationToken token);
 }
 

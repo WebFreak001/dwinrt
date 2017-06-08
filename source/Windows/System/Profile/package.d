@@ -108,7 +108,7 @@ interface IRetailInfoStatics : IInspectable
 
 extern(Windows):
 	HRESULT get_IsDemoModeEnabled(bool* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
 }
 
 @uuid("893df40e-cad6-4d50-8c49-6fcfc03edb29")

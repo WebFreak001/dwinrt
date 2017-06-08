@@ -59,7 +59,7 @@ interface IHttpBaseProtocolFilter4 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Filters.HttpBaseProtocolFilter*,Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ServerCustomValidationRequested(EventRegistrationToken eventCookie);
 	HRESULT abi_ClearAuthenticationCache();
 }
@@ -83,7 +83,7 @@ interface IHttpFilter : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_SendRequestAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage*,Windows.Web.Http.HttpProgress)* return_operation);
+	HRESULT abi_SendRequestAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
 }
 
 @uuid("3165fe32-e7dd-48b7-a361-939c750e63cc")

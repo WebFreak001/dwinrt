@@ -2,6 +2,12 @@ module Windows.Media;
 
 import dwinrt;
 
+struct MediaTimeRange
+{
+	Windows.Foundation.TimeSpan Start;
+	Windows.Foundation.TimeSpan End;
+}
+
 @uuid("35175827-724b-4c6a-b130-f6537f9ae0d0")
 @WinrtFactory("Windows.Media.AudioBuffer")
 interface IAudioBuffer : IInspectable
@@ -246,9 +252,9 @@ extern(Windows):
 	HRESULT get_ClockRate(double* return_value);
 	HRESULT set_ClockRate(double value);
 	HRESULT get_State(Windows.Media.MediaTimelineControllerState* return_value);
-	HRESULT add_PositionChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController*,IInspectable*) positionChangedEventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_PositionChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, IInspectable) positionChangedEventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_PositionChanged(EventRegistrationToken eventCookie);
-	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController*,IInspectable*) stateChangedEventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, IInspectable) stateChangedEventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_StateChanged(EventRegistrationToken eventCookie);
 }
 
@@ -263,9 +269,9 @@ extern(Windows):
 	HRESULT set_Duration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value);
 	HRESULT get_IsLoopingEnabled(bool* return_value);
 	HRESULT set_IsLoopingEnabled(bool value);
-	HRESULT add_Failed(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController*,Windows.Media.MediaTimelineControllerFailedEventArgs*) eventHandler, EventRegistrationToken* return_token);
+	HRESULT add_Failed(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, Windows.Media.MediaTimelineControllerFailedEventArgs) eventHandler, EventRegistrationToken* return_token);
 	HRESULT remove_Failed(EventRegistrationToken token);
-	HRESULT add_Ended(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController*,IInspectable*) eventHandler, EventRegistrationToken* return_token);
+	HRESULT add_Ended(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, IInspectable) eventHandler, EventRegistrationToken* return_token);
 	HRESULT remove_Ended(EventRegistrationToken token);
 }
 
@@ -382,9 +388,9 @@ extern(Windows):
 	HRESULT set_IsChannelUpEnabled(bool value);
 	HRESULT get_IsChannelDownEnabled(bool* return_value);
 	HRESULT set_IsChannelDownEnabled(bool value);
-	HRESULT add_ButtonPressed(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls*,Windows.Media.SystemMediaTransportControlsButtonPressedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ButtonPressed(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsButtonPressedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ButtonPressed(EventRegistrationToken token);
-	HRESULT add_PropertyChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls*,Windows.Media.SystemMediaTransportControlsPropertyChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PropertyChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsPropertyChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PropertyChanged(EventRegistrationToken token);
 }
 
@@ -402,13 +408,13 @@ extern(Windows):
 	HRESULT get_PlaybackRate(double* return_value);
 	HRESULT set_PlaybackRate(double value);
 	HRESULT abi_UpdateTimelineProperties(Windows.Media.SystemMediaTransportControlsTimelineProperties timelineProperties);
-	HRESULT add_PlaybackPositionChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls*,Windows.Media.PlaybackPositionChangeRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PlaybackPositionChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackPositionChangeRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PlaybackPositionChangeRequested(EventRegistrationToken token);
-	HRESULT add_PlaybackRateChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls*,Windows.Media.PlaybackRateChangeRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PlaybackRateChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackRateChangeRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PlaybackRateChangeRequested(EventRegistrationToken token);
-	HRESULT add_ShuffleEnabledChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls*,Windows.Media.ShuffleEnabledChangeRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ShuffleEnabledChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.ShuffleEnabledChangeRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ShuffleEnabledChangeRequested(EventRegistrationToken token);
-	HRESULT add_AutoRepeatModeChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls*,Windows.Media.AutoRepeatModeChangeRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AutoRepeatModeChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.AutoRepeatModeChangeRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AutoRepeatModeChangeRequested(EventRegistrationToken token);
 }
 

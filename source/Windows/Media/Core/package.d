@@ -2,6 +2,41 @@ module Windows.Media.Core;
 
 import dwinrt;
 
+struct MseTimeRange
+{
+	Windows.Foundation.TimeSpan Start;
+	Windows.Foundation.TimeSpan End;
+}
+
+struct TimedTextDouble
+{
+	double Value;
+	Windows.Media.Core.TimedTextUnit Unit;
+}
+
+struct TimedTextPadding
+{
+	double Before;
+	double After;
+	double Start;
+	double End;
+	Windows.Media.Core.TimedTextUnit Unit;
+}
+
+struct TimedTextPoint
+{
+	double X;
+	double Y;
+	Windows.Media.Core.TimedTextUnit Unit;
+}
+
+struct TimedTextSize
+{
+	double Height;
+	double Width;
+	Windows.Media.Core.TimedTextUnit Unit;
+}
+
 @uuid("1e3692e4-4027-4847-a70b-df1d9a2a7b04")
 @WinrtFactory("Windows.Media.Core.AudioStreamDescriptor")
 interface IAudioStreamDescriptor : IInspectable
@@ -42,7 +77,7 @@ interface IAudioTrack : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_OpenFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.AudioTrack*,Windows.Media.Core.AudioTrackOpenFailedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_OpenFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.AudioTrack, Windows.Media.Core.AudioTrackOpenFailedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_OpenFailed(EventRegistrationToken token);
 	HRESULT abi_GetEncodingProperties(Windows.Media.MediaProperties.AudioEncodingProperties* return_value);
 	HRESULT get_PlaybackItem(Windows.Media.Playback.MediaPlaybackItem* return_value);
@@ -210,7 +245,7 @@ extern(Windows):
 	HRESULT get_Enabled(bool* return_value);
 	HRESULT set_DesiredDetectionInterval(Windows.Foundation.TimeSpan value);
 	HRESULT get_DesiredDetectionInterval(Windows.Foundation.TimeSpan* return_value);
-	HRESULT add_FaceDetected(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.FaceDetectionEffect*,Windows.Media.Core.FaceDetectedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_FaceDetected(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.FaceDetectionEffect, Windows.Media.Core.FaceDetectedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_FaceDetected(EventRegistrationToken cookie);
 }
 
@@ -281,7 +316,7 @@ interface IMediaBinder : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Binding(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaBinder*,Windows.Media.Core.MediaBindingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Binding(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaBinder, Windows.Media.Core.MediaBindingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Binding(EventRegistrationToken token);
 	HRESULT get_Token(HSTRING* return_value);
 	HRESULT set_Token(HSTRING value);
@@ -295,7 +330,7 @@ interface IMediaBindingEventArgs : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Canceled(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaBindingEventArgs*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Canceled(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaBindingEventArgs, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Canceled(EventRegistrationToken token);
 	HRESULT get_MediaBinder(Windows.Media.Core.MediaBinder* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_deferral);
@@ -346,7 +381,7 @@ interface IMediaSource2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_OpenOperationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaSource*,Windows.Media.Core.MediaSourceOpenOperationCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_OpenOperationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceOpenOperationCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_OpenOperationCompleted(EventRegistrationToken token);
 	HRESULT get_CustomProperties(Windows.Foundation.Collections.ValueSet* return_value);
 	HRESULT get_Duration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
@@ -362,7 +397,7 @@ interface IMediaSource3 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaSource*,Windows.Media.Core.MediaSourceStateChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceStateChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StateChanged(EventRegistrationToken token);
 	HRESULT get_State(Windows.Media.Core.MediaSourceState* return_value);
 	HRESULT abi_Reset();
@@ -460,7 +495,7 @@ interface IMediaStreamSample : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Processed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSample*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Processed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSample, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Processed(EventRegistrationToken token);
 	HRESULT get_Buffer(Windows.Storage.Streams.Buffer* return_value);
 	HRESULT get_Timestamp(Windows.Foundation.TimeSpan* return_value);
@@ -509,15 +544,15 @@ interface IMediaStreamSource : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource*,Windows.Media.Core.MediaStreamSourceClosedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceClosedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Closed(EventRegistrationToken token);
-	HRESULT add_Starting(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource*,Windows.Media.Core.MediaStreamSourceStartingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Starting(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceStartingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Starting(EventRegistrationToken token);
-	HRESULT add_Paused(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Paused(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Paused(EventRegistrationToken token);
-	HRESULT add_SampleRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource*,Windows.Media.Core.MediaStreamSourceSampleRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SampleRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SampleRequested(EventRegistrationToken token);
-	HRESULT add_SwitchStreamsRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource*,Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SwitchStreamsRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SwitchStreamsRequested(EventRegistrationToken token);
 	HRESULT abi_NotifyError(Windows.Media.Core.MediaStreamSourceErrorStatus errorStatus);
 	HRESULT abi_AddStreamDescriptor(Windows.Media.Core.IMediaStreamDescriptor descriptor);
@@ -544,7 +579,7 @@ interface IMediaStreamSource2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_SampleRendered(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource*,Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SampleRendered(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SampleRendered(EventRegistrationToken token);
 }
 
@@ -718,15 +753,15 @@ interface IMseSourceBuffer : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_UpdateStarting(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_UpdateStarting(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_UpdateStarting(EventRegistrationToken token);
-	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Updated(EventRegistrationToken token);
-	HRESULT add_UpdateEnded(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_UpdateEnded(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_UpdateEnded(EventRegistrationToken token);
-	HRESULT add_ErrorOccurred(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ErrorOccurred(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ErrorOccurred(EventRegistrationToken token);
-	HRESULT add_Aborted(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Aborted(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Aborted(EventRegistrationToken token);
 	HRESULT get_Mode(Windows.Media.Core.MseAppendMode* return_value);
 	HRESULT set_Mode(Windows.Media.Core.MseAppendMode value);
@@ -752,9 +787,9 @@ interface IMseSourceBufferList : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_SourceBufferAdded(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBufferList*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SourceBufferAdded(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBufferList, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SourceBufferAdded(EventRegistrationToken token);
-	HRESULT add_SourceBufferRemoved(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBufferList*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SourceBufferRemoved(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBufferList, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SourceBufferRemoved(EventRegistrationToken token);
 	HRESULT get_Buffers(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.MseSourceBuffer)* return_value);
 }
@@ -766,11 +801,11 @@ interface IMseStreamSource : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Opened(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Opened(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Opened(EventRegistrationToken token);
-	HRESULT add_Ended(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Ended(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Ended(EventRegistrationToken token);
-	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Closed(EventRegistrationToken token);
 	HRESULT get_SourceBuffers(Windows.Media.Core.MseSourceBufferList* return_value);
 	HRESULT get_ActiveSourceBuffers(Windows.Media.Core.MseSourceBufferList* return_value);
@@ -802,7 +837,7 @@ extern(Windows):
 	HRESULT get_HighDynamicRangeAnalyzer(Windows.Media.Core.HighDynamicRangeControl* return_value);
 	HRESULT set_DesiredAnalysisInterval(Windows.Foundation.TimeSpan value);
 	HRESULT get_DesiredAnalysisInterval(Windows.Foundation.TimeSpan* return_value);
-	HRESULT add_SceneAnalyzed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.SceneAnalysisEffect*,Windows.Media.Core.SceneAnalyzedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_SceneAnalyzed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.SceneAnalysisEffect, Windows.Media.Core.SceneAnalyzedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_SceneAnalyzed(EventRegistrationToken cookie);
 }
 
@@ -833,7 +868,7 @@ interface ISingleSelectMediaTrackList : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_SelectedIndexChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.ISingleSelectMediaTrackList*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SelectedIndexChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SelectedIndexChanged(EventRegistrationToken token);
 	HRESULT set_SelectedIndex(INT32 value);
 	HRESULT get_SelectedIndex(INT32* return_value);
@@ -861,11 +896,11 @@ interface ITimedMetadataTrack : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_CueEntered(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack*,Windows.Media.Core.MediaCueEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_CueEntered(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CueEntered(EventRegistrationToken token);
-	HRESULT add_CueExited(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack*,Windows.Media.Core.MediaCueEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_CueExited(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CueExited(EventRegistrationToken token);
-	HRESULT add_TrackFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack*,Windows.Media.Core.TimedMetadataTrackFailedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_TrackFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.TimedMetadataTrackFailedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_TrackFailed(EventRegistrationToken token);
 	HRESULT get_Cues(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.IMediaCue)* return_value);
 	HRESULT get_ActiveCues(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.IMediaCue)* return_value);
@@ -992,7 +1027,7 @@ interface ITimedTextSource : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Resolved(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedTextSource*,Windows.Media.Core.TimedTextSourceResolveResultEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Resolved(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedTextSource, Windows.Media.Core.TimedTextSourceResolveResultEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Resolved(EventRegistrationToken token);
 }
 
@@ -1107,7 +1142,7 @@ interface IVideoStabilizationEffect : IInspectable
 extern(Windows):
 	HRESULT set_Enabled(bool value);
 	HRESULT get_Enabled(bool* return_value);
-	HRESULT add_EnabledChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.VideoStabilizationEffect*,Windows.Media.Core.VideoStabilizationEffectEnabledChangedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_EnabledChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.VideoStabilizationEffect, Windows.Media.Core.VideoStabilizationEffectEnabledChangedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_EnabledChanged(EventRegistrationToken cookie);
 	HRESULT abi_GetRecommendedStreamConfiguration(Windows.Media.Devices.VideoDeviceController controller, Windows.Media.MediaProperties.VideoEncodingProperties desiredProperties, Windows.Media.Capture.VideoStreamConfiguration* return_value);
 }
@@ -1149,7 +1184,7 @@ interface IVideoTrack : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_OpenFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.VideoTrack*,Windows.Media.Core.VideoTrackOpenFailedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_OpenFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.VideoTrack, Windows.Media.Core.VideoTrackOpenFailedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_OpenFailed(EventRegistrationToken token);
 	HRESULT abi_GetEncodingProperties(Windows.Media.MediaProperties.VideoEncodingProperties* return_value);
 	HRESULT get_PlaybackItem(Windows.Media.Playback.MediaPlaybackItem* return_value);

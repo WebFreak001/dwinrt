@@ -169,7 +169,7 @@ extern(Windows):
 	HRESULT get_LastSuccessfulSyncTime(Windows.Foundation.DateTime* return_value);
 	HRESULT get_LastAttemptedSyncTime(Windows.Foundation.DateTime* return_value);
 	HRESULT abi_SyncAsync(Windows.Foundation.IAsyncOperation!(bool)* return_result);
-	HRESULT add_SyncStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SyncStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SyncStatusChanged(EventRegistrationToken token);
 }
 
@@ -425,7 +425,7 @@ interface IAppointmentStore2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_StoreChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.AppointmentStore*,Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs*) pHandler, EventRegistrationToken* return_pToken);
+	HRESULT add_StoreChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.AppointmentStore, Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs) pHandler, EventRegistrationToken* return_pToken);
 	HRESULT remove_StoreChanged(EventRegistrationToken token);
 	HRESULT abi_CreateAppointmentCalendarInAccountAsync(HSTRING name, HSTRING userDataAccountId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentCalendar)* return_operation);
 }

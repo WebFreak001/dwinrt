@@ -2,6 +2,62 @@ module Windows.Gaming.Input;
 
 import dwinrt;
 
+struct ArcadeStickReading
+{
+	UINT64 Timestamp;
+	Windows.Gaming.Input.ArcadeStickButtons Buttons;
+}
+
+struct FlightStickReading
+{
+	UINT64 Timestamp;
+	Windows.Gaming.Input.FlightStickButtons Buttons;
+	Windows.Gaming.Input.GameControllerSwitchPosition HatSwitch;
+	double Roll;
+	double Pitch;
+	double Yaw;
+	double Throttle;
+}
+
+struct GamepadReading
+{
+	UINT64 Timestamp;
+	Windows.Gaming.Input.GamepadButtons Buttons;
+	double LeftTrigger;
+	double RightTrigger;
+	double LeftThumbstickX;
+	double LeftThumbstickY;
+	double RightThumbstickX;
+	double RightThumbstickY;
+}
+
+struct GamepadVibration
+{
+	double LeftMotor;
+	double RightMotor;
+	double LeftTrigger;
+	double RightTrigger;
+}
+
+struct RacingWheelReading
+{
+	UINT64 Timestamp;
+	Windows.Gaming.Input.RacingWheelButtons Buttons;
+	INT32 PatternShifterGear;
+	double Wheel;
+	double Throttle;
+	double Brake;
+	double Clutch;
+	double Handbrake;
+}
+
+struct UINavigationReading
+{
+	UINT64 Timestamp;
+	Windows.Gaming.Input.RequiredUINavigationButtons RequiredButtons;
+	Windows.Gaming.Input.OptionalUINavigationButtons OptionalButtons;
+}
+
 @uuid("b14a539d-befb-4c81-8051-15ecf3b13036")
 @WinrtFactory("Windows.Gaming.Input.ArcadeStick")
 interface IArcadeStick : IInspectable
@@ -70,11 +126,11 @@ interface IGameController : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_HeadsetConnected(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController*,Windows.Gaming.Input.Headset*) value, EventRegistrationToken* return_token);
+	HRESULT add_HeadsetConnected(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) value, EventRegistrationToken* return_token);
 	HRESULT remove_HeadsetConnected(EventRegistrationToken token);
-	HRESULT add_HeadsetDisconnected(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController*,Windows.Gaming.Input.Headset*) value, EventRegistrationToken* return_token);
+	HRESULT add_HeadsetDisconnected(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) value, EventRegistrationToken* return_token);
 	HRESULT remove_HeadsetDisconnected(EventRegistrationToken token);
-	HRESULT add_UserChanged(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController*,Windows.System.UserChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_UserChanged(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_UserChanged(EventRegistrationToken token);
 	HRESULT get_Headset(Windows.Gaming.Input.Headset* return_value);
 	HRESULT get_IsWireless(bool* return_value);

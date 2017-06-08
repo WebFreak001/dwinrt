@@ -2,6 +2,12 @@ module Windows.Devices.SmartCards;
 
 import dwinrt;
 
+@uuid("138d5e40-f3bc-4a5c-b41d-4b4ef684e237")
+interface SmartCardPinResetHandler
+{
+	HRESULT abi_Invoke(Windows.Devices.SmartCards.SmartCardProvisioning sender, Windows.Devices.SmartCards.SmartCardPinResetRequest request);
+}
+
 @uuid("18bbef98-f18b-4dd3-b118-dfb2c8e23cc6")
 @WinrtFactory("Windows.Devices.SmartCards.CardAddedEventArgs")
 interface ICardAddedEventArgs : IInspectable
@@ -124,7 +130,7 @@ extern(Windows):
 	HRESULT abi_GetNameAsync(Windows.Foundation.IAsyncOperation!(HSTRING)* return_result);
 	HRESULT abi_GetChallengeContextAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardChallengeContext)* return_result);
 	HRESULT abi_RequestPinChangeAsync(Windows.Foundation.IAsyncOperation!(bool)* return_result);
-	HRESULT abi_RequestPinResetAsync(Windows.Devices.SmartCards.SmartCardPinResetHandler* handler, Windows.Foundation.IAsyncOperation!(bool)* return_result);
+	HRESULT abi_RequestPinResetAsync(Windows.Devices.SmartCards.SmartCardPinResetHandler handler, Windows.Foundation.IAsyncOperation!(bool)* return_result);
 }
 
 @uuid("10fd28eb-3f79-4b66-9b7c-11c149b7d0bc")
@@ -173,9 +179,9 @@ extern(Windows):
 	HRESULT get_Kind(Windows.Devices.SmartCards.SmartCardReaderKind* return_value);
 	HRESULT abi_GetStatusAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardReaderStatus)* return_result);
 	HRESULT abi_FindAllCardsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.SmartCards.SmartCard))* return_result);
-	HRESULT add_CardAdded(Windows.Foundation.TypedEventHandler!(Windows.Devices.SmartCards.SmartCardReader*,Windows.Devices.SmartCards.CardAddedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_CardAdded(Windows.Foundation.TypedEventHandler!(Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardAddedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CardAdded(EventRegistrationToken token);
-	HRESULT add_CardRemoved(Windows.Foundation.TypedEventHandler!(Windows.Devices.SmartCards.SmartCardReader*,Windows.Devices.SmartCards.CardRemovedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_CardRemoved(Windows.Foundation.TypedEventHandler!(Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardRemovedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CardRemoved(EventRegistrationToken token);
 }
 

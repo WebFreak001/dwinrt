@@ -20,7 +20,7 @@ extern(Windows):
 	HRESULT abi_GetInt32(INT32* return_result);
 	HRESULT abi_GetInt64(INT64* return_result);
 	HRESULT abi_GetString(HSTRING* return_result);
-	HRESULT add_Changed(Windows.Foundation.TypedEventHandler!(Windows.Management.Policies.NamedPolicyData*,IInspectable*) changedHandler, EventRegistrationToken* return_cookie);
+	HRESULT add_Changed(Windows.Foundation.TypedEventHandler!(Windows.Management.Policies.NamedPolicyData, IInspectable) changedHandler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Changed(EventRegistrationToken cookie);
 }
 

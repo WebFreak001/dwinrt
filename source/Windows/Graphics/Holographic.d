@@ -2,6 +2,18 @@ module Windows.Graphics.Holographic;
 
 import dwinrt;
 
+struct HolographicAdapterId
+{
+	UINT32 LowPart;
+	INT32 HighPart;
+}
+
+struct HolographicStereoTransform
+{
+	Windows.Foundation.Numerics.Matrix4x4 Left;
+	Windows.Foundation.Numerics.Matrix4x4 Right;
+}
+
 @uuid("e4e98445-9bed-4980-9ba0-e87680d1cb74")
 @WinrtFactory("Windows.Graphics.Holographic.HolographicCamera")
 interface IHolographicCamera : IInspectable
@@ -147,9 +159,9 @@ interface IHolographicSpace : IInspectable
 extern(Windows):
 	HRESULT get_PrimaryAdapterId(Windows.Graphics.Holographic.HolographicAdapterId* return_value);
 	HRESULT abi_SetDirect3D11Device(Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice value);
-	HRESULT add_CameraAdded(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Holographic.HolographicSpace*,Windows.Graphics.Holographic.HolographicSpaceCameraAddedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_CameraAdded(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraAddedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_CameraAdded(EventRegistrationToken cookie);
-	HRESULT add_CameraRemoved(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Holographic.HolographicSpace*,Windows.Graphics.Holographic.HolographicSpaceCameraRemovedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_CameraRemoved(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraRemovedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_CameraRemoved(EventRegistrationToken cookie);
 	HRESULT abi_CreateNextFrame(Windows.Graphics.Holographic.HolographicFrame* return_value);
 }

@@ -2,6 +2,26 @@ module Windows.Networking.BackgroundTransfer;
 
 import dwinrt;
 
+struct BackgroundDownloadProgress
+{
+	UINT64 BytesReceived;
+	UINT64 TotalBytesToReceive;
+	Windows.Networking.BackgroundTransfer.BackgroundTransferStatus Status;
+	bool HasResponseChanged;
+	bool HasRestarted;
+}
+
+struct BackgroundUploadProgress
+{
+	UINT64 BytesReceived;
+	UINT64 BytesSent;
+	UINT64 TotalBytesToReceive;
+	UINT64 TotalBytesToSend;
+	Windows.Networking.BackgroundTransfer.BackgroundTransferStatus Status;
+	bool HasResponseChanged;
+	bool HasRestarted;
+}
+
 @uuid("c1c79333-6649-4b1d-a826-a4b3dd234d0b")
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundDownloader")
 interface IBackgroundDownloader : IInspectable
@@ -328,8 +348,8 @@ interface IDownloadOperation : IInspectable
 extern(Windows):
 	HRESULT get_ResultFile(Windows.Storage.IStorageFile* return_value);
 	HRESULT get_Progress(Windows.Networking.BackgroundTransfer.BackgroundDownloadProgress* return_value);
-	HRESULT abi_StartAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.DownloadOperation*,Windows.Networking.BackgroundTransfer.DownloadOperation*)* return_operation);
-	HRESULT abi_AttachAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.DownloadOperation*,Windows.Networking.BackgroundTransfer.DownloadOperation*)* return_operation);
+	HRESULT abi_StartAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.DownloadOperation, Windows.Networking.BackgroundTransfer.DownloadOperation)* return_operation);
+	HRESULT abi_AttachAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.DownloadOperation, Windows.Networking.BackgroundTransfer.DownloadOperation)* return_operation);
 	HRESULT abi_Pause();
 	HRESULT abi_Resume();
 }
@@ -354,7 +374,7 @@ extern(Windows):
 	HRESULT get_IsResumable(bool* return_value);
 	HRESULT get_ActualUri(Windows.Foundation.Uri* return_value);
 	HRESULT get_StatusCode(UINT32* return_value);
-	HRESULT get_Headers(Windows.Foundation.Collections.IMapView!(HSTRING,HSTRING)* return_value);
+	HRESULT get_Headers(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING)* return_value);
 }
 
 @uuid("4c24b81f-d944-4112-a98e-6a69522b7ebb")
@@ -377,8 +397,8 @@ interface IUploadOperation : IInspectable
 extern(Windows):
 	HRESULT get_SourceFile(Windows.Storage.IStorageFile* return_value);
 	HRESULT get_Progress(Windows.Networking.BackgroundTransfer.BackgroundUploadProgress* return_value);
-	HRESULT abi_StartAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation*,Windows.Networking.BackgroundTransfer.UploadOperation*)* return_operation);
-	HRESULT abi_AttachAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation*,Windows.Networking.BackgroundTransfer.UploadOperation*)* return_operation);
+	HRESULT abi_StartAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation, Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
+	HRESULT abi_AttachAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation, Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
 }
 
 @uuid("556189f2-2774-4df6-9fa5-209f2bfb12f7")

@@ -19,11 +19,11 @@ interface IWebAccountMonitor : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor*,Windows.Security.Authentication.Web.Core.WebAccountEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Updated(EventRegistrationToken token);
-	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor*,Windows.Security.Authentication.Web.Core.WebAccountEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Removed(EventRegistrationToken token);
-	HRESULT add_DefaultSignInAccountChanged(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DefaultSignInAccountChanged(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DefaultSignInAccountChanged(EventRegistrationToken token);
 }
 
@@ -72,7 +72,7 @@ interface IWebProviderError : IInspectable
 extern(Windows):
 	HRESULT get_ErrorCode(UINT32* return_value);
 	HRESULT get_ErrorMessage(HSTRING* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 }
 
 @uuid("e3c40a2d-89ef-4e37-847f-a8b9d5a32910")
@@ -96,7 +96,7 @@ extern(Windows):
 	HRESULT get_Scope(HSTRING* return_value);
 	HRESULT get_ClientId(HSTRING* return_value);
 	HRESULT get_PromptType(Windows.Security.Authentication.Web.Core.WebTokenRequestPromptType* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_requestProperties);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_requestProperties);
 }
 
 @uuid("d700c079-30c8-4397-9654-961c3be8b855")
@@ -106,7 +106,7 @@ interface IWebTokenRequest2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_AppProperties(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_requestProperties);
+	HRESULT get_AppProperties(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_requestProperties);
 }
 
 @uuid("5a755b51-3bb1-41a5-a63d-90bc32c7db9a")
@@ -156,7 +156,7 @@ extern(Windows):
 	HRESULT get_Token(HSTRING* return_value);
 	HRESULT get_ProviderError(Windows.Security.Authentication.Web.Core.WebProviderError* return_value);
 	HRESULT get_WebAccount(Windows.Security.Credentials.WebAccount* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 }
 
 @uuid("ab6bf7f8-5450-4ef6-97f7-052b0431c0f0")

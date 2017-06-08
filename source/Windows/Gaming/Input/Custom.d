@@ -2,6 +2,20 @@ module Windows.Gaming.Input.Custom;
 
 import dwinrt;
 
+struct GameControllerVersionInfo
+{
+	UINT16 Major;
+	UINT16 Minor;
+	UINT16 Build;
+	UINT16 Revision;
+}
+
+struct GipFirmwareUpdateProgress
+{
+	double PercentCompleted;
+	UINT32 CurrentComponentId;
+}
+
 @uuid("69a0ae5e-758e-4cbe-ace6-62155fe9126f")
 interface ICustomGameControllerFactory : IInspectable
 {
@@ -89,7 +103,7 @@ interface IGipGameControllerProvider : IInspectable
 extern(Windows):
 	HRESULT abi_SendMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, BYTE messageId, UINT32 __messageBufferSize, BYTE* messageBuffer);
 	HRESULT abi_SendReceiveMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, BYTE messageId, UINT32 __requestMessageBufferSize, BYTE* requestMessageBuffer, UINT32 __responseMessageBufferSize, BYTE* out_responseMessageBuffer);
-	HRESULT abi_UpdateFirmwareAsync(Windows.Storage.Streams.IInputStream firmwareImage, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Gaming.Input.Custom.GipFirmwareUpdateResult*,Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress)* return_result);
+	HRESULT abi_UpdateFirmwareAsync(Windows.Storage.Streams.IInputStream firmwareImage, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Gaming.Input.Custom.GipFirmwareUpdateResult, Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress)* return_result);
 }
 
 @uuid("f754c322-182d-40e4-a126-fcee4ffa1e31")

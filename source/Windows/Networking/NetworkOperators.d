@@ -2,6 +2,12 @@ module Windows.Networking.NetworkOperators;
 
 import dwinrt;
 
+struct ProfileUsage
+{
+	UINT32 UsageInMegabytes;
+	Windows.Foundation.DateTime LastSyncTime;
+}
+
 @uuid("e756c791-1003-4de5-83c7-de61d88831d0")
 @WinrtFactory("Windows.Networking.NetworkOperators.HotspotAuthenticationContext")
 interface IHotspotAuthenticationContext : IInspectable
@@ -188,15 +194,15 @@ interface IMobileBroadbandAccountWatcher : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_AccountAdded(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher*,Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_AccountAdded(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_AccountAdded(EventRegistrationToken cookie);
-	HRESULT add_AccountUpdated(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher*,Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_AccountUpdated(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_AccountUpdated(EventRegistrationToken cookie);
-	HRESULT add_AccountRemoved(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher*,Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_AccountRemoved(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_AccountRemoved(EventRegistrationToken cookie);
-	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_EnumerationCompleted(EventRegistrationToken cookie);
-	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Stopped(EventRegistrationToken cookie);
 	HRESULT get_Status(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcherStatus* return_status);
 	HRESULT abi_Start();
@@ -305,7 +311,7 @@ interface IMobileBroadbandDeviceServiceDataSession : IInspectable
 extern(Windows):
 	HRESULT abi_WriteDataAsync(Windows.Storage.Streams.IBuffer value, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_CloseSession();
-	HRESULT add_DataReceived(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession*,Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_DataReceived(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_DataReceived(EventRegistrationToken eventCookie);
 }
 

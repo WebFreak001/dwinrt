@@ -2,6 +2,18 @@ module Windows.Devices.Perception.Provider;
 
 import dwinrt;
 
+@uuid("74816d2a-2090-4670-8c48-ef39e7ff7c26")
+interface PerceptionStartFaceAuthenticationHandler
+{
+	HRESULT abi_Invoke(Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup sender, bool* return_result);
+}
+
+@uuid("387ee6aa-89cd-481e-aade-dd92f70b2ad7")
+interface PerceptionStopFaceAuthenticationHandler
+{
+	HRESULT abi_Invoke(Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup sender);
+}
+
 @uuid("3ae651d6-9669-4106-9fae-4835c1b96104")
 @WinrtFactory("Windows.Devices.Perception.Provider.KnownPerceptionFrameKind")
 interface IKnownPerceptionFrameKindStatics : IInspectable
@@ -106,7 +118,7 @@ interface IPerceptionFaceAuthenticationGroupFactory : IInspectable
 
 extern(Windows):
 	deprecated("PerceptionFaceAuthenticationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(HSTRING) ids, Windows.Devices.Perception.Provider.PerceptionStartFaceAuthenticationHandler* startHandler, Windows.Devices.Perception.Provider.PerceptionStopFaceAuthenticationHandler* stopHandler, Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup* return_result);
+	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(HSTRING) ids, Windows.Devices.Perception.Provider.PerceptionStartFaceAuthenticationHandler startHandler, Windows.Devices.Perception.Provider.PerceptionStopFaceAuthenticationHandler stopHandler, Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup* return_result);
 }
 
 @uuid("7cfe7825-54bb-4d9d-bec5-8ef66151d2ac")

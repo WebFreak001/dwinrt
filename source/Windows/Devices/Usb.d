@@ -316,7 +316,7 @@ interface IUsbInterruptInPipe : IInspectable
 extern(Windows):
 	HRESULT get_EndpointDescriptor(Windows.Devices.Usb.UsbInterruptInEndpointDescriptor* return_value);
 	HRESULT abi_ClearStallAsync(Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT add_DataReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.Usb.UsbInterruptInPipe*,Windows.Devices.Usb.UsbInterruptInEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DataReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DataReceived(EventRegistrationToken token);
 }
 

@@ -41,10 +41,10 @@ extern(Windows):
 	HRESULT get_Status(Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus* return_value);
 	HRESULT get_Geofences(Windows.Foundation.Collections.IVector!(Windows.Devices.Geolocation.Geofencing.Geofence)* return_value);
 	HRESULT get_LastKnownGeoposition(Windows.Devices.Geolocation.Geoposition* return_value);
-	HRESULT add_GeofenceStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor*,IInspectable*) eventHandler, EventRegistrationToken* return_token);
+	HRESULT add_GeofenceStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable) eventHandler, EventRegistrationToken* return_token);
 	HRESULT remove_GeofenceStateChanged(EventRegistrationToken token);
 	HRESULT abi_ReadReports(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geofencing.GeofenceStateChangeReport)* return_value);
-	HRESULT add_StatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor*,IInspectable*) eventHandler, EventRegistrationToken* return_token);
+	HRESULT add_StatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable) eventHandler, EventRegistrationToken* return_token);
 	HRESULT remove_StatusChanged(EventRegistrationToken token);
 }
 

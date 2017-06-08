@@ -97,12 +97,12 @@ interface IPrintTaskOptionDetails : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_Options(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails*)* return_value);
+	HRESULT get_Options(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)* return_value);
 	HRESULT abi_CreateItemListOption(HSTRING optionId, HSTRING displayName, Windows.Graphics.Printing.OptionDetails.PrintCustomItemListOptionDetails* return_itemListOption);
 	HRESULT abi_CreateTextOption(HSTRING optionId, HSTRING displayName, Windows.Graphics.Printing.OptionDetails.PrintCustomTextOptionDetails* return_textOption);
-	HRESULT add_OptionChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails*,Windows.Graphics.Printing.OptionDetails.PrintTaskOptionChangedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_OptionChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, Windows.Graphics.Printing.OptionDetails.PrintTaskOptionChangedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_OptionChanged(EventRegistrationToken eventCookie);
-	HRESULT add_BeginValidation(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails*,IInspectable*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_BeginValidation(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, IInspectable) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_BeginValidation(EventRegistrationToken eventCookie);
 }
 

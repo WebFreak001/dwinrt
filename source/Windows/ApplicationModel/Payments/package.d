@@ -2,6 +2,12 @@ module Windows.ApplicationModel.Payments;
 
 import dwinrt;
 
+@uuid("5078b9e1-f398-4f2c-a27e-94d371cf6c7d")
+interface PaymentRequestChangedHandler
+{
+	HRESULT abi_Invoke(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest, Windows.ApplicationModel.Payments.PaymentRequestChangedArgs args);
+}
+
 @uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5")
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentAddress")
 interface IPaymentAddress : IInspectable
@@ -147,7 +153,7 @@ interface IPaymentMediator : IInspectable
 extern(Windows):
 	HRESULT abi_GetSupportedMethodIdsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_result);
 	HRESULT abi_SubmitPaymentRequestAsync(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult)* return_result);
-	HRESULT abi_SubmitPaymentRequestWithChangeHandlerAsync(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest, Windows.ApplicationModel.Payments.PaymentRequestChangedHandler* changeHandler, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult)* return_result);
+	HRESULT abi_SubmitPaymentRequestWithChangeHandlerAsync(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest, Windows.ApplicationModel.Payments.PaymentRequestChangedHandler changeHandler, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult)* return_result);
 }
 
 @uuid("63445050-0e94-4ed6-aacb-e6012bd327a7")

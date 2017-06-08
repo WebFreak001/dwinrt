@@ -16,7 +16,7 @@ extern(Windows):
 	HRESULT get_SessionInfo(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT set_SessionInfo(Windows.Storage.Streams.IBuffer value);
 	HRESULT get_ServiceError(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceError* return_value);
-	HRESULT add_SessionDeferred(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectService*,Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionDeferredEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SessionDeferred(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectService, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionDeferredEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SessionDeferred(EventRegistrationToken token);
 	HRESULT abi_GetProvisioningInfoAsync(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceConfigurationMethod selectedConfigurationMethod, Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceProvisioningInfo)* return_result);
 	HRESULT abi_ConnectAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession)* return_result);
@@ -47,11 +47,11 @@ extern(Windows):
 	HRESULT set_DeferredSessionInfo(Windows.Storage.Streams.IBuffer value);
 	HRESULT get_AdvertisementStatus(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertisementStatus* return_value);
 	HRESULT get_ServiceError(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceError* return_value);
-	HRESULT add_SessionRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser*,Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SessionRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SessionRequested(EventRegistrationToken token);
-	HRESULT add_AutoAcceptSessionConnected(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser*,Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAutoAcceptSessionConnectedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AutoAcceptSessionConnected(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAutoAcceptSessionConnectedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AutoAcceptSessionConnected(EventRegistrationToken token);
-	HRESULT add_AdvertisementStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AdvertisementStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AdvertisementStatusChanged(EventRegistrationToken token);
 	HRESULT abi_ConnectAsync(Windows.Devices.Enumeration.DeviceInformation deviceInfo, Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession)* return_result);
 	HRESULT abi_ConnectAsyncWithPin(Windows.Devices.Enumeration.DeviceInformation deviceInfo, HSTRING pin, Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession)* return_result);
@@ -117,11 +117,11 @@ extern(Windows):
 	HRESULT get_ServiceAddress(HSTRING* return_value);
 	HRESULT get_SessionAddress(HSTRING* return_value);
 	HRESULT abi_GetConnectionEndpointPairs(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)* return_value);
-	HRESULT add_SessionStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SessionStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SessionStatusChanged(EventRegistrationToken token);
 	HRESULT abi_AddStreamSocketListenerAsync(Windows.Networking.Sockets.StreamSocketListener value, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_AddDatagramSocketAsync(Windows.Networking.Sockets.DatagramSocket value, Windows.Foundation.IAsyncAction* return_result);
-	HRESULT add_RemotePortAdded(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession*,Windows.Devices.WiFiDirect.Services.WiFiDirectServiceRemotePortAddedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RemotePortAdded(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceRemotePortAddedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RemotePortAdded(EventRegistrationToken token);
 }
 

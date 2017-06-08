@@ -122,7 +122,7 @@ extern(Windows):
 	HRESULT get_Advertisement(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement* return_value);
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
-	HRESULT add_StatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher*,Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatusChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatusChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StatusChanged(EventRegistrationToken token);
 }
 
@@ -181,9 +181,9 @@ extern(Windows):
 	HRESULT set_AdvertisementFilter(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFilter value);
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
-	HRESULT add_Received(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher*,Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Received(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Received(EventRegistrationToken token);
-	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher*,Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStoppedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStoppedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Stopped(EventRegistrationToken token);
 }
 

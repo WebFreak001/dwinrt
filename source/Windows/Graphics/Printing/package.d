@@ -2,6 +2,20 @@ module Windows.Graphics.Printing;
 
 import dwinrt;
 
+struct PrintPageDescription
+{
+	Windows.Foundation.Size PageSize;
+	Windows.Foundation.Rect ImageableRect;
+	UINT32 DpiX;
+	UINT32 DpiY;
+}
+
+@uuid("6c109fa8-5cb6-4b3a-8663-f39cb02dc9b4")
+interface PrintTaskSourceRequestedHandler
+{
+	HRESULT abi_Invoke(Windows.Graphics.Printing.PrintTaskSourceRequestedArgs args);
+}
+
 @uuid("ff2a9694-8c99-44fd-ae4a-19d9aa9a0f0a")
 @WinrtFactory("Windows.Graphics.Printing.PrintManager")
 interface IPrintManager : IInspectable
@@ -9,7 +23,7 @@ interface IPrintManager : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_PrintTaskRequested(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintManager*,Windows.Graphics.Printing.PrintTaskRequestedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_PrintTaskRequested(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_PrintTaskRequested(EventRegistrationToken eventCookie);
 }
 
@@ -63,13 +77,13 @@ extern(Windows):
 	HRESULT get_Properties(Windows.ApplicationModel.DataTransfer.DataPackagePropertySet* return_value);
 	HRESULT get_Source(Windows.Graphics.Printing.IPrintDocumentSource* return_value);
 	HRESULT get_Options(Windows.Graphics.Printing.PrintTaskOptions* return_value);
-	HRESULT add_Previewing(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask*,IInspectable*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_Previewing(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, IInspectable) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_Previewing(EventRegistrationToken eventCookie);
-	HRESULT add_Submitting(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask*,IInspectable*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_Submitting(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, IInspectable) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_Submitting(EventRegistrationToken eventCookie);
-	HRESULT add_Progressing(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask*,Windows.Graphics.Printing.PrintTaskProgressingEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_Progressing(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_Progressing(EventRegistrationToken eventCookie);
-	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask*,Windows.Graphics.Printing.PrintTaskCompletedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_Completed(EventRegistrationToken eventCookie);
 }
 
@@ -174,7 +188,7 @@ interface IPrintTaskRequest : IInspectable
 
 extern(Windows):
 	HRESULT get_Deadline(Windows.Foundation.DateTime* return_value);
-	HRESULT abi_CreatePrintTask(HSTRING title, Windows.Graphics.Printing.PrintTaskSourceRequestedHandler* handler, Windows.Graphics.Printing.PrintTask* return_task);
+	HRESULT abi_CreatePrintTask(HSTRING title, Windows.Graphics.Printing.PrintTaskSourceRequestedHandler handler, Windows.Graphics.Printing.PrintTask* return_task);
 	HRESULT abi_GetDeferral(Windows.Graphics.Printing.PrintTaskRequestedDeferral* return_deferral);
 }
 

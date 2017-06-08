@@ -2,6 +2,16 @@ module Windows.Web.Http;
 
 import dwinrt;
 
+struct HttpProgress
+{
+	Windows.Web.Http.HttpProgressStage Stage;
+	UINT64 BytesSent;
+	Windows.Foundation.IReference!(UINT64) TotalBytesToSend;
+	UINT64 BytesReceived;
+	Windows.Foundation.IReference!(UINT64) TotalBytesToReceive;
+	UINT32 Retries;
+}
+
 @uuid("bc20c193-c41f-4ff7-9123-6435736eadc2")
 @WinrtFactory("Windows.Web.Http.HttpBufferContent")
 interface IHttpBufferContentFactory : IInspectable
@@ -20,16 +30,16 @@ interface IHttpClient : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_DeleteAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage*,Windows.Web.Http.HttpProgress)* return_operation);
-	HRESULT abi_GetAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage*,Windows.Web.Http.HttpProgress)* return_operation);
-	HRESULT abi_GetWithOptionAsync(Windows.Foundation.Uri uri, Windows.Web.Http.HttpCompletionOption completionOption, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage*,Windows.Web.Http.HttpProgress)* return_operation);
-	HRESULT abi_GetBufferAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer*,Windows.Web.Http.HttpProgress)* return_operation);
-	HRESULT abi_GetInputStreamAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream*,Windows.Web.Http.HttpProgress)* return_operation);
-	HRESULT abi_GetStringAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(HSTRING,Windows.Web.Http.HttpProgress)* return_operation);
-	HRESULT abi_PostAsync(Windows.Foundation.Uri uri, Windows.Web.Http.IHttpContent content, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage*,Windows.Web.Http.HttpProgress)* return_operation);
-	HRESULT abi_PutAsync(Windows.Foundation.Uri uri, Windows.Web.Http.IHttpContent content, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage*,Windows.Web.Http.HttpProgress)* return_operation);
-	HRESULT abi_SendRequestAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage*,Windows.Web.Http.HttpProgress)* return_operation);
-	HRESULT abi_SendRequestWithOptionAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Web.Http.HttpCompletionOption completionOption, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage*,Windows.Web.Http.HttpProgress)* return_operation);
+	HRESULT abi_DeleteAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
+	HRESULT abi_GetAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
+	HRESULT abi_GetWithOptionAsync(Windows.Foundation.Uri uri, Windows.Web.Http.HttpCompletionOption completionOption, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
+	HRESULT abi_GetBufferAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, Windows.Web.Http.HttpProgress)* return_operation);
+	HRESULT abi_GetInputStreamAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, Windows.Web.Http.HttpProgress)* return_operation);
+	HRESULT abi_GetStringAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, Windows.Web.Http.HttpProgress)* return_operation);
+	HRESULT abi_PostAsync(Windows.Foundation.Uri uri, Windows.Web.Http.IHttpContent content, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
+	HRESULT abi_PutAsync(Windows.Foundation.Uri uri, Windows.Web.Http.IHttpContent content, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
+	HRESULT abi_SendRequestAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
+	HRESULT abi_SendRequestWithOptionAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Web.Http.HttpCompletionOption completionOption, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
 	HRESULT get_DefaultRequestHeaders(Windows.Web.Http.Headers.HttpRequestHeaderCollection* return_value);
 }
 
@@ -50,12 +60,12 @@ interface IHttpContent : IInspectable
 
 extern(Windows):
 	HRESULT get_Headers(Windows.Web.Http.Headers.HttpContentHeaderCollection* return_value);
-	HRESULT abi_BufferAllAsync(Windows.Foundation.IAsyncOperationWithProgress!(UINT64,UINT64)* return_operation);
-	HRESULT abi_ReadAsBufferAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer*,UINT64)* return_operation);
-	HRESULT abi_ReadAsInputStreamAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream*,UINT64)* return_operation);
-	HRESULT abi_ReadAsStringAsync(Windows.Foundation.IAsyncOperationWithProgress!(HSTRING,UINT64)* return_operation);
+	HRESULT abi_BufferAllAsync(Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64)* return_operation);
+	HRESULT abi_ReadAsBufferAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64)* return_operation);
+	HRESULT abi_ReadAsInputStreamAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64)* return_operation);
+	HRESULT abi_ReadAsStringAsync(Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64)* return_operation);
 	HRESULT abi_TryComputeLength(UINT64* out_length, bool* return_succeeded);
-	HRESULT abi_WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.Foundation.IAsyncOperationWithProgress!(UINT64,UINT64)* return_operation);
+	HRESULT abi_WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64)* return_operation);
 }
 
 @uuid("1f5488e2-cc2d-4779-86a7-88f10687d249")
@@ -108,7 +118,7 @@ interface IHttpFormUrlEncodedContentFactory : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING,HSTRING)) content, Windows.Web.Http.HttpFormUrlEncodedContent* return_formUrlEncodedContent);
+	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) content, Windows.Web.Http.HttpFormUrlEncodedContent* return_formUrlEncodedContent);
 }
 
 @uuid("728d4022-700d-4fe0-afa5-40299c58dbfd")
@@ -202,7 +212,7 @@ extern(Windows):
 	HRESULT get_Headers(Windows.Web.Http.Headers.HttpRequestHeaderCollection* return_value);
 	HRESULT get_Method(Windows.Web.Http.HttpMethod* return_value);
 	HRESULT set_Method(Windows.Web.Http.HttpMethod value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMap!(HSTRING,IInspectable*)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)* return_value);
 	HRESULT get_RequestUri(Windows.Foundation.Uri* return_value);
 	HRESULT set_RequestUri(Windows.Foundation.Uri value);
 	HRESULT get_TransportInformation(Windows.Web.Http.HttpTransportInformation* return_value);

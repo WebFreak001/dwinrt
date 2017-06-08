@@ -2,6 +2,12 @@ module Windows.Storage.AccessCache;
 
 import dwinrt;
 
+struct AccessListEntry
+{
+	HSTRING Token;
+	HSTRING Metadata;
+}
+
 @uuid("59677e5c-55be-4c66-ba66-5eaea79d2631")
 @WinrtFactory("Windows.Storage.AccessCache.ItemRemovedEventArgs")
 interface IItemRemovedEventArgs : IInspectable
@@ -54,7 +60,7 @@ interface IStorageItemMostRecentlyUsedList : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ItemRemoved(Windows.Foundation.TypedEventHandler!(Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList*,Windows.Storage.AccessCache.ItemRemovedEventArgs*) handler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_ItemRemoved(Windows.Foundation.TypedEventHandler!(Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.ItemRemovedEventArgs) handler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ItemRemoved(EventRegistrationToken eventCookie);
 }
 

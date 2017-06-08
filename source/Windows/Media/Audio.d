@@ -41,7 +41,7 @@ extern(Windows):
 	HRESULT set_LoopCount(Windows.Foundation.IReference!(INT32) value);
 	HRESULT get_Duration(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_SourceFile(Windows.Storage.StorageFile* return_value);
-	HRESULT add_FileCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFileInputNode*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_FileCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFileInputNode, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_FileCompleted(EventRegistrationToken token);
 }
 
@@ -79,9 +79,9 @@ extern(Windows):
 	HRESULT abi_AddFrame(Windows.Media.AudioFrame frame);
 	HRESULT abi_DiscardQueuedFrames();
 	HRESULT get_QueuedSampleCount(UINT64* return_value);
-	HRESULT add_AudioFrameCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode*,Windows.Media.Audio.AudioFrameCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AudioFrameCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AudioFrameCompleted(EventRegistrationToken token);
-	HRESULT add_QuantumStarted(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode*,Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_QuantumStarted(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_QuantumStarted(EventRegistrationToken token);
 }
 
@@ -118,11 +118,11 @@ extern(Windows):
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
 	HRESULT abi_ResetAllNodes();
-	HRESULT add_QuantumStarted(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_QuantumStarted(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_QuantumStarted(EventRegistrationToken token);
-	HRESULT add_QuantumProcessed(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_QuantumProcessed(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_QuantumProcessed(EventRegistrationToken token);
-	HRESULT add_UnrecoverableErrorOccurred(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph*,Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_UnrecoverableErrorOccurred(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_UnrecoverableErrorOccurred(EventRegistrationToken token);
 	HRESULT get_CompletedQuantumCount(UINT64* return_value);
 	HRESULT get_EncodingProperties(Windows.Media.MediaProperties.AudioEncodingProperties* return_value);

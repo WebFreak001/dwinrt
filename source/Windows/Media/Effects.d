@@ -9,7 +9,7 @@ interface IAudioCaptureEffectsManager : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_AudioCaptureEffectsChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioCaptureEffectsManager*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AudioCaptureEffectsChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AudioCaptureEffectsChanged(EventRegistrationToken token);
 	HRESULT abi_GetAudioCaptureEffects(Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect)* return_effects);
 }
@@ -65,7 +65,7 @@ interface IAudioRenderEffectsManager : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_AudioRenderEffectsChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioRenderEffectsManager*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AudioRenderEffectsChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioRenderEffectsManager, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AudioRenderEffectsChanged(EventRegistrationToken token);
 	HRESULT abi_GetAudioRenderEffects(Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect)* return_effects);
 }

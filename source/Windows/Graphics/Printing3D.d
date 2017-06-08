@@ -2,6 +2,18 @@ module Windows.Graphics.Printing3D;
 
 import dwinrt;
 
+struct Printing3DBufferDescription
+{
+	Windows.Graphics.Printing3D.Printing3DBufferFormat Format;
+	UINT32 Stride;
+}
+
+@uuid("e9175e70-c917-46de-bb51-d9a94db3711f")
+interface Print3DTaskSourceRequestedHandler
+{
+	HRESULT abi_Invoke(Windows.Graphics.Printing3D.Print3DTaskSourceRequestedArgs args);
+}
+
 @uuid("4d2fcb0a-7366-4971-8bd5-17c4e3e8c6c0")
 @WinrtFactory("Windows.Graphics.Printing3D.Print3DManager")
 interface IPrint3DManager : IInspectable
@@ -9,7 +21,7 @@ interface IPrint3DManager : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_TaskRequested(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DManager*,Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs*) eventHandler, EventRegistrationToken* return_token);
+	HRESULT add_TaskRequested(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs) eventHandler, EventRegistrationToken* return_token);
 	HRESULT remove_TaskRequested(EventRegistrationToken token);
 }
 
@@ -32,11 +44,11 @@ interface IPrint3DTask : IInspectable
 
 extern(Windows):
 	HRESULT get_Source(Windows.Graphics.Printing3D.Printing3D3MFPackage* return_value);
-	HRESULT add_Submitting(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask*,IInspectable*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_Submitting(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, IInspectable) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_Submitting(EventRegistrationToken eventCookie);
-	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask*,Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_Completed(EventRegistrationToken eventCookie);
-	HRESULT add_SourceChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask*,Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_SourceChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_SourceChanged(EventRegistrationToken eventCookie);
 }
 
@@ -58,7 +70,7 @@ interface IPrint3DTaskRequest : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_CreateTask(HSTRING title, HSTRING printerId, Windows.Graphics.Printing3D.Print3DTaskSourceRequestedHandler* handler, Windows.Graphics.Printing3D.Print3DTask* return_result);
+	HRESULT abi_CreateTask(HSTRING title, HSTRING printerId, Windows.Graphics.Printing3D.Print3DTaskSourceRequestedHandler handler, Windows.Graphics.Printing3D.Print3DTask* return_result);
 }
 
 @uuid("150cb77f-18c5-40d7-9f40-fab3096e05a9")
@@ -376,7 +388,7 @@ extern(Windows):
 	HRESULT get_Version(HSTRING* return_value);
 	HRESULT set_Version(HSTRING value);
 	HRESULT get_RequiredExtensions(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
-	HRESULT get_Metadata(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_Metadata(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT abi_RepairAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_Clone(Windows.Graphics.Printing3D.Printing3DModel* return_value);
 }
@@ -390,10 +402,10 @@ interface IPrinting3DModel2 : IInspectable
 extern(Windows):
 	HRESULT abi_TryPartialRepairAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_TryPartialRepairWithTimeAsync(Windows.Foundation.TimeSpan maxWaitTime, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_TryReduceFacesAsync(Windows.Foundation.IAsyncOperationWithProgress!(bool,DOUBLE)* return_operation);
-	HRESULT abi_TryReduceFacesWithOptionsAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions, Windows.Foundation.IAsyncOperationWithProgress!(bool,DOUBLE)* return_operation);
-	HRESULT abi_TryReduceFacesWithOptionsAndTimeAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions, Windows.Foundation.TimeSpan maxWait, Windows.Foundation.IAsyncOperationWithProgress!(bool,DOUBLE)* return_operation);
-	HRESULT abi_RepairWithProgressAsync(Windows.Foundation.IAsyncOperationWithProgress!(bool,DOUBLE)* return_operation);
+	HRESULT abi_TryReduceFacesAsync(Windows.Foundation.IAsyncOperationWithProgress!(bool, double)* return_operation);
+	HRESULT abi_TryReduceFacesWithOptionsAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions, Windows.Foundation.IAsyncOperationWithProgress!(bool, double)* return_operation);
+	HRESULT abi_TryReduceFacesWithOptionsAndTimeAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions, Windows.Foundation.TimeSpan maxWait, Windows.Foundation.IAsyncOperationWithProgress!(bool, double)* return_operation);
+	HRESULT abi_RepairWithProgressAsync(Windows.Foundation.IAsyncOperationWithProgress!(bool, double)* return_operation);
 }
 
 @uuid("5dafcf01-b59d-483c-97bb-a4d546d1c75c")

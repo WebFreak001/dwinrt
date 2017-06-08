@@ -2,6 +2,12 @@ module Windows.UI.Xaml.Automation.Peers;
 
 import dwinrt;
 
+struct RawElementProviderRuntimeId
+{
+	UINT32 Part1;
+	UINT32 Part2;
+}
+
 @uuid("8360f4e2-e396-4517-af5d-f4cf34c54edf")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AppBarAutomationPeer")
 interface IAppBarAutomationPeerFactory : IInspectable

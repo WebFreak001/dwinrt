@@ -71,7 +71,7 @@ extern(Windows):
 	HRESULT set_SuggestedStartLocation(Windows.Storage.Pickers.PickerLocationId value);
 	HRESULT get_CommitButtonText(HSTRING* return_value);
 	HRESULT set_CommitButtonText(HSTRING value);
-	HRESULT get_FileTypeChoices(Windows.Foundation.Collections.IMap!(HSTRING,Windows.Foundation.Collections.IVector!(HSTRING))* return_value);
+	HRESULT get_FileTypeChoices(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING))* return_value);
 	HRESULT get_DefaultFileExtension(HSTRING* return_value);
 	HRESULT set_DefaultFileExtension(HSTRING value);
 	HRESULT get_SuggestedSaveFile(Windows.Storage.StorageFile* return_value);

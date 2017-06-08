@@ -2,6 +2,22 @@ module Windows.UI.Core;
 
 import dwinrt;
 
+struct CorePhysicalKeyStatus
+{
+	UINT32 RepeatCount;
+	UINT32 ScanCode;
+	bool IsExtendedKey;
+	bool IsMenuKeyDown;
+	bool WasKeyDown;
+	bool IsKeyReleased;
+}
+
+struct CoreProximityEvaluation
+{
+	INT32 Score;
+	Windows.Foundation.Point AdjustedPoint;
+}
+
 @uuid("cd292360-2763-4085-8a9f-74b224a29175")
 interface ICoreWindowFactory : IInspectable
 {
@@ -22,6 +38,18 @@ interface ImmersiveCoreWindowFactory
 
 interface UAPCoreWindowFactory
 {
+}
+
+@uuid("d1f276c4-98d8-4636-bf49-eb79507548e9")
+interface DispatchedHandler
+{
+	HRESULT abi_Invoke();
+}
+
+@uuid("a42b0c24-7f21-4abc-99c1-8f01007f0880")
+interface IdleDispatchedHandler
+{
+	HRESULT abi_Invoke(Windows.UI.Core.IdleDispatchedHandlerArgs e);
 }
 
 @uuid("ff1c4c4a-9287-470b-836e-9086e3126ade")
@@ -98,7 +126,7 @@ interface ICoreAcceleratorKeys : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_AcceleratorKeyActivated(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreDispatcher*,Windows.UI.Core.AcceleratorKeyEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_AcceleratorKeyActivated(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_AcceleratorKeyActivated(EventRegistrationToken cookie);
 }
 
@@ -109,7 +137,7 @@ interface ICoreClosestInteractiveBoundsRequested : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ClosestInteractiveBoundsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreComponentInputSource*,Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_ClosestInteractiveBoundsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreComponentInputSource, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_ClosestInteractiveBoundsRequested(EventRegistrationToken cookie);
 }
 
@@ -121,9 +149,9 @@ interface ICoreComponentFocusable : IInspectable
 
 extern(Windows):
 	HRESULT get_HasFocus(bool* return_value);
-	HRESULT add_GotFocus(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.CoreWindowEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_GotFocus(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CoreWindowEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_GotFocus(EventRegistrationToken cookie);
-	HRESULT add_LostFocus(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.CoreWindowEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_LostFocus(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CoreWindowEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_LostFocus(EventRegistrationToken cookie);
 }
 
@@ -157,8 +185,8 @@ interface ICoreDispatcher : IInspectable
 extern(Windows):
 	HRESULT get_HasThreadAccess(bool* return_value);
 	HRESULT abi_ProcessEvents(Windows.UI.Core.CoreProcessEventsOption options);
-	HRESULT abi_RunAsync(Windows.UI.Core.CoreDispatcherPriority priority, Windows.UI.Core.DispatchedHandler* agileCallback, Windows.Foundation.IAsyncAction* return_asyncAction);
-	HRESULT abi_RunIdleAsync(Windows.UI.Core.IdleDispatchedHandler* agileCallback, Windows.Foundation.IAsyncAction* return_asyncAction);
+	HRESULT abi_RunAsync(Windows.UI.Core.CoreDispatcherPriority priority, Windows.UI.Core.DispatchedHandler agileCallback, Windows.Foundation.IAsyncAction* return_asyncAction);
+	HRESULT abi_RunIdleAsync(Windows.UI.Core.IdleDispatchedHandler agileCallback, Windows.Foundation.IAsyncAction* return_asyncAction);
 }
 
 @uuid("6f5e63c7-e3aa-4eae-b0e0-dcf321ca4b2f")
@@ -168,8 +196,8 @@ interface ICoreDispatcher2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_TryRunAsync(Windows.UI.Core.CoreDispatcherPriority priority, Windows.UI.Core.DispatchedHandler* agileCallback, Windows.Foundation.IAsyncOperation!(bool)* return_asyncOperation);
-	HRESULT abi_TryRunIdleAsync(Windows.UI.Core.IdleDispatchedHandler* agileCallback, Windows.Foundation.IAsyncOperation!(bool)* return_asyncOperation);
+	HRESULT abi_TryRunAsync(Windows.UI.Core.CoreDispatcherPriority priority, Windows.UI.Core.DispatchedHandler agileCallback, Windows.Foundation.IAsyncOperation!(bool)* return_asyncOperation);
+	HRESULT abi_TryRunIdleAsync(Windows.UI.Core.IdleDispatchedHandler agileCallback, Windows.Foundation.IAsyncOperation!(bool)* return_asyncOperation);
 }
 
 @uuid("bafaecad-484d-41be-ba80-1d58c65263ea")
@@ -195,7 +223,7 @@ extern(Windows):
 	HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value);
 	HRESULT get_IsInputEnabled(bool* return_value);
 	HRESULT set_IsInputEnabled(bool value);
-	HRESULT add_InputEnabled(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.InputEnabledEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_InputEnabled(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.InputEnabledEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_InputEnabled(EventRegistrationToken cookie);
 }
 
@@ -207,11 +235,11 @@ interface ICoreKeyboardInputSource : IInspectable
 
 extern(Windows):
 	HRESULT abi_GetCurrentKeyState(Windows.System.VirtualKey virtualKey, Windows.UI.Core.CoreVirtualKeyStates* return_KeyState);
-	HRESULT add_CharacterReceived(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.CharacterReceivedEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_CharacterReceived(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CharacterReceivedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_CharacterReceived(EventRegistrationToken cookie);
-	HRESULT add_KeyDown(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.KeyEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_KeyDown(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.KeyEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_KeyDown(EventRegistrationToken cookie);
-	HRESULT add_KeyUp(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.KeyEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_KeyUp(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.KeyEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_KeyUp(EventRegistrationToken cookie);
 }
 
@@ -237,19 +265,19 @@ extern(Windows):
 	HRESULT get_PointerPosition(Windows.Foundation.Point* return_value);
 	HRESULT get_PointerCursor(Windows.UI.Core.CoreCursor* return_value);
 	HRESULT set_PointerCursor(Windows.UI.Core.CoreCursor value);
-	HRESULT add_PointerCaptureLost(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerCaptureLost(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerCaptureLost(EventRegistrationToken cookie);
-	HRESULT add_PointerEntered(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerEntered(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerEntered(EventRegistrationToken cookie);
-	HRESULT add_PointerExited(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerExited(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerExited(EventRegistrationToken cookie);
-	HRESULT add_PointerMoved(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerMoved(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerMoved(EventRegistrationToken cookie);
-	HRESULT add_PointerPressed(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerPressed(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerPressed(EventRegistrationToken cookie);
-	HRESULT add_PointerReleased(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerReleased(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerReleased(EventRegistrationToken cookie);
-	HRESULT add_PointerWheelChanged(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerWheelChanged(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerWheelChanged(EventRegistrationToken cookie);
 }
 
@@ -259,11 +287,11 @@ interface ICorePointerRedirector : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_PointerRoutedAway(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerRoutedAway(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerRoutedAway(EventRegistrationToken cookie);
-	HRESULT add_PointerRoutedTo(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerRoutedTo(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerRoutedTo(EventRegistrationToken cookie);
-	HRESULT add_PointerRoutedReleased(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerRoutedReleased(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerRoutedReleased(EventRegistrationToken cookie);
 }
 
@@ -274,7 +302,7 @@ interface ICoreTouchHitTesting : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_TouchHitTesting(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.UI.Core.TouchHitTestingEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_TouchHitTesting(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.TouchHitTestingEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_TouchHitTesting(EventRegistrationToken cookie);
 }
 
@@ -302,39 +330,39 @@ extern(Windows):
 	HRESULT abi_GetKeyState(Windows.System.VirtualKey virtualKey, Windows.UI.Core.CoreVirtualKeyStates* return_KeyState);
 	HRESULT abi_ReleasePointerCapture();
 	HRESULT abi_SetPointerCapture();
-	HRESULT add_Activated(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.WindowActivatedEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_Activated(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowActivatedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_Activated(EventRegistrationToken cookie);
-	HRESULT add_AutomationProviderRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.AutomationProviderRequestedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_AutomationProviderRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.AutomationProviderRequestedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_AutomationProviderRequested(EventRegistrationToken cookie);
-	HRESULT add_CharacterReceived(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.CharacterReceivedEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_CharacterReceived(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CharacterReceivedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_CharacterReceived(EventRegistrationToken cookie);
-	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.CoreWindowEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_Closed(EventRegistrationToken cookie);
-	HRESULT add_InputEnabled(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.InputEnabledEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_InputEnabled(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.InputEnabledEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_InputEnabled(EventRegistrationToken cookie);
-	HRESULT add_KeyDown(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.KeyEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_KeyDown(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_KeyDown(EventRegistrationToken cookie);
-	HRESULT add_KeyUp(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.KeyEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_KeyUp(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_KeyUp(EventRegistrationToken cookie);
-	HRESULT add_PointerCaptureLost(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerCaptureLost(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerCaptureLost(EventRegistrationToken cookie);
-	HRESULT add_PointerEntered(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerEntered(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerEntered(EventRegistrationToken cookie);
-	HRESULT add_PointerExited(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerExited(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerExited(EventRegistrationToken cookie);
-	HRESULT add_PointerMoved(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerMoved(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerMoved(EventRegistrationToken cookie);
-	HRESULT add_PointerPressed(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerPressed(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerPressed(EventRegistrationToken cookie);
-	HRESULT add_PointerReleased(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerReleased(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerReleased(EventRegistrationToken cookie);
-	HRESULT add_TouchHitTesting(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.TouchHitTestingEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_TouchHitTesting(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.TouchHitTestingEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_TouchHitTesting(EventRegistrationToken cookie);
-	HRESULT add_PointerWheelChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.PointerEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PointerWheelChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerWheelChanged(EventRegistrationToken cookie);
-	HRESULT add_SizeChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.WindowSizeChangedEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_SizeChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowSizeChangedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_SizeChanged(EventRegistrationToken cookie);
-	HRESULT add_VisibilityChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.VisibilityChangedEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_VisibilityChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.VisibilityChangedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_VisibilityChanged(EventRegistrationToken cookie);
 }
 
@@ -355,7 +383,7 @@ interface ICoreWindow3 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ClosestInteractiveBoundsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_ClosestInteractiveBoundsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_ClosestInteractiveBoundsRequested(EventRegistrationToken cookie);
 	HRESULT abi_GetCurrentKeyEventDeviceId(HSTRING* return_value);
 }
@@ -367,9 +395,9 @@ interface ICoreWindow4 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ResizeStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,IInspectable*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_ResizeStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, IInspectable) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_ResizeStarted(EventRegistrationToken cookie);
-	HRESULT add_ResizeCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,IInspectable*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_ResizeCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, IInspectable) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_ResizeCompleted(EventRegistrationToken cookie);
 }
 
@@ -380,7 +408,7 @@ interface ICoreWindowDialog : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Showing(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.CoreWindowPopupShowingEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_Showing(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Showing(EventRegistrationToken cookie);
 	HRESULT get_MaxSize(Windows.Foundation.Size* return_value);
 	HRESULT get_MinSize(Windows.Foundation.Size* return_value);
@@ -393,8 +421,8 @@ extern(Windows):
 	HRESULT set_DefaultCommandIndex(UINT32 value);
 	HRESULT get_CancelCommandIndex(UINT32* return_value);
 	HRESULT set_CancelCommandIndex(UINT32 value);
-	HRESULT get_BackButtonCommand(Windows.UI.Popups.UICommandInvokedHandler** return_value);
-	HRESULT set_BackButtonCommand(Windows.UI.Popups.UICommandInvokedHandler* value);
+	HRESULT get_BackButtonCommand(Windows.UI.Popups.UICommandInvokedHandler* return_value);
+	HRESULT set_BackButtonCommand(Windows.UI.Popups.UICommandInvokedHandler value);
 	HRESULT abi_ShowAsync(Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand)* return_asyncInfo);
 }
 
@@ -425,7 +453,7 @@ interface ICoreWindowFlyout : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Showing(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow*,Windows.UI.Core.CoreWindowPopupShowingEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_Showing(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Showing(EventRegistrationToken cookie);
 	HRESULT get_MaxSize(Windows.Foundation.Size* return_value);
 	HRESULT get_MinSize(Windows.Foundation.Size* return_value);
@@ -436,8 +464,8 @@ extern(Windows):
 	HRESULT get_Commands(Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand)* return_value);
 	HRESULT get_DefaultCommandIndex(UINT32* return_value);
 	HRESULT set_DefaultCommandIndex(UINT32 value);
-	HRESULT get_BackButtonCommand(Windows.UI.Popups.UICommandInvokedHandler** return_value);
-	HRESULT set_BackButtonCommand(Windows.UI.Popups.UICommandInvokedHandler* value);
+	HRESULT get_BackButtonCommand(Windows.UI.Popups.UICommandInvokedHandler* return_value);
+	HRESULT set_BackButtonCommand(Windows.UI.Popups.UICommandInvokedHandler value);
 	HRESULT abi_ShowAsync(Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand)* return_asyncInfo);
 }
 

@@ -2,6 +2,11 @@ module Windows.UI.Text;
 
 import dwinrt;
 
+struct FontWeight
+{
+	UINT16 Weight;
+}
+
 @uuid("b3b579d5-1ba9-48eb-9dad-c095e8c23ba3")
 @WinrtFactory("Windows.UI.Text.FontWeights")
 interface IFontWeightsStatics : IInspectable

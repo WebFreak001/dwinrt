@@ -505,19 +505,19 @@ extern(Windows):
 	HRESULT get_Status(Windows.System.UserWatcherStatus* return_value);
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
-	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher*,Windows.System.UserChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Added(EventRegistrationToken token);
-	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher*,Windows.System.UserChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Removed(EventRegistrationToken token);
-	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher*,Windows.System.UserChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Updated(EventRegistrationToken token);
-	HRESULT add_AuthenticationStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher*,Windows.System.UserChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AuthenticationStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AuthenticationStatusChanged(EventRegistrationToken token);
-	HRESULT add_AuthenticationStatusChanging(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher*,Windows.System.UserAuthenticationStatusChangingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AuthenticationStatusChanging(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AuthenticationStatusChanging(EventRegistrationToken token);
-	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_EnumerationCompleted(EventRegistrationToken token);
-	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Stopped(EventRegistrationToken token);
 }
 

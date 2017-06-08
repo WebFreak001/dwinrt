@@ -37,9 +37,9 @@ extern(Windows):
 	HRESULT abi_CancelAsync(Windows.Foundation.IAsyncAction* return_value);
 	HRESULT abi_PauseAsync(Windows.Foundation.IAsyncAction* return_value);
 	HRESULT abi_Resume();
-	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession*,Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs*) value, EventRegistrationToken* return_returnValue);
+	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs) value, EventRegistrationToken* return_returnValue);
 	HRESULT remove_Completed(EventRegistrationToken value);
-	HRESULT add_ResultGenerated(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession*,Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs*) value, EventRegistrationToken* return_returnValue);
+	HRESULT add_ResultGenerated(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs) value, EventRegistrationToken* return_returnValue);
 	HRESULT remove_ResultGenerated(EventRegistrationToken value);
 }
 
@@ -175,7 +175,7 @@ interface ISpeechRecognitionSemanticInterpretation : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.Foundation.Collections.IVectorView!(HSTRING))* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Foundation.Collections.IVectorView!(HSTRING))* return_value);
 }
 
 @uuid("bf6fdf19-825d-4e69-a681-36e48cf1c93e")
@@ -214,9 +214,9 @@ extern(Windows):
 	HRESULT abi_CompileConstraintsAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionCompilationResult)* return_asyncOperation);
 	HRESULT abi_RecognizeAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionResult)* return_asyncOperation);
 	HRESULT abi_RecognizeWithUIAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionResult)* return_asyncOperation);
-	HRESULT add_RecognitionQualityDegrading(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer*,Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs*) speechRecognitionQualityDegradingHandler, EventRegistrationToken* return_cookie);
+	HRESULT add_RecognitionQualityDegrading(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs) speechRecognitionQualityDegradingHandler, EventRegistrationToken* return_cookie);
 	HRESULT remove_RecognitionQualityDegrading(EventRegistrationToken cookie);
-	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer*,Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs*) stateChangedHandler, EventRegistrationToken* return_cookie);
+	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs) stateChangedHandler, EventRegistrationToken* return_cookie);
 	HRESULT remove_StateChanged(EventRegistrationToken cookie);
 }
 
@@ -230,7 +230,7 @@ extern(Windows):
 	HRESULT get_ContinuousRecognitionSession(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession* return_value);
 	HRESULT get_State(Windows.Media.SpeechRecognition.SpeechRecognizerState* return_value);
 	HRESULT abi_StopRecognitionAsync(Windows.Foundation.IAsyncAction* return_value);
-	HRESULT add_HypothesisGenerated(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer*,Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs*) value, EventRegistrationToken* return_returnValue);
+	HRESULT add_HypothesisGenerated(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs) value, EventRegistrationToken* return_returnValue);
 	HRESULT remove_HypothesisGenerated(EventRegistrationToken value);
 }
 

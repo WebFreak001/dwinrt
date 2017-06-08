@@ -10,7 +10,7 @@ interface IPlatformDiagnosticActionsStatics : IInspectable
 
 extern(Windows):
 	HRESULT abi_IsScenarioEnabled(GUID scenarioId, bool* return_isActive);
-	HRESULT abi_TryEscalateScenario(GUID scenarioId, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticEscalationType escalationType, HSTRING outputDirectory, bool timestampOutputDirectory, bool forceEscalationUpload, Windows.Foundation.Collections.IMapView!(HSTRING,HSTRING) triggers, bool* return_result);
+	HRESULT abi_TryEscalateScenario(GUID scenarioId, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticEscalationType escalationType, HSTRING outputDirectory, bool timestampOutputDirectory, bool forceEscalationUpload, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) triggers, bool* return_result);
 	HRESULT abi_DownloadLatestSettingsForNamespace(HSTRING partner, HSTRING feature, bool isScenarioNamespace, bool downloadOverCostedNetwork, bool downloadOverBattery, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState* return_result);
 	HRESULT abi_GetActiveScenarioList(Windows.Foundation.Collections.IVectorView!(GUID)* return_scenarioIds);
 	HRESULT abi_ForceUpload(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticEventBufferLatencies latency, bool uploadOverCostedNetwork, bool uploadOverBattery, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState* return_result);

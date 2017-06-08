@@ -2,6 +2,29 @@ module Windows.UI.Input;
 
 import dwinrt;
 
+struct CrossSlideThresholds
+{
+	FLOAT SelectionStart;
+	FLOAT SpeedBumpStart;
+	FLOAT SpeedBumpEnd;
+	FLOAT RearrangeStart;
+}
+
+struct ManipulationDelta
+{
+	Windows.Foundation.Point Translation;
+	FLOAT Scale;
+	FLOAT Rotation;
+	FLOAT Expansion;
+}
+
+struct ManipulationVelocities
+{
+	Windows.Foundation.Point Linear;
+	FLOAT Angular;
+	FLOAT Expansion;
+}
+
 @uuid("e9374738-6f88-41d9-8720-78e08e398349")
 @WinrtFactory("Windows.UI.Input.CrossSlidingEventArgs")
 interface ICrossSlidingEventArgs : IInspectable
@@ -33,11 +56,11 @@ interface IEdgeGesture : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Starting(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture*,Windows.UI.Input.EdgeGestureEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Starting(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Starting(EventRegistrationToken token);
-	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture*,Windows.UI.Input.EdgeGestureEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Completed(EventRegistrationToken token);
-	HRESULT add_Canceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture*,Windows.UI.Input.EdgeGestureEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Canceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Canceled(EventRegistrationToken token);
 }
 
@@ -108,23 +131,23 @@ extern(Windows):
 	HRESULT abi_ProcessMouseWheelEvent(Windows.UI.Input.PointerPoint value, bool isShiftKeyDown, bool isControlKeyDown);
 	HRESULT abi_ProcessInertia();
 	HRESULT abi_CompleteGesture();
-	HRESULT add_Tapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer*,Windows.UI.Input.TappedEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_Tapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.TappedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_Tapped(EventRegistrationToken cookie);
-	HRESULT add_RightTapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer*,Windows.UI.Input.RightTappedEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_RightTapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.RightTappedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_RightTapped(EventRegistrationToken cookie);
-	HRESULT add_Holding(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer*,Windows.UI.Input.HoldingEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_Holding(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.HoldingEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_Holding(EventRegistrationToken cookie);
-	HRESULT add_Dragging(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer*,Windows.UI.Input.DraggingEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_Dragging(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.DraggingEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_Dragging(EventRegistrationToken cookie);
-	HRESULT add_ManipulationStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer*,Windows.UI.Input.ManipulationStartedEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_ManipulationStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationStartedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_ManipulationStarted(EventRegistrationToken cookie);
-	HRESULT add_ManipulationUpdated(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer*,Windows.UI.Input.ManipulationUpdatedEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_ManipulationUpdated(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationUpdatedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_ManipulationUpdated(EventRegistrationToken cookie);
-	HRESULT add_ManipulationInertiaStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer*,Windows.UI.Input.ManipulationInertiaStartingEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_ManipulationInertiaStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationInertiaStartingEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_ManipulationInertiaStarting(EventRegistrationToken cookie);
-	HRESULT add_ManipulationCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer*,Windows.UI.Input.ManipulationCompletedEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_ManipulationCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationCompletedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_ManipulationCompleted(EventRegistrationToken cookie);
-	HRESULT add_CrossSliding(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer*,Windows.UI.Input.CrossSlidingEventArgs*) handler, EventRegistrationToken* return_pCookie);
+	HRESULT add_CrossSliding(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.CrossSlidingEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_CrossSliding(EventRegistrationToken cookie);
 }
 
@@ -149,9 +172,9 @@ interface IKeyboardDeliveryInterceptor : IInspectable
 extern(Windows):
 	HRESULT get_IsInterceptionEnabledWhenInForeground(bool* return_value);
 	HRESULT set_IsInterceptionEnabledWhenInForeground(bool value);
-	HRESULT add_KeyDown(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.KeyboardDeliveryInterceptor*,Windows.UI.Core.KeyEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_KeyDown(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_KeyDown(EventRegistrationToken token);
-	HRESULT add_KeyUp(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.KeyboardDeliveryInterceptor*,Windows.UI.Core.KeyEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_KeyUp(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_KeyUp(EventRegistrationToken token);
 }
 
@@ -354,19 +377,19 @@ extern(Windows):
 	HRESULT set_RotationResolutionInDegrees(double value);
 	HRESULT get_UseAutomaticHapticFeedback(bool* return_value);
 	HRESULT set_UseAutomaticHapticFeedback(bool value);
-	HRESULT add_ScreenContactStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController*,Windows.UI.Input.RadialControllerScreenContactStartedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_ScreenContactStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactStartedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ScreenContactStarted(EventRegistrationToken cookie);
-	HRESULT add_ScreenContactEnded(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_ScreenContactEnded(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ScreenContactEnded(EventRegistrationToken cookie);
-	HRESULT add_ScreenContactContinued(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController*,Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_ScreenContactContinued(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ScreenContactContinued(EventRegistrationToken cookie);
-	HRESULT add_ControlLost(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_ControlLost(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ControlLost(EventRegistrationToken cookie);
-	HRESULT add_RotationChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController*,Windows.UI.Input.RadialControllerRotationChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RotationChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerRotationChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RotationChanged(EventRegistrationToken token);
-	HRESULT add_ButtonClicked(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController*,Windows.UI.Input.RadialControllerButtonClickedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ButtonClicked(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonClickedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ButtonClicked(EventRegistrationToken token);
-	HRESULT add_ControlAcquired(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController*,Windows.UI.Input.RadialControllerControlAcquiredEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_ControlAcquired(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerControlAcquiredEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ControlAcquired(EventRegistrationToken cookie);
 }
 
@@ -377,11 +400,11 @@ interface IRadialController2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ButtonPressed(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController*,Windows.UI.Input.RadialControllerButtonPressedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ButtonPressed(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonPressedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ButtonPressed(EventRegistrationToken token);
-	HRESULT add_ButtonHolding(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController*,Windows.UI.Input.RadialControllerButtonHoldingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ButtonHolding(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonHoldingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ButtonHolding(EventRegistrationToken token);
-	HRESULT add_ButtonReleased(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController*,Windows.UI.Input.RadialControllerButtonReleasedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ButtonReleased(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonReleasedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ButtonReleased(EventRegistrationToken token);
 }
 
@@ -519,7 +542,7 @@ extern(Windows):
 	HRESULT get_DisplayText(HSTRING* return_value);
 	HRESULT get_Tag(IInspectable* return_value);
 	HRESULT set_Tag(IInspectable value);
-	HRESULT add_Invoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialControllerMenuItem*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Invoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialControllerMenuItem, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Invoked(EventRegistrationToken token);
 }
 

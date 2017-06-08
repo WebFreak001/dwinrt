@@ -2,6 +2,28 @@ module Windows.UI.Xaml.Media;
 
 import dwinrt;
 
+struct Matrix
+{
+	double M11;
+	double M12;
+	double M21;
+	double M22;
+	double OffsetX;
+	double OffsetY;
+}
+
+@uuid("08e9a257-ae05-489b-8839-28c6225d2349")
+interface RateChangedRoutedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Media.RateChangedRoutedEventArgs e);
+}
+
+@uuid("72e2fa9c-6dea-4cbe-a159-06ce95fbeced")
+interface TimelineMarkerRoutedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Media.TimelineMarkerRoutedEventArgs e);
+}
+
 @uuid("07940c5f-63fb-4469-91be-f1097c168052")
 @WinrtFactory("Windows.UI.Xaml.Media.ArcSegment")
 interface IArcSegment : IInspectable
@@ -380,9 +402,9 @@ interface IImageBrush : IInspectable
 extern(Windows):
 	HRESULT get_ImageSource(Windows.UI.Xaml.Media.ImageSource* return_value);
 	HRESULT set_ImageSource(Windows.UI.Xaml.Media.ImageSource value);
-	HRESULT add_ImageFailed(Windows.UI.Xaml.ExceptionRoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ImageFailed(Windows.UI.Xaml.ExceptionRoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ImageFailed(EventRegistrationToken token);
-	HRESULT add_ImageOpened(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ImageOpened(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ImageOpened(EventRegistrationToken token);
 }
 
@@ -495,7 +517,7 @@ extern(Windows):
 	HRESULT get_DecodedPhysicalSize(Windows.Foundation.Size* return_value);
 	HRESULT get_DecodedSize(Windows.Foundation.Size* return_value);
 	HRESULT get_NaturalSize(Windows.Foundation.Size* return_value);
-	HRESULT add_LoadCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.LoadedImageSurface*,Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_LoadCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_LoadCompleted(EventRegistrationToken token);
 }
 

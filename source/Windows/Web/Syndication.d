@@ -2,6 +2,20 @@ module Windows.Web.Syndication;
 
 import dwinrt;
 
+struct RetrievalProgress
+{
+	UINT32 BytesRetrieved;
+	UINT32 TotalBytesToRetrieve;
+}
+
+struct TransferProgress
+{
+	UINT32 BytesSent;
+	UINT32 TotalBytesToSend;
+	UINT32 BytesRetrieved;
+	UINT32 TotalBytesToRetrieve;
+}
+
 @uuid("71e8f969-526e-4001-9a91-e84f83161ab1")
 @WinrtFactory("Windows.Web.Syndication.SyndicationAttribute")
 interface ISyndicationAttribute : IInspectable
@@ -70,7 +84,7 @@ extern(Windows):
 	HRESULT get_BypassCacheOnRetrieve(bool* return_value);
 	HRESULT set_BypassCacheOnRetrieve(bool value);
 	HRESULT abi_SetRequestHeader(HSTRING name, HSTRING value);
-	HRESULT abi_RetrieveFeedAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationFeed*,Windows.Web.Syndication.RetrievalProgress)* return_operation);
+	HRESULT abi_RetrieveFeedAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationFeed, Windows.Web.Syndication.RetrievalProgress)* return_operation);
 }
 
 @uuid("2ec4b32c-a79b-4114-b29a-05dffbafb9a4")

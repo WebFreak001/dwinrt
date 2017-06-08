@@ -9,9 +9,9 @@ interface IDevicePortalConnection : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection*,Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Closed(EventRegistrationToken token);
-	HRESULT add_RequestReceived(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection*,Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RequestReceived(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RequestReceived(EventRegistrationToken token);
 }
 

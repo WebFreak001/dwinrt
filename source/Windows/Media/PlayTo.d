@@ -32,15 +32,15 @@ extern(Windows):
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	HRESULT get_State(Windows.Media.PlayTo.PlayToConnectionState* return_value);
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
-	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection*,Windows.Media.PlayTo.PlayToConnectionStateChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionStateChangedEventArgs) handler, EventRegistrationToken* return_token);
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	HRESULT remove_StateChanged(EventRegistrationToken token);
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
-	HRESULT add_Transferred(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection*,Windows.Media.PlayTo.PlayToConnectionTransferredEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Transferred(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionTransferredEventArgs) handler, EventRegistrationToken* return_token);
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	HRESULT remove_Transferred(EventRegistrationToken token);
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
-	HRESULT add_Error(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection*,Windows.Media.PlayTo.PlayToConnectionErrorEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Error(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionErrorEventArgs) handler, EventRegistrationToken* return_token);
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	HRESULT remove_Error(EventRegistrationToken token);
 }
@@ -92,11 +92,11 @@ interface IPlayToManager : IInspectable
 
 extern(Windows):
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
-	HRESULT add_SourceRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToManager*,Windows.Media.PlayTo.PlayToSourceRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SourceRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
 	HRESULT remove_SourceRequested(EventRegistrationToken token);
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
-	HRESULT add_SourceSelected(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToManager*,Windows.Media.PlayTo.PlayToSourceSelectedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SourceSelected(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceSelectedEventArgs) handler, EventRegistrationToken* return_token);
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
 	HRESULT remove_SourceSelected(EventRegistrationToken token);
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
@@ -125,23 +125,23 @@ interface IPlayToReceiver : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_PlayRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PlayRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PlayRequested(EventRegistrationToken token);
-	HRESULT add_PauseRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PauseRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PauseRequested(EventRegistrationToken token);
-	HRESULT add_SourceChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver*,Windows.Media.PlayTo.SourceChangeRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SourceChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.SourceChangeRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SourceChangeRequested(EventRegistrationToken token);
-	HRESULT add_PlaybackRateChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver*,Windows.Media.PlayTo.PlaybackRateChangeRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PlaybackRateChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.PlaybackRateChangeRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PlaybackRateChangeRequested(EventRegistrationToken token);
-	HRESULT add_CurrentTimeChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver*,Windows.Media.PlayTo.CurrentTimeChangeRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_CurrentTimeChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.CurrentTimeChangeRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CurrentTimeChangeRequested(EventRegistrationToken token);
-	HRESULT add_MuteChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver*,Windows.Media.PlayTo.MuteChangeRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_MuteChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.MuteChangeRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_MuteChangeRequested(EventRegistrationToken token);
-	HRESULT add_VolumeChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver*,Windows.Media.PlayTo.VolumeChangeRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_VolumeChangeRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.VolumeChangeRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_VolumeChangeRequested(EventRegistrationToken token);
-	HRESULT add_TimeUpdateRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_TimeUpdateRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_TimeUpdateRequested(EventRegistrationToken token);
-	HRESULT add_StopRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StopRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StopRequested(EventRegistrationToken token);
 	HRESULT abi_NotifyVolumeChange(double volume, bool mute);
 	HRESULT abi_NotifyRateChange(double rate);
@@ -282,7 +282,7 @@ extern(Windows):
 	HRESULT get_Date(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
 	HRESULT get_Thumbnail(Windows.Storage.Streams.IRandomAccessStreamReference* return_value);
 	HRESULT get_Rating(Windows.Foundation.IReference!(UINT32)* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
 }
 
 @uuid("6f026d5c-cf75-4c2b-913e-6d7c6c329179")

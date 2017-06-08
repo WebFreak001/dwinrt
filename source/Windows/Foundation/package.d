@@ -29,6 +29,36 @@ struct ASSEMBLYMETADATA
 	ULONG ulOS;
 }
 
+struct DateTime
+{
+	INT64 UniversalTime;
+}
+
+struct Point
+{
+	FLOAT X;
+	FLOAT Y;
+}
+
+struct Rect
+{
+	FLOAT X;
+	FLOAT Y;
+	FLOAT Width;
+	FLOAT Height;
+}
+
+struct Size
+{
+	FLOAT Width;
+	FLOAT Height;
+}
+
+struct TimeSpan
+{
+	INT64 Duration;
+}
+
 @uuid("d8f579ab-402d-4b8e-82d9-5d63b1065c68")
 interface IMetaDataTables : IUnknown
 {
@@ -84,14 +114,26 @@ extern(Windows):
 	HRESULT abi_GetWeakReference(IWeakReference* return_weakReference);
 }
 
+@uuid("a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7")
+interface AsyncActionCompletedHandler
+{
+	HRESULT abi_Invoke(Windows.Foundation.IAsyncAction asyncInfo, AsyncStatus asyncStatus);
+}
+
+@uuid("ed32a372-f3c8-4faa-9cfb-470148da3888")
+interface DeferralCompletedHandler
+{
+	HRESULT abi_Invoke();
+}
+
 @uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")
 interface IAsyncAction : IInspectable
 {
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT set_Completed(Windows.Foundation.AsyncActionCompletedHandler* handler);
-	HRESULT get_Completed(Windows.Foundation.AsyncActionCompletedHandler** return_handler);
+	HRESULT set_Completed(Windows.Foundation.AsyncActionCompletedHandler handler);
+	HRESULT get_Completed(Windows.Foundation.AsyncActionCompletedHandler* return_handler);
 	HRESULT abi_GetResults();
 }
 
@@ -121,7 +163,7 @@ interface IDeferralFactory : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_Create(Windows.Foundation.DeferralCompletedHandler* handler, Windows.Foundation.Deferral* return_result);
+	HRESULT abi_Create(Windows.Foundation.DeferralCompletedHandler handler, Windows.Foundation.Deferral* return_result);
 }
 
 @uuid("4edb8ee2-96dd-49a7-94f7-4607ddab8e3c")
@@ -159,7 +201,7 @@ interface IMemoryBufferReference : IInspectable
 
 extern(Windows):
 	HRESULT get_Capacity(UINT32* return_value);
-	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.Foundation.IMemoryBufferReference*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.Foundation.IMemoryBufferReference, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Closed(EventRegistrationToken cookie);
 }
 
@@ -420,30 +462,79 @@ enum PropertyType
 	RectArray = 1043,
 	OtherTypeArray = 1044
 }
-struct Point
+struct ComCallData
 {
-	float X, Y;
+	DWORD dwDispid;
+	DWORD dwReserved;
+	void* pUserDefined;
 }
 
-struct Size
+enum AsyncStatus
 {
-	float Width, Height;
+	Started,
+	Completed,
+	Canceled,
+	Error,
 }
 
-struct Rect
+alias ContextCallbackCallback = extern (Windows) HRESULT function(ComCallData* pParam);
+
+@uuid("000001da-0000-0000-c000-000000000046")
+interface IContextCallback : IUnknown
 {
-	float X;
-	float Y;
-	float Width;
-	float Height;
+extern (Windows):
+	HRESULT ContextCallback(ContextCallbackCallback pCallback,
+			ComCallData* pParam, REFIID riid, int iMethod, IUnknown* pUnk);
 }
 
-struct TimeSpan
+struct IAsyncOperation(Async) if (IsAsync!Async)
 {
-	long duration;
+	Async async;
+	private void delegate() callback = null;
+
+	bool await_ready() const
+	{
+		return async.Status == AsyncStatus.Completed;
+	}
+
+	void await_suspend(void delegate() f)
+	{
+		if (callback !is null)
+			assert(false, "Can't await multiple times on one object");
+
+		callback = f;
+		IContextCallback context;
+		assert(CoGetObjectContext(uuidOf!IContextCallback, cast(void**)&context) == S_OK);
+
+		async.Completed((AsyncStatus) {
+			ComCallData data;
+			data.pUserDefined = cast(void*)&callback;
+
+			ContextCallbackCallback cb = (data) {
+				(*cast(void delegate()*) data.pUserDefined)();
+				return S_OK;
+			};
+
+			assert(context.ContextCallback(cb, &data,
+				IID_ICallbackWithNoReentrancyToApplicationSTA, 5, null) == S_OK);
+		});
+	}
+
+	auto await_resume() const
+	{
+		return async.GetResults;
+	}
 }
 
-struct DateTime
+IAsyncOperation!Async await(Async)(auto ref Async async) if (IsAsync!Async)
 {
-	long universalTime;
+	return IAsyncOperation!Async(async);
 }
+
+enum IsAsync(T) = is(T == struct) && __traits(compiles, {
+		T async;
+		AsyncStatus status = async.Status;
+		async.Completed((AsyncStatus) {  });
+		auto res = async.GetResults;
+		static assert(!is(typeof(res) == void));
+	});

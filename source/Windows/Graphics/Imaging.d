@@ -2,6 +2,28 @@ module Windows.Graphics.Imaging;
 
 import dwinrt;
 
+struct BitmapBounds
+{
+	UINT32 X;
+	UINT32 Y;
+	UINT32 Width;
+	UINT32 Height;
+}
+
+struct BitmapPlaneDescription
+{
+	INT32 StartIndex;
+	INT32 Width;
+	INT32 Height;
+	INT32 Stride;
+}
+
+struct BitmapSize
+{
+	UINT32 Width;
+	UINT32 Height;
+}
+
 @uuid("a53e04c4-399c-438c-b28f-a63a6b83d1a1")
 @WinrtFactory("Windows.Graphics.Imaging.BitmapBuffer")
 interface IBitmapBuffer : IInspectable
@@ -78,7 +100,7 @@ extern(Windows):
 	HRESULT get_BitmapTransform(Windows.Graphics.Imaging.BitmapTransform* return_value);
 	HRESULT abi_SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, UINT32 width, UINT32 height, double dpiX, double dpiY, UINT32 __pixelsSize, BYTE* pixels);
 	HRESULT abi_GoToNextFrameAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
-	HRESULT abi_GoToNextFrameWithEncodingOptionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING,Windows.Graphics.Imaging.BitmapTypedValue*)) encodingOptions, Windows.Foundation.IAsyncAction* return_asyncInfo);
+	HRESULT abi_GoToNextFrameWithEncodingOptionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)) encodingOptions, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_FlushAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 }
 
@@ -97,7 +119,7 @@ extern(Windows):
 	HRESULT get_JpegXREncoderId(GUID* return_value);
 	HRESULT abi_GetEncoderInformationEnumerator(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.BitmapCodecInformation)* return_encoderInformationEnumerator);
 	HRESULT abi_CreateAsync(GUID encoderId, Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder)* return_asyncInfo);
-	HRESULT abi_CreateWithEncodingOptionsAsync(GUID encoderId, Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING,Windows.Graphics.Imaging.BitmapTypedValue*)) encodingOptions, Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder)* return_asyncInfo);
+	HRESULT abi_CreateWithEncodingOptionsAsync(GUID encoderId, Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)) encodingOptions, Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder)* return_asyncInfo);
 	HRESULT abi_CreateForTranscodingAsync(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Graphics.Imaging.BitmapDecoder bitmapDecoder, Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder)* return_asyncInfo);
 	HRESULT abi_CreateForInPlacePropertyEncodingAsync(Windows.Graphics.Imaging.BitmapDecoder bitmapDecoder, Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder)* return_asyncInfo);
 }
@@ -150,7 +172,7 @@ interface IBitmapProperties : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_SetPropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING,Windows.Graphics.Imaging.BitmapTypedValue*)) propertiesToSet, Windows.Foundation.IAsyncAction* return_asyncInfo);
+	HRESULT abi_SetPropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)) propertiesToSet, Windows.Foundation.IAsyncAction* return_asyncInfo);
 }
 
 @uuid("7e0fe87a-3a70-48f8-9c55-196cf5a545f5")

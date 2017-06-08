@@ -2,6 +2,35 @@ module Windows.Perception.Spatial;
 
 import dwinrt;
 
+struct SpatialBoundingBox
+{
+	Windows.Foundation.Numerics.Vector3 Center;
+	Windows.Foundation.Numerics.Vector3 Extents;
+}
+
+struct SpatialBoundingFrustum
+{
+	Windows.Foundation.Numerics.Plane Near;
+	Windows.Foundation.Numerics.Plane Far;
+	Windows.Foundation.Numerics.Plane Right;
+	Windows.Foundation.Numerics.Plane Left;
+	Windows.Foundation.Numerics.Plane Top;
+	Windows.Foundation.Numerics.Plane Bottom;
+}
+
+struct SpatialBoundingOrientedBox
+{
+	Windows.Foundation.Numerics.Vector3 Center;
+	Windows.Foundation.Numerics.Vector3 Extents;
+	Windows.Foundation.Numerics.Quaternion Orientation;
+}
+
+struct SpatialBoundingSphere
+{
+	Windows.Foundation.Numerics.Vector3 Center;
+	FLOAT Radius;
+}
+
 @uuid("0529e5ce-1d34-3702-bcec-eabff578a869")
 @WinrtFactory("Windows.Perception.Spatial.SpatialAnchor")
 interface ISpatialAnchor : IInspectable
@@ -11,7 +40,7 @@ interface ISpatialAnchor : IInspectable
 extern(Windows):
 	HRESULT get_CoordinateSystem(Windows.Perception.Spatial.SpatialCoordinateSystem* return_value);
 	HRESULT get_RawCoordinateSystem(Windows.Perception.Spatial.SpatialCoordinateSystem* return_value);
-	HRESULT add_RawCoordinateSystemAdjusted(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialAnchor*,Windows.Perception.Spatial.SpatialAnchorRawCoordinateSystemAdjustedEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_RawCoordinateSystemAdjusted(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialAnchor, Windows.Perception.Spatial.SpatialAnchorRawCoordinateSystemAdjustedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_RawCoordinateSystemAdjusted(EventRegistrationToken cookie);
 }
 
@@ -64,7 +93,7 @@ interface ISpatialAnchorStore : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_GetAllSavedAnchors(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.Perception.Spatial.SpatialAnchor*)* return_value);
+	HRESULT abi_GetAllSavedAnchors(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Perception.Spatial.SpatialAnchor)* return_value);
 	HRESULT abi_TrySave(HSTRING id, Windows.Perception.Spatial.SpatialAnchor anchor, bool* return_succeeded);
 	HRESULT abi_Remove(HSTRING id);
 	HRESULT abi_Clear();
@@ -78,9 +107,9 @@ interface ISpatialAnchorTransferManagerStatics : IInspectable
 
 extern(Windows):
 	deprecated("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")
-	HRESULT abi_TryImportAnchorsAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.Perception.Spatial.SpatialAnchor*))* return_operation);
+	HRESULT abi_TryImportAnchorsAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Perception.Spatial.SpatialAnchor))* return_operation);
 	deprecated("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")
-	HRESULT abi_TryExportAnchorsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING,Windows.Perception.Spatial.SpatialAnchor*)) anchors, Windows.Storage.Streams.IOutputStream stream, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_TryExportAnchorsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Perception.Spatial.SpatialAnchor)) anchors, Windows.Storage.Streams.IOutputStream stream, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	deprecated("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.SpatialPerceptionAccessStatus)* return_result);
 }
@@ -192,13 +221,13 @@ interface ISpatialEntityWatcher : IInspectable
 
 extern(Windows):
 	HRESULT get_Status(Windows.Perception.Spatial.SpatialEntityWatcherStatus* return_value);
-	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialEntityWatcher*,Windows.Perception.Spatial.SpatialEntityAddedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityAddedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Added(EventRegistrationToken token);
-	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialEntityWatcher*,Windows.Perception.Spatial.SpatialEntityUpdatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityUpdatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Updated(EventRegistrationToken token);
-	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialEntityWatcher*,Windows.Perception.Spatial.SpatialEntityRemovedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Removed(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityRemovedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Removed(EventRegistrationToken token);
-	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialEntityWatcher*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_EnumerationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialEntityWatcher, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_EnumerationCompleted(EventRegistrationToken token);
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
@@ -227,9 +256,9 @@ interface ISpatialLocator : IInspectable
 
 extern(Windows):
 	HRESULT get_Locatability(Windows.Perception.Spatial.SpatialLocatability* return_value);
-	HRESULT add_LocatabilityChanged(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialLocator*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_LocatabilityChanged(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialLocator, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_LocatabilityChanged(EventRegistrationToken cookie);
-	HRESULT add_PositionalTrackingDeactivating(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialLocator*,Windows.Perception.Spatial.SpatialLocatorPositionalTrackingDeactivatingEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_PositionalTrackingDeactivating(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialLocator, Windows.Perception.Spatial.SpatialLocatorPositionalTrackingDeactivatingEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PositionalTrackingDeactivating(EventRegistrationToken cookie);
 	HRESULT abi_TryLocateAtTimestamp(Windows.Perception.PerceptionTimestamp timestamp, Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Perception.Spatial.SpatialLocation* return_value);
 	HRESULT abi_CreateAttachedFrameOfReferenceAtCurrentHeading(Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference* return_value);

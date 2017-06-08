@@ -2,6 +2,148 @@ module Windows.UI.Xaml;
 
 import dwinrt;
 
+struct CornerRadius
+{
+	double TopLeft;
+	double TopRight;
+	double BottomRight;
+	double BottomLeft;
+}
+
+struct Duration
+{
+	Windows.Foundation.TimeSpan TimeSpan;
+	Windows.UI.Xaml.DurationType Type;
+}
+
+struct GridLength
+{
+	double Value;
+	Windows.UI.Xaml.GridUnitType GridUnitType;
+}
+
+struct Thickness
+{
+	double Left;
+	double Top;
+	double Right;
+	double Bottom;
+}
+
+@uuid("b6351c55-c284-46e4-8310-fb0967fab76f")
+interface ApplicationInitializationCallback
+{
+	HRESULT abi_Invoke(Windows.UI.Xaml.ApplicationInitializationCallbackParams p);
+}
+
+@uuid("136b1782-54ba-420d-a1aa-82828721cde6")
+interface BindingFailedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.BindingFailedEventArgs e);
+}
+
+@uuid("d6ecb12c-15b5-4ec8-b95c-cdd208f08153")
+interface CreateDefaultValueCallback
+{
+	HRESULT abi_Invoke(IInspectable* return_value);
+}
+
+@uuid("45883d16-27bf-4bc1-ac26-94c1601f3a49")
+interface DependencyPropertyChangedCallback
+{
+	HRESULT abi_Invoke(Windows.UI.Xaml.DependencyObject sender, Windows.UI.Xaml.DependencyProperty dp);
+}
+
+@uuid("09223e5a-75be-4499-8180-1ddc005421c0")
+interface DependencyPropertyChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.DependencyPropertyChangedEventArgs e);
+}
+
+@uuid("2ab1a205-1e73-4bcf-aabc-57b97e21961d")
+interface DragEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.DragEventArgs e);
+}
+
+@uuid("93a956ae-1d7f-438b-b7b8-227d96b609c0")
+interface EnteredBackgroundEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.EnteredBackgroundEventArgs e);
+}
+
+@uuid("68e0e810-f6ea-42bc-855b-5d9b67e6a262")
+interface ExceptionRoutedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.ExceptionRoutedEventArgs e);
+}
+
+@uuid("aaad5dad-4fc6-4aa4-b7cf-877e36ada4f6")
+interface LeavingBackgroundEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.LeavingBackgroundEventArgs e);
+}
+
+@uuid("5a9f8a25-d142-44a4-8231-fd676724f29b")
+interface PropertyChangedCallback
+{
+	HRESULT abi_Invoke(Windows.UI.Xaml.DependencyObject d, Windows.UI.Xaml.DependencyPropertyChangedEventArgs e);
+}
+
+@uuid("a856e674-b0b6-4bc3-bba8-1ba06e40d4b5")
+interface RoutedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.RoutedEventArgs e);
+}
+
+@uuid("1115b13c-25d2-480b-89dc-eb3dcbd6b7fa")
+interface SizeChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.SizeChangedEventArgs e);
+}
+
+@uuid("23429465-e36a-40e2-b139-a4704602a6e1")
+interface SuspendingEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.SuspendingEventArgs e);
+}
+
+@uuid("9274e6bd-49a1-4958-beee-d0e19587b6e3")
+interface UnhandledExceptionEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.UnhandledExceptionEventArgs e);
+}
+
+@uuid("e6d5bbd5-e029-43a6-b36d-84a81042d774")
+interface VisualStateChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.VisualStateChangedEventArgs e);
+}
+
+@uuid("18026348-8619-4c7b-b534-ced45d9de219")
+interface WindowActivatedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Core.WindowActivatedEventArgs e);
+}
+
+@uuid("0db89161-20d7-45df-9122-ba89576703ba")
+interface WindowClosedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Core.CoreWindowEventArgs e);
+}
+
+@uuid("5c21c742-2ced-4fd9-ba38-7118d40e966b")
+interface WindowSizeChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Core.WindowSizeChangedEventArgs e);
+}
+
+@uuid("10406ad6-b090-4a4a-b2ad-d682df27130f")
+interface WindowVisibilityChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Core.VisibilityChangedEventArgs e);
+}
+
 @uuid("a5f04119-0cd9-49f1-a23f-44e547ab9f1a")
 @WinrtFactory("Windows.UI.Xaml.AdaptiveTrigger")
 interface IAdaptiveTrigger : IInspectable
@@ -48,9 +190,9 @@ extern(Windows):
 	HRESULT get_DebugSettings(Windows.UI.Xaml.DebugSettings* return_value);
 	HRESULT get_RequestedTheme(Windows.UI.Xaml.ApplicationTheme* return_value);
 	HRESULT set_RequestedTheme(Windows.UI.Xaml.ApplicationTheme value);
-	HRESULT add_UnhandledException(Windows.UI.Xaml.UnhandledExceptionEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_UnhandledException(Windows.UI.Xaml.UnhandledExceptionEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_UnhandledException(EventRegistrationToken token);
-	HRESULT add_Suspending(Windows.UI.Xaml.SuspendingEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Suspending(Windows.UI.Xaml.SuspendingEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Suspending(EventRegistrationToken token);
 	HRESULT add_Resuming(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_Resuming(EventRegistrationToken token);
@@ -68,9 +210,9 @@ extern(Windows):
 	HRESULT set_FocusVisualKind(Windows.UI.Xaml.FocusVisualKind value);
 	HRESULT get_RequiresPointerMode(Windows.UI.Xaml.ApplicationRequiresPointerMode* return_value);
 	HRESULT set_RequiresPointerMode(Windows.UI.Xaml.ApplicationRequiresPointerMode value);
-	HRESULT add_LeavingBackground(Windows.UI.Xaml.LeavingBackgroundEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_LeavingBackground(Windows.UI.Xaml.LeavingBackgroundEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_LeavingBackground(EventRegistrationToken token);
-	HRESULT add_EnteredBackground(Windows.UI.Xaml.EnteredBackgroundEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_EnteredBackground(Windows.UI.Xaml.EnteredBackgroundEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_EnteredBackground(EventRegistrationToken token);
 }
 
@@ -131,7 +273,7 @@ interface IApplicationStatics : IInspectable
 
 extern(Windows):
 	HRESULT get_Current(Windows.UI.Xaml.Application* return_value);
-	HRESULT abi_Start(Windows.UI.Xaml.ApplicationInitializationCallback* callback);
+	HRESULT abi_Start(Windows.UI.Xaml.ApplicationInitializationCallback callback);
 	HRESULT abi_LoadComponent(IInspectable component, Windows.Foundation.Uri resourceLocator);
 	HRESULT abi_LoadComponentWithResourceLocation(IInspectable component, Windows.Foundation.Uri resourceLocator, Windows.UI.Xaml.Controls.Primitives.ComponentResourceLocation componentResourceLocation);
 }
@@ -260,7 +402,7 @@ extern(Windows):
 	HRESULT set_IsBindingTracingEnabled(bool value);
 	HRESULT get_IsOverdrawHeatMapEnabled(bool* return_value);
 	HRESULT set_IsOverdrawHeatMapEnabled(bool value);
-	HRESULT add_BindingFailed(Windows.UI.Xaml.BindingFailedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_BindingFailed(Windows.UI.Xaml.BindingFailedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_BindingFailed(EventRegistrationToken token);
 }
 
@@ -308,7 +450,7 @@ interface IDependencyObject2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_RegisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.DependencyPropertyChangedCallback* callback, INT64* return_returnValue);
+	HRESULT abi_RegisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.DependencyPropertyChangedCallback callback, INT64* return_returnValue);
 	HRESULT abi_UnregisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, INT64 token);
 }
 
@@ -610,11 +752,11 @@ extern(Windows):
 	HRESULT get_Parent(Windows.UI.Xaml.DependencyObject* return_value);
 	HRESULT get_FlowDirection(Windows.UI.Xaml.FlowDirection* return_value);
 	HRESULT set_FlowDirection(Windows.UI.Xaml.FlowDirection value);
-	HRESULT add_Loaded(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Loaded(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Loaded(EventRegistrationToken token);
-	HRESULT add_Unloaded(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Unloaded(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Unloaded(EventRegistrationToken token);
-	HRESULT add_SizeChanged(Windows.UI.Xaml.SizeChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_SizeChanged(Windows.UI.Xaml.SizeChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_SizeChanged(EventRegistrationToken token);
 	HRESULT add_LayoutUpdated(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_LayoutUpdated(EventRegistrationToken token);
@@ -631,7 +773,7 @@ interface IFrameworkElement2 : IInspectable
 extern(Windows):
 	HRESULT get_RequestedTheme(Windows.UI.Xaml.ElementTheme* return_value);
 	HRESULT set_RequestedTheme(Windows.UI.Xaml.ElementTheme value);
-	HRESULT add_DataContextChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement*,Windows.UI.Xaml.DataContextChangedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_DataContextChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_DataContextChanged(EventRegistrationToken token);
 	HRESULT abi_GetBindingExpression(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.Data.BindingExpression* return_returnValue);
 }
@@ -643,7 +785,7 @@ interface IFrameworkElement3 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Loading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_Loading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_Loading(EventRegistrationToken token);
 }
 
@@ -818,7 +960,7 @@ interface IPropertyMetadata : IInspectable
 
 extern(Windows):
 	HRESULT get_DefaultValue(IInspectable* return_value);
-	HRESULT get_CreateDefaultValueCallback(Windows.UI.Xaml.CreateDefaultValueCallback** return_value);
+	HRESULT get_CreateDefaultValueCallback(Windows.UI.Xaml.CreateDefaultValueCallback* return_value);
 }
 
 @uuid("c1b81cc0-57cd-4f2f-b0a9-e1801b28f76b")
@@ -829,7 +971,7 @@ interface IPropertyMetadataFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithDefaultValue(IInspectable defaultValue, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.PropertyMetadata* return_instance);
-	HRESULT abi_CreateInstanceWithDefaultValueAndCallback(IInspectable defaultValue, Windows.UI.Xaml.PropertyChangedCallback* propertyChangedCallback, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.PropertyMetadata* return_instance);
+	HRESULT abi_CreateInstanceWithDefaultValueAndCallback(IInspectable defaultValue, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.PropertyMetadata* return_instance);
 }
 
 @uuid("3b01077a-6e06-45e9-8b5c-af243458c062")
@@ -840,9 +982,9 @@ interface IPropertyMetadataStatics : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateWithDefaultValue(IInspectable defaultValue, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
-	HRESULT abi_CreateWithDefaultValueAndCallback(IInspectable defaultValue, Windows.UI.Xaml.PropertyChangedCallback* propertyChangedCallback, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
-	HRESULT abi_CreateWithFactory(Windows.UI.Xaml.CreateDefaultValueCallback* createDefaultValueCallback, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
-	HRESULT abi_CreateWithFactoryAndCallback(Windows.UI.Xaml.CreateDefaultValueCallback* createDefaultValueCallback, Windows.UI.Xaml.PropertyChangedCallback* propertyChangedCallback, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
+	HRESULT abi_CreateWithDefaultValueAndCallback(IInspectable defaultValue, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
+	HRESULT abi_CreateWithFactory(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
+	HRESULT abi_CreateWithFactoryAndCallback(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
 }
 
 @uuid("300e5d8a-1ff3-4d2c-95ec-27f81debacb8")
@@ -898,7 +1040,7 @@ extern(Windows):
 	HRESULT get_Source(Windows.Foundation.Uri* return_value);
 	HRESULT set_Source(Windows.Foundation.Uri value);
 	HRESULT get_MergedDictionaries(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.ResourceDictionary)* return_value);
-	HRESULT get_ThemeDictionaries(Windows.Foundation.Collections.IMap!(IInspectable*,IInspectable*)* return_value);
+	HRESULT get_ThemeDictionaries(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)* return_value);
 }
 
 @uuid("ea3639b5-31b7-4271-92c9-7c9584a91c22")
@@ -1152,55 +1294,55 @@ extern(Windows):
 	HRESULT get_ManipulationMode(Windows.UI.Xaml.Input.ManipulationModes* return_value);
 	HRESULT set_ManipulationMode(Windows.UI.Xaml.Input.ManipulationModes value);
 	HRESULT get_PointerCaptures(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Input.Pointer)* return_value);
-	HRESULT add_KeyUp(Windows.UI.Xaml.Input.KeyEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_KeyUp(Windows.UI.Xaml.Input.KeyEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_KeyUp(EventRegistrationToken token);
-	HRESULT add_KeyDown(Windows.UI.Xaml.Input.KeyEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_KeyDown(Windows.UI.Xaml.Input.KeyEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_KeyDown(EventRegistrationToken token);
-	HRESULT add_GotFocus(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_GotFocus(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_GotFocus(EventRegistrationToken token);
-	HRESULT add_LostFocus(Windows.UI.Xaml.RoutedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_LostFocus(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_LostFocus(EventRegistrationToken token);
-	HRESULT add_DragEnter(Windows.UI.Xaml.DragEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_DragEnter(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_DragEnter(EventRegistrationToken token);
-	HRESULT add_DragLeave(Windows.UI.Xaml.DragEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_DragLeave(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_DragLeave(EventRegistrationToken token);
-	HRESULT add_DragOver(Windows.UI.Xaml.DragEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_DragOver(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_DragOver(EventRegistrationToken token);
-	HRESULT add_Drop(Windows.UI.Xaml.DragEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Drop(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Drop(EventRegistrationToken token);
-	HRESULT add_PointerPressed(Windows.UI.Xaml.Input.PointerEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_PointerPressed(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_PointerPressed(EventRegistrationToken token);
-	HRESULT add_PointerMoved(Windows.UI.Xaml.Input.PointerEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_PointerMoved(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_PointerMoved(EventRegistrationToken token);
-	HRESULT add_PointerReleased(Windows.UI.Xaml.Input.PointerEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_PointerReleased(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_PointerReleased(EventRegistrationToken token);
-	HRESULT add_PointerEntered(Windows.UI.Xaml.Input.PointerEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_PointerEntered(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_PointerEntered(EventRegistrationToken token);
-	HRESULT add_PointerExited(Windows.UI.Xaml.Input.PointerEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_PointerExited(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_PointerExited(EventRegistrationToken token);
-	HRESULT add_PointerCaptureLost(Windows.UI.Xaml.Input.PointerEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_PointerCaptureLost(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_PointerCaptureLost(EventRegistrationToken token);
-	HRESULT add_PointerCanceled(Windows.UI.Xaml.Input.PointerEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_PointerCanceled(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_PointerCanceled(EventRegistrationToken token);
-	HRESULT add_PointerWheelChanged(Windows.UI.Xaml.Input.PointerEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_PointerWheelChanged(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_PointerWheelChanged(EventRegistrationToken token);
-	HRESULT add_Tapped(Windows.UI.Xaml.Input.TappedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Tapped(Windows.UI.Xaml.Input.TappedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Tapped(EventRegistrationToken token);
-	HRESULT add_DoubleTapped(Windows.UI.Xaml.Input.DoubleTappedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_DoubleTapped(Windows.UI.Xaml.Input.DoubleTappedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_DoubleTapped(EventRegistrationToken token);
-	HRESULT add_Holding(Windows.UI.Xaml.Input.HoldingEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Holding(Windows.UI.Xaml.Input.HoldingEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Holding(EventRegistrationToken token);
-	HRESULT add_RightTapped(Windows.UI.Xaml.Input.RightTappedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_RightTapped(Windows.UI.Xaml.Input.RightTappedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_RightTapped(EventRegistrationToken token);
-	HRESULT add_ManipulationStarting(Windows.UI.Xaml.Input.ManipulationStartingEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ManipulationStarting(Windows.UI.Xaml.Input.ManipulationStartingEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ManipulationStarting(EventRegistrationToken token);
-	HRESULT add_ManipulationInertiaStarting(Windows.UI.Xaml.Input.ManipulationInertiaStartingEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ManipulationInertiaStarting(Windows.UI.Xaml.Input.ManipulationInertiaStartingEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ManipulationInertiaStarting(EventRegistrationToken token);
-	HRESULT add_ManipulationStarted(Windows.UI.Xaml.Input.ManipulationStartedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ManipulationStarted(Windows.UI.Xaml.Input.ManipulationStartedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ManipulationStarted(EventRegistrationToken token);
-	HRESULT add_ManipulationDelta(Windows.UI.Xaml.Input.ManipulationDeltaEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ManipulationDelta(Windows.UI.Xaml.Input.ManipulationDeltaEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ManipulationDelta(EventRegistrationToken token);
-	HRESULT add_ManipulationCompleted(Windows.UI.Xaml.Input.ManipulationCompletedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_ManipulationCompleted(Windows.UI.Xaml.Input.ManipulationCompletedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ManipulationCompleted(EventRegistrationToken token);
 	HRESULT abi_Measure(Windows.Foundation.Size availableSize);
 	HRESULT abi_Arrange(Windows.Foundation.Rect finalRect);
@@ -1238,9 +1380,9 @@ extern(Windows):
 	HRESULT set_Transform3D(Windows.UI.Xaml.Media.Media3D.Transform3D value);
 	HRESULT get_CanDrag(bool* return_value);
 	HRESULT set_CanDrag(bool value);
-	HRESULT add_DragStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement*,Windows.UI.Xaml.DragStartingEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_DragStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_DragStarting(EventRegistrationToken token);
-	HRESULT add_DropCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement*,Windows.UI.Xaml.DropCompletedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_DropCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_DropCompleted(EventRegistrationToken token);
 	HRESULT abi_StartDragAsync(Windows.UI.Input.PointerPoint pointerPoint, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation)* return_returnValue);
 }
@@ -1262,15 +1404,15 @@ extern(Windows):
 	HRESULT set_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject value);
 	HRESULT get_AccessKey(HSTRING* return_value);
 	HRESULT set_AccessKey(HSTRING value);
-	HRESULT add_ContextRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement*,Windows.UI.Xaml.Input.ContextRequestedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_ContextRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ContextRequested(EventRegistrationToken token);
-	HRESULT add_ContextCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement*,Windows.UI.Xaml.RoutedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_ContextCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ContextCanceled(EventRegistrationToken token);
-	HRESULT add_AccessKeyDisplayRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement*,Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_AccessKeyDisplayRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_AccessKeyDisplayRequested(EventRegistrationToken token);
-	HRESULT add_AccessKeyDisplayDismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement*,Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_AccessKeyDisplayDismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_AccessKeyDisplayDismissed(EventRegistrationToken token);
-	HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement*,Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_AccessKeyInvoked(EventRegistrationToken token);
 }
 
@@ -1302,11 +1444,11 @@ extern(Windows):
 	HRESULT set_HighContrastAdjustment(Windows.UI.Xaml.ElementHighContrastAdjustment value);
 	HRESULT get_TabFocusNavigation(Windows.UI.Xaml.Input.KeyboardNavigationMode* return_value);
 	HRESULT set_TabFocusNavigation(Windows.UI.Xaml.Input.KeyboardNavigationMode value);
-	HRESULT add_GettingFocus(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement*,Windows.UI.Xaml.Input.GettingFocusEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_GettingFocus(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_GettingFocus(EventRegistrationToken token);
-	HRESULT add_LosingFocus(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement*,Windows.UI.Xaml.Input.LosingFocusEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_LosingFocus(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_LosingFocus(EventRegistrationToken token);
-	HRESULT add_NoFocusCandidateFound(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement*,Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs*) value, EventRegistrationToken* return_token);
+	HRESULT add_NoFocusCandidateFound(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_NoFocusCandidateFound(EventRegistrationToken token);
 	HRESULT abi_StartBringIntoView();
 	HRESULT abi_StartBringIntoViewWithOptions(Windows.UI.Xaml.BringIntoViewOptions options);
@@ -1503,9 +1645,9 @@ extern(Windows):
 	HRESULT get_Transitions(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.VisualTransition)* return_value);
 	HRESULT get_States(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.VisualState)* return_value);
 	HRESULT get_CurrentState(Windows.UI.Xaml.VisualState* return_value);
-	HRESULT add_CurrentStateChanged(Windows.UI.Xaml.VisualStateChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_CurrentStateChanged(Windows.UI.Xaml.VisualStateChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_CurrentStateChanged(EventRegistrationToken token);
-	HRESULT add_CurrentStateChanging(Windows.UI.Xaml.VisualStateChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_CurrentStateChanging(Windows.UI.Xaml.VisualStateChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_CurrentStateChanging(EventRegistrationToken token);
 }
 
@@ -1596,13 +1738,13 @@ extern(Windows):
 	HRESULT set_Content(Windows.UI.Xaml.UIElement value);
 	HRESULT get_CoreWindow(Windows.UI.Core.CoreWindow* return_value);
 	HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value);
-	HRESULT add_Activated(Windows.UI.Xaml.WindowActivatedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Activated(Windows.UI.Xaml.WindowActivatedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Activated(EventRegistrationToken token);
-	HRESULT add_Closed(Windows.UI.Xaml.WindowClosedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_Closed(Windows.UI.Xaml.WindowClosedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_Closed(EventRegistrationToken token);
-	HRESULT add_SizeChanged(Windows.UI.Xaml.WindowSizeChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_SizeChanged(Windows.UI.Xaml.WindowSizeChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_SizeChanged(EventRegistrationToken token);
-	HRESULT add_VisibilityChanged(Windows.UI.Xaml.WindowVisibilityChangedEventHandler* value, EventRegistrationToken* return_token);
+	HRESULT add_VisibilityChanged(Windows.UI.Xaml.WindowVisibilityChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_VisibilityChanged(EventRegistrationToken token);
 	HRESULT abi_Activate();
 	HRESULT abi_Close();

@@ -2,6 +2,29 @@ module Windows.UI.Input.Preview.Injection;
 
 import dwinrt;
 
+struct InjectedInputPoint
+{
+	INT32 PositionX;
+	INT32 PositionY;
+}
+
+struct InjectedInputPointerInfo
+{
+	UINT32 PointerId;
+	Windows.UI.Input.Preview.Injection.InjectedInputPointerOptions PointerOptions;
+	Windows.UI.Input.Preview.Injection.InjectedInputPoint PixelLocation;
+	UINT32 TimeOffsetInMilliseconds;
+	UINT64 PerformanceCount;
+}
+
+struct InjectedInputRectangle
+{
+	INT32 Left;
+	INT32 Top;
+	INT32 Bottom;
+	INT32 Right;
+}
+
 @uuid("4b46d140-2b6a-5ffa-7eae-bd077b052acd")
 @WinrtFactory("Windows.UI.Input.Preview.Injection.InjectedInputKeyboardInfo")
 interface IInjectedInputKeyboardInfo : IInspectable

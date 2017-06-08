@@ -2,6 +2,24 @@ module Windows.Devices.Input;
 
 import dwinrt;
 
+struct MouseDelta
+{
+	INT32 X;
+	INT32 Y;
+}
+
+struct PointerDeviceUsage
+{
+	UINT32 UsagePage;
+	UINT32 Usage;
+	INT32 MinLogical;
+	INT32 MaxLogical;
+	INT32 MinPhysical;
+	INT32 MaxPhysical;
+	UINT32 Unit;
+	FLOAT PhysicalMultiplier;
+}
+
 @uuid("3a3f9b56-6798-4bbc-833e-0f34b17c65ff")
 @WinrtFactory("Windows.Devices.Input.KeyboardCapabilities")
 interface IKeyboardCapabilities : IInspectable
@@ -33,7 +51,7 @@ interface IMouseDevice : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_MouseMoved(Windows.Foundation.TypedEventHandler!(Windows.Devices.Input.MouseDevice*,Windows.Devices.Input.MouseEventArgs*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_MouseMoved(Windows.Foundation.TypedEventHandler!(Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_MouseMoved(EventRegistrationToken cookie);
 }
 

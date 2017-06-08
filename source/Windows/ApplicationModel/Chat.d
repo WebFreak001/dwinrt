@@ -50,7 +50,7 @@ extern(Windows):
 	HRESULT abi_SaveAsync(Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_NotifyLocalParticipantComposing(HSTRING transportId, HSTRING participantAddress, bool isComposing);
 	HRESULT abi_NotifyRemoteParticipantComposing(HSTRING transportId, HSTRING participantAddress, bool isComposing);
-	HRESULT add_RemoteParticipantComposingChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatConversation*,Windows.ApplicationModel.Chat.RemoteParticipantComposingChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RemoteParticipantComposingChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatConversation, Windows.ApplicationModel.Chat.RemoteParticipantComposingChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RemoteParticipantComposingChanged(EventRegistrationToken token);
 }
 
@@ -121,7 +121,7 @@ extern(Windows):
 	HRESULT get_LocalTimestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_NetworkTimestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_Recipients(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
-	HRESULT get_RecipientSendStatuses(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.ApplicationModel.Chat.ChatMessageStatus)* return_value);
+	HRESULT get_RecipientSendStatuses(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Chat.ChatMessageStatus)* return_value);
 	HRESULT get_Status(Windows.ApplicationModel.Chat.ChatMessageStatus* return_value);
 	HRESULT get_Subject(HSTRING* return_value);
 	HRESULT get_TransportFriendlyName(HSTRING* return_value);
@@ -388,7 +388,7 @@ extern(Windows):
 	HRESULT abi_RetrySendMessageAsync(HSTRING localChatMessageId, Windows.Foundation.IAsyncAction* return_value);
 	HRESULT abi_SendMessageAsync(Windows.ApplicationModel.Chat.ChatMessage chatMessage, Windows.Foundation.IAsyncAction* return_value);
 	HRESULT abi_ValidateMessage(Windows.ApplicationModel.Chat.ChatMessage chatMessage, Windows.ApplicationModel.Chat.ChatMessageValidationResult* return_value);
-	HRESULT add_MessageChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatMessageStore*,Windows.ApplicationModel.Chat.ChatMessageChangedEventArgs*) value, EventRegistrationToken* return_returnValue);
+	HRESULT add_MessageChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageChangedEventArgs) value, EventRegistrationToken* return_returnValue);
 	HRESULT remove_MessageChanged(EventRegistrationToken value);
 }
 
@@ -414,7 +414,7 @@ extern(Windows):
 	HRESULT abi_SaveMessageAsync(Windows.ApplicationModel.Chat.ChatMessage chatMessage, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_TryCancelDownloadMessageAsync(HSTRING localChatMessageId, Windows.Foundation.IAsyncOperation!(bool)* return_result);
 	HRESULT abi_TryCancelSendMessageAsync(HSTRING localChatMessageId, Windows.Foundation.IAsyncOperation!(bool)* return_result);
-	HRESULT add_StoreChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatMessageStore*,Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StoreChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StoreChanged(EventRegistrationToken token);
 }
 
@@ -475,7 +475,7 @@ extern(Windows):
 	HRESULT get_MaxMessageSizeInKilobytes(INT32* return_result);
 	HRESULT get_MaxRecipientCount(INT32* return_result);
 	HRESULT get_SupportedVideoFormat(Windows.Media.MediaProperties.MediaEncodingProfile* return_result);
-	HRESULT get_ExtendedProperties(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)* return_result);
+	HRESULT get_ExtendedProperties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_result);
 }
 
 @uuid("25e93a03-28ec-5889-569b-7e486b126f18")
@@ -616,7 +616,7 @@ interface IRcsEndUserMessageManager : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_MessageAvailableChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.RcsEndUserMessageManager*,Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_MessageAvailableChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.RcsEndUserMessageManager, Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_MessageAvailableChanged(EventRegistrationToken token);
 }
 
@@ -650,14 +650,14 @@ interface IRcsTransport : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_ExtendedProperties(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)* return_value);
+	HRESULT get_ExtendedProperties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
 	HRESULT get_IsActive(bool* return_value);
 	HRESULT get_TransportFriendlyName(HSTRING* return_value);
 	HRESULT get_TransportId(HSTRING* return_value);
 	HRESULT get_Configuration(Windows.ApplicationModel.Chat.RcsTransportConfiguration* return_result);
 	HRESULT abi_IsStoreAndForwardEnabled(Windows.ApplicationModel.Chat.RcsServiceKind serviceKind, bool* return_result);
 	HRESULT abi_IsServiceKindSupported(Windows.ApplicationModel.Chat.RcsServiceKind serviceKind, bool* return_result);
-	HRESULT add_ServiceKindSupportedChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.RcsTransport*,Windows.ApplicationModel.Chat.RcsServiceKindSupportedChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ServiceKindSupportedChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.RcsTransport, Windows.ApplicationModel.Chat.RcsServiceKindSupportedChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ServiceKindSupportedChanged(EventRegistrationToken token);
 }
 

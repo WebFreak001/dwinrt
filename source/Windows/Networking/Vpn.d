@@ -40,7 +40,7 @@ extern(Windows):
 	HRESULT abi_LogDiagnosticMessage(HSTRING message);
 	HRESULT get_Id(UINT32* return_value);
 	HRESULT get_Configuration(Windows.Networking.Vpn.VpnChannelConfiguration* return_value);
-	HRESULT add_ActivityChange(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel*,Windows.Networking.Vpn.VpnChannelActivityEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ActivityChange(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ActivityChange(EventRegistrationToken token);
 	HRESULT set_PlugInContext(IInspectable value);
 	HRESULT get_PlugInContext(IInspectable* return_value);
@@ -59,7 +59,7 @@ interface IVpnChannel2 : IInspectable
 extern(Windows):
 	HRESULT abi_StartWithMainTransport(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv4list, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv6list, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedDomainName, UINT32 mtuSize, UINT32 maxFrameSize, bool Reserved, IInspectable mainOuterTunnelTransport);
 	HRESULT abi_StartExistingTransports(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv4list, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv6list, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedDomainName, UINT32 mtuSize, UINT32 maxFrameSize, bool Reserved);
-	HRESULT add_ActivityStateChange(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel*,Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ActivityStateChange(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ActivityStateChange(EventRegistrationToken token);
 	HRESULT abi_GetVpnSendPacketBuffer(Windows.Networking.Vpn.VpnPacketBuffer* return_vpnSendPacketBuffer);
 	HRESULT abi_GetVpnReceivePacketBuffer(Windows.Networking.Vpn.VpnPacketBuffer* return_vpnReceivePacketBuffer);

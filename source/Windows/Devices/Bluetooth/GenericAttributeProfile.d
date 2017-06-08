@@ -24,7 +24,7 @@ extern(Windows):
 	HRESULT abi_WriteValueWithOptionAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption writeOption, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus)* return_asyncOp);
 	HRESULT abi_ReadClientCharacteristicConfigurationDescriptorAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadClientCharacteristicConfigurationDescriptorResult)* return_asyncOp);
 	HRESULT abi_WriteClientCharacteristicConfigurationDescriptorAsync(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientCharacteristicConfigurationDescriptorValue clientCharacteristicConfigurationDescriptorValue, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus)* return_asyncOp);
-	HRESULT add_ValueChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic*,Windows.Devices.Bluetooth.GenericAttributeProfile.GattValueChangedEventArgs*) valueChangedHandler, EventRegistrationToken* return_valueChangedEventCookie);
+	HRESULT add_ValueChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattValueChangedEventArgs) valueChangedHandler, EventRegistrationToken* return_valueChangedEventCookie);
 	HRESULT remove_ValueChanged(EventRegistrationToken valueChangedEventCookie);
 }
 
@@ -367,11 +367,11 @@ extern(Windows):
 	HRESULT get_UserDescription(HSTRING* return_value);
 	HRESULT get_PresentationFormats(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat)* return_value);
 	HRESULT get_SubscribedClients(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient)* return_value);
-	HRESULT add_SubscribedClientsChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SubscribedClientsChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SubscribedClientsChanged(EventRegistrationToken token);
-	HRESULT add_ReadRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic*,Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadRequested(EventRegistrationToken token);
-	HRESULT add_WriteRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic*,Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_WriteRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_WriteRequested(EventRegistrationToken token);
 	HRESULT abi_NotifyValueAsync(Windows.Storage.Streams.IBuffer value, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult))* return_operation);
 	HRESULT abi_NotifyValueForSubscribedClientAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient subscribedClient, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult)* return_operation);
@@ -419,9 +419,9 @@ extern(Windows):
 	HRESULT get_StaticValue(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_ReadProtectionLevel(Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel* return_value);
 	HRESULT get_WriteProtectionLevel(Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel* return_value);
-	HRESULT add_ReadRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor*,Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReadRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor, Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReadRequested(EventRegistrationToken token);
-	HRESULT add_WriteRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor*,Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_WriteRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_WriteRequested(EventRegistrationToken token);
 }
 
@@ -590,7 +590,7 @@ extern(Windows):
 	HRESULT get_Offset(UINT32* return_value);
 	HRESULT get_Length(UINT32* return_value);
 	HRESULT get_State(Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestState* return_value);
-	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequest*,Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestStateChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequest, Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestStateChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StateChanged(EventRegistrationToken token);
 	HRESULT abi_RespondWithValue(Windows.Storage.Streams.IBuffer value);
 	HRESULT abi_RespondWithProtocolError(BYTE protocolError);
@@ -670,7 +670,7 @@ interface IGattServiceProvider : IInspectable
 extern(Windows):
 	HRESULT get_Service(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalService* return_value);
 	HRESULT get_AdvertisementStatus(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatus* return_value);
-	HRESULT add_AdvertisementStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProvider*,Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatusChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AdvertisementStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProvider, Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatusChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AdvertisementStatusChanged(EventRegistrationToken token);
 	HRESULT abi_StartAdvertising();
 	HRESULT abi_StartAdvertisingWithParameters(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisingParameters parameters);
@@ -775,9 +775,9 @@ extern(Windows):
 	HRESULT get_MaintainConnection(bool* return_value);
 	HRESULT get_MaxPduSize(UINT16* return_value);
 	HRESULT get_SessionStatus(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSessionStatus* return_value);
-	HRESULT add_MaxPduSizeChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_MaxPduSizeChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_MaxPduSizeChanged(EventRegistrationToken token);
-	HRESULT add_SessionStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession*,Windows.Devices.Bluetooth.GenericAttributeProfile.GattSessionStatusChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SessionStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession, Windows.Devices.Bluetooth.GenericAttributeProfile.GattSessionStatusChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SessionStatusChanged(EventRegistrationToken token);
 }
 
@@ -811,7 +811,7 @@ interface IGattSubscribedClient : IInspectable
 extern(Windows):
 	HRESULT get_Session(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession* return_value);
 	HRESULT get_MaxNotificationSize(UINT16* return_value);
-	HRESULT add_MaxNotificationSizeChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_MaxNotificationSizeChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_MaxNotificationSizeChanged(EventRegistrationToken token);
 }
 
@@ -837,7 +837,7 @@ extern(Windows):
 	HRESULT get_Offset(UINT32* return_value);
 	HRESULT get_Option(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption* return_value);
 	HRESULT get_State(Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestState* return_value);
-	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequest*,Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestStateChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequest, Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestStateChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StateChanged(EventRegistrationToken token);
 	HRESULT abi_Respond();
 	HRESULT abi_RespondWithProtocolError(BYTE protocolError);

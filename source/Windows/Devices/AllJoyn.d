@@ -13,15 +13,15 @@ extern(Windows):
 	HRESULT set_IsEnabled(bool value);
 	HRESULT get_DefaultAppName(HSTRING* return_value);
 	HRESULT set_DefaultAppName(HSTRING value);
-	HRESULT get_AppNames(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_AppNames(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT get_DateOfManufacture(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
 	HRESULT set_DateOfManufacture(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value);
 	HRESULT get_DefaultDescription(HSTRING* return_value);
 	HRESULT set_DefaultDescription(HSTRING value);
-	HRESULT get_Descriptions(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_Descriptions(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT get_DefaultManufacturer(HSTRING* return_value);
 	HRESULT set_DefaultManufacturer(HSTRING value);
-	HRESULT get_Manufacturers(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_Manufacturers(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT get_ModelNumber(HSTRING* return_value);
 	HRESULT set_ModelNumber(HSTRING value);
 	HRESULT get_SoftwareVersion(HSTRING* return_value);
@@ -40,7 +40,7 @@ interface IAllJoynAboutDataView : IInspectable
 
 extern(Windows):
 	HRESULT get_Status(INT32* return_value);
-	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING,IInspectable*)* return_value);
+	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
 	HRESULT get_AJSoftwareVersion(HSTRING* return_value);
 	HRESULT get_AppId(GUID* return_value);
 	HRESULT get_DateOfManufacture(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
@@ -128,14 +128,14 @@ extern(Windows):
 	HRESULT abi_PingAsync(HSTRING uniqueName, Windows.Foundation.IAsyncOperation!(INT32)* return_operation);
 	HRESULT abi_Connect();
 	HRESULT abi_Disconnect();
-	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment*,Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StateChanged(EventRegistrationToken token);
 	HRESULT get_AuthenticationMechanisms(Windows.Foundation.Collections.IVector!(Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism)* return_value);
-	HRESULT add_CredentialsRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment*,Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_CredentialsRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CredentialsRequested(EventRegistrationToken token);
-	HRESULT add_CredentialsVerificationRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment*,Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_CredentialsVerificationRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CredentialsVerificationRequested(EventRegistrationToken token);
-	HRESULT add_AuthenticationComplete(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment*,Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AuthenticationComplete(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AuthenticationComplete(EventRegistrationToken token);
 }
 
@@ -148,9 +148,9 @@ interface IAllJoynBusAttachment2 : IInspectable
 extern(Windows):
 	HRESULT abi_GetAboutDataAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView)* return_operation);
 	HRESULT abi_GetAboutDataWithLanguageAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Globalization.Language language, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView)* return_operation);
-	HRESULT add_AcceptSessionJoinerRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment*,Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_AcceptSessionJoinerRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AcceptSessionJoinerRequested(EventRegistrationToken token);
-	HRESULT add_SessionJoined(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment*,Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SessionJoined(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SessionJoined(EventRegistrationToken token);
 }
 
@@ -198,7 +198,7 @@ extern(Windows):
 	HRESULT abi_AddProducer(Windows.Devices.AllJoyn.IAllJoynProducer producer);
 	HRESULT get_BusAttachment(Windows.Devices.AllJoyn.AllJoynBusAttachment* return_value);
 	HRESULT get_Session(Windows.Devices.AllJoyn.AllJoynSession* return_value);
-	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusObject*,Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Stopped(EventRegistrationToken token);
 }
 
@@ -391,11 +391,11 @@ extern(Windows):
 	HRESULT get_Id(INT32* return_value);
 	HRESULT get_Status(INT32* return_value);
 	HRESULT abi_RemoveMemberAsync(HSTRING uniqueName, Windows.Foundation.IAsyncOperation!(INT32)* return_operation);
-	HRESULT add_MemberAdded(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession*,Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_MemberAdded(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_MemberAdded(EventRegistrationToken token);
-	HRESULT add_MemberRemoved(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession*,Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_MemberRemoved(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_MemberRemoved(EventRegistrationToken token);
-	HRESULT add_Lost(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession*,Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Lost(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Lost(EventRegistrationToken token);
 }
 

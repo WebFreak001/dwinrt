@@ -2,6 +2,12 @@ module Windows.Graphics.Display;
 
 import dwinrt;
 
+@uuid("dbdd8b01-f1a1-46d1-9ee3-543bcc995980")
+interface DisplayPropertiesEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender);
+}
+
 @uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd")
 @WinrtFactory("Windows.Graphics.Display.BrightnessOverride")
 interface IBrightnessOverride : IInspectable
@@ -17,11 +23,11 @@ extern(Windows):
 	HRESULT abi_GetLevelForScenario(Windows.Graphics.Display.DisplayBrightnessScenario scenario, double* return_brightnessLevel);
 	HRESULT abi_StartOverride();
 	HRESULT abi_StopOverride();
-	HRESULT add_IsSupportedChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_IsSupportedChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_IsSupportedChanged(EventRegistrationToken token);
-	HRESULT add_IsOverrideActiveChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_IsOverrideActiveChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_IsOverrideActiveChanged(EventRegistrationToken token);
-	HRESULT add_BrightnessLevelChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_BrightnessLevelChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_BrightnessLevelChanged(EventRegistrationToken token);
 }
 
@@ -46,19 +52,19 @@ interface IDisplayInformation : IInspectable
 extern(Windows):
 	HRESULT get_CurrentOrientation(Windows.Graphics.Display.DisplayOrientations* return_value);
 	HRESULT get_NativeOrientation(Windows.Graphics.Display.DisplayOrientations* return_value);
-	HRESULT add_OrientationChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_OrientationChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_OrientationChanged(EventRegistrationToken token);
 	HRESULT get_ResolutionScale(Windows.Graphics.Display.ResolutionScale* return_value);
 	HRESULT get_LogicalDpi(FLOAT* return_value);
 	HRESULT get_RawDpiX(FLOAT* return_value);
 	HRESULT get_RawDpiY(FLOAT* return_value);
-	HRESULT add_DpiChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DpiChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DpiChanged(EventRegistrationToken token);
 	HRESULT get_StereoEnabled(bool* return_value);
-	HRESULT add_StereoEnabledChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StereoEnabledChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StereoEnabledChanged(EventRegistrationToken token);
 	HRESULT abi_GetColorProfileAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream)* return_asyncInfo);
-	HRESULT add_ColorProfileChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ColorProfileChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ColorProfileChanged(EventRegistrationToken token);
 }
 
@@ -103,7 +109,7 @@ extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.Graphics.Display.DisplayInformation* return_current);
 	HRESULT get_AutoRotationPreferences(Windows.Graphics.Display.DisplayOrientations* return_value);
 	HRESULT set_AutoRotationPreferences(Windows.Graphics.Display.DisplayOrientations value);
-	HRESULT add_DisplayContentsInvalidated(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_DisplayContentsInvalidated(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DisplayContentsInvalidated(EventRegistrationToken token);
 }
 
@@ -123,7 +129,7 @@ extern(Windows):
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	HRESULT set_AutoRotationPreferences(Windows.Graphics.Display.DisplayOrientations value);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
-	HRESULT add_OrientationChanged(Windows.Graphics.Display.DisplayPropertiesEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_OrientationChanged(Windows.Graphics.Display.DisplayPropertiesEventHandler handler, EventRegistrationToken* return_token);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	HRESULT remove_OrientationChanged(EventRegistrationToken token);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
@@ -131,23 +137,23 @@ extern(Windows):
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	HRESULT get_LogicalDpi(FLOAT* return_value);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
-	HRESULT add_LogicalDpiChanged(Windows.Graphics.Display.DisplayPropertiesEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_LogicalDpiChanged(Windows.Graphics.Display.DisplayPropertiesEventHandler handler, EventRegistrationToken* return_token);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	HRESULT remove_LogicalDpiChanged(EventRegistrationToken token);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	HRESULT get_StereoEnabled(bool* return_value);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
-	HRESULT add_StereoEnabledChanged(Windows.Graphics.Display.DisplayPropertiesEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_StereoEnabledChanged(Windows.Graphics.Display.DisplayPropertiesEventHandler handler, EventRegistrationToken* return_token);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	HRESULT remove_StereoEnabledChanged(EventRegistrationToken token);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	HRESULT abi_GetColorProfileAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream)* return_asyncInfo);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
-	HRESULT add_ColorProfileChanged(Windows.Graphics.Display.DisplayPropertiesEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_ColorProfileChanged(Windows.Graphics.Display.DisplayPropertiesEventHandler handler, EventRegistrationToken* return_token);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	HRESULT remove_ColorProfileChanged(EventRegistrationToken token);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
-	HRESULT add_DisplayContentsInvalidated(Windows.Graphics.Display.DisplayPropertiesEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_DisplayContentsInvalidated(Windows.Graphics.Display.DisplayPropertiesEventHandler handler, EventRegistrationToken* return_token);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	HRESULT remove_DisplayContentsInvalidated(EventRegistrationToken token);
 }

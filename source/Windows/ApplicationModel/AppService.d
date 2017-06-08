@@ -35,9 +35,9 @@ extern(Windows):
 	HRESULT set_PackageFamilyName(HSTRING value);
 	HRESULT abi_OpenAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceConnectionStatus)* return_operation);
 	HRESULT abi_SendMessageAsync(Windows.Foundation.Collections.ValueSet message, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceResponse)* return_operation);
-	HRESULT add_RequestReceived(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection*,Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RequestReceived(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RequestReceived(EventRegistrationToken token);
-	HRESULT add_ServiceClosed(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection*,Windows.ApplicationModel.AppService.AppServiceClosedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ServiceClosed(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ServiceClosed(EventRegistrationToken token);
 }
 

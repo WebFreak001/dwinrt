@@ -15,7 +15,7 @@ extern(Windows):
 	HRESULT set_TrimTimeFromEnd(Windows.Foundation.TimeSpan value);
 	HRESULT get_OriginalDuration(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_TrimmedDuration(Windows.Foundation.TimeSpan* return_value);
-	HRESULT get_UserData(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_UserData(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT set_Delay(Windows.Foundation.TimeSpan value);
 	HRESULT get_Delay(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_Volume(double value);
@@ -59,7 +59,7 @@ extern(Windows):
 	HRESULT set_TrimTimeFromEnd(Windows.Foundation.TimeSpan value);
 	HRESULT get_OriginalDuration(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_TrimmedDuration(Windows.Foundation.TimeSpan* return_value);
-	HRESULT get_UserData(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_UserData(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT abi_Clone(Windows.Media.Editing.MediaClip* return_result);
 	HRESULT get_StartTimeInComposition(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_EndTimeInComposition(Windows.Foundation.TimeSpan* return_value);
@@ -105,14 +105,14 @@ extern(Windows):
 	HRESULT get_Duration(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_Clips(Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaClip)* return_value);
 	HRESULT get_BackgroundAudioTracks(Windows.Foundation.Collections.IVector!(Windows.Media.Editing.BackgroundAudioTrack)* return_value);
-	HRESULT get_UserData(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_UserData(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT abi_Clone(Windows.Media.Editing.MediaComposition* return_result);
 	HRESULT abi_SaveAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_GetThumbnailAsync(Windows.Foundation.TimeSpan timeFromStart, INT32 scaledWidth, INT32 scaledHeight, Windows.Media.Editing.VideoFramePrecision framePrecision, Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.ImageStream)* return_operation);
 	HRESULT abi_GetThumbnailsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.TimeSpan) timesFromStart, INT32 scaledWidth, INT32 scaledHeight, Windows.Media.Editing.VideoFramePrecision framePrecision, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.ImageStream))* return_operation);
-	HRESULT abi_RenderToFileAsync(Windows.Storage.IStorageFile destination, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason,DOUBLE)* return_operation);
-	HRESULT abi_RenderToFileWithTrimmingPreferenceAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason,DOUBLE)* return_operation);
-	HRESULT abi_RenderToFileWithProfileAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference, Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason,DOUBLE)* return_operation);
+	HRESULT abi_RenderToFileAsync(Windows.Storage.IStorageFile destination, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double)* return_operation);
+	HRESULT abi_RenderToFileWithTrimmingPreferenceAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double)* return_operation);
+	HRESULT abi_RenderToFileWithProfileAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference, Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double)* return_operation);
 	HRESULT abi_CreateDefaultEncodingProfile(Windows.Media.MediaProperties.MediaEncodingProfile* return_value);
 	HRESULT abi_GenerateMediaStreamSource(Windows.Media.Core.MediaStreamSource* return_value);
 	HRESULT abi_GenerateMediaStreamSourceWithProfile(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Media.Core.MediaStreamSource* return_value);

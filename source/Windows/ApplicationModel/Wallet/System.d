@@ -23,7 +23,7 @@ interface IWalletItemSystemStore2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ItemsChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_ItemsChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ItemsChanged(EventRegistrationToken cookie);
 }
 

@@ -2,6 +2,42 @@ module Windows.UI.WebUI;
 
 import dwinrt;
 
+@uuid("50f1e730-c5d1-4b6b-9adb-8a11756be29c")
+interface ActivatedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.Activation.IActivatedEventArgs eventArgs);
+}
+
+@uuid("2b09a173-b68e-4def-88c1-8de84e5aab2f")
+interface EnteredBackgroundEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.IEnteredBackgroundEventArgs e);
+}
+
+@uuid("00b4ccd9-7a9c-4b6b-9ac4-13474f268bc4")
+interface LeavingBackgroundEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.ILeavingBackgroundEventArgs e);
+}
+
+@uuid("7af46fe6-40ca-4e49-a7d6-dbdb330cd1a3")
+interface NavigatedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.UI.WebUI.IWebUINavigatedEventArgs e);
+}
+
+@uuid("26599ba9-a22d-4806-a728-acadc1d075fa")
+interface ResumingEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender);
+}
+
+@uuid("509c429c-78e2-4883-abc8-8960dcde1b5c")
+interface SuspendingEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.ISuspendingEventArgs e);
+}
+
 @uuid("c3bd1978-a431-49d8-a76a-395a4e03dcf3")
 @WinrtFactory("Windows.UI.WebUI.ActivatedDeferral")
 interface IActivatedDeferral : IInspectable
@@ -65,13 +101,13 @@ interface IWebUIActivationStatics : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_Activated(Windows.UI.WebUI.ActivatedEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_Activated(Windows.UI.WebUI.ActivatedEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_Activated(EventRegistrationToken token);
-	HRESULT add_Suspending(Windows.UI.WebUI.SuspendingEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_Suspending(Windows.UI.WebUI.SuspendingEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_Suspending(EventRegistrationToken token);
-	HRESULT add_Resuming(Windows.UI.WebUI.ResumingEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_Resuming(Windows.UI.WebUI.ResumingEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_Resuming(EventRegistrationToken token);
-	HRESULT add_Navigated(Windows.UI.WebUI.NavigatedEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_Navigated(Windows.UI.WebUI.NavigatedEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_Navigated(EventRegistrationToken token);
 }
 
@@ -82,9 +118,9 @@ interface IWebUIActivationStatics2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_LeavingBackground(Windows.UI.WebUI.LeavingBackgroundEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_LeavingBackground(Windows.UI.WebUI.LeavingBackgroundEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_LeavingBackground(EventRegistrationToken token);
-	HRESULT add_EnteredBackground(Windows.UI.WebUI.EnteredBackgroundEventHandler* handler, EventRegistrationToken* return_token);
+	HRESULT add_EnteredBackground(Windows.UI.WebUI.EnteredBackgroundEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_EnteredBackground(EventRegistrationToken token);
 	HRESULT abi_EnablePrelaunch(bool value);
 }

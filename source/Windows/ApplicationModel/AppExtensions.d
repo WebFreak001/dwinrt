@@ -27,15 +27,15 @@ interface IAppExtensionCatalog : IInspectable
 extern(Windows):
 	HRESULT abi_FindAllAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension))* return_operation);
 	HRESULT abi_RequestRemovePackageAsync(HSTRING packageFullName, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT add_PackageInstalled(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog*,Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PackageInstalled(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PackageInstalled(EventRegistrationToken token);
-	HRESULT add_PackageUpdating(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog*,Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PackageUpdating(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PackageUpdating(EventRegistrationToken token);
-	HRESULT add_PackageUpdated(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog*,Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PackageUpdated(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PackageUpdated(EventRegistrationToken token);
-	HRESULT add_PackageUninstalling(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog*,Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PackageUninstalling(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PackageUninstalling(EventRegistrationToken token);
-	HRESULT add_PackageStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog*,Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PackageStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PackageStatusChanged(EventRegistrationToken token);
 }
 

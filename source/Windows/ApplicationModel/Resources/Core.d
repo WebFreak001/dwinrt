@@ -2,6 +2,15 @@ module Windows.ApplicationModel.Resources.Core;
 
 import dwinrt;
 
+struct ResourceLayoutInfo
+{
+	UINT32 MajorVersion;
+	UINT32 MinorVersion;
+	UINT32 ResourceSubtreeCount;
+	UINT32 NamedResourceCount;
+	INT32 Checksum;
+}
+
 @uuid("1c98c219-0b13-4240-89a5-d495dc189a00")
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.NamedResource")
 interface INamedResource : IInspectable
@@ -52,7 +61,7 @@ interface IResourceContext : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_QualifierValues(Windows.Foundation.Collections.IObservableMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_QualifierValues(Windows.Foundation.Collections.IObservableMap!(HSTRING, HSTRING)* return_value);
 	HRESULT abi_Reset();
 	HRESULT abi_ResetQualifierValues(Windows.Foundation.Collections.IIterable!(HSTRING) qualifierNames);
 	HRESULT abi_OverrideToMatch(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Resources.Core.ResourceQualifier) result);
@@ -104,7 +113,7 @@ interface IResourceManager : IInspectable
 
 extern(Windows):
 	HRESULT get_MainResourceMap(Windows.ApplicationModel.Resources.Core.ResourceMap* return_value);
-	HRESULT get_AllResourceMaps(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.ApplicationModel.Resources.Core.ResourceMap*)* return_maps);
+	HRESULT get_AllResourceMaps(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap)* return_maps);
 	deprecated("DefaultContext may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use ResourceContext.GetForCurrentView.")
 	HRESULT get_DefaultContext(Windows.ApplicationModel.Resources.Core.ResourceContext* return_value);
 	HRESULT abi_LoadPriFiles(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageFile) files);

@@ -2,6 +2,18 @@ module Windows.ApplicationModel.DataTransfer;
 
 import dwinrt;
 
+@uuid("e7ecd720-f2f4-4a2d-920e-170a2f482a27")
+interface DataProviderHandler
+{
+	HRESULT abi_Invoke(Windows.ApplicationModel.DataTransfer.DataProviderRequest request);
+}
+
+@uuid("e7f9d9ba-e1ba-4e4d-bd65-d43845d3212f")
+interface ShareProviderHandler
+{
+	HRESULT abi_Invoke(Windows.ApplicationModel.DataTransfer.ShareProviderOperation operation);
+}
+
 @uuid("c627e291-34e2-4963-8eed-93cbb0ea3d70")
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.Clipboard")
 interface IClipboardStatics : IInspectable
@@ -28,17 +40,17 @@ extern(Windows):
 	HRESULT get_Properties(Windows.ApplicationModel.DataTransfer.DataPackagePropertySet* return_value);
 	HRESULT get_RequestedOperation(Windows.ApplicationModel.DataTransfer.DataPackageOperation* return_value);
 	HRESULT set_RequestedOperation(Windows.ApplicationModel.DataTransfer.DataPackageOperation value);
-	HRESULT add_OperationCompleted(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage*,Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs*) handler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_OperationCompleted(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs) handler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_OperationCompleted(EventRegistrationToken eventCookie);
-	HRESULT add_Destroyed(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage*,IInspectable*) handler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_Destroyed(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage, IInspectable) handler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_Destroyed(EventRegistrationToken eventCookie);
 	HRESULT abi_SetData(HSTRING formatId, IInspectable value);
-	HRESULT abi_SetDataProvider(HSTRING formatId, Windows.ApplicationModel.DataTransfer.DataProviderHandler* delayRenderer);
+	HRESULT abi_SetDataProvider(HSTRING formatId, Windows.ApplicationModel.DataTransfer.DataProviderHandler delayRenderer);
 	HRESULT abi_SetText(HSTRING value);
 	deprecated("SetUri may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use SetWebLink or SetApplicationLink.")
 	HRESULT abi_SetUri(Windows.Foundation.Uri value);
 	HRESULT abi_SetHtmlFormat(HSTRING value);
-	HRESULT get_ResourceMap(Windows.Foundation.Collections.IMap!(HSTRING,Windows.Storage.Streams.RandomAccessStreamReference*)* return_value);
+	HRESULT get_ResourceMap(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Storage.Streams.RandomAccessStreamReference)* return_value);
 	HRESULT abi_SetRtf(HSTRING value);
 	HRESULT abi_SetBitmap(Windows.Storage.Streams.RandomAccessStreamReference value);
 	HRESULT abi_SetStorageItemsReadOnly(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) value);
@@ -63,7 +75,7 @@ interface IDataPackage3 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ShareCompleted(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage*,Windows.ApplicationModel.DataTransfer.ShareCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ShareCompleted(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.ShareCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ShareCompleted(EventRegistrationToken token);
 }
 
@@ -174,7 +186,7 @@ extern(Windows):
 	deprecated("GetUriAsync may be altered or unavailable for releases after Windows 8.1. Instead, use GetWebLinkAsync or GetApplicationLinkAsync.")
 	HRESULT abi_GetUriAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Uri)* return_operation);
 	HRESULT abi_GetHtmlFormatAsync(Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
-	HRESULT abi_GetResourceMapAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.Storage.Streams.RandomAccessStreamReference*))* return_operation);
+	HRESULT abi_GetResourceMapAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Storage.Streams.RandomAccessStreamReference))* return_operation);
 	HRESULT abi_GetRtfAsync(Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
 	HRESULT abi_GetBitmapAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.RandomAccessStreamReference)* return_operation);
 	HRESULT abi_GetStorageItemsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem))* return_operation);
@@ -277,9 +289,9 @@ interface IDataTransferManager : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_DataRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager*,Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_DataRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_DataRequested(EventRegistrationToken eventCookie);
-	HRESULT add_TargetApplicationChosen(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager*,Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_TargetApplicationChosen(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_TargetApplicationChosen(EventRegistrationToken eventCookie);
 }
 
@@ -290,7 +302,7 @@ interface IDataTransferManager2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ShareProvidersRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager*,Windows.ApplicationModel.DataTransfer.ShareProvidersRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ShareProvidersRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.ShareProvidersRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ShareProvidersRequested(EventRegistrationToken token);
 }
 
@@ -377,7 +389,7 @@ interface IShareProviderFactory : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_Create(HSTRING title, Windows.Storage.Streams.RandomAccessStreamReference displayIcon, Windows.UI.Color backgroundColor, Windows.ApplicationModel.DataTransfer.ShareProviderHandler* handler, Windows.ApplicationModel.DataTransfer.ShareProvider* return_result);
+	HRESULT abi_Create(HSTRING title, Windows.Storage.Streams.RandomAccessStreamReference displayIcon, Windows.UI.Color backgroundColor, Windows.ApplicationModel.DataTransfer.ShareProviderHandler handler, Windows.ApplicationModel.DataTransfer.ShareProvider* return_result);
 }
 
 @uuid("19cef937-d435-4179-b6af-14e0492b69f6")

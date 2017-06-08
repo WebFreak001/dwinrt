@@ -2,6 +2,27 @@ module Windows.Devices.Sms;
 
 import dwinrt;
 
+struct SmsEncodedLength
+{
+	UINT32 SegmentCount;
+	UINT32 CharacterCountLastSegment;
+	UINT32 CharactersPerSegment;
+	UINT32 ByteCountLastSegment;
+	UINT32 BytesPerSegment;
+}
+
+@uuid("982b1162-3dd7-4618-af89-0c272d5d06d8")
+interface SmsDeviceStatusChangedEventHandler
+{
+	HRESULT abi_Invoke(Windows.Devices.Sms.SmsDevice sender);
+}
+
+@uuid("0b7ad409-ec2d-47ce-a253-732beeebcacd")
+interface SmsMessageReceivedEventHandler
+{
+	HRESULT abi_Invoke(Windows.Devices.Sms.SmsDevice sender, Windows.Devices.Sms.SmsMessageReceivedEventArgs e);
+}
+
 @uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54")
 @WinrtFactory("Windows.Devices.Sms.SmsAppMessage")
 interface ISmsAppMessage : IInspectable
@@ -87,11 +108,11 @@ extern(Windows):
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	HRESULT get_DeviceStatus(Windows.Devices.Sms.SmsDeviceStatus* return_value);
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
-	HRESULT add_SmsMessageReceived(Windows.Devices.Sms.SmsMessageReceivedEventHandler* eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_SmsMessageReceived(Windows.Devices.Sms.SmsMessageReceivedEventHandler eventHandler, EventRegistrationToken* return_eventCookie);
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	HRESULT remove_SmsMessageReceived(EventRegistrationToken eventCookie);
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
-	HRESULT add_SmsDeviceStatusChanged(Windows.Devices.Sms.SmsDeviceStatusChangedEventHandler* eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_SmsDeviceStatusChanged(Windows.Devices.Sms.SmsDeviceStatusChangedEventHandler eventHandler, EventRegistrationToken* return_eventCookie);
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	HRESULT remove_SmsDeviceStatusChanged(EventRegistrationToken eventCookie);
 }
@@ -112,7 +133,7 @@ extern(Windows):
 	HRESULT get_DeviceStatus(Windows.Devices.Sms.SmsDeviceStatus* return_value);
 	HRESULT abi_CalculateLength(Windows.Devices.Sms.ISmsMessageBase message, Windows.Devices.Sms.SmsEncodedLength* return_value);
 	HRESULT abi_SendMessageAndGetResultAsync(Windows.Devices.Sms.ISmsMessageBase message, Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsSendMessageResult)* return_asyncInfo);
-	HRESULT add_DeviceStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsDevice2*,IInspectable*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_DeviceStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsDevice2, IInspectable) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_DeviceStatusChanged(EventRegistrationToken eventCookie);
 }
 
@@ -143,7 +164,7 @@ extern(Windows):
 	deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
 	HRESULT abi_GetMessageAsync(UINT32 messageId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage)* return_asyncInfo);
 	deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
-	HRESULT abi_GetMessagesAsync(Windows.Devices.Sms.SmsMessageFilter messageFilter, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage)*,INT32)* return_asyncInfo);
+	HRESULT abi_GetMessagesAsync(Windows.Devices.Sms.SmsMessageFilter messageFilter, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32)* return_asyncInfo);
 	deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_MaxMessages(UINT32* return_value);
 }
@@ -291,7 +312,7 @@ interface ISmsMessageRegistration : IInspectable
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT abi_Unregister();
-	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsMessageRegistration*,Windows.Devices.Sms.SmsMessageReceivedTriggerDetails*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_MessageReceived(EventRegistrationToken eventCookie);
 }
 
@@ -462,7 +483,7 @@ extern(Windows):
 	HRESULT get_ApplicationId(HSTRING* return_value);
 	HRESULT get_ContentType(HSTRING* return_value);
 	HRESULT get_BinaryBody(Windows.Storage.Streams.IBuffer* return_value);
-	HRESULT get_Headers(Windows.Foundation.Collections.IMap!(HSTRING,HSTRING)* return_value);
+	HRESULT get_Headers(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 }
 
 interface DeleteSmsMessageOperation

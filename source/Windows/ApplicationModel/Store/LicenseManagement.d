@@ -46,7 +46,7 @@ interface ILicenseSatisfactionResult : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_LicenseSatisfactionInfos(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo*)* return_value);
+	HRESULT get_LicenseSatisfactionInfos(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo)* return_value);
 	HRESULT get_ExtendedError(HRESULT* return_value);
 }
 

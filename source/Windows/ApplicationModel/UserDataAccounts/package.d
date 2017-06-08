@@ -119,7 +119,7 @@ interface IUserDataAccountStore2 : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateAccountWithPackageRelativeAppIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount)* return_result);
-	HRESULT add_StoreChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore*,Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_StoreChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StoreChanged(EventRegistrationToken token);
 }
 

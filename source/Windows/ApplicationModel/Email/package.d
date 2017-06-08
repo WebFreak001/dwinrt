@@ -270,7 +270,7 @@ extern(Windows):
 	HRESULT abi_TryUpdateMeetingResponseAsync(Windows.ApplicationModel.Email.EmailMessage meeting, Windows.ApplicationModel.Email.EmailMeetingResponseType response, HSTRING subject, HSTRING comment, bool sendUpdate, Windows.Foundation.IAsyncOperation!(bool)* return_result);
 	HRESULT abi_TryForwardMeetingAsync(Windows.ApplicationModel.Email.EmailMessage meeting, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Email.EmailRecipient) recipients, HSTRING subject, Windows.ApplicationModel.Email.EmailMessageBodyKind forwardHeaderType, HSTRING forwardHeader, HSTRING comment, Windows.Foundation.IAsyncOperation!(bool)* return_result);
 	HRESULT abi_TryProposeNewTimeForMeetingAsync(Windows.ApplicationModel.Email.EmailMessage meeting, Windows.Foundation.DateTime newStartTime, Windows.Foundation.TimeSpan newDuration, HSTRING subject, HSTRING comment, Windows.Foundation.IAsyncOperation!(bool)* return_result);
-	HRESULT add_MailboxChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.EmailMailbox*,Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs*) pHandler, EventRegistrationToken* return_pToken);
+	HRESULT add_MailboxChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.EmailMailbox, Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs) pHandler, EventRegistrationToken* return_pToken);
 	HRESULT remove_MailboxChanged(EventRegistrationToken token);
 	HRESULT abi_SmartSendMessageAsync(Windows.ApplicationModel.Email.EmailMessage message, bool smartSend, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_TrySetAutoReplySettingsAsync(Windows.ApplicationModel.Email.EmailMailboxAutoReplySettings autoReplySettings, Windows.Foundation.IAsyncOperation!(bool)* return_result);
@@ -531,7 +531,7 @@ extern(Windows):
 	HRESULT get_LastSuccessfulSyncTime(Windows.Foundation.DateTime* return_value);
 	HRESULT get_LastAttemptedSyncTime(Windows.Foundation.DateTime* return_value);
 	HRESULT abi_SyncAsync(Windows.Foundation.IAsyncOperation!(bool)* return_result);
-	HRESULT add_SyncStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.EmailMailboxSyncManager*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SyncStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.EmailMailboxSyncManager, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SyncStatusChanged(EventRegistrationToken token);
 }
 

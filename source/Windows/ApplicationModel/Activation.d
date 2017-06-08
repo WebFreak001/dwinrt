@@ -482,7 +482,7 @@ interface ISplashScreen : IInspectable
 
 extern(Windows):
 	HRESULT get_ImageLocation(Windows.Foundation.Rect* return_value);
-	HRESULT add_Dismissed(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Activation.SplashScreen*,IInspectable*) handler, EventRegistrationToken* return_cookie);
+	HRESULT add_Dismissed(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Activation.SplashScreen, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Dismissed(EventRegistrationToken cookie);
 }
 

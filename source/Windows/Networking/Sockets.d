@@ -2,6 +2,24 @@ module Windows.Networking.Sockets;
 
 import dwinrt;
 
+struct BandwidthStatistics
+{
+	UINT64 OutboundBitsPerSecond;
+	UINT64 InboundBitsPerSecond;
+	UINT64 OutboundBitsPerSecondInstability;
+	UINT64 InboundBitsPerSecondInstability;
+	bool OutboundBandwidthPeaked;
+	bool InboundBandwidthPeaked;
+}
+
+struct RoundTripTimeStatistics
+{
+	UINT32 Variance;
+	UINT32 Max;
+	UINT32 Min;
+	UINT32 Sum;
+}
+
 @uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3")
 @WinrtFactory("Windows.Networking.Sockets.ControlChannelTrigger")
 interface IControlChannelTrigger : IInspectable
@@ -80,7 +98,7 @@ extern(Windows):
 	HRESULT abi_JoinMulticastGroup(Windows.Networking.HostName host);
 	HRESULT abi_GetOutputStreamAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IOutputStream)* return_value);
 	HRESULT abi_GetOutputStreamWithEndpointPairAsync(Windows.Networking.EndpointPair endpointPair, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IOutputStream)* return_value);
-	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.DatagramSocket*,Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_MessageReceived(EventRegistrationToken eventCookie);
 }
 
@@ -193,7 +211,7 @@ interface IMessageWebSocket : IInspectable
 extern(Windows):
 	HRESULT get_Control(Windows.Networking.Sockets.MessageWebSocketControl* return_value);
 	HRESULT get_Information(Windows.Networking.Sockets.MessageWebSocketInformation* return_value);
-	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket*,Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_MessageReceived(EventRegistrationToken eventCookie);
 }
 
@@ -204,7 +222,7 @@ interface IMessageWebSocket2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket*,Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ServerCustomValidationRequested(EventRegistrationToken eventCookie);
 }
 
@@ -276,7 +294,7 @@ interface ISocketActivityInformationStatics : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_AllSockets(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.Networking.Sockets.SocketActivityInformation*)* return_sockets);
+	HRESULT get_AllSockets(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Networking.Sockets.SocketActivityInformation)* return_sockets);
 }
 
 @uuid("45f406a7-fc9f-4f81-acad-355fef51e67b")
@@ -428,7 +446,7 @@ extern(Windows):
 	HRESULT get_Information(Windows.Networking.Sockets.StreamSocketListenerInformation* return_value);
 	HRESULT abi_BindServiceNameAsync(HSTRING localServiceName, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_BindEndpointAsync(Windows.Networking.HostName localHostName, HSTRING localServiceName, Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT add_ConnectionReceived(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamSocketListener*,Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_ConnectionReceived(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ConnectionReceived(EventRegistrationToken eventCookie);
 }
 
@@ -535,7 +553,7 @@ interface IStreamWebSocket2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamWebSocket*,Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ServerCustomValidationRequested(EventRegistrationToken eventCookie);
 }
 
@@ -559,7 +577,7 @@ extern(Windows):
 	HRESULT get_OutputStream(Windows.Storage.Streams.IOutputStream* return_value);
 	HRESULT abi_ConnectAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_SetRequestHeader(HSTRING headerName, HSTRING headerValue);
-	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.IWebSocket*,Windows.Networking.Sockets.WebSocketClosedEventArgs*) eventHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_Closed(EventRegistrationToken eventCookie);
 	HRESULT abi_CloseWithStatus(UINT16 code, HSTRING reason);
 }

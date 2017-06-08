@@ -103,7 +103,7 @@ extern(Windows):
 	HRESULT get_Status(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncStatus* return_value);
 	HRESULT set_Status(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncStatus value);
 	HRESULT abi_SyncAsync(Windows.Foundation.IAsyncOperation!(bool)* return_result);
-	HRESULT add_SyncStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_SyncStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SyncStatusChanged(EventRegistrationToken token);
 }
 

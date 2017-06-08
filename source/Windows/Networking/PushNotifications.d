@@ -12,7 +12,7 @@ extern(Windows):
 	HRESULT get_Uri(HSTRING* return_value);
 	HRESULT get_ExpirationTime(Windows.Foundation.DateTime* return_value);
 	HRESULT abi_Close();
-	HRESULT add_PushNotificationReceived(Windows.Foundation.TypedEventHandler!(Windows.Networking.PushNotifications.PushNotificationChannel*,Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PushNotificationReceived(Windows.Foundation.TypedEventHandler!(Windows.Networking.PushNotifications.PushNotificationChannel, Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PushNotificationReceived(EventRegistrationToken token);
 }
 
@@ -105,7 +105,7 @@ interface IRawNotification2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_Headers(Windows.Foundation.Collections.IMapView!(HSTRING,HSTRING)* return_value);
+	HRESULT get_Headers(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING)* return_value);
 	HRESULT get_ChannelId(HSTRING* return_value);
 }
 

@@ -120,8 +120,8 @@ interface IStorageItemExtraProperties : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT abi_RetrievePropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING,IInspectable*))* return_operation);
-	HRESULT abi_SavePropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING,IInspectable*)) propertiesToSave, Windows.Foundation.IAsyncAction* return_operation);
+	HRESULT abi_RetrievePropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))* return_operation);
+	HRESULT abi_SavePropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)) propertiesToSave, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_SavePropertiesAsyncOverloadDefault(Windows.Foundation.IAsyncAction* return_operation);
 }
 

@@ -25,9 +25,9 @@ extern(Windows):
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_StopAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_FinishAsync(Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT add_PhotoCaptured(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture*,Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PhotoCaptured(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PhotoCaptured(EventRegistrationToken token);
-	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Stopped(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Stopped(EventRegistrationToken token);
 }
 

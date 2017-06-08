@@ -52,7 +52,7 @@ interface IMidiInPort : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.Midi.MidiInPort*,Windows.Devices.Midi.MidiMessageReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_MessageReceived(EventRegistrationToken token);
 	HRESULT get_DeviceId(HSTRING* return_value);
 }

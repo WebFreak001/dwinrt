@@ -2,6 +2,22 @@ module Windows.Graphics.Display.Core;
 
 import dwinrt;
 
+struct HdmiDisplayHdr2086Metadata
+{
+	UINT16 RedPrimaryX;
+	UINT16 RedPrimaryY;
+	UINT16 GreenPrimaryX;
+	UINT16 GreenPrimaryY;
+	UINT16 BluePrimaryX;
+	UINT16 BluePrimaryY;
+	UINT16 WhitePointX;
+	UINT16 WhitePointY;
+	UINT16 MaxMasteringLuminance;
+	UINT16 MinMasteringLuminance;
+	UINT16 MaxContentLightLevel;
+	UINT16 MaxFrameAverageLightLevel;
+}
+
 @uuid("130b3c0a-f565-476e-abd5-ea05aee74c69")
 @WinrtFactory("Windows.Graphics.Display.Core.HdmiDisplayInformation")
 interface IHdmiDisplayInformation : IInspectable
@@ -15,7 +31,7 @@ extern(Windows):
 	HRESULT abi_RequestSetCurrentDisplayModeAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_RequestSetCurrentDisplayModeWithHdrAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_RequestSetCurrentDisplayModeWithHdrAndMetadataAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption, Windows.Graphics.Display.Core.HdmiDisplayHdr2086Metadata hdrMetadata, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT add_DisplayModesChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.Core.HdmiDisplayInformation*,IInspectable*) value, EventRegistrationToken* return_token);
+	HRESULT add_DisplayModesChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.Core.HdmiDisplayInformation, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_DisplayModesChanged(EventRegistrationToken token);
 }
 

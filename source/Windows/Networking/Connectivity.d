@@ -2,6 +2,18 @@ module Windows.Networking.Connectivity;
 
 import dwinrt;
 
+struct NetworkUsageStates
+{
+	Windows.Networking.Connectivity.TriStates Roaming;
+	Windows.Networking.Connectivity.TriStates Shared;
+}
+
+@uuid("71ba143f-598e-49d0-84eb-8febaedcc195")
+interface NetworkStatusChangedEventHandler
+{
+	HRESULT abi_Invoke(IInspectable sender);
+}
+
 @uuid("f769b039-eca2-45eb-ade1-b0368b756c49")
 @WinrtFactory("Windows.Networking.Connectivity.AttributedNetworkUsage")
 interface IAttributedNetworkUsage : IInspectable
@@ -277,7 +289,7 @@ extern(Windows):
 	HRESULT abi_GetHostNames(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName)* return_value);
 	HRESULT abi_GetProxyConfigurationAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.Networking.Connectivity.ProxyConfiguration)* return_value);
 	HRESULT abi_GetSortedEndpointPairs(Windows.Foundation.Collections.IIterable!(Windows.Networking.EndpointPair) destinationList, Windows.Networking.HostNameSortOptions sortOptions, Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)* return_value);
-	HRESULT add_NetworkStatusChanged(Windows.Networking.Connectivity.NetworkStatusChangedEventHandler* networkStatusHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_NetworkStatusChanged(Windows.Networking.Connectivity.NetworkStatusChangedEventHandler networkStatusHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_NetworkStatusChanged(EventRegistrationToken eventCookie);
 }
 

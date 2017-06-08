@@ -2,6 +2,16 @@ module Windows.Services.Store;
 
 import dwinrt;
 
+struct StorePackageUpdateStatus
+{
+	HSTRING PackageFamilyName;
+	UINT64 PackageDownloadSizeInBytes;
+	UINT64 PackageBytesDownloaded;
+	double PackageDownloadProgress;
+	double TotalDownloadProgress;
+	Windows.Services.Store.StorePackageUpdateState PackageUpdateState;
+}
+
 @uuid("fbd7946d-f040-4cb3-9a39-29bcecdbe22d")
 @WinrtFactory("Windows.Services.Store.StoreAcquireLicenseResult")
 interface IStoreAcquireLicenseResult : IInspectable
@@ -25,7 +35,7 @@ extern(Windows):
 	HRESULT get_IsTrial(bool* return_value);
 	HRESULT get_ExpirationDate(Windows.Foundation.DateTime* return_value);
 	HRESULT get_ExtendedJsonData(HSTRING* return_value);
-	HRESULT get_AddOnLicenses(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.Services.Store.StoreLicense*)* return_value);
+	HRESULT get_AddOnLicenses(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Services.Store.StoreLicense)* return_value);
 	HRESULT get_TrialTimeRemaining(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_IsTrialOwnedByThisUser(bool* return_value);
 	HRESULT get_TrialUniqueId(HSTRING* return_value);
@@ -84,7 +94,7 @@ interface IStoreContext : IInspectable
 
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_value);
-	HRESULT add_OfflineLicensesChanged(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StoreContext*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_OfflineLicensesChanged(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StoreContext, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_OfflineLicensesChanged(EventRegistrationToken token);
 	HRESULT abi_GetCustomerPurchaseIdAsync(HSTRING serviceTicket, HSTRING publisherUserId, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
 	HRESULT abi_GetCustomerCollectionsIdAsync(HSTRING serviceTicket, HSTRING publisherUserId, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
@@ -101,9 +111,9 @@ extern(Windows):
 	HRESULT abi_RequestPurchaseAsync(HSTRING storeId, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
 	HRESULT abi_RequestPurchaseWithPurchasePropertiesAsync(HSTRING storeId, Windows.Services.Store.StorePurchaseProperties storePurchaseProperties, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
 	HRESULT abi_GetAppAndOptionalStorePackageUpdatesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Services.Store.StorePackageUpdate))* return_operation);
-	HRESULT abi_RequestDownloadStorePackageUpdatesAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Store.StorePackageUpdate) storePackageUpdates, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Services.Store.StorePackageUpdateResult*,Windows.Services.Store.StorePackageUpdateStatus)* return_operation);
-	HRESULT abi_RequestDownloadAndInstallStorePackageUpdatesAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Store.StorePackageUpdate) storePackageUpdates, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Services.Store.StorePackageUpdateResult*,Windows.Services.Store.StorePackageUpdateStatus)* return_operation);
-	HRESULT abi_RequestDownloadAndInstallStorePackagesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) storeIds, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Services.Store.StorePackageUpdateResult*,Windows.Services.Store.StorePackageUpdateStatus)* return_operation);
+	HRESULT abi_RequestDownloadStorePackageUpdatesAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Store.StorePackageUpdate) storePackageUpdates, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Services.Store.StorePackageUpdateResult, Windows.Services.Store.StorePackageUpdateStatus)* return_operation);
+	HRESULT abi_RequestDownloadAndInstallStorePackageUpdatesAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Store.StorePackageUpdate) storePackageUpdates, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Services.Store.StorePackageUpdateResult, Windows.Services.Store.StorePackageUpdateStatus)* return_operation);
+	HRESULT abi_RequestDownloadAndInstallStorePackagesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) storeIds, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Services.Store.StorePackageUpdateResult, Windows.Services.Store.StorePackageUpdateStatus)* return_operation);
 }
 
 @uuid("18bc54da-7bd9-452c-9116-3bbd06ffc63a")
@@ -162,7 +172,7 @@ interface IStorePackageLicense : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_LicenseLost(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StorePackageLicense*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_LicenseLost(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StorePackageLicense, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_LicenseLost(EventRegistrationToken token);
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
 	HRESULT get_IsValid(bool* return_value);
@@ -240,7 +250,7 @@ interface IStoreProductPagedQueryResult : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_Products(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.Services.Store.StoreProduct*)* return_value);
+	HRESULT get_Products(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Services.Store.StoreProduct)* return_value);
 	HRESULT get_HasMoreResults(bool* return_value);
 	HRESULT get_ExtendedError(HRESULT* return_value);
 	HRESULT abi_GetNextAsync(Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreProductPagedQueryResult)* return_operation);
@@ -253,7 +263,7 @@ interface IStoreProductQueryResult : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT get_Products(Windows.Foundation.Collections.IMapView!(HSTRING,Windows.Services.Store.StoreProduct*)* return_value);
+	HRESULT get_Products(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Services.Store.StoreProduct)* return_value);
 	HRESULT get_ExtendedError(HRESULT* return_value);
 }
 

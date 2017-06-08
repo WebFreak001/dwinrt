@@ -10,23 +10,23 @@ interface INDClient : IInspectable
 
 extern(Windows):
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT add_RegistrationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient*,Windows.Media.Protection.PlayReady.INDRegistrationCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_RegistrationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDRegistrationCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT remove_RegistrationCompleted(EventRegistrationToken token);
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT add_ProximityDetectionCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient*,Windows.Media.Protection.PlayReady.INDProximityDetectionCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ProximityDetectionCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDProximityDetectionCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT remove_ProximityDetectionCompleted(EventRegistrationToken token);
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT add_LicenseFetchCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient*,Windows.Media.Protection.PlayReady.INDLicenseFetchCompletedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_LicenseFetchCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDLicenseFetchCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT remove_LicenseFetchCompleted(EventRegistrationToken token);
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT add_ReRegistrationNeeded(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ReRegistrationNeeded(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, IInspectable) handler, EventRegistrationToken* return_token);
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT remove_ReRegistrationNeeded(EventRegistrationToken token);
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT add_ClosedCaptionDataReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient*,Windows.Media.Protection.PlayReady.INDClosedCaptionDataReceivedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_ClosedCaptionDataReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDClosedCaptionDataReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT remove_ClosedCaptionDataReceived(EventRegistrationToken token);
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")

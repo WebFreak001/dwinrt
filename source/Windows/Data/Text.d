@@ -2,6 +2,24 @@ module Windows.Data.Text;
 
 import dwinrt;
 
+struct TextSegment
+{
+	UINT32 StartPosition;
+	UINT32 Length;
+}
+
+@uuid("3a3dfc9c-aede-4dc7-9e6c-41c044bd3592")
+interface SelectableWordSegmentsTokenizingHandler
+{
+	HRESULT abi_Invoke(Windows.Foundation.Collections.IIterable!(Windows.Data.Text.SelectableWordSegment) precedingWords, Windows.Foundation.Collections.IIterable!(Windows.Data.Text.SelectableWordSegment) words);
+}
+
+@uuid("a5dd6357-bf2a-4c4f-a31f-29e71c6f8b35")
+interface WordSegmentsTokenizingHandler
+{
+	HRESULT abi_Invoke(Windows.Foundation.Collections.IIterable!(Windows.Data.Text.WordSegment) precedingWords, Windows.Foundation.Collections.IIterable!(Windows.Data.Text.WordSegment) words);
+}
+
 @uuid("47396c1e-51b9-4207-9146-248e636a1d1d")
 @WinrtFactory("Windows.Data.Text.AlternateWordForm")
 interface IAlternateWordForm : IInspectable
@@ -35,7 +53,7 @@ extern(Windows):
 	HRESULT get_ResolvedLanguage(HSTRING* return_value);
 	HRESULT abi_GetTokenAt(HSTRING text, UINT32 startIndex, Windows.Data.Text.SelectableWordSegment* return_result);
 	HRESULT abi_GetTokens(HSTRING text, Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.SelectableWordSegment)* return_result);
-	HRESULT abi_Tokenize(HSTRING text, UINT32 startIndex, Windows.Data.Text.SelectableWordSegmentsTokenizingHandler* handler);
+	HRESULT abi_Tokenize(HSTRING text, UINT32 startIndex, Windows.Data.Text.SelectableWordSegmentsTokenizingHandler handler);
 }
 
 @uuid("8c7a7648-6057-4339-bc70-f210010a4150")
@@ -207,7 +225,7 @@ extern(Windows):
 	HRESULT get_ResolvedLanguage(HSTRING* return_value);
 	HRESULT abi_GetTokenAt(HSTRING text, UINT32 startIndex, Windows.Data.Text.WordSegment* return_result);
 	HRESULT abi_GetTokens(HSTRING text, Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.WordSegment)* return_result);
-	HRESULT abi_Tokenize(HSTRING text, UINT32 startIndex, Windows.Data.Text.WordSegmentsTokenizingHandler* handler);
+	HRESULT abi_Tokenize(HSTRING text, UINT32 startIndex, Windows.Data.Text.WordSegmentsTokenizingHandler handler);
 }
 
 @uuid("e6977274-fc35-455c-8bfb-6d7f4653ca97")

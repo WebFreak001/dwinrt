@@ -21,7 +21,7 @@ interface IExtendedExecutionForegroundSession : IInspectable
 extern(Windows):
 	HRESULT get_Description(HSTRING* return_value);
 	HRESULT set_Description(HSTRING value);
-	HRESULT add_Revoked(Windows.Foundation.TypedEventHandler!(IInspectable*,Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Revoked(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Revoked(EventRegistrationToken token);
 	HRESULT abi_RequestExtensionAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundResult)* return_operation);
 	HRESULT get_Reason(Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundReason* return_value);

@@ -45,9 +45,9 @@ extern(Windows):
 	HRESULT get_DocumentProperties(Windows.Storage.FileProperties.DocumentProperties* return_value);
 	HRESULT get_BasicProperties(Windows.Storage.FileProperties.BasicProperties* return_value);
 	HRESULT get_Thumbnail(Windows.Storage.FileProperties.StorageItemThumbnail* return_value);
-	HRESULT add_ThumbnailUpdated(Windows.Foundation.TypedEventHandler!(Windows.Storage.BulkAccess.IStorageItemInformation*,IInspectable*) changedHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_ThumbnailUpdated(Windows.Foundation.TypedEventHandler!(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable) changedHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ThumbnailUpdated(EventRegistrationToken eventCookie);
-	HRESULT add_PropertiesUpdated(Windows.Foundation.TypedEventHandler!(Windows.Storage.BulkAccess.IStorageItemInformation*,IInspectable*) changedHandler, EventRegistrationToken* return_eventCookie);
+	HRESULT add_PropertiesUpdated(Windows.Foundation.TypedEventHandler!(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable) changedHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_PropertiesUpdated(EventRegistrationToken eventCookie);
 }
 

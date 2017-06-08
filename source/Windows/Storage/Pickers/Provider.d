@@ -19,10 +19,10 @@ extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT set_Title(HSTRING value);
 	deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")
-	HRESULT add_FileRemoved(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileOpenPickerUI*,Windows.Storage.Pickers.Provider.FileRemovedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_FileRemoved(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.FileRemovedEventArgs) handler, EventRegistrationToken* return_token);
 	deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")
 	HRESULT remove_FileRemoved(EventRegistrationToken token);
-	HRESULT add_Closing(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileOpenPickerUI*,Windows.Storage.Pickers.Provider.PickerClosingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Closing(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.PickerClosingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Closing(EventRegistrationToken token);
 }
 
@@ -50,9 +50,9 @@ extern(Windows):
 	HRESULT get_SettingsIdentifier(HSTRING* return_value);
 	HRESULT get_FileName(HSTRING* return_value);
 	HRESULT abi_TrySetFileName(HSTRING value, Windows.Storage.Pickers.Provider.SetFileNameResult* return_result);
-	HRESULT add_FileNameChanged(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileSavePickerUI*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_FileNameChanged(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileSavePickerUI, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_FileNameChanged(EventRegistrationToken token);
-	HRESULT add_TargetFileRequested(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileSavePickerUI*,Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_TargetFileRequested(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileSavePickerUI, Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_TargetFileRequested(EventRegistrationToken token);
 }
 

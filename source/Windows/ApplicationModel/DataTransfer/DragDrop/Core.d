@@ -9,7 +9,7 @@ interface ICoreDragDropManager : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_TargetRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager*,Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDropOperationTargetRequestedEventArgs*) value, EventRegistrationToken* return_returnValue);
+	HRESULT add_TargetRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager, Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDropOperationTargetRequestedEventArgs) value, EventRegistrationToken* return_returnValue);
 	HRESULT remove_TargetRequested(EventRegistrationToken value);
 	HRESULT get_AreConcurrentOperationsEnabled(bool* return_value);
 	HRESULT set_AreConcurrentOperationsEnabled(bool value);

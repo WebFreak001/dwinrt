@@ -88,7 +88,7 @@ interface ICoreApplicationView : IInspectable
 
 extern(Windows):
 	HRESULT get_CoreWindow(Windows.UI.Core.CoreWindow* return_value);
-	HRESULT add_Activated(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationView*,Windows.ApplicationModel.Activation.IActivatedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_Activated(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Activation.IActivatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Activated(EventRegistrationToken token);
 	HRESULT get_IsMain(bool* return_value);
 	HRESULT get_IsHosted(bool* return_value);
@@ -113,7 +113,7 @@ interface ICoreApplicationView3 : IInspectable
 extern(Windows):
 	HRESULT get_IsComponent(bool* return_value);
 	HRESULT get_TitleBar(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar* return_value);
-	HRESULT add_HostedViewClosing(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationView*,Windows.ApplicationModel.Core.HostedViewClosingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_HostedViewClosing(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Core.HostedViewClosingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_HostedViewClosing(EventRegistrationToken token);
 }
 
@@ -139,10 +139,10 @@ extern(Windows):
 	HRESULT get_SystemOverlayLeftInset(double* return_value);
 	HRESULT get_SystemOverlayRightInset(double* return_value);
 	HRESULT get_Height(double* return_value);
-	HRESULT add_LayoutMetricsChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_LayoutMetricsChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_LayoutMetricsChanged(EventRegistrationToken token);
 	HRESULT get_IsVisible(bool* return_value);
-	HRESULT add_IsVisibleChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar*,IInspectable*) handler, EventRegistrationToken* return_token);
+	HRESULT add_IsVisibleChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_IsVisibleChanged(EventRegistrationToken token);
 }
 

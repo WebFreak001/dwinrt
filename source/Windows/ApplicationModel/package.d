@@ -2,6 +2,14 @@ module Windows.ApplicationModel;
 
 import dwinrt;
 
+struct PackageVersion
+{
+	UINT16 Major;
+	UINT16 Minor;
+	UINT16 Build;
+	UINT16 Revision;
+}
+
 @uuid("1aeb1103-e4d4-41aa-a4f6-c4a276e79eac")
 @WinrtFactory("Windows.ApplicationModel.AppDisplayInfo")
 interface IAppDisplayInfo : IInspectable
@@ -142,15 +150,15 @@ interface IPackageCatalog : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_PackageStaging(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog*,Windows.ApplicationModel.PackageStagingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PackageStaging(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PackageStaging(EventRegistrationToken token);
-	HRESULT add_PackageInstalling(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog*,Windows.ApplicationModel.PackageInstallingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PackageInstalling(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PackageInstalling(EventRegistrationToken token);
-	HRESULT add_PackageUpdating(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog*,Windows.ApplicationModel.PackageUpdatingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PackageUpdating(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PackageUpdating(EventRegistrationToken token);
-	HRESULT add_PackageUninstalling(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog*,Windows.ApplicationModel.PackageUninstallingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PackageUninstalling(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PackageUninstalling(EventRegistrationToken token);
-	HRESULT add_PackageStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog*,Windows.ApplicationModel.PackageStatusChangedEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PackageStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PackageStatusChanged(EventRegistrationToken token);
 }
 
@@ -161,7 +169,7 @@ interface IPackageCatalog2 : IInspectable
 	mixin(generateRTMethods!(typeof(this)));
 
 extern(Windows):
-	HRESULT add_PackageContentGroupStaging(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog*,Windows.ApplicationModel.PackageContentGroupStagingEventArgs*) handler, EventRegistrationToken* return_token);
+	HRESULT add_PackageContentGroupStaging(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PackageContentGroupStaging(EventRegistrationToken token);
 	HRESULT abi_AddOptionalPackageAsync(HSTRING optionalPackageFamilyName, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult)* return_operation);
 }
