@@ -99,5 +99,5 @@ private:
 void run()
 {
 	MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
-	assert(factory!ICoreApplication.abi_Run(new App) == S_OK);
+	Debug.OK(factory!ICoreApplication.abi_Run(new App));
 }

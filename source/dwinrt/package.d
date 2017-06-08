@@ -356,7 +356,7 @@ Interface activationFactory(Class : IUnknown, Interface : IUnknown = IActivation
 T activate(T : IUnknown)()
 {
 	T f;
-	assert(activationFactory!T.abi_ActivateInstance(cast(IInspectable*)&f) == S_OK);
+	Debug.OK(activationFactory!T.abi_ActivateInstance(cast(IInspectable*)&f));
 	return f;
 }
 
