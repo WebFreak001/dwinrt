@@ -488,10 +488,549 @@ extern (Windows):
 	LONG count = 0; // object reference count
 }
 
-public static import Windows.ApplicationModel.Core;
+enum bitflags;
 
-public static import Windows.Foundation;
+string generateRTMethods(T)()
+{
+	return "";
+}
 
 public static import Windows.Foundation.Collections;
 
+public static import Windows.Foundation;
+
+public static import Windows.ApplicationModel.Activation;
+
+public static import Windows.ApplicationModel.AppExtensions;
+
+public static import Windows.ApplicationModel.Appointments.AppointmentsProvider;
+
+public static import Windows.ApplicationModel.Appointments.DataProvider;
+
+public static import Windows.ApplicationModel.Appointments;
+
+public static import Windows.ApplicationModel.AppService;
+
+public static import Windows.ApplicationModel.Background;
+
+public static import Windows.ApplicationModel.Calls.Background;
+
+public static import Windows.ApplicationModel.Calls;
+
+public static import Windows.ApplicationModel.Chat;
+
+public static import Windows.ApplicationModel.Contacts.DataProvider;
+
+public static import Windows.ApplicationModel.Contacts;
+
+public static import Windows.ApplicationModel.Contacts.Provider;
+
+public static import Windows.ApplicationModel.Core;
+
+public static import Windows.ApplicationModel.DataTransfer.DragDrop.Core;
+
+public static import Windows.ApplicationModel.DataTransfer.DragDrop;
+
+public static import Windows.ApplicationModel.DataTransfer;
+
+public static import Windows.ApplicationModel.DataTransfer.ShareTarget;
+
+public static import Windows.ApplicationModel.Email.DataProvider;
+
+public static import Windows.ApplicationModel.Email;
+
+public static import Windows.ApplicationModel.ExtendedExecution.Foreground;
+
+public static import Windows.ApplicationModel.ExtendedExecution;
+
+public static import Windows.ApplicationModel;
+
+public static import Windows.ApplicationModel.LockScreen;
+
+public static import Windows.ApplicationModel.Payments;
+
+public static import Windows.ApplicationModel.Payments.Provider;
+
+public static import Windows.ApplicationModel.Preview.Holographic;
+
+public static import Windows.ApplicationModel.Preview.InkWorkspace;
+
+public static import Windows.ApplicationModel.Preview.Notes;
+
+public static import Windows.ApplicationModel.Resources.Core;
+
+public static import Windows.ApplicationModel.Resources;
+
+public static import Windows.ApplicationModel.Search;
+
+public static import Windows.ApplicationModel.SocialInfo;
+
+public static import Windows.ApplicationModel.SocialInfo.Provider;
+
+public static import Windows.ApplicationModel.Store;
+
+public static import Windows.ApplicationModel.Store.LicenseManagement;
+
+public static import Windows.ApplicationModel.Store.Preview;
+
+public static import Windows.ApplicationModel.UserDataAccounts;
+
+public static import Windows.ApplicationModel.UserDataAccounts.Provider;
+
+public static import Windows.ApplicationModel.UserDataAccounts.SystemAccess;
+
+public static import Windows.ApplicationModel.UserDataTasks.DataProvider;
+
+public static import Windows.ApplicationModel.UserDataTasks;
+
+public static import Windows.ApplicationModel.VoiceCommands;
+
+public static import Windows.ApplicationModel.Wallet;
+
+public static import Windows.ApplicationModel.Wallet.System;
+
+public static import Windows.Data.Html;
+
+public static import Windows.Data.Json;
+
+public static import Windows.Data.Pdf;
+
+public static import Windows.Data.Text;
+
+public static import Windows.Data.Xml.Dom;
+
+public static import Windows.Data.Xml.Xsl;
+
+public static import Windows.Devices.Adc;
+
+public static import Windows.Devices.Adc.Provider;
+
+public static import Windows.Devices.AllJoyn;
+
+public static import Windows.Devices.Background;
+
+public static import Windows.Devices.Bluetooth.Advertisement;
+
+public static import Windows.Devices.Bluetooth.Background;
+
+public static import Windows.Devices.Bluetooth.GenericAttributeProfile;
+
+public static import Windows.Devices.Bluetooth;
+
+public static import Windows.Devices.Bluetooth.Rfcomm;
+
+public static import Windows.Devices.Custom;
+
+public static import Windows.Devices.Enumeration;
+
+public static import Windows.Devices.Enumeration.Pnp;
+
+public static import Windows.Devices.Geolocation.Geofencing;
+
+public static import Windows.Devices.Geolocation;
+
+public static import Windows.Devices.Gpio;
+
+public static import Windows.Devices.Gpio.Provider;
+
+public static import Windows.Devices.Haptics;
+
+public static import Windows.Devices.HumanInterfaceDevice;
+
+public static import Windows.Devices.I2c;
+
+public static import Windows.Devices.I2c.Provider;
+
+public static import Windows.Devices;
+
+public static import Windows.Devices.Input;
+
+public static import Windows.Devices.Lights;
+
+public static import Windows.Devices.Midi;
+
+public static import Windows.Devices.Perception;
+
+public static import Windows.Devices.Perception.Provider;
+
+public static import Windows.Devices.PointOfService;
+
+public static import Windows.Devices.Portable;
+
+public static import Windows.Devices.Power;
+
+public static import Windows.Devices.Printers.Extensions;
+
+public static import Windows.Devices.Printers;
+
+public static import Windows.Devices.Pwm;
+
+public static import Windows.Devices.Pwm.Provider;
+
+public static import Windows.Devices.Radios;
+
+public static import Windows.Devices.Scanners;
+
+public static import Windows.Devices.Sensors.Custom;
+
+public static import Windows.Devices.Sensors;
+
+public static import Windows.Devices.SerialCommunication;
+
+public static import Windows.Devices.SmartCards;
+
+public static import Windows.Devices.Sms;
+
+public static import Windows.Devices.Spi;
+
+public static import Windows.Devices.Spi.Provider;
+
+public static import Windows.Devices.Usb;
+
+public static import Windows.Devices.WiFi;
+
+public static import Windows.Devices.WiFiDirect;
+
+public static import Windows.Devices.WiFiDirect.Services;
+
+public static import Windows.Foundation.Diagnostics;
+
+public static import Windows.Foundation.Metadata;
+
+public static import Windows.Gaming.Input.Custom;
+
+public static import Windows.Gaming.Input.ForceFeedback;
+
+public static import Windows.Gaming.Input;
+
+public static import Windows.Gaming.Input.Preview;
+
+public static import Windows.Gaming.Preview.GamesEnumeration;
+
+public static import Windows.Gaming.UI;
+
+public static import Windows.Globalization.Collation;
+
+public static import Windows.Globalization.DateTimeFormatting;
+
+public static import Windows.Globalization.Fonts;
+
+public static import Windows.Globalization;
+
+public static import Windows.Globalization.NumberFormatting;
+
+public static import Windows.Globalization.PhoneNumberFormatting;
+
+public static import Windows.Graphics.DirectX.Direct3D11;
+
+public static import Windows.Graphics.DirectX;
+
+public static import Windows.Graphics.Display.Core;
+
+public static import Windows.Graphics.Display;
+
+public static import Windows.Graphics.Effects;
+
+public static import Windows.Graphics.Holographic;
+
+public static import Windows.Graphics.Imaging;
+
+public static import Windows.Graphics.Printing;
+
+public static import Windows.Graphics.Printing.OptionDetails;
+
+public static import Windows.Graphics.Printing3D;
+
+public static import Windows.Management.Core;
+
+public static import Windows.Management.Deployment;
+
+public static import Windows.Management.Deployment.Preview;
+
+public static import Windows.Management;
+
+public static import Windows.Management.Policies;
+
+public static import Windows.Management.Workplace;
+
+public static import Windows.Media.Audio;
+
+public static import Windows.Media.Capture.Core;
+
+public static import Windows.Media.Capture.Frames;
+
+public static import Windows.Media.Capture;
+
+public static import Windows.Media.Casting;
+
+public static import Windows.Media.ClosedCaptioning;
+
+public static import Windows.Media.ContentRestrictions;
+
+public static import Windows.Media.Core;
+
+public static import Windows.Media.Core.Preview;
+
+public static import Windows.Media.Devices.Core;
+
+public static import Windows.Media.Devices;
+
+public static import Windows.Media.DialProtocol;
+
+public static import Windows.Media.Editing;
+
+public static import Windows.Media.Effects;
+
+public static import Windows.Media.FaceAnalysis;
+
+public static import Windows.Media;
+
+public static import Windows.Media.Import;
+
+public static import Windows.Media.MediaProperties;
+
+public static import Windows.Media.Ocr;
+
+public static import Windows.Media.Playback;
+
+public static import Windows.Media.Playlists;
+
+public static import Windows.Media.PlayTo;
+
+public static import Windows.Media.Protection;
+
+public static import Windows.Media.Protection.PlayReady;
+
+public static import Windows.Media.Render;
+
+public static import Windows.Media.SpeechRecognition;
+
+public static import Windows.Media.SpeechSynthesis;
+
+public static import Windows.Media.Streaming.Adaptive;
+
+public static import Windows.Media.Transcoding;
+
+public static import Windows.Networking.BackgroundTransfer;
+
+public static import Windows.Networking.Connectivity;
+
+public static import Windows.Networking;
+
+public static import Windows.Networking.NetworkOperators;
+
+public static import Windows.Networking.Proximity;
+
+public static import Windows.Networking.PushNotifications;
+
+public static import Windows.Networking.ServiceDiscovery.Dnssd;
+
+public static import Windows.Networking.Sockets;
+
+public static import Windows.Networking.Vpn;
+
+public static import Windows.Perception.Automation.Core;
+
+public static import Windows.Perception;
+
+public static import Windows.Perception.People;
+
+public static import Windows.Perception.Spatial;
+
+public static import Windows.Perception.Spatial.Surfaces;
+
+public static import Windows.Security.Authentication.Identity.Core;
+
+public static import Windows.Security.Authentication.Identity;
+
+public static import Windows.Security.Authentication.Identity.Provider;
+
+public static import Windows.Security.Authentication.OnlineId;
+
+public static import Windows.Security.Authentication.Web.Core;
+
+public static import Windows.Security.Authentication.Web;
+
+public static import Windows.Security.Authentication.Web.Provider;
+
+public static import Windows.Security.Credentials;
+
+public static import Windows.Security.Credentials.UI;
+
+public static import Windows.Security.Cryptography.Certificates;
+
+public static import Windows.Security.Cryptography.Core;
+
+public static import Windows.Security.Cryptography.DataProtection;
+
+public static import Windows.Security.Cryptography;
+
+public static import Windows.Security.EnterpriseData;
+
+public static import Windows.Security.ExchangeActiveSyncProvisioning;
+
+public static import Windows.Services.Cortana;
+
+public static import Windows.Services.Maps.Guidance;
+
+public static import Windows.Services.Maps;
+
+public static import Windows.Services.Maps.LocalSearch;
+
+public static import Windows.Services.Maps.OfflineMaps;
+
+public static import Windows.Services.Store;
+
+public static import Windows.Storage.AccessCache;
+
+public static import Windows.Storage.BulkAccess;
+
+public static import Windows.Storage.Compression;
+
+public static import Windows.Storage.FileProperties;
+
+public static import Windows.Storage;
+
+public static import Windows.Storage.Pickers;
+
+public static import Windows.Storage.Pickers.Provider;
+
+public static import Windows.Storage.Provider;
+
+public static import Windows.Storage.Search;
+
+public static import Windows.Storage.Streams;
+
+public static import Windows.System.Diagnostics.DevicePortal;
+
+public static import Windows.System.Diagnostics;
+
+public static import Windows.System.Diagnostics.Telemetry;
+
+public static import Windows.System.Diagnostics.TraceReporting;
+
+public static import Windows.System.Display;
+
+public static import Windows.System;
+
+public static import Windows.System.Power.Diagnostics;
+
+public static import Windows.System.Power;
+
+public static import Windows.System.Profile;
+
+public static import Windows.System.Profile.SystemManufacturers;
+
+public static import Windows.System.RemoteDesktop;
+
+public static import Windows.System.RemoteSystems;
+
+public static import Windows.System.Threading.Core;
+
+public static import Windows.System.Threading;
+
+public static import Windows.System.UserProfile;
+
+public static import Windows.UI.ApplicationSettings;
+
+public static import Windows.UI.Composition.Effects;
+
+public static import Windows.UI.Composition;
+
+public static import Windows.UI.Composition.Interactions;
+
+public static import Windows.UI.Core.AnimationMetrics;
+
+public static import Windows.UI.Core;
+
+public static import Windows.UI.Core.Preview;
+
+public static import Windows.UI;
+
+public static import Windows.UI.Input.Core;
+
+public static import Windows.UI.Input;
+
+public static import Windows.UI.Input.Inking.Analysis;
+
+public static import Windows.UI.Input.Inking.Core;
+
+public static import Windows.UI.Input.Inking;
+
+public static import Windows.UI.Input.Preview.Injection;
+
+public static import Windows.UI.Input.Spatial;
+
+public static import Windows.UI.Notifications;
+
+public static import Windows.UI.Notifications.Management;
+
+public static import Windows.UI.Popups;
+
+public static import Windows.UI.StartScreen;
+
+public static import Windows.UI.Text.Core;
+
+public static import Windows.UI.Text;
+
+public static import Windows.UI.ViewManagement;
+
+public static import Windows.UI.WebUI;
+
+public static import Windows.UI.Xaml.Automation;
+
+public static import Windows.UI.Xaml.Automation.Peers;
+
+public static import Windows.UI.Xaml.Automation.Provider;
+
+public static import Windows.UI.Xaml.Automation.Text;
+
+public static import Windows.UI.Xaml.Controls;
+
+public static import Windows.UI.Xaml.Controls.Maps;
+
+public static import Windows.UI.Xaml.Controls.Primitives;
+
+public static import Windows.UI.Xaml.Data;
+
+public static import Windows.UI.Xaml.Documents;
+
+public static import Windows.UI.Xaml.Hosting;
+
 public static import Windows.UI.Xaml;
+
+public static import Windows.UI.Xaml.Input;
+
+public static import Windows.UI.Xaml.Interop;
+
+public static import Windows.UI.Xaml.Markup;
+
+public static import Windows.UI.Xaml.Media.Animation;
+
+public static import Windows.UI.Xaml.Media;
+
+public static import Windows.UI.Xaml.Media.Imaging;
+
+public static import Windows.UI.Xaml.Media.Media3D;
+
+public static import Windows.UI.Xaml.Navigation;
+
+public static import Windows.UI.Xaml.Printing;
+
+public static import Windows.UI.Xaml.Resources;
+
+public static import Windows.UI.Xaml.Shapes;
+
+public static import Windows.Web.AtomPub;
+
+public static import Windows.Web.Http.Diagnostics;
+
+public static import Windows.Web.Http.Filters;
+
+public static import Windows.Web.Http.Headers;
+
+public static import Windows.Web.Http;
+
+public static import Windows.Web;
+
+public static import Windows.Web.Syndication;
