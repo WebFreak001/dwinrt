@@ -5,8 +5,6 @@ import dwinrt;
 @uuid("a73e561c-aac1-4ec7-a852-479f7060d01f")
 interface ILowLevelDevicesAggregateProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AdcControllerProvider(Windows.Devices.Adc.Provider.IAdcControllerProvider* return_value);
 	HRESULT get_PwmControllerProvider(Windows.Devices.Pwm.Provider.IPwmControllerProvider* return_value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.LowLevelDevicesAggregateProvider")
 interface ILowLevelDevicesAggregateProviderFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Adc.Provider.IAdcControllerProvider adc, Windows.Devices.Pwm.Provider.IPwmControllerProvider pwm, Windows.Devices.Gpio.Provider.IGpioControllerProvider gpio, Windows.Devices.I2c.Provider.II2cControllerProvider i2c, Windows.Devices.Spi.Provider.ISpiControllerProvider spi, Windows.Devices.LowLevelDevicesAggregateProvider* return_value);
 }
@@ -35,8 +31,6 @@ interface ILowLevelDevicesController : IInspectable
 @WinrtFactory("Windows.Devices.LowLevelDevicesController")
 interface ILowLevelDevicesControllerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DefaultProvider(Windows.Devices.ILowLevelDevicesAggregateProvider* return_value);
 	HRESULT set_DefaultProvider(Windows.Devices.ILowLevelDevicesAggregateProvider value);

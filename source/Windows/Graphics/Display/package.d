@@ -13,8 +13,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Display.BrightnessOverride")
 interface IBrightnessOverride : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSupported(bool* return_value);
 	HRESULT get_IsOverrideActive(bool* return_value);
@@ -36,8 +34,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Display.BrightnessOverride")
 interface IBrightnessOverrideStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultForSystem(Windows.Graphics.Display.BrightnessOverride* return_value);
 	HRESULT abi_GetForCurrentView(Windows.Graphics.Display.BrightnessOverride* return_value);
@@ -48,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Display.DisplayInformation")
 interface IDisplayInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CurrentOrientation(Windows.Graphics.Display.DisplayOrientations* return_value);
 	HRESULT get_NativeOrientation(Windows.Graphics.Display.DisplayOrientations* return_value);
@@ -73,8 +67,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Display.DisplayInformation")
 interface IDisplayInformation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RawPixelsPerViewPixel(double* return_value);
 }
@@ -83,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Display.DisplayInformation")
 interface IDisplayInformation3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DiagonalSizeInInches(Windows.Foundation.IReference!(double)* return_value);
 }
@@ -93,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Display.DisplayInformation")
 interface IDisplayInformation4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ScreenWidthInRawPixels(UINT32* return_value);
 	HRESULT get_ScreenHeightInRawPixels(UINT32* return_value);
@@ -104,8 +92,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Display.DisplayInformation")
 interface IDisplayInformationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.Graphics.Display.DisplayInformation* return_current);
 	HRESULT get_AutoRotationPreferences(Windows.Graphics.Display.DisplayOrientations* return_value);
@@ -118,8 +104,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Display.DisplayProperties")
 interface IDisplayPropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	HRESULT get_CurrentOrientation(Windows.Graphics.Display.DisplayOrientations* return_value);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Web.AtomPub.AtomPubClient")
 interface IAtomPubClient : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RetrieveServiceDocumentAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.AtomPub.ServiceDocument, Windows.Web.Syndication.RetrievalProgress)* return_operation);
 	HRESULT abi_RetrieveMediaResourceAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, Windows.Web.Syndication.RetrievalProgress)* return_operation);
@@ -26,8 +24,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.AtomPub.AtomPubClient")
 interface IAtomPubClientFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAtomPubClientWithCredentials(Windows.Security.Credentials.PasswordCredential serverCredential, Windows.Web.AtomPub.AtomPubClient* return_atomPubClient);
 }
@@ -36,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.AtomPub.ResourceCollection")
 interface IResourceCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(Windows.Web.Syndication.ISyndicationText* return_value);
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
@@ -49,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.AtomPub.ServiceDocument")
 interface IServiceDocument : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Workspaces(Windows.Foundation.Collections.IVectorView!(Windows.Web.AtomPub.Workspace)* return_value);
 }
@@ -59,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.AtomPub.Workspace")
 interface IWorkspace : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(Windows.Web.Syndication.ISyndicationText* return_value);
 	HRESULT get_Collections(Windows.Foundation.Collections.IVectorView!(Windows.Web.AtomPub.ResourceCollection)* return_value);

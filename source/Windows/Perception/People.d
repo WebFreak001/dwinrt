@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Perception.People.HeadPose")
 interface IHeadPose : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT get_ForwardDirection(Windows.Foundation.Numerics.Vector3* return_value);

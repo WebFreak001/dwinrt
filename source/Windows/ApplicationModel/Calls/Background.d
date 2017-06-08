@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Calls.Background.PhoneCallBlockedTriggerDetails")
 interface IPhoneCallBlockedTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PhoneNumber(HSTRING* return_value);
 	HRESULT get_LineId(GUID* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.Background.PhoneCallOriginDataRequestTriggerDetails")
 interface IPhoneCallOriginDataRequestTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestId(GUID* return_result);
 	HRESULT get_PhoneNumber(HSTRING* return_result);
@@ -29,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.Background.PhoneLineChangedTriggerDetails")
 interface IPhoneLineChangedTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LineId(GUID* return_result);
 	HRESULT get_ChangeType(Windows.ApplicationModel.Calls.Background.PhoneLineChangeKind* return_result);
@@ -41,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.Background.PhoneNewVoicemailMessageTriggerDetails")
 interface IPhoneNewVoicemailMessageTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LineId(GUID* return_result);
 	HRESULT get_VoicemailCount(INT32* return_result);

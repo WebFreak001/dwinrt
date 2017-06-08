@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Networking.EndpointPair")
 interface IEndpointPair : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocalHostName(Windows.Networking.HostName* return_value);
 	HRESULT set_LocalHostName(Windows.Networking.HostName value);
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.EndpointPair")
 interface IEndpointPairFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateEndpointPair(Windows.Networking.HostName localHostName, HSTRING localServiceName, Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.EndpointPair* return_value);
 }
@@ -33,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.HostName")
 interface IHostName : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IPInformation(Windows.Networking.Connectivity.IPInformation* return_value);
 	HRESULT get_RawName(HSTRING* return_value);
@@ -48,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.HostName")
 interface IHostNameFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateHostName(HSTRING hostName, Windows.Networking.HostName* return_value);
 }
@@ -58,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.HostName")
 interface IHostNameStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Compare(HSTRING value1, HSTRING value2, INT32* return_result);
 }

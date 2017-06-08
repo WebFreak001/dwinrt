@@ -12,8 +12,6 @@ interface IAnnotationPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.AnnotationPatternIdentifiers")
 interface IAnnotationPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AnnotationTypeIdProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_AnnotationTypeNameProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -26,8 +24,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationAnnotation")
 interface IAutomationAnnotation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.UI.Xaml.Automation.AnnotationType* return_value);
 	HRESULT set_Type(Windows.UI.Xaml.Automation.AnnotationType value);
@@ -39,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationAnnotation")
 interface IAutomationAnnotationFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(Windows.UI.Xaml.Automation.AnnotationType type, Windows.UI.Xaml.Automation.AutomationAnnotation* return_instance);
 	HRESULT abi_CreateWithElementParameter(Windows.UI.Xaml.Automation.AnnotationType type, Windows.UI.Xaml.UIElement element, Windows.UI.Xaml.Automation.AutomationAnnotation* return_instance);
@@ -50,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationAnnotation")
 interface IAutomationAnnotationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TypeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ElementProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -67,8 +59,6 @@ interface IAutomationElementIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationElementIdentifiers")
 interface IAutomationElementIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AcceleratorKeyProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_AccessKeyProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -99,8 +89,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationElementIdentifiers")
 interface IAutomationElementIdentifiersStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ControlledPeersProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
@@ -109,8 +97,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationElementIdentifiers")
 interface IAutomationElementIdentifiersStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PositionInSetProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_SizeOfSetProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -122,8 +108,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationElementIdentifiers")
 interface IAutomationElementIdentifiersStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LandmarkTypeProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_LocalizedLandmarkTypeProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -133,8 +117,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationElementIdentifiers")
 interface IAutomationElementIdentifiersStatics5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsPeripheralProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_IsDataValidForFormProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -148,8 +130,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationElementIdentifiers")
 interface IAutomationElementIdentifiersStatics6 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CultureProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
@@ -164,8 +144,6 @@ interface IAutomationProperties : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationProperties")
 interface IAutomationPropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AcceleratorKeyProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetAcceleratorKey(Windows.UI.Xaml.DependencyObject element, HSTRING* return_value);
@@ -203,8 +181,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationProperties")
 interface IAutomationPropertiesStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AccessibilityViewProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetAccessibilityView(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.Automation.Peers.AccessibilityView* return_value);
@@ -217,8 +193,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationProperties")
 interface IAutomationPropertiesStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PositionInSetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetPositionInSet(Windows.UI.Xaml.DependencyObject element, INT32* return_value);
@@ -237,8 +211,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationProperties")
 interface IAutomationPropertiesStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LandmarkTypeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetLandmarkType(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType* return_value);
@@ -252,8 +224,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationProperties")
 interface IAutomationPropertiesStatics5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsPeripheralProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetIsPeripheral(Windows.UI.Xaml.DependencyObject element, bool* return_value);
@@ -279,8 +249,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.AutomationProperties")
 interface IAutomationPropertiesStatics6 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CultureProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetCulture(Windows.UI.Xaml.DependencyObject element, INT32* return_value);
@@ -303,8 +271,6 @@ interface IDockPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.DockPatternIdentifiers")
 interface IDockPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DockPositionProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
@@ -319,8 +285,6 @@ interface IDragPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.DragPatternIdentifiers")
 interface IDragPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DropEffectProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_DropEffectsProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -338,8 +302,6 @@ interface IDropTargetPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.DropTargetPatternIdentifiers")
 interface IDropTargetPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DropTargetEffectProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_DropTargetEffectsProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -355,8 +317,6 @@ interface IExpandCollapsePatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.ExpandCollapsePatternIdentifiers")
 interface IExpandCollapsePatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExpandCollapseStateProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
@@ -371,8 +331,6 @@ interface IGridItemPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.GridItemPatternIdentifiers")
 interface IGridItemPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ColumnProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_ColumnSpanProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -391,8 +349,6 @@ interface IGridPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.GridPatternIdentifiers")
 interface IGridPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ColumnCountProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_RowCountProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -408,8 +364,6 @@ interface IMultipleViewPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.MultipleViewPatternIdentifiers")
 interface IMultipleViewPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CurrentViewProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_SupportedViewsProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -425,8 +379,6 @@ interface IRangeValuePatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.RangeValuePatternIdentifiers")
 interface IRangeValuePatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsReadOnlyProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_LargeChangeProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -446,8 +398,6 @@ interface IScrollPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.ScrollPatternIdentifiers")
 interface IScrollPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HorizontallyScrollableProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_HorizontalScrollPercentProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -468,8 +418,6 @@ interface ISelectionItemPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.SelectionItemPatternIdentifiers")
 interface ISelectionItemPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSelectedProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_SelectionContainerProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -485,8 +433,6 @@ interface ISelectionPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.SelectionPatternIdentifiers")
 interface ISelectionPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanSelectMultipleProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_IsSelectionRequiredProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -503,8 +449,6 @@ interface ISpreadsheetItemPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.SpreadsheetItemPatternIdentifiers")
 interface ISpreadsheetItemPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FormulaProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
@@ -519,8 +463,6 @@ interface IStylesPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.StylesPatternIdentifiers")
 interface IStylesPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExtendedPropertiesProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_FillColorProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -541,8 +483,6 @@ interface ITableItemPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.TableItemPatternIdentifiers")
 interface ITableItemPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ColumnHeaderItemsProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_RowHeaderItemsProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -558,8 +498,6 @@ interface ITablePatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.TablePatternIdentifiers")
 interface ITablePatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ColumnHeadersProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_RowHeadersProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -576,8 +514,6 @@ interface ITogglePatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.TogglePatternIdentifiers")
 interface ITogglePatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ToggleStateProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
@@ -592,8 +528,6 @@ interface ITransformPattern2Identifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.TransformPattern2Identifiers")
 interface ITransformPattern2IdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanZoomProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_ZoomLevelProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -611,8 +545,6 @@ interface ITransformPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.TransformPatternIdentifiers")
 interface ITransformPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanMoveProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_CanResizeProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -629,8 +561,6 @@ interface IValuePatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.ValuePatternIdentifiers")
 interface IValuePatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsReadOnlyProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_ValueProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
@@ -646,8 +576,6 @@ interface IWindowPatternIdentifiers : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.WindowPatternIdentifiers")
 interface IWindowPatternIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanMaximizeProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_CanMinimizeProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);

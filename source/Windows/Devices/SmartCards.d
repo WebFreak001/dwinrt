@@ -13,8 +13,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.CardAddedEventArgs")
 interface ICardAddedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SmartCard(Windows.Devices.SmartCards.SmartCard* return_value);
 }
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.CardRemovedEventArgs")
 interface ICardRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SmartCard(Windows.Devices.SmartCards.SmartCard* return_value);
 }
@@ -33,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.SmartCard")
 interface ISmartCard : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reader(Windows.Devices.SmartCards.SmartCardReader* return_value);
 	HRESULT abi_GetStatusAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardStatus)* return_result);
@@ -45,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.SmartCardChallengeContext")
 interface ISmartCardChallengeContext : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Challenge(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT abi_VerifyResponseAsync(Windows.Storage.Streams.IBuffer response, Windows.Foundation.IAsyncOperation!(bool)* return_result);
@@ -59,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.SmartCard")
 interface ISmartCardConnect : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ConnectAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardConnection)* return_result);
 }
@@ -69,8 +59,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.SmartCardConnection")
 interface ISmartCardConnection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TransmitAsync(Windows.Storage.Streams.IBuffer command, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_result);
 }
@@ -79,8 +67,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.SmartCardPinPolicy")
 interface ISmartCardPinPolicy : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MinLength(UINT32* return_value);
 	HRESULT set_MinLength(UINT32 value);
@@ -100,8 +86,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.SmartCardPinResetDeferral")
 interface ISmartCardPinResetDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -110,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.SmartCardPinResetRequest")
 interface ISmartCardPinResetRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Challenge(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_Deadline(Windows.Foundation.DateTime* return_value);
@@ -123,8 +105,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.SmartCardProvisioning")
 interface ISmartCardProvisioning : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SmartCard(Windows.Devices.SmartCards.SmartCard* return_value);
 	HRESULT abi_GetIdAsync(Windows.Foundation.IAsyncOperation!(GUID)* return_result);
@@ -138,8 +118,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.SmartCardProvisioning")
 interface ISmartCardProvisioning2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAuthorityKeyContainerNameAsync(Windows.Foundation.IAsyncOperation!(HSTRING)* return_result);
 }
@@ -148,8 +126,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.SmartCardProvisioning")
 interface ISmartCardProvisioningStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromSmartCardAsync(Windows.Devices.SmartCards.SmartCard card, Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning)* return_result);
 	HRESULT abi_RequestVirtualSmartCardCreationAsync(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning)* return_result);
@@ -161,8 +137,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.SmartCardProvisioning")
 interface ISmartCardProvisioningStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAttestedVirtualSmartCardCreationAsync(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning)* return_result);
 	HRESULT abi_RequestAttestedVirtualSmartCardCreationAsyncWithCardId(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, GUID cardId, Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning)* return_result);
@@ -172,8 +146,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.SmartCardReader")
 interface ISmartCardReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_Name(HSTRING* return_value);
@@ -190,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SmartCards.SmartCardReader")
 interface ISmartCardReaderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_selector);
 	HRESULT abi_GetDeviceSelectorWithKind(Windows.Devices.SmartCards.SmartCardReaderKind kind, HSTRING* return_selector);

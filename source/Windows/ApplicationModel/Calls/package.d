@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Calls.CallAnswerEventArgs")
 interface ICallAnswerEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AcceptedMedia(Windows.ApplicationModel.Calls.VoipPhoneCallMedia* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.CallRejectEventArgs")
 interface ICallRejectEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RejectReason(Windows.ApplicationModel.Calls.VoipPhoneCallRejectReason* return_value);
 }
@@ -26,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.CallStateChangeEventArgs")
 interface ICallStateChangeEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_State(Windows.ApplicationModel.Calls.VoipPhoneCallState* return_value);
 }
@@ -36,8 +30,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.LockScreenCallEndCallDeferral")
 interface ILockScreenCallEndCallDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -46,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.LockScreenCallEndRequestedEventArgs")
 interface ILockScreenCallEndRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.ApplicationModel.Calls.LockScreenCallEndCallDeferral* return_value);
 	HRESULT get_Deadline(Windows.Foundation.DateTime* return_value);
@@ -57,8 +47,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.LockScreenCallUI")
 interface ILockScreenCallUI : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Dismiss();
 	HRESULT add_EndRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.LockScreenCallUI, Windows.ApplicationModel.Calls.LockScreenCallEndRequestedEventArgs) handler, EventRegistrationToken* return_token);
@@ -73,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.MuteChangeEventArgs")
 interface IMuteChangeEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Muted(bool* return_value);
 }
@@ -83,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.PhoneCallHistoryEntry")
 interface IPhoneCallHistoryEntry : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_Address(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress* return_value);
@@ -126,8 +110,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress")
 interface IPhoneCallHistoryEntryAddress : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContactId(HSTRING* return_value);
 	HRESULT set_ContactId(HSTRING value);
@@ -143,8 +125,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress")
 interface IPhoneCallHistoryEntryAddressFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING rawAddress, Windows.ApplicationModel.Calls.PhoneCallHistoryEntryRawAddressKind rawAddressKind, Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress* return_result);
 }
@@ -153,8 +133,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryOptions")
 interface IPhoneCallHistoryEntryQueryOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesiredMedia(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryDesiredMedia* return_value);
 	HRESULT set_DesiredMedia(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryDesiredMedia value);
@@ -165,8 +143,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader")
 interface IPhoneCallHistoryEntryReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadBatchAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry))* return_result);
 }
@@ -175,8 +151,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.PhoneCallHistoryManagerForUser")
 interface IPhoneCallHistoryManagerForUser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestStoreAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryStoreAccessType accessType, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryStore)* return_result);
 	HRESULT get_User(Windows.System.User* return_value);
@@ -186,8 +160,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.PhoneCallHistoryManager")
 interface IPhoneCallHistoryManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestStoreAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryStoreAccessType accessType, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryStore)* return_result);
 }
@@ -196,8 +168,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.PhoneCallHistoryManager")
 interface IPhoneCallHistoryManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.ApplicationModel.Calls.PhoneCallHistoryManagerForUser* return_result);
 }
@@ -206,8 +176,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.PhoneCallHistoryStore")
 interface IPhoneCallHistoryStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetEntryAsync(HSTRING callHistoryEntryId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry)* return_result);
 	HRESULT abi_GetEntryReader(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader* return_result);
@@ -227,8 +195,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.VoipCallCoordinator")
 interface IVoipCallCoordinator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReserveCallResourcesAsync(HSTRING taskEntryPoint, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.VoipPhoneCallResourceReservationStatus)* return_operation);
 	HRESULT add_MuteStateChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipCallCoordinator, Windows.ApplicationModel.Calls.MuteChangeEventArgs) muteChangeHandler, EventRegistrationToken* return_token);
@@ -247,8 +213,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.VoipCallCoordinator")
 interface IVoipCallCoordinatorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.ApplicationModel.Calls.VoipCallCoordinator* return_coordinator);
 }
@@ -257,8 +221,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Calls.VoipPhoneCall")
 interface IVoipPhoneCall : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_EndRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_EndRequested(EventRegistrationToken token);

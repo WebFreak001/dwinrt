@@ -12,8 +12,6 @@ struct DeploymentProgress
 @WinrtFactory("Windows.Management.Deployment.DeploymentResult")
 interface IDeploymentResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ErrorText(HSTRING* return_value);
 	HRESULT get_ActivityId(GUID* return_value);
@@ -24,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.Deployment.DeploymentResult")
 interface IDeploymentResult2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsRegistered(bool* return_value);
 }
@@ -34,8 +30,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.Deployment.PackageManager")
 interface IPackageManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddPackageAsync(Windows.Foundation.Uri packageUri, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) dependencyPackageUris, Windows.Management.Deployment.DeploymentOptions deploymentOptions, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress)* return_deploymentOperation);
 	HRESULT abi_UpdatePackageAsync(Windows.Foundation.Uri packageUri, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) dependencyPackageUris, Windows.Management.Deployment.DeploymentOptions deploymentOptions, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress)* return_deploymentOperation);
@@ -59,8 +53,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.Deployment.PackageManager")
 interface IPackageManager2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RemovePackageWithOptionsAsync(HSTRING packageFullName, Windows.Management.Deployment.RemovalOptions removalOptions, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress)* return_deploymentOperation);
 	HRESULT abi_StagePackageWithOptionsAsync(Windows.Foundation.Uri packageUri, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) dependencyPackageUris, Windows.Management.Deployment.DeploymentOptions deploymentOptions, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress)* return_deploymentOperation);
@@ -78,8 +70,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.Deployment.PackageManager")
 interface IPackageManager3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddPackageVolumeAsync(HSTRING packageStorePath, Windows.Foundation.IAsyncOperation!(Windows.Management.Deployment.PackageVolume)* return_packageVolume);
 	HRESULT abi_AddPackageToVolumeAsync(Windows.Foundation.Uri packageUri, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) dependencyPackageUris, Windows.Management.Deployment.DeploymentOptions deploymentOptions, Windows.Management.Deployment.PackageVolume targetVolume, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress)* return_deploymentOperation);
@@ -102,8 +92,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.Deployment.PackageManager")
 interface IPackageManager4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetPackageVolumesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Management.Deployment.PackageVolume))* return_operation);
 }
@@ -112,8 +100,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.Deployment.PackageManager")
 interface IPackageManager5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddPackageToVolumeAndOptionalPackagesAsync(Windows.Foundation.Uri packageUri, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) dependencyPackageUris, Windows.Management.Deployment.DeploymentOptions deploymentOptions, Windows.Management.Deployment.PackageVolume targetVolume, Windows.Foundation.Collections.IIterable!(HSTRING) optionalPackageFamilyNames, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) externalPackageUris, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress)* return_deploymentOperation);
 	HRESULT abi_StagePackageToVolumeAndOptionalPackagesAsync(Windows.Foundation.Uri packageUri, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) dependencyPackageUris, Windows.Management.Deployment.DeploymentOptions deploymentOptions, Windows.Management.Deployment.PackageVolume targetVolume, Windows.Foundation.Collections.IIterable!(HSTRING) optionalPackageFamilyNames, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) externalPackageUris, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress)* return_deploymentOperation);
@@ -125,8 +111,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.Deployment.PackageManagerDebugSettings")
 interface IPackageManagerDebugSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetContentGroupStateAsync(Windows.ApplicationModel.Package package_, HSTRING contentGroupName, Windows.ApplicationModel.PackageContentGroupState state, Windows.Foundation.IAsyncAction* return_action);
 	HRESULT abi_SetContentGroupStateWithPercentageAsync(Windows.ApplicationModel.Package package_, HSTRING contentGroupName, Windows.ApplicationModel.PackageContentGroupState state, double completionPercentage, Windows.Foundation.IAsyncAction* return_action);
@@ -136,8 +120,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.Deployment.PackageUserInformation")
 interface IPackageUserInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UserSecurityId(HSTRING* return_value);
 	HRESULT get_InstallState(Windows.Management.Deployment.PackageInstallState* return_value);
@@ -147,8 +129,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.Deployment.PackageVolume")
 interface IPackageVolume : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsOffline(bool* return_value);
 	HRESULT get_IsSystemVolume(bool* return_value);
@@ -176,8 +156,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.Deployment.PackageVolume")
 interface IPackageVolume2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsFullTrustPackageSupported(bool* return_value);
 	HRESULT get_IsAppxInstallSupported(bool* return_value);

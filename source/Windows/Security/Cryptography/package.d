@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.Cryptography.CryptographicBuffer")
 interface ICryptographicBufferStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Compare(Windows.Storage.Streams.IBuffer object1, Windows.Storage.Streams.IBuffer object2, bool* return_isEqual);
 	HRESULT abi_GenerateRandom(UINT32 length, Windows.Storage.Streams.IBuffer* return_buffer);

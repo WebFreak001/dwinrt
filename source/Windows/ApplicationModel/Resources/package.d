@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Resources.ResourceLoader")
 interface IResourceLoader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetString(HSTRING resource, HSTRING* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.ResourceLoader")
 interface IResourceLoader2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetStringForUri(Windows.Foundation.Uri uri, HSTRING* return_value);
 }
@@ -26,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.ResourceLoader")
 interface IResourceLoaderFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.")
 	HRESULT abi_CreateResourceLoaderByName(HSTRING name, Windows.ApplicationModel.Resources.ResourceLoader* return_loader);
@@ -37,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.ResourceLoader")
 interface IResourceLoaderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.")
 	HRESULT abi_GetStringForReference(Windows.Foundation.Uri uri, HSTRING* return_value);
@@ -48,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.ResourceLoader")
 interface IResourceLoaderStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.ApplicationModel.Resources.ResourceLoader* return_loader);
 	HRESULT abi_GetForCurrentViewWithName(HSTRING name, Windows.ApplicationModel.Resources.ResourceLoader* return_loader);

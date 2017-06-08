@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidBooleanControl")
 interface IHidBooleanControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(UINT32* return_value);
 	HRESULT get_UsagePage(UINT16* return_value);
@@ -21,8 +19,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidBooleanControlDescription")
 interface IHidBooleanControlDescription : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(UINT32* return_value);
 	HRESULT get_ReportId(UINT16* return_value);
@@ -36,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidBooleanControlDescription")
 interface IHidBooleanControlDescription2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsAbsolute(bool* return_value);
 }
@@ -46,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidCollection")
 interface IHidCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(UINT32* return_value);
 	HRESULT get_Type(Windows.Devices.HumanInterfaceDevice.HidCollectionType* return_value);
@@ -59,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidDevice")
 interface IHidDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VendorId(UINT16* return_value);
 	HRESULT get_ProductId(UINT16* return_value);
@@ -87,8 +77,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidDevice")
 interface IHidDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(UINT16 usagePage, UINT16 usageId, HSTRING* return_selector);
 	HRESULT abi_GetDeviceSelectorVidPid(UINT16 usagePage, UINT16 usageId, UINT16 vendorId, UINT16 productId, HSTRING* return_selector);
@@ -99,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidFeatureReport")
 interface IHidFeatureReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(UINT16* return_value);
 	HRESULT get_Data(Windows.Storage.Streams.IBuffer* return_value);
@@ -115,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidInputReport")
 interface IHidInputReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(UINT16* return_value);
 	HRESULT get_Data(Windows.Storage.Streams.IBuffer* return_value);
@@ -132,8 +116,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidInputReportReceivedEventArgs")
 interface IHidInputReportReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Report(Windows.Devices.HumanInterfaceDevice.HidInputReport* return_value);
 }
@@ -142,8 +124,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidNumericControl")
 interface IHidNumericControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(UINT32* return_value);
 	HRESULT get_IsGrouped(bool* return_value);
@@ -160,8 +140,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidNumericControlDescription")
 interface IHidNumericControlDescription : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(UINT32* return_value);
 	HRESULT get_ReportId(UINT16* return_value);
@@ -185,8 +163,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidOutputReport")
 interface IHidOutputReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(UINT16* return_value);
 	HRESULT get_Data(Windows.Storage.Streams.IBuffer* return_value);

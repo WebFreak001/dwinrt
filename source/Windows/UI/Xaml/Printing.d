@@ -27,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Printing.AddPagesEventArgs")
 interface IAddPagesEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PrintTaskOptions(Windows.Graphics.Printing.PrintTaskOptions* return_value);
 }
@@ -37,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Printing.GetPreviewPageEventArgs")
 interface IGetPreviewPageEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PageNumber(INT32* return_value);
 }
@@ -47,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Printing.PaginateEventArgs")
 interface IPaginateEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PrintTaskOptions(Windows.Graphics.Printing.PrintTaskOptions* return_value);
 	HRESULT get_CurrentPreviewPageNumber(INT32* return_value);
@@ -58,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Printing.PrintDocument")
 interface IPrintDocument : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DocumentSource(Windows.Graphics.Printing.IPrintDocumentSource* return_value);
 	HRESULT add_Paginate(Windows.UI.Xaml.Printing.PaginateEventHandler value, EventRegistrationToken* return_token);
@@ -79,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Printing.PrintDocument")
 interface IPrintDocumentFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Printing.PrintDocument* return_instance);
 }
@@ -89,8 +79,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Printing.PrintDocument")
 interface IPrintDocumentStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DocumentSourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }

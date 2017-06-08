@@ -62,8 +62,6 @@ struct UINavigationReading
 @WinrtFactory("Windows.Gaming.Input.ArcadeStick")
 interface IArcadeStick : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetButtonLabel(Windows.Gaming.Input.ArcadeStickButtons button, Windows.Gaming.Input.GameControllerButtonLabel* return_value);
 	HRESULT abi_GetCurrentReading(Windows.Gaming.Input.ArcadeStickReading* return_value);
@@ -73,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.ArcadeStick")
 interface IArcadeStickStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ArcadeStickAdded(Windows.Foundation.EventHandler!(Windows.Gaming.Input.ArcadeStick) value, EventRegistrationToken* return_token);
 	HRESULT remove_ArcadeStickAdded(EventRegistrationToken token);
@@ -87,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.ArcadeStick")
 interface IArcadeStickStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromGameController(Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.ArcadeStick* return_value);
 }
@@ -97,8 +91,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.FlightStick")
 interface IFlightStick : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HatSwitchKind(Windows.Gaming.Input.GameControllerSwitchKind* return_value);
 	HRESULT abi_GetButtonLabel(Windows.Gaming.Input.FlightStickButtons button, Windows.Gaming.Input.GameControllerButtonLabel* return_value);
@@ -109,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.FlightStick")
 interface IFlightStickStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_FlightStickAdded(Windows.Foundation.EventHandler!(Windows.Gaming.Input.FlightStick) value, EventRegistrationToken* return_token);
 	HRESULT remove_FlightStickAdded(EventRegistrationToken token);
@@ -123,8 +113,6 @@ extern(Windows):
 @uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd")
 interface IGameController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_HeadsetConnected(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) value, EventRegistrationToken* return_token);
 	HRESULT remove_HeadsetConnected(EventRegistrationToken token);
@@ -140,8 +128,6 @@ extern(Windows):
 @uuid("dcecc681-3963-4da6-955d-553f3b6f6161")
 interface IGameControllerBatteryInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryGetBatteryReport(Windows.Devices.Power.BatteryReport* return_value);
 }
@@ -150,8 +136,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.Gamepad")
 interface IGamepad : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Vibration(Windows.Gaming.Input.GamepadVibration* return_value);
 	HRESULT set_Vibration(Windows.Gaming.Input.GamepadVibration value);
@@ -162,8 +146,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.Gamepad")
 interface IGamepad2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetButtonLabel(Windows.Gaming.Input.GamepadButtons button, Windows.Gaming.Input.GameControllerButtonLabel* return_value);
 }
@@ -172,8 +154,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.Gamepad")
 interface IGamepadStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_GamepadAdded(Windows.Foundation.EventHandler!(Windows.Gaming.Input.Gamepad) value, EventRegistrationToken* return_token);
 	HRESULT remove_GamepadAdded(EventRegistrationToken token);
@@ -186,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.Gamepad")
 interface IGamepadStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromGameController(Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.Gamepad* return_value);
 }
@@ -196,8 +174,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.Headset")
 interface IHeadset : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CaptureDeviceId(HSTRING* return_value);
 	HRESULT get_RenderDeviceId(HSTRING* return_value);
@@ -207,8 +183,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.RacingWheel")
 interface IRacingWheel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HasClutch(bool* return_value);
 	HRESULT get_HasHandbrake(bool* return_value);
@@ -224,8 +198,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.RacingWheel")
 interface IRacingWheelStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_RacingWheelAdded(Windows.Foundation.EventHandler!(Windows.Gaming.Input.RacingWheel) value, EventRegistrationToken* return_token);
 	HRESULT remove_RacingWheelAdded(EventRegistrationToken token);
@@ -238,8 +210,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.RacingWheel")
 interface IRacingWheelStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromGameController(Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.RacingWheel* return_value);
 }
@@ -248,8 +218,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.RawGameController")
 interface IRawGameController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AxisCount(INT32* return_value);
 	HRESULT get_ButtonCount(INT32* return_value);
@@ -266,8 +234,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.RawGameController")
 interface IRawGameControllerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_RawGameControllerAdded(Windows.Foundation.EventHandler!(Windows.Gaming.Input.RawGameController) value, EventRegistrationToken* return_token);
 	HRESULT remove_RawGameControllerAdded(EventRegistrationToken token);
@@ -281,8 +247,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.UINavigationController")
 interface IUINavigationController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentReading(Windows.Gaming.Input.UINavigationReading* return_value);
 	HRESULT abi_GetOptionalButtonLabel(Windows.Gaming.Input.OptionalUINavigationButtons button, Windows.Gaming.Input.GameControllerButtonLabel* return_value);
@@ -293,8 +257,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.UINavigationController")
 interface IUINavigationControllerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_UINavigationControllerAdded(Windows.Foundation.EventHandler!(Windows.Gaming.Input.UINavigationController) value, EventRegistrationToken* return_token);
 	HRESULT remove_UINavigationControllerAdded(EventRegistrationToken token);
@@ -307,8 +269,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.UINavigationController")
 interface IUINavigationControllerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromGameController(Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.UINavigationController* return_value);
 }

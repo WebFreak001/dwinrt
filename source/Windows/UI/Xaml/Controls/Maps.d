@@ -12,8 +12,6 @@ struct MapZoomLevelRange
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource")
 interface ICustomMapTileDataSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_BitmapRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_BitmapRequested(EventRegistrationToken token);
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource")
 interface ICustomMapTileDataSourceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource* return_instance);
 }
@@ -33,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource")
 interface IHttpMapTileDataSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UriFormatString(HSTRING* return_value);
 	HRESULT set_UriFormatString(HSTRING value);
@@ -49,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource")
 interface IHttpMapTileDataSourceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource* return_instance);
 	HRESULT abi_CreateInstanceWithUriFormatString(HSTRING uriFormatString, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource* return_instance);
@@ -60,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource")
 interface ILocalMapTileDataSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UriFormatString(HSTRING* return_value);
 	HRESULT set_UriFormatString(HSTRING value);
@@ -73,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource")
 interface ILocalMapTileDataSourceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource* return_instance);
 	HRESULT abi_CreateInstanceWithUriFormatString(HSTRING uriFormatString, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource* return_instance);
@@ -84,8 +72,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapActualCameraChangedEventArgs")
 interface IMapActualCameraChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Camera(Windows.UI.Xaml.Controls.Maps.MapCamera* return_value);
 }
@@ -94,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapActualCameraChangedEventArgs")
 interface IMapActualCameraChangedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeReason(Windows.UI.Xaml.Controls.Maps.MapCameraChangeReason* return_value);
 }
@@ -104,8 +88,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs")
 interface IMapActualCameraChangingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Camera(Windows.UI.Xaml.Controls.Maps.MapCamera* return_value);
 }
@@ -114,8 +96,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs")
 interface IMapActualCameraChangingEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeReason(Windows.UI.Xaml.Controls.Maps.MapCameraChangeReason* return_value);
 }
@@ -124,8 +104,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapBillboard")
 interface IMapBillboard : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
 	HRESULT set_Location(Windows.Devices.Geolocation.Geopoint value);
@@ -142,8 +120,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapBillboard")
 interface IMapBillboardFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceFromCamera(Windows.UI.Xaml.Controls.Maps.MapCamera camera, Windows.UI.Xaml.Controls.Maps.MapBillboard* return_instance);
 }
@@ -152,8 +128,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapBillboard")
 interface IMapBillboardStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocationProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_NormalizedAnchorPointProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -164,8 +138,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapCamera")
 interface IMapCamera : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
 	HRESULT set_Location(Windows.Devices.Geolocation.Geopoint value);
@@ -183,8 +155,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapCamera")
 interface IMapCameraFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithLocation(Windows.Devices.Geolocation.Geopoint location, Windows.UI.Xaml.Controls.Maps.MapCamera* return_instance);
 	HRESULT abi_CreateInstanceWithLocationAndHeading(Windows.Devices.Geolocation.Geopoint location, double headingInDegrees, Windows.UI.Xaml.Controls.Maps.MapCamera* return_instance);
@@ -196,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapContextRequestedEventArgs")
 interface IMapContextRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
@@ -208,8 +176,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControl")
 interface IMapControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Center(Windows.Devices.Geolocation.Geopoint* return_value);
 	HRESULT set_Center(Windows.Devices.Geolocation.Geopoint value);
@@ -276,8 +242,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControl")
 interface IMapControl2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BusinessLandmarksVisible(bool* return_value);
 	HRESULT set_BusinessLandmarksVisible(bool value);
@@ -334,8 +298,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControl")
 interface IMapControl3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_MapRightTapped(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_MapRightTapped(EventRegistrationToken token);
@@ -345,8 +307,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControl")
 interface IMapControl4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BusinessLandmarksEnabled(bool* return_value);
 	HRESULT set_BusinessLandmarksEnabled(bool value);
@@ -359,8 +319,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControl")
 interface IMapControl5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MapProjection(Windows.UI.Xaml.Controls.Maps.MapProjection* return_value);
 	HRESULT set_MapProjection(Windows.UI.Xaml.Controls.Maps.MapProjection value);
@@ -382,8 +340,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkClickEventArgs")
 interface IMapControlBusinessLandmarkClickEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocalLocations(Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation)* return_value);
 }
@@ -392,8 +348,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs")
 interface IMapControlBusinessLandmarkPointerEnteredEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocalLocations(Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation)* return_value);
 }
@@ -402,8 +356,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs")
 interface IMapControlBusinessLandmarkPointerExitedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocalLocations(Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation)* return_value);
 }
@@ -412,8 +364,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkRightTappedEventArgs")
 interface IMapControlBusinessLandmarkRightTappedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocalLocations(Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation)* return_value);
 }
@@ -422,8 +372,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControlDataHelper")
 interface IMapControlDataHelper : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_BusinessLandmarkClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkClickEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_BusinessLandmarkClick(EventRegistrationToken token);
@@ -439,8 +387,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControlDataHelper")
 interface IMapControlDataHelper2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_BusinessLandmarkPointerEntered(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_BusinessLandmarkPointerEntered(EventRegistrationToken token);
@@ -456,8 +402,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControlDataHelper")
 interface IMapControlDataHelperFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(Windows.UI.Xaml.Controls.Maps.MapControl map, Windows.UI.Xaml.Controls.Maps.MapControlDataHelper* return_instance);
 }
@@ -466,8 +410,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControl")
 interface IMapControlStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CenterProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ChildrenProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -499,8 +441,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControl")
 interface IMapControlStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BusinessLandmarksVisibleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TransitFeaturesVisibleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -517,8 +457,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControl")
 interface IMapControlStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BusinessLandmarksEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TransitFeaturesEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -528,8 +466,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControl")
 interface IMapControlStatics5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MapProjectionProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_StyleSheetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -540,8 +476,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureClickEventArgs")
 interface IMapControlTransitFeatureClickEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
@@ -552,8 +486,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs")
 interface IMapControlTransitFeaturePointerEnteredEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
@@ -564,8 +496,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs")
 interface IMapControlTransitFeaturePointerExitedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
@@ -576,8 +506,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureRightTappedEventArgs")
 interface IMapControlTransitFeatureRightTappedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
@@ -600,8 +528,6 @@ interface IMapCustomExperienceChangedEventArgs : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapCustomExperience")
 interface IMapCustomExperienceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Maps.MapCustomExperience* return_instance);
 }
@@ -610,8 +536,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapElement")
 interface IMapElement : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ZIndex(INT32* return_value);
 	HRESULT set_ZIndex(INT32 value);
@@ -623,8 +547,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapElement")
 interface IMapElement2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MapTabIndex(INT32* return_value);
 	HRESULT set_MapTabIndex(INT32 value);
@@ -634,8 +556,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapElementClickEventArgs")
 interface IMapElementClickEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
@@ -646,8 +566,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapElement")
 interface IMapElementFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Maps.MapElement* return_instance);
 }
@@ -656,8 +574,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapElementPointerEnteredEventArgs")
 interface IMapElementPointerEnteredEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
@@ -668,8 +584,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapElementPointerExitedEventArgs")
 interface IMapElementPointerExitedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
@@ -680,8 +594,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapElement")
 interface IMapElementStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ZIndexProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_VisibleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -691,8 +603,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapElement")
 interface IMapElementStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MapTabIndexProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -701,8 +611,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapIcon")
 interface IMapIcon : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
 	HRESULT set_Location(Windows.Devices.Geolocation.Geopoint value);
@@ -718,8 +626,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapIcon")
 interface IMapIcon2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CollisionBehaviorDesired(Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior* return_value);
 	HRESULT set_CollisionBehaviorDesired(Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior value);
@@ -729,8 +635,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapIcon")
 interface IMapIconStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocationProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TitleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -741,8 +645,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapIcon")
 interface IMapIconStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CollisionBehaviorDesiredProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -751,8 +653,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapInputEventArgs")
 interface IMapInputEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
@@ -762,8 +662,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapItemsControl")
 interface IMapItemsControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemsSource(IInspectable* return_value);
 	HRESULT set_ItemsSource(IInspectable value);
@@ -776,8 +674,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapItemsControl")
 interface IMapItemsControlStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemsSourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ItemsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -788,8 +684,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapPolygon")
 interface IMapPolygon : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Path(Windows.Devices.Geolocation.Geopath* return_value);
 	HRESULT set_Path(Windows.Devices.Geolocation.Geopath value);
@@ -807,8 +701,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapPolygon")
 interface IMapPolygon2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Paths(Windows.Foundation.Collections.IVector!(Windows.Devices.Geolocation.Geopath)* return_value);
 }
@@ -817,8 +709,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapPolygon")
 interface IMapPolygonStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PathProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_StrokeThicknessProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -829,8 +719,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapPolyline")
 interface IMapPolyline : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Path(Windows.Devices.Geolocation.Geopath* return_value);
 	HRESULT set_Path(Windows.Devices.Geolocation.Geopath value);
@@ -846,8 +734,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapPolyline")
 interface IMapPolylineStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PathProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_StrokeDashedProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -857,8 +743,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs")
 interface IMapRightTappedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
@@ -868,8 +752,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapRouteView")
 interface IMapRouteView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RouteColor(Windows.UI.Color* return_value);
 	HRESULT set_RouteColor(Windows.UI.Color value);
@@ -882,8 +764,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapRouteView")
 interface IMapRouteViewFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithMapRoute(Windows.Services.Maps.MapRoute route, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Maps.MapRouteView* return_instance);
 }
@@ -892,8 +772,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapScene")
 interface IMapScene : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetCamera(Windows.UI.Xaml.Controls.Maps.MapCamera* return_value);
 	HRESULT add_TargetCameraChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapScene, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs) value, EventRegistrationToken* return_token);
@@ -904,8 +782,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapScene")
 interface IMapSceneStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromBoundingBox(Windows.Devices.Geolocation.GeoboundingBox bounds, Windows.UI.Xaml.Controls.Maps.MapScene* return_returnValue);
 	HRESULT abi_CreateFromBoundingBoxWithHeadingAndPitch(Windows.Devices.Geolocation.GeoboundingBox bounds, double headingInDegrees, double pitchInDegrees, Windows.UI.Xaml.Controls.Maps.MapScene* return_returnValue);
@@ -928,8 +804,6 @@ interface IMapStyleSheet : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapStyleSheet")
 interface IMapStyleSheetStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Aerial(Windows.UI.Xaml.Controls.Maps.MapStyleSheet* return_returnValue);
 	HRESULT abi_AerialWithOverlay(Windows.UI.Xaml.Controls.Maps.MapStyleSheet* return_returnValue);
@@ -946,8 +820,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs")
 interface IMapTargetCameraChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Camera(Windows.UI.Xaml.Controls.Maps.MapCamera* return_value);
 }
@@ -956,8 +828,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs")
 interface IMapTargetCameraChangedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeReason(Windows.UI.Xaml.Controls.Maps.MapCameraChangeReason* return_value);
 }
@@ -966,8 +836,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequest")
 interface IMapTileBitmapRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PixelData(Windows.Storage.Streams.IRandomAccessStreamReference* return_value);
 	HRESULT set_PixelData(Windows.Storage.Streams.IRandomAccessStreamReference value);
@@ -978,8 +846,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestDeferral")
 interface IMapTileBitmapRequestDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -988,8 +854,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs")
 interface IMapTileBitmapRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_X(INT32* return_value);
 	HRESULT get_Y(INT32* return_value);
@@ -1007,8 +871,6 @@ interface IMapTileDataSource : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapTileDataSource")
 interface IMapTileDataSourceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Maps.MapTileDataSource* return_instance);
 }
@@ -1017,8 +879,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapTileSource")
 interface IMapTileSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DataSource(Windows.UI.Xaml.Controls.Maps.MapTileDataSource* return_value);
 	HRESULT set_DataSource(Windows.UI.Xaml.Controls.Maps.MapTileDataSource value);
@@ -1048,8 +908,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapTileSource")
 interface IMapTileSourceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Maps.MapTileSource* return_instance);
 	HRESULT abi_CreateInstanceWithDataSource(Windows.UI.Xaml.Controls.Maps.MapTileDataSource dataSource, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Maps.MapTileSource* return_instance);
@@ -1062,8 +920,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapTileSource")
 interface IMapTileSourceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DataSourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_LayerProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1082,8 +938,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapTileUriRequest")
 interface IMapTileUriRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT set_Uri(Windows.Foundation.Uri value);
@@ -1094,8 +948,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapTileUriRequestDeferral")
 interface IMapTileUriRequestDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -1104,8 +956,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs")
 interface IMapTileUriRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_X(INT32* return_value);
 	HRESULT get_Y(INT32* return_value);
@@ -1117,8 +967,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.StreetsideExperience")
 interface IStreetsideExperience : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AddressTextVisible(bool* return_value);
 	HRESULT set_AddressTextVisible(bool value);
@@ -1138,8 +986,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.StreetsideExperience")
 interface IStreetsideExperienceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithPanorama(Windows.UI.Xaml.Controls.Maps.StreetsidePanorama panorama, Windows.UI.Xaml.Controls.Maps.StreetsideExperience* return_instance);
 	HRESULT abi_CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(Windows.UI.Xaml.Controls.Maps.StreetsidePanorama panorama, double headingInDegrees, double pitchInDegrees, double fieldOfViewInDegrees, Windows.UI.Xaml.Controls.Maps.StreetsideExperience* return_instance);
@@ -1149,8 +995,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.StreetsidePanorama")
 interface IStreetsidePanorama : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
 }
@@ -1159,8 +1003,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.StreetsidePanorama")
 interface IStreetsidePanoramaStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindNearbyWithLocationAsync(Windows.Devices.Geolocation.Geopoint location, Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Controls.Maps.StreetsidePanorama)* return_returnValue);
 	HRESULT abi_FindNearbyWithLocationAndRadiusAsync(Windows.Devices.Geolocation.Geopoint location, double radiusInMeters, Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Controls.Maps.StreetsidePanorama)* return_returnValue);

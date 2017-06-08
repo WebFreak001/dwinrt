@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Power.Battery")
 interface IBattery : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT abi_GetReport(Windows.Devices.Power.BatteryReport* return_result);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Power.BatteryReport")
 interface IBatteryReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChargeRateInMilliwatts(Windows.Foundation.IReference!(INT32)* return_value);
 	HRESULT get_DesignCapacityInMilliwattHours(Windows.Foundation.IReference!(INT32)* return_value);
@@ -33,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Power.Battery")
 interface IBatteryStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AggregateBattery(Windows.Devices.Power.Battery* return_result);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Power.Battery)* return_result);

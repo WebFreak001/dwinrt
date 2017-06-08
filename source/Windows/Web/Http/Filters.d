@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Web.Http.Filters.HttpBaseProtocolFilter")
 interface IHttpBaseProtocolFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllowAutoRedirect(bool* return_value);
 	HRESULT set_AllowAutoRedirect(bool value);
@@ -34,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Filters.HttpBaseProtocolFilter")
 interface IHttpBaseProtocolFilter2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxVersion(Windows.Web.Http.HttpVersion* return_value);
 	HRESULT set_MaxVersion(Windows.Web.Http.HttpVersion value);
@@ -45,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Filters.HttpBaseProtocolFilter")
 interface IHttpBaseProtocolFilter3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CookieUsageBehavior(Windows.Web.Http.Filters.HttpCookieUsageBehavior* return_value);
 	HRESULT set_CookieUsageBehavior(Windows.Web.Http.Filters.HttpCookieUsageBehavior value);
@@ -56,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Filters.HttpBaseProtocolFilter")
 interface IHttpBaseProtocolFilter4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ServerCustomValidationRequested(EventRegistrationToken eventCookie);
@@ -68,8 +60,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Filters.HttpCacheControl")
 interface IHttpCacheControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ReadBehavior(Windows.Web.Http.Filters.HttpCacheReadBehavior* return_value);
 	HRESULT set_ReadBehavior(Windows.Web.Http.Filters.HttpCacheReadBehavior value);
@@ -80,8 +70,6 @@ extern(Windows):
 @uuid("a4cb6dd5-0902-439e-bfd7-e12552b165ce")
 interface IHttpFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SendRequestAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
 }
@@ -90,8 +78,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs")
 interface IHttpServerCustomValidationRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestMessage(Windows.Web.Http.HttpRequestMessage* return_value);
 	HRESULT get_ServerCertificate(Windows.Security.Cryptography.Certificates.Certificate* return_value);

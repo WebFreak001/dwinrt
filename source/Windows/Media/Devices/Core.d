@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Devices.Core.CameraIntrinsics")
 interface ICameraIntrinsics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FocalLength(Windows.Foundation.Numerics.Vector2* return_value);
 	HRESULT get_PrincipalPoint(Windows.Foundation.Numerics.Vector2* return_value);
@@ -25,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.CameraIntrinsics")
 interface ICameraIntrinsics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UndistortedProjectionTransform(Windows.Foundation.Numerics.Matrix4x4* return_value);
 	HRESULT abi_DistortPoint(Windows.Foundation.Point input, Windows.Foundation.Point* return_result);
@@ -39,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.CameraIntrinsics")
 interface ICameraIntrinsicsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Foundation.Numerics.Vector2 focalLength, Windows.Foundation.Numerics.Vector2 principalPoint, Windows.Foundation.Numerics.Vector3 radialDistortion, Windows.Foundation.Numerics.Vector2 tangentialDistortion, UINT32 imageWidth, UINT32 imageHeight, Windows.Media.Devices.Core.CameraIntrinsics* return_result);
 }
@@ -49,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper")
 interface IDepthCorrelatedCoordinateMapper : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_UnprojectPoint(Windows.Foundation.Point sourcePoint, Windows.Perception.Spatial.SpatialCoordinateSystem targetCoordinateSystem, Windows.Foundation.Numerics.Vector3* return_result);
 	HRESULT abi_UnprojectPoints(UINT32 __sourcePointsSize, Windows.Foundation.Point* sourcePoints, Windows.Perception.Spatial.SpatialCoordinateSystem targetCoordinateSystem, UINT32 __resultsSize, Windows.Foundation.Numerics.Vector3* out_results);
@@ -62,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameControlCapabilities")
 interface IFrameControlCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Exposure(Windows.Media.Devices.Core.FrameExposureCapabilities* return_value);
 	HRESULT get_ExposureCompensation(Windows.Media.Devices.Core.FrameExposureCompensationCapabilities* return_value);
@@ -76,8 +66,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameControlCapabilities")
 interface IFrameControlCapabilities2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Flash(Windows.Media.Devices.Core.FrameFlashCapabilities* return_value);
 }
@@ -86,8 +74,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameController")
 interface IFrameController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExposureControl(Windows.Media.Devices.Core.FrameExposureControl* return_value);
 	HRESULT get_ExposureCompensationControl(Windows.Media.Devices.Core.FrameExposureCompensationControl* return_value);
@@ -101,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameController")
 interface IFrameController2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FlashControl(Windows.Media.Devices.Core.FrameFlashControl* return_value);
 }
@@ -111,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameExposureCapabilities")
 interface IFrameExposureCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_Min(Windows.Foundation.TimeSpan* return_value);
@@ -124,8 +106,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameExposureCompensationCapabilities")
 interface IFrameExposureCompensationCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_Min(FLOAT* return_value);
@@ -137,8 +117,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameExposureCompensationControl")
 interface IFrameExposureCompensationControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Value(Windows.Foundation.IReference!(FLOAT)* return_value);
 	HRESULT set_Value(Windows.Foundation.IReference!(FLOAT) value);
@@ -148,8 +126,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameExposureControl")
 interface IFrameExposureControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Auto(bool* return_value);
 	HRESULT set_Auto(bool value);
@@ -161,8 +137,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameFlashCapabilities")
 interface IFrameFlashCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_RedEyeReductionSupported(bool* return_value);
@@ -173,8 +147,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameFlashControl")
 interface IFrameFlashControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Mode(Windows.Media.Devices.Core.FrameFlashMode* return_value);
 	HRESULT set_Mode(Windows.Media.Devices.Core.FrameFlashMode value);
@@ -190,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameFocusCapabilities")
 interface IFrameFocusCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_Min(UINT32* return_value);
@@ -203,8 +173,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameFocusControl")
 interface IFrameFocusControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Value(Windows.Foundation.IReference!(UINT32)* return_value);
 	HRESULT set_Value(Windows.Foundation.IReference!(UINT32) value);
@@ -214,8 +182,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameIsoSpeedCapabilities")
 interface IFrameIsoSpeedCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_Min(UINT32* return_value);
@@ -227,8 +193,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.FrameIsoSpeedControl")
 interface IFrameIsoSpeedControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Auto(bool* return_value);
 	HRESULT set_Auto(bool value);
@@ -240,8 +204,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.Core.VariablePhotoSequenceController")
 interface IVariablePhotoSequenceController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_MaxPhotosPerSecond(FLOAT* return_value);

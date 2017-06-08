@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Lights.Lamp")
 interface ILamp : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_IsEnabled(bool* return_value);
@@ -25,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Lights.LampAvailabilityChangedEventArgs")
 interface ILampAvailabilityChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsAvailable(bool* return_value);
 }
@@ -35,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Lights.Lamp")
 interface ILampStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Lights.Lamp)* return_operation);

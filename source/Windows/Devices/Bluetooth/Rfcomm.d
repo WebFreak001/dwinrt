@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService")
 interface IRfcommDeviceService : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ConnectionHostName(Windows.Networking.HostName* return_value);
 	HRESULT get_ConnectionServiceName(HSTRING* return_value);
@@ -22,8 +20,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService")
 interface IRfcommDeviceService2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Device(Windows.Devices.Bluetooth.BluetoothDevice* return_value);
 }
@@ -32,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService")
 interface IRfcommDeviceService3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceAccessInformation(Windows.Devices.Enumeration.DeviceAccessInformation* return_value);
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus)* return_value);
@@ -43,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService")
 interface IRfcommDeviceServiceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService)* return_asyncOp);
 	HRESULT abi_GetDeviceSelector(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId, HSTRING* return_selector);
@@ -54,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService")
 interface IRfcommDeviceServiceStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelectorForBluetoothDevice(Windows.Devices.Bluetooth.BluetoothDevice bluetoothDevice, HSTRING* return_selector);
 	HRESULT abi_GetDeviceSelectorForBluetoothDeviceWithCacheMode(Windows.Devices.Bluetooth.BluetoothDevice bluetoothDevice, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, HSTRING* return_selector);
@@ -67,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult")
 interface IRfcommDeviceServicesResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Error(Windows.Devices.Bluetooth.BluetoothError* return_value);
 	HRESULT get_Services(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService)* return_services);
@@ -78,8 +66,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId")
 interface IRfcommServiceId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uuid(GUID* return_value);
 	HRESULT abi_AsShortId(UINT32* return_shortId);
@@ -90,8 +76,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId")
 interface IRfcommServiceIdStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromUuid(GUID uuid, Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId* return_serviceId);
 	HRESULT abi_FromShortId(UINT32 shortId, Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId* return_serviceId);
@@ -107,8 +91,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider")
 interface IRfcommServiceProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServiceId(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId* return_value);
 	HRESULT get_SdpRawAttributes(Windows.Foundation.Collections.IMap!(UINT32, Windows.Storage.Streams.IBuffer)* return_value);
@@ -120,8 +102,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider")
 interface IRfcommServiceProvider2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_StartAdvertisingWithRadioDiscoverability(Windows.Networking.Sockets.StreamSocketListener listener, bool radioDiscoverable);
 }
@@ -130,8 +110,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider")
 interface IRfcommServiceProviderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAsync(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider)* return_asyncOp);
 }

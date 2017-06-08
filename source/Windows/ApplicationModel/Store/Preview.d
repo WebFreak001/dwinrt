@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Store.Preview.StoreConfiguration")
 interface IStoreConfigurationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetSystemConfiguration(HSTRING catalogHardwareManufacturerId, HSTRING catalogStoreContentModifierId, Windows.Foundation.DateTime systemConfigurationExpiration, HSTRING catalogHardwareDescriptor);
 	HRESULT abi_SetMobileOperatorConfiguration(HSTRING mobileOperatorId, UINT32 appDownloadLimitInMegabytes, UINT32 updateDownloadLimitInMegabytes);
@@ -21,8 +19,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.Preview.StoreConfiguration")
 interface IStoreConfigurationStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PurchasePromptingPolicy(Windows.Foundation.IReference!(UINT32)* return_value);
 	HRESULT set_PurchasePromptingPolicy(Windows.Foundation.IReference!(UINT32) value);
@@ -32,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.Preview.StoreConfiguration")
 interface IStoreConfigurationStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_HasStoreWebAccount(bool* return_value);
 	HRESULT abi_HasStoreWebAccountForUser(Windows.System.User user, bool* return_value);
@@ -48,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.Preview.StoreConfiguration")
 interface IStoreConfigurationStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetStoreWebAccountId(HSTRING* return_result);
 	HRESULT abi_GetStoreWebAccountIdForUser(Windows.System.User user, HSTRING* return_result);
@@ -65,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.Preview.StoreHardwareManufacturerInfo")
 interface IStoreHardwareManufacturerInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HardwareManufacturerId(HSTRING* return_value);
 	HRESULT get_StoreContentModifierId(HSTRING* return_value);
@@ -78,8 +68,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.Preview.StorePreview")
 interface IStorePreview : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestProductPurchaseByProductIdAndSkuIdAsync(HSTRING productId, HSTRING skuId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.Preview.StorePreviewPurchaseResults)* return_requestPurchaseBySkuIdOperation);
 	HRESULT abi_LoadAddOnProductInfosAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Store.Preview.StorePreviewProductInfo))* return_loadAddOnProductInfosOperation);
@@ -89,8 +77,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.Preview.StorePreviewProductInfo")
 interface IStorePreviewProductInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProductId(HSTRING* return_value);
 	HRESULT get_ProductType(HSTRING* return_value);
@@ -103,8 +89,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.Preview.StorePreviewPurchaseResults")
 interface IStorePreviewPurchaseResults : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProductPurchaseStatus(Windows.ApplicationModel.Store.Preview.StorePreviewProductPurchaseStatus* return_value);
 }
@@ -113,8 +97,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.Preview.StorePreviewSkuInfo")
 interface IStorePreviewSkuInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProductId(HSTRING* return_value);
 	HRESULT get_SkuId(HSTRING* return_value);
@@ -131,8 +113,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.Preview.WebAuthenticationCoreManagerHelper")
 interface IWebAuthenticationCoreManagerHelper : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestTokenWithUIElementHostingAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.UI.Xaml.UIElement uiElement, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);
 	HRESULT abi_RequestTokenWithUIElementHostingAndWebAccountAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount, Windows.UI.Xaml.UIElement uiElement, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);

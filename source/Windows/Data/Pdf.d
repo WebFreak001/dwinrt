@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Data.Pdf.PdfDocument")
 interface IPdfDocument : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetPage(UINT32 pageIndex, Windows.Data.Pdf.PdfPage* return_pdfPage);
 	HRESULT get_PageCount(UINT32* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Pdf.PdfDocument")
 interface IPdfDocumentStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LoadFromFileAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument)* return_asyncInfo);
 	HRESULT abi_LoadFromFileWithPasswordAsync(Windows.Storage.IStorageFile file, HSTRING password, Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument)* return_asyncInfo);
@@ -31,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Pdf.PdfPage")
 interface IPdfPage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RenderToStreamAsync(Windows.Storage.Streams.IRandomAccessStream outputStream, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_RenderWithOptionsToStreamAsync(Windows.Storage.Streams.IRandomAccessStream outputStream, Windows.Data.Pdf.PdfPageRenderOptions options, Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -48,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Pdf.PdfPageDimensions")
 interface IPdfPageDimensions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MediaBox(Windows.Foundation.Rect* return_value);
 	HRESULT get_CropBox(Windows.Foundation.Rect* return_value);
@@ -62,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Pdf.PdfPageRenderOptions")
 interface IPdfPageRenderOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceRect(Windows.Foundation.Rect* return_value);
 	HRESULT set_SourceRect(Windows.Foundation.Rect value);

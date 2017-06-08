@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.System.AppDiagnosticInfo")
 interface IAppDiagnosticInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppInfo(Windows.ApplicationModel.AppInfo* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.AppDiagnosticInfo")
 interface IAppDiagnosticInfoStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestInfoAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.System.AppDiagnosticInfo))* return_operation);
 }
@@ -26,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.AppMemoryReport")
 interface IAppMemoryReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PrivateCommitUsage(UINT64* return_value);
 	HRESULT get_PeakPrivateCommitUsage(UINT64* return_value);
@@ -39,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.AppMemoryUsageLimitChangingEventArgs")
 interface IAppMemoryUsageLimitChangingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OldLimit(UINT64* return_value);
 	HRESULT get_NewLimit(UINT64* return_value);
@@ -50,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.FolderLauncherOptions")
 interface IFolderLauncherOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemsToSelect(Windows.Foundation.Collections.IVector!(Windows.Storage.IStorageItem)* return_value);
 }
@@ -60,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.KnownUserProperties")
 interface IKnownUserPropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_FirstName(HSTRING* return_value);
@@ -78,8 +66,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.LaunchUriResult")
 interface ILaunchUriResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.System.LaunchUriStatus* return_value);
 	HRESULT get_Result(Windows.Foundation.Collections.ValueSet* return_value);
@@ -89,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.LauncherOptions")
 interface ILauncherOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TreatAsUntrusted(bool* return_value);
 	HRESULT set_TreatAsUntrusted(bool value);
@@ -111,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.LauncherOptions")
 interface ILauncherOptions2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetApplicationPackageFamilyName(HSTRING* return_value);
 	HRESULT set_TargetApplicationPackageFamilyName(HSTRING value);
@@ -124,8 +106,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.LauncherOptions")
 interface ILauncherOptions3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IgnoreAppUriHandlers(bool* return_value);
 	HRESULT set_IgnoreAppUriHandlers(bool value);
@@ -135,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.LauncherOptions")
 interface ILauncherOptions4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LimitPickerToCurrentAppAndAppUriHandlers(bool* return_value);
 	HRESULT set_LimitPickerToCurrentAppAndAppUriHandlers(bool value);
@@ -146,8 +124,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Launcher")
 interface ILauncherStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LaunchFileAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_LaunchFileWithOptionsAsync(Windows.Storage.IStorageFile file, Windows.System.LauncherOptions options, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -159,8 +135,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Launcher")
 interface ILauncherStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LaunchUriForResultsAsync(Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchUriResult)* return_operation);
 	HRESULT abi_LaunchUriForResultsWithDataAsync(Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.Collections.ValueSet inputData, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchUriResult)* return_operation);
@@ -178,8 +152,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Launcher")
 interface ILauncherStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LaunchFolderAsync(Windows.Storage.IStorageFolder folder, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_LaunchFolderWithOptionsAsync(Windows.Storage.IStorageFolder folder, Windows.System.FolderLauncherOptions options, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -189,8 +161,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Launcher")
 interface ILauncherStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_QueryAppUriSupportAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchQuerySupportStatus)* return_operation);
 	HRESULT abi_QueryAppUriSupportWithPackageFamilyNameAsync(Windows.Foundation.Uri uri, HSTRING packageFamilyName, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchQuerySupportStatus)* return_operation);
@@ -206,8 +176,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.LauncherUIOptions")
 interface ILauncherUIOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InvocationPoint(Windows.Foundation.IReference!(Windows.Foundation.Point)* return_value);
 	HRESULT set_InvocationPoint(Windows.Foundation.IReference!(Windows.Foundation.Point) value);
@@ -220,8 +188,6 @@ extern(Windows):
 @uuid("8a9b29f1-7ca7-49de-9bd3-3c5b7184f616")
 interface ILauncherViewOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesiredRemainingView(Windows.UI.ViewManagement.ViewSizePreference* return_value);
 	HRESULT set_DesiredRemainingView(Windows.UI.ViewManagement.ViewSizePreference value);
@@ -231,8 +197,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.MemoryManager")
 interface IMemoryManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppMemoryUsage(UINT64* return_value);
 	HRESULT get_AppMemoryUsageLimit(UINT64* return_value);
@@ -249,8 +213,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.MemoryManager")
 interface IMemoryManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAppMemoryReport(Windows.System.AppMemoryReport* return_memoryReport);
 	HRESULT abi_GetProcessMemoryReport(Windows.System.ProcessMemoryReport* return_memoryReport);
@@ -260,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.MemoryManager")
 interface IMemoryManagerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TrySetAppMemoryUsageLimit(UINT64 value, bool* return_result);
 }
@@ -270,8 +230,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.ProcessLauncherOptions")
 interface IProcessLauncherOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StandardInput(Windows.Storage.Streams.IInputStream* return_value);
 	HRESULT set_StandardInput(Windows.Storage.Streams.IInputStream value);
@@ -287,8 +245,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.ProcessLauncherResult")
 interface IProcessLauncherResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExitCode(UINT32* return_value);
 }
@@ -297,8 +253,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.ProcessLauncher")
 interface IProcessLauncherStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RunToCompletionAsync(HSTRING fileName, HSTRING args, Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult)* return_asyncOperationResult);
 	HRESULT abi_RunToCompletionAsyncWithOptions(HSTRING fileName, HSTRING args, Windows.System.ProcessLauncherOptions options, Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult)* return_asyncOperationResult);
@@ -308,8 +262,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.ProcessMemoryReport")
 interface IProcessMemoryReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PrivateWorkingSetUsage(UINT64* return_value);
 	HRESULT get_TotalWorkingSetUsage(UINT64* return_value);
@@ -319,8 +271,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.ProtocolForResultsOperation")
 interface IProtocolForResultsOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReportCompleted(Windows.Foundation.Collections.ValueSet data);
 }
@@ -329,8 +279,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteLauncherOptions")
 interface IRemoteLauncherOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FallbackUri(Windows.Foundation.Uri* return_value);
 	HRESULT set_FallbackUri(Windows.Foundation.Uri value);
@@ -341,8 +289,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteLauncher")
 interface IRemoteLauncherStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LaunchUriAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus)* return_operation);
 	HRESULT abi_LaunchUriWithOptionsAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options, Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus)* return_operation);
@@ -353,8 +299,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.ShutdownManager")
 interface IShutdownManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_BeginShutdown(Windows.System.ShutdownKind shutdownKind, Windows.Foundation.TimeSpan timeout);
 	HRESULT abi_CancelShutdown();
@@ -364,8 +308,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.ShutdownManager")
 interface IShutdownManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsPowerStateSupported(Windows.System.PowerState powerState, bool* return_value);
 	HRESULT abi_EnterPowerState(Windows.System.PowerState powerState);
@@ -376,8 +318,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.TimeZoneSettings")
 interface ITimeZoneSettingsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CurrentTimeZoneDisplayName(HSTRING* return_value);
 	HRESULT get_SupportedTimeZoneDisplayNames(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
@@ -389,8 +329,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.User")
 interface IUser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NonRoamableId(HSTRING* return_value);
 	HRESULT get_AuthenticationStatus(Windows.System.UserAuthenticationStatus* return_value);
@@ -404,8 +342,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserAuthenticationStatusChangeDeferral")
 interface IUserAuthenticationStatusChangeDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -414,8 +350,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserAuthenticationStatusChangingEventArgs")
 interface IUserAuthenticationStatusChangingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.System.UserAuthenticationStatusChangeDeferral* return_deferral);
 	HRESULT get_User(Windows.System.User* return_value);
@@ -427,8 +361,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserChangedEventArgs")
 interface IUserChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_value);
 }
@@ -437,8 +369,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserDeviceAssociationChangedEventArgs")
 interface IUserDeviceAssociationChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_NewUser(Windows.System.User* return_value);
@@ -449,8 +379,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserDeviceAssociation")
 interface IUserDeviceAssociationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindUserFromDeviceId(HSTRING deviceId, Windows.System.User* return_user);
 	HRESULT add_UserDeviceAssociationChanged(Windows.Foundation.EventHandler!(Windows.System.UserDeviceAssociationChangedEventArgs) handler, EventRegistrationToken* return_token);
@@ -461,8 +389,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserPicker")
 interface IUserPicker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllowGuestAccounts(bool* return_value);
 	HRESULT set_AllowGuestAccounts(bool value);
@@ -475,8 +401,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserPicker")
 interface IUserPickerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsSupported(bool* return_value);
 }
@@ -485,8 +409,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.User")
 interface IUserStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWatcher(Windows.System.UserWatcher* return_watcher);
 	HRESULT abi_FindAllAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User))* return_operation);
@@ -499,8 +421,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserWatcher")
 interface IUserWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.System.UserWatcherStatus* return_value);
 	HRESULT abi_Start();

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Radios.Radio")
 interface IRadio : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetStateAsync(Windows.Devices.Radios.RadioState value, Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.RadioAccessStatus)* return_retval);
 	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Radios.Radio, IInspectable) handler, EventRegistrationToken* return_eventCookie);
@@ -21,8 +19,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Radios.Radio")
 interface IRadioStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetRadiosAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Radios.Radio))* return_value);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_deviceSelector);

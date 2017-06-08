@@ -41,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs")
 interface INavigatingCancelEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Cancel(bool* return_value);
 	HRESULT set_Cancel(bool value);
@@ -54,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs")
 interface INavigatingCancelEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Parameter(IInspectable* return_value);
 	HRESULT get_NavigationTransitionInfo(Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo* return_value);
@@ -65,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Navigation.NavigationEventArgs")
 interface INavigationEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(IInspectable* return_value);
 	HRESULT get_Parameter(IInspectable* return_value);
@@ -80,8 +74,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Navigation.NavigationEventArgs")
 interface INavigationEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NavigationTransitionInfo(Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo* return_value);
 }
@@ -90,8 +82,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Navigation.NavigationFailedEventArgs")
 interface INavigationFailedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Exception(HRESULT* return_value);
 	HRESULT get_Handled(bool* return_value);
@@ -103,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Navigation.PageStackEntry")
 interface IPageStackEntry : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourcePageType(Windows.UI.Xaml.Interop.TypeName* return_value);
 	HRESULT get_Parameter(IInspectable* return_value);
@@ -115,8 +103,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Navigation.PageStackEntry")
 interface IPageStackEntryFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(Windows.UI.Xaml.Interop.TypeName sourcePageType, IInspectable parameter, Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo navigationTransitionInfo, Windows.UI.Xaml.Navigation.PageStackEntry* return_instance);
 }
@@ -125,8 +111,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Navigation.PageStackEntry")
 interface IPageStackEntryStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourcePageTypeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }

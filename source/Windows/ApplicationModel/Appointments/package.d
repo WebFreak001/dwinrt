@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Appointments.Appointment")
 interface IAppointment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StartTime(Windows.Foundation.DateTime* return_value);
 	HRESULT set_StartTime(Windows.Foundation.DateTime value);
@@ -40,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.Appointment")
 interface IAppointment2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocalId(HSTRING* return_value);
 	HRESULT get_CalendarId(HSTRING* return_value);
@@ -69,8 +65,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.Appointment")
 interface IAppointment3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeNumber(UINT64* return_value);
 	HRESULT get_RemoteChangeNumber(UINT64* return_value);
@@ -83,8 +77,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentCalendar")
 interface IAppointmentCalendar : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayColor(Windows.UI.Color* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -118,8 +110,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentCalendar")
 interface IAppointmentCalendar2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SyncManager(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager* return_value);
 	HRESULT get_RemoteId(HSTRING* return_value);
@@ -152,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentCalendar")
 interface IAppointmentCalendar3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RegisterSyncManagerAsync(Windows.Foundation.IAsyncAction* return_result);
 }
@@ -162,8 +150,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager")
 interface IAppointmentCalendarSyncManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncStatus* return_value);
 	HRESULT get_LastSuccessfulSyncTime(Windows.Foundation.DateTime* return_value);
@@ -177,8 +163,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager")
 interface IAppointmentCalendarSyncManager2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Status(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncStatus value);
 	HRESULT set_LastSuccessfulSyncTime(Windows.Foundation.DateTime value);
@@ -189,8 +173,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentConflictResult")
 interface IAppointmentConflictResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.ApplicationModel.Appointments.AppointmentConflictType* return_value);
 	HRESULT get_Date(Windows.Foundation.DateTime* return_value);
@@ -200,8 +182,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentException")
 interface IAppointmentException : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Appointment(Windows.ApplicationModel.Appointments.Appointment* return_value);
 	HRESULT get_ExceptionProperties(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
@@ -212,8 +192,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentInvitee")
 interface IAppointmentInvitee : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Role(Windows.ApplicationModel.Appointments.AppointmentParticipantRole* return_value);
 	HRESULT set_Role(Windows.ApplicationModel.Appointments.AppointmentParticipantRole value);
@@ -225,8 +203,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentManagerForUser")
 interface IAppointmentManagerForUser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowAddAppointmentAsync(Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection, Windows.Foundation.IAsyncOperation!(HSTRING)* return_result);
 	HRESULT abi_ShowAddAppointmentWithPlacementAsync(Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.IAsyncOperation!(HSTRING)* return_result);
@@ -248,8 +224,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentManager")
 interface IAppointmentManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowAddAppointmentAsync(Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
 	HRESULT abi_ShowAddAppointmentWithPlacementAsync(Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
@@ -266,8 +240,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentManager")
 interface IAppointmentManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowAppointmentDetailsAsync(HSTRING appointmentId, Windows.Foundation.IAsyncAction* return_asyncAction);
 	HRESULT abi_ShowAppointmentDetailsWithDateAsync(HSTRING appointmentId, Windows.Foundation.DateTime instanceStartDate, Windows.Foundation.IAsyncAction* return_asyncAction);
@@ -279,8 +251,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentManager")
 interface IAppointmentManagerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.ApplicationModel.Appointments.AppointmentManagerForUser* return_result);
 }
@@ -288,8 +258,6 @@ extern(Windows):
 @uuid("615e2902-9718-467b-83fb-b293a19121de")
 interface IAppointmentParticipant : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT set_DisplayName(HSTRING value);
@@ -301,8 +269,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentProperties")
 interface IAppointmentPropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Subject(HSTRING* return_value);
 	HRESULT get_Location(HSTRING* return_value);
@@ -333,8 +299,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentProperties")
 interface IAppointmentPropertiesStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeNumber(HSTRING* return_value);
 	HRESULT get_RemoteChangeNumber(HSTRING* return_value);
@@ -345,8 +309,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentRecurrence")
 interface IAppointmentRecurrence : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Unit(Windows.ApplicationModel.Appointments.AppointmentRecurrenceUnit* return_value);
 	HRESULT set_Unit(Windows.ApplicationModel.Appointments.AppointmentRecurrenceUnit value);
@@ -370,8 +332,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentRecurrence")
 interface IAppointmentRecurrence2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RecurrenceType(Windows.ApplicationModel.Appointments.RecurrenceType* return_value);
 	HRESULT get_TimeZone(HSTRING* return_value);
@@ -382,8 +342,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentRecurrence")
 interface IAppointmentRecurrence3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CalendarIdentifier(HSTRING* return_value);
 }
@@ -392,8 +350,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentStore")
 interface IAppointmentStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeTracker(Windows.ApplicationModel.Appointments.AppointmentStoreChangeTracker* return_value);
 	HRESULT abi_CreateAppointmentCalendarAsync(HSTRING name, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentCalendar)* return_operation);
@@ -422,8 +378,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentStore")
 interface IAppointmentStore2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_StoreChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.AppointmentStore, Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs) pHandler, EventRegistrationToken* return_pToken);
 	HRESULT remove_StoreChanged(EventRegistrationToken token);
@@ -434,8 +388,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentStoreChange")
 interface IAppointmentStoreChange : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Appointment(Windows.ApplicationModel.Appointments.Appointment* return_value);
 	HRESULT get_ChangeType(Windows.ApplicationModel.Appointments.AppointmentStoreChangeType* return_value);
@@ -445,8 +397,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentStoreChange")
 interface IAppointmentStoreChange2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppointmentCalendar(Windows.ApplicationModel.Appointments.AppointmentCalendar* return_value);
 }
@@ -455,8 +405,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentStoreChangeReader")
 interface IAppointmentStoreChangeReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadBatchAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentStoreChange))* return_result);
 	HRESULT abi_AcceptChanges();
@@ -467,8 +415,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentStoreChangeTracker")
 interface IAppointmentStoreChangeTracker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetChangeReader(Windows.ApplicationModel.Appointments.AppointmentStoreChangeReader* return_value);
 	HRESULT abi_Enable();
@@ -479,8 +425,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentStoreChangedDeferral")
 interface IAppointmentStoreChangedDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -489,8 +433,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs")
 interface IAppointmentStoreChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.ApplicationModel.Appointments.AppointmentStoreChangedDeferral* return_result);
 }
@@ -505,8 +447,6 @@ interface IAppointmentStoreNotificationTriggerDetails : IInspectable
 @WinrtFactory("Windows.ApplicationModel.Appointments.FindAppointmentsOptions")
 interface IFindAppointmentsOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CalendarIds(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 	HRESULT get_FetchProperties(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);

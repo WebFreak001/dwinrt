@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult")
 interface IDnssdRegistrationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationStatus* return_value);
 	HRESULT get_IPAddress(Windows.Networking.HostName* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance")
 interface IDnssdServiceInstance : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DnssdServiceInstanceName(HSTRING* return_value);
 	HRESULT set_DnssdServiceInstanceName(HSTRING value);
@@ -42,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance")
 interface IDnssdServiceInstanceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING dnssdServiceInstanceName, Windows.Networking.HostName hostName, UINT16 port, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance* return_result);
 }
@@ -52,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher")
 interface IDnssdServiceWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Added(EventRegistrationToken token);

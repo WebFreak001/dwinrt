@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Ocr.OcrEngine")
 interface IOcrEngine : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RecognizeAsync(Windows.Graphics.Imaging.SoftwareBitmap bitmap, Windows.Foundation.IAsyncOperation!(Windows.Media.Ocr.OcrResult)* return_result);
 	HRESULT get_RecognizerLanguage(Windows.Globalization.Language* return_value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Ocr.OcrEngine")
 interface IOcrEngineStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxImageDimension(UINT32* return_value);
 	HRESULT get_AvailableRecognizerLanguages(Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language)* return_value);
@@ -31,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Ocr.OcrLine")
 interface IOcrLine : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Words(Windows.Foundation.Collections.IVectorView!(Windows.Media.Ocr.OcrWord)* return_value);
 	HRESULT get_Text(HSTRING* return_value);
@@ -42,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Ocr.OcrResult")
 interface IOcrResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Lines(Windows.Foundation.Collections.IVectorView!(Windows.Media.Ocr.OcrLine)* return_value);
 	HRESULT get_TextAngle(Windows.Foundation.IReference!(double)* return_value);
@@ -54,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Ocr.OcrWord")
 interface IOcrWord : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BoundingRect(Windows.Foundation.Rect* return_value);
 	HRESULT get_Text(HSTRING* return_value);

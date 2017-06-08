@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Haptics.KnownSimpleHapticsControllerWaveforms")
 interface IKnownSimpleHapticsControllerWaveformsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Click(UINT16* return_value);
 	HRESULT get_BuzzContinuous(UINT16* return_value);
@@ -20,8 +18,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Haptics.SimpleHapticsController")
 interface ISimpleHapticsController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_SupportedFeedback(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Haptics.SimpleHapticsControllerFeedback)* return_value);
@@ -40,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Haptics.SimpleHapticsControllerFeedback")
 interface ISimpleHapticsControllerFeedback : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Waveform(UINT16* return_value);
 	HRESULT get_Duration(Windows.Foundation.TimeSpan* return_value);
@@ -51,8 +45,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Haptics.VibrationDevice")
 interface IVibrationDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_SimpleHapticsController(Windows.Devices.Haptics.SimpleHapticsController* return_value);
@@ -62,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Haptics.VibrationDevice")
 interface IVibrationDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationAccessStatus)* return_operation);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_result);

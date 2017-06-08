@@ -16,8 +16,6 @@ struct HttpProgress
 @WinrtFactory("Windows.Web.Http.HttpBufferContent")
 interface IHttpBufferContentFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromBuffer(Windows.Storage.Streams.IBuffer content, Windows.Web.Http.HttpBufferContent* return_bufferContent);
 	HRESULT abi_CreateFromBufferWithOffset(Windows.Storage.Streams.IBuffer content, UINT32 offset, UINT32 count, Windows.Web.Http.HttpBufferContent* return_bufferContent);
@@ -27,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpClient")
 interface IHttpClient : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_DeleteAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
 	HRESULT abi_GetAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
@@ -47,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpClient")
 interface IHttpClientFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Web.Http.Filters.IHttpFilter filter, Windows.Web.Http.HttpClient* return_client);
 }
@@ -56,8 +50,6 @@ extern(Windows):
 @uuid("6b14a441-fba7-4bd2-af0a-839de7c295da")
 interface IHttpContent : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Headers(Windows.Web.Http.Headers.HttpContentHeaderCollection* return_value);
 	HRESULT abi_BufferAllAsync(Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64)* return_operation);
@@ -72,8 +64,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpCookie")
 interface IHttpCookie : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Domain(HSTRING* return_value);
@@ -92,8 +82,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpCookie")
 interface IHttpCookieFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING name, HSTRING domain, HSTRING path, Windows.Web.Http.HttpCookie* return_cookie);
 }
@@ -102,8 +90,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpCookieManager")
 interface IHttpCookieManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetCookie(Windows.Web.Http.HttpCookie cookie, bool* return_replaced);
 	HRESULT abi_SetCookieWithThirdParty(Windows.Web.Http.HttpCookie cookie, bool thirdParty, bool* return_replaced);
@@ -115,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpFormUrlEncodedContent")
 interface IHttpFormUrlEncodedContentFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) content, Windows.Web.Http.HttpFormUrlEncodedContent* return_formUrlEncodedContent);
 }
@@ -125,8 +109,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpMethod")
 interface IHttpMethod : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Method(HSTRING* return_value);
 }
@@ -135,8 +117,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpMethod")
 interface IHttpMethodFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING method, Windows.Web.Http.HttpMethod* return_httpMethod);
 }
@@ -145,8 +125,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpMethod")
 interface IHttpMethodStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Delete(Windows.Web.Http.HttpMethod* return_value);
 	HRESULT get_Get(Windows.Web.Http.HttpMethod* return_value);
@@ -161,8 +139,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpMultipartContent")
 interface IHttpMultipartContent : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Add(Windows.Web.Http.IHttpContent content);
 }
@@ -171,8 +147,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpMultipartContent")
 interface IHttpMultipartContentFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithSubtype(HSTRING subtype, Windows.Web.Http.HttpMultipartContent* return_multipartContent);
 	HRESULT abi_CreateWithSubtypeAndBoundary(HSTRING subtype, HSTRING boundary, Windows.Web.Http.HttpMultipartContent* return_multipartContent);
@@ -182,8 +156,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpMultipartFormDataContent")
 interface IHttpMultipartFormDataContent : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Add(Windows.Web.Http.IHttpContent content);
 	HRESULT abi_AddWithName(Windows.Web.Http.IHttpContent content, HSTRING name);
@@ -194,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpMultipartFormDataContent")
 interface IHttpMultipartFormDataContentFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithBoundary(HSTRING boundary, Windows.Web.Http.HttpMultipartFormDataContent* return_multipartFormDataContent);
 }
@@ -204,8 +174,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpRequestMessage")
 interface IHttpRequestMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(Windows.Web.Http.IHttpContent* return_value);
 	HRESULT set_Content(Windows.Web.Http.IHttpContent value);
@@ -222,8 +190,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpRequestMessage")
 interface IHttpRequestMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Web.Http.HttpMethod method, Windows.Foundation.Uri uri, Windows.Web.Http.HttpRequestMessage* return_httpRequestMessage);
 }
@@ -232,8 +198,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpResponseMessage")
 interface IHttpResponseMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(Windows.Web.Http.IHttpContent* return_value);
 	HRESULT set_Content(Windows.Web.Http.IHttpContent value);
@@ -256,8 +220,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpResponseMessage")
 interface IHttpResponseMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Web.Http.HttpStatusCode statusCode, Windows.Web.Http.HttpResponseMessage* return_httpResponseMessage);
 }
@@ -266,8 +228,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpStreamContent")
 interface IHttpStreamContentFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromInputStream(Windows.Storage.Streams.IInputStream content, Windows.Web.Http.HttpStreamContent* return_streamContent);
 }
@@ -276,8 +236,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpStringContent")
 interface IHttpStringContentFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromString(HSTRING content, Windows.Web.Http.HttpStringContent* return_stringContent);
 	HRESULT abi_CreateFromStringWithEncoding(HSTRING content, Windows.Storage.Streams.UnicodeEncoding encoding, Windows.Web.Http.HttpStringContent* return_stringContent);
@@ -288,8 +246,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.HttpTransportInformation")
 interface IHttpTransportInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServerCertificate(Windows.Security.Cryptography.Certificates.Certificate* return_value);
 	HRESULT get_ServerCertificateErrorSeverity(Windows.Networking.Sockets.SocketSslErrorSeverity* return_value);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.FaceAnalysis.DetectedFace")
 interface IDetectedFace : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FaceBox(Windows.Graphics.Imaging.BitmapBounds* return_returnValue);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.FaceAnalysis.FaceDetector")
 interface IFaceDetector : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_DetectFacesAsync(Windows.Graphics.Imaging.SoftwareBitmap image, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace))* return_returnValue);
 	HRESULT abi_DetectFacesWithSearchAreaAsync(Windows.Graphics.Imaging.SoftwareBitmap image, Windows.Graphics.Imaging.BitmapBounds searchArea, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace))* return_returnValue);
@@ -31,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.FaceAnalysis.FaceDetector")
 interface IFaceDetectorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.FaceAnalysis.FaceDetector)* return_returnValue);
 	HRESULT abi_GetSupportedBitmapPixelFormats(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.BitmapPixelFormat)* return_result);
@@ -44,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.FaceAnalysis.FaceTracker")
 interface IFaceTracker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ProcessNextFrameAsync(Windows.Media.VideoFrame videoFrame, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace))* return_returnValue);
 	HRESULT get_MinDetectableFaceSize(Windows.Graphics.Imaging.BitmapSize* return_returnValue);
@@ -58,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.FaceAnalysis.FaceTracker")
 interface IFaceTrackerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.FaceAnalysis.FaceTracker)* return_returnValue);
 	HRESULT abi_GetSupportedBitmapPixelFormats(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.BitmapPixelFormat)* return_result);

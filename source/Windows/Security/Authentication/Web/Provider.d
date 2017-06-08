@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountClientView")
 interface IWebAccountClientView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ApplicationCallbackUri(Windows.Foundation.Uri* return_value);
 	HRESULT get_Type(Windows.Security.Authentication.Web.Provider.WebAccountClientViewType* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountClientView")
 interface IWebAccountClientViewFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Security.Authentication.Web.Provider.WebAccountClientViewType viewType, Windows.Foundation.Uri applicationCallbackUri, Windows.Security.Authentication.Web.Provider.WebAccountClientView* return_view);
 	HRESULT abi_CreateWithPairwiseId(Windows.Security.Authentication.Web.Provider.WebAccountClientViewType viewType, Windows.Foundation.Uri applicationCallbackUri, HSTRING accountPairwiseId, Windows.Security.Authentication.Web.Provider.WebAccountClientView* return_view);
@@ -29,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountManager")
 interface IWebAccountManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_UpdateWebAccountPropertiesAsync(Windows.Security.Credentials.WebAccount webAccount, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) additionalProperties, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_AddWebAccountAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
@@ -48,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountManager")
 interface IWebAccountManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_PullCookiesAsync(HSTRING uriString, HSTRING callerPFN, Windows.Foundation.IAsyncAction* return_asyncInfo);
 }
@@ -58,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountManager")
 interface IWebAccountManagerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindAllProviderWebAccountsForUserAsync(Windows.System.User user, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.WebAccount))* return_operation);
 	HRESULT abi_AddWebAccountForUserAsync(Windows.System.User user, HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_operation);
@@ -71,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountManager")
 interface IWebAccountMapManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddWebAccountWithScopeAndMapAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, HSTRING perUserWebAccountId, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
 	HRESULT abi_SetPerAppToPerUserAccountAsync(Windows.Security.Credentials.WebAccount perAppAccount, HSTRING perUserWebAccountId, Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -84,8 +72,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountProviderAddAccountOperation")
 interface IWebAccountProviderAddAccountOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReportCompleted();
 }
@@ -93,8 +79,6 @@ extern(Windows):
 @uuid("bba4acbb-993b-4d57-bbe4-1421e3668b4c")
 interface IWebAccountProviderBaseReportOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReportCompleted();
 	HRESULT abi_ReportError(Windows.Security.Authentication.Web.Core.WebProviderError value);
@@ -104,8 +88,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountProviderDeleteAccountOperation")
 interface IWebAccountProviderDeleteAccountOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WebAccount(Windows.Security.Credentials.WebAccount* return_value);
 }
@@ -114,8 +96,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountProviderManageAccountOperation")
 interface IWebAccountProviderManageAccountOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WebAccount(Windows.Security.Credentials.WebAccount* return_value);
 	HRESULT abi_ReportCompleted();
@@ -124,8 +104,6 @@ extern(Windows):
 @uuid("6d5d2426-10b1-419a-a44e-f9c5161574e6")
 interface IWebAccountProviderOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind* return_value);
 }
@@ -134,8 +112,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountProviderRetrieveCookiesOperation")
 interface IWebAccountProviderRetrieveCookiesOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Context(Windows.Foundation.Uri* return_webCookieRequestContext);
 	HRESULT get_Cookies(Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpCookie)* return_cookies);
@@ -148,8 +124,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountProviderSignOutAccountOperation")
 interface IWebAccountProviderSignOutAccountOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WebAccount(Windows.Security.Credentials.WebAccount* return_value);
 	HRESULT get_ApplicationCallbackUri(Windows.Foundation.Uri* return_value);
@@ -159,8 +133,6 @@ extern(Windows):
 @uuid("e0b545f8-3b0f-44da-924c-7b18baaa62a9")
 interface IWebAccountProviderSilentReportOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReportUserInteractionRequired();
 	HRESULT abi_ReportUserInteractionRequiredWithError(Windows.Security.Authentication.Web.Core.WebProviderError value);
@@ -169,8 +141,6 @@ extern(Windows):
 @uuid("408f284b-1328-42db-89a4-0bce7a717d8e")
 interface IWebAccountProviderTokenObjects : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Operation(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation* return_value);
 }
@@ -178,8 +148,6 @@ extern(Windows):
 @uuid("1020b893-5ca5-4fff-95fb-b820273fc395")
 interface IWebAccountProviderTokenObjects2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_value);
 }
@@ -187,8 +155,6 @@ extern(Windows):
 @uuid("95c613be-2034-4c38-9434-d26c14b2b4b2")
 interface IWebAccountProviderTokenOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProviderRequest(Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest* return_webTokenRequest);
 	HRESULT get_ProviderResponses(Windows.Foundation.Collections.IVector!(Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse)* return_value);
@@ -199,8 +165,6 @@ extern(Windows):
 @uuid("28ff92d3-8f80-42fb-944f-b2107bbd42e6")
 interface IWebAccountProviderUIReportOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReportUserCanceled();
 }
@@ -209,8 +173,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountManager")
 interface IWebAccountScopeManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddWebAccountWithScopeAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
 	HRESULT abi_SetScopeAsync(Windows.Security.Credentials.WebAccount webAccount, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -221,8 +183,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest")
 interface IWebProviderTokenRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ClientRequest(Windows.Security.Authentication.Web.Core.WebTokenRequest* return_value);
 	HRESULT get_WebAccounts(Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.WebAccount)* return_value);
@@ -235,8 +195,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest")
 interface IWebProviderTokenRequest2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetApplicationTokenBindingKeyIdAsync(Windows.Security.Authentication.Web.TokenBindingKeyType keyType, Windows.Foundation.Uri target, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_asyncInfo);
 }
@@ -245,8 +203,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse")
 interface IWebProviderTokenResponse : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ClientResponse(Windows.Security.Authentication.Web.Core.WebTokenResponse* return_value);
 }
@@ -255,8 +211,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse")
 interface IWebProviderTokenResponseFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Security.Authentication.Web.Core.WebTokenResponse webTokenResponse, Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse* return_webProviderTokenResponse);
 }

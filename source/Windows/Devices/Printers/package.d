@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Printers.Print3DDevice")
 interface IPrint3DDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PrintSchema(Windows.Devices.Printers.PrintSchema* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Printers.Print3DDevice")
 interface IPrint3DDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Printers.Print3DDevice)* return_operation);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_result);
@@ -27,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Printers.PrintSchema")
 interface IPrintSchema : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultPrintTicketAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType)* return_operation);
 	HRESULT abi_GetCapabilitiesAsync(const Windows.Storage.Streams.IRandomAccessStreamWithContentType rainTicket, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType)* return_operation);

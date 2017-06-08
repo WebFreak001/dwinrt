@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisInkBullet")
 interface IInkAnalysisInkBullet : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisInkDrawing")
 interface IInkAnalysisInkDrawing : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DrawingKind(Windows.UI.Input.Inking.Analysis.InkAnalysisDrawingKind* return_value);
 	HRESULT get_Center(Windows.Foundation.Point* return_value);
@@ -28,8 +24,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisInkWord")
 interface IInkAnalysisInkWord : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 	HRESULT get_TextAlternates(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
@@ -39,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisLine")
 interface IInkAnalysisLine : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 	HRESULT get_IndentLevel(INT32* return_value);
@@ -50,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisListItem")
 interface IInkAnalysisListItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 }
@@ -59,8 +49,6 @@ extern(Windows):
 @uuid("30831f05-5f64-4a2c-ba37-4f4887879574")
 interface IInkAnalysisNode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(UINT32* return_value);
 	HRESULT get_Kind(Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind* return_value);
@@ -75,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisParagraph")
 interface IInkAnalysisParagraph : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 }
@@ -85,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisResult")
 interface IInkAnalysisResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.UI.Input.Inking.Analysis.InkAnalysisStatus* return_value);
 }
@@ -95,8 +79,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisRoot")
 interface IInkAnalysisRoot : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 	HRESULT abi_FindNodes(Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind nodeKind, Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)* return_result);
@@ -106,8 +88,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisWritingRegion")
 interface IInkAnalysisWritingRegion : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 }
@@ -116,8 +96,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalyzer")
 interface IInkAnalyzer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AnalysisRoot(Windows.UI.Input.Inking.Analysis.InkAnalysisRoot* return_value);
 	HRESULT get_IsAnalyzing(bool* return_value);
@@ -134,8 +112,6 @@ extern(Windows):
 @uuid("29138686-1963-49d8-9589-e14384c769e3")
 interface IInkAnalyzerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAnalyzer(Windows.UI.Input.Inking.Analysis.InkAnalyzer* return_result);
 }

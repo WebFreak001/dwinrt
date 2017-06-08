@@ -2,7 +2,6 @@ module dwinrt;
 
 public import core.sys.windows.windows;
 public import dwinrt.winstring;
-public import dwinrt.eventhandler;
 
 import core.atomic;
 
@@ -123,51 +122,13 @@ struct Debug
 			OutputDebugStringA((message ~ '\n').toStringz);
 		}
 	}
-}
 
-extern (C++, struct)
-{
-	extern (C++, winrt.Numerics)
+	static void OK(HRESULT hr, string file = __FILE__, int line = __LINE__, string func = __PRETTY_FUNCTION__) nothrow
 	{
-		struct float2
+		if (hr != S_OK)
 		{
-			float x, y;
-		}
-
-		struct float3
-		{
-			float x, y, z;
-		}
-
-		struct float4
-		{
-			float x, y, z, w;
-		}
-
-		struct float3x2
-		{
-			float m11, m12;
-			float m21, m22;
-			float m31, m32;
-		}
-
-		struct float4x4
-		{
-			float m11, m12, m13, m14;
-			float m21, m22, m23, m24;
-			float m31, m32, m33, m34;
-			float m41, m42, m43, m44;
-		}
-
-		struct plane
-		{
-			float3 normal;
-			float d;
-		}
-
-		struct quaternion
-		{
-			float x, y, z, w;
+			WriteLine("HRESULT fail in %s:%s in function %s", file, line, func);
+			throw new Error("HRESULT fail " ~ file);
 		}
 	}
 }
@@ -176,7 +137,7 @@ HSTRING duplicate_string(HSTRING other)
 {
 	HSTRING result = null;
 	auto hr = WindowsDuplicateString(other, &result);
-	assert(hr == S_OK);
+	Debug.OK(hr);
 	return result;
 }
 
@@ -184,7 +145,7 @@ HSTRING create_string(const(wchar)* value, uint length)
 {
 	HSTRING result = null;
 	auto hr = WindowsCreateString(value, length, &result);
-	assert(hr == S_OK);
+	Debug.OK(hr);
 	return result;
 }
 
@@ -192,7 +153,7 @@ bool embedded_null(HSTRING value) nothrow
 {
 	BOOL result = 0;
 	auto hr = WindowsStringHasEmbeddedNull(value, &result);
-	assert(hr == S_OK);
+	Debug.OK(hr);
 	return 0 != result;
 }
 
@@ -228,7 +189,7 @@ struct hstring
 	void clear() nothrow
 	{
 		auto result = WindowsDeleteString(handle);
-		assert(result == S_OK);
+		Debug.OK(result);
 	}
 
 	T opCast(T : string_type)()
@@ -365,7 +326,7 @@ T factory(T : IUnknown)()
 	T p;
 	auto id = uuidOf!T;
 	auto result = RoGetActivationFactory(hstring(factoryNameOf!T).handle, id, cast(void**)&p);
-	assert(result == S_OK);
+	Debug.OK(result);
 	return p;
 }
 
@@ -375,7 +336,7 @@ Interface factory(Class : IUnknown, Interface : IUnknown)()
 	auto id = uuidOf!Interface;
 	auto result = RoGetActivationFactory(hstring(winrtNameOf!Class).handle,
 			id, cast(void**)&factory);
-	assert(result == S_OK);
+	Debug.OK(result);
 	return factory;
 }
 
@@ -497,11 +458,6 @@ extern (Windows):
 }
 
 enum bitflags;
-
-string generateRTMethods(T)()
-{
-	return "";
-}
 
 public static import Windows.Foundation.Collections;
 

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement")
 interface IBluetoothLEAdvertisement : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Flags(Windows.Foundation.IReference!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFlags)* return_value);
 	HRESULT set_Flags(Windows.Foundation.IReference!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFlags) value);
@@ -24,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementBytePattern")
 interface IBluetoothLEAdvertisementBytePattern : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DataType(BYTE* return_value);
 	HRESULT set_DataType(BYTE value);
@@ -39,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementBytePattern")
 interface IBluetoothLEAdvertisementBytePatternFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(BYTE dataType, INT16 offset, Windows.Storage.Streams.IBuffer data, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementBytePattern* return_value);
 }
@@ -49,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection")
 interface IBluetoothLEAdvertisementDataSection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DataType(BYTE* return_value);
 	HRESULT set_DataType(BYTE value);
@@ -62,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection")
 interface IBluetoothLEAdvertisementDataSectionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(BYTE dataType, Windows.Storage.Streams.IBuffer data, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection* return_value);
 }
@@ -72,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataTypes")
 interface IBluetoothLEAdvertisementDataTypesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Flags(BYTE* return_value);
 	HRESULT get_IncompleteService16BitUuids(BYTE* return_value);
@@ -103,8 +91,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFilter")
 interface IBluetoothLEAdvertisementFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Advertisement(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement* return_value);
 	HRESULT set_Advertisement(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement value);
@@ -115,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher")
 interface IBluetoothLEAdvertisementPublisher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatus* return_value);
 	HRESULT get_Advertisement(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement* return_value);
@@ -130,8 +114,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher")
 interface IBluetoothLEAdvertisementPublisherFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement advertisement, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher* return_value);
 }
@@ -140,8 +122,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatusChangedEventArgs")
 interface IBluetoothLEAdvertisementPublisherStatusChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatus* return_value);
 	HRESULT get_Error(Windows.Devices.Bluetooth.BluetoothError* return_value);
@@ -151,8 +131,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs")
 interface IBluetoothLEAdvertisementReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RawSignalStrengthInDBm(INT16* return_value);
 	HRESULT get_BluetoothAddress(UINT64* return_value);
@@ -165,8 +143,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher")
 interface IBluetoothLEAdvertisementWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MinSamplingInterval(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_MaxSamplingInterval(Windows.Foundation.TimeSpan* return_value);
@@ -191,8 +167,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher")
 interface IBluetoothLEAdvertisementWatcherFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFilter advertisementFilter, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher* return_value);
 }
@@ -201,8 +175,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStoppedEventArgs")
 interface IBluetoothLEAdvertisementWatcherStoppedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Error(Windows.Devices.Bluetooth.BluetoothError* return_value);
 }
@@ -211,8 +183,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData")
 interface IBluetoothLEManufacturerData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CompanyId(UINT16* return_value);
 	HRESULT set_CompanyId(UINT16 value);
@@ -224,8 +194,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData")
 interface IBluetoothLEManufacturerDataFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(UINT16 companyId, Windows.Storage.Streams.IBuffer data, Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData* return_value);
 }

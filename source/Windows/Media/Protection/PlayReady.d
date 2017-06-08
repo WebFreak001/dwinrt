@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Protection.PlayReady.NDClient")
 interface INDClient : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT add_RegistrationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDRegistrationCompletedEventArgs) handler, EventRegistrationToken* return_token);
@@ -43,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.NDClient")
 interface INDClientFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDClientFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_CreateInstance(Windows.Media.Protection.PlayReady.INDDownloadEngine downloadEngine, Windows.Media.Protection.PlayReady.INDStreamParser streamParser, Windows.Media.Protection.PlayReady.INDMessenger pMessenger, Windows.Media.Protection.PlayReady.NDClient* return_instance);
@@ -53,8 +49,6 @@ extern(Windows):
 @uuid("4738d29f-c345-4649-8468-b8c5fc357190")
 interface INDClosedCaptionDataReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDClosedCaptionDataReceivedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_ClosedCaptionDataFormat(Windows.Media.Protection.PlayReady.NDClosedCaptionFormat* return_ccForamt);
@@ -67,8 +61,6 @@ extern(Windows):
 @uuid("f5cb0fdc-2d09-4f19-b5e1-76a0b3ee9267")
 interface INDCustomData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_CustomDataTypeID(UINT32* out___customDataTypeIDBytesSize, BYTE** return_customDataTypeIDBytes);
@@ -80,8 +72,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.NDCustomData")
 interface INDCustomDataFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDCustomDataFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_CreateInstance(UINT32 __customDataTypeIDBytesSize, BYTE* customDataTypeIDBytes, UINT32 __customDataBytesSize, BYTE* customDataBytes, Windows.Media.Protection.PlayReady.NDCustomData* return_instance);
@@ -90,8 +80,6 @@ extern(Windows):
 @uuid("2d223d65-c4b6-4438-8d46-b96e6d0fb21f")
 interface INDDownloadEngine : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_Open(Windows.Foundation.Uri uri, UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes);
@@ -116,8 +104,6 @@ extern(Windows):
 @uuid("d720b4d4-f4b8-4530-a809-9193a571e7fc")
 interface INDDownloadEngineNotifier : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_OnStreamOpened();
@@ -136,8 +122,6 @@ extern(Windows):
 @uuid("1ee30a1a-11b2-4558-8865-e3a516922517")
 interface INDLicenseFetchCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDLicenseFetchCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_ResponseCustomData(Windows.Media.Protection.PlayReady.INDCustomData* return_customData);
@@ -146,8 +130,6 @@ extern(Windows):
 @uuid("5498d33a-e686-4935-a567-7ca77ad20fa4")
 interface INDLicenseFetchDescriptor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_ContentIDType(Windows.Media.Protection.PlayReady.NDContentIDType* return_contentIDType);
@@ -163,8 +145,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.NDLicenseFetchDescriptor")
 interface INDLicenseFetchDescriptorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDLicenseFetchDescriptorFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_CreateInstance(Windows.Media.Protection.PlayReady.NDContentIDType contentIDType, UINT32 __contentIDBytesSize, BYTE* contentIDBytes, Windows.Media.Protection.PlayReady.INDCustomData licenseFetchChallengeCustomData, Windows.Media.Protection.PlayReady.NDLicenseFetchDescriptor* return_instance);
@@ -173,8 +153,6 @@ extern(Windows):
 @uuid("21d39698-aa62-45ff-a5ff-8037e5433825")
 interface INDLicenseFetchResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDLicenseFetchResult is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_ResponseCustomData(Windows.Media.Protection.PlayReady.INDCustomData* return_customData);
@@ -183,8 +161,6 @@ extern(Windows):
 @uuid("d42df95d-a75b-47bf-8249-bc83820da38a")
 interface INDMessenger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_SendRegistrationRequestAsync(UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes, UINT32 __challengeDataBytesSize, BYTE* challengeDataBytes, Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult)* return_result);
@@ -199,8 +175,6 @@ extern(Windows):
 @uuid("2a706328-da25-4f8c-9eb7-5d0fc3658bca")
 interface INDProximityDetectionCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDProximityDetectionCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_ProximityDetectionRetryCount(UINT32* return_retryCount);
@@ -209,8 +183,6 @@ extern(Windows):
 @uuid("9e39b64d-ab5b-4905-acdc-787a77c6374d")
 interface INDRegistrationCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDRegistrationCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_ResponseCustomData(Windows.Media.Protection.PlayReady.INDCustomData* return_customData);
@@ -225,8 +197,6 @@ extern(Windows):
 @uuid("e3685517-a584-479d-90b7-d689c7bf7c80")
 interface INDSendResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDSendResult is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_Response(UINT32* out___responseDataBytesSize, BYTE** return_responseDataBytes);
@@ -235,8 +205,6 @@ extern(Windows):
 @uuid("79f6e96e-f50f-4015-8ba4-c2bc344ebd4e")
 interface INDStartResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDStartResult is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_MediaStreamSource(Windows.Media.Core.MediaStreamSource* return_mediaStreamSource);
@@ -245,8 +213,6 @@ extern(Windows):
 @uuid("d8f0bef8-91d2-4d47-a3f9-eaff4edb729f")
 interface INDStorageFileHelper : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDStorageFileHelper is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_GetFileURLs(Windows.Storage.IStorageFile file, Windows.Foundation.Collections.IVector!(HSTRING)* return_fileURLs);
@@ -255,8 +221,6 @@ extern(Windows):
 @uuid("e0baa198-9796-41c9-8695-59437e67e66a")
 interface INDStreamParser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDStreamParser is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_ParseData(UINT32 __dataBytesSize, BYTE* dataBytes);
@@ -273,8 +237,6 @@ extern(Windows):
 @uuid("c167acd0-2ce6-426c-ace5-5e9275fea715")
 interface INDStreamParserNotifier : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_OnContentIDReceived(Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor licenseFetchDescriptor);
@@ -290,8 +252,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.NDTCPMessenger")
 interface INDTCPMessengerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDTCPMessengerFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_CreateInstance(HSTRING remoteHostName, UINT32 remoteHostPort, Windows.Media.Protection.PlayReady.NDTCPMessenger* return_instance);
@@ -300,8 +260,6 @@ extern(Windows):
 @uuid("e536af23-ac4f-4adc-8c66-4ff7c2702dd6")
 interface INDTransmitterProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_CertificateType(Windows.Media.Protection.PlayReady.NDCertificateType* return_type);
@@ -331,8 +289,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyContentHeader")
 interface IPlayReadyContentHeader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeyId(GUID* return_value);
 	HRESULT get_KeyIdString(HSTRING* return_value);
@@ -350,8 +306,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyContentHeader")
 interface IPlayReadyContentHeader2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeyIds(UINT32* out___contentKeyIdsSize, GUID** return_contentKeyIds);
 	HRESULT get_KeyIdStrings(UINT32* out___contentKeyIdStringsSize, HSTRING** return_contentKeyIdStrings);
@@ -361,8 +315,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyContentHeader")
 interface IPlayReadyContentHeaderFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceFromWindowsMediaDrmHeader(UINT32 __headerBytesSize, BYTE* headerBytes, Windows.Foundation.Uri licenseAcquisitionUrl, Windows.Foundation.Uri licenseAcquisitionUserInterfaceUrl, HSTRING customAttributes, GUID domainServiceId, Windows.Media.Protection.PlayReady.PlayReadyContentHeader* return_instance);
 	HRESULT abi_CreateInstanceFromComponents(GUID contentKeyId, HSTRING contentKeyIdString, Windows.Media.Protection.PlayReady.PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, Windows.Foundation.Uri licenseAcquisitionUrl, Windows.Foundation.Uri licenseAcquisitionUserInterfaceUrl, HSTRING customAttributes, GUID domainServiceId, Windows.Media.Protection.PlayReady.PlayReadyContentHeader* return_instance);
@@ -373,8 +325,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyContentHeader")
 interface IPlayReadyContentHeaderFactory2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceFromComponents2(UINT32 dwFlags, UINT32 __contentKeyIdsSize, GUID* contentKeyIds, UINT32 __contentKeyIdStringsSize, HSTRING* contentKeyIdStrings, Windows.Media.Protection.PlayReady.PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, Windows.Foundation.Uri licenseAcquisitionUrl, Windows.Foundation.Uri licenseAcquisitionUserInterfaceUrl, HSTRING customAttributes, GUID domainServiceId, Windows.Media.Protection.PlayReady.PlayReadyContentHeader* return_instance);
 }
@@ -383,8 +333,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyContentResolver")
 interface IPlayReadyContentResolver : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ServiceRequest(Windows.Media.Protection.PlayReady.PlayReadyContentHeader contentHeader, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest* return_serviceRequest);
 }
@@ -392,8 +340,6 @@ extern(Windows):
 @uuid("adcc93ac-97e6-43ef-95e4-d7868f3b16a9")
 interface IPlayReadyDomain : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AccountId(GUID* return_value);
 	HRESULT get_ServiceId(GUID* return_value);
@@ -406,8 +352,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyDomainIterable")
 interface IPlayReadyDomainIterableFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(GUID domainAccountId, Windows.Media.Protection.PlayReady.PlayReadyDomainIterable* return_domainIterable);
 }
@@ -416,8 +360,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyDomainJoinServiceRequest")
 interface IPlayReadyDomainJoinServiceRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DomainAccountId(GUID* return_value);
 	HRESULT set_DomainAccountId(GUID value);
@@ -431,8 +373,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyDomainLeaveServiceRequest")
 interface IPlayReadyDomainLeaveServiceRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DomainAccountId(GUID* return_value);
 	HRESULT set_DomainAccountId(GUID value);
@@ -444,8 +384,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyITADataGenerator")
 interface IPlayReadyITADataGenerator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GenerateData(GUID guidCPSystemId, UINT32 countOfStreams, Windows.Foundation.Collections.IPropertySet configuration, Windows.Media.Protection.PlayReady.PlayReadyITADataFormat format, UINT32* out___dataBytesSize, BYTE** return_dataBytes);
 }
@@ -459,8 +397,6 @@ interface IPlayReadyIndividualizationServiceRequest : IInspectable
 @uuid("ee474c4e-fa3c-414d-a9f2-3ffc1ef832d4")
 interface IPlayReadyLicense : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FullyEvaluated(bool* return_value);
 	HRESULT get_UsableForPlay(bool* return_value);
@@ -475,8 +411,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyLicense")
 interface IPlayReadyLicense2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SecureStopId(GUID* return_value);
 	HRESULT get_SecurityLevel(UINT32* return_value);
@@ -487,8 +421,6 @@ extern(Windows):
 @uuid("5d85ff45-3e9f-4f48-93e1-9530c8d58c3e")
 interface IPlayReadyLicenseAcquisitionServiceRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentHeader(Windows.Media.Protection.PlayReady.PlayReadyContentHeader* return_value);
 	HRESULT set_ContentHeader(Windows.Media.Protection.PlayReady.PlayReadyContentHeader value);
@@ -500,8 +432,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyLicenseAcquisitionServiceRequest")
 interface IPlayReadyLicenseAcquisitionServiceRequest2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SessionId(GUID* return_value);
 }
@@ -510,8 +440,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyLicenseAcquisitionServiceRequest")
 interface IPlayReadyLicenseAcquisitionServiceRequest3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateLicenseIterable(Windows.Media.Protection.PlayReady.PlayReadyContentHeader contentHeader, bool fullyEvaluated, Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable* return_result);
 }
@@ -520,8 +448,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable")
 interface IPlayReadyLicenseIterableFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(Windows.Media.Protection.PlayReady.PlayReadyContentHeader contentHeader, bool fullyEvaluated, Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable* return_instance);
 }
@@ -530,8 +456,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyLicenseManagement")
 interface IPlayReadyLicenseManagement : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_DeleteLicenses(Windows.Media.Protection.PlayReady.PlayReadyContentHeader contentHeader, Windows.Foundation.IAsyncAction* return_operation);
 }
@@ -539,8 +463,6 @@ extern(Windows):
 @uuid("a1723a39-87fa-4fdd-abbb-a9720e845259")
 interface IPlayReadyLicenseSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateLAServiceRequest(Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest* return_serviceRequest);
 	HRESULT abi_ConfigureMediaProtectionManager(Windows.Media.Protection.MediaProtectionManager mpm);
@@ -549,8 +471,6 @@ extern(Windows):
 @uuid("4909be3a-3aed-4656-8ad7-ee0fd7799510")
 interface IPlayReadyLicenseSession2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateLicenseIterable(Windows.Media.Protection.PlayReady.PlayReadyContentHeader contentHeader, bool fullyEvaluated, Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable* return_licenseIterable);
 }
@@ -559,8 +479,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyLicenseSession")
 interface IPlayReadyLicenseSessionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(Windows.Foundation.Collections.IPropertySet configuration, Windows.Media.Protection.PlayReady.PlayReadyLicenseSession* return_instance);
 }
@@ -569,8 +487,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyMeteringReportServiceRequest")
 interface IPlayReadyMeteringReportServiceRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MeteringCertificate(UINT32* out___meteringCertBytesSize, BYTE** return_meteringCertBytes);
 	HRESULT set_MeteringCertificate(UINT32 __meteringCertBytesSize, BYTE* meteringCertBytes);
@@ -586,8 +502,6 @@ interface IPlayReadyRevocationServiceRequest : IInspectable
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadySecureStopIterable")
 interface IPlayReadySecureStopIterableFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(UINT32 __publisherCertBytesSize, BYTE* publisherCertBytes, Windows.Media.Protection.PlayReady.PlayReadySecureStopIterable* return_instance);
 }
@@ -595,8 +509,6 @@ extern(Windows):
 @uuid("b5501ee5-01bf-4401-9677-05630a6a4cc8")
 interface IPlayReadySecureStopServiceRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SessionID(GUID* return_value);
 	HRESULT get_StartTime(Windows.Foundation.DateTime* return_value);
@@ -609,8 +521,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadySecureStopServiceRequest")
 interface IPlayReadySecureStopServiceRequestFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(UINT32 __publisherCertBytesSize, BYTE* publisherCertBytes, Windows.Media.Protection.PlayReady.PlayReadySecureStopServiceRequest* return_instance);
 	HRESULT abi_CreateInstanceFromSessionID(GUID sessionID, UINT32 __publisherCertBytesSize, BYTE* publisherCertBytes, Windows.Media.Protection.PlayReady.PlayReadySecureStopServiceRequest* return_instance);
@@ -619,8 +529,6 @@ extern(Windows):
 @uuid("8bad2836-a703-45a6-a180-76f3565aa725")
 interface IPlayReadyServiceRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT set_Uri(Windows.Foundation.Uri value);
@@ -637,8 +545,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadySoapMessage")
 interface IPlayReadySoapMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetMessageBody(UINT32* out___messageBodyBytesSize, BYTE** return_messageBodyBytes);
 	HRESULT get_MessageHeaders(Windows.Foundation.Collections.IPropertySet* return_value);
@@ -649,8 +555,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyStatics")
 interface IPlayReadyStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DomainJoinServiceRequestType(GUID* return_value);
 	HRESULT get_DomainLeaveServiceRequestType(GUID* return_value);
@@ -666,8 +570,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyStatics")
 interface IPlayReadyStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PlayReadyCertificateSecurityLevel(UINT32* return_value);
 }
@@ -676,8 +578,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyStatics")
 interface IPlayReadyStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SecureStopServiceRequestType(GUID* return_value);
 	HRESULT abi_CheckSupportedHardware(Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures hwdrmFeature, bool* return_value);
@@ -687,8 +587,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyStatics")
 interface IPlayReadyStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InputTrustAuthorityToCreate(HSTRING* return_value);
 	HRESULT get_ProtectionSystemId(GUID* return_value);

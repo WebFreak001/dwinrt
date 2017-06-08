@@ -34,8 +34,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Proximity.ConnectionRequestedEventArgs")
 interface IConnectionRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PeerInformation(Windows.Networking.Proximity.PeerInformation* return_value);
 }
@@ -44,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Proximity.PeerFinder")
 interface IPeerFinderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllowBluetooth(bool* return_value);
 	HRESULT set_AllowBluetooth(bool value);
@@ -72,8 +68,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Proximity.PeerFinder")
 interface IPeerFinderStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Role(Windows.Networking.Proximity.PeerRole* return_value);
 	HRESULT set_Role(Windows.Networking.Proximity.PeerRole value);
@@ -86,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Proximity.PeerInformation")
 interface IPeerInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 }
@@ -96,8 +88,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Proximity.PeerInformation")
 interface IPeerInformation3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_DiscoveryData(Windows.Storage.Streams.IBuffer* return_value);
@@ -107,8 +97,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Proximity.PeerInformation")
 interface IPeerInformationWithHostAndService : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HostName(Windows.Networking.HostName* return_value);
 	HRESULT get_ServiceName(HSTRING* return_value);
@@ -118,8 +106,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Proximity.PeerWatcher")
 interface IPeerWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Added(EventRegistrationToken token);
@@ -140,8 +126,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Proximity.ProximityDevice")
 interface IProximityDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SubscribeForMessage(HSTRING messageType, Windows.Networking.Proximity.MessageReceivedHandler messageReceivedHandler, INT64* return_subscriptionId);
 	HRESULT abi_PublishMessage(HSTRING messageType, HSTRING message, INT64* return_messageId);
@@ -165,8 +149,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Proximity.ProximityDevice")
 interface IProximityDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_selector);
 	HRESULT abi_GetDefault(Windows.Networking.Proximity.ProximityDevice* return_proximityDevice);
@@ -177,8 +159,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Proximity.ProximityMessage")
 interface IProximityMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MessageType(HSTRING* return_value);
 	HRESULT get_SubscriptionId(INT64* return_value);
@@ -190,8 +170,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs")
 interface ITriggeredConnectionStateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_State(Windows.Networking.Proximity.TriggeredConnectState* return_value);
 	HRESULT get_Id(UINT32* return_value);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Services.Maps.LocalSearch.LocalCategories")
 interface ILocalCategoriesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BankAndCreditUnions(HSTRING* return_value);
 	HRESULT get_EatDrink(HSTRING* return_value);
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.LocalSearch.LocalLocation")
 interface ILocalLocation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Address(Windows.Services.Maps.MapAddress* return_value);
 	HRESULT get_Identifier(HSTRING* return_value);
@@ -39,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.LocalSearch.LocalLocation")
 interface ILocalLocation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Category(HSTRING* return_value);
 	HRESULT get_RatingInfo(Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo* return_value);
@@ -51,8 +45,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.LocalSearch.LocalLocationFinderResult")
 interface ILocalLocationFinderResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocalLocations(Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation)* return_value);
 	HRESULT get_Status(Windows.Services.Maps.LocalSearch.LocalLocationFinderStatus* return_value);
@@ -62,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.LocalSearch.LocalLocationFinder")
 interface ILocalLocationFinderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindLocalLocationsAsync(HSTRING searchTerm, Windows.Devices.Geolocation.Geocircle searchArea, HSTRING localCategory, UINT32 maxResults, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.LocalSearch.LocalLocationFinderResult)* return_result);
 }
@@ -72,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.LocalSearch.LocalLocationHoursOfOperationItem")
 interface ILocalLocationHoursOfOperationItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Day(Windows.Globalization.DayOfWeek* return_value);
 	HRESULT get_Start(Windows.Foundation.TimeSpan* return_value);
@@ -84,8 +72,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo")
 interface ILocalLocationRatingInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AggregateRating(Windows.Foundation.IReference!(double)* return_value);
 	HRESULT get_RatingCount(Windows.Foundation.IReference!(INT32)* return_value);

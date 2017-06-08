@@ -12,8 +12,6 @@ interface ICustomXamlResourceLoader : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Resources.CustomXamlResourceLoader")
 interface ICustomXamlResourceLoaderFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Resources.CustomXamlResourceLoader* return_instance);
 }
@@ -22,8 +20,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Resources.CustomXamlResourceLoader")
 interface ICustomXamlResourceLoaderOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType, IInspectable* return_returnValue);
 }
@@ -32,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Resources.CustomXamlResourceLoader")
 interface ICustomXamlResourceLoaderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Current(Windows.UI.Xaml.Resources.CustomXamlResourceLoader* return_value);
 	HRESULT set_Current(Windows.UI.Xaml.Resources.CustomXamlResourceLoader value);

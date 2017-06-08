@@ -24,8 +24,6 @@ struct PointerDeviceUsage
 @WinrtFactory("Windows.Devices.Input.KeyboardCapabilities")
 interface IKeyboardCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeyboardPresent(INT32* return_value);
 }
@@ -34,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Input.MouseCapabilities")
 interface IMouseCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MousePresent(INT32* return_value);
 	HRESULT get_VerticalWheelPresent(INT32* return_value);
@@ -48,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Input.MouseDevice")
 interface IMouseDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_MouseMoved(Windows.Foundation.TypedEventHandler!(Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_MouseMoved(EventRegistrationToken cookie);
@@ -59,8 +53,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Input.MouseDevice")
 interface IMouseDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.Devices.Input.MouseDevice* return_mouseDevice);
 }
@@ -69,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Input.MouseEventArgs")
 interface IMouseEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MouseDelta(Windows.Devices.Input.MouseDelta* return_value);
 }
@@ -79,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Input.PointerDevice")
 interface IPointerDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_IsIntegrated(bool* return_value);
@@ -94,8 +82,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Input.PointerDevice")
 interface IPointerDevice2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxPointersWithZDistance(UINT32* return_value);
 }
@@ -104,8 +90,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Input.PointerDevice")
 interface IPointerDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetPointerDevice(UINT32 pointerId, Windows.Devices.Input.PointerDevice* return_pointerDevice);
 	HRESULT abi_GetPointerDevices(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Input.PointerDevice)* return_pointerDevices);
@@ -115,8 +99,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Input.TouchCapabilities")
 interface ITouchCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TouchPresent(INT32* return_value);
 	HRESULT get_Contacts(UINT32* return_value);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Services.Cortana.CortanaPermissionsManager")
 interface ICortanaPermissionsManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsSupported(bool* return_result);
 	HRESULT abi_ArePermissionsGrantedAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Cortana.CortanaPermission) permissions, Windows.Foundation.IAsyncOperation!(bool)* return_getGrantedPermissionsOperation);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Cortana.CortanaPermissionsManager")
 interface ICortanaPermissionsManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Services.Cortana.CortanaPermissionsManager* return_result);
 }
@@ -29,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Cortana.CortanaSettings")
 interface ICortanaSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HasUserConsentToVoiceActivation(bool* return_value);
 	HRESULT get_IsVoiceActivationEnabled(bool* return_value);
@@ -41,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Cortana.CortanaSettings")
 interface ICortanaSettingsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsSupported(bool* return_value);
 	HRESULT abi_GetDefault(Windows.Services.Cortana.CortanaSettings* return_result);

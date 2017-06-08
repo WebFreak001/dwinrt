@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.WiFi.WiFiAdapter")
 interface IWiFiAdapter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NetworkAdapter(Windows.Networking.Connectivity.NetworkAdapter* return_value);
 	HRESULT abi_ScanAsync(Windows.Foundation.IAsyncAction* return_value);
@@ -24,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFi.WiFiAdapter")
 interface IWiFiAdapterStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindAllAdaptersAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFi.WiFiAdapter))* return_value);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_deviceSelector);
@@ -37,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFi.WiFiAvailableNetwork")
 interface IWiFiAvailableNetwork : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uptime(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_Ssid(HSTRING* return_value);
@@ -57,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFi.WiFiConnectionResult")
 interface IWiFiConnectionResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ConnectionStatus(Windows.Devices.WiFi.WiFiConnectionStatus* return_value);
 }
@@ -67,8 +59,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFi.WiFiNetworkReport")
 interface IWiFiNetworkReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_AvailableNetworks(Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFi.WiFiAvailableNetwork)* return_value);

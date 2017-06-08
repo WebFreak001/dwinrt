@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Contacts.AggregateContactManager")
 interface IAggregateContactManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindRawContactsAsync(Windows.ApplicationModel.Contacts.Contact contact, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact))* return_value);
 	HRESULT abi_TryLinkContactsAsync(Windows.ApplicationModel.Contacts.Contact primaryContact, Windows.ApplicationModel.Contacts.Contact secondaryContact, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact)* return_contact);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.AggregateContactManager")
 interface IAggregateContactManager2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetRemoteIdentificationInformationAsync(HSTRING contactListId, HSTRING remoteSourceId, HSTRING accountId, Windows.Foundation.IAsyncAction* return_result);
 }
@@ -29,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.Contact")
 interface IContact : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT set_Name(HSTRING value);
@@ -43,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.Contact")
 interface IContact2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT set_Id(HSTRING value);
@@ -66,8 +58,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.Contact")
 interface IContact3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContactListId(HSTRING* return_value);
 	HRESULT get_DisplayPictureUserUpdateTime(Windows.Foundation.DateTime* return_value);
@@ -98,8 +88,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactAddress")
 interface IContactAddress : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StreetAddress(HSTRING* return_value);
 	HRESULT set_StreetAddress(HSTRING value);
@@ -121,8 +109,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactAnnotation")
 interface IContactAnnotation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_AnnotationListId(HSTRING* return_value);
@@ -140,8 +126,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactAnnotation")
 interface IContactAnnotation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContactListId(HSTRING* return_value);
 	HRESULT set_ContactListId(HSTRING value);
@@ -151,8 +135,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactAnnotationList")
 interface IContactAnnotationList : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_ProviderPackageFamilyName(HSTRING* return_value);
@@ -169,8 +151,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactAnnotationStore")
 interface IContactAnnotationStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindContactIdsByEmailAsync(HSTRING emailAddress, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_contactIds);
 	HRESULT abi_FindContactIdsByPhoneNumberAsync(HSTRING phoneNumber, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_contactIds);
@@ -186,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactAnnotationStore")
 interface IContactAnnotationStore2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindAnnotationsForContactListAsync(HSTRING contactListId, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation))* return_annotations);
 }
@@ -196,8 +174,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactBatch")
 interface IContactBatch : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Contacts(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact)* return_value);
 	HRESULT get_Status(Windows.ApplicationModel.Contacts.ContactBatchStatus* return_value);
@@ -207,8 +183,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactCardDelayedDataLoader")
 interface IContactCardDelayedDataLoader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetData(Windows.ApplicationModel.Contacts.Contact contact);
 }
@@ -217,8 +191,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactCardOptions")
 interface IContactCardOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderKind(Windows.ApplicationModel.Contacts.ContactCardHeaderKind* return_value);
 	HRESULT set_HeaderKind(Windows.ApplicationModel.Contacts.ContactCardHeaderKind value);
@@ -230,8 +202,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactCardOptions")
 interface IContactCardOptions2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServerSearchContactListIds(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 }
@@ -240,8 +210,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactChange")
 interface IContactChange : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeType(Windows.ApplicationModel.Contacts.ContactChangeType* return_value);
 	HRESULT get_Contact(Windows.ApplicationModel.Contacts.Contact* return_value);
@@ -251,8 +219,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactChangeReader")
 interface IContactChangeReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AcceptChanges();
 	HRESULT abi_AcceptChangesThrough(Windows.ApplicationModel.Contacts.ContactChange lastChangeToAccept);
@@ -263,8 +229,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactChangeTracker")
 interface IContactChangeTracker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Enable();
 	HRESULT abi_GetChangeReader(Windows.ApplicationModel.Contacts.ContactChangeReader* return_value);
@@ -275,8 +239,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactChangedDeferral")
 interface IContactChangedDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -285,8 +247,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactChangedEventArgs")
 interface IContactChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.ApplicationModel.Contacts.ContactChangedDeferral* return_value);
 }
@@ -295,8 +255,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactConnectedServiceAccount")
 interface IContactConnectedServiceAccount : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT set_Id(HSTRING value);
@@ -308,8 +266,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactDate")
 interface IContactDate : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Day(Windows.Foundation.IReference!(UINT32)* return_value);
 	HRESULT set_Day(Windows.Foundation.IReference!(UINT32) value);
@@ -327,8 +283,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactEmail")
 interface IContactEmail : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Address(HSTRING* return_value);
 	HRESULT set_Address(HSTRING value);
@@ -341,8 +295,6 @@ extern(Windows):
 @uuid("b176486a-d293-492c-a058-db575b3e3c0f")
 interface IContactField : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.ApplicationModel.Contacts.ContactFieldType* return_value);
 	HRESULT get_Category(Windows.ApplicationModel.Contacts.ContactFieldCategory* return_value);
@@ -353,8 +305,6 @@ extern(Windows):
 @uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e")
 interface IContactFieldFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateField_Default(HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactField* return_field);
 	HRESULT abi_CreateField_Category(HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category, Windows.ApplicationModel.Contacts.ContactField* return_field);
@@ -371,8 +321,6 @@ interface IContactGroup : IInspectable
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactInformation")
 interface IContactInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT abi_GetThumbnailAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType)* return_operation);
@@ -388,8 +336,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactInstantMessageField")
 interface IContactInstantMessageField : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UserName(HSTRING* return_value);
 	HRESULT get_Service(HSTRING* return_value);
@@ -400,8 +346,6 @@ extern(Windows):
 @uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09")
 interface IContactInstantMessageFieldFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstantMessage_Default(HSTRING userName, Windows.ApplicationModel.Contacts.ContactInstantMessageField* return_field);
 	HRESULT abi_CreateInstantMessage_Category(HSTRING userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category, Windows.ApplicationModel.Contacts.ContactInstantMessageField* return_field);
@@ -412,8 +356,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactJobInfo")
 interface IContactJobInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CompanyName(HSTRING* return_value);
 	HRESULT set_CompanyName(HSTRING value);
@@ -437,8 +379,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactLaunchActionVerbs")
 interface IContactLaunchActionVerbsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Call(HSTRING* return_value);
 	HRESULT get_Message(HSTRING* return_value);
@@ -451,8 +391,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactList")
 interface IContactList : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -485,8 +423,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactList")
 interface IContactList2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RegisterSyncManagerAsync(Windows.Foundation.IAsyncAction* return_result);
 	HRESULT set_SupportsServerSearch(bool value);
@@ -497,8 +433,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactListSyncConstraints")
 interface IContactListSyncConstraints : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanSyncDescriptions(bool* return_value);
 	HRESULT set_CanSyncDescriptions(bool value);
@@ -562,8 +496,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactListSyncManager")
 interface IContactListSyncManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.ApplicationModel.Contacts.ContactListSyncStatus* return_value);
 	HRESULT get_LastSuccessfulSyncTime(Windows.Foundation.DateTime* return_value);
@@ -577,8 +509,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactListSyncManager")
 interface IContactListSyncManager2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Status(Windows.ApplicationModel.Contacts.ContactListSyncStatus value);
 	HRESULT set_LastSuccessfulSyncTime(Windows.Foundation.DateTime value);
@@ -589,8 +519,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactLocationField")
 interface IContactLocationField : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UnstructuredAddress(HSTRING* return_value);
 	HRESULT get_Street(HSTRING* return_value);
@@ -603,8 +531,6 @@ extern(Windows):
 @uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe")
 interface IContactLocationFieldFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateLocation_Default(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactLocationField* return_field);
 	HRESULT abi_CreateLocation_Category(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category, Windows.ApplicationModel.Contacts.ContactLocationField* return_field);
@@ -615,8 +541,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactManagerForUser")
 interface IContactManagerForUser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ConvertContactToVCardAsync(Windows.ApplicationModel.Contacts.Contact contact, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.RandomAccessStreamReference)* return_result);
 	HRESULT abi_ConvertContactToVCardAsyncWithMaxBytes(Windows.ApplicationModel.Contacts.Contact contact, UINT32 maxBytes, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.RandomAccessStreamReference)* return_result);
@@ -634,8 +558,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactManagerForUser")
 interface IContactManagerForUser2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowFullContactCard(Windows.ApplicationModel.Contacts.Contact contact, Windows.ApplicationModel.Contacts.FullContactCardOptions fullContactCardOptions);
 }
@@ -644,8 +566,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactManager")
 interface IContactManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowContactCard(Windows.ApplicationModel.Contacts.Contact contact, Windows.Foundation.Rect selection);
 	HRESULT abi_ShowContactCardWithPlacement(Windows.ApplicationModel.Contacts.Contact contact, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement);
@@ -656,8 +576,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactManager")
 interface IContactManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestStoreAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactStore)* return_store);
 }
@@ -666,8 +584,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactManager")
 interface IContactManagerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ConvertContactToVCardAsync(Windows.ApplicationModel.Contacts.Contact contact, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.RandomAccessStreamReference)* return_vCard);
 	HRESULT abi_ConvertContactToVCardAsyncWithMaxBytes(Windows.ApplicationModel.Contacts.Contact contact, UINT32 maxBytes, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.RandomAccessStreamReference)* return_vCard);
@@ -689,8 +605,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactManager")
 interface IContactManagerStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.ApplicationModel.Contacts.ContactManagerForUser* return_result);
 }
@@ -699,8 +613,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactManager")
 interface IContactManagerStatics5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsShowFullContactCardSupportedAsync(Windows.Foundation.IAsyncOperation!(bool)* return_result);
 	HRESULT get_IncludeMiddleNameInSystemDisplayAndSort(bool* return_value);
@@ -711,8 +623,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactMatchReason")
 interface IContactMatchReason : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Field(Windows.ApplicationModel.Contacts.ContactMatchReasonKind* return_value);
 	HRESULT get_Segments(Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment)* return_value);
@@ -723,8 +633,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.Contact")
 interface IContactName : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FirstName(HSTRING* return_value);
 	HRESULT set_FirstName(HSTRING value);
@@ -748,8 +656,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactPanel")
 interface IContactPanel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ClosePanel();
 	HRESULT get_HeaderColor(Windows.Foundation.IReference!(Windows.UI.Color)* return_value);
@@ -764,8 +670,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs")
 interface IContactPanelClosingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_deferral);
 }
@@ -774,8 +678,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs")
 interface IContactPanelLaunchFullAppRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -785,8 +687,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactPhone")
 interface IContactPhone : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Number(HSTRING* return_value);
 	HRESULT set_Number(HSTRING value);
@@ -800,8 +700,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactPicker")
 interface IContactPicker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CommitButtonText(HSTRING* return_value);
 	HRESULT set_CommitButtonText(HSTRING value);
@@ -816,8 +714,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactPicker")
 interface IContactPicker2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesiredFieldsWithContactFieldType(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactFieldType)* return_value);
 	HRESULT abi_PickContactAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact)* return_result);
@@ -828,8 +724,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactPicker")
 interface IContactPicker3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_value);
 }
@@ -838,8 +732,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactPicker")
 interface IContactPickerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateForUser(Windows.System.User user, Windows.ApplicationModel.Contacts.ContactPicker* return_result);
 	HRESULT abi_IsSupportedAsync(Windows.Foundation.IAsyncOperation!(bool)* return_result);
@@ -849,8 +741,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactQueryOptions")
 interface IContactQueryOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextSearch(Windows.ApplicationModel.Contacts.ContactQueryTextSearch* return_value);
 	HRESULT get_ContactListIds(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
@@ -867,8 +757,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactQueryOptions")
 interface IContactQueryOptionsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithText(HSTRING text, Windows.ApplicationModel.Contacts.ContactQueryOptions* return_result);
 	HRESULT abi_CreateWithTextAndFields(HSTRING text, Windows.ApplicationModel.Contacts.ContactQuerySearchFields fields, Windows.ApplicationModel.Contacts.ContactQueryOptions* return_result);
@@ -878,8 +766,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactQueryTextSearch")
 interface IContactQueryTextSearch : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Fields(Windows.ApplicationModel.Contacts.ContactQuerySearchFields* return_value);
 	HRESULT set_Fields(Windows.ApplicationModel.Contacts.ContactQuerySearchFields value);
@@ -893,8 +779,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactReader")
 interface IContactReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadBatchAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactBatch)* return_value);
 	HRESULT abi_GetMatchingPropertiesWithMatchReason(Windows.ApplicationModel.Contacts.Contact contact, Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactMatchReason)* return_ppRetVal);
@@ -904,8 +788,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactSignificantOther")
 interface IContactSignificantOther : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT set_Name(HSTRING value);
@@ -917,8 +799,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactSignificantOther")
 interface IContactSignificantOther2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Relationship(Windows.ApplicationModel.Contacts.ContactRelationship* return_value);
 	HRESULT set_Relationship(Windows.ApplicationModel.Contacts.ContactRelationship value);
@@ -928,8 +808,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactStore")
 interface IContactStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindContactsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact))* return_contacts);
 	HRESULT abi_FindContactsWithSearchTextAsync(HSTRING searchText, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact))* return_contacts);
@@ -940,8 +818,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactStore")
 interface IContactStore2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeTracker(Windows.ApplicationModel.Contacts.ContactChangeTracker* return_value);
 	HRESULT add_ContactChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactStore, Windows.ApplicationModel.Contacts.ContactChangedEventArgs) value, EventRegistrationToken* return_returnValue);
@@ -966,8 +842,6 @@ interface IContactStoreNotificationTriggerDetails : IInspectable
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactWebsite")
 interface IContactWebsite : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT set_Uri(Windows.Foundation.Uri value);
@@ -979,8 +853,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactWebsite")
 interface IContactWebsite2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RawValue(HSTRING* return_value);
 	HRESULT set_RawValue(HSTRING value);
@@ -990,8 +862,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.FullContactCardOptions")
 interface IFullContactCardOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesiredRemainingView(Windows.UI.ViewManagement.ViewSizePreference* return_value);
 	HRESULT set_DesiredRemainingView(Windows.UI.ViewManagement.ViewSizePreference value);
@@ -1001,8 +871,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.KnownContactField")
 interface IKnownContactFieldStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
 	HRESULT get_Email(HSTRING* return_value);
@@ -1022,8 +890,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.PinnedContactIdsQueryResult")
 interface IPinnedContactIdsQueryResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContactIds(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 }
@@ -1032,8 +898,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.PinnedContactManager")
 interface IPinnedContactManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_user);
 	HRESULT abi_IsPinSurfaceSupported(Windows.ApplicationModel.Contacts.PinnedContactSurface surface, bool* return_result);
@@ -1049,8 +913,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.PinnedContactManager")
 interface IPinnedContactManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.ApplicationModel.Contacts.PinnedContactManager* return_result);
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.ApplicationModel.Contacts.PinnedContactManager* return_result);

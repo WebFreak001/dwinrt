@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Playback.BackgroundMediaPlayer")
 interface IBackgroundMediaPlayerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
 	HRESULT get_Current(Windows.Media.Playback.MediaPlayer* return_player);
@@ -33,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs")
 interface ICurrentMediaPlaybackItemChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NewItem(Windows.Media.Playback.MediaPlaybackItem* return_value);
 	HRESULT get_OldItem(Windows.Media.Playback.MediaPlaybackItem* return_value);
@@ -44,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs")
 interface ICurrentMediaPlaybackItemChangedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reason(Windows.Media.Playback.MediaPlaybackItemChangedReason* return_value);
 }
@@ -54,8 +48,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaBreak")
 interface IMediaBreak : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PlaybackList(Windows.Media.Playback.MediaPlaybackList* return_value);
 	HRESULT get_PresentationPosition(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
@@ -69,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaBreakEndedEventArgs")
 interface IMediaBreakEndedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MediaBreak(Windows.Media.Playback.MediaBreak* return_value);
 }
@@ -79,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaBreak")
 interface IMediaBreakFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Media.Playback.MediaBreakInsertionMethod insertionMethod, Windows.Media.Playback.MediaBreak* return_result);
 	HRESULT abi_CreateWithPresentationPosition(Windows.Media.Playback.MediaBreakInsertionMethod insertionMethod, Windows.Foundation.TimeSpan presentationPosition, Windows.Media.Playback.MediaBreak* return_result);
@@ -90,8 +78,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaBreakManager")
 interface IMediaBreakManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_BreaksSeekedOver(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSeekedOverEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_BreaksSeekedOver(EventRegistrationToken token);
@@ -111,8 +97,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaBreakSchedule")
 interface IMediaBreakSchedule : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ScheduleChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakSchedule, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ScheduleChanged(EventRegistrationToken token);
@@ -130,8 +114,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaBreakSeekedOverEventArgs")
 interface IMediaBreakSeekedOverEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SeekedOverBreaks(Windows.Foundation.Collections.IVectorView!(Windows.Media.Playback.MediaBreak)* return_value);
 	HRESULT get_OldPosition(Windows.Foundation.TimeSpan* return_value);
@@ -142,8 +124,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaBreakSkippedEventArgs")
 interface IMediaBreakSkippedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MediaBreak(Windows.Media.Playback.MediaBreak* return_value);
 }
@@ -152,8 +132,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaBreakStartedEventArgs")
 interface IMediaBreakStartedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MediaBreak(Windows.Media.Playback.MediaBreak* return_value);
 }
@@ -161,8 +139,6 @@ extern(Windows):
 @uuid("5c1d0ba7-3856-48b9-8dc6-244bf107bf8c")
 interface IMediaEnginePlaybackSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Use MediaPlayer instead of MediaEngine. For more info, see MSDN.")
 	HRESULT get_CurrentItem(Windows.Media.Playback.MediaPlaybackItem* return_value);
@@ -174,8 +150,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaItemDisplayProperties")
 interface IMediaItemDisplayProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.Media.MediaPlaybackType* return_value);
 	HRESULT set_Type(Windows.Media.MediaPlaybackType value);
@@ -190,8 +164,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackCommandManager")
 interface IMediaPlaybackCommandManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsEnabled(bool* return_value);
 	HRESULT set_IsEnabled(bool value);
@@ -232,8 +204,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs")
 interface IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -245,8 +215,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior")
 interface IMediaPlaybackCommandManagerCommandBehavior : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CommandManager(Windows.Media.Playback.MediaPlaybackCommandManager* return_value);
 	HRESULT get_IsEnabled(bool* return_value);
@@ -260,8 +228,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs")
 interface IMediaPlaybackCommandManagerFastForwardReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -272,8 +238,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs")
 interface IMediaPlaybackCommandManagerNextReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -284,8 +248,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs")
 interface IMediaPlaybackCommandManagerPauseReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -296,8 +258,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs")
 interface IMediaPlaybackCommandManagerPlayReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -308,8 +268,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs")
 interface IMediaPlaybackCommandManagerPositionReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -321,8 +279,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs")
 interface IMediaPlaybackCommandManagerPreviousReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -333,8 +289,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs")
 interface IMediaPlaybackCommandManagerRateReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -346,8 +300,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs")
 interface IMediaPlaybackCommandManagerRewindReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -358,8 +310,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs")
 interface IMediaPlaybackCommandManagerShuffleReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -371,8 +321,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
 interface IMediaPlaybackItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_AudioTracksChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AudioTracksChanged(EventRegistrationToken token);
@@ -390,8 +338,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
 interface IMediaPlaybackItem2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BreakSchedule(Windows.Media.Playback.MediaBreakSchedule* return_value);
 	HRESULT get_StartTime(Windows.Foundation.TimeSpan* return_value);
@@ -406,8 +352,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
 interface IMediaPlaybackItem3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsDisabledInPlaybackList(bool* return_value);
 	HRESULT set_IsDisabledInPlaybackList(bool value);
@@ -420,8 +364,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackItemError")
 interface IMediaPlaybackItemError : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ErrorCode(Windows.Media.Playback.MediaPlaybackItemErrorCode* return_value);
 	HRESULT get_ExtendedError(HRESULT* return_value);
@@ -431,8 +373,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
 interface IMediaPlaybackItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Media.Core.MediaSource source, Windows.Media.Playback.MediaPlaybackItem* return_value);
 }
@@ -441,8 +381,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
 interface IMediaPlaybackItemFactory2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithStartTime(Windows.Media.Core.MediaSource source, Windows.Foundation.TimeSpan startTime, Windows.Media.Playback.MediaPlaybackItem* return_result);
 	HRESULT abi_CreateWithStartTimeAndDurationLimit(Windows.Media.Core.MediaSource source, Windows.Foundation.TimeSpan startTime, Windows.Foundation.TimeSpan durationLimit, Windows.Media.Playback.MediaPlaybackItem* return_result);
@@ -452,8 +390,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackItemFailedEventArgs")
 interface IMediaPlaybackItemFailedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Item(Windows.Media.Playback.MediaPlaybackItem* return_value);
 	HRESULT get_Error(Windows.Media.Playback.MediaPlaybackItemError* return_value);
@@ -463,8 +399,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs")
 interface IMediaPlaybackItemOpenedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Item(Windows.Media.Playback.MediaPlaybackItem* return_value);
 }
@@ -473,8 +407,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
 interface IMediaPlaybackItemStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindFromMediaSource(Windows.Media.Core.MediaSource source, Windows.Media.Playback.MediaPlaybackItem* return_value);
 }
@@ -483,8 +415,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackList")
 interface IMediaPlaybackList : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ItemFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemFailedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ItemFailed(EventRegistrationToken token);
@@ -508,8 +438,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackList")
 interface IMediaPlaybackList2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxPrefetchTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
 	HRESULT set_MaxPrefetchTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value);
@@ -523,8 +451,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackList")
 interface IMediaPlaybackList3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxPlayedItemsToKeepOpen(Windows.Foundation.IReference!(UINT32)* return_value);
 	HRESULT set_MaxPlayedItemsToKeepOpen(Windows.Foundation.IReference!(UINT32) value);
@@ -534,8 +460,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackSession")
 interface IMediaPlaybackSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_PlaybackStateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_PlaybackStateChanged(EventRegistrationToken token);
@@ -581,8 +505,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackSession")
 interface IMediaPlaybackSession2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_BufferedRangesChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_BufferedRangesChanged(EventRegistrationToken token);
@@ -610,8 +532,6 @@ interface IMediaPlaybackSource : IInspectable
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackSphericalVideoProjection")
 interface IMediaPlaybackSphericalVideoProjection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsEnabled(bool* return_value);
 	HRESULT set_IsEnabled(bool value);
@@ -629,8 +549,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList")
 interface IMediaPlaybackTimedMetadataTrackList : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_PresentationModeChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList, Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PresentationModeChanged(EventRegistrationToken token);
@@ -642,8 +560,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlayer")
 interface IMediaPlayer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AutoPlay(bool* return_value);
 	HRESULT set_AutoPlay(bool value);
@@ -717,8 +633,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlayer")
 interface IMediaPlayer2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SystemMediaTransportControls(Windows.Media.SystemMediaTransportControls* return_value);
 	HRESULT get_AudioCategory(Windows.Media.Playback.MediaPlayerAudioCategory* return_value);
@@ -731,8 +645,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlayer")
 interface IMediaPlayer3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_IsMutedChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_IsMutedChanged(EventRegistrationToken token);
@@ -762,8 +674,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlayer")
 interface IMediaPlayer4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetSurfaceSize(Windows.Foundation.Size size);
 	HRESULT abi_GetSurface(Windows.UI.Composition.Compositor compositor, Windows.Media.Playback.MediaPlayerSurface* return_result);
@@ -773,8 +683,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlayer")
 interface IMediaPlayer5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_VideoFrameAvailable(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_VideoFrameAvailable(EventRegistrationToken token);
@@ -789,8 +697,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlayerDataReceivedEventArgs")
 interface IMediaPlayerDataReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Data(Windows.Foundation.Collections.ValueSet* return_value);
 }
@@ -799,8 +705,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlayer")
 interface IMediaPlayerEffects : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddAudioEffect(HSTRING activatableClassId, bool effectOptional, Windows.Foundation.Collections.IPropertySet configuration);
 	HRESULT abi_RemoveAllEffects();
@@ -810,8 +714,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlayer")
 interface IMediaPlayerEffects2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddVideoEffect(HSTRING activatableClassId, bool effectOptional, Windows.Foundation.Collections.IPropertySet effectConfiguration);
 }
@@ -820,8 +722,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlayerFailedEventArgs")
 interface IMediaPlayerFailedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Error(Windows.Media.Playback.MediaPlayerError* return_value);
 	HRESULT get_ExtendedErrorCode(HRESULT* return_value);
@@ -832,8 +732,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlayerRateChangedEventArgs")
 interface IMediaPlayerRateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NewRate(double* return_value);
 }
@@ -842,8 +740,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlayer")
 interface IMediaPlayerSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProtectionManager(Windows.Media.Protection.MediaProtectionManager* return_value);
 	HRESULT set_ProtectionManager(Windows.Media.Protection.MediaProtectionManager value);
@@ -859,8 +755,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlayer")
 interface IMediaPlayerSource2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Source(Windows.Media.Playback.IMediaPlaybackSource* return_value);
 	HRESULT set_Source(Windows.Media.Playback.IMediaPlaybackSource value);
@@ -870,8 +764,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.MediaPlayerSurface")
 interface IMediaPlayerSurface : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CompositionSurface(Windows.UI.Composition.ICompositionSurface* return_value);
 	HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value);
@@ -882,8 +774,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.PlaybackMediaMarker")
 interface IPlaybackMediaMarker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Time(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_MediaMarkerType(HSTRING* return_value);
@@ -894,8 +784,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.PlaybackMediaMarker")
 interface IPlaybackMediaMarkerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromTime(Windows.Foundation.TimeSpan value, Windows.Media.Playback.PlaybackMediaMarker* return_marker);
 	HRESULT abi_Create(Windows.Foundation.TimeSpan value, HSTRING mediaMarketType, HSTRING text, Windows.Media.Playback.PlaybackMediaMarker* return_marker);
@@ -905,8 +793,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs")
 interface IPlaybackMediaMarkerReachedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PlaybackMediaMarker(Windows.Media.Playback.PlaybackMediaMarker* return_value);
 }
@@ -915,8 +801,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.PlaybackMediaMarkerSequence")
 interface IPlaybackMediaMarkerSequence : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Size(UINT32* return_value);
 	HRESULT abi_Insert(Windows.Media.Playback.PlaybackMediaMarker value);
@@ -927,8 +811,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs")
 interface ITimedMetadataPresentationModeChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Track(Windows.Media.Core.TimedMetadataTrack* return_value);
 	HRESULT get_OldPresentationMode(Windows.Media.Playback.TimedMetadataTrackPresentationMode* return_value);

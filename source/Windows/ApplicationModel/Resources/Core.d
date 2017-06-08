@@ -15,8 +15,6 @@ struct ResourceLayoutInfo
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.NamedResource")
 interface INamedResource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_uri);
 	HRESULT get_Candidates(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate)* return_value);
@@ -32,8 +30,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceCandidate")
 interface IResourceCandidate : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Qualifiers(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceQualifier)* return_value);
 	HRESULT get_IsMatch(bool* return_value);
@@ -48,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceCandidate")
 interface IResourceCandidate2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetValueAsStreamAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream)* return_operation);
 }
@@ -58,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceContext")
 interface IResourceContext : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_QualifierValues(Windows.Foundation.Collections.IObservableMap!(HSTRING, HSTRING)* return_value);
 	HRESULT abi_Reset();
@@ -74,8 +66,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceContext")
 interface IResourceContextStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")
 	HRESULT abi_CreateMatchingContext(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Resources.Core.ResourceQualifier) result, Windows.ApplicationModel.Resources.Core.ResourceContext* return_value);
@@ -85,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceContext")
 interface IResourceContextStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.ApplicationModel.Resources.Core.ResourceContext* return_value);
 	HRESULT abi_SetGlobalQualifierValue(HSTRING key, HSTRING value);
@@ -99,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceContext")
 interface IResourceContextStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetGlobalQualifierValueWithPersistence(HSTRING key, HSTRING value, Windows.ApplicationModel.Resources.Core.ResourceQualifierPersistence persistence);
 }
@@ -109,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceManager")
 interface IResourceManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MainResourceMap(Windows.ApplicationModel.Resources.Core.ResourceMap* return_value);
 	HRESULT get_AllResourceMaps(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap)* return_maps);
@@ -124,8 +108,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceManager")
 interface IResourceManager2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAllNamedResourcesForPackage(HSTRING packageName, Windows.ApplicationModel.Resources.Core.ResourceLayoutInfo resourceLayoutInfo, Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.NamedResource)* return_table);
 	HRESULT abi_GetAllSubtreesForPackage(HSTRING packageName, Windows.ApplicationModel.Resources.Core.ResourceLayoutInfo resourceLayoutInfo, Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceMap)* return_table);
@@ -135,8 +117,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceManager")
 interface IResourceManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Current(Windows.ApplicationModel.Resources.Core.ResourceManager* return_value);
 	HRESULT abi_IsResourceReference(HSTRING resourceReference, bool* return_isReference);
@@ -146,8 +126,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceMap")
 interface IResourceMap : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_uri);
 	deprecated("GetValue(string) may be altered or unavailable for releases after Windows 8.1. Instead, use GetValue(string, ResourceContext).")
@@ -160,8 +138,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceQualifier")
 interface IResourceQualifier : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_QualifierName(HSTRING* return_value);
 	HRESULT get_QualifierValue(HSTRING* return_value);

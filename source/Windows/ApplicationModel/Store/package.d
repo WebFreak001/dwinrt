@@ -13,8 +13,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.CurrentApp")
 interface ICurrentApp : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LicenseInformation(Windows.ApplicationModel.Store.LicenseInformation* return_value);
 	HRESULT get_LinkUri(Windows.Foundation.Uri* return_value);
@@ -31,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.CurrentApp")
 interface ICurrentApp2Statics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCustomerPurchaseIdAsync(HSTRING serviceTicket, HSTRING publisherUserId, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
 	HRESULT abi_GetCustomerCollectionsIdAsync(HSTRING serviceTicket, HSTRING publisherUserId, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
@@ -42,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.CurrentAppSimulator")
 interface ICurrentAppSimulator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LicenseInformation(Windows.ApplicationModel.Store.LicenseInformation* return_value);
 	HRESULT get_LinkUri(Windows.Foundation.Uri* return_value);
@@ -61,8 +55,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.CurrentAppSimulator")
 interface ICurrentAppSimulatorStaticsWithFiltering : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LoadListingInformationByProductIdsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) productIds, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.ListingInformation)* return_loadListingOperation);
 	HRESULT abi_LoadListingInformationByKeywordsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) keywords, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.ListingInformation)* return_loadListingOperation);
@@ -72,8 +64,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.CurrentAppSimulator")
 interface ICurrentAppSimulatorWithCampaignId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAppPurchaseCampaignIdAsync(Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
 }
@@ -82,8 +72,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.CurrentAppSimulator")
 interface ICurrentAppSimulatorWithConsumables : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReportConsumableFulfillmentAsync(HSTRING productId, GUID transactionId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.FulfillmentResult)* return_reportConsumableFulfillmentOperation);
 	HRESULT abi_RequestProductPurchaseWithResultsAsync(HSTRING productId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.PurchaseResults)* return_requestProductPurchaseWithResultsOperation);
@@ -95,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.CurrentApp")
 interface ICurrentAppStaticsWithFiltering : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LoadListingInformationByProductIdsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) productIds, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.ListingInformation)* return_loadListingOperation);
 	HRESULT abi_LoadListingInformationByKeywordsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) keywords, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.ListingInformation)* return_loadListingOperation);
@@ -107,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.CurrentApp")
 interface ICurrentAppWithCampaignId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAppPurchaseCampaignIdAsync(Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
 }
@@ -117,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.CurrentApp")
 interface ICurrentAppWithConsumables : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReportConsumableFulfillmentAsync(HSTRING productId, GUID transactionId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.FulfillmentResult)* return_reportConsumableFulfillmentOperation);
 	HRESULT abi_RequestProductPurchaseWithResultsAsync(HSTRING productId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.PurchaseResults)* return_requestProductPurchaseWithResultsOperation);
@@ -130,8 +112,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.LicenseInformation")
 interface ILicenseInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProductLicenses(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Store.ProductLicense)* return_value);
 	HRESULT get_IsActive(bool* return_value);
@@ -145,8 +125,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.ListingInformation")
 interface IListingInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CurrentMarket(HSTRING* return_value);
 	HRESULT get_Description(HSTRING* return_value);
@@ -160,8 +138,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.ListingInformation")
 interface IListingInformation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FormattedBasePrice(HSTRING* return_value);
 	HRESULT get_SaleEndDate(Windows.Foundation.DateTime* return_value);
@@ -173,8 +149,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.ProductLicense")
 interface IProductLicense : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProductId(HSTRING* return_value);
 	HRESULT get_IsActive(bool* return_value);
@@ -185,8 +159,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.ProductLicense")
 interface IProductLicenseWithFulfillment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsConsumable(bool* return_value);
 }
@@ -195,8 +167,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.ProductListing")
 interface IProductListing : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProductId(HSTRING* return_value);
 	HRESULT get_FormattedPrice(HSTRING* return_value);
@@ -207,8 +177,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.ProductListing")
 interface IProductListing2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FormattedBasePrice(HSTRING* return_value);
 	HRESULT get_SaleEndDate(Windows.Foundation.DateTime* return_value);
@@ -220,8 +188,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.ProductListing")
 interface IProductListingWithConsumables : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProductType(Windows.ApplicationModel.Store.ProductType* return_value);
 }
@@ -230,8 +196,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.ProductListing")
 interface IProductListingWithMetadata : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Description(HSTRING* return_value);
 	HRESULT get_Keywords(Windows.Foundation.Collections.IIterable!(HSTRING)* return_value);
@@ -244,8 +208,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.ProductPurchaseDisplayProperties")
 interface IProductPurchaseDisplayProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT set_Name(HSTRING value);
@@ -259,8 +221,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.ProductPurchaseDisplayProperties")
 interface IProductPurchaseDisplayPropertiesFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateProductPurchaseDisplayProperties(HSTRING name, Windows.ApplicationModel.Store.ProductPurchaseDisplayProperties* return_displayProperties);
 }
@@ -269,8 +229,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.PurchaseResults")
 interface IPurchaseResults : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.ApplicationModel.Store.ProductPurchaseStatus* return_value);
 	HRESULT get_TransactionId(GUID* return_value);
@@ -282,8 +240,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.UnfulfilledConsumable")
 interface IUnfulfilledConsumable : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProductId(HSTRING* return_value);
 	HRESULT get_TransactionId(GUID* return_value);

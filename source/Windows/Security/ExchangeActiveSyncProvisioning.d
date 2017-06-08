@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation")
 interface IEasClientDeviceInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(GUID* return_value);
 	HRESULT get_OperatingSystem(HSTRING* return_value);
@@ -21,8 +19,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation")
 interface IEasClientDeviceInformation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SystemHardwareVersion(HSTRING* return_value);
 	HRESULT get_SystemFirmwareVersion(HSTRING* return_value);
@@ -32,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.ExchangeActiveSyncProvisioning.EasClientSecurityPolicy")
 interface IEasClientSecurityPolicy : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequireEncryption(bool* return_value);
 	HRESULT set_RequireEncryption(bool value);
@@ -59,8 +53,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults")
 interface IEasComplianceResults : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Compliant(bool* return_value);
 	HRESULT get_RequireEncryptionResult(Windows.Security.ExchangeActiveSyncProvisioning.EasRequireEncryptionResult* return_value);
@@ -77,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults")
 interface IEasComplianceResults2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EncryptionProviderType(Windows.Security.ExchangeActiveSyncProvisioning.EasEncryptionProviderType* return_value);
 }

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.Input.Inking.InkDrawingAttributes")
 interface IInkDrawingAttributes : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Color(Windows.UI.Color* return_value);
 	HRESULT set_Color(Windows.UI.Color value);
@@ -25,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkDrawingAttributes")
 interface IInkDrawingAttributes2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PenTipTransform(Windows.Foundation.Numerics.Matrix3x2* return_value);
 	HRESULT set_PenTipTransform(Windows.Foundation.Numerics.Matrix3x2 value);
@@ -38,8 +34,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkDrawingAttributes")
 interface IInkDrawingAttributes3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.UI.Input.Inking.InkDrawingAttributesKind* return_value);
 	HRESULT get_PencilProperties(Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties* return_value);
@@ -49,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkDrawingAttributes")
 interface IInkDrawingAttributes4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IgnoreTilt(bool* return_value);
 	HRESULT set_IgnoreTilt(bool value);
@@ -60,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties")
 interface IInkDrawingAttributesPencilProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Opacity(double* return_value);
 	HRESULT set_Opacity(double value);
@@ -71,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkDrawingAttributes")
 interface IInkDrawingAttributesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateForPencil(Windows.UI.Input.Inking.InkDrawingAttributes* return_result);
 }
@@ -81,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkInputProcessingConfiguration")
 interface IInkInputProcessingConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Mode(Windows.UI.Input.Inking.InkInputProcessingMode* return_value);
 	HRESULT set_Mode(Windows.UI.Input.Inking.InkInputProcessingMode value);
@@ -94,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkManager")
 interface IInkManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Mode(Windows.UI.Input.Inking.InkManipulationMode* return_value);
 	HRESULT set_Mode(Windows.UI.Input.Inking.InkManipulationMode value);
@@ -110,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkPoint")
 interface IInkPoint : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
 	HRESULT get_Pressure(FLOAT* return_value);
@@ -121,8 +103,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkPoint")
 interface IInkPoint2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TiltX(FLOAT* return_value);
 	HRESULT get_TiltY(FLOAT* return_value);
@@ -132,8 +112,6 @@ extern(Windows):
 @uuid("29e5d51c-c98f-405d-9f3b-e53e31068d4d")
 interface IInkPointFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInkPoint(Windows.Foundation.Point position, FLOAT pressure, Windows.UI.Input.Inking.InkPoint* return_result);
 }
@@ -142,8 +120,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkPoint")
 interface IInkPointFactory2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInkPointWithTiltAndTimestamp(Windows.Foundation.Point position, FLOAT pressure, FLOAT tiltX, FLOAT tiltY, UINT64 timestamp, Windows.UI.Input.Inking.InkPoint* return_result);
 }
@@ -152,8 +128,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkPresenter")
 interface IInkPresenter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsInputEnabled(bool* return_value);
 	HRESULT set_IsInputEnabled(bool value);
@@ -178,8 +152,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkPresenter")
 interface IInkPresenter2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HighContrastAdjustment(Windows.UI.Input.Inking.InkHighContrastAdjustment* return_value);
 	HRESULT set_HighContrastAdjustment(Windows.UI.Input.Inking.InkHighContrastAdjustment value);
@@ -189,8 +161,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkPresenterProtractor")
 interface IInkPresenterProtractor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AreTickMarksVisible(bool* return_value);
 	HRESULT set_AreTickMarksVisible(bool value);
@@ -212,8 +182,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkPresenterProtractor")
 interface IInkPresenterProtractorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.UI.Input.Inking.InkPresenter inkPresenter, Windows.UI.Input.Inking.InkPresenterProtractor* return_inkPresenterProtractor);
 }
@@ -222,8 +190,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkPresenterRuler")
 interface IInkPresenterRuler : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Length(double* return_value);
 	HRESULT set_Length(double value);
@@ -235,8 +201,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkPresenterRuler")
 interface IInkPresenterRuler2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AreTickMarksVisible(bool* return_value);
 	HRESULT set_AreTickMarksVisible(bool value);
@@ -247,8 +211,6 @@ extern(Windows):
 @uuid("34361beb-9001-4a4b-a690-69dbaf63e501")
 interface IInkPresenterRulerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.UI.Input.Inking.InkPresenter inkPresenter, Windows.UI.Input.Inking.InkPresenterRuler* return_inkPresenterRuler);
 }
@@ -256,8 +218,6 @@ extern(Windows):
 @uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc")
 interface IInkPresenterStencil : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.UI.Input.Inking.InkPresenterStencilKind* return_value);
 	HRESULT get_IsVisible(bool* return_value);
@@ -274,8 +234,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkRecognitionResult")
 interface IInkRecognitionResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BoundingRect(Windows.Foundation.Rect* return_boundingRect);
 	HRESULT abi_GetTextCandidates(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_textCandidates);
@@ -286,8 +244,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkRecognizer")
 interface IInkRecognizer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 }
@@ -295,8 +251,6 @@ extern(Windows):
 @uuid("a74d9a31-8047-4698-a912-f82a5085012f")
 interface IInkRecognizerContainer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetDefaultRecognizer(Windows.UI.Input.Inking.InkRecognizer recognizer);
 	HRESULT abi_RecognizeAsync(Windows.UI.Input.Inking.InkStrokeContainer strokeCollection, Windows.UI.Input.Inking.InkRecognitionTarget recognitionTarget, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult))* return_recognitionResults);
@@ -307,8 +261,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkStroke")
 interface IInkStroke : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes* return_value);
 	HRESULT set_DrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes value);
@@ -324,8 +276,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkStroke")
 interface IInkStroke2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointTransform(Windows.Foundation.Numerics.Matrix3x2* return_value);
 	HRESULT set_PointTransform(Windows.Foundation.Numerics.Matrix3x2 value);
@@ -336,8 +286,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkStroke")
 interface IInkStroke3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(UINT32* return_value);
 	HRESULT get_StrokeStartedTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
@@ -350,8 +298,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkStrokeBuilder")
 interface IInkStrokeBuilder : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_BeginStroke(Windows.UI.Input.PointerPoint pointerPoint);
 	HRESULT abi_AppendToStroke(Windows.UI.Input.PointerPoint pointerPoint, Windows.UI.Input.PointerPoint* return_previousPointerPoint);
@@ -364,8 +310,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkStrokeBuilder")
 interface IInkStrokeBuilder2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateStrokeFromInkPoints(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Inking.InkPoint) inkPoints, Windows.Foundation.Numerics.Matrix3x2 transform, Windows.UI.Input.Inking.InkStroke* return_result);
 }
@@ -374,8 +318,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkStrokeBuilder")
 interface IInkStrokeBuilder3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateStrokeFromInkPoints(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Inking.InkPoint) inkPoints, Windows.Foundation.Numerics.Matrix3x2 transform, Windows.Foundation.IReference!(Windows.Foundation.DateTime) strokeStartedTime, Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) strokeDuration, Windows.UI.Input.Inking.InkStroke* return_result);
 }
@@ -383,8 +325,6 @@ extern(Windows):
 @uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16")
 interface IInkStrokeContainer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BoundingRect(Windows.Foundation.Rect* return_value);
 	HRESULT abi_AddStroke(Windows.UI.Input.Inking.InkStroke stroke);
@@ -406,8 +346,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkStrokeContainer")
 interface IInkStrokeContainer2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddStrokes(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Inking.InkStroke) strokes);
 	HRESULT abi_Clear();
@@ -417,8 +355,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkStrokeContainer")
 interface IInkStrokeContainer3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SaveWithFormatAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.UI.Input.Inking.InkPersistenceFormat inkPersistenceFormat, Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32)* return_outputStreamOperation);
 	HRESULT abi_GetStrokeById(UINT32 id, Windows.UI.Input.Inking.InkStroke* return_stroke);
@@ -428,8 +364,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkStrokeInput")
 interface IInkStrokeInput : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_StrokeStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_StrokeStarted(EventRegistrationToken cookie);
@@ -446,8 +380,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkStrokeRenderingSegment")
 interface IInkStrokeRenderingSegment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
 	HRESULT get_BezierControlPoint1(Windows.Foundation.Point* return_value);
@@ -462,8 +394,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkStrokesCollectedEventArgs")
 interface IInkStrokesCollectedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Strokes(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke)* return_value);
 }
@@ -472,8 +402,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkStrokesErasedEventArgs")
 interface IInkStrokesErasedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Strokes(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke)* return_value);
 }
@@ -482,8 +410,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkSynchronizer")
 interface IInkSynchronizer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_BeginDry(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke)* return_inkStrokes);
 	HRESULT abi_EndDry();
@@ -493,8 +419,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.InkUnprocessedInput")
 interface IInkUnprocessedInput : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_PointerEntered(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerEntered(EventRegistrationToken cookie);

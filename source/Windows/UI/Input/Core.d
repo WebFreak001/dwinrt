@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.Input.Core.RadialControllerIndependentInputSource")
 interface IRadialControllerIndependentInputSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Controller(Windows.UI.Input.RadialController* return_value);
 	HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Core.RadialControllerIndependentInputSource")
 interface IRadialControllerIndependentInputSourceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateForView(Windows.ApplicationModel.Core.CoreApplicationView view, Windows.UI.Input.Core.RadialControllerIndependentInputSource* return_result);
 }

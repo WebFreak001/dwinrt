@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Spi.SpiBusInfo")
 interface ISpiBusInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChipSelectLineCount(INT32* return_value);
 	HRESULT get_MinClockFrequency(INT32* return_value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Spi.SpiConnectionSettings")
 interface ISpiConnectionSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChipSelectLine(INT32* return_value);
 	HRESULT set_ChipSelectLine(INT32 value);
@@ -38,8 +34,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Spi.SpiConnectionSettings")
 interface ISpiConnectionSettingsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(INT32 chipSelectLine, Windows.Devices.Spi.SpiConnectionSettings* return_value);
 }
@@ -48,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Spi.SpiController")
 interface ISpiController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDevice(Windows.Devices.Spi.SpiConnectionSettings settings, Windows.Devices.Spi.SpiDevice* return_device);
 }
@@ -58,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Spi.SpiController")
 interface ISpiControllerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiController)* return_operation);
 	HRESULT abi_GetControllersAsync(Windows.Devices.Spi.Provider.ISpiProvider provider, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Spi.SpiController))* return_operation);
@@ -69,8 +59,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Spi.SpiDevice")
 interface ISpiDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_ConnectionSettings(Windows.Devices.Spi.SpiConnectionSettings* return_value);
@@ -83,8 +71,6 @@ extern(Windows):
 @uuid("a278e559-5720-4d3f-bd93-56f5ff5a5879")
 interface ISpiDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
 	HRESULT abi_GetDeviceSelectorFromFriendlyName(HSTRING friendlyName, HSTRING* return_value);

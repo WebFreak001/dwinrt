@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatCapabilities")
 interface IChatCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsOnline(bool* return_result);
 	HRESULT get_IsChatCapable(bool* return_result);
@@ -20,8 +18,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatCapabilitiesManager")
 interface IChatCapabilitiesManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCachedCapabilitiesAsync(HSTRING address, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatCapabilities)* return_result);
 	HRESULT abi_GetCapabilitiesFromNetworkAsync(HSTRING address, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatCapabilities)* return_result);
@@ -31,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatConversation")
 interface IChatConversation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HasUnreadMessages(bool* return_result);
 	HRESULT get_Id(HSTRING* return_result);
@@ -58,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatConversation")
 interface IChatConversation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanModifyParticipants(bool* return_result);
 	HRESULT set_CanModifyParticipants(bool value);
@@ -69,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatConversationReader")
 interface IChatConversationReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadBatchAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatConversation))* return_result);
 	HRESULT abi_ReadBatchWithCountAsync(INT32 count, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatConversation))* return_result);
@@ -80,8 +70,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatConversationThreadingInfo")
 interface IChatConversationThreadingInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContactId(HSTRING* return_result);
 	HRESULT set_ContactId(HSTRING value);
@@ -97,8 +85,6 @@ extern(Windows):
 @uuid("8751d000-ceb1-4243-b803-15d45a1dd428")
 interface IChatItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemKind(Windows.ApplicationModel.Chat.ChatItemKind* return_result);
 }
@@ -107,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessage")
 interface IChatMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Attachments(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Chat.ChatMessageAttachment)* return_value);
 	HRESULT get_Body(HSTRING* return_value);
@@ -133,8 +117,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessage")
 interface IChatMessage2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EstimatedDownloadSize(UINT64* return_result);
 	HRESULT set_EstimatedDownloadSize(UINT64 value);
@@ -170,8 +152,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessage")
 interface IChatMessage3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemoteId(HSTRING* return_value);
 }
@@ -180,8 +160,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessage")
 interface IChatMessage4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SyncId(HSTRING* return_result);
 	HRESULT set_SyncId(HSTRING value);
@@ -191,8 +169,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageAttachment")
 interface IChatMessageAttachment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DataStreamReference(Windows.Storage.Streams.IRandomAccessStreamReference* return_value);
 	HRESULT set_DataStreamReference(Windows.Storage.Streams.IRandomAccessStreamReference value);
@@ -208,8 +184,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageAttachment")
 interface IChatMessageAttachment2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Thumbnail(Windows.Storage.Streams.IRandomAccessStreamReference* return_result);
 	HRESULT set_Thumbnail(Windows.Storage.Streams.IRandomAccessStreamReference value);
@@ -223,8 +197,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageAttachment")
 interface IChatMessageAttachmentFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateChatMessageAttachment(HSTRING mimeType, Windows.Storage.Streams.IRandomAccessStreamReference dataStreamReference, Windows.ApplicationModel.Chat.ChatMessageAttachment* return_value);
 }
@@ -233,8 +205,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageBlocking")
 interface IChatMessageBlockingStatic : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_MarkMessageAsBlockedAsync(HSTRING localChatMessageId, bool blocked, Windows.Foundation.IAsyncAction* return_value);
 }
@@ -243,8 +213,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageChange")
 interface IChatMessageChange : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeType(Windows.ApplicationModel.Chat.ChatMessageChangeType* return_value);
 	HRESULT get_Message(Windows.ApplicationModel.Chat.ChatMessage* return_value);
@@ -254,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageChangeReader")
 interface IChatMessageChangeReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AcceptChanges();
 	HRESULT abi_AcceptChangesThrough(Windows.ApplicationModel.Chat.ChatMessageChange lastChangeToAcknowledge);
@@ -266,8 +232,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageChangeTracker")
 interface IChatMessageChangeTracker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Enable();
 	HRESULT abi_GetChangeReader(Windows.ApplicationModel.Chat.ChatMessageChangeReader* return_value);
@@ -278,8 +242,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageChangedDeferral")
 interface IChatMessageChangedDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -288,8 +250,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageChangedEventArgs")
 interface IChatMessageChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.ApplicationModel.Chat.ChatMessageChangedDeferral* return_result);
 }
@@ -298,8 +258,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageManager")
 interface IChatMessageManager2Statics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RegisterTransportAsync(Windows.Foundation.IAsyncOperation!(HSTRING)* return_result);
 	HRESULT abi_GetTransportAsync(HSTRING transportId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessageTransport)* return_result);
@@ -309,8 +267,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageManager")
 interface IChatMessageManagerStatic : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetTransportsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatMessageTransport))* return_value);
 	HRESULT abi_RequestStoreAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessageStore)* return_value);
@@ -322,8 +278,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageManager")
 interface IChatMessageManagerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestSyncManagerAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatSyncManager)* return_result);
 }
@@ -332,8 +286,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageNotificationTriggerDetails")
 interface IChatMessageNotificationTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChatMessage(Windows.ApplicationModel.Chat.ChatMessage* return_value);
 }
@@ -342,8 +294,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageNotificationTriggerDetails")
 interface IChatMessageNotificationTriggerDetails2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ShouldDisplayToast(bool* return_result);
 	HRESULT get_ShouldUpdateDetailText(bool* return_result);
@@ -355,8 +305,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageReader")
 interface IChatMessageReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadBatchAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatMessage))* return_value);
 }
@@ -365,8 +313,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageReader")
 interface IChatMessageReader2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadBatchWithCountAsync(INT32 count, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatMessage))* return_result);
 }
@@ -375,8 +321,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageStore")
 interface IChatMessageStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeTracker(Windows.ApplicationModel.Chat.ChatMessageChangeTracker* return_value);
 	HRESULT abi_DeleteMessageAsync(HSTRING localMessageId, Windows.Foundation.IAsyncAction* return_value);
@@ -396,8 +340,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageStore")
 interface IChatMessageStore2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ForwardMessageAsync(HSTRING localChatMessageId, Windows.Foundation.Collections.IIterable!(HSTRING) addresses, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage)* return_result);
 	HRESULT abi_GetConversationAsync(HSTRING conversationId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation)* return_result);
@@ -422,8 +364,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageStore")
 interface IChatMessageStore3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetMessageBySyncIdAsync(HSTRING syncId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage)* return_result);
 }
@@ -432,8 +372,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs")
 interface IChatMessageStoreChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_result);
 	HRESULT get_Kind(Windows.ApplicationModel.Chat.ChatStoreChangedEventKind* return_result);
@@ -443,8 +381,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageTransport")
 interface IChatMessageTransport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsAppSetAsNotificationProvider(bool* return_value);
 	HRESULT get_IsActive(bool* return_value);
@@ -457,8 +393,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageTransport")
 interface IChatMessageTransport2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Configuration(Windows.ApplicationModel.Chat.ChatMessageTransportConfiguration* return_result);
 	HRESULT get_TransportKind(Windows.ApplicationModel.Chat.ChatMessageTransportKind* return_result);
@@ -468,8 +402,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageTransportConfiguration")
 interface IChatMessageTransportConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxAttachmentCount(INT32* return_result);
 	HRESULT get_MaxMessageSizeInKilobytes(INT32* return_result);
@@ -482,8 +414,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageValidationResult")
 interface IChatMessageValidationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxPartCount(Windows.Foundation.IReference!(UINT32)* return_value);
 	HRESULT get_PartCount(Windows.Foundation.IReference!(UINT32)* return_value);
@@ -495,8 +425,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatQueryOptions")
 interface IChatQueryOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SearchString(HSTRING* return_result);
 	HRESULT set_SearchString(HSTRING value);
@@ -506,8 +434,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatRecipientDeliveryInfo")
 interface IChatRecipientDeliveryInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TransportAddress(HSTRING* return_result);
 	HRESULT set_TransportAddress(HSTRING value);
@@ -526,8 +452,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatSearchReader")
 interface IChatSearchReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadBatchAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.IChatItem))* return_result);
 	HRESULT abi_ReadBatchWithCountAsync(INT32 count, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.IChatItem))* return_result);
@@ -537,8 +461,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatSyncConfiguration")
 interface IChatSyncConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSyncEnabled(bool* return_result);
 	HRESULT set_IsSyncEnabled(bool value);
@@ -550,8 +472,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatSyncManager")
 interface IChatSyncManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Configuration(Windows.ApplicationModel.Chat.ChatSyncConfiguration* return_result);
 	HRESULT abi_AssociateAccountAsync(Windows.Security.Credentials.WebAccount webAccount, Windows.Foundation.IAsyncAction* return_result);
@@ -565,8 +485,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.RcsEndUserMessage")
 interface IRcsEndUserMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TransportId(HSTRING* return_result);
 	HRESULT get_Title(HSTRING* return_result);
@@ -581,8 +499,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.RcsEndUserMessageAction")
 interface IRcsEndUserMessageAction : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Label(HSTRING* return_result);
 }
@@ -591,8 +507,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableEventArgs")
 interface IRcsEndUserMessageAvailableEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsMessageAvailable(bool* return_result);
 	HRESULT get_Message(Windows.ApplicationModel.Chat.RcsEndUserMessage* return_result);
@@ -602,8 +516,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableTriggerDetails")
 interface IRcsEndUserMessageAvailableTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT get_Text(HSTRING* return_value);
@@ -613,8 +525,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.RcsEndUserMessageManager")
 interface IRcsEndUserMessageManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_MessageAvailableChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.RcsEndUserMessageManager, Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_MessageAvailableChanged(EventRegistrationToken token);
@@ -624,8 +534,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.RcsManager")
 interface IRcsManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetEndUserMessageManager(Windows.ApplicationModel.Chat.RcsEndUserMessageManager* return_result);
 	HRESULT abi_GetTransportsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.RcsTransport))* return_value);
@@ -637,8 +545,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.RcsServiceKindSupportedChangedEventArgs")
 interface IRcsServiceKindSupportedChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServiceKind(Windows.ApplicationModel.Chat.RcsServiceKind* return_result);
 }
@@ -647,8 +553,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.RcsTransport")
 interface IRcsTransport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExtendedProperties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
 	HRESULT get_IsActive(bool* return_value);
@@ -665,8 +569,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.RcsTransportConfiguration")
 interface IRcsTransportConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxAttachmentCount(INT32* return_result);
 	HRESULT get_MaxMessageSizeInKilobytes(INT32* return_result);
@@ -680,8 +582,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Chat.RemoteParticipantComposingChangedEventArgs")
 interface IRemoteParticipantComposingChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TransportId(HSTRING* return_result);
 	HRESULT get_ParticipantAddress(HSTRING* return_result);

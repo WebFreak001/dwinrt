@@ -14,8 +14,6 @@ struct PackageVersion
 @WinrtFactory("Windows.ApplicationModel.AppDisplayInfo")
 interface IAppDisplayInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_Description(HSTRING* return_value);
@@ -26,8 +24,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppInfo")
 interface IAppInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_AppUserModelId(HSTRING* return_value);
@@ -39,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DesignMode")
 interface IDesignModeStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesignModeEnabled(bool* return_value);
 }
@@ -48,8 +42,6 @@ extern(Windows):
 @uuid("f722dcc2-9827-403d-aaed-ecca9ac17398")
 interface IEnteredBackgroundEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
 }
@@ -58,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.FullTrustProcessLauncher")
 interface IFullTrustProcessLauncherStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LaunchFullTrustProcessForCurrentAppAsync(Windows.Foundation.IAsyncAction* return_asyncAction);
 	HRESULT abi_LaunchFullTrustProcessForCurrentAppWithParametersAsync(HSTRING parameterGroupId, Windows.Foundation.IAsyncAction* return_asyncAction);
@@ -70,8 +60,6 @@ extern(Windows):
 @uuid("39c6ec9a-ae6e-46f9-a07a-cfc23f88733e")
 interface ILeavingBackgroundEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
 }
@@ -80,8 +68,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Package")
 interface IPackage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(Windows.ApplicationModel.PackageId* return_value);
 	HRESULT get_InstalledLocation(Windows.Storage.StorageFolder* return_value);
@@ -93,8 +79,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Package")
 interface IPackage2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_PublisherDisplayName(HSTRING* return_value);
@@ -109,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Package")
 interface IPackage3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.ApplicationModel.PackageStatus* return_value);
 	HRESULT get_InstalledDate(Windows.Foundation.DateTime* return_value);
@@ -121,8 +103,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Package")
 interface IPackage4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SignatureKind(Windows.ApplicationModel.PackageSignatureKind* return_value);
 	HRESULT get_IsOptional(bool* return_value);
@@ -133,8 +113,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Package")
 interface IPackage5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetContentGroupsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup))* return_operation);
 	HRESULT abi_GetContentGroupAsync(HSTRING name, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageContentGroup)* return_operation);
@@ -147,8 +125,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageCatalog")
 interface IPackageCatalog : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_PackageStaging(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PackageStaging(EventRegistrationToken token);
@@ -166,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageCatalog")
 interface IPackageCatalog2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_PackageContentGroupStaging(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PackageContentGroupStaging(EventRegistrationToken token);
@@ -178,8 +152,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult")
 interface IPackageCatalogAddOptionalPackageResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
 	HRESULT get_ExtendedError(HRESULT* return_value);
@@ -189,8 +161,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageCatalog")
 interface IPackageCatalogStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OpenForCurrentPackage(Windows.ApplicationModel.PackageCatalog* return_value);
 	HRESULT abi_OpenForCurrentUser(Windows.ApplicationModel.PackageCatalog* return_value);
@@ -200,8 +170,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageContentGroup")
 interface IPackageContentGroup : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
 	HRESULT get_Name(HSTRING* return_value);
@@ -213,8 +181,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageContentGroupStagingEventArgs")
 interface IPackageContentGroupStagingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ActivityId(GUID* return_value);
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
@@ -229,8 +195,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageContentGroup")
 interface IPackageContentGroupStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequiredGroupName(HSTRING* return_value);
 }
@@ -239,8 +203,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageId")
 interface IPackageId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Version(Windows.ApplicationModel.PackageVersion* return_value);
@@ -256,8 +218,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageId")
 interface IPackageIdWithMetadata : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProductId(HSTRING* return_value);
 	HRESULT get_Author(HSTRING* return_value);
@@ -267,8 +227,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageInstallingEventArgs")
 interface IPackageInstallingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ActivityId(GUID* return_value);
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
@@ -281,8 +239,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageStagingEventArgs")
 interface IPackageStagingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ActivityId(GUID* return_value);
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
@@ -295,8 +251,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Package")
 interface IPackageStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Current(Windows.ApplicationModel.Package* return_value);
 }
@@ -305,8 +259,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageStatus")
 interface IPackageStatus : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_VerifyIsOK(bool* return_value);
 	HRESULT get_NotAvailable(bool* return_value);
@@ -326,8 +278,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageStatus")
 interface IPackageStatus2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsPartiallyStaged(bool* return_value);
 }
@@ -336,8 +286,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageStatusChangedEventArgs")
 interface IPackageStatusChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
 }
@@ -346,8 +294,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageUninstallingEventArgs")
 interface IPackageUninstallingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ActivityId(GUID* return_value);
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
@@ -360,8 +306,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.PackageUpdatingEventArgs")
 interface IPackageUpdatingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ActivityId(GUID* return_value);
 	HRESULT get_SourcePackage(Windows.ApplicationModel.Package* return_value);
@@ -375,8 +319,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Package")
 interface IPackageWithMetadata : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InstallDate(Windows.Foundation.DateTime* return_value);
 	HRESULT abi_GetThumbnailToken(HSTRING* return_value);
@@ -388,8 +330,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.StartupTask")
 interface IStartupTask : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestEnableAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.StartupTaskState)* return_operation);
 	HRESULT abi_Disable();
@@ -401,8 +341,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.StartupTask")
 interface IStartupTaskStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentPackageAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.StartupTask))* return_operation);
 	HRESULT abi_GetAsync(HSTRING taskId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.StartupTask)* return_operation);
@@ -411,8 +349,6 @@ extern(Windows):
 @uuid("59140509-8bc9-4eb4-b636-dabdc4f46f66")
 interface ISuspendingDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -420,8 +356,6 @@ extern(Windows):
 @uuid("96061c05-2dba-4d08-b0bd-2b30a131c6aa")
 interface ISuspendingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SuspendingOperation(Windows.ApplicationModel.SuspendingOperation* return_value);
 }
@@ -429,8 +363,6 @@ extern(Windows):
 @uuid("9da4ca41-20e1-4e9b-9f65-a9f435340c3a")
 interface ISuspendingOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.ApplicationModel.SuspendingDeferral* return_deferral);
 	HRESULT get_Deadline(Windows.Foundation.DateTime* return_value);

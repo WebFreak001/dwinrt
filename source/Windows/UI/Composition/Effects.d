@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.Composition.Effects.SceneLightingEffect")
 interface ISceneLightingEffect : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AmbientAmount(FLOAT* return_value);
 	HRESULT set_AmbientAmount(FLOAT value);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection")
 interface IUserDataTaskDataProviderConnection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_CreateOrUpdateTaskRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListCreateOrUpdateTaskRequestEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CreateOrUpdateTaskRequested(EventRegistrationToken token);
@@ -26,8 +24,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderTriggerDetails")
 interface IUserDataTaskDataProviderTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Connection(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection* return_value);
 }
@@ -36,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListCompleteTaskRequest")
 interface IUserDataTaskListCompleteTaskRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TaskListId(HSTRING* return_value);
 	HRESULT get_TaskId(HSTRING* return_value);
@@ -49,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListCompleteTaskRequestEventArgs")
 interface IUserDataTaskListCompleteTaskRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListCompleteTaskRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -60,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListCreateOrUpdateTaskRequest")
 interface IUserDataTaskListCreateOrUpdateTaskRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TaskListId(HSTRING* return_value);
 	HRESULT get_Task(Windows.ApplicationModel.UserDataTasks.UserDataTask* return_value);
@@ -73,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListCreateOrUpdateTaskRequestEventArgs")
 interface IUserDataTaskListCreateOrUpdateTaskRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListCreateOrUpdateTaskRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -84,8 +72,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListDeleteTaskRequest")
 interface IUserDataTaskListDeleteTaskRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TaskListId(HSTRING* return_value);
 	HRESULT get_TaskId(HSTRING* return_value);
@@ -97,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListDeleteTaskRequestEventArgs")
 interface IUserDataTaskListDeleteTaskRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListDeleteTaskRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -108,8 +92,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSkipOccurrenceRequest")
 interface IUserDataTaskListSkipOccurrenceRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TaskListId(HSTRING* return_value);
 	HRESULT get_TaskId(HSTRING* return_value);
@@ -121,8 +103,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSkipOccurrenceRequestEventArgs")
 interface IUserDataTaskListSkipOccurrenceRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSkipOccurrenceRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -132,8 +112,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSyncManagerSyncRequest")
 interface IUserDataTaskListSyncManagerSyncRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TaskListId(HSTRING* return_value);
 	HRESULT abi_ReportCompletedAsync(Windows.Foundation.IAsyncAction* return_result);
@@ -144,8 +122,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSyncManagerSyncRequestEventArgs")
 interface IUserDataTaskListSyncManagerSyncRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSyncManagerSyncRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);

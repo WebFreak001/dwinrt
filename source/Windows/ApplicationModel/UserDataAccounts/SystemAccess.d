@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountConfiguration")
 interface IDeviceAccountConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AccountName(HSTRING* return_value);
 	HRESULT set_AccountName(HSTRING value);
@@ -47,8 +45,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountConfiguration")
 interface IDeviceAccountConfiguration2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IncomingServerCredential(Windows.Security.Credentials.PasswordCredential* return_value);
 	HRESULT set_IncomingServerCredential(Windows.Security.Credentials.PasswordCredential value);
@@ -112,8 +108,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.SystemAccess.UserDataAccountSystemAccessManager")
 interface IUserDataAccountSystemAccessManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddAndShowDeviceAccountsAsync(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountConfiguration) accounts, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_result);
 }
@@ -122,8 +116,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.SystemAccess.UserDataAccountSystemAccessManager")
 interface IUserDataAccountSystemAccessManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SuppressLocalAccountWithAccountAsync(HSTRING userDataAccountId, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_CreateDeviceAccountAsync(Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountConfiguration account, Windows.Foundation.IAsyncOperation!(HSTRING)* return_result);

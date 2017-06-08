@@ -13,8 +13,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Popups.MessageDialog")
 interface IMessageDialog : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT set_Title(HSTRING value);
@@ -34,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Popups.MessageDialog")
 interface IMessageDialogFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING content, Windows.UI.Popups.MessageDialog* return_messageDialog);
 	HRESULT abi_CreateWithTitle(HSTRING content, HSTRING title, Windows.UI.Popups.MessageDialog* return_messageDialog);
@@ -45,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Popups.PopupMenu")
 interface IPopupMenu : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Commands(Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand)* return_value);
 	HRESULT abi_ShowAsync(Windows.Foundation.Point invocationPoint, Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand)* return_asyncOperation);
@@ -57,8 +51,6 @@ extern(Windows):
 @uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f")
 interface IUICommand : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Label(HSTRING* return_value);
 	HRESULT set_Label(HSTRING value);
@@ -72,8 +64,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Popups.UICommand")
 interface IUICommandFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING label, Windows.UI.Popups.UICommand* return_instance);
 	HRESULT abi_CreateWithHandler(HSTRING label, Windows.UI.Popups.UICommandInvokedHandler action, Windows.UI.Popups.UICommand* return_instance);

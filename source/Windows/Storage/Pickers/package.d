@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Storage.Pickers.FileOpenPicker")
 interface IFileOpenPicker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ViewMode(Windows.Storage.Pickers.PickerViewMode* return_value);
 	HRESULT set_ViewMode(Windows.Storage.Pickers.PickerViewMode value);
@@ -26,8 +24,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.FileOpenPicker")
 interface IFileOpenPicker2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Instead, use PickSingleFileAsync/PickMultipleFilesAsync")
 	HRESULT get_ContinuationData(Windows.Foundation.Collections.ValueSet* return_value);
@@ -41,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.FileOpenPicker")
 interface IFileOpenPickerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Instead, use PickSingleFileAsync")
 	HRESULT abi_ResumePickSingleFileAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_pickSingleFileOperation);
@@ -52,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.FileOpenPicker")
 interface IFileOpenPickerWithOperationId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_PickSingleFileAsync(HSTRING pickerOperationId, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_pickSingleFileOperation);
 }
@@ -62,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.FileSavePicker")
 interface IFileSavePicker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SettingsIdentifier(HSTRING* return_value);
 	HRESULT set_SettingsIdentifier(HSTRING value);
@@ -85,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.FileSavePicker")
 interface IFileSavePicker2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContinuationData(Windows.Foundation.Collections.ValueSet* return_value);
 	deprecated("Instead, use PickSaveFileAsync")
@@ -97,8 +85,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.FileSavePicker")
 interface IFileSavePicker3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EnterpriseId(HSTRING* return_value);
 	HRESULT set_EnterpriseId(HSTRING value);
@@ -108,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.FolderPicker")
 interface IFolderPicker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ViewMode(Windows.Storage.Pickers.PickerViewMode* return_value);
 	HRESULT set_ViewMode(Windows.Storage.Pickers.PickerViewMode value);
@@ -127,8 +111,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.FolderPicker")
 interface IFolderPicker2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContinuationData(Windows.Foundation.Collections.ValueSet* return_value);
 	deprecated("Instead, use PickSingleFolderAsync")

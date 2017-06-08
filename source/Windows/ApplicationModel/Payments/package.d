@@ -13,8 +13,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentAddress")
 interface IPaymentAddress : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Country(HSTRING* return_value);
 	HRESULT set_Country(HSTRING value);
@@ -45,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentCurrencyAmount")
 interface IPaymentCurrencyAmount : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Currency(HSTRING* return_value);
 	HRESULT set_Currency(HSTRING value);
@@ -60,8 +56,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentCurrencyAmount")
 interface IPaymentCurrencyAmountFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING value, HSTRING currency, Windows.ApplicationModel.Payments.PaymentCurrencyAmount* return_result);
 	HRESULT abi_CreateWithCurrencySystem(HSTRING value, HSTRING currency, HSTRING currencySystem, Windows.ApplicationModel.Payments.PaymentCurrencyAmount* return_result);
@@ -71,8 +65,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentDetails")
 interface IPaymentDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Total(Windows.ApplicationModel.Payments.PaymentItem* return_value);
 	HRESULT set_Total(Windows.ApplicationModel.Payments.PaymentItem value);
@@ -88,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentDetails")
 interface IPaymentDetailsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.ApplicationModel.Payments.PaymentItem total, Windows.ApplicationModel.Payments.PaymentDetails* return_result);
 	HRESULT abi_CreateWithDisplayItems(Windows.ApplicationModel.Payments.PaymentItem total, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentItem) displayItems, Windows.ApplicationModel.Payments.PaymentDetails* return_result);
@@ -99,8 +89,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentDetailsModifier")
 interface IPaymentDetailsModifier : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_JsonData(HSTRING* return_value);
 	HRESULT get_SupportedMethodIds(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
@@ -112,8 +100,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentDetailsModifier")
 interface IPaymentDetailsModifierFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds, Windows.ApplicationModel.Payments.PaymentItem total, Windows.ApplicationModel.Payments.PaymentDetailsModifier* return_result);
 	HRESULT abi_CreateWithAdditionalDisplayItems(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds, Windows.ApplicationModel.Payments.PaymentItem total, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentItem) additionalDisplayItems, Windows.ApplicationModel.Payments.PaymentDetailsModifier* return_result);
@@ -124,8 +110,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentItem")
 interface IPaymentItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Label(HSTRING* return_value);
 	HRESULT set_Label(HSTRING value);
@@ -139,8 +123,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentItem")
 interface IPaymentItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING label, Windows.ApplicationModel.Payments.PaymentCurrencyAmount amount, Windows.ApplicationModel.Payments.PaymentItem* return_result);
 }
@@ -149,8 +131,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentMediator")
 interface IPaymentMediator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetSupportedMethodIdsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_result);
 	HRESULT abi_SubmitPaymentRequestAsync(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult)* return_result);
@@ -161,8 +141,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentMerchantInfo")
 interface IPaymentMerchantInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PackageFullName(HSTRING* return_value);
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
@@ -172,8 +150,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentMerchantInfo")
 interface IPaymentMerchantInfoFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Foundation.Uri uri, Windows.ApplicationModel.Payments.PaymentMerchantInfo* return_result);
 }
@@ -182,8 +158,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentMethodData")
 interface IPaymentMethodData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SupportedMethodIds(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 	HRESULT get_JsonData(HSTRING* return_value);
@@ -193,8 +167,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentMethodData")
 interface IPaymentMethodDataFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds, Windows.ApplicationModel.Payments.PaymentMethodData* return_result);
 	HRESULT abi_CreateWithJsonData(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds, HSTRING jsonData, Windows.ApplicationModel.Payments.PaymentMethodData* return_result);
@@ -204,8 +176,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentOptions")
 interface IPaymentOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestPayerEmail(Windows.ApplicationModel.Payments.PaymentOptionPresence* return_value);
 	HRESULT set_RequestPayerEmail(Windows.ApplicationModel.Payments.PaymentOptionPresence value);
@@ -223,8 +193,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentRequest")
 interface IPaymentRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MerchantInfo(Windows.ApplicationModel.Payments.PaymentMerchantInfo* return_value);
 	HRESULT get_Details(Windows.ApplicationModel.Payments.PaymentDetails* return_value);
@@ -236,8 +204,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentRequestChangedArgs")
 interface IPaymentRequestChangedArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeKind(Windows.ApplicationModel.Payments.PaymentRequestChangeKind* return_value);
 	HRESULT get_ShippingAddress(Windows.ApplicationModel.Payments.PaymentAddress* return_value);
@@ -249,8 +215,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentRequestChangedResult")
 interface IPaymentRequestChangedResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeAcceptedByMerchant(bool* return_value);
 	HRESULT set_ChangeAcceptedByMerchant(bool value);
@@ -264,8 +228,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentRequestChangedResult")
 interface IPaymentRequestChangedResultFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(bool changeAcceptedByMerchant, Windows.ApplicationModel.Payments.PaymentRequestChangedResult* return_result);
 	HRESULT abi_CreateWithPaymentDetails(bool changeAcceptedByMerchant, Windows.ApplicationModel.Payments.PaymentDetails updatedPaymentDetails, Windows.ApplicationModel.Payments.PaymentRequestChangedResult* return_result);
@@ -275,8 +237,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentRequest")
 interface IPaymentRequestFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.ApplicationModel.Payments.PaymentDetails details, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentMethodData) methodData, Windows.ApplicationModel.Payments.PaymentRequest* return_result);
 	HRESULT abi_CreateWithMerchantInfo(Windows.ApplicationModel.Payments.PaymentDetails details, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentMethodData) methodData, Windows.ApplicationModel.Payments.PaymentMerchantInfo merchantInfo, Windows.ApplicationModel.Payments.PaymentRequest* return_result);
@@ -287,8 +247,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentRequestSubmitResult")
 interface IPaymentRequestSubmitResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.ApplicationModel.Payments.PaymentRequestStatus* return_value);
 	HRESULT get_Response(Windows.ApplicationModel.Payments.PaymentResponse* return_value);
@@ -298,8 +256,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentResponse")
 interface IPaymentResponse : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PaymentToken(Windows.ApplicationModel.Payments.PaymentToken* return_value);
 	HRESULT get_ShippingOption(Windows.ApplicationModel.Payments.PaymentShippingOption* return_value);
@@ -314,8 +270,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentShippingOption")
 interface IPaymentShippingOption : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Label(HSTRING* return_value);
 	HRESULT set_Label(HSTRING value);
@@ -331,8 +285,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentShippingOption")
 interface IPaymentShippingOptionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING label, Windows.ApplicationModel.Payments.PaymentCurrencyAmount amount, Windows.ApplicationModel.Payments.PaymentShippingOption* return_result);
 	HRESULT abi_CreateWithSelected(HSTRING label, Windows.ApplicationModel.Payments.PaymentCurrencyAmount amount, bool selected, Windows.ApplicationModel.Payments.PaymentShippingOption* return_result);
@@ -343,8 +295,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentToken")
 interface IPaymentToken : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PaymentMethodId(HSTRING* return_value);
 	HRESULT get_JsonDetails(HSTRING* return_value);
@@ -354,8 +304,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.PaymentToken")
 interface IPaymentTokenFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING paymentMethodId, Windows.ApplicationModel.Payments.PaymentToken* return_result);
 	HRESULT abi_CreateWithJsonDetails(HSTRING paymentMethodId, HSTRING jsonDetails, Windows.ApplicationModel.Payments.PaymentToken* return_result);

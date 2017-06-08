@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.Xaml.Documents.Block")
 interface IBlock : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextAlignment(Windows.UI.Xaml.TextAlignment* return_value);
 	HRESULT set_TextAlignment(Windows.UI.Xaml.TextAlignment value);
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Block")
 interface IBlockFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Documents.Block* return_instance);
 }
@@ -33,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Block")
 interface IBlockStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextAlignmentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_LineHeightProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -52,8 +46,6 @@ interface IBold : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Documents.Glyphs")
 interface IGlyphs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UnicodeString(HSTRING* return_value);
 	HRESULT set_UnicodeString(HSTRING value);
@@ -77,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Glyphs")
 interface IGlyphs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsColorFontEnabled(bool* return_value);
 	HRESULT set_IsColorFontEnabled(bool value);
@@ -90,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Glyphs")
 interface IGlyphsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UnicodeStringProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IndicesProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -107,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Glyphs")
 interface IGlyphsStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsColorFontEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ColorFontPaletteIndexProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -118,8 +104,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Hyperlink")
 interface IHyperlink : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NavigateUri(Windows.Foundation.Uri* return_value);
 	HRESULT set_NavigateUri(Windows.Foundation.Uri value);
@@ -131,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Hyperlink")
 interface IHyperlink2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UnderlineStyle(Windows.UI.Xaml.Documents.UnderlineStyle* return_value);
 	HRESULT set_UnderlineStyle(Windows.UI.Xaml.Documents.UnderlineStyle value);
@@ -142,8 +124,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Hyperlink")
 interface IHyperlink3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_XYFocusLeft(Windows.UI.Xaml.DependencyObject* return_value);
 	HRESULT set_XYFocusLeft(Windows.UI.Xaml.DependencyObject value);
@@ -161,8 +141,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Hyperlink")
 interface IHyperlink4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FocusState(Windows.UI.Xaml.FocusState* return_value);
 	HRESULT get_XYFocusUpNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value);
@@ -190,8 +168,6 @@ interface IHyperlinkClickEventArgs : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Documents.Hyperlink")
 interface IHyperlinkStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NavigateUriProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -200,8 +176,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Hyperlink")
 interface IHyperlinkStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UnderlineStyleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -210,8 +184,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Hyperlink")
 interface IHyperlinkStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_XYFocusLeftProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_XYFocusRightProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -224,8 +196,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Hyperlink")
 interface IHyperlinkStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FocusStateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_XYFocusUpNavigationStrategyProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -244,8 +214,6 @@ interface IInline : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Documents.Inline")
 interface IInlineFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Documents.Inline* return_instance);
 }
@@ -254,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.InlineUIContainer")
 interface IInlineUIContainer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Child(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT set_Child(Windows.UI.Xaml.UIElement value);
@@ -277,8 +243,6 @@ interface ILineBreak : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Documents.Paragraph")
 interface IParagraph : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Inlines(Windows.UI.Xaml.Documents.InlineCollection* return_value);
 	HRESULT get_TextIndent(double* return_value);
@@ -289,8 +253,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Paragraph")
 interface IParagraphStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextIndentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -299,8 +261,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Run")
 interface IRun : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);
 	HRESULT set_Text(HSTRING value);
@@ -312,8 +272,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Run")
 interface IRunStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FlowDirectionProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -322,8 +280,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Span")
 interface ISpan : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Inlines(Windows.UI.Xaml.Documents.InlineCollection* return_value);
 	HRESULT set_Inlines(Windows.UI.Xaml.Documents.InlineCollection value);
@@ -333,8 +289,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.Span")
 interface ISpanFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Documents.Span* return_instance);
 }
@@ -343,8 +297,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.TextElement")
 interface ITextElement : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_FontSize(double* return_value);
@@ -374,8 +326,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.TextElement")
 interface ITextElement2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTextScaleFactorEnabled(bool* return_value);
 	HRESULT set_IsTextScaleFactorEnabled(bool value);
@@ -385,8 +335,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.TextElement")
 interface ITextElement3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllowFocusOnInteraction(bool* return_value);
 	HRESULT set_AllowFocusOnInteraction(bool value);
@@ -400,8 +348,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.TextElement")
 interface ITextElement4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextDecorations(Windows.UI.Text.TextDecorations* return_value);
 	HRESULT set_TextDecorations(Windows.UI.Text.TextDecorations value);
@@ -433,8 +379,6 @@ interface ITextElementFactory : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Documents.TextElement")
 interface ITextElementOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnDisconnectVisualChildren();
 }
@@ -443,8 +387,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.TextElement")
 interface ITextElementStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FontSizeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FontFamilyProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -460,8 +402,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.TextElement")
 interface ITextElementStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTextScaleFactorEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -470,8 +410,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.TextElement")
 interface ITextElementStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllowFocusOnInteractionProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_AccessKeyProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -482,8 +420,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.TextElement")
 interface ITextElementStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextDecorationsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsAccessKeyScopeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -497,8 +433,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Documents.TextPointer")
 interface ITextPointer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Parent(Windows.UI.Xaml.DependencyObject* return_value);
 	HRESULT get_VisualParent(Windows.UI.Xaml.FrameworkElement* return_value);
@@ -518,8 +452,6 @@ interface ITypography : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Documents.Typography")
 interface ITypographyStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AnnotationAlternatesProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetAnnotationAlternates(Windows.UI.Xaml.DependencyObject element, INT32* return_value);

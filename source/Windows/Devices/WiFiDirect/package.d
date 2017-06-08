@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectAdvertisement")
 interface IWiFiDirectAdvertisement : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InformationElements(Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectInformationElement)* return_value);
 	HRESULT set_InformationElements(Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectInformationElement) value);
@@ -22,8 +20,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectAdvertisement")
 interface IWiFiDirectAdvertisement2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SupportedConfigurationMethods(Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectConfigurationMethod)* return_value);
 }
@@ -32,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisher")
 interface IWiFiDirectAdvertisementPublisher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Advertisement(Windows.Devices.WiFiDirect.WiFiDirectAdvertisement* return_value);
 	HRESULT get_Status(Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatus* return_value);
@@ -47,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatusChangedEventArgs")
 interface IWiFiDirectAdvertisementPublisherStatusChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatus* return_value);
 	HRESULT get_Error(Windows.Devices.WiFiDirect.WiFiDirectError* return_value);
@@ -58,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectConnectionListener")
 interface IWiFiDirectConnectionListener : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ConnectionRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectConnectionListener, Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ConnectionRequested(EventRegistrationToken token);
@@ -69,8 +59,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectConnectionParameters")
 interface IWiFiDirectConnectionParameters : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GroupOwnerIntent(INT16* return_value);
 	HRESULT set_GroupOwnerIntent(INT16 value);
@@ -80,8 +68,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectConnectionParameters")
 interface IWiFiDirectConnectionParameters2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PreferenceOrderedConfigurationMethods(Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectConfigurationMethod)* return_value);
 	HRESULT get_PreferredPairingProcedure(Windows.Devices.WiFiDirect.WiFiDirectPairingProcedure* return_value);
@@ -92,8 +78,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectConnectionParameters")
 interface IWiFiDirectConnectionParametersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDevicePairingKinds(Windows.Devices.WiFiDirect.WiFiDirectConfigurationMethod configurationMethod, Windows.Devices.Enumeration.DevicePairingKinds* return_result);
 }
@@ -102,8 +86,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectConnectionRequest")
 interface IWiFiDirectConnectionRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);
 }
@@ -112,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs")
 interface IWiFiDirectConnectionRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetConnectionRequest(Windows.Devices.WiFiDirect.WiFiDirectConnectionRequest* return_result);
 }
@@ -122,8 +102,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectDevice")
 interface IWiFiDirectDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ConnectionStatus(Windows.Devices.WiFiDirect.WiFiDirectConnectionStatus* return_value);
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -136,8 +114,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectDevice")
 interface IWiFiDirectDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_deviceSelector);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.WiFiDirectDevice)* return_asyncOp);
@@ -147,8 +123,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectDevice")
 interface IWiFiDirectDeviceStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(Windows.Devices.WiFiDirect.WiFiDirectDeviceSelectorType type, HSTRING* return_result);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Devices.WiFiDirect.WiFiDirectConnectionParameters connectionParameters, Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.WiFiDirectDevice)* return_result);
@@ -158,8 +132,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectInformationElement")
 interface IWiFiDirectInformationElement : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Oui(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT set_Oui(Windows.Storage.Streams.IBuffer value);
@@ -173,8 +145,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectInformationElement")
 interface IWiFiDirectInformationElementStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromBuffer(Windows.Storage.Streams.IBuffer buffer, Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectInformationElement)* return_result);
 	HRESULT abi_CreateFromDeviceInformation(Windows.Devices.Enumeration.DeviceInformation deviceInformation, Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectInformationElement)* return_result);
@@ -184,8 +154,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectLegacySettings")
 interface IWiFiDirectLegacySettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsEnabled(bool* return_value);
 	HRESULT set_IsEnabled(bool value);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Search.LocalContentSuggestionSettings")
 interface ILocalContentSuggestionSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Enabled(bool value);
 	HRESULT get_Enabled(bool* return_value);
@@ -21,8 +19,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPane")
 interface ISearchPane : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
 	HRESULT set_SearchHistoryEnabled(bool value);
@@ -79,8 +75,6 @@ extern(Windows):
 @uuid("3c064fe9-2351-4248-a529-7110f464a785")
 interface ISearchPaneQueryChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_QueryText(HSTRING* return_value);
@@ -94,8 +88,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails")
 interface ISearchPaneQueryLinguisticDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_QueryTextAlternatives(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 	HRESULT get_QueryTextCompositionStart(UINT32* return_value);
@@ -106,8 +98,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPaneQuerySubmittedEventArgs")
 interface ISearchPaneQuerySubmittedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISearchPaneQuerySubmittedEventArgs may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_QueryText(HSTRING* return_value);
@@ -119,8 +109,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPaneQuerySubmittedEventArgs")
 interface ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_LinguisticDetails(Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails* return_value);
@@ -130,8 +118,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPaneResultSuggestionChosenEventArgs")
 interface ISearchPaneResultSuggestionChosenEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISearchPaneResultSuggestionChosenEventArgs may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_Tag(HSTRING* return_value);
@@ -141,8 +127,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPane")
 interface ISearchPaneStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISearchPaneStatics may be altered or unavailable for releases after Windows 10.")
 	HRESULT abi_GetForCurrentView(Windows.ApplicationModel.Search.SearchPane* return_searchPane);
@@ -152,8 +136,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPane")
 interface ISearchPaneStaticsWithHideThisApplication : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISearchPaneStaticsWithHideThisApplication may be altered or unavailable for releases after Windows 10.")
 	HRESULT abi_HideThisApplication();
@@ -163,8 +145,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPaneSuggestionsRequest")
 interface ISearchPaneSuggestionsRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISearchPaneSuggestionsRequest may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_IsCanceled(bool* return_value);
@@ -178,8 +158,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPaneSuggestionsRequestDeferral")
 interface ISearchPaneSuggestionsRequestDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISearchPaneSuggestionsRequestDeferral may be altered or unavailable for releases after Windows 10.")
 	HRESULT abi_Complete();
@@ -189,8 +167,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPaneSuggestionsRequestedEventArgs")
 interface ISearchPaneSuggestionsRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISearchPaneSuggestionsRequestedEventArgs may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_Request(Windows.ApplicationModel.Search.SearchPaneSuggestionsRequest* return_value);
@@ -200,8 +176,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPaneVisibilityChangedEventArgs")
 interface ISearchPaneVisibilityChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISearchPaneVisibilityChangedEventArgs may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_Visible(bool* return_value);
@@ -211,8 +185,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchQueryLinguisticDetails")
 interface ISearchQueryLinguisticDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_QueryTextAlternatives(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 	HRESULT get_QueryTextCompositionStart(UINT32* return_value);
@@ -223,8 +195,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchQueryLinguisticDetails")
 interface ISearchQueryLinguisticDetailsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(Windows.Foundation.Collections.IIterable!(HSTRING) queryTextAlternatives, UINT32 queryTextCompositionStart, UINT32 queryTextCompositionLength, Windows.ApplicationModel.Search.SearchQueryLinguisticDetails* return_value);
 }
@@ -233,8 +203,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchSuggestionCollection")
 interface ISearchSuggestionCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Size(UINT32* return_value);
 	HRESULT abi_AppendQuerySuggestion(HSTRING text);
@@ -247,8 +215,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchSuggestionsRequest")
 interface ISearchSuggestionsRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsCanceled(bool* return_value);
 	HRESULT get_SearchSuggestionCollection(Windows.ApplicationModel.Search.SearchSuggestionCollection* return_collection);
@@ -259,8 +225,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Search.SearchSuggestionsRequestDeferral")
 interface ISearchSuggestionsRequestDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }

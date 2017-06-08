@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection")
 interface IContactDataProviderConnection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_SyncRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SyncRequested(EventRegistrationToken token);
@@ -20,8 +18,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderTriggerDetails")
 interface IContactDataProviderTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Connection(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection* return_value);
 }
@@ -30,8 +26,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequest")
 interface IContactListServerSearchReadBatchRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SessionId(HSTRING* return_value);
 	HRESULT get_ContactListId(HSTRING* return_value);
@@ -46,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs")
 interface IContactListServerSearchReadBatchRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -57,8 +49,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest")
 interface IContactListSyncManagerSyncRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContactListId(HSTRING* return_value);
 	HRESULT abi_ReportCompletedAsync(Windows.Foundation.IAsyncAction* return_result);
@@ -69,8 +59,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs")
 interface IContactListSyncManagerSyncRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);

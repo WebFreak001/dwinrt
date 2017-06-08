@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.System.Profile.SystemManufacturers.SmbiosInformation")
 interface ISmbiosInformationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SerialNumber(HSTRING* return_value);
 }

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.System.Profile.AnalyticsInfo")
 interface IAnalyticsInfoStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VersionInfo(Windows.System.Profile.AnalyticsVersionInfo* return_value);
 	HRESULT get_DeviceForm(HSTRING* return_value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Profile.AnalyticsVersionInfo")
 interface IAnalyticsVersionInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceFamily(HSTRING* return_value);
 	HRESULT get_DeviceFamilyVersion(HSTRING* return_value);
@@ -28,8 +24,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Profile.EducationSettings")
 interface IEducationSettingsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsEducationEnvironment(bool* return_value);
 }
@@ -38,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Profile.HardwareIdentification")
 interface IHardwareIdentificationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetPackageSpecificToken(Windows.Storage.Streams.IBuffer nonce, Windows.System.Profile.HardwareToken* return_packageSpecificHardwareToken);
 }
@@ -48,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Profile.HardwareToken")
 interface IHardwareToken : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_Signature(Windows.Storage.Streams.IBuffer* return_value);
@@ -60,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Profile.KnownRetailInfoProperties")
 interface IKnownRetailInfoPropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RetailAccessCode(HSTRING* return_value);
 	HRESULT get_ManufacturerName(HSTRING* return_value);
@@ -91,8 +79,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings")
 interface IPlatformDiagnosticsAndUsageDataSettingsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CollectionLevel(Windows.System.Profile.PlatformDataCollectionLevel* return_value);
 	HRESULT add_CollectionLevelChanged(Windows.Foundation.EventHandler!(IInspectable) handler, EventRegistrationToken* return_token);
@@ -104,8 +90,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Profile.RetailInfo")
 interface IRetailInfoStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsDemoModeEnabled(bool* return_value);
 	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
@@ -115,8 +99,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Profile.SharedModeSettings")
 interface ISharedModeSettingsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsEnabled(bool* return_value);
 }
@@ -125,8 +107,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Profile.SharedModeSettings")
 interface ISharedModeSettingsStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ShouldAvoidLocalStorage(bool* return_value);
 }
@@ -135,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Profile.SystemIdentificationInfo")
 interface ISystemIdentificationInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_Source(Windows.System.Profile.SystemIdentificationSource* return_value);
@@ -146,8 +124,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Profile.SystemIdentification")
 interface ISystemIdentificationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetSystemIdForPublisher(Windows.System.Profile.SystemIdentificationInfo* return_result);
 	HRESULT abi_GetSystemIdForUser(Windows.System.User user, Windows.System.Profile.SystemIdentificationInfo* return_result);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccountInfo")
 interface IUserDataAccountPartnerAccountInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_Priority(UINT32* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderAddAccountOperation")
 interface IUserDataAccountProviderAddAccountOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentKinds(Windows.ApplicationModel.UserDataAccounts.UserDataAccountContentKinds* return_value);
 	HRESULT get_PartnerAccountInfos(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccountInfo)* return_value);
@@ -29,8 +25,6 @@ extern(Windows):
 @uuid("a20aad63-888c-4a62-a3dd-34d07a802b2b")
 interface IUserDataAccountProviderOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind* return_value);
 }
@@ -39,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderResolveErrorsOperation")
 interface IUserDataAccountProviderResolveErrorsOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UserDataAccountId(HSTRING* return_value);
 	HRESULT abi_ReportCompleted();
@@ -50,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderSettingsOperation")
 interface IUserDataAccountProviderSettingsOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UserDataAccountId(HSTRING* return_value);
 	HRESULT abi_ReportCompleted();

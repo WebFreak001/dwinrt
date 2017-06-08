@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.ContentRestrictions.ContentRestrictionsBrowsePolicy")
 interface IContentRestrictionsBrowsePolicy : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GeographicRegion(HSTRING* return_value);
 	HRESULT get_MaxBrowsableAgeRating(Windows.Foundation.IReference!(UINT32)* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.ContentRestrictions.RatedContentDescription")
 interface IRatedContentDescription : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT set_Id(HSTRING value);
@@ -37,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.ContentRestrictions.RatedContentDescription")
 interface IRatedContentDescriptionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING id, HSTRING title, Windows.Media.ContentRestrictions.RatedContentCategory category, Windows.Media.ContentRestrictions.RatedContentDescription* return_RatedContentDescription);
 }
@@ -47,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.ContentRestrictions.RatedContentRestrictions")
 interface IRatedContentRestrictions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetBrowsePolicyAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.ContentRestrictions.ContentRestrictionsBrowsePolicy)* return_operation);
 	HRESULT abi_GetRestrictionLevelAsync(Windows.Media.ContentRestrictions.RatedContentDescription RatedContentDescription, Windows.Foundation.IAsyncOperation!(Windows.Media.ContentRestrictions.ContentAccessRestrictionLevel)* return_operation);
@@ -61,8 +53,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.ContentRestrictions.RatedContentRestrictions")
 interface IRatedContentRestrictionsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithMaxAgeRating(UINT32 maxAgeRating, Windows.Media.ContentRestrictions.RatedContentRestrictions* return_ratedContentRestrictions);
 }

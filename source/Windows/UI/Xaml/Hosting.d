@@ -12,8 +12,6 @@ interface IElementCompositionPreview : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Hosting.ElementCompositionPreview")
 interface IElementCompositionPreviewStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetElementVisual(Windows.UI.Xaml.UIElement element, Windows.UI.Composition.Visual* return_result);
 	HRESULT abi_GetElementChildVisual(Windows.UI.Xaml.UIElement element, Windows.UI.Composition.Visual* return_result);
@@ -25,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Hosting.ElementCompositionPreview")
 interface IElementCompositionPreviewStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetImplicitShowAnimation(Windows.UI.Xaml.UIElement element, Windows.UI.Composition.ICompositionAnimationBase animation);
 	HRESULT abi_SetImplicitHideAnimation(Windows.UI.Xaml.UIElement element, Windows.UI.Composition.ICompositionAnimationBase animation);
@@ -38,8 +34,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Hosting.XamlUIPresenter")
 interface IXamlUIPresenter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RootElement(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT set_RootElement(Windows.UI.Xaml.UIElement value);
@@ -55,8 +49,6 @@ extern(Windows):
 @uuid("aafb84cd-9f6d-4f80-ac2c-0e6cb9f31659")
 interface IXamlUIPresenterHost : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ResolveFileResource(HSTRING path, HSTRING* return_returnValue);
 }
@@ -64,8 +56,6 @@ extern(Windows):
 @uuid("61595672-7ca4-4a21-b56a-88f4812388ca")
 interface IXamlUIPresenterHost2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetGenericXamlFilePath(HSTRING* return_returnValue);
 }
@@ -73,8 +63,6 @@ extern(Windows):
 @uuid("b14292bf-7320-41bb-9f26-4d6fd34db45a")
 interface IXamlUIPresenterHost3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ResolveDictionaryResource(Windows.UI.Xaml.ResourceDictionary dictionary, IInspectable dictionaryKey, IInspectable suggestedValue, IInspectable* return_returnValue);
 }
@@ -83,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Hosting.XamlUIPresenter")
 interface IXamlUIPresenterStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CompleteTimelinesAutomatically(bool* return_value);
 	HRESULT set_CompleteTimelinesAutomatically(bool value);
@@ -96,8 +82,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Hosting.XamlUIPresenter")
 interface IXamlUIPresenterStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetFlyoutPlacementTargetInfo(Windows.UI.Xaml.FrameworkElement placementTarget, Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode preferredPlacement, Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode* out_targetPreferredPlacement, bool* out_allowFallbacks, Windows.Foundation.Rect* return_returnValue);
 	HRESULT abi_GetFlyoutPlacement(Windows.Foundation.Rect placementTargetBounds, Windows.Foundation.Size controlSize, Windows.Foundation.Size minControlSize, Windows.Foundation.Rect containerRect, Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode targetPreferredPlacement, bool allowFallbacks, Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode* out_chosenPlacement, Windows.Foundation.Rect* return_returnValue);

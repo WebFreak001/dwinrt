@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Portable.ServiceDevice")
 interface IServiceDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(Windows.Devices.Portable.ServiceDeviceType serviceType, HSTRING* return_selector);
 	HRESULT abi_GetDeviceSelectorFromServiceId(GUID serviceId, HSTRING* return_selector);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Portable.StorageDevice")
 interface IStorageDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromId(HSTRING deviceId, Windows.Storage.StorageFolder* return_deviceRoot);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_selector);

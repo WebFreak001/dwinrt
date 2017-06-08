@@ -13,8 +13,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.BitmapImage")
 interface IBitmapImage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CreateOptions(Windows.UI.Xaml.Media.Imaging.BitmapCreateOptions* return_value);
 	HRESULT set_CreateOptions(Windows.UI.Xaml.Media.Imaging.BitmapCreateOptions value);
@@ -36,8 +34,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.BitmapImage")
 interface IBitmapImage2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DecodePixelType(Windows.UI.Xaml.Media.Imaging.DecodePixelType* return_value);
 	HRESULT set_DecodePixelType(Windows.UI.Xaml.Media.Imaging.DecodePixelType value);
@@ -47,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.BitmapImage")
 interface IBitmapImage3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsAnimatedBitmap(bool* return_value);
 	HRESULT get_IsPlaying(bool* return_value);
@@ -62,8 +56,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.BitmapImage")
 interface IBitmapImageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithUriSource(Windows.Foundation.Uri uriSource, Windows.UI.Xaml.Media.Imaging.BitmapImage* return_instance);
 }
@@ -72,8 +64,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.BitmapImage")
 interface IBitmapImageStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CreateOptionsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_UriSourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -85,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.BitmapImage")
 interface IBitmapImageStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DecodePixelTypeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -95,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.BitmapImage")
 interface IBitmapImageStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsAnimatedBitmapProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsPlayingProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -107,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.BitmapSource")
 interface IBitmapSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PixelWidth(INT32* return_value);
 	HRESULT get_PixelHeight(INT32* return_value);
@@ -120,8 +104,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.BitmapSource")
 interface IBitmapSourceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Imaging.BitmapSource* return_instance);
 }
@@ -130,8 +112,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.BitmapSource")
 interface IBitmapSourceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PixelWidthProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_PixelHeightProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -141,8 +121,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.DownloadProgressEventArgs")
 interface IDownloadProgressEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Progress(INT32* return_value);
 	HRESULT set_Progress(INT32 value);
@@ -152,8 +130,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap")
 interface IRenderTargetBitmap : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PixelWidth(INT32* return_value);
 	HRESULT get_PixelHeight(INT32* return_value);
@@ -166,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap")
 interface IRenderTargetBitmapStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PixelWidthProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_PixelHeightProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -177,8 +151,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource")
 interface ISoftwareBitmapSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetBitmapAsync(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.IAsyncAction* return_returnValue);
 }
@@ -193,8 +165,6 @@ interface ISurfaceImageSource : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.SurfaceImageSource")
 interface ISurfaceImageSourceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithDimensions(INT32 pixelWidth, INT32 pixelHeight, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Imaging.SurfaceImageSource* return_instance);
 	HRESULT abi_CreateInstanceWithDimensionsAndOpacity(INT32 pixelWidth, INT32 pixelHeight, bool isOpaque, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Imaging.SurfaceImageSource* return_instance);
@@ -204,8 +174,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.SvgImageSource")
 interface ISvgImageSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UriSource(Windows.Foundation.Uri* return_value);
 	HRESULT set_UriSource(Windows.Foundation.Uri value);
@@ -224,8 +192,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.SvgImageSource")
 interface ISvgImageSourceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Imaging.SvgImageSource* return_instance);
 	HRESULT abi_CreateInstanceWithUriSource(Windows.Foundation.Uri uriSource, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Imaging.SvgImageSource* return_instance);
@@ -235,8 +201,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs")
 interface ISvgImageSourceFailedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus* return_value);
 }
@@ -251,8 +215,6 @@ interface ISvgImageSourceOpenedEventArgs : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.SvgImageSource")
 interface ISvgImageSourceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UriSourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_RasterizePixelWidthProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -269,8 +231,6 @@ interface IVirtualSurfaceImageSource : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource")
 interface IVirtualSurfaceImageSourceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithDimensions(INT32 pixelWidth, INT32 pixelHeight, Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource* return_instance);
 	HRESULT abi_CreateInstanceWithDimensionsAndOpacity(INT32 pixelWidth, INT32 pixelHeight, bool isOpaque, Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource* return_instance);
@@ -280,8 +240,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.WriteableBitmap")
 interface IWriteableBitmap : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PixelBuffer(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT abi_Invalidate();
@@ -291,8 +249,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.WriteableBitmap")
 interface IWriteableBitmapFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithDimensions(INT32 pixelWidth, INT32 pixelHeight, Windows.UI.Xaml.Media.Imaging.WriteableBitmap* return_instance);
 }
@@ -307,8 +263,6 @@ interface IXamlRenderingBackgroundTask : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.XamlRenderingBackgroundTask")
 interface IXamlRenderingBackgroundTaskFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Imaging.XamlRenderingBackgroundTask* return_instance);
 }
@@ -317,8 +271,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.XamlRenderingBackgroundTask")
 interface IXamlRenderingBackgroundTaskOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnRun(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance);
 }

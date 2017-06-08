@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Management.Policies.NamedPolicyData")
 interface INamedPolicyData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Area(HSTRING* return_value);
 	HRESULT get_Name(HSTRING* return_value);
@@ -28,8 +26,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.Policies.NamedPolicy")
 interface INamedPolicyStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetPolicyFromPath(HSTRING area, HSTRING name, Windows.Management.Policies.NamedPolicyData* return_result);
 	HRESULT abi_GetPolicyFromPathForUser(Windows.System.User user, HSTRING area, HSTRING name, Windows.Management.Policies.NamedPolicyData* return_result);

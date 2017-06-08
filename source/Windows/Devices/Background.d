@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Background.DeviceServicingDetails")
 interface IDeviceServicingDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_Arguments(HSTRING* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Background.DeviceUseDetails")
 interface IDeviceUseDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_Arguments(HSTRING* return_value);

@@ -20,8 +20,6 @@ struct TransferProgress
 @WinrtFactory("Windows.Web.Syndication.SyndicationAttribute")
 interface ISyndicationAttribute : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT set_Name(HSTRING value);
@@ -35,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationAttribute")
 interface ISyndicationAttributeFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateSyndicationAttribute(HSTRING attributeName, HSTRING attributeNamespace, HSTRING attributeValue, Windows.Web.Syndication.SyndicationAttribute* return_syndicationAttribute);
 }
@@ -45,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationCategory")
 interface ISyndicationCategory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Label(HSTRING* return_value);
 	HRESULT set_Label(HSTRING value);
@@ -60,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationCategory")
 interface ISyndicationCategoryFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateSyndicationCategory(HSTRING term, Windows.Web.Syndication.SyndicationCategory* return_category);
 	HRESULT abi_CreateSyndicationCategoryEx(HSTRING term, HSTRING scheme, HSTRING label, Windows.Web.Syndication.SyndicationCategory* return_category);
@@ -70,8 +62,6 @@ extern(Windows):
 @uuid("9e18a9b7-7249-4b45-b229-7df895a5a1f5")
 interface ISyndicationClient : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServerCredential(Windows.Security.Credentials.PasswordCredential* return_value);
 	HRESULT set_ServerCredential(Windows.Security.Credentials.PasswordCredential value);
@@ -91,8 +81,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationClient")
 interface ISyndicationClientFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateSyndicationClient(Windows.Security.Credentials.PasswordCredential serverCredential, Windows.Web.Syndication.SyndicationClient* return_syndicationClient);
 }
@@ -101,8 +89,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationContent")
 interface ISyndicationContent : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceUri(Windows.Foundation.Uri* return_value);
 	HRESULT set_SourceUri(Windows.Foundation.Uri value);
@@ -112,8 +98,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationContent")
 interface ISyndicationContentFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateSyndicationContent(HSTRING text, Windows.Web.Syndication.SyndicationTextType type, Windows.Web.Syndication.SyndicationContent* return_content);
 	HRESULT abi_CreateSyndicationContentWithSourceUri(Windows.Foundation.Uri sourceUri, Windows.Web.Syndication.SyndicationContent* return_content);
@@ -123,8 +107,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationError")
 interface ISyndicationErrorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetStatus(INT32 hresult, Windows.Web.Syndication.SyndicationErrorStatus* return_status);
 }
@@ -133,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationFeed")
 interface ISyndicationFeed : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Authors(Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationPerson)* return_value);
 	HRESULT get_Categories(Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationCategory)* return_value);
@@ -170,8 +150,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationFeed")
 interface ISyndicationFeedFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateSyndicationFeed(HSTRING title, HSTRING subtitle, Windows.Foundation.Uri uri, Windows.Web.Syndication.SyndicationFeed* return_feed);
 }
@@ -180,8 +158,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationGenerator")
 interface ISyndicationGenerator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);
 	HRESULT set_Text(HSTRING value);
@@ -195,8 +171,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationGenerator")
 interface ISyndicationGeneratorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateSyndicationGenerator(HSTRING text, Windows.Web.Syndication.SyndicationGenerator* return_generator);
 }
@@ -205,8 +179,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationItem")
 interface ISyndicationItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Authors(Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationPerson)* return_value);
 	HRESULT get_Categories(Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationCategory)* return_value);
@@ -242,8 +214,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationItem")
 interface ISyndicationItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateSyndicationItem(HSTRING title, Windows.Web.Syndication.SyndicationContent content, Windows.Foundation.Uri uri, Windows.Web.Syndication.SyndicationItem* return_item);
 }
@@ -252,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationLink")
 interface ISyndicationLink : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Length(UINT32* return_value);
 	HRESULT set_Length(UINT32 value);
@@ -273,8 +241,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationLink")
 interface ISyndicationLinkFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateSyndicationLink(Windows.Foundation.Uri uri, Windows.Web.Syndication.SyndicationLink* return_link);
 	HRESULT abi_CreateSyndicationLinkEx(Windows.Foundation.Uri uri, HSTRING relationship, HSTRING title, HSTRING mediaType, UINT32 length, Windows.Web.Syndication.SyndicationLink* return_link);
@@ -283,8 +249,6 @@ extern(Windows):
 @uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2")
 interface ISyndicationNode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NodeName(HSTRING* return_value);
 	HRESULT set_NodeName(HSTRING value);
@@ -305,8 +269,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationNode")
 interface ISyndicationNodeFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateSyndicationNode(HSTRING nodeName, HSTRING nodeNamespace, HSTRING nodeValue, Windows.Web.Syndication.SyndicationNode* return_node);
 }
@@ -315,8 +277,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationPerson")
 interface ISyndicationPerson : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Email(HSTRING* return_value);
 	HRESULT set_Email(HSTRING value);
@@ -330,8 +290,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationPerson")
 interface ISyndicationPersonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateSyndicationPerson(HSTRING name, Windows.Web.Syndication.SyndicationPerson* return_person);
 	HRESULT abi_CreateSyndicationPersonEx(HSTRING name, HSTRING email, Windows.Foundation.Uri uri, Windows.Web.Syndication.SyndicationPerson* return_person);
@@ -340,8 +298,6 @@ extern(Windows):
 @uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9")
 interface ISyndicationText : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);
 	HRESULT set_Text(HSTRING value);
@@ -355,8 +311,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Syndication.SyndicationText")
 interface ISyndicationTextFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateSyndicationText(HSTRING text, Windows.Web.Syndication.SyndicationText* return_syndicationText);
 	HRESULT abi_CreateSyndicationTextEx(HSTRING text, Windows.Web.Syndication.SyndicationTextType type, Windows.Web.Syndication.SyndicationText* return_syndicationText);

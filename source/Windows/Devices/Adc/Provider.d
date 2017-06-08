@@ -5,8 +5,6 @@ import dwinrt;
 @uuid("be545828-816d-4de5-a048-aba06958aaa8")
 interface IAdcControllerProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChannelCount(INT32* return_value);
 	HRESULT get_ResolutionInBits(INT32* return_value);
@@ -23,8 +21,6 @@ extern(Windows):
 @uuid("28953668-9359-4c57-bc88-e275e81638c9")
 interface IAdcProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetControllers(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Adc.Provider.IAdcControllerProvider)* return_result);
 }

@@ -25,8 +25,6 @@ extern(Windows):
 @uuid("036d2c08-df29-41af-8aa2-d774be62ba6f")
 interface IBindableIterable : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_First(Windows.UI.Xaml.Interop.IBindableIterator* return_returnValue);
 }
@@ -34,8 +32,6 @@ extern(Windows):
 @uuid("6a1d6c07-076d-49f2-8314-f52c9c9a8331")
 interface IBindableIterator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Current(IInspectable* return_value);
 	HRESULT get_HasCurrent(bool* return_value);
@@ -45,8 +41,6 @@ extern(Windows):
 @uuid("fe1eb536-7e7f-4f90-ac9a-474984aae512")
 interface IBindableObservableVector : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_VectorChanged(Windows.UI.Xaml.Interop.BindableVectorChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_VectorChanged(EventRegistrationToken token);
@@ -55,8 +49,6 @@ extern(Windows):
 @uuid("393de7de-6fd0-4c0d-bb71-47244a113e93")
 interface IBindableVector : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAt(UINT32 index, IInspectable* return_returnValue);
 	HRESULT get_Size(UINT32* return_value);
@@ -73,8 +65,6 @@ extern(Windows):
 @uuid("346dd6e7-976e-4bc3-815d-ece243bc0f33")
 interface IBindableVectorView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAt(UINT32 index, IInspectable* return_returnValue);
 	HRESULT get_Size(UINT32* return_value);
@@ -84,8 +74,6 @@ extern(Windows):
 @uuid("28b167d5-1a31-465b-9b25-d5c3ae686c40")
 interface INotifyCollectionChanged : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_CollectionChanged(Windows.UI.Xaml.Interop.NotifyCollectionChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_CollectionChanged(EventRegistrationToken token);
@@ -95,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Interop.NotifyCollectionChangedEventArgs")
 interface INotifyCollectionChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Action(Windows.UI.Xaml.Interop.NotifyCollectionChangedAction* return_value);
 	HRESULT get_NewItems(Windows.UI.Xaml.Interop.IBindableVector* return_value);
@@ -109,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Interop.NotifyCollectionChangedEventArgs")
 interface INotifyCollectionChangedEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithAllParameters(Windows.UI.Xaml.Interop.NotifyCollectionChangedAction action, Windows.UI.Xaml.Interop.IBindableVector newItems, Windows.UI.Xaml.Interop.IBindableVector oldItems, INT32 newIndex, INT32 oldIndex, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Interop.NotifyCollectionChangedEventArgs* return_instance);
 }

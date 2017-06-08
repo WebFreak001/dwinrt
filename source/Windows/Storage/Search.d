@@ -12,8 +12,6 @@ struct SortEntry
 @WinrtFactory("Windows.Storage.Search.ContentIndexer")
 interface IContentIndexer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddAsync(Windows.Storage.Search.IIndexableContent indexableContent, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_UpdateAsync(Windows.Storage.Search.IIndexableContent indexableContent, Windows.Foundation.IAsyncAction* return_operation);
@@ -28,8 +26,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Search.ContentIndexerQuery")
 interface IContentIndexerQuery : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCountAsync(Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
 	HRESULT abi_GetPropertiesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)))* return_operation);
@@ -43,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Search.ContentIndexer")
 interface IContentIndexerQueryOperations : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateQueryWithSortOrderAndLanguage(HSTRING searchFilter, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.Collections.IIterable!(Windows.Storage.Search.SortEntry) sortOrder, HSTRING searchFilterLanguage, Windows.Storage.Search.ContentIndexerQuery* return_query);
 	HRESULT abi_CreateQueryWithSortOrder(HSTRING searchFilter, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.Collections.IIterable!(Windows.Storage.Search.SortEntry) sortOrder, Windows.Storage.Search.ContentIndexerQuery* return_query);
@@ -55,8 +49,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Search.ContentIndexer")
 interface IContentIndexerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetIndexerWithName(HSTRING indexName, Windows.Storage.Search.ContentIndexer* return_index);
 	HRESULT abi_GetIndexer(Windows.Storage.Search.ContentIndexer* return_index);
@@ -65,8 +57,6 @@ extern(Windows):
 @uuid("ccf1a05f-d4b5-483a-b06e-e0db1ec420e4")
 interface IIndexableContent : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT set_Id(HSTRING value);
@@ -81,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Search.QueryOptions")
 interface IQueryOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FileTypeFilter(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 	HRESULT get_FolderDepth(Windows.Storage.Search.FolderDepth* return_value);
@@ -108,8 +96,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Search.QueryOptions")
 interface IQueryOptionsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCommonFileQuery(Windows.Storage.Search.CommonFileQuery query, Windows.Foundation.Collections.IIterable!(HSTRING) fileTypeFilter, Windows.Storage.Search.QueryOptions* return_queryOptions);
 	HRESULT abi_CreateCommonFolderQuery(Windows.Storage.Search.CommonFolderQuery query, Windows.Storage.Search.QueryOptions* return_queryOptions);
@@ -119,8 +105,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Search.QueryOptions")
 interface IQueryOptionsWithProviderFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StorageProviderIdFilter(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 }
@@ -129,8 +113,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Search.StorageFileQueryResult")
 interface IStorageFileQueryResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetFilesAsync(UINT32 startIndex, UINT32 maxNumberOfItems, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile))* return_operation);
 	HRESULT abi_GetFilesAsyncDefaultStartAndCount(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile))* return_operation);
@@ -140,8 +122,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Search.StorageFileQueryResult")
 interface IStorageFileQueryResult2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetMatchingPropertiesWithRanges(Windows.Storage.StorageFile file, Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment))* return_result);
 }
@@ -149,8 +129,6 @@ extern(Windows):
 @uuid("cb43ccc9-446b-4a4f-be97-757771be5203")
 interface IStorageFolderQueryOperations : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetIndexedStateAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.Search.IndexedState)* return_operation);
 	HRESULT abi_CreateFileQueryOverloadDefault(Windows.Storage.Search.StorageFileQueryResult* return_value);
@@ -175,8 +153,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Search.StorageFolderQueryResult")
 interface IStorageFolderQueryResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetFoldersAsync(UINT32 startIndex, UINT32 maxNumberOfItems, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder))* return_operation);
 	HRESULT abi_GetFoldersAsyncDefaultStartAndCount(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder))* return_operation);
@@ -186,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Search.StorageItemQueryResult")
 interface IStorageItemQueryResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetItemsAsync(UINT32 startIndex, UINT32 maxNumberOfItems, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem))* return_operation);
 	HRESULT abi_GetItemsAsyncDefaultStartAndCount(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem))* return_operation);
@@ -197,8 +171,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Search.StorageLibraryContentChangedTriggerDetails")
 interface IStorageLibraryContentChangedTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Folder(Windows.Storage.StorageFolder* return_value);
 	HRESULT abi_CreateModifiedSinceQuery(Windows.Foundation.DateTime lastQueryTime, Windows.Storage.Search.StorageItemQueryResult* return_result);
@@ -207,8 +179,6 @@ extern(Windows):
 @uuid("c297d70d-7353-47ab-ba58-8c61425dc54b")
 interface IStorageQueryResultBase : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetItemCountAsync(Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
 	HRESULT get_Folder(Windows.Storage.StorageFolder* return_container);
@@ -225,8 +195,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Search.ValueAndLanguage")
 interface IValueAndLanguage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Language(HSTRING* return_value);
 	HRESULT set_Language(HSTRING value);

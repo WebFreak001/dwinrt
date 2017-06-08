@@ -12,8 +12,6 @@ struct I2cTransferResult
 @WinrtFactory("Windows.Devices.I2c.I2cConnectionSettings")
 interface II2cConnectionSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SlaveAddress(INT32* return_value);
 	HRESULT set_SlaveAddress(INT32 value);
@@ -27,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.I2c.I2cConnectionSettings")
 interface II2cConnectionSettingsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(INT32 slaveAddress, Windows.Devices.I2c.I2cConnectionSettings* return_value);
 }
@@ -37,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.I2c.I2cController")
 interface II2cController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDevice(Windows.Devices.I2c.I2cConnectionSettings settings, Windows.Devices.I2c.I2cDevice* return_device);
 }
@@ -47,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.I2c.I2cController")
 interface II2cControllerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetControllersAsync(Windows.Devices.I2c.Provider.II2cProvider provider, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.I2c.I2cController))* return_operation);
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.I2c.I2cController)* return_operation);
@@ -58,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.I2c.I2cDevice")
 interface II2cDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_ConnectionSettings(Windows.Devices.I2c.I2cConnectionSettings* return_value);
@@ -74,8 +64,6 @@ extern(Windows):
 @uuid("91a33be3-7334-4512-96bc-fbae9459f5f6")
 interface II2cDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
 	HRESULT abi_GetDeviceSelectorFromFriendlyName(HSTRING friendlyName, HSTRING* return_value);

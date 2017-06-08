@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs")
 interface INotePlacementChangedPreviewEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ViewId(INT32* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs")
 interface INoteVisibilityChangedPreviewEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ViewId(INT32* return_value);
 	HRESULT get_IsVisible(bool* return_value);
@@ -27,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview")
 interface INotesWindowManagerPreview : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsScreenLocked(bool* return_value);
 	HRESULT abi_ShowNote(INT32 noteViewId);
@@ -51,8 +45,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview")
 interface INotesWindowManagerPreview2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowNoteRelativeToWithOptions(INT32 noteViewId, INT32 anchorNoteViewId, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options);
 	HRESULT abi_ShowNoteWithPlacementWithOptions(INT32 noteViewId, Windows.Storage.Streams.IBuffer data, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options);
@@ -64,8 +56,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions")
 interface INotesWindowManagerPreviewShowNoteOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ShowWithFocus(bool* return_value);
 	HRESULT set_ShowWithFocus(bool value);
@@ -75,8 +65,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview")
 interface INotesWindowManagerPreviewStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentApp(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview* return_current);
 }

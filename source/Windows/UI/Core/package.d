@@ -21,8 +21,6 @@ struct CoreProximityEvaluation
 @uuid("cd292360-2763-4085-8a9f-74b224a29175")
 interface ICoreWindowFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCoreWindow(HSTRING windowTitle, Windows.UI.Core.CoreWindow* return_window);
 	HRESULT get_WindowReuseAllowed(bool* return_value);
@@ -58,8 +56,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.AcceleratorKeyEventArgs")
 interface IAcceleratorKeyEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EventType(Windows.UI.Core.CoreAcceleratorKeyEventType* return_value);
 	HRESULT get_VirtualKey(Windows.System.VirtualKey* return_value);
@@ -70,8 +66,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.AcceleratorKeyEventArgs")
 interface IAcceleratorKeyEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
@@ -80,8 +74,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.AutomationProviderRequestedEventArgs")
 interface IAutomationProviderRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AutomationProvider(IInspectable* return_value);
 	HRESULT set_AutomationProvider(IInspectable value);
@@ -91,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.BackRequestedEventArgs")
 interface IBackRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -102,8 +92,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CharacterReceivedEventArgs")
 interface ICharacterReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeyCode(UINT32* return_value);
 	HRESULT get_KeyStatus(Windows.UI.Core.CorePhysicalKeyStatus* return_value);
@@ -113,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs")
 interface IClosestInteractiveBoundsRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerPosition(Windows.Foundation.Point* return_value);
 	HRESULT get_SearchBounds(Windows.Foundation.Rect* return_value);
@@ -125,8 +111,6 @@ extern(Windows):
 @uuid("9ffdf7f5-b8c9-4ef0-b7d2-1de626561fc8")
 interface ICoreAcceleratorKeys : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_AcceleratorKeyActivated(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_AcceleratorKeyActivated(EventRegistrationToken cookie);
@@ -136,8 +120,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreComponentInputSource")
 interface ICoreClosestInteractiveBoundsRequested : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ClosestInteractiveBoundsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreComponentInputSource, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_ClosestInteractiveBoundsRequested(EventRegistrationToken cookie);
@@ -147,8 +129,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreComponentInputSource")
 interface ICoreComponentFocusable : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HasFocus(bool* return_value);
 	HRESULT add_GotFocus(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CoreWindowEventArgs) handler, EventRegistrationToken* return_pCookie);
@@ -161,8 +141,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreCursor")
 interface ICoreCursor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(UINT32* return_value);
 	HRESULT get_Type(Windows.UI.Core.CoreCursorType* return_value);
@@ -172,8 +150,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreCursor")
 interface ICoreCursorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCursor(Windows.UI.Core.CoreCursorType type, UINT32 id, Windows.UI.Core.CoreCursor* return_cursor);
 }
@@ -182,8 +158,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreDispatcher")
 interface ICoreDispatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HasThreadAccess(bool* return_value);
 	HRESULT abi_ProcessEvents(Windows.UI.Core.CoreProcessEventsOption options);
@@ -195,8 +169,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreDispatcher")
 interface ICoreDispatcher2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryRunAsync(Windows.UI.Core.CoreDispatcherPriority priority, Windows.UI.Core.DispatchedHandler agileCallback, Windows.Foundation.IAsyncOperation!(bool)* return_asyncOperation);
 	HRESULT abi_TryRunIdleAsync(Windows.UI.Core.IdleDispatchedHandler agileCallback, Windows.Foundation.IAsyncOperation!(bool)* return_asyncOperation);
@@ -206,8 +178,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreDispatcher")
 interface ICoreDispatcherWithTaskPriority : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CurrentPriority(Windows.UI.Core.CoreDispatcherPriority* return_value);
 	HRESULT set_CurrentPriority(Windows.UI.Core.CoreDispatcherPriority value);
@@ -219,8 +189,6 @@ extern(Windows):
 @uuid("9f488807-4580-4be8-be68-92a9311713bb")
 interface ICoreInputSourceBase : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value);
 	HRESULT get_IsInputEnabled(bool* return_value);
@@ -233,8 +201,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreComponentInputSource")
 interface ICoreKeyboardInputSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentKeyState(Windows.System.VirtualKey virtualKey, Windows.UI.Core.CoreVirtualKeyStates* return_KeyState);
 	HRESULT add_CharacterReceived(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CharacterReceivedEventArgs) handler, EventRegistrationToken* return_pCookie);
@@ -249,8 +215,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreComponentInputSource")
 interface ICoreKeyboardInputSource2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentKeyEventDeviceId(HSTRING* return_value);
 }
@@ -258,8 +222,6 @@ extern(Windows):
 @uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551")
 interface ICorePointerInputSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReleasePointerCapture();
 	HRESULT abi_SetPointerCapture();
@@ -286,8 +248,6 @@ extern(Windows):
 @uuid("8f9d0c94-5688-4b0c-a9f1-f931f7fa3dc3")
 interface ICorePointerRedirector : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_PointerRoutedAway(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerRoutedAway(EventRegistrationToken cookie);
@@ -301,8 +261,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreComponentInputSource")
 interface ICoreTouchHitTesting : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_TouchHitTesting(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.TouchHitTestingEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_TouchHitTesting(EventRegistrationToken cookie);
@@ -311,8 +269,6 @@ extern(Windows):
 @uuid("79b9d5f2-879e-4b89-b798-79e47598030c")
 interface ICoreWindow : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AutomationHostProvider(IInspectable* return_value);
 	HRESULT get_Bounds(Windows.Foundation.Rect* return_value);
@@ -372,8 +328,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreWindow")
 interface ICoreWindow2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_PointerPosition(Windows.Foundation.Point value);
 }
@@ -382,8 +336,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreWindow")
 interface ICoreWindow3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ClosestInteractiveBoundsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_ClosestInteractiveBoundsRequested(EventRegistrationToken cookie);
@@ -394,8 +346,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreWindow")
 interface ICoreWindow4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ResizeStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, IInspectable) handler, EventRegistrationToken* return_pCookie);
 	HRESULT remove_ResizeStarted(EventRegistrationToken cookie);
@@ -407,8 +357,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreWindowDialog")
 interface ICoreWindowDialog : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_Showing(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Showing(EventRegistrationToken cookie);
@@ -432,8 +380,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreWindowDialog")
 interface ICoreWindowDialogFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithTitle(HSTRING title, Windows.UI.Core.CoreWindowDialog* return_coreWindowDialog);
 }
@@ -441,8 +387,6 @@ extern(Windows):
 @uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da")
 interface ICoreWindowEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -452,8 +396,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreWindowFlyout")
 interface ICoreWindowFlyout : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_Showing(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Showing(EventRegistrationToken cookie);
@@ -475,8 +417,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreWindowFlyout")
 interface ICoreWindowFlyoutFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Foundation.Point position, Windows.UI.Core.CoreWindowFlyout* return_coreWindowFlyout);
 	HRESULT abi_CreateWithTitle(Windows.Foundation.Point position, HSTRING title, Windows.UI.Core.CoreWindowFlyout* return_coreWindowFlyout);
@@ -486,8 +426,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreWindowPopupShowingEventArgs")
 interface ICoreWindowPopupShowingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetDesiredSize(Windows.Foundation.Size value);
 }
@@ -496,8 +434,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreWindowResizeManager")
 interface ICoreWindowResizeManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_NotifyLayoutCompleted();
 }
@@ -506,8 +442,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreWindowResizeManager")
 interface ICoreWindowResizeManagerLayoutCapability : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ShouldWaitForLayoutCompletion(bool value);
 	HRESULT get_ShouldWaitForLayoutCompletion(bool* return_value);
@@ -517,8 +451,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreWindowResizeManager")
 interface ICoreWindowResizeManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.Core.CoreWindowResizeManager* return_CoreWindowResizeManager);
 }
@@ -527,8 +459,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.CoreWindow")
 interface ICoreWindowStatic : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentThread(Windows.UI.Core.CoreWindow* return_ppWindow);
 }
@@ -537,8 +467,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.IdleDispatchedHandlerArgs")
 interface IIdleDispatchedHandlerArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsDispatcherIdle(bool* return_value);
 }
@@ -546,8 +474,6 @@ extern(Windows):
 @uuid("188f20d6-9873-464a-ace5-57e010f465e6")
 interface IInitializeWithCoreWindow : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Initialize(Windows.UI.Core.CoreWindow window);
 }
@@ -556,8 +482,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.InputEnabledEventArgs")
 interface IInputEnabledEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InputEnabled(bool* return_value);
 }
@@ -566,8 +490,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.KeyEventArgs")
 interface IKeyEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VirtualKey(Windows.System.VirtualKey* return_value);
 	HRESULT get_KeyStatus(Windows.UI.Core.CorePhysicalKeyStatus* return_value);
@@ -577,8 +499,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.KeyEventArgs")
 interface IKeyEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
@@ -587,8 +507,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.PointerEventArgs")
 interface IPointerEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CurrentPoint(Windows.UI.Input.PointerPoint* return_value);
 	HRESULT get_KeyModifiers(Windows.System.VirtualKeyModifiers* return_value);
@@ -599,8 +517,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.SystemNavigationManager")
 interface ISystemNavigationManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_BackRequested(Windows.Foundation.EventHandler!(Windows.UI.Core.BackRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_BackRequested(EventRegistrationToken token);
@@ -610,8 +526,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.SystemNavigationManager")
 interface ISystemNavigationManager2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppViewBackButtonVisibility(Windows.UI.Core.AppViewBackButtonVisibility* return_value);
 	HRESULT set_AppViewBackButtonVisibility(Windows.UI.Core.AppViewBackButtonVisibility value);
@@ -621,8 +535,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.SystemNavigationManager")
 interface ISystemNavigationManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.Core.SystemNavigationManager* return_loader);
 }
@@ -631,8 +543,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.TouchHitTestingEventArgs")
 interface ITouchHitTestingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProximityEvaluation(Windows.UI.Core.CoreProximityEvaluation* return_value);
 	HRESULT set_ProximityEvaluation(Windows.UI.Core.CoreProximityEvaluation value);
@@ -646,8 +556,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.VisibilityChangedEventArgs")
 interface IVisibilityChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Visible(bool* return_value);
 }
@@ -656,8 +564,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.WindowActivatedEventArgs")
 interface IWindowActivatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WindowActivationState(Windows.UI.Core.CoreWindowActivationState* return_value);
 }
@@ -666,8 +572,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.WindowSizeChangedEventArgs")
 interface IWindowSizeChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Size(Windows.Foundation.Size* return_value);
 }

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Custom.CustomDevice")
 interface ICustomDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InputStream(Windows.Storage.Streams.IInputStream* return_value);
 	HRESULT get_OutputStream(Windows.Storage.Streams.IOutputStream* return_value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Custom.CustomDevice")
 interface ICustomDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(GUID classGuid, HSTRING* return_value);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Devices.Custom.DeviceAccessMode desiredAccess, Windows.Devices.Custom.DeviceSharingMode sharingMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Custom.CustomDevice)* return_operation);
@@ -29,8 +25,6 @@ extern(Windows):
 @uuid("0e9559e7-60c8-4375-a761-7f8808066c60")
 interface IIOControlCode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AccessMode(Windows.Devices.Custom.IOControlAccessMode* return_value);
 	HRESULT get_BufferingMethod(Windows.Devices.Custom.IOControlBufferingMethod* return_value);
@@ -43,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Custom.IOControlCode")
 interface IIOControlCodeFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateIOControlCode(UINT16 deviceType, UINT16 function_, Windows.Devices.Custom.IOControlAccessMode accessMode, Windows.Devices.Custom.IOControlBufferingMethod bufferingMethod, Windows.Devices.Custom.IOControlCode* return_instance);
 }
@@ -53,8 +45,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Custom.KnownDeviceTypes")
 interface IKnownDeviceTypesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Unknown(UINT16* return_value);
 }

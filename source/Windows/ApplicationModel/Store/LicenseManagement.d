@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Store.LicenseManagement.LicenseManager")
 interface ILicenseManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddLicenseAsync(Windows.Storage.Streams.IBuffer license, Windows.Foundation.IAsyncAction* return_action);
 	HRESULT abi_GetSatisfactionInfosAsync(Windows.Foundation.Collections.IIterable!(HSTRING) contentIds, Windows.Foundation.Collections.IIterable!(HSTRING) keyIds, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult)* return_operation);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.LicenseManagement.LicenseManager")
 interface ILicenseManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RefreshLicensesAsync(Windows.ApplicationModel.Store.LicenseManagement.LicenseRefreshOption refreshOption, Windows.Foundation.IAsyncAction* return_action);
 }
@@ -27,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo")
 interface ILicenseSatisfactionInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SatisfiedByDevice(bool* return_value);
 	HRESULT get_SatisfiedByOpenLicense(bool* return_value);
@@ -43,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult")
 interface ILicenseSatisfactionResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LicenseSatisfactionInfos(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo)* return_value);
 	HRESULT get_ExtendedError(HRESULT* return_value);

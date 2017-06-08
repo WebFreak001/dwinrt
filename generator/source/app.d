@@ -837,7 +837,9 @@ struct Interface
 			ret ~= " : " ~ (inherits ~ implements).join(", ");
 		ret ~= "\n{\n";
 		if (methods.length && !isDelegate)
-			ret ~= "\tmixin(generateRTMethods!(typeof(this)));\n\n";
+		{
+			// TODO: generate D methods
+		}
 		if (methods.length)
 			ret ~= "extern(Windows):\n";
 		foreach (method; methods)
@@ -1050,7 +1052,7 @@ struct AwaitAdapter(Async) if (IsAsync!Async)
 
 		callback = f;
 		IContextCallback context;
-		assert(CoGetObjectContext(uuidOf!IContextCallback, cast(void**)&context) == S_OK);
+		Debug.OK(CoGetObjectContext(uuidOf!IContextCallback, cast(void**)&context));
 
 		async.Completed((AsyncStatus) {
 			ComCallData data;
@@ -1061,8 +1063,8 @@ struct AwaitAdapter(Async) if (IsAsync!Async)
 				return S_OK;
 			};
 
-			assert(context.ContextCallback(cb, &data,
-				IID_ICallbackWithNoReentrancyToApplicationSTA, 5, null) == S_OK);
+			Debug.OK(context.ContextCallback(cb, &data,
+				IID_ICallbackWithNoReentrancyToApplicationSTA, 5, null));
 		});
 	}
 
@@ -1099,8 +1101,6 @@ extern (Windows):
 
 interface IAsyncActionWithProgress(TProgress) : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern (Windows):
 	HRESULT put_Progress(AsyncActionProgressHandler!TProgress handler);
 	HRESULT get_Progress(AsyncActionProgressHandler!TProgress* handler);
@@ -1123,8 +1123,6 @@ extern (Windows):
 
 interface IAsyncOperation(TResult) : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern (Windows):
 	HRESULT put_Completed(AsyncOperationCompletedHandler!TResult handler);
 	HRESULT get_Completed(AsyncOperationCompletedHandler!TResult* handler);
@@ -1146,8 +1144,6 @@ extern (Windows):
 
 interface IAsyncOperationWithProgress(TResult, TProgress) : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern (Windows):
 	HRESULT put_Progress(AsyncOperationProgressHandler!(TResult, TProgress) handler);
 	HRESULT get_Progress(AsyncOperationProgressHandler!(TResult, TProgress)* handler);

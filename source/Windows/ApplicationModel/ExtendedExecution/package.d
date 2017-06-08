@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs")
 interface IExtendedExecutionRevokedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reason(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedReason* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionSession")
 interface IExtendedExecutionSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reason(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionReason* return_value);
 	HRESULT set_Reason(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionReason value);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Editing.BackgroundAudioTrack")
 interface IBackgroundAudioTrack : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TrimTimeFromStart(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_TrimTimeFromStart(Windows.Foundation.TimeSpan value);
@@ -29,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Editing.BackgroundAudioTrack")
 interface IBackgroundAudioTrackStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromEmbeddedAudioTrack(Windows.Media.Editing.EmbeddedAudioTrack embeddedAudioTrack, Windows.Media.Editing.BackgroundAudioTrack* return_value);
 	HRESULT abi_CreateFromFileAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.BackgroundAudioTrack)* return_operation);
@@ -40,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Editing.EmbeddedAudioTrack")
 interface IEmbeddedAudioTrack : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAudioEncodingProperties(Windows.Media.MediaProperties.AudioEncodingProperties* return_value);
 }
@@ -50,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Editing.MediaClip")
 interface IMediaClip : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TrimTimeFromStart(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_TrimTimeFromStart(Windows.Foundation.TimeSpan value);
@@ -77,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Editing.MediaClip")
 interface IMediaClipStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromColor(Windows.UI.Color color, Windows.Foundation.TimeSpan originalDuration, Windows.Media.Editing.MediaClip* return_value);
 	HRESULT abi_CreateFromFileAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaClip)* return_operation);
@@ -89,8 +79,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Editing.MediaClip")
 interface IMediaClipStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromSurface(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface surface, Windows.Foundation.TimeSpan originalDuration, Windows.Media.Editing.MediaClip* return_value);
 }
@@ -99,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Editing.MediaComposition")
 interface IMediaComposition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Duration(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_Clips(Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaClip)* return_value);
@@ -123,8 +109,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Editing.MediaComposition")
 interface IMediaComposition2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OverlayLayers(Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaOverlayLayer)* return_value);
 }
@@ -133,8 +117,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Editing.MediaComposition")
 interface IMediaCompositionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LoadAsync(Windows.Storage.StorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaComposition)* return_operation);
 }
@@ -143,8 +125,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Editing.MediaOverlay")
 interface IMediaOverlay : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Rect* return_value);
 	HRESULT set_Position(Windows.Foundation.Rect value);
@@ -162,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Editing.MediaOverlay")
 interface IMediaOverlayFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Media.Editing.MediaClip clip, Windows.Media.Editing.MediaOverlay* return_mediaOverlay);
 	HRESULT abi_CreateWithPositionAndOpacity(Windows.Media.Editing.MediaClip clip, Windows.Foundation.Rect position, double opacity, Windows.Media.Editing.MediaOverlay* return_mediaOverlay);
@@ -173,8 +151,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Editing.MediaOverlayLayer")
 interface IMediaOverlayLayer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Clone(Windows.Media.Editing.MediaOverlayLayer* return_result);
 	HRESULT get_Overlays(Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaOverlay)* return_value);
@@ -185,8 +161,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Editing.MediaOverlayLayer")
 interface IMediaOverlayLayerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithCompositorDefinition(Windows.Media.Effects.IVideoCompositorDefinition compositorDefinition, Windows.Media.Editing.MediaOverlayLayer* return_mediaOverlayLayer);
 }

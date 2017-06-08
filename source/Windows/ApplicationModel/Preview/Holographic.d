@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Preview.Holographic.HolographicApplicationPreview")
 interface IHolographicApplicationPreviewStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsCurrentViewPresentedOnHolographicDisplay(bool* return_result);
 	HRESULT abi_IsHolographicActivation(Windows.ApplicationModel.Activation.IActivatedEventArgs activatedEventArgs, bool* return_result);

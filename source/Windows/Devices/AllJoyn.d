@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynAboutData")
 interface IAllJoynAboutData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsEnabled(bool* return_value);
 	HRESULT set_IsEnabled(bool value);
@@ -36,8 +34,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynAboutDataView")
 interface IAllJoynAboutDataView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(INT32* return_value);
 	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
@@ -61,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynAboutDataView")
 interface IAllJoynAboutDataViewStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDataBySessionPortAsync(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, UINT16 sessionPort, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView)* return_operation);
 	HRESULT abi_GetDataBySessionPortWithLanguageAsync(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, UINT16 sessionPort, Windows.Globalization.Language language, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView)* return_operation);
@@ -71,8 +65,6 @@ extern(Windows):
 @uuid("4da817d2-cd1d-4023-a7c4-16def89c28df")
 interface IAllJoynAcceptSessionJoiner : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Accept();
 }
@@ -81,8 +73,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs")
 interface IAllJoynAcceptSessionJoinerEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UniqueName(HSTRING* return_value);
 	HRESULT get_SessionPort(UINT16* return_value);
@@ -96,8 +86,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs")
 interface IAllJoynAcceptSessionJoinerEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING uniqueName, UINT16 sessionPort, Windows.Devices.AllJoyn.AllJoynTrafficType trafficType, BYTE proximity, Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoiner acceptSessionJoiner, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs* return_result);
 }
@@ -106,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs")
 interface IAllJoynAuthenticationCompleteEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AuthenticationMechanism(Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism* return_value);
 	HRESULT get_PeerUniqueName(HSTRING* return_value);
@@ -118,8 +104,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynBusAttachment")
 interface IAllJoynBusAttachment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AboutData(Windows.Devices.AllJoyn.AllJoynAboutData* return_value);
 	HRESULT get_ConnectionSpecification(HSTRING* return_value);
@@ -143,8 +127,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynBusAttachment")
 interface IAllJoynBusAttachment2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAboutDataAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView)* return_operation);
 	HRESULT abi_GetAboutDataWithLanguageAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Globalization.Language language, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView)* return_operation);
@@ -158,8 +140,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynBusAttachment")
 interface IAllJoynBusAttachmentFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING connectionSpecification, Windows.Devices.AllJoyn.AllJoynBusAttachment* return_result);
 }
@@ -168,8 +148,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs")
 interface IAllJoynBusAttachmentStateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_State(Windows.Devices.AllJoyn.AllJoynBusAttachmentState* return_value);
 	HRESULT get_Status(INT32* return_value);
@@ -179,8 +157,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynBusAttachment")
 interface IAllJoynBusAttachmentStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Devices.AllJoyn.AllJoynBusAttachment* return_defaultBusAttachment);
 	HRESULT abi_GetWatcher(Windows.Foundation.Collections.IIterable!(HSTRING) requiredInterfaces, Windows.Devices.Enumeration.DeviceWatcher* return_deviceWatcher);
@@ -190,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynBusObject")
 interface IAllJoynBusObject : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
@@ -206,8 +180,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynBusObject")
 interface IAllJoynBusObjectFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING objectPath, Windows.Devices.AllJoyn.AllJoynBusObject* return_result);
 	HRESULT abi_CreateWithBusAttachment(HSTRING objectPath, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, Windows.Devices.AllJoyn.AllJoynBusObject* return_result);
@@ -217,8 +189,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs")
 interface IAllJoynBusObjectStoppedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(INT32* return_value);
 }
@@ -227,8 +197,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs")
 interface IAllJoynBusObjectStoppedEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(INT32 status, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs* return_result);
 }
@@ -237,8 +205,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynCredentials")
 interface IAllJoynCredentials : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AuthenticationMechanism(Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism* return_value);
 	HRESULT get_Certificate(Windows.Security.Cryptography.Certificates.Certificate* return_value);
@@ -253,8 +219,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs")
 interface IAllJoynCredentialsRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AttemptCount(UINT16* return_value);
 	HRESULT get_Credentials(Windows.Devices.AllJoyn.AllJoynCredentials* return_value);
@@ -267,8 +231,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs")
 interface IAllJoynCredentialsVerificationRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AuthenticationMechanism(Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism* return_value);
 	HRESULT get_PeerUniqueName(HSTRING* return_value);
@@ -284,8 +246,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynMessageInfo")
 interface IAllJoynMessageInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SenderUniqueName(HSTRING* return_value);
 }
@@ -294,8 +254,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynMessageInfo")
 interface IAllJoynMessageInfoFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING senderUniqueName, Windows.Devices.AllJoyn.AllJoynMessageInfo* return_result);
 }
@@ -303,8 +261,6 @@ extern(Windows):
 @uuid("9d084679-469b-495a-a710-ac50f123069f")
 interface IAllJoynProducer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetBusObject(Windows.Devices.AllJoyn.AllJoynBusObject busObject);
 }
@@ -313,8 +269,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynProducerStoppedEventArgs")
 interface IAllJoynProducerStoppedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(INT32* return_value);
 }
@@ -323,8 +277,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynProducerStoppedEventArgs")
 interface IAllJoynProducerStoppedEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(INT32 status, Windows.Devices.AllJoyn.AllJoynProducerStoppedEventArgs* return_result);
 }
@@ -333,8 +285,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynServiceInfo")
 interface IAllJoynServiceInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UniqueName(HSTRING* return_value);
 	HRESULT get_ObjectPath(HSTRING* return_value);
@@ -345,8 +295,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynServiceInfo")
 interface IAllJoynServiceInfoFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING uniqueName, HSTRING objectPath, UINT16 sessionPort, Windows.Devices.AllJoyn.AllJoynServiceInfo* return_result);
 }
@@ -355,8 +303,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynServiceInfoRemovedEventArgs")
 interface IAllJoynServiceInfoRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UniqueName(HSTRING* return_value);
 }
@@ -365,8 +311,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynServiceInfoRemovedEventArgs")
 interface IAllJoynServiceInfoRemovedEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynServiceInfoRemovedEventArgs* return_result);
 }
@@ -375,8 +319,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynServiceInfo")
 interface IAllJoynServiceInfoStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynServiceInfo)* return_operation);
 }
@@ -385,8 +327,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynSession")
 interface IAllJoynSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(INT32* return_value);
 	HRESULT get_Status(INT32* return_value);
@@ -403,8 +343,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs")
 interface IAllJoynSessionJoinedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Session(Windows.Devices.AllJoyn.AllJoynSession* return_value);
 }
@@ -413,8 +351,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs")
 interface IAllJoynSessionJoinedEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.AllJoyn.AllJoynSession session, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs* return_result);
 }
@@ -423,8 +359,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs")
 interface IAllJoynSessionLostEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reason(Windows.Devices.AllJoyn.AllJoynSessionLostReason* return_value);
 }
@@ -433,8 +367,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs")
 interface IAllJoynSessionLostEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.AllJoyn.AllJoynSessionLostReason reason, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs* return_result);
 }
@@ -443,8 +375,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs")
 interface IAllJoynSessionMemberAddedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UniqueName(HSTRING* return_value);
 }
@@ -453,8 +383,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs")
 interface IAllJoynSessionMemberAddedEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs* return_result);
 }
@@ -463,8 +391,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs")
 interface IAllJoynSessionMemberRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UniqueName(HSTRING* return_value);
 }
@@ -473,8 +399,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs")
 interface IAllJoynSessionMemberRemovedEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs* return_result);
 }
@@ -483,8 +407,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynSession")
 interface IAllJoynSessionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetFromServiceInfoAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession)* return_operation);
 	HRESULT abi_GetFromServiceInfoAndBusAttachmentAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession)* return_operation);
@@ -494,8 +416,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynStatus")
 interface IAllJoynStatusStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Ok(INT32* return_value);
 	HRESULT get_Fail(INT32* return_value);
@@ -521,8 +441,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynWatcherStoppedEventArgs")
 interface IAllJoynWatcherStoppedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(INT32* return_value);
 }
@@ -531,8 +449,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.AllJoyn.AllJoynWatcherStoppedEventArgs")
 interface IAllJoynWatcherStoppedEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(INT32 status, Windows.Devices.AllJoyn.AllJoynWatcherStoppedEventArgs* return_result);
 }

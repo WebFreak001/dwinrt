@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Data.Xml.Xsl.XsltProcessor")
 interface IXsltProcessor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TransformToString(Windows.Data.Xml.Dom.IXmlNode inputNode, HSTRING* return_output);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Xml.Xsl.XsltProcessor")
 interface IXsltProcessor2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TransformToDocument(Windows.Data.Xml.Dom.IXmlNode inputNode, Windows.Data.Xml.Dom.XmlDocument* return_output);
 }
@@ -26,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Xml.Xsl.XsltProcessor")
 interface IXsltProcessorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(Windows.Data.Xml.Dom.XmlDocument document, Windows.Data.Xml.Xsl.XsltProcessor* return_xsltProcessor);
 }

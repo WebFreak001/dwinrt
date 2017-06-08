@@ -18,8 +18,6 @@ interface IAppBarAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AppBarAutomationPeer")
 interface IAppBarAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.AppBar owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.AppBarAutomationPeer* return_instance);
 }
@@ -34,8 +32,6 @@ interface IAppBarButtonAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AppBarButtonAutomationPeer")
 interface IAppBarButtonAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.AppBarButton owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.AppBarButtonAutomationPeer* return_instance);
 }
@@ -50,8 +46,6 @@ interface IAppBarToggleButtonAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AppBarToggleButtonAutomationPeer")
 interface IAppBarToggleButtonAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.AppBarToggleButton owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.AppBarToggleButtonAutomationPeer* return_instance);
 }
@@ -66,8 +60,6 @@ interface IAutoSuggestBoxAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutoSuggestBoxAutomationPeer")
 interface IAutoSuggestBoxAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.AutoSuggestBox owner, Windows.UI.Xaml.Automation.Peers.AutoSuggestBoxAutomationPeer* return_instance);
 }
@@ -76,8 +68,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EventsSource(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_value);
 	HRESULT set_EventsSource(Windows.UI.Xaml.Automation.Peers.AutomationPeer value);
@@ -126,8 +116,6 @@ interface IAutomationPeer2 : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeer3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Navigate(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction, IInspectable* return_returnValue);
 	HRESULT abi_GetElementFromPoint(Windows.Foundation.Point pointInWindowCoordinates, IInspectable* return_returnValue);
@@ -147,8 +135,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeer4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetLandmarkType(Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType* return_returnValue);
 	HRESULT abi_GetLocalizedLandmarkType(HSTRING* return_returnValue);
@@ -158,8 +144,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeer5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsPeripheral(bool* return_returnValue);
 	HRESULT abi_IsDataValidForForm(bool* return_returnValue);
@@ -170,8 +154,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeer6 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCulture(INT32* return_returnValue);
 }
@@ -180,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation")
 interface IAutomationPeerAnnotation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.UI.Xaml.Automation.AnnotationType* return_value);
 	HRESULT set_Type(Windows.UI.Xaml.Automation.AnnotationType value);
@@ -193,8 +173,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation")
 interface IAutomationPeerAnnotationFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(Windows.UI.Xaml.Automation.AnnotationType type, Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation* return_instance);
 	HRESULT abi_CreateWithPeerParameter(Windows.UI.Xaml.Automation.AnnotationType type, Windows.UI.Xaml.Automation.Peers.AutomationPeer peer, Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation* return_instance);
@@ -204,8 +182,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation")
 interface IAutomationPeerAnnotationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TypeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_PeerProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -215,8 +191,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_instance);
 }
@@ -225,8 +199,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeerOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetPatternCore(Windows.UI.Xaml.Automation.Peers.PatternInterface patternInterface, IInspectable* return_returnValue);
 	HRESULT abi_GetAcceleratorKeyCore(HSTRING* return_returnValue);
@@ -261,8 +233,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeerOverrides2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowContextMenuCore();
 	HRESULT abi_GetControlledPeersCore(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue);
@@ -272,8 +242,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeerOverrides3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_NavigateCore(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction, IInspectable* return_returnValue);
 	HRESULT abi_GetElementFromPointCore(Windows.Foundation.Point pointInWindowCoordinates, IInspectable* return_returnValue);
@@ -288,8 +256,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeerOverrides4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetLandmarkTypeCore(Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType* return_returnValue);
 	HRESULT abi_GetLocalizedLandmarkTypeCore(HSTRING* return_returnValue);
@@ -299,8 +265,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeerOverrides5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsPeripheralCore(bool* return_returnValue);
 	HRESULT abi_IsDataValidForFormCore(bool* return_returnValue);
@@ -314,8 +278,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeerOverrides6 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCultureCore(INT32* return_returnValue);
 }
@@ -324,8 +286,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeerProtected : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_PeerFromProvider(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple provider, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue);
 	HRESULT abi_ProviderFromPeer(Windows.UI.Xaml.Automation.Peers.AutomationPeer peer, Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_returnValue);
@@ -335,8 +295,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ListenerExists(Windows.UI.Xaml.Automation.Peers.AutomationEvents eventId, bool* return_returnValue);
 }
@@ -345,8 +303,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
 interface IAutomationPeerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GenerateRawElementProviderRuntimeId(Windows.UI.Xaml.Automation.Peers.RawElementProviderRuntimeId* return_returnValue);
 }
@@ -361,8 +317,6 @@ interface IButtonAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ButtonAutomationPeer")
 interface IButtonAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Button owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ButtonAutomationPeer* return_instance);
 }
@@ -377,8 +331,6 @@ interface IButtonBaseAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer")
 interface IButtonBaseAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.ButtonBase owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer* return_instance);
 }
@@ -393,8 +345,6 @@ interface ICaptureElementAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.CaptureElementAutomationPeer")
 interface ICaptureElementAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.CaptureElement owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.CaptureElementAutomationPeer* return_instance);
 }
@@ -409,8 +359,6 @@ interface ICheckBoxAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.CheckBoxAutomationPeer")
 interface ICheckBoxAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.CheckBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.CheckBoxAutomationPeer* return_instance);
 }
@@ -425,8 +373,6 @@ interface IComboBoxAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ComboBoxAutomationPeer")
 interface IComboBoxAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ComboBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ComboBoxAutomationPeer* return_instance);
 }
@@ -441,8 +387,6 @@ interface IComboBoxItemAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ComboBoxItemAutomationPeer")
 interface IComboBoxItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ComboBoxItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ComboBoxItemAutomationPeer* return_instance);
 }
@@ -457,8 +401,6 @@ interface IComboBoxItemDataAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ComboBoxItemDataAutomationPeer")
 interface IComboBoxItemDataAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.ComboBoxAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ComboBoxItemDataAutomationPeer* return_instance);
 }
@@ -473,8 +415,6 @@ interface IDatePickerAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.DatePickerAutomationPeer")
 interface IDatePickerAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.DatePicker owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.DatePickerAutomationPeer* return_instance);
 }
@@ -495,8 +435,6 @@ interface IFlipViewAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.FlipViewAutomationPeer")
 interface IFlipViewAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.FlipView owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.FlipViewAutomationPeer* return_instance);
 }
@@ -511,8 +449,6 @@ interface IFlipViewItemAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.FlipViewItemAutomationPeer")
 interface IFlipViewItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.FlipViewItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.FlipViewItemAutomationPeer* return_instance);
 }
@@ -527,8 +463,6 @@ interface IFlipViewItemDataAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.FlipViewItemDataAutomationPeer")
 interface IFlipViewItemDataAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.FlipViewAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.FlipViewItemDataAutomationPeer* return_instance);
 }
@@ -543,8 +477,6 @@ interface IFlyoutPresenterAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.FlyoutPresenterAutomationPeer")
 interface IFlyoutPresenterAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.FlyoutPresenter owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.FlyoutPresenterAutomationPeer* return_instance);
 }
@@ -553,8 +485,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer")
 interface IFrameworkElementAutomationPeer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Owner(Windows.UI.Xaml.UIElement* return_value);
 }
@@ -563,8 +493,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer")
 interface IFrameworkElementAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.FrameworkElement owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer* return_instance);
 }
@@ -573,8 +501,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer")
 interface IFrameworkElementAutomationPeerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromElement(Windows.UI.Xaml.UIElement element, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue);
 	HRESULT abi_CreatePeerForElement(Windows.UI.Xaml.UIElement element, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue);
@@ -590,8 +516,6 @@ interface IGridViewAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.GridViewAutomationPeer")
 interface IGridViewAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.GridView owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.GridViewAutomationPeer* return_instance);
 }
@@ -606,8 +530,6 @@ interface IGridViewHeaderItemAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.GridViewHeaderItemAutomationPeer")
 interface IGridViewHeaderItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.GridViewHeaderItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.GridViewHeaderItemAutomationPeer* return_instance);
 }
@@ -622,8 +544,6 @@ interface IGridViewItemAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.GridViewItemAutomationPeer")
 interface IGridViewItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.GridViewItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.GridViewItemAutomationPeer* return_instance);
 }
@@ -638,8 +558,6 @@ interface IGridViewItemDataAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.GridViewItemDataAutomationPeer")
 interface IGridViewItemDataAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.GridViewAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.GridViewItemDataAutomationPeer* return_instance);
 }
@@ -654,8 +572,6 @@ interface IGroupItemAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.GroupItemAutomationPeer")
 interface IGroupItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.GroupItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.GroupItemAutomationPeer* return_instance);
 }
@@ -670,8 +586,6 @@ interface IHubAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.HubAutomationPeer")
 interface IHubAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Hub owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.HubAutomationPeer* return_instance);
 }
@@ -686,8 +600,6 @@ interface IHubSectionAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.HubSectionAutomationPeer")
 interface IHubSectionAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.HubSection owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.HubSectionAutomationPeer* return_instance);
 }
@@ -702,8 +614,6 @@ interface IHyperlinkButtonAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.HyperlinkButtonAutomationPeer")
 interface IHyperlinkButtonAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.HyperlinkButton owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.HyperlinkButtonAutomationPeer* return_instance);
 }
@@ -718,8 +628,6 @@ interface IImageAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ImageAutomationPeer")
 interface IImageAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Image owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ImageAutomationPeer* return_instance);
 }
@@ -734,8 +642,6 @@ interface IInkToolbarAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer")
 interface IItemAutomationPeer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Item(IInspectable* return_value);
 	HRESULT get_ItemsControlAutomationPeer(Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer* return_value);
@@ -745,8 +651,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer")
 interface IItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer* return_instance);
 }
@@ -761,8 +665,6 @@ interface IItemsControlAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer")
 interface IItemsControlAutomationPeer2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateItemAutomationPeer(IInspectable item, Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer* return_returnValue);
 }
@@ -771,8 +673,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer")
 interface IItemsControlAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ItemsControl owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer* return_instance);
 }
@@ -781,8 +681,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer")
 interface IItemsControlAutomationPeerOverrides2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnCreateItemAutomationPeer(IInspectable item, Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer* return_returnValue);
 }
@@ -797,8 +695,6 @@ interface IListBoxAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListBoxAutomationPeer")
 interface IListBoxAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListBoxAutomationPeer* return_instance);
 }
@@ -813,8 +709,6 @@ interface IListBoxItemAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListBoxItemAutomationPeer")
 interface IListBoxItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListBoxItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListBoxItemAutomationPeer* return_instance);
 }
@@ -829,8 +723,6 @@ interface IListBoxItemDataAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListBoxItemDataAutomationPeer")
 interface IListBoxItemDataAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.ListBoxAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListBoxItemDataAutomationPeer* return_instance);
 }
@@ -851,8 +743,6 @@ interface IListViewAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewAutomationPeer")
 interface IListViewAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListView owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListViewAutomationPeer* return_instance);
 }
@@ -867,8 +757,6 @@ interface IListViewBaseAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer")
 interface IListViewBaseAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListViewBase owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer* return_instance);
 }
@@ -883,8 +771,6 @@ interface IListViewBaseHeaderItemAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer")
 interface IListViewBaseHeaderItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListViewBaseHeaderItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer* return_instance);
 }
@@ -899,8 +785,6 @@ interface IListViewHeaderItemAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewHeaderItemAutomationPeer")
 interface IListViewHeaderItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListViewHeaderItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListViewHeaderItemAutomationPeer* return_instance);
 }
@@ -915,8 +799,6 @@ interface IListViewItemAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewItemAutomationPeer")
 interface IListViewItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListViewItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListViewItemAutomationPeer* return_instance);
 }
@@ -931,8 +813,6 @@ interface IListViewItemDataAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewItemDataAutomationPeer")
 interface IListViewItemDataAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListViewItemDataAutomationPeer* return_instance);
 }
@@ -971,8 +851,6 @@ interface IMediaElementAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.MediaElementAutomationPeer")
 interface IMediaElementAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.MediaElement owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.MediaElementAutomationPeer* return_instance);
 }
@@ -987,8 +865,6 @@ interface IMediaPlayerElementAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer")
 interface IMediaPlayerElementAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.MediaPlayerElement owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer* return_instance);
 }
@@ -1003,8 +879,6 @@ interface IMediaTransportControlsAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.MediaTransportControlsAutomationPeer")
 interface IMediaTransportControlsAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.MediaTransportControls owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.MediaTransportControlsAutomationPeer* return_instance);
 }
@@ -1019,8 +893,6 @@ interface IMenuFlyoutItemAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.MenuFlyoutItemAutomationPeer")
 interface IMenuFlyoutItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.MenuFlyoutItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.MenuFlyoutItemAutomationPeer* return_instance);
 }
@@ -1035,8 +907,6 @@ interface IMenuFlyoutPresenterAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.MenuFlyoutPresenterAutomationPeer")
 interface IMenuFlyoutPresenterAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.MenuFlyoutPresenter owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.MenuFlyoutPresenterAutomationPeer* return_instance);
 }
@@ -1051,8 +921,6 @@ interface IPasswordBoxAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.PasswordBoxAutomationPeer")
 interface IPasswordBoxAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.PasswordBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.PasswordBoxAutomationPeer* return_instance);
 }
@@ -1073,8 +941,6 @@ interface IPivotAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.PivotAutomationPeer")
 interface IPivotAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Pivot owner, Windows.UI.Xaml.Automation.Peers.PivotAutomationPeer* return_instance);
 }
@@ -1089,8 +955,6 @@ interface IPivotItemAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.PivotItemAutomationPeer")
 interface IPivotItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.PivotItem owner, Windows.UI.Xaml.Automation.Peers.PivotItemAutomationPeer* return_instance);
 }
@@ -1105,8 +969,6 @@ interface IPivotItemDataAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.PivotItemDataAutomationPeer")
 interface IPivotItemDataAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.PivotAutomationPeer parent, Windows.UI.Xaml.Automation.Peers.PivotItemDataAutomationPeer* return_instance);
 }
@@ -1121,8 +983,6 @@ interface IProgressBarAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ProgressBarAutomationPeer")
 interface IProgressBarAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ProgressBar owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ProgressBarAutomationPeer* return_instance);
 }
@@ -1137,8 +997,6 @@ interface IProgressRingAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ProgressRingAutomationPeer")
 interface IProgressRingAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ProgressRing owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ProgressRingAutomationPeer* return_instance);
 }
@@ -1153,8 +1011,6 @@ interface IRadioButtonAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.RadioButtonAutomationPeer")
 interface IRadioButtonAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.RadioButton owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.RadioButtonAutomationPeer* return_instance);
 }
@@ -1169,8 +1025,6 @@ interface IRangeBaseAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer")
 interface IRangeBaseAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.RangeBase owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer* return_instance);
 }
@@ -1185,8 +1039,6 @@ interface IRepeatButtonAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.RepeatButtonAutomationPeer")
 interface IRepeatButtonAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.RepeatButton owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.RepeatButtonAutomationPeer* return_instance);
 }
@@ -1201,8 +1053,6 @@ interface IRichEditBoxAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.RichEditBoxAutomationPeer")
 interface IRichEditBoxAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.RichEditBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.RichEditBoxAutomationPeer* return_instance);
 }
@@ -1217,8 +1067,6 @@ interface IRichTextBlockAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.RichTextBlockAutomationPeer")
 interface IRichTextBlockAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.RichTextBlock owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.RichTextBlockAutomationPeer* return_instance);
 }
@@ -1233,8 +1081,6 @@ interface IRichTextBlockOverflowAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.RichTextBlockOverflowAutomationPeer")
 interface IRichTextBlockOverflowAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.RichTextBlockOverflow owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.RichTextBlockOverflowAutomationPeer* return_instance);
 }
@@ -1249,8 +1095,6 @@ interface IScrollBarAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ScrollBarAutomationPeer")
 interface IScrollBarAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.ScrollBar owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ScrollBarAutomationPeer* return_instance);
 }
@@ -1265,8 +1109,6 @@ interface IScrollViewerAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ScrollViewerAutomationPeer")
 interface IScrollViewerAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ScrollViewer owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ScrollViewerAutomationPeer* return_instance);
 }
@@ -1281,8 +1123,6 @@ interface ISearchBoxAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.SearchBoxAutomationPeer")
 interface ISearchBoxAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.SearchBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.SearchBoxAutomationPeer* return_instance);
 }
@@ -1297,8 +1137,6 @@ interface ISelectorAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer")
 interface ISelectorAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.Selector owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer* return_instance);
 }
@@ -1313,8 +1151,6 @@ interface ISelectorItemAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer")
 interface ISelectorItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer* return_instance);
 }
@@ -1329,8 +1165,6 @@ interface ISemanticZoomAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.SemanticZoomAutomationPeer")
 interface ISemanticZoomAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.SemanticZoom owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.SemanticZoomAutomationPeer* return_instance);
 }
@@ -1345,8 +1179,6 @@ interface ISettingsFlyoutAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.SettingsFlyoutAutomationPeer")
 interface ISettingsFlyoutAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.SettingsFlyout owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.SettingsFlyoutAutomationPeer* return_instance);
 }
@@ -1361,8 +1193,6 @@ interface ISliderAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.SliderAutomationPeer")
 interface ISliderAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Slider owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.SliderAutomationPeer* return_instance);
 }
@@ -1377,8 +1207,6 @@ interface ITextBlockAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.TextBlockAutomationPeer")
 interface ITextBlockAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.TextBlock owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.TextBlockAutomationPeer* return_instance);
 }
@@ -1393,8 +1221,6 @@ interface ITextBoxAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.TextBoxAutomationPeer")
 interface ITextBoxAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.TextBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.TextBoxAutomationPeer* return_instance);
 }
@@ -1409,8 +1235,6 @@ interface IThumbAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ThumbAutomationPeer")
 interface IThumbAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.Thumb owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ThumbAutomationPeer* return_instance);
 }
@@ -1425,8 +1249,6 @@ interface ITimePickerAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.TimePickerAutomationPeer")
 interface ITimePickerAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.TimePicker owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.TimePickerAutomationPeer* return_instance);
 }
@@ -1447,8 +1269,6 @@ interface IToggleButtonAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer")
 interface IToggleButtonAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.ToggleButton owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer* return_instance);
 }
@@ -1463,8 +1283,6 @@ interface IToggleMenuFlyoutItemAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ToggleMenuFlyoutItemAutomationPeer")
 interface IToggleMenuFlyoutItemAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ToggleMenuFlyoutItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ToggleMenuFlyoutItemAutomationPeer* return_instance);
 }
@@ -1479,8 +1297,6 @@ interface IToggleSwitchAutomationPeer : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ToggleSwitchAutomationPeer")
 interface IToggleSwitchAutomationPeerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ToggleSwitch owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ToggleSwitchAutomationPeer* return_instance);
 }

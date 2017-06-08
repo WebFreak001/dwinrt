@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs")
 interface IVariablePhotoCapturedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Frame(Windows.Media.Capture.CapturedFrame* return_value);
 	HRESULT get_CaptureTimeOffset(Windows.Foundation.TimeSpan* return_value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Core.VariablePhotoSequenceCapture")
 interface IVariablePhotoSequenceCapture : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_StopAsync(Windows.Foundation.IAsyncAction* return_operation);
@@ -35,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Core.VariablePhotoSequenceCapture")
 interface IVariablePhotoSequenceCapture2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_UpdateSettingsAsync(Windows.Foundation.IAsyncAction* return_operation);
 }

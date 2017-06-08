@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.Cryptography.DataProtection.DataProtectionProvider")
 interface IDataProtectionProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ProtectAsync(Windows.Storage.Streams.IBuffer data, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_value);
 	HRESULT abi_UnprotectAsync(Windows.Storage.Streams.IBuffer data, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.DataProtection.DataProtectionProvider")
 interface IDataProtectionProviderFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateOverloadExplicit(HSTRING protectionDescriptor, Windows.Security.Cryptography.DataProtection.DataProtectionProvider* return_value);
 }

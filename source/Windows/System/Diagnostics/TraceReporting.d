@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActions")
 interface IPlatformDiagnosticActionsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsScenarioEnabled(GUID scenarioId, bool* return_isActive);
 	HRESULT abi_TryEscalateScenario(GUID scenarioId, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticEscalationType escalationType, HSTRING outputDirectory, bool timestampOutputDirectory, bool forceEscalationUpload, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) triggers, bool* return_result);
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceInfo")
 interface IPlatformDiagnosticTraceInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ScenarioId(GUID* return_value);
 	HRESULT get_ProfileHash(UINT64* return_value);
@@ -38,8 +34,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceRuntimeInfo")
 interface IPlatformDiagnosticTraceRuntimeInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RuntimeFileTime(INT64* return_value);
 	HRESULT get_EtwRuntimeFileTime(INT64* return_value);

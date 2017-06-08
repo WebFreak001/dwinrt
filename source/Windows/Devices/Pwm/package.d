@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Pwm.PwmController")
 interface IPwmController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PinCount(INT32* return_value);
 	HRESULT get_ActualFrequency(double* return_value);
@@ -21,8 +19,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Pwm.PwmController")
 interface IPwmControllerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetControllersAsync(Windows.Devices.Pwm.Provider.IPwmProvider provider, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Pwm.PwmController))* return_operation);
 }
@@ -31,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Pwm.PwmController")
 interface IPwmControllerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Pwm.PwmController)* return_operation);
 }
@@ -41,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Pwm.PwmController")
 interface IPwmControllerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_result);
 	HRESULT abi_GetDeviceSelectorFromFriendlyName(HSTRING friendlyName, HSTRING* return_result);
@@ -53,8 +45,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Pwm.PwmPin")
 interface IPwmPin : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Controller(Windows.Devices.Pwm.PwmController* return_value);
 	HRESULT abi_GetActiveDutyCyclePercentage(double* return_result);

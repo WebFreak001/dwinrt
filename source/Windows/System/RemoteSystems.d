@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.System.RemoteSystems.KnownRemoteSystemCapabilities")
 interface IKnownRemoteSystemCapabilitiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppService(HSTRING* return_value);
 	HRESULT get_LaunchUri(HSTRING* return_value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystem")
 interface IRemoteSystem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_Id(HSTRING* return_value);
@@ -33,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystem")
 interface IRemoteSystem2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsAvailableBySpatialProximity(bool* return_value);
 	HRESULT abi_GetCapabilitySupportedAsync(HSTRING capabilityName, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -44,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemAddedEventArgs")
 interface IRemoteSystemAddedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemoteSystem(Windows.System.RemoteSystems.RemoteSystem* return_value);
 }
@@ -54,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemAuthorizationKindFilter")
 interface IRemoteSystemAuthorizationKindFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemoteSystemAuthorizationKind(Windows.System.RemoteSystems.RemoteSystemAuthorizationKind* return_value);
 }
@@ -64,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemAuthorizationKindFilter")
 interface IRemoteSystemAuthorizationKindFilterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.System.RemoteSystems.RemoteSystemAuthorizationKind remoteSystemAuthorizationKind, Windows.System.RemoteSystems.RemoteSystemAuthorizationKindFilter* return_result);
 }
@@ -74,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemConnectionRequest")
 interface IRemoteSystemConnectionRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemoteSystem(Windows.System.RemoteSystems.RemoteSystem* return_value);
 }
@@ -84,8 +70,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemConnectionRequest")
 interface IRemoteSystemConnectionRequestFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.System.RemoteSystems.RemoteSystem remoteSystem, Windows.System.RemoteSystems.RemoteSystemConnectionRequest* return_result);
 }
@@ -94,8 +78,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter")
 interface IRemoteSystemDiscoveryTypeFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemoteSystemDiscoveryType(Windows.System.RemoteSystems.RemoteSystemDiscoveryType* return_value);
 }
@@ -104,8 +86,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter")
 interface IRemoteSystemDiscoveryTypeFilterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.System.RemoteSystems.RemoteSystemDiscoveryType discoveryType, Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter* return_result);
 }
@@ -119,8 +99,6 @@ interface IRemoteSystemFilter : IInspectable
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemKindFilter")
 interface IRemoteSystemKindFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemoteSystemKinds(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 }
@@ -129,8 +107,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemKindFilter")
 interface IRemoteSystemKindFilterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(HSTRING) remoteSystemKinds, Windows.System.RemoteSystems.RemoteSystemKindFilter* return_result);
 }
@@ -139,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemKinds")
 interface IRemoteSystemKindStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Phone(HSTRING* return_value);
 	HRESULT get_Hub(HSTRING* return_value);
@@ -153,8 +127,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs")
 interface IRemoteSystemRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemoteSystemId(HSTRING* return_value);
 }
@@ -163,8 +135,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSession")
 interface IRemoteSystemSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -179,8 +149,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionAddedEventArgs")
 interface IRemoteSystemSessionAddedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SessionInfo(Windows.System.RemoteSystems.RemoteSystemSessionInfo* return_value);
 }
@@ -189,8 +157,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionController")
 interface IRemoteSystemSessionController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_JoinRequested(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionController, Windows.System.RemoteSystems.RemoteSystemSessionJoinRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_JoinRequested(EventRegistrationToken token);
@@ -202,8 +168,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionController")
 interface IRemoteSystemSessionControllerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateController(HSTRING displayName, Windows.System.RemoteSystems.RemoteSystemSessionController* return_result);
 	HRESULT abi_CreateControllerWithSessionOptions(HSTRING displayName, Windows.System.RemoteSystems.RemoteSystemSessionOptions options, Windows.System.RemoteSystems.RemoteSystemSessionController* return_result);
@@ -213,8 +177,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionCreationResult")
 interface IRemoteSystemSessionCreationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.System.RemoteSystems.RemoteSystemSessionCreationStatus* return_value);
 	HRESULT get_Session(Windows.System.RemoteSystems.RemoteSystemSession* return_value);
@@ -224,8 +186,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedEventArgs")
 interface IRemoteSystemSessionDisconnectedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reason(Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedReason* return_value);
 }
@@ -234,8 +194,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionInfo")
 interface IRemoteSystemSessionInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_ControllerDisplayName(HSTRING* return_value);
@@ -246,8 +204,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionInvitation")
 interface IRemoteSystemSessionInvitation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Sender(Windows.System.RemoteSystems.RemoteSystem* return_value);
 	HRESULT get_SessionInfo(Windows.System.RemoteSystems.RemoteSystemSessionInfo* return_value);
@@ -257,8 +213,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionInvitationListener")
 interface IRemoteSystemSessionInvitationListener : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_InvitationReceived(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionInvitationListener, Windows.System.RemoteSystems.RemoteSystemSessionInvitationReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_InvitationReceived(EventRegistrationToken token);
@@ -268,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionInvitationReceivedEventArgs")
 interface IRemoteSystemSessionInvitationReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Invitation(Windows.System.RemoteSystems.RemoteSystemSessionInvitation* return_value);
 }
@@ -278,8 +230,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionJoinRequest")
 interface IRemoteSystemSessionJoinRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Participant(Windows.System.RemoteSystems.RemoteSystemSessionParticipant* return_value);
 	HRESULT abi_Accept();
@@ -289,8 +239,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionJoinRequestedEventArgs")
 interface IRemoteSystemSessionJoinRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_JoinRequest(Windows.System.RemoteSystems.RemoteSystemSessionJoinRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -300,8 +248,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionJoinResult")
 interface IRemoteSystemSessionJoinResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.System.RemoteSystems.RemoteSystemSessionJoinStatus* return_value);
 	HRESULT get_Session(Windows.System.RemoteSystems.RemoteSystemSession* return_value);
@@ -311,8 +257,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel")
 interface IRemoteSystemSessionMessageChannel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Session(Windows.System.RemoteSystems.RemoteSystemSession* return_value);
 	HRESULT abi_BroadcastValueSetAsync(Windows.Foundation.Collections.ValueSet messageData, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -326,8 +270,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel")
 interface IRemoteSystemSessionMessageChannelFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.System.RemoteSystems.RemoteSystemSession session, HSTRING channelName, Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel* return_result);
 	HRESULT abi_CreateWithReliability(Windows.System.RemoteSystems.RemoteSystemSession session, HSTRING channelName, Windows.System.RemoteSystems.RemoteSystemSessionMessageChannelReliability reliability, Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel* return_result);
@@ -337,8 +279,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionOptions")
 interface IRemoteSystemSessionOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsInviteOnly(bool* return_value);
 	HRESULT set_IsInviteOnly(bool value);
@@ -348,8 +288,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionParticipant")
 interface IRemoteSystemSessionParticipant : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemoteSystem(Windows.System.RemoteSystems.RemoteSystem* return_value);
 	HRESULT abi_GetHostNames(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName)* return_result);
@@ -359,8 +297,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionParticipantAddedEventArgs")
 interface IRemoteSystemSessionParticipantAddedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Participant(Windows.System.RemoteSystems.RemoteSystemSessionParticipant* return_value);
 }
@@ -369,8 +305,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionParticipantRemovedEventArgs")
 interface IRemoteSystemSessionParticipantRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Participant(Windows.System.RemoteSystems.RemoteSystemSessionParticipant* return_value);
 }
@@ -379,8 +313,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher")
 interface IRemoteSystemSessionParticipantWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
@@ -397,8 +329,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionRemovedEventArgs")
 interface IRemoteSystemSessionRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SessionInfo(Windows.System.RemoteSystems.RemoteSystemSessionInfo* return_value);
 }
@@ -407,8 +337,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSession")
 interface IRemoteSystemSessionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWatcher(Windows.System.RemoteSystems.RemoteSystemSessionWatcher* return_result);
 }
@@ -417,8 +345,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionUpdatedEventArgs")
 interface IRemoteSystemSessionUpdatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SessionInfo(Windows.System.RemoteSystems.RemoteSystemSessionInfo* return_value);
 }
@@ -427,8 +353,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionValueSetReceivedEventArgs")
 interface IRemoteSystemSessionValueSetReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Sender(Windows.System.RemoteSystems.RemoteSystemSessionParticipant* return_value);
 	HRESULT get_Message(Windows.Foundation.Collections.ValueSet* return_value);
@@ -438,8 +362,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionWatcher")
 interface IRemoteSystemSessionWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
@@ -456,8 +378,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystem")
 interface IRemoteSystemStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindByHostNameAsync(Windows.Networking.HostName hostName, Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystem)* return_operation);
 	HRESULT abi_CreateWatcher(Windows.System.RemoteSystems.RemoteSystemWatcher* return_result);
@@ -469,8 +389,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystem")
 interface IRemoteSystemStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsAuthorizationKindEnabled(Windows.System.RemoteSystems.RemoteSystemAuthorizationKind kind, bool* return_value);
 }
@@ -479,8 +397,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter")
 interface IRemoteSystemStatusTypeFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemoteSystemStatusType(Windows.System.RemoteSystems.RemoteSystemStatusType* return_value);
 }
@@ -489,8 +405,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter")
 interface IRemoteSystemStatusTypeFilterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.System.RemoteSystems.RemoteSystemStatusType remoteSystemStatusType, Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter* return_result);
 }
@@ -499,8 +413,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs")
 interface IRemoteSystemUpdatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemoteSystem(Windows.System.RemoteSystems.RemoteSystem* return_value);
 }
@@ -509,8 +421,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemWatcher")
 interface IRemoteSystemWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Start();
 	HRESULT abi_Stop();

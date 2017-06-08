@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Data.Html.HtmlUtilities")
 interface IHtmlUtilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ConvertToText(HSTRING html, HSTRING* return_text);
 }

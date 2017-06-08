@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Storage.Pickers.Provider.FileOpenPickerUI")
 interface IFileOpenPickerUI : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddFile(HSTRING id, Windows.Storage.IStorageFile file, Windows.Storage.Pickers.Provider.AddFileResult* return_addResult);
 	HRESULT abi_RemoveFile(HSTRING id);
@@ -30,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.Provider.FileRemovedEventArgs")
 interface IFileRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")
 	HRESULT get_Id(HSTRING* return_value);
@@ -41,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.Provider.FileSavePickerUI")
 interface IFileSavePickerUI : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT set_Title(HSTRING value);
@@ -60,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.Provider.PickerClosingDeferral")
 interface IPickerClosingDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -70,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.Provider.PickerClosingEventArgs")
 interface IPickerClosingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ClosingOperation(Windows.Storage.Pickers.Provider.PickerClosingOperation* return_value);
 	HRESULT get_IsCanceled(bool* return_value);
@@ -81,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.Provider.PickerClosingOperation")
 interface IPickerClosingOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.Storage.Pickers.Provider.PickerClosingDeferral* return_value);
 	HRESULT get_Deadline(Windows.Foundation.DateTime* return_value);
@@ -92,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.Provider.TargetFileRequest")
 interface ITargetFileRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetFile(Windows.Storage.IStorageFile* return_value);
 	HRESULT set_TargetFile(Windows.Storage.IStorageFile value);
@@ -104,8 +90,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.Provider.TargetFileRequestDeferral")
 interface ITargetFileRequestDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -114,8 +98,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs")
 interface ITargetFileRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.Storage.Pickers.Provider.TargetFileRequest* return_value);
 }

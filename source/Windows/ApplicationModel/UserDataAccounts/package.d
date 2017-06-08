@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccount")
 interface IUserDataAccount : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_UserDisplayName(HSTRING* return_value);
@@ -29,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccount")
 interface IUserDataAccount2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EnterpriseId(HSTRING* return_value);
 	HRESULT get_IsProtectedUnderLock(bool* return_value);
@@ -40,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccount")
 interface IUserDataAccount3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExplictReadAccessPackageFamilyNames(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -52,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccount")
 interface IUserDataAccount4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanShowCreateContactGroup(bool* return_value);
 	HRESULT set_CanShowCreateContactGroup(bool value);
@@ -69,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccountManagerForUser")
 interface IUserDataAccountManagerForUser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestStoreAsync(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreAccessType storeAccessType, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore)* return_result);
 	HRESULT get_User(Windows.System.User* return_value);
@@ -80,8 +70,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccountManager")
 interface IUserDataAccountManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestStoreAsync(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreAccessType storeAccessType, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore)* return_result);
 	HRESULT abi_ShowAddAccountAsync(Windows.ApplicationModel.UserDataAccounts.UserDataAccountContentKinds contentKinds, Windows.Foundation.IAsyncOperation!(HSTRING)* return_result);
@@ -93,8 +81,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccountManager")
 interface IUserDataAccountManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.ApplicationModel.UserDataAccounts.UserDataAccountManagerForUser* return_result);
 }
@@ -103,8 +89,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore")
 interface IUserDataAccountStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindAccountsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount))* return_result);
 	HRESULT abi_GetAccountAsync(HSTRING id, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount)* return_result);
@@ -115,8 +99,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore")
 interface IUserDataAccountStore2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAccountWithPackageRelativeAppIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount)* return_result);
 	HRESULT add_StoreChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs) handler, EventRegistrationToken* return_token);
@@ -127,8 +109,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore")
 interface IUserDataAccountStore3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount)* return_result);
 }
@@ -137,8 +117,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs")
 interface IUserDataAccountStoreChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_result);
 }

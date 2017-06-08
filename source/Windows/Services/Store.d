@@ -16,8 +16,6 @@ struct StorePackageUpdateStatus
 @WinrtFactory("Windows.Services.Store.StoreAcquireLicenseResult")
 interface IStoreAcquireLicenseResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StorePackageLicense(Windows.Services.Store.StorePackageLicense* return_value);
 	HRESULT get_ExtendedError(HRESULT* return_value);
@@ -27,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreAppLicense")
 interface IStoreAppLicense : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SkuStoreId(HSTRING* return_value);
 	HRESULT get_IsActive(bool* return_value);
@@ -45,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreAvailability")
 interface IStoreAvailability : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StoreId(HSTRING* return_value);
 	HRESULT get_EndDate(Windows.Foundation.DateTime* return_value);
@@ -60,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreCollectionData")
 interface IStoreCollectionData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTrial(bool* return_value);
 	HRESULT get_CampaignId(HSTRING* return_value);
@@ -77,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreConsumableResult")
 interface IStoreConsumableResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Services.Store.StoreConsumableStatus* return_value);
 	HRESULT get_TrackingId(GUID* return_value);
@@ -90,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreContext")
 interface IStoreContext : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_value);
 	HRESULT add_OfflineLicensesChanged(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StoreContext, IInspectable) handler, EventRegistrationToken* return_token);
@@ -120,8 +108,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreContext")
 interface IStoreContext2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindStoreProductForPackageAsync(Windows.Foundation.Collections.IIterable!(HSTRING) productKinds, Windows.ApplicationModel.Package package_, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreProductResult)* return_operation);
 }
@@ -130,8 +116,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreContext")
 interface IStoreContextStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Services.Store.StoreContext* return_value);
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.Services.Store.StoreContext* return_value);
@@ -141,8 +125,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreImage")
 interface IStoreImage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT get_ImagePurposeTag(HSTRING* return_value);
@@ -155,8 +137,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreLicense")
 interface IStoreLicense : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SkuStoreId(HSTRING* return_value);
 	HRESULT get_IsActive(bool* return_value);
@@ -169,8 +149,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StorePackageLicense")
 interface IStorePackageLicense : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_LicenseLost(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StorePackageLicense, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_LicenseLost(EventRegistrationToken token);
@@ -183,8 +161,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StorePackageUpdate")
 interface IStorePackageUpdate : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
 	HRESULT get_Mandatory(bool* return_value);
@@ -194,8 +170,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StorePackageUpdateResult")
 interface IStorePackageUpdateResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OverallState(Windows.Services.Store.StorePackageUpdateState* return_value);
 	HRESULT get_StorePackageUpdateStatuses(Windows.Foundation.Collections.IVectorView!(Windows.Services.Store.StorePackageUpdateStatus)* return_value);
@@ -205,8 +179,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StorePrice")
 interface IStorePrice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FormattedBasePrice(HSTRING* return_value);
 	HRESULT get_FormattedPrice(HSTRING* return_value);
@@ -220,8 +192,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreProduct")
 interface IStoreProduct : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StoreId(HSTRING* return_value);
 	HRESULT get_Language(HSTRING* return_value);
@@ -247,8 +217,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreProductPagedQueryResult")
 interface IStoreProductPagedQueryResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Products(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Services.Store.StoreProduct)* return_value);
 	HRESULT get_HasMoreResults(bool* return_value);
@@ -260,8 +228,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreProductQueryResult")
 interface IStoreProductQueryResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Products(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Services.Store.StoreProduct)* return_value);
 	HRESULT get_ExtendedError(HRESULT* return_value);
@@ -271,8 +237,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreProductResult")
 interface IStoreProductResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Product(Windows.Services.Store.StoreProduct* return_value);
 	HRESULT get_ExtendedError(HRESULT* return_value);
@@ -282,8 +246,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StorePurchaseProperties")
 interface IStorePurchaseProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT set_Name(HSTRING value);
@@ -295,8 +257,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StorePurchaseProperties")
 interface IStorePurchasePropertiesFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING name, Windows.Services.Store.StorePurchaseProperties* return_storePurchaseProperties);
 }
@@ -305,8 +265,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StorePurchaseResult")
 interface IStorePurchaseResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Services.Store.StorePurchaseStatus* return_value);
 	HRESULT get_ExtendedError(HRESULT* return_value);
@@ -316,8 +274,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreRequestHelper")
 interface IStoreRequestHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SendRequestAsync(Windows.Services.Store.StoreContext context, UINT32 requestKind, HSTRING parametersAsJson, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreSendRequestResult)* return_operation);
 }
@@ -326,8 +282,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreSendRequestResult")
 interface IStoreSendRequestResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Response(HSTRING* return_value);
 	HRESULT get_ExtendedError(HRESULT* return_value);
@@ -337,8 +291,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreSendRequestResult")
 interface IStoreSendRequestResult2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HttpStatusCode(Windows.Web.Http.HttpStatusCode* return_value);
 }
@@ -347,8 +299,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreSku")
 interface IStoreSku : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StoreId(HSTRING* return_value);
 	HRESULT get_Language(HSTRING* return_value);
@@ -375,8 +325,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreSubscriptionInfo")
 interface IStoreSubscriptionInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BillingPeriod(UINT32* return_value);
 	HRESULT get_BillingPeriodUnit(Windows.Services.Store.StoreDurationUnit* return_value);
@@ -389,8 +337,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Store.StoreVideo")
 interface IStoreVideo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT get_VideoPurposeTag(HSTRING* return_value);

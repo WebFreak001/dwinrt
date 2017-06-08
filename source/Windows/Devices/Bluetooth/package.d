@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothAdapter")
 interface IBluetoothAdapter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_BluetoothAddress(UINT64* return_value);
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothAdapter")
 interface IBluetoothAdapterStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_result);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothAdapter)* return_operation);
@@ -35,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothClassOfDevice")
 interface IBluetoothClassOfDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RawValue(UINT32* return_value);
 	HRESULT get_MajorClass(Windows.Devices.Bluetooth.BluetoothMajorClass* return_value);
@@ -48,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothClassOfDevice")
 interface IBluetoothClassOfDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromRawValue(UINT32 rawValue, Windows.Devices.Bluetooth.BluetoothClassOfDevice* return_classOfDevice);
 	HRESULT abi_FromParts(Windows.Devices.Bluetooth.BluetoothMajorClass majorClass, Windows.Devices.Bluetooth.BluetoothMinorClass minorClass, Windows.Devices.Bluetooth.BluetoothServiceCapabilities serviceCapabilities, Windows.Devices.Bluetooth.BluetoothClassOfDevice* return_classOfDevice);
@@ -59,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothDevice")
 interface IBluetoothDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_HostName(Windows.Networking.HostName* return_value);
@@ -83,8 +73,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothDevice")
 interface IBluetoothDevice2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);
 }
@@ -93,8 +81,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothDevice")
 interface IBluetoothDevice3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceAccessInformation(Windows.Devices.Enumeration.DeviceAccessInformation* return_value);
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus)* return_value);
@@ -108,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothDeviceId")
 interface IBluetoothDeviceId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_IsClassicDevice(bool* return_value);
@@ -120,8 +104,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothDevice")
 interface IBluetoothDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice)* return_operation);
 	HRESULT abi_FromHostNameAsync(Windows.Networking.HostName hostName, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice)* return_operation);
@@ -133,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothDevice")
 interface IBluetoothDeviceStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelectorFromPairingState(bool pairingState, HSTRING* return_deviceSelector);
 	HRESULT abi_GetDeviceSelectorFromConnectionStatus(Windows.Devices.Bluetooth.BluetoothConnectionStatus connectionStatus, HSTRING* return_deviceSelector);
@@ -147,8 +127,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothLEAppearance")
 interface IBluetoothLEAppearance : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RawValue(UINT16* return_value);
 	HRESULT get_Category(UINT16* return_value);
@@ -159,8 +137,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothLEAppearanceCategories")
 interface IBluetoothLEAppearanceCategoriesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uncategorized(UINT16* return_value);
 	HRESULT get_Phone(UINT16* return_value);
@@ -190,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothLEAppearance")
 interface IBluetoothLEAppearanceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromRawValue(UINT16 rawValue, Windows.Devices.Bluetooth.BluetoothLEAppearance* return_appearance);
 	HRESULT abi_FromParts(UINT16 appearanceCategory, UINT16 appearanceSubCategory, Windows.Devices.Bluetooth.BluetoothLEAppearance* return_appearance);
@@ -201,8 +175,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothLEAppearanceSubcategories")
 interface IBluetoothLEAppearanceSubcategoriesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Generic(UINT16* return_value);
 	HRESULT get_SportsWatch(UINT16* return_value);
@@ -238,8 +210,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothLEDevice")
 interface IBluetoothLEDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_Name(HSTRING* return_value);
@@ -261,8 +231,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothLEDevice")
 interface IBluetoothLEDevice2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);
 	HRESULT get_Appearance(Windows.Devices.Bluetooth.BluetoothLEAppearance* return_value);
@@ -273,8 +241,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothLEDevice")
 interface IBluetoothLEDevice3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceAccessInformation(Windows.Devices.Enumeration.DeviceAccessInformation* return_value);
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus)* return_operation);
@@ -288,8 +254,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothLEDevice")
 interface IBluetoothLEDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice)* return_operation);
 	HRESULT abi_FromBluetoothAddressAsync(UINT64 bluetoothAddress, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice)* return_operation);
@@ -300,8 +264,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothLEDevice")
 interface IBluetoothLEDeviceStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelectorFromPairingState(bool pairingState, HSTRING* return_deviceSelector);
 	HRESULT abi_GetDeviceSelectorFromConnectionStatus(Windows.Devices.Bluetooth.BluetoothConnectionStatus connectionStatus, HSTRING* return_deviceSelector);
@@ -316,8 +278,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothSignalStrengthFilter")
 interface IBluetoothSignalStrengthFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InRangeThresholdInDBm(Windows.Foundation.IReference!(INT16)* return_value);
 	HRESULT set_InRangeThresholdInDBm(Windows.Foundation.IReference!(INT16) value);
@@ -333,8 +293,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothUuidHelper")
 interface IBluetoothUuidHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromShortId(UINT32 shortId, GUID* return_result);
 	HRESULT abi_TryGetShortId(GUID uuid, Windows.Foundation.IReference!(UINT32)* return_result);

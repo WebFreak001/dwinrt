@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Adc.AdcChannel")
 interface IAdcChannel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Controller(Windows.Devices.Adc.AdcController* return_value);
 	HRESULT abi_ReadValue(INT32* return_result);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Adc.AdcController")
 interface IAdcController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChannelCount(INT32* return_value);
 	HRESULT get_ResolutionInBits(INT32* return_value);
@@ -35,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Adc.AdcController")
 interface IAdcControllerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetControllersAsync(Windows.Devices.Adc.Provider.IAdcProvider provider, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Adc.AdcController))* return_operation);
 }
@@ -45,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Adc.AdcController")
 interface IAdcControllerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Adc.AdcController)* return_operation);
 }

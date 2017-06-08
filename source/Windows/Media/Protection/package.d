@@ -27,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.ComponentLoadFailedEventArgs")
 interface IComponentLoadFailedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Information(Windows.Media.Protection.RevocationAndRenewalInformation* return_value);
 	HRESULT get_Completion(Windows.Media.Protection.MediaProtectionServiceCompletion* return_value);
@@ -38,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.ComponentRenewal")
 interface IComponentRenewalStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RenewSystemComponentsAsync(Windows.Media.Protection.RevocationAndRenewalInformation information, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Protection.RenewalStatus, UINT32)* return_operation);
 }
@@ -48,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.HdcpSession")
 interface IHdcpSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsEffectiveProtectionAtLeast(Windows.Media.Protection.HdcpProtection protection, bool* return_value);
 	HRESULT abi_GetEffectiveProtection(Windows.Foundation.IReference!(Windows.Media.Protection.HdcpProtection)* return_value);
@@ -62,8 +56,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.MediaProtectionManager")
 interface IMediaProtectionManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ServiceRequested(Windows.Media.Protection.ServiceRequestedEventHandler handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ServiceRequested(EventRegistrationToken cookie);
@@ -78,8 +70,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.MediaProtectionPMPServer")
 interface IMediaProtectionPMPServer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Properties(Windows.Foundation.Collections.IPropertySet* return_ppProperties);
 }
@@ -88,8 +78,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.MediaProtectionPMPServer")
 interface IMediaProtectionPMPServerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreatePMPServer(Windows.Foundation.Collections.IPropertySet pProperties, Windows.Media.Protection.MediaProtectionPMPServer* return_ppObject);
 }
@@ -98,8 +86,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.MediaProtectionServiceCompletion")
 interface IMediaProtectionServiceCompletion : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete(bool success);
 }
@@ -107,8 +93,6 @@ extern(Windows):
 @uuid("b1de0ea6-2094-478d-87a4-8b95200f85c6")
 interface IMediaProtectionServiceRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProtectionSystem(GUID* return_system);
 	HRESULT get_Type(GUID* return_type);
@@ -118,8 +102,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.ProtectionCapabilities")
 interface IProtectionCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsTypeSupported(HSTRING type, HSTRING keySystem, Windows.Media.Protection.ProtectionCapabilityResult* return_value);
 }
@@ -128,8 +110,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.RevocationAndRenewalInformation")
 interface IRevocationAndRenewalInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Items(Windows.Foundation.Collections.IVector!(Windows.Media.Protection.RevocationAndRenewalItem)* return_items);
 }
@@ -138,8 +118,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.RevocationAndRenewalItem")
 interface IRevocationAndRenewalItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reasons(Windows.Media.Protection.RevocationAndRenewalReasons* return_reasons);
 	HRESULT get_HeaderHash(HSTRING* return_value);
@@ -152,8 +130,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.ServiceRequestedEventArgs")
 interface IServiceRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.Media.Protection.IMediaProtectionServiceRequest* return_value);
 	HRESULT get_Completion(Windows.Media.Protection.MediaProtectionServiceCompletion* return_value);
@@ -163,8 +139,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Protection.ServiceRequestedEventArgs")
 interface IServiceRequestedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MediaPlaybackItem(Windows.Media.Playback.MediaPlaybackItem* return_value);
 }

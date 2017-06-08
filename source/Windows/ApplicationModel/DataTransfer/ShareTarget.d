@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink")
 interface IQuickLink : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT set_Title(HSTRING value);
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation")
 interface IShareOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Data(Windows.ApplicationModel.DataTransfer.DataPackageView* return_value);
 	HRESULT get_QuickLinkId(HSTRING* return_value);
@@ -41,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation")
 interface IShareOperation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_DismissUI();
 }

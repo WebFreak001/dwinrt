@@ -22,8 +22,6 @@ struct HdmiDisplayHdr2086Metadata
 @WinrtFactory("Windows.Graphics.Display.Core.HdmiDisplayInformation")
 interface IHdmiDisplayInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetSupportedDisplayModes(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Display.Core.HdmiDisplayMode)* return_result);
 	HRESULT abi_GetCurrentDisplayMode(Windows.Graphics.Display.Core.HdmiDisplayMode* return_result);
@@ -39,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Display.Core.HdmiDisplayInformation")
 interface IHdmiDisplayInformationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.Graphics.Display.Core.HdmiDisplayInformation* return_result);
 }
@@ -49,8 +45,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Display.Core.HdmiDisplayMode")
 interface IHdmiDisplayMode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResolutionWidthInRawPixels(UINT32* return_value);
 	HRESULT get_ResolutionHeightInRawPixels(UINT32* return_value);

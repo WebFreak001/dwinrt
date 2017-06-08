@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager")
 interface ICoreDragDropManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_TargetRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager, Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDropOperationTargetRequestedEventArgs) value, EventRegistrationToken* return_returnValue);
 	HRESULT remove_TargetRequested(EventRegistrationToken value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager")
 interface ICoreDragDropManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager* return_value);
 }
@@ -29,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragInfo")
 interface ICoreDragInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Data(Windows.ApplicationModel.DataTransfer.DataPackageView* return_value);
 	HRESULT get_Modifiers(Windows.ApplicationModel.DataTransfer.DragDrop.DragDropModifiers* return_value);
@@ -41,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragInfo")
 interface ICoreDragInfo2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllowedOperations(Windows.ApplicationModel.DataTransfer.DataPackageOperation* return_value);
 }
@@ -51,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragOperation")
 interface ICoreDragOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Data(Windows.ApplicationModel.DataTransfer.DataPackage* return_value);
 	HRESULT abi_SetPointerId(UINT32 pointerId);
@@ -67,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragOperation")
 interface ICoreDragOperation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllowedOperations(Windows.ApplicationModel.DataTransfer.DataPackageOperation* return_value);
 	HRESULT set_AllowedOperations(Windows.ApplicationModel.DataTransfer.DataPackageOperation value);
@@ -78,8 +66,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragUIOverride")
 interface ICoreDragUIOverride : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap);
 	HRESULT abi_SetContentFromSoftwareBitmapWithAnchorPoint(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint);
@@ -97,8 +83,6 @@ extern(Windows):
 @uuid("d9126196-4c5b-417d-bb37-76381def8db4")
 interface ICoreDropOperationTarget : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_EnterAsync(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragInfo dragInfo, Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragUIOverride dragUIOverride, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation)* return_returnValue);
 	HRESULT abi_OverAsync(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragInfo dragInfo, Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragUIOverride dragUIOverride, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation)* return_returnValue);
@@ -110,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDropOperationTargetRequestedEventArgs")
 interface ICoreDropOperationTargetRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetTarget(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDropOperationTarget target);
 }

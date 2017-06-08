@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.System.Diagnostics.Telemetry.PlatformTelemetryClient")
 interface IPlatformTelemetryClientStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Register(HSTRING id, Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult* return_result);
 	HRESULT abi_RegisterWithSettings(HSTRING id, Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationSettings settings, Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult* return_result);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult")
 interface IPlatformTelemetryRegistrationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationStatus* return_value);
 }
@@ -27,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationSettings")
 interface IPlatformTelemetryRegistrationSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StorageSize(UINT32* return_value);
 	HRESULT set_StorageSize(UINT32 value);

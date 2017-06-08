@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs")
 interface ISpeechContinuousRecognitionCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs")
 interface ISpeechContinuousRecognitionResultGeneratedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Result(Windows.Media.SpeechRecognition.SpeechRecognitionResult* return_value);
 }
@@ -26,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession")
 interface ISpeechContinuousRecognitionSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AutoStopSilenceTimeout(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_AutoStopSilenceTimeout(Windows.Foundation.TimeSpan value);
@@ -47,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionCompilationResult")
 interface ISpeechRecognitionCompilationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus* return_value);
 }
@@ -56,8 +48,6 @@ extern(Windows):
 @uuid("79ac1628-4d68-43c4-8911-40dc4101b55b")
 interface ISpeechRecognitionConstraint : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsEnabled(bool* return_value);
 	HRESULT set_IsEnabled(bool value);
@@ -72,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint")
 interface ISpeechRecognitionGrammarFileConstraint : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GrammarFile(Windows.Storage.StorageFile* return_value);
 }
@@ -82,8 +70,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint")
 interface ISpeechRecognitionGrammarFileConstraintFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Storage.StorageFile file, const Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint* return_raint);
 	HRESULT abi_CreateWithTag(Windows.Storage.StorageFile file, HSTRING tag, const Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint* return_raint);
@@ -93,8 +79,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionHypothesis")
 interface ISpeechRecognitionHypothesis : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);
 }
@@ -103,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs")
 interface ISpeechRecognitionHypothesisGeneratedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Hypothesis(Windows.Media.SpeechRecognition.SpeechRecognitionHypothesis* return_value);
 }
@@ -113,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint")
 interface ISpeechRecognitionListConstraint : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Commands(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 }
@@ -123,8 +103,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint")
 interface ISpeechRecognitionListConstraintFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(HSTRING) commands, const Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint* return_raint);
 	HRESULT abi_CreateWithTag(Windows.Foundation.Collections.IIterable!(HSTRING) commands, HSTRING tag, const Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint* return_raint);
@@ -134,8 +112,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs")
 interface ISpeechRecognitionQualityDegradingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Problem(Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem* return_value);
 }
@@ -144,8 +120,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionResult")
 interface ISpeechRecognitionResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus* return_value);
 	HRESULT get_Text(HSTRING* return_value);
@@ -161,8 +135,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionResult")
 interface ISpeechRecognitionResult2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PhraseStartTime(Windows.Foundation.DateTime* return_value);
 	HRESULT get_PhraseDuration(Windows.Foundation.TimeSpan* return_value);
@@ -172,8 +144,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation")
 interface ISpeechRecognitionSemanticInterpretation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Foundation.Collections.IVectorView!(HSTRING))* return_value);
 }
@@ -182,8 +152,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint")
 interface ISpeechRecognitionTopicConstraint : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Scenario(Windows.Media.SpeechRecognition.SpeechRecognitionScenario* return_value);
 	HRESULT get_TopicHint(HSTRING* return_value);
@@ -193,8 +161,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint")
 interface ISpeechRecognitionTopicConstraintFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Media.SpeechRecognition.SpeechRecognitionScenario scenario, HSTRING topicHint, const Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint* return_raint);
 	HRESULT abi_CreateWithTag(Windows.Media.SpeechRecognition.SpeechRecognitionScenario scenario, HSTRING topicHint, HSTRING tag, const Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint* return_raint);
@@ -210,8 +176,6 @@ interface ISpeechRecognitionVoiceCommandDefinitionConstraint : IInspectable
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognizer")
 interface ISpeechRecognizer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CurrentLanguage(Windows.Globalization.Language* return_language);
 	HRESULT get_Constraints(Windows.Foundation.Collections.IVector!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)* return_value);
@@ -230,8 +194,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognizer")
 interface ISpeechRecognizer2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContinuousRecognitionSession(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession* return_value);
 	HRESULT get_State(Windows.Media.SpeechRecognition.SpeechRecognizerState* return_value);
@@ -244,8 +206,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognizer")
 interface ISpeechRecognizerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Globalization.Language language, Windows.Media.SpeechRecognition.SpeechRecognizer* return_recognizer);
 }
@@ -254,8 +214,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs")
 interface ISpeechRecognizerStateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_State(Windows.Media.SpeechRecognition.SpeechRecognizerState* return_value);
 }
@@ -264,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognizer")
 interface ISpeechRecognizerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SystemSpeechLanguage(Windows.Globalization.Language* return_language);
 	HRESULT get_SupportedTopicLanguages(Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language)* return_languages);
@@ -276,8 +232,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts")
 interface ISpeechRecognizerTimeouts : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InitialSilenceTimeout(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_InitialSilenceTimeout(Windows.Foundation.TimeSpan value);
@@ -291,8 +245,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions")
 interface ISpeechRecognizerUIOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExampleText(HSTRING* return_value);
 	HRESULT set_ExampleText(HSTRING value);

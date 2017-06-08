@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Sensors.Accelerometer")
 interface IAccelerometer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentReading(Windows.Devices.Sensors.AccelerometerReading* return_value);
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Accelerometer")
 interface IAccelerometer2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ReadingTransform(Windows.Graphics.Display.DisplayOrientations value);
 	HRESULT get_ReadingTransform(Windows.Graphics.Display.DisplayOrientations* return_value);
@@ -34,8 +30,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Accelerometer")
 interface IAccelerometer3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ReportLatency(UINT32 value);
 	HRESULT get_ReportLatency(UINT32* return_value);
@@ -46,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Accelerometer")
 interface IAccelerometer4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ReadingType(Windows.Devices.Sensors.AccelerometerReadingType* return_type);
 }
@@ -56,8 +48,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Accelerometer")
 interface IAccelerometerDeviceId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
@@ -66,8 +56,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.AccelerometerReading")
 interface IAccelerometerReading : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_AccelerationX(double* return_value);
@@ -79,8 +67,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs")
 interface IAccelerometerReadingChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reading(Windows.Devices.Sensors.AccelerometerReading* return_value);
 }
@@ -89,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.AccelerometerShakenEventArgs")
 interface IAccelerometerShakenEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 }
@@ -99,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Accelerometer")
 interface IAccelerometerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Devices.Sensors.Accelerometer* return_result);
 }
@@ -109,8 +91,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Accelerometer")
 interface IAccelerometerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultWithAccelerometerReadingType(Windows.Devices.Sensors.AccelerometerReadingType readingType, Windows.Devices.Sensors.Accelerometer* return_result);
 }
@@ -119,8 +99,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.ActivitySensor")
 interface IActivitySensor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentReadingAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.ActivitySensorReading)* return_result);
 	HRESULT get_SubscribedActivities(Windows.Foundation.Collections.IVector!(Windows.Devices.Sensors.ActivityType)* return_value);
@@ -136,8 +114,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.ActivitySensorReading")
 interface IActivitySensorReading : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_Activity(Windows.Devices.Sensors.ActivityType* return_value);
@@ -148,8 +124,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.ActivitySensorReadingChangeReport")
 interface IActivitySensorReadingChangeReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reading(Windows.Devices.Sensors.ActivitySensorReading* return_value);
 }
@@ -158,8 +132,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.ActivitySensorReadingChangedEventArgs")
 interface IActivitySensorReadingChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reading(Windows.Devices.Sensors.ActivitySensorReading* return_value);
 }
@@ -168,8 +140,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.ActivitySensor")
 interface IActivitySensorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.ActivitySensor)* return_result);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
@@ -182,8 +152,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.ActivitySensorTriggerDetails")
 interface IActivitySensorTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadReports(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReadingChangeReport)* return_value);
 }
@@ -192,8 +160,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Altimeter")
 interface IAltimeter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentReading(Windows.Devices.Sensors.AltimeterReading* return_value);
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -208,8 +174,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.AltimeterReading")
 interface IAltimeterReading : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_AltitudeChangeInMeters(double* return_value);
@@ -219,8 +183,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.AltimeterReadingChangedEventArgs")
 interface IAltimeterReadingChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reading(Windows.Devices.Sensors.AltimeterReading* return_value);
 }
@@ -229,8 +191,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Altimeter")
 interface IAltimeterStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Devices.Sensors.Altimeter* return_result);
 }
@@ -239,8 +199,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Barometer")
 interface IBarometer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentReading(Windows.Devices.Sensors.BarometerReading* return_value);
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -255,8 +213,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.BarometerReading")
 interface IBarometerReading : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_StationPressureInHectopascals(double* return_value);
@@ -266,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.BarometerReadingChangedEventArgs")
 interface IBarometerReadingChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reading(Windows.Devices.Sensors.BarometerReading* return_value);
 }
@@ -276,8 +230,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Barometer")
 interface IBarometerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Devices.Sensors.Barometer* return_result);
 }
@@ -286,8 +238,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Compass")
 interface ICompass : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentReading(Windows.Devices.Sensors.CompassReading* return_value);
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
@@ -301,8 +251,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Compass")
 interface ICompass2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ReadingTransform(Windows.Graphics.Display.DisplayOrientations value);
 	HRESULT get_ReadingTransform(Windows.Graphics.Display.DisplayOrientations* return_value);
@@ -312,8 +260,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Compass")
 interface ICompassDeviceId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
@@ -322,8 +268,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.CompassReading")
 interface ICompassReading : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_HeadingMagneticNorth(double* return_value);
@@ -334,8 +278,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.CompassReadingChangedEventArgs")
 interface ICompassReadingChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reading(Windows.Devices.Sensors.CompassReading* return_value);
 }
@@ -344,8 +286,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.CompassReading")
 interface ICompassReadingHeadingAccuracy : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeadingAccuracy(Windows.Devices.Sensors.MagnetometerAccuracy* return_value);
 }
@@ -354,8 +294,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Compass")
 interface ICompassStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Devices.Sensors.Compass* return_result);
 }
@@ -364,8 +302,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Gyrometer")
 interface IGyrometer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentReading(Windows.Devices.Sensors.GyrometerReading* return_value);
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
@@ -379,8 +315,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Gyrometer")
 interface IGyrometer2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ReadingTransform(Windows.Graphics.Display.DisplayOrientations value);
 	HRESULT get_ReadingTransform(Windows.Graphics.Display.DisplayOrientations* return_value);
@@ -390,8 +324,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Gyrometer")
 interface IGyrometerDeviceId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
@@ -400,8 +332,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.GyrometerReading")
 interface IGyrometerReading : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_AngularVelocityX(double* return_value);
@@ -413,8 +343,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.GyrometerReadingChangedEventArgs")
 interface IGyrometerReadingChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reading(Windows.Devices.Sensors.GyrometerReading* return_value);
 }
@@ -423,8 +351,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Gyrometer")
 interface IGyrometerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Devices.Sensors.Gyrometer* return_result);
 }
@@ -433,8 +359,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Inclinometer")
 interface IInclinometer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentReading(Windows.Devices.Sensors.InclinometerReading* return_value);
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
@@ -448,8 +372,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Inclinometer")
 interface IInclinometer2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ReadingTransform(Windows.Graphics.Display.DisplayOrientations value);
 	HRESULT get_ReadingTransform(Windows.Graphics.Display.DisplayOrientations* return_value);
@@ -460,8 +382,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Inclinometer")
 interface IInclinometerDeviceId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
@@ -470,8 +390,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.InclinometerReading")
 interface IInclinometerReading : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_PitchDegrees(FLOAT* return_value);
@@ -483,8 +401,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.InclinometerReadingChangedEventArgs")
 interface IInclinometerReadingChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reading(Windows.Devices.Sensors.InclinometerReading* return_value);
 }
@@ -493,8 +409,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.InclinometerReading")
 interface IInclinometerReadingYawAccuracy : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_YawAccuracy(Windows.Devices.Sensors.MagnetometerAccuracy* return_value);
 }
@@ -503,8 +417,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Inclinometer")
 interface IInclinometerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Devices.Sensors.Inclinometer* return_result);
 }
@@ -513,8 +425,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Inclinometer")
 interface IInclinometerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultForRelativeReadings(Windows.Devices.Sensors.Inclinometer* return_result);
 }
@@ -523,8 +433,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Inclinometer")
 interface IInclinometerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultWithSensorReadingType(Windows.Devices.Sensors.SensorReadingType sensorReadingtype, Windows.Devices.Sensors.Inclinometer* return_result);
 }
@@ -533,8 +441,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.LightSensor")
 interface ILightSensor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentReading(Windows.Devices.Sensors.LightSensorReading* return_value);
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
@@ -548,8 +454,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.LightSensor")
 interface ILightSensorDeviceId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
@@ -558,8 +462,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.LightSensorReading")
 interface ILightSensorReading : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_IlluminanceInLux(FLOAT* return_value);
@@ -569,8 +471,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.LightSensorReadingChangedEventArgs")
 interface ILightSensorReadingChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reading(Windows.Devices.Sensors.LightSensorReading* return_value);
 }
@@ -579,8 +479,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.LightSensor")
 interface ILightSensorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Devices.Sensors.LightSensor* return_result);
 }
@@ -589,8 +487,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Magnetometer")
 interface IMagnetometer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentReading(Windows.Devices.Sensors.MagnetometerReading* return_value);
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
@@ -604,8 +500,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Magnetometer")
 interface IMagnetometer2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ReadingTransform(Windows.Graphics.Display.DisplayOrientations value);
 	HRESULT get_ReadingTransform(Windows.Graphics.Display.DisplayOrientations* return_value);
@@ -615,8 +509,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Magnetometer")
 interface IMagnetometerDeviceId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
@@ -625,8 +517,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.MagnetometerReading")
 interface IMagnetometerReading : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_MagneticFieldX(FLOAT* return_value);
@@ -639,8 +529,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs")
 interface IMagnetometerReadingChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reading(Windows.Devices.Sensors.MagnetometerReading* return_value);
 }
@@ -649,8 +537,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Magnetometer")
 interface IMagnetometerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Devices.Sensors.Magnetometer* return_result);
 }
@@ -659,8 +545,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.OrientationSensor")
 interface IOrientationSensor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentReading(Windows.Devices.Sensors.OrientationSensorReading* return_value);
 	HRESULT get_MinimumReportInterval(UINT32* return_value);
@@ -674,8 +558,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.OrientationSensor")
 interface IOrientationSensor2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ReadingTransform(Windows.Graphics.Display.DisplayOrientations value);
 	HRESULT get_ReadingTransform(Windows.Graphics.Display.DisplayOrientations* return_value);
@@ -686,8 +568,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.OrientationSensor")
 interface IOrientationSensorDeviceId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
@@ -696,8 +576,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.OrientationSensorReading")
 interface IOrientationSensorReading : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_RotationMatrix(Windows.Devices.Sensors.SensorRotationMatrix* return_value);
@@ -708,8 +586,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.OrientationSensorReadingChangedEventArgs")
 interface IOrientationSensorReadingChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reading(Windows.Devices.Sensors.OrientationSensorReading* return_value);
 }
@@ -718,8 +594,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.OrientationSensorReading")
 interface IOrientationSensorReadingYawAccuracy : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_YawAccuracy(Windows.Devices.Sensors.MagnetometerAccuracy* return_value);
 }
@@ -728,8 +602,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.OrientationSensor")
 interface IOrientationSensorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Devices.Sensors.OrientationSensor* return_result);
 }
@@ -738,8 +610,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.OrientationSensor")
 interface IOrientationSensorStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultForRelativeReadings(Windows.Devices.Sensors.OrientationSensor* return_result);
 }
@@ -748,8 +618,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.OrientationSensor")
 interface IOrientationSensorStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultWithSensorReadingType(Windows.Devices.Sensors.SensorReadingType sensorReadingtype, Windows.Devices.Sensors.OrientationSensor* return_result);
 	HRESULT abi_GetDefaultWithSensorReadingTypeAndSensorOptimizationGoal(Windows.Devices.Sensors.SensorReadingType sensorReadingType, Windows.Devices.Sensors.SensorOptimizationGoal optimizationGoal, Windows.Devices.Sensors.OrientationSensor* return_result);
@@ -759,8 +627,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Pedometer")
 interface IPedometer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_PowerInMilliwatts(double* return_value);
@@ -775,8 +641,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Pedometer")
 interface IPedometer2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentReadings(Windows.Foundation.Collections.IMapView!(Windows.Devices.Sensors.PedometerStepKind, Windows.Devices.Sensors.PedometerReading)* return_value);
 }
@@ -785,8 +649,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.PedometerDataThreshold")
 interface IPedometerDataThresholdFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Sensors.Pedometer sensor, INT32 stepGoal, Windows.Devices.Sensors.PedometerDataThreshold* return_threshold);
 }
@@ -795,8 +657,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.PedometerReading")
 interface IPedometerReading : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StepKind(Windows.Devices.Sensors.PedometerStepKind* return_value);
 	HRESULT get_CumulativeSteps(INT32* return_value);
@@ -808,8 +668,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.PedometerReadingChangedEventArgs")
 interface IPedometerReadingChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reading(Windows.Devices.Sensors.PedometerReading* return_value);
 }
@@ -818,8 +676,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Pedometer")
 interface IPedometerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Pedometer)* return_operation);
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Pedometer)* return_operation);
@@ -832,8 +688,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.Pedometer")
 interface IPedometerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetReadingsFromTriggerDetails(Windows.Devices.Sensors.SensorDataThresholdTriggerDetails triggerDetails, Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.PedometerReading)* return_result);
 }
@@ -842,8 +696,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.ProximitySensor")
 interface IProximitySensor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_MaxDistanceInMillimeters(Windows.Foundation.IReference!(UINT32)* return_value);
@@ -858,8 +710,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.ProximitySensorDataThreshold")
 interface IProximitySensorDataThresholdFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Sensors.ProximitySensor sensor, Windows.Devices.Sensors.ProximitySensorDataThreshold* return_threshold);
 }
@@ -868,8 +718,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.ProximitySensorReading")
 interface IProximitySensorReading : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_IsDetected(bool* return_value);
@@ -880,8 +728,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.ProximitySensorReadingChangedEventArgs")
 interface IProximitySensorReadingChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reading(Windows.Devices.Sensors.ProximitySensorReading* return_value);
 }
@@ -890,8 +736,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.ProximitySensor")
 interface IProximitySensorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
 	HRESULT abi_FromId(HSTRING sensorId, Windows.Devices.Sensors.ProximitySensor* return_result);
@@ -901,8 +745,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.ProximitySensor")
 interface IProximitySensorStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetReadingsFromTriggerDetails(Windows.Devices.Sensors.SensorDataThresholdTriggerDetails triggerDetails, Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ProximitySensorReading)* return_result);
 }
@@ -916,8 +758,6 @@ interface ISensorDataThreshold : IInspectable
 @WinrtFactory("Windows.Devices.Sensors.SensorDataThresholdTriggerDetails")
 interface ISensorDataThresholdTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_SensorType(Windows.Devices.Sensors.SensorType* return_value);
@@ -927,8 +767,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.SensorQuaternion")
 interface ISensorQuaternion : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_W(FLOAT* return_value);
 	HRESULT get_X(FLOAT* return_value);
@@ -940,8 +778,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.SensorRotationMatrix")
 interface ISensorRotationMatrix : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_M11(FLOAT* return_value);
 	HRESULT get_M12(FLOAT* return_value);
@@ -958,8 +794,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.SimpleOrientationSensor")
 interface ISimpleOrientationSensor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentOrientation(Windows.Devices.Sensors.SimpleOrientation* return_value);
 	HRESULT add_OrientationChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.SimpleOrientationSensor, Windows.Devices.Sensors.SimpleOrientationSensorOrientationChangedEventArgs) handler, EventRegistrationToken* return_token);
@@ -970,8 +804,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.SimpleOrientationSensor")
 interface ISimpleOrientationSensor2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ReadingTransform(Windows.Graphics.Display.DisplayOrientations value);
 	HRESULT get_ReadingTransform(Windows.Graphics.Display.DisplayOrientations* return_value);
@@ -981,8 +813,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.SimpleOrientationSensor")
 interface ISimpleOrientationSensorDeviceId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
@@ -991,8 +821,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.SimpleOrientationSensorOrientationChangedEventArgs")
 interface ISimpleOrientationSensorOrientationChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_Orientation(Windows.Devices.Sensors.SimpleOrientation* return_value);
@@ -1002,8 +830,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sensors.SimpleOrientationSensor")
 interface ISimpleOrientationSensorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Devices.Sensors.SimpleOrientationSensor* return_result);
 }

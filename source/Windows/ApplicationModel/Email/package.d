@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Email.EmailAttachment")
 interface IEmailAttachment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FileName(HSTRING* return_value);
 	HRESULT set_FileName(HSTRING value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailAttachment")
 interface IEmailAttachment2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_ContentId(HSTRING* return_value);
@@ -42,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailAttachment")
 interface IEmailAttachmentFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING fileName, Windows.Storage.Streams.IRandomAccessStreamReference data, Windows.ApplicationModel.Email.EmailAttachment* return_result);
 }
@@ -52,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailAttachment")
 interface IEmailAttachmentFactory2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING fileName, Windows.Storage.Streams.IRandomAccessStreamReference data, HSTRING mimeType, Windows.ApplicationModel.Email.EmailAttachment* return_result);
 }
@@ -62,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailConversation")
 interface IEmailConversation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_MailboxId(HSTRING* return_value);
@@ -86,8 +76,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailConversationBatch")
 interface IEmailConversationBatch : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Conversations(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailConversation)* return_value);
 	HRESULT get_Status(Windows.ApplicationModel.Email.EmailBatchStatus* return_value);
@@ -97,8 +85,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailConversationReader")
 interface IEmailConversationReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadBatchAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailConversationBatch)* return_result);
 }
@@ -107,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailFolder")
 interface IEmailFolder : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_RemoteId(HSTRING* return_value);
@@ -141,8 +125,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailIrmInfo")
 interface IEmailIrmInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanEdit(bool* return_value);
 	HRESULT set_CanEdit(bool value);
@@ -174,8 +156,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailIrmInfo")
 interface IEmailIrmInfoFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Foundation.DateTime expiration, Windows.ApplicationModel.Email.EmailIrmTemplate irmTemplate, Windows.ApplicationModel.Email.EmailIrmInfo* return_result);
 }
@@ -184,8 +164,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailIrmTemplate")
 interface IEmailIrmTemplate : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT set_Id(HSTRING value);
@@ -199,8 +177,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailIrmTemplate")
 interface IEmailIrmTemplateFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING id, HSTRING name, HSTRING description, Windows.ApplicationModel.Email.EmailIrmTemplate* return_result);
 }
@@ -209,8 +185,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailItemCounts")
 interface IEmailItemCounts : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Flagged(UINT32* return_value);
 	HRESULT get_Important(UINT32* return_value);
@@ -222,8 +196,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailbox")
 interface IEmailMailbox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Capabilities(Windows.ApplicationModel.Email.EmailMailboxCapabilities* return_value);
 	HRESULT get_ChangeTracker(Windows.ApplicationModel.Email.EmailMailboxChangeTracker* return_value);
@@ -281,8 +253,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailbox")
 interface IEmailMailbox2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LinkedMailboxId(HSTRING* return_value);
 	HRESULT get_NetworkAccountId(HSTRING* return_value);
@@ -293,8 +263,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailbox")
 interface IEmailMailbox3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ResolveRecipientsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) recipients, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailRecipientResolutionResult))* return_result);
 	HRESULT abi_ValidateCertificatesAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailCertificateValidationStatus))* return_result);
@@ -307,8 +275,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailbox")
 interface IEmailMailbox4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RegisterSyncManagerAsync(Windows.Foundation.IAsyncAction* return_result);
 }
@@ -317,8 +283,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxAction")
 interface IEmailMailboxAction : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.ApplicationModel.Email.EmailMailboxActionKind* return_value);
 	HRESULT get_ChangeNumber(UINT64* return_value);
@@ -328,8 +292,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxAutoReply")
 interface IEmailMailboxAutoReply : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsEnabled(bool* return_value);
 	HRESULT set_IsEnabled(bool value);
@@ -341,8 +303,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxAutoReplySettings")
 interface IEmailMailboxAutoReplySettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsEnabled(bool* return_value);
 	HRESULT set_IsEnabled(bool value);
@@ -361,8 +321,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxCapabilities")
 interface IEmailMailboxCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanForwardMeetings(bool* return_value);
 	HRESULT get_CanGetAndSetExternalAutoReplies(bool* return_value);
@@ -378,8 +336,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxCapabilities")
 interface IEmailMailboxCapabilities2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanResolveRecipients(bool* return_value);
 	HRESULT get_CanValidateCertificates(bool* return_value);
@@ -393,8 +349,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxCapabilities")
 interface IEmailMailboxCapabilities3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_CanForwardMeetings(bool value);
 	HRESULT set_CanGetAndSetExternalAutoReplies(bool value);
@@ -416,8 +370,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxChange")
 interface IEmailMailboxChange : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeType(Windows.ApplicationModel.Email.EmailMailboxChangeType* return_value);
 	HRESULT get_MailboxActions(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailMailboxAction)* return_value);
@@ -429,8 +381,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxChangeReader")
 interface IEmailMailboxChangeReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AcceptChanges();
 	HRESULT abi_AcceptChangesThrough(Windows.ApplicationModel.Email.EmailMailboxChange lastChangeToAcknowledge);
@@ -441,8 +391,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxChangeTracker")
 interface IEmailMailboxChangeTracker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTracking(bool* return_value);
 	HRESULT abi_Enable();
@@ -454,8 +402,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxChangedDeferral")
 interface IEmailMailboxChangedDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -464,8 +410,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs")
 interface IEmailMailboxChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.ApplicationModel.Email.EmailMailboxChangedDeferral* return_result);
 }
@@ -474,8 +418,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxCreateFolderResult")
 interface IEmailMailboxCreateFolderResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.ApplicationModel.Email.EmailMailboxCreateFolderStatus* return_value);
 	HRESULT get_Folder(Windows.ApplicationModel.Email.EmailFolder* return_value);
@@ -485,8 +427,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxPolicies")
 interface IEmailMailboxPolicies : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllowedSmimeEncryptionAlgorithmNegotiation(Windows.ApplicationModel.Email.EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation* return_value);
 	HRESULT get_AllowSmimeSoftCertificates(bool* return_value);
@@ -498,8 +438,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxPolicies")
 interface IEmailMailboxPolicies2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MustEncryptSmimeMessages(bool* return_value);
 	HRESULT get_MustSignSmimeMessages(bool* return_value);
@@ -509,8 +447,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxPolicies")
 interface IEmailMailboxPolicies3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_AllowedSmimeEncryptionAlgorithmNegotiation(Windows.ApplicationModel.Email.EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation value);
 	HRESULT set_AllowSmimeSoftCertificates(bool value);
@@ -524,8 +460,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxSyncManager")
 interface IEmailMailboxSyncManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.ApplicationModel.Email.EmailMailboxSyncStatus* return_value);
 	HRESULT get_LastSuccessfulSyncTime(Windows.Foundation.DateTime* return_value);
@@ -539,8 +473,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailboxSyncManager")
 interface IEmailMailboxSyncManager2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Status(Windows.ApplicationModel.Email.EmailMailboxSyncStatus value);
 	HRESULT set_LastSuccessfulSyncTime(Windows.Foundation.DateTime value);
@@ -551,8 +483,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailManagerForUser")
 interface IEmailManagerForUser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowComposeNewEmailAsync(Windows.ApplicationModel.Email.EmailMessage message, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_RequestStoreAsync(Windows.ApplicationModel.Email.EmailStoreAccessType accessType, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailStore)* return_result);
@@ -563,8 +493,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailManager")
 interface IEmailManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowComposeNewEmailAsync(Windows.ApplicationModel.Email.EmailMessage message, Windows.Foundation.IAsyncAction* return_asyncAction);
 }
@@ -573,8 +501,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailManager")
 interface IEmailManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestStoreAsync(Windows.ApplicationModel.Email.EmailStoreAccessType accessType, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailStore)* return_result);
 }
@@ -583,8 +509,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailManager")
 interface IEmailManagerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.ApplicationModel.Email.EmailManagerForUser* return_result);
 }
@@ -593,8 +517,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMeetingInfo")
 interface IEmailMeetingInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllowNewTimeProposal(bool* return_value);
 	HRESULT set_AllowNewTimeProposal(bool value);
@@ -628,8 +550,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMeetingInfo")
 interface IEmailMeetingInfo2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsReportedOutOfDateByServer(bool* return_value);
 }
@@ -638,8 +558,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMessage")
 interface IEmailMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Subject(HSTRING* return_value);
 	HRESULT set_Subject(HSTRING value);
@@ -655,8 +573,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMessage")
 interface IEmailMessage2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_RemoteId(HSTRING* return_value);
@@ -709,8 +625,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMessage")
 interface IEmailMessage3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SmimeData(Windows.Storage.Streams.IRandomAccessStreamReference* return_value);
 	HRESULT set_SmimeData(Windows.Storage.Streams.IRandomAccessStreamReference value);
@@ -722,8 +636,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMessage")
 interface IEmailMessage4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ReplyTo(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailRecipient)* return_value);
 	HRESULT get_SentRepresenting(Windows.ApplicationModel.Email.EmailRecipient* return_value);
@@ -734,8 +646,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMessageBatch")
 interface IEmailMessageBatch : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Messages(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailMessage)* return_value);
 	HRESULT get_Status(Windows.ApplicationModel.Email.EmailBatchStatus* return_value);
@@ -745,8 +655,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMessageReader")
 interface IEmailMessageReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadBatchAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMessageBatch)* return_result);
 }
@@ -755,8 +663,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailQueryOptions")
 interface IEmailQueryOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextSearch(Windows.ApplicationModel.Email.EmailQueryTextSearch* return_value);
 	HRESULT get_SortDirection(Windows.ApplicationModel.Email.EmailQuerySortDirection* return_value);
@@ -772,8 +678,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailQueryOptions")
 interface IEmailQueryOptionsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithText(HSTRING text, Windows.ApplicationModel.Email.EmailQueryOptions* return_result);
 	HRESULT abi_CreateWithTextAndFields(HSTRING text, Windows.ApplicationModel.Email.EmailQuerySearchFields fields, Windows.ApplicationModel.Email.EmailQueryOptions* return_result);
@@ -783,8 +687,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailQueryTextSearch")
 interface IEmailQueryTextSearch : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Fields(Windows.ApplicationModel.Email.EmailQuerySearchFields* return_value);
 	HRESULT set_Fields(Windows.ApplicationModel.Email.EmailQuerySearchFields value);
@@ -798,8 +700,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailRecipient")
 interface IEmailRecipient : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT set_Name(HSTRING value);
@@ -811,8 +711,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailRecipient")
 interface IEmailRecipientFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING address, Windows.ApplicationModel.Email.EmailRecipient* return_result);
 	HRESULT abi_CreateWithName(HSTRING address, HSTRING name, Windows.ApplicationModel.Email.EmailRecipient* return_result);
@@ -822,8 +720,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailRecipientResolutionResult")
 interface IEmailRecipientResolutionResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.ApplicationModel.Email.EmailRecipientResolutionStatus* return_value);
 	HRESULT get_PublicKeys(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)* return_value);
@@ -833,8 +729,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailRecipientResolutionResult")
 interface IEmailRecipientResolutionResult2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Status(Windows.ApplicationModel.Email.EmailRecipientResolutionStatus value);
 	HRESULT abi_SetPublicKeys(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) value);
@@ -844,8 +738,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.EmailStore")
 interface IEmailStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindMailboxesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailMailbox))* return_result);
 	HRESULT abi_GetConversationReader(Windows.ApplicationModel.Email.EmailConversationReader* return_result);

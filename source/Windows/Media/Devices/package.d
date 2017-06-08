@@ -34,8 +34,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.AdvancedPhotoCaptureSettings")
 interface IAdvancedPhotoCaptureSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Mode(Windows.Media.Devices.AdvancedPhotoMode* return_value);
 	HRESULT set_Mode(Windows.Media.Devices.AdvancedPhotoMode value);
@@ -45,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.AdvancedPhotoControl")
 interface IAdvancedPhotoControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_SupportedModes(Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AdvancedPhotoMode)* return_value);
@@ -58,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.VideoDeviceController")
 interface IAdvancedVideoCaptureDeviceController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetDeviceProperty(HSTRING propertyId, IInspectable propertyValue);
 	HRESULT abi_GetDeviceProperty(HSTRING propertyId, IInspectable* return_propertyValue);
@@ -69,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.VideoDeviceController")
 interface IAdvancedVideoCaptureDeviceController2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LowLagPhotoSequence(Windows.Media.Devices.LowLagPhotoSequenceControl* return_value);
 	HRESULT get_LowLagPhoto(Windows.Media.Devices.LowLagPhotoControl* return_value);
@@ -91,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.VideoDeviceController")
 interface IAdvancedVideoCaptureDeviceController3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VariablePhotoSequenceController(Windows.Media.Devices.Core.VariablePhotoSequenceController* return_value);
 	HRESULT get_PhotoConfirmationControl(Windows.Media.Devices.PhotoConfirmationControl* return_value);
@@ -103,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.VideoDeviceController")
 interface IAdvancedVideoCaptureDeviceController4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExposurePriorityVideoControl(Windows.Media.Devices.ExposurePriorityVideoControl* return_value);
 	HRESULT get_DesiredOptimization(Windows.Media.Devices.MediaCaptureOptimization* return_value);
@@ -118,8 +106,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.VideoDeviceController")
 interface IAdvancedVideoCaptureDeviceController5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT abi_GetDevicePropertyById(HSTRING propertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize, Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult* return_value);
@@ -132,8 +118,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.AudioDeviceController")
 interface IAudioDeviceController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Muted(bool value);
 	HRESULT get_Muted(bool* return_value);
@@ -145,8 +129,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.AudioDeviceModule")
 interface IAudioDeviceModule : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ClassId(HSTRING* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -160,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs")
 interface IAudioDeviceModuleNotificationEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Module(Windows.Media.Devices.AudioDeviceModule* return_value);
 	HRESULT get_NotificationData(Windows.Storage.Streams.IBuffer* return_value);
@@ -171,8 +151,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.AudioDeviceModulesManager")
 interface IAudioDeviceModulesManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ModuleNotificationReceived(Windows.Foundation.TypedEventHandler!(Windows.Media.Devices.AudioDeviceModulesManager, Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ModuleNotificationReceived(EventRegistrationToken token);
@@ -184,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.AudioDeviceModulesManager")
 interface IAudioDeviceModulesManagerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING deviceId, Windows.Media.Devices.AudioDeviceModulesManager* return_result);
 }
@@ -194,8 +170,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.CallControl")
 interface ICallControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IndicateNewIncomingCall(bool enableRinger, HSTRING callerId, UINT64* return_callToken);
 	HRESULT abi_IndicateNewOutgoingCall(UINT64* return_callToken);
@@ -220,8 +194,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.CallControl")
 interface ICallControlStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Media.Devices.CallControl* return_callControl);
 	HRESULT abi_FromId(HSTRING deviceId, Windows.Media.Devices.CallControl* return_callControl);
@@ -230,8 +202,6 @@ extern(Windows):
 @uuid("110f882f-1c05-4657-a18e-47c9b69f07ab")
 interface IDefaultAudioDeviceChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_Role(Windows.Media.Devices.AudioDeviceRole* return_value);
@@ -241,8 +211,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.DialRequestedEventArgs")
 interface IDialRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Handled();
 	HRESULT get_Contact(IInspectable* return_value);
@@ -252,8 +220,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.ExposureCompensationControl")
 interface IExposureCompensationControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_Min(FLOAT* return_value);
@@ -267,8 +233,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.ExposureControl")
 interface IExposureControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_Auto(bool* return_value);
@@ -284,8 +248,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.ExposurePriorityVideoControl")
 interface IExposurePriorityVideoControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_Enabled(bool* return_value);
@@ -296,8 +258,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.FlashControl")
 interface IFlashControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_PowerSupported(bool* return_value);
@@ -316,8 +276,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.FlashControl")
 interface IFlashControl2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AssistantLightSupported(bool* return_value);
 	HRESULT get_AssistantLightEnabled(bool* return_value);
@@ -328,8 +286,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.FocusControl")
 interface IFocusControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_SupportedPresets(Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.FocusPreset)* return_value);
@@ -348,8 +304,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.FocusControl")
 interface IFocusControl2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FocusChangedSupported(bool* return_value);
 	HRESULT get_WaitForFocusSupported(bool* return_value);
@@ -367,8 +321,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.FocusSettings")
 interface IFocusSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Mode(Windows.Media.Devices.FocusMode* return_value);
 	HRESULT set_Mode(Windows.Media.Devices.FocusMode value);
@@ -388,8 +340,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.HdrVideoControl")
 interface IHdrVideoControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_SupportedModes(Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.HdrVideoMode)* return_value);
@@ -401,8 +351,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.IsoSpeedControl")
 interface IIsoSpeedControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	deprecated("SupportedPresets may not be available in future versions of Windows Phone. Starting with Windows Phone 8.1, use SetAutoAsync, Auto, SetValueAsync, and Value instead")
@@ -417,8 +365,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.IsoSpeedControl")
 interface IIsoSpeedControl2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Min(UINT32* return_value);
 	HRESULT get_Max(UINT32* return_value);
@@ -433,8 +379,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.KeypadPressedEventArgs")
 interface IKeypadPressedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TelephonyKey(Windows.Media.Devices.TelephonyKey* return_telephonyKey);
 }
@@ -443,8 +387,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.LowLagPhotoControl")
 interface ILowLagPhotoControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetHighestConcurrentFrameRate(Windows.Media.MediaProperties.IMediaEncodingProperties captureProperties, Windows.Media.MediaProperties.MediaRatio* return_value);
 	HRESULT abi_GetCurrentFrameRate(Windows.Media.MediaProperties.MediaRatio* return_value);
@@ -461,8 +403,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.LowLagPhotoSequenceControl")
 interface ILowLagPhotoSequenceControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_MaxPastPhotos(UINT32* return_value);
@@ -486,8 +426,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.MediaDeviceControl")
 interface IMediaDeviceControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Capabilities(Windows.Media.Devices.MediaDeviceControlCapabilities* return_value);
 	HRESULT abi_TryGetValue(double* out_value, bool* return_succeeded);
@@ -500,8 +438,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.MediaDeviceControlCapabilities")
 interface IMediaDeviceControlCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_Min(double* return_value);
@@ -514,8 +450,6 @@ extern(Windows):
 @uuid("f6f8f5ce-209a-48fb-86fc-d44578f317e6")
 interface IMediaDeviceController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAvailableMediaStreamProperties(Windows.Media.Capture.MediaStreamType mediaStreamType, Windows.Foundation.Collections.IVectorView!(Windows.Media.MediaProperties.IMediaEncodingProperties)* return_value);
 	HRESULT abi_GetMediaStreamProperties(Windows.Media.Capture.MediaStreamType mediaStreamType, Windows.Media.MediaProperties.IMediaEncodingProperties* return_value);
@@ -526,8 +460,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.MediaDevice")
 interface IMediaDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAudioCaptureSelector(HSTRING* return_selector);
 	HRESULT abi_GetAudioRenderSelector(HSTRING* return_selector);
@@ -544,8 +476,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.ModuleCommandResult")
 interface IModuleCommandResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Media.Devices.SendCommandStatus* return_value);
 	HRESULT get_Result(Windows.Storage.Streams.IBuffer* return_value);
@@ -555,8 +485,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.OpticalImageStabilizationControl")
 interface IOpticalImageStabilizationControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_SupportedModes(Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.OpticalImageStabilizationMode)* return_value);
@@ -568,8 +496,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.PhotoConfirmationControl")
 interface IPhotoConfirmationControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_pbSupported);
 	HRESULT get_Enabled(bool* return_value);
@@ -582,8 +508,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.RedialRequestedEventArgs")
 interface IRedialRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Handled();
 }
@@ -592,8 +516,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.RegionOfInterest")
 interface IRegionOfInterest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AutoFocusEnabled(bool* return_value);
 	HRESULT set_AutoFocusEnabled(bool value);
@@ -609,8 +531,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.RegionOfInterest")
 interface IRegionOfInterest2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.Media.Devices.RegionOfInterestType* return_value);
 	HRESULT set_Type(Windows.Media.Devices.RegionOfInterestType value);
@@ -624,8 +544,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.RegionsOfInterestControl")
 interface IRegionsOfInterestControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxRegions(UINT32* return_value);
 	HRESULT abi_SetRegionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Media.Devices.RegionOfInterest) regions, Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -640,8 +558,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.SceneModeControl")
 interface ISceneModeControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SupportedModes(Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.CaptureSceneMode)* return_value);
 	HRESULT get_Value(Windows.Media.Devices.CaptureSceneMode* return_value);
@@ -652,8 +568,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.TorchControl")
 interface ITorchControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_PowerSupported(bool* return_value);
@@ -667,8 +581,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.VideoDeviceController")
 interface IVideoDeviceController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Brightness(Windows.Media.Devices.MediaDeviceControl* return_value);
 	HRESULT get_Contrast(Windows.Media.Devices.MediaDeviceControl* return_value);
@@ -689,8 +601,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult")
 interface IVideoDeviceControllerGetDevicePropertyResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyStatus* return_value);
 	HRESULT get_Value(IInspectable* return_value);
@@ -700,8 +610,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.WhiteBalanceControl")
 interface IWhiteBalanceControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_Preset(Windows.Media.Devices.ColorTemperaturePreset* return_value);
@@ -717,8 +625,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.ZoomControl")
 interface IZoomControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_Min(FLOAT* return_value);
@@ -732,8 +638,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.ZoomControl")
 interface IZoomControl2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SupportedModes(Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.ZoomTransitionMode)* return_value);
 	HRESULT get_Mode(Windows.Media.Devices.ZoomTransitionMode* return_value);
@@ -744,8 +648,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Devices.ZoomSettings")
 interface IZoomSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Mode(Windows.Media.Devices.ZoomTransitionMode* return_value);
 	HRESULT set_Mode(Windows.Media.Devices.ZoomTransitionMode value);

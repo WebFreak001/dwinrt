@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Globalization.Fonts.LanguageFont")
 interface ILanguageFont : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FontFamily(HSTRING* return_value);
 	HRESULT get_FontWeight(Windows.UI.Text.FontWeight* return_weight);
@@ -20,8 +18,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.Fonts.LanguageFontGroup")
 interface ILanguageFontGroup : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UITextFont(Windows.Globalization.Fonts.LanguageFont* return_value);
 	HRESULT get_UIHeadingFont(Windows.Globalization.Fonts.LanguageFont* return_value);
@@ -40,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.Fonts.LanguageFontGroup")
 interface ILanguageFontGroupFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateLanguageFontGroup(HSTRING languageTag, Windows.Globalization.Fonts.LanguageFontGroup* return_recommendedFonts);
 }

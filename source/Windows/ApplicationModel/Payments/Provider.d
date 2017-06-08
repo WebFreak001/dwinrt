@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Payments.Provider.PaymentAppManager")
 interface IPaymentAppManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RegisterAsync(Windows.Foundation.Collections.IIterable!(HSTRING) supportedPaymentMethodIds, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_UnregisterAsync(Windows.Foundation.IAsyncAction* return_result);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.Provider.PaymentAppManager")
 interface IPaymentAppManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Current(Windows.ApplicationModel.Payments.Provider.PaymentAppManager* return_value);
 }
@@ -27,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.Provider.PaymentTransaction")
 interface IPaymentTransaction : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PaymentRequest(Windows.ApplicationModel.Payments.PaymentRequest* return_value);
 	HRESULT get_PayerEmail(HSTRING* return_value);
@@ -47,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.Provider.PaymentTransactionAcceptResult")
 interface IPaymentTransactionAcceptResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.ApplicationModel.Payments.PaymentRequestCompletionStatus* return_value);
 }
@@ -57,8 +49,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Payments.Provider.PaymentTransaction")
 interface IPaymentTransactionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING id, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.Provider.PaymentTransaction)* return_result);
 }

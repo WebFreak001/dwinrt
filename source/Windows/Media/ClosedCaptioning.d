@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.ClosedCaptioning.ClosedCaptionProperties")
 interface IClosedCaptionPropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FontColor(Windows.Media.ClosedCaptioning.ClosedCaptionColor* return_value);
 	HRESULT get_ComputedFontColor(Windows.UI.Color* return_value);

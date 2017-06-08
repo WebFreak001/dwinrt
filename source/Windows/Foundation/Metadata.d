@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Foundation.Metadata.ApiInformation")
 interface IApiInformationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsTypePresent(HSTRING typeName, bool* return_value);
 	HRESULT abi_IsMethodPresent(HSTRING typeName, HSTRING methodName, bool* return_value);

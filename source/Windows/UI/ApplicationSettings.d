@@ -27,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.AccountsSettingsPane")
 interface IAccountsSettingsPane : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_AccountCommandsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_AccountCommandsRequested(EventRegistrationToken cookie);
@@ -38,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs")
 interface IAccountsSettingsPaneCommandsRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WebAccountProviderCommands(Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.WebAccountProviderCommand)* return_value);
 	HRESULT get_WebAccountCommands(Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.WebAccountCommand)* return_value);
@@ -54,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.AccountsSettingsPaneEventDeferral")
 interface IAccountsSettingsPaneEventDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -64,8 +58,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.AccountsSettingsPane")
 interface IAccountsSettingsPaneStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.ApplicationSettings.AccountsSettingsPane* return_current);
 	HRESULT abi_Show();
@@ -75,8 +67,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.AccountsSettingsPane")
 interface IAccountsSettingsPaneStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowManageAccountsAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_ShowAddAccountAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -86,8 +76,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.CredentialCommand")
 interface ICredentialCommand : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PasswordCredential(Windows.Security.Credentials.PasswordCredential* return_value);
 	HRESULT get_CredentialDeleted(Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler* return_value);
@@ -97,8 +85,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.CredentialCommand")
 interface ICredentialCommandFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCredentialCommand(Windows.Security.Credentials.PasswordCredential passwordCredential, Windows.UI.ApplicationSettings.CredentialCommand* return_instance);
 	HRESULT abi_CreateCredentialCommandWithHandler(Windows.Security.Credentials.PasswordCredential passwordCredential, Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler deleted, Windows.UI.ApplicationSettings.CredentialCommand* return_instance);
@@ -108,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.SettingsCommand")
 interface ISettingsCommandFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateSettingsCommand(IInspectable settingsCommandId, HSTRING label, Windows.UI.Popups.UICommandInvokedHandler handler, Windows.UI.ApplicationSettings.SettingsCommand* return_instance);
 }
@@ -118,8 +102,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.SettingsCommand")
 interface ISettingsCommandStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AccountsCommand(Windows.UI.ApplicationSettings.SettingsCommand* return_value);
 }
@@ -128,8 +110,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.SettingsPane")
 interface ISettingsPane : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT add_CommandsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs) handler, EventRegistrationToken* return_cookie);
@@ -141,8 +121,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest")
 interface ISettingsPaneCommandsRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("SettingsPaneCommandsRequest is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_ApplicationCommands(Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.SettingsCommand)* return_value);
@@ -152,8 +130,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs")
 interface ISettingsPaneCommandsRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("SettingsPaneCommandsRequestedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_Request(Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest* return_request);
@@ -163,8 +139,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.SettingsPane")
 interface ISettingsPaneStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_GetForCurrentView(Windows.UI.ApplicationSettings.SettingsPane* return_current);
@@ -178,8 +152,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.WebAccountCommand")
 interface IWebAccountCommand : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WebAccount(Windows.Security.Credentials.WebAccount* return_value);
 	HRESULT get_Invoked(Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler* return_value);
@@ -190,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.WebAccountCommand")
 interface IWebAccountCommandFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWebAccountCommand(Windows.Security.Credentials.WebAccount webAccount, Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler invoked, Windows.UI.ApplicationSettings.SupportedWebAccountActions actions, Windows.UI.ApplicationSettings.WebAccountCommand* return_instance);
 }
@@ -200,8 +170,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.WebAccountInvokedArgs")
 interface IWebAccountInvokedArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Action(Windows.UI.ApplicationSettings.WebAccountAction* return_action);
 }
@@ -210,8 +178,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.WebAccountProviderCommand")
 interface IWebAccountProviderCommand : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WebAccountProvider(Windows.Security.Credentials.WebAccountProvider* return_value);
 	HRESULT get_Invoked(Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler* return_value);
@@ -221,8 +187,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ApplicationSettings.WebAccountProviderCommand")
 interface IWebAccountProviderCommandFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWebAccountProviderCommand(Windows.Security.Credentials.WebAccountProvider webAccountProvider, Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler invoked, Windows.UI.ApplicationSettings.WebAccountProviderCommand* return_instance);
 }

@@ -24,8 +24,6 @@ struct RoundTripTimeStatistics
 @WinrtFactory("Windows.Networking.Sockets.ControlChannelTrigger")
 interface IControlChannelTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ControlChannelTriggerId(HSTRING* return_value);
 	HRESULT get_ServerKeepAliveIntervalInMinutes(UINT32* return_value);
@@ -44,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.ControlChannelTrigger")
 interface IControlChannelTrigger2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsWakeFromLowPowerSupported(bool* return_value);
 }
@@ -53,8 +49,6 @@ extern(Windows):
 @uuid("1b36e047-89bb-4236-96ac-71d012bb4869")
 interface IControlChannelTriggerEventDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ControlChannelTrigger(Windows.Networking.Sockets.ControlChannelTrigger* return_value);
 }
@@ -63,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.ControlChannelTrigger")
 interface IControlChannelTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateControlChannelTrigger(HSTRING channelId, UINT32 serverKeepAliveIntervalInMinutes, Windows.Networking.Sockets.ControlChannelTrigger* return_notificationChannel);
 	HRESULT abi_CreateControlChannelTriggerEx(HSTRING channelId, UINT32 serverKeepAliveIntervalInMinutes, Windows.Networking.Sockets.ControlChannelTriggerResourceType resourceRequestType, Windows.Networking.Sockets.ControlChannelTrigger* return_notificationChannel);
@@ -73,8 +65,6 @@ extern(Windows):
 @uuid("6851038e-8ec4-42fe-9bb2-21e91b7bfcb1")
 interface IControlChannelTriggerResetEventDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResetReason(Windows.Networking.Sockets.ControlChannelTriggerResetReason* return_value);
 	HRESULT get_HardwareSlotReset(bool* return_value);
@@ -85,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.DatagramSocket")
 interface IDatagramSocket : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Control(Windows.Networking.Sockets.DatagramSocketControl* return_value);
 	HRESULT get_Information(Windows.Networking.Sockets.DatagramSocketInformation* return_value);
@@ -106,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.DatagramSocket")
 interface IDatagramSocket2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_BindServiceNameAndAdapterAsync(HSTRING localServiceName, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Foundation.IAsyncAction* return_operation);
 }
@@ -116,8 +102,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.DatagramSocket")
 interface IDatagramSocket3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CancelIOAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_EnableTransferOwnership(GUID taskId);
@@ -131,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.DatagramSocketControl")
 interface IDatagramSocketControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_QualityOfService(Windows.Networking.Sockets.SocketQualityOfService* return_value);
 	HRESULT set_QualityOfService(Windows.Networking.Sockets.SocketQualityOfService value);
@@ -144,8 +126,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.DatagramSocketControl")
 interface IDatagramSocketControl2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InboundBufferSizeInBytes(UINT32* return_value);
 	HRESULT set_InboundBufferSizeInBytes(UINT32 value);
@@ -157,8 +137,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.DatagramSocketControl")
 interface IDatagramSocketControl3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MulticastOnly(bool* return_value);
 	HRESULT set_MulticastOnly(bool value);
@@ -168,8 +146,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.DatagramSocketInformation")
 interface IDatagramSocketInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocalAddress(Windows.Networking.HostName* return_value);
 	HRESULT get_LocalPort(HSTRING* return_value);
@@ -181,8 +157,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs")
 interface IDatagramSocketMessageReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemoteAddress(Windows.Networking.HostName* return_value);
 	HRESULT get_RemotePort(HSTRING* return_value);
@@ -195,8 +169,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.DatagramSocket")
 interface IDatagramSocketStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetEndpointPairsAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair))* return_operation);
 	HRESULT abi_GetEndpointPairsWithSortOptionsAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.HostNameSortOptions sortOptions, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair))* return_operation);
@@ -206,8 +178,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.MessageWebSocket")
 interface IMessageWebSocket : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Control(Windows.Networking.Sockets.MessageWebSocketControl* return_value);
 	HRESULT get_Information(Windows.Networking.Sockets.MessageWebSocketInformation* return_value);
@@ -219,8 +189,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.MessageWebSocket")
 interface IMessageWebSocket2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ServerCustomValidationRequested(EventRegistrationToken eventCookie);
@@ -230,8 +198,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.MessageWebSocketControl")
 interface IMessageWebSocketControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxMessageSize(UINT32* return_value);
 	HRESULT set_MaxMessageSize(UINT32 value);
@@ -243,8 +209,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs")
 interface IMessageWebSocketMessageReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MessageType(Windows.Networking.Sockets.SocketMessageType* return_value);
 	HRESULT abi_GetDataReader(Windows.Storage.Streams.DataReader* return_dataReader);
@@ -255,8 +219,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.SocketActivityContext")
 interface ISocketActivityContext : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Data(Windows.Storage.Streams.IBuffer* return_value);
 }
@@ -265,8 +227,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.SocketActivityContext")
 interface ISocketActivityContextFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Storage.Streams.IBuffer data, Windows.Networking.Sockets.SocketActivityContext* return_context);
 }
@@ -275,8 +235,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.SocketActivityInformation")
 interface ISocketActivityInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TaskId(GUID* return_value);
 	HRESULT get_Id(HSTRING* return_value);
@@ -291,8 +249,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.SocketActivityInformation")
 interface ISocketActivityInformationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllSockets(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Networking.Sockets.SocketActivityInformation)* return_sockets);
 }
@@ -301,8 +257,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.SocketActivityTriggerDetails")
 interface ISocketActivityTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reason(Windows.Networking.Sockets.SocketActivityTriggerReason* return_value);
 	HRESULT get_SocketInformation(Windows.Networking.Sockets.SocketActivityInformation* return_value);
@@ -312,8 +266,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.SocketError")
 interface ISocketErrorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetStatus(INT32 hresult, Windows.Networking.Sockets.SocketErrorStatus* return_status);
 }
@@ -322,8 +274,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocket")
 interface IStreamSocket : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Control(Windows.Networking.Sockets.StreamSocketControl* return_value);
 	HRESULT get_Information(Windows.Networking.Sockets.StreamSocketInformation* return_value);
@@ -340,8 +290,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocket")
 interface IStreamSocket2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ConnectWithProtectionLevelAndAdapterAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Foundation.IAsyncAction* return_operation);
 }
@@ -350,8 +298,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocket")
 interface IStreamSocket3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CancelIOAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_EnableTransferOwnership(GUID taskId);
@@ -365,8 +311,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketControl")
 interface IStreamSocketControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NoDelay(bool* return_value);
 	HRESULT set_NoDelay(bool value);
@@ -384,8 +328,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketControl")
 interface IStreamSocketControl2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IgnorableServerCertificateErrors(Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult)* return_value);
 }
@@ -394,8 +336,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketControl")
 interface IStreamSocketControl3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SerializeConnectionAttempts(bool* return_value);
 	HRESULT set_SerializeConnectionAttempts(bool value);
@@ -407,8 +347,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketInformation")
 interface IStreamSocketInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocalAddress(Windows.Networking.HostName* return_value);
 	HRESULT get_LocalPort(HSTRING* return_value);
@@ -426,8 +364,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketInformation")
 interface IStreamSocketInformation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServerCertificateErrorSeverity(Windows.Networking.Sockets.SocketSslErrorSeverity* return_value);
 	HRESULT get_ServerCertificateErrors(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult)* return_value);
@@ -439,8 +375,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketListener")
 interface IStreamSocketListener : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Control(Windows.Networking.Sockets.StreamSocketListenerControl* return_value);
 	HRESULT get_Information(Windows.Networking.Sockets.StreamSocketListenerInformation* return_value);
@@ -454,8 +388,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketListener")
 interface IStreamSocketListener2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_BindServiceNameWithProtectionLevelAsync(HSTRING localServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_BindServiceNameWithProtectionLevelAndAdapterAsync(HSTRING localServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Foundation.IAsyncAction* return_operation);
@@ -465,8 +397,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketListener")
 interface IStreamSocketListener3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CancelIOAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_EnableTransferOwnership(GUID taskId);
@@ -479,8 +409,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs")
 interface IStreamSocketListenerConnectionReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Socket(Windows.Networking.Sockets.StreamSocket* return_value);
 }
@@ -489,8 +417,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketListenerControl")
 interface IStreamSocketListenerControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_QualityOfService(Windows.Networking.Sockets.SocketQualityOfService* return_value);
 	HRESULT set_QualityOfService(Windows.Networking.Sockets.SocketQualityOfService value);
@@ -500,8 +426,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketListenerControl")
 interface IStreamSocketListenerControl2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NoDelay(bool* return_value);
 	HRESULT set_NoDelay(bool value);
@@ -517,8 +441,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketListenerInformation")
 interface IStreamSocketListenerInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocalPort(HSTRING* return_value);
 }
@@ -527,8 +449,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamSocket")
 interface IStreamSocketStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetEndpointPairsAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair))* return_operation);
 	HRESULT abi_GetEndpointPairsWithSortOptionsAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.HostNameSortOptions sortOptions, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair))* return_operation);
@@ -538,8 +458,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamWebSocket")
 interface IStreamWebSocket : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Control(Windows.Networking.Sockets.StreamWebSocketControl* return_value);
 	HRESULT get_Information(Windows.Networking.Sockets.StreamWebSocketInformation* return_value);
@@ -550,8 +468,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamWebSocket")
 interface IStreamWebSocket2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ServerCustomValidationRequested(EventRegistrationToken eventCookie);
@@ -561,8 +477,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.StreamWebSocketControl")
 interface IStreamWebSocketControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NoDelay(bool* return_value);
 	HRESULT set_NoDelay(bool value);
@@ -571,8 +485,6 @@ extern(Windows):
 @uuid("f877396f-99b1-4e18-bc08-850c9adf156e")
 interface IWebSocket : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OutputStream(Windows.Storage.Streams.IOutputStream* return_value);
 	HRESULT abi_ConnectAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncAction* return_operation);
@@ -586,8 +498,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.WebSocketClosedEventArgs")
 interface IWebSocketClosedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Code(UINT16* return_value);
 	HRESULT get_Reason(HSTRING* return_value);
@@ -596,8 +506,6 @@ extern(Windows):
 @uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9")
 interface IWebSocketControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OutboundBufferSizeInBytes(UINT32* return_value);
 	HRESULT set_OutboundBufferSizeInBytes(UINT32 value);
@@ -611,8 +519,6 @@ extern(Windows):
 @uuid("79c3be03-f2ca-461e-af4e-9665bc2d0620")
 interface IWebSocketControl2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IgnorableServerCertificateErrors(Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult)* return_value);
 }
@@ -621,8 +527,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.WebSocketError")
 interface IWebSocketErrorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetStatus(INT32 hresult, Windows.Web.WebErrorStatus* return_status);
 }
@@ -630,8 +534,6 @@ extern(Windows):
 @uuid("5e01e316-c92a-47a5-b25f-07847639d181")
 interface IWebSocketInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocalAddress(Windows.Networking.HostName* return_value);
 	HRESULT get_BandwidthStatistics(Windows.Networking.Sockets.BandwidthStatistics* return_value);
@@ -641,8 +543,6 @@ extern(Windows):
 @uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a")
 interface IWebSocketInformation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServerCertificate(Windows.Security.Cryptography.Certificates.Certificate* return_value);
 	HRESULT get_ServerCertificateErrorSeverity(Windows.Networking.Sockets.SocketSslErrorSeverity* return_value);
@@ -654,8 +554,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs")
 interface IWebSocketServerCustomValidationRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServerCertificate(Windows.Security.Cryptography.Certificates.Certificate* return_value);
 	HRESULT get_ServerCertificateErrorSeverity(Windows.Networking.Sockets.SocketSslErrorSeverity* return_value);

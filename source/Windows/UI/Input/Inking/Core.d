@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource")
 interface ICoreInkIndependentInputSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_PointerEntering(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_PointerEntering(EventRegistrationToken cookie);
@@ -30,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource")
 interface ICoreInkIndependentInputSourceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.UI.Input.Inking.InkPresenter inkPresenter, Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource* return_inkIndependentInputSource);
 }
@@ -40,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs")
 interface ICoreWetStrokeUpdateEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NewInkPoints(Windows.Foundation.Collections.IVector!(Windows.UI.Input.Inking.InkPoint)* return_value);
 	HRESULT get_PointerId(UINT32* return_value);
@@ -53,8 +47,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource")
 interface ICoreWetStrokeUpdateSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_WetStrokeStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_WetStrokeStarting(EventRegistrationToken cookie);
@@ -73,8 +65,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource")
 interface ICoreWetStrokeUpdateSourceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.UI.Input.Inking.InkPresenter inkPresenter, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource* return_WetStrokeUpdateSource);
 }

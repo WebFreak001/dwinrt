@@ -74,15 +74,15 @@ extern (Windows):
 		CoreWindow window;
 		auto fac = dwinrt.factory!ICoreWindowStatic;
 		Debug.WriteLine("Factory %s", fac);
-		assert(fac.abi_GetForCurrentThread(&window) == S_OK);
+		Debug.OK(fac.abi_GetForCurrentThread(&window));
 
 		Debug.WriteLine("Window %s", window);
-		assert(window.abi_Activate() == S_OK);
+		Debug.OK(window.abi_Activate());
 		Debug.WriteLine("Window Activated");
 
 		CoreDispatcher dispatcher;
-		assert(window.get_Dispatcher(&dispatcher) == S_OK);
-		assert(dispatcher.abi_ProcessEvents(CoreProcessEventsOption.ProcessUntilQuit) == S_OK);
+		Debug.OK(window.get_Dispatcher(&dispatcher));
+		Debug.OK(dispatcher.abi_ProcessEvents(CoreProcessEventsOption.ProcessUntilQuit));
 
 		return S_OK;
 	}
@@ -98,6 +98,6 @@ private:
 
 void run()
 {
-	//MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
+	MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
 	assert(factory!ICoreApplication.abi_Run(new App) == S_OK);
 }

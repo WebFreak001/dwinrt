@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.Cryptography.Certificates.Certificate")
 interface ICertificate : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_BuildChainAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates, Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain)* return_value);
 	HRESULT abi_BuildChainWithParametersAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates, Windows.Security.Cryptography.Certificates.ChainBuildingParameters parameters, Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain)* return_value);
@@ -30,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.Certificate")
 interface ICertificate2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSecurityDeviceBound(bool* return_value);
 	HRESULT get_KeyUsages(Windows.Security.Cryptography.Certificates.CertificateKeyUsages* return_value);
@@ -45,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.Certificate")
 interface ICertificate3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsPerUser(bool* return_value);
 	HRESULT get_StoreName(HSTRING* return_value);
@@ -57,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateChain")
 interface ICertificateChain : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Validate(Windows.Security.Cryptography.Certificates.ChainValidationResult* return_status);
 	HRESULT abi_ValidateWithParameters(Windows.Security.Cryptography.Certificates.ChainValidationParameters parameter, Windows.Security.Cryptography.Certificates.ChainValidationResult* return_status);
@@ -69,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateEnrollmentManager")
 interface ICertificateEnrollmentManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateRequestAsync(Windows.Security.Cryptography.Certificates.CertificateRequestProperties request, Windows.Foundation.IAsyncOperation!(HSTRING)* return_value);
 	HRESULT abi_InstallCertificateAsync(HSTRING certificate, Windows.Security.Cryptography.Certificates.InstallOptions installOption, Windows.Foundation.IAsyncAction* return_value);
@@ -81,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateEnrollmentManager")
 interface ICertificateEnrollmentManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UserCertificateEnrollmentManager(Windows.Security.Cryptography.Certificates.UserCertificateEnrollmentManager* return_value);
 	HRESULT abi_ImportPfxDataToKspAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName, HSTRING keyStorageProvider, Windows.Foundation.IAsyncAction* return_value);
@@ -92,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateEnrollmentManager")
 interface ICertificateEnrollmentManagerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ImportPfxDataToKspWithParametersAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.PfxImportParameters pfxImportParameters, Windows.Foundation.IAsyncAction* return_value);
 }
@@ -102,8 +88,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateExtension")
 interface ICertificateExtension : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ObjectId(HSTRING* return_value);
 	HRESULT set_ObjectId(HSTRING value);
@@ -118,8 +102,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.Certificate")
 interface ICertificateFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCertificate(Windows.Storage.Streams.IBuffer certBlob, Windows.Security.Cryptography.Certificates.Certificate* return_certificate);
 }
@@ -128,8 +110,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateKeyUsages")
 interface ICertificateKeyUsages : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EncipherOnly(bool* return_value);
 	HRESULT set_EncipherOnly(bool value);
@@ -153,8 +133,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateQuery")
 interface ICertificateQuery : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EnhancedKeyUsages(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 	HRESULT get_IssuerName(HSTRING* return_value);
@@ -171,8 +149,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateQuery")
 interface ICertificateQuery2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IncludeDuplicates(bool* return_value);
 	HRESULT set_IncludeDuplicates(bool value);
@@ -186,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateRequestProperties")
 interface ICertificateRequestProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Subject(HSTRING* return_value);
 	HRESULT set_Subject(HSTRING value);
@@ -213,8 +187,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateRequestProperties")
 interface ICertificateRequestProperties2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SmartcardReaderName(HSTRING* return_value);
 	HRESULT set_SmartcardReaderName(HSTRING value);
@@ -228,8 +200,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateRequestProperties")
 interface ICertificateRequestProperties3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CurveName(HSTRING* return_value);
 	HRESULT set_CurveName(HSTRING value);
@@ -247,8 +217,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateRequestProperties")
 interface ICertificateRequestProperties4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SuppressedDefaults(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 	HRESULT get_SubjectAlternativeName(Windows.Security.Cryptography.Certificates.SubjectAlternativeNameInfo* return_value);
@@ -259,8 +227,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateStore")
 interface ICertificateStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Add(Windows.Security.Cryptography.Certificates.Certificate certificate);
 	HRESULT abi_Delete(Windows.Security.Cryptography.Certificates.Certificate certificate);
@@ -270,8 +236,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateStore")
 interface ICertificateStore2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 }
@@ -280,8 +244,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateStores")
 interface ICertificateStoresStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindAllAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate))* return_value);
 	HRESULT abi_FindAllWithQueryAsync(Windows.Security.Cryptography.Certificates.CertificateQuery query, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate))* return_value);
@@ -294,8 +256,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CertificateStores")
 interface ICertificateStoresStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetUserStoreByName(HSTRING storeName, Windows.Security.Cryptography.Certificates.UserCertificateStore* return_result);
 }
@@ -304,8 +264,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.ChainBuildingParameters")
 interface IChainBuildingParameters : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EnhancedKeyUsages(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 	HRESULT get_ValidationTimestamp(Windows.Foundation.DateTime* return_value);
@@ -325,8 +283,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.ChainValidationParameters")
 interface IChainValidationParameters : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CertificateChainPolicy(Windows.Security.Cryptography.Certificates.CertificateChainPolicy* return_value);
 	HRESULT set_CertificateChainPolicy(Windows.Security.Cryptography.Certificates.CertificateChainPolicy value);
@@ -338,8 +294,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CmsAttachedSignature")
 interface ICmsAttachedSignature : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Certificates(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)* return_value);
 	HRESULT get_Content(UINT32* out___valueSize, BYTE** return_value);
@@ -351,8 +305,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CmsAttachedSignature")
 interface ICmsAttachedSignatureFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCmsAttachedSignature(Windows.Storage.Streams.IBuffer inputBlob, Windows.Security.Cryptography.Certificates.CmsAttachedSignature* return_cmsSignedData);
 }
@@ -361,8 +313,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CmsAttachedSignature")
 interface ICmsAttachedSignatureStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GenerateSignatureAsync(Windows.Storage.Streams.IBuffer data, Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.CmsSignerInfo) signers, Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_outputBlob);
 }
@@ -371,8 +321,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CmsDetachedSignature")
 interface ICmsDetachedSignature : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Certificates(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)* return_value);
 	HRESULT get_Signers(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.CmsSignerInfo)* return_value);
@@ -383,8 +331,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CmsDetachedSignature")
 interface ICmsDetachedSignatureFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCmsDetachedSignature(Windows.Storage.Streams.IBuffer inputBlob, Windows.Security.Cryptography.Certificates.CmsDetachedSignature* return_cmsSignedData);
 }
@@ -393,8 +339,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CmsDetachedSignature")
 interface ICmsDetachedSignatureStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GenerateSignatureAsync(Windows.Storage.Streams.IInputStream data, Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.CmsSignerInfo) signers, Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_outputBlob);
 }
@@ -403,8 +347,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CmsSignerInfo")
 interface ICmsSignerInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Certificate(Windows.Security.Cryptography.Certificates.Certificate* return_value);
 	HRESULT set_Certificate(Windows.Security.Cryptography.Certificates.Certificate value);
@@ -417,8 +359,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.CmsTimestampInfo")
 interface ICmsTimestampInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SigningCertificate(Windows.Security.Cryptography.Certificates.Certificate* return_value);
 	HRESULT get_Certificates(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)* return_value);
@@ -429,8 +369,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.KeyAlgorithmNames")
 interface IKeyAlgorithmNamesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Rsa(HSTRING* return_value);
 	HRESULT get_Dsa(HSTRING* return_value);
@@ -446,8 +384,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.KeyAlgorithmNames")
 interface IKeyAlgorithmNamesStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Ecdsa(HSTRING* return_value);
 	HRESULT get_Ecdh(HSTRING* return_value);
@@ -457,8 +393,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.KeyAttestationHelper")
 interface IKeyAttestationHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_DecryptTpmAttestationCredentialAsync(HSTRING credential, Windows.Foundation.IAsyncOperation!(HSTRING)* return_value);
 	HRESULT abi_GetTpmAttestationCredentialId(HSTRING credential, HSTRING* return_value);
@@ -468,8 +402,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.KeyAttestationHelper")
 interface IKeyAttestationHelperStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_DecryptTpmAttestationCredentialWithContainerNameAsync(HSTRING credential, HSTRING containerName, Windows.Foundation.IAsyncOperation!(HSTRING)* return_value);
 }
@@ -478,8 +410,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.KeyStorageProviderNames")
 interface IKeyStorageProviderNamesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SoftwareKeyStorageProvider(HSTRING* return_value);
 	HRESULT get_SmartcardKeyStorageProvider(HSTRING* return_value);
@@ -490,8 +420,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.KeyStorageProviderNames")
 interface IKeyStorageProviderNamesStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PassportKeyStorageProvider(HSTRING* return_value);
 }
@@ -500,8 +428,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.PfxImportParameters")
 interface IPfxImportParameters : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Exportable(Windows.Security.Cryptography.Certificates.ExportOption* return_value);
 	HRESULT set_Exportable(Windows.Security.Cryptography.Certificates.ExportOption value);
@@ -523,8 +449,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.StandardCertificateStoreNames")
 interface IStandardCertificateStoreNamesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Personal(HSTRING* return_value);
 	HRESULT get_TrustedRootCertificationAuthorities(HSTRING* return_value);
@@ -535,8 +459,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.SubjectAlternativeNameInfo")
 interface ISubjectAlternativeNameInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailName(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 	HRESULT get_IPAddress(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
@@ -550,8 +472,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.SubjectAlternativeNameInfo")
 interface ISubjectAlternativeNameInfo2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailNames(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 	HRESULT get_IPAddresses(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
@@ -566,8 +486,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.UserCertificateEnrollmentManager")
 interface IUserCertificateEnrollmentManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateRequestAsync(Windows.Security.Cryptography.Certificates.CertificateRequestProperties request, Windows.Foundation.IAsyncOperation!(HSTRING)* return_value);
 	HRESULT abi_InstallCertificateAsync(HSTRING certificate, Windows.Security.Cryptography.Certificates.InstallOptions installOption, Windows.Foundation.IAsyncAction* return_value);
@@ -579,8 +497,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.UserCertificateEnrollmentManager")
 interface IUserCertificateEnrollmentManager2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ImportPfxDataToKspWithParametersAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.PfxImportParameters pfxImportParameters, Windows.Foundation.IAsyncAction* return_value);
 }
@@ -589,8 +505,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Certificates.UserCertificateStore")
 interface IUserCertificateStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAddAsync(Windows.Security.Cryptography.Certificates.Certificate certificate, Windows.Foundation.IAsyncOperation!(bool)* return_result);
 	HRESULT abi_RequestDeleteAsync(Windows.Security.Cryptography.Certificates.Certificate certificate, Windows.Foundation.IAsyncOperation!(bool)* return_result);

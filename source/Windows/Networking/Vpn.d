@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Networking.Vpn.VpnAppId")
 interface IVpnAppId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.Networking.Vpn.VpnAppIdType* return_value);
 	HRESULT set_Type(Windows.Networking.Vpn.VpnAppIdType value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnAppId")
 interface IVpnAppIdFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Networking.Vpn.VpnAppIdType type, HSTRING value, Windows.Networking.Vpn.VpnAppId* return_result);
 }
@@ -29,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnChannel")
 interface IVpnChannel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AssociateTransport(IInspectable mainOuterTunnelTransport, IInspectable optionalOuterTunnelTransport);
 	HRESULT abi_Start(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv4list, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv6list, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment routeScope, Windows.Networking.Vpn.VpnNamespaceAssignment namespaceScope, UINT32 mtuSize, UINT32 maxFrameSize, bool optimizeForLowCostNetwork, IInspectable mainOuterTunnelTransport, IInspectable optionalOuterTunnelTransport);
@@ -54,8 +48,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnChannel")
 interface IVpnChannel2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_StartWithMainTransport(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv4list, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv6list, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedDomainName, UINT32 mtuSize, UINT32 maxFrameSize, bool Reserved, IInspectable mainOuterTunnelTransport);
 	HRESULT abi_StartExistingTransports(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv4list, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv6list, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedDomainName, UINT32 mtuSize, UINT32 maxFrameSize, bool Reserved);
@@ -75,8 +67,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnChannelActivityEventArgs")
 interface IVpnChannelActivityEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.Networking.Vpn.VpnChannelActivityEventType* return_value);
 }
@@ -85,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs")
 interface IVpnChannelActivityStateChangedArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ActivityState(Windows.Networking.Vpn.VpnChannelActivityEventType* return_value);
 }
@@ -95,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnChannelConfiguration")
 interface IVpnChannelConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServerServiceName(HSTRING* return_value);
 	HRESULT get_ServerHostNameList(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName)* return_value);
@@ -107,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnChannelConfiguration")
 interface IVpnChannelConfiguration2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServerUris(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Uri)* return_value);
 }
@@ -116,8 +100,6 @@ extern(Windows):
 @uuid("88eb062d-e818-4ffd-98a6-363e3736c95d")
 interface IVpnChannelStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ProcessEventAsync(IInspectable thirdPartyPlugIn, IInspectable event);
 }
@@ -125,8 +107,6 @@ extern(Windows):
 @uuid("b7e78af3-a46d-404b-8729-1832522853ac")
 interface IVpnCredential : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PasskeyCredential(Windows.Security.Credentials.PasswordCredential* return_value);
 	HRESULT get_CertificateCredential(Windows.Security.Cryptography.Certificates.Certificate* return_value);
@@ -138,8 +118,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomCheckBox")
 interface IVpnCustomCheckBox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_InitialCheckState(bool value);
 	HRESULT get_InitialCheckState(bool* return_value);
@@ -150,8 +128,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomComboBox")
 interface IVpnCustomComboBox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_OptionsText(Windows.Foundation.Collections.IVectorView!(HSTRING) value);
 	HRESULT get_OptionsText(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
@@ -162,8 +138,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomEditBox")
 interface IVpnCustomEditBox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_DefaultText(HSTRING value);
 	HRESULT get_DefaultText(HSTRING* return_value);
@@ -181,8 +155,6 @@ interface IVpnCustomErrorBox : IInspectable
 @uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244")
 interface IVpnCustomPrompt : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Label(HSTRING value);
 	HRESULT get_Label(HSTRING* return_value);
@@ -196,8 +168,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomPromptBooleanInput")
 interface IVpnCustomPromptBooleanInput : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_InitialValue(bool value);
 	HRESULT get_InitialValue(bool* return_value);
@@ -207,8 +177,6 @@ extern(Windows):
 @uuid("73bd5638-6f04-404d-93dd-50a44924a38b")
 interface IVpnCustomPromptElement : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_DisplayName(HSTRING value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -222,8 +190,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomPromptOptionSelector")
 interface IVpnCustomPromptOptionSelector : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Options(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 	HRESULT get_SelectedIndex(UINT32* return_value);
@@ -233,8 +199,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomPromptText")
 interface IVpnCustomPromptText : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Text(HSTRING value);
 	HRESULT get_Text(HSTRING* return_value);
@@ -244,8 +208,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomPromptTextInput")
 interface IVpnCustomPromptTextInput : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_PlaceholderText(HSTRING value);
 	HRESULT get_PlaceholderText(HSTRING* return_value);
@@ -258,8 +220,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomTextBox")
 interface IVpnCustomTextBox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_DisplayText(HSTRING value);
 	HRESULT get_DisplayText(HSTRING* return_value);
@@ -269,8 +229,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnDomainNameAssignment")
 interface IVpnDomainNameAssignment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DomainNameList(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnDomainNameInfo)* return_value);
 	HRESULT set_ProxyAutoConfigurationUri(Windows.Foundation.Uri value);
@@ -281,8 +239,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnDomainNameInfo")
 interface IVpnDomainNameInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_DomainName(Windows.Networking.HostName value);
 	HRESULT get_DomainName(Windows.Networking.HostName* return_value);
@@ -296,8 +252,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnDomainNameInfo")
 interface IVpnDomainNameInfo2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WebProxyUris(Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri)* return_value);
 }
@@ -305,8 +259,6 @@ extern(Windows):
 @uuid("2507bb75-028f-4688-8d3a-c4531df37da8")
 interface IVpnDomainNameInfoFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateVpnDomainNameInfo(HSTRING name, Windows.Networking.Vpn.VpnDomainNameType nameType, Windows.Foundation.Collections.IIterable!(Windows.Networking.HostName) dnsServerList, Windows.Foundation.Collections.IIterable!(Windows.Networking.HostName) proxyServerList, Windows.Networking.Vpn.VpnDomainNameInfo* return_domainNameInfo);
 }
@@ -315,8 +267,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnInterfaceId")
 interface IVpnInterfaceId : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAddressInfo(UINT32* out___idSize, BYTE** out_id);
 }
@@ -324,8 +274,6 @@ extern(Windows):
 @uuid("9e2ddca2-1712-4ce4-b179-8c652c6d1000")
 interface IVpnInterfaceIdFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateVpnInterfaceId(UINT32 __addressSize, BYTE* address, Windows.Networking.Vpn.VpnInterfaceId* return_vpnInterfaceId);
 }
@@ -334,8 +282,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnManagementAgent")
 interface IVpnManagementAgent : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddProfileFromXmlAsync(HSTRING xml, Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus)* return_operation);
 	HRESULT abi_AddProfileFromObjectAsync(Windows.Networking.Vpn.IVpnProfile profile, Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus)* return_operation);
@@ -352,8 +298,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnNamespaceAssignment")
 interface IVpnNamespaceAssignment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_NamespaceList(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnNamespaceInfo) value);
 	HRESULT get_NamespaceList(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnNamespaceInfo)* return_value);
@@ -365,8 +309,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnNamespaceInfo")
 interface IVpnNamespaceInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Namespace(HSTRING value);
 	HRESULT get_Namespace(HSTRING* return_value);
@@ -379,8 +321,6 @@ extern(Windows):
 @uuid("cb3e951a-b0ce-442b-acbb-5f99b202c31c")
 interface IVpnNamespaceInfoFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateVpnNamespaceInfo(HSTRING name, Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) dnsServerList, Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) proxyServerList, Windows.Networking.Vpn.VpnNamespaceInfo* return_namespaceInfo);
 }
@@ -389,8 +329,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnNativeProfile")
 interface IVpnNativeProfile : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Servers(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 	HRESULT get_RoutingPolicyType(Windows.Networking.Vpn.VpnRoutingPolicyType* return_value);
@@ -409,8 +347,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnNativeProfile")
 interface IVpnNativeProfile2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequireVpnClientAppUI(bool* return_value);
 	HRESULT set_RequireVpnClientAppUI(bool value);
@@ -421,8 +357,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnPacketBuffer")
 interface IVpnPacketBuffer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Buffer(Windows.Storage.Streams.Buffer* return_value);
 	HRESULT set_Status(Windows.Networking.Vpn.VpnPacketBufferStatus value);
@@ -435,8 +369,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnPacketBuffer")
 interface IVpnPacketBuffer2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppId(Windows.Networking.Vpn.VpnAppId* return_value);
 }
@@ -444,8 +376,6 @@ extern(Windows):
 @uuid("9e2ddca2-1712-4ce4-b179-8c652c6d9999")
 interface IVpnPacketBufferFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateVpnPacketBuffer(Windows.Networking.Vpn.VpnPacketBuffer parentBuffer, UINT32 offset, UINT32 length, Windows.Networking.Vpn.VpnPacketBuffer* return_vpnPacketBuffer);
 }
@@ -454,8 +384,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnPacketBufferList")
 interface IVpnPacketBufferList : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Append(Windows.Networking.Vpn.VpnPacketBuffer nextVpnPacketBuffer);
 	HRESULT abi_AddAtBegin(Windows.Networking.Vpn.VpnPacketBuffer nextVpnPacketBuffer);
@@ -471,8 +399,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnPacketBufferList")
 interface IVpnPacketBufferList2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddLeadingPacket(Windows.Networking.Vpn.VpnPacketBuffer nextVpnPacketBuffer);
 	HRESULT abi_RemoveLeadingPacket(Windows.Networking.Vpn.VpnPacketBuffer* return_nextVpnPacketBuffer);
@@ -484,8 +410,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnPickedCredential")
 interface IVpnPickedCredential : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PasskeyCredential(Windows.Security.Credentials.PasswordCredential* return_value);
 	HRESULT get_AdditionalPin(HSTRING* return_value);
@@ -495,8 +419,6 @@ extern(Windows):
 @uuid("ceb78d07-d0a8-4703-a091-c8c2c0915bc4")
 interface IVpnPlugIn : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Connect(Windows.Networking.Vpn.VpnChannel channel);
 	HRESULT abi_Disconnect(Windows.Networking.Vpn.VpnChannel channel);
@@ -509,8 +431,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnPlugInProfile")
 interface IVpnPlugInProfile : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServerUris(Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri)* return_value);
 	HRESULT get_CustomConfiguration(HSTRING* return_value);
@@ -523,8 +443,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnPlugInProfile")
 interface IVpnPlugInProfile2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequireVpnClientAppUI(bool* return_value);
 	HRESULT set_RequireVpnClientAppUI(bool value);
@@ -534,8 +452,6 @@ extern(Windows):
 @uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a")
 interface IVpnProfile : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProfileName(HSTRING* return_value);
 	HRESULT set_ProfileName(HSTRING value);
@@ -553,8 +469,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnRoute")
 interface IVpnRoute : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Address(Windows.Networking.HostName value);
 	HRESULT get_Address(Windows.Networking.HostName* return_value);
@@ -566,8 +480,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnRouteAssignment")
 interface IVpnRouteAssignment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Ipv4InclusionRoutes(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) value);
 	HRESULT set_Ipv6InclusionRoutes(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) value);
@@ -584,8 +496,6 @@ extern(Windows):
 @uuid("bdeab5ff-45cf-4b99-83fb-db3bc2672b02")
 interface IVpnRouteFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateVpnRoute(Windows.Networking.HostName address, BYTE prefixSize, Windows.Networking.Vpn.VpnRoute* return_route);
 }
@@ -594,8 +504,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnSystemHealth")
 interface IVpnSystemHealth : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StatementOfHealth(Windows.Storage.Streams.Buffer* return_value);
 }
@@ -604,8 +512,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnTrafficFilter")
 interface IVpnTrafficFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppId(Windows.Networking.Vpn.VpnAppId* return_value);
 	HRESULT set_AppId(Windows.Networking.Vpn.VpnAppId value);
@@ -624,8 +530,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnTrafficFilterAssignment")
 interface IVpnTrafficFilterAssignment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TrafficFilterList(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnTrafficFilter)* return_value);
 	HRESULT get_AllowOutbound(bool* return_value);
@@ -638,8 +542,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Vpn.VpnTrafficFilter")
 interface IVpnTrafficFilterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Networking.Vpn.VpnAppId appId, Windows.Networking.Vpn.VpnTrafficFilter* return_result);
 }

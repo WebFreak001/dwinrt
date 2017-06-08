@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.SpeechSynthesis.SpeechSynthesizer")
 interface IInstalledVoicesStatic : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllVoices(Windows.Foundation.Collections.IVectorView!(Windows.Media.SpeechSynthesis.VoiceInformation)* return_value);
 	HRESULT get_DefaultVoice(Windows.Media.SpeechSynthesis.VoiceInformation* return_value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechSynthesis.SpeechSynthesisStream")
 interface ISpeechSynthesisStream : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Markers(Windows.Foundation.Collections.IVectorView!(Windows.Media.IMediaMarker)* return_value);
 }
@@ -27,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechSynthesis.SpeechSynthesizer")
 interface ISpeechSynthesizer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SynthesizeTextToStreamAsync(HSTRING text, Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechSynthesis.SpeechSynthesisStream)* return_operation);
 	HRESULT abi_SynthesizeSsmlToStreamAsync(HSTRING Ssml, Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechSynthesis.SpeechSynthesisStream)* return_operation);
@@ -40,8 +34,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechSynthesis.SpeechSynthesizer")
 interface ISpeechSynthesizer2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Options(Windows.Media.SpeechSynthesis.SpeechSynthesizerOptions* return_value);
 }
@@ -50,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechSynthesis.SpeechSynthesizerOptions")
 interface ISpeechSynthesizerOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IncludeWordBoundaryMetadata(bool* return_value);
 	HRESULT set_IncludeWordBoundaryMetadata(bool value);
@@ -63,8 +53,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SpeechSynthesis.VoiceInformation")
 interface IVoiceInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_Id(HSTRING* return_value);

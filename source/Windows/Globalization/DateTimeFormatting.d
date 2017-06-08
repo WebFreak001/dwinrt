@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Globalization.DateTimeFormatting.DateTimeFormatter")
 interface IDateTimeFormatter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Languages(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 	HRESULT get_GeographicRegion(HSTRING* return_value);
@@ -33,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.DateTimeFormatting.DateTimeFormatter")
 interface IDateTimeFormatter2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FormatUsingTimeZone(Windows.Foundation.DateTime datetime, HSTRING timeZoneId, HSTRING* return_result);
 }
@@ -43,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.DateTimeFormatting.DateTimeFormatter")
 interface IDateTimeFormatterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateDateTimeFormatter(HSTRING formatTemplate, Windows.Globalization.DateTimeFormatting.DateTimeFormatter* return_result);
 	HRESULT abi_CreateDateTimeFormatterLanguages(HSTRING formatTemplate, Windows.Foundation.Collections.IIterable!(HSTRING) languages, Windows.Globalization.DateTimeFormatting.DateTimeFormatter* return_result);
@@ -59,8 +53,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.DateTimeFormatting.DateTimeFormatter")
 interface IDateTimeFormatterStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LongDate(Windows.Globalization.DateTimeFormatting.DateTimeFormatter* return_value);
 	HRESULT get_LongTime(Windows.Globalization.DateTimeFormatting.DateTimeFormatter* return_value);

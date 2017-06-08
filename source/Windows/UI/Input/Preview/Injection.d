@@ -29,8 +29,6 @@ struct InjectedInputRectangle
 @WinrtFactory("Windows.UI.Input.Preview.Injection.InjectedInputKeyboardInfo")
 interface IInjectedInputKeyboardInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeyOptions(Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions* return_value);
 	HRESULT set_KeyOptions(Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions value);
@@ -44,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Preview.Injection.InjectedInputMouseInfo")
 interface IInjectedInputMouseInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MouseOptions(Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions* return_value);
 	HRESULT set_MouseOptions(Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions value);
@@ -63,8 +59,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Preview.Injection.InjectedInputPenInfo")
 interface IInjectedInputPenInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerInfo(Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo* return_value);
 	HRESULT set_PointerInfo(Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo value);
@@ -86,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Preview.Injection.InjectedInputTouchInfo")
 interface IInjectedInputTouchInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Contact(Windows.UI.Input.Preview.Injection.InjectedInputRectangle* return_value);
 	HRESULT set_Contact(Windows.UI.Input.Preview.Injection.InjectedInputRectangle value);
@@ -105,8 +97,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Preview.Injection.InputInjector")
 interface IInputInjector : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_InjectKeyboardInput(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Preview.Injection.InjectedInputKeyboardInfo) input);
 	HRESULT abi_InjectMouseInput(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Preview.Injection.InjectedInputMouseInfo) input);
@@ -123,8 +113,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Preview.Injection.InputInjector")
 interface IInputInjectorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryCreate(Windows.UI.Input.Preview.Injection.InputInjector* return_instance);
 }

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Preview.InkWorkspace.InkWorkspaceHostedAppManager")
 interface IInkWorkspaceHostedAppManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetThumbnailAsync(Windows.Graphics.Imaging.SoftwareBitmap bitmap, Windows.Foundation.IAsyncAction* return_action);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Preview.InkWorkspace.InkWorkspaceHostedAppManager")
 interface IInkWorkspaceHostedAppManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentApp(Windows.ApplicationModel.Preview.InkWorkspace.InkWorkspaceHostedAppManager* return_current);
 }

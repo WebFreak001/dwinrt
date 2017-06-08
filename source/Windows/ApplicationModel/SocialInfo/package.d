@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.SocialInfo.SocialFeedChildItem")
 interface ISocialFeedChildItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_Author(Windows.ApplicationModel.SocialInfo.SocialUserInfo* return_value);
@@ -35,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.SocialInfo.SocialFeedContent")
 interface ISocialFeedContent : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_Title(HSTRING* return_value);
@@ -56,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.SocialInfo.SocialFeedItem")
 interface ISocialFeedItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_Author(Windows.ApplicationModel.SocialInfo.SocialUserInfo* return_value);
@@ -105,8 +99,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.SocialInfo.SocialFeedSharedItem")
 interface ISocialFeedSharedItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISocialFeedSharedItem is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_OriginalSource(Windows.Foundation.Uri* return_value);
@@ -132,8 +124,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.SocialInfo.SocialItemThumbnail")
 interface ISocialItemThumbnail : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISocialItemThumbnail is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_TargetUri(Windows.Foundation.Uri* return_value);
@@ -155,8 +145,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.SocialInfo.SocialUserInfo")
 interface ISocialUserInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_DisplayName(HSTRING* return_value);

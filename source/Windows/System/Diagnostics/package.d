@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.System.Diagnostics.ProcessCpuUsage")
 interface IProcessCpuUsage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetReport(Windows.System.Diagnostics.ProcessCpuUsageReport* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.ProcessCpuUsageReport")
 interface IProcessCpuUsageReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KernelTime(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_UserTime(Windows.Foundation.TimeSpan* return_value);
@@ -27,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.ProcessDiagnosticInfo")
 interface IProcessDiagnosticInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProcessId(UINT32* return_value);
 	HRESULT get_ExecutableFileName(HSTRING* return_value);
@@ -43,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.ProcessDiagnosticInfo")
 interface IProcessDiagnosticInfoStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForProcesses(Windows.Foundation.Collections.IVectorView!(Windows.System.Diagnostics.ProcessDiagnosticInfo)* return_processes);
 	HRESULT abi_GetForCurrentProcess(Windows.System.Diagnostics.ProcessDiagnosticInfo* return_processes);
@@ -54,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.ProcessDiskUsage")
 interface IProcessDiskUsage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetReport(Windows.System.Diagnostics.ProcessDiskUsageReport* return_value);
 }
@@ -64,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.ProcessDiskUsageReport")
 interface IProcessDiskUsageReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ReadOperationCount(INT64* return_value);
 	HRESULT get_WriteOperationCount(INT64* return_value);
@@ -79,8 +67,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.ProcessMemoryUsage")
 interface IProcessMemoryUsage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetReport(Windows.System.Diagnostics.ProcessMemoryUsageReport* return_value);
 }
@@ -89,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.ProcessMemoryUsageReport")
 interface IProcessMemoryUsageReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NonPagedPoolSizeInBytes(UINT64* return_value);
 	HRESULT get_PageFaultCount(UINT32* return_value);
@@ -110,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.SystemCpuUsage")
 interface ISystemCpuUsage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetReport(Windows.System.Diagnostics.SystemCpuUsageReport* return_value);
 }
@@ -120,8 +102,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.SystemCpuUsageReport")
 interface ISystemCpuUsageReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KernelTime(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_UserTime(Windows.Foundation.TimeSpan* return_value);
@@ -132,8 +112,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.SystemDiagnosticInfo")
 interface ISystemDiagnosticInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MemoryUsage(Windows.System.Diagnostics.SystemMemoryUsage* return_value);
 	HRESULT get_CpuUsage(Windows.System.Diagnostics.SystemCpuUsage* return_value);
@@ -143,8 +121,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.SystemDiagnosticInfo")
 interface ISystemDiagnosticInfoStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentSystem(Windows.System.Diagnostics.SystemDiagnosticInfo* return_value);
 }
@@ -153,8 +129,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.SystemMemoryUsage")
 interface ISystemMemoryUsage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetReport(Windows.System.Diagnostics.SystemMemoryUsageReport* return_value);
 }
@@ -163,8 +137,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Diagnostics.SystemMemoryUsageReport")
 interface ISystemMemoryUsageReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TotalPhysicalSizeInBytes(UINT64* return_value);
 	HRESULT get_AvailableSizeInBytes(UINT64* return_value);

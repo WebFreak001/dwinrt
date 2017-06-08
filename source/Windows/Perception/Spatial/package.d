@@ -35,8 +35,6 @@ struct SpatialBoundingSphere
 @WinrtFactory("Windows.Perception.Spatial.SpatialAnchor")
 interface ISpatialAnchor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CoordinateSystem(Windows.Perception.Spatial.SpatialCoordinateSystem* return_value);
 	HRESULT get_RawCoordinateSystem(Windows.Perception.Spatial.SpatialCoordinateSystem* return_value);
@@ -48,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialAnchor")
 interface ISpatialAnchor2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemovedByUser(bool* return_value);
 }
@@ -58,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialAnchorManager")
 interface ISpatialAnchorManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestStoreAsync(Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.SpatialAnchorStore)* return_value);
 }
@@ -68,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialAnchorRawCoordinateSystemAdjustedEventArgs")
 interface ISpatialAnchorRawCoordinateSystemAdjustedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OldRawCoordinateSystemToNewRawCoordinateSystemTransform(Windows.Foundation.Numerics.Matrix4x4* return_value);
 }
@@ -78,8 +70,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialAnchor")
 interface ISpatialAnchorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryCreateRelativeTo(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Perception.Spatial.SpatialAnchor* return_value);
 	HRESULT abi_TryCreateWithPositionRelativeTo(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Perception.Spatial.SpatialAnchor* return_value);
@@ -90,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialAnchorStore")
 interface ISpatialAnchorStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAllSavedAnchors(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Perception.Spatial.SpatialAnchor)* return_value);
 	HRESULT abi_TrySave(HSTRING id, Windows.Perception.Spatial.SpatialAnchor anchor, bool* return_succeeded);
@@ -103,8 +91,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialAnchorTransferManager")
 interface ISpatialAnchorTransferManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")
 	HRESULT abi_TryImportAnchorsAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Perception.Spatial.SpatialAnchor))* return_operation);
@@ -124,8 +110,6 @@ interface ISpatialBoundingVolume : IInspectable
 @WinrtFactory("Windows.Perception.Spatial.SpatialBoundingVolume")
 interface ISpatialBoundingVolumeStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromBox(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Perception.Spatial.SpatialBoundingBox box, Windows.Perception.Spatial.SpatialBoundingVolume* return_value);
 	HRESULT abi_FromOrientedBox(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Perception.Spatial.SpatialBoundingOrientedBox box, Windows.Perception.Spatial.SpatialBoundingVolume* return_value);
@@ -137,8 +121,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialCoordinateSystem")
 interface ISpatialCoordinateSystem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryGetTransformTo(Windows.Perception.Spatial.SpatialCoordinateSystem target, Windows.Foundation.IReference!(Windows.Foundation.Numerics.Matrix4x4)* return_value);
 }
@@ -147,8 +129,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialEntity")
 interface ISpatialEntity : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_Anchor(Windows.Perception.Spatial.SpatialAnchor* return_value);
@@ -159,8 +139,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialEntityAddedEventArgs")
 interface ISpatialEntityAddedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Entity(Windows.Perception.Spatial.SpatialEntity* return_value);
 }
@@ -169,8 +147,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialEntity")
 interface ISpatialEntityFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithSpatialAnchor(Windows.Perception.Spatial.SpatialAnchor spatialAnchor, Windows.Perception.Spatial.SpatialEntity* return_value);
 	HRESULT abi_CreateWithSpatialAnchorAndProperties(Windows.Perception.Spatial.SpatialAnchor spatialAnchor, Windows.Foundation.Collections.ValueSet propertySet, Windows.Perception.Spatial.SpatialEntity* return_value);
@@ -180,8 +156,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialEntityRemovedEventArgs")
 interface ISpatialEntityRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Entity(Windows.Perception.Spatial.SpatialEntity* return_value);
 }
@@ -190,8 +164,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialEntityStore")
 interface ISpatialEntityStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SaveAsync(Windows.Perception.Spatial.SpatialEntity entity, Windows.Foundation.IAsyncAction* return_action);
 	HRESULT abi_RemoveAsync(Windows.Perception.Spatial.SpatialEntity entity, Windows.Foundation.IAsyncAction* return_action);
@@ -202,8 +174,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialEntityStore")
 interface ISpatialEntityStoreStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSupported(bool* return_value);
 	HRESULT abi_TryGetForRemoteSystemSession(Windows.System.RemoteSystems.RemoteSystemSession session, Windows.Perception.Spatial.SpatialEntityStore* return_value);
@@ -213,8 +183,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialEntityUpdatedEventArgs")
 interface ISpatialEntityUpdatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Entity(Windows.Perception.Spatial.SpatialEntity* return_value);
 }
@@ -223,8 +191,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialEntityWatcher")
 interface ISpatialEntityWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Perception.Spatial.SpatialEntityWatcherStatus* return_value);
 	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityAddedEventArgs) handler, EventRegistrationToken* return_token);
@@ -243,8 +209,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialLocation")
 interface ISpatialLocation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT get_Orientation(Windows.Foundation.Numerics.Quaternion* return_value);
@@ -258,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialLocator")
 interface ISpatialLocator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Locatability(Windows.Perception.Spatial.SpatialLocatability* return_value);
 	HRESULT add_LocatabilityChanged(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialLocator, IInspectable) handler, EventRegistrationToken* return_cookie);
@@ -281,8 +243,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference")
 interface ISpatialLocatorAttachedFrameOfReference : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RelativePosition(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT set_RelativePosition(Windows.Foundation.Numerics.Vector3 value);
@@ -297,8 +257,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialLocatorPositionalTrackingDeactivatingEventArgs")
 interface ISpatialLocatorPositionalTrackingDeactivatingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Canceled(bool* return_value);
 	HRESULT set_Canceled(bool value);
@@ -308,8 +266,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialLocator")
 interface ISpatialLocatorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Perception.Spatial.SpatialLocator* return_value);
 }
@@ -318,8 +274,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialStageFrameOfReference")
 interface ISpatialStageFrameOfReference : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CoordinateSystem(Windows.Perception.Spatial.SpatialCoordinateSystem* return_value);
 	HRESULT get_MovementRange(Windows.Perception.Spatial.SpatialMovementRange* return_value);
@@ -332,8 +286,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialStageFrameOfReference")
 interface ISpatialStageFrameOfReferenceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Current(Windows.Perception.Spatial.SpatialStageFrameOfReference* return_value);
 	HRESULT add_CurrentChanged(Windows.Foundation.EventHandler!(IInspectable) handler, EventRegistrationToken* return_cookie);
@@ -345,8 +297,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.SpatialStationaryFrameOfReference")
 interface ISpatialStationaryFrameOfReference : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CoordinateSystem(Windows.Perception.Spatial.SpatialCoordinateSystem* return_value);
 }

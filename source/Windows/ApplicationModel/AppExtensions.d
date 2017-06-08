@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.AppExtensions.AppExtension")
 interface IAppExtension : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -22,8 +20,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppExtensions.AppExtensionCatalog")
 interface IAppExtensionCatalog : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindAllAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension))* return_operation);
 	HRESULT abi_RequestRemovePackageAsync(HSTRING packageFullName, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -43,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppExtensions.AppExtensionCatalog")
 interface IAppExtensionCatalogStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Open(HSTRING appExtensionName, Windows.ApplicationModel.AppExtensions.AppExtensionCatalog* return_value);
 }
@@ -53,8 +47,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs")
 interface IAppExtensionPackageInstalledEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppExtensionName(HSTRING* return_value);
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
@@ -65,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs")
 interface IAppExtensionPackageStatusChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppExtensionName(HSTRING* return_value);
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
@@ -76,8 +66,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs")
 interface IAppExtensionPackageUninstallingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppExtensionName(HSTRING* return_value);
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
@@ -87,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs")
 interface IAppExtensionPackageUpdatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppExtensionName(HSTRING* return_value);
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
@@ -99,8 +85,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs")
 interface IAppExtensionPackageUpdatingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppExtensionName(HSTRING* return_value);
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);

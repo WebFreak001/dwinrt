@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Playlists.Playlist")
 interface IPlaylist : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Files(Windows.Foundation.Collections.IVector!(Windows.Storage.StorageFile)* return_value);
 	HRESULT abi_SaveAsync(Windows.Foundation.IAsyncAction* return_operation);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Playlists.Playlist")
 interface IPlaylistStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LoadAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Media.Playlists.Playlist)* return_operation);
 }

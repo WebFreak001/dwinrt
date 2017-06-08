@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Usb.UsbBulkInEndpointDescriptor")
 interface IUsbBulkInEndpointDescriptor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxPacketSize(UINT32* return_value);
 	HRESULT get_EndpointNumber(BYTE* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbBulkInPipe")
 interface IUsbBulkInPipe : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxTransferSizeBytes(UINT32* return_value);
 	HRESULT get_EndpointDescriptor(Windows.Devices.Usb.UsbBulkInEndpointDescriptor* return_value);
@@ -34,8 +30,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbBulkOutEndpointDescriptor")
 interface IUsbBulkOutEndpointDescriptor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxPacketSize(UINT32* return_value);
 	HRESULT get_EndpointNumber(BYTE* return_value);
@@ -46,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbBulkOutPipe")
 interface IUsbBulkOutPipe : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EndpointDescriptor(Windows.Devices.Usb.UsbBulkOutEndpointDescriptor* return_value);
 	HRESULT abi_ClearStallAsync(Windows.Foundation.IAsyncAction* return_operation);
@@ -60,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbConfiguration")
 interface IUsbConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UsbInterfaces(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterface)* return_value);
 	HRESULT get_ConfigurationDescriptor(Windows.Devices.Usb.UsbConfigurationDescriptor* return_value);
@@ -72,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbConfigurationDescriptor")
 interface IUsbConfigurationDescriptor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ConfigurationValue(BYTE* return_value);
 	HRESULT get_MaxPowerMilliamps(UINT32* return_value);
@@ -85,8 +73,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbConfigurationDescriptor")
 interface IUsbConfigurationDescriptorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryParse(Windows.Devices.Usb.UsbDescriptor descriptor, Windows.Devices.Usb.UsbConfigurationDescriptor* out_parsed, bool* return_success);
 	HRESULT abi_Parse(Windows.Devices.Usb.UsbDescriptor descriptor, Windows.Devices.Usb.UsbConfigurationDescriptor* return_parsed);
@@ -96,8 +82,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbControlRequestType")
 interface IUsbControlRequestType : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Direction(Windows.Devices.Usb.UsbTransferDirection* return_value);
 	HRESULT set_Direction(Windows.Devices.Usb.UsbTransferDirection value);
@@ -113,8 +97,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbDescriptor")
 interface IUsbDescriptor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Length(BYTE* return_value);
 	HRESULT get_DescriptorType(BYTE* return_value);
@@ -125,8 +107,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbDevice")
 interface IUsbDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SendControlOutTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Storage.Streams.IBuffer buffer, Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
 	HRESULT abi_SendControlOutTransferAsyncNoBuffer(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
@@ -141,8 +121,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbDeviceClass")
 interface IUsbDeviceClass : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ClassCode(BYTE* return_value);
 	HRESULT set_ClassCode(BYTE value);
@@ -162,8 +140,6 @@ interface IUsbDeviceClasses : IInspectable
 @WinrtFactory("Windows.Devices.Usb.UsbDeviceClasses")
 interface IUsbDeviceClassesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CdcControl(Windows.Devices.Usb.UsbDeviceClass* return_value);
 	HRESULT get_Physical(Windows.Devices.Usb.UsbDeviceClass* return_value);
@@ -180,8 +156,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbDeviceDescriptor")
 interface IUsbDeviceDescriptor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BcdUsb(UINT32* return_value);
 	HRESULT get_MaxPacketSize0(BYTE* return_value);
@@ -195,8 +169,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbDevice")
 interface IUsbDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(UINT32 vendorId, UINT32 productId, GUID winUsbInterfaceClass, HSTRING* return_value);
 	HRESULT abi_GetDeviceSelectorGuidOnly(GUID winUsbInterfaceClass, HSTRING* return_value);
@@ -209,8 +181,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbEndpointDescriptor")
 interface IUsbEndpointDescriptor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EndpointNumber(BYTE* return_value);
 	HRESULT get_Direction(Windows.Devices.Usb.UsbTransferDirection* return_value);
@@ -225,8 +195,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbEndpointDescriptor")
 interface IUsbEndpointDescriptorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryParse(Windows.Devices.Usb.UsbDescriptor descriptor, Windows.Devices.Usb.UsbEndpointDescriptor* out_parsed, bool* return_success);
 	HRESULT abi_Parse(Windows.Devices.Usb.UsbDescriptor descriptor, Windows.Devices.Usb.UsbEndpointDescriptor* return_parsed);
@@ -236,8 +204,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbInterface")
 interface IUsbInterface : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BulkInPipes(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkInPipe)* return_value);
 	HRESULT get_InterruptInPipes(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptInPipe)* return_value);
@@ -252,8 +218,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbInterfaceDescriptor")
 interface IUsbInterfaceDescriptor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ClassCode(BYTE* return_value);
 	HRESULT get_SubclassCode(BYTE* return_value);
@@ -266,8 +230,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbInterfaceDescriptor")
 interface IUsbInterfaceDescriptorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryParse(Windows.Devices.Usb.UsbDescriptor descriptor, Windows.Devices.Usb.UsbInterfaceDescriptor* out_parsed, bool* return_success);
 	HRESULT abi_Parse(Windows.Devices.Usb.UsbDescriptor descriptor, Windows.Devices.Usb.UsbInterfaceDescriptor* return_parsed);
@@ -277,8 +239,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbInterfaceSetting")
 interface IUsbInterfaceSetting : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BulkInEndpoints(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkInEndpointDescriptor)* return_value);
 	HRESULT get_InterruptInEndpoints(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptInEndpointDescriptor)* return_value);
@@ -294,8 +254,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbInterruptInEndpointDescriptor")
 interface IUsbInterruptInEndpointDescriptor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxPacketSize(UINT32* return_value);
 	HRESULT get_EndpointNumber(BYTE* return_value);
@@ -307,8 +265,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbInterruptInEventArgs")
 interface IUsbInterruptInEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InterruptData(Windows.Storage.Streams.IBuffer* return_value);
 }
@@ -317,8 +273,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbInterruptInPipe")
 interface IUsbInterruptInPipe : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EndpointDescriptor(Windows.Devices.Usb.UsbInterruptInEndpointDescriptor* return_value);
 	HRESULT abi_ClearStallAsync(Windows.Foundation.IAsyncAction* return_operation);
@@ -330,8 +284,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor")
 interface IUsbInterruptOutEndpointDescriptor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxPacketSize(UINT32* return_value);
 	HRESULT get_EndpointNumber(BYTE* return_value);
@@ -343,8 +295,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbInterruptOutPipe")
 interface IUsbInterruptOutPipe : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EndpointDescriptor(Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor* return_value);
 	HRESULT abi_ClearStallAsync(Windows.Foundation.IAsyncAction* return_operation);
@@ -357,8 +307,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbSetupPacket")
 interface IUsbSetupPacket : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestType(Windows.Devices.Usb.UsbControlRequestType* return_value);
 	HRESULT set_RequestType(Windows.Devices.Usb.UsbControlRequestType value);
@@ -376,8 +324,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Usb.UsbSetupPacket")
 interface IUsbSetupPacketFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithEightByteBuffer(Windows.Storage.Streams.IBuffer eightByteBuffer, Windows.Devices.Usb.UsbSetupPacket* return_value);
 }

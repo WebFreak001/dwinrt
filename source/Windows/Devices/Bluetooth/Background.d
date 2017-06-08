@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Bluetooth.Background.BluetoothLEAdvertisementPublisherTriggerDetails")
 interface IBluetoothLEAdvertisementPublisherTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatus* return_value);
 	HRESULT get_Error(Windows.Devices.Bluetooth.BluetoothError* return_value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Background.BluetoothLEAdvertisementWatcherTriggerDetails")
 interface IBluetoothLEAdvertisementWatcherTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Error(Windows.Devices.Bluetooth.BluetoothError* return_value);
 	HRESULT get_Advertisements(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs)* return_value);
@@ -29,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Background.GattCharacteristicNotificationTriggerDetails")
 interface IGattCharacteristicNotificationTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Characteristic(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic* return_value);
 	HRESULT get_Value(Windows.Storage.Streams.IBuffer* return_value);
@@ -40,8 +34,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Background.GattCharacteristicNotificationTriggerDetails")
 interface IGattCharacteristicNotificationTriggerDetails2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Error(Windows.Devices.Bluetooth.BluetoothError* return_value);
 	HRESULT get_EventTriggeringMode(Windows.Devices.Bluetooth.Background.BluetoothEventTriggeringMode* return_value);
@@ -52,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Background.GattServiceProviderConnection")
 interface IGattServiceProviderConnection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TriggerId(HSTRING* return_value);
 	HRESULT get_Service(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalService* return_value);
@@ -64,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Background.GattServiceProviderConnection")
 interface IGattServiceProviderConnectionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllServices(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Devices.Bluetooth.Background.GattServiceProviderConnection)* return_value);
 }
@@ -74,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Background.GattServiceProviderTriggerDetails")
 interface IGattServiceProviderTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Connection(Windows.Devices.Bluetooth.Background.GattServiceProviderConnection* return_value);
 }
@@ -84,8 +70,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Background.RfcommConnectionTriggerDetails")
 interface IRfcommConnectionTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Socket(Windows.Networking.Sockets.StreamSocket* return_value);
 	HRESULT get_Incoming(bool* return_value);
@@ -96,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Background.RfcommInboundConnectionInformation")
 interface IRfcommInboundConnectionInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SdpRecord(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT set_SdpRecord(Windows.Storage.Streams.IBuffer value);
@@ -111,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.Background.RfcommOutboundConnectionInformation")
 interface IRfcommOutboundConnectionInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemoteServiceId(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId* return_value);
 	HRESULT set_RemoteServiceId(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId value);

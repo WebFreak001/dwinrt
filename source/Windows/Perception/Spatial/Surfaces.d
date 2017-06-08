@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo")
 interface ISpatialSurfaceInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(GUID* return_value);
 	HRESULT get_UpdateTime(Windows.Foundation.DateTime* return_value);
@@ -20,8 +18,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh")
 interface ISpatialSurfaceMesh : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SurfaceInfo(Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo* return_value);
 	HRESULT get_CoordinateSystem(Windows.Perception.Spatial.SpatialCoordinateSystem* return_value);
@@ -35,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer")
 interface ISpatialSurfaceMeshBuffer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Format(Windows.Graphics.DirectX.DirectXPixelFormat* return_value);
 	HRESULT get_Stride(UINT32* return_value);
@@ -48,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshOptions")
 interface ISpatialSurfaceMeshOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VertexPositionFormat(Windows.Graphics.DirectX.DirectXPixelFormat* return_value);
 	HRESULT set_VertexPositionFormat(Windows.Graphics.DirectX.DirectXPixelFormat value);
@@ -65,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshOptions")
 interface ISpatialSurfaceMeshOptionsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SupportedVertexPositionFormats(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat)* return_value);
 	HRESULT get_SupportedTriangleIndexFormats(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat)* return_value);
@@ -77,8 +67,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver")
 interface ISpatialSurfaceObserver : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetObservedSurfaces(Windows.Foundation.Collections.IMapView!(GUID, Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo)* return_value);
 	HRESULT abi_SetBoundingVolume(Windows.Perception.Spatial.SpatialBoundingVolume bounds);
@@ -91,8 +79,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver")
 interface ISpatialSurfaceObserverStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.SpatialPerceptionAccessStatus)* return_result);
 }
@@ -101,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver")
 interface ISpatialSurfaceObserverStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsSupported(bool* return_value);
 }

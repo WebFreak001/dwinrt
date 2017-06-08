@@ -26,8 +26,6 @@ struct BackgroundUploadProgress
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundDownloader")
 interface IBackgroundDownloader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateDownload(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Networking.BackgroundTransfer.DownloadOperation* return_operation);
 	HRESULT abi_CreateDownloadFromFile(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Storage.IStorageFile requestBodyFile, Windows.Networking.BackgroundTransfer.DownloadOperation* return_operation);
@@ -38,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundDownloader")
 interface IBackgroundDownloader2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TransferGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferGroup* return_value);
 	HRESULT set_TransferGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferGroup value);
@@ -57,8 +53,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundDownloader")
 interface IBackgroundDownloader3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CompletionGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup* return_value);
 }
@@ -67,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundDownloader")
 interface IBackgroundDownloaderFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithCompletionGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup completionGroup, Windows.Networking.BackgroundTransfer.BackgroundDownloader* return_backgroundDownloader);
 }
@@ -77,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundDownloader")
 interface IBackgroundDownloaderStaticMethods : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentDownloadsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation))* return_operation);
 	deprecated("GetCurrentDownloadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentDownloadsForTransferGroupAsync.")
@@ -89,8 +79,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundDownloader")
 interface IBackgroundDownloaderStaticMethods2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentDownloadsForTransferGroupAsync(Windows.Networking.BackgroundTransfer.BackgroundTransferGroup group, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation))* return_operation);
 }
@@ -99,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundDownloader")
 interface IBackgroundDownloaderUserConsent : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("RequestUnconstrainedDownloadsAsync is deprecated and may not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_RequestUnconstrainedDownloadsAsync(Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.DownloadOperation) operations, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UnconstrainedTransferRequestResult)* return_operation);
@@ -109,8 +95,6 @@ extern(Windows):
 @uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef")
 interface IBackgroundTransferBase : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetRequestHeader(HSTRING headerName, HSTRING headerValue);
 	HRESULT get_ServerCredential(Windows.Security.Credentials.PasswordCredential* return_credential);
@@ -131,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup")
 interface IBackgroundTransferCompletionGroup : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Trigger(Windows.ApplicationModel.Background.IBackgroundTrigger* return_value);
 	HRESULT get_IsEnabled(bool* return_value);
@@ -143,8 +125,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroupTriggerDetails")
 interface IBackgroundTransferCompletionGroupTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Downloads(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation)* return_value);
 	HRESULT get_Uploads(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)* return_value);
@@ -154,8 +134,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart")
 interface IBackgroundTransferContentPart : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetHeader(HSTRING headerName, HSTRING headerValue);
 	HRESULT abi_SetText(HSTRING value);
@@ -165,8 +143,6 @@ extern(Windows):
 @uuid("90ef98a9-7a01-4a0b-9f80-a0b0bb370f8d")
 interface IBackgroundTransferContentPartFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithName(HSTRING name, Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart* return_value);
 	HRESULT abi_CreateWithNameAndFileName(HSTRING name, HSTRING fileName, Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart* return_value);
@@ -176,8 +152,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundTransferError")
 interface IBackgroundTransferErrorStaticMethods : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetStatus(INT32 hresult, Windows.Web.WebErrorStatus* return_status);
 }
@@ -186,8 +160,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundTransferGroup")
 interface IBackgroundTransferGroup : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_TransferBehavior(Windows.Networking.BackgroundTransfer.BackgroundTransferBehavior* return_value);
@@ -198,8 +170,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundTransferGroup")
 interface IBackgroundTransferGroupStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateGroup(HSTRING name, Windows.Networking.BackgroundTransfer.BackgroundTransferGroup* return_value);
 }
@@ -207,8 +177,6 @@ extern(Windows):
 @uuid("ded06846-90ca-44fb-8fb1-124154c0d539")
 interface IBackgroundTransferOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Guid(GUID* return_value);
 	HRESULT get_RequestedUri(Windows.Foundation.Uri* return_value);
@@ -224,8 +192,6 @@ extern(Windows):
 @uuid("04854327-5254-4b3a-915e-0aa49275c0f9")
 interface IBackgroundTransferOperationPriority : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Priority(Windows.Networking.BackgroundTransfer.BackgroundTransferPriority* return_value);
 	HRESULT set_Priority(Windows.Networking.BackgroundTransfer.BackgroundTransferPriority value);
@@ -235,8 +201,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundUploader")
 interface IBackgroundUploader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateUpload(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile sourceFile, Windows.Networking.BackgroundTransfer.UploadOperation* return_operation);
 	HRESULT abi_CreateUploadFromStreamAsync(Windows.Foundation.Uri uri, Windows.Storage.Streams.IInputStream sourceStream, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
@@ -249,8 +213,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundUploader")
 interface IBackgroundUploader2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TransferGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferGroup* return_value);
 	HRESULT set_TransferGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferGroup value);
@@ -268,8 +230,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundUploader")
 interface IBackgroundUploader3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CompletionGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup* return_value);
 }
@@ -278,8 +238,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundUploader")
 interface IBackgroundUploaderFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithCompletionGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup completionGroup, Windows.Networking.BackgroundTransfer.BackgroundUploader* return_backgroundUploader);
 }
@@ -288,8 +246,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundUploader")
 interface IBackgroundUploaderStaticMethods : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentUploadsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation))* return_operation);
 	deprecated("GetCurrentUploadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentUploadsForTransferGroupAsync.")
@@ -300,8 +256,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundUploader")
 interface IBackgroundUploaderStaticMethods2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentUploadsForTransferGroupAsync(Windows.Networking.BackgroundTransfer.BackgroundTransferGroup group, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation))* return_operation);
 }
@@ -310,8 +264,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundUploader")
 interface IBackgroundUploaderUserConsent : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("RequestUnconstrainedUploadsAsync is deprecated and may not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_RequestUnconstrainedUploadsAsync(Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.UploadOperation) operations, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UnconstrainedTransferRequestResult)* return_operation);
@@ -321,8 +273,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.ContentPrefetcher")
 interface IContentPrefetcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentUris(Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri)* return_value);
 	HRESULT set_IndirectContentUri(Windows.Foundation.Uri value);
@@ -333,8 +283,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.ContentPrefetcher")
 interface IContentPrefetcherTime : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LastSuccessfulPrefetchTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
 }
@@ -343,8 +291,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.DownloadOperation")
 interface IDownloadOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResultFile(Windows.Storage.IStorageFile* return_value);
 	HRESULT get_Progress(Windows.Networking.BackgroundTransfer.BackgroundDownloadProgress* return_value);
@@ -358,8 +304,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.DownloadOperation")
 interface IDownloadOperation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TransferGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferGroup* return_value);
 }
@@ -368,8 +312,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.ResponseInformation")
 interface IResponseInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsResumable(bool* return_value);
 	HRESULT get_ActualUri(Windows.Foundation.Uri* return_value);
@@ -381,8 +323,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.UnconstrainedTransferRequestResult")
 interface IUnconstrainedTransferRequestResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("IsUnconstrained is deprecated and may not work on all platforms. For more info, see MSDN.")
 	HRESULT get_IsUnconstrained(bool* return_value);
@@ -392,8 +332,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.UploadOperation")
 interface IUploadOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceFile(Windows.Storage.IStorageFile* return_value);
 	HRESULT get_Progress(Windows.Networking.BackgroundTransfer.BackgroundUploadProgress* return_value);
@@ -405,8 +343,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.BackgroundTransfer.UploadOperation")
 interface IUploadOperation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TransferGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferGroup* return_value);
 }

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Perception.KnownCameraIntrinsicsProperties")
 interface IKnownCameraIntrinsicsPropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("KnownCameraIntrinsicsProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT get_FocalLength(HSTRING* return_value);
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.KnownPerceptionColorFrameSourceProperties")
 interface IKnownPerceptionColorFrameSourcePropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("KnownPerceptionColorFrameSourceProperties may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT get_Exposure(HSTRING* return_value);
@@ -38,8 +34,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.KnownPerceptionDepthFrameSourceProperties")
 interface IKnownPerceptionDepthFrameSourcePropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("KnownPerceptionDepthFrameSourceProperties may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")
 	HRESULT get_MinDepth(HSTRING* return_value);
@@ -51,8 +45,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.KnownPerceptionFrameSourceProperties")
 interface IKnownPerceptionFrameSourcePropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")
 	HRESULT get_Id(HSTRING* return_value);
@@ -70,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.KnownPerceptionFrameSourceProperties")
 interface IKnownPerceptionFrameSourcePropertiesStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -81,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.KnownPerceptionInfraredFrameSourceProperties")
 interface IKnownPerceptionInfraredFrameSourcePropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("KnownPerceptionInfraredFrameSourceProperties.Exposure may be unavailable after Windows Creator Update.	Use Windows.Media.Devices.ExposureControl instead.")
 	HRESULT get_Exposure(HSTRING* return_value);
@@ -104,8 +92,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.KnownPerceptionVideoFrameSourceProperties")
 interface IKnownPerceptionVideoFrameSourcePropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT get_VideoProfile(HSTRING* return_value);
@@ -123,8 +109,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.KnownPerceptionVideoProfileProperties")
 interface IKnownPerceptionVideoProfilePropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT get_BitmapPixelFormat(HSTRING* return_value);
@@ -142,8 +126,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionColorFrame")
 interface IPerceptionColorFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionColorFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.VideoMediaFrame instead.")
 	HRESULT get_VideoFrame(Windows.Media.VideoFrame* return_value);
@@ -153,8 +135,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionColorFrameArrivedEventArgs")
 interface IPerceptionColorFrameArrivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionColorFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")
 	HRESULT get_RelativeTime(Windows.Foundation.TimeSpan* return_value);
@@ -166,8 +146,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionColorFrameReader")
 interface IPerceptionColorFrameReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	HRESULT add_FrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameReader, Windows.Devices.Perception.PerceptionColorFrameArrivedEventArgs) handler, EventRegistrationToken* return_token);
@@ -187,8 +165,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionColorFrameSource")
 interface IPerceptionColorFrameSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	HRESULT add_AvailableChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable) handler, EventRegistrationToken* return_token);
@@ -254,8 +230,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionColorFrameSource")
 interface IPerceptionColorFrameSource2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -265,8 +239,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionColorFrameSourceAddedEventArgs")
 interface IPerceptionColorFrameSourceAddedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionColorFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT get_FrameSource(Windows.Devices.Perception.PerceptionColorFrameSource* return_value);
@@ -276,8 +248,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionColorFrameSourceRemovedEventArgs")
 interface IPerceptionColorFrameSourceRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionColorFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.	 Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT get_FrameSource(Windows.Devices.Perception.PerceptionColorFrameSource* return_value);
@@ -287,8 +257,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionColorFrameSource")
 interface IPerceptionColorFrameSourceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionColorFrameSource.CreateWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.CreateWatcher instead.")
 	HRESULT abi_CreateWatcher(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher* return_watcher);
@@ -304,8 +272,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionColorFrameSourceWatcher")
 interface IPerceptionColorFrameSourceWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	HRESULT add_SourceAdded(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceAddedEventArgs) handler, EventRegistrationToken* return_token);
@@ -335,8 +301,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionControlSession")
 interface IPerceptionControlSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT add_ControlLost(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionControlSession, IInspectable) handler, EventRegistrationToken* return_token);
@@ -350,8 +314,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionDepthCorrelatedCameraIntrinsics")
 interface IPerceptionDepthCorrelatedCameraIntrinsics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionDepthCorrelatedCameraIntrinsics may be unavailable after Windows Creator Update.	Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")
 	HRESULT abi_UnprojectPixelAtCorrelatedDepth(Windows.Foundation.Point pixelCoordinate, Windows.Devices.Perception.PerceptionDepthFrame depthFrame, Windows.Foundation.Numerics.Vector3* return_result);
@@ -367,8 +329,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionDepthCorrelatedCoordinateMapper")
 interface IPerceptionDepthCorrelatedCoordinateMapper : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionDepthCorrelatedCoordinateMapper may be unavailable after Windows Creator Update.	Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")
 	HRESULT abi_MapPixelToTarget(Windows.Foundation.Point sourcePixelCoordinate, Windows.Devices.Perception.PerceptionDepthFrame depthFrame, Windows.Foundation.Point* return_result);
@@ -384,8 +344,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionDepthFrame")
 interface IPerceptionDepthFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionDepthFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")
 	HRESULT get_VideoFrame(Windows.Media.VideoFrame* return_value);
@@ -395,8 +353,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionDepthFrameArrivedEventArgs")
 interface IPerceptionDepthFrameArrivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionDepthFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")
 	HRESULT get_RelativeTime(Windows.Foundation.TimeSpan* return_value);
@@ -408,8 +364,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionDepthFrameReader")
 interface IPerceptionDepthFrameReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	HRESULT add_FrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameReader, Windows.Devices.Perception.PerceptionDepthFrameArrivedEventArgs) handler, EventRegistrationToken* return_token);
@@ -429,8 +383,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionDepthFrameSource")
 interface IPerceptionDepthFrameSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	HRESULT add_AvailableChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable) handler, EventRegistrationToken* return_token);
@@ -496,8 +448,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionDepthFrameSource")
 interface IPerceptionDepthFrameSource2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -507,8 +457,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionDepthFrameSourceAddedEventArgs")
 interface IPerceptionDepthFrameSourceAddedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionDepthFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT get_FrameSource(Windows.Devices.Perception.PerceptionDepthFrameSource* return_value);
@@ -518,8 +466,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionDepthFrameSourceRemovedEventArgs")
 interface IPerceptionDepthFrameSourceRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionDepthFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.	 Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT get_FrameSource(Windows.Devices.Perception.PerceptionDepthFrameSource* return_value);
@@ -529,8 +475,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionDepthFrameSource")
 interface IPerceptionDepthFrameSourceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionDepthFrameSource.CreateWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.CreateWatcher instead.")
 	HRESULT abi_CreateWatcher(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher* return_watcher);
@@ -546,8 +490,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher")
 interface IPerceptionDepthFrameSourceWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	HRESULT add_SourceAdded(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceAddedEventArgs) handler, EventRegistrationToken* return_token);
@@ -577,8 +519,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs")
 interface IPerceptionFrameSourcePropertiesChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionFrameSourcePropertiesChangedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT get_CollectionChange(Windows.Foundation.Collections.CollectionChange* return_value);
@@ -590,8 +530,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeResult")
 interface IPerceptionFrameSourcePropertyChangeResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionFrameSourcePropertyChangeResult may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT get_Status(Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeStatus* return_value);
@@ -603,8 +541,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionInfraredFrame")
 interface IPerceptionInfraredFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionInfraredFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.InfraredMediaFrame instead.")
 	HRESULT get_VideoFrame(Windows.Media.VideoFrame* return_value);
@@ -614,8 +550,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionInfraredFrameArrivedEventArgs")
 interface IPerceptionInfraredFrameArrivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionInfraredFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")
 	HRESULT get_RelativeTime(Windows.Foundation.TimeSpan* return_value);
@@ -627,8 +561,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionInfraredFrameReader")
 interface IPerceptionInfraredFrameReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	HRESULT add_FrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameReader, Windows.Devices.Perception.PerceptionInfraredFrameArrivedEventArgs) handler, EventRegistrationToken* return_token);
@@ -648,8 +580,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionInfraredFrameSource")
 interface IPerceptionInfraredFrameSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	HRESULT add_AvailableChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable) handler, EventRegistrationToken* return_token);
@@ -715,8 +645,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionInfraredFrameSource")
 interface IPerceptionInfraredFrameSource2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -726,8 +654,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionInfraredFrameSourceAddedEventArgs")
 interface IPerceptionInfraredFrameSourceAddedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionInfraredFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT get_FrameSource(Windows.Devices.Perception.PerceptionInfraredFrameSource* return_value);
@@ -737,8 +663,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionInfraredFrameSourceRemovedEventArgs")
 interface IPerceptionInfraredFrameSourceRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionInfraredFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT get_FrameSource(Windows.Devices.Perception.PerceptionInfraredFrameSource* return_value);
@@ -748,8 +672,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionInfraredFrameSource")
 interface IPerceptionInfraredFrameSourceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionInfraredFrameSource.CreateWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.CreateWatcher instead.")
 	HRESULT abi_CreateWatcher(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher* return_watcher);
@@ -765,8 +687,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher")
 interface IPerceptionInfraredFrameSourceWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	HRESULT add_SourceAdded(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceAddedEventArgs) handler, EventRegistrationToken* return_token);
@@ -796,8 +716,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.PerceptionVideoProfile")
 interface IPerceptionVideoProfile : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")
 	HRESULT get_BitmapPixelFormat(Windows.Graphics.Imaging.BitmapPixelFormat* return_value);

@@ -20,8 +20,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.KnownPerceptionFrameKind")
 interface IKnownPerceptionFrameKindStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("KnownPerceptionFrameKind may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT get_Color(HSTRING* return_value);
@@ -35,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionControlGroup")
 interface IPerceptionControlGroup : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionControlGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT get_FrameProviderIds(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
@@ -46,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionControlGroup")
 interface IPerceptionControlGroupFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionControlGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(HSTRING) ids, Windows.Devices.Perception.Provider.PerceptionControlGroup* return_result);
@@ -57,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionCorrelation")
 interface IPerceptionCorrelation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionCorrelation may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT get_TargetId(HSTRING* return_value);
@@ -72,8 +64,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionCorrelation")
 interface IPerceptionCorrelationFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionCorrelation may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_Create(HSTRING targetId, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Quaternion orientation, Windows.Devices.Perception.Provider.PerceptionCorrelation* return_result);
@@ -83,8 +73,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionCorrelationGroup")
 interface IPerceptionCorrelationGroup : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionCorrelationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT get_RelativeLocations(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.Provider.PerceptionCorrelation)* return_value);
@@ -94,8 +82,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionCorrelationGroup")
 interface IPerceptionCorrelationGroupFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionCorrelationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(Windows.Devices.Perception.Provider.PerceptionCorrelation) relativeLocations, Windows.Devices.Perception.Provider.PerceptionCorrelationGroup* return_result);
@@ -105,8 +91,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup")
 interface IPerceptionFaceAuthenticationGroup : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionFaceAuthenticationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT get_FrameProviderIds(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
@@ -116,8 +100,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup")
 interface IPerceptionFaceAuthenticationGroupFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionFaceAuthenticationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(HSTRING) ids, Windows.Devices.Perception.Provider.PerceptionStartFaceAuthenticationHandler startHandler, Windows.Devices.Perception.Provider.PerceptionStopFaceAuthenticationHandler stopHandler, Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup* return_result);
@@ -127,8 +109,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionFrame")
 interface IPerceptionFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionFrame may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT get_RelativeTime(Windows.Foundation.TimeSpan* return_value);
@@ -143,8 +123,6 @@ extern(Windows):
 @uuid("794f7ab9-b37d-3b33-a10d-30626419ce65")
 interface IPerceptionFrameProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("IPerceptionFrameProvider may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT get_FrameProviderInfo(Windows.Devices.Perception.Provider.PerceptionFrameProviderInfo* return_result);
@@ -164,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionFrameProviderInfo")
 interface IPerceptionFrameProviderInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT get_Id(HSTRING* return_value);
@@ -192,8 +168,6 @@ extern(Windows):
 @uuid("a959ce07-ead3-33df-8ec1-b924abe019c4")
 interface IPerceptionFrameProviderManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("IPerceptionFrameProviderManager may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_GetFrameProvider(Windows.Devices.Perception.Provider.PerceptionFrameProviderInfo frameProviderInfo, Windows.Devices.Perception.Provider.IPerceptionFrameProvider* return_result);
@@ -203,8 +177,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionFrameProviderManagerService")
 interface IPerceptionFrameProviderManagerServiceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionFrameProviderManagerService may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_RegisterFrameProviderInfo(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManager manager, Windows.Devices.Perception.Provider.PerceptionFrameProviderInfo frameProviderInfo);
@@ -232,8 +204,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionPropertyChangeRequest")
 interface IPerceptionPropertyChangeRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionPropertyChangeRequest may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT get_Name(HSTRING* return_value);
@@ -251,8 +221,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionVideoFrameAllocator")
 interface IPerceptionVideoFrameAllocator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionVideoFrameAllocator may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_AllocateFrame(Windows.Devices.Perception.Provider.PerceptionFrame* return_value);
@@ -264,8 +232,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionVideoFrameAllocator")
 interface IPerceptionVideoFrameAllocatorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PerceptionVideoFrameAllocator may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_Create(UINT32 maxOutstandingFrameCountForWrite, Windows.Graphics.Imaging.BitmapPixelFormat format, Windows.Foundation.Size resolution, Windows.Graphics.Imaging.BitmapAlphaMode alpha, Windows.Devices.Perception.Provider.PerceptionVideoFrameAllocator* return_result);

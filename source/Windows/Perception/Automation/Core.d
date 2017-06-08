@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Perception.Automation.Core.CorePerceptionAutomation")
 interface ICorePerceptionAutomationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetActivationFactoryProvider(Windows.Foundation.IGetActivationFactory provider);
 }

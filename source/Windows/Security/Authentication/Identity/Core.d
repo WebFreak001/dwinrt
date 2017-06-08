@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationManager")
 interface IMicrosoftAccountMultiFactorAuthenticationManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetOneTimePassCodeAsync(HSTRING userAccountId, UINT32 codeLength, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorOneTimeCodedInfo)* return_asyncOperation);
 	HRESULT abi_AddDeviceAsync(HSTRING userAccountId, HSTRING authenticationToken, HSTRING wnsChannelId, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse)* return_asyncOperation);
@@ -25,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationManager")
 interface IMicrosoftAccountMultiFactorAuthenticatorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Current(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationManager* return_value);
 }
@@ -35,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorGetSessionsResult")
 interface IMicrosoftAccountMultiFactorGetSessionsResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Sessions(Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo)* return_value);
 	HRESULT get_ServiceResponse(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse* return_value);
@@ -46,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorOneTimeCodedInfo")
 interface IMicrosoftAccountMultiFactorOneTimeCodedInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Code(HSTRING* return_value);
 	HRESULT get_TimeInterval(Windows.Foundation.TimeSpan* return_value);
@@ -59,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo")
 interface IMicrosoftAccountMultiFactorSessionInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UserAccountId(HSTRING* return_value);
 	HRESULT get_SessionId(HSTRING* return_value);
@@ -75,8 +65,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo")
 interface IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Sessions(Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo)* return_value);
 	HRESULT get_UnregisteredAccounts(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);

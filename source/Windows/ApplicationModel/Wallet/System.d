@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Wallet.System.WalletItemSystemStore")
 interface IWalletItemSystemStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetItemsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem))* return_operation);
 	HRESULT abi_DeleteAsync(Windows.ApplicationModel.Wallet.WalletItem item, Windows.Foundation.IAsyncAction* return_operation);
@@ -20,8 +18,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.System.WalletItemSystemStore")
 interface IWalletItemSystemStore2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ItemsChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ItemsChanged(EventRegistrationToken cookie);
@@ -31,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.System.WalletManagerSystem")
 interface IWalletManagerSystemStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestStoreAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore)* return_operation);
 }

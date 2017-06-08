@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Globalization.Collation.CharacterGrouping")
 interface ICharacterGrouping : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_First(HSTRING* return_value);
 	HRESULT get_Label(HSTRING* return_value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.Collation.CharacterGroupings")
 interface ICharacterGroupings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Lookup(HSTRING text, HSTRING* return_result);
 }
@@ -27,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.Collation.CharacterGroupings")
 interface ICharacterGroupingsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING language, Windows.Globalization.Collation.CharacterGroupings* return_result);
 }

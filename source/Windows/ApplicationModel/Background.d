@@ -27,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.ActivitySensorTrigger")
 interface IActivitySensorTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SubscribedActivities(Windows.Foundation.Collections.IVector!(Windows.Devices.Sensors.ActivityType)* return_value);
 	HRESULT get_ReportInterval(UINT32* return_value);
@@ -40,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.ActivitySensorTrigger")
 interface IActivitySensorTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(UINT32 reportIntervalInMilliseconds, Windows.ApplicationModel.Background.ActivitySensorTrigger* return_activityTrigger);
 }
@@ -50,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.AlarmApplicationManager")
 interface IAlarmApplicationManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.AlarmAccessStatus)* return_operation);
 	HRESULT abi_GetAccessStatus(Windows.ApplicationModel.Background.AlarmAccessStatus* return_status);
@@ -61,8 +55,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.AppBroadcastTrigger")
 interface IAppBroadcastTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ProviderInfo(Windows.ApplicationModel.Background.AppBroadcastTriggerProviderInfo value);
 	HRESULT get_ProviderInfo(Windows.ApplicationModel.Background.AppBroadcastTriggerProviderInfo* return_value);
@@ -72,8 +64,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.AppBroadcastTrigger")
 interface IAppBroadcastTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAppBroadcastTrigger(HSTRING providerKey, Windows.ApplicationModel.Background.AppBroadcastTrigger* return_broadcastTrigger);
 }
@@ -82,8 +72,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.AppBroadcastTriggerProviderInfo")
 interface IAppBroadcastTriggerProviderInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_DisplayNameResource(HSTRING value);
 	HRESULT get_DisplayNameResource(HSTRING* return_value);
@@ -103,8 +91,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.ApplicationTrigger")
 interface IApplicationTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.ApplicationTriggerResult)* return_result);
 	HRESULT abi_RequestAsyncWithArguments(Windows.Foundation.Collections.ValueSet arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.ApplicationTriggerResult)* return_result);
@@ -114,8 +100,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.ApplicationTriggerDetails")
 interface IApplicationTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Arguments(Windows.Foundation.Collections.ValueSet* return_value);
 }
@@ -135,8 +119,6 @@ interface IBackgroundCondition : IInspectable
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundExecutionManager")
 interface IBackgroundExecutionManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.BackgroundAccessStatus)* return_operation);
 	HRESULT abi_RequestAccessForApplicationAsync(HSTRING applicationId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.BackgroundAccessStatus)* return_operation);
@@ -149,8 +131,6 @@ extern(Windows):
 @uuid("7d13d534-fd12-43ce-8c22-ea1ff13c06df")
 interface IBackgroundTask : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Run(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance);
 }
@@ -159,8 +139,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskBuilder")
 interface IBackgroundTaskBuilder : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_TaskEntryPoint(HSTRING value);
 	HRESULT get_TaskEntryPoint(HSTRING* return_value);
@@ -175,8 +153,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskBuilder")
 interface IBackgroundTaskBuilder2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_CancelOnConditionLoss(bool value);
 	HRESULT get_CancelOnConditionLoss(bool* return_value);
@@ -186,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskBuilder")
 interface IBackgroundTaskBuilder3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_IsNetworkRequested(bool value);
 	HRESULT get_IsNetworkRequested(bool* return_value);
@@ -197,8 +171,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskBuilder")
 interface IBackgroundTaskBuilder4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TaskGroup(Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup* return_value);
 	HRESULT set_TaskGroup(Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup value);
@@ -208,8 +180,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskCompletedEventArgs")
 interface IBackgroundTaskCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InstanceId(GUID* return_value);
 	HRESULT abi_CheckResult();
@@ -219,8 +189,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskDeferral")
 interface IBackgroundTaskDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -228,8 +196,6 @@ extern(Windows):
 @uuid("865bda7a-21d8-4573-8f32-928a1b0641f6")
 interface IBackgroundTaskInstance : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InstanceId(GUID* return_value);
 	HRESULT get_Task(Windows.ApplicationModel.Background.BackgroundTaskRegistration* return_task);
@@ -245,8 +211,6 @@ extern(Windows):
 @uuid("4f7d0176-0c76-4fb4-896d-5de1864122f6")
 interface IBackgroundTaskInstance2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetThrottleCount(Windows.ApplicationModel.Background.BackgroundTaskThrottleCounter counter, UINT32* return_value);
 }
@@ -254,8 +218,6 @@ extern(Windows):
 @uuid("7f29f23c-aa04-4b08-97b0-06d874cdabf5")
 interface IBackgroundTaskInstance4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_value);
 }
@@ -264,8 +226,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs")
 interface IBackgroundTaskProgressEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InstanceId(GUID* return_value);
 	HRESULT get_Progress(UINT32* return_value);
@@ -274,8 +234,6 @@ extern(Windows):
 @uuid("10654cc2-a26e-43bf-8c12-1fb40dbfbfa0")
 interface IBackgroundTaskRegistration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TaskId(GUID* return_value);
 	HRESULT get_Name(HSTRING* return_value);
@@ -289,8 +247,6 @@ extern(Windows):
 @uuid("6138c703-bb86-4112-afc3-7f939b166e3b")
 interface IBackgroundTaskRegistration2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Trigger(Windows.ApplicationModel.Background.IBackgroundTrigger* return_value);
 }
@@ -298,8 +254,6 @@ extern(Windows):
 @uuid("fe338195-9423-4d8b-830d-b1dd2c7badd5")
 interface IBackgroundTaskRegistration3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TaskGroup(Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup* return_value);
 }
@@ -308,8 +262,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup")
 interface IBackgroundTaskRegistrationGroup : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_Name(HSTRING* return_value);
@@ -322,8 +274,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup")
 interface IBackgroundTaskRegistrationGroupFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING id, Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup* return_group);
 	HRESULT abi_CreateWithName(HSTRING id, HSTRING name, Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup* return_group);
@@ -333,8 +283,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskRegistration")
 interface IBackgroundTaskRegistrationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllTasks(Windows.Foundation.Collections.IMapView!(GUID, Windows.ApplicationModel.Background.IBackgroundTaskRegistration)* return_tasks);
 }
@@ -343,8 +291,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskRegistration")
 interface IBackgroundTaskRegistrationStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllTaskGroups(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup)* return_value);
 	HRESULT abi_GetTaskGroup(HSTRING groupId, Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup* return_value);
@@ -359,8 +305,6 @@ interface IBackgroundTrigger : IInspectable
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundWorkCost")
 interface IBackgroundWorkCostStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CurrentBackgroundWorkCost(Windows.ApplicationModel.Background.BackgroundWorkCostValue* return_value);
 }
@@ -369,8 +313,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.BluetoothLEAdvertisementPublisherTrigger")
 interface IBluetoothLEAdvertisementPublisherTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Advertisement(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement* return_value);
 }
@@ -379,8 +321,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.BluetoothLEAdvertisementWatcherTrigger")
 interface IBluetoothLEAdvertisementWatcherTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MinSamplingInterval(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_MaxSamplingInterval(Windows.Foundation.TimeSpan* return_value);
@@ -402,8 +342,6 @@ interface ICachedFileUpdaterTrigger : IInspectable
 @WinrtFactory("Windows.ApplicationModel.Background.CachedFileUpdaterTriggerDetails")
 interface ICachedFileUpdaterTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UpdateTarget(Windows.Storage.Provider.CachedFileTarget* return_value);
 	HRESULT get_UpdateRequest(Windows.Storage.Provider.FileUpdateRequest* return_value);
@@ -432,8 +370,6 @@ interface IContactStoreNotificationTrigger : IInspectable
 @WinrtFactory("Windows.ApplicationModel.Background.ContentPrefetchTrigger")
 interface IContentPrefetchTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WaitInterval(Windows.Foundation.TimeSpan* return_waitInterval);
 }
@@ -442,8 +378,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.ContentPrefetchTrigger")
 interface IContentPrefetchTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Foundation.TimeSpan waitInterval, Windows.ApplicationModel.Background.ContentPrefetchTrigger* return_trigger);
 }
@@ -452,8 +386,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.DeviceConnectionChangeTrigger")
 interface IDeviceConnectionChangeTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_CanMaintainConnection(bool* return_value);
@@ -465,8 +397,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.DeviceConnectionChangeTrigger")
 interface IDeviceConnectionChangeTriggerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceConnectionChangeTrigger)* return_deviceChangeTrigger);
 }
@@ -475,8 +405,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.DeviceManufacturerNotificationTrigger")
 interface IDeviceManufacturerNotificationTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TriggerQualifier(HSTRING* return_value);
 	HRESULT get_OneShot(bool* return_oneShot);
@@ -486,8 +414,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.DeviceManufacturerNotificationTrigger")
 interface IDeviceManufacturerNotificationTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING triggerQualifier, bool oneShot, Windows.ApplicationModel.Background.DeviceManufacturerNotificationTrigger* return_trigger);
 }
@@ -496,8 +422,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.DeviceServicingTrigger")
 interface IDeviceServicingTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAsyncSimple(HSTRING deviceId, Windows.Foundation.TimeSpan expectedDuration, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
 	HRESULT abi_RequestAsyncWithArguments(HSTRING deviceId, Windows.Foundation.TimeSpan expectedDuration, HSTRING arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
@@ -507,8 +431,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.DeviceUseTrigger")
 interface IDeviceUseTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAsyncSimple(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
 	HRESULT abi_RequestAsyncWithArguments(HSTRING deviceId, HSTRING arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
@@ -530,8 +452,6 @@ interface IEmailStoreNotificationTrigger : IInspectable
 @WinrtFactory("Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger")
 interface IGattCharacteristicNotificationTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Characteristic(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic* return_value);
 }
@@ -540,8 +460,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger")
 interface IGattCharacteristicNotificationTrigger2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EventTriggeringMode(Windows.Devices.Bluetooth.Background.BluetoothEventTriggeringMode* return_value);
 }
@@ -550,8 +468,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger")
 interface IGattCharacteristicNotificationTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic characteristic, Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger* return_gattCharacteristicNotificationTrigger);
 }
@@ -560,8 +476,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger")
 interface IGattCharacteristicNotificationTriggerFactory2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithEventTriggeringMode(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic characteristic, Windows.Devices.Bluetooth.Background.BluetoothEventTriggeringMode eventTriggeringMode, Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger* return_result);
 }
@@ -570,8 +484,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.GattServiceProviderTrigger")
 interface IGattServiceProviderTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TriggerId(HSTRING* return_value);
 	HRESULT get_Service(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalService* return_value);
@@ -583,8 +495,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.GattServiceProviderTriggerResult")
 interface IGattServiceProviderTriggerResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Trigger(Windows.ApplicationModel.Background.GattServiceProviderTrigger* return_value);
 	HRESULT get_Error(Windows.Devices.Bluetooth.BluetoothError* return_value);
@@ -594,8 +504,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.GattServiceProviderTrigger")
 interface IGattServiceProviderTriggerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAsync(HSTRING triggerId, GUID serviceUuid, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.GattServiceProviderTriggerResult)* return_operation);
 }
@@ -604,8 +512,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.LocationTrigger")
 interface ILocationTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TriggerType(Windows.ApplicationModel.Background.LocationTriggerType* return_triggerType);
 }
@@ -614,8 +520,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.LocationTrigger")
 interface ILocationTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.ApplicationModel.Background.LocationTriggerType triggerType, Windows.ApplicationModel.Background.LocationTrigger* return_locationTrigger);
 }
@@ -624,8 +528,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.MaintenanceTrigger")
 interface IMaintenanceTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FreshnessTime(UINT32* return_freshnessTime);
 	HRESULT get_OneShot(bool* return_oneShot);
@@ -635,8 +537,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.MaintenanceTrigger")
 interface IMaintenanceTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(UINT32 freshnessTime, bool oneShot, Windows.ApplicationModel.Background.MaintenanceTrigger* return_trigger);
 }
@@ -645,8 +545,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.MediaProcessingTrigger")
 interface IMediaProcessingTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.MediaProcessingTriggerResult)* return_result);
 	HRESULT abi_RequestAsyncWithArguments(Windows.Foundation.Collections.ValueSet arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.MediaProcessingTriggerResult)* return_result);
@@ -662,8 +560,6 @@ interface INetworkOperatorHotspotAuthenticationTrigger : IInspectable
 @WinrtFactory("Windows.ApplicationModel.Background.NetworkOperatorNotificationTrigger")
 interface INetworkOperatorNotificationTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NetworkAccountId(HSTRING* return_value);
 }
@@ -672,8 +568,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.NetworkOperatorNotificationTrigger")
 interface INetworkOperatorNotificationTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING networkAccountId, Windows.ApplicationModel.Background.NetworkOperatorNotificationTrigger* return_trigger);
 }
@@ -682,8 +576,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.PhoneTrigger")
 interface IPhoneTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OneShot(bool* return_value);
 	HRESULT get_TriggerType(Windows.ApplicationModel.Calls.Background.PhoneTriggerType* return_result);
@@ -693,8 +585,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.PhoneTrigger")
 interface IPhoneTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.ApplicationModel.Calls.Background.PhoneTriggerType type, bool oneShot, Windows.ApplicationModel.Background.PhoneTrigger* return_result);
 }
@@ -703,8 +593,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.PushNotificationTrigger")
 interface IPushNotificationTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING applicationId, Windows.ApplicationModel.Background.PushNotificationTrigger* return_trigger);
 }
@@ -719,8 +607,6 @@ interface IRcsEndUserMessageAvailableTrigger : IInspectable
 @WinrtFactory("Windows.ApplicationModel.Background.RfcommConnectionTrigger")
 interface IRfcommConnectionTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InboundConnection(Windows.Devices.Bluetooth.Background.RfcommInboundConnectionInformation* return_value);
 	HRESULT get_OutboundConnection(Windows.Devices.Bluetooth.Background.RfcommOutboundConnectionInformation* return_value);
@@ -748,8 +634,6 @@ interface ISensorDataThresholdTrigger : IInspectable
 @WinrtFactory("Windows.ApplicationModel.Background.SensorDataThresholdTrigger")
 interface ISensorDataThresholdTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Sensors.ISensorDataThreshold threshold, Windows.ApplicationModel.Background.SensorDataThresholdTrigger* return_trigger);
 }
@@ -758,8 +642,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.SmsMessageReceivedTrigger")
 interface ISmsMessageReceivedTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Sms.SmsFilterRules filterRules, Windows.ApplicationModel.Background.SmsMessageReceivedTrigger* return_value);
 }
@@ -768,8 +650,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.SocketActivityTrigger")
 interface ISocketActivityTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsWakeFromLowPowerSupported(bool* return_value);
 }
@@ -784,8 +664,6 @@ interface IStorageLibraryContentChangedTrigger : IInspectable
 @WinrtFactory("Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger")
 interface IStorageLibraryContentChangedTriggerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Storage.StorageLibrary storageLibrary, Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger* return_result);
 	HRESULT abi_CreateFromLibraries(Windows.Foundation.Collections.IIterable!(Windows.Storage.StorageLibrary) storageLibraries, Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger* return_result);
@@ -795,8 +673,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.SystemCondition")
 interface ISystemCondition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ConditionType(Windows.ApplicationModel.Background.SystemConditionType* return_conditionType);
 }
@@ -805,8 +681,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.SystemCondition")
 interface ISystemConditionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.ApplicationModel.Background.SystemConditionType conditionType, Windows.ApplicationModel.Background.SystemCondition* return_condition);
 }
@@ -815,8 +689,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.SystemTrigger")
 interface ISystemTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OneShot(bool* return_oneShot);
 	HRESULT get_TriggerType(Windows.ApplicationModel.Background.SystemTriggerType* return_triggerType);
@@ -826,8 +698,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.SystemTrigger")
 interface ISystemTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.ApplicationModel.Background.SystemTriggerType triggerType, bool oneShot, Windows.ApplicationModel.Background.SystemTrigger* return_trigger);
 }
@@ -836,8 +706,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.TimeTrigger")
 interface ITimeTrigger : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FreshnessTime(UINT32* return_freshnessTime);
 	HRESULT get_OneShot(bool* return_oneShot);
@@ -847,8 +715,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.TimeTrigger")
 interface ITimeTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(UINT32 freshnessTime, bool oneShot, Windows.ApplicationModel.Background.TimeTrigger* return_trigger);
 }
@@ -857,8 +723,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.ToastNotificationActionTrigger")
 interface IToastNotificationActionTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING applicationId, Windows.ApplicationModel.Background.ToastNotificationActionTrigger* return_trigger);
 }
@@ -867,8 +731,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.ToastNotificationHistoryChangedTrigger")
 interface IToastNotificationHistoryChangedTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING applicationId, Windows.ApplicationModel.Background.ToastNotificationHistoryChangedTrigger* return_trigger);
 }
@@ -877,8 +739,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Background.UserNotificationChangedTrigger")
 interface IUserNotificationChangedTriggerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.UI.Notifications.NotificationKinds notificationKinds, Windows.ApplicationModel.Background.UserNotificationChangedTrigger* return_trigger);
 }

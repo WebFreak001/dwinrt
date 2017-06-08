@@ -19,8 +19,6 @@ extern(Windows):
 @uuid("735924d3-811f-4494-b69c-c641a0c61543")
 interface IGameListEntry : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayInfo(Windows.ApplicationModel.AppDisplayInfo* return_value);
 	HRESULT abi_LaunchAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -33,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Preview.GamesEnumeration.GameList")
 interface IGameListStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindAllAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Preview.GamesEnumeration.GameListEntry))* return_operation);
 	HRESULT abi_FindAllAsyncPackageFamilyName(HSTRING packageFamilyName, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Preview.GamesEnumeration.GameListEntry))* return_operation);

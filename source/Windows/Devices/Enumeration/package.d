@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Enumeration.DeviceAccessChangedEventArgs")
 interface IDeviceAccessChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Enumeration.DeviceAccessStatus* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceAccessChangedEventArgs")
 interface IDeviceAccessChangedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 }
@@ -26,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceAccessInformation")
 interface IDeviceAccessInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_AccessChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceAccessInformation, Windows.Devices.Enumeration.DeviceAccessChangedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_AccessChanged(EventRegistrationToken cookie);
@@ -38,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceAccessInformation")
 interface IDeviceAccessInformationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromId(HSTRING deviceId, Windows.Devices.Enumeration.DeviceAccessInformation* return_value);
 	HRESULT abi_CreateFromDeviceClassId(GUID deviceClassId, Windows.Devices.Enumeration.DeviceAccessInformation* return_value);
@@ -50,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceConnectionChangeTriggerDetails")
 interface IDeviceConnectionChangeTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
@@ -60,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceDisconnectButtonClickedEventArgs")
 interface IDeviceDisconnectButtonClickedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Device(Windows.Devices.Enumeration.DeviceInformation* return_value);
 }
@@ -70,8 +58,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceInformation")
 interface IDeviceInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_Name(HSTRING* return_value);
@@ -88,8 +74,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceInformation")
 interface IDeviceInformation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.Devices.Enumeration.DeviceInformationKind* return_value);
 	HRESULT get_Pairing(Windows.Devices.Enumeration.DeviceInformationPairing* return_value);
@@ -99,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceInformationCustomPairing")
 interface IDeviceInformationCustomPairing : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_PairAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
 	HRESULT abi_PairWithProtectionLevelAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
@@ -113,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceInformationPairing")
 interface IDeviceInformationPairing : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsPaired(bool* return_value);
 	HRESULT get_CanPair(bool* return_value);
@@ -126,8 +106,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceInformationPairing")
 interface IDeviceInformationPairing2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProtectionLevel(Windows.Devices.Enumeration.DevicePairingProtectionLevel* return_value);
 	HRESULT get_Custom(Windows.Devices.Enumeration.DeviceInformationCustomPairing* return_value);
@@ -139,8 +117,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceInformationPairing")
 interface IDeviceInformationPairingStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryRegisterForAllInboundPairingRequests(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, bool* return_result);
 }
@@ -149,8 +125,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceInformation")
 interface IDeviceInformationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation)* return_asyncOp);
 	HRESULT abi_CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation)* return_asyncOp);
@@ -168,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceInformation")
 interface IDeviceInformationStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAqsFilterFromDeviceClass(Windows.Devices.Enumeration.DeviceClass deviceClass, HSTRING* return_aqsFilter);
 	HRESULT abi_CreateFromIdAsyncWithKindAndAdditionalProperties(HSTRING deviceId, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Devices.Enumeration.DeviceInformationKind kind, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation)* return_asyncOp);
@@ -181,8 +153,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceInformationUpdate")
 interface IDeviceInformationUpdate : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
@@ -192,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceInformationUpdate")
 interface IDeviceInformationUpdate2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.Devices.Enumeration.DeviceInformationKind* return_value);
 }
@@ -202,8 +170,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DevicePairingRequestedEventArgs")
 interface IDevicePairingRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);
 	HRESULT get_PairingKind(Windows.Devices.Enumeration.DevicePairingKinds* return_value);
@@ -217,8 +183,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DevicePairingResult")
 interface IDevicePairingResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Enumeration.DevicePairingResultStatus* return_status);
 	HRESULT get_ProtectionLevelUsed(Windows.Devices.Enumeration.DevicePairingProtectionLevel* return_value);
@@ -233,8 +197,6 @@ interface IDevicePairingSettings : IInspectable
 @WinrtFactory("Windows.Devices.Enumeration.DevicePicker")
 interface IDevicePicker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Filter(Windows.Devices.Enumeration.DevicePickerFilter* return_filter);
 	HRESULT get_Appearance(Windows.Devices.Enumeration.DevicePickerAppearance* return_value);
@@ -257,8 +219,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DevicePickerAppearance")
 interface IDevicePickerAppearance : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT set_Title(HSTRING value);
@@ -280,8 +240,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DevicePickerFilter")
 interface IDevicePickerFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SupportedDeviceClasses(Windows.Foundation.Collections.IVector!(Windows.Devices.Enumeration.DeviceClass)* return_value);
 	HRESULT get_SupportedDeviceSelectors(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
@@ -291,8 +249,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceSelectedEventArgs")
 interface IDeviceSelectedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectedDevice(Windows.Devices.Enumeration.DeviceInformation* return_value);
 }
@@ -301,8 +257,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceUnpairingResult")
 interface IDeviceUnpairingResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Enumeration.DeviceUnpairingResultStatus* return_status);
 }
@@ -311,8 +265,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceWatcher")
 interface IDeviceWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformation) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Added(EventRegistrationToken token);
@@ -333,8 +285,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceWatcher")
 interface IDeviceWatcher2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetBackgroundTrigger(Windows.Foundation.Collections.IIterable!(Windows.Devices.Enumeration.DeviceWatcherEventKind) requestedEventKinds, Windows.ApplicationModel.Background.DeviceWatcherTrigger* return_trigger);
 }
@@ -343,8 +293,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceWatcherEvent")
 interface IDeviceWatcherEvent : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.Devices.Enumeration.DeviceWatcherEventKind* return_value);
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);
@@ -355,8 +303,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.DeviceWatcherTriggerDetails")
 interface IDeviceWatcherTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceWatcherEvents(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Enumeration.DeviceWatcherEvent)* return_value);
 }
@@ -365,8 +311,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.EnclosureLocation")
 interface IEnclosureLocation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InDock(bool* return_value);
 	HRESULT get_InLid(bool* return_value);
@@ -377,8 +321,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.EnclosureLocation")
 interface IEnclosureLocation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RotationAngleInDegreesClockwise(UINT32* return_value);
 }

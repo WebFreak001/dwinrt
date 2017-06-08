@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Data.Xml.Dom.DtdEntity")
 interface IDtdEntity : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PublicId(IInspectable* return_value);
 	HRESULT get_SystemId(IInspectable* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Xml.Dom.DtdNotation")
 interface IDtdNotation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PublicId(IInspectable* return_value);
 	HRESULT get_SystemId(IInspectable* return_value);
@@ -29,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Xml.Dom.XmlAttribute")
 interface IXmlAttribute : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Specified(bool* return_value);
@@ -47,8 +41,6 @@ interface IXmlCDataSection : IInspectable
 @uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26")
 interface IXmlCharacterData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Data(HSTRING* return_value);
 	HRESULT set_Data(HSTRING value);
@@ -70,8 +62,6 @@ interface IXmlComment : IInspectable
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDocument")
 interface IXmlDocument : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Doctype(Windows.Data.Xml.Dom.XmlDocumentType* return_value);
 	HRESULT get_Implementation(Windows.Data.Xml.Dom.XmlDomImplementation* return_value);
@@ -102,8 +92,6 @@ interface IXmlDocumentFragment : IInspectable
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDocument")
 interface IXmlDocumentIO : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LoadXml(HSTRING xml);
 	HRESULT abi_LoadXmlWithSettings(HSTRING xml, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings);
@@ -114,8 +102,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDocument")
 interface IXmlDocumentIO2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LoadXmlFromBuffer(Windows.Storage.Streams.IBuffer buffer);
 	HRESULT abi_LoadXmlFromBufferWithSettings(Windows.Storage.Streams.IBuffer buffer, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings);
@@ -125,8 +111,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDocument")
 interface IXmlDocumentStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LoadFromUriAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument)* return_asyncInfo);
 	HRESULT abi_LoadFromUriWithSettingsAsync(Windows.Foundation.Uri uri, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings, Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument)* return_asyncInfo);
@@ -138,8 +122,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDocumentType")
 interface IXmlDocumentType : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Entities(Windows.Data.Xml.Dom.XmlNamedNodeMap* return_value);
@@ -150,8 +132,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDomImplementation")
 interface IXmlDomImplementation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_HasFeature(HSTRING feature, IInspectable version_, bool* return_featureSupported);
 }
@@ -160,8 +140,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Xml.Dom.XmlElement")
 interface IXmlElement : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TagName(HSTRING* return_value);
 	HRESULT abi_GetAttribute(HSTRING attributeName, HSTRING* return_attributeValue);
@@ -188,8 +166,6 @@ interface IXmlEntityReference : IInspectable
 @WinrtFactory("Windows.Data.Xml.Dom.XmlLoadSettings")
 interface IXmlLoadSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxElementDepth(UINT32* return_value);
 	HRESULT set_MaxElementDepth(UINT32 value);
@@ -207,8 +183,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Xml.Dom.XmlNamedNodeMap")
 interface IXmlNamedNodeMap : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Length(UINT32* return_value);
 	HRESULT abi_Item(UINT32 index, Windows.Data.Xml.Dom.IXmlNode* return_node);
@@ -223,8 +197,6 @@ extern(Windows):
 @uuid("1c741d59-2122-47d5-a856-83f3d4214875")
 interface IXmlNode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NodeValue(IInspectable* return_value);
 	HRESULT set_NodeValue(IInspectable value);
@@ -255,8 +227,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Xml.Dom.XmlNodeList")
 interface IXmlNodeList : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Length(UINT32* return_value);
 	HRESULT abi_Item(UINT32 index, Windows.Data.Xml.Dom.IXmlNode* return_node);
@@ -265,8 +235,6 @@ extern(Windows):
 @uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b")
 interface IXmlNodeSelector : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SelectSingleNode(HSTRING xpath, Windows.Data.Xml.Dom.IXmlNode* return_node);
 	HRESULT abi_SelectNodes(HSTRING xpath, Windows.Data.Xml.Dom.XmlNodeList* return_nodelist);
@@ -277,8 +245,6 @@ extern(Windows):
 @uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c")
 interface IXmlNodeSerializer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetXml(HSTRING* return_outerXml);
 	HRESULT get_InnerText(HSTRING* return_value);
@@ -289,8 +255,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Xml.Dom.XmlProcessingInstruction")
 interface IXmlProcessingInstruction : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Target(HSTRING* return_value);
 	HRESULT get_Data(HSTRING* return_value);
@@ -300,8 +264,6 @@ extern(Windows):
 @uuid("f931a4cb-308d-4760-a1d5-43b67450ac7e")
 interface IXmlText : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SplitText(UINT32 offset, Windows.Data.Xml.Dom.IXmlText* return_secondPart);
 }

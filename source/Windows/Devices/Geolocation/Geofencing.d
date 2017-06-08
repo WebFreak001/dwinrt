@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Geolocation.Geofencing.Geofence")
 interface IGeofence : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StartTime(Windows.Foundation.DateTime* return_value);
 	HRESULT get_Duration(Windows.Foundation.TimeSpan* return_value);
@@ -22,8 +20,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geofencing.Geofence")
 interface IGeofenceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.Geofence* return_geofence);
 	HRESULT abi_CreateWithMonitorStates(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates monitoredStates, bool singleUse, Windows.Devices.Geolocation.Geofencing.Geofence* return_geofence);
@@ -35,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geofencing.GeofenceMonitor")
 interface IGeofenceMonitor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus* return_value);
 	HRESULT get_Geofences(Windows.Foundation.Collections.IVector!(Windows.Devices.Geolocation.Geofencing.Geofence)* return_value);
@@ -52,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geofencing.GeofenceMonitor")
 interface IGeofenceMonitorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Current(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor* return_value);
 }
@@ -62,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geofencing.GeofenceStateChangeReport")
 interface IGeofenceStateChangeReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NewState(Windows.Devices.Geolocation.Geofencing.GeofenceState* return_value);
 	HRESULT get_Geofence(Windows.Devices.Geolocation.Geofencing.Geofence* return_value);

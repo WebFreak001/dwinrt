@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Printers.Extensions.Print3DWorkflow")
 interface IPrint3DWorkflow : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceID(HSTRING* return_value);
 	HRESULT abi_GetPrintModelPackage(IInspectable* return_printModelPackage);
@@ -21,8 +19,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Printers.Extensions.Print3DWorkflow")
 interface IPrint3DWorkflow2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_PrinterChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_PrinterChanged(EventRegistrationToken eventCookie);
@@ -32,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs")
 interface IPrint3DWorkflowPrintRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Printers.Extensions.Print3DWorkflowStatus* return_value);
 	HRESULT abi_SetExtendedStatus(Windows.Devices.Printers.Extensions.Print3DWorkflowDetail value);
@@ -45,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs")
 interface IPrint3DWorkflowPrinterChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NewDeviceId(HSTRING* return_value);
 }
@@ -55,8 +47,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Printers.Extensions.PrintExtensionContext")
 interface IPrintExtensionContextStatic : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromDeviceId(HSTRING deviceId, IInspectable* return_context);
 }
@@ -65,8 +55,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Printers.Extensions.PrintNotificationEventDetails")
 interface IPrintNotificationEventDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PrinterName(HSTRING* return_value);
 	HRESULT get_EventData(HSTRING* return_value);
@@ -77,8 +65,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Printers.Extensions.PrintTaskConfiguration")
 interface IPrintTaskConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PrinterExtensionContext(IInspectable* return_context);
 	HRESULT add_SaveRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.PrintTaskConfiguration, Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
@@ -89,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequest")
 interface IPrintTaskConfigurationSaveRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Cancel();
 	HRESULT abi_Save(IInspectable printerExtensionContext);
@@ -102,8 +86,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedDeferral")
 interface IPrintTaskConfigurationSaveRequestedDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -112,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs")
 interface IPrintTaskConfigurationSaveRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequest* return_context);
 }

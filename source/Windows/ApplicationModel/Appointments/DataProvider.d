@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequest")
 interface IAppointmentCalendarCancelMeetingRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppointmentCalendarLocalId(HSTRING* return_value);
 	HRESULT get_AppointmentLocalId(HSTRING* return_value);
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs")
 interface IAppointmentCalendarCancelMeetingRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -34,8 +30,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequest")
 interface IAppointmentCalendarCreateOrUpdateAppointmentRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppointmentCalendarLocalId(HSTRING* return_value);
 	HRESULT get_Appointment(Windows.ApplicationModel.Appointments.Appointment* return_value);
@@ -49,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs")
 interface IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -60,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequest")
 interface IAppointmentCalendarForwardMeetingRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppointmentCalendarLocalId(HSTRING* return_value);
 	HRESULT get_AppointmentLocalId(HSTRING* return_value);
@@ -78,8 +68,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs")
 interface IAppointmentCalendarForwardMeetingRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -89,8 +77,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequest")
 interface IAppointmentCalendarProposeNewTimeForMeetingRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppointmentCalendarLocalId(HSTRING* return_value);
 	HRESULT get_AppointmentLocalId(HSTRING* return_value);
@@ -107,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs")
 interface IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -118,8 +102,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequest")
 interface IAppointmentCalendarSyncManagerSyncRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppointmentCalendarLocalId(HSTRING* return_value);
 	HRESULT abi_ReportCompletedAsync(Windows.Foundation.IAsyncAction* return_result);
@@ -130,8 +112,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs")
 interface IAppointmentCalendarSyncManagerSyncRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -141,8 +121,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequest")
 interface IAppointmentCalendarUpdateMeetingResponseRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppointmentCalendarLocalId(HSTRING* return_value);
 	HRESULT get_AppointmentLocalId(HSTRING* return_value);
@@ -159,8 +137,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequestEventArgs")
 interface IAppointmentCalendarUpdateMeetingResponseRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -170,8 +146,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection")
 interface IAppointmentDataProviderConnection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_SyncRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SyncRequested(EventRegistrationToken token);
@@ -192,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderTriggerDetails")
 interface IAppointmentDataProviderTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Connection(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection* return_value);
 }

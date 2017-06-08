@@ -118,8 +118,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBar")
 interface IAppBar : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsOpen(bool* return_value);
 	HRESULT set_IsOpen(bool value);
@@ -135,8 +133,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBar")
 interface IAppBar2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ClosedDisplayMode(Windows.UI.Xaml.Controls.AppBarClosedDisplayMode* return_value);
 	HRESULT set_ClosedDisplayMode(Windows.UI.Xaml.Controls.AppBarClosedDisplayMode value);
@@ -146,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBar")
 interface IAppBar3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.AppBarTemplateSettings* return_value);
 	HRESULT add_Opening(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token);
@@ -160,8 +154,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBar")
 interface IAppBar4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode* return_value);
 	HRESULT set_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value);
@@ -171,8 +163,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarButton")
 interface IAppBarButton : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Label(HSTRING* return_value);
 	HRESULT set_Label(HSTRING value);
@@ -184,8 +174,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarButton")
 interface IAppBarButton3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LabelPosition(Windows.UI.Xaml.Controls.CommandBarLabelPosition* return_value);
 	HRESULT set_LabelPosition(Windows.UI.Xaml.Controls.CommandBarLabelPosition value);
@@ -195,8 +183,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarButton")
 interface IAppBarButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.AppBarButton* return_instance);
 }
@@ -205,8 +191,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarButton")
 interface IAppBarButtonStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LabelProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IconProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -217,8 +201,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarButton")
 interface IAppBarButtonStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LabelPositionProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsInOverflowProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -229,8 +211,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBar")
 interface IAppBarFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.AppBar* return_instance);
 }
@@ -239,8 +219,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBar")
 interface IAppBarOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnClosed(IInspectable e);
 	HRESULT abi_OnOpened(IInspectable e);
@@ -250,8 +228,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBar")
 interface IAppBarOverrides3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnClosing(IInspectable e);
 	HRESULT abi_OnOpening(IInspectable e);
@@ -267,8 +243,6 @@ interface IAppBarSeparator : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarSeparator")
 interface IAppBarSeparatorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.AppBarSeparator* return_instance);
 }
@@ -277,8 +251,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarSeparator")
 interface IAppBarSeparatorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsCompactProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -287,8 +259,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarSeparator")
 interface IAppBarSeparatorStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsInOverflowProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_DynamicOverflowOrderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -298,8 +268,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBar")
 interface IAppBarStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsOpenProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsStickyProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -309,8 +277,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBar")
 interface IAppBarStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ClosedDisplayModeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -319,8 +285,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBar")
 interface IAppBarStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayModeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -329,8 +293,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarToggleButton")
 interface IAppBarToggleButton : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Label(HSTRING* return_value);
 	HRESULT set_Label(HSTRING value);
@@ -342,8 +304,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarToggleButton")
 interface IAppBarToggleButton3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LabelPosition(Windows.UI.Xaml.Controls.CommandBarLabelPosition* return_value);
 	HRESULT set_LabelPosition(Windows.UI.Xaml.Controls.CommandBarLabelPosition value);
@@ -353,8 +313,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarToggleButton")
 interface IAppBarToggleButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.AppBarToggleButton* return_instance);
 }
@@ -363,8 +321,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarToggleButton")
 interface IAppBarToggleButtonStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LabelProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IconProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -375,8 +331,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarToggleButton")
 interface IAppBarToggleButtonStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LabelPositionProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsInOverflowProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -387,8 +341,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AutoSuggestBox")
 interface IAutoSuggestBox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxSuggestionListHeight(double* return_value);
 	HRESULT set_MaxSuggestionListHeight(double value);
@@ -418,8 +370,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AutoSuggestBox")
 interface IAutoSuggestBox2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_QueryIcon(Windows.UI.Xaml.Controls.IconElement* return_value);
 	HRESULT set_QueryIcon(Windows.UI.Xaml.Controls.IconElement value);
@@ -431,8 +381,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AutoSuggestBox")
 interface IAutoSuggestBox3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode* return_value);
 	HRESULT set_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value);
@@ -442,8 +390,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AutoSuggestBoxQuerySubmittedEventArgs")
 interface IAutoSuggestBoxQuerySubmittedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_QueryText(HSTRING* return_value);
 	HRESULT get_ChosenSuggestion(IInspectable* return_value);
@@ -453,8 +399,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AutoSuggestBox")
 interface IAutoSuggestBoxStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxSuggestionListHeightProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsSuggestionListOpenProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -471,8 +415,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AutoSuggestBox")
 interface IAutoSuggestBoxStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_QueryIconProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -481,8 +423,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AutoSuggestBox")
 interface IAutoSuggestBoxStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayModeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -491,8 +431,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AutoSuggestBoxSuggestionChosenEventArgs")
 interface IAutoSuggestBoxSuggestionChosenEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectedItem(IInspectable* return_value);
 }
@@ -501,8 +439,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AutoSuggestBoxTextChangedEventArgs")
 interface IAutoSuggestBoxTextChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reason(Windows.UI.Xaml.Controls.AutoSuggestionBoxTextChangeReason* return_value);
 	HRESULT set_Reason(Windows.UI.Xaml.Controls.AutoSuggestionBoxTextChangeReason value);
@@ -513,8 +449,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.AutoSuggestBoxTextChangedEventArgs")
 interface IAutoSuggestBoxTextChangedEventArgsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ReasonProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -523,8 +457,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.BackClickEventArgs")
 interface IBackClickEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -534,8 +466,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.BitmapIcon")
 interface IBitmapIcon : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UriSource(Windows.Foundation.Uri* return_value);
 	HRESULT set_UriSource(Windows.Foundation.Uri value);
@@ -545,8 +475,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.BitmapIcon")
 interface IBitmapIcon2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ShowAsMonochrome(bool* return_value);
 	HRESULT set_ShowAsMonochrome(bool value);
@@ -556,8 +484,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.BitmapIcon")
 interface IBitmapIconFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.BitmapIcon* return_instance);
 }
@@ -566,8 +492,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.BitmapIcon")
 interface IBitmapIconStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UriSourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -576,8 +500,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.BitmapIcon")
 interface IBitmapIconStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ShowAsMonochromeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -586,8 +508,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Border")
 interface IBorder : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BorderBrush(Windows.UI.Xaml.Media.Brush* return_value);
 	HRESULT set_BorderBrush(Windows.UI.Xaml.Media.Brush value);
@@ -609,8 +529,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Border")
 interface IBorderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BorderBrushProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_BorderThicknessProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -630,8 +548,6 @@ interface IButton : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.Button")
 interface IButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Button* return_instance);
 }
@@ -640,8 +556,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Button")
 interface IButtonStaticsWithFlyout : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FlyoutProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -650,8 +564,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Button")
 interface IButtonWithFlyout : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Flyout(Windows.UI.Xaml.Controls.Primitives.FlyoutBase* return_value);
 	HRESULT set_Flyout(Windows.UI.Xaml.Controls.Primitives.FlyoutBase value);
@@ -661,8 +573,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarDatePicker")
 interface ICalendarDatePicker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Date(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
 	HRESULT set_Date(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value);
@@ -712,8 +622,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarDatePicker")
 interface ICalendarDatePicker2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode* return_value);
 	HRESULT set_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value);
@@ -723,8 +631,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarDatePickerDateChangedEventArgs")
 interface ICalendarDatePickerDateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NewDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
 	HRESULT get_OldDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
@@ -734,8 +640,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarDatePicker")
 interface ICalendarDatePickerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.CalendarDatePicker* return_instance);
 }
@@ -744,8 +648,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarDatePicker")
 interface ICalendarDatePickerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsCalendarOpenProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -769,8 +671,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarDatePicker")
 interface ICalendarDatePickerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayModeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -779,8 +679,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarView")
 interface ICalendarView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CalendarIdentifier(HSTRING* return_value);
 	HRESULT set_CalendarIdentifier(HSTRING value);
@@ -894,8 +792,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarViewDayItem")
 interface ICalendarViewDayItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsBlackout(bool* return_value);
 	HRESULT set_IsBlackout(bool value);
@@ -907,8 +803,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs")
 interface ICalendarViewDayItemChangingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InRecycleQueue(bool* return_value);
 	HRESULT get_Item(Windows.UI.Xaml.Controls.CalendarViewDayItem* return_value);
@@ -921,8 +815,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarViewDayItem")
 interface ICalendarViewDayItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.CalendarViewDayItem* return_instance);
 }
@@ -931,8 +823,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarViewDayItem")
 interface ICalendarViewDayItemStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsBlackoutProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_DateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -942,8 +832,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarView")
 interface ICalendarViewFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.CalendarView* return_instance);
 }
@@ -952,8 +840,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarViewSelectedDatesChangedEventArgs")
 interface ICalendarViewSelectedDatesChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AddedDates(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.DateTime)* return_value);
 	HRESULT get_RemovedDates(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.DateTime)* return_value);
@@ -963,8 +849,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CalendarView")
 interface ICalendarViewStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CalendarIdentifierProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_DayOfWeekFormatProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1023,8 +907,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs")
 interface ICandidateWindowBoundsChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Bounds(Windows.Foundation.Rect* return_value);
 }
@@ -1039,8 +921,6 @@ interface ICanvas : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.Canvas")
 interface ICanvasFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Canvas* return_instance);
 }
@@ -1049,8 +929,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Canvas")
 interface ICanvasStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LeftProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetLeft(Windows.UI.Xaml.UIElement element, double* return_length);
@@ -1067,8 +945,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CaptureElement")
 interface ICaptureElement : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Source(Windows.Media.Capture.MediaCapture* return_value);
 	HRESULT set_Source(Windows.Media.Capture.MediaCapture value);
@@ -1080,8 +956,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CaptureElement")
 interface ICaptureElementStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_StretchProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1097,8 +971,6 @@ interface ICheckBox : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.CheckBox")
 interface ICheckBoxFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.CheckBox* return_instance);
 }
@@ -1107,8 +979,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ChoosingGroupHeaderContainerEventArgs")
 interface IChoosingGroupHeaderContainerEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GroupHeaderContainer(Windows.UI.Xaml.Controls.ListViewBaseHeaderItem* return_value);
 	HRESULT set_GroupHeaderContainer(Windows.UI.Xaml.Controls.ListViewBaseHeaderItem value);
@@ -1120,8 +990,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ChoosingItemContainerEventArgs")
 interface IChoosingItemContainerEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemIndex(INT32* return_value);
 	HRESULT get_Item(IInspectable* return_value);
@@ -1135,8 +1003,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CleanUpVirtualizedItemEventArgs")
 interface ICleanUpVirtualizedItemEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Value(IInspectable* return_value);
 	HRESULT get_UIElement(Windows.UI.Xaml.UIElement* return_value);
@@ -1148,8 +1014,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ColumnDefinition")
 interface IColumnDefinition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Width(Windows.UI.Xaml.GridLength* return_value);
 	HRESULT set_Width(Windows.UI.Xaml.GridLength value);
@@ -1164,8 +1028,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ColumnDefinition")
 interface IColumnDefinitionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WidthProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_MaxWidthProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1176,8 +1038,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ComboBox")
 interface IComboBox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsDropDownOpen(bool* return_value);
 	HRESULT set_IsDropDownOpen(bool value);
@@ -1198,8 +1058,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ComboBox")
 interface IComboBox2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Header(IInspectable* return_value);
 	HRESULT set_Header(IInspectable value);
@@ -1213,8 +1071,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ComboBox")
 interface IComboBox3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode* return_value);
 	HRESULT set_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value);
@@ -1226,8 +1082,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ComboBox")
 interface IComboBox4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectionChangedTrigger(Windows.UI.Xaml.Controls.ComboBoxSelectionChangedTrigger* return_value);
 	HRESULT set_SelectionChangedTrigger(Windows.UI.Xaml.Controls.ComboBoxSelectionChangedTrigger value);
@@ -1237,8 +1091,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ComboBox")
 interface IComboBoxFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ComboBox* return_instance);
 }
@@ -1253,8 +1105,6 @@ interface IComboBoxItem : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.ComboBoxItem")
 interface IComboBoxItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ComboBoxItem* return_instance);
 }
@@ -1263,8 +1113,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ComboBox")
 interface IComboBoxOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnDropDownClosed(IInspectable e);
 	HRESULT abi_OnDropDownOpened(IInspectable e);
@@ -1274,8 +1122,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ComboBox")
 interface IComboBoxStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsDropDownOpenProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_MaxDropDownHeightProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1285,8 +1131,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ComboBox")
 interface IComboBoxStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_HeaderTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1297,8 +1141,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ComboBox")
 interface IComboBoxStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayModeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsTextSearchEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1308,8 +1150,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ComboBox")
 interface IComboBoxStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectionChangedTriggerProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -1318,8 +1158,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CommandBar")
 interface ICommandBar : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PrimaryCommands(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.Controls.ICommandBarElement)* return_value);
 	HRESULT get_SecondaryCommands(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.Controls.ICommandBarElement)* return_value);
@@ -1329,8 +1167,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CommandBar")
 interface ICommandBar2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CommandBarOverflowPresenterStyle(Windows.UI.Xaml.Style* return_value);
 	HRESULT set_CommandBarOverflowPresenterStyle(Windows.UI.Xaml.Style value);
@@ -1341,8 +1177,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CommandBar")
 interface ICommandBar3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DefaultLabelPosition(Windows.UI.Xaml.Controls.CommandBarDefaultLabelPosition* return_value);
 	HRESULT set_DefaultLabelPosition(Windows.UI.Xaml.Controls.CommandBarDefaultLabelPosition value);
@@ -1357,8 +1191,6 @@ extern(Windows):
 @uuid("67918e1b-f2d5-44d1-8b84-92b87f80a350")
 interface ICommandBarElement : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsCompact(bool* return_value);
 	HRESULT set_IsCompact(bool value);
@@ -1367,8 +1199,6 @@ extern(Windows):
 @uuid("a9bf1236-4402-4688-b987-9d2b9b7bf2bd")
 interface ICommandBarElement2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsInOverflow(bool* return_value);
 	HRESULT get_DynamicOverflowOrder(INT32* return_value);
@@ -1379,8 +1209,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CommandBar")
 interface ICommandBarFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.CommandBar* return_instance);
 }
@@ -1395,8 +1223,6 @@ interface ICommandBarOverflowPresenter : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.CommandBarOverflowPresenter")
 interface ICommandBarOverflowPresenterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.CommandBarOverflowPresenter* return_instance);
 }
@@ -1405,8 +1231,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CommandBar")
 interface ICommandBarStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PrimaryCommandsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_SecondaryCommandsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1416,8 +1240,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CommandBar")
 interface ICommandBarStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CommandBarOverflowPresenterStyleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -1426,8 +1248,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.CommandBar")
 interface ICommandBarStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DefaultLabelPositionProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_OverflowButtonVisibilityProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1438,8 +1258,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs")
 interface IContainerContentChangingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemContainer(Windows.UI.Xaml.Controls.Primitives.SelectorItem* return_value);
 	HRESULT get_InRecycleQueue(bool* return_value);
@@ -1456,8 +1274,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentControl")
 interface IContentControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(IInspectable* return_value);
 	HRESULT set_Content(IInspectable value);
@@ -1473,8 +1289,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentControl")
 interface IContentControl2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentTemplateRoot(Windows.UI.Xaml.UIElement* return_value);
 }
@@ -1483,8 +1297,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentControl")
 interface IContentControlFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ContentControl* return_instance);
 }
@@ -1493,8 +1305,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentControl")
 interface IContentControlOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnContentChanged(IInspectable oldContent, IInspectable newContent);
 	HRESULT abi_OnContentTemplateChanged(Windows.UI.Xaml.DataTemplate oldContentTemplate, Windows.UI.Xaml.DataTemplate newContentTemplate);
@@ -1505,8 +1315,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentControl")
 interface IContentControlStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ContentTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1518,8 +1326,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentDialog")
 interface IContentDialog : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(IInspectable* return_value);
 	HRESULT set_Title(IInspectable value);
@@ -1561,8 +1367,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentDialog")
 interface IContentDialog2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CloseButtonText(HSTRING* return_value);
 	HRESULT set_CloseButtonText(HSTRING value);
@@ -1586,8 +1390,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentDialogButtonClickDeferral")
 interface IContentDialogButtonClickDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -1596,8 +1398,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs")
 interface IContentDialogButtonClickEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Cancel(bool* return_value);
 	HRESULT set_Cancel(bool value);
@@ -1608,8 +1408,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentDialogClosedEventArgs")
 interface IContentDialogClosedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Result(Windows.UI.Xaml.Controls.ContentDialogResult* return_value);
 }
@@ -1618,8 +1416,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentDialogClosingDeferral")
 interface IContentDialogClosingDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -1628,8 +1424,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs")
 interface IContentDialogClosingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Result(Windows.UI.Xaml.Controls.ContentDialogResult* return_value);
 	HRESULT get_Cancel(bool* return_value);
@@ -1641,8 +1435,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentDialog")
 interface IContentDialogFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ContentDialog* return_instance);
 }
@@ -1657,8 +1449,6 @@ interface IContentDialogOpenedEventArgs : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentDialog")
 interface IContentDialogStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TitleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TitleTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1677,8 +1467,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentDialog")
 interface IContentDialogStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CloseButtonTextProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_CloseButtonCommandProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1693,8 +1481,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentPresenter")
 interface IContentPresenter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(IInspectable* return_value);
 	HRESULT set_Content(IInspectable value);
@@ -1724,8 +1510,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentPresenter")
 interface IContentPresenter2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OpticalMarginAlignment(Windows.UI.Xaml.OpticalMarginAlignment* return_value);
 	HRESULT set_OpticalMarginAlignment(Windows.UI.Xaml.OpticalMarginAlignment value);
@@ -1737,8 +1521,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentPresenter")
 interface IContentPresenter3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTextScaleFactorEnabled(bool* return_value);
 	HRESULT set_IsTextScaleFactorEnabled(bool value);
@@ -1748,8 +1530,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentPresenter")
 interface IContentPresenter4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextWrapping(Windows.UI.Xaml.TextWrapping* return_value);
 	HRESULT set_TextWrapping(Windows.UI.Xaml.TextWrapping value);
@@ -1779,8 +1559,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentPresenter")
 interface IContentPresenterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ContentPresenter* return_instance);
 }
@@ -1789,8 +1567,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentPresenter")
 interface IContentPresenterOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnContentTemplateChanged(Windows.UI.Xaml.DataTemplate oldContentTemplate, Windows.UI.Xaml.DataTemplate newContentTemplate);
 	HRESULT abi_OnContentTemplateSelectorChanged(Windows.UI.Xaml.Controls.DataTemplateSelector oldContentTemplateSelector, Windows.UI.Xaml.Controls.DataTemplateSelector newContentTemplateSelector);
@@ -1800,8 +1576,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentPresenter")
 interface IContentPresenterStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ContentTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1820,8 +1594,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentPresenter")
 interface IContentPresenterStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OpticalMarginAlignmentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TextLineBoundsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1831,8 +1603,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentPresenter")
 interface IContentPresenterStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTextScaleFactorEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -1841,8 +1611,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContentPresenter")
 interface IContentPresenterStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextWrappingProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_MaxLinesProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1861,8 +1629,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ContextMenuEventArgs")
 interface IContextMenuEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -1874,8 +1640,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Control")
 interface IControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FontSize(double* return_value);
 	HRESULT set_FontSize(double value);
@@ -1924,8 +1688,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Control")
 interface IControl2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTextScaleFactorEnabled(bool* return_value);
 	HRESULT set_IsTextScaleFactorEnabled(bool value);
@@ -1935,8 +1697,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Control")
 interface IControl3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UseSystemFocusVisuals(bool* return_value);
 	HRESULT set_UseSystemFocusVisuals(bool value);
@@ -1946,8 +1706,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Control")
 interface IControl4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsFocusEngagementEnabled(bool* return_value);
 	HRESULT set_IsFocusEngagementEnabled(bool value);
@@ -1976,8 +1734,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Control")
 interface IControl5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DefaultStyleResourceUri(Windows.Foundation.Uri* return_value);
 	HRESULT set_DefaultStyleResourceUri(Windows.Foundation.Uri value);
@@ -1987,8 +1743,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Control")
 interface IControlFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Control* return_instance);
 }
@@ -1997,8 +1751,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Control")
 interface IControlOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnPointerEntered(Windows.UI.Xaml.Input.PointerRoutedEventArgs e);
 	HRESULT abi_OnPointerPressed(Windows.UI.Xaml.Input.PointerRoutedEventArgs e);
@@ -2031,8 +1783,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Control")
 interface IControlProtected : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DefaultStyleKey(IInspectable* return_value);
 	HRESULT set_DefaultStyleKey(IInspectable value);
@@ -2043,8 +1793,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Control")
 interface IControlStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FontSizeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FontFamilyProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -2072,8 +1820,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Control")
 interface IControlStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTextScaleFactorEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -2082,8 +1828,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Control")
 interface IControlStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UseSystemFocusVisualsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsTemplateFocusTargetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -2095,8 +1839,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Control")
 interface IControlStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsFocusEngagementEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsFocusEngagedProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -2112,8 +1854,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Control")
 interface IControlStatics5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DefaultStyleResourceUriProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsTemplateKeyTipTargetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -2125,8 +1865,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ControlTemplate")
 interface IControlTemplate : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetType(Windows.UI.Xaml.Interop.TypeName* return_value);
 	HRESULT set_TargetType(Windows.UI.Xaml.Interop.TypeName value);
@@ -2136,8 +1874,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DataTemplateSelector")
 interface IDataTemplateSelector : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SelectTemplate(IInspectable item, Windows.UI.Xaml.DependencyObject container, Windows.UI.Xaml.DataTemplate* return_returnValue);
 }
@@ -2146,8 +1882,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DataTemplateSelector")
 interface IDataTemplateSelector2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SelectTemplateForItem(IInspectable item, Windows.UI.Xaml.DataTemplate* return_returnValue);
 }
@@ -2156,8 +1890,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DataTemplateSelector")
 interface IDataTemplateSelectorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.DataTemplateSelector* return_instance);
 }
@@ -2166,8 +1898,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DataTemplateSelector")
 interface IDataTemplateSelectorOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SelectTemplateCore(IInspectable item, Windows.UI.Xaml.DependencyObject container, Windows.UI.Xaml.DataTemplate* return_returnValue);
 }
@@ -2176,8 +1906,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DataTemplateSelector")
 interface IDataTemplateSelectorOverrides2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SelectTemplateForItemCore(IInspectable item, Windows.UI.Xaml.DataTemplate* return_returnValue);
 }
@@ -2186,8 +1914,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePickedEventArgs")
 interface IDatePickedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OldDate(Windows.Foundation.DateTime* return_value);
 	HRESULT get_NewDate(Windows.Foundation.DateTime* return_value);
@@ -2197,8 +1923,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePicker")
 interface IDatePicker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Header(IInspectable* return_value);
 	HRESULT set_Header(IInspectable value);
@@ -2234,8 +1958,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePicker")
 interface IDatePicker2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode* return_value);
 	HRESULT set_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value);
@@ -2245,8 +1967,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePicker")
 interface IDatePickerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.DatePicker* return_instance);
 }
@@ -2255,8 +1975,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePickerFlyout")
 interface IDatePickerFlyout : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CalendarIdentifier(HSTRING* return_value);
 	HRESULT set_CalendarIdentifier(HSTRING value);
@@ -2281,8 +1999,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePickerFlyout")
 interface IDatePickerFlyout2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DayFormat(HSTRING* return_value);
 	HRESULT set_DayFormat(HSTRING value);
@@ -2296,8 +2012,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePickerFlyoutItem")
 interface IDatePickerFlyoutItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PrimaryText(HSTRING* return_value);
 	HRESULT set_PrimaryText(HSTRING value);
@@ -2309,8 +2023,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePickerFlyoutItem")
 interface IDatePickerFlyoutItemStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PrimaryTextProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_SecondaryTextProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -2326,8 +2038,6 @@ interface IDatePickerFlyoutPresenter : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePickerFlyout")
 interface IDatePickerFlyoutStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CalendarIdentifierProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_DateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -2342,8 +2052,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePickerFlyout")
 interface IDatePickerFlyoutStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DayFormatProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_MonthFormatProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -2354,8 +2062,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePicker")
 interface IDatePickerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_HeaderTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -2376,8 +2082,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePicker")
 interface IDatePickerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayModeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -2386,8 +2090,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePickerValueChangedEventArgs")
 interface IDatePickerValueChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OldDate(Windows.Foundation.DateTime* return_value);
 	HRESULT get_NewDate(Windows.Foundation.DateTime* return_value);
@@ -2397,8 +2099,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DragItemsCompletedEventArgs")
 interface IDragItemsCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Items(Windows.Foundation.Collections.IVectorView!(IInspectable)* return_value);
 	HRESULT get_DropResult(Windows.ApplicationModel.DataTransfer.DataPackageOperation* return_value);
@@ -2408,8 +2108,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DragItemsStartingEventArgs")
 interface IDragItemsStartingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Cancel(bool* return_value);
 	HRESULT set_Cancel(bool value);
@@ -2421,8 +2119,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs")
 interface IDynamicOverflowItemsChangingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Action(Windows.UI.Xaml.Controls.CommandBarDynamicOverflowAction* return_value);
 }
@@ -2437,8 +2133,6 @@ interface IFlipView : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.FlipView")
 interface IFlipView2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UseTouchAnimationsForAllNavigation(bool* return_value);
 	HRESULT set_UseTouchAnimationsForAllNavigation(bool value);
@@ -2448,8 +2142,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.FlipView")
 interface IFlipViewFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.FlipView* return_instance);
 }
@@ -2464,8 +2156,6 @@ interface IFlipViewItem : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.FlipViewItem")
 interface IFlipViewItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.FlipViewItem* return_instance);
 }
@@ -2474,8 +2164,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.FlipView")
 interface IFlipViewStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UseTouchAnimationsForAllNavigationProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -2484,8 +2172,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Flyout")
 interface IFlyout : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT set_Content(Windows.UI.Xaml.UIElement value);
@@ -2497,8 +2183,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Flyout")
 interface IFlyoutFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Flyout* return_instance);
 }
@@ -2513,8 +2197,6 @@ interface IFlyoutPresenter : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.FlyoutPresenter")
 interface IFlyoutPresenterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.FlyoutPresenter* return_instance);
 }
@@ -2523,8 +2205,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Flyout")
 interface IFlyoutStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FlyoutPresenterStyleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -2546,8 +2226,6 @@ interface IFocusEngagedEventArgs : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.FocusEngagedEventArgs")
 interface IFocusEngagedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -2557,8 +2235,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.FontIcon")
 interface IFontIcon : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Glyph(HSTRING* return_value);
 	HRESULT set_Glyph(HSTRING value);
@@ -2576,8 +2252,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.FontIcon")
 interface IFontIcon2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTextScaleFactorEnabled(bool* return_value);
 	HRESULT set_IsTextScaleFactorEnabled(bool value);
@@ -2587,8 +2261,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.FontIcon")
 interface IFontIcon3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MirroredWhenRightToLeft(bool* return_value);
 	HRESULT set_MirroredWhenRightToLeft(bool value);
@@ -2598,8 +2270,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.FontIcon")
 interface IFontIconFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.FontIcon* return_instance);
 }
@@ -2608,8 +2278,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.FontIcon")
 interface IFontIconStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GlyphProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FontSizeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -2622,8 +2290,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.FontIcon")
 interface IFontIconStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTextScaleFactorEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -2632,8 +2298,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.FontIcon")
 interface IFontIconStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MirroredWhenRightToLeftProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -2642,8 +2306,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Frame")
 interface IFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CacheSize(INT32* return_value);
 	HRESULT set_CacheSize(INT32 value);
@@ -2672,8 +2334,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Frame")
 interface IFrame2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BackStack(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Navigation.PageStackEntry)* return_value);
 	HRESULT get_ForwardStack(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Navigation.PageStackEntry)* return_value);
@@ -2684,8 +2344,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Frame")
 interface IFrame3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GoBack(Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo transitionInfoOverride);
 }
@@ -2694,8 +2352,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Frame")
 interface IFrame4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetNavigationStateWithNavigationControl(HSTRING navigationState, bool suppressNavigate);
 }
@@ -2704,8 +2360,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Frame")
 interface IFrameFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Frame* return_instance);
 }
@@ -2714,8 +2368,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Frame")
 interface IFrameStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CacheSizeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_CanGoBackProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -2729,8 +2381,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Frame")
 interface IFrameStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BackStackProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ForwardStackProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -2740,8 +2390,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Grid")
 interface IGrid : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RowDefinitions(Windows.UI.Xaml.Controls.RowDefinitionCollection* return_value);
 	HRESULT get_ColumnDefinitions(Windows.UI.Xaml.Controls.ColumnDefinitionCollection* return_value);
@@ -2751,8 +2399,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Grid")
 interface IGrid2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BorderBrush(Windows.UI.Xaml.Media.Brush* return_value);
 	HRESULT set_BorderBrush(Windows.UI.Xaml.Media.Brush value);
@@ -2768,8 +2414,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Grid")
 interface IGridFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Grid* return_instance);
 }
@@ -2778,8 +2422,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Grid")
 interface IGridStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RowProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetRow(Windows.UI.Xaml.FrameworkElement element, INT32* return_value);
@@ -2799,8 +2441,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Grid")
 interface IGridStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BorderBrushProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_BorderThicknessProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -2818,8 +2458,6 @@ interface IGridView : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.GridView")
 interface IGridViewFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.GridView* return_instance);
 }
@@ -2834,8 +2472,6 @@ interface IGridViewHeaderItem : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.GridViewHeaderItem")
 interface IGridViewHeaderItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.GridViewHeaderItem* return_instance);
 }
@@ -2844,8 +2480,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.GridViewItem")
 interface IGridViewItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.GridViewItemTemplateSettings* return_value);
 }
@@ -2854,8 +2488,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.GridViewItem")
 interface IGridViewItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.GridViewItem* return_instance);
 }
@@ -2870,8 +2502,6 @@ interface IGroupItem : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.GroupItem")
 interface IGroupItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.GroupItem* return_instance);
 }
@@ -2880,8 +2510,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.GroupStyle")
 interface IGroupStyle : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Panel(Windows.UI.Xaml.Controls.ItemsPanelTemplate* return_value);
 	HRESULT set_Panel(Windows.UI.Xaml.Controls.ItemsPanelTemplate value);
@@ -2905,8 +2533,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.GroupStyle")
 interface IGroupStyle2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderContainerStyle(Windows.UI.Xaml.Style* return_value);
 	HRESULT set_HeaderContainerStyle(Windows.UI.Xaml.Style value);
@@ -2916,8 +2542,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.GroupStyle")
 interface IGroupStyleFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.GroupStyle* return_instance);
 }
@@ -2926,8 +2550,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.GroupStyleSelector")
 interface IGroupStyleSelector : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SelectGroupStyle(IInspectable group, UINT32 level, Windows.UI.Xaml.Controls.GroupStyle* return_returnValue);
 }
@@ -2936,8 +2558,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.GroupStyleSelector")
 interface IGroupStyleSelectorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.GroupStyleSelector* return_instance);
 }
@@ -2946,8 +2566,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.GroupStyleSelector")
 interface IGroupStyleSelectorOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SelectGroupStyleCore(IInspectable group, UINT32 level, Windows.UI.Xaml.Controls.GroupStyle* return_returnValue);
 }
@@ -2956,8 +2574,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Hub")
 interface IHub : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Header(IInspectable* return_value);
 	HRESULT set_Header(IInspectable value);
@@ -2981,8 +2597,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Hub")
 interface IHubFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Hub* return_instance);
 }
@@ -2991,8 +2605,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.HubSection")
 interface IHubSection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Header(IInspectable* return_value);
 	HRESULT set_Header(IInspectable value);
@@ -3008,8 +2620,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.HubSection")
 interface IHubSectionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.HubSection* return_instance);
 }
@@ -3018,8 +2628,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.HubSectionHeaderClickEventArgs")
 interface IHubSectionHeaderClickEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Section(Windows.UI.Xaml.Controls.HubSection* return_value);
 }
@@ -3028,8 +2636,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.HubSection")
 interface IHubSectionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_HeaderTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -3041,8 +2647,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Hub")
 interface IHubStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_HeaderTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -3057,8 +2661,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.HyperlinkButton")
 interface IHyperlinkButton : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NavigateUri(Windows.Foundation.Uri* return_value);
 	HRESULT set_NavigateUri(Windows.Foundation.Uri value);
@@ -3068,8 +2670,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.HyperlinkButton")
 interface IHyperlinkButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.HyperlinkButton* return_instance);
 }
@@ -3078,8 +2678,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.HyperlinkButton")
 interface IHyperlinkButtonStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NavigateUriProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -3088,8 +2686,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.IconElement")
 interface IIconElement : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Foreground(Windows.UI.Xaml.Media.Brush* return_value);
 	HRESULT set_Foreground(Windows.UI.Xaml.Media.Brush value);
@@ -3105,8 +2701,6 @@ interface IIconElementFactory : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.IconElement")
 interface IIconElementStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ForegroundProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -3115,8 +2709,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Image")
 interface IImage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Source(Windows.UI.Xaml.Media.ImageSource* return_value);
 	HRESULT set_Source(Windows.UI.Xaml.Media.ImageSource value);
@@ -3136,8 +2728,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Image")
 interface IImage2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAsCastingSource(Windows.Media.Casting.CastingSource* return_returnValue);
 }
@@ -3146,8 +2736,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Image")
 interface IImage3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAlphaMask(Windows.UI.Composition.CompositionBrush* return_returnValue);
 }
@@ -3156,8 +2744,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Image")
 interface IImageStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_StretchProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -3170,8 +2756,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkCanvas")
 interface IInkCanvas : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InkPresenter(Windows.UI.Input.Inking.InkPresenter* return_value);
 }
@@ -3180,8 +2764,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkCanvas")
 interface IInkCanvasFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkCanvas* return_instance);
 }
@@ -3190,8 +2772,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbar")
 interface IInkToolbar : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InitialControls(Windows.UI.Xaml.Controls.InkToolbarInitialControls* return_value);
 	HRESULT set_InitialControls(Windows.UI.Xaml.Controls.InkToolbarInitialControls value);
@@ -3221,8 +2801,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbar")
 interface IInkToolbar2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsStencilButtonChecked(bool* return_value);
 	HRESULT set_IsStencilButtonChecked(bool value);
@@ -3245,8 +2823,6 @@ interface IInkToolbarBallpointPenButton : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarBallpointPenButton")
 interface IInkToolbarBallpointPenButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkToolbarBallpointPenButton* return_instance);
 }
@@ -3255,8 +2831,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarCustomPen")
 interface IInkToolbarCustomPen : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInkDrawingAttributes(Windows.UI.Xaml.Media.Brush brush, double strokeWidth, Windows.UI.Input.Inking.InkDrawingAttributes* return_returnValue);
 }
@@ -3265,8 +2839,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarCustomPenButton")
 interface IInkToolbarCustomPenButton : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CustomPen(Windows.UI.Xaml.Controls.InkToolbarCustomPen* return_value);
 	HRESULT set_CustomPen(Windows.UI.Xaml.Controls.InkToolbarCustomPen value);
@@ -3278,8 +2850,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarCustomPenButton")
 interface IInkToolbarCustomPenButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkToolbarCustomPenButton* return_instance);
 }
@@ -3288,8 +2858,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarCustomPenButton")
 interface IInkToolbarCustomPenButtonStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CustomPenProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ConfigurationContentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -3299,8 +2867,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarCustomPen")
 interface IInkToolbarCustomPenFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkToolbarCustomPen* return_instance);
 }
@@ -3309,8 +2875,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarCustomPen")
 interface IInkToolbarCustomPenOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInkDrawingAttributesCore(Windows.UI.Xaml.Media.Brush brush, double strokeWidth, Windows.UI.Input.Inking.InkDrawingAttributes* return_returnValue);
 }
@@ -3325,8 +2889,6 @@ interface IInkToolbarCustomToggleButton : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton")
 interface IInkToolbarCustomToggleButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton* return_instance);
 }
@@ -3335,8 +2897,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarCustomToolButton")
 interface IInkToolbarCustomToolButton : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ConfigurationContent(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT set_ConfigurationContent(Windows.UI.Xaml.UIElement value);
@@ -3346,8 +2906,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarCustomToolButton")
 interface IInkToolbarCustomToolButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkToolbarCustomToolButton* return_instance);
 }
@@ -3356,8 +2914,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarCustomToolButton")
 interface IInkToolbarCustomToolButtonStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ConfigurationContentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -3372,8 +2928,6 @@ interface IInkToolbarEraserButton : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarEraserButton")
 interface IInkToolbarEraserButton2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsClearAllVisible(bool* return_value);
 	HRESULT set_IsClearAllVisible(bool value);
@@ -3383,8 +2937,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarEraserButton")
 interface IInkToolbarEraserButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkToolbarEraserButton* return_instance);
 }
@@ -3393,8 +2945,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarEraserButton")
 interface IInkToolbarEraserButtonStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsClearAllVisibleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -3403,8 +2953,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbar")
 interface IInkToolbarFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkToolbar* return_instance);
 }
@@ -3413,8 +2961,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarFlyoutItem")
 interface IInkToolbarFlyoutItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.UI.Xaml.Controls.InkToolbarFlyoutItemKind* return_value);
 	HRESULT set_Kind(Windows.UI.Xaml.Controls.InkToolbarFlyoutItemKind value);
@@ -3430,8 +2976,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarFlyoutItem")
 interface IInkToolbarFlyoutItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkToolbarFlyoutItem* return_instance);
 }
@@ -3440,8 +2984,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarFlyoutItem")
 interface IInkToolbarFlyoutItemStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KindProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsCheckedProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -3457,8 +2999,6 @@ interface IInkToolbarHighlighterButton : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarHighlighterButton")
 interface IInkToolbarHighlighterButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkToolbarHighlighterButton* return_instance);
 }
@@ -3467,8 +3007,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarIsStencilButtonCheckedChangedEventArgs")
 interface IInkToolbarIsStencilButtonCheckedChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StencilButton(Windows.UI.Xaml.Controls.InkToolbarStencilButton* return_value);
 	HRESULT get_StencilKind(Windows.UI.Xaml.Controls.InkToolbarStencilKind* return_value);
@@ -3478,8 +3016,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarMenuButton")
 interface IInkToolbarMenuButton : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MenuKind(Windows.UI.Xaml.Controls.InkToolbarMenuKind* return_value);
 	HRESULT get_IsExtensionGlyphShown(bool* return_value);
@@ -3496,8 +3032,6 @@ interface IInkToolbarMenuButtonFactory : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarMenuButton")
 interface IInkToolbarMenuButtonStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsExtensionGlyphShownProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -3506,8 +3040,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarPenButton")
 interface IInkToolbarPenButton : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Palette(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)* return_value);
 	HRESULT set_Palette(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush) value);
@@ -3532,8 +3064,6 @@ interface IInkToolbarPenButtonFactory : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarPenButton")
 interface IInkToolbarPenButtonStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PaletteProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_MinStrokeWidthProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -3547,8 +3077,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarPenConfigurationControl")
 interface IInkToolbarPenConfigurationControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PenButton(Windows.UI.Xaml.Controls.InkToolbarPenButton* return_value);
 }
@@ -3557,8 +3085,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarPenConfigurationControl")
 interface IInkToolbarPenConfigurationControlFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkToolbarPenConfigurationControl* return_instance);
 }
@@ -3567,8 +3093,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarPenConfigurationControl")
 interface IInkToolbarPenConfigurationControlStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PenButtonProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -3583,8 +3107,6 @@ interface IInkToolbarPencilButton : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarPencilButton")
 interface IInkToolbarPencilButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkToolbarPencilButton* return_instance);
 }
@@ -3593,8 +3115,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarRulerButton")
 interface IInkToolbarRulerButton : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("InkToolbarRulerButton is deprecated starting from Windows 10 Creators Update. Please use InkToolbarStencilButton going forward. For more info, see MSDN.")
 	HRESULT get_Ruler(Windows.UI.Input.Inking.InkPresenterRuler* return_value);
@@ -3604,8 +3124,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarRulerButton")
 interface IInkToolbarRulerButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("InkToolbarRulerButton is deprecated starting from Windows 10 Creators Update. Please use InkToolbarStencilButton going forward. For more info, see MSDN.")
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkToolbarRulerButton* return_instance);
@@ -3615,8 +3133,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarRulerButton")
 interface IInkToolbarRulerButtonStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("InkToolbarRulerButton is deprecated starting from Windows 10 Creators Update. Please use InkToolbarStencilButton going forward. For more info, see MSDN.")
 	HRESULT get_RulerProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -3626,8 +3142,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbar")
 interface IInkToolbarStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InitialControlsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ChildrenProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -3641,8 +3155,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbar")
 interface IInkToolbarStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsStencilButtonCheckedProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ButtonFlyoutPlacementProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -3653,8 +3165,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarStencilButton")
 interface IInkToolbarStencilButton : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Ruler(Windows.UI.Input.Inking.InkPresenterRuler* return_value);
 	HRESULT get_Protractor(Windows.UI.Input.Inking.InkPresenterProtractor* return_value);
@@ -3670,8 +3180,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarStencilButton")
 interface IInkToolbarStencilButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.InkToolbarStencilButton* return_instance);
 }
@@ -3680,8 +3188,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarStencilButton")
 interface IInkToolbarStencilButtonStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RulerProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ProtractorProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -3694,8 +3200,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarToggleButton")
 interface IInkToolbarToggleButton : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ToggleKind(Windows.UI.Xaml.Controls.InkToolbarToggle* return_value);
 }
@@ -3710,8 +3214,6 @@ interface IInkToolbarToggleButtonFactory : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarToolButton")
 interface IInkToolbarToolButton : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ToolKind(Windows.UI.Xaml.Controls.InkToolbarTool* return_value);
 	HRESULT get_IsExtensionGlyphShown(bool* return_value);
@@ -3728,8 +3230,6 @@ interface IInkToolbarToolButtonFactory : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarToolButton")
 interface IInkToolbarToolButtonStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsExtensionGlyphShownProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -3737,8 +3237,6 @@ extern(Windows):
 @uuid("6b8de08f-6527-4d39-bcbf-58b01da923d7")
 interface IInsertionPanel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetInsertionIndexes(Windows.Foundation.Point position, INT32* out_first, INT32* out_second);
 }
@@ -3747,8 +3245,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemClickEventArgs")
 interface IItemClickEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ClickedItem(IInspectable* return_value);
 }
@@ -3757,8 +3253,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemContainerGenerator")
 interface IItemContainerGenerator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ItemsChanged(Windows.UI.Xaml.Controls.Primitives.ItemsChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_ItemsChanged(EventRegistrationToken token);
@@ -3785,8 +3279,6 @@ extern(Windows):
 @uuid("53c9f23a-f25d-446a-99b8-c7aeb839050f")
 interface IItemContainerMapping : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ItemFromContainer(Windows.UI.Xaml.DependencyObject container, IInspectable* return_returnValue);
 	HRESULT abi_ContainerFromItem(IInspectable item, Windows.UI.Xaml.DependencyObject* return_returnValue);
@@ -3798,8 +3290,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsControl")
 interface IItemsControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemsSource(IInspectable* return_value);
 	HRESULT set_ItemsSource(IInspectable value);
@@ -3829,8 +3319,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsControl")
 interface IItemsControl2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemsPanelRoot(Windows.UI.Xaml.Controls.Panel* return_value);
 }
@@ -3839,8 +3327,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsControl")
 interface IItemsControl3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GroupHeaderContainerFromItemContainer(Windows.UI.Xaml.DependencyObject itemContainer, Windows.UI.Xaml.DependencyObject* return_returnValue);
 }
@@ -3849,8 +3335,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsControl")
 interface IItemsControlFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ItemsControl* return_instance);
 }
@@ -3859,8 +3343,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsControl")
 interface IItemsControlOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsItemItsOwnContainerOverride(IInspectable item, bool* return_returnValue);
 	HRESULT abi_GetContainerForItemOverride(Windows.UI.Xaml.DependencyObject* return_returnValue);
@@ -3878,8 +3360,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsControl")
 interface IItemsControlStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemsSourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ItemTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -3905,8 +3385,6 @@ interface IItemsPanelTemplate : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsPickedEventArgs")
 interface IItemsPickedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AddedItems(Windows.Foundation.Collections.IVector!(IInspectable)* return_value);
 	HRESULT get_RemovedItems(Windows.Foundation.Collections.IVector!(IInspectable)* return_value);
@@ -3916,8 +3394,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsPresenter")
 interface IItemsPresenter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Header(IInspectable* return_value);
 	HRESULT set_Header(IInspectable value);
@@ -3933,8 +3409,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsPresenter")
 interface IItemsPresenter2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Footer(IInspectable* return_value);
 	HRESULT set_Footer(IInspectable value);
@@ -3948,8 +3422,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsPresenter")
 interface IItemsPresenterStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_HeaderTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -3961,8 +3433,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsPresenter")
 interface IItemsPresenterStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FooterProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FooterTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -3973,8 +3443,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsStackPanel")
 interface IItemsStackPanel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GroupPadding(Windows.UI.Xaml.Thickness* return_value);
 	HRESULT set_GroupPadding(Windows.UI.Xaml.Thickness value);
@@ -3997,8 +3465,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsStackPanel")
 interface IItemsStackPanel2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AreStickyGroupHeadersEnabled(bool* return_value);
 	HRESULT set_AreStickyGroupHeadersEnabled(bool value);
@@ -4008,8 +3474,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsStackPanel")
 interface IItemsStackPanelStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GroupPaddingProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_OrientationProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -4021,8 +3485,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsStackPanel")
 interface IItemsStackPanelStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AreStickyGroupHeadersEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -4031,8 +3493,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsWrapGrid")
 interface IItemsWrapGrid : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GroupPadding(Windows.UI.Xaml.Thickness* return_value);
 	HRESULT set_GroupPadding(Windows.UI.Xaml.Thickness value);
@@ -4059,8 +3519,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsWrapGrid")
 interface IItemsWrapGrid2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AreStickyGroupHeadersEnabled(bool* return_value);
 	HRESULT set_AreStickyGroupHeadersEnabled(bool value);
@@ -4070,8 +3528,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsWrapGrid")
 interface IItemsWrapGridStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GroupPaddingProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_OrientationProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -4086,8 +3542,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ItemsWrapGrid")
 interface IItemsWrapGridStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AreStickyGroupHeadersEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -4096,8 +3550,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListBox")
 interface IListBox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectedItems(Windows.Foundation.Collections.IVector!(IInspectable)* return_value);
 	HRESULT get_SelectionMode(Windows.UI.Xaml.Controls.SelectionMode* return_value);
@@ -4110,8 +3562,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListBox")
 interface IListBox2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SingleSelectionFollowsFocus(bool* return_value);
 	HRESULT set_SingleSelectionFollowsFocus(bool value);
@@ -4121,8 +3571,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListBox")
 interface IListBoxFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ListBox* return_instance);
 }
@@ -4137,8 +3585,6 @@ interface IListBoxItem : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.ListBoxItem")
 interface IListBoxItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ListBoxItem* return_instance);
 }
@@ -4147,8 +3593,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListBox")
 interface IListBoxStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectionModeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -4157,8 +3601,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListBox")
 interface IListBoxStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SingleSelectionFollowsFocusProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -4167,8 +3609,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListPickerFlyout")
 interface IListPickerFlyout : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemsSource(IInspectable* return_value);
 	HRESULT set_ItemsSource(IInspectable value);
@@ -4202,8 +3642,6 @@ interface IListPickerFlyoutPresenter : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.ListPickerFlyout")
 interface IListPickerFlyoutStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemsSourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ItemTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -4225,8 +3663,6 @@ interface IListView : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewBase")
 interface IListViewBase : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectedItems(Windows.Foundation.Collections.IVector!(IInspectable)* return_value);
 	HRESULT get_SelectionMode(Windows.UI.Xaml.Controls.ListViewSelectionMode* return_value);
@@ -4265,8 +3701,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewBase")
 interface IListViewBase2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ShowsScrollingPlaceholders(bool* return_value);
 	HRESULT set_ShowsScrollingPlaceholders(bool value);
@@ -4285,8 +3719,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewBase")
 interface IListViewBase3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ReorderMode(Windows.UI.Xaml.Controls.ListViewReorderMode* return_value);
 	HRESULT set_ReorderMode(Windows.UI.Xaml.Controls.ListViewReorderMode value);
@@ -4296,8 +3728,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewBase")
 interface IListViewBase4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectedRanges(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Data.ItemIndexRange)* return_value);
 	HRESULT get_IsMultiSelectCheckBoxEnabled(bool* return_value);
@@ -4316,8 +3746,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewBase")
 interface IListViewBase5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SingleSelectionFollowsFocus(bool* return_value);
 	HRESULT set_SingleSelectionFollowsFocus(bool value);
@@ -4328,8 +3756,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewBase")
 interface IListViewBase6 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryStartConnectedAnimationAsync(Windows.UI.Xaml.Media.Animation.ConnectedAnimation animation, IInspectable item, HSTRING elementName, Windows.Foundation.IAsyncOperation!(bool)* return_returnValue);
 	HRESULT abi_PrepareConnectedAnimation(HSTRING key, IInspectable item, HSTRING elementName, Windows.UI.Xaml.Media.Animation.ConnectedAnimation* return_returnValue);
@@ -4339,8 +3765,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewBase")
 interface IListViewBaseFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ListViewBase* return_instance);
 }
@@ -4361,8 +3785,6 @@ interface IListViewBaseHeaderItemFactory : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewBase")
 interface IListViewBaseStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectionModeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsSwipeEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -4384,8 +3806,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewBase")
 interface IListViewBaseStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ShowsScrollingPlaceholdersProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FooterProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -4397,8 +3817,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewBase")
 interface IListViewBaseStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ReorderModeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -4407,8 +3825,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewBase")
 interface IListViewBaseStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsMultiSelectCheckBoxEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -4417,8 +3833,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewBase")
 interface IListViewBaseStatics5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SingleSelectionFollowsFocusProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -4427,8 +3841,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListView")
 interface IListViewFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ListView* return_instance);
 }
@@ -4443,8 +3855,6 @@ interface IListViewHeaderItem : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewHeaderItem")
 interface IListViewHeaderItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ListViewHeaderItem* return_instance);
 }
@@ -4453,8 +3863,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewItem")
 interface IListViewItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.ListViewItemTemplateSettings* return_value);
 }
@@ -4463,8 +3871,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewItem")
 interface IListViewItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ListViewItem* return_instance);
 }
@@ -4479,8 +3885,6 @@ interface IListViewPersistenceHelper : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewPersistenceHelper")
 interface IListViewPersistenceHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetRelativeScrollPosition(Windows.UI.Xaml.Controls.ListViewBase listViewBase, Windows.UI.Xaml.Controls.ListViewItemToKeyHandler itemToKeyHandler, HSTRING* return_returnValue);
 	HRESULT abi_SetRelativeScrollPositionAsync(Windows.UI.Xaml.Controls.ListViewBase listViewBase, HSTRING relativeScrollPosition, Windows.UI.Xaml.Controls.ListViewKeyToItemHandler keyToItemHandler, Windows.Foundation.IAsyncAction* return_returnValue);
@@ -4490,8 +3894,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaElement")
 interface IMediaElement : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PosterSource(Windows.UI.Xaml.Media.ImageSource* return_value);
 	HRESULT set_PosterSource(Windows.UI.Xaml.Media.ImageSource value);
@@ -4580,8 +3982,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaElement")
 interface IMediaElement2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AreTransportControlsEnabled(bool* return_value);
 	HRESULT set_AreTransportControlsEnabled(bool value);
@@ -4600,8 +4000,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaElement")
 interface IMediaElement3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TransportControls(Windows.UI.Xaml.Controls.MediaTransportControls* return_value);
 	HRESULT set_TransportControls(Windows.UI.Xaml.Controls.MediaTransportControls value);
@@ -4615,8 +4013,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaElement")
 interface IMediaElementStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PosterSourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_SourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -4658,8 +4054,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaElement")
 interface IMediaElementStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AreTransportControlsEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_StretchProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -4672,8 +4066,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaPlayerElement")
 interface IMediaPlayerElement : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Source(Windows.Media.Playback.IMediaPlaybackSource* return_value);
 	HRESULT set_Source(Windows.Media.Playback.IMediaPlaybackSource value);
@@ -4697,8 +4089,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaPlayerElement")
 interface IMediaPlayerElementFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.MediaPlayerElement* return_instance);
 }
@@ -4707,8 +4097,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaPlayerElement")
 interface IMediaPlayerElementStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_AreTransportControlsEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -4723,8 +4111,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaPlayerPresenter")
 interface IMediaPlayerPresenter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MediaPlayer(Windows.Media.Playback.MediaPlayer* return_value);
 	HRESULT set_MediaPlayer(Windows.Media.Playback.MediaPlayer value);
@@ -4738,8 +4124,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaPlayerPresenter")
 interface IMediaPlayerPresenterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.MediaPlayerPresenter* return_instance);
 }
@@ -4748,8 +4132,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaPlayerPresenter")
 interface IMediaPlayerPresenterStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MediaPlayerProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_StretchProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -4760,8 +4142,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaTransportControls")
 interface IMediaTransportControls : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsFullWindowButtonVisible(bool* return_value);
 	HRESULT set_IsFullWindowButtonVisible(bool value);
@@ -4803,8 +4183,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaTransportControls")
 interface IMediaTransportControls2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSkipForwardButtonVisible(bool* return_value);
 	HRESULT set_IsSkipForwardButtonVisible(bool value);
@@ -4828,8 +4206,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaTransportControls")
 interface IMediaTransportControlsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.MediaTransportControls* return_instance);
 }
@@ -4844,8 +4220,6 @@ interface IMediaTransportControlsHelper : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaTransportControlsHelper")
 interface IMediaTransportControlsHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DropoutOrderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetDropoutOrder(Windows.UI.Xaml.UIElement element, Windows.Foundation.IReference!(INT32)* return_value);
@@ -4856,8 +4230,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaTransportControls")
 interface IMediaTransportControlsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsFullWindowButtonVisibleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsFullWindowEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -4882,8 +4254,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaTransportControls")
 interface IMediaTransportControlsStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSkipForwardButtonVisibleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsSkipForwardEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -4898,8 +4268,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyout")
 interface IMenuFlyout : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Items(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.MenuFlyoutItemBase)* return_value);
 	HRESULT get_MenuFlyoutPresenterStyle(Windows.UI.Xaml.Style* return_value);
@@ -4910,8 +4278,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyout")
 interface IMenuFlyout2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowAt(Windows.UI.Xaml.UIElement targetElement, Windows.Foundation.Point point);
 }
@@ -4920,8 +4286,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyout")
 interface IMenuFlyoutFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.MenuFlyout* return_instance);
 }
@@ -4930,8 +4294,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutItem")
 interface IMenuFlyoutItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);
 	HRESULT set_Text(HSTRING value);
@@ -4947,8 +4309,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutItem")
 interface IMenuFlyoutItem2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Icon(Windows.UI.Xaml.Controls.IconElement* return_value);
 	HRESULT set_Icon(Windows.UI.Xaml.Controls.IconElement value);
@@ -4970,8 +4330,6 @@ interface IMenuFlyoutItemBaseFactory : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutItem")
 interface IMenuFlyoutItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.MenuFlyoutItem* return_instance);
 }
@@ -4980,8 +4338,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutItem")
 interface IMenuFlyoutItemStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_CommandProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -4992,8 +4348,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutItem")
 interface IMenuFlyoutItemStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IconProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -5008,8 +4362,6 @@ interface IMenuFlyoutPresenter : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutPresenter")
 interface IMenuFlyoutPresenter2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.MenuFlyoutPresenterTemplateSettings* return_value);
 }
@@ -5018,8 +4370,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutPresenter")
 interface IMenuFlyoutPresenterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.MenuFlyoutPresenter* return_instance);
 }
@@ -5034,8 +4384,6 @@ interface IMenuFlyoutSeparator : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutSeparator")
 interface IMenuFlyoutSeparatorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.MenuFlyoutSeparator* return_instance);
 }
@@ -5044,8 +4392,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyout")
 interface IMenuFlyoutStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MenuFlyoutPresenterStyleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -5054,8 +4400,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutSubItem")
 interface IMenuFlyoutSubItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Items(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.MenuFlyoutItemBase)* return_value);
 	HRESULT get_Text(HSTRING* return_value);
@@ -5066,8 +4410,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutSubItem")
 interface IMenuFlyoutSubItem2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Icon(Windows.UI.Xaml.Controls.IconElement* return_value);
 	HRESULT set_Icon(Windows.UI.Xaml.Controls.IconElement value);
@@ -5077,8 +4419,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutSubItem")
 interface IMenuFlyoutSubItemStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -5087,8 +4427,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutSubItem")
 interface IMenuFlyoutSubItemStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IconProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -5096,8 +4434,6 @@ extern(Windows):
 @uuid("bf2195a9-f4ea-4336-977c-f8fcf78b0d9e")
 interface INavigate : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Navigate(Windows.UI.Xaml.Interop.TypeName sourcePageType, bool* return_returnValue);
 }
@@ -5106,8 +4442,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.NotifyEventArgs")
 interface INotifyEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Value(HSTRING* return_value);
 }
@@ -5116,8 +4450,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.NotifyEventArgs")
 interface INotifyEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CallingUri(Windows.Foundation.Uri* return_value);
 }
@@ -5126,8 +4458,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Page")
 interface IPage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Frame(Windows.UI.Xaml.Controls.Frame* return_value);
 	HRESULT get_NavigationCacheMode(Windows.UI.Xaml.Navigation.NavigationCacheMode* return_value);
@@ -5142,8 +4472,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Page")
 interface IPageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Page* return_instance);
 }
@@ -5152,8 +4480,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Page")
 interface IPageOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnNavigatedFrom(Windows.UI.Xaml.Navigation.NavigationEventArgs e);
 	HRESULT abi_OnNavigatedTo(Windows.UI.Xaml.Navigation.NavigationEventArgs e);
@@ -5164,8 +4490,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Page")
 interface IPageStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FrameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TopAppBarProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5176,8 +4500,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Panel")
 interface IPanel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Children(Windows.UI.Xaml.Controls.UIElementCollection* return_value);
 	HRESULT get_Background(Windows.UI.Xaml.Media.Brush* return_value);
@@ -5191,8 +4513,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Panel")
 interface IPanelFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Panel* return_instance);
 }
@@ -5201,8 +4521,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Panel")
 interface IPanelStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BackgroundProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsItemsHostProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5213,8 +4531,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.PasswordBox")
 interface IPasswordBox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Password(HSTRING* return_value);
 	HRESULT set_Password(HSTRING value);
@@ -5237,8 +4553,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.PasswordBox")
 interface IPasswordBox2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Header(IInspectable* return_value);
 	HRESULT set_Header(IInspectable value);
@@ -5258,8 +4572,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.PasswordBox")
 interface IPasswordBox3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PasswordRevealMode(Windows.UI.Xaml.Controls.PasswordRevealMode* return_value);
 	HRESULT set_PasswordRevealMode(Windows.UI.Xaml.Controls.PasswordRevealMode value);
@@ -5273,8 +4585,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.PasswordBox")
 interface IPasswordBoxStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PasswordProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_PasswordCharProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5287,8 +4597,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.PasswordBox")
 interface IPasswordBoxStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_HeaderTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5301,8 +4609,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.PasswordBox")
 interface IPasswordBoxStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PasswordRevealModeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TextReadingOrderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5313,8 +4619,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.PathIcon")
 interface IPathIcon : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Data(Windows.UI.Xaml.Media.Geometry* return_value);
 	HRESULT set_Data(Windows.UI.Xaml.Media.Geometry value);
@@ -5324,8 +4628,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.PathIcon")
 interface IPathIconFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.PathIcon* return_instance);
 }
@@ -5334,8 +4636,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.PathIcon")
 interface IPathIconStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DataProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -5350,8 +4650,6 @@ interface IPickerConfirmedEventArgs : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.PickerFlyout")
 interface IPickerFlyout : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT set_Content(Windows.UI.Xaml.UIElement value);
@@ -5372,8 +4670,6 @@ interface IPickerFlyoutPresenter : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.PickerFlyout")
 interface IPickerFlyoutStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ConfirmationButtonsVisibleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5383,8 +4679,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Pivot")
 interface IPivot : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(IInspectable* return_value);
 	HRESULT set_Title(IInspectable value);
@@ -5414,8 +4708,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Pivot")
 interface IPivot2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LeftHeader(IInspectable* return_value);
 	HRESULT set_LeftHeader(IInspectable value);
@@ -5431,8 +4723,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Pivot")
 interface IPivot3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderFocusVisualPlacement(Windows.UI.Xaml.Controls.PivotHeaderFocusVisualPlacement* return_value);
 	HRESULT set_HeaderFocusVisualPlacement(Windows.UI.Xaml.Controls.PivotHeaderFocusVisualPlacement value);
@@ -5444,8 +4734,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Pivot")
 interface IPivotFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Pivot* return_instance);
 }
@@ -5454,8 +4742,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.PivotItem")
 interface IPivotItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Header(IInspectable* return_value);
 	HRESULT set_Header(IInspectable value);
@@ -5465,8 +4751,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.PivotItemEventArgs")
 interface IPivotItemEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Item(Windows.UI.Xaml.Controls.PivotItem* return_value);
 	HRESULT set_Item(Windows.UI.Xaml.Controls.PivotItem value);
@@ -5476,8 +4760,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.PivotItem")
 interface IPivotItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.PivotItem* return_instance);
 }
@@ -5486,8 +4768,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.PivotItem")
 interface IPivotItemStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -5496,8 +4776,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Pivot")
 interface IPivotStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TitleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TitleTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5514,8 +4792,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Pivot")
 interface IPivotStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LeftHeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_LeftHeaderTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5527,8 +4803,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Pivot")
 interface IPivotStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderFocusVisualPlacementProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsHeaderItemsCarouselEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5538,8 +4812,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ProgressBar")
 interface IProgressBar : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsIndeterminate(bool* return_value);
 	HRESULT set_IsIndeterminate(bool value);
@@ -5554,8 +4826,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ProgressBar")
 interface IProgressBarFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ProgressBar* return_instance);
 }
@@ -5564,8 +4834,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ProgressBar")
 interface IProgressBarStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsIndeterminateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ShowErrorProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5576,8 +4844,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ProgressRing")
 interface IProgressRing : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsActive(bool* return_value);
 	HRESULT set_IsActive(bool value);
@@ -5588,8 +4854,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ProgressRing")
 interface IProgressRingStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsActiveProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -5598,8 +4862,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RadioButton")
 interface IRadioButton : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GroupName(HSTRING* return_value);
 	HRESULT set_GroupName(HSTRING value);
@@ -5609,8 +4871,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RadioButton")
 interface IRadioButtonFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.RadioButton* return_instance);
 }
@@ -5619,8 +4879,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RadioButton")
 interface IRadioButtonStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GroupNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -5629,8 +4887,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RelativePanel")
 interface IRelativePanel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BorderBrush(Windows.UI.Xaml.Media.Brush* return_value);
 	HRESULT set_BorderBrush(Windows.UI.Xaml.Media.Brush value);
@@ -5646,8 +4902,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RelativePanel")
 interface IRelativePanelFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.RelativePanel* return_instance);
 }
@@ -5656,8 +4910,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RelativePanel")
 interface IRelativePanelStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LeftOfProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetLeftOf(Windows.UI.Xaml.UIElement element, IInspectable* return_value);
@@ -5717,8 +4969,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichEditBox")
 interface IRichEditBox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsReadOnly(bool* return_value);
 	HRESULT set_IsReadOnly(bool value);
@@ -5747,8 +4997,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichEditBox")
 interface IRichEditBox2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Header(IInspectable* return_value);
 	HRESULT set_Header(IInspectable value);
@@ -5770,8 +5018,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichEditBox")
 interface IRichEditBox3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_TextCompositionStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TextCompositionStarted(EventRegistrationToken token);
@@ -5793,8 +5039,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichEditBox")
 interface IRichEditBox4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetLinguisticAlternativesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_returnValue);
 	HRESULT get_ClipboardCopyFormat(Windows.UI.Xaml.Controls.RichEditClipboardFormat* return_value);
@@ -5805,8 +5049,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichEditBox")
 interface IRichEditBox5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectionHighlightColorWhenNotFocused(Windows.UI.Xaml.Media.SolidColorBrush* return_value);
 	HRESULT set_SelectionHighlightColorWhenNotFocused(Windows.UI.Xaml.Media.SolidColorBrush value);
@@ -5818,8 +5060,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichEditBox")
 interface IRichEditBoxFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.RichEditBox* return_instance);
 }
@@ -5828,8 +5068,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichEditBox")
 interface IRichEditBoxStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsReadOnlyProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_AcceptsReturnProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5844,8 +5082,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichEditBox")
 interface IRichEditBoxStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_HeaderTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5859,8 +5095,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichEditBox")
 interface IRichEditBoxStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesiredCandidateWindowAlignmentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TextReadingOrderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5870,8 +5104,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichEditBox")
 interface IRichEditBoxStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ClipboardCopyFormatProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -5880,8 +5112,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichEditBox")
 interface IRichEditBoxStatics5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectionHighlightColorWhenNotFocusedProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_MaxLengthProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -5897,8 +5127,6 @@ interface IRichEditBoxTextChangingEventArgs : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.RichEditBoxTextChangingEventArgs")
 interface IRichEditBoxTextChangingEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsContentChanging(bool* return_value);
 }
@@ -5907,8 +5135,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichTextBlock")
 interface IRichTextBlock : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FontSize(double* return_value);
 	HRESULT set_FontSize(double value);
@@ -5964,8 +5190,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichTextBlock")
 interface IRichTextBlock2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxLines(INT32* return_value);
 	HRESULT set_MaxLines(INT32 value);
@@ -5985,8 +5209,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichTextBlock")
 interface IRichTextBlock3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTextScaleFactorEnabled(bool* return_value);
 	HRESULT set_IsTextScaleFactorEnabled(bool value);
@@ -5996,8 +5218,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichTextBlock")
 interface IRichTextBlock4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextDecorations(Windows.UI.Text.TextDecorations* return_value);
 	HRESULT set_TextDecorations(Windows.UI.Text.TextDecorations value);
@@ -6007,8 +5227,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichTextBlockOverflow")
 interface IRichTextBlockOverflow : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OverflowContentTarget(Windows.UI.Xaml.Controls.RichTextBlockOverflow* return_value);
 	HRESULT set_OverflowContentTarget(Windows.UI.Xaml.Controls.RichTextBlockOverflow value);
@@ -6027,8 +5245,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichTextBlockOverflow")
 interface IRichTextBlockOverflow2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxLines(INT32* return_value);
 	HRESULT set_MaxLines(INT32 value);
@@ -6038,8 +5254,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichTextBlockOverflow")
 interface IRichTextBlockOverflowStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OverflowContentTargetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_PaddingProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6050,8 +5264,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichTextBlockOverflow")
 interface IRichTextBlockOverflowStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxLinesProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -6060,8 +5272,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichTextBlock")
 interface IRichTextBlockStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FontSizeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FontFamilyProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6087,8 +5297,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichTextBlock")
 interface IRichTextBlockStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxLinesProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TextLineBoundsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6102,8 +5310,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichTextBlock")
 interface IRichTextBlockStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTextScaleFactorEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -6112,8 +5318,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RichTextBlock")
 interface IRichTextBlockStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextDecorationsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -6122,8 +5326,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RowDefinition")
 interface IRowDefinition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Height(Windows.UI.Xaml.GridLength* return_value);
 	HRESULT set_Height(Windows.UI.Xaml.GridLength value);
@@ -6138,8 +5340,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.RowDefinition")
 interface IRowDefinitionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeightProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_MaxHeightProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6150,8 +5350,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ScrollContentPresenter")
 interface IScrollContentPresenter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanVerticallyScroll(bool* return_value);
 	HRESULT set_CanVerticallyScroll(bool value);
@@ -6186,8 +5384,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ScrollViewer")
 interface IScrollViewer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HorizontalScrollBarVisibility(Windows.UI.Xaml.Controls.ScrollBarVisibility* return_value);
 	HRESULT set_HorizontalScrollBarVisibility(Windows.UI.Xaml.Controls.ScrollBarVisibility value);
@@ -6258,8 +5454,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ScrollViewer")
 interface IScrollViewer2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TopLeftHeader(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT set_TopLeftHeader(Windows.UI.Xaml.UIElement value);
@@ -6277,8 +5471,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ScrollViewer")
 interface IScrollViewer3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_DirectManipulationStarted(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_DirectManipulationStarted(EventRegistrationToken token);
@@ -6290,8 +5482,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ScrollViewer")
 interface IScrollViewerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HorizontalSnapPointsAlignmentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_VerticalSnapPointsAlignmentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6360,8 +5550,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ScrollViewer")
 interface IScrollViewerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TopLeftHeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_LeftHeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6372,8 +5560,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ScrollViewerView")
 interface IScrollViewerView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HorizontalOffset(double* return_value);
 	HRESULT get_VerticalOffset(double* return_value);
@@ -6384,8 +5570,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ScrollViewerViewChangedEventArgs")
 interface IScrollViewerViewChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsIntermediate(bool* return_value);
 }
@@ -6394,8 +5578,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ScrollViewerViewChangingEventArgs")
 interface IScrollViewerViewChangingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NextView(Windows.UI.Xaml.Controls.ScrollViewerView* return_value);
 	HRESULT get_FinalView(Windows.UI.Xaml.Controls.ScrollViewerView* return_value);
@@ -6406,8 +5588,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SearchBox")
 interface ISearchBox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SearchHistoryEnabled(bool* return_value);
 	HRESULT set_SearchHistoryEnabled(bool value);
@@ -6438,8 +5618,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SearchBox")
 interface ISearchBoxFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.SearchBox* return_instance);
 }
@@ -6448,8 +5626,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SearchBoxQueryChangedEventArgs")
 interface ISearchBoxQueryChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_QueryText(HSTRING* return_value);
 	HRESULT get_Language(HSTRING* return_value);
@@ -6460,8 +5636,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SearchBoxQuerySubmittedEventArgs")
 interface ISearchBoxQuerySubmittedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_QueryText(HSTRING* return_value);
 	HRESULT get_Language(HSTRING* return_value);
@@ -6473,8 +5647,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SearchBoxResultSuggestionChosenEventArgs")
 interface ISearchBoxResultSuggestionChosenEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Tag(HSTRING* return_value);
 	HRESULT get_KeyModifiers(Windows.System.VirtualKeyModifiers* return_value);
@@ -6484,8 +5656,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SearchBox")
 interface ISearchBoxStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SearchHistoryEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_SearchHistoryContextProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6499,8 +5669,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SearchBoxSuggestionsRequestedEventArgs")
 interface ISearchBoxSuggestionsRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_QueryText(HSTRING* return_value);
 	HRESULT get_Language(HSTRING* return_value);
@@ -6512,8 +5680,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SectionsInViewChangedEventArgs")
 interface ISectionsInViewChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AddedSections(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection)* return_value);
 	HRESULT get_RemovedSections(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection)* return_value);
@@ -6529,8 +5695,6 @@ interface ISectionsInViewChangedEventArgsFactory : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.SelectionChangedEventArgs")
 interface ISelectionChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AddedItems(Windows.Foundation.Collections.IVector!(IInspectable)* return_value);
 	HRESULT get_RemovedItems(Windows.Foundation.Collections.IVector!(IInspectable)* return_value);
@@ -6540,8 +5704,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SelectionChangedEventArgs")
 interface ISelectionChangedEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithRemovedItemsAndAddedItems(Windows.Foundation.Collections.IVector!(IInspectable) removedItems, Windows.Foundation.Collections.IVector!(IInspectable) addedItems, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.SelectionChangedEventArgs* return_instance);
 }
@@ -6550,8 +5712,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SemanticZoom")
 interface ISemanticZoom : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ZoomedInView(Windows.UI.Xaml.Controls.ISemanticZoomInformation* return_value);
 	HRESULT set_ZoomedInView(Windows.UI.Xaml.Controls.ISemanticZoomInformation value);
@@ -6573,8 +5733,6 @@ extern(Windows):
 @uuid("a76a3b63-229b-4dc5-aa11-9d922fbf8a98")
 interface ISemanticZoomInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SemanticZoomOwner(Windows.UI.Xaml.Controls.SemanticZoom* return_value);
 	HRESULT set_SemanticZoomOwner(Windows.UI.Xaml.Controls.SemanticZoom value);
@@ -6595,8 +5753,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SemanticZoomLocation")
 interface ISemanticZoomLocation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Item(IInspectable* return_value);
 	HRESULT set_Item(IInspectable value);
@@ -6608,8 +5764,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SemanticZoom")
 interface ISemanticZoomStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ZoomedInViewProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ZoomedOutViewProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6622,8 +5776,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SemanticZoomViewChangedEventArgs")
 interface ISemanticZoomViewChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSourceZoomedInView(bool* return_value);
 	HRESULT set_IsSourceZoomedInView(bool value);
@@ -6637,8 +5789,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SettingsFlyout")
 interface ISettingsFlyout : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT set_Title(HSTRING value);
@@ -6660,8 +5810,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SettingsFlyout")
 interface ISettingsFlyoutFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.SettingsFlyout* return_instance);
 }
@@ -6670,8 +5818,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SettingsFlyout")
 interface ISettingsFlyoutStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TitleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_HeaderBackgroundProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6683,8 +5829,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Slider")
 interface ISlider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IntermediateValue(double* return_value);
 	HRESULT set_IntermediateValue(double value);
@@ -6710,8 +5854,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Slider")
 interface ISlider2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Header(IInspectable* return_value);
 	HRESULT set_Header(IInspectable value);
@@ -6723,8 +5865,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Slider")
 interface ISliderFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Slider* return_instance);
 }
@@ -6733,8 +5873,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Slider")
 interface ISliderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IntermediateValueProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_StepFrequencyProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6751,8 +5889,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Slider")
 interface ISliderStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_HeaderTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6762,8 +5898,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SplitView")
 interface ISplitView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT set_Content(Windows.UI.Xaml.UIElement value);
@@ -6792,8 +5926,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SplitView")
 interface ISplitView2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode* return_value);
 	HRESULT set_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value);
@@ -6803,8 +5935,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SplitView")
 interface ISplitViewFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.SplitView* return_instance);
 }
@@ -6813,8 +5943,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SplitViewPaneClosingEventArgs")
 interface ISplitViewPaneClosingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Cancel(bool* return_value);
 	HRESULT set_Cancel(bool value);
@@ -6824,8 +5952,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SplitView")
 interface ISplitViewStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_PaneProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6842,8 +5968,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SplitView")
 interface ISplitViewStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayModeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -6852,8 +5976,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.StackPanel")
 interface IStackPanel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AreScrollSnapPointsRegular(bool* return_value);
 	HRESULT set_AreScrollSnapPointsRegular(bool value);
@@ -6865,8 +5987,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.StackPanel")
 interface IStackPanel2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BorderBrush(Windows.UI.Xaml.Media.Brush* return_value);
 	HRESULT set_BorderBrush(Windows.UI.Xaml.Media.Brush value);
@@ -6882,8 +6002,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.StackPanel")
 interface IStackPanelFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.StackPanel* return_instance);
 }
@@ -6892,8 +6010,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.StackPanel")
 interface IStackPanelStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AreScrollSnapPointsRegularProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_OrientationProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6903,8 +6019,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.StackPanel")
 interface IStackPanelStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BorderBrushProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_BorderThicknessProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -6916,8 +6030,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.StyleSelector")
 interface IStyleSelector : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SelectStyle(IInspectable item, Windows.UI.Xaml.DependencyObject container, Windows.UI.Xaml.Style* return_returnValue);
 }
@@ -6926,8 +6038,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.StyleSelector")
 interface IStyleSelectorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.StyleSelector* return_instance);
 }
@@ -6936,8 +6046,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.StyleSelector")
 interface IStyleSelectorOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SelectStyleCore(IInspectable item, Windows.UI.Xaml.DependencyObject container, Windows.UI.Xaml.Style* return_returnValue);
 }
@@ -6952,8 +6060,6 @@ interface ISwapChainBackgroundPanel : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.SwapChainBackgroundPanel")
 interface ISwapChainBackgroundPanel2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCoreIndependentInputSource(Windows.UI.Core.CoreInputDeviceTypes deviceTypes, Windows.UI.Core.CoreIndependentInputSource* return_returnValue);
 }
@@ -6962,8 +6068,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SwapChainBackgroundPanel")
 interface ISwapChainBackgroundPanelFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.SwapChainBackgroundPanel* return_instance);
 }
@@ -6972,8 +6076,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SwapChainPanel")
 interface ISwapChainPanel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CompositionScaleX(FLOAT* return_value);
 	HRESULT get_CompositionScaleY(FLOAT* return_value);
@@ -6986,8 +6088,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SwapChainPanel")
 interface ISwapChainPanelFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.SwapChainPanel* return_instance);
 }
@@ -6996,8 +6096,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SwapChainPanel")
 interface ISwapChainPanelStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CompositionScaleXProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_CompositionScaleYProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -7007,8 +6105,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SymbolIcon")
 interface ISymbolIcon : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Symbol(Windows.UI.Xaml.Controls.Symbol* return_value);
 	HRESULT set_Symbol(Windows.UI.Xaml.Controls.Symbol value);
@@ -7018,8 +6114,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SymbolIcon")
 interface ISymbolIconFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithSymbol(Windows.UI.Xaml.Controls.Symbol symbol, Windows.UI.Xaml.Controls.SymbolIcon* return_instance);
 }
@@ -7028,8 +6122,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.SymbolIcon")
 interface ISymbolIconStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SymbolProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -7038,8 +6130,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBlock")
 interface ITextBlock : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FontSize(double* return_value);
 	HRESULT set_FontSize(double value);
@@ -7091,8 +6181,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBlock")
 interface ITextBlock2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectionHighlightColor(Windows.UI.Xaml.Media.SolidColorBrush* return_value);
 	HRESULT set_SelectionHighlightColor(Windows.UI.Xaml.Media.SolidColorBrush value);
@@ -7112,8 +6200,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBlock")
 interface ITextBlock3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTextScaleFactorEnabled(bool* return_value);
 	HRESULT set_IsTextScaleFactorEnabled(bool value);
@@ -7123,8 +6209,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBlock")
 interface ITextBlock4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAlphaMask(Windows.UI.Composition.CompositionBrush* return_returnValue);
 }
@@ -7133,8 +6217,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBlock")
 interface ITextBlock5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextDecorations(Windows.UI.Text.TextDecorations* return_value);
 	HRESULT set_TextDecorations(Windows.UI.Text.TextDecorations value);
@@ -7144,8 +6226,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBlock")
 interface ITextBlockStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FontSizeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FontFamilyProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -7169,8 +6249,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBlock")
 interface ITextBlockStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectionHighlightColorProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_MaxLinesProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -7184,8 +6262,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBlock")
 interface ITextBlockStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTextScaleFactorEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -7194,8 +6270,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBlock")
 interface ITextBlockStatics5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextDecorationsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -7204,8 +6278,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBox")
 interface ITextBox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);
 	HRESULT set_Text(HSTRING value);
@@ -7246,8 +6318,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBox")
 interface ITextBox2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Header(IInspectable* return_value);
 	HRESULT set_Header(IInspectable value);
@@ -7269,8 +6339,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBox")
 interface ITextBox3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_TextCompositionStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TextCompositionStarted(EventRegistrationToken token);
@@ -7292,8 +6360,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBox")
 interface ITextBox4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetLinguisticAlternativesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_returnValue);
 }
@@ -7302,8 +6368,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBox")
 interface ITextBox5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectionHighlightColorWhenNotFocused(Windows.UI.Xaml.Media.SolidColorBrush* return_value);
 	HRESULT set_SelectionHighlightColorWhenNotFocused(Windows.UI.Xaml.Media.SolidColorBrush value);
@@ -7313,8 +6377,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBox")
 interface ITextBoxFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.TextBox* return_instance);
 }
@@ -7323,8 +6385,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBox")
 interface ITextBoxStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_MaxLengthProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -7341,8 +6401,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBox")
 interface ITextBoxStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_HeaderTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -7356,8 +6414,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBox")
 interface ITextBoxStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesiredCandidateWindowAlignmentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TextReadingOrderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -7367,8 +6423,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBox")
 interface ITextBoxStatics5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectionHighlightColorWhenNotFocusedProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -7383,8 +6437,6 @@ interface ITextBoxTextChangingEventArgs : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBoxTextChangingEventArgs")
 interface ITextBoxTextChangingEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsContentChanging(bool* return_value);
 }
@@ -7399,8 +6451,6 @@ interface ITextChangedEventArgs : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs")
 interface ITextCompositionChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StartIndex(INT32* return_value);
 	HRESULT get_Length(INT32* return_value);
@@ -7410,8 +6460,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs")
 interface ITextCompositionEndedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StartIndex(INT32* return_value);
 	HRESULT get_Length(INT32* return_value);
@@ -7421,8 +6469,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs")
 interface ITextCompositionStartedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StartIndex(INT32* return_value);
 	HRESULT get_Length(INT32* return_value);
@@ -7432,8 +6478,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TextControlPasteEventArgs")
 interface ITextControlPasteEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -7443,8 +6487,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TimePickedEventArgs")
 interface ITimePickedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OldTime(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_NewTime(Windows.Foundation.TimeSpan* return_value);
@@ -7454,8 +6496,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TimePicker")
 interface ITimePicker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Header(IInspectable* return_value);
 	HRESULT set_Header(IInspectable value);
@@ -7475,8 +6515,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TimePicker")
 interface ITimePicker2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode* return_value);
 	HRESULT set_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value);
@@ -7486,8 +6524,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TimePicker")
 interface ITimePickerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.TimePicker* return_instance);
 }
@@ -7496,8 +6532,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TimePickerFlyout")
 interface ITimePickerFlyout : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ClockIdentifier(HSTRING* return_value);
 	HRESULT set_ClockIdentifier(HSTRING value);
@@ -7520,8 +6554,6 @@ interface ITimePickerFlyoutPresenter : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.TimePickerFlyout")
 interface ITimePickerFlyoutStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ClockIdentifierProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TimeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -7532,8 +6564,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TimePicker")
 interface ITimePickerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_HeaderTemplateProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -7546,8 +6576,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TimePicker")
 interface ITimePickerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LightDismissOverlayModeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -7556,8 +6584,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.TimePickerValueChangedEventArgs")
 interface ITimePickerValueChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OldTime(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_NewTime(Windows.Foundation.TimeSpan* return_value);
@@ -7567,8 +6593,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ToggleMenuFlyoutItem")
 interface IToggleMenuFlyoutItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsChecked(bool* return_value);
 	HRESULT set_IsChecked(bool value);
@@ -7578,8 +6602,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ToggleMenuFlyoutItem")
 interface IToggleMenuFlyoutItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ToggleMenuFlyoutItem* return_instance);
 }
@@ -7588,8 +6610,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ToggleMenuFlyoutItem")
 interface IToggleMenuFlyoutItemStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsCheckedProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -7598,8 +6618,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ToggleSwitch")
 interface IToggleSwitch : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsOn(bool* return_value);
 	HRESULT set_IsOn(bool value);
@@ -7624,8 +6642,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ToggleSwitch")
 interface IToggleSwitchOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnToggled();
 	HRESULT abi_OnOnContentChanged(IInspectable oldContent, IInspectable newContent);
@@ -7637,8 +6653,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ToggleSwitch")
 interface IToggleSwitchStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsOnProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_HeaderProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -7653,8 +6667,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ToolTip")
 interface IToolTip : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HorizontalOffset(double* return_value);
 	HRESULT set_HorizontalOffset(double value);
@@ -7677,8 +6689,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ToolTip")
 interface IToolTipFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ToolTip* return_instance);
 }
@@ -7693,8 +6703,6 @@ interface IToolTipService : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.ToolTipService")
 interface IToolTipServiceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PlacementProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetPlacement(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.Controls.Primitives.PlacementMode* return_value);
@@ -7711,8 +6719,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.ToolTip")
 interface IToolTipStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HorizontalOffsetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsOpenProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -7725,8 +6731,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.UIElementCollection")
 interface IUIElementCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Move(UINT32 oldIndex, UINT32 newIndex);
 }
@@ -7735,8 +6739,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.UserControl")
 interface IUserControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT set_Content(Windows.UI.Xaml.UIElement value);
@@ -7746,8 +6748,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.UserControl")
 interface IUserControlFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.UserControl* return_instance);
 }
@@ -7756,8 +6756,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.UserControl")
 interface IUserControlStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -7766,8 +6764,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.VariableSizedWrapGrid")
 interface IVariableSizedWrapGrid : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemHeight(double* return_value);
 	HRESULT set_ItemHeight(double value);
@@ -7787,8 +6783,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.VariableSizedWrapGrid")
 interface IVariableSizedWrapGridStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemHeightProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ItemWidthProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -7808,8 +6802,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Viewbox")
 interface IViewbox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Child(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT set_Child(Windows.UI.Xaml.UIElement value);
@@ -7823,8 +6815,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.Viewbox")
 interface IViewboxStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StretchProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_StretchDirectionProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -7834,8 +6824,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.VirtualizingPanel")
 interface IVirtualizingPanel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemContainerGenerator(Windows.UI.Xaml.Controls.ItemContainerGenerator* return_value);
 }
@@ -7850,8 +6838,6 @@ interface IVirtualizingPanelFactory : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Controls.VirtualizingPanel")
 interface IVirtualizingPanelOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnItemsChanged(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.ItemsChangedEventArgs args);
 	HRESULT abi_OnClearChildren();
@@ -7862,8 +6848,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.VirtualizingPanel")
 interface IVirtualizingPanelProtected : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddInternalChild(Windows.UI.Xaml.UIElement child);
 	HRESULT abi_InsertInternalChild(INT32 index, Windows.UI.Xaml.UIElement child);
@@ -7874,8 +6858,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.VirtualizingStackPanel")
 interface IVirtualizingStackPanel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AreScrollSnapPointsRegular(bool* return_value);
 	HRESULT set_AreScrollSnapPointsRegular(bool value);
@@ -7889,8 +6871,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.VirtualizingStackPanel")
 interface IVirtualizingStackPanelOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnCleanUpVirtualizedItem(Windows.UI.Xaml.Controls.CleanUpVirtualizedItemEventArgs e);
 }
@@ -7899,8 +6879,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.VirtualizingStackPanel")
 interface IVirtualizingStackPanelStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AreScrollSnapPointsRegularProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_OrientationProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -7915,8 +6893,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebView")
 interface IWebView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Source(Windows.Foundation.Uri* return_value);
 	HRESULT set_Source(Windows.Foundation.Uri value);
@@ -7946,8 +6922,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebView")
 interface IWebView2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanGoBack(bool* return_value);
 	HRESULT get_CanGoForward(bool* return_value);
@@ -7993,8 +6967,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebView")
 interface IWebView3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContainsFullScreenElement(bool* return_value);
 	HRESULT add_ContainsFullScreenElementChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, IInspectable) value, EventRegistrationToken* return_token);
@@ -8005,8 +6977,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebView")
 interface IWebView4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExecutionMode(Windows.UI.Xaml.Controls.WebViewExecutionMode* return_value);
 	HRESULT get_DeferredPermissionRequests(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.WebViewDeferredPermissionRequest)* return_value);
@@ -8025,8 +6995,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebView")
 interface IWebView5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_XYFocusLeft(Windows.UI.Xaml.DependencyObject* return_value);
 	HRESULT set_XYFocusLeft(Windows.UI.Xaml.DependencyObject value);
@@ -8042,8 +7010,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewBrush")
 interface IWebViewBrush : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceName(HSTRING* return_value);
 	HRESULT set_SourceName(HSTRING value);
@@ -8055,8 +7021,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewBrush")
 interface IWebViewBrushStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -8065,8 +7029,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewContentLoadingEventArgs")
 interface IWebViewContentLoadingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 }
@@ -8075,8 +7037,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewDOMContentLoadedEventArgs")
 interface IWebViewDOMContentLoadedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 }
@@ -8085,8 +7045,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewDeferredPermissionRequest")
 interface IWebViewDeferredPermissionRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT get_PermissionType(Windows.UI.Xaml.Controls.WebViewPermissionType* return_value);
@@ -8099,8 +7057,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebView")
 interface IWebViewFactory4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithExecutionMode(Windows.UI.Xaml.Controls.WebViewExecutionMode executionMode, Windows.UI.Xaml.Controls.WebView* return_instance);
 }
@@ -8109,8 +7065,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs")
 interface IWebViewLongRunningScriptDetectedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExecutionTime(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_StopPageScriptExecution(bool* return_value);
@@ -8121,8 +7075,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs")
 interface IWebViewNavigationCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT get_IsSuccess(bool* return_value);
@@ -8133,8 +7085,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewNavigationFailedEventArgs")
 interface IWebViewNavigationFailedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT get_WebErrorStatus(Windows.Web.WebErrorStatus* return_value);
@@ -8144,8 +7094,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewNavigationStartingEventArgs")
 interface IWebViewNavigationStartingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT get_Cancel(bool* return_value);
@@ -8156,8 +7104,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewNewWindowRequestedEventArgs")
 interface IWebViewNewWindowRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT get_Referrer(Windows.Foundation.Uri* return_value);
@@ -8169,8 +7115,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewPermissionRequest")
 interface IWebViewPermissionRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT get_PermissionType(Windows.UI.Xaml.Controls.WebViewPermissionType* return_value);
@@ -8185,8 +7129,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewPermissionRequestedEventArgs")
 interface IWebViewPermissionRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PermissionRequest(Windows.UI.Xaml.Controls.WebViewPermissionRequest* return_value);
 }
@@ -8195,8 +7137,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewSettings")
 interface IWebViewSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsJavaScriptEnabled(bool* return_value);
 	HRESULT set_IsJavaScriptEnabled(bool value);
@@ -8208,8 +7148,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebView")
 interface IWebViewStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("AnyScriptNotifyUri is unavailable for releases beginning with Windows 8.1. Instead, list URIs under ApplicationContentUriRules in the package manifest. For more info, see the AnyScriptNotifyUri documentation.")
 	HRESULT get_AnyScriptNotifyUri(Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri)* return_value);
@@ -8224,8 +7162,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebView")
 interface IWebViewStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanGoBackProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_CanGoForwardProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -8237,8 +7173,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebView")
 interface IWebViewStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContainsFullScreenElementProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -8247,8 +7181,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebView")
 interface IWebViewStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DefaultExecutionMode(Windows.UI.Xaml.Controls.WebViewExecutionMode* return_value);
 	HRESULT abi_ClearTemporaryWebDataAsync(Windows.Foundation.IAsyncAction* return_returnValue);
@@ -8258,8 +7190,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebView")
 interface IWebViewStatics5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_XYFocusLeftProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_XYFocusRightProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -8271,8 +7201,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewUnsupportedUriSchemeIdentifiedEventArgs")
 interface IWebViewUnsupportedUriSchemeIdentifiedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT get_Handled(bool* return_value);
@@ -8283,8 +7211,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewUnviewableContentIdentifiedEventArgs")
 interface IWebViewUnviewableContentIdentifiedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT get_Referrer(Windows.Foundation.Uri* return_value);
@@ -8294,8 +7220,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WebViewUnviewableContentIdentifiedEventArgs")
 interface IWebViewUnviewableContentIdentifiedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MediaType(HSTRING* return_value);
 }
@@ -8304,8 +7228,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WrapGrid")
 interface IWrapGrid : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemWidth(double* return_value);
 	HRESULT set_ItemWidth(double value);
@@ -8325,8 +7247,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Controls.WrapGrid")
 interface IWrapGridStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemWidthProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ItemHeightProperty(Windows.UI.Xaml.DependencyProperty* return_value);

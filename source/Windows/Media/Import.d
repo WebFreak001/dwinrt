@@ -15,8 +15,6 @@ struct PhotoImportProgress
 @WinrtFactory("Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult")
 interface IPhotoImportDeleteImportedItemsFromSourceResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Session(Windows.Media.Import.PhotoImportSession* return_value);
 	HRESULT get_HasSucceeded(bool* return_value);
@@ -37,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportFindItemsResult")
 interface IPhotoImportFindItemsResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Session(Windows.Media.Import.PhotoImportSession* return_value);
 	HRESULT get_HasSucceeded(bool* return_value);
@@ -79,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportFindItemsResult")
 interface IPhotoImportFindItemsResult2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddItemsInDateRangeToSelection(Windows.Foundation.DateTime rangeStart, Windows.Foundation.TimeSpan rangeLength);
 }
@@ -89,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportImportItemsResult")
 interface IPhotoImportImportItemsResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Session(Windows.Media.Import.PhotoImportSession* return_value);
 	HRESULT get_HasSucceeded(bool* return_value);
@@ -112,8 +104,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportItem")
 interface IPhotoImportItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_ItemKey(UINT64* return_value);
@@ -134,8 +124,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportItemImportedEventArgs")
 interface IPhotoImportItemImportedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ImportedItem(Windows.Media.Import.PhotoImportItem* return_value);
 }
@@ -144,8 +132,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportManager")
 interface IPhotoImportManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsSupportedAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_FindAllSourcesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportSource))* return_operation);
@@ -156,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportOperation")
 interface IPhotoImportOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Stage(Windows.Media.Import.PhotoImportStage* return_value);
 	HRESULT get_Session(Windows.Media.Import.PhotoImportSession* return_value);
@@ -170,8 +154,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportSelectionChangedEventArgs")
 interface IPhotoImportSelectionChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSelectionEmpty(bool* return_value);
 }
@@ -180,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportSession")
 interface IPhotoImportSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Source(Windows.Media.Import.PhotoImportSource* return_value);
 	HRESULT get_SessionId(GUID* return_value);
@@ -200,8 +180,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportSession")
 interface IPhotoImportSession2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_SubfolderDateFormat(Windows.Media.Import.PhotoImportSubfolderDateFormat value);
 	HRESULT get_SubfolderDateFormat(Windows.Media.Import.PhotoImportSubfolderDateFormat* return_value);
@@ -213,8 +191,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportSidecar")
 interface IPhotoImportSidecar : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_SizeInBytes(UINT64* return_value);
@@ -225,8 +201,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportSource")
 interface IPhotoImportSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -251,8 +225,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportSource")
 interface IPhotoImportSourceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING sourceId, Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource)* return_operation);
 	HRESULT abi_FromFolderAsync(Windows.Storage.IStorageFolder sourceRootFolder, Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource)* return_operation);
@@ -262,8 +234,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportStorageMedium")
 interface IPhotoImportStorageMedium : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Description(HSTRING* return_value);
@@ -279,8 +249,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Import.PhotoImportVideoSegment")
 interface IPhotoImportVideoSegment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_SizeInBytes(UINT64* return_value);

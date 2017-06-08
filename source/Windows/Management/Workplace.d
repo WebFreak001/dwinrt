@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Management.Workplace.MdmPolicy")
 interface IMdmAllowPolicyStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsBrowserAllowed(bool* return_value);
 	HRESULT abi_IsCameraAllowed(bool* return_value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.Workplace.MdmPolicy")
 interface IMdmPolicyStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetMessagingSyncPolicy(Windows.Management.Workplace.MessagingSyncPolicy* return_value);
 }
@@ -29,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.Workplace.WorkplaceSettings")
 interface IWorkplaceSettingsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsMicrosoftAccountOptional(bool* return_value);
 }

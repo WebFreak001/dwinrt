@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.StartScreen.JumpList")
 interface IJumpList : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Items(Windows.Foundation.Collections.IVector!(Windows.UI.StartScreen.JumpListItem)* return_value);
 	HRESULT get_SystemGroupKind(Windows.UI.StartScreen.JumpListSystemGroupKind* return_value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.JumpListItem")
 interface IJumpListItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.UI.StartScreen.JumpListItemKind* return_value);
 	HRESULT get_Arguments(HSTRING* return_value);
@@ -39,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.JumpListItem")
 interface IJumpListItemStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithArguments(HSTRING arguments, HSTRING displayName, Windows.UI.StartScreen.JumpListItem* return_result);
 	HRESULT abi_CreateSeparator(Windows.UI.StartScreen.JumpListItem* return_result);
@@ -50,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.JumpList")
 interface IJumpListStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LoadCurrentAsync(Windows.Foundation.IAsyncOperation!(Windows.UI.StartScreen.JumpList)* return_result);
 	HRESULT abi_IsSupported(bool* return_result);
@@ -61,8 +53,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTile")
 interface ISecondaryTile : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_TileId(HSTRING value);
 	HRESULT get_TileId(HSTRING* return_value);
@@ -117,8 +107,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTile")
 interface ISecondaryTile2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_PhoneticName(HSTRING value);
 	HRESULT get_PhoneticName(HSTRING* return_value);
@@ -133,8 +121,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTile")
 interface ISecondaryTileFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("SecondaryTile(string, string, string, string, Windows.UI.StartScreen.TileOptions, Windows.Foundation.Uri) may be altered or unavailable for releases after Windows Phone 8.1. Instead, use SecondaryTile(string, string, string, Windows.Foundation.Uri, Windows.UI.StartScreen.TileSize).")
 	HRESULT abi_CreateTile(HSTRING tileId, HSTRING shortName, HSTRING displayName, HSTRING arguments, Windows.UI.StartScreen.TileOptions tileOptions, Windows.Foundation.Uri logoReference, Windows.UI.StartScreen.SecondaryTile* return_value);
@@ -147,8 +133,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTile")
 interface ISecondaryTileFactory2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateMinimalTile(HSTRING tileId, HSTRING displayName, HSTRING arguments, Windows.Foundation.Uri square150x150Logo, Windows.UI.StartScreen.TileSize desiredSize, Windows.UI.StartScreen.SecondaryTile* return_value);
 }
@@ -157,8 +141,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTile")
 interface ISecondaryTileStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Exists(HSTRING tileId, bool* return_exists);
 	HRESULT abi_FindAllAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile))* return_operation);
@@ -170,8 +152,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTileVisualElements")
 interface ISecondaryTileVisualElements : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("SecondaryTileVisualElements.Square30x30Logo may be altered or unavailable for release after Windows 10.")
 	HRESULT set_Square30x30Logo(Windows.Foundation.Uri value);
@@ -203,8 +183,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTileVisualElements")
 interface ISecondaryTileVisualElements2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Square71x71Logo(Windows.Foundation.Uri value);
 	HRESULT get_Square71x71Logo(Windows.Foundation.Uri* return_value);
@@ -214,8 +192,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTileVisualElements")
 interface ISecondaryTileVisualElements3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Square44x44Logo(Windows.Foundation.Uri value);
 	HRESULT get_Square44x44Logo(Windows.Foundation.Uri* return_value);
@@ -225,8 +201,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.StartScreenManager")
 interface IStartScreenManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_value);
 	HRESULT abi_SupportsAppListEntry(Windows.ApplicationModel.Core.AppListEntry appListEntry, bool* return_result);
@@ -238,8 +212,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.StartScreenManager")
 interface IStartScreenManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.UI.StartScreen.StartScreenManager* return_value);
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.UI.StartScreen.StartScreenManager* return_result);
@@ -249,8 +221,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.VisualElementsRequest")
 interface IVisualElementsRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VisualElements(Windows.UI.StartScreen.SecondaryTileVisualElements* return_value);
 	HRESULT get_AlternateVisualElements(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTileVisualElements)* return_value);
@@ -262,8 +232,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.VisualElementsRequestDeferral")
 interface IVisualElementsRequestDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -272,8 +240,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.StartScreen.VisualElementsRequestedEventArgs")
 interface IVisualElementsRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.UI.StartScreen.VisualElementsRequest* return_value);
 }

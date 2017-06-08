@@ -27,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AdvancedCapturedPhoto")
 interface IAdvancedCapturedPhoto : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Frame(Windows.Media.Capture.CapturedFrame* return_value);
 	HRESULT get_Mode(Windows.Media.Devices.AdvancedPhotoMode* return_value);
@@ -39,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AdvancedCapturedPhoto")
 interface IAdvancedCapturedPhoto2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FrameBoundsRelativeToReferencePhoto(Windows.Foundation.IReference!(Windows.Foundation.Rect)* return_value);
 }
@@ -49,8 +45,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AdvancedPhotoCapture")
 interface IAdvancedPhotoCapture : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CaptureAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto)* return_operation);
 	HRESULT abi_CaptureWithContextAsync(IInspectable context, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto)* return_operation);
@@ -65,8 +59,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastBackgroundService")
 interface IAppBroadcastBackgroundService : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_PlugInState(Windows.Media.Capture.AppBroadcastPlugInState value);
 	HRESULT get_PlugInState(Windows.Media.Capture.AppBroadcastPlugInState* return_value);
@@ -88,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo")
 interface IAppBroadcastBackgroundServiceSignInInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SignInState(Windows.Media.Capture.AppBroadcastSignInState* return_value);
 	HRESULT set_OAuthRequestUri(Windows.Foundation.Uri value);
@@ -107,8 +97,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo")
 interface IAppBroadcastBackgroundServiceStreamInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StreamState(Windows.Media.Capture.AppBroadcastStreamState* return_value);
 	HRESULT set_DesiredVideoEncodingBitrate(UINT64 value);
@@ -130,8 +118,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastCameraCaptureStateChangedEventArgs")
 interface IAppBroadcastCameraCaptureStateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_State(Windows.Media.Capture.AppBroadcastCameraCaptureState* return_value);
 	HRESULT get_ErrorCode(UINT32* return_value);
@@ -141,8 +127,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastGlobalSettings")
 interface IAppBroadcastGlobalSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsBroadcastEnabled(bool* return_value);
 	HRESULT get_IsDisabledByPolicy(bool* return_value);
@@ -174,8 +158,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastHeartbeatRequestedEventArgs")
 interface IAppBroadcastHeartbeatRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Handled(bool value);
 	HRESULT get_Handled(bool* return_value);
@@ -185,8 +167,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastManager")
 interface IAppBroadcastManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetGlobalSettings(Windows.Media.Capture.AppBroadcastGlobalSettings* return_value);
 	HRESULT abi_ApplyGlobalSettings(Windows.Media.Capture.AppBroadcastGlobalSettings value);
@@ -198,8 +178,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastMicrophoneCaptureStateChangedEventArgs")
 interface IAppBroadcastMicrophoneCaptureStateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_State(Windows.Media.Capture.AppBroadcastMicrophoneCaptureState* return_value);
 	HRESULT get_ErrorCode(UINT32* return_value);
@@ -209,8 +187,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastPlugIn")
 interface IAppBroadcastPlugIn : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppId(HSTRING* return_value);
 	HRESULT get_ProviderSettings(Windows.Media.Capture.AppBroadcastProviderSettings* return_value);
@@ -222,8 +198,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastPlugInManager")
 interface IAppBroadcastPlugInManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsBroadcastProviderAvailable(bool* return_value);
 	HRESULT get_PlugInList(Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.AppBroadcastPlugIn)* return_value);
@@ -235,8 +209,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastPlugInManager")
 interface IAppBroadcastPlugInManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Media.Capture.AppBroadcastPlugInManager* return_ppInstance);
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.Media.Capture.AppBroadcastPlugInManager* return_ppInstance);
@@ -246,8 +218,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastPlugInStateChangedEventArgs")
 interface IAppBroadcastPlugInStateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PlugInState(Windows.Media.Capture.AppBroadcastPlugInState* return_value);
 }
@@ -256,8 +226,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastPreview")
 interface IAppBroadcastPreview : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_StopPreview();
 	HRESULT get_PreviewState(Windows.Media.Capture.AppBroadcastPreviewState* return_value);
@@ -271,8 +239,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastPreviewStateChangedEventArgs")
 interface IAppBroadcastPreviewStateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PreviewState(Windows.Media.Capture.AppBroadcastPreviewState* return_value);
 	HRESULT get_ErrorCode(UINT32* return_value);
@@ -282,8 +248,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastPreviewStreamReader")
 interface IAppBroadcastPreviewStreamReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VideoWidth(UINT32* return_value);
 	HRESULT get_VideoHeight(UINT32* return_value);
@@ -299,8 +263,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastPreviewStreamVideoFrame")
 interface IAppBroadcastPreviewStreamVideoFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VideoHeader(Windows.Media.Capture.AppBroadcastPreviewStreamVideoHeader* return_value);
 	HRESULT get_VideoBuffer(Windows.Storage.Streams.IBuffer* return_value);
@@ -310,8 +272,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastPreviewStreamVideoHeader")
 interface IAppBroadcastPreviewStreamVideoHeader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AbsoluteTimestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_RelativeTimestamp(Windows.Foundation.TimeSpan* return_value);
@@ -323,8 +283,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastProviderSettings")
 interface IAppBroadcastProviderSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_DefaultBroadcastTitle(HSTRING value);
 	HRESULT get_DefaultBroadcastTitle(HSTRING* return_value);
@@ -346,8 +304,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastServices")
 interface IAppBroadcastServices : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CaptureTargetType(Windows.Media.Capture.AppBroadcastCaptureTargetType* return_value);
 	HRESULT set_CaptureTargetType(Windows.Media.Capture.AppBroadcastCaptureTargetType value);
@@ -370,8 +326,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs")
 interface IAppBroadcastSignInStateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SignInState(Windows.Media.Capture.AppBroadcastSignInState* return_value);
 	HRESULT get_Result(Windows.Media.Capture.AppBroadcastSignInResult* return_value);
@@ -381,8 +335,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastState")
 interface IAppBroadcastState : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsCaptureTargetRunning(bool* return_value);
 	HRESULT get_ViewerCount(UINT32* return_value);
@@ -425,8 +377,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastStreamAudioFrame")
 interface IAppBroadcastStreamAudioFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AudioHeader(Windows.Media.Capture.AppBroadcastStreamAudioHeader* return_value);
 	HRESULT get_AudioBuffer(Windows.Storage.Streams.IBuffer* return_value);
@@ -436,8 +386,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastStreamAudioHeader")
 interface IAppBroadcastStreamAudioHeader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AbsoluteTimestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_RelativeTimestamp(Windows.Foundation.TimeSpan* return_value);
@@ -450,8 +398,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastStreamReader")
 interface IAppBroadcastStreamReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AudioChannels(UINT32* return_value);
 	HRESULT get_AudioSampleRate(UINT32* return_value);
@@ -472,8 +418,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs")
 interface IAppBroadcastStreamStateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StreamState(Windows.Media.Capture.AppBroadcastStreamState* return_value);
 }
@@ -482,8 +426,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastStreamVideoFrame")
 interface IAppBroadcastStreamVideoFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VideoHeader(Windows.Media.Capture.AppBroadcastStreamVideoHeader* return_value);
 	HRESULT get_VideoBuffer(Windows.Storage.Streams.IBuffer* return_value);
@@ -493,8 +435,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastStreamVideoHeader")
 interface IAppBroadcastStreamVideoHeader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AbsoluteTimestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_RelativeTimestamp(Windows.Foundation.TimeSpan* return_value);
@@ -508,8 +448,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastTriggerDetails")
 interface IAppBroadcastTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BackgroundService(Windows.Media.Capture.AppBroadcastBackgroundService* return_value);
 }
@@ -518,8 +456,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppBroadcastViewerCountChangedEventArgs")
 interface IAppBroadcastViewerCountChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ViewerCount(UINT32* return_value);
 }
@@ -528,8 +464,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCapture")
 interface IAppCapture : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsCapturingAudio(bool* return_value);
 	HRESULT get_IsCapturingVideo(bool* return_value);
@@ -541,8 +475,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureAlternateShortcutKeys")
 interface IAppCaptureAlternateShortcutKeys : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ToggleGameBarKey(Windows.System.VirtualKey value);
 	HRESULT get_ToggleGameBarKey(Windows.System.VirtualKey* return_value);
@@ -570,8 +502,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureAlternateShortcutKeys")
 interface IAppCaptureAlternateShortcutKeys2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ToggleMicrophoneCaptureKey(Windows.System.VirtualKey value);
 	HRESULT get_ToggleMicrophoneCaptureKey(Windows.System.VirtualKey* return_value);
@@ -583,8 +513,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureAlternateShortcutKeys")
 interface IAppCaptureAlternateShortcutKeys3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ToggleCameraCaptureKey(Windows.System.VirtualKey value);
 	HRESULT get_ToggleCameraCaptureKey(Windows.System.VirtualKey* return_value);
@@ -600,8 +528,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureDurationGeneratedEventArgs")
 interface IAppCaptureDurationGeneratedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Duration(Windows.Foundation.TimeSpan* return_value);
 }
@@ -610,8 +536,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureFileGeneratedEventArgs")
 interface IAppCaptureFileGeneratedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_File(Windows.Storage.StorageFile* return_value);
 }
@@ -620,8 +544,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureManager")
 interface IAppCaptureManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentSettings(Windows.Media.Capture.AppCaptureSettings* return_value);
 	HRESULT abi_ApplySettings(Windows.Media.Capture.AppCaptureSettings appCaptureSettings);
@@ -631,8 +553,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureMicrophoneCaptureStateChangedEventArgs")
 interface IAppCaptureMicrophoneCaptureStateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_State(Windows.Media.Capture.AppCaptureMicrophoneCaptureState* return_value);
 	HRESULT get_ErrorCode(UINT32* return_value);
@@ -642,8 +562,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureRecordOperation")
 interface IAppCaptureRecordOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_StopRecording();
 	HRESULT get_State(Windows.Media.Capture.AppCaptureRecordingState* return_value);
@@ -663,8 +581,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureRecordingStateChangedEventArgs")
 interface IAppCaptureRecordingStateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_State(Windows.Media.Capture.AppCaptureRecordingState* return_value);
 	HRESULT get_ErrorCode(UINT32* return_value);
@@ -674,8 +590,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureServices")
 interface IAppCaptureServices : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Record(Windows.Media.Capture.AppCaptureRecordOperation* return_operation);
 	HRESULT abi_RecordTimeSpan(Windows.Foundation.DateTime startTime, Windows.Foundation.TimeSpan duration, Windows.Media.Capture.AppCaptureRecordOperation* return_operation);
@@ -687,8 +601,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureSettings")
 interface IAppCaptureSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_AppCaptureDestinationFolder(Windows.Storage.StorageFolder value);
 	HRESULT get_AppCaptureDestinationFolder(Windows.Storage.StorageFolder* return_value);
@@ -732,8 +644,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureSettings")
 interface IAppCaptureSettings2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsGpuConstrained(bool* return_value);
 	HRESULT get_AlternateShortcutKeys(Windows.Media.Capture.AppCaptureAlternateShortcutKeys* return_value);
@@ -743,8 +653,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureSettings")
 interface IAppCaptureSettings3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_IsMicrophoneCaptureEnabled(bool value);
 	HRESULT get_IsMicrophoneCaptureEnabled(bool* return_value);
@@ -754,8 +662,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureSettings")
 interface IAppCaptureSettings4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_IsMicrophoneCaptureEnabledByDefault(bool value);
 	HRESULT get_IsMicrophoneCaptureEnabledByDefault(bool* return_value);
@@ -771,8 +677,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureSettings")
 interface IAppCaptureSettings5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_IsEchoCancellationEnabled(bool value);
 	HRESULT get_IsEchoCancellationEnabled(bool* return_value);
@@ -784,8 +688,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCaptureState")
 interface IAppCaptureState : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTargetRunning(bool* return_value);
 	HRESULT get_IsHistoricalCaptureEnabled(bool* return_value);
@@ -804,8 +706,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.AppCapture")
 interface IAppCaptureStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.Media.Capture.AppCapture* return_value);
 }
@@ -814,8 +714,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.CameraCaptureUI")
 interface ICameraCaptureUI : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PhotoSettings(Windows.Media.Capture.CameraCaptureUIPhotoCaptureSettings* return_value);
 	HRESULT get_VideoSettings(Windows.Media.Capture.CameraCaptureUIVideoCaptureSettings* return_value);
@@ -826,8 +724,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.CameraCaptureUIPhotoCaptureSettings")
 interface ICameraCaptureUIPhotoCaptureSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Format(Windows.Media.Capture.CameraCaptureUIPhotoFormat* return_value);
 	HRESULT set_Format(Windows.Media.Capture.CameraCaptureUIPhotoFormat value);
@@ -845,8 +741,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.CameraCaptureUIVideoCaptureSettings")
 interface ICameraCaptureUIVideoCaptureSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Format(Windows.Media.Capture.CameraCaptureUIVideoFormat* return_value);
 	HRESULT set_Format(Windows.Media.Capture.CameraCaptureUIVideoFormat value);
@@ -862,8 +756,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.CameraOptionsUI")
 interface ICameraOptionsUIStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Show(Windows.Media.Capture.MediaCapture mediaCapture);
 }
@@ -872,8 +764,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.CapturedFrame")
 interface ICapturedFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Width(UINT32* return_value);
 	HRESULT get_Height(UINT32* return_value);
@@ -883,8 +773,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.CapturedFrameControlValues")
 interface ICapturedFrameControlValues : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Exposure(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
 	HRESULT get_ExposureCompensation(Windows.Foundation.IReference!(FLOAT)* return_value);
@@ -901,8 +789,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.CapturedFrameControlValues")
 interface ICapturedFrameControlValues2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FocusState(Windows.Foundation.IReference!(Windows.Media.Devices.MediaCaptureFocusState)* return_value);
 	HRESULT get_IsoDigitalGain(Windows.Foundation.IReference!(double)* return_value);
@@ -915,8 +801,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.CapturedFrame")
 interface ICapturedFrameWithSoftwareBitmap : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap* return_value);
 }
@@ -925,8 +809,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.CapturedPhoto")
 interface ICapturedPhoto : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Frame(Windows.Media.Capture.CapturedFrame* return_value);
 	HRESULT get_Thumbnail(Windows.Media.Capture.CapturedFrame* return_value);
@@ -936,8 +818,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.GameBarServices")
 interface IGameBarServices : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetCapturePolicy(Windows.Media.Capture.GameBarTargetCapturePolicy* return_value);
 	HRESULT abi_EnableCapture();
@@ -954,8 +834,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.GameBarServicesCommandEventArgs")
 interface IGameBarServicesCommandEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Command(Windows.Media.Capture.GameBarCommand* return_value);
 	HRESULT get_Origin(Windows.Media.Capture.GameBarCommandOrigin* return_value);
@@ -965,8 +843,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.GameBarServicesManager")
 interface IGameBarServicesManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_GameBarServicesCreated(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.GameBarServicesManager, Windows.Media.Capture.GameBarServicesManagerGameBarServicesCreatedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_GameBarServicesCreated(EventRegistrationToken token);
@@ -976,8 +852,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.GameBarServicesManagerGameBarServicesCreatedEventArgs")
 interface IGameBarServicesManagerGameBarServicesCreatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GameBarServices(Windows.Media.Capture.GameBarServices* return_value);
 }
@@ -986,8 +860,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.GameBarServicesManager")
 interface IGameBarServicesManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Media.Capture.GameBarServicesManager* return_ppInstance);
 }
@@ -996,8 +868,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.GameBarServicesTargetInfo")
 interface IGameBarServicesTargetInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_AppId(HSTRING* return_value);
@@ -1009,8 +879,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.LowLagMediaRecording")
 interface ILowLagMediaRecording : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_StopAsync(Windows.Foundation.IAsyncAction* return_operation);
@@ -1021,8 +889,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.LowLagMediaRecording")
 interface ILowLagMediaRecording2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_PauseAsync(Windows.Media.Devices.MediaCapturePauseBehavior behavior, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_ResumeAsync(Windows.Foundation.IAsyncAction* return_operation);
@@ -1032,8 +898,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.LowLagMediaRecording")
 interface ILowLagMediaRecording3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_PauseWithResultAsync(Windows.Media.Devices.MediaCapturePauseBehavior behavior, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCapturePauseResult)* return_operation);
 	HRESULT abi_StopWithResultAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCaptureStopResult)* return_operation);
@@ -1043,8 +907,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.LowLagPhotoCapture")
 interface ILowLagPhotoCapture : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CaptureAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.CapturedPhoto)* return_operation);
 	HRESULT abi_FinishAsync(Windows.Foundation.IAsyncAction* return_operation);
@@ -1054,8 +916,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.LowLagPhotoSequenceCapture")
 interface ILowLagPhotoSequenceCapture : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_StopAsync(Windows.Foundation.IAsyncAction* return_operation);
@@ -1068,8 +928,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCapture")
 interface IMediaCapture : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_InitializeAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_InitializeWithSettingsAsync(Windows.Media.Capture.MediaCaptureInitializationSettings mediaCaptureInitializationSettings, Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -1104,8 +962,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCapture")
 interface IMediaCapture2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_PrepareLowLagRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording)* return_operation);
 	HRESULT abi_PrepareLowLagRecordToStreamAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording)* return_operation);
@@ -1120,8 +976,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCapture")
 interface IMediaCapture3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_PrepareVariablePhotoSequenceCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties type, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture)* return_operation);
 	HRESULT add_FocusChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFocusChangedEventArgs) handler, EventRegistrationToken* return_token);
@@ -1134,8 +988,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCapture")
 interface IMediaCapture4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddAudioEffectAsync(Windows.Media.Effects.IAudioEffectDefinition definition, Windows.Foundation.IAsyncOperation!(Windows.Media.IMediaExtension)* return_op);
 	HRESULT abi_AddVideoEffectAsync(Windows.Media.Effects.IVideoEffectDefinition definition, Windows.Media.Capture.MediaStreamType mediaStreamType, Windows.Foundation.IAsyncOperation!(Windows.Media.IMediaExtension)* return_op);
@@ -1156,8 +1008,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCapture")
 interface IMediaCapture5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RemoveEffectAsync(Windows.Media.IMediaExtension effect, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_PauseRecordWithResultAsync(Windows.Media.Devices.MediaCapturePauseBehavior behavior, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCapturePauseResult)* return_operation);
@@ -1172,8 +1022,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCapture")
 interface IMediaCapture6 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_CaptureDeviceExclusiveControlStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CaptureDeviceExclusiveControlStatusChanged(EventRegistrationToken token);
@@ -1184,8 +1032,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs")
 interface IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_Status(Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatus* return_value);
@@ -1195,8 +1041,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureFailedEventArgs")
 interface IMediaCaptureFailedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Message(HSTRING* return_value);
 	HRESULT get_Code(UINT32* return_value);
@@ -1206,8 +1050,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureFocusChangedEventArgs")
 interface IMediaCaptureFocusChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FocusState(Windows.Media.Devices.MediaCaptureFocusState* return_value);
 }
@@ -1216,8 +1058,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureInitializationSettings")
 interface IMediaCaptureInitializationSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_AudioDeviceId(HSTRING value);
 	HRESULT get_AudioDeviceId(HSTRING* return_value);
@@ -1233,8 +1073,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureInitializationSettings")
 interface IMediaCaptureInitializationSettings2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_MediaCategory(Windows.Media.Capture.MediaCategory value);
 	HRESULT get_MediaCategory(Windows.Media.Capture.MediaCategory* return_value);
@@ -1246,8 +1084,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureInitializationSettings")
 interface IMediaCaptureInitializationSettings3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_AudioSource(Windows.Media.Core.IMediaSource value);
 	HRESULT get_AudioSource(Windows.Media.Core.IMediaSource* return_value);
@@ -1259,8 +1095,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureInitializationSettings")
 interface IMediaCaptureInitializationSettings4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VideoProfile(Windows.Media.Capture.MediaCaptureVideoProfile* return_value);
 	HRESULT set_VideoProfile(Windows.Media.Capture.MediaCaptureVideoProfile value);
@@ -1276,8 +1110,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureInitializationSettings")
 interface IMediaCaptureInitializationSettings5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceGroup(Windows.Media.Capture.Frames.MediaFrameSourceGroup* return_value);
 	HRESULT set_SourceGroup(Windows.Media.Capture.Frames.MediaFrameSourceGroup value);
@@ -1291,8 +1123,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureInitializationSettings")
 interface IMediaCaptureInitializationSettings6 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlwaysPlaySystemShutterSound(bool* return_value);
 	HRESULT set_AlwaysPlaySystemShutterSound(bool value);
@@ -1302,8 +1132,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCapturePauseResult")
 interface IMediaCapturePauseResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LastFrame(Windows.Media.VideoFrame* return_value);
 	HRESULT get_RecordDuration(Windows.Foundation.TimeSpan* return_value);
@@ -1313,8 +1141,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureSettings")
 interface IMediaCaptureSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AudioDeviceId(HSTRING* return_value);
 	HRESULT get_VideoDeviceId(HSTRING* return_value);
@@ -1327,8 +1153,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureSettings")
 interface IMediaCaptureSettings2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ConcurrentRecordAndPhotoSupported(bool* return_value);
 	HRESULT get_ConcurrentRecordAndPhotoSequenceSupported(bool* return_value);
@@ -1344,8 +1168,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCapture")
 interface IMediaCaptureStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsVideoProfileSupported(HSTRING videoDeviceId, bool* return_value);
 	HRESULT abi_FindAllVideoProfiles(HSTRING videoDeviceId, Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile)* return_value);
@@ -1357,8 +1179,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureStopResult")
 interface IMediaCaptureStopResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LastFrame(Windows.Media.VideoFrame* return_value);
 	HRESULT get_RecordDuration(Windows.Foundation.TimeSpan* return_value);
@@ -1368,8 +1188,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCapture")
 interface IMediaCaptureVideoPreview : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_StartPreviewAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_StartPreviewToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Media.IMediaExtension customMediaSink, Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -1381,8 +1199,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureVideoProfile")
 interface IMediaCaptureVideoProfile : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_VideoDeviceId(HSTRING* return_value);
@@ -1396,8 +1212,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription")
 interface IMediaCaptureVideoProfileMediaDescription : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Width(UINT32* return_value);
 	HRESULT get_Height(UINT32* return_value);
@@ -1410,8 +1224,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs")
 interface IOptionalReferencePhotoCapturedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Frame(Windows.Media.Capture.CapturedFrame* return_value);
 	HRESULT get_Context(IInspectable* return_value);
@@ -1421,8 +1233,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.PhotoCapturedEventArgs")
 interface IPhotoCapturedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Frame(Windows.Media.Capture.CapturedFrame* return_value);
 	HRESULT get_Thumbnail(Windows.Media.Capture.CapturedFrame* return_value);
@@ -1433,8 +1243,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.PhotoConfirmationCapturedEventArgs")
 interface IPhotoConfirmationCapturedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Frame(Windows.Media.Capture.CapturedFrame* return_value);
 	HRESULT get_CaptureTimeOffset(Windows.Foundation.TimeSpan* return_value);
@@ -1444,8 +1252,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.VideoStreamConfiguration")
 interface IVideoStreamConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InputProperties(Windows.Media.MediaProperties.VideoEncodingProperties* return_value);
 	HRESULT get_OutputProperties(Windows.Media.MediaProperties.VideoEncodingProperties* return_value);

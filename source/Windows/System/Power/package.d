@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.System.Power.BackgroundEnergyManager")
 interface IBackgroundEnergyManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LowUsageLevel(UINT32* return_value);
 	HRESULT get_NearMaxAcceptableUsageLevel(UINT32* return_value);
@@ -27,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Power.ForegroundEnergyManager")
 interface IForegroundEnergyManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LowUsageLevel(UINT32* return_value);
 	HRESULT get_NearMaxAcceptableUsageLevel(UINT32* return_value);
@@ -46,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Power.PowerManager")
 interface IPowerManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EnergySaverStatus(Windows.System.Power.EnergySaverStatus* return_value);
 	HRESULT add_EnergySaverStatusChanged(Windows.Foundation.EventHandler!(IInspectable) handler, EventRegistrationToken* return_token);

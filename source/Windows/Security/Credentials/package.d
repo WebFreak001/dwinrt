@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.Credentials.PasswordCredential")
 interface ICredentialFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreatePasswordCredential(HSTRING resource, HSTRING userName, HSTRING password, Windows.Security.Credentials.PasswordCredential* return_credential);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.KeyCredential")
 interface IKeyCredential : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT abi_RetrievePublicKeyWithDefaultBlobType(Windows.Storage.Streams.IBuffer* return_value);
@@ -30,8 +26,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.KeyCredentialAttestationResult")
 interface IKeyCredentialAttestationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CertificateChainBuffer(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_AttestationBuffer(Windows.Storage.Streams.IBuffer* return_value);
@@ -42,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.KeyCredentialManager")
 interface IKeyCredentialManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsSupportedAsync(Windows.Foundation.IAsyncOperation!(bool)* return_value);
 	HRESULT abi_RenewAttestationAsync(Windows.Foundation.IAsyncAction* return_operation);
@@ -56,8 +48,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.KeyCredentialOperationResult")
 interface IKeyCredentialOperationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Result(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_Status(Windows.Security.Credentials.KeyCredentialStatus* return_value);
@@ -67,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.KeyCredentialRetrievalResult")
 interface IKeyCredentialRetrievalResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Credential(Windows.Security.Credentials.KeyCredential* return_value);
 	HRESULT get_Status(Windows.Security.Credentials.KeyCredentialStatus* return_value);
@@ -78,8 +66,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.PasswordCredential")
 interface IPasswordCredential : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Resource(HSTRING* return_resource);
 	HRESULT set_Resource(HSTRING resource);
@@ -95,8 +81,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.PasswordVault")
 interface IPasswordVault : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Add(Windows.Security.Credentials.PasswordCredential credential);
 	HRESULT abi_Remove(Windows.Security.Credentials.PasswordCredential credential);
@@ -109,8 +93,6 @@ extern(Windows):
 @uuid("69473eb2-8031-49be-80bb-96cb46d99aba")
 interface IWebAccount : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WebAccountProvider(Windows.Security.Credentials.WebAccountProvider* return_value);
 	HRESULT get_UserName(HSTRING* return_value);
@@ -121,8 +103,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.WebAccount")
 interface IWebAccount2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING)* return_value);
@@ -135,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.WebAccount")
 interface IWebAccountFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWebAccount(Windows.Security.Credentials.WebAccountProvider webAccountProvider, HSTRING userName, Windows.Security.Credentials.WebAccountState state, Windows.Security.Credentials.WebAccount* return_instance);
 }
@@ -145,8 +123,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.WebAccountProvider")
 interface IWebAccountProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -158,8 +134,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.WebAccountProvider")
 interface IWebAccountProvider2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayPurpose(HSTRING* return_value);
 	HRESULT get_Authority(HSTRING* return_value);
@@ -169,8 +143,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.WebAccountProvider")
 interface IWebAccountProvider3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_user);
 }
@@ -179,8 +151,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.WebAccountProvider")
 interface IWebAccountProviderFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWebAccountProvider(HSTRING id, HSTRING displayName, Windows.Foundation.Uri iconUri, Windows.Security.Credentials.WebAccountProvider* return_instance);
 }

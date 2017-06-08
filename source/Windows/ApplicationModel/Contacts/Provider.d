@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Contacts.Provider.ContactPickerUI")
 interface IContactPickerUI : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("AddContact may be altered or unavailable for releases after Windows 8.1. Instead, use AddContact without the ID.")
 	HRESULT abi_AddContact(HSTRING id, Windows.ApplicationModel.Contacts.Contact contact, Windows.ApplicationModel.Contacts.Provider.AddContactResult* return_result);
@@ -24,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.Provider.ContactPickerUI")
 interface IContactPickerUI2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddContact(Windows.ApplicationModel.Contacts.Contact contact, Windows.ApplicationModel.Contacts.Provider.AddContactResult* return_result);
 	HRESULT get_DesiredFieldsWithContactFieldType(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactFieldType)* return_value);
@@ -35,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs")
 interface IContactRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 }

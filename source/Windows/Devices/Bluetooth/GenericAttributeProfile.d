@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic")
 interface IGattCharacteristic : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Use GetDescriptorsForUuidAsync instead of GetDescriptors.  For more information, see MSDN.")
 	HRESULT abi_GetDescriptors(GUID descriptorUuid, Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptor)* return_value);
@@ -32,8 +30,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic")
 interface IGattCharacteristic2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Service(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService* return_value);
 	deprecated("Use GetDescriptorsAsync instead of GetAllDescriptors.  For more information, see MSDN.")
@@ -44,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic")
 interface IGattCharacteristic3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDescriptorsAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult)* return_operation);
 	HRESULT abi_GetDescriptorsWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult)* return_operation);
@@ -60,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic")
 interface IGattCharacteristicStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Use BluetoothUuidHelper instead of ConvertShortIdToUuid.  For more information, see MSDN.")
 	HRESULT abi_ConvertShortIdToUuid(UINT16 shortId, GUID* return_characteristicUuid);
@@ -71,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicUuids")
 interface IGattCharacteristicUuidsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BatteryLevel(GUID* return_value);
 	HRESULT get_BloodPressureFeature(GUID* return_value);
@@ -101,8 +91,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicUuids")
 interface IGattCharacteristicUuidsStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlertCategoryId(GUID* return_value);
 	HRESULT get_AlertCategoryIdBitMask(GUID* return_value);
@@ -170,8 +158,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult")
 interface IGattCharacteristicsResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus* return_value);
 	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);
@@ -182,8 +168,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult")
 interface IGattClientNotificationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SubscribedClient(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient* return_value);
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus* return_value);
@@ -194,8 +178,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptor")
 interface IGattDescriptor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProtectionLevel(Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel* return_value);
 	HRESULT set_ProtectionLevel(Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel value);
@@ -210,8 +192,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptor")
 interface IGattDescriptor2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_WriteValueWithResultAsync(Windows.Storage.Streams.IBuffer value, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult)* return_operation);
 }
@@ -220,8 +200,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptor")
 interface IGattDescriptorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Use BluetoothUuidHelper instead of ConvertShortIdToUuid.  For more information, see MSDN.")
 	HRESULT abi_ConvertShortIdToUuid(UINT16 shortId, GUID* return_descriptorUuid);
@@ -231,8 +209,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorUuids")
 interface IGattDescriptorUuidsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CharacteristicAggregateFormat(GUID* return_value);
 	HRESULT get_CharacteristicExtendedProperties(GUID* return_value);
@@ -246,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult")
 interface IGattDescriptorsResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus* return_value);
 	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);
@@ -258,8 +232,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService")
 interface IGattDeviceService : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Use GetCharacteristicsForUuidAsync instead of GetCharacteristics.  For more information, see MSDN.")
 	HRESULT abi_GetCharacteristics(GUID characteristicUuid, Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic)* return_value);
@@ -274,8 +246,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService")
 interface IGattDeviceService2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Use Session instead of Device property.	 For more information, see MSDN.")
 	HRESULT get_Device(Windows.Devices.Bluetooth.BluetoothLEDevice* return_value);
@@ -291,8 +261,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService")
 interface IGattDeviceService3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceAccessInformation(Windows.Devices.Enumeration.DeviceAccessInformation* return_value);
 	HRESULT get_Session(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession* return_value);
@@ -313,8 +281,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService")
 interface IGattDeviceServiceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService)* return_asyncOp);
 	HRESULT abi_GetDeviceSelectorFromUuid(GUID serviceUuid, HSTRING* return_selector);
@@ -328,8 +294,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService")
 interface IGattDeviceServiceStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdWithSharingModeAsync(HSTRING deviceId, Windows.Devices.Bluetooth.GenericAttributeProfile.GattSharingMode sharingMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService)* return_operation);
 	HRESULT abi_GetDeviceSelectorForBluetoothDeviceId(Windows.Devices.Bluetooth.BluetoothDeviceId bluetoothDeviceId, HSTRING* return_result);
@@ -342,8 +306,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult")
 interface IGattDeviceServicesResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus* return_value);
 	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);
@@ -354,8 +316,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic")
 interface IGattLocalCharacteristic : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uuid(GUID* return_value);
 	HRESULT get_StaticValue(Windows.Storage.Streams.IBuffer* return_value);
@@ -381,8 +341,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristicParameters")
 interface IGattLocalCharacteristicParameters : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_StaticValue(Windows.Storage.Streams.IBuffer value);
 	HRESULT get_StaticValue(Windows.Storage.Streams.IBuffer* return_value);
@@ -401,8 +359,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristicResult")
 interface IGattLocalCharacteristicResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Characteristic(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic* return_value);
 	HRESULT get_Error(Windows.Devices.Bluetooth.BluetoothError* return_value);
@@ -412,8 +368,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor")
 interface IGattLocalDescriptor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uuid(GUID* return_value);
 	HRESULT get_StaticValue(Windows.Storage.Streams.IBuffer* return_value);
@@ -429,8 +383,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptorParameters")
 interface IGattLocalDescriptorParameters : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_StaticValue(Windows.Storage.Streams.IBuffer value);
 	HRESULT get_StaticValue(Windows.Storage.Streams.IBuffer* return_value);
@@ -444,8 +396,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptorResult")
 interface IGattLocalDescriptorResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Descriptor(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor* return_value);
 	HRESULT get_Error(Windows.Devices.Bluetooth.BluetoothError* return_value);
@@ -455,8 +405,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalService")
 interface IGattLocalService : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uuid(GUID* return_value);
 	HRESULT abi_CreateCharacteristicAsync(GUID characteristicUuid, Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristicParameters parameters, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristicResult)* return_operation);
@@ -467,8 +415,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat")
 interface IGattPresentationFormat : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FormatType(BYTE* return_value);
 	HRESULT get_Exponent(INT32* return_value);
@@ -481,8 +427,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat")
 interface IGattPresentationFormatStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BluetoothSigAssignedNumbers(BYTE* return_value);
 }
@@ -491,8 +435,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat")
 interface IGattPresentationFormatStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromParts(BYTE formatType, INT32 exponent, UINT16 unit, BYTE namespaceId, UINT16 description, Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat* return_result);
 }
@@ -501,8 +443,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormatTypes")
 interface IGattPresentationFormatTypesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Boolean(BYTE* return_value);
 	HRESULT get_Bit2(BYTE* return_value);
@@ -537,8 +477,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtocolError")
 interface IGattProtocolErrorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InvalidHandle(BYTE* return_value);
 	HRESULT get_ReadNotPermitted(BYTE* return_value);
@@ -563,8 +501,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadClientCharacteristicConfigurationDescriptorResult")
 interface IGattReadClientCharacteristicConfigurationDescriptorResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus* return_value);
 	HRESULT get_ClientCharacteristicConfigurationDescriptor(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientCharacteristicConfigurationDescriptorValue* return_value);
@@ -574,8 +510,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadClientCharacteristicConfigurationDescriptorResult")
 interface IGattReadClientCharacteristicConfigurationDescriptorResult2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);
 }
@@ -584,8 +518,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequest")
 interface IGattReadRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Offset(UINT32* return_value);
 	HRESULT get_Length(UINT32* return_value);
@@ -600,8 +532,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequestedEventArgs")
 interface IGattReadRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Session(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -612,8 +542,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult")
 interface IGattReadResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus* return_value);
 	HRESULT get_Value(Windows.Storage.Streams.IBuffer* return_value);
@@ -623,8 +551,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult")
 interface IGattReadResult2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);
 }
@@ -633,8 +559,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattReliableWriteTransaction")
 interface IGattReliableWriteTransaction : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_WriteValue(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic characteristic, Windows.Storage.Streams.IBuffer value);
 	HRESULT abi_CommitAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus)* return_asyncOp);
@@ -644,8 +568,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattReliableWriteTransaction")
 interface IGattReliableWriteTransaction2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CommitWithResultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult)* return_operation);
 }
@@ -654,8 +576,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestStateChangedEventArgs")
 interface IGattRequestStateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_State(Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestState* return_value);
 	HRESULT get_Error(Windows.Devices.Bluetooth.BluetoothError* return_value);
@@ -665,8 +585,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProvider")
 interface IGattServiceProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Service(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalService* return_value);
 	HRESULT get_AdvertisementStatus(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatus* return_value);
@@ -681,8 +599,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatusChangedEventArgs")
 interface IGattServiceProviderAdvertisementStatusChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Error(Windows.Devices.Bluetooth.BluetoothError* return_value);
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatus* return_value);
@@ -692,8 +608,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisingParameters")
 interface IGattServiceProviderAdvertisingParameters : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_IsConnectable(bool value);
 	HRESULT get_IsConnectable(bool* return_value);
@@ -705,8 +619,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderResult")
 interface IGattServiceProviderResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Error(Windows.Devices.Bluetooth.BluetoothError* return_value);
 	HRESULT get_ServiceProvider(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProvider* return_value);
@@ -716,8 +628,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProvider")
 interface IGattServiceProviderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAsync(GUID serviceUuid, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderResult)* return_operation);
 }
@@ -726,8 +636,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids")
 interface IGattServiceUuidsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Battery(GUID* return_value);
 	HRESULT get_BloodPressure(GUID* return_value);
@@ -744,8 +652,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids")
 interface IGattServiceUuidsStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlertNotification(GUID* return_value);
 	HRESULT get_CurrentTime(GUID* return_value);
@@ -766,8 +672,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession")
 interface IGattSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(Windows.Devices.Bluetooth.BluetoothDeviceId* return_value);
 	HRESULT get_CanMaintainConnection(bool* return_value);
@@ -785,8 +689,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession")
 interface IGattSessionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromDeviceIdAsync(Windows.Devices.Bluetooth.BluetoothDeviceId deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession)* return_operation);
 }
@@ -795,8 +697,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattSessionStatusChangedEventArgs")
 interface IGattSessionStatusChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Error(Windows.Devices.Bluetooth.BluetoothError* return_value);
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSessionStatus* return_value);
@@ -806,8 +706,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient")
 interface IGattSubscribedClient : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Session(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession* return_value);
 	HRESULT get_MaxNotificationSize(UINT16* return_value);
@@ -819,8 +717,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattValueChangedEventArgs")
 interface IGattValueChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CharacteristicValue(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_timestamp);
@@ -830,8 +726,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequest")
 interface IGattWriteRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Value(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_Offset(UINT32* return_value);
@@ -847,8 +741,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequestedEventArgs")
 interface IGattWriteRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Session(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -859,8 +751,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult")
 interface IGattWriteResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus* return_value);
 	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);

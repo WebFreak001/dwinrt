@@ -12,8 +12,6 @@ struct ProfileUsage
 @WinrtFactory("Windows.Networking.NetworkOperators.HotspotAuthenticationContext")
 interface IHotspotAuthenticationContext : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WirelessNetworkId(UINT32* out___valueSize, BYTE** return_value);
 	HRESULT get_NetworkAdapter(Windows.Networking.Connectivity.NetworkAdapter* return_value);
@@ -30,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.HotspotAuthenticationContext")
 interface IHotspotAuthenticationContext2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IssueCredentialsAsync(HSTRING userName, HSTRING password, HSTRING extraParameters, bool markAsManualConnectOnFailure, Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.HotspotCredentialsAuthenticationResult)* return_asyncInfo);
 }
@@ -40,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.HotspotAuthenticationContext")
 interface IHotspotAuthenticationContextStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryGetAuthenticationContext(HSTRING evenToken, Windows.Networking.NetworkOperators.HotspotAuthenticationContext* out_context, bool* return_isValid);
 }
@@ -50,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.HotspotAuthenticationEventDetails")
 interface IHotspotAuthenticationEventDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EventToken(HSTRING* return_value);
 }
@@ -60,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.HotspotCredentialsAuthenticationResult")
 interface IHotspotCredentialsAuthenticationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HasNetworkErrorOccurred(bool* return_value);
 	HRESULT get_ResponseCode(Windows.Networking.NetworkOperators.HotspotAuthenticationResponseCode* return_value);
@@ -73,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.KnownCSimFilePaths")
 interface IKnownCSimFilePathsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EFSpn(Windows.Foundation.Collections.IVectorView!(UINT32)* return_value);
 	HRESULT get_Gid1(Windows.Foundation.Collections.IVectorView!(UINT32)* return_value);
@@ -85,8 +73,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.KnownRuimFilePaths")
 interface IKnownRuimFilePathsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EFSpn(Windows.Foundation.Collections.IVectorView!(UINT32)* return_value);
 	HRESULT get_Gid1(Windows.Foundation.Collections.IVectorView!(UINT32)* return_value);
@@ -97,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.KnownSimFilePaths")
 interface IKnownSimFilePathsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EFOns(Windows.Foundation.Collections.IVectorView!(UINT32)* return_value);
 	HRESULT get_EFSpn(Windows.Foundation.Collections.IVectorView!(UINT32)* return_value);
@@ -110,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.KnownUSimFilePaths")
 interface IKnownUSimFilePathsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EFSpn(Windows.Foundation.Collections.IVectorView!(UINT32)* return_value);
 	HRESULT get_EFOpl(Windows.Foundation.Collections.IVectorView!(UINT32)* return_value);
@@ -124,8 +106,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandAccount")
 interface IMobileBroadbandAccount : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NetworkAccountId(HSTRING* return_value);
 	HRESULT get_ServiceProviderGuid(GUID* return_value);
@@ -138,8 +118,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandAccount")
 interface IMobileBroadbandAccount2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetConnectionProfiles(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.ConnectionProfile)* return_value);
 }
@@ -148,8 +126,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandAccount")
 interface IMobileBroadbandAccount3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AccountExperienceUrl(Windows.Foundation.Uri* return_value);
 }
@@ -158,8 +134,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs")
 interface IMobileBroadbandAccountEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NetworkAccountId(HSTRING* return_value);
 }
@@ -168,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandAccount")
 interface IMobileBroadbandAccountStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AvailableNetworkAccountIds(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_ppAccountIds);
 	HRESULT abi_CreateFromNetworkAccountId(HSTRING networkAccountId, Windows.Networking.NetworkOperators.MobileBroadbandAccount* return_ppAccount);
@@ -179,8 +151,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs")
 interface IMobileBroadbandAccountUpdatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NetworkAccountId(HSTRING* return_value);
 	HRESULT get_HasDeviceInformationChanged(bool* return_value);
@@ -191,8 +161,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher")
 interface IMobileBroadbandAccountWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_AccountAdded(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_AccountAdded(EventRegistrationToken cookie);
@@ -213,8 +181,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandDeviceInformation")
 interface IMobileBroadbandDeviceInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NetworkDeviceStatus(Windows.Networking.NetworkOperators.NetworkDeviceStatus* return_value);
 	HRESULT get_Manufacturer(HSTRING* return_value);
@@ -236,8 +202,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandDeviceInformation")
 interface IMobileBroadbandDeviceInformation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PinManager(Windows.Networking.NetworkOperators.MobileBroadbandPinManager* return_value);
 	HRESULT get_Revision(HSTRING* return_value);
@@ -248,8 +212,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandDeviceInformation")
 interface IMobileBroadbandDeviceInformation3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SimSpn(HSTRING* return_value);
 	HRESULT get_SimPnn(HSTRING* return_value);
@@ -260,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandDeviceService")
 interface IMobileBroadbandDeviceService : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceServiceId(GUID* return_value);
 	HRESULT get_SupportedCommands(Windows.Foundation.Collections.IVectorView!(UINT32)* return_value);
@@ -273,8 +233,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceCommandResult")
 interface IMobileBroadbandDeviceServiceCommandResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StatusCode(UINT32* return_value);
 	HRESULT get_ResponseData(Windows.Storage.Streams.IBuffer* return_value);
@@ -284,8 +242,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceCommandSession")
 interface IMobileBroadbandDeviceServiceCommandSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SendQueryCommandAsync(UINT32 commandId, Windows.Storage.Streams.IBuffer data, Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceCommandResult)* return_asyncInfo);
 	HRESULT abi_SendSetCommandAsync(UINT32 commandId, Windows.Storage.Streams.IBuffer data, Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceCommandResult)* return_asyncInfo);
@@ -296,8 +252,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs")
 interface IMobileBroadbandDeviceServiceDataReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ReceivedData(Windows.Storage.Streams.IBuffer* return_value);
 }
@@ -306,8 +260,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession")
 interface IMobileBroadbandDeviceServiceDataSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_WriteDataAsync(Windows.Storage.Streams.IBuffer value, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_CloseSession();
@@ -319,8 +271,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceInformation")
 interface IMobileBroadbandDeviceServiceInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceServiceId(GUID* return_value);
 	HRESULT get_IsDataReadSupported(bool* return_value);
@@ -331,8 +281,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceTriggerDetails")
 interface IMobileBroadbandDeviceServiceTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_DeviceServiceId(GUID* return_value);
@@ -343,8 +291,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandModem")
 interface IMobileBroadbandModem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CurrentAccount(Windows.Networking.NetworkOperators.MobileBroadbandAccount* return_value);
 	HRESULT get_DeviceInformation(Windows.Networking.NetworkOperators.MobileBroadbandDeviceInformation* return_value);
@@ -362,8 +308,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandModemConfiguration")
 interface IMobileBroadbandModemConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uicc(Windows.Networking.NetworkOperators.MobileBroadbandUicc* return_value);
 	HRESULT get_HomeProviderId(HSTRING* return_value);
@@ -374,8 +318,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandModem")
 interface IMobileBroadbandModemStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
 	HRESULT abi_FromId(HSTRING deviceId, Windows.Networking.NetworkOperators.MobileBroadbandModem* return_value);
@@ -386,8 +328,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandNetwork")
 interface IMobileBroadbandNetwork : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NetworkAdapter(Windows.Networking.Connectivity.NetworkAdapter* return_value);
 	HRESULT get_NetworkRegistrationState(Windows.Networking.NetworkOperators.NetworkRegistrationState* return_registrationState);
@@ -405,8 +345,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandNetwork")
 interface IMobileBroadbandNetwork2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetVoiceCallSupportAsync(Windows.Foundation.IAsyncOperation!(bool)* return_asyncInfo);
 	HRESULT get_RegistrationUiccApps(Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandUiccApp)* return_value);
@@ -416,8 +354,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandNetworkRegistrationStateChange")
 interface IMobileBroadbandNetworkRegistrationStateChange : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_Network(Windows.Networking.NetworkOperators.MobileBroadbandNetwork* return_value);
@@ -427,8 +363,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandNetworkRegistrationStateChangeTriggerDetails")
 interface IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NetworkRegistrationStateChanges(Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandNetworkRegistrationStateChange)* return_value);
 }
@@ -437,8 +371,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandPin")
 interface IMobileBroadbandPin : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.Networking.NetworkOperators.MobileBroadbandPinType* return_value);
 	HRESULT get_LockState(Windows.Networking.NetworkOperators.MobileBroadbandPinLockState* return_value);
@@ -458,8 +390,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandPinLockStateChange")
 interface IMobileBroadbandPinLockStateChange : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_PinType(Windows.Networking.NetworkOperators.MobileBroadbandPinType* return_value);
@@ -470,8 +400,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandPinLockStateChangeTriggerDetails")
 interface IMobileBroadbandPinLockStateChangeTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PinLockStateChanges(Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandPinLockStateChange)* return_value);
 }
@@ -480,8 +408,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandPinManager")
 interface IMobileBroadbandPinManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SupportedPins(Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandPinType)* return_value);
 	HRESULT abi_GetPin(Windows.Networking.NetworkOperators.MobileBroadbandPinType pinType, Windows.Networking.NetworkOperators.MobileBroadbandPin* return_value);
@@ -491,8 +417,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandPinOperationResult")
 interface IMobileBroadbandPinOperationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSuccessful(bool* return_value);
 	HRESULT get_AttemptsRemaining(UINT32* return_value);
@@ -502,8 +426,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandRadioStateChange")
 interface IMobileBroadbandRadioStateChange : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_RadioState(Windows.Networking.NetworkOperators.MobileBroadbandRadioState* return_value);
@@ -513,8 +435,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandRadioStateChangeTriggerDetails")
 interface IMobileBroadbandRadioStateChangeTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RadioStateChanges(Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandRadioStateChange)* return_value);
 }
@@ -523,8 +443,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandUicc")
 interface IMobileBroadbandUicc : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SimIccId(HSTRING* return_value);
 	HRESULT abi_GetUiccAppsAsync(Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandUiccAppsResult)* return_asyncInfo);
@@ -534,8 +452,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandUiccApp")
 interface IMobileBroadbandUiccApp : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_Kind(Windows.Networking.NetworkOperators.UiccAppKind* return_value);
@@ -547,8 +463,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandUiccAppReadRecordResult")
 interface IMobileBroadbandUiccAppReadRecordResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Networking.NetworkOperators.MobileBroadbandUiccAppOperationStatus* return_value);
 	HRESULT get_Data(Windows.Storage.Streams.IBuffer* return_value);
@@ -558,8 +472,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandUiccAppRecordDetailsResult")
 interface IMobileBroadbandUiccAppRecordDetailsResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Networking.NetworkOperators.MobileBroadbandUiccAppOperationStatus* return_value);
 	HRESULT get_Kind(Windows.Networking.NetworkOperators.UiccAppRecordKind* return_value);
@@ -573,8 +485,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.MobileBroadbandUiccAppsResult")
 interface IMobileBroadbandUiccAppsResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Networking.NetworkOperators.MobileBroadbandUiccAppOperationStatus* return_value);
 	HRESULT get_UiccApps(Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandUiccApp)* return_value);
@@ -584,8 +494,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails")
 interface INetworkOperatorNotificationEventDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NotificationType(Windows.Networking.NetworkOperators.NetworkOperatorEventMessageType* return_value);
 	HRESULT get_NetworkAccountId(HSTRING* return_value);
@@ -599,8 +507,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.NetworkOperatorTetheringAccessPointConfiguration")
 interface INetworkOperatorTetheringAccessPointConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Ssid(HSTRING* return_value);
 	HRESULT set_Ssid(HSTRING value);
@@ -612,8 +518,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.NetworkOperatorTetheringClient")
 interface INetworkOperatorTetheringClient : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MacAddress(HSTRING* return_value);
 	HRESULT get_HostNames(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName)* return_value);
@@ -623,8 +527,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager")
 interface INetworkOperatorTetheringClientManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetTetheringClients(Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.NetworkOperatorTetheringClient)* return_value);
 }
@@ -633,8 +535,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails")
 interface INetworkOperatorTetheringEntitlementCheck : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AuthorizeTethering(bool allow, HSTRING entitlementFailureReason);
 }
@@ -643,8 +543,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager")
 interface INetworkOperatorTetheringManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxClientCount(UINT32* return_value);
 	HRESULT get_ClientCount(UINT32* return_value);
@@ -659,8 +557,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager")
 interface INetworkOperatorTetheringManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetTetheringCapability(HSTRING networkAccountId, Windows.Networking.NetworkOperators.TetheringCapability* return_value);
 	HRESULT abi_CreateFromNetworkAccountId(HSTRING networkAccountId, Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager* return_ppManager);
@@ -670,8 +566,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager")
 interface INetworkOperatorTetheringManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetTetheringCapabilityFromConnectionProfile(Windows.Networking.Connectivity.ConnectionProfile profile, Windows.Networking.NetworkOperators.TetheringCapability* return_result);
 	HRESULT abi_CreateFromConnectionProfile(Windows.Networking.Connectivity.ConnectionProfile profile, Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager* return_ppManager);
@@ -681,8 +575,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager")
 interface INetworkOperatorTetheringManagerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromConnectionProfileWithTargetAdapter(Windows.Networking.Connectivity.ConnectionProfile profile, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager* return_ppManager);
 }
@@ -691,8 +583,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.NetworkOperatorTetheringOperationResult")
 interface INetworkOperatorTetheringOperationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Networking.NetworkOperators.TetheringOperationStatus* return_value);
 	HRESULT get_AdditionalErrorMessage(HSTRING* return_value);
@@ -702,8 +592,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.ProvisionFromXmlDocumentResults")
 interface IProvisionFromXmlDocumentResults : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllElementsProvisioned(bool* return_value);
 	HRESULT get_ProvisionResultsXml(HSTRING* return_value);
@@ -713,8 +601,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.ProvisionedProfile")
 interface IProvisionedProfile : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_UpdateCost(Windows.Networking.Connectivity.NetworkCostType value);
 	HRESULT abi_UpdateUsage(Windows.Networking.NetworkOperators.ProfileUsage value);
@@ -724,8 +610,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.ProvisioningAgent")
 interface IProvisioningAgent : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ProvisionFromXmlDocumentAsync(HSTRING provisioningXmlDocument, Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.ProvisionFromXmlDocumentResults)* return_asyncInfo);
 	HRESULT abi_GetProvisionedProfile(Windows.Networking.NetworkOperators.ProfileMediaType mediaType, HSTRING profileName, Windows.Networking.NetworkOperators.ProvisionedProfile* return_provisionedProfile);
@@ -735,8 +619,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.ProvisioningAgent")
 interface IProvisioningAgentStaticMethods : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromNetworkAccountId(HSTRING networkAccountId, Windows.Networking.NetworkOperators.ProvisioningAgent* return_provisioningAgent);
 }
@@ -745,8 +627,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.UssdMessage")
 interface IUssdMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DataCodingScheme(BYTE* return_value);
 	HRESULT set_DataCodingScheme(BYTE value);
@@ -760,8 +640,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.UssdMessage")
 interface IUssdMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateMessage(HSTRING messageText, Windows.Networking.NetworkOperators.UssdMessage* return_ussdMessage);
 }
@@ -770,8 +648,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.UssdReply")
 interface IUssdReply : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResultCode(Windows.Networking.NetworkOperators.UssdResultCode* return_value);
 	HRESULT get_Message(Windows.Networking.NetworkOperators.UssdMessage* return_value);
@@ -781,8 +657,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.UssdSession")
 interface IUssdSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SendMessageAndGetReplyAsync(Windows.Networking.NetworkOperators.UssdMessage message, Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.UssdReply)* return_asyncInfo);
 	HRESULT abi_Close();
@@ -792,8 +666,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.NetworkOperators.UssdSession")
 interface IUssdSessionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromNetworkAccountId(HSTRING networkAccountId, Windows.Networking.NetworkOperators.UssdSession* return_ussdSession);
 	HRESULT abi_CreateFromNetworkInterfaceId(HSTRING networkInterfaceId, Windows.Networking.NetworkOperators.UssdSession* return_ussdSession);

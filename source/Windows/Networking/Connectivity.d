@@ -19,8 +19,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.AttributedNetworkUsage")
 interface IAttributedNetworkUsage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BytesSent(UINT64* return_value);
 	HRESULT get_BytesReceived(UINT64* return_value);
@@ -33,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.CellularApnContext")
 interface ICellularApnContext : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProviderId(HSTRING* return_value);
 	HRESULT set_ProviderId(HSTRING value);
@@ -54,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.ConnectionCost")
 interface IConnectionCost : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NetworkCostType(Windows.Networking.Connectivity.NetworkCostType* return_value);
 	HRESULT get_Roaming(bool* return_value);
@@ -67,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.ConnectionCost")
 interface IConnectionCost2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BackgroundDataUsageRestricted(bool* return_value);
 }
@@ -77,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.ConnectionProfile")
 interface IConnectionProfile : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProfileName(HSTRING* return_value);
 	HRESULT abi_GetNetworkConnectivityLevel(Windows.Networking.Connectivity.NetworkConnectivityLevel* return_value);
@@ -97,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.ConnectionProfile")
 interface IConnectionProfile2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsWwanConnectionProfile(bool* return_value);
 	HRESULT get_IsWlanConnectionProfile(bool* return_value);
@@ -115,8 +103,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.ConnectionProfile")
 interface IConnectionProfile3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAttributedNetworkUsageAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.DateTime endTime, Windows.Networking.Connectivity.NetworkUsageStates states, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.AttributedNetworkUsage))* return_value);
 }
@@ -125,8 +111,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.ConnectionProfileFilter")
 interface IConnectionProfileFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_IsConnected(bool value);
 	HRESULT get_IsConnected(bool* return_value);
@@ -144,8 +128,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.ConnectionProfileFilter")
 interface IConnectionProfileFilter2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_IsRoaming(Windows.Foundation.IReference!(bool) value);
 	HRESULT get_IsRoaming(Windows.Foundation.IReference!(bool)* return_value);
@@ -160,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.ConnectionSession")
 interface IConnectionSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ConnectionProfile(Windows.Networking.Connectivity.ConnectionProfile* return_value);
 }
@@ -170,8 +150,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.ConnectivityInterval")
 interface IConnectivityInterval : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StartTime(Windows.Foundation.DateTime* return_startTime);
 	HRESULT get_ConnectionDuration(Windows.Foundation.TimeSpan* return_duration);
@@ -181,8 +159,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.ConnectivityManager")
 interface IConnectivityManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AcquireConnectionAsync(Windows.Networking.Connectivity.CellularApnContext cellularApnContext, Windows.Foundation.IAsyncOperation!(Windows.Networking.Connectivity.ConnectionSession)* return_operation);
 	HRESULT abi_AddHttpRoutePolicy(Windows.Networking.Connectivity.RoutePolicy routePolicy);
@@ -193,8 +169,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.DataPlanStatus")
 interface IDataPlanStatus : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DataPlanUsage(Windows.Networking.Connectivity.DataPlanUsage* return_value);
 	HRESULT get_DataLimitInMegabytes(Windows.Foundation.IReference!(UINT32)* return_value);
@@ -208,8 +182,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.DataPlanUsage")
 interface IDataPlanUsage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MegabytesUsed(UINT32* return_value);
 	HRESULT get_LastSyncTime(Windows.Foundation.DateTime* return_value);
@@ -219,8 +191,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.DataUsage")
 interface IDataUsage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")
 	HRESULT get_BytesSent(UINT64* return_value);
@@ -232,8 +202,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.IPInformation")
 interface IIPInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NetworkAdapter(Windows.Networking.Connectivity.NetworkAdapter* return_value);
 	HRESULT get_PrefixLength(Windows.Foundation.IReference!(BYTE)* return_value);
@@ -243,8 +211,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.LanIdentifier")
 interface ILanIdentifier : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InfrastructureId(Windows.Networking.Connectivity.LanIdentifierData* return_value);
 	HRESULT get_PortId(Windows.Networking.Connectivity.LanIdentifierData* return_value);
@@ -255,8 +221,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.LanIdentifierData")
 interface ILanIdentifierData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(UINT32* return_value);
 	HRESULT get_Value(Windows.Foundation.Collections.IVectorView!(BYTE)* return_value);
@@ -266,8 +230,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.NetworkAdapter")
 interface INetworkAdapter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OutboundMaxBitsPerSecond(UINT64* return_value);
 	HRESULT get_InboundMaxBitsPerSecond(UINT64* return_value);
@@ -281,8 +243,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.NetworkInformation")
 interface INetworkInformationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetConnectionProfiles(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.ConnectionProfile)* return_value);
 	HRESULT abi_GetInternetConnectionProfile(Windows.Networking.Connectivity.ConnectionProfile* return_value);
@@ -298,8 +258,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.NetworkInformation")
 interface INetworkInformationStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindConnectionProfilesAsync(Windows.Networking.Connectivity.ConnectionProfileFilter pProfileFilter, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.ConnectionProfile))* return_value);
 }
@@ -308,8 +266,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.NetworkItem")
 interface INetworkItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NetworkId(GUID* return_value);
 	HRESULT abi_GetNetworkTypes(Windows.Networking.Connectivity.NetworkTypes* return_value);
@@ -319,8 +275,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.NetworkSecuritySettings")
 interface INetworkSecuritySettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NetworkAuthenticationType(Windows.Networking.Connectivity.NetworkAuthenticationType* return_value);
 	HRESULT get_NetworkEncryptionType(Windows.Networking.Connectivity.NetworkEncryptionType* return_value);
@@ -330,8 +284,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.NetworkStateChangeEventDetails")
 interface INetworkStateChangeEventDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HasNewInternetConnectionProfile(bool* return_value);
 	HRESULT get_HasNewConnectionCost(bool* return_value);
@@ -345,8 +297,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.NetworkStateChangeEventDetails")
 interface INetworkStateChangeEventDetails2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HasNewTetheringOperationalState(bool* return_value);
 	HRESULT get_HasNewTetheringClientCount(bool* return_value);
@@ -356,8 +306,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.NetworkUsage")
 interface INetworkUsage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BytesSent(UINT64* return_value);
 	HRESULT get_BytesReceived(UINT64* return_value);
@@ -368,8 +316,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.ProxyConfiguration")
 interface IProxyConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ProxyUris(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Uri)* return_value);
 	HRESULT get_CanConnectDirectly(bool* return_value);
@@ -379,8 +325,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.RoutePolicy")
 interface IRoutePolicy : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ConnectionProfile(Windows.Networking.Connectivity.ConnectionProfile* return_value);
 	HRESULT get_HostName(Windows.Networking.HostName* return_value);
@@ -391,8 +335,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.RoutePolicy")
 interface IRoutePolicyFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateRoutePolicy(Windows.Networking.Connectivity.ConnectionProfile connectionProfile, Windows.Networking.HostName hostName, Windows.Networking.DomainNameType type, Windows.Networking.Connectivity.RoutePolicy* return_routePolicy);
 }
@@ -401,8 +343,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.WlanConnectionProfileDetails")
 interface IWlanConnectionProfileDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetConnectedSsid(HSTRING* return_value);
 }
@@ -411,8 +351,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.Connectivity.WwanConnectionProfileDetails")
 interface IWwanConnectionProfileDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HomeProviderId(HSTRING* return_value);
 	HRESULT get_AccessPointName(HSTRING* return_value);

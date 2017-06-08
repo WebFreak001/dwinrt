@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.Notifications.Management.UserNotificationListener")
 interface IUserNotificationListener : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus)* return_result);
 	HRESULT abi_GetAccessStatus(Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus* return_accessStatus);
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.Management.UserNotificationListener")
 interface IUserNotificationListenerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Current(Windows.UI.Notifications.Management.UserNotificationListener* return_result);
 }

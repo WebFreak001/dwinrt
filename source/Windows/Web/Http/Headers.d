@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Web.Http.Headers.HttpCacheDirectiveHeaderValueCollection")
 interface IHttpCacheDirectiveHeaderValueCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxAge(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
 	HRESULT set_MaxAge(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value);
@@ -25,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpChallengeHeaderValue")
 interface IHttpChallengeHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Parameters(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)* return_value);
 	HRESULT get_Scheme(HSTRING* return_value);
@@ -37,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpChallengeHeaderValueCollection")
 interface IHttpChallengeHeaderValueCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
@@ -48,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpChallengeHeaderValue")
 interface IHttpChallengeHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromScheme(HSTRING scheme, Windows.Web.Http.Headers.HttpChallengeHeaderValue* return_challengeHeaderValue);
 	HRESULT abi_CreateFromSchemeWithToken(HSTRING scheme, HSTRING token, Windows.Web.Http.Headers.HttpChallengeHeaderValue* return_challengeHeaderValue);
@@ -59,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpChallengeHeaderValue")
 interface IHttpChallengeHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpChallengeHeaderValue* return_challengeHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpChallengeHeaderValue* out_challengeHeaderValue, bool* return_succeeded);
@@ -70,8 +60,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue")
 interface IHttpConnectionOptionHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Token(HSTRING* return_value);
 }
@@ -80,8 +68,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpConnectionOptionHeaderValueCollection")
 interface IHttpConnectionOptionHeaderValueCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
@@ -91,8 +77,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue")
 interface IHttpConnectionOptionHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING token, Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue* return_connectionOptionHeaderValue);
 }
@@ -101,8 +85,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue")
 interface IHttpConnectionOptionHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue* return_connectionOptionHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue* out_connectionOptionHeaderValue, bool* return_succeeded);
@@ -112,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentCodingHeaderValue")
 interface IHttpContentCodingHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentCoding(HSTRING* return_value);
 }
@@ -122,8 +102,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentCodingHeaderValueCollection")
 interface IHttpContentCodingHeaderValueCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
@@ -133,8 +111,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentCodingHeaderValue")
 interface IHttpContentCodingHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING contentCoding, Windows.Web.Http.Headers.HttpContentCodingHeaderValue* return_contentCodingHeaderValue);
 }
@@ -143,8 +119,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentCodingHeaderValue")
 interface IHttpContentCodingHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpContentCodingHeaderValue* return_contentCodingHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpContentCodingHeaderValue* out_contentCodingHeaderValue, bool* return_succeeded);
@@ -154,8 +128,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue")
 interface IHttpContentCodingWithQualityHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentCoding(HSTRING* return_value);
 	HRESULT get_Quality(Windows.Foundation.IReference!(double)* return_value);
@@ -165,8 +137,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValueCollection")
 interface IHttpContentCodingWithQualityHeaderValueCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
@@ -176,8 +146,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue")
 interface IHttpContentCodingWithQualityHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromValue(HSTRING contentCoding, Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue* return_contentCodingWithQualityHeaderValue);
 	HRESULT abi_CreateFromValueWithQuality(HSTRING contentCoding, double quality, Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue* return_contentCodingWithQualityHeaderValue);
@@ -187,8 +155,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue")
 interface IHttpContentCodingWithQualityHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue* return_contentCodingWithQualityHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue* out_contentCodingWithQualityHeaderValue, bool* return_succeeded);
@@ -198,8 +164,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentDispositionHeaderValue")
 interface IHttpContentDispositionHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DispositionType(HSTRING* return_value);
 	HRESULT set_DispositionType(HSTRING value);
@@ -218,8 +182,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentDispositionHeaderValue")
 interface IHttpContentDispositionHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING dispositionType, Windows.Web.Http.Headers.HttpContentDispositionHeaderValue* return_contentDispositionHeaderValue);
 }
@@ -228,8 +190,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentDispositionHeaderValue")
 interface IHttpContentDispositionHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpContentDispositionHeaderValue* return_contentDispositionHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpContentDispositionHeaderValue* out_contentDispositionHeaderValue, bool* return_succeeded);
@@ -239,8 +199,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentHeaderCollection")
 interface IHttpContentHeaderCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentDisposition(Windows.Web.Http.Headers.HttpContentDispositionHeaderValue* return_value);
 	HRESULT set_ContentDisposition(Windows.Web.Http.Headers.HttpContentDispositionHeaderValue value);
@@ -268,8 +226,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentRangeHeaderValue")
 interface IHttpContentRangeHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FirstBytePosition(Windows.Foundation.IReference!(UINT64)* return_value);
 	HRESULT get_LastBytePosition(Windows.Foundation.IReference!(UINT64)* return_value);
@@ -282,8 +238,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentRangeHeaderValue")
 interface IHttpContentRangeHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromLength(UINT64 length, Windows.Web.Http.Headers.HttpContentRangeHeaderValue* return_contentRangeHeaderValue);
 	HRESULT abi_CreateFromRange(UINT64 from, UINT64 to, Windows.Web.Http.Headers.HttpContentRangeHeaderValue* return_contentRangeHeaderValue);
@@ -294,8 +248,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentRangeHeaderValue")
 interface IHttpContentRangeHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpContentRangeHeaderValue* return_contentRangeHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpContentRangeHeaderValue* out_contentRangeHeaderValue, bool* return_succeeded);
@@ -305,8 +257,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpCookiePairHeaderValue")
 interface IHttpCookiePairHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Value(HSTRING* return_value);
@@ -317,8 +267,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpCookiePairHeaderValueCollection")
 interface IHttpCookiePairHeaderValueCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
@@ -328,8 +276,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpCookiePairHeaderValue")
 interface IHttpCookiePairHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromName(HSTRING name, Windows.Web.Http.Headers.HttpCookiePairHeaderValue* return_cookiePairHeaderValue);
 	HRESULT abi_CreateFromNameWithValue(HSTRING name, HSTRING value, Windows.Web.Http.Headers.HttpCookiePairHeaderValue* return_cookiePairHeaderValue);
@@ -339,8 +285,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpCookiePairHeaderValue")
 interface IHttpCookiePairHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpCookiePairHeaderValue* return_cookiePairHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpCookiePairHeaderValue* out_cookiePairHeaderValue, bool* return_succeeded);
@@ -350,8 +294,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpCredentialsHeaderValue")
 interface IHttpCredentialsHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Parameters(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)* return_value);
 	HRESULT get_Scheme(HSTRING* return_value);
@@ -362,8 +304,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpCredentialsHeaderValue")
 interface IHttpCredentialsHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromScheme(HSTRING scheme, Windows.Web.Http.Headers.HttpCredentialsHeaderValue* return_credentialsHeaderValue);
 	HRESULT abi_CreateFromSchemeWithToken(HSTRING scheme, HSTRING token, Windows.Web.Http.Headers.HttpCredentialsHeaderValue* return_credentialsHeaderValue);
@@ -373,8 +313,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpCredentialsHeaderValue")
 interface IHttpCredentialsHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpCredentialsHeaderValue* return_credentialsHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpCredentialsHeaderValue* out_credentialsHeaderValue, bool* return_succeeded);
@@ -384,8 +322,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpDateOrDeltaHeaderValue")
 interface IHttpDateOrDeltaHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Date(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
 	HRESULT get_Delta(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
@@ -395,8 +331,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpDateOrDeltaHeaderValue")
 interface IHttpDateOrDeltaHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpDateOrDeltaHeaderValue* return_dateOrDeltaHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpDateOrDeltaHeaderValue* out_dateOrDeltaHeaderValue, bool* return_succeeded);
@@ -406,8 +340,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpExpectationHeaderValue")
 interface IHttpExpectationHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Value(HSTRING* return_value);
@@ -419,8 +351,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpExpectationHeaderValueCollection")
 interface IHttpExpectationHeaderValueCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
@@ -430,8 +360,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpExpectationHeaderValue")
 interface IHttpExpectationHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromName(HSTRING name, Windows.Web.Http.Headers.HttpExpectationHeaderValue* return_expectationHeaderValue);
 	HRESULT abi_CreateFromNameWithValue(HSTRING name, HSTRING value, Windows.Web.Http.Headers.HttpExpectationHeaderValue* return_expectationHeaderValue);
@@ -441,8 +369,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpExpectationHeaderValue")
 interface IHttpExpectationHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpExpectationHeaderValue* return_expectationHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpExpectationHeaderValue* out_expectationHeaderValue, bool* return_succeeded);
@@ -452,8 +378,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpLanguageHeaderValueCollection")
 interface IHttpLanguageHeaderValueCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
@@ -463,8 +387,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue")
 interface IHttpLanguageRangeWithQualityHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LanguageRange(HSTRING* return_languageRange);
 	HRESULT get_Quality(Windows.Foundation.IReference!(double)* return_value);
@@ -474,8 +396,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValueCollection")
 interface IHttpLanguageRangeWithQualityHeaderValueCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
@@ -485,8 +405,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue")
 interface IHttpLanguageRangeWithQualityHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromLanguageRange(HSTRING languageRange, Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue* return_languageRangeWithQualityHeaderValue);
 	HRESULT abi_CreateFromLanguageRangeWithQuality(HSTRING languageRange, double quality, Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue* return_languageRangeWithQualityHeaderValue);
@@ -496,8 +414,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue")
 interface IHttpLanguageRangeWithQualityHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue* return_languageRangeWithQualityHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue* out_languageRangeWithQualityHeaderValue, bool* return_succeeded);
@@ -507,8 +423,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpMediaTypeHeaderValue")
 interface IHttpMediaTypeHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CharSet(HSTRING* return_value);
 	HRESULT set_CharSet(HSTRING value);
@@ -521,8 +435,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpMediaTypeHeaderValue")
 interface IHttpMediaTypeHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING mediaType, Windows.Web.Http.Headers.HttpMediaTypeHeaderValue* return_mediaTypeHeaderValue);
 }
@@ -531,8 +443,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpMediaTypeHeaderValue")
 interface IHttpMediaTypeHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpMediaTypeHeaderValue* return_mediaTypeHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpMediaTypeHeaderValue* out_mediaTypeHeaderValue, bool* return_succeeded);
@@ -542,8 +452,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue")
 interface IHttpMediaTypeWithQualityHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CharSet(HSTRING* return_value);
 	HRESULT set_CharSet(HSTRING value);
@@ -558,8 +466,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValueCollection")
 interface IHttpMediaTypeWithQualityHeaderValueCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
@@ -569,8 +475,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue")
 interface IHttpMediaTypeWithQualityHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromMediaType(HSTRING mediaType, Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue* return_mediaTypeWithQualityHeaderValue);
 	HRESULT abi_CreateFromMediaTypeWithQuality(HSTRING mediaType, double quality, Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue* return_mediaTypeWithQualityHeaderValue);
@@ -580,8 +484,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue")
 interface IHttpMediaTypeWithQualityHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue* return_mediaTypeWithQualityHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue* out_mediaTypeWithQualityHeaderValue, bool* return_succeeded);
@@ -591,8 +493,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpMethodHeaderValueCollection")
 interface IHttpMethodHeaderValueCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
@@ -602,8 +502,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpNameValueHeaderValue")
 interface IHttpNameValueHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Value(HSTRING* return_value);
@@ -614,8 +512,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpNameValueHeaderValue")
 interface IHttpNameValueHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromName(HSTRING name, Windows.Web.Http.Headers.HttpNameValueHeaderValue* return_nameValueHeaderValue);
 	HRESULT abi_CreateFromNameWithValue(HSTRING name, HSTRING value, Windows.Web.Http.Headers.HttpNameValueHeaderValue* return_nameValueHeaderValue);
@@ -625,8 +521,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpNameValueHeaderValue")
 interface IHttpNameValueHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpNameValueHeaderValue* return_nameValueHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpNameValueHeaderValue* out_nameValueHeaderValue, bool* return_succeeded);
@@ -636,8 +530,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpProductHeaderValue")
 interface IHttpProductHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Version(HSTRING* return_value);
@@ -647,8 +539,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpProductHeaderValue")
 interface IHttpProductHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromName(HSTRING productName, Windows.Web.Http.Headers.HttpProductHeaderValue* return_productHeaderValue);
 	HRESULT abi_CreateFromNameWithVersion(HSTRING productName, HSTRING productVersion, Windows.Web.Http.Headers.HttpProductHeaderValue* return_productHeaderValue);
@@ -658,8 +548,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpProductHeaderValue")
 interface IHttpProductHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpProductHeaderValue* return_productHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpProductHeaderValue* out_productHeaderValue, bool* return_succeeded);
@@ -669,8 +557,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpProductInfoHeaderValue")
 interface IHttpProductInfoHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Product(Windows.Web.Http.Headers.HttpProductHeaderValue* return_value);
 	HRESULT get_Comment(HSTRING* return_value);
@@ -680,8 +566,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpProductInfoHeaderValueCollection")
 interface IHttpProductInfoHeaderValueCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
@@ -691,8 +575,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpProductInfoHeaderValue")
 interface IHttpProductInfoHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromComment(HSTRING productComment, Windows.Web.Http.Headers.HttpProductInfoHeaderValue* return_productInfoHeaderValue);
 	HRESULT abi_CreateFromNameWithVersion(HSTRING productName, HSTRING productVersion, Windows.Web.Http.Headers.HttpProductInfoHeaderValue* return_productInfoHeaderValue);
@@ -702,8 +584,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpProductInfoHeaderValue")
 interface IHttpProductInfoHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpProductInfoHeaderValue* return_productInfoHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpProductInfoHeaderValue* out_productInfoHeaderValue, bool* return_succeeded);
@@ -713,8 +593,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpRequestHeaderCollection")
 interface IHttpRequestHeaderCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Accept(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValueCollection* return_value);
 	HRESULT get_AcceptEncoding(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValueCollection* return_value);
@@ -751,8 +629,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpResponseHeaderCollection")
 interface IHttpResponseHeaderCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Age(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
 	HRESULT set_Age(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value);
@@ -776,8 +652,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpTransferCodingHeaderValue")
 interface IHttpTransferCodingHeaderValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Parameters(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)* return_value);
 	HRESULT get_Value(HSTRING* return_value);
@@ -787,8 +661,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpTransferCodingHeaderValueCollection")
 interface IHttpTransferCodingHeaderValueCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
@@ -798,8 +670,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpTransferCodingHeaderValue")
 interface IHttpTransferCodingHeaderValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING input, Windows.Web.Http.Headers.HttpTransferCodingHeaderValue* return_transferCodingHeaderValue);
 }
@@ -808,8 +678,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Headers.HttpTransferCodingHeaderValue")
 interface IHttpTransferCodingHeaderValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Web.Http.Headers.HttpTransferCodingHeaderValue* return_transferCodingHeaderValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Web.Http.Headers.HttpTransferCodingHeaderValue* out_transferCodingHeaderValue, bool* return_succeeded);

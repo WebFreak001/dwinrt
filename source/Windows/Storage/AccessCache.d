@@ -12,8 +12,6 @@ struct AccessListEntry
 @WinrtFactory("Windows.Storage.AccessCache.ItemRemovedEventArgs")
 interface IItemRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemovedEntry(Windows.Storage.AccessCache.AccessListEntry* return_value);
 }
@@ -22,8 +20,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.AccessCache.StorageApplicationPermissions")
 interface IStorageApplicationPermissionsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FutureAccessList(Windows.Storage.AccessCache.StorageItemAccessList* return_value);
 	HRESULT get_MostRecentlyUsedList(Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList* return_value);
@@ -32,8 +28,6 @@ extern(Windows):
 @uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453")
 interface IStorageItemAccessList : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddOverloadDefaultMetadata(Windows.Storage.IStorageItem file, HSTRING* return_token);
 	HRESULT abi_Add(Windows.Storage.IStorageItem file, HSTRING metadata, HSTRING* return_token);
@@ -57,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList")
 interface IStorageItemMostRecentlyUsedList : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ItemRemoved(Windows.Foundation.TypedEventHandler!(Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.ItemRemovedEventArgs) handler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ItemRemoved(EventRegistrationToken eventCookie);
@@ -68,8 +60,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList")
 interface IStorageItemMostRecentlyUsedList2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddWithMetadataAndVisibility(Windows.Storage.IStorageItem file, HSTRING metadata, Windows.Storage.AccessCache.RecentStorageItemVisibility visibility, HSTRING* return_token);
 	HRESULT abi_AddOrReplaceWithMetadataAndVisibility(HSTRING token, Windows.Storage.IStorageItem file, HSTRING metadata, Windows.Storage.AccessCache.RecentStorageItemVisibility visibility);

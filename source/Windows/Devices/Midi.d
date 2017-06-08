@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Midi.MidiChannelPressureMessage")
 interface IMidiChannelPressureMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
 	HRESULT get_Pressure(BYTE* return_value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiChannelPressureMessage")
 interface IMidiChannelPressureMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateMidiChannelPressureMessage(BYTE channel, BYTE pressure, Windows.Devices.Midi.MidiChannelPressureMessage* return_value);
 }
@@ -27,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiControlChangeMessage")
 interface IMidiControlChangeMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
 	HRESULT get_Controller(BYTE* return_value);
@@ -39,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiControlChangeMessage")
 interface IMidiControlChangeMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateMidiControlChangeMessage(BYTE channel, BYTE controller, BYTE controlValue, Windows.Devices.Midi.MidiControlChangeMessage* return_value);
 }
@@ -49,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiInPort")
 interface IMidiInPort : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_MessageReceived(EventRegistrationToken token);
@@ -61,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiInPort")
 interface IMidiInPortStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiInPort)* return_value);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
@@ -71,8 +59,6 @@ extern(Windows):
 @uuid("79767945-1094-4283-9be0-289fc0ee8334")
 interface IMidiMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_RawData(Windows.Storage.Streams.IBuffer* return_value);
@@ -83,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiMessageReceivedEventArgs")
 interface IMidiMessageReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Message(Windows.Devices.Midi.IMidiMessage* return_value);
 }
@@ -93,8 +77,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiNoteOffMessage")
 interface IMidiNoteOffMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
 	HRESULT get_Note(BYTE* return_value);
@@ -105,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiNoteOffMessage")
 interface IMidiNoteOffMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateMidiNoteOffMessage(BYTE channel, BYTE note, BYTE velocity, Windows.Devices.Midi.MidiNoteOffMessage* return_value);
 }
@@ -115,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiNoteOnMessage")
 interface IMidiNoteOnMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
 	HRESULT get_Note(BYTE* return_value);
@@ -127,8 +105,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiNoteOnMessage")
 interface IMidiNoteOnMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateMidiNoteOnMessage(BYTE channel, BYTE note, BYTE velocity, Windows.Devices.Midi.MidiNoteOnMessage* return_value);
 }
@@ -136,8 +112,6 @@ extern(Windows):
 @uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693")
 interface IMidiOutPort : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SendMessage(Windows.Devices.Midi.IMidiMessage midiMessage);
 	HRESULT abi_SendBuffer(Windows.Storage.Streams.IBuffer midiData);
@@ -148,8 +122,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiOutPort")
 interface IMidiOutPortStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.IMidiOutPort)* return_value);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
@@ -159,8 +131,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiPitchBendChangeMessage")
 interface IMidiPitchBendChangeMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
 	HRESULT get_Bend(UINT16* return_value);
@@ -170,8 +140,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiPitchBendChangeMessage")
 interface IMidiPitchBendChangeMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateMidiPitchBendChangeMessage(BYTE channel, UINT16 bend, Windows.Devices.Midi.MidiPitchBendChangeMessage* return_value);
 }
@@ -180,8 +148,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiPolyphonicKeyPressureMessage")
 interface IMidiPolyphonicKeyPressureMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
 	HRESULT get_Note(BYTE* return_value);
@@ -192,8 +158,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiPolyphonicKeyPressureMessage")
 interface IMidiPolyphonicKeyPressureMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateMidiPolyphonicKeyPressureMessage(BYTE channel, BYTE note, BYTE pressure, Windows.Devices.Midi.MidiPolyphonicKeyPressureMessage* return_value);
 }
@@ -202,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiProgramChangeMessage")
 interface IMidiProgramChangeMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
 	HRESULT get_Program(BYTE* return_value);
@@ -213,8 +175,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiProgramChangeMessage")
 interface IMidiProgramChangeMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateMidiProgramChangeMessage(BYTE channel, BYTE program, Windows.Devices.Midi.MidiProgramChangeMessage* return_value);
 }
@@ -223,8 +183,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiSongPositionPointerMessage")
 interface IMidiSongPositionPointerMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Beats(UINT16* return_value);
 }
@@ -233,8 +191,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiSongPositionPointerMessage")
 interface IMidiSongPositionPointerMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateMidiSongPositionPointerMessage(UINT16 beats, Windows.Devices.Midi.MidiSongPositionPointerMessage* return_value);
 }
@@ -243,8 +199,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiSongSelectMessage")
 interface IMidiSongSelectMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Song(BYTE* return_value);
 }
@@ -253,8 +207,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiSongSelectMessage")
 interface IMidiSongSelectMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateMidiSongSelectMessage(BYTE song, Windows.Devices.Midi.MidiSongSelectMessage* return_value);
 }
@@ -263,8 +215,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiSynthesizer")
 interface IMidiSynthesizer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AudioDevice(Windows.Devices.Enumeration.DeviceInformation* return_value);
 	HRESULT get_Volume(double* return_value);
@@ -275,8 +225,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiSynthesizer")
 interface IMidiSynthesizerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer)* return_value);
 	HRESULT abi_CreateFromAudioDeviceAsync(Windows.Devices.Enumeration.DeviceInformation audioDevice, Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer)* return_value);
@@ -287,8 +235,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiSystemExclusiveMessage")
 interface IMidiSystemExclusiveMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateMidiSystemExclusiveMessage(Windows.Storage.Streams.IBuffer rawData, Windows.Devices.Midi.MidiSystemExclusiveMessage* return_value);
 }
@@ -297,8 +243,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiTimeCodeMessage")
 interface IMidiTimeCodeMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FrameType(BYTE* return_value);
 	HRESULT get_Values(BYTE* return_value);
@@ -308,8 +252,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Midi.MidiTimeCodeMessage")
 interface IMidiTimeCodeMessageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateMidiTimeCodeMessage(BYTE frameType, BYTE values, Windows.Devices.Midi.MidiTimeCodeMessage* return_value);
 }

@@ -89,8 +89,6 @@ interface IAccessKeyDisplayDismissedEventArgs : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs")
 interface IAccessKeyDisplayRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PressedKeys(HSTRING* return_value);
 }
@@ -99,8 +97,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs")
 interface IAccessKeyInvokedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -116,8 +112,6 @@ interface IAccessKeyManager : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Input.AccessKeyManager")
 interface IAccessKeyManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsDisplayModeEnabled(bool* return_value);
 	HRESULT add_IsDisplayModeEnabledChanged(Windows.Foundation.TypedEventHandler!(IInspectable, IInspectable) value, EventRegistrationToken* return_token);
@@ -129,8 +123,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.AccessKeyManager")
 interface IAccessKeyManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AreKeyTipsEnabled(bool* return_value);
 	HRESULT set_AreKeyTipsEnabled(bool value);
@@ -139,8 +131,6 @@ extern(Windows):
 @uuid("e5af3542-ca67-4081-995b-709dd13792df")
 interface ICommand : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_CanExecuteChanged(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_CanExecuteChanged(EventRegistrationToken token);
@@ -152,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.ContextRequestedEventArgs")
 interface IContextRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -164,8 +152,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs")
 interface IDoubleTappedRoutedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_Handled(bool* return_value);
@@ -177,8 +163,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.FindNextElementOptions")
 interface IFindNextElementOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SearchRoot(Windows.UI.Xaml.DependencyObject* return_value);
 	HRESULT set_SearchRoot(Windows.UI.Xaml.DependencyObject value);
@@ -200,8 +184,6 @@ interface IFocusManager : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Input.FocusManager")
 interface IFocusManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetFocusedElement(IInspectable* return_returnValue);
 }
@@ -210,8 +192,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.FocusManager")
 interface IFocusManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryMoveFocus(Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, bool* return_returnValue);
 }
@@ -220,8 +200,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.FocusManager")
 interface IFocusManagerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindNextFocusableElement(Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, Windows.UI.Xaml.UIElement* return_result);
 	HRESULT abi_FindNextFocusableElementWithHint(Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, Windows.Foundation.Rect hintRect, Windows.UI.Xaml.UIElement* return_result);
@@ -231,8 +209,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.FocusManager")
 interface IFocusManagerStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryMoveFocusWithOptions(Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, Windows.UI.Xaml.Input.FindNextElementOptions focusNavigationOptions, bool* return_returnValue);
 	HRESULT abi_FindNextElement(Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, Windows.UI.Xaml.DependencyObject* return_returnValue);
@@ -245,8 +221,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.GettingFocusEventArgs")
 interface IGettingFocusEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OldFocusedElement(Windows.UI.Xaml.DependencyObject* return_value);
 	HRESULT get_NewFocusedElement(Windows.UI.Xaml.DependencyObject* return_value);
@@ -264,8 +238,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.HoldingRoutedEventArgs")
 interface IHoldingRoutedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_HoldingState(Windows.UI.Input.HoldingState* return_value);
@@ -278,8 +250,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.InertiaExpansionBehavior")
 interface IInertiaExpansionBehavior : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesiredDeceleration(double* return_value);
 	HRESULT set_DesiredDeceleration(double value);
@@ -291,8 +261,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.InertiaRotationBehavior")
 interface IInertiaRotationBehavior : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesiredDeceleration(double* return_value);
 	HRESULT set_DesiredDeceleration(double value);
@@ -304,8 +272,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.InertiaTranslationBehavior")
 interface IInertiaTranslationBehavior : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesiredDeceleration(double* return_value);
 	HRESULT set_DesiredDeceleration(double value);
@@ -317,8 +283,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.InputScope")
 interface IInputScope : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Names(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Input.InputScopeName)* return_value);
 }
@@ -327,8 +291,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.InputScopeName")
 interface IInputScopeName : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NameValue(Windows.UI.Xaml.Input.InputScopeNameValue* return_value);
 	HRESULT set_NameValue(Windows.UI.Xaml.Input.InputScopeNameValue value);
@@ -338,8 +300,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.InputScopeName")
 interface IInputScopeNameFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(Windows.UI.Xaml.Input.InputScopeNameValue nameValue, Windows.UI.Xaml.Input.InputScopeName* return_instance);
 }
@@ -348,8 +308,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.KeyRoutedEventArgs")
 interface IKeyRoutedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Key(Windows.System.VirtualKey* return_value);
 	HRESULT get_KeyStatus(Windows.UI.Core.CorePhysicalKeyStatus* return_value);
@@ -361,8 +319,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.KeyRoutedEventArgs")
 interface IKeyRoutedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OriginalKey(Windows.System.VirtualKey* return_value);
 }
@@ -371,8 +327,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.KeyRoutedEventArgs")
 interface IKeyRoutedEventArgs3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
@@ -381,8 +335,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.LosingFocusEventArgs")
 interface ILosingFocusEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OldFocusedElement(Windows.UI.Xaml.DependencyObject* return_value);
 	HRESULT get_NewFocusedElement(Windows.UI.Xaml.DependencyObject* return_value);
@@ -400,8 +352,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs")
 interface IManipulationCompletedRoutedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Container(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
@@ -417,8 +367,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs")
 interface IManipulationDeltaRoutedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Container(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
@@ -436,8 +384,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs")
 interface IManipulationInertiaStartingRoutedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Container(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT get_ExpansionBehavior(Windows.UI.Xaml.Input.InertiaExpansionBehavior* return_value);
@@ -458,8 +404,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.ManipulationPivot")
 interface IManipulationPivot : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Center(Windows.Foundation.Point* return_value);
 	HRESULT set_Center(Windows.Foundation.Point value);
@@ -471,8 +415,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.ManipulationPivot")
 interface IManipulationPivotFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstanceWithCenterAndRadius(Windows.Foundation.Point center, double radius, Windows.UI.Xaml.Input.ManipulationPivot* return_instance);
 }
@@ -481,8 +423,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs")
 interface IManipulationStartedRoutedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Container(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
@@ -497,8 +437,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs")
 interface IManipulationStartedRoutedEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs* return_instance);
 }
@@ -507,8 +445,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs")
 interface IManipulationStartingRoutedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Mode(Windows.UI.Xaml.Input.ManipulationModes* return_value);
 	HRESULT set_Mode(Windows.UI.Xaml.Input.ManipulationModes value);
@@ -524,8 +460,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs")
 interface INoFocusCandidateFoundEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Direction(Windows.UI.Xaml.Input.FocusNavigationDirection* return_value);
 	HRESULT get_Handled(bool* return_value);
@@ -537,8 +471,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.Pointer")
 interface IPointer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerId(UINT32* return_value);
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
@@ -550,8 +482,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.PointerRoutedEventArgs")
 interface IPointerRoutedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Pointer(Windows.UI.Xaml.Input.Pointer* return_value);
 	HRESULT get_KeyModifiers(Windows.System.VirtualKeyModifiers* return_value);
@@ -565,8 +495,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.RightTappedRoutedEventArgs")
 interface IRightTappedRoutedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_Handled(bool* return_value);
@@ -578,8 +506,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Input.TappedRoutedEventArgs")
 interface ITappedRoutedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_Handled(bool* return_value);

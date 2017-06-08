@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Storage.Compression.Compressor")
 interface ICompressor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FinishAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_DetachStream(Windows.Storage.Streams.IOutputStream* return_stream);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Compression.Compressor")
 interface ICompressorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCompressor(Windows.Storage.Streams.IOutputStream underlyingStream, Windows.Storage.Compression.Compressor* return_createdCompressor);
 	HRESULT abi_CreateCompressorEx(Windows.Storage.Streams.IOutputStream underlyingStream, Windows.Storage.Compression.CompressAlgorithm algorithm, UINT32 blockSize, Windows.Storage.Compression.Compressor* return_createdCompressor);
@@ -28,8 +24,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Compression.Decompressor")
 interface IDecompressor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_DetachStream(Windows.Storage.Streams.IInputStream* return_stream);
 }
@@ -38,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Compression.Decompressor")
 interface IDecompressorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateDecompressor(Windows.Storage.Streams.IInputStream underlyingStream, Windows.Storage.Compression.Decompressor* return_createdDecompressor);
 }

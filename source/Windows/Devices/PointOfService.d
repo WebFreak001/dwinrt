@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeScanner")
 interface IBarcodeScanner : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_Capabilities(Windows.Devices.PointOfService.BarcodeScannerCapabilities* return_value);
@@ -26,8 +24,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeScanner")
 interface IBarcodeScanner2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VideoDeviceId(HSTRING* return_value);
 }
@@ -36,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeScannerCapabilities")
 interface IBarcodeScannerCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PowerReportingType(Windows.Devices.PointOfService.UnifiedPosPowerReportingType* return_value);
 	HRESULT get_IsStatisticsReportingSupported(bool* return_value);
@@ -49,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeScannerCapabilities")
 interface IBarcodeScannerCapabilities1 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSoftwareTriggerSupported(bool* return_value);
 }
@@ -59,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeScannerDataReceivedEventArgs")
 interface IBarcodeScannerDataReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Report(Windows.Devices.PointOfService.BarcodeScannerReport* return_value);
 }
@@ -69,8 +59,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeScannerErrorOccurredEventArgs")
 interface IBarcodeScannerErrorOccurredEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PartialInputData(Windows.Devices.PointOfService.BarcodeScannerReport* return_value);
 	HRESULT get_IsRetriable(bool* return_value);
@@ -81,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeScannerImagePreviewReceivedEventArgs")
 interface IBarcodeScannerImagePreviewReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Preview(Windows.Storage.Streams.IRandomAccessStreamWithContentType* return_preview);
 }
@@ -91,8 +77,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeScannerReport")
 interface IBarcodeScannerReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ScanDataType(UINT32* return_value);
 	HRESULT get_ScanData(Windows.Storage.Streams.IBuffer* return_value);
@@ -103,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeScanner")
 interface IBarcodeScannerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeScanner)* return_result);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeScanner)* return_result);
@@ -115,8 +97,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeScanner")
 interface IBarcodeScannerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
 }
@@ -125,8 +105,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeScannerStatusUpdatedEventArgs")
 interface IBarcodeScannerStatusUpdatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.PointOfService.BarcodeScannerStatus* return_value);
 	HRESULT get_ExtendedStatus(UINT32* return_value);
@@ -136,8 +114,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeSymbologies")
 interface IBarcodeSymbologiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Unknown(UINT32* return_value);
 	HRESULT get_Ean8(UINT32* return_value);
@@ -239,8 +215,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeSymbologies")
 interface IBarcodeSymbologiesStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Gs1DWCode(UINT32* return_value);
 }
@@ -249,8 +223,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.BarcodeSymbologyAttributes")
 interface IBarcodeSymbologyAttributes : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsCheckDigitValidationEnabled(bool* return_value);
 	HRESULT set_IsCheckDigitValidationEnabled(bool value);
@@ -271,8 +243,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.CashDrawer")
 interface ICashDrawer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_Capabilities(Windows.Devices.PointOfService.CashDrawerCapabilities* return_value);
@@ -290,8 +260,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.CashDrawerCapabilities")
 interface ICashDrawerCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PowerReportingType(Windows.Devices.PointOfService.UnifiedPosPowerReportingType* return_value);
 	HRESULT get_IsStatisticsReportingSupported(bool* return_value);
@@ -305,8 +273,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.CashDrawerCloseAlarm")
 interface ICashDrawerCloseAlarm : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_AlarmTimeout(Windows.Foundation.TimeSpan value);
 	HRESULT get_AlarmTimeout(Windows.Foundation.TimeSpan* return_value);
@@ -325,8 +291,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.CashDrawerEventSource")
 interface ICashDrawerEventSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_DrawerClosed(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerClosedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DrawerClosed(EventRegistrationToken token);
@@ -337,8 +301,6 @@ extern(Windows):
 @uuid("69cb3bc1-147f-421c-9c23-090123bb786c")
 interface ICashDrawerEventSourceEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CashDrawer(Windows.Devices.PointOfService.CashDrawer* return_drawer);
 }
@@ -347,8 +309,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.CashDrawer")
 interface ICashDrawerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.CashDrawer)* return_result);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.CashDrawer)* return_result);
@@ -359,8 +319,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.CashDrawer")
 interface ICashDrawerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
 }
@@ -369,8 +327,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.CashDrawerStatus")
 interface ICashDrawerStatus : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StatusKind(Windows.Devices.PointOfService.CashDrawerStatusKind* return_value);
 	HRESULT get_ExtendedStatus(UINT32* return_value);
@@ -380,8 +336,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.CashDrawerStatusUpdatedEventArgs")
 interface ICashDrawerStatusUpdatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.PointOfService.CashDrawerStatus* return_value);
 }
@@ -390,8 +344,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedBarcodeScanner")
 interface IClaimedBarcodeScanner : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_IsEnabled(bool* return_value);
@@ -424,8 +376,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedBarcodeScanner")
 interface IClaimedBarcodeScanner1 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_StartSoftwareTriggerAsync(Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_StopSoftwareTriggerAsync(Windows.Foundation.IAsyncAction* return_result);
@@ -435,8 +385,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedBarcodeScanner")
 interface IClaimedBarcodeScanner2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetSymbologyAttributesAsync(UINT32 barcodeSymbology, Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeSymbologyAttributes)* return_result);
 	HRESULT abi_SetSymbologyAttributesAsync(UINT32 barcodeSymbology, Windows.Devices.PointOfService.BarcodeSymbologyAttributes attributes, Windows.Foundation.IAsyncOperation!(bool)* return_result);
@@ -446,8 +394,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedCashDrawer")
 interface IClaimedCashDrawer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_IsEnabled(bool* return_value);
@@ -467,8 +413,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedJournalPrinter")
 interface IClaimedJournalPrinter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateJob(Windows.Devices.PointOfService.JournalPrintJob* return_value);
 }
@@ -477,8 +421,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedLineDisplay")
 interface IClaimedLineDisplay : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_Capabilities(Windows.Devices.PointOfService.LineDisplayCapabilities* return_value);
@@ -497,8 +439,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedLineDisplay")
 interface IClaimedLineDisplayStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedLineDisplay)* return_operation);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_result);
@@ -509,8 +449,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedMagneticStripeReader")
 interface IClaimedMagneticStripeReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_IsEnabled(bool* return_value);
@@ -551,8 +489,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedPosPrinter")
 interface IClaimedPosPrinter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_IsEnabled(bool* return_value);
@@ -579,8 +515,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedReceiptPrinter")
 interface IClaimedReceiptPrinter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SidewaysMaxLines(UINT32* return_value);
 	HRESULT get_SidewaysMaxChars(UINT32* return_value);
@@ -594,8 +528,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedSlipPrinter")
 interface IClaimedSlipPrinter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SidewaysMaxLines(UINT32* return_value);
 	HRESULT get_SidewaysMaxChars(UINT32* return_value);
@@ -615,8 +547,6 @@ extern(Windows):
 @uuid("b7eb66a8-fe8a-4cfb-8b42-e35b280cb27c")
 interface ICommonClaimedPosPrinterStation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_CharactersPerLine(UINT32 value);
 	HRESULT get_CharactersPerLine(UINT32* return_value);
@@ -642,8 +572,6 @@ extern(Windows):
 @uuid("de5b52ca-e02e-40e9-9e5e-1b488e6aacfc")
 interface ICommonPosPrintStationCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsPrinterPresent(bool* return_value);
 	HRESULT get_IsDualColorSupported(bool* return_value);
@@ -663,8 +591,6 @@ extern(Windows):
 @uuid("09286b8b-9873-4d05-bfbe-4727a6038f69")
 interface ICommonReceiptSlipCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsBarcodeSupported(bool* return_value);
 	HRESULT get_IsBitmapSupported(bool* return_value);
@@ -687,8 +613,6 @@ interface IJournalPrinterCapabilities : IInspectable
 @WinrtFactory("Windows.Devices.PointOfService.LineDisplay")
 interface ILineDisplay : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_Capabilities(Windows.Devices.PointOfService.LineDisplayCapabilities* return_value);
@@ -704,8 +628,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.LineDisplayCapabilities")
 interface ILineDisplayCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsStatisticsReportingSupported(bool* return_value);
 	HRESULT get_IsStatisticsUpdatingSupported(bool* return_value);
@@ -731,8 +653,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.LineDisplay")
 interface ILineDisplayStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.LineDisplay)* return_operation);
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.LineDisplay)* return_result);
@@ -744,8 +664,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.LineDisplayWindow")
 interface ILineDisplayWindow : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SizeInCharacters(Windows.Foundation.Size* return_value);
 	HRESULT get_InterCharacterWaitInterval(Windows.Foundation.TimeSpan* return_value);
@@ -762,8 +680,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.MagneticStripeReader")
 interface IMagneticStripeReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_Capabilities(Windows.Devices.PointOfService.MagneticStripeReaderCapabilities* return_value);
@@ -781,8 +697,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs")
 interface IMagneticStripeReaderAamvaCardDataReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Report(Windows.Devices.PointOfService.MagneticStripeReaderReport* return_value);
 	HRESULT get_LicenseNumber(HSTRING* return_value);
@@ -809,8 +723,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs")
 interface IMagneticStripeReaderBankCardDataReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Report(Windows.Devices.PointOfService.MagneticStripeReaderReport* return_value);
 	HRESULT get_AccountNumber(HSTRING* return_value);
@@ -827,8 +739,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.MagneticStripeReaderCapabilities")
 interface IMagneticStripeReaderCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CardAuthentication(HSTRING* return_value);
 	HRESULT get_SupportedEncryptionAlgorithms(UINT32* return_value);
@@ -847,8 +757,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.MagneticStripeReaderCardTypes")
 interface IMagneticStripeReaderCardTypesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Unknown(UINT32* return_value);
 	HRESULT get_Bank(UINT32* return_value);
@@ -860,8 +768,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.MagneticStripeReaderEncryptionAlgorithms")
 interface IMagneticStripeReaderEncryptionAlgorithmsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_None(UINT32* return_value);
 	HRESULT get_TripleDesDukpt(UINT32* return_value);
@@ -872,8 +778,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs")
 interface IMagneticStripeReaderErrorOccurredEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Track1Status(Windows.Devices.PointOfService.MagneticStripeReaderTrackErrorType* return_value);
 	HRESULT get_Track2Status(Windows.Devices.PointOfService.MagneticStripeReaderTrackErrorType* return_value);
@@ -887,8 +791,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.MagneticStripeReaderReport")
 interface IMagneticStripeReaderReport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CardType(UINT32* return_value);
 	HRESULT get_Track1(Windows.Devices.PointOfService.MagneticStripeReaderTrackData* return_value);
@@ -905,8 +807,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.MagneticStripeReader")
 interface IMagneticStripeReaderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.MagneticStripeReader)* return_result);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.MagneticStripeReader)* return_result);
@@ -917,8 +817,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.MagneticStripeReader")
 interface IMagneticStripeReaderStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
 }
@@ -927,8 +825,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs")
 interface IMagneticStripeReaderStatusUpdatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.PointOfService.MagneticStripeReaderStatus* return_value);
 	HRESULT get_ExtendedStatus(UINT32* return_value);
@@ -938,8 +834,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.MagneticStripeReaderTrackData")
 interface IMagneticStripeReaderTrackData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Data(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_DiscretionaryData(Windows.Storage.Streams.IBuffer* return_value);
@@ -950,8 +844,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs")
 interface IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Report(Windows.Devices.PointOfService.MagneticStripeReaderReport* return_value);
 }
@@ -960,8 +852,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.PosPrinter")
 interface IPosPrinter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_Capabilities(Windows.Devices.PointOfService.PosPrinterCapabilities* return_value);
@@ -979,8 +869,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.PosPrinterCapabilities")
 interface IPosPrinterCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PowerReportingType(Windows.Devices.PointOfService.UnifiedPosPowerReportingType* return_value);
 	HRESULT get_IsStatisticsReportingSupported(bool* return_value);
@@ -998,8 +886,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.PosPrinterCharacterSetIds")
 interface IPosPrinterCharacterSetIdsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Utf16LE(UINT32* return_value);
 	HRESULT get_Ascii(UINT32* return_value);
@@ -1009,8 +895,6 @@ extern(Windows):
 @uuid("9a94005c-0615-4591-a58f-30f87edfe2e4")
 interface IPosPrinterJob : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Print(HSTRING data);
 	HRESULT abi_PrintLine(HSTRING data);
@@ -1028,8 +912,6 @@ interface IPosPrinterReleaseDeviceRequestedEventArgs : IInspectable
 @WinrtFactory("Windows.Devices.PointOfService.PosPrinter")
 interface IPosPrinterStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.PosPrinter)* return_result);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.PosPrinter)* return_result);
@@ -1040,8 +922,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.PosPrinter")
 interface IPosPrinterStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
 }
@@ -1050,8 +930,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.PosPrinterStatus")
 interface IPosPrinterStatus : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StatusKind(Windows.Devices.PointOfService.PosPrinterStatusKind* return_value);
 	HRESULT get_ExtendedStatus(UINT32* return_value);
@@ -1061,8 +939,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.PosPrinterStatusUpdatedEventArgs")
 interface IPosPrinterStatusUpdatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.PointOfService.PosPrinterStatus* return_value);
 }
@@ -1070,8 +946,6 @@ extern(Windows):
 @uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc")
 interface IReceiptOrSlipJob : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetBarcodeRotation(Windows.Devices.PointOfService.PosPrinterRotation value);
 	HRESULT abi_SetPrintRotation(Windows.Devices.PointOfService.PosPrinterRotation value, bool includeBitmaps);
@@ -1094,8 +968,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.ReceiptPrintJob")
 interface IReceiptPrintJob : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_MarkFeed(Windows.Devices.PointOfService.PosPrinterMarkFeedKind kind);
 	HRESULT abi_CutPaper(double percentage);
@@ -1106,8 +978,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.ReceiptPrinterCapabilities")
 interface IReceiptPrinterCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanCutPaper(bool* return_value);
 	HRESULT get_IsStampSupported(bool* return_value);
@@ -1118,8 +988,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.SlipPrinterCapabilities")
 interface ISlipPrinterCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsFullLengthSupported(bool* return_value);
 	HRESULT get_IsBothSidesPrintingSupported(bool* return_value);
@@ -1129,8 +997,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.PointOfService.UnifiedPosErrorData")
 interface IUnifiedPosErrorData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Message(HSTRING* return_value);
 	HRESULT get_Severity(Windows.Devices.PointOfService.UnifiedPosErrorSeverity* return_value);

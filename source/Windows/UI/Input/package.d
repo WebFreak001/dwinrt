@@ -29,8 +29,6 @@ struct ManipulationVelocities
 @WinrtFactory("Windows.UI.Input.CrossSlidingEventArgs")
 interface ICrossSlidingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
@@ -41,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.DraggingEventArgs")
 interface IDraggingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
@@ -53,8 +49,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.EdgeGesture")
 interface IEdgeGesture : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_Starting(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Starting(EventRegistrationToken token);
@@ -68,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.EdgeGestureEventArgs")
 interface IEdgeGestureEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.UI.Input.EdgeGestureKind* return_value);
 }
@@ -78,8 +70,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.EdgeGesture")
 interface IEdgeGestureStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.Input.EdgeGesture* return_current);
 }
@@ -88,8 +78,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.GestureRecognizer")
 interface IGestureRecognizer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GestureSettings(Windows.UI.Input.GestureSettings* return_value);
 	HRESULT set_GestureSettings(Windows.UI.Input.GestureSettings value);
@@ -155,8 +143,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.HoldingEventArgs")
 interface IHoldingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
@@ -167,8 +153,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.KeyboardDeliveryInterceptor")
 interface IKeyboardDeliveryInterceptor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsInterceptionEnabledWhenInForeground(bool* return_value);
 	HRESULT set_IsInterceptionEnabledWhenInForeground(bool value);
@@ -182,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.KeyboardDeliveryInterceptor")
 interface IKeyboardDeliveryInterceptorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.Input.KeyboardDeliveryInterceptor* return_keyboardDeliverySettings);
 }
@@ -192,8 +174,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.ManipulationCompletedEventArgs")
 interface IManipulationCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
@@ -205,8 +185,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.ManipulationInertiaStartingEventArgs")
 interface IManipulationInertiaStartingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
@@ -219,8 +197,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.ManipulationStartedEventArgs")
 interface IManipulationStartedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
@@ -231,8 +207,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.ManipulationUpdatedEventArgs")
 interface IManipulationUpdatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
@@ -245,8 +219,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.MouseWheelParameters")
 interface IMouseWheelParameters : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CharTranslation(Windows.Foundation.Point* return_value);
 	HRESULT set_CharTranslation(Windows.Foundation.Point value);
@@ -262,8 +234,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.PointerPoint")
 interface IPointerPoint : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDevice(Windows.Devices.Input.PointerDevice* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
@@ -279,8 +249,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.PointerPointProperties")
 interface IPointerPointProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Pressure(FLOAT* return_value);
 	HRESULT get_IsInverted(bool* return_value);
@@ -312,8 +280,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.PointerPointProperties")
 interface IPointerPointProperties2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ZDistance(Windows.Foundation.IReference!(FLOAT)* return_value);
 }
@@ -322,8 +288,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.PointerPoint")
 interface IPointerPointStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrentPoint(UINT32 pointerId, Windows.UI.Input.PointerPoint* return_pointerPoint);
 	HRESULT abi_GetIntermediatePoints(UINT32 pointerId, Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint)* return_pointerPoints);
@@ -334,8 +298,6 @@ extern(Windows):
 @uuid("4d5fe14f-b87c-4028-bc9c-59e9947fb056")
 interface IPointerPointTransform : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Inverse(Windows.UI.Input.IPointerPointTransform* return_value);
 	HRESULT abi_TryTransform(Windows.Foundation.Point inPoint, Windows.Foundation.Point* out_outPoint, bool* return_returnValue);
@@ -346,8 +308,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.PointerVisualizationSettings")
 interface IPointerVisualizationSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_IsContactFeedbackEnabled(bool value);
 	HRESULT get_IsContactFeedbackEnabled(bool* return_value);
@@ -359,8 +319,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.PointerVisualizationSettings")
 interface IPointerVisualizationSettingsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.Input.PointerVisualizationSettings* return_visualizationSettings);
 }
@@ -369,8 +327,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialController")
 interface IRadialController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Menu(Windows.UI.Input.RadialControllerMenu* return_value);
 	HRESULT get_RotationResolutionInDegrees(double* return_value);
@@ -397,8 +353,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialController")
 interface IRadialController2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ButtonPressed(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonPressedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ButtonPressed(EventRegistrationToken token);
@@ -412,8 +366,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerButtonClickedEventArgs")
 interface IRadialControllerButtonClickedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Contact(Windows.UI.Input.RadialControllerScreenContact* return_value);
 }
@@ -422,8 +374,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerButtonClickedEventArgs")
 interface IRadialControllerButtonClickedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SimpleHapticsController(Windows.Devices.Haptics.SimpleHapticsController* return_value);
 }
@@ -432,8 +382,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerButtonHoldingEventArgs")
 interface IRadialControllerButtonHoldingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Contact(Windows.UI.Input.RadialControllerScreenContact* return_value);
 	HRESULT get_SimpleHapticsController(Windows.Devices.Haptics.SimpleHapticsController* return_value);
@@ -443,8 +391,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerButtonPressedEventArgs")
 interface IRadialControllerButtonPressedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Contact(Windows.UI.Input.RadialControllerScreenContact* return_value);
 	HRESULT get_SimpleHapticsController(Windows.Devices.Haptics.SimpleHapticsController* return_value);
@@ -454,8 +400,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerButtonReleasedEventArgs")
 interface IRadialControllerButtonReleasedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Contact(Windows.UI.Input.RadialControllerScreenContact* return_value);
 	HRESULT get_SimpleHapticsController(Windows.Devices.Haptics.SimpleHapticsController* return_value);
@@ -465,8 +409,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerConfiguration")
 interface IRadialControllerConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetDefaultMenuItems(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.RadialControllerSystemMenuItemKind) buttons);
 	HRESULT abi_ResetToDefaultMenuItems();
@@ -477,8 +419,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerConfiguration")
 interface IRadialControllerConfiguration2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ActiveControllerWhenMenuIsSuppressed(Windows.UI.Input.RadialController value);
 	HRESULT get_ActiveControllerWhenMenuIsSuppressed(Windows.UI.Input.RadialController* return_value);
@@ -490,8 +430,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerConfiguration")
 interface IRadialControllerConfigurationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.Input.RadialControllerConfiguration* return_configuration);
 }
@@ -500,8 +438,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerControlAcquiredEventArgs")
 interface IRadialControllerControlAcquiredEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Contact(Windows.UI.Input.RadialControllerScreenContact* return_value);
 }
@@ -510,8 +446,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerControlAcquiredEventArgs")
 interface IRadialControllerControlAcquiredEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsButtonPressed(bool* return_value);
 	HRESULT get_SimpleHapticsController(Windows.Devices.Haptics.SimpleHapticsController* return_value);
@@ -521,8 +455,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerMenu")
 interface IRadialControllerMenu : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Items(Windows.Foundation.Collections.IVector!(Windows.UI.Input.RadialControllerMenuItem)* return_value);
 	HRESULT get_IsEnabled(bool* return_value);
@@ -536,8 +468,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerMenuItem")
 interface IRadialControllerMenuItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayText(HSTRING* return_value);
 	HRESULT get_Tag(IInspectable* return_value);
@@ -550,8 +480,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerMenuItem")
 interface IRadialControllerMenuItemStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromIcon(HSTRING displayText, Windows.Storage.Streams.RandomAccessStreamReference icon, Windows.UI.Input.RadialControllerMenuItem* return_result);
 	HRESULT abi_CreateFromKnownIcon(HSTRING displayText, Windows.UI.Input.RadialControllerMenuKnownIcon value, Windows.UI.Input.RadialControllerMenuItem* return_result);
@@ -561,8 +489,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerMenuItem")
 interface IRadialControllerMenuItemStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromFontGlyph(HSTRING displayText, HSTRING glyph, HSTRING fontFamily, Windows.UI.Input.RadialControllerMenuItem* return_result);
 	HRESULT abi_CreateFromFontGlyphWithUri(HSTRING displayText, HSTRING glyph, HSTRING fontFamily, Windows.Foundation.Uri fontUri, Windows.UI.Input.RadialControllerMenuItem* return_result);
@@ -572,8 +498,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerRotationChangedEventArgs")
 interface IRadialControllerRotationChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RotationDeltaInDegrees(double* return_value);
 	HRESULT get_Contact(Windows.UI.Input.RadialControllerScreenContact* return_value);
@@ -583,8 +507,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerRotationChangedEventArgs")
 interface IRadialControllerRotationChangedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsButtonPressed(bool* return_value);
 	HRESULT get_SimpleHapticsController(Windows.Devices.Haptics.SimpleHapticsController* return_value);
@@ -594,8 +516,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerScreenContact")
 interface IRadialControllerScreenContact : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Bounds(Windows.Foundation.Rect* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
@@ -605,8 +525,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs")
 interface IRadialControllerScreenContactContinuedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Contact(Windows.UI.Input.RadialControllerScreenContact* return_value);
 }
@@ -615,8 +533,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs")
 interface IRadialControllerScreenContactContinuedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsButtonPressed(bool* return_value);
 	HRESULT get_SimpleHapticsController(Windows.Devices.Haptics.SimpleHapticsController* return_value);
@@ -626,8 +542,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerScreenContactEndedEventArgs")
 interface IRadialControllerScreenContactEndedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsButtonPressed(bool* return_value);
 	HRESULT get_SimpleHapticsController(Windows.Devices.Haptics.SimpleHapticsController* return_value);
@@ -637,8 +551,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerScreenContactStartedEventArgs")
 interface IRadialControllerScreenContactStartedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Contact(Windows.UI.Input.RadialControllerScreenContact* return_value);
 }
@@ -647,8 +559,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialControllerScreenContactStartedEventArgs")
 interface IRadialControllerScreenContactStartedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsButtonPressed(bool* return_value);
 	HRESULT get_SimpleHapticsController(Windows.Devices.Haptics.SimpleHapticsController* return_value);
@@ -658,8 +568,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RadialController")
 interface IRadialControllerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsSupported(bool* return_result);
 	HRESULT abi_CreateForCurrentView(Windows.UI.Input.RadialController* return_result);
@@ -669,8 +577,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.RightTappedEventArgs")
 interface IRightTappedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
@@ -680,8 +586,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.TappedEventArgs")
 interface ITappedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value);
 	HRESULT get_Position(Windows.Foundation.Point* return_value);

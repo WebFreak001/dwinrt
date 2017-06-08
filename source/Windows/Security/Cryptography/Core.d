@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.Cryptography.Core.AsymmetricAlgorithmNames")
 interface IAsymmetricAlgorithmNamesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RsaPkcs1(HSTRING* return_value);
 	HRESULT get_RsaOaepSha1(HSTRING* return_value);
@@ -33,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.AsymmetricAlgorithmNames")
 interface IAsymmetricAlgorithmNamesStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EcdsaSha256(HSTRING* return_value);
 	HRESULT get_EcdsaSha384(HSTRING* return_value);
@@ -45,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider")
 interface IAsymmetricKeyAlgorithmProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlgorithmName(HSTRING* return_value);
 	HRESULT abi_CreateKeyPair(UINT32 keySize, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
@@ -60,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider")
 interface IAsymmetricKeyAlgorithmProvider2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateKeyPairWithCurveName(HSTRING curveName, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
 	HRESULT abi_CreateKeyPairWithCurveParameters(UINT32 __parametersSize, BYTE* parameters, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
@@ -71,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider")
 interface IAsymmetricKeyAlgorithmProviderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OpenAlgorithm(HSTRING algorithm, Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider* return_provider);
 }
@@ -81,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.CryptographicEngine")
 interface ICryptographicEngineStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Encrypt(Windows.Security.Cryptography.Core.CryptographicKey key, Windows.Storage.Streams.IBuffer data, Windows.Storage.Streams.IBuffer iv, Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT abi_Decrypt(Windows.Security.Cryptography.Core.CryptographicKey key, Windows.Storage.Streams.IBuffer data, Windows.Storage.Streams.IBuffer iv, Windows.Storage.Streams.IBuffer* return_value);
@@ -97,8 +85,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.CryptographicEngine")
 interface ICryptographicEngineStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SignHashedData(Windows.Security.Cryptography.Core.CryptographicKey key, Windows.Storage.Streams.IBuffer data, Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT abi_VerifySignatureWithHashInput(Windows.Security.Cryptography.Core.CryptographicKey key, Windows.Storage.Streams.IBuffer data, Windows.Storage.Streams.IBuffer signature, bool* return_isAuthenticated);
@@ -111,8 +97,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.CryptographicKey")
 interface ICryptographicKey : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeySize(UINT32* return_value);
 	HRESULT abi_ExportDefaultPrivateKeyBlobType(Windows.Storage.Streams.IBuffer* return_value);
@@ -125,8 +109,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.EccCurveNames")
 interface IEccCurveNamesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BrainpoolP160r1(HSTRING* return_value);
 	HRESULT get_BrainpoolP160t1(HSTRING* return_value);
@@ -180,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.EncryptedAndAuthenticatedData")
 interface IEncryptedAndAuthenticatedData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EncryptedData(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_AuthenticationTag(Windows.Storage.Streams.IBuffer* return_value);
@@ -191,8 +171,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.HashAlgorithmNames")
 interface IHashAlgorithmNamesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Md5(HSTRING* return_value);
 	HRESULT get_Sha1(HSTRING* return_value);
@@ -205,8 +183,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.HashAlgorithmProvider")
 interface IHashAlgorithmProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlgorithmName(HSTRING* return_value);
 	HRESULT get_HashLength(UINT32* return_value);
@@ -218,8 +194,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.HashAlgorithmProvider")
 interface IHashAlgorithmProviderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OpenAlgorithm(HSTRING algorithm, Windows.Security.Cryptography.Core.HashAlgorithmProvider* return_provider);
 }
@@ -228,8 +202,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.CryptographicHash")
 interface IHashComputation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Append(Windows.Storage.Streams.IBuffer data);
 	HRESULT abi_GetValueAndReset(Windows.Storage.Streams.IBuffer* return_value);
@@ -239,8 +211,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.KeyDerivationAlgorithmNames")
 interface IKeyDerivationAlgorithmNamesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Pbkdf2Md5(HSTRING* return_value);
 	HRESULT get_Pbkdf2Sha1(HSTRING* return_value);
@@ -263,8 +233,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.KeyDerivationAlgorithmNames")
 interface IKeyDerivationAlgorithmNamesStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CapiKdfMd5(HSTRING* return_value);
 	HRESULT get_CapiKdfSha1(HSTRING* return_value);
@@ -277,8 +245,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.KeyDerivationAlgorithmProvider")
 interface IKeyDerivationAlgorithmProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlgorithmName(HSTRING* return_value);
 	HRESULT abi_CreateKey(Windows.Storage.Streams.IBuffer keyMaterial, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
@@ -288,8 +254,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.KeyDerivationAlgorithmProvider")
 interface IKeyDerivationAlgorithmProviderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OpenAlgorithm(HSTRING algorithm, Windows.Security.Cryptography.Core.KeyDerivationAlgorithmProvider* return_provider);
 }
@@ -298,8 +262,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.KeyDerivationParameters")
 interface IKeyDerivationParameters : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KdfGenericBinary(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT set_KdfGenericBinary(Windows.Storage.Streams.IBuffer value);
@@ -310,8 +272,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.KeyDerivationParameters")
 interface IKeyDerivationParameters2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Capi1KdfTargetAlgorithm(Windows.Security.Cryptography.Core.Capi1KdfTargetAlgorithm* return_value);
 	HRESULT set_Capi1KdfTargetAlgorithm(Windows.Security.Cryptography.Core.Capi1KdfTargetAlgorithm value);
@@ -321,8 +281,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.KeyDerivationParameters")
 interface IKeyDerivationParametersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_BuildForPbkdf2(Windows.Storage.Streams.IBuffer pbkdf2Salt, UINT32 iterationCount, Windows.Security.Cryptography.Core.KeyDerivationParameters* return_value);
 	HRESULT abi_BuildForSP800108(Windows.Storage.Streams.IBuffer label, Windows.Storage.Streams.IBuffer context, Windows.Security.Cryptography.Core.KeyDerivationParameters* return_value);
@@ -333,8 +291,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.KeyDerivationParameters")
 interface IKeyDerivationParametersStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_BuildForCapi1Kdf(Windows.Security.Cryptography.Core.Capi1KdfTargetAlgorithm capi1KdfTargetAlgorithm, Windows.Security.Cryptography.Core.KeyDerivationParameters* return_value);
 }
@@ -343,8 +299,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.MacAlgorithmNames")
 interface IMacAlgorithmNamesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HmacMd5(HSTRING* return_value);
 	HRESULT get_HmacSha1(HSTRING* return_value);
@@ -358,8 +312,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.MacAlgorithmProvider")
 interface IMacAlgorithmProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlgorithmName(HSTRING* return_value);
 	HRESULT get_MacLength(UINT32* return_value);
@@ -370,8 +322,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.MacAlgorithmProvider")
 interface IMacAlgorithmProvider2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateHash(Windows.Storage.Streams.IBuffer keyMaterial, Windows.Security.Cryptography.Core.CryptographicHash* return_value);
 }
@@ -380,8 +330,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.MacAlgorithmProvider")
 interface IMacAlgorithmProviderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OpenAlgorithm(HSTRING algorithm, Windows.Security.Cryptography.Core.MacAlgorithmProvider* return_provider);
 }
@@ -390,8 +338,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.PersistedKeyProvider")
 interface IPersistedKeyProviderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OpenKeyPairFromCertificateAsync(Windows.Security.Cryptography.Certificates.Certificate certificate, HSTRING hashAlgorithmName, Windows.Security.Cryptography.Core.CryptographicPadding padding, Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Core.CryptographicKey)* return_operation);
 	HRESULT abi_OpenPublicKeyFromCertificate(Windows.Security.Cryptography.Certificates.Certificate certificate, HSTRING hashAlgorithmName, Windows.Security.Cryptography.Core.CryptographicPadding padding, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
@@ -401,8 +347,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.SymmetricAlgorithmNames")
 interface ISymmetricAlgorithmNamesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesCbc(HSTRING* return_value);
 	HRESULT get_DesEcb(HSTRING* return_value);
@@ -429,8 +373,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider")
 interface ISymmetricKeyAlgorithmProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlgorithmName(HSTRING* return_value);
 	HRESULT get_BlockLength(UINT32* return_value);
@@ -441,8 +383,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider")
 interface ISymmetricKeyAlgorithmProviderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OpenAlgorithm(HSTRING algorithm, Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider* return_provider);
 }

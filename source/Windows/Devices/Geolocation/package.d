@@ -13,8 +13,6 @@ struct BasicGeoposition
 @WinrtFactory("Windows.Devices.Geolocation.CivicAddress")
 interface ICivicAddress : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Country(HSTRING* return_value);
 	HRESULT get_State(HSTRING* return_value);
@@ -27,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.GeoboundingBox")
 interface IGeoboundingBox : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NorthwestCorner(Windows.Devices.Geolocation.BasicGeoposition* return_value);
 	HRESULT get_SoutheastCorner(Windows.Devices.Geolocation.BasicGeoposition* return_value);
@@ -41,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.GeoboundingBox")
 interface IGeoboundingBoxFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Geolocation.BasicGeoposition northwestCorner, Windows.Devices.Geolocation.BasicGeoposition southeastCorner, Windows.Devices.Geolocation.GeoboundingBox* return_value);
 	HRESULT abi_CreateWithAltitudeReference(Windows.Devices.Geolocation.BasicGeoposition northwestCorner, Windows.Devices.Geolocation.BasicGeoposition southeastCorner, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem, Windows.Devices.Geolocation.GeoboundingBox* return_value);
@@ -53,8 +47,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.GeoboundingBox")
 interface IGeoboundingBoxStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryCompute(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.GeoboundingBox* return_value);
 	HRESULT abi_TryComputeWithAltitudeReference(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem, Windows.Devices.Geolocation.GeoboundingBox* return_value);
@@ -65,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geocircle")
 interface IGeocircle : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Center(Windows.Devices.Geolocation.BasicGeoposition* return_value);
 	HRESULT get_Radius(double* return_value);
@@ -76,8 +66,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geocircle")
 interface IGeocircleFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Geolocation.BasicGeoposition position, double radius, Windows.Devices.Geolocation.Geocircle* return_value);
 	HRESULT abi_CreateWithAltitudeReferenceSystem(Windows.Devices.Geolocation.BasicGeoposition position, double radius, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem, Windows.Devices.Geolocation.Geocircle* return_value);
@@ -88,8 +76,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geocoordinate")
 interface IGeocoordinate : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Latitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Latitude")
 	HRESULT get_Latitude(double* return_value);
@@ -108,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.GeocoordinateSatelliteData")
 interface IGeocoordinateSatelliteData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PositionDilutionOfPrecision(Windows.Foundation.IReference!(double)* return_ppValue);
 	HRESULT get_HorizontalDilutionOfPrecision(Windows.Foundation.IReference!(double)* return_ppValue);
@@ -120,8 +104,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geocoordinate")
 interface IGeocoordinateWithPoint : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Point(Windows.Devices.Geolocation.Geopoint* return_value);
 }
@@ -130,8 +112,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geocoordinate")
 interface IGeocoordinateWithPositionData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PositionSource(Windows.Devices.Geolocation.PositionSource* return_pValue);
 	HRESULT get_SatelliteData(Windows.Devices.Geolocation.GeocoordinateSatelliteData* return_ppValue);
@@ -141,8 +121,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geocoordinate")
 interface IGeocoordinateWithPositionSourceTimestamp : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PositionSourceTimestamp(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
 }
@@ -151,8 +129,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geolocator")
 interface IGeolocator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesiredAccuracy(Windows.Devices.Geolocation.PositionAccuracy* return_value);
 	HRESULT set_DesiredAccuracy(Windows.Devices.Geolocation.PositionAccuracy value);
@@ -173,8 +149,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geolocator")
 interface IGeolocator2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AllowFallbackToConsentlessPositions();
 }
@@ -183,8 +157,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geolocator")
 interface IGeolocatorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.GeolocationAccessStatus)* return_result);
 	HRESULT abi_GetGeopositionHistoryAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition))* return_result);
@@ -195,8 +167,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geolocator")
 interface IGeolocatorStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsDefaultGeopositionRecommended(bool* return_value);
 	HRESULT set_DefaultGeoposition(Windows.Foundation.IReference!(Windows.Devices.Geolocation.BasicGeoposition) value);
@@ -207,8 +177,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geolocator")
 interface IGeolocatorWithScalarAccuracy : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesiredAccuracyInMeters(Windows.Foundation.IReference!(UINT32)* return_value);
 	HRESULT set_DesiredAccuracyInMeters(Windows.Foundation.IReference!(UINT32) value);
@@ -218,8 +186,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geopath")
 interface IGeopath : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Positions(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.BasicGeoposition)* return_value);
 }
@@ -228,8 +194,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geopath")
 interface IGeopathFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.Geopath* return_value);
 	HRESULT abi_CreateWithAltitudeReference(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem, Windows.Devices.Geolocation.Geopath* return_value);
@@ -240,8 +204,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geopoint")
 interface IGeopoint : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Devices.Geolocation.BasicGeoposition* return_value);
 }
@@ -250,8 +212,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geopoint")
 interface IGeopointFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Geolocation.BasicGeoposition position, Windows.Devices.Geolocation.Geopoint* return_value);
 	HRESULT abi_CreateWithAltitudeReferenceSystem(Windows.Devices.Geolocation.BasicGeoposition position, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem, Windows.Devices.Geolocation.Geopoint* return_value);
@@ -262,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geoposition")
 interface IGeoposition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Coordinate(Windows.Devices.Geolocation.Geocoordinate* return_value);
 	HRESULT get_CivicAddress(Windows.Devices.Geolocation.CivicAddress* return_value);
@@ -273,8 +231,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.Geoposition")
 interface IGeoposition2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VenueData(Windows.Devices.Geolocation.VenueData* return_value);
 }
@@ -282,8 +238,6 @@ extern(Windows):
 @uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e")
 interface IGeoshape : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GeoshapeType(Windows.Devices.Geolocation.GeoshapeType* return_value);
 	HRESULT get_SpatialReferenceId(UINT32* return_value);
@@ -294,8 +248,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.PositionChangedEventArgs")
 interface IPositionChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Devices.Geolocation.Geoposition* return_value);
 }
@@ -304,8 +256,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.StatusChangedEventArgs")
 interface IStatusChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Geolocation.PositionStatus* return_value);
 }
@@ -314,8 +264,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Geolocation.VenueData")
 interface IVenueData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_Level(HSTRING* return_value);

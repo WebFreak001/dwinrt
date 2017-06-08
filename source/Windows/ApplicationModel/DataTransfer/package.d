@@ -20,8 +20,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.Clipboard")
 interface IClipboardStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetContent(Windows.ApplicationModel.DataTransfer.DataPackageView* return_content);
 	HRESULT abi_SetContent(Windows.ApplicationModel.DataTransfer.DataPackage content);
@@ -35,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackage")
 interface IDataPackage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetView(Windows.ApplicationModel.DataTransfer.DataPackageView* return_value);
 	HRESULT get_Properties(Windows.ApplicationModel.DataTransfer.DataPackagePropertySet* return_value);
@@ -63,8 +59,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackage")
 interface IDataPackage2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetApplicationLink(Windows.Foundation.Uri value);
 	HRESULT abi_SetWebLink(Windows.Foundation.Uri value);
@@ -74,8 +68,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackage")
 interface IDataPackage3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ShareCompleted(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.ShareCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ShareCompleted(EventRegistrationToken token);
@@ -85,8 +77,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackagePropertySet")
 interface IDataPackagePropertySet : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT set_Title(HSTRING value);
@@ -105,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackagePropertySet")
 interface IDataPackagePropertySet2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentSourceWebLink(Windows.Foundation.Uri* return_value);
 	HRESULT set_ContentSourceWebLink(Windows.Foundation.Uri value);
@@ -124,8 +112,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackagePropertySet")
 interface IDataPackagePropertySet3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EnterpriseId(HSTRING* return_value);
 	HRESULT set_EnterpriseId(HSTRING value);
@@ -135,8 +121,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView")
 interface IDataPackagePropertySetView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT get_Description(HSTRING* return_value);
@@ -150,8 +134,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView")
 interface IDataPackagePropertySetView2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PackageFamilyName(HSTRING* return_value);
 	HRESULT get_ContentSourceWebLink(Windows.Foundation.Uri* return_value);
@@ -164,8 +146,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView")
 interface IDataPackagePropertySetView3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EnterpriseId(HSTRING* return_value);
 }
@@ -174,8 +154,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackageView")
 interface IDataPackageView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Properties(Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView* return_value);
 	HRESULT get_RequestedOperation(Windows.ApplicationModel.DataTransfer.DataPackageOperation* return_value);
@@ -198,8 +176,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackageView")
 interface IDataPackageView2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetApplicationLinkAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Uri)* return_operation);
 	HRESULT abi_GetWebLinkAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Uri)* return_operation);
@@ -209,8 +185,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackageView")
 interface IDataPackageView3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_operation);
 	HRESULT abi_RequestAccessWithEnterpriseIdAsync(HSTRING enterpriseId, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_operation);
@@ -221,8 +195,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackageView")
 interface IDataPackageView4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetAcceptedFormatId(HSTRING formatId);
 }
@@ -231,8 +203,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataProviderDeferral")
 interface IDataProviderDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -241,8 +211,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataProviderRequest")
 interface IDataProviderRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FormatId(HSTRING* return_value);
 	HRESULT get_Deadline(Windows.Foundation.DateTime* return_value);
@@ -254,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataRequest")
 interface IDataRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Data(Windows.ApplicationModel.DataTransfer.DataPackage* return_value);
 	HRESULT set_Data(Windows.ApplicationModel.DataTransfer.DataPackage value);
@@ -268,8 +234,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataRequestDeferral")
 interface IDataRequestDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -278,8 +242,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs")
 interface IDataRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.DataTransfer.DataRequest* return_value);
 }
@@ -288,8 +250,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataTransferManager")
 interface IDataTransferManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_DataRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_DataRequested(EventRegistrationToken eventCookie);
@@ -301,8 +261,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataTransferManager")
 interface IDataTransferManager2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ShareProvidersRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.ShareProvidersRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ShareProvidersRequested(EventRegistrationToken token);
@@ -312,8 +270,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataTransferManager")
 interface IDataTransferManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowShareUI();
 	HRESULT abi_GetForCurrentView(Windows.ApplicationModel.DataTransfer.DataTransferManager* return_value);
@@ -323,8 +279,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataTransferManager")
 interface IDataTransferManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsSupported(bool* return_value);
 }
@@ -333,8 +287,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.HtmlFormatHelper")
 interface IHtmlFormatHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetStaticFragment(HSTRING htmlFormat, HSTRING* return_htmlFragment);
 	HRESULT abi_CreateHtmlFormat(HSTRING htmlFragment, HSTRING* return_htmlFormat);
@@ -344,8 +296,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs")
 interface IOperationCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Operation(Windows.ApplicationModel.DataTransfer.DataPackageOperation* return_value);
 }
@@ -354,8 +304,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs")
 interface IOperationCompletedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AcceptedFormatId(HSTRING* return_value);
 }
@@ -364,8 +312,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.ShareCompletedEventArgs")
 interface IShareCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ShareTarget(Windows.ApplicationModel.DataTransfer.ShareTargetInfo* return_value);
 }
@@ -374,8 +320,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.ShareProvider")
 interface IShareProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT get_DisplayIcon(Windows.Storage.Streams.RandomAccessStreamReference* return_value);
@@ -388,8 +332,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.ShareProvider")
 interface IShareProviderFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING title, Windows.Storage.Streams.RandomAccessStreamReference displayIcon, Windows.UI.Color backgroundColor, Windows.ApplicationModel.DataTransfer.ShareProviderHandler handler, Windows.ApplicationModel.DataTransfer.ShareProvider* return_result);
 }
@@ -398,8 +340,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.ShareProviderOperation")
 interface IShareProviderOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Data(Windows.ApplicationModel.DataTransfer.DataPackageView* return_value);
 	HRESULT get_Provider(Windows.ApplicationModel.DataTransfer.ShareProvider* return_value);
@@ -410,8 +350,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.ShareProvidersRequestedEventArgs")
 interface IShareProvidersRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Providers(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.DataTransfer.ShareProvider)* return_value);
 	HRESULT get_Data(Windows.ApplicationModel.DataTransfer.DataPackageView* return_value);
@@ -422,8 +360,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.ShareTargetInfo")
 interface IShareTargetInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppUserModelId(HSTRING* return_value);
 	HRESULT get_ShareProvider(Windows.ApplicationModel.DataTransfer.ShareProvider* return_value);
@@ -433,8 +369,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager")
 interface ISharedStorageAccessManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddFile(Windows.Storage.IStorageFile file, HSTRING* return_outToken);
 	HRESULT abi_RedeemTokenForFileAsync(HSTRING token, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
@@ -445,8 +379,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.StandardDataFormats")
 interface IStandardDataFormatsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);
 	deprecated("Uri may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use WebLink or ApplicationLink.")
@@ -461,8 +393,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.StandardDataFormats")
 interface IStandardDataFormatsStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WebLink(HSTRING* return_value);
 	HRESULT get_ApplicationLink(HSTRING* return_value);
@@ -472,8 +402,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs")
 interface ITargetApplicationChosenEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ApplicationName(HSTRING* return_value);
 }

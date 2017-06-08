@@ -48,8 +48,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.WebUI.ActivatedDeferral")
 interface IActivatedDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -57,8 +55,6 @@ extern(Windows):
 @uuid("ca6d5f74-63c2-44a6-b97b-d9a03c20bc9b")
 interface IActivatedEventArgsDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ActivatedOperation(Windows.UI.WebUI.ActivatedOperation* return_value);
 }
@@ -67,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.WebUI.ActivatedOperation")
 interface IActivatedOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.UI.WebUI.ActivatedDeferral* return_deferral);
 }
@@ -77,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.WebUI.HtmlPrintDocumentSource")
 interface IHtmlPrintDocumentSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(Windows.UI.WebUI.PrintContent* return_value);
 	HRESULT set_Content(Windows.UI.WebUI.PrintContent value);
@@ -104,8 +96,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.WebUI.WebUIApplication")
 interface IWebUIActivationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_Activated(Windows.UI.WebUI.ActivatedEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_Activated(EventRegistrationToken token);
@@ -121,8 +111,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.WebUI.WebUIApplication")
 interface IWebUIActivationStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_LeavingBackground(Windows.UI.WebUI.LeavingBackgroundEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_LeavingBackground(EventRegistrationToken token);
@@ -134,8 +122,6 @@ extern(Windows):
 @uuid("23f12c25-e2f7-4741-bc9c-394595de24dc")
 interface IWebUIBackgroundTaskInstance : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Succeeded(bool* return_succeeded);
 	HRESULT set_Succeeded(bool succeeded);
@@ -145,8 +131,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.WebUI.WebUIBackgroundTaskInstance")
 interface IWebUIBackgroundTaskInstanceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Current(Windows.UI.WebUI.IWebUIBackgroundTaskInstance* return_backgroundTaskInstance);
 }
@@ -155,8 +139,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.WebUI.WebUINavigatedDeferral")
 interface IWebUINavigatedDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -164,8 +146,6 @@ extern(Windows):
 @uuid("a75841b8-2499-4030-a69d-15d2d9cfe524")
 interface IWebUINavigatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NavigatedOperation(Windows.UI.WebUI.WebUINavigatedOperation* return_value);
 }
@@ -174,8 +154,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.WebUI.WebUINavigatedOperation")
 interface IWebUINavigatedOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.UI.WebUI.WebUINavigatedDeferral* return_deferral);
 }

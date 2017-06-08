@@ -5,8 +5,6 @@ import dwinrt;
 @uuid("b0aba86a-9aeb-4d3a-9590-003e3ca7e290")
 interface IUriToStreamResolver : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_UriToStreamAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IInputStream)* return_operation);
 }
@@ -15,8 +13,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.WebError")
 interface IWebErrorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetStatus(INT32 hresult, Windows.Web.WebErrorStatus* return_status);
 }

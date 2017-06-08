@@ -24,8 +24,6 @@ interface IAddDeleteThemeTransition : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.BackEase")
 interface IBackEase : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Amplitude(double* return_value);
 	HRESULT set_Amplitude(double value);
@@ -35,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.BackEase")
 interface IBackEaseStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AmplitudeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -45,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.BeginStoryboard")
 interface IBeginStoryboard : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard* return_value);
 	HRESULT set_Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard value);
@@ -56,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.BeginStoryboard")
 interface IBeginStoryboardStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StoryboardProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -66,8 +58,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.BounceEase")
 interface IBounceEase : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Bounces(INT32* return_value);
 	HRESULT set_Bounces(INT32 value);
@@ -79,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.BounceEase")
 interface IBounceEaseStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BouncesProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_BouncinessProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -96,8 +84,6 @@ interface ICircleEase : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ColorAnimation")
 interface IColorAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_From(Windows.Foundation.IReference!(Windows.UI.Color)* return_value);
 	HRESULT set_From(Windows.Foundation.IReference!(Windows.UI.Color) value);
@@ -115,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ColorAnimation")
 interface IColorAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FromProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ToProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -129,8 +113,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ColorAnimationUsingKeyFrames")
 interface IColorAnimationUsingKeyFrames : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeyFrames(Windows.UI.Xaml.Media.Animation.ColorKeyFrameCollection* return_value);
 	HRESULT get_EnableDependentAnimation(bool* return_value);
@@ -141,8 +123,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ColorAnimationUsingKeyFrames")
 interface IColorAnimationUsingKeyFramesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EnableDependentAnimationProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -151,8 +131,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ColorKeyFrame")
 interface IColorKeyFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Value(Windows.UI.Color* return_value);
 	HRESULT set_Value(Windows.UI.Color value);
@@ -164,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ColorKeyFrame")
 interface IColorKeyFrameFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Animation.ColorKeyFrame* return_instance);
 }
@@ -174,8 +150,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ColorKeyFrame")
 interface IColorKeyFrameStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ValueProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_KeyTimeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -185,8 +159,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.CommonNavigationTransitionInfo")
 interface ICommonNavigationTransitionInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsStaggeringEnabled(bool* return_value);
 	HRESULT set_IsStaggeringEnabled(bool value);
@@ -196,8 +168,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.CommonNavigationTransitionInfo")
 interface ICommonNavigationTransitionInfoStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsStaggeringEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsStaggerElementProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -209,8 +179,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ConnectedAnimation")
 interface IConnectedAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_Completed(EventRegistrationToken token);
@@ -222,8 +190,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ConnectedAnimation")
 interface IConnectedAnimation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsScaleAnimationEnabled(bool* return_value);
 	HRESULT set_IsScaleAnimationEnabled(bool value);
@@ -235,8 +201,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ConnectedAnimationService")
 interface IConnectedAnimationService : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DefaultDuration(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_DefaultDuration(Windows.Foundation.TimeSpan value);
@@ -250,8 +214,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ConnectedAnimationService")
 interface IConnectedAnimationServiceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.Xaml.Media.Animation.ConnectedAnimationService* return_returnValue);
 }
@@ -260,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ContentThemeTransition")
 interface IContentThemeTransition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HorizontalOffset(double* return_value);
 	HRESULT set_HorizontalOffset(double value);
@@ -273,8 +233,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ContentThemeTransition")
 interface IContentThemeTransitionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HorizontalOffsetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_VerticalOffsetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -284,8 +242,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ContinuumNavigationTransitionInfo")
 interface IContinuumNavigationTransitionInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExitElement(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT set_ExitElement(Windows.UI.Xaml.UIElement value);
@@ -295,8 +251,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ContinuumNavigationTransitionInfo")
 interface IContinuumNavigationTransitionInfoStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExitElementProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_IsEntranceElementProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -344,8 +298,6 @@ interface IDiscretePointKeyFrame : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DoubleAnimation")
 interface IDoubleAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_From(Windows.Foundation.IReference!(double)* return_value);
 	HRESULT set_From(Windows.Foundation.IReference!(double) value);
@@ -363,8 +315,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DoubleAnimation")
 interface IDoubleAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FromProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ToProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -377,8 +327,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DoubleAnimationUsingKeyFrames")
 interface IDoubleAnimationUsingKeyFrames : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeyFrames(Windows.UI.Xaml.Media.Animation.DoubleKeyFrameCollection* return_value);
 	HRESULT get_EnableDependentAnimation(bool* return_value);
@@ -389,8 +337,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DoubleAnimationUsingKeyFrames")
 interface IDoubleAnimationUsingKeyFramesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EnableDependentAnimationProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -399,8 +345,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DoubleKeyFrame")
 interface IDoubleKeyFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Value(double* return_value);
 	HRESULT set_Value(double value);
@@ -412,8 +356,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DoubleKeyFrame")
 interface IDoubleKeyFrameFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Animation.DoubleKeyFrame* return_instance);
 }
@@ -422,8 +364,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DoubleKeyFrame")
 interface IDoubleKeyFrameStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ValueProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_KeyTimeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -433,8 +373,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DragItemThemeAnimation")
 interface IDragItemThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetName(HSTRING* return_value);
 	HRESULT set_TargetName(HSTRING value);
@@ -444,8 +382,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DragItemThemeAnimation")
 interface IDragItemThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -454,8 +390,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DragOverThemeAnimation")
 interface IDragOverThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetName(HSTRING* return_value);
 	HRESULT set_TargetName(HSTRING value);
@@ -469,8 +403,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DragOverThemeAnimation")
 interface IDragOverThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ToOffsetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -487,8 +419,6 @@ interface IDrillInNavigationTransitionInfo : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DrillInThemeAnimation")
 interface IDrillInThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EntranceTargetName(HSTRING* return_value);
 	HRESULT set_EntranceTargetName(HSTRING value);
@@ -504,8 +434,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DrillInThemeAnimation")
 interface IDrillInThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EntranceTargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_EntranceTargetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -517,8 +445,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DrillOutThemeAnimation")
 interface IDrillOutThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EntranceTargetName(HSTRING* return_value);
 	HRESULT set_EntranceTargetName(HSTRING value);
@@ -534,8 +460,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DrillOutThemeAnimation")
 interface IDrillOutThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EntranceTargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_EntranceTargetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -547,8 +471,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DropTargetItemThemeAnimation")
 interface IDropTargetItemThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetName(HSTRING* return_value);
 	HRESULT set_TargetName(HSTRING value);
@@ -558,8 +480,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DropTargetItemThemeAnimation")
 interface IDropTargetItemThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -568,8 +488,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EasingColorKeyFrame")
 interface IEasingColorKeyFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase* return_value);
 	HRESULT set_EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value);
@@ -579,8 +497,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EasingColorKeyFrame")
 interface IEasingColorKeyFrameStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EasingFunctionProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -589,8 +505,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EasingDoubleKeyFrame")
 interface IEasingDoubleKeyFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase* return_value);
 	HRESULT set_EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value);
@@ -600,8 +514,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EasingDoubleKeyFrame")
 interface IEasingDoubleKeyFrameStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EasingFunctionProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -610,8 +522,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EasingFunctionBase")
 interface IEasingFunctionBase : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EasingMode(Windows.UI.Xaml.Media.Animation.EasingMode* return_value);
 	HRESULT set_EasingMode(Windows.UI.Xaml.Media.Animation.EasingMode value);
@@ -628,8 +538,6 @@ interface IEasingFunctionBaseFactory : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EasingFunctionBase")
 interface IEasingFunctionBaseStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EasingModeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -638,8 +546,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EasingPointKeyFrame")
 interface IEasingPointKeyFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase* return_value);
 	HRESULT set_EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value);
@@ -649,8 +555,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EasingPointKeyFrame")
 interface IEasingPointKeyFrameStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EasingFunctionProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -659,8 +563,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition")
 interface IEdgeUIThemeTransition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Edge(Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation* return_value);
 	HRESULT set_Edge(Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation value);
@@ -670,8 +572,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition")
 interface IEdgeUIThemeTransitionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EdgeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -680,8 +580,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ElasticEase")
 interface IElasticEase : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Oscillations(INT32* return_value);
 	HRESULT set_Oscillations(INT32 value);
@@ -693,8 +591,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ElasticEase")
 interface IElasticEaseStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OscillationsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_SpringinessProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -710,8 +606,6 @@ interface IEntranceNavigationTransitionInfo : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EntranceNavigationTransitionInfo")
 interface IEntranceNavigationTransitionInfoStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTargetElementProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetIsTargetElement(Windows.UI.Xaml.UIElement element, bool* return_value);
@@ -722,8 +616,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EntranceThemeTransition")
 interface IEntranceThemeTransition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FromHorizontalOffset(double* return_value);
 	HRESULT set_FromHorizontalOffset(double value);
@@ -737,8 +629,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EntranceThemeTransition")
 interface IEntranceThemeTransitionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FromHorizontalOffsetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FromVerticalOffsetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -749,8 +639,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ExponentialEase")
 interface IExponentialEase : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Exponent(double* return_value);
 	HRESULT set_Exponent(double value);
@@ -760,8 +648,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ExponentialEase")
 interface IExponentialEaseStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExponentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -770,8 +656,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation")
 interface IFadeInThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetName(HSTRING* return_value);
 	HRESULT set_TargetName(HSTRING value);
@@ -781,8 +665,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation")
 interface IFadeInThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -791,8 +673,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation")
 interface IFadeOutThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetName(HSTRING* return_value);
 	HRESULT set_TargetName(HSTRING value);
@@ -802,8 +682,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation")
 interface IFadeOutThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -812,8 +690,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.KeySpline")
 interface IKeySpline : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ControlPoint1(Windows.Foundation.Point* return_value);
 	HRESULT set_ControlPoint1(Windows.Foundation.Point value);
@@ -831,8 +707,6 @@ interface IKeyTimeHelper : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.KeyTimeHelper")
 interface IKeyTimeHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromTimeSpan(Windows.Foundation.TimeSpan timeSpan, Windows.UI.Xaml.Media.Animation.KeyTime* return_returnValue);
 }
@@ -859,8 +733,6 @@ interface ILinearPointKeyFrame : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.NavigationThemeTransition")
 interface INavigationThemeTransition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DefaultNavigationTransitionInfo(Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo* return_value);
 	HRESULT set_DefaultNavigationTransitionInfo(Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo value);
@@ -870,8 +742,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.NavigationThemeTransition")
 interface INavigationThemeTransitionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DefaultNavigationTransitionInfoProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -886,8 +756,6 @@ interface INavigationTransitionInfo : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo")
 interface INavigationTransitionInfoFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo* return_instance);
 }
@@ -896,8 +764,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo")
 interface INavigationTransitionInfoOverrides : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetNavigationStateCore(HSTRING* return_returnValue);
 	HRESULT abi_SetNavigationStateCore(HSTRING navigationState);
@@ -907,8 +773,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames")
 interface IObjectAnimationUsingKeyFrames : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeyFrames(Windows.UI.Xaml.Media.Animation.ObjectKeyFrameCollection* return_value);
 	HRESULT get_EnableDependentAnimation(bool* return_value);
@@ -919,8 +783,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames")
 interface IObjectAnimationUsingKeyFramesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EnableDependentAnimationProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -929,8 +791,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ObjectKeyFrame")
 interface IObjectKeyFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Value(IInspectable* return_value);
 	HRESULT set_Value(IInspectable value);
@@ -942,8 +802,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ObjectKeyFrame")
 interface IObjectKeyFrameFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Animation.ObjectKeyFrame* return_instance);
 }
@@ -952,8 +810,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.ObjectKeyFrame")
 interface IObjectKeyFrameStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ValueProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_KeyTimeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -963,8 +819,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PaneThemeTransition")
 interface IPaneThemeTransition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Edge(Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation* return_value);
 	HRESULT set_Edge(Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation value);
@@ -974,8 +828,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PaneThemeTransition")
 interface IPaneThemeTransitionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EdgeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -984,8 +836,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PointAnimation")
 interface IPointAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_From(Windows.Foundation.IReference!(Windows.Foundation.Point)* return_value);
 	HRESULT set_From(Windows.Foundation.IReference!(Windows.Foundation.Point) value);
@@ -1003,8 +853,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PointAnimation")
 interface IPointAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FromProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ToProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1017,8 +865,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PointAnimationUsingKeyFrames")
 interface IPointAnimationUsingKeyFrames : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeyFrames(Windows.UI.Xaml.Media.Animation.PointKeyFrameCollection* return_value);
 	HRESULT get_EnableDependentAnimation(bool* return_value);
@@ -1029,8 +875,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PointAnimationUsingKeyFrames")
 interface IPointAnimationUsingKeyFramesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EnableDependentAnimationProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -1039,8 +883,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PointKeyFrame")
 interface IPointKeyFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Value(Windows.Foundation.Point* return_value);
 	HRESULT set_Value(Windows.Foundation.Point value);
@@ -1052,8 +894,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PointKeyFrame")
 interface IPointKeyFrameFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Animation.PointKeyFrame* return_instance);
 }
@@ -1062,8 +902,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PointKeyFrame")
 interface IPointKeyFrameStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ValueProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_KeyTimeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1073,8 +911,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation")
 interface IPointerDownThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetName(HSTRING* return_value);
 	HRESULT set_TargetName(HSTRING value);
@@ -1084,8 +920,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation")
 interface IPointerDownThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -1094,8 +928,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation")
 interface IPointerUpThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetName(HSTRING* return_value);
 	HRESULT set_TargetName(HSTRING value);
@@ -1105,8 +937,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation")
 interface IPointerUpThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -1115,8 +945,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PopInThemeAnimation")
 interface IPopInThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetName(HSTRING* return_value);
 	HRESULT set_TargetName(HSTRING value);
@@ -1130,8 +958,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PopInThemeAnimation")
 interface IPopInThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FromHorizontalOffsetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1142,8 +968,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation")
 interface IPopOutThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetName(HSTRING* return_value);
 	HRESULT set_TargetName(HSTRING value);
@@ -1153,8 +977,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation")
 interface IPopOutThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -1163,8 +985,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PopupThemeTransition")
 interface IPopupThemeTransition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FromHorizontalOffset(double* return_value);
 	HRESULT set_FromHorizontalOffset(double value);
@@ -1176,8 +996,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PopupThemeTransition")
 interface IPopupThemeTransitionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FromHorizontalOffsetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FromVerticalOffsetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1187,8 +1005,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PowerEase")
 interface IPowerEase : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Power(double* return_value);
 	HRESULT set_Power(double value);
@@ -1198,8 +1014,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.PowerEase")
 interface IPowerEaseStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PowerProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -1238,8 +1052,6 @@ interface IRepeatBehaviorHelper : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.RepeatBehaviorHelper")
 interface IRepeatBehaviorHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Forever(Windows.UI.Xaml.Media.Animation.RepeatBehavior* return_value);
 	HRESULT abi_FromCount(double count, Windows.UI.Xaml.Media.Animation.RepeatBehavior* return_returnValue);
@@ -1253,8 +1065,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation")
 interface IRepositionThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetName(HSTRING* return_value);
 	HRESULT set_TargetName(HSTRING value);
@@ -1268,8 +1078,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation")
 interface IRepositionThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FromHorizontalOffsetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1286,8 +1094,6 @@ interface IRepositionThemeTransition : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.RepositionThemeTransition")
 interface IRepositionThemeTransition2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsStaggeringEnabled(bool* return_value);
 	HRESULT set_IsStaggeringEnabled(bool value);
@@ -1297,8 +1103,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.RepositionThemeTransition")
 interface IRepositionThemeTransitionStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsStaggeringEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -1319,8 +1123,6 @@ interface ISlideNavigationTransitionInfo : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SplineColorKeyFrame")
 interface ISplineColorKeyFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeySpline(Windows.UI.Xaml.Media.Animation.KeySpline* return_value);
 	HRESULT set_KeySpline(Windows.UI.Xaml.Media.Animation.KeySpline value);
@@ -1330,8 +1132,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SplineColorKeyFrame")
 interface ISplineColorKeyFrameStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeySplineProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -1340,8 +1140,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SplineDoubleKeyFrame")
 interface ISplineDoubleKeyFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeySpline(Windows.UI.Xaml.Media.Animation.KeySpline* return_value);
 	HRESULT set_KeySpline(Windows.UI.Xaml.Media.Animation.KeySpline value);
@@ -1351,8 +1149,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SplineDoubleKeyFrame")
 interface ISplineDoubleKeyFrameStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeySplineProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -1361,8 +1157,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SplinePointKeyFrame")
 interface ISplinePointKeyFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeySpline(Windows.UI.Xaml.Media.Animation.KeySpline* return_value);
 	HRESULT set_KeySpline(Windows.UI.Xaml.Media.Animation.KeySpline value);
@@ -1372,8 +1166,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SplinePointKeyFrame")
 interface ISplinePointKeyFrameStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_KeySplineProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -1382,8 +1174,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SplitCloseThemeAnimation")
 interface ISplitCloseThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OpenedTargetName(HSTRING* return_value);
 	HRESULT set_OpenedTargetName(HSTRING value);
@@ -1413,8 +1203,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SplitCloseThemeAnimation")
 interface ISplitCloseThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OpenedTargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_OpenedTargetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1433,8 +1221,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SplitOpenThemeAnimation")
 interface ISplitOpenThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OpenedTargetName(HSTRING* return_value);
 	HRESULT set_OpenedTargetName(HSTRING value);
@@ -1464,8 +1250,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SplitOpenThemeAnimation")
 interface ISplitOpenThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OpenedTargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_OpenedTargetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1484,8 +1268,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.Storyboard")
 interface IStoryboard : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Children(Windows.UI.Xaml.Media.Animation.TimelineCollection* return_value);
 	HRESULT abi_Seek(Windows.Foundation.TimeSpan offset);
@@ -1503,8 +1285,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.Storyboard")
 interface IStoryboardStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetPropertyProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetTargetProperty(Windows.UI.Xaml.Media.Animation.Timeline element, HSTRING* return_path);
@@ -1525,8 +1305,6 @@ interface ISuppressNavigationTransitionInfo : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SwipeBackThemeAnimation")
 interface ISwipeBackThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetName(HSTRING* return_value);
 	HRESULT set_TargetName(HSTRING value);
@@ -1540,8 +1318,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SwipeBackThemeAnimation")
 interface ISwipeBackThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FromHorizontalOffsetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1552,8 +1328,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SwipeHintThemeAnimation")
 interface ISwipeHintThemeAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetName(HSTRING* return_value);
 	HRESULT set_TargetName(HSTRING value);
@@ -1567,8 +1341,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SwipeHintThemeAnimation")
 interface ISwipeHintThemeAnimationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetNameProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ToHorizontalOffsetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -1579,8 +1351,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.Timeline")
 interface ITimeline : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AutoReverse(bool* return_value);
 	HRESULT set_AutoReverse(bool value);
@@ -1602,8 +1372,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.Timeline")
 interface ITimelineFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Animation.Timeline* return_instance);
 }
@@ -1612,8 +1380,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.Timeline")
 interface ITimelineStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllowDependentAnimations(bool* return_value);
 	HRESULT set_AllowDependentAnimations(bool value);

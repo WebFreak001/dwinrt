@@ -19,8 +19,6 @@ struct GipFirmwareUpdateProgress
 @uuid("69a0ae5e-758e-4cbe-ace6-62155fe9126f")
 interface ICustomGameControllerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateGameController(Windows.Gaming.Input.Custom.IGameControllerProvider provider, IInspectable* return_value);
 	HRESULT abi_OnGameControllerAdded(Windows.Gaming.Input.IGameController value);
@@ -31,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.Custom.GameControllerFactoryManager")
 interface IGameControllerFactoryManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RegisterCustomFactoryForGipInterface(Windows.Gaming.Input.Custom.ICustomGameControllerFactory factory, GUID interfaceId);
 	HRESULT abi_RegisterCustomFactoryForHardwareId(Windows.Gaming.Input.Custom.ICustomGameControllerFactory factory, UINT16 hardwareVendorId, UINT16 hardwareProductId);
@@ -43,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.Custom.GameControllerFactoryManager")
 interface IGameControllerFactoryManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryGetFactoryControllerFromGameController(Windows.Gaming.Input.Custom.ICustomGameControllerFactory factory, Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.IGameController* return_factoryController);
 }
@@ -52,8 +46,6 @@ extern(Windows):
 @uuid("1ff6f922-c640-4c78-a820-9a715c558bcb")
 interface IGameControllerInputSink : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnInputResumed(UINT64 timestamp);
 	HRESULT abi_OnInputSuspended(UINT64 timestamp);
@@ -62,8 +54,6 @@ extern(Windows):
 @uuid("e6d73982-2996-4559-b16c-3e57d46e58d6")
 interface IGameControllerProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FirmwareVersionInfo(Windows.Gaming.Input.Custom.GameControllerVersionInfo* return_value);
 	HRESULT get_HardwareProductId(UINT16* return_value);
@@ -76,8 +66,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.Custom.GipFirmwareUpdateResult")
 interface IGipFirmwareUpdateResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExtendedErrorCode(UINT32* return_value);
 	HRESULT get_FinalComponentId(UINT32* return_value);
@@ -87,8 +75,6 @@ extern(Windows):
 @uuid("a2108abf-09f1-43bc-a140-80f899ec36fb")
 interface IGipGameControllerInputSink : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnKeyReceived(UINT64 timestamp, BYTE keyCode, bool isPressed);
 	HRESULT abi_OnMessageReceived(UINT64 timestamp, Windows.Gaming.Input.Custom.GipMessageClass messageClass, BYTE messageId, BYTE sequenceId, UINT32 __messageBufferSize, BYTE* messageBuffer);
@@ -98,8 +84,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.Custom.GipGameControllerProvider")
 interface IGipGameControllerProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SendMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, BYTE messageId, UINT32 __messageBufferSize, BYTE* messageBuffer);
 	HRESULT abi_SendReceiveMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, BYTE messageId, UINT32 __requestMessageBufferSize, BYTE* requestMessageBuffer, UINT32 __responseMessageBufferSize, BYTE* out_responseMessageBuffer);
@@ -109,8 +93,6 @@ extern(Windows):
 @uuid("f754c322-182d-40e4-a126-fcee4ffa1e31")
 interface IHidGameControllerInputSink : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnInputReportReceived(UINT64 timestamp, BYTE reportId, UINT32 __reportBufferSize, BYTE* reportBuffer);
 }
@@ -119,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.Custom.HidGameControllerProvider")
 interface IHidGameControllerProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UsageId(UINT16* return_value);
 	HRESULT get_UsagePage(UINT16* return_value);
@@ -132,8 +112,6 @@ extern(Windows):
 @uuid("b2ac1d95-6ecb-42b3-8aab-025401ca4712")
 interface IXusbGameControllerInputSink : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OnInputReceived(UINT64 timestamp, BYTE reportId, UINT32 __inputBufferSize, BYTE* inputBuffer);
 }
@@ -142,8 +120,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.Input.Custom.XusbGameControllerProvider")
 interface IXusbGameControllerProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetVibration(double lowFrequencyMotorSpeed, double highFrequencyMotorSpeed);
 }

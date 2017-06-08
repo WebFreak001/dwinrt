@@ -12,8 +12,6 @@ struct MediaTimeRange
 @WinrtFactory("Windows.Media.AudioBuffer")
 interface IAudioBuffer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Capacity(UINT32* return_value);
 	HRESULT get_Length(UINT32* return_value);
@@ -24,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.AudioFrame")
 interface IAudioFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LockBuffer(Windows.Media.AudioBufferAccessMode mode, Windows.Media.AudioBuffer* return_value);
 }
@@ -34,8 +30,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.AudioFrame")
 interface IAudioFrameFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(UINT32 capacity, Windows.Media.AudioFrame* return_value);
 }
@@ -44,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.AutoRepeatModeChangeRequestedEventArgs")
 interface IAutoRepeatModeChangeRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestedAutoRepeatMode(Windows.Media.MediaPlaybackAutoRepeatMode* return_value);
 }
@@ -54,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.ImageDisplayProperties")
 interface IImageDisplayProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT set_Title(HSTRING value);
@@ -67,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaControl")
 interface IMediaControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
 	HRESULT add_SoundLevelChanged(Windows.Foundation.EventHandler!(IInspectable) handler, EventRegistrationToken* return_cookie);
@@ -141,8 +129,6 @@ extern(Windows):
 @uuid("07915118-45df-442b-8a3f-f7826a6370ab")
 interface IMediaExtension : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetProperties(Windows.Foundation.Collections.IPropertySet configuration);
 }
@@ -151,8 +137,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaExtensionManager")
 interface IMediaExtensionManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RegisterSchemeHandler(HSTRING activatableClassId, HSTRING scheme);
 	HRESULT abi_RegisterSchemeHandlerWithSettings(HSTRING activatableClassId, HSTRING scheme, Windows.Foundation.Collections.IPropertySet configuration);
@@ -172,8 +156,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaExtensionManager")
 interface IMediaExtensionManager2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RegisterMediaExtensionForAppService(Windows.Media.IMediaExtension extension, Windows.ApplicationModel.AppService.AppServiceConnection connection);
 }
@@ -181,8 +163,6 @@ extern(Windows):
 @uuid("bfb52f8c-5943-47d8-8e10-05308aa5fbd0")
 interface IMediaFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(HSTRING* return_value);
 	HRESULT get_IsReadOnly(bool* return_value);
@@ -200,8 +180,6 @@ extern(Windows):
 @uuid("1803def8-dca5-4b6f-9c20-e3d3c0643625")
 interface IMediaMarker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Time(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_MediaMarkerType(HSTRING* return_value);
@@ -212,8 +190,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaMarkerTypes")
 interface IMediaMarkerTypesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Bookmark(HSTRING* return_value);
 }
@@ -221,8 +197,6 @@ extern(Windows):
 @uuid("afeab189-f8dd-466e-aa10-920b52353fdf")
 interface IMediaMarkers : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Markers(Windows.Foundation.Collections.IVectorView!(Windows.Media.IMediaMarker)* return_value);
 }
@@ -231,8 +205,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProcessingTriggerDetails")
 interface IMediaProcessingTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Arguments(Windows.Foundation.Collections.ValueSet* return_value);
 }
@@ -241,8 +213,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaTimelineController")
 interface IMediaTimelineController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Start();
 	HRESULT abi_Resume();
@@ -262,8 +232,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaTimelineController")
 interface IMediaTimelineController2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Duration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
 	HRESULT set_Duration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value);
@@ -279,8 +247,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaTimelineControllerFailedEventArgs")
 interface IMediaTimelineControllerFailedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExtendedError(HRESULT* return_value);
 }
@@ -289,8 +255,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MusicDisplayProperties")
 interface IMusicDisplayProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT set_Title(HSTRING value);
@@ -304,8 +268,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MusicDisplayProperties")
 interface IMusicDisplayProperties2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlbumTitle(HSTRING* return_value);
 	HRESULT set_AlbumTitle(HSTRING value);
@@ -318,8 +280,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MusicDisplayProperties")
 interface IMusicDisplayProperties3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlbumTrackCount(UINT32* return_value);
 	HRESULT set_AlbumTrackCount(UINT32 value);
@@ -329,8 +289,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlaybackPositionChangeRequestedEventArgs")
 interface IPlaybackPositionChangeRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestedPlaybackPosition(Windows.Foundation.TimeSpan* return_value);
 }
@@ -339,8 +297,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlaybackRateChangeRequestedEventArgs")
 interface IPlaybackRateChangeRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestedPlaybackRate(double* return_value);
 }
@@ -349,8 +305,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.ShuffleEnabledChangeRequestedEventArgs")
 interface IShuffleEnabledChangeRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestedShuffleEnabled(bool* return_value);
 }
@@ -359,8 +313,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SystemMediaTransportControls")
 interface ISystemMediaTransportControls : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PlaybackStatus(Windows.Media.MediaPlaybackStatus* return_value);
 	HRESULT set_PlaybackStatus(Windows.Media.MediaPlaybackStatus value);
@@ -398,8 +350,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SystemMediaTransportControls")
 interface ISystemMediaTransportControls2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AutoRepeatMode(Windows.Media.MediaPlaybackAutoRepeatMode* return_value);
 	HRESULT set_AutoRepeatMode(Windows.Media.MediaPlaybackAutoRepeatMode value);
@@ -422,8 +372,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SystemMediaTransportControlsButtonPressedEventArgs")
 interface ISystemMediaTransportControlsButtonPressedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Button(Windows.Media.SystemMediaTransportControlsButton* return_value);
 }
@@ -432,8 +380,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SystemMediaTransportControlsDisplayUpdater")
 interface ISystemMediaTransportControlsDisplayUpdater : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.Media.MediaPlaybackType* return_value);
 	HRESULT set_Type(Windows.Media.MediaPlaybackType value);
@@ -453,8 +399,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SystemMediaTransportControlsPropertyChangedEventArgs")
 interface ISystemMediaTransportControlsPropertyChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Property(Windows.Media.SystemMediaTransportControlsProperty* return_value);
 }
@@ -463,8 +407,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SystemMediaTransportControls")
 interface ISystemMediaTransportControlsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.Media.SystemMediaTransportControls* return_mediaControl);
 }
@@ -473,8 +415,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.SystemMediaTransportControlsTimelineProperties")
 interface ISystemMediaTransportControlsTimelineProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StartTime(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_StartTime(Windows.Foundation.TimeSpan value);
@@ -492,8 +432,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.VideoDisplayProperties")
 interface IVideoDisplayProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT set_Title(HSTRING value);
@@ -505,8 +443,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.VideoDisplayProperties")
 interface IVideoDisplayProperties2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Genres(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 }
@@ -515,8 +451,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.VideoEffects")
 interface IVideoEffectsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VideoStabilization(HSTRING* return_value);
 }
@@ -525,8 +459,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.VideoFrame")
 interface IVideoFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap* return_value);
 	HRESULT abi_CopyToAsync(Windows.Media.VideoFrame frame, Windows.Foundation.IAsyncAction* return_value);
@@ -537,8 +469,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.VideoFrame")
 interface IVideoFrameFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Graphics.Imaging.BitmapPixelFormat format, INT32 width, INT32 height, Windows.Media.VideoFrame* return_value);
 	HRESULT abi_CreateWithAlpha(Windows.Graphics.Imaging.BitmapPixelFormat format, INT32 width, INT32 height, Windows.Graphics.Imaging.BitmapAlphaMode alpha, Windows.Media.VideoFrame* return_value);

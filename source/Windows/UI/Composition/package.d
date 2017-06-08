@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.Composition.AmbientLight")
 interface IAmbientLight : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Color(Windows.UI.Color* return_value);
 	HRESULT set_Color(Windows.UI.Color value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.ColorKeyFrameAnimation")
 interface IColorKeyFrameAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InterpolationColorSpace(Windows.UI.Composition.CompositionColorSpace* return_value);
 	HRESULT set_InterpolationColorSpace(Windows.UI.Composition.CompositionColorSpace value);
@@ -30,8 +26,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionAnimation")
 interface ICompositionAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ClearAllParameters();
 	HRESULT abi_ClearParameter(HSTRING key);
@@ -50,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionAnimation")
 interface ICompositionAnimation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetBooleanParameter(HSTRING key, bool value);
 	HRESULT get_Target(HSTRING* return_value);
@@ -73,8 +65,6 @@ interface ICompositionAnimationFactory : IInspectable
 @WinrtFactory("Windows.UI.Composition.CompositionAnimationGroup")
 interface ICompositionAnimationGroup : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Count(INT32* return_value);
 	HRESULT abi_Add(Windows.UI.Composition.CompositionAnimation value);
@@ -110,8 +100,6 @@ interface ICompositionBrushFactory : IInspectable
 @WinrtFactory("Windows.UI.Composition.CompositionCapabilities")
 interface ICompositionCapabilities : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AreEffectsSupported(bool* return_value);
 	HRESULT abi_AreEffectsFast(bool* return_value);
@@ -123,8 +111,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionCapabilities")
 interface ICompositionCapabilitiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.Composition.CompositionCapabilities* return_current);
 }
@@ -139,8 +125,6 @@ interface ICompositionClip : IInspectable
 @WinrtFactory("Windows.UI.Composition.CompositionClip")
 interface ICompositionClip2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AnchorPoint(Windows.Foundation.Numerics.Vector2* return_value);
 	HRESULT set_AnchorPoint(Windows.Foundation.Numerics.Vector2 value);
@@ -168,8 +152,6 @@ interface ICompositionClipFactory : IInspectable
 @WinrtFactory("Windows.UI.Composition.CompositionColorBrush")
 interface ICompositionColorBrush : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Color(Windows.UI.Color* return_value);
 	HRESULT set_Color(Windows.UI.Color value);
@@ -179,8 +161,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionCommitBatch")
 interface ICompositionCommitBatch : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsActive(bool* return_value);
 	HRESULT get_IsEnded(bool* return_value);
@@ -192,8 +172,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionDrawingSurface")
 interface ICompositionDrawingSurface : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlphaMode(Windows.Graphics.DirectX.DirectXAlphaMode* return_value);
 	HRESULT get_PixelFormat(Windows.Graphics.DirectX.DirectXPixelFormat* return_value);
@@ -204,8 +182,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionDrawingSurface")
 interface ICompositionDrawingSurface2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SizeInt32(Windows.Graphics.SizeInt32* return_value);
 	HRESULT abi_Resize(Windows.Graphics.SizeInt32 sizePixels);
@@ -237,8 +213,6 @@ interface ICompositionEasingFunctionFactory : IInspectable
 @WinrtFactory("Windows.UI.Composition.CompositionEffectBrush")
 interface ICompositionEffectBrush : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetSourceParameter(HSTRING name, Windows.UI.Composition.CompositionBrush* return_result);
 	HRESULT abi_SetSourceParameter(HSTRING name, Windows.UI.Composition.CompositionBrush source);
@@ -248,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionEffectFactory")
 interface ICompositionEffectFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateBrush(Windows.UI.Composition.CompositionEffectBrush* return_result);
 	HRESULT get_ExtendedError(HRESULT* return_value);
@@ -260,8 +232,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionEffectSourceParameter")
 interface ICompositionEffectSourceParameter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 }
@@ -270,8 +240,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionEffectSourceParameter")
 interface ICompositionEffectSourceParameterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING name, Windows.UI.Composition.CompositionEffectSourceParameter* return_instance);
 }
@@ -280,8 +248,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionGraphicsDevice")
 interface ICompositionGraphicsDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateDrawingSurface(Windows.Foundation.Size sizePixels, Windows.Graphics.DirectX.DirectXPixelFormat pixelFormat, Windows.Graphics.DirectX.DirectXAlphaMode alphaMode, Windows.UI.Composition.CompositionDrawingSurface* return_result);
 	HRESULT add_RenderingDeviceReplaced(Windows.Foundation.TypedEventHandler!(Windows.UI.Composition.CompositionGraphicsDevice, Windows.UI.Composition.RenderingDeviceReplacedEventArgs) handler, EventRegistrationToken* return_token);
@@ -292,8 +258,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionGraphicsDevice")
 interface ICompositionGraphicsDevice2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateDrawingSurface2(Windows.Graphics.SizeInt32 sizePixels, Windows.Graphics.DirectX.DirectXPixelFormat pixelFormat, Windows.Graphics.DirectX.DirectXAlphaMode alphaMode, Windows.UI.Composition.CompositionDrawingSurface* return_result);
 	HRESULT abi_CreateVirtualDrawingSurface(Windows.Graphics.SizeInt32 sizePixels, Windows.Graphics.DirectX.DirectXPixelFormat pixelFormat, Windows.Graphics.DirectX.DirectXAlphaMode alphaMode, Windows.UI.Composition.CompositionVirtualDrawingSurface* return_result);
@@ -303,8 +267,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionLight")
 interface ICompositionLight : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Targets(Windows.UI.Composition.VisualUnorderedCollection* return_value);
 }
@@ -319,8 +281,6 @@ interface ICompositionLightFactory : IInspectable
 @WinrtFactory("Windows.UI.Composition.CompositionMaskBrush")
 interface ICompositionMaskBrush : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Mask(Windows.UI.Composition.CompositionBrush* return_value);
 	HRESULT set_Mask(Windows.UI.Composition.CompositionBrush value);
@@ -332,8 +292,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionNineGridBrush")
 interface ICompositionNineGridBrush : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BottomInset(FLOAT* return_value);
 	HRESULT set_BottomInset(FLOAT value);
@@ -365,8 +323,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionObject")
 interface ICompositionObject : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value);
 	HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value);
@@ -379,8 +335,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionObject")
 interface ICompositionObject2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Comment(HSTRING* return_value);
 	HRESULT set_Comment(HSTRING value);
@@ -400,8 +354,6 @@ interface ICompositionObjectFactory : IInspectable
 @WinrtFactory("Windows.UI.Composition.CompositionPropertySet")
 interface ICompositionPropertySet : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_InsertColor(HSTRING propertyName, Windows.UI.Color value);
 	HRESULT abi_InsertMatrix3x2(HSTRING propertyName, Windows.Foundation.Numerics.Matrix3x2 value);
@@ -425,8 +377,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionPropertySet")
 interface ICompositionPropertySet2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_InsertBoolean(HSTRING propertyName, bool value);
 	HRESULT abi_TryGetBoolean(HSTRING propertyName, bool* out_value, Windows.UI.Composition.CompositionGetValueStatus* return_result);
@@ -436,8 +386,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionScopedBatch")
 interface ICompositionScopedBatch : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsActive(bool* return_value);
 	HRESULT get_IsEnded(bool* return_value);
@@ -469,8 +417,6 @@ interface ICompositionSurface : IInspectable
 @WinrtFactory("Windows.UI.Composition.CompositionSurfaceBrush")
 interface ICompositionSurfaceBrush : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BitmapInterpolationMode(Windows.UI.Composition.CompositionBitmapInterpolationMode* return_value);
 	HRESULT set_BitmapInterpolationMode(Windows.UI.Composition.CompositionBitmapInterpolationMode value);
@@ -488,8 +434,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionSurfaceBrush")
 interface ICompositionSurfaceBrush2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AnchorPoint(Windows.Foundation.Numerics.Vector2* return_value);
 	HRESULT set_AnchorPoint(Windows.Foundation.Numerics.Vector2 value);
@@ -511,8 +455,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionTarget")
 interface ICompositionTarget : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Root(Windows.UI.Composition.Visual* return_value);
 	HRESULT set_Root(Windows.UI.Composition.Visual value);
@@ -522,8 +464,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.CompositionVirtualDrawingSurface")
 interface ICompositionVirtualDrawingSurface : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Trim(UINT32 __rectsSize, Windows.Graphics.RectInt32* rects);
 }
@@ -538,8 +478,6 @@ interface ICompositionVirtualDrawingSurfaceFactory : IInspectable
 @WinrtFactory("Windows.UI.Composition.Compositor")
 interface ICompositor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateColorKeyFrameAnimation(Windows.UI.Composition.ColorKeyFrameAnimation* return_result);
 	HRESULT abi_CreateColorBrush(Windows.UI.Composition.CompositionColorBrush* return_result);
@@ -571,8 +509,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Compositor")
 interface ICompositor2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAmbientLight(Windows.UI.Composition.AmbientLight* return_result);
 	HRESULT abi_CreateAnimationGroup(Windows.UI.Composition.CompositionAnimationGroup* return_result);
@@ -593,8 +529,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Compositor")
 interface ICompositor3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateHostBackdropBrush(Windows.UI.Composition.CompositionBackdropBrush* return_result);
 }
@@ -603,8 +537,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.ContainerVisual")
 interface IContainerVisual : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Children(Windows.UI.Composition.VisualCollection* return_value);
 }
@@ -619,8 +551,6 @@ interface IContainerVisualFactory : IInspectable
 @WinrtFactory("Windows.UI.Composition.CubicBezierEasingFunction")
 interface ICubicBezierEasingFunction : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ControlPoint1(Windows.Foundation.Numerics.Vector2* return_value);
 	HRESULT get_ControlPoint2(Windows.Foundation.Numerics.Vector2* return_value);
@@ -630,8 +560,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.DistantLight")
 interface IDistantLight : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Color(Windows.UI.Color* return_value);
 	HRESULT set_Color(Windows.UI.Color value);
@@ -645,8 +573,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.DropShadow")
 interface IDropShadow : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BlurRadius(FLOAT* return_value);
 	HRESULT set_BlurRadius(FLOAT value);
@@ -664,8 +590,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.ExpressionAnimation")
 interface IExpressionAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Expression(HSTRING* return_value);
 	HRESULT set_Expression(HSTRING value);
@@ -681,8 +605,6 @@ interface IImplicitAnimationCollection : IInspectable
 @WinrtFactory("Windows.UI.Composition.InsetClip")
 interface IInsetClip : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BottomInset(FLOAT* return_value);
 	HRESULT set_BottomInset(FLOAT value);
@@ -698,8 +620,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.KeyFrameAnimation")
 interface IKeyFrameAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DelayTime(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_DelayTime(Windows.Foundation.TimeSpan value);
@@ -720,8 +640,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.KeyFrameAnimation")
 interface IKeyFrameAnimation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Direction(Windows.UI.Composition.AnimationDirection* return_value);
 	HRESULT set_Direction(Windows.UI.Composition.AnimationDirection value);
@@ -731,8 +649,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.KeyFrameAnimation")
 interface IKeyFrameAnimation3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DelayBehavior(Windows.UI.Composition.AnimationDelayBehavior* return_value);
 	HRESULT set_DelayBehavior(Windows.UI.Composition.AnimationDelayBehavior value);
@@ -748,8 +664,6 @@ interface IKeyFrameAnimationFactory : IInspectable
 @WinrtFactory("Windows.UI.Composition.LayerVisual")
 interface ILayerVisual : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Effect(Windows.UI.Composition.CompositionEffectBrush* return_value);
 	HRESULT set_Effect(Windows.UI.Composition.CompositionEffectBrush value);
@@ -765,8 +679,6 @@ interface ILinearEasingFunction : IInspectable
 @WinrtFactory("Windows.UI.Composition.PointLight")
 interface IPointLight : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Color(Windows.UI.Color* return_value);
 	HRESULT set_Color(Windows.UI.Color value);
@@ -786,8 +698,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.QuaternionKeyFrameAnimation")
 interface IQuaternionKeyFrameAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_InsertKeyFrame(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Quaternion value);
 	HRESULT abi_InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Quaternion value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
@@ -797,8 +707,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.RenderingDeviceReplacedEventArgs")
 interface IRenderingDeviceReplacedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_GraphicsDevice(Windows.UI.Composition.CompositionGraphicsDevice* return_value);
 }
@@ -807,8 +715,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.ScalarKeyFrameAnimation")
 interface IScalarKeyFrameAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_InsertKeyFrame(FLOAT normalizedProgressKey, FLOAT value);
 	HRESULT abi_InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, FLOAT value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
@@ -818,8 +724,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.SpotLight")
 interface ISpotLight : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ConstantAttenuation(FLOAT* return_value);
 	HRESULT set_ConstantAttenuation(FLOAT value);
@@ -851,8 +755,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.SpriteVisual")
 interface ISpriteVisual : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Brush(Windows.UI.Composition.CompositionBrush* return_value);
 	HRESULT set_Brush(Windows.UI.Composition.CompositionBrush value);
@@ -862,8 +764,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.SpriteVisual")
 interface ISpriteVisual2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Shadow(Windows.UI.Composition.CompositionShadow* return_value);
 	HRESULT set_Shadow(Windows.UI.Composition.CompositionShadow value);
@@ -873,8 +773,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.StepEasingFunction")
 interface IStepEasingFunction : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FinalStep(INT32* return_value);
 	HRESULT set_FinalStep(INT32 value);
@@ -892,8 +790,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Vector2KeyFrameAnimation")
 interface IVector2KeyFrameAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_InsertKeyFrame(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector2 value);
 	HRESULT abi_InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector2 value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
@@ -903,8 +799,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Vector3KeyFrameAnimation")
 interface IVector3KeyFrameAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_InsertKeyFrame(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector3 value);
 	HRESULT abi_InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector3 value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
@@ -914,8 +808,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Vector4KeyFrameAnimation")
 interface IVector4KeyFrameAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_InsertKeyFrame(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector4 value);
 	HRESULT abi_InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector4 value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
@@ -925,8 +817,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Visual")
 interface IVisual : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AnchorPoint(Windows.Foundation.Numerics.Vector2* return_value);
 	HRESULT set_AnchorPoint(Windows.Foundation.Numerics.Vector2 value);
@@ -967,8 +857,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Visual")
 interface IVisual2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ParentForTransform(Windows.UI.Composition.Visual* return_value);
 	HRESULT set_ParentForTransform(Windows.UI.Composition.Visual value);
@@ -982,8 +870,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.VisualCollection")
 interface IVisualCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Count(INT32* return_value);
 	HRESULT abi_InsertAbove(Windows.UI.Composition.Visual newChild, Windows.UI.Composition.Visual sibling);
@@ -1004,8 +890,6 @@ interface IVisualFactory : IInspectable
 @WinrtFactory("Windows.UI.Composition.VisualUnorderedCollection")
 interface IVisualUnorderedCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Count(INT32* return_value);
 	HRESULT abi_Add(Windows.UI.Composition.Visual newVisual);

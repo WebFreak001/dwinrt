@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.System.Display.DisplayRequest")
 interface IDisplayRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestActive();
 	HRESULT abi_RequestRelease();

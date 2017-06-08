@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Audio.AudioDeviceInputNode")
 interface IAudioDeviceInputNode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Device(Windows.Devices.Enumeration.DeviceInformation* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioDeviceOutputNode")
 interface IAudioDeviceOutputNode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Device(Windows.Devices.Enumeration.DeviceInformation* return_value);
 }
@@ -26,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioFileInputNode")
 interface IAudioFileInputNode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_PlaybackSpeedFactor(double value);
 	HRESULT get_PlaybackSpeedFactor(double* return_value);
@@ -49,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioFileOutputNode")
 interface IAudioFileOutputNode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_File(Windows.Storage.IStorageFile* return_value);
 	HRESULT get_FileEncodingProfile(Windows.Media.MediaProperties.MediaEncodingProfile* return_value);
@@ -61,8 +53,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioFrameCompletedEventArgs")
 interface IAudioFrameCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Frame(Windows.Media.AudioFrame* return_value);
 }
@@ -71,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioFrameInputNode")
 interface IAudioFrameInputNode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_PlaybackSpeedFactor(double value);
 	HRESULT get_PlaybackSpeedFactor(double* return_value);
@@ -89,8 +77,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioFrameOutputNode")
 interface IAudioFrameOutputNode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetFrame(Windows.Media.AudioFrame* return_audioFrame);
 }
@@ -99,8 +85,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioGraph")
 interface IAudioGraph : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFrameInputNode(Windows.Media.Audio.AudioFrameInputNode* return_frameInputNode);
 	HRESULT abi_CreateFrameInputNodeWithFormat(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioFrameInputNode* return_frameInputNode);
@@ -136,8 +120,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioGraph")
 interface IAudioGraph2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFrameInputNodeWithFormatAndEmitter(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter, Windows.Media.Audio.AudioFrameInputNode* return_frameInputNode);
 	HRESULT abi_CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Devices.Enumeration.DeviceInformation device, Windows.Media.Audio.AudioNodeEmitter emitter, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult)* return_result);
@@ -150,8 +132,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioGraphConnection")
 interface IAudioGraphConnection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Destination(Windows.Media.Audio.IAudioNode* return_value);
 	HRESULT set_Gain(double value);
@@ -162,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioGraphSettings")
 interface IAudioGraphSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EncodingProperties(Windows.Media.MediaProperties.AudioEncodingProperties* return_value);
 	HRESULT set_EncodingProperties(Windows.Media.MediaProperties.AudioEncodingProperties value);
@@ -183,8 +161,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioGraphSettings")
 interface IAudioGraphSettingsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Media.Render.AudioRenderCategory audioRenderCategory, Windows.Media.Audio.AudioGraphSettings* return_value);
 }
@@ -193,8 +169,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioGraph")
 interface IAudioGraphStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAsync(Windows.Media.Audio.AudioGraphSettings settings, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioGraphResult)* return_result);
 }
@@ -203,8 +177,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs")
 interface IAudioGraphUnrecoverableErrorOccurredEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Error(Windows.Media.Audio.AudioGraphUnrecoverableError* return_value);
 }
@@ -212,8 +184,6 @@ extern(Windows):
 @uuid("d148005c-8428-4784-b7fd-a99d468c5d20")
 interface IAudioInputNode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OutgoingConnections(Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection)* return_value);
 	HRESULT abi_AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination);
@@ -224,8 +194,6 @@ extern(Windows):
 @uuid("905156b7-ca68-4c6d-a8bc-e3ee17fe3fd2")
 interface IAudioInputNode2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Emitter(Windows.Media.Audio.AudioNodeEmitter* return_value);
 }
@@ -233,8 +201,6 @@ extern(Windows):
 @uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d")
 interface IAudioNode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EffectDefinitions(Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition)* return_value);
 	HRESULT set_OutgoingGain(double value);
@@ -253,8 +219,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioNodeEmitter")
 interface IAudioNodeEmitter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT set_Position(Windows.Foundation.Numerics.Vector3 value);
@@ -277,8 +241,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioNodeEmitter")
 interface IAudioNodeEmitter2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SpatialAudioModel(Windows.Media.Audio.SpatialAudioModel* return_value);
 	HRESULT set_SpatialAudioModel(Windows.Media.Audio.SpatialAudioModel value);
@@ -288,8 +250,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioNodeEmitterConeProperties")
 interface IAudioNodeEmitterConeProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InnerAngle(double* return_value);
 	HRESULT get_OuterAngle(double* return_value);
@@ -300,8 +260,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioNodeEmitterDecayModel")
 interface IAudioNodeEmitterDecayModel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.Media.Audio.AudioNodeEmitterDecayKind* return_value);
 	HRESULT get_MinGain(double* return_value);
@@ -313,8 +271,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioNodeEmitterDecayModel")
 interface IAudioNodeEmitterDecayModelStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateNatural(double minGain, double maxGain, double unityGainDistance, double cutoffDistance, Windows.Media.Audio.AudioNodeEmitterDecayModel* return_decayModel);
 	HRESULT abi_CreateCustom(double minGain, double maxGain, Windows.Media.Audio.AudioNodeEmitterDecayModel* return_decayModel);
@@ -324,8 +280,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioNodeEmitter")
 interface IAudioNodeEmitterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAudioNodeEmitter(Windows.Media.Audio.AudioNodeEmitterShape shape, Windows.Media.Audio.AudioNodeEmitterDecayModel decayModel, Windows.Media.Audio.AudioNodeEmitterSettings settings, Windows.Media.Audio.AudioNodeEmitter* return_emitter);
 }
@@ -334,8 +288,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioNodeEmitterNaturalDecayModelProperties")
 interface IAudioNodeEmitterNaturalDecayModelProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UnityGainDistance(double* return_value);
 	HRESULT get_CutoffDistance(double* return_value);
@@ -345,8 +297,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioNodeEmitterShape")
 interface IAudioNodeEmitterShape : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.Media.Audio.AudioNodeEmitterShapeKind* return_value);
 	HRESULT get_ConeProperties(Windows.Media.Audio.AudioNodeEmitterConeProperties* return_value);
@@ -356,8 +306,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioNodeEmitterShape")
 interface IAudioNodeEmitterShapeStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCone(double innerAngle, double outerAngle, double outerAngleGain, Windows.Media.Audio.AudioNodeEmitterShape* return_shape);
 	HRESULT abi_CreateOmnidirectional(Windows.Media.Audio.AudioNodeEmitterShape* return_shape);
@@ -367,8 +315,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.AudioNodeListener")
 interface IAudioNodeListener : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT set_Position(Windows.Foundation.Numerics.Vector3 value);
@@ -383,8 +329,6 @@ extern(Windows):
 @uuid("0e0f907c-79ff-4544-9eeb-01257b15105a")
 interface IAudioNodeWithListener : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Listener(Windows.Media.Audio.AudioNodeListener value);
 	HRESULT get_Listener(Windows.Media.Audio.AudioNodeListener* return_value);
@@ -394,8 +338,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.CreateAudioDeviceInputNodeResult")
 interface ICreateAudioDeviceInputNodeResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Media.Audio.AudioDeviceNodeCreationStatus* return_value);
 	HRESULT get_DeviceInputNode(Windows.Media.Audio.AudioDeviceInputNode* return_value);
@@ -405,8 +347,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.CreateAudioDeviceOutputNodeResult")
 interface ICreateAudioDeviceOutputNodeResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Media.Audio.AudioDeviceNodeCreationStatus* return_value);
 	HRESULT get_DeviceOutputNode(Windows.Media.Audio.AudioDeviceOutputNode* return_value);
@@ -416,8 +356,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.CreateAudioFileInputNodeResult")
 interface ICreateAudioFileInputNodeResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Media.Audio.AudioFileNodeCreationStatus* return_value);
 	HRESULT get_FileInputNode(Windows.Media.Audio.AudioFileInputNode* return_value);
@@ -427,8 +365,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.CreateAudioFileOutputNodeResult")
 interface ICreateAudioFileOutputNodeResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Media.Audio.AudioFileNodeCreationStatus* return_value);
 	HRESULT get_FileOutputNode(Windows.Media.Audio.AudioFileOutputNode* return_value);
@@ -438,8 +374,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.CreateAudioGraphResult")
 interface ICreateAudioGraphResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Media.Audio.AudioGraphCreationStatus* return_value);
 	HRESULT get_Graph(Windows.Media.Audio.AudioGraph* return_value);
@@ -449,8 +383,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.EchoEffectDefinition")
 interface IEchoEffectDefinition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_WetDryMix(double value);
 	HRESULT get_WetDryMix(double* return_value);
@@ -464,8 +396,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.EchoEffectDefinition")
 interface IEchoEffectDefinitionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Media.Audio.AudioGraph audioGraph, Windows.Media.Audio.EchoEffectDefinition* return_value);
 }
@@ -474,8 +404,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.EqualizerBand")
 interface IEqualizerBand : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Bandwidth(double* return_value);
 	HRESULT set_Bandwidth(double value);
@@ -489,8 +417,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.EqualizerEffectDefinition")
 interface IEqualizerEffectDefinition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Bands(Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.EqualizerBand)* return_value);
 }
@@ -499,8 +425,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.EqualizerEffectDefinition")
 interface IEqualizerEffectDefinitionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Media.Audio.AudioGraph audioGraph, Windows.Media.Audio.EqualizerEffectDefinition* return_value);
 }
@@ -509,8 +433,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs")
 interface IFrameInputNodeQuantumStartedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequiredSamples(INT32* return_value);
 }
@@ -519,8 +441,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.LimiterEffectDefinition")
 interface ILimiterEffectDefinition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Release(UINT32 value);
 	HRESULT get_Release(UINT32* return_value);
@@ -532,8 +452,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.LimiterEffectDefinition")
 interface ILimiterEffectDefinitionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Media.Audio.AudioGraph audioGraph, Windows.Media.Audio.LimiterEffectDefinition* return_value);
 }
@@ -542,8 +460,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.ReverbEffectDefinition")
 interface IReverbEffectDefinition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_WetDryMix(double value);
 	HRESULT get_WetDryMix(double* return_value);
@@ -597,8 +513,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Audio.ReverbEffectDefinition")
 interface IReverbEffectDefinitionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Media.Audio.AudioGraph audioGraph, Windows.Media.Audio.ReverbEffectDefinition* return_value);
 }

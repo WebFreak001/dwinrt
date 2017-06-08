@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.LockScreen.LockApplicationHost")
 interface ILockApplicationHost : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestUnlock();
 	HRESULT add_Unlocking(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockApplicationHost, Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs) handler, EventRegistrationToken* return_token);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.LockScreen.LockApplicationHost")
 interface ILockApplicationHostStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.ApplicationModel.LockScreen.LockApplicationHost* return_result);
 }
@@ -28,8 +24,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.LockScreen.LockScreenBadge")
 interface ILockScreenBadge : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Logo(Windows.Storage.Streams.IRandomAccessStream* return_value);
 	HRESULT get_Glyph(Windows.Storage.Streams.IRandomAccessStream* return_value);
@@ -42,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.LockScreen.LockScreenInfo")
 interface ILockScreenInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_LockScreenImageChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_LockScreenImageChanged(EventRegistrationToken token);
@@ -63,8 +55,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.LockScreen.LockScreenUnlockingDeferral")
 interface ILockScreenUnlockingDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -73,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs")
 interface ILockScreenUnlockingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.ApplicationModel.LockScreen.LockScreenUnlockingDeferral* return_deferral);
 	HRESULT get_Deadline(Windows.Foundation.DateTime* return_value);

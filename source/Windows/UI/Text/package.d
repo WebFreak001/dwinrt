@@ -17,8 +17,6 @@ interface IFontWeights : IInspectable
 @WinrtFactory("Windows.UI.Text.FontWeights")
 interface IFontWeightsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Black(Windows.UI.Text.FontWeight* return_value);
 	HRESULT get_Bold(Windows.UI.Text.FontWeight* return_value);
@@ -36,8 +34,6 @@ extern(Windows):
 @uuid("5adef3db-05fb-442d-8065-642afea02ced")
 interface ITextCharacterFormat : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllCaps(Windows.UI.Text.FormatEffect* return_value);
 	HRESULT set_AllCaps(Windows.UI.Text.FormatEffect value);
@@ -95,8 +91,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.TextConstants")
 interface ITextConstantsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AutoColor(Windows.UI.Color* return_value);
 	HRESULT get_MinUnitCount(INT32* return_value);
@@ -111,8 +105,6 @@ extern(Windows):
 @uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4")
 interface ITextDocument : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CaretType(Windows.UI.Text.CaretType* return_value);
 	HRESULT set_CaretType(Windows.UI.Text.CaretType value);
@@ -147,8 +139,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.RichEditTextDocument")
 interface ITextDocument2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlignmentIncludesTrailingWhitespace(bool* return_value);
 	HRESULT set_AlignmentIncludesTrailingWhitespace(bool value);
@@ -159,8 +149,6 @@ extern(Windows):
 @uuid("2cf8cfa6-4676-498a-93f5-bbdbfc0bd883")
 interface ITextParagraphFormat : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Alignment(Windows.UI.Text.ParagraphAlignment* return_value);
 	HRESULT set_Alignment(Windows.UI.Text.ParagraphAlignment value);
@@ -215,8 +203,6 @@ extern(Windows):
 @uuid("5b9e4e57-c072-42a0-8945-af503ee54768")
 interface ITextRange : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Character(WCHAR* return_value);
 	HRESULT set_Character(WCHAR value);
@@ -275,8 +261,6 @@ extern(Windows):
 @uuid("a6d36724-f28f-430a-b2cf-c343671ec0e9")
 interface ITextSelection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Options(Windows.UI.Text.SelectionOptions* return_value);
 	HRESULT set_Options(Windows.UI.Text.SelectionOptions value);

@@ -29,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsAppMessage")
 interface ISmsAppMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_To(HSTRING* return_value);
@@ -59,8 +57,6 @@ extern(Windows):
 @uuid("5bf4e813-3b53-4c6e-b61a-d86a63755650")
 interface ISmsBinaryMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
 	HRESULT get_Format(Windows.Devices.Sms.SmsDataFormat* return_value);
@@ -76,8 +72,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsBroadcastMessage")
 interface ISmsBroadcastMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_To(HSTRING* return_value);
@@ -94,8 +88,6 @@ extern(Windows):
 @uuid("091791ed-872b-4eec-9c72-ab11627b34ec")
 interface ISmsDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	HRESULT abi_SendMessageAsync(Windows.Devices.Sms.ISmsMessage message, Windows.Devices.Sms.SendSmsMessageOperation* return_asyncInfo);
@@ -123,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsDevice2")
 interface ISmsDevice2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SmscAddress(HSTRING* return_value);
 	HRESULT set_SmscAddress(HSTRING value);
@@ -143,8 +133,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsDevice2")
 interface ISmsDevice2Statics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
 	HRESULT abi_FromId(HSTRING deviceId, Windows.Devices.Sms.SmsDevice2* return_value);
@@ -156,8 +144,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsDeviceMessageStore")
 interface ISmsDeviceMessageStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
 	HRESULT abi_DeleteMessageAsync(UINT32 messageId, Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -175,8 +161,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsDevice")
 interface ISmsDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISmsDeviceStatics may be altered or unavailable for releases after Windows 10.")
 	HRESULT abi_GetDeviceSelector(HSTRING* return_phstrDeviceClassSelector);
@@ -190,8 +174,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsDevice")
 interface ISmsDeviceStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISmsDeviceStatics2 may be altered or unavailable for releases after Windows 10.")
 	HRESULT abi_FromNetworkAccountIdAsync(HSTRING networkAccountId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice)* return_asyncInfo);
@@ -201,8 +183,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsFilterRule")
 interface ISmsFilterRule : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MessageType(Windows.Devices.Sms.SmsMessageType* return_value);
 	HRESULT get_ImsiPrefixes(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
@@ -224,8 +204,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsFilterRule")
 interface ISmsFilterRuleFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFilterRule(Windows.Devices.Sms.SmsMessageType messageType, Windows.Devices.Sms.SmsFilterRule* return_value);
 }
@@ -234,8 +212,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsFilterRules")
 interface ISmsFilterRules : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ActionType(Windows.Devices.Sms.SmsFilterActionType* return_value);
 	HRESULT get_Rules(Windows.Foundation.Collections.IVector!(Windows.Devices.Sms.SmsFilterRule)* return_value);
@@ -245,8 +221,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsFilterRules")
 interface ISmsFilterRulesFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFilterRules(Windows.Devices.Sms.SmsFilterActionType actionType, Windows.Devices.Sms.SmsFilterRules* return_value);
 }
@@ -254,8 +228,6 @@ extern(Windows):
 @uuid("ed3c5e28-6984-4b07-811d-8d5906ed3cea")
 interface ISmsMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(UINT32* return_value);
 	HRESULT get_MessageClass(Windows.Devices.Sms.SmsMessageClass* return_value);
@@ -264,8 +236,6 @@ extern(Windows):
 @uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea")
 interface ISmsMessageBase : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MessageType(Windows.Devices.Sms.SmsMessageType* return_value);
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -278,8 +248,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsMessageReceivedEventArgs")
 interface ISmsMessageReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("SmsMessageReceivedEventArgs may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_TextMessage(Windows.Devices.Sms.SmsTextMessage* return_value);
@@ -291,8 +259,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsMessageReceivedTriggerDetails")
 interface ISmsMessageReceivedTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MessageType(Windows.Devices.Sms.SmsMessageType* return_value);
 	HRESULT get_TextMessage(Windows.Devices.Sms.SmsTextMessage2* return_value);
@@ -309,8 +275,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsMessageRegistration")
 interface ISmsMessageRegistration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT abi_Unregister();
@@ -322,8 +286,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsMessageRegistration")
 interface ISmsMessageRegistrationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllRegistrations(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.SmsMessageRegistration)* return_value);
 	HRESULT abi_Register(HSTRING id, Windows.Devices.Sms.SmsFilterRules filterRules, Windows.Devices.Sms.SmsMessageRegistration* return_value);
@@ -333,8 +295,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsReceivedEventDetails")
 interface ISmsReceivedEventDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -346,8 +306,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsReceivedEventDetails")
 interface ISmsReceivedEventDetails2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")
 	HRESULT get_MessageClass(Windows.Devices.Sms.SmsMessageClass* return_value);
@@ -359,8 +317,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsSendMessageResult")
 interface ISmsSendMessageResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSuccessful(bool* return_value);
 	HRESULT get_MessageReferenceNumbers(Windows.Foundation.Collections.IVectorView!(INT32)* return_value);
@@ -375,8 +331,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsStatusMessage")
 interface ISmsStatusMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_To(HSTRING* return_value);
 	HRESULT get_From(HSTRING* return_value);
@@ -390,8 +344,6 @@ extern(Windows):
 @uuid("d61c904c-a495-487f-9a6f-971548c5bc9f")
 interface ISmsTextMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
@@ -425,8 +377,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsTextMessage2")
 interface ISmsTextMessage2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_To(HSTRING* return_value);
@@ -450,8 +400,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsTextMessage")
 interface ISmsTextMessageStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISmsTextMessageStatics may be altered or unavailable for releases after Windows 10.")
 	HRESULT abi_FromBinaryMessage(Windows.Devices.Sms.SmsBinaryMessage binaryMessage, Windows.Devices.Sms.SmsTextMessage* return_textMessage);
@@ -463,8 +411,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsVoicemailMessage")
 interface ISmsVoicemailMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_To(HSTRING* return_value);
@@ -476,8 +422,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Sms.SmsWapMessage")
 interface ISmsWapMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_To(HSTRING* return_value);

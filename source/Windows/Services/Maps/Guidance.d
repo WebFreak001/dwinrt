@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs")
 interface IGuidanceAudioNotificationRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AudioNotification(Windows.Services.Maps.Guidance.GuidanceAudioNotificationKind* return_value);
 	HRESULT get_AudioFilePaths(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceLaneInfo")
 interface IGuidanceLaneInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LaneMarkers(Windows.Services.Maps.Guidance.GuidanceLaneMarkers* return_value);
 	HRESULT get_IsOnRoute(bool* return_value);
@@ -29,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceManeuver")
 interface IGuidanceManeuver : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StartLocation(Windows.Devices.Geolocation.Geopoint* return_value);
 	HRESULT get_DistanceFromRouteStart(INT32* return_value);
@@ -50,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceMapMatchedCoordinate")
 interface IGuidanceMapMatchedCoordinate : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Location(Windows.Devices.Geolocation.Geopoint* return_value);
 	HRESULT get_CurrentHeading(double* return_value);
@@ -64,8 +56,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceNavigator")
 interface IGuidanceNavigator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_StartNavigating(Windows.Services.Maps.Guidance.GuidanceRoute route);
 	HRESULT abi_StartSimulating(Windows.Services.Maps.Guidance.GuidanceRoute route, INT32 speedInMetersPerSecond);
@@ -101,8 +91,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceNavigator")
 interface IGuidanceNavigator2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_AudioNotificationRequested(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_AudioNotificationRequested(EventRegistrationToken token);
@@ -114,8 +102,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceNavigator")
 interface IGuidanceNavigatorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrent(Windows.Services.Maps.Guidance.GuidanceNavigator* return_result);
 }
@@ -124,8 +110,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceNavigator")
 interface IGuidanceNavigatorStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UseAppProvidedVoice(bool* return_value);
 }
@@ -134,8 +118,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs")
 interface IGuidanceReroutedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Route(Windows.Services.Maps.Guidance.GuidanceRoute* return_result);
 }
@@ -144,8 +126,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceRoadSegment")
 interface IGuidanceRoadSegment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RoadName(HSTRING* return_value);
 	HRESULT get_ShortRoadName(HSTRING* return_value);
@@ -162,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceRoadSignpost")
 interface IGuidanceRoadSignpost : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExitNumber(HSTRING* return_value);
 	HRESULT get_Exit(HSTRING* return_value);
@@ -176,8 +154,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceRoute")
 interface IGuidanceRoute : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Duration(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_Distance(INT32* return_value);
@@ -192,8 +168,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceRoute")
 interface IGuidanceRouteStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CanCreateFromMapRoute(Windows.Services.Maps.MapRoute mapRoute, bool* return_result);
 	HRESULT abi_TryCreateFromMapRoute(Windows.Services.Maps.MapRoute mapRoute, Windows.Services.Maps.Guidance.GuidanceRoute* return_result);
@@ -203,8 +177,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceTelemetryCollector")
 interface IGuidanceTelemetryCollector : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Enabled(bool* return_value);
 	HRESULT set_Enabled(bool value);
@@ -219,8 +191,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceTelemetryCollector")
 interface IGuidanceTelemetryCollectorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCurrent(Windows.Services.Maps.Guidance.GuidanceTelemetryCollector* return_result);
 }
@@ -229,8 +199,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs")
 interface IGuidanceUpdatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Mode(Windows.Services.Maps.Guidance.GuidanceMode* return_value);
 	HRESULT get_NextManeuver(Windows.Services.Maps.Guidance.GuidanceManeuver* return_value);

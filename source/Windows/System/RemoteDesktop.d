@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.System.RemoteDesktop.InteractiveSession")
 interface IInteractiveSessionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsRemote(bool* return_value);
 }

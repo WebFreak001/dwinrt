@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Graphics.Printing.OptionDetails.PrintCustomItemDetails")
 interface IPrintCustomItemDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ItemId(HSTRING* return_value);
 	HRESULT set_ItemDisplayName(HSTRING value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.OptionDetails.PrintCustomItemListOptionDetails")
 interface IPrintCustomItemListOptionDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddItem(HSTRING itemId, HSTRING displayName);
 }
@@ -27,8 +23,6 @@ extern(Windows):
 @uuid("e32bde1c-28af-4b90-95da-a3acf320b929")
 interface IPrintCustomOptionDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_DisplayName(HSTRING value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -38,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.OptionDetails.PrintCustomTextOptionDetails")
 interface IPrintCustomTextOptionDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_MaxCharacters(UINT32 value);
 	HRESULT get_MaxCharacters(UINT32* return_value);
@@ -48,8 +40,6 @@ extern(Windows):
 @uuid("9a2257bf-fe61-43d8-a24f-a3f6ab7320e7")
 interface IPrintItemListOptionDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Items(Windows.Foundation.Collections.IVectorView!(IInspectable)* return_value);
 }
@@ -57,8 +47,6 @@ extern(Windows):
 @uuid("4d01bbaf-645c-4de9-965f-6fc6bbc47cab")
 interface IPrintNumberOptionDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MinValue(UINT32* return_value);
 	HRESULT get_MaxValue(UINT32* return_value);
@@ -67,8 +55,6 @@ extern(Windows):
 @uuid("390686cf-d682-495f-adfe-d7333f5c1808")
 interface IPrintOptionDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OptionId(HSTRING* return_value);
 	HRESULT get_OptionType(Windows.Graphics.Printing.OptionDetails.PrintOptionType* return_value);
@@ -84,8 +70,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.OptionDetails.PrintTaskOptionChangedEventArgs")
 interface IPrintTaskOptionChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OptionId(IInspectable* return_value);
 }
@@ -94,8 +78,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails")
 interface IPrintTaskOptionDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Options(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)* return_value);
 	HRESULT abi_CreateItemListOption(HSTRING optionId, HSTRING displayName, Windows.Graphics.Printing.OptionDetails.PrintCustomItemListOptionDetails* return_itemListOption);
@@ -110,8 +92,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails")
 interface IPrintTaskOptionDetailsStatic : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetFromPrintTaskOptions(Windows.Graphics.Printing.PrintTaskOptions printTaskOptions, Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails* return_printTaskOptionDetails);
 }
@@ -119,8 +99,6 @@ extern(Windows):
 @uuid("ad75e563-5ce4-46bc-9918-ab9fad144c5b")
 interface IPrintTextOptionDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxCharacters(UINT32* return_value);
 }

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Globalization.NumberFormatting.CurrencyFormatter")
 interface ICurrencyFormatter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Currency(HSTRING* return_value);
 	deprecated("Currency may be read-only for releases after Windows 8.1. Instead, use a new CurrencyFormatter.")
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.NumberFormatting.CurrencyFormatter")
 interface ICurrencyFormatter2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Mode(Windows.Globalization.NumberFormatting.CurrencyFormatterMode* return_value);
 	HRESULT set_Mode(Windows.Globalization.NumberFormatting.CurrencyFormatterMode value);
@@ -30,8 +26,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.NumberFormatting.CurrencyFormatter")
 interface ICurrencyFormatterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCurrencyFormatterCode(HSTRING currencyCode, Windows.Globalization.NumberFormatting.CurrencyFormatter* return_result);
 	HRESULT abi_CreateCurrencyFormatterCodeContext(HSTRING currencyCode, Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion, Windows.Globalization.NumberFormatting.CurrencyFormatter* return_result);
@@ -41,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.NumberFormatting.DecimalFormatter")
 interface IDecimalFormatterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateDecimalFormatter(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion, Windows.Globalization.NumberFormatting.DecimalFormatter* return_result);
 }
@@ -51,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.NumberFormatting.IncrementNumberRounder")
 interface IIncrementNumberRounder : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RoundingAlgorithm(Windows.Globalization.NumberFormatting.RoundingAlgorithm* return_value);
 	HRESULT set_RoundingAlgorithm(Windows.Globalization.NumberFormatting.RoundingAlgorithm value);
@@ -63,8 +53,6 @@ extern(Windows):
 @uuid("a5007c49-7676-4db7-8631-1b6ff265caa9")
 interface INumberFormatter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FormatInt(INT64 value, HSTRING* return_result);
 	HRESULT abi_FormatUInt(UINT64 value, HSTRING* return_result);
@@ -74,8 +62,6 @@ extern(Windows):
 @uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310")
 interface INumberFormatter2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FormatInt(INT64 value, HSTRING* return_result);
 	HRESULT abi_FormatUInt(UINT64 value, HSTRING* return_result);
@@ -85,8 +71,6 @@ extern(Windows):
 @uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6")
 interface INumberFormatterOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Languages(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 	HRESULT get_GeographicRegion(HSTRING* return_value);
@@ -107,8 +91,6 @@ extern(Windows):
 @uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f")
 interface INumberParser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ParseInt(HSTRING text, Windows.Foundation.IReference!(INT64)* return_result);
 	HRESULT abi_ParseUInt(HSTRING text, Windows.Foundation.IReference!(UINT64)* return_result);
@@ -118,8 +100,6 @@ extern(Windows):
 @uuid("5473c375-38ed-4631-b80c-ef34fc48b7f5")
 interface INumberRounder : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RoundInt32(INT32 value, INT32* return_result);
 	HRESULT abi_RoundUInt32(UINT32 value, UINT32* return_result);
@@ -132,8 +112,6 @@ extern(Windows):
 @uuid("3b088433-646f-4efe-8d48-66eb2e49e736")
 interface INumberRounderOption : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NumberRounder(Windows.Globalization.NumberFormatting.INumberRounder* return_value);
 	HRESULT set_NumberRounder(Windows.Globalization.NumberFormatting.INumberRounder value);
@@ -143,8 +121,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.NumberFormatting.NumeralSystemTranslator")
 interface INumeralSystemTranslator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Languages(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 	HRESULT get_ResolvedLanguage(HSTRING* return_value);
@@ -157,8 +133,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.NumberFormatting.NumeralSystemTranslator")
 interface INumeralSystemTranslatorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Foundation.Collections.IIterable!(HSTRING) languages, Windows.Globalization.NumberFormatting.NumeralSystemTranslator* return_result);
 }
@@ -167,8 +141,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.NumberFormatting.PercentFormatter")
 interface IPercentFormatterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreatePercentFormatter(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion, Windows.Globalization.NumberFormatting.PercentFormatter* return_result);
 }
@@ -177,8 +149,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.NumberFormatting.PermilleFormatter")
 interface IPermilleFormatterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreatePermilleFormatter(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion, Windows.Globalization.NumberFormatting.PermilleFormatter* return_result);
 }
@@ -186,8 +156,6 @@ extern(Windows):
 @uuid("fd1cdd31-0a3c-49c4-a642-96a1564f4f30")
 interface ISignedZeroOption : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsZeroSigned(bool* return_value);
 	HRESULT set_IsZeroSigned(bool value);
@@ -197,8 +165,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.NumberFormatting.SignificantDigitsNumberRounder")
 interface ISignificantDigitsNumberRounder : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RoundingAlgorithm(Windows.Globalization.NumberFormatting.RoundingAlgorithm* return_value);
 	HRESULT set_RoundingAlgorithm(Windows.Globalization.NumberFormatting.RoundingAlgorithm value);
@@ -209,8 +175,6 @@ extern(Windows):
 @uuid("1d4dfcdd-2d43-4ee8-bbf1-c1b26a711a58")
 interface ISignificantDigitsOption : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SignificantDigits(INT32* return_value);
 	HRESULT set_SignificantDigits(INT32 value);

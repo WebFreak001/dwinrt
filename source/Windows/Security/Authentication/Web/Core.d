@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebAccountEventArgs")
 interface IWebAccountEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Account(Windows.Security.Credentials.WebAccount* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebAccountMonitor")
 interface IWebAccountMonitor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_Updated(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Updated(EventRegistrationToken token);
@@ -31,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebAuthenticationCoreManager")
 interface IWebAuthenticationCoreManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetTokenSilentlyAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);
 	HRESULT abi_GetTokenSilentlyWithWebAccountAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);
@@ -47,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebAuthenticationCoreManager")
 interface IWebAuthenticationCoreManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindAccountProviderWithAuthorityForUserAsync(HSTRING webAccountProviderId, HSTRING authority, Windows.System.User user, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider)* return_asyncInfo);
 }
@@ -57,8 +49,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebAuthenticationCoreManager")
 interface IWebAuthenticationCoreManagerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWebAccountMonitor(Windows.Foundation.Collections.IIterable!(Windows.Security.Credentials.WebAccount) webAccounts, Windows.Security.Authentication.Web.Core.WebAccountMonitor* return_result);
 }
@@ -67,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebProviderError")
 interface IWebProviderError : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ErrorCode(UINT32* return_value);
 	HRESULT get_ErrorMessage(HSTRING* return_value);
@@ -79,8 +67,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebProviderError")
 interface IWebProviderErrorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(UINT32 errorCode, HSTRING errorMessage, Windows.Security.Authentication.Web.Core.WebProviderError* return_webProviderError);
 }
@@ -89,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebTokenRequest")
 interface IWebTokenRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WebAccountProvider(Windows.Security.Credentials.WebAccountProvider* return_value);
 	HRESULT get_Scope(HSTRING* return_value);
@@ -103,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebTokenRequest")
 interface IWebTokenRequest2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppProperties(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_requestProperties);
 }
@@ -113,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebTokenRequest")
 interface IWebTokenRequest3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CorrelationId(HSTRING* return_value);
 	HRESULT set_CorrelationId(HSTRING value);
@@ -124,8 +104,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebTokenRequest")
 interface IWebTokenRequestFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Security.Credentials.WebAccountProvider provider, HSTRING scope_, HSTRING clientId, Windows.Security.Authentication.Web.Core.WebTokenRequest* return_webTokenRequest);
 	HRESULT abi_CreateWithPromptType(Windows.Security.Credentials.WebAccountProvider provider, HSTRING scope_, HSTRING clientId, Windows.Security.Authentication.Web.Core.WebTokenRequestPromptType promptType, Windows.Security.Authentication.Web.Core.WebTokenRequest* return_webTokenRequest);
@@ -137,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebTokenRequestResult")
 interface IWebTokenRequestResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResponseData(Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.Web.Core.WebTokenResponse)* return_value);
 	HRESULT get_ResponseStatus(Windows.Security.Authentication.Web.Core.WebTokenRequestStatus* return_value);
@@ -150,8 +126,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebTokenResponse")
 interface IWebTokenResponse : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Token(HSTRING* return_value);
 	HRESULT get_ProviderError(Windows.Security.Authentication.Web.Core.WebProviderError* return_value);
@@ -163,8 +137,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebTokenResponse")
 interface IWebTokenResponseFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithToken(HSTRING token, Windows.Security.Authentication.Web.Core.WebTokenResponse* return_webTokenResponse);
 	HRESULT abi_CreateWithTokenAndAccount(HSTRING token, Windows.Security.Credentials.WebAccount webAccount, Windows.Security.Authentication.Web.Core.WebTokenResponse* return_webTokenResponse);

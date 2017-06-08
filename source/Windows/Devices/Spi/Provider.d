@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings")
 interface IProviderSpiConnectionSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChipSelectLine(INT32* return_value);
 	HRESULT set_ChipSelectLine(INT32 value);
@@ -25,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings")
 interface IProviderSpiConnectionSettingsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(INT32 chipSelectLine, Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings* return_value);
 }
@@ -34,8 +30,6 @@ extern(Windows):
 @uuid("c1686504-02ce-4226-a385-4f11fb04b41b")
 interface ISpiControllerProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceProvider(Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings settings, Windows.Devices.Spi.Provider.ISpiDeviceProvider* return_result);
 }
@@ -43,8 +37,6 @@ extern(Windows):
 @uuid("0d1c3443-304b-405c-b4f7-f5ab1074461e")
 interface ISpiDeviceProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_ConnectionSettings(Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings* return_value);
@@ -57,8 +49,6 @@ extern(Windows):
 @uuid("96b461e2-77d4-48ce-aaa0-75715a8362cf")
 interface ISpiProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetControllersAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Spi.Provider.ISpiControllerProvider))* return_result);
 }

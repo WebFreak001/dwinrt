@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter")
 interface IPhoneNumberFormatter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Format(Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo number, HSTRING* return_result);
 	HRESULT abi_FormatWithOutputFormat(Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo number, Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormat numberFormat, HSTRING* return_result);
@@ -20,8 +18,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter")
 interface IPhoneNumberFormatterStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryCreate(HSTRING regionCode, Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter* out_phoneNumber);
 	HRESULT abi_GetCountryCodeForRegion(HSTRING regionCode, INT32* return_result);
@@ -33,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo")
 interface IPhoneNumberInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CountryCode(INT32* return_value);
 	HRESULT get_PhoneNumber(HSTRING* return_value);
@@ -50,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo")
 interface IPhoneNumberInfoFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING number, Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo* return_result);
 }
@@ -60,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo")
 interface IPhoneNumberInfoStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryParse(HSTRING input, Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo* out_phoneNumber, Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult* return_result);
 	HRESULT abi_TryParseWithRegion(HSTRING input, HSTRING regionCode, Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo* out_phoneNumber, Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult* return_result);

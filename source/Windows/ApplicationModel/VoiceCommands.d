@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.VoiceCommands.VoiceCommand")
 interface IVoiceCommand : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CommandName(HSTRING* return_value);
 	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Foundation.Collections.IVectorView!(HSTRING))* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletedEventArgs")
 interface IVoiceCommandCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reason(Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletionReason* return_value);
 }
@@ -28,8 +24,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.VoiceCommands.VoiceCommandConfirmationResult")
 interface IVoiceCommandConfirmationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Confirmed(bool* return_value);
 }
@@ -38,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile")
 interface IVoiceCommandContentTile : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT set_Title(HSTRING value);
@@ -63,8 +55,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition")
 interface IVoiceCommandDefinition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Language(HSTRING* return_value);
 	HRESULT get_Name(HSTRING* return_value);
@@ -75,8 +65,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager")
 interface IVoiceCommandDefinitionManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_InstallCommandDefinitionsFromStorageFileAsync(Windows.Storage.StorageFile file, Windows.Foundation.IAsyncAction* return_installAction);
 	HRESULT get_InstalledCommandDefinitions(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition)* return_voiceCommandDefinitions);
@@ -86,8 +74,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.VoiceCommands.VoiceCommandDisambiguationResult")
 interface IVoiceCommandDisambiguationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectedItem(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile* return_value);
 }
@@ -96,8 +82,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse")
 interface IVoiceCommandResponse : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Message(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage* return_value);
 	HRESULT set_Message(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage value);
@@ -112,8 +96,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse")
 interface IVoiceCommandResponseStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxSupportedVoiceCommandContentTiles(UINT32* return_value);
 	HRESULT abi_CreateResponse(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage userMessage, Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse* return_response);
@@ -126,8 +108,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection")
 interface IVoiceCommandServiceConnection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetVoiceCommandAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.VoiceCommands.VoiceCommand)* return_operation);
 	HRESULT abi_RequestConfirmationAsync(Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse response, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.VoiceCommands.VoiceCommandConfirmationResult)* return_operation);
@@ -145,8 +125,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection")
 interface IVoiceCommandServiceConnectionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromAppServiceTriggerDetails(Windows.ApplicationModel.AppService.AppServiceTriggerDetails triggerDetails, Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection* return_value);
 }
@@ -155,8 +133,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage")
 interface IVoiceCommandUserMessage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayMessage(HSTRING* return_value);
 	HRESULT set_DisplayMessage(HSTRING value);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Gaming.Input.Preview.GameControllerProviderInfo")
 interface IGameControllerProviderInfoStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetParentProviderId(Windows.Gaming.Input.Custom.IGameControllerProvider provider, HSTRING* return_value);
 	HRESULT abi_GetProviderId(Windows.Gaming.Input.Custom.IGameControllerProvider provider, HSTRING* return_value);

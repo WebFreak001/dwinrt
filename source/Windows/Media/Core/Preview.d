@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Core.Preview.SoundLevelBroker")
 interface ISoundLevelBrokerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SoundLevel(Windows.Media.SoundLevel* return_value);
 	HRESULT add_SoundLevelChanged(Windows.Foundation.EventHandler!(IInspectable) handler, EventRegistrationToken* return_token);

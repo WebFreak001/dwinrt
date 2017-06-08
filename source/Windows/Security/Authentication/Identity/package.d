@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationInfo")
 interface IEnterpriseKeyCredentialRegistrationInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TenantId(HSTRING* return_value);
 	HRESULT get_TenantName(HSTRING* return_value);
@@ -20,8 +18,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationManager")
 interface IEnterpriseKeyCredentialRegistrationManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetRegistrationsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationInfo))* return_value);
 }
@@ -30,8 +26,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationManager")
 interface IEnterpriseKeyCredentialRegistrationManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Current(Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationManager* return_value);
 }

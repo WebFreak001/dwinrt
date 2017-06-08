@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.Credentials.UI.CredentialPickerOptions")
 interface ICredentialPickerOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Caption(HSTRING value);
 	HRESULT get_Caption(HSTRING* return_value);
@@ -35,8 +33,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.UI.CredentialPickerResults")
 interface ICredentialPickerResults : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ErrorCode(UINT32* return_value);
 	HRESULT get_CredentialSaveOption(Windows.Security.Credentials.UI.CredentialSaveOption* return_value);
@@ -51,8 +47,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.UI.CredentialPicker")
 interface ICredentialPickerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_PickWithOptionsAsync(Windows.Security.Credentials.UI.CredentialPickerOptions options, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults)* return_operation);
 	HRESULT abi_PickWithMessageAsync(HSTRING targetName, HSTRING message, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults)* return_operation);
@@ -63,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Credentials.UI.UserConsentVerifier")
 interface IUserConsentVerifierStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CheckAvailabilityAsync(Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.UserConsentVerifierAvailability)* return_result);
 	HRESULT abi_RequestVerificationAsync(HSTRING message, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.UserConsentVerificationResult)* return_result);

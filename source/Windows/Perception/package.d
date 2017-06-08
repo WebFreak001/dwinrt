@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Perception.PerceptionTimestamp")
 interface IPerceptionTimestamp : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TargetTime(Windows.Foundation.DateTime* return_value);
 	HRESULT get_PredictionAmount(Windows.Foundation.TimeSpan* return_value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.Perception.PerceptionTimestampHelper")
 interface IPerceptionTimestampHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromHistoricalTargetTime(Windows.Foundation.DateTime targetTime, Windows.Perception.PerceptionTimestamp* return_value);
 }

@@ -20,8 +20,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.ApplicationData")
 interface IApplicationData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Version(UINT32* return_value);
 	HRESULT abi_SetVersionAsync(UINT32 desiredVersion, Windows.Storage.ApplicationDataSetVersionHandler handler, Windows.Foundation.IAsyncAction* return_setVersionOperation);
@@ -42,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.ApplicationData")
 interface IApplicationData2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LocalCacheFolder(Windows.Storage.StorageFolder* return_value);
 }
@@ -52,8 +48,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.ApplicationData")
 interface IApplicationData3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetPublisherCacheFolder(HSTRING folderName, Windows.Storage.StorageFolder* return_value);
 	HRESULT abi_ClearPublisherCacheFolderAsync(HSTRING folderName, Windows.Foundation.IAsyncAction* return_clearOperation);
@@ -64,8 +58,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.ApplicationDataContainer")
 interface IApplicationDataContainer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Locality(Windows.Storage.ApplicationDataLocality* return_value);
@@ -79,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.ApplicationData")
 interface IApplicationDataStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Current(Windows.Storage.ApplicationData* return_value);
 }
@@ -89,8 +79,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.ApplicationData")
 interface IApplicationDataStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForUserAsync(Windows.System.User user, Windows.Foundation.IAsyncOperation!(Windows.Storage.ApplicationData)* return_getForUserOperation);
 }
@@ -99,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.CachedFileManager")
 interface ICachedFileManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_DeferUpdates(Windows.Storage.IStorageFile file);
 	HRESULT abi_CompleteUpdatesAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Storage.Provider.FileUpdateStatus)* return_operation);
@@ -110,8 +96,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.DownloadsFolder")
 interface IDownloadsFolderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFileAsync(HSTRING desiredName, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
 	HRESULT abi_CreateFolderAsync(HSTRING desiredName, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder)* return_operation);
@@ -123,8 +107,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.DownloadsFolder")
 interface IDownloadsFolderStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFileForUserAsync(Windows.System.User user, HSTRING desiredName, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
 	HRESULT abi_CreateFolderForUserAsync(Windows.System.User user, HSTRING desiredName, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder)* return_operation);
@@ -136,8 +118,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.FileIO")
 interface IFileIOStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadTextAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(HSTRING)* return_textOperation);
 	HRESULT abi_ReadTextWithEncodingAsync(Windows.Storage.IStorageFile file, Windows.Storage.Streams.UnicodeEncoding encoding, Windows.Foundation.IAsyncOperation!(HSTRING)* return_textOperation);
@@ -160,8 +140,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.KnownFolders")
 interface IKnownFoldersCameraRollStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CameraRoll(Windows.Storage.StorageFolder* return_value);
 }
@@ -170,8 +148,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.KnownFolders")
 interface IKnownFoldersPlaylistsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Playlists(Windows.Storage.StorageFolder* return_value);
 }
@@ -180,8 +156,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.KnownFolders")
 interface IKnownFoldersSavedPicturesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SavedPictures(Windows.Storage.StorageFolder* return_value);
 }
@@ -190,8 +164,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.KnownFolders")
 interface IKnownFoldersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MusicLibrary(Windows.Storage.StorageFolder* return_value);
 	HRESULT get_PicturesLibrary(Windows.Storage.StorageFolder* return_value);
@@ -206,8 +178,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.KnownFolders")
 interface IKnownFoldersStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Objects3D(Windows.Storage.StorageFolder* return_value);
 	HRESULT get_AppCaptures(Windows.Storage.StorageFolder* return_value);
@@ -218,8 +188,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.KnownFolders")
 interface IKnownFoldersStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetFolderForUserAsync(Windows.System.User user, Windows.Storage.KnownFolderId folderId, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder)* return_operation);
 }
@@ -228,8 +196,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.PathIO")
 interface IPathIOStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadTextAsync(HSTRING absolutePath, Windows.Foundation.IAsyncOperation!(HSTRING)* return_textOperation);
 	HRESULT abi_ReadTextWithEncodingAsync(HSTRING absolutePath, Windows.Storage.Streams.UnicodeEncoding encoding, Windows.Foundation.IAsyncOperation!(HSTRING)* return_textOperation);
@@ -252,8 +218,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.SetVersionDeferral")
 interface ISetVersionDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -262,8 +226,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.SetVersionRequest")
 interface ISetVersionRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CurrentVersion(UINT32* return_currentVersion);
 	HRESULT get_DesiredVersion(UINT32* return_desiredVersion);
@@ -273,8 +235,6 @@ extern(Windows):
 @uuid("fa3f6186-4214-428c-a64c-14c9ac7315ea")
 interface IStorageFile : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FileType(HSTRING* return_value);
 	HRESULT get_ContentType(HSTRING* return_value);
@@ -293,8 +253,6 @@ extern(Windows):
 @uuid("954e4bcf-0a77-42fb-b777-c2ed58a52e44")
 interface IStorageFile2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OpenWithOptionsAsync(Windows.Storage.FileAccessMode accessMode, Windows.Storage.StorageOpenOptions options, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream)* return_operation);
 	HRESULT abi_OpenTransactedWriteWithOptionsAsync(Windows.Storage.StorageOpenOptions options, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageStreamTransaction)* return_operation);
@@ -303,8 +261,6 @@ extern(Windows):
 @uuid("afcbbe9b-582b-4133-9648-e44ca46ee491")
 interface IStorageFilePropertiesWithAvailability : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsAvailable(bool* return_value);
 }
@@ -313,8 +269,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.StorageFile")
 interface IStorageFileStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetFileFromPathAsync(HSTRING path, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
 	HRESULT abi_GetFileFromApplicationUriAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
@@ -327,8 +281,6 @@ extern(Windows):
 @uuid("72d1cb78-b3ef-4f75-a80b-6fd9dae2944b")
 interface IStorageFolder : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFileAsyncOverloadDefaultOptions(HSTRING desiredName, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
 	HRESULT abi_CreateFileAsync(HSTRING desiredName, Windows.Storage.CreationCollisionOption options, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
@@ -345,8 +297,6 @@ extern(Windows):
 @uuid("e827e8b9-08d9-4a8e-a0ac-fe5ed3cbbbd3")
 interface IStorageFolder2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryGetItemAsync(HSTRING name, Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem)* return_operation);
 }
@@ -355,8 +305,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.StorageFolder")
 interface IStorageFolderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetFolderFromPathAsync(HSTRING path, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder)* return_operation);
 }
@@ -364,8 +312,6 @@ extern(Windows):
 @uuid("4207a996-ca2f-42f7-bde8-8b10457a7f30")
 interface IStorageItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RenameAsyncOverloadDefaultOptions(HSTRING desiredName, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_RenameAsync(HSTRING desiredName, Windows.Storage.NameCollisionOption option, Windows.Foundation.IAsyncAction* return_operation);
@@ -382,8 +328,6 @@ extern(Windows):
 @uuid("53f926d2-083c-4283-b45b-81c007237e44")
 interface IStorageItem2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetParentAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder)* return_operation);
 	HRESULT abi_IsEqual(Windows.Storage.IStorageItem item, bool* return_value);
@@ -392,8 +336,6 @@ extern(Windows):
 @uuid("86664478-8029-46fe-a789-1c2f3e2ffb5c")
 interface IStorageItemProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode, Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail)* return_operation);
 	HRESULT abi_GetThumbnailAsyncOverloadDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize, Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail)* return_operation);
@@ -407,8 +349,6 @@ extern(Windows):
 @uuid("8e86a951-04b9-4bd2-929d-fef3f71621d0")
 interface IStorageItemProperties2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetScaledImageAsThumbnailAsyncOverloadDefaultSizeDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode, Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail)* return_operation);
 	HRESULT abi_GetScaledImageAsThumbnailAsyncOverloadDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize, Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail)* return_operation);
@@ -418,8 +358,6 @@ extern(Windows):
 @uuid("861bf39b-6368-4dee-b40e-74684a5ce714")
 interface IStorageItemPropertiesWithProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Provider(Windows.Storage.StorageProvider* return_value);
 }
@@ -428,8 +366,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.StorageLibrary")
 interface IStorageLibrary : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAddFolderAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder)* return_operation);
 	HRESULT abi_RequestRemoveFolderAsync(Windows.Storage.StorageFolder folder, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -443,8 +379,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.StorageLibrary")
 interface IStorageLibrary2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeTracker(Windows.Storage.StorageLibraryChangeTracker* return_value);
 }
@@ -453,8 +387,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.StorageLibraryChange")
 interface IStorageLibraryChange : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeType(Windows.Storage.StorageLibraryChangeType* return_value);
 	HRESULT get_Path(HSTRING* return_value);
@@ -467,8 +399,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.StorageLibraryChangeReader")
 interface IStorageLibraryChangeReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadBatchAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageLibraryChange))* return_operation);
 	HRESULT abi_AcceptChangesAsync(Windows.Foundation.IAsyncAction* return_operation);
@@ -478,8 +408,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.StorageLibraryChangeTracker")
 interface IStorageLibraryChangeTracker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetChangeReader(Windows.Storage.StorageLibraryChangeReader* return_value);
 	HRESULT abi_Enable();
@@ -490,8 +418,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.StorageLibrary")
 interface IStorageLibraryStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetLibraryAsync(Windows.Storage.KnownLibraryId libraryId, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageLibrary)* return_operation);
 }
@@ -500,8 +426,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.StorageLibrary")
 interface IStorageLibraryStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetLibraryForUserAsync(Windows.System.User user, Windows.Storage.KnownLibraryId libraryId, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageLibrary)* return_operation);
 }
@@ -510,8 +434,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.StorageProvider")
 interface IStorageProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -521,8 +443,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.StorageStreamTransaction")
 interface IStorageStreamTransaction : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Stream(Windows.Storage.Streams.IRandomAccessStream* return_value);
 	HRESULT abi_CommitAsync(Windows.Foundation.IAsyncAction* return_operation);
@@ -531,8 +451,6 @@ extern(Windows):
 @uuid("1673fcce-dabd-4d50-beee-180b8a8191b6")
 interface IStreamedFileDataRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FailAndClose(Windows.Storage.StreamedFileFailureMode failureMode);
 }
@@ -541,8 +459,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.SystemAudioProperties")
 interface ISystemAudioProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EncodingBitrate(HSTRING* return_value);
 }
@@ -551,8 +467,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.SystemGPSProperties")
 interface ISystemGPSProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LatitudeDecimal(HSTRING* return_value);
 	HRESULT get_LongitudeDecimal(HSTRING* return_value);
@@ -562,8 +476,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.SystemImageProperties")
 interface ISystemImageProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HorizontalSize(HSTRING* return_value);
 	HRESULT get_VerticalSize(HSTRING* return_value);
@@ -573,8 +485,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.SystemMediaProperties")
 interface ISystemMediaProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Duration(HSTRING* return_value);
 	HRESULT get_Producer(HSTRING* return_value);
@@ -588,8 +498,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.SystemMusicProperties")
 interface ISystemMusicProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlbumArtist(HSTRING* return_value);
 	HRESULT get_AlbumTitle(HSTRING* return_value);
@@ -605,8 +513,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.SystemPhotoProperties")
 interface ISystemPhotoProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CameraManufacturer(HSTRING* return_value);
 	HRESULT get_CameraModel(HSTRING* return_value);
@@ -619,8 +525,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.SystemProperties")
 interface ISystemProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Author(HSTRING* return_value);
 	HRESULT get_Comment(HSTRING* return_value);
@@ -641,8 +545,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.SystemVideoProperties")
 interface ISystemVideoProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Director(HSTRING* return_value);
 	HRESULT get_FrameHeight(HSTRING* return_value);

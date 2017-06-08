@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.SerialCommunication.ErrorReceivedEventArgs")
 interface IErrorReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Error(Windows.Devices.SerialCommunication.SerialError* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SerialCommunication.PinChangedEventArgs")
 interface IPinChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PinChange(Windows.Devices.SerialCommunication.SerialPinChange* return_value);
 }
@@ -26,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SerialCommunication.SerialDevice")
 interface ISerialDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BaudRate(UINT32* return_value);
 	HRESULT set_BaudRate(UINT32 value);
@@ -68,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.SerialCommunication.SerialDevice")
 interface ISerialDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
 	HRESULT abi_GetDeviceSelectorFromPortName(HSTRING portName, HSTRING* return_result);

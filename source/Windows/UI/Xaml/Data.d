@@ -25,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Data.Binding")
 interface IBinding : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Path(Windows.UI.Xaml.PropertyPath* return_value);
 	HRESULT set_Path(Windows.UI.Xaml.PropertyPath value);
@@ -50,8 +48,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Data.Binding")
 interface IBinding2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FallbackValue(IInspectable* return_value);
 	HRESULT set_FallbackValue(IInspectable value);
@@ -71,8 +67,6 @@ interface IBindingBase : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Data.BindingBase")
 interface IBindingBaseFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Data.BindingBase* return_instance);
 }
@@ -81,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Data.BindingExpression")
 interface IBindingExpression : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DataItem(IInspectable* return_value);
 	HRESULT get_ParentBinding(Windows.UI.Xaml.Data.Binding* return_value);
@@ -111,8 +103,6 @@ interface IBindingExpressionFactory : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Data.Binding")
 interface IBindingFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Data.Binding* return_instance);
 }
@@ -127,8 +117,6 @@ interface IBindingOperations : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Data.BindingOperations")
 interface IBindingOperationsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetBinding(Windows.UI.Xaml.DependencyObject target, Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.Data.BindingBase binding);
 }
@@ -136,8 +124,6 @@ extern(Windows):
 @uuid("8be8bfe4-dbef-44df-8126-a31a89121ddc")
 interface ICollectionView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CurrentItem(IInspectable* return_value);
 	HRESULT get_CurrentPosition(INT32* return_value);
@@ -161,8 +147,6 @@ extern(Windows):
 @uuid("34d4aaf4-8e72-4950-9192-ecd07d399d0a")
 interface ICollectionViewFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateView(Windows.UI.Xaml.Data.ICollectionView* return_result);
 }
@@ -170,8 +154,6 @@ extern(Windows):
 @uuid("7e01b9d8-d7b5-48b6-b31c-5bb5bdf5f09b")
 interface ICollectionViewGroup : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Group(IInspectable* return_value);
 	HRESULT get_GroupItems(Windows.Foundation.Collections.IObservableVector!(IInspectable)* return_value);
@@ -181,8 +163,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Data.CollectionViewSource")
 interface ICollectionViewSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Source(IInspectable* return_value);
 	HRESULT set_Source(IInspectable value);
@@ -197,8 +177,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Data.CollectionViewSource")
 interface ICollectionViewSourceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ViewProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -210,8 +188,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Data.CurrentChangingEventArgs")
 interface ICurrentChangingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Cancel(bool* return_value);
 	HRESULT set_Cancel(bool value);
@@ -222,8 +198,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Data.CurrentChangingEventArgs")
 interface ICurrentChangingEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Data.CurrentChangingEventArgs* return_instance);
 	HRESULT abi_CreateWithCancelableParameter(bool isCancelable, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Data.CurrentChangingEventArgs* return_instance);
@@ -232,8 +206,6 @@ extern(Windows):
 @uuid("30da92c0-23e8-42a0-ae7c-734a0e5d2782")
 interface ICustomProperty : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.UI.Xaml.Interop.TypeName* return_value);
 	HRESULT get_Name(HSTRING* return_value);
@@ -248,8 +220,6 @@ extern(Windows):
 @uuid("7c925755-3e48-42b4-8677-76372267033f")
 interface ICustomPropertyProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCustomProperty(HSTRING name, Windows.UI.Xaml.Data.ICustomProperty* return_returnValue);
 	HRESULT abi_GetIndexedProperty(HSTRING name, Windows.UI.Xaml.Interop.TypeName type, Windows.UI.Xaml.Data.ICustomProperty* return_returnValue);
@@ -261,8 +231,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Data.ItemIndexRange")
 interface IItemIndexRange : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FirstIndex(INT32* return_value);
 	HRESULT get_Length(UINT32* return_value);
@@ -273,8 +241,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Data.ItemIndexRange")
 interface IItemIndexRangeFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(INT32 firstIndex, UINT32 length, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Data.ItemIndexRange* return_instance);
 }
@@ -282,8 +248,6 @@ extern(Windows):
 @uuid("f05f5665-71fd-45a2-be13-a081d294a68d")
 interface IItemsRangeInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RangesChanged(Windows.UI.Xaml.Data.ItemIndexRange visibleRange, Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Data.ItemIndexRange) trackedItems);
 }
@@ -291,8 +255,6 @@ extern(Windows):
 @uuid("cf75d69c-f2f4-486b-b302-bb4c09baebfa")
 interface INotifyPropertyChanged : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_PropertyChanged(Windows.UI.Xaml.Data.PropertyChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_PropertyChanged(EventRegistrationToken token);
@@ -302,8 +264,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Data.PropertyChangedEventArgs")
 interface IPropertyChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PropertyName(HSTRING* return_value);
 }
@@ -312,8 +272,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Data.PropertyChangedEventArgs")
 interface IPropertyChangedEventArgsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(HSTRING name, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Data.PropertyChangedEventArgs* return_instance);
 }
@@ -322,8 +280,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Data.RelativeSource")
 interface IRelativeSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Mode(Windows.UI.Xaml.Data.RelativeSourceMode* return_value);
 	HRESULT set_Mode(Windows.UI.Xaml.Data.RelativeSourceMode value);
@@ -333,8 +289,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Data.RelativeSource")
 interface IRelativeSourceFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Data.RelativeSource* return_instance);
 }
@@ -342,8 +296,6 @@ extern(Windows):
 @uuid("2e12ca86-e1ed-4245-be49-207e42aec524")
 interface ISelectionInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SelectRange(Windows.UI.Xaml.Data.ItemIndexRange itemIndexRange);
 	HRESULT abi_DeselectRange(Windows.UI.Xaml.Data.ItemIndexRange itemIndexRange);
@@ -354,8 +306,6 @@ extern(Windows):
 @uuid("7f5ee992-7694-4e6c-a51b-e34bf43de743")
 interface ISupportIncrementalLoading : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_LoadMoreItemsAsync(UINT32 count, Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Data.LoadMoreItemsResult)* return_operation);
 	HRESULT get_HasMoreItems(bool* return_value);
@@ -364,8 +314,6 @@ extern(Windows):
 @uuid("e6f2fef0-0712-487f-b313-f300b8d79aa1")
 interface IValueConverter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Convert(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, HSTRING language, IInspectable* return_returnValue);
 	HRESULT abi_ConvertBack(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, HSTRING language, IInspectable* return_returnValue);

@@ -18,8 +18,6 @@ struct HolographicStereoTransform
 @WinrtFactory("Windows.Graphics.Holographic.HolographicCamera")
 interface IHolographicCamera : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RenderTargetSize(Windows.Foundation.Size* return_value);
 	HRESULT get_ViewportScaleFactor(double* return_value);
@@ -34,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicCamera")
 interface IHolographicCamera2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LeftViewportParameters(Windows.Graphics.Holographic.HolographicCameraViewportParameters* return_result);
 	HRESULT get_RightViewportParameters(Windows.Graphics.Holographic.HolographicCameraViewportParameters* return_result);
@@ -46,8 +42,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicCameraPose")
 interface IHolographicCameraPose : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HolographicCamera(Windows.Graphics.Holographic.HolographicCamera* return_value);
 	HRESULT get_Viewport(Windows.Foundation.Rect* return_value);
@@ -63,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicCameraRenderingParameters")
 interface IHolographicCameraRenderingParameters : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetFocusPoint(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position);
 	HRESULT abi_SetFocusPointWithNormal(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Vector3 normal);
@@ -77,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicCameraRenderingParameters")
 interface IHolographicCameraRenderingParameters2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ReprojectionMode(Windows.Graphics.Holographic.HolographicReprojectionMode* return_value);
 	HRESULT set_ReprojectionMode(Windows.Graphics.Holographic.HolographicReprojectionMode value);
@@ -89,8 +79,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicCameraViewportParameters")
 interface IHolographicCameraViewportParameters : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HiddenAreaMesh(UINT32* out___valueSize, Windows.Foundation.Numerics.Vector2** return_value);
 	HRESULT get_VisibleAreaMesh(UINT32* out___valueSize, Windows.Foundation.Numerics.Vector2** return_value);
@@ -100,8 +88,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicDisplay")
 interface IHolographicDisplay : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_MaxViewportSize(Windows.Foundation.Size* return_value);
@@ -115,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicDisplay")
 interface IHolographicDisplayStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Graphics.Holographic.HolographicDisplay* return_result);
 }
@@ -125,8 +109,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicFrame")
 interface IHolographicFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AddedCameras(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Holographic.HolographicCamera)* return_value);
 	HRESULT get_RemovedCameras(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Holographic.HolographicCamera)* return_value);
@@ -143,8 +125,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicFramePrediction")
 interface IHolographicFramePrediction : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CameraPoses(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Holographic.HolographicCameraPose)* return_value);
 	HRESULT get_Timestamp(Windows.Perception.PerceptionTimestamp* return_value);
@@ -154,8 +134,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicSpace")
 interface IHolographicSpace : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PrimaryAdapterId(Windows.Graphics.Holographic.HolographicAdapterId* return_value);
 	HRESULT abi_SetDirect3D11Device(Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice value);
@@ -170,8 +148,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicSpaceCameraAddedEventArgs")
 interface IHolographicSpaceCameraAddedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Camera(Windows.Graphics.Holographic.HolographicCamera* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -181,8 +157,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicSpaceCameraRemovedEventArgs")
 interface IHolographicSpaceCameraRemovedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Camera(Windows.Graphics.Holographic.HolographicCamera* return_value);
 }
@@ -191,8 +165,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicSpace")
 interface IHolographicSpaceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateForCoreWindow(Windows.UI.Core.CoreWindow window, Windows.Graphics.Holographic.HolographicSpace* return_value);
 }
@@ -201,8 +173,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Holographic.HolographicSpace")
 interface IHolographicSpaceStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSupported(bool* return_value);
 	HRESULT get_IsAvailable(bool* return_value);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Wallet.WalletBarcode")
 interface IWalletBarcode : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Symbology(Windows.ApplicationModel.Wallet.WalletBarcodeSymbology* return_value);
 	HRESULT get_Value(HSTRING* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.WalletBarcode")
 interface IWalletBarcodeFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWalletBarcode(Windows.ApplicationModel.Wallet.WalletBarcodeSymbology symbology, HSTRING value, Windows.ApplicationModel.Wallet.WalletBarcode* return_barcode);
 	HRESULT abi_CreateCustomWalletBarcode(Windows.Storage.Streams.IRandomAccessStreamReference streamToBarcodeImage, Windows.ApplicationModel.Wallet.WalletBarcode* return_barcode);
@@ -29,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.WalletItem")
 interface IWalletItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT set_DisplayName(HSTRING value);
@@ -90,8 +84,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.WalletItemCustomProperty")
 interface IWalletItemCustomProperty : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT set_Name(HSTRING value);
@@ -109,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.WalletItemCustomProperty")
 interface IWalletItemCustomPropertyFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWalletItemCustomProperty(HSTRING name, HSTRING value, Windows.ApplicationModel.Wallet.WalletItemCustomProperty* return_walletItemCustomProperty);
 }
@@ -119,8 +109,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.WalletItem")
 interface IWalletItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWalletItem(Windows.ApplicationModel.Wallet.WalletItemKind kind, HSTRING displayName, Windows.ApplicationModel.Wallet.WalletItem* return_walletItem);
 }
@@ -129,8 +117,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.WalletItemStore")
 interface IWalletItemStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AddAsync(HSTRING id, Windows.ApplicationModel.Wallet.WalletItem item, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_ClearAsync(Windows.Foundation.IAsyncAction* return_operation);
@@ -148,8 +134,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.WalletItemStore")
 interface IWalletItemStore2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ItemsChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Wallet.WalletItemStore, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_ItemsChanged(EventRegistrationToken cookie);
@@ -159,8 +143,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.WalletManager")
 interface IWalletManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestStoreAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItemStore)* return_operation);
 }
@@ -169,8 +151,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.WalletRelevantLocation")
 interface IWalletRelevantLocation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Devices.Geolocation.BasicGeoposition* return_value);
 	HRESULT set_Position(Windows.Devices.Geolocation.BasicGeoposition value);
@@ -182,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.WalletTransaction")
 interface IWalletTransaction : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Description(HSTRING* return_value);
 	HRESULT set_Description(HSTRING value);
@@ -203,8 +181,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.WalletVerb")
 interface IWalletVerb : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT set_Name(HSTRING value);
@@ -214,8 +190,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Wallet.WalletVerb")
 interface IWalletVerbFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWalletVerb(HSTRING name, Windows.ApplicationModel.Wallet.WalletVerb* return_WalletVerb);
 }

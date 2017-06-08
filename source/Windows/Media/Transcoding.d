@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Transcoding.MediaTranscoder")
 interface IMediaTranscoder : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_TrimStartTime(Windows.Foundation.TimeSpan value);
 	HRESULT get_TrimStartTime(Windows.Foundation.TimeSpan* return_value);
@@ -30,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Transcoding.MediaTranscoder")
 interface IMediaTranscoder2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_PrepareMediaStreamSourceTranscodeAsync(Windows.Media.Core.IMediaSource source, Windows.Storage.Streams.IRandomAccessStream destination, Windows.Media.MediaProperties.MediaEncodingProfile profile, Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.PrepareTranscodeResult)* return_operation);
 	HRESULT set_VideoProcessingAlgorithm(Windows.Media.Transcoding.MediaVideoProcessingAlgorithm value);
@@ -42,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Transcoding.PrepareTranscodeResult")
 interface IPrepareTranscodeResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanTranscode(bool* return_value);
 	HRESULT get_FailureReason(Windows.Media.Transcoding.TranscodeFailureReason* return_value);

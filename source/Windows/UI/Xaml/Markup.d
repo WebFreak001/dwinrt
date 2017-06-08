@@ -18,8 +18,6 @@ struct XmlnsDefinition
 @uuid("f6790987-e6e5-47f2-92c6-eccce4ba159a")
 interface IComponentConnector : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Connect(INT32 connectionId, IInspectable target);
 }
@@ -27,8 +25,6 @@ extern(Windows):
 @uuid("dc8f368b-eccc-498e-b139-91142254d7ae")
 interface IComponentConnector2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetBindingConnector(INT32 connectionId, IInspectable target, Windows.UI.Xaml.Markup.IComponentConnector* return_returnValue);
 }
@@ -36,8 +32,6 @@ extern(Windows):
 @uuid("08429dc8-8ab0-4747-aa9a-feadfc8da8e1")
 interface IDataTemplateComponent : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Recycle();
 	HRESULT abi_ProcessBindings(IInspectable item, INT32 itemIndex, INT32 phase, INT32* out_nextPhase);
@@ -53,8 +47,6 @@ interface IXamlBinaryWriter : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Markup.XamlBinaryWriter")
 interface IXamlBinaryWriterStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Write(Windows.Foundation.Collections.IVector!(Windows.Storage.Streams.IRandomAccessStream) inputStreams, Windows.Foundation.Collections.IVector!(Windows.Storage.Streams.IRandomAccessStream) outputStreams, Windows.UI.Xaml.Markup.IXamlMetadataProvider xamlMetadataProvider, Windows.UI.Xaml.Markup.XamlBinaryWriterErrorInformation* return_returnValue);
 }
@@ -69,8 +61,6 @@ interface IXamlBindingHelper : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Markup.XamlBindingHelper")
 interface IXamlBindingHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DataTemplateComponentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetDataTemplateComponent(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.Markup.IDataTemplateComponent* return_value);
@@ -107,8 +97,6 @@ interface IXamlMarkupHelper : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Markup.XamlMarkupHelper")
 interface IXamlMarkupHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_UnloadObject(Windows.UI.Xaml.DependencyObject element);
 }
@@ -116,8 +104,6 @@ extern(Windows):
 @uuid("c541f58c-43a9-4216-b718-e0b11b14e93e")
 interface IXamlMember : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsAttachable(bool* return_value);
 	HRESULT get_IsDependencyProperty(bool* return_value);
@@ -132,8 +118,6 @@ extern(Windows):
 @uuid("b3765d69-68a5-4b32-8861-fdb90c1f5836")
 interface IXamlMetadataProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetXamlType(Windows.UI.Xaml.Interop.TypeName type, Windows.UI.Xaml.Markup.IXamlType* return_xamlType);
 	HRESULT abi_GetXamlTypeByFullName(HSTRING fullName, Windows.UI.Xaml.Markup.IXamlType* return_xamlType);
@@ -150,8 +134,6 @@ interface IXamlReader : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Markup.XamlReader")
 interface IXamlReaderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Load(HSTRING xaml, IInspectable* return_returnValue);
 	HRESULT abi_LoadWithInitialTemplateValidation(HSTRING xaml, IInspectable* return_returnValue);
@@ -160,8 +142,6 @@ extern(Windows):
 @uuid("7920eab1-a2e5-479a-bd50-6cef3c0b4970")
 interface IXamlType : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BaseType(Windows.UI.Xaml.Markup.IXamlType* return_value);
 	HRESULT get_ContentProperty(Windows.UI.Xaml.Markup.IXamlMember* return_value);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Services.Maps.EnhancedWaypoint")
 interface IEnhancedWaypoint : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Point(Windows.Devices.Geolocation.Geopoint* return_value);
 	HRESULT get_Kind(Windows.Services.Maps.WaypointKind* return_value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.EnhancedWaypoint")
 interface IEnhancedWaypointFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Geolocation.Geopoint point, Windows.Services.Maps.WaypointKind kind, Windows.Services.Maps.EnhancedWaypoint* return_value);
 }
@@ -27,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.ManeuverWarning")
 interface IManeuverWarning : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.Services.Maps.ManeuverWarningKind* return_value);
 	HRESULT get_Severity(Windows.Services.Maps.ManeuverWarningSeverity* return_value);
@@ -38,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapAddress")
 interface IMapAddress : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BuildingName(HSTRING* return_value);
 	HRESULT get_BuildingFloor(HSTRING* return_value);
@@ -62,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapAddress")
 interface IMapAddress2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FormattedAddress(HSTRING* return_value);
 }
@@ -72,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapLocation")
 interface IMapLocation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Point(Windows.Devices.Geolocation.Geopoint* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -85,8 +73,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapLocationFinderResult")
 interface IMapLocationFinderResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Locations(Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapLocation)* return_value);
 	HRESULT get_Status(Windows.Services.Maps.MapLocationFinderStatus* return_value);
@@ -96,8 +82,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapLocationFinder")
 interface IMapLocationFinderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindLocationsAtAsync(Windows.Devices.Geolocation.Geopoint queryPoint, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult)* return_result);
 	HRESULT abi_FindLocationsAsync(HSTRING searchText, Windows.Devices.Geolocation.Geopoint referencePoint, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult)* return_result);
@@ -108,8 +92,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapLocationFinder")
 interface IMapLocationFinderStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindLocationsAtWithAccuracyAsync(Windows.Devices.Geolocation.Geopoint queryPoint, Windows.Services.Maps.MapLocationDesiredAccuracy accuracy, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult)* return_result);
 }
@@ -118,8 +100,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapManager")
 interface IMapManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowDownloadedMapsUI();
 	HRESULT abi_ShowMapsUpdateUI();
@@ -129,8 +109,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRoute")
 interface IMapRoute : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BoundingBox(Windows.Devices.Geolocation.GeoboundingBox* return_value);
 	HRESULT get_LengthInMeters(double* return_value);
@@ -144,8 +122,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRoute")
 interface IMapRoute2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ViolatedRestrictions(Windows.Services.Maps.MapRouteRestrictions* return_value);
 	HRESULT get_HasBlockedRoads(bool* return_value);
@@ -155,8 +131,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRoute")
 interface IMapRoute3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DurationWithoutTraffic(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_TrafficCongestion(Windows.Services.Maps.TrafficCongestion* return_value);
@@ -166,8 +140,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRouteDrivingOptions")
 interface IMapRouteDrivingOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxAlternateRouteCount(UINT32* return_value);
 	HRESULT set_MaxAlternateRouteCount(UINT32 value);
@@ -183,8 +155,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRouteFinderResult")
 interface IMapRouteFinderResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Route(Windows.Services.Maps.MapRoute* return_value);
 	HRESULT get_Status(Windows.Services.Maps.MapRouteFinderStatus* return_value);
@@ -194,8 +164,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRouteFinderResult")
 interface IMapRouteFinderResult2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AlternateRoutes(Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapRoute)* return_value);
 }
@@ -204,8 +172,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRouteFinder")
 interface IMapRouteFinderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDrivingRouteAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
 	HRESULT abi_GetDrivingRouteWithOptimizationAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
@@ -223,8 +189,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRouteFinder")
 interface IMapRouteFinderStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDrivingRouteWithOptionsAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteDrivingOptions options, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
 }
@@ -233,8 +197,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRouteFinder")
 interface IMapRouteFinderStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDrivingRouteFromEnhancedWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Maps.EnhancedWaypoint) waypoints, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
 	HRESULT abi_GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Maps.EnhancedWaypoint) waypoints, Windows.Services.Maps.MapRouteDrivingOptions options, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
@@ -244,8 +206,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRouteLeg")
 interface IMapRouteLeg : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BoundingBox(Windows.Devices.Geolocation.GeoboundingBox* return_value);
 	HRESULT get_Path(Windows.Devices.Geolocation.Geopath* return_value);
@@ -258,8 +218,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRouteLeg")
 interface IMapRouteLeg2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DurationWithoutTraffic(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_TrafficCongestion(Windows.Services.Maps.TrafficCongestion* return_value);
@@ -269,8 +227,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRouteManeuver")
 interface IMapRouteManeuver : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StartingPoint(Windows.Devices.Geolocation.Geopoint* return_value);
 	HRESULT get_LengthInMeters(double* return_value);
@@ -284,8 +240,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRouteManeuver")
 interface IMapRouteManeuver2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StartHeading(double* return_value);
 	HRESULT get_EndHeading(double* return_value);
@@ -296,8 +250,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapRouteManeuver")
 interface IMapRouteManeuver3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Warnings(Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.ManeuverWarning)* return_value);
 }
@@ -306,8 +258,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapService")
 interface IMapServiceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ServiceToken(HSTRING value);
 	HRESULT get_ServiceToken(HSTRING* return_value);
@@ -317,8 +267,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapService")
 interface IMapServiceStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_WorldViewRegionCode(HSTRING* return_value);
 }
@@ -327,8 +275,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapService")
 interface IMapServiceStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DataAttributions(HSTRING* return_value);
 }
@@ -337,8 +283,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.MapService")
 interface IMapServiceStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_DataUsagePreference(Windows.Services.Maps.MapServiceDataUsagePreference value);
 	HRESULT get_DataUsagePreference(Windows.Services.Maps.MapServiceDataUsagePreference* return_value);

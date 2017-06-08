@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Storage.Provider.CachedFileUpdater")
 interface ICachedFileUpdaterStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetUpdateInformation(Windows.Storage.IStorageFile file, HSTRING contentId, Windows.Storage.Provider.ReadActivationMode readMode, Windows.Storage.Provider.WriteActivationMode writeMode, Windows.Storage.Provider.CachedFileOptions options);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Provider.CachedFileUpdaterUI")
 interface ICachedFileUpdaterUI : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
 	HRESULT set_Title(HSTRING value);
@@ -33,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Provider.CachedFileUpdaterUI")
 interface ICachedFileUpdaterUI2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UpdateRequest(Windows.Storage.Provider.FileUpdateRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Storage.Provider.FileUpdateRequestDeferral* return_value);
@@ -44,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Provider.FileUpdateRequest")
 interface IFileUpdateRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentId(HSTRING* return_value);
 	HRESULT get_File(Windows.Storage.StorageFile* return_value);
@@ -59,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Provider.FileUpdateRequest")
 interface IFileUpdateRequest2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UserInputNeededMessage(HSTRING* return_value);
 	HRESULT set_UserInputNeededMessage(HSTRING value);
@@ -70,8 +60,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Provider.FileUpdateRequestDeferral")
 interface IFileUpdateRequestDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -80,8 +68,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Provider.FileUpdateRequestedEventArgs")
 interface IFileUpdateRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.Storage.Provider.FileUpdateRequest* return_value);
 }

@@ -19,8 +19,6 @@ struct Direct3DSurfaceDescription
 @uuid("a37624ab-8d5f-4650-9d3e-9eae3d9bc670")
 interface IDirect3DDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Trim();
 }
@@ -28,8 +26,6 @@ extern(Windows):
 @uuid("0bf4a146-13c1-4694-bee3-7abf15eaf586")
 interface IDirect3DSurface : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Description(Windows.Graphics.DirectX.Direct3D11.Direct3DSurfaceDescription* return_value);
 }

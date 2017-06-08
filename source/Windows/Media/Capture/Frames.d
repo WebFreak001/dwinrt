@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Capture.Frames.BufferMediaFrame")
 interface IBufferMediaFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FrameReference(Windows.Media.Capture.Frames.MediaFrameReference* return_value);
 	HRESULT get_Buffer(Windows.Storage.Streams.IBuffer* return_value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.DepthMediaFrame")
 interface IDepthMediaFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FrameReference(Windows.Media.Capture.Frames.MediaFrameReference* return_value);
 	HRESULT get_VideoMediaFrame(Windows.Media.Capture.Frames.VideoMediaFrame* return_value);
@@ -30,8 +26,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.DepthMediaFrame")
 interface IDepthMediaFrame2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MaxReliableDepth(UINT32* return_value);
 	HRESULT get_MinReliableDepth(UINT32* return_value);
@@ -41,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.DepthMediaFrameFormat")
 interface IDepthMediaFrameFormat : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_VideoFormat(Windows.Media.Capture.Frames.VideoMediaFrameFormat* return_value);
 	HRESULT get_DepthScaleInMeters(double* return_value);
@@ -52,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.InfraredMediaFrame")
 interface IInfraredMediaFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FrameReference(Windows.Media.Capture.Frames.MediaFrameReference* return_value);
 	HRESULT get_VideoMediaFrame(Windows.Media.Capture.Frames.VideoMediaFrame* return_value);
@@ -70,8 +60,6 @@ interface IMediaFrameArrivedEventArgs : IInspectable
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameFormat")
 interface IMediaFrameFormat : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MajorType(HSTRING* return_value);
 	HRESULT get_Subtype(HSTRING* return_value);
@@ -84,8 +72,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameReader")
 interface IMediaFrameReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_FrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MediaFrameReader, Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_FrameArrived(EventRegistrationToken token);
@@ -98,8 +84,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameReference")
 interface IMediaFrameReference : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceKind(Windows.Media.Capture.Frames.MediaFrameSourceKind* return_value);
 	HRESULT get_Format(Windows.Media.Capture.Frames.MediaFrameFormat* return_value);
@@ -115,8 +99,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameSource")
 interface IMediaFrameSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Info(Windows.Media.Capture.Frames.MediaFrameSourceInfo* return_value);
 	HRESULT get_Controller(Windows.Media.Capture.Frames.MediaFrameSourceController* return_value);
@@ -132,8 +114,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameSourceController")
 interface IMediaFrameSourceController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetPropertyAsync(HSTRING propertyId, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult)* return_value);
 	HRESULT abi_SetPropertyAsync(HSTRING propertyId, IInspectable propertyValue, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus)* return_value);
@@ -144,8 +124,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameSourceController")
 interface IMediaFrameSourceController2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetPropertyByExtendedIdAsync(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult)* return_operation);
 	HRESULT abi_SetPropertyByExtendedIdAsync(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, UINT32 __propertyValueSize, BYTE* propertyValue, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus)* return_operation);
@@ -155,8 +133,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult")
 interface IMediaFrameSourceGetPropertyResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus* return_value);
 	HRESULT get_Value(IInspectable* return_value);
@@ -166,8 +142,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameSourceGroup")
 interface IMediaFrameSourceGroup : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -178,8 +152,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameSourceGroup")
 interface IMediaFrameSourceGroupStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindAllAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.Frames.MediaFrameSourceGroup))* return_value);
 	HRESULT abi_FromIdAsync(HSTRING id, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGroup)* return_value);
@@ -190,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameSourceInfo")
 interface IMediaFrameSourceInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_MediaStreamType(Windows.Media.Capture.MediaStreamType* return_value);
@@ -212,8 +182,6 @@ interface IMultiSourceMediaFrameArrivedEventArgs : IInspectable
 @WinrtFactory("Windows.Media.Capture.Frames.MultiSourceMediaFrameReader")
 interface IMultiSourceMediaFrameReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_FrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader, Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_FrameArrived(EventRegistrationToken token);
@@ -226,8 +194,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.MultiSourceMediaFrameReference")
 interface IMultiSourceMediaFrameReference : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryGetFrameReferenceBySourceId(HSTRING sourceId, Windows.Media.Capture.Frames.MediaFrameReference* return_value);
 }
@@ -236,8 +202,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.VideoMediaFrame")
 interface IVideoMediaFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FrameReference(Windows.Media.Capture.Frames.MediaFrameReference* return_value);
 	HRESULT get_VideoFormat(Windows.Media.Capture.Frames.VideoMediaFrameFormat* return_value);
@@ -253,8 +217,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Capture.Frames.VideoMediaFrameFormat")
 interface IVideoMediaFrameFormat : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MediaFrameFormat(Windows.Media.Capture.Frames.MediaFrameFormat* return_value);
 	HRESULT get_DepthFormat(Windows.Media.Capture.Frames.DepthMediaFrameFormat* return_value);

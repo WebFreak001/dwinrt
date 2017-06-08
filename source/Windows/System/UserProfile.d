@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.System.UserProfile.AdvertisingManagerForUser")
 interface IAdvertisingManagerForUser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AdvertisingId(HSTRING* return_value);
 	HRESULT get_User(Windows.System.User* return_value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserProfile.AdvertisingManager")
 interface IAdvertisingManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AdvertisingId(HSTRING* return_value);
 }
@@ -27,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserProfile.AdvertisingManager")
 interface IAdvertisingManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.System.UserProfile.AdvertisingManagerForUser* return_value);
 }
@@ -37,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserProfile.DiagnosticsSettings")
 interface IDiagnosticsSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanUseDiagnosticsToTailorExperiences(bool* return_value);
 	HRESULT get_User(Windows.System.User* return_value);
@@ -48,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserProfile.DiagnosticsSettings")
 interface IDiagnosticsSettingsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.System.UserProfile.DiagnosticsSettings* return_value);
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.System.UserProfile.DiagnosticsSettings* return_value);
@@ -65,8 +55,6 @@ interface IFirstSignInSettings : IInspectable
 @WinrtFactory("Windows.System.UserProfile.FirstSignInSettings")
 interface IFirstSignInSettingsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.System.UserProfile.FirstSignInSettings* return_result);
 }
@@ -75,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserProfile.GlobalizationPreferences")
 interface IGlobalizationPreferencesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Calendars(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 	HRESULT get_Clocks(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
@@ -90,8 +76,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserProfile.LockScreen")
 interface ILockScreenImageFeedStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestSetImageFeedAsync(Windows.Foundation.Uri syndicationFeedUri, Windows.Foundation.IAsyncOperation!(Windows.System.UserProfile.SetImageFeedResult)* return_value);
 	HRESULT abi_TryRemoveImageFeed(bool* return_result);
@@ -101,8 +85,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserProfile.LockScreen")
 interface ILockScreenStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OriginalImageFile(Windows.Foundation.Uri* return_value);
 	HRESULT abi_GetImageStream(Windows.Storage.Streams.IRandomAccessStream* return_value);
@@ -114,8 +96,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserProfile.UserInformation")
 interface IUserInformationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AccountPictureChangeEnabled(bool* return_value);
 	HRESULT get_NameAccessAllowed(bool* return_value);
@@ -138,8 +118,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserProfile.UserProfilePersonalizationSettings")
 interface IUserProfilePersonalizationSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TrySetLockScreenImageAsync(Windows.Storage.StorageFile imageFile, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_TrySetWallpaperImageAsync(Windows.Storage.StorageFile imageFile, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -149,8 +127,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.UserProfile.UserProfilePersonalizationSettings")
 interface IUserProfilePersonalizationSettingsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Current(Windows.System.UserProfile.UserProfilePersonalizationSettings* return_value);
 	HRESULT abi_IsSupported(bool* return_result);

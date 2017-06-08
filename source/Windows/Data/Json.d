@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Data.Json.JsonArray")
 interface IJsonArray : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetObjectAt(UINT32 index, Windows.Data.Json.JsonObject* return_returnValue);
 	HRESULT abi_GetArrayAt(UINT32 index, Windows.Data.Json.JsonArray* return_returnValue);
@@ -20,8 +18,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Json.JsonArray")
 interface IJsonArrayStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Data.Json.JsonArray* return_jsonArray);
 	HRESULT abi_TryParse(HSTRING input, Windows.Data.Json.JsonArray* out_result, bool* return_succeeded);
@@ -31,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Json.JsonError")
 interface IJsonErrorStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetJsonStatus(INT32 hresult, Windows.Data.Json.JsonErrorStatus* return_status);
 }
@@ -41,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Json.JsonObject")
 interface IJsonObject : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetNamedValue(HSTRING name, Windows.Data.Json.JsonValue* return_returnValue);
 	HRESULT abi_SetNamedValue(HSTRING name, Windows.Data.Json.IJsonValue value);
@@ -57,8 +49,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Json.JsonObject")
 interface IJsonObjectStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Data.Json.JsonObject* return_jsonObject);
 	HRESULT abi_TryParse(HSTRING input, Windows.Data.Json.JsonObject* out_result, bool* return_succeeded);
@@ -68,8 +58,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Json.JsonObject")
 interface IJsonObjectWithDefaultValues : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetNamedValueOrDefault(HSTRING name, Windows.Data.Json.JsonValue defaultValue, Windows.Data.Json.JsonValue* return_returnValue);
 	HRESULT abi_GetNamedObjectOrDefault(HSTRING name, Windows.Data.Json.JsonObject defaultValue, Windows.Data.Json.JsonObject* return_returnValue);
@@ -82,8 +70,6 @@ extern(Windows):
 @uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e")
 interface IJsonValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ValueType(Windows.Data.Json.JsonValueType* return_value);
 	HRESULT abi_Stringify(HSTRING* return_returnValue);
@@ -98,8 +84,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Json.JsonValue")
 interface IJsonValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Parse(HSTRING input, Windows.Data.Json.JsonValue* return_jsonValue);
 	HRESULT abi_TryParse(HSTRING input, Windows.Data.Json.JsonValue* out_result, bool* return_succeeded);
@@ -112,8 +96,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Json.JsonValue")
 interface IJsonValueStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateNullValue(Windows.Data.Json.JsonValue* return_jsonValue);
 }

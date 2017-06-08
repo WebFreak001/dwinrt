@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.Authentication.OnlineId.OnlineIdAuthenticator")
 interface IOnlineIdAuthenticator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AuthenticateUserAsync(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest request, Windows.Security.Authentication.OnlineId.UserAuthenticationOperation* return_authenticationOperation);
 	HRESULT abi_AuthenticateUserAsyncAdvanced(Windows.Foundation.Collections.IIterable!(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest) requests, Windows.Security.Authentication.OnlineId.CredentialPromptType credentialPromptType, Windows.Security.Authentication.OnlineId.UserAuthenticationOperation* return_authenticationOperation);
@@ -22,8 +20,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.OnlineId.OnlineIdServiceTicket")
 interface IOnlineIdServiceTicket : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Value(HSTRING* return_value);
 	HRESULT get_Request(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest* return_value);
@@ -34,8 +30,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest")
 interface IOnlineIdServiceTicketRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Service(HSTRING* return_value);
 	HRESULT get_Policy(HSTRING* return_value);
@@ -45,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest")
 interface IOnlineIdServiceTicketRequestFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateOnlineIdServiceTicketRequest(HSTRING service, HSTRING policy, Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest* return_onlineIdServiceTicketRequest);
 	HRESULT abi_CreateOnlineIdServiceTicketRequestAdvanced(HSTRING service, Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest* return_onlineIdServiceTicketRequest);
@@ -56,8 +48,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticatorForUser")
 interface IOnlineIdSystemAuthenticatorForUser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetTicketAsync(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest request, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketResult)* return_operation);
 	HRESULT set_ApplicationId(GUID value);
@@ -69,8 +59,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticator")
 interface IOnlineIdSystemAuthenticatorStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Default(Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticatorForUser* return_value);
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticatorForUser* return_value);
@@ -80,8 +68,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.OnlineId.OnlineIdSystemIdentity")
 interface IOnlineIdSystemIdentity : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Ticket(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicket* return_value);
 	HRESULT get_Id(HSTRING* return_value);
@@ -91,8 +77,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketResult")
 interface IOnlineIdSystemTicketResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Identity(Windows.Security.Authentication.OnlineId.OnlineIdSystemIdentity* return_value);
 	HRESULT get_Status(Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketStatus* return_value);
@@ -103,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.OnlineId.UserIdentity")
 interface IUserIdentity : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Tickets(Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicket)* return_value);
 	HRESULT get_Id(HSTRING* return_value);

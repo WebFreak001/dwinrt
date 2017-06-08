@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection")
 interface IEmailDataProviderConnection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_MailboxSyncRequested(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequestEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_MailboxSyncRequested(EventRegistrationToken token);
@@ -46,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailDataProviderTriggerDetails")
 interface IEmailDataProviderTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Connection(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection* return_value);
 }
@@ -56,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequest")
 interface IEmailMailboxCreateFolderRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT get_ParentFolderId(HSTRING* return_value);
@@ -70,8 +64,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequestEventArgs")
 interface IEmailMailboxCreateFolderRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -81,8 +73,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequest")
 interface IEmailMailboxDeleteFolderRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT get_EmailFolderId(HSTRING* return_value);
@@ -94,8 +84,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequestEventArgs")
 interface IEmailMailboxDeleteFolderRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -105,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequest")
 interface IEmailMailboxDownloadAttachmentRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT get_EmailMessageId(HSTRING* return_value);
@@ -119,8 +105,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequestEventArgs")
 interface IEmailMailboxDownloadAttachmentRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -130,8 +114,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequest")
 interface IEmailMailboxDownloadMessageRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT get_EmailMessageId(HSTRING* return_value);
@@ -143,8 +125,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequestEventArgs")
 interface IEmailMailboxDownloadMessageRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -154,8 +134,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequest")
 interface IEmailMailboxEmptyFolderRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT get_EmailFolderId(HSTRING* return_value);
@@ -167,8 +145,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequestEventArgs")
 interface IEmailMailboxEmptyFolderRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -178,8 +154,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequest")
 interface IEmailMailboxForwardMeetingRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT get_EmailMessageId(HSTRING* return_value);
@@ -196,8 +170,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequestEventArgs")
 interface IEmailMailboxForwardMeetingRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -207,8 +179,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequest")
 interface IEmailMailboxGetAutoReplySettingsRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT get_RequestedFormat(Windows.ApplicationModel.Email.EmailMailboxAutoReplyMessageResponseKind* return_value);
@@ -220,8 +190,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequestEventArgs")
 interface IEmailMailboxGetAutoReplySettingsRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -231,8 +199,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequest")
 interface IEmailMailboxMoveFolderRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT get_EmailFolderId(HSTRING* return_value);
@@ -246,8 +212,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequestEventArgs")
 interface IEmailMailboxMoveFolderRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -257,8 +221,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequest")
 interface IEmailMailboxProposeNewTimeForMeetingRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT get_EmailMessageId(HSTRING* return_value);
@@ -274,8 +236,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequestEventArgs")
 interface IEmailMailboxProposeNewTimeForMeetingRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -285,8 +245,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequest")
 interface IEmailMailboxResolveRecipientsRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT get_Recipients(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
@@ -298,8 +256,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequestEventArgs")
 interface IEmailMailboxResolveRecipientsRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -309,8 +265,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequest")
 interface IEmailMailboxServerSearchReadBatchRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SessionId(HSTRING* return_value);
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
@@ -326,8 +280,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequestEventArgs")
 interface IEmailMailboxServerSearchReadBatchRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -337,8 +289,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequest")
 interface IEmailMailboxSetAutoReplySettingsRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT get_AutoReplySettings(Windows.ApplicationModel.Email.EmailMailboxAutoReplySettings* return_value);
@@ -350,8 +300,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequestEventArgs")
 interface IEmailMailboxSetAutoReplySettingsRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -361,8 +309,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequest")
 interface IEmailMailboxSyncManagerSyncRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT abi_ReportCompletedAsync(Windows.Foundation.IAsyncAction* return_result);
@@ -373,8 +319,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequestEventArgs")
 interface IEmailMailboxSyncManagerSyncRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -384,8 +328,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequest")
 interface IEmailMailboxUpdateMeetingResponseRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT get_EmailMessageId(HSTRING* return_value);
@@ -401,8 +343,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequestEventArgs")
 interface IEmailMailboxUpdateMeetingResponseRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -412,8 +352,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequest")
 interface IEmailMailboxValidateCertificatesRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EmailMailboxId(HSTRING* return_value);
 	HRESULT get_Certificates(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)* return_value);
@@ -425,8 +363,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequestEventArgs")
 interface IEmailMailboxValidateCertificatesRequestEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);

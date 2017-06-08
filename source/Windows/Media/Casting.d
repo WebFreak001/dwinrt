@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Casting.CastingConnection")
 interface ICastingConnection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_State(Windows.Media.Casting.CastingConnectionState* return_value);
 	HRESULT get_Device(Windows.Media.Casting.CastingDevice* return_value);
@@ -25,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Casting.CastingConnectionErrorOccurredEventArgs")
 interface ICastingConnectionErrorOccurredEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ErrorStatus(Windows.Media.Casting.CastingConnectionErrorStatus* return_value);
 	HRESULT get_Message(HSTRING* return_value);
@@ -36,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Casting.CastingDevice")
 interface ICastingDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_FriendlyName(HSTRING* return_value);
@@ -50,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Casting.CastingDevicePicker")
 interface ICastingDevicePicker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Filter(Windows.Media.Casting.CastingDevicePickerFilter* return_value);
 	HRESULT get_Appearance(Windows.Devices.Enumeration.DevicePickerAppearance* return_value);
@@ -68,8 +60,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Casting.CastingDevicePickerFilter")
 interface ICastingDevicePickerFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SupportsAudio(bool* return_value);
 	HRESULT set_SupportsAudio(bool value);
@@ -84,8 +74,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Casting.CastingDeviceSelectedEventArgs")
 interface ICastingDeviceSelectedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectedCastingDevice(Windows.Media.Casting.CastingDevice* return_value);
 }
@@ -94,8 +82,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Casting.CastingDevice")
 interface ICastingDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(Windows.Media.Casting.CastingPlaybackTypes type, HSTRING* return_value);
 	HRESULT abi_GetDeviceSelectorFromCastingSourceAsync(Windows.Media.Casting.CastingSource castingSource, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
@@ -107,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Casting.CastingSource")
 interface ICastingSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PreferredSourceUri(Windows.Foundation.Uri* return_value);
 	HRESULT set_PreferredSourceUri(Windows.Foundation.Uri value);

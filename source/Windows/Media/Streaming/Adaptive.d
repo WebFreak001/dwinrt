@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSource")
 interface IAdaptiveMediaSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsLive(bool* return_value);
 	HRESULT get_DesiredLiveOffset(Windows.Foundation.TimeSpan* return_value);
@@ -41,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSource")
 interface IAdaptiveMediaSource2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AdvancedSettings(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceAdvancedSettings* return_value);
 }
@@ -51,8 +47,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSource")
 interface IAdaptiveMediaSource3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MinLiveOffset(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
 	HRESULT get_MaxSeekableWindowSize(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
@@ -66,8 +60,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceAdvancedSettings")
 interface IAdaptiveMediaSourceAdvancedSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AllSegmentsIndependent(bool* return_value);
 	HRESULT set_AllSegmentsIndependent(bool value);
@@ -81,8 +73,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCorrelatedTimes")
 interface IAdaptiveMediaSourceCorrelatedTimes : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
 	HRESULT get_PresentationTimeStamp(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
@@ -93,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult")
 interface IAdaptiveMediaSourceCreationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationStatus* return_value);
 	HRESULT get_MediaSource(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource* return_value);
@@ -105,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult")
 interface IAdaptiveMediaSourceCreationResult2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExtendedError(HRESULT* return_value);
 }
@@ -115,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticAvailableEventArgs")
 interface IAdaptiveMediaSourceDiagnosticAvailableEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DiagnosticType(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticType* return_value);
 	HRESULT get_RequestId(Windows.Foundation.IReference!(INT32)* return_value);
@@ -133,8 +117,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnostics")
 interface IAdaptiveMediaSourceDiagnostics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_DiagnosticAvailable(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnostics, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticAvailableEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DiagnosticAvailable(EventRegistrationToken token);
@@ -144,8 +126,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedEventArgs")
 interface IAdaptiveMediaSourceDownloadBitrateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OldValue(UINT32* return_value);
 	HRESULT get_NewValue(UINT32* return_value);
@@ -155,8 +135,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedEventArgs")
 interface IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reason(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedReason* return_value);
 }
@@ -165,8 +143,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadCompletedEventArgs")
 interface IAdaptiveMediaSourceDownloadCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResourceType(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType* return_value);
 	HRESULT get_ResourceUri(Windows.Foundation.Uri* return_value);
@@ -179,8 +155,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadCompletedEventArgs")
 interface IAdaptiveMediaSourceDownloadCompletedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestId(INT32* return_value);
 	HRESULT get_Statistics(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadStatistics* return_value);
@@ -191,8 +165,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs")
 interface IAdaptiveMediaSourceDownloadFailedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResourceType(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType* return_value);
 	HRESULT get_ResourceUri(Windows.Foundation.Uri* return_value);
@@ -205,8 +177,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs")
 interface IAdaptiveMediaSourceDownloadFailedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestId(INT32* return_value);
 	HRESULT get_ExtendedError(HRESULT* return_value);
@@ -218,8 +188,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedDeferral")
 interface IAdaptiveMediaSourceDownloadRequestedDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -228,8 +196,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedEventArgs")
 interface IAdaptiveMediaSourceDownloadRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResourceType(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType* return_value);
 	HRESULT get_ResourceUri(Windows.Foundation.Uri* return_value);
@@ -243,8 +209,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedEventArgs")
 interface IAdaptiveMediaSourceDownloadRequestedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestId(INT32* return_value);
 	HRESULT get_Position(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
@@ -254,8 +218,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadResult")
 interface IAdaptiveMediaSourceDownloadResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResourceUri(Windows.Foundation.Uri* return_value);
 	HRESULT set_ResourceUri(Windows.Foundation.Uri value);
@@ -273,8 +235,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadResult")
 interface IAdaptiveMediaSourceDownloadResult2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResourceByteRangeOffset(Windows.Foundation.IReference!(UINT64)* return_value);
 	HRESULT set_ResourceByteRangeOffset(Windows.Foundation.IReference!(UINT64) value);
@@ -286,8 +246,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadStatistics")
 interface IAdaptiveMediaSourceDownloadStatistics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentBytesReceivedCount(UINT64* return_value);
 	HRESULT get_TimeToHeadersReceived(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
@@ -299,8 +257,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSourcePlaybackBitrateChangedEventArgs")
 interface IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OldValue(UINT32* return_value);
 	HRESULT get_NewValue(UINT32* return_value);
@@ -311,8 +267,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSource")
 interface IAdaptiveMediaSourceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsContentTypeSupported(HSTRING contentType, bool* return_result);
 	HRESULT abi_CreateFromUriAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult)* return_result);

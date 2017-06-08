@@ -62,8 +62,6 @@ struct TimeSpan
 @uuid("d8f579ab-402d-4b8e-82d9-5d63b1065c68")
 interface IMetaDataTables : IUnknown
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetStringHeapSize(ULONG* out_pcbStrings);
 	HRESULT abi_GetBlobHeapSize(ULONG* out_pcbBlobs);
@@ -89,8 +87,6 @@ extern(Windows):
 @uuid("badb5f70-58da-43a9-a1c6-d74819f19b15")
 interface IMetaDataTables2 : IMetaDataTables
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetMetaDataStorage(const(BYTE)** out_ppvMd, ULONG* out_pcbMd);
 	HRESULT abi_GetMetaDataStreamInfo(ULONG ix, LPCSTR* out_ppchName, const(BYTE)** out_ppv, ULONG* out_pcb);
@@ -99,8 +95,6 @@ extern(Windows):
 @uuid("00000037-0000-0000-c000-000000000046")
 interface IWeakReference : IUnknown
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Resolve(REFIID riid, IInspectable* return_objectReference);
 }
@@ -108,8 +102,6 @@ extern(Windows):
 @uuid("00000038-0000-0000-c000-000000000046")
 interface IWeakReferenceSource : IUnknown
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetWeakReference(IWeakReference* return_weakReference);
 }
@@ -131,8 +123,6 @@ extern(Windows):
 @uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")
 interface IAsyncAction : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Completed(Windows.Foundation.AsyncActionCompletedHandler handler);
 	HRESULT get_Completed(Windows.Foundation.AsyncActionCompletedHandler* return_handler);
@@ -142,8 +132,6 @@ extern(Windows):
 @uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e")
 interface IClosable : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Close();
 }
@@ -152,8 +140,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Deferral")
 interface IDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -162,8 +148,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Deferral")
 interface IDeferralFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Foundation.DeferralCompletedHandler handler, Windows.Foundation.Deferral* return_result);
 }
@@ -171,8 +155,6 @@ extern(Windows):
 @uuid("4edb8ee2-96dd-49a7-94f7-4607ddab8e3c")
 interface IGetActivationFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetActivationFactory(HSTRING activatableClassId, IInspectable* return_factory);
 }
@@ -180,8 +162,6 @@ extern(Windows):
 @uuid("fbc4dd2a-245b-11e4-af98-689423260cf8")
 interface IMemoryBuffer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateReference(Windows.Foundation.IMemoryBufferReference* return_reference);
 }
@@ -190,8 +170,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.MemoryBuffer")
 interface IMemoryBufferFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(UINT32 capacity, Windows.Foundation.MemoryBuffer* return_value);
 }
@@ -199,8 +177,6 @@ extern(Windows):
 @uuid("fbc4dd29-245b-11e4-af98-689423260cf8")
 interface IMemoryBufferReference : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Capacity(UINT32* return_value);
 	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.Foundation.IMemoryBufferReference, IInspectable) handler, EventRegistrationToken* return_cookie);
@@ -210,8 +186,6 @@ extern(Windows):
 @uuid("4bd682dd-7554-40e9-9a9b-82654ede7e62")
 interface IPropertyValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.Foundation.PropertyType* return_value);
 	HRESULT get_IsNumericScalar(bool* return_value);
@@ -258,8 +232,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.PropertyValue")
 interface IPropertyValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateEmpty(IInspectable* return_propertyValue);
 	HRESULT abi_CreateUInt8(BYTE value, IInspectable* return_propertyValue);
@@ -305,8 +277,6 @@ extern(Windows):
 @uuid("96369f54-8eb6-48f0-abce-c1b211e627c3")
 interface IStringable : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ToString(HSTRING* return_value);
 }
@@ -315,8 +285,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Uri")
 interface IUriEscapeStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_UnescapeComponent(HSTRING toUnescape, HSTRING* return_value);
 	HRESULT abi_EscapeComponent(HSTRING toEscape, HSTRING* return_value);
@@ -326,8 +294,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Uri")
 interface IUriRuntimeClass : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AbsoluteUri(HSTRING* return_value);
 	HRESULT get_DisplayUri(HSTRING* return_value);
@@ -352,8 +318,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Uri")
 interface IUriRuntimeClassFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateUri(HSTRING uri, Windows.Foundation.Uri* return_instance);
 	HRESULT abi_CreateWithRelativeUri(HSTRING baseUri, HSTRING relativeUri, Windows.Foundation.Uri* return_instance);
@@ -363,8 +327,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Uri")
 interface IUriRuntimeClassWithAbsoluteCanonicalUri : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AbsoluteCanonicalUri(HSTRING* return_value);
 	HRESULT get_DisplayIri(HSTRING* return_value);
@@ -373,8 +335,6 @@ extern(Windows):
 @uuid("125e7431-f678-4e8e-b670-20a9b06c512d")
 interface IWwwFormUrlDecoderEntry : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Value(HSTRING* return_value);
@@ -384,8 +344,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.WwwFormUrlDecoder")
 interface IWwwFormUrlDecoderRuntimeClass : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetFirstValueByName(HSTRING name, HSTRING* return_phstrValue);
 }
@@ -394,8 +352,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.WwwFormUrlDecoder")
 interface IWwwFormUrlDecoderRuntimeClassFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWwwFormUrlDecoder(HSTRING query, Windows.Foundation.WwwFormUrlDecoder* return_instance);
 }
@@ -502,7 +458,7 @@ struct AwaitAdapter(Async) if (IsAsync!Async)
 
 		callback = f;
 		IContextCallback context;
-		assert(CoGetObjectContext(uuidOf!IContextCallback, cast(void**)&context) == S_OK);
+		Debug.OK(CoGetObjectContext(uuidOf!IContextCallback, cast(void**)&context));
 
 		async.Completed((AsyncStatus) {
 			ComCallData data;
@@ -513,8 +469,8 @@ struct AwaitAdapter(Async) if (IsAsync!Async)
 				return S_OK;
 			};
 
-			assert(context.ContextCallback(cb, &data,
-				IID_ICallbackWithNoReentrancyToApplicationSTA, 5, null) == S_OK);
+			Debug.OK(context.ContextCallback(cb, &data,
+				IID_ICallbackWithNoReentrancyToApplicationSTA, 5, null));
 		});
 	}
 
@@ -551,8 +507,6 @@ extern (Windows):
 
 interface IAsyncActionWithProgress(TProgress) : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern (Windows):
 	HRESULT put_Progress(AsyncActionProgressHandler!TProgress handler);
 	HRESULT get_Progress(AsyncActionProgressHandler!TProgress* handler);
@@ -575,8 +529,6 @@ extern (Windows):
 
 interface IAsyncOperation(TResult) : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern (Windows):
 	HRESULT put_Completed(AsyncOperationCompletedHandler!TResult handler);
 	HRESULT get_Completed(AsyncOperationCompletedHandler!TResult* handler);
@@ -598,8 +550,6 @@ extern (Windows):
 
 interface IAsyncOperationWithProgress(TResult, TProgress) : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern (Windows):
 	HRESULT put_Progress(AsyncOperationProgressHandler!(TResult, TProgress) handler);
 	HRESULT get_Progress(AsyncOperationProgressHandler!(TResult, TProgress)* handler);

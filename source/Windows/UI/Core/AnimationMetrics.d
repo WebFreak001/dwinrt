@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.Core.AnimationMetrics.AnimationDescription")
 interface IAnimationDescription : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Animations(Windows.Foundation.Collections.IVectorView!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)* return_value);
 	HRESULT get_StaggerDelay(Windows.Foundation.TimeSpan* return_value);
@@ -20,8 +18,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.AnimationMetrics.AnimationDescription")
 interface IAnimationDescriptionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(Windows.UI.Core.AnimationMetrics.AnimationEffect effect, Windows.UI.Core.AnimationMetrics.AnimationEffectTarget target, Windows.UI.Core.AnimationMetrics.AnimationDescription* return_animation);
 }
@@ -30,8 +26,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.AnimationMetrics.OpacityAnimation")
 interface IOpacityAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InitialOpacity(Windows.Foundation.IReference!(FLOAT)* return_value);
 	HRESULT get_FinalOpacity(FLOAT* return_value);
@@ -40,8 +34,6 @@ extern(Windows):
 @uuid("3a01b4da-4d8c-411e-b615-1ade683a9903")
 interface IPropertyAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.UI.Core.AnimationMetrics.PropertyAnimationType* return_value);
 	HRESULT get_Delay(Windows.Foundation.TimeSpan* return_value);
@@ -54,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.AnimationMetrics.ScaleAnimation")
 interface IScaleAnimation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InitialScaleX(Windows.Foundation.IReference!(FLOAT)* return_value);
 	HRESULT get_InitialScaleY(Windows.Foundation.IReference!(FLOAT)* return_value);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.EnterpriseData.BufferProtectUnprotectResult")
 interface IBufferProtectUnprotectResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Buffer(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_ProtectionInfo(Windows.Security.EnterpriseData.DataProtectionInfo* return_value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.DataProtectionInfo")
 interface IDataProtectionInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Security.EnterpriseData.DataProtectionStatus* return_value);
 	HRESULT get_Identity(HSTRING* return_value);
@@ -28,8 +24,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.DataProtectionManager")
 interface IDataProtectionManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ProtectAsync(Windows.Storage.Streams.IBuffer data, HSTRING identity, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.BufferProtectUnprotectResult)* return_result);
 	HRESULT abi_UnprotectAsync(Windows.Storage.Streams.IBuffer data, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.BufferProtectUnprotectResult)* return_result);
@@ -43,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.FileProtectionInfo")
 interface IFileProtectionInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Security.EnterpriseData.FileProtectionStatus* return_value);
 	HRESULT get_IsRoamable(bool* return_value);
@@ -55,8 +47,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.FileProtectionManager")
 interface IFileProtectionManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ProtectAsync(Windows.Storage.IStorageItem target, HSTRING identity, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo)* return_result);
 	HRESULT abi_CopyProtectionAsync(Windows.Storage.IStorageItem source, Windows.Storage.IStorageItem target, Windows.Foundation.IAsyncOperation!(bool)* return_result);
@@ -71,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.FileProtectionManager")
 interface IFileProtectionManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsContainerAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(bool)* return_result);
 	HRESULT abi_LoadFileFromContainerWithTargetAndNameCollisionOptionAsync(Windows.Storage.IStorageFile containerFile, Windows.Storage.IStorageItem target, Windows.Storage.NameCollisionOption collisionOption, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerImportResult)* return_result);
@@ -83,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.FileProtectionManager")
 interface IFileProtectionManagerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_UnprotectAsync(Windows.Storage.IStorageItem target, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo)* return_result);
 	HRESULT abi_UnprotectWithOptionsAsync(Windows.Storage.IStorageItem target, Windows.Security.EnterpriseData.FileUnprotectOptions options, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo)* return_result);
@@ -94,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.FileRevocationManager")
 interface IFileRevocationManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")
 	HRESULT abi_ProtectAsync(Windows.Storage.IStorageItem storageItem, HSTRING enterpriseIdentity, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionStatus)* return_result);
@@ -111,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.FileUnprotectOptions")
 interface IFileUnprotectOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Audit(bool value);
 	HRESULT get_Audit(bool* return_value);
@@ -122,8 +104,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.FileUnprotectOptions")
 interface IFileUnprotectOptionsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(bool audit, Windows.Security.EnterpriseData.FileUnprotectOptions* return_result);
 }
@@ -132,8 +112,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectedAccessResumedEventArgs")
 interface IProtectedAccessResumedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Identities(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 }
@@ -142,8 +120,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectedAccessSuspendingEventArgs")
 interface IProtectedAccessSuspendingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Identities(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 	HRESULT get_Deadline(Windows.Foundation.DateTime* return_value);
@@ -154,8 +130,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectedContainerExportResult")
 interface IProtectedContainerExportResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Security.EnterpriseData.ProtectedImportExportStatus* return_value);
 	HRESULT get_File(Windows.Storage.StorageFile* return_value);
@@ -165,8 +139,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectedContainerImportResult")
 interface IProtectedContainerImportResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Security.EnterpriseData.ProtectedImportExportStatus* return_value);
 	HRESULT get_File(Windows.Storage.StorageFile* return_value);
@@ -176,8 +148,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectedContentRevokedEventArgs")
 interface IProtectedContentRevokedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Identities(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 }
@@ -186,8 +156,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectedFileCreateResult")
 interface IProtectedFileCreateResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_File(Windows.Storage.StorageFile* return_value);
 	HRESULT get_Stream(Windows.Storage.Streams.IRandomAccessStream* return_value);
@@ -198,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo")
 interface IProtectionPolicyAuditInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Action(Windows.Security.EnterpriseData.ProtectionPolicyAuditAction value);
 	HRESULT get_Action(Windows.Security.EnterpriseData.ProtectionPolicyAuditAction* return_value);
@@ -215,8 +181,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo")
 interface IProtectionPolicyAuditInfoFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Security.EnterpriseData.ProtectionPolicyAuditAction action, HSTRING dataDescription, HSTRING sourceDescription, HSTRING targetDescription, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo* return_result);
 	HRESULT abi_CreateWithActionAndDataDescription(Windows.Security.EnterpriseData.ProtectionPolicyAuditAction action, HSTRING dataDescription, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo* return_result);
@@ -226,8 +190,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectionPolicyManager")
 interface IProtectionPolicyManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Identity(HSTRING value);
 	HRESULT get_Identity(HSTRING* return_value);
@@ -237,8 +199,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectionPolicyManager")
 interface IProtectionPolicyManager2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ShowEnterpriseIndicator(bool value);
 	HRESULT get_ShowEnterpriseIndicator(bool* return_value);
@@ -248,8 +208,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectionPolicyManager")
 interface IProtectionPolicyManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsIdentityManaged(HSTRING identity, bool* return_result);
 	HRESULT abi_TryApplyProcessUIPolicy(HSTRING identity, bool* return_result);
@@ -272,8 +230,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectionPolicyManager")
 interface IProtectionPolicyManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_HasContentBeenRevokedSince(HSTRING identity, Windows.Foundation.DateTime since, bool* return_result);
 	HRESULT abi_CheckAccessForApp(HSTRING sourceIdentity, HSTRING appPackageFamilyName, Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult* return_result);
@@ -290,8 +246,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectionPolicyManager")
 interface IProtectionPolicyManagerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestAccessWithAuditingInfoAsync(HSTRING sourceIdentity, HSTRING targetIdentity, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
 	HRESULT abi_RequestAccessWithMessageAsync(HSTRING sourceIdentity, HSTRING targetIdentity, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
@@ -304,8 +258,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.EnterpriseData.ProtectionPolicyManager")
 interface IProtectionPolicyManagerStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsRoamableProtectionEnabled(HSTRING identity, bool* return_value);
 	HRESULT abi_RequestAccessWithBehaviorAsync(HSTRING sourceIdentity, HSTRING targetIdentity, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior behavior, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);

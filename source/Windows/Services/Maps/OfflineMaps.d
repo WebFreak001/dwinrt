@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Services.Maps.OfflineMaps.OfflineMapPackage")
 interface IOfflineMapPackage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStatus* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -22,8 +20,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult")
 interface IOfflineMapPackageQueryResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryStatus* return_value);
 	HRESULT get_Packages(Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.OfflineMaps.OfflineMapPackage)* return_value);
@@ -33,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadResult")
 interface IOfflineMapPackageStartDownloadResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadStatus* return_value);
 }
@@ -43,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.Services.Maps.OfflineMaps.OfflineMapPackage")
 interface IOfflineMapPackageStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindPackagesAsync(Windows.Devices.Geolocation.Geopoint queryPoint, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult)* return_result);
 	HRESULT abi_FindPackagesInBoundingBoxAsync(Windows.Devices.Geolocation.GeoboundingBox queryBoundingBox, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult)* return_result);

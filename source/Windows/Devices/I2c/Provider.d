@@ -11,8 +11,6 @@ struct ProviderI2cTransferResult
 @uuid("61c2bb82-4510-4163-a87c-4e15a9558980")
 interface II2cControllerProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceProvider(Windows.Devices.I2c.Provider.ProviderI2cConnectionSettings settings, Windows.Devices.I2c.Provider.II2cDeviceProvider* return_device);
 }
@@ -20,8 +18,6 @@ extern(Windows):
 @uuid("ad342654-57e8-453e-8329-d1e447d103a9")
 interface II2cDeviceProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT abi_Write(UINT32 __bufferSize, BYTE* buffer);
@@ -35,8 +31,6 @@ extern(Windows):
 @uuid("6f13083e-bf62-4fe2-a95a-f08999669818")
 interface II2cProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetControllersAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.I2c.Provider.II2cControllerProvider))* return_operation);
 }
@@ -45,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.I2c.Provider.ProviderI2cConnectionSettings")
 interface IProviderI2cConnectionSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SlaveAddress(INT32* return_value);
 	HRESULT set_SlaveAddress(INT32 value);

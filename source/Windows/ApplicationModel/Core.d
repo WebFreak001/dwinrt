@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Core.AppListEntry")
 interface IAppListEntry : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayInfo(Windows.ApplicationModel.AppDisplayInfo* return_value);
 	HRESULT abi_LaunchAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.CoreApplication")
 interface ICoreApplication : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT add_Suspending(Windows.Foundation.EventHandler!(Windows.ApplicationModel.SuspendingEventArgs) handler, EventRegistrationToken* return_token);
@@ -35,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.CoreApplication")
 interface ICoreApplication2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_BackgroundActivated(Windows.Foundation.EventHandler!(Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_BackgroundActivated(EventRegistrationToken token);
@@ -51,8 +45,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.CoreApplication")
 interface ICoreApplicationExit : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Exit();
 	HRESULT add_Exiting(Windows.Foundation.EventHandler!(IInspectable) handler, EventRegistrationToken* return_token);
@@ -62,8 +54,6 @@ extern(Windows):
 @uuid("f0e24ab0-dd09-42e1-b0bc-e0e131f78d7e")
 interface ICoreApplicationUnhandledError : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_UnhandledErrorDetected(Windows.Foundation.EventHandler!(Windows.ApplicationModel.Core.UnhandledErrorDetectedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_UnhandledErrorDetected(EventRegistrationToken token);
@@ -73,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.CoreApplication")
 interface ICoreApplicationUseCount : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IncrementApplicationUseCount();
 	HRESULT abi_DecrementApplicationUseCount();
@@ -84,8 +72,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.CoreApplicationView")
 interface ICoreApplicationView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CoreWindow(Windows.UI.Core.CoreWindow* return_value);
 	HRESULT add_Activated(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Activation.IActivatedEventArgs) handler, EventRegistrationToken* return_token);
@@ -98,8 +84,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.CoreApplicationView")
 interface ICoreApplicationView2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value);
 }
@@ -108,8 +92,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.CoreApplicationView")
 interface ICoreApplicationView3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsComponent(bool* return_value);
 	HRESULT get_TitleBar(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar* return_value);
@@ -121,8 +103,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.CoreApplicationView")
 interface ICoreApplicationView5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Properties(Windows.Foundation.Collections.IPropertySet* return_value);
 }
@@ -131,8 +111,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.CoreApplicationViewTitleBar")
 interface ICoreApplicationViewTitleBar : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ExtendViewIntoTitleBar(bool value);
 	HRESULT get_ExtendViewIntoTitleBar(bool* return_value);
@@ -150,8 +128,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.CoreApplication")
 interface ICoreImmersiveApplication : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Views(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Core.CoreApplicationView)* return_value);
 	HRESULT abi_CreateNewView(HSTRING runtimeType, HSTRING entryPoint, Windows.ApplicationModel.Core.CoreApplicationView* return_view);
@@ -162,8 +138,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.CoreApplication")
 interface ICoreImmersiveApplication2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateNewViewFromMainView(Windows.ApplicationModel.Core.CoreApplicationView* return_view);
 }
@@ -172,8 +146,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.CoreApplication")
 interface ICoreImmersiveApplication3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateNewViewWithViewSource(Windows.ApplicationModel.Core.IFrameworkViewSource viewSource, Windows.ApplicationModel.Core.CoreApplicationView* return_view);
 }
@@ -181,8 +153,6 @@ extern(Windows):
 @uuid("faab5cd0-8924-45ac-ad0f-a08fae5d0324")
 interface IFrameworkView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Initialize(Windows.ApplicationModel.Core.CoreApplicationView applicationView);
 	HRESULT abi_SetWindow(Windows.UI.Core.CoreWindow window);
@@ -194,8 +164,6 @@ extern(Windows):
 @uuid("cd770614-65c4-426c-9494-34fc43554862")
 interface IFrameworkViewSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateView(Windows.ApplicationModel.Core.IFrameworkView* return_viewProvider);
 }
@@ -204,8 +172,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.HostedViewClosingEventArgs")
 interface IHostedViewClosingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_result);
 }
@@ -214,8 +180,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.UnhandledError")
 interface IUnhandledError : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT abi_Propagate();
@@ -225,8 +189,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Core.UnhandledErrorDetectedEventArgs")
 interface IUnhandledErrorDetectedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UnhandledError(Windows.ApplicationModel.Core.UnhandledError* return_value);
 }

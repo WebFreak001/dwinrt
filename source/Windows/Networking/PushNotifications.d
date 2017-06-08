@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Networking.PushNotifications.PushNotificationChannel")
 interface IPushNotificationChannel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Uri(HSTRING* return_value);
 	HRESULT get_ExpirationTime(Windows.Foundation.DateTime* return_value);
@@ -20,8 +18,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.PushNotifications.PushNotificationChannelManagerForUser")
 interface IPushNotificationChannelManagerForUser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreatePushNotificationChannelForApplicationAsync(Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
 	HRESULT abi_CreatePushNotificationChannelForApplicationAsyncWithId(HSTRING applicationId, Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
@@ -33,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.PushNotifications.PushNotificationChannelManagerForUser")
 interface IPushNotificationChannelManagerForUser2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(Windows.Storage.Streams.IBuffer appServerKey, HSTRING channelId, Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
 	HRESULT abi_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsyncWithId(Windows.Storage.Streams.IBuffer appServerKey, HSTRING channelId, HSTRING appId, Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
@@ -44,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.PushNotifications.PushNotificationChannelManager")
 interface IPushNotificationChannelManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreatePushNotificationChannelForApplicationAsync(Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
 	HRESULT abi_CreatePushNotificationChannelForApplicationAsyncWithId(HSTRING applicationId, Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
@@ -56,8 +48,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.PushNotifications.PushNotificationChannelManager")
 interface IPushNotificationChannelManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.Networking.PushNotifications.PushNotificationChannelManagerForUser* return_result);
 }
@@ -66,8 +56,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.PushNotifications.PushNotificationChannelManager")
 interface IPushNotificationChannelManagerStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Networking.PushNotifications.PushNotificationChannelManagerForUser* return_value);
 }
@@ -76,8 +64,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs")
 interface IPushNotificationReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Cancel(bool value);
 	HRESULT get_Cancel(bool* return_value);
@@ -92,8 +78,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.PushNotifications.RawNotification")
 interface IRawNotification : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(HSTRING* return_value);
 }
@@ -102,8 +86,6 @@ extern(Windows):
 @WinrtFactory("Windows.Networking.PushNotifications.RawNotification")
 interface IRawNotification2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Headers(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING)* return_value);
 	HRESULT get_ChannelId(HSTRING* return_value);

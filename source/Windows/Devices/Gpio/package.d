@@ -18,8 +18,6 @@ struct GpioChangeRecord
 @WinrtFactory("Windows.Devices.Gpio.GpioChangeCounter")
 interface IGpioChangeCounter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Polarity(Windows.Devices.Gpio.GpioChangePolarity value);
 	HRESULT get_Polarity(Windows.Devices.Gpio.GpioChangePolarity* return_value);
@@ -34,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Gpio.GpioChangeCounter")
 interface IGpioChangeCounterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Gpio.GpioPin pin, Windows.Devices.Gpio.GpioChangeCounter* return_value);
 }
@@ -44,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Gpio.GpioChangeReader")
 interface IGpioChangeReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Capacity(INT32* return_value);
 	HRESULT get_Length(INT32* return_value);
@@ -67,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Gpio.GpioChangeReader")
 interface IGpioChangeReaderFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Gpio.GpioPin pin, Windows.Devices.Gpio.GpioChangeReader* return_value);
 	HRESULT abi_CreateWithCapacity(Windows.Devices.Gpio.GpioPin pin, INT32 minCapacity, Windows.Devices.Gpio.GpioChangeReader* return_value);
@@ -78,8 +70,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Gpio.GpioController")
 interface IGpioController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PinCount(INT32* return_value);
 	HRESULT abi_OpenPin(INT32 pinNumber, Windows.Devices.Gpio.GpioPin* return_pin);
@@ -91,8 +81,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Gpio.GpioController")
 interface IGpioControllerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Devices.Gpio.GpioController* return_value);
 }
@@ -101,8 +89,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Gpio.GpioController")
 interface IGpioControllerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetControllersAsync(Windows.Devices.Gpio.Provider.IGpioProvider provider, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Gpio.GpioController))* return_operation);
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Gpio.GpioController)* return_operation);
@@ -112,8 +98,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Gpio.GpioPin")
 interface IGpioPin : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_ValueChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ValueChanged(EventRegistrationToken token);
@@ -132,8 +116,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Gpio.GpioPinValueChangedEventArgs")
 interface IGpioPinValueChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Edge(Windows.Devices.Gpio.GpioPinEdge* return_value);
 }

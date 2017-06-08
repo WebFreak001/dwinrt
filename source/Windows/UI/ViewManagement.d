@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.ViewManagement.AccessibilitySettings")
 interface IAccessibilitySettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HighContrast(bool* return_value);
 	HRESULT get_HighContrastScheme(HSTRING* return_value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ActivationViewSwitcher")
 interface IActivationViewSwitcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowAsStandaloneAsync(INT32 viewId, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_ShowAsStandaloneWithSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference, Windows.Foundation.IAsyncAction* return_operation);
@@ -31,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationView")
 interface IApplicationView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Orientation(Windows.UI.ViewManagement.ApplicationViewOrientation* return_value);
 	HRESULT get_AdjacentToLeftDisplayEdge(bool* return_value);
@@ -53,8 +47,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationView")
 interface IApplicationView2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Use the TryEnterFullScreen method and IsFullScreenMode property instead of SuppressSystemOverlays. For more info, see MSDN.")
 	HRESULT get_SuppressSystemOverlays(bool* return_value);
@@ -71,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationView")
 interface IApplicationView3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TitleBar(Windows.UI.ViewManagement.ApplicationViewTitleBar* return_value);
 	HRESULT get_FullScreenSystemOverlayMode(Windows.UI.ViewManagement.FullScreenSystemOverlayMode* return_value);
@@ -89,8 +79,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationView")
 interface IApplicationView4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ViewMode(Windows.UI.ViewManagement.ApplicationViewMode* return_value);
 	HRESULT abi_IsViewModeSupported(Windows.UI.ViewManagement.ApplicationViewMode viewMode, bool* return_isViewModeSupported);
@@ -103,8 +91,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs")
 interface IApplicationViewConsolidatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsUserInitiated(bool* return_value);
 }
@@ -113,8 +99,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs")
 interface IApplicationViewConsolidatedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsAppInitiated(bool* return_value);
 }
@@ -123,8 +107,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationView")
 interface IApplicationViewFullscreenStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("IApplicationViewFullscreenStatics is deprecated after Windows 8. Please use other resize APIs.")
 	HRESULT abi_TryUnsnapToFullscreen(bool* return_success);
@@ -134,8 +116,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationView")
 interface IApplicationViewInteropStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetApplicationViewIdForWindow(Windows.UI.Core.ICoreWindow window, INT32* return_id);
 }
@@ -150,8 +130,6 @@ interface IApplicationViewScaling : IInspectable
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationViewScaling")
 interface IApplicationViewScalingStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisableLayoutScaling(bool* return_value);
 	HRESULT abi_TrySetDisableLayoutScaling(bool disableLayoutScaling, bool* return_success);
@@ -161,8 +139,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationView")
 interface IApplicationViewStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Value may be altered or unavailable for releases after Windows 8.1. Instead, query for window layout sizes directly.")
 	HRESULT get_Value(Windows.UI.ViewManagement.ApplicationViewState* return_value);
@@ -174,8 +150,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationView")
 interface IApplicationViewStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.ViewManagement.ApplicationView* return_current);
 	HRESULT get_TerminateAppOnFinalViewClose(bool* return_value);
@@ -186,8 +160,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationView")
 interface IApplicationViewStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PreferredLaunchWindowingMode(Windows.UI.ViewManagement.ApplicationViewWindowingMode* return_value);
 	HRESULT set_PreferredLaunchWindowingMode(Windows.UI.ViewManagement.ApplicationViewWindowingMode value);
@@ -199,8 +171,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationViewSwitcher")
 interface IApplicationViewSwitcherStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_DisableShowingMainViewOnActivation();
 	HRESULT abi_TryShowAsStandaloneAsync(INT32 viewId, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -216,8 +186,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationViewSwitcher")
 interface IApplicationViewSwitcherStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_DisableSystemViewActivationPolicy();
 }
@@ -226,8 +194,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationViewSwitcher")
 interface IApplicationViewSwitcherStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryShowAsViewModeAsync(INT32 viewId, Windows.UI.ViewManagement.ApplicationViewMode viewMode, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_TryShowAsViewModeWithPreferencesAsync(INT32 viewId, Windows.UI.ViewManagement.ApplicationViewMode viewMode, Windows.UI.ViewManagement.ViewModePreferences viewModePreferences, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -237,8 +203,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationViewTitleBar")
 interface IApplicationViewTitleBar : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_ForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value);
 	HRESULT get_ForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color)* return_value);
@@ -270,8 +234,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationViewTransferContext")
 interface IApplicationViewTransferContext : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ViewId(INT32* return_value);
 	HRESULT set_ViewId(INT32 value);
@@ -281,8 +243,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationViewTransferContext")
 interface IApplicationViewTransferContextStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DataPackageFormatId(HSTRING* return_value);
 }
@@ -291,8 +251,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.InputPane")
 interface IInputPane : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_Showing(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Showing(EventRegistrationToken token);
@@ -305,8 +263,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.InputPane")
 interface IInputPane2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryShow(bool* return_result);
 	HRESULT abi_TryHide(bool* return_result);
@@ -316,8 +272,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.InputPane")
 interface IInputPaneControl : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Visible(bool* return_value);
 	HRESULT set_Visible(bool value);
@@ -327,8 +281,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.InputPane")
 interface IInputPaneStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.ViewManagement.InputPane* return_inputPane);
 }
@@ -337,8 +289,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.InputPaneVisibilityEventArgs")
 interface IInputPaneVisibilityEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OccludedRect(Windows.Foundation.Rect* return_value);
 	HRESULT set_EnsuredFocusedElementInView(bool value);
@@ -349,8 +299,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ProjectionManager")
 interface IProjectionManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_StartProjectingAsync(INT32 projectionViewId, INT32 anchorViewId, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_SwapDisplaysForViewsAsync(INT32 projectionViewId, INT32 anchorViewId, Windows.Foundation.IAsyncAction* return_operation);
@@ -364,8 +312,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ProjectionManager")
 interface IProjectionManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_StartProjectingWithDeviceInfoAsync(INT32 projectionViewId, INT32 anchorViewId, Windows.Devices.Enumeration.DeviceInformation displayDeviceInfo, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_RequestStartProjectingAsync(INT32 projectionViewId, INT32 anchorViewId, Windows.Foundation.Rect selection, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -377,8 +323,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.UISettings")
 interface IUISettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HandPreference(Windows.UI.ViewManagement.HandPreference* return_value);
 	HRESULT get_CursorSize(Windows.Foundation.Size* return_value);
@@ -399,8 +343,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.UISettings")
 interface IUISettings2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextScaleFactor(double* return_value);
 	HRESULT add_TextScaleFactorChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable) handler, EventRegistrationToken* return_cookie);
@@ -411,8 +353,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.UISettings")
 interface IUISettings3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetColorValue(Windows.UI.ViewManagement.UIColorType desiredColor, Windows.UI.Color* return_value);
 	HRESULT add_ColorValuesChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable) handler, EventRegistrationToken* return_cookie);
@@ -423,8 +363,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.UISettings")
 interface IUISettings4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AdvancedEffectsEnabled(bool* return_value);
 	HRESULT add_AdvancedEffectsEnabledChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable) handler, EventRegistrationToken* return_cookie);
@@ -435,8 +373,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.UIViewSettings")
 interface IUIViewSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UserInteractionMode(Windows.UI.ViewManagement.UserInteractionMode* return_value);
 }
@@ -445,8 +381,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.UIViewSettings")
 interface IUIViewSettingsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.ViewManagement.UIViewSettings* return_current);
 }
@@ -455,8 +389,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ViewModePreferences")
 interface IViewModePreferences : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ViewSizePreference(Windows.UI.ViewManagement.ViewSizePreference* return_value);
 	HRESULT set_ViewSizePreference(Windows.UI.ViewManagement.ViewSizePreference value);
@@ -468,8 +400,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ViewManagement.ViewModePreferences")
 interface IViewModePreferencesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateDefault(Windows.UI.ViewManagement.ApplicationViewMode mode, Windows.UI.ViewManagement.ViewModePreferences* return_result);
 }

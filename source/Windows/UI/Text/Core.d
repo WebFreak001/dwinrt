@@ -12,8 +12,6 @@ struct CoreTextRange
 @WinrtFactory("Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs")
 interface ICoreTextCompositionCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsCanceled(bool* return_value);
 	HRESULT get_CompositionSegments(Windows.Foundation.Collections.IVectorView!(Windows.UI.Text.Core.CoreTextCompositionSegment)* return_value);
@@ -24,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextCompositionSegment")
 interface ICoreTextCompositionSegment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PreconversionString(HSTRING* return_value);
 	HRESULT get_Range(Windows.UI.Text.Core.CoreTextRange* return_value);
@@ -35,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs")
 interface ICoreTextCompositionStartedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsCanceled(bool* return_value);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
@@ -46,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextEditContext")
 interface ICoreTextEditContext : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT set_Name(HSTRING value);
@@ -86,8 +78,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextEditContext")
 interface ICoreTextEditContext2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_NotifyFocusLeaveCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_NotifyFocusLeaveCompleted(EventRegistrationToken cookie);
@@ -97,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs")
 interface ICoreTextFormatUpdatingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Range(Windows.UI.Text.Core.CoreTextRange* return_value);
 	HRESULT get_TextColor(Windows.Foundation.IReference!(Windows.UI.ViewManagement.UIElementType)* return_value);
@@ -116,8 +104,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextLayoutBounds")
 interface ICoreTextLayoutBounds : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TextBounds(Windows.Foundation.Rect* return_value);
 	HRESULT set_TextBounds(Windows.Foundation.Rect value);
@@ -129,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextLayoutRequest")
 interface ICoreTextLayoutRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Range(Windows.UI.Text.Core.CoreTextRange* return_value);
 	HRESULT get_LayoutBounds(Windows.UI.Text.Core.CoreTextLayoutBounds* return_value);
@@ -142,8 +126,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs")
 interface ICoreTextLayoutRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.UI.Text.Core.CoreTextLayoutRequest* return_value);
 }
@@ -152,8 +134,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextSelectionRequest")
 interface ICoreTextSelectionRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Selection(Windows.UI.Text.Core.CoreTextRange* return_value);
 	HRESULT set_Selection(Windows.UI.Text.Core.CoreTextRange value);
@@ -165,8 +145,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs")
 interface ICoreTextSelectionRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.UI.Text.Core.CoreTextSelectionRequest* return_value);
 }
@@ -175,8 +153,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs")
 interface ICoreTextSelectionUpdatingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Selection(Windows.UI.Text.Core.CoreTextRange* return_value);
 	HRESULT get_Result(Windows.UI.Text.Core.CoreTextSelectionUpdatingResult* return_value);
@@ -189,8 +165,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextServicesManager")
 interface ICoreTextServicesManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InputLanguage(Windows.Globalization.Language* return_value);
 	HRESULT add_InputLanguageChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextServicesManager, IInspectable) handler, EventRegistrationToken* return_cookie);
@@ -202,8 +176,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextServicesManager")
 interface ICoreTextServicesManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.Text.Core.CoreTextServicesManager* return_value);
 }
@@ -212,8 +184,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextServicesConstants")
 interface ICoreTextServicesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HiddenCharacter(WCHAR* return_value);
 }
@@ -222,8 +192,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextTextRequest")
 interface ICoreTextTextRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Range(Windows.UI.Text.Core.CoreTextRange* return_value);
 	HRESULT get_Text(HSTRING* return_value);
@@ -236,8 +204,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextTextRequestedEventArgs")
 interface ICoreTextTextRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.UI.Text.Core.CoreTextTextRequest* return_value);
 }
@@ -246,8 +212,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs")
 interface ICoreTextTextUpdatingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Range(Windows.UI.Text.Core.CoreTextRange* return_value);
 	HRESULT get_Text(HSTRING* return_value);

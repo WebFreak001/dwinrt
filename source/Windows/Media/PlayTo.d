@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.PlayTo.CurrentTimeChangeRequestedEventArgs")
 interface ICurrentTimeChangeRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Time(Windows.Foundation.TimeSpan* return_value);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.MuteChangeRequestedEventArgs")
 interface IMuteChangeRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Mute(bool* return_value);
 }
@@ -26,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlayToConnection")
 interface IPlayToConnection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	HRESULT get_State(Windows.Media.PlayTo.PlayToConnectionState* return_value);
@@ -49,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlayToConnectionErrorEventArgs")
 interface IPlayToConnectionErrorEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PlayToConnectionErrorEventArgs may be altered or unavailable for releases after Windows 10. Instead, use CastingConnectionErrorOccurredEventArgs.")
 	HRESULT get_Code(Windows.Media.PlayTo.PlayToConnectionError* return_value);
@@ -62,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlayToConnectionStateChangedEventArgs")
 interface IPlayToConnectionStateChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PlayToConnectionStateChangedEventArgs may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_PreviousState(Windows.Media.PlayTo.PlayToConnectionState* return_value);
@@ -75,8 +65,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlayToConnectionTransferredEventArgs")
 interface IPlayToConnectionTransferredEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PlayToConnectionTransferredEventArgs may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_PreviousSource(Windows.Media.PlayTo.PlayToSource* return_value);
@@ -88,8 +76,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlayToManager")
 interface IPlayToManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
 	HRESULT add_SourceRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceRequestedEventArgs) handler, EventRegistrationToken* return_token);
@@ -109,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlayToManager")
 interface IPlayToManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
 	HRESULT abi_GetForCurrentView(Windows.Media.PlayTo.PlayToManager* return_playToManager);
@@ -122,8 +106,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlayToReceiver")
 interface IPlayToReceiver : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_PlayRequested(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PlayRequested(EventRegistrationToken token);
@@ -172,8 +154,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlayToSource")
 interface IPlayToSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")
 	HRESULT get_Connection(Windows.Media.PlayTo.PlayToConnection* return_value);
@@ -189,8 +169,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlayToSourceDeferral")
 interface IPlayToSourceDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PlayToSourceDeferral may be altered or unavailable for releases after Windows 10.")
 	HRESULT abi_Complete();
@@ -200,8 +178,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlayToSourceRequest")
 interface IPlayToSourceRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_Deadline(Windows.Foundation.DateTime* return_value);
@@ -217,8 +193,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlayToSourceRequestedEventArgs")
 interface IPlayToSourceRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PlayToSourceRequestedEventArgs may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_SourceRequest(Windows.Media.PlayTo.PlayToSourceRequest* return_value);
@@ -228,8 +202,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlayToSourceSelectedEventArgs")
 interface IPlayToSourceSelectedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_FriendlyName(HSTRING* return_value);
@@ -247,8 +219,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlayToSource")
 interface IPlayToSourceWithPreferredSourceUri : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("PlayToSourceWithPreferredSourceUri may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")
 	HRESULT get_PreferredSourceUri(Windows.Foundation.Uri* return_value);
@@ -260,8 +230,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.PlaybackRateChangeRequestedEventArgs")
 interface IPlaybackRateChangeRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Rate(double* return_value);
 }
@@ -270,8 +238,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.SourceChangeRequestedEventArgs")
 interface ISourceChangeRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Stream(Windows.Storage.Streams.IRandomAccessStreamWithContentType* return_value);
 	HRESULT get_Title(HSTRING* return_value);
@@ -289,8 +255,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.PlayTo.VolumeChangeRequestedEventArgs")
 interface IVolumeChangeRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Volume(double* return_value);
 }

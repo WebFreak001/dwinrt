@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs")
 interface ISystemNavigationCloseRequestedPreviewEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.Preview.SystemNavigationManagerPreview")
 interface ISystemNavigationManagerPreview : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_CloseRequested(Windows.Foundation.EventHandler!(Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CloseRequested(EventRegistrationToken token);
@@ -29,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Core.Preview.SystemNavigationManagerPreview")
 interface ISystemNavigationManagerPreviewStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.Core.Preview.SystemNavigationManagerPreview* return_loader);
 }

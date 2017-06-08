@@ -26,8 +26,6 @@ struct Matrix3D
 @WinrtFactory("Windows.UI.Xaml.Media.Media3D.CompositeTransform3D")
 interface ICompositeTransform3D : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CenterX(double* return_value);
 	HRESULT set_CenterX(double value);
@@ -59,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Media3D.CompositeTransform3D")
 interface ICompositeTransform3DStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CenterXProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_CenterYProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -86,8 +82,6 @@ interface IMatrix3DHelper : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Media3D.Matrix3DHelper")
 interface IMatrix3DHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Identity(Windows.UI.Xaml.Media.Media3D.Matrix3D* return_value);
 	HRESULT abi_Multiply(Windows.UI.Xaml.Media.Media3D.Matrix3D matrix1, Windows.UI.Xaml.Media.Media3D.Matrix3D matrix2, Windows.UI.Xaml.Media.Media3D.Matrix3D* return_returnValue);
@@ -101,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Media3D.PerspectiveTransform3D")
 interface IPerspectiveTransform3D : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Depth(double* return_value);
 	HRESULT set_Depth(double value);
@@ -116,8 +108,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Media.Media3D.PerspectiveTransform3D")
 interface IPerspectiveTransform3DStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DepthProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_OffsetXProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -134,8 +124,6 @@ interface ITransform3D : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Media.Media3D.Transform3D")
 interface ITransform3DFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Media3D.Transform3D* return_instance);
 }

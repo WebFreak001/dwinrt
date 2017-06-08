@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Foundation.Diagnostics.AsyncCausalityTracer")
 interface IAsyncCausalityTracerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TraceOperationCreation(Windows.Foundation.Diagnostics.CausalityTraceLevel traceLevel, Windows.Foundation.Diagnostics.CausalitySource source, GUID platformId, UINT64 operationId, HSTRING operationName, UINT64 relatedContext);
 	HRESULT abi_TraceOperationCompletion(Windows.Foundation.Diagnostics.CausalityTraceLevel traceLevel, Windows.Foundation.Diagnostics.CausalitySource source, GUID platformId, UINT64 operationId, AsyncStatus status);
@@ -22,8 +20,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.ErrorDetails")
 interface IErrorDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Description(HSTRING* return_value);
 	HRESULT get_LongDescription(HSTRING* return_value);
@@ -34,8 +30,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.ErrorDetails")
 interface IErrorDetailsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromHResultAsync(INT32 errorCode, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Diagnostics.ErrorDetails)* return_operation);
 }
@@ -43,8 +37,6 @@ extern(Windows):
 @uuid("16369792-b03e-4ba1-8bb8-d28f4ab4d2c0")
 interface IErrorReportingSettings : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetErrorOptions(Windows.Foundation.Diagnostics.ErrorOptions value);
 	HRESULT abi_GetErrorOptions(Windows.Foundation.Diagnostics.ErrorOptions* return_value);
@@ -53,8 +45,6 @@ extern(Windows):
 @uuid("24c74216-fed2-404c-895f-1f9699cb02f7")
 interface IFileLoggingSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT abi_AddLoggingChannel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel);
@@ -69,8 +59,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.FileLoggingSession")
 interface IFileLoggingSessionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING name, Windows.Foundation.Diagnostics.FileLoggingSession* return_result);
 }
@@ -79,8 +67,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs")
 interface ILogFileGeneratedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_File(Windows.Storage.StorageFile* return_value);
 }
@@ -89,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingActivity")
 interface ILoggingActivity : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Id(GUID* return_value);
@@ -100,8 +84,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingActivity")
 interface ILoggingActivity2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Channel(Windows.Foundation.Diagnostics.LoggingChannel* return_value);
 	HRESULT abi_StopActivity(HSTRING stopEventName);
@@ -113,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingActivity")
 interface ILoggingActivityFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateLoggingActivity(HSTRING activityName, Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel, Windows.Foundation.Diagnostics.LoggingActivity* return_loggingActivity);
 	HRESULT abi_CreateLoggingActivityWithLevel(HSTRING activityName, Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel, Windows.Foundation.Diagnostics.LoggingLevel level, Windows.Foundation.Diagnostics.LoggingActivity* return_loggingActivity);
@@ -123,8 +103,6 @@ extern(Windows):
 @uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8")
 interface ILoggingChannel : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Enabled(bool* return_value);
@@ -141,8 +119,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingChannel")
 interface ILoggingChannel2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(GUID* return_value);
 }
@@ -151,8 +127,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingChannel")
 interface ILoggingChannelFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("This constructor creates a LoggingChannel in Windows 8.1 compatibility mode. Prefer the two-parameter constructor.")
 	HRESULT abi_Create(HSTRING name, Windows.Foundation.Diagnostics.LoggingChannel* return_result);
@@ -162,8 +136,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingChannel")
 interface ILoggingChannelFactory2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithOptions(HSTRING name, Windows.Foundation.Diagnostics.LoggingChannelOptions options, Windows.Foundation.Diagnostics.LoggingChannel* return_result);
 	HRESULT abi_CreateWithOptionsAndId(HSTRING name, Windows.Foundation.Diagnostics.LoggingChannelOptions options, GUID id, Windows.Foundation.Diagnostics.LoggingChannel* return_result);
@@ -173,8 +145,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingChannelOptions")
 interface ILoggingChannelOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Group(GUID* return_value);
 	HRESULT set_Group(GUID value);
@@ -184,8 +154,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingChannelOptions")
 interface ILoggingChannelOptionsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(GUID group, Windows.Foundation.Diagnostics.LoggingChannelOptions* return_result);
 }
@@ -194,8 +162,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingFields")
 interface ILoggingFields : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Clear();
 	HRESULT abi_BeginStruct(HSTRING name);
@@ -318,8 +284,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingOptions")
 interface ILoggingOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Keywords(INT64* return_value);
 	HRESULT set_Keywords(INT64 value);
@@ -339,8 +303,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingOptions")
 interface ILoggingOptionsFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithKeywords(INT64 keywords, Windows.Foundation.Diagnostics.LoggingOptions* return_result);
 }
@@ -348,8 +310,6 @@ extern(Windows):
 @uuid("6221f306-9380-4ad7-baf5-41ea9310d768")
 interface ILoggingSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT abi_SaveToFileAsync(Windows.Storage.IStorageFolder folder, HSTRING fileName, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
@@ -362,8 +322,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingSession")
 interface ILoggingSessionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING name, Windows.Foundation.Diagnostics.LoggingSession* return_result);
 }
@@ -371,8 +329,6 @@ extern(Windows):
 @uuid("65f16c35-e388-4e26-b17a-f51cd3a83916")
 interface ILoggingTarget : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsEnabled(bool* return_result);
 	HRESULT abi_IsEnabledWithLevel(Windows.Foundation.Diagnostics.LoggingLevel level, bool* return_result);
@@ -391,8 +347,6 @@ extern(Windows):
 @WinrtFactory("Windows.Foundation.Diagnostics.TracingStatusChangedEventArgs")
 interface ITracingStatusChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Enabled(bool* return_enabled);
 	HRESULT get_TraceLevel(Windows.Foundation.Diagnostics.CausalityTraceLevel* return_value);

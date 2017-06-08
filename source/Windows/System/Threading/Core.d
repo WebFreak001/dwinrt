@@ -13,8 +13,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Threading.Core.PreallocatedWorkItem")
 interface IPreallocatedWorkItem : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RunAsync(Windows.Foundation.IAsyncAction* return_operation);
 }
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Threading.Core.PreallocatedWorkItem")
 interface IPreallocatedWorkItemFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWorkItem(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.Core.PreallocatedWorkItem* return_workItem);
 	HRESULT abi_CreateWorkItemWithPriority(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority, Windows.System.Threading.Core.PreallocatedWorkItem* return_WorkItem);
@@ -35,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Threading.Core.SignalNotifier")
 interface ISignalNotifier : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Enable();
 	HRESULT abi_Terminate();
@@ -46,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Threading.Core.SignalNotifier")
 interface ISignalNotifierStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AttachToEvent(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.System.Threading.Core.SignalNotifier* return_signalNotifier);
 	HRESULT abi_AttachToEventWithTimeout(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout, Windows.System.Threading.Core.SignalNotifier* return_signalNotifier);

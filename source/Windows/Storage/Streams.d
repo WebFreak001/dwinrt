@@ -5,8 +5,6 @@ import dwinrt;
 @uuid("905a0fe0-bc53-11df-8c49-001e4fc686da")
 interface IBuffer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Capacity(UINT32* return_value);
 	HRESULT get_Length(UINT32* return_value);
@@ -17,8 +15,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Streams.Buffer")
 interface IBufferFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(UINT32 capacity, Windows.Storage.Streams.Buffer* return_value);
 }
@@ -27,8 +23,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Streams.Buffer")
 interface IBufferStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCopyFromMemoryBuffer(Windows.Foundation.IMemoryBuffer input, Windows.Storage.Streams.Buffer* return_value);
 	HRESULT abi_CreateMemoryBufferOverIBuffer(Windows.Storage.Streams.IBuffer input, Windows.Foundation.MemoryBuffer* return_value);
@@ -37,8 +31,6 @@ extern(Windows):
 @uuid("97d098a5-3b99-4de9-88a5-e11d2f50c795")
 interface IContentTypeProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ContentType(HSTRING* return_value);
 }
@@ -46,8 +38,6 @@ extern(Windows):
 @uuid("e2b50029-b4c1-4314-a4b8-fb813a2f275e")
 interface IDataReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UnconsumedBufferLength(UINT32* return_value);
 	HRESULT get_UnicodeEncoding(Windows.Storage.Streams.UnicodeEncoding* return_value);
@@ -81,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Streams.DataReader")
 interface IDataReaderFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateDataReader(Windows.Storage.Streams.IInputStream inputStream, Windows.Storage.Streams.DataReader* return_dataReader);
 }
@@ -91,8 +79,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Streams.DataReader")
 interface IDataReaderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromBuffer(Windows.Storage.Streams.IBuffer buffer, Windows.Storage.Streams.DataReader* return_dataReader);
 }
@@ -100,8 +86,6 @@ extern(Windows):
 @uuid("64b89265-d341-4922-b38a-dd4af8808c4e")
 interface IDataWriter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UnstoredBufferLength(UINT32* return_value);
 	HRESULT get_UnicodeEncoding(Windows.Storage.Streams.UnicodeEncoding* return_value);
@@ -136,8 +120,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Streams.DataWriter")
 interface IDataWriterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateDataWriter(Windows.Storage.Streams.IOutputStream outputStream, Windows.Storage.Streams.DataWriter* return_dataWriter);
 }
@@ -145,8 +127,6 @@ extern(Windows):
 @uuid("905a0fe2-bc53-11df-8c49-001e4fc686da")
 interface IInputStream : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32)* return_operation);
 }
@@ -154,8 +134,6 @@ extern(Windows):
 @uuid("43929d18-5ec9-4b5a-919c-4205b0c804b6")
 interface IInputStreamReference : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OpenSequentialReadAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IInputStream)* return_operation);
 }
@@ -163,8 +141,6 @@ extern(Windows):
 @uuid("905a0fe6-bc53-11df-8c49-001e4fc686da")
 interface IOutputStream : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_WriteAsync(Windows.Storage.Streams.IBuffer buffer, Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32)* return_operation);
 	HRESULT abi_FlushAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -173,8 +149,6 @@ extern(Windows):
 @uuid("905a0fe1-bc53-11df-8c49-001e4fc686da")
 interface IRandomAccessStream : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Size(UINT64* return_value);
 	HRESULT set_Size(UINT64 value);
@@ -190,8 +164,6 @@ extern(Windows):
 @uuid("33ee3134-1dd6-4e3a-8067-d1c162e8642b")
 interface IRandomAccessStreamReference : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OpenReadAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType)* return_operation);
 }
@@ -200,8 +172,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Streams.RandomAccessStreamReference")
 interface IRandomAccessStreamReferenceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromFile(Windows.Storage.IStorageFile file, Windows.Storage.Streams.RandomAccessStreamReference* return_streamReference);
 	HRESULT abi_CreateFromUri(Windows.Foundation.Uri uri, Windows.Storage.Streams.RandomAccessStreamReference* return_streamReference);
@@ -212,8 +182,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.Streams.RandomAccessStream")
 interface IRandomAccessStreamStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CopyAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64)* return_operation);
 	HRESULT abi_CopySizeAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, UINT64 bytesToCopy, Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64)* return_operation);

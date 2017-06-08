@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.AppService.AppServiceCatalog")
 interface IAppServiceCatalogStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FindAppServiceProvidersAsync(HSTRING appServiceName, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppInfo))* return_operation);
 }
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppService.AppServiceClosedEventArgs")
 interface IAppServiceClosedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.ApplicationModel.AppService.AppServiceClosedStatus* return_value);
 }
@@ -26,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppService.AppServiceConnection")
 interface IAppServiceConnection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppServiceName(HSTRING* return_value);
 	HRESULT set_AppServiceName(HSTRING value);
@@ -45,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppService.AppServiceConnection")
 interface IAppServiceConnection2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_OpenRemoteAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceConnectionStatus)* return_operation);
 	HRESULT get_User(Windows.System.User* return_value);
@@ -57,8 +49,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppService.AppServiceDeferral")
 interface IAppServiceDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -67,8 +57,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppService.AppServiceRequest")
 interface IAppServiceRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Message(Windows.Foundation.Collections.ValueSet* return_value);
 	HRESULT abi_SendResponseAsync(Windows.Foundation.Collections.ValueSet message, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceResponseStatus)* return_operation);
@@ -78,8 +66,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs")
 interface IAppServiceRequestReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.ApplicationModel.AppService.AppServiceRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.ApplicationModel.AppService.AppServiceDeferral* return_value);
@@ -89,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppService.AppServiceResponse")
 interface IAppServiceResponse : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Message(Windows.Foundation.Collections.ValueSet* return_value);
 	HRESULT get_Status(Windows.ApplicationModel.AppService.AppServiceResponseStatus* return_value);
@@ -100,8 +84,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppService.AppServiceTriggerDetails")
 interface IAppServiceTriggerDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_CallerPackageFamilyName(HSTRING* return_value);
@@ -112,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.AppService.AppServiceTriggerDetails")
 interface IAppServiceTriggerDetails2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsRemoteSystemConnection(bool* return_value);
 }

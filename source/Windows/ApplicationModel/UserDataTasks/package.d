@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.UserDataTask")
 interface IUserDataTask : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_ListId(HSTRING* return_value);
@@ -42,8 +40,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.UserDataTaskBatch")
 interface IUserDataTaskBatch : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Tasks(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataTasks.UserDataTask)* return_value);
 }
@@ -52,8 +48,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.UserDataTaskList")
 interface IUserDataTaskList : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_UserDataAccountId(HSTRING* return_value);
@@ -80,8 +74,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.UserDataTaskListLimitedWriteOperations")
 interface IUserDataTaskListLimitedWriteOperations : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryCompleteTaskAsync(HSTRING userDataTaskId, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
 	HRESULT abi_TryCreateOrUpdateTaskAsync(Windows.ApplicationModel.UserDataTasks.UserDataTask userDataTask, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -93,8 +85,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager")
 interface IUserDataTaskListSyncManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LastAttemptedSyncTime(Windows.Foundation.DateTime* return_value);
 	HRESULT set_LastAttemptedSyncTime(Windows.Foundation.DateTime value);
@@ -111,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.UserDataTaskManager")
 interface IUserDataTaskManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestStoreAsync(Windows.ApplicationModel.UserDataTasks.UserDataTaskStoreAccessType accessType, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskStore)* return_operation);
 	HRESULT get_User(Windows.System.User* return_value);
@@ -122,8 +110,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.UserDataTaskManager")
 interface IUserDataTaskManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.ApplicationModel.UserDataTasks.UserDataTaskManager* return_result);
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.ApplicationModel.UserDataTasks.UserDataTaskManager* return_result);
@@ -133,8 +119,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.UserDataTaskQueryOptions")
 interface IUserDataTaskQueryOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SortProperty(Windows.ApplicationModel.UserDataTasks.UserDataTaskQuerySortProperty* return_value);
 	HRESULT set_SortProperty(Windows.ApplicationModel.UserDataTasks.UserDataTaskQuerySortProperty value);
@@ -146,8 +130,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.UserDataTaskReader")
 interface IUserDataTaskReader : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ReadBatchAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskBatch)* return_result);
 }
@@ -156,8 +138,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceProperties")
 interface IUserDataTaskRecurrenceProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Unit(Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceUnit* return_value);
 	HRESULT set_Unit(Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceUnit value);
@@ -181,8 +161,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationProperties")
 interface IUserDataTaskRegenerationProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Unit(Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationUnit* return_value);
 	HRESULT set_Unit(Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationUnit value);
@@ -198,8 +176,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.UserDataTasks.UserDataTaskStore")
 interface IUserDataTaskStore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateListAsync(HSTRING name, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList)* return_operation);
 	HRESULT abi_CreateListInAccountAsync(HSTRING name, HSTRING userDataAccountId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList)* return_result);

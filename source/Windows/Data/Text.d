@@ -26,8 +26,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.AlternateWordForm")
 interface IAlternateWordForm : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceTextSegment(Windows.Data.Text.TextSegment* return_value);
 	HRESULT get_AlternateText(HSTRING* return_value);
@@ -38,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.SelectableWordSegment")
 interface ISelectableWordSegment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);
 	HRESULT get_SourceTextSegment(Windows.Data.Text.TextSegment* return_value);
@@ -49,8 +45,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.SelectableWordsSegmenter")
 interface ISelectableWordsSegmenter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResolvedLanguage(HSTRING* return_value);
 	HRESULT abi_GetTokenAt(HSTRING text, UINT32 startIndex, Windows.Data.Text.SelectableWordSegment* return_result);
@@ -62,8 +56,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.SelectableWordsSegmenter")
 interface ISelectableWordsSegmenterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithLanguage(HSTRING language, Windows.Data.Text.SelectableWordsSegmenter* return_result);
 }
@@ -72,8 +64,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.SemanticTextQuery")
 interface ISemanticTextQuery : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Find(HSTRING content, Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment)* return_result);
 	HRESULT abi_FindInProperty(HSTRING propertyContent, HSTRING propertyName, Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment)* return_result);
@@ -83,8 +73,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.SemanticTextQuery")
 interface ISemanticTextQueryFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING aqsFilter, Windows.Data.Text.SemanticTextQuery* return_result);
 	HRESULT abi_CreateWithLanguage(HSTRING aqsFilter, HSTRING filterLanguage, Windows.Data.Text.SemanticTextQuery* return_result);
@@ -94,8 +82,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.TextConversionGenerator")
 interface ITextConversionGenerator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResolvedLanguage(HSTRING* return_value);
 	HRESULT get_LanguageAvailableButNotInstalled(bool* return_value);
@@ -107,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.TextConversionGenerator")
 interface ITextConversionGeneratorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING languageTag, Windows.Data.Text.TextConversionGenerator* return_result);
 }
@@ -117,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.TextPhoneme")
 interface ITextPhoneme : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayText(HSTRING* return_value);
 	HRESULT get_ReadingText(HSTRING* return_value);
@@ -128,8 +110,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.TextPredictionGenerator")
 interface ITextPredictionGenerator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResolvedLanguage(HSTRING* return_value);
 	HRESULT get_LanguageAvailableButNotInstalled(bool* return_value);
@@ -141,8 +121,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.TextPredictionGenerator")
 interface ITextPredictionGeneratorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING languageTag, Windows.Data.Text.TextPredictionGenerator* return_result);
 }
@@ -151,8 +129,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.TextReverseConversionGenerator")
 interface ITextReverseConversionGenerator : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResolvedLanguage(HSTRING* return_value);
 	HRESULT get_LanguageAvailableButNotInstalled(bool* return_value);
@@ -163,8 +139,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.TextReverseConversionGenerator")
 interface ITextReverseConversionGenerator2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetPhonemesAsync(HSTRING input, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextPhoneme))* return_result);
 }
@@ -173,8 +147,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.TextReverseConversionGenerator")
 interface ITextReverseConversionGeneratorFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING languageTag, Windows.Data.Text.TextReverseConversionGenerator* return_result);
 }
@@ -183,8 +155,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.UnicodeCharacters")
 interface IUnicodeCharactersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetCodepointFromSurrogatePair(UINT32 highSurrogate, UINT32 lowSurrogate, UINT32* return_codepoint);
 	HRESULT abi_GetSurrogatePairFromCodepoint(UINT32 codepoint, WCHAR* out_highSurrogate, WCHAR* out_lowSurrogate);
@@ -209,8 +179,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.WordSegment")
 interface IWordSegment : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);
 	HRESULT get_SourceTextSegment(Windows.Data.Text.TextSegment* return_value);
@@ -221,8 +189,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.WordsSegmenter")
 interface IWordsSegmenter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResolvedLanguage(HSTRING* return_value);
 	HRESULT abi_GetTokenAt(HSTRING text, UINT32 startIndex, Windows.Data.Text.WordSegment* return_result);
@@ -234,8 +200,6 @@ extern(Windows):
 @WinrtFactory("Windows.Data.Text.WordsSegmenter")
 interface IWordsSegmenterFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithLanguage(HSTRING language, Windows.Data.Text.WordsSegmenter* return_result);
 }

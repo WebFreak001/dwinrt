@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.Composition.Interactions.CompositionConditionalValue")
 interface ICompositionConditionalValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Condition(Windows.UI.Composition.ExpressionAnimation* return_value);
 	HRESULT set_Condition(Windows.UI.Composition.ExpressionAnimation value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.CompositionConditionalValue")
 interface ICompositionConditionalValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.UI.Composition.Compositor compositor, Windows.UI.Composition.Interactions.CompositionConditionalValue* return_result);
 }
@@ -34,8 +30,6 @@ interface ICompositionInteractionSource : IInspectable
 @WinrtFactory("Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection")
 interface ICompositionInteractionSourceCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Count(INT32* return_value);
 	HRESULT abi_Add(Windows.UI.Composition.Interactions.ICompositionInteractionSource value);
@@ -47,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.InteractionTracker")
 interface IInteractionTracker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSources(Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection* return_value);
 	HRESULT get_IsPositionRoundingSuggested(bool* return_value);
@@ -89,8 +81,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.InteractionTracker")
 interface IInteractionTracker2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ConfigureCenterPointXInertiaModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues);
 	HRESULT abi_ConfigureCenterPointYInertiaModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues);
@@ -100,8 +90,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.InteractionTrackerCustomAnimationStateEnteredArgs")
 interface IInteractionTrackerCustomAnimationStateEnteredArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestId(INT32* return_value);
 }
@@ -110,8 +98,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.InteractionTrackerIdleStateEnteredArgs")
 interface IInteractionTrackerIdleStateEnteredArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestId(INT32* return_value);
 }
@@ -132,8 +118,6 @@ interface IInteractionTrackerInertiaModifierFactory : IInspectable
 @WinrtFactory("Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion")
 interface IInteractionTrackerInertiaMotion : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Condition(Windows.UI.Composition.ExpressionAnimation* return_value);
 	HRESULT set_Condition(Windows.UI.Composition.ExpressionAnimation value);
@@ -145,8 +129,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion")
 interface IInteractionTrackerInertiaMotionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.UI.Composition.Compositor compositor, Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion* return_result);
 }
@@ -155,8 +137,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue")
 interface IInteractionTrackerInertiaRestingValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Condition(Windows.UI.Composition.ExpressionAnimation* return_value);
 	HRESULT set_Condition(Windows.UI.Composition.ExpressionAnimation value);
@@ -168,8 +148,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue")
 interface IInteractionTrackerInertiaRestingValueStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.UI.Composition.Compositor compositor, Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue* return_result);
 }
@@ -178,8 +156,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.InteractionTrackerInertiaStateEnteredArgs")
 interface IInteractionTrackerInertiaStateEnteredArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ModifiedRestingPosition(Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3)* return_value);
 	HRESULT get_ModifiedRestingScale(Windows.Foundation.IReference!(FLOAT)* return_value);
@@ -194,8 +170,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.InteractionTrackerInteractingStateEnteredArgs")
 interface IInteractionTrackerInteractingStateEnteredArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestId(INT32* return_value);
 }
@@ -203,8 +177,6 @@ extern(Windows):
 @uuid("db2e8af3-4deb-4e53-b29c-b06c9f96d651")
 interface IInteractionTrackerOwner : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CustomAnimationStateEntered(Windows.UI.Composition.Interactions.InteractionTracker sender, Windows.UI.Composition.Interactions.InteractionTrackerCustomAnimationStateEnteredArgs args);
 	HRESULT abi_IdleStateEntered(Windows.UI.Composition.Interactions.InteractionTracker sender, Windows.UI.Composition.Interactions.InteractionTrackerIdleStateEnteredArgs args);
@@ -218,8 +190,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.InteractionTrackerRequestIgnoredArgs")
 interface IInteractionTrackerRequestIgnoredArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RequestId(INT32* return_value);
 }
@@ -228,8 +198,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.InteractionTracker")
 interface IInteractionTrackerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.UI.Composition.Compositor compositor, Windows.UI.Composition.Interactions.InteractionTracker* return_result);
 	HRESULT abi_CreateWithOwner(Windows.UI.Composition.Compositor compositor, Windows.UI.Composition.Interactions.IInteractionTrackerOwner owner, Windows.UI.Composition.Interactions.InteractionTracker* return_result);
@@ -239,8 +207,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.InteractionTrackerValuesChangedArgs")
 interface IInteractionTrackerValuesChangedArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT get_RequestId(INT32* return_value);
@@ -251,8 +217,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.VisualInteractionSource")
 interface IVisualInteractionSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsPositionXRailsEnabled(bool* return_value);
 	HRESULT set_IsPositionXRailsEnabled(bool value);
@@ -280,8 +244,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Composition.Interactions.VisualInteractionSource")
 interface IVisualInteractionSource2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeltaPosition(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT get_DeltaScale(FLOAT* return_value);
@@ -306,8 +268,6 @@ interface IVisualInteractionSourceObjectFactory : IInspectable
 @WinrtFactory("Windows.UI.Composition.Interactions.VisualInteractionSource")
 interface IVisualInteractionSourceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.UI.Composition.Visual source, Windows.UI.Composition.Interactions.VisualInteractionSource* return_result);
 }

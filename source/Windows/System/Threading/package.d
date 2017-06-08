@@ -27,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Threading.ThreadPool")
 interface IThreadPoolStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RunAsync(Windows.System.Threading.WorkItemHandler handler, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_RunWithPriorityAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority, Windows.Foundation.IAsyncAction* return_operation);
@@ -39,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Threading.ThreadPoolTimer")
 interface IThreadPoolTimer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Period(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_Delay(Windows.Foundation.TimeSpan* return_value);
@@ -51,8 +47,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Threading.ThreadPoolTimer")
 interface IThreadPoolTimerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreatePeriodicTimer(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan period, Windows.System.Threading.ThreadPoolTimer* return_timer);
 	HRESULT abi_CreateTimer(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan delay, Windows.System.Threading.ThreadPoolTimer* return_timer);

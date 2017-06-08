@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.Effects.AudioCaptureEffectsManager")
 interface IAudioCaptureEffectsManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_AudioCaptureEffectsChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AudioCaptureEffectsChanged(EventRegistrationToken token);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Effects.AudioEffect")
 interface IAudioEffect : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AudioEffectType(Windows.Media.Effects.AudioEffectType* return_value);
 }
@@ -27,8 +23,6 @@ extern(Windows):
 @uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294")
 interface IAudioEffectDefinition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ActivatableClassId(HSTRING* return_value);
 	HRESULT get_Properties(Windows.Foundation.Collections.IPropertySet* return_value);
@@ -38,8 +32,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Effects.AudioEffectDefinition")
 interface IAudioEffectDefinitionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING activatableClassId, Windows.Media.Effects.AudioEffectDefinition* return_value);
 	HRESULT abi_CreateWithProperties(HSTRING activatableClassId, Windows.Foundation.Collections.IPropertySet props, Windows.Media.Effects.AudioEffectDefinition* return_value);
@@ -49,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Effects.AudioEffectsManager")
 interface IAudioEffectsManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAudioRenderEffectsManager(HSTRING deviceId, Windows.Media.Render.AudioRenderCategory category, Windows.Media.Effects.AudioRenderEffectsManager* return_value);
 	HRESULT abi_CreateAudioRenderEffectsManagerWithMode(HSTRING deviceId, Windows.Media.Render.AudioRenderCategory category, Windows.Media.AudioProcessing mode, Windows.Media.Effects.AudioRenderEffectsManager* return_value);
@@ -62,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Effects.AudioRenderEffectsManager")
 interface IAudioRenderEffectsManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_AudioRenderEffectsChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioRenderEffectsManager, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AudioRenderEffectsChanged(EventRegistrationToken token);
@@ -74,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Effects.AudioRenderEffectsManager")
 interface IAudioRenderEffectsManager2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("Not supported starting in windows 10")
 	HRESULT get_EffectsProviderThumbnail(Windows.Storage.Streams.IRandomAccessStreamWithContentType* return_value);
@@ -88,8 +74,6 @@ extern(Windows):
 @uuid("8c062c53-6bc0-48b8-a99a-4b41550f1359")
 interface IBasicAudioEffect : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_UseInputFrameForOutput(bool* return_value);
 	HRESULT get_SupportedEncodingProperties(Windows.Foundation.Collections.IVectorView!(Windows.Media.MediaProperties.AudioEncodingProperties)* return_value);
@@ -102,8 +86,6 @@ extern(Windows):
 @uuid("8262c7ef-b360-40be-949b-2ff42ff35693")
 interface IBasicVideoEffect : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsReadOnly(bool* return_value);
 	HRESULT get_SupportedMemoryTypes(Windows.Media.Effects.MediaMemoryTypes* return_value);
@@ -119,8 +101,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Effects.CompositeVideoFrameContext")
 interface ICompositeVideoFrameContext : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SurfacesToOverlay(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface)* return_value);
 	HRESULT get_BackgroundFrame(Windows.Media.VideoFrame* return_value);
@@ -132,8 +112,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Effects.ProcessAudioFrameContext")
 interface IProcessAudioFrameContext : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InputFrame(Windows.Media.AudioFrame* return_value);
 	HRESULT get_OutputFrame(Windows.Media.AudioFrame* return_value);
@@ -143,8 +121,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Effects.ProcessVideoFrameContext")
 interface IProcessVideoFrameContext : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InputFrame(Windows.Media.VideoFrame* return_value);
 	HRESULT get_OutputFrame(Windows.Media.VideoFrame* return_value);
@@ -153,8 +129,6 @@ extern(Windows):
 @uuid("8510b43e-420c-420f-96c7-7c98bba1fc55")
 interface IVideoCompositor : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TimeIndependent(bool* return_value);
 	HRESULT abi_SetEncodingProperties(Windows.Media.MediaProperties.VideoEncodingProperties backgroundProperties, Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice device);
@@ -166,8 +140,6 @@ extern(Windows):
 @uuid("7946b8d0-2010-4ae3-9ab2-2cef42edd4d2")
 interface IVideoCompositorDefinition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ActivatableClassId(HSTRING* return_value);
 	HRESULT get_Properties(Windows.Foundation.Collections.IPropertySet* return_value);
@@ -177,8 +149,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Effects.VideoCompositorDefinition")
 interface IVideoCompositorDefinitionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING activatableClassId, Windows.Media.Effects.VideoCompositorDefinition* return_value);
 	HRESULT abi_CreateWithProperties(HSTRING activatableClassId, Windows.Foundation.Collections.IPropertySet props, Windows.Media.Effects.VideoCompositorDefinition* return_value);
@@ -187,8 +157,6 @@ extern(Windows):
 @uuid("39f38cf0-8d0f-4f3e-84fc-2d46a5297943")
 interface IVideoEffectDefinition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ActivatableClassId(HSTRING* return_value);
 	HRESULT get_Properties(Windows.Foundation.Collections.IPropertySet* return_value);
@@ -198,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Effects.VideoEffectDefinition")
 interface IVideoEffectDefinitionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(HSTRING activatableClassId, Windows.Media.Effects.VideoEffectDefinition* return_value);
 	HRESULT abi_CreateWithProperties(HSTRING activatableClassId, Windows.Foundation.Collections.IPropertySet props, Windows.Media.Effects.VideoEffectDefinition* return_value);
@@ -209,8 +175,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.Effects.VideoTransformEffectDefinition")
 interface IVideoTransformEffectDefinition : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PaddingColor(Windows.UI.Color* return_value);
 	HRESULT set_PaddingColor(Windows.UI.Color value);

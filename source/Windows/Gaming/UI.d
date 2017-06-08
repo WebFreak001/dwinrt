@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Gaming.UI.GameBar")
 interface IGameBarStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_VisibilityChanged(Windows.Foundation.EventHandler!(IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_VisibilityChanged(EventRegistrationToken token);
@@ -21,8 +19,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.UI.GameChatMessageReceivedEventArgs")
 interface IGameChatMessageReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppId(HSTRING* return_value);
 	HRESULT get_AppDisplayName(HSTRING* return_value);
@@ -35,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.UI.GameChatOverlay")
 interface IGameChatOverlay : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DesiredPosition(Windows.Gaming.UI.GameChatOverlayPosition* return_value);
 	HRESULT set_DesiredPosition(Windows.Gaming.UI.GameChatOverlayPosition value);
@@ -47,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.UI.GameChatOverlayMessageSource")
 interface IGameChatOverlayMessageSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_MessageReceived(EventRegistrationToken token);
@@ -59,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Gaming.UI.GameChatOverlay")
 interface IGameChatOverlayStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.Gaming.UI.GameChatOverlay* return_value);
 }

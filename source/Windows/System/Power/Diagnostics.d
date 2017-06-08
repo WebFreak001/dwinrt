@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.System.Power.Diagnostics.BackgroundEnergyDiagnostics")
 interface IBackgroundEnergyDiagnosticsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceSpecificConversionFactor(double* return_value);
 	HRESULT abi_ComputeTotalEnergyUsage(UINT64* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.System.Power.Diagnostics.ForegroundEnergyDiagnostics")
 interface IForegroundEnergyDiagnosticsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceSpecificConversionFactor(double* return_value);
 	HRESULT abi_ComputeTotalEnergyUsage(UINT64* return_value);

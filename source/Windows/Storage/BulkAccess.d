@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Storage.BulkAccess.FileInformationFactory")
 interface IFileInformationFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetItemsAsync(UINT32 startIndex, UINT32 maxItemsToRetrieve, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.BulkAccess.IStorageItemInformation))* return_operation);
 	HRESULT abi_GetItemsAsyncDefaultStartAndCount(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.BulkAccess.IStorageItemInformation))* return_operation);
@@ -24,8 +22,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.BulkAccess.FileInformationFactory")
 interface IFileInformationFactoryFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWithMode(Windows.Storage.Search.IStorageQueryResultBase queryResult, Windows.Storage.FileProperties.ThumbnailMode mode, Windows.Storage.BulkAccess.FileInformationFactory* return_value);
 	HRESULT abi_CreateWithModeAndSize(Windows.Storage.Search.IStorageQueryResultBase queryResult, Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedThumbnailSize, Windows.Storage.BulkAccess.FileInformationFactory* return_value);
@@ -36,8 +32,6 @@ extern(Windows):
 @uuid("87a5cb8b-8972-4f40-8de0-d86fb179d8fa")
 interface IStorageItemInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MusicProperties(Windows.Storage.FileProperties.MusicProperties* return_value);
 	HRESULT get_VideoProperties(Windows.Storage.FileProperties.VideoProperties* return_value);

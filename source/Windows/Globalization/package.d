@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Globalization.ApplicationLanguages")
 interface IApplicationLanguagesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PrimaryLanguageOverride(HSTRING* return_value);
 	HRESULT set_PrimaryLanguageOverride(HSTRING value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.Calendar")
 interface ICalendar : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Clone(Windows.Globalization.Calendar* return_value);
 	HRESULT abi_SetToMin();
@@ -126,8 +122,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.Calendar")
 interface ICalendarFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCalendarDefaultCalendarAndClock(Windows.Foundation.Collections.IIterable!(HSTRING) languages, Windows.Globalization.Calendar* return_result);
 	HRESULT abi_CreateCalendar(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING calendar, HSTRING clock, Windows.Globalization.Calendar* return_result);
@@ -137,8 +131,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.Calendar")
 interface ICalendarFactory2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateCalendarWithTimeZone(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING calendar, HSTRING clock, HSTRING timeZoneId, Windows.Globalization.Calendar* return_result);
 }
@@ -147,8 +139,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.CalendarIdentifiers")
 interface ICalendarIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Gregorian(HSTRING* return_value);
 	HRESULT get_Hebrew(HSTRING* return_value);
@@ -165,8 +155,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.CalendarIdentifiers")
 interface ICalendarIdentifiersStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Persian(HSTRING* return_value);
 }
@@ -175,8 +163,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.CalendarIdentifiers")
 interface ICalendarIdentifiersStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChineseLunar(HSTRING* return_value);
 	HRESULT get_JapaneseLunar(HSTRING* return_value);
@@ -189,8 +175,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.ClockIdentifiers")
 interface IClockIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_TwelveHour(HSTRING* return_value);
 	HRESULT get_TwentyFourHour(HSTRING* return_value);
@@ -200,8 +184,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.CurrencyIdentifiers")
 interface ICurrencyIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AED(HSTRING* return_value);
 	HRESULT get_AFN(HSTRING* return_value);
@@ -366,8 +348,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.CurrencyIdentifiers")
 interface ICurrencyIdentifiersStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BYN(HSTRING* return_value);
 }
@@ -376,8 +356,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.GeographicRegion")
 interface IGeographicRegion : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Code(HSTRING* return_value);
 	HRESULT get_CodeTwoLetter(HSTRING* return_value);
@@ -392,8 +370,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.GeographicRegion")
 interface IGeographicRegionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateGeographicRegion(HSTRING geographicRegionCode, Windows.Globalization.GeographicRegion* return_result);
 }
@@ -402,8 +378,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.GeographicRegion")
 interface IGeographicRegionStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsSupported(HSTRING geographicRegionCode, bool* return_result);
 }
@@ -412,8 +386,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.JapanesePhoneme")
 interface IJapanesePhoneme : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayText(HSTRING* return_value);
 	HRESULT get_YomiText(HSTRING* return_value);
@@ -424,8 +396,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.JapanesePhoneticAnalyzer")
 interface IJapanesePhoneticAnalyzerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetWords(HSTRING input, Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme)* return_result);
 	HRESULT abi_GetWordsWithMonoRubyOption(HSTRING input, bool monoRuby, Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme)* return_result);
@@ -435,8 +405,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.Language")
 interface ILanguage : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_LanguageTag(HSTRING* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -448,8 +416,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.Language")
 interface ILanguageExtensionSubtags : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetExtensionSubtags(HSTRING singleton, Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 }
@@ -458,8 +424,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.Language")
 interface ILanguageFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateLanguage(HSTRING languageTag, Windows.Globalization.Language* return_result);
 }
@@ -468,8 +432,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.Language")
 interface ILanguageStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsWellFormed(HSTRING languageTag, bool* return_result);
 	HRESULT get_CurrentInputMethodLanguageTag(HSTRING* return_value);
@@ -479,8 +441,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.Language")
 interface ILanguageStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TrySetInputMethodLanguageTag(HSTRING languageTag, bool* return_result);
 }
@@ -489,8 +449,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.NumeralSystemIdentifiers")
 interface INumeralSystemIdentifiersStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Arab(HSTRING* return_value);
 	HRESULT get_ArabExt(HSTRING* return_value);
@@ -534,8 +492,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.NumeralSystemIdentifiers")
 interface INumeralSystemIdentifiersStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Brah(HSTRING* return_value);
 	HRESULT get_Osma(HSTRING* return_value);
@@ -555,8 +511,6 @@ extern(Windows):
 @WinrtFactory("Windows.Globalization.Calendar")
 interface ITimeZoneOnCalendar : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetTimeZone(HSTRING* return_value);
 	HRESULT abi_ChangeTimeZone(HSTRING timeZoneId);

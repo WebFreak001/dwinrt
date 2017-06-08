@@ -28,8 +28,6 @@ struct BitmapSize
 @WinrtFactory("Windows.Graphics.Imaging.BitmapBuffer")
 interface IBitmapBuffer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetPlaneCount(INT32* return_value);
 	HRESULT abi_GetPlaneDescription(INT32 index, Windows.Graphics.Imaging.BitmapPlaneDescription* return_value);
@@ -39,8 +37,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.BitmapCodecInformation")
 interface IBitmapCodecInformation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CodecId(GUID* return_value);
 	HRESULT get_FileExtensions(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
@@ -52,8 +48,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.BitmapDecoder")
 interface IBitmapDecoder : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BitmapContainerProperties(Windows.Graphics.Imaging.BitmapPropertiesView* return_value);
 	HRESULT get_DecoderInformation(Windows.Graphics.Imaging.BitmapCodecInformation* return_value);
@@ -66,8 +60,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.BitmapDecoder")
 interface IBitmapDecoderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BmpDecoderId(GUID* return_value);
 	HRESULT get_JpegDecoderId(GUID* return_value);
@@ -85,8 +77,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.BitmapEncoder")
 interface IBitmapEncoder : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EncoderInformation(Windows.Graphics.Imaging.BitmapCodecInformation* return_value);
 	HRESULT get_BitmapProperties(Windows.Graphics.Imaging.BitmapProperties* return_value);
@@ -108,8 +98,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.BitmapEncoder")
 interface IBitmapEncoderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BmpEncoderId(GUID* return_value);
 	HRESULT get_JpegEncoderId(GUID* return_value);
@@ -128,8 +116,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.BitmapEncoder")
 interface IBitmapEncoderWithSoftwareBitmap : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap bitmap);
 }
@@ -137,8 +123,6 @@ extern(Windows):
 @uuid("72a49a1c-8081-438d-91bc-94ecfc8185c6")
 interface IBitmapFrame : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetThumbnailAsync(Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.ImageStream)* return_asyncInfo);
 	HRESULT get_BitmapProperties(Windows.Graphics.Imaging.BitmapPropertiesView* return_value);
@@ -157,8 +141,6 @@ extern(Windows):
 @uuid("fe287c9a-420c-4963-87ad-691436e08383")
 interface IBitmapFrameWithSoftwareBitmap : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetSoftwareBitmapAsync(Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap)* return_value);
 	HRESULT abi_GetSoftwareBitmapConvertedAsync(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap)* return_value);
@@ -169,8 +151,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.BitmapProperties")
 interface IBitmapProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetPropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)) propertiesToSet, Windows.Foundation.IAsyncAction* return_asyncInfo);
 }
@@ -178,8 +158,6 @@ extern(Windows):
 @uuid("7e0fe87a-3a70-48f8-9c55-196cf5a545f5")
 interface IBitmapPropertiesView : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetPropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapPropertySet)* return_asyncInfo);
 }
@@ -188,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.BitmapTransform")
 interface IBitmapTransform : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ScaledWidth(UINT32* return_value);
 	HRESULT set_ScaledWidth(UINT32 value);
@@ -209,8 +185,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.BitmapTypedValue")
 interface IBitmapTypedValue : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Value(IInspectable* return_value);
 	HRESULT get_Type(Windows.Foundation.PropertyType* return_value);
@@ -220,8 +194,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.BitmapTypedValue")
 interface IBitmapTypedValueFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(IInspectable value, Windows.Foundation.PropertyType type, Windows.Graphics.Imaging.BitmapTypedValue* return_bitmapTypedValue);
 }
@@ -230,8 +202,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.PixelDataProvider")
 interface IPixelDataProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_DetachPixelData(UINT32* out___pixelDataSize, BYTE** return_pixelData);
 }
@@ -240,8 +210,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.SoftwareBitmap")
 interface ISoftwareBitmap : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_BitmapPixelFormat(Windows.Graphics.Imaging.BitmapPixelFormat* return_value);
 	HRESULT get_BitmapAlphaMode(Windows.Graphics.Imaging.BitmapAlphaMode* return_value);
@@ -263,8 +231,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.SoftwareBitmap")
 interface ISoftwareBitmapFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.Graphics.Imaging.BitmapPixelFormat format, INT32 width, INT32 height, Windows.Graphics.Imaging.SoftwareBitmap* return_value);
 	HRESULT abi_CreateWithAlpha(Windows.Graphics.Imaging.BitmapPixelFormat format, INT32 width, INT32 height, Windows.Graphics.Imaging.BitmapAlphaMode alpha, Windows.Graphics.Imaging.SoftwareBitmap* return_value);
@@ -274,8 +240,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Imaging.SoftwareBitmap")
 interface ISoftwareBitmapStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Copy(Windows.Graphics.Imaging.SoftwareBitmap source, Windows.Graphics.Imaging.SoftwareBitmap* return_value);
 	HRESULT abi_Convert(Windows.Graphics.Imaging.SoftwareBitmap source, Windows.Graphics.Imaging.BitmapPixelFormat format, Windows.Graphics.Imaging.SoftwareBitmap* return_value);

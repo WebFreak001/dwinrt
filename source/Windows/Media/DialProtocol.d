@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.DialProtocol.DialApp")
 interface IDialApp : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppName(HSTRING* return_value);
 	HRESULT abi_RequestLaunchAsync(HSTRING appArgument, Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialAppLaunchResult)* return_value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.DialProtocol.DialAppStateDetails")
 interface IDialAppStateDetails : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_State(Windows.Media.DialProtocol.DialAppState* return_value);
 	HRESULT get_FullXml(HSTRING* return_value);
@@ -30,8 +26,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.DialProtocol.DialDevice")
 interface IDialDevice : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT abi_GetDialApp(HSTRING appName, Windows.Media.DialProtocol.DialApp* return_value);
@@ -41,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.DialProtocol.DialDevice")
 interface IDialDevice2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FriendlyName(HSTRING* return_value);
 	HRESULT get_Thumbnail(Windows.Storage.Streams.IRandomAccessStreamReference* return_value);
@@ -52,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.DialProtocol.DialDevicePicker")
 interface IDialDevicePicker : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Filter(Windows.Media.DialProtocol.DialDevicePickerFilter* return_value);
 	HRESULT get_Appearance(Windows.Devices.Enumeration.DevicePickerAppearance* return_value);
@@ -75,8 +65,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.DialProtocol.DialDevicePickerFilter")
 interface IDialDevicePickerFilter : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SupportedAppNames(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 }
@@ -85,8 +73,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.DialProtocol.DialDeviceSelectedEventArgs")
 interface IDialDeviceSelectedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectedDialDevice(Windows.Media.DialProtocol.DialDevice* return_value);
 }
@@ -95,8 +81,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.DialProtocol.DialDevice")
 interface IDialDeviceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING appName, HSTRING* return_selector);
 	HRESULT abi_FromIdAsync(HSTRING value, Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice)* return_operation);
@@ -107,8 +91,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.DialProtocol.DialDisconnectButtonClickedEventArgs")
 interface IDialDisconnectButtonClickedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Device(Windows.Media.DialProtocol.DialDevice* return_value);
 }

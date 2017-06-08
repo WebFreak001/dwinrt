@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentsProvider.AddAppointmentOperation")
 interface IAddAppointmentOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppointmentInformation(Windows.ApplicationModel.Appointments.Appointment* return_value);
 	HRESULT get_SourcePackageFamilyName(HSTRING* return_value);
@@ -21,8 +19,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentsProvider.AppointmentsProviderLaunchActionVerbs")
 interface IAppointmentsProviderLaunchActionVerbsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AddAppointment(HSTRING* return_value);
 	HRESULT get_ReplaceAppointment(HSTRING* return_value);
@@ -34,8 +30,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentsProvider.AppointmentsProviderLaunchActionVerbs")
 interface IAppointmentsProviderLaunchActionVerbsStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ShowAppointmentDetails(HSTRING* return_value);
 }
@@ -44,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentsProvider.RemoveAppointmentOperation")
 interface IRemoveAppointmentOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppointmentId(HSTRING* return_value);
 	HRESULT get_InstanceStartDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
@@ -60,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentsProvider.ReplaceAppointmentOperation")
 interface IReplaceAppointmentOperation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AppointmentId(HSTRING* return_value);
 	HRESULT get_AppointmentInformation(Windows.ApplicationModel.Appointments.Appointment* return_value);

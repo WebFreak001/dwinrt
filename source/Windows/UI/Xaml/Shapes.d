@@ -12,8 +12,6 @@ interface IEllipse : IInspectable
 @WinrtFactory("Windows.UI.Xaml.Shapes.Line")
 interface ILine : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_X1(double* return_value);
 	HRESULT set_X1(double value);
@@ -29,8 +27,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Line")
 interface ILineStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_X1Property(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_Y1Property(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -42,8 +38,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Path")
 interface IPath : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Data(Windows.UI.Xaml.Media.Geometry* return_value);
 	HRESULT set_Data(Windows.UI.Xaml.Media.Geometry value);
@@ -53,8 +47,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Path")
 interface IPathFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Shapes.Path* return_instance);
 }
@@ -63,8 +55,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Path")
 interface IPathStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DataProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
@@ -73,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Polygon")
 interface IPolygon : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FillRule(Windows.UI.Xaml.Media.FillRule* return_value);
 	HRESULT set_FillRule(Windows.UI.Xaml.Media.FillRule value);
@@ -86,8 +74,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Polygon")
 interface IPolygonStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FillRuleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_PointsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -97,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Polyline")
 interface IPolyline : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FillRule(Windows.UI.Xaml.Media.FillRule* return_value);
 	HRESULT set_FillRule(Windows.UI.Xaml.Media.FillRule value);
@@ -110,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Polyline")
 interface IPolylineStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FillRuleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_PointsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -121,8 +103,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Rectangle")
 interface IRectangle : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RadiusX(double* return_value);
 	HRESULT set_RadiusX(double value);
@@ -134,8 +114,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Rectangle")
 interface IRectangleStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RadiusXProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_RadiusYProperty(Windows.UI.Xaml.DependencyProperty* return_value);
@@ -145,8 +123,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Shape")
 interface IShape : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Fill(Windows.UI.Xaml.Media.Brush* return_value);
 	HRESULT set_Fill(Windows.UI.Xaml.Media.Brush value);
@@ -177,8 +153,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Shape")
 interface IShape2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetAlphaMask(Windows.UI.Composition.CompositionBrush* return_returnValue);
 }
@@ -187,8 +161,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Shape")
 interface IShapeFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Shapes.Shape* return_instance);
 }
@@ -197,8 +169,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Xaml.Shapes.Shape")
 interface IShapeStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_FillProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_StrokeProperty(Windows.UI.Xaml.DependencyProperty* return_value);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Storage.FileProperties.BasicProperties")
 interface IBasicProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Size(UINT64* return_value);
 	HRESULT get_DateModified(Windows.Foundation.DateTime* return_value);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.FileProperties.DocumentProperties")
 interface IDocumentProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Author(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 	HRESULT get_Title(HSTRING* return_value);
@@ -33,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.FileProperties.GeotagHelper")
 interface IGeotagHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetGeotagAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geopoint)* return_operation);
 	HRESULT abi_SetGeotagFromGeolocatorAsync(Windows.Storage.IStorageFile file, Windows.Devices.Geolocation.Geolocator geolocator, Windows.Foundation.IAsyncAction* return_operation);
@@ -45,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.FileProperties.ImageProperties")
 interface IImageProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Rating(UINT32* return_value);
 	HRESULT set_Rating(UINT32 value);
@@ -71,8 +63,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.FileProperties.MusicProperties")
 interface IMusicProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Album(HSTRING* return_value);
 	HRESULT set_Album(HSTRING value);
@@ -105,8 +95,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.FileProperties.StorageItemContentProperties")
 interface IStorageItemContentProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetMusicPropertiesAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.MusicProperties)* return_operation);
 	HRESULT abi_GetVideoPropertiesAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.VideoProperties)* return_operation);
@@ -117,8 +105,6 @@ extern(Windows):
 @uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7")
 interface IStorageItemExtraProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RetrievePropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))* return_operation);
 	HRESULT abi_SavePropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)) propertiesToSave, Windows.Foundation.IAsyncAction* return_operation);
@@ -129,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.FileProperties.StorageItemThumbnail")
 interface IThumbnailProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_OriginalWidth(UINT32* return_value);
 	HRESULT get_OriginalHeight(UINT32* return_value);
@@ -142,8 +126,6 @@ extern(Windows):
 @WinrtFactory("Windows.Storage.FileProperties.VideoProperties")
 interface IVideoProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Rating(UINT32* return_value);
 	HRESULT set_Rating(UINT32 value);

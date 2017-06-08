@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Management.MdmAlert")
 interface IMdmAlert : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Data(HSTRING* return_value);
 	HRESULT set_Data(HSTRING value);
@@ -28,8 +26,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.MdmSession")
 interface IMdmSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Alerts(Windows.Foundation.Collections.IVectorView!(Windows.Management.MdmAlert)* return_value);
 	HRESULT get_ExtendedError(HRESULT* return_value);
@@ -45,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Management.MdmSessionManager")
 interface IMdmSessionManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SessionIds(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 	HRESULT abi_TryCreateSession(Windows.Management.MdmSession* return_result);

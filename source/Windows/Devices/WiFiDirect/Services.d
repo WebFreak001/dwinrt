@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectService")
 interface IWiFiDirectService : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_RemoteServiceInfo(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_SupportedConfigurationMethods(Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceConfigurationMethod)* return_value);
@@ -27,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser")
 interface IWiFiDirectServiceAdvertiser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServiceName(HSTRING* return_value);
 	HRESULT get_ServiceNamePrefixes(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
@@ -63,8 +59,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser")
 interface IWiFiDirectServiceAdvertiserFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWiFiDirectServiceAdvertiser(HSTRING serviceName, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser* return_result);
 }
@@ -73,8 +67,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAutoAcceptSessionConnectedEventArgs")
 interface IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Session(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession* return_value);
 	HRESULT get_SessionInfo(Windows.Storage.Streams.IBuffer* return_value);
@@ -84,8 +76,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectServiceProvisioningInfo")
 interface IWiFiDirectServiceProvisioningInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SelectedConfigurationMethod(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceConfigurationMethod* return_value);
 	HRESULT get_IsGroupFormationNeeded(bool* return_value);
@@ -95,8 +85,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectServiceRemotePortAddedEventArgs")
 interface IWiFiDirectServiceRemotePortAddedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_EndpointPairs(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)* return_value);
 	HRESULT get_Protocol(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceIPProtocol* return_value);
@@ -106,8 +94,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession")
 interface IWiFiDirectServiceSession : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServiceName(HSTRING* return_value);
 	HRESULT get_Status(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionStatus* return_value);
@@ -129,8 +115,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionDeferredEventArgs")
 interface IWiFiDirectServiceSessionDeferredEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeferredSessionInfo(Windows.Storage.Streams.IBuffer* return_value);
 }
@@ -139,8 +123,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequest")
 interface IWiFiDirectServiceSessionRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);
 	HRESULT get_ProvisioningInfo(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceProvisioningInfo* return_value);
@@ -151,8 +133,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequestedEventArgs")
 interface IWiFiDirectServiceSessionRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetSessionRequest(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequest* return_value);
 }
@@ -161,8 +141,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectService")
 interface IWiFiDirectServiceStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetSelector(HSTRING serviceName, HSTRING* return_serviceSelector);
 	HRESULT abi_GetSelectorWithFilter(HSTRING serviceName, Windows.Storage.Streams.IBuffer serviceInfoFilter, HSTRING* return_serviceSelector);

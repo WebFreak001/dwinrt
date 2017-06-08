@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Web.Http.Diagnostics.HttpDiagnosticProvider")
 interface IHttpDiagnosticProvider : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestResponseCompletedEventArgs")
 interface IHttpDiagnosticProviderRequestResponseCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ActivityId(GUID* return_value);
 	HRESULT get_Timestamps(Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestResponseTimestamps* return_value);
@@ -39,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestResponseTimestamps")
 interface IHttpDiagnosticProviderRequestResponseTimestamps : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CacheCheckedTimestamp(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
 	HRESULT get_ConnectionInitiatedTimestamp(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
@@ -57,8 +51,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestSentEventArgs")
 interface IHttpDiagnosticProviderRequestSentEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_ActivityId(GUID* return_value);
@@ -73,8 +65,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Diagnostics.HttpDiagnosticProviderResponseReceivedEventArgs")
 interface IHttpDiagnosticProviderResponseReceivedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_ActivityId(GUID* return_value);
@@ -85,8 +75,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Diagnostics.HttpDiagnosticProvider")
 interface IHttpDiagnosticProviderStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromProcessDiagnosticInfo(Windows.System.Diagnostics.ProcessDiagnosticInfo processDiagnosticInfo, Windows.Web.Http.Diagnostics.HttpDiagnosticProvider* return_value);
 }
@@ -95,8 +83,6 @@ extern(Windows):
 @WinrtFactory("Windows.Web.Http.Diagnostics.HttpDiagnosticSourceLocation")
 interface IHttpDiagnosticSourceLocation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceUri(Windows.Foundation.Uri* return_value);
 	HRESULT get_LineNumber(UINT64* return_value);

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Devices.Enumeration.Pnp.PnpObject")
 interface IPnpObject : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.Devices.Enumeration.Pnp.PnpObjectType* return_value);
 	HRESULT get_Id(HSTRING* return_value);
@@ -19,8 +17,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.Pnp.PnpObject")
 interface IPnpObjectStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateFromIdAsync(Windows.Devices.Enumeration.Pnp.PnpObjectType type, HSTRING id, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObject)* return_asyncOp);
 	HRESULT abi_FindAllAsync(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObjectCollection)* return_asyncOp);
@@ -33,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.Pnp.PnpObjectUpdate")
 interface IPnpObjectUpdate : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Type(Windows.Devices.Enumeration.Pnp.PnpObjectType* return_value);
 	HRESULT get_Id(HSTRING* return_value);
@@ -45,8 +39,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Enumeration.Pnp.PnpObjectWatcher")
 interface IPnpObjectWatcher : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_Added(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, Windows.Devices.Enumeration.Pnp.PnpObject) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Added(EventRegistrationToken token);

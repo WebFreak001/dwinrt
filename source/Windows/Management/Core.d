@@ -12,8 +12,6 @@ interface IApplicationDataManager : IInspectable
 @WinrtFactory("Windows.Management.Core.ApplicationDataManager")
 interface IApplicationDataManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateForPackageFamily(HSTRING packageFamilyName, Windows.Storage.ApplicationData* return_applicationData);
 }

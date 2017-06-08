@@ -20,8 +20,6 @@ interface IColorHelper : IInspectable
 @WinrtFactory("Windows.UI.ColorHelper")
 interface IColorHelperStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromArgb(BYTE a, BYTE r, BYTE g, BYTE b, Windows.UI.Color* return_returnValue);
 }
@@ -30,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.ColorHelper")
 interface IColorHelperStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ToDisplayName(Windows.UI.Color color, HSTRING* return_returnValue);
 }
@@ -46,8 +42,6 @@ interface IColors : IInspectable
 @WinrtFactory("Windows.UI.Colors")
 interface IColorsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_AliceBlue(Windows.UI.Color* return_value);
 	HRESULT get_AntiqueWhite(Windows.UI.Color* return_value);

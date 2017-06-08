@@ -5,8 +5,6 @@ import dwinrt;
 @uuid("eb0dbe66-7448-448d-9db8-d78acd2abba9")
 interface IAdaptiveNotificationContent : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Kind(Windows.UI.Notifications.AdaptiveNotificationContentKind* return_value);
 	HRESULT get_Hints(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
@@ -16,8 +14,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.AdaptiveNotificationText")
 interface IAdaptiveNotificationText : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);
 	HRESULT set_Text(HSTRING value);
@@ -29,8 +25,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.BadgeNotification")
 interface IBadgeNotification : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(Windows.Data.Xml.Dom.XmlDocument* return_value);
 	HRESULT set_ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value);
@@ -41,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.BadgeNotification")
 interface IBadgeNotificationFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateBadgeNotification(Windows.Data.Xml.Dom.XmlDocument content, Windows.UI.Notifications.BadgeNotification* return_notification);
 }
@@ -51,8 +43,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.BadgeUpdateManagerForUser")
 interface IBadgeUpdateManagerForUser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateBadgeUpdaterForApplication(Windows.UI.Notifications.BadgeUpdater* return_result);
 	HRESULT abi_CreateBadgeUpdaterForApplicationWithId(HSTRING applicationId, Windows.UI.Notifications.BadgeUpdater* return_result);
@@ -64,8 +54,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.BadgeUpdateManager")
 interface IBadgeUpdateManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateBadgeUpdaterForApplication(Windows.UI.Notifications.BadgeUpdater* return_updater);
 	HRESULT abi_CreateBadgeUpdaterForApplicationWithId(HSTRING applicationId, Windows.UI.Notifications.BadgeUpdater* return_updater);
@@ -77,8 +65,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.BadgeUpdateManager")
 interface IBadgeUpdateManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.UI.Notifications.BadgeUpdateManagerForUser* return_result);
 }
@@ -87,8 +73,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.BadgeUpdater")
 interface IBadgeUpdater : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Update(Windows.UI.Notifications.BadgeNotification notification);
 	HRESULT abi_Clear();
@@ -101,8 +85,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.KnownAdaptiveNotificationHints")
 interface IKnownAdaptiveNotificationHintsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Style(HSTRING* return_value);
 	HRESULT get_Wrap(HSTRING* return_value);
@@ -116,8 +98,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.KnownAdaptiveNotificationTextStyles")
 interface IKnownAdaptiveNotificationTextStylesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Caption(HSTRING* return_value);
 	HRESULT get_Body(HSTRING* return_value);
@@ -144,8 +124,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.KnownNotificationBindings")
 interface IKnownNotificationBindingsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ToastGeneric(HSTRING* return_value);
 }
@@ -154,8 +132,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.Notification")
 interface INotification : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
 	HRESULT set_ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value);
@@ -167,8 +143,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.NotificationBinding")
 interface INotificationBinding : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Template(HSTRING* return_value);
 	HRESULT set_Template(HSTRING value);
@@ -182,8 +156,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.NotificationData")
 interface INotificationData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Values(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT get_SequenceNumber(UINT32* return_value);
@@ -194,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.NotificationData")
 interface INotificationDataFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateNotificationDataWithValuesAndSequenceNumber(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) initialValues, UINT32 sequenceNumber, Windows.UI.Notifications.NotificationData* return_result);
 	HRESULT abi_CreateNotificationDataWithValues(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) initialValues, Windows.UI.Notifications.NotificationData* return_result);
@@ -205,8 +175,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.NotificationVisual")
 interface INotificationVisual : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Language(HSTRING* return_value);
 	HRESULT set_Language(HSTRING value);
@@ -218,8 +186,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ScheduledTileNotification")
 interface IScheduledTileNotification : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(Windows.Data.Xml.Dom.XmlDocument* return_value);
 	HRESULT get_DeliveryTime(Windows.Foundation.DateTime* return_value);
@@ -235,8 +201,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ScheduledTileNotification")
 interface IScheduledTileNotificationFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateScheduledTileNotification(Windows.Data.Xml.Dom.XmlDocument content, Windows.Foundation.DateTime deliveryTime, Windows.UI.Notifications.ScheduledTileNotification* return_notification);
 }
@@ -245,8 +209,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ScheduledToastNotification")
 interface IScheduledToastNotification : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(Windows.Data.Xml.Dom.XmlDocument* return_value);
 	HRESULT get_DeliveryTime(Windows.Foundation.DateTime* return_value);
@@ -260,8 +222,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ScheduledToastNotification")
 interface IScheduledToastNotification2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Tag(HSTRING value);
 	HRESULT get_Tag(HSTRING* return_value);
@@ -275,8 +235,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ScheduledToastNotification")
 interface IScheduledToastNotification3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NotificationMirroring(Windows.UI.Notifications.NotificationMirroring* return_value);
 	HRESULT set_NotificationMirroring(Windows.UI.Notifications.NotificationMirroring value);
@@ -288,8 +246,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ScheduledToastNotification")
 interface IScheduledToastNotificationFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateScheduledToastNotification(Windows.Data.Xml.Dom.XmlDocument content, Windows.Foundation.DateTime deliveryTime, Windows.UI.Notifications.ScheduledToastNotification* return_notification);
 	HRESULT abi_CreateScheduledToastNotificationRecurring(Windows.Data.Xml.Dom.XmlDocument content, Windows.Foundation.DateTime deliveryTime, Windows.Foundation.TimeSpan snoozeInterval, UINT32 maximumSnoozeCount, Windows.UI.Notifications.ScheduledToastNotification* return_notification);
@@ -299,8 +255,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ShownTileNotification")
 interface IShownTileNotification : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Arguments(HSTRING* return_value);
 }
@@ -309,8 +263,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.TileFlyoutNotification")
 interface ITileFlyoutNotification : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(Windows.Data.Xml.Dom.XmlDocument* return_value);
 	HRESULT set_ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value);
@@ -321,8 +273,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.TileFlyoutNotification")
 interface ITileFlyoutNotificationFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateTileFlyoutNotification(Windows.Data.Xml.Dom.XmlDocument content, Windows.UI.Notifications.TileFlyoutNotification* return_notification);
 }
@@ -331,8 +281,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.TileFlyoutUpdateManager")
 interface ITileFlyoutUpdateManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateTileFlyoutUpdaterForApplication(Windows.UI.Notifications.TileFlyoutUpdater* return_updater);
 	HRESULT abi_CreateTileFlyoutUpdaterForApplicationWithId(HSTRING applicationId, Windows.UI.Notifications.TileFlyoutUpdater* return_updater);
@@ -344,8 +292,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.TileFlyoutUpdater")
 interface ITileFlyoutUpdater : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Update(Windows.UI.Notifications.TileFlyoutNotification notification);
 	HRESULT abi_Clear();
@@ -359,8 +305,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.TileNotification")
 interface ITileNotification : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(Windows.Data.Xml.Dom.XmlDocument* return_value);
 	HRESULT set_ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value);
@@ -373,8 +317,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.TileNotification")
 interface ITileNotificationFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateTileNotification(Windows.Data.Xml.Dom.XmlDocument content, Windows.UI.Notifications.TileNotification* return_notification);
 }
@@ -383,8 +325,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.TileUpdateManagerForUser")
 interface ITileUpdateManagerForUser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateTileUpdaterForApplication(Windows.UI.Notifications.TileUpdater* return_updater);
 	HRESULT abi_CreateTileUpdaterForApplicationWithId(HSTRING applicationId, Windows.UI.Notifications.TileUpdater* return_updater);
@@ -396,8 +336,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.TileUpdateManager")
 interface ITileUpdateManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateTileUpdaterForApplication(Windows.UI.Notifications.TileUpdater* return_updater);
 	HRESULT abi_CreateTileUpdaterForApplicationWithId(HSTRING applicationId, Windows.UI.Notifications.TileUpdater* return_updater);
@@ -409,8 +347,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.TileUpdateManager")
 interface ITileUpdateManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.UI.Notifications.TileUpdateManagerForUser* return_result);
 }
@@ -419,8 +355,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.TileUpdater")
 interface ITileUpdater : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Update(Windows.UI.Notifications.TileNotification notification);
 	HRESULT abi_Clear();
@@ -440,8 +374,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.TileUpdater")
 interface ITileUpdater2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_EnableNotificationQueueForSquare150x150(bool enable);
 	HRESULT abi_EnableNotificationQueueForWide310x150(bool enable);
@@ -452,8 +384,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastActivatedEventArgs")
 interface IToastActivatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Arguments(HSTRING* return_value);
 }
@@ -462,8 +392,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastCollection")
 interface IToastCollection : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
@@ -478,8 +406,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastCollection")
 interface IToastCollectionFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateInstance(HSTRING collectionId, HSTRING displayName, HSTRING launchArgs, Windows.Foundation.Uri iconUri, Windows.UI.Notifications.ToastCollection* return_result);
 }
@@ -488,8 +414,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastCollectionManager")
 interface IToastCollectionManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SaveToastCollectionAsync(Windows.UI.Notifications.ToastCollection collection, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_FindAllToastCollectionsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastCollection))* return_operation);
@@ -504,8 +428,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastDismissedEventArgs")
 interface IToastDismissedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Reason(Windows.UI.Notifications.ToastDismissalReason* return_value);
 }
@@ -514,8 +436,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastFailedEventArgs")
 interface IToastFailedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ErrorCode(HRESULT* return_value);
 }
@@ -524,8 +444,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotification")
 interface IToastNotification : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Content(Windows.Data.Xml.Dom.XmlDocument* return_value);
 	HRESULT set_ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value);
@@ -542,8 +460,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotification")
 interface IToastNotification2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Tag(HSTRING value);
 	HRESULT get_Tag(HSTRING* return_value);
@@ -557,8 +473,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotification")
 interface IToastNotification3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_NotificationMirroring(Windows.UI.Notifications.NotificationMirroring* return_value);
 	HRESULT set_NotificationMirroring(Windows.UI.Notifications.NotificationMirroring value);
@@ -570,8 +484,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotification")
 interface IToastNotification4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Data(Windows.UI.Notifications.NotificationData* return_value);
 	HRESULT set_Data(Windows.UI.Notifications.NotificationData value);
@@ -583,8 +495,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotificationActionTriggerDetail")
 interface IToastNotificationActionTriggerDetail : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Argument(HSTRING* return_argument);
 	HRESULT get_UserInput(Windows.Foundation.Collections.ValueSet* return_inputs);
@@ -594,8 +504,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotification")
 interface IToastNotificationFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateToastNotification(Windows.Data.Xml.Dom.XmlDocument content, Windows.UI.Notifications.ToastNotification* return_notification);
 }
@@ -604,8 +512,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotificationHistory")
 interface IToastNotificationHistory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RemoveGroup(HSTRING group);
 	HRESULT abi_RemoveGroupWithId(HSTRING group, HSTRING applicationId);
@@ -620,8 +526,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotificationHistory")
 interface IToastNotificationHistory2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetHistory(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastNotification)* return_toasts);
 	HRESULT abi_GetHistoryWithId(HSTRING applicationId, Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastNotification)* return_toasts);
@@ -631,8 +535,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotificationHistoryChangedTriggerDetail")
 interface IToastNotificationHistoryChangedTriggerDetail : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeType(Windows.UI.Notifications.ToastHistoryChangedType* return_value);
 }
@@ -641,8 +543,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotificationHistoryChangedTriggerDetail")
 interface IToastNotificationHistoryChangedTriggerDetail2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CollectionId(HSTRING* return_collectionId);
 }
@@ -651,8 +551,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotificationManagerForUser")
 interface IToastNotificationManagerForUser : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateToastNotifier(Windows.UI.Notifications.ToastNotifier* return_result);
 	HRESULT abi_CreateToastNotifierWithId(HSTRING applicationId, Windows.UI.Notifications.ToastNotifier* return_result);
@@ -664,8 +562,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotificationManagerForUser")
 interface IToastNotificationManagerForUser2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetToastNotifierForToastCollectionIdAsync(HSTRING collectionId, Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastNotifier)* return_operation);
 	HRESULT abi_GetHistoryForToastCollectionIdAsync(HSTRING collectionId, Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastNotificationHistory)* return_operation);
@@ -677,8 +573,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotificationManager")
 interface IToastNotificationManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateToastNotifier(Windows.UI.Notifications.ToastNotifier* return_notifier);
 	HRESULT abi_CreateToastNotifierWithId(HSTRING applicationId, Windows.UI.Notifications.ToastNotifier* return_notifier);
@@ -689,8 +583,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotificationManager")
 interface IToastNotificationManagerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_History(Windows.UI.Notifications.ToastNotificationHistory* return_value);
 }
@@ -699,8 +591,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotificationManager")
 interface IToastNotificationManagerStatics4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.UI.Notifications.ToastNotificationManagerForUser* return_result);
 	HRESULT abi_ConfigureNotificationMirroring(Windows.UI.Notifications.NotificationMirroring value);
@@ -710,8 +600,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotificationManager")
 interface IToastNotificationManagerStatics5 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetDefault(Windows.UI.Notifications.ToastNotificationManagerForUser* return_value);
 }
@@ -720,8 +608,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotifier")
 interface IToastNotifier : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Show(Windows.UI.Notifications.ToastNotification notification);
 	HRESULT abi_Hide(Windows.UI.Notifications.ToastNotification notification);
@@ -735,8 +621,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.ToastNotifier")
 interface IToastNotifier2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_UpdateWithTagAndGroup(Windows.UI.Notifications.NotificationData data, HSTRING tag, HSTRING group, Windows.UI.Notifications.NotificationUpdateResult* return_result);
 	HRESULT abi_UpdateWithTag(Windows.UI.Notifications.NotificationData data, HSTRING tag, Windows.UI.Notifications.NotificationUpdateResult* return_result);
@@ -746,8 +630,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.UserNotification")
 interface IUserNotification : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Notification(Windows.UI.Notifications.Notification* return_value);
 	HRESULT get_AppInfo(Windows.ApplicationModel.AppInfo* return_value);
@@ -759,8 +641,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Notifications.UserNotificationChangedEventArgs")
 interface IUserNotificationChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ChangeKind(Windows.UI.Notifications.UserNotificationChangedKind* return_value);
 	HRESULT get_UserNotificationId(UINT32* return_value);

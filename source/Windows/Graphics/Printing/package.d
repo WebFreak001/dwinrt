@@ -26,8 +26,6 @@ interface IPrintDocumentSource : IInspectable
 @WinrtFactory("Windows.Graphics.Printing.PrintManager")
 interface IPrintManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_PrintTaskRequested(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_PrintTaskRequested(EventRegistrationToken eventCookie);
@@ -37,8 +35,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintManager")
 interface IPrintManagerStatic : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.Graphics.Printing.PrintManager* return_printingManager);
 	HRESULT abi_ShowPrintUIAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -48,8 +44,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintManager")
 interface IPrintManagerStatic2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_IsSupported(bool* return_result);
 }
@@ -58,8 +52,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintPageInfo")
 interface IPrintPageInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_MediaSize(Windows.Graphics.Printing.PrintMediaSize value);
 	HRESULT get_MediaSize(Windows.Graphics.Printing.PrintMediaSize* return_value);
@@ -77,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintTask")
 interface IPrintTask : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Properties(Windows.ApplicationModel.DataTransfer.DataPackagePropertySet* return_value);
 	HRESULT get_Source(Windows.Graphics.Printing.IPrintDocumentSource* return_value);
@@ -97,8 +87,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintTask")
 interface IPrintTask2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_IsPreviewEnabled(bool value);
 	HRESULT get_IsPreviewEnabled(bool* return_value);
@@ -108,8 +96,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintTaskCompletedEventArgs")
 interface IPrintTaskCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Completion(Windows.Graphics.Printing.PrintTaskCompletion* return_value);
 }
@@ -118,8 +104,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintTaskOptions")
 interface IPrintTaskOptions : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Bordering(Windows.Graphics.Printing.PrintBordering value);
 	HRESULT get_Bordering(Windows.Graphics.Printing.PrintBordering* return_value);
@@ -129,8 +113,6 @@ extern(Windows):
 @uuid("1bdbb474-4ed1-41eb-be3c-72d18ed67337")
 interface IPrintTaskOptionsCore : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetPageDescription(UINT32 jobPageNumber, Windows.Graphics.Printing.PrintPageDescription* return_description);
 }
@@ -138,8 +120,6 @@ extern(Windows):
 @uuid("c1b71832-9e93-4e55-814b-3326a59efce1")
 interface IPrintTaskOptionsCoreProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_MediaSize(Windows.Graphics.Printing.PrintMediaSize value);
 	HRESULT get_MediaSize(Windows.Graphics.Printing.PrintMediaSize* return_value);
@@ -170,8 +150,6 @@ extern(Windows):
 @uuid("62e69e23-9a1e-4336-b74f-3cc7f4cff709")
 interface IPrintTaskOptionsCoreUIConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DisplayedOptions(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 }
@@ -180,8 +158,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintTaskProgressingEventArgs")
 interface IPrintTaskProgressingEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DocumentPageCount(UINT32* return_value);
 }
@@ -190,8 +166,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintTaskRequest")
 interface IPrintTaskRequest : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Deadline(Windows.Foundation.DateTime* return_value);
 	HRESULT abi_CreatePrintTask(HSTRING title, Windows.Graphics.Printing.PrintTaskSourceRequestedHandler handler, Windows.Graphics.Printing.PrintTask* return_task);
@@ -202,8 +176,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintTaskRequestedDeferral")
 interface IPrintTaskRequestedDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -212,8 +184,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintTaskRequestedEventArgs")
 interface IPrintTaskRequestedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Request(Windows.Graphics.Printing.PrintTaskRequest* return_value);
 }
@@ -222,8 +192,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintTaskSourceRequestedArgs")
 interface IPrintTaskSourceRequestedArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Deadline(Windows.Foundation.DateTime* return_value);
 	HRESULT abi_SetSource(Windows.Graphics.Printing.IPrintDocumentSource source);
@@ -234,8 +202,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintTaskSourceRequestedDeferral")
 interface IPrintTaskSourceRequestedDeferral : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Complete();
 }
@@ -244,8 +210,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.PrintTask")
 interface IPrintTaskTargetDeviceSupport : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_IsPrinterTargetEnabled(bool value);
 	HRESULT get_IsPrinterTargetEnabled(bool* return_value);
@@ -257,8 +221,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.StandardPrintTaskOptions")
 interface IStandardPrintTaskOptionsStatic : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MediaSize(HSTRING* return_value);
 	HRESULT get_MediaType(HSTRING* return_value);
@@ -279,8 +241,6 @@ extern(Windows):
 @WinrtFactory("Windows.Graphics.Printing.StandardPrintTaskOptions")
 interface IStandardPrintTaskOptionsStatic2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Bordering(HSTRING* return_value);
 }

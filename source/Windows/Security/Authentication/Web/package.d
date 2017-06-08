@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.Authentication.Web.WebAuthenticationBroker")
 interface IWebAuthenticationBrokerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AuthenticateWithCallbackUriAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri, Windows.Foundation.Uri callbackUri, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult)* return_asyncInfo);
 	HRESULT abi_AuthenticateWithoutCallbackUriAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult)* return_asyncInfo);
@@ -18,8 +16,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.WebAuthenticationBroker")
 interface IWebAuthenticationBrokerStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_AuthenticateAndContinue(Windows.Foundation.Uri requestUri);
 	HRESULT abi_AuthenticateWithCallbackUriAndContinue(Windows.Foundation.Uri requestUri, Windows.Foundation.Uri callbackUri);
@@ -32,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Web.WebAuthenticationResult")
 interface IWebAuthenticationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ResponseData(HSTRING* return_value);
 	HRESULT get_ResponseStatus(Windows.Security.Authentication.Web.WebAuthenticationStatus* return_value);

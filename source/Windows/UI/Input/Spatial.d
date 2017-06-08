@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialGestureRecognizer")
 interface ISpatialGestureRecognizer : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_RecognitionStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionStartedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RecognitionStarted(EventRegistrationToken token);
@@ -47,8 +45,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialGestureRecognizer")
 interface ISpatialGestureRecognizerFactory : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_Create(Windows.UI.Input.Spatial.SpatialGestureSettings settings, Windows.UI.Input.Spatial.SpatialGestureRecognizer* return_value);
 }
@@ -57,8 +53,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialHoldCanceledEventArgs")
 interface ISpatialHoldCanceledEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 }
@@ -67,8 +61,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialHoldCompletedEventArgs")
 interface ISpatialHoldCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 }
@@ -77,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialHoldStartedEventArgs")
 interface ISpatialHoldStartedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 	HRESULT abi_TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.UI.Input.Spatial.SpatialPointerPose* return_value);
@@ -88,8 +78,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteraction")
 interface ISpatialInteraction : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SourceState(Windows.UI.Input.Spatial.SpatialInteractionSourceState* return_value);
 }
@@ -98,8 +86,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionController")
 interface ISpatialInteractionController : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_HasTouchpad(bool* return_value);
 	HRESULT get_HasThumbstick(bool* return_value);
@@ -113,8 +99,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionControllerProperties")
 interface ISpatialInteractionControllerProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsTouchpadTouched(bool* return_value);
 	HRESULT get_IsTouchpadPressed(bool* return_value);
@@ -129,8 +113,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs")
 interface ISpatialInteractionDetectedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 	HRESULT abi_TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.UI.Input.Spatial.SpatialPointerPose* return_value);
@@ -141,8 +123,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs")
 interface ISpatialInteractionDetectedEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSource(Windows.UI.Input.Spatial.SpatialInteractionSource* return_value);
 }
@@ -151,8 +131,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionManager")
 interface ISpatialInteractionManager : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT add_SourceDetected(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SourceDetected(EventRegistrationToken token);
@@ -173,8 +151,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionManager")
 interface ISpatialInteractionManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.Input.Spatial.SpatialInteractionManager* return_value);
 }
@@ -183,8 +159,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSource")
 interface ISpatialInteractionSource : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Id(UINT32* return_value);
 	HRESULT get_Kind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
@@ -194,8 +168,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSource")
 interface ISpatialInteractionSource2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsPointingSupported(bool* return_value);
 	HRESULT get_IsMenuSupported(bool* return_value);
@@ -208,8 +180,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs")
 interface ISpatialInteractionSourceEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_State(Windows.UI.Input.Spatial.SpatialInteractionSourceState* return_value);
 }
@@ -218,8 +188,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs")
 interface ISpatialInteractionSourceEventArgs2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PressKind(Windows.UI.Input.Spatial.SpatialInteractionPressKind* return_value);
 }
@@ -228,8 +196,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSourceLocation")
 interface ISpatialInteractionSourceLocation : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3)* return_value);
 	HRESULT get_Velocity(Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3)* return_value);
@@ -239,8 +205,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSourceLocation")
 interface ISpatialInteractionSourceLocation2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Orientation(Windows.Foundation.IReference!(Windows.Foundation.Numerics.Quaternion)* return_value);
 }
@@ -249,8 +213,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSourceProperties")
 interface ISpatialInteractionSourceProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryGetSourceLossMitigationDirection(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3)* return_value);
 	HRESULT get_SourceLossRisk(double* return_value);
@@ -261,8 +223,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSourceState")
 interface ISpatialInteractionSourceState : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Source(Windows.UI.Input.Spatial.SpatialInteractionSource* return_value);
 	HRESULT get_Properties(Windows.UI.Input.Spatial.SpatialInteractionSourceProperties* return_value);
@@ -275,8 +235,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSourceState")
 interface ISpatialInteractionSourceState2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSelectPressed(bool* return_value);
 	HRESULT get_IsMenuPressed(bool* return_value);
@@ -289,8 +247,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialManipulationCanceledEventArgs")
 interface ISpatialManipulationCanceledEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 }
@@ -299,8 +255,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialManipulationCompletedEventArgs")
 interface ISpatialManipulationCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 	HRESULT abi_TryGetCumulativeDelta(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.UI.Input.Spatial.SpatialManipulationDelta* return_value);
@@ -310,8 +264,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialManipulationDelta")
 interface ISpatialManipulationDelta : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Translation(Windows.Foundation.Numerics.Vector3* return_value);
 }
@@ -320,8 +272,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialManipulationStartedEventArgs")
 interface ISpatialManipulationStartedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 	HRESULT abi_TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.UI.Input.Spatial.SpatialPointerPose* return_value);
@@ -331,8 +281,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialManipulationUpdatedEventArgs")
 interface ISpatialManipulationUpdatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 	HRESULT abi_TryGetCumulativeDelta(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.UI.Input.Spatial.SpatialManipulationDelta* return_value);
@@ -342,8 +290,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialNavigationCanceledEventArgs")
 interface ISpatialNavigationCanceledEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 }
@@ -352,8 +298,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialNavigationCompletedEventArgs")
 interface ISpatialNavigationCompletedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 	HRESULT get_NormalizedOffset(Windows.Foundation.Numerics.Vector3* return_value);
@@ -363,8 +307,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialNavigationStartedEventArgs")
 interface ISpatialNavigationStartedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 	HRESULT abi_TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.UI.Input.Spatial.SpatialPointerPose* return_value);
@@ -377,8 +319,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialNavigationUpdatedEventArgs")
 interface ISpatialNavigationUpdatedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 	HRESULT get_NormalizedOffset(Windows.Foundation.Numerics.Vector3* return_value);
@@ -388,8 +328,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialPointerInteractionSourcePose")
 interface ISpatialPointerInteractionSourcePose : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT get_ForwardDirection(Windows.Foundation.Numerics.Vector3* return_value);
@@ -400,8 +338,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialPointerPose")
 interface ISpatialPointerPose : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Perception.PerceptionTimestamp* return_value);
 	HRESULT get_Head(Windows.Perception.People.HeadPose* return_value);
@@ -411,8 +347,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialPointerPose")
 interface ISpatialPointerPose2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryGetInteractionSourcePose(Windows.UI.Input.Spatial.SpatialInteractionSource source, Windows.UI.Input.Spatial.SpatialPointerInteractionSourcePose* return_value);
 }
@@ -421,8 +355,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialPointerPose")
 interface ISpatialPointerPoseStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_TryGetAtTimestamp(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Perception.PerceptionTimestamp timestamp, Windows.UI.Input.Spatial.SpatialPointerPose* return_value);
 }
@@ -431,8 +363,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialRecognitionEndedEventArgs")
 interface ISpatialRecognitionEndedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 }
@@ -441,8 +371,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialRecognitionStartedEventArgs")
 interface ISpatialRecognitionStartedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 	HRESULT abi_TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.UI.Input.Spatial.SpatialPointerPose* return_value);
@@ -453,8 +381,6 @@ extern(Windows):
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialTappedEventArgs")
 interface ISpatialTappedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_InteractionSourceKind(Windows.UI.Input.Spatial.SpatialInteractionSourceKind* return_value);
 	HRESULT abi_TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.UI.Input.Spatial.SpatialPointerPose* return_value);

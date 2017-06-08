@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Media.MediaProperties.AudioEncodingProperties")
 interface IAudioEncodingProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Bitrate(UINT32 value);
 	HRESULT get_Bitrate(UINT32* return_value);
@@ -23,8 +21,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.AudioEncodingProperties")
 interface IAudioEncodingProperties2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_IsSpatial(bool* return_value);
 }
@@ -33,8 +29,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.AudioEncodingProperties")
 interface IAudioEncodingPropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAac(UINT32 sampleRate, UINT32 channelCount, UINT32 bitrate, Windows.Media.MediaProperties.AudioEncodingProperties* return_value);
 	HRESULT abi_CreateAacAdts(UINT32 sampleRate, UINT32 channelCount, UINT32 bitrate, Windows.Media.MediaProperties.AudioEncodingProperties* return_value);
@@ -47,8 +41,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.AudioEncodingProperties")
 interface IAudioEncodingPropertiesStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAlac(UINT32 sampleRate, UINT32 channelCount, UINT32 bitsPerSample, Windows.Media.MediaProperties.AudioEncodingProperties* return_value);
 	HRESULT abi_CreateFlac(UINT32 sampleRate, UINT32 channelCount, UINT32 bitsPerSample, Windows.Media.MediaProperties.AudioEncodingProperties* return_value);
@@ -58,8 +50,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.AudioEncodingProperties")
 interface IAudioEncodingPropertiesWithFormatUserData : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetFormatUserData(UINT32 __valueSize, BYTE* value);
 	HRESULT abi_GetFormatUserData(UINT32* out___valueSize, BYTE** out_value);
@@ -75,8 +65,6 @@ interface IContainerEncodingProperties : IInspectable
 @WinrtFactory("Windows.Media.MediaProperties.H264ProfileIds")
 interface IH264ProfileIdsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ConstrainedBaseline(INT32* return_value);
 	HRESULT get_Baseline(INT32* return_value);
@@ -94,8 +82,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.ImageEncodingProperties")
 interface IImageEncodingProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Width(UINT32 value);
 	HRESULT get_Width(UINT32* return_value);
@@ -107,8 +93,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.ImageEncodingProperties")
 interface IImageEncodingPropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateJpeg(Windows.Media.MediaProperties.ImageEncodingProperties* return_value);
 	HRESULT abi_CreatePng(Windows.Media.MediaProperties.ImageEncodingProperties* return_value);
@@ -119,8 +103,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.ImageEncodingProperties")
 interface IImageEncodingPropertiesStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateUncompressed(Windows.Media.MediaProperties.MediaPixelFormat format, Windows.Media.MediaProperties.ImageEncodingProperties* return_value);
 	HRESULT abi_CreateBmp(Windows.Media.MediaProperties.ImageEncodingProperties* return_value);
@@ -130,8 +112,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.MediaEncodingProfile")
 interface IMediaEncodingProfile : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Audio(Windows.Media.MediaProperties.AudioEncodingProperties value);
 	HRESULT get_Audio(Windows.Media.MediaProperties.AudioEncodingProperties* return_value);
@@ -145,8 +125,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.MediaEncodingProfile")
 interface IMediaEncodingProfileStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateM4a(Windows.Media.MediaProperties.AudioEncodingQuality quality, Windows.Media.MediaProperties.MediaEncodingProfile* return_value);
 	HRESULT abi_CreateMp3(Windows.Media.MediaProperties.AudioEncodingQuality quality, Windows.Media.MediaProperties.MediaEncodingProfile* return_value);
@@ -161,8 +139,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.MediaEncodingProfile")
 interface IMediaEncodingProfileStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateWav(Windows.Media.MediaProperties.AudioEncodingQuality quality, Windows.Media.MediaProperties.MediaEncodingProfile* return_value);
 	HRESULT abi_CreateAvi(Windows.Media.MediaProperties.VideoEncodingQuality quality, Windows.Media.MediaProperties.MediaEncodingProfile* return_value);
@@ -172,8 +148,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.MediaEncodingProfile")
 interface IMediaEncodingProfileStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateAlac(Windows.Media.MediaProperties.AudioEncodingQuality quality, Windows.Media.MediaProperties.MediaEncodingProfile* return_value);
 	HRESULT abi_CreateFlac(Windows.Media.MediaProperties.AudioEncodingQuality quality, Windows.Media.MediaProperties.MediaEncodingProfile* return_value);
@@ -183,8 +157,6 @@ extern(Windows):
 @uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4")
 interface IMediaEncodingProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Properties(Windows.Media.MediaProperties.MediaPropertySet* return_value);
 	HRESULT get_Type(HSTRING* return_value);
@@ -196,8 +168,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.MediaEncodingSubtypes")
 interface IMediaEncodingSubtypesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Aac(HSTRING* return_value);
 	HRESULT get_AacAdts(HSTRING* return_value);
@@ -245,8 +215,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.MediaEncodingSubtypes")
 interface IMediaEncodingSubtypesStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Vp9(HSTRING* return_value);
 	HRESULT get_L8(HSTRING* return_value);
@@ -258,8 +226,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.MediaEncodingSubtypes")
 interface IMediaEncodingSubtypesStatics3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Alac(HSTRING* return_value);
 	HRESULT get_Flac(HSTRING* return_value);
@@ -269,8 +235,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.MediaRatio")
 interface IMediaRatio : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Numerator(UINT32 value);
 	HRESULT get_Numerator(UINT32* return_value);
@@ -282,8 +246,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.Mpeg2ProfileIds")
 interface IMpeg2ProfileIdsStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Simple(INT32* return_value);
 	HRESULT get_Main(INT32* return_value);
@@ -296,8 +258,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.VideoEncodingProperties")
 interface IVideoEncodingProperties : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT set_Bitrate(UINT32 value);
 	HRESULT get_Bitrate(UINT32* return_value);
@@ -313,8 +273,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.VideoEncodingProperties")
 interface IVideoEncodingProperties2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_SetFormatUserData(UINT32 __valueSize, BYTE* value);
 	HRESULT abi_GetFormatUserData(UINT32* out___valueSize, BYTE** out_value);
@@ -326,8 +284,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.VideoEncodingProperties")
 interface IVideoEncodingProperties3 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StereoscopicVideoPackingMode(Windows.Media.MediaProperties.StereoscopicVideoPackingMode* return_value);
 }
@@ -336,8 +292,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.VideoEncodingProperties")
 interface IVideoEncodingProperties4 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_SphericalVideoFrameFormat(Windows.Media.MediaProperties.SphericalVideoFrameFormat* return_value);
 }
@@ -346,8 +300,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.VideoEncodingProperties")
 interface IVideoEncodingPropertiesStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateH264(Windows.Media.MediaProperties.VideoEncodingProperties* return_value);
 	HRESULT abi_CreateMpeg2(Windows.Media.MediaProperties.VideoEncodingProperties* return_value);
@@ -358,8 +310,6 @@ extern(Windows):
 @WinrtFactory("Windows.Media.MediaProperties.VideoEncodingProperties")
 interface IVideoEncodingPropertiesStatics2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_CreateHevc(Windows.Media.MediaProperties.VideoEncodingProperties* return_value);
 }

@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthentication")
 interface ISecondaryAuthenticationFactorAuthentication : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ServiceAuthenticationHmac(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_SessionNonce(Windows.Storage.Streams.IBuffer* return_value);
@@ -21,8 +19,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationResult")
 interface ISecondaryAuthenticationFactorAuthenticationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStatus* return_value);
 	HRESULT get_Authentication(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthentication* return_value);
@@ -32,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs")
 interface ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_StageInfo(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageInfo* return_value);
 }
@@ -42,8 +36,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageInfo")
 interface ISecondaryAuthenticationFactorAuthenticationStageInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Stage(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStage* return_value);
 	HRESULT get_Scenario(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationScenario* return_value);
@@ -54,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthentication")
 interface ISecondaryAuthenticationFactorAuthenticationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_ShowNotificationMessageAsync(HSTRING deviceName, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationMessage message, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_StartAuthenticationAsync(HSTRING deviceId, Windows.Storage.Streams.IBuffer serviceAuthenticationNonce, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationResult)* return_operation);
@@ -68,8 +58,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistration")
 interface ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RegisterDevicePresenceMonitoringAsync(HSTRING deviceId, HSTRING deviceInstancePath, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus)* return_operation);
 	HRESULT abi_RegisterDevicePresenceMonitoringWithNewDeviceAsync(HSTRING deviceId, HSTRING deviceInstancePath, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, HSTRING deviceFriendlyName, HSTRING deviceModelNumber, Windows.Storage.Streams.IBuffer deviceConfigurationData, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus)* return_operation);
@@ -81,8 +69,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorInfo")
 interface ISecondaryAuthenticationFactorInfo : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_deviceId);
 	HRESULT get_DeviceFriendlyName(HSTRING* return_value);
@@ -94,8 +80,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorInfo")
 interface ISecondaryAuthenticationFactorInfo2 : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_PresenceMonitoringMode(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode* return_value);
 	HRESULT abi_UpdateDevicePresenceAsync(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresence presenceState, Windows.Foundation.IAsyncAction* return_result);
@@ -106,8 +90,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistration")
 interface ISecondaryAuthenticationFactorRegistration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FinishRegisteringDeviceAsync(Windows.Storage.Streams.IBuffer deviceConfigurationData, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_AbortRegisteringDeviceAsync(HSTRING errorLogMessage, Windows.Foundation.IAsyncAction* return_result);
@@ -117,8 +99,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationResult")
 interface ISecondaryAuthenticationFactorRegistrationResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Status(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationStatus* return_value);
 	HRESULT get_Registration(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistration* return_value);
@@ -128,8 +108,6 @@ extern(Windows):
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistration")
 interface ISecondaryAuthenticationFactorRegistrationStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_RequestStartRegisteringDeviceAsync(HSTRING deviceId, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDeviceCapabilities capabilities, HSTRING deviceFriendlyName, HSTRING deviceModelNumber, Windows.Storage.Streams.IBuffer deviceKey, Windows.Storage.Streams.IBuffer mutualAuthenticationKey, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationResult)* return_operation);
 	HRESULT abi_FindAllRegisteredDeviceInfoAsync(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDeviceFindScope queryType, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorInfo))* return_deviceInfoList);

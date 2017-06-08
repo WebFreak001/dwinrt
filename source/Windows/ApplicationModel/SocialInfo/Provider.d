@@ -6,8 +6,6 @@ import dwinrt;
 @WinrtFactory("Windows.ApplicationModel.SocialInfo.Provider.SocialDashboardItemUpdater")
 interface ISocialDashboardItemUpdater : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_OwnerRemoteId(HSTRING* return_value);
@@ -33,8 +31,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater")
 interface ISocialFeedUpdater : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_OwnerRemoteId(HSTRING* return_value);
@@ -50,8 +46,6 @@ extern(Windows):
 @WinrtFactory("Windows.ApplicationModel.SocialInfo.Provider.SocialInfoProviderManager")
 interface ISocialInfoProviderManagerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_CreateSocialFeedUpdaterAsync(Windows.ApplicationModel.SocialInfo.SocialFeedKind kind, Windows.ApplicationModel.SocialInfo.SocialFeedUpdateMode mode, HSTRING ownerRemoteId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater)* return_operation);

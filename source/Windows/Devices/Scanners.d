@@ -12,8 +12,6 @@ struct ImageScannerResolution
 @WinrtFactory("Windows.Devices.Scanners.ImageScanner")
 interface IImageScanner : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_DefaultScanSource(Windows.Devices.Scanners.ImageScannerScanSource* return_value);
@@ -30,8 +28,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Scanners.ImageScannerFeederConfiguration")
 interface IImageScannerFeederConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_CanAutoDetectPageSize(bool* return_value);
 	HRESULT get_AutoDetectPageSize(bool* return_value);
@@ -55,8 +51,6 @@ extern(Windows):
 @uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0")
 interface IImageScannerFormatConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_DefaultFormat(Windows.Devices.Scanners.ImageScannerFormat* return_value);
 	HRESULT get_Format(Windows.Devices.Scanners.ImageScannerFormat* return_value);
@@ -68,8 +62,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Scanners.ImageScannerPreviewResult")
 interface IImageScannerPreviewResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_Succeeded(bool* return_value);
 	HRESULT get_Format(Windows.Devices.Scanners.ImageScannerFormat* return_value);
@@ -79,8 +71,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Scanners.ImageScannerScanResult")
 interface IImageScannerScanResult : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_ScannedFiles(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)* return_value);
 }
@@ -88,8 +78,6 @@ extern(Windows):
 @uuid("bfb50055-0b44-4c82-9e89-205f9c234e59")
 interface IImageScannerSourceConfiguration : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT get_MinScanArea(Windows.Foundation.Size* return_value);
 	HRESULT get_MaxScanArea(Windows.Foundation.Size* return_value);
@@ -126,8 +114,6 @@ extern(Windows):
 @WinrtFactory("Windows.Devices.Scanners.ImageScanner")
 interface IImageScannerStatics : IInspectable
 {
-	mixin(generateRTMethods!(typeof(this)));
-
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Scanners.ImageScanner)* return_asyncInfo);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_selector);
