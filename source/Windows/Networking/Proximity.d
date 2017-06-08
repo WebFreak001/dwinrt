@@ -3,26 +3,30 @@ module Windows.Networking.Proximity;
 import dwinrt;
 
 @uuid("efa9da69-f6e1-49c9-a49e-8e0fc58fb911")
-interface DeviceArrivedEventHandler
+interface DeviceArrivedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Networking.Proximity.ProximityDevice sender);
 }
 
 @uuid("efa9da69-f6e2-49c9-a49e-8e0fc58fb911")
-interface DeviceDepartedEventHandler
+interface DeviceDepartedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Networking.Proximity.ProximityDevice sender);
 }
 
 @uuid("efab0782-f6e2-4675-a045-d8e320c24808")
-interface MessageReceivedHandler
+interface MessageReceivedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Networking.Proximity.ProximityDevice sender, Windows.Networking.Proximity.ProximityMessage message);
 }
 
 @uuid("efaa0b4a-f6e2-4d7d-856c-78fc8efc021e")
-interface MessageTransmittedHandler
+interface MessageTransmittedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Networking.Proximity.ProximityDevice sender, INT64 messageId);
 }
 

@@ -3,14 +3,16 @@ module Windows.Gaming.Preview.GamesEnumeration;
 import dwinrt;
 
 @uuid("25f6a421-d8f5-4d91-b40e-53d5e86fde64")
-interface GameListChangedEventHandler
+interface GameListChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Gaming.Preview.GamesEnumeration.GameListEntry game);
 }
 
 @uuid("10c5648f-6c8f-4712-9b38-474bc22e76d8")
-interface GameListRemovedEventHandler
+interface GameListRemovedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(HSTRING identifier);
 }
 

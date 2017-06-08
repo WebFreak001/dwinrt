@@ -3,8 +3,9 @@ module Windows.Devices.SmartCards;
 import dwinrt;
 
 @uuid("138d5e40-f3bc-4a5c-b41d-4b4ef684e237")
-interface SmartCardPinResetHandler
+interface SmartCardPinResetHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Devices.SmartCards.SmartCardProvisioning sender, Windows.Devices.SmartCards.SmartCardPinResetRequest request);
 }
 

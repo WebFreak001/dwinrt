@@ -3,8 +3,9 @@ module Windows.ApplicationModel.Store;
 import dwinrt;
 
 @uuid("d4a50255-1369-4c36-832f-6f2d88e3659b")
-interface LicenseChangedEventHandler
+interface LicenseChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke();
 }
 

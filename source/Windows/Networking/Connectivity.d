@@ -9,8 +9,9 @@ struct NetworkUsageStates
 }
 
 @uuid("71ba143f-598e-49d0-84eb-8febaedcc195")
-interface NetworkStatusChangedEventHandler
+interface NetworkStatusChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender);
 }
 

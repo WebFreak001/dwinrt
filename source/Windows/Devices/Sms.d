@@ -12,14 +12,16 @@ struct SmsEncodedLength
 }
 
 @uuid("982b1162-3dd7-4618-af89-0c272d5d06d8")
-interface SmsDeviceStatusChangedEventHandler
+interface SmsDeviceStatusChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Devices.Sms.SmsDevice sender);
 }
 
 @uuid("0b7ad409-ec2d-47ce-a253-732beeebcacd")
-interface SmsMessageReceivedEventHandler
+interface SmsMessageReceivedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Devices.Sms.SmsDevice sender, Windows.Devices.Sms.SmsMessageReceivedEventArgs e);
 }
 

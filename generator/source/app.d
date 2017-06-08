@@ -213,6 +213,7 @@ void processIDL(string file)
 				method.name = "Invoke";
 				obj.methods ~= method;
 				obj.isDelegate = true;
+				obj.inherits ~= "IUnknown";
 				makeMod(namespace).interfaces ~= obj;
 				break;
 			case "IDL.declare":
@@ -817,7 +818,9 @@ struct Interface
 			ret ~= " : " ~ inherits.join(", ");
 		ret ~= "\n{\n";
 		if (methods.length && !isDelegate)
-			ret ~= "\tmixin(generateRTMethods!(typeof(this)));\n\nextern(Windows):\n";
+			ret ~= "\tmixin(generateRTMethods!(typeof(this)));\n\n";
+		if (methods.length)
+			ret ~= "extern(Windows):\n";
 		foreach (method; methods)
 			ret ~= method.toString.indent ~ "\n";
 		ret ~= "}";
@@ -1019,7 +1022,7 @@ extern (Windows):
 			ComCallData* pParam, REFIID riid, int iMethod, IUnknown* pUnk);
 }
 
-struct IAsyncOperation(Async) if (IsAsync!Async)
+struct AwaitAdapter(Async) if (IsAsync!Async)
 {
 	Async async;
 	private void delegate() callback = null;
@@ -1058,9 +1061,9 @@ struct IAsyncOperation(Async) if (IsAsync!Async)
 	}
 }
 
-IAsyncOperation!Async await(Async)(auto ref Async async) if (IsAsync!Async)
+AwaitAdapter!Async await(Async)(auto ref Async async) if (IsAsync!Async)
 {
-	return IAsyncOperation!Async(async);
+	return AwaitAdapter!Async(async);
 }
 
 enum IsAsync(T) = is(T == struct) && __traits(compiles, {
@@ -1070,4 +1073,81 @@ enum IsAsync(T) = is(T == struct) && __traits(compiles, {
 		auto res = async.GetResults;
 		static assert(!is(typeof(res) == void));
 	});
+
+interface EventHandler(T) : IUnknown
+{
+extern (Windows):
+	HRESULT abi_Invoke(IInspectable sender, T args);
+}
+
+interface TypedEventHandler(TSender, TArgs) : IUnknown
+{
+extern (Windows):
+	HRESULT abi_Invoke(TSender sender, TArgs args);
+}
+
+interface IAsyncActionWithProgress(TProgress) : IInspectable
+{
+	mixin(generateRTMethods!(typeof(this)));
+
+extern (Windows):
+	HRESULT put_Progress(AsyncActionProgressHandler!TProgress handler);
+	HRESULT get_Progress(AsyncActionProgressHandler!TProgress* handler);
+	HRESULT put_Completed(AsyncActionWithProgressCompletedHandler!TProgress handler);
+	HRESULT get_Completed(AsyncActionWithProgressCompletedHandler!TProgress* handler);
+	HRESULT abi_GetResults();
+}
+
+interface AsyncActionProgressHandler(TProgress) : IUnknown
+{
+extern (Windows):
+	HRESULT abi_Invoke(IAsyncActionWithProgress!TProgress asyncInfo, TProgress progressInfo);
+}
+
+interface AsyncActionWithProgressCompletedHandler(TProgress) : IUnknown
+{
+extern (Windows):
+	HRESULT abi_Invoke(IAsyncActionWithProgress!TProgress asyncInfo, AsyncStatus status);
+}
+
+interface IAsyncOperation(TResult) : IInspectable
+{
+	mixin(generateRTMethods!(typeof(this)));
+
+extern (Windows):
+	HRESULT put_Completed(AsyncOperationCompletedHandler!TResult handler);
+	HRESULT get_Completed(AsyncOperationCompletedHandler!TResult* handler);
+	HRESULT abi_GetResults(TResult* results);
+}
+
+interface AsyncOperationProgressHandler(TResult, TProgress) : IUnknown
+{
+extern (Windows):
+	HRESULT abi_Invoke(IAsyncOperationWithProgress!(TResult,
+			TProgress) asyncInfo, TProgress progressInfo);
+}
+
+interface AsyncOperationCompletedHandler(TResult) : IUnknown
+{
+extern (Windows):
+	HRESULT abi_Invoke(IAsyncOperation!TResult asyncInfo, AsyncStatus status);
+}
+
+interface IAsyncOperationWithProgress(TResult, TProgress) : IInspectable
+{
+	mixin(generateRTMethods!(typeof(this)));
+
+extern (Windows):
+	HRESULT put_Progress(AsyncOperationProgressHandler!(TResult, TProgress) handler);
+	HRESULT get_Progress(AsyncOperationProgressHandler!(TResult, TProgress)* handler);
+	HRESULT put_Completed(AsyncOperationCompletedHandler!(TResult, TProgress) handler);
+	HRESULT get_Completed(AsyncOperationCompletedHandler!(TResult, TProgress)* handler);
+	HRESULT abi_GetResults(TResult* results);
+}
+
+interface AsyncOperationWithProgressCompletedHandler(TResult, TProgress) : IUnknown
+{
+extern (Windows):
+	HRESULT abi_Invoke(IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status);
+}
 };

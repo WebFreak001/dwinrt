@@ -13,14 +13,16 @@ struct Matrix
 }
 
 @uuid("08e9a257-ae05-489b-8839-28c6225d2349")
-interface RateChangedRoutedEventHandler
+interface RateChangedRoutedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Media.RateChangedRoutedEventArgs e);
 }
 
 @uuid("72e2fa9c-6dea-4cbe-a159-06ce95fbeced")
-interface TimelineMarkerRoutedEventHandler
+interface TimelineMarkerRoutedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Media.TimelineMarkerRoutedEventArgs e);
 }
 

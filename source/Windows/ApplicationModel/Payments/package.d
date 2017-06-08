@@ -3,8 +3,9 @@ module Windows.ApplicationModel.Payments;
 import dwinrt;
 
 @uuid("5078b9e1-f398-4f2c-a27e-94d371cf6c7d")
-interface PaymentRequestChangedHandler
+interface PaymentRequestChangedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest, Windows.ApplicationModel.Payments.PaymentRequestChangedArgs args);
 }
 

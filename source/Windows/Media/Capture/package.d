@@ -10,14 +10,16 @@ struct WhiteBalanceGain
 }
 
 @uuid("2014effb-5cd8-4f08-a314-0d360da59f14")
-interface MediaCaptureFailedEventHandler
+interface MediaCaptureFailedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Media.Capture.MediaCapture sender, Windows.Media.Capture.MediaCaptureFailedEventArgs errorEventArgs);
 }
 
 @uuid("3fae8f2e-4fe1-4ffd-aaba-e1f1337d4e53")
-interface RecordLimitationExceededEventHandler
+interface RecordLimitationExceededEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Media.Capture.MediaCapture sender);
 }
 

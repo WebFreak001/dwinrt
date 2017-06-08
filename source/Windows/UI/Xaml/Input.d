@@ -3,68 +3,79 @@ module Windows.UI.Xaml.Input;
 import dwinrt;
 
 @uuid("3124d025-04a7-4d45-825e-8204a624dbf4")
-interface DoubleTappedEventHandler
+interface DoubleTappedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e);
 }
 
 @uuid("ecae8ccd-8e5e-4fbe-9846-30a6370afcdf")
-interface HoldingEventHandler
+interface HoldingEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.HoldingRoutedEventArgs e);
 }
 
 @uuid("7c63d2e5-7a0e-4e12-b96a-7715aa6ff1c8")
-interface KeyEventHandler
+interface KeyEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e);
 }
 
 @uuid("38ef4b0f-14f8-42df-9a1e-a4bcc4af77f4")
-interface ManipulationCompletedEventHandler
+interface ManipulationCompletedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs e);
 }
 
 @uuid("aa1160cb-dfb9-4c56-abdc-711b63c8eb94")
-interface ManipulationDeltaEventHandler
+interface ManipulationDeltaEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs e);
 }
 
 @uuid("d39d6322-7c9c-481b-827b-c8b2d9bb6fc7")
-interface ManipulationInertiaStartingEventHandler
+interface ManipulationInertiaStartingEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs e);
 }
 
 @uuid("f88345f8-e0a3-4be2-b90c-dc20e6d8beb0")
-interface ManipulationStartedEventHandler
+interface ManipulationStartedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs e);
 }
 
 @uuid("10d0b04e-bfe4-42cb-823c-3fecd8770ef8")
-interface ManipulationStartingEventHandler
+interface ManipulationStartingEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs e);
 }
 
 @uuid("e4385929-c004-4bcf-8970-359486e39f88")
-interface PointerEventHandler
+interface PointerEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e);
 }
 
 @uuid("2532a062-f447-4950-9c46-f1e34a2c2238")
-interface RightTappedEventHandler
+interface RightTappedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs e);
 }
 
 @uuid("68d940cc-9ff0-49ce-b141-3f07ec477b97")
-interface TappedEventHandler
+interface TappedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e);
 }
 

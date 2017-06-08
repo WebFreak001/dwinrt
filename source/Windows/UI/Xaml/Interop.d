@@ -9,14 +9,16 @@ struct TypeName
 }
 
 @uuid("624cd4e1-d007-43b1-9c03-af4d3e6258c4")
-interface BindableVectorChangedEventHandler
+interface BindableVectorChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.UI.Xaml.Interop.IBindableObservableVector vector, IInspectable e);
 }
 
 @uuid("ca10b37c-f382-4591-8557-5e24965279b0")
-interface NotifyCollectionChangedEventHandler
+interface NotifyCollectionChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Interop.NotifyCollectionChangedEventArgs e);
 }
 

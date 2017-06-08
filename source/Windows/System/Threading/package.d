@@ -3,20 +3,23 @@ module Windows.System.Threading;
 import dwinrt;
 
 @uuid("34ed19fa-8384-4eb9-8209-fb5094eeec35")
-interface TimerDestroyedHandler
+interface TimerDestroyedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.System.Threading.ThreadPoolTimer timer);
 }
 
 @uuid("faaea667-fbeb-49cb-adb2-71184c556e43")
-interface TimerElapsedHandler
+interface TimerElapsedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.System.Threading.ThreadPoolTimer timer);
 }
 
 @uuid("1d1a8b8b-fa66-414f-9cbd-b65fc99d17fa")
-interface WorkItemHandler
+interface WorkItemHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncAction operation);
 }
 

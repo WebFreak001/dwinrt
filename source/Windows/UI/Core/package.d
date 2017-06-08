@@ -41,14 +41,16 @@ interface UAPCoreWindowFactory
 }
 
 @uuid("d1f276c4-98d8-4636-bf49-eb79507548e9")
-interface DispatchedHandler
+interface DispatchedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke();
 }
 
 @uuid("a42b0c24-7f21-4abc-99c1-8f01007f0880")
-interface IdleDispatchedHandler
+interface IdleDispatchedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.UI.Core.IdleDispatchedHandlerArgs e);
 }
 

@@ -3,38 +3,44 @@ module Windows.UI.WebUI;
 import dwinrt;
 
 @uuid("50f1e730-c5d1-4b6b-9adb-8a11756be29c")
-interface ActivatedEventHandler
+interface ActivatedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.Activation.IActivatedEventArgs eventArgs);
 }
 
 @uuid("2b09a173-b68e-4def-88c1-8de84e5aab2f")
-interface EnteredBackgroundEventHandler
+interface EnteredBackgroundEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.IEnteredBackgroundEventArgs e);
 }
 
 @uuid("00b4ccd9-7a9c-4b6b-9ac4-13474f268bc4")
-interface LeavingBackgroundEventHandler
+interface LeavingBackgroundEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.ILeavingBackgroundEventArgs e);
 }
 
 @uuid("7af46fe6-40ca-4e49-a7d6-dbdb330cd1a3")
-interface NavigatedEventHandler
+interface NavigatedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.WebUI.IWebUINavigatedEventArgs e);
 }
 
 @uuid("26599ba9-a22d-4806-a728-acadc1d075fa")
-interface ResumingEventHandler
+interface ResumingEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender);
 }
 
 @uuid("509c429c-78e2-4883-abc8-8960dcde1b5c")
-interface SuspendingEventHandler
+interface SuspendingEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.ISuspendingEventArgs e);
 }
 

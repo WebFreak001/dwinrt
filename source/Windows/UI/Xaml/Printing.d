@@ -3,20 +3,23 @@ module Windows.UI.Xaml.Printing;
 import dwinrt;
 
 @uuid("d4b57970-57a0-4209-847c-c093b54bc729")
-interface AddPagesEventHandler
+interface AddPagesEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Printing.AddPagesEventArgs e);
 }
 
 @uuid("ccb3e9ed-9c11-4e50-ab49-e98086bbfdef")
-interface GetPreviewPageEventHandler
+interface GetPreviewPageEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Printing.GetPreviewPageEventArgs e);
 }
 
 @uuid("0cc05b61-811b-4a32-9965-13eb78dbb01b")
-interface PaginateEventHandler
+interface PaginateEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Printing.PaginateEventArgs e);
 }
 

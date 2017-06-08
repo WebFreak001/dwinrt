@@ -3,14 +3,16 @@ module Windows.Devices.Perception.Provider;
 import dwinrt;
 
 @uuid("74816d2a-2090-4670-8c48-ef39e7ff7c26")
-interface PerceptionStartFaceAuthenticationHandler
+interface PerceptionStartFaceAuthenticationHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup sender, bool* return_result);
 }
 
 @uuid("387ee6aa-89cd-481e-aade-dd92f70b2ad7")
-interface PerceptionStopFaceAuthenticationHandler
+interface PerceptionStopFaceAuthenticationHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup sender);
 }
 

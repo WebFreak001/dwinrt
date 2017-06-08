@@ -8,14 +8,16 @@ struct LoadMoreItemsResult
 }
 
 @uuid("f3888db8-139f-4dce-8dc9-f7f1444d1185")
-interface CurrentChangingEventHandler
+interface CurrentChangingEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Data.CurrentChangingEventArgs e);
 }
 
 @uuid("50f19c16-0a22-4d8e-a089-1ea9951657d2")
-interface PropertyChangedEventHandler
+interface PropertyChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Data.PropertyChangedEventArgs e);
 }
 

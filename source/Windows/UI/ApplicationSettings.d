@@ -3,20 +3,23 @@ module Windows.UI.ApplicationSettings;
 import dwinrt;
 
 @uuid("61c0e185-0977-4678-b4e2-98727afbeed9")
-interface CredentialCommandCredentialDeletedHandler
+interface CredentialCommandCredentialDeletedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.UI.ApplicationSettings.CredentialCommand command);
 }
 
 @uuid("1ee6e459-1705-4a9a-b599-a0c3d6921973")
-interface WebAccountCommandInvokedHandler
+interface WebAccountCommandInvokedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.UI.ApplicationSettings.WebAccountCommand command, Windows.UI.ApplicationSettings.WebAccountInvokedArgs args);
 }
 
 @uuid("b7de5527-4c8f-42dd-84da-5ec493abdb9a")
-interface WebAccountProviderCommandInvokedHandler
+interface WebAccountProviderCommandInvokedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.UI.ApplicationSettings.WebAccountProviderCommand command);
 }
 

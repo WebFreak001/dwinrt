@@ -3,98 +3,114 @@ module Windows.UI.Xaml.Controls;
 import dwinrt;
 
 @uuid("fa9bc21f-9892-482e-abf6-eb2d607d32de")
-interface BackClickEventHandler
+interface BackClickEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.BackClickEventArgs e);
 }
 
 @uuid("8d745891-4de3-49cb-974b-083871a3afe6")
-interface CalendarViewDayItemChangingEventHandler
+interface CalendarViewDayItemChangingEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.UI.Xaml.Controls.CalendarView sender, Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs e);
 }
 
 @uuid("cacad0d6-0f0d-4870-884d-f2dedf674288")
-interface CleanUpVirtualizedItemEventHandler
+interface CleanUpVirtualizedItemEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.CleanUpVirtualizedItemEventArgs e);
 }
 
 @uuid("df945151-745c-4446-b2fc-216d765847a0")
-interface ContextMenuOpeningEventHandler
+interface ContextMenuOpeningEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.ContextMenuEventArgs e);
 }
 
 @uuid("3aaeab4c-14cb-4434-becc-88a8585c2f89")
-interface DragItemsStartingEventHandler
+interface DragItemsStartingEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.DragItemsStartingEventArgs e);
 }
 
 @uuid("afe17b9b-9c63-4583-88e4-c59019b7f49d")
-interface HubSectionHeaderClickEventHandler
+interface HubSectionHeaderClickEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.HubSectionHeaderClickEventArgs e);
 }
 
 @uuid("3df6d14e-e18a-4a75-9395-627c5f3cd489")
-interface ItemClickEventHandler
+interface ItemClickEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.ItemClickEventArgs e);
 }
 
 @uuid("6af5da76-7e8b-4a91-9a56-460cb47d523f")
-interface ListViewItemToKeyHandler
+interface ListViewItemToKeyHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable item, HSTRING* return_returnValue);
 }
 
 @uuid("26fd5855-b530-4688-b9f0-428249178ef8")
-interface ListViewKeyToItemHandler
+interface ListViewKeyToItemHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(HSTRING key, Windows.Foundation.IAsyncOperation!(IInspectable)* return_returnValue);
 }
 
 @uuid("c2fdd1f8-7105-4a74-a109-de29dff56b98")
-interface NotifyEventHandler
+interface NotifyEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.NotifyEventArgs e);
 }
 
 @uuid("6becaa6a-63f8-47ff-b6ac-76e7da247d67")
-interface SectionsInViewChangedEventHandler
+interface SectionsInViewChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.SectionsInViewChangedEventArgs e);
 }
 
 @uuid("e1a05352-5aa0-42ca-9cd9-068a14db6e68")
-interface SelectionChangedEventHandler
+interface SelectionChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.SelectionChangedEventArgs e);
 }
 
 @uuid("1fa9161d-5d73-44fb-81ac-d1c9384919d4")
-interface SemanticZoomViewChangedEventHandler
+interface SemanticZoomViewChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.SemanticZoomViewChangedEventArgs e);
 }
 
 @uuid("8eb35b97-ad87-40e8-818b-77db24759566")
-interface TextChangedEventHandler
+interface TextChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.TextChangedEventArgs e);
 }
 
 @uuid("d56db359-6f77-4296-ab9c-794939444365")
-interface TextControlPasteEventHandler
+interface TextControlPasteEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.TextControlPasteEventArgs e);
 }
 
 @uuid("a31eafe1-41dc-47f8-ae22-9706c8f143d4")
-interface WebViewNavigationFailedEventHandler
+interface WebViewNavigationFailedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.WebViewNavigationFailedEventArgs e);
 }
 

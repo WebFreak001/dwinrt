@@ -3,20 +3,23 @@ module Windows.ApplicationModel.Background;
 import dwinrt;
 
 @uuid("a6c4bac0-51f8-4c57-ac3f-156dd1680c4f")
-interface BackgroundTaskCanceledEventHandler
+interface BackgroundTaskCanceledEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.ApplicationModel.Background.IBackgroundTaskInstance sender, Windows.ApplicationModel.Background.BackgroundTaskCancellationReason reason);
 }
 
 @uuid("5b38e929-a086-46a7-a678-439135822bcf")
-interface BackgroundTaskCompletedEventHandler
+interface BackgroundTaskCompletedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.ApplicationModel.Background.BackgroundTaskRegistration sender, Windows.ApplicationModel.Background.BackgroundTaskCompletedEventArgs args);
 }
 
 @uuid("46e0683c-8a88-4c99-804c-76897f6277a6")
-interface BackgroundTaskProgressEventHandler
+interface BackgroundTaskProgressEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.ApplicationModel.Background.BackgroundTaskRegistration sender, Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs args);
 }
 

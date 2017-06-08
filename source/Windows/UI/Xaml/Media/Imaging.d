@@ -3,8 +3,9 @@ module Windows.UI.Xaml.Media.Imaging;
 import dwinrt;
 
 @uuid("1abaee23-74ee-4cc7-99ba-b171e3cda61e")
-interface DownloadProgressEventHandler
+interface DownloadProgressEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Media.Imaging.DownloadProgressEventArgs e);
 }
 

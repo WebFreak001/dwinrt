@@ -3,32 +3,37 @@ module Windows.UI.Xaml.Navigation;
 import dwinrt;
 
 @uuid("aebaf785-43fc-4e2c-95c3-97ae84eabc8e")
-interface LoadCompletedEventHandler
+interface LoadCompletedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Navigation.NavigationEventArgs e);
 }
 
 @uuid("7bd1cf54-23cf-4cce-b2f5-4ce78d96896e")
-interface NavigatedEventHandler
+interface NavigatedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Navigation.NavigationEventArgs e);
 }
 
 @uuid("75d6a78f-a302-4489-9898-24ea49182910")
-interface NavigatingCancelEventHandler
+interface NavigatingCancelEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs e);
 }
 
 @uuid("4dab4671-12b2-43c7-b892-9be2dcd3e88d")
-interface NavigationFailedEventHandler
+interface NavigationFailedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Navigation.NavigationFailedEventArgs e);
 }
 
 @uuid("f0117ddb-12fa-4d8d-8b26-b383d09c2b3c")
-interface NavigationStoppedEventHandler
+interface NavigationStoppedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Navigation.NavigationEventArgs e);
 }
 

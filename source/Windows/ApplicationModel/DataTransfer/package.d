@@ -3,14 +3,16 @@ module Windows.ApplicationModel.DataTransfer;
 import dwinrt;
 
 @uuid("e7ecd720-f2f4-4a2d-920e-170a2f482a27")
-interface DataProviderHandler
+interface DataProviderHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.ApplicationModel.DataTransfer.DataProviderRequest request);
 }
 
 @uuid("e7f9d9ba-e1ba-4e4d-bd65-d43845d3212f")
-interface ShareProviderHandler
+interface ShareProviderHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.ApplicationModel.DataTransfer.ShareProviderOperation operation);
 }
 

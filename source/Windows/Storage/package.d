@@ -3,14 +3,16 @@ module Windows.Storage;
 import dwinrt;
 
 @uuid("a05791e6-cc9f-4687-acab-a364fd785463")
-interface ApplicationDataSetVersionHandler
+interface ApplicationDataSetVersionHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Storage.SetVersionRequest setVersionRequest);
 }
 
 @uuid("fef6a824-2fe1-4d07-a35b-b77c50b5f4cc")
-interface StreamedFileDataRequestedHandler
+interface StreamedFileDataRequestedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Storage.StreamedFileDataRequest stream);
 }
 

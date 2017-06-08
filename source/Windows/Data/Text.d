@@ -9,14 +9,16 @@ struct TextSegment
 }
 
 @uuid("3a3dfc9c-aede-4dc7-9e6c-41c044bd3592")
-interface SelectableWordSegmentsTokenizingHandler
+interface SelectableWordSegmentsTokenizingHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.Collections.IIterable!(Windows.Data.Text.SelectableWordSegment) precedingWords, Windows.Foundation.Collections.IIterable!(Windows.Data.Text.SelectableWordSegment) words);
 }
 
 @uuid("a5dd6357-bf2a-4c4f-a31f-29e71c6f8b35")
-interface WordSegmentsTokenizingHandler
+interface WordSegmentsTokenizingHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.Collections.IIterable!(Windows.Data.Text.WordSegment) precedingWords, Windows.Foundation.Collections.IIterable!(Windows.Data.Text.WordSegment) words);
 }
 

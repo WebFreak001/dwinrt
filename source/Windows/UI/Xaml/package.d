@@ -31,116 +31,135 @@ struct Thickness
 }
 
 @uuid("b6351c55-c284-46e4-8310-fb0967fab76f")
-interface ApplicationInitializationCallback
+interface ApplicationInitializationCallback : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.UI.Xaml.ApplicationInitializationCallbackParams p);
 }
 
 @uuid("136b1782-54ba-420d-a1aa-82828721cde6")
-interface BindingFailedEventHandler
+interface BindingFailedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.BindingFailedEventArgs e);
 }
 
 @uuid("d6ecb12c-15b5-4ec8-b95c-cdd208f08153")
-interface CreateDefaultValueCallback
+interface CreateDefaultValueCallback : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable* return_value);
 }
 
 @uuid("45883d16-27bf-4bc1-ac26-94c1601f3a49")
-interface DependencyPropertyChangedCallback
+interface DependencyPropertyChangedCallback : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.UI.Xaml.DependencyObject sender, Windows.UI.Xaml.DependencyProperty dp);
 }
 
 @uuid("09223e5a-75be-4499-8180-1ddc005421c0")
-interface DependencyPropertyChangedEventHandler
+interface DependencyPropertyChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.DependencyPropertyChangedEventArgs e);
 }
 
 @uuid("2ab1a205-1e73-4bcf-aabc-57b97e21961d")
-interface DragEventHandler
+interface DragEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.DragEventArgs e);
 }
 
 @uuid("93a956ae-1d7f-438b-b7b8-227d96b609c0")
-interface EnteredBackgroundEventHandler
+interface EnteredBackgroundEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.EnteredBackgroundEventArgs e);
 }
 
 @uuid("68e0e810-f6ea-42bc-855b-5d9b67e6a262")
-interface ExceptionRoutedEventHandler
+interface ExceptionRoutedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.ExceptionRoutedEventArgs e);
 }
 
 @uuid("aaad5dad-4fc6-4aa4-b7cf-877e36ada4f6")
-interface LeavingBackgroundEventHandler
+interface LeavingBackgroundEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.LeavingBackgroundEventArgs e);
 }
 
 @uuid("5a9f8a25-d142-44a4-8231-fd676724f29b")
-interface PropertyChangedCallback
+interface PropertyChangedCallback : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.UI.Xaml.DependencyObject d, Windows.UI.Xaml.DependencyPropertyChangedEventArgs e);
 }
 
 @uuid("a856e674-b0b6-4bc3-bba8-1ba06e40d4b5")
-interface RoutedEventHandler
+interface RoutedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.RoutedEventArgs e);
 }
 
 @uuid("1115b13c-25d2-480b-89dc-eb3dcbd6b7fa")
-interface SizeChangedEventHandler
+interface SizeChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.SizeChangedEventArgs e);
 }
 
 @uuid("23429465-e36a-40e2-b139-a4704602a6e1")
-interface SuspendingEventHandler
+interface SuspendingEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.ApplicationModel.SuspendingEventArgs e);
 }
 
 @uuid("9274e6bd-49a1-4958-beee-d0e19587b6e3")
-interface UnhandledExceptionEventHandler
+interface UnhandledExceptionEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.UnhandledExceptionEventArgs e);
 }
 
 @uuid("e6d5bbd5-e029-43a6-b36d-84a81042d774")
-interface VisualStateChangedEventHandler
+interface VisualStateChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.VisualStateChangedEventArgs e);
 }
 
 @uuid("18026348-8619-4c7b-b534-ced45d9de219")
-interface WindowActivatedEventHandler
+interface WindowActivatedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Core.WindowActivatedEventArgs e);
 }
 
 @uuid("0db89161-20d7-45df-9122-ba89576703ba")
-interface WindowClosedEventHandler
+interface WindowClosedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Core.CoreWindowEventArgs e);
 }
 
 @uuid("5c21c742-2ced-4fd9-ba38-7118d40e966b")
-interface WindowSizeChangedEventHandler
+interface WindowSizeChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Core.WindowSizeChangedEventArgs e);
 }
 
 @uuid("10406ad6-b090-4a4a-b2ad-d682df27130f")
-interface WindowVisibilityChangedEventHandler
+interface WindowVisibilityChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Core.VisibilityChangedEventArgs e);
 }
 

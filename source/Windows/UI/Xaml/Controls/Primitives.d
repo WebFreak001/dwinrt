@@ -9,38 +9,44 @@ struct GeneratorPosition
 }
 
 @uuid("36b28888-19ac-4b4e-9137-a6cf2b023883")
-interface DragCompletedEventHandler
+interface DragCompletedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.DragCompletedEventArgs e);
 }
 
 @uuid("4ac24f9f-ac28-49e9-9189-dccffeb66472")
-interface DragDeltaEventHandler
+interface DragDeltaEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.DragDeltaEventArgs e);
 }
 
 @uuid("d2eea48a-c65a-495d-a2f1-72c66989142d")
-interface DragStartedEventHandler
+interface DragStartedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.DragStartedEventArgs e);
 }
 
 @uuid("178257be-a304-482f-8bf0-b9d2e39612a3")
-interface ItemsChangedEventHandler
+interface ItemsChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.ItemsChangedEventArgs e);
 }
 
 @uuid("e3906fd9-4d1b-4ac8-a43c-c3b908742799")
-interface RangeBaseValueChangedEventHandler
+interface RangeBaseValueChangedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e);
 }
 
 @uuid("8860b0a4-a383-4c83-b306-a1c39d7db87f")
-interface ScrollEventHandler
+interface ScrollEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.ScrollEventArgs e);
 }
 

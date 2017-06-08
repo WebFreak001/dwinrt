@@ -3,8 +3,9 @@ module Windows.System.Threading.Core;
 import dwinrt;
 
 @uuid("923c402e-4721-440e-9dda-55b6f2e07710")
-interface SignalHandler
+interface SignalHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.System.Threading.Core.SignalNotifier signalNotifier, bool timedOut);
 }
 

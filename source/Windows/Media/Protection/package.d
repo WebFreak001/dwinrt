@@ -3,20 +3,23 @@ module Windows.Media.Protection;
 import dwinrt;
 
 @uuid("95da643c-6db9-424b-86ca-091af432081c")
-interface ComponentLoadFailedEventHandler
+interface ComponentLoadFailedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Media.Protection.MediaProtectionManager sender, Windows.Media.Protection.ComponentLoadFailedEventArgs e);
 }
 
 @uuid("64e12a45-973b-4a3a-b260-91898a49a82c")
-interface RebootNeededEventHandler
+interface RebootNeededEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Media.Protection.MediaProtectionManager sender);
 }
 
 @uuid("d2d690ba-cac9-48e1-95c0-d38495a84055")
-interface ServiceRequestedEventHandler
+interface ServiceRequestedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Media.Protection.MediaProtectionManager sender, Windows.Media.Protection.ServiceRequestedEventArgs e);
 }
 

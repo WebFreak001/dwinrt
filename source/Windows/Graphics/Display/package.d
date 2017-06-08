@@ -3,8 +3,9 @@ module Windows.Graphics.Display;
 import dwinrt;
 
 @uuid("dbdd8b01-f1a1-46d1-9ee3-543bcc995980")
-interface DisplayPropertiesEventHandler
+interface DisplayPropertiesEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender);
 }
 

@@ -3,26 +3,30 @@ module Windows.Media.Devices;
 import dwinrt;
 
 @uuid("596f759f-50df-4454-bc63-4d3d01b61958")
-interface CallControlEventHandler
+interface CallControlEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Media.Devices.CallControl sender);
 }
 
 @uuid("5abbffdb-c21f-4bc4-891b-257e28c1b1a4")
-interface DialRequestedEventHandler
+interface DialRequestedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Media.Devices.CallControl sender, Windows.Media.Devices.DialRequestedEventArgs e);
 }
 
 @uuid("e637a454-c527-422c-8926-c9af83b559a0")
-interface KeypadPressedEventHandler
+interface KeypadPressedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Media.Devices.CallControl sender, Windows.Media.Devices.KeypadPressedEventArgs e);
 }
 
 @uuid("baf257d1-4ebd-4b84-9f47-6ec43d75d8b1")
-interface RedialRequestedEventHandler
+interface RedialRequestedEventHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Media.Devices.CallControl sender, Windows.Media.Devices.RedialRequestedEventArgs e);
 }
 

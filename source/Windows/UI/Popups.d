@@ -3,8 +3,9 @@ module Windows.UI.Popups;
 import dwinrt;
 
 @uuid("daf77a4f-c27a-4298-9ac6-2922c45e7da6")
-interface UICommandInvokedHandler
+interface UICommandInvokedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.UI.Popups.IUICommand command);
 }
 

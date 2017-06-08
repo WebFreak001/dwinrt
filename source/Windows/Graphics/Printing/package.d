@@ -11,8 +11,9 @@ struct PrintPageDescription
 }
 
 @uuid("6c109fa8-5cb6-4b3a-8663-f39cb02dc9b4")
-interface PrintTaskSourceRequestedHandler
+interface PrintTaskSourceRequestedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Graphics.Printing.PrintTaskSourceRequestedArgs args);
 }
 

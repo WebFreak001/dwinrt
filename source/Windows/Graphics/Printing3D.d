@@ -9,8 +9,9 @@ struct Printing3DBufferDescription
 }
 
 @uuid("e9175e70-c917-46de-bb51-d9a94db3711f")
-interface Print3DTaskSourceRequestedHandler
+interface Print3DTaskSourceRequestedHandler : IUnknown
 {
+extern(Windows):
 	HRESULT abi_Invoke(Windows.Graphics.Printing3D.Print3DTaskSourceRequestedArgs args);
 }
 
