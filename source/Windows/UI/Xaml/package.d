@@ -256,6 +256,12 @@ extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Application* return_instance);
 }
 
+@uuid("751b792e-5772-4488-8b87-f547faa64474")
+@WinrtFactory("Windows.UI.Xaml.ApplicationInitializationCallbackParams")
+interface IApplicationInitializationCallbackParams : IInspectable
+{
+}
+
 @uuid("25f99ff7-9347-459a-9fac-b2d0e11c1a0f")
 @WinrtFactory("Windows.UI.Xaml.Application")
 interface IApplicationOverrides : IInspectable
@@ -318,6 +324,12 @@ extern(Windows):
 	HRESULT set_AnimationDesired(bool value);
 	HRESULT get_TargetRect(Windows.Foundation.IReference!(Windows.Foundation.Rect)* return_value);
 	HRESULT set_TargetRect(Windows.Foundation.IReference!(Windows.Foundation.Rect) value);
+}
+
+@uuid("fd7be182-1cdb-4288-b8c8-85ee79297bfc")
+@WinrtFactory("Windows.UI.Xaml.CornerRadiusHelper")
+interface ICornerRadiusHelper : IInspectable
+{
 }
 
 @uuid("f4a1f659-d4d4-451f-a387-d6bf4b2451d4")
@@ -674,6 +686,12 @@ extern(Windows):
 	HRESULT get_DropResult(Windows.ApplicationModel.DataTransfer.DataPackageOperation* return_value);
 }
 
+@uuid("25c1659f-4497-4135-940f-ee96f4d6e934")
+@WinrtFactory("Windows.UI.Xaml.DurationHelper")
+interface IDurationHelper : IInspectable
+{
+}
+
 @uuid("bc88093e-3547-4ec0-b519-ffa8f9c4838c")
 @WinrtFactory("Windows.UI.Xaml.DurationHelper")
 interface IDurationHelperStatics : IInspectable
@@ -689,6 +707,12 @@ extern(Windows):
 	HRESULT abi_Add(Windows.UI.Xaml.Duration target, Windows.UI.Xaml.Duration duration, Windows.UI.Xaml.Duration* return_returnValue);
 	HRESULT abi_Equals(Windows.UI.Xaml.Duration target, Windows.UI.Xaml.Duration value, bool* return_returnValue);
 	HRESULT abi_Subtract(Windows.UI.Xaml.Duration target, Windows.UI.Xaml.Duration duration, Windows.UI.Xaml.Duration* return_returnValue);
+}
+
+@uuid("387773a5-f036-460c-9b81-f3d6ea43f6f2")
+@WinrtFactory("Windows.UI.Xaml.ElementSoundPlayer")
+interface IElementSoundPlayer : IInspectable
+{
 }
 
 @uuid("217a9004-981d-41c9-b152-ada911a4b13a")
@@ -725,6 +749,12 @@ interface IExceptionRoutedEventArgs : IInspectable
 
 extern(Windows):
 	HRESULT get_ErrorMessage(HSTRING* return_value);
+}
+
+@uuid("bba9826d-5d7a-44e7-b893-b2ae0dd24273")
+@WinrtFactory("Windows.UI.Xaml.ExceptionRoutedEventArgs")
+interface IExceptionRoutedEventArgsFactory : IInspectable
+{
 }
 
 @uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf")
@@ -925,6 +955,12 @@ extern(Windows):
 	HRESULT abi_DeferTree(Windows.UI.Xaml.DependencyObject element);
 }
 
+@uuid("a1e254d8-a446-4a27-9a9d-a0f59e1258a5")
+@WinrtFactory("Windows.UI.Xaml.FrameworkTemplate")
+interface IFrameworkTemplate : IInspectable
+{
+}
+
 @uuid("1a78a0a5-937d-46d4-832b-94ff14dab061")
 @WinrtFactory("Windows.UI.Xaml.FrameworkTemplate")
 interface IFrameworkTemplateFactory : IInspectable
@@ -933,6 +969,24 @@ interface IFrameworkTemplateFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.FrameworkTemplate* return_instance);
+}
+
+@uuid("ddba664b-b603-47aa-942d-3833174f0d80")
+@WinrtFactory("Windows.UI.Xaml.FrameworkView")
+interface IFrameworkView : IInspectable
+{
+}
+
+@uuid("e3b077da-35ad-4b09-b5b2-27420041ba9f")
+@WinrtFactory("Windows.UI.Xaml.FrameworkViewSource")
+interface IFrameworkViewSource : IInspectable
+{
+}
+
+@uuid("7a826ce1-07a0-4083-b6d1-b1d917b976ac")
+@WinrtFactory("Windows.UI.Xaml.GridLengthHelper")
+interface IGridLengthHelper : IInspectable
+{
 }
 
 @uuid("9d457b9b-019f-4266-8872-215f198f6a9d")
@@ -959,6 +1013,12 @@ interface IMediaFailedRoutedEventArgs : IInspectable
 
 extern(Windows):
 	HRESULT get_ErrorTrace(HSTRING* return_value);
+}
+
+@uuid("727bdd92-64b0-49cf-a321-a9793e73e2e7")
+@WinrtFactory("Windows.UI.Xaml.PointHelper")
+interface IPointHelper : IInspectable
+{
 }
 
 @uuid("015aca75-76d8-4b7e-8a33-7d79204691ee")
@@ -1026,6 +1086,12 @@ extern(Windows):
 	HRESULT abi_CreateInstance(HSTRING path, Windows.UI.Xaml.PropertyPath* return_instance);
 }
 
+@uuid("a38781e2-4bfb-4ee2-afe5-89f31b37478d")
+@WinrtFactory("Windows.UI.Xaml.RectHelper")
+interface IRectHelper : IInspectable
+{
+}
+
 @uuid("5ee163e4-c17e-494f-b580-2f0574fc3a15")
 @WinrtFactory("Windows.UI.Xaml.RectHelper")
 interface IRectHelperStatics : IInspectable
@@ -1070,6 +1136,12 @@ interface IResourceDictionaryFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.ResourceDictionary* return_instance);
+}
+
+@uuid("a6b25818-43c1-4c70-865c-7bdd5a32e327")
+@WinrtFactory("Windows.UI.Xaml.RoutedEvent")
+interface IRoutedEvent : IInspectable
+{
 }
 
 @uuid("5c985ac6-d802-4b38-a223-bf070c43fedf")
@@ -1136,6 +1208,12 @@ extern(Windows):
 	HRESULT get_IsSealed(bool* return_value);
 }
 
+@uuid("81f8ad60-1ce8-469d-a667-16e37cef8ba9")
+@WinrtFactory("Windows.UI.Xaml.SetterBase")
+interface ISetterBaseFactory : IInspectable
+{
+}
+
 @uuid("d3ca3d42-09b1-49d5-8891-e7b5648e02a2")
 @WinrtFactory("Windows.UI.Xaml.Setter")
 interface ISetterFactory : IInspectable
@@ -1155,6 +1233,12 @@ interface ISizeChangedEventArgs : IInspectable
 extern(Windows):
 	HRESULT get_PreviousSize(Windows.Foundation.Size* return_value);
 	HRESULT get_NewSize(Windows.Foundation.Size* return_value);
+}
+
+@uuid("e7225a94-5d03-4a03-ba94-967fc68fcefe")
+@WinrtFactory("Windows.UI.Xaml.SizeHelper")
+interface ISizeHelper : IInspectable
+{
 }
 
 @uuid("6286c5b2-cf78-4915-aa40-76004a165f5e")
@@ -1179,6 +1263,12 @@ interface IStateTrigger : IInspectable
 extern(Windows):
 	HRESULT get_IsActive(bool* return_value);
 	HRESULT set_IsActive(bool value);
+}
+
+@uuid("48b20698-af06-466c-8052-93666dde0e49")
+@WinrtFactory("Windows.UI.Xaml.StateTriggerBase")
+interface IStateTriggerBase : IInspectable
+{
 }
 
 @uuid("970e2c4b-bfaf-47b0-be42-c1d711bb2e9f")
@@ -1260,6 +1350,12 @@ extern(Windows):
 	HRESULT abi_CreateInstance(Windows.UI.Xaml.DependencyProperty targetProperty, Windows.UI.Xaml.TargetPropertyPath* return_instance);
 }
 
+@uuid("a86bae4b-1e8f-4eeb-9013-0b2838a97b34")
+@WinrtFactory("Windows.UI.Xaml.ThicknessHelper")
+interface IThicknessHelper : IInspectable
+{
+}
+
 @uuid("c0991a7c-070c-4da6-8784-01ca800eb73a")
 @WinrtFactory("Windows.UI.Xaml.ThicknessHelper")
 interface IThicknessHelperStatics : IInspectable
@@ -1269,6 +1365,30 @@ interface IThicknessHelperStatics : IInspectable
 extern(Windows):
 	HRESULT abi_FromLengths(double left, double top, double right, double bottom, Windows.UI.Xaml.Thickness* return_returnValue);
 	HRESULT abi_FromUniformLength(double uniformLength, Windows.UI.Xaml.Thickness* return_returnValue);
+}
+
+@uuid("a2c0df02-63d5-4b46-9b83-0868d3079621")
+@WinrtFactory("Windows.UI.Xaml.TriggerAction")
+interface ITriggerAction : IInspectable
+{
+}
+
+@uuid("68d2c0b9-3289-414f-8f6e-c6b97aedda03")
+@WinrtFactory("Windows.UI.Xaml.TriggerAction")
+interface ITriggerActionFactory : IInspectable
+{
+}
+
+@uuid("e7ea222f-dee6-4393-a8b2-8923d641f395")
+@WinrtFactory("Windows.UI.Xaml.TriggerBase")
+interface ITriggerBase : IInspectable
+{
+}
+
+@uuid("6a3b9e57-fc5d-42d0-8cb9-ca50667af746")
+@WinrtFactory("Windows.UI.Xaml.TriggerBase")
+interface ITriggerBaseFactory : IInspectable
+{
 }
 
 @uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1")
@@ -1473,6 +1593,12 @@ extern(Windows):
 	HRESULT abi_StartBringIntoViewWithOptions(Windows.UI.Xaml.BringIntoViewOptions options);
 }
 
+@uuid("b9ee93fe-a338-419f-ac32-91dcaadf5d08")
+@WinrtFactory("Windows.UI.Xaml.UIElement")
+interface IUIElementFactory : IInspectable
+{
+}
+
 @uuid("608d2f1d-7858-4aeb-89e4-b54e2c7ed3d3")
 @WinrtFactory("Windows.UI.Xaml.UIElement")
 interface IUIElementOverrides : IInspectable
@@ -1670,6 +1796,12 @@ extern(Windows):
 	HRESULT remove_CurrentStateChanging(EventRegistrationToken token);
 }
 
+@uuid("6fda9f9a-6fab-4112-9258-1006a3c3476e")
+@WinrtFactory("Windows.UI.Xaml.VisualStateManager")
+interface IVisualStateManager : IInspectable
+{
+}
+
 @uuid("85e598fd-a575-47b6-9e30-383cd08585f2")
 @WinrtFactory("Windows.UI.Xaml.VisualStateManager")
 interface IVisualStateManagerFactory : IInspectable
@@ -1809,247 +1941,247 @@ extern(Windows):
 	HRESULT get_Current(Windows.UI.Xaml.Window* return_value);
 }
 
-interface AdaptiveTrigger : Windows.UI.Xaml.StateTriggerBase
+interface AdaptiveTrigger : Windows.UI.Xaml.StateTriggerBase, Windows.UI.Xaml.IAdaptiveTrigger
 {
 }
 
-interface Application
+interface Application : Windows.UI.Xaml.IApplication, Windows.UI.Xaml.IApplicationOverrides, Windows.UI.Xaml.IApplication2, Windows.UI.Xaml.IApplicationOverrides2, Windows.UI.Xaml.IApplication3
 {
 }
 
-interface ApplicationInitializationCallbackParams
+interface ApplicationInitializationCallbackParams : Windows.UI.Xaml.IApplicationInitializationCallbackParams
 {
 }
 
-interface BindingFailedEventArgs
+interface BindingFailedEventArgs : Windows.UI.Xaml.IBindingFailedEventArgs
 {
 }
 
-interface BringIntoViewOptions
+interface BringIntoViewOptions : Windows.UI.Xaml.IBringIntoViewOptions
 {
 }
 
-interface CornerRadiusHelper
+interface CornerRadiusHelper : Windows.UI.Xaml.ICornerRadiusHelper
 {
 }
 
-interface DataContextChangedEventArgs
+interface DataContextChangedEventArgs : Windows.UI.Xaml.IDataContextChangedEventArgs
 {
 }
 
-interface DataTemplate : Windows.UI.Xaml.FrameworkTemplate
+interface DataTemplate : Windows.UI.Xaml.FrameworkTemplate, Windows.UI.Xaml.IDataTemplate
 {
 }
 
-interface DataTemplateKey
+interface DataTemplateKey : Windows.UI.Xaml.IDataTemplateKey
 {
 }
 
-interface DebugSettings
+interface DebugSettings : Windows.UI.Xaml.IDebugSettings, Windows.UI.Xaml.IDebugSettings2, Windows.UI.Xaml.IDebugSettings3
 {
 }
 
-interface DependencyObject
+interface DependencyObject : Windows.UI.Xaml.IDependencyObject, Windows.UI.Xaml.IDependencyObject2
 {
 }
 
-interface DependencyObjectCollection : Windows.UI.Xaml.DependencyObject
+interface DependencyObjectCollection : Windows.UI.Xaml.DependencyObject, Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.DependencyObject), Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.DependencyObject)
 {
 }
 
-interface DependencyProperty
+interface DependencyProperty : Windows.UI.Xaml.IDependencyProperty
 {
 }
 
-interface DependencyPropertyChangedEventArgs
+interface DependencyPropertyChangedEventArgs : Windows.UI.Xaml.IDependencyPropertyChangedEventArgs
 {
 }
 
-interface DispatcherTimer
+interface DispatcherTimer : Windows.UI.Xaml.IDispatcherTimer
 {
 }
 
-interface DragEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface DragEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.IDragEventArgs, Windows.UI.Xaml.IDragEventArgs2, Windows.UI.Xaml.IDragEventArgs3
 {
 }
 
-interface DragOperationDeferral
+interface DragOperationDeferral : Windows.UI.Xaml.IDragOperationDeferral
 {
 }
 
-interface DragStartingEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface DragStartingEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.IDragStartingEventArgs, Windows.UI.Xaml.IDragStartingEventArgs2
 {
 }
 
-interface DragUI
+interface DragUI : Windows.UI.Xaml.IDragUI
 {
 }
 
-interface DragUIOverride
+interface DragUIOverride : Windows.UI.Xaml.IDragUIOverride
 {
 }
 
-interface DropCompletedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface DropCompletedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.IDropCompletedEventArgs
 {
 }
 
-interface DurationHelper
+interface DurationHelper : Windows.UI.Xaml.IDurationHelper
 {
 }
 
-interface ElementSoundPlayer
+interface ElementSoundPlayer : Windows.UI.Xaml.IElementSoundPlayer
 {
 }
 
-interface EventTrigger : Windows.UI.Xaml.TriggerBase
+interface EventTrigger : Windows.UI.Xaml.TriggerBase, Windows.UI.Xaml.IEventTrigger
 {
 }
 
-interface ExceptionRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface ExceptionRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.IExceptionRoutedEventArgs
 {
 }
 
-interface FrameworkElement : Windows.UI.Xaml.UIElement
+interface FrameworkElement : Windows.UI.Xaml.UIElement, Windows.UI.Xaml.IFrameworkElement, Windows.UI.Xaml.IFrameworkElementOverrides, Windows.UI.Xaml.IFrameworkElement2, Windows.UI.Xaml.IFrameworkElementOverrides2, Windows.UI.Xaml.IFrameworkElement3, Windows.UI.Xaml.IFrameworkElement4
 {
 }
 
-interface FrameworkTemplate : Windows.UI.Xaml.DependencyObject
+interface FrameworkTemplate : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IFrameworkTemplate
 {
 }
 
-interface FrameworkView
+interface FrameworkView : Windows.UI.Xaml.IFrameworkView, Windows.ApplicationModel.Core.IFrameworkView
 {
 }
 
-interface FrameworkViewSource
+interface FrameworkViewSource : Windows.UI.Xaml.IFrameworkViewSource, Windows.ApplicationModel.Core.IFrameworkViewSource
 {
 }
 
-interface GridLengthHelper
+interface GridLengthHelper : Windows.UI.Xaml.IGridLengthHelper
 {
 }
 
-interface MediaFailedRoutedEventArgs : Windows.UI.Xaml.ExceptionRoutedEventArgs
+interface MediaFailedRoutedEventArgs : Windows.UI.Xaml.ExceptionRoutedEventArgs, Windows.UI.Xaml.IMediaFailedRoutedEventArgs
 {
 }
 
-interface PointHelper
+interface PointHelper : Windows.UI.Xaml.IPointHelper
 {
 }
 
-interface PropertyMetadata
+interface PropertyMetadata : Windows.UI.Xaml.IPropertyMetadata
 {
 }
 
-interface PropertyPath : Windows.UI.Xaml.DependencyObject
+interface PropertyPath : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IPropertyPath
 {
 }
 
-interface RectHelper
+interface RectHelper : Windows.UI.Xaml.IRectHelper
 {
 }
 
-interface ResourceDictionary : Windows.UI.Xaml.DependencyObject
+interface ResourceDictionary : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IResourceDictionary, Windows.Foundation.Collections.IMap!(IInspectable, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))
 {
 }
 
-interface RoutedEvent
+interface RoutedEvent : Windows.UI.Xaml.IRoutedEvent
 {
 }
 
-interface RoutedEventArgs
+interface RoutedEventArgs : Windows.UI.Xaml.IRoutedEventArgs
 {
 }
 
-interface Setter : Windows.UI.Xaml.SetterBase
+interface Setter : Windows.UI.Xaml.SetterBase, Windows.UI.Xaml.ISetter, Windows.UI.Xaml.ISetter2
 {
 }
 
-interface SetterBase : Windows.UI.Xaml.DependencyObject
+interface SetterBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.ISetterBase
 {
 }
 
-interface SetterBaseCollection
+interface SetterBaseCollection : Windows.UI.Xaml.ISetterBaseCollection, Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.SetterBase)
 {
 }
 
-interface SizeChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface SizeChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.ISizeChangedEventArgs
 {
 }
 
-interface SizeHelper
+interface SizeHelper : Windows.UI.Xaml.ISizeHelper
 {
 }
 
-interface StateTrigger : Windows.UI.Xaml.StateTriggerBase
+interface StateTrigger : Windows.UI.Xaml.StateTriggerBase, Windows.UI.Xaml.IStateTrigger
 {
 }
 
-interface StateTriggerBase : Windows.UI.Xaml.DependencyObject
+interface StateTriggerBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IStateTriggerBase, Windows.UI.Xaml.IStateTriggerBaseProtected
 {
 }
 
-interface Style : Windows.UI.Xaml.DependencyObject
+interface Style : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IStyle
 {
 }
 
-interface TargetPropertyPath
+interface TargetPropertyPath : Windows.UI.Xaml.ITargetPropertyPath
 {
 }
 
-interface ThicknessHelper
+interface ThicknessHelper : Windows.UI.Xaml.IThicknessHelper
 {
 }
 
-interface TriggerAction : Windows.UI.Xaml.DependencyObject
+interface TriggerAction : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.ITriggerAction
 {
 }
 
-interface TriggerActionCollection
+interface TriggerActionCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.TriggerAction)
 {
 }
 
-interface TriggerBase : Windows.UI.Xaml.DependencyObject
+interface TriggerBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.ITriggerBase
 {
 }
 
-interface TriggerCollection
+interface TriggerCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.TriggerBase)
 {
 }
 
-interface UIElement : Windows.UI.Xaml.DependencyObject
+interface UIElement : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IUIElement, Windows.UI.Xaml.IUIElementOverrides, Windows.UI.Xaml.IUIElement2, Windows.UI.Xaml.IUIElement3, Windows.UI.Xaml.IUIElement4, Windows.UI.Xaml.IUIElement5
 {
 }
 
-interface UnhandledExceptionEventArgs
+interface UnhandledExceptionEventArgs : Windows.UI.Xaml.IUnhandledExceptionEventArgs
 {
 }
 
-interface VisualState : Windows.UI.Xaml.DependencyObject
+interface VisualState : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IVisualState, Windows.UI.Xaml.IVisualState2
 {
 }
 
-interface VisualStateChangedEventArgs
+interface VisualStateChangedEventArgs : Windows.UI.Xaml.IVisualStateChangedEventArgs
 {
 }
 
-interface VisualStateGroup : Windows.UI.Xaml.DependencyObject
+interface VisualStateGroup : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IVisualStateGroup
 {
 }
 
-interface VisualStateManager : Windows.UI.Xaml.DependencyObject
+interface VisualStateManager : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IVisualStateManager, Windows.UI.Xaml.IVisualStateManagerOverrides, Windows.UI.Xaml.IVisualStateManagerProtected
 {
 }
 
-interface VisualTransition : Windows.UI.Xaml.DependencyObject
+interface VisualTransition : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IVisualTransition
 {
 }
 
-interface Window
+interface Window : Windows.UI.Xaml.IWindow, Windows.UI.Xaml.IWindow2, Windows.UI.Xaml.IWindow3
 {
 }
 
-interface WindowCreatedEventArgs
+interface WindowCreatedEventArgs : Windows.UI.Xaml.IWindowCreatedEventArgs
 {
 }
 

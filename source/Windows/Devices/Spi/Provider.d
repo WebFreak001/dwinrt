@@ -63,7 +63,7 @@ extern(Windows):
 	HRESULT abi_GetControllersAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Spi.Provider.ISpiControllerProvider))* return_result);
 }
 
-interface ProviderSpiConnectionSettings
+interface ProviderSpiConnectionSettings : Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings
 {
 }
 

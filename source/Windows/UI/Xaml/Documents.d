@@ -42,6 +42,12 @@ extern(Windows):
 	HRESULT get_MarginProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("ade73784-1b59-4da4-bb23-0f20e885b4bf")
+@WinrtFactory("Windows.UI.Xaml.Documents.Bold")
+interface IBold : IInspectable
+{
+}
+
 @uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5")
 @WinrtFactory("Windows.UI.Xaml.Documents.Glyphs")
 interface IGlyphs : IInspectable
@@ -174,6 +180,12 @@ extern(Windows):
 	HRESULT abi_Focus(Windows.UI.Xaml.FocusState value, bool* return_returnValue);
 }
 
+@uuid("c755916b-7bdc-4be7-b373-9240a503d870")
+@WinrtFactory("Windows.UI.Xaml.Documents.HyperlinkClickEventArgs")
+interface IHyperlinkClickEventArgs : IInspectable
+{
+}
+
 @uuid("3a44d3d4-fd41-41db-8c72-3b790acd9fd3")
 @WinrtFactory("Windows.UI.Xaml.Documents.Hyperlink")
 interface IHyperlinkStatics : IInspectable
@@ -222,6 +234,12 @@ extern(Windows):
 	HRESULT get_XYFocusRightNavigationStrategyProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("0c92712d-1bc9-4931-8cb1-1aeadf1cc685")
+@WinrtFactory("Windows.UI.Xaml.Documents.Inline")
+interface IInline : IInspectable
+{
+}
+
 @uuid("4058acd1-2f90-4b8f-99dd-4218ef5f03de")
 @WinrtFactory("Windows.UI.Xaml.Documents.Inline")
 interface IInlineFactory : IInspectable
@@ -241,6 +259,18 @@ interface IInlineUIContainer : IInspectable
 extern(Windows):
 	HRESULT get_Child(Windows.UI.Xaml.UIElement* return_value);
 	HRESULT set_Child(Windows.UI.Xaml.UIElement value);
+}
+
+@uuid("91f4619c-fcbb-4157-802c-76f63b5fb657")
+@WinrtFactory("Windows.UI.Xaml.Documents.Italic")
+interface IItalic : IInspectable
+{
+}
+
+@uuid("645589c4-f769-41ed-895b-8a1b2fb31562")
+@WinrtFactory("Windows.UI.Xaml.Documents.LineBreak")
+interface ILineBreak : IInspectable
+{
 }
 
 @uuid("f83ef59a-fa61-4bef-ae33-0b0ad756a84d")
@@ -393,6 +423,12 @@ extern(Windows):
 	HRESULT remove_AccessKeyInvoked(EventRegistrationToken token);
 }
 
+@uuid("35007285-cf47-4bfe-b1bc-39c93af4ae80")
+@WinrtFactory("Windows.UI.Xaml.Documents.TextElement")
+interface ITextElementFactory : IInspectable
+{
+}
+
 @uuid("0ce21ee7-4f76-4dd9-bf91-163beccf84bc")
 @WinrtFactory("Windows.UI.Xaml.Documents.TextElement")
 interface ITextElementOverrides : IInspectable
@@ -470,6 +506,12 @@ extern(Windows):
 	HRESULT get_Offset(INT32* return_value);
 	HRESULT abi_GetCharacterRect(Windows.UI.Xaml.Documents.LogicalDirection direction, Windows.Foundation.Rect* return_returnValue);
 	HRESULT abi_GetPositionAtOffset(INT32 offset, Windows.UI.Xaml.Documents.LogicalDirection direction, Windows.UI.Xaml.Documents.TextPointer* return_returnValue);
+}
+
+@uuid("866f65d5-ea97-42ab-9288-9c01aebc7a97")
+@WinrtFactory("Windows.UI.Xaml.Documents.Typography")
+interface ITypography : IInspectable
+{
 }
 
 @uuid("67b9ec88-6c57-4ce0-95f1-d4b9ed632fb4")
@@ -610,75 +652,81 @@ extern(Windows):
 	HRESULT abi_SetVariants(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontVariants value);
 }
 
-interface Block : Windows.UI.Xaml.Documents.TextElement
+@uuid("a5fa8202-61c0-47d7-93ef-bc0b577c5f26")
+@WinrtFactory("Windows.UI.Xaml.Documents.Underline")
+interface IUnderline : IInspectable
 {
 }
 
-interface BlockCollection
+interface Block : Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Documents.IBlock
 {
 }
 
-interface Bold : Windows.UI.Xaml.Documents.Span
+interface BlockCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Documents.Block)
 {
 }
 
-interface Glyphs : Windows.UI.Xaml.FrameworkElement
+interface Bold : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IBold
 {
 }
 
-interface Hyperlink : Windows.UI.Xaml.Documents.Span
+interface Glyphs : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Documents.IGlyphs, Windows.UI.Xaml.Documents.IGlyphs2
 {
 }
 
-interface HyperlinkClickEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface Hyperlink : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IHyperlink, Windows.UI.Xaml.Documents.IHyperlink2, Windows.UI.Xaml.Documents.IHyperlink3, Windows.UI.Xaml.Documents.IHyperlink4
 {
 }
 
-interface Inline : Windows.UI.Xaml.Documents.TextElement
+interface HyperlinkClickEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Documents.IHyperlinkClickEventArgs
 {
 }
 
-interface InlineCollection
+interface Inline : Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Documents.IInline
 {
 }
 
-interface InlineUIContainer : Windows.UI.Xaml.Documents.Inline
+interface InlineCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Documents.Inline)
 {
 }
 
-interface Italic : Windows.UI.Xaml.Documents.Span
+interface InlineUIContainer : Windows.UI.Xaml.Documents.Inline, Windows.UI.Xaml.Documents.IInlineUIContainer
 {
 }
 
-interface LineBreak : Windows.UI.Xaml.Documents.Inline
+interface Italic : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IItalic
 {
 }
 
-interface Paragraph : Windows.UI.Xaml.Documents.Block
+interface LineBreak : Windows.UI.Xaml.Documents.Inline, Windows.UI.Xaml.Documents.ILineBreak
 {
 }
 
-interface Run : Windows.UI.Xaml.Documents.Inline
+interface Paragraph : Windows.UI.Xaml.Documents.Block, Windows.UI.Xaml.Documents.IParagraph
 {
 }
 
-interface Span : Windows.UI.Xaml.Documents.Inline
+interface Run : Windows.UI.Xaml.Documents.Inline, Windows.UI.Xaml.Documents.IRun
 {
 }
 
-interface TextElement : Windows.UI.Xaml.DependencyObject
+interface Span : Windows.UI.Xaml.Documents.Inline, Windows.UI.Xaml.Documents.ISpan
 {
 }
 
-interface TextPointer
+interface TextElement : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Documents.ITextElement, Windows.UI.Xaml.Documents.ITextElementOverrides, Windows.UI.Xaml.Documents.ITextElement2, Windows.UI.Xaml.Documents.ITextElement3, Windows.UI.Xaml.Documents.ITextElement4
 {
 }
 
-interface Typography
+interface TextPointer : Windows.UI.Xaml.Documents.ITextPointer
 {
 }
 
-interface Underline : Windows.UI.Xaml.Documents.Span
+interface Typography : Windows.UI.Xaml.Documents.ITypography
+{
+}
+
+interface Underline : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IUnderline
 {
 }
 

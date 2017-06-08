@@ -295,67 +295,67 @@ extern(Windows):
 	HRESULT get_Volume(double* return_value);
 }
 
-interface CurrentTimeChangeRequestedEventArgs
+interface CurrentTimeChangeRequestedEventArgs : Windows.Media.PlayTo.ICurrentTimeChangeRequestedEventArgs
 {
 }
 
-interface MuteChangeRequestedEventArgs
+interface MuteChangeRequestedEventArgs : Windows.Media.PlayTo.IMuteChangeRequestedEventArgs
 {
 }
 
-interface PlayToConnection
+interface PlayToConnection : Windows.Media.PlayTo.IPlayToConnection
 {
 }
 
-interface PlayToConnectionErrorEventArgs
+interface PlayToConnectionErrorEventArgs : Windows.Media.PlayTo.IPlayToConnectionErrorEventArgs
 {
 }
 
-interface PlayToConnectionStateChangedEventArgs
+interface PlayToConnectionStateChangedEventArgs : Windows.Media.PlayTo.IPlayToConnectionStateChangedEventArgs
 {
 }
 
-interface PlayToConnectionTransferredEventArgs
+interface PlayToConnectionTransferredEventArgs : Windows.Media.PlayTo.IPlayToConnectionTransferredEventArgs
 {
 }
 
-interface PlayToManager
+interface PlayToManager : Windows.Media.PlayTo.IPlayToManager
 {
 }
 
-interface PlayToReceiver
+interface PlayToReceiver : Windows.Media.PlayTo.IPlayToReceiver
 {
 }
 
-interface PlayToSource
+interface PlayToSource : Windows.Media.PlayTo.IPlayToSource, Windows.Media.PlayTo.IPlayToSourceWithPreferredSourceUri
 {
 }
 
-interface PlayToSourceDeferral
+interface PlayToSourceDeferral : Windows.Media.PlayTo.IPlayToSourceDeferral
 {
 }
 
-interface PlayToSourceRequest
+interface PlayToSourceRequest : Windows.Media.PlayTo.IPlayToSourceRequest
 {
 }
 
-interface PlayToSourceRequestedEventArgs
+interface PlayToSourceRequestedEventArgs : Windows.Media.PlayTo.IPlayToSourceRequestedEventArgs
 {
 }
 
-interface PlayToSourceSelectedEventArgs
+interface PlayToSourceSelectedEventArgs : Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs
 {
 }
 
-interface PlaybackRateChangeRequestedEventArgs
+interface PlaybackRateChangeRequestedEventArgs : Windows.Media.PlayTo.IPlaybackRateChangeRequestedEventArgs
 {
 }
 
-interface SourceChangeRequestedEventArgs
+interface SourceChangeRequestedEventArgs : Windows.Media.PlayTo.ISourceChangeRequestedEventArgs
 {
 }
 
-interface VolumeChangeRequestedEventArgs
+interface VolumeChangeRequestedEventArgs : Windows.Media.PlayTo.IVolumeChangeRequestedEventArgs
 {
 }
 

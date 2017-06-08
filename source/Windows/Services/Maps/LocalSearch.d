@@ -92,19 +92,27 @@ extern(Windows):
 	HRESULT get_ProviderIdentifier(HSTRING* return_value);
 }
 
-interface LocalLocation
+interface LocalCategories
 {
 }
 
-interface LocalLocationFinderResult
+interface LocalLocation : Windows.Services.Maps.LocalSearch.ILocalLocation, Windows.Services.Maps.LocalSearch.ILocalLocation2
 {
 }
 
-interface LocalLocationHoursOfOperationItem
+interface LocalLocationFinder
 {
 }
 
-interface LocalLocationRatingInfo
+interface LocalLocationFinderResult : Windows.Services.Maps.LocalSearch.ILocalLocationFinderResult
+{
+}
+
+interface LocalLocationHoursOfOperationItem : Windows.Services.Maps.LocalSearch.ILocalLocationHoursOfOperationItem
+{
+}
+
+interface LocalLocationRatingInfo : Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo
 {
 }
 

@@ -66,6 +66,18 @@ extern(Windows):
 	HRESULT remove_RemainingDischargeTimeChanged(EventRegistrationToken token);
 }
 
+interface BackgroundEnergyManager
+{
+}
+
+interface ForegroundEnergyManager
+{
+}
+
+interface PowerManager
+{
+}
+
 enum BatteryStatus
 {
 	NotPresent = 0,

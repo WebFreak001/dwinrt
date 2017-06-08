@@ -148,19 +148,23 @@ extern(Windows):
 	HRESULT abi_SetVibration(double lowFrequencyMotorSpeed, double highFrequencyMotorSpeed);
 }
 
-interface GipFirmwareUpdateResult
+interface GameControllerFactoryManager
 {
 }
 
-interface GipGameControllerProvider
+interface GipFirmwareUpdateResult : Windows.Gaming.Input.Custom.IGipFirmwareUpdateResult
 {
 }
 
-interface HidGameControllerProvider
+interface GipGameControllerProvider : Windows.Gaming.Input.Custom.IGipGameControllerProvider, Windows.Gaming.Input.Custom.IGameControllerProvider
 {
 }
 
-interface XusbGameControllerProvider
+interface HidGameControllerProvider : Windows.Gaming.Input.Custom.IHidGameControllerProvider, Windows.Gaming.Input.Custom.IGameControllerProvider
+{
+}
+
+interface XusbGameControllerProvider : Windows.Gaming.Input.Custom.IXusbGameControllerProvider, Windows.Gaming.Input.Custom.IGameControllerProvider
 {
 }
 

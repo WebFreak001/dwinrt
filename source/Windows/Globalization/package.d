@@ -564,19 +564,43 @@ extern(Windows):
 	HRESULT abi_TimeZoneAsString(INT32 idealLength, HSTRING* return_result);
 }
 
-interface Calendar
+interface ApplicationLanguages
 {
 }
 
-interface GeographicRegion
+interface Calendar : Windows.Globalization.ICalendar, Windows.Globalization.ITimeZoneOnCalendar
 {
 }
 
-interface JapanesePhoneme
+interface CalendarIdentifiers
 {
 }
 
-interface Language
+interface ClockIdentifiers
+{
+}
+
+interface CurrencyIdentifiers
+{
+}
+
+interface GeographicRegion : Windows.Globalization.IGeographicRegion
+{
+}
+
+interface JapanesePhoneme : Windows.Globalization.IJapanesePhoneme
+{
+}
+
+interface JapanesePhoneticAnalyzer
+{
+}
+
+interface Language : Windows.Globalization.ILanguage, Windows.Globalization.ILanguageExtensionSubtags
+{
+}
+
+interface NumeralSystemIdentifiers
 {
 }
 

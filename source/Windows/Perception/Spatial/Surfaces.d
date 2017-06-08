@@ -107,22 +107,22 @@ extern(Windows):
 	HRESULT abi_IsSupported(bool* return_value);
 }
 
-interface SpatialSurfaceInfo
+interface SpatialSurfaceInfo : Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo
 {
 }
 
-interface SpatialSurfaceMesh
+interface SpatialSurfaceMesh : Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh
 {
 }
 
-interface SpatialSurfaceMeshBuffer
+interface SpatialSurfaceMeshBuffer : Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer
 {
 }
 
-interface SpatialSurfaceMeshOptions
+interface SpatialSurfaceMeshOptions : Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions
 {
 }
 
-interface SpatialSurfaceObserver
+interface SpatialSurfaceObserver : Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver
 {
 }

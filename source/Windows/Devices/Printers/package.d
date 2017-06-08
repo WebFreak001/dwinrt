@@ -35,10 +35,10 @@ extern(Windows):
 	HRESULT abi_MergeAndValidateWithDefaultPrintTicketAsync(Windows.Storage.Streams.IRandomAccessStreamWithContentType deltaTicket, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType)* return_operation);
 }
 
-interface Print3DDevice
+interface Print3DDevice : Windows.Devices.Printers.IPrint3DDevice
 {
 }
 
-interface PrintSchema
+interface PrintSchema : Windows.Devices.Printers.IPrintSchema
 {
 }

@@ -43,10 +43,10 @@ extern(Windows):
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Lights.Lamp)* return_operation);
 }
 
-interface Lamp
+interface Lamp : Windows.Devices.Lights.ILamp, Windows.Foundation.IClosable
 {
 }
 
-interface LampAvailabilityChangedEventArgs
+interface LampAvailabilityChangedEventArgs : Windows.Devices.Lights.ILampAvailabilityChangedEventArgs
 {
 }

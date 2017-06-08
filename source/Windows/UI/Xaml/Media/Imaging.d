@@ -183,6 +183,12 @@ extern(Windows):
 	HRESULT abi_SetBitmapAsync(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.IAsyncAction* return_returnValue);
 }
 
+@uuid("62f7d416-c714-4c4c-8273-f839bc58135c")
+@WinrtFactory("Windows.UI.Xaml.Media.Imaging.SurfaceImageSource")
+interface ISurfaceImageSource : IInspectable
+{
+}
+
 @uuid("3ab2212a-ef65-4a5f-bfac-73993e8c12c9")
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.SurfaceImageSource")
 interface ISurfaceImageSourceFactory : IInspectable
@@ -235,6 +241,12 @@ extern(Windows):
 	HRESULT get_Status(Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus* return_value);
 }
 
+@uuid("85ef4c16-748e-4008-95c7-6a23dd7316db")
+@WinrtFactory("Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs")
+interface ISvgImageSourceOpenedEventArgs : IInspectable
+{
+}
+
 @uuid("9c6638ce-bed1-4aab-acbb-d3e2185d315a")
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.SvgImageSource")
 interface ISvgImageSourceStatics : IInspectable
@@ -245,6 +257,12 @@ extern(Windows):
 	HRESULT get_UriSourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_RasterizePixelWidthProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_RasterizePixelHeightProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("4a711fea-bfac-11e0-a06a-9de44724019b")
+@WinrtFactory("Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource")
+interface IVirtualSurfaceImageSource : IInspectable
+{
 }
 
 @uuid("3ab2212a-bfac-11e0-8a92-69e44724019b")
@@ -279,6 +297,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithDimensions(INT32 pixelWidth, INT32 pixelHeight, Windows.UI.Xaml.Media.Imaging.WriteableBitmap* return_instance);
 }
 
+@uuid("5d5fe9aa-533e-44b8-a975-fc5f1e3bff52")
+@WinrtFactory("Windows.UI.Xaml.Media.Imaging.XamlRenderingBackgroundTask")
+interface IXamlRenderingBackgroundTask : IInspectable
+{
+}
+
 @uuid("a3d1bb63-38f8-4da3-9fca-fd8128a2cbf9")
 @WinrtFactory("Windows.UI.Xaml.Media.Imaging.XamlRenderingBackgroundTask")
 interface IXamlRenderingBackgroundTaskFactory : IInspectable
@@ -299,51 +323,51 @@ extern(Windows):
 	HRESULT abi_OnRun(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance);
 }
 
-interface BitmapImage : Windows.UI.Xaml.Media.Imaging.BitmapSource
+interface BitmapImage : Windows.UI.Xaml.Media.Imaging.BitmapSource, Windows.UI.Xaml.Media.Imaging.IBitmapImage, Windows.UI.Xaml.Media.Imaging.IBitmapImage2, Windows.UI.Xaml.Media.Imaging.IBitmapImage3
 {
 }
 
-interface BitmapSource : Windows.UI.Xaml.Media.ImageSource
+interface BitmapSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.IBitmapSource
 {
 }
 
-interface DownloadProgressEventArgs
+interface DownloadProgressEventArgs : Windows.UI.Xaml.Media.Imaging.IDownloadProgressEventArgs
 {
 }
 
-interface RenderTargetBitmap : Windows.UI.Xaml.Media.ImageSource
+interface RenderTargetBitmap : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap
 {
 }
 
-interface SoftwareBitmapSource : Windows.UI.Xaml.Media.ImageSource
+interface SoftwareBitmapSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.ISoftwareBitmapSource, Windows.Foundation.IClosable
 {
 }
 
-interface SurfaceImageSource : Windows.UI.Xaml.Media.ImageSource
+interface SurfaceImageSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.ISurfaceImageSource
 {
 }
 
-interface SvgImageSource : Windows.UI.Xaml.Media.ImageSource
+interface SvgImageSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.ISvgImageSource
 {
 }
 
-interface SvgImageSourceFailedEventArgs
+interface SvgImageSourceFailedEventArgs : Windows.UI.Xaml.Media.Imaging.ISvgImageSourceFailedEventArgs
 {
 }
 
-interface SvgImageSourceOpenedEventArgs
+interface SvgImageSourceOpenedEventArgs : Windows.UI.Xaml.Media.Imaging.ISvgImageSourceOpenedEventArgs
 {
 }
 
-interface VirtualSurfaceImageSource : Windows.UI.Xaml.Media.Imaging.SurfaceImageSource
+interface VirtualSurfaceImageSource : Windows.UI.Xaml.Media.Imaging.SurfaceImageSource, Windows.UI.Xaml.Media.Imaging.IVirtualSurfaceImageSource
 {
 }
 
-interface WriteableBitmap : Windows.UI.Xaml.Media.Imaging.BitmapSource
+interface WriteableBitmap : Windows.UI.Xaml.Media.Imaging.BitmapSource, Windows.UI.Xaml.Media.Imaging.IWriteableBitmap
 {
 }
 
-interface XamlRenderingBackgroundTask
+interface XamlRenderingBackgroundTask : Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTask, Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTaskOverrides
 {
 }
 

@@ -66,18 +66,18 @@ extern(Windows):
 	HRESULT get_Collections(Windows.Foundation.Collections.IVectorView!(Windows.Web.AtomPub.ResourceCollection)* return_value);
 }
 
-interface AtomPubClient
+interface AtomPubClient : Windows.Web.AtomPub.IAtomPubClient, Windows.Web.Syndication.ISyndicationClient
 {
 }
 
-interface ResourceCollection
+interface ResourceCollection : Windows.Web.AtomPub.IResourceCollection, Windows.Web.Syndication.ISyndicationNode
 {
 }
 
-interface ServiceDocument
+interface ServiceDocument : Windows.Web.AtomPub.IServiceDocument, Windows.Web.Syndication.ISyndicationNode
 {
 }
 
-interface Workspace
+interface Workspace : Windows.Web.AtomPub.IWorkspace, Windows.Web.Syndication.ISyndicationNode
 {
 }

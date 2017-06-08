@@ -665,103 +665,111 @@ extern(Windows):
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_result);
 }
 
-interface ControlChannelTrigger
+interface ControlChannelTrigger : Windows.Networking.Sockets.IControlChannelTrigger, Windows.Foundation.IClosable, Windows.Networking.Sockets.IControlChannelTrigger2
 {
 }
 
-interface DatagramSocket
+interface DatagramSocket : Windows.Networking.Sockets.IDatagramSocket, Windows.Foundation.IClosable, Windows.Networking.Sockets.IDatagramSocket2, Windows.Networking.Sockets.IDatagramSocket3
 {
 }
 
-interface DatagramSocketControl
+interface DatagramSocketControl : Windows.Networking.Sockets.IDatagramSocketControl, Windows.Networking.Sockets.IDatagramSocketControl2, Windows.Networking.Sockets.IDatagramSocketControl3
 {
 }
 
-interface DatagramSocketInformation
+interface DatagramSocketInformation : Windows.Networking.Sockets.IDatagramSocketInformation
 {
 }
 
-interface DatagramSocketMessageReceivedEventArgs
+interface DatagramSocketMessageReceivedEventArgs : Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs
 {
 }
 
-interface MessageWebSocket
+interface MessageWebSocket : Windows.Networking.Sockets.IMessageWebSocket, Windows.Networking.Sockets.IWebSocket, Windows.Foundation.IClosable, Windows.Networking.Sockets.IMessageWebSocket2
 {
 }
 
-interface MessageWebSocketControl
+interface MessageWebSocketControl : Windows.Networking.Sockets.IMessageWebSocketControl, Windows.Networking.Sockets.IWebSocketControl, Windows.Networking.Sockets.IWebSocketControl2
 {
 }
 
-interface MessageWebSocketInformation
+interface MessageWebSocketInformation : Windows.Networking.Sockets.IWebSocketInformation, Windows.Networking.Sockets.IWebSocketInformation2
 {
 }
 
-interface MessageWebSocketMessageReceivedEventArgs
+interface MessageWebSocketMessageReceivedEventArgs : Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs
 {
 }
 
-interface SocketActivityContext
+interface SocketActivityContext : Windows.Networking.Sockets.ISocketActivityContext
 {
 }
 
-interface SocketActivityInformation
+interface SocketActivityInformation : Windows.Networking.Sockets.ISocketActivityInformation
 {
 }
 
-interface SocketActivityTriggerDetails
+interface SocketActivityTriggerDetails : Windows.Networking.Sockets.ISocketActivityTriggerDetails
 {
 }
 
-interface StreamSocket
+interface SocketError
 {
 }
 
-interface StreamSocketControl
+interface StreamSocket : Windows.Networking.Sockets.IStreamSocket, Windows.Foundation.IClosable, Windows.Networking.Sockets.IStreamSocket2, Windows.Networking.Sockets.IStreamSocket3
 {
 }
 
-interface StreamSocketInformation
+interface StreamSocketControl : Windows.Networking.Sockets.IStreamSocketControl, Windows.Networking.Sockets.IStreamSocketControl2, Windows.Networking.Sockets.IStreamSocketControl3
 {
 }
 
-interface StreamSocketListener
+interface StreamSocketInformation : Windows.Networking.Sockets.IStreamSocketInformation, Windows.Networking.Sockets.IStreamSocketInformation2
 {
 }
 
-interface StreamSocketListenerConnectionReceivedEventArgs
+interface StreamSocketListener : Windows.Networking.Sockets.IStreamSocketListener, Windows.Foundation.IClosable, Windows.Networking.Sockets.IStreamSocketListener2, Windows.Networking.Sockets.IStreamSocketListener3
 {
 }
 
-interface StreamSocketListenerControl
+interface StreamSocketListenerConnectionReceivedEventArgs : Windows.Networking.Sockets.IStreamSocketListenerConnectionReceivedEventArgs
 {
 }
 
-interface StreamSocketListenerInformation
+interface StreamSocketListenerControl : Windows.Networking.Sockets.IStreamSocketListenerControl, Windows.Networking.Sockets.IStreamSocketListenerControl2
 {
 }
 
-interface StreamWebSocket
+interface StreamSocketListenerInformation : Windows.Networking.Sockets.IStreamSocketListenerInformation
 {
 }
 
-interface StreamWebSocketControl
+interface StreamWebSocket : Windows.Networking.Sockets.IStreamWebSocket, Windows.Networking.Sockets.IWebSocket, Windows.Foundation.IClosable, Windows.Networking.Sockets.IStreamWebSocket2
 {
 }
 
-interface StreamWebSocketInformation
+interface StreamWebSocketControl : Windows.Networking.Sockets.IStreamWebSocketControl, Windows.Networking.Sockets.IWebSocketControl, Windows.Networking.Sockets.IWebSocketControl2
 {
 }
 
-interface WebSocketClosedEventArgs
+interface StreamWebSocketInformation : Windows.Networking.Sockets.IWebSocketInformation, Windows.Networking.Sockets.IWebSocketInformation2
 {
 }
 
-interface WebSocketKeepAlive
+interface WebSocketClosedEventArgs : Windows.Networking.Sockets.IWebSocketClosedEventArgs
 {
 }
 
-interface WebSocketServerCustomValidationRequestedEventArgs
+interface WebSocketError
+{
+}
+
+interface WebSocketKeepAlive : Windows.ApplicationModel.Background.IBackgroundTask
+{
+}
+
+interface WebSocketServerCustomValidationRequestedEventArgs : Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs
 {
 }
 

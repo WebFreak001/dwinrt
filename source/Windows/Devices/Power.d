@@ -41,10 +41,10 @@ extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_result);
 }
 
-interface Battery
+interface Battery : Windows.Devices.Power.IBattery
 {
 }
 
-interface BatteryReport
+interface BatteryReport : Windows.Devices.Power.IBatteryReport
 {
 }

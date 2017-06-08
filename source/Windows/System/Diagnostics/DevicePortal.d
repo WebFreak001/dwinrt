@@ -46,15 +46,15 @@ extern(Windows):
 	HRESULT abi_GetForAppServiceConnection(Windows.ApplicationModel.AppService.AppServiceConnection appServiceConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnection* return_value);
 }
 
-interface DevicePortalConnection
+interface DevicePortalConnection : Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection
 {
 }
 
-interface DevicePortalConnectionClosedEventArgs
+interface DevicePortalConnectionClosedEventArgs : Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionClosedEventArgs
 {
 }
 
-interface DevicePortalConnectionRequestReceivedEventArgs
+interface DevicePortalConnectionRequestReceivedEventArgs : Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionRequestReceivedEventArgs
 {
 }
 

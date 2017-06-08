@@ -131,7 +131,11 @@ extern(Windows):
 	HRESULT abi_GetDeviceAccountConfigurationAsync(HSTRING accountId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountConfiguration)* return_result);
 }
 
-interface DeviceAccountConfiguration
+interface DeviceAccountConfiguration : Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration, Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2
+{
+}
+
+interface UserDataAccountSystemAccessManager
 {
 }
 

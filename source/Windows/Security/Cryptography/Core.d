@@ -447,39 +447,71 @@ extern(Windows):
 	HRESULT abi_OpenAlgorithm(HSTRING algorithm, Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider* return_provider);
 }
 
-interface AsymmetricKeyAlgorithmProvider
+interface AsymmetricAlgorithmNames
 {
 }
 
-interface CryptographicHash
+interface AsymmetricKeyAlgorithmProvider : Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider, Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider2
 {
 }
 
-interface CryptographicKey
+interface CryptographicEngine
 {
 }
 
-interface EncryptedAndAuthenticatedData
+interface CryptographicHash : Windows.Security.Cryptography.Core.IHashComputation
 {
 }
 
-interface HashAlgorithmProvider
+interface CryptographicKey : Windows.Security.Cryptography.Core.ICryptographicKey
 {
 }
 
-interface KeyDerivationAlgorithmProvider
+interface EccCurveNames
 {
 }
 
-interface KeyDerivationParameters
+interface EncryptedAndAuthenticatedData : Windows.Security.Cryptography.Core.IEncryptedAndAuthenticatedData
 {
 }
 
-interface MacAlgorithmProvider
+interface HashAlgorithmNames
 {
 }
 
-interface SymmetricKeyAlgorithmProvider
+interface HashAlgorithmProvider : Windows.Security.Cryptography.Core.IHashAlgorithmProvider
+{
+}
+
+interface KeyDerivationAlgorithmNames
+{
+}
+
+interface KeyDerivationAlgorithmProvider : Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmProvider
+{
+}
+
+interface KeyDerivationParameters : Windows.Security.Cryptography.Core.IKeyDerivationParameters, Windows.Security.Cryptography.Core.IKeyDerivationParameters2
+{
+}
+
+interface MacAlgorithmNames
+{
+}
+
+interface MacAlgorithmProvider : Windows.Security.Cryptography.Core.IMacAlgorithmProvider, Windows.Security.Cryptography.Core.IMacAlgorithmProvider2
+{
+}
+
+interface PersistedKeyProvider
+{
+}
+
+interface SymmetricAlgorithmNames
+{
+}
+
+interface SymmetricKeyAlgorithmProvider : Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProvider
 {
 }
 

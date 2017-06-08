@@ -81,18 +81,18 @@ extern(Windows):
 	HRESULT abi_GetForCurrentApp(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview* return_current);
 }
 
-interface NotePlacementChangedPreviewEventArgs
+interface NotePlacementChangedPreviewEventArgs : Windows.ApplicationModel.Preview.Notes.INotePlacementChangedPreviewEventArgs
 {
 }
 
-interface NoteVisibilityChangedPreviewEventArgs
+interface NoteVisibilityChangedPreviewEventArgs : Windows.ApplicationModel.Preview.Notes.INoteVisibilityChangedPreviewEventArgs
 {
 }
 
-interface NotesWindowManagerPreview
+interface NotesWindowManagerPreview : Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2
 {
 }
 
-interface NotesWindowManagerPreviewShowNoteOptions
+interface NotesWindowManagerPreviewShowNoteOptions : Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewShowNoteOptions
 {
 }

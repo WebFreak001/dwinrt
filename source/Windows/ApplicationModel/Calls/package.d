@@ -282,63 +282,67 @@ extern(Windows):
 	HRESULT abi_NotifyCallReady();
 }
 
-interface CallAnswerEventArgs
+interface CallAnswerEventArgs : Windows.ApplicationModel.Calls.ICallAnswerEventArgs
 {
 }
 
-interface CallRejectEventArgs
+interface CallRejectEventArgs : Windows.ApplicationModel.Calls.ICallRejectEventArgs
 {
 }
 
-interface CallStateChangeEventArgs
+interface CallStateChangeEventArgs : Windows.ApplicationModel.Calls.ICallStateChangeEventArgs
 {
 }
 
-interface LockScreenCallEndCallDeferral
+interface LockScreenCallEndCallDeferral : Windows.ApplicationModel.Calls.ILockScreenCallEndCallDeferral
 {
 }
 
-interface LockScreenCallEndRequestedEventArgs
+interface LockScreenCallEndRequestedEventArgs : Windows.ApplicationModel.Calls.ILockScreenCallEndRequestedEventArgs
 {
 }
 
-interface LockScreenCallUI
+interface LockScreenCallUI : Windows.ApplicationModel.Calls.ILockScreenCallUI
 {
 }
 
-interface MuteChangeEventArgs
+interface MuteChangeEventArgs : Windows.ApplicationModel.Calls.IMuteChangeEventArgs
 {
 }
 
-interface PhoneCallHistoryEntry
+interface PhoneCallHistoryEntry : Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry
 {
 }
 
-interface PhoneCallHistoryEntryAddress
+interface PhoneCallHistoryEntryAddress : Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress
 {
 }
 
-interface PhoneCallHistoryEntryQueryOptions
+interface PhoneCallHistoryEntryQueryOptions : Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryQueryOptions
 {
 }
 
-interface PhoneCallHistoryEntryReader
+interface PhoneCallHistoryEntryReader : Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryReader
 {
 }
 
-interface PhoneCallHistoryManagerForUser
+interface PhoneCallHistoryManager
 {
 }
 
-interface PhoneCallHistoryStore
+interface PhoneCallHistoryManagerForUser : Windows.ApplicationModel.Calls.IPhoneCallHistoryManagerForUser
 {
 }
 
-interface VoipCallCoordinator
+interface PhoneCallHistoryStore : Windows.ApplicationModel.Calls.IPhoneCallHistoryStore
 {
 }
 
-interface VoipPhoneCall
+interface VoipCallCoordinator : Windows.ApplicationModel.Calls.IVoipCallCoordinator
+{
+}
+
+interface VoipPhoneCall : Windows.ApplicationModel.Calls.IVoipPhoneCall
 {
 }
 

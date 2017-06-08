@@ -688,131 +688,147 @@ extern(Windows):
 	HRESULT get_IsComposing(bool* return_result);
 }
 
-interface ChatCapabilities
+interface ChatCapabilities : Windows.ApplicationModel.Chat.IChatCapabilities
 {
 }
 
-interface ChatConversation
+interface ChatCapabilitiesManager
 {
 }
 
-interface ChatConversationReader
+interface ChatConversation : Windows.ApplicationModel.Chat.IChatConversation, Windows.ApplicationModel.Chat.IChatConversation2, Windows.ApplicationModel.Chat.IChatItem
 {
 }
 
-interface ChatConversationThreadingInfo
+interface ChatConversationReader : Windows.ApplicationModel.Chat.IChatConversationReader
 {
 }
 
-interface ChatMessage
+interface ChatConversationThreadingInfo : Windows.ApplicationModel.Chat.IChatConversationThreadingInfo
 {
 }
 
-interface ChatMessageAttachment
+interface ChatMessage : Windows.ApplicationModel.Chat.IChatMessage, Windows.ApplicationModel.Chat.IChatMessage2, Windows.ApplicationModel.Chat.IChatMessage3, Windows.ApplicationModel.Chat.IChatMessage4, Windows.ApplicationModel.Chat.IChatItem
 {
 }
 
-interface ChatMessageChange
+interface ChatMessageAttachment : Windows.ApplicationModel.Chat.IChatMessageAttachment, Windows.ApplicationModel.Chat.IChatMessageAttachment2
 {
 }
 
-interface ChatMessageChangeReader
+interface ChatMessageBlocking
 {
 }
 
-interface ChatMessageChangeTracker
+interface ChatMessageChange : Windows.ApplicationModel.Chat.IChatMessageChange
 {
 }
 
-interface ChatMessageChangedDeferral
+interface ChatMessageChangeReader : Windows.ApplicationModel.Chat.IChatMessageChangeReader
 {
 }
 
-interface ChatMessageChangedEventArgs
+interface ChatMessageChangeTracker : Windows.ApplicationModel.Chat.IChatMessageChangeTracker
 {
 }
 
-interface ChatMessageNotificationTriggerDetails
+interface ChatMessageChangedDeferral : Windows.ApplicationModel.Chat.IChatMessageChangedDeferral
 {
 }
 
-interface ChatMessageReader
+interface ChatMessageChangedEventArgs : Windows.ApplicationModel.Chat.IChatMessageChangedEventArgs
 {
 }
 
-interface ChatMessageStore
+interface ChatMessageManager
 {
 }
 
-interface ChatMessageStoreChangedEventArgs
+interface ChatMessageNotificationTriggerDetails : Windows.ApplicationModel.Chat.IChatMessageNotificationTriggerDetails, Windows.ApplicationModel.Chat.IChatMessageNotificationTriggerDetails2
 {
 }
 
-interface ChatMessageTransport
+interface ChatMessageReader : Windows.ApplicationModel.Chat.IChatMessageReader, Windows.ApplicationModel.Chat.IChatMessageReader2
 {
 }
 
-interface ChatMessageTransportConfiguration
+interface ChatMessageStore : Windows.ApplicationModel.Chat.IChatMessageStore, Windows.ApplicationModel.Chat.IChatMessageStore2, Windows.ApplicationModel.Chat.IChatMessageStore3
 {
 }
 
-interface ChatMessageValidationResult
+interface ChatMessageStoreChangedEventArgs : Windows.ApplicationModel.Chat.IChatMessageStoreChangedEventArgs
 {
 }
 
-interface ChatQueryOptions
+interface ChatMessageTransport : Windows.ApplicationModel.Chat.IChatMessageTransport, Windows.ApplicationModel.Chat.IChatMessageTransport2
 {
 }
 
-interface ChatRecipientDeliveryInfo
+interface ChatMessageTransportConfiguration : Windows.ApplicationModel.Chat.IChatMessageTransportConfiguration
 {
 }
 
-interface ChatSearchReader
+interface ChatMessageValidationResult : Windows.ApplicationModel.Chat.IChatMessageValidationResult
 {
 }
 
-interface ChatSyncConfiguration
+interface ChatQueryOptions : Windows.ApplicationModel.Chat.IChatQueryOptions
 {
 }
 
-interface ChatSyncManager
+interface ChatRecipientDeliveryInfo : Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo
 {
 }
 
-interface RcsEndUserMessage
+interface ChatSearchReader : Windows.ApplicationModel.Chat.IChatSearchReader
 {
 }
 
-interface RcsEndUserMessageAction
+interface ChatSyncConfiguration : Windows.ApplicationModel.Chat.IChatSyncConfiguration
 {
 }
 
-interface RcsEndUserMessageAvailableEventArgs
+interface ChatSyncManager : Windows.ApplicationModel.Chat.IChatSyncManager
 {
 }
 
-interface RcsEndUserMessageAvailableTriggerDetails
+interface RcsEndUserMessage : Windows.ApplicationModel.Chat.IRcsEndUserMessage
 {
 }
 
-interface RcsEndUserMessageManager
+interface RcsEndUserMessageAction : Windows.ApplicationModel.Chat.IRcsEndUserMessageAction
 {
 }
 
-interface RcsServiceKindSupportedChangedEventArgs
+interface RcsEndUserMessageAvailableEventArgs : Windows.ApplicationModel.Chat.IRcsEndUserMessageAvailableEventArgs
 {
 }
 
-interface RcsTransport
+interface RcsEndUserMessageAvailableTriggerDetails : Windows.ApplicationModel.Chat.IRcsEndUserMessageAvailableTriggerDetails
 {
 }
 
-interface RcsTransportConfiguration
+interface RcsEndUserMessageManager : Windows.ApplicationModel.Chat.IRcsEndUserMessageManager
 {
 }
 
-interface RemoteParticipantComposingChangedEventArgs
+interface RcsManager
+{
+}
+
+interface RcsServiceKindSupportedChangedEventArgs : Windows.ApplicationModel.Chat.IRcsServiceKindSupportedChangedEventArgs
+{
+}
+
+interface RcsTransport : Windows.ApplicationModel.Chat.IRcsTransport
+{
+}
+
+interface RcsTransportConfiguration : Windows.ApplicationModel.Chat.IRcsTransportConfiguration
+{
+}
+
+interface RemoteParticipantComposingChangedEventArgs : Windows.ApplicationModel.Chat.IRemoteParticipantComposingChangedEventArgs
 {
 }
 

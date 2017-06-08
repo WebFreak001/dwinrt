@@ -289,51 +289,55 @@ extern(Windows):
 	HRESULT get_Sidecars(Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportSidecar)* return_value);
 }
 
-interface PhotoImportDeleteImportedItemsFromSourceResult
+interface PhotoImportDeleteImportedItemsFromSourceResult : Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult
 {
 }
 
-interface PhotoImportFindItemsResult
+interface PhotoImportFindItemsResult : Windows.Media.Import.IPhotoImportFindItemsResult, Windows.Media.Import.IPhotoImportFindItemsResult2
 {
 }
 
-interface PhotoImportImportItemsResult
+interface PhotoImportImportItemsResult : Windows.Media.Import.IPhotoImportImportItemsResult
 {
 }
 
-interface PhotoImportItem
+interface PhotoImportItem : Windows.Media.Import.IPhotoImportItem
 {
 }
 
-interface PhotoImportItemImportedEventArgs
+interface PhotoImportItemImportedEventArgs : Windows.Media.Import.IPhotoImportItemImportedEventArgs
 {
 }
 
-interface PhotoImportOperation
+interface PhotoImportManager
 {
 }
 
-interface PhotoImportSelectionChangedEventArgs
+interface PhotoImportOperation : Windows.Media.Import.IPhotoImportOperation
 {
 }
 
-interface PhotoImportSession
+interface PhotoImportSelectionChangedEventArgs : Windows.Media.Import.IPhotoImportSelectionChangedEventArgs
 {
 }
 
-interface PhotoImportSidecar
+interface PhotoImportSession : Windows.Media.Import.IPhotoImportSession, Windows.Foundation.IClosable, Windows.Media.Import.IPhotoImportSession2
 {
 }
 
-interface PhotoImportSource
+interface PhotoImportSidecar : Windows.Media.Import.IPhotoImportSidecar
 {
 }
 
-interface PhotoImportStorageMedium
+interface PhotoImportSource : Windows.Media.Import.IPhotoImportSource
 {
 }
 
-interface PhotoImportVideoSegment
+interface PhotoImportStorageMedium : Windows.Media.Import.IPhotoImportStorageMedium
+{
+}
+
+interface PhotoImportVideoSegment : Windows.Media.Import.IPhotoImportVideoSegment
 {
 }
 

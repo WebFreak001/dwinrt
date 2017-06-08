@@ -44,11 +44,11 @@ extern(Windows):
 	HRESULT abi_CreateDecompressor(Windows.Storage.Streams.IInputStream underlyingStream, Windows.Storage.Compression.Decompressor* return_createdDecompressor);
 }
 
-interface Compressor
+interface Compressor : Windows.Storage.Compression.ICompressor, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable
 {
 }
 
-interface Decompressor
+interface Decompressor : Windows.Storage.Compression.IDecompressor, Windows.Storage.Streams.IInputStream, Windows.Foundation.IClosable
 {
 }
 

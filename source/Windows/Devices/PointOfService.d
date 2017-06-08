@@ -677,6 +677,12 @@ extern(Windows):
 	HRESULT get_SupportedBitmapRotations(Windows.Foundation.Collections.IVectorView!(Windows.Devices.PointOfService.PosPrinterRotation)* return_value);
 }
 
+@uuid("3b5ccc43-e047-4463-bb58-17b5ba1d8056")
+@WinrtFactory("Windows.Devices.PointOfService.JournalPrinterCapabilities")
+interface IJournalPrinterCapabilities : IInspectable
+{
+}
+
 @uuid("24f5df4e-3c99-44e2-b73f-e51be3637a8c")
 @WinrtFactory("Windows.Devices.PointOfService.LineDisplay")
 interface ILineDisplay : IInspectable
@@ -1012,6 +1018,12 @@ extern(Windows):
 	HRESULT abi_ExecuteAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 }
 
+@uuid("2bcba359-1cef-40b2-9ecb-f927f856ae3c")
+@WinrtFactory("Windows.Devices.PointOfService.PosPrinterReleaseDeviceRequestedEventArgs")
+interface IPosPrinterReleaseDeviceRequestedEventArgs : IInspectable
+{
+}
+
 @uuid("8ce0d4ea-132f-4cdf-a64a-2d0d7c96a85b")
 @WinrtFactory("Windows.Devices.PointOfService.PosPrinter")
 interface IPosPrinterStatics : IInspectable
@@ -1126,195 +1138,211 @@ extern(Windows):
 	HRESULT get_ExtendedReason(UINT32* return_value);
 }
 
-interface BarcodeScanner
+interface BarcodeScanner : Windows.Devices.PointOfService.IBarcodeScanner, Windows.Devices.PointOfService.IBarcodeScanner2, Windows.Foundation.IClosable
 {
 }
 
-interface BarcodeScannerCapabilities
+interface BarcodeScannerCapabilities : Windows.Devices.PointOfService.IBarcodeScannerCapabilities, Windows.Devices.PointOfService.IBarcodeScannerCapabilities1
 {
 }
 
-interface BarcodeScannerDataReceivedEventArgs
+interface BarcodeScannerDataReceivedEventArgs : Windows.Devices.PointOfService.IBarcodeScannerDataReceivedEventArgs
 {
 }
 
-interface BarcodeScannerErrorOccurredEventArgs
+interface BarcodeScannerErrorOccurredEventArgs : Windows.Devices.PointOfService.IBarcodeScannerErrorOccurredEventArgs
 {
 }
 
-interface BarcodeScannerImagePreviewReceivedEventArgs
+interface BarcodeScannerImagePreviewReceivedEventArgs : Windows.Devices.PointOfService.IBarcodeScannerImagePreviewReceivedEventArgs
 {
 }
 
-interface BarcodeScannerReport
+interface BarcodeScannerReport : Windows.Devices.PointOfService.IBarcodeScannerReport
 {
 }
 
-interface BarcodeScannerStatusUpdatedEventArgs
+interface BarcodeScannerStatusUpdatedEventArgs : Windows.Devices.PointOfService.IBarcodeScannerStatusUpdatedEventArgs
 {
 }
 
-interface BarcodeSymbologyAttributes
+interface BarcodeSymbologies
 {
 }
 
-interface CashDrawer
+interface BarcodeSymbologyAttributes : Windows.Devices.PointOfService.IBarcodeSymbologyAttributes
 {
 }
 
-interface CashDrawerCapabilities
+interface CashDrawer : Windows.Devices.PointOfService.ICashDrawer, Windows.Foundation.IClosable
 {
 }
 
-interface CashDrawerCloseAlarm
+interface CashDrawerCapabilities : Windows.Devices.PointOfService.ICashDrawerCapabilities
 {
 }
 
-interface CashDrawerClosedEventArgs
+interface CashDrawerCloseAlarm : Windows.Devices.PointOfService.ICashDrawerCloseAlarm
 {
 }
 
-interface CashDrawerEventSource
+interface CashDrawerClosedEventArgs : Windows.Devices.PointOfService.ICashDrawerEventSourceEventArgs
 {
 }
 
-interface CashDrawerOpenedEventArgs
+interface CashDrawerEventSource : Windows.Devices.PointOfService.ICashDrawerEventSource
 {
 }
 
-interface CashDrawerStatus
+interface CashDrawerOpenedEventArgs : Windows.Devices.PointOfService.ICashDrawerEventSourceEventArgs
 {
 }
 
-interface CashDrawerStatusUpdatedEventArgs
+interface CashDrawerStatus : Windows.Devices.PointOfService.ICashDrawerStatus
 {
 }
 
-interface ClaimedBarcodeScanner
+interface CashDrawerStatusUpdatedEventArgs : Windows.Devices.PointOfService.ICashDrawerStatusUpdatedEventArgs
 {
 }
 
-interface ClaimedCashDrawer
+interface ClaimedBarcodeScanner : Windows.Devices.PointOfService.IClaimedBarcodeScanner, Windows.Foundation.IClosable, Windows.Devices.PointOfService.IClaimedBarcodeScanner1, Windows.Devices.PointOfService.IClaimedBarcodeScanner2
 {
 }
 
-interface ClaimedJournalPrinter
+interface ClaimedCashDrawer : Windows.Devices.PointOfService.IClaimedCashDrawer, Windows.Foundation.IClosable
 {
 }
 
-interface ClaimedLineDisplay
+interface ClaimedJournalPrinter : Windows.Devices.PointOfService.IClaimedJournalPrinter, Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation
 {
 }
 
-interface ClaimedMagneticStripeReader
+interface ClaimedLineDisplay : Windows.Devices.PointOfService.IClaimedLineDisplay, Windows.Foundation.IClosable
 {
 }
 
-interface ClaimedPosPrinter
+interface ClaimedMagneticStripeReader : Windows.Devices.PointOfService.IClaimedMagneticStripeReader, Windows.Foundation.IClosable
 {
 }
 
-interface ClaimedReceiptPrinter
+interface ClaimedPosPrinter : Windows.Devices.PointOfService.IClaimedPosPrinter, Windows.Foundation.IClosable
 {
 }
 
-interface ClaimedSlipPrinter
+interface ClaimedReceiptPrinter : Windows.Devices.PointOfService.IClaimedReceiptPrinter, Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation
 {
 }
 
-interface JournalPrintJob
+interface ClaimedSlipPrinter : Windows.Devices.PointOfService.IClaimedSlipPrinter, Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation
 {
 }
 
-interface JournalPrinterCapabilities
+interface JournalPrintJob : Windows.Devices.PointOfService.IPosPrinterJob
 {
 }
 
-interface LineDisplay
+interface JournalPrinterCapabilities : Windows.Devices.PointOfService.IJournalPrinterCapabilities, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities
 {
 }
 
-interface LineDisplayCapabilities
+interface LineDisplay : Windows.Devices.PointOfService.ILineDisplay, Windows.Foundation.IClosable
 {
 }
 
-interface LineDisplayWindow
+interface LineDisplayCapabilities : Windows.Devices.PointOfService.ILineDisplayCapabilities
 {
 }
 
-interface MagneticStripeReader
+interface LineDisplayWindow : Windows.Devices.PointOfService.ILineDisplayWindow, Windows.Foundation.IClosable
 {
 }
 
-interface MagneticStripeReaderAamvaCardDataReceivedEventArgs
+interface MagneticStripeReader : Windows.Devices.PointOfService.IMagneticStripeReader, Windows.Foundation.IClosable
 {
 }
 
-interface MagneticStripeReaderBankCardDataReceivedEventArgs
+interface MagneticStripeReaderAamvaCardDataReceivedEventArgs : Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs
 {
 }
 
-interface MagneticStripeReaderCapabilities
+interface MagneticStripeReaderBankCardDataReceivedEventArgs : Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs
 {
 }
 
-interface MagneticStripeReaderErrorOccurredEventArgs
+interface MagneticStripeReaderCapabilities : Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities
 {
 }
 
-interface MagneticStripeReaderReport
+interface MagneticStripeReaderCardTypes
 {
 }
 
-interface MagneticStripeReaderStatusUpdatedEventArgs
+interface MagneticStripeReaderEncryptionAlgorithms
 {
 }
 
-interface MagneticStripeReaderTrackData
+interface MagneticStripeReaderErrorOccurredEventArgs : Windows.Devices.PointOfService.IMagneticStripeReaderErrorOccurredEventArgs
 {
 }
 
-interface MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs
+interface MagneticStripeReaderReport : Windows.Devices.PointOfService.IMagneticStripeReaderReport
 {
 }
 
-interface PosPrinter
+interface MagneticStripeReaderStatusUpdatedEventArgs : Windows.Devices.PointOfService.IMagneticStripeReaderStatusUpdatedEventArgs
 {
 }
 
-interface PosPrinterCapabilities
+interface MagneticStripeReaderTrackData : Windows.Devices.PointOfService.IMagneticStripeReaderTrackData
 {
 }
 
-interface PosPrinterReleaseDeviceRequestedEventArgs
+interface MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs : Windows.Devices.PointOfService.IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs
 {
 }
 
-interface PosPrinterStatus
+interface PosPrinter : Windows.Devices.PointOfService.IPosPrinter, Windows.Foundation.IClosable
 {
 }
 
-interface PosPrinterStatusUpdatedEventArgs
+interface PosPrinterCapabilities : Windows.Devices.PointOfService.IPosPrinterCapabilities
 {
 }
 
-interface ReceiptPrintJob
+interface PosPrinterCharacterSetIds
 {
 }
 
-interface ReceiptPrinterCapabilities
+interface PosPrinterReleaseDeviceRequestedEventArgs : Windows.Devices.PointOfService.IPosPrinterReleaseDeviceRequestedEventArgs
 {
 }
 
-interface SlipPrintJob
+interface PosPrinterStatus : Windows.Devices.PointOfService.IPosPrinterStatus
 {
 }
 
-interface SlipPrinterCapabilities
+interface PosPrinterStatusUpdatedEventArgs : Windows.Devices.PointOfService.IPosPrinterStatusUpdatedEventArgs
 {
 }
 
-interface UnifiedPosErrorData
+interface ReceiptPrintJob : Windows.Devices.PointOfService.IReceiptPrintJob, Windows.Devices.PointOfService.IReceiptOrSlipJob, Windows.Devices.PointOfService.IPosPrinterJob
+{
+}
+
+interface ReceiptPrinterCapabilities : Windows.Devices.PointOfService.IReceiptPrinterCapabilities, Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities
+{
+}
+
+interface SlipPrintJob : Windows.Devices.PointOfService.IReceiptOrSlipJob, Windows.Devices.PointOfService.IPosPrinterJob
+{
+}
+
+interface SlipPrinterCapabilities : Windows.Devices.PointOfService.ISlipPrinterCapabilities, Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities
+{
+}
+
+interface UnifiedPosErrorData : Windows.Devices.PointOfService.IUnifiedPosErrorData
 {
 }
 

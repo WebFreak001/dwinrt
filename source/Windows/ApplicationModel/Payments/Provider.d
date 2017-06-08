@@ -63,14 +63,14 @@ extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING id, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.Provider.PaymentTransaction)* return_result);
 }
 
-interface PaymentAppManager
+interface PaymentAppManager : Windows.ApplicationModel.Payments.Provider.IPaymentAppManager
 {
 }
 
-interface PaymentTransaction
+interface PaymentTransaction : Windows.ApplicationModel.Payments.Provider.IPaymentTransaction
 {
 }
 
-interface PaymentTransactionAcceptResult
+interface PaymentTransactionAcceptResult : Windows.ApplicationModel.Payments.Provider.IPaymentTransactionAcceptResult
 {
 }

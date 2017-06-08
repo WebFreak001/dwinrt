@@ -220,31 +220,35 @@ extern(Windows):
 	HRESULT abi_CreateWalletVerb(HSTRING name, Windows.ApplicationModel.Wallet.WalletVerb* return_WalletVerb);
 }
 
-interface WalletBarcode
+interface WalletBarcode : Windows.ApplicationModel.Wallet.IWalletBarcode
 {
 }
 
-interface WalletItem
+interface WalletItem : Windows.ApplicationModel.Wallet.IWalletItem
 {
 }
 
-interface WalletItemCustomProperty
+interface WalletItemCustomProperty : Windows.ApplicationModel.Wallet.IWalletItemCustomProperty
 {
 }
 
-interface WalletItemStore
+interface WalletItemStore : Windows.ApplicationModel.Wallet.IWalletItemStore
 {
 }
 
-interface WalletRelevantLocation
+interface WalletManager
 {
 }
 
-interface WalletTransaction
+interface WalletRelevantLocation : Windows.ApplicationModel.Wallet.IWalletRelevantLocation
 {
 }
 
-interface WalletVerb
+interface WalletTransaction : Windows.ApplicationModel.Wallet.IWalletTransaction
+{
+}
+
+interface WalletVerb : Windows.ApplicationModel.Wallet.IWalletVerb
 {
 }
 

@@ -114,6 +114,12 @@ extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.SpatialPerceptionAccessStatus)* return_result);
 }
 
+@uuid("fb2065da-68c3-33df-b7af-4c787207999c")
+@WinrtFactory("Windows.Perception.Spatial.SpatialBoundingVolume")
+interface ISpatialBoundingVolume : IInspectable
+{
+}
+
 @uuid("05889117-b3e1-36d8-b017-566181a5b196")
 @WinrtFactory("Windows.Perception.Spatial.SpatialBoundingVolume")
 interface ISpatialBoundingVolumeStatics : IInspectable
@@ -345,71 +351,79 @@ extern(Windows):
 	HRESULT get_CoordinateSystem(Windows.Perception.Spatial.SpatialCoordinateSystem* return_value);
 }
 
-interface SpatialAnchor
+interface SpatialAnchor : Windows.Perception.Spatial.ISpatialAnchor, Windows.Perception.Spatial.ISpatialAnchor2
 {
 }
 
-interface SpatialAnchorRawCoordinateSystemAdjustedEventArgs
+interface SpatialAnchorManager
 {
 }
 
-interface SpatialAnchorStore
+interface SpatialAnchorRawCoordinateSystemAdjustedEventArgs : Windows.Perception.Spatial.ISpatialAnchorRawCoordinateSystemAdjustedEventArgs
 {
 }
 
-interface SpatialBoundingVolume
+interface SpatialAnchorStore : Windows.Perception.Spatial.ISpatialAnchorStore
 {
 }
 
-interface SpatialCoordinateSystem
+interface SpatialAnchorTransferManager
 {
 }
 
-interface SpatialEntity
+interface SpatialBoundingVolume : Windows.Perception.Spatial.ISpatialBoundingVolume
 {
 }
 
-interface SpatialEntityAddedEventArgs
+interface SpatialCoordinateSystem : Windows.Perception.Spatial.ISpatialCoordinateSystem
 {
 }
 
-interface SpatialEntityRemovedEventArgs
+interface SpatialEntity : Windows.Perception.Spatial.ISpatialEntity
 {
 }
 
-interface SpatialEntityStore
+interface SpatialEntityAddedEventArgs : Windows.Perception.Spatial.ISpatialEntityAddedEventArgs
 {
 }
 
-interface SpatialEntityUpdatedEventArgs
+interface SpatialEntityRemovedEventArgs : Windows.Perception.Spatial.ISpatialEntityRemovedEventArgs
 {
 }
 
-interface SpatialEntityWatcher
+interface SpatialEntityStore : Windows.Perception.Spatial.ISpatialEntityStore
 {
 }
 
-interface SpatialLocation
+interface SpatialEntityUpdatedEventArgs : Windows.Perception.Spatial.ISpatialEntityUpdatedEventArgs
 {
 }
 
-interface SpatialLocator
+interface SpatialEntityWatcher : Windows.Perception.Spatial.ISpatialEntityWatcher
 {
 }
 
-interface SpatialLocatorAttachedFrameOfReference
+interface SpatialLocation : Windows.Perception.Spatial.ISpatialLocation
 {
 }
 
-interface SpatialLocatorPositionalTrackingDeactivatingEventArgs
+interface SpatialLocator : Windows.Perception.Spatial.ISpatialLocator
 {
 }
 
-interface SpatialStageFrameOfReference
+interface SpatialLocatorAttachedFrameOfReference : Windows.Perception.Spatial.ISpatialLocatorAttachedFrameOfReference
 {
 }
 
-interface SpatialStationaryFrameOfReference
+interface SpatialLocatorPositionalTrackingDeactivatingEventArgs : Windows.Perception.Spatial.ISpatialLocatorPositionalTrackingDeactivatingEventArgs
+{
+}
+
+interface SpatialStageFrameOfReference : Windows.Perception.Spatial.ISpatialStageFrameOfReference
+{
+}
+
+interface SpatialStationaryFrameOfReference : Windows.Perception.Spatial.ISpatialStationaryFrameOfReference
 {
 }
 

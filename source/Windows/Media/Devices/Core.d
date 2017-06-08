@@ -253,63 +253,63 @@ extern(Windows):
 	HRESULT get_DesiredFrameControllers(Windows.Foundation.Collections.IVector!(Windows.Media.Devices.Core.FrameController)* return_items);
 }
 
-interface CameraIntrinsics
+interface CameraIntrinsics : Windows.Media.Devices.Core.ICameraIntrinsics, Windows.Media.Devices.Core.ICameraIntrinsics2
 {
 }
 
-interface DepthCorrelatedCoordinateMapper
+interface DepthCorrelatedCoordinateMapper : Windows.Media.Devices.Core.IDepthCorrelatedCoordinateMapper, Windows.Foundation.IClosable
 {
 }
 
-interface FrameControlCapabilities
+interface FrameControlCapabilities : Windows.Media.Devices.Core.IFrameControlCapabilities, Windows.Media.Devices.Core.IFrameControlCapabilities2
 {
 }
 
-interface FrameController
+interface FrameController : Windows.Media.Devices.Core.IFrameController, Windows.Media.Devices.Core.IFrameController2
 {
 }
 
-interface FrameExposureCapabilities
+interface FrameExposureCapabilities : Windows.Media.Devices.Core.IFrameExposureCapabilities
 {
 }
 
-interface FrameExposureCompensationCapabilities
+interface FrameExposureCompensationCapabilities : Windows.Media.Devices.Core.IFrameExposureCompensationCapabilities
 {
 }
 
-interface FrameExposureCompensationControl
+interface FrameExposureCompensationControl : Windows.Media.Devices.Core.IFrameExposureCompensationControl
 {
 }
 
-interface FrameExposureControl
+interface FrameExposureControl : Windows.Media.Devices.Core.IFrameExposureControl
 {
 }
 
-interface FrameFlashCapabilities
+interface FrameFlashCapabilities : Windows.Media.Devices.Core.IFrameFlashCapabilities
 {
 }
 
-interface FrameFlashControl
+interface FrameFlashControl : Windows.Media.Devices.Core.IFrameFlashControl
 {
 }
 
-interface FrameFocusCapabilities
+interface FrameFocusCapabilities : Windows.Media.Devices.Core.IFrameFocusCapabilities
 {
 }
 
-interface FrameFocusControl
+interface FrameFocusControl : Windows.Media.Devices.Core.IFrameFocusControl
 {
 }
 
-interface FrameIsoSpeedCapabilities
+interface FrameIsoSpeedCapabilities : Windows.Media.Devices.Core.IFrameIsoSpeedCapabilities
 {
 }
 
-interface FrameIsoSpeedControl
+interface FrameIsoSpeedControl : Windows.Media.Devices.Core.IFrameIsoSpeedControl
 {
 }
 
-interface VariablePhotoSequenceController
+interface VariablePhotoSequenceController : Windows.Media.Devices.Core.IVariablePhotoSequenceController
 {
 }
 

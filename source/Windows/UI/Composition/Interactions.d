@@ -25,6 +25,11 @@ extern(Windows):
 	HRESULT abi_Create(Windows.UI.Composition.Compositor compositor, Windows.UI.Composition.Interactions.CompositionConditionalValue* return_result);
 }
 
+@uuid("043b2431-06e3-495a-ba54-409f0017fac0")
+interface ICompositionInteractionSource : IInspectable
+{
+}
+
 @uuid("1b468e4b-a5bf-47d8-a547-3894155a158c")
 @WinrtFactory("Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection")
 interface ICompositionInteractionSourceCollection : IInspectable
@@ -109,6 +114,18 @@ interface IInteractionTrackerIdleStateEnteredArgs : IInspectable
 
 extern(Windows):
 	HRESULT get_RequestId(INT32* return_value);
+}
+
+@uuid("a0e2c920-26b4-4da2-8b61-5e683979bbe2")
+@WinrtFactory("Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier")
+interface IInteractionTrackerInertiaModifier : IInspectable
+{
+}
+
+@uuid("993818fe-c94e-4b86-87f3-922665ba46b9")
+@WinrtFactory("Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier")
+interface IInteractionTrackerInertiaModifierFactory : IInspectable
+{
 }
 
 @uuid("04922fdc-f154-4cb8-bf33-cc1ba611e6db")
@@ -279,6 +296,12 @@ extern(Windows):
 	HRESULT abi_ConfigureDeltaScaleModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues);
 }
 
+@uuid("b2ca917c-e98a-41f2-b3c9-891c9266c8f6")
+@WinrtFactory("Windows.UI.Composition.Interactions.VisualInteractionSource")
+interface IVisualInteractionSourceObjectFactory : IInspectable
+{
+}
+
 @uuid("369965e1-8645-4f75-ba00-6479cd10c8e6")
 @WinrtFactory("Windows.UI.Composition.Interactions.VisualInteractionSource")
 interface IVisualInteractionSourceStatics : IInspectable
@@ -289,55 +312,55 @@ extern(Windows):
 	HRESULT abi_Create(Windows.UI.Composition.Visual source, Windows.UI.Composition.Interactions.VisualInteractionSource* return_result);
 }
 
-interface CompositionConditionalValue : Windows.UI.Composition.CompositionObject
+interface CompositionConditionalValue : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.Interactions.ICompositionConditionalValue
 {
 }
 
-interface CompositionInteractionSourceCollection : Windows.UI.Composition.CompositionObject
+interface CompositionInteractionSourceCollection : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.Interactions.ICompositionInteractionSourceCollection, Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.ICompositionInteractionSource)
 {
 }
 
-interface InteractionTracker : Windows.UI.Composition.CompositionObject
+interface InteractionTracker : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.Interactions.IInteractionTracker, Windows.UI.Composition.Interactions.IInteractionTracker2
 {
 }
 
-interface InteractionTrackerCustomAnimationStateEnteredArgs
+interface InteractionTrackerCustomAnimationStateEnteredArgs : Windows.UI.Composition.Interactions.IInteractionTrackerCustomAnimationStateEnteredArgs
 {
 }
 
-interface InteractionTrackerIdleStateEnteredArgs
+interface InteractionTrackerIdleStateEnteredArgs : Windows.UI.Composition.Interactions.IInteractionTrackerIdleStateEnteredArgs
 {
 }
 
-interface InteractionTrackerInertiaModifier : Windows.UI.Composition.CompositionObject
+interface InteractionTrackerInertiaModifier : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.Interactions.IInteractionTrackerInertiaModifier
 {
 }
 
-interface InteractionTrackerInertiaMotion : Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier
+interface InteractionTrackerInertiaMotion : Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier, Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotion
 {
 }
 
-interface InteractionTrackerInertiaRestingValue : Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier
+interface InteractionTrackerInertiaRestingValue : Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier, Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValue
 {
 }
 
-interface InteractionTrackerInertiaStateEnteredArgs
+interface InteractionTrackerInertiaStateEnteredArgs : Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs
 {
 }
 
-interface InteractionTrackerInteractingStateEnteredArgs
+interface InteractionTrackerInteractingStateEnteredArgs : Windows.UI.Composition.Interactions.IInteractionTrackerInteractingStateEnteredArgs
 {
 }
 
-interface InteractionTrackerRequestIgnoredArgs
+interface InteractionTrackerRequestIgnoredArgs : Windows.UI.Composition.Interactions.IInteractionTrackerRequestIgnoredArgs
 {
 }
 
-interface InteractionTrackerValuesChangedArgs
+interface InteractionTrackerValuesChangedArgs : Windows.UI.Composition.Interactions.IInteractionTrackerValuesChangedArgs
 {
 }
 
-interface VisualInteractionSource : Windows.UI.Composition.CompositionObject
+interface VisualInteractionSource : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.Interactions.IVisualInteractionSource, Windows.UI.Composition.Interactions.ICompositionInteractionSource, Windows.UI.Composition.Interactions.IVisualInteractionSource2
 {
 }
 

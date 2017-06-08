@@ -116,39 +116,43 @@ extern(Windows):
 	HRESULT get_IsConfirmedPC(bool* return_value);
 }
 
-interface OnlineIdAuthenticator
+interface OnlineIdAuthenticator : Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator
 {
 }
 
-interface OnlineIdServiceTicket
+interface OnlineIdServiceTicket : Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicket
 {
 }
 
-interface OnlineIdServiceTicketRequest
+interface OnlineIdServiceTicketRequest : Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequest
 {
 }
 
-interface OnlineIdSystemAuthenticatorForUser
+interface OnlineIdSystemAuthenticator
 {
 }
 
-interface OnlineIdSystemIdentity
+interface OnlineIdSystemAuthenticatorForUser : Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser
 {
 }
 
-interface OnlineIdSystemTicketResult
+interface OnlineIdSystemIdentity : Windows.Security.Authentication.OnlineId.IOnlineIdSystemIdentity
 {
 }
 
-interface SignOutUserOperation
+interface OnlineIdSystemTicketResult : Windows.Security.Authentication.OnlineId.IOnlineIdSystemTicketResult
 {
 }
 
-interface UserAuthenticationOperation
+interface SignOutUserOperation : Windows.Foundation.IAsyncAction
 {
 }
 
-interface UserIdentity
+interface UserAuthenticationOperation : Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity)
+{
+}
+
+interface UserIdentity : Windows.Security.Authentication.OnlineId.IUserIdentity
 {
 }
 

@@ -129,23 +129,23 @@ extern(Windows):
 	HRESULT abi_TryCreate(Windows.UI.Input.Preview.Injection.InputInjector* return_instance);
 }
 
-interface InjectedInputKeyboardInfo
+interface InjectedInputKeyboardInfo : Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo
 {
 }
 
-interface InjectedInputMouseInfo
+interface InjectedInputMouseInfo : Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo
 {
 }
 
-interface InjectedInputPenInfo
+interface InjectedInputPenInfo : Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo
 {
 }
 
-interface InjectedInputTouchInfo
+interface InjectedInputTouchInfo : Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo
 {
 }
 
-interface InputInjector
+interface InputInjector : Windows.UI.Input.Preview.Injection.IInputInjector
 {
 }
 

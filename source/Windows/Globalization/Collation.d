@@ -33,10 +33,10 @@ extern(Windows):
 	HRESULT abi_Create(HSTRING language, Windows.Globalization.Collation.CharacterGroupings* return_result);
 }
 
-interface CharacterGrouping
+interface CharacterGrouping : Windows.Globalization.Collation.ICharacterGrouping
 {
 }
 
-interface CharacterGroupings
+interface CharacterGroupings : Windows.Globalization.Collation.ICharacterGroupings, Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Collation.CharacterGrouping), Windows.Foundation.Collections.IIterable!(Windows.Globalization.Collation.CharacterGrouping)
 {
 }

@@ -65,11 +65,11 @@ extern(Windows):
 	HRESULT get_Is2086MetadataSupported(bool* return_value);
 }
 
-interface HdmiDisplayInformation
+interface HdmiDisplayInformation : Windows.Graphics.Display.Core.IHdmiDisplayInformation
 {
 }
 
-interface HdmiDisplayMode
+interface HdmiDisplayMode : Windows.Graphics.Display.Core.IHdmiDisplayMode
 {
 }
 

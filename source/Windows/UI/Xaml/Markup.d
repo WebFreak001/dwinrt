@@ -43,6 +43,12 @@ extern(Windows):
 	HRESULT abi_ProcessBindings(IInspectable item, INT32 itemIndex, INT32 phase, INT32* out_nextPhase);
 }
 
+@uuid("829d2ad3-620a-46f6-845d-436a05927100")
+@WinrtFactory("Windows.UI.Xaml.Markup.XamlBinaryWriter")
+interface IXamlBinaryWriter : IInspectable
+{
+}
+
 @uuid("0d8ed07a-9b82-4aa8-b68b-026f2de1cc86")
 @WinrtFactory("Windows.UI.Xaml.Markup.XamlBinaryWriter")
 interface IXamlBinaryWriterStatics : IInspectable
@@ -51,6 +57,12 @@ interface IXamlBinaryWriterStatics : IInspectable
 
 extern(Windows):
 	HRESULT abi_Write(Windows.Foundation.Collections.IVector!(Windows.Storage.Streams.IRandomAccessStream) inputStreams, Windows.Foundation.Collections.IVector!(Windows.Storage.Streams.IRandomAccessStream) outputStreams, Windows.UI.Xaml.Markup.IXamlMetadataProvider xamlMetadataProvider, Windows.UI.Xaml.Markup.XamlBinaryWriterErrorInformation* return_returnValue);
+}
+
+@uuid("faa6fb06-8ab9-4ef7-8ae7-fbd30bbfd06d")
+@WinrtFactory("Windows.UI.Xaml.Markup.XamlBindingHelper")
+interface IXamlBindingHelper : IInspectable
+{
 }
 
 @uuid("f65cfb71-c80c-4ffa-86ee-558754ee336d")
@@ -83,6 +95,12 @@ extern(Windows):
 	HRESULT abi_SetPropertyFromByte(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, BYTE value);
 	HRESULT abi_SetPropertyFromUri(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, Windows.Foundation.Uri value);
 	HRESULT abi_SetPropertyFromObject(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, IInspectable value);
+}
+
+@uuid("d0e6673c-5342-44ef-85a7-ed327a739d9a")
+@WinrtFactory("Windows.UI.Xaml.Markup.XamlMarkupHelper")
+interface IXamlMarkupHelper : IInspectable
+{
 }
 
 @uuid("c9bc3725-f34f-445c-81a2-6b72a5e8f072")
@@ -122,6 +140,12 @@ extern(Windows):
 	HRESULT abi_GetXmlnsDefinitions(UINT32* out___definitionsSize, Windows.UI.Xaml.Markup.XmlnsDefinition** return_definitions);
 }
 
+@uuid("24374cf1-cceb-48bf-a514-41b0186f84c2")
+@WinrtFactory("Windows.UI.Xaml.Markup.XamlReader")
+interface IXamlReader : IInspectable
+{
+}
+
 @uuid("9891c6bd-534f-4955-b85a-8a8dc0dca602")
 @WinrtFactory("Windows.UI.Xaml.Markup.XamlReader")
 interface IXamlReaderStatics : IInspectable
@@ -159,18 +183,18 @@ extern(Windows):
 	HRESULT abi_RunInitializer();
 }
 
-interface XamlBinaryWriter
+interface XamlBinaryWriter : Windows.UI.Xaml.Markup.IXamlBinaryWriter
 {
 }
 
-interface XamlBindingHelper
+interface XamlBindingHelper : Windows.UI.Xaml.Markup.IXamlBindingHelper
 {
 }
 
-interface XamlMarkupHelper
+interface XamlMarkupHelper : Windows.UI.Xaml.Markup.IXamlMarkupHelper
 {
 }
 
-interface XamlReader
+interface XamlReader : Windows.UI.Xaml.Markup.IXamlReader
 {
 }

@@ -151,50 +151,50 @@ extern(Windows):
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
 }
 
-interface UserDataTaskDataProviderConnection
+interface UserDataTaskDataProviderConnection : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskDataProviderConnection
 {
 }
 
-interface UserDataTaskDataProviderTriggerDetails
+interface UserDataTaskDataProviderTriggerDetails : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskDataProviderTriggerDetails
 {
 }
 
-interface UserDataTaskListCompleteTaskRequest
+interface UserDataTaskListCompleteTaskRequest : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListCompleteTaskRequest
 {
 }
 
-interface UserDataTaskListCompleteTaskRequestEventArgs
+interface UserDataTaskListCompleteTaskRequestEventArgs : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListCompleteTaskRequestEventArgs
 {
 }
 
-interface UserDataTaskListCreateOrUpdateTaskRequest
+interface UserDataTaskListCreateOrUpdateTaskRequest : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListCreateOrUpdateTaskRequest
 {
 }
 
-interface UserDataTaskListCreateOrUpdateTaskRequestEventArgs
+interface UserDataTaskListCreateOrUpdateTaskRequestEventArgs : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListCreateOrUpdateTaskRequestEventArgs
 {
 }
 
-interface UserDataTaskListDeleteTaskRequest
+interface UserDataTaskListDeleteTaskRequest : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListDeleteTaskRequest
 {
 }
 
-interface UserDataTaskListDeleteTaskRequestEventArgs
+interface UserDataTaskListDeleteTaskRequestEventArgs : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListDeleteTaskRequestEventArgs
 {
 }
 
-interface UserDataTaskListSkipOccurrenceRequest
+interface UserDataTaskListSkipOccurrenceRequest : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListSkipOccurrenceRequest
 {
 }
 
-interface UserDataTaskListSkipOccurrenceRequestEventArgs
+interface UserDataTaskListSkipOccurrenceRequestEventArgs : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListSkipOccurrenceRequestEventArgs
 {
 }
 
-interface UserDataTaskListSyncManagerSyncRequest
+interface UserDataTaskListSyncManagerSyncRequest : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListSyncManagerSyncRequest
 {
 }
 
-interface UserDataTaskListSyncManagerSyncRequestEventArgs
+interface UserDataTaskListSyncManagerSyncRequestEventArgs : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListSyncManagerSyncRequestEventArgs
 {
 }

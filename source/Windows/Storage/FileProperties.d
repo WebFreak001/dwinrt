@@ -168,31 +168,35 @@ extern(Windows):
 	HRESULT get_Orientation(Windows.Storage.FileProperties.VideoOrientation* return_value);
 }
 
-interface BasicProperties
+interface BasicProperties : Windows.Storage.FileProperties.IBasicProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
 }
 
-interface DocumentProperties
+interface DocumentProperties : Windows.Storage.FileProperties.IDocumentProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
 }
 
-interface ImageProperties
+interface GeotagHelper
 {
 }
 
-interface MusicProperties
+interface ImageProperties : Windows.Storage.FileProperties.IImageProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
 }
 
-interface StorageItemContentProperties
+interface MusicProperties : Windows.Storage.FileProperties.IMusicProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
 }
 
-interface StorageItemThumbnail
+interface StorageItemContentProperties : Windows.Storage.FileProperties.IStorageItemContentProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
 }
 
-interface VideoProperties
+interface StorageItemThumbnail : Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Storage.FileProperties.IThumbnailProperties
+{
+}
+
+interface VideoProperties : Windows.Storage.FileProperties.IVideoProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
 }
 

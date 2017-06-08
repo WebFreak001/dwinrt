@@ -133,27 +133,27 @@ extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_selector);
 }
 
-interface ImageScanner
+interface ImageScanner : Windows.Devices.Scanners.IImageScanner
 {
 }
 
-interface ImageScannerAutoConfiguration
+interface ImageScannerAutoConfiguration : Windows.Devices.Scanners.IImageScannerFormatConfiguration
 {
 }
 
-interface ImageScannerFeederConfiguration
+interface ImageScannerFeederConfiguration : Windows.Devices.Scanners.IImageScannerFormatConfiguration, Windows.Devices.Scanners.IImageScannerSourceConfiguration, Windows.Devices.Scanners.IImageScannerFeederConfiguration
 {
 }
 
-interface ImageScannerFlatbedConfiguration
+interface ImageScannerFlatbedConfiguration : Windows.Devices.Scanners.IImageScannerFormatConfiguration, Windows.Devices.Scanners.IImageScannerSourceConfiguration
 {
 }
 
-interface ImageScannerPreviewResult
+interface ImageScannerPreviewResult : Windows.Devices.Scanners.IImageScannerPreviewResult
 {
 }
 
-interface ImageScannerScanResult
+interface ImageScannerScanResult : Windows.Devices.Scanners.IImageScannerScanResult
 {
 }
 

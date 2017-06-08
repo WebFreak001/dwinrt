@@ -234,43 +234,43 @@ extern(Windows):
 	HRESULT set_Value(IInspectable value);
 }
 
-interface ContentIndexer
+interface ContentIndexer : Windows.Storage.Search.IContentIndexer, Windows.Storage.Search.IContentIndexerQueryOperations
 {
 }
 
-interface ContentIndexerQuery
+interface ContentIndexerQuery : Windows.Storage.Search.IContentIndexerQuery
 {
 }
 
-interface IndexableContent
+interface IndexableContent : Windows.Storage.Search.IIndexableContent
 {
 }
 
-interface QueryOptions
+interface QueryOptions : Windows.Storage.Search.IQueryOptions, Windows.Storage.Search.IQueryOptionsWithProviderFilter
 {
 }
 
-interface SortEntryVector
+interface SortEntryVector : Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry), Windows.Foundation.Collections.IIterable!(Windows.Storage.Search.SortEntry)
 {
 }
 
-interface StorageFileQueryResult
+interface StorageFileQueryResult : Windows.Storage.Search.IStorageFileQueryResult, Windows.Storage.Search.IStorageQueryResultBase, Windows.Storage.Search.IStorageFileQueryResult2
 {
 }
 
-interface StorageFolderQueryResult
+interface StorageFolderQueryResult : Windows.Storage.Search.IStorageFolderQueryResult, Windows.Storage.Search.IStorageQueryResultBase
 {
 }
 
-interface StorageItemQueryResult
+interface StorageItemQueryResult : Windows.Storage.Search.IStorageItemQueryResult, Windows.Storage.Search.IStorageQueryResultBase
 {
 }
 
-interface StorageLibraryContentChangedTriggerDetails
+interface StorageLibraryContentChangedTriggerDetails : Windows.Storage.Search.IStorageLibraryContentChangedTriggerDetails
 {
 }
 
-interface ValueAndLanguage
+interface ValueAndLanguage : Windows.Storage.Search.IValueAndLanguage
 {
 }
 

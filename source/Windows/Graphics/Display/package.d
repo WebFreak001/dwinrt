@@ -159,11 +159,15 @@ extern(Windows):
 	HRESULT remove_DisplayContentsInvalidated(EventRegistrationToken token);
 }
 
-interface BrightnessOverride
+interface BrightnessOverride : Windows.Graphics.Display.IBrightnessOverride
 {
 }
 
-interface DisplayInformation
+interface DisplayInformation : Windows.Graphics.Display.IDisplayInformation, Windows.Graphics.Display.IDisplayInformation2, Windows.Graphics.Display.IDisplayInformation3, Windows.Graphics.Display.IDisplayInformation4
+{
+}
+
+interface DisplayProperties
 {
 }
 

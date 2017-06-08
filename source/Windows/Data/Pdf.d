@@ -79,19 +79,19 @@ extern(Windows):
 	HRESULT set_BitmapEncoderId(GUID value);
 }
 
-interface PdfDocument
+interface PdfDocument : Windows.Data.Pdf.IPdfDocument
 {
 }
 
-interface PdfPage
+interface PdfPage : Windows.Data.Pdf.IPdfPage, Windows.Foundation.IClosable
 {
 }
 
-interface PdfPageDimensions
+interface PdfPageDimensions : Windows.Data.Pdf.IPdfPageDimensions
 {
 }
 
-interface PdfPageRenderOptions
+interface PdfPageRenderOptions : Windows.Data.Pdf.IPdfPageRenderOptions
 {
 }
 

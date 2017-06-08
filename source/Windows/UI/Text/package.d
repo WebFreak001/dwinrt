@@ -7,6 +7,12 @@ struct FontWeight
 	UINT16 Weight;
 }
 
+@uuid("7880a444-01ab-4997-8517-df822a0c45f1")
+@WinrtFactory("Windows.UI.Text.FontWeights")
+interface IFontWeights : IInspectable
+{
+}
+
 @uuid("b3b579d5-1ba9-48eb-9dad-c095e8c23ba3")
 @WinrtFactory("Windows.UI.Text.FontWeights")
 interface IFontWeightsStatics : IInspectable
@@ -284,11 +290,15 @@ extern(Windows):
 	HRESULT abi_TypeText(HSTRING value);
 }
 
-interface FontWeights
+interface FontWeights : Windows.UI.Text.IFontWeights
 {
 }
 
-interface RichEditTextDocument
+interface RichEditTextDocument : Windows.UI.Text.ITextDocument, Windows.UI.Text.ITextDocument2
+{
+}
+
+interface TextConstants
 {
 }
 

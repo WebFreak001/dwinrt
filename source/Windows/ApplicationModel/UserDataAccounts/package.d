@@ -143,19 +143,23 @@ extern(Windows):
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_result);
 }
 
-interface UserDataAccount
+interface UserDataAccount : Windows.ApplicationModel.UserDataAccounts.IUserDataAccount, Windows.ApplicationModel.UserDataAccounts.IUserDataAccount2, Windows.ApplicationModel.UserDataAccounts.IUserDataAccount3, Windows.ApplicationModel.UserDataAccounts.IUserDataAccount4
 {
 }
 
-interface UserDataAccountManagerForUser
+interface UserDataAccountManager
 {
 }
 
-interface UserDataAccountStore
+interface UserDataAccountManagerForUser : Windows.ApplicationModel.UserDataAccounts.IUserDataAccountManagerForUser
 {
 }
 
-interface UserDataAccountStoreChangedEventArgs
+interface UserDataAccountStore : Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore2, Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore3
+{
+}
+
+interface UserDataAccountStoreChangedEventArgs : Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStoreChangedEventArgs
 {
 }
 

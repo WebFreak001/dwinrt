@@ -61,6 +61,12 @@ extern(Windows):
 	HRESULT set_UpdateSourceTrigger(Windows.UI.Xaml.Data.UpdateSourceTrigger value);
 }
 
+@uuid("1589a2ab-3d15-49bc-a447-8a5448e58870")
+@WinrtFactory("Windows.UI.Xaml.Data.BindingBase")
+interface IBindingBase : IInspectable
+{
+}
+
 @uuid("22dafc3a-7701-4666-a1ba-9859bdcfec34")
 @WinrtFactory("Windows.UI.Xaml.Data.BindingBase")
 interface IBindingBaseFactory : IInspectable
@@ -83,6 +89,24 @@ extern(Windows):
 	HRESULT abi_UpdateSource();
 }
 
+@uuid("fded3154-e954-4f67-8fb6-6ed79b3a1cb3")
+@WinrtFactory("Windows.UI.Xaml.Data.BindingExpressionBase")
+interface IBindingExpressionBase : IInspectable
+{
+}
+
+@uuid("ea7116a7-c2d9-4375-b471-66b9c48c7930")
+@WinrtFactory("Windows.UI.Xaml.Data.BindingExpressionBase")
+interface IBindingExpressionBaseFactory : IInspectable
+{
+}
+
+@uuid("1cb55cd9-db72-40b3-a2b5-24ee6ea5c328")
+@WinrtFactory("Windows.UI.Xaml.Data.BindingExpression")
+interface IBindingExpressionFactory : IInspectable
+{
+}
+
 @uuid("ff42bb08-c39e-4f7e-8434-a1569083883c")
 @WinrtFactory("Windows.UI.Xaml.Data.Binding")
 interface IBindingFactory : IInspectable
@@ -91,6 +115,12 @@ interface IBindingFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Data.Binding* return_instance);
+}
+
+@uuid("6fffd738-9839-419c-a17a-4b3604e1524e")
+@WinrtFactory("Windows.UI.Xaml.Data.BindingOperations")
+interface IBindingOperations : IInspectable
+{
 }
 
 @uuid("e155ef73-95a0-4aab-8c7d-2a47da073c79")
@@ -341,43 +371,43 @@ extern(Windows):
 	HRESULT abi_ConvertBack(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, HSTRING language, IInspectable* return_returnValue);
 }
 
-interface Binding : Windows.UI.Xaml.Data.BindingBase
+interface Binding : Windows.UI.Xaml.Data.BindingBase, Windows.UI.Xaml.Data.IBinding, Windows.UI.Xaml.Data.IBinding2
 {
 }
 
-interface BindingBase : Windows.UI.Xaml.DependencyObject
+interface BindingBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.IBindingBase
 {
 }
 
-interface BindingExpression : Windows.UI.Xaml.Data.BindingExpressionBase
+interface BindingExpression : Windows.UI.Xaml.Data.BindingExpressionBase, Windows.UI.Xaml.Data.IBindingExpression
 {
 }
 
-interface BindingExpressionBase
+interface BindingExpressionBase : Windows.UI.Xaml.Data.IBindingExpressionBase
 {
 }
 
-interface BindingOperations
+interface BindingOperations : Windows.UI.Xaml.Data.IBindingOperations
 {
 }
 
-interface CollectionViewSource : Windows.UI.Xaml.DependencyObject
+interface CollectionViewSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.ICollectionViewSource
 {
 }
 
-interface CurrentChangingEventArgs
+interface CurrentChangingEventArgs : Windows.UI.Xaml.Data.ICurrentChangingEventArgs
 {
 }
 
-interface ItemIndexRange
+interface ItemIndexRange : Windows.UI.Xaml.Data.IItemIndexRange
 {
 }
 
-interface PropertyChangedEventArgs
+interface PropertyChangedEventArgs : Windows.UI.Xaml.Data.IPropertyChangedEventArgs
 {
 }
 
-interface RelativeSource : Windows.UI.Xaml.DependencyObject
+interface RelativeSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.IRelativeSource
 {
 }
 

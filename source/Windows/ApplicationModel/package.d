@@ -436,83 +436,91 @@ extern(Windows):
 	HRESULT get_Deadline(Windows.Foundation.DateTime* return_value);
 }
 
-interface AppDisplayInfo
+interface AppDisplayInfo : Windows.ApplicationModel.IAppDisplayInfo
 {
 }
 
-interface AppInfo
+interface AppInfo : Windows.ApplicationModel.IAppInfo
 {
 }
 
-interface EnteredBackgroundEventArgs
+interface DesignMode
 {
 }
 
-interface LeavingBackgroundEventArgs
+interface EnteredBackgroundEventArgs : Windows.ApplicationModel.IEnteredBackgroundEventArgs
 {
 }
 
-interface Package
+interface FullTrustProcessLauncher
 {
 }
 
-interface PackageCatalog
+interface LeavingBackgroundEventArgs : Windows.ApplicationModel.ILeavingBackgroundEventArgs
 {
 }
 
-interface PackageCatalogAddOptionalPackageResult
+interface Package : Windows.ApplicationModel.IPackage, Windows.ApplicationModel.IPackage2, Windows.ApplicationModel.IPackage3, Windows.ApplicationModel.IPackageWithMetadata, Windows.ApplicationModel.IPackage4, Windows.ApplicationModel.IPackage5
 {
 }
 
-interface PackageContentGroup
+interface PackageCatalog : Windows.ApplicationModel.IPackageCatalog, Windows.ApplicationModel.IPackageCatalog2
 {
 }
 
-interface PackageContentGroupStagingEventArgs
+interface PackageCatalogAddOptionalPackageResult : Windows.ApplicationModel.IPackageCatalogAddOptionalPackageResult
 {
 }
 
-interface PackageId
+interface PackageContentGroup : Windows.ApplicationModel.IPackageContentGroup
 {
 }
 
-interface PackageInstallingEventArgs
+interface PackageContentGroupStagingEventArgs : Windows.ApplicationModel.IPackageContentGroupStagingEventArgs
 {
 }
 
-interface PackageStagingEventArgs
+interface PackageId : Windows.ApplicationModel.IPackageId, Windows.ApplicationModel.IPackageIdWithMetadata
 {
 }
 
-interface PackageStatus
+interface PackageInstallingEventArgs : Windows.ApplicationModel.IPackageInstallingEventArgs
 {
 }
 
-interface PackageStatusChangedEventArgs
+interface PackageStagingEventArgs : Windows.ApplicationModel.IPackageStagingEventArgs
 {
 }
 
-interface PackageUninstallingEventArgs
+interface PackageStatus : Windows.ApplicationModel.IPackageStatus, Windows.ApplicationModel.IPackageStatus2
 {
 }
 
-interface PackageUpdatingEventArgs
+interface PackageStatusChangedEventArgs : Windows.ApplicationModel.IPackageStatusChangedEventArgs
 {
 }
 
-interface StartupTask
+interface PackageUninstallingEventArgs : Windows.ApplicationModel.IPackageUninstallingEventArgs
 {
 }
 
-interface SuspendingDeferral
+interface PackageUpdatingEventArgs : Windows.ApplicationModel.IPackageUpdatingEventArgs
 {
 }
 
-interface SuspendingEventArgs
+interface StartupTask : Windows.ApplicationModel.IStartupTask
 {
 }
 
-interface SuspendingOperation
+interface SuspendingDeferral : Windows.ApplicationModel.ISuspendingDeferral
+{
+}
+
+interface SuspendingEventArgs : Windows.ApplicationModel.ISuspendingEventArgs
+{
+}
+
+interface SuspendingOperation : Windows.ApplicationModel.ISuspendingOperation
 {
 }
 

@@ -321,59 +321,59 @@ extern(Windows):
 	HRESULT abi_CreateFromStreamWithDownloaderAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, HSTRING contentType, Windows.Web.Http.HttpClient httpClient, Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult)* return_result);
 }
 
-interface AdaptiveMediaSource
+interface AdaptiveMediaSource : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource, Windows.Media.Core.IMediaSource, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource2, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource3, Windows.Foundation.IClosable
 {
 }
 
-interface AdaptiveMediaSourceAdvancedSettings
+interface AdaptiveMediaSourceAdvancedSettings : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceAdvancedSettings
 {
 }
 
-interface AdaptiveMediaSourceCorrelatedTimes
+interface AdaptiveMediaSourceCorrelatedTimes : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCorrelatedTimes
 {
 }
 
-interface AdaptiveMediaSourceCreationResult
+interface AdaptiveMediaSourceCreationResult : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCreationResult, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCreationResult2
 {
 }
 
-interface AdaptiveMediaSourceDiagnosticAvailableEventArgs
+interface AdaptiveMediaSourceDiagnosticAvailableEventArgs : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs
 {
 }
 
-interface AdaptiveMediaSourceDiagnostics
+interface AdaptiveMediaSourceDiagnostics : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnostics
 {
 }
 
-interface AdaptiveMediaSourceDownloadBitrateChangedEventArgs
+interface AdaptiveMediaSourceDownloadBitrateChangedEventArgs : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadBitrateChangedEventArgs, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2
 {
 }
 
-interface AdaptiveMediaSourceDownloadCompletedEventArgs
+interface AdaptiveMediaSourceDownloadCompletedEventArgs : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs2
 {
 }
 
-interface AdaptiveMediaSourceDownloadFailedEventArgs
+interface AdaptiveMediaSourceDownloadFailedEventArgs : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs2
 {
 }
 
-interface AdaptiveMediaSourceDownloadRequestedDeferral
+interface AdaptiveMediaSourceDownloadRequestedDeferral : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedDeferral
 {
 }
 
-interface AdaptiveMediaSourceDownloadRequestedEventArgs
+interface AdaptiveMediaSourceDownloadRequestedEventArgs : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs2
 {
 }
 
-interface AdaptiveMediaSourceDownloadResult
+interface AdaptiveMediaSourceDownloadResult : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult2
 {
 }
 
-interface AdaptiveMediaSourceDownloadStatistics
+interface AdaptiveMediaSourceDownloadStatistics : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadStatistics
 {
 }
 
-interface AdaptiveMediaSourcePlaybackBitrateChangedEventArgs
+interface AdaptiveMediaSourcePlaybackBitrateChangedEventArgs : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs
 {
 }
 

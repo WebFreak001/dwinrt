@@ -138,23 +138,23 @@ extern(Windows):
 	HRESULT get_Edge(Windows.Devices.Gpio.GpioPinEdge* return_value);
 }
 
-interface GpioChangeCounter
+interface GpioChangeCounter : Windows.Devices.Gpio.IGpioChangeCounter, Windows.Foundation.IClosable
 {
 }
 
-interface GpioChangeReader
+interface GpioChangeReader : Windows.Devices.Gpio.IGpioChangeReader, Windows.Foundation.IClosable
 {
 }
 
-interface GpioController
+interface GpioController : Windows.Devices.Gpio.IGpioController
 {
 }
 
-interface GpioPin
+interface GpioPin : Windows.Devices.Gpio.IGpioPin, Windows.Foundation.IClosable
 {
 }
 
-interface GpioPinValueChangedEventArgs
+interface GpioPinValueChangedEventArgs : Windows.Devices.Gpio.IGpioPinValueChangedEventArgs
 {
 }
 

@@ -60,6 +60,12 @@ extern(Windows):
 	HRESULT get_IsIlluminated(bool* return_value);
 }
 
+@uuid("0b430add-a490-4435-ada1-9affd55239f7")
+@WinrtFactory("Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs")
+interface IMediaFrameArrivedEventArgs : IInspectable
+{
+}
+
 @uuid("71902b4e-b279-4a97-a9db-bd5a2fb78f39")
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameFormat")
 interface IMediaFrameFormat : IInspectable
@@ -196,6 +202,12 @@ extern(Windows):
 	HRESULT get_CoordinateSystem(Windows.Perception.Spatial.SpatialCoordinateSystem* return_value);
 }
 
+@uuid("63115e01-cf51-48fd-aab0-6d693eb48127")
+@WinrtFactory("Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs")
+interface IMultiSourceMediaFrameArrivedEventArgs : IInspectable
+{
+}
+
 @uuid("8d144402-f763-488d-98f2-b437bcf075e7")
 @WinrtFactory("Windows.Media.Capture.Frames.MultiSourceMediaFrameReader")
 interface IMultiSourceMediaFrameReader : IInspectable
@@ -250,75 +262,75 @@ extern(Windows):
 	HRESULT get_Height(UINT32* return_value);
 }
 
-interface BufferMediaFrame
+interface BufferMediaFrame : Windows.Media.Capture.Frames.IBufferMediaFrame
 {
 }
 
-interface DepthMediaFrame
+interface DepthMediaFrame : Windows.Media.Capture.Frames.IDepthMediaFrame, Windows.Media.Capture.Frames.IDepthMediaFrame2
 {
 }
 
-interface DepthMediaFrameFormat
+interface DepthMediaFrameFormat : Windows.Media.Capture.Frames.IDepthMediaFrameFormat
 {
 }
 
-interface InfraredMediaFrame
+interface InfraredMediaFrame : Windows.Media.Capture.Frames.IInfraredMediaFrame
 {
 }
 
-interface MediaFrameArrivedEventArgs
+interface MediaFrameArrivedEventArgs : Windows.Media.Capture.Frames.IMediaFrameArrivedEventArgs
 {
 }
 
-interface MediaFrameFormat
+interface MediaFrameFormat : Windows.Media.Capture.Frames.IMediaFrameFormat
 {
 }
 
-interface MediaFrameReader
+interface MediaFrameReader : Windows.Media.Capture.Frames.IMediaFrameReader, Windows.Foundation.IClosable
 {
 }
 
-interface MediaFrameReference
+interface MediaFrameReference : Windows.Media.Capture.Frames.IMediaFrameReference, Windows.Foundation.IClosable
 {
 }
 
-interface MediaFrameSource
+interface MediaFrameSource : Windows.Media.Capture.Frames.IMediaFrameSource
 {
 }
 
-interface MediaFrameSourceController
+interface MediaFrameSourceController : Windows.Media.Capture.Frames.IMediaFrameSourceController, Windows.Media.Capture.Frames.IMediaFrameSourceController2
 {
 }
 
-interface MediaFrameSourceGetPropertyResult
+interface MediaFrameSourceGetPropertyResult : Windows.Media.Capture.Frames.IMediaFrameSourceGetPropertyResult
 {
 }
 
-interface MediaFrameSourceGroup
+interface MediaFrameSourceGroup : Windows.Media.Capture.Frames.IMediaFrameSourceGroup
 {
 }
 
-interface MediaFrameSourceInfo
+interface MediaFrameSourceInfo : Windows.Media.Capture.Frames.IMediaFrameSourceInfo
 {
 }
 
-interface MultiSourceMediaFrameArrivedEventArgs
+interface MultiSourceMediaFrameArrivedEventArgs : Windows.Media.Capture.Frames.IMultiSourceMediaFrameArrivedEventArgs
 {
 }
 
-interface MultiSourceMediaFrameReader
+interface MultiSourceMediaFrameReader : Windows.Media.Capture.Frames.IMultiSourceMediaFrameReader, Windows.Foundation.IClosable
 {
 }
 
-interface MultiSourceMediaFrameReference
+interface MultiSourceMediaFrameReference : Windows.Media.Capture.Frames.IMultiSourceMediaFrameReference, Windows.Foundation.IClosable
 {
 }
 
-interface VideoMediaFrame
+interface VideoMediaFrame : Windows.Media.Capture.Frames.IVideoMediaFrame
 {
 }
 
-interface VideoMediaFrameFormat
+interface VideoMediaFrameFormat : Windows.Media.Capture.Frames.IVideoMediaFrameFormat
 {
 }
 

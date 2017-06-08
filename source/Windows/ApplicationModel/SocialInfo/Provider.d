@@ -67,10 +67,14 @@ extern(Windows):
 	HRESULT abi_DeprovisionAsync(Windows.Foundation.IAsyncAction* return_operation);
 }
 
-interface SocialDashboardItemUpdater
+interface SocialDashboardItemUpdater : Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater
 {
 }
 
-interface SocialFeedUpdater
+interface SocialFeedUpdater : Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater
+{
+}
+
+interface SocialInfoProviderManager
 {
 }

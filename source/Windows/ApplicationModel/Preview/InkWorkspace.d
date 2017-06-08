@@ -22,6 +22,6 @@ extern(Windows):
 	HRESULT abi_GetForCurrentApp(Windows.ApplicationModel.Preview.InkWorkspace.InkWorkspaceHostedAppManager* return_current);
 }
 
-interface InkWorkspaceHostedAppManager
+interface InkWorkspaceHostedAppManager : Windows.ApplicationModel.Preview.InkWorkspace.IInkWorkspaceHostedAppManager
 {
 }

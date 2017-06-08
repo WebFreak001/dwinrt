@@ -200,6 +200,12 @@ extern(Windows):
 	HRESULT abi_CreateWithTag(Windows.Media.SpeechRecognition.SpeechRecognitionScenario scenario, HSTRING topicHint, HSTRING tag, const Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint* return_raint);
 }
 
+@uuid("f2791c2b-1ef4-4ae7-9d77-b6ff10b8a3c2")
+@WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint")
+interface ISpeechRecognitionVoiceCommandDefinitionConstraint : IInspectable
+{
+}
+
 @uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognizer")
 interface ISpeechRecognizer : IInspectable
@@ -298,71 +304,71 @@ extern(Windows):
 	HRESULT set_ShowConfirmation(bool value);
 }
 
-interface SpeechContinuousRecognitionCompletedEventArgs
+interface SpeechContinuousRecognitionCompletedEventArgs : Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionCompletedEventArgs
 {
 }
 
-interface SpeechContinuousRecognitionResultGeneratedEventArgs
+interface SpeechContinuousRecognitionResultGeneratedEventArgs : Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionResultGeneratedEventArgs
 {
 }
 
-interface SpeechContinuousRecognitionSession
+interface SpeechContinuousRecognitionSession : Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession
 {
 }
 
-interface SpeechRecognitionCompilationResult
+interface SpeechRecognitionCompilationResult : Windows.Media.SpeechRecognition.ISpeechRecognitionCompilationResult
 {
 }
 
-interface SpeechRecognitionGrammarFileConstraint
+interface SpeechRecognitionGrammarFileConstraint : Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraint, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint
 {
 }
 
-interface SpeechRecognitionHypothesis
+interface SpeechRecognitionHypothesis : Windows.Media.SpeechRecognition.ISpeechRecognitionHypothesis
 {
 }
 
-interface SpeechRecognitionHypothesisGeneratedEventArgs
+interface SpeechRecognitionHypothesisGeneratedEventArgs : Windows.Media.SpeechRecognition.ISpeechRecognitionHypothesisGeneratedEventArgs
 {
 }
 
-interface SpeechRecognitionListConstraint
+interface SpeechRecognitionListConstraint : Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraint, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint
 {
 }
 
-interface SpeechRecognitionQualityDegradingEventArgs
+interface SpeechRecognitionQualityDegradingEventArgs : Windows.Media.SpeechRecognition.ISpeechRecognitionQualityDegradingEventArgs
 {
 }
 
-interface SpeechRecognitionResult
+interface SpeechRecognitionResult : Windows.Media.SpeechRecognition.ISpeechRecognitionResult, Windows.Media.SpeechRecognition.ISpeechRecognitionResult2
 {
 }
 
-interface SpeechRecognitionSemanticInterpretation
+interface SpeechRecognitionSemanticInterpretation : Windows.Media.SpeechRecognition.ISpeechRecognitionSemanticInterpretation
 {
 }
 
-interface SpeechRecognitionTopicConstraint
+interface SpeechRecognitionTopicConstraint : Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraint, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint
 {
 }
 
-interface SpeechRecognitionVoiceCommandDefinitionConstraint
+interface SpeechRecognitionVoiceCommandDefinitionConstraint : Windows.Media.SpeechRecognition.ISpeechRecognitionVoiceCommandDefinitionConstraint, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint
 {
 }
 
-interface SpeechRecognizer
+interface SpeechRecognizer : Windows.Media.SpeechRecognition.ISpeechRecognizer, Windows.Foundation.IClosable, Windows.Media.SpeechRecognition.ISpeechRecognizer2
 {
 }
 
-interface SpeechRecognizerStateChangedEventArgs
+interface SpeechRecognizerStateChangedEventArgs : Windows.Media.SpeechRecognition.ISpeechRecognizerStateChangedEventArgs
 {
 }
 
-interface SpeechRecognizerTimeouts
+interface SpeechRecognizerTimeouts : Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts
 {
 }
 
-interface SpeechRecognizerUIOptions
+interface SpeechRecognizerUIOptions : Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions
 {
 }
 

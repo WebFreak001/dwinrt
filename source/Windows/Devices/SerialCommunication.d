@@ -77,15 +77,15 @@ extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.SerialCommunication.SerialDevice)* return_result);
 }
 
-interface ErrorReceivedEventArgs
+interface ErrorReceivedEventArgs : Windows.Devices.SerialCommunication.IErrorReceivedEventArgs
 {
 }
 
-interface PinChangedEventArgs
+interface PinChangedEventArgs : Windows.Devices.SerialCommunication.IPinChangedEventArgs
 {
 }
 
-interface SerialDevice
+interface SerialDevice : Windows.Devices.SerialCommunication.ISerialDevice, Windows.Foundation.IClosable
 {
 }
 

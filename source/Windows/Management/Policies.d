@@ -35,7 +35,11 @@ extern(Windows):
 	HRESULT abi_GetPolicyFromPathForUser(Windows.System.User user, HSTRING area, HSTRING name, Windows.Management.Policies.NamedPolicyData* return_result);
 }
 
-interface NamedPolicyData
+interface NamedPolicy
+{
+}
+
+interface NamedPolicyData : Windows.Management.Policies.INamedPolicyData
 {
 }
 

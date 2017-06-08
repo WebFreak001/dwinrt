@@ -120,39 +120,39 @@ extern(Windows):
 	HRESULT get_Request(Windows.Storage.Pickers.Provider.TargetFileRequest* return_value);
 }
 
-interface FileOpenPickerUI
+interface FileOpenPickerUI : Windows.Storage.Pickers.Provider.IFileOpenPickerUI
 {
 }
 
-interface FileRemovedEventArgs
+interface FileRemovedEventArgs : Windows.Storage.Pickers.Provider.IFileRemovedEventArgs
 {
 }
 
-interface FileSavePickerUI
+interface FileSavePickerUI : Windows.Storage.Pickers.Provider.IFileSavePickerUI
 {
 }
 
-interface PickerClosingDeferral
+interface PickerClosingDeferral : Windows.Storage.Pickers.Provider.IPickerClosingDeferral
 {
 }
 
-interface PickerClosingEventArgs
+interface PickerClosingEventArgs : Windows.Storage.Pickers.Provider.IPickerClosingEventArgs
 {
 }
 
-interface PickerClosingOperation
+interface PickerClosingOperation : Windows.Storage.Pickers.Provider.IPickerClosingOperation
 {
 }
 
-interface TargetFileRequest
+interface TargetFileRequest : Windows.Storage.Pickers.Provider.ITargetFileRequest
 {
 }
 
-interface TargetFileRequestDeferral
+interface TargetFileRequestDeferral : Windows.Storage.Pickers.Provider.ITargetFileRequestDeferral
 {
 }
 
-interface TargetFileRequestedEventArgs
+interface TargetFileRequestedEventArgs : Windows.Storage.Pickers.Provider.ITargetFileRequestedEventArgs
 {
 }
 

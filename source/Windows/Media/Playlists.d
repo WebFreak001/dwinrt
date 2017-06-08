@@ -25,7 +25,7 @@ extern(Windows):
 	HRESULT abi_LoadAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Media.Playlists.Playlist)* return_operation);
 }
 
-interface Playlist
+interface Playlist : Windows.Media.Playlists.IPlaylist
 {
 }
 

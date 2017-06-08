@@ -271,34 +271,42 @@ extern(Windows):
 	HRESULT abi_Create(UINT32 maxOutstandingFrameCountForWrite, Windows.Graphics.Imaging.BitmapPixelFormat format, Windows.Foundation.Size resolution, Windows.Graphics.Imaging.BitmapAlphaMode alpha, Windows.Devices.Perception.Provider.PerceptionVideoFrameAllocator* return_result);
 }
 
-interface PerceptionControlGroup
+interface KnownPerceptionFrameKind
 {
 }
 
-interface PerceptionCorrelation
+interface PerceptionControlGroup : Windows.Devices.Perception.Provider.IPerceptionControlGroup
 {
 }
 
-interface PerceptionCorrelationGroup
+interface PerceptionCorrelation : Windows.Devices.Perception.Provider.IPerceptionCorrelation
 {
 }
 
-interface PerceptionFaceAuthenticationGroup
+interface PerceptionCorrelationGroup : Windows.Devices.Perception.Provider.IPerceptionCorrelationGroup
 {
 }
 
-interface PerceptionFrame
+interface PerceptionFaceAuthenticationGroup : Windows.Devices.Perception.Provider.IPerceptionFaceAuthenticationGroup
 {
 }
 
-interface PerceptionFrameProviderInfo
+interface PerceptionFrame : Windows.Devices.Perception.Provider.IPerceptionFrame
 {
 }
 
-interface PerceptionPropertyChangeRequest
+interface PerceptionFrameProviderInfo : Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo
 {
 }
 
-interface PerceptionVideoFrameAllocator
+interface PerceptionFrameProviderManagerService
+{
+}
+
+interface PerceptionPropertyChangeRequest : Windows.Devices.Perception.Provider.IPerceptionPropertyChangeRequest
+{
+}
+
+interface PerceptionVideoFrameAllocator : Windows.Devices.Perception.Provider.IPerceptionVideoFrameAllocator, Windows.Foundation.IClosable
 {
 }

@@ -91,6 +91,12 @@ extern(Windows):
 	HRESULT abi_GetItem(INT32 row, INT32 column, Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_returnValue);
 }
 
+@uuid("ec752224-9b77-4720-bb21-4ac89fdb1afd")
+@WinrtFactory("Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple")
+interface IIRawElementProviderSimple : IInspectable
+{
+}
+
 @uuid("f7d1a187-b13c-4540-b09e-6778e2dc9ba5")
 interface IInvokeProvider : IInspectable
 {
@@ -414,6 +420,6 @@ extern(Windows):
 	HRESULT abi_WaitForInputIdle(INT32 milliseconds, bool* return_returnValue);
 }
 
-interface IRawElementProviderSimple : Windows.UI.Xaml.DependencyObject
+interface IRawElementProviderSimple : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Automation.Provider.IIRawElementProviderSimple
 {
 }

@@ -66,11 +66,11 @@ extern(Windows):
 	HRESULT get_IsStarted(bool* return_value);
 }
 
-interface PwmController
+interface PwmController : Windows.Devices.Pwm.IPwmController
 {
 }
 
-interface PwmPin
+interface PwmPin : Windows.Devices.Pwm.IPwmPin, Windows.Foundation.IClosable
 {
 }
 

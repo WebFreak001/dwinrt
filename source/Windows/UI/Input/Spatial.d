@@ -461,115 +461,115 @@ extern(Windows):
 	HRESULT get_TapCount(UINT32* return_value);
 }
 
-interface SpatialGestureRecognizer
+interface SpatialGestureRecognizer : Windows.UI.Input.Spatial.ISpatialGestureRecognizer
 {
 }
 
-interface SpatialHoldCanceledEventArgs
+interface SpatialHoldCanceledEventArgs : Windows.UI.Input.Spatial.ISpatialHoldCanceledEventArgs
 {
 }
 
-interface SpatialHoldCompletedEventArgs
+interface SpatialHoldCompletedEventArgs : Windows.UI.Input.Spatial.ISpatialHoldCompletedEventArgs
 {
 }
 
-interface SpatialHoldStartedEventArgs
+interface SpatialHoldStartedEventArgs : Windows.UI.Input.Spatial.ISpatialHoldStartedEventArgs
 {
 }
 
-interface SpatialInteraction
+interface SpatialInteraction : Windows.UI.Input.Spatial.ISpatialInteraction
 {
 }
 
-interface SpatialInteractionController
+interface SpatialInteractionController : Windows.UI.Input.Spatial.ISpatialInteractionController
 {
 }
 
-interface SpatialInteractionControllerProperties
+interface SpatialInteractionControllerProperties : Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties
 {
 }
 
-interface SpatialInteractionDetectedEventArgs
+interface SpatialInteractionDetectedEventArgs : Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs, Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs2
 {
 }
 
-interface SpatialInteractionManager
+interface SpatialInteractionManager : Windows.UI.Input.Spatial.ISpatialInteractionManager
 {
 }
 
-interface SpatialInteractionSource
+interface SpatialInteractionSource : Windows.UI.Input.Spatial.ISpatialInteractionSource, Windows.UI.Input.Spatial.ISpatialInteractionSource2
 {
 }
 
-interface SpatialInteractionSourceEventArgs
+interface SpatialInteractionSourceEventArgs : Windows.UI.Input.Spatial.ISpatialInteractionSourceEventArgs, Windows.UI.Input.Spatial.ISpatialInteractionSourceEventArgs2
 {
 }
 
-interface SpatialInteractionSourceLocation
+interface SpatialInteractionSourceLocation : Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation, Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation2
 {
 }
 
-interface SpatialInteractionSourceProperties
+interface SpatialInteractionSourceProperties : Windows.UI.Input.Spatial.ISpatialInteractionSourceProperties
 {
 }
 
-interface SpatialInteractionSourceState
+interface SpatialInteractionSourceState : Windows.UI.Input.Spatial.ISpatialInteractionSourceState, Windows.UI.Input.Spatial.ISpatialInteractionSourceState2
 {
 }
 
-interface SpatialManipulationCanceledEventArgs
+interface SpatialManipulationCanceledEventArgs : Windows.UI.Input.Spatial.ISpatialManipulationCanceledEventArgs
 {
 }
 
-interface SpatialManipulationCompletedEventArgs
+interface SpatialManipulationCompletedEventArgs : Windows.UI.Input.Spatial.ISpatialManipulationCompletedEventArgs
 {
 }
 
-interface SpatialManipulationDelta
+interface SpatialManipulationDelta : Windows.UI.Input.Spatial.ISpatialManipulationDelta
 {
 }
 
-interface SpatialManipulationStartedEventArgs
+interface SpatialManipulationStartedEventArgs : Windows.UI.Input.Spatial.ISpatialManipulationStartedEventArgs
 {
 }
 
-interface SpatialManipulationUpdatedEventArgs
+interface SpatialManipulationUpdatedEventArgs : Windows.UI.Input.Spatial.ISpatialManipulationUpdatedEventArgs
 {
 }
 
-interface SpatialNavigationCanceledEventArgs
+interface SpatialNavigationCanceledEventArgs : Windows.UI.Input.Spatial.ISpatialNavigationCanceledEventArgs
 {
 }
 
-interface SpatialNavigationCompletedEventArgs
+interface SpatialNavigationCompletedEventArgs : Windows.UI.Input.Spatial.ISpatialNavigationCompletedEventArgs
 {
 }
 
-interface SpatialNavigationStartedEventArgs
+interface SpatialNavigationStartedEventArgs : Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs
 {
 }
 
-interface SpatialNavigationUpdatedEventArgs
+interface SpatialNavigationUpdatedEventArgs : Windows.UI.Input.Spatial.ISpatialNavigationUpdatedEventArgs
 {
 }
 
-interface SpatialPointerInteractionSourcePose
+interface SpatialPointerInteractionSourcePose : Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose
 {
 }
 
-interface SpatialPointerPose
+interface SpatialPointerPose : Windows.UI.Input.Spatial.ISpatialPointerPose, Windows.UI.Input.Spatial.ISpatialPointerPose2
 {
 }
 
-interface SpatialRecognitionEndedEventArgs
+interface SpatialRecognitionEndedEventArgs : Windows.UI.Input.Spatial.ISpatialRecognitionEndedEventArgs
 {
 }
 
-interface SpatialRecognitionStartedEventArgs
+interface SpatialRecognitionStartedEventArgs : Windows.UI.Input.Spatial.ISpatialRecognitionStartedEventArgs
 {
 }
 
-interface SpatialTappedEventArgs
+interface SpatialTappedEventArgs : Windows.UI.Input.Spatial.ISpatialTappedEventArgs
 {
 }
 

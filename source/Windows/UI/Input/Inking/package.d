@@ -513,83 +513,83 @@ extern(Windows):
 	HRESULT get_InkPresenter(Windows.UI.Input.Inking.InkPresenter* return_value);
 }
 
-interface InkDrawingAttributes
+interface InkDrawingAttributes : Windows.UI.Input.Inking.IInkDrawingAttributes, Windows.UI.Input.Inking.IInkDrawingAttributes2, Windows.UI.Input.Inking.IInkDrawingAttributes3, Windows.UI.Input.Inking.IInkDrawingAttributes4
 {
 }
 
-interface InkDrawingAttributesPencilProperties
+interface InkDrawingAttributesPencilProperties : Windows.UI.Input.Inking.IInkDrawingAttributesPencilProperties
 {
 }
 
-interface InkInputProcessingConfiguration
+interface InkInputProcessingConfiguration : Windows.UI.Input.Inking.IInkInputProcessingConfiguration
 {
 }
 
-interface InkManager
+interface InkManager : Windows.UI.Input.Inking.IInkManager, Windows.UI.Input.Inking.IInkRecognizerContainer, Windows.UI.Input.Inking.IInkStrokeContainer
 {
 }
 
-interface InkPoint
+interface InkPoint : Windows.UI.Input.Inking.IInkPoint, Windows.UI.Input.Inking.IInkPoint2
 {
 }
 
-interface InkPresenter
+interface InkPresenter : Windows.UI.Input.Inking.IInkPresenter, Windows.UI.Input.Inking.IInkPresenter2
 {
 }
 
-interface InkPresenterProtractor
+interface InkPresenterProtractor : Windows.UI.Input.Inking.IInkPresenterProtractor, Windows.UI.Input.Inking.IInkPresenterStencil
 {
 }
 
-interface InkPresenterRuler
+interface InkPresenterRuler : Windows.UI.Input.Inking.IInkPresenterRuler, Windows.UI.Input.Inking.IInkPresenterStencil, Windows.UI.Input.Inking.IInkPresenterRuler2
 {
 }
 
-interface InkRecognitionResult
+interface InkRecognitionResult : Windows.UI.Input.Inking.IInkRecognitionResult
 {
 }
 
-interface InkRecognizer
+interface InkRecognizer : Windows.UI.Input.Inking.IInkRecognizer
 {
 }
 
-interface InkRecognizerContainer
+interface InkRecognizerContainer : Windows.UI.Input.Inking.IInkRecognizerContainer
 {
 }
 
-interface InkStroke
+interface InkStroke : Windows.UI.Input.Inking.IInkStroke, Windows.UI.Input.Inking.IInkStroke2, Windows.UI.Input.Inking.IInkStroke3
 {
 }
 
-interface InkStrokeBuilder
+interface InkStrokeBuilder : Windows.UI.Input.Inking.IInkStrokeBuilder, Windows.UI.Input.Inking.IInkStrokeBuilder2, Windows.UI.Input.Inking.IInkStrokeBuilder3
 {
 }
 
-interface InkStrokeContainer
+interface InkStrokeContainer : Windows.UI.Input.Inking.IInkStrokeContainer, Windows.UI.Input.Inking.IInkStrokeContainer2, Windows.UI.Input.Inking.IInkStrokeContainer3
 {
 }
 
-interface InkStrokeInput
+interface InkStrokeInput : Windows.UI.Input.Inking.IInkStrokeInput
 {
 }
 
-interface InkStrokeRenderingSegment
+interface InkStrokeRenderingSegment : Windows.UI.Input.Inking.IInkStrokeRenderingSegment
 {
 }
 
-interface InkStrokesCollectedEventArgs
+interface InkStrokesCollectedEventArgs : Windows.UI.Input.Inking.IInkStrokesCollectedEventArgs
 {
 }
 
-interface InkStrokesErasedEventArgs
+interface InkStrokesErasedEventArgs : Windows.UI.Input.Inking.IInkStrokesErasedEventArgs
 {
 }
 
-interface InkSynchronizer
+interface InkSynchronizer : Windows.UI.Input.Inking.IInkSynchronizer
 {
 }
 
-interface InkUnprocessedInput
+interface InkUnprocessedInput : Windows.UI.Input.Inking.IInkUnprocessedInput
 {
 }
 

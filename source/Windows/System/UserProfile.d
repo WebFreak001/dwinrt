@@ -55,6 +55,12 @@ extern(Windows):
 	HRESULT abi_GetForUser(Windows.System.User user, Windows.System.UserProfile.DiagnosticsSettings* return_value);
 }
 
+@uuid("3e945153-3a5e-452e-a601-f5baad2a4870")
+@WinrtFactory("Windows.System.UserProfile.FirstSignInSettings")
+interface IFirstSignInSettings : IInspectable
+{
+}
+
 @uuid("1ce18f0f-1c41-4ea0-b7a2-6f0c1c7e8438")
 @WinrtFactory("Windows.System.UserProfile.FirstSignInSettings")
 interface IFirstSignInSettingsStatics : IInspectable
@@ -150,19 +156,35 @@ extern(Windows):
 	HRESULT abi_IsSupported(bool* return_result);
 }
 
-interface AdvertisingManagerForUser
+interface AdvertisingManager
 {
 }
 
-interface DiagnosticsSettings
+interface AdvertisingManagerForUser : Windows.System.UserProfile.IAdvertisingManagerForUser
 {
 }
 
-interface FirstSignInSettings
+interface DiagnosticsSettings : Windows.System.UserProfile.IDiagnosticsSettings
 {
 }
 
-interface UserProfilePersonalizationSettings
+interface FirstSignInSettings : Windows.System.UserProfile.IFirstSignInSettings, Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
+{
+}
+
+interface GlobalizationPreferences
+{
+}
+
+interface LockScreen
+{
+}
+
+interface UserInformation
+{
+}
+
+interface UserProfilePersonalizationSettings : Windows.System.UserProfile.IUserProfilePersonalizationSettings
 {
 }
 

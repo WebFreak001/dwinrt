@@ -28,15 +28,15 @@ extern(Windows):
 	HRESULT get_WindowReuseAllowed(bool* return_value);
 }
 
-interface HostedCoreWindowFactory
+interface HostedCoreWindowFactory : Windows.UI.Core.ICoreWindowFactory
 {
 }
 
-interface ImmersiveCoreWindowFactory
+interface ImmersiveCoreWindowFactory : Windows.UI.Core.ICoreWindowFactory
 {
 }
 
-interface UAPCoreWindowFactory
+interface UAPCoreWindowFactory : Windows.UI.Core.ICoreWindowFactory
 {
 }
 
@@ -672,103 +672,103 @@ extern(Windows):
 	HRESULT get_Size(Windows.Foundation.Size* return_value);
 }
 
-interface AcceleratorKeyEventArgs
+interface AcceleratorKeyEventArgs : Windows.UI.Core.IAcceleratorKeyEventArgs, Windows.UI.Core.ICoreWindowEventArgs, Windows.UI.Core.IAcceleratorKeyEventArgs2
 {
 }
 
-interface AutomationProviderRequestedEventArgs
+interface AutomationProviderRequestedEventArgs : Windows.UI.Core.IAutomationProviderRequestedEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
 }
 
-interface BackRequestedEventArgs
+interface BackRequestedEventArgs : Windows.UI.Core.IBackRequestedEventArgs
 {
 }
 
-interface CharacterReceivedEventArgs
+interface CharacterReceivedEventArgs : Windows.UI.Core.ICharacterReceivedEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
 }
 
-interface ClosestInteractiveBoundsRequestedEventArgs
+interface ClosestInteractiveBoundsRequestedEventArgs : Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs
 {
 }
 
-interface CoreAcceleratorKeys
+interface CoreAcceleratorKeys : Windows.UI.Core.ICoreAcceleratorKeys
 {
 }
 
-interface CoreComponentInputSource
+interface CoreComponentInputSource : Windows.UI.Core.ICoreInputSourceBase, Windows.UI.Core.ICorePointerInputSource, Windows.UI.Core.ICoreKeyboardInputSource, Windows.UI.Core.ICoreComponentFocusable, Windows.UI.Core.ICoreTouchHitTesting, Windows.UI.Core.ICoreClosestInteractiveBoundsRequested, Windows.UI.Core.ICoreKeyboardInputSource2
 {
 }
 
-interface CoreCursor
+interface CoreCursor : Windows.UI.Core.ICoreCursor
 {
 }
 
-interface CoreDispatcher
+interface CoreDispatcher : Windows.UI.Core.ICoreDispatcher, Windows.UI.Core.ICoreAcceleratorKeys, Windows.UI.Core.ICoreDispatcherWithTaskPriority, Windows.UI.Core.ICoreDispatcher2
 {
 }
 
-interface CoreIndependentInputSource
+interface CoreIndependentInputSource : Windows.UI.Core.ICoreInputSourceBase, Windows.UI.Core.ICorePointerInputSource
 {
 }
 
-interface CoreWindow
+interface CoreWindow : Windows.UI.Core.ICoreWindow, Windows.UI.Core.ICoreWindow2, Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.ICoreWindow3, Windows.UI.Core.ICoreWindow4
 {
 }
 
-interface CoreWindowDialog
+interface CoreWindowDialog : Windows.UI.Core.ICoreWindowDialog
 {
 }
 
-interface CoreWindowEventArgs
+interface CoreWindowEventArgs : Windows.UI.Core.ICoreWindowEventArgs
 {
 }
 
-interface CoreWindowFlyout
+interface CoreWindowFlyout : Windows.UI.Core.ICoreWindowFlyout
 {
 }
 
-interface CoreWindowPopupShowingEventArgs
+interface CoreWindowPopupShowingEventArgs : Windows.UI.Core.ICoreWindowPopupShowingEventArgs
 {
 }
 
-interface CoreWindowResizeManager
+interface CoreWindowResizeManager : Windows.UI.Core.ICoreWindowResizeManager, Windows.UI.Core.ICoreWindowResizeManagerLayoutCapability
 {
 }
 
-interface IdleDispatchedHandlerArgs
+interface IdleDispatchedHandlerArgs : Windows.UI.Core.IIdleDispatchedHandlerArgs
 {
 }
 
-interface InputEnabledEventArgs
+interface InputEnabledEventArgs : Windows.UI.Core.IInputEnabledEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
 }
 
-interface KeyEventArgs
+interface KeyEventArgs : Windows.UI.Core.IKeyEventArgs, Windows.UI.Core.ICoreWindowEventArgs, Windows.UI.Core.IKeyEventArgs2
 {
 }
 
-interface PointerEventArgs
+interface PointerEventArgs : Windows.UI.Core.IPointerEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
 }
 
-interface SystemNavigationManager
+interface SystemNavigationManager : Windows.UI.Core.ISystemNavigationManager, Windows.UI.Core.ISystemNavigationManager2
 {
 }
 
-interface TouchHitTestingEventArgs
+interface TouchHitTestingEventArgs : Windows.UI.Core.ITouchHitTestingEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
 }
 
-interface VisibilityChangedEventArgs
+interface VisibilityChangedEventArgs : Windows.UI.Core.IVisibilityChangedEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
 }
 
-interface WindowActivatedEventArgs
+interface WindowActivatedEventArgs : Windows.UI.Core.IWindowActivatedEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
 }
 
-interface WindowSizeChangedEventArgs
+interface WindowSizeChangedEventArgs : Windows.UI.Core.IWindowSizeChangedEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
 }
 

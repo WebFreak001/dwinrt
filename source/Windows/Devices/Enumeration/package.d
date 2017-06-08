@@ -224,6 +224,11 @@ extern(Windows):
 	HRESULT get_ProtectionLevelUsed(Windows.Devices.Enumeration.DevicePairingProtectionLevel* return_value);
 }
 
+@uuid("482cb27c-83bb-420e-be51-6602b222de54")
+interface IDevicePairingSettings : IInspectable
+{
+}
+
 @uuid("84997aa2-034a-4440-8813-7d0bd479bf5a")
 @WinrtFactory("Windows.Devices.Enumeration.DevicePicker")
 interface IDevicePicker : IInspectable
@@ -378,87 +383,87 @@ extern(Windows):
 	HRESULT get_RotationAngleInDegreesClockwise(UINT32* return_value);
 }
 
-interface DeviceAccessChangedEventArgs
+interface DeviceAccessChangedEventArgs : Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs, Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs2
 {
 }
 
-interface DeviceAccessInformation
+interface DeviceAccessInformation : Windows.Devices.Enumeration.IDeviceAccessInformation
 {
 }
 
-interface DeviceConnectionChangeTriggerDetails
+interface DeviceConnectionChangeTriggerDetails : Windows.Devices.Enumeration.IDeviceConnectionChangeTriggerDetails
 {
 }
 
-interface DeviceDisconnectButtonClickedEventArgs
+interface DeviceDisconnectButtonClickedEventArgs : Windows.Devices.Enumeration.IDeviceDisconnectButtonClickedEventArgs
 {
 }
 
-interface DeviceInformation
+interface DeviceInformation : Windows.Devices.Enumeration.IDeviceInformation, Windows.Devices.Enumeration.IDeviceInformation2
 {
 }
 
-interface DeviceInformationCollection
+interface DeviceInformationCollection : Windows.Foundation.Collections.IVectorView!(Windows.Devices.Enumeration.DeviceInformation), Windows.Foundation.Collections.IIterable!(Windows.Devices.Enumeration.DeviceInformation)
 {
 }
 
-interface DeviceInformationCustomPairing
+interface DeviceInformationCustomPairing : Windows.Devices.Enumeration.IDeviceInformationCustomPairing
 {
 }
 
-interface DeviceInformationPairing
+interface DeviceInformationPairing : Windows.Devices.Enumeration.IDeviceInformationPairing, Windows.Devices.Enumeration.IDeviceInformationPairing2
 {
 }
 
-interface DeviceInformationUpdate
+interface DeviceInformationUpdate : Windows.Devices.Enumeration.IDeviceInformationUpdate, Windows.Devices.Enumeration.IDeviceInformationUpdate2
 {
 }
 
-interface DevicePairingRequestedEventArgs
+interface DevicePairingRequestedEventArgs : Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs
 {
 }
 
-interface DevicePairingResult
+interface DevicePairingResult : Windows.Devices.Enumeration.IDevicePairingResult
 {
 }
 
-interface DevicePicker
+interface DevicePicker : Windows.Devices.Enumeration.IDevicePicker
 {
 }
 
-interface DevicePickerAppearance
+interface DevicePickerAppearance : Windows.Devices.Enumeration.IDevicePickerAppearance
 {
 }
 
-interface DevicePickerFilter
+interface DevicePickerFilter : Windows.Devices.Enumeration.IDevicePickerFilter
 {
 }
 
-interface DeviceSelectedEventArgs
+interface DeviceSelectedEventArgs : Windows.Devices.Enumeration.IDeviceSelectedEventArgs
 {
 }
 
-interface DeviceThumbnail
+interface DeviceThumbnail : Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
 }
 
-interface DeviceUnpairingResult
+interface DeviceUnpairingResult : Windows.Devices.Enumeration.IDeviceUnpairingResult
 {
 }
 
-interface DeviceWatcher
+interface DeviceWatcher : Windows.Devices.Enumeration.IDeviceWatcher, Windows.Devices.Enumeration.IDeviceWatcher2
 {
 }
 
-interface DeviceWatcherEvent
+interface DeviceWatcherEvent : Windows.Devices.Enumeration.IDeviceWatcherEvent
 {
 }
 
-interface DeviceWatcherTriggerDetails
+interface DeviceWatcherTriggerDetails : Windows.Devices.Enumeration.IDeviceWatcherTriggerDetails
 {
 }
 
-interface EnclosureLocation
+interface EnclosureLocation : Windows.Devices.Enumeration.IEnclosureLocation, Windows.Devices.Enumeration.IEnclosureLocation2
 {
 }
 

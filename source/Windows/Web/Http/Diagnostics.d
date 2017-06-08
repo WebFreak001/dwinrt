@@ -103,27 +103,27 @@ extern(Windows):
 	HRESULT get_ColumnNumber(UINT64* return_value);
 }
 
-interface HttpDiagnosticProvider
+interface HttpDiagnosticProvider : Windows.Web.Http.Diagnostics.IHttpDiagnosticProvider
 {
 }
 
-interface HttpDiagnosticProviderRequestResponseCompletedEventArgs
+interface HttpDiagnosticProviderRequestResponseCompletedEventArgs : Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseCompletedEventArgs
 {
 }
 
-interface HttpDiagnosticProviderRequestResponseTimestamps
+interface HttpDiagnosticProviderRequestResponseTimestamps : Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseTimestamps
 {
 }
 
-interface HttpDiagnosticProviderRequestSentEventArgs
+interface HttpDiagnosticProviderRequestSentEventArgs : Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestSentEventArgs
 {
 }
 
-interface HttpDiagnosticProviderResponseReceivedEventArgs
+interface HttpDiagnosticProviderResponseReceivedEventArgs : Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderResponseReceivedEventArgs
 {
 }
 
-interface HttpDiagnosticSourceLocation
+interface HttpDiagnosticSourceLocation : Windows.Web.Http.Diagnostics.IHttpDiagnosticSourceLocation
 {
 }
 

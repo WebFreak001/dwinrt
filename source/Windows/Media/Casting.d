@@ -114,31 +114,31 @@ extern(Windows):
 	HRESULT set_PreferredSourceUri(Windows.Foundation.Uri value);
 }
 
-interface CastingConnection
+interface CastingConnection : Windows.Media.Casting.ICastingConnection, Windows.Foundation.IClosable
 {
 }
 
-interface CastingConnectionErrorOccurredEventArgs
+interface CastingConnectionErrorOccurredEventArgs : Windows.Media.Casting.ICastingConnectionErrorOccurredEventArgs
 {
 }
 
-interface CastingDevice
+interface CastingDevice : Windows.Media.Casting.ICastingDevice
 {
 }
 
-interface CastingDevicePicker
+interface CastingDevicePicker : Windows.Media.Casting.ICastingDevicePicker
 {
 }
 
-interface CastingDevicePickerFilter
+interface CastingDevicePickerFilter : Windows.Media.Casting.ICastingDevicePickerFilter
 {
 }
 
-interface CastingDeviceSelectedEventArgs
+interface CastingDeviceSelectedEventArgs : Windows.Media.Casting.ICastingDeviceSelectedEventArgs
 {
 }
 
-interface CastingSource
+interface CastingSource : Windows.Media.Casting.ICastingSource
 {
 }
 

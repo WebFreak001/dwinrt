@@ -478,71 +478,87 @@ extern(Windows):
 	HRESULT get_ApplicationName(HSTRING* return_value);
 }
 
-interface DataPackage
+interface Clipboard
 {
 }
 
-interface DataPackagePropertySet
+interface DataPackage : Windows.ApplicationModel.DataTransfer.IDataPackage, Windows.ApplicationModel.DataTransfer.IDataPackage2, Windows.ApplicationModel.DataTransfer.IDataPackage3
 {
 }
 
-interface DataPackagePropertySetView
+interface DataPackagePropertySet : Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet, Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)), Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2, Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet3
 {
 }
 
-interface DataPackageView
+interface DataPackagePropertySetView : Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView, Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)), Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2, Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView3
 {
 }
 
-interface DataProviderDeferral
+interface DataPackageView : Windows.ApplicationModel.DataTransfer.IDataPackageView, Windows.ApplicationModel.DataTransfer.IDataPackageView2, Windows.ApplicationModel.DataTransfer.IDataPackageView3, Windows.ApplicationModel.DataTransfer.IDataPackageView4
 {
 }
 
-interface DataProviderRequest
+interface DataProviderDeferral : Windows.ApplicationModel.DataTransfer.IDataProviderDeferral
 {
 }
 
-interface DataRequest
+interface DataProviderRequest : Windows.ApplicationModel.DataTransfer.IDataProviderRequest
 {
 }
 
-interface DataRequestDeferral
+interface DataRequest : Windows.ApplicationModel.DataTransfer.IDataRequest
 {
 }
 
-interface DataRequestedEventArgs
+interface DataRequestDeferral : Windows.ApplicationModel.DataTransfer.IDataRequestDeferral
 {
 }
 
-interface DataTransferManager
+interface DataRequestedEventArgs : Windows.ApplicationModel.DataTransfer.IDataRequestedEventArgs
 {
 }
 
-interface OperationCompletedEventArgs
+interface DataTransferManager : Windows.ApplicationModel.DataTransfer.IDataTransferManager, Windows.ApplicationModel.DataTransfer.IDataTransferManager2
 {
 }
 
-interface ShareCompletedEventArgs
+interface HtmlFormatHelper
 {
 }
 
-interface ShareProvider
+interface OperationCompletedEventArgs : Windows.ApplicationModel.DataTransfer.IOperationCompletedEventArgs, Windows.ApplicationModel.DataTransfer.IOperationCompletedEventArgs2
 {
 }
 
-interface ShareProviderOperation
+interface ShareCompletedEventArgs : Windows.ApplicationModel.DataTransfer.IShareCompletedEventArgs
 {
 }
 
-interface ShareProvidersRequestedEventArgs
+interface ShareProvider : Windows.ApplicationModel.DataTransfer.IShareProvider
 {
 }
 
-interface ShareTargetInfo
+interface ShareProviderOperation : Windows.ApplicationModel.DataTransfer.IShareProviderOperation
 {
 }
 
-interface TargetApplicationChosenEventArgs
+interface ShareProvidersRequestedEventArgs : Windows.ApplicationModel.DataTransfer.IShareProvidersRequestedEventArgs
+{
+}
+
+interface ShareTargetInfo : Windows.ApplicationModel.DataTransfer.IShareTargetInfo
+{
+}
+
+interface SharedStorageAccessManager
+{
+}
+
+interface StandardDataFormats
+{
+}
+
+interface TargetApplicationChosenEventArgs : Windows.ApplicationModel.DataTransfer.ITargetApplicationChosenEventArgs
 {
 }
 

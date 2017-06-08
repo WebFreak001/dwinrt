@@ -220,55 +220,64 @@ extern(Windows):
 	HRESULT abi_CopyAndCloseAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64)* return_operation);
 }
 
-interface Buffer
+@uuid("cc254827-4b3d-438f-9232-10c76bc7e038")
+interface IRandomAccessStreamWithContentType : IInspectable
 {
 }
 
-interface DataReader
+interface Buffer : Windows.Storage.Streams.IBuffer
 {
 }
 
-interface DataReaderLoadOperation
+interface DataReader : Windows.Storage.Streams.IDataReader, Windows.Foundation.IClosable
 {
 }
 
-interface DataWriter
+interface DataReaderLoadOperation : Windows.Foundation.IAsyncOperation!(UINT32)
 {
 }
 
-interface DataWriterStoreOperation
+interface DataWriter : Windows.Storage.Streams.IDataWriter, Windows.Foundation.IClosable
 {
 }
 
-interface FileInputStream
+interface DataWriterStoreOperation : Windows.Foundation.IAsyncOperation!(UINT32)
 {
 }
 
-interface FileOutputStream
+interface FileInputStream : Windows.Storage.Streams.IInputStream, Windows.Foundation.IClosable
 {
 }
 
-interface FileRandomAccessStream
+interface FileOutputStream : Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable
 {
 }
 
-interface InMemoryRandomAccessStream
+interface FileRandomAccessStream : Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
 }
 
-interface InputStreamOverStream
+interface InMemoryRandomAccessStream : Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
 }
 
-interface OutputStreamOverStream
+interface InputStreamOverStream : Windows.Storage.Streams.IInputStream, Windows.Foundation.IClosable
 {
 }
 
-interface RandomAccessStreamOverStream
+interface OutputStreamOverStream : Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable
 {
 }
 
-interface RandomAccessStreamReference
+interface RandomAccessStream
+{
+}
+
+interface RandomAccessStreamOverStream : Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
+{
+}
+
+interface RandomAccessStreamReference : Windows.Storage.Streams.IRandomAccessStreamReference
 {
 }
 

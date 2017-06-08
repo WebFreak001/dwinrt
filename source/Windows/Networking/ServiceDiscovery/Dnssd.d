@@ -66,19 +66,19 @@ extern(Windows):
 	HRESULT abi_Stop();
 }
 
-interface DnssdRegistrationResult
+interface DnssdRegistrationResult : Windows.Networking.ServiceDiscovery.Dnssd.IDnssdRegistrationResult, Windows.Foundation.IStringable
 {
 }
 
-interface DnssdServiceInstance
+interface DnssdServiceInstance : Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance, Windows.Foundation.IStringable
 {
 }
 
-interface DnssdServiceInstanceCollection
+interface DnssdServiceInstanceCollection : Windows.Foundation.Collections.IVectorView!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance), Windows.Foundation.Collections.IIterable!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance)
 {
 }
 
-interface DnssdServiceWatcher
+interface DnssdServiceWatcher : Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher
 {
 }
 

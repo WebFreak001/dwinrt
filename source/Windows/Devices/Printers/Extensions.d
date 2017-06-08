@@ -118,35 +118,39 @@ extern(Windows):
 	HRESULT get_Request(Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequest* return_context);
 }
 
-interface Print3DWorkflow
+interface Print3DWorkflow : Windows.Devices.Printers.Extensions.IPrint3DWorkflow, Windows.Devices.Printers.Extensions.IPrint3DWorkflow2
 {
 }
 
-interface Print3DWorkflowPrintRequestedEventArgs
+interface Print3DWorkflowPrintRequestedEventArgs : Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs
 {
 }
 
-interface Print3DWorkflowPrinterChangedEventArgs
+interface Print3DWorkflowPrinterChangedEventArgs : Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrinterChangedEventArgs
 {
 }
 
-interface PrintNotificationEventDetails
+interface PrintExtensionContext
 {
 }
 
-interface PrintTaskConfiguration
+interface PrintNotificationEventDetails : Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails
 {
 }
 
-interface PrintTaskConfigurationSaveRequest
+interface PrintTaskConfiguration : Windows.Devices.Printers.Extensions.IPrintTaskConfiguration
 {
 }
 
-interface PrintTaskConfigurationSaveRequestedDeferral
+interface PrintTaskConfigurationSaveRequest : Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest
 {
 }
 
-interface PrintTaskConfigurationSaveRequestedEventArgs
+interface PrintTaskConfigurationSaveRequestedDeferral : Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequestedDeferral
+{
+}
+
+interface PrintTaskConfigurationSaveRequestedEventArgs : Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequestedEventArgs
 {
 }
 

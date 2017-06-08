@@ -13,6 +13,6 @@ extern(Windows):
 	HRESULT abi_RequestRelease();
 }
 
-interface DisplayRequest
+interface DisplayRequest : Windows.System.Display.IDisplayRequest
 {
 }

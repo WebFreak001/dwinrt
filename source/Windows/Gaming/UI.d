@@ -65,15 +65,19 @@ extern(Windows):
 	HRESULT abi_GetDefault(Windows.Gaming.UI.GameChatOverlay* return_value);
 }
 
-interface GameChatMessageReceivedEventArgs
+interface GameBar
 {
 }
 
-interface GameChatOverlay
+interface GameChatMessageReceivedEventArgs : Windows.Gaming.UI.IGameChatMessageReceivedEventArgs
 {
 }
 
-interface GameChatOverlayMessageSource
+interface GameChatOverlay : Windows.Gaming.UI.IGameChatOverlay
+{
+}
+
+interface GameChatOverlayMessageSource : Windows.Gaming.UI.IGameChatOverlayMessageSource
 {
 }
 

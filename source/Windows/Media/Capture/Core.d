@@ -41,10 +41,10 @@ extern(Windows):
 	HRESULT abi_UpdateSettingsAsync(Windows.Foundation.IAsyncAction* return_operation);
 }
 
-interface VariablePhotoCapturedEventArgs
+interface VariablePhotoCapturedEventArgs : Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs
 {
 }
 
-interface VariablePhotoSequenceCapture
+interface VariablePhotoSequenceCapture : Windows.Media.Capture.Core.IVariablePhotoSequenceCapture, Windows.Media.Capture.Core.IVariablePhotoSequenceCapture2
 {
 }

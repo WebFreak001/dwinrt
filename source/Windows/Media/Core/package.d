@@ -374,6 +374,11 @@ extern(Windows):
 	HRESULT get_Cue(Windows.Media.Core.IMediaCue* return_value);
 }
 
+@uuid("e7bfb599-a09d-4c21-bcdf-20af4f86b3d9")
+interface IMediaSource : IInspectable
+{
+}
+
 @uuid("2eb61048-655f-4c37-b813-b4e45dfa0abe")
 @WinrtFactory("Windows.Media.Core.MediaSource")
 interface IMediaSource2 : IInspectable
@@ -1213,255 +1218,259 @@ extern(Windows):
 	HRESULT get_MediaSourceStatus(Windows.Media.Core.MediaSourceStatus* return_value);
 }
 
-interface AudioStreamDescriptor
+interface AudioStreamDescriptor : Windows.Media.Core.IAudioStreamDescriptor, Windows.Media.Core.IMediaStreamDescriptor, Windows.Media.Core.IAudioStreamDescriptor2
 {
 }
 
-interface AudioTrack
+interface AudioTrack : Windows.Media.Core.IMediaTrack, Windows.Media.Core.IAudioTrack
 {
 }
 
-interface AudioTrackOpenFailedEventArgs
+interface AudioTrackOpenFailedEventArgs : Windows.Media.Core.IAudioTrackOpenFailedEventArgs
 {
 }
 
-interface AudioTrackSupportInfo
+interface AudioTrackSupportInfo : Windows.Media.Core.IAudioTrackSupportInfo
 {
 }
 
-interface ChapterCue
+interface ChapterCue : Windows.Media.Core.IChapterCue, Windows.Media.Core.IMediaCue
 {
 }
 
-interface CodecInfo
+interface CodecInfo : Windows.Media.Core.ICodecInfo
 {
 }
 
-interface CodecQuery
+interface CodecQuery : Windows.Media.Core.ICodecQuery
 {
 }
 
-interface DataCue
+interface CodecSubtypes
 {
 }
 
-interface FaceDetectedEventArgs
+interface DataCue : Windows.Media.Core.IDataCue, Windows.Media.Core.IMediaCue, Windows.Media.Core.IDataCue2
 {
 }
 
-interface FaceDetectionEffect
+interface FaceDetectedEventArgs : Windows.Media.Core.IFaceDetectedEventArgs
 {
 }
 
-interface FaceDetectionEffectDefinition
+interface FaceDetectionEffect : Windows.Media.Core.IFaceDetectionEffect, Windows.Media.IMediaExtension
 {
 }
 
-interface FaceDetectionEffectFrame
+interface FaceDetectionEffectDefinition : Windows.Media.Effects.IVideoEffectDefinition, Windows.Media.Core.IFaceDetectionEffectDefinition
 {
 }
 
-interface HighDynamicRangeControl
+interface FaceDetectionEffectFrame : Windows.Media.Core.IFaceDetectionEffectFrame, Windows.Media.IMediaFrame, Windows.Foundation.IClosable
 {
 }
 
-interface HighDynamicRangeOutput
+interface HighDynamicRangeControl : Windows.Media.Core.IHighDynamicRangeControl
 {
 }
 
-interface ImageCue
+interface HighDynamicRangeOutput : Windows.Media.Core.IHighDynamicRangeOutput
 {
 }
 
-interface MediaBinder
+interface ImageCue : Windows.Media.Core.IImageCue, Windows.Media.Core.IMediaCue
 {
 }
 
-interface MediaBindingEventArgs
+interface MediaBinder : Windows.Media.Core.IMediaBinder
 {
 }
 
-interface MediaCueEventArgs
+interface MediaBindingEventArgs : Windows.Media.Core.IMediaBindingEventArgs, Windows.Media.Core.IMediaBindingEventArgs2
 {
 }
 
-interface MediaSource
+interface MediaCueEventArgs : Windows.Media.Core.IMediaCueEventArgs
 {
 }
 
-interface MediaSourceError
+interface MediaSource : Windows.Media.Core.IMediaSource2, Windows.Foundation.IClosable, Windows.Media.Playback.IMediaPlaybackSource, Windows.Media.Core.IMediaSource3, Windows.Media.Core.IMediaSource4
 {
 }
 
-interface MediaSourceOpenOperationCompletedEventArgs
+interface MediaSourceError : Windows.Media.Core.IMediaSourceError
 {
 }
 
-interface MediaSourceStateChangedEventArgs
+interface MediaSourceOpenOperationCompletedEventArgs : Windows.Media.Core.IMediaSourceOpenOperationCompletedEventArgs
 {
 }
 
-interface MediaStreamSample
+interface MediaSourceStateChangedEventArgs : Windows.Media.Core.IMediaSourceStateChangedEventArgs
 {
 }
 
-interface MediaStreamSamplePropertySet
+interface MediaStreamSample : Windows.Media.Core.IMediaStreamSample
 {
 }
 
-interface MediaStreamSampleProtectionProperties
+interface MediaStreamSamplePropertySet : Windows.Foundation.Collections.IMap!(GUID, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(GUID, IInspectable))
 {
 }
 
-interface MediaStreamSource
+interface MediaStreamSampleProtectionProperties : Windows.Media.Core.IMediaStreamSampleProtectionProperties
 {
 }
 
-interface MediaStreamSourceClosedEventArgs
+interface MediaStreamSource : Windows.Media.Core.IMediaStreamSource, Windows.Media.Core.IMediaSource, Windows.Media.Core.IMediaStreamSource2, Windows.Media.Core.IMediaStreamSource3
 {
 }
 
-interface MediaStreamSourceClosedRequest
+interface MediaStreamSourceClosedEventArgs : Windows.Media.Core.IMediaStreamSourceClosedEventArgs
 {
 }
 
-interface MediaStreamSourceSampleRenderedEventArgs
+interface MediaStreamSourceClosedRequest : Windows.Media.Core.IMediaStreamSourceClosedRequest
 {
 }
 
-interface MediaStreamSourceSampleRequest
+interface MediaStreamSourceSampleRenderedEventArgs : Windows.Media.Core.IMediaStreamSourceSampleRenderedEventArgs
 {
 }
 
-interface MediaStreamSourceSampleRequestDeferral
+interface MediaStreamSourceSampleRequest : Windows.Media.Core.IMediaStreamSourceSampleRequest
 {
 }
 
-interface MediaStreamSourceSampleRequestedEventArgs
+interface MediaStreamSourceSampleRequestDeferral : Windows.Media.Core.IMediaStreamSourceSampleRequestDeferral
 {
 }
 
-interface MediaStreamSourceStartingEventArgs
+interface MediaStreamSourceSampleRequestedEventArgs : Windows.Media.Core.IMediaStreamSourceSampleRequestedEventArgs
 {
 }
 
-interface MediaStreamSourceStartingRequest
+interface MediaStreamSourceStartingEventArgs : Windows.Media.Core.IMediaStreamSourceStartingEventArgs
 {
 }
 
-interface MediaStreamSourceStartingRequestDeferral
+interface MediaStreamSourceStartingRequest : Windows.Media.Core.IMediaStreamSourceStartingRequest
 {
 }
 
-interface MediaStreamSourceSwitchStreamsRequest
+interface MediaStreamSourceStartingRequestDeferral : Windows.Media.Core.IMediaStreamSourceStartingRequestDeferral
 {
 }
 
-interface MediaStreamSourceSwitchStreamsRequestDeferral
+interface MediaStreamSourceSwitchStreamsRequest : Windows.Media.Core.IMediaStreamSourceSwitchStreamsRequest
 {
 }
 
-interface MediaStreamSourceSwitchStreamsRequestedEventArgs
+interface MediaStreamSourceSwitchStreamsRequestDeferral : Windows.Media.Core.IMediaStreamSourceSwitchStreamsRequestDeferral
 {
 }
 
-interface MseSourceBuffer
+interface MediaStreamSourceSwitchStreamsRequestedEventArgs : Windows.Media.Core.IMediaStreamSourceSwitchStreamsRequestedEventArgs
 {
 }
 
-interface MseSourceBufferList
+interface MseSourceBuffer : Windows.Media.Core.IMseSourceBuffer
 {
 }
 
-interface MseStreamSource
+interface MseSourceBufferList : Windows.Media.Core.IMseSourceBufferList
 {
 }
 
-interface SceneAnalysisEffect
+interface MseStreamSource : Windows.Media.Core.IMseStreamSource, Windows.Media.Core.IMediaSource
 {
 }
 
-interface SceneAnalysisEffectDefinition
+interface SceneAnalysisEffect : Windows.Media.Core.ISceneAnalysisEffect, Windows.Media.IMediaExtension
 {
 }
 
-interface SceneAnalysisEffectFrame
+interface SceneAnalysisEffectDefinition : Windows.Media.Effects.IVideoEffectDefinition
 {
 }
 
-interface SceneAnalyzedEventArgs
+interface SceneAnalysisEffectFrame : Windows.Media.Core.ISceneAnalysisEffectFrame, Windows.Media.IMediaFrame, Windows.Foundation.IClosable
 {
 }
 
-interface SpeechCue
+interface SceneAnalyzedEventArgs : Windows.Media.Core.ISceneAnalyzedEventArgs
 {
 }
 
-interface TimedMetadataTrack
+interface SpeechCue : Windows.Media.Core.ISpeechCue, Windows.Media.Core.IMediaCue
 {
 }
 
-interface TimedMetadataTrackError
+interface TimedMetadataTrack : Windows.Media.Core.ITimedMetadataTrack, Windows.Media.Core.IMediaTrack, Windows.Media.Core.ITimedMetadataTrack2
 {
 }
 
-interface TimedMetadataTrackFailedEventArgs
+interface TimedMetadataTrackError : Windows.Media.Core.ITimedMetadataTrackError
 {
 }
 
-interface TimedTextCue
+interface TimedMetadataTrackFailedEventArgs : Windows.Media.Core.ITimedMetadataTrackFailedEventArgs
 {
 }
 
-interface TimedTextLine
+interface TimedTextCue : Windows.Media.Core.ITimedTextCue, Windows.Media.Core.IMediaCue
 {
 }
 
-interface TimedTextRegion
+interface TimedTextLine : Windows.Media.Core.ITimedTextLine
 {
 }
 
-interface TimedTextSource
+interface TimedTextRegion : Windows.Media.Core.ITimedTextRegion
 {
 }
 
-interface TimedTextSourceResolveResultEventArgs
+interface TimedTextSource : Windows.Media.Core.ITimedTextSource
 {
 }
 
-interface TimedTextStyle
+interface TimedTextSourceResolveResultEventArgs : Windows.Media.Core.ITimedTextSourceResolveResultEventArgs
 {
 }
 
-interface TimedTextSubformat
+interface TimedTextStyle : Windows.Media.Core.ITimedTextStyle, Windows.Media.Core.ITimedTextStyle2
 {
 }
 
-interface VideoStabilizationEffect
+interface TimedTextSubformat : Windows.Media.Core.ITimedTextSubformat
 {
 }
 
-interface VideoStabilizationEffectDefinition
+interface VideoStabilizationEffect : Windows.Media.Core.IVideoStabilizationEffect, Windows.Media.IMediaExtension
 {
 }
 
-interface VideoStabilizationEffectEnabledChangedEventArgs
+interface VideoStabilizationEffectDefinition : Windows.Media.Effects.IVideoEffectDefinition
 {
 }
 
-interface VideoStreamDescriptor
+interface VideoStabilizationEffectEnabledChangedEventArgs : Windows.Media.Core.IVideoStabilizationEffectEnabledChangedEventArgs
 {
 }
 
-interface VideoTrack
+interface VideoStreamDescriptor : Windows.Media.Core.IVideoStreamDescriptor, Windows.Media.Core.IMediaStreamDescriptor
 {
 }
 
-interface VideoTrackOpenFailedEventArgs
+interface VideoTrack : Windows.Media.Core.IMediaTrack, Windows.Media.Core.IVideoTrack
 {
 }
 
-interface VideoTrackSupportInfo
+interface VideoTrackOpenFailedEventArgs : Windows.Media.Core.IVideoTrackOpenFailedEventArgs
+{
+}
+
+interface VideoTrackSupportInfo : Windows.Media.Core.IVideoTrackSupportInfo
 {
 }
 

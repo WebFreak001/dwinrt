@@ -191,27 +191,27 @@ extern(Windows):
 	HRESULT abi_CreateWithCompositorDefinition(Windows.Media.Effects.IVideoCompositorDefinition compositorDefinition, Windows.Media.Editing.MediaOverlayLayer* return_mediaOverlayLayer);
 }
 
-interface BackgroundAudioTrack
+interface BackgroundAudioTrack : Windows.Media.Editing.IBackgroundAudioTrack
 {
 }
 
-interface EmbeddedAudioTrack
+interface EmbeddedAudioTrack : Windows.Media.Editing.IEmbeddedAudioTrack
 {
 }
 
-interface MediaClip
+interface MediaClip : Windows.Media.Editing.IMediaClip
 {
 }
 
-interface MediaComposition
+interface MediaComposition : Windows.Media.Editing.IMediaComposition, Windows.Media.Editing.IMediaComposition2
 {
 }
 
-interface MediaOverlay
+interface MediaOverlay : Windows.Media.Editing.IMediaOverlay
 {
 }
 
-interface MediaOverlayLayer
+interface MediaOverlayLayer : Windows.Media.Editing.IMediaOverlayLayer
 {
 }
 

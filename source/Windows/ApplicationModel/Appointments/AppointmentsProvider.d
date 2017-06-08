@@ -73,14 +73,18 @@ extern(Windows):
 	HRESULT abi_DismissUI();
 }
 
-interface AddAppointmentOperation
+interface AddAppointmentOperation : Windows.ApplicationModel.Appointments.AppointmentsProvider.IAddAppointmentOperation
 {
 }
 
-interface RemoveAppointmentOperation
+interface AppointmentsProviderLaunchActionVerbs
 {
 }
 
-interface ReplaceAppointmentOperation
+interface RemoveAppointmentOperation : Windows.ApplicationModel.Appointments.AppointmentsProvider.IRemoveAppointmentOperation
+{
+}
+
+interface ReplaceAppointmentOperation : Windows.ApplicationModel.Appointments.AppointmentsProvider.IReplaceAppointmentOperation
 {
 }

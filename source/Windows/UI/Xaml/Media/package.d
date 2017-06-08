@@ -86,6 +86,12 @@ extern(Windows):
 	HRESULT get_Point3Property(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("79c2219e-44d2-4610-9735-9bec83809ecf")
+@WinrtFactory("Windows.UI.Xaml.Media.BitmapCache")
+interface IBitmapCache : IInspectable
+{
+}
+
 @uuid("8806a321-1e06-422c-a1cc-01696559e021")
 @WinrtFactory("Windows.UI.Xaml.Media.Brush")
 interface IBrush : IInspectable
@@ -121,6 +127,12 @@ extern(Windows):
 	HRESULT get_OpacityProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TransformProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_RelativeTransformProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("98dc8b11-c6f9-4dab-b838-5fd5ec8c7350")
+@WinrtFactory("Windows.UI.Xaml.Media.CacheMode")
+interface ICacheMode : IInspectable
+{
 }
 
 @uuid("eb1f8c5b-0abb-4e70-b8a8-620d0d953ab2")
@@ -176,6 +188,12 @@ extern(Windows):
 	HRESULT get_RotationProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TranslateXProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_TranslateYProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("26cfbff0-713c-4bec-8803-e101f7b14ed3")
+@WinrtFactory("Windows.UI.Xaml.Media.CompositionTarget")
+interface ICompositionTarget : IInspectable
+{
 }
 
 @uuid("2b1af03d-1ed2-4b59-bd00-7594ee92832b")
@@ -293,6 +311,12 @@ extern(Windows):
 	HRESULT get_Transform(Windows.UI.Xaml.Media.Transform* return_value);
 	HRESULT set_Transform(Windows.UI.Xaml.Media.Transform value);
 	HRESULT get_Bounds(Windows.Foundation.Rect* return_value);
+}
+
+@uuid("f65daf23-d5fd-42f9-b32a-929c5a4b54e1")
+@WinrtFactory("Windows.UI.Xaml.Media.Geometry")
+interface IGeometryFactory : IInspectable
+{
 }
 
 @uuid("55225a61-8677-4c8c-8e46-ee3dc355114b")
@@ -418,6 +442,18 @@ interface IImageBrushStatics : IInspectable
 
 extern(Windows):
 	HRESULT get_ImageSourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("737ef309-ea41-4d96-a71c-98e98efcab07")
+@WinrtFactory("Windows.UI.Xaml.Media.ImageSource")
+interface IImageSource : IInspectable
+{
+}
+
+@uuid("297ec001-2540-4e5a-ab66-88035dd3ddb5")
+@WinrtFactory("Windows.UI.Xaml.Media.ImageSource")
+interface IImageSourceFactory : IInspectable
+{
 }
 
 @uuid("30edd4a2-8fc5-40af-a7a2-c27fe7aa1363")
@@ -557,6 +593,12 @@ extern(Windows):
 	HRESULT get_ProjectionMatrixProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("f3cf4882-06b5-48c8-9eb2-1763e9364038")
+@WinrtFactory("Windows.UI.Xaml.Media.MatrixHelper")
+interface IMatrixHelper : IInspectable
+{
+}
+
 @uuid("c18606a6-39f4-4b8a-8403-28e5e5f033b4")
 @WinrtFactory("Windows.UI.Xaml.Media.MatrixHelper")
 interface IMatrixHelperStatics : IInspectable
@@ -674,6 +716,18 @@ interface IPathGeometryStatics : IInspectable
 extern(Windows):
 	HRESULT get_FillRuleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FiguresProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("fcfa71cf-9ce3-474f-8157-10b6435a616b")
+@WinrtFactory("Windows.UI.Xaml.Media.PathSegment")
+interface IPathSegment : IInspectable
+{
+}
+
+@uuid("2a1c0aae-eccd-4464-a148-6ffdb3aa281f")
+@WinrtFactory("Windows.UI.Xaml.Media.PathSegment")
+interface IPathSegmentFactory : IInspectable
+{
 }
 
 @uuid("e6f82bfa-6726-469a-b259-a5188347ca8f")
@@ -795,6 +849,12 @@ extern(Windows):
 	HRESULT get_PointsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("b3443557-7f39-4d04-a89c-844338cac897")
+@WinrtFactory("Windows.UI.Xaml.Media.Projection")
+interface IProjection : IInspectable
+{
+}
+
 @uuid("c4f29cab-60ad-4f24-bd27-9d69c3127c9a")
 @WinrtFactory("Windows.UI.Xaml.Media.Projection")
 interface IProjectionFactory : IInspectable
@@ -827,6 +887,12 @@ interface IQuadraticBezierSegmentStatics : IInspectable
 extern(Windows):
 	HRESULT get_Point1Property(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_Point2Property(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("9016aa6f-3ca8-4c80-8e2f-8851a68f131f")
+@WinrtFactory("Windows.UI.Xaml.Media.RateChangedRoutedEventArgs")
+interface IRateChangedRoutedEventArgs : IInspectable
+{
 }
 
 @uuid("a25a1f58-c575-4196-91cf-9fdfb10445c3")
@@ -1053,6 +1119,18 @@ extern(Windows):
 	HRESULT get_TextProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("4df74078-bfd6-4ed1-9682-d2fd8bf2fe6f")
+@WinrtFactory("Windows.UI.Xaml.Media.Transform")
+interface ITransform : IInspectable
+{
+}
+
+@uuid("1a955a66-7cf4-4320-b416-6181192fcc6d")
+@WinrtFactory("Windows.UI.Xaml.Media.Transform")
+interface ITransformFactory : IInspectable
+{
+}
+
 @uuid("63418ccc-8d2d-4737-b951-2afce1ddc4c4")
 @WinrtFactory("Windows.UI.Xaml.Media.TransformGroup")
 interface ITransformGroup : IInspectable
@@ -1097,6 +1175,12 @@ interface ITranslateTransformStatics : IInspectable
 extern(Windows):
 	HRESULT get_XProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_YProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("24b935e3-52c7-4141-8bac-a73d06130569")
+@WinrtFactory("Windows.UI.Xaml.Media.VisualTreeHelper")
+interface IVisualTreeHelper : IInspectable
+{
 }
 
 @uuid("e75758c4-d25d-4b1d-971f-596f17f12baa")
@@ -1179,6 +1263,12 @@ extern(Windows):
 	HRESULT get_FallbackColorProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("0cc3fc1f-b327-4a18-9648-7c84db26ce22")
+@WinrtFactory("Windows.UI.Xaml.Media.XamlLight")
+interface IXamlLight : IInspectable
+{
+}
+
 @uuid("87ded768-3055-43b8-8ef6-798dc4c2329a")
 @WinrtFactory("Windows.UI.Xaml.Media.XamlLight")
 interface IXamlLightFactory : IInspectable
@@ -1225,243 +1315,243 @@ extern(Windows):
 	HRESULT abi_RemoveTargetBrush(HSTRING lightId, Windows.UI.Xaml.Media.Brush brush);
 }
 
-interface ArcSegment : Windows.UI.Xaml.Media.PathSegment
+interface ArcSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IArcSegment
 {
 }
 
-interface BezierSegment : Windows.UI.Xaml.Media.PathSegment
+interface BezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IBezierSegment
 {
 }
 
-interface BitmapCache : Windows.UI.Xaml.Media.CacheMode
+interface BitmapCache : Windows.UI.Xaml.Media.CacheMode, Windows.UI.Xaml.Media.IBitmapCache
 {
 }
 
-interface Brush : Windows.UI.Xaml.DependencyObject
+interface Brush : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IBrush
 {
 }
 
-interface BrushCollection
+interface BrushCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Brush)
 {
 }
 
-interface CacheMode : Windows.UI.Xaml.DependencyObject
+interface CacheMode : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.ICacheMode
 {
 }
 
-interface CompositeTransform : Windows.UI.Xaml.Media.Transform
+interface CompositeTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.ICompositeTransform
 {
 }
 
-interface CompositionTarget
+interface CompositionTarget : Windows.UI.Xaml.Media.ICompositionTarget
 {
 }
 
-interface DoubleCollection
+interface DoubleCollection : Windows.Foundation.Collections.IVector!(double), Windows.Foundation.Collections.IIterable!(double)
 {
 }
 
-interface EllipseGeometry : Windows.UI.Xaml.Media.Geometry
+interface EllipseGeometry : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.IEllipseGeometry
 {
 }
 
-interface FontFamily
+interface FontFamily : Windows.UI.Xaml.Media.IFontFamily
 {
 }
 
-interface GeneralTransform : Windows.UI.Xaml.DependencyObject
+interface GeneralTransform : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IGeneralTransform, Windows.UI.Xaml.Media.IGeneralTransformOverrides
 {
 }
 
-interface Geometry : Windows.UI.Xaml.DependencyObject
+interface Geometry : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IGeometry
 {
 }
 
-interface GeometryCollection
+interface GeometryCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Geometry)
 {
 }
 
-interface GeometryGroup : Windows.UI.Xaml.Media.Geometry
+interface GeometryGroup : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.IGeometryGroup
 {
 }
 
-interface GradientBrush : Windows.UI.Xaml.Media.Brush
+interface GradientBrush : Windows.UI.Xaml.Media.Brush, Windows.UI.Xaml.Media.IGradientBrush
 {
 }
 
-interface GradientStop : Windows.UI.Xaml.DependencyObject
+interface GradientStop : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IGradientStop
 {
 }
 
-interface GradientStopCollection
+interface GradientStopCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.GradientStop)
 {
 }
 
-interface ImageBrush : Windows.UI.Xaml.Media.TileBrush
+interface ImageBrush : Windows.UI.Xaml.Media.TileBrush, Windows.UI.Xaml.Media.IImageBrush
 {
 }
 
-interface ImageSource : Windows.UI.Xaml.DependencyObject
+interface ImageSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IImageSource
 {
 }
 
-interface LineGeometry : Windows.UI.Xaml.Media.Geometry
+interface LineGeometry : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.ILineGeometry
 {
 }
 
-interface LineSegment : Windows.UI.Xaml.Media.PathSegment
+interface LineSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.ILineSegment
 {
 }
 
-interface LinearGradientBrush : Windows.UI.Xaml.Media.GradientBrush
+interface LinearGradientBrush : Windows.UI.Xaml.Media.GradientBrush, Windows.UI.Xaml.Media.ILinearGradientBrush
 {
 }
 
-interface LoadedImageSourceLoadCompletedEventArgs
+interface LoadedImageSourceLoadCompletedEventArgs : Windows.UI.Xaml.Media.ILoadedImageSourceLoadCompletedEventArgs
 {
 }
 
-interface LoadedImageSurface
+interface LoadedImageSurface : Windows.UI.Xaml.Media.ILoadedImageSurface, Windows.Foundation.IClosable, Windows.UI.Composition.ICompositionSurface
 {
 }
 
-interface Matrix3DProjection : Windows.UI.Xaml.Media.Projection
+interface Matrix3DProjection : Windows.UI.Xaml.Media.Projection, Windows.UI.Xaml.Media.IMatrix3DProjection
 {
 }
 
-interface MatrixHelper
+interface MatrixHelper : Windows.UI.Xaml.Media.IMatrixHelper
 {
 }
 
-interface MatrixTransform : Windows.UI.Xaml.Media.Transform
+interface MatrixTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.IMatrixTransform
 {
 }
 
-interface MediaTransportControlsThumbnailRequestedEventArgs
+interface MediaTransportControlsThumbnailRequestedEventArgs : Windows.UI.Xaml.Media.IMediaTransportControlsThumbnailRequestedEventArgs
 {
 }
 
-interface PartialMediaFailureDetectedEventArgs
+interface PartialMediaFailureDetectedEventArgs : Windows.UI.Xaml.Media.IPartialMediaFailureDetectedEventArgs, Windows.UI.Xaml.Media.IPartialMediaFailureDetectedEventArgs2
 {
 }
 
-interface PathFigure : Windows.UI.Xaml.DependencyObject
+interface PathFigure : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IPathFigure
 {
 }
 
-interface PathFigureCollection
+interface PathFigureCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.PathFigure)
 {
 }
 
-interface PathGeometry : Windows.UI.Xaml.Media.Geometry
+interface PathGeometry : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.IPathGeometry
 {
 }
 
-interface PathSegment : Windows.UI.Xaml.DependencyObject
+interface PathSegment : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IPathSegment
 {
 }
 
-interface PathSegmentCollection
+interface PathSegmentCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.PathSegment)
 {
 }
 
-interface PlaneProjection : Windows.UI.Xaml.Media.Projection
+interface PlaneProjection : Windows.UI.Xaml.Media.Projection, Windows.UI.Xaml.Media.IPlaneProjection
 {
 }
 
-interface PointCollection
+interface PointCollection : Windows.Foundation.Collections.IVector!(Windows.Foundation.Point), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point)
 {
 }
 
-interface PolyBezierSegment : Windows.UI.Xaml.Media.PathSegment
+interface PolyBezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IPolyBezierSegment
 {
 }
 
-interface PolyLineSegment : Windows.UI.Xaml.Media.PathSegment
+interface PolyLineSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IPolyLineSegment
 {
 }
 
-interface PolyQuadraticBezierSegment : Windows.UI.Xaml.Media.PathSegment
+interface PolyQuadraticBezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IPolyQuadraticBezierSegment
 {
 }
 
-interface Projection : Windows.UI.Xaml.DependencyObject
+interface Projection : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IProjection
 {
 }
 
-interface QuadraticBezierSegment : Windows.UI.Xaml.Media.PathSegment
+interface QuadraticBezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IQuadraticBezierSegment
 {
 }
 
-interface RateChangedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface RateChangedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Media.IRateChangedRoutedEventArgs
 {
 }
 
-interface RectangleGeometry : Windows.UI.Xaml.Media.Geometry
+interface RectangleGeometry : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.IRectangleGeometry
 {
 }
 
-interface RenderingEventArgs
+interface RenderingEventArgs : Windows.UI.Xaml.Media.IRenderingEventArgs
 {
 }
 
-interface RotateTransform : Windows.UI.Xaml.Media.Transform
+interface RotateTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.IRotateTransform
 {
 }
 
-interface ScaleTransform : Windows.UI.Xaml.Media.Transform
+interface ScaleTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.IScaleTransform
 {
 }
 
-interface SkewTransform : Windows.UI.Xaml.Media.Transform
+interface SkewTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.ISkewTransform
 {
 }
 
-interface SolidColorBrush : Windows.UI.Xaml.Media.Brush
+interface SolidColorBrush : Windows.UI.Xaml.Media.Brush, Windows.UI.Xaml.Media.ISolidColorBrush
 {
 }
 
-interface TileBrush : Windows.UI.Xaml.Media.Brush
+interface TileBrush : Windows.UI.Xaml.Media.Brush, Windows.UI.Xaml.Media.ITileBrush
 {
 }
 
-interface TimelineMarker : Windows.UI.Xaml.DependencyObject
+interface TimelineMarker : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.ITimelineMarker
 {
 }
 
-interface TimelineMarkerCollection
+interface TimelineMarkerCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.TimelineMarker)
 {
 }
 
-interface TimelineMarkerRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface TimelineMarkerRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Media.ITimelineMarkerRoutedEventArgs
 {
 }
 
-interface Transform : Windows.UI.Xaml.Media.GeneralTransform
+interface Transform : Windows.UI.Xaml.Media.GeneralTransform, Windows.UI.Xaml.Media.ITransform
 {
 }
 
-interface TransformCollection
+interface TransformCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Transform)
 {
 }
 
-interface TransformGroup : Windows.UI.Xaml.Media.Transform
+interface TransformGroup : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.ITransformGroup
 {
 }
 
-interface TranslateTransform : Windows.UI.Xaml.Media.Transform
+interface TranslateTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.ITranslateTransform
 {
 }
 
-interface VisualTreeHelper
+interface VisualTreeHelper : Windows.UI.Xaml.Media.IVisualTreeHelper
 {
 }
 
-interface XamlCompositionBrushBase : Windows.UI.Xaml.Media.Brush
+interface XamlCompositionBrushBase : Windows.UI.Xaml.Media.Brush, Windows.UI.Xaml.Media.IXamlCompositionBrushBase, Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides, Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected
 {
 }
 
-interface XamlLight : Windows.UI.Xaml.DependencyObject
+interface XamlLight : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IXamlLight, Windows.UI.Xaml.Media.IXamlLightOverrides, Windows.UI.Xaml.Media.IXamlLightProtected
 {
 }
 

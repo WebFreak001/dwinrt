@@ -79,15 +79,15 @@ extern(Windows):
 	HRESULT abi_Create(Windows.UI.Input.Inking.InkPresenter inkPresenter, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource* return_WetStrokeUpdateSource);
 }
 
-interface CoreInkIndependentInputSource
+interface CoreInkIndependentInputSource : Windows.UI.Input.Inking.Core.ICoreInkIndependentInputSource
 {
 }
 
-interface CoreWetStrokeUpdateEventArgs
+interface CoreWetStrokeUpdateEventArgs : Windows.UI.Input.Inking.Core.ICoreWetStrokeUpdateEventArgs
 {
 }
 
-interface CoreWetStrokeUpdateSource
+interface CoreWetStrokeUpdateSource : Windows.UI.Input.Inking.Core.ICoreWetStrokeUpdateSource
 {
 }
 

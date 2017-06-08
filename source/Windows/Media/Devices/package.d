@@ -753,147 +753,151 @@ extern(Windows):
 	HRESULT set_Value(FLOAT value);
 }
 
-interface AdvancedPhotoCaptureSettings
+interface AdvancedPhotoCaptureSettings : Windows.Media.Devices.IAdvancedPhotoCaptureSettings
 {
 }
 
-interface AdvancedPhotoControl
+interface AdvancedPhotoControl : Windows.Media.Devices.IAdvancedPhotoControl
 {
 }
 
-interface AudioDeviceController
+interface AudioDeviceController : Windows.Media.Devices.IAudioDeviceController, Windows.Media.Devices.IMediaDeviceController
 {
 }
 
-interface AudioDeviceModule
+interface AudioDeviceModule : Windows.Media.Devices.IAudioDeviceModule
 {
 }
 
-interface AudioDeviceModuleNotificationEventArgs
+interface AudioDeviceModuleNotificationEventArgs : Windows.Media.Devices.IAudioDeviceModuleNotificationEventArgs
 {
 }
 
-interface AudioDeviceModulesManager
+interface AudioDeviceModulesManager : Windows.Media.Devices.IAudioDeviceModulesManager
 {
 }
 
-interface CallControl
+interface CallControl : Windows.Media.Devices.ICallControl
 {
 }
 
-interface DefaultAudioCaptureDeviceChangedEventArgs
+interface DefaultAudioCaptureDeviceChangedEventArgs : Windows.Media.Devices.IDefaultAudioDeviceChangedEventArgs
 {
 }
 
-interface DefaultAudioRenderDeviceChangedEventArgs
+interface DefaultAudioRenderDeviceChangedEventArgs : Windows.Media.Devices.IDefaultAudioDeviceChangedEventArgs
 {
 }
 
-interface DialRequestedEventArgs
+interface DialRequestedEventArgs : Windows.Media.Devices.IDialRequestedEventArgs
 {
 }
 
-interface ExposureCompensationControl
+interface ExposureCompensationControl : Windows.Media.Devices.IExposureCompensationControl
 {
 }
 
-interface ExposureControl
+interface ExposureControl : Windows.Media.Devices.IExposureControl
 {
 }
 
-interface ExposurePriorityVideoControl
+interface ExposurePriorityVideoControl : Windows.Media.Devices.IExposurePriorityVideoControl
 {
 }
 
-interface FlashControl
+interface FlashControl : Windows.Media.Devices.IFlashControl, Windows.Media.Devices.IFlashControl2
 {
 }
 
-interface FocusControl
+interface FocusControl : Windows.Media.Devices.IFocusControl, Windows.Media.Devices.IFocusControl2
 {
 }
 
-interface FocusSettings
+interface FocusSettings : Windows.Media.Devices.IFocusSettings
 {
 }
 
-interface HdrVideoControl
+interface HdrVideoControl : Windows.Media.Devices.IHdrVideoControl
 {
 }
 
-interface IsoSpeedControl
+interface IsoSpeedControl : Windows.Media.Devices.IIsoSpeedControl, Windows.Media.Devices.IIsoSpeedControl2
 {
 }
 
-interface KeypadPressedEventArgs
+interface KeypadPressedEventArgs : Windows.Media.Devices.IKeypadPressedEventArgs
 {
 }
 
-interface LowLagPhotoControl
+interface LowLagPhotoControl : Windows.Media.Devices.ILowLagPhotoControl
 {
 }
 
-interface LowLagPhotoSequenceControl
+interface LowLagPhotoSequenceControl : Windows.Media.Devices.ILowLagPhotoSequenceControl
 {
 }
 
-interface MediaDeviceControl
+interface MediaDevice
 {
 }
 
-interface MediaDeviceControlCapabilities
+interface MediaDeviceControl : Windows.Media.Devices.IMediaDeviceControl
 {
 }
 
-interface ModuleCommandResult
+interface MediaDeviceControlCapabilities : Windows.Media.Devices.IMediaDeviceControlCapabilities
 {
 }
 
-interface OpticalImageStabilizationControl
+interface ModuleCommandResult : Windows.Media.Devices.IModuleCommandResult
 {
 }
 
-interface PhotoConfirmationControl
+interface OpticalImageStabilizationControl : Windows.Media.Devices.IOpticalImageStabilizationControl
 {
 }
 
-interface RedialRequestedEventArgs
+interface PhotoConfirmationControl : Windows.Media.Devices.IPhotoConfirmationControl
 {
 }
 
-interface RegionOfInterest
+interface RedialRequestedEventArgs : Windows.Media.Devices.IRedialRequestedEventArgs
 {
 }
 
-interface RegionsOfInterestControl
+interface RegionOfInterest : Windows.Media.Devices.IRegionOfInterest, Windows.Media.Devices.IRegionOfInterest2
 {
 }
 
-interface SceneModeControl
+interface RegionsOfInterestControl : Windows.Media.Devices.IRegionsOfInterestControl
 {
 }
 
-interface TorchControl
+interface SceneModeControl : Windows.Media.Devices.ISceneModeControl
 {
 }
 
-interface VideoDeviceController
+interface TorchControl : Windows.Media.Devices.ITorchControl
 {
 }
 
-interface VideoDeviceControllerGetDevicePropertyResult
+interface VideoDeviceController : Windows.Media.Devices.IVideoDeviceController, Windows.Media.Devices.IMediaDeviceController, Windows.Media.Devices.IAdvancedVideoCaptureDeviceController, Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2, Windows.Media.Devices.IAdvancedVideoCaptureDeviceController3, Windows.Media.Devices.IAdvancedVideoCaptureDeviceController4, Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5
 {
 }
 
-interface WhiteBalanceControl
+interface VideoDeviceControllerGetDevicePropertyResult : Windows.Media.Devices.IVideoDeviceControllerGetDevicePropertyResult
 {
 }
 
-interface ZoomControl
+interface WhiteBalanceControl : Windows.Media.Devices.IWhiteBalanceControl
 {
 }
 
-interface ZoomSettings
+interface ZoomControl : Windows.Media.Devices.IZoomControl, Windows.Media.Devices.IZoomControl2
+{
+}
+
+interface ZoomSettings : Windows.Media.Devices.IZoomSettings
 {
 }
 

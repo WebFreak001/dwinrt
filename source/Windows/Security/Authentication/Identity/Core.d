@@ -83,23 +83,23 @@ extern(Windows):
 	HRESULT get_ServiceResponse(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse* return_value);
 }
 
-interface MicrosoftAccountMultiFactorAuthenticationManager
+interface MicrosoftAccountMultiFactorAuthenticationManager : Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager
 {
 }
 
-interface MicrosoftAccountMultiFactorGetSessionsResult
+interface MicrosoftAccountMultiFactorGetSessionsResult : Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorGetSessionsResult
 {
 }
 
-interface MicrosoftAccountMultiFactorOneTimeCodedInfo
+interface MicrosoftAccountMultiFactorOneTimeCodedInfo : Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorOneTimeCodedInfo
 {
 }
 
-interface MicrosoftAccountMultiFactorSessionInfo
+interface MicrosoftAccountMultiFactorSessionInfo : Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorSessionInfo
 {
 }
 
-interface MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo
+interface MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo : Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo
 {
 }
 

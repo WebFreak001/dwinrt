@@ -12,3 +12,7 @@ extern(Windows):
 	HRESULT abi_GetParentProviderId(Windows.Gaming.Input.Custom.IGameControllerProvider provider, HSTRING* return_value);
 	HRESULT abi_GetProviderId(Windows.Gaming.Input.Custom.IGameControllerProvider provider, HSTRING* return_value);
 }
+
+interface GameControllerProviderInfo
+{
+}

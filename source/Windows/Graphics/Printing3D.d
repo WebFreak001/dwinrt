@@ -516,111 +516,111 @@ extern(Windows):
 	HRESULT set_Name(HSTRING value);
 }
 
-interface Print3DManager
+interface Print3DManager : Windows.Graphics.Printing3D.IPrint3DManager
 {
 }
 
-interface Print3DTask
+interface Print3DTask : Windows.Graphics.Printing3D.IPrint3DTask
 {
 }
 
-interface Print3DTaskCompletedEventArgs
+interface Print3DTaskCompletedEventArgs : Windows.Graphics.Printing3D.IPrint3DTaskCompletedEventArgs
 {
 }
 
-interface Print3DTaskRequest
+interface Print3DTaskRequest : Windows.Graphics.Printing3D.IPrint3DTaskRequest
 {
 }
 
-interface Print3DTaskRequestedEventArgs
+interface Print3DTaskRequestedEventArgs : Windows.Graphics.Printing3D.IPrint3DTaskRequestedEventArgs
 {
 }
 
-interface Print3DTaskSourceChangedEventArgs
+interface Print3DTaskSourceChangedEventArgs : Windows.Graphics.Printing3D.IPrint3DTaskSourceChangedEventArgs
 {
 }
 
-interface Print3DTaskSourceRequestedArgs
+interface Print3DTaskSourceRequestedArgs : Windows.Graphics.Printing3D.IPrint3DTaskSourceRequestedArgs
 {
 }
 
-interface Printing3D3MFPackage
+interface Printing3D3MFPackage : Windows.Graphics.Printing3D.IPrinting3D3MFPackage
 {
 }
 
-interface Printing3DBaseMaterial
+interface Printing3DBaseMaterial : Windows.Graphics.Printing3D.IPrinting3DBaseMaterial
 {
 }
 
-interface Printing3DBaseMaterialGroup
+interface Printing3DBaseMaterialGroup : Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroup
 {
 }
 
-interface Printing3DColorMaterial
+interface Printing3DColorMaterial : Windows.Graphics.Printing3D.IPrinting3DColorMaterial, Windows.Graphics.Printing3D.IPrinting3DColorMaterial2
 {
 }
 
-interface Printing3DColorMaterialGroup
+interface Printing3DColorMaterialGroup : Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroup
 {
 }
 
-interface Printing3DComponent
+interface Printing3DComponent : Windows.Graphics.Printing3D.IPrinting3DComponent
 {
 }
 
-interface Printing3DComponentWithMatrix
+interface Printing3DComponentWithMatrix : Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix
 {
 }
 
-interface Printing3DCompositeMaterial
+interface Printing3DCompositeMaterial : Windows.Graphics.Printing3D.IPrinting3DCompositeMaterial
 {
 }
 
-interface Printing3DCompositeMaterialGroup
+interface Printing3DCompositeMaterialGroup : Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup, Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup2
 {
 }
 
-interface Printing3DFaceReductionOptions
+interface Printing3DFaceReductionOptions : Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions
 {
 }
 
-interface Printing3DMaterial
+interface Printing3DMaterial : Windows.Graphics.Printing3D.IPrinting3DMaterial
 {
 }
 
-interface Printing3DMesh
+interface Printing3DMesh : Windows.Graphics.Printing3D.IPrinting3DMesh
 {
 }
 
-interface Printing3DMeshVerificationResult
+interface Printing3DMeshVerificationResult : Windows.Graphics.Printing3D.IPrinting3DMeshVerificationResult
 {
 }
 
-interface Printing3DModel
+interface Printing3DModel : Windows.Graphics.Printing3D.IPrinting3DModel, Windows.Graphics.Printing3D.IPrinting3DModel2
 {
 }
 
-interface Printing3DModelTexture
+interface Printing3DModelTexture : Windows.Graphics.Printing3D.IPrinting3DModelTexture
 {
 }
 
-interface Printing3DMultiplePropertyMaterial
+interface Printing3DMultiplePropertyMaterial : Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterial
 {
 }
 
-interface Printing3DMultiplePropertyMaterialGroup
+interface Printing3DMultiplePropertyMaterialGroup : Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroup
 {
 }
 
-interface Printing3DTexture2CoordMaterial
+interface Printing3DTexture2CoordMaterial : Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial
 {
 }
 
-interface Printing3DTexture2CoordMaterialGroup
+interface Printing3DTexture2CoordMaterialGroup : Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup, Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup2
 {
 }
 
-interface Printing3DTextureResource
+interface Printing3DTextureResource : Windows.Graphics.Printing3D.IPrinting3DTextureResource
 {
 }
 

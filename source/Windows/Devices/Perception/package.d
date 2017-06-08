@@ -813,111 +813,139 @@ extern(Windows):
 	HRESULT abi_IsEqual(Windows.Devices.Perception.PerceptionVideoProfile other, bool* return_result);
 }
 
-interface PerceptionColorFrame
+interface KnownCameraIntrinsicsProperties
 {
 }
 
-interface PerceptionColorFrameArrivedEventArgs
+interface KnownPerceptionColorFrameSourceProperties
 {
 }
 
-interface PerceptionColorFrameReader
+interface KnownPerceptionDepthFrameSourceProperties
 {
 }
 
-interface PerceptionColorFrameSource
+interface KnownPerceptionFrameSourceProperties
 {
 }
 
-interface PerceptionColorFrameSourceAddedEventArgs
+interface KnownPerceptionInfraredFrameSourceProperties
 {
 }
 
-interface PerceptionColorFrameSourceRemovedEventArgs
+interface KnownPerceptionVideoFrameSourceProperties
 {
 }
 
-interface PerceptionColorFrameSourceWatcher
+interface KnownPerceptionVideoProfileProperties
 {
 }
 
-interface PerceptionControlSession
+interface PerceptionColorFrame : Windows.Devices.Perception.IPerceptionColorFrame, Windows.Foundation.IClosable
 {
 }
 
-interface PerceptionDepthCorrelatedCameraIntrinsics
+interface PerceptionColorFrameArrivedEventArgs : Windows.Devices.Perception.IPerceptionColorFrameArrivedEventArgs
 {
 }
 
-interface PerceptionDepthCorrelatedCoordinateMapper
+interface PerceptionColorFrameReader : Windows.Devices.Perception.IPerceptionColorFrameReader, Windows.Foundation.IClosable
 {
 }
 
-interface PerceptionDepthFrame
+interface PerceptionColorFrameSource : Windows.Devices.Perception.IPerceptionColorFrameSource, Windows.Devices.Perception.IPerceptionColorFrameSource2
 {
 }
 
-interface PerceptionDepthFrameArrivedEventArgs
+interface PerceptionColorFrameSourceAddedEventArgs : Windows.Devices.Perception.IPerceptionColorFrameSourceAddedEventArgs
 {
 }
 
-interface PerceptionDepthFrameReader
+interface PerceptionColorFrameSourceRemovedEventArgs : Windows.Devices.Perception.IPerceptionColorFrameSourceRemovedEventArgs
 {
 }
 
-interface PerceptionDepthFrameSource
+interface PerceptionColorFrameSourceWatcher : Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher
 {
 }
 
-interface PerceptionDepthFrameSourceAddedEventArgs
+interface PerceptionControlSession : Windows.Devices.Perception.IPerceptionControlSession, Windows.Foundation.IClosable
 {
 }
 
-interface PerceptionDepthFrameSourceRemovedEventArgs
+interface PerceptionDepthCorrelatedCameraIntrinsics : Windows.Devices.Perception.IPerceptionDepthCorrelatedCameraIntrinsics
 {
 }
 
-interface PerceptionDepthFrameSourceWatcher
+interface PerceptionDepthCorrelatedCoordinateMapper : Windows.Devices.Perception.IPerceptionDepthCorrelatedCoordinateMapper
 {
 }
 
-interface PerceptionFrameSourcePropertiesChangedEventArgs
+interface PerceptionDepthFrame : Windows.Devices.Perception.IPerceptionDepthFrame, Windows.Foundation.IClosable
 {
 }
 
-interface PerceptionFrameSourcePropertyChangeResult
+interface PerceptionDepthFrameArrivedEventArgs : Windows.Devices.Perception.IPerceptionDepthFrameArrivedEventArgs
 {
 }
 
-interface PerceptionInfraredFrame
+interface PerceptionDepthFrameReader : Windows.Devices.Perception.IPerceptionDepthFrameReader, Windows.Foundation.IClosable
 {
 }
 
-interface PerceptionInfraredFrameArrivedEventArgs
+interface PerceptionDepthFrameSource : Windows.Devices.Perception.IPerceptionDepthFrameSource, Windows.Devices.Perception.IPerceptionDepthFrameSource2
 {
 }
 
-interface PerceptionInfraredFrameReader
+interface PerceptionDepthFrameSourceAddedEventArgs : Windows.Devices.Perception.IPerceptionDepthFrameSourceAddedEventArgs
 {
 }
 
-interface PerceptionInfraredFrameSource
+interface PerceptionDepthFrameSourceRemovedEventArgs : Windows.Devices.Perception.IPerceptionDepthFrameSourceRemovedEventArgs
 {
 }
 
-interface PerceptionInfraredFrameSourceAddedEventArgs
+interface PerceptionDepthFrameSourceWatcher : Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher
 {
 }
 
-interface PerceptionInfraredFrameSourceRemovedEventArgs
+interface PerceptionFrameSourcePropertiesChangedEventArgs : Windows.Devices.Perception.IPerceptionFrameSourcePropertiesChangedEventArgs
 {
 }
 
-interface PerceptionInfraredFrameSourceWatcher
+interface PerceptionFrameSourcePropertyChangeResult : Windows.Devices.Perception.IPerceptionFrameSourcePropertyChangeResult
 {
 }
 
-interface PerceptionVideoProfile
+interface PerceptionInfraredFrame : Windows.Devices.Perception.IPerceptionInfraredFrame, Windows.Foundation.IClosable
+{
+}
+
+interface PerceptionInfraredFrameArrivedEventArgs : Windows.Devices.Perception.IPerceptionInfraredFrameArrivedEventArgs
+{
+}
+
+interface PerceptionInfraredFrameReader : Windows.Devices.Perception.IPerceptionInfraredFrameReader, Windows.Foundation.IClosable
+{
+}
+
+interface PerceptionInfraredFrameSource : Windows.Devices.Perception.IPerceptionInfraredFrameSource, Windows.Devices.Perception.IPerceptionInfraredFrameSource2
+{
+}
+
+interface PerceptionInfraredFrameSourceAddedEventArgs : Windows.Devices.Perception.IPerceptionInfraredFrameSourceAddedEventArgs
+{
+}
+
+interface PerceptionInfraredFrameSourceRemovedEventArgs : Windows.Devices.Perception.IPerceptionInfraredFrameSourceRemovedEventArgs
+{
+}
+
+interface PerceptionInfraredFrameSourceWatcher : Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher
+{
+}
+
+interface PerceptionVideoProfile : Windows.Devices.Perception.IPerceptionVideoProfile
 {
 }
 

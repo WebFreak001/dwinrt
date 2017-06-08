@@ -38,6 +38,12 @@ extern(Windows):
 	HRESULT set_Value(HSTRING value);
 }
 
+@uuid("4d04b46f-c8bd-45b4-8899-0400d7c2c60f")
+@WinrtFactory("Windows.Data.Xml.Dom.XmlCDataSection")
+interface IXmlCDataSection : IInspectable
+{
+}
+
 @uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26")
 interface IXmlCharacterData : IInspectable
 {
@@ -52,6 +58,12 @@ extern(Windows):
 	HRESULT abi_InsertData(UINT32 offset, HSTRING data);
 	HRESULT abi_DeleteData(UINT32 offset, UINT32 count);
 	HRESULT abi_ReplaceData(UINT32 offset, UINT32 count, HSTRING data);
+}
+
+@uuid("bca474d5-b61f-4611-9cac-2e92e3476d47")
+@WinrtFactory("Windows.Data.Xml.Dom.XmlComment")
+interface IXmlComment : IInspectable
+{
 }
 
 @uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494")
@@ -78,6 +90,12 @@ extern(Windows):
 	HRESULT abi_CreateElementNS(IInspectable namespaceUri, HSTRING qualifiedName, Windows.Data.Xml.Dom.XmlElement* return_newElement);
 	HRESULT abi_GetElementById(HSTRING elementId, Windows.Data.Xml.Dom.XmlElement* return_element);
 	HRESULT abi_ImportNode(Windows.Data.Xml.Dom.IXmlNode node, bool deep, Windows.Data.Xml.Dom.IXmlNode* return_newNode);
+}
+
+@uuid("e2ea6a96-0c21-44a5-8bc9-9e4a262708ec")
+@WinrtFactory("Windows.Data.Xml.Dom.XmlDocumentFragment")
+interface IXmlDocumentFragment : IInspectable
+{
 }
 
 @uuid("6cd0e74e-ee65-4489-9ebf-ca43e87ba637")
@@ -158,6 +176,12 @@ extern(Windows):
 	HRESULT abi_RemoveAttributeNS(IInspectable namespaceUri, HSTRING localName);
 	HRESULT abi_SetAttributeNodeNS(Windows.Data.Xml.Dom.XmlAttribute newAttribute, Windows.Data.Xml.Dom.XmlAttribute* return_previousAttribute);
 	HRESULT abi_GetAttributeNodeNS(IInspectable namespaceUri, HSTRING localName, Windows.Data.Xml.Dom.XmlAttribute* return_previousAttribute);
+}
+
+@uuid("2e2f47bc-c3d0-4ccf-bb86-0ab8c36a61cf")
+@WinrtFactory("Windows.Data.Xml.Dom.XmlEntityReference")
+interface IXmlEntityReference : IInspectable
+{
 }
 
 @uuid("58aa07a8-fed6-46f7-b4c5-fb1ba72108d6")
@@ -282,67 +306,67 @@ extern(Windows):
 	HRESULT abi_SplitText(UINT32 offset, Windows.Data.Xml.Dom.IXmlText* return_secondPart);
 }
 
-interface DtdEntity
+interface DtdEntity : Windows.Data.Xml.Dom.IDtdEntity, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 }
 
-interface DtdNotation
+interface DtdNotation : Windows.Data.Xml.Dom.IDtdNotation, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 }
 
-interface XmlAttribute
+interface XmlAttribute : Windows.Data.Xml.Dom.IXmlAttribute, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 }
 
-interface XmlCDataSection
+interface XmlCDataSection : Windows.Data.Xml.Dom.IXmlCDataSection, Windows.Data.Xml.Dom.IXmlText, Windows.Data.Xml.Dom.IXmlCharacterData, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 }
 
-interface XmlComment
+interface XmlComment : Windows.Data.Xml.Dom.IXmlComment, Windows.Data.Xml.Dom.IXmlCharacterData, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 }
 
-interface XmlDocument
+interface XmlDocument : Windows.Data.Xml.Dom.IXmlDocument, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlDocumentIO, Windows.Data.Xml.Dom.IXmlDocumentIO2
 {
 }
 
-interface XmlDocumentFragment
+interface XmlDocumentFragment : Windows.Data.Xml.Dom.IXmlDocumentFragment, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 }
 
-interface XmlDocumentType
+interface XmlDocumentType : Windows.Data.Xml.Dom.IXmlDocumentType, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 }
 
-interface XmlDomImplementation
+interface XmlDomImplementation : Windows.Data.Xml.Dom.IXmlDomImplementation
 {
 }
 
-interface XmlElement
+interface XmlElement : Windows.Data.Xml.Dom.IXmlElement, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 }
 
-interface XmlEntityReference
+interface XmlEntityReference : Windows.Data.Xml.Dom.IXmlEntityReference, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 }
 
-interface XmlLoadSettings
+interface XmlLoadSettings : Windows.Data.Xml.Dom.IXmlLoadSettings
 {
 }
 
-interface XmlNamedNodeMap
+interface XmlNamedNodeMap : Windows.Data.Xml.Dom.IXmlNamedNodeMap, Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode), Windows.Foundation.Collections.IIterable!(Windows.Data.Xml.Dom.IXmlNode)
 {
 }
 
-interface XmlNodeList
+interface XmlNodeList : Windows.Data.Xml.Dom.IXmlNodeList, Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode), Windows.Foundation.Collections.IIterable!(Windows.Data.Xml.Dom.IXmlNode)
 {
 }
 
-interface XmlProcessingInstruction
+interface XmlProcessingInstruction : Windows.Data.Xml.Dom.IXmlProcessingInstruction, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 }
 
-interface XmlText
+interface XmlText : Windows.Data.Xml.Dom.IXmlText, Windows.Data.Xml.Dom.IXmlCharacterData, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 }
 

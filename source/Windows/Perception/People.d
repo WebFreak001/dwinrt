@@ -14,6 +14,6 @@ extern(Windows):
 	HRESULT get_UpDirection(Windows.Foundation.Numerics.Vector3* return_value);
 }
 
-interface HeadPose
+interface HeadPose : Windows.Perception.People.IHeadPose
 {
 }

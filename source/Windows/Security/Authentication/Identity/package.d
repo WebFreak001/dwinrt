@@ -36,10 +36,10 @@ extern(Windows):
 	HRESULT get_Current(Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationManager* return_value);
 }
 
-interface EnterpriseKeyCredentialRegistrationInfo
+interface EnterpriseKeyCredentialRegistrationInfo : Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationInfo
 {
 }
 
-interface EnterpriseKeyCredentialRegistrationManager
+interface EnterpriseKeyCredentialRegistrationManager : Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationManager
 {
 }

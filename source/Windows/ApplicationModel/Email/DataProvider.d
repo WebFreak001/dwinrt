@@ -432,130 +432,130 @@ extern(Windows):
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
 }
 
-interface EmailDataProviderConnection
+interface EmailDataProviderConnection : Windows.ApplicationModel.Email.DataProvider.IEmailDataProviderConnection
 {
 }
 
-interface EmailDataProviderTriggerDetails
+interface EmailDataProviderTriggerDetails : Windows.ApplicationModel.Email.DataProvider.IEmailDataProviderTriggerDetails
 {
 }
 
-interface EmailMailboxCreateFolderRequest
+interface EmailMailboxCreateFolderRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequest
 {
 }
 
-interface EmailMailboxCreateFolderRequestEventArgs
+interface EmailMailboxCreateFolderRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequestEventArgs
 {
 }
 
-interface EmailMailboxDeleteFolderRequest
+interface EmailMailboxDeleteFolderRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDeleteFolderRequest
 {
 }
 
-interface EmailMailboxDeleteFolderRequestEventArgs
+interface EmailMailboxDeleteFolderRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDeleteFolderRequestEventArgs
 {
 }
 
-interface EmailMailboxDownloadAttachmentRequest
+interface EmailMailboxDownloadAttachmentRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequest
 {
 }
 
-interface EmailMailboxDownloadAttachmentRequestEventArgs
+interface EmailMailboxDownloadAttachmentRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequestEventArgs
 {
 }
 
-interface EmailMailboxDownloadMessageRequest
+interface EmailMailboxDownloadMessageRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadMessageRequest
 {
 }
 
-interface EmailMailboxDownloadMessageRequestEventArgs
+interface EmailMailboxDownloadMessageRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadMessageRequestEventArgs
 {
 }
 
-interface EmailMailboxEmptyFolderRequest
+interface EmailMailboxEmptyFolderRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxEmptyFolderRequest
 {
 }
 
-interface EmailMailboxEmptyFolderRequestEventArgs
+interface EmailMailboxEmptyFolderRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxEmptyFolderRequestEventArgs
 {
 }
 
-interface EmailMailboxForwardMeetingRequest
+interface EmailMailboxForwardMeetingRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest
 {
 }
 
-interface EmailMailboxForwardMeetingRequestEventArgs
+interface EmailMailboxForwardMeetingRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequestEventArgs
 {
 }
 
-interface EmailMailboxGetAutoReplySettingsRequest
+interface EmailMailboxGetAutoReplySettingsRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxGetAutoReplySettingsRequest
 {
 }
 
-interface EmailMailboxGetAutoReplySettingsRequestEventArgs
+interface EmailMailboxGetAutoReplySettingsRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxGetAutoReplySettingsRequestEventArgs
 {
 }
 
-interface EmailMailboxMoveFolderRequest
+interface EmailMailboxMoveFolderRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequest
 {
 }
 
-interface EmailMailboxMoveFolderRequestEventArgs
+interface EmailMailboxMoveFolderRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequestEventArgs
 {
 }
 
-interface EmailMailboxProposeNewTimeForMeetingRequest
+interface EmailMailboxProposeNewTimeForMeetingRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest
 {
 }
 
-interface EmailMailboxProposeNewTimeForMeetingRequestEventArgs
+interface EmailMailboxProposeNewTimeForMeetingRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequestEventArgs
 {
 }
 
-interface EmailMailboxResolveRecipientsRequest
+interface EmailMailboxResolveRecipientsRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxResolveRecipientsRequest
 {
 }
 
-interface EmailMailboxResolveRecipientsRequestEventArgs
+interface EmailMailboxResolveRecipientsRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxResolveRecipientsRequestEventArgs
 {
 }
 
-interface EmailMailboxServerSearchReadBatchRequest
+interface EmailMailboxServerSearchReadBatchRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest
 {
 }
 
-interface EmailMailboxServerSearchReadBatchRequestEventArgs
+interface EmailMailboxServerSearchReadBatchRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequestEventArgs
 {
 }
 
-interface EmailMailboxSetAutoReplySettingsRequest
+interface EmailMailboxSetAutoReplySettingsRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSetAutoReplySettingsRequest
 {
 }
 
-interface EmailMailboxSetAutoReplySettingsRequestEventArgs
+interface EmailMailboxSetAutoReplySettingsRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSetAutoReplySettingsRequestEventArgs
 {
 }
 
-interface EmailMailboxSyncManagerSyncRequest
+interface EmailMailboxSyncManagerSyncRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSyncManagerSyncRequest
 {
 }
 
-interface EmailMailboxSyncManagerSyncRequestEventArgs
+interface EmailMailboxSyncManagerSyncRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSyncManagerSyncRequestEventArgs
 {
 }
 
-interface EmailMailboxUpdateMeetingResponseRequest
+interface EmailMailboxUpdateMeetingResponseRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest
 {
 }
 
-interface EmailMailboxUpdateMeetingResponseRequestEventArgs
+interface EmailMailboxUpdateMeetingResponseRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequestEventArgs
 {
 }
 
-interface EmailMailboxValidateCertificatesRequest
+interface EmailMailboxValidateCertificatesRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxValidateCertificatesRequest
 {
 }
 
-interface EmailMailboxValidateCertificatesRequestEventArgs
+interface EmailMailboxValidateCertificatesRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxValidateCertificatesRequestEventArgs
 {
 }

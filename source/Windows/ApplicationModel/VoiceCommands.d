@@ -164,39 +164,43 @@ extern(Windows):
 	HRESULT set_SpokenMessage(HSTRING value);
 }
 
-interface VoiceCommand
+interface VoiceCommand : Windows.ApplicationModel.VoiceCommands.IVoiceCommand
 {
 }
 
-interface VoiceCommandCompletedEventArgs
+interface VoiceCommandCompletedEventArgs : Windows.ApplicationModel.VoiceCommands.IVoiceCommandCompletedEventArgs
 {
 }
 
-interface VoiceCommandConfirmationResult
+interface VoiceCommandConfirmationResult : Windows.ApplicationModel.VoiceCommands.IVoiceCommandConfirmationResult
 {
 }
 
-interface VoiceCommandContentTile
+interface VoiceCommandContentTile : Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile
 {
 }
 
-interface VoiceCommandDefinition
+interface VoiceCommandDefinition : Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinition
 {
 }
 
-interface VoiceCommandDisambiguationResult
+interface VoiceCommandDefinitionManager
 {
 }
 
-interface VoiceCommandResponse
+interface VoiceCommandDisambiguationResult : Windows.ApplicationModel.VoiceCommands.IVoiceCommandDisambiguationResult
 {
 }
 
-interface VoiceCommandServiceConnection
+interface VoiceCommandResponse : Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse
 {
 }
 
-interface VoiceCommandUserMessage
+interface VoiceCommandServiceConnection : Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection
+{
+}
+
+interface VoiceCommandUserMessage : Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage
 {
 }
 

@@ -313,31 +313,31 @@ extern(Windows):
 	HRESULT abi_FromGameController(Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.UINavigationController* return_value);
 }
 
-interface ArcadeStick
+interface ArcadeStick : Windows.Gaming.Input.IArcadeStick, Windows.Gaming.Input.IGameController, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
 }
 
-interface FlightStick
+interface FlightStick : Windows.Gaming.Input.IFlightStick, Windows.Gaming.Input.IGameController, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
 }
 
-interface Gamepad
+interface Gamepad : Windows.Gaming.Input.IGamepad, Windows.Gaming.Input.IGameController, Windows.Gaming.Input.IGamepad2, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
 }
 
-interface Headset
+interface Headset : Windows.Gaming.Input.IHeadset, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
 }
 
-interface RacingWheel
+interface RacingWheel : Windows.Gaming.Input.IRacingWheel, Windows.Gaming.Input.IGameController, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
 }
 
-interface RawGameController
+interface RawGameController : Windows.Gaming.Input.IRawGameController, Windows.Gaming.Input.IGameController, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
 }
 
-interface UINavigationController
+interface UINavigationController : Windows.Gaming.Input.IUINavigationController, Windows.Gaming.Input.IGameController, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
 }
 

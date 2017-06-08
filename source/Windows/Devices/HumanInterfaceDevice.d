@@ -197,43 +197,43 @@ extern(Windows):
 	HRESULT abi_GetNumericControlByDescription(Windows.Devices.HumanInterfaceDevice.HidNumericControlDescription controlDescription, Windows.Devices.HumanInterfaceDevice.HidNumericControl* return_value);
 }
 
-interface HidBooleanControl
+interface HidBooleanControl : Windows.Devices.HumanInterfaceDevice.IHidBooleanControl
 {
 }
 
-interface HidBooleanControlDescription
+interface HidBooleanControlDescription : Windows.Devices.HumanInterfaceDevice.IHidBooleanControlDescription, Windows.Devices.HumanInterfaceDevice.IHidBooleanControlDescription2
 {
 }
 
-interface HidCollection
+interface HidCollection : Windows.Devices.HumanInterfaceDevice.IHidCollection
 {
 }
 
-interface HidDevice
+interface HidDevice : Windows.Devices.HumanInterfaceDevice.IHidDevice, Windows.Foundation.IClosable
 {
 }
 
-interface HidFeatureReport
+interface HidFeatureReport : Windows.Devices.HumanInterfaceDevice.IHidFeatureReport
 {
 }
 
-interface HidInputReport
+interface HidInputReport : Windows.Devices.HumanInterfaceDevice.IHidInputReport
 {
 }
 
-interface HidInputReportReceivedEventArgs
+interface HidInputReportReceivedEventArgs : Windows.Devices.HumanInterfaceDevice.IHidInputReportReceivedEventArgs
 {
 }
 
-interface HidNumericControl
+interface HidNumericControl : Windows.Devices.HumanInterfaceDevice.IHidNumericControl
 {
 }
 
-interface HidNumericControlDescription
+interface HidNumericControlDescription : Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription
 {
 }
 
-interface HidOutputReport
+interface HidOutputReport : Windows.Devices.HumanInterfaceDevice.IHidOutputReport
 {
 }
 

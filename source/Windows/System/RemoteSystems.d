@@ -110,6 +110,11 @@ extern(Windows):
 	HRESULT abi_Create(Windows.System.RemoteSystems.RemoteSystemDiscoveryType discoveryType, Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter* return_result);
 }
 
+@uuid("4a3ba9e4-99eb-45eb-ba16-0367728ff374")
+interface IRemoteSystemFilter : IInspectable
+{
+}
+
 @uuid("38e1c9ec-22c3-4ef6-901a-bbb1c7aad4ed")
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemKindFilter")
 interface IRemoteSystemKindFilter : IInspectable
@@ -517,131 +522,139 @@ extern(Windows):
 	HRESULT remove_RemoteSystemRemoved(EventRegistrationToken token);
 }
 
-interface RemoteSystem
+interface KnownRemoteSystemCapabilities
 {
 }
 
-interface RemoteSystemAddedEventArgs
+interface RemoteSystem : Windows.System.RemoteSystems.IRemoteSystem, Windows.System.RemoteSystems.IRemoteSystem2
 {
 }
 
-interface RemoteSystemAuthorizationKindFilter
+interface RemoteSystemAddedEventArgs : Windows.System.RemoteSystems.IRemoteSystemAddedEventArgs
 {
 }
 
-interface RemoteSystemConnectionRequest
+interface RemoteSystemAuthorizationKindFilter : Windows.System.RemoteSystems.IRemoteSystemAuthorizationKindFilter, Windows.System.RemoteSystems.IRemoteSystemFilter
 {
 }
 
-interface RemoteSystemDiscoveryTypeFilter
+interface RemoteSystemConnectionRequest : Windows.System.RemoteSystems.IRemoteSystemConnectionRequest
 {
 }
 
-interface RemoteSystemKindFilter
+interface RemoteSystemDiscoveryTypeFilter : Windows.System.RemoteSystems.IRemoteSystemDiscoveryTypeFilter, Windows.System.RemoteSystems.IRemoteSystemFilter
 {
 }
 
-interface RemoteSystemRemovedEventArgs
+interface RemoteSystemKindFilter : Windows.System.RemoteSystems.IRemoteSystemKindFilter, Windows.System.RemoteSystems.IRemoteSystemFilter
 {
 }
 
-interface RemoteSystemSession
+interface RemoteSystemKinds
 {
 }
 
-interface RemoteSystemSessionAddedEventArgs
+interface RemoteSystemRemovedEventArgs : Windows.System.RemoteSystems.IRemoteSystemRemovedEventArgs
 {
 }
 
-interface RemoteSystemSessionController
+interface RemoteSystemSession : Windows.System.RemoteSystems.IRemoteSystemSession, Windows.Foundation.IClosable
 {
 }
 
-interface RemoteSystemSessionCreationResult
+interface RemoteSystemSessionAddedEventArgs : Windows.System.RemoteSystems.IRemoteSystemSessionAddedEventArgs
 {
 }
 
-interface RemoteSystemSessionDisconnectedEventArgs
+interface RemoteSystemSessionController : Windows.System.RemoteSystems.IRemoteSystemSessionController
 {
 }
 
-interface RemoteSystemSessionInfo
+interface RemoteSystemSessionCreationResult : Windows.System.RemoteSystems.IRemoteSystemSessionCreationResult
 {
 }
 
-interface RemoteSystemSessionInvitation
+interface RemoteSystemSessionDisconnectedEventArgs : Windows.System.RemoteSystems.IRemoteSystemSessionDisconnectedEventArgs
 {
 }
 
-interface RemoteSystemSessionInvitationListener
+interface RemoteSystemSessionInfo : Windows.System.RemoteSystems.IRemoteSystemSessionInfo
 {
 }
 
-interface RemoteSystemSessionInvitationReceivedEventArgs
+interface RemoteSystemSessionInvitation : Windows.System.RemoteSystems.IRemoteSystemSessionInvitation
 {
 }
 
-interface RemoteSystemSessionJoinRequest
+interface RemoteSystemSessionInvitationListener : Windows.System.RemoteSystems.IRemoteSystemSessionInvitationListener
 {
 }
 
-interface RemoteSystemSessionJoinRequestedEventArgs
+interface RemoteSystemSessionInvitationReceivedEventArgs : Windows.System.RemoteSystems.IRemoteSystemSessionInvitationReceivedEventArgs
 {
 }
 
-interface RemoteSystemSessionJoinResult
+interface RemoteSystemSessionJoinRequest : Windows.System.RemoteSystems.IRemoteSystemSessionJoinRequest
 {
 }
 
-interface RemoteSystemSessionMessageChannel
+interface RemoteSystemSessionJoinRequestedEventArgs : Windows.System.RemoteSystems.IRemoteSystemSessionJoinRequestedEventArgs
 {
 }
 
-interface RemoteSystemSessionOptions
+interface RemoteSystemSessionJoinResult : Windows.System.RemoteSystems.IRemoteSystemSessionJoinResult
 {
 }
 
-interface RemoteSystemSessionParticipant
+interface RemoteSystemSessionMessageChannel : Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel
 {
 }
 
-interface RemoteSystemSessionParticipantAddedEventArgs
+interface RemoteSystemSessionOptions : Windows.System.RemoteSystems.IRemoteSystemSessionOptions
 {
 }
 
-interface RemoteSystemSessionParticipantRemovedEventArgs
+interface RemoteSystemSessionParticipant : Windows.System.RemoteSystems.IRemoteSystemSessionParticipant
 {
 }
 
-interface RemoteSystemSessionParticipantWatcher
+interface RemoteSystemSessionParticipantAddedEventArgs : Windows.System.RemoteSystems.IRemoteSystemSessionParticipantAddedEventArgs
 {
 }
 
-interface RemoteSystemSessionRemovedEventArgs
+interface RemoteSystemSessionParticipantRemovedEventArgs : Windows.System.RemoteSystems.IRemoteSystemSessionParticipantRemovedEventArgs
 {
 }
 
-interface RemoteSystemSessionUpdatedEventArgs
+interface RemoteSystemSessionParticipantWatcher : Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher
 {
 }
 
-interface RemoteSystemSessionValueSetReceivedEventArgs
+interface RemoteSystemSessionRemovedEventArgs : Windows.System.RemoteSystems.IRemoteSystemSessionRemovedEventArgs
 {
 }
 
-interface RemoteSystemSessionWatcher
+interface RemoteSystemSessionUpdatedEventArgs : Windows.System.RemoteSystems.IRemoteSystemSessionUpdatedEventArgs
 {
 }
 
-interface RemoteSystemStatusTypeFilter
+interface RemoteSystemSessionValueSetReceivedEventArgs : Windows.System.RemoteSystems.IRemoteSystemSessionValueSetReceivedEventArgs
 {
 }
 
-interface RemoteSystemUpdatedEventArgs
+interface RemoteSystemSessionWatcher : Windows.System.RemoteSystems.IRemoteSystemSessionWatcher
 {
 }
 
-interface RemoteSystemWatcher
+interface RemoteSystemStatusTypeFilter : Windows.System.RemoteSystems.IRemoteSystemStatusTypeFilter, Windows.System.RemoteSystems.IRemoteSystemFilter
+{
+}
+
+interface RemoteSystemUpdatedEventArgs : Windows.System.RemoteSystems.IRemoteSystemUpdatedEventArgs
+{
+}
+
+interface RemoteSystemWatcher : Windows.System.RemoteSystems.IRemoteSystemWatcher
 {
 }
 

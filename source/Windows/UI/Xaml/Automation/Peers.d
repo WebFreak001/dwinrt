@@ -8,6 +8,12 @@ struct RawElementProviderRuntimeId
 	UINT32 Part2;
 }
 
+@uuid("8b4acfeb-89fa-4f13-84be-35ca5b7c9590")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.AppBarAutomationPeer")
+interface IAppBarAutomationPeer : IInspectable
+{
+}
+
 @uuid("8360f4e2-e396-4517-af5d-f4cf34c54edf")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AppBarAutomationPeer")
 interface IAppBarAutomationPeerFactory : IInspectable
@@ -16,6 +22,12 @@ interface IAppBarAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.AppBar owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.AppBarAutomationPeer* return_instance);
+}
+
+@uuid("443262b2-4f6d-4b76-9d2e-3eff777e8864")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.AppBarButtonAutomationPeer")
+interface IAppBarButtonAutomationPeer : IInspectable
+{
 }
 
 @uuid("aef0342a-acb7-42dc-97e3-847071865fd6")
@@ -28,6 +40,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.AppBarButton owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.AppBarButtonAutomationPeer* return_instance);
 }
 
+@uuid("8464efad-9655-4aff-9550-63ae9ec8fe9c")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.AppBarToggleButtonAutomationPeer")
+interface IAppBarToggleButtonAutomationPeer : IInspectable
+{
+}
+
 @uuid("d6f9139d-02c1-4221-9591-7d4efeb74701")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.AppBarToggleButtonAutomationPeer")
 interface IAppBarToggleButtonAutomationPeerFactory : IInspectable
@@ -36,6 +54,12 @@ interface IAppBarToggleButtonAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.AppBarToggleButton owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.AppBarToggleButtonAutomationPeer* return_instance);
+}
+
+@uuid("2f32c302-f99b-491d-9726-a5e181643efa")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutoSuggestBoxAutomationPeer")
+interface IAutoSuggestBoxAutomationPeer : IInspectable
+{
 }
 
 @uuid("80046849-18e7-4475-b362-4bbd53d24562")
@@ -90,6 +114,12 @@ extern(Windows):
 	deprecated("Consider using GetElementFromPoint, which is an improved version of GetPeerFromPoint. For more info, see MSDN.")
 	HRESULT abi_GetPeerFromPoint(Windows.Foundation.Point point, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue);
 	HRESULT abi_GetLiveSetting(Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting* return_returnValue);
+}
+
+@uuid("ea1f89c7-ebf5-4ab8-88f7-680d821dac61")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.AutomationPeer")
+interface IAutomationPeer2 : IInspectable
+{
 }
 
 @uuid("d3cfb977-0084-41d7-a221-28158d3bc32c")
@@ -321,6 +351,12 @@ extern(Windows):
 	HRESULT abi_GenerateRawElementProviderRuntimeId(Windows.UI.Xaml.Automation.Peers.RawElementProviderRuntimeId* return_returnValue);
 }
 
+@uuid("fb77efbe-39ec-4508-8ac3-51a1424027d7")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ButtonAutomationPeer")
+interface IButtonAutomationPeer : IInspectable
+{
+}
+
 @uuid("3fdb9f49-f4ab-4780-8644-03376299a175")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ButtonAutomationPeer")
 interface IButtonAutomationPeerFactory : IInspectable
@@ -329,6 +365,12 @@ interface IButtonAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Button owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ButtonAutomationPeer* return_instance);
+}
+
+@uuid("a4f3b5b6-7585-4e0b-96d2-08cf6f28befa")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer")
+interface IButtonBaseAutomationPeer : IInspectable
+{
 }
 
 @uuid("8a04091e-e6b2-4c60-a759-c13ca45165ed")
@@ -341,6 +383,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.ButtonBase owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer* return_instance);
 }
 
+@uuid("dcc44ee0-fa45-45c6-8bb7-320d808f5958")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.CaptureElementAutomationPeer")
+interface ICaptureElementAutomationPeer : IInspectable
+{
+}
+
 @uuid("9b92ef48-85e9-4869-b175-8f7cf45a6d9f")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.CaptureElementAutomationPeer")
 interface ICaptureElementAutomationPeerFactory : IInspectable
@@ -349,6 +397,12 @@ interface ICaptureElementAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.CaptureElement owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.CaptureElementAutomationPeer* return_instance);
+}
+
+@uuid("eb15bc42-c0a9-46c6-ac24-b83de429c733")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.CheckBoxAutomationPeer")
+interface ICheckBoxAutomationPeer : IInspectable
+{
 }
 
 @uuid("b75c775d-eb8f-44ef-a27c-e26ac7de8333")
@@ -361,6 +415,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.CheckBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.CheckBoxAutomationPeer* return_instance);
 }
 
+@uuid("7eb40d0b-75c5-4263-ba6a-d4a54fb0f239")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ComboBoxAutomationPeer")
+interface IComboBoxAutomationPeer : IInspectable
+{
+}
+
 @uuid("098e5b0d-1b90-40b9-9be3-b23267eb13cf")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ComboBoxAutomationPeer")
 interface IComboBoxAutomationPeerFactory : IInspectable
@@ -369,6 +429,12 @@ interface IComboBoxAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ComboBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ComboBoxAutomationPeer* return_instance);
+}
+
+@uuid("12ddc76e-9552-446a-82ee-938cc371800f")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ComboBoxItemAutomationPeer")
+interface IComboBoxItemAutomationPeer : IInspectable
+{
 }
 
 @uuid("134ac7fc-397a-403f-a6ec-1ce8beda15e5")
@@ -381,6 +447,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ComboBoxItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ComboBoxItemAutomationPeer* return_instance);
 }
 
+@uuid("4fef6df2-289c-4c04-831b-5a668c6d7104")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ComboBoxItemDataAutomationPeer")
+interface IComboBoxItemDataAutomationPeer : IInspectable
+{
+}
+
 @uuid("14a8d4f6-469a-41ba-9d93-44a1a55da872")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ComboBoxItemDataAutomationPeer")
 interface IComboBoxItemDataAutomationPeerFactory : IInspectable
@@ -389,6 +461,12 @@ interface IComboBoxItemDataAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.ComboBoxAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ComboBoxItemDataAutomationPeer* return_instance);
+}
+
+@uuid("d07d357f-a0b9-45dc-991a-76c505e7d0f5")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.DatePickerAutomationPeer")
+interface IDatePickerAutomationPeer : IInspectable
+{
 }
 
 @uuid("e5667d19-9157-4436-9f4d-7fb99174b48e")
@@ -401,6 +479,18 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.DatePicker owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.DatePickerAutomationPeer* return_instance);
 }
 
+@uuid("752aed38-c2bf-4880-82b2-a6c05e90c135")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.DatePickerFlyoutPresenterAutomationPeer")
+interface IDatePickerFlyoutPresenterAutomationPeer : IInspectable
+{
+}
+
+@uuid("8ec0353a-4284-4b00-aef8-a2688ea5e3c4")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.FlipViewAutomationPeer")
+interface IFlipViewAutomationPeer : IInspectable
+{
+}
+
 @uuid("4395ab0d-8d83-483c-88eb-e2617b0d293f")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.FlipViewAutomationPeer")
 interface IFlipViewAutomationPeerFactory : IInspectable
@@ -409,6 +499,12 @@ interface IFlipViewAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.FlipView owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.FlipViewAutomationPeer* return_instance);
+}
+
+@uuid("c83034de-fa08-4bd3-aeb2-d2e5bfa04df9")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.FlipViewItemAutomationPeer")
+interface IFlipViewItemAutomationPeer : IInspectable
+{
 }
 
 @uuid("69109356-d0e5-4c10-a09c-ad0bf1b0cb01")
@@ -421,6 +517,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.FlipViewItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.FlipViewItemAutomationPeer* return_instance);
 }
 
+@uuid("b0986175-00bc-4118-8a6f-16ee9c15d968")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.FlipViewItemDataAutomationPeer")
+interface IFlipViewItemDataAutomationPeer : IInspectable
+{
+}
+
 @uuid("3c864393-0aea-4e78-bc11-b775cac4114c")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.FlipViewItemDataAutomationPeer")
 interface IFlipViewItemDataAutomationPeerFactory : IInspectable
@@ -429,6 +531,12 @@ interface IFlipViewItemDataAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.FlipViewAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.FlipViewItemDataAutomationPeer* return_instance);
+}
+
+@uuid("a01840b4-5fca-456f-98ea-300eb40b585e")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.FlyoutPresenterAutomationPeer")
+interface IFlyoutPresenterAutomationPeer : IInspectable
+{
 }
 
 @uuid("f350155f-8924-44c0-ba44-653fe79f1efb")
@@ -472,6 +580,12 @@ extern(Windows):
 	HRESULT abi_CreatePeerForElement(Windows.UI.Xaml.UIElement element, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue);
 }
 
+@uuid("1c4401a4-d951-49ca-8f82-c7f3c60681b0")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.GridViewAutomationPeer")
+interface IGridViewAutomationPeer : IInspectable
+{
+}
+
 @uuid("8aca59dd-22a7-4800-894b-c1f485f38953")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.GridViewAutomationPeer")
 interface IGridViewAutomationPeerFactory : IInspectable
@@ -480,6 +594,12 @@ interface IGridViewAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.GridView owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.GridViewAutomationPeer* return_instance);
+}
+
+@uuid("e3dcef3a-e08a-48e7-b23a-2be5b66e474e")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.GridViewHeaderItemAutomationPeer")
+interface IGridViewHeaderItemAutomationPeer : IInspectable
+{
 }
 
 @uuid("2c80b4d2-ffc2-4157-88dd-59cd92e39715")
@@ -492,6 +612,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.GridViewHeaderItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.GridViewHeaderItemAutomationPeer* return_instance);
 }
 
+@uuid("93ef2d07-346c-4166-a4ba-bc6a181e7f33")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.GridViewItemAutomationPeer")
+interface IGridViewItemAutomationPeer : IInspectable
+{
+}
+
 @uuid("fafec376-f22e-466d-913c-ae24ccdb160f")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.GridViewItemAutomationPeer")
 interface IGridViewItemAutomationPeerFactory : IInspectable
@@ -500,6 +626,12 @@ interface IGridViewItemAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.GridViewItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.GridViewItemAutomationPeer* return_instance);
+}
+
+@uuid("f3f4868f-29d4-4094-8c54-ea61a88294a4")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.GridViewItemDataAutomationPeer")
+interface IGridViewItemDataAutomationPeer : IInspectable
+{
 }
 
 @uuid("a65e7a88-770d-402c-996f-67506af2a4af")
@@ -512,6 +644,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.GridViewAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.GridViewItemDataAutomationPeer* return_instance);
 }
 
+@uuid("1914fe6d-0740-4236-9ee1-38cf19c1c388")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.GroupItemAutomationPeer")
+interface IGroupItemAutomationPeer : IInspectable
+{
+}
+
 @uuid("56a64567-f21c-4c90-b379-15a27c7f8409")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.GroupItemAutomationPeer")
 interface IGroupItemAutomationPeerFactory : IInspectable
@@ -520,6 +658,12 @@ interface IGroupItemAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.GroupItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.GroupItemAutomationPeer* return_instance);
+}
+
+@uuid("4ddee056-4ebc-4620-a05d-903e3c9a4ead")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.HubAutomationPeer")
+interface IHubAutomationPeer : IInspectable
+{
 }
 
 @uuid("c762d43f-79dd-43ee-8777-8d08b39aa065")
@@ -532,6 +676,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Hub owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.HubAutomationPeer* return_instance);
 }
 
+@uuid("16d91ff7-7431-4d82-83ce-cfa3192b0f18")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.HubSectionAutomationPeer")
+interface IHubSectionAutomationPeer : IInspectable
+{
+}
+
 @uuid("c68e27e8-17ec-4329-91ae-2d0b2339d498")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.HubSectionAutomationPeer")
 interface IHubSectionAutomationPeerFactory : IInspectable
@@ -540,6 +690,12 @@ interface IHubSectionAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.HubSection owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.HubSectionAutomationPeer* return_instance);
+}
+
+@uuid("aa7afcb1-0edf-46d9-aa9e-0eb21d140097")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.HyperlinkButtonAutomationPeer")
+interface IHyperlinkButtonAutomationPeer : IInspectable
+{
 }
 
 @uuid("59bc1661-c182-49af-9526-44b88e628455")
@@ -552,6 +708,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.HyperlinkButton owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.HyperlinkButtonAutomationPeer* return_instance);
 }
 
+@uuid("9b0bbf8c-60a2-48bf-ab2c-1a52a451d2d4")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ImageAutomationPeer")
+interface IImageAutomationPeer : IInspectable
+{
+}
+
 @uuid("90304003-687d-47bf-b3a2-4babcad8ef50")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ImageAutomationPeer")
 interface IImageAutomationPeerFactory : IInspectable
@@ -560,6 +722,12 @@ interface IImageAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Image owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ImageAutomationPeer* return_instance);
+}
+
+@uuid("123baaa4-f2e8-4bcb-9382-5dfdd11fe45f")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.InkToolbarAutomationPeer")
+interface IInkToolbarAutomationPeer : IInspectable
+{
 }
 
 @uuid("953c34f6-3b31-47a7-b3bf-25d3ae99c317")
@@ -581,6 +749,12 @@ interface IItemAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer* return_instance);
+}
+
+@uuid("96e76bf1-37f7-4088-925d-65268e83e34d")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer")
+interface IItemsControlAutomationPeer : IInspectable
+{
 }
 
 @uuid("c48d8917-95a8-47b8-a517-bf891a6c039b")
@@ -613,6 +787,12 @@ extern(Windows):
 	HRESULT abi_OnCreateItemAutomationPeer(IInspectable item, Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer* return_returnValue);
 }
 
+@uuid("8cd0d608-b402-4a6e-bd9a-343f8845eb32")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListBoxAutomationPeer")
+interface IListBoxAutomationPeer : IInspectable
+{
+}
+
 @uuid("e2362185-7df6-49f7-8abc-4c33f1a3d46e")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListBoxAutomationPeer")
 interface IListBoxAutomationPeerFactory : IInspectable
@@ -621,6 +801,12 @@ interface IListBoxAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListBoxAutomationPeer* return_instance);
+}
+
+@uuid("1bc6e1c6-2997-42df-99eb-92bc1dd149fb")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListBoxItemAutomationPeer")
+interface IListBoxItemAutomationPeer : IInspectable
+{
 }
 
 @uuid("509f9dd8-b0aa-443f-a110-41209af44f1c")
@@ -633,6 +819,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListBoxItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListBoxItemAutomationPeer* return_instance);
 }
 
+@uuid("fd7d5fee-fde0-482a-8084-dcebba5b9806")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListBoxItemDataAutomationPeer")
+interface IListBoxItemDataAutomationPeer : IInspectable
+{
+}
+
 @uuid("d7924e16-bd8d-4662-a995-20ff9a056093")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListBoxItemDataAutomationPeer")
 interface IListBoxItemDataAutomationPeerFactory : IInspectable
@@ -641,6 +833,18 @@ interface IListBoxItemDataAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.ListBoxAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListBoxItemDataAutomationPeer* return_instance);
+}
+
+@uuid("56dfdc58-2395-4060-8047-8ea463698a24")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListPickerFlyoutPresenterAutomationPeer")
+interface IListPickerFlyoutPresenterAutomationPeer : IInspectable
+{
+}
+
+@uuid("73cecc87-c0dc-4260-9148-75e9864a7230")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewAutomationPeer")
+interface IListViewAutomationPeer : IInspectable
+{
 }
 
 @uuid("65f39174-eaa2-4e44-8be6-4cca28cd0288")
@@ -653,6 +857,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListView owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListViewAutomationPeer* return_instance);
 }
 
+@uuid("87ec7649-b83d-4e55-9afd-bd835e748f5c")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer")
+interface IListViewBaseAutomationPeer : IInspectable
+{
+}
+
 @uuid("70d3c2be-8950-4647-9362-fd002f8ff82e")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer")
 interface IListViewBaseAutomationPeerFactory : IInspectable
@@ -661,6 +871,12 @@ interface IListViewBaseAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListViewBase owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer* return_instance);
+}
+
+@uuid("7cb8b732-c1f0-4a3c-bc14-85dd48dedb85")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer")
+interface IListViewBaseHeaderItemAutomationPeer : IInspectable
+{
 }
 
 @uuid("40ec995f-d631-4004-832e-6d8643e51561")
@@ -673,6 +889,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListViewBaseHeaderItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer* return_instance);
 }
 
+@uuid("67ab1e4b-ad61-4c88-ba45-0f3a8d061f8f")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewHeaderItemAutomationPeer")
+interface IListViewHeaderItemAutomationPeer : IInspectable
+{
+}
+
 @uuid("07668694-2ca5-4be4-a8b9-592d48f76087")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewHeaderItemAutomationPeer")
 interface IListViewHeaderItemAutomationPeerFactory : IInspectable
@@ -681,6 +903,12 @@ interface IListViewHeaderItemAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListViewHeaderItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListViewHeaderItemAutomationPeer* return_instance);
+}
+
+@uuid("ca114e70-a16d-4d09-a1cf-1856ef98a9ec")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewItemAutomationPeer")
+interface IListViewItemAutomationPeer : IInspectable
+{
 }
 
 @uuid("c47dfbc0-facc-4024-a73b-17ec4e662654")
@@ -693,6 +921,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ListViewItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListViewItemAutomationPeer* return_instance);
 }
 
+@uuid("15a8d7fd-d7a5-4a6c-963c-6f7ce464671a")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewItemDataAutomationPeer")
+interface IListViewItemDataAutomationPeer : IInspectable
+{
+}
+
 @uuid("d0db12bb-d715-4523-acc0-1e1072d8e32b")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ListViewItemDataAutomationPeer")
 interface IListViewItemDataAutomationPeerFactory : IInspectable
@@ -701,6 +935,36 @@ interface IListViewItemDataAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ListViewItemDataAutomationPeer* return_instance);
+}
+
+@uuid("50b406ca-bae9-4816-8a3a-0cb4f96478a2")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.LoopingSelectorAutomationPeer")
+interface ILoopingSelectorAutomationPeer : IInspectable
+{
+}
+
+@uuid("d3fa68bf-04cf-4f4c-8d3e-4780a19d4788")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.LoopingSelectorItemAutomationPeer")
+interface ILoopingSelectorItemAutomationPeer : IInspectable
+{
+}
+
+@uuid("ef567e32-7cd2-4d32-9590-1f588d5ef38d")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.LoopingSelectorItemDataAutomationPeer")
+interface ILoopingSelectorItemDataAutomationPeer : IInspectable
+{
+}
+
+@uuid("425beee4-f2e8-4bcb-9382-5dfdd11fe45f")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.MapControlAutomationPeer")
+interface IMapControlAutomationPeer : IInspectable
+{
+}
+
+@uuid("ba0b9fc2-a6e2-41a5-b17a-d1594613efba")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.MediaElementAutomationPeer")
+interface IMediaElementAutomationPeer : IInspectable
+{
 }
 
 @uuid("b2ad3b28-7575-4173-9bc7-80367a164ed2")
@@ -713,6 +977,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.MediaElement owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.MediaElementAutomationPeer* return_instance);
 }
 
+@uuid("02bed209-3f65-4fdd-b5ca-c4750d4e6ea4")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer")
+interface IMediaPlayerElementAutomationPeer : IInspectable
+{
+}
+
 @uuid("08848077-82af-4d19-b170-282a9e0e7f37")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer")
 interface IMediaPlayerElementAutomationPeerFactory : IInspectable
@@ -721,6 +991,12 @@ interface IMediaPlayerElementAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.MediaPlayerElement owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer* return_instance);
+}
+
+@uuid("a3ad8d93-79f8-4958-a3c8-980defb83d15")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.MediaTransportControlsAutomationPeer")
+interface IMediaTransportControlsAutomationPeer : IInspectable
+{
 }
 
 @uuid("f41cb003-e103-4ab0-812a-a08fbdb570ce")
@@ -733,6 +1009,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.MediaTransportControls owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.MediaTransportControlsAutomationPeer* return_instance);
 }
 
+@uuid("1fc19462-21df-456e-aa11-8fac6b4b2af6")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.MenuFlyoutItemAutomationPeer")
+interface IMenuFlyoutItemAutomationPeer : IInspectable
+{
+}
+
 @uuid("d08bfcb8-20d1-45d8-a2c2-2f130df714e0")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.MenuFlyoutItemAutomationPeer")
 interface IMenuFlyoutItemAutomationPeerFactory : IInspectable
@@ -741,6 +1023,12 @@ interface IMenuFlyoutItemAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.MenuFlyoutItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.MenuFlyoutItemAutomationPeer* return_instance);
+}
+
+@uuid("e244a871-fcbb-48fc-8a93-41ea134b53ce")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.MenuFlyoutPresenterAutomationPeer")
+interface IMenuFlyoutPresenterAutomationPeer : IInspectable
+{
 }
 
 @uuid("07b5172d-761d-452b-9e6d-fa2a8be0ad26")
@@ -753,6 +1041,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.MenuFlyoutPresenter owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.MenuFlyoutPresenterAutomationPeer* return_instance);
 }
 
+@uuid("684f065e-3df3-4b9f-82ad-8819db3b218a")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.PasswordBoxAutomationPeer")
+interface IPasswordBoxAutomationPeer : IInspectable
+{
+}
+
 @uuid("ac3d7ede-dca4-481c-b520-4a9b3f3b179c")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.PasswordBoxAutomationPeer")
 interface IPasswordBoxAutomationPeerFactory : IInspectable
@@ -761,6 +1055,18 @@ interface IPasswordBoxAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.PasswordBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.PasswordBoxAutomationPeer* return_instance);
+}
+
+@uuid("28414bf7-8382-4eae-93c1-d6f035aa8155")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.PickerFlyoutPresenterAutomationPeer")
+interface IPickerFlyoutPresenterAutomationPeer : IInspectable
+{
+}
+
+@uuid("e715a8f8-3b9d-402c-81e2-6e912ef58981")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.PivotAutomationPeer")
+interface IPivotAutomationPeer : IInspectable
+{
 }
 
 @uuid("3efe0f94-0c91-4341-b9ac-1b56b4e6b84f")
@@ -773,6 +1079,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Pivot owner, Windows.UI.Xaml.Automation.Peers.PivotAutomationPeer* return_instance);
 }
 
+@uuid("1a4241ad-5d55-4d27-b40f-2d37506fbe78")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.PivotItemAutomationPeer")
+interface IPivotItemAutomationPeer : IInspectable
+{
+}
+
 @uuid("f2810471-183f-416b-b41a-1e5a958a91f4")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.PivotItemAutomationPeer")
 interface IPivotItemAutomationPeerFactory : IInspectable
@@ -781,6 +1093,12 @@ interface IPivotItemAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.PivotItem owner, Windows.UI.Xaml.Automation.Peers.PivotItemAutomationPeer* return_instance);
+}
+
+@uuid("a2a3b788-ea1d-48b7-88ee-f08b6aa07fee")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.PivotItemDataAutomationPeer")
+interface IPivotItemDataAutomationPeer : IInspectable
+{
 }
 
 @uuid("517a2480-d3b6-412e-82b6-94a0a84c13b0")
@@ -793,6 +1111,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.PivotAutomationPeer parent, Windows.UI.Xaml.Automation.Peers.PivotItemDataAutomationPeer* return_instance);
 }
 
+@uuid("93f48f86-d840-4fb6-ac2f-5f779b854b0d")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ProgressBarAutomationPeer")
+interface IProgressBarAutomationPeer : IInspectable
+{
+}
+
 @uuid("364679ab-b80f-41b4-8eea-2f5251bc739c")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ProgressBarAutomationPeer")
 interface IProgressBarAutomationPeerFactory : IInspectable
@@ -801,6 +1125,12 @@ interface IProgressBarAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ProgressBar owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ProgressBarAutomationPeer* return_instance);
+}
+
+@uuid("bc305eee-39d3-4eeb-ac33-2394de123e2e")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ProgressRingAutomationPeer")
+interface IProgressRingAutomationPeer : IInspectable
+{
 }
 
 @uuid("f3db204b-157e-40bc-9593-55bc5c71a4f6")
@@ -813,6 +1143,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ProgressRing owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ProgressRingAutomationPeer* return_instance);
 }
 
+@uuid("7e6a5ed8-0b30-4743-b102-dcdf548e3131")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.RadioButtonAutomationPeer")
+interface IRadioButtonAutomationPeer : IInspectable
+{
+}
+
 @uuid("4940c4fd-3d88-49ca-8f31-924187af0bfe")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.RadioButtonAutomationPeer")
 interface IRadioButtonAutomationPeerFactory : IInspectable
@@ -821,6 +1157,12 @@ interface IRadioButtonAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.RadioButton owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.RadioButtonAutomationPeer* return_instance);
+}
+
+@uuid("e454b549-4b2c-42ad-b04b-d35947d1ee50")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer")
+interface IRangeBaseAutomationPeer : IInspectable
+{
 }
 
 @uuid("827c7601-3078-4479-95ea-91374ca06207")
@@ -833,6 +1175,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.RangeBase owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer* return_instance);
 }
 
+@uuid("29e41ad5-a8ac-4e8a-83d8-09e37e054257")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.RepeatButtonAutomationPeer")
+interface IRepeatButtonAutomationPeer : IInspectable
+{
+}
+
 @uuid("6a6ff9d4-575e-4e60-bdd6-ec14419b4ff6")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.RepeatButtonAutomationPeer")
 interface IRepeatButtonAutomationPeerFactory : IInspectable
@@ -841,6 +1189,12 @@ interface IRepeatButtonAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.RepeatButton owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.RepeatButtonAutomationPeer* return_instance);
+}
+
+@uuid("c69f5c04-16ee-467a-a833-c3da8458ad64")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.RichEditBoxAutomationPeer")
+interface IRichEditBoxAutomationPeer : IInspectable
+{
 }
 
 @uuid("752c8399-d296-4d87-9020-a4750e885b3c")
@@ -853,6 +1207,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.RichEditBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.RichEditBoxAutomationPeer* return_instance);
 }
 
+@uuid("93a01a9c-9609-41fa-82f3-909c09f49a72")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.RichTextBlockAutomationPeer")
+interface IRichTextBlockAutomationPeer : IInspectable
+{
+}
+
 @uuid("2038ae61-1389-467a-aed6-37334da9622b")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.RichTextBlockAutomationPeer")
 interface IRichTextBlockAutomationPeerFactory : IInspectable
@@ -861,6 +1221,12 @@ interface IRichTextBlockAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.RichTextBlock owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.RichTextBlockAutomationPeer* return_instance);
+}
+
+@uuid("8c9a409a-2736-437b-ab36-a16a202f105d")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.RichTextBlockOverflowAutomationPeer")
+interface IRichTextBlockOverflowAutomationPeer : IInspectable
+{
 }
 
 @uuid("bd5eb663-2c14-4665-adef-f2b033947beb")
@@ -873,6 +1239,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.RichTextBlockOverflow owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.RichTextBlockOverflowAutomationPeer* return_instance);
 }
 
+@uuid("69e0c369-bbe7-41f2-87ca-aad813fe550e")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ScrollBarAutomationPeer")
+interface IScrollBarAutomationPeer : IInspectable
+{
+}
+
 @uuid("e1302110-afeb-4595-8e3d-edc0844a2b21")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ScrollBarAutomationPeer")
 interface IScrollBarAutomationPeerFactory : IInspectable
@@ -881,6 +1253,12 @@ interface IScrollBarAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.ScrollBar owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ScrollBarAutomationPeer* return_instance);
+}
+
+@uuid("d985f259-1b09-4e88-88fd-421750dc6b45")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ScrollViewerAutomationPeer")
+interface IScrollViewerAutomationPeer : IInspectable
+{
 }
 
 @uuid("270dff7d-d96d-48f9-a36a-c252aa9c4670")
@@ -893,6 +1271,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ScrollViewer owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ScrollViewerAutomationPeer* return_instance);
 }
 
+@uuid("854011a4-18a6-4f30-939b-8871afa3f5e9")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.SearchBoxAutomationPeer")
+interface ISearchBoxAutomationPeer : IInspectable
+{
+}
+
 @uuid("b3c01430-7faa-41bb-8e91-7c761c5267f1")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.SearchBoxAutomationPeer")
 interface ISearchBoxAutomationPeerFactory : IInspectable
@@ -901,6 +1285,12 @@ interface ISearchBoxAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.SearchBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.SearchBoxAutomationPeer* return_instance);
+}
+
+@uuid("162ac829-7115-43ec-b383-a7b71644069d")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer")
+interface ISelectorAutomationPeer : IInspectable
+{
 }
 
 @uuid("7b525646-829b-4dcc-bd52-5a8d0399387a")
@@ -913,6 +1303,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.Selector owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer* return_instance);
 }
 
+@uuid("ae8b3477-860a-45bb-bf7c-e1b27419d1dd")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer")
+interface ISelectorItemAutomationPeer : IInspectable
+{
+}
+
 @uuid("66d7edfb-786d-4362-a964-ebfb21776c30")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer")
 interface ISelectorItemAutomationPeerFactory : IInspectable
@@ -921,6 +1317,12 @@ interface ISelectorItemAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithParentAndItem(IInspectable item, Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer parent, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer* return_instance);
+}
+
+@uuid("3c2fac6c-a977-47fc-b44e-2754c0b2bea9")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.SemanticZoomAutomationPeer")
+interface ISemanticZoomAutomationPeer : IInspectable
+{
 }
 
 @uuid("f518d44d-a493-4496-b077-9674c7f4c5fa")
@@ -933,6 +1335,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.SemanticZoom owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.SemanticZoomAutomationPeer* return_instance);
 }
 
+@uuid("d0de0cdb-30cf-47a6-a5eb-9c77f0b0d6dd")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.SettingsFlyoutAutomationPeer")
+interface ISettingsFlyoutAutomationPeer : IInspectable
+{
+}
+
 @uuid("f94762bd-8a14-40e4-94a7-3f33c922e945")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.SettingsFlyoutAutomationPeer")
 interface ISettingsFlyoutAutomationPeerFactory : IInspectable
@@ -941,6 +1349,12 @@ interface ISettingsFlyoutAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.SettingsFlyout owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.SettingsFlyoutAutomationPeer* return_instance);
+}
+
+@uuid("ec30015a-d611-46d0-ae4f-6ecf27dfbaa5")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.SliderAutomationPeer")
+interface ISliderAutomationPeer : IInspectable
+{
 }
 
 @uuid("971b8056-9a7a-4df9-95fa-6f5c04c91cac")
@@ -953,6 +1367,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Slider owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.SliderAutomationPeer* return_instance);
 }
 
+@uuid("be2057f5-6715-4e69-a050-92bd0ce232a9")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.TextBlockAutomationPeer")
+interface ITextBlockAutomationPeer : IInspectable
+{
+}
+
 @uuid("76bf924b-7ca0-4b01-bc5c-a8cf4d3691de")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.TextBlockAutomationPeer")
 interface ITextBlockAutomationPeerFactory : IInspectable
@@ -961,6 +1381,12 @@ interface ITextBlockAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.TextBlock owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.TextBlockAutomationPeer* return_instance);
+}
+
+@uuid("3a4f1ca0-5e5d-4d26-9067-e740bf657a9f")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.TextBoxAutomationPeer")
+interface ITextBoxAutomationPeer : IInspectable
+{
 }
 
 @uuid("01f0c067-966b-4130-b872-469e42bd4a7f")
@@ -973,6 +1399,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.TextBox owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.TextBoxAutomationPeer* return_instance);
 }
 
+@uuid("dc2949b5-b45e-4d6d-892f-d9422c950efb")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ThumbAutomationPeer")
+interface IThumbAutomationPeer : IInspectable
+{
+}
+
 @uuid("970743ff-af41-4600-b55d-26d43df860e1")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ThumbAutomationPeer")
 interface IThumbAutomationPeerFactory : IInspectable
@@ -981,6 +1413,12 @@ interface IThumbAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.Thumb owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ThumbAutomationPeer* return_instance);
+}
+
+@uuid("a43d44ef-3285-4df7-b4a4-e4cdf36a3a17")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.TimePickerAutomationPeer")
+interface ITimePickerAutomationPeer : IInspectable
+{
 }
 
 @uuid("978f6671-47f8-40a7-9e21-68128b16b4fd")
@@ -993,6 +1431,18 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.TimePicker owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.TimePickerAutomationPeer* return_instance);
 }
 
+@uuid("da93ee27-82f1-4701-8706-be297bf06043")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.TimePickerFlyoutPresenterAutomationPeer")
+interface ITimePickerFlyoutPresenterAutomationPeer : IInspectable
+{
+}
+
+@uuid("62dbe6c5-bc0a-45bb-bf77-ea0f1502891f")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer")
+interface IToggleButtonAutomationPeer : IInspectable
+{
+}
+
 @uuid("c9218cc4-ad4b-4d03-a6a4-7d59e6360004")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer")
 interface IToggleButtonAutomationPeerFactory : IInspectable
@@ -1001,6 +1451,12 @@ interface IToggleButtonAutomationPeerFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.Primitives.ToggleButton owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer* return_instance);
+}
+
+@uuid("6b57eafe-6af1-4903-8373-3437bf352345")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ToggleMenuFlyoutItemAutomationPeer")
+interface IToggleMenuFlyoutItemAutomationPeer : IInspectable
+{
 }
 
 @uuid("94364b77-8f6c-4837-aae3-94d010d8d162")
@@ -1013,6 +1469,12 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ToggleMenuFlyoutItem owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ToggleMenuFlyoutItemAutomationPeer* return_instance);
 }
 
+@uuid("c011f174-e89e-4790-bf9a-78ebb5f59e9f")
+@WinrtFactory("Windows.UI.Xaml.Automation.Peers.ToggleSwitchAutomationPeer")
+interface IToggleSwitchAutomationPeer : IInspectable
+{
+}
+
 @uuid("31f933e3-fef8-4419-9df5-d9ef7196ea34")
 @WinrtFactory("Windows.UI.Xaml.Automation.Peers.ToggleSwitchAutomationPeer")
 interface IToggleSwitchAutomationPeerFactory : IInspectable
@@ -1023,323 +1485,323 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithOwner(Windows.UI.Xaml.Controls.ToggleSwitch owner, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Automation.Peers.ToggleSwitchAutomationPeer* return_instance);
 }
 
-interface AppBarAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface AppBarAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAppBarAutomationPeer, Windows.UI.Xaml.Automation.Provider.IToggleProvider, Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider, Windows.UI.Xaml.Automation.Provider.IWindowProvider
 {
 }
 
-interface AppBarButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonAutomationPeer
+interface AppBarButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAppBarButtonAutomationPeer
 {
 }
 
-interface AppBarToggleButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer
+interface AppBarToggleButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAppBarToggleButtonAutomationPeer
 {
 }
 
-interface AutoSuggestBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface AutoSuggestBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAutoSuggestBoxAutomationPeer
 {
 }
 
-interface AutomationPeer : Windows.UI.Xaml.DependencyObject
+interface AutomationPeer : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Automation.Peers.IAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides, Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected, Windows.UI.Xaml.Automation.Peers.IAutomationPeer2, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2, Windows.UI.Xaml.Automation.Peers.IAutomationPeer3, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3, Windows.UI.Xaml.Automation.Peers.IAutomationPeer4, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4, Windows.UI.Xaml.Automation.Peers.IAutomationPeer5, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5, Windows.UI.Xaml.Automation.Peers.IAutomationPeer6, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6
 {
 }
 
-interface AutomationPeerAnnotation : Windows.UI.Xaml.DependencyObject
+interface AutomationPeerAnnotation : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation
 {
 }
 
-interface ButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer
+interface ButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IButtonAutomationPeer, Windows.UI.Xaml.Automation.Provider.IInvokeProvider
 {
 }
 
-interface ButtonBaseAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface ButtonBaseAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IButtonBaseAutomationPeer
 {
 }
 
-interface CaptureElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface CaptureElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ICaptureElementAutomationPeer
 {
 }
 
-interface CheckBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer
+interface CheckBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.ICheckBoxAutomationPeer
 {
 }
 
-interface ComboBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer
+interface ComboBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer, Windows.UI.Xaml.Automation.Peers.IComboBoxAutomationPeer, Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider, Windows.UI.Xaml.Automation.Provider.IValueProvider, Windows.UI.Xaml.Automation.Provider.IWindowProvider
 {
 }
 
-interface ComboBoxItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface ComboBoxItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IComboBoxItemAutomationPeer
 {
 }
 
-interface ComboBoxItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer
+interface ComboBoxItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IComboBoxItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
 {
 }
 
-interface DatePickerAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface DatePickerAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IDatePickerAutomationPeer
 {
 }
 
-interface DatePickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface DatePickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IDatePickerFlyoutPresenterAutomationPeer
 {
 }
 
-interface FlipViewAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer
+interface FlipViewAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlipViewAutomationPeer
 {
 }
 
-interface FlipViewItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface FlipViewItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlipViewItemAutomationPeer
 {
 }
 
-interface FlipViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer
+interface FlipViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlipViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
 {
 }
 
-interface FlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface FlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlyoutPresenterAutomationPeer
 {
 }
 
-interface FrameworkElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer
+interface FrameworkElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer, Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeer
 {
 }
 
-interface GridViewAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer
+interface GridViewAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewAutomationPeer
 {
 }
 
-interface GridViewHeaderItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer
+interface GridViewHeaderItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewHeaderItemAutomationPeer
 {
 }
 
-interface GridViewItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface GridViewItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewItemAutomationPeer
 {
 }
 
-interface GridViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer
+interface GridViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
 {
 }
 
-interface GroupItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface GroupItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGroupItemAutomationPeer
 {
 }
 
-interface HubAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface HubAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IHubAutomationPeer
 {
 }
 
-interface HubSectionAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface HubSectionAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IHubSectionAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
 {
 }
 
-interface HyperlinkButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer
+interface HyperlinkButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IHyperlinkButtonAutomationPeer, Windows.UI.Xaml.Automation.Provider.IInvokeProvider
 {
 }
 
-interface ImageAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface ImageAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IImageAutomationPeer
 {
 }
 
-interface InkToolbarAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface InkToolbarAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IInkToolbarAutomationPeer
 {
 }
 
-interface ItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer
+interface ItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer, Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer, Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider
 {
 }
 
-interface ItemsControlAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface ItemsControlAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer, Windows.UI.Xaml.Automation.Provider.IItemContainerProvider, Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer2, Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeerOverrides2
 {
 }
 
-interface ListBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer
+interface ListBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListBoxAutomationPeer
 {
 }
 
-interface ListBoxItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface ListBoxItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListBoxItemAutomationPeer
 {
 }
 
-interface ListBoxItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer
+interface ListBoxItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListBoxItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
 {
 }
 
-interface ListPickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface ListPickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListPickerFlyoutPresenterAutomationPeer
 {
 }
 
-interface ListViewAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer
+interface ListViewAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewAutomationPeer
 {
 }
 
-interface ListViewBaseAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer
+interface ListViewBaseAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewBaseAutomationPeer, Windows.UI.Xaml.Automation.Provider.IDropTargetProvider
 {
 }
 
-interface ListViewBaseHeaderItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface ListViewBaseHeaderItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewBaseHeaderItemAutomationPeer
 {
 }
 
-interface ListViewHeaderItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer
+interface ListViewHeaderItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewHeaderItemAutomationPeer
 {
 }
 
-interface ListViewItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface ListViewItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewItemAutomationPeer
 {
 }
 
-interface ListViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer
+interface ListViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
 {
 }
 
-interface LoopingSelectorAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface LoopingSelectorAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ILoopingSelectorAutomationPeer, Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider, Windows.UI.Xaml.Automation.Provider.IItemContainerProvider, Windows.UI.Xaml.Automation.Provider.IScrollProvider, Windows.UI.Xaml.Automation.Provider.ISelectionProvider
 {
 }
 
-interface LoopingSelectorItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface LoopingSelectorItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ILoopingSelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider, Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider
 {
 }
 
-interface LoopingSelectorItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer
+interface LoopingSelectorItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer, Windows.UI.Xaml.Automation.Peers.ILoopingSelectorItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider
 {
 }
 
-interface MapControlAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface MapControlAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMapControlAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollProvider, Windows.UI.Xaml.Automation.Provider.ITransformProvider2, Windows.UI.Xaml.Automation.Provider.ITransformProvider
 {
 }
 
-interface MediaElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface MediaElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMediaElementAutomationPeer
 {
 }
 
-interface MediaPlayerElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface MediaPlayerElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMediaPlayerElementAutomationPeer
 {
 }
 
-interface MediaTransportControlsAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface MediaTransportControlsAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMediaTransportControlsAutomationPeer
 {
 }
 
-interface MenuFlyoutItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface MenuFlyoutItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMenuFlyoutItemAutomationPeer, Windows.UI.Xaml.Automation.Provider.IInvokeProvider
 {
 }
 
-interface MenuFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer
+interface MenuFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMenuFlyoutPresenterAutomationPeer
 {
 }
 
-interface PasswordBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface PasswordBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IPasswordBoxAutomationPeer
 {
 }
 
-interface PickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface PickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IPickerFlyoutPresenterAutomationPeer
 {
 }
 
-interface PivotAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer
+interface PivotAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer, Windows.UI.Xaml.Automation.Peers.IPivotAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollProvider, Windows.UI.Xaml.Automation.Provider.ISelectionProvider
 {
 }
 
-interface PivotItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface PivotItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IPivotItemAutomationPeer
 {
 }
 
-interface PivotItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer
+interface PivotItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IPivotItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider, Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider, Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider
 {
 }
 
-interface ProgressBarAutomationPeer : Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer
+interface ProgressBarAutomationPeer : Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IProgressBarAutomationPeer
 {
 }
 
-interface ProgressRingAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface ProgressRingAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IProgressRingAutomationPeer
 {
 }
 
-interface RadioButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer
+interface RadioButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRadioButtonAutomationPeer, Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider
 {
 }
 
-interface RangeBaseAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface RangeBaseAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRangeBaseAutomationPeer, Windows.UI.Xaml.Automation.Provider.IRangeValueProvider
 {
 }
 
-interface RepeatButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer
+interface RepeatButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRepeatButtonAutomationPeer, Windows.UI.Xaml.Automation.Provider.IInvokeProvider
 {
 }
 
-interface RichEditBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface RichEditBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRichEditBoxAutomationPeer
 {
 }
 
-interface RichTextBlockAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface RichTextBlockAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRichTextBlockAutomationPeer
 {
 }
 
-interface RichTextBlockOverflowAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface RichTextBlockOverflowAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRichTextBlockOverflowAutomationPeer
 {
 }
 
-interface ScrollBarAutomationPeer : Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer
+interface ScrollBarAutomationPeer : Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IScrollBarAutomationPeer
 {
 }
 
-interface ScrollViewerAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface ScrollViewerAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IScrollViewerAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollProvider
 {
 }
 
-interface SearchBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface SearchBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISearchBoxAutomationPeer
 {
 }
 
-interface SelectorAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer
+interface SelectorAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISelectorAutomationPeer, Windows.UI.Xaml.Automation.Provider.ISelectionProvider
 {
 }
 
-interface SelectorItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer
+interface SelectorItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider
 {
 }
 
-interface SemanticZoomAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface SemanticZoomAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISemanticZoomAutomationPeer, Windows.UI.Xaml.Automation.Provider.IToggleProvider
 {
 }
 
-interface SettingsFlyoutAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface SettingsFlyoutAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISettingsFlyoutAutomationPeer
 {
 }
 
-interface SliderAutomationPeer : Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer
+interface SliderAutomationPeer : Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISliderAutomationPeer
 {
 }
 
-interface TextBlockAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface TextBlockAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ITextBlockAutomationPeer
 {
 }
 
-interface TextBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface TextBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ITextBoxAutomationPeer
 {
 }
 
-interface ThumbAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface ThumbAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IThumbAutomationPeer
 {
 }
 
-interface TimePickerAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface TimePickerAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ITimePickerAutomationPeer
 {
 }
 
-interface TimePickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface TimePickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ITimePickerFlyoutPresenterAutomationPeer
 {
 }
 
-interface ToggleButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer
+interface ToggleButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleButtonAutomationPeer, Windows.UI.Xaml.Automation.Provider.IToggleProvider
 {
 }
 
-interface ToggleMenuFlyoutItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface ToggleMenuFlyoutItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleMenuFlyoutItemAutomationPeer, Windows.UI.Xaml.Automation.Provider.IToggleProvider
 {
 }
 
-interface ToggleSwitchAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+interface ToggleSwitchAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleSwitchAutomationPeer, Windows.UI.Xaml.Automation.Provider.IToggleProvider
 {
 }
 

@@ -198,43 +198,43 @@ extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardReader)* return_result);
 }
 
-interface CardAddedEventArgs
+interface CardAddedEventArgs : Windows.Devices.SmartCards.ICardAddedEventArgs
 {
 }
 
-interface CardRemovedEventArgs
+interface CardRemovedEventArgs : Windows.Devices.SmartCards.ICardRemovedEventArgs
 {
 }
 
-interface SmartCard
+interface SmartCard : Windows.Devices.SmartCards.ISmartCard, Windows.Devices.SmartCards.ISmartCardConnect
 {
 }
 
-interface SmartCardChallengeContext
+interface SmartCardChallengeContext : Windows.Devices.SmartCards.ISmartCardChallengeContext, Windows.Foundation.IClosable
 {
 }
 
-interface SmartCardConnection
+interface SmartCardConnection : Windows.Devices.SmartCards.ISmartCardConnection, Windows.Foundation.IClosable
 {
 }
 
-interface SmartCardPinPolicy
+interface SmartCardPinPolicy : Windows.Devices.SmartCards.ISmartCardPinPolicy
 {
 }
 
-interface SmartCardPinResetDeferral
+interface SmartCardPinResetDeferral : Windows.Devices.SmartCards.ISmartCardPinResetDeferral
 {
 }
 
-interface SmartCardPinResetRequest
+interface SmartCardPinResetRequest : Windows.Devices.SmartCards.ISmartCardPinResetRequest
 {
 }
 
-interface SmartCardProvisioning
+interface SmartCardProvisioning : Windows.Devices.SmartCards.ISmartCardProvisioning, Windows.Devices.SmartCards.ISmartCardProvisioning2
 {
 }
 
-interface SmartCardReader
+interface SmartCardReader : Windows.Devices.SmartCards.ISmartCardReader
 {
 }
 

@@ -115,7 +115,7 @@ extern(Windows):
 	HRESULT abi_CreateInstanceWithAllParameters(Windows.UI.Xaml.Interop.NotifyCollectionChangedAction action, Windows.UI.Xaml.Interop.IBindableVector newItems, Windows.UI.Xaml.Interop.IBindableVector oldItems, INT32 newIndex, INT32 oldIndex, IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Interop.NotifyCollectionChangedEventArgs* return_instance);
 }
 
-interface NotifyCollectionChangedEventArgs
+interface NotifyCollectionChangedEventArgs : Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs
 {
 }
 

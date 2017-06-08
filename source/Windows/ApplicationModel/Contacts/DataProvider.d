@@ -76,26 +76,26 @@ extern(Windows):
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
 }
 
-interface ContactDataProviderConnection
+interface ContactDataProviderConnection : Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection
 {
 }
 
-interface ContactDataProviderTriggerDetails
+interface ContactDataProviderTriggerDetails : Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderTriggerDetails
 {
 }
 
-interface ContactListServerSearchReadBatchRequest
+interface ContactListServerSearchReadBatchRequest : Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest
 {
 }
 
-interface ContactListServerSearchReadBatchRequestEventArgs
+interface ContactListServerSearchReadBatchRequestEventArgs : Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequestEventArgs
 {
 }
 
-interface ContactListSyncManagerSyncRequest
+interface ContactListSyncManagerSyncRequest : Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequest
 {
 }
 
-interface ContactListSyncManagerSyncRequestEventArgs
+interface ContactListSyncManagerSyncRequestEventArgs : Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequestEventArgs
 {
 }

@@ -50,11 +50,15 @@ extern(Windows):
 	HRESULT get_ExtendedError(HRESULT* return_value);
 }
 
-interface LicenseSatisfactionInfo
+interface LicenseManager
 {
 }
 
-interface LicenseSatisfactionResult
+interface LicenseSatisfactionInfo : Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo
+{
+}
+
+interface LicenseSatisfactionResult : Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult
 {
 }
 

@@ -30,7 +30,7 @@ extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.RadioAccessStatus)* return_value);
 }
 
-interface Radio
+interface Radio : Windows.Devices.Radios.IRadio
 {
 }
 

@@ -135,27 +135,27 @@ extern(Windows):
 	HRESULT abi_PickFolderAndContinue();
 }
 
-interface FileExtensionVector
+interface FileExtensionVector : Windows.Foundation.Collections.IVector!(HSTRING), Windows.Foundation.Collections.IIterable!(HSTRING)
 {
 }
 
-interface FileOpenPicker
+interface FileOpenPicker : Windows.Storage.Pickers.IFileOpenPicker, Windows.Storage.Pickers.IFileOpenPickerWithOperationId, Windows.Storage.Pickers.IFileOpenPicker2
 {
 }
 
-interface FilePickerFileTypesOrderedMap
+interface FilePickerFileTypesOrderedMap : Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))
 {
 }
 
-interface FilePickerSelectedFilesArray
+interface FilePickerSelectedFilesArray : Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile), Windows.Foundation.Collections.IIterable!(Windows.Storage.StorageFile)
 {
 }
 
-interface FileSavePicker
+interface FileSavePicker : Windows.Storage.Pickers.IFileSavePicker, Windows.Storage.Pickers.IFileSavePicker2, Windows.Storage.Pickers.IFileSavePicker3
 {
 }
 
-interface FolderPicker
+interface FolderPicker : Windows.Storage.Pickers.IFolderPicker, Windows.Storage.Pickers.IFolderPicker2
 {
 }
 

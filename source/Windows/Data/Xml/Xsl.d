@@ -32,6 +32,6 @@ extern(Windows):
 	HRESULT abi_CreateInstance(Windows.Data.Xml.Dom.XmlDocument document, Windows.Data.Xml.Xsl.XsltProcessor* return_xsltProcessor);
 }
 
-interface XsltProcessor
+interface XsltProcessor : Windows.Data.Xml.Xsl.IXsltProcessor, Windows.Data.Xml.Xsl.IXsltProcessor2
 {
 }

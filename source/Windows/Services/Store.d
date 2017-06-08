@@ -400,91 +400,95 @@ extern(Windows):
 	HRESULT get_PreviewImage(Windows.Services.Store.StoreImage* return_value);
 }
 
-interface StoreAcquireLicenseResult
+interface StoreAcquireLicenseResult : Windows.Services.Store.IStoreAcquireLicenseResult
 {
 }
 
-interface StoreAppLicense
+interface StoreAppLicense : Windows.Services.Store.IStoreAppLicense
 {
 }
 
-interface StoreAvailability
+interface StoreAvailability : Windows.Services.Store.IStoreAvailability
 {
 }
 
-interface StoreCollectionData
+interface StoreCollectionData : Windows.Services.Store.IStoreCollectionData
 {
 }
 
-interface StoreConsumableResult
+interface StoreConsumableResult : Windows.Services.Store.IStoreConsumableResult
 {
 }
 
-interface StoreContext
+interface StoreContext : Windows.Services.Store.IStoreContext, Windows.Services.Store.IStoreContext2
 {
 }
 
-interface StoreImage
+interface StoreImage : Windows.Services.Store.IStoreImage
 {
 }
 
-interface StoreLicense
+interface StoreLicense : Windows.Services.Store.IStoreLicense
 {
 }
 
-interface StorePackageLicense
+interface StorePackageLicense : Windows.Services.Store.IStorePackageLicense, Windows.Foundation.IClosable
 {
 }
 
-interface StorePackageUpdate
+interface StorePackageUpdate : Windows.Services.Store.IStorePackageUpdate
 {
 }
 
-interface StorePackageUpdateResult
+interface StorePackageUpdateResult : Windows.Services.Store.IStorePackageUpdateResult
 {
 }
 
-interface StorePrice
+interface StorePrice : Windows.Services.Store.IStorePrice
 {
 }
 
-interface StoreProduct
+interface StoreProduct : Windows.Services.Store.IStoreProduct
 {
 }
 
-interface StoreProductPagedQueryResult
+interface StoreProductPagedQueryResult : Windows.Services.Store.IStoreProductPagedQueryResult
 {
 }
 
-interface StoreProductQueryResult
+interface StoreProductQueryResult : Windows.Services.Store.IStoreProductQueryResult
 {
 }
 
-interface StoreProductResult
+interface StoreProductResult : Windows.Services.Store.IStoreProductResult
 {
 }
 
-interface StorePurchaseProperties
+interface StorePurchaseProperties : Windows.Services.Store.IStorePurchaseProperties
 {
 }
 
-interface StorePurchaseResult
+interface StorePurchaseResult : Windows.Services.Store.IStorePurchaseResult
 {
 }
 
-interface StoreSendRequestResult
+interface StoreRequestHelper
 {
 }
 
-interface StoreSku
+interface StoreSendRequestResult : Windows.Services.Store.IStoreSendRequestResult, Windows.Services.Store.IStoreSendRequestResult2
 {
 }
 
-interface StoreSubscriptionInfo
+interface StoreSku : Windows.Services.Store.IStoreSku
 {
 }
 
-interface StoreVideo
+interface StoreSubscriptionInfo : Windows.Services.Store.IStoreSubscriptionInfo
+{
+}
+
+interface StoreVideo : Windows.Services.Store.IStoreVideo
 {
 }
 

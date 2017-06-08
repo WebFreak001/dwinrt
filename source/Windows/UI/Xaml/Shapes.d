@@ -2,6 +2,12 @@ module Windows.UI.Xaml.Shapes;
 
 import dwinrt;
 
+@uuid("70e05ac4-d38d-4bab-831f-4a22ef52ac86")
+@WinrtFactory("Windows.UI.Xaml.Shapes.Ellipse")
+interface IEllipse : IInspectable
+{
+}
+
 @uuid("46a5433d-4ffb-48df-8732-4e15c834816b")
 @WinrtFactory("Windows.UI.Xaml.Shapes.Line")
 interface ILine : IInspectable
@@ -207,30 +213,30 @@ extern(Windows):
 	HRESULT get_StretchProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
-interface Ellipse : Windows.UI.Xaml.Shapes.Shape
+interface Ellipse : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IEllipse
 {
 }
 
-interface Line : Windows.UI.Xaml.Shapes.Shape
+interface Line : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.ILine
 {
 }
 
-interface Path : Windows.UI.Xaml.Shapes.Shape
+interface Path : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IPath
 {
 }
 
-interface Polygon : Windows.UI.Xaml.Shapes.Shape
+interface Polygon : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IPolygon
 {
 }
 
-interface Polyline : Windows.UI.Xaml.Shapes.Shape
+interface Polyline : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IPolyline
 {
 }
 
-interface Rectangle : Windows.UI.Xaml.Shapes.Shape
+interface Rectangle : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IRectangle
 {
 }
 
-interface Shape : Windows.UI.Xaml.FrameworkElement
+interface Shape : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Shapes.IShape, Windows.UI.Xaml.Shapes.IShape2
 {
 }

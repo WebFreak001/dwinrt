@@ -136,18 +136,18 @@ extern(Windows):
 	HRESULT abi_CreateAsync(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider)* return_asyncOp);
 }
 
-interface RfcommDeviceService
+interface RfcommDeviceService : Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService, Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService2, Windows.Foundation.IClosable, Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService3
 {
 }
 
-interface RfcommDeviceServicesResult
+interface RfcommDeviceServicesResult : Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServicesResult
 {
 }
 
-interface RfcommServiceId
+interface RfcommServiceId : Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId
 {
 }
 
-interface RfcommServiceProvider
+interface RfcommServiceProvider : Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider, Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider2
 {
 }

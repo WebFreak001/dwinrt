@@ -73,19 +73,19 @@ extern(Windows):
 	HRESULT get_Gender(Windows.Media.SpeechSynthesis.VoiceGender* return_value);
 }
 
-interface SpeechSynthesisStream
+interface SpeechSynthesisStream : Windows.Media.SpeechSynthesis.ISpeechSynthesisStream, Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Media.Core.ITimedMetadataTrackProvider
 {
 }
 
-interface SpeechSynthesizer
+interface SpeechSynthesizer : Windows.Media.SpeechSynthesis.ISpeechSynthesizer, Windows.Foundation.IClosable, Windows.Media.SpeechSynthesis.ISpeechSynthesizer2
 {
 }
 
-interface SpeechSynthesizerOptions
+interface SpeechSynthesizerOptions : Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions
 {
 }
 
-interface VoiceInformation
+interface VoiceInformation : Windows.Media.SpeechSynthesis.IVoiceInformation
 {
 }
 

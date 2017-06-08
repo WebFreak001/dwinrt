@@ -28,11 +28,11 @@ extern(Windows):
 	HRESULT set_Reason(Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundReason value);
 }
 
-interface ExtendedExecutionForegroundRevokedEventArgs
+interface ExtendedExecutionForegroundRevokedEventArgs : Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundRevokedEventArgs
 {
 }
 
-interface ExtendedExecutionForegroundSession
+interface ExtendedExecutionForegroundSession : Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession, Windows.Foundation.IClosable
 {
 }
 

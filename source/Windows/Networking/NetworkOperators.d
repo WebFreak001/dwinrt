@@ -799,175 +799,191 @@ extern(Windows):
 	HRESULT abi_CreateFromNetworkInterfaceId(HSTRING networkInterfaceId, Windows.Networking.NetworkOperators.UssdSession* return_ussdSession);
 }
 
-interface HotspotAuthenticationContext
+interface HotspotAuthenticationContext : Windows.Networking.NetworkOperators.IHotspotAuthenticationContext, Windows.Networking.NetworkOperators.IHotspotAuthenticationContext2
 {
 }
 
-interface HotspotAuthenticationEventDetails
+interface HotspotAuthenticationEventDetails : Windows.Networking.NetworkOperators.IHotspotAuthenticationEventDetails
 {
 }
 
-interface HotspotCredentialsAuthenticationResult
+interface HotspotCredentialsAuthenticationResult : Windows.Networking.NetworkOperators.IHotspotCredentialsAuthenticationResult
 {
 }
 
-interface MobileBroadbandAccount
+interface KnownCSimFilePaths
 {
 }
 
-interface MobileBroadbandAccountEventArgs
+interface KnownRuimFilePaths
 {
 }
 
-interface MobileBroadbandAccountUpdatedEventArgs
+interface KnownSimFilePaths
 {
 }
 
-interface MobileBroadbandAccountWatcher
+interface KnownUSimFilePaths
 {
 }
 
-interface MobileBroadbandDeviceInformation
+interface MobileBroadbandAccount : Windows.Networking.NetworkOperators.IMobileBroadbandAccount, Windows.Networking.NetworkOperators.IMobileBroadbandAccount2, Windows.Networking.NetworkOperators.IMobileBroadbandAccount3
 {
 }
 
-interface MobileBroadbandDeviceService
+interface MobileBroadbandAccountEventArgs : Windows.Networking.NetworkOperators.IMobileBroadbandAccountEventArgs
 {
 }
 
-interface MobileBroadbandDeviceServiceCommandResult
+interface MobileBroadbandAccountUpdatedEventArgs : Windows.Networking.NetworkOperators.IMobileBroadbandAccountUpdatedEventArgs
 {
 }
 
-interface MobileBroadbandDeviceServiceCommandSession
+interface MobileBroadbandAccountWatcher : Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher
 {
 }
 
-interface MobileBroadbandDeviceServiceDataReceivedEventArgs
+interface MobileBroadbandDeviceInformation : Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation, Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation2, Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation3
 {
 }
 
-interface MobileBroadbandDeviceServiceDataSession
+interface MobileBroadbandDeviceService : Windows.Networking.NetworkOperators.IMobileBroadbandDeviceService
 {
 }
 
-interface MobileBroadbandDeviceServiceInformation
+interface MobileBroadbandDeviceServiceCommandResult : Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceCommandResult
 {
 }
 
-interface MobileBroadbandDeviceServiceTriggerDetails
+interface MobileBroadbandDeviceServiceCommandSession : Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceCommandSession
 {
 }
 
-interface MobileBroadbandModem
+interface MobileBroadbandDeviceServiceDataReceivedEventArgs : Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataReceivedEventArgs
 {
 }
 
-interface MobileBroadbandModemConfiguration
+interface MobileBroadbandDeviceServiceDataSession : Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataSession
 {
 }
 
-interface MobileBroadbandNetwork
+interface MobileBroadbandDeviceServiceInformation : Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceInformation
 {
 }
 
-interface MobileBroadbandNetworkRegistrationStateChange
+interface MobileBroadbandDeviceServiceTriggerDetails : Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceTriggerDetails
 {
 }
 
-interface MobileBroadbandNetworkRegistrationStateChangeTriggerDetails
+interface MobileBroadbandModem : Windows.Networking.NetworkOperators.IMobileBroadbandModem
 {
 }
 
-interface MobileBroadbandPin
+interface MobileBroadbandModemConfiguration : Windows.Networking.NetworkOperators.IMobileBroadbandModemConfiguration
 {
 }
 
-interface MobileBroadbandPinLockStateChange
+interface MobileBroadbandNetwork : Windows.Networking.NetworkOperators.IMobileBroadbandNetwork, Windows.Networking.NetworkOperators.IMobileBroadbandNetwork2
 {
 }
 
-interface MobileBroadbandPinLockStateChangeTriggerDetails
+interface MobileBroadbandNetworkRegistrationStateChange : Windows.Networking.NetworkOperators.IMobileBroadbandNetworkRegistrationStateChange
 {
 }
 
-interface MobileBroadbandPinManager
+interface MobileBroadbandNetworkRegistrationStateChangeTriggerDetails : Windows.Networking.NetworkOperators.IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails
 {
 }
 
-interface MobileBroadbandPinOperationResult
+interface MobileBroadbandPin : Windows.Networking.NetworkOperators.IMobileBroadbandPin
 {
 }
 
-interface MobileBroadbandRadioStateChange
+interface MobileBroadbandPinLockStateChange : Windows.Networking.NetworkOperators.IMobileBroadbandPinLockStateChange
 {
 }
 
-interface MobileBroadbandRadioStateChangeTriggerDetails
+interface MobileBroadbandPinLockStateChangeTriggerDetails : Windows.Networking.NetworkOperators.IMobileBroadbandPinLockStateChangeTriggerDetails
 {
 }
 
-interface MobileBroadbandUicc
+interface MobileBroadbandPinManager : Windows.Networking.NetworkOperators.IMobileBroadbandPinManager
 {
 }
 
-interface MobileBroadbandUiccApp
+interface MobileBroadbandPinOperationResult : Windows.Networking.NetworkOperators.IMobileBroadbandPinOperationResult
 {
 }
 
-interface MobileBroadbandUiccAppReadRecordResult
+interface MobileBroadbandRadioStateChange : Windows.Networking.NetworkOperators.IMobileBroadbandRadioStateChange
 {
 }
 
-interface MobileBroadbandUiccAppRecordDetailsResult
+interface MobileBroadbandRadioStateChangeTriggerDetails : Windows.Networking.NetworkOperators.IMobileBroadbandRadioStateChangeTriggerDetails
 {
 }
 
-interface MobileBroadbandUiccAppsResult
+interface MobileBroadbandUicc : Windows.Networking.NetworkOperators.IMobileBroadbandUicc
 {
 }
 
-interface NetworkOperatorNotificationEventDetails
+interface MobileBroadbandUiccApp : Windows.Networking.NetworkOperators.IMobileBroadbandUiccApp
 {
 }
 
-interface NetworkOperatorTetheringAccessPointConfiguration
+interface MobileBroadbandUiccAppReadRecordResult : Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppReadRecordResult
 {
 }
 
-interface NetworkOperatorTetheringClient
+interface MobileBroadbandUiccAppRecordDetailsResult : Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppRecordDetailsResult
 {
 }
 
-interface NetworkOperatorTetheringManager
+interface MobileBroadbandUiccAppsResult : Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppsResult
 {
 }
 
-interface NetworkOperatorTetheringOperationResult
+interface NetworkOperatorNotificationEventDetails : Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails, Windows.Networking.NetworkOperators.INetworkOperatorTetheringEntitlementCheck
 {
 }
 
-interface ProvisionFromXmlDocumentResults
+interface NetworkOperatorTetheringAccessPointConfiguration : Windows.Networking.NetworkOperators.INetworkOperatorTetheringAccessPointConfiguration
 {
 }
 
-interface ProvisionedProfile
+interface NetworkOperatorTetheringClient : Windows.Networking.NetworkOperators.INetworkOperatorTetheringClient
 {
 }
 
-interface ProvisioningAgent
+interface NetworkOperatorTetheringManager : Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager, Windows.Networking.NetworkOperators.INetworkOperatorTetheringClientManager
 {
 }
 
-interface UssdMessage
+interface NetworkOperatorTetheringOperationResult : Windows.Networking.NetworkOperators.INetworkOperatorTetheringOperationResult
 {
 }
 
-interface UssdReply
+interface ProvisionFromXmlDocumentResults : Windows.Networking.NetworkOperators.IProvisionFromXmlDocumentResults
 {
 }
 
-interface UssdSession
+interface ProvisionedProfile : Windows.Networking.NetworkOperators.IProvisionedProfile
+{
+}
+
+interface ProvisioningAgent : Windows.Networking.NetworkOperators.IProvisioningAgent
+{
+}
+
+interface UssdMessage : Windows.Networking.NetworkOperators.IUssdMessage
+{
+}
+
+interface UssdReply : Windows.Networking.NetworkOperators.IUssdReply
+{
+}
+
+interface UssdSession : Windows.Networking.NetworkOperators.IUssdSession
 {
 }
 

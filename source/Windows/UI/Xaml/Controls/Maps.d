@@ -584,6 +584,18 @@ extern(Windows):
 	HRESULT get_TransitProperties(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)* return_value);
 }
 
+@uuid("64592866-14a3-4e5f-8883-8e9c500eeede")
+@WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapCustomExperience")
+interface IMapCustomExperience : IInspectable
+{
+}
+
+@uuid("b9e6fb9b-8fc1-4042-ac34-a61b38bb7514")
+@WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapCustomExperienceChangedEventArgs")
+interface IMapCustomExperienceChangedEventArgs : IInspectable
+{
+}
+
 @uuid("7a403fb5-a1b1-4e7f-921e-3e6b8d8ebed6")
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapCustomExperience")
 interface IMapCustomExperienceFactory : IInspectable
@@ -906,6 +918,12 @@ extern(Windows):
 	HRESULT abi_CreateFromLocationsWithHeadingAndPitch(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) locations, double headingInDegrees, double pitchInDegrees, Windows.UI.Xaml.Controls.Maps.MapScene* return_returnValue);
 }
 
+@uuid("ae54b2bf-8991-42ed-8d58-20473deede1d")
+@WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapStyleSheet")
+interface IMapStyleSheet : IInspectable
+{
+}
+
 @uuid("abbd00ad-0a1c-4335-82f4-61d936aa197d")
 @WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapStyleSheet")
 interface IMapStyleSheetStatics : IInspectable
@@ -977,6 +995,12 @@ extern(Windows):
 	HRESULT get_Y(INT32* return_value);
 	HRESULT get_ZoomLevel(INT32* return_value);
 	HRESULT get_Request(Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequest* return_value);
+}
+
+@uuid("c03d9f5e-be1f-4c69-9969-79467a513c38")
+@WinrtFactory("Windows.UI.Xaml.Controls.Maps.MapTileDataSource")
+interface IMapTileDataSource : IInspectable
+{
 }
 
 @uuid("a3920fbd-e446-4648-a74d-fd2c5d557c06")
@@ -1142,179 +1166,179 @@ extern(Windows):
 	HRESULT abi_FindNearbyWithLocationAndRadiusAsync(Windows.Devices.Geolocation.Geopoint location, double radiusInMeters, Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Controls.Maps.StreetsidePanorama)* return_returnValue);
 }
 
-interface CustomMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource
+interface CustomMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource, Windows.UI.Xaml.Controls.Maps.ICustomMapTileDataSource
 {
 }
 
-interface HttpMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource
+interface HttpMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource, Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource
 {
 }
 
-interface LocalMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource
+interface LocalMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource, Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource
 {
 }
 
-interface MapActualCameraChangedEventArgs
+interface MapActualCameraChangedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangedEventArgs, Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangedEventArgs2
 {
 }
 
-interface MapActualCameraChangingEventArgs
+interface MapActualCameraChangingEventArgs : Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangingEventArgs, Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangingEventArgs2
 {
 }
 
-interface MapBillboard : Windows.UI.Xaml.Controls.Maps.MapElement
+interface MapBillboard : Windows.UI.Xaml.Controls.Maps.MapElement, Windows.UI.Xaml.Controls.Maps.IMapBillboard
 {
 }
 
-interface MapCamera : Windows.UI.Xaml.DependencyObject
+interface MapCamera : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapCamera
 {
 }
 
-interface MapContextRequestedEventArgs
+interface MapContextRequestedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapContextRequestedEventArgs
 {
 }
 
-interface MapControl : Windows.UI.Xaml.Controls.Control
+interface MapControl : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.Maps.IMapControl, Windows.UI.Xaml.Controls.Maps.IMapControl2, Windows.UI.Xaml.Controls.Maps.IMapControl3, Windows.UI.Xaml.Controls.Maps.IMapControl4, Windows.UI.Xaml.Controls.Maps.IMapControl5
 {
 }
 
-interface MapControlBusinessLandmarkClickEventArgs
+interface MapControlBusinessLandmarkClickEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkClickEventArgs
 {
 }
 
-interface MapControlBusinessLandmarkPointerEnteredEventArgs
+interface MapControlBusinessLandmarkPointerEnteredEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkPointerEnteredEventArgs
 {
 }
 
-interface MapControlBusinessLandmarkPointerExitedEventArgs
+interface MapControlBusinessLandmarkPointerExitedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkPointerExitedEventArgs
 {
 }
 
-interface MapControlBusinessLandmarkRightTappedEventArgs
+interface MapControlBusinessLandmarkRightTappedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkRightTappedEventArgs
 {
 }
 
-interface MapControlDataHelper : Windows.UI.Xaml.DependencyObject
+interface MapControlDataHelper : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper, Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper2
 {
 }
 
-interface MapControlTransitFeatureClickEventArgs
+interface MapControlTransitFeatureClickEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureClickEventArgs
 {
 }
 
-interface MapControlTransitFeaturePointerEnteredEventArgs
+interface MapControlTransitFeaturePointerEnteredEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerEnteredEventArgs
 {
 }
 
-interface MapControlTransitFeaturePointerExitedEventArgs
+interface MapControlTransitFeaturePointerExitedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerExitedEventArgs
 {
 }
 
-interface MapControlTransitFeatureRightTappedEventArgs
+interface MapControlTransitFeatureRightTappedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureRightTappedEventArgs
 {
 }
 
-interface MapCustomExperience : Windows.UI.Xaml.DependencyObject
+interface MapCustomExperience : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapCustomExperience
 {
 }
 
-interface MapCustomExperienceChangedEventArgs
+interface MapCustomExperienceChangedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapCustomExperienceChangedEventArgs
 {
 }
 
-interface MapElement : Windows.UI.Xaml.DependencyObject
+interface MapElement : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapElement, Windows.UI.Xaml.Controls.Maps.IMapElement2
 {
 }
 
-interface MapElementClickEventArgs
+interface MapElementClickEventArgs : Windows.UI.Xaml.Controls.Maps.IMapElementClickEventArgs
 {
 }
 
-interface MapElementPointerEnteredEventArgs
+interface MapElementPointerEnteredEventArgs : Windows.UI.Xaml.Controls.Maps.IMapElementPointerEnteredEventArgs
 {
 }
 
-interface MapElementPointerExitedEventArgs
+interface MapElementPointerExitedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapElementPointerExitedEventArgs
 {
 }
 
-interface MapIcon : Windows.UI.Xaml.Controls.Maps.MapElement
+interface MapIcon : Windows.UI.Xaml.Controls.Maps.MapElement, Windows.UI.Xaml.Controls.Maps.IMapIcon, Windows.UI.Xaml.Controls.Maps.IMapIcon2
 {
 }
 
-interface MapInputEventArgs : Windows.UI.Xaml.DependencyObject
+interface MapInputEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapInputEventArgs
 {
 }
 
-interface MapItemsControl : Windows.UI.Xaml.DependencyObject
+interface MapItemsControl : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapItemsControl
 {
 }
 
-interface MapPolygon : Windows.UI.Xaml.Controls.Maps.MapElement
+interface MapPolygon : Windows.UI.Xaml.Controls.Maps.MapElement, Windows.UI.Xaml.Controls.Maps.IMapPolygon, Windows.UI.Xaml.Controls.Maps.IMapPolygon2
 {
 }
 
-interface MapPolyline : Windows.UI.Xaml.Controls.Maps.MapElement
+interface MapPolyline : Windows.UI.Xaml.Controls.Maps.MapElement, Windows.UI.Xaml.Controls.Maps.IMapPolyline
 {
 }
 
-interface MapRightTappedEventArgs
+interface MapRightTappedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapRightTappedEventArgs
 {
 }
 
-interface MapRouteView : Windows.UI.Xaml.DependencyObject
+interface MapRouteView : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapRouteView
 {
 }
 
-interface MapScene : Windows.UI.Xaml.DependencyObject
+interface MapScene : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapScene
 {
 }
 
-interface MapStyleSheet : Windows.UI.Xaml.DependencyObject
+interface MapStyleSheet : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapStyleSheet
 {
 }
 
-interface MapTargetCameraChangedEventArgs
+interface MapTargetCameraChangedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapTargetCameraChangedEventArgs, Windows.UI.Xaml.Controls.Maps.IMapTargetCameraChangedEventArgs2
 {
 }
 
-interface MapTileBitmapRequest
+interface MapTileBitmapRequest : Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequest
 {
 }
 
-interface MapTileBitmapRequestDeferral
+interface MapTileBitmapRequestDeferral : Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestDeferral
 {
 }
 
-interface MapTileBitmapRequestedEventArgs
+interface MapTileBitmapRequestedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs
 {
 }
 
-interface MapTileDataSource : Windows.UI.Xaml.DependencyObject
+interface MapTileDataSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapTileDataSource
 {
 }
 
-interface MapTileSource : Windows.UI.Xaml.DependencyObject
+interface MapTileSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapTileSource
 {
 }
 
-interface MapTileUriRequest
+interface MapTileUriRequest : Windows.UI.Xaml.Controls.Maps.IMapTileUriRequest
 {
 }
 
-interface MapTileUriRequestDeferral
+interface MapTileUriRequestDeferral : Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestDeferral
 {
 }
 
-interface MapTileUriRequestedEventArgs
+interface MapTileUriRequestedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs
 {
 }
 
-interface StreetsideExperience : Windows.UI.Xaml.Controls.Maps.MapCustomExperience
+interface StreetsideExperience : Windows.UI.Xaml.Controls.Maps.MapCustomExperience, Windows.UI.Xaml.Controls.Maps.IStreetsideExperience
 {
 }
 
-interface StreetsidePanorama : Windows.UI.Xaml.DependencyObject
+interface StreetsidePanorama : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IStreetsidePanorama
 {
 }
 

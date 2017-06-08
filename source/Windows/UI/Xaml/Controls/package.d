@@ -257,6 +257,12 @@ extern(Windows):
 	HRESULT abi_OnOpening(IInspectable e);
 }
 
+@uuid("1b0795a1-1bc1-4d53-95ea-fb0a2cccc905")
+@WinrtFactory("Windows.UI.Xaml.Controls.AppBarSeparator")
+interface IAppBarSeparator : IInspectable
+{
+}
+
 @uuid("05da25cd-f407-48de-8b50-ff87d1e2818f")
 @WinrtFactory("Windows.UI.Xaml.Controls.AppBarSeparator")
 interface IAppBarSeparatorFactory : IInspectable
@@ -612,6 +618,12 @@ extern(Windows):
 	HRESULT get_CornerRadiusProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_PaddingProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ChildTransitionsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("280335ae-5570-46c7-8e0b-602be71229a2")
+@WinrtFactory("Windows.UI.Xaml.Controls.Button")
+interface IButton : IInspectable
+{
 }
 
 @uuid("80a13c19-843a-451c-8cf5-44c701b0e216")
@@ -1017,6 +1029,12 @@ extern(Windows):
 	HRESULT get_Bounds(Windows.Foundation.Rect* return_value);
 }
 
+@uuid("79190e19-cd38-4823-aeae-64a77132f519")
+@WinrtFactory("Windows.UI.Xaml.Controls.Canvas")
+interface ICanvas : IInspectable
+{
+}
+
 @uuid("1b328bd1-b400-4a8e-943b-5ad2c45be0df")
 @WinrtFactory("Windows.UI.Xaml.Controls.Canvas")
 interface ICanvasFactory : IInspectable
@@ -1067,6 +1085,12 @@ interface ICaptureElementStatics : IInspectable
 extern(Windows):
 	HRESULT get_SourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_StretchProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("2294c894-7e2a-4b70-b088-8f5d814875ba")
+@WinrtFactory("Windows.UI.Xaml.Controls.CheckBox")
+interface ICheckBox : IInspectable
+{
 }
 
 @uuid("4fa6aabb-3f4b-4301-be07-1172ea61eefb")
@@ -1219,6 +1243,12 @@ extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ComboBox* return_instance);
 }
 
+@uuid("993fd6d2-2aae-4f3b-b44d-5648f4d06114")
+@WinrtFactory("Windows.UI.Xaml.Controls.ComboBoxItem")
+interface IComboBoxItem : IInspectable
+{
+}
+
 @uuid("8fffe867-d94c-4e87-8fc4-6ebcd63c5ac2")
 @WinrtFactory("Windows.UI.Xaml.Controls.ComboBoxItem")
 interface IComboBoxItemFactory : IInspectable
@@ -1353,6 +1383,12 @@ interface ICommandBarFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.CommandBar* return_instance);
+}
+
+@uuid("6e7a9427-58ef-4366-a017-18c193d56b14")
+@WinrtFactory("Windows.UI.Xaml.Controls.CommandBarOverflowPresenter")
+interface ICommandBarOverflowPresenter : IInspectable
+{
 }
 
 @uuid("8323f774-5aaa-4049-b78f-218c6a19c37e")
@@ -1609,6 +1645,12 @@ interface IContentDialogFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ContentDialog* return_instance);
+}
+
+@uuid("0966b315-5f59-4999-9e3e-374c0f174b04")
+@WinrtFactory("Windows.UI.Xaml.Controls.ContentDialogOpenedEventArgs")
+interface IContentDialogOpenedEventArgs : IInspectable
+{
 }
 
 @uuid("23ab47a6-508a-4f33-b786-f2fa96d869af")
@@ -2274,6 +2316,12 @@ extern(Windows):
 	HRESULT get_SecondaryTextProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("7c62f70e-2ddc-4381-832f-54cbdfaa849a")
+@WinrtFactory("Windows.UI.Xaml.Controls.DatePickerFlyoutPresenter")
+interface IDatePickerFlyoutPresenter : IInspectable
+{
+}
+
 @uuid("cd570377-5845-4c12-8c10-592d9fcc7cd9")
 @WinrtFactory("Windows.UI.Xaml.Controls.DatePickerFlyout")
 interface IDatePickerFlyoutStatics : IInspectable
@@ -2379,6 +2427,12 @@ extern(Windows):
 	HRESULT get_Action(Windows.UI.Xaml.Controls.CommandBarDynamicOverflowAction* return_value);
 }
 
+@uuid("a1582f68-3d7d-4d3b-b71d-488eed1e3493")
+@WinrtFactory("Windows.UI.Xaml.Controls.FlipView")
+interface IFlipView : IInspectable
+{
+}
+
 @uuid("c4fea4fd-7af3-4952-9fd9-9e0987fc4f29")
 @WinrtFactory("Windows.UI.Xaml.Controls.FlipView")
 interface IFlipView2 : IInspectable
@@ -2398,6 +2452,12 @@ interface IFlipViewFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.FlipView* return_instance);
+}
+
+@uuid("56196565-ce2b-4bda-a36b-82a2b8b0d4c0")
+@WinrtFactory("Windows.UI.Xaml.Controls.FlipViewItem")
+interface IFlipViewItem : IInspectable
+{
 }
 
 @uuid("f21d91fe-22a0-4412-a853-9d6a6e8f2aaf")
@@ -2443,6 +2503,12 @@ extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Flyout* return_instance);
 }
 
+@uuid("827d5b79-e37b-46a5-8d44-63a11a580e83")
+@WinrtFactory("Windows.UI.Xaml.Controls.FlyoutPresenter")
+interface IFlyoutPresenter : IInspectable
+{
+}
+
 @uuid("ee4d668f-da76-469a-acd7-3060e613ade7")
 @WinrtFactory("Windows.UI.Xaml.Controls.FlyoutPresenter")
 interface IFlyoutPresenterFactory : IInspectable
@@ -2462,6 +2528,18 @@ interface IFlyoutStatics : IInspectable
 extern(Windows):
 	HRESULT get_ContentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_FlyoutPresenterStyleProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("5e14280f-953e-4cf8-b9ea-c530a1ce02ad")
+@WinrtFactory("Windows.UI.Xaml.Controls.FocusDisengagedEventArgs")
+interface IFocusDisengagedEventArgs : IInspectable
+{
+}
+
+@uuid("a69fc352-da66-404c-823f-5358594e70bb")
+@WinrtFactory("Windows.UI.Xaml.Controls.FocusEngagedEventArgs")
+interface IFocusEngagedEventArgs : IInspectable
+{
 }
 
 @uuid("4a59e0f4-87c0-4ccd-93c4-a3a01ce39265")
@@ -2730,6 +2808,12 @@ extern(Windows):
 	HRESULT get_PaddingProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("026ae934-b67e-4d80-8f72-8aa64b4d827b")
+@WinrtFactory("Windows.UI.Xaml.Controls.GridView")
+interface IGridView : IInspectable
+{
+}
+
 @uuid("d9bcca89-09f9-4c6e-a83e-f199146f0e7d")
 @WinrtFactory("Windows.UI.Xaml.Controls.GridView")
 interface IGridViewFactory : IInspectable
@@ -2738,6 +2822,12 @@ interface IGridViewFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.GridView* return_instance);
+}
+
+@uuid("72d75d7e-5dc3-4ffc-9b1c-939b5c37161c")
+@WinrtFactory("Windows.UI.Xaml.Controls.GridViewHeaderItem")
+interface IGridViewHeaderItem : IInspectable
+{
 }
 
 @uuid("36e0c96e-b56a-4b3b-8bac-7aef5e6f9945")
@@ -2768,6 +2858,12 @@ interface IGridViewItemFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.GridViewItem* return_instance);
+}
+
+@uuid("4ae8d5d1-7228-4a16-a61f-88c0e8f45c76")
+@WinrtFactory("Windows.UI.Xaml.Controls.GroupItem")
+interface IGroupItem : IInspectable
+{
 }
 
 @uuid("d9a1d53e-b1e0-4319-9808-7a9e887e13b0")
@@ -2999,6 +3095,12 @@ extern(Windows):
 	HRESULT set_Foreground(Windows.UI.Xaml.Media.Brush value);
 }
 
+@uuid("cf37a562-0424-43c7-8bea-720fba973ef1")
+@WinrtFactory("Windows.UI.Xaml.Controls.IconElement")
+interface IIconElementFactory : IInspectable
+{
+}
+
 @uuid("be19a623-77cf-472f-82ea-047801d12012")
 @WinrtFactory("Windows.UI.Xaml.Controls.IconElement")
 interface IIconElementStatics : IInspectable
@@ -3133,6 +3235,12 @@ extern(Windows):
 	HRESULT abi_GetMenuButton(Windows.UI.Xaml.Controls.InkToolbarMenuKind menu, Windows.UI.Xaml.Controls.InkToolbarMenuButton* return_returnValue);
 }
 
+@uuid("158329f8-1e99-3acc-910f-9da2d872ae12")
+@WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarBallpointPenButton")
+interface IInkToolbarBallpointPenButton : IInspectable
+{
+}
+
 @uuid("2f0bd3e4-d754-4255-8ec4-00cd101296ab")
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarBallpointPenButton")
 interface IInkToolbarBallpointPenButtonFactory : IInspectable
@@ -3207,6 +3315,12 @@ extern(Windows):
 	HRESULT abi_CreateInkDrawingAttributesCore(Windows.UI.Xaml.Media.Brush brush, double strokeWidth, Windows.UI.Input.Inking.InkDrawingAttributes* return_returnValue);
 }
 
+@uuid("550c4d84-4f54-4fbe-b12b-e0a50aab0d05")
+@WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton")
+interface IInkToolbarCustomToggleButton : IInspectable
+{
+}
+
 @uuid("4a00374d-4cd2-4ed9-863e-83b8cf3fd2af")
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton")
 interface IInkToolbarCustomToggleButtonFactory : IInspectable
@@ -3246,6 +3360,12 @@ interface IInkToolbarCustomToolButtonStatics : IInspectable
 
 extern(Windows):
 	HRESULT get_ConfigurationContentProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("4cbdb92e-5f5e-4b35-a41c-16ffb0283bc0")
+@WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarEraserButton")
+interface IInkToolbarEraserButton : IInspectable
+{
 }
 
 @uuid("e7a59257-5ae8-436d-b2e2-93c200900ca0")
@@ -3327,6 +3447,12 @@ extern(Windows):
 	HRESULT get_IsCheckedProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("0b3cc15b-7abf-487e-acc1-5b5048fee6d2")
+@WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarHighlighterButton")
+interface IInkToolbarHighlighterButton : IInspectable
+{
+}
+
 @uuid("7c334add-42ca-4943-94a4-23b5a6e55cf1")
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarHighlighterButton")
 interface IInkToolbarHighlighterButtonFactory : IInspectable
@@ -3360,6 +3486,12 @@ extern(Windows):
 	HRESULT set_IsExtensionGlyphShown(bool value);
 }
 
+@uuid("7a463a9d-5dc7-44a7-afd0-2b685cb9a96c")
+@WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarMenuButton")
+interface IInkToolbarMenuButtonFactory : IInspectable
+{
+}
+
 @uuid("f03b17a6-b8b0-4a87-a961-37cd05d83137")
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarMenuButton")
 interface IInkToolbarMenuButtonStatics : IInspectable
@@ -3388,6 +3520,12 @@ extern(Windows):
 	HRESULT set_SelectedBrushIndex(INT32 value);
 	HRESULT get_SelectedStrokeWidth(double* return_value);
 	HRESULT set_SelectedStrokeWidth(double value);
+}
+
+@uuid("b1463d21-59cb-4a83-92e1-692842797b2e")
+@WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarPenButton")
+interface IInkToolbarPenButtonFactory : IInspectable
+{
 }
 
 @uuid("b922ce42-09f0-453d-8026-44daf2753f65")
@@ -3433,6 +3571,12 @@ interface IInkToolbarPenConfigurationControlStatics : IInspectable
 
 extern(Windows):
 	HRESULT get_PenButtonProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("5b112832-1984-4148-9f25-382b35db087f")
+@WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarPencilButton")
+interface IInkToolbarPencilButton : IInspectable
+{
 }
 
 @uuid("db66d85f-cfd6-495f-93ab-b8566af9f8af")
@@ -3556,6 +3700,12 @@ extern(Windows):
 	HRESULT get_ToggleKind(Windows.UI.Xaml.Controls.InkToolbarToggle* return_value);
 }
 
+@uuid("b2f90710-e5a1-4365-9d1a-e5b7ad8b9668")
+@WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarToggleButton")
+interface IInkToolbarToggleButtonFactory : IInspectable
+{
+}
+
 @uuid("5c5af41e-ccb7-4458-8064-a9849d31561b")
 @WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarToolButton")
 interface IInkToolbarToolButton : IInspectable
@@ -3566,6 +3716,12 @@ extern(Windows):
 	HRESULT get_ToolKind(Windows.UI.Xaml.Controls.InkToolbarTool* return_value);
 	HRESULT get_IsExtensionGlyphShown(bool* return_value);
 	HRESULT set_IsExtensionGlyphShown(bool value);
+}
+
+@uuid("6293bf4b-89fe-4ed0-a1a6-88d3eba917b2")
+@WinrtFactory("Windows.UI.Xaml.Controls.InkToolbarToolButton")
+interface IInkToolbarToolButtonFactory : IInspectable
+{
 }
 
 @uuid("9e097d18-d136-4ef6-b0fd-1a78c2884a01")
@@ -3737,6 +3893,12 @@ extern(Windows):
 	HRESULT get_IsGroupingProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT abi_GetItemsOwner(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.Controls.ItemsControl* return_returnValue);
 	HRESULT abi_ItemsControlFromItemContainer(Windows.UI.Xaml.DependencyObject container, Windows.UI.Xaml.Controls.ItemsControl* return_returnValue);
+}
+
+@uuid("14ead768-34b2-4b97-bf3c-e8d73230a2aa")
+@WinrtFactory("Windows.UI.Xaml.Controls.ItemsPanelTemplate")
+interface IItemsPanelTemplate : IInspectable
+{
 }
 
 @uuid("f95b9aac-a621-488e-9156-8ee31165be04")
@@ -3965,6 +4127,12 @@ extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ListBox* return_instance);
 }
 
+@uuid("43c13323-6edf-4e4b-b6b2-3a93eec41d95")
+@WinrtFactory("Windows.UI.Xaml.Controls.ListBoxItem")
+interface IListBoxItem : IInspectable
+{
+}
+
 @uuid("4398b8d4-a3de-402c-b23d-190384b27ca8")
 @WinrtFactory("Windows.UI.Xaml.Controls.ListBoxItem")
 interface IListBoxItemFactory : IInspectable
@@ -4024,6 +4192,12 @@ extern(Windows):
 	HRESULT abi_ShowAtAsync(Windows.UI.Xaml.FrameworkElement target, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(IInspectable))* return_returnValue);
 }
 
+@uuid("68155fb3-883e-417a-80d0-e2fd88410084")
+@WinrtFactory("Windows.UI.Xaml.Controls.ListPickerFlyoutPresenter")
+interface IListPickerFlyoutPresenter : IInspectable
+{
+}
+
 @uuid("fee25b97-8b96-4602-81d2-82fd8e0f7ea8")
 @WinrtFactory("Windows.UI.Xaml.Controls.ListPickerFlyout")
 interface IListPickerFlyoutStatics : IInspectable
@@ -4039,6 +4213,12 @@ extern(Windows):
 	HRESULT get_SelectedItemProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_SelectedValueProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_SelectedValuePathProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("f6ce8c6d-fe96-41ad-a64a-c2b81c4af7f8")
+@WinrtFactory("Windows.UI.Xaml.Controls.ListView")
+interface IListView : IInspectable
+{
 }
 
 @uuid("3d0813ba-6890-4537-bfe5-796d9458edd6")
@@ -4165,6 +4345,18 @@ extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ListViewBase* return_instance);
 }
 
+@uuid("6d0ded27-0d19-4091-8917-ce7c85c1e630")
+@WinrtFactory("Windows.UI.Xaml.Controls.ListViewBaseHeaderItem")
+interface IListViewBaseHeaderItem : IInspectable
+{
+}
+
+@uuid("3872a6a1-ea19-455f-9df7-147cc41d329c")
+@WinrtFactory("Windows.UI.Xaml.Controls.ListViewBaseHeaderItem")
+interface IListViewBaseHeaderItemFactory : IInspectable
+{
+}
+
 @uuid("8532b8f7-3e16-455b-89a8-c1346223f6d3")
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewBase")
 interface IListViewBaseStatics : IInspectable
@@ -4241,6 +4433,12 @@ extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ListView* return_instance);
 }
 
+@uuid("1b61baeb-e196-4b3b-a5f9-1ed636f3f79b")
+@WinrtFactory("Windows.UI.Xaml.Controls.ListViewHeaderItem")
+interface IListViewHeaderItem : IInspectable
+{
+}
+
 @uuid("68d2c96a-96b0-4f08-a7a5-f1086720a0fa")
 @WinrtFactory("Windows.UI.Xaml.Controls.ListViewHeaderItem")
 interface IListViewHeaderItemFactory : IInspectable
@@ -4269,6 +4467,12 @@ interface IListViewItemFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ListViewItem* return_instance);
+}
+
+@uuid("05bde8a6-2191-4b4b-8c22-9b25676e806e")
+@WinrtFactory("Windows.UI.Xaml.Controls.ListViewPersistenceHelper")
+interface IListViewPersistenceHelper : IInspectable
+{
 }
 
 @uuid("6d0c2b08-bb9b-44f9-8063-5c3f9c21884b")
@@ -4630,6 +4834,12 @@ extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.MediaTransportControls* return_instance);
 }
 
+@uuid("3d41d509-ff44-4420-807e-8f7a2e2c4251")
+@WinrtFactory("Windows.UI.Xaml.Controls.MediaTransportControlsHelper")
+interface IMediaTransportControlsHelper : IInspectable
+{
+}
+
 @uuid("5a772047-a9a1-4625-9270-7f49875d4394")
 @WinrtFactory("Windows.UI.Xaml.Controls.MediaTransportControlsHelper")
 interface IMediaTransportControlsHelperStatics : IInspectable
@@ -4744,6 +4954,18 @@ extern(Windows):
 	HRESULT set_Icon(Windows.UI.Xaml.Controls.IconElement value);
 }
 
+@uuid("f9b56047-8da6-4730-9208-144125c6b396")
+@WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutItemBase")
+interface IMenuFlyoutItemBase : IInspectable
+{
+}
+
+@uuid("83e6dbad-fc67-41d5-8797-60acd1ceb1d9")
+@WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutItemBase")
+interface IMenuFlyoutItemBaseFactory : IInspectable
+{
+}
+
 @uuid("c5aa39e2-44f3-455e-9c5b-62bb6afce3ad")
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutItem")
 interface IMenuFlyoutItemFactory : IInspectable
@@ -4776,6 +4998,12 @@ extern(Windows):
 	HRESULT get_IconProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("906e0304-254e-413f-b219-c7b97f003752")
+@WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutPresenter")
+interface IMenuFlyoutPresenter : IInspectable
+{
+}
+
 @uuid("895894df-5a9f-4a1f-85ec-6f3c1b6dcb89")
 @WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutPresenter")
 interface IMenuFlyoutPresenter2 : IInspectable
@@ -4794,6 +5022,12 @@ interface IMenuFlyoutPresenterFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.MenuFlyoutPresenter* return_instance);
+}
+
+@uuid("71fa2b7d-0b51-4950-a1a4-bbc42eac4c12")
+@WinrtFactory("Windows.UI.Xaml.Controls.MenuFlyoutSeparator")
+interface IMenuFlyoutSeparator : IInspectable
+{
 }
 
 @uuid("c159dcc8-b437-44e0-b24b-5720aea1dbac")
@@ -5106,6 +5340,12 @@ extern(Windows):
 	HRESULT get_DataProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("447a9b51-1e23-4779-992b-986849713941")
+@WinrtFactory("Windows.UI.Xaml.Controls.PickerConfirmedEventArgs")
+interface IPickerConfirmedEventArgs : IInspectable
+{
+}
+
 @uuid("a336ffdb-08d9-43e6-944e-f2e5c7cee630")
 @WinrtFactory("Windows.UI.Xaml.Controls.PickerFlyout")
 interface IPickerFlyout : IInspectable
@@ -5120,6 +5360,12 @@ extern(Windows):
 	HRESULT add_Confirmed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.PickerFlyout, Windows.UI.Xaml.Controls.PickerConfirmedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_Confirmed(EventRegistrationToken token);
 	HRESULT abi_ShowAtAsync(Windows.UI.Xaml.FrameworkElement target, Windows.Foundation.IAsyncOperation!(bool)* return_returnValue);
+}
+
+@uuid("5884c978-6b27-4b38-a9ae-677c2994652e")
+@WinrtFactory("Windows.UI.Xaml.Controls.PickerFlyoutPresenter")
+interface IPickerFlyoutPresenter : IInspectable
+{
 }
 
 @uuid("af18a436-f38a-4abd-b933-6286c115b07f")
@@ -5639,6 +5885,12 @@ interface IRichEditBoxStatics5 : IInspectable
 extern(Windows):
 	HRESULT get_SelectionHighlightColorWhenNotFocusedProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_MaxLengthProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("54065018-2813-4922-9f8e-b6bbafd995d8")
+@WinrtFactory("Windows.UI.Xaml.Controls.RichEditBoxTextChangingEventArgs")
+interface IRichEditBoxTextChangingEventArgs : IInspectable
+{
 }
 
 @uuid("395b0db5-636e-413e-9eb4-fc22ebfa3628")
@@ -6267,6 +6519,12 @@ extern(Windows):
 	HRESULT get_RemovedSections(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection)* return_value);
 }
 
+@uuid("557f5244-92f8-4150-b730-e6346e8f50d1")
+@WinrtFactory("Windows.UI.Xaml.Controls.SectionsInViewChangedEventArgs")
+interface ISectionsInViewChangedEventArgsFactory : IInspectable
+{
+}
+
 @uuid("c972d2dc-b609-4758-851e-a799c21de97d")
 @WinrtFactory("Windows.UI.Xaml.Controls.SelectionChangedEventArgs")
 interface ISelectionChangedEventArgs : IInspectable
@@ -6682,6 +6940,12 @@ interface IStyleSelectorOverrides : IInspectable
 
 extern(Windows):
 	HRESULT abi_SelectStyleCore(IInspectable item, Windows.UI.Xaml.DependencyObject container, Windows.UI.Xaml.Style* return_returnValue);
+}
+
+@uuid("1c59db48-8233-4c0c-bcf5-02a5fb35ae00")
+@WinrtFactory("Windows.UI.Xaml.Controls.SwapChainBackgroundPanel")
+interface ISwapChainBackgroundPanel : IInspectable
+{
 }
 
 @uuid("21e672f2-2592-4c38-870f-28fbcf52c095")
@@ -7109,6 +7373,12 @@ extern(Windows):
 	HRESULT get_SelectionHighlightColorWhenNotFocusedProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("4e6a4b75-43dd-4e33-acbe-2d8796a17927")
+@WinrtFactory("Windows.UI.Xaml.Controls.TextBoxTextChangingEventArgs")
+interface ITextBoxTextChangingEventArgs : IInspectable
+{
+}
+
 @uuid("c0723d44-53a6-415f-a981-50dfaf1becbe")
 @WinrtFactory("Windows.UI.Xaml.Controls.TextBoxTextChangingEventArgs")
 interface ITextBoxTextChangingEventArgs2 : IInspectable
@@ -7117,6 +7387,12 @@ interface ITextBoxTextChangingEventArgs2 : IInspectable
 
 extern(Windows):
 	HRESULT get_IsContentChanging(bool* return_value);
+}
+
+@uuid("4dd04f7d-7a11-4b2e-9933-577df39252b6")
+@WinrtFactory("Windows.UI.Xaml.Controls.TextChangedEventArgs")
+interface ITextChangedEventArgs : IInspectable
+{
 }
 
 @uuid("b9c7e0f2-50b7-441d-990c-68553e2e056b")
@@ -7232,6 +7508,12 @@ extern(Windows):
 	HRESULT add_TimePicked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TimePickerFlyout, Windows.UI.Xaml.Controls.TimePickedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_TimePicked(EventRegistrationToken token);
 	HRESULT abi_ShowAtAsync(Windows.UI.Xaml.FrameworkElement target, Windows.Foundation.IAsyncOperation!(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan))* return_returnValue);
+}
+
+@uuid("c5320638-7a18-40ed-9fd0-4c852c09b24e")
+@WinrtFactory("Windows.UI.Xaml.Controls.TimePickerFlyoutPresenter")
+interface ITimePickerFlyoutPresenter : IInspectable
+{
 }
 
 @uuid("3f6728ce-2169-4003-b4a8-8de7035a0ad6")
@@ -7401,6 +7683,12 @@ extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.ToolTip* return_instance);
 }
 
+@uuid("03a55f87-bfcc-4a1e-8fea-98f610832cea")
+@WinrtFactory("Windows.UI.Xaml.Controls.ToolTipService")
+interface IToolTipService : IInspectable
+{
+}
+
 @uuid("86e649f8-e245-48aa-a8c8-d1073ed76319")
 @WinrtFactory("Windows.UI.Xaml.Controls.ToolTipService")
 interface IToolTipServiceStatics : IInspectable
@@ -7550,6 +7838,12 @@ interface IVirtualizingPanel : IInspectable
 
 extern(Windows):
 	HRESULT get_ItemContainerGenerator(Windows.UI.Xaml.Controls.ItemContainerGenerator* return_value);
+}
+
+@uuid("be19f839-cbd0-43e9-a5d0-0bdba0ffbd38")
+@WinrtFactory("Windows.UI.Xaml.Controls.VirtualizingPanel")
+interface IVirtualizingPanelFactory : IInspectable
+{
 }
 
 @uuid("5ef6bd7d-677f-408d-a96c-b19507750466")
@@ -8042,839 +8336,839 @@ extern(Windows):
 	HRESULT get_MaximumRowsOrColumnsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
-interface AppBar : Windows.UI.Xaml.Controls.ContentControl
+interface AppBar : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IAppBar, Windows.UI.Xaml.Controls.IAppBarOverrides, Windows.UI.Xaml.Controls.IAppBar2, Windows.UI.Xaml.Controls.IAppBar3, Windows.UI.Xaml.Controls.IAppBarOverrides3, Windows.UI.Xaml.Controls.IAppBar4
 {
 }
 
-interface AppBarButton : Windows.UI.Xaml.Controls.Button
+interface AppBarButton : Windows.UI.Xaml.Controls.Button, Windows.UI.Xaml.Controls.IAppBarButton, Windows.UI.Xaml.Controls.ICommandBarElement, Windows.UI.Xaml.Controls.IAppBarButton3, Windows.UI.Xaml.Controls.ICommandBarElement2
 {
 }
 
-interface AppBarSeparator : Windows.UI.Xaml.Controls.Control
+interface AppBarSeparator : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IAppBarSeparator, Windows.UI.Xaml.Controls.ICommandBarElement, Windows.UI.Xaml.Controls.ICommandBarElement2
 {
 }
 
-interface AppBarToggleButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton
+interface AppBarToggleButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.UI.Xaml.Controls.IAppBarToggleButton, Windows.UI.Xaml.Controls.ICommandBarElement, Windows.UI.Xaml.Controls.IAppBarToggleButton3, Windows.UI.Xaml.Controls.ICommandBarElement2
 {
 }
 
-interface AutoSuggestBox : Windows.UI.Xaml.Controls.ItemsControl
+interface AutoSuggestBox : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.IAutoSuggestBox, Windows.UI.Xaml.Controls.IAutoSuggestBox2, Windows.UI.Xaml.Controls.IAutoSuggestBox3
 {
 }
 
-interface AutoSuggestBoxQuerySubmittedEventArgs : Windows.UI.Xaml.DependencyObject
+interface AutoSuggestBoxQuerySubmittedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IAutoSuggestBoxQuerySubmittedEventArgs
 {
 }
 
-interface AutoSuggestBoxSuggestionChosenEventArgs : Windows.UI.Xaml.DependencyObject
+interface AutoSuggestBoxSuggestionChosenEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IAutoSuggestBoxSuggestionChosenEventArgs
 {
 }
 
-interface AutoSuggestBoxTextChangedEventArgs : Windows.UI.Xaml.DependencyObject
+interface AutoSuggestBoxTextChangedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IAutoSuggestBoxTextChangedEventArgs
 {
 }
 
-interface BackClickEventArgs
+interface BackClickEventArgs : Windows.UI.Xaml.Controls.IBackClickEventArgs
 {
 }
 
-interface BitmapIcon : Windows.UI.Xaml.Controls.IconElement
+interface BitmapIcon : Windows.UI.Xaml.Controls.IconElement, Windows.UI.Xaml.Controls.IBitmapIcon, Windows.UI.Xaml.Controls.IBitmapIcon2
 {
 }
 
-interface Border : Windows.UI.Xaml.FrameworkElement
+interface Border : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IBorder
 {
 }
 
-interface Button : Windows.UI.Xaml.Controls.Primitives.ButtonBase
+interface Button : Windows.UI.Xaml.Controls.Primitives.ButtonBase, Windows.UI.Xaml.Controls.IButton, Windows.UI.Xaml.Controls.IButtonWithFlyout
 {
 }
 
-interface CalendarDatePicker : Windows.UI.Xaml.Controls.Control
+interface CalendarDatePicker : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ICalendarDatePicker, Windows.UI.Xaml.Controls.ICalendarDatePicker2
 {
 }
 
-interface CalendarDatePickerDateChangedEventArgs
+interface CalendarDatePickerDateChangedEventArgs : Windows.UI.Xaml.Controls.ICalendarDatePickerDateChangedEventArgs
 {
 }
 
-interface CalendarView : Windows.UI.Xaml.Controls.Control
+interface CalendarView : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ICalendarView
 {
 }
 
-interface CalendarViewDayItem : Windows.UI.Xaml.Controls.Control
+interface CalendarViewDayItem : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ICalendarViewDayItem
 {
 }
 
-interface CalendarViewDayItemChangingEventArgs
+interface CalendarViewDayItemChangingEventArgs : Windows.UI.Xaml.Controls.ICalendarViewDayItemChangingEventArgs
 {
 }
 
-interface CalendarViewSelectedDatesChangedEventArgs
+interface CalendarViewSelectedDatesChangedEventArgs : Windows.UI.Xaml.Controls.ICalendarViewSelectedDatesChangedEventArgs
 {
 }
 
-interface CandidateWindowBoundsChangedEventArgs
+interface CandidateWindowBoundsChangedEventArgs : Windows.UI.Xaml.Controls.ICandidateWindowBoundsChangedEventArgs
 {
 }
 
-interface Canvas : Windows.UI.Xaml.Controls.Panel
+interface Canvas : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.ICanvas
 {
 }
 
-interface CaptureElement : Windows.UI.Xaml.FrameworkElement
+interface CaptureElement : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.ICaptureElement
 {
 }
 
-interface CheckBox : Windows.UI.Xaml.Controls.Primitives.ToggleButton
+interface CheckBox : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.UI.Xaml.Controls.ICheckBox
 {
 }
 
-interface ChoosingGroupHeaderContainerEventArgs
+interface ChoosingGroupHeaderContainerEventArgs : Windows.UI.Xaml.Controls.IChoosingGroupHeaderContainerEventArgs
 {
 }
 
-interface ChoosingItemContainerEventArgs
+interface ChoosingItemContainerEventArgs : Windows.UI.Xaml.Controls.IChoosingItemContainerEventArgs
 {
 }
 
-interface CleanUpVirtualizedItemEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface CleanUpVirtualizedItemEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.ICleanUpVirtualizedItemEventArgs
 {
 }
 
-interface ColumnDefinition : Windows.UI.Xaml.DependencyObject
+interface ColumnDefinition : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IColumnDefinition
 {
 }
 
-interface ColumnDefinitionCollection
+interface ColumnDefinitionCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.ColumnDefinition), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Controls.ColumnDefinition)
 {
 }
 
-interface ComboBox : Windows.UI.Xaml.Controls.Primitives.Selector
+interface ComboBox : Windows.UI.Xaml.Controls.Primitives.Selector, Windows.UI.Xaml.Controls.IComboBox, Windows.UI.Xaml.Controls.IComboBoxOverrides, Windows.UI.Xaml.Controls.IComboBox2, Windows.UI.Xaml.Controls.IComboBox3, Windows.UI.Xaml.Controls.IComboBox4
 {
 }
 
-interface ComboBoxItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem
+interface ComboBoxItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IComboBoxItem
 {
 }
 
-interface CommandBar : Windows.UI.Xaml.Controls.AppBar
+interface CommandBar : Windows.UI.Xaml.Controls.AppBar, Windows.UI.Xaml.Controls.ICommandBar, Windows.UI.Xaml.Controls.ICommandBar2, Windows.UI.Xaml.Controls.ICommandBar3
 {
 }
 
-interface CommandBarOverflowPresenter : Windows.UI.Xaml.Controls.ItemsControl
+interface CommandBarOverflowPresenter : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.ICommandBarOverflowPresenter
 {
 }
 
-interface ContainerContentChangingEventArgs
+interface ContainerContentChangingEventArgs : Windows.UI.Xaml.Controls.IContainerContentChangingEventArgs
 {
 }
 
-interface ContentControl : Windows.UI.Xaml.Controls.Control
+interface ContentControl : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IContentControl, Windows.UI.Xaml.Controls.IContentControlOverrides, Windows.UI.Xaml.Controls.IContentControl2
 {
 }
 
-interface ContentDialog : Windows.UI.Xaml.Controls.ContentControl
+interface ContentDialog : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IContentDialog, Windows.UI.Xaml.Controls.IContentDialog2
 {
 }
 
-interface ContentDialogButtonClickDeferral
+interface ContentDialogButtonClickDeferral : Windows.UI.Xaml.Controls.IContentDialogButtonClickDeferral
 {
 }
 
-interface ContentDialogButtonClickEventArgs
+interface ContentDialogButtonClickEventArgs : Windows.UI.Xaml.Controls.IContentDialogButtonClickEventArgs
 {
 }
 
-interface ContentDialogClosedEventArgs
+interface ContentDialogClosedEventArgs : Windows.UI.Xaml.Controls.IContentDialogClosedEventArgs
 {
 }
 
-interface ContentDialogClosingDeferral
+interface ContentDialogClosingDeferral : Windows.UI.Xaml.Controls.IContentDialogClosingDeferral
 {
 }
 
-interface ContentDialogClosingEventArgs
+interface ContentDialogClosingEventArgs : Windows.UI.Xaml.Controls.IContentDialogClosingEventArgs
 {
 }
 
-interface ContentDialogOpenedEventArgs
+interface ContentDialogOpenedEventArgs : Windows.UI.Xaml.Controls.IContentDialogOpenedEventArgs
 {
 }
 
-interface ContentPresenter : Windows.UI.Xaml.FrameworkElement
+interface ContentPresenter : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IContentPresenter, Windows.UI.Xaml.Controls.IContentPresenterOverrides, Windows.UI.Xaml.Controls.IContentPresenter2, Windows.UI.Xaml.Controls.IContentPresenter3, Windows.UI.Xaml.Controls.IContentPresenter4
 {
 }
 
-interface ContextMenuEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface ContextMenuEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.IContextMenuEventArgs
 {
 }
 
-interface Control : Windows.UI.Xaml.FrameworkElement
+interface Control : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IControl, Windows.UI.Xaml.Controls.IControlOverrides, Windows.UI.Xaml.Controls.IControlProtected, Windows.UI.Xaml.Controls.IControl2, Windows.UI.Xaml.Controls.IControl3, Windows.UI.Xaml.Controls.IControl4, Windows.UI.Xaml.Controls.IControl5
 {
 }
 
-interface ControlTemplate : Windows.UI.Xaml.FrameworkTemplate
+interface ControlTemplate : Windows.UI.Xaml.FrameworkTemplate, Windows.UI.Xaml.Controls.IControlTemplate
 {
 }
 
-interface DataTemplateSelector
+interface DataTemplateSelector : Windows.UI.Xaml.Controls.IDataTemplateSelector, Windows.UI.Xaml.Controls.IDataTemplateSelectorOverrides, Windows.UI.Xaml.Controls.IDataTemplateSelector2, Windows.UI.Xaml.Controls.IDataTemplateSelectorOverrides2
 {
 }
 
-interface DatePickedEventArgs : Windows.UI.Xaml.DependencyObject
+interface DatePickedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IDatePickedEventArgs
 {
 }
 
-interface DatePicker : Windows.UI.Xaml.Controls.Control
+interface DatePicker : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IDatePicker, Windows.UI.Xaml.Controls.IDatePicker2
 {
 }
 
-interface DatePickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase
+interface DatePickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase, Windows.UI.Xaml.Controls.IDatePickerFlyout, Windows.UI.Xaml.Controls.IDatePickerFlyout2
 {
 }
 
-interface DatePickerFlyoutItem : Windows.UI.Xaml.DependencyObject
+interface DatePickerFlyoutItem : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IDatePickerFlyoutItem, Windows.UI.Xaml.Data.ICustomPropertyProvider
 {
 }
 
-interface DatePickerFlyoutPresenter : Windows.UI.Xaml.Controls.Control
+interface DatePickerFlyoutPresenter : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IDatePickerFlyoutPresenter
 {
 }
 
-interface DatePickerValueChangedEventArgs
+interface DatePickerValueChangedEventArgs : Windows.UI.Xaml.Controls.IDatePickerValueChangedEventArgs
 {
 }
 
-interface DragItemsCompletedEventArgs
+interface DragItemsCompletedEventArgs : Windows.UI.Xaml.Controls.IDragItemsCompletedEventArgs
 {
 }
 
-interface DragItemsStartingEventArgs
+interface DragItemsStartingEventArgs : Windows.UI.Xaml.Controls.IDragItemsStartingEventArgs
 {
 }
 
-interface DynamicOverflowItemsChangingEventArgs
+interface DynamicOverflowItemsChangingEventArgs : Windows.UI.Xaml.Controls.IDynamicOverflowItemsChangingEventArgs
 {
 }
 
-interface FlipView : Windows.UI.Xaml.Controls.Primitives.Selector
+interface FlipView : Windows.UI.Xaml.Controls.Primitives.Selector, Windows.UI.Xaml.Controls.IFlipView, Windows.UI.Xaml.Controls.IFlipView2
 {
 }
 
-interface FlipViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem
+interface FlipViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IFlipViewItem
 {
 }
 
-interface Flyout : Windows.UI.Xaml.Controls.Primitives.FlyoutBase
+interface Flyout : Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.IFlyout
 {
 }
 
-interface FlyoutPresenter : Windows.UI.Xaml.Controls.ContentControl
+interface FlyoutPresenter : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IFlyoutPresenter
 {
 }
 
-interface FocusDisengagedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface FocusDisengagedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.IFocusDisengagedEventArgs
 {
 }
 
-interface FocusEngagedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface FocusEngagedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.IFocusEngagedEventArgs, Windows.UI.Xaml.Controls.IFocusEngagedEventArgs2
 {
 }
 
-interface FontIcon : Windows.UI.Xaml.Controls.IconElement
+interface FontIcon : Windows.UI.Xaml.Controls.IconElement, Windows.UI.Xaml.Controls.IFontIcon, Windows.UI.Xaml.Controls.IFontIcon2, Windows.UI.Xaml.Controls.IFontIcon3
 {
 }
 
-interface Frame : Windows.UI.Xaml.Controls.ContentControl
+interface Frame : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IFrame, Windows.UI.Xaml.Controls.INavigate, Windows.UI.Xaml.Controls.IFrame2, Windows.UI.Xaml.Controls.IFrame3, Windows.UI.Xaml.Controls.IFrame4
 {
 }
 
-interface Grid : Windows.UI.Xaml.Controls.Panel
+interface Grid : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IGrid, Windows.UI.Xaml.Controls.IGrid2
 {
 }
 
-interface GridView : Windows.UI.Xaml.Controls.ListViewBase
+interface GridView : Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.IGridView
 {
 }
 
-interface GridViewHeaderItem : Windows.UI.Xaml.Controls.ListViewBaseHeaderItem
+interface GridViewHeaderItem : Windows.UI.Xaml.Controls.ListViewBaseHeaderItem, Windows.UI.Xaml.Controls.IGridViewHeaderItem
 {
 }
 
-interface GridViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem
+interface GridViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IGridViewItem
 {
 }
 
-interface GroupItem : Windows.UI.Xaml.Controls.ContentControl
+interface GroupItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IGroupItem
 {
 }
 
-interface GroupStyle
+interface GroupStyle : Windows.UI.Xaml.Controls.IGroupStyle, Windows.UI.Xaml.Data.INotifyPropertyChanged, Windows.UI.Xaml.Controls.IGroupStyle2
 {
 }
 
-interface GroupStyleSelector
+interface GroupStyleSelector : Windows.UI.Xaml.Controls.IGroupStyleSelector, Windows.UI.Xaml.Controls.IGroupStyleSelectorOverrides
 {
 }
 
-interface Hub : Windows.UI.Xaml.Controls.Control
+interface Hub : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IHub, Windows.UI.Xaml.Controls.ISemanticZoomInformation
 {
 }
 
-interface HubSection : Windows.UI.Xaml.Controls.Control
+interface HubSection : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IHubSection
 {
 }
 
-interface HubSectionCollection
+interface HubSectionCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Controls.HubSection)
 {
 }
 
-interface HubSectionHeaderClickEventArgs
+interface HubSectionHeaderClickEventArgs : Windows.UI.Xaml.Controls.IHubSectionHeaderClickEventArgs
 {
 }
 
-interface HyperlinkButton : Windows.UI.Xaml.Controls.Primitives.ButtonBase
+interface HyperlinkButton : Windows.UI.Xaml.Controls.Primitives.ButtonBase, Windows.UI.Xaml.Controls.IHyperlinkButton
 {
 }
 
-interface IconElement : Windows.UI.Xaml.FrameworkElement
+interface IconElement : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IIconElement
 {
 }
 
-interface Image : Windows.UI.Xaml.FrameworkElement
+interface Image : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IImage, Windows.UI.Xaml.Controls.IImage2, Windows.UI.Xaml.Controls.IImage3
 {
 }
 
-interface InkCanvas : Windows.UI.Xaml.FrameworkElement
+interface InkCanvas : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IInkCanvas
 {
 }
 
-interface InkToolbar : Windows.UI.Xaml.Controls.Control
+interface InkToolbar : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IInkToolbar, Windows.UI.Xaml.Controls.IInkToolbar2
 {
 }
 
-interface InkToolbarBallpointPenButton : Windows.UI.Xaml.Controls.InkToolbarPenButton
+interface InkToolbarBallpointPenButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarBallpointPenButton
 {
 }
 
-interface InkToolbarCustomPen : Windows.UI.Xaml.DependencyObject
+interface InkToolbarCustomPen : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IInkToolbarCustomPen, Windows.UI.Xaml.Controls.IInkToolbarCustomPenOverrides
 {
 }
 
-interface InkToolbarCustomPenButton : Windows.UI.Xaml.Controls.InkToolbarPenButton
+interface InkToolbarCustomPenButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarCustomPenButton
 {
 }
 
-interface InkToolbarCustomToggleButton : Windows.UI.Xaml.Controls.InkToolbarToggleButton
+interface InkToolbarCustomToggleButton : Windows.UI.Xaml.Controls.InkToolbarToggleButton, Windows.UI.Xaml.Controls.IInkToolbarCustomToggleButton
 {
 }
 
-interface InkToolbarCustomToolButton : Windows.UI.Xaml.Controls.InkToolbarToolButton
+interface InkToolbarCustomToolButton : Windows.UI.Xaml.Controls.InkToolbarToolButton, Windows.UI.Xaml.Controls.IInkToolbarCustomToolButton
 {
 }
 
-interface InkToolbarEraserButton : Windows.UI.Xaml.Controls.InkToolbarToolButton
+interface InkToolbarEraserButton : Windows.UI.Xaml.Controls.InkToolbarToolButton, Windows.UI.Xaml.Controls.IInkToolbarEraserButton, Windows.UI.Xaml.Controls.IInkToolbarEraserButton2
 {
 }
 
-interface InkToolbarFlyoutItem : Windows.UI.Xaml.Controls.Primitives.ButtonBase
+interface InkToolbarFlyoutItem : Windows.UI.Xaml.Controls.Primitives.ButtonBase, Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem
 {
 }
 
-interface InkToolbarHighlighterButton : Windows.UI.Xaml.Controls.InkToolbarPenButton
+interface InkToolbarHighlighterButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarHighlighterButton
 {
 }
 
-interface InkToolbarIsStencilButtonCheckedChangedEventArgs
+interface InkToolbarIsStencilButtonCheckedChangedEventArgs : Windows.UI.Xaml.Controls.IInkToolbarIsStencilButtonCheckedChangedEventArgs
 {
 }
 
-interface InkToolbarMenuButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton
+interface InkToolbarMenuButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.UI.Xaml.Controls.IInkToolbarMenuButton
 {
 }
 
-interface InkToolbarPenButton : Windows.UI.Xaml.Controls.InkToolbarToolButton
+interface InkToolbarPenButton : Windows.UI.Xaml.Controls.InkToolbarToolButton, Windows.UI.Xaml.Controls.IInkToolbarPenButton
 {
 }
 
-interface InkToolbarPenConfigurationControl : Windows.UI.Xaml.Controls.Control
+interface InkToolbarPenConfigurationControl : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IInkToolbarPenConfigurationControl
 {
 }
 
-interface InkToolbarPencilButton : Windows.UI.Xaml.Controls.InkToolbarPenButton
+interface InkToolbarPencilButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarPencilButton
 {
 }
 
-interface InkToolbarRulerButton : Windows.UI.Xaml.Controls.InkToolbarToggleButton
+interface InkToolbarRulerButton : Windows.UI.Xaml.Controls.InkToolbarToggleButton, Windows.UI.Xaml.Controls.IInkToolbarRulerButton
 {
 }
 
-interface InkToolbarStencilButton : Windows.UI.Xaml.Controls.InkToolbarMenuButton
+interface InkToolbarStencilButton : Windows.UI.Xaml.Controls.InkToolbarMenuButton, Windows.UI.Xaml.Controls.IInkToolbarStencilButton
 {
 }
 
-interface InkToolbarToggleButton : Windows.UI.Xaml.Controls.CheckBox
+interface InkToolbarToggleButton : Windows.UI.Xaml.Controls.CheckBox, Windows.UI.Xaml.Controls.IInkToolbarToggleButton
 {
 }
 
-interface InkToolbarToolButton : Windows.UI.Xaml.Controls.RadioButton
+interface InkToolbarToolButton : Windows.UI.Xaml.Controls.RadioButton, Windows.UI.Xaml.Controls.IInkToolbarToolButton
 {
 }
 
-interface ItemClickEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface ItemClickEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.IItemClickEventArgs
 {
 }
 
-interface ItemCollection
+interface ItemCollection : Windows.Foundation.Collections.IObservableVector!(IInspectable), Windows.Foundation.Collections.IVector!(IInspectable), Windows.Foundation.Collections.IIterable!(IInspectable)
 {
 }
 
-interface ItemContainerGenerator
+interface ItemContainerGenerator : Windows.UI.Xaml.Controls.IItemContainerGenerator
 {
 }
 
-interface ItemsControl : Windows.UI.Xaml.Controls.Control
+interface ItemsControl : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IItemsControl, Windows.UI.Xaml.Controls.IItemsControlOverrides, Windows.UI.Xaml.Controls.IItemsControl2, Windows.UI.Xaml.Controls.IItemContainerMapping, Windows.UI.Xaml.Controls.IItemsControl3
 {
 }
 
-interface ItemsPanelTemplate : Windows.UI.Xaml.FrameworkTemplate
+interface ItemsPanelTemplate : Windows.UI.Xaml.FrameworkTemplate, Windows.UI.Xaml.Controls.IItemsPanelTemplate
 {
 }
 
-interface ItemsPickedEventArgs : Windows.UI.Xaml.DependencyObject
+interface ItemsPickedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IItemsPickedEventArgs
 {
 }
 
-interface ItemsPresenter : Windows.UI.Xaml.FrameworkElement
+interface ItemsPresenter : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IItemsPresenter, Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo, Windows.UI.Xaml.Controls.IItemsPresenter2
 {
 }
 
-interface ItemsStackPanel : Windows.UI.Xaml.Controls.Panel
+interface ItemsStackPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IItemsStackPanel, Windows.UI.Xaml.Controls.IItemsStackPanel2
 {
 }
 
-interface ItemsWrapGrid : Windows.UI.Xaml.Controls.Panel
+interface ItemsWrapGrid : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IItemsWrapGrid, Windows.UI.Xaml.Controls.IItemsWrapGrid2
 {
 }
 
-interface ListBox : Windows.UI.Xaml.Controls.Primitives.Selector
+interface ListBox : Windows.UI.Xaml.Controls.Primitives.Selector, Windows.UI.Xaml.Controls.IListBox, Windows.UI.Xaml.Controls.IListBox2
 {
 }
 
-interface ListBoxItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem
+interface ListBoxItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IListBoxItem
 {
 }
 
-interface ListPickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase
+interface ListPickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase, Windows.UI.Xaml.Controls.IListPickerFlyout
 {
 }
 
-interface ListPickerFlyoutPresenter : Windows.UI.Xaml.Controls.Control
+interface ListPickerFlyoutPresenter : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IListPickerFlyoutPresenter
 {
 }
 
-interface ListView : Windows.UI.Xaml.Controls.ListViewBase
+interface ListView : Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.IListView
 {
 }
 
-interface ListViewBase : Windows.UI.Xaml.Controls.Primitives.Selector
+interface ListViewBase : Windows.UI.Xaml.Controls.Primitives.Selector, Windows.UI.Xaml.Controls.IListViewBase, Windows.UI.Xaml.Controls.ISemanticZoomInformation, Windows.UI.Xaml.Controls.IListViewBase2, Windows.UI.Xaml.Controls.IListViewBase3, Windows.UI.Xaml.Controls.IListViewBase4, Windows.UI.Xaml.Controls.IListViewBase5, Windows.UI.Xaml.Controls.IListViewBase6
 {
 }
 
-interface ListViewBaseHeaderItem : Windows.UI.Xaml.Controls.ContentControl
+interface ListViewBaseHeaderItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IListViewBaseHeaderItem
 {
 }
 
-interface ListViewHeaderItem : Windows.UI.Xaml.Controls.ListViewBaseHeaderItem
+interface ListViewHeaderItem : Windows.UI.Xaml.Controls.ListViewBaseHeaderItem, Windows.UI.Xaml.Controls.IListViewHeaderItem
 {
 }
 
-interface ListViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem
+interface ListViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IListViewItem
 {
 }
 
-interface ListViewPersistenceHelper
+interface ListViewPersistenceHelper : Windows.UI.Xaml.Controls.IListViewPersistenceHelper
 {
 }
 
-interface MediaElement : Windows.UI.Xaml.FrameworkElement
+interface MediaElement : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IMediaElement, Windows.UI.Xaml.Controls.IMediaElement2, Windows.UI.Xaml.Controls.IMediaElement3
 {
 }
 
-interface MediaPlayerElement : Windows.UI.Xaml.Controls.Control
+interface MediaPlayerElement : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IMediaPlayerElement
 {
 }
 
-interface MediaPlayerPresenter : Windows.UI.Xaml.FrameworkElement
+interface MediaPlayerPresenter : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IMediaPlayerPresenter
 {
 }
 
-interface MediaTransportControls : Windows.UI.Xaml.Controls.Control
+interface MediaTransportControls : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IMediaTransportControls, Windows.UI.Xaml.Controls.IMediaTransportControls2
 {
 }
 
-interface MediaTransportControlsHelper
+interface MediaTransportControlsHelper : Windows.UI.Xaml.Controls.IMediaTransportControlsHelper
 {
 }
 
-interface MenuFlyout : Windows.UI.Xaml.Controls.Primitives.FlyoutBase
+interface MenuFlyout : Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.IMenuFlyout, Windows.UI.Xaml.Controls.IMenuFlyout2
 {
 }
 
-interface MenuFlyoutItem : Windows.UI.Xaml.Controls.MenuFlyoutItemBase
+interface MenuFlyoutItem : Windows.UI.Xaml.Controls.MenuFlyoutItemBase, Windows.UI.Xaml.Controls.IMenuFlyoutItem, Windows.UI.Xaml.Controls.IMenuFlyoutItem2
 {
 }
 
-interface MenuFlyoutItemBase : Windows.UI.Xaml.Controls.Control
+interface MenuFlyoutItemBase : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IMenuFlyoutItemBase
 {
 }
 
-interface MenuFlyoutPresenter : Windows.UI.Xaml.Controls.ItemsControl
+interface MenuFlyoutPresenter : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.IMenuFlyoutPresenter, Windows.UI.Xaml.Controls.IMenuFlyoutPresenter2
 {
 }
 
-interface MenuFlyoutSeparator : Windows.UI.Xaml.Controls.MenuFlyoutItemBase
+interface MenuFlyoutSeparator : Windows.UI.Xaml.Controls.MenuFlyoutItemBase, Windows.UI.Xaml.Controls.IMenuFlyoutSeparator
 {
 }
 
-interface MenuFlyoutSubItem : Windows.UI.Xaml.Controls.MenuFlyoutItemBase
+interface MenuFlyoutSubItem : Windows.UI.Xaml.Controls.MenuFlyoutItemBase, Windows.UI.Xaml.Controls.IMenuFlyoutSubItem, Windows.UI.Xaml.Controls.IMenuFlyoutSubItem2
 {
 }
 
-interface NotifyEventArgs
+interface NotifyEventArgs : Windows.UI.Xaml.Controls.INotifyEventArgs, Windows.UI.Xaml.Controls.INotifyEventArgs2
 {
 }
 
-interface Page : Windows.UI.Xaml.Controls.UserControl
+interface Page : Windows.UI.Xaml.Controls.UserControl, Windows.UI.Xaml.Controls.IPage, Windows.UI.Xaml.Controls.IPageOverrides
 {
 }
 
-interface Panel : Windows.UI.Xaml.FrameworkElement
+interface Panel : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IPanel
 {
 }
 
-interface PasswordBox : Windows.UI.Xaml.Controls.Control
+interface PasswordBox : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IPasswordBox, Windows.UI.Xaml.Controls.IPasswordBox2, Windows.UI.Xaml.Controls.IPasswordBox3
 {
 }
 
-interface PathIcon : Windows.UI.Xaml.Controls.IconElement
+interface PathIcon : Windows.UI.Xaml.Controls.IconElement, Windows.UI.Xaml.Controls.IPathIcon
 {
 }
 
-interface PickerConfirmedEventArgs : Windows.UI.Xaml.DependencyObject
+interface PickerConfirmedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IPickerConfirmedEventArgs
 {
 }
 
-interface PickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase
+interface PickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase, Windows.UI.Xaml.Controls.IPickerFlyout
 {
 }
 
-interface PickerFlyoutPresenter : Windows.UI.Xaml.Controls.ContentControl
+interface PickerFlyoutPresenter : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IPickerFlyoutPresenter
 {
 }
 
-interface Pivot : Windows.UI.Xaml.Controls.ItemsControl
+interface Pivot : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.IPivot, Windows.UI.Xaml.Controls.IPivot2, Windows.UI.Xaml.Controls.IPivot3
 {
 }
 
-interface PivotItem : Windows.UI.Xaml.Controls.ContentControl
+interface PivotItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IPivotItem
 {
 }
 
-interface PivotItemEventArgs
+interface PivotItemEventArgs : Windows.UI.Xaml.Controls.IPivotItemEventArgs
 {
 }
 
-interface ProgressBar : Windows.UI.Xaml.Controls.Primitives.RangeBase
+interface ProgressBar : Windows.UI.Xaml.Controls.Primitives.RangeBase, Windows.UI.Xaml.Controls.IProgressBar
 {
 }
 
-interface ProgressRing : Windows.UI.Xaml.Controls.Control
+interface ProgressRing : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IProgressRing
 {
 }
 
-interface RadioButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton
+interface RadioButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.UI.Xaml.Controls.IRadioButton
 {
 }
 
-interface RelativePanel : Windows.UI.Xaml.Controls.Panel
+interface RelativePanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IRelativePanel
 {
 }
 
-interface RichEditBox : Windows.UI.Xaml.Controls.Control
+interface RichEditBox : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IRichEditBox, Windows.UI.Xaml.Controls.IRichEditBox2, Windows.UI.Xaml.Controls.IRichEditBox3, Windows.UI.Xaml.Controls.IRichEditBox4, Windows.UI.Xaml.Controls.IRichEditBox5
 {
 }
 
-interface RichEditBoxTextChangingEventArgs
+interface RichEditBoxTextChangingEventArgs : Windows.UI.Xaml.Controls.IRichEditBoxTextChangingEventArgs, Windows.UI.Xaml.Controls.IRichEditBoxTextChangingEventArgs2
 {
 }
 
-interface RichTextBlock : Windows.UI.Xaml.FrameworkElement
+interface RichTextBlock : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IRichTextBlock, Windows.UI.Xaml.Controls.IRichTextBlock2, Windows.UI.Xaml.Controls.IRichTextBlock3, Windows.UI.Xaml.Controls.IRichTextBlock4
 {
 }
 
-interface RichTextBlockOverflow : Windows.UI.Xaml.FrameworkElement
+interface RichTextBlockOverflow : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IRichTextBlockOverflow, Windows.UI.Xaml.Controls.IRichTextBlockOverflow2
 {
 }
 
-interface RowDefinition : Windows.UI.Xaml.DependencyObject
+interface RowDefinition : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IRowDefinition
 {
 }
 
-interface RowDefinitionCollection
+interface RowDefinitionCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.RowDefinition), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Controls.RowDefinition)
 {
 }
 
-interface ScrollContentPresenter : Windows.UI.Xaml.Controls.ContentPresenter
+interface ScrollContentPresenter : Windows.UI.Xaml.Controls.ContentPresenter, Windows.UI.Xaml.Controls.IScrollContentPresenter
 {
 }
 
-interface ScrollViewer : Windows.UI.Xaml.Controls.ContentControl
+interface ScrollViewer : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IScrollViewer, Windows.UI.Xaml.Controls.IScrollViewer2, Windows.UI.Xaml.Controls.IScrollViewer3
 {
 }
 
-interface ScrollViewerView
+interface ScrollViewerView : Windows.UI.Xaml.Controls.IScrollViewerView
 {
 }
 
-interface ScrollViewerViewChangedEventArgs
+interface ScrollViewerViewChangedEventArgs : Windows.UI.Xaml.Controls.IScrollViewerViewChangedEventArgs
 {
 }
 
-interface ScrollViewerViewChangingEventArgs
+interface ScrollViewerViewChangingEventArgs : Windows.UI.Xaml.Controls.IScrollViewerViewChangingEventArgs
 {
 }
 
-interface SearchBox : Windows.UI.Xaml.Controls.Control
+interface SearchBox : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ISearchBox
 {
 }
 
-interface SearchBoxQueryChangedEventArgs
+interface SearchBoxQueryChangedEventArgs : Windows.UI.Xaml.Controls.ISearchBoxQueryChangedEventArgs
 {
 }
 
-interface SearchBoxQuerySubmittedEventArgs
+interface SearchBoxQuerySubmittedEventArgs : Windows.UI.Xaml.Controls.ISearchBoxQuerySubmittedEventArgs
 {
 }
 
-interface SearchBoxResultSuggestionChosenEventArgs
+interface SearchBoxResultSuggestionChosenEventArgs : Windows.UI.Xaml.Controls.ISearchBoxResultSuggestionChosenEventArgs
 {
 }
 
-interface SearchBoxSuggestionsRequestedEventArgs
+interface SearchBoxSuggestionsRequestedEventArgs : Windows.UI.Xaml.Controls.ISearchBoxSuggestionsRequestedEventArgs
 {
 }
 
-interface SectionsInViewChangedEventArgs
+interface SectionsInViewChangedEventArgs : Windows.UI.Xaml.Controls.ISectionsInViewChangedEventArgs
 {
 }
 
-interface SelectionChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface SelectionChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.ISelectionChangedEventArgs
 {
 }
 
-interface SemanticZoom : Windows.UI.Xaml.Controls.Control
+interface SemanticZoom : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ISemanticZoom
 {
 }
 
-interface SemanticZoomLocation
+interface SemanticZoomLocation : Windows.UI.Xaml.Controls.ISemanticZoomLocation
 {
 }
 
-interface SemanticZoomViewChangedEventArgs
+interface SemanticZoomViewChangedEventArgs : Windows.UI.Xaml.Controls.ISemanticZoomViewChangedEventArgs
 {
 }
 
-interface SettingsFlyout : Windows.UI.Xaml.Controls.ContentControl
+interface SettingsFlyout : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.ISettingsFlyout
 {
 }
 
-interface Slider : Windows.UI.Xaml.Controls.Primitives.RangeBase
+interface Slider : Windows.UI.Xaml.Controls.Primitives.RangeBase, Windows.UI.Xaml.Controls.ISlider, Windows.UI.Xaml.Controls.ISlider2
 {
 }
 
-interface SplitView : Windows.UI.Xaml.Controls.Control
+interface SplitView : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ISplitView, Windows.UI.Xaml.Controls.ISplitView2
 {
 }
 
-interface SplitViewPaneClosingEventArgs
+interface SplitViewPaneClosingEventArgs : Windows.UI.Xaml.Controls.ISplitViewPaneClosingEventArgs
 {
 }
 
-interface StackPanel : Windows.UI.Xaml.Controls.Panel
+interface StackPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IStackPanel, Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo, Windows.UI.Xaml.Controls.IStackPanel2, Windows.UI.Xaml.Controls.IInsertionPanel
 {
 }
 
-interface StyleSelector
+interface StyleSelector : Windows.UI.Xaml.Controls.IStyleSelector, Windows.UI.Xaml.Controls.IStyleSelectorOverrides
 {
 }
 
-interface SwapChainBackgroundPanel : Windows.UI.Xaml.Controls.Grid
+interface SwapChainBackgroundPanel : Windows.UI.Xaml.Controls.Grid, Windows.UI.Xaml.Controls.ISwapChainBackgroundPanel, Windows.UI.Xaml.Controls.ISwapChainBackgroundPanel2
 {
 }
 
-interface SwapChainPanel : Windows.UI.Xaml.Controls.Grid
+interface SwapChainPanel : Windows.UI.Xaml.Controls.Grid, Windows.UI.Xaml.Controls.ISwapChainPanel
 {
 }
 
-interface SymbolIcon : Windows.UI.Xaml.Controls.IconElement
+interface SymbolIcon : Windows.UI.Xaml.Controls.IconElement, Windows.UI.Xaml.Controls.ISymbolIcon
 {
 }
 
-interface TextBlock : Windows.UI.Xaml.FrameworkElement
+interface TextBlock : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.ITextBlock, Windows.UI.Xaml.Controls.ITextBlock2, Windows.UI.Xaml.Controls.ITextBlock3, Windows.UI.Xaml.Controls.ITextBlock4, Windows.UI.Xaml.Controls.ITextBlock5
 {
 }
 
-interface TextBox : Windows.UI.Xaml.Controls.Control
+interface TextBox : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ITextBox, Windows.UI.Xaml.Controls.ITextBox2, Windows.UI.Xaml.Controls.ITextBox3, Windows.UI.Xaml.Controls.ITextBox4, Windows.UI.Xaml.Controls.ITextBox5
 {
 }
 
-interface TextBoxTextChangingEventArgs
+interface TextBoxTextChangingEventArgs : Windows.UI.Xaml.Controls.ITextBoxTextChangingEventArgs, Windows.UI.Xaml.Controls.ITextBoxTextChangingEventArgs2
 {
 }
 
-interface TextChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface TextChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.ITextChangedEventArgs
 {
 }
 
-interface TextCompositionChangedEventArgs
+interface TextCompositionChangedEventArgs : Windows.UI.Xaml.Controls.ITextCompositionChangedEventArgs
 {
 }
 
-interface TextCompositionEndedEventArgs
+interface TextCompositionEndedEventArgs : Windows.UI.Xaml.Controls.ITextCompositionEndedEventArgs
 {
 }
 
-interface TextCompositionStartedEventArgs
+interface TextCompositionStartedEventArgs : Windows.UI.Xaml.Controls.ITextCompositionStartedEventArgs
 {
 }
 
-interface TextControlPasteEventArgs
+interface TextControlPasteEventArgs : Windows.UI.Xaml.Controls.ITextControlPasteEventArgs
 {
 }
 
-interface TimePickedEventArgs : Windows.UI.Xaml.DependencyObject
+interface TimePickedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.ITimePickedEventArgs
 {
 }
 
-interface TimePicker : Windows.UI.Xaml.Controls.Control
+interface TimePicker : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ITimePicker, Windows.UI.Xaml.Controls.ITimePicker2
 {
 }
 
-interface TimePickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase
+interface TimePickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase, Windows.UI.Xaml.Controls.ITimePickerFlyout
 {
 }
 
-interface TimePickerFlyoutPresenter : Windows.UI.Xaml.Controls.Control
+interface TimePickerFlyoutPresenter : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ITimePickerFlyoutPresenter
 {
 }
 
-interface TimePickerValueChangedEventArgs
+interface TimePickerValueChangedEventArgs : Windows.UI.Xaml.Controls.ITimePickerValueChangedEventArgs
 {
 }
 
-interface ToggleMenuFlyoutItem : Windows.UI.Xaml.Controls.MenuFlyoutItem
+interface ToggleMenuFlyoutItem : Windows.UI.Xaml.Controls.MenuFlyoutItem, Windows.UI.Xaml.Controls.IToggleMenuFlyoutItem
 {
 }
 
-interface ToggleSwitch : Windows.UI.Xaml.Controls.Control
+interface ToggleSwitch : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IToggleSwitch, Windows.UI.Xaml.Controls.IToggleSwitchOverrides
 {
 }
 
-interface ToolTip : Windows.UI.Xaml.Controls.ContentControl
+interface ToolTip : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IToolTip
 {
 }
 
-interface ToolTipService
+interface ToolTipService : Windows.UI.Xaml.Controls.IToolTipService
 {
 }
 
-interface UIElementCollection
+interface UIElementCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.UIElement), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement), Windows.UI.Xaml.Controls.IUIElementCollection
 {
 }
 
-interface UserControl : Windows.UI.Xaml.Controls.Control
+interface UserControl : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IUserControl
 {
 }
 
-interface VariableSizedWrapGrid : Windows.UI.Xaml.Controls.Panel
+interface VariableSizedWrapGrid : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IVariableSizedWrapGrid
 {
 }
 
-interface Viewbox : Windows.UI.Xaml.FrameworkElement
+interface Viewbox : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IViewbox
 {
 }
 
-interface VirtualizingPanel : Windows.UI.Xaml.Controls.Panel
+interface VirtualizingPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IVirtualizingPanel, Windows.UI.Xaml.Controls.IVirtualizingPanelOverrides, Windows.UI.Xaml.Controls.IVirtualizingPanelProtected
 {
 }
 
-interface VirtualizingStackPanel : Windows.UI.Xaml.Controls.Primitives.OrientedVirtualizingPanel
+interface VirtualizingStackPanel : Windows.UI.Xaml.Controls.Primitives.OrientedVirtualizingPanel, Windows.UI.Xaml.Controls.IVirtualizingStackPanel, Windows.UI.Xaml.Controls.IVirtualizingStackPanelOverrides
 {
 }
 
-interface WebView : Windows.UI.Xaml.FrameworkElement
+interface WebView : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IWebView, Windows.UI.Xaml.Controls.IWebView2, Windows.UI.Xaml.Controls.IWebView3, Windows.UI.Xaml.Controls.IWebView4, Windows.UI.Xaml.Controls.IWebView5
 {
 }
 
-interface WebViewBrush : Windows.UI.Xaml.Media.TileBrush
+interface WebViewBrush : Windows.UI.Xaml.Media.TileBrush, Windows.UI.Xaml.Controls.IWebViewBrush
 {
 }
 
-interface WebViewContentLoadingEventArgs
+interface WebViewContentLoadingEventArgs : Windows.UI.Xaml.Controls.IWebViewContentLoadingEventArgs
 {
 }
 
-interface WebViewDOMContentLoadedEventArgs
+interface WebViewDOMContentLoadedEventArgs : Windows.UI.Xaml.Controls.IWebViewDOMContentLoadedEventArgs
 {
 }
 
-interface WebViewDeferredPermissionRequest
+interface WebViewDeferredPermissionRequest : Windows.UI.Xaml.Controls.IWebViewDeferredPermissionRequest
 {
 }
 
-interface WebViewLongRunningScriptDetectedEventArgs
+interface WebViewLongRunningScriptDetectedEventArgs : Windows.UI.Xaml.Controls.IWebViewLongRunningScriptDetectedEventArgs
 {
 }
 
-interface WebViewNavigationCompletedEventArgs
+interface WebViewNavigationCompletedEventArgs : Windows.UI.Xaml.Controls.IWebViewNavigationCompletedEventArgs
 {
 }
 
-interface WebViewNavigationFailedEventArgs
+interface WebViewNavigationFailedEventArgs : Windows.UI.Xaml.Controls.IWebViewNavigationFailedEventArgs
 {
 }
 
-interface WebViewNavigationStartingEventArgs
+interface WebViewNavigationStartingEventArgs : Windows.UI.Xaml.Controls.IWebViewNavigationStartingEventArgs
 {
 }
 
-interface WebViewNewWindowRequestedEventArgs
+interface WebViewNewWindowRequestedEventArgs : Windows.UI.Xaml.Controls.IWebViewNewWindowRequestedEventArgs
 {
 }
 
-interface WebViewPermissionRequest
+interface WebViewPermissionRequest : Windows.UI.Xaml.Controls.IWebViewPermissionRequest
 {
 }
 
-interface WebViewPermissionRequestedEventArgs
+interface WebViewPermissionRequestedEventArgs : Windows.UI.Xaml.Controls.IWebViewPermissionRequestedEventArgs
 {
 }
 
-interface WebViewSettings
+interface WebViewSettings : Windows.UI.Xaml.Controls.IWebViewSettings
 {
 }
 
-interface WebViewUnsupportedUriSchemeIdentifiedEventArgs
+interface WebViewUnsupportedUriSchemeIdentifiedEventArgs : Windows.UI.Xaml.Controls.IWebViewUnsupportedUriSchemeIdentifiedEventArgs
 {
 }
 
-interface WebViewUnviewableContentIdentifiedEventArgs
+interface WebViewUnviewableContentIdentifiedEventArgs : Windows.UI.Xaml.Controls.IWebViewUnviewableContentIdentifiedEventArgs, Windows.UI.Xaml.Controls.IWebViewUnviewableContentIdentifiedEventArgs2
 {
 }
 
-interface WrapGrid : Windows.UI.Xaml.Controls.Primitives.OrientedVirtualizingPanel
+interface WrapGrid : Windows.UI.Xaml.Controls.Primitives.OrientedVirtualizingPanel, Windows.UI.Xaml.Controls.IWrapGrid
 {
 }
 

@@ -57,6 +57,6 @@ extern(Windows):
 	HRESULT abi_GetForViewIndependentUseWithName(HSTRING name, Windows.ApplicationModel.Resources.ResourceLoader* return_loader);
 }
 
-interface ResourceLoader
+interface ResourceLoader : Windows.ApplicationModel.Resources.IResourceLoader, Windows.ApplicationModel.Resources.IResourceLoader2
 {
 }

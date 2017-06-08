@@ -286,55 +286,55 @@ extern(Windows):
 	HRESULT abi_CreateCopyWithAlphaFromSurfaceAsync(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface surface, Windows.Graphics.Imaging.BitmapAlphaMode alpha, Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap)* return_value);
 }
 
-interface BitmapBuffer
+interface BitmapBuffer : Windows.Graphics.Imaging.IBitmapBuffer, Windows.Foundation.IMemoryBuffer, Windows.Foundation.IClosable
 {
 }
 
-interface BitmapCodecInformation
+interface BitmapCodecInformation : Windows.Graphics.Imaging.IBitmapCodecInformation
 {
 }
 
-interface BitmapDecoder
+interface BitmapDecoder : Windows.Graphics.Imaging.IBitmapDecoder, Windows.Graphics.Imaging.IBitmapFrame, Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap
 {
 }
 
-interface BitmapEncoder
+interface BitmapEncoder : Windows.Graphics.Imaging.IBitmapEncoder, Windows.Graphics.Imaging.IBitmapEncoderWithSoftwareBitmap
 {
 }
 
-interface BitmapFrame
+interface BitmapFrame : Windows.Graphics.Imaging.IBitmapFrame, Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap
 {
 }
 
-interface BitmapProperties
+interface BitmapProperties : Windows.Graphics.Imaging.IBitmapProperties, Windows.Graphics.Imaging.IBitmapPropertiesView
 {
 }
 
-interface BitmapPropertiesView
+interface BitmapPropertiesView : Windows.Graphics.Imaging.IBitmapPropertiesView
 {
 }
 
-interface BitmapPropertySet
+interface BitmapPropertySet : Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))
 {
 }
 
-interface BitmapTransform
+interface BitmapTransform : Windows.Graphics.Imaging.IBitmapTransform
 {
 }
 
-interface BitmapTypedValue
+interface BitmapTypedValue : Windows.Graphics.Imaging.IBitmapTypedValue
 {
 }
 
-interface ImageStream
+interface ImageStream : Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
 }
 
-interface PixelDataProvider
+interface PixelDataProvider : Windows.Graphics.Imaging.IPixelDataProvider
 {
 }
 
-interface SoftwareBitmap
+interface SoftwareBitmap : Windows.Graphics.Imaging.ISoftwareBitmap, Windows.Foundation.IClosable
 {
 }
 

@@ -116,23 +116,23 @@ extern(Windows):
 	HRESULT abi_SetTarget(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDropOperationTarget target);
 }
 
-interface CoreDragDropManager
+interface CoreDragDropManager : Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragDropManager
 {
 }
 
-interface CoreDragInfo
+interface CoreDragInfo : Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragInfo, Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragInfo2
 {
 }
 
-interface CoreDragOperation
+interface CoreDragOperation : Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation, Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation2
 {
 }
 
-interface CoreDragUIOverride
+interface CoreDragUIOverride : Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride
 {
 }
 
-interface CoreDropOperationTargetRequestedEventArgs
+interface CoreDropOperationTargetRequestedEventArgs : Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDropOperationTargetRequestedEventArgs
 {
 }
 

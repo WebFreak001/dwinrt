@@ -24,6 +24,14 @@ extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_selector);
 }
 
+interface ServiceDevice
+{
+}
+
+interface StorageDevice
+{
+}
+
 enum ServiceDeviceType
 {
 	CalendarService = 0,

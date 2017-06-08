@@ -140,47 +140,47 @@ extern(Windows):
 	HRESULT abi_CreateAnalyzer(Windows.UI.Input.Inking.Analysis.InkAnalyzer* return_result);
 }
 
-interface InkAnalysisInkBullet
+interface InkAnalysisInkBullet : Windows.UI.Input.Inking.Analysis.IInkAnalysisInkBullet, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 }
 
-interface InkAnalysisInkDrawing
+interface InkAnalysisInkDrawing : Windows.UI.Input.Inking.Analysis.IInkAnalysisInkDrawing, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 }
 
-interface InkAnalysisInkWord
+interface InkAnalysisInkWord : Windows.UI.Input.Inking.Analysis.IInkAnalysisInkWord, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 }
 
-interface InkAnalysisLine
+interface InkAnalysisLine : Windows.UI.Input.Inking.Analysis.IInkAnalysisLine, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 }
 
-interface InkAnalysisListItem
+interface InkAnalysisListItem : Windows.UI.Input.Inking.Analysis.IInkAnalysisListItem, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 }
 
-interface InkAnalysisNode
+interface InkAnalysisNode : Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 }
 
-interface InkAnalysisParagraph
+interface InkAnalysisParagraph : Windows.UI.Input.Inking.Analysis.IInkAnalysisParagraph, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 }
 
-interface InkAnalysisResult
+interface InkAnalysisResult : Windows.UI.Input.Inking.Analysis.IInkAnalysisResult
 {
 }
 
-interface InkAnalysisRoot
+interface InkAnalysisRoot : Windows.UI.Input.Inking.Analysis.IInkAnalysisRoot, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 }
 
-interface InkAnalysisWritingRegion
+interface InkAnalysisWritingRegion : Windows.UI.Input.Inking.Analysis.IInkAnalysisWritingRegion, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 }
 
-interface InkAnalyzer
+interface InkAnalyzer : Windows.UI.Input.Inking.Analysis.IInkAnalyzer
 {
 }
 

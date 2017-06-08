@@ -11,3 +11,7 @@ interface IInteractiveSessionStatics : IInspectable
 extern(Windows):
 	HRESULT get_IsRemote(bool* return_value);
 }
+
+interface InteractiveSession
+{
+}

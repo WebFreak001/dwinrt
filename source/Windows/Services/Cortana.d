@@ -48,11 +48,11 @@ extern(Windows):
 	HRESULT abi_GetDefault(Windows.Services.Cortana.CortanaSettings* return_result);
 }
 
-interface CortanaPermissionsManager
+interface CortanaPermissionsManager : Windows.Services.Cortana.ICortanaPermissionsManager
 {
 }
 
-interface CortanaSettings
+interface CortanaSettings : Windows.Services.Cortana.ICortanaSettings
 {
 }
 

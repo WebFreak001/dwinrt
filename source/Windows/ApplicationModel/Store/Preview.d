@@ -138,19 +138,31 @@ extern(Windows):
 	HRESULT abi_RequestTokenWithUIElementHostingAndWebAccountAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount, Windows.UI.Xaml.UIElement uiElement, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);
 }
 
-interface StoreHardwareManufacturerInfo
+interface StoreConfiguration
 {
 }
 
-interface StorePreviewProductInfo
+interface StoreHardwareManufacturerInfo : Windows.ApplicationModel.Store.Preview.IStoreHardwareManufacturerInfo
 {
 }
 
-interface StorePreviewPurchaseResults
+interface StorePreview
 {
 }
 
-interface StorePreviewSkuInfo
+interface StorePreviewProductInfo : Windows.ApplicationModel.Store.Preview.IStorePreviewProductInfo
+{
+}
+
+interface StorePreviewPurchaseResults : Windows.ApplicationModel.Store.Preview.IStorePreviewPurchaseResults
+{
+}
+
+interface StorePreviewSkuInfo : Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo
+{
+}
+
+interface WebAuthenticationCoreManagerHelper
 {
 }
 

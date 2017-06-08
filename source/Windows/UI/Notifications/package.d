@@ -766,119 +766,147 @@ extern(Windows):
 	HRESULT get_UserNotificationId(UINT32* return_value);
 }
 
-interface AdaptiveNotificationText
+interface AdaptiveNotificationText : Windows.UI.Notifications.IAdaptiveNotificationText, Windows.UI.Notifications.IAdaptiveNotificationContent
 {
 }
 
-interface BadgeNotification
+interface BadgeNotification : Windows.UI.Notifications.IBadgeNotification
 {
 }
 
-interface BadgeUpdateManagerForUser
+interface BadgeUpdateManager
 {
 }
 
-interface BadgeUpdater
+interface BadgeUpdateManagerForUser : Windows.UI.Notifications.IBadgeUpdateManagerForUser
 {
 }
 
-interface Notification
+interface BadgeUpdater : Windows.UI.Notifications.IBadgeUpdater
 {
 }
 
-interface NotificationBinding
+interface KnownAdaptiveNotificationHints
 {
 }
 
-interface NotificationData
+interface KnownAdaptiveNotificationTextStyles
 {
 }
 
-interface NotificationVisual
+interface KnownNotificationBindings
 {
 }
 
-interface ScheduledTileNotification
+interface Notification : Windows.UI.Notifications.INotification
 {
 }
 
-interface ScheduledToastNotification
+interface NotificationBinding : Windows.UI.Notifications.INotificationBinding
 {
 }
 
-interface ShownTileNotification
+interface NotificationData : Windows.UI.Notifications.INotificationData
 {
 }
 
-interface TileFlyoutNotification
+interface NotificationVisual : Windows.UI.Notifications.INotificationVisual
 {
 }
 
-interface TileFlyoutUpdater
+interface ScheduledTileNotification : Windows.UI.Notifications.IScheduledTileNotification
 {
 }
 
-interface TileNotification
+interface ScheduledToastNotification : Windows.UI.Notifications.IScheduledToastNotification, Windows.UI.Notifications.IScheduledToastNotification2, Windows.UI.Notifications.IScheduledToastNotification3
 {
 }
 
-interface TileUpdateManagerForUser
+interface ShownTileNotification : Windows.UI.Notifications.IShownTileNotification
 {
 }
 
-interface TileUpdater
+interface TileFlyoutNotification : Windows.UI.Notifications.ITileFlyoutNotification
 {
 }
 
-interface ToastActivatedEventArgs
+interface TileFlyoutUpdateManager
 {
 }
 
-interface ToastCollection
+interface TileFlyoutUpdater : Windows.UI.Notifications.ITileFlyoutUpdater
 {
 }
 
-interface ToastCollectionManager
+interface TileNotification : Windows.UI.Notifications.ITileNotification
 {
 }
 
-interface ToastDismissedEventArgs
+interface TileUpdateManager
 {
 }
 
-interface ToastFailedEventArgs
+interface TileUpdateManagerForUser : Windows.UI.Notifications.ITileUpdateManagerForUser
 {
 }
 
-interface ToastNotification
+interface TileUpdater : Windows.UI.Notifications.ITileUpdater, Windows.UI.Notifications.ITileUpdater2
 {
 }
 
-interface ToastNotificationActionTriggerDetail
+interface ToastActivatedEventArgs : Windows.UI.Notifications.IToastActivatedEventArgs
 {
 }
 
-interface ToastNotificationHistory
+interface ToastCollection : Windows.UI.Notifications.IToastCollection
 {
 }
 
-interface ToastNotificationHistoryChangedTriggerDetail
+interface ToastCollectionManager : Windows.UI.Notifications.IToastCollectionManager
 {
 }
 
-interface ToastNotificationManagerForUser
+interface ToastDismissedEventArgs : Windows.UI.Notifications.IToastDismissedEventArgs
 {
 }
 
-interface ToastNotifier
+interface ToastFailedEventArgs : Windows.UI.Notifications.IToastFailedEventArgs
 {
 }
 
-interface UserNotification
+interface ToastNotification : Windows.UI.Notifications.IToastNotification, Windows.UI.Notifications.IToastNotification2, Windows.UI.Notifications.IToastNotification3, Windows.UI.Notifications.IToastNotification4
 {
 }
 
-interface UserNotificationChangedEventArgs
+interface ToastNotificationActionTriggerDetail : Windows.UI.Notifications.IToastNotificationActionTriggerDetail
+{
+}
+
+interface ToastNotificationHistory : Windows.UI.Notifications.IToastNotificationHistory, Windows.UI.Notifications.IToastNotificationHistory2
+{
+}
+
+interface ToastNotificationHistoryChangedTriggerDetail : Windows.UI.Notifications.IToastNotificationHistoryChangedTriggerDetail, Windows.UI.Notifications.IToastNotificationHistoryChangedTriggerDetail2
+{
+}
+
+interface ToastNotificationManager
+{
+}
+
+interface ToastNotificationManagerForUser : Windows.UI.Notifications.IToastNotificationManagerForUser, Windows.UI.Notifications.IToastNotificationManagerForUser2
+{
+}
+
+interface ToastNotifier : Windows.UI.Notifications.IToastNotifier, Windows.UI.Notifications.IToastNotifier2
+{
+}
+
+interface UserNotification : Windows.UI.Notifications.IUserNotification
+{
+}
+
+interface UserNotificationChangedEventArgs : Windows.UI.Notifications.IUserNotificationChangedEventArgs
 {
 }
 

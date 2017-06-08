@@ -297,59 +297,59 @@ extern(Windows):
 	HRESULT get_ServerIntermediateCertificates(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)* return_value);
 }
 
-interface HttpBufferContent
+interface HttpBufferContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
 }
 
-interface HttpClient
+interface HttpClient : Windows.Web.Http.IHttpClient, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
 }
 
-interface HttpCookie
+interface HttpCookie : Windows.Web.Http.IHttpCookie, Windows.Foundation.IStringable
 {
 }
 
-interface HttpCookieCollection
+interface HttpCookieCollection : Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.HttpCookie), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.HttpCookie)
 {
 }
 
-interface HttpCookieManager
+interface HttpCookieManager : Windows.Web.Http.IHttpCookieManager
 {
 }
 
-interface HttpFormUrlEncodedContent
+interface HttpFormUrlEncodedContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
 }
 
-interface HttpMethod
+interface HttpMethod : Windows.Web.Http.IHttpMethod, Windows.Foundation.IStringable
 {
 }
 
-interface HttpMultipartContent
+interface HttpMultipartContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Web.Http.IHttpMultipartContent, Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent), Windows.Foundation.IStringable
 {
 }
 
-interface HttpMultipartFormDataContent
+interface HttpMultipartFormDataContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Web.Http.IHttpMultipartFormDataContent, Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent), Windows.Foundation.IStringable
 {
 }
 
-interface HttpRequestMessage
+interface HttpRequestMessage : Windows.Web.Http.IHttpRequestMessage, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
 }
 
-interface HttpResponseMessage
+interface HttpResponseMessage : Windows.Web.Http.IHttpResponseMessage, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
 }
 
-interface HttpStreamContent
+interface HttpStreamContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
 }
 
-interface HttpStringContent
+interface HttpStringContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
 }
 
-interface HttpTransportInformation
+interface HttpTransportInformation : Windows.Web.Http.IHttpTransportInformation, Windows.Foundation.IStringable
 {
 }
 

@@ -185,39 +185,43 @@ extern(Windows):
 	HRESULT abi_CreateWebAccountProvider(HSTRING id, HSTRING displayName, Windows.Foundation.Uri iconUri, Windows.Security.Credentials.WebAccountProvider* return_instance);
 }
 
-interface KeyCredential
+interface KeyCredential : Windows.Security.Credentials.IKeyCredential
 {
 }
 
-interface KeyCredentialAttestationResult
+interface KeyCredentialAttestationResult : Windows.Security.Credentials.IKeyCredentialAttestationResult
 {
 }
 
-interface KeyCredentialOperationResult
+interface KeyCredentialManager
 {
 }
 
-interface KeyCredentialRetrievalResult
+interface KeyCredentialOperationResult : Windows.Security.Credentials.IKeyCredentialOperationResult
 {
 }
 
-interface PasswordCredential
+interface KeyCredentialRetrievalResult : Windows.Security.Credentials.IKeyCredentialRetrievalResult
 {
 }
 
-interface PasswordCredentialPropertyStore
+interface PasswordCredential : Windows.Security.Credentials.IPasswordCredential
 {
 }
 
-interface PasswordVault
+interface PasswordCredentialPropertyStore : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
 {
 }
 
-interface WebAccount
+interface PasswordVault : Windows.Security.Credentials.IPasswordVault
 {
 }
 
-interface WebAccountProvider
+interface WebAccount : Windows.Security.Credentials.IWebAccount, Windows.Security.Credentials.IWebAccount2
+{
+}
+
+interface WebAccountProvider : Windows.Security.Credentials.IWebAccountProvider, Windows.Security.Credentials.IWebAccountProvider2, Windows.Security.Credentials.IWebAccountProvider3
 {
 }
 

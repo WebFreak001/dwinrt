@@ -72,15 +72,19 @@ extern(Windows):
 	HRESULT abi_FindAllAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Haptics.VibrationDevice))* return_operation);
 }
 
-interface SimpleHapticsController
+interface KnownSimpleHapticsControllerWaveforms
 {
 }
 
-interface SimpleHapticsControllerFeedback
+interface SimpleHapticsController : Windows.Devices.Haptics.ISimpleHapticsController
 {
 }
 
-interface VibrationDevice
+interface SimpleHapticsControllerFeedback : Windows.Devices.Haptics.ISimpleHapticsControllerFeedback
+{
+}
+
+interface VibrationDevice : Windows.Devices.Haptics.IVibrationDevice
 {
 }
 

@@ -80,22 +80,22 @@ extern(Windows):
 	HRESULT get_Deadline(Windows.Foundation.DateTime* return_value);
 }
 
-interface LockApplicationHost
+interface LockApplicationHost : Windows.ApplicationModel.LockScreen.ILockApplicationHost
 {
 }
 
-interface LockScreenBadge
+interface LockScreenBadge : Windows.ApplicationModel.LockScreen.ILockScreenBadge
 {
 }
 
-interface LockScreenInfo
+interface LockScreenInfo : Windows.ApplicationModel.LockScreen.ILockScreenInfo
 {
 }
 
-interface LockScreenUnlockingDeferral
+interface LockScreenUnlockingDeferral : Windows.ApplicationModel.LockScreen.ILockScreenUnlockingDeferral
 {
 }
 
-interface LockScreenUnlockingEventArgs
+interface LockScreenUnlockingEventArgs : Windows.ApplicationModel.LockScreen.ILockScreenUnlockingEventArgs
 {
 }

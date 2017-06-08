@@ -102,23 +102,23 @@ extern(Windows):
 	HRESULT abi_SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 startVector, Windows.Foundation.Numerics.Vector3 endVector, FLOAT attackGain, FLOAT sustainGain, FLOAT releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount);
 }
 
-interface ConditionForceEffect
+interface ConditionForceEffect : Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect, Windows.Gaming.Input.ForceFeedback.IConditionForceEffect
 {
 }
 
-interface ConstantForceEffect
+interface ConstantForceEffect : Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect, Windows.Gaming.Input.ForceFeedback.IConstantForceEffect
 {
 }
 
-interface ForceFeedbackMotor
+interface ForceFeedbackMotor : Windows.Gaming.Input.ForceFeedback.IForceFeedbackMotor
 {
 }
 
-interface PeriodicForceEffect
+interface PeriodicForceEffect : Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect, Windows.Gaming.Input.ForceFeedback.IPeriodicForceEffect
 {
 }
 
-interface RampForceEffect
+interface RampForceEffect : Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect, Windows.Gaming.Input.ForceFeedback.IRampForceEffect
 {
 }
 

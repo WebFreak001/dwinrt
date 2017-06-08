@@ -597,71 +597,95 @@ extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 }
 
-interface Certificate
+interface Certificate : Windows.Security.Cryptography.Certificates.ICertificate, Windows.Security.Cryptography.Certificates.ICertificate2, Windows.Security.Cryptography.Certificates.ICertificate3
 {
 }
 
-interface CertificateChain
+interface CertificateChain : Windows.Security.Cryptography.Certificates.ICertificateChain
 {
 }
 
-interface CertificateExtension
+interface CertificateEnrollmentManager
 {
 }
 
-interface CertificateKeyUsages
+interface CertificateExtension : Windows.Security.Cryptography.Certificates.ICertificateExtension
 {
 }
 
-interface CertificateQuery
+interface CertificateKeyUsages : Windows.Security.Cryptography.Certificates.ICertificateKeyUsages
 {
 }
 
-interface CertificateRequestProperties
+interface CertificateQuery : Windows.Security.Cryptography.Certificates.ICertificateQuery, Windows.Security.Cryptography.Certificates.ICertificateQuery2
 {
 }
 
-interface CertificateStore
+interface CertificateRequestProperties : Windows.Security.Cryptography.Certificates.ICertificateRequestProperties, Windows.Security.Cryptography.Certificates.ICertificateRequestProperties2, Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3, Windows.Security.Cryptography.Certificates.ICertificateRequestProperties4
 {
 }
 
-interface ChainBuildingParameters
+interface CertificateStore : Windows.Security.Cryptography.Certificates.ICertificateStore, Windows.Security.Cryptography.Certificates.ICertificateStore2
 {
 }
 
-interface ChainValidationParameters
+interface CertificateStores
 {
 }
 
-interface CmsAttachedSignature
+interface ChainBuildingParameters : Windows.Security.Cryptography.Certificates.IChainBuildingParameters
 {
 }
 
-interface CmsDetachedSignature
+interface ChainValidationParameters : Windows.Security.Cryptography.Certificates.IChainValidationParameters
 {
 }
 
-interface CmsSignerInfo
+interface CmsAttachedSignature : Windows.Security.Cryptography.Certificates.ICmsAttachedSignature
 {
 }
 
-interface CmsTimestampInfo
+interface CmsDetachedSignature : Windows.Security.Cryptography.Certificates.ICmsDetachedSignature
 {
 }
 
-interface PfxImportParameters
+interface CmsSignerInfo : Windows.Security.Cryptography.Certificates.ICmsSignerInfo
 {
 }
 
-interface SubjectAlternativeNameInfo
+interface CmsTimestampInfo : Windows.Security.Cryptography.Certificates.ICmsTimestampInfo
 {
 }
 
-interface UserCertificateEnrollmentManager
+interface KeyAlgorithmNames
 {
 }
 
-interface UserCertificateStore
+interface KeyAttestationHelper
+{
+}
+
+interface KeyStorageProviderNames
+{
+}
+
+interface PfxImportParameters : Windows.Security.Cryptography.Certificates.IPfxImportParameters
+{
+}
+
+interface StandardCertificateStoreNames
+{
+}
+
+interface SubjectAlternativeNameInfo : Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo, Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo2
+{
+}
+
+interface UserCertificateEnrollmentManager : Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager, Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager2
+{
+}
+
+interface UserCertificateStore : Windows.Security.Cryptography.Certificates.IUserCertificateStore
 {
 }
 

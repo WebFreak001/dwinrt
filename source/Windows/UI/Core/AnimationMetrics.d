@@ -64,23 +64,23 @@ extern(Windows):
 	HRESULT get_NormalizedOrigin(Windows.Foundation.Point* return_value);
 }
 
-interface AnimationDescription
+interface AnimationDescription : Windows.UI.Core.AnimationMetrics.IAnimationDescription
 {
 }
 
-interface OpacityAnimation
+interface OpacityAnimation : Windows.UI.Core.AnimationMetrics.IOpacityAnimation, Windows.UI.Core.AnimationMetrics.IPropertyAnimation
 {
 }
 
-interface PropertyAnimation
+interface PropertyAnimation : Windows.UI.Core.AnimationMetrics.IPropertyAnimation
 {
 }
 
-interface ScaleAnimation
+interface ScaleAnimation : Windows.UI.Core.AnimationMetrics.IScaleAnimation, Windows.UI.Core.AnimationMetrics.IPropertyAnimation
 {
 }
 
-interface TranslationAnimation
+interface TranslationAnimation : Windows.UI.Core.AnimationMetrics.IPropertyAnimation
 {
 }
 

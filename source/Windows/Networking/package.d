@@ -64,11 +64,11 @@ extern(Windows):
 	HRESULT abi_Compare(HSTRING value1, HSTRING value2, INT32* return_result);
 }
 
-interface EndpointPair
+interface EndpointPair : Windows.Networking.IEndpointPair
 {
 }
 
-interface HostName
+interface HostName : Windows.Networking.IHostName, Windows.Foundation.IStringable
 {
 }
 

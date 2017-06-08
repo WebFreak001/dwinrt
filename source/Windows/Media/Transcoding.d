@@ -50,11 +50,11 @@ extern(Windows):
 	HRESULT abi_TranscodeAsync(Windows.Foundation.IAsyncActionWithProgress!(double)* return_operation);
 }
 
-interface MediaTranscoder
+interface MediaTranscoder : Windows.Media.Transcoding.IMediaTranscoder, Windows.Media.Transcoding.IMediaTranscoder2
 {
 }
 
-interface PrepareTranscodeResult
+interface PrepareTranscodeResult : Windows.Media.Transcoding.IPrepareTranscodeResult
 {
 }
 

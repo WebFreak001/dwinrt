@@ -50,14 +50,14 @@ extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING sensorId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Custom.CustomSensor)* return_result);
 }
 
-interface CustomSensor
+interface CustomSensor : Windows.Devices.Sensors.Custom.ICustomSensor
 {
 }
 
-interface CustomSensorReading
+interface CustomSensorReading : Windows.Devices.Sensors.Custom.ICustomSensorReading
 {
 }
 
-interface CustomSensorReadingChangedEventArgs
+interface CustomSensorReadingChangedEventArgs : Windows.Devices.Sensors.Custom.ICustomSensorReadingChangedEventArgs
 {
 }

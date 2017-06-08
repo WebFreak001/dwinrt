@@ -65,6 +65,12 @@ extern(Windows):
 	HRESULT abi_GetFormatUserData(UINT32* out___valueSize, BYTE** out_value);
 }
 
+@uuid("59ac2a57-b32a-479e-8a61-4b7f2e9e7ea0")
+@WinrtFactory("Windows.Media.MediaProperties.ContainerEncodingProperties")
+interface IContainerEncodingProperties : IInspectable
+{
+}
+
 @uuid("38654ca7-846a-4f97-a2e5-c3a15bbf70fd")
 @WinrtFactory("Windows.Media.MediaProperties.H264ProfileIds")
 interface IH264ProfileIdsStatics : IInspectable
@@ -358,31 +364,43 @@ extern(Windows):
 	HRESULT abi_CreateHevc(Windows.Media.MediaProperties.VideoEncodingProperties* return_value);
 }
 
-interface AudioEncodingProperties
+interface AudioEncodingProperties : Windows.Media.MediaProperties.IAudioEncodingProperties, Windows.Media.MediaProperties.IMediaEncodingProperties, Windows.Media.MediaProperties.IAudioEncodingPropertiesWithFormatUserData, Windows.Media.MediaProperties.IAudioEncodingProperties2
 {
 }
 
-interface ContainerEncodingProperties
+interface ContainerEncodingProperties : Windows.Media.MediaProperties.IContainerEncodingProperties, Windows.Media.MediaProperties.IMediaEncodingProperties
 {
 }
 
-interface ImageEncodingProperties
+interface H264ProfileIds
 {
 }
 
-interface MediaEncodingProfile
+interface ImageEncodingProperties : Windows.Media.MediaProperties.IImageEncodingProperties, Windows.Media.MediaProperties.IMediaEncodingProperties
 {
 }
 
-interface MediaPropertySet
+interface MediaEncodingProfile : Windows.Media.MediaProperties.IMediaEncodingProfile
 {
 }
 
-interface MediaRatio
+interface MediaEncodingSubtypes
 {
 }
 
-interface VideoEncodingProperties
+interface MediaPropertySet : Windows.Foundation.Collections.IMap!(GUID, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(GUID, IInspectable))
+{
+}
+
+interface MediaRatio : Windows.Media.MediaProperties.IMediaRatio
+{
+}
+
+interface Mpeg2ProfileIds
+{
+}
+
+interface VideoEncodingProperties : Windows.Media.MediaProperties.IVideoEncodingProperties, Windows.Media.MediaProperties.IMediaEncodingProperties, Windows.Media.MediaProperties.IVideoEncodingProperties2, Windows.Media.MediaProperties.IVideoEncodingProperties3, Windows.Media.MediaProperties.IVideoEncodingProperties4
 {
 }
 

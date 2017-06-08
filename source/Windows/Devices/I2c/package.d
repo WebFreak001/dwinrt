@@ -82,15 +82,15 @@ extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Devices.I2c.I2cConnectionSettings settings, Windows.Foundation.IAsyncOperation!(Windows.Devices.I2c.I2cDevice)* return_operation);
 }
 
-interface I2cConnectionSettings
+interface I2cConnectionSettings : Windows.Devices.I2c.II2cConnectionSettings
 {
 }
 
-interface I2cController
+interface I2cController : Windows.Devices.I2c.II2cController
 {
 }
 
-interface I2cDevice
+interface I2cDevice : Windows.Devices.I2c.II2cDevice, Windows.Foundation.IClosable
 {
 }
 

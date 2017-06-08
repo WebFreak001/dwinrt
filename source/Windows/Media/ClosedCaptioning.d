@@ -23,6 +23,10 @@ extern(Windows):
 	HRESULT get_RegionOpacity(Windows.Media.ClosedCaptioning.ClosedCaptionOpacity* return_value);
 }
 
+interface ClosedCaptionProperties
+{
+}
+
 enum ClosedCaptionColor
 {
 	Default = 0,

@@ -688,127 +688,127 @@ extern(Windows):
 	HRESULT get_TapCount(UINT32* return_value);
 }
 
-interface CrossSlidingEventArgs
+interface CrossSlidingEventArgs : Windows.UI.Input.ICrossSlidingEventArgs
 {
 }
 
-interface DraggingEventArgs
+interface DraggingEventArgs : Windows.UI.Input.IDraggingEventArgs
 {
 }
 
-interface EdgeGesture
+interface EdgeGesture : Windows.UI.Input.IEdgeGesture
 {
 }
 
-interface EdgeGestureEventArgs
+interface EdgeGestureEventArgs : Windows.UI.Input.IEdgeGestureEventArgs
 {
 }
 
-interface GestureRecognizer
+interface GestureRecognizer : Windows.UI.Input.IGestureRecognizer
 {
 }
 
-interface HoldingEventArgs
+interface HoldingEventArgs : Windows.UI.Input.IHoldingEventArgs
 {
 }
 
-interface KeyboardDeliveryInterceptor
+interface KeyboardDeliveryInterceptor : Windows.UI.Input.IKeyboardDeliveryInterceptor
 {
 }
 
-interface ManipulationCompletedEventArgs
+interface ManipulationCompletedEventArgs : Windows.UI.Input.IManipulationCompletedEventArgs
 {
 }
 
-interface ManipulationInertiaStartingEventArgs
+interface ManipulationInertiaStartingEventArgs : Windows.UI.Input.IManipulationInertiaStartingEventArgs
 {
 }
 
-interface ManipulationStartedEventArgs
+interface ManipulationStartedEventArgs : Windows.UI.Input.IManipulationStartedEventArgs
 {
 }
 
-interface ManipulationUpdatedEventArgs
+interface ManipulationUpdatedEventArgs : Windows.UI.Input.IManipulationUpdatedEventArgs
 {
 }
 
-interface MouseWheelParameters
+interface MouseWheelParameters : Windows.UI.Input.IMouseWheelParameters
 {
 }
 
-interface PointerPoint
+interface PointerPoint : Windows.UI.Input.IPointerPoint
 {
 }
 
-interface PointerPointProperties
+interface PointerPointProperties : Windows.UI.Input.IPointerPointProperties, Windows.UI.Input.IPointerPointProperties2
 {
 }
 
-interface PointerVisualizationSettings
+interface PointerVisualizationSettings : Windows.UI.Input.IPointerVisualizationSettings
 {
 }
 
-interface RadialController
+interface RadialController : Windows.UI.Input.IRadialController, Windows.UI.Input.IRadialController2
 {
 }
 
-interface RadialControllerButtonClickedEventArgs
+interface RadialControllerButtonClickedEventArgs : Windows.UI.Input.IRadialControllerButtonClickedEventArgs, Windows.UI.Input.IRadialControllerButtonClickedEventArgs2
 {
 }
 
-interface RadialControllerButtonHoldingEventArgs
+interface RadialControllerButtonHoldingEventArgs : Windows.UI.Input.IRadialControllerButtonHoldingEventArgs
 {
 }
 
-interface RadialControllerButtonPressedEventArgs
+interface RadialControllerButtonPressedEventArgs : Windows.UI.Input.IRadialControllerButtonPressedEventArgs
 {
 }
 
-interface RadialControllerButtonReleasedEventArgs
+interface RadialControllerButtonReleasedEventArgs : Windows.UI.Input.IRadialControllerButtonReleasedEventArgs
 {
 }
 
-interface RadialControllerConfiguration
+interface RadialControllerConfiguration : Windows.UI.Input.IRadialControllerConfiguration, Windows.UI.Input.IRadialControllerConfiguration2
 {
 }
 
-interface RadialControllerControlAcquiredEventArgs
+interface RadialControllerControlAcquiredEventArgs : Windows.UI.Input.IRadialControllerControlAcquiredEventArgs, Windows.UI.Input.IRadialControllerControlAcquiredEventArgs2
 {
 }
 
-interface RadialControllerMenu
+interface RadialControllerMenu : Windows.UI.Input.IRadialControllerMenu
 {
 }
 
-interface RadialControllerMenuItem
+interface RadialControllerMenuItem : Windows.UI.Input.IRadialControllerMenuItem
 {
 }
 
-interface RadialControllerRotationChangedEventArgs
+interface RadialControllerRotationChangedEventArgs : Windows.UI.Input.IRadialControllerRotationChangedEventArgs, Windows.UI.Input.IRadialControllerRotationChangedEventArgs2
 {
 }
 
-interface RadialControllerScreenContact
+interface RadialControllerScreenContact : Windows.UI.Input.IRadialControllerScreenContact
 {
 }
 
-interface RadialControllerScreenContactContinuedEventArgs
+interface RadialControllerScreenContactContinuedEventArgs : Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs, Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs2
 {
 }
 
-interface RadialControllerScreenContactEndedEventArgs
+interface RadialControllerScreenContactEndedEventArgs : Windows.UI.Input.IRadialControllerScreenContactEndedEventArgs
 {
 }
 
-interface RadialControllerScreenContactStartedEventArgs
+interface RadialControllerScreenContactStartedEventArgs : Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs, Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs2
 {
 }
 
-interface RightTappedEventArgs
+interface RightTappedEventArgs : Windows.UI.Input.IRightTappedEventArgs
 {
 }
 
-interface TappedEventArgs
+interface TappedEventArgs : Windows.UI.Input.ITappedEventArgs
 {
 }
 

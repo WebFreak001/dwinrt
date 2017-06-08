@@ -400,23 +400,27 @@ extern(Windows):
 	HRESULT abi_CreateWwwFormUrlDecoder(HSTRING query, Windows.Foundation.WwwFormUrlDecoder* return_instance);
 }
 
-interface Deferral
+interface Deferral : Windows.Foundation.IDeferral, Windows.Foundation.IClosable
 {
 }
 
-interface MemoryBuffer
+interface MemoryBuffer : Windows.Foundation.IMemoryBuffer, Windows.Foundation.IClosable
 {
 }
 
-interface Uri
+interface PropertyValue
 {
 }
 
-interface WwwFormUrlDecoder
+interface Uri : Windows.Foundation.IUriRuntimeClass, Windows.Foundation.IUriRuntimeClassWithAbsoluteCanonicalUri, Windows.Foundation.IStringable
 {
 }
 
-interface WwwFormUrlDecoderEntry
+interface WwwFormUrlDecoder : Windows.Foundation.IWwwFormUrlDecoderRuntimeClass, Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry), Windows.Foundation.Collections.IIterable!(Windows.Foundation.IWwwFormUrlDecoderEntry)
+{
+}
+
+interface WwwFormUrlDecoderEntry : Windows.Foundation.IWwwFormUrlDecoderEntry
 {
 }
 
@@ -469,14 +473,6 @@ struct ComCallData
 	DWORD dwDispid;
 	DWORD dwReserved;
 	void* pUserDefined;
-}
-
-enum AsyncStatus
-{
-	Started,
-	Completed,
-	Canceled,
-	Error,
 }
 
 alias ContextCallbackCallback = extern (Windows) HRESULT function(ComCallData* pParam);
@@ -607,8 +603,8 @@ interface IAsyncOperationWithProgress(TResult, TProgress) : IInspectable
 extern (Windows):
 	HRESULT put_Progress(AsyncOperationProgressHandler!(TResult, TProgress) handler);
 	HRESULT get_Progress(AsyncOperationProgressHandler!(TResult, TProgress)* handler);
-	HRESULT put_Completed(AsyncOperationCompletedHandler!(TResult, TProgress) handler);
-	HRESULT get_Completed(AsyncOperationCompletedHandler!(TResult, TProgress)* handler);
+	HRESULT put_Completed(AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) handler);
+	HRESULT get_Completed(AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)* handler);
 	HRESULT abi_GetResults(TResult* results);
 }
 
@@ -616,4 +612,10 @@ interface AsyncOperationWithProgressCompletedHandler(TResult, TProgress) : IUnkn
 {
 extern (Windows):
 	HRESULT abi_Invoke(IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status);
+}
+
+interface IReference(T) : IUnknown
+{
+extern (Windows):
+	HRESULT get_Value(T* value);
 }

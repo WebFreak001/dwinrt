@@ -106,30 +106,30 @@ extern(Windows):
 	HRESULT get_Package(Windows.ApplicationModel.Package* return_value);
 }
 
-interface AppExtension
+interface AppExtension : Windows.ApplicationModel.AppExtensions.IAppExtension
 {
 }
 
-interface AppExtensionCatalog
+interface AppExtensionCatalog : Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog
 {
 }
 
-interface AppExtensionPackageInstalledEventArgs
+interface AppExtensionPackageInstalledEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs
 {
 }
 
-interface AppExtensionPackageStatusChangedEventArgs
+interface AppExtensionPackageStatusChangedEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageStatusChangedEventArgs
 {
 }
 
-interface AppExtensionPackageUninstallingEventArgs
+interface AppExtensionPackageUninstallingEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUninstallingEventArgs
 {
 }
 
-interface AppExtensionPackageUpdatedEventArgs
+interface AppExtensionPackageUpdatedEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatedEventArgs
 {
 }
 
-interface AppExtensionPackageUpdatingEventArgs
+interface AppExtensionPackageUpdatingEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatingEventArgs
 {
 }

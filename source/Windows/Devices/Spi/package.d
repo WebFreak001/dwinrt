@@ -92,19 +92,19 @@ extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING busId, Windows.Devices.Spi.SpiConnectionSettings settings, Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiDevice)* return_operation);
 }
 
-interface SpiBusInfo
+interface SpiBusInfo : Windows.Devices.Spi.ISpiBusInfo
 {
 }
 
-interface SpiConnectionSettings
+interface SpiConnectionSettings : Windows.Devices.Spi.ISpiConnectionSettings
 {
 }
 
-interface SpiController
+interface SpiController : Windows.Devices.Spi.ISpiController
 {
 }
 
-interface SpiDevice
+interface SpiDevice : Windows.Devices.Spi.ISpiDevice, Windows.Foundation.IClosable
 {
 }
 

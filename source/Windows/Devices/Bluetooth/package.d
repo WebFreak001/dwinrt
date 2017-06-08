@@ -340,31 +340,43 @@ extern(Windows):
 	HRESULT abi_TryGetShortId(GUID uuid, Windows.Foundation.IReference!(UINT32)* return_result);
 }
 
-interface BluetoothAdapter
+interface BluetoothAdapter : Windows.Devices.Bluetooth.IBluetoothAdapter
 {
 }
 
-interface BluetoothClassOfDevice
+interface BluetoothClassOfDevice : Windows.Devices.Bluetooth.IBluetoothClassOfDevice
 {
 }
 
-interface BluetoothDevice
+interface BluetoothDevice : Windows.Devices.Bluetooth.IBluetoothDevice, Windows.Foundation.IClosable, Windows.Devices.Bluetooth.IBluetoothDevice2, Windows.Devices.Bluetooth.IBluetoothDevice3
 {
 }
 
-interface BluetoothDeviceId
+interface BluetoothDeviceId : Windows.Devices.Bluetooth.IBluetoothDeviceId
 {
 }
 
-interface BluetoothLEAppearance
+interface BluetoothLEAppearance : Windows.Devices.Bluetooth.IBluetoothLEAppearance
 {
 }
 
-interface BluetoothLEDevice
+interface BluetoothLEAppearanceCategories
 {
 }
 
-interface BluetoothSignalStrengthFilter
+interface BluetoothLEAppearanceSubcategories
+{
+}
+
+interface BluetoothLEDevice : Windows.Devices.Bluetooth.IBluetoothLEDevice, Windows.Foundation.IClosable, Windows.Devices.Bluetooth.IBluetoothLEDevice2, Windows.Devices.Bluetooth.IBluetoothLEDevice3
+{
+}
+
+interface BluetoothSignalStrengthFilter : Windows.Devices.Bluetooth.IBluetoothSignalStrengthFilter
+{
+}
+
+interface BluetoothUuidHelper
 {
 }
 

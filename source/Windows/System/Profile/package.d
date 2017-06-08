@@ -153,15 +153,47 @@ extern(Windows):
 	HRESULT abi_GetSystemIdForUser(Windows.System.User user, Windows.System.Profile.SystemIdentificationInfo* return_result);
 }
 
-interface AnalyticsVersionInfo
+interface AnalyticsInfo
 {
 }
 
-interface HardwareToken
+interface AnalyticsVersionInfo : Windows.System.Profile.IAnalyticsVersionInfo
 {
 }
 
-interface SystemIdentificationInfo
+interface EducationSettings
+{
+}
+
+interface HardwareIdentification
+{
+}
+
+interface HardwareToken : Windows.System.Profile.IHardwareToken
+{
+}
+
+interface KnownRetailInfoProperties
+{
+}
+
+interface PlatformDiagnosticsAndUsageDataSettings
+{
+}
+
+interface RetailInfo
+{
+}
+
+interface SharedModeSettings
+{
+}
+
+interface SystemIdentification
+{
+}
+
+interface SystemIdentificationInfo : Windows.System.Profile.ISystemIdentificationInfo
 {
 }
 

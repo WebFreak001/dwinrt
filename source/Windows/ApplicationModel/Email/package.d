@@ -860,131 +860,141 @@ extern(Windows):
 	HRESULT abi_CreateMailboxInAccountAsync(HSTRING accountName, HSTRING accountAddress, HSTRING userDataAccountId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailbox)* return_result);
 }
 
-interface EmailAttachment
+@uuid("ce17563c-46e6-43c9-96f7-facf7dd710cb")
+@WinrtFactory("Windows.ApplicationModel.Email.EmailStoreNotificationTriggerDetails")
+interface IEmailStoreNotificationTriggerDetails : IInspectable
 {
 }
 
-interface EmailConversation
+interface EmailAttachment : Windows.ApplicationModel.Email.IEmailAttachment, Windows.ApplicationModel.Email.IEmailAttachment2
 {
 }
 
-interface EmailConversationBatch
+interface EmailConversation : Windows.ApplicationModel.Email.IEmailConversation
 {
 }
 
-interface EmailConversationReader
+interface EmailConversationBatch : Windows.ApplicationModel.Email.IEmailConversationBatch
 {
 }
 
-interface EmailFolder
+interface EmailConversationReader : Windows.ApplicationModel.Email.IEmailConversationReader
 {
 }
 
-interface EmailIrmInfo
+interface EmailFolder : Windows.ApplicationModel.Email.IEmailFolder
 {
 }
 
-interface EmailIrmTemplate
+interface EmailIrmInfo : Windows.ApplicationModel.Email.IEmailIrmInfo
 {
 }
 
-interface EmailItemCounts
+interface EmailIrmTemplate : Windows.ApplicationModel.Email.IEmailIrmTemplate
 {
 }
 
-interface EmailMailbox
+interface EmailItemCounts : Windows.ApplicationModel.Email.IEmailItemCounts
 {
 }
 
-interface EmailMailboxAction
+interface EmailMailbox : Windows.ApplicationModel.Email.IEmailMailbox, Windows.ApplicationModel.Email.IEmailMailbox2, Windows.ApplicationModel.Email.IEmailMailbox3, Windows.ApplicationModel.Email.IEmailMailbox4
 {
 }
 
-interface EmailMailboxAutoReply
+interface EmailMailboxAction : Windows.ApplicationModel.Email.IEmailMailboxAction
 {
 }
 
-interface EmailMailboxAutoReplySettings
+interface EmailMailboxAutoReply : Windows.ApplicationModel.Email.IEmailMailboxAutoReply
 {
 }
 
-interface EmailMailboxCapabilities
+interface EmailMailboxAutoReplySettings : Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings
 {
 }
 
-interface EmailMailboxChange
+interface EmailMailboxCapabilities : Windows.ApplicationModel.Email.IEmailMailboxCapabilities, Windows.ApplicationModel.Email.IEmailMailboxCapabilities2, Windows.ApplicationModel.Email.IEmailMailboxCapabilities3
 {
 }
 
-interface EmailMailboxChangeReader
+interface EmailMailboxChange : Windows.ApplicationModel.Email.IEmailMailboxChange
 {
 }
 
-interface EmailMailboxChangeTracker
+interface EmailMailboxChangeReader : Windows.ApplicationModel.Email.IEmailMailboxChangeReader
 {
 }
 
-interface EmailMailboxChangedDeferral
+interface EmailMailboxChangeTracker : Windows.ApplicationModel.Email.IEmailMailboxChangeTracker
 {
 }
 
-interface EmailMailboxChangedEventArgs
+interface EmailMailboxChangedDeferral : Windows.ApplicationModel.Email.IEmailMailboxChangedDeferral
 {
 }
 
-interface EmailMailboxCreateFolderResult
+interface EmailMailboxChangedEventArgs : Windows.ApplicationModel.Email.IEmailMailboxChangedEventArgs
 {
 }
 
-interface EmailMailboxPolicies
+interface EmailMailboxCreateFolderResult : Windows.ApplicationModel.Email.IEmailMailboxCreateFolderResult
 {
 }
 
-interface EmailMailboxSyncManager
+interface EmailMailboxPolicies : Windows.ApplicationModel.Email.IEmailMailboxPolicies, Windows.ApplicationModel.Email.IEmailMailboxPolicies2, Windows.ApplicationModel.Email.IEmailMailboxPolicies3
 {
 }
 
-interface EmailManagerForUser
+interface EmailMailboxSyncManager : Windows.ApplicationModel.Email.IEmailMailboxSyncManager, Windows.ApplicationModel.Email.IEmailMailboxSyncManager2
 {
 }
 
-interface EmailMeetingInfo
+interface EmailManager
 {
 }
 
-interface EmailMessage
+interface EmailManagerForUser : Windows.ApplicationModel.Email.IEmailManagerForUser
 {
 }
 
-interface EmailMessageBatch
+interface EmailMeetingInfo : Windows.ApplicationModel.Email.IEmailMeetingInfo, Windows.ApplicationModel.Email.IEmailMeetingInfo2
 {
 }
 
-interface EmailMessageReader
+interface EmailMessage : Windows.ApplicationModel.Email.IEmailMessage, Windows.ApplicationModel.Email.IEmailMessage2, Windows.ApplicationModel.Email.IEmailMessage3, Windows.ApplicationModel.Email.IEmailMessage4
 {
 }
 
-interface EmailQueryOptions
+interface EmailMessageBatch : Windows.ApplicationModel.Email.IEmailMessageBatch
 {
 }
 
-interface EmailQueryTextSearch
+interface EmailMessageReader : Windows.ApplicationModel.Email.IEmailMessageReader
 {
 }
 
-interface EmailRecipient
+interface EmailQueryOptions : Windows.ApplicationModel.Email.IEmailQueryOptions
 {
 }
 
-interface EmailRecipientResolutionResult
+interface EmailQueryTextSearch : Windows.ApplicationModel.Email.IEmailQueryTextSearch
 {
 }
 
-interface EmailStore
+interface EmailRecipient : Windows.ApplicationModel.Email.IEmailRecipient
 {
 }
 
-interface EmailStoreNotificationTriggerDetails
+interface EmailRecipientResolutionResult : Windows.ApplicationModel.Email.IEmailRecipientResolutionResult, Windows.ApplicationModel.Email.IEmailRecipientResolutionResult2
+{
+}
+
+interface EmailStore : Windows.ApplicationModel.Email.IEmailStore
+{
+}
+
+interface EmailStoreNotificationTriggerDetails : Windows.ApplicationModel.Email.IEmailStoreNotificationTriggerDetails
 {
 }
 

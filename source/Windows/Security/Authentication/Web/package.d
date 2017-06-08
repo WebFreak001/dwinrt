@@ -40,7 +40,11 @@ extern(Windows):
 	HRESULT get_ResponseErrorDetail(UINT32* return_value);
 }
 
-interface WebAuthenticationResult
+interface WebAuthenticationBroker
+{
+}
+
+interface WebAuthenticationResult : Windows.Security.Authentication.Web.IWebAuthenticationResult
 {
 }
 

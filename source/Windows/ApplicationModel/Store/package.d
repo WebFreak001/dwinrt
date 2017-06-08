@@ -290,31 +290,39 @@ extern(Windows):
 	HRESULT get_OfferId(HSTRING* return_value);
 }
 
-interface LicenseInformation
+interface CurrentApp
 {
 }
 
-interface ListingInformation
+interface CurrentAppSimulator
 {
 }
 
-interface ProductLicense
+interface LicenseInformation : Windows.ApplicationModel.Store.ILicenseInformation
 {
 }
 
-interface ProductListing
+interface ListingInformation : Windows.ApplicationModel.Store.IListingInformation, Windows.ApplicationModel.Store.IListingInformation2
 {
 }
 
-interface ProductPurchaseDisplayProperties
+interface ProductLicense : Windows.ApplicationModel.Store.IProductLicense, Windows.ApplicationModel.Store.IProductLicenseWithFulfillment
 {
 }
 
-interface PurchaseResults
+interface ProductListing : Windows.ApplicationModel.Store.IProductListing, Windows.ApplicationModel.Store.IProductListingWithMetadata, Windows.ApplicationModel.Store.IProductListing2
 {
 }
 
-interface UnfulfilledConsumable
+interface ProductPurchaseDisplayProperties : Windows.ApplicationModel.Store.IProductPurchaseDisplayProperties
+{
+}
+
+interface PurchaseResults : Windows.ApplicationModel.Store.IPurchaseResults
+{
+}
+
+interface UnfulfilledConsumable : Windows.ApplicationModel.Store.IUnfulfilledConsumable
 {
 }
 

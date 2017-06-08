@@ -521,79 +521,111 @@ extern(Windows):
 	HRESULT remove_Stopped(EventRegistrationToken token);
 }
 
-interface AppDiagnosticInfo
+interface AppDiagnosticInfo : Windows.System.IAppDiagnosticInfo
 {
 }
 
-interface AppMemoryReport
+interface AppMemoryReport : Windows.System.IAppMemoryReport
 {
 }
 
-interface AppMemoryUsageLimitChangingEventArgs
+interface AppMemoryUsageLimitChangingEventArgs : Windows.System.IAppMemoryUsageLimitChangingEventArgs
 {
 }
 
-interface FolderLauncherOptions
+interface FolderLauncherOptions : Windows.System.IFolderLauncherOptions, Windows.System.ILauncherViewOptions
 {
 }
 
-interface LaunchUriResult
+interface KnownUserProperties
 {
 }
 
-interface LauncherOptions
+interface LaunchUriResult : Windows.System.ILaunchUriResult
 {
 }
 
-interface LauncherUIOptions
+interface Launcher
 {
 }
 
-interface ProcessLauncherOptions
+interface LauncherOptions : Windows.System.ILauncherOptions, Windows.System.ILauncherViewOptions, Windows.System.ILauncherOptions2, Windows.System.ILauncherOptions3, Windows.System.ILauncherOptions4
 {
 }
 
-interface ProcessLauncherResult
+interface LauncherUIOptions : Windows.System.ILauncherUIOptions
 {
 }
 
-interface ProcessMemoryReport
+interface MemoryManager
 {
 }
 
-interface ProtocolForResultsOperation
+interface ProcessLauncher
 {
 }
 
-interface RemoteLauncherOptions
+interface ProcessLauncherOptions : Windows.System.IProcessLauncherOptions
 {
 }
 
-interface User
+interface ProcessLauncherResult : Windows.System.IProcessLauncherResult
 {
 }
 
-interface UserAuthenticationStatusChangeDeferral
+interface ProcessMemoryReport : Windows.System.IProcessMemoryReport
 {
 }
 
-interface UserAuthenticationStatusChangingEventArgs
+interface ProtocolForResultsOperation : Windows.System.IProtocolForResultsOperation
 {
 }
 
-interface UserChangedEventArgs
+interface RemoteLauncher
 {
 }
 
-interface UserDeviceAssociationChangedEventArgs
+interface RemoteLauncherOptions : Windows.System.IRemoteLauncherOptions
 {
 }
 
-interface UserPicker
+interface ShutdownManager
 {
 }
 
-interface UserWatcher
+interface TimeZoneSettings
+{
+}
+
+interface User : Windows.System.IUser
+{
+}
+
+interface UserAuthenticationStatusChangeDeferral : Windows.System.IUserAuthenticationStatusChangeDeferral
+{
+}
+
+interface UserAuthenticationStatusChangingEventArgs : Windows.System.IUserAuthenticationStatusChangingEventArgs
+{
+}
+
+interface UserChangedEventArgs : Windows.System.IUserChangedEventArgs
+{
+}
+
+interface UserDeviceAssociation
+{
+}
+
+interface UserDeviceAssociationChangedEventArgs : Windows.System.IUserDeviceAssociationChangedEventArgs
+{
+}
+
+interface UserPicker : Windows.System.IUserPicker
+{
+}
+
+interface UserWatcher : Windows.System.IUserWatcher
 {
 }
 

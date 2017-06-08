@@ -13,3 +13,7 @@ extern(Windows):
 	HRESULT add_SoundLevelChanged(Windows.Foundation.EventHandler!(IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_SoundLevelChanged(EventRegistrationToken token);
 }
+
+interface SoundLevelBroker
+{
+}

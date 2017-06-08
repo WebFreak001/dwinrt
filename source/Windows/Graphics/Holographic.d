@@ -210,43 +210,43 @@ extern(Windows):
 	HRESULT remove_IsAvailableChanged(EventRegistrationToken token);
 }
 
-interface HolographicCamera
+interface HolographicCamera : Windows.Graphics.Holographic.IHolographicCamera, Windows.Graphics.Holographic.IHolographicCamera2
 {
 }
 
-interface HolographicCameraPose
+interface HolographicCameraPose : Windows.Graphics.Holographic.IHolographicCameraPose
 {
 }
 
-interface HolographicCameraRenderingParameters
+interface HolographicCameraRenderingParameters : Windows.Graphics.Holographic.IHolographicCameraRenderingParameters, Windows.Graphics.Holographic.IHolographicCameraRenderingParameters2
 {
 }
 
-interface HolographicCameraViewportParameters
+interface HolographicCameraViewportParameters : Windows.Graphics.Holographic.IHolographicCameraViewportParameters
 {
 }
 
-interface HolographicDisplay
+interface HolographicDisplay : Windows.Graphics.Holographic.IHolographicDisplay
 {
 }
 
-interface HolographicFrame
+interface HolographicFrame : Windows.Graphics.Holographic.IHolographicFrame
 {
 }
 
-interface HolographicFramePrediction
+interface HolographicFramePrediction : Windows.Graphics.Holographic.IHolographicFramePrediction
 {
 }
 
-interface HolographicSpace
+interface HolographicSpace : Windows.Graphics.Holographic.IHolographicSpace
 {
 }
 
-interface HolographicSpaceCameraAddedEventArgs
+interface HolographicSpaceCameraAddedEventArgs : Windows.Graphics.Holographic.IHolographicSpaceCameraAddedEventArgs
 {
 }
 
-interface HolographicSpaceCameraRemovedEventArgs
+interface HolographicSpaceCameraRemovedEventArgs : Windows.Graphics.Holographic.IHolographicSpaceCameraRemovedEventArgs
 {
 }
 

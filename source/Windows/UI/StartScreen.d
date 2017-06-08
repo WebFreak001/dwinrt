@@ -278,35 +278,35 @@ extern(Windows):
 	HRESULT get_Request(Windows.UI.StartScreen.VisualElementsRequest* return_value);
 }
 
-interface JumpList
+interface JumpList : Windows.UI.StartScreen.IJumpList
 {
 }
 
-interface JumpListItem
+interface JumpListItem : Windows.UI.StartScreen.IJumpListItem
 {
 }
 
-interface SecondaryTile
+interface SecondaryTile : Windows.UI.StartScreen.ISecondaryTile, Windows.UI.StartScreen.ISecondaryTile2
 {
 }
 
-interface SecondaryTileVisualElements
+interface SecondaryTileVisualElements : Windows.UI.StartScreen.ISecondaryTileVisualElements, Windows.UI.StartScreen.ISecondaryTileVisualElements2, Windows.UI.StartScreen.ISecondaryTileVisualElements3
 {
 }
 
-interface StartScreenManager
+interface StartScreenManager : Windows.UI.StartScreen.IStartScreenManager
 {
 }
 
-interface VisualElementsRequest
+interface VisualElementsRequest : Windows.UI.StartScreen.IVisualElementsRequest
 {
 }
 
-interface VisualElementsRequestDeferral
+interface VisualElementsRequestDeferral : Windows.UI.StartScreen.IVisualElementsRequestDeferral
 {
 }
 
-interface VisualElementsRequestedEventArgs
+interface VisualElementsRequestedEventArgs : Windows.UI.StartScreen.IVisualElementsRequestedEventArgs
 {
 }
 

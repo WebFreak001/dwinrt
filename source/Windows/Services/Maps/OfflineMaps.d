@@ -51,15 +51,15 @@ extern(Windows):
 	HRESULT abi_FindPackagesInGeocircleAsync(Windows.Devices.Geolocation.Geocircle queryCircle, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult)* return_result);
 }
 
-interface OfflineMapPackage
+interface OfflineMapPackage : Windows.Services.Maps.OfflineMaps.IOfflineMapPackage
 {
 }
 
-interface OfflineMapPackageQueryResult
+interface OfflineMapPackageQueryResult : Windows.Services.Maps.OfflineMaps.IOfflineMapPackageQueryResult
 {
 }
 
-interface OfflineMapPackageStartDownloadResult
+interface OfflineMapPackageStartDownloadResult : Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStartDownloadResult
 {
 }
 

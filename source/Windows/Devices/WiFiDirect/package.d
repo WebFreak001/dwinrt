@@ -195,43 +195,43 @@ extern(Windows):
 	HRESULT set_Passphrase(Windows.Security.Credentials.PasswordCredential value);
 }
 
-interface WiFiDirectAdvertisement
+interface WiFiDirectAdvertisement : Windows.Devices.WiFiDirect.IWiFiDirectAdvertisement, Windows.Devices.WiFiDirect.IWiFiDirectAdvertisement2
 {
 }
 
-interface WiFiDirectAdvertisementPublisher
+interface WiFiDirectAdvertisementPublisher : Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisher
 {
 }
 
-interface WiFiDirectAdvertisementPublisherStatusChangedEventArgs
+interface WiFiDirectAdvertisementPublisherStatusChangedEventArgs : Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisherStatusChangedEventArgs
 {
 }
 
-interface WiFiDirectConnectionListener
+interface WiFiDirectConnectionListener : Windows.Devices.WiFiDirect.IWiFiDirectConnectionListener
 {
 }
 
-interface WiFiDirectConnectionParameters
+interface WiFiDirectConnectionParameters : Windows.Devices.WiFiDirect.IWiFiDirectConnectionParameters, Windows.Devices.WiFiDirect.IWiFiDirectConnectionParameters2, Windows.Devices.Enumeration.IDevicePairingSettings
 {
 }
 
-interface WiFiDirectConnectionRequest
+interface WiFiDirectConnectionRequest : Windows.Devices.WiFiDirect.IWiFiDirectConnectionRequest, Windows.Foundation.IClosable
 {
 }
 
-interface WiFiDirectConnectionRequestedEventArgs
+interface WiFiDirectConnectionRequestedEventArgs : Windows.Devices.WiFiDirect.IWiFiDirectConnectionRequestedEventArgs
 {
 }
 
-interface WiFiDirectDevice
+interface WiFiDirectDevice : Windows.Devices.WiFiDirect.IWiFiDirectDevice, Windows.Foundation.IClosable
 {
 }
 
-interface WiFiDirectInformationElement
+interface WiFiDirectInformationElement : Windows.Devices.WiFiDirect.IWiFiDirectInformationElement
 {
 }
 
-interface WiFiDirectLegacySettings
+interface WiFiDirectLegacySettings : Windows.Devices.WiFiDirect.IWiFiDirectLegacySettings
 {
 }
 

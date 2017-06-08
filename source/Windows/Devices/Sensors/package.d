@@ -907,6 +907,11 @@ extern(Windows):
 	HRESULT abi_GetReadingsFromTriggerDetails(Windows.Devices.Sensors.SensorDataThresholdTriggerDetails triggerDetails, Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ProximitySensorReading)* return_result);
 }
 
+@uuid("54daec61-fe4b-4e07-b260-3a4cdfbe396e")
+interface ISensorDataThreshold : IInspectable
+{
+}
+
 @uuid("9106f1b7-e88d-48b1-bc90-619c7b349391")
 @WinrtFactory("Windows.Devices.Sensors.SensorDataThresholdTriggerDetails")
 interface ISensorDataThresholdTriggerDetails : IInspectable
@@ -1003,191 +1008,191 @@ extern(Windows):
 	HRESULT abi_GetDefault(Windows.Devices.Sensors.SimpleOrientationSensor* return_result);
 }
 
-interface Accelerometer
+interface Accelerometer : Windows.Devices.Sensors.IAccelerometer, Windows.Devices.Sensors.IAccelerometerDeviceId, Windows.Devices.Sensors.IAccelerometer2, Windows.Devices.Sensors.IAccelerometer3, Windows.Devices.Sensors.IAccelerometer4
 {
 }
 
-interface AccelerometerReading
+interface AccelerometerReading : Windows.Devices.Sensors.IAccelerometerReading
 {
 }
 
-interface AccelerometerReadingChangedEventArgs
+interface AccelerometerReadingChangedEventArgs : Windows.Devices.Sensors.IAccelerometerReadingChangedEventArgs
 {
 }
 
-interface AccelerometerShakenEventArgs
+interface AccelerometerShakenEventArgs : Windows.Devices.Sensors.IAccelerometerShakenEventArgs
 {
 }
 
-interface ActivitySensor
+interface ActivitySensor : Windows.Devices.Sensors.IActivitySensor
 {
 }
 
-interface ActivitySensorReading
+interface ActivitySensorReading : Windows.Devices.Sensors.IActivitySensorReading
 {
 }
 
-interface ActivitySensorReadingChangeReport
+interface ActivitySensorReadingChangeReport : Windows.Devices.Sensors.IActivitySensorReadingChangeReport
 {
 }
 
-interface ActivitySensorReadingChangedEventArgs
+interface ActivitySensorReadingChangedEventArgs : Windows.Devices.Sensors.IActivitySensorReadingChangedEventArgs
 {
 }
 
-interface ActivitySensorTriggerDetails
+interface ActivitySensorTriggerDetails : Windows.Devices.Sensors.IActivitySensorTriggerDetails
 {
 }
 
-interface Altimeter
+interface Altimeter : Windows.Devices.Sensors.IAltimeter
 {
 }
 
-interface AltimeterReading
+interface AltimeterReading : Windows.Devices.Sensors.IAltimeterReading
 {
 }
 
-interface AltimeterReadingChangedEventArgs
+interface AltimeterReadingChangedEventArgs : Windows.Devices.Sensors.IAltimeterReadingChangedEventArgs
 {
 }
 
-interface Barometer
+interface Barometer : Windows.Devices.Sensors.IBarometer
 {
 }
 
-interface BarometerReading
+interface BarometerReading : Windows.Devices.Sensors.IBarometerReading
 {
 }
 
-interface BarometerReadingChangedEventArgs
+interface BarometerReadingChangedEventArgs : Windows.Devices.Sensors.IBarometerReadingChangedEventArgs
 {
 }
 
-interface Compass
+interface Compass : Windows.Devices.Sensors.ICompass, Windows.Devices.Sensors.ICompassDeviceId, Windows.Devices.Sensors.ICompass2
 {
 }
 
-interface CompassReading
+interface CompassReading : Windows.Devices.Sensors.ICompassReading, Windows.Devices.Sensors.ICompassReadingHeadingAccuracy
 {
 }
 
-interface CompassReadingChangedEventArgs
+interface CompassReadingChangedEventArgs : Windows.Devices.Sensors.ICompassReadingChangedEventArgs
 {
 }
 
-interface Gyrometer
+interface Gyrometer : Windows.Devices.Sensors.IGyrometer, Windows.Devices.Sensors.IGyrometerDeviceId, Windows.Devices.Sensors.IGyrometer2
 {
 }
 
-interface GyrometerReading
+interface GyrometerReading : Windows.Devices.Sensors.IGyrometerReading
 {
 }
 
-interface GyrometerReadingChangedEventArgs
+interface GyrometerReadingChangedEventArgs : Windows.Devices.Sensors.IGyrometerReadingChangedEventArgs
 {
 }
 
-interface Inclinometer
+interface Inclinometer : Windows.Devices.Sensors.IInclinometer, Windows.Devices.Sensors.IInclinometerDeviceId, Windows.Devices.Sensors.IInclinometer2
 {
 }
 
-interface InclinometerReading
+interface InclinometerReading : Windows.Devices.Sensors.IInclinometerReading, Windows.Devices.Sensors.IInclinometerReadingYawAccuracy
 {
 }
 
-interface InclinometerReadingChangedEventArgs
+interface InclinometerReadingChangedEventArgs : Windows.Devices.Sensors.IInclinometerReadingChangedEventArgs
 {
 }
 
-interface LightSensor
+interface LightSensor : Windows.Devices.Sensors.ILightSensor, Windows.Devices.Sensors.ILightSensorDeviceId
 {
 }
 
-interface LightSensorReading
+interface LightSensorReading : Windows.Devices.Sensors.ILightSensorReading
 {
 }
 
-interface LightSensorReadingChangedEventArgs
+interface LightSensorReadingChangedEventArgs : Windows.Devices.Sensors.ILightSensorReadingChangedEventArgs
 {
 }
 
-interface Magnetometer
+interface Magnetometer : Windows.Devices.Sensors.IMagnetometer, Windows.Devices.Sensors.IMagnetometerDeviceId, Windows.Devices.Sensors.IMagnetometer2
 {
 }
 
-interface MagnetometerReading
+interface MagnetometerReading : Windows.Devices.Sensors.IMagnetometerReading
 {
 }
 
-interface MagnetometerReadingChangedEventArgs
+interface MagnetometerReadingChangedEventArgs : Windows.Devices.Sensors.IMagnetometerReadingChangedEventArgs
 {
 }
 
-interface OrientationSensor
+interface OrientationSensor : Windows.Devices.Sensors.IOrientationSensor, Windows.Devices.Sensors.IOrientationSensorDeviceId, Windows.Devices.Sensors.IOrientationSensor2
 {
 }
 
-interface OrientationSensorReading
+interface OrientationSensorReading : Windows.Devices.Sensors.IOrientationSensorReading, Windows.Devices.Sensors.IOrientationSensorReadingYawAccuracy
 {
 }
 
-interface OrientationSensorReadingChangedEventArgs
+interface OrientationSensorReadingChangedEventArgs : Windows.Devices.Sensors.IOrientationSensorReadingChangedEventArgs
 {
 }
 
-interface Pedometer
+interface Pedometer : Windows.Devices.Sensors.IPedometer, Windows.Devices.Sensors.IPedometer2
 {
 }
 
-interface PedometerDataThreshold
+interface PedometerDataThreshold : Windows.Devices.Sensors.ISensorDataThreshold
 {
 }
 
-interface PedometerReading
+interface PedometerReading : Windows.Devices.Sensors.IPedometerReading
 {
 }
 
-interface PedometerReadingChangedEventArgs
+interface PedometerReadingChangedEventArgs : Windows.Devices.Sensors.IPedometerReadingChangedEventArgs
 {
 }
 
-interface ProximitySensor
+interface ProximitySensor : Windows.Devices.Sensors.IProximitySensor
 {
 }
 
-interface ProximitySensorDataThreshold
+interface ProximitySensorDataThreshold : Windows.Devices.Sensors.ISensorDataThreshold
 {
 }
 
-interface ProximitySensorDisplayOnOffController
+interface ProximitySensorDisplayOnOffController : Windows.Foundation.IClosable
 {
 }
 
-interface ProximitySensorReading
+interface ProximitySensorReading : Windows.Devices.Sensors.IProximitySensorReading
 {
 }
 
-interface ProximitySensorReadingChangedEventArgs
+interface ProximitySensorReadingChangedEventArgs : Windows.Devices.Sensors.IProximitySensorReadingChangedEventArgs
 {
 }
 
-interface SensorDataThresholdTriggerDetails
+interface SensorDataThresholdTriggerDetails : Windows.Devices.Sensors.ISensorDataThresholdTriggerDetails
 {
 }
 
-interface SensorQuaternion
+interface SensorQuaternion : Windows.Devices.Sensors.ISensorQuaternion
 {
 }
 
-interface SensorRotationMatrix
+interface SensorRotationMatrix : Windows.Devices.Sensors.ISensorRotationMatrix
 {
 }
 
-interface SimpleOrientationSensor
+interface SimpleOrientationSensor : Windows.Devices.Sensors.ISimpleOrientationSensor, Windows.Devices.Sensors.ISimpleOrientationSensorDeviceId, Windows.Devices.Sensors.ISimpleOrientationSensor2
 {
 }
 
-interface SimpleOrientationSensorOrientationChangedEventArgs
+interface SimpleOrientationSensorOrientationChangedEventArgs : Windows.Devices.Sensors.ISimpleOrientationSensorOrientationChangedEventArgs
 {
 }
 

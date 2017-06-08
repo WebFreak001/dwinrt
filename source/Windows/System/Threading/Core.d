@@ -55,10 +55,10 @@ extern(Windows):
 	HRESULT abi_AttachToSemaphoreWithTimeout(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout, Windows.System.Threading.Core.SignalNotifier* return_signalNotifier);
 }
 
-interface PreallocatedWorkItem
+interface PreallocatedWorkItem : Windows.System.Threading.Core.IPreallocatedWorkItem
 {
 }
 
-interface SignalNotifier
+interface SignalNotifier : Windows.System.Threading.Core.ISignalNotifier
 {
 }

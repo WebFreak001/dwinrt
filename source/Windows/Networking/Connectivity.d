@@ -420,91 +420,99 @@ extern(Windows):
 	HRESULT abi_GetCurrentDataClass(Windows.Networking.Connectivity.WwanDataClass* return_value);
 }
 
-interface AttributedNetworkUsage
+interface AttributedNetworkUsage : Windows.Networking.Connectivity.IAttributedNetworkUsage
 {
 }
 
-interface CellularApnContext
+interface CellularApnContext : Windows.Networking.Connectivity.ICellularApnContext
 {
 }
 
-interface ConnectionCost
+interface ConnectionCost : Windows.Networking.Connectivity.IConnectionCost, Windows.Networking.Connectivity.IConnectionCost2
 {
 }
 
-interface ConnectionProfile
+interface ConnectionProfile : Windows.Networking.Connectivity.IConnectionProfile, Windows.Networking.Connectivity.IConnectionProfile2, Windows.Networking.Connectivity.IConnectionProfile3
 {
 }
 
-interface ConnectionProfileFilter
+interface ConnectionProfileFilter : Windows.Networking.Connectivity.IConnectionProfileFilter, Windows.Networking.Connectivity.IConnectionProfileFilter2
 {
 }
 
-interface ConnectionSession
+interface ConnectionSession : Windows.Networking.Connectivity.IConnectionSession, Windows.Foundation.IClosable
 {
 }
 
-interface ConnectivityInterval
+interface ConnectivityInterval : Windows.Networking.Connectivity.IConnectivityInterval
 {
 }
 
-interface DataPlanStatus
+interface ConnectivityManager
 {
 }
 
-interface DataPlanUsage
+interface DataPlanStatus : Windows.Networking.Connectivity.IDataPlanStatus
 {
 }
 
-interface DataUsage
+interface DataPlanUsage : Windows.Networking.Connectivity.IDataPlanUsage
 {
 }
 
-interface IPInformation
+interface DataUsage : Windows.Networking.Connectivity.IDataUsage
 {
 }
 
-interface LanIdentifier
+interface IPInformation : Windows.Networking.Connectivity.IIPInformation
 {
 }
 
-interface LanIdentifierData
+interface LanIdentifier : Windows.Networking.Connectivity.ILanIdentifier
 {
 }
 
-interface NetworkAdapter
+interface LanIdentifierData : Windows.Networking.Connectivity.ILanIdentifierData
 {
 }
 
-interface NetworkItem
+interface NetworkAdapter : Windows.Networking.Connectivity.INetworkAdapter
 {
 }
 
-interface NetworkSecuritySettings
+interface NetworkInformation
 {
 }
 
-interface NetworkStateChangeEventDetails
+interface NetworkItem : Windows.Networking.Connectivity.INetworkItem
 {
 }
 
-interface NetworkUsage
+interface NetworkSecuritySettings : Windows.Networking.Connectivity.INetworkSecuritySettings
 {
 }
 
-interface ProxyConfiguration
+interface NetworkStateChangeEventDetails : Windows.Networking.Connectivity.INetworkStateChangeEventDetails, Windows.Networking.Connectivity.INetworkStateChangeEventDetails2
 {
 }
 
-interface RoutePolicy
+interface NetworkUsage : Windows.Networking.Connectivity.INetworkUsage
 {
 }
 
-interface WlanConnectionProfileDetails
+interface ProxyConfiguration : Windows.Networking.Connectivity.IProxyConfiguration
 {
 }
 
-interface WwanConnectionProfileDetails
+interface RoutePolicy : Windows.Networking.Connectivity.IRoutePolicy
+{
+}
+
+interface WlanConnectionProfileDetails : Windows.Networking.Connectivity.IWlanConnectionProfileDetails
+{
+}
+
+interface WwanConnectionProfileDetails : Windows.Networking.Connectivity.IWwanConnectionProfileDetails
 {
 }
 

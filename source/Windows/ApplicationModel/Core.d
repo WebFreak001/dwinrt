@@ -231,26 +231,30 @@ extern(Windows):
 	HRESULT get_UnhandledError(Windows.ApplicationModel.Core.UnhandledError* return_value);
 }
 
-interface AppListEntry
+interface AppListEntry : Windows.ApplicationModel.Core.IAppListEntry
 {
 }
 
-interface CoreApplicationView
+interface CoreApplication
 {
 }
 
-interface CoreApplicationViewTitleBar
+interface CoreApplicationView : Windows.ApplicationModel.Core.ICoreApplicationView, Windows.ApplicationModel.Core.ICoreApplicationView2, Windows.ApplicationModel.Core.ICoreApplicationView3, Windows.ApplicationModel.Core.ICoreApplicationView5
 {
 }
 
-interface HostedViewClosingEventArgs
+interface CoreApplicationViewTitleBar : Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar
 {
 }
 
-interface UnhandledError
+interface HostedViewClosingEventArgs : Windows.ApplicationModel.Core.IHostedViewClosingEventArgs
 {
 }
 
-interface UnhandledErrorDetectedEventArgs
+interface UnhandledError : Windows.ApplicationModel.Core.IUnhandledError
+{
+}
+
+interface UnhandledErrorDetectedEventArgs : Windows.ApplicationModel.Core.IUnhandledErrorDetectedEventArgs
 {
 }

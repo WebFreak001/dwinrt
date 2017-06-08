@@ -184,23 +184,23 @@ extern(Windows):
 	HRESULT abi_GetAvailableSpaceAsync(Windows.Foundation.IAsyncOperation!(UINT64)* return_operation);
 }
 
-interface DeploymentResult
+interface DeploymentResult : Windows.Management.Deployment.IDeploymentResult, Windows.Management.Deployment.IDeploymentResult2
 {
 }
 
-interface PackageManager
+interface PackageManager : Windows.Management.Deployment.IPackageManager, Windows.Management.Deployment.IPackageManager2, Windows.Management.Deployment.IPackageManager3, Windows.Management.Deployment.IPackageManager4, Windows.Management.Deployment.IPackageManager5
 {
 }
 
-interface PackageManagerDebugSettings
+interface PackageManagerDebugSettings : Windows.Management.Deployment.IPackageManagerDebugSettings
 {
 }
 
-interface PackageUserInformation
+interface PackageUserInformation : Windows.Management.Deployment.IPackageUserInformation
 {
 }
 
-interface PackageVolume
+interface PackageVolume : Windows.Management.Deployment.IPackageVolume, Windows.Management.Deployment.IPackageVolume2
 {
 }
 

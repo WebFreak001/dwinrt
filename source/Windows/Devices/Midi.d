@@ -314,91 +314,91 @@ extern(Windows):
 	HRESULT abi_CreateMidiTimeCodeMessage(BYTE frameType, BYTE values, Windows.Devices.Midi.MidiTimeCodeMessage* return_value);
 }
 
-interface MidiActiveSensingMessage
+interface MidiActiveSensingMessage : Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiChannelPressureMessage
+interface MidiChannelPressureMessage : Windows.Devices.Midi.IMidiChannelPressureMessage, Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiContinueMessage
+interface MidiContinueMessage : Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiControlChangeMessage
+interface MidiControlChangeMessage : Windows.Devices.Midi.IMidiControlChangeMessage, Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiInPort
+interface MidiInPort : Windows.Devices.Midi.IMidiInPort, Windows.Foundation.IClosable
 {
 }
 
-interface MidiMessageReceivedEventArgs
+interface MidiMessageReceivedEventArgs : Windows.Devices.Midi.IMidiMessageReceivedEventArgs
 {
 }
 
-interface MidiNoteOffMessage
+interface MidiNoteOffMessage : Windows.Devices.Midi.IMidiNoteOffMessage, Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiNoteOnMessage
+interface MidiNoteOnMessage : Windows.Devices.Midi.IMidiNoteOnMessage, Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiOutPort
+interface MidiOutPort : Windows.Devices.Midi.IMidiOutPort, Windows.Foundation.IClosable
 {
 }
 
-interface MidiPitchBendChangeMessage
+interface MidiPitchBendChangeMessage : Windows.Devices.Midi.IMidiPitchBendChangeMessage, Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiPolyphonicKeyPressureMessage
+interface MidiPolyphonicKeyPressureMessage : Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage, Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiProgramChangeMessage
+interface MidiProgramChangeMessage : Windows.Devices.Midi.IMidiProgramChangeMessage, Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiSongPositionPointerMessage
+interface MidiSongPositionPointerMessage : Windows.Devices.Midi.IMidiSongPositionPointerMessage, Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiSongSelectMessage
+interface MidiSongSelectMessage : Windows.Devices.Midi.IMidiSongSelectMessage, Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiStartMessage
+interface MidiStartMessage : Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiStopMessage
+interface MidiStopMessage : Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiSynthesizer
+interface MidiSynthesizer : Windows.Devices.Midi.IMidiSynthesizer, Windows.Devices.Midi.IMidiOutPort, Windows.Foundation.IClosable
 {
 }
 
-interface MidiSystemExclusiveMessage
+interface MidiSystemExclusiveMessage : Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiSystemResetMessage
+interface MidiSystemResetMessage : Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiTimeCodeMessage
+interface MidiTimeCodeMessage : Windows.Devices.Midi.IMidiTimeCodeMessage, Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiTimingClockMessage
+interface MidiTimingClockMessage : Windows.Devices.Midi.IMidiMessage
 {
 }
 
-interface MidiTuneRequestMessage
+interface MidiTuneRequestMessage : Windows.Devices.Midi.IMidiMessage
 {
 }
 

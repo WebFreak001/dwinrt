@@ -86,19 +86,23 @@ extern(Windows):
 	HRESULT get_Request(Windows.Storage.Provider.FileUpdateRequest* return_value);
 }
 
-interface CachedFileUpdaterUI
+interface CachedFileUpdater
 {
 }
 
-interface FileUpdateRequest
+interface CachedFileUpdaterUI : Windows.Storage.Provider.ICachedFileUpdaterUI, Windows.Storage.Provider.ICachedFileUpdaterUI2
 {
 }
 
-interface FileUpdateRequestDeferral
+interface FileUpdateRequest : Windows.Storage.Provider.IFileUpdateRequest, Windows.Storage.Provider.IFileUpdateRequest2
 {
 }
 
-interface FileUpdateRequestedEventArgs
+interface FileUpdateRequestDeferral : Windows.Storage.Provider.IFileUpdateRequestDeferral
+{
+}
+
+interface FileUpdateRequestedEventArgs : Windows.Storage.Provider.IFileUpdateRequestedEventArgs
 {
 }
 

@@ -35,10 +35,10 @@ extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.Core.Preview.SystemNavigationManagerPreview* return_loader);
 }
 
-interface SystemNavigationCloseRequestedPreviewEventArgs
+interface SystemNavigationCloseRequestedPreviewEventArgs : Windows.UI.Core.Preview.ISystemNavigationCloseRequestedPreviewEventArgs
 {
 }
 
-interface SystemNavigationManagerPreview
+interface SystemNavigationManagerPreview : Windows.UI.Core.Preview.ISystemNavigationManagerPreview
 {
 }

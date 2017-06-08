@@ -398,47 +398,51 @@ extern(Windows):
 	HRESULT get_TraceLevel(Windows.Foundation.Diagnostics.CausalityTraceLevel* return_value);
 }
 
-interface ErrorDetails
+interface AsyncCausalityTracer
 {
 }
 
-interface FileLoggingSession
+interface ErrorDetails : Windows.Foundation.Diagnostics.IErrorDetails
 {
 }
 
-interface LogFileGeneratedEventArgs
+interface FileLoggingSession : Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.IClosable
 {
 }
 
-interface LoggingActivity
+interface LogFileGeneratedEventArgs : Windows.Foundation.Diagnostics.ILogFileGeneratedEventArgs
 {
 }
 
-interface LoggingChannel
+interface LoggingActivity : Windows.Foundation.Diagnostics.ILoggingActivity, Windows.Foundation.IClosable, Windows.Foundation.Diagnostics.ILoggingActivity2, Windows.Foundation.Diagnostics.ILoggingTarget
 {
 }
 
-interface LoggingChannelOptions
+interface LoggingChannel : Windows.Foundation.Diagnostics.ILoggingChannel, Windows.Foundation.IClosable, Windows.Foundation.Diagnostics.ILoggingChannel2, Windows.Foundation.Diagnostics.ILoggingTarget
 {
 }
 
-interface LoggingFields
+interface LoggingChannelOptions : Windows.Foundation.Diagnostics.ILoggingChannelOptions
 {
 }
 
-interface LoggingOptions
+interface LoggingFields : Windows.Foundation.Diagnostics.ILoggingFields
 {
 }
 
-interface LoggingSession
+interface LoggingOptions : Windows.Foundation.Diagnostics.ILoggingOptions
 {
 }
 
-interface RuntimeBrokerErrorSettings
+interface LoggingSession : Windows.Foundation.Diagnostics.ILoggingSession, Windows.Foundation.IClosable
 {
 }
 
-interface TracingStatusChangedEventArgs
+interface RuntimeBrokerErrorSettings : Windows.Foundation.Diagnostics.IErrorReportingSettings
+{
+}
+
+interface TracingStatusChangedEventArgs : Windows.Foundation.Diagnostics.ITracingStatusChangedEventArgs
 {
 }
 

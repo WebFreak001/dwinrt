@@ -30,11 +30,11 @@ extern(Windows):
 	HRESULT abi_RequestExtensionAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionResult)* return_operation);
 }
 
-interface ExtendedExecutionRevokedEventArgs
+interface ExtendedExecutionRevokedEventArgs : Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionRevokedEventArgs
 {
 }
 
-interface ExtendedExecutionSession
+interface ExtendedExecutionSession : Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession, Windows.Foundation.IClosable
 {
 }
 

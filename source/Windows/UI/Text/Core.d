@@ -259,63 +259,67 @@ extern(Windows):
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_value);
 }
 
-interface CoreTextCompositionCompletedEventArgs
+interface CoreTextCompositionCompletedEventArgs : Windows.UI.Text.Core.ICoreTextCompositionCompletedEventArgs
 {
 }
 
-interface CoreTextCompositionSegment
+interface CoreTextCompositionSegment : Windows.UI.Text.Core.ICoreTextCompositionSegment
 {
 }
 
-interface CoreTextCompositionStartedEventArgs
+interface CoreTextCompositionStartedEventArgs : Windows.UI.Text.Core.ICoreTextCompositionStartedEventArgs
 {
 }
 
-interface CoreTextEditContext
+interface CoreTextEditContext : Windows.UI.Text.Core.ICoreTextEditContext, Windows.UI.Text.Core.ICoreTextEditContext2
 {
 }
 
-interface CoreTextFormatUpdatingEventArgs
+interface CoreTextFormatUpdatingEventArgs : Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs
 {
 }
 
-interface CoreTextLayoutBounds
+interface CoreTextLayoutBounds : Windows.UI.Text.Core.ICoreTextLayoutBounds
 {
 }
 
-interface CoreTextLayoutRequest
+interface CoreTextLayoutRequest : Windows.UI.Text.Core.ICoreTextLayoutRequest
 {
 }
 
-interface CoreTextLayoutRequestedEventArgs
+interface CoreTextLayoutRequestedEventArgs : Windows.UI.Text.Core.ICoreTextLayoutRequestedEventArgs
 {
 }
 
-interface CoreTextSelectionRequest
+interface CoreTextSelectionRequest : Windows.UI.Text.Core.ICoreTextSelectionRequest
 {
 }
 
-interface CoreTextSelectionRequestedEventArgs
+interface CoreTextSelectionRequestedEventArgs : Windows.UI.Text.Core.ICoreTextSelectionRequestedEventArgs
 {
 }
 
-interface CoreTextSelectionUpdatingEventArgs
+interface CoreTextSelectionUpdatingEventArgs : Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs
 {
 }
 
-interface CoreTextServicesManager
+interface CoreTextServicesConstants
 {
 }
 
-interface CoreTextTextRequest
+interface CoreTextServicesManager : Windows.UI.Text.Core.ICoreTextServicesManager
 {
 }
 
-interface CoreTextTextRequestedEventArgs
+interface CoreTextTextRequest : Windows.UI.Text.Core.ICoreTextTextRequest
 {
 }
 
-interface CoreTextTextUpdatingEventArgs
+interface CoreTextTextRequestedEventArgs : Windows.UI.Text.Core.ICoreTextTextRequestedEventArgs
+{
+}
+
+interface CoreTextTextUpdatingEventArgs : Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs
 {
 }
 

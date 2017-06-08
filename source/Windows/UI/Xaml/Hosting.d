@@ -2,6 +2,12 @@ module Windows.UI.Xaml.Hosting;
 
 import dwinrt;
 
+@uuid("b6f1a676-cfe6-46ac-acf6-c4687bb65e60")
+@WinrtFactory("Windows.UI.Xaml.Hosting.ElementCompositionPreview")
+interface IElementCompositionPreview : IInspectable
+{
+}
+
 @uuid("08c92b38-ec99-4c55-bc85-a1c180b27646")
 @WinrtFactory("Windows.UI.Xaml.Hosting.ElementCompositionPreview")
 interface IElementCompositionPreviewStatics : IInspectable
@@ -97,10 +103,10 @@ extern(Windows):
 	HRESULT abi_GetFlyoutPlacement(Windows.Foundation.Rect placementTargetBounds, Windows.Foundation.Size controlSize, Windows.Foundation.Size minControlSize, Windows.Foundation.Rect containerRect, Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode targetPreferredPlacement, bool allowFallbacks, Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode* out_chosenPlacement, Windows.Foundation.Rect* return_returnValue);
 }
 
-interface ElementCompositionPreview
+interface ElementCompositionPreview : Windows.UI.Xaml.Hosting.IElementCompositionPreview
 {
 }
 
-interface XamlUIPresenter
+interface XamlUIPresenter : Windows.UI.Xaml.Hosting.IXamlUIPresenter
 {
 }

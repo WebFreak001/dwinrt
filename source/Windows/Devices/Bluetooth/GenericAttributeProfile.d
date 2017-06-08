@@ -866,131 +866,151 @@ extern(Windows):
 	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);
 }
 
-interface GattCharacteristic
+interface GattCharacteristic : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic2, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3
 {
 }
 
-interface GattCharacteristicsResult
+interface GattCharacteristicUuids
 {
 }
 
-interface GattClientNotificationResult
+interface GattCharacteristicsResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristicsResult
 {
 }
 
-interface GattDescriptor
+interface GattClientNotificationResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattClientNotificationResult
 {
 }
 
-interface GattDescriptorsResult
+interface GattDescriptor : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor2
 {
 }
 
-interface GattDeviceService
+interface GattDescriptorUuids
 {
 }
 
-interface GattDeviceServicesResult
+interface GattDescriptorsResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptorsResult
 {
 }
 
-interface GattLocalCharacteristic
+interface GattDeviceService : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService, Windows.Foundation.IClosable, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService2, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3
 {
 }
 
-interface GattLocalCharacteristicParameters
+interface GattDeviceServicesResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceServicesResult
 {
 }
 
-interface GattLocalCharacteristicResult
+interface GattLocalCharacteristic : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic
 {
 }
 
-interface GattLocalDescriptor
+interface GattLocalCharacteristicParameters : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters
 {
 }
 
-interface GattLocalDescriptorParameters
+interface GattLocalCharacteristicResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicResult
 {
 }
 
-interface GattLocalDescriptorResult
+interface GattLocalDescriptor : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptor
 {
 }
 
-interface GattLocalService
+interface GattLocalDescriptorParameters : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptorParameters
 {
 }
 
-interface GattPresentationFormat
+interface GattLocalDescriptorResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptorResult
 {
 }
 
-interface GattReadClientCharacteristicConfigurationDescriptorResult
+interface GattLocalService : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalService
 {
 }
 
-interface GattReadRequest
+interface GattPresentationFormat : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattPresentationFormat
 {
 }
 
-interface GattReadRequestedEventArgs
+interface GattPresentationFormatTypes
 {
 }
 
-interface GattReadResult
+interface GattProtocolError
 {
 }
 
-interface GattReliableWriteTransaction
+interface GattReadClientCharacteristicConfigurationDescriptorResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadClientCharacteristicConfigurationDescriptorResult, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadClientCharacteristicConfigurationDescriptorResult2
 {
 }
 
-interface GattRequestStateChangedEventArgs
+interface GattReadRequest : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequest
 {
 }
 
-interface GattServiceProvider
+interface GattReadRequestedEventArgs : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequestedEventArgs
 {
 }
 
-interface GattServiceProviderAdvertisementStatusChangedEventArgs
+interface GattReadResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadResult, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadResult2
 {
 }
 
-interface GattServiceProviderAdvertisingParameters
+interface GattReliableWriteTransaction : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReliableWriteTransaction, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReliableWriteTransaction2
 {
 }
 
-interface GattServiceProviderResult
+interface GattRequestStateChangedEventArgs : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattRequestStateChangedEventArgs
 {
 }
 
-interface GattSession
+interface GattServiceProvider : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider
 {
 }
 
-interface GattSessionStatusChangedEventArgs
+interface GattServiceProviderAdvertisementStatusChangedEventArgs : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisementStatusChangedEventArgs
 {
 }
 
-interface GattSubscribedClient
+interface GattServiceProviderAdvertisingParameters : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters
 {
 }
 
-interface GattValueChangedEventArgs
+interface GattServiceProviderResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderResult
 {
 }
 
-interface GattWriteRequest
+interface GattServiceUuids
 {
 }
 
-interface GattWriteRequestedEventArgs
+interface GattSession : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSession, Windows.Foundation.IClosable
 {
 }
 
-interface GattWriteResult
+interface GattSessionStatusChangedEventArgs : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSessionStatusChangedEventArgs
+{
+}
+
+interface GattSubscribedClient : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSubscribedClient
+{
+}
+
+interface GattValueChangedEventArgs : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattValueChangedEventArgs
+{
+}
+
+interface GattWriteRequest : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequest
+{
+}
+
+interface GattWriteRequestedEventArgs : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequestedEventArgs
+{
+}
+
+interface GattWriteResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteResult
 {
 }
 

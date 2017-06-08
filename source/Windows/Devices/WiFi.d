@@ -74,19 +74,19 @@ extern(Windows):
 	HRESULT get_AvailableNetworks(Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFi.WiFiAvailableNetwork)* return_value);
 }
 
-interface WiFiAdapter
+interface WiFiAdapter : Windows.Devices.WiFi.IWiFiAdapter
 {
 }
 
-interface WiFiAvailableNetwork
+interface WiFiAvailableNetwork : Windows.Devices.WiFi.IWiFiAvailableNetwork
 {
 }
 
-interface WiFiConnectionResult
+interface WiFiConnectionResult : Windows.Devices.WiFi.IWiFiConnectionResult
 {
 }
 
-interface WiFiNetworkReport
+interface WiFiNetworkReport : Windows.Devices.WiFi.IWiFiNetworkReport
 {
 }
 

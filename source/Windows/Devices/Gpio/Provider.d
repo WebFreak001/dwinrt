@@ -60,7 +60,7 @@ extern(Windows):
 	HRESULT abi_GetControllers(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Gpio.Provider.IGpioControllerProvider)* return_result);
 }
 
-interface GpioPinProviderValueChangedEventArgs
+interface GpioPinProviderValueChangedEventArgs : Windows.Devices.Gpio.Provider.IGpioPinProviderValueChangedEventArgs
 {
 }
 

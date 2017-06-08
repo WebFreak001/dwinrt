@@ -46,6 +46,7 @@ void main(string[] args)
 		std.file.write(fileName, mod.toString);
 	}
 	append(buildPath("source", "Windows", "Foundation", "package.d"), foundationSuffix);
+	append(buildPath("source", "Windows", "Foundation", "Collections.d"), collectionsSuffix);
 	modules.each!(mod => writeln("public static import " ~ mod.name.join(".") ~ ";"));
 }
 
@@ -54,7 +55,7 @@ void processIDL(string file)
 	if (ignored.canFind(file.baseName))
 		return;
 
-	//if (file.baseName != "Windows.ApplicationModel.datatransfer.idl")
+	//if (file.baseName != "windows.foundation.idl")
 	//	return;
 
 	writeln("Processing ", file);
@@ -252,13 +253,16 @@ void processIDL(string file)
 				if (node.children[0].name == "IDL.forward_dcl")
 					break; // Ignore forward declarations
 				auto dcl = node.children[0];
-				if (dcl.children.length == 1 && dcl.children[0].name == "IDL.interface_header")
-					break; // ditto
-				enforce(dcl.children.length == 2, dcl.toString);
+				enforce(dcl.children.length == 1 || dcl.children.length == 2, dcl.toString);
 				auto header = dcl.children[0];
-				auto body_ = dcl.children[1];
+				bool runtimeClass = header.matches[0] == "runtimeclass";
 				enforce(header.name == "IDL.interface_header", header.toString);
-				enforce(body_.name == "IDL.interface_body", body_.toString);
+				ParseTree body_;
+				if (dcl.children.length == 2)
+				{
+					body_ = dcl.children[1];
+					enforce(body_.name == "IDL.interface_body", body_.toString);
+				}
 				string name = header.matches[1];
 				Interface obj;
 				obj.name = name;
@@ -302,29 +306,39 @@ void processIDL(string file)
 					else
 						throw new Exception("Invalid header item: " ~ spec.name);
 				}
-				foreach (fn; body_.children)
-				{
-					enforce(fn.name == "IDL.export_", fn.toString);
-					foreach_reverse (i, fnchild; fn.children)
+				if (body_ != ParseTree.init)
+					foreach (fn; body_.children)
 					{
-						if (fnchild.name == "IDL.definition_attribute")
+						enforce(fn.name == "IDL.export_", fn.toString);
+						foreach_reverse (i, fnchild; fn.children)
 						{
-							attributes ~= fnchild;
-							fn.children = fn.children[0 .. i] ~ fn.children[i + 1 .. $];
+							if (fnchild.name == "IDL.definition_attribute")
+							{
+								attributes ~= fnchild;
+								fn.children = fn.children[0 .. i] ~ fn.children[i + 1 .. $];
+							}
 						}
+						enforce(fn.children.length == 1, fn.toString);
+						auto opdcl = fn.children[0];
+						if (opdcl.name == "IDL.cpp_quote")
+							continue;
+						if (opdcl.name == "IDL.declare_interface")
+						{
+							if (runtimeClass)
+							{
+								enforce(opdcl.children.length == 1);
+								enforce(opdcl.children[0].name == "IDL.type");
+								obj.implements ~= opdcl.children[0].matches.join("").translateType;
+							}
+							else
+							{
+								writeln("TODO nested interface ", opdcl);
+							}
+							continue;
+						}
+						auto method = parseInterfaceMethod(opdcl);
+						obj.methods ~= method;
 					}
-					enforce(fn.children.length == 1, fn.toString);
-					auto opdcl = fn.children[0];
-					if (opdcl.name == "IDL.cpp_quote")
-						continue;
-					if (opdcl.name == "IDL.declare_interface")
-					{
-						writeln("TODO nested interface ", opdcl);
-						continue;
-					}
-					auto method = parseInterfaceMethod(opdcl);
-					obj.methods ~= method;
-				}
 				makeMod(namespace).interfaces ~= obj;
 				break;
 			case "IDL.type_dcl":
@@ -794,12 +808,17 @@ struct Interface
 	string name;
 	string[] inherits;
 	string[] requires;
+	string[] implements;
 	string uuid;
 	string exclusiveto;
 	bool isDelegate;
 
 	void fixTypes()
 	{
+		foreach (ref type; inherits)
+			type.fixType;
+		foreach (ref type; implements)
+			type.fixType;
 		foreach (ref method; methods)
 			method.fixTypes();
 	}
@@ -814,8 +833,8 @@ struct Interface
 		if (exclusiveto.length)
 			ret ~= "@WinrtFactory(\"" ~ exclusiveto ~ "\")\n";
 		ret ~= "interface " ~ name;
-		if (inherits.length)
-			ret ~= " : " ~ inherits.join(", ");
+		if (inherits.length + implements.length)
+			ret ~= " : " ~ (inherits ~ implements).join(", ");
 		ret ~= "\n{\n";
 		if (methods.length && !isDelegate)
 			ret ~= "\tmixin(generateRTMethods!(typeof(this)));\n\n";
@@ -1004,14 +1023,6 @@ struct ComCallData
 	void* pUserDefined;
 }
 
-enum AsyncStatus
-{
-	Started,
-	Completed,
-	Canceled,
-	Error,
-}
-
 alias ContextCallbackCallback = extern (Windows) HRESULT function(ComCallData* pParam);
 
 @uuid("000001da-0000-0000-c000-000000000046")
@@ -1140,8 +1151,8 @@ interface IAsyncOperationWithProgress(TResult, TProgress) : IInspectable
 extern (Windows):
 	HRESULT put_Progress(AsyncOperationProgressHandler!(TResult, TProgress) handler);
 	HRESULT get_Progress(AsyncOperationProgressHandler!(TResult, TProgress)* handler);
-	HRESULT put_Completed(AsyncOperationCompletedHandler!(TResult, TProgress) handler);
-	HRESULT get_Completed(AsyncOperationCompletedHandler!(TResult, TProgress)* handler);
+	HRESULT put_Completed(AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) handler);
+	HRESULT get_Completed(AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)* handler);
 	HRESULT abi_GetResults(TResult* results);
 }
 
@@ -1149,5 +1160,115 @@ interface AsyncOperationWithProgressCompletedHandler(TResult, TProgress) : IUnkn
 {
 extern (Windows):
 	HRESULT abi_Invoke(IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status);
+}
+
+interface IReference(T) : IUnknown
+{
+extern (Windows):
+	HRESULT get_Value(T* value);
+}
+};
+
+string collectionsSuffix = q{
+interface MapChangedEventHandler(K, V) : IUnknown
+{
+extern (Windows):
+	HRESULT abi_Invoke(IObservableMap!(K, V)* sender, IMapChangedEventArgs!K* args);
+}
+
+interface VectorChangedEventHandler(T) : IUnknown
+{
+extern (Windows):
+	HRESULT abi_Invoke(IObservableVector!T* sender, IVectorChangedEventArgs* args);
+}
+
+interface IIterator(T) : IInspectable
+{
+extern (Windows):
+	HRESULT get_Current(T* current);
+	HRESULT get_HasCurrent(bool* hasCurrent);
+	HRESULT abi_MoveNext(bool* hasCurrent);
+	HRESULT abi_GetMany(uint capacity, T* value, uint* actual);
+}
+
+interface IIterable(T) : IInspectable
+{
+extern (Windows):
+	HRESULT abi_First(IIterator!T* first);
+}
+
+interface IKeyValuePair(K, V) : IInspectable
+{
+extern (Windows):
+	HRESULT get_Key(K* key);
+	HRESULT get_Value(V* value);
+}
+
+interface IVectorView(T) : IInspectable
+{
+extern (Windows):
+	HRESULT abi_GetAt(uint index, T* item);
+	HRESULT get_Size(uint* size);
+	HRESULT abi_IndexOf(T value, uint* index, bool* found);
+	HRESULT abi_GetMany(uint startIndex, uint capacity, T* value, uint* actual);
+}
+
+interface IVector(T) : IInspectable
+{
+extern (Windows):
+	HRESULT abi_GetAt(uint index, T* item);
+	HRESULT get_Size(uint* size);
+	HRESULT abi_GetView(IVectorView!T* view);
+	HRESULT abi_IndexOf(T value, uint* index, bool* found);
+	HRESULT abi_SetAt(uint index, T item);
+	HRESULT abi_InsertAt(uint index, T item);
+	HRESULT abi_RemoveAt(uint index);
+	HRESULT abi_Append(T item);
+	HRESULT abi_RemoveAtEnd();
+	HRESULT abi_Clear();
+	HRESULT abi_GetMany(uint startIndex, uint capacity, T* value, uint* actual);
+	HRESULT abi_ReplaceAll(uint count, T* value);
+}
+
+interface IMapView(K, V) : IInspectable
+{
+extern (Windows):
+	HRESULT abi_Lookup(K key, V* value);
+	HRESULT get_Size(uint* size);
+	HRESULT abi_HasKey(K key, bool* found);
+	HRESULT abi_Split(IMapView!(K, V)* firstPartition, IMapView!(K, V)* secondPartition);
+}
+
+interface IMap(K, V) : IInspectable
+{
+extern (Windows):
+	HRESULT abi_Lookup(K key, V* value);
+	HRESULT get_Size(uint* size);
+	HRESULT abi_HasKey(K key, bool* found);
+	HRESULT abi_GetView(IMapView!(K, V)* view);
+	HRESULT abi_Insert(K key, V value, bool* replaced);
+	HRESULT abi_Remove(K key);
+	HRESULT abi_Clear();
+}
+
+interface IMapChangedEventArgs(K) : IInspectable
+{
+extern (Windows):
+	HRESULT get_CollectionChange(Windows.Foundation.Collections.CollectionChange* value);
+	HRESULT get_Key(K* value);
+}
+
+interface IObservableMap(K, V) : IInspectable
+{
+extern (Windows):
+	HRESULT add_MapChanged(MapChangedEventHandler!(K, V) handler, EventRegistrationToken* token);
+	HRESULT remove_MapChanged(EventRegistrationToken token);
+}
+
+interface IObservableVector(T) : IInspectable
+{
+extern (Windows):
+	HRESULT add_VectorChanged(VectorChangedEventHandler!T handler, EventRegistrationToken* token);
+	HRESULT remove_VectorChanged(EventRegistrationToken token);
 }
 };

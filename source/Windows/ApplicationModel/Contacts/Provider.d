@@ -41,11 +41,11 @@ extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 }
 
-interface ContactPickerUI
+interface ContactPickerUI : Windows.ApplicationModel.Contacts.Provider.IContactPickerUI, Windows.ApplicationModel.Contacts.Provider.IContactPickerUI2
 {
 }
 
-interface ContactRemovedEventArgs
+interface ContactRemovedEventArgs : Windows.ApplicationModel.Contacts.Provider.IContactRemovedEventArgs
 {
 }
 

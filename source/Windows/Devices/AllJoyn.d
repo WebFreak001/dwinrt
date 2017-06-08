@@ -537,87 +537,91 @@ extern(Windows):
 	HRESULT abi_Create(INT32 status, Windows.Devices.AllJoyn.AllJoynWatcherStoppedEventArgs* return_result);
 }
 
-interface AllJoynAboutData
+interface AllJoynAboutData : Windows.Devices.AllJoyn.IAllJoynAboutData
 {
 }
 
-interface AllJoynAboutDataView
+interface AllJoynAboutDataView : Windows.Devices.AllJoyn.IAllJoynAboutDataView
 {
 }
 
-interface AllJoynAcceptSessionJoinerEventArgs
+interface AllJoynAcceptSessionJoinerEventArgs : Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs
 {
 }
 
-interface AllJoynAuthenticationCompleteEventArgs
+interface AllJoynAuthenticationCompleteEventArgs : Windows.Devices.AllJoyn.IAllJoynAuthenticationCompleteEventArgs
 {
 }
 
-interface AllJoynBusAttachment
+interface AllJoynBusAttachment : Windows.Devices.AllJoyn.IAllJoynBusAttachment, Windows.Devices.AllJoyn.IAllJoynBusAttachment2
 {
 }
 
-interface AllJoynBusAttachmentStateChangedEventArgs
+interface AllJoynBusAttachmentStateChangedEventArgs : Windows.Devices.AllJoyn.IAllJoynBusAttachmentStateChangedEventArgs
 {
 }
 
-interface AllJoynBusObject
+interface AllJoynBusObject : Windows.Devices.AllJoyn.IAllJoynBusObject
 {
 }
 
-interface AllJoynBusObjectStoppedEventArgs
+interface AllJoynBusObjectStoppedEventArgs : Windows.Devices.AllJoyn.IAllJoynBusObjectStoppedEventArgs
 {
 }
 
-interface AllJoynCredentials
+interface AllJoynCredentials : Windows.Devices.AllJoyn.IAllJoynCredentials
 {
 }
 
-interface AllJoynCredentialsRequestedEventArgs
+interface AllJoynCredentialsRequestedEventArgs : Windows.Devices.AllJoyn.IAllJoynCredentialsRequestedEventArgs
 {
 }
 
-interface AllJoynCredentialsVerificationRequestedEventArgs
+interface AllJoynCredentialsVerificationRequestedEventArgs : Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs
 {
 }
 
-interface AllJoynMessageInfo
+interface AllJoynMessageInfo : Windows.Devices.AllJoyn.IAllJoynMessageInfo
 {
 }
 
-interface AllJoynProducerStoppedEventArgs
+interface AllJoynProducerStoppedEventArgs : Windows.Devices.AllJoyn.IAllJoynProducerStoppedEventArgs
 {
 }
 
-interface AllJoynServiceInfo
+interface AllJoynServiceInfo : Windows.Devices.AllJoyn.IAllJoynServiceInfo
 {
 }
 
-interface AllJoynServiceInfoRemovedEventArgs
+interface AllJoynServiceInfoRemovedEventArgs : Windows.Devices.AllJoyn.IAllJoynServiceInfoRemovedEventArgs
 {
 }
 
-interface AllJoynSession
+interface AllJoynSession : Windows.Devices.AllJoyn.IAllJoynSession
 {
 }
 
-interface AllJoynSessionJoinedEventArgs
+interface AllJoynSessionJoinedEventArgs : Windows.Devices.AllJoyn.IAllJoynSessionJoinedEventArgs
 {
 }
 
-interface AllJoynSessionLostEventArgs
+interface AllJoynSessionLostEventArgs : Windows.Devices.AllJoyn.IAllJoynSessionLostEventArgs
 {
 }
 
-interface AllJoynSessionMemberAddedEventArgs
+interface AllJoynSessionMemberAddedEventArgs : Windows.Devices.AllJoyn.IAllJoynSessionMemberAddedEventArgs
 {
 }
 
-interface AllJoynSessionMemberRemovedEventArgs
+interface AllJoynSessionMemberRemovedEventArgs : Windows.Devices.AllJoyn.IAllJoynSessionMemberRemovedEventArgs
 {
 }
 
-interface AllJoynWatcherStoppedEventArgs
+interface AllJoynStatus
+{
+}
+
+interface AllJoynWatcherStoppedEventArgs : Windows.Devices.AllJoyn.IAllJoynWatcherStoppedEventArgs
 {
 }
 

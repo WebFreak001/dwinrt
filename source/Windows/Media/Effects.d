@@ -226,43 +226,47 @@ extern(Windows):
 	HRESULT get_ProcessingAlgorithm(Windows.Media.Transcoding.MediaVideoProcessingAlgorithm* return_value);
 }
 
-interface AudioCaptureEffectsManager
+interface AudioCaptureEffectsManager : Windows.Media.Effects.IAudioCaptureEffectsManager
 {
 }
 
-interface AudioEffect
+interface AudioEffect : Windows.Media.Effects.IAudioEffect
 {
 }
 
-interface AudioEffectDefinition
+interface AudioEffectDefinition : Windows.Media.Effects.IAudioEffectDefinition
 {
 }
 
-interface AudioRenderEffectsManager
+interface AudioEffectsManager
 {
 }
 
-interface CompositeVideoFrameContext
+interface AudioRenderEffectsManager : Windows.Media.Effects.IAudioRenderEffectsManager, Windows.Media.Effects.IAudioRenderEffectsManager2
 {
 }
 
-interface ProcessAudioFrameContext
+interface CompositeVideoFrameContext : Windows.Media.Effects.ICompositeVideoFrameContext
 {
 }
 
-interface ProcessVideoFrameContext
+interface ProcessAudioFrameContext : Windows.Media.Effects.IProcessAudioFrameContext
 {
 }
 
-interface VideoCompositorDefinition
+interface ProcessVideoFrameContext : Windows.Media.Effects.IProcessVideoFrameContext
 {
 }
 
-interface VideoEffectDefinition
+interface VideoCompositorDefinition : Windows.Media.Effects.IVideoCompositorDefinition
 {
 }
 
-interface VideoTransformEffectDefinition
+interface VideoEffectDefinition : Windows.Media.Effects.IVideoEffectDefinition
+{
+}
+
+interface VideoTransformEffectDefinition : Windows.Media.Effects.IVideoEffectDefinition, Windows.Media.Effects.IVideoTransformEffectDefinition
 {
 }
 

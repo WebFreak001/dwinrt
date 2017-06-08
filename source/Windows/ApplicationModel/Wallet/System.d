@@ -37,7 +37,11 @@ extern(Windows):
 	HRESULT abi_RequestStoreAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore)* return_operation);
 }
 
-interface WalletItemSystemStore
+interface WalletItemSystemStore : Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore, Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore2
+{
+}
+
+interface WalletManagerSystem
 {
 }
 

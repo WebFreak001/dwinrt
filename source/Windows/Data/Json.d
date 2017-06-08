@@ -118,15 +118,19 @@ extern(Windows):
 	HRESULT abi_CreateNullValue(Windows.Data.Json.JsonValue* return_jsonValue);
 }
 
-interface JsonArray
+interface JsonArray : Windows.Data.Json.IJsonArray, Windows.Data.Json.IJsonValue, Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue), Windows.Foundation.Collections.IIterable!(Windows.Data.Json.IJsonValue), Windows.Foundation.IStringable
 {
 }
 
-interface JsonObject
+interface JsonError
 {
 }
 
-interface JsonValue
+interface JsonObject : Windows.Data.Json.IJsonObject, Windows.Data.Json.IJsonValue, Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Data.Json.IJsonValue)), Windows.Data.Json.IJsonObjectWithDefaultValues, Windows.Foundation.IStringable
+{
+}
+
+interface JsonValue : Windows.Data.Json.IJsonValue, Windows.Foundation.IStringable
 {
 }
 

@@ -54,11 +54,15 @@ extern(Windows):
 	HRESULT abi_GetSessionById(HSTRING sessionId, Windows.Management.MdmSession* return_result);
 }
 
-interface MdmAlert
+interface MdmAlert : Windows.Management.IMdmAlert
 {
 }
 
-interface MdmSession
+interface MdmSession : Windows.Management.IMdmSession
+{
+}
+
+interface MdmSessionManager
 {
 }
 

@@ -95,19 +95,19 @@ extern(Windows):
 	HRESULT get_DocumentSourceProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
-interface AddPagesEventArgs
+interface AddPagesEventArgs : Windows.UI.Xaml.Printing.IAddPagesEventArgs
 {
 }
 
-interface GetPreviewPageEventArgs
+interface GetPreviewPageEventArgs : Windows.UI.Xaml.Printing.IGetPreviewPageEventArgs
 {
 }
 
-interface PaginateEventArgs
+interface PaginateEventArgs : Windows.UI.Xaml.Printing.IPaginateEventArgs
 {
 }
 
-interface PrintDocument : Windows.UI.Xaml.DependencyObject
+interface PrintDocument : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Printing.IPrintDocument
 {
 }
 

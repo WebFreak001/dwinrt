@@ -109,6 +109,12 @@ extern(Windows):
 	HRESULT get_CommandParameterProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("fcd55a2d-02d3-4ee6-9a90-9df3ead00994")
+@WinrtFactory("Windows.UI.Xaml.Controls.Primitives.CalendarPanel")
+interface ICalendarPanel : IInspectable
+{
+}
+
 @uuid("56c71483-64e1-477c-8a0b-cb2f3334b9b0")
 @WinrtFactory("Windows.UI.Xaml.Controls.Primitives.CalendarViewTemplateSettings")
 interface ICalendarViewTemplateSettings : IInspectable
@@ -420,6 +426,12 @@ extern(Windows):
 	HRESULT get_OverlayInputPassThroughElementProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("cd40318d-7745-40d9-ab9d-abbda4a7ffea")
+@WinrtFactory("Windows.UI.Xaml.Controls.Primitives.GeneratorPositionHelper")
+interface IGeneratorPositionHelper : IInspectable
+{
+}
+
 @uuid("ad4095cd-60ec-4588-8d60-39d29097a4df")
 @WinrtFactory("Windows.UI.Xaml.Controls.Primitives.GeneratorPositionHelper")
 interface IGeneratorPositionHelperStatics : IInspectable
@@ -603,6 +615,12 @@ interface IJumpListItemForegroundConverterStatics : IInspectable
 extern(Windows):
 	HRESULT get_EnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_DisabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("b5384c9b-c8cf-41b3-bf16-18c8420e72c9")
+@WinrtFactory("Windows.UI.Xaml.Controls.Primitives.LayoutInformation")
+interface ILayoutInformation : IInspectable
+{
 }
 
 @uuid("cf06cf99-58e9-4682-8326-50caab65ed7c")
@@ -790,6 +808,18 @@ extern(Windows):
 	HRESULT remove_SelectionChanged(EventRegistrationToken token);
 }
 
+@uuid("c69714b9-27c6-4433-9d7c-0dbfb2f4344f")
+@WinrtFactory("Windows.UI.Xaml.Controls.Primitives.LoopingSelectorItem")
+interface ILoopingSelectorItem : IInspectable
+{
+}
+
+@uuid("40a9ba70-1011-4778-87f7-6bfd20d6377d")
+@WinrtFactory("Windows.UI.Xaml.Controls.Primitives.LoopingSelectorPanel")
+interface ILoopingSelectorPanel : IInspectable
+{
+}
+
 @uuid("03e8bafa-8c7d-4fc5-b92a-f049fb933cc5")
 @WinrtFactory("Windows.UI.Xaml.Controls.Primitives.LoopingSelector")
 interface ILoopingSelectorStatics : IInspectable
@@ -852,6 +882,18 @@ extern(Windows):
 	HRESULT abi_MakeVisible(Windows.UI.Xaml.UIElement visual, Windows.Foundation.Rect rectangle, Windows.Foundation.Rect* return_returnValue);
 }
 
+@uuid("7b8eaeaf-f92f-439d-9ebf-e9919f56c94d")
+@WinrtFactory("Windows.UI.Xaml.Controls.Primitives.OrientedVirtualizingPanel")
+interface IOrientedVirtualizingPanelFactory : IInspectable
+{
+}
+
+@uuid("e33574ea-1076-44d1-9383-dc24ac5cff2a")
+@WinrtFactory("Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase")
+interface IPickerFlyoutBase : IInspectable
+{
+}
+
 @uuid("7ec27a53-9502-4beb-b342-00566c8f16b0")
 @WinrtFactory("Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase")
 interface IPickerFlyoutBaseFactory : IInspectable
@@ -885,6 +927,12 @@ extern(Windows):
 	HRESULT abi_SetTitle(Windows.UI.Xaml.DependencyObject element, HSTRING value);
 }
 
+@uuid("594572c2-82aa-410b-9e55-fd8e2c98862d")
+@WinrtFactory("Windows.UI.Xaml.Controls.Primitives.PivotHeaderItem")
+interface IPivotHeaderItem : IInspectable
+{
+}
+
 @uuid("14308b37-185b-4117-bc77-dda2eb261b99")
 @WinrtFactory("Windows.UI.Xaml.Controls.Primitives.PivotHeaderItem")
 interface IPivotHeaderItemFactory : IInspectable
@@ -893,6 +941,18 @@ interface IPivotHeaderItemFactory : IInspectable
 
 extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Controls.Primitives.PivotHeaderItem* return_instance);
+}
+
+@uuid("21484ebc-9241-4203-bd37-6c08fb096612")
+@WinrtFactory("Windows.UI.Xaml.Controls.Primitives.PivotHeaderPanel")
+interface IPivotHeaderPanel : IInspectable
+{
+}
+
+@uuid("ad4ebe80-22a9-4ca3-9212-2773b6359ff3")
+@WinrtFactory("Windows.UI.Xaml.Controls.Primitives.PivotPanel")
+interface IPivotPanel : IInspectable
+{
 }
 
 @uuid("62418240-e6d3-4705-a1dc-39156456ee29")
@@ -1153,6 +1213,12 @@ extern(Windows):
 	HRESULT remove_SelectionChanged(EventRegistrationToken token);
 }
 
+@uuid("c9be2995-d136-4600-b187-8ad56079b48a")
+@WinrtFactory("Windows.UI.Xaml.Controls.Primitives.Selector")
+interface ISelectorFactory : IInspectable
+{
+}
+
 @uuid("541c8d6c-0283-4581-b945-2a64c28a0646")
 @WinrtFactory("Windows.UI.Xaml.Controls.Primitives.SelectorItem")
 interface ISelectorItem : IInspectable
@@ -1355,191 +1421,191 @@ extern(Windows):
 	HRESULT get_FromVerticalOffset(double* return_value);
 }
 
-interface AppBarTemplateSettings : Windows.UI.Xaml.DependencyObject
+interface AppBarTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IAppBarTemplateSettings
 {
 }
 
-interface ButtonBase : Windows.UI.Xaml.Controls.ContentControl
+interface ButtonBase : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.Primitives.IButtonBase
 {
 }
 
-interface CalendarPanel : Windows.UI.Xaml.Controls.Panel
+interface CalendarPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.Primitives.ICalendarPanel
 {
 }
 
-interface CalendarViewTemplateSettings : Windows.UI.Xaml.DependencyObject
+interface CalendarViewTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings
 {
 }
 
-interface CarouselPanel : Windows.UI.Xaml.Controls.VirtualizingPanel
+interface CarouselPanel : Windows.UI.Xaml.Controls.VirtualizingPanel, Windows.UI.Xaml.Controls.Primitives.ICarouselPanel, Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo
 {
 }
 
-interface ComboBoxTemplateSettings : Windows.UI.Xaml.DependencyObject
+interface ComboBoxTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IComboBoxTemplateSettings, Windows.UI.Xaml.Controls.Primitives.IComboBoxTemplateSettings2
 {
 }
 
-interface CommandBarTemplateSettings : Windows.UI.Xaml.DependencyObject
+interface CommandBarTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings, Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings2, Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings3
 {
 }
 
-interface DragCompletedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface DragCompletedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.Primitives.IDragCompletedEventArgs
 {
 }
 
-interface DragDeltaEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface DragDeltaEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.Primitives.IDragDeltaEventArgs
 {
 }
 
-interface DragStartedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface DragStartedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.Primitives.IDragStartedEventArgs
 {
 }
 
-interface FlyoutBase : Windows.UI.Xaml.DependencyObject
+interface FlyoutBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IFlyoutBase, Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides, Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2, Windows.UI.Xaml.Controls.Primitives.IFlyoutBase3
 {
 }
 
-interface FlyoutBaseClosingEventArgs
+interface FlyoutBaseClosingEventArgs : Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseClosingEventArgs
 {
 }
 
-interface GeneratorPositionHelper
+interface GeneratorPositionHelper : Windows.UI.Xaml.Controls.Primitives.IGeneratorPositionHelper
 {
 }
 
-interface GridViewItemPresenter : Windows.UI.Xaml.Controls.ContentPresenter
+interface GridViewItemPresenter : Windows.UI.Xaml.Controls.ContentPresenter, Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter
 {
 }
 
-interface GridViewItemTemplateSettings : Windows.UI.Xaml.DependencyObject
+interface GridViewItemTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IGridViewItemTemplateSettings
 {
 }
 
-interface ItemsChangedEventArgs
+interface ItemsChangedEventArgs : Windows.UI.Xaml.Controls.Primitives.IItemsChangedEventArgs
 {
 }
 
-interface JumpListItemBackgroundConverter : Windows.UI.Xaml.DependencyObject
+interface JumpListItemBackgroundConverter : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IJumpListItemBackgroundConverter, Windows.UI.Xaml.Data.IValueConverter
 {
 }
 
-interface JumpListItemForegroundConverter : Windows.UI.Xaml.DependencyObject
+interface JumpListItemForegroundConverter : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverter, Windows.UI.Xaml.Data.IValueConverter
 {
 }
 
-interface LayoutInformation
+interface LayoutInformation : Windows.UI.Xaml.Controls.Primitives.ILayoutInformation
 {
 }
 
-interface ListViewItemPresenter : Windows.UI.Xaml.Controls.ContentPresenter
+interface ListViewItemPresenter : Windows.UI.Xaml.Controls.ContentPresenter, Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter, Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2
 {
 }
 
-interface ListViewItemTemplateSettings : Windows.UI.Xaml.DependencyObject
+interface ListViewItemTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IListViewItemTemplateSettings
 {
 }
 
-interface LoopingSelector : Windows.UI.Xaml.Controls.Control
+interface LoopingSelector : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.Primitives.ILoopingSelector
 {
 }
 
-interface LoopingSelectorItem : Windows.UI.Xaml.Controls.ContentControl
+interface LoopingSelectorItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorItem
 {
 }
 
-interface LoopingSelectorPanel : Windows.UI.Xaml.Controls.Canvas
+interface LoopingSelectorPanel : Windows.UI.Xaml.Controls.Canvas, Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorPanel, Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo
 {
 }
 
-interface MenuFlyoutPresenterTemplateSettings : Windows.UI.Xaml.DependencyObject
+interface MenuFlyoutPresenterTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IMenuFlyoutPresenterTemplateSettings
 {
 }
 
-interface OrientedVirtualizingPanel : Windows.UI.Xaml.Controls.VirtualizingPanel
+interface OrientedVirtualizingPanel : Windows.UI.Xaml.Controls.VirtualizingPanel, Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel, Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo, Windows.UI.Xaml.Controls.IInsertionPanel
 {
 }
 
-interface PickerFlyoutBase : Windows.UI.Xaml.Controls.Primitives.FlyoutBase
+interface PickerFlyoutBase : Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBase, Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseOverrides
 {
 }
 
-interface PivotHeaderItem : Windows.UI.Xaml.Controls.ContentControl
+interface PivotHeaderItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.Primitives.IPivotHeaderItem
 {
 }
 
-interface PivotHeaderPanel : Windows.UI.Xaml.Controls.Canvas
+interface PivotHeaderPanel : Windows.UI.Xaml.Controls.Canvas, Windows.UI.Xaml.Controls.Primitives.IPivotHeaderPanel
 {
 }
 
-interface PivotPanel : Windows.UI.Xaml.Controls.Panel
+interface PivotPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.Primitives.IPivotPanel, Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo
 {
 }
 
-interface Popup : Windows.UI.Xaml.FrameworkElement
+interface Popup : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.Primitives.IPopup, Windows.UI.Xaml.Controls.Primitives.IPopup2
 {
 }
 
-interface ProgressBarTemplateSettings : Windows.UI.Xaml.DependencyObject
+interface ProgressBarTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IProgressBarTemplateSettings
 {
 }
 
-interface ProgressRingTemplateSettings : Windows.UI.Xaml.DependencyObject
+interface ProgressRingTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IProgressRingTemplateSettings
 {
 }
 
-interface RangeBase : Windows.UI.Xaml.Controls.Control
+interface RangeBase : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.Primitives.IRangeBase, Windows.UI.Xaml.Controls.Primitives.IRangeBaseOverrides
 {
 }
 
-interface RangeBaseValueChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface RangeBaseValueChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.Primitives.IRangeBaseValueChangedEventArgs
 {
 }
 
-interface RepeatButton : Windows.UI.Xaml.Controls.Primitives.ButtonBase
+interface RepeatButton : Windows.UI.Xaml.Controls.Primitives.ButtonBase, Windows.UI.Xaml.Controls.Primitives.IRepeatButton
 {
 }
 
-interface ScrollBar : Windows.UI.Xaml.Controls.Primitives.RangeBase
+interface ScrollBar : Windows.UI.Xaml.Controls.Primitives.RangeBase, Windows.UI.Xaml.Controls.Primitives.IScrollBar
 {
 }
 
-interface ScrollEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface ScrollEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.Primitives.IScrollEventArgs
 {
 }
 
-interface Selector : Windows.UI.Xaml.Controls.ItemsControl
+interface Selector : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.Primitives.ISelector
 {
 }
 
-interface SelectorItem : Windows.UI.Xaml.Controls.ContentControl
+interface SelectorItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.Primitives.ISelectorItem
 {
 }
 
-interface SettingsFlyoutTemplateSettings : Windows.UI.Xaml.DependencyObject
+interface SettingsFlyoutTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.ISettingsFlyoutTemplateSettings
 {
 }
 
-interface SplitViewTemplateSettings : Windows.UI.Xaml.DependencyObject
+interface SplitViewTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.ISplitViewTemplateSettings
 {
 }
 
-interface Thumb : Windows.UI.Xaml.Controls.Control
+interface Thumb : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.Primitives.IThumb
 {
 }
 
-interface TickBar : Windows.UI.Xaml.FrameworkElement
+interface TickBar : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.Primitives.ITickBar
 {
 }
 
-interface ToggleButton : Windows.UI.Xaml.Controls.Primitives.ButtonBase
+interface ToggleButton : Windows.UI.Xaml.Controls.Primitives.ButtonBase, Windows.UI.Xaml.Controls.Primitives.IToggleButton, Windows.UI.Xaml.Controls.Primitives.IToggleButtonOverrides
 {
 }
 
-interface ToggleSwitchTemplateSettings : Windows.UI.Xaml.DependencyObject
+interface ToggleSwitchTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IToggleSwitchTemplateSettings
 {
 }
 
-interface ToolTipTemplateSettings : Windows.UI.Xaml.DependencyObject
+interface ToolTipTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IToolTipTemplateSettings
 {
 }
 

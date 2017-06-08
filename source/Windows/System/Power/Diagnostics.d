@@ -25,3 +25,11 @@ extern(Windows):
 	HRESULT abi_ComputeTotalEnergyUsage(UINT64* return_value);
 	HRESULT abi_ResetTotalEnergyUsage();
 }
+
+interface BackgroundEnergyDiagnostics
+{
+}
+
+interface ForegroundEnergyDiagnostics
+{
+}

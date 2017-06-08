@@ -79,6 +79,12 @@ extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e);
 }
 
+@uuid("8a610dc6-d72d-4ca8-9f66-556f35b513da")
+@WinrtFactory("Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs")
+interface IAccessKeyDisplayDismissedEventArgs : IInspectable
+{
+}
+
 @uuid("0c079e55-13fe-4d03-a61d-e12f06567286")
 @WinrtFactory("Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs")
 interface IAccessKeyDisplayRequestedEventArgs : IInspectable
@@ -98,6 +104,12 @@ interface IAccessKeyInvokedEventArgs : IInspectable
 extern(Windows):
 	HRESULT get_Handled(bool* return_value);
 	HRESULT set_Handled(bool value);
+}
+
+@uuid("ecc973b0-2ee9-4b1c-98d7-6e0e816d334b")
+@WinrtFactory("Windows.UI.Xaml.Input.AccessKeyManager")
+interface IAccessKeyManager : IInspectable
+{
 }
 
 @uuid("4ca0efe6-d9c8-4ebc-b4c7-30d1838a81f1")
@@ -176,6 +188,12 @@ extern(Windows):
 	HRESULT set_HintRect(Windows.Foundation.Rect value);
 	HRESULT get_XYFocusNavigationStrategyOverride(Windows.UI.Xaml.Input.XYFocusNavigationStrategyOverride* return_value);
 	HRESULT set_XYFocusNavigationStrategyOverride(Windows.UI.Xaml.Input.XYFocusNavigationStrategyOverride value);
+}
+
+@uuid("c843f50b-3b83-4da1-9d6f-557c1169f341")
+@WinrtFactory("Windows.UI.Xaml.Input.FocusManager")
+interface IFocusManager : IInspectable
+{
 }
 
 @uuid("1eccd326-8182-4482-826a-0918e9ed9af7")
@@ -569,115 +587,115 @@ extern(Windows):
 	HRESULT abi_GetPosition(Windows.UI.Xaml.UIElement relativeTo, Windows.Foundation.Point* return_returnValue);
 }
 
-interface AccessKeyDisplayDismissedEventArgs
+interface AccessKeyDisplayDismissedEventArgs : Windows.UI.Xaml.Input.IAccessKeyDisplayDismissedEventArgs
 {
 }
 
-interface AccessKeyDisplayRequestedEventArgs
+interface AccessKeyDisplayRequestedEventArgs : Windows.UI.Xaml.Input.IAccessKeyDisplayRequestedEventArgs
 {
 }
 
-interface AccessKeyInvokedEventArgs
+interface AccessKeyInvokedEventArgs : Windows.UI.Xaml.Input.IAccessKeyInvokedEventArgs
 {
 }
 
-interface AccessKeyManager
+interface AccessKeyManager : Windows.UI.Xaml.Input.IAccessKeyManager
 {
 }
 
-interface ContextRequestedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface ContextRequestedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IContextRequestedEventArgs
 {
 }
 
-interface DoubleTappedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface DoubleTappedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IDoubleTappedRoutedEventArgs
 {
 }
 
-interface FindNextElementOptions
+interface FindNextElementOptions : Windows.UI.Xaml.Input.IFindNextElementOptions
 {
 }
 
-interface FocusManager
+interface FocusManager : Windows.UI.Xaml.Input.IFocusManager
 {
 }
 
-interface GettingFocusEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface GettingFocusEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IGettingFocusEventArgs
 {
 }
 
-interface HoldingRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface HoldingRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IHoldingRoutedEventArgs
 {
 }
 
-interface InertiaExpansionBehavior
+interface InertiaExpansionBehavior : Windows.UI.Xaml.Input.IInertiaExpansionBehavior
 {
 }
 
-interface InertiaRotationBehavior
+interface InertiaRotationBehavior : Windows.UI.Xaml.Input.IInertiaRotationBehavior
 {
 }
 
-interface InertiaTranslationBehavior
+interface InertiaTranslationBehavior : Windows.UI.Xaml.Input.IInertiaTranslationBehavior
 {
 }
 
-interface InputScope : Windows.UI.Xaml.DependencyObject
+interface InputScope : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Input.IInputScope
 {
 }
 
-interface InputScopeName : Windows.UI.Xaml.DependencyObject
+interface InputScopeName : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Input.IInputScopeName
 {
 }
 
-interface KeyRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface KeyRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IKeyRoutedEventArgs, Windows.UI.Xaml.Input.IKeyRoutedEventArgs2, Windows.UI.Xaml.Input.IKeyRoutedEventArgs3
 {
 }
 
-interface LosingFocusEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface LosingFocusEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.ILosingFocusEventArgs
 {
 }
 
-interface ManipulationCompletedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface ManipulationCompletedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IManipulationCompletedRoutedEventArgs
 {
 }
 
-interface ManipulationDeltaRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface ManipulationDeltaRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs
 {
 }
 
-interface ManipulationInertiaStartingRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface ManipulationInertiaStartingRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs
 {
 }
 
-interface ManipulationPivot
+interface ManipulationPivot : Windows.UI.Xaml.Input.IManipulationPivot
 {
 }
 
-interface ManipulationStartedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface ManipulationStartedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs
 {
 }
 
-interface ManipulationStartingRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface ManipulationStartingRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IManipulationStartingRoutedEventArgs
 {
 }
 
-interface NoFocusCandidateFoundEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface NoFocusCandidateFoundEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.INoFocusCandidateFoundEventArgs
 {
 }
 
-interface Pointer
+interface Pointer : Windows.UI.Xaml.Input.IPointer
 {
 }
 
-interface PointerRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface PointerRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IPointerRoutedEventArgs
 {
 }
 
-interface RightTappedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface RightTappedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IRightTappedRoutedEventArgs
 {
 }
 
-interface TappedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+interface TappedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.ITappedRoutedEventArgs
 {
 }
 

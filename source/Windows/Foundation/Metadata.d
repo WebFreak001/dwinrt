@@ -21,6 +21,10 @@ extern(Windows):
 	HRESULT abi_IsApiContractPresentByMajorAndMinor(HSTRING contractName, UINT16 majorVersion, UINT16 minorVersion, bool* return_value);
 }
 
+interface ApiInformation
+{
+}
+
 enum GCPressureAmount
 {
 	Low = 0,

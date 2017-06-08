@@ -344,43 +344,59 @@ extern(Windows):
 	HRESULT get_DataUsagePreference(Windows.Services.Maps.MapServiceDataUsagePreference* return_value);
 }
 
-interface EnhancedWaypoint
+interface EnhancedWaypoint : Windows.Services.Maps.IEnhancedWaypoint
 {
 }
 
-interface ManeuverWarning
+interface ManeuverWarning : Windows.Services.Maps.IManeuverWarning
 {
 }
 
-interface MapAddress
+interface MapAddress : Windows.Services.Maps.IMapAddress, Windows.Services.Maps.IMapAddress2
 {
 }
 
-interface MapLocation
+interface MapLocation : Windows.Services.Maps.IMapLocation
 {
 }
 
-interface MapLocationFinderResult
+interface MapLocationFinder
 {
 }
 
-interface MapRoute
+interface MapLocationFinderResult : Windows.Services.Maps.IMapLocationFinderResult
 {
 }
 
-interface MapRouteDrivingOptions
+interface MapManager
 {
 }
 
-interface MapRouteFinderResult
+interface MapRoute : Windows.Services.Maps.IMapRoute, Windows.Services.Maps.IMapRoute2, Windows.Services.Maps.IMapRoute3
 {
 }
 
-interface MapRouteLeg
+interface MapRouteDrivingOptions : Windows.Services.Maps.IMapRouteDrivingOptions
 {
 }
 
-interface MapRouteManeuver
+interface MapRouteFinder
+{
+}
+
+interface MapRouteFinderResult : Windows.Services.Maps.IMapRouteFinderResult, Windows.Services.Maps.IMapRouteFinderResult2
+{
+}
+
+interface MapRouteLeg : Windows.Services.Maps.IMapRouteLeg, Windows.Services.Maps.IMapRouteLeg2
+{
+}
+
+interface MapRouteManeuver : Windows.Services.Maps.IMapRouteManeuver, Windows.Services.Maps.IMapRouteManeuver2, Windows.Services.Maps.IMapRouteManeuver3
+{
+}
+
+interface MapService
 {
 }
 

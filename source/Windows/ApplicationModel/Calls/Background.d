@@ -49,19 +49,19 @@ extern(Windows):
 	HRESULT get_OperatorMessage(HSTRING* return_result);
 }
 
-interface PhoneCallBlockedTriggerDetails
+interface PhoneCallBlockedTriggerDetails : Windows.ApplicationModel.Calls.Background.IPhoneCallBlockedTriggerDetails
 {
 }
 
-interface PhoneCallOriginDataRequestTriggerDetails
+interface PhoneCallOriginDataRequestTriggerDetails : Windows.ApplicationModel.Calls.Background.IPhoneCallOriginDataRequestTriggerDetails
 {
 }
 
-interface PhoneLineChangedTriggerDetails
+interface PhoneLineChangedTriggerDetails : Windows.ApplicationModel.Calls.Background.IPhoneLineChangedTriggerDetails
 {
 }
 
-interface PhoneNewVoicemailMessageTriggerDetails
+interface PhoneNewVoicemailMessageTriggerDetails : Windows.ApplicationModel.Calls.Background.IPhoneNewVoicemailMessageTriggerDetails
 {
 }
 

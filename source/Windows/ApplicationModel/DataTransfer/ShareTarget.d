@@ -47,10 +47,10 @@ extern(Windows):
 	HRESULT abi_DismissUI();
 }
 
-interface QuickLink
+interface QuickLink : Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink
 {
 }
 
-interface ShareOperation
+interface ShareOperation : Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation, Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation2
 {
 }

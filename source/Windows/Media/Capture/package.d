@@ -1451,271 +1451,283 @@ extern(Windows):
 	HRESULT get_OutputProperties(Windows.Media.MediaProperties.VideoEncodingProperties* return_value);
 }
 
-interface AdvancedCapturedPhoto
+interface AdvancedCapturedPhoto : Windows.Media.Capture.IAdvancedCapturedPhoto, Windows.Media.Capture.IAdvancedCapturedPhoto2
 {
 }
 
-interface AdvancedPhotoCapture
+interface AdvancedPhotoCapture : Windows.Media.Capture.IAdvancedPhotoCapture
 {
 }
 
-interface AppBroadcastBackgroundService
+interface AppBroadcastBackgroundService : Windows.Media.Capture.IAppBroadcastBackgroundService
 {
 }
 
-interface AppBroadcastBackgroundServiceSignInInfo
+interface AppBroadcastBackgroundServiceSignInInfo : Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo
 {
 }
 
-interface AppBroadcastBackgroundServiceStreamInfo
+interface AppBroadcastBackgroundServiceStreamInfo : Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo
 {
 }
 
-interface AppBroadcastCameraCaptureStateChangedEventArgs
+interface AppBroadcastCameraCaptureStateChangedEventArgs : Windows.Media.Capture.IAppBroadcastCameraCaptureStateChangedEventArgs
 {
 }
 
-interface AppBroadcastGlobalSettings
+interface AppBroadcastGlobalSettings : Windows.Media.Capture.IAppBroadcastGlobalSettings
 {
 }
 
-interface AppBroadcastHeartbeatRequestedEventArgs
+interface AppBroadcastHeartbeatRequestedEventArgs : Windows.Media.Capture.IAppBroadcastHeartbeatRequestedEventArgs
 {
 }
 
-interface AppBroadcastMicrophoneCaptureStateChangedEventArgs
+interface AppBroadcastManager
 {
 }
 
-interface AppBroadcastPlugIn
+interface AppBroadcastMicrophoneCaptureStateChangedEventArgs : Windows.Media.Capture.IAppBroadcastMicrophoneCaptureStateChangedEventArgs
 {
 }
 
-interface AppBroadcastPlugInManager
+interface AppBroadcastPlugIn : Windows.Media.Capture.IAppBroadcastPlugIn
 {
 }
 
-interface AppBroadcastPlugInStateChangedEventArgs
+interface AppBroadcastPlugInManager : Windows.Media.Capture.IAppBroadcastPlugInManager
 {
 }
 
-interface AppBroadcastPreview
+interface AppBroadcastPlugInStateChangedEventArgs : Windows.Media.Capture.IAppBroadcastPlugInStateChangedEventArgs
 {
 }
 
-interface AppBroadcastPreviewStateChangedEventArgs
+interface AppBroadcastPreview : Windows.Media.Capture.IAppBroadcastPreview
 {
 }
 
-interface AppBroadcastPreviewStreamReader
+interface AppBroadcastPreviewStateChangedEventArgs : Windows.Media.Capture.IAppBroadcastPreviewStateChangedEventArgs
 {
 }
 
-interface AppBroadcastPreviewStreamVideoFrame
+interface AppBroadcastPreviewStreamReader : Windows.Media.Capture.IAppBroadcastPreviewStreamReader
 {
 }
 
-interface AppBroadcastPreviewStreamVideoHeader
+interface AppBroadcastPreviewStreamVideoFrame : Windows.Media.Capture.IAppBroadcastPreviewStreamVideoFrame
 {
 }
 
-interface AppBroadcastProviderSettings
+interface AppBroadcastPreviewStreamVideoHeader : Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader
 {
 }
 
-interface AppBroadcastServices
+interface AppBroadcastProviderSettings : Windows.Media.Capture.IAppBroadcastProviderSettings
 {
 }
 
-interface AppBroadcastSignInStateChangedEventArgs
+interface AppBroadcastServices : Windows.Media.Capture.IAppBroadcastServices
 {
 }
 
-interface AppBroadcastState
+interface AppBroadcastSignInStateChangedEventArgs : Windows.Media.Capture.IAppBroadcastSignInStateChangedEventArgs
 {
 }
 
-interface AppBroadcastStreamAudioFrame
+interface AppBroadcastState : Windows.Media.Capture.IAppBroadcastState
 {
 }
 
-interface AppBroadcastStreamAudioHeader
+interface AppBroadcastStreamAudioFrame : Windows.Media.Capture.IAppBroadcastStreamAudioFrame
 {
 }
 
-interface AppBroadcastStreamReader
+interface AppBroadcastStreamAudioHeader : Windows.Media.Capture.IAppBroadcastStreamAudioHeader
 {
 }
 
-interface AppBroadcastStreamStateChangedEventArgs
+interface AppBroadcastStreamReader : Windows.Media.Capture.IAppBroadcastStreamReader
 {
 }
 
-interface AppBroadcastStreamVideoFrame
+interface AppBroadcastStreamStateChangedEventArgs : Windows.Media.Capture.IAppBroadcastStreamStateChangedEventArgs
 {
 }
 
-interface AppBroadcastStreamVideoHeader
+interface AppBroadcastStreamVideoFrame : Windows.Media.Capture.IAppBroadcastStreamVideoFrame
 {
 }
 
-interface AppBroadcastTriggerDetails
+interface AppBroadcastStreamVideoHeader : Windows.Media.Capture.IAppBroadcastStreamVideoHeader
 {
 }
 
-interface AppBroadcastViewerCountChangedEventArgs
+interface AppBroadcastTriggerDetails : Windows.Media.Capture.IAppBroadcastTriggerDetails
 {
 }
 
-interface AppCapture
+interface AppBroadcastViewerCountChangedEventArgs : Windows.Media.Capture.IAppBroadcastViewerCountChangedEventArgs
 {
 }
 
-interface AppCaptureAlternateShortcutKeys
+interface AppCapture : Windows.Media.Capture.IAppCapture
 {
 }
 
-interface AppCaptureDurationGeneratedEventArgs
+interface AppCaptureAlternateShortcutKeys : Windows.Media.Capture.IAppCaptureAlternateShortcutKeys, Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2, Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3
 {
 }
 
-interface AppCaptureFileGeneratedEventArgs
+interface AppCaptureDurationGeneratedEventArgs : Windows.Media.Capture.IAppCaptureDurationGeneratedEventArgs
 {
 }
 
-interface AppCaptureMicrophoneCaptureStateChangedEventArgs
+interface AppCaptureFileGeneratedEventArgs : Windows.Media.Capture.IAppCaptureFileGeneratedEventArgs
 {
 }
 
-interface AppCaptureRecordOperation
+interface AppCaptureManager
 {
 }
 
-interface AppCaptureRecordingStateChangedEventArgs
+interface AppCaptureMicrophoneCaptureStateChangedEventArgs : Windows.Media.Capture.IAppCaptureMicrophoneCaptureStateChangedEventArgs
 {
 }
 
-interface AppCaptureServices
+interface AppCaptureRecordOperation : Windows.Media.Capture.IAppCaptureRecordOperation
 {
 }
 
-interface AppCaptureSettings
+interface AppCaptureRecordingStateChangedEventArgs : Windows.Media.Capture.IAppCaptureRecordingStateChangedEventArgs
 {
 }
 
-interface AppCaptureState
+interface AppCaptureServices : Windows.Media.Capture.IAppCaptureServices
 {
 }
 
-interface CameraCaptureUI
+interface AppCaptureSettings : Windows.Media.Capture.IAppCaptureSettings, Windows.Media.Capture.IAppCaptureSettings2, Windows.Media.Capture.IAppCaptureSettings3, Windows.Media.Capture.IAppCaptureSettings4, Windows.Media.Capture.IAppCaptureSettings5
 {
 }
 
-interface CameraCaptureUIPhotoCaptureSettings
+interface AppCaptureState : Windows.Media.Capture.IAppCaptureState
 {
 }
 
-interface CameraCaptureUIVideoCaptureSettings
+interface CameraCaptureUI : Windows.Media.Capture.ICameraCaptureUI
 {
 }
 
-interface CapturedFrame
+interface CameraCaptureUIPhotoCaptureSettings : Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings
 {
 }
 
-interface CapturedFrameControlValues
+interface CameraCaptureUIVideoCaptureSettings : Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings
 {
 }
 
-interface CapturedPhoto
+interface CameraOptionsUI
 {
 }
 
-interface GameBarServices
+interface CapturedFrame : Windows.Media.Capture.ICapturedFrame, Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Media.Capture.ICapturedFrameWithSoftwareBitmap
 {
 }
 
-interface GameBarServicesCommandEventArgs
+interface CapturedFrameControlValues : Windows.Media.Capture.ICapturedFrameControlValues, Windows.Media.Capture.ICapturedFrameControlValues2
 {
 }
 
-interface GameBarServicesManager
+interface CapturedPhoto : Windows.Media.Capture.ICapturedPhoto
 {
 }
 
-interface GameBarServicesManagerGameBarServicesCreatedEventArgs
+interface GameBarServices : Windows.Media.Capture.IGameBarServices
 {
 }
 
-interface GameBarServicesTargetInfo
+interface GameBarServicesCommandEventArgs : Windows.Media.Capture.IGameBarServicesCommandEventArgs
 {
 }
 
-interface LowLagMediaRecording
+interface GameBarServicesManager : Windows.Media.Capture.IGameBarServicesManager
 {
 }
 
-interface LowLagPhotoCapture
+interface GameBarServicesManagerGameBarServicesCreatedEventArgs : Windows.Media.Capture.IGameBarServicesManagerGameBarServicesCreatedEventArgs
 {
 }
 
-interface LowLagPhotoSequenceCapture
+interface GameBarServicesTargetInfo : Windows.Media.Capture.IGameBarServicesTargetInfo
 {
 }
 
-interface MediaCapture
+interface LowLagMediaRecording : Windows.Media.Capture.ILowLagMediaRecording, Windows.Media.Capture.ILowLagMediaRecording2, Windows.Media.Capture.ILowLagMediaRecording3
 {
 }
 
-interface MediaCaptureDeviceExclusiveControlStatusChangedEventArgs
+interface LowLagPhotoCapture : Windows.Media.Capture.ILowLagPhotoCapture
 {
 }
 
-interface MediaCaptureFailedEventArgs
+interface LowLagPhotoSequenceCapture : Windows.Media.Capture.ILowLagPhotoSequenceCapture
 {
 }
 
-interface MediaCaptureFocusChangedEventArgs
+interface MediaCapture : Windows.Media.Capture.IMediaCapture, Windows.Media.Capture.IMediaCaptureVideoPreview, Windows.Media.Capture.IMediaCapture2, Windows.Foundation.IClosable, Windows.Media.Capture.IMediaCapture3, Windows.Media.Capture.IMediaCapture4, Windows.Media.Capture.IMediaCapture5, Windows.Media.Capture.IMediaCapture6
 {
 }
 
-interface MediaCaptureInitializationSettings
+interface MediaCaptureDeviceExclusiveControlStatusChangedEventArgs : Windows.Media.Capture.IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs
 {
 }
 
-interface MediaCapturePauseResult
+interface MediaCaptureFailedEventArgs : Windows.Media.Capture.IMediaCaptureFailedEventArgs
 {
 }
 
-interface MediaCaptureSettings
+interface MediaCaptureFocusChangedEventArgs : Windows.Media.Capture.IMediaCaptureFocusChangedEventArgs
 {
 }
 
-interface MediaCaptureStopResult
+interface MediaCaptureInitializationSettings : Windows.Media.Capture.IMediaCaptureInitializationSettings, Windows.Media.Capture.IMediaCaptureInitializationSettings2, Windows.Media.Capture.IMediaCaptureInitializationSettings3, Windows.Media.Capture.IMediaCaptureInitializationSettings4, Windows.Media.Capture.IMediaCaptureInitializationSettings5, Windows.Media.Capture.IMediaCaptureInitializationSettings6
 {
 }
 
-interface MediaCaptureVideoProfile
+interface MediaCapturePauseResult : Windows.Media.Capture.IMediaCapturePauseResult, Windows.Foundation.IClosable
 {
 }
 
-interface MediaCaptureVideoProfileMediaDescription
+interface MediaCaptureSettings : Windows.Media.Capture.IMediaCaptureSettings, Windows.Media.Capture.IMediaCaptureSettings2
 {
 }
 
-interface OptionalReferencePhotoCapturedEventArgs
+interface MediaCaptureStopResult : Windows.Media.Capture.IMediaCaptureStopResult, Windows.Foundation.IClosable
 {
 }
 
-interface PhotoCapturedEventArgs
+interface MediaCaptureVideoProfile : Windows.Media.Capture.IMediaCaptureVideoProfile
 {
 }
 
-interface PhotoConfirmationCapturedEventArgs
+interface MediaCaptureVideoProfileMediaDescription : Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription
 {
 }
 
-interface VideoStreamConfiguration
+interface OptionalReferencePhotoCapturedEventArgs : Windows.Media.Capture.IOptionalReferencePhotoCapturedEventArgs
+{
+}
+
+interface PhotoCapturedEventArgs : Windows.Media.Capture.IPhotoCapturedEventArgs
+{
+}
+
+interface PhotoConfirmationCapturedEventArgs : Windows.Media.Capture.IPhotoConfirmationCapturedEventArgs
+{
+}
+
+interface VideoStreamConfiguration : Windows.Media.Capture.IVideoStreamConfiguration
 {
 }
 

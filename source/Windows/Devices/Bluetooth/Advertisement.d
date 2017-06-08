@@ -230,43 +230,47 @@ extern(Windows):
 	HRESULT abi_Create(UINT16 companyId, Windows.Storage.Streams.IBuffer data, Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData* return_value);
 }
 
-interface BluetoothLEAdvertisement
+interface BluetoothLEAdvertisement : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement
 {
 }
 
-interface BluetoothLEAdvertisementBytePattern
+interface BluetoothLEAdvertisementBytePattern : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern
 {
 }
 
-interface BluetoothLEAdvertisementDataSection
+interface BluetoothLEAdvertisementDataSection : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSection
 {
 }
 
-interface BluetoothLEAdvertisementFilter
+interface BluetoothLEAdvertisementDataTypes
 {
 }
 
-interface BluetoothLEAdvertisementPublisher
+interface BluetoothLEAdvertisementFilter : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementFilter
 {
 }
 
-interface BluetoothLEAdvertisementPublisherStatusChangedEventArgs
+interface BluetoothLEAdvertisementPublisher : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher
 {
 }
 
-interface BluetoothLEAdvertisementReceivedEventArgs
+interface BluetoothLEAdvertisementPublisherStatusChangedEventArgs : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisherStatusChangedEventArgs
 {
 }
 
-interface BluetoothLEAdvertisementWatcher
+interface BluetoothLEAdvertisementReceivedEventArgs : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementReceivedEventArgs
 {
 }
 
-interface BluetoothLEAdvertisementWatcherStoppedEventArgs
+interface BluetoothLEAdvertisementWatcher : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher
 {
 }
 
-interface BluetoothLEManufacturerData
+interface BluetoothLEAdvertisementWatcherStoppedEventArgs : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcherStoppedEventArgs
+{
+}
+
+interface BluetoothLEManufacturerData : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEManufacturerData
 {
 }
 

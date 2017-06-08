@@ -75,19 +75,23 @@ extern(Windows):
 	HRESULT abi_AddOrReplaceWithMetadataAndVisibility(HSTRING token, Windows.Storage.IStorageItem file, HSTRING metadata, Windows.Storage.AccessCache.RecentStorageItemVisibility visibility);
 }
 
-interface AccessListEntryView
+interface AccessListEntryView : Windows.Foundation.Collections.IVectorView!(Windows.Storage.AccessCache.AccessListEntry), Windows.Foundation.Collections.IIterable!(Windows.Storage.AccessCache.AccessListEntry)
 {
 }
 
-interface ItemRemovedEventArgs
+interface ItemRemovedEventArgs : Windows.Storage.AccessCache.IItemRemovedEventArgs
 {
 }
 
-interface StorageItemAccessList
+interface StorageApplicationPermissions
 {
 }
 
-interface StorageItemMostRecentlyUsedList
+interface StorageItemAccessList : Windows.Storage.AccessCache.IStorageItemAccessList
+{
+}
+
+interface StorageItemMostRecentlyUsedList : Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.IStorageItemAccessList, Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList2
 {
 }
 

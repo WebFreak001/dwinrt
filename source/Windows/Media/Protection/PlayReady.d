@@ -450,6 +450,12 @@ extern(Windows):
 	HRESULT abi_GenerateData(GUID guidCPSystemId, UINT32 countOfStreams, Windows.Foundation.Collections.IPropertySet configuration, Windows.Media.Protection.PlayReady.PlayReadyITADataFormat format, UINT32* out___dataBytesSize, BYTE** return_dataBytes);
 }
 
+@uuid("21f5a86b-008c-4611-ab2f-aaa6c69f0e24")
+@WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyIndividualizationServiceRequest")
+interface IPlayReadyIndividualizationServiceRequest : IInspectable
+{
+}
+
 @uuid("ee474c4e-fa3c-414d-a9f2-3ffc1ef832d4")
 interface IPlayReadyLicense : IInspectable
 {
@@ -570,6 +576,12 @@ extern(Windows):
 	HRESULT set_MeteringCertificate(UINT32 __meteringCertBytesSize, BYTE* meteringCertBytes);
 }
 
+@uuid("543d66ac-faf0-4560-84a5-0e4acec939e4")
+@WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyRevocationServiceRequest")
+interface IPlayReadyRevocationServiceRequest : IInspectable
+{
+}
+
 @uuid("5f1f0165-4214-4d9e-81eb-e89f9d294aee")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadySecureStopIterable")
 interface IPlayReadySecureStopIterableFactory : IInspectable
@@ -682,107 +694,119 @@ extern(Windows):
 	HRESULT get_ProtectionSystemId(GUID* return_value);
 }
 
-interface NDClient
+interface NDClient : Windows.Media.Protection.PlayReady.INDClient
 {
 }
 
-interface NDCustomData
+interface NDCustomData : Windows.Media.Protection.PlayReady.INDCustomData
 {
 }
 
-interface NDDownloadEngineNotifier
+interface NDDownloadEngineNotifier : Windows.Media.Protection.PlayReady.INDDownloadEngineNotifier
 {
 }
 
-interface NDLicenseFetchDescriptor
+interface NDLicenseFetchDescriptor : Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor
 {
 }
 
-interface NDStorageFileHelper
+interface NDStorageFileHelper : Windows.Media.Protection.PlayReady.INDStorageFileHelper
 {
 }
 
-interface NDStreamParserNotifier
+interface NDStreamParserNotifier : Windows.Media.Protection.PlayReady.INDStreamParserNotifier
 {
 }
 
-interface NDTCPMessenger
+interface NDTCPMessenger : Windows.Media.Protection.PlayReady.INDMessenger
 {
 }
 
-interface PlayReadyContentHeader
+interface PlayReadyContentHeader : Windows.Media.Protection.PlayReady.IPlayReadyContentHeader, Windows.Media.Protection.PlayReady.IPlayReadyContentHeader2
 {
 }
 
-interface PlayReadyDomain
+interface PlayReadyContentResolver
 {
 }
 
-interface PlayReadyDomainIterable
+interface PlayReadyDomain : Windows.Media.Protection.PlayReady.IPlayReadyDomain
 {
 }
 
-interface PlayReadyDomainIterator
+interface PlayReadyDomainIterable : Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadyDomain)
 {
 }
 
-interface PlayReadyDomainJoinServiceRequest
+interface PlayReadyDomainIterator : Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyDomain)
 {
 }
 
-interface PlayReadyDomainLeaveServiceRequest
+interface PlayReadyDomainJoinServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyDomainJoinServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
 {
 }
 
-interface PlayReadyITADataGenerator
+interface PlayReadyDomainLeaveServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyDomainLeaveServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
 {
 }
 
-interface PlayReadyIndividualizationServiceRequest
+interface PlayReadyITADataGenerator : Windows.Media.Protection.PlayReady.IPlayReadyITADataGenerator
 {
 }
 
-interface PlayReadyLicense
+interface PlayReadyIndividualizationServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyIndividualizationServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
 {
 }
 
-interface PlayReadyLicenseAcquisitionServiceRequest
+interface PlayReadyLicense : Windows.Media.Protection.PlayReady.IPlayReadyLicense, Windows.Media.Protection.PlayReady.IPlayReadyLicense2
 {
 }
 
-interface PlayReadyLicenseIterable
+interface PlayReadyLicenseAcquisitionServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest2, Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest3
 {
 }
 
-interface PlayReadyLicenseIterator
+interface PlayReadyLicenseIterable : Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)
 {
 }
 
-interface PlayReadyLicenseSession
+interface PlayReadyLicenseIterator : Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)
 {
 }
 
-interface PlayReadyMeteringReportServiceRequest
+interface PlayReadyLicenseManagement
 {
 }
 
-interface PlayReadyRevocationServiceRequest
+interface PlayReadyLicenseSession : Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession, Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession2
 {
 }
 
-interface PlayReadySecureStopIterable
+interface PlayReadyMeteringReportServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyMeteringReportServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
 {
 }
 
-interface PlayReadySecureStopIterator
+interface PlayReadyRevocationServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyRevocationServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
 {
 }
 
-interface PlayReadySecureStopServiceRequest
+interface PlayReadySecureStopIterable : Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest)
 {
 }
 
-interface PlayReadySoapMessage
+interface PlayReadySecureStopIterator : Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest)
+{
+}
+
+interface PlayReadySecureStopServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
+{
+}
+
+interface PlayReadySoapMessage : Windows.Media.Protection.PlayReady.IPlayReadySoapMessage
+{
+}
+
+interface PlayReadyStatics
 {
 }
 

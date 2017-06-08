@@ -321,51 +321,51 @@ extern(Windows):
 	HRESULT get_Level(HSTRING* return_value);
 }
 
-interface CivicAddress
+interface CivicAddress : Windows.Devices.Geolocation.ICivicAddress
 {
 }
 
-interface GeoboundingBox
+interface GeoboundingBox : Windows.Devices.Geolocation.IGeoboundingBox, Windows.Devices.Geolocation.IGeoshape
 {
 }
 
-interface Geocircle
+interface Geocircle : Windows.Devices.Geolocation.IGeocircle, Windows.Devices.Geolocation.IGeoshape
 {
 }
 
-interface Geocoordinate
+interface Geocoordinate : Windows.Devices.Geolocation.IGeocoordinate, Windows.Devices.Geolocation.IGeocoordinateWithPositionData, Windows.Devices.Geolocation.IGeocoordinateWithPoint, Windows.Devices.Geolocation.IGeocoordinateWithPositionSourceTimestamp
 {
 }
 
-interface GeocoordinateSatelliteData
+interface GeocoordinateSatelliteData : Windows.Devices.Geolocation.IGeocoordinateSatelliteData
 {
 }
 
-interface Geolocator
+interface Geolocator : Windows.Devices.Geolocation.IGeolocator, Windows.Devices.Geolocation.IGeolocatorWithScalarAccuracy, Windows.Devices.Geolocation.IGeolocator2
 {
 }
 
-interface Geopath
+interface Geopath : Windows.Devices.Geolocation.IGeopath, Windows.Devices.Geolocation.IGeoshape
 {
 }
 
-interface Geopoint
+interface Geopoint : Windows.Devices.Geolocation.IGeopoint, Windows.Devices.Geolocation.IGeoshape
 {
 }
 
-interface Geoposition
+interface Geoposition : Windows.Devices.Geolocation.IGeoposition, Windows.Devices.Geolocation.IGeoposition2
 {
 }
 
-interface PositionChangedEventArgs
+interface PositionChangedEventArgs : Windows.Devices.Geolocation.IPositionChangedEventArgs
 {
 }
 
-interface StatusChangedEventArgs
+interface StatusChangedEventArgs : Windows.Devices.Geolocation.IStatusChangedEventArgs
 {
 }
 
-interface VenueData
+interface VenueData : Windows.Devices.Geolocation.IVenueData
 {
 }
 

@@ -25,6 +25,6 @@ extern(Windows):
 	HRESULT abi_CreateOverloadExplicit(HSTRING protectionDescriptor, Windows.Security.Cryptography.DataProtection.DataProtectionProvider* return_value);
 }
 
-interface DataProtectionProvider
+interface DataProtectionProvider : Windows.Security.Cryptography.DataProtection.IDataProtectionProvider
 {
 }

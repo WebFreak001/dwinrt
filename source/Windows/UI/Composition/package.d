@@ -58,6 +58,17 @@ extern(Windows):
 	HRESULT set_Target(HSTRING value);
 }
 
+@uuid("1c2c2999-e818-48d3-a6dd-d78c82f8ace9")
+interface ICompositionAnimationBase : IInspectable
+{
+}
+
+@uuid("10f6c4fb-6e51-4c25-bbd3-586a9bec3ef4")
+@WinrtFactory("Windows.UI.Composition.CompositionAnimation")
+interface ICompositionAnimationFactory : IInspectable
+{
+}
+
 @uuid("5e7cc90c-cd14-4e07-8a55-c72527aabdac")
 @WinrtFactory("Windows.UI.Composition.CompositionAnimationGroup")
 interface ICompositionAnimationGroup : IInspectable
@@ -69,6 +80,30 @@ extern(Windows):
 	HRESULT abi_Add(Windows.UI.Composition.CompositionAnimation value);
 	HRESULT abi_Remove(Windows.UI.Composition.CompositionAnimation value);
 	HRESULT abi_RemoveAll();
+}
+
+@uuid("c5acae58-3898-499e-8d7f-224e91286a5d")
+@WinrtFactory("Windows.UI.Composition.CompositionBackdropBrush")
+interface ICompositionBackdropBrush : IInspectable
+{
+}
+
+@uuid("0d00dad0-9464-450a-a562-2e2698b0a812")
+@WinrtFactory("Windows.UI.Composition.CompositionBatchCompletedEventArgs")
+interface ICompositionBatchCompletedEventArgs : IInspectable
+{
+}
+
+@uuid("ab0d7608-30c0-40e9-b568-b60a6bd1fb46")
+@WinrtFactory("Windows.UI.Composition.CompositionBrush")
+interface ICompositionBrush : IInspectable
+{
+}
+
+@uuid("da53fb4c-4650-47c4-ad76-765379607ed6")
+@WinrtFactory("Windows.UI.Composition.CompositionBrush")
+interface ICompositionBrushFactory : IInspectable
+{
 }
 
 @uuid("8253353e-b517-48bc-b1e8-4b3561a2e181")
@@ -94,6 +129,12 @@ extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.UI.Composition.CompositionCapabilities* return_current);
 }
 
+@uuid("1ccd2a52-cfc7-4ace-9983-146bb8eb6a3c")
+@WinrtFactory("Windows.UI.Composition.CompositionClip")
+interface ICompositionClip : IInspectable
+{
+}
+
 @uuid("5893e069-3516-40e1-89e0-5ba924927235")
 @WinrtFactory("Windows.UI.Composition.CompositionClip")
 interface ICompositionClip2 : IInspectable
@@ -115,6 +156,12 @@ extern(Windows):
 	HRESULT set_Scale(Windows.Foundation.Numerics.Vector2 value);
 	HRESULT get_TransformMatrix(Windows.Foundation.Numerics.Matrix3x2* return_value);
 	HRESULT set_TransformMatrix(Windows.Foundation.Numerics.Matrix3x2 value);
+}
+
+@uuid("b9484caf-20c7-4aed-ac4a-9c78ba1302cf")
+@WinrtFactory("Windows.UI.Composition.CompositionClip")
+interface ICompositionClipFactory : IInspectable
+{
 }
 
 @uuid("2b264c5e-bf35-4831-8642-cf70c20fff2f")
@@ -166,6 +213,24 @@ extern(Windows):
 	HRESULT abi_ScrollRect(Windows.Graphics.PointInt32 offset, Windows.Graphics.RectInt32 scrollRect);
 	HRESULT abi_ScrollWithClip(Windows.Graphics.PointInt32 offset, Windows.Graphics.RectInt32 clipRect);
 	HRESULT abi_ScrollRectWithClip(Windows.Graphics.PointInt32 offset, Windows.Graphics.RectInt32 clipRect, Windows.Graphics.RectInt32 scrollRect);
+}
+
+@uuid("9497b00a-312d-46b9-9db3-412fd79464c8")
+@WinrtFactory("Windows.UI.Composition.CompositionDrawingSurface")
+interface ICompositionDrawingSurfaceFactory : IInspectable
+{
+}
+
+@uuid("5145e356-bf79-4ea8-8cc2-6b5b472e6c9a")
+@WinrtFactory("Windows.UI.Composition.CompositionEasingFunction")
+interface ICompositionEasingFunction : IInspectable
+{
+}
+
+@uuid("60840774-3da0-4949-8200-7206c00190a0")
+@WinrtFactory("Windows.UI.Composition.CompositionEasingFunction")
+interface ICompositionEasingFunctionFactory : IInspectable
+{
 }
 
 @uuid("bf7f795e-83cc-44bf-a447-3e3c071789ec")
@@ -244,6 +309,12 @@ extern(Windows):
 	HRESULT get_Targets(Windows.UI.Composition.VisualUnorderedCollection* return_value);
 }
 
+@uuid("069cf306-da3c-4b44-838a-5e03d51ace55")
+@WinrtFactory("Windows.UI.Composition.CompositionLight")
+interface ICompositionLightFactory : IInspectable
+{
+}
+
 @uuid("522cf09e-be6b-4f41-be49-f9226d471b4a")
 @WinrtFactory("Windows.UI.Composition.CompositionMaskBrush")
 interface ICompositionMaskBrush : IInspectable
@@ -319,6 +390,12 @@ extern(Windows):
 	HRESULT abi_StopAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value);
 }
 
+@uuid("51205c5e-558a-4f2a-8d39-37bfe1e20ddd")
+@WinrtFactory("Windows.UI.Composition.CompositionObject")
+interface ICompositionObjectFactory : IInspectable
+{
+}
+
 @uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2")
 @WinrtFactory("Windows.UI.Composition.CompositionPropertySet")
 interface ICompositionPropertySet : IInspectable
@@ -369,6 +446,23 @@ extern(Windows):
 	HRESULT abi_Suspend();
 	HRESULT add_Completed(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_Completed(EventRegistrationToken token);
+}
+
+@uuid("329e52e2-4335-49cc-b14a-37782d10f0c4")
+@WinrtFactory("Windows.UI.Composition.CompositionShadow")
+interface ICompositionShadow : IInspectable
+{
+}
+
+@uuid("221f492f-dcba-4b91-999e-1dc217a01530")
+@WinrtFactory("Windows.UI.Composition.CompositionShadow")
+interface ICompositionShadowFactory : IInspectable
+{
+}
+
+@uuid("1527540d-42c7-47a6-a408-668f79a90dfb")
+interface ICompositionSurface : IInspectable
+{
 }
 
 @uuid("ad016d79-1e4c-4c0d-9c29-83338c87c162")
@@ -432,6 +526,12 @@ interface ICompositionVirtualDrawingSurface : IInspectable
 
 extern(Windows):
 	HRESULT abi_Trim(UINT32 __rectsSize, Windows.Graphics.RectInt32* rects);
+}
+
+@uuid("6766106c-d56b-4a49-b1df-5076a0620768")
+@WinrtFactory("Windows.UI.Composition.CompositionVirtualDrawingSurface")
+interface ICompositionVirtualDrawingSurfaceFactory : IInspectable
+{
 }
 
 @uuid("b403ca50-7f8c-4e83-985f-cc45060036d8")
@@ -509,6 +609,12 @@ extern(Windows):
 	HRESULT get_Children(Windows.UI.Composition.VisualCollection* return_value);
 }
 
+@uuid("0363a65b-c7da-4d9a-95f4-69b5c8df670b")
+@WinrtFactory("Windows.UI.Composition.ContainerVisual")
+interface IContainerVisualFactory : IInspectable
+{
+}
+
 @uuid("32350666-c1e8-44f9-96b8-c98acf0ae698")
 @WinrtFactory("Windows.UI.Composition.CubicBezierEasingFunction")
 interface ICubicBezierEasingFunction : IInspectable
@@ -563,6 +669,12 @@ interface IExpressionAnimation : IInspectable
 extern(Windows):
 	HRESULT get_Expression(HSTRING* return_value);
 	HRESULT set_Expression(HSTRING value);
+}
+
+@uuid("0598a3ff-0a92-4c9d-a427-b25519250dbf")
+@WinrtFactory("Windows.UI.Composition.ImplicitAnimationCollection")
+interface IImplicitAnimationCollection : IInspectable
+{
 }
 
 @uuid("1e73e647-84c7-477a-b474-5880e0442e15")
@@ -626,6 +738,12 @@ extern(Windows):
 	HRESULT set_DelayBehavior(Windows.UI.Composition.AnimationDelayBehavior value);
 }
 
+@uuid("bf0803f8-712a-4fc1-8c87-970859ed8d2e")
+@WinrtFactory("Windows.UI.Composition.KeyFrameAnimation")
+interface IKeyFrameAnimationFactory : IInspectable
+{
+}
+
 @uuid("af843985-0444-4887-8e83-b40b253f822c")
 @WinrtFactory("Windows.UI.Composition.LayerVisual")
 interface ILayerVisual : IInspectable
@@ -635,6 +753,12 @@ interface ILayerVisual : IInspectable
 extern(Windows):
 	HRESULT get_Effect(Windows.UI.Composition.CompositionEffectBrush* return_value);
 	HRESULT set_Effect(Windows.UI.Composition.CompositionEffectBrush value);
+}
+
+@uuid("9400975a-c7a6-46b3-acf7-1a268a0a117d")
+@WinrtFactory("Windows.UI.Composition.LinearEasingFunction")
+interface ILinearEasingFunction : IInspectable
+{
 }
 
 @uuid("b18545b3-0c5a-4ab0-bedc-4f3546948272")
@@ -870,6 +994,12 @@ extern(Windows):
 	HRESULT abi_RemoveAll();
 }
 
+@uuid("ad0ff93e-b502-4eb5-87b4-9a38a71d0137")
+@WinrtFactory("Windows.UI.Composition.Visual")
+interface IVisualFactory : IInspectable
+{
+}
+
 @uuid("338faa70-54c8-40a7-8029-c9ceeb0aa250")
 @WinrtFactory("Windows.UI.Composition.VisualUnorderedCollection")
 interface IVisualUnorderedCollection : IInspectable
@@ -883,207 +1013,207 @@ extern(Windows):
 	HRESULT abi_RemoveAll();
 }
 
-interface AmbientLight : Windows.UI.Composition.CompositionLight
+interface AmbientLight : Windows.UI.Composition.CompositionLight, Windows.UI.Composition.IAmbientLight
 {
 }
 
-interface ColorKeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation
+interface ColorKeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation, Windows.UI.Composition.IColorKeyFrameAnimation
 {
 }
 
-interface CompositionAnimation : Windows.UI.Composition.CompositionObject
+interface CompositionAnimation : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionAnimation, Windows.UI.Composition.ICompositionAnimation2, Windows.UI.Composition.ICompositionAnimationBase
 {
 }
 
-interface CompositionAnimationGroup : Windows.UI.Composition.CompositionObject
+interface CompositionAnimationGroup : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionAnimationGroup, Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.CompositionAnimation), Windows.UI.Composition.ICompositionAnimationBase
 {
 }
 
-interface CompositionBackdropBrush : Windows.UI.Composition.CompositionBrush
+interface CompositionBackdropBrush : Windows.UI.Composition.CompositionBrush, Windows.UI.Composition.ICompositionBackdropBrush
 {
 }
 
-interface CompositionBatchCompletedEventArgs : Windows.UI.Composition.CompositionObject
+interface CompositionBatchCompletedEventArgs : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionBatchCompletedEventArgs
 {
 }
 
-interface CompositionBrush : Windows.UI.Composition.CompositionObject
+interface CompositionBrush : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionBrush
 {
 }
 
-interface CompositionCapabilities
+interface CompositionCapabilities : Windows.UI.Composition.ICompositionCapabilities
 {
 }
 
-interface CompositionClip : Windows.UI.Composition.CompositionObject
+interface CompositionClip : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionClip, Windows.UI.Composition.ICompositionClip2
 {
 }
 
-interface CompositionColorBrush : Windows.UI.Composition.CompositionBrush
+interface CompositionColorBrush : Windows.UI.Composition.CompositionBrush, Windows.UI.Composition.ICompositionColorBrush
 {
 }
 
-interface CompositionCommitBatch : Windows.UI.Composition.CompositionObject
+interface CompositionCommitBatch : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionCommitBatch
 {
 }
 
-interface CompositionDrawingSurface : Windows.UI.Composition.CompositionObject
+interface CompositionDrawingSurface : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionDrawingSurface, Windows.UI.Composition.ICompositionSurface, Windows.UI.Composition.ICompositionDrawingSurface2
 {
 }
 
-interface CompositionEasingFunction : Windows.UI.Composition.CompositionObject
+interface CompositionEasingFunction : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionEasingFunction
 {
 }
 
-interface CompositionEffectBrush : Windows.UI.Composition.CompositionBrush
+interface CompositionEffectBrush : Windows.UI.Composition.CompositionBrush, Windows.UI.Composition.ICompositionEffectBrush
 {
 }
 
-interface CompositionEffectFactory : Windows.UI.Composition.CompositionObject
+interface CompositionEffectFactory : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionEffectFactory
 {
 }
 
-interface CompositionEffectSourceParameter
+interface CompositionEffectSourceParameter : Windows.UI.Composition.ICompositionEffectSourceParameter, Windows.Graphics.Effects.IGraphicsEffectSource
 {
 }
 
-interface CompositionGraphicsDevice : Windows.UI.Composition.CompositionObject
+interface CompositionGraphicsDevice : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionGraphicsDevice, Windows.UI.Composition.ICompositionGraphicsDevice2
 {
 }
 
-interface CompositionLight : Windows.UI.Composition.CompositionObject
+interface CompositionLight : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionLight
 {
 }
 
-interface CompositionMaskBrush : Windows.UI.Composition.CompositionBrush
+interface CompositionMaskBrush : Windows.UI.Composition.CompositionBrush, Windows.UI.Composition.ICompositionMaskBrush
 {
 }
 
-interface CompositionNineGridBrush : Windows.UI.Composition.CompositionBrush
+interface CompositionNineGridBrush : Windows.UI.Composition.CompositionBrush, Windows.UI.Composition.ICompositionNineGridBrush
 {
 }
 
-interface CompositionObject
+interface CompositionObject : Windows.UI.Composition.ICompositionObject, Windows.Foundation.IClosable, Windows.UI.Composition.ICompositionObject2
 {
 }
 
-interface CompositionPropertySet : Windows.UI.Composition.CompositionObject
+interface CompositionPropertySet : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionPropertySet, Windows.UI.Composition.ICompositionPropertySet2
 {
 }
 
-interface CompositionScopedBatch : Windows.UI.Composition.CompositionObject
+interface CompositionScopedBatch : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionScopedBatch
 {
 }
 
-interface CompositionShadow : Windows.UI.Composition.CompositionObject
+interface CompositionShadow : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionShadow
 {
 }
 
-interface CompositionSurfaceBrush : Windows.UI.Composition.CompositionBrush
+interface CompositionSurfaceBrush : Windows.UI.Composition.CompositionBrush, Windows.UI.Composition.ICompositionSurfaceBrush, Windows.UI.Composition.ICompositionSurfaceBrush2
 {
 }
 
-interface CompositionTarget : Windows.UI.Composition.CompositionObject
+interface CompositionTarget : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionTarget
 {
 }
 
-interface CompositionVirtualDrawingSurface : Windows.UI.Composition.CompositionDrawingSurface
+interface CompositionVirtualDrawingSurface : Windows.UI.Composition.CompositionDrawingSurface, Windows.UI.Composition.ICompositionVirtualDrawingSurface
 {
 }
 
-interface Compositor
+interface Compositor : Windows.UI.Composition.ICompositor, Windows.Foundation.IClosable, Windows.UI.Composition.ICompositor2, Windows.UI.Composition.ICompositor3
 {
 }
 
-interface ContainerVisual : Windows.UI.Composition.Visual
+interface ContainerVisual : Windows.UI.Composition.Visual, Windows.UI.Composition.IContainerVisual
 {
 }
 
-interface CubicBezierEasingFunction : Windows.UI.Composition.CompositionEasingFunction
+interface CubicBezierEasingFunction : Windows.UI.Composition.CompositionEasingFunction, Windows.UI.Composition.ICubicBezierEasingFunction
 {
 }
 
-interface DistantLight : Windows.UI.Composition.CompositionLight
+interface DistantLight : Windows.UI.Composition.CompositionLight, Windows.UI.Composition.IDistantLight
 {
 }
 
-interface DropShadow : Windows.UI.Composition.CompositionShadow
+interface DropShadow : Windows.UI.Composition.CompositionShadow, Windows.UI.Composition.IDropShadow
 {
 }
 
-interface ExpressionAnimation : Windows.UI.Composition.CompositionAnimation
+interface ExpressionAnimation : Windows.UI.Composition.CompositionAnimation, Windows.UI.Composition.IExpressionAnimation
 {
 }
 
-interface ImplicitAnimationCollection : Windows.UI.Composition.CompositionObject
+interface ImplicitAnimationCollection : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.IImplicitAnimationCollection, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)), Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)
 {
 }
 
-interface InsetClip : Windows.UI.Composition.CompositionClip
+interface InsetClip : Windows.UI.Composition.CompositionClip, Windows.UI.Composition.IInsetClip
 {
 }
 
-interface KeyFrameAnimation : Windows.UI.Composition.CompositionAnimation
+interface KeyFrameAnimation : Windows.UI.Composition.CompositionAnimation, Windows.UI.Composition.IKeyFrameAnimation, Windows.UI.Composition.IKeyFrameAnimation2, Windows.UI.Composition.IKeyFrameAnimation3
 {
 }
 
-interface LayerVisual : Windows.UI.Composition.ContainerVisual
+interface LayerVisual : Windows.UI.Composition.ContainerVisual, Windows.UI.Composition.ILayerVisual
 {
 }
 
-interface LinearEasingFunction : Windows.UI.Composition.CompositionEasingFunction
+interface LinearEasingFunction : Windows.UI.Composition.CompositionEasingFunction, Windows.UI.Composition.ILinearEasingFunction
 {
 }
 
-interface PointLight : Windows.UI.Composition.CompositionLight
+interface PointLight : Windows.UI.Composition.CompositionLight, Windows.UI.Composition.IPointLight
 {
 }
 
-interface QuaternionKeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation
+interface QuaternionKeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation, Windows.UI.Composition.IQuaternionKeyFrameAnimation
 {
 }
 
-interface RenderingDeviceReplacedEventArgs : Windows.UI.Composition.CompositionObject
+interface RenderingDeviceReplacedEventArgs : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.IRenderingDeviceReplacedEventArgs
 {
 }
 
-interface ScalarKeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation
+interface ScalarKeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation, Windows.UI.Composition.IScalarKeyFrameAnimation
 {
 }
 
-interface SpotLight : Windows.UI.Composition.CompositionLight
+interface SpotLight : Windows.UI.Composition.CompositionLight, Windows.UI.Composition.ISpotLight
 {
 }
 
-interface SpriteVisual : Windows.UI.Composition.ContainerVisual
+interface SpriteVisual : Windows.UI.Composition.ContainerVisual, Windows.UI.Composition.ISpriteVisual, Windows.UI.Composition.ISpriteVisual2
 {
 }
 
-interface StepEasingFunction : Windows.UI.Composition.CompositionEasingFunction
+interface StepEasingFunction : Windows.UI.Composition.CompositionEasingFunction, Windows.UI.Composition.IStepEasingFunction
 {
 }
 
-interface Vector2KeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation
+interface Vector2KeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation, Windows.UI.Composition.IVector2KeyFrameAnimation
 {
 }
 
-interface Vector3KeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation
+interface Vector3KeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation, Windows.UI.Composition.IVector3KeyFrameAnimation
 {
 }
 
-interface Vector4KeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation
+interface Vector4KeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation, Windows.UI.Composition.IVector4KeyFrameAnimation
 {
 }
 
-interface Visual : Windows.UI.Composition.CompositionObject
+interface Visual : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.IVisual, Windows.UI.Composition.IVisual2
 {
 }
 
-interface VisualCollection : Windows.UI.Composition.CompositionObject
+interface VisualCollection : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.IVisualCollection, Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Visual)
 {
 }
 
-interface VisualUnorderedCollection : Windows.UI.Composition.CompositionObject
+interface VisualUnorderedCollection : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.IVisualUnorderedCollection, Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Visual)
 {
 }
 

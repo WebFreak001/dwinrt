@@ -63,19 +63,19 @@ extern(Windows):
 	HRESULT abi_Stop();
 }
 
-interface PnpObject
+interface PnpObject : Windows.Devices.Enumeration.Pnp.IPnpObject
 {
 }
 
-interface PnpObjectCollection
+interface PnpObjectCollection : Windows.Foundation.Collections.IVectorView!(Windows.Devices.Enumeration.Pnp.PnpObject), Windows.Foundation.Collections.IIterable!(Windows.Devices.Enumeration.Pnp.PnpObject)
 {
 }
 
-interface PnpObjectUpdate
+interface PnpObjectUpdate : Windows.Devices.Enumeration.Pnp.IPnpObjectUpdate
 {
 }
 
-interface PnpObjectWatcher
+interface PnpObjectWatcher : Windows.Devices.Enumeration.Pnp.IPnpObjectWatcher
 {
 }
 

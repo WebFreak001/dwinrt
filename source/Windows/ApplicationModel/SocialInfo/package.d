@@ -176,27 +176,27 @@ extern(Windows):
 	HRESULT set_TargetUri(Windows.Foundation.Uri value);
 }
 
-interface SocialFeedChildItem
+interface SocialFeedChildItem : Windows.ApplicationModel.SocialInfo.ISocialFeedChildItem
 {
 }
 
-interface SocialFeedContent
+interface SocialFeedContent : Windows.ApplicationModel.SocialInfo.ISocialFeedContent
 {
 }
 
-interface SocialFeedItem
+interface SocialFeedItem : Windows.ApplicationModel.SocialInfo.ISocialFeedItem
 {
 }
 
-interface SocialFeedSharedItem
+interface SocialFeedSharedItem : Windows.ApplicationModel.SocialInfo.ISocialFeedSharedItem
 {
 }
 
-interface SocialItemThumbnail
+interface SocialItemThumbnail : Windows.ApplicationModel.SocialInfo.ISocialItemThumbnail
 {
 }
 
-interface SocialUserInfo
+interface SocialUserInfo : Windows.ApplicationModel.SocialInfo.ISocialUserInfo
 {
 }
 

@@ -411,43 +411,51 @@ extern(Windows):
 	HRESULT get_TransferGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferGroup* return_value);
 }
 
-interface BackgroundDownloader
+interface BackgroundDownloader : Windows.Networking.BackgroundTransfer.IBackgroundDownloader, Windows.Networking.BackgroundTransfer.IBackgroundTransferBase, Windows.Networking.BackgroundTransfer.IBackgroundDownloader2, Windows.Networking.BackgroundTransfer.IBackgroundDownloader3
 {
 }
 
-interface BackgroundTransferCompletionGroup
+interface BackgroundTransferCompletionGroup : Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup
 {
 }
 
-interface BackgroundTransferCompletionGroupTriggerDetails
+interface BackgroundTransferCompletionGroupTriggerDetails : Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroupTriggerDetails
 {
 }
 
-interface BackgroundTransferContentPart
+interface BackgroundTransferContentPart : Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPart
 {
 }
 
-interface BackgroundTransferGroup
+interface BackgroundTransferError
 {
 }
 
-interface BackgroundUploader
+interface BackgroundTransferGroup : Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup
 {
 }
 
-interface DownloadOperation
+interface BackgroundUploader : Windows.Networking.BackgroundTransfer.IBackgroundUploader, Windows.Networking.BackgroundTransfer.IBackgroundTransferBase, Windows.Networking.BackgroundTransfer.IBackgroundUploader2, Windows.Networking.BackgroundTransfer.IBackgroundUploader3
 {
 }
 
-interface ResponseInformation
+interface ContentPrefetcher
 {
 }
 
-interface UnconstrainedTransferRequestResult
+interface DownloadOperation : Windows.Networking.BackgroundTransfer.IDownloadOperation, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority, Windows.Networking.BackgroundTransfer.IDownloadOperation2
 {
 }
 
-interface UploadOperation
+interface ResponseInformation : Windows.Networking.BackgroundTransfer.IResponseInformation
+{
+}
+
+interface UnconstrainedTransferRequestResult : Windows.Networking.BackgroundTransfer.IUnconstrainedTransferRequestResult
+{
+}
+
+interface UploadOperation : Windows.Networking.BackgroundTransfer.IUploadOperation, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority, Windows.Networking.BackgroundTransfer.IUploadOperation2
 {
 }
 

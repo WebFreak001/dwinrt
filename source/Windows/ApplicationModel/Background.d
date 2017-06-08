@@ -120,6 +120,17 @@ extern(Windows):
 	HRESULT get_Arguments(Windows.Foundation.Collections.ValueSet* return_value);
 }
 
+@uuid("64d4040c-c201-42ad-aa2a-e21ba3425b6d")
+@WinrtFactory("Windows.ApplicationModel.Background.AppointmentStoreNotificationTrigger")
+interface IAppointmentStoreNotificationTrigger : IInspectable
+{
+}
+
+@uuid("ae48a1ee-8951-400a-8302-9c9c9a2a3a3b")
+interface IBackgroundCondition : IInspectable
+{
+}
+
 @uuid("e826ea58-66a9-4d41-83d4-b4c18c87b846")
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundExecutionManager")
 interface IBackgroundExecutionManagerStatics : IInspectable
@@ -339,6 +350,11 @@ extern(Windows):
 	HRESULT abi_GetTaskGroup(HSTRING groupId, Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup* return_value);
 }
 
+@uuid("84b3a058-6027-4b87-9790-bdf3f757dbd7")
+interface IBackgroundTrigger : IInspectable
+{
+}
+
 @uuid("c740a662-c310-4b82-b3e3-3bcfb9e4c77d")
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundWorkCost")
 interface IBackgroundWorkCostStatics : IInspectable
@@ -376,6 +392,12 @@ extern(Windows):
 	HRESULT set_AdvertisementFilter(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFilter value);
 }
 
+@uuid("e21caeeb-32f2-4d31-b553-b9e01bde37e0")
+@WinrtFactory("Windows.ApplicationModel.Background.CachedFileUpdaterTrigger")
+interface ICachedFileUpdaterTrigger : IInspectable
+{
+}
+
 @uuid("71838c13-1314-47b4-9597-dc7e248c17cc")
 @WinrtFactory("Windows.ApplicationModel.Background.CachedFileUpdaterTriggerDetails")
 interface ICachedFileUpdaterTriggerDetails : IInspectable
@@ -386,6 +408,24 @@ extern(Windows):
 	HRESULT get_UpdateTarget(Windows.Storage.Provider.CachedFileTarget* return_value);
 	HRESULT get_UpdateRequest(Windows.Storage.Provider.FileUpdateRequest* return_value);
 	HRESULT get_CanRequestUserInput(bool* return_value);
+}
+
+@uuid("513b43bf-1d40-5c5d-78f5-c923fee3739e")
+@WinrtFactory("Windows.ApplicationModel.Background.ChatMessageNotificationTrigger")
+interface IChatMessageNotificationTrigger : IInspectable
+{
+}
+
+@uuid("3ea3760e-baf5-4077-88e9-060cf6f0c6d5")
+@WinrtFactory("Windows.ApplicationModel.Background.ChatMessageReceivedNotificationTrigger")
+interface IChatMessageReceivedNotificationTrigger : IInspectable
+{
+}
+
+@uuid("c833419b-4705-4571-9a16-06b997bf9c96")
+@WinrtFactory("Windows.ApplicationModel.Background.ContactStoreNotificationTrigger")
+interface IContactStoreNotificationTrigger : IInspectable
+{
 }
 
 @uuid("710627ee-04fa-440b-80c0-173202199e5d")
@@ -472,6 +512,18 @@ interface IDeviceUseTrigger : IInspectable
 extern(Windows):
 	HRESULT abi_RequestAsyncSimple(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
 	HRESULT abi_RequestAsyncWithArguments(HSTRING deviceId, HSTRING arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
+}
+
+@uuid("a4617fdd-8573-4260-befc-5bec89cb693d")
+@WinrtFactory("Windows.ApplicationModel.Background.DeviceWatcherTrigger")
+interface IDeviceWatcherTrigger : IInspectable
+{
+}
+
+@uuid("986d06da-47eb-4268-a4f2-f3f77188388a")
+@WinrtFactory("Windows.ApplicationModel.Background.EmailStoreNotificationTrigger")
+interface IEmailStoreNotificationTrigger : IInspectable
+{
 }
 
 @uuid("e25f8fc8-0696-474f-a732-f292b0cebc5d")
@@ -600,6 +652,12 @@ extern(Windows):
 	HRESULT abi_RequestAsyncWithArguments(Windows.Foundation.Collections.ValueSet arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.MediaProcessingTriggerResult)* return_result);
 }
 
+@uuid("e756c791-3001-4de5-83c7-de61d88831d0")
+@WinrtFactory("Windows.ApplicationModel.Background.NetworkOperatorHotspotAuthenticationTrigger")
+interface INetworkOperatorHotspotAuthenticationTrigger : IInspectable
+{
+}
+
 @uuid("90089cc6-63cd-480c-95d1-6e6aef801e4a")
 @WinrtFactory("Windows.ApplicationModel.Background.NetworkOperatorNotificationTrigger")
 interface INetworkOperatorNotificationTrigger : IInspectable
@@ -651,6 +709,12 @@ extern(Windows):
 	HRESULT abi_Create(HSTRING applicationId, Windows.ApplicationModel.Background.PushNotificationTrigger* return_trigger);
 }
 
+@uuid("986d0d6a-b2f6-467f-a978-a44091c11a66")
+@WinrtFactory("Windows.ApplicationModel.Background.RcsEndUserMessageAvailableTrigger")
+interface IRcsEndUserMessageAvailableTrigger : IInspectable
+{
+}
+
 @uuid("e8c4cae2-0b53-4464-9394-fd875654de64")
 @WinrtFactory("Windows.ApplicationModel.Background.RfcommConnectionTrigger")
 interface IRfcommConnectionTrigger : IInspectable
@@ -666,6 +730,18 @@ extern(Windows):
 	HRESULT set_ProtectionLevel(Windows.Networking.Sockets.SocketProtectionLevel value);
 	HRESULT get_RemoteHostName(Windows.Networking.HostName* return_value);
 	HRESULT set_RemoteHostName(Windows.Networking.HostName value);
+}
+
+@uuid("f237f327-5181-4f24-96a7-700a4e5fac62")
+@WinrtFactory("Windows.ApplicationModel.Background.SecondaryAuthenticationFactorAuthenticationTrigger")
+interface ISecondaryAuthenticationFactorAuthenticationTrigger : IInspectable
+{
+}
+
+@uuid("5bc0f372-d48b-4b7f-abec-15f9bacc12e2")
+@WinrtFactory("Windows.ApplicationModel.Background.SensorDataThresholdTrigger")
+interface ISensorDataThresholdTrigger : IInspectable
+{
 }
 
 @uuid("921fe675-7df0-4da3-97b3-e544ee857fe6")
@@ -696,6 +772,12 @@ interface ISocketActivityTrigger : IInspectable
 
 extern(Windows):
 	HRESULT get_IsWakeFromLowPowerSupported(bool* return_value);
+}
+
+@uuid("1637e0a7-829c-45bc-929b-a1e7ea78d89b")
+@WinrtFactory("Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger")
+interface IStorageLibraryContentChangedTrigger : IInspectable
+{
 }
 
 @uuid("7f9f1b39-5f90-4e12-914e-a7d8e0bbfb18")
@@ -801,215 +883,227 @@ extern(Windows):
 	HRESULT abi_Create(Windows.UI.Notifications.NotificationKinds notificationKinds, Windows.ApplicationModel.Background.UserNotificationChangedTrigger* return_trigger);
 }
 
-interface ActivitySensorTrigger
+interface ActivitySensorTrigger : Windows.ApplicationModel.Background.IActivitySensorTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface AppBroadcastTrigger
+interface AlarmApplicationManager
 {
 }
 
-interface AppBroadcastTriggerProviderInfo
+interface AppBroadcastTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IAppBroadcastTrigger
 {
 }
 
-interface ApplicationTrigger
+interface AppBroadcastTriggerProviderInfo : Windows.ApplicationModel.Background.IAppBroadcastTriggerProviderInfo
 {
 }
 
-interface ApplicationTriggerDetails
+interface ApplicationTrigger : Windows.ApplicationModel.Background.IApplicationTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface AppointmentStoreNotificationTrigger
+interface ApplicationTriggerDetails : Windows.ApplicationModel.Background.IApplicationTriggerDetails
 {
 }
 
-interface BackgroundTaskBuilder
+interface AppointmentStoreNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IAppointmentStoreNotificationTrigger
 {
 }
 
-interface BackgroundTaskCompletedEventArgs
+interface BackgroundExecutionManager
 {
 }
 
-interface BackgroundTaskDeferral
+interface BackgroundTaskBuilder : Windows.ApplicationModel.Background.IBackgroundTaskBuilder, Windows.ApplicationModel.Background.IBackgroundTaskBuilder2, Windows.ApplicationModel.Background.IBackgroundTaskBuilder3, Windows.ApplicationModel.Background.IBackgroundTaskBuilder4
 {
 }
 
-interface BackgroundTaskProgressEventArgs
+interface BackgroundTaskCompletedEventArgs : Windows.ApplicationModel.Background.IBackgroundTaskCompletedEventArgs
 {
 }
 
-interface BackgroundTaskRegistration
+interface BackgroundTaskDeferral : Windows.ApplicationModel.Background.IBackgroundTaskDeferral
 {
 }
 
-interface BackgroundTaskRegistrationGroup
+interface BackgroundTaskProgressEventArgs : Windows.ApplicationModel.Background.IBackgroundTaskProgressEventArgs
 {
 }
 
-interface BluetoothLEAdvertisementPublisherTrigger
+interface BackgroundTaskRegistration : Windows.ApplicationModel.Background.IBackgroundTaskRegistration, Windows.ApplicationModel.Background.IBackgroundTaskRegistration2, Windows.ApplicationModel.Background.IBackgroundTaskRegistration3
 {
 }
 
-interface BluetoothLEAdvertisementWatcherTrigger
+interface BackgroundTaskRegistrationGroup : Windows.ApplicationModel.Background.IBackgroundTaskRegistrationGroup
 {
 }
 
-interface CachedFileUpdaterTrigger
+interface BackgroundWorkCost
 {
 }
 
-interface CachedFileUpdaterTriggerDetails
+interface BluetoothLEAdvertisementPublisherTrigger : Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface ChatMessageNotificationTrigger
+interface BluetoothLEAdvertisementWatcherTrigger : Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface ChatMessageReceivedNotificationTrigger
+interface CachedFileUpdaterTrigger : Windows.ApplicationModel.Background.ICachedFileUpdaterTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface ContactStoreNotificationTrigger
+interface CachedFileUpdaterTriggerDetails : Windows.ApplicationModel.Background.ICachedFileUpdaterTriggerDetails
 {
 }
 
-interface ContentPrefetchTrigger
+interface ChatMessageNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IChatMessageNotificationTrigger
 {
 }
 
-interface DeviceConnectionChangeTrigger
+interface ChatMessageReceivedNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IChatMessageReceivedNotificationTrigger
 {
 }
 
-interface DeviceManufacturerNotificationTrigger
+interface ContactStoreNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IContactStoreNotificationTrigger
 {
 }
 
-interface DeviceServicingTrigger
+interface ContentPrefetchTrigger : Windows.ApplicationModel.Background.IContentPrefetchTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface DeviceUseTrigger
+interface DeviceConnectionChangeTrigger : Windows.ApplicationModel.Background.IDeviceConnectionChangeTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface DeviceWatcherTrigger
+interface DeviceManufacturerNotificationTrigger : Windows.ApplicationModel.Background.IDeviceManufacturerNotificationTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface EmailStoreNotificationTrigger
+interface DeviceServicingTrigger : Windows.ApplicationModel.Background.IDeviceServicingTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface GattCharacteristicNotificationTrigger
+interface DeviceUseTrigger : Windows.ApplicationModel.Background.IDeviceUseTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface GattServiceProviderTrigger
+interface DeviceWatcherTrigger : Windows.ApplicationModel.Background.IDeviceWatcherTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface GattServiceProviderTriggerResult
+interface EmailStoreNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IEmailStoreNotificationTrigger
 {
 }
 
-interface LocationTrigger
+interface GattCharacteristicNotificationTrigger : Windows.ApplicationModel.Background.IGattCharacteristicNotificationTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IGattCharacteristicNotificationTrigger2
 {
 }
 
-interface MaintenanceTrigger
+interface GattServiceProviderTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IGattServiceProviderTrigger
 {
 }
 
-interface MediaProcessingTrigger
+interface GattServiceProviderTriggerResult : Windows.ApplicationModel.Background.IGattServiceProviderTriggerResult
 {
 }
 
-interface MobileBroadbandDeviceServiceNotificationTrigger
+interface LocationTrigger : Windows.ApplicationModel.Background.ILocationTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface MobileBroadbandPinLockStateChangeTrigger
+interface MaintenanceTrigger : Windows.ApplicationModel.Background.IMaintenanceTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface MobileBroadbandRadioStateChangeTrigger
+interface MediaProcessingTrigger : Windows.ApplicationModel.Background.IMediaProcessingTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface MobileBroadbandRegistrationStateChangeTrigger
+interface MobileBroadbandDeviceServiceNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface NetworkOperatorHotspotAuthenticationTrigger
+interface MobileBroadbandPinLockStateChangeTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface NetworkOperatorNotificationTrigger
+interface MobileBroadbandRadioStateChangeTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface PhoneTrigger
+interface MobileBroadbandRegistrationStateChangeTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface PushNotificationTrigger
+interface NetworkOperatorHotspotAuthenticationTrigger : Windows.ApplicationModel.Background.INetworkOperatorHotspotAuthenticationTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface RcsEndUserMessageAvailableTrigger
+interface NetworkOperatorNotificationTrigger : Windows.ApplicationModel.Background.INetworkOperatorNotificationTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface RfcommConnectionTrigger
+interface PhoneTrigger : Windows.ApplicationModel.Background.IPhoneTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface SecondaryAuthenticationFactorAuthenticationTrigger
+interface PushNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface SensorDataThresholdTrigger
+interface RcsEndUserMessageAvailableTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IRcsEndUserMessageAvailableTrigger
 {
 }
 
-interface SmsMessageReceivedTrigger
+interface RfcommConnectionTrigger : Windows.ApplicationModel.Background.IRfcommConnectionTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface SocketActivityTrigger
+interface SecondaryAuthenticationFactorAuthenticationTrigger : Windows.ApplicationModel.Background.ISecondaryAuthenticationFactorAuthenticationTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface StorageLibraryContentChangedTrigger
+interface SensorDataThresholdTrigger : Windows.ApplicationModel.Background.ISensorDataThresholdTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface SystemCondition
+interface SmsMessageReceivedTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface SystemTrigger
+interface SocketActivityTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.ISocketActivityTrigger
 {
 }
 
-interface TimeTrigger
+interface StorageLibraryContentChangedTrigger : Windows.ApplicationModel.Background.IStorageLibraryContentChangedTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface ToastNotificationActionTrigger
+interface SystemCondition : Windows.ApplicationModel.Background.ISystemCondition, Windows.ApplicationModel.Background.IBackgroundCondition
 {
 }
 
-interface ToastNotificationHistoryChangedTrigger
+interface SystemTrigger : Windows.ApplicationModel.Background.ISystemTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
-interface UserNotificationChangedTrigger
+interface TimeTrigger : Windows.ApplicationModel.Background.ITimeTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
+{
+}
+
+interface ToastNotificationActionTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
+{
+}
+
+interface ToastNotificationHistoryChangedTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
+{
+}
+
+interface UserNotificationChangedTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 

@@ -488,99 +488,99 @@ extern(Windows):
 	HRESULT get_Headers(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 }
 
-interface DeleteSmsMessageOperation
+interface DeleteSmsMessageOperation : Windows.Foundation.IAsyncAction
 {
 }
 
-interface DeleteSmsMessagesOperation
+interface DeleteSmsMessagesOperation : Windows.Foundation.IAsyncAction
 {
 }
 
-interface GetSmsDeviceOperation
+interface GetSmsDeviceOperation : Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice)
 {
 }
 
-interface GetSmsMessageOperation
+interface GetSmsMessageOperation : Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage)
 {
 }
 
-interface GetSmsMessagesOperation
+interface GetSmsMessagesOperation : Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32)
 {
 }
 
-interface SendSmsMessageOperation
+interface SendSmsMessageOperation : Windows.Foundation.IAsyncAction
 {
 }
 
-interface SmsAppMessage
+interface SmsAppMessage : Windows.Devices.Sms.ISmsAppMessage, Windows.Devices.Sms.ISmsMessageBase
 {
 }
 
-interface SmsBinaryMessage
+interface SmsBinaryMessage : Windows.Devices.Sms.ISmsBinaryMessage, Windows.Devices.Sms.ISmsMessage
 {
 }
 
-interface SmsBroadcastMessage
+interface SmsBroadcastMessage : Windows.Devices.Sms.ISmsBroadcastMessage, Windows.Devices.Sms.ISmsMessageBase
 {
 }
 
-interface SmsDevice
+interface SmsDevice : Windows.Devices.Sms.ISmsDevice
 {
 }
 
-interface SmsDevice2
+interface SmsDevice2 : Windows.Devices.Sms.ISmsDevice2
 {
 }
 
-interface SmsDeviceMessageStore
+interface SmsDeviceMessageStore : Windows.Devices.Sms.ISmsDeviceMessageStore
 {
 }
 
-interface SmsFilterRule
+interface SmsFilterRule : Windows.Devices.Sms.ISmsFilterRule
 {
 }
 
-interface SmsFilterRules
+interface SmsFilterRules : Windows.Devices.Sms.ISmsFilterRules
 {
 }
 
-interface SmsMessageReceivedEventArgs
+interface SmsMessageReceivedEventArgs : Windows.Devices.Sms.ISmsMessageReceivedEventArgs
 {
 }
 
-interface SmsMessageReceivedTriggerDetails
+interface SmsMessageReceivedTriggerDetails : Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails
 {
 }
 
-interface SmsMessageRegistration
+interface SmsMessageRegistration : Windows.Devices.Sms.ISmsMessageRegistration
 {
 }
 
-interface SmsReceivedEventDetails
+interface SmsReceivedEventDetails : Windows.Devices.Sms.ISmsReceivedEventDetails, Windows.Devices.Sms.ISmsReceivedEventDetails2
 {
 }
 
-interface SmsSendMessageResult
+interface SmsSendMessageResult : Windows.Devices.Sms.ISmsSendMessageResult
 {
 }
 
-interface SmsStatusMessage
+interface SmsStatusMessage : Windows.Devices.Sms.ISmsStatusMessage, Windows.Devices.Sms.ISmsMessageBase
 {
 }
 
-interface SmsTextMessage
+interface SmsTextMessage : Windows.Devices.Sms.ISmsTextMessage, Windows.Devices.Sms.ISmsMessage
 {
 }
 
-interface SmsTextMessage2
+interface SmsTextMessage2 : Windows.Devices.Sms.ISmsTextMessage2, Windows.Devices.Sms.ISmsMessageBase
 {
 }
 
-interface SmsVoicemailMessage
+interface SmsVoicemailMessage : Windows.Devices.Sms.ISmsVoicemailMessage, Windows.Devices.Sms.ISmsMessageBase
 {
 }
 
-interface SmsWapMessage
+interface SmsWapMessage : Windows.Devices.Sms.ISmsWapMessage, Windows.Devices.Sms.ISmsMessageBase
 {
 }
 

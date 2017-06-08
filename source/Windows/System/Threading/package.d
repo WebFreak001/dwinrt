@@ -60,7 +60,11 @@ extern(Windows):
 	HRESULT abi_CreateTimerWithCompletion(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan delay, Windows.System.Threading.TimerDestroyedHandler destroyed, Windows.System.Threading.ThreadPoolTimer* return_timer);
 }
 
-interface ThreadPoolTimer
+interface ThreadPool
+{
+}
+
+interface ThreadPoolTimer : Windows.System.Threading.IThreadPoolTimer
 {
 }
 

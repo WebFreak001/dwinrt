@@ -70,11 +70,19 @@ extern(Windows):
 	HRESULT abi_RequestVerificationAsync(HSTRING message, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.UserConsentVerificationResult)* return_result);
 }
 
-interface CredentialPickerOptions
+interface CredentialPicker
 {
 }
 
-interface CredentialPickerResults
+interface CredentialPickerOptions : Windows.Security.Credentials.UI.ICredentialPickerOptions
+{
+}
+
+interface CredentialPickerResults : Windows.Security.Credentials.UI.ICredentialPickerResults
+{
+}
+
+interface UserConsentVerifier
 {
 }
 

@@ -80,19 +80,19 @@ extern(Windows):
 	HRESULT abi_CreateWithHandlerAndId(HSTRING label, Windows.UI.Popups.UICommandInvokedHandler action, IInspectable commandId, Windows.UI.Popups.UICommand* return_instance);
 }
 
-interface MessageDialog
+interface MessageDialog : Windows.UI.Popups.IMessageDialog
 {
 }
 
-interface PopupMenu
+interface PopupMenu : Windows.UI.Popups.IPopupMenu
 {
 }
 
-interface UICommand
+interface UICommand : Windows.UI.Popups.IUICommand
 {
 }
 
-interface UICommandSeparator
+interface UICommandSeparator : Windows.UI.Popups.IUICommand
 {
 }
 

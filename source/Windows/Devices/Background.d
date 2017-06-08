@@ -25,10 +25,10 @@ extern(Windows):
 	HRESULT get_Arguments(HSTRING* return_value);
 }
 
-interface DeviceServicingDetails
+interface DeviceServicingDetails : Windows.Devices.Background.IDeviceServicingDetails
 {
 }
 
-interface DeviceUseDetails
+interface DeviceUseDetails : Windows.Devices.Background.IDeviceUseDetails
 {
 }

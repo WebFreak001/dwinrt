@@ -29,7 +29,7 @@ extern(Windows):
 	HRESULT get_Current(Windows.UI.Notifications.Management.UserNotificationListener* return_result);
 }
 
-interface UserNotificationListener
+interface UserNotificationListener : Windows.UI.Notifications.Management.IUserNotificationListener
 {
 }
 

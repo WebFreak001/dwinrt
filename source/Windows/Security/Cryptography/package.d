@@ -22,6 +22,10 @@ extern(Windows):
 	HRESULT abi_ConvertBinaryToString(Windows.Security.Cryptography.BinaryStringEncoding encoding, Windows.Storage.Streams.IBuffer buffer, HSTRING* return_value);
 }
 
+interface CryptographicBuffer
+{
+}
+
 enum BinaryStringEncoding
 {
 	Utf8 = 0,

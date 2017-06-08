@@ -45,11 +45,15 @@ extern(Windows):
 	HRESULT get_EtwRuntimeFileTime(INT64* return_value);
 }
 
-interface PlatformDiagnosticTraceInfo
+interface PlatformDiagnosticActions
 {
 }
 
-interface PlatformDiagnosticTraceRuntimeInfo
+interface PlatformDiagnosticTraceInfo : Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo
+{
+}
+
+interface PlatformDiagnosticTraceRuntimeInfo : Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceRuntimeInfo
 {
 }
 

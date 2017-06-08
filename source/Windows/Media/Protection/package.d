@@ -169,39 +169,43 @@ extern(Windows):
 	HRESULT get_MediaPlaybackItem(Windows.Media.Playback.MediaPlaybackItem* return_value);
 }
 
-interface ComponentLoadFailedEventArgs
+interface ComponentLoadFailedEventArgs : Windows.Media.Protection.IComponentLoadFailedEventArgs
 {
 }
 
-interface HdcpSession
+interface ComponentRenewal
 {
 }
 
-interface MediaProtectionManager
+interface HdcpSession : Windows.Media.Protection.IHdcpSession, Windows.Foundation.IClosable
 {
 }
 
-interface MediaProtectionPMPServer
+interface MediaProtectionManager : Windows.Media.Protection.IMediaProtectionManager
 {
 }
 
-interface MediaProtectionServiceCompletion
+interface MediaProtectionPMPServer : Windows.Media.Protection.IMediaProtectionPMPServer
 {
 }
 
-interface ProtectionCapabilities
+interface MediaProtectionServiceCompletion : Windows.Media.Protection.IMediaProtectionServiceCompletion
 {
 }
 
-interface RevocationAndRenewalInformation
+interface ProtectionCapabilities : Windows.Media.Protection.IProtectionCapabilities
 {
 }
 
-interface RevocationAndRenewalItem
+interface RevocationAndRenewalInformation : Windows.Media.Protection.IRevocationAndRenewalInformation
 {
 }
 
-interface ServiceRequestedEventArgs
+interface RevocationAndRenewalItem : Windows.Media.Protection.IRevocationAndRenewalItem
+{
+}
+
+interface ServiceRequestedEventArgs : Windows.Media.Protection.IServiceRequestedEventArgs, Windows.Media.Protection.IServiceRequestedEventArgs2
 {
 }
 

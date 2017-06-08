@@ -207,47 +207,47 @@ extern(Windows):
 	HRESULT abi_GetListAsync(HSTRING taskListId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList)* return_operation);
 }
 
-interface UserDataTask
+interface UserDataTask : Windows.ApplicationModel.UserDataTasks.IUserDataTask
 {
 }
 
-interface UserDataTaskBatch
+interface UserDataTaskBatch : Windows.ApplicationModel.UserDataTasks.IUserDataTaskBatch
 {
 }
 
-interface UserDataTaskList
+interface UserDataTaskList : Windows.ApplicationModel.UserDataTasks.IUserDataTaskList
 {
 }
 
-interface UserDataTaskListLimitedWriteOperations
+interface UserDataTaskListLimitedWriteOperations : Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations
 {
 }
 
-interface UserDataTaskListSyncManager
+interface UserDataTaskListSyncManager : Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager
 {
 }
 
-interface UserDataTaskManager
+interface UserDataTaskManager : Windows.ApplicationModel.UserDataTasks.IUserDataTaskManager
 {
 }
 
-interface UserDataTaskQueryOptions
+interface UserDataTaskQueryOptions : Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions
 {
 }
 
-interface UserDataTaskReader
+interface UserDataTaskReader : Windows.ApplicationModel.UserDataTasks.IUserDataTaskReader
 {
 }
 
-interface UserDataTaskRecurrenceProperties
+interface UserDataTaskRecurrenceProperties : Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties
 {
 }
 
-interface UserDataTaskRegenerationProperties
+interface UserDataTaskRegenerationProperties : Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties
 {
 }
 
-interface UserDataTaskStore
+interface UserDataTaskStore : Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore
 {
 }
 

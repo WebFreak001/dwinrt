@@ -46,10 +46,10 @@ extern(Windows):
 	HRESULT abi_CreateLanguageFontGroup(HSTRING languageTag, Windows.Globalization.Fonts.LanguageFontGroup* return_recommendedFonts);
 }
 
-interface LanguageFont
+interface LanguageFont : Windows.Globalization.Fonts.ILanguageFont
 {
 }
 
-interface LanguageFontGroup
+interface LanguageFontGroup : Windows.Globalization.Fonts.ILanguageFontGroup
 {
 }

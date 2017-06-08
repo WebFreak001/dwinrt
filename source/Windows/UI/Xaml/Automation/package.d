@@ -2,6 +2,12 @@ module Windows.UI.Xaml.Automation;
 
 import dwinrt;
 
+@uuid("d475a0c1-48b2-4e40-a6cf-3dc4b638c0de")
+@WinrtFactory("Windows.UI.Xaml.Automation.AnnotationPatternIdentifiers")
+interface IAnnotationPatternIdentifiers : IInspectable
+{
+}
+
 @uuid("e0e3a35d-d167-46dc-95ab-330af61aebb5")
 @WinrtFactory("Windows.UI.Xaml.Automation.AnnotationPatternIdentifiers")
 interface IAnnotationPatternIdentifiersStatics : IInspectable
@@ -49,6 +55,12 @@ interface IAutomationAnnotationStatics : IInspectable
 extern(Windows):
 	HRESULT get_TypeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_ElementProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("e68a63cf-4345-4e2d-8a6a-49cce1fa2dcc")
+@WinrtFactory("Windows.UI.Xaml.Automation.AutomationElementIdentifiers")
+interface IAutomationElementIdentifiers : IInspectable
+{
 }
 
 @uuid("4549399f-8340-4d67-b9bf-8c2ac6a0773a")
@@ -140,6 +152,12 @@ interface IAutomationElementIdentifiersStatics6 : IInspectable
 
 extern(Windows):
 	HRESULT get_CultureProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
+}
+
+@uuid("68d7232c-e622-48e9-af0b-1ffa33cc5cba")
+@WinrtFactory("Windows.UI.Xaml.Automation.AutomationProperties")
+interface IAutomationProperties : IInspectable
+{
 }
 
 @uuid("b618fd7b-32d0-4970-9c42-7c039ac7be78")
@@ -269,6 +287,18 @@ extern(Windows):
 	HRESULT abi_SetCulture(Windows.UI.Xaml.DependencyObject element, INT32 value);
 }
 
+@uuid("b627195b-3227-4e16-9534-ddece30ddb46")
+@WinrtFactory("Windows.UI.Xaml.Automation.AutomationProperty")
+interface IAutomationProperty : IInspectable
+{
+}
+
+@uuid("ccd7f4e6-e4f9-47ff-bde7-378b11f78e09")
+@WinrtFactory("Windows.UI.Xaml.Automation.DockPatternIdentifiers")
+interface IDockPatternIdentifiers : IInspectable
+{
+}
+
 @uuid("2b87245c-ed80-4fe5-8eb4-708a39c841e5")
 @WinrtFactory("Windows.UI.Xaml.Automation.DockPatternIdentifiers")
 interface IDockPatternIdentifiersStatics : IInspectable
@@ -277,6 +307,12 @@ interface IDockPatternIdentifiersStatics : IInspectable
 
 extern(Windows):
 	HRESULT get_DockPositionProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
+}
+
+@uuid("6266e985-4d07-4e80-82eb-8f96690a1a0c")
+@WinrtFactory("Windows.UI.Xaml.Automation.DragPatternIdentifiers")
+interface IDragPatternIdentifiers : IInspectable
+{
 }
 
 @uuid("2a05379d-1755-4082-9d90-46f1411d7986")
@@ -292,6 +328,12 @@ extern(Windows):
 	HRESULT get_IsGrabbedProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
 
+@uuid("11865133-a6fe-4634-bd18-0ef612b7b208")
+@WinrtFactory("Windows.UI.Xaml.Automation.DropTargetPatternIdentifiers")
+interface IDropTargetPatternIdentifiers : IInspectable
+{
+}
+
 @uuid("1b693304-89fb-4b0a-9452-ca2c66aaf9f3")
 @WinrtFactory("Windows.UI.Xaml.Automation.DropTargetPatternIdentifiers")
 interface IDropTargetPatternIdentifiersStatics : IInspectable
@@ -303,6 +345,12 @@ extern(Windows):
 	HRESULT get_DropTargetEffectsProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
 
+@uuid("b006bac0-751b-4d55-92cb-613ec1bdf5d0")
+@WinrtFactory("Windows.UI.Xaml.Automation.ExpandCollapsePatternIdentifiers")
+interface IExpandCollapsePatternIdentifiers : IInspectable
+{
+}
+
 @uuid("d7816fd4-6ee0-4f38-8e14-56ef21adacfd")
 @WinrtFactory("Windows.UI.Xaml.Automation.ExpandCollapsePatternIdentifiers")
 interface IExpandCollapsePatternIdentifiersStatics : IInspectable
@@ -311,6 +359,12 @@ interface IExpandCollapsePatternIdentifiersStatics : IInspectable
 
 extern(Windows):
 	HRESULT get_ExpandCollapseStateProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
+}
+
+@uuid("757744f1-3285-4fb1-803b-2545bd431599")
+@WinrtFactory("Windows.UI.Xaml.Automation.GridItemPatternIdentifiers")
+interface IGridItemPatternIdentifiers : IInspectable
+{
 }
 
 @uuid("217d2402-5e46-4d61-8794-b8ee8e774714")
@@ -327,6 +381,12 @@ extern(Windows):
 	HRESULT get_RowSpanProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
 
+@uuid("c902980f-96c5-450c-9044-7e52c24f9e94")
+@WinrtFactory("Windows.UI.Xaml.Automation.GridPatternIdentifiers")
+interface IGridPatternIdentifiers : IInspectable
+{
+}
+
 @uuid("7bc452f3-a181-4137-8de9-1f9b1a8320ed")
 @WinrtFactory("Windows.UI.Xaml.Automation.GridPatternIdentifiers")
 interface IGridPatternIdentifiersStatics : IInspectable
@@ -338,6 +398,12 @@ extern(Windows):
 	HRESULT get_RowCountProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
 
+@uuid("5d5cd3b8-1e12-488b-b0ea-5e6cb89816e1")
+@WinrtFactory("Windows.UI.Xaml.Automation.MultipleViewPatternIdentifiers")
+interface IMultipleViewPatternIdentifiers : IInspectable
+{
+}
+
 @uuid("a9cfa66f-6b84-4d71-9e48-d764d3bcda8e")
 @WinrtFactory("Windows.UI.Xaml.Automation.MultipleViewPatternIdentifiers")
 interface IMultipleViewPatternIdentifiersStatics : IInspectable
@@ -347,6 +413,12 @@ interface IMultipleViewPatternIdentifiersStatics : IInspectable
 extern(Windows):
 	HRESULT get_CurrentViewProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_SupportedViewsProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
+}
+
+@uuid("f8760f45-33c9-467d-bc9e-d1515263ace1")
+@WinrtFactory("Windows.UI.Xaml.Automation.RangeValuePatternIdentifiers")
+interface IRangeValuePatternIdentifiers : IInspectable
+{
 }
 
 @uuid("ce23450f-1c27-457f-b815-7a5e46863dbb")
@@ -362,6 +434,12 @@ extern(Windows):
 	HRESULT get_MinimumProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_SmallChangeProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_ValueProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
+}
+
+@uuid("366b1003-425c-4951-ae83-d521e73bc696")
+@WinrtFactory("Windows.UI.Xaml.Automation.ScrollPatternIdentifiers")
+interface IScrollPatternIdentifiers : IInspectable
+{
 }
 
 @uuid("4bf8e0a1-fb7f-4fa4-83b3-cfaeb103a685")
@@ -380,6 +458,12 @@ extern(Windows):
 	HRESULT get_VerticalViewSizeProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
 
+@uuid("2dafa41a-3ef8-4bb5-a02b-3ee1b2274740")
+@WinrtFactory("Windows.UI.Xaml.Automation.SelectionItemPatternIdentifiers")
+interface ISelectionItemPatternIdentifiers : IInspectable
+{
+}
+
 @uuid("a918d163-487e-4e3e-9f86-7b44acbe27ce")
 @WinrtFactory("Windows.UI.Xaml.Automation.SelectionItemPatternIdentifiers")
 interface ISelectionItemPatternIdentifiersStatics : IInspectable
@@ -389,6 +473,12 @@ interface ISelectionItemPatternIdentifiersStatics : IInspectable
 extern(Windows):
 	HRESULT get_IsSelectedProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_SelectionContainerProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
+}
+
+@uuid("4aa66fb0-e3f7-475f-b78d-f8a83bb730c4")
+@WinrtFactory("Windows.UI.Xaml.Automation.SelectionPatternIdentifiers")
+interface ISelectionPatternIdentifiers : IInspectable
+{
 }
 
 @uuid("93035b4c-6b50-40a1-b23f-5c78ddbd479a")
@@ -403,6 +493,12 @@ extern(Windows):
 	HRESULT get_SelectionProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
 
+@uuid("84347e19-ca4b-46a2-a794-c87928a3b1ab")
+@WinrtFactory("Windows.UI.Xaml.Automation.SpreadsheetItemPatternIdentifiers")
+interface ISpreadsheetItemPatternIdentifiers : IInspectable
+{
+}
+
 @uuid("43658779-5380-4f12-b468-b4f368ad4499")
 @WinrtFactory("Windows.UI.Xaml.Automation.SpreadsheetItemPatternIdentifiers")
 interface ISpreadsheetItemPatternIdentifiersStatics : IInspectable
@@ -411,6 +507,12 @@ interface ISpreadsheetItemPatternIdentifiersStatics : IInspectable
 
 extern(Windows):
 	HRESULT get_FormulaProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
+}
+
+@uuid("b0e4e201-e89d-436b-8287-4f7903466879")
+@WinrtFactory("Windows.UI.Xaml.Automation.StylesPatternIdentifiers")
+interface IStylesPatternIdentifiers : IInspectable
+{
 }
 
 @uuid("528a457a-bc3c-4d48-94af-1f68703ca296")
@@ -429,6 +531,12 @@ extern(Windows):
 	HRESULT get_StyleNameProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
 
+@uuid("c326e5ad-8077-4c64-98e4-e83bcf1b4389")
+@WinrtFactory("Windows.UI.Xaml.Automation.TableItemPatternIdentifiers")
+interface ITableItemPatternIdentifiers : IInspectable
+{
+}
+
 @uuid("24c4b923-e9a2-4de9-b2a4-a8b22d0be362")
 @WinrtFactory("Windows.UI.Xaml.Automation.TableItemPatternIdentifiers")
 interface ITableItemPatternIdentifiersStatics : IInspectable
@@ -438,6 +546,12 @@ interface ITableItemPatternIdentifiersStatics : IInspectable
 extern(Windows):
 	HRESULT get_ColumnHeaderItemsProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_RowHeaderItemsProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
+}
+
+@uuid("38d104fe-0d0c-412a-bf8d-51ede683baf5")
+@WinrtFactory("Windows.UI.Xaml.Automation.TablePatternIdentifiers")
+interface ITablePatternIdentifiers : IInspectable
+{
 }
 
 @uuid("75073d25-32c9-4903-aecf-dc3504cbd244")
@@ -452,6 +566,12 @@ extern(Windows):
 	HRESULT get_RowOrColumnMajorProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
 
+@uuid("7e191f6b-34d4-4ae7-83ac-29f88882d985")
+@WinrtFactory("Windows.UI.Xaml.Automation.TogglePatternIdentifiers")
+interface ITogglePatternIdentifiers : IInspectable
+{
+}
+
 @uuid("c7f75544-14a5-4f2f-92fc-760524de06ea")
 @WinrtFactory("Windows.UI.Xaml.Automation.TogglePatternIdentifiers")
 interface ITogglePatternIdentifiersStatics : IInspectable
@@ -460,6 +580,12 @@ interface ITogglePatternIdentifiersStatics : IInspectable
 
 extern(Windows):
 	HRESULT get_ToggleStateProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
+}
+
+@uuid("08aaa03d-dea7-402f-8097-9a2783d60e5d")
+@WinrtFactory("Windows.UI.Xaml.Automation.TransformPattern2Identifiers")
+interface ITransformPattern2Identifiers : IInspectable
+{
 }
 
 @uuid("78963644-11f0-467c-a72b-5dac41c1f6fe")
@@ -475,6 +601,12 @@ extern(Windows):
 	HRESULT get_MinZoomProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
 
+@uuid("e4115b8c-c3c8-4a37-b994-2709a7811665")
+@WinrtFactory("Windows.UI.Xaml.Automation.TransformPatternIdentifiers")
+interface ITransformPatternIdentifiers : IInspectable
+{
+}
+
 @uuid("4570edab-d705-40c4-a1dc-e9acfcef85f6")
 @WinrtFactory("Windows.UI.Xaml.Automation.TransformPatternIdentifiers")
 interface ITransformPatternIdentifiersStatics : IInspectable
@@ -487,6 +619,12 @@ extern(Windows):
 	HRESULT get_CanRotateProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
 
+@uuid("425bf64c-5333-4e41-b470-2bad14ecd085")
+@WinrtFactory("Windows.UI.Xaml.Automation.ValuePatternIdentifiers")
+interface IValuePatternIdentifiers : IInspectable
+{
+}
+
 @uuid("c247e8f7-adcc-440f-b123-33788a40525a")
 @WinrtFactory("Windows.UI.Xaml.Automation.ValuePatternIdentifiers")
 interface IValuePatternIdentifiersStatics : IInspectable
@@ -496,6 +634,12 @@ interface IValuePatternIdentifiersStatics : IInspectable
 extern(Windows):
 	HRESULT get_IsReadOnlyProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 	HRESULT get_ValueProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
+}
+
+@uuid("39f78bb4-7032-41e2-b79e-27b74a8628de")
+@WinrtFactory("Windows.UI.Xaml.Automation.WindowPatternIdentifiers")
+interface IWindowPatternIdentifiers : IInspectable
+{
 }
 
 @uuid("07d0ad06-6302-4d29-878b-19da03fc228d")
@@ -513,103 +657,103 @@ extern(Windows):
 	HRESULT get_WindowVisualStateProperty(Windows.UI.Xaml.Automation.AutomationProperty* return_value);
 }
 
-interface AnnotationPatternIdentifiers
+interface AnnotationPatternIdentifiers : Windows.UI.Xaml.Automation.IAnnotationPatternIdentifiers
 {
 }
 
-interface AutomationAnnotation : Windows.UI.Xaml.DependencyObject
+interface AutomationAnnotation : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Automation.IAutomationAnnotation
 {
 }
 
-interface AutomationElementIdentifiers
+interface AutomationElementIdentifiers : Windows.UI.Xaml.Automation.IAutomationElementIdentifiers
 {
 }
 
-interface AutomationProperties
+interface AutomationProperties : Windows.UI.Xaml.Automation.IAutomationProperties
 {
 }
 
-interface AutomationProperty
+interface AutomationProperty : Windows.UI.Xaml.Automation.IAutomationProperty
 {
 }
 
-interface DockPatternIdentifiers
+interface DockPatternIdentifiers : Windows.UI.Xaml.Automation.IDockPatternIdentifiers
 {
 }
 
-interface DragPatternIdentifiers
+interface DragPatternIdentifiers : Windows.UI.Xaml.Automation.IDragPatternIdentifiers
 {
 }
 
-interface DropTargetPatternIdentifiers
+interface DropTargetPatternIdentifiers : Windows.UI.Xaml.Automation.IDropTargetPatternIdentifiers
 {
 }
 
-interface ExpandCollapsePatternIdentifiers
+interface ExpandCollapsePatternIdentifiers : Windows.UI.Xaml.Automation.IExpandCollapsePatternIdentifiers
 {
 }
 
-interface GridItemPatternIdentifiers
+interface GridItemPatternIdentifiers : Windows.UI.Xaml.Automation.IGridItemPatternIdentifiers
 {
 }
 
-interface GridPatternIdentifiers
+interface GridPatternIdentifiers : Windows.UI.Xaml.Automation.IGridPatternIdentifiers
 {
 }
 
-interface MultipleViewPatternIdentifiers
+interface MultipleViewPatternIdentifiers : Windows.UI.Xaml.Automation.IMultipleViewPatternIdentifiers
 {
 }
 
-interface RangeValuePatternIdentifiers
+interface RangeValuePatternIdentifiers : Windows.UI.Xaml.Automation.IRangeValuePatternIdentifiers
 {
 }
 
-interface ScrollPatternIdentifiers
+interface ScrollPatternIdentifiers : Windows.UI.Xaml.Automation.IScrollPatternIdentifiers
 {
 }
 
-interface SelectionItemPatternIdentifiers
+interface SelectionItemPatternIdentifiers : Windows.UI.Xaml.Automation.ISelectionItemPatternIdentifiers
 {
 }
 
-interface SelectionPatternIdentifiers
+interface SelectionPatternIdentifiers : Windows.UI.Xaml.Automation.ISelectionPatternIdentifiers
 {
 }
 
-interface SpreadsheetItemPatternIdentifiers
+interface SpreadsheetItemPatternIdentifiers : Windows.UI.Xaml.Automation.ISpreadsheetItemPatternIdentifiers
 {
 }
 
-interface StylesPatternIdentifiers
+interface StylesPatternIdentifiers : Windows.UI.Xaml.Automation.IStylesPatternIdentifiers
 {
 }
 
-interface TableItemPatternIdentifiers
+interface TableItemPatternIdentifiers : Windows.UI.Xaml.Automation.ITableItemPatternIdentifiers
 {
 }
 
-interface TablePatternIdentifiers
+interface TablePatternIdentifiers : Windows.UI.Xaml.Automation.ITablePatternIdentifiers
 {
 }
 
-interface TogglePatternIdentifiers
+interface TogglePatternIdentifiers : Windows.UI.Xaml.Automation.ITogglePatternIdentifiers
 {
 }
 
-interface TransformPattern2Identifiers
+interface TransformPattern2Identifiers : Windows.UI.Xaml.Automation.ITransformPattern2Identifiers
 {
 }
 
-interface TransformPatternIdentifiers
+interface TransformPatternIdentifiers : Windows.UI.Xaml.Automation.ITransformPatternIdentifiers
 {
 }
 
-interface ValuePatternIdentifiers
+interface ValuePatternIdentifiers : Windows.UI.Xaml.Automation.IValuePatternIdentifiers
 {
 }
 
-interface WindowPatternIdentifiers
+interface WindowPatternIdentifiers : Windows.UI.Xaml.Automation.IWindowPatternIdentifiers
 {
 }
 

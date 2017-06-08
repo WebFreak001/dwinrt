@@ -118,35 +118,35 @@ extern(Windows):
 	HRESULT set_RemoteServiceId(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId value);
 }
 
-interface BluetoothLEAdvertisementPublisherTriggerDetails
+interface BluetoothLEAdvertisementPublisherTriggerDetails : Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementPublisherTriggerDetails
 {
 }
 
-interface BluetoothLEAdvertisementWatcherTriggerDetails
+interface BluetoothLEAdvertisementWatcherTriggerDetails : Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementWatcherTriggerDetails
 {
 }
 
-interface GattCharacteristicNotificationTriggerDetails
+interface GattCharacteristicNotificationTriggerDetails : Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails, Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails2
 {
 }
 
-interface GattServiceProviderConnection
+interface GattServiceProviderConnection : Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection
 {
 }
 
-interface GattServiceProviderTriggerDetails
+interface GattServiceProviderTriggerDetails : Windows.Devices.Bluetooth.Background.IGattServiceProviderTriggerDetails
 {
 }
 
-interface RfcommConnectionTriggerDetails
+interface RfcommConnectionTriggerDetails : Windows.Devices.Bluetooth.Background.IRfcommConnectionTriggerDetails
 {
 }
 
-interface RfcommInboundConnectionInformation
+interface RfcommInboundConnectionInformation : Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation
 {
 }
 
-interface RfcommOutboundConnectionInformation
+interface RfcommOutboundConnectionInformation : Windows.Devices.Bluetooth.Background.IRfcommOutboundConnectionInformation
 {
 }
 

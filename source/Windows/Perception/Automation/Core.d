@@ -11,3 +11,7 @@ interface ICorePerceptionAutomationStatics : IInspectable
 extern(Windows):
 	HRESULT abi_SetActivationFactoryProvider(Windows.Foundation.IGetActivationFactory provider);
 }
+
+interface CorePerceptionAutomation
+{
+}

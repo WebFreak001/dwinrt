@@ -68,7 +68,7 @@ extern(Windows):
 	HRESULT get_ShortTime(Windows.Globalization.DateTimeFormatting.DateTimeFormatter* return_value);
 }
 
-interface DateTimeFormatter
+interface DateTimeFormatter : Windows.Globalization.DateTimeFormatting.IDateTimeFormatter, Windows.Globalization.DateTimeFormatting.IDateTimeFormatter2
 {
 }
 

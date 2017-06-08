@@ -109,19 +109,23 @@ extern(Windows):
 	HRESULT get_ChannelId(HSTRING* return_value);
 }
 
-interface PushNotificationChannel
+interface PushNotificationChannel : Windows.Networking.PushNotifications.IPushNotificationChannel
 {
 }
 
-interface PushNotificationChannelManagerForUser
+interface PushNotificationChannelManager
 {
 }
 
-interface PushNotificationReceivedEventArgs
+interface PushNotificationChannelManagerForUser : Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser, Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser2
 {
 }
 
-interface RawNotification
+interface PushNotificationReceivedEventArgs : Windows.Networking.PushNotifications.IPushNotificationReceivedEventArgs
+{
+}
+
+interface RawNotification : Windows.Networking.PushNotifications.IRawNotification, Windows.Networking.PushNotifications.IRawNotification2
 {
 }
 

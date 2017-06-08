@@ -25,6 +25,12 @@ extern(Windows):
 	HRESULT abi_Create(Windows.Devices.Adc.Provider.IAdcControllerProvider adc, Windows.Devices.Pwm.Provider.IPwmControllerProvider pwm, Windows.Devices.Gpio.Provider.IGpioControllerProvider gpio, Windows.Devices.I2c.Provider.II2cControllerProvider i2c, Windows.Devices.Spi.Provider.ISpiControllerProvider spi, Windows.Devices.LowLevelDevicesAggregateProvider* return_value);
 }
 
+@uuid("2ec23dd4-179b-45de-9b39-3ae02527de52")
+@WinrtFactory("Windows.Devices.LowLevelDevicesController")
+interface ILowLevelDevicesController : IInspectable
+{
+}
+
 @uuid("093e926a-fccb-4394-a697-19de637c2db3")
 @WinrtFactory("Windows.Devices.LowLevelDevicesController")
 interface ILowLevelDevicesControllerStatics : IInspectable
@@ -36,10 +42,10 @@ extern(Windows):
 	HRESULT set_DefaultProvider(Windows.Devices.ILowLevelDevicesAggregateProvider value);
 }
 
-interface LowLevelDevicesAggregateProvider
+interface LowLevelDevicesAggregateProvider : Windows.Devices.ILowLevelDevicesAggregateProvider
 {
 }
 
-interface LowLevelDevicesController
+interface LowLevelDevicesController : Windows.Devices.ILowLevelDevicesController
 {
 }

@@ -601,6 +601,11 @@ extern(Windows):
 	HRESULT abi_IsSupportedPlaybackRateRange(double rate1, double rate2, bool* return_value);
 }
 
+@uuid("ef9dc2bc-9317-4696-b051-2bad643177b5")
+interface IMediaPlaybackSource : IInspectable
+{
+}
+
 @uuid("d405b37c-6f0e-4661-b8ee-d487ba9752d5")
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackSphericalVideoProjection")
 interface IMediaPlaybackSphericalVideoProjection : IInspectable
@@ -930,163 +935,167 @@ extern(Windows):
 	HRESULT get_NewPresentationMode(Windows.Media.Playback.TimedMetadataTrackPresentationMode* return_value);
 }
 
-interface CurrentMediaPlaybackItemChangedEventArgs
+interface BackgroundMediaPlayer
 {
 }
 
-interface MediaBreak
+interface CurrentMediaPlaybackItemChangedEventArgs : Windows.Media.Playback.ICurrentMediaPlaybackItemChangedEventArgs, Windows.Media.Playback.ICurrentMediaPlaybackItemChangedEventArgs2
 {
 }
 
-interface MediaBreakEndedEventArgs
+interface MediaBreak : Windows.Media.Playback.IMediaBreak
 {
 }
 
-interface MediaBreakManager
+interface MediaBreakEndedEventArgs : Windows.Media.Playback.IMediaBreakEndedEventArgs
 {
 }
 
-interface MediaBreakSchedule
+interface MediaBreakManager : Windows.Media.Playback.IMediaBreakManager
 {
 }
 
-interface MediaBreakSeekedOverEventArgs
+interface MediaBreakSchedule : Windows.Media.Playback.IMediaBreakSchedule
 {
 }
 
-interface MediaBreakSkippedEventArgs
+interface MediaBreakSeekedOverEventArgs : Windows.Media.Playback.IMediaBreakSeekedOverEventArgs
 {
 }
 
-interface MediaBreakStartedEventArgs
+interface MediaBreakSkippedEventArgs : Windows.Media.Playback.IMediaBreakSkippedEventArgs
 {
 }
 
-interface MediaItemDisplayProperties
+interface MediaBreakStartedEventArgs : Windows.Media.Playback.IMediaBreakStartedEventArgs
 {
 }
 
-interface MediaPlaybackAudioTrackList
+interface MediaItemDisplayProperties : Windows.Media.Playback.IMediaItemDisplayProperties
 {
 }
 
-interface MediaPlaybackCommandManager
+interface MediaPlaybackAudioTrackList : Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack), Windows.Foundation.Collections.IIterable!(Windows.Media.Core.AudioTrack), Windows.Media.Core.ISingleSelectMediaTrackList
 {
 }
 
-interface MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs
+interface MediaPlaybackCommandManager : Windows.Media.Playback.IMediaPlaybackCommandManager
 {
 }
 
-interface MediaPlaybackCommandManagerCommandBehavior
+interface MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs : Windows.Media.Playback.IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs
 {
 }
 
-interface MediaPlaybackCommandManagerFastForwardReceivedEventArgs
+interface MediaPlaybackCommandManagerCommandBehavior : Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior
 {
 }
 
-interface MediaPlaybackCommandManagerNextReceivedEventArgs
+interface MediaPlaybackCommandManagerFastForwardReceivedEventArgs : Windows.Media.Playback.IMediaPlaybackCommandManagerFastForwardReceivedEventArgs
 {
 }
 
-interface MediaPlaybackCommandManagerPauseReceivedEventArgs
+interface MediaPlaybackCommandManagerNextReceivedEventArgs : Windows.Media.Playback.IMediaPlaybackCommandManagerNextReceivedEventArgs
 {
 }
 
-interface MediaPlaybackCommandManagerPlayReceivedEventArgs
+interface MediaPlaybackCommandManagerPauseReceivedEventArgs : Windows.Media.Playback.IMediaPlaybackCommandManagerPauseReceivedEventArgs
 {
 }
 
-interface MediaPlaybackCommandManagerPositionReceivedEventArgs
+interface MediaPlaybackCommandManagerPlayReceivedEventArgs : Windows.Media.Playback.IMediaPlaybackCommandManagerPlayReceivedEventArgs
 {
 }
 
-interface MediaPlaybackCommandManagerPreviousReceivedEventArgs
+interface MediaPlaybackCommandManagerPositionReceivedEventArgs : Windows.Media.Playback.IMediaPlaybackCommandManagerPositionReceivedEventArgs
 {
 }
 
-interface MediaPlaybackCommandManagerRateReceivedEventArgs
+interface MediaPlaybackCommandManagerPreviousReceivedEventArgs : Windows.Media.Playback.IMediaPlaybackCommandManagerPreviousReceivedEventArgs
 {
 }
 
-interface MediaPlaybackCommandManagerRewindReceivedEventArgs
+interface MediaPlaybackCommandManagerRateReceivedEventArgs : Windows.Media.Playback.IMediaPlaybackCommandManagerRateReceivedEventArgs
 {
 }
 
-interface MediaPlaybackCommandManagerShuffleReceivedEventArgs
+interface MediaPlaybackCommandManagerRewindReceivedEventArgs : Windows.Media.Playback.IMediaPlaybackCommandManagerRewindReceivedEventArgs
 {
 }
 
-interface MediaPlaybackItem
+interface MediaPlaybackCommandManagerShuffleReceivedEventArgs : Windows.Media.Playback.IMediaPlaybackCommandManagerShuffleReceivedEventArgs
 {
 }
 
-interface MediaPlaybackItemError
+interface MediaPlaybackItem : Windows.Media.Playback.IMediaPlaybackItem, Windows.Media.Playback.IMediaPlaybackSource, Windows.Media.Playback.IMediaPlaybackItem2, Windows.Media.Playback.IMediaPlaybackItem3
 {
 }
 
-interface MediaPlaybackItemFailedEventArgs
+interface MediaPlaybackItemError : Windows.Media.Playback.IMediaPlaybackItemError
 {
 }
 
-interface MediaPlaybackItemOpenedEventArgs
+interface MediaPlaybackItemFailedEventArgs : Windows.Media.Playback.IMediaPlaybackItemFailedEventArgs
 {
 }
 
-interface MediaPlaybackList
+interface MediaPlaybackItemOpenedEventArgs : Windows.Media.Playback.IMediaPlaybackItemOpenedEventArgs
 {
 }
 
-interface MediaPlaybackSession
+interface MediaPlaybackList : Windows.Media.Playback.IMediaPlaybackList, Windows.Media.Playback.IMediaPlaybackSource, Windows.Media.Playback.IMediaPlaybackList2, Windows.Media.Playback.IMediaPlaybackList3
 {
 }
 
-interface MediaPlaybackSphericalVideoProjection
+interface MediaPlaybackSession : Windows.Media.Playback.IMediaPlaybackSession, Windows.Media.Playback.IMediaPlaybackSession2
 {
 }
 
-interface MediaPlaybackTimedMetadataTrackList
+interface MediaPlaybackSphericalVideoProjection : Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection
 {
 }
 
-interface MediaPlaybackVideoTrackList
+interface MediaPlaybackTimedMetadataTrackList : Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack), Windows.Foundation.Collections.IIterable!(Windows.Media.Core.TimedMetadataTrack), Windows.Media.Playback.IMediaPlaybackTimedMetadataTrackList
 {
 }
 
-interface MediaPlayer
+interface MediaPlaybackVideoTrackList : Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack), Windows.Foundation.Collections.IIterable!(Windows.Media.Core.VideoTrack), Windows.Media.Core.ISingleSelectMediaTrackList
 {
 }
 
-interface MediaPlayerDataReceivedEventArgs
+interface MediaPlayer : Windows.Media.Playback.IMediaPlayer, Windows.Media.Playback.IMediaPlayerSource, Windows.Media.Playback.IMediaPlayerSource2, Windows.Media.Playback.IMediaPlayer2, Windows.Media.Playback.IMediaPlayerEffects, Windows.Foundation.IClosable, Windows.Media.Playback.IMediaPlayer3, Windows.Media.Playback.IMediaPlayer4, Windows.Media.Playback.IMediaPlayerEffects2, Windows.Media.Playback.IMediaPlayer5
 {
 }
 
-interface MediaPlayerFailedEventArgs
+interface MediaPlayerDataReceivedEventArgs : Windows.Media.Playback.IMediaPlayerDataReceivedEventArgs
 {
 }
 
-interface MediaPlayerRateChangedEventArgs
+interface MediaPlayerFailedEventArgs : Windows.Media.Playback.IMediaPlayerFailedEventArgs
 {
 }
 
-interface MediaPlayerSurface
+interface MediaPlayerRateChangedEventArgs : Windows.Media.Playback.IMediaPlayerRateChangedEventArgs
 {
 }
 
-interface PlaybackMediaMarker
+interface MediaPlayerSurface : Windows.Media.Playback.IMediaPlayerSurface, Windows.Foundation.IClosable
 {
 }
 
-interface PlaybackMediaMarkerReachedEventArgs
+interface PlaybackMediaMarker : Windows.Media.Playback.IPlaybackMediaMarker
 {
 }
 
-interface PlaybackMediaMarkerSequence
+interface PlaybackMediaMarkerReachedEventArgs : Windows.Media.Playback.IPlaybackMediaMarkerReachedEventArgs
 {
 }
 
-interface TimedMetadataPresentationModeChangedEventArgs
+interface PlaybackMediaMarkerSequence : Windows.Media.Playback.IPlaybackMediaMarkerSequence, Windows.Foundation.Collections.IIterable!(Windows.Media.Playback.PlaybackMediaMarker)
+{
+}
+
+interface TimedMetadataPresentationModeChangedEventArgs : Windows.Media.Playback.ITimedMetadataPresentationModeChangedEventArgs
 {
 }
 

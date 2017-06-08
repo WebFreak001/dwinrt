@@ -36,11 +36,15 @@ extern(Windows):
 	HRESULT set_UploadQuotaSize(UINT32 value);
 }
 
-interface PlatformTelemetryRegistrationResult
+interface PlatformTelemetryClient
 {
 }
 
-interface PlatformTelemetryRegistrationSettings
+interface PlatformTelemetryRegistrationResult : Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationResult
+{
+}
+
+interface PlatformTelemetryRegistrationSettings : Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings
 {
 }
 

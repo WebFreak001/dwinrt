@@ -248,47 +248,47 @@ extern(Windows):
 	HRESULT get_LaneInfo(Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.Guidance.GuidanceLaneInfo)* return_value);
 }
 
-interface GuidanceAudioNotificationRequestedEventArgs
+interface GuidanceAudioNotificationRequestedEventArgs : Windows.Services.Maps.Guidance.IGuidanceAudioNotificationRequestedEventArgs
 {
 }
 
-interface GuidanceLaneInfo
+interface GuidanceLaneInfo : Windows.Services.Maps.Guidance.IGuidanceLaneInfo
 {
 }
 
-interface GuidanceManeuver
+interface GuidanceManeuver : Windows.Services.Maps.Guidance.IGuidanceManeuver
 {
 }
 
-interface GuidanceMapMatchedCoordinate
+interface GuidanceMapMatchedCoordinate : Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate
 {
 }
 
-interface GuidanceNavigator
+interface GuidanceNavigator : Windows.Services.Maps.Guidance.IGuidanceNavigator, Windows.Services.Maps.Guidance.IGuidanceNavigator2
 {
 }
 
-interface GuidanceReroutedEventArgs
+interface GuidanceReroutedEventArgs : Windows.Services.Maps.Guidance.IGuidanceReroutedEventArgs
 {
 }
 
-interface GuidanceRoadSegment
+interface GuidanceRoadSegment : Windows.Services.Maps.Guidance.IGuidanceRoadSegment
 {
 }
 
-interface GuidanceRoadSignpost
+interface GuidanceRoadSignpost : Windows.Services.Maps.Guidance.IGuidanceRoadSignpost
 {
 }
 
-interface GuidanceRoute
+interface GuidanceRoute : Windows.Services.Maps.Guidance.IGuidanceRoute
 {
 }
 
-interface GuidanceTelemetryCollector
+interface GuidanceTelemetryCollector : Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector
 {
 }
 
-interface GuidanceUpdatedEventArgs
+interface GuidanceUpdatedEventArgs : Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs
 {
 }
 

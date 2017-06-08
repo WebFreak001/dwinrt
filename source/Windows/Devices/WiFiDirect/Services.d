@@ -169,39 +169,39 @@ extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectService)* return_asyncOp);
 }
 
-interface WiFiDirectService
+interface WiFiDirectService : Windows.Devices.WiFiDirect.Services.IWiFiDirectService
 {
 }
 
-interface WiFiDirectServiceAdvertiser
+interface WiFiDirectServiceAdvertiser : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser
 {
 }
 
-interface WiFiDirectServiceAutoAcceptSessionConnectedEventArgs
+interface WiFiDirectServiceAutoAcceptSessionConnectedEventArgs : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs
 {
 }
 
-interface WiFiDirectServiceProvisioningInfo
+interface WiFiDirectServiceProvisioningInfo : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceProvisioningInfo
 {
 }
 
-interface WiFiDirectServiceRemotePortAddedEventArgs
+interface WiFiDirectServiceRemotePortAddedEventArgs : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceRemotePortAddedEventArgs
 {
 }
 
-interface WiFiDirectServiceSession
+interface WiFiDirectServiceSession : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession, Windows.Foundation.IClosable
 {
 }
 
-interface WiFiDirectServiceSessionDeferredEventArgs
+interface WiFiDirectServiceSessionDeferredEventArgs : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSessionDeferredEventArgs
 {
 }
 
-interface WiFiDirectServiceSessionRequest
+interface WiFiDirectServiceSessionRequest : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSessionRequest, Windows.Foundation.IClosable
 {
 }
 
-interface WiFiDirectServiceSessionRequestedEventArgs
+interface WiFiDirectServiceSessionRequestedEventArgs : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSessionRequestedEventArgs
 {
 }
 

@@ -71,15 +71,15 @@ extern(Windows):
 	HRESULT get_RemovalReason(Windows.Devices.Geolocation.Geofencing.GeofenceRemovalReason* return_value);
 }
 
-interface Geofence
+interface Geofence : Windows.Devices.Geolocation.Geofencing.IGeofence
 {
 }
 
-interface GeofenceMonitor
+interface GeofenceMonitor : Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor
 {
 }
 
-interface GeofenceStateChangeReport
+interface GeofenceStateChangeReport : Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport
 {
 }
 

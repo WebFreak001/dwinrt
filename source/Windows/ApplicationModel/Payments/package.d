@@ -361,67 +361,67 @@ extern(Windows):
 	HRESULT abi_CreateWithJsonDetails(HSTRING paymentMethodId, HSTRING jsonDetails, Windows.ApplicationModel.Payments.PaymentToken* return_result);
 }
 
-interface PaymentAddress
+interface PaymentAddress : Windows.ApplicationModel.Payments.IPaymentAddress
 {
 }
 
-interface PaymentCurrencyAmount
+interface PaymentCurrencyAmount : Windows.ApplicationModel.Payments.IPaymentCurrencyAmount
 {
 }
 
-interface PaymentDetails
+interface PaymentDetails : Windows.ApplicationModel.Payments.IPaymentDetails
 {
 }
 
-interface PaymentDetailsModifier
+interface PaymentDetailsModifier : Windows.ApplicationModel.Payments.IPaymentDetailsModifier
 {
 }
 
-interface PaymentItem
+interface PaymentItem : Windows.ApplicationModel.Payments.IPaymentItem
 {
 }
 
-interface PaymentMediator
+interface PaymentMediator : Windows.ApplicationModel.Payments.IPaymentMediator
 {
 }
 
-interface PaymentMerchantInfo
+interface PaymentMerchantInfo : Windows.ApplicationModel.Payments.IPaymentMerchantInfo
 {
 }
 
-interface PaymentMethodData
+interface PaymentMethodData : Windows.ApplicationModel.Payments.IPaymentMethodData
 {
 }
 
-interface PaymentOptions
+interface PaymentOptions : Windows.ApplicationModel.Payments.IPaymentOptions
 {
 }
 
-interface PaymentRequest
+interface PaymentRequest : Windows.ApplicationModel.Payments.IPaymentRequest
 {
 }
 
-interface PaymentRequestChangedArgs
+interface PaymentRequestChangedArgs : Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs
 {
 }
 
-interface PaymentRequestChangedResult
+interface PaymentRequestChangedResult : Windows.ApplicationModel.Payments.IPaymentRequestChangedResult
 {
 }
 
-interface PaymentRequestSubmitResult
+interface PaymentRequestSubmitResult : Windows.ApplicationModel.Payments.IPaymentRequestSubmitResult
 {
 }
 
-interface PaymentResponse
+interface PaymentResponse : Windows.ApplicationModel.Payments.IPaymentResponse
 {
 }
 
-interface PaymentShippingOption
+interface PaymentShippingOption : Windows.ApplicationModel.Payments.IPaymentShippingOption
 {
 }
 
-interface PaymentToken
+interface PaymentToken : Windows.ApplicationModel.Payments.IPaymentToken
 {
 }
 

@@ -23,6 +23,6 @@ extern(Windows):
 	HRESULT abi_CreateForView(Windows.ApplicationModel.Core.CoreApplicationView view, Windows.UI.Input.Core.RadialControllerIndependentInputSource* return_result);
 }
 
-interface RadialControllerIndependentInputSource
+interface RadialControllerIndependentInputSource : Windows.UI.Input.Core.IRadialControllerIndependentInputSource
 {
 }

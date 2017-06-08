@@ -23,6 +23,10 @@ extern(Windows):
 	HRESULT get_DisplayVersion(HSTRING* return_value);
 }
 
-interface InstalledClassicAppInfo
+interface ClassicAppManager
+{
+}
+
+interface InstalledClassicAppInfo : Windows.Management.Deployment.Preview.IInstalledClassicAppInfo
 {
 }

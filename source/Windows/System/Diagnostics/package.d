@@ -171,50 +171,50 @@ extern(Windows):
 	HRESULT get_CommittedSizeInBytes(UINT64* return_value);
 }
 
-interface ProcessCpuUsage
+interface ProcessCpuUsage : Windows.System.Diagnostics.IProcessCpuUsage
 {
 }
 
-interface ProcessCpuUsageReport
+interface ProcessCpuUsageReport : Windows.System.Diagnostics.IProcessCpuUsageReport
 {
 }
 
-interface ProcessDiagnosticInfo
+interface ProcessDiagnosticInfo : Windows.System.Diagnostics.IProcessDiagnosticInfo
 {
 }
 
-interface ProcessDiskUsage
+interface ProcessDiskUsage : Windows.System.Diagnostics.IProcessDiskUsage
 {
 }
 
-interface ProcessDiskUsageReport
+interface ProcessDiskUsageReport : Windows.System.Diagnostics.IProcessDiskUsageReport
 {
 }
 
-interface ProcessMemoryUsage
+interface ProcessMemoryUsage : Windows.System.Diagnostics.IProcessMemoryUsage
 {
 }
 
-interface ProcessMemoryUsageReport
+interface ProcessMemoryUsageReport : Windows.System.Diagnostics.IProcessMemoryUsageReport
 {
 }
 
-interface SystemCpuUsage
+interface SystemCpuUsage : Windows.System.Diagnostics.ISystemCpuUsage
 {
 }
 
-interface SystemCpuUsageReport
+interface SystemCpuUsageReport : Windows.System.Diagnostics.ISystemCpuUsageReport
 {
 }
 
-interface SystemDiagnosticInfo
+interface SystemDiagnosticInfo : Windows.System.Diagnostics.ISystemDiagnosticInfo
 {
 }
 
-interface SystemMemoryUsage
+interface SystemMemoryUsage : Windows.System.Diagnostics.ISystemMemoryUsage
 {
 }
 
-interface SystemMemoryUsageReport
+interface SystemMemoryUsageReport : Windows.System.Diagnostics.ISystemMemoryUsageReport
 {
 }

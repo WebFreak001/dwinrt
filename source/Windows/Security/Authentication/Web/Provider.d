@@ -261,47 +261,51 @@ extern(Windows):
 	HRESULT abi_Create(Windows.Security.Authentication.Web.Core.WebTokenResponse webTokenResponse, Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse* return_webProviderTokenResponse);
 }
 
-interface WebAccountClientView
+interface WebAccountClientView : Windows.Security.Authentication.Web.Provider.IWebAccountClientView
 {
 }
 
-interface WebAccountProviderAddAccountOperation
+interface WebAccountManager
 {
 }
 
-interface WebAccountProviderDeleteAccountOperation
+interface WebAccountProviderAddAccountOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderAddAccountOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation
 {
 }
 
-interface WebAccountProviderGetTokenSilentOperation
+interface WebAccountProviderDeleteAccountOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderDeleteAccountOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation
 {
 }
 
-interface WebAccountProviderManageAccountOperation
+interface WebAccountProviderGetTokenSilentOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderSilentReportOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation
 {
 }
 
-interface WebAccountProviderRequestTokenOperation
+interface WebAccountProviderManageAccountOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderManageAccountOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation
 {
 }
 
-interface WebAccountProviderRetrieveCookiesOperation
+interface WebAccountProviderRequestTokenOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderUIReportOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation
 {
 }
 
-interface WebAccountProviderSignOutAccountOperation
+interface WebAccountProviderRetrieveCookiesOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation
 {
 }
 
-interface WebAccountProviderTriggerDetails
+interface WebAccountProviderSignOutAccountOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderSignOutAccountOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation
 {
 }
 
-interface WebProviderTokenRequest
+interface WebAccountProviderTriggerDetails : Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenObjects, Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenObjects2
 {
 }
 
-interface WebProviderTokenResponse
+interface WebProviderTokenRequest : Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest, Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest2
+{
+}
+
+interface WebProviderTokenResponse : Windows.Security.Authentication.Web.Provider.IWebProviderTokenResponse
 {
 }
 

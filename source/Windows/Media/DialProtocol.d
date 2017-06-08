@@ -113,31 +113,31 @@ extern(Windows):
 	HRESULT get_Device(Windows.Media.DialProtocol.DialDevice* return_value);
 }
 
-interface DialApp
+interface DialApp : Windows.Media.DialProtocol.IDialApp
 {
 }
 
-interface DialAppStateDetails
+interface DialAppStateDetails : Windows.Media.DialProtocol.IDialAppStateDetails
 {
 }
 
-interface DialDevice
+interface DialDevice : Windows.Media.DialProtocol.IDialDevice, Windows.Media.DialProtocol.IDialDevice2
 {
 }
 
-interface DialDevicePicker
+interface DialDevicePicker : Windows.Media.DialProtocol.IDialDevicePicker
 {
 }
 
-interface DialDevicePickerFilter
+interface DialDevicePickerFilter : Windows.Media.DialProtocol.IDialDevicePickerFilter
 {
 }
 
-interface DialDeviceSelectedEventArgs
+interface DialDeviceSelectedEventArgs : Windows.Media.DialProtocol.IDialDeviceSelectedEventArgs
 {
 }
 
-interface DialDisconnectButtonClickedEventArgs
+interface DialDisconnectButtonClickedEventArgs : Windows.Media.DialProtocol.IDialDisconnectButtonClickedEventArgs
 {
 }
 

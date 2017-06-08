@@ -131,19 +131,19 @@ extern(Windows):
 	HRESULT get_SourcePageTypeProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
-interface NavigatingCancelEventArgs
+interface NavigatingCancelEventArgs : Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs, Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2
 {
 }
 
-interface NavigationEventArgs
+interface NavigationEventArgs : Windows.UI.Xaml.Navigation.INavigationEventArgs, Windows.UI.Xaml.Navigation.INavigationEventArgs2
 {
 }
 
-interface NavigationFailedEventArgs
+interface NavigationFailedEventArgs : Windows.UI.Xaml.Navigation.INavigationFailedEventArgs
 {
 }
 
-interface PageStackEntry : Windows.UI.Xaml.DependencyObject
+interface PageStackEntry : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Navigation.IPageStackEntry
 {
 }
 

@@ -171,27 +171,31 @@ extern(Windows):
 	HRESULT abi_CreateWithTokenAccountAndError(HSTRING token, Windows.Security.Credentials.WebAccount webAccount, Windows.Security.Authentication.Web.Core.WebProviderError error, Windows.Security.Authentication.Web.Core.WebTokenResponse* return_webTokenResponse);
 }
 
-interface WebAccountEventArgs
+interface WebAccountEventArgs : Windows.Security.Authentication.Web.Core.IWebAccountEventArgs
 {
 }
 
-interface WebAccountMonitor
+interface WebAccountMonitor : Windows.Security.Authentication.Web.Core.IWebAccountMonitor
 {
 }
 
-interface WebProviderError
+interface WebAuthenticationCoreManager
 {
 }
 
-interface WebTokenRequest
+interface WebProviderError : Windows.Security.Authentication.Web.Core.IWebProviderError
 {
 }
 
-interface WebTokenRequestResult
+interface WebTokenRequest : Windows.Security.Authentication.Web.Core.IWebTokenRequest, Windows.Security.Authentication.Web.Core.IWebTokenRequest2, Windows.Security.Authentication.Web.Core.IWebTokenRequest3
 {
 }
 
-interface WebTokenResponse
+interface WebTokenRequestResult : Windows.Security.Authentication.Web.Core.IWebTokenRequestResult
+{
+}
+
+interface WebTokenResponse : Windows.Security.Authentication.Web.Core.IWebTokenResponse
 {
 }
 

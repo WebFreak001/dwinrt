@@ -51,14 +51,14 @@ extern(Windows):
 	HRESULT remove_PropertiesUpdated(EventRegistrationToken eventCookie);
 }
 
-interface FileInformation
+interface FileInformation : Windows.Storage.BulkAccess.IStorageItemInformation, Windows.Storage.IStorageFile, Windows.Storage.Streams.IInputStreamReference, Windows.Storage.Streams.IRandomAccessStreamReference, Windows.Storage.IStorageItem, Windows.Storage.IStorageItemProperties, Windows.Storage.IStorageItem2, Windows.Storage.IStorageItemPropertiesWithProvider, Windows.Storage.IStorageFilePropertiesWithAvailability, Windows.Storage.IStorageFile2
 {
 }
 
-interface FileInformationFactory
+interface FileInformationFactory : Windows.Storage.BulkAccess.IFileInformationFactory
 {
 }
 
-interface FolderInformation
+interface FolderInformation : Windows.Storage.BulkAccess.IStorageItemInformation, Windows.Storage.IStorageFolder, Windows.Storage.IStorageItem, Windows.Storage.IStorageItemProperties, Windows.Storage.Search.IStorageFolderQueryOperations, Windows.Storage.IStorageItem2, Windows.Storage.IStorageFolder2, Windows.Storage.IStorageItemPropertiesWithProvider
 {
 }

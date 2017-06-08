@@ -361,6 +361,12 @@ extern(Windows):
 	HRESULT abi_CreateField_Custom(HSTRING name, HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category, Windows.ApplicationModel.Contacts.ContactField* return_field);
 }
 
+@uuid("59bdeb01-9e9a-475d-bfe5-a37b806d852c")
+@WinrtFactory("Windows.ApplicationModel.Contacts.ContactGroup")
+interface IContactGroup : IInspectable
+{
+}
+
 @uuid("275eb6d4-6a2e-4278-a914-e460d5f088f6")
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactInformation")
 interface IContactInformation : IInspectable
@@ -950,6 +956,12 @@ extern(Windows):
 	HRESULT abi_CreateContactListInAccountAsync(HSTRING displayName, HSTRING userDataAccountId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList)* return_value);
 }
 
+@uuid("abb298d6-878a-4f8b-a9ce-46bb7d1c84ce")
+@WinrtFactory("Windows.ApplicationModel.Contacts.ContactStoreNotificationTriggerDetails")
+interface IContactStoreNotificationTriggerDetails : IInspectable
+{
+}
+
 @uuid("9f130176-dc1b-4055-ad66-652f39d990e8")
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactWebsite")
 interface IContactWebsite : IInspectable
@@ -1045,179 +1057,191 @@ extern(Windows):
 	HRESULT abi_IsSupported(bool* return_result);
 }
 
-interface AggregateContactManager
+interface AggregateContactManager : Windows.ApplicationModel.Contacts.IAggregateContactManager, Windows.ApplicationModel.Contacts.IAggregateContactManager2
 {
 }
 
-interface Contact
+interface Contact : Windows.ApplicationModel.Contacts.IContact, Windows.ApplicationModel.Contacts.IContact2, Windows.ApplicationModel.Contacts.IContactName, Windows.ApplicationModel.Contacts.IContact3
 {
 }
 
-interface ContactAddress
+interface ContactAddress : Windows.ApplicationModel.Contacts.IContactAddress
 {
 }
 
-interface ContactAnnotation
+interface ContactAnnotation : Windows.ApplicationModel.Contacts.IContactAnnotation, Windows.ApplicationModel.Contacts.IContactAnnotation2
 {
 }
 
-interface ContactAnnotationList
+interface ContactAnnotationList : Windows.ApplicationModel.Contacts.IContactAnnotationList
 {
 }
 
-interface ContactAnnotationStore
+interface ContactAnnotationStore : Windows.ApplicationModel.Contacts.IContactAnnotationStore, Windows.ApplicationModel.Contacts.IContactAnnotationStore2
 {
 }
 
-interface ContactBatch
+interface ContactBatch : Windows.ApplicationModel.Contacts.IContactBatch
 {
 }
 
-interface ContactCardDelayedDataLoader
+interface ContactCardDelayedDataLoader : Windows.ApplicationModel.Contacts.IContactCardDelayedDataLoader, Windows.Foundation.IClosable
 {
 }
 
-interface ContactCardOptions
+interface ContactCardOptions : Windows.ApplicationModel.Contacts.IContactCardOptions, Windows.ApplicationModel.Contacts.IContactCardOptions2
 {
 }
 
-interface ContactChange
+interface ContactChange : Windows.ApplicationModel.Contacts.IContactChange
 {
 }
 
-interface ContactChangeReader
+interface ContactChangeReader : Windows.ApplicationModel.Contacts.IContactChangeReader
 {
 }
 
-interface ContactChangeTracker
+interface ContactChangeTracker : Windows.ApplicationModel.Contacts.IContactChangeTracker
 {
 }
 
-interface ContactChangedDeferral
+interface ContactChangedDeferral : Windows.ApplicationModel.Contacts.IContactChangedDeferral
 {
 }
 
-interface ContactChangedEventArgs
+interface ContactChangedEventArgs : Windows.ApplicationModel.Contacts.IContactChangedEventArgs
 {
 }
 
-interface ContactConnectedServiceAccount
+interface ContactConnectedServiceAccount : Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount
 {
 }
 
-interface ContactDate
+interface ContactDate : Windows.ApplicationModel.Contacts.IContactDate
 {
 }
 
-interface ContactEmail
+interface ContactEmail : Windows.ApplicationModel.Contacts.IContactEmail
 {
 }
 
-interface ContactField
+interface ContactField : Windows.ApplicationModel.Contacts.IContactField
 {
 }
 
-interface ContactFieldFactory
+interface ContactFieldFactory : Windows.ApplicationModel.Contacts.IContactFieldFactory, Windows.ApplicationModel.Contacts.IContactLocationFieldFactory, Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory
 {
 }
 
-interface ContactGroup
+interface ContactGroup : Windows.ApplicationModel.Contacts.IContactGroup
 {
 }
 
-interface ContactInformation
+interface ContactInformation : Windows.ApplicationModel.Contacts.IContactInformation
 {
 }
 
-interface ContactInstantMessageField
+interface ContactInstantMessageField : Windows.ApplicationModel.Contacts.IContactInstantMessageField, Windows.ApplicationModel.Contacts.IContactField
 {
 }
 
-interface ContactJobInfo
+interface ContactJobInfo : Windows.ApplicationModel.Contacts.IContactJobInfo
 {
 }
 
-interface ContactList
+interface ContactLaunchActionVerbs
 {
 }
 
-interface ContactListSyncConstraints
+interface ContactList : Windows.ApplicationModel.Contacts.IContactList, Windows.ApplicationModel.Contacts.IContactList2
 {
 }
 
-interface ContactListSyncManager
+interface ContactListSyncConstraints : Windows.ApplicationModel.Contacts.IContactListSyncConstraints
 {
 }
 
-interface ContactLocationField
+interface ContactListSyncManager : Windows.ApplicationModel.Contacts.IContactListSyncManager, Windows.ApplicationModel.Contacts.IContactListSyncManager2
 {
 }
 
-interface ContactManagerForUser
+interface ContactLocationField : Windows.ApplicationModel.Contacts.IContactLocationField, Windows.ApplicationModel.Contacts.IContactField
 {
 }
 
-interface ContactMatchReason
+interface ContactManager
 {
 }
 
-interface ContactPanel
+interface ContactManagerForUser : Windows.ApplicationModel.Contacts.IContactManagerForUser, Windows.ApplicationModel.Contacts.IContactManagerForUser2
 {
 }
 
-interface ContactPanelClosingEventArgs
+interface ContactMatchReason : Windows.ApplicationModel.Contacts.IContactMatchReason
 {
 }
 
-interface ContactPanelLaunchFullAppRequestedEventArgs
+interface ContactPanel : Windows.ApplicationModel.Contacts.IContactPanel
 {
 }
 
-interface ContactPhone
+interface ContactPanelClosingEventArgs : Windows.ApplicationModel.Contacts.IContactPanelClosingEventArgs
 {
 }
 
-interface ContactPicker
+interface ContactPanelLaunchFullAppRequestedEventArgs : Windows.ApplicationModel.Contacts.IContactPanelLaunchFullAppRequestedEventArgs
 {
 }
 
-interface ContactQueryOptions
+interface ContactPhone : Windows.ApplicationModel.Contacts.IContactPhone
 {
 }
 
-interface ContactQueryTextSearch
+interface ContactPicker : Windows.ApplicationModel.Contacts.IContactPicker, Windows.ApplicationModel.Contacts.IContactPicker2, Windows.ApplicationModel.Contacts.IContactPicker3
 {
 }
 
-interface ContactReader
+interface ContactQueryOptions : Windows.ApplicationModel.Contacts.IContactQueryOptions
 {
 }
 
-interface ContactSignificantOther
+interface ContactQueryTextSearch : Windows.ApplicationModel.Contacts.IContactQueryTextSearch
 {
 }
 
-interface ContactStore
+interface ContactReader : Windows.ApplicationModel.Contacts.IContactReader
 {
 }
 
-interface ContactStoreNotificationTriggerDetails
+interface ContactSignificantOther : Windows.ApplicationModel.Contacts.IContactSignificantOther, Windows.ApplicationModel.Contacts.IContactSignificantOther2
 {
 }
 
-interface ContactWebsite
+interface ContactStore : Windows.ApplicationModel.Contacts.IContactStore, Windows.ApplicationModel.Contacts.IContactStore2
 {
 }
 
-interface FullContactCardOptions
+interface ContactStoreNotificationTriggerDetails : Windows.ApplicationModel.Contacts.IContactStoreNotificationTriggerDetails
 {
 }
 
-interface PinnedContactIdsQueryResult
+interface ContactWebsite : Windows.ApplicationModel.Contacts.IContactWebsite, Windows.ApplicationModel.Contacts.IContactWebsite2
 {
 }
 
-interface PinnedContactManager
+interface FullContactCardOptions : Windows.ApplicationModel.Contacts.IFullContactCardOptions
+{
+}
+
+interface KnownContactField
+{
+}
+
+interface PinnedContactIdsQueryResult : Windows.ApplicationModel.Contacts.IPinnedContactIdsQueryResult
+{
+}
+
+interface PinnedContactManager : Windows.ApplicationModel.Contacts.IPinnedContactManager
 {
 }
 

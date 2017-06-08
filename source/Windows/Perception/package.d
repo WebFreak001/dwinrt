@@ -23,6 +23,10 @@ extern(Windows):
 	HRESULT abi_FromHistoricalTargetTime(Windows.Foundation.DateTime targetTime, Windows.Perception.PerceptionTimestamp* return_value);
 }
 
-interface PerceptionTimestamp
+interface PerceptionTimestamp : Windows.Perception.IPerceptionTimestamp
+{
+}
+
+interface PerceptionTimestampHelper
 {
 }

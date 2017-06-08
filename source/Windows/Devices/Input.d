@@ -122,27 +122,27 @@ extern(Windows):
 	HRESULT get_Contacts(UINT32* return_value);
 }
 
-interface KeyboardCapabilities
+interface KeyboardCapabilities : Windows.Devices.Input.IKeyboardCapabilities
 {
 }
 
-interface MouseCapabilities
+interface MouseCapabilities : Windows.Devices.Input.IMouseCapabilities
 {
 }
 
-interface MouseDevice
+interface MouseDevice : Windows.Devices.Input.IMouseDevice
 {
 }
 
-interface MouseEventArgs
+interface MouseEventArgs : Windows.Devices.Input.IMouseEventArgs
 {
 }
 
-interface PointerDevice
+interface PointerDevice : Windows.Devices.Input.IPointerDevice, Windows.Devices.Input.IPointerDevice2
 {
 }
 
-interface TouchCapabilities
+interface TouchCapabilities : Windows.Devices.Input.ITouchCapabilities
 {
 }
 

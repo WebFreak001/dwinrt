@@ -14,6 +14,12 @@ struct RepeatBehavior
 	Windows.UI.Xaml.Media.Animation.RepeatBehaviorType Type;
 }
 
+@uuid("adec852e-4424-4dab-99c1-3a04e36a3c48")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.AddDeleteThemeTransition")
+interface IAddDeleteThemeTransition : IInspectable
+{
+}
+
 @uuid("e47796e7-f805-4a8f-81c9-38e6472caa94")
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.BackEase")
 interface IBackEase : IInspectable
@@ -78,6 +84,12 @@ interface IBounceEaseStatics : IInspectable
 extern(Windows):
 	HRESULT get_BouncesProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_BouncinessProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("53a3bdb2-9177-4e6e-a043-5082d889ab1f")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.CircleEase")
+interface ICircleEase : IInspectable
+{
 }
 
 @uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea")
@@ -298,6 +310,36 @@ extern(Windows):
 	HRESULT abi_SetExitElementContainer(Windows.UI.Xaml.Controls.ListViewBase element, bool value);
 }
 
+@uuid("1b94fc76-dad7-4354-b1a2-7969fbf6a70d")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.CubicEase")
+interface ICubicEase : IInspectable
+{
+}
+
+@uuid("230c08f4-e062-4cb1-8e2a-14093d73ed8c")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.DiscreteColorKeyFrame")
+interface IDiscreteColorKeyFrame : IInspectable
+{
+}
+
+@uuid("f5f51f3a-ad11-49ce-8e1c-08fdf1447446")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.DiscreteDoubleKeyFrame")
+interface IDiscreteDoubleKeyFrame : IInspectable
+{
+}
+
+@uuid("c7dcde89-f12d-4a9c-8199-e7a9ece3a473")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame")
+interface IDiscreteObjectKeyFrame : IInspectable
+{
+}
+
+@uuid("e0a9070d-4c42-4a90-983a-75f5a83a2fbe")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.DiscretePointKeyFrame")
+interface IDiscretePointKeyFrame : IInspectable
+{
+}
+
 @uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f")
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DoubleAnimation")
 interface IDoubleAnimation : IInspectable
@@ -435,6 +477,12 @@ extern(Windows):
 	HRESULT get_DirectionProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("3b86201a-45d3-463b-939e-c8595f439bcc")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.DrillInNavigationTransitionInfo")
+interface IDrillInNavigationTransitionInfo : IInspectable
+{
+}
+
 @uuid("b090b824-f1d2-41b8-87ba-78034126594c")
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.DrillInThemeAnimation")
 interface IDrillInThemeAnimation : IInspectable
@@ -570,6 +618,12 @@ extern(Windows):
 	HRESULT abi_Ease(double normalizedTime, double* return_returnValue);
 }
 
+@uuid("1830fe6a-f01b-43e0-b61f-b452a1c66fd2")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.EasingFunctionBase")
+interface IEasingFunctionBaseFactory : IInspectable
+{
+}
+
 @uuid("2a5031aa-2c50-4a1d-bb04-d75e07b71548")
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.EasingFunctionBase")
 interface IEasingFunctionBaseStatics : IInspectable
@@ -644,6 +698,12 @@ interface IElasticEaseStatics : IInspectable
 extern(Windows):
 	HRESULT get_OscillationsProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 	HRESULT get_SpringinessProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("720a256b-1c8a-41ee-82ec-8a87c0cf47da")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.EntranceNavigationTransitionInfo")
+interface IEntranceNavigationTransitionInfo : IInspectable
+{
 }
 
 @uuid("f948c27a-40c9-469f-8f33-bf45c8811f21")
@@ -761,6 +821,12 @@ extern(Windows):
 	HRESULT set_ControlPoint2(Windows.Foundation.Point value);
 }
 
+@uuid("3643e480-4823-466a-abe5-5e79c8ed77ed")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.KeyTimeHelper")
+interface IKeyTimeHelper : IInspectable
+{
+}
+
 @uuid("7fa2612c-22a9-45e9-9af7-c7416efff7a5")
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.KeyTimeHelper")
 interface IKeyTimeHelperStatics : IInspectable
@@ -769,6 +835,24 @@ interface IKeyTimeHelperStatics : IInspectable
 
 extern(Windows):
 	HRESULT abi_FromTimeSpan(Windows.Foundation.TimeSpan timeSpan, Windows.UI.Xaml.Media.Animation.KeyTime* return_returnValue);
+}
+
+@uuid("66fdb6ef-ac81-4611-b1d2-61f545983f03")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.LinearColorKeyFrame")
+interface ILinearColorKeyFrame : IInspectable
+{
+}
+
+@uuid("8efdf265-9a7b-431d-8f0c-14c56b5ea4d9")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.LinearDoubleKeyFrame")
+interface ILinearDoubleKeyFrame : IInspectable
+{
+}
+
+@uuid("e7c9b8ef-af24-49ee-84f1-a86600a4e319")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.LinearPointKeyFrame")
+interface ILinearPointKeyFrame : IInspectable
+{
 }
 
 @uuid("8833848c-4eb7-41f2-8799-9eef0a213b73")
@@ -790,6 +874,12 @@ interface INavigationThemeTransitionStatics : IInspectable
 
 extern(Windows):
 	HRESULT get_DefaultNavigationTransitionInfoProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("a9b05091-ae4a-4372-8625-21b7a8b98ca4")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo")
+interface INavigationTransitionInfo : IInspectable
+{
 }
 
 @uuid("edf4f8d5-af63-4fab-9d4a-87927f82dd6b")
@@ -1114,6 +1204,36 @@ extern(Windows):
 	HRESULT get_PowerProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("e1510e91-ef6d-44f0-803d-68d16de0ddfc")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.QuadraticEase")
+interface IQuadraticEase : IInspectable
+{
+}
+
+@uuid("e8698814-fe42-4a05-b5b8-081f41157815")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.QuarticEase")
+interface IQuarticEase : IInspectable
+{
+}
+
+@uuid("92ee793b-3c49-4108-aa11-ab786603da21")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.QuinticEase")
+interface IQuinticEase : IInspectable
+{
+}
+
+@uuid("f2065c6c-d052-4ad1-8362-b71b36df7497")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.ReorderThemeTransition")
+interface IReorderThemeTransition : IInspectable
+{
+}
+
+@uuid("6863ab72-4997-47f9-87ad-37efb75993ea")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.RepeatBehaviorHelper")
+interface IRepeatBehaviorHelper : IInspectable
+{
+}
+
 @uuid("7a795033-79f3-4dd9-b267-9cf50fb51f84")
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.RepeatBehaviorHelper")
 interface IRepeatBehaviorHelperStatics : IInspectable
@@ -1156,6 +1276,12 @@ extern(Windows):
 	HRESULT get_FromVerticalOffsetProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("88329b82-98f3-455a-ac53-2e7083b6e22c")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.RepositionThemeTransition")
+interface IRepositionThemeTransition : IInspectable
+{
+}
+
 @uuid("cebfe864-dbea-4404-8e6e-de55ada75239")
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.RepositionThemeTransition")
 interface IRepositionThemeTransition2 : IInspectable
@@ -1175,6 +1301,18 @@ interface IRepositionThemeTransitionStatics2 : IInspectable
 
 extern(Windows):
 	HRESULT get_IsStaggeringEnabledProperty(Windows.UI.Xaml.DependencyProperty* return_value);
+}
+
+@uuid("a9382962-230b-49da-9e0d-664987892343")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.SineEase")
+interface ISineEase : IInspectable
+{
+}
+
+@uuid("d6ac9d77-2e03-405f-80ed-e62beef3668f")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo")
+interface ISlideNavigationTransitionInfo : IInspectable
+{
 }
 
 @uuid("1a4a5941-1fe0-473a-8efe-4316d8c86229")
@@ -1377,6 +1515,12 @@ extern(Windows):
 	HRESULT abi_SetTarget(Windows.UI.Xaml.Media.Animation.Timeline timeline, Windows.UI.Xaml.DependencyObject target);
 }
 
+@uuid("244d7b0c-b1b7-4871-9d3e-d56203a3a5b4")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.SuppressNavigationTransitionInfo")
+interface ISuppressNavigationTransitionInfo : IInspectable
+{
+}
+
 @uuid("a38a4214-0bca-4d2d-95f7-ceba57fbaf60")
 @WinrtFactory("Windows.UI.Xaml.Media.Animation.SwipeBackThemeAnimation")
 interface ISwipeBackThemeAnimation : IInspectable
@@ -1481,335 +1625,347 @@ extern(Windows):
 	HRESULT get_RepeatBehaviorProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
-interface AddDeleteThemeTransition : Windows.UI.Xaml.Media.Animation.Transition
+@uuid("3c677c7c-01d0-4dce-b333-976f93312b08")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.Transition")
+interface ITransition : IInspectable
 {
 }
 
-interface BackEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase
+@uuid("dc9ab2cf-3bc9-44aa-b3fc-883a83233a2c")
+@WinrtFactory("Windows.UI.Xaml.Media.Animation.Transition")
+interface ITransitionFactory : IInspectable
 {
 }
 
-interface BeginStoryboard : Windows.UI.Xaml.TriggerAction
+interface AddDeleteThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IAddDeleteThemeTransition
 {
 }
 
-interface BounceEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase
+interface BackEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IBackEase
 {
 }
 
-interface CircleEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase
+interface BeginStoryboard : Windows.UI.Xaml.TriggerAction, Windows.UI.Xaml.Media.Animation.IBeginStoryboard
 {
 }
 
-interface ColorAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface BounceEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IBounceEase
 {
 }
 
-interface ColorAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline
+interface CircleEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.ICircleEase
 {
 }
 
-interface ColorKeyFrame : Windows.UI.Xaml.DependencyObject
+interface ColorAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IColorAnimation
 {
 }
 
-interface ColorKeyFrameCollection
+interface ColorAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames
 {
 }
 
-interface CommonNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo
+interface ColorKeyFrame : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IColorKeyFrame
 {
 }
 
-interface ConnectedAnimation
+interface ColorKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)
 {
 }
 
-interface ConnectedAnimationService
+interface CommonNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfo
 {
 }
 
-interface ContentThemeTransition : Windows.UI.Xaml.Media.Animation.Transition
+interface ConnectedAnimation : Windows.UI.Xaml.Media.Animation.IConnectedAnimation, Windows.UI.Xaml.Media.Animation.IConnectedAnimation2
 {
 }
 
-interface ContinuumNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo
+interface ConnectedAnimationService : Windows.UI.Xaml.Media.Animation.IConnectedAnimationService
 {
 }
 
-interface CubicEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase
+interface ContentThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IContentThemeTransition
 {
 }
 
-interface DiscreteColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame
+interface ContinuumNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfo
 {
 }
 
-interface DiscreteDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame
+interface CubicEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.ICubicEase
 {
 }
 
-interface DiscreteObjectKeyFrame : Windows.UI.Xaml.Media.Animation.ObjectKeyFrame
+interface DiscreteColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame, Windows.UI.Xaml.Media.Animation.IDiscreteColorKeyFrame
 {
 }
 
-interface DiscretePointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame
+interface DiscreteDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.IDiscreteDoubleKeyFrame
 {
 }
 
-interface DoubleAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface DiscreteObjectKeyFrame : Windows.UI.Xaml.Media.Animation.ObjectKeyFrame, Windows.UI.Xaml.Media.Animation.IDiscreteObjectKeyFrame
 {
 }
 
-interface DoubleAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline
+interface DiscretePointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame, Windows.UI.Xaml.Media.Animation.IDiscretePointKeyFrame
 {
 }
 
-interface DoubleKeyFrame : Windows.UI.Xaml.DependencyObject
+interface DoubleAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDoubleAnimation
 {
 }
 
-interface DoubleKeyFrameCollection
+interface DoubleAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames
 {
 }
 
-interface DragItemThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface DoubleKeyFrame : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame
 {
 }
 
-interface DragOverThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface DoubleKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)
 {
 }
 
-interface DrillInNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo
+interface DragItemThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation
 {
 }
 
-interface DrillInThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface DragOverThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation
 {
 }
 
-interface DrillOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface DrillInNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.IDrillInNavigationTransitionInfo
 {
 }
 
-interface DropTargetItemThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface DrillInThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation
 {
 }
 
-interface EasingColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame
+interface DrillOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation
 {
 }
 
-interface EasingDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame
+interface DropTargetItemThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation
 {
 }
 
-interface EasingFunctionBase : Windows.UI.Xaml.DependencyObject
+interface EasingColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame, Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrame
 {
 }
 
-interface EasingPointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame
+interface EasingDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrame
 {
 }
 
-interface EdgeUIThemeTransition : Windows.UI.Xaml.Media.Animation.Transition
+interface EasingFunctionBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IEasingFunctionBase
 {
 }
 
-interface ElasticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase
+interface EasingPointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame, Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrame
 {
 }
 
-interface EntranceNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo
+interface EdgeUIThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransition
 {
 }
 
-interface EntranceThemeTransition : Windows.UI.Xaml.Media.Animation.Transition
+interface ElasticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IElasticEase
 {
 }
 
-interface ExponentialEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase
+interface EntranceNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfo
 {
 }
 
-interface FadeInThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface EntranceThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition
 {
 }
 
-interface FadeOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface ExponentialEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IExponentialEase
 {
 }
 
-interface KeySpline : Windows.UI.Xaml.DependencyObject
+interface FadeInThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimation
 {
 }
 
-interface KeyTimeHelper
+interface FadeOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation
 {
 }
 
-interface LinearColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame
+interface KeySpline : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IKeySpline
 {
 }
 
-interface LinearDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame
+interface KeyTimeHelper : Windows.UI.Xaml.Media.Animation.IKeyTimeHelper
 {
 }
 
-interface LinearPointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame
+interface LinearColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame, Windows.UI.Xaml.Media.Animation.ILinearColorKeyFrame
 {
 }
 
-interface NavigationThemeTransition : Windows.UI.Xaml.Media.Animation.Transition
+interface LinearDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.ILinearDoubleKeyFrame
 {
 }
 
-interface NavigationTransitionInfo : Windows.UI.Xaml.DependencyObject
+interface LinearPointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame, Windows.UI.Xaml.Media.Animation.ILinearPointKeyFrame
 {
 }
 
-interface ObjectAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline
+interface NavigationThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.INavigationThemeTransition
 {
 }
 
-interface ObjectKeyFrame : Windows.UI.Xaml.DependencyObject
+interface NavigationTransitionInfo : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.INavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides
 {
 }
 
-interface ObjectKeyFrameCollection
+interface ObjectAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFrames
 {
 }
 
-interface PaneThemeTransition : Windows.UI.Xaml.Media.Animation.Transition
+interface ObjectKeyFrame : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IObjectKeyFrame
 {
 }
 
-interface PointAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface ObjectKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)
 {
 }
 
-interface PointAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline
+interface PaneThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IPaneThemeTransition
 {
 }
 
-interface PointKeyFrame : Windows.UI.Xaml.DependencyObject
+interface PointAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointAnimation
 {
 }
 
-interface PointKeyFrameCollection
+interface PointAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames
 {
 }
 
-interface PointerDownThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface PointKeyFrame : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IPointKeyFrame
 {
 }
 
-interface PointerUpThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface PointKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)
 {
 }
 
-interface PopInThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface PointerDownThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation
 {
 }
 
-interface PopOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface PointerUpThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation
 {
 }
 
-interface PopupThemeTransition : Windows.UI.Xaml.Media.Animation.Transition
+interface PopInThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation
 {
 }
 
-interface PowerEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase
+interface PopOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation
 {
 }
 
-interface QuadraticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase
+interface PopupThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IPopupThemeTransition
 {
 }
 
-interface QuarticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase
+interface PowerEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IPowerEase
 {
 }
 
-interface QuinticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase
+interface QuadraticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IQuadraticEase
 {
 }
 
-interface ReorderThemeTransition : Windows.UI.Xaml.Media.Animation.Transition
+interface QuarticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IQuarticEase
 {
 }
 
-interface RepeatBehaviorHelper
+interface QuinticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IQuinticEase
 {
 }
 
-interface RepositionThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface ReorderThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IReorderThemeTransition
 {
 }
 
-interface RepositionThemeTransition : Windows.UI.Xaml.Media.Animation.Transition
+interface RepeatBehaviorHelper : Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelper
 {
 }
 
-interface SineEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase
+interface RepositionThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation
 {
 }
 
-interface SlideNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo
+interface RepositionThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition, Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition2
 {
 }
 
-interface SplineColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame
+interface SineEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.ISineEase
 {
 }
 
-interface SplineDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame
+interface SlideNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfo
 {
 }
 
-interface SplinePointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame
+interface SplineColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame, Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrame
 {
 }
 
-interface SplitCloseThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface SplineDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrame
 {
 }
 
-interface SplitOpenThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface SplinePointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame, Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrame
 {
 }
 
-interface Storyboard : Windows.UI.Xaml.Media.Animation.Timeline
+interface SplitCloseThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation
 {
 }
 
-interface SuppressNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo
+interface SplitOpenThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation
 {
 }
 
-interface SwipeBackThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface Storyboard : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IStoryboard
 {
 }
 
-interface SwipeHintThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline
+interface SuppressNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.ISuppressNavigationTransitionInfo
 {
 }
 
-interface Timeline : Windows.UI.Xaml.DependencyObject
+interface SwipeBackThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation
 {
 }
 
-interface TimelineCollection
+interface SwipeHintThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation
 {
 }
 
-interface Transition : Windows.UI.Xaml.DependencyObject
+interface Timeline : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.ITimeline
 {
 }
 
-interface TransitionCollection
+interface TimelineCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Timeline)
+{
+}
+
+interface Transition : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.ITransition
+{
+}
+
+interface TransitionCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Transition)
 {
 }
 

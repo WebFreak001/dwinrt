@@ -118,31 +118,35 @@ extern(Windows):
 	HRESULT get_IsRemoteSystemConnection(bool* return_value);
 }
 
-interface AppServiceClosedEventArgs
+interface AppServiceCatalog
 {
 }
 
-interface AppServiceConnection
+interface AppServiceClosedEventArgs : Windows.ApplicationModel.AppService.IAppServiceClosedEventArgs
 {
 }
 
-interface AppServiceDeferral
+interface AppServiceConnection : Windows.ApplicationModel.AppService.IAppServiceConnection, Windows.Foundation.IClosable, Windows.ApplicationModel.AppService.IAppServiceConnection2
 {
 }
 
-interface AppServiceRequest
+interface AppServiceDeferral : Windows.ApplicationModel.AppService.IAppServiceDeferral
 {
 }
 
-interface AppServiceRequestReceivedEventArgs
+interface AppServiceRequest : Windows.ApplicationModel.AppService.IAppServiceRequest
 {
 }
 
-interface AppServiceResponse
+interface AppServiceRequestReceivedEventArgs : Windows.ApplicationModel.AppService.IAppServiceRequestReceivedEventArgs
 {
 }
 
-interface AppServiceTriggerDetails
+interface AppServiceResponse : Windows.ApplicationModel.AppService.IAppServiceResponse
+{
+}
+
+interface AppServiceTriggerDetails : Windows.ApplicationModel.AppService.IAppServiceTriggerDetails, Windows.ApplicationModel.AppService.IAppServiceTriggerDetails2
 {
 }
 

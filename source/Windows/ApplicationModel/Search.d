@@ -265,58 +265,58 @@ extern(Windows):
 	HRESULT abi_Complete();
 }
 
-interface LocalContentSuggestionSettings
+interface LocalContentSuggestionSettings : Windows.ApplicationModel.Search.ILocalContentSuggestionSettings
 {
 }
 
-interface SearchPane
+interface SearchPane : Windows.ApplicationModel.Search.ISearchPane
 {
 }
 
-interface SearchPaneQueryChangedEventArgs
+interface SearchPaneQueryChangedEventArgs : Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs
 {
 }
 
-interface SearchPaneQueryLinguisticDetails
+interface SearchPaneQueryLinguisticDetails : Windows.ApplicationModel.Search.ISearchPaneQueryLinguisticDetails
 {
 }
 
-interface SearchPaneQuerySubmittedEventArgs
+interface SearchPaneQuerySubmittedEventArgs : Windows.ApplicationModel.Search.ISearchPaneQuerySubmittedEventArgs, Windows.ApplicationModel.Search.ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails
 {
 }
 
-interface SearchPaneResultSuggestionChosenEventArgs
+interface SearchPaneResultSuggestionChosenEventArgs : Windows.ApplicationModel.Search.ISearchPaneResultSuggestionChosenEventArgs
 {
 }
 
-interface SearchPaneSuggestionsRequest
+interface SearchPaneSuggestionsRequest : Windows.ApplicationModel.Search.ISearchPaneSuggestionsRequest
 {
 }
 
-interface SearchPaneSuggestionsRequestDeferral
+interface SearchPaneSuggestionsRequestDeferral : Windows.ApplicationModel.Search.ISearchPaneSuggestionsRequestDeferral
 {
 }
 
-interface SearchPaneSuggestionsRequestedEventArgs
+interface SearchPaneSuggestionsRequestedEventArgs : Windows.ApplicationModel.Search.ISearchPaneSuggestionsRequestedEventArgs, Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs
 {
 }
 
-interface SearchPaneVisibilityChangedEventArgs
+interface SearchPaneVisibilityChangedEventArgs : Windows.ApplicationModel.Search.ISearchPaneVisibilityChangedEventArgs
 {
 }
 
-interface SearchQueryLinguisticDetails
+interface SearchQueryLinguisticDetails : Windows.ApplicationModel.Search.ISearchQueryLinguisticDetails
 {
 }
 
-interface SearchSuggestionCollection
+interface SearchSuggestionCollection : Windows.ApplicationModel.Search.ISearchSuggestionCollection
 {
 }
 
-interface SearchSuggestionsRequest
+interface SearchSuggestionsRequest : Windows.ApplicationModel.Search.ISearchSuggestionsRequest
 {
 }
 
-interface SearchSuggestionsRequestDeferral
+interface SearchSuggestionsRequestDeferral : Windows.ApplicationModel.Search.ISearchSuggestionsRequestDeferral
 {
 }

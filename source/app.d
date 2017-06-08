@@ -7,7 +7,6 @@ import dwinrt;
 
 import Windows.ApplicationModel.Core;
 import Windows.UI.Core;
-import Windows.UI.Xaml;
 
 extern (Windows) int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		LPSTR lpCmdLine, int nCmdShow)
@@ -50,13 +49,13 @@ extern (Windows):
 		return S_OK;
 	}
 
-	override HRESULT abi_Initialize(ICoreApplicationView v)
+	override HRESULT abi_Initialize(CoreApplicationView v)
 	{
 		Debug.WriteLine("Initialize %s", v);
 		return S_OK;
 	}
 
-	override HRESULT abi_SetWindow(ICoreWindow window)
+	override HRESULT abi_SetWindow(CoreWindow window)
 	{
 		Debug.WriteLine("SetWindow");
 
@@ -72,7 +71,7 @@ extern (Windows):
 	override HRESULT abi_Run()
 	{
 		Debug.WriteLine("Run");
-		ICoreWindow window;
+		CoreWindow window;
 		auto fac = dwinrt.factory!ICoreWindowStatic;
 		Debug.WriteLine("Factory %s", fac);
 		assert(fac.abi_GetForCurrentThread(&window) == S_OK);
@@ -81,9 +80,9 @@ extern (Windows):
 		assert(window.abi_Activate() == S_OK);
 		Debug.WriteLine("Window Activated");
 
-		ICoreDispatcher dispatcher;
+		CoreDispatcher dispatcher;
 		assert(window.get_Dispatcher(&dispatcher) == S_OK);
-		assert(dispatcher.abi_ProcessEvents(CoreProcessEventOptions.ProcessUntilQuit) == S_OK);
+		assert(dispatcher.abi_ProcessEvents(CoreProcessEventsOption.ProcessUntilQuit) == S_OK);
 
 		return S_OK;
 	}

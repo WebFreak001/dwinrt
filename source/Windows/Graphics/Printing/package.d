@@ -17,6 +17,11 @@ extern(Windows):
 	HRESULT abi_Invoke(Windows.Graphics.Printing.PrintTaskSourceRequestedArgs args);
 }
 
+@uuid("dedc0c30-f1eb-47df-aae6-ed5427511f01")
+interface IPrintDocumentSource : IInspectable
+{
+}
+
 @uuid("ff2a9694-8c99-44fd-ae4a-19d9aa9a0f0a")
 @WinrtFactory("Windows.Graphics.Printing.PrintManager")
 interface IPrintManager : IInspectable
@@ -280,47 +285,51 @@ extern(Windows):
 	HRESULT get_Bordering(HSTRING* return_value);
 }
 
-interface PrintManager
+interface PrintManager : Windows.Graphics.Printing.IPrintManager
 {
 }
 
-interface PrintPageInfo
+interface PrintPageInfo : Windows.Graphics.Printing.IPrintPageInfo
 {
 }
 
-interface PrintTask
+interface PrintTask : Windows.Graphics.Printing.IPrintTask, Windows.Graphics.Printing.IPrintTaskTargetDeviceSupport, Windows.Graphics.Printing.IPrintTask2
 {
 }
 
-interface PrintTaskCompletedEventArgs
+interface PrintTaskCompletedEventArgs : Windows.Graphics.Printing.IPrintTaskCompletedEventArgs
 {
 }
 
-interface PrintTaskOptions
+interface PrintTaskOptions : Windows.Graphics.Printing.IPrintTaskOptionsCore, Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties, Windows.Graphics.Printing.IPrintTaskOptionsCoreUIConfiguration, Windows.Graphics.Printing.IPrintTaskOptions
 {
 }
 
-interface PrintTaskProgressingEventArgs
+interface PrintTaskProgressingEventArgs : Windows.Graphics.Printing.IPrintTaskProgressingEventArgs
 {
 }
 
-interface PrintTaskRequest
+interface PrintTaskRequest : Windows.Graphics.Printing.IPrintTaskRequest
 {
 }
 
-interface PrintTaskRequestedDeferral
+interface PrintTaskRequestedDeferral : Windows.Graphics.Printing.IPrintTaskRequestedDeferral
 {
 }
 
-interface PrintTaskRequestedEventArgs
+interface PrintTaskRequestedEventArgs : Windows.Graphics.Printing.IPrintTaskRequestedEventArgs
 {
 }
 
-interface PrintTaskSourceRequestedArgs
+interface PrintTaskSourceRequestedArgs : Windows.Graphics.Printing.IPrintTaskSourceRequestedArgs
 {
 }
 
-interface PrintTaskSourceRequestedDeferral
+interface PrintTaskSourceRequestedDeferral : Windows.Graphics.Printing.IPrintTaskSourceRequestedDeferral
+{
+}
+
+interface StandardPrintTaskOptions
 {
 }
 

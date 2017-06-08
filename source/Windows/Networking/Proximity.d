@@ -198,27 +198,31 @@ extern(Windows):
 	HRESULT get_Socket(Windows.Networking.Sockets.StreamSocket* return_value);
 }
 
-interface ConnectionRequestedEventArgs
+interface ConnectionRequestedEventArgs : Windows.Networking.Proximity.IConnectionRequestedEventArgs
 {
 }
 
-interface PeerInformation
+interface PeerFinder
 {
 }
 
-interface PeerWatcher
+interface PeerInformation : Windows.Networking.Proximity.IPeerInformation, Windows.Networking.Proximity.IPeerInformation3, Windows.Networking.Proximity.IPeerInformationWithHostAndService
 {
 }
 
-interface ProximityDevice
+interface PeerWatcher : Windows.Networking.Proximity.IPeerWatcher
 {
 }
 
-interface ProximityMessage
+interface ProximityDevice : Windows.Networking.Proximity.IProximityDevice
 {
 }
 
-interface TriggeredConnectionStateChangedEventArgs
+interface ProximityMessage : Windows.Networking.Proximity.IProximityMessage
+{
+}
+
+interface TriggeredConnectionStateChangedEventArgs : Windows.Networking.Proximity.ITriggeredConnectionStateChangedEventArgs
 {
 }
 

@@ -152,6 +152,12 @@ extern(Windows):
 	HRESULT set_ProtocolCode(Windows.Foundation.IReference!(BYTE) value);
 }
 
+@uuid("686f955d-9b92-4b30-9781-c22c55ac35cb")
+@WinrtFactory("Windows.Devices.Usb.UsbDeviceClasses")
+interface IUsbDeviceClasses : IInspectable
+{
+}
+
 @uuid("b20b0527-c580-4599-a165-981b4fd03230")
 @WinrtFactory("Windows.Devices.Usb.UsbDeviceClasses")
 interface IUsbDeviceClassesStatics : IInspectable
@@ -376,91 +382,91 @@ extern(Windows):
 	HRESULT abi_CreateWithEightByteBuffer(Windows.Storage.Streams.IBuffer eightByteBuffer, Windows.Devices.Usb.UsbSetupPacket* return_value);
 }
 
-interface UsbBulkInEndpointDescriptor
+interface UsbBulkInEndpointDescriptor : Windows.Devices.Usb.IUsbBulkInEndpointDescriptor
 {
 }
 
-interface UsbBulkInPipe
+interface UsbBulkInPipe : Windows.Devices.Usb.IUsbBulkInPipe
 {
 }
 
-interface UsbBulkOutEndpointDescriptor
+interface UsbBulkOutEndpointDescriptor : Windows.Devices.Usb.IUsbBulkOutEndpointDescriptor
 {
 }
 
-interface UsbBulkOutPipe
+interface UsbBulkOutPipe : Windows.Devices.Usb.IUsbBulkOutPipe
 {
 }
 
-interface UsbConfiguration
+interface UsbConfiguration : Windows.Devices.Usb.IUsbConfiguration
 {
 }
 
-interface UsbConfigurationDescriptor
+interface UsbConfigurationDescriptor : Windows.Devices.Usb.IUsbConfigurationDescriptor
 {
 }
 
-interface UsbControlRequestType
+interface UsbControlRequestType : Windows.Devices.Usb.IUsbControlRequestType
 {
 }
 
-interface UsbDescriptor
+interface UsbDescriptor : Windows.Devices.Usb.IUsbDescriptor
 {
 }
 
-interface UsbDevice
+interface UsbDevice : Windows.Devices.Usb.IUsbDevice, Windows.Foundation.IClosable
 {
 }
 
-interface UsbDeviceClass
+interface UsbDeviceClass : Windows.Devices.Usb.IUsbDeviceClass
 {
 }
 
-interface UsbDeviceClasses
+interface UsbDeviceClasses : Windows.Devices.Usb.IUsbDeviceClasses
 {
 }
 
-interface UsbDeviceDescriptor
+interface UsbDeviceDescriptor : Windows.Devices.Usb.IUsbDeviceDescriptor
 {
 }
 
-interface UsbEndpointDescriptor
+interface UsbEndpointDescriptor : Windows.Devices.Usb.IUsbEndpointDescriptor
 {
 }
 
-interface UsbInterface
+interface UsbInterface : Windows.Devices.Usb.IUsbInterface
 {
 }
 
-interface UsbInterfaceDescriptor
+interface UsbInterfaceDescriptor : Windows.Devices.Usb.IUsbInterfaceDescriptor
 {
 }
 
-interface UsbInterfaceSetting
+interface UsbInterfaceSetting : Windows.Devices.Usb.IUsbInterfaceSetting
 {
 }
 
-interface UsbInterruptInEndpointDescriptor
+interface UsbInterruptInEndpointDescriptor : Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor
 {
 }
 
-interface UsbInterruptInEventArgs
+interface UsbInterruptInEventArgs : Windows.Devices.Usb.IUsbInterruptInEventArgs
 {
 }
 
-interface UsbInterruptInPipe
+interface UsbInterruptInPipe : Windows.Devices.Usb.IUsbInterruptInPipe
 {
 }
 
-interface UsbInterruptOutEndpointDescriptor
+interface UsbInterruptOutEndpointDescriptor : Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor
 {
 }
 
-interface UsbInterruptOutPipe
+interface UsbInterruptOutPipe : Windows.Devices.Usb.IUsbInterruptOutPipe
 {
 }
 
-interface UsbSetupPacket
+interface UsbSetupPacket : Windows.Devices.Usb.IUsbSetupPacket
 {
 }
 

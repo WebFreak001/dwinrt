@@ -67,14 +67,14 @@ extern(Windows):
 	HRESULT get_IsSupported(bool* return_returnValue);
 }
 
-interface DetectedFace
+interface DetectedFace : Windows.Media.FaceAnalysis.IDetectedFace
 {
 }
 
-interface FaceDetector
+interface FaceDetector : Windows.Media.FaceAnalysis.IFaceDetector
 {
 }
 
-interface FaceTracker
+interface FaceTracker : Windows.Media.FaceAnalysis.IFaceTracker
 {
 }

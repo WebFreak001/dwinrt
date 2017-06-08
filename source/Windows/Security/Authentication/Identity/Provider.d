@@ -137,31 +137,31 @@ extern(Windows):
 	HRESULT abi_UpdateDeviceConfigurationDataAsync(HSTRING deviceId, Windows.Storage.Streams.IBuffer deviceConfigurationData, Windows.Foundation.IAsyncAction* return_result);
 }
 
-interface SecondaryAuthenticationFactorAuthentication
+interface SecondaryAuthenticationFactorAuthentication : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthentication
 {
 }
 
-interface SecondaryAuthenticationFactorAuthenticationResult
+interface SecondaryAuthenticationFactorAuthenticationResult : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationResult
 {
 }
 
-interface SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs
+interface SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs
 {
 }
 
-interface SecondaryAuthenticationFactorAuthenticationStageInfo
+interface SecondaryAuthenticationFactorAuthenticationStageInfo : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStageInfo
 {
 }
 
-interface SecondaryAuthenticationFactorInfo
+interface SecondaryAuthenticationFactorInfo : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo, Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo2
 {
 }
 
-interface SecondaryAuthenticationFactorRegistration
+interface SecondaryAuthenticationFactorRegistration : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorRegistration
 {
 }
 
-interface SecondaryAuthenticationFactorRegistrationResult
+interface SecondaryAuthenticationFactorRegistrationResult : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorRegistrationResult
 {
 }
 

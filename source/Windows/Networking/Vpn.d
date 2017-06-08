@@ -172,6 +172,12 @@ extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);
 }
 
+@uuid("9ec4efb2-c942-42af-b223-588b48328721")
+@WinrtFactory("Windows.Networking.Vpn.VpnCustomErrorBox")
+interface IVpnCustomErrorBox : IInspectable
+{
+}
+
 @uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244")
 interface IVpnCustomPrompt : IInspectable
 {
@@ -638,127 +644,127 @@ extern(Windows):
 	HRESULT abi_Create(Windows.Networking.Vpn.VpnAppId appId, Windows.Networking.Vpn.VpnTrafficFilter* return_result);
 }
 
-interface VpnAppId
+interface VpnAppId : Windows.Networking.Vpn.IVpnAppId
 {
 }
 
-interface VpnChannel
+interface VpnChannel : Windows.Networking.Vpn.IVpnChannel, Windows.Networking.Vpn.IVpnChannel2
 {
 }
 
-interface VpnChannelActivityEventArgs
+interface VpnChannelActivityEventArgs : Windows.Networking.Vpn.IVpnChannelActivityEventArgs
 {
 }
 
-interface VpnChannelActivityStateChangedArgs
+interface VpnChannelActivityStateChangedArgs : Windows.Networking.Vpn.IVpnChannelActivityStateChangedArgs
 {
 }
 
-interface VpnChannelConfiguration
+interface VpnChannelConfiguration : Windows.Networking.Vpn.IVpnChannelConfiguration, Windows.Networking.Vpn.IVpnChannelConfiguration2
 {
 }
 
-interface VpnCredential
+interface VpnCredential : Windows.Networking.Vpn.IVpnCredential
 {
 }
 
-interface VpnCustomCheckBox
+interface VpnCustomCheckBox : Windows.Networking.Vpn.IVpnCustomCheckBox, Windows.Networking.Vpn.IVpnCustomPrompt
 {
 }
 
-interface VpnCustomComboBox
+interface VpnCustomComboBox : Windows.Networking.Vpn.IVpnCustomComboBox, Windows.Networking.Vpn.IVpnCustomPrompt
 {
 }
 
-interface VpnCustomEditBox
+interface VpnCustomEditBox : Windows.Networking.Vpn.IVpnCustomEditBox, Windows.Networking.Vpn.IVpnCustomPrompt
 {
 }
 
-interface VpnCustomErrorBox
+interface VpnCustomErrorBox : Windows.Networking.Vpn.IVpnCustomErrorBox, Windows.Networking.Vpn.IVpnCustomPrompt
 {
 }
 
-interface VpnCustomPromptBooleanInput
+interface VpnCustomPromptBooleanInput : Windows.Networking.Vpn.IVpnCustomPromptBooleanInput, Windows.Networking.Vpn.IVpnCustomPromptElement
 {
 }
 
-interface VpnCustomPromptOptionSelector
+interface VpnCustomPromptOptionSelector : Windows.Networking.Vpn.IVpnCustomPromptOptionSelector, Windows.Networking.Vpn.IVpnCustomPromptElement
 {
 }
 
-interface VpnCustomPromptText
+interface VpnCustomPromptText : Windows.Networking.Vpn.IVpnCustomPromptText, Windows.Networking.Vpn.IVpnCustomPromptElement
 {
 }
 
-interface VpnCustomPromptTextInput
+interface VpnCustomPromptTextInput : Windows.Networking.Vpn.IVpnCustomPromptTextInput, Windows.Networking.Vpn.IVpnCustomPromptElement
 {
 }
 
-interface VpnCustomTextBox
+interface VpnCustomTextBox : Windows.Networking.Vpn.IVpnCustomTextBox, Windows.Networking.Vpn.IVpnCustomPrompt
 {
 }
 
-interface VpnDomainNameAssignment
+interface VpnDomainNameAssignment : Windows.Networking.Vpn.IVpnDomainNameAssignment
 {
 }
 
-interface VpnDomainNameInfo
+interface VpnDomainNameInfo : Windows.Networking.Vpn.IVpnDomainNameInfo, Windows.Networking.Vpn.IVpnDomainNameInfo2
 {
 }
 
-interface VpnInterfaceId
+interface VpnInterfaceId : Windows.Networking.Vpn.IVpnInterfaceId
 {
 }
 
-interface VpnManagementAgent
+interface VpnManagementAgent : Windows.Networking.Vpn.IVpnManagementAgent
 {
 }
 
-interface VpnNamespaceAssignment
+interface VpnNamespaceAssignment : Windows.Networking.Vpn.IVpnNamespaceAssignment
 {
 }
 
-interface VpnNamespaceInfo
+interface VpnNamespaceInfo : Windows.Networking.Vpn.IVpnNamespaceInfo
 {
 }
 
-interface VpnNativeProfile
+interface VpnNativeProfile : Windows.Networking.Vpn.IVpnNativeProfile, Windows.Networking.Vpn.IVpnProfile, Windows.Networking.Vpn.IVpnNativeProfile2
 {
 }
 
-interface VpnPacketBuffer
+interface VpnPacketBuffer : Windows.Networking.Vpn.IVpnPacketBuffer, Windows.Networking.Vpn.IVpnPacketBuffer2
 {
 }
 
-interface VpnPacketBufferList
+interface VpnPacketBufferList : Windows.Networking.Vpn.IVpnPacketBufferList, Windows.Foundation.Collections.IIterable!(Windows.Networking.Vpn.VpnPacketBuffer)
 {
 }
 
-interface VpnPickedCredential
+interface VpnPickedCredential : Windows.Networking.Vpn.IVpnPickedCredential
 {
 }
 
-interface VpnPlugInProfile
+interface VpnPlugInProfile : Windows.Networking.Vpn.IVpnPlugInProfile, Windows.Networking.Vpn.IVpnProfile, Windows.Networking.Vpn.IVpnPlugInProfile2
 {
 }
 
-interface VpnRoute
+interface VpnRoute : Windows.Networking.Vpn.IVpnRoute
 {
 }
 
-interface VpnRouteAssignment
+interface VpnRouteAssignment : Windows.Networking.Vpn.IVpnRouteAssignment
 {
 }
 
-interface VpnSystemHealth
+interface VpnSystemHealth : Windows.Networking.Vpn.IVpnSystemHealth
 {
 }
 
-interface VpnTrafficFilter
+interface VpnTrafficFilter : Windows.Networking.Vpn.IVpnTrafficFilter
 {
 }
 
-interface VpnTrafficFilterAssignment
+interface VpnTrafficFilterAssignment : Windows.Networking.Vpn.IVpnTrafficFilterAssignment
 {
 }
 

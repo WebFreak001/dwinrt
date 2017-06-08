@@ -240,43 +240,47 @@ extern(Windows):
 	HRESULT abi_CreateWithLanguage(HSTRING language, Windows.Data.Text.WordsSegmenter* return_result);
 }
 
-interface AlternateWordForm
+interface AlternateWordForm : Windows.Data.Text.IAlternateWordForm
 {
 }
 
-interface SelectableWordSegment
+interface SelectableWordSegment : Windows.Data.Text.ISelectableWordSegment
 {
 }
 
-interface SelectableWordsSegmenter
+interface SelectableWordsSegmenter : Windows.Data.Text.ISelectableWordsSegmenter
 {
 }
 
-interface SemanticTextQuery
+interface SemanticTextQuery : Windows.Data.Text.ISemanticTextQuery
 {
 }
 
-interface TextConversionGenerator
+interface TextConversionGenerator : Windows.Data.Text.ITextConversionGenerator
 {
 }
 
-interface TextPhoneme
+interface TextPhoneme : Windows.Data.Text.ITextPhoneme
 {
 }
 
-interface TextPredictionGenerator
+interface TextPredictionGenerator : Windows.Data.Text.ITextPredictionGenerator
 {
 }
 
-interface TextReverseConversionGenerator
+interface TextReverseConversionGenerator : Windows.Data.Text.ITextReverseConversionGenerator, Windows.Data.Text.ITextReverseConversionGenerator2
 {
 }
 
-interface WordSegment
+interface UnicodeCharacters
 {
 }
 
-interface WordsSegmenter
+interface WordSegment : Windows.Data.Text.IWordSegment
+{
+}
+
+interface WordsSegmenter : Windows.Data.Text.IWordsSegmenter
 {
 }
 

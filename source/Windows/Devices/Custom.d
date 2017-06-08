@@ -59,11 +59,15 @@ extern(Windows):
 	HRESULT get_Unknown(UINT16* return_value);
 }
 
-interface CustomDevice
+interface CustomDevice : Windows.Devices.Custom.ICustomDevice
 {
 }
 
-interface IOControlCode
+interface IOControlCode : Windows.Devices.Custom.IIOControlCode
+{
+}
+
+interface KnownDeviceTypes
 {
 }
 

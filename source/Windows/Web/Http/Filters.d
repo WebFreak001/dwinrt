@@ -102,15 +102,15 @@ extern(Windows):
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_result);
 }
 
-interface HttpBaseProtocolFilter
+interface HttpBaseProtocolFilter : Windows.Web.Http.Filters.IHttpBaseProtocolFilter, Windows.Web.Http.Filters.IHttpFilter, Windows.Foundation.IClosable, Windows.Web.Http.Filters.IHttpBaseProtocolFilter2, Windows.Web.Http.Filters.IHttpBaseProtocolFilter3, Windows.Web.Http.Filters.IHttpBaseProtocolFilter4
 {
 }
 
-interface HttpCacheControl
+interface HttpCacheControl : Windows.Web.Http.Filters.IHttpCacheControl
 {
 }
 
-interface HttpServerCustomValidationRequestedEventArgs
+interface HttpServerCustomValidationRequestedEventArgs : Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs
 {
 }
 

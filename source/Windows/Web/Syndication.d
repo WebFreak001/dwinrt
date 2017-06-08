@@ -362,47 +362,51 @@ extern(Windows):
 	HRESULT abi_CreateSyndicationTextEx(HSTRING text, Windows.Web.Syndication.SyndicationTextType type, Windows.Web.Syndication.SyndicationText* return_syndicationText);
 }
 
-interface SyndicationAttribute
+interface SyndicationAttribute : Windows.Web.Syndication.ISyndicationAttribute
 {
 }
 
-interface SyndicationCategory
+interface SyndicationCategory : Windows.Web.Syndication.ISyndicationCategory, Windows.Web.Syndication.ISyndicationNode
 {
 }
 
-interface SyndicationClient
+interface SyndicationClient : Windows.Web.Syndication.ISyndicationClient
 {
 }
 
-interface SyndicationContent
+interface SyndicationContent : Windows.Web.Syndication.ISyndicationText, Windows.Web.Syndication.ISyndicationNode, Windows.Web.Syndication.ISyndicationContent
 {
 }
 
-interface SyndicationFeed
+interface SyndicationError
 {
 }
 
-interface SyndicationGenerator
+interface SyndicationFeed : Windows.Web.Syndication.ISyndicationFeed, Windows.Web.Syndication.ISyndicationNode
 {
 }
 
-interface SyndicationItem
+interface SyndicationGenerator : Windows.Web.Syndication.ISyndicationGenerator, Windows.Web.Syndication.ISyndicationNode
 {
 }
 
-interface SyndicationLink
+interface SyndicationItem : Windows.Web.Syndication.ISyndicationItem, Windows.Web.Syndication.ISyndicationNode
 {
 }
 
-interface SyndicationNode
+interface SyndicationLink : Windows.Web.Syndication.ISyndicationLink, Windows.Web.Syndication.ISyndicationNode
 {
 }
 
-interface SyndicationPerson
+interface SyndicationNode : Windows.Web.Syndication.ISyndicationNode
 {
 }
 
-interface SyndicationText
+interface SyndicationPerson : Windows.Web.Syndication.ISyndicationPerson, Windows.Web.Syndication.ISyndicationNode
+{
+}
+
+interface SyndicationText : Windows.Web.Syndication.ISyndicationText, Windows.Web.Syndication.ISyndicationNode
 {
 }
 

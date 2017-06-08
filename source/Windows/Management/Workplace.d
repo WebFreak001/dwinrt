@@ -35,6 +35,14 @@ extern(Windows):
 	HRESULT get_IsMicrosoftAccountOptional(bool* return_value);
 }
 
+interface MdmPolicy
+{
+}
+
+interface WorkplaceSettings
+{
+}
+
 enum MessagingSyncPolicy
 {
 	Disallowed = 0,

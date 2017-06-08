@@ -61,18 +61,18 @@ extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);
 }
 
-interface OcrEngine
+interface OcrEngine : Windows.Media.Ocr.IOcrEngine
 {
 }
 
-interface OcrLine
+interface OcrLine : Windows.Media.Ocr.IOcrLine
 {
 }
 
-interface OcrResult
+interface OcrResult : Windows.Media.Ocr.IOcrResult
 {
 }
 
-interface OcrWord
+interface OcrWord : Windows.Media.Ocr.IOcrWord
 {
 }

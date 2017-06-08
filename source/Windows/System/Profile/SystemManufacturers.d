@@ -11,3 +11,7 @@ interface ISmbiosInformationStatics : IInspectable
 extern(Windows):
 	HRESULT get_SerialNumber(HSTRING* return_value);
 }
+
+interface SmbiosInformation
+{
+}

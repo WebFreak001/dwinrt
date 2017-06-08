@@ -651,91 +651,115 @@ extern(Windows):
 	HRESULT get_TotalBitrate(HSTRING* return_value);
 }
 
-interface ApplicationData
+interface ApplicationData : Windows.Storage.IApplicationData, Windows.Storage.IApplicationData2, Windows.Storage.IApplicationData3
 {
 }
 
-interface ApplicationDataCompositeValue
+interface ApplicationDataCompositeValue : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
 {
 }
 
-interface ApplicationDataContainer
+interface ApplicationDataContainer : Windows.Storage.IApplicationDataContainer
 {
 }
 
-interface ApplicationDataContainerSettings
+interface ApplicationDataContainerSettings : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
 {
 }
 
-interface SetVersionDeferral
+interface CachedFileManager
 {
 }
 
-interface SetVersionRequest
+interface DownloadsFolder
 {
 }
 
-interface StorageFile
+interface FileIO
 {
 }
 
-interface StorageFolder
+interface KnownFolders
 {
 }
 
-interface StorageLibrary
+interface PathIO
 {
 }
 
-interface StorageLibraryChange
+interface SetVersionDeferral : Windows.Storage.ISetVersionDeferral
 {
 }
 
-interface StorageLibraryChangeReader
+interface SetVersionRequest : Windows.Storage.ISetVersionRequest
 {
 }
 
-interface StorageLibraryChangeTracker
+interface StorageFile : Windows.Storage.IStorageFile, Windows.Storage.Streams.IInputStreamReference, Windows.Storage.Streams.IRandomAccessStreamReference, Windows.Storage.IStorageItem, Windows.Storage.IStorageItemProperties, Windows.Storage.IStorageItemProperties2, Windows.Storage.IStorageItem2, Windows.Storage.IStorageItemPropertiesWithProvider, Windows.Storage.IStorageFilePropertiesWithAvailability, Windows.Storage.IStorageFile2
 {
 }
 
-interface StorageProvider
+interface StorageFolder : Windows.Storage.IStorageFolder, Windows.Storage.IStorageItem, Windows.Storage.Search.IStorageFolderQueryOperations, Windows.Storage.IStorageItemProperties, Windows.Storage.IStorageItemProperties2, Windows.Storage.IStorageItem2, Windows.Storage.IStorageFolder2, Windows.Storage.IStorageItemPropertiesWithProvider
 {
 }
 
-interface StorageStreamTransaction
+interface StorageLibrary : Windows.Storage.IStorageLibrary, Windows.Storage.IStorageLibrary2
 {
 }
 
-interface StreamedFileDataRequest
+interface StorageLibraryChange : Windows.Storage.IStorageLibraryChange
 {
 }
 
-interface SystemAudioProperties
+interface StorageLibraryChangeReader : Windows.Storage.IStorageLibraryChangeReader
 {
 }
 
-interface SystemGPSProperties
+interface StorageLibraryChangeTracker : Windows.Storage.IStorageLibraryChangeTracker
 {
 }
 
-interface SystemImageProperties
+interface StorageProvider : Windows.Storage.IStorageProvider
 {
 }
 
-interface SystemMediaProperties
+interface StorageStreamTransaction : Windows.Storage.IStorageStreamTransaction, Windows.Foundation.IClosable
 {
 }
 
-interface SystemMusicProperties
+interface StreamedFileDataRequest : Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.IStreamedFileDataRequest
 {
 }
 
-interface SystemPhotoProperties
+interface SystemAudioProperties : Windows.Storage.ISystemAudioProperties
 {
 }
 
-interface SystemVideoProperties
+interface SystemGPSProperties : Windows.Storage.ISystemGPSProperties
+{
+}
+
+interface SystemImageProperties : Windows.Storage.ISystemImageProperties
+{
+}
+
+interface SystemMediaProperties : Windows.Storage.ISystemMediaProperties
+{
+}
+
+interface SystemMusicProperties : Windows.Storage.ISystemMusicProperties
+{
+}
+
+interface SystemPhotoProperties : Windows.Storage.ISystemPhotoProperties
+{
+}
+
+interface SystemProperties
+{
+}
+
+interface SystemVideoProperties : Windows.Storage.ISystemVideoProperties
 {
 }
 

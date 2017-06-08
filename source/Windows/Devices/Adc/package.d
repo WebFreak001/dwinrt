@@ -51,11 +51,11 @@ extern(Windows):
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Adc.AdcController)* return_operation);
 }
 
-interface AdcChannel
+interface AdcChannel : Windows.Devices.Adc.IAdcChannel, Windows.Foundation.IClosable
 {
 }
 
-interface AdcController
+interface AdcController : Windows.Devices.Adc.IAdcController
 {
 }
 

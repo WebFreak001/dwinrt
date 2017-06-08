@@ -320,55 +320,73 @@ extern(Windows):
 	HRESULT abi_GetPrimaryManagedIdentityForIdentity(HSTRING identity, HSTRING* return_value);
 }
 
-interface BufferProtectUnprotectResult
+@uuid("fa4ea8e9-ef13-405a-b12c-d7348c6f41fc")
+@WinrtFactory("Windows.Security.EnterpriseData.ThreadNetworkContext")
+interface IThreadNetworkContext : IInspectable
 {
 }
 
-interface DataProtectionInfo
+interface BufferProtectUnprotectResult : Windows.Security.EnterpriseData.IBufferProtectUnprotectResult
 {
 }
 
-interface FileProtectionInfo
+interface DataProtectionInfo : Windows.Security.EnterpriseData.IDataProtectionInfo
 {
 }
 
-interface FileUnprotectOptions
+interface DataProtectionManager
 {
 }
 
-interface ProtectedAccessResumedEventArgs
+interface FileProtectionInfo : Windows.Security.EnterpriseData.IFileProtectionInfo
 {
 }
 
-interface ProtectedAccessSuspendingEventArgs
+interface FileProtectionManager
 {
 }
 
-interface ProtectedContainerExportResult
+interface FileRevocationManager
 {
 }
 
-interface ProtectedContainerImportResult
+interface FileUnprotectOptions : Windows.Security.EnterpriseData.IFileUnprotectOptions
 {
 }
 
-interface ProtectedContentRevokedEventArgs
+interface ProtectedAccessResumedEventArgs : Windows.Security.EnterpriseData.IProtectedAccessResumedEventArgs
 {
 }
 
-interface ProtectedFileCreateResult
+interface ProtectedAccessSuspendingEventArgs : Windows.Security.EnterpriseData.IProtectedAccessSuspendingEventArgs
 {
 }
 
-interface ProtectionPolicyAuditInfo
+interface ProtectedContainerExportResult : Windows.Security.EnterpriseData.IProtectedContainerExportResult
 {
 }
 
-interface ProtectionPolicyManager
+interface ProtectedContainerImportResult : Windows.Security.EnterpriseData.IProtectedContainerImportResult
 {
 }
 
-interface ThreadNetworkContext
+interface ProtectedContentRevokedEventArgs : Windows.Security.EnterpriseData.IProtectedContentRevokedEventArgs
+{
+}
+
+interface ProtectedFileCreateResult : Windows.Security.EnterpriseData.IProtectedFileCreateResult
+{
+}
+
+interface ProtectionPolicyAuditInfo : Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo
+{
+}
+
+interface ProtectionPolicyManager : Windows.Security.EnterpriseData.IProtectionPolicyManager, Windows.Security.EnterpriseData.IProtectionPolicyManager2
+{
+}
+
+interface ThreadNetworkContext : Windows.Security.EnterpriseData.IThreadNetworkContext, Windows.Foundation.IClosable
 {
 }
 

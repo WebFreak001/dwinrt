@@ -57,19 +57,19 @@ extern(Windows):
 	HRESULT abi_ReportCompleted();
 }
 
-interface UserDataAccountPartnerAccountInfo
+interface UserDataAccountPartnerAccountInfo : Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountPartnerAccountInfo
 {
 }
 
-interface UserDataAccountProviderAddAccountOperation
+interface UserDataAccountProviderAddAccountOperation : Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderAddAccountOperation, Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation
 {
 }
 
-interface UserDataAccountProviderResolveErrorsOperation
+interface UserDataAccountProviderResolveErrorsOperation : Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderResolveErrorsOperation, Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation
 {
 }
 
-interface UserDataAccountProviderSettingsOperation
+interface UserDataAccountProviderSettingsOperation : Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderSettingsOperation, Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation
 {
 }
 

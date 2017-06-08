@@ -2,6 +2,12 @@ module Windows.UI.Xaml.Resources;
 
 import dwinrt;
 
+@uuid("511a84ab-4a88-419f-852e-54083b90b078")
+@WinrtFactory("Windows.UI.Xaml.Resources.CustomXamlResourceLoader")
+interface ICustomXamlResourceLoader : IInspectable
+{
+}
+
 @uuid("5bfd7e49-7886-44f3-8ed3-6fec0463ed69")
 @WinrtFactory("Windows.UI.Xaml.Resources.CustomXamlResourceLoader")
 interface ICustomXamlResourceLoaderFactory : IInspectable
@@ -33,6 +39,6 @@ extern(Windows):
 	HRESULT set_Current(Windows.UI.Xaml.Resources.CustomXamlResourceLoader value);
 }
 
-interface CustomXamlResourceLoader
+interface CustomXamlResourceLoader : Windows.UI.Xaml.Resources.ICustomXamlResourceLoader, Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderOverrides
 {
 }

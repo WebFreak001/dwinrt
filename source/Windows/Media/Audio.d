@@ -603,123 +603,123 @@ extern(Windows):
 	HRESULT abi_Create(Windows.Media.Audio.AudioGraph audioGraph, Windows.Media.Audio.ReverbEffectDefinition* return_value);
 }
 
-interface AudioDeviceInputNode
+interface AudioDeviceInputNode : Windows.Media.Audio.IAudioDeviceInputNode, Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioInputNode2
 {
 }
 
-interface AudioDeviceOutputNode
+interface AudioDeviceOutputNode : Windows.Media.Audio.IAudioDeviceOutputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioNodeWithListener
 {
 }
 
-interface AudioFileInputNode
+interface AudioFileInputNode : Windows.Media.Audio.IAudioFileInputNode, Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioInputNode2
 {
 }
 
-interface AudioFileOutputNode
+interface AudioFileOutputNode : Windows.Media.Audio.IAudioFileOutputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable
 {
 }
 
-interface AudioFrameCompletedEventArgs
+interface AudioFrameCompletedEventArgs : Windows.Media.Audio.IAudioFrameCompletedEventArgs
 {
 }
 
-interface AudioFrameInputNode
+interface AudioFrameInputNode : Windows.Media.Audio.IAudioFrameInputNode, Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioInputNode2
 {
 }
 
-interface AudioFrameOutputNode
+interface AudioFrameOutputNode : Windows.Media.Audio.IAudioFrameOutputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable
 {
 }
 
-interface AudioGraph
+interface AudioGraph : Windows.Media.Audio.IAudioGraph, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioGraph2
 {
 }
 
-interface AudioGraphBatchUpdater
+interface AudioGraphBatchUpdater : Windows.Foundation.IClosable
 {
 }
 
-interface AudioGraphConnection
+interface AudioGraphConnection : Windows.Media.Audio.IAudioGraphConnection
 {
 }
 
-interface AudioGraphSettings
+interface AudioGraphSettings : Windows.Media.Audio.IAudioGraphSettings
 {
 }
 
-interface AudioGraphUnrecoverableErrorOccurredEventArgs
+interface AudioGraphUnrecoverableErrorOccurredEventArgs : Windows.Media.Audio.IAudioGraphUnrecoverableErrorOccurredEventArgs
 {
 }
 
-interface AudioNodeEmitter
+interface AudioNodeEmitter : Windows.Media.Audio.IAudioNodeEmitter, Windows.Media.Audio.IAudioNodeEmitter2
 {
 }
 
-interface AudioNodeEmitterConeProperties
+interface AudioNodeEmitterConeProperties : Windows.Media.Audio.IAudioNodeEmitterConeProperties
 {
 }
 
-interface AudioNodeEmitterDecayModel
+interface AudioNodeEmitterDecayModel : Windows.Media.Audio.IAudioNodeEmitterDecayModel
 {
 }
 
-interface AudioNodeEmitterNaturalDecayModelProperties
+interface AudioNodeEmitterNaturalDecayModelProperties : Windows.Media.Audio.IAudioNodeEmitterNaturalDecayModelProperties
 {
 }
 
-interface AudioNodeEmitterShape
+interface AudioNodeEmitterShape : Windows.Media.Audio.IAudioNodeEmitterShape
 {
 }
 
-interface AudioNodeListener
+interface AudioNodeListener : Windows.Media.Audio.IAudioNodeListener
 {
 }
 
-interface AudioSubmixNode
+interface AudioSubmixNode : Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioInputNode2
 {
 }
 
-interface CreateAudioDeviceInputNodeResult
+interface CreateAudioDeviceInputNodeResult : Windows.Media.Audio.ICreateAudioDeviceInputNodeResult
 {
 }
 
-interface CreateAudioDeviceOutputNodeResult
+interface CreateAudioDeviceOutputNodeResult : Windows.Media.Audio.ICreateAudioDeviceOutputNodeResult
 {
 }
 
-interface CreateAudioFileInputNodeResult
+interface CreateAudioFileInputNodeResult : Windows.Media.Audio.ICreateAudioFileInputNodeResult
 {
 }
 
-interface CreateAudioFileOutputNodeResult
+interface CreateAudioFileOutputNodeResult : Windows.Media.Audio.ICreateAudioFileOutputNodeResult
 {
 }
 
-interface CreateAudioGraphResult
+interface CreateAudioGraphResult : Windows.Media.Audio.ICreateAudioGraphResult
 {
 }
 
-interface EchoEffectDefinition
+interface EchoEffectDefinition : Windows.Media.Audio.IEchoEffectDefinition, Windows.Media.Effects.IAudioEffectDefinition
 {
 }
 
-interface EqualizerBand
+interface EqualizerBand : Windows.Media.Audio.IEqualizerBand
 {
 }
 
-interface EqualizerEffectDefinition
+interface EqualizerEffectDefinition : Windows.Media.Audio.IEqualizerEffectDefinition, Windows.Media.Effects.IAudioEffectDefinition
 {
 }
 
-interface FrameInputNodeQuantumStartedEventArgs
+interface FrameInputNodeQuantumStartedEventArgs : Windows.Media.Audio.IFrameInputNodeQuantumStartedEventArgs
 {
 }
 
-interface LimiterEffectDefinition
+interface LimiterEffectDefinition : Windows.Media.Audio.ILimiterEffectDefinition, Windows.Media.Effects.IAudioEffectDefinition
 {
 }
 
-interface ReverbEffectDefinition
+interface ReverbEffectDefinition : Windows.Media.Audio.IReverbEffectDefinition, Windows.Media.Effects.IAudioEffectDefinition
 {
 }
 

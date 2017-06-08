@@ -46,7 +46,11 @@ extern(Windows):
 	HRESULT remove_GameUpdated(EventRegistrationToken token);
 }
 
-interface GameListEntry
+interface GameList
+{
+}
+
+interface GameListEntry : Windows.Gaming.Preview.GamesEnumeration.IGameListEntry
 {
 }
 

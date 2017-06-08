@@ -76,6 +76,12 @@ extern(Windows):
 	HRESULT get_TranslateZProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("e48c10ef-9927-4c9b-8213-07775512ba04")
+@WinrtFactory("Windows.UI.Xaml.Media.Media3D.Matrix3DHelper")
+interface IMatrix3DHelper : IInspectable
+{
+}
+
 @uuid("9264545e-e158-4e74-8899-689160bd2f8c")
 @WinrtFactory("Windows.UI.Xaml.Media.Media3D.Matrix3DHelper")
 interface IMatrix3DHelperStatics : IInspectable
@@ -118,6 +124,12 @@ extern(Windows):
 	HRESULT get_OffsetYProperty(Windows.UI.Xaml.DependencyProperty* return_value);
 }
 
+@uuid("ae3ed43a-a9fc-4c31-86cd-56d9ca251a69")
+@WinrtFactory("Windows.UI.Xaml.Media.Media3D.Transform3D")
+interface ITransform3D : IInspectable
+{
+}
+
 @uuid("052c1f7a-8d73-48cd-bbb8-d00434caae5d")
 @WinrtFactory("Windows.UI.Xaml.Media.Media3D.Transform3D")
 interface ITransform3DFactory : IInspectable
@@ -128,18 +140,18 @@ extern(Windows):
 	HRESULT abi_CreateInstance(IInspectable outer, IInspectable* out_inner, Windows.UI.Xaml.Media.Media3D.Transform3D* return_instance);
 }
 
-interface CompositeTransform3D : Windows.UI.Xaml.Media.Media3D.Transform3D
+interface CompositeTransform3D : Windows.UI.Xaml.Media.Media3D.Transform3D, Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D
 {
 }
 
-interface Matrix3DHelper
+interface Matrix3DHelper : Windows.UI.Xaml.Media.Media3D.IMatrix3DHelper
 {
 }
 
-interface PerspectiveTransform3D : Windows.UI.Xaml.Media.Media3D.Transform3D
+interface PerspectiveTransform3D : Windows.UI.Xaml.Media.Media3D.Transform3D, Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3D
 {
 }
 
-interface Transform3D : Windows.UI.Xaml.DependencyObject
+interface Transform3D : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Media3D.ITransform3D
 {
 }

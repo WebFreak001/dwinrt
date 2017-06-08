@@ -56,7 +56,7 @@ extern(Windows):
 	HRESULT set_SharingMode(Windows.Devices.I2c.Provider.ProviderI2cSharingMode value);
 }
 
-interface ProviderI2cConnectionSettings
+interface ProviderI2cConnectionSettings : Windows.Devices.I2c.Provider.IProviderI2cConnectionSettings
 {
 }
 

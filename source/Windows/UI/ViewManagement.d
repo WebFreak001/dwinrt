@@ -140,6 +140,12 @@ extern(Windows):
 	HRESULT abi_GetApplicationViewIdForWindow(Windows.UI.Core.ICoreWindow window, INT32* return_id);
 }
 
+@uuid("1d0ddc23-23f3-4b2d-84fe-74bf37b48b66")
+@WinrtFactory("Windows.UI.ViewManagement.ApplicationViewScaling")
+interface IApplicationViewScaling : IInspectable
+{
+}
+
 @uuid("b08fecf0-b946-45c8-a5e3-71f5aa78f861")
 @WinrtFactory("Windows.UI.ViewManagement.ApplicationViewScaling")
 interface IApplicationViewScalingStatics : IInspectable
@@ -468,51 +474,59 @@ extern(Windows):
 	HRESULT abi_CreateDefault(Windows.UI.ViewManagement.ApplicationViewMode mode, Windows.UI.ViewManagement.ViewModePreferences* return_result);
 }
 
-interface AccessibilitySettings
+interface AccessibilitySettings : Windows.UI.ViewManagement.IAccessibilitySettings
 {
 }
 
-interface ActivationViewSwitcher
+interface ActivationViewSwitcher : Windows.UI.ViewManagement.IActivationViewSwitcher
 {
 }
 
-interface ApplicationView
+interface ApplicationView : Windows.UI.ViewManagement.IApplicationView, Windows.UI.ViewManagement.IApplicationView2, Windows.UI.ViewManagement.IApplicationView3, Windows.UI.ViewManagement.IApplicationView4
 {
 }
 
-interface ApplicationViewConsolidatedEventArgs
+interface ApplicationViewConsolidatedEventArgs : Windows.UI.ViewManagement.IApplicationViewConsolidatedEventArgs, Windows.UI.ViewManagement.IApplicationViewConsolidatedEventArgs2
 {
 }
 
-interface ApplicationViewScaling
+interface ApplicationViewScaling : Windows.UI.ViewManagement.IApplicationViewScaling
 {
 }
 
-interface ApplicationViewTitleBar
+interface ApplicationViewSwitcher
 {
 }
 
-interface ApplicationViewTransferContext
+interface ApplicationViewTitleBar : Windows.UI.ViewManagement.IApplicationViewTitleBar
 {
 }
 
-interface InputPane
+interface ApplicationViewTransferContext : Windows.UI.ViewManagement.IApplicationViewTransferContext
 {
 }
 
-interface InputPaneVisibilityEventArgs
+interface InputPane : Windows.UI.ViewManagement.IInputPane, Windows.UI.ViewManagement.IInputPane2, Windows.UI.ViewManagement.IInputPaneControl
 {
 }
 
-interface UISettings
+interface InputPaneVisibilityEventArgs : Windows.UI.ViewManagement.IInputPaneVisibilityEventArgs
 {
 }
 
-interface UIViewSettings
+interface ProjectionManager
 {
 }
 
-interface ViewModePreferences
+interface UISettings : Windows.UI.ViewManagement.IUISettings, Windows.UI.ViewManagement.IUISettings2, Windows.UI.ViewManagement.IUISettings3, Windows.UI.ViewManagement.IUISettings4
+{
+}
+
+interface UIViewSettings : Windows.UI.ViewManagement.IUIViewSettings
+{
+}
+
+interface ViewModePreferences : Windows.UI.ViewManagement.IViewModePreferences
 {
 }
 

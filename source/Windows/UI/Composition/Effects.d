@@ -21,6 +21,6 @@ extern(Windows):
 	HRESULT set_SpecularShine(FLOAT value);
 }
 
-interface SceneLightingEffect
+interface SceneLightingEffect : Windows.UI.Composition.Effects.ISceneLightingEffect, Windows.Graphics.Effects.IGraphicsEffect, Windows.Graphics.Effects.IGraphicsEffectSource
 {
 }

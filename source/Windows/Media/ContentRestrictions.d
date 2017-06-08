@@ -67,15 +67,15 @@ extern(Windows):
 	HRESULT abi_CreateWithMaxAgeRating(UINT32 maxAgeRating, Windows.Media.ContentRestrictions.RatedContentRestrictions* return_ratedContentRestrictions);
 }
 
-interface ContentRestrictionsBrowsePolicy
+interface ContentRestrictionsBrowsePolicy : Windows.Media.ContentRestrictions.IContentRestrictionsBrowsePolicy
 {
 }
 
-interface RatedContentDescription
+interface RatedContentDescription : Windows.Media.ContentRestrictions.IRatedContentDescription
 {
 }
 
-interface RatedContentRestrictions
+interface RatedContentRestrictions : Windows.Media.ContentRestrictions.IRatedContentRestrictions
 {
 }
 

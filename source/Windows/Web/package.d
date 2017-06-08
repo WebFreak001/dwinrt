@@ -21,6 +21,10 @@ extern(Windows):
 	HRESULT abi_GetStatus(INT32 hresult, Windows.Web.WebErrorStatus* return_status);
 }
 
+interface WebError
+{
+}
+
 enum WebErrorStatus
 {
 	Unknown = 0,

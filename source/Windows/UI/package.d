@@ -10,6 +10,12 @@ struct Color
 	BYTE B;
 }
 
+@uuid("193cfbe7-65c7-4540-ad08-6283ba76879a")
+@WinrtFactory("Windows.UI.ColorHelper")
+interface IColorHelper : IInspectable
+{
+}
+
 @uuid("8504dbea-fb6a-4144-a6c2-33499c9284f5")
 @WinrtFactory("Windows.UI.ColorHelper")
 interface IColorHelperStatics : IInspectable
@@ -28,6 +34,12 @@ interface IColorHelperStatics2 : IInspectable
 
 extern(Windows):
 	HRESULT abi_ToDisplayName(Windows.UI.Color color, HSTRING* return_returnValue);
+}
+
+@uuid("9b8c9326-4ca6-4ce5-8994-9eff65cabdcc")
+@WinrtFactory("Windows.UI.Colors")
+interface IColors : IInspectable
+{
 }
 
 @uuid("cff52e04-cca6-4614-a17e-754910c84a99")
@@ -180,10 +192,10 @@ extern(Windows):
 	HRESULT get_YellowGreen(Windows.UI.Color* return_value);
 }
 
-interface ColorHelper
+interface ColorHelper : Windows.UI.IColorHelper
 {
 }
 
-interface Colors
+interface Colors : Windows.UI.IColors
 {
 }

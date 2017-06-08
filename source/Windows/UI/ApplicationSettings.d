@@ -227,47 +227,47 @@ extern(Windows):
 	HRESULT abi_CreateWebAccountProviderCommand(Windows.Security.Credentials.WebAccountProvider webAccountProvider, Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler invoked, Windows.UI.ApplicationSettings.WebAccountProviderCommand* return_instance);
 }
 
-interface AccountsSettingsPane
+interface AccountsSettingsPane : Windows.UI.ApplicationSettings.IAccountsSettingsPane
 {
 }
 
-interface AccountsSettingsPaneCommandsRequestedEventArgs
+interface AccountsSettingsPaneCommandsRequestedEventArgs : Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs
 {
 }
 
-interface AccountsSettingsPaneEventDeferral
+interface AccountsSettingsPaneEventDeferral : Windows.UI.ApplicationSettings.IAccountsSettingsPaneEventDeferral
 {
 }
 
-interface CredentialCommand
+interface CredentialCommand : Windows.UI.ApplicationSettings.ICredentialCommand
 {
 }
 
-interface SettingsCommand
+interface SettingsCommand : Windows.UI.Popups.IUICommand
 {
 }
 
-interface SettingsPane
+interface SettingsPane : Windows.UI.ApplicationSettings.ISettingsPane
 {
 }
 
-interface SettingsPaneCommandsRequest
+interface SettingsPaneCommandsRequest : Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequest
 {
 }
 
-interface SettingsPaneCommandsRequestedEventArgs
+interface SettingsPaneCommandsRequestedEventArgs : Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequestedEventArgs
 {
 }
 
-interface WebAccountCommand
+interface WebAccountCommand : Windows.UI.ApplicationSettings.IWebAccountCommand
 {
 }
 
-interface WebAccountInvokedArgs
+interface WebAccountInvokedArgs : Windows.UI.ApplicationSettings.IWebAccountInvokedArgs
 {
 }
 
-interface WebAccountProviderCommand
+interface WebAccountProviderCommand : Windows.UI.ApplicationSettings.IWebAccountProviderCommand
 {
 }
 

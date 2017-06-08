@@ -495,6 +495,12 @@ extern(Windows):
 	HRESULT abi_GetDeferral(Windows.ApplicationModel.Appointments.AppointmentStoreChangedDeferral* return_result);
 }
 
+@uuid("9b33cb11-c301-421e-afef-047ecfa76adb")
+@WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentStoreNotificationTriggerDetails")
+interface IAppointmentStoreNotificationTriggerDetails : IInspectable
+{
+}
+
 @uuid("55f7dc55-9942-3086-82b5-2cb29f64d5f5")
 @WinrtFactory("Windows.ApplicationModel.Appointments.FindAppointmentsOptions")
 interface IFindAppointmentsOptions : IInspectable
@@ -510,71 +516,79 @@ extern(Windows):
 	HRESULT set_MaxCount(UINT32 value);
 }
 
-interface Appointment
+interface Appointment : Windows.ApplicationModel.Appointments.IAppointment, Windows.ApplicationModel.Appointments.IAppointment2, Windows.ApplicationModel.Appointments.IAppointment3
 {
 }
 
-interface AppointmentCalendar
+interface AppointmentCalendar : Windows.ApplicationModel.Appointments.IAppointmentCalendar, Windows.ApplicationModel.Appointments.IAppointmentCalendar2, Windows.ApplicationModel.Appointments.IAppointmentCalendar3
 {
 }
 
-interface AppointmentCalendarSyncManager
+interface AppointmentCalendarSyncManager : Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager, Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager2
 {
 }
 
-interface AppointmentConflictResult
+interface AppointmentConflictResult : Windows.ApplicationModel.Appointments.IAppointmentConflictResult
 {
 }
 
-interface AppointmentException
+interface AppointmentException : Windows.ApplicationModel.Appointments.IAppointmentException
 {
 }
 
-interface AppointmentInvitee
+interface AppointmentInvitee : Windows.ApplicationModel.Appointments.IAppointmentInvitee, Windows.ApplicationModel.Appointments.IAppointmentParticipant
 {
 }
 
-interface AppointmentManagerForUser
+interface AppointmentManager
 {
 }
 
-interface AppointmentOrganizer
+interface AppointmentManagerForUser : Windows.ApplicationModel.Appointments.IAppointmentManagerForUser
 {
 }
 
-interface AppointmentRecurrence
+interface AppointmentOrganizer : Windows.ApplicationModel.Appointments.IAppointmentParticipant
 {
 }
 
-interface AppointmentStore
+interface AppointmentProperties
 {
 }
 
-interface AppointmentStoreChange
+interface AppointmentRecurrence : Windows.ApplicationModel.Appointments.IAppointmentRecurrence, Windows.ApplicationModel.Appointments.IAppointmentRecurrence2, Windows.ApplicationModel.Appointments.IAppointmentRecurrence3
 {
 }
 
-interface AppointmentStoreChangeReader
+interface AppointmentStore : Windows.ApplicationModel.Appointments.IAppointmentStore, Windows.ApplicationModel.Appointments.IAppointmentStore2
 {
 }
 
-interface AppointmentStoreChangeTracker
+interface AppointmentStoreChange : Windows.ApplicationModel.Appointments.IAppointmentStoreChange, Windows.ApplicationModel.Appointments.IAppointmentStoreChange2
 {
 }
 
-interface AppointmentStoreChangedDeferral
+interface AppointmentStoreChangeReader : Windows.ApplicationModel.Appointments.IAppointmentStoreChangeReader
 {
 }
 
-interface AppointmentStoreChangedEventArgs
+interface AppointmentStoreChangeTracker : Windows.ApplicationModel.Appointments.IAppointmentStoreChangeTracker
 {
 }
 
-interface AppointmentStoreNotificationTriggerDetails
+interface AppointmentStoreChangedDeferral : Windows.ApplicationModel.Appointments.IAppointmentStoreChangedDeferral
 {
 }
 
-interface FindAppointmentsOptions
+interface AppointmentStoreChangedEventArgs : Windows.ApplicationModel.Appointments.IAppointmentStoreChangedEventArgs
+{
+}
+
+interface AppointmentStoreNotificationTriggerDetails : Windows.ApplicationModel.Appointments.IAppointmentStoreNotificationTriggerDetails
+{
+}
+
+interface FindAppointmentsOptions : Windows.ApplicationModel.Appointments.IFindAppointmentsOptions
 {
 }
 

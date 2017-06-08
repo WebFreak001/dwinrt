@@ -399,6 +399,14 @@ T activate(T : IUnknown)()
 	return f;
 }
 
+enum AsyncStatus
+{
+	Started,
+	Completed,
+	Canceled,
+	Error,
+}
+
 @uuid("4edb8ee2-96dd-49a7-94f7-4607ddab8e3c")
 interface IGetActivationFactory : IInspectable
 {

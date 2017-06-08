@@ -544,79 +544,91 @@ extern(Windows):
 	HRESULT abi_CreateWithAlpha(Windows.Graphics.Imaging.BitmapPixelFormat format, INT32 width, INT32 height, Windows.Graphics.Imaging.BitmapAlphaMode alpha, Windows.Media.VideoFrame* return_value);
 }
 
-interface AudioBuffer
+interface AudioBuffer : Windows.Media.IAudioBuffer, Windows.Foundation.IMemoryBuffer, Windows.Foundation.IClosable
 {
 }
 
-interface AudioFrame
+interface AudioFrame : Windows.Media.IAudioFrame, Windows.Media.IMediaFrame, Windows.Foundation.IClosable
 {
 }
 
-interface AutoRepeatModeChangeRequestedEventArgs
+interface AutoRepeatModeChangeRequestedEventArgs : Windows.Media.IAutoRepeatModeChangeRequestedEventArgs
 {
 }
 
-interface ImageDisplayProperties
+interface ImageDisplayProperties : Windows.Media.IImageDisplayProperties
 {
 }
 
-interface MediaExtensionManager
+interface MediaControl
 {
 }
 
-interface MediaProcessingTriggerDetails
+interface MediaExtensionManager : Windows.Media.IMediaExtensionManager, Windows.Media.IMediaExtensionManager2
 {
 }
 
-interface MediaTimelineController
+interface MediaMarkerTypes
 {
 }
 
-interface MediaTimelineControllerFailedEventArgs
+interface MediaProcessingTriggerDetails : Windows.Media.IMediaProcessingTriggerDetails
 {
 }
 
-interface MusicDisplayProperties
+interface MediaTimelineController : Windows.Media.IMediaTimelineController, Windows.Media.IMediaTimelineController2
 {
 }
 
-interface PlaybackPositionChangeRequestedEventArgs
+interface MediaTimelineControllerFailedEventArgs : Windows.Media.IMediaTimelineControllerFailedEventArgs
 {
 }
 
-interface PlaybackRateChangeRequestedEventArgs
+interface MusicDisplayProperties : Windows.Media.IMusicDisplayProperties, Windows.Media.IMusicDisplayProperties2, Windows.Media.IMusicDisplayProperties3
 {
 }
 
-interface ShuffleEnabledChangeRequestedEventArgs
+interface PlaybackPositionChangeRequestedEventArgs : Windows.Media.IPlaybackPositionChangeRequestedEventArgs
 {
 }
 
-interface SystemMediaTransportControls
+interface PlaybackRateChangeRequestedEventArgs : Windows.Media.IPlaybackRateChangeRequestedEventArgs
 {
 }
 
-interface SystemMediaTransportControlsButtonPressedEventArgs
+interface ShuffleEnabledChangeRequestedEventArgs : Windows.Media.IShuffleEnabledChangeRequestedEventArgs
 {
 }
 
-interface SystemMediaTransportControlsDisplayUpdater
+interface SystemMediaTransportControls : Windows.Media.ISystemMediaTransportControls, Windows.Media.ISystemMediaTransportControls2
 {
 }
 
-interface SystemMediaTransportControlsPropertyChangedEventArgs
+interface SystemMediaTransportControlsButtonPressedEventArgs : Windows.Media.ISystemMediaTransportControlsButtonPressedEventArgs
 {
 }
 
-interface SystemMediaTransportControlsTimelineProperties
+interface SystemMediaTransportControlsDisplayUpdater : Windows.Media.ISystemMediaTransportControlsDisplayUpdater
 {
 }
 
-interface VideoDisplayProperties
+interface SystemMediaTransportControlsPropertyChangedEventArgs : Windows.Media.ISystemMediaTransportControlsPropertyChangedEventArgs
 {
 }
 
-interface VideoFrame
+interface SystemMediaTransportControlsTimelineProperties : Windows.Media.ISystemMediaTransportControlsTimelineProperties
+{
+}
+
+interface VideoDisplayProperties : Windows.Media.IVideoDisplayProperties, Windows.Media.IVideoDisplayProperties2
+{
+}
+
+interface VideoEffects
+{
+}
+
+interface VideoFrame : Windows.Media.IVideoFrame, Windows.Media.IMediaFrame, Windows.Foundation.IClosable
 {
 }
 
