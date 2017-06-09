@@ -6,7 +6,10 @@ import std.conv;
 import dwinrt;
 
 import Windows.ApplicationModel.Core;
+import Windows.Foundation.Numerics;
+import Windows.UI;
 import Windows.UI.Core;
+import Windows.UI.Composition;
 
 extern (Windows) int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		LPSTR lpCmdLine, int nCmdShow)
@@ -55,9 +58,30 @@ extern (Windows):
 		return S_OK;
 	}
 
-	override HRESULT abi_SetWindow(CoreWindow window)
+	override HRESULT abi_SetWindow(CoreWindow _window)
 	{
+		ICoreWindow window = cast(ICoreWindow) _window;
 		Debug.WriteLine("SetWindow");
+
+		IInspectable insp;
+		auto f = activationFactory!ICompositor;
+		Debug.OK(f.abi_ActivateInstance(&insp));
+		ICompositor compositor = cast(ICompositor) insp;
+
+		IContainerVisual root;
+		Debug.OK(compositor.abi_CreateContainerVisual(cast(ContainerVisual*)&root));
+
+		Debug.OK(compositor.abi_CreateTargetForCurrentView(cast(CompositionTarget*)&target));
+		Debug.OK(target.set_Root(cast(ContainerVisual) root));
+		Debug.OK(root.get_Children(cast(VisualCollection*)&visuals));
+
+		EventRegistrationToken token;
+		Debug.OK(window.add_PointerPressed((Windows.UI.Core.CoreWindow sender,
+				Windows.UI.Core.PointerEventArgs args) {
+				Debug.WriteLine("Point Pressed Event");
+				Debug.WriteLine("Sender: %s", sender);
+				Debug.WriteLine("Args: %s", args);
+			}.event, &token));
 
 		return S_OK;
 	}
@@ -94,6 +118,8 @@ extern (Windows):
 	}
 
 private:
+	ICompositionTarget target;
+	IVisualCollection visuals;
 }
 
 void run()

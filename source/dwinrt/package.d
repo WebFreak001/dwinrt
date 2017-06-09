@@ -4,6 +4,7 @@ public import core.sys.windows.windows;
 public import dwinrt.winstring;
 
 import core.atomic;
+import core.sys.windows.com;
 
 pragma(lib, "User32");
 pragma(lib, "windowsapp");
@@ -66,16 +67,13 @@ extern (Windows)
 {
 	version (Win32)
 	{
-		pragma(mangle, "GetRestrictedErrorInfo@4") HRESULT GetRestrictedErrorInfo(
-				IUnknown** info);
-		pragma(mangle, "RoGetActivationFactory@12") HRESULT RoGetActivationFactory(HSTRING classId,
-				const ref GUID iid, void** factory);
+		pragma(mangle, "GetRestrictedErrorInfo@4") HRESULT GetRestrictedErrorInfo(IUnknown** info);
+		pragma(mangle, "RoGetActivationFactory@12") HRESULT RoGetActivationFactory(
+				HSTRING classId, const ref GUID iid, void** factory);
 		pragma(mangle, "RoInitialize@4") HRESULT RoInitialize(uint type);
-		pragma(mangle, "RoOriginateError@8") BOOL RoOriginateError(HRESULT error,
-				HSTRING message);
+		pragma(mangle, "RoOriginateError@8") BOOL RoOriginateError(HRESULT error, HSTRING message);
 		pragma(mangle, "RoUninitialize@0") void RoUninitialize();
-		pragma(mangle, "SetRestrictedErrorInfo@4") HRESULT SetRestrictedErrorInfo(
-				IUnknown* info);
+		pragma(mangle, "SetRestrictedErrorInfo@4") HRESULT SetRestrictedErrorInfo(IUnknown* info);
 	}
 	else
 	{
@@ -120,7 +118,8 @@ struct Debug
 		}
 	}
 
-	static void OK(HRESULT hr, string file = __FILE__, int line = __LINE__, string func = __PRETTY_FUNCTION__) nothrow
+	static void OK(HRESULT hr, string file = __FILE__, int line = __LINE__,
+			string func = __PRETTY_FUNCTION__) nothrow
 	{
 		if (hr != S_OK)
 		{
@@ -452,6 +451,37 @@ extern (Windows):
 	}
 
 	LONG count = 0; // object reference count
+}
+
+class TypedEvent(TSender, TArgs) : ComObject, Windows.Foundation.TypedEventHandler!(TSender, TArgs)
+{
+	alias Callback = extern (Windows) void delegate(TSender, TArgs);
+
+	extern (Windows)
+	{
+		override HRESULT abi_Invoke(TSender sender, TArgs args)
+		{
+			callback(sender, args);
+			return S_OK;
+		}
+	}
+
+	Callback callback;
+
+	this(Callback callback)
+	{
+		this.callback = callback;
+	}
+
+	void opCall(TSender sender, TArgs args)
+	{
+		callback(sender, args);
+	}
+}
+
+auto event(TSender, TArgs)(void delegate(TSender, TArgs) cb)
+{
+	return new TypedEvent!(TSender, TArgs)((sender, args) { cb(sender, args); });
 }
 
 enum bitflags;
