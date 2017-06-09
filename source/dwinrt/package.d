@@ -458,6 +458,8 @@ enum bitflags;
 
 public static import Windows.Foundation.Collections;
 
+public static import Windows.Foundation.Numerics;
+
 public static import Windows.Foundation;
 
 public static import Windows.ApplicationModel.Activation;
@@ -701,6 +703,8 @@ public static import Windows.Graphics.Printing;
 public static import Windows.Graphics.Printing.OptionDetails;
 
 public static import Windows.Graphics.Printing3D;
+
+public static import Windows.Graphics;
 
 public static import Windows.Management.Core;
 

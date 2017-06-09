@@ -1,0 +1,12 @@
+{
+	"name": "test",
+	"dependencies": {
+		"dwinrt": {
+			"path": ".."
+		}
+	},
+	"postBuildCommands-windows": [
+		"cmd /c copy test.exe dist\\dwinrt.exe",
+		"cmd /c copy dwinrt.pdb dist\\dwinrt.pdb"
+	]
+}
