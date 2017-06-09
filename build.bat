@@ -1,1 +1,1 @@
-dub build --arch=x86_mscoff && copy dwinrt.exe dist && copy dwinrt.pdb dist && powershell .\package.ps1
+dub build --arch=x86_64 --compiler=ldc2 && copy dwinrt.exe dist && copy dwinrt.pdb dist

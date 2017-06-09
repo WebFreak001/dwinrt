@@ -13,7 +13,7 @@
 		"/DYNAMICBASE",
 		"WindowsApp.lib",
 		"/DEBUG:FASTLINK",
-		"/MACHINE:X86",
+		"/MACHINE:X64",
 		"/WINMD",
 		"/APPCONTAINER",
 		"/INCREMENTAL",
