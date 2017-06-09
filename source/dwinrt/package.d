@@ -1,5 +1,7 @@
 module dwinrt;
 
+debug = DWinRT;
+
 public import core.sys.windows.windows;
 public import dwinrt.winstring;
 
@@ -23,17 +25,40 @@ GUID uuid(string s)
 	return guid;
 }
 
+string guidToString(GUID guid)
+{
+	import std.uuid : UUID;
+
+	UUID uuid;
+	uuid.data[0] = (guid.Data1 >> 24) & 0xFF;
+	uuid.data[1] = (guid.Data1 >> 16) & 0xFF;
+	uuid.data[2] = (guid.Data1 >> 8) & 0xFF;
+	uuid.data[3] = (guid.Data1) & 0xFF;
+	uuid.data[4] = (guid.Data2 >> 8) & 0xFF;
+	uuid.data[5] = (guid.Data2) & 0xFF;
+	uuid.data[6] = (guid.Data3 >> 8) & 0xFF;
+	uuid.data[7] = (guid.Data3) & 0xFF;
+	uuid.data[8 .. 16] = guid.Data4;
+	return uuid.toString;
+}
+
 unittest
 {
 	assert(uuid("01000000-0000-0000-C000-000000000046") == IID_IClassFactory);
+	assert(guidToString(uuid("01234567-89AB-CDEF-0123-456789ABCDEF")) == "01234567-89ab-cdef-0123-456789abcdef",
+			guidToString(uuid("01234567-89AB-CDEF-0123-456789ABCDEF")));
 }
 
-GUID uuidOf(T)()
+GUID uuidOf(T, bool throwIfNotThere = true)()
 {
+	GUID ret;
 	foreach (attr; __traits(getAttributes, T))
 		static if (is(typeof(attr) == GUID))
-			return attr;
-	assert(false, T.stringof ~ " has no GUID attached to it! Use @uuid(...) to attach");
+			ret = attr;
+	static if (throwIfNotThere)
+		if (ret == GUID.init)
+			assert(false, T.stringof ~ " has no GUID attached to it! Use @uuid(...) to attach");
+	return ret;
 }
 
 wstring factoryNameOf(T)()
@@ -52,8 +77,10 @@ wstring winrtNameOf(T)()
 
 	string ret = fullyQualifiedName!T;
 	auto idx = ret.lastIndexOf('.');
-	assert(ret[idx + 1] == 'I', "WinRT interfaces must begin with an I (For " ~ ret ~ ")");
-	return (ret[0 .. idx + 1] ~ ret[idx + 2 .. $]).to!wstring;
+	if (ret[idx + 1] == 'I')
+		return (ret[0 .. idx + 1] ~ ret[idx + 2 .. $]).to!wstring;
+	else
+		return ret.to!wstring;
 }
 
 struct WinrtFactory
@@ -182,6 +209,11 @@ struct hstring
 		m_handle = create_string(cast(const(wchar)*) value, size);
 	}
 
+	this(HSTRING val)
+	{
+		m_handle = val;
+	}
+
 	void clear() nothrow
 	{
 		auto result = WindowsDeleteString(handle);
@@ -279,6 +311,8 @@ pragma(inline, true) void init_apartment(in ApartmentType type = ApartmentType.m
 {
 	import std.conv : to;
 
+	debug (DWinRT)
+		Debug.WriteLine("RoInitialize %s", type);
 	const result = RoInitialize(cast(uint) type);
 	if (result < 0)
 		throw new Exception("HResult Error " ~ result.to!string);
@@ -286,6 +320,8 @@ pragma(inline, true) void init_apartment(in ApartmentType type = ApartmentType.m
 
 pragma(inline, true) void uninit_apartment()
 {
+	debug (DWinRT)
+		Debug.WriteLine("RoUninitialize");
 	RoUninitialize();
 }
 
@@ -305,6 +341,35 @@ extern (Windows):
 	HRESULT abi_GetTrustLevel(TrustLevel* trustLevel);
 }
 
+void inspect(T : IInspectable)(IInspectable inspectable)
+{
+	import std.algorithm;
+	import std.conv;
+	import std.string;
+	import std.traits;
+
+	static immutable target = winrtNameOf!T;
+	debug (DWinRT)
+		Debug.WriteLine("Checking %s to be %s", inspectable, target);
+	HSTRING name;
+	inspectable.abi_GetRuntimeClassName(&name);
+	if (hstring(name).d_str != target)
+	{
+		string dname = hstring(name).d_str.to!string;
+		enum uuids = listUUIDs!T;
+		uint num;
+		GUID* iids;
+		inspectable.abi_GetIids(&num, &iids);
+		GUID[] cmp = iids[0 .. num];
+		Debug.WriteLine(
+				"Mismatch Types: Expected type to be %s (%(%s, %))\n                            but got %s (%(%s, %))",
+				fullyQualifiedName!T, uuids.map!guidToString, dname, cmp.map!guidToString);
+		throw new Exception("Mismatch IIDs: Expected type to be " ~ fullyQualifiedName!T ~ " ("
+				~ uuids.map!guidToString.join(
+					", ") ~ ") but got " ~ dname ~ " (" ~ cmp.map!guidToString.join(", ") ~ ")");
+	}
+}
+
 @uuid("00000035-0000-0000-c000-000000000046")
 interface IActivationFactory : IInspectable
 {
@@ -320,7 +385,9 @@ struct EventRegistrationToken
 T factory(T : IUnknown)()
 {
 	T p;
-	auto id = uuidOf!T;
+	static immutable id = uuidOf!T;
+	debug (DWinRT)
+		Debug.WriteLine("RoGetActivationFactory(%s, %s)", factoryNameOf!T, id.guidToString);
 	auto result = RoGetActivationFactory(hstring(factoryNameOf!T).handle, id, cast(void**)&p);
 	Debug.OK(result);
 	return p;
@@ -329,9 +396,11 @@ T factory(T : IUnknown)()
 Interface factory(Class : IUnknown, Interface : IUnknown)()
 {
 	Interface factory;
-	auto id = uuidOf!Interface;
-	auto result = RoGetActivationFactory(hstring(winrtNameOf!Class).handle,
-			id, cast(void**)&factory);
+	static immutable id = uuidOf!Interface;
+	enum rt = winrtNameOf!Class;
+	debug (DWinRT)
+		Debug.WriteLine("RoGetActivationFactory(%s, %s)", rt, id.guidToString);
+	auto result = RoGetActivationFactory(hstring(rt).handle, id, cast(void**)&factory);
 	Debug.OK(result);
 	return factory;
 }
@@ -339,19 +408,31 @@ Interface factory(Class : IUnknown, Interface : IUnknown)()
 auto tryAs(U : IUnknown, T : IUnknown)(T base)
 {
 	U tmp = null;
-	auto id = uuidOf!U;
+	static immutable id = uuidOf!U;
 	base.QueryInterface(&id, cast(void**)&tmp);
+	return tmp;
+}
+
+auto as(U : IUnknown, T : IUnknown)(T base)
+{
+	U tmp = null;
+	static immutable id = uuidOf!U;
+	Debug.OK(base.QueryInterface(&id, cast(void**)&tmp));
 	return tmp;
 }
 
 Interface activationFactory(Class : IUnknown, Interface : IUnknown = IActivationFactory)()
 {
+	debug (DWinRT)
+		Debug.WriteLine("activationFactory!(%s, %s)", Class.stringof, Interface.stringof);
 	return factory!(Class, Interface);
 }
 
 T activate(T : IUnknown)()
 {
 	T f;
+	debug (DWinRT)
+		Debug.WriteLine("activate!%s", T.stringof);
 	Debug.OK(activationFactory!T.abi_ActivateInstance(cast(IInspectable*)&f));
 	return f;
 }
@@ -374,28 +455,31 @@ interface IAgileObject : IUnknown
 {
 }
 
+GUID[] listUUIDs(T)()
+{
+	import std.algorithm : canFind;
+	import std.traits : InterfacesTuple;
+	import core.exception : AssertError;
+
+	GUID[] arr;
+	foreach (Base; InterfacesTuple!T)
+	{
+		auto uuid = uuidOf!(Base, false);
+		if (uuid != GUID.init && !arr.canFind(uuid))
+			arr ~= uuid;
+	}
+	return arr;
+}
+
 class Inspectable(T) : IInspectable
 {
 extern (Windows):
 	HRESULT abi_GetIids(uint* iidCount, GUID** iids)
 	{
-		import std.traits : InterfacesTuple;
-		import core.exception : AssertError;
-
-		GUID[] arr;
-		foreach (Base; InterfacesTuple!T)
-		{
-			try
-			{
-				arr ~= uuidOf!Base;
-			}
-			catch (AssertError)
-			{
-			}
-		}
+		static immutable arr = listUUIDs!T;
 
 		*iidCount = cast(uint) arr.length;
-		*iids = arr.ptr;
+		*iids = cast(GUID*) arr.ptr;
 		return S_OK;
 	}
 
@@ -453,7 +537,8 @@ extern (Windows):
 	LONG count = 0; // object reference count
 }
 
-class TypedEvent(TSender, TArgs) : ComObject, Windows.Foundation.TypedEventHandler!(TSender, TArgs)
+class TypedEvent(TSender, TArgs) : ComObject,
+	Windows.Foundation.TypedEventHandler!(TSender, TArgs)
 {
 	alias Callback = extern (Windows) void delegate(TSender, TArgs);
 

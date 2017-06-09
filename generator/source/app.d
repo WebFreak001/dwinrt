@@ -55,7 +55,7 @@ void processIDL(string file)
 	if (ignored.canFind(file.baseName))
 		return;
 
-	//if (file.baseName != "windows.foundation.idl")
+	//if (file.baseName != "windows.ui.composition.idl")
 	//	return;
 
 	writeln("Processing ", file);
@@ -149,7 +149,8 @@ void processIDL(string file)
 					enforce(content.name == "IDL.definition_content");
 					if (content.children.length == 1 && content.children[0].name == "IDL.uuid")
 					{
-						uuid = content.children[0].children.map!(a => a.matches[0]).join("-").toLower;
+						uuid = content.children[0].children.map!(a => a.matches[0])
+							.join("-").toLower;
 						return;
 					}
 				}
@@ -274,7 +275,8 @@ void processIDL(string file)
 					foreach_reverse (content; attrib.children)
 					{
 						enforce(content.name == "IDL.definition_content");
-						if (content.children.length == 1 && content.children[0].name == "IDL.exclusiveto")
+						if (content.children.length == 1
+								&& content.children[0].name == "IDL.exclusiveto")
 						{
 							enforce(content.children[0].children[0].name == "IDL.scoped_name");
 							obj.exclusiveto = content.children[0].children[0].matches.join("");
@@ -310,14 +312,18 @@ void processIDL(string file)
 					foreach (fn; body_.children)
 					{
 						enforce(fn.name == "IDL.export_", fn.toString);
+						int numAdded = 0;
 						foreach_reverse (i, fnchild; fn.children)
 						{
 							if (fnchild.name == "IDL.definition_attribute")
 							{
+								numAdded++;
 								attributes ~= fnchild;
 								fn.children = fn.children[0 .. i] ~ fn.children[i + 1 .. $];
 							}
 						}
+						scope (exit)
+							attributes.length -= numAdded;
 						enforce(fn.children.length == 1, fn.toString);
 						auto opdcl = fn.children[0];
 						if (opdcl.name == "IDL.cpp_quote")
@@ -496,7 +502,8 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 				}
 				else
 				{
-					if (spec.children.length == 1 && spec.children[0].name == "IDL.op_overload_attribute")
+					if (spec.children.length == 1
+							&& spec.children[0].name == "IDL.op_overload_attribute")
 					{
 						enforce(spec.children[0].children.length == 1);
 						method.name = spec.children[0].children[0].parseString;
@@ -535,7 +542,8 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 									argument.direction |= ArgumentDirection.out_;
 									break;
 								case "inout":
-									argument.direction |= ArgumentDirection.in_ | ArgumentDirection.out_;
+									argument.direction |= ArgumentDirection.in_
+										| ArgumentDirection.out_;
 									break;
 								case "retval":
 									argument.direction |= ArgumentDirection.retval;
@@ -544,7 +552,8 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 								case "unique":
 									break;
 								default:
-									throw new Exception("Invalid parameter attribute: " ~ attr.matches[0]);
+									throw new Exception(
+											"Invalid parameter attribute: " ~ attr.matches[0]);
 								}
 							}
 						}
@@ -816,6 +825,8 @@ struct Interface
 	void fixTypes()
 	{
 		foreach (ref type; inherits)
+			type.fixType;
+		foreach (ref type; requires)
 			type.fixType;
 		foreach (ref type; implements)
 			type.fixType;

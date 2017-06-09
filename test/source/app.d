@@ -60,20 +60,21 @@ extern (Windows):
 
 	override HRESULT abi_SetWindow(CoreWindow _window)
 	{
-		ICoreWindow window = cast(ICoreWindow) _window;
+		ICoreWindow window = _window.as!ICoreWindow;
 		Debug.WriteLine("SetWindow");
 
 		IInspectable insp;
 		auto f = activationFactory!ICompositor;
 		Debug.OK(f.abi_ActivateInstance(&insp));
 		ICompositor compositor = cast(ICompositor) insp;
+		compositor.inspect!Compositor;
 
-		IContainerVisual root;
-		Debug.OK(compositor.abi_CreateContainerVisual(cast(ContainerVisual*)&root));
+		ContainerVisual root;
+		Debug.OK(compositor.as!ICompositor.abi_CreateContainerVisual(&root));
 
-		Debug.OK(compositor.abi_CreateTargetForCurrentView(cast(CompositionTarget*)&target));
-		Debug.OK(target.set_Root(cast(ContainerVisual) root));
-		Debug.OK(root.get_Children(cast(VisualCollection*)&visuals));
+		Debug.OK(compositor.as!ICompositor.abi_CreateTargetForCurrentView(&target));
+		Debug.OK(target.as!ICompositionTarget.set_Root(root));
+		Debug.OK(root.as!IContainerVisual.get_Children(&visuals));
 
 		EventRegistrationToken token;
 		Debug.OK(window.add_PointerPressed((Windows.UI.Core.CoreWindow sender,
@@ -118,12 +119,13 @@ extern (Windows):
 	}
 
 private:
-	ICompositionTarget target;
-	IVisualCollection visuals;
+	CompositionTarget target;
+	VisualCollection visuals;
 }
 
 void run()
 {
 	MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
+
 	Debug.OK(factory!ICoreApplication.abi_Run(new App));
 }
