@@ -106,10 +106,48 @@ extern(Windows):
 
 interface KeyboardCapabilities : Windows.Devices.Input.IKeyboardCapabilities
 {
+extern(Windows):
+	final INT32 KeyboardPresent()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IKeyboardCapabilities).get_KeyboardPresent(&_ret));
+		return _ret;
+	}
 }
 
 interface MouseCapabilities : Windows.Devices.Input.IMouseCapabilities
 {
+extern(Windows):
+	final INT32 MousePresent()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IMouseCapabilities).get_MousePresent(&_ret));
+		return _ret;
+	}
+	final INT32 VerticalWheelPresent()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IMouseCapabilities).get_VerticalWheelPresent(&_ret));
+		return _ret;
+	}
+	final INT32 HorizontalWheelPresent()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IMouseCapabilities).get_HorizontalWheelPresent(&_ret));
+		return _ret;
+	}
+	final INT32 SwapButtons()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IMouseCapabilities).get_SwapButtons(&_ret));
+		return _ret;
+	}
+	final UINT32 NumberOfButtons()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IMouseCapabilities).get_NumberOfButtons(&_ret));
+		return _ret;
+	}
 }
 
 interface MouseDevice : Windows.Devices.Input.IMouseDevice
@@ -118,14 +156,77 @@ interface MouseDevice : Windows.Devices.Input.IMouseDevice
 
 interface MouseEventArgs : Windows.Devices.Input.IMouseEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.MouseDelta MouseDelta()
+	{
+		Windows.Devices.Input.MouseDelta _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IMouseEventArgs).get_MouseDelta(&_ret));
+		return _ret;
+	}
 }
 
 interface PointerDevice : Windows.Devices.Input.IPointerDevice, Windows.Devices.Input.IPointerDevice2
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final bool IsIntegrated()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice).get_IsIntegrated(&_ret));
+		return _ret;
+	}
+	final UINT32 MaxContacts()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice).get_MaxContacts(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect PhysicalDeviceRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice).get_PhysicalDeviceRect(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect ScreenRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice).get_ScreenRect(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Input.PointerDeviceUsage) SupportedUsages()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Input.PointerDeviceUsage) _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice).get_SupportedUsages(&_ret));
+		return _ret;
+	}
+	final UINT32 MaxPointersWithZDistance()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice2).get_MaxPointersWithZDistance(&_ret));
+		return _ret;
+	}
 }
 
 interface TouchCapabilities : Windows.Devices.Input.ITouchCapabilities
 {
+extern(Windows):
+	final INT32 TouchPresent()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.ITouchCapabilities).get_TouchPresent(&_ret));
+		return _ret;
+	}
+	final UINT32 Contacts()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Input.ITouchCapabilities).get_Contacts(&_ret));
+		return _ret;
+	}
 }
 
 enum PointerDeviceType

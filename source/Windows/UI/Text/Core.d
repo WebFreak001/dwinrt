@@ -225,46 +225,323 @@ extern(Windows):
 
 interface CoreTextCompositionCompletedEventArgs : Windows.UI.Text.Core.ICoreTextCompositionCompletedEventArgs
 {
+extern(Windows):
+	final bool IsCanceled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionCompletedEventArgs).get_IsCanceled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Text.Core.CoreTextCompositionSegment) CompositionSegments()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Text.Core.CoreTextCompositionSegment) _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionCompletedEventArgs).get_CompositionSegments(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionCompletedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreTextCompositionSegment : Windows.UI.Text.Core.ICoreTextCompositionSegment
 {
+extern(Windows):
+	final HSTRING PreconversionString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionSegment).get_PreconversionString(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Text.Core.CoreTextRange Range()
+	{
+		Windows.UI.Text.Core.CoreTextRange _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionSegment).get_Range(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreTextCompositionStartedEventArgs : Windows.UI.Text.Core.ICoreTextCompositionStartedEventArgs
 {
+extern(Windows):
+	final bool IsCanceled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionStartedEventArgs).get_IsCanceled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionStartedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreTextEditContext : Windows.UI.Text.Core.ICoreTextEditContext, Windows.UI.Text.Core.ICoreTextEditContext2
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).set_Name(value));
+	}
+	final Windows.UI.Text.Core.CoreTextInputScope InputScope()
+	{
+		Windows.UI.Text.Core.CoreTextInputScope _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).get_InputScope(&_ret));
+		return _ret;
+	}
+	final void InputScope(Windows.UI.Text.Core.CoreTextInputScope value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).set_InputScope(value));
+	}
+	final bool IsReadOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).get_IsReadOnly(&_ret));
+		return _ret;
+	}
+	final void IsReadOnly(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).set_IsReadOnly(value));
+	}
+	final Windows.UI.Text.Core.CoreTextInputPaneDisplayPolicy InputPaneDisplayPolicy()
+	{
+		Windows.UI.Text.Core.CoreTextInputPaneDisplayPolicy _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).get_InputPaneDisplayPolicy(&_ret));
+		return _ret;
+	}
+	final void InputPaneDisplayPolicy(Windows.UI.Text.Core.CoreTextInputPaneDisplayPolicy value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).set_InputPaneDisplayPolicy(value));
+	}
+	final void NotifyFocusEnter()
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).abi_NotifyFocusEnter());
+	}
+	final void NotifyFocusLeave()
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).abi_NotifyFocusLeave());
+	}
+	final void NotifyTextChanged(Windows.UI.Text.Core.CoreTextRange modifiedRange, INT32 newLength, Windows.UI.Text.Core.CoreTextRange newSelection)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).abi_NotifyTextChanged(modifiedRange, newLength, newSelection));
+	}
+	final void NotifySelectionChanged(Windows.UI.Text.Core.CoreTextRange selection)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).abi_NotifySelectionChanged(selection));
+	}
+	final void NotifyLayoutChanged()
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).abi_NotifyLayoutChanged());
+	}
 }
 
 interface CoreTextFormatUpdatingEventArgs : Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs
 {
+extern(Windows):
+	final Windows.UI.Text.Core.CoreTextRange Range()
+	{
+		Windows.UI.Text.Core.CoreTextRange _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_Range(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.UI.ViewManagement.UIElementType) TextColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.ViewManagement.UIElementType) _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_TextColor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.UI.ViewManagement.UIElementType) BackgroundColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.ViewManagement.UIElementType) _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_BackgroundColor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.UI.ViewManagement.UIElementType) UnderlineColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.ViewManagement.UIElementType) _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_UnderlineColor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Text.UnderlineType) UnderlineType()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Text.UnderlineType) _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_UnderlineType(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Text.Core.CoreTextFormatUpdatingReason Reason()
+	{
+		Windows.UI.Text.Core.CoreTextFormatUpdatingReason _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_Reason(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Text.Core.CoreTextFormatUpdatingResult Result()
+	{
+		Windows.UI.Text.Core.CoreTextFormatUpdatingResult _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_Result(&_ret));
+		return _ret;
+	}
+	final void Result(Windows.UI.Text.Core.CoreTextFormatUpdatingResult value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).set_Result(value));
+	}
+	final bool IsCanceled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_IsCanceled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreTextLayoutBounds : Windows.UI.Text.Core.ICoreTextLayoutBounds
 {
+extern(Windows):
+	final Windows.Foundation.Rect TextBounds()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutBounds).get_TextBounds(&_ret));
+		return _ret;
+	}
+	final void TextBounds(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutBounds).set_TextBounds(value));
+	}
+	final Windows.Foundation.Rect ControlBounds()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutBounds).get_ControlBounds(&_ret));
+		return _ret;
+	}
+	final void ControlBounds(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutBounds).set_ControlBounds(value));
+	}
 }
 
 interface CoreTextLayoutRequest : Windows.UI.Text.Core.ICoreTextLayoutRequest
 {
+extern(Windows):
+	final Windows.UI.Text.Core.CoreTextRange Range()
+	{
+		Windows.UI.Text.Core.CoreTextRange _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutRequest).get_Range(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Text.Core.CoreTextLayoutBounds LayoutBounds()
+	{
+		Windows.UI.Text.Core.CoreTextLayoutBounds _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutRequest).get_LayoutBounds(&_ret));
+		return _ret;
+	}
+	final bool IsCanceled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutRequest).get_IsCanceled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreTextLayoutRequestedEventArgs : Windows.UI.Text.Core.ICoreTextLayoutRequestedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Text.Core.CoreTextLayoutRequest Request()
+	{
+		Windows.UI.Text.Core.CoreTextLayoutRequest _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreTextSelectionRequest : Windows.UI.Text.Core.ICoreTextSelectionRequest
 {
+extern(Windows):
+	final Windows.UI.Text.Core.CoreTextRange Selection()
+	{
+		Windows.UI.Text.Core.CoreTextRange _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionRequest).get_Selection(&_ret));
+		return _ret;
+	}
+	final void Selection(Windows.UI.Text.Core.CoreTextRange value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionRequest).set_Selection(value));
+	}
+	final bool IsCanceled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionRequest).get_IsCanceled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreTextSelectionRequestedEventArgs : Windows.UI.Text.Core.ICoreTextSelectionRequestedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Text.Core.CoreTextSelectionRequest Request()
+	{
+		Windows.UI.Text.Core.CoreTextSelectionRequest _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreTextSelectionUpdatingEventArgs : Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs
 {
+extern(Windows):
+	final Windows.UI.Text.Core.CoreTextRange Selection()
+	{
+		Windows.UI.Text.Core.CoreTextRange _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs).get_Selection(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Text.Core.CoreTextSelectionUpdatingResult Result()
+	{
+		Windows.UI.Text.Core.CoreTextSelectionUpdatingResult _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs).get_Result(&_ret));
+		return _ret;
+	}
+	final void Result(Windows.UI.Text.Core.CoreTextSelectionUpdatingResult value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs).set_Result(value));
+	}
+	final bool IsCanceled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs).get_IsCanceled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreTextServicesConstants
@@ -273,18 +550,114 @@ interface CoreTextServicesConstants
 
 interface CoreTextServicesManager : Windows.UI.Text.Core.ICoreTextServicesManager
 {
+extern(Windows):
+	final Windows.Globalization.Language InputLanguage()
+	{
+		Windows.Globalization.Language _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextServicesManager).get_InputLanguage(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Text.Core.CoreTextEditContext CreateEditContext()
+	{
+		Windows.UI.Text.Core.CoreTextEditContext _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextServicesManager).abi_CreateEditContext(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreTextTextRequest : Windows.UI.Text.Core.ICoreTextTextRequest
 {
+extern(Windows):
+	final Windows.UI.Text.Core.CoreTextRange Range()
+	{
+		Windows.UI.Text.Core.CoreTextRange _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextRequest).get_Range(&_ret));
+		return _ret;
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextRequest).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextRequest).set_Text(value));
+	}
+	final bool IsCanceled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextRequest).get_IsCanceled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreTextTextRequestedEventArgs : Windows.UI.Text.Core.ICoreTextTextRequestedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Text.Core.CoreTextTextRequest Request()
+	{
+		Windows.UI.Text.Core.CoreTextTextRequest _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreTextTextUpdatingEventArgs : Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs
 {
+extern(Windows):
+	final Windows.UI.Text.Core.CoreTextRange Range()
+	{
+		Windows.UI.Text.Core.CoreTextRange _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).get_Range(&_ret));
+		return _ret;
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).get_Text(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Text.Core.CoreTextRange NewSelection()
+	{
+		Windows.UI.Text.Core.CoreTextRange _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).get_NewSelection(&_ret));
+		return _ret;
+	}
+	final Windows.Globalization.Language InputLanguage()
+	{
+		Windows.Globalization.Language _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).get_InputLanguage(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Text.Core.CoreTextTextUpdatingResult Result()
+	{
+		Windows.UI.Text.Core.CoreTextTextUpdatingResult _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).get_Result(&_ret));
+		return _ret;
+	}
+	final void Result(Windows.UI.Text.Core.CoreTextTextUpdatingResult value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).set_Result(value));
+	}
+	final bool IsCanceled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).get_IsCanceled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 enum CoreTextFormatUpdatingReason

@@ -37,8 +37,52 @@ extern(Windows):
 
 interface Battery : Windows.Devices.Power.IBattery
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Power.IBattery).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Power.BatteryReport GetReport()
+	{
+		Windows.Devices.Power.BatteryReport _ret;
+		Debug.OK(this.as!(Windows.Devices.Power.IBattery).abi_GetReport(&_ret));
+		return _ret;
+	}
 }
 
 interface BatteryReport : Windows.Devices.Power.IBatteryReport
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(INT32) ChargeRateInMilliwatts()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Power.IBatteryReport).get_ChargeRateInMilliwatts(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(INT32) DesignCapacityInMilliwattHours()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Power.IBatteryReport).get_DesignCapacityInMilliwattHours(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(INT32) FullChargeCapacityInMilliwattHours()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Power.IBatteryReport).get_FullChargeCapacityInMilliwattHours(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(INT32) RemainingCapacityInMilliwattHours()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Power.IBatteryReport).get_RemainingCapacityInMilliwattHours(&_ret));
+		return _ret;
+	}
+	final Windows.System.Power.BatteryStatus Status()
+	{
+		Windows.System.Power.BatteryStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Power.IBatteryReport).get_Status(&_ret));
+		return _ret;
+	}
 }

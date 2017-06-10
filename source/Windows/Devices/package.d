@@ -38,6 +38,37 @@ extern(Windows):
 
 interface LowLevelDevicesAggregateProvider : Windows.Devices.ILowLevelDevicesAggregateProvider
 {
+extern(Windows):
+	final Windows.Devices.Adc.Provider.IAdcControllerProvider AdcControllerProvider()
+	{
+		Windows.Devices.Adc.Provider.IAdcControllerProvider _ret;
+		Debug.OK(this.as!(Windows.Devices.ILowLevelDevicesAggregateProvider).get_AdcControllerProvider(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Pwm.Provider.IPwmControllerProvider PwmControllerProvider()
+	{
+		Windows.Devices.Pwm.Provider.IPwmControllerProvider _ret;
+		Debug.OK(this.as!(Windows.Devices.ILowLevelDevicesAggregateProvider).get_PwmControllerProvider(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Gpio.Provider.IGpioControllerProvider GpioControllerProvider()
+	{
+		Windows.Devices.Gpio.Provider.IGpioControllerProvider _ret;
+		Debug.OK(this.as!(Windows.Devices.ILowLevelDevicesAggregateProvider).get_GpioControllerProvider(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.I2c.Provider.II2cControllerProvider I2cControllerProvider()
+	{
+		Windows.Devices.I2c.Provider.II2cControllerProvider _ret;
+		Debug.OK(this.as!(Windows.Devices.ILowLevelDevicesAggregateProvider).get_I2cControllerProvider(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Spi.Provider.ISpiControllerProvider SpiControllerProvider()
+	{
+		Windows.Devices.Spi.Provider.ISpiControllerProvider _ret;
+		Debug.OK(this.as!(Windows.Devices.ILowLevelDevicesAggregateProvider).get_SpiControllerProvider(&_ret));
+		return _ret;
+	}
 }
 
 interface LowLevelDevicesController : Windows.Devices.ILowLevelDevicesController

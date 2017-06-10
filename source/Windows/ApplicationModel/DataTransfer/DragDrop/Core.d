@@ -100,22 +100,161 @@ extern(Windows):
 
 interface CoreDragDropManager : Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragDropManager
 {
+extern(Windows):
+	final bool AreConcurrentOperationsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragDropManager).get_AreConcurrentOperationsEnabled(&_ret));
+		return _ret;
+	}
+	final void AreConcurrentOperationsEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragDropManager).set_AreConcurrentOperationsEnabled(value));
+	}
 }
 
 interface CoreDragInfo : Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragInfo, Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragInfo2
 {
+extern(Windows):
+	final Windows.ApplicationModel.DataTransfer.DataPackageView Data()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackageView _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragInfo).get_Data(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.DataTransfer.DragDrop.DragDropModifiers Modifiers()
+	{
+		Windows.ApplicationModel.DataTransfer.DragDrop.DragDropModifiers _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragInfo).get_Modifiers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragInfo).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.DataTransfer.DataPackageOperation AllowedOperations()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackageOperation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragInfo2).get_AllowedOperations(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreDragOperation : Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation, Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation2
 {
+extern(Windows):
+	final Windows.ApplicationModel.DataTransfer.DataPackage Data()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackage _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation).get_Data(&_ret));
+		return _ret;
+	}
+	final void SetPointerId(UINT32 pointerId)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation).abi_SetPointerId(pointerId));
+	}
+	final void SetDragUIContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation).abi_SetDragUIContentFromSoftwareBitmap(softwareBitmap));
+	}
+	final void SetDragUIContentFromSoftwareBitmapWithAnchorPoint(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation).abi_SetDragUIContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
+	}
+	final Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragUIContentMode DragUIContentMode()
+	{
+		Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragUIContentMode _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation).get_DragUIContentMode(&_ret));
+		return _ret;
+	}
+	final void DragUIContentMode(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragUIContentMode value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation).set_DragUIContentMode(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation) StartAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation).abi_StartAsync(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.DataTransfer.DataPackageOperation AllowedOperations()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackageOperation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation2).get_AllowedOperations(&_ret));
+		return _ret;
+	}
+	final void AllowedOperations(Windows.ApplicationModel.DataTransfer.DataPackageOperation value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation2).set_AllowedOperations(value));
+	}
 }
 
 interface CoreDragUIOverride : Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride
 {
+extern(Windows):
+	final void SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride).abi_SetContentFromSoftwareBitmap(softwareBitmap));
+	}
+	final void SetContentFromSoftwareBitmapWithAnchorPoint(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride).abi_SetContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
+	}
+	final bool IsContentVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride).get_IsContentVisible(&_ret));
+		return _ret;
+	}
+	final void IsContentVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride).set_IsContentVisible(value));
+	}
+	final HSTRING Caption()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride).get_Caption(&_ret));
+		return _ret;
+	}
+	final void Caption(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride).set_Caption(value));
+	}
+	final bool IsCaptionVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride).get_IsCaptionVisible(&_ret));
+		return _ret;
+	}
+	final void IsCaptionVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride).set_IsCaptionVisible(value));
+	}
+	final bool IsGlyphVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride).get_IsGlyphVisible(&_ret));
+		return _ret;
+	}
+	final void IsGlyphVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride).set_IsGlyphVisible(value));
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride).abi_Clear());
+	}
 }
 
 interface CoreDropOperationTargetRequestedEventArgs : Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDropOperationTargetRequestedEventArgs
 {
+extern(Windows):
+	final void SetTarget(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDropOperationTarget target)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDropOperationTargetRequestedEventArgs).abi_SetTarget(target));
+	}
 }
 
 @bitflags

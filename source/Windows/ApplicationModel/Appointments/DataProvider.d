@@ -172,56 +172,416 @@ extern(Windows):
 
 interface AppointmentCalendarCancelMeetingRequest : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest
 {
+extern(Windows):
+	final HSTRING AppointmentCalendarLocalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).get_AppointmentCalendarLocalId(&_ret));
+		return _ret;
+	}
+	final HSTRING AppointmentLocalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).get_AppointmentLocalId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) AppointmentOriginalStartTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).get_AppointmentOriginalStartTime(&_ret));
+		return _ret;
+	}
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).get_Subject(&_ret));
+		return _ret;
+	}
+	final HSTRING Comment()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).get_Comment(&_ret));
+		return _ret;
+	}
+	final bool NotifyInvitees()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).get_NotifyInvitees(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentCalendarCancelMeetingRequestEventArgs : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequest Request()
+	{
+		Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentCalendarCreateOrUpdateAppointmentRequest : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest
 {
+extern(Windows):
+	final HSTRING AppointmentCalendarLocalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest).get_AppointmentCalendarLocalId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Appointments.Appointment Appointment()
+	{
+		Windows.ApplicationModel.Appointments.Appointment _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest).get_Appointment(&_ret));
+		return _ret;
+	}
+	final bool NotifyInvitees()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest).get_NotifyInvitees(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) ChangedProperties()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest).get_ChangedProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync(Windows.ApplicationModel.Appointments.Appointment createdOrUpdatedAppointment)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest).abi_ReportCompletedAsync(createdOrUpdatedAppointment, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequest Request()
+	{
+		Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentCalendarForwardMeetingRequest : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest
 {
+extern(Windows):
+	final HSTRING AppointmentCalendarLocalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_AppointmentCalendarLocalId(&_ret));
+		return _ret;
+	}
+	final HSTRING AppointmentLocalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_AppointmentLocalId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) AppointmentOriginalStartTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_AppointmentOriginalStartTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentInvitee) Invitees()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentInvitee) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_Invitees(&_ret));
+		return _ret;
+	}
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_Subject(&_ret));
+		return _ret;
+	}
+	final HSTRING ForwardHeader()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_ForwardHeader(&_ret));
+		return _ret;
+	}
+	final HSTRING Comment()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_Comment(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentCalendarForwardMeetingRequestEventArgs : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequest Request()
+	{
+		Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentCalendarProposeNewTimeForMeetingRequest : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest
 {
+extern(Windows):
+	final HSTRING AppointmentCalendarLocalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_AppointmentCalendarLocalId(&_ret));
+		return _ret;
+	}
+	final HSTRING AppointmentLocalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_AppointmentLocalId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) AppointmentOriginalStartTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_AppointmentOriginalStartTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime NewStartTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_NewStartTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan NewDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_NewDuration(&_ret));
+		return _ret;
+	}
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_Subject(&_ret));
+		return _ret;
+	}
+	final HSTRING Comment()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_Comment(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequest Request()
+	{
+		Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentCalendarSyncManagerSyncRequest : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequest
 {
+extern(Windows):
+	final HSTRING AppointmentCalendarLocalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequest).get_AppointmentCalendarLocalId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentCalendarSyncManagerSyncRequestEventArgs : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequest Request()
+	{
+		Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentCalendarUpdateMeetingResponseRequest : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest
 {
+extern(Windows):
+	final HSTRING AppointmentCalendarLocalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_AppointmentCalendarLocalId(&_ret));
+		return _ret;
+	}
+	final HSTRING AppointmentLocalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_AppointmentLocalId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) AppointmentOriginalStartTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_AppointmentOriginalStartTime(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentParticipantResponse Response()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentParticipantResponse _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_Response(&_ret));
+		return _ret;
+	}
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_Subject(&_ret));
+		return _ret;
+	}
+	final HSTRING Comment()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_Comment(&_ret));
+		return _ret;
+	}
+	final bool SendUpdate()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_SendUpdate(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentCalendarUpdateMeetingResponseRequestEventArgs : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequest Request()
+	{
+		Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentDataProviderConnection : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection
 {
+extern(Windows):
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).abi_Start());
+	}
 }
 
 interface AppointmentDataProviderTriggerDetails : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderTriggerDetails
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection Connection()
+	{
+		Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderTriggerDetails).get_Connection(&_ret));
+		return _ret;
+	}
 }

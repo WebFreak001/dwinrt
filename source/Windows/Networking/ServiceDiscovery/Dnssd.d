@@ -60,10 +60,122 @@ extern(Windows):
 
 interface DnssdRegistrationResult : Windows.Networking.ServiceDiscovery.Dnssd.IDnssdRegistrationResult, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationStatus Status()
+	{
+		Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationStatus _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdRegistrationResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.HostName IPAddress()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdRegistrationResult).get_IPAddress(&_ret));
+		return _ret;
+	}
+	final bool HasInstanceNameChanged()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdRegistrationResult).get_HasInstanceNameChanged(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface DnssdServiceInstance : Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING DnssdServiceInstanceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).get_DnssdServiceInstanceName(&_ret));
+		return _ret;
+	}
+	final void DnssdServiceInstanceName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).set_DnssdServiceInstanceName(value));
+	}
+	final Windows.Networking.HostName HostName()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).get_HostName(&_ret));
+		return _ret;
+	}
+	final void HostName(Windows.Networking.HostName value)
+	{
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).set_HostName(value));
+	}
+	final UINT16 Port()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).get_Port(&_ret));
+		return _ret;
+	}
+	final void Port(UINT16 value)
+	{
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).set_Port(value));
+	}
+	final UINT16 Priority()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).get_Priority(&_ret));
+		return _ret;
+	}
+	final void Priority(UINT16 value)
+	{
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).set_Priority(value));
+	}
+	final UINT16 Weight()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).get_Weight(&_ret));
+		return _ret;
+	}
+	final void Weight(UINT16 value)
+	{
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).set_Weight(value));
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) TextAttributes()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).get_TextAttributes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterStreamSocketListenerAsync1(Windows.Networking.Sockets.StreamSocketListener socket)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).abi_RegisterStreamSocketListenerAsync1(socket, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterStreamSocketListenerAsync2(Windows.Networking.Sockets.StreamSocketListener socket, Windows.Networking.Connectivity.NetworkAdapter adapter)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).abi_RegisterStreamSocketListenerAsync2(socket, adapter, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterDatagramSocketAsync1(Windows.Networking.Sockets.DatagramSocket socket)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).abi_RegisterDatagramSocketAsync1(socket, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterDatagramSocketAsync2(Windows.Networking.Sockets.DatagramSocket socket, Windows.Networking.Connectivity.NetworkAdapter adapter)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).abi_RegisterDatagramSocketAsync2(socket, adapter, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface DnssdServiceInstanceCollection : Windows.Foundation.Collections.IVectorView!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance), Windows.Foundation.Collections.IIterable!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance)
@@ -72,6 +184,21 @@ interface DnssdServiceInstanceCollection : Windows.Foundation.Collections.IVecto
 
 interface DnssdServiceWatcher : Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher
 {
+extern(Windows):
+	final Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcherStatus Status()
+	{
+		Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcherStatus _ret;
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).get_Status(&_ret));
+		return _ret;
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).abi_Stop());
+	}
 }
 
 enum DnssdRegistrationStatus

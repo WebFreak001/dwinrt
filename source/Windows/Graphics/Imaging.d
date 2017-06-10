@@ -252,30 +252,391 @@ extern(Windows):
 
 interface BitmapBuffer : Windows.Graphics.Imaging.IBitmapBuffer, Windows.Foundation.IMemoryBuffer, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final INT32 GetPlaneCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapBuffer).abi_GetPlaneCount(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapPlaneDescription GetPlaneDescription(INT32 index)
+	{
+		Windows.Graphics.Imaging.BitmapPlaneDescription _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapBuffer).abi_GetPlaneDescription(index, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IMemoryBufferReference CreateReference()
+	{
+		Windows.Foundation.IMemoryBufferReference _ret;
+		Debug.OK(this.as!(Windows.Foundation.IMemoryBuffer).abi_CreateReference(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface BitmapCodecInformation : Windows.Graphics.Imaging.IBitmapCodecInformation
 {
+extern(Windows):
+	final GUID CodecId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapCodecInformation).get_CodecId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) FileExtensions()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapCodecInformation).get_FileExtensions(&_ret));
+		return _ret;
+	}
+	final HSTRING FriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapCodecInformation).get_FriendlyName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) MimeTypes()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapCodecInformation).get_MimeTypes(&_ret));
+		return _ret;
+	}
 }
 
 interface BitmapDecoder : Windows.Graphics.Imaging.IBitmapDecoder, Windows.Graphics.Imaging.IBitmapFrame, Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap
 {
+extern(Windows):
+	final Windows.Graphics.Imaging.BitmapPropertiesView BitmapContainerProperties()
+	{
+		Windows.Graphics.Imaging.BitmapPropertiesView _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapDecoder).get_BitmapContainerProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapCodecInformation DecoderInformation()
+	{
+		Windows.Graphics.Imaging.BitmapCodecInformation _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapDecoder).get_DecoderInformation(&_ret));
+		return _ret;
+	}
+	final UINT32 FrameCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapDecoder).get_FrameCount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.ImageStream) GetPreviewAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.ImageStream) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapDecoder).abi_GetPreviewAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapFrame) GetFrameAsync(UINT32 frameIndex)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapFrame) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapDecoder).abi_GetFrameAsync(frameIndex, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.ImageStream) GetThumbnailAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.ImageStream) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).abi_GetThumbnailAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapPropertiesView BitmapProperties()
+	{
+		Windows.Graphics.Imaging.BitmapPropertiesView _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_BitmapProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapPixelFormat BitmapPixelFormat()
+	{
+		Windows.Graphics.Imaging.BitmapPixelFormat _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_BitmapPixelFormat(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapAlphaMode BitmapAlphaMode()
+	{
+		Windows.Graphics.Imaging.BitmapAlphaMode _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_BitmapAlphaMode(&_ret));
+		return _ret;
+	}
+	final double DpiX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_DpiX(&_ret));
+		return _ret;
+	}
+	final double DpiY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_DpiY(&_ret));
+		return _ret;
+	}
+	final UINT32 PixelWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_PixelWidth(&_ret));
+		return _ret;
+	}
+	final UINT32 PixelHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_PixelHeight(&_ret));
+		return _ret;
+	}
+	final UINT32 OrientedPixelWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_OrientedPixelWidth(&_ret));
+		return _ret;
+	}
+	final UINT32 OrientedPixelHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_OrientedPixelHeight(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.PixelDataProvider) GetPixelDataAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.PixelDataProvider) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).abi_GetPixelDataAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.PixelDataProvider) GetPixelDataTransformedAsync(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, Windows.Graphics.Imaging.BitmapTransform transform, Windows.Graphics.Imaging.ExifOrientationMode exifOrientationMode, Windows.Graphics.Imaging.ColorManagementMode colorManagementMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.PixelDataProvider) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).abi_GetPixelDataTransformedAsync(pixelFormat, alphaMode, transform, exifOrientationMode, colorManagementMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) GetSoftwareBitmapAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap).abi_GetSoftwareBitmapAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) GetSoftwareBitmapConvertedAsync(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap).abi_GetSoftwareBitmapConvertedAsync(pixelFormat, alphaMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) GetSoftwareBitmapTransformedAsync(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, Windows.Graphics.Imaging.BitmapTransform transform, Windows.Graphics.Imaging.ExifOrientationMode exifOrientationMode, Windows.Graphics.Imaging.ColorManagementMode colorManagementMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap).abi_GetSoftwareBitmapTransformedAsync(pixelFormat, alphaMode, transform, exifOrientationMode, colorManagementMode, &_ret));
+		return _ret;
+	}
 }
 
 interface BitmapEncoder : Windows.Graphics.Imaging.IBitmapEncoder, Windows.Graphics.Imaging.IBitmapEncoderWithSoftwareBitmap
 {
+extern(Windows):
+	final Windows.Graphics.Imaging.BitmapCodecInformation EncoderInformation()
+	{
+		Windows.Graphics.Imaging.BitmapCodecInformation _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).get_EncoderInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapProperties BitmapProperties()
+	{
+		Windows.Graphics.Imaging.BitmapProperties _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).get_BitmapProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapProperties BitmapContainerProperties()
+	{
+		Windows.Graphics.Imaging.BitmapProperties _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).get_BitmapContainerProperties(&_ret));
+		return _ret;
+	}
+	final bool IsThumbnailGenerated()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).get_IsThumbnailGenerated(&_ret));
+		return _ret;
+	}
+	final void IsThumbnailGenerated(bool value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).set_IsThumbnailGenerated(value));
+	}
+	final UINT32 GeneratedThumbnailWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).get_GeneratedThumbnailWidth(&_ret));
+		return _ret;
+	}
+	final void GeneratedThumbnailWidth(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).set_GeneratedThumbnailWidth(value));
+	}
+	final UINT32 GeneratedThumbnailHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).get_GeneratedThumbnailHeight(&_ret));
+		return _ret;
+	}
+	final void GeneratedThumbnailHeight(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).set_GeneratedThumbnailHeight(value));
+	}
+	final Windows.Graphics.Imaging.BitmapTransform BitmapTransform()
+	{
+		Windows.Graphics.Imaging.BitmapTransform _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).get_BitmapTransform(&_ret));
+		return _ret;
+	}
+	final void SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, UINT32 width, UINT32 height, double dpiX, double dpiY, UINT32 __pixelsSize, BYTE* pixels)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).abi_SetPixelData(pixelFormat, alphaMode, width, height, dpiX, dpiY, __pixelsSize, pixels));
+	}
+	final Windows.Foundation.IAsyncAction GoToNextFrameAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).abi_GoToNextFrameAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction GoToNextFrameWithEncodingOptionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)) encodingOptions)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).abi_GoToNextFrameWithEncodingOptionsAsync(encodingOptions, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction FlushAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).abi_FlushAsync(&_ret));
+		return _ret;
+	}
+	final void SetSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap bitmap)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoderWithSoftwareBitmap).abi_SetSoftwareBitmap(bitmap));
+	}
 }
 
 interface BitmapFrame : Windows.Graphics.Imaging.IBitmapFrame, Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.ImageStream) GetThumbnailAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.ImageStream) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).abi_GetThumbnailAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapPropertiesView BitmapProperties()
+	{
+		Windows.Graphics.Imaging.BitmapPropertiesView _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_BitmapProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapPixelFormat BitmapPixelFormat()
+	{
+		Windows.Graphics.Imaging.BitmapPixelFormat _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_BitmapPixelFormat(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapAlphaMode BitmapAlphaMode()
+	{
+		Windows.Graphics.Imaging.BitmapAlphaMode _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_BitmapAlphaMode(&_ret));
+		return _ret;
+	}
+	final double DpiX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_DpiX(&_ret));
+		return _ret;
+	}
+	final double DpiY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_DpiY(&_ret));
+		return _ret;
+	}
+	final UINT32 PixelWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_PixelWidth(&_ret));
+		return _ret;
+	}
+	final UINT32 PixelHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_PixelHeight(&_ret));
+		return _ret;
+	}
+	final UINT32 OrientedPixelWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_OrientedPixelWidth(&_ret));
+		return _ret;
+	}
+	final UINT32 OrientedPixelHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).get_OrientedPixelHeight(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.PixelDataProvider) GetPixelDataAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.PixelDataProvider) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).abi_GetPixelDataAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.PixelDataProvider) GetPixelDataTransformedAsync(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, Windows.Graphics.Imaging.BitmapTransform transform, Windows.Graphics.Imaging.ExifOrientationMode exifOrientationMode, Windows.Graphics.Imaging.ColorManagementMode colorManagementMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.PixelDataProvider) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrame).abi_GetPixelDataTransformedAsync(pixelFormat, alphaMode, transform, exifOrientationMode, colorManagementMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) GetSoftwareBitmapAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap).abi_GetSoftwareBitmapAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) GetSoftwareBitmapConvertedAsync(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap).abi_GetSoftwareBitmapConvertedAsync(pixelFormat, alphaMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) GetSoftwareBitmapTransformedAsync(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, Windows.Graphics.Imaging.BitmapTransform transform, Windows.Graphics.Imaging.ExifOrientationMode exifOrientationMode, Windows.Graphics.Imaging.ColorManagementMode colorManagementMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap).abi_GetSoftwareBitmapTransformedAsync(pixelFormat, alphaMode, transform, exifOrientationMode, colorManagementMode, &_ret));
+		return _ret;
+	}
 }
 
 interface BitmapProperties : Windows.Graphics.Imaging.IBitmapProperties, Windows.Graphics.Imaging.IBitmapPropertiesView
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction SetPropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)) propertiesToSet)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapProperties).abi_SetPropertiesAsync(propertiesToSet, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapPropertySet) GetPropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapPropertySet) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapPropertiesView).abi_GetPropertiesAsync(propertiesToRetrieve, &_ret));
+		return _ret;
+	}
 }
 
 interface BitmapPropertiesView : Windows.Graphics.Imaging.IBitmapPropertiesView
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapPropertySet) GetPropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapPropertySet) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapPropertiesView).abi_GetPropertiesAsync(propertiesToRetrieve, &_ret));
+		return _ret;
+	}
 }
 
 interface BitmapPropertySet : Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))
@@ -284,22 +645,261 @@ interface BitmapPropertySet : Windows.Foundation.Collections.IMap!(HSTRING, Wind
 
 interface BitmapTransform : Windows.Graphics.Imaging.IBitmapTransform
 {
+extern(Windows):
+	final UINT32 ScaledWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTransform).get_ScaledWidth(&_ret));
+		return _ret;
+	}
+	final void ScaledWidth(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTransform).set_ScaledWidth(value));
+	}
+	final UINT32 ScaledHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTransform).get_ScaledHeight(&_ret));
+		return _ret;
+	}
+	final void ScaledHeight(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTransform).set_ScaledHeight(value));
+	}
+	final Windows.Graphics.Imaging.BitmapInterpolationMode InterpolationMode()
+	{
+		Windows.Graphics.Imaging.BitmapInterpolationMode _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTransform).get_InterpolationMode(&_ret));
+		return _ret;
+	}
+	final void InterpolationMode(Windows.Graphics.Imaging.BitmapInterpolationMode value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTransform).set_InterpolationMode(value));
+	}
+	final Windows.Graphics.Imaging.BitmapFlip Flip()
+	{
+		Windows.Graphics.Imaging.BitmapFlip _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTransform).get_Flip(&_ret));
+		return _ret;
+	}
+	final void Flip(Windows.Graphics.Imaging.BitmapFlip value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTransform).set_Flip(value));
+	}
+	final Windows.Graphics.Imaging.BitmapRotation Rotation()
+	{
+		Windows.Graphics.Imaging.BitmapRotation _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTransform).get_Rotation(&_ret));
+		return _ret;
+	}
+	final void Rotation(Windows.Graphics.Imaging.BitmapRotation value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTransform).set_Rotation(value));
+	}
+	final Windows.Graphics.Imaging.BitmapBounds Bounds()
+	{
+		Windows.Graphics.Imaging.BitmapBounds _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTransform).get_Bounds(&_ret));
+		return _ret;
+	}
+	final void Bounds(Windows.Graphics.Imaging.BitmapBounds value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTransform).set_Bounds(value));
+	}
 }
 
 interface BitmapTypedValue : Windows.Graphics.Imaging.IBitmapTypedValue
 {
+extern(Windows):
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTypedValue).get_Value(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.PropertyType Type()
+	{
+		Windows.Foundation.PropertyType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTypedValue).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface ImageStream : Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
+extern(Windows):
+	final HSTRING ContentType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IContentTypeProvider).get_ContentType(&_ret));
+		return _ret;
+	}
+	final UINT64 Size()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
+		return _ret;
+	}
+	final void Size(UINT64 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
+	}
+	final Windows.Storage.Streams.IInputStream GetInputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final UINT64 Position()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
+		return _ret;
+	}
+	final void Seek(UINT64 position)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
+	}
+	final Windows.Storage.Streams.IRandomAccessStream CloneStream()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_CloneStream(&_ret));
+		return _ret;
+	}
+	final bool CanRead()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanRead(&_ret));
+		return _ret;
+	}
+	final bool CanWrite()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanWrite(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) WriteAsync(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_WriteAsync(buffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_FlushAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IInputStream).abi_ReadAsync(buffer, count, options, &_ret));
+		return _ret;
+	}
 }
 
 interface PixelDataProvider : Windows.Graphics.Imaging.IPixelDataProvider
 {
+extern(Windows):
+	final BYTE* DetachPixelData(UINT32* out___pixelDataSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.IPixelDataProvider).abi_DetachPixelData(out___pixelDataSize, &_ret));
+		return _ret;
+	}
 }
 
 interface SoftwareBitmap : Windows.Graphics.Imaging.ISoftwareBitmap, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Graphics.Imaging.BitmapPixelFormat BitmapPixelFormat()
+	{
+		Windows.Graphics.Imaging.BitmapPixelFormat _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).get_BitmapPixelFormat(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapAlphaMode BitmapAlphaMode()
+	{
+		Windows.Graphics.Imaging.BitmapAlphaMode _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).get_BitmapAlphaMode(&_ret));
+		return _ret;
+	}
+	final INT32 PixelWidth()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).get_PixelWidth(&_ret));
+		return _ret;
+	}
+	final INT32 PixelHeight()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).get_PixelHeight(&_ret));
+		return _ret;
+	}
+	final bool IsReadOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).get_IsReadOnly(&_ret));
+		return _ret;
+	}
+	final void DpiX(double value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).set_DpiX(value));
+	}
+	final double DpiX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).get_DpiX(&_ret));
+		return _ret;
+	}
+	final void DpiY(double value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).set_DpiY(value));
+	}
+	final double DpiY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).get_DpiY(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapBuffer LockBuffer(Windows.Graphics.Imaging.BitmapBufferAccessMode mode)
+	{
+		Windows.Graphics.Imaging.BitmapBuffer _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).abi_LockBuffer(mode, &_ret));
+		return _ret;
+	}
+	final void CopyTo(Windows.Graphics.Imaging.SoftwareBitmap bitmap)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).abi_CopyTo(bitmap));
+	}
+	final void CopyFromBuffer(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).abi_CopyFromBuffer(buffer));
+	}
+	final void CopyToBuffer(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).abi_CopyToBuffer(buffer));
+	}
+	final Windows.Graphics.Imaging.SoftwareBitmap GetReadOnlyView()
+	{
+		Windows.Graphics.Imaging.SoftwareBitmap _ret;
+		Debug.OK(this.as!(Windows.Graphics.Imaging.ISoftwareBitmap).abi_GetReadOnlyView(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 enum BitmapAlphaMode

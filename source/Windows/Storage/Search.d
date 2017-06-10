@@ -204,18 +204,252 @@ extern(Windows):
 
 interface ContentIndexer : Windows.Storage.Search.IContentIndexer, Windows.Storage.Search.IContentIndexerQueryOperations
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction AddAsync(Windows.Storage.Search.IIndexableContent indexableContent)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexer).abi_AddAsync(indexableContent, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction UpdateAsync(Windows.Storage.Search.IIndexableContent indexableContent)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexer).abi_UpdateAsync(indexableContent, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAsync(HSTRING contentId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexer).abi_DeleteAsync(contentId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteMultipleAsync(Windows.Foundation.Collections.IIterable!(HSTRING) contentIds)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexer).abi_DeleteMultipleAsync(contentIds, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAllAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexer).abi_DeleteAllAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)) RetrievePropertiesAsync(HSTRING contentId, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexer).abi_RetrievePropertiesAsync(contentId, propertiesToRetrieve, &_ret));
+		return _ret;
+	}
+	final UINT64 Revision()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexer).get_Revision(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.ContentIndexerQuery CreateQueryWithSortOrderAndLanguage(HSTRING searchFilter, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.Collections.IIterable!(Windows.Storage.Search.SortEntry) sortOrder, HSTRING searchFilterLanguage)
+	{
+		Windows.Storage.Search.ContentIndexerQuery _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexerQueryOperations).abi_CreateQueryWithSortOrderAndLanguage(searchFilter, propertiesToRetrieve, sortOrder, searchFilterLanguage, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.ContentIndexerQuery CreateQueryWithSortOrder(HSTRING searchFilter, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.Collections.IIterable!(Windows.Storage.Search.SortEntry) sortOrder)
+	{
+		Windows.Storage.Search.ContentIndexerQuery _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexerQueryOperations).abi_CreateQueryWithSortOrder(searchFilter, propertiesToRetrieve, sortOrder, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.ContentIndexerQuery CreateQuery(HSTRING searchFilter, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
+	{
+		Windows.Storage.Search.ContentIndexerQuery _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexerQueryOperations).abi_CreateQuery(searchFilter, propertiesToRetrieve, &_ret));
+		return _ret;
+	}
 }
 
 interface ContentIndexerQuery : Windows.Storage.Search.IContentIndexerQuery
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(UINT32) GetCountAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexerQuery).abi_GetCountAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))) GetPropertiesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexerQuery).abi_GetPropertiesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))) GetPropertiesRangeAsync(UINT32 startIndex, UINT32 maxItems)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexerQuery).abi_GetPropertiesRangeAsync(startIndex, maxItems, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.Search.IIndexableContent)) GetAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.Search.IIndexableContent)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexerQuery).abi_GetAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.Search.IIndexableContent)) GetRangeAsync(UINT32 startIndex, UINT32 maxItems)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.Search.IIndexableContent)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexerQuery).abi_GetRangeAsync(startIndex, maxItems, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFolder QueryFolder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexerQuery).get_QueryFolder(&_ret));
+		return _ret;
+	}
 }
 
 interface IndexableContent : Windows.Storage.Search.IIndexableContent
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IIndexableContent).get_Id(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IIndexableContent).set_Id(value));
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, IInspectable) Properties()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IIndexableContent).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IRandomAccessStream Stream()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IIndexableContent).get_Stream(&_ret));
+		return _ret;
+	}
+	final void Stream(Windows.Storage.Streams.IRandomAccessStream value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IIndexableContent).set_Stream(value));
+	}
+	final HSTRING StreamContentType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IIndexableContent).get_StreamContentType(&_ret));
+		return _ret;
+	}
+	final void StreamContentType(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IIndexableContent).set_StreamContentType(value));
+	}
 }
 
 interface QueryOptions : Windows.Storage.Search.IQueryOptions, Windows.Storage.Search.IQueryOptionsWithProviderFilter
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(HSTRING) FileTypeFilter()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).get_FileTypeFilter(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.FolderDepth FolderDepth()
+	{
+		Windows.Storage.Search.FolderDepth _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).get_FolderDepth(&_ret));
+		return _ret;
+	}
+	final void FolderDepth(Windows.Storage.Search.FolderDepth value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).set_FolderDepth(value));
+	}
+	final HSTRING ApplicationSearchFilter()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).get_ApplicationSearchFilter(&_ret));
+		return _ret;
+	}
+	final void ApplicationSearchFilter(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).set_ApplicationSearchFilter(value));
+	}
+	final HSTRING UserSearchFilter()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).get_UserSearchFilter(&_ret));
+		return _ret;
+	}
+	final void UserSearchFilter(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).set_UserSearchFilter(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).set_Language(value));
+	}
+	final Windows.Storage.Search.IndexerOption IndexerOption()
+	{
+		Windows.Storage.Search.IndexerOption _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).get_IndexerOption(&_ret));
+		return _ret;
+	}
+	final void IndexerOption(Windows.Storage.Search.IndexerOption value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).set_IndexerOption(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry) SortOrder()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).get_SortOrder(&_ret));
+		return _ret;
+	}
+	final HSTRING GroupPropertyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).get_GroupPropertyName(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.DateStackOption DateStackOption()
+	{
+		Windows.Storage.Search.DateStackOption _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).get_DateStackOption(&_ret));
+		return _ret;
+	}
+	final HSTRING SaveToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).abi_SaveToString(&_ret));
+		return _ret;
+	}
+	final void LoadFromString(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).abi_LoadFromString(value));
+	}
+	final void SetThumbnailPrefetch(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize, Windows.Storage.FileProperties.ThumbnailOptions options)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).abi_SetThumbnailPrefetch(mode, requestedSize, options));
+	}
+	final void SetPropertyPrefetch(Windows.Storage.FileProperties.PropertyPrefetchOptions options, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptions).abi_SetPropertyPrefetch(options, propertiesToRetrieve));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) StorageProviderIdFilter()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptionsWithProviderFilter).get_StorageProviderIdFilter(&_ret));
+		return _ret;
+	}
 }
 
 interface SortEntryVector : Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry), Windows.Foundation.Collections.IIterable!(Windows.Storage.Search.SortEntry)
@@ -224,22 +458,185 @@ interface SortEntryVector : Windows.Foundation.Collections.IVector!(Windows.Stor
 
 interface StorageFileQueryResult : Windows.Storage.Search.IStorageFileQueryResult, Windows.Storage.Search.IStorageQueryResultBase, Windows.Storage.Search.IStorageFileQueryResult2
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)) GetFilesAsync(UINT32 startIndex, UINT32 maxNumberOfItems)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFileQueryResult).abi_GetFilesAsync(startIndex, maxNumberOfItems, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)) GetFilesAsyncDefaultStartAndCount()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFileQueryResult).abi_GetFilesAsyncDefaultStartAndCount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(UINT32) GetItemCountAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).abi_GetItemCountAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFolder Folder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).get_Folder(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(UINT32) FindStartIndexAsync(IInspectable value)
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).abi_FindStartIndexAsync(value, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.QueryOptions GetCurrentQueryOptions()
+	{
+		Windows.Storage.Search.QueryOptions _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).abi_GetCurrentQueryOptions(&_ret));
+		return _ret;
+	}
+	final void ApplyNewQueryOptions(Windows.Storage.Search.QueryOptions newQueryOptions)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).abi_ApplyNewQueryOptions(newQueryOptions));
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment)) GetMatchingPropertiesWithRanges(Windows.Storage.StorageFile file)
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFileQueryResult2).abi_GetMatchingPropertiesWithRanges(file, &_ret));
+		return _ret;
+	}
 }
 
 interface StorageFolderQueryResult : Windows.Storage.Search.IStorageFolderQueryResult, Windows.Storage.Search.IStorageQueryResultBase
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) GetFoldersAsync(UINT32 startIndex, UINT32 maxNumberOfItems)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryResult).abi_GetFoldersAsync(startIndex, maxNumberOfItems, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) GetFoldersAsyncDefaultStartAndCount()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryResult).abi_GetFoldersAsyncDefaultStartAndCount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(UINT32) GetItemCountAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).abi_GetItemCountAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFolder Folder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).get_Folder(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(UINT32) FindStartIndexAsync(IInspectable value)
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).abi_FindStartIndexAsync(value, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.QueryOptions GetCurrentQueryOptions()
+	{
+		Windows.Storage.Search.QueryOptions _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).abi_GetCurrentQueryOptions(&_ret));
+		return _ret;
+	}
+	final void ApplyNewQueryOptions(Windows.Storage.Search.QueryOptions newQueryOptions)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).abi_ApplyNewQueryOptions(newQueryOptions));
+	}
 }
 
 interface StorageItemQueryResult : Windows.Storage.Search.IStorageItemQueryResult, Windows.Storage.Search.IStorageQueryResultBase
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) GetItemsAsync(UINT32 startIndex, UINT32 maxNumberOfItems)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageItemQueryResult).abi_GetItemsAsync(startIndex, maxNumberOfItems, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) GetItemsAsyncDefaultStartAndCount()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageItemQueryResult).abi_GetItemsAsyncDefaultStartAndCount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(UINT32) GetItemCountAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).abi_GetItemCountAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFolder Folder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).get_Folder(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(UINT32) FindStartIndexAsync(IInspectable value)
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).abi_FindStartIndexAsync(value, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.QueryOptions GetCurrentQueryOptions()
+	{
+		Windows.Storage.Search.QueryOptions _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).abi_GetCurrentQueryOptions(&_ret));
+		return _ret;
+	}
+	final void ApplyNewQueryOptions(Windows.Storage.Search.QueryOptions newQueryOptions)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).abi_ApplyNewQueryOptions(newQueryOptions));
+	}
 }
 
 interface StorageLibraryContentChangedTriggerDetails : Windows.Storage.Search.IStorageLibraryContentChangedTriggerDetails
 {
+extern(Windows):
+	final Windows.Storage.StorageFolder Folder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageLibraryContentChangedTriggerDetails).get_Folder(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.StorageItemQueryResult CreateModifiedSinceQuery(Windows.Foundation.DateTime lastQueryTime)
+	{
+		Windows.Storage.Search.StorageItemQueryResult _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageLibraryContentChangedTriggerDetails).abi_CreateModifiedSinceQuery(lastQueryTime, &_ret));
+		return _ret;
+	}
 }
 
 interface ValueAndLanguage : Windows.Storage.Search.IValueAndLanguage
 {
+extern(Windows):
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IValueAndLanguage).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IValueAndLanguage).set_Language(value));
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IValueAndLanguage).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Search.IValueAndLanguage).set_Value(value));
+	}
 }
 
 enum CommonFileQuery

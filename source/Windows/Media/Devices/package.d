@@ -657,86 +657,886 @@ extern(Windows):
 
 interface AdvancedPhotoCaptureSettings : Windows.Media.Devices.IAdvancedPhotoCaptureSettings
 {
+extern(Windows):
+	final Windows.Media.Devices.AdvancedPhotoMode Mode()
+	{
+		Windows.Media.Devices.AdvancedPhotoMode _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedPhotoCaptureSettings).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.Media.Devices.AdvancedPhotoMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedPhotoCaptureSettings).set_Mode(value));
+	}
 }
 
 interface AdvancedPhotoControl : Windows.Media.Devices.IAdvancedPhotoControl
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedPhotoControl).get_Supported(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AdvancedPhotoMode) SupportedModes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AdvancedPhotoMode) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedPhotoControl).get_SupportedModes(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.AdvancedPhotoMode Mode()
+	{
+		Windows.Media.Devices.AdvancedPhotoMode _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedPhotoControl).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Configure(Windows.Media.Devices.AdvancedPhotoCaptureSettings settings)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedPhotoControl).abi_Configure(settings));
+	}
 }
 
 interface AudioDeviceController : Windows.Media.Devices.IAudioDeviceController, Windows.Media.Devices.IMediaDeviceController
 {
+extern(Windows):
+	final void Muted(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceController).set_Muted(value));
+	}
+	final bool Muted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceController).get_Muted(&_ret));
+		return _ret;
+	}
+	final void VolumePercent(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceController).set_VolumePercent(value));
+	}
+	final FLOAT VolumePercent()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceController).get_VolumePercent(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.MediaProperties.IMediaEncodingProperties) GetAvailableMediaStreamProperties(Windows.Media.Capture.MediaStreamType mediaStreamType)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.MediaProperties.IMediaEncodingProperties) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceController).abi_GetAvailableMediaStreamProperties(mediaStreamType, &_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.IMediaEncodingProperties GetMediaStreamProperties(Windows.Media.Capture.MediaStreamType mediaStreamType)
+	{
+		Windows.Media.MediaProperties.IMediaEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceController).abi_GetMediaStreamProperties(mediaStreamType, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetMediaStreamPropertiesAsync(Windows.Media.Capture.MediaStreamType mediaStreamType, Windows.Media.MediaProperties.IMediaEncodingProperties mediaEncodingProperties)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceController).abi_SetMediaStreamPropertiesAsync(mediaStreamType, mediaEncodingProperties, &_ret));
+		return _ret;
+	}
 }
 
 interface AudioDeviceModule : Windows.Media.Devices.IAudioDeviceModule
 {
+extern(Windows):
+	final HSTRING ClassId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceModule).get_ClassId(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceModule).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final UINT32 InstanceId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceModule).get_InstanceId(&_ret));
+		return _ret;
+	}
+	final UINT32 MajorVersion()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceModule).get_MajorVersion(&_ret));
+		return _ret;
+	}
+	final UINT32 MinorVersion()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceModule).get_MinorVersion(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Devices.ModuleCommandResult) SendCommandAsync(Windows.Storage.Streams.IBuffer Command)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Devices.ModuleCommandResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceModule).abi_SendCommandAsync(Command, &_ret));
+		return _ret;
+	}
 }
 
 interface AudioDeviceModuleNotificationEventArgs : Windows.Media.Devices.IAudioDeviceModuleNotificationEventArgs
 {
+extern(Windows):
+	final Windows.Media.Devices.AudioDeviceModule Module()
+	{
+		Windows.Media.Devices.AudioDeviceModule _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceModuleNotificationEventArgs).get_Module(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer NotificationData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceModuleNotificationEventArgs).get_NotificationData(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioDeviceModulesManager : Windows.Media.Devices.IAudioDeviceModulesManager
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AudioDeviceModule) FindAllById(HSTRING moduleId)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AudioDeviceModule) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceModulesManager).abi_FindAllById(moduleId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AudioDeviceModule) FindAll()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AudioDeviceModule) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceModulesManager).abi_FindAll(&_ret));
+		return _ret;
+	}
 }
 
 interface CallControl : Windows.Media.Devices.ICallControl
 {
+extern(Windows):
+	final UINT64 IndicateNewIncomingCall(bool enableRinger, HSTRING callerId)
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).abi_IndicateNewIncomingCall(enableRinger, callerId, &_ret));
+		return _ret;
+	}
+	final UINT64 IndicateNewOutgoingCall()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).abi_IndicateNewOutgoingCall(&_ret));
+		return _ret;
+	}
+	final void IndicateActiveCall(UINT64 callToken)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).abi_IndicateActiveCall(callToken));
+	}
+	final void EndCall(UINT64 callToken)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).abi_EndCall(callToken));
+	}
+	final bool HasRinger()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).get_HasRinger(&_ret));
+		return _ret;
+	}
 }
 
 interface DefaultAudioCaptureDeviceChangedEventArgs : Windows.Media.Devices.IDefaultAudioDeviceChangedEventArgs
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IDefaultAudioDeviceChangedEventArgs).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.AudioDeviceRole Role()
+	{
+		Windows.Media.Devices.AudioDeviceRole _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IDefaultAudioDeviceChangedEventArgs).get_Role(&_ret));
+		return _ret;
+	}
 }
 
 interface DefaultAudioRenderDeviceChangedEventArgs : Windows.Media.Devices.IDefaultAudioDeviceChangedEventArgs
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IDefaultAudioDeviceChangedEventArgs).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.AudioDeviceRole Role()
+	{
+		Windows.Media.Devices.AudioDeviceRole _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IDefaultAudioDeviceChangedEventArgs).get_Role(&_ret));
+		return _ret;
+	}
 }
 
 interface DialRequestedEventArgs : Windows.Media.Devices.IDialRequestedEventArgs
 {
+extern(Windows):
+	final void Handled()
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IDialRequestedEventArgs).abi_Handled());
+	}
+	final IInspectable Contact()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IDialRequestedEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
 }
 
 interface ExposureCompensationControl : Windows.Media.Devices.IExposureCompensationControl
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureCompensationControl).get_Supported(&_ret));
+		return _ret;
+	}
+	final FLOAT Min()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureCompensationControl).get_Min(&_ret));
+		return _ret;
+	}
+	final FLOAT Max()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureCompensationControl).get_Max(&_ret));
+		return _ret;
+	}
+	final FLOAT Step()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureCompensationControl).get_Step(&_ret));
+		return _ret;
+	}
+	final FLOAT Value()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureCompensationControl).get_Value(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetValueAsync(FLOAT value)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureCompensationControl).abi_SetValueAsync(value, &_ret));
+		return _ret;
+	}
 }
 
 interface ExposureControl : Windows.Media.Devices.IExposureControl
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureControl).get_Supported(&_ret));
+		return _ret;
+	}
+	final bool Auto()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureControl).get_Auto(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetAutoAsync(bool value)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureControl).abi_SetAutoAsync(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Min()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureControl).get_Min(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Max()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureControl).get_Max(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Step()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureControl).get_Step(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Value()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureControl).get_Value(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetValueAsync(Windows.Foundation.TimeSpan shutterDuration)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposureControl).abi_SetValueAsync(shutterDuration, &_ret));
+		return _ret;
+	}
 }
 
 interface ExposurePriorityVideoControl : Windows.Media.Devices.IExposurePriorityVideoControl
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposurePriorityVideoControl).get_Supported(&_ret));
+		return _ret;
+	}
+	final bool Enabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IExposurePriorityVideoControl).get_Enabled(&_ret));
+		return _ret;
+	}
+	final void Enabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IExposurePriorityVideoControl).set_Enabled(value));
+	}
 }
 
 interface FlashControl : Windows.Media.Devices.IFlashControl, Windows.Media.Devices.IFlashControl2
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).get_Supported(&_ret));
+		return _ret;
+	}
+	final bool PowerSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).get_PowerSupported(&_ret));
+		return _ret;
+	}
+	final bool RedEyeReductionSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).get_RedEyeReductionSupported(&_ret));
+		return _ret;
+	}
+	final bool Enabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).get_Enabled(&_ret));
+		return _ret;
+	}
+	final void Enabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).set_Enabled(value));
+	}
+	final bool Auto()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).get_Auto(&_ret));
+		return _ret;
+	}
+	final void Auto(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).set_Auto(value));
+	}
+	final bool RedEyeReduction()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).get_RedEyeReduction(&_ret));
+		return _ret;
+	}
+	final void RedEyeReduction(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).set_RedEyeReduction(value));
+	}
+	final FLOAT PowerPercent()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).get_PowerPercent(&_ret));
+		return _ret;
+	}
+	final void PowerPercent(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).set_PowerPercent(value));
+	}
+	final bool AssistantLightSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl2).get_AssistantLightSupported(&_ret));
+		return _ret;
+	}
+	final bool AssistantLightEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl2).get_AssistantLightEnabled(&_ret));
+		return _ret;
+	}
+	final void AssistantLightEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl2).set_AssistantLightEnabled(value));
+	}
 }
 
 interface FocusControl : Windows.Media.Devices.IFocusControl, Windows.Media.Devices.IFocusControl2
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl).get_Supported(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.FocusPreset) SupportedPresets()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.FocusPreset) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl).get_SupportedPresets(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.FocusPreset Preset()
+	{
+		Windows.Media.Devices.FocusPreset _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl).get_Preset(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetPresetAsync(Windows.Media.Devices.FocusPreset preset)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl).abi_SetPresetAsync(preset, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetPresetWithCompletionOptionAsync(Windows.Media.Devices.FocusPreset preset, bool completeBeforeFocus)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl).abi_SetPresetWithCompletionOptionAsync(preset, completeBeforeFocus, &_ret));
+		return _ret;
+	}
+	final UINT32 Min()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl).get_Min(&_ret));
+		return _ret;
+	}
+	final UINT32 Max()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl).get_Max(&_ret));
+		return _ret;
+	}
+	final UINT32 Step()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl).get_Step(&_ret));
+		return _ret;
+	}
+	final UINT32 Value()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl).get_Value(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetValueAsync(UINT32 focus)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl).abi_SetValueAsync(focus, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction FocusAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl).abi_FocusAsync(&_ret));
+		return _ret;
+	}
+	final bool FocusChangedSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl2).get_FocusChangedSupported(&_ret));
+		return _ret;
+	}
+	final bool WaitForFocusSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl2).get_WaitForFocusSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.FocusMode) SupportedFocusModes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.FocusMode) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl2).get_SupportedFocusModes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.ManualFocusDistance) SupportedFocusDistances()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.ManualFocusDistance) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl2).get_SupportedFocusDistances(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AutoFocusRange) SupportedFocusRanges()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AutoFocusRange) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl2).get_SupportedFocusRanges(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.FocusMode Mode()
+	{
+		Windows.Media.Devices.FocusMode _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl2).get_Mode(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.MediaCaptureFocusState FocusState()
+	{
+		Windows.Media.Devices.MediaCaptureFocusState _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl2).get_FocusState(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction UnlockAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl2).abi_UnlockAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction LockAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl2).abi_LockAsync(&_ret));
+		return _ret;
+	}
+	final void Configure(Windows.Media.Devices.FocusSettings settings)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusControl2).abi_Configure(settings));
+	}
 }
 
 interface FocusSettings : Windows.Media.Devices.IFocusSettings
 {
+extern(Windows):
+	final Windows.Media.Devices.FocusMode Mode()
+	{
+		Windows.Media.Devices.FocusMode _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusSettings).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.Media.Devices.FocusMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusSettings).set_Mode(value));
+	}
+	final Windows.Media.Devices.AutoFocusRange AutoFocusRange()
+	{
+		Windows.Media.Devices.AutoFocusRange _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusSettings).get_AutoFocusRange(&_ret));
+		return _ret;
+	}
+	final void AutoFocusRange(Windows.Media.Devices.AutoFocusRange value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusSettings).set_AutoFocusRange(value));
+	}
+	final Windows.Foundation.IReference!(UINT32) Value()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusSettings).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(Windows.Foundation.IReference!(UINT32) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusSettings).set_Value(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Media.Devices.ManualFocusDistance) Distance()
+	{
+		Windows.Foundation.IReference!(Windows.Media.Devices.ManualFocusDistance) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusSettings).get_Distance(&_ret));
+		return _ret;
+	}
+	final void Distance(Windows.Foundation.IReference!(Windows.Media.Devices.ManualFocusDistance) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusSettings).set_Distance(value));
+	}
+	final bool WaitForFocus()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusSettings).get_WaitForFocus(&_ret));
+		return _ret;
+	}
+	final void WaitForFocus(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusSettings).set_WaitForFocus(value));
+	}
+	final bool DisableDriverFallback()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusSettings).get_DisableDriverFallback(&_ret));
+		return _ret;
+	}
+	final void DisableDriverFallback(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IFocusSettings).set_DisableDriverFallback(value));
+	}
 }
 
 interface HdrVideoControl : Windows.Media.Devices.IHdrVideoControl
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IHdrVideoControl).get_Supported(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.HdrVideoMode) SupportedModes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.HdrVideoMode) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IHdrVideoControl).get_SupportedModes(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.HdrVideoMode Mode()
+	{
+		Windows.Media.Devices.HdrVideoMode _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IHdrVideoControl).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.Media.Devices.HdrVideoMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IHdrVideoControl).set_Mode(value));
+	}
 }
 
 interface IsoSpeedControl : Windows.Media.Devices.IIsoSpeedControl, Windows.Media.Devices.IIsoSpeedControl2
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IIsoSpeedControl).get_Supported(&_ret));
+		return _ret;
+	}
+	deprecated("SupportedPresets may not be available in future versions of Windows Phone. Starting with Windows Phone 8.1, use SetAutoAsync, Auto, SetValueAsync, and Value instead")
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.IsoSpeedPreset) SupportedPresets()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.IsoSpeedPreset) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IIsoSpeedControl).get_SupportedPresets(&_ret));
+		return _ret;
+	}
+	deprecated("Preset may not be available in future versions of Windows Phone. Starting with Windows Phone 8.1, use SetAutoAsync, Auto, SetValueAsync, and Value instead")
+	final Windows.Media.Devices.IsoSpeedPreset Preset()
+	{
+		Windows.Media.Devices.IsoSpeedPreset _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IIsoSpeedControl).get_Preset(&_ret));
+		return _ret;
+	}
+	deprecated("SetPresetAsync may not be available in future versions of Windows Phone. Starting with Windows Phone 8.1, use SetAutoAsync, Auto, SetValueAsync, and Value instead")
+	final Windows.Foundation.IAsyncAction SetPresetAsync(Windows.Media.Devices.IsoSpeedPreset preset)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IIsoSpeedControl).abi_SetPresetAsync(preset, &_ret));
+		return _ret;
+	}
+	final UINT32 Min()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IIsoSpeedControl2).get_Min(&_ret));
+		return _ret;
+	}
+	final UINT32 Max()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IIsoSpeedControl2).get_Max(&_ret));
+		return _ret;
+	}
+	final UINT32 Step()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IIsoSpeedControl2).get_Step(&_ret));
+		return _ret;
+	}
+	final UINT32 Value()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IIsoSpeedControl2).get_Value(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetValueAsync(UINT32 isoSpeed)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IIsoSpeedControl2).abi_SetValueAsync(isoSpeed, &_ret));
+		return _ret;
+	}
+	final bool Auto()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IIsoSpeedControl2).get_Auto(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetAutoAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IIsoSpeedControl2).abi_SetAutoAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface KeypadPressedEventArgs : Windows.Media.Devices.IKeypadPressedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Devices.TelephonyKey TelephonyKey()
+	{
+		Windows.Media.Devices.TelephonyKey _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IKeypadPressedEventArgs).get_TelephonyKey(&_ret));
+		return _ret;
+	}
 }
 
 interface LowLagPhotoControl : Windows.Media.Devices.ILowLagPhotoControl
 {
+extern(Windows):
+	final Windows.Media.MediaProperties.MediaRatio GetHighestConcurrentFrameRate(Windows.Media.MediaProperties.IMediaEncodingProperties captureProperties)
+	{
+		Windows.Media.MediaProperties.MediaRatio _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoControl).abi_GetHighestConcurrentFrameRate(captureProperties, &_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.MediaRatio GetCurrentFrameRate()
+	{
+		Windows.Media.MediaProperties.MediaRatio _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoControl).abi_GetCurrentFrameRate(&_ret));
+		return _ret;
+	}
+	final bool ThumbnailEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoControl).get_ThumbnailEnabled(&_ret));
+		return _ret;
+	}
+	final void ThumbnailEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoControl).set_ThumbnailEnabled(value));
+	}
+	final Windows.Media.MediaProperties.MediaThumbnailFormat ThumbnailFormat()
+	{
+		Windows.Media.MediaProperties.MediaThumbnailFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoControl).get_ThumbnailFormat(&_ret));
+		return _ret;
+	}
+	final void ThumbnailFormat(Windows.Media.MediaProperties.MediaThumbnailFormat value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoControl).set_ThumbnailFormat(value));
+	}
+	final UINT32 DesiredThumbnailSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoControl).get_DesiredThumbnailSize(&_ret));
+		return _ret;
+	}
+	final void DesiredThumbnailSize(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoControl).set_DesiredThumbnailSize(value));
+	}
+	final UINT32 HardwareAcceleratedThumbnailSupported()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoControl).get_HardwareAcceleratedThumbnailSupported(&_ret));
+		return _ret;
+	}
 }
 
 interface LowLagPhotoSequenceControl : Windows.Media.Devices.ILowLagPhotoSequenceControl
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).get_Supported(&_ret));
+		return _ret;
+	}
+	final UINT32 MaxPastPhotos()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).get_MaxPastPhotos(&_ret));
+		return _ret;
+	}
+	final FLOAT MaxPhotosPerSecond()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).get_MaxPhotosPerSecond(&_ret));
+		return _ret;
+	}
+	final UINT32 PastPhotoLimit()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).get_PastPhotoLimit(&_ret));
+		return _ret;
+	}
+	final void PastPhotoLimit(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).set_PastPhotoLimit(value));
+	}
+	final FLOAT PhotosPerSecondLimit()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).get_PhotosPerSecondLimit(&_ret));
+		return _ret;
+	}
+	final void PhotosPerSecondLimit(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).set_PhotosPerSecondLimit(value));
+	}
+	final Windows.Media.MediaProperties.MediaRatio GetHighestConcurrentFrameRate(Windows.Media.MediaProperties.IMediaEncodingProperties captureProperties)
+	{
+		Windows.Media.MediaProperties.MediaRatio _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).abi_GetHighestConcurrentFrameRate(captureProperties, &_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.MediaRatio GetCurrentFrameRate()
+	{
+		Windows.Media.MediaProperties.MediaRatio _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).abi_GetCurrentFrameRate(&_ret));
+		return _ret;
+	}
+	final bool ThumbnailEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).get_ThumbnailEnabled(&_ret));
+		return _ret;
+	}
+	final void ThumbnailEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).set_ThumbnailEnabled(value));
+	}
+	final Windows.Media.MediaProperties.MediaThumbnailFormat ThumbnailFormat()
+	{
+		Windows.Media.MediaProperties.MediaThumbnailFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).get_ThumbnailFormat(&_ret));
+		return _ret;
+	}
+	final void ThumbnailFormat(Windows.Media.MediaProperties.MediaThumbnailFormat value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).set_ThumbnailFormat(value));
+	}
+	final UINT32 DesiredThumbnailSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).get_DesiredThumbnailSize(&_ret));
+		return _ret;
+	}
+	final void DesiredThumbnailSize(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).set_DesiredThumbnailSize(value));
+	}
+	final UINT32 HardwareAcceleratedThumbnailSupported()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).get_HardwareAcceleratedThumbnailSupported(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaDevice
@@ -745,62 +1545,763 @@ interface MediaDevice
 
 interface MediaDeviceControl : Windows.Media.Devices.IMediaDeviceControl
 {
+extern(Windows):
+	final Windows.Media.Devices.MediaDeviceControlCapabilities Capabilities()
+	{
+		Windows.Media.Devices.MediaDeviceControlCapabilities _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceControl).get_Capabilities(&_ret));
+		return _ret;
+	}
+	final bool TryGetValue(double* out_value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceControl).abi_TryGetValue(out_value, &_ret));
+		return _ret;
+	}
+	final bool TrySetValue(double value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceControl).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final bool TryGetAuto(bool* out_value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceControl).abi_TryGetAuto(out_value, &_ret));
+		return _ret;
+	}
+	final bool TrySetAuto(bool value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceControl).abi_TrySetAuto(value, &_ret));
+		return _ret;
+	}
 }
 
 interface MediaDeviceControlCapabilities : Windows.Media.Devices.IMediaDeviceControlCapabilities
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceControlCapabilities).get_Supported(&_ret));
+		return _ret;
+	}
+	final double Min()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceControlCapabilities).get_Min(&_ret));
+		return _ret;
+	}
+	final double Max()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceControlCapabilities).get_Max(&_ret));
+		return _ret;
+	}
+	final double Step()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceControlCapabilities).get_Step(&_ret));
+		return _ret;
+	}
+	final double Default()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceControlCapabilities).get_Default(&_ret));
+		return _ret;
+	}
+	final bool AutoModeSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceControlCapabilities).get_AutoModeSupported(&_ret));
+		return _ret;
+	}
 }
 
 interface ModuleCommandResult : Windows.Media.Devices.IModuleCommandResult
 {
+extern(Windows):
+	final Windows.Media.Devices.SendCommandStatus Status()
+	{
+		Windows.Media.Devices.SendCommandStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IModuleCommandResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer Result()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IModuleCommandResult).get_Result(&_ret));
+		return _ret;
+	}
 }
 
 interface OpticalImageStabilizationControl : Windows.Media.Devices.IOpticalImageStabilizationControl
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IOpticalImageStabilizationControl).get_Supported(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.OpticalImageStabilizationMode) SupportedModes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.OpticalImageStabilizationMode) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IOpticalImageStabilizationControl).get_SupportedModes(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.OpticalImageStabilizationMode Mode()
+	{
+		Windows.Media.Devices.OpticalImageStabilizationMode _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IOpticalImageStabilizationControl).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.Media.Devices.OpticalImageStabilizationMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IOpticalImageStabilizationControl).set_Mode(value));
+	}
 }
 
 interface PhotoConfirmationControl : Windows.Media.Devices.IPhotoConfirmationControl
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IPhotoConfirmationControl).get_Supported(&_ret));
+		return _ret;
+	}
+	final bool Enabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IPhotoConfirmationControl).get_Enabled(&_ret));
+		return _ret;
+	}
+	final void Enabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IPhotoConfirmationControl).set_Enabled(value));
+	}
+	final Windows.Media.MediaProperties.MediaPixelFormat PixelFormat()
+	{
+		Windows.Media.MediaProperties.MediaPixelFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IPhotoConfirmationControl).get_PixelFormat(&_ret));
+		return _ret;
+	}
+	final void PixelFormat(Windows.Media.MediaProperties.MediaPixelFormat format)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IPhotoConfirmationControl).set_PixelFormat(format));
+	}
 }
 
 interface RedialRequestedEventArgs : Windows.Media.Devices.IRedialRequestedEventArgs
 {
+extern(Windows):
+	final void Handled()
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IRedialRequestedEventArgs).abi_Handled());
+	}
 }
 
 interface RegionOfInterest : Windows.Media.Devices.IRegionOfInterest, Windows.Media.Devices.IRegionOfInterest2
 {
+extern(Windows):
+	final bool AutoFocusEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest).get_AutoFocusEnabled(&_ret));
+		return _ret;
+	}
+	final void AutoFocusEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest).set_AutoFocusEnabled(value));
+	}
+	final bool AutoWhiteBalanceEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest).get_AutoWhiteBalanceEnabled(&_ret));
+		return _ret;
+	}
+	final void AutoWhiteBalanceEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest).set_AutoWhiteBalanceEnabled(value));
+	}
+	final bool AutoExposureEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest).get_AutoExposureEnabled(&_ret));
+		return _ret;
+	}
+	final void AutoExposureEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest).set_AutoExposureEnabled(value));
+	}
+	final Windows.Foundation.Rect Bounds()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest).get_Bounds(&_ret));
+		return _ret;
+	}
+	final void Bounds(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest).set_Bounds(value));
+	}
+	final Windows.Media.Devices.RegionOfInterestType Type()
+	{
+		Windows.Media.Devices.RegionOfInterestType _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest2).get_Type(&_ret));
+		return _ret;
+	}
+	final void Type(Windows.Media.Devices.RegionOfInterestType value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest2).set_Type(value));
+	}
+	final bool BoundsNormalized()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest2).get_BoundsNormalized(&_ret));
+		return _ret;
+	}
+	final void BoundsNormalized(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest2).set_BoundsNormalized(value));
+	}
+	final UINT32 Weight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest2).get_Weight(&_ret));
+		return _ret;
+	}
+	final void Weight(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest2).set_Weight(value));
+	}
 }
 
 interface RegionsOfInterestControl : Windows.Media.Devices.IRegionsOfInterestControl
 {
+extern(Windows):
+	final UINT32 MaxRegions()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionsOfInterestControl).get_MaxRegions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetRegionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Media.Devices.RegionOfInterest) regions)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionsOfInterestControl).abi_SetRegionsAsync(regions, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetRegionsWithLockAsync(Windows.Foundation.Collections.IIterable!(Windows.Media.Devices.RegionOfInterest) regions, bool lockValues)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionsOfInterestControl).abi_SetRegionsWithLockAsync(regions, lockValues, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ClearRegionsAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionsOfInterestControl).abi_ClearRegionsAsync(&_ret));
+		return _ret;
+	}
+	final bool AutoFocusSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionsOfInterestControl).get_AutoFocusSupported(&_ret));
+		return _ret;
+	}
+	final bool AutoWhiteBalanceSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionsOfInterestControl).get_AutoWhiteBalanceSupported(&_ret));
+		return _ret;
+	}
+	final bool AutoExposureSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IRegionsOfInterestControl).get_AutoExposureSupported(&_ret));
+		return _ret;
+	}
 }
 
 interface SceneModeControl : Windows.Media.Devices.ISceneModeControl
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.CaptureSceneMode) SupportedModes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.CaptureSceneMode) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ISceneModeControl).get_SupportedModes(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.CaptureSceneMode Value()
+	{
+		Windows.Media.Devices.CaptureSceneMode _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ISceneModeControl).get_Value(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetValueAsync(Windows.Media.Devices.CaptureSceneMode sceneMode)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ISceneModeControl).abi_SetValueAsync(sceneMode, &_ret));
+		return _ret;
+	}
 }
 
 interface TorchControl : Windows.Media.Devices.ITorchControl
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ITorchControl).get_Supported(&_ret));
+		return _ret;
+	}
+	final bool PowerSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ITorchControl).get_PowerSupported(&_ret));
+		return _ret;
+	}
+	final bool Enabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ITorchControl).get_Enabled(&_ret));
+		return _ret;
+	}
+	final void Enabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.ITorchControl).set_Enabled(value));
+	}
+	final FLOAT PowerPercent()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.ITorchControl).get_PowerPercent(&_ret));
+		return _ret;
+	}
+	final void PowerPercent(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.ITorchControl).set_PowerPercent(value));
+	}
 }
 
 interface VideoDeviceController : Windows.Media.Devices.IVideoDeviceController, Windows.Media.Devices.IMediaDeviceController, Windows.Media.Devices.IAdvancedVideoCaptureDeviceController, Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2, Windows.Media.Devices.IAdvancedVideoCaptureDeviceController3, Windows.Media.Devices.IAdvancedVideoCaptureDeviceController4, Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5
 {
+extern(Windows):
+	final Windows.Media.Devices.MediaDeviceControl Brightness()
+	{
+		Windows.Media.Devices.MediaDeviceControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceController).get_Brightness(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.MediaDeviceControl Contrast()
+	{
+		Windows.Media.Devices.MediaDeviceControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceController).get_Contrast(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.MediaDeviceControl Hue()
+	{
+		Windows.Media.Devices.MediaDeviceControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceController).get_Hue(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.MediaDeviceControl WhiteBalance()
+	{
+		Windows.Media.Devices.MediaDeviceControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceController).get_WhiteBalance(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.MediaDeviceControl BacklightCompensation()
+	{
+		Windows.Media.Devices.MediaDeviceControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceController).get_BacklightCompensation(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.MediaDeviceControl Pan()
+	{
+		Windows.Media.Devices.MediaDeviceControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceController).get_Pan(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.MediaDeviceControl Tilt()
+	{
+		Windows.Media.Devices.MediaDeviceControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceController).get_Tilt(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.MediaDeviceControl Zoom()
+	{
+		Windows.Media.Devices.MediaDeviceControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceController).get_Zoom(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.MediaDeviceControl Roll()
+	{
+		Windows.Media.Devices.MediaDeviceControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceController).get_Roll(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.MediaDeviceControl Exposure()
+	{
+		Windows.Media.Devices.MediaDeviceControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceController).get_Exposure(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.MediaDeviceControl Focus()
+	{
+		Windows.Media.Devices.MediaDeviceControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceController).get_Focus(&_ret));
+		return _ret;
+	}
+	final bool TrySetPowerlineFrequency(Windows.Media.Capture.PowerlineFrequency value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceController).abi_TrySetPowerlineFrequency(value, &_ret));
+		return _ret;
+	}
+	final bool TryGetPowerlineFrequency(Windows.Media.Capture.PowerlineFrequency* out_value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceController).abi_TryGetPowerlineFrequency(out_value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.MediaProperties.IMediaEncodingProperties) GetAvailableMediaStreamProperties(Windows.Media.Capture.MediaStreamType mediaStreamType)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.MediaProperties.IMediaEncodingProperties) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceController).abi_GetAvailableMediaStreamProperties(mediaStreamType, &_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.IMediaEncodingProperties GetMediaStreamProperties(Windows.Media.Capture.MediaStreamType mediaStreamType)
+	{
+		Windows.Media.MediaProperties.IMediaEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceController).abi_GetMediaStreamProperties(mediaStreamType, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetMediaStreamPropertiesAsync(Windows.Media.Capture.MediaStreamType mediaStreamType, Windows.Media.MediaProperties.IMediaEncodingProperties mediaEncodingProperties)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IMediaDeviceController).abi_SetMediaStreamPropertiesAsync(mediaStreamType, mediaEncodingProperties, &_ret));
+		return _ret;
+	}
+	final void SetDeviceProperty(HSTRING propertyId, IInspectable propertyValue)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController).abi_SetDeviceProperty(propertyId, propertyValue));
+	}
+	final IInspectable GetDeviceProperty(HSTRING propertyId)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController).abi_GetDeviceProperty(propertyId, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.LowLagPhotoSequenceControl LowLagPhotoSequence()
+	{
+		Windows.Media.Devices.LowLagPhotoSequenceControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2).get_LowLagPhotoSequence(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.LowLagPhotoControl LowLagPhoto()
+	{
+		Windows.Media.Devices.LowLagPhotoControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2).get_LowLagPhoto(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.SceneModeControl SceneModeControl()
+	{
+		Windows.Media.Devices.SceneModeControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2).get_SceneModeControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.TorchControl TorchControl()
+	{
+		Windows.Media.Devices.TorchControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2).get_TorchControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.FlashControl FlashControl()
+	{
+		Windows.Media.Devices.FlashControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2).get_FlashControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.WhiteBalanceControl WhiteBalanceControl()
+	{
+		Windows.Media.Devices.WhiteBalanceControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2).get_WhiteBalanceControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.ExposureControl ExposureControl()
+	{
+		Windows.Media.Devices.ExposureControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2).get_ExposureControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.FocusControl FocusControl()
+	{
+		Windows.Media.Devices.FocusControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2).get_FocusControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.ExposureCompensationControl ExposureCompensationControl()
+	{
+		Windows.Media.Devices.ExposureCompensationControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2).get_ExposureCompensationControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.IsoSpeedControl IsoSpeedControl()
+	{
+		Windows.Media.Devices.IsoSpeedControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2).get_IsoSpeedControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.RegionsOfInterestControl RegionsOfInterestControl()
+	{
+		Windows.Media.Devices.RegionsOfInterestControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2).get_RegionsOfInterestControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.CaptureUse PrimaryUse()
+	{
+		Windows.Media.Devices.CaptureUse _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2).get_PrimaryUse(&_ret));
+		return _ret;
+	}
+	final void PrimaryUse(Windows.Media.Devices.CaptureUse value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController2).set_PrimaryUse(value));
+	}
+	final Windows.Media.Devices.Core.VariablePhotoSequenceController VariablePhotoSequenceController()
+	{
+		Windows.Media.Devices.Core.VariablePhotoSequenceController _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController3).get_VariablePhotoSequenceController(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.PhotoConfirmationControl PhotoConfirmationControl()
+	{
+		Windows.Media.Devices.PhotoConfirmationControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController3).get_PhotoConfirmationControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.ZoomControl ZoomControl()
+	{
+		Windows.Media.Devices.ZoomControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController3).get_ZoomControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.ExposurePriorityVideoControl ExposurePriorityVideoControl()
+	{
+		Windows.Media.Devices.ExposurePriorityVideoControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController4).get_ExposurePriorityVideoControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.MediaCaptureOptimization DesiredOptimization()
+	{
+		Windows.Media.Devices.MediaCaptureOptimization _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController4).get_DesiredOptimization(&_ret));
+		return _ret;
+	}
+	final void DesiredOptimization(Windows.Media.Devices.MediaCaptureOptimization value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController4).set_DesiredOptimization(value));
+	}
+	final Windows.Media.Devices.HdrVideoControl HdrVideoControl()
+	{
+		Windows.Media.Devices.HdrVideoControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController4).get_HdrVideoControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.OpticalImageStabilizationControl OpticalImageStabilizationControl()
+	{
+		Windows.Media.Devices.OpticalImageStabilizationControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController4).get_OpticalImageStabilizationControl(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.AdvancedPhotoControl AdvancedPhotoControl()
+	{
+		Windows.Media.Devices.AdvancedPhotoControl _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController4).get_AdvancedPhotoControl(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult GetDevicePropertyById(HSTRING propertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize)
+	{
+		Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5).abi_GetDevicePropertyById(propertyId, maxPropertyValueSize, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.VideoDeviceControllerSetDevicePropertyStatus SetDevicePropertyById(HSTRING propertyId, IInspectable propertyValue)
+	{
+		Windows.Media.Devices.VideoDeviceControllerSetDevicePropertyStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5).abi_SetDevicePropertyById(propertyId, propertyValue, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult GetDevicePropertyByExtendedId(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize)
+	{
+		Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5).abi_GetDevicePropertyByExtendedId(__extendedPropertyIdSize, extendedPropertyId, maxPropertyValueSize, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.VideoDeviceControllerSetDevicePropertyStatus SetDevicePropertyByExtendedId(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, UINT32 __propertyValueSize, BYTE* propertyValue)
+	{
+		Windows.Media.Devices.VideoDeviceControllerSetDevicePropertyStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5).abi_SetDevicePropertyByExtendedId(__extendedPropertyIdSize, extendedPropertyId, __propertyValueSize, propertyValue, &_ret));
+		return _ret;
+	}
 }
 
 interface VideoDeviceControllerGetDevicePropertyResult : Windows.Media.Devices.IVideoDeviceControllerGetDevicePropertyResult
 {
+extern(Windows):
+	final Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyStatus Status()
+	{
+		Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceControllerGetDevicePropertyResult).get_Status(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IVideoDeviceControllerGetDevicePropertyResult).get_Value(&_ret));
+		return _ret;
+	}
 }
 
 interface WhiteBalanceControl : Windows.Media.Devices.IWhiteBalanceControl
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IWhiteBalanceControl).get_Supported(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.ColorTemperaturePreset Preset()
+	{
+		Windows.Media.Devices.ColorTemperaturePreset _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IWhiteBalanceControl).get_Preset(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetPresetAsync(Windows.Media.Devices.ColorTemperaturePreset preset)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IWhiteBalanceControl).abi_SetPresetAsync(preset, &_ret));
+		return _ret;
+	}
+	final UINT32 Min()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IWhiteBalanceControl).get_Min(&_ret));
+		return _ret;
+	}
+	final UINT32 Max()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IWhiteBalanceControl).get_Max(&_ret));
+		return _ret;
+	}
+	final UINT32 Step()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IWhiteBalanceControl).get_Step(&_ret));
+		return _ret;
+	}
+	final UINT32 Value()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IWhiteBalanceControl).get_Value(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetValueAsync(UINT32 temperature)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IWhiteBalanceControl).abi_SetValueAsync(temperature, &_ret));
+		return _ret;
+	}
 }
 
 interface ZoomControl : Windows.Media.Devices.IZoomControl, Windows.Media.Devices.IZoomControl2
 {
+extern(Windows):
+	final bool Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl).get_Supported(&_ret));
+		return _ret;
+	}
+	final FLOAT Min()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl).get_Min(&_ret));
+		return _ret;
+	}
+	final FLOAT Max()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl).get_Max(&_ret));
+		return _ret;
+	}
+	final FLOAT Step()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl).get_Step(&_ret));
+		return _ret;
+	}
+	final FLOAT Value()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl).set_Value(value));
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.ZoomTransitionMode) SupportedModes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.ZoomTransitionMode) _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl2).get_SupportedModes(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.ZoomTransitionMode Mode()
+	{
+		Windows.Media.Devices.ZoomTransitionMode _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl2).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Configure(Windows.Media.Devices.ZoomSettings settings)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl2).abi_Configure(settings));
+	}
 }
 
 interface ZoomSettings : Windows.Media.Devices.IZoomSettings
 {
+extern(Windows):
+	final Windows.Media.Devices.ZoomTransitionMode Mode()
+	{
+		Windows.Media.Devices.ZoomTransitionMode _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IZoomSettings).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.Media.Devices.ZoomTransitionMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IZoomSettings).set_Mode(value));
+	}
+	final FLOAT Value()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Devices.IZoomSettings).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.Media.Devices.IZoomSettings).set_Value(value));
+	}
 }
 
 enum AdvancedPhotoMode

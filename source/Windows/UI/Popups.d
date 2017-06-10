@@ -72,18 +72,168 @@ extern(Windows):
 
 interface MessageDialog : Windows.UI.Popups.IMessageDialog
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).set_Title(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) Commands()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).get_Commands(&_ret));
+		return _ret;
+	}
+	final UINT32 DefaultCommandIndex()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).get_DefaultCommandIndex(&_ret));
+		return _ret;
+	}
+	final void DefaultCommandIndex(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).set_DefaultCommandIndex(value));
+	}
+	final UINT32 CancelCommandIndex()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).get_CancelCommandIndex(&_ret));
+		return _ret;
+	}
+	final void CancelCommandIndex(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).set_CancelCommandIndex(value));
+	}
+	final HSTRING Content()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).get_Content(&_ret));
+		return _ret;
+	}
+	final void Content(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).set_Content(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).abi_ShowAsync(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Popups.MessageDialogOptions Options()
+	{
+		Windows.UI.Popups.MessageDialogOptions _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).get_Options(&_ret));
+		return _ret;
+	}
+	final void Options(Windows.UI.Popups.MessageDialogOptions value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).set_Options(value));
+	}
 }
 
 interface PopupMenu : Windows.UI.Popups.IPopupMenu
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) Commands()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IPopupMenu).get_Commands(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsync(Windows.Foundation.Point invocationPoint)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IPopupMenu).abi_ShowAsync(invocationPoint, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsyncWithRect(Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IPopupMenu).abi_ShowAsyncWithRect(selection, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsyncWithRectAndPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IPopupMenu).abi_ShowAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
+		return _ret;
+	}
 }
 
 interface UICommand : Windows.UI.Popups.IUICommand
 {
+extern(Windows):
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Label(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Label(value));
+	}
+	final Windows.UI.Popups.UICommandInvokedHandler Invoked()
+	{
+		Windows.UI.Popups.UICommandInvokedHandler _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Invoked(&_ret));
+		return _ret;
+	}
+	final void Invoked(Windows.UI.Popups.UICommandInvokedHandler value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Invoked(value));
+	}
+	final IInspectable Id()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Id(&_ret));
+		return _ret;
+	}
+	final void Id(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Id(value));
+	}
 }
 
 interface UICommandSeparator : Windows.UI.Popups.IUICommand
 {
+extern(Windows):
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Label(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Label(value));
+	}
+	final Windows.UI.Popups.UICommandInvokedHandler Invoked()
+	{
+		Windows.UI.Popups.UICommandInvokedHandler _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Invoked(&_ret));
+		return _ret;
+	}
+	final void Invoked(Windows.UI.Popups.UICommandInvokedHandler value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Invoked(value));
+	}
+	final IInspectable Id()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Id(&_ret));
+		return _ret;
+	}
+	final void Id(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Id(value));
+	}
 }
 
 @bitflags

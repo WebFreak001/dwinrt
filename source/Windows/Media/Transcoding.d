@@ -46,10 +46,118 @@ extern(Windows):
 
 interface MediaTranscoder : Windows.Media.Transcoding.IMediaTranscoder, Windows.Media.Transcoding.IMediaTranscoder2
 {
+extern(Windows):
+	final void TrimStartTime(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).set_TrimStartTime(value));
+	}
+	final Windows.Foundation.TimeSpan TrimStartTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).get_TrimStartTime(&_ret));
+		return _ret;
+	}
+	final void TrimStopTime(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).set_TrimStopTime(value));
+	}
+	final Windows.Foundation.TimeSpan TrimStopTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).get_TrimStopTime(&_ret));
+		return _ret;
+	}
+	final void AlwaysReencode(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).set_AlwaysReencode(value));
+	}
+	final bool AlwaysReencode()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).get_AlwaysReencode(&_ret));
+		return _ret;
+	}
+	final void HardwareAccelerationEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).set_HardwareAccelerationEnabled(value));
+	}
+	final bool HardwareAccelerationEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).get_HardwareAccelerationEnabled(&_ret));
+		return _ret;
+	}
+	final void AddAudioEffect(HSTRING activatableClassId)
+	{
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_AddAudioEffect(activatableClassId));
+	}
+	final void AddAudioEffectWithSettings(HSTRING activatableClassId, bool effectRequired, Windows.Foundation.Collections.IPropertySet configuration)
+	{
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_AddAudioEffectWithSettings(activatableClassId, effectRequired, configuration));
+	}
+	final void AddVideoEffect(HSTRING activatableClassId)
+	{
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_AddVideoEffect(activatableClassId));
+	}
+	final void AddVideoEffectWithSettings(HSTRING activatableClassId, bool effectRequired, Windows.Foundation.Collections.IPropertySet configuration)
+	{
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_AddVideoEffectWithSettings(activatableClassId, effectRequired, configuration));
+	}
+	final void ClearEffects()
+	{
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_ClearEffects());
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.PrepareTranscodeResult) PrepareFileTranscodeAsync(Windows.Storage.IStorageFile source, Windows.Storage.IStorageFile destination, Windows.Media.MediaProperties.MediaEncodingProfile profile)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.PrepareTranscodeResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_PrepareFileTranscodeAsync(source, destination, profile, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.PrepareTranscodeResult) PrepareStreamTranscodeAsync(Windows.Storage.Streams.IRandomAccessStream source, Windows.Storage.Streams.IRandomAccessStream destination, Windows.Media.MediaProperties.MediaEncodingProfile profile)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.PrepareTranscodeResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_PrepareStreamTranscodeAsync(source, destination, profile, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.PrepareTranscodeResult) PrepareMediaStreamSourceTranscodeAsync(Windows.Media.Core.IMediaSource source, Windows.Storage.Streams.IRandomAccessStream destination, Windows.Media.MediaProperties.MediaEncodingProfile profile)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.PrepareTranscodeResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder2).abi_PrepareMediaStreamSourceTranscodeAsync(source, destination, profile, &_ret));
+		return _ret;
+	}
+	final void VideoProcessingAlgorithm(Windows.Media.Transcoding.MediaVideoProcessingAlgorithm value)
+	{
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder2).set_VideoProcessingAlgorithm(value));
+	}
+	final Windows.Media.Transcoding.MediaVideoProcessingAlgorithm VideoProcessingAlgorithm()
+	{
+		Windows.Media.Transcoding.MediaVideoProcessingAlgorithm _ret;
+		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder2).get_VideoProcessingAlgorithm(&_ret));
+		return _ret;
+	}
 }
 
 interface PrepareTranscodeResult : Windows.Media.Transcoding.IPrepareTranscodeResult
 {
+extern(Windows):
+	final bool CanTranscode()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Transcoding.IPrepareTranscodeResult).get_CanTranscode(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Transcoding.TranscodeFailureReason FailureReason()
+	{
+		Windows.Media.Transcoding.TranscodeFailureReason _ret;
+		Debug.OK(this.as!(Windows.Media.Transcoding.IPrepareTranscodeResult).get_FailureReason(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncActionWithProgress!(double) TranscodeAsync()
+	{
+		Windows.Foundation.IAsyncActionWithProgress!(double) _ret;
+		Debug.OK(this.as!(Windows.Media.Transcoding.IPrepareTranscodeResult).abi_TranscodeAsync(&_ret));
+		return _ret;
+	}
 }
 
 enum MediaVideoProcessingAlgorithm

@@ -185,46 +185,551 @@ extern(Windows):
 
 interface UserDataTask : Windows.ApplicationModel.UserDataTasks.IUserDataTask
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING ListId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_ListId(&_ret));
+		return _ret;
+	}
+	final HSTRING RemoteId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_RemoteId(&_ret));
+		return _ret;
+	}
+	final void RemoteId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_RemoteId(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) CompletedDate()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_CompletedDate(&_ret));
+		return _ret;
+	}
+	final void CompletedDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_CompletedDate(value));
+	}
+	final HSTRING Details()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Details(&_ret));
+		return _ret;
+	}
+	final void Details(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_Details(value));
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskDetailsKind DetailsKind()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskDetailsKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_DetailsKind(&_ret));
+		return _ret;
+	}
+	final void DetailsKind(Windows.ApplicationModel.UserDataTasks.UserDataTaskDetailsKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_DetailsKind(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) DueDate()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_DueDate(&_ret));
+		return _ret;
+	}
+	final void DueDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_DueDate(value));
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskKind Kind()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskPriority Priority()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskPriority _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Priority(&_ret));
+		return _ret;
+	}
+	final void Priority(Windows.ApplicationModel.UserDataTasks.UserDataTaskPriority value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_Priority(value));
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceProperties RecurrenceProperties()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceProperties _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_RecurrenceProperties(&_ret));
+		return _ret;
+	}
+	final void RecurrenceProperties(Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceProperties value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_RecurrenceProperties(value));
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationProperties RegenerationProperties()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationProperties _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_RegenerationProperties(&_ret));
+		return _ret;
+	}
+	final void RegenerationProperties(Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationProperties value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_RegenerationProperties(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Reminder()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Reminder(&_ret));
+		return _ret;
+	}
+	final void Reminder(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_Reminder(value));
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskSensitivity Sensitivity()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskSensitivity _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Sensitivity(&_ret));
+		return _ret;
+	}
+	final void Sensitivity(Windows.ApplicationModel.UserDataTasks.UserDataTaskSensitivity value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_Sensitivity(value));
+	}
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Subject(&_ret));
+		return _ret;
+	}
+	final void Subject(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_Subject(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) StartDate()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_StartDate(&_ret));
+		return _ret;
+	}
+	final void StartDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_StartDate(value));
+	}
 }
 
 interface UserDataTaskBatch : Windows.ApplicationModel.UserDataTasks.IUserDataTaskBatch
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataTasks.UserDataTask) Tasks()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataTasks.UserDataTask) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskBatch).get_Tasks(&_ret));
+		return _ret;
+	}
 }
 
 interface UserDataTaskList : Windows.ApplicationModel.UserDataTasks.IUserDataTaskList
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING UserDataAccountId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_UserDataAccountId(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).set_DisplayName(value));
+	}
+	final HSTRING SourceDisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_SourceDisplayName(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskListOtherAppReadAccess OtherAppReadAccess()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskListOtherAppReadAccess _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_OtherAppReadAccess(&_ret));
+		return _ret;
+	}
+	final void OtherAppReadAccess(Windows.ApplicationModel.UserDataTasks.UserDataTaskListOtherAppReadAccess value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).set_OtherAppReadAccess(value));
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskListOtherAppWriteAccess OtherAppWriteAccess()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskListOtherAppWriteAccess _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_OtherAppWriteAccess(&_ret));
+		return _ret;
+	}
+	final void OtherAppWriteAccess(Windows.ApplicationModel.UserDataTasks.UserDataTaskListOtherAppWriteAccess value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).set_OtherAppWriteAccess(value));
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskListLimitedWriteOperations LimitedWriteOperations()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskListLimitedWriteOperations _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_LimitedWriteOperations(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager SyncManager()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_SyncManager(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RegisterSyncManagerAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_RegisterSyncManagerAsync(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskReader GetTaskReader()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_GetTaskReader(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskReader GetTaskReaderWithOptions(Windows.ApplicationModel.UserDataTasks.UserDataTaskQueryOptions options)
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_GetTaskReaderWithOptions(options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTask) GetTaskAsync(HSTRING userDataTask)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTask) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_GetTaskAsync(userDataTask, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveTaskAsync(Windows.ApplicationModel.UserDataTasks.UserDataTask userDataTask)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_SaveTaskAsync(userDataTask, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteTaskAsync(HSTRING userDataTaskId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_DeleteTaskAsync(userDataTaskId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_DeleteAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_SaveAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface UserDataTaskListLimitedWriteOperations : Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(HSTRING) TryCompleteTaskAsync(HSTRING userDataTaskId)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations).abi_TryCompleteTaskAsync(userDataTaskId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryCreateOrUpdateTaskAsync(Windows.ApplicationModel.UserDataTasks.UserDataTask userDataTask)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations).abi_TryCreateOrUpdateTaskAsync(userDataTask, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryDeleteTaskAsync(HSTRING userDataTaskId)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations).abi_TryDeleteTaskAsync(userDataTaskId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TrySkipOccurrenceAsync(HSTRING userDataTaskId)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations).abi_TrySkipOccurrenceAsync(userDataTaskId, &_ret));
+		return _ret;
+	}
 }
 
 interface UserDataTaskListSyncManager : Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager
 {
+extern(Windows):
+	final Windows.Foundation.DateTime LastAttemptedSyncTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).get_LastAttemptedSyncTime(&_ret));
+		return _ret;
+	}
+	final void LastAttemptedSyncTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).set_LastAttemptedSyncTime(value));
+	}
+	final Windows.Foundation.DateTime LastSuccessfulSyncTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).get_LastSuccessfulSyncTime(&_ret));
+		return _ret;
+	}
+	final void LastSuccessfulSyncTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).set_LastSuccessfulSyncTime(value));
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncStatus Status()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).get_Status(&_ret));
+		return _ret;
+	}
+	final void Status(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncStatus value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).set_Status(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) SyncAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).abi_SyncAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface UserDataTaskManager : Windows.ApplicationModel.UserDataTasks.IUserDataTaskManager
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskStore) RequestStoreAsync(Windows.ApplicationModel.UserDataTasks.UserDataTaskStoreAccessType accessType)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskStore) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskManager).abi_RequestStoreAsync(accessType, &_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskManager).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface UserDataTaskQueryOptions : Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions
 {
+extern(Windows):
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskQuerySortProperty SortProperty()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskQuerySortProperty _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions).get_SortProperty(&_ret));
+		return _ret;
+	}
+	final void SortProperty(Windows.ApplicationModel.UserDataTasks.UserDataTaskQuerySortProperty value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions).set_SortProperty(value));
+	}
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskQueryKind Kind()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskQueryKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions).get_Kind(&_ret));
+		return _ret;
+	}
+	final void Kind(Windows.ApplicationModel.UserDataTasks.UserDataTaskQueryKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions).set_Kind(value));
+	}
 }
 
 interface UserDataTaskReader : Windows.ApplicationModel.UserDataTasks.IUserDataTaskReader
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskBatch) ReadBatchAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskBatch) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskReader).abi_ReadBatchAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface UserDataTaskRecurrenceProperties : Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties
 {
+extern(Windows):
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceUnit Unit()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceUnit _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_Unit(&_ret));
+		return _ret;
+	}
+	final void Unit(Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceUnit value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_Unit(value));
+	}
+	final Windows.Foundation.IReference!(INT32) Occurrences()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_Occurrences(&_ret));
+		return _ret;
+	}
+	final void Occurrences(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_Occurrences(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Until()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_Until(&_ret));
+		return _ret;
+	}
+	final void Until(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_Until(value));
+	}
+	final INT32 Interval()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_Interval(&_ret));
+		return _ret;
+	}
+	final void Interval(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_Interval(value));
+	}
+	final Windows.Foundation.IReference!(Windows.ApplicationModel.UserDataTasks.UserDataTaskDaysOfWeek) DaysOfWeek()
+	{
+		Windows.Foundation.IReference!(Windows.ApplicationModel.UserDataTasks.UserDataTaskDaysOfWeek) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_DaysOfWeek(&_ret));
+		return _ret;
+	}
+	final void DaysOfWeek(Windows.Foundation.IReference!(Windows.ApplicationModel.UserDataTasks.UserDataTaskDaysOfWeek) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_DaysOfWeek(value));
+	}
+	final Windows.Foundation.IReference!(Windows.ApplicationModel.UserDataTasks.UserDataTaskWeekOfMonth) WeekOfMonth()
+	{
+		Windows.Foundation.IReference!(Windows.ApplicationModel.UserDataTasks.UserDataTaskWeekOfMonth) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_WeekOfMonth(&_ret));
+		return _ret;
+	}
+	final void WeekOfMonth(Windows.Foundation.IReference!(Windows.ApplicationModel.UserDataTasks.UserDataTaskWeekOfMonth) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_WeekOfMonth(value));
+	}
+	final Windows.Foundation.IReference!(INT32) Month()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_Month(&_ret));
+		return _ret;
+	}
+	final void Month(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_Month(value));
+	}
+	final Windows.Foundation.IReference!(INT32) Day()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_Day(&_ret));
+		return _ret;
+	}
+	final void Day(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_Day(value));
+	}
 }
 
 interface UserDataTaskRegenerationProperties : Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties
 {
+extern(Windows):
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationUnit Unit()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationUnit _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).get_Unit(&_ret));
+		return _ret;
+	}
+	final void Unit(Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationUnit value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).set_Unit(value));
+	}
+	final Windows.Foundation.IReference!(INT32) Occurrences()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).get_Occurrences(&_ret));
+		return _ret;
+	}
+	final void Occurrences(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).set_Occurrences(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Until()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).get_Until(&_ret));
+		return _ret;
+	}
+	final void Until(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).set_Until(value));
+	}
+	final INT32 Interval()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).get_Interval(&_ret));
+		return _ret;
+	}
+	final void Interval(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).set_Interval(value));
+	}
 }
 
 interface UserDataTaskStore : Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) CreateListAsync(HSTRING name)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore).abi_CreateListAsync(name, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) CreateListInAccountAsync(HSTRING name, HSTRING userDataAccountId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore).abi_CreateListInAccountAsync(name, userDataAccountId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList)) FindListsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore).abi_FindListsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) GetListAsync(HSTRING taskListId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore).abi_GetListAsync(taskListId, &_ret));
+		return _ret;
+	}
 }
 
 @bitflags

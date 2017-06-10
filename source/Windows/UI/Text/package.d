@@ -280,6 +280,163 @@ interface FontWeights : Windows.UI.Text.IFontWeights
 
 interface RichEditTextDocument : Windows.UI.Text.ITextDocument, Windows.UI.Text.ITextDocument2
 {
+extern(Windows):
+	final Windows.UI.Text.CaretType CaretType()
+	{
+		Windows.UI.Text.CaretType _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).get_CaretType(&_ret));
+		return _ret;
+	}
+	final void CaretType(Windows.UI.Text.CaretType value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).set_CaretType(value));
+	}
+	final FLOAT DefaultTabStop()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).get_DefaultTabStop(&_ret));
+		return _ret;
+	}
+	final void DefaultTabStop(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).set_DefaultTabStop(value));
+	}
+	final Windows.UI.Text.ITextSelection Selection()
+	{
+		Windows.UI.Text.ITextSelection _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).get_Selection(&_ret));
+		return _ret;
+	}
+	final UINT32 UndoLimit()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).get_UndoLimit(&_ret));
+		return _ret;
+	}
+	final void UndoLimit(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).set_UndoLimit(value));
+	}
+	final bool CanCopy()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_CanCopy(&_ret));
+		return _ret;
+	}
+	final bool CanPaste()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_CanPaste(&_ret));
+		return _ret;
+	}
+	final bool CanRedo()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_CanRedo(&_ret));
+		return _ret;
+	}
+	final bool CanUndo()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_CanUndo(&_ret));
+		return _ret;
+	}
+	final INT32 ApplyDisplayUpdates()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_ApplyDisplayUpdates(&_ret));
+		return _ret;
+	}
+	final INT32 BatchDisplayUpdates()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_BatchDisplayUpdates(&_ret));
+		return _ret;
+	}
+	final void BeginUndoGroup()
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_BeginUndoGroup());
+	}
+	final void EndUndoGroup()
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_EndUndoGroup());
+	}
+	final Windows.UI.Text.ITextCharacterFormat GetDefaultCharacterFormat()
+	{
+		Windows.UI.Text.ITextCharacterFormat _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_GetDefaultCharacterFormat(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Text.ITextParagraphFormat GetDefaultParagraphFormat()
+	{
+		Windows.UI.Text.ITextParagraphFormat _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_GetDefaultParagraphFormat(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Text.ITextRange GetRange(INT32 startPosition, INT32 endPosition)
+	{
+		Windows.UI.Text.ITextRange _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_GetRange(startPosition, endPosition, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Text.ITextRange GetRangeFromPoint(Windows.Foundation.Point point, Windows.UI.Text.PointOptions options)
+	{
+		Windows.UI.Text.ITextRange _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_GetRangeFromPoint(point, options, &_ret));
+		return _ret;
+	}
+	final void GetText(Windows.UI.Text.TextGetOptions options, HSTRING* out_value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_GetText(options, out_value));
+	}
+	final void LoadFromStream(Windows.UI.Text.TextSetOptions options, Windows.Storage.Streams.IRandomAccessStream value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_LoadFromStream(options, value));
+	}
+	final void Redo()
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_Redo());
+	}
+	final void SaveToStream(Windows.UI.Text.TextGetOptions options, Windows.Storage.Streams.IRandomAccessStream value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_SaveToStream(options, value));
+	}
+	final void SetDefaultCharacterFormat(Windows.UI.Text.ITextCharacterFormat value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_SetDefaultCharacterFormat(value));
+	}
+	final void SetDefaultParagraphFormat(Windows.UI.Text.ITextParagraphFormat value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_SetDefaultParagraphFormat(value));
+	}
+	final void SetText(Windows.UI.Text.TextSetOptions options, HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_SetText(options, value));
+	}
+	final void Undo()
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_Undo());
+	}
+	final bool AlignmentIncludesTrailingWhitespace()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument2).get_AlignmentIncludesTrailingWhitespace(&_ret));
+		return _ret;
+	}
+	final void AlignmentIncludesTrailingWhitespace(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument2).set_AlignmentIncludesTrailingWhitespace(value));
+	}
+	final bool IgnoreTrailingCharacterSpacing()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument2).get_IgnoreTrailingCharacterSpacing(&_ret));
+		return _ret;
+	}
+	final void IgnoreTrailingCharacterSpacing(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Text.ITextDocument2).set_IgnoreTrailingCharacterSpacing(value));
+	}
 }
 
 interface TextConstants

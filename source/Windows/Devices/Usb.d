@@ -330,42 +330,328 @@ extern(Windows):
 
 interface UsbBulkInEndpointDescriptor : Windows.Devices.Usb.IUsbBulkInEndpointDescriptor
 {
+extern(Windows):
+	final UINT32 MaxPacketSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInEndpointDescriptor).get_MaxPacketSize(&_ret));
+		return _ret;
+	}
+	final BYTE EndpointNumber()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInEndpointDescriptor).get_EndpointNumber(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbBulkInPipe Pipe()
+	{
+		Windows.Devices.Usb.UsbBulkInPipe _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInEndpointDescriptor).get_Pipe(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbBulkInPipe : Windows.Devices.Usb.IUsbBulkInPipe
 {
+extern(Windows):
+	final UINT32 MaxTransferSizeBytes()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).get_MaxTransferSizeBytes(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbBulkInEndpointDescriptor EndpointDescriptor()
+	{
+		Windows.Devices.Usb.UsbBulkInEndpointDescriptor _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).get_EndpointDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ClearStallAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).abi_ClearStallAsync(&_ret));
+		return _ret;
+	}
+	final void ReadOptions(Windows.Devices.Usb.UsbReadOptions value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).set_ReadOptions(value));
+	}
+	final Windows.Devices.Usb.UsbReadOptions ReadOptions()
+	{
+		Windows.Devices.Usb.UsbReadOptions _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).get_ReadOptions(&_ret));
+		return _ret;
+	}
+	final void FlushBuffer()
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).abi_FlushBuffer());
+	}
+	final Windows.Storage.Streams.IInputStream InputStream()
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).get_InputStream(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbBulkOutEndpointDescriptor : Windows.Devices.Usb.IUsbBulkOutEndpointDescriptor
 {
+extern(Windows):
+	final UINT32 MaxPacketSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutEndpointDescriptor).get_MaxPacketSize(&_ret));
+		return _ret;
+	}
+	final BYTE EndpointNumber()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutEndpointDescriptor).get_EndpointNumber(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbBulkOutPipe Pipe()
+	{
+		Windows.Devices.Usb.UsbBulkOutPipe _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutEndpointDescriptor).get_Pipe(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbBulkOutPipe : Windows.Devices.Usb.IUsbBulkOutPipe
 {
+extern(Windows):
+	final Windows.Devices.Usb.UsbBulkOutEndpointDescriptor EndpointDescriptor()
+	{
+		Windows.Devices.Usb.UsbBulkOutEndpointDescriptor _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutPipe).get_EndpointDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ClearStallAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutPipe).abi_ClearStallAsync(&_ret));
+		return _ret;
+	}
+	final void WriteOptions(Windows.Devices.Usb.UsbWriteOptions value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutPipe).set_WriteOptions(value));
+	}
+	final Windows.Devices.Usb.UsbWriteOptions WriteOptions()
+	{
+		Windows.Devices.Usb.UsbWriteOptions _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutPipe).get_WriteOptions(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream OutputStream()
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutPipe).get_OutputStream(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbConfiguration : Windows.Devices.Usb.IUsbConfiguration
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterface) UsbInterfaces()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterface) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfiguration).get_UsbInterfaces(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbConfigurationDescriptor ConfigurationDescriptor()
+	{
+		Windows.Devices.Usb.UsbConfigurationDescriptor _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfiguration).get_ConfigurationDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbDescriptor) Descriptors()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbDescriptor) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfiguration).get_Descriptors(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbConfigurationDescriptor : Windows.Devices.Usb.IUsbConfigurationDescriptor
 {
+extern(Windows):
+	final BYTE ConfigurationValue()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfigurationDescriptor).get_ConfigurationValue(&_ret));
+		return _ret;
+	}
+	final UINT32 MaxPowerMilliamps()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfigurationDescriptor).get_MaxPowerMilliamps(&_ret));
+		return _ret;
+	}
+	final bool SelfPowered()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfigurationDescriptor).get_SelfPowered(&_ret));
+		return _ret;
+	}
+	final bool RemoteWakeup()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfigurationDescriptor).get_RemoteWakeup(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbControlRequestType : Windows.Devices.Usb.IUsbControlRequestType
 {
+extern(Windows):
+	final Windows.Devices.Usb.UsbTransferDirection Direction()
+	{
+		Windows.Devices.Usb.UsbTransferDirection _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).get_Direction(&_ret));
+		return _ret;
+	}
+	final void Direction(Windows.Devices.Usb.UsbTransferDirection value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).set_Direction(value));
+	}
+	final Windows.Devices.Usb.UsbControlTransferType ControlTransferType()
+	{
+		Windows.Devices.Usb.UsbControlTransferType _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).get_ControlTransferType(&_ret));
+		return _ret;
+	}
+	final void ControlTransferType(Windows.Devices.Usb.UsbControlTransferType value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).set_ControlTransferType(value));
+	}
+	final Windows.Devices.Usb.UsbControlRecipient Recipient()
+	{
+		Windows.Devices.Usb.UsbControlRecipient _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).get_Recipient(&_ret));
+		return _ret;
+	}
+	final void Recipient(Windows.Devices.Usb.UsbControlRecipient value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).set_Recipient(value));
+	}
+	final BYTE AsByte()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).get_AsByte(&_ret));
+		return _ret;
+	}
+	final void AsByte(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).set_AsByte(value));
+	}
 }
 
 interface UsbDescriptor : Windows.Devices.Usb.IUsbDescriptor
 {
+extern(Windows):
+	final BYTE Length()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDescriptor).get_Length(&_ret));
+		return _ret;
+	}
+	final BYTE DescriptorType()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDescriptor).get_DescriptorType(&_ret));
+		return _ret;
+	}
+	final void ReadDescriptorBuffer(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDescriptor).abi_ReadDescriptorBuffer(buffer));
+	}
 }
 
 interface UsbDevice : Windows.Devices.Usb.IUsbDevice, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(UINT32) SendControlOutTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).abi_SendControlOutTransferAsync(setupPacket, buffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(UINT32) SendControlOutTransferAsyncNoBuffer(Windows.Devices.Usb.UsbSetupPacket setupPacket)
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).abi_SendControlOutTransferAsyncNoBuffer(setupPacket, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) SendControlInTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).abi_SendControlInTransferAsync(setupPacket, buffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) SendControlInTransferAsyncNoBuffer(Windows.Devices.Usb.UsbSetupPacket setupPacket)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).abi_SendControlInTransferAsyncNoBuffer(setupPacket, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbInterface DefaultInterface()
+	{
+		Windows.Devices.Usb.UsbInterface _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).get_DefaultInterface(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbDeviceDescriptor DeviceDescriptor()
+	{
+		Windows.Devices.Usb.UsbDeviceDescriptor _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).get_DeviceDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbConfiguration Configuration()
+	{
+		Windows.Devices.Usb.UsbConfiguration _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).get_Configuration(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface UsbDeviceClass : Windows.Devices.Usb.IUsbDeviceClass
 {
+extern(Windows):
+	final BYTE ClassCode()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).get_ClassCode(&_ret));
+		return _ret;
+	}
+	final void ClassCode(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).set_ClassCode(value));
+	}
+	final Windows.Foundation.IReference!(BYTE) SubclassCode()
+	{
+		Windows.Foundation.IReference!(BYTE) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).get_SubclassCode(&_ret));
+		return _ret;
+	}
+	final void SubclassCode(Windows.Foundation.IReference!(BYTE) value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).set_SubclassCode(value));
+	}
+	final Windows.Foundation.IReference!(BYTE) ProtocolCode()
+	{
+		Windows.Foundation.IReference!(BYTE) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).get_ProtocolCode(&_ret));
+		return _ret;
+	}
+	final void ProtocolCode(Windows.Foundation.IReference!(BYTE) value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).set_ProtocolCode(value));
+	}
 }
 
 interface UsbDeviceClasses : Windows.Devices.Usb.IUsbDeviceClasses
@@ -374,46 +660,399 @@ interface UsbDeviceClasses : Windows.Devices.Usb.IUsbDeviceClasses
 
 interface UsbDeviceDescriptor : Windows.Devices.Usb.IUsbDeviceDescriptor
 {
+extern(Windows):
+	final UINT32 BcdUsb()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_BcdUsb(&_ret));
+		return _ret;
+	}
+	final BYTE MaxPacketSize0()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_MaxPacketSize0(&_ret));
+		return _ret;
+	}
+	final UINT32 VendorId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_VendorId(&_ret));
+		return _ret;
+	}
+	final UINT32 ProductId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_ProductId(&_ret));
+		return _ret;
+	}
+	final UINT32 BcdDeviceRevision()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_BcdDeviceRevision(&_ret));
+		return _ret;
+	}
+	final BYTE NumberOfConfigurations()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_NumberOfConfigurations(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbEndpointDescriptor : Windows.Devices.Usb.IUsbEndpointDescriptor
 {
+extern(Windows):
+	final BYTE EndpointNumber()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_EndpointNumber(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbTransferDirection Direction()
+	{
+		Windows.Devices.Usb.UsbTransferDirection _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_Direction(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbEndpointType EndpointType()
+	{
+		Windows.Devices.Usb.UsbEndpointType _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_EndpointType(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbBulkInEndpointDescriptor AsBulkInEndpointDescriptor()
+	{
+		Windows.Devices.Usb.UsbBulkInEndpointDescriptor _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_AsBulkInEndpointDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbInterruptInEndpointDescriptor AsInterruptInEndpointDescriptor()
+	{
+		Windows.Devices.Usb.UsbInterruptInEndpointDescriptor _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_AsInterruptInEndpointDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbBulkOutEndpointDescriptor AsBulkOutEndpointDescriptor()
+	{
+		Windows.Devices.Usb.UsbBulkOutEndpointDescriptor _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_AsBulkOutEndpointDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor AsInterruptOutEndpointDescriptor()
+	{
+		Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_AsInterruptOutEndpointDescriptor(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbInterface : Windows.Devices.Usb.IUsbInterface
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkInPipe) BulkInPipes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkInPipe) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_BulkInPipes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptInPipe) InterruptInPipes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptInPipe) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_InterruptInPipes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkOutPipe) BulkOutPipes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkOutPipe) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_BulkOutPipes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptOutPipe) InterruptOutPipes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptOutPipe) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_InterruptOutPipes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterfaceSetting) InterfaceSettings()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterfaceSetting) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_InterfaceSettings(&_ret));
+		return _ret;
+	}
+	final BYTE InterfaceNumber()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_InterfaceNumber(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbDescriptor) Descriptors()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbDescriptor) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_Descriptors(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbInterfaceDescriptor : Windows.Devices.Usb.IUsbInterfaceDescriptor
 {
+extern(Windows):
+	final BYTE ClassCode()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_ClassCode(&_ret));
+		return _ret;
+	}
+	final BYTE SubclassCode()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_SubclassCode(&_ret));
+		return _ret;
+	}
+	final BYTE ProtocolCode()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_ProtocolCode(&_ret));
+		return _ret;
+	}
+	final BYTE AlternateSettingNumber()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_AlternateSettingNumber(&_ret));
+		return _ret;
+	}
+	final BYTE InterfaceNumber()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_InterfaceNumber(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbInterfaceSetting : Windows.Devices.Usb.IUsbInterfaceSetting
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkInEndpointDescriptor) BulkInEndpoints()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkInEndpointDescriptor) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_BulkInEndpoints(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptInEndpointDescriptor) InterruptInEndpoints()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptInEndpointDescriptor) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_InterruptInEndpoints(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkOutEndpointDescriptor) BulkOutEndpoints()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkOutEndpointDescriptor) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_BulkOutEndpoints(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor) InterruptOutEndpoints()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_InterruptOutEndpoints(&_ret));
+		return _ret;
+	}
+	final bool Selected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_Selected(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SelectSettingAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).abi_SelectSettingAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbInterfaceDescriptor InterfaceDescriptor()
+	{
+		Windows.Devices.Usb.UsbInterfaceDescriptor _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_InterfaceDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbDescriptor) Descriptors()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbDescriptor) _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_Descriptors(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbInterruptInEndpointDescriptor : Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor
 {
+extern(Windows):
+	final UINT32 MaxPacketSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor).get_MaxPacketSize(&_ret));
+		return _ret;
+	}
+	final BYTE EndpointNumber()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor).get_EndpointNumber(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Interval()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor).get_Interval(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbInterruptInPipe Pipe()
+	{
+		Windows.Devices.Usb.UsbInterruptInPipe _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor).get_Pipe(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbInterruptInEventArgs : Windows.Devices.Usb.IUsbInterruptInEventArgs
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer InterruptData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInEventArgs).get_InterruptData(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbInterruptInPipe : Windows.Devices.Usb.IUsbInterruptInPipe
 {
+extern(Windows):
+	final Windows.Devices.Usb.UsbInterruptInEndpointDescriptor EndpointDescriptor()
+	{
+		Windows.Devices.Usb.UsbInterruptInEndpointDescriptor _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInPipe).get_EndpointDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ClearStallAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInPipe).abi_ClearStallAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbInterruptOutEndpointDescriptor : Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor
 {
+extern(Windows):
+	final UINT32 MaxPacketSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor).get_MaxPacketSize(&_ret));
+		return _ret;
+	}
+	final BYTE EndpointNumber()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor).get_EndpointNumber(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Interval()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor).get_Interval(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Usb.UsbInterruptOutPipe Pipe()
+	{
+		Windows.Devices.Usb.UsbInterruptOutPipe _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor).get_Pipe(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbInterruptOutPipe : Windows.Devices.Usb.IUsbInterruptOutPipe
 {
+extern(Windows):
+	final Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor EndpointDescriptor()
+	{
+		Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutPipe).get_EndpointDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ClearStallAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutPipe).abi_ClearStallAsync(&_ret));
+		return _ret;
+	}
+	final void WriteOptions(Windows.Devices.Usb.UsbWriteOptions value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutPipe).set_WriteOptions(value));
+	}
+	final Windows.Devices.Usb.UsbWriteOptions WriteOptions()
+	{
+		Windows.Devices.Usb.UsbWriteOptions _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutPipe).get_WriteOptions(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream OutputStream()
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutPipe).get_OutputStream(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbSetupPacket : Windows.Devices.Usb.IUsbSetupPacket
 {
+extern(Windows):
+	final Windows.Devices.Usb.UsbControlRequestType RequestType()
+	{
+		Windows.Devices.Usb.UsbControlRequestType _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).get_RequestType(&_ret));
+		return _ret;
+	}
+	final void RequestType(Windows.Devices.Usb.UsbControlRequestType value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_RequestType(value));
+	}
+	final BYTE Request()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).get_Request(&_ret));
+		return _ret;
+	}
+	final void Request(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_Request(value));
+	}
+	final UINT32 Value()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_Value(value));
+	}
+	final UINT32 Index()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).get_Index(&_ret));
+		return _ret;
+	}
+	final void Index(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_Index(value));
+	}
+	final UINT32 Length()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).get_Length(&_ret));
+		return _ret;
+	}
+	final void Length(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_Length(value));
+	}
 }
 
 enum UsbControlRecipient

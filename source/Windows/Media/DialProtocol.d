@@ -97,30 +97,155 @@ extern(Windows):
 
 interface DialApp : Windows.Media.DialProtocol.IDialApp
 {
+extern(Windows):
+	final HSTRING AppName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialApp).get_AppName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialAppLaunchResult) RequestLaunchAsync(HSTRING appArgument)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialAppLaunchResult) _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialApp).abi_RequestLaunchAsync(appArgument, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialAppStopResult) StopAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialAppStopResult) _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialApp).abi_StopAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialAppStateDetails) GetAppStateAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialAppStateDetails) _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialApp).abi_GetAppStateAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface DialAppStateDetails : Windows.Media.DialProtocol.IDialAppStateDetails
 {
+extern(Windows):
+	final Windows.Media.DialProtocol.DialAppState State()
+	{
+		Windows.Media.DialProtocol.DialAppState _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialAppStateDetails).get_State(&_ret));
+		return _ret;
+	}
+	final HSTRING FullXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialAppStateDetails).get_FullXml(&_ret));
+		return _ret;
+	}
 }
 
 interface DialDevice : Windows.Media.DialProtocol.IDialDevice, Windows.Media.DialProtocol.IDialDevice2
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevice).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Media.DialProtocol.DialApp GetDialApp(HSTRING appName)
+	{
+		Windows.Media.DialProtocol.DialApp _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevice).abi_GetDialApp(appName, &_ret));
+		return _ret;
+	}
+	final HSTRING FriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevice2).get_FriendlyName(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Thumbnail()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevice2).get_Thumbnail(&_ret));
+		return _ret;
+	}
 }
 
 interface DialDevicePicker : Windows.Media.DialProtocol.IDialDevicePicker
 {
+extern(Windows):
+	final Windows.Media.DialProtocol.DialDevicePickerFilter Filter()
+	{
+		Windows.Media.DialProtocol.DialDevicePickerFilter _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevicePicker).get_Filter(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DevicePickerAppearance Appearance()
+	{
+		Windows.Devices.Enumeration.DevicePickerAppearance _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevicePicker).get_Appearance(&_ret));
+		return _ret;
+	}
+	final void Show(Windows.Foundation.Rect selection)
+	{
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevicePicker).abi_Show(selection));
+	}
+	final void ShowWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	{
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevicePicker).abi_ShowWithPlacement(selection, preferredPlacement));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice) PickSingleDialDeviceAsync(Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice) _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevicePicker).abi_PickSingleDialDeviceAsync(selection, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice) PickSingleDialDeviceAsyncWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice) _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevicePicker).abi_PickSingleDialDeviceAsyncWithPlacement(selection, preferredPlacement, &_ret));
+		return _ret;
+	}
+	final void Hide()
+	{
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevicePicker).abi_Hide());
+	}
+	final void SetDisplayStatus(Windows.Media.DialProtocol.DialDevice device, Windows.Media.DialProtocol.DialDeviceDisplayStatus status)
+	{
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevicePicker).abi_SetDisplayStatus(device, status));
+	}
 }
 
 interface DialDevicePickerFilter : Windows.Media.DialProtocol.IDialDevicePickerFilter
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(HSTRING) SupportedAppNames()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevicePickerFilter).get_SupportedAppNames(&_ret));
+		return _ret;
+	}
 }
 
 interface DialDeviceSelectedEventArgs : Windows.Media.DialProtocol.IDialDeviceSelectedEventArgs
 {
+extern(Windows):
+	final Windows.Media.DialProtocol.DialDevice SelectedDialDevice()
+	{
+		Windows.Media.DialProtocol.DialDevice _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDeviceSelectedEventArgs).get_SelectedDialDevice(&_ret));
+		return _ret;
+	}
 }
 
 interface DialDisconnectButtonClickedEventArgs : Windows.Media.DialProtocol.IDialDisconnectButtonClickedEventArgs
 {
+extern(Windows):
+	final Windows.Media.DialProtocol.DialDevice Device()
+	{
+		Windows.Media.DialProtocol.DialDevice _ret;
+		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDisconnectButtonClickedEventArgs).get_Device(&_ret));
+		return _ret;
+	}
 }
 
 enum DialAppLaunchResult

@@ -31,8 +31,34 @@ extern(Windows):
 
 interface Print3DDevice : Windows.Devices.Printers.IPrint3DDevice
 {
+extern(Windows):
+	final Windows.Devices.Printers.PrintSchema PrintSchema()
+	{
+		Windows.Devices.Printers.PrintSchema _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.IPrint3DDevice).get_PrintSchema(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintSchema : Windows.Devices.Printers.IPrintSchema
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) GetDefaultPrintTicketAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.IPrintSchema).abi_GetDefaultPrintTicketAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) GetCapabilitiesAsync(const Windows.Storage.Streams.IRandomAccessStreamWithContentType rainTicket)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.IPrintSchema).abi_GetCapabilitiesAsync(rainTicket, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) MergeAndValidateWithDefaultPrintTicketAsync(Windows.Storage.Streams.IRandomAccessStreamWithContentType deltaTicket)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.IPrintSchema).abi_MergeAndValidateWithDefaultPrintTicketAsync(deltaTicket, &_ret));
+		return _ret;
+	}
 }

@@ -594,34 +594,265 @@ extern(Windows):
 
 interface NDClient : Windows.Media.Protection.PlayReady.INDClient
 {
+extern(Windows):
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDStartResult) StartAsync(Windows.Foundation.Uri contentUrl, UINT32 startAsyncOptions, Windows.Media.Protection.PlayReady.INDCustomData registrationCustomData, Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor licenseFetchDescriptor)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDStartResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).abi_StartAsync(contentUrl, startAsyncOptions, registrationCustomData, licenseFetchDescriptor, &_ret));
+		return _ret;
+	}
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDLicenseFetchResult) LicenseFetchAsync(Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor licenseFetchDescriptor)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDLicenseFetchResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).abi_LicenseFetchAsync(licenseFetchDescriptor, &_ret));
+		return _ret;
+	}
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.IAsyncAction ReRegistrationAsync(Windows.Media.Protection.PlayReady.INDCustomData registrationCustomData)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).abi_ReRegistrationAsync(registrationCustomData, &_ret));
+		return _ret;
+	}
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).abi_Close());
+	}
 }
 
 interface NDCustomData : Windows.Media.Protection.PlayReady.INDCustomData
 {
+extern(Windows):
+	deprecated("INDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final BYTE* CustomDataTypeID(UINT32* out___customDataTypeIDBytesSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDCustomData).get_CustomDataTypeID(out___customDataTypeIDBytesSize, &_ret));
+		return _ret;
+	}
+	deprecated("INDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final BYTE* CustomData(UINT32* out___customDataBytesSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDCustomData).get_CustomData(out___customDataBytesSize, &_ret));
+		return _ret;
+	}
 }
 
 interface NDDownloadEngineNotifier : Windows.Media.Protection.PlayReady.INDDownloadEngineNotifier
 {
+extern(Windows):
+	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void OnStreamOpened()
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDDownloadEngineNotifier).abi_OnStreamOpened());
+	}
+	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void OnPlayReadyObjectReceived(UINT32 __dataBytesSize, BYTE* dataBytes)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDDownloadEngineNotifier).abi_OnPlayReadyObjectReceived(__dataBytesSize, dataBytes));
+	}
+	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void OnContentIDReceived(Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor licenseFetchDescriptor)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDDownloadEngineNotifier).abi_OnContentIDReceived(licenseFetchDescriptor));
+	}
+	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void OnDataReceived(UINT32 __dataBytesSize, BYTE* dataBytes, UINT32 bytesReceived)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDDownloadEngineNotifier).abi_OnDataReceived(__dataBytesSize, dataBytes, bytesReceived));
+	}
+	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void OnEndOfStream()
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDDownloadEngineNotifier).abi_OnEndOfStream());
+	}
+	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void OnNetworkError()
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDDownloadEngineNotifier).abi_OnNetworkError());
+	}
 }
 
 interface NDLicenseFetchDescriptor : Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor
 {
+extern(Windows):
+	deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Media.Protection.PlayReady.NDContentIDType ContentIDType()
+	{
+		Windows.Media.Protection.PlayReady.NDContentIDType _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor).get_ContentIDType(&_ret));
+		return _ret;
+	}
+	deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final BYTE* ContentID(UINT32* out___contentIDBytesSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor).get_ContentID(out___contentIDBytesSize, &_ret));
+		return _ret;
+	}
+	deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Media.Protection.PlayReady.INDCustomData LicenseFetchChallengeCustomData()
+	{
+		Windows.Media.Protection.PlayReady.INDCustomData _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor).get_LicenseFetchChallengeCustomData(&_ret));
+		return _ret;
+	}
+	deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void LicenseFetchChallengeCustomData(Windows.Media.Protection.PlayReady.INDCustomData licenseFetchChallengeCustomData)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor).set_LicenseFetchChallengeCustomData(licenseFetchChallengeCustomData));
+	}
 }
 
 interface NDStorageFileHelper : Windows.Media.Protection.PlayReady.INDStorageFileHelper
 {
+extern(Windows):
+	deprecated("INDStorageFileHelper is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.Collections.IVector!(HSTRING) GetFileURLs(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDStorageFileHelper).abi_GetFileURLs(file, &_ret));
+		return _ret;
+	}
 }
 
 interface NDStreamParserNotifier : Windows.Media.Protection.PlayReady.INDStreamParserNotifier
 {
+extern(Windows):
+	deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void OnContentIDReceived(Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor licenseFetchDescriptor)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDStreamParserNotifier).abi_OnContentIDReceived(licenseFetchDescriptor));
+	}
+	deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void OnMediaStreamDescriptorCreated(Windows.Foundation.Collections.IVector!(Windows.Media.Core.AudioStreamDescriptor) audioStreamDescriptors, Windows.Foundation.Collections.IVector!(Windows.Media.Core.VideoStreamDescriptor) videoStreamDescriptors)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDStreamParserNotifier).abi_OnMediaStreamDescriptorCreated(audioStreamDescriptors, videoStreamDescriptors));
+	}
+	deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void OnSampleParsed(UINT32 streamID, Windows.Media.Protection.PlayReady.NDMediaStreamType streamType, Windows.Media.Core.MediaStreamSample streamSample, INT64 pts, Windows.Media.Protection.PlayReady.NDClosedCaptionFormat ccFormat, UINT32 __ccDataBytesSize, BYTE* ccDataBytes)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDStreamParserNotifier).abi_OnSampleParsed(streamID, streamType, streamSample, pts, ccFormat, __ccDataBytesSize, ccDataBytes));
+	}
+	deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void OnBeginSetupDecryptor(Windows.Media.Core.IMediaStreamDescriptor descriptor, GUID keyID, UINT32 __proBytesSize, BYTE* proBytes)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDStreamParserNotifier).abi_OnBeginSetupDecryptor(descriptor, keyID, __proBytesSize, proBytes));
+	}
 }
 
 interface NDTCPMessenger : Windows.Media.Protection.PlayReady.INDMessenger
 {
+extern(Windows):
+	deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) SendRegistrationRequestAsync(UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes, UINT32 __challengeDataBytesSize, BYTE* challengeDataBytes)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDMessenger).abi_SendRegistrationRequestAsync(__sessionIDBytesSize, sessionIDBytes, __challengeDataBytesSize, challengeDataBytes, &_ret));
+		return _ret;
+	}
+	deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) SendProximityDetectionStartAsync(Windows.Media.Protection.PlayReady.NDProximityDetectionType pdType, UINT32 __transmitterChannelBytesSize, BYTE* transmitterChannelBytes, UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes, UINT32 __challengeDataBytesSize, BYTE* challengeDataBytes)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDMessenger).abi_SendProximityDetectionStartAsync(pdType, __transmitterChannelBytesSize, transmitterChannelBytes, __sessionIDBytesSize, sessionIDBytes, __challengeDataBytesSize, challengeDataBytes, &_ret));
+		return _ret;
+	}
+	deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) SendProximityDetectionResponseAsync(Windows.Media.Protection.PlayReady.NDProximityDetectionType pdType, UINT32 __transmitterChannelBytesSize, BYTE* transmitterChannelBytes, UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes, UINT32 __responseDataBytesSize, BYTE* responseDataBytes)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDMessenger).abi_SendProximityDetectionResponseAsync(pdType, __transmitterChannelBytesSize, transmitterChannelBytes, __sessionIDBytesSize, sessionIDBytes, __responseDataBytesSize, responseDataBytes, &_ret));
+		return _ret;
+	}
+	deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) SendLicenseFetchRequestAsync(UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes, UINT32 __challengeDataBytesSize, BYTE* challengeDataBytes)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDMessenger).abi_SendLicenseFetchRequestAsync(__sessionIDBytesSize, sessionIDBytes, __challengeDataBytesSize, challengeDataBytes, &_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyContentHeader : Windows.Media.Protection.PlayReady.IPlayReadyContentHeader, Windows.Media.Protection.PlayReady.IPlayReadyContentHeader2
 {
+extern(Windows):
+	final GUID KeyId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader).get_KeyId(&_ret));
+		return _ret;
+	}
+	final HSTRING KeyIdString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader).get_KeyIdString(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri LicenseAcquisitionUrl()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader).get_LicenseAcquisitionUrl(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri LicenseAcquisitionUserInterfaceUrl()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader).get_LicenseAcquisitionUserInterfaceUrl(&_ret));
+		return _ret;
+	}
+	final GUID DomainServiceId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader).get_DomainServiceId(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.PlayReadyEncryptionAlgorithm EncryptionType()
+	{
+		Windows.Media.Protection.PlayReady.PlayReadyEncryptionAlgorithm _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader).get_EncryptionType(&_ret));
+		return _ret;
+	}
+	final HSTRING CustomAttributes()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader).get_CustomAttributes(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.PlayReadyDecryptorSetup DecryptorSetup()
+	{
+		Windows.Media.Protection.PlayReady.PlayReadyDecryptorSetup _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader).get_DecryptorSetup(&_ret));
+		return _ret;
+	}
+	final BYTE* GetSerializedHeader(UINT32* out___headerBytesSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader).abi_GetSerializedHeader(out___headerBytesSize, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.PlayReadyContentHeader HeaderWithEmbeddedUpdates()
+	{
+		Windows.Media.Protection.PlayReady.PlayReadyContentHeader _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader).get_HeaderWithEmbeddedUpdates(&_ret));
+		return _ret;
+	}
+	final GUID* KeyIds(UINT32* out___contentKeyIdsSize)
+	{
+		GUID* _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader2).get_KeyIds(out___contentKeyIdsSize, &_ret));
+		return _ret;
+	}
+	final HSTRING* KeyIdStrings(UINT32* out___contentKeyIdStringsSize)
+	{
+		HSTRING* _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader2).get_KeyIdStrings(out___contentKeyIdStringsSize, &_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyContentResolver
@@ -630,6 +861,37 @@ interface PlayReadyContentResolver
 
 interface PlayReadyDomain : Windows.Media.Protection.PlayReady.IPlayReadyDomain
 {
+extern(Windows):
+	final GUID AccountId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomain).get_AccountId(&_ret));
+		return _ret;
+	}
+	final GUID ServiceId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomain).get_ServiceId(&_ret));
+		return _ret;
+	}
+	final UINT32 Revision()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomain).get_Revision(&_ret));
+		return _ret;
+	}
+	final HSTRING FriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomain).get_FriendlyName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri DomainJoinUrl()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomain).get_DomainJoinUrl(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyDomainIterable : Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadyDomain)
@@ -642,26 +904,434 @@ interface PlayReadyDomainIterator : Windows.Foundation.Collections.IIterator!(Wi
 
 interface PlayReadyDomainJoinServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyDomainJoinServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
 {
+extern(Windows):
+	final GUID DomainAccountId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomainJoinServiceRequest).get_DomainAccountId(&_ret));
+		return _ret;
+	}
+	final void DomainAccountId(GUID value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomainJoinServiceRequest).set_DomainAccountId(value));
+	}
+	final HSTRING DomainFriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomainJoinServiceRequest).get_DomainFriendlyName(&_ret));
+		return _ret;
+	}
+	final void DomainFriendlyName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomainJoinServiceRequest).set_DomainFriendlyName(value));
+	}
+	final GUID DomainServiceId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomainJoinServiceRequest).get_DomainServiceId(&_ret));
+		return _ret;
+	}
+	final void DomainServiceId(GUID value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomainJoinServiceRequest).set_DomainServiceId(value));
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_Uri(value));
+	}
+	final HSTRING ResponseCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ResponseCustomData(&_ret));
+		return _ret;
+	}
+	final HSTRING ChallengeCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ChallengeCustomData(&_ret));
+		return _ret;
+	}
+	final void ChallengeCustomData(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_ChallengeCustomData(value));
+	}
+	final Windows.Foundation.IAsyncAction BeginServiceRequest()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_BeginServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest NextServiceRequest()
+	{
+		Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_NextServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.PlayReadySoapMessage GenerateManualEnablingChallenge()
+	{
+		Windows.Media.Protection.PlayReady.PlayReadySoapMessage _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
+		return _ret;
+	}
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
+		return _ret;
+	}
+	final GUID ProtectionSystem()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_ProtectionSystem(&_ret));
+		return _ret;
+	}
+	final GUID Type()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyDomainLeaveServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyDomainLeaveServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
 {
+extern(Windows):
+	final GUID DomainAccountId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomainLeaveServiceRequest).get_DomainAccountId(&_ret));
+		return _ret;
+	}
+	final void DomainAccountId(GUID value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomainLeaveServiceRequest).set_DomainAccountId(value));
+	}
+	final GUID DomainServiceId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomainLeaveServiceRequest).get_DomainServiceId(&_ret));
+		return _ret;
+	}
+	final void DomainServiceId(GUID value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomainLeaveServiceRequest).set_DomainServiceId(value));
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_Uri(value));
+	}
+	final HSTRING ResponseCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ResponseCustomData(&_ret));
+		return _ret;
+	}
+	final HSTRING ChallengeCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ChallengeCustomData(&_ret));
+		return _ret;
+	}
+	final void ChallengeCustomData(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_ChallengeCustomData(value));
+	}
+	final Windows.Foundation.IAsyncAction BeginServiceRequest()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_BeginServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest NextServiceRequest()
+	{
+		Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_NextServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.PlayReadySoapMessage GenerateManualEnablingChallenge()
+	{
+		Windows.Media.Protection.PlayReady.PlayReadySoapMessage _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
+		return _ret;
+	}
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
+		return _ret;
+	}
+	final GUID ProtectionSystem()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_ProtectionSystem(&_ret));
+		return _ret;
+	}
+	final GUID Type()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyITADataGenerator : Windows.Media.Protection.PlayReady.IPlayReadyITADataGenerator
 {
+extern(Windows):
+	final BYTE* GenerateData(GUID guidCPSystemId, UINT32 countOfStreams, Windows.Foundation.Collections.IPropertySet configuration, Windows.Media.Protection.PlayReady.PlayReadyITADataFormat format, UINT32* out___dataBytesSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyITADataGenerator).abi_GenerateData(guidCPSystemId, countOfStreams, configuration, format, out___dataBytesSize, &_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyIndividualizationServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyIndividualizationServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_Uri(value));
+	}
+	final HSTRING ResponseCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ResponseCustomData(&_ret));
+		return _ret;
+	}
+	final HSTRING ChallengeCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ChallengeCustomData(&_ret));
+		return _ret;
+	}
+	final void ChallengeCustomData(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_ChallengeCustomData(value));
+	}
+	final Windows.Foundation.IAsyncAction BeginServiceRequest()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_BeginServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest NextServiceRequest()
+	{
+		Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_NextServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.PlayReadySoapMessage GenerateManualEnablingChallenge()
+	{
+		Windows.Media.Protection.PlayReady.PlayReadySoapMessage _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
+		return _ret;
+	}
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
+		return _ret;
+	}
+	final GUID ProtectionSystem()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_ProtectionSystem(&_ret));
+		return _ret;
+	}
+	final GUID Type()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyLicense : Windows.Media.Protection.PlayReady.IPlayReadyLicense, Windows.Media.Protection.PlayReady.IPlayReadyLicense2
 {
+extern(Windows):
+	final bool FullyEvaluated()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicense).get_FullyEvaluated(&_ret));
+		return _ret;
+	}
+	final bool UsableForPlay()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicense).get_UsableForPlay(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationDate()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicense).get_ExpirationDate(&_ret));
+		return _ret;
+	}
+	final UINT32 ExpireAfterFirstPlay()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicense).get_ExpireAfterFirstPlay(&_ret));
+		return _ret;
+	}
+	final GUID DomainAccountID()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicense).get_DomainAccountID(&_ret));
+		return _ret;
+	}
+	final UINT32 ChainDepth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicense).get_ChainDepth(&_ret));
+		return _ret;
+	}
+	final GUID GetKIDAtChainDepth(UINT32 chainDepth)
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicense).abi_GetKIDAtChainDepth(chainDepth, &_ret));
+		return _ret;
+	}
+	final GUID SecureStopId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicense2).get_SecureStopId(&_ret));
+		return _ret;
+	}
+	final UINT32 SecurityLevel()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicense2).get_SecurityLevel(&_ret));
+		return _ret;
+	}
+	final bool InMemoryOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicense2).get_InMemoryOnly(&_ret));
+		return _ret;
+	}
+	final bool ExpiresInRealTime()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicense2).get_ExpiresInRealTime(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyLicenseAcquisitionServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest2, Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest3
 {
+extern(Windows):
+	final Windows.Media.Protection.PlayReady.PlayReadyContentHeader ContentHeader()
+	{
+		Windows.Media.Protection.PlayReady.PlayReadyContentHeader _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest).get_ContentHeader(&_ret));
+		return _ret;
+	}
+	final void ContentHeader(Windows.Media.Protection.PlayReady.PlayReadyContentHeader value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest).set_ContentHeader(value));
+	}
+	final GUID DomainServiceId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest).get_DomainServiceId(&_ret));
+		return _ret;
+	}
+	final void DomainServiceId(GUID value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest).set_DomainServiceId(value));
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_Uri(value));
+	}
+	final HSTRING ResponseCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ResponseCustomData(&_ret));
+		return _ret;
+	}
+	final HSTRING ChallengeCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ChallengeCustomData(&_ret));
+		return _ret;
+	}
+	final void ChallengeCustomData(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_ChallengeCustomData(value));
+	}
+	final Windows.Foundation.IAsyncAction BeginServiceRequest()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_BeginServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest NextServiceRequest()
+	{
+		Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_NextServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.PlayReadySoapMessage GenerateManualEnablingChallenge()
+	{
+		Windows.Media.Protection.PlayReady.PlayReadySoapMessage _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
+		return _ret;
+	}
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
+		return _ret;
+	}
+	final GUID ProtectionSystem()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_ProtectionSystem(&_ret));
+		return _ret;
+	}
+	final GUID Type()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_Type(&_ret));
+		return _ret;
+	}
+	final GUID SessionId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest2).get_SessionId(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable CreateLicenseIterable(Windows.Media.Protection.PlayReady.PlayReadyContentHeader contentHeader, bool fullyEvaluated)
+	{
+		Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest3).abi_CreateLicenseIterable(contentHeader, fullyEvaluated, &_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyLicenseIterable : Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)
@@ -678,14 +1348,167 @@ interface PlayReadyLicenseManagement
 
 interface PlayReadyLicenseSession : Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession, Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession2
 {
+extern(Windows):
+	final Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest CreateLAServiceRequest()
+	{
+		Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession).abi_CreateLAServiceRequest(&_ret));
+		return _ret;
+	}
+	final void ConfigureMediaProtectionManager(Windows.Media.Protection.MediaProtectionManager mpm)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession).abi_ConfigureMediaProtectionManager(mpm));
+	}
+	final Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable CreateLicenseIterable(Windows.Media.Protection.PlayReady.PlayReadyContentHeader contentHeader, bool fullyEvaluated)
+	{
+		Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession2).abi_CreateLicenseIterable(contentHeader, fullyEvaluated, &_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyMeteringReportServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyMeteringReportServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
 {
+extern(Windows):
+	final BYTE* MeteringCertificate(UINT32* out___meteringCertBytesSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyMeteringReportServiceRequest).get_MeteringCertificate(out___meteringCertBytesSize, &_ret));
+		return _ret;
+	}
+	final void MeteringCertificate(UINT32 __meteringCertBytesSize, BYTE* meteringCertBytes)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyMeteringReportServiceRequest).set_MeteringCertificate(__meteringCertBytesSize, meteringCertBytes));
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_Uri(value));
+	}
+	final HSTRING ResponseCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ResponseCustomData(&_ret));
+		return _ret;
+	}
+	final HSTRING ChallengeCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ChallengeCustomData(&_ret));
+		return _ret;
+	}
+	final void ChallengeCustomData(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_ChallengeCustomData(value));
+	}
+	final Windows.Foundation.IAsyncAction BeginServiceRequest()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_BeginServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest NextServiceRequest()
+	{
+		Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_NextServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.PlayReadySoapMessage GenerateManualEnablingChallenge()
+	{
+		Windows.Media.Protection.PlayReady.PlayReadySoapMessage _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
+		return _ret;
+	}
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
+		return _ret;
+	}
+	final GUID ProtectionSystem()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_ProtectionSystem(&_ret));
+		return _ret;
+	}
+	final GUID Type()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyRevocationServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyRevocationServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_Uri(value));
+	}
+	final HSTRING ResponseCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ResponseCustomData(&_ret));
+		return _ret;
+	}
+	final HSTRING ChallengeCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ChallengeCustomData(&_ret));
+		return _ret;
+	}
+	final void ChallengeCustomData(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_ChallengeCustomData(value));
+	}
+	final Windows.Foundation.IAsyncAction BeginServiceRequest()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_BeginServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest NextServiceRequest()
+	{
+		Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_NextServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.PlayReadySoapMessage GenerateManualEnablingChallenge()
+	{
+		Windows.Media.Protection.PlayReady.PlayReadySoapMessage _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
+		return _ret;
+	}
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
+		return _ret;
+	}
+	final GUID ProtectionSystem()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_ProtectionSystem(&_ret));
+		return _ret;
+	}
+	final GUID Type()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadySecureStopIterable : Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest)
@@ -698,10 +1521,122 @@ interface PlayReadySecureStopIterator : Windows.Foundation.Collections.IIterator
 
 interface PlayReadySecureStopServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
 {
+extern(Windows):
+	final GUID SessionID()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest).get_SessionID(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime StartTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest).get_StartTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime UpdateTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest).get_UpdateTime(&_ret));
+		return _ret;
+	}
+	final bool Stopped()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest).get_Stopped(&_ret));
+		return _ret;
+	}
+	final BYTE* PublisherCertificate(UINT32* out___publisherCertBytesSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest).get_PublisherCertificate(out___publisherCertBytesSize, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_Uri(value));
+	}
+	final HSTRING ResponseCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ResponseCustomData(&_ret));
+		return _ret;
+	}
+	final HSTRING ChallengeCustomData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).get_ChallengeCustomData(&_ret));
+		return _ret;
+	}
+	final void ChallengeCustomData(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).set_ChallengeCustomData(value));
+	}
+	final Windows.Foundation.IAsyncAction BeginServiceRequest()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_BeginServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest NextServiceRequest()
+	{
+		Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_NextServiceRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.PlayReady.PlayReadySoapMessage GenerateManualEnablingChallenge()
+	{
+		Windows.Media.Protection.PlayReady.PlayReadySoapMessage _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
+		return _ret;
+	}
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
+		return _ret;
+	}
+	final GUID ProtectionSystem()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_ProtectionSystem(&_ret));
+		return _ret;
+	}
+	final GUID Type()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadySoapMessage : Windows.Media.Protection.PlayReady.IPlayReadySoapMessage
 {
+extern(Windows):
+	final BYTE* GetMessageBody(UINT32* out___messageBodyBytesSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadySoapMessage).abi_GetMessageBody(out___messageBodyBytesSize, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet MessageHeaders()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadySoapMessage).get_MessageHeaders(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadySoapMessage).get_Uri(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyStatics

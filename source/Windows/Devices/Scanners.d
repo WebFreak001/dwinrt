@@ -121,26 +121,584 @@ extern(Windows):
 
 interface ImageScanner : Windows.Devices.Scanners.IImageScanner
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerScanSource DefaultScanSource()
+	{
+		Windows.Devices.Scanners.ImageScannerScanSource _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).get_DefaultScanSource(&_ret));
+		return _ret;
+	}
+	final bool IsScanSourceSupported(Windows.Devices.Scanners.ImageScannerScanSource value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).abi_IsScanSourceSupported(value, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerFlatbedConfiguration FlatbedConfiguration()
+	{
+		Windows.Devices.Scanners.ImageScannerFlatbedConfiguration _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).get_FlatbedConfiguration(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerFeederConfiguration FeederConfiguration()
+	{
+		Windows.Devices.Scanners.ImageScannerFeederConfiguration _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).get_FeederConfiguration(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerAutoConfiguration AutoConfiguration()
+	{
+		Windows.Devices.Scanners.ImageScannerAutoConfiguration _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).get_AutoConfiguration(&_ret));
+		return _ret;
+	}
+	final bool IsPreviewSupported(Windows.Devices.Scanners.ImageScannerScanSource scanSource)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).abi_IsPreviewSupported(scanSource, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Scanners.ImageScannerPreviewResult) ScanPreviewToStreamAsync(Windows.Devices.Scanners.ImageScannerScanSource scanSource, Windows.Storage.Streams.IRandomAccessStream targetStream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Scanners.ImageScannerPreviewResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).abi_ScanPreviewToStreamAsync(scanSource, targetStream, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Devices.Scanners.ImageScannerScanResult, UINT32) ScanFilesToFolderAsync(Windows.Devices.Scanners.ImageScannerScanSource scanSource, Windows.Storage.StorageFolder storageFolder)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Devices.Scanners.ImageScannerScanResult, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).abi_ScanFilesToFolderAsync(scanSource, storageFolder, &_ret));
+		return _ret;
+	}
 }
 
 interface ImageScannerAutoConfiguration : Windows.Devices.Scanners.IImageScannerFormatConfiguration
 {
+extern(Windows):
+	final Windows.Devices.Scanners.ImageScannerFormat DefaultFormat()
+	{
+		Windows.Devices.Scanners.ImageScannerFormat _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).get_DefaultFormat(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerFormat Format()
+	{
+		Windows.Devices.Scanners.ImageScannerFormat _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).get_Format(&_ret));
+		return _ret;
+	}
+	final void Format(Windows.Devices.Scanners.ImageScannerFormat value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).set_Format(value));
+	}
+	final bool IsFormatSupported(Windows.Devices.Scanners.ImageScannerFormat value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).abi_IsFormatSupported(value, &_ret));
+		return _ret;
+	}
 }
 
 interface ImageScannerFeederConfiguration : Windows.Devices.Scanners.IImageScannerFormatConfiguration, Windows.Devices.Scanners.IImageScannerSourceConfiguration, Windows.Devices.Scanners.IImageScannerFeederConfiguration
 {
+extern(Windows):
+	final Windows.Devices.Scanners.ImageScannerFormat DefaultFormat()
+	{
+		Windows.Devices.Scanners.ImageScannerFormat _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).get_DefaultFormat(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerFormat Format()
+	{
+		Windows.Devices.Scanners.ImageScannerFormat _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).get_Format(&_ret));
+		return _ret;
+	}
+	final void Format(Windows.Devices.Scanners.ImageScannerFormat value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).set_Format(value));
+	}
+	final bool IsFormatSupported(Windows.Devices.Scanners.ImageScannerFormat value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).abi_IsFormatSupported(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size MinScanArea()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinScanArea(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size MaxScanArea()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxScanArea(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect SelectedScanRegion()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_SelectedScanRegion(&_ret));
+		return _ret;
+	}
+	final void SelectedScanRegion(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_SelectedScanRegion(value));
+	}
+	final Windows.Devices.Scanners.ImageScannerAutoCroppingMode AutoCroppingMode()
+	{
+		Windows.Devices.Scanners.ImageScannerAutoCroppingMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_AutoCroppingMode(&_ret));
+		return _ret;
+	}
+	final void AutoCroppingMode(Windows.Devices.Scanners.ImageScannerAutoCroppingMode value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_AutoCroppingMode(value));
+	}
+	final bool IsAutoCroppingModeSupported(Windows.Devices.Scanners.ImageScannerAutoCroppingMode value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).abi_IsAutoCroppingModeSupported(value, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerResolution MinResolution()
+	{
+		Windows.Devices.Scanners.ImageScannerResolution _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinResolution(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerResolution MaxResolution()
+	{
+		Windows.Devices.Scanners.ImageScannerResolution _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxResolution(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerResolution OpticalResolution()
+	{
+		Windows.Devices.Scanners.ImageScannerResolution _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_OpticalResolution(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerResolution DesiredResolution()
+	{
+		Windows.Devices.Scanners.ImageScannerResolution _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DesiredResolution(&_ret));
+		return _ret;
+	}
+	final void DesiredResolution(Windows.Devices.Scanners.ImageScannerResolution value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_DesiredResolution(value));
+	}
+	final Windows.Devices.Scanners.ImageScannerResolution ActualResolution()
+	{
+		Windows.Devices.Scanners.ImageScannerResolution _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_ActualResolution(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerColorMode DefaultColorMode()
+	{
+		Windows.Devices.Scanners.ImageScannerColorMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DefaultColorMode(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerColorMode ColorMode()
+	{
+		Windows.Devices.Scanners.ImageScannerColorMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_ColorMode(&_ret));
+		return _ret;
+	}
+	final void ColorMode(Windows.Devices.Scanners.ImageScannerColorMode value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_ColorMode(value));
+	}
+	final bool IsColorModeSupported(Windows.Devices.Scanners.ImageScannerColorMode value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).abi_IsColorModeSupported(value, &_ret));
+		return _ret;
+	}
+	final INT32 MinBrightness()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinBrightness(&_ret));
+		return _ret;
+	}
+	final INT32 MaxBrightness()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxBrightness(&_ret));
+		return _ret;
+	}
+	final UINT32 BrightnessStep()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_BrightnessStep(&_ret));
+		return _ret;
+	}
+	final INT32 DefaultBrightness()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DefaultBrightness(&_ret));
+		return _ret;
+	}
+	final INT32 Brightness()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_Brightness(&_ret));
+		return _ret;
+	}
+	final void Brightness(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_Brightness(value));
+	}
+	final INT32 MinContrast()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinContrast(&_ret));
+		return _ret;
+	}
+	final INT32 MaxContrast()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxContrast(&_ret));
+		return _ret;
+	}
+	final UINT32 ContrastStep()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_ContrastStep(&_ret));
+		return _ret;
+	}
+	final INT32 DefaultContrast()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DefaultContrast(&_ret));
+		return _ret;
+	}
+	final INT32 Contrast()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_Contrast(&_ret));
+		return _ret;
+	}
+	final void Contrast(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_Contrast(value));
+	}
+	final bool CanAutoDetectPageSize()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_CanAutoDetectPageSize(&_ret));
+		return _ret;
+	}
+	final bool AutoDetectPageSize()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_AutoDetectPageSize(&_ret));
+		return _ret;
+	}
+	final void AutoDetectPageSize(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).set_AutoDetectPageSize(value));
+	}
+	final Windows.Graphics.Printing.PrintMediaSize PageSize()
+	{
+		Windows.Graphics.Printing.PrintMediaSize _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_PageSize(&_ret));
+		return _ret;
+	}
+	final void PageSize(Windows.Graphics.Printing.PrintMediaSize value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).set_PageSize(value));
+	}
+	final Windows.Graphics.Printing.PrintOrientation PageOrientation()
+	{
+		Windows.Graphics.Printing.PrintOrientation _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_PageOrientation(&_ret));
+		return _ret;
+	}
+	final void PageOrientation(Windows.Graphics.Printing.PrintOrientation value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).set_PageOrientation(value));
+	}
+	final Windows.Foundation.Size PageSizeDimensions()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_PageSizeDimensions(&_ret));
+		return _ret;
+	}
+	final bool IsPageSizeSupported(Windows.Graphics.Printing.PrintMediaSize pageSize, Windows.Graphics.Printing.PrintOrientation pageOrientation)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).abi_IsPageSizeSupported(pageSize, pageOrientation, &_ret));
+		return _ret;
+	}
+	final UINT32 MaxNumberOfPages()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_MaxNumberOfPages(&_ret));
+		return _ret;
+	}
+	final void MaxNumberOfPages(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).set_MaxNumberOfPages(value));
+	}
+	final bool CanScanDuplex()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_CanScanDuplex(&_ret));
+		return _ret;
+	}
+	final bool Duplex()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_Duplex(&_ret));
+		return _ret;
+	}
+	final void Duplex(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).set_Duplex(value));
+	}
+	final bool CanScanAhead()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_CanScanAhead(&_ret));
+		return _ret;
+	}
+	final bool ScanAhead()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_ScanAhead(&_ret));
+		return _ret;
+	}
+	final void ScanAhead(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).set_ScanAhead(value));
+	}
 }
 
 interface ImageScannerFlatbedConfiguration : Windows.Devices.Scanners.IImageScannerFormatConfiguration, Windows.Devices.Scanners.IImageScannerSourceConfiguration
 {
+extern(Windows):
+	final Windows.Devices.Scanners.ImageScannerFormat DefaultFormat()
+	{
+		Windows.Devices.Scanners.ImageScannerFormat _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).get_DefaultFormat(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerFormat Format()
+	{
+		Windows.Devices.Scanners.ImageScannerFormat _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).get_Format(&_ret));
+		return _ret;
+	}
+	final void Format(Windows.Devices.Scanners.ImageScannerFormat value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).set_Format(value));
+	}
+	final bool IsFormatSupported(Windows.Devices.Scanners.ImageScannerFormat value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).abi_IsFormatSupported(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size MinScanArea()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinScanArea(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size MaxScanArea()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxScanArea(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect SelectedScanRegion()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_SelectedScanRegion(&_ret));
+		return _ret;
+	}
+	final void SelectedScanRegion(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_SelectedScanRegion(value));
+	}
+	final Windows.Devices.Scanners.ImageScannerAutoCroppingMode AutoCroppingMode()
+	{
+		Windows.Devices.Scanners.ImageScannerAutoCroppingMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_AutoCroppingMode(&_ret));
+		return _ret;
+	}
+	final void AutoCroppingMode(Windows.Devices.Scanners.ImageScannerAutoCroppingMode value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_AutoCroppingMode(value));
+	}
+	final bool IsAutoCroppingModeSupported(Windows.Devices.Scanners.ImageScannerAutoCroppingMode value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).abi_IsAutoCroppingModeSupported(value, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerResolution MinResolution()
+	{
+		Windows.Devices.Scanners.ImageScannerResolution _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinResolution(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerResolution MaxResolution()
+	{
+		Windows.Devices.Scanners.ImageScannerResolution _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxResolution(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerResolution OpticalResolution()
+	{
+		Windows.Devices.Scanners.ImageScannerResolution _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_OpticalResolution(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerResolution DesiredResolution()
+	{
+		Windows.Devices.Scanners.ImageScannerResolution _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DesiredResolution(&_ret));
+		return _ret;
+	}
+	final void DesiredResolution(Windows.Devices.Scanners.ImageScannerResolution value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_DesiredResolution(value));
+	}
+	final Windows.Devices.Scanners.ImageScannerResolution ActualResolution()
+	{
+		Windows.Devices.Scanners.ImageScannerResolution _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_ActualResolution(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerColorMode DefaultColorMode()
+	{
+		Windows.Devices.Scanners.ImageScannerColorMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DefaultColorMode(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerColorMode ColorMode()
+	{
+		Windows.Devices.Scanners.ImageScannerColorMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_ColorMode(&_ret));
+		return _ret;
+	}
+	final void ColorMode(Windows.Devices.Scanners.ImageScannerColorMode value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_ColorMode(value));
+	}
+	final bool IsColorModeSupported(Windows.Devices.Scanners.ImageScannerColorMode value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).abi_IsColorModeSupported(value, &_ret));
+		return _ret;
+	}
+	final INT32 MinBrightness()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinBrightness(&_ret));
+		return _ret;
+	}
+	final INT32 MaxBrightness()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxBrightness(&_ret));
+		return _ret;
+	}
+	final UINT32 BrightnessStep()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_BrightnessStep(&_ret));
+		return _ret;
+	}
+	final INT32 DefaultBrightness()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DefaultBrightness(&_ret));
+		return _ret;
+	}
+	final INT32 Brightness()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_Brightness(&_ret));
+		return _ret;
+	}
+	final void Brightness(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_Brightness(value));
+	}
+	final INT32 MinContrast()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinContrast(&_ret));
+		return _ret;
+	}
+	final INT32 MaxContrast()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxContrast(&_ret));
+		return _ret;
+	}
+	final UINT32 ContrastStep()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_ContrastStep(&_ret));
+		return _ret;
+	}
+	final INT32 DefaultContrast()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DefaultContrast(&_ret));
+		return _ret;
+	}
+	final INT32 Contrast()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_Contrast(&_ret));
+		return _ret;
+	}
+	final void Contrast(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_Contrast(value));
+	}
 }
 
 interface ImageScannerPreviewResult : Windows.Devices.Scanners.IImageScannerPreviewResult
 {
+extern(Windows):
+	final bool Succeeded()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerPreviewResult).get_Succeeded(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Scanners.ImageScannerFormat Format()
+	{
+		Windows.Devices.Scanners.ImageScannerFormat _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerPreviewResult).get_Format(&_ret));
+		return _ret;
+	}
 }
 
 interface ImageScannerScanResult : Windows.Devices.Scanners.IImageScannerScanResult
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile) ScannedFiles()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerScanResult).get_ScannedFiles(&_ret));
+		return _ret;
+	}
 }
 
 enum ImageScannerAutoCroppingMode

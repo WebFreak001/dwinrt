@@ -32,8 +32,46 @@ extern(Windows):
 
 interface EnterpriseKeyCredentialRegistrationInfo : Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationInfo
 {
+extern(Windows):
+	final HSTRING TenantId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationInfo).get_TenantId(&_ret));
+		return _ret;
+	}
+	final HSTRING TenantName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationInfo).get_TenantName(&_ret));
+		return _ret;
+	}
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationInfo).get_Subject(&_ret));
+		return _ret;
+	}
+	final HSTRING KeyId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationInfo).get_KeyId(&_ret));
+		return _ret;
+	}
+	final HSTRING KeyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationInfo).get_KeyName(&_ret));
+		return _ret;
+	}
 }
 
 interface EnterpriseKeyCredentialRegistrationManager : Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationManager
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationInfo)) GetRegistrationsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationInfo)) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationManager).abi_GetRegistrationsAsync(&_ret));
+		return _ret;
+	}
 }

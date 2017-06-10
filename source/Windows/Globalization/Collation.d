@@ -29,8 +29,28 @@ extern(Windows):
 
 interface CharacterGrouping : Windows.Globalization.Collation.ICharacterGrouping
 {
+extern(Windows):
+	final HSTRING First()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.Collation.ICharacterGrouping).get_First(&_ret));
+		return _ret;
+	}
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.Collation.ICharacterGrouping).get_Label(&_ret));
+		return _ret;
+	}
 }
 
 interface CharacterGroupings : Windows.Globalization.Collation.ICharacterGroupings, Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Collation.CharacterGrouping), Windows.Foundation.Collections.IIterable!(Windows.Globalization.Collation.CharacterGrouping)
 {
+extern(Windows):
+	final HSTRING Lookup(HSTRING text)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.Collation.ICharacterGroupings).abi_Lookup(text, &_ret));
+		return _ret;
+	}
 }

@@ -52,6 +52,13 @@ extern(Windows):
 
 interface GpioPinProviderValueChangedEventArgs : Windows.Devices.Gpio.Provider.IGpioPinProviderValueChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Gpio.Provider.ProviderGpioPinEdge Edge()
+	{
+		Windows.Devices.Gpio.Provider.ProviderGpioPinEdge _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.Provider.IGpioPinProviderValueChangedEventArgs).get_Edge(&_ret));
+		return _ret;
+	}
 }
 
 enum ProviderGpioPinDriveMode

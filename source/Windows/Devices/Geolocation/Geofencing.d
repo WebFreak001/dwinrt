@@ -63,14 +63,107 @@ extern(Windows):
 
 interface Geofence : Windows.Devices.Geolocation.Geofencing.IGeofence
 {
+extern(Windows):
+	final Windows.Foundation.DateTime StartTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_StartTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_Duration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan DwellTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_DwellTime(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates MonitoredStates()
+	{
+		Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_MonitoredStates(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.IGeoshape Geoshape()
+	{
+		Windows.Devices.Geolocation.IGeoshape _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_Geoshape(&_ret));
+		return _ret;
+	}
+	final bool SingleUse()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_SingleUse(&_ret));
+		return _ret;
+	}
 }
 
 interface GeofenceMonitor : Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus Status()
+	{
+		Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.Geolocation.Geofencing.Geofence) Geofences()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.Geolocation.Geofencing.Geofence) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).get_Geofences(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geoposition LastKnownGeoposition()
+	{
+		Windows.Devices.Geolocation.Geoposition _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).get_LastKnownGeoposition(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geofencing.GeofenceStateChangeReport) ReadReports()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geofencing.GeofenceStateChangeReport) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).abi_ReadReports(&_ret));
+		return _ret;
+	}
 }
 
 interface GeofenceStateChangeReport : Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geofencing.GeofenceState NewState()
+	{
+		Windows.Devices.Geolocation.Geofencing.GeofenceState _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport).get_NewState(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geofencing.Geofence Geofence()
+	{
+		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport).get_Geofence(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geoposition Geoposition()
+	{
+		Windows.Devices.Geolocation.Geoposition _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport).get_Geoposition(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geofencing.GeofenceRemovalReason RemovalReason()
+	{
+		Windows.Devices.Geolocation.Geofencing.GeofenceRemovalReason _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport).get_RemovalReason(&_ret));
+		return _ret;
+	}
 }
 
 enum GeofenceMonitorStatus

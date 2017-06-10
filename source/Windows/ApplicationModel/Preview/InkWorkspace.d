@@ -20,4 +20,11 @@ extern(Windows):
 
 interface InkWorkspaceHostedAppManager : Windows.ApplicationModel.Preview.InkWorkspace.IInkWorkspaceHostedAppManager
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction SetThumbnailAsync(Windows.Graphics.Imaging.SoftwareBitmap bitmap)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.InkWorkspace.IInkWorkspaceHostedAppManager).abi_SetThumbnailAsync(bitmap, &_ret));
+		return _ret;
+	}
 }

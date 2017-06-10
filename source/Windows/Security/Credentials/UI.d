@@ -68,10 +68,154 @@ interface CredentialPicker
 
 interface CredentialPickerOptions : Windows.Security.Credentials.UI.ICredentialPickerOptions
 {
+extern(Windows):
+	final void Caption(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_Caption(value));
+	}
+	final HSTRING Caption()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_Caption(&_ret));
+		return _ret;
+	}
+	final void Message(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_Message(value));
+	}
+	final HSTRING Message()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_Message(&_ret));
+		return _ret;
+	}
+	final void ErrorCode(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_ErrorCode(value));
+	}
+	final UINT32 ErrorCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_ErrorCode(&_ret));
+		return _ret;
+	}
+	final void TargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_TargetName(value));
+	}
+	final HSTRING TargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_TargetName(&_ret));
+		return _ret;
+	}
+	final void AuthenticationProtocol(Windows.Security.Credentials.UI.AuthenticationProtocol value)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_AuthenticationProtocol(value));
+	}
+	final Windows.Security.Credentials.UI.AuthenticationProtocol AuthenticationProtocol()
+	{
+		Windows.Security.Credentials.UI.AuthenticationProtocol _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_AuthenticationProtocol(&_ret));
+		return _ret;
+	}
+	final void CustomAuthenticationProtocol(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_CustomAuthenticationProtocol(value));
+	}
+	final HSTRING CustomAuthenticationProtocol()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_CustomAuthenticationProtocol(&_ret));
+		return _ret;
+	}
+	final void PreviousCredential(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_PreviousCredential(value));
+	}
+	final Windows.Storage.Streams.IBuffer PreviousCredential()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_PreviousCredential(&_ret));
+		return _ret;
+	}
+	final void AlwaysDisplayDialog(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_AlwaysDisplayDialog(value));
+	}
+	final bool AlwaysDisplayDialog()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_AlwaysDisplayDialog(&_ret));
+		return _ret;
+	}
+	final void CallerSavesCredential(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_CallerSavesCredential(value));
+	}
+	final bool CallerSavesCredential()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_CallerSavesCredential(&_ret));
+		return _ret;
+	}
+	final void CredentialSaveOption(Windows.Security.Credentials.UI.CredentialSaveOption value)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_CredentialSaveOption(value));
+	}
+	final Windows.Security.Credentials.UI.CredentialSaveOption CredentialSaveOption()
+	{
+		Windows.Security.Credentials.UI.CredentialSaveOption _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_CredentialSaveOption(&_ret));
+		return _ret;
+	}
 }
 
 interface CredentialPickerResults : Windows.Security.Credentials.UI.ICredentialPickerResults
 {
+extern(Windows):
+	final UINT32 ErrorCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_ErrorCode(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Credentials.UI.CredentialSaveOption CredentialSaveOption()
+	{
+		Windows.Security.Credentials.UI.CredentialSaveOption _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_CredentialSaveOption(&_ret));
+		return _ret;
+	}
+	final bool CredentialSaved()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_CredentialSaved(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer Credential()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_Credential(&_ret));
+		return _ret;
+	}
+	final HSTRING CredentialDomainName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_CredentialDomainName(&_ret));
+		return _ret;
+	}
+	final HSTRING CredentialUserName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_CredentialUserName(&_ret));
+		return _ret;
+	}
+	final HSTRING CredentialPassword()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_CredentialPassword(&_ret));
+		return _ret;
+	}
 }
 
 interface UserConsentVerifier

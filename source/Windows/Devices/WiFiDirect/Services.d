@@ -149,38 +149,347 @@ extern(Windows):
 
 interface WiFiDirectService : Windows.Devices.WiFiDirect.Services.IWiFiDirectService
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer RemoteServiceInfo()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).get_RemoteServiceInfo(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceConfigurationMethod) SupportedConfigurationMethods()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceConfigurationMethod) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).get_SupportedConfigurationMethods(&_ret));
+		return _ret;
+	}
+	final bool PreferGroupOwnerMode()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).get_PreferGroupOwnerMode(&_ret));
+		return _ret;
+	}
+	final void PreferGroupOwnerMode(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).set_PreferGroupOwnerMode(value));
+	}
+	final Windows.Storage.Streams.IBuffer SessionInfo()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).get_SessionInfo(&_ret));
+		return _ret;
+	}
+	final void SessionInfo(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).set_SessionInfo(value));
+	}
+	final Windows.Devices.WiFiDirect.Services.WiFiDirectServiceError ServiceError()
+	{
+		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceError _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).get_ServiceError(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceProvisioningInfo) GetProvisioningInfoAsync(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceConfigurationMethod selectedConfigurationMethod)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceProvisioningInfo) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).abi_GetProvisioningInfoAsync(selectedConfigurationMethod, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) ConnectAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).abi_ConnectAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) ConnectAsyncWithPin(HSTRING pin)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).abi_ConnectAsyncWithPin(pin, &_ret));
+		return _ret;
+	}
 }
 
 interface WiFiDirectServiceAdvertiser : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser
 {
+extern(Windows):
+	final HSTRING ServiceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).get_ServiceName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) ServiceNamePrefixes()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).get_ServiceNamePrefixes(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer ServiceInfo()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).get_ServiceInfo(&_ret));
+		return _ret;
+	}
+	final void ServiceInfo(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).set_ServiceInfo(value));
+	}
+	final bool AutoAcceptSession()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).get_AutoAcceptSession(&_ret));
+		return _ret;
+	}
+	final void AutoAcceptSession(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).set_AutoAcceptSession(value));
+	}
+	final bool PreferGroupOwnerMode()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).get_PreferGroupOwnerMode(&_ret));
+		return _ret;
+	}
+	final void PreferGroupOwnerMode(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).set_PreferGroupOwnerMode(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceConfigurationMethod) PreferredConfigurationMethods()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceConfigurationMethod) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).get_PreferredConfigurationMethods(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.WiFiDirect.Services.WiFiDirectServiceStatus ServiceStatus()
+	{
+		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).get_ServiceStatus(&_ret));
+		return _ret;
+	}
+	final void ServiceStatus(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceStatus value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).set_ServiceStatus(value));
+	}
+	final UINT32 CustomServiceStatusCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).get_CustomServiceStatusCode(&_ret));
+		return _ret;
+	}
+	final void CustomServiceStatusCode(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).set_CustomServiceStatusCode(value));
+	}
+	final Windows.Storage.Streams.IBuffer DeferredSessionInfo()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).get_DeferredSessionInfo(&_ret));
+		return _ret;
+	}
+	final void DeferredSessionInfo(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).set_DeferredSessionInfo(value));
+	}
+	final Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertisementStatus AdvertisementStatus()
+	{
+		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertisementStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).get_AdvertisementStatus(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.WiFiDirect.Services.WiFiDirectServiceError ServiceError()
+	{
+		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceError _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).get_ServiceError(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) ConnectAsync(Windows.Devices.Enumeration.DeviceInformation deviceInfo)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).abi_ConnectAsync(deviceInfo, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) ConnectAsyncWithPin(Windows.Devices.Enumeration.DeviceInformation deviceInfo, HSTRING pin)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).abi_ConnectAsyncWithPin(deviceInfo, pin, &_ret));
+		return _ret;
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).abi_Stop());
+	}
 }
 
 interface WiFiDirectServiceAutoAcceptSessionConnectedEventArgs : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession Session()
+	{
+		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs).get_Session(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer SessionInfo()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs).get_SessionInfo(&_ret));
+		return _ret;
+	}
 }
 
 interface WiFiDirectServiceProvisioningInfo : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceProvisioningInfo
 {
+extern(Windows):
+	final Windows.Devices.WiFiDirect.Services.WiFiDirectServiceConfigurationMethod SelectedConfigurationMethod()
+	{
+		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceConfigurationMethod _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceProvisioningInfo).get_SelectedConfigurationMethod(&_ret));
+		return _ret;
+	}
+	final bool IsGroupFormationNeeded()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceProvisioningInfo).get_IsGroupFormationNeeded(&_ret));
+		return _ret;
+	}
 }
 
 interface WiFiDirectServiceRemotePortAddedEventArgs : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceRemotePortAddedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair) EndpointPairs()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceRemotePortAddedEventArgs).get_EndpointPairs(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.WiFiDirect.Services.WiFiDirectServiceIPProtocol Protocol()
+	{
+		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceIPProtocol _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceRemotePortAddedEventArgs).get_Protocol(&_ret));
+		return _ret;
+	}
 }
 
 interface WiFiDirectServiceSession : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING ServiceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).get_ServiceName(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionStatus Status()
+	{
+		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionErrorStatus ErrorStatus()
+	{
+		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionErrorStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).get_ErrorStatus(&_ret));
+		return _ret;
+	}
+	final UINT32 SessionId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).get_SessionId(&_ret));
+		return _ret;
+	}
+	final UINT32 AdvertisementId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).get_AdvertisementId(&_ret));
+		return _ret;
+	}
+	final HSTRING ServiceAddress()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).get_ServiceAddress(&_ret));
+		return _ret;
+	}
+	final HSTRING SessionAddress()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).get_SessionAddress(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair) GetConnectionEndpointPairs()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).abi_GetConnectionEndpointPairs(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction AddStreamSocketListenerAsync(Windows.Networking.Sockets.StreamSocketListener value)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).abi_AddStreamSocketListenerAsync(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction AddDatagramSocketAsync(Windows.Networking.Sockets.DatagramSocket value)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).abi_AddDatagramSocketAsync(value, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface WiFiDirectServiceSessionDeferredEventArgs : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSessionDeferredEventArgs
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer DeferredSessionInfo()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSessionDeferredEventArgs).get_DeferredSessionInfo(&_ret));
+		return _ret;
+	}
 }
 
 interface WiFiDirectServiceSessionRequest : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSessionRequest, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceInformation DeviceInformation()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSessionRequest).get_DeviceInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.WiFiDirect.Services.WiFiDirectServiceProvisioningInfo ProvisioningInfo()
+	{
+		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceProvisioningInfo _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSessionRequest).get_ProvisioningInfo(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer SessionInfo()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSessionRequest).get_SessionInfo(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface WiFiDirectServiceSessionRequestedEventArgs : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSessionRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequest GetSessionRequest()
+	{
+		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequest _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSessionRequestedEventArgs).abi_GetSessionRequest(&_ret));
+		return _ret;
+	}
 }
 
 enum WiFiDirectServiceAdvertisementStatus

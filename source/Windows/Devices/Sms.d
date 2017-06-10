@@ -434,10 +434,40 @@ extern(Windows):
 
 interface DeleteSmsMessageOperation : Windows.Foundation.IAsyncAction
 {
+extern(Windows):
+	final void Completed(Windows.Foundation.AsyncActionCompletedHandler handler)
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).set_Completed(handler));
+	}
+	final Windows.Foundation.AsyncActionCompletedHandler Completed()
+	{
+		Windows.Foundation.AsyncActionCompletedHandler _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).get_Completed(&_ret));
+		return _ret;
+	}
+	final void GetResults()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).abi_GetResults());
+	}
 }
 
 interface DeleteSmsMessagesOperation : Windows.Foundation.IAsyncAction
 {
+extern(Windows):
+	final void Completed(Windows.Foundation.AsyncActionCompletedHandler handler)
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).set_Completed(handler));
+	}
+	final Windows.Foundation.AsyncActionCompletedHandler Completed()
+	{
+		Windows.Foundation.AsyncActionCompletedHandler _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).get_Completed(&_ret));
+		return _ret;
+	}
+	final void GetResults()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).abi_GetResults());
+	}
 }
 
 interface GetSmsDeviceOperation : Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice)
@@ -454,78 +484,1153 @@ interface GetSmsMessagesOperation : Windows.Foundation.IAsyncOperationWithProgre
 
 interface SendSmsMessageOperation : Windows.Foundation.IAsyncAction
 {
+extern(Windows):
+	final void Completed(Windows.Foundation.AsyncActionCompletedHandler handler)
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).set_Completed(handler));
+	}
+	final Windows.Foundation.AsyncActionCompletedHandler Completed()
+	{
+		Windows.Foundation.AsyncActionCompletedHandler _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).get_Completed(&_ret));
+		return _ret;
+	}
+	final void GetResults()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).abi_GetResults());
+	}
 }
 
 interface SmsAppMessage : Windows.Devices.Sms.ISmsAppMessage, Windows.Devices.Sms.ISmsMessageBase
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final HSTRING To()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_To(&_ret));
+		return _ret;
+	}
+	final void To(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_To(value));
+	}
+	final HSTRING From()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_From(&_ret));
+		return _ret;
+	}
+	final HSTRING Body()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_Body(&_ret));
+		return _ret;
+	}
+	final void Body(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_Body(value));
+	}
+	final HSTRING CallbackNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_CallbackNumber(&_ret));
+		return _ret;
+	}
+	final void CallbackNumber(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_CallbackNumber(value));
+	}
+	final bool IsDeliveryNotificationEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_IsDeliveryNotificationEnabled(&_ret));
+		return _ret;
+	}
+	final void IsDeliveryNotificationEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_IsDeliveryNotificationEnabled(value));
+	}
+	final INT32 RetryAttemptCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_RetryAttemptCount(&_ret));
+		return _ret;
+	}
+	final void RetryAttemptCount(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_RetryAttemptCount(value));
+	}
+	final Windows.Devices.Sms.SmsEncoding Encoding()
+	{
+		Windows.Devices.Sms.SmsEncoding _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_Encoding(&_ret));
+		return _ret;
+	}
+	final void Encoding(Windows.Devices.Sms.SmsEncoding value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_Encoding(value));
+	}
+	final INT32 PortNumber()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_PortNumber(&_ret));
+		return _ret;
+	}
+	final void PortNumber(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_PortNumber(value));
+	}
+	final INT32 TeleserviceId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_TeleserviceId(&_ret));
+		return _ret;
+	}
+	final void TeleserviceId(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_TeleserviceId(value));
+	}
+	final INT32 ProtocolId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_ProtocolId(&_ret));
+		return _ret;
+	}
+	final void ProtocolId(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_ProtocolId(value));
+	}
+	final Windows.Storage.Streams.IBuffer BinaryBody()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_BinaryBody(&_ret));
+		return _ret;
+	}
+	final void BinaryBody(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_BinaryBody(value));
+	}
+	final Windows.Devices.Sms.SmsMessageType MessageType()
+	{
+		Windows.Devices.Sms.SmsMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageType(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.CellularClass CellularClass()
+	{
+		Windows.Devices.Sms.CellularClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_CellularClass(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsMessageClass MessageClass()
+	{
+		Windows.Devices.Sms.SmsMessageClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageClass(&_ret));
+		return _ret;
+	}
+	final HSTRING SimIccId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsBinaryMessage : Windows.Devices.Sms.ISmsBinaryMessage, Windows.Devices.Sms.ISmsMessage
 {
+extern(Windows):
+	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
+	final Windows.Devices.Sms.SmsDataFormat Format()
+	{
+		Windows.Devices.Sms.SmsDataFormat _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBinaryMessage).get_Format(&_ret));
+		return _ret;
+	}
+	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
+	final void Format(Windows.Devices.Sms.SmsDataFormat value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBinaryMessage).set_Format(value));
+	}
+	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
+	final BYTE* GetData(UINT32* out___valueSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBinaryMessage).abi_GetData(out___valueSize, &_ret));
+		return _ret;
+	}
+	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
+	final void SetData(UINT32 __valueSize, BYTE* value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBinaryMessage).abi_SetData(__valueSize, value));
+	}
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessage).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsMessageClass MessageClass()
+	{
+		Windows.Devices.Sms.SmsMessageClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessage).get_MessageClass(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsBroadcastMessage : Windows.Devices.Sms.ISmsBroadcastMessage, Windows.Devices.Sms.ISmsMessageBase
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final HSTRING To()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_To(&_ret));
+		return _ret;
+	}
+	final HSTRING Body()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_Body(&_ret));
+		return _ret;
+	}
+	final INT32 Channel()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_Channel(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsGeographicalScope GeographicalScope()
+	{
+		Windows.Devices.Sms.SmsGeographicalScope _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_GeographicalScope(&_ret));
+		return _ret;
+	}
+	final INT32 MessageCode()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_MessageCode(&_ret));
+		return _ret;
+	}
+	final INT32 UpdateNumber()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_UpdateNumber(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsBroadcastType BroadcastType()
+	{
+		Windows.Devices.Sms.SmsBroadcastType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_BroadcastType(&_ret));
+		return _ret;
+	}
+	final bool IsEmergencyAlert()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_IsEmergencyAlert(&_ret));
+		return _ret;
+	}
+	final bool IsUserPopupRequested()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_IsUserPopupRequested(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsMessageType MessageType()
+	{
+		Windows.Devices.Sms.SmsMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageType(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.CellularClass CellularClass()
+	{
+		Windows.Devices.Sms.CellularClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_CellularClass(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsMessageClass MessageClass()
+	{
+		Windows.Devices.Sms.SmsMessageClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageClass(&_ret));
+		return _ret;
+	}
+	final HSTRING SimIccId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsDevice : Windows.Devices.Sms.ISmsDevice
 {
+extern(Windows):
+	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
+	final Windows.Devices.Sms.SendSmsMessageOperation SendMessageAsync(Windows.Devices.Sms.ISmsMessage message)
+	{
+		Windows.Devices.Sms.SendSmsMessageOperation _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).abi_SendMessageAsync(message, &_ret));
+		return _ret;
+	}
+	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
+	final Windows.Devices.Sms.SmsEncodedLength CalculateLength(Windows.Devices.Sms.SmsTextMessage message)
+	{
+		Windows.Devices.Sms.SmsEncodedLength _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).abi_CalculateLength(message, &_ret));
+		return _ret;
+	}
+	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
+	final HSTRING AccountPhoneNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).get_AccountPhoneNumber(&_ret));
+		return _ret;
+	}
+	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
+	final Windows.Devices.Sms.CellularClass CellularClass()
+	{
+		Windows.Devices.Sms.CellularClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).get_CellularClass(&_ret));
+		return _ret;
+	}
+	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
+	final Windows.Devices.Sms.SmsDeviceMessageStore MessageStore()
+	{
+		Windows.Devices.Sms.SmsDeviceMessageStore _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).get_MessageStore(&_ret));
+		return _ret;
+	}
+	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
+	final Windows.Devices.Sms.SmsDeviceStatus DeviceStatus()
+	{
+		Windows.Devices.Sms.SmsDeviceStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).get_DeviceStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsDevice2 : Windows.Devices.Sms.ISmsDevice2
 {
+extern(Windows):
+	final HSTRING SmscAddress()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).get_SmscAddress(&_ret));
+		return _ret;
+	}
+	final void SmscAddress(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).set_SmscAddress(value));
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final HSTRING ParentDeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).get_ParentDeviceId(&_ret));
+		return _ret;
+	}
+	final HSTRING AccountPhoneNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).get_AccountPhoneNumber(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.CellularClass CellularClass()
+	{
+		Windows.Devices.Sms.CellularClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).get_CellularClass(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsDeviceStatus DeviceStatus()
+	{
+		Windows.Devices.Sms.SmsDeviceStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).get_DeviceStatus(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsEncodedLength CalculateLength(Windows.Devices.Sms.ISmsMessageBase message)
+	{
+		Windows.Devices.Sms.SmsEncodedLength _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).abi_CalculateLength(message, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsSendMessageResult) SendMessageAndGetResultAsync(Windows.Devices.Sms.ISmsMessageBase message)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsSendMessageResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).abi_SendMessageAndGetResultAsync(message, &_ret));
+		return _ret;
+	}
 }
 
 interface SmsDeviceMessageStore : Windows.Devices.Sms.ISmsDeviceMessageStore
 {
+extern(Windows):
+	deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
+	final Windows.Foundation.IAsyncAction DeleteMessageAsync(UINT32 messageId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDeviceMessageStore).abi_DeleteMessageAsync(messageId, &_ret));
+		return _ret;
+	}
+	deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
+	final Windows.Foundation.IAsyncAction DeleteMessagesAsync(Windows.Devices.Sms.SmsMessageFilter messageFilter)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDeviceMessageStore).abi_DeleteMessagesAsync(messageFilter, &_ret));
+		return _ret;
+	}
+	deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage) GetMessageAsync(UINT32 messageId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDeviceMessageStore).abi_GetMessageAsync(messageId, &_ret));
+		return _ret;
+	}
+	deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32) GetMessagesAsync(Windows.Devices.Sms.SmsMessageFilter messageFilter)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDeviceMessageStore).abi_GetMessagesAsync(messageFilter, &_ret));
+		return _ret;
+	}
+	deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
+	final UINT32 MaxMessages()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDeviceMessageStore).get_MaxMessages(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsFilterRule : Windows.Devices.Sms.ISmsFilterRule
 {
+extern(Windows):
+	final Windows.Devices.Sms.SmsMessageType MessageType()
+	{
+		Windows.Devices.Sms.SmsMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_MessageType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) ImsiPrefixes()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_ImsiPrefixes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) DeviceIds()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_DeviceIds(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) SenderNumbers()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_SenderNumbers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) TextMessagePrefixes()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_TextMessagePrefixes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(INT32) PortNumbers()
+	{
+		Windows.Foundation.Collections.IVector!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_PortNumbers(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.CellularClass CellularClass()
+	{
+		Windows.Devices.Sms.CellularClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_CellularClass(&_ret));
+		return _ret;
+	}
+	final void CellularClass(Windows.Devices.Sms.CellularClass value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).set_CellularClass(value));
+	}
+	final Windows.Foundation.Collections.IVector!(INT32) ProtocolIds()
+	{
+		Windows.Foundation.Collections.IVector!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_ProtocolIds(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(INT32) TeleserviceIds()
+	{
+		Windows.Foundation.Collections.IVector!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_TeleserviceIds(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) WapApplicationIds()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_WapApplicationIds(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) WapContentTypes()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_WapContentTypes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.Sms.SmsBroadcastType) BroadcastTypes()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.Sms.SmsBroadcastType) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_BroadcastTypes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(INT32) BroadcastChannels()
+	{
+		Windows.Foundation.Collections.IVector!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_BroadcastChannels(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsFilterRules : Windows.Devices.Sms.ISmsFilterRules
 {
+extern(Windows):
+	final Windows.Devices.Sms.SmsFilterActionType ActionType()
+	{
+		Windows.Devices.Sms.SmsFilterActionType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRules).get_ActionType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.Sms.SmsFilterRule) Rules()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.Sms.SmsFilterRule) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRules).get_Rules(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsMessageReceivedEventArgs : Windows.Devices.Sms.ISmsMessageReceivedEventArgs
 {
+extern(Windows):
+	deprecated("SmsMessageReceivedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final Windows.Devices.Sms.SmsTextMessage TextMessage()
+	{
+		Windows.Devices.Sms.SmsTextMessage _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedEventArgs).get_TextMessage(&_ret));
+		return _ret;
+	}
+	deprecated("SmsMessageReceivedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final Windows.Devices.Sms.SmsBinaryMessage BinaryMessage()
+	{
+		Windows.Devices.Sms.SmsBinaryMessage _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedEventArgs).get_BinaryMessage(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsMessageReceivedTriggerDetails : Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails
 {
+extern(Windows):
+	final Windows.Devices.Sms.SmsMessageType MessageType()
+	{
+		Windows.Devices.Sms.SmsMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_MessageType(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsTextMessage2 TextMessage()
+	{
+		Windows.Devices.Sms.SmsTextMessage2 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_TextMessage(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsWapMessage WapMessage()
+	{
+		Windows.Devices.Sms.SmsWapMessage _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_WapMessage(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsAppMessage AppMessage()
+	{
+		Windows.Devices.Sms.SmsAppMessage _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_AppMessage(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsBroadcastMessage BroadcastMessage()
+	{
+		Windows.Devices.Sms.SmsBroadcastMessage _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_BroadcastMessage(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsVoicemailMessage VoicemailMessage()
+	{
+		Windows.Devices.Sms.SmsVoicemailMessage _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_VoicemailMessage(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsStatusMessage StatusMessage()
+	{
+		Windows.Devices.Sms.SmsStatusMessage _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_StatusMessage(&_ret));
+		return _ret;
+	}
+	final void Drop()
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).abi_Drop());
+	}
+	final void Accept()
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).abi_Accept());
+	}
 }
 
 interface SmsMessageRegistration : Windows.Devices.Sms.ISmsMessageRegistration
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageRegistration).get_Id(&_ret));
+		return _ret;
+	}
+	final void Unregister()
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageRegistration).abi_Unregister());
+	}
 }
 
 interface SmsReceivedEventDetails : Windows.Devices.Sms.ISmsReceivedEventDetails, Windows.Devices.Sms.ISmsReceivedEventDetails2
 {
+extern(Windows):
+	deprecated("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsReceivedEventDetails).get_DeviceId(&_ret));
+		return _ret;
+	}
+	deprecated("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")
+	final UINT32 MessageIndex()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsReceivedEventDetails).get_MessageIndex(&_ret));
+		return _ret;
+	}
+	deprecated("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")
+	final Windows.Devices.Sms.SmsMessageClass MessageClass()
+	{
+		Windows.Devices.Sms.SmsMessageClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsReceivedEventDetails2).get_MessageClass(&_ret));
+		return _ret;
+	}
+	deprecated("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")
+	final Windows.Devices.Sms.SmsBinaryMessage BinaryMessage()
+	{
+		Windows.Devices.Sms.SmsBinaryMessage _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsReceivedEventDetails2).get_BinaryMessage(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsSendMessageResult : Windows.Devices.Sms.ISmsSendMessageResult
 {
+extern(Windows):
+	final bool IsSuccessful()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_IsSuccessful(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(INT32) MessageReferenceNumbers()
+	{
+		Windows.Foundation.Collections.IVectorView!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_MessageReferenceNumbers(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.CellularClass CellularClass()
+	{
+		Windows.Devices.Sms.CellularClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_CellularClass(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsModemErrorCode ModemErrorCode()
+	{
+		Windows.Devices.Sms.SmsModemErrorCode _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_ModemErrorCode(&_ret));
+		return _ret;
+	}
+	final bool IsErrorTransient()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_IsErrorTransient(&_ret));
+		return _ret;
+	}
+	final INT32 NetworkCauseCode()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_NetworkCauseCode(&_ret));
+		return _ret;
+	}
+	final INT32 TransportFailureCause()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_TransportFailureCause(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsStatusMessage : Windows.Devices.Sms.ISmsStatusMessage, Windows.Devices.Sms.ISmsMessageBase
 {
+extern(Windows):
+	final HSTRING To()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_To(&_ret));
+		return _ret;
+	}
+	final HSTRING From()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_From(&_ret));
+		return _ret;
+	}
+	final HSTRING Body()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_Body(&_ret));
+		return _ret;
+	}
+	final INT32 Status()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_Status(&_ret));
+		return _ret;
+	}
+	final INT32 MessageReferenceNumber()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_MessageReferenceNumber(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime ServiceCenterTimestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_ServiceCenterTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime DischargeTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_DischargeTime(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsMessageType MessageType()
+	{
+		Windows.Devices.Sms.SmsMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageType(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.CellularClass CellularClass()
+	{
+		Windows.Devices.Sms.CellularClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_CellularClass(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsMessageClass MessageClass()
+	{
+		Windows.Devices.Sms.SmsMessageClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageClass(&_ret));
+		return _ret;
+	}
+	final HSTRING SimIccId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsTextMessage : Windows.Devices.Sms.ISmsTextMessage, Windows.Devices.Sms.ISmsMessage
 {
+extern(Windows):
+	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
+	final UINT32 PartReferenceId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_PartReferenceId(&_ret));
+		return _ret;
+	}
+	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
+	final UINT32 PartNumber()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_PartNumber(&_ret));
+		return _ret;
+	}
+	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
+	final UINT32 PartCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_PartCount(&_ret));
+		return _ret;
+	}
+	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
+	final HSTRING To()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_To(&_ret));
+		return _ret;
+	}
+	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
+	final void To(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).set_To(value));
+	}
+	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
+	final HSTRING From()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_From(&_ret));
+		return _ret;
+	}
+	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
+	final void From(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).set_From(value));
+	}
+	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
+	final HSTRING Body()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_Body(&_ret));
+		return _ret;
+	}
+	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
+	final void Body(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).set_Body(value));
+	}
+	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
+	final Windows.Devices.Sms.SmsEncoding Encoding()
+	{
+		Windows.Devices.Sms.SmsEncoding _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_Encoding(&_ret));
+		return _ret;
+	}
+	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
+	final void Encoding(Windows.Devices.Sms.SmsEncoding value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).set_Encoding(value));
+	}
+	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsBinaryMessage) ToBinaryMessages(Windows.Devices.Sms.SmsDataFormat format)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsBinaryMessage) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).abi_ToBinaryMessages(format, &_ret));
+		return _ret;
+	}
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessage).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsMessageClass MessageClass()
+	{
+		Windows.Devices.Sms.SmsMessageClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessage).get_MessageClass(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsTextMessage2 : Windows.Devices.Sms.ISmsTextMessage2, Windows.Devices.Sms.ISmsMessageBase
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final HSTRING To()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_To(&_ret));
+		return _ret;
+	}
+	final void To(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).set_To(value));
+	}
+	final HSTRING From()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_From(&_ret));
+		return _ret;
+	}
+	final HSTRING Body()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_Body(&_ret));
+		return _ret;
+	}
+	final void Body(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).set_Body(value));
+	}
+	final Windows.Devices.Sms.SmsEncoding Encoding()
+	{
+		Windows.Devices.Sms.SmsEncoding _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_Encoding(&_ret));
+		return _ret;
+	}
+	final void Encoding(Windows.Devices.Sms.SmsEncoding value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).set_Encoding(value));
+	}
+	final HSTRING CallbackNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_CallbackNumber(&_ret));
+		return _ret;
+	}
+	final void CallbackNumber(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).set_CallbackNumber(value));
+	}
+	final bool IsDeliveryNotificationEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_IsDeliveryNotificationEnabled(&_ret));
+		return _ret;
+	}
+	final void IsDeliveryNotificationEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).set_IsDeliveryNotificationEnabled(value));
+	}
+	final INT32 RetryAttemptCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_RetryAttemptCount(&_ret));
+		return _ret;
+	}
+	final void RetryAttemptCount(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).set_RetryAttemptCount(value));
+	}
+	final INT32 TeleserviceId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_TeleserviceId(&_ret));
+		return _ret;
+	}
+	final INT32 ProtocolId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_ProtocolId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsMessageType MessageType()
+	{
+		Windows.Devices.Sms.SmsMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageType(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.CellularClass CellularClass()
+	{
+		Windows.Devices.Sms.CellularClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_CellularClass(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsMessageClass MessageClass()
+	{
+		Windows.Devices.Sms.SmsMessageClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageClass(&_ret));
+		return _ret;
+	}
+	final HSTRING SimIccId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsVoicemailMessage : Windows.Devices.Sms.ISmsVoicemailMessage, Windows.Devices.Sms.ISmsMessageBase
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsVoicemailMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final HSTRING To()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsVoicemailMessage).get_To(&_ret));
+		return _ret;
+	}
+	final HSTRING Body()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsVoicemailMessage).get_Body(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(INT32) MessageCount()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsVoicemailMessage).get_MessageCount(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsMessageType MessageType()
+	{
+		Windows.Devices.Sms.SmsMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageType(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.CellularClass CellularClass()
+	{
+		Windows.Devices.Sms.CellularClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_CellularClass(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsMessageClass MessageClass()
+	{
+		Windows.Devices.Sms.SmsMessageClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageClass(&_ret));
+		return _ret;
+	}
+	final HSTRING SimIccId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
+		return _ret;
+	}
 }
 
 interface SmsWapMessage : Windows.Devices.Sms.ISmsWapMessage, Windows.Devices.Sms.ISmsMessageBase
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final HSTRING To()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_To(&_ret));
+		return _ret;
+	}
+	final HSTRING From()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_From(&_ret));
+		return _ret;
+	}
+	final HSTRING ApplicationId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_ApplicationId(&_ret));
+		return _ret;
+	}
+	final HSTRING ContentType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_ContentType(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer BinaryBody()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_BinaryBody(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Headers()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_Headers(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsMessageType MessageType()
+	{
+		Windows.Devices.Sms.SmsMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageType(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.CellularClass CellularClass()
+	{
+		Windows.Devices.Sms.CellularClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_CellularClass(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsMessageClass MessageClass()
+	{
+		Windows.Devices.Sms.SmsMessageClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageClass(&_ret));
+		return _ret;
+	}
+	final HSTRING SimIccId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
+		return _ret;
+	}
 }
 
 enum CellularClass

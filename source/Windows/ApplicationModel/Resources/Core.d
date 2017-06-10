@@ -148,10 +148,98 @@ extern(Windows):
 
 interface NamedResource : Windows.ApplicationModel.Resources.Core.INamedResource
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.INamedResource).get_Uri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate) Candidates()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.INamedResource).get_Candidates(&_ret));
+		return _ret;
+	}
+	deprecated("Resolve may be altered or unavailable for releases after Windows 8.1. Instead, use Resolve(ResourceContext).")
+	final Windows.ApplicationModel.Resources.Core.ResourceCandidate Resolve()
+	{
+		Windows.ApplicationModel.Resources.Core.ResourceCandidate _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.INamedResource).abi_Resolve(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Resources.Core.ResourceCandidate ResolveForContext(Windows.ApplicationModel.Resources.Core.ResourceContext resourceContext)
+	{
+		Windows.ApplicationModel.Resources.Core.ResourceCandidate _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.INamedResource).abi_ResolveForContext(resourceContext, &_ret));
+		return _ret;
+	}
+	deprecated("ResolveAll may be altered or unavailable for releases after Windows 8.1. Instead, use ResolveAll(ResourceContext).")
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate) ResolveAll()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.INamedResource).abi_ResolveAll(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate) ResolveAllForContext(Windows.ApplicationModel.Resources.Core.ResourceContext resourceContext)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.INamedResource).abi_ResolveAllForContext(resourceContext, &_ret));
+		return _ret;
+	}
 }
 
 interface ResourceCandidate : Windows.ApplicationModel.Resources.Core.IResourceCandidate, Windows.ApplicationModel.Resources.Core.IResourceCandidate2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceQualifier) Qualifiers()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceQualifier) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceCandidate).get_Qualifiers(&_ret));
+		return _ret;
+	}
+	final bool IsMatch()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceCandidate).get_IsMatch(&_ret));
+		return _ret;
+	}
+	final bool IsMatchAsDefault()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceCandidate).get_IsMatchAsDefault(&_ret));
+		return _ret;
+	}
+	final bool IsDefault()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceCandidate).get_IsDefault(&_ret));
+		return _ret;
+	}
+	final HSTRING ValueAsString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceCandidate).get_ValueAsString(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) GetValueAsFileAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceCandidate).abi_GetValueAsFileAsync(&_ret));
+		return _ret;
+	}
+	final HSTRING GetQualifierValue(HSTRING qualifierName)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceCandidate).abi_GetQualifierValue(qualifierName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) GetValueAsStreamAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceCandidate2).abi_GetValueAsStreamAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface ResourceCandidateVectorView : Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate), Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Resources.Core.ResourceCandidate)
@@ -160,6 +248,41 @@ interface ResourceCandidateVectorView : Windows.Foundation.Collections.IVectorVi
 
 interface ResourceContext : Windows.ApplicationModel.Resources.Core.IResourceContext
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IObservableMap!(HSTRING, HSTRING) QualifierValues()
+	{
+		Windows.Foundation.Collections.IObservableMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceContext).get_QualifierValues(&_ret));
+		return _ret;
+	}
+	final void Reset()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceContext).abi_Reset());
+	}
+	final void ResetQualifierValues(Windows.Foundation.Collections.IIterable!(HSTRING) qualifierNames)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceContext).abi_ResetQualifierValues(qualifierNames));
+	}
+	final void OverrideToMatch(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Resources.Core.ResourceQualifier) result)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceContext).abi_OverrideToMatch(result));
+	}
+	final Windows.ApplicationModel.Resources.Core.ResourceContext Clone()
+	{
+		Windows.ApplicationModel.Resources.Core.ResourceContext _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceContext).abi_Clone(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceContext).get_Languages(&_ret));
+		return _ret;
+	}
+	final void Languages(Windows.Foundation.Collections.IVectorView!(HSTRING) languages)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceContext).set_Languages(languages));
+	}
 }
 
 interface ResourceContextLanguagesVectorView : Windows.Foundation.Collections.IVectorView!(HSTRING), Windows.Foundation.Collections.IIterable!(HSTRING)
@@ -168,10 +291,76 @@ interface ResourceContextLanguagesVectorView : Windows.Foundation.Collections.IV
 
 interface ResourceManager : Windows.ApplicationModel.Resources.Core.IResourceManager, Windows.ApplicationModel.Resources.Core.IResourceManager2
 {
+extern(Windows):
+	final Windows.ApplicationModel.Resources.Core.ResourceMap MainResourceMap()
+	{
+		Windows.ApplicationModel.Resources.Core.ResourceMap _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceManager).get_MainResourceMap(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap) AllResourceMaps()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceManager).get_AllResourceMaps(&_ret));
+		return _ret;
+	}
+	deprecated("DefaultContext may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use ResourceContext.GetForCurrentView.")
+	final Windows.ApplicationModel.Resources.Core.ResourceContext DefaultContext()
+	{
+		Windows.ApplicationModel.Resources.Core.ResourceContext _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceManager).get_DefaultContext(&_ret));
+		return _ret;
+	}
+	final void LoadPriFiles(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageFile) files)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceManager).abi_LoadPriFiles(files));
+	}
+	final void UnloadPriFiles(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageFile) files)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceManager).abi_UnloadPriFiles(files));
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.NamedResource) GetAllNamedResourcesForPackage(HSTRING packageName, Windows.ApplicationModel.Resources.Core.ResourceLayoutInfo resourceLayoutInfo)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.NamedResource) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceManager2).abi_GetAllNamedResourcesForPackage(packageName, resourceLayoutInfo, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceMap) GetAllSubtreesForPackage(HSTRING packageName, Windows.ApplicationModel.Resources.Core.ResourceLayoutInfo resourceLayoutInfo)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceMap) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceManager2).abi_GetAllSubtreesForPackage(packageName, resourceLayoutInfo, &_ret));
+		return _ret;
+	}
 }
 
 interface ResourceMap : Windows.ApplicationModel.Resources.Core.IResourceMap, Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource))
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceMap).get_Uri(&_ret));
+		return _ret;
+	}
+	deprecated("GetValue(string) may be altered or unavailable for releases after Windows 8.1. Instead, use GetValue(string, ResourceContext).")
+	final Windows.ApplicationModel.Resources.Core.ResourceCandidate GetValue(HSTRING resource)
+	{
+		Windows.ApplicationModel.Resources.Core.ResourceCandidate _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceMap).abi_GetValue(resource, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Resources.Core.ResourceCandidate GetValueForContext(HSTRING resource, Windows.ApplicationModel.Resources.Core.ResourceContext context)
+	{
+		Windows.ApplicationModel.Resources.Core.ResourceCandidate _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceMap).abi_GetValueForContext(resource, context, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Resources.Core.ResourceMap GetSubtree(HSTRING reference)
+	{
+		Windows.ApplicationModel.Resources.Core.ResourceMap _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceMap).abi_GetSubtree(reference, &_ret));
+		return _ret;
+	}
 }
 
 interface ResourceMapIterator : Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource))
@@ -188,6 +377,37 @@ interface ResourceMapMapViewIterator : Windows.Foundation.Collections.IIterator!
 
 interface ResourceQualifier : Windows.ApplicationModel.Resources.Core.IResourceQualifier
 {
+extern(Windows):
+	final HSTRING QualifierName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceQualifier).get_QualifierName(&_ret));
+		return _ret;
+	}
+	final HSTRING QualifierValue()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceQualifier).get_QualifierValue(&_ret));
+		return _ret;
+	}
+	final bool IsDefault()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceQualifier).get_IsDefault(&_ret));
+		return _ret;
+	}
+	final bool IsMatch()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceQualifier).get_IsMatch(&_ret));
+		return _ret;
+	}
+	final double Score()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceQualifier).get_Score(&_ret));
+		return _ret;
+	}
 }
 
 interface ResourceQualifierMapView : Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))

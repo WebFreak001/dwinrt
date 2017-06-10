@@ -443,18 +443,80 @@ extern(Windows):
 
 interface AppDiagnosticInfo : Windows.System.IAppDiagnosticInfo
 {
+extern(Windows):
+	final Windows.ApplicationModel.AppInfo AppInfo()
+	{
+		Windows.ApplicationModel.AppInfo _ret;
+		Debug.OK(this.as!(Windows.System.IAppDiagnosticInfo).get_AppInfo(&_ret));
+		return _ret;
+	}
 }
 
 interface AppMemoryReport : Windows.System.IAppMemoryReport
 {
+extern(Windows):
+	final UINT64 PrivateCommitUsage()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.IAppMemoryReport).get_PrivateCommitUsage(&_ret));
+		return _ret;
+	}
+	final UINT64 PeakPrivateCommitUsage()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.IAppMemoryReport).get_PeakPrivateCommitUsage(&_ret));
+		return _ret;
+	}
+	final UINT64 TotalCommitUsage()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.IAppMemoryReport).get_TotalCommitUsage(&_ret));
+		return _ret;
+	}
+	final UINT64 TotalCommitLimit()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.IAppMemoryReport).get_TotalCommitLimit(&_ret));
+		return _ret;
+	}
 }
 
 interface AppMemoryUsageLimitChangingEventArgs : Windows.System.IAppMemoryUsageLimitChangingEventArgs
 {
+extern(Windows):
+	final UINT64 OldLimit()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.IAppMemoryUsageLimitChangingEventArgs).get_OldLimit(&_ret));
+		return _ret;
+	}
+	final UINT64 NewLimit()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.IAppMemoryUsageLimitChangingEventArgs).get_NewLimit(&_ret));
+		return _ret;
+	}
 }
 
 interface FolderLauncherOptions : Windows.System.IFolderLauncherOptions, Windows.System.ILauncherViewOptions
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Storage.IStorageItem) ItemsToSelect()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Storage.IStorageItem) _ret;
+		Debug.OK(this.as!(Windows.System.IFolderLauncherOptions).get_ItemsToSelect(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ViewManagement.ViewSizePreference DesiredRemainingView()
+	{
+		Windows.UI.ViewManagement.ViewSizePreference _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherViewOptions).get_DesiredRemainingView(&_ret));
+		return _ret;
+	}
+	final void DesiredRemainingView(Windows.UI.ViewManagement.ViewSizePreference value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherViewOptions).set_DesiredRemainingView(value));
+	}
 }
 
 interface KnownUserProperties
@@ -463,6 +525,19 @@ interface KnownUserProperties
 
 interface LaunchUriResult : Windows.System.ILaunchUriResult
 {
+extern(Windows):
+	final Windows.System.LaunchUriStatus Status()
+	{
+		Windows.System.LaunchUriStatus _ret;
+		Debug.OK(this.as!(Windows.System.ILaunchUriResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.ValueSet Result()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.System.ILaunchUriResult).get_Result(&_ret));
+		return _ret;
+	}
 }
 
 interface Launcher
@@ -471,10 +546,158 @@ interface Launcher
 
 interface LauncherOptions : Windows.System.ILauncherOptions, Windows.System.ILauncherViewOptions, Windows.System.ILauncherOptions2, Windows.System.ILauncherOptions3, Windows.System.ILauncherOptions4
 {
+extern(Windows):
+	final bool TreatAsUntrusted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_TreatAsUntrusted(&_ret));
+		return _ret;
+	}
+	final void TreatAsUntrusted(bool value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherOptions).set_TreatAsUntrusted(value));
+	}
+	final bool DisplayApplicationPicker()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_DisplayApplicationPicker(&_ret));
+		return _ret;
+	}
+	final void DisplayApplicationPicker(bool value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherOptions).set_DisplayApplicationPicker(value));
+	}
+	final Windows.System.LauncherUIOptions UI()
+	{
+		Windows.System.LauncherUIOptions _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_UI(&_ret));
+		return _ret;
+	}
+	final HSTRING PreferredApplicationPackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_PreferredApplicationPackageFamilyName(&_ret));
+		return _ret;
+	}
+	final void PreferredApplicationPackageFamilyName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherOptions).set_PreferredApplicationPackageFamilyName(value));
+	}
+	final HSTRING PreferredApplicationDisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_PreferredApplicationDisplayName(&_ret));
+		return _ret;
+	}
+	final void PreferredApplicationDisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherOptions).set_PreferredApplicationDisplayName(value));
+	}
+	final Windows.Foundation.Uri FallbackUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_FallbackUri(&_ret));
+		return _ret;
+	}
+	final void FallbackUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherOptions).set_FallbackUri(value));
+	}
+	final HSTRING ContentType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_ContentType(&_ret));
+		return _ret;
+	}
+	final void ContentType(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherOptions).set_ContentType(value));
+	}
+	final Windows.UI.ViewManagement.ViewSizePreference DesiredRemainingView()
+	{
+		Windows.UI.ViewManagement.ViewSizePreference _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherViewOptions).get_DesiredRemainingView(&_ret));
+		return _ret;
+	}
+	final void DesiredRemainingView(Windows.UI.ViewManagement.ViewSizePreference value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherViewOptions).set_DesiredRemainingView(value));
+	}
+	final HSTRING TargetApplicationPackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherOptions2).get_TargetApplicationPackageFamilyName(&_ret));
+		return _ret;
+	}
+	final void TargetApplicationPackageFamilyName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherOptions2).set_TargetApplicationPackageFamilyName(value));
+	}
+	final Windows.Storage.Search.StorageFileQueryResult NeighboringFilesQuery()
+	{
+		Windows.Storage.Search.StorageFileQueryResult _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherOptions2).get_NeighboringFilesQuery(&_ret));
+		return _ret;
+	}
+	final void NeighboringFilesQuery(Windows.Storage.Search.StorageFileQueryResult value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherOptions2).set_NeighboringFilesQuery(value));
+	}
+	final bool IgnoreAppUriHandlers()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherOptions3).get_IgnoreAppUriHandlers(&_ret));
+		return _ret;
+	}
+	final void IgnoreAppUriHandlers(bool value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherOptions3).set_IgnoreAppUriHandlers(value));
+	}
+	final bool LimitPickerToCurrentAppAndAppUriHandlers()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherOptions4).get_LimitPickerToCurrentAppAndAppUriHandlers(&_ret));
+		return _ret;
+	}
+	final void LimitPickerToCurrentAppAndAppUriHandlers(bool value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherOptions4).set_LimitPickerToCurrentAppAndAppUriHandlers(value));
+	}
 }
 
 interface LauncherUIOptions : Windows.System.ILauncherUIOptions
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.Point) InvocationPoint()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.Point) _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherUIOptions).get_InvocationPoint(&_ret));
+		return _ret;
+	}
+	final void InvocationPoint(Windows.Foundation.IReference!(Windows.Foundation.Point) value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherUIOptions).set_InvocationPoint(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.Rect) SelectionRect()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.Rect) _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherUIOptions).get_SelectionRect(&_ret));
+		return _ret;
+	}
+	final void SelectionRect(Windows.Foundation.IReference!(Windows.Foundation.Rect) value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherUIOptions).set_SelectionRect(value));
+	}
+	final Windows.UI.Popups.Placement PreferredPlacement()
+	{
+		Windows.UI.Popups.Placement _ret;
+		Debug.OK(this.as!(Windows.System.ILauncherUIOptions).get_PreferredPlacement(&_ret));
+		return _ret;
+	}
+	final void PreferredPlacement(Windows.UI.Popups.Placement value)
+	{
+		Debug.OK(this.as!(Windows.System.ILauncherUIOptions).set_PreferredPlacement(value));
+	}
 }
 
 interface MemoryManager
@@ -487,18 +710,84 @@ interface ProcessLauncher
 
 interface ProcessLauncherOptions : Windows.System.IProcessLauncherOptions
 {
+extern(Windows):
+	final Windows.Storage.Streams.IInputStream StandardInput()
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).get_StandardInput(&_ret));
+		return _ret;
+	}
+	final void StandardInput(Windows.Storage.Streams.IInputStream value)
+	{
+		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).set_StandardInput(value));
+	}
+	final Windows.Storage.Streams.IOutputStream StandardOutput()
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).get_StandardOutput(&_ret));
+		return _ret;
+	}
+	final void StandardOutput(Windows.Storage.Streams.IOutputStream value)
+	{
+		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).set_StandardOutput(value));
+	}
+	final Windows.Storage.Streams.IOutputStream StandardError()
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).get_StandardError(&_ret));
+		return _ret;
+	}
+	final void StandardError(Windows.Storage.Streams.IOutputStream value)
+	{
+		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).set_StandardError(value));
+	}
+	final HSTRING WorkingDirectory()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).get_WorkingDirectory(&_ret));
+		return _ret;
+	}
+	final void WorkingDirectory(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).set_WorkingDirectory(value));
+	}
 }
 
 interface ProcessLauncherResult : Windows.System.IProcessLauncherResult
 {
+extern(Windows):
+	final UINT32 ExitCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.System.IProcessLauncherResult).get_ExitCode(&_ret));
+		return _ret;
+	}
 }
 
 interface ProcessMemoryReport : Windows.System.IProcessMemoryReport
 {
+extern(Windows):
+	final UINT64 PrivateWorkingSetUsage()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.IProcessMemoryReport).get_PrivateWorkingSetUsage(&_ret));
+		return _ret;
+	}
+	final UINT64 TotalWorkingSetUsage()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.IProcessMemoryReport).get_TotalWorkingSetUsage(&_ret));
+		return _ret;
+	}
 }
 
 interface ProtocolForResultsOperation : Windows.System.IProtocolForResultsOperation
 {
+extern(Windows):
+	final void ReportCompleted(Windows.Foundation.Collections.ValueSet data)
+	{
+		Debug.OK(this.as!(Windows.System.IProtocolForResultsOperation).abi_ReportCompleted(data));
+	}
 }
 
 interface RemoteLauncher
@@ -507,6 +796,23 @@ interface RemoteLauncher
 
 interface RemoteLauncherOptions : Windows.System.IRemoteLauncherOptions
 {
+extern(Windows):
+	final Windows.Foundation.Uri FallbackUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.System.IRemoteLauncherOptions).get_FallbackUri(&_ret));
+		return _ret;
+	}
+	final void FallbackUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.System.IRemoteLauncherOptions).set_FallbackUri(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) PreferredAppIds()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.System.IRemoteLauncherOptions).get_PreferredAppIds(&_ret));
+		return _ret;
+	}
 }
 
 interface ShutdownManager
@@ -519,18 +825,92 @@ interface TimeZoneSettings
 
 interface User : Windows.System.IUser
 {
+extern(Windows):
+	final HSTRING NonRoamableId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.System.IUser).get_NonRoamableId(&_ret));
+		return _ret;
+	}
+	final Windows.System.UserAuthenticationStatus AuthenticationStatus()
+	{
+		Windows.System.UserAuthenticationStatus _ret;
+		Debug.OK(this.as!(Windows.System.IUser).get_AuthenticationStatus(&_ret));
+		return _ret;
+	}
+	final Windows.System.UserType Type()
+	{
+		Windows.System.UserType _ret;
+		Debug.OK(this.as!(Windows.System.IUser).get_Type(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(IInspectable) GetPropertyAsync(HSTRING value)
+	{
+		Windows.Foundation.IAsyncOperation!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.System.IUser).abi_GetPropertyAsync(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IPropertySet) GetPropertiesAsync(Windows.Foundation.Collections.IVectorView!(HSTRING) values)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IPropertySet) _ret;
+		Debug.OK(this.as!(Windows.System.IUser).abi_GetPropertiesAsync(values, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamReference) GetPictureAsync(Windows.System.UserPictureSize desiredSize)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamReference) _ret;
+		Debug.OK(this.as!(Windows.System.IUser).abi_GetPictureAsync(desiredSize, &_ret));
+		return _ret;
+	}
 }
 
 interface UserAuthenticationStatusChangeDeferral : Windows.System.IUserAuthenticationStatusChangeDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.System.IUserAuthenticationStatusChangeDeferral).abi_Complete());
+	}
 }
 
 interface UserAuthenticationStatusChangingEventArgs : Windows.System.IUserAuthenticationStatusChangingEventArgs
 {
+extern(Windows):
+	final Windows.System.UserAuthenticationStatusChangeDeferral GetDeferral()
+	{
+		Windows.System.UserAuthenticationStatusChangeDeferral _ret;
+		Debug.OK(this.as!(Windows.System.IUserAuthenticationStatusChangingEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.System.IUserAuthenticationStatusChangingEventArgs).get_User(&_ret));
+		return _ret;
+	}
+	final Windows.System.UserAuthenticationStatus NewStatus()
+	{
+		Windows.System.UserAuthenticationStatus _ret;
+		Debug.OK(this.as!(Windows.System.IUserAuthenticationStatusChangingEventArgs).get_NewStatus(&_ret));
+		return _ret;
+	}
+	final Windows.System.UserAuthenticationStatus CurrentStatus()
+	{
+		Windows.System.UserAuthenticationStatus _ret;
+		Debug.OK(this.as!(Windows.System.IUserAuthenticationStatusChangingEventArgs).get_CurrentStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface UserChangedEventArgs : Windows.System.IUserChangedEventArgs
 {
+extern(Windows):
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.System.IUserChangedEventArgs).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface UserDeviceAssociation
@@ -539,14 +919,75 @@ interface UserDeviceAssociation
 
 interface UserDeviceAssociationChangedEventArgs : Windows.System.IUserDeviceAssociationChangedEventArgs
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.System.IUserDeviceAssociationChangedEventArgs).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.System.User NewUser()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.System.IUserDeviceAssociationChangedEventArgs).get_NewUser(&_ret));
+		return _ret;
+	}
+	final Windows.System.User OldUser()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.System.IUserDeviceAssociationChangedEventArgs).get_OldUser(&_ret));
+		return _ret;
+	}
 }
 
 interface UserPicker : Windows.System.IUserPicker
 {
+extern(Windows):
+	final bool AllowGuestAccounts()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.System.IUserPicker).get_AllowGuestAccounts(&_ret));
+		return _ret;
+	}
+	final void AllowGuestAccounts(bool value)
+	{
+		Debug.OK(this.as!(Windows.System.IUserPicker).set_AllowGuestAccounts(value));
+	}
+	final Windows.System.User SuggestedSelectedUser()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.System.IUserPicker).get_SuggestedSelectedUser(&_ret));
+		return _ret;
+	}
+	final void SuggestedSelectedUser(Windows.System.User value)
+	{
+		Debug.OK(this.as!(Windows.System.IUserPicker).set_SuggestedSelectedUser(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.System.User) PickSingleUserAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.System.User) _ret;
+		Debug.OK(this.as!(Windows.System.IUserPicker).abi_PickSingleUserAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface UserWatcher : Windows.System.IUserWatcher
 {
+extern(Windows):
+	final Windows.System.UserWatcherStatus Status()
+	{
+		Windows.System.UserWatcherStatus _ret;
+		Debug.OK(this.as!(Windows.System.IUserWatcher).get_Status(&_ret));
+		return _ret;
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.System.IUserWatcher).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.System.IUserWatcher).abi_Stop());
+	}
 }
 
 enum AppMemoryUsageLevel

@@ -195,6 +195,19 @@ extern(Windows):
 
 interface AppListEntry : Windows.ApplicationModel.Core.IAppListEntry
 {
+extern(Windows):
+	final Windows.ApplicationModel.AppDisplayInfo DisplayInfo()
+	{
+		Windows.ApplicationModel.AppDisplayInfo _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.IAppListEntry).get_DisplayInfo(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) LaunchAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.IAppListEntry).abi_LaunchAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreApplication
@@ -203,20 +216,123 @@ interface CoreApplication
 
 interface CoreApplicationView : Windows.ApplicationModel.Core.ICoreApplicationView, Windows.ApplicationModel.Core.ICoreApplicationView2, Windows.ApplicationModel.Core.ICoreApplicationView3, Windows.ApplicationModel.Core.ICoreApplicationView5
 {
+extern(Windows):
+	final Windows.UI.Core.CoreWindow CoreWindow()
+	{
+		Windows.UI.Core.CoreWindow _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView).get_CoreWindow(&_ret));
+		return _ret;
+	}
+	final bool IsMain()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView).get_IsMain(&_ret));
+		return _ret;
+	}
+	final bool IsHosted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView).get_IsHosted(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CoreDispatcher Dispatcher()
+	{
+		Windows.UI.Core.CoreDispatcher _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView2).get_Dispatcher(&_ret));
+		return _ret;
+	}
+	final bool IsComponent()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView3).get_IsComponent(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Core.CoreApplicationViewTitleBar TitleBar()
+	{
+		Windows.ApplicationModel.Core.CoreApplicationViewTitleBar _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView3).get_TitleBar(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView5).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreApplicationViewTitleBar : Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar
 {
+extern(Windows):
+	final void ExtendViewIntoTitleBar(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).set_ExtendViewIntoTitleBar(value));
+	}
+	final bool ExtendViewIntoTitleBar()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).get_ExtendViewIntoTitleBar(&_ret));
+		return _ret;
+	}
+	final double SystemOverlayLeftInset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).get_SystemOverlayLeftInset(&_ret));
+		return _ret;
+	}
+	final double SystemOverlayRightInset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).get_SystemOverlayRightInset(&_ret));
+		return _ret;
+	}
+	final double Height()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).get_Height(&_ret));
+		return _ret;
+	}
+	final bool IsVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).get_IsVisible(&_ret));
+		return _ret;
+	}
 }
 
 interface HostedViewClosingEventArgs : Windows.ApplicationModel.Core.IHostedViewClosingEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.IHostedViewClosingEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface UnhandledError : Windows.ApplicationModel.Core.IUnhandledError
 {
+extern(Windows):
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.IUnhandledError).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Propagate()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.IUnhandledError).abi_Propagate());
+	}
 }
 
 interface UnhandledErrorDetectedEventArgs : Windows.ApplicationModel.Core.IUnhandledErrorDetectedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Core.UnhandledError UnhandledError()
+	{
+		Windows.ApplicationModel.Core.UnhandledError _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.IUnhandledErrorDetectedEventArgs).get_UnhandledError(&_ret));
+		return _ret;
+	}
 }

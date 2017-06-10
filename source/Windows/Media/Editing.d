@@ -167,26 +167,380 @@ extern(Windows):
 
 interface BackgroundAudioTrack : Windows.Media.Editing.IBackgroundAudioTrack
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan TrimTimeFromStart()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_TrimTimeFromStart(&_ret));
+		return _ret;
+	}
+	final void TrimTimeFromStart(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).set_TrimTimeFromStart(value));
+	}
+	final Windows.Foundation.TimeSpan TrimTimeFromEnd()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_TrimTimeFromEnd(&_ret));
+		return _ret;
+	}
+	final void TrimTimeFromEnd(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).set_TrimTimeFromEnd(value));
+	}
+	final Windows.Foundation.TimeSpan OriginalDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_OriginalDuration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan TrimmedDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_TrimmedDuration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) UserData()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_UserData(&_ret));
+		return _ret;
+	}
+	final void Delay(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).set_Delay(value));
+	}
+	final Windows.Foundation.TimeSpan Delay()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_Delay(&_ret));
+		return _ret;
+	}
+	final void Volume(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).set_Volume(value));
+	}
+	final double Volume()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_Volume(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Editing.BackgroundAudioTrack Clone()
+	{
+		Windows.Media.Editing.BackgroundAudioTrack _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).abi_Clone(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.AudioEncodingProperties GetAudioEncodingProperties()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).abi_GetAudioEncodingProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) AudioEffectDefinitions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_AudioEffectDefinitions(&_ret));
+		return _ret;
+	}
 }
 
 interface EmbeddedAudioTrack : Windows.Media.Editing.IEmbeddedAudioTrack
 {
+extern(Windows):
+	final Windows.Media.MediaProperties.AudioEncodingProperties GetAudioEncodingProperties()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IEmbeddedAudioTrack).abi_GetAudioEncodingProperties(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaClip : Windows.Media.Editing.IMediaClip
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan TrimTimeFromStart()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_TrimTimeFromStart(&_ret));
+		return _ret;
+	}
+	final void TrimTimeFromStart(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).set_TrimTimeFromStart(value));
+	}
+	final Windows.Foundation.TimeSpan TrimTimeFromEnd()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_TrimTimeFromEnd(&_ret));
+		return _ret;
+	}
+	final void TrimTimeFromEnd(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).set_TrimTimeFromEnd(value));
+	}
+	final Windows.Foundation.TimeSpan OriginalDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_OriginalDuration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan TrimmedDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_TrimmedDuration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) UserData()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_UserData(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Editing.MediaClip Clone()
+	{
+		Windows.Media.Editing.MediaClip _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).abi_Clone(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan StartTimeInComposition()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_StartTimeInComposition(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan EndTimeInComposition()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_EndTimeInComposition(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Editing.EmbeddedAudioTrack) EmbeddedAudioTracks()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Editing.EmbeddedAudioTrack) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_EmbeddedAudioTracks(&_ret));
+		return _ret;
+	}
+	final UINT32 SelectedEmbeddedAudioTrackIndex()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_SelectedEmbeddedAudioTrackIndex(&_ret));
+		return _ret;
+	}
+	final void SelectedEmbeddedAudioTrackIndex(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).set_SelectedEmbeddedAudioTrackIndex(value));
+	}
+	final void Volume(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).set_Volume(value));
+	}
+	final double Volume()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_Volume(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.VideoEncodingProperties GetVideoEncodingProperties()
+	{
+		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).abi_GetVideoEncodingProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) AudioEffectDefinitions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_AudioEffectDefinitions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IVideoEffectDefinition) VideoEffectDefinitions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IVideoEffectDefinition) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_VideoEffectDefinitions(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaComposition : Windows.Media.Editing.IMediaComposition, Windows.Media.Editing.IMediaComposition2
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).get_Duration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaClip) Clips()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaClip) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).get_Clips(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Editing.BackgroundAudioTrack) BackgroundAudioTracks()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Editing.BackgroundAudioTrack) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).get_BackgroundAudioTracks(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) UserData()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).get_UserData(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Editing.MediaComposition Clone()
+	{
+		Windows.Media.Editing.MediaComposition _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_Clone(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_SaveAsync(file, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.ImageStream) GetThumbnailAsync(Windows.Foundation.TimeSpan timeFromStart, INT32 scaledWidth, INT32 scaledHeight, Windows.Media.Editing.VideoFramePrecision framePrecision)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.ImageStream) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_GetThumbnailAsync(timeFromStart, scaledWidth, scaledHeight, framePrecision, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.ImageStream)) GetThumbnailsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.TimeSpan) timesFromStart, INT32 scaledWidth, INT32 scaledHeight, Windows.Media.Editing.VideoFramePrecision framePrecision)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.ImageStream)) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_GetThumbnailsAsync(timesFromStart, scaledWidth, scaledHeight, framePrecision, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) RenderToFileAsync(Windows.Storage.IStorageFile destination)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_RenderToFileAsync(destination, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) RenderToFileWithTrimmingPreferenceAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_RenderToFileWithTrimmingPreferenceAsync(destination, trimmingPreference, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) RenderToFileWithProfileAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference, Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_RenderToFileWithProfileAsync(destination, trimmingPreference, encodingProfile, &_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.MediaEncodingProfile CreateDefaultEncodingProfile()
+	{
+		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_CreateDefaultEncodingProfile(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaStreamSource GenerateMediaStreamSource()
+	{
+		Windows.Media.Core.MediaStreamSource _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_GenerateMediaStreamSource(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaStreamSource GenerateMediaStreamSourceWithProfile(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile)
+	{
+		Windows.Media.Core.MediaStreamSource _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_GenerateMediaStreamSourceWithProfile(encodingProfile, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaStreamSource GeneratePreviewMediaStreamSource(INT32 scaledWidth, INT32 scaledHeight)
+	{
+		Windows.Media.Core.MediaStreamSource _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_GeneratePreviewMediaStreamSource(scaledWidth, scaledHeight, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaOverlayLayer) OverlayLayers()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaOverlayLayer) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition2).get_OverlayLayers(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaOverlay : Windows.Media.Editing.IMediaOverlay
 {
+extern(Windows):
+	final Windows.Foundation.Rect Position()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).get_Position(&_ret));
+		return _ret;
+	}
+	final void Position(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).set_Position(value));
+	}
+	final void Delay(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).set_Delay(value));
+	}
+	final Windows.Foundation.TimeSpan Delay()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).get_Delay(&_ret));
+		return _ret;
+	}
+	final double Opacity()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).get_Opacity(&_ret));
+		return _ret;
+	}
+	final void Opacity(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).set_Opacity(value));
+	}
+	final Windows.Media.Editing.MediaOverlay Clone()
+	{
+		Windows.Media.Editing.MediaOverlay _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).abi_Clone(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Editing.MediaClip Clip()
+	{
+		Windows.Media.Editing.MediaClip _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).get_Clip(&_ret));
+		return _ret;
+	}
+	final bool AudioEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).get_AudioEnabled(&_ret));
+		return _ret;
+	}
+	final void AudioEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).set_AudioEnabled(value));
+	}
 }
 
 interface MediaOverlayLayer : Windows.Media.Editing.IMediaOverlayLayer
 {
+extern(Windows):
+	final Windows.Media.Editing.MediaOverlayLayer Clone()
+	{
+		Windows.Media.Editing.MediaOverlayLayer _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlayLayer).abi_Clone(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaOverlay) Overlays()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaOverlay) _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlayLayer).get_Overlays(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Effects.IVideoCompositorDefinition CustomCompositorDefinition()
+	{
+		Windows.Media.Effects.IVideoCompositorDefinition _ret;
+		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlayLayer).get_CustomCompositorDefinition(&_ret));
+		return _ret;
+	}
 }
 
 enum MediaTrimmingPreference

@@ -519,122 +519,1648 @@ extern(Windows):
 
 interface AudioDeviceInputNode : Windows.Media.Audio.IAudioDeviceInputNode, Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioInputNode2
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceInformation Device()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioDeviceInputNode).get_Device(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) OutgoingConnections()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).get_OutgoingConnections(&_ret));
+		return _ret;
+	}
+	final void AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnection(destination));
+	}
+	final void AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnectionWithGain(destination, gain));
+	}
+	final void RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_RemoveOutgoingConnection(destination));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		return _ret;
+	}
+	final void OutgoingGain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+	}
+	final double OutgoingGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		return _ret;
+	}
+	final bool ConsumeInput()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		return _ret;
+	}
+	final void ConsumeInput(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+	}
+	final void Reset()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+	}
+	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+	}
+	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Media.Audio.AudioNodeEmitter Emitter()
+	{
+		Windows.Media.Audio.AudioNodeEmitter _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode2).get_Emitter(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioDeviceOutputNode : Windows.Media.Audio.IAudioDeviceOutputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioNodeWithListener
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceInformation Device()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioDeviceOutputNode).get_Device(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		return _ret;
+	}
+	final void OutgoingGain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+	}
+	final double OutgoingGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		return _ret;
+	}
+	final bool ConsumeInput()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		return _ret;
+	}
+	final void ConsumeInput(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+	}
+	final void Reset()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+	}
+	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+	}
+	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final void Listener(Windows.Media.Audio.AudioNodeListener value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeWithListener).set_Listener(value));
+	}
+	final Windows.Media.Audio.AudioNodeListener Listener()
+	{
+		Windows.Media.Audio.AudioNodeListener _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeWithListener).get_Listener(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioFileInputNode : Windows.Media.Audio.IAudioFileInputNode, Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioInputNode2
 {
+extern(Windows):
+	final void PlaybackSpeedFactor(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).set_PlaybackSpeedFactor(value));
+	}
+	final double PlaybackSpeedFactor()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_PlaybackSpeedFactor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Position()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_Position(&_ret));
+		return _ret;
+	}
+	final void Seek(Windows.Foundation.TimeSpan position)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).abi_Seek(position));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) StartTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_StartTime(&_ret));
+		return _ret;
+	}
+	final void StartTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).set_StartTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) EndTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_EndTime(&_ret));
+		return _ret;
+	}
+	final void EndTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).set_EndTime(value));
+	}
+	final Windows.Foundation.IReference!(INT32) LoopCount()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_LoopCount(&_ret));
+		return _ret;
+	}
+	final void LoopCount(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).set_LoopCount(value));
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_Duration(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFile SourceFile()
+	{
+		Windows.Storage.StorageFile _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_SourceFile(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) OutgoingConnections()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).get_OutgoingConnections(&_ret));
+		return _ret;
+	}
+	final void AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnection(destination));
+	}
+	final void AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnectionWithGain(destination, gain));
+	}
+	final void RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_RemoveOutgoingConnection(destination));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		return _ret;
+	}
+	final void OutgoingGain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+	}
+	final double OutgoingGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		return _ret;
+	}
+	final bool ConsumeInput()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		return _ret;
+	}
+	final void ConsumeInput(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+	}
+	final void Reset()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+	}
+	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+	}
+	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Media.Audio.AudioNodeEmitter Emitter()
+	{
+		Windows.Media.Audio.AudioNodeEmitter _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode2).get_Emitter(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioFileOutputNode : Windows.Media.Audio.IAudioFileOutputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Storage.IStorageFile File()
+	{
+		Windows.Storage.IStorageFile _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileOutputNode).get_File(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.MediaEncodingProfile FileEncodingProfile()
+	{
+		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileOutputNode).get_FileEncodingProfile(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.TranscodeFailureReason) FinalizeAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.TranscodeFailureReason) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileOutputNode).abi_FinalizeAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		return _ret;
+	}
+	final void OutgoingGain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+	}
+	final double OutgoingGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		return _ret;
+	}
+	final bool ConsumeInput()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		return _ret;
+	}
+	final void ConsumeInput(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+	}
+	final void Reset()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+	}
+	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+	}
+	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface AudioFrameCompletedEventArgs : Windows.Media.Audio.IAudioFrameCompletedEventArgs
 {
+extern(Windows):
+	final Windows.Media.AudioFrame Frame()
+	{
+		Windows.Media.AudioFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameCompletedEventArgs).get_Frame(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioFrameInputNode : Windows.Media.Audio.IAudioFrameInputNode, Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioInputNode2
 {
+extern(Windows):
+	final void PlaybackSpeedFactor(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).set_PlaybackSpeedFactor(value));
+	}
+	final double PlaybackSpeedFactor()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).get_PlaybackSpeedFactor(&_ret));
+		return _ret;
+	}
+	final void AddFrame(Windows.Media.AudioFrame frame)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).abi_AddFrame(frame));
+	}
+	final void DiscardQueuedFrames()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).abi_DiscardQueuedFrames());
+	}
+	final UINT64 QueuedSampleCount()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).get_QueuedSampleCount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) OutgoingConnections()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).get_OutgoingConnections(&_ret));
+		return _ret;
+	}
+	final void AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnection(destination));
+	}
+	final void AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnectionWithGain(destination, gain));
+	}
+	final void RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_RemoveOutgoingConnection(destination));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		return _ret;
+	}
+	final void OutgoingGain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+	}
+	final double OutgoingGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		return _ret;
+	}
+	final bool ConsumeInput()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		return _ret;
+	}
+	final void ConsumeInput(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+	}
+	final void Reset()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+	}
+	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+	}
+	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Media.Audio.AudioNodeEmitter Emitter()
+	{
+		Windows.Media.Audio.AudioNodeEmitter _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode2).get_Emitter(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioFrameOutputNode : Windows.Media.Audio.IAudioFrameOutputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Media.AudioFrame GetFrame()
+	{
+		Windows.Media.AudioFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameOutputNode).abi_GetFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		return _ret;
+	}
+	final void OutgoingGain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+	}
+	final double OutgoingGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		return _ret;
+	}
+	final bool ConsumeInput()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		return _ret;
+	}
+	final void ConsumeInput(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+	}
+	final void Reset()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+	}
+	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+	}
+	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface AudioGraph : Windows.Media.Audio.IAudioGraph, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioGraph2
 {
+extern(Windows):
+	final Windows.Media.Audio.AudioFrameInputNode CreateFrameInputNode()
+	{
+		Windows.Media.Audio.AudioFrameInputNode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFrameInputNode(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioFrameInputNode CreateFrameInputNodeWithFormat(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
+	{
+		Windows.Media.Audio.AudioFrameInputNode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFrameInputNodeWithFormat(encodingProperties, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeAsync(Windows.Media.Capture.MediaCategory category)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateDeviceInputNodeAsync(category, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeWithFormatAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateDeviceInputNodeWithFormatAsync(category, encodingProperties, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeWithFormatOnDeviceAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Devices.Enumeration.DeviceInformation device)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateDeviceInputNodeWithFormatOnDeviceAsync(category, encodingProperties, device, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioFrameOutputNode CreateFrameOutputNode()
+	{
+		Windows.Media.Audio.AudioFrameOutputNode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFrameOutputNode(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioFrameOutputNode CreateFrameOutputNodeWithFormat(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
+	{
+		Windows.Media.Audio.AudioFrameOutputNode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFrameOutputNodeWithFormat(encodingProperties, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceOutputNodeResult) CreateDeviceOutputNodeAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceOutputNodeResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateDeviceOutputNodeAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult) CreateFileInputNodeAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFileInputNodeAsync(file, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult) CreateFileOutputNodeAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFileOutputNodeAsync(file, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult) CreateFileOutputNodeWithFileProfileAsync(Windows.Storage.IStorageFile file, Windows.Media.MediaProperties.MediaEncodingProfile fileEncodingProfile)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFileOutputNodeWithFileProfileAsync(file, fileEncodingProfile, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioSubmixNode CreateSubmixNode()
+	{
+		Windows.Media.Audio.AudioSubmixNode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateSubmixNode(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioSubmixNode CreateSubmixNodeWithFormat(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
+	{
+		Windows.Media.Audio.AudioSubmixNode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateSubmixNodeWithFormat(encodingProperties, &_ret));
+		return _ret;
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_Stop());
+	}
+	final void ResetAllNodes()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_ResetAllNodes());
+	}
+	final UINT64 CompletedQuantumCount()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).get_CompletedQuantumCount(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).get_EncodingProperties(&_ret));
+		return _ret;
+	}
+	final INT32 LatencyInSamples()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).get_LatencyInSamples(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DeviceInformation PrimaryRenderDevice()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).get_PrimaryRenderDevice(&_ret));
+		return _ret;
+	}
+	final Windows.Media.AudioProcessing RenderDeviceAudioProcessing()
+	{
+		Windows.Media.AudioProcessing _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).get_RenderDeviceAudioProcessing(&_ret));
+		return _ret;
+	}
+	final INT32 SamplesPerQuantum()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).get_SamplesPerQuantum(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Media.Audio.AudioFrameInputNode CreateFrameInputNodeWithFormatAndEmitter(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter)
+	{
+		Windows.Media.Audio.AudioFrameInputNode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph2).abi_CreateFrameInputNodeWithFormatAndEmitter(encodingProperties, emitter, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Devices.Enumeration.DeviceInformation device, Windows.Media.Audio.AudioNodeEmitter emitter)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph2).abi_CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(category, encodingProperties, device, emitter, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult) CreateFileInputNodeWithEmitterAsync(Windows.Storage.IStorageFile file, Windows.Media.Audio.AudioNodeEmitter emitter)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph2).abi_CreateFileInputNodeWithEmitterAsync(file, emitter, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioSubmixNode CreateSubmixNodeWithFormatAndEmitter(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter)
+	{
+		Windows.Media.Audio.AudioSubmixNode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph2).abi_CreateSubmixNodeWithFormatAndEmitter(encodingProperties, emitter, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioGraphBatchUpdater CreateBatchUpdater()
+	{
+		Windows.Media.Audio.AudioGraphBatchUpdater _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph2).abi_CreateBatchUpdater(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioGraphBatchUpdater : Windows.Foundation.IClosable
 {
+extern(Windows):
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface AudioGraphConnection : Windows.Media.Audio.IAudioGraphConnection
 {
+extern(Windows):
+	final Windows.Media.Audio.IAudioNode Destination()
+	{
+		Windows.Media.Audio.IAudioNode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphConnection).get_Destination(&_ret));
+		return _ret;
+	}
+	final void Gain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphConnection).set_Gain(value));
+	}
+	final double Gain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphConnection).get_Gain(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioGraphSettings : Windows.Media.Audio.IAudioGraphSettings
 {
+extern(Windows):
+	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).get_EncodingProperties(&_ret));
+		return _ret;
+	}
+	final void EncodingProperties(Windows.Media.MediaProperties.AudioEncodingProperties value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).set_EncodingProperties(value));
+	}
+	final Windows.Devices.Enumeration.DeviceInformation PrimaryRenderDevice()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).get_PrimaryRenderDevice(&_ret));
+		return _ret;
+	}
+	final void PrimaryRenderDevice(Windows.Devices.Enumeration.DeviceInformation value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).set_PrimaryRenderDevice(value));
+	}
+	final Windows.Media.Audio.QuantumSizeSelectionMode QuantumSizeSelectionMode()
+	{
+		Windows.Media.Audio.QuantumSizeSelectionMode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).get_QuantumSizeSelectionMode(&_ret));
+		return _ret;
+	}
+	final void QuantumSizeSelectionMode(Windows.Media.Audio.QuantumSizeSelectionMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).set_QuantumSizeSelectionMode(value));
+	}
+	final INT32 DesiredSamplesPerQuantum()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).get_DesiredSamplesPerQuantum(&_ret));
+		return _ret;
+	}
+	final void DesiredSamplesPerQuantum(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).set_DesiredSamplesPerQuantum(value));
+	}
+	final Windows.Media.Render.AudioRenderCategory AudioRenderCategory()
+	{
+		Windows.Media.Render.AudioRenderCategory _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).get_AudioRenderCategory(&_ret));
+		return _ret;
+	}
+	final void AudioRenderCategory(Windows.Media.Render.AudioRenderCategory value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).set_AudioRenderCategory(value));
+	}
+	final Windows.Media.AudioProcessing DesiredRenderDeviceAudioProcessing()
+	{
+		Windows.Media.AudioProcessing _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).get_DesiredRenderDeviceAudioProcessing(&_ret));
+		return _ret;
+	}
+	final void DesiredRenderDeviceAudioProcessing(Windows.Media.AudioProcessing value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).set_DesiredRenderDeviceAudioProcessing(value));
+	}
 }
 
 interface AudioGraphUnrecoverableErrorOccurredEventArgs : Windows.Media.Audio.IAudioGraphUnrecoverableErrorOccurredEventArgs
 {
+extern(Windows):
+	final Windows.Media.Audio.AudioGraphUnrecoverableError Error()
+	{
+		Windows.Media.Audio.AudioGraphUnrecoverableError _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphUnrecoverableErrorOccurredEventArgs).get_Error(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioNodeEmitter : Windows.Media.Audio.IAudioNodeEmitter, Windows.Media.Audio.IAudioNodeEmitter2
 {
+extern(Windows):
+	final Windows.Foundation.Numerics.Vector3 Position()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_Position(&_ret));
+		return _ret;
+	}
+	final void Position(Windows.Foundation.Numerics.Vector3 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).set_Position(value));
+	}
+	final Windows.Foundation.Numerics.Vector3 Direction()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_Direction(&_ret));
+		return _ret;
+	}
+	final void Direction(Windows.Foundation.Numerics.Vector3 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).set_Direction(value));
+	}
+	final Windows.Media.Audio.AudioNodeEmitterShape Shape()
+	{
+		Windows.Media.Audio.AudioNodeEmitterShape _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_Shape(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioNodeEmitterDecayModel DecayModel()
+	{
+		Windows.Media.Audio.AudioNodeEmitterDecayModel _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_DecayModel(&_ret));
+		return _ret;
+	}
+	final double Gain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_Gain(&_ret));
+		return _ret;
+	}
+	final void Gain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).set_Gain(value));
+	}
+	final double DistanceScale()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_DistanceScale(&_ret));
+		return _ret;
+	}
+	final void DistanceScale(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).set_DistanceScale(value));
+	}
+	final double DopplerScale()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_DopplerScale(&_ret));
+		return _ret;
+	}
+	final void DopplerScale(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).set_DopplerScale(value));
+	}
+	final Windows.Foundation.Numerics.Vector3 DopplerVelocity()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_DopplerVelocity(&_ret));
+		return _ret;
+	}
+	final void DopplerVelocity(Windows.Foundation.Numerics.Vector3 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).set_DopplerVelocity(value));
+	}
+	final bool IsDopplerDisabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_IsDopplerDisabled(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.SpatialAudioModel SpatialAudioModel()
+	{
+		Windows.Media.Audio.SpatialAudioModel _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter2).get_SpatialAudioModel(&_ret));
+		return _ret;
+	}
+	final void SpatialAudioModel(Windows.Media.Audio.SpatialAudioModel value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter2).set_SpatialAudioModel(value));
+	}
 }
 
 interface AudioNodeEmitterConeProperties : Windows.Media.Audio.IAudioNodeEmitterConeProperties
 {
+extern(Windows):
+	final double InnerAngle()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterConeProperties).get_InnerAngle(&_ret));
+		return _ret;
+	}
+	final double OuterAngle()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterConeProperties).get_OuterAngle(&_ret));
+		return _ret;
+	}
+	final double OuterAngleGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterConeProperties).get_OuterAngleGain(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioNodeEmitterDecayModel : Windows.Media.Audio.IAudioNodeEmitterDecayModel
 {
+extern(Windows):
+	final Windows.Media.Audio.AudioNodeEmitterDecayKind Kind()
+	{
+		Windows.Media.Audio.AudioNodeEmitterDecayKind _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterDecayModel).get_Kind(&_ret));
+		return _ret;
+	}
+	final double MinGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterDecayModel).get_MinGain(&_ret));
+		return _ret;
+	}
+	final double MaxGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterDecayModel).get_MaxGain(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioNodeEmitterNaturalDecayModelProperties NaturalProperties()
+	{
+		Windows.Media.Audio.AudioNodeEmitterNaturalDecayModelProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterDecayModel).get_NaturalProperties(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioNodeEmitterNaturalDecayModelProperties : Windows.Media.Audio.IAudioNodeEmitterNaturalDecayModelProperties
 {
+extern(Windows):
+	final double UnityGainDistance()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterNaturalDecayModelProperties).get_UnityGainDistance(&_ret));
+		return _ret;
+	}
+	final double CutoffDistance()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterNaturalDecayModelProperties).get_CutoffDistance(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioNodeEmitterShape : Windows.Media.Audio.IAudioNodeEmitterShape
 {
+extern(Windows):
+	final Windows.Media.Audio.AudioNodeEmitterShapeKind Kind()
+	{
+		Windows.Media.Audio.AudioNodeEmitterShapeKind _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterShape).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioNodeEmitterConeProperties ConeProperties()
+	{
+		Windows.Media.Audio.AudioNodeEmitterConeProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterShape).get_ConeProperties(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioNodeListener : Windows.Media.Audio.IAudioNodeListener
 {
+extern(Windows):
+	final Windows.Foundation.Numerics.Vector3 Position()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).get_Position(&_ret));
+		return _ret;
+	}
+	final void Position(Windows.Foundation.Numerics.Vector3 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).set_Position(value));
+	}
+	final Windows.Foundation.Numerics.Quaternion Orientation()
+	{
+		Windows.Foundation.Numerics.Quaternion _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).get_Orientation(&_ret));
+		return _ret;
+	}
+	final void Orientation(Windows.Foundation.Numerics.Quaternion value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).set_Orientation(value));
+	}
+	final double SpeedOfSound()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).get_SpeedOfSound(&_ret));
+		return _ret;
+	}
+	final void SpeedOfSound(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).set_SpeedOfSound(value));
+	}
+	final Windows.Foundation.Numerics.Vector3 DopplerVelocity()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).get_DopplerVelocity(&_ret));
+		return _ret;
+	}
+	final void DopplerVelocity(Windows.Foundation.Numerics.Vector3 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).set_DopplerVelocity(value));
+	}
 }
 
 interface AudioSubmixNode : Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioInputNode2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) OutgoingConnections()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).get_OutgoingConnections(&_ret));
+		return _ret;
+	}
+	final void AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnection(destination));
+	}
+	final void AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnectionWithGain(destination, gain));
+	}
+	final void RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_RemoveOutgoingConnection(destination));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		return _ret;
+	}
+	final void OutgoingGain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+	}
+	final double OutgoingGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		return _ret;
+	}
+	final bool ConsumeInput()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		return _ret;
+	}
+	final void ConsumeInput(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+	}
+	final void Reset()
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+	}
+	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+	}
+	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Media.Audio.AudioNodeEmitter Emitter()
+	{
+		Windows.Media.Audio.AudioNodeEmitter _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode2).get_Emitter(&_ret));
+		return _ret;
+	}
 }
 
 interface CreateAudioDeviceInputNodeResult : Windows.Media.Audio.ICreateAudioDeviceInputNodeResult
 {
+extern(Windows):
+	final Windows.Media.Audio.AudioDeviceNodeCreationStatus Status()
+	{
+		Windows.Media.Audio.AudioDeviceNodeCreationStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioDeviceInputNodeResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioDeviceInputNode DeviceInputNode()
+	{
+		Windows.Media.Audio.AudioDeviceInputNode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioDeviceInputNodeResult).get_DeviceInputNode(&_ret));
+		return _ret;
+	}
 }
 
 interface CreateAudioDeviceOutputNodeResult : Windows.Media.Audio.ICreateAudioDeviceOutputNodeResult
 {
+extern(Windows):
+	final Windows.Media.Audio.AudioDeviceNodeCreationStatus Status()
+	{
+		Windows.Media.Audio.AudioDeviceNodeCreationStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioDeviceOutputNodeResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioDeviceOutputNode DeviceOutputNode()
+	{
+		Windows.Media.Audio.AudioDeviceOutputNode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioDeviceOutputNodeResult).get_DeviceOutputNode(&_ret));
+		return _ret;
+	}
 }
 
 interface CreateAudioFileInputNodeResult : Windows.Media.Audio.ICreateAudioFileInputNodeResult
 {
+extern(Windows):
+	final Windows.Media.Audio.AudioFileNodeCreationStatus Status()
+	{
+		Windows.Media.Audio.AudioFileNodeCreationStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioFileInputNodeResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioFileInputNode FileInputNode()
+	{
+		Windows.Media.Audio.AudioFileInputNode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioFileInputNodeResult).get_FileInputNode(&_ret));
+		return _ret;
+	}
 }
 
 interface CreateAudioFileOutputNodeResult : Windows.Media.Audio.ICreateAudioFileOutputNodeResult
 {
+extern(Windows):
+	final Windows.Media.Audio.AudioFileNodeCreationStatus Status()
+	{
+		Windows.Media.Audio.AudioFileNodeCreationStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioFileOutputNodeResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioFileOutputNode FileOutputNode()
+	{
+		Windows.Media.Audio.AudioFileOutputNode _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioFileOutputNodeResult).get_FileOutputNode(&_ret));
+		return _ret;
+	}
 }
 
 interface CreateAudioGraphResult : Windows.Media.Audio.ICreateAudioGraphResult
 {
+extern(Windows):
+	final Windows.Media.Audio.AudioGraphCreationStatus Status()
+	{
+		Windows.Media.Audio.AudioGraphCreationStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioGraphResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Audio.AudioGraph Graph()
+	{
+		Windows.Media.Audio.AudioGraph _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioGraphResult).get_Graph(&_ret));
+		return _ret;
+	}
 }
 
 interface EchoEffectDefinition : Windows.Media.Audio.IEchoEffectDefinition, Windows.Media.Effects.IAudioEffectDefinition
 {
+extern(Windows):
+	final void WetDryMix(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IEchoEffectDefinition).set_WetDryMix(value));
+	}
+	final double WetDryMix()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IEchoEffectDefinition).get_WetDryMix(&_ret));
+		return _ret;
+	}
+	final void Feedback(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IEchoEffectDefinition).set_Feedback(value));
+	}
+	final double Feedback()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IEchoEffectDefinition).get_Feedback(&_ret));
+		return _ret;
+	}
+	final void Delay(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IEchoEffectDefinition).set_Delay(value));
+	}
+	final double Delay()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IEchoEffectDefinition).get_Delay(&_ret));
+		return _ret;
+	}
+	final HSTRING ActivatableClassId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_ActivatableClassId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface EqualizerBand : Windows.Media.Audio.IEqualizerBand
 {
+extern(Windows):
+	final double Bandwidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerBand).get_Bandwidth(&_ret));
+		return _ret;
+	}
+	final void Bandwidth(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerBand).set_Bandwidth(value));
+	}
+	final double FrequencyCenter()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerBand).get_FrequencyCenter(&_ret));
+		return _ret;
+	}
+	final void FrequencyCenter(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerBand).set_FrequencyCenter(value));
+	}
+	final double Gain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerBand).get_Gain(&_ret));
+		return _ret;
+	}
+	final void Gain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerBand).set_Gain(value));
+	}
 }
 
 interface EqualizerEffectDefinition : Windows.Media.Audio.IEqualizerEffectDefinition, Windows.Media.Effects.IAudioEffectDefinition
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.EqualizerBand) Bands()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.EqualizerBand) _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerEffectDefinition).get_Bands(&_ret));
+		return _ret;
+	}
+	final HSTRING ActivatableClassId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_ActivatableClassId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface FrameInputNodeQuantumStartedEventArgs : Windows.Media.Audio.IFrameInputNodeQuantumStartedEventArgs
 {
+extern(Windows):
+	final INT32 RequiredSamples()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IFrameInputNodeQuantumStartedEventArgs).get_RequiredSamples(&_ret));
+		return _ret;
+	}
 }
 
 interface LimiterEffectDefinition : Windows.Media.Audio.ILimiterEffectDefinition, Windows.Media.Effects.IAudioEffectDefinition
 {
+extern(Windows):
+	final void Release(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.ILimiterEffectDefinition).set_Release(value));
+	}
+	final UINT32 Release()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.ILimiterEffectDefinition).get_Release(&_ret));
+		return _ret;
+	}
+	final void Loudness(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.ILimiterEffectDefinition).set_Loudness(value));
+	}
+	final UINT32 Loudness()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.ILimiterEffectDefinition).get_Loudness(&_ret));
+		return _ret;
+	}
+	final HSTRING ActivatableClassId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_ActivatableClassId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface ReverbEffectDefinition : Windows.Media.Audio.IReverbEffectDefinition, Windows.Media.Effects.IAudioEffectDefinition
 {
+extern(Windows):
+	final void WetDryMix(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_WetDryMix(value));
+	}
+	final double WetDryMix()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_WetDryMix(&_ret));
+		return _ret;
+	}
+	final void ReflectionsDelay(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_ReflectionsDelay(value));
+	}
+	final UINT32 ReflectionsDelay()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_ReflectionsDelay(&_ret));
+		return _ret;
+	}
+	final void ReverbDelay(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_ReverbDelay(value));
+	}
+	final BYTE ReverbDelay()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_ReverbDelay(&_ret));
+		return _ret;
+	}
+	final void RearDelay(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_RearDelay(value));
+	}
+	final BYTE RearDelay()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_RearDelay(&_ret));
+		return _ret;
+	}
+	final void PositionLeft(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_PositionLeft(value));
+	}
+	final BYTE PositionLeft()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_PositionLeft(&_ret));
+		return _ret;
+	}
+	final void PositionRight(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_PositionRight(value));
+	}
+	final BYTE PositionRight()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_PositionRight(&_ret));
+		return _ret;
+	}
+	final void PositionMatrixLeft(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_PositionMatrixLeft(value));
+	}
+	final BYTE PositionMatrixLeft()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_PositionMatrixLeft(&_ret));
+		return _ret;
+	}
+	final void PositionMatrixRight(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_PositionMatrixRight(value));
+	}
+	final BYTE PositionMatrixRight()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_PositionMatrixRight(&_ret));
+		return _ret;
+	}
+	final void EarlyDiffusion(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_EarlyDiffusion(value));
+	}
+	final BYTE EarlyDiffusion()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_EarlyDiffusion(&_ret));
+		return _ret;
+	}
+	final void LateDiffusion(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_LateDiffusion(value));
+	}
+	final BYTE LateDiffusion()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_LateDiffusion(&_ret));
+		return _ret;
+	}
+	final void LowEQGain(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_LowEQGain(value));
+	}
+	final BYTE LowEQGain()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_LowEQGain(&_ret));
+		return _ret;
+	}
+	final void LowEQCutoff(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_LowEQCutoff(value));
+	}
+	final BYTE LowEQCutoff()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_LowEQCutoff(&_ret));
+		return _ret;
+	}
+	final void HighEQGain(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_HighEQGain(value));
+	}
+	final BYTE HighEQGain()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_HighEQGain(&_ret));
+		return _ret;
+	}
+	final void HighEQCutoff(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_HighEQCutoff(value));
+	}
+	final BYTE HighEQCutoff()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_HighEQCutoff(&_ret));
+		return _ret;
+	}
+	final void RoomFilterFreq(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_RoomFilterFreq(value));
+	}
+	final double RoomFilterFreq()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_RoomFilterFreq(&_ret));
+		return _ret;
+	}
+	final void RoomFilterMain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_RoomFilterMain(value));
+	}
+	final double RoomFilterMain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_RoomFilterMain(&_ret));
+		return _ret;
+	}
+	final void RoomFilterHF(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_RoomFilterHF(value));
+	}
+	final double RoomFilterHF()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_RoomFilterHF(&_ret));
+		return _ret;
+	}
+	final void ReflectionsGain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_ReflectionsGain(value));
+	}
+	final double ReflectionsGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_ReflectionsGain(&_ret));
+		return _ret;
+	}
+	final void ReverbGain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_ReverbGain(value));
+	}
+	final double ReverbGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_ReverbGain(&_ret));
+		return _ret;
+	}
+	final void DecayTime(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_DecayTime(value));
+	}
+	final double DecayTime()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_DecayTime(&_ret));
+		return _ret;
+	}
+	final void Density(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_Density(value));
+	}
+	final double Density()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_Density(&_ret));
+		return _ret;
+	}
+	final void RoomSize(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_RoomSize(value));
+	}
+	final double RoomSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_RoomSize(&_ret));
+		return _ret;
+	}
+	final void DisableLateField(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_DisableLateField(value));
+	}
+	final bool DisableLateField()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_DisableLateField(&_ret));
+		return _ret;
+	}
+	final HSTRING ActivatableClassId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_ActivatableClassId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 enum AudioDeviceNodeCreationStatus

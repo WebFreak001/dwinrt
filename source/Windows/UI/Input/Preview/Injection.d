@@ -119,22 +119,263 @@ extern(Windows):
 
 interface InjectedInputKeyboardInfo : Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo
 {
+extern(Windows):
+	final Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions KeyOptions()
+	{
+		Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo).get_KeyOptions(&_ret));
+		return _ret;
+	}
+	final void KeyOptions(Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo).set_KeyOptions(value));
+	}
+	final UINT16 ScanCode()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo).get_ScanCode(&_ret));
+		return _ret;
+	}
+	final void ScanCode(UINT16 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo).set_ScanCode(value));
+	}
+	final UINT16 VirtualKey()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo).get_VirtualKey(&_ret));
+		return _ret;
+	}
+	final void VirtualKey(UINT16 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo).set_VirtualKey(value));
+	}
 }
 
 interface InjectedInputMouseInfo : Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo
 {
+extern(Windows):
+	final Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions MouseOptions()
+	{
+		Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).get_MouseOptions(&_ret));
+		return _ret;
+	}
+	final void MouseOptions(Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).set_MouseOptions(value));
+	}
+	final UINT32 MouseData()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).get_MouseData(&_ret));
+		return _ret;
+	}
+	final void MouseData(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).set_MouseData(value));
+	}
+	final INT32 DeltaY()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).get_DeltaY(&_ret));
+		return _ret;
+	}
+	final void DeltaY(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).set_DeltaY(value));
+	}
+	final INT32 DeltaX()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).get_DeltaX(&_ret));
+		return _ret;
+	}
+	final void DeltaX(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).set_DeltaX(value));
+	}
+	final UINT32 TimeOffsetInMilliseconds()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).get_TimeOffsetInMilliseconds(&_ret));
+		return _ret;
+	}
+	final void TimeOffsetInMilliseconds(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).set_TimeOffsetInMilliseconds(value));
+	}
 }
 
 interface InjectedInputPenInfo : Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo
 {
+extern(Windows):
+	final Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo PointerInfo()
+	{
+		Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_PointerInfo(&_ret));
+		return _ret;
+	}
+	final void PointerInfo(Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_PointerInfo(value));
+	}
+	final Windows.UI.Input.Preview.Injection.InjectedInputPenButtons PenButtons()
+	{
+		Windows.UI.Input.Preview.Injection.InjectedInputPenButtons _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_PenButtons(&_ret));
+		return _ret;
+	}
+	final void PenButtons(Windows.UI.Input.Preview.Injection.InjectedInputPenButtons value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_PenButtons(value));
+	}
+	final Windows.UI.Input.Preview.Injection.InjectedInputPenParameters PenParameters()
+	{
+		Windows.UI.Input.Preview.Injection.InjectedInputPenParameters _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_PenParameters(&_ret));
+		return _ret;
+	}
+	final void PenParameters(Windows.UI.Input.Preview.Injection.InjectedInputPenParameters value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_PenParameters(value));
+	}
+	final double Pressure()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_Pressure(&_ret));
+		return _ret;
+	}
+	final void Pressure(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_Pressure(value));
+	}
+	final double Rotation()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_Rotation(&_ret));
+		return _ret;
+	}
+	final void Rotation(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_Rotation(value));
+	}
+	final INT32 TiltX()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_TiltX(&_ret));
+		return _ret;
+	}
+	final void TiltX(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_TiltX(value));
+	}
+	final INT32 TiltY()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_TiltY(&_ret));
+		return _ret;
+	}
+	final void TiltY(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_TiltY(value));
+	}
 }
 
 interface InjectedInputTouchInfo : Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo
 {
+extern(Windows):
+	final Windows.UI.Input.Preview.Injection.InjectedInputRectangle Contact()
+	{
+		Windows.UI.Input.Preview.Injection.InjectedInputRectangle _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).get_Contact(&_ret));
+		return _ret;
+	}
+	final void Contact(Windows.UI.Input.Preview.Injection.InjectedInputRectangle value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).set_Contact(value));
+	}
+	final INT32 Orientation()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).get_Orientation(&_ret));
+		return _ret;
+	}
+	final void Orientation(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).set_Orientation(value));
+	}
+	final Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo PointerInfo()
+	{
+		Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).get_PointerInfo(&_ret));
+		return _ret;
+	}
+	final void PointerInfo(Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).set_PointerInfo(value));
+	}
+	final double Pressure()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).get_Pressure(&_ret));
+		return _ret;
+	}
+	final void Pressure(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).set_Pressure(value));
+	}
+	final Windows.UI.Input.Preview.Injection.InjectedInputTouchParameters TouchParameters()
+	{
+		Windows.UI.Input.Preview.Injection.InjectedInputTouchParameters _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).get_TouchParameters(&_ret));
+		return _ret;
+	}
+	final void TouchParameters(Windows.UI.Input.Preview.Injection.InjectedInputTouchParameters value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).set_TouchParameters(value));
+	}
 }
 
 interface InputInjector : Windows.UI.Input.Preview.Injection.IInputInjector
 {
+extern(Windows):
+	final void InjectKeyboardInput(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Preview.Injection.InjectedInputKeyboardInfo) input)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InjectKeyboardInput(input));
+	}
+	final void InjectMouseInput(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Preview.Injection.InjectedInputMouseInfo) input)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InjectMouseInput(input));
+	}
+	final void InitializeTouchInjection(Windows.UI.Input.Preview.Injection.InjectedInputVisualizationMode visualMode)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InitializeTouchInjection(visualMode));
+	}
+	final void InjectTouchInput(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Preview.Injection.InjectedInputTouchInfo) input)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InjectTouchInput(input));
+	}
+	final void UninitializeTouchInjection()
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_UninitializeTouchInjection());
+	}
+	final void InitializePenInjection(Windows.UI.Input.Preview.Injection.InjectedInputVisualizationMode visualMode)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InitializePenInjection(visualMode));
+	}
+	final void InjectPenInput(Windows.UI.Input.Preview.Injection.InjectedInputPenInfo input)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InjectPenInput(input));
+	}
+	final void UninitializePenInjection()
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_UninitializePenInjection());
+	}
+	final void InjectShortcut(Windows.UI.Input.Preview.Injection.InjectedInputShortcut shortcut)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InjectShortcut(shortcut));
+	}
 }
 
 enum InjectedInputButtonChangeKind

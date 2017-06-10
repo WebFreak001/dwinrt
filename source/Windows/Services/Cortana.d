@@ -42,10 +42,52 @@ extern(Windows):
 
 interface CortanaPermissionsManager : Windows.Services.Cortana.ICortanaPermissionsManager
 {
+extern(Windows):
+	final bool IsSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Services.Cortana.ICortanaPermissionsManager).abi_IsSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) ArePermissionsGrantedAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Cortana.CortanaPermission) permissions)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Services.Cortana.ICortanaPermissionsManager).abi_ArePermissionsGrantedAsync(permissions, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Services.Cortana.CortanaPermissionsChangeResult) GrantPermissionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Cortana.CortanaPermission) permissions)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Services.Cortana.CortanaPermissionsChangeResult) _ret;
+		Debug.OK(this.as!(Windows.Services.Cortana.ICortanaPermissionsManager).abi_GrantPermissionsAsync(permissions, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Services.Cortana.CortanaPermissionsChangeResult) RevokePermissionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Cortana.CortanaPermission) permissions)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Services.Cortana.CortanaPermissionsChangeResult) _ret;
+		Debug.OK(this.as!(Windows.Services.Cortana.ICortanaPermissionsManager).abi_RevokePermissionsAsync(permissions, &_ret));
+		return _ret;
+	}
 }
 
 interface CortanaSettings : Windows.Services.Cortana.ICortanaSettings
 {
+extern(Windows):
+	final bool HasUserConsentToVoiceActivation()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Services.Cortana.ICortanaSettings).get_HasUserConsentToVoiceActivation(&_ret));
+		return _ret;
+	}
+	final bool IsVoiceActivationEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Services.Cortana.ICortanaSettings).get_IsVoiceActivationEnabled(&_ret));
+		return _ret;
+	}
+	final void IsVoiceActivationEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Services.Cortana.ICortanaSettings).set_IsVoiceActivationEnabled(value));
+	}
 }
 
 enum CortanaPermission

@@ -49,8 +49,24 @@ extern(Windows):
 
 interface PreallocatedWorkItem : Windows.System.Threading.Core.IPreallocatedWorkItem
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction RunAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.System.Threading.Core.IPreallocatedWorkItem).abi_RunAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface SignalNotifier : Windows.System.Threading.Core.ISignalNotifier
 {
+extern(Windows):
+	final void Enable()
+	{
+		Debug.OK(this.as!(Windows.System.Threading.Core.ISignalNotifier).abi_Enable());
+	}
+	final void Terminate()
+	{
+		Debug.OK(this.as!(Windows.System.Threading.Core.ISignalNotifier).abi_Terminate());
+	}
 }

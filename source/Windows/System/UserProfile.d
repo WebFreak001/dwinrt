@@ -138,10 +138,36 @@ interface AdvertisingManager
 
 interface AdvertisingManagerForUser : Windows.System.UserProfile.IAdvertisingManagerForUser
 {
+extern(Windows):
+	final HSTRING AdvertisingId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.System.UserProfile.IAdvertisingManagerForUser).get_AdvertisingId(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.System.UserProfile.IAdvertisingManagerForUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface DiagnosticsSettings : Windows.System.UserProfile.IDiagnosticsSettings
 {
+extern(Windows):
+	final bool CanUseDiagnosticsToTailorExperiences()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.System.UserProfile.IDiagnosticsSettings).get_CanUseDiagnosticsToTailorExperiences(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.System.UserProfile.IDiagnosticsSettings).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface FirstSignInSettings : Windows.System.UserProfile.IFirstSignInSettings, Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
@@ -162,6 +188,19 @@ interface UserInformation
 
 interface UserProfilePersonalizationSettings : Windows.System.UserProfile.IUserProfilePersonalizationSettings
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(bool) TrySetLockScreenImageAsync(Windows.Storage.StorageFile imageFile)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.System.UserProfile.IUserProfilePersonalizationSettings).abi_TrySetLockScreenImageAsync(imageFile, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TrySetWallpaperImageAsync(Windows.Storage.StorageFile imageFile)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.System.UserProfile.IUserProfilePersonalizationSettings).abi_TrySetWallpaperImageAsync(imageFile, &_ret));
+		return _ret;
+	}
 }
 
 enum AccountPictureKind

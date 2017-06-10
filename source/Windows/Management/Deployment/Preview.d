@@ -25,4 +25,17 @@ interface ClassicAppManager
 
 interface InstalledClassicAppInfo : Windows.Management.Deployment.Preview.IInstalledClassicAppInfo
 {
+extern(Windows):
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Management.Deployment.Preview.IInstalledClassicAppInfo).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayVersion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Management.Deployment.Preview.IInstalledClassicAppInfo).get_DisplayVersion(&_ret));
+		return _ret;
+	}
 }

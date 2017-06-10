@@ -157,10 +157,60 @@ extern(Windows):
 
 interface KeyCredential : Windows.Security.Credentials.IKeyCredential
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IKeyCredential).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RetrievePublicKeyWithDefaultBlobType()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IKeyCredential).abi_RetrievePublicKeyWithDefaultBlobType(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RetrievePublicKeyWithBlobType(Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType blobType)
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IKeyCredential).abi_RetrievePublicKeyWithBlobType(blobType, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialOperationResult) RequestSignAsync(Windows.Storage.Streams.IBuffer data)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialOperationResult) _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IKeyCredential).abi_RequestSignAsync(data, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialAttestationResult) GetAttestationAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialAttestationResult) _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IKeyCredential).abi_GetAttestationAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface KeyCredentialAttestationResult : Windows.Security.Credentials.IKeyCredentialAttestationResult
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer CertificateChainBuffer()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IKeyCredentialAttestationResult).get_CertificateChainBuffer(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer AttestationBuffer()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IKeyCredentialAttestationResult).get_AttestationBuffer(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Credentials.KeyCredentialAttestationStatus Status()
+	{
+		Windows.Security.Credentials.KeyCredentialAttestationStatus _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IKeyCredentialAttestationResult).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface KeyCredentialManager
@@ -169,14 +219,81 @@ interface KeyCredentialManager
 
 interface KeyCredentialOperationResult : Windows.Security.Credentials.IKeyCredentialOperationResult
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer Result()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IKeyCredentialOperationResult).get_Result(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Credentials.KeyCredentialStatus Status()
+	{
+		Windows.Security.Credentials.KeyCredentialStatus _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IKeyCredentialOperationResult).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface KeyCredentialRetrievalResult : Windows.Security.Credentials.IKeyCredentialRetrievalResult
 {
+extern(Windows):
+	final Windows.Security.Credentials.KeyCredential Credential()
+	{
+		Windows.Security.Credentials.KeyCredential _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IKeyCredentialRetrievalResult).get_Credential(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Credentials.KeyCredentialStatus Status()
+	{
+		Windows.Security.Credentials.KeyCredentialStatus _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IKeyCredentialRetrievalResult).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface PasswordCredential : Windows.Security.Credentials.IPasswordCredential
 {
+extern(Windows):
+	final HSTRING Resource()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordCredential).get_Resource(&_ret));
+		return _ret;
+	}
+	final void Resource(HSTRING resource)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordCredential).set_Resource(resource));
+	}
+	final HSTRING UserName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordCredential).get_UserName(&_ret));
+		return _ret;
+	}
+	final void UserName(HSTRING userName)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordCredential).set_UserName(userName));
+	}
+	final HSTRING Password()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordCredential).get_Password(&_ret));
+		return _ret;
+	}
+	final void Password(HSTRING password)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordCredential).set_Password(password));
+	}
+	final void RetrievePassword()
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordCredential).abi_RetrievePassword());
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordCredential).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface PasswordCredentialPropertyStore : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
@@ -185,14 +302,134 @@ interface PasswordCredentialPropertyStore : Windows.Foundation.Collections.IProp
 
 interface PasswordVault : Windows.Security.Credentials.IPasswordVault
 {
+extern(Windows):
+	final void Add(Windows.Security.Credentials.PasswordCredential credential)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordVault).abi_Add(credential));
+	}
+	final void Remove(Windows.Security.Credentials.PasswordCredential credential)
+	{
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordVault).abi_Remove(credential));
+	}
+	final Windows.Security.Credentials.PasswordCredential Retrieve(HSTRING resource, HSTRING userName)
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordVault).abi_Retrieve(resource, userName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) FindAllByResource(HSTRING resource)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordVault).abi_FindAllByResource(resource, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) FindAllByUserName(HSTRING userName)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordVault).abi_FindAllByUserName(userName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) RetrieveAll()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordVault).abi_RetrieveAll(&_ret));
+		return _ret;
+	}
 }
 
 interface WebAccount : Windows.Security.Credentials.IWebAccount, Windows.Security.Credentials.IWebAccount2
 {
+extern(Windows):
+	final Windows.Security.Credentials.WebAccountProvider WebAccountProvider()
+	{
+		Windows.Security.Credentials.WebAccountProvider _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccount).get_WebAccountProvider(&_ret));
+		return _ret;
+	}
+	final HSTRING UserName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccount).get_UserName(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Credentials.WebAccountState State()
+	{
+		Windows.Security.Credentials.WebAccountState _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccount).get_State(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccount2).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccount2).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) GetPictureAsync(Windows.Security.Credentials.WebAccountPictureSize desizedSize)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccount2).abi_GetPictureAsync(desizedSize, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SignOutAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccount2).abi_SignOutAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SignOutWithClientIdAsync(HSTRING clientId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccount2).abi_SignOutWithClientIdAsync(clientId, &_ret));
+		return _ret;
+	}
 }
 
 interface WebAccountProvider : Windows.Security.Credentials.IWebAccountProvider, Windows.Security.Credentials.IWebAccountProvider2, Windows.Security.Credentials.IWebAccountProvider3
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccountProvider).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccountProvider).get_DisplayName(&_ret));
+		return _ret;
+	}
+	deprecated("IconUri may be altered or unavailable for releases after Windows 8.2. Instead, use Icon.")
+	final Windows.Foundation.Uri IconUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccountProvider).get_IconUri(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayPurpose()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccountProvider2).get_DisplayPurpose(&_ret));
+		return _ret;
+	}
+	final HSTRING Authority()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccountProvider2).get_Authority(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccountProvider3).get_User(&_ret));
+		return _ret;
+	}
 }
 
 enum KeyCredentialAttestationStatus

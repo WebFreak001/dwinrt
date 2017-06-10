@@ -59,6 +59,79 @@ struct TimeSpan
 	INT64 Duration;
 }
 
+interface EventHandler(TArgs) : IUnknown
+{
+extern(Windows):
+	HRESULT abi_Invoke(IInspectable sender, TArgs args);
+}
+
+interface TypedEventHandler(TSender, TArgs) : IUnknown
+{
+extern(Windows):
+	HRESULT abi_Invoke(TSender sender, TArgs args);
+}
+
+interface IAsyncActionWithProgress(TProgress) : IInspectable
+{
+extern(Windows):
+	HRESULT set_Progress(AsyncActionProgressHandler!(TProgress) handler);
+	HRESULT get_Progress(AsyncActionProgressHandler!(TProgress)* return_handler);
+}
+
+interface AsyncActionProgressHandler(TProgress) : IUnknown
+{
+extern(Windows):
+	HRESULT abi_Invoke(IAsyncActionWithProgress!(TProgress) asyncInfo, TProgress progressInfo);
+}
+
+interface AsyncActionWithProgressCompletedHandler(TProgress) : IUnknown
+{
+extern(Windows):
+	HRESULT abi_Invoke(IAsyncActionWithProgress!(TProgress) asyncInfo, AsyncStatus status);
+}
+
+interface IAsyncOperation(TResult) : IInspectable
+{
+extern(Windows):
+	HRESULT set_Completed(AsyncOperationCompletedHandler!(TResult) handler);
+	HRESULT get_Completed(AsyncOperationCompletedHandler!(TResult)* return_handler);
+	HRESULT get_Results(TResult* return_results);
+}
+
+interface AsyncOperationProgressHandler(TResult, TProgress) : IUnknown
+{
+extern(Windows):
+	HRESULT abi_Invoke(IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, TProgress progressInfo);
+}
+
+interface AsyncOperationCompletedHandler(TResult) : IUnknown
+{
+extern(Windows):
+	HRESULT abi_Invoke(IAsyncOperation!(TResult) asyncInfo, AsyncStatus status);
+}
+
+interface IAsyncOperationWithProgress(TResult, TProgress) : IInspectable
+{
+extern(Windows):
+	HRESULT set_Progress(AsyncOperationProgressHandler!(TResult, TProgress) handler);
+	HRESULT get_Progress(AsyncOperationProgressHandler!(TResult, TProgress)* return_handler);
+	HRESULT set_Completed(AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) handler);
+	HRESULT get_Completed(AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)* return_handler);
+	HRESULT get_Results(TResult* return_results);
+}
+
+interface AsyncOperationWithProgressCompletedHandler(TResult, TProgress) : IUnknown
+{
+extern(Windows):
+	HRESULT abi_Invoke(IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status);
+}
+
+interface IReference(Type) : IUnknown
+{
+extern(Windows):
+	HRESULT get_Value(Type* return_value);
+}
+
 @uuid("d8f579ab-402d-4b8e-82d9-5d63b1065c68")
 interface IMetaDataTables : IUnknown
 {
@@ -358,10 +431,30 @@ extern(Windows):
 
 interface Deferral : Windows.Foundation.IDeferral, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IDeferral).abi_Complete());
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface MemoryBuffer : Windows.Foundation.IMemoryBuffer, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Foundation.IMemoryBufferReference CreateReference()
+	{
+		Windows.Foundation.IMemoryBufferReference _ret;
+		Debug.OK(this.as!(Windows.Foundation.IMemoryBuffer).abi_CreateReference(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface PropertyValue
@@ -370,14 +463,155 @@ interface PropertyValue
 
 interface Uri : Windows.Foundation.IUriRuntimeClass, Windows.Foundation.IUriRuntimeClassWithAbsoluteCanonicalUri, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING AbsoluteUri()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_AbsoluteUri(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayUri()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_DisplayUri(&_ret));
+		return _ret;
+	}
+	final HSTRING Domain()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Domain(&_ret));
+		return _ret;
+	}
+	final HSTRING Extension()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Extension(&_ret));
+		return _ret;
+	}
+	final HSTRING Fragment()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Fragment(&_ret));
+		return _ret;
+	}
+	final HSTRING Host()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Host(&_ret));
+		return _ret;
+	}
+	final HSTRING Password()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Password(&_ret));
+		return _ret;
+	}
+	final HSTRING Path()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Path(&_ret));
+		return _ret;
+	}
+	final HSTRING Query()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Query(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.WwwFormUrlDecoder QueryParsed()
+	{
+		Windows.Foundation.WwwFormUrlDecoder _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_QueryParsed(&_ret));
+		return _ret;
+	}
+	final HSTRING RawUri()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_RawUri(&_ret));
+		return _ret;
+	}
+	final HSTRING SchemeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_SchemeName(&_ret));
+		return _ret;
+	}
+	final HSTRING UserName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_UserName(&_ret));
+		return _ret;
+	}
+	final INT32 Port()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Port(&_ret));
+		return _ret;
+	}
+	final bool Suspicious()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Suspicious(&_ret));
+		return _ret;
+	}
+	final bool Equals(Windows.Foundation.Uri pUri)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).abi_Equals(pUri, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri CombineUri(HSTRING relativeUri)
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).abi_CombineUri(relativeUri, &_ret));
+		return _ret;
+	}
+	final HSTRING AbsoluteCanonicalUri()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClassWithAbsoluteCanonicalUri).get_AbsoluteCanonicalUri(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayIri()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClassWithAbsoluteCanonicalUri).get_DisplayIri(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface WwwFormUrlDecoder : Windows.Foundation.IWwwFormUrlDecoderRuntimeClass, Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry), Windows.Foundation.Collections.IIterable!(Windows.Foundation.IWwwFormUrlDecoderEntry)
 {
+extern(Windows):
+	final HSTRING GetFirstValueByName(HSTRING name)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IWwwFormUrlDecoderRuntimeClass).abi_GetFirstValueByName(name, &_ret));
+		return _ret;
+	}
 }
 
 interface WwwFormUrlDecoderEntry : Windows.Foundation.IWwwFormUrlDecoderEntry
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IWwwFormUrlDecoderEntry).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IWwwFormUrlDecoderEntry).get_Value(&_ret));
+		return _ret;
+	}
 }
 
 enum PropertyType
@@ -492,80 +726,3 @@ enum IsAsync(T) = is(T == struct) && __traits(compiles, {
 		auto res = async.GetResults;
 		static assert(!is(typeof(res) == void));
 	});
-
-interface EventHandler(T) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IInspectable sender, T args);
-}
-
-interface TypedEventHandler(TSender, TArgs) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(TSender sender, TArgs args);
-}
-
-interface IAsyncActionWithProgress(TProgress) : IInspectable
-{
-extern (Windows):
-	HRESULT put_Progress(AsyncActionProgressHandler!TProgress handler);
-	HRESULT get_Progress(AsyncActionProgressHandler!TProgress* handler);
-	HRESULT put_Completed(AsyncActionWithProgressCompletedHandler!TProgress handler);
-	HRESULT get_Completed(AsyncActionWithProgressCompletedHandler!TProgress* handler);
-	HRESULT abi_GetResults();
-}
-
-interface AsyncActionProgressHandler(TProgress) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IAsyncActionWithProgress!TProgress asyncInfo, TProgress progressInfo);
-}
-
-interface AsyncActionWithProgressCompletedHandler(TProgress) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IAsyncActionWithProgress!TProgress asyncInfo, AsyncStatus status);
-}
-
-interface IAsyncOperation(TResult) : IInspectable
-{
-extern (Windows):
-	HRESULT put_Completed(AsyncOperationCompletedHandler!TResult handler);
-	HRESULT get_Completed(AsyncOperationCompletedHandler!TResult* handler);
-	HRESULT abi_GetResults(TResult* results);
-}
-
-interface AsyncOperationProgressHandler(TResult, TProgress) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IAsyncOperationWithProgress!(TResult,
-			TProgress) asyncInfo, TProgress progressInfo);
-}
-
-interface AsyncOperationCompletedHandler(TResult) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IAsyncOperation!TResult asyncInfo, AsyncStatus status);
-}
-
-interface IAsyncOperationWithProgress(TResult, TProgress) : IInspectable
-{
-extern (Windows):
-	HRESULT put_Progress(AsyncOperationProgressHandler!(TResult, TProgress) handler);
-	HRESULT get_Progress(AsyncOperationProgressHandler!(TResult, TProgress)* handler);
-	HRESULT put_Completed(AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) handler);
-	HRESULT get_Completed(AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)* handler);
-	HRESULT abi_GetResults(TResult* results);
-}
-
-interface AsyncOperationWithProgressCompletedHandler(TResult, TProgress) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status);
-}
-
-interface IReference(T) : IUnknown
-{
-extern (Windows):
-	HRESULT get_Value(T* value);
-}

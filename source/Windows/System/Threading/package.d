@@ -60,6 +60,23 @@ interface ThreadPool
 
 interface ThreadPoolTimer : Windows.System.Threading.IThreadPoolTimer
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Period()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.System.Threading.IThreadPoolTimer).get_Period(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Delay()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.System.Threading.IThreadPoolTimer).get_Delay(&_ret));
+		return _ret;
+	}
+	final void Cancel()
+	{
+		Debug.OK(this.as!(Windows.System.Threading.IThreadPoolTimer).abi_Cancel());
+	}
 }
 
 @bitflags

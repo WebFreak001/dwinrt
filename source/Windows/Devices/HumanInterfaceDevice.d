@@ -175,42 +175,538 @@ extern(Windows):
 
 interface HidBooleanControl : Windows.Devices.HumanInterfaceDevice.IHidBooleanControl
 {
+extern(Windows):
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidBooleanControl).get_Id(&_ret));
+		return _ret;
+	}
+	final UINT16 UsagePage()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidBooleanControl).get_UsagePage(&_ret));
+		return _ret;
+	}
+	final UINT16 UsageId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidBooleanControl).get_UsageId(&_ret));
+		return _ret;
+	}
+	final bool IsActive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidBooleanControl).get_IsActive(&_ret));
+		return _ret;
+	}
+	final void IsActive(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidBooleanControl).set_IsActive(value));
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidBooleanControlDescription ControlDescription()
+	{
+		Windows.Devices.HumanInterfaceDevice.HidBooleanControlDescription _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidBooleanControl).get_ControlDescription(&_ret));
+		return _ret;
+	}
 }
 
 interface HidBooleanControlDescription : Windows.Devices.HumanInterfaceDevice.IHidBooleanControlDescription, Windows.Devices.HumanInterfaceDevice.IHidBooleanControlDescription2
 {
+extern(Windows):
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidBooleanControlDescription).get_Id(&_ret));
+		return _ret;
+	}
+	final UINT16 ReportId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidBooleanControlDescription).get_ReportId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidReportType ReportType()
+	{
+		Windows.Devices.HumanInterfaceDevice.HidReportType _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidBooleanControlDescription).get_ReportType(&_ret));
+		return _ret;
+	}
+	final UINT16 UsagePage()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidBooleanControlDescription).get_UsagePage(&_ret));
+		return _ret;
+	}
+	final UINT16 UsageId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidBooleanControlDescription).get_UsageId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidCollection) ParentCollections()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidCollection) _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidBooleanControlDescription).get_ParentCollections(&_ret));
+		return _ret;
+	}
+	final bool IsAbsolute()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidBooleanControlDescription2).get_IsAbsolute(&_ret));
+		return _ret;
+	}
 }
 
 interface HidCollection : Windows.Devices.HumanInterfaceDevice.IHidCollection
 {
+extern(Windows):
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidCollection).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidCollectionType Type()
+	{
+		Windows.Devices.HumanInterfaceDevice.HidCollectionType _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidCollection).get_Type(&_ret));
+		return _ret;
+	}
+	final UINT32 UsagePage()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidCollection).get_UsagePage(&_ret));
+		return _ret;
+	}
+	final UINT32 UsageId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidCollection).get_UsageId(&_ret));
+		return _ret;
+	}
 }
 
 interface HidDevice : Windows.Devices.HumanInterfaceDevice.IHidDevice, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final UINT16 VendorId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).get_VendorId(&_ret));
+		return _ret;
+	}
+	final UINT16 ProductId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).get_ProductId(&_ret));
+		return _ret;
+	}
+	final UINT16 Version()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).get_Version(&_ret));
+		return _ret;
+	}
+	final UINT16 UsagePage()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).get_UsagePage(&_ret));
+		return _ret;
+	}
+	final UINT16 UsageId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).get_UsageId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidInputReport) GetInputReportAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidInputReport) _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_GetInputReportAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidInputReport) GetInputReportByIdAsync(UINT16 reportId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidInputReport) _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_GetInputReportByIdAsync(reportId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidFeatureReport) GetFeatureReportAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidFeatureReport) _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_GetFeatureReportAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidFeatureReport) GetFeatureReportByIdAsync(UINT16 reportId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidFeatureReport) _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_GetFeatureReportByIdAsync(reportId, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidOutputReport CreateOutputReport()
+	{
+		Windows.Devices.HumanInterfaceDevice.HidOutputReport _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_CreateOutputReport(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidOutputReport CreateOutputReportById(UINT16 reportId)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidOutputReport _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_CreateOutputReportById(reportId, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidFeatureReport CreateFeatureReport()
+	{
+		Windows.Devices.HumanInterfaceDevice.HidFeatureReport _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_CreateFeatureReport(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidFeatureReport CreateFeatureReportById(UINT16 reportId)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidFeatureReport _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_CreateFeatureReportById(reportId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(UINT32) SendOutputReportAsync(Windows.Devices.HumanInterfaceDevice.HidOutputReport outputReport)
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_SendOutputReportAsync(outputReport, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(UINT32) SendFeatureReportAsync(Windows.Devices.HumanInterfaceDevice.HidFeatureReport featureReport)
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_SendFeatureReportAsync(featureReport, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidBooleanControlDescription) GetBooleanControlDescriptions(Windows.Devices.HumanInterfaceDevice.HidReportType reportType, UINT16 usagePage, UINT16 usageId)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidBooleanControlDescription) _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_GetBooleanControlDescriptions(reportType, usagePage, usageId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidNumericControlDescription) GetNumericControlDescriptions(Windows.Devices.HumanInterfaceDevice.HidReportType reportType, UINT16 usagePage, UINT16 usageId)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidNumericControlDescription) _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_GetNumericControlDescriptions(reportType, usagePage, usageId, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface HidFeatureReport : Windows.Devices.HumanInterfaceDevice.IHidFeatureReport
 {
+extern(Windows):
+	final UINT16 Id()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidFeatureReport).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer Data()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidFeatureReport).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidFeatureReport).set_Data(value));
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidBooleanControl GetBooleanControl(UINT16 usagePage, UINT16 usageId)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidBooleanControl _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidFeatureReport).abi_GetBooleanControl(usagePage, usageId, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidBooleanControl GetBooleanControlByDescription(Windows.Devices.HumanInterfaceDevice.HidBooleanControlDescription controlDescription)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidBooleanControl _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidFeatureReport).abi_GetBooleanControlByDescription(controlDescription, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidNumericControl GetNumericControl(UINT16 usagePage, UINT16 usageId)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidNumericControl _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidFeatureReport).abi_GetNumericControl(usagePage, usageId, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidNumericControl GetNumericControlByDescription(Windows.Devices.HumanInterfaceDevice.HidNumericControlDescription controlDescription)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidNumericControl _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidFeatureReport).abi_GetNumericControlByDescription(controlDescription, &_ret));
+		return _ret;
+	}
 }
 
 interface HidInputReport : Windows.Devices.HumanInterfaceDevice.IHidInputReport
 {
+extern(Windows):
+	final UINT16 Id()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidInputReport).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer Data()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidInputReport).get_Data(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidBooleanControl) ActivatedBooleanControls()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidBooleanControl) _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidInputReport).get_ActivatedBooleanControls(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidBooleanControl) TransitionedBooleanControls()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidBooleanControl) _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidInputReport).get_TransitionedBooleanControls(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidBooleanControl GetBooleanControl(UINT16 usagePage, UINT16 usageId)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidBooleanControl _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidInputReport).abi_GetBooleanControl(usagePage, usageId, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidBooleanControl GetBooleanControlByDescription(Windows.Devices.HumanInterfaceDevice.HidBooleanControlDescription controlDescription)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidBooleanControl _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidInputReport).abi_GetBooleanControlByDescription(controlDescription, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidNumericControl GetNumericControl(UINT16 usagePage, UINT16 usageId)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidNumericControl _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidInputReport).abi_GetNumericControl(usagePage, usageId, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidNumericControl GetNumericControlByDescription(Windows.Devices.HumanInterfaceDevice.HidNumericControlDescription controlDescription)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidNumericControl _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidInputReport).abi_GetNumericControlByDescription(controlDescription, &_ret));
+		return _ret;
+	}
 }
 
 interface HidInputReportReceivedEventArgs : Windows.Devices.HumanInterfaceDevice.IHidInputReportReceivedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.HumanInterfaceDevice.HidInputReport Report()
+	{
+		Windows.Devices.HumanInterfaceDevice.HidInputReport _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidInputReportReceivedEventArgs).get_Report(&_ret));
+		return _ret;
+	}
 }
 
 interface HidNumericControl : Windows.Devices.HumanInterfaceDevice.IHidNumericControl
 {
+extern(Windows):
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControl).get_Id(&_ret));
+		return _ret;
+	}
+	final bool IsGrouped()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControl).get_IsGrouped(&_ret));
+		return _ret;
+	}
+	final UINT16 UsagePage()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControl).get_UsagePage(&_ret));
+		return _ret;
+	}
+	final UINT16 UsageId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControl).get_UsageId(&_ret));
+		return _ret;
+	}
+	final INT64 Value()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControl).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(INT64 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControl).set_Value(value));
+	}
+	final INT64 ScaledValue()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControl).get_ScaledValue(&_ret));
+		return _ret;
+	}
+	final void ScaledValue(INT64 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControl).set_ScaledValue(value));
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidNumericControlDescription ControlDescription()
+	{
+		Windows.Devices.HumanInterfaceDevice.HidNumericControlDescription _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControl).get_ControlDescription(&_ret));
+		return _ret;
+	}
 }
 
 interface HidNumericControlDescription : Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription
 {
+extern(Windows):
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_Id(&_ret));
+		return _ret;
+	}
+	final UINT16 ReportId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_ReportId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidReportType ReportType()
+	{
+		Windows.Devices.HumanInterfaceDevice.HidReportType _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_ReportType(&_ret));
+		return _ret;
+	}
+	final UINT32 ReportSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_ReportSize(&_ret));
+		return _ret;
+	}
+	final UINT32 ReportCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_ReportCount(&_ret));
+		return _ret;
+	}
+	final UINT16 UsagePage()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_UsagePage(&_ret));
+		return _ret;
+	}
+	final UINT16 UsageId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_UsageId(&_ret));
+		return _ret;
+	}
+	final INT32 LogicalMinimum()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_LogicalMinimum(&_ret));
+		return _ret;
+	}
+	final INT32 LogicalMaximum()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_LogicalMaximum(&_ret));
+		return _ret;
+	}
+	final INT32 PhysicalMinimum()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_PhysicalMinimum(&_ret));
+		return _ret;
+	}
+	final INT32 PhysicalMaximum()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_PhysicalMaximum(&_ret));
+		return _ret;
+	}
+	final UINT32 UnitExponent()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_UnitExponent(&_ret));
+		return _ret;
+	}
+	final UINT32 Unit()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_Unit(&_ret));
+		return _ret;
+	}
+	final bool IsAbsolute()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_IsAbsolute(&_ret));
+		return _ret;
+	}
+	final bool HasNull()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_HasNull(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidCollection) ParentCollections()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidCollection) _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidNumericControlDescription).get_ParentCollections(&_ret));
+		return _ret;
+	}
 }
 
 interface HidOutputReport : Windows.Devices.HumanInterfaceDevice.IHidOutputReport
 {
+extern(Windows):
+	final UINT16 Id()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidOutputReport).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer Data()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidOutputReport).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidOutputReport).set_Data(value));
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidBooleanControl GetBooleanControl(UINT16 usagePage, UINT16 usageId)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidBooleanControl _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidOutputReport).abi_GetBooleanControl(usagePage, usageId, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidBooleanControl GetBooleanControlByDescription(Windows.Devices.HumanInterfaceDevice.HidBooleanControlDescription controlDescription)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidBooleanControl _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidOutputReport).abi_GetBooleanControlByDescription(controlDescription, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidNumericControl GetNumericControl(UINT16 usagePage, UINT16 usageId)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidNumericControl _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidOutputReport).abi_GetNumericControl(usagePage, usageId, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.HumanInterfaceDevice.HidNumericControl GetNumericControlByDescription(Windows.Devices.HumanInterfaceDevice.HidNumericControlDescription controlDescription)
+	{
+		Windows.Devices.HumanInterfaceDevice.HidNumericControl _ret;
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidOutputReport).abi_GetNumericControlByDescription(controlDescription, &_ret));
+		return _ret;
+	}
 }
 
 enum HidCollectionType

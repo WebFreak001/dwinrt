@@ -192,14 +192,41 @@ extern(Windows):
 
 interface AudioCaptureEffectsManager : Windows.Media.Effects.IAudioCaptureEffectsManager
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) GetAudioCaptureEffects()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioCaptureEffectsManager).abi_GetAudioCaptureEffects(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioEffect : Windows.Media.Effects.IAudioEffect
 {
+extern(Windows):
+	final Windows.Media.Effects.AudioEffectType AudioEffectType()
+	{
+		Windows.Media.Effects.AudioEffectType _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffect).get_AudioEffectType(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioEffectDefinition : Windows.Media.Effects.IAudioEffectDefinition
 {
+extern(Windows):
+	final HSTRING ActivatableClassId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_ActivatableClassId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioEffectsManager
@@ -208,30 +235,206 @@ interface AudioEffectsManager
 
 interface AudioRenderEffectsManager : Windows.Media.Effects.IAudioRenderEffectsManager, Windows.Media.Effects.IAudioRenderEffectsManager2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) GetAudioRenderEffects()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioRenderEffectsManager).abi_GetAudioRenderEffects(&_ret));
+		return _ret;
+	}
+	deprecated("Not supported starting in windows 10")
+	final Windows.Storage.Streams.IRandomAccessStreamWithContentType EffectsProviderThumbnail()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamWithContentType _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioRenderEffectsManager2).get_EffectsProviderThumbnail(&_ret));
+		return _ret;
+	}
+	deprecated("Not supported starting in windows 10")
+	final HSTRING EffectsProviderSettingsLabel()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioRenderEffectsManager2).get_EffectsProviderSettingsLabel(&_ret));
+		return _ret;
+	}
+	deprecated("Not supported starting in windows 10")
+	final void ShowSettingsUI()
+	{
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioRenderEffectsManager2).abi_ShowSettingsUI());
+	}
 }
 
 interface CompositeVideoFrameContext : Windows.Media.Effects.ICompositeVideoFrameContext
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) SurfacesToOverlay()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.ICompositeVideoFrameContext).get_SurfacesToOverlay(&_ret));
+		return _ret;
+	}
+	final Windows.Media.VideoFrame BackgroundFrame()
+	{
+		Windows.Media.VideoFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.ICompositeVideoFrameContext).get_BackgroundFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Media.VideoFrame OutputFrame()
+	{
+		Windows.Media.VideoFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.ICompositeVideoFrameContext).get_OutputFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Editing.MediaOverlay GetOverlayForSurface(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface surfaceToOverlay)
+	{
+		Windows.Media.Editing.MediaOverlay _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.ICompositeVideoFrameContext).abi_GetOverlayForSurface(surfaceToOverlay, &_ret));
+		return _ret;
+	}
 }
 
 interface ProcessAudioFrameContext : Windows.Media.Effects.IProcessAudioFrameContext
 {
+extern(Windows):
+	final Windows.Media.AudioFrame InputFrame()
+	{
+		Windows.Media.AudioFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IProcessAudioFrameContext).get_InputFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Media.AudioFrame OutputFrame()
+	{
+		Windows.Media.AudioFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IProcessAudioFrameContext).get_OutputFrame(&_ret));
+		return _ret;
+	}
 }
 
 interface ProcessVideoFrameContext : Windows.Media.Effects.IProcessVideoFrameContext
 {
+extern(Windows):
+	final Windows.Media.VideoFrame InputFrame()
+	{
+		Windows.Media.VideoFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IProcessVideoFrameContext).get_InputFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Media.VideoFrame OutputFrame()
+	{
+		Windows.Media.VideoFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IProcessVideoFrameContext).get_OutputFrame(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoCompositorDefinition : Windows.Media.Effects.IVideoCompositorDefinition
 {
+extern(Windows):
+	final HSTRING ActivatableClassId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoCompositorDefinition).get_ActivatableClassId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoCompositorDefinition).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoEffectDefinition : Windows.Media.Effects.IVideoEffectDefinition
 {
+extern(Windows):
+	final HSTRING ActivatableClassId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_ActivatableClassId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoTransformEffectDefinition : Windows.Media.Effects.IVideoEffectDefinition, Windows.Media.Effects.IVideoTransformEffectDefinition
 {
+extern(Windows):
+	final HSTRING ActivatableClassId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_ActivatableClassId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Color PaddingColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).get_PaddingColor(&_ret));
+		return _ret;
+	}
+	final void PaddingColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).set_PaddingColor(value));
+	}
+	final Windows.Foundation.Size OutputSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).get_OutputSize(&_ret));
+		return _ret;
+	}
+	final void OutputSize(Windows.Foundation.Size value)
+	{
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).set_OutputSize(value));
+	}
+	final Windows.Foundation.Rect CropRectangle()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).get_CropRectangle(&_ret));
+		return _ret;
+	}
+	final void CropRectangle(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).set_CropRectangle(value));
+	}
+	final Windows.Media.MediaProperties.MediaRotation Rotation()
+	{
+		Windows.Media.MediaProperties.MediaRotation _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).get_Rotation(&_ret));
+		return _ret;
+	}
+	final void Rotation(Windows.Media.MediaProperties.MediaRotation value)
+	{
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).set_Rotation(value));
+	}
+	final Windows.Media.MediaProperties.MediaMirroringOptions Mirror()
+	{
+		Windows.Media.MediaProperties.MediaMirroringOptions _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).get_Mirror(&_ret));
+		return _ret;
+	}
+	final void Mirror(Windows.Media.MediaProperties.MediaMirroringOptions value)
+	{
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).set_Mirror(value));
+	}
+	final void ProcessingAlgorithm(Windows.Media.Transcoding.MediaVideoProcessingAlgorithm value)
+	{
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).set_ProcessingAlgorithm(value));
+	}
+	final Windows.Media.Transcoding.MediaVideoProcessingAlgorithm ProcessingAlgorithm()
+	{
+		Windows.Media.Transcoding.MediaVideoProcessingAlgorithm _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).get_ProcessingAlgorithm(&_ret));
+		return _ret;
+	}
 }
 
 enum AudioEffectType

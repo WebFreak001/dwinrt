@@ -246,34 +246,518 @@ extern(Windows):
 
 interface JumpList : Windows.UI.StartScreen.IJumpList
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.UI.StartScreen.JumpListItem) Items()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.StartScreen.JumpListItem) _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpList).get_Items(&_ret));
+		return _ret;
+	}
+	final Windows.UI.StartScreen.JumpListSystemGroupKind SystemGroupKind()
+	{
+		Windows.UI.StartScreen.JumpListSystemGroupKind _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpList).get_SystemGroupKind(&_ret));
+		return _ret;
+	}
+	final void SystemGroupKind(Windows.UI.StartScreen.JumpListSystemGroupKind value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpList).set_SystemGroupKind(value));
+	}
+	final Windows.Foundation.IAsyncAction SaveAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpList).abi_SaveAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface JumpListItem : Windows.UI.StartScreen.IJumpListItem
 {
+extern(Windows):
+	final Windows.UI.StartScreen.JumpListItemKind Kind()
+	{
+		Windows.UI.StartScreen.JumpListItemKind _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_Kind(&_ret));
+		return _ret;
+	}
+	final HSTRING Arguments()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_Arguments(&_ret));
+		return _ret;
+	}
+	final bool RemovedByUser()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_RemovedByUser(&_ret));
+		return _ret;
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_Description(&_ret));
+		return _ret;
+	}
+	final void Description(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).set_Description(value));
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).set_DisplayName(value));
+	}
+	final HSTRING GroupName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_GroupName(&_ret));
+		return _ret;
+	}
+	final void GroupName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).set_GroupName(value));
+	}
+	final Windows.Foundation.Uri Logo()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_Logo(&_ret));
+		return _ret;
+	}
+	final void Logo(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).set_Logo(value));
+	}
 }
 
 interface SecondaryTile : Windows.UI.StartScreen.ISecondaryTile, Windows.UI.StartScreen.ISecondaryTile2
 {
+extern(Windows):
+	final void TileId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_TileId(value));
+	}
+	final HSTRING TileId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_TileId(&_ret));
+		return _ret;
+	}
+	final void Arguments(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_Arguments(value));
+	}
+	final HSTRING Arguments()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_Arguments(&_ret));
+		return _ret;
+	}
+	deprecated("ShortName may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayName.")
+	final void ShortName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_ShortName(value));
+	}
+	deprecated("ShortName may be altered or unavailable for releases after Windows 8.1. Instead, use DisplayName.")
+	final HSTRING ShortName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_ShortName(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_DisplayName(value));
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_DisplayName(&_ret));
+		return _ret;
+	}
+	deprecated("Logo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Square150x150Logo.")
+	final void Logo(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_Logo(value));
+	}
+	deprecated("Logo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Square150x150Logo.")
+	final Windows.Foundation.Uri Logo()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_Logo(&_ret));
+		return _ret;
+	}
+	deprecated("SmallLogo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Square30x30Logo.")
+	final void SmallLogo(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_SmallLogo(value));
+	}
+	deprecated("SmallLogo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Square30x30Logo.")
+	final Windows.Foundation.Uri SmallLogo()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_SmallLogo(&_ret));
+		return _ret;
+	}
+	deprecated("WideLogo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Wide310x150Logo.")
+	final void WideLogo(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_WideLogo(value));
+	}
+	deprecated("WideLogo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Wide310x150Logo.")
+	final Windows.Foundation.Uri WideLogo()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_WideLogo(&_ret));
+		return _ret;
+	}
+	final void LockScreenBadgeLogo(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_LockScreenBadgeLogo(value));
+	}
+	final Windows.Foundation.Uri LockScreenBadgeLogo()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_LockScreenBadgeLogo(&_ret));
+		return _ret;
+	}
+	final void LockScreenDisplayBadgeAndTileText(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_LockScreenDisplayBadgeAndTileText(value));
+	}
+	final bool LockScreenDisplayBadgeAndTileText()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_LockScreenDisplayBadgeAndTileText(&_ret));
+		return _ret;
+	}
+	deprecated("TileOptions may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.ShowNameOnSquare150x150Logo, VisualElements.ShowNameOnWide310x150Logo, and RoamingEnabled.")
+	final void TileOptions(Windows.UI.StartScreen.TileOptions value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_TileOptions(value));
+	}
+	deprecated("TileOptions may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.ShowNameOnSquare150x150Logo, VisualElements.ShowNameOnWide310x150Logo, and RoamingEnabled.")
+	final Windows.UI.StartScreen.TileOptions TileOptions()
+	{
+		Windows.UI.StartScreen.TileOptions _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_TileOptions(&_ret));
+		return _ret;
+	}
+	deprecated("TileOptions may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.ShowNameOnSquare150x150Logo, VisualElements.ShowNameOnWide310x150Logo, and RoamingEnabled.")
+	final void ForegroundText(Windows.UI.StartScreen.ForegroundText value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_ForegroundText(value));
+	}
+	deprecated("ForegroundText may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.ForegroundText.")
+	final Windows.UI.StartScreen.ForegroundText ForegroundText()
+	{
+		Windows.UI.StartScreen.ForegroundText _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_ForegroundText(&_ret));
+		return _ret;
+	}
+	deprecated("BackgroundColor may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.BackgroundColor.")
+	final void BackgroundColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_BackgroundColor(value));
+	}
+	deprecated("BackgroundColor may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.BackgroundColor.")
+	final Windows.UI.Color BackgroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_BackgroundColor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestCreateAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateAsyncWithPoint(Windows.Foundation.Point invocationPoint)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestCreateAsyncWithPoint(invocationPoint, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateAsyncWithRect(Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestCreateAsyncWithRect(selection, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateAsyncWithRectAndPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestCreateAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestDeleteAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsyncWithPoint(Windows.Foundation.Point invocationPoint)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestDeleteAsyncWithPoint(invocationPoint, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsyncWithRect(Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestDeleteAsyncWithRect(selection, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsyncWithRectAndPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestDeleteAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) UpdateAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_UpdateAsync(&_ret));
+		return _ret;
+	}
+	final void PhoneticName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).set_PhoneticName(value));
+	}
+	final HSTRING PhoneticName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).get_PhoneticName(&_ret));
+		return _ret;
+	}
+	final Windows.UI.StartScreen.SecondaryTileVisualElements VisualElements()
+	{
+		Windows.UI.StartScreen.SecondaryTileVisualElements _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).get_VisualElements(&_ret));
+		return _ret;
+	}
+	final void RoamingEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).set_RoamingEnabled(value));
+	}
+	final bool RoamingEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).get_RoamingEnabled(&_ret));
+		return _ret;
+	}
 }
 
 interface SecondaryTileVisualElements : Windows.UI.StartScreen.ISecondaryTileVisualElements, Windows.UI.StartScreen.ISecondaryTileVisualElements2, Windows.UI.StartScreen.ISecondaryTileVisualElements3
 {
+extern(Windows):
+	deprecated("SecondaryTileVisualElements.Square30x30Logo may be altered or unavailable for release after Windows 10.")
+	final void Square30x30Logo(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_Square30x30Logo(value));
+	}
+	deprecated("SecondaryTileVisualElements.Square30x30Logo may be altered or unavailable for release after Windows 10.")
+	final Windows.Foundation.Uri Square30x30Logo()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_Square30x30Logo(&_ret));
+		return _ret;
+	}
+	deprecated("SecondaryTileVisualElements.Square70x70Logo may be altered or unavailable for release after Windows Phone 8.1.")
+	final void Square70x70Logo(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_Square70x70Logo(value));
+	}
+	deprecated("SecondaryTileVisualElements.Square70x70Logo may be altered or unavailable for release after Windows Phone 8.1.")
+	final Windows.Foundation.Uri Square70x70Logo()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_Square70x70Logo(&_ret));
+		return _ret;
+	}
+	final void Square150x150Logo(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_Square150x150Logo(value));
+	}
+	final Windows.Foundation.Uri Square150x150Logo()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_Square150x150Logo(&_ret));
+		return _ret;
+	}
+	final void Wide310x150Logo(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_Wide310x150Logo(value));
+	}
+	final Windows.Foundation.Uri Wide310x150Logo()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_Wide310x150Logo(&_ret));
+		return _ret;
+	}
+	final void Square310x310Logo(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_Square310x310Logo(value));
+	}
+	final Windows.Foundation.Uri Square310x310Logo()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_Square310x310Logo(&_ret));
+		return _ret;
+	}
+	final void ForegroundText(Windows.UI.StartScreen.ForegroundText value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_ForegroundText(value));
+	}
+	final Windows.UI.StartScreen.ForegroundText ForegroundText()
+	{
+		Windows.UI.StartScreen.ForegroundText _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_ForegroundText(&_ret));
+		return _ret;
+	}
+	final void BackgroundColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_BackgroundColor(value));
+	}
+	final Windows.UI.Color BackgroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_BackgroundColor(&_ret));
+		return _ret;
+	}
+	final void ShowNameOnSquare150x150Logo(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_ShowNameOnSquare150x150Logo(value));
+	}
+	final bool ShowNameOnSquare150x150Logo()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_ShowNameOnSquare150x150Logo(&_ret));
+		return _ret;
+	}
+	final void ShowNameOnWide310x150Logo(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_ShowNameOnWide310x150Logo(value));
+	}
+	final bool ShowNameOnWide310x150Logo()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_ShowNameOnWide310x150Logo(&_ret));
+		return _ret;
+	}
+	final void ShowNameOnSquare310x310Logo(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_ShowNameOnSquare310x310Logo(value));
+	}
+	final bool ShowNameOnSquare310x310Logo()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_ShowNameOnSquare310x310Logo(&_ret));
+		return _ret;
+	}
+	final void Square71x71Logo(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements2).set_Square71x71Logo(value));
+	}
+	final Windows.Foundation.Uri Square71x71Logo()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements2).get_Square71x71Logo(&_ret));
+		return _ret;
+	}
+	final void Square44x44Logo(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements3).set_Square44x44Logo(value));
+	}
+	final Windows.Foundation.Uri Square44x44Logo()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements3).get_Square44x44Logo(&_ret));
+		return _ret;
+	}
 }
 
 interface StartScreenManager : Windows.UI.StartScreen.IStartScreenManager
 {
+extern(Windows):
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IStartScreenManager).get_User(&_ret));
+		return _ret;
+	}
+	final bool SupportsAppListEntry(Windows.ApplicationModel.Core.AppListEntry appListEntry)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IStartScreenManager).abi_SupportsAppListEntry(appListEntry, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) ContainsAppListEntryAsync(Windows.ApplicationModel.Core.AppListEntry appListEntry)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IStartScreenManager).abi_ContainsAppListEntryAsync(appListEntry, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestAddAppListEntryAsync(Windows.ApplicationModel.Core.AppListEntry appListEntry)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IStartScreenManager).abi_RequestAddAppListEntryAsync(appListEntry, &_ret));
+		return _ret;
+	}
 }
 
 interface VisualElementsRequest : Windows.UI.StartScreen.IVisualElementsRequest
 {
+extern(Windows):
+	final Windows.UI.StartScreen.SecondaryTileVisualElements VisualElements()
+	{
+		Windows.UI.StartScreen.SecondaryTileVisualElements _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IVisualElementsRequest).get_VisualElements(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTileVisualElements) AlternateVisualElements()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTileVisualElements) _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IVisualElementsRequest).get_AlternateVisualElements(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Deadline()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IVisualElementsRequest).get_Deadline(&_ret));
+		return _ret;
+	}
+	final Windows.UI.StartScreen.VisualElementsRequestDeferral GetDeferral()
+	{
+		Windows.UI.StartScreen.VisualElementsRequestDeferral _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IVisualElementsRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface VisualElementsRequestDeferral : Windows.UI.StartScreen.IVisualElementsRequestDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.UI.StartScreen.IVisualElementsRequestDeferral).abi_Complete());
+	}
 }
 
 interface VisualElementsRequestedEventArgs : Windows.UI.StartScreen.IVisualElementsRequestedEventArgs
 {
+extern(Windows):
+	final Windows.UI.StartScreen.VisualElementsRequest Request()
+	{
+		Windows.UI.StartScreen.VisualElementsRequest _ret;
+		Debug.OK(this.as!(Windows.UI.StartScreen.IVisualElementsRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 enum ForegroundText

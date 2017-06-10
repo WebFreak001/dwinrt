@@ -93,6 +93,23 @@ extern(Windows):
 
 interface PushNotificationChannel : Windows.Networking.PushNotifications.IPushNotificationChannel
 {
+extern(Windows):
+	final HSTRING Uri()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationChannel).get_Uri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime ExpirationTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationChannel).get_ExpirationTime(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationChannel).abi_Close());
+	}
 }
 
 interface PushNotificationChannelManager
@@ -101,14 +118,111 @@ interface PushNotificationChannelManager
 
 interface PushNotificationChannelManagerForUser : Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser, Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser2
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreatePushNotificationChannelForApplicationAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser).abi_CreatePushNotificationChannelForApplicationAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreatePushNotificationChannelForApplicationAsyncWithId(HSTRING applicationId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser).abi_CreatePushNotificationChannelForApplicationAsyncWithId(applicationId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreatePushNotificationChannelForSecondaryTileAsync(HSTRING tileId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser).abi_CreatePushNotificationChannelForSecondaryTileAsync(tileId, &_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser).get_User(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(Windows.Storage.Streams.IBuffer appServerKey, HSTRING channelId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser2).abi_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(appServerKey, channelId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsyncWithId(Windows.Storage.Streams.IBuffer appServerKey, HSTRING channelId, HSTRING appId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser2).abi_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsyncWithId(appServerKey, channelId, appId, &_ret));
+		return _ret;
+	}
 }
 
 interface PushNotificationReceivedEventArgs : Windows.Networking.PushNotifications.IPushNotificationReceivedEventArgs
 {
+extern(Windows):
+	final void Cancel(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationReceivedEventArgs).set_Cancel(value));
+	}
+	final bool Cancel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationReceivedEventArgs).get_Cancel(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.PushNotifications.PushNotificationType NotificationType()
+	{
+		Windows.Networking.PushNotifications.PushNotificationType _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationReceivedEventArgs).get_NotificationType(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.ToastNotification ToastNotification()
+	{
+		Windows.UI.Notifications.ToastNotification _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationReceivedEventArgs).get_ToastNotification(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.TileNotification TileNotification()
+	{
+		Windows.UI.Notifications.TileNotification _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationReceivedEventArgs).get_TileNotification(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.BadgeNotification BadgeNotification()
+	{
+		Windows.UI.Notifications.BadgeNotification _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationReceivedEventArgs).get_BadgeNotification(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.PushNotifications.RawNotification RawNotification()
+	{
+		Windows.Networking.PushNotifications.RawNotification _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationReceivedEventArgs).get_RawNotification(&_ret));
+		return _ret;
+	}
 }
 
 interface RawNotification : Windows.Networking.PushNotifications.IRawNotification, Windows.Networking.PushNotifications.IRawNotification2
 {
+extern(Windows):
+	final HSTRING Content()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IRawNotification).get_Content(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) Headers()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IRawNotification2).get_Headers(&_ret));
+		return _ret;
+	}
+	final HSTRING ChannelId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IRawNotification2).get_ChannelId(&_ret));
+		return _ret;
+	}
 }
 
 enum PushNotificationType

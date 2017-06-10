@@ -93,20 +93,169 @@ extern(Windows):
 
 interface SpatialSurfaceInfo : Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo
 {
+extern(Windows):
+	final GUID Id()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime UpdateTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo).get_UpdateTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Perception.Spatial.SpatialBoundingOrientedBox) TryGetBounds(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.Foundation.IReference!(Windows.Perception.Spatial.SpatialBoundingOrientedBox) _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo).abi_TryGetBounds(coordinateSystem, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh) TryComputeLatestMeshAsync(double maxTrianglesPerCubicMeter)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh) _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo).abi_TryComputeLatestMeshAsync(maxTrianglesPerCubicMeter, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh) TryComputeLatestMeshWithOptionsAsync(double maxTrianglesPerCubicMeter, Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh) _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo).abi_TryComputeLatestMeshWithOptionsAsync(maxTrianglesPerCubicMeter, options, &_ret));
+		return _ret;
+	}
 }
 
 interface SpatialSurfaceMesh : Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh
 {
+extern(Windows):
+	final Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo SurfaceInfo()
+	{
+		Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh).get_SurfaceInfo(&_ret));
+		return _ret;
+	}
+	final Windows.Perception.Spatial.SpatialCoordinateSystem CoordinateSystem()
+	{
+		Windows.Perception.Spatial.SpatialCoordinateSystem _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh).get_CoordinateSystem(&_ret));
+		return _ret;
+	}
+	final Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer TriangleIndices()
+	{
+		Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh).get_TriangleIndices(&_ret));
+		return _ret;
+	}
+	final Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer VertexPositions()
+	{
+		Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh).get_VertexPositions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Numerics.Vector3 VertexPositionScale()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh).get_VertexPositionScale(&_ret));
+		return _ret;
+	}
+	final Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer VertexNormals()
+	{
+		Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh).get_VertexNormals(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialSurfaceMeshBuffer : Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer
 {
+extern(Windows):
+	final Windows.Graphics.DirectX.DirectXPixelFormat Format()
+	{
+		Windows.Graphics.DirectX.DirectXPixelFormat _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer).get_Format(&_ret));
+		return _ret;
+	}
+	final UINT32 Stride()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer).get_Stride(&_ret));
+		return _ret;
+	}
+	final UINT32 ElementCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer).get_ElementCount(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer Data()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer).get_Data(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialSurfaceMeshOptions : Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions
 {
+extern(Windows):
+	final Windows.Graphics.DirectX.DirectXPixelFormat VertexPositionFormat()
+	{
+		Windows.Graphics.DirectX.DirectXPixelFormat _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).get_VertexPositionFormat(&_ret));
+		return _ret;
+	}
+	final void VertexPositionFormat(Windows.Graphics.DirectX.DirectXPixelFormat value)
+	{
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).set_VertexPositionFormat(value));
+	}
+	final Windows.Graphics.DirectX.DirectXPixelFormat TriangleIndexFormat()
+	{
+		Windows.Graphics.DirectX.DirectXPixelFormat _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).get_TriangleIndexFormat(&_ret));
+		return _ret;
+	}
+	final void TriangleIndexFormat(Windows.Graphics.DirectX.DirectXPixelFormat value)
+	{
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).set_TriangleIndexFormat(value));
+	}
+	final Windows.Graphics.DirectX.DirectXPixelFormat VertexNormalFormat()
+	{
+		Windows.Graphics.DirectX.DirectXPixelFormat _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).get_VertexNormalFormat(&_ret));
+		return _ret;
+	}
+	final void VertexNormalFormat(Windows.Graphics.DirectX.DirectXPixelFormat value)
+	{
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).set_VertexNormalFormat(value));
+	}
+	final bool IncludeVertexNormals()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).get_IncludeVertexNormals(&_ret));
+		return _ret;
+	}
+	final void IncludeVertexNormals(bool value)
+	{
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).set_IncludeVertexNormals(value));
+	}
 }
 
 interface SpatialSurfaceObserver : Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IMapView!(GUID, Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo) GetObservedSurfaces()
+	{
+		Windows.Foundation.Collections.IMapView!(GUID, Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo) _ret;
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver).abi_GetObservedSurfaces(&_ret));
+		return _ret;
+	}
+	final void SetBoundingVolume(Windows.Perception.Spatial.SpatialBoundingVolume bounds)
+	{
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver).abi_SetBoundingVolume(bounds));
+	}
+	final void SetBoundingVolumes(Windows.Foundation.Collections.IIterable!(Windows.Perception.Spatial.SpatialBoundingVolume) bounds)
+	{
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver).abi_SetBoundingVolumes(bounds));
+	}
 }

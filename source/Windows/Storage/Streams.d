@@ -195,10 +195,180 @@ interface IRandomAccessStreamWithContentType : IInspectable
 
 interface Buffer : Windows.Storage.Streams.IBuffer
 {
+extern(Windows):
+	final UINT32 Capacity()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IBuffer).get_Capacity(&_ret));
+		return _ret;
+	}
+	final UINT32 Length()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IBuffer).get_Length(&_ret));
+		return _ret;
+	}
+	final void Length(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IBuffer).set_Length(value));
+	}
 }
 
 interface DataReader : Windows.Storage.Streams.IDataReader, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final UINT32 UnconsumedBufferLength()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).get_UnconsumedBufferLength(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.UnicodeEncoding UnicodeEncoding()
+	{
+		Windows.Storage.Streams.UnicodeEncoding _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).get_UnicodeEncoding(&_ret));
+		return _ret;
+	}
+	final void UnicodeEncoding(Windows.Storage.Streams.UnicodeEncoding value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).set_UnicodeEncoding(value));
+	}
+	final Windows.Storage.Streams.ByteOrder ByteOrder()
+	{
+		Windows.Storage.Streams.ByteOrder _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).get_ByteOrder(&_ret));
+		return _ret;
+	}
+	final void ByteOrder(Windows.Storage.Streams.ByteOrder value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).set_ByteOrder(value));
+	}
+	final Windows.Storage.Streams.InputStreamOptions InputStreamOptions()
+	{
+		Windows.Storage.Streams.InputStreamOptions _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).get_InputStreamOptions(&_ret));
+		return _ret;
+	}
+	final void InputStreamOptions(Windows.Storage.Streams.InputStreamOptions value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).set_InputStreamOptions(value));
+	}
+	final BYTE ReadByte()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadByte(&_ret));
+		return _ret;
+	}
+	final void ReadBytes(UINT32 __valueSize, BYTE* out_value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadBytes(__valueSize, out_value));
+	}
+	final Windows.Storage.Streams.IBuffer ReadBuffer(UINT32 length)
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadBuffer(length, &_ret));
+		return _ret;
+	}
+	final bool ReadBoolean()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadBoolean(&_ret));
+		return _ret;
+	}
+	final GUID ReadGuid()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadGuid(&_ret));
+		return _ret;
+	}
+	final INT16 ReadInt16()
+	{
+		INT16 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadInt16(&_ret));
+		return _ret;
+	}
+	final INT32 ReadInt32()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadInt32(&_ret));
+		return _ret;
+	}
+	final INT64 ReadInt64()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadInt64(&_ret));
+		return _ret;
+	}
+	final UINT16 ReadUInt16()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadUInt16(&_ret));
+		return _ret;
+	}
+	final UINT32 ReadUInt32()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadUInt32(&_ret));
+		return _ret;
+	}
+	final UINT64 ReadUInt64()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadUInt64(&_ret));
+		return _ret;
+	}
+	final FLOAT ReadSingle()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadSingle(&_ret));
+		return _ret;
+	}
+	final double ReadDouble()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadDouble(&_ret));
+		return _ret;
+	}
+	final HSTRING ReadString(UINT32 codeUnitCount)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadString(codeUnitCount, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime ReadDateTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadDateTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan ReadTimeSpan()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadTimeSpan(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.DataReaderLoadOperation LoadAsync(UINT32 count)
+	{
+		Windows.Storage.Streams.DataReaderLoadOperation _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_LoadAsync(count, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer DetachBuffer()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_DetachBuffer(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IInputStream DetachStream()
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_DetachStream(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface DataReaderLoadOperation : Windows.Foundation.IAsyncOperation!(UINT32)
@@ -207,6 +377,137 @@ interface DataReaderLoadOperation : Windows.Foundation.IAsyncOperation!(UINT32)
 
 interface DataWriter : Windows.Storage.Streams.IDataWriter, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final UINT32 UnstoredBufferLength()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).get_UnstoredBufferLength(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.UnicodeEncoding UnicodeEncoding()
+	{
+		Windows.Storage.Streams.UnicodeEncoding _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).get_UnicodeEncoding(&_ret));
+		return _ret;
+	}
+	final void UnicodeEncoding(Windows.Storage.Streams.UnicodeEncoding value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).set_UnicodeEncoding(value));
+	}
+	final Windows.Storage.Streams.ByteOrder ByteOrder()
+	{
+		Windows.Storage.Streams.ByteOrder _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).get_ByteOrder(&_ret));
+		return _ret;
+	}
+	final void ByteOrder(Windows.Storage.Streams.ByteOrder value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).set_ByteOrder(value));
+	}
+	final void WriteByte(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteByte(value));
+	}
+	final void WriteBytes(UINT32 __valueSize, BYTE* value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteBytes(__valueSize, value));
+	}
+	final void WriteBuffer(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteBuffer(buffer));
+	}
+	final void WriteBufferRange(Windows.Storage.Streams.IBuffer buffer, UINT32 start, UINT32 count)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteBufferRange(buffer, start, count));
+	}
+	final void WriteBoolean(bool value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteBoolean(value));
+	}
+	final void WriteGuid(GUID value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteGuid(value));
+	}
+	final void WriteInt16(INT16 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteInt16(value));
+	}
+	final void WriteInt32(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteInt32(value));
+	}
+	final void WriteInt64(INT64 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteInt64(value));
+	}
+	final void WriteUInt16(UINT16 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteUInt16(value));
+	}
+	final void WriteUInt32(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteUInt32(value));
+	}
+	final void WriteUInt64(UINT64 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteUInt64(value));
+	}
+	final void WriteSingle(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteSingle(value));
+	}
+	final void WriteDouble(double value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteDouble(value));
+	}
+	final void WriteDateTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteDateTime(value));
+	}
+	final void WriteTimeSpan(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteTimeSpan(value));
+	}
+	final UINT32 WriteString(HSTRING value)
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteString(value, &_ret));
+		return _ret;
+	}
+	final UINT32 MeasureString(HSTRING value)
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_MeasureString(value, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.DataWriterStoreOperation StoreAsync()
+	{
+		Windows.Storage.Streams.DataWriterStoreOperation _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_StoreAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_FlushAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer DetachBuffer()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_DetachBuffer(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream DetachStream()
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_DetachStream(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface DataWriterStoreOperation : Windows.Foundation.IAsyncOperation!(UINT32)
@@ -215,26 +516,228 @@ interface DataWriterStoreOperation : Windows.Foundation.IAsyncOperation!(UINT32)
 
 interface FileInputStream : Windows.Storage.Streams.IInputStream, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IInputStream).abi_ReadAsync(buffer, count, options, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface FileOutputStream : Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) WriteAsync(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_WriteAsync(buffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_FlushAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface FileRandomAccessStream : Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
+extern(Windows):
+	final UINT64 Size()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
+		return _ret;
+	}
+	final void Size(UINT64 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
+	}
+	final Windows.Storage.Streams.IInputStream GetInputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final UINT64 Position()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
+		return _ret;
+	}
+	final void Seek(UINT64 position)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
+	}
+	final Windows.Storage.Streams.IRandomAccessStream CloneStream()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_CloneStream(&_ret));
+		return _ret;
+	}
+	final bool CanRead()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanRead(&_ret));
+		return _ret;
+	}
+	final bool CanWrite()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanWrite(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) WriteAsync(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_WriteAsync(buffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_FlushAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IInputStream).abi_ReadAsync(buffer, count, options, &_ret));
+		return _ret;
+	}
 }
 
 interface InMemoryRandomAccessStream : Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
+extern(Windows):
+	final UINT64 Size()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
+		return _ret;
+	}
+	final void Size(UINT64 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
+	}
+	final Windows.Storage.Streams.IInputStream GetInputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final UINT64 Position()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
+		return _ret;
+	}
+	final void Seek(UINT64 position)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
+	}
+	final Windows.Storage.Streams.IRandomAccessStream CloneStream()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_CloneStream(&_ret));
+		return _ret;
+	}
+	final bool CanRead()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanRead(&_ret));
+		return _ret;
+	}
+	final bool CanWrite()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanWrite(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) WriteAsync(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_WriteAsync(buffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_FlushAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IInputStream).abi_ReadAsync(buffer, count, options, &_ret));
+		return _ret;
+	}
 }
 
 interface InputStreamOverStream : Windows.Storage.Streams.IInputStream, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IInputStream).abi_ReadAsync(buffer, count, options, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface OutputStreamOverStream : Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) WriteAsync(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_WriteAsync(buffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_FlushAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface RandomAccessStream
@@ -243,10 +746,90 @@ interface RandomAccessStream
 
 interface RandomAccessStreamOverStream : Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
+extern(Windows):
+	final UINT64 Size()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
+		return _ret;
+	}
+	final void Size(UINT64 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
+	}
+	final Windows.Storage.Streams.IInputStream GetInputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final UINT64 Position()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
+		return _ret;
+	}
+	final void Seek(UINT64 position)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
+	}
+	final Windows.Storage.Streams.IRandomAccessStream CloneStream()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_CloneStream(&_ret));
+		return _ret;
+	}
+	final bool CanRead()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanRead(&_ret));
+		return _ret;
+	}
+	final bool CanWrite()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanWrite(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) WriteAsync(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_WriteAsync(buffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_FlushAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IInputStream).abi_ReadAsync(buffer, count, options, &_ret));
+		return _ret;
+	}
 }
 
 interface RandomAccessStreamReference : Windows.Storage.Streams.IRandomAccessStreamReference
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) OpenReadAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStreamReference).abi_OpenReadAsync(&_ret));
+		return _ret;
+	}
 }
 
 enum ByteOrder

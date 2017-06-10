@@ -231,56 +231,383 @@ extern(Windows):
 
 interface LocalContentSuggestionSettings : Windows.ApplicationModel.Search.ILocalContentSuggestionSettings
 {
+extern(Windows):
+	final void Enabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ILocalContentSuggestionSettings).set_Enabled(value));
+	}
+	final bool Enabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ILocalContentSuggestionSettings).get_Enabled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Storage.StorageFolder) Locations()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ILocalContentSuggestionSettings).get_Locations(&_ret));
+		return _ret;
+	}
+	final void AqsFilter(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ILocalContentSuggestionSettings).set_AqsFilter(value));
+	}
+	final HSTRING AqsFilter()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ILocalContentSuggestionSettings).get_AqsFilter(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) PropertiesToMatch()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ILocalContentSuggestionSettings).get_PropertiesToMatch(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchPane : Windows.ApplicationModel.Search.ISearchPane
 {
+extern(Windows):
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final void SearchHistoryEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).set_SearchHistoryEnabled(value));
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final bool SearchHistoryEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).get_SearchHistoryEnabled(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final void SearchHistoryContext(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).set_SearchHistoryContext(value));
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final HSTRING SearchHistoryContext()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).get_SearchHistoryContext(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final void PlaceholderText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).set_PlaceholderText(value));
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final HSTRING PlaceholderText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).get_PlaceholderText(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final HSTRING QueryText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).get_QueryText(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).get_Language(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final bool Visible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).get_Visible(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final void SetLocalContentSuggestionSettings(Windows.ApplicationModel.Search.LocalContentSuggestionSettings settings)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).abi_SetLocalContentSuggestionSettings(settings));
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final void ShowOverloadDefault()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).abi_ShowOverloadDefault());
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final void ShowOverloadWithQuery(HSTRING query)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).abi_ShowOverloadWithQuery(query));
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final void ShowOnKeyboardInput(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).set_ShowOnKeyboardInput(value));
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final bool ShowOnKeyboardInput()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).get_ShowOnKeyboardInput(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final bool TrySetQueryText(HSTRING query)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).abi_TrySetQueryText(query, &_ret));
+		return _ret;
+	}
 }
 
 interface SearchPaneQueryChangedEventArgs : Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs
 {
+extern(Windows):
+	deprecated("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final HSTRING QueryText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs).get_QueryText(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs).get_Language(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails LinguisticDetails()
+	{
+		Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs).get_LinguisticDetails(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchPaneQueryLinguisticDetails : Windows.ApplicationModel.Search.ISearchPaneQueryLinguisticDetails
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) QueryTextAlternatives()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneQueryLinguisticDetails).get_QueryTextAlternatives(&_ret));
+		return _ret;
+	}
+	final UINT32 QueryTextCompositionStart()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneQueryLinguisticDetails).get_QueryTextCompositionStart(&_ret));
+		return _ret;
+	}
+	final UINT32 QueryTextCompositionLength()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneQueryLinguisticDetails).get_QueryTextCompositionLength(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchPaneQuerySubmittedEventArgs : Windows.ApplicationModel.Search.ISearchPaneQuerySubmittedEventArgs, Windows.ApplicationModel.Search.ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails
 {
+extern(Windows):
+	deprecated("ISearchPaneQuerySubmittedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final HSTRING QueryText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneQuerySubmittedEventArgs).get_QueryText(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPaneQuerySubmittedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneQuerySubmittedEventArgs).get_Language(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails may be altered or unavailable for releases after Windows 10.")
+	final Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails LinguisticDetails()
+	{
+		Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails).get_LinguisticDetails(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchPaneResultSuggestionChosenEventArgs : Windows.ApplicationModel.Search.ISearchPaneResultSuggestionChosenEventArgs
 {
+extern(Windows):
+	deprecated("ISearchPaneResultSuggestionChosenEventArgs may be altered or unavailable for releases after Windows 10.")
+	final HSTRING Tag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneResultSuggestionChosenEventArgs).get_Tag(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchPaneSuggestionsRequest : Windows.ApplicationModel.Search.ISearchPaneSuggestionsRequest
 {
+extern(Windows):
+	deprecated("ISearchPaneSuggestionsRequest may be altered or unavailable for releases after Windows 10.")
+	final bool IsCanceled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneSuggestionsRequest).get_IsCanceled(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPaneSuggestionsRequest may be altered or unavailable for releases after Windows 10.")
+	final Windows.ApplicationModel.Search.SearchSuggestionCollection SearchSuggestionCollection()
+	{
+		Windows.ApplicationModel.Search.SearchSuggestionCollection _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneSuggestionsRequest).get_SearchSuggestionCollection(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPaneSuggestionsRequest may be altered or unavailable for releases after Windows 10.")
+	final Windows.ApplicationModel.Search.SearchPaneSuggestionsRequestDeferral GetDeferral()
+	{
+		Windows.ApplicationModel.Search.SearchPaneSuggestionsRequestDeferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneSuggestionsRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchPaneSuggestionsRequestDeferral : Windows.ApplicationModel.Search.ISearchPaneSuggestionsRequestDeferral
 {
+extern(Windows):
+	deprecated("ISearchPaneSuggestionsRequestDeferral may be altered or unavailable for releases after Windows 10.")
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneSuggestionsRequestDeferral).abi_Complete());
+	}
 }
 
 interface SearchPaneSuggestionsRequestedEventArgs : Windows.ApplicationModel.Search.ISearchPaneSuggestionsRequestedEventArgs, Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs
 {
+extern(Windows):
+	deprecated("ISearchPaneSuggestionsRequestedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final Windows.ApplicationModel.Search.SearchPaneSuggestionsRequest Request()
+	{
+		Windows.ApplicationModel.Search.SearchPaneSuggestionsRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneSuggestionsRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final HSTRING QueryText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs).get_QueryText(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs).get_Language(&_ret));
+		return _ret;
+	}
+	deprecated("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails LinguisticDetails()
+	{
+		Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs).get_LinguisticDetails(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchPaneVisibilityChangedEventArgs : Windows.ApplicationModel.Search.ISearchPaneVisibilityChangedEventArgs
 {
+extern(Windows):
+	deprecated("ISearchPaneVisibilityChangedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final bool Visible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPaneVisibilityChangedEventArgs).get_Visible(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchQueryLinguisticDetails : Windows.ApplicationModel.Search.ISearchQueryLinguisticDetails
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) QueryTextAlternatives()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchQueryLinguisticDetails).get_QueryTextAlternatives(&_ret));
+		return _ret;
+	}
+	final UINT32 QueryTextCompositionStart()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchQueryLinguisticDetails).get_QueryTextCompositionStart(&_ret));
+		return _ret;
+	}
+	final UINT32 QueryTextCompositionLength()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchQueryLinguisticDetails).get_QueryTextCompositionLength(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchSuggestionCollection : Windows.ApplicationModel.Search.ISearchSuggestionCollection
 {
+extern(Windows):
+	final UINT32 Size()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchSuggestionCollection).get_Size(&_ret));
+		return _ret;
+	}
+	final void AppendQuerySuggestion(HSTRING text)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchSuggestionCollection).abi_AppendQuerySuggestion(text));
+	}
+	final void AppendQuerySuggestions(Windows.Foundation.Collections.IIterable!(HSTRING) suggestions)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchSuggestionCollection).abi_AppendQuerySuggestions(suggestions));
+	}
+	final void AppendResultSuggestion(HSTRING text, HSTRING detailText, HSTRING tag, Windows.Storage.Streams.IRandomAccessStreamReference image, HSTRING imageAlternateText)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchSuggestionCollection).abi_AppendResultSuggestion(text, detailText, tag, image, imageAlternateText));
+	}
+	final void AppendSearchSeparator(HSTRING label)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchSuggestionCollection).abi_AppendSearchSeparator(label));
+	}
 }
 
 interface SearchSuggestionsRequest : Windows.ApplicationModel.Search.ISearchSuggestionsRequest
 {
+extern(Windows):
+	final bool IsCanceled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchSuggestionsRequest).get_IsCanceled(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Search.SearchSuggestionCollection SearchSuggestionCollection()
+	{
+		Windows.ApplicationModel.Search.SearchSuggestionCollection _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchSuggestionsRequest).get_SearchSuggestionCollection(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Search.SearchSuggestionsRequestDeferral GetDeferral()
+	{
+		Windows.ApplicationModel.Search.SearchSuggestionsRequestDeferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchSuggestionsRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchSuggestionsRequestDeferral : Windows.ApplicationModel.Search.ISearchSuggestionsRequestDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchSuggestionsRequestDeferral).abi_Complete());
+	}
 }

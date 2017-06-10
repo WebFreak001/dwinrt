@@ -44,12 +44,61 @@ extern(Windows):
 
 interface CustomSensor : Windows.Devices.Sensors.Custom.ICustomSensor
 {
+extern(Windows):
+	final Windows.Devices.Sensors.Custom.CustomSensorReading GetCurrentReading()
+	{
+		Windows.Devices.Sensors.Custom.CustomSensorReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final UINT32 MinimumReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).get_MinimumReportInterval(&_ret));
+		return _ret;
+	}
+	final void ReportInterval(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).set_ReportInterval(value));
+	}
+	final UINT32 ReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).get_ReportInterval(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).get_DeviceId(&_ret));
+		return _ret;
+	}
 }
 
 interface CustomSensorReading : Windows.Devices.Sensors.Custom.ICustomSensorReading
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensorReading).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensorReading).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface CustomSensorReadingChangedEventArgs : Windows.Devices.Sensors.Custom.ICustomSensorReadingChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Sensors.Custom.CustomSensorReading Reading()
+	{
+		Windows.Devices.Sensors.Custom.CustomSensorReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensorReadingChangedEventArgs).get_Reading(&_ret));
+		return _ret;
+	}
 }

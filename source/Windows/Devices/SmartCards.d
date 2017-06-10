@@ -170,42 +170,290 @@ extern(Windows):
 
 interface CardAddedEventArgs : Windows.Devices.SmartCards.ICardAddedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.SmartCards.SmartCard SmartCard()
+	{
+		Windows.Devices.SmartCards.SmartCard _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ICardAddedEventArgs).get_SmartCard(&_ret));
+		return _ret;
+	}
 }
 
 interface CardRemovedEventArgs : Windows.Devices.SmartCards.ICardRemovedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.SmartCards.SmartCard SmartCard()
+	{
+		Windows.Devices.SmartCards.SmartCard _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ICardRemovedEventArgs).get_SmartCard(&_ret));
+		return _ret;
+	}
 }
 
 interface SmartCard : Windows.Devices.SmartCards.ISmartCard, Windows.Devices.SmartCards.ISmartCardConnect
 {
+extern(Windows):
+	final Windows.Devices.SmartCards.SmartCardReader Reader()
+	{
+		Windows.Devices.SmartCards.SmartCardReader _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCard).get_Reader(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardStatus) GetStatusAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardStatus) _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCard).abi_GetStatusAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) GetAnswerToResetAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCard).abi_GetAnswerToResetAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardConnection) ConnectAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardConnection) _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardConnect).abi_ConnectAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface SmartCardChallengeContext : Windows.Devices.SmartCards.ISmartCardChallengeContext, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer Challenge()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardChallengeContext).get_Challenge(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) VerifyResponseAsync(Windows.Storage.Streams.IBuffer response)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardChallengeContext).abi_VerifyResponseAsync(response, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ProvisionAsync(Windows.Storage.Streams.IBuffer response, bool formatCard)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardChallengeContext).abi_ProvisionAsync(response, formatCard, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ProvisionAsyncWithNewCardId(Windows.Storage.Streams.IBuffer response, bool formatCard, GUID newCardId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardChallengeContext).abi_ProvisionAsyncWithNewCardId(response, formatCard, newCardId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ChangeAdministrativeKeyAsync(Windows.Storage.Streams.IBuffer response, Windows.Storage.Streams.IBuffer newAdministrativeKey)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardChallengeContext).abi_ChangeAdministrativeKeyAsync(response, newAdministrativeKey, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface SmartCardConnection : Windows.Devices.SmartCards.ISmartCardConnection, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) TransmitAsync(Windows.Storage.Streams.IBuffer command)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardConnection).abi_TransmitAsync(command, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface SmartCardPinPolicy : Windows.Devices.SmartCards.ISmartCardPinPolicy
 {
+extern(Windows):
+	final UINT32 MinLength()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinPolicy).get_MinLength(&_ret));
+		return _ret;
+	}
+	final void MinLength(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinPolicy).set_MinLength(value));
+	}
+	final UINT32 MaxLength()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinPolicy).get_MaxLength(&_ret));
+		return _ret;
+	}
+	final void MaxLength(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinPolicy).set_MaxLength(value));
+	}
+	final Windows.Devices.SmartCards.SmartCardPinCharacterPolicyOption UppercaseLetters()
+	{
+		Windows.Devices.SmartCards.SmartCardPinCharacterPolicyOption _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinPolicy).get_UppercaseLetters(&_ret));
+		return _ret;
+	}
+	final void UppercaseLetters(Windows.Devices.SmartCards.SmartCardPinCharacterPolicyOption value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinPolicy).set_UppercaseLetters(value));
+	}
+	final Windows.Devices.SmartCards.SmartCardPinCharacterPolicyOption LowercaseLetters()
+	{
+		Windows.Devices.SmartCards.SmartCardPinCharacterPolicyOption _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinPolicy).get_LowercaseLetters(&_ret));
+		return _ret;
+	}
+	final void LowercaseLetters(Windows.Devices.SmartCards.SmartCardPinCharacterPolicyOption value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinPolicy).set_LowercaseLetters(value));
+	}
+	final Windows.Devices.SmartCards.SmartCardPinCharacterPolicyOption Digits()
+	{
+		Windows.Devices.SmartCards.SmartCardPinCharacterPolicyOption _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinPolicy).get_Digits(&_ret));
+		return _ret;
+	}
+	final void Digits(Windows.Devices.SmartCards.SmartCardPinCharacterPolicyOption value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinPolicy).set_Digits(value));
+	}
+	final Windows.Devices.SmartCards.SmartCardPinCharacterPolicyOption SpecialCharacters()
+	{
+		Windows.Devices.SmartCards.SmartCardPinCharacterPolicyOption _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinPolicy).get_SpecialCharacters(&_ret));
+		return _ret;
+	}
+	final void SpecialCharacters(Windows.Devices.SmartCards.SmartCardPinCharacterPolicyOption value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinPolicy).set_SpecialCharacters(value));
+	}
 }
 
 interface SmartCardPinResetDeferral : Windows.Devices.SmartCards.ISmartCardPinResetDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinResetDeferral).abi_Complete());
+	}
 }
 
 interface SmartCardPinResetRequest : Windows.Devices.SmartCards.ISmartCardPinResetRequest
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer Challenge()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinResetRequest).get_Challenge(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Deadline()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinResetRequest).get_Deadline(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.SmartCards.SmartCardPinResetDeferral GetDeferral()
+	{
+		Windows.Devices.SmartCards.SmartCardPinResetDeferral _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinResetRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final void SetResponse(Windows.Storage.Streams.IBuffer response)
+	{
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinResetRequest).abi_SetResponse(response));
+	}
 }
 
 interface SmartCardProvisioning : Windows.Devices.SmartCards.ISmartCardProvisioning, Windows.Devices.SmartCards.ISmartCardProvisioning2
 {
+extern(Windows):
+	final Windows.Devices.SmartCards.SmartCard SmartCard()
+	{
+		Windows.Devices.SmartCards.SmartCard _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardProvisioning).get_SmartCard(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(GUID) GetIdAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(GUID) _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardProvisioning).abi_GetIdAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) GetNameAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardProvisioning).abi_GetNameAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardChallengeContext) GetChallengeContextAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardChallengeContext) _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardProvisioning).abi_GetChallengeContextAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestPinChangeAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardProvisioning).abi_RequestPinChangeAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestPinResetAsync(Windows.Devices.SmartCards.SmartCardPinResetHandler handler)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardProvisioning).abi_RequestPinResetAsync(handler, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) GetAuthorityKeyContainerNameAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardProvisioning2).abi_GetAuthorityKeyContainerNameAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface SmartCardReader : Windows.Devices.SmartCards.ISmartCardReader
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardReader).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardReader).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.SmartCards.SmartCardReaderKind Kind()
+	{
+		Windows.Devices.SmartCards.SmartCardReaderKind _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardReader).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardReaderStatus) GetStatusAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardReaderStatus) _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardReader).abi_GetStatusAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.SmartCards.SmartCard)) FindAllCardsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.SmartCards.SmartCard)) _ret;
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardReader).abi_FindAllCardsAsync(&_ret));
+		return _ret;
+	}
 }
 
 enum SmartCardPinCharacterPolicyOption

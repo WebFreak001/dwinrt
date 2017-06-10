@@ -62,6 +62,119 @@ extern(Windows):
 
 interface DateTimeFormatter : Windows.Globalization.DateTimeFormatting.IDateTimeFormatter, Windows.Globalization.DateTimeFormatting.IDateTimeFormatter2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_Languages(&_ret));
+		return _ret;
+	}
+	final HSTRING GeographicRegion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_GeographicRegion(&_ret));
+		return _ret;
+	}
+	final HSTRING Calendar()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_Calendar(&_ret));
+		return _ret;
+	}
+	final HSTRING Clock()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_Clock(&_ret));
+		return _ret;
+	}
+	final HSTRING NumeralSystem()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_NumeralSystem(&_ret));
+		return _ret;
+	}
+	final void NumeralSystem(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).set_NumeralSystem(value));
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Patterns()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_Patterns(&_ret));
+		return _ret;
+	}
+	final HSTRING Template()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_Template(&_ret));
+		return _ret;
+	}
+	final HSTRING Format(Windows.Foundation.DateTime value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).abi_Format(value, &_ret));
+		return _ret;
+	}
+	final Windows.Globalization.DateTimeFormatting.YearFormat IncludeYear()
+	{
+		Windows.Globalization.DateTimeFormatting.YearFormat _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_IncludeYear(&_ret));
+		return _ret;
+	}
+	final Windows.Globalization.DateTimeFormatting.MonthFormat IncludeMonth()
+	{
+		Windows.Globalization.DateTimeFormatting.MonthFormat _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_IncludeMonth(&_ret));
+		return _ret;
+	}
+	final Windows.Globalization.DateTimeFormatting.DayOfWeekFormat IncludeDayOfWeek()
+	{
+		Windows.Globalization.DateTimeFormatting.DayOfWeekFormat _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_IncludeDayOfWeek(&_ret));
+		return _ret;
+	}
+	final Windows.Globalization.DateTimeFormatting.DayFormat IncludeDay()
+	{
+		Windows.Globalization.DateTimeFormatting.DayFormat _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_IncludeDay(&_ret));
+		return _ret;
+	}
+	final Windows.Globalization.DateTimeFormatting.HourFormat IncludeHour()
+	{
+		Windows.Globalization.DateTimeFormatting.HourFormat _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_IncludeHour(&_ret));
+		return _ret;
+	}
+	final Windows.Globalization.DateTimeFormatting.MinuteFormat IncludeMinute()
+	{
+		Windows.Globalization.DateTimeFormatting.MinuteFormat _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_IncludeMinute(&_ret));
+		return _ret;
+	}
+	final Windows.Globalization.DateTimeFormatting.SecondFormat IncludeSecond()
+	{
+		Windows.Globalization.DateTimeFormatting.SecondFormat _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_IncludeSecond(&_ret));
+		return _ret;
+	}
+	final HSTRING ResolvedLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_ResolvedLanguage(&_ret));
+		return _ret;
+	}
+	final HSTRING ResolvedGeographicRegion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter).get_ResolvedGeographicRegion(&_ret));
+		return _ret;
+	}
+	final HSTRING FormatUsingTimeZone(Windows.Foundation.DateTime datetime, HSTRING timeZoneId)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter2).abi_FormatUsingTimeZone(datetime, timeZoneId, &_ret));
+		return _ret;
+	}
 }
 
 enum DayFormat

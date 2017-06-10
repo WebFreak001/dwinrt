@@ -43,8 +43,96 @@ extern(Windows):
 
 interface QuickLink : Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink).set_Title(value));
+	}
+	final Windows.Storage.Streams.RandomAccessStreamReference Thumbnail()
+	{
+		Windows.Storage.Streams.RandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink).get_Thumbnail(&_ret));
+		return _ret;
+	}
+	final void Thumbnail(Windows.Storage.Streams.RandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink).set_Thumbnail(value));
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink).get_Id(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink).set_Id(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) SupportedDataFormats()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink).get_SupportedDataFormats(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) SupportedFileTypes()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink).get_SupportedFileTypes(&_ret));
+		return _ret;
+	}
 }
 
 interface ShareOperation : Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation, Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation2
 {
+extern(Windows):
+	final Windows.ApplicationModel.DataTransfer.DataPackageView Data()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackageView _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation).get_Data(&_ret));
+		return _ret;
+	}
+	final HSTRING QuickLinkId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation).get_QuickLinkId(&_ret));
+		return _ret;
+	}
+	final void RemoveThisQuickLink()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation).abi_RemoveThisQuickLink());
+	}
+	final void ReportStarted()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation).abi_ReportStarted());
+	}
+	final void ReportDataRetrieved()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation).abi_ReportDataRetrieved());
+	}
+	final void ReportSubmittedBackgroundTask()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation).abi_ReportSubmittedBackgroundTask());
+	}
+	final void ReportCompletedWithQuickLink(Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink quicklink)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation).abi_ReportCompletedWithQuickLink(quicklink));
+	}
+	final void ReportCompleted()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation).abi_ReportCompleted());
+	}
+	final void ReportError(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation).abi_ReportError(value));
+	}
+	final void DismissUI()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation2).abi_DismissUI());
+	}
 }

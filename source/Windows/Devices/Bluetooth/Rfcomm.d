@@ -116,16 +116,138 @@ extern(Windows):
 
 interface RfcommDeviceService : Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService, Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService2, Windows.Foundation.IClosable, Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService3
 {
+extern(Windows):
+	final Windows.Networking.HostName ConnectionHostName()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).get_ConnectionHostName(&_ret));
+		return _ret;
+	}
+	final HSTRING ConnectionServiceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).get_ConnectionServiceName(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId ServiceId()
+	{
+		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).get_ServiceId(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.SocketProtectionLevel ProtectionLevel()
+	{
+		Windows.Networking.Sockets.SocketProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).get_ProtectionLevel(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.SocketProtectionLevel MaxProtectionLevel()
+	{
+		Windows.Networking.Sockets.SocketProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).get_MaxProtectionLevel(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(UINT32, Windows.Storage.Streams.IBuffer)) GetSdpRawAttributesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(UINT32, Windows.Storage.Streams.IBuffer)) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).abi_GetSdpRawAttributesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(UINT32, Windows.Storage.Streams.IBuffer)) GetSdpRawAttributesWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(UINT32, Windows.Storage.Streams.IBuffer)) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).abi_GetSdpRawAttributesWithCacheModeAsync(cacheMode, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothDevice Device()
+	{
+		Windows.Devices.Bluetooth.BluetoothDevice _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService2).get_Device(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Devices.Enumeration.DeviceAccessInformation DeviceAccessInformation()
+	{
+		Windows.Devices.Enumeration.DeviceAccessInformation _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService3).get_DeviceAccessInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus) RequestAccessAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService3).abi_RequestAccessAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface RfcommDeviceServicesResult : Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServicesResult
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.BluetoothError Error()
+	{
+		Windows.Devices.Bluetooth.BluetoothError _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServicesResult).get_Error(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) Services()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServicesResult).get_Services(&_ret));
+		return _ret;
+	}
 }
 
 interface RfcommServiceId : Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId
 {
+extern(Windows):
+	final GUID Uuid()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId).get_Uuid(&_ret));
+		return _ret;
+	}
+	final UINT32 AsShortId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId).abi_AsShortId(&_ret));
+		return _ret;
+	}
+	final HSTRING AsString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId).abi_AsString(&_ret));
+		return _ret;
+	}
 }
 
 interface RfcommServiceProvider : Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider, Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider2
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId ServiceId()
+	{
+		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider).get_ServiceId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMap!(UINT32, Windows.Storage.Streams.IBuffer) SdpRawAttributes()
+	{
+		Windows.Foundation.Collections.IMap!(UINT32, Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider).get_SdpRawAttributes(&_ret));
+		return _ret;
+	}
+	final void StartAdvertising(Windows.Networking.Sockets.StreamSocketListener listener)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider).abi_StartAdvertising(listener));
+	}
+	final void StopAdvertising()
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider).abi_StopAdvertising());
+	}
+	final void StartAdvertisingWithRadioDiscoverability(Windows.Networking.Sockets.StreamSocketListener listener, bool radioDiscoverable)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider2).abi_StartAdvertisingWithRadioDiscoverability(listener, radioDiscoverable));
+	}
 }

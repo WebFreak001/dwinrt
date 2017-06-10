@@ -1014,50 +1014,744 @@ interface CustomMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSou
 
 interface HttpMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource, Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource
 {
+extern(Windows):
+	final HSTRING UriFormatString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).get_UriFormatString(&_ret));
+		return _ret;
+	}
+	final void UriFormatString(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).set_UriFormatString(value));
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) AdditionalRequestHeaders()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).get_AdditionalRequestHeaders(&_ret));
+		return _ret;
+	}
+	final bool AllowCaching()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).get_AllowCaching(&_ret));
+		return _ret;
+	}
+	final void AllowCaching(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).set_AllowCaching(value));
+	}
 }
 
 interface LocalMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource, Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource
 {
+extern(Windows):
+	final HSTRING UriFormatString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource).get_UriFormatString(&_ret));
+		return _ret;
+	}
+	final void UriFormatString(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource).set_UriFormatString(value));
+	}
 }
 
 interface MapActualCameraChangedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangedEventArgs, Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangedEventArgs2
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Maps.MapCamera Camera()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapCamera _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangedEventArgs).get_Camera(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapCameraChangeReason ChangeReason()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapCameraChangeReason _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangedEventArgs2).get_ChangeReason(&_ret));
+		return _ret;
+	}
 }
 
 interface MapActualCameraChangingEventArgs : Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangingEventArgs, Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangingEventArgs2
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Maps.MapCamera Camera()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapCamera _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangingEventArgs).get_Camera(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapCameraChangeReason ChangeReason()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapCameraChangeReason _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangingEventArgs2).get_ChangeReason(&_ret));
+		return _ret;
+	}
 }
 
 interface MapBillboard : Windows.UI.Xaml.Controls.Maps.MapElement, Windows.UI.Xaml.Controls.Maps.IMapBillboard
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboard).get_Location(&_ret));
+		return _ret;
+	}
+	final void Location(Windows.Devices.Geolocation.Geopoint value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboard).set_Location(value));
+	}
+	final Windows.Foundation.Point NormalizedAnchorPoint()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboard).get_NormalizedAnchorPoint(&_ret));
+		return _ret;
+	}
+	final void NormalizedAnchorPoint(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboard).set_NormalizedAnchorPoint(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Image()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboard).get_Image(&_ret));
+		return _ret;
+	}
+	final void Image(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboard).set_Image(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior CollisionBehaviorDesired()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboard).get_CollisionBehaviorDesired(&_ret));
+		return _ret;
+	}
+	final void CollisionBehaviorDesired(Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboard).set_CollisionBehaviorDesired(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapCamera ReferenceCamera()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapCamera _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboard).get_ReferenceCamera(&_ret));
+		return _ret;
+	}
 }
 
 interface MapCamera : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapCamera
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapCamera).get_Location(&_ret));
+		return _ret;
+	}
+	final void Location(Windows.Devices.Geolocation.Geopoint value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapCamera).set_Location(value));
+	}
+	final double Heading()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapCamera).get_Heading(&_ret));
+		return _ret;
+	}
+	final void Heading(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapCamera).set_Heading(value));
+	}
+	final double Pitch()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapCamera).get_Pitch(&_ret));
+		return _ret;
+	}
+	final void Pitch(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapCamera).set_Pitch(value));
+	}
+	final double Roll()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapCamera).get_Roll(&_ret));
+		return _ret;
+	}
+	final void Roll(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapCamera).set_Roll(value));
+	}
+	final double FieldOfView()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapCamera).get_FieldOfView(&_ret));
+		return _ret;
+	}
+	final void FieldOfView(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapCamera).set_FieldOfView(value));
+	}
 }
 
 interface MapContextRequestedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapContextRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapContextRequestedEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapContextRequestedEventArgs).get_Location(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement) MapElements()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapContextRequestedEventArgs).get_MapElements(&_ret));
+		return _ret;
+	}
 }
 
 interface MapControl : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.Maps.IMapControl, Windows.UI.Xaml.Controls.Maps.IMapControl2, Windows.UI.Xaml.Controls.Maps.IMapControl3, Windows.UI.Xaml.Controls.Maps.IMapControl4, Windows.UI.Xaml.Controls.Maps.IMapControl5
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geopoint Center()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_Center(&_ret));
+		return _ret;
+	}
+	final void Center(Windows.Devices.Geolocation.Geopoint value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).set_Center(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject) Children()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_Children(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapColorScheme ColorScheme()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapColorScheme _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_ColorScheme(&_ret));
+		return _ret;
+	}
+	final void ColorScheme(Windows.UI.Xaml.Controls.Maps.MapColorScheme value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).set_ColorScheme(value));
+	}
+	final double DesiredPitch()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_DesiredPitch(&_ret));
+		return _ret;
+	}
+	final void DesiredPitch(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).set_DesiredPitch(value));
+	}
+	final double Heading()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_Heading(&_ret));
+		return _ret;
+	}
+	final void Heading(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).set_Heading(value));
+	}
+	final bool LandmarksVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_LandmarksVisible(&_ret));
+		return _ret;
+	}
+	final void LandmarksVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).set_LandmarksVisible(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapLoadingStatus LoadingStatus()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapLoadingStatus _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_LoadingStatus(&_ret));
+		return _ret;
+	}
+	final HSTRING MapServiceToken()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_MapServiceToken(&_ret));
+		return _ret;
+	}
+	final void MapServiceToken(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).set_MapServiceToken(value));
+	}
+	final double MaxZoomLevel()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_MaxZoomLevel(&_ret));
+		return _ret;
+	}
+	final double MinZoomLevel()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_MinZoomLevel(&_ret));
+		return _ret;
+	}
+	final bool PedestrianFeaturesVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_PedestrianFeaturesVisible(&_ret));
+		return _ret;
+	}
+	final void PedestrianFeaturesVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).set_PedestrianFeaturesVisible(value));
+	}
+	final double Pitch()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_Pitch(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapStyle Style()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_Style(&_ret));
+		return _ret;
+	}
+	final void Style(Windows.UI.Xaml.Controls.Maps.MapStyle value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).set_Style(value));
+	}
+	final bool TrafficFlowVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_TrafficFlowVisible(&_ret));
+		return _ret;
+	}
+	final void TrafficFlowVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).set_TrafficFlowVisible(value));
+	}
+	final Windows.Foundation.Point TransformOrigin()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_TransformOrigin(&_ret));
+		return _ret;
+	}
+	final void TransformOrigin(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).set_TransformOrigin(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapWatermarkMode WatermarkMode()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapWatermarkMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_WatermarkMode(&_ret));
+		return _ret;
+	}
+	final void WatermarkMode(Windows.UI.Xaml.Controls.Maps.MapWatermarkMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).set_WatermarkMode(value));
+	}
+	final double ZoomLevel()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_ZoomLevel(&_ret));
+		return _ret;
+	}
+	final void ZoomLevel(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).set_ZoomLevel(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.Maps.MapElement) MapElements()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.Maps.MapElement) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_MapElements(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.Maps.MapRouteView) Routes()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.Maps.MapRouteView) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_Routes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.Maps.MapTileSource) TileSources()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.Maps.MapTileSource) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_TileSources(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement) FindMapElementsAtOffset(Windows.Foundation.Point offset)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).abi_FindMapElementsAtOffset(offset, &_ret));
+		return _ret;
+	}
+	final void GetLocationFromOffset(Windows.Foundation.Point offset, Windows.Devices.Geolocation.Geopoint* out_location)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).abi_GetLocationFromOffset(offset, out_location));
+	}
+	final void GetOffsetFromLocation(Windows.Devices.Geolocation.Geopoint location, Windows.Foundation.Point* out_offset)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).abi_GetOffsetFromLocation(location, out_offset));
+	}
+	final void IsLocationInView(Windows.Devices.Geolocation.Geopoint location, bool* out_isInView)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).abi_IsLocationInView(location, out_isInView));
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TrySetViewBoundsAsync(Windows.Devices.Geolocation.GeoboundingBox bounds, Windows.Foundation.IReference!(Windows.UI.Xaml.Thickness) margin, Windows.UI.Xaml.Controls.Maps.MapAnimationKind animation)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).abi_TrySetViewBoundsAsync(bounds, margin, animation, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TrySetViewWithCenterAsync(Windows.Devices.Geolocation.Geopoint center)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).abi_TrySetViewWithCenterAsync(center, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TrySetViewWithCenterAndZoomAsync(Windows.Devices.Geolocation.Geopoint center, Windows.Foundation.IReference!(double) zoomLevel)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).abi_TrySetViewWithCenterAndZoomAsync(center, zoomLevel, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TrySetViewWithCenterZoomHeadingAndPitchAsync(Windows.Devices.Geolocation.Geopoint center, Windows.Foundation.IReference!(double) zoomLevel, Windows.Foundation.IReference!(double) heading, Windows.Foundation.IReference!(double) desiredPitch)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).abi_TrySetViewWithCenterZoomHeadingAndPitchAsync(center, zoomLevel, heading, desiredPitch, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync(Windows.Devices.Geolocation.Geopoint center, Windows.Foundation.IReference!(double) zoomLevel, Windows.Foundation.IReference!(double) heading, Windows.Foundation.IReference!(double) desiredPitch, Windows.UI.Xaml.Controls.Maps.MapAnimationKind animation)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).abi_TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync(center, zoomLevel, heading, desiredPitch, animation, &_ret));
+		return _ret;
+	}
+	final bool BusinessLandmarksVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).get_BusinessLandmarksVisible(&_ret));
+		return _ret;
+	}
+	final void BusinessLandmarksVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).set_BusinessLandmarksVisible(value));
+	}
+	final bool TransitFeaturesVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).get_TransitFeaturesVisible(&_ret));
+		return _ret;
+	}
+	final void TransitFeaturesVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).set_TransitFeaturesVisible(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapPanInteractionMode PanInteractionMode()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapPanInteractionMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).get_PanInteractionMode(&_ret));
+		return _ret;
+	}
+	final void PanInteractionMode(Windows.UI.Xaml.Controls.Maps.MapPanInteractionMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).set_PanInteractionMode(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapInteractionMode RotateInteractionMode()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapInteractionMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).get_RotateInteractionMode(&_ret));
+		return _ret;
+	}
+	final void RotateInteractionMode(Windows.UI.Xaml.Controls.Maps.MapInteractionMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).set_RotateInteractionMode(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapInteractionMode TiltInteractionMode()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapInteractionMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).get_TiltInteractionMode(&_ret));
+		return _ret;
+	}
+	final void TiltInteractionMode(Windows.UI.Xaml.Controls.Maps.MapInteractionMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).set_TiltInteractionMode(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapInteractionMode ZoomInteractionMode()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapInteractionMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).get_ZoomInteractionMode(&_ret));
+		return _ret;
+	}
+	final void ZoomInteractionMode(Windows.UI.Xaml.Controls.Maps.MapInteractionMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).set_ZoomInteractionMode(value));
+	}
+	final bool Is3DSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).get_Is3DSupported(&_ret));
+		return _ret;
+	}
+	final bool IsStreetsideSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).get_IsStreetsideSupported(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapScene Scene()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapScene _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).get_Scene(&_ret));
+		return _ret;
+	}
+	final void Scene(Windows.UI.Xaml.Controls.Maps.MapScene value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).set_Scene(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapCamera ActualCamera()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapCamera _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).get_ActualCamera(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapCamera TargetCamera()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapCamera _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).get_TargetCamera(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapCustomExperience CustomExperience()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapCustomExperience _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).get_CustomExperience(&_ret));
+		return _ret;
+	}
+	final void CustomExperience(Windows.UI.Xaml.Controls.Maps.MapCustomExperience value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).set_CustomExperience(value));
+	}
+	final void StartContinuousRotate(double rateInDegreesPerSecond)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_StartContinuousRotate(rateInDegreesPerSecond));
+	}
+	final void StopContinuousRotate()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_StopContinuousRotate());
+	}
+	final void StartContinuousTilt(double rateInDegreesPerSecond)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_StartContinuousTilt(rateInDegreesPerSecond));
+	}
+	final void StopContinuousTilt()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_StopContinuousTilt());
+	}
+	final void StartContinuousZoom(double rateOfChangePerSecond)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_StartContinuousZoom(rateOfChangePerSecond));
+	}
+	final void StopContinuousZoom()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_StopContinuousZoom());
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryRotateAsync(double degrees)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_TryRotateAsync(degrees, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryRotateToAsync(double angleInDegrees)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_TryRotateToAsync(angleInDegrees, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryTiltAsync(double degrees)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_TryTiltAsync(degrees, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryTiltToAsync(double angleInDegrees)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_TryTiltToAsync(angleInDegrees, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryZoomInAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_TryZoomInAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryZoomOutAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_TryZoomOutAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryZoomToAsync(double zoomLevel)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_TryZoomToAsync(zoomLevel, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TrySetSceneAsync(Windows.UI.Xaml.Controls.Maps.MapScene scene)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_TrySetSceneAsync(scene, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TrySetSceneWithAnimationAsync(Windows.UI.Xaml.Controls.Maps.MapScene scene, Windows.UI.Xaml.Controls.Maps.MapAnimationKind animationKind)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_TrySetSceneWithAnimationAsync(scene, animationKind, &_ret));
+		return _ret;
+	}
+	final bool BusinessLandmarksEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl4).get_BusinessLandmarksEnabled(&_ret));
+		return _ret;
+	}
+	final void BusinessLandmarksEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl4).set_BusinessLandmarksEnabled(value));
+	}
+	final bool TransitFeaturesEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl4).get_TransitFeaturesEnabled(&_ret));
+		return _ret;
+	}
+	final void TransitFeaturesEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl4).set_TransitFeaturesEnabled(value));
+	}
+	final Windows.Devices.Geolocation.Geopath GetVisibleRegion(Windows.UI.Xaml.Controls.Maps.MapVisibleRegionKind region)
+	{
+		Windows.Devices.Geolocation.Geopath _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl4).abi_GetVisibleRegion(region, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapProjection MapProjection()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapProjection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).get_MapProjection(&_ret));
+		return _ret;
+	}
+	final void MapProjection(Windows.UI.Xaml.Controls.Maps.MapProjection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).set_MapProjection(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapStyleSheet StyleSheet()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapStyleSheet _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).get_StyleSheet(&_ret));
+		return _ret;
+	}
+	final void StyleSheet(Windows.UI.Xaml.Controls.Maps.MapStyleSheet value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).set_StyleSheet(value));
+	}
+	final Windows.UI.Xaml.Thickness ViewPadding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).get_ViewPadding(&_ret));
+		return _ret;
+	}
+	final void ViewPadding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).set_ViewPadding(value));
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement) FindMapElementsAtOffsetWithRadius(Windows.Foundation.Point offset, double radius)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).abi_FindMapElementsAtOffsetWithRadius(offset, radius, &_ret));
+		return _ret;
+	}
+	final void GetLocationFromOffsetWithReferenceSystem(Windows.Foundation.Point offset, Windows.Devices.Geolocation.AltitudeReferenceSystem desiredReferenceSystem, Windows.Devices.Geolocation.Geopoint* out_location)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).abi_GetLocationFromOffsetWithReferenceSystem(offset, desiredReferenceSystem, out_location));
+	}
+	final void StartContinuousPan(double horizontalPixelsPerSecond, double verticalPixelsPerSecond)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).abi_StartContinuousPan(horizontalPixelsPerSecond, verticalPixelsPerSecond));
+	}
+	final void StopContinuousPan()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).abi_StopContinuousPan());
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryPanAsync(double horizontalPixels, double verticalPixels)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).abi_TryPanAsync(horizontalPixels, verticalPixels, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryPanToAsync(Windows.Devices.Geolocation.Geopoint location)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).abi_TryPanToAsync(location, &_ret));
+		return _ret;
+	}
 }
 
 interface MapControlBusinessLandmarkClickEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkClickEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) LocalLocations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkClickEventArgs).get_LocalLocations(&_ret));
+		return _ret;
+	}
 }
 
 interface MapControlBusinessLandmarkPointerEnteredEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkPointerEnteredEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) LocalLocations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkPointerEnteredEventArgs).get_LocalLocations(&_ret));
+		return _ret;
+	}
 }
 
 interface MapControlBusinessLandmarkPointerExitedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkPointerExitedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) LocalLocations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkPointerExitedEventArgs).get_LocalLocations(&_ret));
+		return _ret;
+	}
 }
 
 interface MapControlBusinessLandmarkRightTappedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkRightTappedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) LocalLocations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkRightTappedEventArgs).get_LocalLocations(&_ret));
+		return _ret;
+	}
 }
 
 interface MapControlDataHelper : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper, Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper2
@@ -1066,18 +1760,94 @@ interface MapControlDataHelper : Windows.UI.Xaml.DependencyObject, Windows.UI.Xa
 
 interface MapControlTransitFeatureClickEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureClickEventArgs
 {
+extern(Windows):
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureClickEventArgs).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureClickEventArgs).get_Location(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) TransitProperties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureClickEventArgs).get_TransitProperties(&_ret));
+		return _ret;
+	}
 }
 
 interface MapControlTransitFeaturePointerEnteredEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerEnteredEventArgs
 {
+extern(Windows):
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerEnteredEventArgs).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerEnteredEventArgs).get_Location(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) TransitProperties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerEnteredEventArgs).get_TransitProperties(&_ret));
+		return _ret;
+	}
 }
 
 interface MapControlTransitFeaturePointerExitedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerExitedEventArgs
 {
+extern(Windows):
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerExitedEventArgs).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerExitedEventArgs).get_Location(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) TransitProperties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerExitedEventArgs).get_TransitProperties(&_ret));
+		return _ret;
+	}
 }
 
 interface MapControlTransitFeatureRightTappedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureRightTappedEventArgs
 {
+extern(Windows):
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureRightTappedEventArgs).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureRightTappedEventArgs).get_Location(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) TransitProperties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureRightTappedEventArgs).get_TransitProperties(&_ret));
+		return _ret;
+	}
 }
 
 interface MapCustomExperience : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapCustomExperience
@@ -1090,50 +1860,374 @@ interface MapCustomExperienceChangedEventArgs : Windows.UI.Xaml.Controls.Maps.IM
 
 interface MapElement : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapElement, Windows.UI.Xaml.Controls.Maps.IMapElement2
 {
+extern(Windows):
+	final INT32 ZIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElement).get_ZIndex(&_ret));
+		return _ret;
+	}
+	final void ZIndex(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElement).set_ZIndex(value));
+	}
+	final bool Visible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElement).get_Visible(&_ret));
+		return _ret;
+	}
+	final void Visible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElement).set_Visible(value));
+	}
+	final INT32 MapTabIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElement2).get_MapTabIndex(&_ret));
+		return _ret;
+	}
+	final void MapTabIndex(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElement2).set_MapTabIndex(value));
+	}
 }
 
 interface MapElementClickEventArgs : Windows.UI.Xaml.Controls.Maps.IMapElementClickEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElementClickEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElementClickEventArgs).get_Location(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.Maps.MapElement) MapElements()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.Maps.MapElement) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElementClickEventArgs).get_MapElements(&_ret));
+		return _ret;
+	}
 }
 
 interface MapElementPointerEnteredEventArgs : Windows.UI.Xaml.Controls.Maps.IMapElementPointerEnteredEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElementPointerEnteredEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElementPointerEnteredEventArgs).get_Location(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapElement MapElement()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElementPointerEnteredEventArgs).get_MapElement(&_ret));
+		return _ret;
+	}
 }
 
 interface MapElementPointerExitedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapElementPointerExitedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElementPointerExitedEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElementPointerExitedEventArgs).get_Location(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapElement MapElement()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElementPointerExitedEventArgs).get_MapElement(&_ret));
+		return _ret;
+	}
 }
 
 interface MapIcon : Windows.UI.Xaml.Controls.Maps.MapElement, Windows.UI.Xaml.Controls.Maps.IMapIcon, Windows.UI.Xaml.Controls.Maps.IMapIcon2
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapIcon).get_Location(&_ret));
+		return _ret;
+	}
+	final void Location(Windows.Devices.Geolocation.Geopoint value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapIcon).set_Location(value));
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapIcon).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapIcon).set_Title(value));
+	}
+	final Windows.Foundation.Point NormalizedAnchorPoint()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapIcon).get_NormalizedAnchorPoint(&_ret));
+		return _ret;
+	}
+	final void NormalizedAnchorPoint(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapIcon).set_NormalizedAnchorPoint(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Image()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapIcon).get_Image(&_ret));
+		return _ret;
+	}
+	final void Image(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapIcon).set_Image(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior CollisionBehaviorDesired()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapIcon2).get_CollisionBehaviorDesired(&_ret));
+		return _ret;
+	}
+	final void CollisionBehaviorDesired(Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapIcon2).set_CollisionBehaviorDesired(value));
+	}
 }
 
 interface MapInputEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapInputEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapInputEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapInputEventArgs).get_Location(&_ret));
+		return _ret;
+	}
 }
 
 interface MapItemsControl : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapItemsControl
 {
+extern(Windows):
+	final IInspectable ItemsSource()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapItemsControl).get_ItemsSource(&_ret));
+		return _ret;
+	}
+	final void ItemsSource(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapItemsControl).set_ItemsSource(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject) Items()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapItemsControl).get_Items(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.DataTemplate ItemTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapItemsControl).get_ItemTemplate(&_ret));
+		return _ret;
+	}
+	final void ItemTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapItemsControl).set_ItemTemplate(value));
+	}
 }
 
 interface MapPolygon : Windows.UI.Xaml.Controls.Maps.MapElement, Windows.UI.Xaml.Controls.Maps.IMapPolygon, Windows.UI.Xaml.Controls.Maps.IMapPolygon2
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geopath Path()
+	{
+		Windows.Devices.Geolocation.Geopath _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygon).get_Path(&_ret));
+		return _ret;
+	}
+	final void Path(Windows.Devices.Geolocation.Geopath value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygon).set_Path(value));
+	}
+	final Windows.UI.Color StrokeColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygon).get_StrokeColor(&_ret));
+		return _ret;
+	}
+	final void StrokeColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygon).set_StrokeColor(value));
+	}
+	final double StrokeThickness()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygon).get_StrokeThickness(&_ret));
+		return _ret;
+	}
+	final void StrokeThickness(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygon).set_StrokeThickness(value));
+	}
+	final bool StrokeDashed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygon).get_StrokeDashed(&_ret));
+		return _ret;
+	}
+	final void StrokeDashed(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygon).set_StrokeDashed(value));
+	}
+	final Windows.UI.Color FillColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygon).get_FillColor(&_ret));
+		return _ret;
+	}
+	final void FillColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygon).set_FillColor(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.Geolocation.Geopath) Paths()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.Geolocation.Geopath) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygon2).get_Paths(&_ret));
+		return _ret;
+	}
 }
 
 interface MapPolyline : Windows.UI.Xaml.Controls.Maps.MapElement, Windows.UI.Xaml.Controls.Maps.IMapPolyline
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geopath Path()
+	{
+		Windows.Devices.Geolocation.Geopath _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolyline).get_Path(&_ret));
+		return _ret;
+	}
+	final void Path(Windows.Devices.Geolocation.Geopath value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolyline).set_Path(value));
+	}
+	final Windows.UI.Color StrokeColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolyline).get_StrokeColor(&_ret));
+		return _ret;
+	}
+	final void StrokeColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolyline).set_StrokeColor(value));
+	}
+	final double StrokeThickness()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolyline).get_StrokeThickness(&_ret));
+		return _ret;
+	}
+	final void StrokeThickness(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolyline).set_StrokeThickness(value));
+	}
+	final bool StrokeDashed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolyline).get_StrokeDashed(&_ret));
+		return _ret;
+	}
+	final void StrokeDashed(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolyline).set_StrokeDashed(value));
+	}
 }
 
 interface MapRightTappedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapRightTappedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapRightTappedEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapRightTappedEventArgs).get_Location(&_ret));
+		return _ret;
+	}
 }
 
 interface MapRouteView : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapRouteView
 {
+extern(Windows):
+	final Windows.UI.Color RouteColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapRouteView).get_RouteColor(&_ret));
+		return _ret;
+	}
+	final void RouteColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapRouteView).set_RouteColor(value));
+	}
+	final Windows.UI.Color OutlineColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapRouteView).get_OutlineColor(&_ret));
+		return _ret;
+	}
+	final void OutlineColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapRouteView).set_OutlineColor(value));
+	}
+	final Windows.Services.Maps.MapRoute Route()
+	{
+		Windows.Services.Maps.MapRoute _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapRouteView).get_Route(&_ret));
+		return _ret;
+	}
 }
 
 interface MapScene : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapScene
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Maps.MapCamera TargetCamera()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapCamera _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapScene).get_TargetCamera(&_ret));
+		return _ret;
+	}
 }
 
 interface MapStyleSheet : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapStyleSheet
@@ -1142,18 +2236,78 @@ interface MapStyleSheet : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Cont
 
 interface MapTargetCameraChangedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapTargetCameraChangedEventArgs, Windows.UI.Xaml.Controls.Maps.IMapTargetCameraChangedEventArgs2
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Maps.MapCamera Camera()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapCamera _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTargetCameraChangedEventArgs).get_Camera(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapCameraChangeReason ChangeReason()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapCameraChangeReason _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTargetCameraChangedEventArgs2).get_ChangeReason(&_ret));
+		return _ret;
+	}
 }
 
 interface MapTileBitmapRequest : Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequest
 {
+extern(Windows):
+	final Windows.Storage.Streams.IRandomAccessStreamReference PixelData()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequest).get_PixelData(&_ret));
+		return _ret;
+	}
+	final void PixelData(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequest).set_PixelData(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestDeferral GetDeferral()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestDeferral _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface MapTileBitmapRequestDeferral : Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestDeferral).abi_Complete());
+	}
 }
 
 interface MapTileBitmapRequestedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs
 {
+extern(Windows):
+	final INT32 X()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs).get_X(&_ret));
+		return _ret;
+	}
+	final INT32 Y()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs).get_Y(&_ret));
+		return _ret;
+	}
+	final INT32 ZoomLevel()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs).get_ZoomLevel(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequest Request()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequest _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 interface MapTileDataSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapTileDataSource
@@ -1162,26 +2316,252 @@ interface MapTileDataSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.
 
 interface MapTileSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapTileSource
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Maps.MapTileDataSource DataSource()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapTileDataSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_DataSource(&_ret));
+		return _ret;
+	}
+	final void DataSource(Windows.UI.Xaml.Controls.Maps.MapTileDataSource value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_DataSource(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapTileLayer Layer()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapTileLayer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_Layer(&_ret));
+		return _ret;
+	}
+	final void Layer(Windows.UI.Xaml.Controls.Maps.MapTileLayer value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_Layer(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapZoomLevelRange ZoomLevelRange()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapZoomLevelRange _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_ZoomLevelRange(&_ret));
+		return _ret;
+	}
+	final void ZoomLevelRange(Windows.UI.Xaml.Controls.Maps.MapZoomLevelRange value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_ZoomLevelRange(value));
+	}
+	final Windows.Devices.Geolocation.GeoboundingBox Bounds()
+	{
+		Windows.Devices.Geolocation.GeoboundingBox _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_Bounds(&_ret));
+		return _ret;
+	}
+	final void Bounds(Windows.Devices.Geolocation.GeoboundingBox value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_Bounds(value));
+	}
+	final bool AllowOverstretch()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_AllowOverstretch(&_ret));
+		return _ret;
+	}
+	final void AllowOverstretch(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_AllowOverstretch(value));
+	}
+	final bool IsFadingEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_IsFadingEnabled(&_ret));
+		return _ret;
+	}
+	final void IsFadingEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_IsFadingEnabled(value));
+	}
+	final bool IsTransparencyEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_IsTransparencyEnabled(&_ret));
+		return _ret;
+	}
+	final void IsTransparencyEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_IsTransparencyEnabled(value));
+	}
+	final bool IsRetryEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_IsRetryEnabled(&_ret));
+		return _ret;
+	}
+	final void IsRetryEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_IsRetryEnabled(value));
+	}
+	final INT32 ZIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_ZIndex(&_ret));
+		return _ret;
+	}
+	final void ZIndex(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_ZIndex(value));
+	}
+	final INT32 TilePixelSize()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_TilePixelSize(&_ret));
+		return _ret;
+	}
+	final void TilePixelSize(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_TilePixelSize(value));
+	}
+	final bool Visible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_Visible(&_ret));
+		return _ret;
+	}
+	final void Visible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_Visible(value));
+	}
 }
 
 interface MapTileUriRequest : Windows.UI.Xaml.Controls.Maps.IMapTileUriRequest
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileUriRequest).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileUriRequest).set_Uri(value));
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapTileUriRequestDeferral GetDeferral()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapTileUriRequestDeferral _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileUriRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface MapTileUriRequestDeferral : Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestDeferral).abi_Complete());
+	}
 }
 
 interface MapTileUriRequestedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs
 {
+extern(Windows):
+	final INT32 X()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs).get_X(&_ret));
+		return _ret;
+	}
+	final INT32 Y()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs).get_Y(&_ret));
+		return _ret;
+	}
+	final INT32 ZoomLevel()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs).get_ZoomLevel(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Maps.MapTileUriRequest Request()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapTileUriRequest _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 interface StreetsideExperience : Windows.UI.Xaml.Controls.Maps.MapCustomExperience, Windows.UI.Xaml.Controls.Maps.IStreetsideExperience
 {
+extern(Windows):
+	final bool AddressTextVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperience).get_AddressTextVisible(&_ret));
+		return _ret;
+	}
+	final void AddressTextVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperience).set_AddressTextVisible(value));
+	}
+	final bool CursorVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperience).get_CursorVisible(&_ret));
+		return _ret;
+	}
+	final void CursorVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperience).set_CursorVisible(value));
+	}
+	final bool OverviewMapVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperience).get_OverviewMapVisible(&_ret));
+		return _ret;
+	}
+	final void OverviewMapVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperience).set_OverviewMapVisible(value));
+	}
+	final bool StreetLabelsVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperience).get_StreetLabelsVisible(&_ret));
+		return _ret;
+	}
+	final void StreetLabelsVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperience).set_StreetLabelsVisible(value));
+	}
+	final bool ExitButtonVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperience).get_ExitButtonVisible(&_ret));
+		return _ret;
+	}
+	final void ExitButtonVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperience).set_ExitButtonVisible(value));
+	}
+	final bool ZoomButtonsVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperience).get_ZoomButtonsVisible(&_ret));
+		return _ret;
+	}
+	final void ZoomButtonsVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperience).set_ZoomButtonsVisible(value));
+	}
 }
 
 interface StreetsidePanorama : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IStreetsidePanorama
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsidePanorama).get_Location(&_ret));
+		return _ret;
+	}
 }
 
 enum MapAnimationKind

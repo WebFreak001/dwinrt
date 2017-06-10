@@ -50,10 +50,124 @@ extern(Windows):
 
 interface MdmAlert : Windows.Management.IMdmAlert
 {
+extern(Windows):
+	final HSTRING Data()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Management.IMdmAlert).set_Data(value));
+	}
+	final Windows.Management.MdmAlertDataType Format()
+	{
+		Windows.Management.MdmAlertDataType _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Format(&_ret));
+		return _ret;
+	}
+	final void Format(Windows.Management.MdmAlertDataType value)
+	{
+		Debug.OK(this.as!(Windows.Management.IMdmAlert).set_Format(value));
+	}
+	final Windows.Management.MdmAlertMark Mark()
+	{
+		Windows.Management.MdmAlertMark _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Mark(&_ret));
+		return _ret;
+	}
+	final void Mark(Windows.Management.MdmAlertMark value)
+	{
+		Debug.OK(this.as!(Windows.Management.IMdmAlert).set_Mark(value));
+	}
+	final HSTRING Source()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Source(&_ret));
+		return _ret;
+	}
+	final void Source(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Management.IMdmAlert).set_Source(value));
+	}
+	final UINT32 Status()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Status(&_ret));
+		return _ret;
+	}
+	final HSTRING Target()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Target(&_ret));
+		return _ret;
+	}
+	final void Target(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Management.IMdmAlert).set_Target(value));
+	}
+	final HSTRING Type()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Type(&_ret));
+		return _ret;
+	}
+	final void Type(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Management.IMdmAlert).set_Type(value));
+	}
 }
 
 interface MdmSession : Windows.Management.IMdmSession
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Management.MdmAlert) Alerts()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Management.MdmAlert) _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmSession).get_Alerts(&_ret));
+		return _ret;
+	}
+	final HRESULT ExtendedError()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmSession).get_ExtendedError(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmSession).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Management.MdmSessionState State()
+	{
+		Windows.Management.MdmSessionState _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmSession).get_State(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction AttachAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmSession).abi_AttachAsync(&_ret));
+		return _ret;
+	}
+	final void Delete()
+	{
+		Debug.OK(this.as!(Windows.Management.IMdmSession).abi_Delete());
+	}
+	final Windows.Foundation.IAsyncAction StartAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmSession).abi_StartAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StartWithAlertsAsync(Windows.Foundation.Collections.IIterable!(Windows.Management.MdmAlert) alerts)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Management.IMdmSession).abi_StartWithAlertsAsync(alerts, &_ret));
+		return _ret;
+	}
 }
 
 interface MdmSessionManager

@@ -130,18 +130,172 @@ interface GameControllerFactoryManager
 
 interface GipFirmwareUpdateResult : Windows.Gaming.Input.Custom.IGipFirmwareUpdateResult
 {
+extern(Windows):
+	final UINT32 ExtendedErrorCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipFirmwareUpdateResult).get_ExtendedErrorCode(&_ret));
+		return _ret;
+	}
+	final UINT32 FinalComponentId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipFirmwareUpdateResult).get_FinalComponentId(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.Custom.GipFirmwareUpdateStatus Status()
+	{
+		Windows.Gaming.Input.Custom.GipFirmwareUpdateStatus _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipFirmwareUpdateResult).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface GipGameControllerProvider : Windows.Gaming.Input.Custom.IGipGameControllerProvider, Windows.Gaming.Input.Custom.IGameControllerProvider
 {
+extern(Windows):
+	final void SendMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, BYTE messageId, UINT32 __messageBufferSize, BYTE* messageBuffer)
+	{
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipGameControllerProvider).abi_SendMessage(messageClass, messageId, __messageBufferSize, messageBuffer));
+	}
+	final void SendReceiveMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, BYTE messageId, UINT32 __requestMessageBufferSize, BYTE* requestMessageBuffer, UINT32 __responseMessageBufferSize, BYTE* out_responseMessageBuffer)
+	{
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipGameControllerProvider).abi_SendReceiveMessage(messageClass, messageId, __requestMessageBufferSize, requestMessageBuffer, __responseMessageBufferSize, out_responseMessageBuffer));
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Gaming.Input.Custom.GipFirmwareUpdateResult, Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress) UpdateFirmwareAsync(Windows.Storage.Streams.IInputStream firmwareImage)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Gaming.Input.Custom.GipFirmwareUpdateResult, Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress) _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipGameControllerProvider).abi_UpdateFirmwareAsync(firmwareImage, &_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.Custom.GameControllerVersionInfo FirmwareVersionInfo()
+	{
+		Windows.Gaming.Input.Custom.GameControllerVersionInfo _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_FirmwareVersionInfo(&_ret));
+		return _ret;
+	}
+	final UINT16 HardwareProductId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareProductId(&_ret));
+		return _ret;
+	}
+	final UINT16 HardwareVendorId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareVendorId(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.Custom.GameControllerVersionInfo HardwareVersionInfo()
+	{
+		Windows.Gaming.Input.Custom.GameControllerVersionInfo _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareVersionInfo(&_ret));
+		return _ret;
+	}
+	final bool IsConnected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_IsConnected(&_ret));
+		return _ret;
+	}
 }
 
 interface HidGameControllerProvider : Windows.Gaming.Input.Custom.IHidGameControllerProvider, Windows.Gaming.Input.Custom.IGameControllerProvider
 {
+extern(Windows):
+	final UINT16 UsageId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).get_UsageId(&_ret));
+		return _ret;
+	}
+	final UINT16 UsagePage()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).get_UsagePage(&_ret));
+		return _ret;
+	}
+	final void GetFeatureReport(BYTE reportId, UINT32 __reportBufferSize, BYTE* out_reportBuffer)
+	{
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).abi_GetFeatureReport(reportId, __reportBufferSize, out_reportBuffer));
+	}
+	final void SendFeatureReport(BYTE reportId, UINT32 __reportBufferSize, BYTE* reportBuffer)
+	{
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).abi_SendFeatureReport(reportId, __reportBufferSize, reportBuffer));
+	}
+	final void SendOutputReport(BYTE reportId, UINT32 __reportBufferSize, BYTE* reportBuffer)
+	{
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).abi_SendOutputReport(reportId, __reportBufferSize, reportBuffer));
+	}
+	final Windows.Gaming.Input.Custom.GameControllerVersionInfo FirmwareVersionInfo()
+	{
+		Windows.Gaming.Input.Custom.GameControllerVersionInfo _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_FirmwareVersionInfo(&_ret));
+		return _ret;
+	}
+	final UINT16 HardwareProductId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareProductId(&_ret));
+		return _ret;
+	}
+	final UINT16 HardwareVendorId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareVendorId(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.Custom.GameControllerVersionInfo HardwareVersionInfo()
+	{
+		Windows.Gaming.Input.Custom.GameControllerVersionInfo _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareVersionInfo(&_ret));
+		return _ret;
+	}
+	final bool IsConnected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_IsConnected(&_ret));
+		return _ret;
+	}
 }
 
 interface XusbGameControllerProvider : Windows.Gaming.Input.Custom.IXusbGameControllerProvider, Windows.Gaming.Input.Custom.IGameControllerProvider
 {
+extern(Windows):
+	final void SetVibration(double lowFrequencyMotorSpeed, double highFrequencyMotorSpeed)
+	{
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IXusbGameControllerProvider).abi_SetVibration(lowFrequencyMotorSpeed, highFrequencyMotorSpeed));
+	}
+	final Windows.Gaming.Input.Custom.GameControllerVersionInfo FirmwareVersionInfo()
+	{
+		Windows.Gaming.Input.Custom.GameControllerVersionInfo _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_FirmwareVersionInfo(&_ret));
+		return _ret;
+	}
+	final UINT16 HardwareProductId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareProductId(&_ret));
+		return _ret;
+	}
+	final UINT16 HardwareVendorId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareVendorId(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.Custom.GameControllerVersionInfo HardwareVersionInfo()
+	{
+		Windows.Gaming.Input.Custom.GameControllerVersionInfo _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareVersionInfo(&_ret));
+		return _ret;
+	}
+	final bool IsConnected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_IsConnected(&_ret));
+		return _ret;
+	}
 }
 
 enum GipFirmwareUpdateStatus

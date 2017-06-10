@@ -104,38 +104,192 @@ extern(Windows):
 
 interface FileOpenPickerUI : Windows.Storage.Pickers.Provider.IFileOpenPickerUI
 {
+extern(Windows):
+	final Windows.Storage.Pickers.Provider.AddFileResult AddFile(HSTRING id, Windows.Storage.IStorageFile file)
+	{
+		Windows.Storage.Pickers.Provider.AddFileResult _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).abi_AddFile(id, file, &_ret));
+		return _ret;
+	}
+	final void RemoveFile(HSTRING id)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).abi_RemoveFile(id));
+	}
+	final bool ContainsFile(HSTRING id)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).abi_ContainsFile(id, &_ret));
+		return _ret;
+	}
+	final bool CanAddFile(Windows.Storage.IStorageFile file)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).abi_CanAddFile(file, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) AllowedFileTypes()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).get_AllowedFileTypes(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Pickers.Provider.FileSelectionMode SelectionMode()
+	{
+		Windows.Storage.Pickers.Provider.FileSelectionMode _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).get_SelectionMode(&_ret));
+		return _ret;
+	}
+	final HSTRING SettingsIdentifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).get_SettingsIdentifier(&_ret));
+		return _ret;
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).set_Title(value));
+	}
 }
 
 interface FileRemovedEventArgs : Windows.Storage.Pickers.Provider.IFileRemovedEventArgs
 {
+extern(Windows):
+	deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileRemovedEventArgs).get_Id(&_ret));
+		return _ret;
+	}
 }
 
 interface FileSavePickerUI : Windows.Storage.Pickers.Provider.IFileSavePickerUI
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).set_Title(value));
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) AllowedFileTypes()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).get_AllowedFileTypes(&_ret));
+		return _ret;
+	}
+	final HSTRING SettingsIdentifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).get_SettingsIdentifier(&_ret));
+		return _ret;
+	}
+	final HSTRING FileName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).get_FileName(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Pickers.Provider.SetFileNameResult TrySetFileName(HSTRING value)
+	{
+		Windows.Storage.Pickers.Provider.SetFileNameResult _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).abi_TrySetFileName(value, &_ret));
+		return _ret;
+	}
 }
 
 interface PickerClosingDeferral : Windows.Storage.Pickers.Provider.IPickerClosingDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IPickerClosingDeferral).abi_Complete());
+	}
 }
 
 interface PickerClosingEventArgs : Windows.Storage.Pickers.Provider.IPickerClosingEventArgs
 {
+extern(Windows):
+	final Windows.Storage.Pickers.Provider.PickerClosingOperation ClosingOperation()
+	{
+		Windows.Storage.Pickers.Provider.PickerClosingOperation _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IPickerClosingEventArgs).get_ClosingOperation(&_ret));
+		return _ret;
+	}
+	final bool IsCanceled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IPickerClosingEventArgs).get_IsCanceled(&_ret));
+		return _ret;
+	}
 }
 
 interface PickerClosingOperation : Windows.Storage.Pickers.Provider.IPickerClosingOperation
 {
+extern(Windows):
+	final Windows.Storage.Pickers.Provider.PickerClosingDeferral GetDeferral()
+	{
+		Windows.Storage.Pickers.Provider.PickerClosingDeferral _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IPickerClosingOperation).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Deadline()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IPickerClosingOperation).get_Deadline(&_ret));
+		return _ret;
+	}
 }
 
 interface TargetFileRequest : Windows.Storage.Pickers.Provider.ITargetFileRequest
 {
+extern(Windows):
+	final Windows.Storage.IStorageFile TargetFile()
+	{
+		Windows.Storage.IStorageFile _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.ITargetFileRequest).get_TargetFile(&_ret));
+		return _ret;
+	}
+	final void TargetFile(Windows.Storage.IStorageFile value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.ITargetFileRequest).set_TargetFile(value));
+	}
+	final Windows.Storage.Pickers.Provider.TargetFileRequestDeferral GetDeferral()
+	{
+		Windows.Storage.Pickers.Provider.TargetFileRequestDeferral _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.ITargetFileRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface TargetFileRequestDeferral : Windows.Storage.Pickers.Provider.ITargetFileRequestDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.ITargetFileRequestDeferral).abi_Complete());
+	}
 }
 
 interface TargetFileRequestedEventArgs : Windows.Storage.Pickers.Provider.ITargetFileRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Storage.Pickers.Provider.TargetFileRequest Request()
+	{
+		Windows.Storage.Pickers.Provider.TargetFileRequest _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.ITargetFileRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 enum AddFileResult

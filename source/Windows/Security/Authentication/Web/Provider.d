@@ -217,6 +217,25 @@ extern(Windows):
 
 interface WebAccountClientView : Windows.Security.Authentication.Web.Provider.IWebAccountClientView
 {
+extern(Windows):
+	final Windows.Foundation.Uri ApplicationCallbackUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountClientView).get_ApplicationCallbackUri(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.Provider.WebAccountClientViewType Type()
+	{
+		Windows.Security.Authentication.Web.Provider.WebAccountClientViewType _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountClientView).get_Type(&_ret));
+		return _ret;
+	}
+	final HSTRING AccountPairwiseId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountClientView).get_AccountPairwiseId(&_ret));
+		return _ret;
+	}
 }
 
 interface WebAccountManager
@@ -225,42 +244,310 @@ interface WebAccountManager
 
 interface WebAccountProviderAddAccountOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderAddAccountOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation
 {
+extern(Windows):
+	final void ReportCompleted()
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderAddAccountOperation).abi_ReportCompleted());
+	}
+	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
+	{
+		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		return _ret;
+	}
 }
 
 interface WebAccountProviderDeleteAccountOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderDeleteAccountOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation
 {
+extern(Windows):
+	final Windows.Security.Credentials.WebAccount WebAccount()
+	{
+		Windows.Security.Credentials.WebAccount _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderDeleteAccountOperation).get_WebAccount(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
+	{
+		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		return _ret;
+	}
+	final void ReportCompleted()
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportCompleted());
+	}
+	final void ReportError(Windows.Security.Authentication.Web.Core.WebProviderError value)
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportError(value));
+	}
 }
 
 interface WebAccountProviderGetTokenSilentOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderSilentReportOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation
 {
+extern(Windows):
+	final Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest ProviderRequest()
+	{
+		Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).get_ProviderRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse) ProviderResponses()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).get_ProviderResponses(&_ret));
+		return _ret;
+	}
+	final void CacheExpirationTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).set_CacheExpirationTime(value));
+	}
+	final Windows.Foundation.DateTime CacheExpirationTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).get_CacheExpirationTime(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
+	{
+		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		return _ret;
+	}
+	final void ReportUserInteractionRequired()
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSilentReportOperation).abi_ReportUserInteractionRequired());
+	}
+	final void ReportUserInteractionRequiredWithError(Windows.Security.Authentication.Web.Core.WebProviderError value)
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSilentReportOperation).abi_ReportUserInteractionRequiredWithError(value));
+	}
+	final void ReportCompleted()
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportCompleted());
+	}
+	final void ReportError(Windows.Security.Authentication.Web.Core.WebProviderError value)
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportError(value));
+	}
 }
 
 interface WebAccountProviderManageAccountOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderManageAccountOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation
 {
+extern(Windows):
+	final Windows.Security.Credentials.WebAccount WebAccount()
+	{
+		Windows.Security.Credentials.WebAccount _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderManageAccountOperation).get_WebAccount(&_ret));
+		return _ret;
+	}
+	final void ReportCompleted()
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderManageAccountOperation).abi_ReportCompleted());
+	}
+	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
+	{
+		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		return _ret;
+	}
 }
 
 interface WebAccountProviderRequestTokenOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderUIReportOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation
 {
+extern(Windows):
+	final Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest ProviderRequest()
+	{
+		Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).get_ProviderRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse) ProviderResponses()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).get_ProviderResponses(&_ret));
+		return _ret;
+	}
+	final void CacheExpirationTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).set_CacheExpirationTime(value));
+	}
+	final Windows.Foundation.DateTime CacheExpirationTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).get_CacheExpirationTime(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
+	{
+		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		return _ret;
+	}
+	final void ReportUserCanceled()
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderUIReportOperation).abi_ReportUserCanceled());
+	}
+	final void ReportCompleted()
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportCompleted());
+	}
+	final void ReportError(Windows.Security.Authentication.Web.Core.WebProviderError value)
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportError(value));
+	}
 }
 
 interface WebAccountProviderRetrieveCookiesOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation
 {
+extern(Windows):
+	final Windows.Foundation.Uri Context()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation).get_Context(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpCookie) Cookies()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpCookie) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation).get_Cookies(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri uri)
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation).set_Uri(uri));
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation).get_Uri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ApplicationCallbackUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation).get_ApplicationCallbackUri(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
+	{
+		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		return _ret;
+	}
+	final void ReportCompleted()
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportCompleted());
+	}
+	final void ReportError(Windows.Security.Authentication.Web.Core.WebProviderError value)
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportError(value));
+	}
 }
 
 interface WebAccountProviderSignOutAccountOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderSignOutAccountOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation
 {
+extern(Windows):
+	final Windows.Security.Credentials.WebAccount WebAccount()
+	{
+		Windows.Security.Credentials.WebAccount _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSignOutAccountOperation).get_WebAccount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ApplicationCallbackUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSignOutAccountOperation).get_ApplicationCallbackUri(&_ret));
+		return _ret;
+	}
+	final HSTRING ClientId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSignOutAccountOperation).get_ClientId(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
+	{
+		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		return _ret;
+	}
+	final void ReportCompleted()
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportCompleted());
+	}
+	final void ReportError(Windows.Security.Authentication.Web.Core.WebProviderError value)
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportError(value));
+	}
 }
 
 interface WebAccountProviderTriggerDetails : Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenObjects, Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenObjects2
 {
+extern(Windows):
+	final Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation Operation()
+	{
+		Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenObjects).get_Operation(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenObjects2).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface WebProviderTokenRequest : Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest, Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest2
 {
+extern(Windows):
+	final Windows.Security.Authentication.Web.Core.WebTokenRequest ClientRequest()
+	{
+		Windows.Security.Authentication.Web.Core.WebTokenRequest _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest).get_ClientRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.WebAccount) WebAccounts()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.WebAccount) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest).get_WebAccounts(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.Provider.WebAccountSelectionOptions WebAccountSelectionOptions()
+	{
+		Windows.Security.Authentication.Web.Provider.WebAccountSelectionOptions _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest).get_WebAccountSelectionOptions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ApplicationCallbackUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest).get_ApplicationCallbackUri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Core.CryptographicKey) GetApplicationTokenBindingKeyAsync(Windows.Security.Authentication.Web.TokenBindingKeyType keyType, Windows.Foundation.Uri target)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Core.CryptographicKey) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest).abi_GetApplicationTokenBindingKeyAsync(keyType, target, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) GetApplicationTokenBindingKeyIdAsync(Windows.Security.Authentication.Web.TokenBindingKeyType keyType, Windows.Foundation.Uri target)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest2).abi_GetApplicationTokenBindingKeyIdAsync(keyType, target, &_ret));
+		return _ret;
+	}
 }
 
 interface WebProviderTokenResponse : Windows.Security.Authentication.Web.Provider.IWebProviderTokenResponse
 {
+extern(Windows):
+	final Windows.Security.Authentication.Web.Core.WebTokenResponse ClientResponse()
+	{
+		Windows.Security.Authentication.Web.Core.WebTokenResponse _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenResponse).get_ClientResponse(&_ret));
+		return _ret;
+	}
 }
 
 enum WebAccountClientViewType

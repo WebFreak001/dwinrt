@@ -85,18 +85,72 @@ extern(Windows):
 
 interface AddPagesEventArgs : Windows.UI.Xaml.Printing.IAddPagesEventArgs
 {
+extern(Windows):
+	final Windows.Graphics.Printing.PrintTaskOptions PrintTaskOptions()
+	{
+		Windows.Graphics.Printing.PrintTaskOptions _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IAddPagesEventArgs).get_PrintTaskOptions(&_ret));
+		return _ret;
+	}
 }
 
 interface GetPreviewPageEventArgs : Windows.UI.Xaml.Printing.IGetPreviewPageEventArgs
 {
+extern(Windows):
+	final INT32 PageNumber()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IGetPreviewPageEventArgs).get_PageNumber(&_ret));
+		return _ret;
+	}
 }
 
 interface PaginateEventArgs : Windows.UI.Xaml.Printing.IPaginateEventArgs
 {
+extern(Windows):
+	final Windows.Graphics.Printing.PrintTaskOptions PrintTaskOptions()
+	{
+		Windows.Graphics.Printing.PrintTaskOptions _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPaginateEventArgs).get_PrintTaskOptions(&_ret));
+		return _ret;
+	}
+	final INT32 CurrentPreviewPageNumber()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPaginateEventArgs).get_CurrentPreviewPageNumber(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintDocument : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Printing.IPrintDocument
 {
+extern(Windows):
+	final Windows.Graphics.Printing.IPrintDocumentSource DocumentSource()
+	{
+		Windows.Graphics.Printing.IPrintDocumentSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).get_DocumentSource(&_ret));
+		return _ret;
+	}
+	final void AddPage(Windows.UI.Xaml.UIElement pageVisual)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_AddPage(pageVisual));
+	}
+	final void AddPagesComplete()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_AddPagesComplete());
+	}
+	final void SetPreviewPageCount(INT32 count, Windows.UI.Xaml.Printing.PreviewPageCountType type)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_SetPreviewPageCount(count, type));
+	}
+	final void SetPreviewPage(INT32 pageNumber, Windows.UI.Xaml.UIElement pageVisual)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_SetPreviewPage(pageNumber, pageVisual));
+	}
+	final void InvalidatePreview()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_InvalidatePreview());
+	}
 }
 
 enum PreviewPageCountType

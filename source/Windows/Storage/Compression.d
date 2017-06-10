@@ -38,10 +38,56 @@ extern(Windows):
 
 interface Compressor : Windows.Storage.Compression.ICompressor, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(bool) FinishAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.Compression.ICompressor).abi_FinishAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream DetachStream()
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Compression.ICompressor).abi_DetachStream(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) WriteAsync(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_WriteAsync(buffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_FlushAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface Decompressor : Windows.Storage.Compression.IDecompressor, Windows.Storage.Streams.IInputStream, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Storage.Streams.IInputStream DetachStream()
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Compression.IDecompressor).abi_DetachStream(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IInputStream).abi_ReadAsync(buffer, count, options, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 enum CompressAlgorithm

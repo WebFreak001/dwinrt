@@ -439,82 +439,1002 @@ extern(Windows):
 
 interface InkDrawingAttributes : Windows.UI.Input.Inking.IInkDrawingAttributes, Windows.UI.Input.Inking.IInkDrawingAttributes2, Windows.UI.Input.Inking.IInkDrawingAttributes3, Windows.UI.Input.Inking.IInkDrawingAttributes4
 {
+extern(Windows):
+	final Windows.UI.Color Color()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).get_Color(&_ret));
+		return _ret;
+	}
+	final void Color(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).set_Color(value));
+	}
+	final Windows.UI.Input.Inking.PenTipShape PenTip()
+	{
+		Windows.UI.Input.Inking.PenTipShape _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).get_PenTip(&_ret));
+		return _ret;
+	}
+	final void PenTip(Windows.UI.Input.Inking.PenTipShape value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).set_PenTip(value));
+	}
+	final Windows.Foundation.Size Size()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).get_Size(&_ret));
+		return _ret;
+	}
+	final void Size(Windows.Foundation.Size value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).set_Size(value));
+	}
+	final bool IgnorePressure()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).get_IgnorePressure(&_ret));
+		return _ret;
+	}
+	final void IgnorePressure(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).set_IgnorePressure(value));
+	}
+	final bool FitToCurve()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).get_FitToCurve(&_ret));
+		return _ret;
+	}
+	final void FitToCurve(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).set_FitToCurve(value));
+	}
+	final Windows.Foundation.Numerics.Matrix3x2 PenTipTransform()
+	{
+		Windows.Foundation.Numerics.Matrix3x2 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes2).get_PenTipTransform(&_ret));
+		return _ret;
+	}
+	final void PenTipTransform(Windows.Foundation.Numerics.Matrix3x2 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes2).set_PenTipTransform(value));
+	}
+	final bool DrawAsHighlighter()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes2).get_DrawAsHighlighter(&_ret));
+		return _ret;
+	}
+	final void DrawAsHighlighter(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes2).set_DrawAsHighlighter(value));
+	}
+	final Windows.UI.Input.Inking.InkDrawingAttributesKind Kind()
+	{
+		Windows.UI.Input.Inking.InkDrawingAttributesKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes3).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties PencilProperties()
+	{
+		Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes3).get_PencilProperties(&_ret));
+		return _ret;
+	}
+	final bool IgnoreTilt()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes4).get_IgnoreTilt(&_ret));
+		return _ret;
+	}
+	final void IgnoreTilt(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes4).set_IgnoreTilt(value));
+	}
 }
 
 interface InkDrawingAttributesPencilProperties : Windows.UI.Input.Inking.IInkDrawingAttributesPencilProperties
 {
+extern(Windows):
+	final double Opacity()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributesPencilProperties).get_Opacity(&_ret));
+		return _ret;
+	}
+	final void Opacity(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributesPencilProperties).set_Opacity(value));
+	}
 }
 
 interface InkInputProcessingConfiguration : Windows.UI.Input.Inking.IInkInputProcessingConfiguration
 {
+extern(Windows):
+	final Windows.UI.Input.Inking.InkInputProcessingMode Mode()
+	{
+		Windows.UI.Input.Inking.InkInputProcessingMode _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkInputProcessingConfiguration).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.UI.Input.Inking.InkInputProcessingMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkInputProcessingConfiguration).set_Mode(value));
+	}
+	final Windows.UI.Input.Inking.InkInputRightDragAction RightDragAction()
+	{
+		Windows.UI.Input.Inking.InkInputRightDragAction _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkInputProcessingConfiguration).get_RightDragAction(&_ret));
+		return _ret;
+	}
+	final void RightDragAction(Windows.UI.Input.Inking.InkInputRightDragAction value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkInputProcessingConfiguration).set_RightDragAction(value));
+	}
 }
 
 interface InkManager : Windows.UI.Input.Inking.IInkManager, Windows.UI.Input.Inking.IInkRecognizerContainer, Windows.UI.Input.Inking.IInkStrokeContainer
 {
+extern(Windows):
+	final Windows.UI.Input.Inking.InkManipulationMode Mode()
+	{
+		Windows.UI.Input.Inking.InkManipulationMode _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.UI.Input.Inking.InkManipulationMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).set_Mode(value));
+	}
+	final void ProcessPointerDown(Windows.UI.Input.PointerPoint pointerPoint)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).abi_ProcessPointerDown(pointerPoint));
+	}
+	final IInspectable ProcessPointerUpdate(Windows.UI.Input.PointerPoint pointerPoint)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).abi_ProcessPointerUpdate(pointerPoint, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect ProcessPointerUp(Windows.UI.Input.PointerPoint pointerPoint)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).abi_ProcessPointerUp(pointerPoint, &_ret));
+		return _ret;
+	}
+	final void SetDefaultDrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes drawingAttributes)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).abi_SetDefaultDrawingAttributes(drawingAttributes));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) RecognizeAsync2(Windows.UI.Input.Inking.InkRecognitionTarget recognitionTarget)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).abi_RecognizeAsync2(recognitionTarget, &_ret));
+		return _ret;
+	}
+	final void SetDefaultRecognizer(Windows.UI.Input.Inking.InkRecognizer recognizer)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizerContainer).abi_SetDefaultRecognizer(recognizer));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) RecognizeAsync(Windows.UI.Input.Inking.InkStrokeContainer strokeCollection, Windows.UI.Input.Inking.InkRecognitionTarget recognitionTarget)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizerContainer).abi_RecognizeAsync(strokeCollection, recognitionTarget, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognizer) GetRecognizers()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognizer) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizerContainer).abi_GetRecognizers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect BoundingRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).get_BoundingRect(&_ret));
+		return _ret;
+	}
+	final void AddStroke(Windows.UI.Input.Inking.InkStroke stroke)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_AddStroke(stroke));
+	}
+	final Windows.Foundation.Rect DeleteSelected()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_DeleteSelected(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect MoveSelected(Windows.Foundation.Point translation)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_MoveSelected(translation, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect SelectWithPolyLine(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point) polyline)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_SelectWithPolyLine(polyline, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect SelectWithLine(Windows.Foundation.Point from, Windows.Foundation.Point to)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_SelectWithLine(from, to, &_ret));
+		return _ret;
+	}
+	final void CopySelectedToClipboard()
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_CopySelectedToClipboard());
+	}
+	final Windows.Foundation.Rect PasteFromClipboard(Windows.Foundation.Point position)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_PasteFromClipboard(position, &_ret));
+		return _ret;
+	}
+	final bool CanPasteFromClipboard()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_CanPasteFromClipboard(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncActionWithProgress!(UINT64) LoadAsync(Windows.Storage.Streams.IInputStream inputStream)
+	{
+		Windows.Foundation.IAsyncActionWithProgress!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_LoadAsync(inputStream, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) SaveAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_SaveAsync(outputStream, &_ret));
+		return _ret;
+	}
+	final void UpdateRecognitionResults(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) recognitionResults)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_UpdateRecognitionResults(recognitionResults));
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) GetStrokes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_GetStrokes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) GetRecognitionResults()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_GetRecognitionResults(&_ret));
+		return _ret;
+	}
 }
 
 interface InkPoint : Windows.UI.Input.Inking.IInkPoint, Windows.UI.Input.Inking.IInkPoint2
 {
+extern(Windows):
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint).get_Position(&_ret));
+		return _ret;
+	}
+	final FLOAT Pressure()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint).get_Pressure(&_ret));
+		return _ret;
+	}
+	final FLOAT TiltX()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint2).get_TiltX(&_ret));
+		return _ret;
+	}
+	final FLOAT TiltY()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint2).get_TiltY(&_ret));
+		return _ret;
+	}
+	final UINT64 Timestamp()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint2).get_Timestamp(&_ret));
+		return _ret;
+	}
 }
 
 interface InkPresenter : Windows.UI.Input.Inking.IInkPresenter, Windows.UI.Input.Inking.IInkPresenter2
 {
+extern(Windows):
+	final bool IsInputEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).get_IsInputEnabled(&_ret));
+		return _ret;
+	}
+	final void IsInputEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).set_IsInputEnabled(value));
+	}
+	final Windows.UI.Core.CoreInputDeviceTypes InputDeviceTypes()
+	{
+		Windows.UI.Core.CoreInputDeviceTypes _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).get_InputDeviceTypes(&_ret));
+		return _ret;
+	}
+	final void InputDeviceTypes(Windows.UI.Core.CoreInputDeviceTypes value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).set_InputDeviceTypes(value));
+	}
+	final Windows.UI.Input.Inking.InkUnprocessedInput UnprocessedInput()
+	{
+		Windows.UI.Input.Inking.InkUnprocessedInput _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).get_UnprocessedInput(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Inking.InkStrokeInput StrokeInput()
+	{
+		Windows.UI.Input.Inking.InkStrokeInput _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).get_StrokeInput(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Inking.InkInputProcessingConfiguration InputProcessingConfiguration()
+	{
+		Windows.UI.Input.Inking.InkInputProcessingConfiguration _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).get_InputProcessingConfiguration(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Inking.InkStrokeContainer StrokeContainer()
+	{
+		Windows.UI.Input.Inking.InkStrokeContainer _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).get_StrokeContainer(&_ret));
+		return _ret;
+	}
+	final void StrokeContainer(Windows.UI.Input.Inking.InkStrokeContainer value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).set_StrokeContainer(value));
+	}
+	final Windows.UI.Input.Inking.InkDrawingAttributes CopyDefaultDrawingAttributes()
+	{
+		Windows.UI.Input.Inking.InkDrawingAttributes _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).abi_CopyDefaultDrawingAttributes(&_ret));
+		return _ret;
+	}
+	final void UpdateDefaultDrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).abi_UpdateDefaultDrawingAttributes(value));
+	}
+	final Windows.UI.Input.Inking.InkSynchronizer ActivateCustomDrying()
+	{
+		Windows.UI.Input.Inking.InkSynchronizer _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).abi_ActivateCustomDrying(&_ret));
+		return _ret;
+	}
+	final void SetPredefinedConfiguration(Windows.UI.Input.Inking.InkPresenterPredefinedConfiguration value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).abi_SetPredefinedConfiguration(value));
+	}
+	final Windows.UI.Input.Inking.InkHighContrastAdjustment HighContrastAdjustment()
+	{
+		Windows.UI.Input.Inking.InkHighContrastAdjustment _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter2).get_HighContrastAdjustment(&_ret));
+		return _ret;
+	}
+	final void HighContrastAdjustment(Windows.UI.Input.Inking.InkHighContrastAdjustment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter2).set_HighContrastAdjustment(value));
+	}
 }
 
 interface InkPresenterProtractor : Windows.UI.Input.Inking.IInkPresenterProtractor, Windows.UI.Input.Inking.IInkPresenterStencil
 {
+extern(Windows):
+	final bool AreTickMarksVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_AreTickMarksVisible(&_ret));
+		return _ret;
+	}
+	final void AreTickMarksVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_AreTickMarksVisible(value));
+	}
+	final bool AreRaysVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_AreRaysVisible(&_ret));
+		return _ret;
+	}
+	final void AreRaysVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_AreRaysVisible(value));
+	}
+	final bool IsCenterMarkerVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_IsCenterMarkerVisible(&_ret));
+		return _ret;
+	}
+	final void IsCenterMarkerVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_IsCenterMarkerVisible(value));
+	}
+	final bool IsAngleReadoutVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_IsAngleReadoutVisible(&_ret));
+		return _ret;
+	}
+	final void IsAngleReadoutVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_IsAngleReadoutVisible(value));
+	}
+	final bool IsResizable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_IsResizable(&_ret));
+		return _ret;
+	}
+	final void IsResizable(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_IsResizable(value));
+	}
+	final double Radius()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_Radius(&_ret));
+		return _ret;
+	}
+	final void Radius(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_Radius(value));
+	}
+	final Windows.UI.Color AccentColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_AccentColor(&_ret));
+		return _ret;
+	}
+	final void AccentColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_AccentColor(value));
+	}
+	final Windows.UI.Input.Inking.InkPresenterStencilKind Kind()
+	{
+		Windows.UI.Input.Inking.InkPresenterStencilKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_Kind(&_ret));
+		return _ret;
+	}
+	final bool IsVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_IsVisible(&_ret));
+		return _ret;
+	}
+	final void IsVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_IsVisible(value));
+	}
+	final Windows.UI.Color BackgroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_BackgroundColor(&_ret));
+		return _ret;
+	}
+	final void BackgroundColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_BackgroundColor(value));
+	}
+	final Windows.UI.Color ForegroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_ForegroundColor(&_ret));
+		return _ret;
+	}
+	final void ForegroundColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_ForegroundColor(value));
+	}
+	final Windows.Foundation.Numerics.Matrix3x2 Transform()
+	{
+		Windows.Foundation.Numerics.Matrix3x2 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_Transform(&_ret));
+		return _ret;
+	}
+	final void Transform(Windows.Foundation.Numerics.Matrix3x2 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_Transform(value));
+	}
 }
 
 interface InkPresenterRuler : Windows.UI.Input.Inking.IInkPresenterRuler, Windows.UI.Input.Inking.IInkPresenterStencil, Windows.UI.Input.Inking.IInkPresenterRuler2
 {
+extern(Windows):
+	final double Length()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler).get_Length(&_ret));
+		return _ret;
+	}
+	final void Length(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler).set_Length(value));
+	}
+	final double Width()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler).get_Width(&_ret));
+		return _ret;
+	}
+	final void Width(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler).set_Width(value));
+	}
+	final Windows.UI.Input.Inking.InkPresenterStencilKind Kind()
+	{
+		Windows.UI.Input.Inking.InkPresenterStencilKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_Kind(&_ret));
+		return _ret;
+	}
+	final bool IsVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_IsVisible(&_ret));
+		return _ret;
+	}
+	final void IsVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_IsVisible(value));
+	}
+	final Windows.UI.Color BackgroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_BackgroundColor(&_ret));
+		return _ret;
+	}
+	final void BackgroundColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_BackgroundColor(value));
+	}
+	final Windows.UI.Color ForegroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_ForegroundColor(&_ret));
+		return _ret;
+	}
+	final void ForegroundColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_ForegroundColor(value));
+	}
+	final Windows.Foundation.Numerics.Matrix3x2 Transform()
+	{
+		Windows.Foundation.Numerics.Matrix3x2 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_Transform(&_ret));
+		return _ret;
+	}
+	final void Transform(Windows.Foundation.Numerics.Matrix3x2 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_Transform(value));
+	}
+	final bool AreTickMarksVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler2).get_AreTickMarksVisible(&_ret));
+		return _ret;
+	}
+	final void AreTickMarksVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler2).set_AreTickMarksVisible(value));
+	}
+	final bool IsCompassVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler2).get_IsCompassVisible(&_ret));
+		return _ret;
+	}
+	final void IsCompassVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler2).set_IsCompassVisible(value));
+	}
 }
 
 interface InkRecognitionResult : Windows.UI.Input.Inking.IInkRecognitionResult
 {
+extern(Windows):
+	final Windows.Foundation.Rect BoundingRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognitionResult).get_BoundingRect(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) GetTextCandidates()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognitionResult).abi_GetTextCandidates(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) GetStrokes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognitionResult).abi_GetStrokes(&_ret));
+		return _ret;
+	}
 }
 
 interface InkRecognizer : Windows.UI.Input.Inking.IInkRecognizer
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizer).get_Name(&_ret));
+		return _ret;
+	}
 }
 
 interface InkRecognizerContainer : Windows.UI.Input.Inking.IInkRecognizerContainer
 {
+extern(Windows):
+	final void SetDefaultRecognizer(Windows.UI.Input.Inking.InkRecognizer recognizer)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizerContainer).abi_SetDefaultRecognizer(recognizer));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) RecognizeAsync(Windows.UI.Input.Inking.InkStrokeContainer strokeCollection, Windows.UI.Input.Inking.InkRecognitionTarget recognitionTarget)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizerContainer).abi_RecognizeAsync(strokeCollection, recognitionTarget, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognizer) GetRecognizers()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognizer) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizerContainer).abi_GetRecognizers(&_ret));
+		return _ret;
+	}
 }
 
 interface InkStroke : Windows.UI.Input.Inking.IInkStroke, Windows.UI.Input.Inking.IInkStroke2, Windows.UI.Input.Inking.IInkStroke3
 {
+extern(Windows):
+	final Windows.UI.Input.Inking.InkDrawingAttributes DrawingAttributes()
+	{
+		Windows.UI.Input.Inking.InkDrawingAttributes _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).get_DrawingAttributes(&_ret));
+		return _ret;
+	}
+	final void DrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).set_DrawingAttributes(value));
+	}
+	final Windows.Foundation.Rect BoundingRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).get_BoundingRect(&_ret));
+		return _ret;
+	}
+	final bool Selected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).get_Selected(&_ret));
+		return _ret;
+	}
+	final void Selected(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).set_Selected(value));
+	}
+	final bool Recognized()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).get_Recognized(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStrokeRenderingSegment) GetRenderingSegments()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStrokeRenderingSegment) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).abi_GetRenderingSegments(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Inking.InkStroke Clone()
+	{
+		Windows.UI.Input.Inking.InkStroke _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).abi_Clone(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Numerics.Matrix3x2 PointTransform()
+	{
+		Windows.Foundation.Numerics.Matrix3x2 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke2).get_PointTransform(&_ret));
+		return _ret;
+	}
+	final void PointTransform(Windows.Foundation.Numerics.Matrix3x2 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke2).set_PointTransform(value));
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkPoint) GetInkPoints()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkPoint) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke2).abi_GetInkPoints(&_ret));
+		return _ret;
+	}
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke3).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) StrokeStartedTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke3).get_StrokeStartedTime(&_ret));
+		return _ret;
+	}
+	final void StrokeStartedTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke3).set_StrokeStartedTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) StrokeDuration()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke3).get_StrokeDuration(&_ret));
+		return _ret;
+	}
+	final void StrokeDuration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke3).set_StrokeDuration(value));
+	}
 }
 
 interface InkStrokeBuilder : Windows.UI.Input.Inking.IInkStrokeBuilder, Windows.UI.Input.Inking.IInkStrokeBuilder2, Windows.UI.Input.Inking.IInkStrokeBuilder3
 {
+extern(Windows):
+	final void BeginStroke(Windows.UI.Input.PointerPoint pointerPoint)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder).abi_BeginStroke(pointerPoint));
+	}
+	final Windows.UI.Input.PointerPoint AppendToStroke(Windows.UI.Input.PointerPoint pointerPoint)
+	{
+		Windows.UI.Input.PointerPoint _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder).abi_AppendToStroke(pointerPoint, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Inking.InkStroke EndStroke(Windows.UI.Input.PointerPoint pointerPoint)
+	{
+		Windows.UI.Input.Inking.InkStroke _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder).abi_EndStroke(pointerPoint, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Inking.InkStroke CreateStroke(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point) points)
+	{
+		Windows.UI.Input.Inking.InkStroke _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder).abi_CreateStroke(points, &_ret));
+		return _ret;
+	}
+	final void SetDefaultDrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes drawingAttributes)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder).abi_SetDefaultDrawingAttributes(drawingAttributes));
+	}
+	final Windows.UI.Input.Inking.InkStroke CreateStrokeFromInkPoints(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Inking.InkPoint) inkPoints, Windows.Foundation.Numerics.Matrix3x2 transform)
+	{
+		Windows.UI.Input.Inking.InkStroke _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder2).abi_CreateStrokeFromInkPoints(inkPoints, transform, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Inking.InkStroke CreateStrokeFromInkPoints(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Inking.InkPoint) inkPoints, Windows.Foundation.Numerics.Matrix3x2 transform, Windows.Foundation.IReference!(Windows.Foundation.DateTime) strokeStartedTime, Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) strokeDuration)
+	{
+		Windows.UI.Input.Inking.InkStroke _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder3).abi_CreateStrokeFromInkPoints(inkPoints, transform, strokeStartedTime, strokeDuration, &_ret));
+		return _ret;
+	}
 }
 
 interface InkStrokeContainer : Windows.UI.Input.Inking.IInkStrokeContainer, Windows.UI.Input.Inking.IInkStrokeContainer2, Windows.UI.Input.Inking.IInkStrokeContainer3
 {
+extern(Windows):
+	final Windows.Foundation.Rect BoundingRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).get_BoundingRect(&_ret));
+		return _ret;
+	}
+	final void AddStroke(Windows.UI.Input.Inking.InkStroke stroke)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_AddStroke(stroke));
+	}
+	final Windows.Foundation.Rect DeleteSelected()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_DeleteSelected(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect MoveSelected(Windows.Foundation.Point translation)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_MoveSelected(translation, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect SelectWithPolyLine(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point) polyline)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_SelectWithPolyLine(polyline, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect SelectWithLine(Windows.Foundation.Point from, Windows.Foundation.Point to)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_SelectWithLine(from, to, &_ret));
+		return _ret;
+	}
+	final void CopySelectedToClipboard()
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_CopySelectedToClipboard());
+	}
+	final Windows.Foundation.Rect PasteFromClipboard(Windows.Foundation.Point position)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_PasteFromClipboard(position, &_ret));
+		return _ret;
+	}
+	final bool CanPasteFromClipboard()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_CanPasteFromClipboard(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncActionWithProgress!(UINT64) LoadAsync(Windows.Storage.Streams.IInputStream inputStream)
+	{
+		Windows.Foundation.IAsyncActionWithProgress!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_LoadAsync(inputStream, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) SaveAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_SaveAsync(outputStream, &_ret));
+		return _ret;
+	}
+	final void UpdateRecognitionResults(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) recognitionResults)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_UpdateRecognitionResults(recognitionResults));
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) GetStrokes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_GetStrokes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) GetRecognitionResults()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_GetRecognitionResults(&_ret));
+		return _ret;
+	}
+	final void AddStrokes(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Inking.InkStroke) strokes)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer2).abi_AddStrokes(strokes));
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer2).abi_Clear());
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) SaveWithFormatAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.UI.Input.Inking.InkPersistenceFormat inkPersistenceFormat)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer3).abi_SaveWithFormatAsync(outputStream, inkPersistenceFormat, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Inking.InkStroke GetStrokeById(UINT32 id)
+	{
+		Windows.UI.Input.Inking.InkStroke _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer3).abi_GetStrokeById(id, &_ret));
+		return _ret;
+	}
 }
 
 interface InkStrokeInput : Windows.UI.Input.Inking.IInkStrokeInput
 {
+extern(Windows):
+	final Windows.UI.Input.Inking.InkPresenter InkPresenter()
+	{
+		Windows.UI.Input.Inking.InkPresenter _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeInput).get_InkPresenter(&_ret));
+		return _ret;
+	}
 }
 
 interface InkStrokeRenderingSegment : Windows.UI.Input.Inking.IInkStrokeRenderingSegment
 {
+extern(Windows):
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point BezierControlPoint1()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_BezierControlPoint1(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point BezierControlPoint2()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_BezierControlPoint2(&_ret));
+		return _ret;
+	}
+	final FLOAT Pressure()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_Pressure(&_ret));
+		return _ret;
+	}
+	final FLOAT TiltX()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_TiltX(&_ret));
+		return _ret;
+	}
+	final FLOAT TiltY()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_TiltY(&_ret));
+		return _ret;
+	}
+	final FLOAT Twist()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_Twist(&_ret));
+		return _ret;
+	}
 }
 
 interface InkStrokesCollectedEventArgs : Windows.UI.Input.Inking.IInkStrokesCollectedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) Strokes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokesCollectedEventArgs).get_Strokes(&_ret));
+		return _ret;
+	}
 }
 
 interface InkStrokesErasedEventArgs : Windows.UI.Input.Inking.IInkStrokesErasedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) Strokes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokesErasedEventArgs).get_Strokes(&_ret));
+		return _ret;
+	}
 }
 
 interface InkSynchronizer : Windows.UI.Input.Inking.IInkSynchronizer
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) BeginDry()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkSynchronizer).abi_BeginDry(&_ret));
+		return _ret;
+	}
+	final void EndDry()
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkSynchronizer).abi_EndDry());
+	}
 }
 
 interface InkUnprocessedInput : Windows.UI.Input.Inking.IInkUnprocessedInput
 {
+extern(Windows):
+	final Windows.UI.Input.Inking.InkPresenter InkPresenter()
+	{
+		Windows.UI.Input.Inking.InkPresenter _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).get_InkPresenter(&_ret));
+		return _ret;
+	}
 }
 
 enum InkDrawingAttributesKind

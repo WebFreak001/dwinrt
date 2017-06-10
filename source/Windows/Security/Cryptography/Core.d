@@ -393,6 +393,55 @@ interface AsymmetricAlgorithmNames
 
 interface AsymmetricKeyAlgorithmProvider : Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider, Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider2
 {
+extern(Windows):
+	final HSTRING AlgorithmName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider).get_AlgorithmName(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Core.CryptographicKey CreateKeyPair(UINT32 keySize)
+	{
+		Windows.Security.Cryptography.Core.CryptographicKey _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider).abi_CreateKeyPair(keySize, &_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Core.CryptographicKey ImportDefaultPrivateKeyBlob(Windows.Storage.Streams.IBuffer keyBlob)
+	{
+		Windows.Security.Cryptography.Core.CryptographicKey _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider).abi_ImportDefaultPrivateKeyBlob(keyBlob, &_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Core.CryptographicKey ImportKeyPairWithBlobType(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicPrivateKeyBlobType BlobType)
+	{
+		Windows.Security.Cryptography.Core.CryptographicKey _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider).abi_ImportKeyPairWithBlobType(keyBlob, BlobType, &_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Core.CryptographicKey ImportDefaultPublicKeyBlob(Windows.Storage.Streams.IBuffer keyBlob)
+	{
+		Windows.Security.Cryptography.Core.CryptographicKey _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider).abi_ImportDefaultPublicKeyBlob(keyBlob, &_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Core.CryptographicKey ImportPublicKeyWithBlobType(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType BlobType)
+	{
+		Windows.Security.Cryptography.Core.CryptographicKey _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider).abi_ImportPublicKeyWithBlobType(keyBlob, BlobType, &_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Core.CryptographicKey CreateKeyPairWithCurveName(HSTRING curveName)
+	{
+		Windows.Security.Cryptography.Core.CryptographicKey _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider2).abi_CreateKeyPairWithCurveName(curveName, &_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Core.CryptographicKey CreateKeyPairWithCurveParameters(UINT32 __parametersSize, BYTE* parameters)
+	{
+		Windows.Security.Cryptography.Core.CryptographicKey _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider2).abi_CreateKeyPairWithCurveParameters(__parametersSize, parameters, &_ret));
+		return _ret;
+	}
 }
 
 interface CryptographicEngine
@@ -401,10 +450,52 @@ interface CryptographicEngine
 
 interface CryptographicHash : Windows.Security.Cryptography.Core.IHashComputation
 {
+extern(Windows):
+	final void Append(Windows.Storage.Streams.IBuffer data)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IHashComputation).abi_Append(data));
+	}
+	final Windows.Storage.Streams.IBuffer GetValueAndReset()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IHashComputation).abi_GetValueAndReset(&_ret));
+		return _ret;
+	}
 }
 
 interface CryptographicKey : Windows.Security.Cryptography.Core.ICryptographicKey
 {
+extern(Windows):
+	final UINT32 KeySize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ICryptographicKey).get_KeySize(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer ExportDefaultPrivateKeyBlobType()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ICryptographicKey).abi_ExportDefaultPrivateKeyBlobType(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer ExportPrivateKeyWithBlobType(Windows.Security.Cryptography.Core.CryptographicPrivateKeyBlobType BlobType)
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ICryptographicKey).abi_ExportPrivateKeyWithBlobType(BlobType, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer ExportDefaultPublicKeyBlobType()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ICryptographicKey).abi_ExportDefaultPublicKeyBlobType(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer ExportPublicKeyWithBlobType(Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType BlobType)
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ICryptographicKey).abi_ExportPublicKeyWithBlobType(BlobType, &_ret));
+		return _ret;
+	}
 }
 
 interface EccCurveNames
@@ -413,6 +504,19 @@ interface EccCurveNames
 
 interface EncryptedAndAuthenticatedData : Windows.Security.Cryptography.Core.IEncryptedAndAuthenticatedData
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer EncryptedData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IEncryptedAndAuthenticatedData).get_EncryptedData(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer AuthenticationTag()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IEncryptedAndAuthenticatedData).get_AuthenticationTag(&_ret));
+		return _ret;
+	}
 }
 
 interface HashAlgorithmNames
@@ -421,6 +525,31 @@ interface HashAlgorithmNames
 
 interface HashAlgorithmProvider : Windows.Security.Cryptography.Core.IHashAlgorithmProvider
 {
+extern(Windows):
+	final HSTRING AlgorithmName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IHashAlgorithmProvider).get_AlgorithmName(&_ret));
+		return _ret;
+	}
+	final UINT32 HashLength()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IHashAlgorithmProvider).get_HashLength(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer HashData(Windows.Storage.Streams.IBuffer data)
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IHashAlgorithmProvider).abi_HashData(data, &_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Core.CryptographicHash CreateHash()
+	{
+		Windows.Security.Cryptography.Core.CryptographicHash _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IHashAlgorithmProvider).abi_CreateHash(&_ret));
+		return _ret;
+	}
 }
 
 interface KeyDerivationAlgorithmNames
@@ -429,10 +558,50 @@ interface KeyDerivationAlgorithmNames
 
 interface KeyDerivationAlgorithmProvider : Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmProvider
 {
+extern(Windows):
+	final HSTRING AlgorithmName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmProvider).get_AlgorithmName(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Core.CryptographicKey CreateKey(Windows.Storage.Streams.IBuffer keyMaterial)
+	{
+		Windows.Security.Cryptography.Core.CryptographicKey _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmProvider).abi_CreateKey(keyMaterial, &_ret));
+		return _ret;
+	}
 }
 
 interface KeyDerivationParameters : Windows.Security.Cryptography.Core.IKeyDerivationParameters, Windows.Security.Cryptography.Core.IKeyDerivationParameters2
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer KdfGenericBinary()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationParameters).get_KdfGenericBinary(&_ret));
+		return _ret;
+	}
+	final void KdfGenericBinary(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationParameters).set_KdfGenericBinary(value));
+	}
+	final UINT32 IterationCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationParameters).get_IterationCount(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Core.Capi1KdfTargetAlgorithm Capi1KdfTargetAlgorithm()
+	{
+		Windows.Security.Cryptography.Core.Capi1KdfTargetAlgorithm _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationParameters2).get_Capi1KdfTargetAlgorithm(&_ret));
+		return _ret;
+	}
+	final void Capi1KdfTargetAlgorithm(Windows.Security.Cryptography.Core.Capi1KdfTargetAlgorithm value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationParameters2).set_Capi1KdfTargetAlgorithm(value));
+	}
 }
 
 interface MacAlgorithmNames
@@ -441,6 +610,31 @@ interface MacAlgorithmNames
 
 interface MacAlgorithmProvider : Windows.Security.Cryptography.Core.IMacAlgorithmProvider, Windows.Security.Cryptography.Core.IMacAlgorithmProvider2
 {
+extern(Windows):
+	final HSTRING AlgorithmName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IMacAlgorithmProvider).get_AlgorithmName(&_ret));
+		return _ret;
+	}
+	final UINT32 MacLength()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IMacAlgorithmProvider).get_MacLength(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Core.CryptographicKey CreateKey(Windows.Storage.Streams.IBuffer keyMaterial)
+	{
+		Windows.Security.Cryptography.Core.CryptographicKey _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IMacAlgorithmProvider).abi_CreateKey(keyMaterial, &_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Core.CryptographicHash CreateHash(Windows.Storage.Streams.IBuffer keyMaterial)
+	{
+		Windows.Security.Cryptography.Core.CryptographicHash _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IMacAlgorithmProvider2).abi_CreateHash(keyMaterial, &_ret));
+		return _ret;
+	}
 }
 
 interface PersistedKeyProvider
@@ -453,6 +647,25 @@ interface SymmetricAlgorithmNames
 
 interface SymmetricKeyAlgorithmProvider : Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProvider
 {
+extern(Windows):
+	final HSTRING AlgorithmName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProvider).get_AlgorithmName(&_ret));
+		return _ret;
+	}
+	final UINT32 BlockLength()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProvider).get_BlockLength(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Core.CryptographicKey CreateSymmetricKey(Windows.Storage.Streams.IBuffer keyMaterial)
+	{
+		Windows.Security.Cryptography.Core.CryptographicKey _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProvider).abi_CreateSymmetricKey(keyMaterial, &_ret));
+		return _ret;
+	}
 }
 
 enum Capi1KdfTargetAlgorithm

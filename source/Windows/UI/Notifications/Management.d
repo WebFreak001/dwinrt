@@ -27,6 +27,39 @@ extern(Windows):
 
 interface UserNotificationListener : Windows.UI.Notifications.Management.IUserNotificationListener
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus) RequestAccessAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_RequestAccessAsync(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus GetAccessStatus()
+	{
+		Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_GetAccessStatus(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.UserNotification)) GetNotificationsAsync(Windows.UI.Notifications.NotificationKinds kinds)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.UserNotification)) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_GetNotificationsAsync(kinds, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.UserNotification GetNotification(UINT32 notificationId)
+	{
+		Windows.UI.Notifications.UserNotification _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_GetNotification(notificationId, &_ret));
+		return _ret;
+	}
+	final void ClearNotifications()
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_ClearNotifications());
+	}
+	final void RemoveNotification(UINT32 notificationId)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_RemoveNotification(notificationId));
+	}
 }
 
 enum UserNotificationListenerAccessStatus

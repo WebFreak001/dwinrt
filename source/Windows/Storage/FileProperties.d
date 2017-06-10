@@ -152,10 +152,98 @@ extern(Windows):
 
 interface BasicProperties : Windows.Storage.FileProperties.IBasicProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
+extern(Windows):
+	final UINT64 Size()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IBasicProperties).get_Size(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime DateModified()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IBasicProperties).get_DateModified(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime ItemDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IBasicProperties).get_ItemDate(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)) RetrievePropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_RetrievePropertiesAsync(propertiesToRetrieve, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SavePropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)) propertiesToSave)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_SavePropertiesAsync(propertiesToSave, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SavePropertiesAsyncOverloadDefault()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_SavePropertiesAsyncOverloadDefault(&_ret));
+		return _ret;
+	}
 }
 
 interface DocumentProperties : Windows.Storage.FileProperties.IDocumentProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(HSTRING) Author()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IDocumentProperties).get_Author(&_ret));
+		return _ret;
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IDocumentProperties).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IDocumentProperties).set_Title(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Keywords()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IDocumentProperties).get_Keywords(&_ret));
+		return _ret;
+	}
+	final HSTRING Comment()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IDocumentProperties).get_Comment(&_ret));
+		return _ret;
+	}
+	final void Comment(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IDocumentProperties).set_Comment(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)) RetrievePropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_RetrievePropertiesAsync(propertiesToRetrieve, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SavePropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)) propertiesToSave)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_SavePropertiesAsync(propertiesToSave, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SavePropertiesAsyncOverloadDefault()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_SavePropertiesAsyncOverloadDefault(&_ret));
+		return _ret;
+	}
 }
 
 interface GeotagHelper
@@ -164,22 +252,565 @@ interface GeotagHelper
 
 interface ImageProperties : Windows.Storage.FileProperties.IImageProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
+extern(Windows):
+	final UINT32 Rating()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).get_Rating(&_ret));
+		return _ret;
+	}
+	final void Rating(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).set_Rating(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Keywords()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).get_Keywords(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime DateTaken()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).get_DateTaken(&_ret));
+		return _ret;
+	}
+	final void DateTaken(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).set_DateTaken(value));
+	}
+	final UINT32 Width()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).get_Width(&_ret));
+		return _ret;
+	}
+	final UINT32 Height()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).get_Height(&_ret));
+		return _ret;
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).set_Title(value));
+	}
+	final Windows.Foundation.IReference!(double) Latitude()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).get_Latitude(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) Longitude()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).get_Longitude(&_ret));
+		return _ret;
+	}
+	final HSTRING CameraManufacturer()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).get_CameraManufacturer(&_ret));
+		return _ret;
+	}
+	final void CameraManufacturer(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).set_CameraManufacturer(value));
+	}
+	final HSTRING CameraModel()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).get_CameraModel(&_ret));
+		return _ret;
+	}
+	final void CameraModel(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).set_CameraModel(value));
+	}
+	final Windows.Storage.FileProperties.PhotoOrientation Orientation()
+	{
+		Windows.Storage.FileProperties.PhotoOrientation _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).get_Orientation(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) PeopleNames()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IImageProperties).get_PeopleNames(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)) RetrievePropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_RetrievePropertiesAsync(propertiesToRetrieve, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SavePropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)) propertiesToSave)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_SavePropertiesAsync(propertiesToSave, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SavePropertiesAsyncOverloadDefault()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_SavePropertiesAsyncOverloadDefault(&_ret));
+		return _ret;
+	}
 }
 
 interface MusicProperties : Windows.Storage.FileProperties.IMusicProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
+extern(Windows):
+	final HSTRING Album()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Album(&_ret));
+		return _ret;
+	}
+	final void Album(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).set_Album(value));
+	}
+	final HSTRING Artist()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Artist(&_ret));
+		return _ret;
+	}
+	final void Artist(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).set_Artist(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Genre()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Genre(&_ret));
+		return _ret;
+	}
+	final UINT32 TrackNumber()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_TrackNumber(&_ret));
+		return _ret;
+	}
+	final void TrackNumber(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).set_TrackNumber(value));
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).set_Title(value));
+	}
+	final UINT32 Rating()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Rating(&_ret));
+		return _ret;
+	}
+	final void Rating(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).set_Rating(value));
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Duration(&_ret));
+		return _ret;
+	}
+	final UINT32 Bitrate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Bitrate(&_ret));
+		return _ret;
+	}
+	final HSTRING AlbumArtist()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_AlbumArtist(&_ret));
+		return _ret;
+	}
+	final void AlbumArtist(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).set_AlbumArtist(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Composers()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Composers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Conductors()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Conductors(&_ret));
+		return _ret;
+	}
+	final HSTRING Subtitle()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Subtitle(&_ret));
+		return _ret;
+	}
+	final void Subtitle(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).set_Subtitle(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Producers()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Producers(&_ret));
+		return _ret;
+	}
+	final HSTRING Publisher()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Publisher(&_ret));
+		return _ret;
+	}
+	final void Publisher(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).set_Publisher(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Writers()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Writers(&_ret));
+		return _ret;
+	}
+	final UINT32 Year()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).get_Year(&_ret));
+		return _ret;
+	}
+	final void Year(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IMusicProperties).set_Year(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)) RetrievePropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_RetrievePropertiesAsync(propertiesToRetrieve, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SavePropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)) propertiesToSave)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_SavePropertiesAsync(propertiesToSave, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SavePropertiesAsyncOverloadDefault()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_SavePropertiesAsyncOverloadDefault(&_ret));
+		return _ret;
+	}
 }
 
 interface StorageItemContentProperties : Windows.Storage.FileProperties.IStorageItemContentProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.MusicProperties) GetMusicPropertiesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.MusicProperties) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemContentProperties).abi_GetMusicPropertiesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.VideoProperties) GetVideoPropertiesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.VideoProperties) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemContentProperties).abi_GetVideoPropertiesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.ImageProperties) GetImagePropertiesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.ImageProperties) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemContentProperties).abi_GetImagePropertiesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.DocumentProperties) GetDocumentPropertiesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.DocumentProperties) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemContentProperties).abi_GetDocumentPropertiesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)) RetrievePropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_RetrievePropertiesAsync(propertiesToRetrieve, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SavePropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)) propertiesToSave)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_SavePropertiesAsync(propertiesToSave, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SavePropertiesAsyncOverloadDefault()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_SavePropertiesAsyncOverloadDefault(&_ret));
+		return _ret;
+	}
 }
 
 interface StorageItemThumbnail : Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Storage.FileProperties.IThumbnailProperties
 {
+extern(Windows):
+	final HSTRING ContentType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IContentTypeProvider).get_ContentType(&_ret));
+		return _ret;
+	}
+	final UINT64 Size()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
+		return _ret;
+	}
+	final void Size(UINT64 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
+	}
+	final Windows.Storage.Streams.IInputStream GetInputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final UINT64 Position()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
+		return _ret;
+	}
+	final void Seek(UINT64 position)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
+	}
+	final Windows.Storage.Streams.IRandomAccessStream CloneStream()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_CloneStream(&_ret));
+		return _ret;
+	}
+	final bool CanRead()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanRead(&_ret));
+		return _ret;
+	}
+	final bool CanWrite()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanWrite(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) WriteAsync(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_WriteAsync(buffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_FlushAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IInputStream).abi_ReadAsync(buffer, count, options, &_ret));
+		return _ret;
+	}
+	final UINT32 OriginalWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IThumbnailProperties).get_OriginalWidth(&_ret));
+		return _ret;
+	}
+	final UINT32 OriginalHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IThumbnailProperties).get_OriginalHeight(&_ret));
+		return _ret;
+	}
+	final bool ReturnedSmallerCachedSize()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IThumbnailProperties).get_ReturnedSmallerCachedSize(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.FileProperties.ThumbnailType Type()
+	{
+		Windows.Storage.FileProperties.ThumbnailType _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IThumbnailProperties).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoProperties : Windows.Storage.FileProperties.IVideoProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
+extern(Windows):
+	final UINT32 Rating()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Rating(&_ret));
+		return _ret;
+	}
+	final void Rating(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).set_Rating(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Keywords()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Keywords(&_ret));
+		return _ret;
+	}
+	final UINT32 Width()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Width(&_ret));
+		return _ret;
+	}
+	final UINT32 Height()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Height(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Duration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) Latitude()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Latitude(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) Longitude()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Longitude(&_ret));
+		return _ret;
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).set_Title(value));
+	}
+	final HSTRING Subtitle()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Subtitle(&_ret));
+		return _ret;
+	}
+	final void Subtitle(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).set_Subtitle(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Producers()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Producers(&_ret));
+		return _ret;
+	}
+	final HSTRING Publisher()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Publisher(&_ret));
+		return _ret;
+	}
+	final void Publisher(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).set_Publisher(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Writers()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Writers(&_ret));
+		return _ret;
+	}
+	final UINT32 Year()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Year(&_ret));
+		return _ret;
+	}
+	final void Year(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).set_Year(value));
+	}
+	final UINT32 Bitrate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Bitrate(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Directors()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Directors(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.FileProperties.VideoOrientation Orientation()
+	{
+		Windows.Storage.FileProperties.VideoOrientation _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IVideoProperties).get_Orientation(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)) RetrievePropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)) _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_RetrievePropertiesAsync(propertiesToRetrieve, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SavePropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)) propertiesToSave)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_SavePropertiesAsync(propertiesToSave, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SavePropertiesAsyncOverloadDefault()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.FileProperties.IStorageItemExtraProperties).abi_SavePropertiesAsyncOverloadDefault(&_ret));
+		return _ret;
+	}
 }
 
 enum PhotoOrientation

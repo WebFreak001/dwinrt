@@ -685,132 +685,1195 @@ extern(Windows):
 
 interface HttpCacheDirectiveHeaderValueCollection : Windows.Web.Http.Headers.IHttpCacheDirectiveHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpNameValueHeaderValue), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) MaxAge()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCacheDirectiveHeaderValueCollection).get_MaxAge(&_ret));
+		return _ret;
+	}
+	final void MaxAge(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCacheDirectiveHeaderValueCollection).set_MaxAge(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) MaxStale()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCacheDirectiveHeaderValueCollection).get_MaxStale(&_ret));
+		return _ret;
+	}
+	final void MaxStale(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCacheDirectiveHeaderValueCollection).set_MaxStale(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) MinFresh()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCacheDirectiveHeaderValueCollection).get_MinFresh(&_ret));
+		return _ret;
+	}
+	final void MinFresh(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCacheDirectiveHeaderValueCollection).set_MinFresh(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) SharedMaxAge()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCacheDirectiveHeaderValueCollection).get_SharedMaxAge(&_ret));
+		return _ret;
+	}
+	final void SharedMaxAge(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCacheDirectiveHeaderValueCollection).set_SharedMaxAge(value));
+	}
+	final void ParseAdd(HSTRING input)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCacheDirectiveHeaderValueCollection).abi_ParseAdd(input));
+	}
+	final bool TryParseAdd(HSTRING input)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCacheDirectiveHeaderValueCollection).abi_TryParseAdd(input, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpChallengeHeaderValue : Windows.Web.Http.Headers.IHttpChallengeHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) Parameters()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpChallengeHeaderValue).get_Parameters(&_ret));
+		return _ret;
+	}
+	final HSTRING Scheme()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpChallengeHeaderValue).get_Scheme(&_ret));
+		return _ret;
+	}
+	final HSTRING Token()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpChallengeHeaderValue).get_Token(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpChallengeHeaderValueCollection : Windows.Web.Http.Headers.IHttpChallengeHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpChallengeHeaderValue), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final void ParseAdd(HSTRING input)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpChallengeHeaderValueCollection).abi_ParseAdd(input));
+	}
+	final bool TryParseAdd(HSTRING input)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpChallengeHeaderValueCollection).abi_TryParseAdd(input, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpConnectionOptionHeaderValue : Windows.Web.Http.Headers.IHttpConnectionOptionHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING Token()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpConnectionOptionHeaderValue).get_Token(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpConnectionOptionHeaderValueCollection : Windows.Web.Http.Headers.IHttpConnectionOptionHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final void ParseAdd(HSTRING input)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpConnectionOptionHeaderValueCollection).abi_ParseAdd(input));
+	}
+	final bool TryParseAdd(HSTRING input)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpConnectionOptionHeaderValueCollection).abi_TryParseAdd(input, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpContentCodingHeaderValue : Windows.Web.Http.Headers.IHttpContentCodingHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING ContentCoding()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentCodingHeaderValue).get_ContentCoding(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpContentCodingHeaderValueCollection : Windows.Web.Http.Headers.IHttpContentCodingHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final void ParseAdd(HSTRING input)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentCodingHeaderValueCollection).abi_ParseAdd(input));
+	}
+	final bool TryParseAdd(HSTRING input)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentCodingHeaderValueCollection).abi_TryParseAdd(input, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpContentCodingWithQualityHeaderValue : Windows.Web.Http.Headers.IHttpContentCodingWithQualityHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING ContentCoding()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentCodingWithQualityHeaderValue).get_ContentCoding(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) Quality()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentCodingWithQualityHeaderValue).get_Quality(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpContentCodingWithQualityHeaderValueCollection : Windows.Web.Http.Headers.IHttpContentCodingWithQualityHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final void ParseAdd(HSTRING input)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentCodingWithQualityHeaderValueCollection).abi_ParseAdd(input));
+	}
+	final bool TryParseAdd(HSTRING input)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentCodingWithQualityHeaderValueCollection).abi_TryParseAdd(input, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpContentDispositionHeaderValue : Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING DispositionType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).get_DispositionType(&_ret));
+		return _ret;
+	}
+	final void DispositionType(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).set_DispositionType(value));
+	}
+	final HSTRING FileName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).get_FileName(&_ret));
+		return _ret;
+	}
+	final void FileName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).set_FileName(value));
+	}
+	final HSTRING FileNameStar()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).get_FileNameStar(&_ret));
+		return _ret;
+	}
+	final void FileNameStar(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).set_FileNameStar(value));
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).set_Name(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) Parameters()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).get_Parameters(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) Size()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).get_Size(&_ret));
+		return _ret;
+	}
+	final void Size(Windows.Foundation.IReference!(UINT64) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).set_Size(value));
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpContentHeaderCollection : Windows.Web.Http.Headers.IHttpContentHeaderCollection, Windows.Foundation.Collections.IMap!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Web.Http.Headers.HttpContentDispositionHeaderValue ContentDisposition()
+	{
+		Windows.Web.Http.Headers.HttpContentDispositionHeaderValue _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).get_ContentDisposition(&_ret));
+		return _ret;
+	}
+	final void ContentDisposition(Windows.Web.Http.Headers.HttpContentDispositionHeaderValue value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).set_ContentDisposition(value));
+	}
+	final Windows.Web.Http.Headers.HttpContentCodingHeaderValueCollection ContentEncoding()
+	{
+		Windows.Web.Http.Headers.HttpContentCodingHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).get_ContentEncoding(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Headers.HttpLanguageHeaderValueCollection ContentLanguage()
+	{
+		Windows.Web.Http.Headers.HttpLanguageHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).get_ContentLanguage(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) ContentLength()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).get_ContentLength(&_ret));
+		return _ret;
+	}
+	final void ContentLength(Windows.Foundation.IReference!(UINT64) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).set_ContentLength(value));
+	}
+	final Windows.Foundation.Uri ContentLocation()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).get_ContentLocation(&_ret));
+		return _ret;
+	}
+	final void ContentLocation(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).set_ContentLocation(value));
+	}
+	final Windows.Storage.Streams.IBuffer ContentMD5()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).get_ContentMD5(&_ret));
+		return _ret;
+	}
+	final void ContentMD5(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).set_ContentMD5(value));
+	}
+	final Windows.Web.Http.Headers.HttpContentRangeHeaderValue ContentRange()
+	{
+		Windows.Web.Http.Headers.HttpContentRangeHeaderValue _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).get_ContentRange(&_ret));
+		return _ret;
+	}
+	final void ContentRange(Windows.Web.Http.Headers.HttpContentRangeHeaderValue value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).set_ContentRange(value));
+	}
+	final Windows.Web.Http.Headers.HttpMediaTypeHeaderValue ContentType()
+	{
+		Windows.Web.Http.Headers.HttpMediaTypeHeaderValue _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).get_ContentType(&_ret));
+		return _ret;
+	}
+	final void ContentType(Windows.Web.Http.Headers.HttpMediaTypeHeaderValue value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).set_ContentType(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Expires()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).get_Expires(&_ret));
+		return _ret;
+	}
+	final void Expires(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).set_Expires(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) LastModified()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).get_LastModified(&_ret));
+		return _ret;
+	}
+	final void LastModified(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).set_LastModified(value));
+	}
+	final void Append(HSTRING name, HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).abi_Append(name, value));
+	}
+	final bool TryAppendWithoutValidation(HSTRING name, HSTRING value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).abi_TryAppendWithoutValidation(name, value, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpContentRangeHeaderValue : Windows.Web.Http.Headers.IHttpContentRangeHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(UINT64) FirstBytePosition()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentRangeHeaderValue).get_FirstBytePosition(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) LastBytePosition()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentRangeHeaderValue).get_LastBytePosition(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) Length()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentRangeHeaderValue).get_Length(&_ret));
+		return _ret;
+	}
+	final HSTRING Unit()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentRangeHeaderValue).get_Unit(&_ret));
+		return _ret;
+	}
+	final void Unit(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentRangeHeaderValue).set_Unit(value));
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpCookiePairHeaderValue : Windows.Web.Http.Headers.IHttpCookiePairHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCookiePairHeaderValue).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCookiePairHeaderValue).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCookiePairHeaderValue).set_Value(value));
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpCookiePairHeaderValueCollection : Windows.Web.Http.Headers.IHttpCookiePairHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final void ParseAdd(HSTRING input)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCookiePairHeaderValueCollection).abi_ParseAdd(input));
+	}
+	final bool TryParseAdd(HSTRING input)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCookiePairHeaderValueCollection).abi_TryParseAdd(input, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpCredentialsHeaderValue : Windows.Web.Http.Headers.IHttpCredentialsHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) Parameters()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCredentialsHeaderValue).get_Parameters(&_ret));
+		return _ret;
+	}
+	final HSTRING Scheme()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCredentialsHeaderValue).get_Scheme(&_ret));
+		return _ret;
+	}
+	final HSTRING Token()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCredentialsHeaderValue).get_Token(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpDateOrDeltaHeaderValue : Windows.Web.Http.Headers.IHttpDateOrDeltaHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Date()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpDateOrDeltaHeaderValue).get_Date(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Delta()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpDateOrDeltaHeaderValue).get_Delta(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpExpectationHeaderValue : Windows.Web.Http.Headers.IHttpExpectationHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpExpectationHeaderValue).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpExpectationHeaderValue).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpExpectationHeaderValue).set_Value(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) Parameters()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpExpectationHeaderValue).get_Parameters(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpExpectationHeaderValueCollection : Windows.Web.Http.Headers.IHttpExpectationHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpExpectationHeaderValue), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final void ParseAdd(HSTRING input)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpExpectationHeaderValueCollection).abi_ParseAdd(input));
+	}
+	final bool TryParseAdd(HSTRING input)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpExpectationHeaderValueCollection).abi_TryParseAdd(input, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpLanguageHeaderValueCollection : Windows.Web.Http.Headers.IHttpLanguageHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Globalization.Language), Windows.Foundation.Collections.IIterable!(Windows.Globalization.Language), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final void ParseAdd(HSTRING input)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpLanguageHeaderValueCollection).abi_ParseAdd(input));
+	}
+	final bool TryParseAdd(HSTRING input)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpLanguageHeaderValueCollection).abi_TryParseAdd(input, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpLanguageRangeWithQualityHeaderValue : Windows.Web.Http.Headers.IHttpLanguageRangeWithQualityHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING LanguageRange()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpLanguageRangeWithQualityHeaderValue).get_LanguageRange(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) Quality()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpLanguageRangeWithQualityHeaderValue).get_Quality(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpLanguageRangeWithQualityHeaderValueCollection : Windows.Web.Http.Headers.IHttpLanguageRangeWithQualityHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final void ParseAdd(HSTRING input)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpLanguageRangeWithQualityHeaderValueCollection).abi_ParseAdd(input));
+	}
+	final bool TryParseAdd(HSTRING input)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpLanguageRangeWithQualityHeaderValueCollection).abi_TryParseAdd(input, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpMediaTypeHeaderValue : Windows.Web.Http.Headers.IHttpMediaTypeHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING CharSet()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeHeaderValue).get_CharSet(&_ret));
+		return _ret;
+	}
+	final void CharSet(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeHeaderValue).set_CharSet(value));
+	}
+	final HSTRING MediaType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeHeaderValue).get_MediaType(&_ret));
+		return _ret;
+	}
+	final void MediaType(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeHeaderValue).set_MediaType(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) Parameters()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeHeaderValue).get_Parameters(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpMediaTypeWithQualityHeaderValue : Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING CharSet()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValue).get_CharSet(&_ret));
+		return _ret;
+	}
+	final void CharSet(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValue).set_CharSet(value));
+	}
+	final HSTRING MediaType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValue).get_MediaType(&_ret));
+		return _ret;
+	}
+	final void MediaType(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValue).set_MediaType(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) Parameters()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValue).get_Parameters(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) Quality()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValue).get_Quality(&_ret));
+		return _ret;
+	}
+	final void Quality(Windows.Foundation.IReference!(double) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValue).set_Quality(value));
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpMediaTypeWithQualityHeaderValueCollection : Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final void ParseAdd(HSTRING input)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValueCollection).abi_ParseAdd(input));
+	}
+	final bool TryParseAdd(HSTRING input)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValueCollection).abi_TryParseAdd(input, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpMethodHeaderValueCollection : Windows.Web.Http.Headers.IHttpMethodHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.HttpMethod), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final void ParseAdd(HSTRING input)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMethodHeaderValueCollection).abi_ParseAdd(input));
+	}
+	final bool TryParseAdd(HSTRING input)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMethodHeaderValueCollection).abi_TryParseAdd(input, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpNameValueHeaderValue : Windows.Web.Http.Headers.IHttpNameValueHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpNameValueHeaderValue).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpNameValueHeaderValue).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpNameValueHeaderValue).set_Value(value));
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpProductHeaderValue : Windows.Web.Http.Headers.IHttpProductHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpProductHeaderValue).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING Version()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpProductHeaderValue).get_Version(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpProductInfoHeaderValue : Windows.Web.Http.Headers.IHttpProductInfoHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Web.Http.Headers.HttpProductHeaderValue Product()
+	{
+		Windows.Web.Http.Headers.HttpProductHeaderValue _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpProductInfoHeaderValue).get_Product(&_ret));
+		return _ret;
+	}
+	final HSTRING Comment()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpProductInfoHeaderValue).get_Comment(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpProductInfoHeaderValueCollection : Windows.Web.Http.Headers.IHttpProductInfoHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final void ParseAdd(HSTRING input)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpProductInfoHeaderValueCollection).abi_ParseAdd(input));
+	}
+	final bool TryParseAdd(HSTRING input)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpProductInfoHeaderValueCollection).abi_TryParseAdd(input, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpRequestHeaderCollection : Windows.Web.Http.Headers.IHttpRequestHeaderCollection, Windows.Foundation.Collections.IMap!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValueCollection Accept()
+	{
+		Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_Accept(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValueCollection AcceptEncoding()
+	{
+		Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_AcceptEncoding(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValueCollection AcceptLanguage()
+	{
+		Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_AcceptLanguage(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Headers.HttpCredentialsHeaderValue Authorization()
+	{
+		Windows.Web.Http.Headers.HttpCredentialsHeaderValue _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_Authorization(&_ret));
+		return _ret;
+	}
+	final void Authorization(Windows.Web.Http.Headers.HttpCredentialsHeaderValue value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).set_Authorization(value));
+	}
+	final Windows.Web.Http.Headers.HttpCacheDirectiveHeaderValueCollection CacheControl()
+	{
+		Windows.Web.Http.Headers.HttpCacheDirectiveHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_CacheControl(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Headers.HttpConnectionOptionHeaderValueCollection Connection()
+	{
+		Windows.Web.Http.Headers.HttpConnectionOptionHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_Connection(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Headers.HttpCookiePairHeaderValueCollection Cookie()
+	{
+		Windows.Web.Http.Headers.HttpCookiePairHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_Cookie(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Date()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_Date(&_ret));
+		return _ret;
+	}
+	final void Date(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).set_Date(value));
+	}
+	final Windows.Web.Http.Headers.HttpExpectationHeaderValueCollection Expect()
+	{
+		Windows.Web.Http.Headers.HttpExpectationHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_Expect(&_ret));
+		return _ret;
+	}
+	final HSTRING From()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_From(&_ret));
+		return _ret;
+	}
+	final void From(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).set_From(value));
+	}
+	final Windows.Networking.HostName Host()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_Host(&_ret));
+		return _ret;
+	}
+	final void Host(Windows.Networking.HostName value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).set_Host(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) IfModifiedSince()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_IfModifiedSince(&_ret));
+		return _ret;
+	}
+	final void IfModifiedSince(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).set_IfModifiedSince(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) IfUnmodifiedSince()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_IfUnmodifiedSince(&_ret));
+		return _ret;
+	}
+	final void IfUnmodifiedSince(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).set_IfUnmodifiedSince(value));
+	}
+	final Windows.Foundation.IReference!(UINT32) MaxForwards()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_MaxForwards(&_ret));
+		return _ret;
+	}
+	final void MaxForwards(Windows.Foundation.IReference!(UINT32) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).set_MaxForwards(value));
+	}
+	final Windows.Web.Http.Headers.HttpCredentialsHeaderValue ProxyAuthorization()
+	{
+		Windows.Web.Http.Headers.HttpCredentialsHeaderValue _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_ProxyAuthorization(&_ret));
+		return _ret;
+	}
+	final void ProxyAuthorization(Windows.Web.Http.Headers.HttpCredentialsHeaderValue value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).set_ProxyAuthorization(value));
+	}
+	final Windows.Foundation.Uri Referer()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_Referer(&_ret));
+		return _ret;
+	}
+	final void Referer(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).set_Referer(value));
+	}
+	final Windows.Web.Http.Headers.HttpTransferCodingHeaderValueCollection TransferEncoding()
+	{
+		Windows.Web.Http.Headers.HttpTransferCodingHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_TransferEncoding(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Headers.HttpProductInfoHeaderValueCollection UserAgent()
+	{
+		Windows.Web.Http.Headers.HttpProductInfoHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).get_UserAgent(&_ret));
+		return _ret;
+	}
+	final void Append(HSTRING name, HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).abi_Append(name, value));
+	}
+	final bool TryAppendWithoutValidation(HSTRING name, HSTRING value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).abi_TryAppendWithoutValidation(name, value, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpResponseHeaderCollection : Windows.Web.Http.Headers.IHttpResponseHeaderCollection, Windows.Foundation.Collections.IMap!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Age()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).get_Age(&_ret));
+		return _ret;
+	}
+	final void Age(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).set_Age(value));
+	}
+	final Windows.Web.Http.Headers.HttpMethodHeaderValueCollection Allow()
+	{
+		Windows.Web.Http.Headers.HttpMethodHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).get_Allow(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Headers.HttpCacheDirectiveHeaderValueCollection CacheControl()
+	{
+		Windows.Web.Http.Headers.HttpCacheDirectiveHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).get_CacheControl(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Headers.HttpConnectionOptionHeaderValueCollection Connection()
+	{
+		Windows.Web.Http.Headers.HttpConnectionOptionHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).get_Connection(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Date()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).get_Date(&_ret));
+		return _ret;
+	}
+	final void Date(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).set_Date(value));
+	}
+	final Windows.Foundation.Uri Location()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).get_Location(&_ret));
+		return _ret;
+	}
+	final void Location(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).set_Location(value));
+	}
+	final Windows.Web.Http.Headers.HttpChallengeHeaderValueCollection ProxyAuthenticate()
+	{
+		Windows.Web.Http.Headers.HttpChallengeHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).get_ProxyAuthenticate(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Headers.HttpDateOrDeltaHeaderValue RetryAfter()
+	{
+		Windows.Web.Http.Headers.HttpDateOrDeltaHeaderValue _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).get_RetryAfter(&_ret));
+		return _ret;
+	}
+	final void RetryAfter(Windows.Web.Http.Headers.HttpDateOrDeltaHeaderValue value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).set_RetryAfter(value));
+	}
+	final Windows.Web.Http.Headers.HttpTransferCodingHeaderValueCollection TransferEncoding()
+	{
+		Windows.Web.Http.Headers.HttpTransferCodingHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).get_TransferEncoding(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Headers.HttpChallengeHeaderValueCollection WwwAuthenticate()
+	{
+		Windows.Web.Http.Headers.HttpChallengeHeaderValueCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).get_WwwAuthenticate(&_ret));
+		return _ret;
+	}
+	final void Append(HSTRING name, HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).abi_Append(name, value));
+	}
+	final bool TryAppendWithoutValidation(HSTRING name, HSTRING value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).abi_TryAppendWithoutValidation(name, value, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpTransferCodingHeaderValue : Windows.Web.Http.Headers.IHttpTransferCodingHeaderValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) Parameters()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpTransferCodingHeaderValue).get_Parameters(&_ret));
+		return _ret;
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpTransferCodingHeaderValue).get_Value(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpTransferCodingHeaderValueCollection : Windows.Web.Http.Headers.IHttpTransferCodingHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final void ParseAdd(HSTRING input)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpTransferCodingHeaderValueCollection).abi_ParseAdd(input));
+	}
+	final bool TryParseAdd(HSTRING input)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpTransferCodingHeaderValueCollection).abi_TryParseAdd(input, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }

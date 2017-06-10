@@ -277,22 +277,283 @@ extern(Windows):
 
 interface AdaptiveMediaSource : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource, Windows.Media.Core.IMediaSource, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource2, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource3, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final bool IsLive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).get_IsLive(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan DesiredLiveOffset()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).get_DesiredLiveOffset(&_ret));
+		return _ret;
+	}
+	final void DesiredLiveOffset(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).set_DesiredLiveOffset(value));
+	}
+	final UINT32 InitialBitrate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).get_InitialBitrate(&_ret));
+		return _ret;
+	}
+	final void InitialBitrate(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).set_InitialBitrate(value));
+	}
+	final UINT32 CurrentDownloadBitrate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).get_CurrentDownloadBitrate(&_ret));
+		return _ret;
+	}
+	final UINT32 CurrentPlaybackBitrate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).get_CurrentPlaybackBitrate(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(UINT32) AvailableBitrates()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).get_AvailableBitrates(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) DesiredMinBitrate()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).get_DesiredMinBitrate(&_ret));
+		return _ret;
+	}
+	final void DesiredMinBitrate(Windows.Foundation.IReference!(UINT32) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).set_DesiredMinBitrate(value));
+	}
+	final Windows.Foundation.IReference!(UINT32) DesiredMaxBitrate()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).get_DesiredMaxBitrate(&_ret));
+		return _ret;
+	}
+	final void DesiredMaxBitrate(Windows.Foundation.IReference!(UINT32) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).set_DesiredMaxBitrate(value));
+	}
+	final bool AudioOnlyPlayback()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).get_AudioOnlyPlayback(&_ret));
+		return _ret;
+	}
+	final UINT64 InboundBitsPerSecond()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).get_InboundBitsPerSecond(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan InboundBitsPerSecondWindow()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).get_InboundBitsPerSecondWindow(&_ret));
+		return _ret;
+	}
+	final void InboundBitsPerSecondWindow(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).set_InboundBitsPerSecondWindow(value));
+	}
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceAdvancedSettings AdvancedSettings()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceAdvancedSettings _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource2).get_AdvancedSettings(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) MinLiveOffset()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource3).get_MinLiveOffset(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) MaxSeekableWindowSize()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource3).get_MaxSeekableWindowSize(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) DesiredSeekableWindowSize()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource3).get_DesiredSeekableWindowSize(&_ret));
+		return _ret;
+	}
+	final void DesiredSeekableWindowSize(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource3).set_DesiredSeekableWindowSize(value));
+	}
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnostics Diagnostics()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnostics _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource3).get_Diagnostics(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCorrelatedTimes GetCorrelatedTimes()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCorrelatedTimes _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource3).abi_GetCorrelatedTimes(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface AdaptiveMediaSourceAdvancedSettings : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceAdvancedSettings
 {
+extern(Windows):
+	final bool AllSegmentsIndependent()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceAdvancedSettings).get_AllSegmentsIndependent(&_ret));
+		return _ret;
+	}
+	final void AllSegmentsIndependent(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceAdvancedSettings).set_AllSegmentsIndependent(value));
+	}
+	final Windows.Foundation.IReference!(double) DesiredBitrateHeadroomRatio()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceAdvancedSettings).get_DesiredBitrateHeadroomRatio(&_ret));
+		return _ret;
+	}
+	final void DesiredBitrateHeadroomRatio(Windows.Foundation.IReference!(double) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceAdvancedSettings).set_DesiredBitrateHeadroomRatio(value));
+	}
+	final Windows.Foundation.IReference!(double) BitrateDowngradeTriggerRatio()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceAdvancedSettings).get_BitrateDowngradeTriggerRatio(&_ret));
+		return _ret;
+	}
+	final void BitrateDowngradeTriggerRatio(Windows.Foundation.IReference!(double) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceAdvancedSettings).set_BitrateDowngradeTriggerRatio(value));
+	}
 }
 
 interface AdaptiveMediaSourceCorrelatedTimes : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCorrelatedTimes
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Position()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCorrelatedTimes).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) PresentationTimeStamp()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCorrelatedTimes).get_PresentationTimeStamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ProgramDateTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCorrelatedTimes).get_ProgramDateTime(&_ret));
+		return _ret;
+	}
 }
 
 interface AdaptiveMediaSourceCreationResult : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCreationResult, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCreationResult2
 {
+extern(Windows):
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationStatus Status()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCreationResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSource MediaSource()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSource _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCreationResult).get_MediaSource(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.HttpResponseMessage HttpResponseMessage()
+	{
+		Windows.Web.Http.HttpResponseMessage _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCreationResult).get_HttpResponseMessage(&_ret));
+		return _ret;
+	}
+	final HRESULT ExtendedError()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCreationResult2).get_ExtendedError(&_ret));
+		return _ret;
+	}
 }
 
 interface AdaptiveMediaSourceDiagnosticAvailableEventArgs : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs
 {
+extern(Windows):
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticType DiagnosticType()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticType _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_DiagnosticType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(INT32) RequestId()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_RequestId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Position()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) SegmentId()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_SegmentId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType) ResourceType()
+	{
+		Windows.Foundation.IReference!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_ResourceType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ResourceUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_ResourceUri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeOffset()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_ResourceByteRangeOffset(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeLength()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_ResourceByteRangeLength(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) Bitrate()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_Bitrate(&_ret));
+		return _ret;
+	}
 }
 
 interface AdaptiveMediaSourceDiagnostics : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnostics
@@ -301,34 +562,326 @@ interface AdaptiveMediaSourceDiagnostics : Windows.Media.Streaming.Adaptive.IAda
 
 interface AdaptiveMediaSourceDownloadBitrateChangedEventArgs : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadBitrateChangedEventArgs, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2
 {
+extern(Windows):
+	final UINT32 OldValue()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadBitrateChangedEventArgs).get_OldValue(&_ret));
+		return _ret;
+	}
+	final UINT32 NewValue()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadBitrateChangedEventArgs).get_NewValue(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedReason Reason()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedReason _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2).get_Reason(&_ret));
+		return _ret;
+	}
 }
 
 interface AdaptiveMediaSourceDownloadCompletedEventArgs : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs2
 {
+extern(Windows):
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType ResourceType()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs).get_ResourceType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ResourceUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs).get_ResourceUri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeOffset()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs).get_ResourceByteRangeOffset(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeLength()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs).get_ResourceByteRangeLength(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.HttpResponseMessage HttpResponseMessage()
+	{
+		Windows.Web.Http.HttpResponseMessage _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs).get_HttpResponseMessage(&_ret));
+		return _ret;
+	}
+	final INT32 RequestId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs2).get_RequestId(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadStatistics Statistics()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadStatistics _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs2).get_Statistics(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Position()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs2).get_Position(&_ret));
+		return _ret;
+	}
 }
 
 interface AdaptiveMediaSourceDownloadFailedEventArgs : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs2
 {
+extern(Windows):
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType ResourceType()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs).get_ResourceType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ResourceUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs).get_ResourceUri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeOffset()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs).get_ResourceByteRangeOffset(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeLength()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs).get_ResourceByteRangeLength(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.HttpResponseMessage HttpResponseMessage()
+	{
+		Windows.Web.Http.HttpResponseMessage _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs).get_HttpResponseMessage(&_ret));
+		return _ret;
+	}
+	final INT32 RequestId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs2).get_RequestId(&_ret));
+		return _ret;
+	}
+	final HRESULT ExtendedError()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs2).get_ExtendedError(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadStatistics Statistics()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadStatistics _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs2).get_Statistics(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Position()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs2).get_Position(&_ret));
+		return _ret;
+	}
 }
 
 interface AdaptiveMediaSourceDownloadRequestedDeferral : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedDeferral).abi_Complete());
+	}
 }
 
 interface AdaptiveMediaSourceDownloadRequestedEventArgs : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs2
 {
+extern(Windows):
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType ResourceType()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs).get_ResourceType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ResourceUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs).get_ResourceUri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeOffset()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs).get_ResourceByteRangeOffset(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeLength()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs).get_ResourceByteRangeLength(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadResult Result()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadResult _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs).get_Result(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedDeferral GetDeferral()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedDeferral _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final INT32 RequestId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs2).get_RequestId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Position()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs2).get_Position(&_ret));
+		return _ret;
+	}
 }
 
 interface AdaptiveMediaSourceDownloadResult : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult2
 {
+extern(Windows):
+	final Windows.Foundation.Uri ResourceUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult).get_ResourceUri(&_ret));
+		return _ret;
+	}
+	final void ResourceUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult).set_ResourceUri(value));
+	}
+	final Windows.Storage.Streams.IInputStream InputStream()
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult).get_InputStream(&_ret));
+		return _ret;
+	}
+	final void InputStream(Windows.Storage.Streams.IInputStream value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult).set_InputStream(value));
+	}
+	final Windows.Storage.Streams.IBuffer Buffer()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult).get_Buffer(&_ret));
+		return _ret;
+	}
+	final void Buffer(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult).set_Buffer(value));
+	}
+	final HSTRING ContentType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult).get_ContentType(&_ret));
+		return _ret;
+	}
+	final void ContentType(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult).set_ContentType(value));
+	}
+	final UINT32 ExtendedStatus()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult).get_ExtendedStatus(&_ret));
+		return _ret;
+	}
+	final void ExtendedStatus(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult).set_ExtendedStatus(value));
+	}
+	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeOffset()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult2).get_ResourceByteRangeOffset(&_ret));
+		return _ret;
+	}
+	final void ResourceByteRangeOffset(Windows.Foundation.IReference!(UINT64) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult2).set_ResourceByteRangeOffset(value));
+	}
+	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeLength()
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult2).get_ResourceByteRangeLength(&_ret));
+		return _ret;
+	}
+	final void ResourceByteRangeLength(Windows.Foundation.IReference!(UINT64) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult2).set_ResourceByteRangeLength(value));
+	}
 }
 
 interface AdaptiveMediaSourceDownloadStatistics : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadStatistics
 {
+extern(Windows):
+	final UINT64 ContentBytesReceivedCount()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadStatistics).get_ContentBytesReceivedCount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) TimeToHeadersReceived()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadStatistics).get_TimeToHeadersReceived(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) TimeToFirstByteReceived()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadStatistics).get_TimeToFirstByteReceived(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) TimeToLastByteReceived()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadStatistics).get_TimeToLastByteReceived(&_ret));
+		return _ret;
+	}
 }
 
 interface AdaptiveMediaSourcePlaybackBitrateChangedEventArgs : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs
 {
+extern(Windows):
+	final UINT32 OldValue()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs).get_OldValue(&_ret));
+		return _ret;
+	}
+	final UINT32 NewValue()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs).get_NewValue(&_ret));
+		return _ret;
+	}
+	final bool AudioOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs).get_AudioOnly(&_ret));
+		return _ret;
+	}
 }
 
 enum AdaptiveMediaSourceCreationStatus

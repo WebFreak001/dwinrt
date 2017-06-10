@@ -57,6 +57,29 @@ extern(Windows):
 
 interface PnpObject : Windows.Devices.Enumeration.Pnp.IPnpObject
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.Pnp.PnpObjectType Type()
+	{
+		Windows.Devices.Enumeration.Pnp.PnpObjectType _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.Pnp.IPnpObject).get_Type(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.Pnp.IPnpObject).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.Pnp.IPnpObject).get_Properties(&_ret));
+		return _ret;
+	}
+	final void Update(Windows.Devices.Enumeration.Pnp.PnpObjectUpdate updateInfo)
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.Pnp.IPnpObject).abi_Update(updateInfo));
+	}
 }
 
 interface PnpObjectCollection : Windows.Foundation.Collections.IVectorView!(Windows.Devices.Enumeration.Pnp.PnpObject), Windows.Foundation.Collections.IIterable!(Windows.Devices.Enumeration.Pnp.PnpObject)
@@ -65,10 +88,44 @@ interface PnpObjectCollection : Windows.Foundation.Collections.IVectorView!(Wind
 
 interface PnpObjectUpdate : Windows.Devices.Enumeration.Pnp.IPnpObjectUpdate
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.Pnp.PnpObjectType Type()
+	{
+		Windows.Devices.Enumeration.Pnp.PnpObjectType _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.Pnp.IPnpObjectUpdate).get_Type(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.Pnp.IPnpObjectUpdate).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.Pnp.IPnpObjectUpdate).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface PnpObjectWatcher : Windows.Devices.Enumeration.Pnp.IPnpObjectWatcher
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceWatcherStatus Status()
+	{
+		Windows.Devices.Enumeration.DeviceWatcherStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.Pnp.IPnpObjectWatcher).get_Status(&_ret));
+		return _ret;
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.Pnp.IPnpObjectWatcher).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.Pnp.IPnpObjectWatcher).abi_Stop());
+	}
 }
 
 enum PnpObjectType

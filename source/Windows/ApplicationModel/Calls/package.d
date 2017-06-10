@@ -246,46 +246,345 @@ extern(Windows):
 
 interface CallAnswerEventArgs : Windows.ApplicationModel.Calls.ICallAnswerEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Calls.VoipPhoneCallMedia AcceptedMedia()
+	{
+		Windows.ApplicationModel.Calls.VoipPhoneCallMedia _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ICallAnswerEventArgs).get_AcceptedMedia(&_ret));
+		return _ret;
+	}
 }
 
 interface CallRejectEventArgs : Windows.ApplicationModel.Calls.ICallRejectEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Calls.VoipPhoneCallRejectReason RejectReason()
+	{
+		Windows.ApplicationModel.Calls.VoipPhoneCallRejectReason _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ICallRejectEventArgs).get_RejectReason(&_ret));
+		return _ret;
+	}
 }
 
 interface CallStateChangeEventArgs : Windows.ApplicationModel.Calls.ICallStateChangeEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Calls.VoipPhoneCallState State()
+	{
+		Windows.ApplicationModel.Calls.VoipPhoneCallState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ICallStateChangeEventArgs).get_State(&_ret));
+		return _ret;
+	}
 }
 
 interface LockScreenCallEndCallDeferral : Windows.ApplicationModel.Calls.ILockScreenCallEndCallDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallEndCallDeferral).abi_Complete());
+	}
 }
 
 interface LockScreenCallEndRequestedEventArgs : Windows.ApplicationModel.Calls.ILockScreenCallEndRequestedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Calls.LockScreenCallEndCallDeferral GetDeferral()
+	{
+		Windows.ApplicationModel.Calls.LockScreenCallEndCallDeferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallEndRequestedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Deadline()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallEndRequestedEventArgs).get_Deadline(&_ret));
+		return _ret;
+	}
 }
 
 interface LockScreenCallUI : Windows.ApplicationModel.Calls.ILockScreenCallUI
 {
+extern(Windows):
+	final void Dismiss()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallUI).abi_Dismiss());
+	}
+	final HSTRING CallTitle()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallUI).get_CallTitle(&_ret));
+		return _ret;
+	}
+	final void CallTitle(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallUI).set_CallTitle(value));
+	}
 }
 
 interface MuteChangeEventArgs : Windows.ApplicationModel.Calls.IMuteChangeEventArgs
 {
+extern(Windows):
+	final bool Muted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IMuteChangeEventArgs).get_Muted(&_ret));
+		return _ret;
+	}
 }
 
 interface PhoneCallHistoryEntry : Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress Address()
+	{
+		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_Address(&_ret));
+		return _ret;
+	}
+	final void Address(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_Address(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Duration()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_Duration(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_Duration(value));
+	}
+	final bool IsCallerIdBlocked()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsCallerIdBlocked(&_ret));
+		return _ret;
+	}
+	final void IsCallerIdBlocked(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsCallerIdBlocked(value));
+	}
+	final bool IsEmergency()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsEmergency(&_ret));
+		return _ret;
+	}
+	final void IsEmergency(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsEmergency(value));
+	}
+	final bool IsIncoming()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsIncoming(&_ret));
+		return _ret;
+	}
+	final void IsIncoming(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsIncoming(value));
+	}
+	final bool IsMissed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsMissed(&_ret));
+		return _ret;
+	}
+	final void IsMissed(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsMissed(value));
+	}
+	final bool IsRinging()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsRinging(&_ret));
+		return _ret;
+	}
+	final void IsRinging(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsRinging(value));
+	}
+	final bool IsSeen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsSeen(&_ret));
+		return _ret;
+	}
+	final void IsSeen(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsSeen(value));
+	}
+	final bool IsSuppressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsSuppressed(&_ret));
+		return _ret;
+	}
+	final void IsSuppressed(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsSuppressed(value));
+	}
+	final bool IsVoicemail()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsVoicemail(&_ret));
+		return _ret;
+	}
+	final void IsVoicemail(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsVoicemail(value));
+	}
+	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryMedia Media()
+	{
+		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryMedia _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_Media(&_ret));
+		return _ret;
+	}
+	final void Media(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryMedia value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_Media(value));
+	}
+	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryOtherAppReadAccess OtherAppReadAccess()
+	{
+		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryOtherAppReadAccess _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_OtherAppReadAccess(&_ret));
+		return _ret;
+	}
+	final void OtherAppReadAccess(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryOtherAppReadAccess value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_OtherAppReadAccess(value));
+	}
+	final HSTRING RemoteId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_RemoteId(&_ret));
+		return _ret;
+	}
+	final void RemoteId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_RemoteId(value));
+	}
+	final HSTRING SourceDisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_SourceDisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING SourceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_SourceId(&_ret));
+		return _ret;
+	}
+	final void SourceId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_SourceId(value));
+	}
+	final Windows.ApplicationModel.Calls.PhoneCallHistorySourceIdKind SourceIdKind()
+	{
+		Windows.ApplicationModel.Calls.PhoneCallHistorySourceIdKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_SourceIdKind(&_ret));
+		return _ret;
+	}
+	final void SourceIdKind(Windows.ApplicationModel.Calls.PhoneCallHistorySourceIdKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_SourceIdKind(value));
+	}
+	final Windows.Foundation.DateTime StartTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_StartTime(&_ret));
+		return _ret;
+	}
+	final void StartTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_StartTime(value));
+	}
 }
 
 interface PhoneCallHistoryEntryAddress : Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress
 {
+extern(Windows):
+	final HSTRING ContactId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).get_ContactId(&_ret));
+		return _ret;
+	}
+	final void ContactId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).set_ContactId(value));
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).set_DisplayName(value));
+	}
+	final HSTRING RawAddress()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).get_RawAddress(&_ret));
+		return _ret;
+	}
+	final void RawAddress(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).set_RawAddress(value));
+	}
+	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryRawAddressKind RawAddressKind()
+	{
+		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryRawAddressKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).get_RawAddressKind(&_ret));
+		return _ret;
+	}
+	final void RawAddressKind(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryRawAddressKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).set_RawAddressKind(value));
+	}
 }
 
 interface PhoneCallHistoryEntryQueryOptions : Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryQueryOptions
 {
+extern(Windows):
+	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryDesiredMedia DesiredMedia()
+	{
+		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryDesiredMedia _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryQueryOptions).get_DesiredMedia(&_ret));
+		return _ret;
+	}
+	final void DesiredMedia(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryDesiredMedia value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryQueryOptions).set_DesiredMedia(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) SourceIds()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryQueryOptions).get_SourceIds(&_ret));
+		return _ret;
+	}
 }
 
 interface PhoneCallHistoryEntryReader : Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryReader
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry)) ReadBatchAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryReader).abi_ReadBatchAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface PhoneCallHistoryManager
@@ -294,18 +593,198 @@ interface PhoneCallHistoryManager
 
 interface PhoneCallHistoryManagerForUser : Windows.ApplicationModel.Calls.IPhoneCallHistoryManagerForUser
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryStore) RequestStoreAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryStoreAccessType accessType)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryStore) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryManagerForUser).abi_RequestStoreAsync(accessType, &_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryManagerForUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface PhoneCallHistoryStore : Windows.ApplicationModel.Calls.IPhoneCallHistoryStore
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry) GetEntryAsync(HSTRING callHistoryEntryId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_GetEntryAsync(callHistoryEntryId, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader GetEntryReader()
+	{
+		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_GetEntryReader(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader GetEntryReaderWithOptions(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryOptions queryOptions)
+	{
+		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_GetEntryReaderWithOptions(queryOptions, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveEntryAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry callHistoryEntry)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_SaveEntryAsync(callHistoryEntry, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteEntryAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry callHistoryEntry)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_DeleteEntryAsync(callHistoryEntry, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteEntriesAsync(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry) callHistoryEntries)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_DeleteEntriesAsync(callHistoryEntries, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MarkEntryAsSeenAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry callHistoryEntry)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_MarkEntryAsSeenAsync(callHistoryEntry, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MarkEntriesAsSeenAsync(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry) callHistoryEntries)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_MarkEntriesAsSeenAsync(callHistoryEntries, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(UINT32) GetUnseenCountAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_GetUnseenCountAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MarkAllAsSeenAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_MarkAllAsSeenAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(UINT32) GetSourcesUnseenCountAsync(Windows.Foundation.Collections.IIterable!(HSTRING) sourceIds)
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_GetSourcesUnseenCountAsync(sourceIds, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MarkSourcesAsSeenAsync(Windows.Foundation.Collections.IIterable!(HSTRING) sourceIds)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_MarkSourcesAsSeenAsync(sourceIds, &_ret));
+		return _ret;
+	}
 }
 
 interface VoipCallCoordinator : Windows.ApplicationModel.Calls.IVoipCallCoordinator
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.VoipPhoneCallResourceReservationStatus) ReserveCallResourcesAsync(HSTRING taskEntryPoint)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.VoipPhoneCallResourceReservationStatus) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_ReserveCallResourcesAsync(taskEntryPoint, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestNewIncomingCall(HSTRING context, HSTRING contactName, HSTRING contactNumber, Windows.Foundation.Uri contactImage, HSTRING serviceName, Windows.Foundation.Uri brandingImage, HSTRING callDetails, Windows.Foundation.Uri ringtone, Windows.ApplicationModel.Calls.VoipPhoneCallMedia media, Windows.Foundation.TimeSpan ringTimeout)
+	{
+		Windows.ApplicationModel.Calls.VoipPhoneCall _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_RequestNewIncomingCall(context, contactName, contactNumber, contactImage, serviceName, brandingImage, callDetails, ringtone, media, ringTimeout, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestNewOutgoingCall(HSTRING context, HSTRING contactName, HSTRING serviceName, Windows.ApplicationModel.Calls.VoipPhoneCallMedia media)
+	{
+		Windows.ApplicationModel.Calls.VoipPhoneCall _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_RequestNewOutgoingCall(context, contactName, serviceName, media, &_ret));
+		return _ret;
+	}
+	final void NotifyMuted()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_NotifyMuted());
+	}
+	final void NotifyUnmuted()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_NotifyUnmuted());
+	}
+	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestOutgoingUpgradeToVideoCall(GUID callUpgradeGuid, HSTRING context, HSTRING contactName, HSTRING serviceName)
+	{
+		Windows.ApplicationModel.Calls.VoipPhoneCall _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_RequestOutgoingUpgradeToVideoCall(callUpgradeGuid, context, contactName, serviceName, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestIncomingUpgradeToVideoCall(HSTRING context, HSTRING contactName, HSTRING contactNumber, Windows.Foundation.Uri contactImage, HSTRING serviceName, Windows.Foundation.Uri brandingImage, HSTRING callDetails, Windows.Foundation.Uri ringtone, Windows.Foundation.TimeSpan ringTimeout)
+	{
+		Windows.ApplicationModel.Calls.VoipPhoneCall _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_RequestIncomingUpgradeToVideoCall(context, contactName, contactNumber, contactImage, serviceName, brandingImage, callDetails, ringtone, ringTimeout, &_ret));
+		return _ret;
+	}
+	final void TerminateCellularCall(GUID callUpgradeGuid)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_TerminateCellularCall(callUpgradeGuid));
+	}
+	final void CancelUpgrade(GUID callUpgradeGuid)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_CancelUpgrade(callUpgradeGuid));
+	}
 }
 
 interface VoipPhoneCall : Windows.ApplicationModel.Calls.IVoipPhoneCall
 {
+extern(Windows):
+	final void NotifyCallHeld()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).abi_NotifyCallHeld());
+	}
+	final void NotifyCallActive()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).abi_NotifyCallActive());
+	}
+	final void NotifyCallEnded()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).abi_NotifyCallEnded());
+	}
+	final HSTRING ContactName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).get_ContactName(&_ret));
+		return _ret;
+	}
+	final void ContactName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).set_ContactName(value));
+	}
+	final Windows.Foundation.DateTime StartTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).get_StartTime(&_ret));
+		return _ret;
+	}
+	final void StartTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).set_StartTime(value));
+	}
+	final Windows.ApplicationModel.Calls.VoipPhoneCallMedia CallMedia()
+	{
+		Windows.ApplicationModel.Calls.VoipPhoneCallMedia _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).get_CallMedia(&_ret));
+		return _ret;
+	}
+	final void CallMedia(Windows.ApplicationModel.Calls.VoipPhoneCallMedia value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).set_CallMedia(value));
+	}
+	final void NotifyCallReady()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).abi_NotifyCallReady());
+	}
 }
 
 enum PhoneCallHistoryEntryMedia

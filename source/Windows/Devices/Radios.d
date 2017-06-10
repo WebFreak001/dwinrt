@@ -28,6 +28,31 @@ extern(Windows):
 
 interface Radio : Windows.Devices.Radios.IRadio
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.RadioAccessStatus) SetStateAsync(Windows.Devices.Radios.RadioState value)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.RadioAccessStatus) _ret;
+		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).abi_SetStateAsync(value, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.Radios.RadioState State()
+	{
+		Windows.Devices.Radios.RadioState _ret;
+		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).get_State(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Radios.RadioKind Kind()
+	{
+		Windows.Devices.Radios.RadioKind _ret;
+		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).get_Kind(&_ret));
+		return _ret;
+	}
 }
 
 enum RadioAccessStatus

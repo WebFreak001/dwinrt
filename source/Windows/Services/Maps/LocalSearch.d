@@ -84,6 +84,67 @@ interface LocalCategories
 
 interface LocalLocation : Windows.Services.Maps.LocalSearch.ILocalLocation, Windows.Services.Maps.LocalSearch.ILocalLocation2
 {
+extern(Windows):
+	final Windows.Services.Maps.MapAddress Address()
+	{
+		Windows.Services.Maps.MapAddress _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_Address(&_ret));
+		return _ret;
+	}
+	final HSTRING Identifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_Identifier(&_ret));
+		return _ret;
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_Description(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopoint Point()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_Point(&_ret));
+		return _ret;
+	}
+	final HSTRING PhoneNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_PhoneNumber(&_ret));
+		return _ret;
+	}
+	final HSTRING DataAttribution()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_DataAttribution(&_ret));
+		return _ret;
+	}
+	final HSTRING Category()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation2).get_Category(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo RatingInfo()
+	{
+		Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation2).get_RatingInfo(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocationHoursOfOperationItem) HoursOfOperation()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocationHoursOfOperationItem) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation2).get_HoursOfOperation(&_ret));
+		return _ret;
+	}
 }
 
 interface LocalLocationFinder
@@ -92,14 +153,65 @@ interface LocalLocationFinder
 
 interface LocalLocationFinderResult : Windows.Services.Maps.LocalSearch.ILocalLocationFinderResult
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) LocalLocations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationFinderResult).get_LocalLocations(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.LocalSearch.LocalLocationFinderStatus Status()
+	{
+		Windows.Services.Maps.LocalSearch.LocalLocationFinderStatus _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationFinderResult).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface LocalLocationHoursOfOperationItem : Windows.Services.Maps.LocalSearch.ILocalLocationHoursOfOperationItem
 {
+extern(Windows):
+	final Windows.Globalization.DayOfWeek Day()
+	{
+		Windows.Globalization.DayOfWeek _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationHoursOfOperationItem).get_Day(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Start()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationHoursOfOperationItem).get_Start(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Span()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationHoursOfOperationItem).get_Span(&_ret));
+		return _ret;
+	}
 }
 
 interface LocalLocationRatingInfo : Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(double) AggregateRating()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo).get_AggregateRating(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(INT32) RatingCount()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo).get_RatingCount(&_ret));
+		return _ret;
+	}
+	final HSTRING ProviderIdentifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo).get_ProviderIdentifier(&_ret));
+		return _ret;
+	}
 }
 
 enum LocalLocationFinderStatus

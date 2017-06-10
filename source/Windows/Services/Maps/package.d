@@ -290,18 +290,166 @@ extern(Windows):
 
 interface EnhancedWaypoint : Windows.Services.Maps.IEnhancedWaypoint
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geopoint Point()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IEnhancedWaypoint).get_Point(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.WaypointKind Kind()
+	{
+		Windows.Services.Maps.WaypointKind _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IEnhancedWaypoint).get_Kind(&_ret));
+		return _ret;
+	}
 }
 
 interface ManeuverWarning : Windows.Services.Maps.IManeuverWarning
 {
+extern(Windows):
+	final Windows.Services.Maps.ManeuverWarningKind Kind()
+	{
+		Windows.Services.Maps.ManeuverWarningKind _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IManeuverWarning).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.ManeuverWarningSeverity Severity()
+	{
+		Windows.Services.Maps.ManeuverWarningSeverity _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IManeuverWarning).get_Severity(&_ret));
+		return _ret;
+	}
 }
 
 interface MapAddress : Windows.Services.Maps.IMapAddress, Windows.Services.Maps.IMapAddress2
 {
+extern(Windows):
+	final HSTRING BuildingName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_BuildingName(&_ret));
+		return _ret;
+	}
+	final HSTRING BuildingFloor()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_BuildingFloor(&_ret));
+		return _ret;
+	}
+	final HSTRING BuildingRoom()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_BuildingRoom(&_ret));
+		return _ret;
+	}
+	final HSTRING BuildingWing()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_BuildingWing(&_ret));
+		return _ret;
+	}
+	final HSTRING StreetNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_StreetNumber(&_ret));
+		return _ret;
+	}
+	final HSTRING Street()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_Street(&_ret));
+		return _ret;
+	}
+	final HSTRING Neighborhood()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_Neighborhood(&_ret));
+		return _ret;
+	}
+	final HSTRING District()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_District(&_ret));
+		return _ret;
+	}
+	final HSTRING Town()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_Town(&_ret));
+		return _ret;
+	}
+	final HSTRING Region()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_Region(&_ret));
+		return _ret;
+	}
+	final HSTRING RegionCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_RegionCode(&_ret));
+		return _ret;
+	}
+	final HSTRING Country()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_Country(&_ret));
+		return _ret;
+	}
+	final HSTRING CountryCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_CountryCode(&_ret));
+		return _ret;
+	}
+	final HSTRING PostCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_PostCode(&_ret));
+		return _ret;
+	}
+	final HSTRING Continent()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_Continent(&_ret));
+		return _ret;
+	}
+	final HSTRING FormattedAddress()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress2).get_FormattedAddress(&_ret));
+		return _ret;
+	}
 }
 
 interface MapLocation : Windows.Services.Maps.IMapLocation
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geopoint Point()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapLocation).get_Point(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapLocation).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapLocation).get_Description(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.MapAddress Address()
+	{
+		Windows.Services.Maps.MapAddress _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapLocation).get_Address(&_ret));
+		return _ret;
+	}
 }
 
 interface MapLocationFinder
@@ -310,6 +458,19 @@ interface MapLocationFinder
 
 interface MapLocationFinderResult : Windows.Services.Maps.IMapLocationFinderResult
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapLocation) Locations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapLocation) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapLocationFinderResult).get_Locations(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.MapLocationFinderStatus Status()
+	{
+		Windows.Services.Maps.MapLocationFinderStatus _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapLocationFinderResult).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface MapManager
@@ -318,10 +479,112 @@ interface MapManager
 
 interface MapRoute : Windows.Services.Maps.IMapRoute, Windows.Services.Maps.IMapRoute2, Windows.Services.Maps.IMapRoute3
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.GeoboundingBox BoundingBox()
+	{
+		Windows.Devices.Geolocation.GeoboundingBox _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute).get_BoundingBox(&_ret));
+		return _ret;
+	}
+	final double LengthInMeters()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute).get_LengthInMeters(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan EstimatedDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute).get_EstimatedDuration(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopath Path()
+	{
+		Windows.Devices.Geolocation.Geopath _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute).get_Path(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapRouteLeg) Legs()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapRouteLeg) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute).get_Legs(&_ret));
+		return _ret;
+	}
+	final bool IsTrafficBased()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute).get_IsTrafficBased(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.MapRouteRestrictions ViolatedRestrictions()
+	{
+		Windows.Services.Maps.MapRouteRestrictions _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute2).get_ViolatedRestrictions(&_ret));
+		return _ret;
+	}
+	final bool HasBlockedRoads()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute2).get_HasBlockedRoads(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan DurationWithoutTraffic()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute3).get_DurationWithoutTraffic(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.TrafficCongestion TrafficCongestion()
+	{
+		Windows.Services.Maps.TrafficCongestion _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute3).get_TrafficCongestion(&_ret));
+		return _ret;
+	}
 }
 
 interface MapRouteDrivingOptions : Windows.Services.Maps.IMapRouteDrivingOptions
 {
+extern(Windows):
+	final UINT32 MaxAlternateRouteCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).get_MaxAlternateRouteCount(&_ret));
+		return _ret;
+	}
+	final void MaxAlternateRouteCount(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).set_MaxAlternateRouteCount(value));
+	}
+	final Windows.Foundation.IReference!(double) InitialHeading()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).get_InitialHeading(&_ret));
+		return _ret;
+	}
+	final void InitialHeading(Windows.Foundation.IReference!(double) value)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).set_InitialHeading(value));
+	}
+	final Windows.Services.Maps.MapRouteOptimization RouteOptimization()
+	{
+		Windows.Services.Maps.MapRouteOptimization _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).get_RouteOptimization(&_ret));
+		return _ret;
+	}
+	final void RouteOptimization(Windows.Services.Maps.MapRouteOptimization value)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).set_RouteOptimization(value));
+	}
+	final Windows.Services.Maps.MapRouteRestrictions RouteRestrictions()
+	{
+		Windows.Services.Maps.MapRouteRestrictions _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).get_RouteRestrictions(&_ret));
+		return _ret;
+	}
+	final void RouteRestrictions(Windows.Services.Maps.MapRouteRestrictions value)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).set_RouteRestrictions(value));
+	}
 }
 
 interface MapRouteFinder
@@ -330,14 +593,137 @@ interface MapRouteFinder
 
 interface MapRouteFinderResult : Windows.Services.Maps.IMapRouteFinderResult, Windows.Services.Maps.IMapRouteFinderResult2
 {
+extern(Windows):
+	final Windows.Services.Maps.MapRoute Route()
+	{
+		Windows.Services.Maps.MapRoute _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteFinderResult).get_Route(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.MapRouteFinderStatus Status()
+	{
+		Windows.Services.Maps.MapRouteFinderStatus _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteFinderResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapRoute) AlternateRoutes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapRoute) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteFinderResult2).get_AlternateRoutes(&_ret));
+		return _ret;
+	}
 }
 
 interface MapRouteLeg : Windows.Services.Maps.IMapRouteLeg, Windows.Services.Maps.IMapRouteLeg2
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.GeoboundingBox BoundingBox()
+	{
+		Windows.Devices.Geolocation.GeoboundingBox _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg).get_BoundingBox(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopath Path()
+	{
+		Windows.Devices.Geolocation.Geopath _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg).get_Path(&_ret));
+		return _ret;
+	}
+	final double LengthInMeters()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg).get_LengthInMeters(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan EstimatedDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg).get_EstimatedDuration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapRouteManeuver) Maneuvers()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapRouteManeuver) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg).get_Maneuvers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan DurationWithoutTraffic()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg2).get_DurationWithoutTraffic(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.TrafficCongestion TrafficCongestion()
+	{
+		Windows.Services.Maps.TrafficCongestion _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg2).get_TrafficCongestion(&_ret));
+		return _ret;
+	}
 }
 
 interface MapRouteManeuver : Windows.Services.Maps.IMapRouteManeuver, Windows.Services.Maps.IMapRouteManeuver2, Windows.Services.Maps.IMapRouteManeuver3
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geopoint StartingPoint()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver).get_StartingPoint(&_ret));
+		return _ret;
+	}
+	final double LengthInMeters()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver).get_LengthInMeters(&_ret));
+		return _ret;
+	}
+	final HSTRING InstructionText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver).get_InstructionText(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.MapRouteManeuverKind Kind()
+	{
+		Windows.Services.Maps.MapRouteManeuverKind _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver).get_Kind(&_ret));
+		return _ret;
+	}
+	final HSTRING ExitNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver).get_ExitNumber(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.MapManeuverNotices ManeuverNotices()
+	{
+		Windows.Services.Maps.MapManeuverNotices _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver).get_ManeuverNotices(&_ret));
+		return _ret;
+	}
+	final double StartHeading()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver2).get_StartHeading(&_ret));
+		return _ret;
+	}
+	final double EndHeading()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver2).get_EndHeading(&_ret));
+		return _ret;
+	}
+	final HSTRING StreetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver2).get_StreetName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.ManeuverWarning) Warnings()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.ManeuverWarning) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver3).get_Warnings(&_ret));
+		return _ret;
+	}
 }
 
 interface MapService

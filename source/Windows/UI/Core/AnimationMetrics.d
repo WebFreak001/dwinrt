@@ -56,22 +56,219 @@ extern(Windows):
 
 interface AnimationDescription : Windows.UI.Core.AnimationMetrics.IAnimationDescription
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation) Animations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation) _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescription).get_Animations(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan StaggerDelay()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescription).get_StaggerDelay(&_ret));
+		return _ret;
+	}
+	final FLOAT StaggerDelayFactor()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescription).get_StaggerDelayFactor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan DelayLimit()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescription).get_DelayLimit(&_ret));
+		return _ret;
+	}
+	final INT32 ZOrder()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescription).get_ZOrder(&_ret));
+		return _ret;
+	}
 }
 
 interface OpacityAnimation : Windows.UI.Core.AnimationMetrics.IOpacityAnimation, Windows.UI.Core.AnimationMetrics.IPropertyAnimation
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(FLOAT) InitialOpacity()
+	{
+		Windows.Foundation.IReference!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IOpacityAnimation).get_InitialOpacity(&_ret));
+		return _ret;
+	}
+	final FLOAT FinalOpacity()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IOpacityAnimation).get_FinalOpacity(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.AnimationMetrics.PropertyAnimationType Type()
+	{
+		Windows.UI.Core.AnimationMetrics.PropertyAnimationType _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Type(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Delay()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Delay(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Duration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Control1()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control1(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Control2()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control2(&_ret));
+		return _ret;
+	}
 }
 
 interface PropertyAnimation : Windows.UI.Core.AnimationMetrics.IPropertyAnimation
 {
+extern(Windows):
+	final Windows.UI.Core.AnimationMetrics.PropertyAnimationType Type()
+	{
+		Windows.UI.Core.AnimationMetrics.PropertyAnimationType _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Type(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Delay()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Delay(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Duration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Control1()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control1(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Control2()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control2(&_ret));
+		return _ret;
+	}
 }
 
 interface ScaleAnimation : Windows.UI.Core.AnimationMetrics.IScaleAnimation, Windows.UI.Core.AnimationMetrics.IPropertyAnimation
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(FLOAT) InitialScaleX()
+	{
+		Windows.Foundation.IReference!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_InitialScaleX(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(FLOAT) InitialScaleY()
+	{
+		Windows.Foundation.IReference!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_InitialScaleY(&_ret));
+		return _ret;
+	}
+	final FLOAT FinalScaleX()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_FinalScaleX(&_ret));
+		return _ret;
+	}
+	final FLOAT FinalScaleY()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_FinalScaleY(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point NormalizedOrigin()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_NormalizedOrigin(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.AnimationMetrics.PropertyAnimationType Type()
+	{
+		Windows.UI.Core.AnimationMetrics.PropertyAnimationType _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Type(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Delay()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Delay(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Duration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Control1()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control1(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Control2()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control2(&_ret));
+		return _ret;
+	}
 }
 
 interface TranslationAnimation : Windows.UI.Core.AnimationMetrics.IPropertyAnimation
 {
+extern(Windows):
+	final Windows.UI.Core.AnimationMetrics.PropertyAnimationType Type()
+	{
+		Windows.UI.Core.AnimationMetrics.PropertyAnimationType _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Type(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Delay()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Delay(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Duration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Control1()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control1(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Control2()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control2(&_ret));
+		return _ret;
+	}
 }
 
 enum AnimationEffect

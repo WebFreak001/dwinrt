@@ -71,18 +71,182 @@ extern(Windows):
 
 interface PdfDocument : Windows.Data.Pdf.IPdfDocument
 {
+extern(Windows):
+	final Windows.Data.Pdf.PdfPage GetPage(UINT32 pageIndex)
+	{
+		Windows.Data.Pdf.PdfPage _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfDocument).abi_GetPage(pageIndex, &_ret));
+		return _ret;
+	}
+	final UINT32 PageCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfDocument).get_PageCount(&_ret));
+		return _ret;
+	}
+	final bool IsPasswordProtected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfDocument).get_IsPasswordProtected(&_ret));
+		return _ret;
+	}
 }
 
 interface PdfPage : Windows.Data.Pdf.IPdfPage, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction RenderToStreamAsync(Windows.Storage.Streams.IRandomAccessStream outputStream)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPage).abi_RenderToStreamAsync(outputStream, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RenderWithOptionsToStreamAsync(Windows.Storage.Streams.IRandomAccessStream outputStream, Windows.Data.Pdf.PdfPageRenderOptions options)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPage).abi_RenderWithOptionsToStreamAsync(outputStream, options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction PreparePageAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPage).abi_PreparePageAsync(&_ret));
+		return _ret;
+	}
+	final UINT32 Index()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPage).get_Index(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size Size()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPage).get_Size(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Pdf.PdfPageDimensions Dimensions()
+	{
+		Windows.Data.Pdf.PdfPageDimensions _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPage).get_Dimensions(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Pdf.PdfPageRotation Rotation()
+	{
+		Windows.Data.Pdf.PdfPageRotation _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPage).get_Rotation(&_ret));
+		return _ret;
+	}
+	final FLOAT PreferredZoom()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPage).get_PreferredZoom(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface PdfPageDimensions : Windows.Data.Pdf.IPdfPageDimensions
 {
+extern(Windows):
+	final Windows.Foundation.Rect MediaBox()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageDimensions).get_MediaBox(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect CropBox()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageDimensions).get_CropBox(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect BleedBox()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageDimensions).get_BleedBox(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect TrimBox()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageDimensions).get_TrimBox(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect ArtBox()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageDimensions).get_ArtBox(&_ret));
+		return _ret;
+	}
 }
 
 interface PdfPageRenderOptions : Windows.Data.Pdf.IPdfPageRenderOptions
 {
+extern(Windows):
+	final Windows.Foundation.Rect SourceRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageRenderOptions).get_SourceRect(&_ret));
+		return _ret;
+	}
+	final void SourceRect(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageRenderOptions).set_SourceRect(value));
+	}
+	final UINT32 DestinationWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageRenderOptions).get_DestinationWidth(&_ret));
+		return _ret;
+	}
+	final void DestinationWidth(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageRenderOptions).set_DestinationWidth(value));
+	}
+	final UINT32 DestinationHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageRenderOptions).get_DestinationHeight(&_ret));
+		return _ret;
+	}
+	final void DestinationHeight(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageRenderOptions).set_DestinationHeight(value));
+	}
+	final Windows.UI.Color BackgroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageRenderOptions).get_BackgroundColor(&_ret));
+		return _ret;
+	}
+	final void BackgroundColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageRenderOptions).set_BackgroundColor(value));
+	}
+	final bool IsIgnoringHighContrast()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageRenderOptions).get_IsIgnoringHighContrast(&_ret));
+		return _ret;
+	}
+	final void IsIgnoringHighContrast(bool value)
+	{
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageRenderOptions).set_IsIgnoringHighContrast(value));
+	}
+	final GUID BitmapEncoderId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageRenderOptions).get_BitmapEncoderId(&_ret));
+		return _ret;
+	}
+	final void BitmapEncoderId(GUID value)
+	{
+		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageRenderOptions).set_BitmapEncoderId(value));
+	}
 }
 
 enum PdfPageRotation

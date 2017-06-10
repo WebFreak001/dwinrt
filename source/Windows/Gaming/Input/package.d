@@ -275,30 +275,371 @@ extern(Windows):
 
 interface ArcadeStick : Windows.Gaming.Input.IArcadeStick, Windows.Gaming.Input.IGameController, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
+extern(Windows):
+	final Windows.Gaming.Input.GameControllerButtonLabel GetButtonLabel(Windows.Gaming.Input.ArcadeStickButtons button)
+	{
+		Windows.Gaming.Input.GameControllerButtonLabel _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IArcadeStick).abi_GetButtonLabel(button, &_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.ArcadeStickReading GetCurrentReading()
+	{
+		Windows.Gaming.Input.ArcadeStickReading _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IArcadeStick).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.Headset Headset()
+	{
+		Windows.Gaming.Input.Headset _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_Headset(&_ret));
+		return _ret;
+	}
+	final bool IsWireless()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_IsWireless(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_User(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
+	{
+		Windows.Devices.Power.BatteryReport _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		return _ret;
+	}
 }
 
 interface FlightStick : Windows.Gaming.Input.IFlightStick, Windows.Gaming.Input.IGameController, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
+extern(Windows):
+	final Windows.Gaming.Input.GameControllerSwitchKind HatSwitchKind()
+	{
+		Windows.Gaming.Input.GameControllerSwitchKind _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IFlightStick).get_HatSwitchKind(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.GameControllerButtonLabel GetButtonLabel(Windows.Gaming.Input.FlightStickButtons button)
+	{
+		Windows.Gaming.Input.GameControllerButtonLabel _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IFlightStick).abi_GetButtonLabel(button, &_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.FlightStickReading GetCurrentReading()
+	{
+		Windows.Gaming.Input.FlightStickReading _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IFlightStick).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.Headset Headset()
+	{
+		Windows.Gaming.Input.Headset _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_Headset(&_ret));
+		return _ret;
+	}
+	final bool IsWireless()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_IsWireless(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_User(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
+	{
+		Windows.Devices.Power.BatteryReport _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		return _ret;
+	}
 }
 
 interface Gamepad : Windows.Gaming.Input.IGamepad, Windows.Gaming.Input.IGameController, Windows.Gaming.Input.IGamepad2, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
+extern(Windows):
+	final Windows.Gaming.Input.GamepadVibration Vibration()
+	{
+		Windows.Gaming.Input.GamepadVibration _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGamepad).get_Vibration(&_ret));
+		return _ret;
+	}
+	final void Vibration(Windows.Gaming.Input.GamepadVibration value)
+	{
+		Debug.OK(this.as!(Windows.Gaming.Input.IGamepad).set_Vibration(value));
+	}
+	final Windows.Gaming.Input.GamepadReading GetCurrentReading()
+	{
+		Windows.Gaming.Input.GamepadReading _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGamepad).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.Headset Headset()
+	{
+		Windows.Gaming.Input.Headset _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_Headset(&_ret));
+		return _ret;
+	}
+	final bool IsWireless()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_IsWireless(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_User(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.GameControllerButtonLabel GetButtonLabel(Windows.Gaming.Input.GamepadButtons button)
+	{
+		Windows.Gaming.Input.GameControllerButtonLabel _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGamepad2).abi_GetButtonLabel(button, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
+	{
+		Windows.Devices.Power.BatteryReport _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		return _ret;
+	}
 }
 
 interface Headset : Windows.Gaming.Input.IHeadset, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
+extern(Windows):
+	final HSTRING CaptureDeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IHeadset).get_CaptureDeviceId(&_ret));
+		return _ret;
+	}
+	final HSTRING RenderDeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IHeadset).get_RenderDeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
+	{
+		Windows.Devices.Power.BatteryReport _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		return _ret;
+	}
 }
 
 interface RacingWheel : Windows.Gaming.Input.IRacingWheel, Windows.Gaming.Input.IGameController, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
+extern(Windows):
+	final bool HasClutch()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).get_HasClutch(&_ret));
+		return _ret;
+	}
+	final bool HasHandbrake()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).get_HasHandbrake(&_ret));
+		return _ret;
+	}
+	final bool HasPatternShifter()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).get_HasPatternShifter(&_ret));
+		return _ret;
+	}
+	final INT32 MaxPatternShifterGear()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).get_MaxPatternShifterGear(&_ret));
+		return _ret;
+	}
+	final double MaxWheelAngle()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).get_MaxWheelAngle(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor WheelMotor()
+	{
+		Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).get_WheelMotor(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.GameControllerButtonLabel GetButtonLabel(Windows.Gaming.Input.RacingWheelButtons button)
+	{
+		Windows.Gaming.Input.GameControllerButtonLabel _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).abi_GetButtonLabel(button, &_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.RacingWheelReading GetCurrentReading()
+	{
+		Windows.Gaming.Input.RacingWheelReading _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.Headset Headset()
+	{
+		Windows.Gaming.Input.Headset _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_Headset(&_ret));
+		return _ret;
+	}
+	final bool IsWireless()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_IsWireless(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_User(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
+	{
+		Windows.Devices.Power.BatteryReport _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		return _ret;
+	}
 }
 
 interface RawGameController : Windows.Gaming.Input.IRawGameController, Windows.Gaming.Input.IGameController, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
+extern(Windows):
+	final INT32 AxisCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).get_AxisCount(&_ret));
+		return _ret;
+	}
+	final INT32 ButtonCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).get_ButtonCount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor) ForceFeedbackMotors()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor) _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).get_ForceFeedbackMotors(&_ret));
+		return _ret;
+	}
+	final UINT16 HardwareProductId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).get_HardwareProductId(&_ret));
+		return _ret;
+	}
+	final UINT16 HardwareVendorId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).get_HardwareVendorId(&_ret));
+		return _ret;
+	}
+	final INT32 SwitchCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).get_SwitchCount(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.GameControllerButtonLabel GetButtonLabel(INT32 buttonIndex)
+	{
+		Windows.Gaming.Input.GameControllerButtonLabel _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).abi_GetButtonLabel(buttonIndex, &_ret));
+		return _ret;
+	}
+	final UINT64 GetCurrentReading(UINT32 __buttonArraySize, bool* out_buttonArray, UINT32 __switchArraySize, Windows.Gaming.Input.GameControllerSwitchPosition* out_switchArray, UINT32 __axisArraySize, double* out_axisArray)
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).abi_GetCurrentReading(__buttonArraySize, out_buttonArray, __switchArraySize, out_switchArray, __axisArraySize, out_axisArray, &_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.GameControllerSwitchKind GetSwitchKind(INT32 switchIndex)
+	{
+		Windows.Gaming.Input.GameControllerSwitchKind _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).abi_GetSwitchKind(switchIndex, &_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.Headset Headset()
+	{
+		Windows.Gaming.Input.Headset _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_Headset(&_ret));
+		return _ret;
+	}
+	final bool IsWireless()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_IsWireless(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_User(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
+	{
+		Windows.Devices.Power.BatteryReport _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		return _ret;
+	}
 }
 
 interface UINavigationController : Windows.Gaming.Input.IUINavigationController, Windows.Gaming.Input.IGameController, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
+extern(Windows):
+	final Windows.Gaming.Input.UINavigationReading GetCurrentReading()
+	{
+		Windows.Gaming.Input.UINavigationReading _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IUINavigationController).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.GameControllerButtonLabel GetOptionalButtonLabel(Windows.Gaming.Input.OptionalUINavigationButtons button)
+	{
+		Windows.Gaming.Input.GameControllerButtonLabel _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IUINavigationController).abi_GetOptionalButtonLabel(button, &_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.GameControllerButtonLabel GetRequiredButtonLabel(Windows.Gaming.Input.RequiredUINavigationButtons button)
+	{
+		Windows.Gaming.Input.GameControllerButtonLabel _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IUINavigationController).abi_GetRequiredButtonLabel(button, &_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Input.Headset Headset()
+	{
+		Windows.Gaming.Input.Headset _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_Headset(&_ret));
+		return _ret;
+	}
+	final bool IsWireless()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_IsWireless(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_User(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
+	{
+		Windows.Devices.Power.BatteryReport _ret;
+		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		return _ret;
+	}
 }
 
 @bitflags

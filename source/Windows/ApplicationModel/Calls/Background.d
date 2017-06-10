@@ -43,18 +43,88 @@ extern(Windows):
 
 interface PhoneCallBlockedTriggerDetails : Windows.ApplicationModel.Calls.Background.IPhoneCallBlockedTriggerDetails
 {
+extern(Windows):
+	final HSTRING PhoneNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneCallBlockedTriggerDetails).get_PhoneNumber(&_ret));
+		return _ret;
+	}
+	final GUID LineId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneCallBlockedTriggerDetails).get_LineId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Calls.Background.PhoneCallBlockedReason CallBlockedReason()
+	{
+		Windows.ApplicationModel.Calls.Background.PhoneCallBlockedReason _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneCallBlockedTriggerDetails).get_CallBlockedReason(&_ret));
+		return _ret;
+	}
 }
 
 interface PhoneCallOriginDataRequestTriggerDetails : Windows.ApplicationModel.Calls.Background.IPhoneCallOriginDataRequestTriggerDetails
 {
+extern(Windows):
+	final GUID RequestId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneCallOriginDataRequestTriggerDetails).get_RequestId(&_ret));
+		return _ret;
+	}
+	final HSTRING PhoneNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneCallOriginDataRequestTriggerDetails).get_PhoneNumber(&_ret));
+		return _ret;
+	}
 }
 
 interface PhoneLineChangedTriggerDetails : Windows.ApplicationModel.Calls.Background.IPhoneLineChangedTriggerDetails
 {
+extern(Windows):
+	final GUID LineId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneLineChangedTriggerDetails).get_LineId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Calls.Background.PhoneLineChangeKind ChangeType()
+	{
+		Windows.ApplicationModel.Calls.Background.PhoneLineChangeKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneLineChangedTriggerDetails).get_ChangeType(&_ret));
+		return _ret;
+	}
+	final bool HasLinePropertyChanged(Windows.ApplicationModel.Calls.Background.PhoneLineProperties lineProperty)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneLineChangedTriggerDetails).abi_HasLinePropertyChanged(lineProperty, &_ret));
+		return _ret;
+	}
 }
 
 interface PhoneNewVoicemailMessageTriggerDetails : Windows.ApplicationModel.Calls.Background.IPhoneNewVoicemailMessageTriggerDetails
 {
+extern(Windows):
+	final GUID LineId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneNewVoicemailMessageTriggerDetails).get_LineId(&_ret));
+		return _ret;
+	}
+	final INT32 VoicemailCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneNewVoicemailMessageTriggerDetails).get_VoicemailCount(&_ret));
+		return _ret;
+	}
+	final HSTRING OperatorMessage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneNewVoicemailMessageTriggerDetails).get_OperatorMessage(&_ret));
+		return _ret;
+	}
 }
 
 enum PhoneCallBlockedReason

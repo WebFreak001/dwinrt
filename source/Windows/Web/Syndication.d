@@ -318,18 +318,318 @@ extern(Windows):
 
 interface SyndicationAttribute : Windows.Web.Syndication.ISyndicationAttribute
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationAttribute).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationAttribute).set_Name(value));
+	}
+	final HSTRING Namespace()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationAttribute).get_Namespace(&_ret));
+		return _ret;
+	}
+	final void Namespace(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationAttribute).set_Namespace(value));
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationAttribute).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationAttribute).set_Value(value));
+	}
 }
 
 interface SyndicationCategory : Windows.Web.Syndication.ISyndicationCategory, Windows.Web.Syndication.ISyndicationNode
 {
+extern(Windows):
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationCategory).get_Label(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationCategory).set_Label(value));
+	}
+	final HSTRING Scheme()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationCategory).get_Scheme(&_ret));
+		return _ret;
+	}
+	final void Scheme(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationCategory).set_Scheme(value));
+	}
+	final HSTRING Term()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationCategory).get_Term(&_ret));
+		return _ret;
+	}
+	final void Term(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationCategory).set_Term(value));
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final void NodeName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeName(value));
+	}
+	final HSTRING NodeNamespace()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeNamespace(&_ret));
+		return _ret;
+	}
+	final void NodeNamespace(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeNamespace(value));
+	}
+	final HSTRING NodeValue()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeValue(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_Language(value));
+	}
+	final Windows.Foundation.Uri BaseUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_BaseUri(&_ret));
+		return _ret;
+	}
+	final void BaseUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_BaseUri(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) AttributeExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_AttributeExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) ElementExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_ElementExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument GetXmlDocument(Windows.Web.Syndication.SyndicationFormat format)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationClient : Windows.Web.Syndication.ISyndicationClient
 {
+extern(Windows):
+	final Windows.Security.Credentials.PasswordCredential ServerCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).get_ServerCredential(&_ret));
+		return _ret;
+	}
+	final void ServerCredential(Windows.Security.Credentials.PasswordCredential value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).set_ServerCredential(value));
+	}
+	final Windows.Security.Credentials.PasswordCredential ProxyCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).get_ProxyCredential(&_ret));
+		return _ret;
+	}
+	final void ProxyCredential(Windows.Security.Credentials.PasswordCredential value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).set_ProxyCredential(value));
+	}
+	final UINT32 MaxResponseBufferSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).get_MaxResponseBufferSize(&_ret));
+		return _ret;
+	}
+	final void MaxResponseBufferSize(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).set_MaxResponseBufferSize(value));
+	}
+	final UINT32 Timeout()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).get_Timeout(&_ret));
+		return _ret;
+	}
+	final void Timeout(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).set_Timeout(value));
+	}
+	final bool BypassCacheOnRetrieve()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).get_BypassCacheOnRetrieve(&_ret));
+		return _ret;
+	}
+	final void BypassCacheOnRetrieve(bool value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).set_BypassCacheOnRetrieve(value));
+	}
+	final void SetRequestHeader(HSTRING name, HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).abi_SetRequestHeader(name, value));
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationFeed, Windows.Web.Syndication.RetrievalProgress) RetrieveFeedAsync(Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationFeed, Windows.Web.Syndication.RetrievalProgress) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).abi_RetrieveFeedAsync(uri, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationContent : Windows.Web.Syndication.ISyndicationText, Windows.Web.Syndication.ISyndicationNode, Windows.Web.Syndication.ISyndicationContent
 {
+extern(Windows):
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationText).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationText).set_Text(value));
+	}
+	final HSTRING Type()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationText).get_Type(&_ret));
+		return _ret;
+	}
+	final void Type(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationText).set_Type(value));
+	}
+	final Windows.Data.Xml.Dom.XmlDocument Xml()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationText).get_Xml(&_ret));
+		return _ret;
+	}
+	final void Xml(Windows.Data.Xml.Dom.XmlDocument value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationText).set_Xml(value));
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final void NodeName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeName(value));
+	}
+	final HSTRING NodeNamespace()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeNamespace(&_ret));
+		return _ret;
+	}
+	final void NodeNamespace(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeNamespace(value));
+	}
+	final HSTRING NodeValue()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeValue(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_Language(value));
+	}
+	final Windows.Foundation.Uri BaseUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_BaseUri(&_ret));
+		return _ret;
+	}
+	final void BaseUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_BaseUri(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) AttributeExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_AttributeExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) ElementExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_ElementExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument GetXmlDocument(Windows.Web.Syndication.SyndicationFormat format)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri SourceUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationContent).get_SourceUri(&_ret));
+		return _ret;
+	}
+	final void SourceUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationContent).set_SourceUri(value));
+	}
 }
 
 interface SyndicationError
@@ -338,30 +638,957 @@ interface SyndicationError
 
 interface SyndicationFeed : Windows.Web.Syndication.ISyndicationFeed, Windows.Web.Syndication.ISyndicationNode
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationPerson) Authors()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationPerson) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_Authors(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationCategory) Categories()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationCategory) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_Categories(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationPerson) Contributors()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationPerson) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_Contributors(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Syndication.SyndicationGenerator Generator()
+	{
+		Windows.Web.Syndication.SyndicationGenerator _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_Generator(&_ret));
+		return _ret;
+	}
+	final void Generator(Windows.Web.Syndication.SyndicationGenerator value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).set_Generator(value));
+	}
+	final Windows.Foundation.Uri IconUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_IconUri(&_ret));
+		return _ret;
+	}
+	final void IconUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).set_IconUri(value));
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_Id(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).set_Id(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationItem) Items()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationItem) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_Items(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime LastUpdatedTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_LastUpdatedTime(&_ret));
+		return _ret;
+	}
+	final void LastUpdatedTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).set_LastUpdatedTime(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationLink) Links()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationLink) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_Links(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ImageUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_ImageUri(&_ret));
+		return _ret;
+	}
+	final void ImageUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).set_ImageUri(value));
+	}
+	final Windows.Web.Syndication.ISyndicationText Rights()
+	{
+		Windows.Web.Syndication.ISyndicationText _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_Rights(&_ret));
+		return _ret;
+	}
+	final void Rights(Windows.Web.Syndication.ISyndicationText value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).set_Rights(value));
+	}
+	final Windows.Web.Syndication.ISyndicationText Subtitle()
+	{
+		Windows.Web.Syndication.ISyndicationText _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_Subtitle(&_ret));
+		return _ret;
+	}
+	final void Subtitle(Windows.Web.Syndication.ISyndicationText value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).set_Subtitle(value));
+	}
+	final Windows.Web.Syndication.ISyndicationText Title()
+	{
+		Windows.Web.Syndication.ISyndicationText _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(Windows.Web.Syndication.ISyndicationText value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).set_Title(value));
+	}
+	final Windows.Foundation.Uri FirstUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_FirstUri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri LastUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_LastUri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri NextUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_NextUri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri PreviousUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_PreviousUri(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Syndication.SyndicationFormat SourceFormat()
+	{
+		Windows.Web.Syndication.SyndicationFormat _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).get_SourceFormat(&_ret));
+		return _ret;
+	}
+	final void Load(HSTRING feed)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).abi_Load(feed));
+	}
+	final void LoadFromXml(Windows.Data.Xml.Dom.XmlDocument feedDocument)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationFeed).abi_LoadFromXml(feedDocument));
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final void NodeName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeName(value));
+	}
+	final HSTRING NodeNamespace()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeNamespace(&_ret));
+		return _ret;
+	}
+	final void NodeNamespace(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeNamespace(value));
+	}
+	final HSTRING NodeValue()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeValue(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_Language(value));
+	}
+	final Windows.Foundation.Uri BaseUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_BaseUri(&_ret));
+		return _ret;
+	}
+	final void BaseUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_BaseUri(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) AttributeExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_AttributeExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) ElementExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_ElementExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument GetXmlDocument(Windows.Web.Syndication.SyndicationFormat format)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationGenerator : Windows.Web.Syndication.ISyndicationGenerator, Windows.Web.Syndication.ISyndicationNode
 {
+extern(Windows):
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationGenerator).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationGenerator).set_Text(value));
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationGenerator).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationGenerator).set_Uri(value));
+	}
+	final HSTRING Version()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationGenerator).get_Version(&_ret));
+		return _ret;
+	}
+	final void Version(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationGenerator).set_Version(value));
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final void NodeName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeName(value));
+	}
+	final HSTRING NodeNamespace()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeNamespace(&_ret));
+		return _ret;
+	}
+	final void NodeNamespace(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeNamespace(value));
+	}
+	final HSTRING NodeValue()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeValue(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_Language(value));
+	}
+	final Windows.Foundation.Uri BaseUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_BaseUri(&_ret));
+		return _ret;
+	}
+	final void BaseUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_BaseUri(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) AttributeExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_AttributeExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) ElementExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_ElementExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument GetXmlDocument(Windows.Web.Syndication.SyndicationFormat format)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationItem : Windows.Web.Syndication.ISyndicationItem, Windows.Web.Syndication.ISyndicationNode
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationPerson) Authors()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationPerson) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_Authors(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationCategory) Categories()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationCategory) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_Categories(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationPerson) Contributors()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationPerson) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_Contributors(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Syndication.SyndicationContent Content()
+	{
+		Windows.Web.Syndication.SyndicationContent _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_Content(&_ret));
+		return _ret;
+	}
+	final void Content(Windows.Web.Syndication.SyndicationContent value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).set_Content(value));
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_Id(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).set_Id(value));
+	}
+	final Windows.Foundation.DateTime LastUpdatedTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_LastUpdatedTime(&_ret));
+		return _ret;
+	}
+	final void LastUpdatedTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).set_LastUpdatedTime(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationLink) Links()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationLink) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_Links(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime PublishedDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_PublishedDate(&_ret));
+		return _ret;
+	}
+	final void PublishedDate(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).set_PublishedDate(value));
+	}
+	final Windows.Web.Syndication.ISyndicationText Rights()
+	{
+		Windows.Web.Syndication.ISyndicationText _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_Rights(&_ret));
+		return _ret;
+	}
+	final void Rights(Windows.Web.Syndication.ISyndicationText value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).set_Rights(value));
+	}
+	final Windows.Web.Syndication.SyndicationFeed Source()
+	{
+		Windows.Web.Syndication.SyndicationFeed _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_Source(&_ret));
+		return _ret;
+	}
+	final void Source(Windows.Web.Syndication.SyndicationFeed value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).set_Source(value));
+	}
+	final Windows.Web.Syndication.ISyndicationText Summary()
+	{
+		Windows.Web.Syndication.ISyndicationText _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_Summary(&_ret));
+		return _ret;
+	}
+	final void Summary(Windows.Web.Syndication.ISyndicationText value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).set_Summary(value));
+	}
+	final Windows.Web.Syndication.ISyndicationText Title()
+	{
+		Windows.Web.Syndication.ISyndicationText _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(Windows.Web.Syndication.ISyndicationText value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).set_Title(value));
+	}
+	final Windows.Foundation.Uri CommentsUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_CommentsUri(&_ret));
+		return _ret;
+	}
+	final void CommentsUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).set_CommentsUri(value));
+	}
+	final Windows.Foundation.Uri EditUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_EditUri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri EditMediaUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_EditMediaUri(&_ret));
+		return _ret;
+	}
+	final HSTRING ETag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_ETag(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ItemUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).get_ItemUri(&_ret));
+		return _ret;
+	}
+	final void Load(HSTRING item)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).abi_Load(item));
+	}
+	final void LoadFromXml(Windows.Data.Xml.Dom.XmlDocument itemDocument)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationItem).abi_LoadFromXml(itemDocument));
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final void NodeName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeName(value));
+	}
+	final HSTRING NodeNamespace()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeNamespace(&_ret));
+		return _ret;
+	}
+	final void NodeNamespace(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeNamespace(value));
+	}
+	final HSTRING NodeValue()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeValue(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_Language(value));
+	}
+	final Windows.Foundation.Uri BaseUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_BaseUri(&_ret));
+		return _ret;
+	}
+	final void BaseUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_BaseUri(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) AttributeExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_AttributeExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) ElementExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_ElementExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument GetXmlDocument(Windows.Web.Syndication.SyndicationFormat format)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationLink : Windows.Web.Syndication.ISyndicationLink, Windows.Web.Syndication.ISyndicationNode
 {
+extern(Windows):
+	final UINT32 Length()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationLink).get_Length(&_ret));
+		return _ret;
+	}
+	final void Length(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationLink).set_Length(value));
+	}
+	final HSTRING MediaType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationLink).get_MediaType(&_ret));
+		return _ret;
+	}
+	final void MediaType(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationLink).set_MediaType(value));
+	}
+	final HSTRING Relationship()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationLink).get_Relationship(&_ret));
+		return _ret;
+	}
+	final void Relationship(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationLink).set_Relationship(value));
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationLink).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationLink).set_Title(value));
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationLink).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationLink).set_Uri(value));
+	}
+	final HSTRING ResourceLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationLink).get_ResourceLanguage(&_ret));
+		return _ret;
+	}
+	final void ResourceLanguage(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationLink).set_ResourceLanguage(value));
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final void NodeName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeName(value));
+	}
+	final HSTRING NodeNamespace()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeNamespace(&_ret));
+		return _ret;
+	}
+	final void NodeNamespace(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeNamespace(value));
+	}
+	final HSTRING NodeValue()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeValue(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_Language(value));
+	}
+	final Windows.Foundation.Uri BaseUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_BaseUri(&_ret));
+		return _ret;
+	}
+	final void BaseUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_BaseUri(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) AttributeExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_AttributeExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) ElementExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_ElementExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument GetXmlDocument(Windows.Web.Syndication.SyndicationFormat format)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationNode : Windows.Web.Syndication.ISyndicationNode
 {
+extern(Windows):
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final void NodeName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeName(value));
+	}
+	final HSTRING NodeNamespace()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeNamespace(&_ret));
+		return _ret;
+	}
+	final void NodeNamespace(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeNamespace(value));
+	}
+	final HSTRING NodeValue()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeValue(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_Language(value));
+	}
+	final Windows.Foundation.Uri BaseUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_BaseUri(&_ret));
+		return _ret;
+	}
+	final void BaseUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_BaseUri(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) AttributeExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_AttributeExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) ElementExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_ElementExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument GetXmlDocument(Windows.Web.Syndication.SyndicationFormat format)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationPerson : Windows.Web.Syndication.ISyndicationPerson, Windows.Web.Syndication.ISyndicationNode
 {
+extern(Windows):
+	final HSTRING Email()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationPerson).get_Email(&_ret));
+		return _ret;
+	}
+	final void Email(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationPerson).set_Email(value));
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationPerson).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationPerson).set_Name(value));
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationPerson).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationPerson).set_Uri(value));
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final void NodeName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeName(value));
+	}
+	final HSTRING NodeNamespace()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeNamespace(&_ret));
+		return _ret;
+	}
+	final void NodeNamespace(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeNamespace(value));
+	}
+	final HSTRING NodeValue()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeValue(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_Language(value));
+	}
+	final Windows.Foundation.Uri BaseUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_BaseUri(&_ret));
+		return _ret;
+	}
+	final void BaseUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_BaseUri(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) AttributeExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_AttributeExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) ElementExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_ElementExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument GetXmlDocument(Windows.Web.Syndication.SyndicationFormat format)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationText : Windows.Web.Syndication.ISyndicationText, Windows.Web.Syndication.ISyndicationNode
 {
+extern(Windows):
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationText).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationText).set_Text(value));
+	}
+	final HSTRING Type()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationText).get_Type(&_ret));
+		return _ret;
+	}
+	final void Type(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationText).set_Type(value));
+	}
+	final Windows.Data.Xml.Dom.XmlDocument Xml()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationText).get_Xml(&_ret));
+		return _ret;
+	}
+	final void Xml(Windows.Data.Xml.Dom.XmlDocument value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationText).set_Xml(value));
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final void NodeName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeName(value));
+	}
+	final HSTRING NodeNamespace()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeNamespace(&_ret));
+		return _ret;
+	}
+	final void NodeNamespace(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeNamespace(value));
+	}
+	final HSTRING NodeValue()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_NodeValue(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_Language(value));
+	}
+	final Windows.Foundation.Uri BaseUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_BaseUri(&_ret));
+		return _ret;
+	}
+	final void BaseUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).set_BaseUri(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) AttributeExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationAttribute) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_AttributeExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) ElementExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.ISyndicationNode) _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).get_ElementExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument GetXmlDocument(Windows.Web.Syndication.SyndicationFormat format)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
+		return _ret;
+	}
 }
 
 enum SyndicationErrorStatus

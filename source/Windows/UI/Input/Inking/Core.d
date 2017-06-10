@@ -71,14 +71,51 @@ extern(Windows):
 
 interface CoreInkIndependentInputSource : Windows.UI.Input.Inking.Core.ICoreInkIndependentInputSource
 {
+extern(Windows):
+	final Windows.UI.Input.Inking.InkPresenter InkPresenter()
+	{
+		Windows.UI.Input.Inking.InkPresenter _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.Core.ICoreInkIndependentInputSource).get_InkPresenter(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreWetStrokeUpdateEventArgs : Windows.UI.Input.Inking.Core.ICoreWetStrokeUpdateEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Input.Inking.InkPoint) NewInkPoints()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Input.Inking.InkPoint) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.Core.ICoreWetStrokeUpdateEventArgs).get_NewInkPoints(&_ret));
+		return _ret;
+	}
+	final UINT32 PointerId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.Core.ICoreWetStrokeUpdateEventArgs).get_PointerId(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Inking.Core.CoreWetStrokeDisposition Disposition()
+	{
+		Windows.UI.Input.Inking.Core.CoreWetStrokeDisposition _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.Core.ICoreWetStrokeUpdateEventArgs).get_Disposition(&_ret));
+		return _ret;
+	}
+	final void Disposition(Windows.UI.Input.Inking.Core.CoreWetStrokeDisposition value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Inking.Core.ICoreWetStrokeUpdateEventArgs).set_Disposition(value));
+	}
 }
 
 interface CoreWetStrokeUpdateSource : Windows.UI.Input.Inking.Core.ICoreWetStrokeUpdateSource
 {
+extern(Windows):
+	final Windows.UI.Input.Inking.InkPresenter InkPresenter()
+	{
+		Windows.UI.Input.Inking.InkPresenter _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Inking.Core.ICoreWetStrokeUpdateSource).get_InkPresenter(&_ret));
+		return _ret;
+	}
 }
 
 enum CoreWetStrokeDisposition

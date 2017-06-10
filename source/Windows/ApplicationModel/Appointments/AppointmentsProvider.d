@@ -65,6 +65,35 @@ extern(Windows):
 
 interface AddAppointmentOperation : Windows.ApplicationModel.Appointments.AppointmentsProvider.IAddAppointmentOperation
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.Appointment AppointmentInformation()
+	{
+		Windows.ApplicationModel.Appointments.Appointment _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IAddAppointmentOperation).get_AppointmentInformation(&_ret));
+		return _ret;
+	}
+	final HSTRING SourcePackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IAddAppointmentOperation).get_SourcePackageFamilyName(&_ret));
+		return _ret;
+	}
+	final void ReportCompleted(HSTRING itemId)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IAddAppointmentOperation).abi_ReportCompleted(itemId));
+	}
+	final void ReportCanceled()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IAddAppointmentOperation).abi_ReportCanceled());
+	}
+	final void ReportError(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IAddAppointmentOperation).abi_ReportError(value));
+	}
+	final void DismissUI()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IAddAppointmentOperation).abi_DismissUI());
+	}
 }
 
 interface AppointmentsProviderLaunchActionVerbs
@@ -73,8 +102,84 @@ interface AppointmentsProviderLaunchActionVerbs
 
 interface RemoveAppointmentOperation : Windows.ApplicationModel.Appointments.AppointmentsProvider.IRemoveAppointmentOperation
 {
+extern(Windows):
+	final HSTRING AppointmentId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IRemoveAppointmentOperation).get_AppointmentId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) InstanceStartDate()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IRemoveAppointmentOperation).get_InstanceStartDate(&_ret));
+		return _ret;
+	}
+	final HSTRING SourcePackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IRemoveAppointmentOperation).get_SourcePackageFamilyName(&_ret));
+		return _ret;
+	}
+	final void ReportCompleted()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IRemoveAppointmentOperation).abi_ReportCompleted());
+	}
+	final void ReportCanceled()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IRemoveAppointmentOperation).abi_ReportCanceled());
+	}
+	final void ReportError(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IRemoveAppointmentOperation).abi_ReportError(value));
+	}
+	final void DismissUI()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IRemoveAppointmentOperation).abi_DismissUI());
+	}
 }
 
 interface ReplaceAppointmentOperation : Windows.ApplicationModel.Appointments.AppointmentsProvider.IReplaceAppointmentOperation
 {
+extern(Windows):
+	final HSTRING AppointmentId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IReplaceAppointmentOperation).get_AppointmentId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Appointments.Appointment AppointmentInformation()
+	{
+		Windows.ApplicationModel.Appointments.Appointment _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IReplaceAppointmentOperation).get_AppointmentInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) InstanceStartDate()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IReplaceAppointmentOperation).get_InstanceStartDate(&_ret));
+		return _ret;
+	}
+	final HSTRING SourcePackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IReplaceAppointmentOperation).get_SourcePackageFamilyName(&_ret));
+		return _ret;
+	}
+	final void ReportCompleted(HSTRING itemId)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IReplaceAppointmentOperation).abi_ReportCompleted(itemId));
+	}
+	final void ReportCanceled()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IReplaceAppointmentOperation).abi_ReportCanceled());
+	}
+	final void ReportError(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IReplaceAppointmentOperation).abi_ReportError(value));
+	}
+	final void DismissUI()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IReplaceAppointmentOperation).abi_DismissUI());
+	}
 }

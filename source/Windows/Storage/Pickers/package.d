@@ -123,6 +123,88 @@ interface FileExtensionVector : Windows.Foundation.Collections.IVector!(HSTRING)
 
 interface FileOpenPicker : Windows.Storage.Pickers.IFileOpenPicker, Windows.Storage.Pickers.IFileOpenPickerWithOperationId, Windows.Storage.Pickers.IFileOpenPicker2
 {
+extern(Windows):
+	final Windows.Storage.Pickers.PickerViewMode ViewMode()
+	{
+		Windows.Storage.Pickers.PickerViewMode _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker).get_ViewMode(&_ret));
+		return _ret;
+	}
+	final void ViewMode(Windows.Storage.Pickers.PickerViewMode value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker).set_ViewMode(value));
+	}
+	final HSTRING SettingsIdentifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker).get_SettingsIdentifier(&_ret));
+		return _ret;
+	}
+	final void SettingsIdentifier(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker).set_SettingsIdentifier(value));
+	}
+	final Windows.Storage.Pickers.PickerLocationId SuggestedStartLocation()
+	{
+		Windows.Storage.Pickers.PickerLocationId _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker).get_SuggestedStartLocation(&_ret));
+		return _ret;
+	}
+	final void SuggestedStartLocation(Windows.Storage.Pickers.PickerLocationId value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker).set_SuggestedStartLocation(value));
+	}
+	final HSTRING CommitButtonText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker).get_CommitButtonText(&_ret));
+		return _ret;
+	}
+	final void CommitButtonText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker).set_CommitButtonText(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) FileTypeFilter()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker).get_FileTypeFilter(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) PickSingleFileAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker).abi_PickSingleFileAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)) PickMultipleFilesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker).abi_PickMultipleFilesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) PickSingleFileAsync(HSTRING pickerOperationId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPickerWithOperationId).abi_PickSingleFileAsync(pickerOperationId, &_ret));
+		return _ret;
+	}
+	deprecated("Instead, use PickSingleFileAsync/PickMultipleFilesAsync")
+	final Windows.Foundation.Collections.ValueSet ContinuationData()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker2).get_ContinuationData(&_ret));
+		return _ret;
+	}
+	deprecated("Instead, use PickSingleFileAsync")
+	final void PickSingleFileAndContinue()
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker2).abi_PickSingleFileAndContinue());
+	}
+	deprecated("Instead, use PickMultipleFilesAsync")
+	final void PickMultipleFilesAndContinue()
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker2).abi_PickMultipleFilesAndContinue());
+	}
 }
 
 interface FilePickerFileTypesOrderedMap : Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))
@@ -135,10 +217,168 @@ interface FilePickerSelectedFilesArray : Windows.Foundation.Collections.IVectorV
 
 interface FileSavePicker : Windows.Storage.Pickers.IFileSavePicker, Windows.Storage.Pickers.IFileSavePicker2, Windows.Storage.Pickers.IFileSavePicker3
 {
+extern(Windows):
+	final HSTRING SettingsIdentifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).get_SettingsIdentifier(&_ret));
+		return _ret;
+	}
+	final void SettingsIdentifier(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).set_SettingsIdentifier(value));
+	}
+	final Windows.Storage.Pickers.PickerLocationId SuggestedStartLocation()
+	{
+		Windows.Storage.Pickers.PickerLocationId _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).get_SuggestedStartLocation(&_ret));
+		return _ret;
+	}
+	final void SuggestedStartLocation(Windows.Storage.Pickers.PickerLocationId value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).set_SuggestedStartLocation(value));
+	}
+	final HSTRING CommitButtonText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).get_CommitButtonText(&_ret));
+		return _ret;
+	}
+	final void CommitButtonText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).set_CommitButtonText(value));
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)) FileTypeChoices()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).get_FileTypeChoices(&_ret));
+		return _ret;
+	}
+	final HSTRING DefaultFileExtension()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).get_DefaultFileExtension(&_ret));
+		return _ret;
+	}
+	final void DefaultFileExtension(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).set_DefaultFileExtension(value));
+	}
+	final Windows.Storage.StorageFile SuggestedSaveFile()
+	{
+		Windows.Storage.StorageFile _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).get_SuggestedSaveFile(&_ret));
+		return _ret;
+	}
+	final void SuggestedSaveFile(Windows.Storage.StorageFile value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).set_SuggestedSaveFile(value));
+	}
+	final HSTRING SuggestedFileName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).get_SuggestedFileName(&_ret));
+		return _ret;
+	}
+	final void SuggestedFileName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).set_SuggestedFileName(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) PickSaveFileAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker).abi_PickSaveFileAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.ValueSet ContinuationData()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker2).get_ContinuationData(&_ret));
+		return _ret;
+	}
+	deprecated("Instead, use PickSaveFileAsync")
+	final void PickSaveFileAndContinue()
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker2).abi_PickSaveFileAndContinue());
+	}
+	final HSTRING EnterpriseId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker3).get_EnterpriseId(&_ret));
+		return _ret;
+	}
+	final void EnterpriseId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker3).set_EnterpriseId(value));
+	}
 }
 
 interface FolderPicker : Windows.Storage.Pickers.IFolderPicker, Windows.Storage.Pickers.IFolderPicker2
 {
+extern(Windows):
+	final Windows.Storage.Pickers.PickerViewMode ViewMode()
+	{
+		Windows.Storage.Pickers.PickerViewMode _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFolderPicker).get_ViewMode(&_ret));
+		return _ret;
+	}
+	final void ViewMode(Windows.Storage.Pickers.PickerViewMode value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFolderPicker).set_ViewMode(value));
+	}
+	final HSTRING SettingsIdentifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFolderPicker).get_SettingsIdentifier(&_ret));
+		return _ret;
+	}
+	final void SettingsIdentifier(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFolderPicker).set_SettingsIdentifier(value));
+	}
+	final Windows.Storage.Pickers.PickerLocationId SuggestedStartLocation()
+	{
+		Windows.Storage.Pickers.PickerLocationId _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFolderPicker).get_SuggestedStartLocation(&_ret));
+		return _ret;
+	}
+	final void SuggestedStartLocation(Windows.Storage.Pickers.PickerLocationId value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFolderPicker).set_SuggestedStartLocation(value));
+	}
+	final HSTRING CommitButtonText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFolderPicker).get_CommitButtonText(&_ret));
+		return _ret;
+	}
+	final void CommitButtonText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFolderPicker).set_CommitButtonText(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) FileTypeFilter()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFolderPicker).get_FileTypeFilter(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) PickSingleFolderAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFolderPicker).abi_PickSingleFolderAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.ValueSet ContinuationData()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFolderPicker2).get_ContinuationData(&_ret));
+		return _ret;
+	}
+	deprecated("Instead, use PickSingleFolderAsync")
+	final void PickFolderAndContinue()
+	{
+		Debug.OK(this.as!(Windows.Storage.Pickers.IFolderPicker2).abi_PickFolderAndContinue());
+	}
 }
 
 enum PickerLocationId

@@ -102,6 +102,85 @@ extern(Windows):
 
 interface JsonArray : Windows.Data.Json.IJsonArray, Windows.Data.Json.IJsonValue, Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue), Windows.Foundation.Collections.IIterable!(Windows.Data.Json.IJsonValue), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Data.Json.JsonObject GetObjectAt(UINT32 index)
+	{
+		Windows.Data.Json.JsonObject _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonArray).abi_GetObjectAt(index, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Json.JsonArray GetArrayAt(UINT32 index)
+	{
+		Windows.Data.Json.JsonArray _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonArray).abi_GetArrayAt(index, &_ret));
+		return _ret;
+	}
+	final HSTRING GetStringAt(UINT32 index)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonArray).abi_GetStringAt(index, &_ret));
+		return _ret;
+	}
+	final double GetNumberAt(UINT32 index)
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonArray).abi_GetNumberAt(index, &_ret));
+		return _ret;
+	}
+	final bool GetBooleanAt(UINT32 index)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonArray).abi_GetBooleanAt(index, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Json.JsonValueType ValueType()
+	{
+		Windows.Data.Json.JsonValueType _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).get_ValueType(&_ret));
+		return _ret;
+	}
+	final HSTRING Stringify()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_Stringify(&_ret));
+		return _ret;
+	}
+	final HSTRING GetString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetString(&_ret));
+		return _ret;
+	}
+	final double GetNumber()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetNumber(&_ret));
+		return _ret;
+	}
+	final bool GetBoolean()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetBoolean(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Json.JsonArray GetArray()
+	{
+		Windows.Data.Json.JsonArray _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetArray(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Json.JsonObject GetObject()
+	{
+		Windows.Data.Json.JsonObject _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetObject(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface JsonError
@@ -110,10 +189,184 @@ interface JsonError
 
 interface JsonObject : Windows.Data.Json.IJsonObject, Windows.Data.Json.IJsonValue, Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Data.Json.IJsonValue)), Windows.Data.Json.IJsonObjectWithDefaultValues, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Data.Json.JsonValue GetNamedValue(HSTRING name)
+	{
+		Windows.Data.Json.JsonValue _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_GetNamedValue(name, &_ret));
+		return _ret;
+	}
+	final void SetNamedValue(HSTRING name, Windows.Data.Json.IJsonValue value)
+	{
+		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_SetNamedValue(name, value));
+	}
+	final Windows.Data.Json.JsonObject GetNamedObject(HSTRING name)
+	{
+		Windows.Data.Json.JsonObject _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_GetNamedObject(name, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Json.JsonArray GetNamedArray(HSTRING name)
+	{
+		Windows.Data.Json.JsonArray _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_GetNamedArray(name, &_ret));
+		return _ret;
+	}
+	final HSTRING GetNamedString(HSTRING name)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_GetNamedString(name, &_ret));
+		return _ret;
+	}
+	final double GetNamedNumber(HSTRING name)
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_GetNamedNumber(name, &_ret));
+		return _ret;
+	}
+	final bool GetNamedBoolean(HSTRING name)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_GetNamedBoolean(name, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Json.JsonValueType ValueType()
+	{
+		Windows.Data.Json.JsonValueType _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).get_ValueType(&_ret));
+		return _ret;
+	}
+	final HSTRING Stringify()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_Stringify(&_ret));
+		return _ret;
+	}
+	final HSTRING GetString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetString(&_ret));
+		return _ret;
+	}
+	final double GetNumber()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetNumber(&_ret));
+		return _ret;
+	}
+	final bool GetBoolean()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetBoolean(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Json.JsonArray GetArray()
+	{
+		Windows.Data.Json.JsonArray _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetArray(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Json.JsonObject GetObject()
+	{
+		Windows.Data.Json.JsonObject _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetObject(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Json.JsonValue GetNamedValueOrDefault(HSTRING name, Windows.Data.Json.JsonValue defaultValue)
+	{
+		Windows.Data.Json.JsonValue _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonObjectWithDefaultValues).abi_GetNamedValueOrDefault(name, defaultValue, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Json.JsonObject GetNamedObjectOrDefault(HSTRING name, Windows.Data.Json.JsonObject defaultValue)
+	{
+		Windows.Data.Json.JsonObject _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonObjectWithDefaultValues).abi_GetNamedObjectOrDefault(name, defaultValue, &_ret));
+		return _ret;
+	}
+	final HSTRING GetNamedStringOrDefault(HSTRING name, HSTRING defaultValue)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonObjectWithDefaultValues).abi_GetNamedStringOrDefault(name, defaultValue, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Json.JsonArray GetNamedArrayOrDefault(HSTRING name, Windows.Data.Json.JsonArray defaultValue)
+	{
+		Windows.Data.Json.JsonArray _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonObjectWithDefaultValues).abi_GetNamedArrayOrDefault(name, defaultValue, &_ret));
+		return _ret;
+	}
+	final double GetNamedNumberOrDefault(HSTRING name, double defaultValue)
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonObjectWithDefaultValues).abi_GetNamedNumberOrDefault(name, defaultValue, &_ret));
+		return _ret;
+	}
+	final bool GetNamedBooleanOrDefault(HSTRING name, bool defaultValue)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonObjectWithDefaultValues).abi_GetNamedBooleanOrDefault(name, defaultValue, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface JsonValue : Windows.Data.Json.IJsonValue, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Data.Json.JsonValueType ValueType()
+	{
+		Windows.Data.Json.JsonValueType _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).get_ValueType(&_ret));
+		return _ret;
+	}
+	final HSTRING Stringify()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_Stringify(&_ret));
+		return _ret;
+	}
+	final HSTRING GetString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetString(&_ret));
+		return _ret;
+	}
+	final double GetNumber()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetNumber(&_ret));
+		return _ret;
+	}
+	final bool GetBoolean()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetBoolean(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Json.JsonArray GetArray()
+	{
+		Windows.Data.Json.JsonArray _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetArray(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Json.JsonObject GetObject()
+	{
+		Windows.Data.Json.JsonObject _ret;
+		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetObject(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 enum JsonErrorStatus

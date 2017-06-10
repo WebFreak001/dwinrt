@@ -300,22 +300,230 @@ extern(Windows):
 
 interface BluetoothAdapter : Windows.Devices.Bluetooth.IBluetoothAdapter
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothAdapter).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final UINT64 BluetoothAddress()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothAdapter).get_BluetoothAddress(&_ret));
+		return _ret;
+	}
+	final bool IsClassicSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothAdapter).get_IsClassicSupported(&_ret));
+		return _ret;
+	}
+	final bool IsLowEnergySupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothAdapter).get_IsLowEnergySupported(&_ret));
+		return _ret;
+	}
+	final bool IsPeripheralRoleSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothAdapter).get_IsPeripheralRoleSupported(&_ret));
+		return _ret;
+	}
+	final bool IsCentralRoleSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothAdapter).get_IsCentralRoleSupported(&_ret));
+		return _ret;
+	}
+	final bool IsAdvertisementOffloadSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothAdapter).get_IsAdvertisementOffloadSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.Radio) GetRadioAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.Radio) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothAdapter).abi_GetRadioAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothClassOfDevice : Windows.Devices.Bluetooth.IBluetoothClassOfDevice
 {
+extern(Windows):
+	final UINT32 RawValue()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothClassOfDevice).get_RawValue(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothMajorClass MajorClass()
+	{
+		Windows.Devices.Bluetooth.BluetoothMajorClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothClassOfDevice).get_MajorClass(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothMinorClass MinorClass()
+	{
+		Windows.Devices.Bluetooth.BluetoothMinorClass _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothClassOfDevice).get_MinorClass(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothServiceCapabilities ServiceCapabilities()
+	{
+		Windows.Devices.Bluetooth.BluetoothServiceCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothClassOfDevice).get_ServiceCapabilities(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothDevice : Windows.Devices.Bluetooth.IBluetoothDevice, Windows.Foundation.IClosable, Windows.Devices.Bluetooth.IBluetoothDevice2, Windows.Devices.Bluetooth.IBluetoothDevice3
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.HostName HostName()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).get_HostName(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothClassOfDevice ClassOfDevice()
+	{
+		Windows.Devices.Bluetooth.BluetoothClassOfDevice _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).get_ClassOfDevice(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Storage.Streams.IBuffer) SdpRecords()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).get_SdpRecords(&_ret));
+		return _ret;
+	}
+	deprecated("Use GetRfcommServicesAsync instead of RfcommServices.  For more info, see MSDN.")
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) RfcommServices()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).get_RfcommServices(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothConnectionStatus ConnectionStatus()
+	{
+		Windows.Devices.Bluetooth.BluetoothConnectionStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).get_ConnectionStatus(&_ret));
+		return _ret;
+	}
+	final UINT64 BluetoothAddress()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).get_BluetoothAddress(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Devices.Enumeration.DeviceInformation DeviceInformation()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice2).get_DeviceInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DeviceAccessInformation DeviceAccessInformation()
+	{
+		Windows.Devices.Enumeration.DeviceAccessInformation _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice3).get_DeviceAccessInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus) RequestAccessAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice3).abi_RequestAccessAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult) GetRfcommServicesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice3).abi_GetRfcommServicesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult) GetRfcommServicesWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice3).abi_GetRfcommServicesWithCacheModeAsync(cacheMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult) GetRfcommServicesForIdAsync(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice3).abi_GetRfcommServicesForIdAsync(serviceId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult) GetRfcommServicesForIdWithCacheModeAsync(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice3).abi_GetRfcommServicesForIdWithCacheModeAsync(serviceId, cacheMode, &_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothDeviceId : Windows.Devices.Bluetooth.IBluetoothDeviceId
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDeviceId).get_Id(&_ret));
+		return _ret;
+	}
+	final bool IsClassicDevice()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDeviceId).get_IsClassicDevice(&_ret));
+		return _ret;
+	}
+	final bool IsLowEnergyDevice()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDeviceId).get_IsLowEnergyDevice(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAppearance : Windows.Devices.Bluetooth.IBluetoothLEAppearance
 {
+extern(Windows):
+	final UINT16 RawValue()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearance).get_RawValue(&_ret));
+		return _ret;
+	}
+	final UINT16 Category()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearance).get_Category(&_ret));
+		return _ret;
+	}
+	final UINT16 SubCategory()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearance).get_SubCategory(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAppearanceCategories
@@ -328,10 +536,148 @@ interface BluetoothLEAppearanceSubcategories
 
 interface BluetoothLEDevice : Windows.Devices.Bluetooth.IBluetoothLEDevice, Windows.Foundation.IClosable, Windows.Devices.Bluetooth.IBluetoothLEDevice2, Windows.Devices.Bluetooth.IBluetoothLEDevice3
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).get_Name(&_ret));
+		return _ret;
+	}
+	deprecated("Use GetGattServicesAsync instead of GattServices.  For more information, see MSDN.")
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService) GattServices()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).get_GattServices(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothConnectionStatus ConnectionStatus()
+	{
+		Windows.Devices.Bluetooth.BluetoothConnectionStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).get_ConnectionStatus(&_ret));
+		return _ret;
+	}
+	final UINT64 BluetoothAddress()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).get_BluetoothAddress(&_ret));
+		return _ret;
+	}
+	deprecated("Use GetGattServicesForUuidAsync instead of GetGattService.	For more information, see MSDN.")
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService GetGattService(GUID serviceUuid)
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).abi_GetGattService(serviceUuid, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Devices.Enumeration.DeviceInformation DeviceInformation()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice2).get_DeviceInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothLEAppearance Appearance()
+	{
+		Windows.Devices.Bluetooth.BluetoothLEAppearance _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice2).get_Appearance(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothAddressType BluetoothAddressType()
+	{
+		Windows.Devices.Bluetooth.BluetoothAddressType _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice2).get_BluetoothAddressType(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DeviceAccessInformation DeviceAccessInformation()
+	{
+		Windows.Devices.Enumeration.DeviceAccessInformation _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice3).get_DeviceAccessInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus) RequestAccessAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice3).abi_RequestAccessAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetGattServicesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice3).abi_GetGattServicesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetGattServicesWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice3).abi_GetGattServicesWithCacheModeAsync(cacheMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetGattServicesForUuidAsync(GUID serviceUuid)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice3).abi_GetGattServicesForUuidAsync(serviceUuid, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetGattServicesForUuidWithCacheModeAsync(GUID serviceUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice3).abi_GetGattServicesForUuidWithCacheModeAsync(serviceUuid, cacheMode, &_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothSignalStrengthFilter : Windows.Devices.Bluetooth.IBluetoothSignalStrengthFilter
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(INT16) InRangeThresholdInDBm()
+	{
+		Windows.Foundation.IReference!(INT16) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothSignalStrengthFilter).get_InRangeThresholdInDBm(&_ret));
+		return _ret;
+	}
+	final void InRangeThresholdInDBm(Windows.Foundation.IReference!(INT16) value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothSignalStrengthFilter).set_InRangeThresholdInDBm(value));
+	}
+	final Windows.Foundation.IReference!(INT16) OutOfRangeThresholdInDBm()
+	{
+		Windows.Foundation.IReference!(INT16) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothSignalStrengthFilter).get_OutOfRangeThresholdInDBm(&_ret));
+		return _ret;
+	}
+	final void OutOfRangeThresholdInDBm(Windows.Foundation.IReference!(INT16) value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothSignalStrengthFilter).set_OutOfRangeThresholdInDBm(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) OutOfRangeTimeout()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothSignalStrengthFilter).get_OutOfRangeTimeout(&_ret));
+		return _ret;
+	}
+	final void OutOfRangeTimeout(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothSignalStrengthFilter).set_OutOfRangeTimeout(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) SamplingInterval()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothSignalStrengthFilter).get_SamplingInterval(&_ret));
+		return _ret;
+	}
+	final void SamplingInterval(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothSignalStrengthFilter).set_SamplingInterval(value));
+	}
 }
 
 interface BluetoothUuidHelper

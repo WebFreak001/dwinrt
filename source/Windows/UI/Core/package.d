@@ -28,14 +28,53 @@ extern(Windows):
 
 interface HostedCoreWindowFactory : Windows.UI.Core.ICoreWindowFactory
 {
+extern(Windows):
+	final Windows.UI.Core.CoreWindow CreateCoreWindow(HSTRING windowTitle)
+	{
+		Windows.UI.Core.CoreWindow _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFactory).abi_CreateCoreWindow(windowTitle, &_ret));
+		return _ret;
+	}
+	final bool WindowReuseAllowed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFactory).get_WindowReuseAllowed(&_ret));
+		return _ret;
+	}
 }
 
 interface ImmersiveCoreWindowFactory : Windows.UI.Core.ICoreWindowFactory
 {
+extern(Windows):
+	final Windows.UI.Core.CoreWindow CreateCoreWindow(HSTRING windowTitle)
+	{
+		Windows.UI.Core.CoreWindow _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFactory).abi_CreateCoreWindow(windowTitle, &_ret));
+		return _ret;
+	}
+	final bool WindowReuseAllowed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFactory).get_WindowReuseAllowed(&_ret));
+		return _ret;
+	}
 }
 
 interface UAPCoreWindowFactory : Windows.UI.Core.ICoreWindowFactory
 {
+extern(Windows):
+	final Windows.UI.Core.CoreWindow CreateCoreWindow(HSTRING windowTitle)
+	{
+		Windows.UI.Core.CoreWindow _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFactory).abi_CreateCoreWindow(windowTitle, &_ret));
+		return _ret;
+	}
+	final bool WindowReuseAllowed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFactory).get_WindowReuseAllowed(&_ret));
+		return _ret;
+	}
 }
 
 @uuid("d1f276c4-98d8-4636-bf49-eb79507548e9")
@@ -578,22 +617,135 @@ extern(Windows):
 
 interface AcceleratorKeyEventArgs : Windows.UI.Core.IAcceleratorKeyEventArgs, Windows.UI.Core.ICoreWindowEventArgs, Windows.UI.Core.IAcceleratorKeyEventArgs2
 {
+extern(Windows):
+	final Windows.UI.Core.CoreAcceleratorKeyEventType EventType()
+	{
+		Windows.UI.Core.CoreAcceleratorKeyEventType _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IAcceleratorKeyEventArgs).get_EventType(&_ret));
+		return _ret;
+	}
+	final Windows.System.VirtualKey VirtualKey()
+	{
+		Windows.System.VirtualKey _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IAcceleratorKeyEventArgs).get_VirtualKey(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CorePhysicalKeyStatus KeyStatus()
+	{
+		Windows.UI.Core.CorePhysicalKeyStatus _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IAcceleratorKeyEventArgs).get_KeyStatus(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IAcceleratorKeyEventArgs2).get_DeviceId(&_ret));
+		return _ret;
+	}
 }
 
 interface AutomationProviderRequestedEventArgs : Windows.UI.Core.IAutomationProviderRequestedEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
+extern(Windows):
+	final IInspectable AutomationProvider()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IAutomationProviderRequestedEventArgs).get_AutomationProvider(&_ret));
+		return _ret;
+	}
+	final void AutomationProvider(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.IAutomationProviderRequestedEventArgs).set_AutomationProvider(value));
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+	}
 }
 
 interface BackRequestedEventArgs : Windows.UI.Core.IBackRequestedEventArgs
 {
+extern(Windows):
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IBackRequestedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.IBackRequestedEventArgs).set_Handled(value));
+	}
 }
 
 interface CharacterReceivedEventArgs : Windows.UI.Core.ICharacterReceivedEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
+extern(Windows):
+	final UINT32 KeyCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICharacterReceivedEventArgs).get_KeyCode(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CorePhysicalKeyStatus KeyStatus()
+	{
+		Windows.UI.Core.CorePhysicalKeyStatus _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICharacterReceivedEventArgs).get_KeyStatus(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+	}
 }
 
 interface ClosestInteractiveBoundsRequestedEventArgs : Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Point PointerPosition()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs).get_PointerPosition(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect SearchBounds()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs).get_SearchBounds(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect ClosestInteractiveBounds()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs).get_ClosestInteractiveBounds(&_ret));
+		return _ret;
+	}
+	final void ClosestInteractiveBounds(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs).set_ClosestInteractiveBounds(value));
+	}
 }
 
 interface CoreAcceleratorKeys : Windows.UI.Core.ICoreAcceleratorKeys
@@ -602,78 +754,729 @@ interface CoreAcceleratorKeys : Windows.UI.Core.ICoreAcceleratorKeys
 
 interface CoreComponentInputSource : Windows.UI.Core.ICoreInputSourceBase, Windows.UI.Core.ICorePointerInputSource, Windows.UI.Core.ICoreKeyboardInputSource, Windows.UI.Core.ICoreComponentFocusable, Windows.UI.Core.ICoreTouchHitTesting, Windows.UI.Core.ICoreClosestInteractiveBoundsRequested, Windows.UI.Core.ICoreKeyboardInputSource2
 {
+extern(Windows):
+	final Windows.UI.Core.CoreDispatcher Dispatcher()
+	{
+		Windows.UI.Core.CoreDispatcher _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).get_Dispatcher(&_ret));
+		return _ret;
+	}
+	final bool IsInputEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).get_IsInputEnabled(&_ret));
+		return _ret;
+	}
+	final void IsInputEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).set_IsInputEnabled(value));
+	}
+	final void ReleasePointerCapture()
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).abi_ReleasePointerCapture());
+	}
+	final void SetPointerCapture()
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).abi_SetPointerCapture());
+	}
+	final bool HasCapture()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).get_HasCapture(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point PointerPosition()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).get_PointerPosition(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CoreCursor PointerCursor()
+	{
+		Windows.UI.Core.CoreCursor _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).get_PointerCursor(&_ret));
+		return _ret;
+	}
+	final void PointerCursor(Windows.UI.Core.CoreCursor value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).set_PointerCursor(value));
+	}
+	final Windows.UI.Core.CoreVirtualKeyStates GetCurrentKeyState(Windows.System.VirtualKey virtualKey)
+	{
+		Windows.UI.Core.CoreVirtualKeyStates _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).abi_GetCurrentKeyState(virtualKey, &_ret));
+		return _ret;
+	}
+	final bool HasFocus()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreComponentFocusable).get_HasFocus(&_ret));
+		return _ret;
+	}
+	final HSTRING GetCurrentKeyEventDeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource2).abi_GetCurrentKeyEventDeviceId(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreCursor : Windows.UI.Core.ICoreCursor
 {
+extern(Windows):
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreCursor).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CoreCursorType Type()
+	{
+		Windows.UI.Core.CoreCursorType _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreCursor).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreDispatcher : Windows.UI.Core.ICoreDispatcher, Windows.UI.Core.ICoreAcceleratorKeys, Windows.UI.Core.ICoreDispatcherWithTaskPriority, Windows.UI.Core.ICoreDispatcher2
 {
+extern(Windows):
+	final bool HasThreadAccess()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcher).get_HasThreadAccess(&_ret));
+		return _ret;
+	}
+	final void ProcessEvents(Windows.UI.Core.CoreProcessEventsOption options)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcher).abi_ProcessEvents(options));
+	}
+	final Windows.Foundation.IAsyncAction RunAsync(Windows.UI.Core.CoreDispatcherPriority priority, Windows.UI.Core.DispatchedHandler agileCallback)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcher).abi_RunAsync(priority, agileCallback, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RunIdleAsync(Windows.UI.Core.IdleDispatchedHandler agileCallback)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcher).abi_RunIdleAsync(agileCallback, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CoreDispatcherPriority CurrentPriority()
+	{
+		Windows.UI.Core.CoreDispatcherPriority _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcherWithTaskPriority).get_CurrentPriority(&_ret));
+		return _ret;
+	}
+	final void CurrentPriority(Windows.UI.Core.CoreDispatcherPriority value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcherWithTaskPriority).set_CurrentPriority(value));
+	}
+	final bool ShouldYield()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcherWithTaskPriority).abi_ShouldYield(&_ret));
+		return _ret;
+	}
+	final bool ShouldYieldToPriority(Windows.UI.Core.CoreDispatcherPriority priority)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcherWithTaskPriority).abi_ShouldYieldToPriority(priority, &_ret));
+		return _ret;
+	}
+	final void StopProcessEvents()
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcherWithTaskPriority).abi_StopProcessEvents());
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryRunAsync(Windows.UI.Core.CoreDispatcherPriority priority, Windows.UI.Core.DispatchedHandler agileCallback)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcher2).abi_TryRunAsync(priority, agileCallback, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryRunIdleAsync(Windows.UI.Core.IdleDispatchedHandler agileCallback)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcher2).abi_TryRunIdleAsync(agileCallback, &_ret));
+		return _ret;
+	}
 }
 
 interface CoreIndependentInputSource : Windows.UI.Core.ICoreInputSourceBase, Windows.UI.Core.ICorePointerInputSource
 {
+extern(Windows):
+	final Windows.UI.Core.CoreDispatcher Dispatcher()
+	{
+		Windows.UI.Core.CoreDispatcher _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).get_Dispatcher(&_ret));
+		return _ret;
+	}
+	final bool IsInputEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).get_IsInputEnabled(&_ret));
+		return _ret;
+	}
+	final void IsInputEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).set_IsInputEnabled(value));
+	}
+	final void ReleasePointerCapture()
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).abi_ReleasePointerCapture());
+	}
+	final void SetPointerCapture()
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).abi_SetPointerCapture());
+	}
+	final bool HasCapture()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).get_HasCapture(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point PointerPosition()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).get_PointerPosition(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CoreCursor PointerCursor()
+	{
+		Windows.UI.Core.CoreCursor _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).get_PointerCursor(&_ret));
+		return _ret;
+	}
+	final void PointerCursor(Windows.UI.Core.CoreCursor value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).set_PointerCursor(value));
+	}
 }
 
 interface CoreWindow : Windows.UI.Core.ICoreWindow, Windows.UI.Core.ICoreWindow2, Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.ICoreWindow3, Windows.UI.Core.ICoreWindow4
 {
+extern(Windows):
+	final IInspectable AutomationHostProvider()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_AutomationHostProvider(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect Bounds()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_Bounds(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet CustomProperties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_CustomProperties(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CoreDispatcher Dispatcher()
+	{
+		Windows.UI.Core.CoreDispatcher _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_Dispatcher(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CoreWindowFlowDirection FlowDirection()
+	{
+		Windows.UI.Core.CoreWindowFlowDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_FlowDirection(&_ret));
+		return _ret;
+	}
+	final void FlowDirection(Windows.UI.Core.CoreWindowFlowDirection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).set_FlowDirection(value));
+	}
+	final bool IsInputEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_IsInputEnabled(&_ret));
+		return _ret;
+	}
+	final void IsInputEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).set_IsInputEnabled(value));
+	}
+	final Windows.UI.Core.CoreCursor PointerCursor()
+	{
+		Windows.UI.Core.CoreCursor _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_PointerCursor(&_ret));
+		return _ret;
+	}
+	final void PointerCursor(Windows.UI.Core.CoreCursor value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).set_PointerCursor(value));
+	}
+	final Windows.Foundation.Point PointerPosition()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_PointerPosition(&_ret));
+		return _ret;
+	}
+	final bool Visible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_Visible(&_ret));
+		return _ret;
+	}
+	final void Activate()
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).abi_Activate());
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).abi_Close());
+	}
+	final Windows.UI.Core.CoreVirtualKeyStates GetAsyncKeyState(Windows.System.VirtualKey virtualKey)
+	{
+		Windows.UI.Core.CoreVirtualKeyStates _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).abi_GetAsyncKeyState(virtualKey, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CoreVirtualKeyStates GetKeyState(Windows.System.VirtualKey virtualKey)
+	{
+		Windows.UI.Core.CoreVirtualKeyStates _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).abi_GetKeyState(virtualKey, &_ret));
+		return _ret;
+	}
+	final void ReleasePointerCapture()
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).abi_ReleasePointerCapture());
+	}
+	final void SetPointerCapture()
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).abi_SetPointerCapture());
+	}
+	final void PointerPosition(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow2).set_PointerPosition(value));
+	}
+	final HSTRING GetCurrentKeyEventDeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow3).abi_GetCurrentKeyEventDeviceId(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreWindowDialog : Windows.UI.Core.ICoreWindowDialog
 {
+extern(Windows):
+	final Windows.Foundation.Size MaxSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_MaxSize(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size MinSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_MinSize(&_ret));
+		return _ret;
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).set_Title(value));
+	}
+	final INT32 IsInteractionDelayed()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_IsInteractionDelayed(&_ret));
+		return _ret;
+	}
+	final void IsInteractionDelayed(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).set_IsInteractionDelayed(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) Commands()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_Commands(&_ret));
+		return _ret;
+	}
+	final UINT32 DefaultCommandIndex()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_DefaultCommandIndex(&_ret));
+		return _ret;
+	}
+	final void DefaultCommandIndex(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).set_DefaultCommandIndex(value));
+	}
+	final UINT32 CancelCommandIndex()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_CancelCommandIndex(&_ret));
+		return _ret;
+	}
+	final void CancelCommandIndex(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).set_CancelCommandIndex(value));
+	}
+	final Windows.UI.Popups.UICommandInvokedHandler BackButtonCommand()
+	{
+		Windows.UI.Popups.UICommandInvokedHandler _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_BackButtonCommand(&_ret));
+		return _ret;
+	}
+	final void BackButtonCommand(Windows.UI.Popups.UICommandInvokedHandler value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).set_BackButtonCommand(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).abi_ShowAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreWindowEventArgs : Windows.UI.Core.ICoreWindowEventArgs
 {
+extern(Windows):
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+	}
 }
 
 interface CoreWindowFlyout : Windows.UI.Core.ICoreWindowFlyout
 {
+extern(Windows):
+	final Windows.Foundation.Size MaxSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_MaxSize(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size MinSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_MinSize(&_ret));
+		return _ret;
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).set_Title(value));
+	}
+	final INT32 IsInteractionDelayed()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_IsInteractionDelayed(&_ret));
+		return _ret;
+	}
+	final void IsInteractionDelayed(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).set_IsInteractionDelayed(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) Commands()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_Commands(&_ret));
+		return _ret;
+	}
+	final UINT32 DefaultCommandIndex()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_DefaultCommandIndex(&_ret));
+		return _ret;
+	}
+	final void DefaultCommandIndex(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).set_DefaultCommandIndex(value));
+	}
+	final Windows.UI.Popups.UICommandInvokedHandler BackButtonCommand()
+	{
+		Windows.UI.Popups.UICommandInvokedHandler _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_BackButtonCommand(&_ret));
+		return _ret;
+	}
+	final void BackButtonCommand(Windows.UI.Popups.UICommandInvokedHandler value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).set_BackButtonCommand(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).abi_ShowAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreWindowPopupShowingEventArgs : Windows.UI.Core.ICoreWindowPopupShowingEventArgs
 {
+extern(Windows):
+	final void SetDesiredSize(Windows.Foundation.Size value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowPopupShowingEventArgs).abi_SetDesiredSize(value));
+	}
 }
 
 interface CoreWindowResizeManager : Windows.UI.Core.ICoreWindowResizeManager, Windows.UI.Core.ICoreWindowResizeManagerLayoutCapability
 {
+extern(Windows):
+	final void NotifyLayoutCompleted()
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowResizeManager).abi_NotifyLayoutCompleted());
+	}
+	final void ShouldWaitForLayoutCompletion(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowResizeManagerLayoutCapability).set_ShouldWaitForLayoutCompletion(value));
+	}
+	final bool ShouldWaitForLayoutCompletion()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowResizeManagerLayoutCapability).get_ShouldWaitForLayoutCompletion(&_ret));
+		return _ret;
+	}
 }
 
 interface IdleDispatchedHandlerArgs : Windows.UI.Core.IIdleDispatchedHandlerArgs
 {
+extern(Windows):
+	final bool IsDispatcherIdle()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IIdleDispatchedHandlerArgs).get_IsDispatcherIdle(&_ret));
+		return _ret;
+	}
 }
 
 interface InputEnabledEventArgs : Windows.UI.Core.IInputEnabledEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
+extern(Windows):
+	final bool InputEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IInputEnabledEventArgs).get_InputEnabled(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+	}
 }
 
 interface KeyEventArgs : Windows.UI.Core.IKeyEventArgs, Windows.UI.Core.ICoreWindowEventArgs, Windows.UI.Core.IKeyEventArgs2
 {
+extern(Windows):
+	final Windows.System.VirtualKey VirtualKey()
+	{
+		Windows.System.VirtualKey _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IKeyEventArgs).get_VirtualKey(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CorePhysicalKeyStatus KeyStatus()
+	{
+		Windows.UI.Core.CorePhysicalKeyStatus _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IKeyEventArgs).get_KeyStatus(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IKeyEventArgs2).get_DeviceId(&_ret));
+		return _ret;
+	}
 }
 
 interface PointerEventArgs : Windows.UI.Core.IPointerEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.PointerPoint CurrentPoint()
+	{
+		Windows.UI.Input.PointerPoint _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IPointerEventArgs).get_CurrentPoint(&_ret));
+		return _ret;
+	}
+	final Windows.System.VirtualKeyModifiers KeyModifiers()
+	{
+		Windows.System.VirtualKeyModifiers _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IPointerEventArgs).get_KeyModifiers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) GetIntermediatePoints()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IPointerEventArgs).abi_GetIntermediatePoints(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+	}
 }
 
 interface SystemNavigationManager : Windows.UI.Core.ISystemNavigationManager, Windows.UI.Core.ISystemNavigationManager2
 {
+extern(Windows):
+	final Windows.UI.Core.AppViewBackButtonVisibility AppViewBackButtonVisibility()
+	{
+		Windows.UI.Core.AppViewBackButtonVisibility _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ISystemNavigationManager2).get_AppViewBackButtonVisibility(&_ret));
+		return _ret;
+	}
+	final void AppViewBackButtonVisibility(Windows.UI.Core.AppViewBackButtonVisibility value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ISystemNavigationManager2).set_AppViewBackButtonVisibility(value));
+	}
 }
 
 interface TouchHitTestingEventArgs : Windows.UI.Core.ITouchHitTestingEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
+extern(Windows):
+	final Windows.UI.Core.CoreProximityEvaluation ProximityEvaluation()
+	{
+		Windows.UI.Core.CoreProximityEvaluation _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ITouchHitTestingEventArgs).get_ProximityEvaluation(&_ret));
+		return _ret;
+	}
+	final void ProximityEvaluation(Windows.UI.Core.CoreProximityEvaluation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ITouchHitTestingEventArgs).set_ProximityEvaluation(value));
+	}
+	final Windows.Foundation.Point Point()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ITouchHitTestingEventArgs).get_Point(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect BoundingBox()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ITouchHitTestingEventArgs).get_BoundingBox(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CoreProximityEvaluation EvaluateProximityToRect(Windows.Foundation.Rect controlBoundingBox)
+	{
+		Windows.UI.Core.CoreProximityEvaluation _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ITouchHitTestingEventArgs).abi_EvaluateProximityToRect(controlBoundingBox, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CoreProximityEvaluation EvaluateProximityToPolygon(UINT32 __controlVerticesSize, Windows.Foundation.Point* controlVertices)
+	{
+		Windows.UI.Core.CoreProximityEvaluation _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ITouchHitTestingEventArgs).abi_EvaluateProximityToPolygon(__controlVerticesSize, controlVertices, &_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+	}
 }
 
 interface VisibilityChangedEventArgs : Windows.UI.Core.IVisibilityChangedEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
+extern(Windows):
+	final bool Visible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IVisibilityChangedEventArgs).get_Visible(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+	}
 }
 
 interface WindowActivatedEventArgs : Windows.UI.Core.IWindowActivatedEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
+extern(Windows):
+	final Windows.UI.Core.CoreWindowActivationState WindowActivationState()
+	{
+		Windows.UI.Core.CoreWindowActivationState _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IWindowActivatedEventArgs).get_WindowActivationState(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+	}
 }
 
 interface WindowSizeChangedEventArgs : Windows.UI.Core.IWindowSizeChangedEventArgs, Windows.UI.Core.ICoreWindowEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Size Size()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.Core.IWindowSizeChangedEventArgs).get_Size(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+	}
 }
 
 enum AppViewBackButtonVisibility

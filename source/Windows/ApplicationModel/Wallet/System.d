@@ -33,6 +33,37 @@ extern(Windows):
 
 interface WalletItemSystemStore : Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore, Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore2
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem)) GetItemsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore).abi_GetItemsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAsync(Windows.ApplicationModel.Wallet.WalletItem item)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore).abi_DeleteAsync(item, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem) ImportItemAsync(Windows.Storage.Streams.IRandomAccessStreamReference stream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore).abi_ImportItemAsync(stream, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Wallet.System.WalletItemAppAssociation GetAppStatusForItem(Windows.ApplicationModel.Wallet.WalletItem item)
+	{
+		Windows.ApplicationModel.Wallet.System.WalletItemAppAssociation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore).abi_GetAppStatusForItem(item, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) LaunchAppForItemAsync(Windows.ApplicationModel.Wallet.WalletItem item)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore).abi_LaunchAppForItemAsync(item, &_ret));
+		return _ret;
+	}
 }
 
 interface WalletManagerSystem

@@ -591,6 +591,27 @@ interface AnnotationPatternIdentifiers : Windows.UI.Xaml.Automation.IAnnotationP
 
 interface AutomationAnnotation : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Automation.IAutomationAnnotation
 {
+extern(Windows):
+	final Windows.UI.Xaml.Automation.AnnotationType Type()
+	{
+		Windows.UI.Xaml.Automation.AnnotationType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.IAutomationAnnotation).get_Type(&_ret));
+		return _ret;
+	}
+	final void Type(Windows.UI.Xaml.Automation.AnnotationType value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.IAutomationAnnotation).set_Type(value));
+	}
+	final Windows.UI.Xaml.UIElement Element()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.IAutomationAnnotation).get_Element(&_ret));
+		return _ret;
+	}
+	final void Element(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.IAutomationAnnotation).set_Element(value));
+	}
 }
 
 interface AutomationElementIdentifiers : Windows.UI.Xaml.Automation.IAutomationElementIdentifiers

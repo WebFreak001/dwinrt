@@ -21,6 +21,19 @@ extern(Windows):
 
 interface PerceptionTimestamp : Windows.Perception.IPerceptionTimestamp
 {
+extern(Windows):
+	final Windows.Foundation.DateTime TargetTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Perception.IPerceptionTimestamp).get_TargetTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan PredictionAmount()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Perception.IPerceptionTimestamp).get_PredictionAmount(&_ret));
+		return _ret;
+	}
 }
 
 interface PerceptionTimestampHelper

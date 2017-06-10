@@ -513,10 +513,172 @@ extern(Windows):
 
 interface Certificate : Windows.Security.Cryptography.Certificates.ICertificate, Windows.Security.Cryptography.Certificates.ICertificate2, Windows.Security.Cryptography.Certificates.ICertificate3
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain) BuildChainAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).abi_BuildChainAsync(certificates, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain) BuildChainWithParametersAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates, Windows.Security.Cryptography.Certificates.ChainBuildingParameters parameters)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).abi_BuildChainWithParametersAsync(certificates, parameters, &_ret));
+		return _ret;
+	}
+	final BYTE* SerialNumber(UINT32* out___valueSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).get_SerialNumber(out___valueSize, &_ret));
+		return _ret;
+	}
+	final BYTE* GetHashValue(UINT32* out___valueSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).abi_GetHashValue(out___valueSize, &_ret));
+		return _ret;
+	}
+	final BYTE* GetHashValueWithAlgorithm(HSTRING hashAlgorithmName, UINT32* out___valueSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).abi_GetHashValueWithAlgorithm(hashAlgorithmName, out___valueSize, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer GetCertificateBlob()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).abi_GetCertificateBlob(&_ret));
+		return _ret;
+	}
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).get_Subject(&_ret));
+		return _ret;
+	}
+	final HSTRING Issuer()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).get_Issuer(&_ret));
+		return _ret;
+	}
+	final bool HasPrivateKey()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).get_HasPrivateKey(&_ret));
+		return _ret;
+	}
+	final bool IsStronglyProtected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).get_IsStronglyProtected(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime ValidFrom()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).get_ValidFrom(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime ValidTo()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).get_ValidTo(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) EnhancedKeyUsages()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).get_EnhancedKeyUsages(&_ret));
+		return _ret;
+	}
+	final void FriendlyName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).set_FriendlyName(value));
+	}
+	final HSTRING FriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).get_FriendlyName(&_ret));
+		return _ret;
+	}
+	final bool IsSecurityDeviceBound()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate2).get_IsSecurityDeviceBound(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Certificates.CertificateKeyUsages KeyUsages()
+	{
+		Windows.Security.Cryptography.Certificates.CertificateKeyUsages _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate2).get_KeyUsages(&_ret));
+		return _ret;
+	}
+	final HSTRING KeyAlgorithmName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate2).get_KeyAlgorithmName(&_ret));
+		return _ret;
+	}
+	final HSTRING SignatureAlgorithmName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate2).get_SignatureAlgorithmName(&_ret));
+		return _ret;
+	}
+	final HSTRING SignatureHashAlgorithmName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate2).get_SignatureHashAlgorithmName(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Certificates.SubjectAlternativeNameInfo SubjectAlternativeName()
+	{
+		Windows.Security.Cryptography.Certificates.SubjectAlternativeNameInfo _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate2).get_SubjectAlternativeName(&_ret));
+		return _ret;
+	}
+	final bool IsPerUser()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate3).get_IsPerUser(&_ret));
+		return _ret;
+	}
+	final HSTRING StoreName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate3).get_StoreName(&_ret));
+		return _ret;
+	}
+	final HSTRING KeyStorageProviderName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate3).get_KeyStorageProviderName(&_ret));
+		return _ret;
+	}
 }
 
 interface CertificateChain : Windows.Security.Cryptography.Certificates.ICertificateChain
 {
+extern(Windows):
+	final Windows.Security.Cryptography.Certificates.ChainValidationResult Validate()
+	{
+		Windows.Security.Cryptography.Certificates.ChainValidationResult _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateChain).abi_Validate(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Certificates.ChainValidationResult ValidateWithParameters(Windows.Security.Cryptography.Certificates.ChainValidationParameters parameter)
+	{
+		Windows.Security.Cryptography.Certificates.ChainValidationResult _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateChain).abi_ValidateWithParameters(parameter, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) GetCertificates(bool includeRoot)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateChain).abi_GetCertificates(includeRoot, &_ret));
+		return _ret;
+	}
 }
 
 interface CertificateEnrollmentManager
@@ -525,22 +687,419 @@ interface CertificateEnrollmentManager
 
 interface CertificateExtension : Windows.Security.Cryptography.Certificates.ICertificateExtension
 {
+extern(Windows):
+	final HSTRING ObjectId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateExtension).get_ObjectId(&_ret));
+		return _ret;
+	}
+	final void ObjectId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateExtension).set_ObjectId(value));
+	}
+	final bool IsCritical()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateExtension).get_IsCritical(&_ret));
+		return _ret;
+	}
+	final void IsCritical(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateExtension).set_IsCritical(value));
+	}
+	final void EncodeValue(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateExtension).abi_EncodeValue(value));
+	}
+	final BYTE* Value(UINT32* out___valueSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateExtension).get_Value(out___valueSize, &_ret));
+		return _ret;
+	}
+	final void Value(UINT32 __valueSize, BYTE* value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateExtension).set_Value(__valueSize, value));
+	}
 }
 
 interface CertificateKeyUsages : Windows.Security.Cryptography.Certificates.ICertificateKeyUsages
 {
+extern(Windows):
+	final bool EncipherOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).get_EncipherOnly(&_ret));
+		return _ret;
+	}
+	final void EncipherOnly(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).set_EncipherOnly(value));
+	}
+	final bool CrlSign()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).get_CrlSign(&_ret));
+		return _ret;
+	}
+	final void CrlSign(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).set_CrlSign(value));
+	}
+	final bool KeyCertificateSign()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).get_KeyCertificateSign(&_ret));
+		return _ret;
+	}
+	final void KeyCertificateSign(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).set_KeyCertificateSign(value));
+	}
+	final bool KeyAgreement()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).get_KeyAgreement(&_ret));
+		return _ret;
+	}
+	final void KeyAgreement(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).set_KeyAgreement(value));
+	}
+	final bool DataEncipherment()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).get_DataEncipherment(&_ret));
+		return _ret;
+	}
+	final void DataEncipherment(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).set_DataEncipherment(value));
+	}
+	final bool KeyEncipherment()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).get_KeyEncipherment(&_ret));
+		return _ret;
+	}
+	final void KeyEncipherment(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).set_KeyEncipherment(value));
+	}
+	final bool NonRepudiation()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).get_NonRepudiation(&_ret));
+		return _ret;
+	}
+	final void NonRepudiation(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).set_NonRepudiation(value));
+	}
+	final bool DigitalSignature()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).get_DigitalSignature(&_ret));
+		return _ret;
+	}
+	final void DigitalSignature(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).set_DigitalSignature(value));
+	}
 }
 
 interface CertificateQuery : Windows.Security.Cryptography.Certificates.ICertificateQuery, Windows.Security.Cryptography.Certificates.ICertificateQuery2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(HSTRING) EnhancedKeyUsages()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery).get_EnhancedKeyUsages(&_ret));
+		return _ret;
+	}
+	final HSTRING IssuerName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery).get_IssuerName(&_ret));
+		return _ret;
+	}
+	final void IssuerName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery).set_IssuerName(value));
+	}
+	final HSTRING FriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery).get_FriendlyName(&_ret));
+		return _ret;
+	}
+	final void FriendlyName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery).set_FriendlyName(value));
+	}
+	final BYTE* Thumbprint(UINT32* out___valueSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery).get_Thumbprint(out___valueSize, &_ret));
+		return _ret;
+	}
+	final void Thumbprint(UINT32 __valueSize, BYTE* value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery).set_Thumbprint(__valueSize, value));
+	}
+	final bool HardwareOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery).get_HardwareOnly(&_ret));
+		return _ret;
+	}
+	final void HardwareOnly(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery).set_HardwareOnly(value));
+	}
+	final bool IncludeDuplicates()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery2).get_IncludeDuplicates(&_ret));
+		return _ret;
+	}
+	final void IncludeDuplicates(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery2).set_IncludeDuplicates(value));
+	}
+	final bool IncludeExpiredCertificates()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery2).get_IncludeExpiredCertificates(&_ret));
+		return _ret;
+	}
+	final void IncludeExpiredCertificates(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery2).set_IncludeExpiredCertificates(value));
+	}
+	final HSTRING StoreName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery2).get_StoreName(&_ret));
+		return _ret;
+	}
+	final void StoreName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery2).set_StoreName(value));
+	}
 }
 
 interface CertificateRequestProperties : Windows.Security.Cryptography.Certificates.ICertificateRequestProperties, Windows.Security.Cryptography.Certificates.ICertificateRequestProperties2, Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3, Windows.Security.Cryptography.Certificates.ICertificateRequestProperties4
 {
+extern(Windows):
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).get_Subject(&_ret));
+		return _ret;
+	}
+	final void Subject(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).set_Subject(value));
+	}
+	final HSTRING KeyAlgorithmName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).get_KeyAlgorithmName(&_ret));
+		return _ret;
+	}
+	final void KeyAlgorithmName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).set_KeyAlgorithmName(value));
+	}
+	final UINT32 KeySize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).get_KeySize(&_ret));
+		return _ret;
+	}
+	final void KeySize(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).set_KeySize(value));
+	}
+	final HSTRING FriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).get_FriendlyName(&_ret));
+		return _ret;
+	}
+	final void FriendlyName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).set_FriendlyName(value));
+	}
+	final HSTRING HashAlgorithmName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).get_HashAlgorithmName(&_ret));
+		return _ret;
+	}
+	final void HashAlgorithmName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).set_HashAlgorithmName(value));
+	}
+	final Windows.Security.Cryptography.Certificates.ExportOption Exportable()
+	{
+		Windows.Security.Cryptography.Certificates.ExportOption _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).get_Exportable(&_ret));
+		return _ret;
+	}
+	final void Exportable(Windows.Security.Cryptography.Certificates.ExportOption value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).set_Exportable(value));
+	}
+	final Windows.Security.Cryptography.Certificates.EnrollKeyUsages KeyUsages()
+	{
+		Windows.Security.Cryptography.Certificates.EnrollKeyUsages _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).get_KeyUsages(&_ret));
+		return _ret;
+	}
+	final void KeyUsages(Windows.Security.Cryptography.Certificates.EnrollKeyUsages value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).set_KeyUsages(value));
+	}
+	final Windows.Security.Cryptography.Certificates.KeyProtectionLevel KeyProtectionLevel()
+	{
+		Windows.Security.Cryptography.Certificates.KeyProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).get_KeyProtectionLevel(&_ret));
+		return _ret;
+	}
+	final void KeyProtectionLevel(Windows.Security.Cryptography.Certificates.KeyProtectionLevel value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).set_KeyProtectionLevel(value));
+	}
+	final HSTRING KeyStorageProviderName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).get_KeyStorageProviderName(&_ret));
+		return _ret;
+	}
+	final void KeyStorageProviderName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties).set_KeyStorageProviderName(value));
+	}
+	final HSTRING SmartcardReaderName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties2).get_SmartcardReaderName(&_ret));
+		return _ret;
+	}
+	final void SmartcardReaderName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties2).set_SmartcardReaderName(value));
+	}
+	final Windows.Security.Cryptography.Certificates.Certificate SigningCertificate()
+	{
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties2).get_SigningCertificate(&_ret));
+		return _ret;
+	}
+	final void SigningCertificate(Windows.Security.Cryptography.Certificates.Certificate value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties2).set_SigningCertificate(value));
+	}
+	final Windows.Security.Cryptography.Certificates.Certificate AttestationCredentialCertificate()
+	{
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties2).get_AttestationCredentialCertificate(&_ret));
+		return _ret;
+	}
+	final void AttestationCredentialCertificate(Windows.Security.Cryptography.Certificates.Certificate value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties2).set_AttestationCredentialCertificate(value));
+	}
+	final HSTRING CurveName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3).get_CurveName(&_ret));
+		return _ret;
+	}
+	final void CurveName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3).set_CurveName(value));
+	}
+	final BYTE* CurveParameters(UINT32* out___valueSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3).get_CurveParameters(out___valueSize, &_ret));
+		return _ret;
+	}
+	final void CurveParameters(UINT32 __valueSize, BYTE* value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3).set_CurveParameters(__valueSize, value));
+	}
+	final HSTRING ContainerNamePrefix()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3).get_ContainerNamePrefix(&_ret));
+		return _ret;
+	}
+	final void ContainerNamePrefix(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3).set_ContainerNamePrefix(value));
+	}
+	final HSTRING ContainerName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3).get_ContainerName(&_ret));
+		return _ret;
+	}
+	final void ContainerName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3).set_ContainerName(value));
+	}
+	final bool UseExistingKey()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3).get_UseExistingKey(&_ret));
+		return _ret;
+	}
+	final void UseExistingKey(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3).set_UseExistingKey(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) SuppressedDefaults()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties4).get_SuppressedDefaults(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Certificates.SubjectAlternativeNameInfo SubjectAlternativeName()
+	{
+		Windows.Security.Cryptography.Certificates.SubjectAlternativeNameInfo _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties4).get_SubjectAlternativeName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.CertificateExtension) Extensions()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.CertificateExtension) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties4).get_Extensions(&_ret));
+		return _ret;
+	}
 }
 
 interface CertificateStore : Windows.Security.Cryptography.Certificates.ICertificateStore, Windows.Security.Cryptography.Certificates.ICertificateStore2
 {
+extern(Windows):
+	final void Add(Windows.Security.Cryptography.Certificates.Certificate certificate)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateStore).abi_Add(certificate));
+	}
+	final void Delete(Windows.Security.Cryptography.Certificates.Certificate certificate)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateStore).abi_Delete(certificate));
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateStore2).get_Name(&_ret));
+		return _ret;
+	}
 }
 
 interface CertificateStores
@@ -549,26 +1108,200 @@ interface CertificateStores
 
 interface ChainBuildingParameters : Windows.Security.Cryptography.Certificates.IChainBuildingParameters
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(HSTRING) EnhancedKeyUsages()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainBuildingParameters).get_EnhancedKeyUsages(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime ValidationTimestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainBuildingParameters).get_ValidationTimestamp(&_ret));
+		return _ret;
+	}
+	final void ValidationTimestamp(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainBuildingParameters).set_ValidationTimestamp(value));
+	}
+	final bool RevocationCheckEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainBuildingParameters).get_RevocationCheckEnabled(&_ret));
+		return _ret;
+	}
+	final void RevocationCheckEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainBuildingParameters).set_RevocationCheckEnabled(value));
+	}
+	final bool NetworkRetrievalEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainBuildingParameters).get_NetworkRetrievalEnabled(&_ret));
+		return _ret;
+	}
+	final void NetworkRetrievalEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainBuildingParameters).set_NetworkRetrievalEnabled(value));
+	}
+	final bool AuthorityInformationAccessEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainBuildingParameters).get_AuthorityInformationAccessEnabled(&_ret));
+		return _ret;
+	}
+	final void AuthorityInformationAccessEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainBuildingParameters).set_AuthorityInformationAccessEnabled(value));
+	}
+	final bool CurrentTimeValidationEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainBuildingParameters).get_CurrentTimeValidationEnabled(&_ret));
+		return _ret;
+	}
+	final void CurrentTimeValidationEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainBuildingParameters).set_CurrentTimeValidationEnabled(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.Certificate) ExclusiveTrustRoots()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainBuildingParameters).get_ExclusiveTrustRoots(&_ret));
+		return _ret;
+	}
 }
 
 interface ChainValidationParameters : Windows.Security.Cryptography.Certificates.IChainValidationParameters
 {
+extern(Windows):
+	final Windows.Security.Cryptography.Certificates.CertificateChainPolicy CertificateChainPolicy()
+	{
+		Windows.Security.Cryptography.Certificates.CertificateChainPolicy _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainValidationParameters).get_CertificateChainPolicy(&_ret));
+		return _ret;
+	}
+	final void CertificateChainPolicy(Windows.Security.Cryptography.Certificates.CertificateChainPolicy value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainValidationParameters).set_CertificateChainPolicy(value));
+	}
+	final Windows.Networking.HostName ServerDnsName()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainValidationParameters).get_ServerDnsName(&_ret));
+		return _ret;
+	}
+	final void ServerDnsName(Windows.Networking.HostName value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainValidationParameters).set_ServerDnsName(value));
+	}
 }
 
 interface CmsAttachedSignature : Windows.Security.Cryptography.Certificates.ICmsAttachedSignature
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) Certificates()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsAttachedSignature).get_Certificates(&_ret));
+		return _ret;
+	}
+	final BYTE* Content(UINT32* out___valueSize)
+	{
+		BYTE* _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsAttachedSignature).get_Content(out___valueSize, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.CmsSignerInfo) Signers()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.CmsSignerInfo) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsAttachedSignature).get_Signers(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Certificates.SignatureValidationResult VerifySignature()
+	{
+		Windows.Security.Cryptography.Certificates.SignatureValidationResult _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsAttachedSignature).abi_VerifySignature(&_ret));
+		return _ret;
+	}
 }
 
 interface CmsDetachedSignature : Windows.Security.Cryptography.Certificates.ICmsDetachedSignature
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) Certificates()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsDetachedSignature).get_Certificates(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.CmsSignerInfo) Signers()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.CmsSignerInfo) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsDetachedSignature).get_Signers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.SignatureValidationResult) VerifySignatureAsync(Windows.Storage.Streams.IInputStream data)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.SignatureValidationResult) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsDetachedSignature).abi_VerifySignatureAsync(data, &_ret));
+		return _ret;
+	}
 }
 
 interface CmsSignerInfo : Windows.Security.Cryptography.Certificates.ICmsSignerInfo
 {
+extern(Windows):
+	final Windows.Security.Cryptography.Certificates.Certificate Certificate()
+	{
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsSignerInfo).get_Certificate(&_ret));
+		return _ret;
+	}
+	final void Certificate(Windows.Security.Cryptography.Certificates.Certificate value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsSignerInfo).set_Certificate(value));
+	}
+	final HSTRING HashAlgorithmName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsSignerInfo).get_HashAlgorithmName(&_ret));
+		return _ret;
+	}
+	final void HashAlgorithmName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsSignerInfo).set_HashAlgorithmName(value));
+	}
+	final Windows.Security.Cryptography.Certificates.CmsTimestampInfo TimestampInfo()
+	{
+		Windows.Security.Cryptography.Certificates.CmsTimestampInfo _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsSignerInfo).get_TimestampInfo(&_ret));
+		return _ret;
+	}
 }
 
 interface CmsTimestampInfo : Windows.Security.Cryptography.Certificates.ICmsTimestampInfo
 {
+extern(Windows):
+	final Windows.Security.Cryptography.Certificates.Certificate SigningCertificate()
+	{
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsTimestampInfo).get_SigningCertificate(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) Certificates()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsTimestampInfo).get_Certificates(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsTimestampInfo).get_Timestamp(&_ret));
+		return _ret;
+	}
 }
 
 interface KeyAlgorithmNames
@@ -585,6 +1318,77 @@ interface KeyStorageProviderNames
 
 interface PfxImportParameters : Windows.Security.Cryptography.Certificates.IPfxImportParameters
 {
+extern(Windows):
+	final Windows.Security.Cryptography.Certificates.ExportOption Exportable()
+	{
+		Windows.Security.Cryptography.Certificates.ExportOption _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).get_Exportable(&_ret));
+		return _ret;
+	}
+	final void Exportable(Windows.Security.Cryptography.Certificates.ExportOption value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).set_Exportable(value));
+	}
+	final Windows.Security.Cryptography.Certificates.KeyProtectionLevel KeyProtectionLevel()
+	{
+		Windows.Security.Cryptography.Certificates.KeyProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).get_KeyProtectionLevel(&_ret));
+		return _ret;
+	}
+	final void KeyProtectionLevel(Windows.Security.Cryptography.Certificates.KeyProtectionLevel value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).set_KeyProtectionLevel(value));
+	}
+	final Windows.Security.Cryptography.Certificates.InstallOptions InstallOptions()
+	{
+		Windows.Security.Cryptography.Certificates.InstallOptions _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).get_InstallOptions(&_ret));
+		return _ret;
+	}
+	final void InstallOptions(Windows.Security.Cryptography.Certificates.InstallOptions value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).set_InstallOptions(value));
+	}
+	final HSTRING FriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).get_FriendlyName(&_ret));
+		return _ret;
+	}
+	final void FriendlyName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).set_FriendlyName(value));
+	}
+	final HSTRING KeyStorageProviderName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).get_KeyStorageProviderName(&_ret));
+		return _ret;
+	}
+	final void KeyStorageProviderName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).set_KeyStorageProviderName(value));
+	}
+	final HSTRING ContainerNamePrefix()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).get_ContainerNamePrefix(&_ret));
+		return _ret;
+	}
+	final void ContainerNamePrefix(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).set_ContainerNamePrefix(value));
+	}
+	final HSTRING ReaderName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).get_ReaderName(&_ret));
+		return _ret;
+	}
+	final void ReaderName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).set_ReaderName(value));
+	}
 }
 
 interface StandardCertificateStoreNames
@@ -593,14 +1397,143 @@ interface StandardCertificateStoreNames
 
 interface SubjectAlternativeNameInfo : Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo, Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) EmailName()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo).get_EmailName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) IPAddress()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo).get_IPAddress(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Url()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo).get_Url(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) DnsName()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo).get_DnsName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) DistinguishedName()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo).get_DistinguishedName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) PrincipalName()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo).get_PrincipalName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) EmailNames()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo2).get_EmailNames(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) IPAddresses()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo2).get_IPAddresses(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Urls()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo2).get_Urls(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) DnsNames()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo2).get_DnsNames(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) DistinguishedNames()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo2).get_DistinguishedNames(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) PrincipalNames()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo2).get_PrincipalNames(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Certificates.CertificateExtension Extension()
+	{
+		Windows.Security.Cryptography.Certificates.CertificateExtension _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo2).get_Extension(&_ret));
+		return _ret;
+	}
 }
 
 interface UserCertificateEnrollmentManager : Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager, Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager2
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(HSTRING) CreateRequestAsync(Windows.Security.Cryptography.Certificates.CertificateRequestProperties request)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager).abi_CreateRequestAsync(request, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction InstallCertificateAsync(HSTRING certificate, Windows.Security.Cryptography.Certificates.InstallOptions installOption)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager).abi_InstallCertificateAsync(certificate, installOption, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ImportPfxDataAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager).abi_ImportPfxDataAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ImportPfxDataToKspAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName, HSTRING keyStorageProvider)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager).abi_ImportPfxDataToKspAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName, keyStorageProvider, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ImportPfxDataToKspWithParametersAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.PfxImportParameters pfxImportParameters)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager2).abi_ImportPfxDataToKspWithParametersAsync(pfxData, password, pfxImportParameters, &_ret));
+		return _ret;
+	}
 }
 
 interface UserCertificateStore : Windows.Security.Cryptography.Certificates.IUserCertificateStore
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(bool) RequestAddAsync(Windows.Security.Cryptography.Certificates.Certificate certificate)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IUserCertificateStore).abi_RequestAddAsync(certificate, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsync(Windows.Security.Cryptography.Certificates.Certificate certificate)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IUserCertificateStore).abi_RequestDeleteAsync(certificate, &_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IUserCertificateStore).get_Name(&_ret));
+		return _ret;
+	}
 }
 
 enum CertificateChainPolicy

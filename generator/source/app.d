@@ -11,7 +11,269 @@ import std.string;
 import pegged.grammar;
 import idl.grammar;
 
-Module[] modules;
+//dfmt off
+Module[] modules = [
+	Module(["Windows", "Foundation"], [], [
+		Interface("EventHandler", ["IUnknown"], [], [], ["TArgs"], "", "", false, false, [
+			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "IInspectable", "sender"),
+				InterfaceArgument(ArgumentDirection.in_, "TArgs", "args")
+			], true),
+		]),
+		Interface("TypedEventHandler", ["IUnknown"], [], [], ["TSender", "TArgs"], "", "", false, false, [
+			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "TSender", "sender"),
+				InterfaceArgument(ArgumentDirection.in_, "TArgs", "args")
+			], true),
+		]),
+		Interface("IAsyncActionWithProgress", ["IInspectable"], [], [], ["TProgress"], "", "", false, false, [
+			InterfaceMethod("Progress", "HRESULT", "", InterfaceType.propset, [
+				InterfaceArgument(ArgumentDirection.in_, "AsyncActionProgressHandler!(TProgress)", "handler")
+			], true),
+			InterfaceMethod("Progress", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "AsyncActionProgressHandler!(TProgress)*", "handler")
+			], true),
+		]),
+		Interface("AsyncActionProgressHandler", ["IUnknown"], [], [], ["TProgress"], "", "", false, false, [
+			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "IAsyncActionWithProgress!(TProgress)", "asyncInfo"),
+				InterfaceArgument(ArgumentDirection.in_, "TProgress", "progressInfo"),
+			], true),
+		]),
+		Interface("AsyncActionWithProgressCompletedHandler", ["IUnknown"], [], [], ["TProgress"], "", "", false, false, [
+			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "IAsyncActionWithProgress!(TProgress)", "asyncInfo"),
+				InterfaceArgument(ArgumentDirection.in_, "AsyncStatus", "status"),
+			], true),
+		]),
+		Interface("IAsyncOperation", ["IInspectable"], [], [], ["TResult"], "", "", false, false, [
+			InterfaceMethod("Completed", "HRESULT", "", InterfaceType.propset, [
+				InterfaceArgument(ArgumentDirection.in_, "AsyncOperationCompletedHandler!(TResult)", "handler"),
+			], true),
+			InterfaceMethod("Completed", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "AsyncOperationCompletedHandler!(TResult)*", "handler"),
+			], true),
+			InterfaceMethod("Results", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "TResult*", "results"),
+			], true),
+		]),
+		Interface("AsyncOperationProgressHandler", ["IUnknown"], [], [], ["TResult", "TProgress"], "", "", false, false, [
+			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "IAsyncOperationWithProgress!(TResult, TProgress)", "asyncInfo"),
+				InterfaceArgument(ArgumentDirection.in_, "TProgress", "progressInfo"),
+			], true),
+		]),
+		Interface("AsyncOperationCompletedHandler", ["IUnknown"], [], [], ["TResult"], "", "", false, false, [
+			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "IAsyncOperation!(TResult)", "asyncInfo"),
+				InterfaceArgument(ArgumentDirection.in_, "AsyncStatus", "status"),
+			], true),
+		]),
+		Interface("IAsyncOperationWithProgress", ["IInspectable"], [], [], ["TResult", "TProgress"], "", "", false, false, [
+			InterfaceMethod("Progress", "HRESULT", "", InterfaceType.propset, [
+				InterfaceArgument(ArgumentDirection.in_, "AsyncOperationProgressHandler!(TResult, TProgress)", "handler"),
+			], true),
+			InterfaceMethod("Progress", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "AsyncOperationProgressHandler!(TResult, TProgress)*", "handler"),
+			], true),
+			InterfaceMethod("Completed", "HRESULT", "", InterfaceType.propset, [
+				InterfaceArgument(ArgumentDirection.in_, "AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)", "handler"),
+			], true),
+			InterfaceMethod("Completed", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)*", "handler"),
+			], true),
+			InterfaceMethod("Results", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "TResult*", "results"),
+			], true),
+		]),
+		Interface("AsyncOperationWithProgressCompletedHandler", ["IUnknown"], [], [], ["TResult", "TProgress"], "", "", false, false, [
+			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "IAsyncOperationWithProgress!(TResult, TProgress)", "asyncInfo"),
+				InterfaceArgument(ArgumentDirection.in_, "AsyncStatus", "status"),
+			], true),
+		]),
+		Interface("IReference", ["IUnknown"], [], [], ["Type"], "", "", false, false, [
+			InterfaceMethod("Value", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "Type*", "value"),
+			], true),
+		]),
+	]),
+	Module(["Windows", "Foundation", "Collections"], [], [
+		Interface("MapChangedEventHandler", ["IUnknown"], [], [], ["TKey", "TValue"], "", "", false, false, [
+			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "IObservableMap!(TKey, TValue)", "sender"),
+				InterfaceArgument(ArgumentDirection.in_, "IMapChangedEventArgs!(TKey)", "args")
+			], true),
+		]),
+		Interface("VectorChangedEventHandler", ["IUnknown"], [], [], ["Type"], "", "", false, false, [
+			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "IObservableVector!(Type)", "sender"),
+				InterfaceArgument(ArgumentDirection.in_, "IVectorChangedEventArgs", "args")
+			], true),
+		]),
+		Interface("IIterator", ["IInspectable"], [], [], ["Type"], "", "", false, false, [
+			InterfaceMethod("Current", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "Type*", "current")
+			], true),
+			InterfaceMethod("HasCurrent", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "bool*", "hasCurrent")
+			], true),
+			InterfaceMethod("MoveNext", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.out_, "bool*", "hasCurrent")
+			], true),
+			InterfaceMethod("GetMany", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "uint", "capacity"),
+				InterfaceArgument(ArgumentDirection.in_, "Type*", "value"),
+				InterfaceArgument(ArgumentDirection.in_, "uint*", "actual")
+			], true),
+		]),
+		Interface("IIterable", ["IInspectable"], [], [], ["Type"], "", "", false, false, [
+			InterfaceMethod("First", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.out_, "IIterator!(Type)*", "first")
+			], true),
+		]),
+		Interface("IKeyValuePair", ["IInspectable"], [], [], ["TKey", "TValue"], "", "", false, false, [
+			InterfaceMethod("Key", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "TKey*", "key")
+			], true),
+			InterfaceMethod("Value", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "TValue*", "value")
+			], true),
+		]),
+		Interface("IVectorView", ["IInspectable"], [], [], ["Type"], "", "", false, false, [
+			InterfaceMethod("GetAt", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "uint", "index"),
+				InterfaceArgument(ArgumentDirection.out_, "Type*", "item")
+			], true),
+			InterfaceMethod("Size", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "uint*", "size")
+			], true),
+			InterfaceMethod("IndexOf", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.in_, "Type", "value"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "uint*", "index"),
+				InterfaceArgument(ArgumentDirection.out_, "bool*", "found")
+			], true),
+			InterfaceMethod("GetMany", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "uint", "startIndex"),
+				InterfaceArgument(ArgumentDirection.in_, "uint", "capacity"),
+				InterfaceArgument(ArgumentDirection.out_, "Type*", "value"),
+				InterfaceArgument(ArgumentDirection.out_, "uint*", "actual")
+			], true),
+		]),
+		Interface("IVector", ["IInspectable"], [], [], ["Type"], "", "", false, false, [
+			InterfaceMethod("GetAt", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.in_, "uint", "index"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "Type*", "item")
+			], true),
+			InterfaceMethod("Size", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "uint*", "size"),
+			], true),
+			InterfaceMethod("GetView", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.out_, "IVectorView!(Type)*", "view"),
+			], true),
+			InterfaceMethod("IndexOf", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.in_, "Type", "value"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "uint*", "index"),
+				InterfaceArgument(ArgumentDirection.out_, "bool*", "found")
+			], true),
+			InterfaceMethod("SetAt", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "uint", "index"),
+				InterfaceArgument(ArgumentDirection.in_, "Type", "item"),
+			], true),
+			InterfaceMethod("InsertAt", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "uint", "index"),
+				InterfaceArgument(ArgumentDirection.in_, "Type", "item"),
+			], true),
+			InterfaceMethod("RemoveAt", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "uint", "index")
+			], true),
+			InterfaceMethod("Append", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "Type", "item"),
+			], true),
+			InterfaceMethod("RemoveAtEnd", "HRESULT", "", InterfaceType.call, [], true),
+			InterfaceMethod("Clear", "HRESULT", "", InterfaceType.call, [], true),
+			InterfaceMethod("GetMany", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "uint", "startIndex"),
+				InterfaceArgument(ArgumentDirection.in_, "uint", "capacity"),
+				InterfaceArgument(ArgumentDirection.out_, "Type*", "value"),
+				InterfaceArgument(ArgumentDirection.out_, "uint*", "actual")
+			], true),
+			InterfaceMethod("ReplaceAll", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "uint", "count"),
+				InterfaceArgument(ArgumentDirection.out_, "Type*", "value"),
+			], true),
+		]),
+		Interface("IMapView", ["IInspectable"], [], [], ["TKey", "TValue"], "", "", false, false, [
+			InterfaceMethod("Lookup", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "TKey", "key"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "TValue*", "value"),
+			], true),
+			InterfaceMethod("Size", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "uint*", "size"),
+			], true),
+			InterfaceMethod("HasKey", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "TKey", "key"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "bool*", "found"),
+			], true),
+			InterfaceMethod("Split", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.out_, "IMapView!(TKey, TValue)", "firstPartition"),
+				InterfaceArgument(ArgumentDirection.out_, "IMapView!(TKey, TValue)", "secondPartition"),
+			], true),
+		]),
+		Interface("IMap", ["IInspectable"], [], [], ["TKey", "TValue"], "", "", false, false, [
+			InterfaceMethod("Lookup", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "TKey", "key"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "TValue*", "value"),
+			], true),
+			InterfaceMethod("Size", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "uint*", "size"),
+			], true),
+			InterfaceMethod("HasKey", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "TKey", "key"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "bool*", "found"),
+			], true),
+			InterfaceMethod("GetView", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "IMapView!(TKey, TValue)*", "view"),
+			], true),
+			InterfaceMethod("Insert", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "TKey", "key"),
+				InterfaceArgument(ArgumentDirection.in_, "TValue", "value"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "bool*", "replaced"),
+			], true),
+			InterfaceMethod("Remove", "HRESULT", "", InterfaceType.call, [
+				InterfaceArgument(ArgumentDirection.in_, "TKey", "key")
+			], true),
+			InterfaceMethod("Clear", "HRESULT", "", InterfaceType.call, [], true),
+		]),
+		Interface("IMapChangedEventArgs", ["IInspectable"], [], [], ["TKey"], "", "", false, false, [
+			InterfaceMethod("CollectionChange", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_, "Windows.Foundation.Collections.CollectionChange*", "value")
+			], true),
+			InterfaceMethod("Key", "HRESULT", "", InterfaceType.propget, [
+				InterfaceArgument(ArgumentDirection.out_, "TKey*", "value")
+			], true),
+		]),
+		Interface("IObservableMap", ["IInspectable"], [], [], ["TKey", "TValue"], "", "", false, false, [
+			InterfaceMethod("MapChanged", "HRESULT", "", InterfaceType.eventadd, [
+				InterfaceArgument(ArgumentDirection.in_, "MapChangedEventHandler!(TKey, TValue)", "handler"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "EventRegistrationToken*", "token")
+			], true),
+			InterfaceMethod("MapChanged", "HRESULT", "", InterfaceType.eventremove, [
+				InterfaceArgument(ArgumentDirection.in_, "EventRegistrationToken", "token")
+			], true),
+		]),
+		Interface("IObservableVector", ["IInspectable"], [], [], ["Type"], "", "", false, false, [
+			InterfaceMethod("VectorChanged", "HRESULT", "", InterfaceType.eventadd, [
+				InterfaceArgument(ArgumentDirection.in_, "VectorChangedEventHandler!(Type)", "handler"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "EventRegistrationToken*", "token")
+			], true),
+			InterfaceMethod("VectorChanged", "HRESULT", "", InterfaceType.eventremove, [
+				InterfaceArgument(ArgumentDirection.in_, "EventRegistrationToken", "token")
+			], true),
+		]),
+	])
+];
+//dfmt on
 string[] ignored = [
 	"activation.idl", "AsyncInfo.idl", "EventToken.idl", "hstring.idl",
 	"inspectable.idl", "DocumentSource.idl", "rdpappcontainerclient.idl"
@@ -38,6 +300,8 @@ void main(string[] args)
 	dirEntries("base", SpanMode.shallow).array.sort!"a < b".each!(processIDL);
 	foreach (ref mod; modules)
 		mod.fixTypes;
+	foreach (ref mod; modules)
+		mod.implement;
 	foreach (mod; modules)
 	{
 		auto fileName = buildPath("source", mod.fileName);
@@ -46,7 +310,6 @@ void main(string[] args)
 		std.file.write(fileName, mod.toString);
 	}
 	append(buildPath("source", "Windows", "Foundation", "package.d"), foundationSuffix);
-	append(buildPath("source", "Windows", "Foundation", "Collections.d"), collectionsSuffix);
 	modules.each!(mod => writeln("public static import " ~ mod.name.join(".") ~ ";"));
 }
 
@@ -55,7 +318,7 @@ void processIDL(string file)
 	if (ignored.canFind(file.baseName))
 		return;
 
-	//if (file.baseName != "windows.ui.composition.idl")
+	//if (file.baseName != "windows.ui.xaml.controls.idl")
 	//	return;
 
 	writeln("Processing ", file);
@@ -149,8 +412,7 @@ void processIDL(string file)
 					enforce(content.name == "IDL.definition_content");
 					if (content.children.length == 1 && content.children[0].name == "IDL.uuid")
 					{
-						uuid = content.children[0].children.map!(a => a.matches[0])
-							.join("-").toLower;
+						uuid = content.children[0].children.map!(a => a.matches[0]).join("-").toLower;
 						return;
 					}
 				}
@@ -256,7 +518,8 @@ void processIDL(string file)
 				auto dcl = node.children[0];
 				enforce(dcl.children.length == 1 || dcl.children.length == 2, dcl.toString);
 				auto header = dcl.children[0];
-				bool runtimeClass = header.matches[0] == "runtimeclass";
+				Interface obj;
+				obj.isRuntimeClass = header.matches[0] == "runtimeclass";
 				enforce(header.name == "IDL.interface_header", header.toString);
 				ParseTree body_;
 				if (dcl.children.length == 2)
@@ -265,7 +528,6 @@ void processIDL(string file)
 					enforce(body_.name == "IDL.interface_body", body_.toString);
 				}
 				string name = header.matches[1];
-				Interface obj;
 				obj.name = name;
 				if (blockedInterfaces.canFind(obj.name))
 					break;
@@ -275,8 +537,7 @@ void processIDL(string file)
 					foreach_reverse (content; attrib.children)
 					{
 						enforce(content.name == "IDL.definition_content");
-						if (content.children.length == 1
-								&& content.children[0].name == "IDL.exclusiveto")
+						if (content.children.length == 1 && content.children[0].name == "IDL.exclusiveto")
 						{
 							enforce(content.children[0].children[0].name == "IDL.scoped_name");
 							obj.exclusiveto = content.children[0].children[0].matches.join("");
@@ -330,7 +591,7 @@ void processIDL(string file)
 							continue;
 						if (opdcl.name == "IDL.declare_interface")
 						{
-							if (runtimeClass)
+							if (obj.isRuntimeClass)
 							{
 								enforce(opdcl.children.length == 1);
 								enforce(opdcl.children[0].name == "IDL.type");
@@ -502,8 +763,7 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 				}
 				else
 				{
-					if (spec.children.length == 1
-							&& spec.children[0].name == "IDL.op_overload_attribute")
+					if (spec.children.length == 1 && spec.children[0].name == "IDL.op_overload_attribute")
 					{
 						enforce(spec.children[0].children.length == 1);
 						method.name = spec.children[0].children[0].parseString;
@@ -542,8 +802,7 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 									argument.direction |= ArgumentDirection.out_;
 									break;
 								case "inout":
-									argument.direction |= ArgumentDirection.in_
-										| ArgumentDirection.out_;
+									argument.direction |= ArgumentDirection.in_ | ArgumentDirection.out_;
 									break;
 								case "retval":
 									argument.direction |= ArgumentDirection.retval;
@@ -552,8 +811,7 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 								case "unique":
 									break;
 								default:
-									throw new Exception(
-											"Invalid parameter attribute: " ~ attr.matches[0]);
+									throw new Exception("Invalid parameter attribute: " ~ attr.matches[0]);
 								}
 							}
 						}
@@ -695,6 +953,12 @@ struct Module
 			obj.fixTypes();
 	}
 
+	void implement()
+	{
+		foreach (ref obj; interfaces)
+			obj.implement();
+	}
+
 	Interface[] interfaces;
 	Enum[] enums;
 	Struct[] structs;
@@ -737,6 +1001,35 @@ ref Module makeMod(string[] name, string[] deps = [])
 	mod.dependencies = deps.sort!"a < b".array;
 	modules ~= mod;
 	return modules[$ - 1];
+}
+
+Interface findInterface(string fullname)
+{
+	if (fullname == "IInspectable" || fullname == "IUnknown")
+		return Interface.init;
+	enforce(fullname.startsWith("Windows."), fullname);
+	string templateImpl;
+	auto excl = fullname.indexOf("!");
+	if (excl != -1)
+	{
+		templateImpl = fullname[excl + 1 .. $];
+		fullname = fullname[0 .. excl];
+	}
+	string[] parts = fullname.split(".");
+	string name = parts[$ - 1];
+	foreach (ref obj; makeMod(parts[0 .. $ - 1]).interfaces)
+	{
+		if (obj.name == name)
+		{
+			if (templateImpl.length)
+				return obj.instance(templateImpl.splitTypes);
+			else
+				return obj;
+		}
+	}
+	throw new Exception(
+			"Interface not found: " ~ fullname ~ ", searched for " ~ name ~ " in " ~ parts[0 .. $ - 1].join(
+			"."));
 }
 
 struct Enum
@@ -818,9 +1111,32 @@ struct Interface
 	string[] inherits;
 	string[] requires;
 	string[] implements;
+	string[] templateArgs;
 	string uuid;
 	string exclusiveto;
 	bool isDelegate;
+	bool isRuntimeClass;
+
+	Interface instance(string[] types) const
+	{
+		enforce(templateArgs.length == types.length);
+		Interface instanced;
+		instanced.name = name;
+		instanced.inherits = inherits.dup;
+		instanced.requires = requires.dup;
+		instanced.implements = implements.dup;
+		instanced.templateArgs = [];
+		instanced.uuid = uuid;
+		instanced.exclusiveto = exclusiveto;
+		instanced.isDelegate = isDelegate;
+		instanced.isRuntimeClass = isRuntimeClass;
+		foreach (i, ref method; instanced.methods)
+		{
+			foreach (ref arg; method.arguments)
+				arg.type = arg.type.replace(templateArgs[i], types[i]);
+		}
+		return instanced;
+	}
 
 	void fixTypes()
 	{
@@ -836,6 +1152,73 @@ struct Interface
 
 	InterfaceMethod[] methods;
 
+	void implement()
+	{
+		if (!isRuntimeClass)
+			return;
+		enforce(methods.length == 0, "Is runtime class but got " ~ methods.to!string ~ " as methods.");
+		foreach (base; implements)
+			implement(base, findInterface(base));
+	}
+
+	void implement(string baseName, Interface base)
+	{
+		if (base == Interface.init)
+			return;
+		foreach (mem; base.inherits)
+			implement(mem, findInterface(mem));
+		foreach ( /* noref */ method; base.methods)
+		{
+			if (method.type == InterfaceType.eventadd)
+			{
+				writeln("TODO: Implement " ~ method.fullName);
+			}
+			else if (method.type == InterfaceType.eventremove)
+			{
+				writeln("TODO: Implement " ~ method.fullName);
+			}
+			else
+			{
+				string name = method.fullName;
+				int returnIndex = -1;
+				foreach (i, arg; method.arguments)
+				{
+					if (arg.direction & ArgumentDirection.retval)
+					{
+						method.returnType = arg.type;
+						enforce(method.returnType[$ - 1] == '*');
+						method.returnType.length--;
+						returnIndex = cast(int) i;
+						break;
+					}
+				}
+				if (returnIndex != -1)
+				{
+					string argsPre = method.arguments[0 .. returnIndex].map!"a.fullName".join(", ");
+					if (argsPre.length)
+						argsPre ~= ", ";
+					string argsPost = method.arguments[returnIndex + 1 .. $].map!"a.fullName".join(", ");
+					method.arguments = method.arguments[0 .. returnIndex]
+						~ method.arguments[returnIndex + 1 .. $];
+					string pre = method.returnType ~ " _ret;\n";
+					string args = argsPre ~ "&_ret";
+					if (argsPost.length)
+						args ~= ", " ~ argsPost;
+					string post = "\nreturn _ret;";
+					method.implementation = pre ~ "Debug.OK(this.as!(" ~ baseName ~ ")."
+						~ name ~ "(" ~ args ~ "));" ~ post;
+				}
+				else
+				{
+					string args = method.arguments.map!"a.fullName".join(", ");
+					method.returnType = "void";
+					method.implementation = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ name ~ "(" ~ args ~ "));";
+				}
+				methods ~= method;
+			}
+		}
+	}
+
 	string toString() const
 	{
 		string ret;
@@ -844,6 +1227,8 @@ struct Interface
 		if (exclusiveto.length)
 			ret ~= "@WinrtFactory(\"" ~ exclusiveto ~ "\")\n";
 		ret ~= "interface " ~ name;
+		if (templateArgs.length)
+			ret ~= "(" ~ templateArgs.join(", ") ~ ")";
 		if (inherits.length + implements.length)
 			ret ~= " : " ~ (inherits ~ implements).join(", ");
 		ret ~= "\n{\n";
@@ -874,22 +1259,24 @@ struct InterfaceMethod
 	string name, returnType, deprecation;
 	InterfaceType type;
 	InterfaceArgument[] arguments;
+	bool typeFixed;
+	string implementation;
 
 	void fixTypes()
 	{
+		if (typeFixed)
+			return;
+		typeFixed = true;
 		if (returnType != "HRESULT")
 			returnType.fixType;
 		foreach (ref argument; arguments)
 			argument.type.fixType;
 	}
 
-	string toString() const
+	string fullName() const
 	{
 		string ret;
-		if (deprecation.length)
-			ret ~= "deprecated(" ~ deprecation ~ ")\n";
-		ret ~= returnType ~ " ";
-		final switch (type) with (InterfaceType)
+		if (!implementation.length) final switch (type) with (InterfaceType)
 		{
 		case propget:
 			ret ~= "get_";
@@ -908,9 +1295,25 @@ struct InterfaceMethod
 			break;
 		}
 		ret ~= name;
+		return ret;
+	}
+
+	string toString() const
+	{
+		string ret;
+		if (deprecation.length)
+			ret ~= "deprecated(" ~ deprecation ~ ")\n";
+		if (implementation.length)
+			ret ~= "final ";
+		ret ~= returnType ~ " ";
+		ret ~= fullName;
 		ret ~= "(";
 		ret ~= arguments.to!(string[]).join(", ");
-		ret ~= ");";
+		ret ~= ")";
+		if (implementation.length)
+			ret ~= "\n{\n" ~ implementation.indent ~ "\n}";
+		else
+			ret ~= ";";
 		return ret;
 	}
 }
@@ -957,6 +1360,8 @@ void fixType(ref string type)
 
 string[] splitTypes(string type)
 {
+	if (type[0] == '(' && type[$ - 1] == ')')
+		type = type[1 .. $ - 1];
 	int depth = 0;
 	string[] ret = [""];
 	foreach (c; type)
@@ -986,16 +1391,23 @@ struct InterfaceArgument
 	string type;
 	string name;
 
-	string toString() const
+	string fullName() const
 	{
 		string ret;
-		ret ~= type;
-		ret ~= " ";
 		if (direction & ArgumentDirection.retval)
 			ret ~= "return_";
 		else if (direction & ArgumentDirection.out_)
 			ret ~= "out_";
 		ret ~= name.makeDSafe;
+		return ret;
+	}
+
+	string toString() const
+	{
+		string ret;
+		ret ~= type;
+		ret ~= " ";
+		ret ~= fullName;
 		return ret;
 	}
 }
@@ -1027,6 +1439,8 @@ Alias[] aliases = [
 	Alias("unsigned", "uint"), Alias("ULONG32", "uint"), Alias("__int3264",
 		"size_t"), Alias("DOUBLE", "double")
 ];
+
+/// async base in Windows.Foundation
 
 string foundationSuffix = q{
 struct ComCallData
@@ -1097,185 +1511,4 @@ enum IsAsync(T) = is(T == struct) && __traits(compiles, {
 		auto res = async.GetResults;
 		static assert(!is(typeof(res) == void));
 	});
-
-interface EventHandler(T) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IInspectable sender, T args);
-}
-
-interface TypedEventHandler(TSender, TArgs) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(TSender sender, TArgs args);
-}
-
-interface IAsyncActionWithProgress(TProgress) : IInspectable
-{
-extern (Windows):
-	HRESULT put_Progress(AsyncActionProgressHandler!TProgress handler);
-	HRESULT get_Progress(AsyncActionProgressHandler!TProgress* handler);
-	HRESULT put_Completed(AsyncActionWithProgressCompletedHandler!TProgress handler);
-	HRESULT get_Completed(AsyncActionWithProgressCompletedHandler!TProgress* handler);
-	HRESULT abi_GetResults();
-}
-
-interface AsyncActionProgressHandler(TProgress) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IAsyncActionWithProgress!TProgress asyncInfo, TProgress progressInfo);
-}
-
-interface AsyncActionWithProgressCompletedHandler(TProgress) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IAsyncActionWithProgress!TProgress asyncInfo, AsyncStatus status);
-}
-
-interface IAsyncOperation(TResult) : IInspectable
-{
-extern (Windows):
-	HRESULT put_Completed(AsyncOperationCompletedHandler!TResult handler);
-	HRESULT get_Completed(AsyncOperationCompletedHandler!TResult* handler);
-	HRESULT abi_GetResults(TResult* results);
-}
-
-interface AsyncOperationProgressHandler(TResult, TProgress) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IAsyncOperationWithProgress!(TResult,
-			TProgress) asyncInfo, TProgress progressInfo);
-}
-
-interface AsyncOperationCompletedHandler(TResult) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IAsyncOperation!TResult asyncInfo, AsyncStatus status);
-}
-
-interface IAsyncOperationWithProgress(TResult, TProgress) : IInspectable
-{
-extern (Windows):
-	HRESULT put_Progress(AsyncOperationProgressHandler!(TResult, TProgress) handler);
-	HRESULT get_Progress(AsyncOperationProgressHandler!(TResult, TProgress)* handler);
-	HRESULT put_Completed(AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) handler);
-	HRESULT get_Completed(AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)* handler);
-	HRESULT abi_GetResults(TResult* results);
-}
-
-interface AsyncOperationWithProgressCompletedHandler(TResult, TProgress) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status);
-}
-
-interface IReference(T) : IUnknown
-{
-extern (Windows):
-	HRESULT get_Value(T* value);
-}
-};
-
-string collectionsSuffix = q{
-interface MapChangedEventHandler(K, V) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IObservableMap!(K, V)* sender, IMapChangedEventArgs!K* args);
-}
-
-interface VectorChangedEventHandler(T) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IObservableVector!T* sender, IVectorChangedEventArgs* args);
-}
-
-interface IIterator(T) : IInspectable
-{
-extern (Windows):
-	HRESULT get_Current(T* current);
-	HRESULT get_HasCurrent(bool* hasCurrent);
-	HRESULT abi_MoveNext(bool* hasCurrent);
-	HRESULT abi_GetMany(uint capacity, T* value, uint* actual);
-}
-
-interface IIterable(T) : IInspectable
-{
-extern (Windows):
-	HRESULT abi_First(IIterator!T* first);
-}
-
-interface IKeyValuePair(K, V) : IInspectable
-{
-extern (Windows):
-	HRESULT get_Key(K* key);
-	HRESULT get_Value(V* value);
-}
-
-interface IVectorView(T) : IInspectable
-{
-extern (Windows):
-	HRESULT abi_GetAt(uint index, T* item);
-	HRESULT get_Size(uint* size);
-	HRESULT abi_IndexOf(T value, uint* index, bool* found);
-	HRESULT abi_GetMany(uint startIndex, uint capacity, T* value, uint* actual);
-}
-
-interface IVector(T) : IInspectable
-{
-extern (Windows):
-	HRESULT abi_GetAt(uint index, T* item);
-	HRESULT get_Size(uint* size);
-	HRESULT abi_GetView(IVectorView!T* view);
-	HRESULT abi_IndexOf(T value, uint* index, bool* found);
-	HRESULT abi_SetAt(uint index, T item);
-	HRESULT abi_InsertAt(uint index, T item);
-	HRESULT abi_RemoveAt(uint index);
-	HRESULT abi_Append(T item);
-	HRESULT abi_RemoveAtEnd();
-	HRESULT abi_Clear();
-	HRESULT abi_GetMany(uint startIndex, uint capacity, T* value, uint* actual);
-	HRESULT abi_ReplaceAll(uint count, T* value);
-}
-
-interface IMapView(K, V) : IInspectable
-{
-extern (Windows):
-	HRESULT abi_Lookup(K key, V* value);
-	HRESULT get_Size(uint* size);
-	HRESULT abi_HasKey(K key, bool* found);
-	HRESULT abi_Split(IMapView!(K, V)* firstPartition, IMapView!(K, V)* secondPartition);
-}
-
-interface IMap(K, V) : IInspectable
-{
-extern (Windows):
-	HRESULT abi_Lookup(K key, V* value);
-	HRESULT get_Size(uint* size);
-	HRESULT abi_HasKey(K key, bool* found);
-	HRESULT abi_GetView(IMapView!(K, V)* view);
-	HRESULT abi_Insert(K key, V value, bool* replaced);
-	HRESULT abi_Remove(K key);
-	HRESULT abi_Clear();
-}
-
-interface IMapChangedEventArgs(K) : IInspectable
-{
-extern (Windows):
-	HRESULT get_CollectionChange(Windows.Foundation.Collections.CollectionChange* value);
-	HRESULT get_Key(K* value);
-}
-
-interface IObservableMap(K, V) : IInspectable
-{
-extern (Windows):
-	HRESULT add_MapChanged(MapChangedEventHandler!(K, V) handler, EventRegistrationToken* token);
-	HRESULT remove_MapChanged(EventRegistrationToken token);
-}
-
-interface IObservableVector(T) : IInspectable
-{
-extern (Windows):
-	HRESULT add_VectorChanged(VectorChangedEventHandler!T handler, EventRegistrationToken* token);
-	HRESULT remove_VectorChanged(EventRegistrationToken token);
-}
 };

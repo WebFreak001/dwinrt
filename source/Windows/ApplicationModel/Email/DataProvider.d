@@ -370,128 +370,830 @@ extern(Windows):
 
 interface EmailDataProviderConnection : Windows.ApplicationModel.Email.DataProvider.IEmailDataProviderConnection
 {
+extern(Windows):
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailDataProviderConnection).abi_Start());
+	}
 }
 
 interface EmailDataProviderTriggerDetails : Windows.ApplicationModel.Email.DataProvider.IEmailDataProviderTriggerDetails
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection Connection()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailDataProviderTriggerDetails).get_Connection(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxCreateFolderRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final HSTRING ParentFolderId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequest).get_ParentFolderId(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequest).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync(Windows.ApplicationModel.Email.EmailFolder folder)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequest).abi_ReportCompletedAsync(folder, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync(Windows.ApplicationModel.Email.EmailMailboxCreateFolderStatus status)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequest).abi_ReportFailedAsync(status, &_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxCreateFolderRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxDeleteFolderRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDeleteFolderRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDeleteFolderRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final HSTRING EmailFolderId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDeleteFolderRequest).get_EmailFolderId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDeleteFolderRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync(Windows.ApplicationModel.Email.EmailMailboxDeleteFolderStatus status)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDeleteFolderRequest).abi_ReportFailedAsync(status, &_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxDeleteFolderRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDeleteFolderRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDeleteFolderRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDeleteFolderRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxDownloadAttachmentRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final HSTRING EmailMessageId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequest).get_EmailMessageId(&_ret));
+		return _ret;
+	}
+	final HSTRING EmailAttachmentId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequest).get_EmailAttachmentId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxDownloadAttachmentRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxDownloadMessageRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadMessageRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadMessageRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final HSTRING EmailMessageId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadMessageRequest).get_EmailMessageId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadMessageRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadMessageRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxDownloadMessageRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadMessageRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadMessageRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadMessageRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxEmptyFolderRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxEmptyFolderRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxEmptyFolderRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final HSTRING EmailFolderId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxEmptyFolderRequest).get_EmailFolderId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxEmptyFolderRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync(Windows.ApplicationModel.Email.EmailMailboxEmptyFolderStatus status)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxEmptyFolderRequest).abi_ReportFailedAsync(status, &_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxEmptyFolderRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxEmptyFolderRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxEmptyFolderRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxEmptyFolderRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxForwardMeetingRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final HSTRING EmailMessageId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest).get_EmailMessageId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailRecipient) Recipients()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailRecipient) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest).get_Recipients(&_ret));
+		return _ret;
+	}
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest).get_Subject(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Email.EmailMessageBodyKind ForwardHeaderType()
+	{
+		Windows.ApplicationModel.Email.EmailMessageBodyKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest).get_ForwardHeaderType(&_ret));
+		return _ret;
+	}
+	final HSTRING ForwardHeader()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest).get_ForwardHeader(&_ret));
+		return _ret;
+	}
+	final HSTRING Comment()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest).get_Comment(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxForwardMeetingRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxGetAutoReplySettingsRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxGetAutoReplySettingsRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxGetAutoReplySettingsRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Email.EmailMailboxAutoReplyMessageResponseKind RequestedFormat()
+	{
+		Windows.ApplicationModel.Email.EmailMailboxAutoReplyMessageResponseKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxGetAutoReplySettingsRequest).get_RequestedFormat(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync(Windows.ApplicationModel.Email.EmailMailboxAutoReplySettings autoReplySettings)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxGetAutoReplySettingsRequest).abi_ReportCompletedAsync(autoReplySettings, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxGetAutoReplySettingsRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxGetAutoReplySettingsRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxGetAutoReplySettingsRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxGetAutoReplySettingsRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxGetAutoReplySettingsRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxMoveFolderRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final HSTRING EmailFolderId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequest).get_EmailFolderId(&_ret));
+		return _ret;
+	}
+	final HSTRING NewParentFolderId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequest).get_NewParentFolderId(&_ret));
+		return _ret;
+	}
+	final HSTRING NewFolderName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequest).get_NewFolderName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxMoveFolderRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxProposeNewTimeForMeetingRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final HSTRING EmailMessageId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest).get_EmailMessageId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime NewStartTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest).get_NewStartTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan NewDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest).get_NewDuration(&_ret));
+		return _ret;
+	}
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest).get_Subject(&_ret));
+		return _ret;
+	}
+	final HSTRING Comment()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest).get_Comment(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxProposeNewTimeForMeetingRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxResolveRecipientsRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxResolveRecipientsRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxResolveRecipientsRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Recipients()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxResolveRecipientsRequest).get_Recipients(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Email.EmailRecipientResolutionResult) resolutionResults)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxResolveRecipientsRequest).abi_ReportCompletedAsync(resolutionResults, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxResolveRecipientsRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxResolveRecipientsRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxResolveRecipientsRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxResolveRecipientsRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxResolveRecipientsRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxServerSearchReadBatchRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest
 {
+extern(Windows):
+	final HSTRING SessionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest).get_SessionId(&_ret));
+		return _ret;
+	}
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final HSTRING EmailFolderId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest).get_EmailFolderId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Email.EmailQueryOptions Options()
+	{
+		Windows.ApplicationModel.Email.EmailQueryOptions _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest).get_Options(&_ret));
+		return _ret;
+	}
+	final UINT32 SuggestedBatchSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest).get_SuggestedBatchSize(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveMessageAsync(Windows.ApplicationModel.Email.EmailMessage message)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest).abi_SaveMessageAsync(message, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync(Windows.ApplicationModel.Email.EmailBatchStatus batchStatus)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest).abi_ReportFailedAsync(batchStatus, &_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxServerSearchReadBatchRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxSetAutoReplySettingsRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSetAutoReplySettingsRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSetAutoReplySettingsRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Email.EmailMailboxAutoReplySettings AutoReplySettings()
+	{
+		Windows.ApplicationModel.Email.EmailMailboxAutoReplySettings _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSetAutoReplySettingsRequest).get_AutoReplySettings(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSetAutoReplySettingsRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSetAutoReplySettingsRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxSetAutoReplySettingsRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSetAutoReplySettingsRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSetAutoReplySettingsRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSetAutoReplySettingsRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxSyncManagerSyncRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSyncManagerSyncRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSyncManagerSyncRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSyncManagerSyncRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSyncManagerSyncRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxSyncManagerSyncRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSyncManagerSyncRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSyncManagerSyncRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSyncManagerSyncRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxUpdateMeetingResponseRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final HSTRING EmailMessageId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest).get_EmailMessageId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Email.EmailMeetingResponseType Response()
+	{
+		Windows.ApplicationModel.Email.EmailMeetingResponseType _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest).get_Response(&_ret));
+		return _ret;
+	}
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest).get_Subject(&_ret));
+		return _ret;
+	}
+	final HSTRING Comment()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest).get_Comment(&_ret));
+		return _ret;
+	}
+	final bool SendUpdate()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest).get_SendUpdate(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxUpdateMeetingResponseRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxValidateCertificatesRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxValidateCertificatesRequest
 {
+extern(Windows):
+	final HSTRING EmailMailboxId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxValidateCertificatesRequest).get_EmailMailboxId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) Certificates()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxValidateCertificatesRequest).get_Certificates(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Email.EmailCertificateValidationStatus) validationStatuses)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxValidateCertificatesRequest).abi_ReportCompletedAsync(validationStatuses, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxValidateCertificatesRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface EmailMailboxValidateCertificatesRequestEventArgs : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxValidateCertificatesRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequest Request()
+	{
+		Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxValidateCertificatesRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxValidateCertificatesRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }

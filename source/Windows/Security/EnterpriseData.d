@@ -280,10 +280,36 @@ interface IThreadNetworkContext : IInspectable
 
 interface BufferProtectUnprotectResult : Windows.Security.EnterpriseData.IBufferProtectUnprotectResult
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer Buffer()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IBufferProtectUnprotectResult).get_Buffer(&_ret));
+		return _ret;
+	}
+	final Windows.Security.EnterpriseData.DataProtectionInfo ProtectionInfo()
+	{
+		Windows.Security.EnterpriseData.DataProtectionInfo _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IBufferProtectUnprotectResult).get_ProtectionInfo(&_ret));
+		return _ret;
+	}
 }
 
 interface DataProtectionInfo : Windows.Security.EnterpriseData.IDataProtectionInfo
 {
+extern(Windows):
+	final Windows.Security.EnterpriseData.DataProtectionStatus Status()
+	{
+		Windows.Security.EnterpriseData.DataProtectionStatus _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IDataProtectionInfo).get_Status(&_ret));
+		return _ret;
+	}
+	final HSTRING Identity()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IDataProtectionInfo).get_Identity(&_ret));
+		return _ret;
+	}
 }
 
 interface DataProtectionManager
@@ -292,6 +318,25 @@ interface DataProtectionManager
 
 interface FileProtectionInfo : Windows.Security.EnterpriseData.IFileProtectionInfo
 {
+extern(Windows):
+	final Windows.Security.EnterpriseData.FileProtectionStatus Status()
+	{
+		Windows.Security.EnterpriseData.FileProtectionStatus _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IFileProtectionInfo).get_Status(&_ret));
+		return _ret;
+	}
+	final bool IsRoamable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IFileProtectionInfo).get_IsRoamable(&_ret));
+		return _ret;
+	}
+	final HSTRING Identity()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IFileProtectionInfo).get_Identity(&_ret));
+		return _ret;
+	}
 }
 
 interface FileProtectionManager
@@ -304,42 +349,198 @@ interface FileRevocationManager
 
 interface FileUnprotectOptions : Windows.Security.EnterpriseData.IFileUnprotectOptions
 {
+extern(Windows):
+	final void Audit(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IFileUnprotectOptions).set_Audit(value));
+	}
+	final bool Audit()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IFileUnprotectOptions).get_Audit(&_ret));
+		return _ret;
+	}
 }
 
 interface ProtectedAccessResumedEventArgs : Windows.Security.EnterpriseData.IProtectedAccessResumedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Identities()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectedAccessResumedEventArgs).get_Identities(&_ret));
+		return _ret;
+	}
 }
 
 interface ProtectedAccessSuspendingEventArgs : Windows.Security.EnterpriseData.IProtectedAccessSuspendingEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Identities()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectedAccessSuspendingEventArgs).get_Identities(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Deadline()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectedAccessSuspendingEventArgs).get_Deadline(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectedAccessSuspendingEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface ProtectedContainerExportResult : Windows.Security.EnterpriseData.IProtectedContainerExportResult
 {
+extern(Windows):
+	final Windows.Security.EnterpriseData.ProtectedImportExportStatus Status()
+	{
+		Windows.Security.EnterpriseData.ProtectedImportExportStatus _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectedContainerExportResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFile File()
+	{
+		Windows.Storage.StorageFile _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectedContainerExportResult).get_File(&_ret));
+		return _ret;
+	}
 }
 
 interface ProtectedContainerImportResult : Windows.Security.EnterpriseData.IProtectedContainerImportResult
 {
+extern(Windows):
+	final Windows.Security.EnterpriseData.ProtectedImportExportStatus Status()
+	{
+		Windows.Security.EnterpriseData.ProtectedImportExportStatus _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectedContainerImportResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFile File()
+	{
+		Windows.Storage.StorageFile _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectedContainerImportResult).get_File(&_ret));
+		return _ret;
+	}
 }
 
 interface ProtectedContentRevokedEventArgs : Windows.Security.EnterpriseData.IProtectedContentRevokedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Identities()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectedContentRevokedEventArgs).get_Identities(&_ret));
+		return _ret;
+	}
 }
 
 interface ProtectedFileCreateResult : Windows.Security.EnterpriseData.IProtectedFileCreateResult
 {
+extern(Windows):
+	final Windows.Storage.StorageFile File()
+	{
+		Windows.Storage.StorageFile _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectedFileCreateResult).get_File(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IRandomAccessStream Stream()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectedFileCreateResult).get_Stream(&_ret));
+		return _ret;
+	}
+	final Windows.Security.EnterpriseData.FileProtectionInfo ProtectionInfo()
+	{
+		Windows.Security.EnterpriseData.FileProtectionInfo _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectedFileCreateResult).get_ProtectionInfo(&_ret));
+		return _ret;
+	}
 }
 
 interface ProtectionPolicyAuditInfo : Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo
 {
+extern(Windows):
+	final void Action(Windows.Security.EnterpriseData.ProtectionPolicyAuditAction value)
+	{
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo).set_Action(value));
+	}
+	final Windows.Security.EnterpriseData.ProtectionPolicyAuditAction Action()
+	{
+		Windows.Security.EnterpriseData.ProtectionPolicyAuditAction _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo).get_Action(&_ret));
+		return _ret;
+	}
+	final void DataDescription(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo).set_DataDescription(value));
+	}
+	final HSTRING DataDescription()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo).get_DataDescription(&_ret));
+		return _ret;
+	}
+	final void SourceDescription(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo).set_SourceDescription(value));
+	}
+	final HSTRING SourceDescription()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo).get_SourceDescription(&_ret));
+		return _ret;
+	}
+	final void TargetDescription(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo).set_TargetDescription(value));
+	}
+	final HSTRING TargetDescription()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo).get_TargetDescription(&_ret));
+		return _ret;
+	}
 }
 
 interface ProtectionPolicyManager : Windows.Security.EnterpriseData.IProtectionPolicyManager, Windows.Security.EnterpriseData.IProtectionPolicyManager2
 {
+extern(Windows):
+	final void Identity(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyManager).set_Identity(value));
+	}
+	final HSTRING Identity()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyManager).get_Identity(&_ret));
+		return _ret;
+	}
+	final void ShowEnterpriseIndicator(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyManager2).set_ShowEnterpriseIndicator(value));
+	}
+	final bool ShowEnterpriseIndicator()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyManager2).get_ShowEnterpriseIndicator(&_ret));
+		return _ret;
+	}
 }
 
 interface ThreadNetworkContext : Windows.Security.EnterpriseData.IThreadNetworkContext, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 enum DataProtectionStatus

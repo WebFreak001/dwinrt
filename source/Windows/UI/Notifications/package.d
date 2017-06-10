@@ -648,10 +648,60 @@ extern(Windows):
 
 interface AdaptiveNotificationText : Windows.UI.Notifications.IAdaptiveNotificationText, Windows.UI.Notifications.IAdaptiveNotificationContent
 {
+extern(Windows):
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IAdaptiveNotificationText).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IAdaptiveNotificationText).set_Text(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IAdaptiveNotificationText).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IAdaptiveNotificationText).set_Language(value));
+	}
+	final Windows.UI.Notifications.AdaptiveNotificationContentKind Kind()
+	{
+		Windows.UI.Notifications.AdaptiveNotificationContentKind _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IAdaptiveNotificationContent).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Hints()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IAdaptiveNotificationContent).get_Hints(&_ret));
+		return _ret;
+	}
 }
 
 interface BadgeNotification : Windows.UI.Notifications.IBadgeNotification
 {
+extern(Windows):
+	final Windows.Data.Xml.Dom.XmlDocument Content()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeNotification).get_Content(&_ret));
+		return _ret;
+	}
+	final void ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeNotification).set_ExpirationTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeNotification).get_ExpirationTime(&_ret));
+		return _ret;
+	}
 }
 
 interface BadgeUpdateManager
@@ -660,10 +710,56 @@ interface BadgeUpdateManager
 
 interface BadgeUpdateManagerForUser : Windows.UI.Notifications.IBadgeUpdateManagerForUser
 {
+extern(Windows):
+	final Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForApplication()
+	{
+		Windows.UI.Notifications.BadgeUpdater _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdateManagerForUser).abi_CreateBadgeUpdaterForApplication(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForApplicationWithId(HSTRING applicationId)
+	{
+		Windows.UI.Notifications.BadgeUpdater _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdateManagerForUser).abi_CreateBadgeUpdaterForApplicationWithId(applicationId, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForSecondaryTile(HSTRING tileId)
+	{
+		Windows.UI.Notifications.BadgeUpdater _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdateManagerForUser).abi_CreateBadgeUpdaterForSecondaryTile(tileId, &_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdateManagerForUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface BadgeUpdater : Windows.UI.Notifications.IBadgeUpdater
 {
+extern(Windows):
+	final void Update(Windows.UI.Notifications.BadgeNotification notification)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdater).abi_Update(notification));
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdater).abi_Clear());
+	}
+	final void StartPeriodicUpdate(Windows.Foundation.Uri badgeContent, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdater).abi_StartPeriodicUpdate(badgeContent, requestedInterval));
+	}
+	final void StartPeriodicUpdateAtTime(Windows.Foundation.Uri badgeContent, Windows.Foundation.DateTime startTime, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdater).abi_StartPeriodicUpdateAtTime(badgeContent, startTime, requestedInterval));
+	}
+	final void StopPeriodicUpdate()
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdater).abi_StopPeriodicUpdate());
+	}
 }
 
 interface KnownAdaptiveNotificationHints
@@ -680,34 +776,280 @@ interface KnownNotificationBindings
 
 interface Notification : Windows.UI.Notifications.INotification
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.INotification).get_ExpirationTime(&_ret));
+		return _ret;
+	}
+	final void ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.INotification).set_ExpirationTime(value));
+	}
+	final Windows.UI.Notifications.NotificationVisual Visual()
+	{
+		Windows.UI.Notifications.NotificationVisual _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.INotification).get_Visual(&_ret));
+		return _ret;
+	}
+	final void Visual(Windows.UI.Notifications.NotificationVisual value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.INotification).set_Visual(value));
+	}
 }
 
 interface NotificationBinding : Windows.UI.Notifications.INotificationBinding
 {
+extern(Windows):
+	final HSTRING Template()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.INotificationBinding).get_Template(&_ret));
+		return _ret;
+	}
+	final void Template(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.INotificationBinding).set_Template(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.INotificationBinding).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.INotificationBinding).set_Language(value));
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Hints()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.INotificationBinding).get_Hints(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.AdaptiveNotificationText) GetTextElements()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.AdaptiveNotificationText) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.INotificationBinding).abi_GetTextElements(&_ret));
+		return _ret;
+	}
 }
 
 interface NotificationData : Windows.UI.Notifications.INotificationData
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Values()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.INotificationData).get_Values(&_ret));
+		return _ret;
+	}
+	final UINT32 SequenceNumber()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.INotificationData).get_SequenceNumber(&_ret));
+		return _ret;
+	}
+	final void SequenceNumber(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.INotificationData).set_SequenceNumber(value));
+	}
 }
 
 interface NotificationVisual : Windows.UI.Notifications.INotificationVisual
 {
+extern(Windows):
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.INotificationVisual).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.INotificationVisual).set_Language(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Notifications.NotificationBinding) Bindings()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Notifications.NotificationBinding) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.INotificationVisual).get_Bindings(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.NotificationBinding GetBinding(HSTRING templateName)
+	{
+		Windows.UI.Notifications.NotificationBinding _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.INotificationVisual).abi_GetBinding(templateName, &_ret));
+		return _ret;
+	}
 }
 
 interface ScheduledTileNotification : Windows.UI.Notifications.IScheduledTileNotification
 {
+extern(Windows):
+	final Windows.Data.Xml.Dom.XmlDocument Content()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).get_Content(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime DeliveryTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).get_DeliveryTime(&_ret));
+		return _ret;
+	}
+	final void ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).set_ExpirationTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).get_ExpirationTime(&_ret));
+		return _ret;
+	}
+	final void Tag(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).set_Tag(value));
+	}
+	final HSTRING Tag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).get_Tag(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).set_Id(value));
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).get_Id(&_ret));
+		return _ret;
+	}
 }
 
 interface ScheduledToastNotification : Windows.UI.Notifications.IScheduledToastNotification, Windows.UI.Notifications.IScheduledToastNotification2, Windows.UI.Notifications.IScheduledToastNotification3
 {
+extern(Windows):
+	final Windows.Data.Xml.Dom.XmlDocument Content()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification).get_Content(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime DeliveryTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification).get_DeliveryTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) SnoozeInterval()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification).get_SnoozeInterval(&_ret));
+		return _ret;
+	}
+	final UINT32 MaximumSnoozeCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification).get_MaximumSnoozeCount(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification).set_Id(value));
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification).get_Id(&_ret));
+		return _ret;
+	}
+	final void Tag(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification2).set_Tag(value));
+	}
+	final HSTRING Tag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification2).get_Tag(&_ret));
+		return _ret;
+	}
+	final void Group(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification2).set_Group(value));
+	}
+	final HSTRING Group()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification2).get_Group(&_ret));
+		return _ret;
+	}
+	final void SuppressPopup(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification2).set_SuppressPopup(value));
+	}
+	final bool SuppressPopup()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification2).get_SuppressPopup(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.NotificationMirroring NotificationMirroring()
+	{
+		Windows.UI.Notifications.NotificationMirroring _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification3).get_NotificationMirroring(&_ret));
+		return _ret;
+	}
+	final void NotificationMirroring(Windows.UI.Notifications.NotificationMirroring value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification3).set_NotificationMirroring(value));
+	}
+	final HSTRING RemoteId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification3).get_RemoteId(&_ret));
+		return _ret;
+	}
+	final void RemoteId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification3).set_RemoteId(value));
+	}
 }
 
 interface ShownTileNotification : Windows.UI.Notifications.IShownTileNotification
 {
+extern(Windows):
+	final HSTRING Arguments()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IShownTileNotification).get_Arguments(&_ret));
+		return _ret;
+	}
 }
 
 interface TileFlyoutNotification : Windows.UI.Notifications.ITileFlyoutNotification
 {
+extern(Windows):
+	final Windows.Data.Xml.Dom.XmlDocument Content()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutNotification).get_Content(&_ret));
+		return _ret;
+	}
+	final void ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutNotification).set_ExpirationTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutNotification).get_ExpirationTime(&_ret));
+		return _ret;
+	}
 }
 
 interface TileFlyoutUpdateManager
@@ -716,10 +1058,64 @@ interface TileFlyoutUpdateManager
 
 interface TileFlyoutUpdater : Windows.UI.Notifications.ITileFlyoutUpdater
 {
+extern(Windows):
+	final void Update(Windows.UI.Notifications.TileFlyoutNotification notification)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutUpdater).abi_Update(notification));
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutUpdater).abi_Clear());
+	}
+	final void StartPeriodicUpdate(Windows.Foundation.Uri tileFlyoutContent, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutUpdater).abi_StartPeriodicUpdate(tileFlyoutContent, requestedInterval));
+	}
+	final void StartPeriodicUpdateAtTime(Windows.Foundation.Uri tileFlyoutContent, Windows.Foundation.DateTime startTime, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutUpdater).abi_StartPeriodicUpdateAtTime(tileFlyoutContent, startTime, requestedInterval));
+	}
+	final void StopPeriodicUpdate()
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutUpdater).abi_StopPeriodicUpdate());
+	}
+	final Windows.UI.Notifications.NotificationSetting Setting()
+	{
+		Windows.UI.Notifications.NotificationSetting _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutUpdater).get_Setting(&_ret));
+		return _ret;
+	}
 }
 
 interface TileNotification : Windows.UI.Notifications.ITileNotification
 {
+extern(Windows):
+	final Windows.Data.Xml.Dom.XmlDocument Content()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileNotification).get_Content(&_ret));
+		return _ret;
+	}
+	final void ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileNotification).set_ExpirationTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileNotification).get_ExpirationTime(&_ret));
+		return _ret;
+	}
+	final void Tag(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileNotification).set_Tag(value));
+	}
+	final HSTRING Tag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileNotification).get_Tag(&_ret));
+		return _ret;
+	}
 }
 
 interface TileUpdateManager
@@ -728,46 +1124,391 @@ interface TileUpdateManager
 
 interface TileUpdateManagerForUser : Windows.UI.Notifications.ITileUpdateManagerForUser
 {
+extern(Windows):
+	final Windows.UI.Notifications.TileUpdater CreateTileUpdaterForApplication()
+	{
+		Windows.UI.Notifications.TileUpdater _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdateManagerForUser).abi_CreateTileUpdaterForApplication(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.TileUpdater CreateTileUpdaterForApplicationWithId(HSTRING applicationId)
+	{
+		Windows.UI.Notifications.TileUpdater _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdateManagerForUser).abi_CreateTileUpdaterForApplicationWithId(applicationId, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.TileUpdater CreateTileUpdaterForSecondaryTile(HSTRING tileId)
+	{
+		Windows.UI.Notifications.TileUpdater _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdateManagerForUser).abi_CreateTileUpdaterForSecondaryTile(tileId, &_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdateManagerForUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface TileUpdater : Windows.UI.Notifications.ITileUpdater, Windows.UI.Notifications.ITileUpdater2
 {
+extern(Windows):
+	final void Update(Windows.UI.Notifications.TileNotification notification)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_Update(notification));
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_Clear());
+	}
+	final void EnableNotificationQueue(bool enable)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_EnableNotificationQueue(enable));
+	}
+	final Windows.UI.Notifications.NotificationSetting Setting()
+	{
+		Windows.UI.Notifications.NotificationSetting _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).get_Setting(&_ret));
+		return _ret;
+	}
+	final void AddToSchedule(Windows.UI.Notifications.ScheduledTileNotification scheduledTile)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_AddToSchedule(scheduledTile));
+	}
+	final void RemoveFromSchedule(Windows.UI.Notifications.ScheduledTileNotification scheduledTile)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_RemoveFromSchedule(scheduledTile));
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ScheduledTileNotification) GetScheduledTileNotifications()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ScheduledTileNotification) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_GetScheduledTileNotifications(&_ret));
+		return _ret;
+	}
+	final void StartPeriodicUpdate(Windows.Foundation.Uri tileContent, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_StartPeriodicUpdate(tileContent, requestedInterval));
+	}
+	final void StartPeriodicUpdateAtTime(Windows.Foundation.Uri tileContent, Windows.Foundation.DateTime startTime, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_StartPeriodicUpdateAtTime(tileContent, startTime, requestedInterval));
+	}
+	final void StopPeriodicUpdate()
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_StopPeriodicUpdate());
+	}
+	final void StartPeriodicUpdateBatch(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) tileContents, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_StartPeriodicUpdateBatch(tileContents, requestedInterval));
+	}
+	final void StartPeriodicUpdateBatchAtTime(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) tileContents, Windows.Foundation.DateTime startTime, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_StartPeriodicUpdateBatchAtTime(tileContents, startTime, requestedInterval));
+	}
+	final void EnableNotificationQueueForSquare150x150(bool enable)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater2).abi_EnableNotificationQueueForSquare150x150(enable));
+	}
+	final void EnableNotificationQueueForWide310x150(bool enable)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater2).abi_EnableNotificationQueueForWide310x150(enable));
+	}
+	final void EnableNotificationQueueForSquare310x310(bool enable)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater2).abi_EnableNotificationQueueForSquare310x310(enable));
+	}
 }
 
 interface ToastActivatedEventArgs : Windows.UI.Notifications.IToastActivatedEventArgs
 {
+extern(Windows):
+	final HSTRING Arguments()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastActivatedEventArgs).get_Arguments(&_ret));
+		return _ret;
+	}
 }
 
 interface ToastCollection : Windows.UI.Notifications.IToastCollection
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).set_DisplayName(value));
+	}
+	final HSTRING LaunchArgs()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).get_LaunchArgs(&_ret));
+		return _ret;
+	}
+	final void LaunchArgs(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).set_LaunchArgs(value));
+	}
+	final Windows.Foundation.Uri Icon()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).get_Icon(&_ret));
+		return _ret;
+	}
+	final void Icon(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).set_Icon(value));
+	}
 }
 
 interface ToastCollectionManager : Windows.UI.Notifications.IToastCollectionManager
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction SaveToastCollectionAsync(Windows.UI.Notifications.ToastCollection collection)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).abi_SaveToastCollectionAsync(collection, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastCollection)) FindAllToastCollectionsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastCollection)) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).abi_FindAllToastCollectionsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastCollection) GetToastCollectionAsync(HSTRING collectionId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastCollection) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).abi_GetToastCollectionAsync(collectionId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RemoveToastCollectionAsync(HSTRING collectionId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).abi_RemoveToastCollectionAsync(collectionId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RemoveAllToastCollectionsAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).abi_RemoveAllToastCollectionsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).get_User(&_ret));
+		return _ret;
+	}
+	final HSTRING AppId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).get_AppId(&_ret));
+		return _ret;
+	}
 }
 
 interface ToastDismissedEventArgs : Windows.UI.Notifications.IToastDismissedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Notifications.ToastDismissalReason Reason()
+	{
+		Windows.UI.Notifications.ToastDismissalReason _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastDismissedEventArgs).get_Reason(&_ret));
+		return _ret;
+	}
 }
 
 interface ToastFailedEventArgs : Windows.UI.Notifications.IToastFailedEventArgs
 {
+extern(Windows):
+	final HRESULT ErrorCode()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastFailedEventArgs).get_ErrorCode(&_ret));
+		return _ret;
+	}
 }
 
 interface ToastNotification : Windows.UI.Notifications.IToastNotification, Windows.UI.Notifications.IToastNotification2, Windows.UI.Notifications.IToastNotification3, Windows.UI.Notifications.IToastNotification4
 {
+extern(Windows):
+	final Windows.Data.Xml.Dom.XmlDocument Content()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).get_Content(&_ret));
+		return _ret;
+	}
+	final void ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).set_ExpirationTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).get_ExpirationTime(&_ret));
+		return _ret;
+	}
+	final void Tag(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification2).set_Tag(value));
+	}
+	final HSTRING Tag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification2).get_Tag(&_ret));
+		return _ret;
+	}
+	final void Group(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification2).set_Group(value));
+	}
+	final HSTRING Group()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification2).get_Group(&_ret));
+		return _ret;
+	}
+	final void SuppressPopup(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification2).set_SuppressPopup(value));
+	}
+	final bool SuppressPopup()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification2).get_SuppressPopup(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.NotificationMirroring NotificationMirroring()
+	{
+		Windows.UI.Notifications.NotificationMirroring _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification3).get_NotificationMirroring(&_ret));
+		return _ret;
+	}
+	final void NotificationMirroring(Windows.UI.Notifications.NotificationMirroring value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification3).set_NotificationMirroring(value));
+	}
+	final HSTRING RemoteId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification3).get_RemoteId(&_ret));
+		return _ret;
+	}
+	final void RemoteId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification3).set_RemoteId(value));
+	}
+	final Windows.UI.Notifications.NotificationData Data()
+	{
+		Windows.UI.Notifications.NotificationData _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification4).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(Windows.UI.Notifications.NotificationData value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification4).set_Data(value));
+	}
+	final Windows.UI.Notifications.ToastNotificationPriority Priority()
+	{
+		Windows.UI.Notifications.ToastNotificationPriority _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification4).get_Priority(&_ret));
+		return _ret;
+	}
+	final void Priority(Windows.UI.Notifications.ToastNotificationPriority value)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification4).set_Priority(value));
+	}
 }
 
 interface ToastNotificationActionTriggerDetail : Windows.UI.Notifications.IToastNotificationActionTriggerDetail
 {
+extern(Windows):
+	final HSTRING Argument()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationActionTriggerDetail).get_Argument(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.ValueSet UserInput()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationActionTriggerDetail).get_UserInput(&_ret));
+		return _ret;
+	}
 }
 
 interface ToastNotificationHistory : Windows.UI.Notifications.IToastNotificationHistory, Windows.UI.Notifications.IToastNotificationHistory2
 {
+extern(Windows):
+	final void RemoveGroup(HSTRING group)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_RemoveGroup(group));
+	}
+	final void RemoveGroupWithId(HSTRING group, HSTRING applicationId)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_RemoveGroupWithId(group, applicationId));
+	}
+	final void RemoveGroupedTagWithId(HSTRING tag, HSTRING group, HSTRING applicationId)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_RemoveGroupedTagWithId(tag, group, applicationId));
+	}
+	final void RemoveGroupedTag(HSTRING tag, HSTRING group)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_RemoveGroupedTag(tag, group));
+	}
+	final void Remove(HSTRING tag)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_Remove(tag));
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_Clear());
+	}
+	final void ClearWithId(HSTRING applicationId)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_ClearWithId(applicationId));
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastNotification) GetHistory()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastNotification) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory2).abi_GetHistory(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastNotification) GetHistoryWithId(HSTRING applicationId)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastNotification) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory2).abi_GetHistoryWithId(applicationId, &_ret));
+		return _ret;
+	}
 }
 
 interface ToastNotificationHistoryChangedTriggerDetail : Windows.UI.Notifications.IToastNotificationHistoryChangedTriggerDetail, Windows.UI.Notifications.IToastNotificationHistoryChangedTriggerDetail2
 {
+extern(Windows):
+	final Windows.UI.Notifications.ToastHistoryChangedType ChangeType()
+	{
+		Windows.UI.Notifications.ToastHistoryChangedType _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistoryChangedTriggerDetail).get_ChangeType(&_ret));
+		return _ret;
+	}
+	final HSTRING CollectionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistoryChangedTriggerDetail2).get_CollectionId(&_ret));
+		return _ret;
+	}
 }
 
 interface ToastNotificationManager
@@ -776,18 +1517,146 @@ interface ToastNotificationManager
 
 interface ToastNotificationManagerForUser : Windows.UI.Notifications.IToastNotificationManagerForUser, Windows.UI.Notifications.IToastNotificationManagerForUser2
 {
+extern(Windows):
+	final Windows.UI.Notifications.ToastNotifier CreateToastNotifier()
+	{
+		Windows.UI.Notifications.ToastNotifier _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser).abi_CreateToastNotifier(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.ToastNotifier CreateToastNotifierWithId(HSTRING applicationId)
+	{
+		Windows.UI.Notifications.ToastNotifier _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser).abi_CreateToastNotifierWithId(applicationId, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.ToastNotificationHistory History()
+	{
+		Windows.UI.Notifications.ToastNotificationHistory _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser).get_History(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser).get_User(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastNotifier) GetToastNotifierForToastCollectionIdAsync(HSTRING collectionId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastNotifier) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser2).abi_GetToastNotifierForToastCollectionIdAsync(collectionId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastNotificationHistory) GetHistoryForToastCollectionIdAsync(HSTRING collectionId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastNotificationHistory) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser2).abi_GetHistoryForToastCollectionIdAsync(collectionId, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.ToastCollectionManager GetToastCollectionManager()
+	{
+		Windows.UI.Notifications.ToastCollectionManager _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser2).abi_GetToastCollectionManager(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.ToastCollectionManager GetToastCollectionManagerWithAppId(HSTRING appId)
+	{
+		Windows.UI.Notifications.ToastCollectionManager _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser2).abi_GetToastCollectionManagerWithAppId(appId, &_ret));
+		return _ret;
+	}
 }
 
 interface ToastNotifier : Windows.UI.Notifications.IToastNotifier, Windows.UI.Notifications.IToastNotifier2
 {
+extern(Windows):
+	final void Show(Windows.UI.Notifications.ToastNotification notification)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier).abi_Show(notification));
+	}
+	final void Hide(Windows.UI.Notifications.ToastNotification notification)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier).abi_Hide(notification));
+	}
+	final Windows.UI.Notifications.NotificationSetting Setting()
+	{
+		Windows.UI.Notifications.NotificationSetting _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier).get_Setting(&_ret));
+		return _ret;
+	}
+	final void AddToSchedule(Windows.UI.Notifications.ScheduledToastNotification scheduledToast)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier).abi_AddToSchedule(scheduledToast));
+	}
+	final void RemoveFromSchedule(Windows.UI.Notifications.ScheduledToastNotification scheduledToast)
+	{
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier).abi_RemoveFromSchedule(scheduledToast));
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ScheduledToastNotification) GetScheduledToastNotifications()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ScheduledToastNotification) _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier).abi_GetScheduledToastNotifications(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.NotificationUpdateResult UpdateWithTagAndGroup(Windows.UI.Notifications.NotificationData data, HSTRING tag, HSTRING group)
+	{
+		Windows.UI.Notifications.NotificationUpdateResult _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier2).abi_UpdateWithTagAndGroup(data, tag, group, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Notifications.NotificationUpdateResult UpdateWithTag(Windows.UI.Notifications.NotificationData data, HSTRING tag)
+	{
+		Windows.UI.Notifications.NotificationUpdateResult _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier2).abi_UpdateWithTag(data, tag, &_ret));
+		return _ret;
+	}
 }
 
 interface UserNotification : Windows.UI.Notifications.IUserNotification
 {
+extern(Windows):
+	final Windows.UI.Notifications.Notification Notification()
+	{
+		Windows.UI.Notifications.Notification _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IUserNotification).get_Notification(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.AppInfo AppInfo()
+	{
+		Windows.ApplicationModel.AppInfo _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IUserNotification).get_AppInfo(&_ret));
+		return _ret;
+	}
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IUserNotification).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime CreationTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IUserNotification).get_CreationTime(&_ret));
+		return _ret;
+	}
 }
 
 interface UserNotificationChangedEventArgs : Windows.UI.Notifications.IUserNotificationChangedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Notifications.UserNotificationChangedKind ChangeKind()
+	{
+		Windows.UI.Notifications.UserNotificationChangedKind _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IUserNotificationChangedEventArgs).get_ChangeKind(&_ret));
+		return _ret;
+	}
+	final UINT32 UserNotificationId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Notifications.IUserNotificationChangedEventArgs).get_UserNotificationId(&_ret));
+		return _ret;
+	}
 }
 
 enum AdaptiveNotificationContentKind

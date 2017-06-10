@@ -53,16 +53,74 @@ extern(Windows):
 
 interface OcrEngine : Windows.Media.Ocr.IOcrEngine
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Ocr.OcrResult) RecognizeAsync(Windows.Graphics.Imaging.SoftwareBitmap bitmap)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Ocr.OcrResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Ocr.IOcrEngine).abi_RecognizeAsync(bitmap, &_ret));
+		return _ret;
+	}
+	final Windows.Globalization.Language RecognizerLanguage()
+	{
+		Windows.Globalization.Language _ret;
+		Debug.OK(this.as!(Windows.Media.Ocr.IOcrEngine).get_RecognizerLanguage(&_ret));
+		return _ret;
+	}
 }
 
 interface OcrLine : Windows.Media.Ocr.IOcrLine
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Ocr.OcrWord) Words()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Ocr.OcrWord) _ret;
+		Debug.OK(this.as!(Windows.Media.Ocr.IOcrLine).get_Words(&_ret));
+		return _ret;
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Ocr.IOcrLine).get_Text(&_ret));
+		return _ret;
+	}
 }
 
 interface OcrResult : Windows.Media.Ocr.IOcrResult
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Ocr.OcrLine) Lines()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Ocr.OcrLine) _ret;
+		Debug.OK(this.as!(Windows.Media.Ocr.IOcrResult).get_Lines(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) TextAngle()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Media.Ocr.IOcrResult).get_TextAngle(&_ret));
+		return _ret;
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Ocr.IOcrResult).get_Text(&_ret));
+		return _ret;
+	}
 }
 
 interface OcrWord : Windows.Media.Ocr.IOcrWord
 {
+extern(Windows):
+	final Windows.Foundation.Rect BoundingRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Media.Ocr.IOcrWord).get_BoundingRect(&_ret));
+		return _ret;
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Ocr.IOcrWord).get_Text(&_ret));
+		return _ret;
+	}
 }

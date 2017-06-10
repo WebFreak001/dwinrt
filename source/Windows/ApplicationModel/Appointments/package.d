@@ -458,26 +458,678 @@ extern(Windows):
 
 interface Appointment : Windows.ApplicationModel.Appointments.IAppointment, Windows.ApplicationModel.Appointments.IAppointment2, Windows.ApplicationModel.Appointments.IAppointment3
 {
+extern(Windows):
+	final Windows.Foundation.DateTime StartTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).get_StartTime(&_ret));
+		return _ret;
+	}
+	final void StartTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).set_StartTime(value));
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).get_Duration(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).set_Duration(value));
+	}
+	final HSTRING Location()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).get_Location(&_ret));
+		return _ret;
+	}
+	final void Location(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).set_Location(value));
+	}
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).get_Subject(&_ret));
+		return _ret;
+	}
+	final void Subject(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).set_Subject(value));
+	}
+	final HSTRING Details()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).get_Details(&_ret));
+		return _ret;
+	}
+	final void Details(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).set_Details(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Reminder()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).get_Reminder(&_ret));
+		return _ret;
+	}
+	final void Reminder(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).set_Reminder(value));
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentOrganizer Organizer()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentOrganizer _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).get_Organizer(&_ret));
+		return _ret;
+	}
+	final void Organizer(Windows.ApplicationModel.Appointments.AppointmentOrganizer value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).set_Organizer(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Appointments.AppointmentInvitee) Invitees()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Appointments.AppointmentInvitee) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).get_Invitees(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentRecurrence Recurrence()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentRecurrence _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).get_Recurrence(&_ret));
+		return _ret;
+	}
+	final void Recurrence(Windows.ApplicationModel.Appointments.AppointmentRecurrence value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).set_Recurrence(value));
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentBusyStatus BusyStatus()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentBusyStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).get_BusyStatus(&_ret));
+		return _ret;
+	}
+	final void BusyStatus(Windows.ApplicationModel.Appointments.AppointmentBusyStatus value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).set_BusyStatus(value));
+	}
+	final bool AllDay()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).get_AllDay(&_ret));
+		return _ret;
+	}
+	final void AllDay(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).set_AllDay(value));
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentSensitivity Sensitivity()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentSensitivity _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).get_Sensitivity(&_ret));
+		return _ret;
+	}
+	final void Sensitivity(Windows.ApplicationModel.Appointments.AppointmentSensitivity value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).set_Sensitivity(value));
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment).set_Uri(value));
+	}
+	final HSTRING LocalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).get_LocalId(&_ret));
+		return _ret;
+	}
+	final HSTRING CalendarId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).get_CalendarId(&_ret));
+		return _ret;
+	}
+	final HSTRING RoamingId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).get_RoamingId(&_ret));
+		return _ret;
+	}
+	final void RoamingId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).set_RoamingId(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) OriginalStartTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).get_OriginalStartTime(&_ret));
+		return _ret;
+	}
+	final bool IsResponseRequested()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).get_IsResponseRequested(&_ret));
+		return _ret;
+	}
+	final void IsResponseRequested(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).set_IsResponseRequested(value));
+	}
+	final bool AllowNewTimeProposal()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).get_AllowNewTimeProposal(&_ret));
+		return _ret;
+	}
+	final void AllowNewTimeProposal(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).set_AllowNewTimeProposal(value));
+	}
+	final HSTRING OnlineMeetingLink()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).get_OnlineMeetingLink(&_ret));
+		return _ret;
+	}
+	final void OnlineMeetingLink(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).set_OnlineMeetingLink(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ReplyTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).get_ReplyTime(&_ret));
+		return _ret;
+	}
+	final void ReplyTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).set_ReplyTime(value));
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentParticipantResponse UserResponse()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentParticipantResponse _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).get_UserResponse(&_ret));
+		return _ret;
+	}
+	final void UserResponse(Windows.ApplicationModel.Appointments.AppointmentParticipantResponse value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).set_UserResponse(value));
+	}
+	final bool HasInvitees()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).get_HasInvitees(&_ret));
+		return _ret;
+	}
+	final bool IsCanceledMeeting()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).get_IsCanceledMeeting(&_ret));
+		return _ret;
+	}
+	final void IsCanceledMeeting(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).set_IsCanceledMeeting(value));
+	}
+	final bool IsOrganizedByUser()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).get_IsOrganizedByUser(&_ret));
+		return _ret;
+	}
+	final void IsOrganizedByUser(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).set_IsOrganizedByUser(value));
+	}
+	final UINT64 ChangeNumber()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment3).get_ChangeNumber(&_ret));
+		return _ret;
+	}
+	final UINT64 RemoteChangeNumber()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment3).get_RemoteChangeNumber(&_ret));
+		return _ret;
+	}
+	final void RemoteChangeNumber(UINT64 value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment3).set_RemoteChangeNumber(value));
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentDetailsKind DetailsKind()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentDetailsKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment3).get_DetailsKind(&_ret));
+		return _ret;
+	}
+	final void DetailsKind(Windows.ApplicationModel.Appointments.AppointmentDetailsKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment3).set_DetailsKind(value));
+	}
 }
 
 interface AppointmentCalendar : Windows.ApplicationModel.Appointments.IAppointmentCalendar, Windows.ApplicationModel.Appointments.IAppointmentCalendar2, Windows.ApplicationModel.Appointments.IAppointmentCalendar3
 {
+extern(Windows):
+	final Windows.UI.Color DisplayColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).get_DisplayColor(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).set_DisplayName(value));
+	}
+	final HSTRING LocalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).get_LocalId(&_ret));
+		return _ret;
+	}
+	final bool IsHidden()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).get_IsHidden(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentCalendarOtherAppReadAccess OtherAppReadAccess()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentCalendarOtherAppReadAccess _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).get_OtherAppReadAccess(&_ret));
+		return _ret;
+	}
+	final void OtherAppReadAccess(Windows.ApplicationModel.Appointments.AppointmentCalendarOtherAppReadAccess value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).set_OtherAppReadAccess(value));
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentCalendarOtherAppWriteAccess OtherAppWriteAccess()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentCalendarOtherAppWriteAccess _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).get_OtherAppWriteAccess(&_ret));
+		return _ret;
+	}
+	final void OtherAppWriteAccess(Windows.ApplicationModel.Appointments.AppointmentCalendarOtherAppWriteAccess value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).set_OtherAppWriteAccess(value));
+	}
+	final HSTRING SourceDisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).get_SourceDisplayName(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentSummaryCardView SummaryCardView()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentSummaryCardView _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).get_SummaryCardView(&_ret));
+		return _ret;
+	}
+	final void SummaryCardView(Windows.ApplicationModel.Appointments.AppointmentSummaryCardView value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).set_SummaryCardView(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) FindAppointmentsAsync(Windows.Foundation.DateTime rangeStart, Windows.Foundation.TimeSpan rangeLength)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_FindAppointmentsAsync(rangeStart, rangeLength, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) FindAppointmentsAsyncWithOptions(Windows.Foundation.DateTime rangeStart, Windows.Foundation.TimeSpan rangeLength, Windows.ApplicationModel.Appointments.FindAppointmentsOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_FindAppointmentsAsyncWithOptions(rangeStart, rangeLength, options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentException)) FindExceptionsFromMasterAsync(HSTRING masterLocalId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentException)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_FindExceptionsFromMasterAsync(masterLocalId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) FindAllInstancesAsync(HSTRING masterLocalId, Windows.Foundation.DateTime rangeStart, Windows.Foundation.TimeSpan rangeLength)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_FindAllInstancesAsync(masterLocalId, rangeStart, rangeLength, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) FindAllInstancesAsyncWithOptions(HSTRING masterLocalId, Windows.Foundation.DateTime rangeStart, Windows.Foundation.TimeSpan rangeLength, Windows.ApplicationModel.Appointments.FindAppointmentsOptions pOptions)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_FindAllInstancesAsyncWithOptions(masterLocalId, rangeStart, rangeLength, pOptions, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.Appointment) GetAppointmentAsync(HSTRING localId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.Appointment) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_GetAppointmentAsync(localId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.Appointment) GetAppointmentInstanceAsync(HSTRING localId, Windows.Foundation.DateTime instanceStartTime)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.Appointment) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_GetAppointmentInstanceAsync(localId, instanceStartTime, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) FindUnexpandedAppointmentsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_FindUnexpandedAppointmentsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) FindUnexpandedAppointmentsAsyncWithOptions(Windows.ApplicationModel.Appointments.FindAppointmentsOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_FindUnexpandedAppointmentsAsyncWithOptions(options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_DeleteAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_SaveAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAppointmentAsync(HSTRING localId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_DeleteAppointmentAsync(localId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAppointmentInstanceAsync(HSTRING localId, Windows.Foundation.DateTime instanceStartTime)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_DeleteAppointmentInstanceAsync(localId, instanceStartTime, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveAppointmentAsync(Windows.ApplicationModel.Appointments.Appointment pAppointment)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar).abi_SaveAppointmentAsync(pAppointment, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager SyncManager()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).get_SyncManager(&_ret));
+		return _ret;
+	}
+	final HSTRING RemoteId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).get_RemoteId(&_ret));
+		return _ret;
+	}
+	final void RemoteId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).set_RemoteId(value));
+	}
+	final void DisplayColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).set_DisplayColor(value));
+	}
+	final void IsHidden(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).set_IsHidden(value));
+	}
+	final HSTRING UserDataAccountId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).get_UserDataAccountId(&_ret));
+		return _ret;
+	}
+	final bool CanCreateOrUpdateAppointments()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).get_CanCreateOrUpdateAppointments(&_ret));
+		return _ret;
+	}
+	final void CanCreateOrUpdateAppointments(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).set_CanCreateOrUpdateAppointments(value));
+	}
+	final bool CanCancelMeetings()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).get_CanCancelMeetings(&_ret));
+		return _ret;
+	}
+	final void CanCancelMeetings(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).set_CanCancelMeetings(value));
+	}
+	final bool CanForwardMeetings()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).get_CanForwardMeetings(&_ret));
+		return _ret;
+	}
+	final void CanForwardMeetings(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).set_CanForwardMeetings(value));
+	}
+	final bool CanProposeNewTimeForMeetings()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).get_CanProposeNewTimeForMeetings(&_ret));
+		return _ret;
+	}
+	final void CanProposeNewTimeForMeetings(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).set_CanProposeNewTimeForMeetings(value));
+	}
+	final bool CanUpdateMeetingResponses()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).get_CanUpdateMeetingResponses(&_ret));
+		return _ret;
+	}
+	final void CanUpdateMeetingResponses(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).set_CanUpdateMeetingResponses(value));
+	}
+	final bool CanNotifyInvitees()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).get_CanNotifyInvitees(&_ret));
+		return _ret;
+	}
+	final void CanNotifyInvitees(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).set_CanNotifyInvitees(value));
+	}
+	final bool MustNofityInvitees()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).get_MustNofityInvitees(&_ret));
+		return _ret;
+	}
+	final void MustNofityInvitees(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).set_MustNofityInvitees(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryCreateOrUpdateAppointmentAsync(Windows.ApplicationModel.Appointments.Appointment appointment, bool notifyInvitees)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).abi_TryCreateOrUpdateAppointmentAsync(appointment, notifyInvitees, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryCancelMeetingAsync(Windows.ApplicationModel.Appointments.Appointment meeting, HSTRING subject, HSTRING comment, bool notifyInvitees)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).abi_TryCancelMeetingAsync(meeting, subject, comment, notifyInvitees, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryForwardMeetingAsync(Windows.ApplicationModel.Appointments.Appointment meeting, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Appointments.AppointmentInvitee) invitees, HSTRING subject, HSTRING forwardHeader, HSTRING comment)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).abi_TryForwardMeetingAsync(meeting, invitees, subject, forwardHeader, comment, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryProposeNewTimeForMeetingAsync(Windows.ApplicationModel.Appointments.Appointment meeting, Windows.Foundation.DateTime newStartTime, Windows.Foundation.TimeSpan newDuration, HSTRING subject, HSTRING comment)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).abi_TryProposeNewTimeForMeetingAsync(meeting, newStartTime, newDuration, subject, comment, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryUpdateMeetingResponseAsync(Windows.ApplicationModel.Appointments.Appointment meeting, Windows.ApplicationModel.Appointments.AppointmentParticipantResponse response, HSTRING subject, HSTRING comment, bool sendUpdate)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar2).abi_TryUpdateMeetingResponseAsync(meeting, response, subject, comment, sendUpdate, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RegisterSyncManagerAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendar3).abi_RegisterSyncManagerAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentCalendarSyncManager : Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager, Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager2
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.AppointmentCalendarSyncStatus Status()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentCalendarSyncStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime LastSuccessfulSyncTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager).get_LastSuccessfulSyncTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime LastAttemptedSyncTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager).get_LastAttemptedSyncTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) SyncAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager).abi_SyncAsync(&_ret));
+		return _ret;
+	}
+	final void Status(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncStatus value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager2).set_Status(value));
+	}
+	final void LastSuccessfulSyncTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager2).set_LastSuccessfulSyncTime(value));
+	}
+	final void LastAttemptedSyncTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager2).set_LastAttemptedSyncTime(value));
+	}
 }
 
 interface AppointmentConflictResult : Windows.ApplicationModel.Appointments.IAppointmentConflictResult
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.AppointmentConflictType Type()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentConflictType _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentConflictResult).get_Type(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Date()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentConflictResult).get_Date(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentException : Windows.ApplicationModel.Appointments.IAppointmentException
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.Appointment Appointment()
+	{
+		Windows.ApplicationModel.Appointments.Appointment _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentException).get_Appointment(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) ExceptionProperties()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentException).get_ExceptionProperties(&_ret));
+		return _ret;
+	}
+	final bool IsDeleted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentException).get_IsDeleted(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentInvitee : Windows.ApplicationModel.Appointments.IAppointmentInvitee, Windows.ApplicationModel.Appointments.IAppointmentParticipant
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.AppointmentParticipantRole Role()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentParticipantRole _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentInvitee).get_Role(&_ret));
+		return _ret;
+	}
+	final void Role(Windows.ApplicationModel.Appointments.AppointmentParticipantRole value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentInvitee).set_Role(value));
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentParticipantResponse Response()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentParticipantResponse _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentInvitee).get_Response(&_ret));
+		return _ret;
+	}
+	final void Response(Windows.ApplicationModel.Appointments.AppointmentParticipantResponse value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentInvitee).set_Response(value));
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentParticipant).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentParticipant).set_DisplayName(value));
+	}
+	final HSTRING Address()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentParticipant).get_Address(&_ret));
+		return _ret;
+	}
+	final void Address(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentParticipant).set_Address(value));
+	}
 }
 
 interface AppointmentManager
@@ -486,10 +1138,116 @@ interface AppointmentManager
 
 interface AppointmentManagerForUser : Windows.ApplicationModel.Appointments.IAppointmentManagerForUser
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowAddAppointmentAsync(Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).abi_ShowAddAppointmentAsync(appointment, selection, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowAddAppointmentWithPlacementAsync(Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).abi_ShowAddAppointmentWithPlacementAsync(appointment, selection, preferredPlacement, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowReplaceAppointmentAsync(HSTRING appointmentId, Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).abi_ShowReplaceAppointmentAsync(appointmentId, appointment, selection, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowReplaceAppointmentWithPlacementAsync(HSTRING appointmentId, Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).abi_ShowReplaceAppointmentWithPlacementAsync(appointmentId, appointment, selection, preferredPlacement, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowReplaceAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.DateTime instanceStartDate)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).abi_ShowReplaceAppointmentWithPlacementAndDateAsync(appointmentId, appointment, selection, preferredPlacement, instanceStartDate, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) ShowRemoveAppointmentAsync(HSTRING appointmentId, Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).abi_ShowRemoveAppointmentAsync(appointmentId, selection, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) ShowRemoveAppointmentWithPlacementAsync(HSTRING appointmentId, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).abi_ShowRemoveAppointmentWithPlacementAsync(appointmentId, selection, preferredPlacement, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) ShowRemoveAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.DateTime instanceStartDate)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).abi_ShowRemoveAppointmentWithPlacementAndDateAsync(appointmentId, selection, preferredPlacement, instanceStartDate, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ShowTimeFrameAsync(Windows.Foundation.DateTime timeToShow, Windows.Foundation.TimeSpan duration)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).abi_ShowTimeFrameAsync(timeToShow, duration, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ShowAppointmentDetailsAsync(HSTRING appointmentId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).abi_ShowAppointmentDetailsAsync(appointmentId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ShowAppointmentDetailsWithDateAsync(HSTRING appointmentId, Windows.Foundation.DateTime instanceStartDate)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).abi_ShowAppointmentDetailsWithDateAsync(appointmentId, instanceStartDate, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowEditNewAppointmentAsync(Windows.ApplicationModel.Appointments.Appointment appointment)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).abi_ShowEditNewAppointmentAsync(appointment, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentStore) RequestStoreAsync(Windows.ApplicationModel.Appointments.AppointmentStoreAccessType options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentStore) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).abi_RequestStoreAsync(options, &_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentOrganizer : Windows.ApplicationModel.Appointments.IAppointmentParticipant
 {
+extern(Windows):
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentParticipant).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentParticipant).set_DisplayName(value));
+	}
+	final HSTRING Address()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentParticipant).get_Address(&_ret));
+		return _ret;
+	}
+	final void Address(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentParticipant).set_Address(value));
+	}
 }
 
 interface AppointmentProperties
@@ -498,30 +1256,327 @@ interface AppointmentProperties
 
 interface AppointmentRecurrence : Windows.ApplicationModel.Appointments.IAppointmentRecurrence, Windows.ApplicationModel.Appointments.IAppointmentRecurrence2, Windows.ApplicationModel.Appointments.IAppointmentRecurrence3
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.AppointmentRecurrenceUnit Unit()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentRecurrenceUnit _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).get_Unit(&_ret));
+		return _ret;
+	}
+	final void Unit(Windows.ApplicationModel.Appointments.AppointmentRecurrenceUnit value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).set_Unit(value));
+	}
+	final Windows.Foundation.IReference!(UINT32) Occurrences()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).get_Occurrences(&_ret));
+		return _ret;
+	}
+	final void Occurrences(Windows.Foundation.IReference!(UINT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).set_Occurrences(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Until()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).get_Until(&_ret));
+		return _ret;
+	}
+	final void Until(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).set_Until(value));
+	}
+	final UINT32 Interval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).get_Interval(&_ret));
+		return _ret;
+	}
+	final void Interval(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).set_Interval(value));
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentDaysOfWeek DaysOfWeek()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentDaysOfWeek _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).get_DaysOfWeek(&_ret));
+		return _ret;
+	}
+	final void DaysOfWeek(Windows.ApplicationModel.Appointments.AppointmentDaysOfWeek value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).set_DaysOfWeek(value));
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentWeekOfMonth WeekOfMonth()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentWeekOfMonth _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).get_WeekOfMonth(&_ret));
+		return _ret;
+	}
+	final void WeekOfMonth(Windows.ApplicationModel.Appointments.AppointmentWeekOfMonth value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).set_WeekOfMonth(value));
+	}
+	final UINT32 Month()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).get_Month(&_ret));
+		return _ret;
+	}
+	final void Month(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).set_Month(value));
+	}
+	final UINT32 Day()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).get_Day(&_ret));
+		return _ret;
+	}
+	final void Day(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence).set_Day(value));
+	}
+	final Windows.ApplicationModel.Appointments.RecurrenceType RecurrenceType()
+	{
+		Windows.ApplicationModel.Appointments.RecurrenceType _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence2).get_RecurrenceType(&_ret));
+		return _ret;
+	}
+	final HSTRING TimeZone()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence2).get_TimeZone(&_ret));
+		return _ret;
+	}
+	final void TimeZone(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence2).set_TimeZone(value));
+	}
+	final HSTRING CalendarIdentifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence3).get_CalendarIdentifier(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentStore : Windows.ApplicationModel.Appointments.IAppointmentStore, Windows.ApplicationModel.Appointments.IAppointmentStore2
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.AppointmentStoreChangeTracker ChangeTracker()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentStoreChangeTracker _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).get_ChangeTracker(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentCalendar) CreateAppointmentCalendarAsync(HSTRING name)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentCalendar) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_CreateAppointmentCalendarAsync(name, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentCalendar) GetAppointmentCalendarAsync(HSTRING calendarId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentCalendar) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_GetAppointmentCalendarAsync(calendarId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.Appointment) GetAppointmentAsync(HSTRING localId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.Appointment) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_GetAppointmentAsync(localId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.Appointment) GetAppointmentInstanceAsync(HSTRING localId, Windows.Foundation.DateTime instanceStartTime)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.Appointment) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_GetAppointmentInstanceAsync(localId, instanceStartTime, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentCalendar)) FindAppointmentCalendarsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentCalendar)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_FindAppointmentCalendarsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentCalendar)) FindAppointmentCalendarsAsyncWithOptions(Windows.ApplicationModel.Appointments.FindAppointmentCalendarsOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentCalendar)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_FindAppointmentCalendarsAsyncWithOptions(options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) FindAppointmentsAsync(Windows.Foundation.DateTime rangeStart, Windows.Foundation.TimeSpan rangeLength)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_FindAppointmentsAsync(rangeStart, rangeLength, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) FindAppointmentsAsyncWithOptions(Windows.Foundation.DateTime rangeStart, Windows.Foundation.TimeSpan rangeLength, Windows.ApplicationModel.Appointments.FindAppointmentsOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_FindAppointmentsAsyncWithOptions(rangeStart, rangeLength, options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentConflictResult) FindConflictAsync(Windows.ApplicationModel.Appointments.Appointment appointment)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentConflictResult) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_FindConflictAsync(appointment, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentConflictResult) FindConflictAsyncWithInstanceStart(Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.DateTime instanceStartTime)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentConflictResult) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_FindConflictAsyncWithInstanceStart(appointment, instanceStartTime, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MoveAppointmentAsync(Windows.ApplicationModel.Appointments.Appointment appointment, Windows.ApplicationModel.Appointments.AppointmentCalendar destinationCalendar)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_MoveAppointmentAsync(appointment, destinationCalendar, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowAddAppointmentAsync(Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_ShowAddAppointmentAsync(appointment, selection, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowReplaceAppointmentAsync(HSTRING localId, Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_ShowReplaceAppointmentAsync(localId, appointment, selection, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowReplaceAppointmentWithPlacementAndDateAsync(HSTRING localId, Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.DateTime instanceStartDate)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_ShowReplaceAppointmentWithPlacementAndDateAsync(localId, appointment, selection, preferredPlacement, instanceStartDate, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) ShowRemoveAppointmentAsync(HSTRING localId, Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_ShowRemoveAppointmentAsync(localId, selection, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) ShowRemoveAppointmentWithPlacementAndDateAsync(HSTRING localId, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.DateTime instanceStartDate)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_ShowRemoveAppointmentWithPlacementAndDateAsync(localId, selection, preferredPlacement, instanceStartDate, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ShowAppointmentDetailsAsync(HSTRING localId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_ShowAppointmentDetailsAsync(localId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ShowAppointmentDetailsWithDateAsync(HSTRING localId, Windows.Foundation.DateTime instanceStartDate)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_ShowAppointmentDetailsWithDateAsync(localId, instanceStartDate, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowEditNewAppointmentAsync(Windows.ApplicationModel.Appointments.Appointment appointment)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_ShowEditNewAppointmentAsync(appointment, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) FindLocalIdsFromRoamingIdAsync(HSTRING roamingId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_FindLocalIdsFromRoamingIdAsync(roamingId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentCalendar) CreateAppointmentCalendarInAccountAsync(HSTRING name, HSTRING userDataAccountId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentCalendar) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore2).abi_CreateAppointmentCalendarInAccountAsync(name, userDataAccountId, &_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentStoreChange : Windows.ApplicationModel.Appointments.IAppointmentStoreChange, Windows.ApplicationModel.Appointments.IAppointmentStoreChange2
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.Appointment Appointment()
+	{
+		Windows.ApplicationModel.Appointments.Appointment _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStoreChange).get_Appointment(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentStoreChangeType ChangeType()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentStoreChangeType _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStoreChange).get_ChangeType(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Appointments.AppointmentCalendar AppointmentCalendar()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentCalendar _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStoreChange2).get_AppointmentCalendar(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentStoreChangeReader : Windows.ApplicationModel.Appointments.IAppointmentStoreChangeReader
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentStoreChange)) ReadBatchAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentStoreChange)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStoreChangeReader).abi_ReadBatchAsync(&_ret));
+		return _ret;
+	}
+	final void AcceptChanges()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStoreChangeReader).abi_AcceptChanges());
+	}
+	final void AcceptChangesThrough(Windows.ApplicationModel.Appointments.AppointmentStoreChange lastChangeToAccept)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStoreChangeReader).abi_AcceptChangesThrough(lastChangeToAccept));
+	}
 }
 
 interface AppointmentStoreChangeTracker : Windows.ApplicationModel.Appointments.IAppointmentStoreChangeTracker
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.AppointmentStoreChangeReader GetChangeReader()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentStoreChangeReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStoreChangeTracker).abi_GetChangeReader(&_ret));
+		return _ret;
+	}
+	final void Enable()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStoreChangeTracker).abi_Enable());
+	}
+	final void Reset()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStoreChangeTracker).abi_Reset());
+	}
 }
 
 interface AppointmentStoreChangedDeferral : Windows.ApplicationModel.Appointments.IAppointmentStoreChangedDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStoreChangedDeferral).abi_Complete());
+	}
 }
 
 interface AppointmentStoreChangedEventArgs : Windows.ApplicationModel.Appointments.IAppointmentStoreChangedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.AppointmentStoreChangedDeferral GetDeferral()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentStoreChangedDeferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStoreChangedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentStoreNotificationTriggerDetails : Windows.ApplicationModel.Appointments.IAppointmentStoreNotificationTriggerDetails
@@ -530,6 +1585,39 @@ interface AppointmentStoreNotificationTriggerDetails : Windows.ApplicationModel.
 
 interface FindAppointmentsOptions : Windows.ApplicationModel.Appointments.IFindAppointmentsOptions
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(HSTRING) CalendarIds()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IFindAppointmentsOptions).get_CalendarIds(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) FetchProperties()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IFindAppointmentsOptions).get_FetchProperties(&_ret));
+		return _ret;
+	}
+	final bool IncludeHidden()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IFindAppointmentsOptions).get_IncludeHidden(&_ret));
+		return _ret;
+	}
+	final void IncludeHidden(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IFindAppointmentsOptions).set_IncludeHidden(value));
+	}
+	final UINT32 MaxCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IFindAppointmentsOptions).get_MaxCount(&_ret));
+		return _ret;
+	}
+	final void MaxCount(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IFindAppointmentsOptions).set_MaxCount(value));
+	}
 }
 
 enum AppointmentBusyStatus

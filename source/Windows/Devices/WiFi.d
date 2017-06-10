@@ -66,18 +66,146 @@ extern(Windows):
 
 interface WiFiAdapter : Windows.Devices.WiFi.IWiFiAdapter
 {
+extern(Windows):
+	final Windows.Networking.Connectivity.NetworkAdapter NetworkAdapter()
+	{
+		Windows.Networking.Connectivity.NetworkAdapter _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).get_NetworkAdapter(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ScanAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).abi_ScanAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.WiFi.WiFiNetworkReport NetworkReport()
+	{
+		Windows.Devices.WiFi.WiFiNetworkReport _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).get_NetworkReport(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).abi_ConnectAsync(availableNetwork, reconnectionKind, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectWithPasswordCredentialAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).abi_ConnectWithPasswordCredentialAsync(availableNetwork, reconnectionKind, passwordCredential, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectWithPasswordCredentialAndSsidAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential, HSTRING ssid)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).abi_ConnectWithPasswordCredentialAndSsidAsync(availableNetwork, reconnectionKind, passwordCredential, ssid, &_ret));
+		return _ret;
+	}
+	final void Disconnect()
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).abi_Disconnect());
+	}
 }
 
 interface WiFiAvailableNetwork : Windows.Devices.WiFi.IWiFiAvailableNetwork
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Uptime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_Uptime(&_ret));
+		return _ret;
+	}
+	final HSTRING Ssid()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_Ssid(&_ret));
+		return _ret;
+	}
+	final HSTRING Bssid()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_Bssid(&_ret));
+		return _ret;
+	}
+	final INT32 ChannelCenterFrequencyInKilohertz()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_ChannelCenterFrequencyInKilohertz(&_ret));
+		return _ret;
+	}
+	final double NetworkRssiInDecibelMilliwatts()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_NetworkRssiInDecibelMilliwatts(&_ret));
+		return _ret;
+	}
+	final BYTE SignalBars()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_SignalBars(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.WiFi.WiFiNetworkKind NetworkKind()
+	{
+		Windows.Devices.WiFi.WiFiNetworkKind _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_NetworkKind(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.WiFi.WiFiPhyKind PhyKind()
+	{
+		Windows.Devices.WiFi.WiFiPhyKind _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_PhyKind(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Connectivity.NetworkSecuritySettings SecuritySettings()
+	{
+		Windows.Networking.Connectivity.NetworkSecuritySettings _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_SecuritySettings(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan BeaconInterval()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_BeaconInterval(&_ret));
+		return _ret;
+	}
+	final bool IsWiFiDirect()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_IsWiFiDirect(&_ret));
+		return _ret;
+	}
 }
 
 interface WiFiConnectionResult : Windows.Devices.WiFi.IWiFiConnectionResult
 {
+extern(Windows):
+	final Windows.Devices.WiFi.WiFiConnectionStatus ConnectionStatus()
+	{
+		Windows.Devices.WiFi.WiFiConnectionStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiConnectionResult).get_ConnectionStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface WiFiNetworkReport : Windows.Devices.WiFi.IWiFiNetworkReport
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiNetworkReport).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFi.WiFiAvailableNetwork) AvailableNetworks()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFi.WiFiAvailableNetwork) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiNetworkReport).get_AvailableNetworks(&_ret));
+		return _ret;
+	}
 }
 
 enum WiFiAccessStatus

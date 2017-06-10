@@ -61,10 +61,114 @@ extern(Windows):
 
 interface HdmiDisplayInformation : Windows.Graphics.Display.Core.IHdmiDisplayInformation
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Display.Core.HdmiDisplayMode) GetSupportedDisplayModes()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Display.Core.HdmiDisplayMode) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_GetSupportedDisplayModes(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Display.Core.HdmiDisplayMode GetCurrentDisplayMode()
+	{
+		Windows.Graphics.Display.Core.HdmiDisplayMode _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_GetCurrentDisplayMode(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetDefaultDisplayModeAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_SetDefaultDisplayModeAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestSetCurrentDisplayModeAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_RequestSetCurrentDisplayModeAsync(mode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestSetCurrentDisplayModeWithHdrAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_RequestSetCurrentDisplayModeWithHdrAsync(mode, hdrOption, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestSetCurrentDisplayModeWithHdrAndMetadataAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption, Windows.Graphics.Display.Core.HdmiDisplayHdr2086Metadata hdrMetadata)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_RequestSetCurrentDisplayModeWithHdrAndMetadataAsync(mode, hdrOption, hdrMetadata, &_ret));
+		return _ret;
+	}
 }
 
 interface HdmiDisplayMode : Windows.Graphics.Display.Core.IHdmiDisplayMode
 {
+extern(Windows):
+	final UINT32 ResolutionWidthInRawPixels()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_ResolutionWidthInRawPixels(&_ret));
+		return _ret;
+	}
+	final UINT32 ResolutionHeightInRawPixels()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_ResolutionHeightInRawPixels(&_ret));
+		return _ret;
+	}
+	final double RefreshRate()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_RefreshRate(&_ret));
+		return _ret;
+	}
+	final bool StereoEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_StereoEnabled(&_ret));
+		return _ret;
+	}
+	final UINT16 BitsPerPixel()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_BitsPerPixel(&_ret));
+		return _ret;
+	}
+	final bool IsEqual(Windows.Graphics.Display.Core.HdmiDisplayMode mode)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).abi_IsEqual(mode, &_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Display.Core.HdmiDisplayColorSpace ColorSpace()
+	{
+		Windows.Graphics.Display.Core.HdmiDisplayColorSpace _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_ColorSpace(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Display.Core.HdmiDisplayPixelEncoding PixelEncoding()
+	{
+		Windows.Graphics.Display.Core.HdmiDisplayPixelEncoding _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_PixelEncoding(&_ret));
+		return _ret;
+	}
+	final bool IsSdrLuminanceSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_IsSdrLuminanceSupported(&_ret));
+		return _ret;
+	}
+	final bool IsSmpte2084Supported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_IsSmpte2084Supported(&_ret));
+		return _ret;
+	}
+	final bool Is2086MetadataSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_Is2086MetadataSupported(&_ret));
+		return _ret;
+	}
 }
 
 enum HdmiDisplayColorSpace

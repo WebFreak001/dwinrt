@@ -349,18 +349,192 @@ extern(Windows):
 
 interface BackgroundDownloader : Windows.Networking.BackgroundTransfer.IBackgroundDownloader, Windows.Networking.BackgroundTransfer.IBackgroundTransferBase, Windows.Networking.BackgroundTransfer.IBackgroundDownloader2, Windows.Networking.BackgroundTransfer.IBackgroundDownloader3
 {
+extern(Windows):
+	final Windows.Networking.BackgroundTransfer.DownloadOperation CreateDownload(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile)
+	{
+		Windows.Networking.BackgroundTransfer.DownloadOperation _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader).abi_CreateDownload(uri, resultFile, &_ret));
+		return _ret;
+	}
+	final Windows.Networking.BackgroundTransfer.DownloadOperation CreateDownloadFromFile(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Storage.IStorageFile requestBodyFile)
+	{
+		Windows.Networking.BackgroundTransfer.DownloadOperation _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader).abi_CreateDownloadFromFile(uri, resultFile, requestBodyFile, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.DownloadOperation) CreateDownloadAsync(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Storage.Streams.IInputStream requestBodyStream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.DownloadOperation) _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader).abi_CreateDownloadAsync(uri, resultFile, requestBodyStream, &_ret));
+		return _ret;
+	}
+	final void SetRequestHeader(HSTRING headerName, HSTRING headerValue)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).abi_SetRequestHeader(headerName, headerValue));
+	}
+	final Windows.Security.Credentials.PasswordCredential ServerCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_ServerCredential(&_ret));
+		return _ret;
+	}
+	final void ServerCredential(Windows.Security.Credentials.PasswordCredential credential)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_ServerCredential(credential));
+	}
+	final Windows.Security.Credentials.PasswordCredential ProxyCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_ProxyCredential(&_ret));
+		return _ret;
+	}
+	final void ProxyCredential(Windows.Security.Credentials.PasswordCredential credential)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_ProxyCredential(credential));
+	}
+	final HSTRING Method()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_Method(&_ret));
+		return _ret;
+	}
+	final void Method(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_Method(value));
+	}
+	deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")
+	final HSTRING Group()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_Group(&_ret));
+		return _ret;
+	}
+	deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")
+	final void Group(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_Group(value));
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy CostPolicy()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_CostPolicy(&_ret));
+		return _ret;
+	}
+	final void CostPolicy(Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_CostPolicy(value));
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundTransferGroup TransferGroup()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferGroup _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).get_TransferGroup(&_ret));
+		return _ret;
+	}
+	final void TransferGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferGroup value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).set_TransferGroup(value));
+	}
+	final Windows.UI.Notifications.ToastNotification SuccessToastNotification()
+	{
+		Windows.UI.Notifications.ToastNotification _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).get_SuccessToastNotification(&_ret));
+		return _ret;
+	}
+	final void SuccessToastNotification(Windows.UI.Notifications.ToastNotification value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).set_SuccessToastNotification(value));
+	}
+	final Windows.UI.Notifications.ToastNotification FailureToastNotification()
+	{
+		Windows.UI.Notifications.ToastNotification _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).get_FailureToastNotification(&_ret));
+		return _ret;
+	}
+	final void FailureToastNotification(Windows.UI.Notifications.ToastNotification value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).set_FailureToastNotification(value));
+	}
+	final Windows.UI.Notifications.TileNotification SuccessTileNotification()
+	{
+		Windows.UI.Notifications.TileNotification _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).get_SuccessTileNotification(&_ret));
+		return _ret;
+	}
+	final void SuccessTileNotification(Windows.UI.Notifications.TileNotification value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).set_SuccessTileNotification(value));
+	}
+	final Windows.UI.Notifications.TileNotification FailureTileNotification()
+	{
+		Windows.UI.Notifications.TileNotification _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).get_FailureTileNotification(&_ret));
+		return _ret;
+	}
+	final void FailureTileNotification(Windows.UI.Notifications.TileNotification value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).set_FailureTileNotification(value));
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup CompletionGroup()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader3).get_CompletionGroup(&_ret));
+		return _ret;
+	}
 }
 
 interface BackgroundTransferCompletionGroup : Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup
 {
+extern(Windows):
+	final Windows.ApplicationModel.Background.IBackgroundTrigger Trigger()
+	{
+		Windows.ApplicationModel.Background.IBackgroundTrigger _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup).get_Trigger(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final void Enable()
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup).abi_Enable());
+	}
 }
 
 interface BackgroundTransferCompletionGroupTriggerDetails : Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroupTriggerDetails
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation) Downloads()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation) _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroupTriggerDetails).get_Downloads(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation) Uploads()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroupTriggerDetails).get_Uploads(&_ret));
+		return _ret;
+	}
 }
 
 interface BackgroundTransferContentPart : Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPart
 {
+extern(Windows):
+	final void SetHeader(HSTRING headerName, HSTRING headerValue)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPart).abi_SetHeader(headerName, headerValue));
+	}
+	final void SetText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPart).abi_SetText(value));
+	}
+	final void SetFile(Windows.Storage.IStorageFile value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPart).abi_SetFile(value));
+	}
 }
 
 interface BackgroundTransferError
@@ -369,10 +543,170 @@ interface BackgroundTransferError
 
 interface BackgroundTransferGroup : Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundTransferBehavior TransferBehavior()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferBehavior _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup).get_TransferBehavior(&_ret));
+		return _ret;
+	}
+	final void TransferBehavior(Windows.Networking.BackgroundTransfer.BackgroundTransferBehavior value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup).set_TransferBehavior(value));
+	}
 }
 
 interface BackgroundUploader : Windows.Networking.BackgroundTransfer.IBackgroundUploader, Windows.Networking.BackgroundTransfer.IBackgroundTransferBase, Windows.Networking.BackgroundTransfer.IBackgroundUploader2, Windows.Networking.BackgroundTransfer.IBackgroundUploader3
 {
+extern(Windows):
+	final Windows.Networking.BackgroundTransfer.UploadOperation CreateUpload(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile sourceFile)
+	{
+		Windows.Networking.BackgroundTransfer.UploadOperation _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader).abi_CreateUpload(uri, sourceFile, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadFromStreamAsync(Windows.Foundation.Uri uri, Windows.Storage.Streams.IInputStream sourceStream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader).abi_CreateUploadFromStreamAsync(uri, sourceStream, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadWithFormDataAndAutoBoundaryAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader).abi_CreateUploadWithFormDataAndAutoBoundaryAsync(uri, parts, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadWithSubTypeAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader).abi_CreateUploadWithSubTypeAsync(uri, parts, subType, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadWithSubTypeAndBoundaryAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType, HSTRING boundary)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader).abi_CreateUploadWithSubTypeAndBoundaryAsync(uri, parts, subType, boundary, &_ret));
+		return _ret;
+	}
+	final void SetRequestHeader(HSTRING headerName, HSTRING headerValue)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).abi_SetRequestHeader(headerName, headerValue));
+	}
+	final Windows.Security.Credentials.PasswordCredential ServerCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_ServerCredential(&_ret));
+		return _ret;
+	}
+	final void ServerCredential(Windows.Security.Credentials.PasswordCredential credential)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_ServerCredential(credential));
+	}
+	final Windows.Security.Credentials.PasswordCredential ProxyCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_ProxyCredential(&_ret));
+		return _ret;
+	}
+	final void ProxyCredential(Windows.Security.Credentials.PasswordCredential credential)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_ProxyCredential(credential));
+	}
+	final HSTRING Method()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_Method(&_ret));
+		return _ret;
+	}
+	final void Method(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_Method(value));
+	}
+	deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")
+	final HSTRING Group()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_Group(&_ret));
+		return _ret;
+	}
+	deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")
+	final void Group(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_Group(value));
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy CostPolicy()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_CostPolicy(&_ret));
+		return _ret;
+	}
+	final void CostPolicy(Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_CostPolicy(value));
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundTransferGroup TransferGroup()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferGroup _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).get_TransferGroup(&_ret));
+		return _ret;
+	}
+	final void TransferGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferGroup value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).set_TransferGroup(value));
+	}
+	final Windows.UI.Notifications.ToastNotification SuccessToastNotification()
+	{
+		Windows.UI.Notifications.ToastNotification _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).get_SuccessToastNotification(&_ret));
+		return _ret;
+	}
+	final void SuccessToastNotification(Windows.UI.Notifications.ToastNotification value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).set_SuccessToastNotification(value));
+	}
+	final Windows.UI.Notifications.ToastNotification FailureToastNotification()
+	{
+		Windows.UI.Notifications.ToastNotification _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).get_FailureToastNotification(&_ret));
+		return _ret;
+	}
+	final void FailureToastNotification(Windows.UI.Notifications.ToastNotification value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).set_FailureToastNotification(value));
+	}
+	final Windows.UI.Notifications.TileNotification SuccessTileNotification()
+	{
+		Windows.UI.Notifications.TileNotification _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).get_SuccessTileNotification(&_ret));
+		return _ret;
+	}
+	final void SuccessTileNotification(Windows.UI.Notifications.TileNotification value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).set_SuccessTileNotification(value));
+	}
+	final Windows.UI.Notifications.TileNotification FailureTileNotification()
+	{
+		Windows.UI.Notifications.TileNotification _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).get_FailureTileNotification(&_ret));
+		return _ret;
+	}
+	final void FailureTileNotification(Windows.UI.Notifications.TileNotification value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).set_FailureTileNotification(value));
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup CompletionGroup()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader3).get_CompletionGroup(&_ret));
+		return _ret;
+	}
 }
 
 interface ContentPrefetcher
@@ -381,18 +715,235 @@ interface ContentPrefetcher
 
 interface DownloadOperation : Windows.Networking.BackgroundTransfer.IDownloadOperation, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority, Windows.Networking.BackgroundTransfer.IDownloadOperation2
 {
+extern(Windows):
+	final Windows.Storage.IStorageFile ResultFile()
+	{
+		Windows.Storage.IStorageFile _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation).get_ResultFile(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundDownloadProgress Progress()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundDownloadProgress _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation).get_Progress(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.DownloadOperation, Windows.Networking.BackgroundTransfer.DownloadOperation) StartAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.DownloadOperation, Windows.Networking.BackgroundTransfer.DownloadOperation) _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation).abi_StartAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.DownloadOperation, Windows.Networking.BackgroundTransfer.DownloadOperation) AttachAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.DownloadOperation, Windows.Networking.BackgroundTransfer.DownloadOperation) _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation).abi_AttachAsync(&_ret));
+		return _ret;
+	}
+	final void Pause()
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation).abi_Pause());
+	}
+	final void Resume()
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation).abi_Resume());
+	}
+	final GUID Guid()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_Guid(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri RequestedUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_RequestedUri(&_ret));
+		return _ret;
+	}
+	final HSTRING Method()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_Method(&_ret));
+		return _ret;
+	}
+	deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")
+	final HSTRING Group()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_Group(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy CostPolicy()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_CostPolicy(&_ret));
+		return _ret;
+	}
+	final void CostPolicy(Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).set_CostPolicy(value));
+	}
+	final Windows.Storage.Streams.IInputStream GetResultStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).abi_GetResultStreamAt(position, &_ret));
+		return _ret;
+	}
+	final Windows.Networking.BackgroundTransfer.ResponseInformation GetResponseInformation()
+	{
+		Windows.Networking.BackgroundTransfer.ResponseInformation _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).abi_GetResponseInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundTransferPriority Priority()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferPriority _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority).get_Priority(&_ret));
+		return _ret;
+	}
+	final void Priority(Windows.Networking.BackgroundTransfer.BackgroundTransferPriority value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority).set_Priority(value));
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundTransferGroup TransferGroup()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferGroup _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation2).get_TransferGroup(&_ret));
+		return _ret;
+	}
 }
 
 interface ResponseInformation : Windows.Networking.BackgroundTransfer.IResponseInformation
 {
+extern(Windows):
+	final bool IsResumable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IResponseInformation).get_IsResumable(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ActualUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IResponseInformation).get_ActualUri(&_ret));
+		return _ret;
+	}
+	final UINT32 StatusCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IResponseInformation).get_StatusCode(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) Headers()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IResponseInformation).get_Headers(&_ret));
+		return _ret;
+	}
 }
 
 interface UnconstrainedTransferRequestResult : Windows.Networking.BackgroundTransfer.IUnconstrainedTransferRequestResult
 {
+extern(Windows):
+	deprecated("IsUnconstrained is deprecated and may not work on all platforms. For more info, see MSDN.")
+	final bool IsUnconstrained()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IUnconstrainedTransferRequestResult).get_IsUnconstrained(&_ret));
+		return _ret;
+	}
 }
 
 interface UploadOperation : Windows.Networking.BackgroundTransfer.IUploadOperation, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority, Windows.Networking.BackgroundTransfer.IUploadOperation2
 {
+extern(Windows):
+	final Windows.Storage.IStorageFile SourceFile()
+	{
+		Windows.Storage.IStorageFile _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IUploadOperation).get_SourceFile(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundUploadProgress Progress()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundUploadProgress _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IUploadOperation).get_Progress(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation, Windows.Networking.BackgroundTransfer.UploadOperation) StartAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation, Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IUploadOperation).abi_StartAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation, Windows.Networking.BackgroundTransfer.UploadOperation) AttachAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation, Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IUploadOperation).abi_AttachAsync(&_ret));
+		return _ret;
+	}
+	final GUID Guid()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_Guid(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri RequestedUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_RequestedUri(&_ret));
+		return _ret;
+	}
+	final HSTRING Method()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_Method(&_ret));
+		return _ret;
+	}
+	deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")
+	final HSTRING Group()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_Group(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy CostPolicy()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_CostPolicy(&_ret));
+		return _ret;
+	}
+	final void CostPolicy(Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).set_CostPolicy(value));
+	}
+	final Windows.Storage.Streams.IInputStream GetResultStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).abi_GetResultStreamAt(position, &_ret));
+		return _ret;
+	}
+	final Windows.Networking.BackgroundTransfer.ResponseInformation GetResponseInformation()
+	{
+		Windows.Networking.BackgroundTransfer.ResponseInformation _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).abi_GetResponseInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundTransferPriority Priority()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferPriority _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority).get_Priority(&_ret));
+		return _ret;
+	}
+	final void Priority(Windows.Networking.BackgroundTransfer.BackgroundTransferPriority value)
+	{
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority).set_Priority(value));
+	}
+	final Windows.Networking.BackgroundTransfer.BackgroundTransferGroup TransferGroup()
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferGroup _ret;
+		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IUploadOperation2).get_TransferGroup(&_ret));
+		return _ret;
+	}
 }
 
 enum BackgroundTransferBehavior

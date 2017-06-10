@@ -311,66 +311,596 @@ extern(Windows):
 
 interface PaymentAddress : Windows.ApplicationModel.Payments.IPaymentAddress
 {
+extern(Windows):
+	final HSTRING Country()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_Country(&_ret));
+		return _ret;
+	}
+	final void Country(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_Country(value));
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) AddressLines()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_AddressLines(&_ret));
+		return _ret;
+	}
+	final void AddressLines(Windows.Foundation.Collections.IVectorView!(HSTRING) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_AddressLines(value));
+	}
+	final HSTRING Region()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_Region(&_ret));
+		return _ret;
+	}
+	final void Region(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_Region(value));
+	}
+	final HSTRING City()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_City(&_ret));
+		return _ret;
+	}
+	final void City(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_City(value));
+	}
+	final HSTRING DependentLocality()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_DependentLocality(&_ret));
+		return _ret;
+	}
+	final void DependentLocality(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_DependentLocality(value));
+	}
+	final HSTRING PostalCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_PostalCode(&_ret));
+		return _ret;
+	}
+	final void PostalCode(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_PostalCode(value));
+	}
+	final HSTRING SortingCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_SortingCode(&_ret));
+		return _ret;
+	}
+	final void SortingCode(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_SortingCode(value));
+	}
+	final HSTRING LanguageCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_LanguageCode(&_ret));
+		return _ret;
+	}
+	final void LanguageCode(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_LanguageCode(value));
+	}
+	final HSTRING Organization()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_Organization(&_ret));
+		return _ret;
+	}
+	final void Organization(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_Organization(value));
+	}
+	final HSTRING Recipient()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_Recipient(&_ret));
+		return _ret;
+	}
+	final void Recipient(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_Recipient(value));
+	}
+	final HSTRING PhoneNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_PhoneNumber(&_ret));
+		return _ret;
+	}
+	final void PhoneNumber(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_PhoneNumber(value));
+	}
+	final Windows.Foundation.Collections.ValueSet Properties()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface PaymentCurrencyAmount : Windows.ApplicationModel.Payments.IPaymentCurrencyAmount
 {
+extern(Windows):
+	final HSTRING Currency()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount).get_Currency(&_ret));
+		return _ret;
+	}
+	final void Currency(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount).set_Currency(value));
+	}
+	final HSTRING CurrencySystem()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount).get_CurrencySystem(&_ret));
+		return _ret;
+	}
+	final void CurrencySystem(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount).set_CurrencySystem(value));
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount).set_Value(value));
+	}
 }
 
 interface PaymentDetails : Windows.ApplicationModel.Payments.IPaymentDetails
 {
+extern(Windows):
+	final Windows.ApplicationModel.Payments.PaymentItem Total()
+	{
+		Windows.ApplicationModel.Payments.PaymentItem _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).get_Total(&_ret));
+		return _ret;
+	}
+	final void Total(Windows.ApplicationModel.Payments.PaymentItem value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).set_Total(value));
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentItem) DisplayItems()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentItem) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).get_DisplayItems(&_ret));
+		return _ret;
+	}
+	final void DisplayItems(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentItem) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).set_DisplayItems(value));
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentShippingOption) ShippingOptions()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentShippingOption) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).get_ShippingOptions(&_ret));
+		return _ret;
+	}
+	final void ShippingOptions(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentShippingOption) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).set_ShippingOptions(value));
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentDetailsModifier) Modifiers()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentDetailsModifier) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).get_Modifiers(&_ret));
+		return _ret;
+	}
+	final void Modifiers(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentDetailsModifier) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).set_Modifiers(value));
+	}
 }
 
 interface PaymentDetailsModifier : Windows.ApplicationModel.Payments.IPaymentDetailsModifier
 {
+extern(Windows):
+	final HSTRING JsonData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifier).get_JsonData(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) SupportedMethodIds()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifier).get_SupportedMethodIds(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Payments.PaymentItem Total()
+	{
+		Windows.ApplicationModel.Payments.PaymentItem _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifier).get_Total(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentItem) AdditionalDisplayItems()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentItem) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifier).get_AdditionalDisplayItems(&_ret));
+		return _ret;
+	}
 }
 
 interface PaymentItem : Windows.ApplicationModel.Payments.IPaymentItem
 {
+extern(Windows):
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentItem).get_Label(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentItem).set_Label(value));
+	}
+	final Windows.ApplicationModel.Payments.PaymentCurrencyAmount Amount()
+	{
+		Windows.ApplicationModel.Payments.PaymentCurrencyAmount _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentItem).get_Amount(&_ret));
+		return _ret;
+	}
+	final void Amount(Windows.ApplicationModel.Payments.PaymentCurrencyAmount value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentItem).set_Amount(value));
+	}
+	final bool Pending()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentItem).get_Pending(&_ret));
+		return _ret;
+	}
+	final void Pending(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentItem).set_Pending(value));
+	}
 }
 
 interface PaymentMediator : Windows.ApplicationModel.Payments.IPaymentMediator
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetSupportedMethodIdsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMediator).abi_GetSupportedMethodIdsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult) SubmitPaymentRequestAsync(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMediator).abi_SubmitPaymentRequestAsync(paymentRequest, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult) SubmitPaymentRequestWithChangeHandlerAsync(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest, Windows.ApplicationModel.Payments.PaymentRequestChangedHandler changeHandler)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMediator).abi_SubmitPaymentRequestWithChangeHandlerAsync(paymentRequest, changeHandler, &_ret));
+		return _ret;
+	}
 }
 
 interface PaymentMerchantInfo : Windows.ApplicationModel.Payments.IPaymentMerchantInfo
 {
+extern(Windows):
+	final HSTRING PackageFullName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMerchantInfo).get_PackageFullName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMerchantInfo).get_Uri(&_ret));
+		return _ret;
+	}
 }
 
 interface PaymentMethodData : Windows.ApplicationModel.Payments.IPaymentMethodData
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) SupportedMethodIds()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMethodData).get_SupportedMethodIds(&_ret));
+		return _ret;
+	}
+	final HSTRING JsonData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMethodData).get_JsonData(&_ret));
+		return _ret;
+	}
 }
 
 interface PaymentOptions : Windows.ApplicationModel.Payments.IPaymentOptions
 {
+extern(Windows):
+	final Windows.ApplicationModel.Payments.PaymentOptionPresence RequestPayerEmail()
+	{
+		Windows.ApplicationModel.Payments.PaymentOptionPresence _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).get_RequestPayerEmail(&_ret));
+		return _ret;
+	}
+	final void RequestPayerEmail(Windows.ApplicationModel.Payments.PaymentOptionPresence value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).set_RequestPayerEmail(value));
+	}
+	final Windows.ApplicationModel.Payments.PaymentOptionPresence RequestPayerName()
+	{
+		Windows.ApplicationModel.Payments.PaymentOptionPresence _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).get_RequestPayerName(&_ret));
+		return _ret;
+	}
+	final void RequestPayerName(Windows.ApplicationModel.Payments.PaymentOptionPresence value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).set_RequestPayerName(value));
+	}
+	final Windows.ApplicationModel.Payments.PaymentOptionPresence RequestPayerPhoneNumber()
+	{
+		Windows.ApplicationModel.Payments.PaymentOptionPresence _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).get_RequestPayerPhoneNumber(&_ret));
+		return _ret;
+	}
+	final void RequestPayerPhoneNumber(Windows.ApplicationModel.Payments.PaymentOptionPresence value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).set_RequestPayerPhoneNumber(value));
+	}
+	final bool RequestShipping()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).get_RequestShipping(&_ret));
+		return _ret;
+	}
+	final void RequestShipping(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).set_RequestShipping(value));
+	}
+	final Windows.ApplicationModel.Payments.PaymentShippingType ShippingType()
+	{
+		Windows.ApplicationModel.Payments.PaymentShippingType _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).get_ShippingType(&_ret));
+		return _ret;
+	}
+	final void ShippingType(Windows.ApplicationModel.Payments.PaymentShippingType value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).set_ShippingType(value));
+	}
 }
 
 interface PaymentRequest : Windows.ApplicationModel.Payments.IPaymentRequest
 {
+extern(Windows):
+	final Windows.ApplicationModel.Payments.PaymentMerchantInfo MerchantInfo()
+	{
+		Windows.ApplicationModel.Payments.PaymentMerchantInfo _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequest).get_MerchantInfo(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Payments.PaymentDetails Details()
+	{
+		Windows.ApplicationModel.Payments.PaymentDetails _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequest).get_Details(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentMethodData) MethodData()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentMethodData) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequest).get_MethodData(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Payments.PaymentOptions Options()
+	{
+		Windows.ApplicationModel.Payments.PaymentOptions _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequest).get_Options(&_ret));
+		return _ret;
+	}
 }
 
 interface PaymentRequestChangedArgs : Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Payments.PaymentRequestChangeKind ChangeKind()
+	{
+		Windows.ApplicationModel.Payments.PaymentRequestChangeKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs).get_ChangeKind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Payments.PaymentAddress ShippingAddress()
+	{
+		Windows.ApplicationModel.Payments.PaymentAddress _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs).get_ShippingAddress(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Payments.PaymentShippingOption SelectedShippingOption()
+	{
+		Windows.ApplicationModel.Payments.PaymentShippingOption _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs).get_SelectedShippingOption(&_ret));
+		return _ret;
+	}
+	final void Acknowledge(Windows.ApplicationModel.Payments.PaymentRequestChangedResult changeResult)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs).abi_Acknowledge(changeResult));
+	}
 }
 
 interface PaymentRequestChangedResult : Windows.ApplicationModel.Payments.IPaymentRequestChangedResult
 {
+extern(Windows):
+	final bool ChangeAcceptedByMerchant()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult).get_ChangeAcceptedByMerchant(&_ret));
+		return _ret;
+	}
+	final void ChangeAcceptedByMerchant(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult).set_ChangeAcceptedByMerchant(value));
+	}
+	final HSTRING Message()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult).get_Message(&_ret));
+		return _ret;
+	}
+	final void Message(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult).set_Message(value));
+	}
+	final Windows.ApplicationModel.Payments.PaymentDetails UpdatedPaymentDetails()
+	{
+		Windows.ApplicationModel.Payments.PaymentDetails _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult).get_UpdatedPaymentDetails(&_ret));
+		return _ret;
+	}
+	final void UpdatedPaymentDetails(Windows.ApplicationModel.Payments.PaymentDetails value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult).set_UpdatedPaymentDetails(value));
+	}
 }
 
 interface PaymentRequestSubmitResult : Windows.ApplicationModel.Payments.IPaymentRequestSubmitResult
 {
+extern(Windows):
+	final Windows.ApplicationModel.Payments.PaymentRequestStatus Status()
+	{
+		Windows.ApplicationModel.Payments.PaymentRequestStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestSubmitResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Payments.PaymentResponse Response()
+	{
+		Windows.ApplicationModel.Payments.PaymentResponse _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestSubmitResult).get_Response(&_ret));
+		return _ret;
+	}
 }
 
 interface PaymentResponse : Windows.ApplicationModel.Payments.IPaymentResponse
 {
+extern(Windows):
+	final Windows.ApplicationModel.Payments.PaymentToken PaymentToken()
+	{
+		Windows.ApplicationModel.Payments.PaymentToken _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).get_PaymentToken(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Payments.PaymentShippingOption ShippingOption()
+	{
+		Windows.ApplicationModel.Payments.PaymentShippingOption _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).get_ShippingOption(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Payments.PaymentAddress ShippingAddress()
+	{
+		Windows.ApplicationModel.Payments.PaymentAddress _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).get_ShippingAddress(&_ret));
+		return _ret;
+	}
+	final HSTRING PayerEmail()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).get_PayerEmail(&_ret));
+		return _ret;
+	}
+	final HSTRING PayerName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).get_PayerName(&_ret));
+		return _ret;
+	}
+	final HSTRING PayerPhoneNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).get_PayerPhoneNumber(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction CompleteAsync(Windows.ApplicationModel.Payments.PaymentRequestCompletionStatus status)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).abi_CompleteAsync(status, &_ret));
+		return _ret;
+	}
 }
 
 interface PaymentShippingOption : Windows.ApplicationModel.Payments.IPaymentShippingOption
 {
+extern(Windows):
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).get_Label(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).set_Label(value));
+	}
+	final Windows.ApplicationModel.Payments.PaymentCurrencyAmount Amount()
+	{
+		Windows.ApplicationModel.Payments.PaymentCurrencyAmount _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).get_Amount(&_ret));
+		return _ret;
+	}
+	final void Amount(Windows.ApplicationModel.Payments.PaymentCurrencyAmount value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).set_Amount(value));
+	}
+	final HSTRING Tag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).get_Tag(&_ret));
+		return _ret;
+	}
+	final void Tag(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).set_Tag(value));
+	}
+	final bool IsSelected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).get_IsSelected(&_ret));
+		return _ret;
+	}
+	final void IsSelected(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).set_IsSelected(value));
+	}
 }
 
 interface PaymentToken : Windows.ApplicationModel.Payments.IPaymentToken
 {
+extern(Windows):
+	final HSTRING PaymentMethodId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentToken).get_PaymentMethodId(&_ret));
+		return _ret;
+	}
+	final HSTRING JsonDetails()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentToken).get_JsonDetails(&_ret));
+		return _ret;
+	}
 }
 
 enum PaymentOptionPresence

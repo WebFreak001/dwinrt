@@ -178,6 +178,13 @@ extern(Windows):
 
 interface ConnectionRequestedEventArgs : Windows.Networking.Proximity.IConnectionRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Networking.Proximity.PeerInformation PeerInformation()
+	{
+		Windows.Networking.Proximity.PeerInformation _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IConnectionRequestedEventArgs).get_PeerInformation(&_ret));
+		return _ret;
+	}
 }
 
 interface PeerFinder
@@ -186,22 +193,181 @@ interface PeerFinder
 
 interface PeerInformation : Windows.Networking.Proximity.IPeerInformation, Windows.Networking.Proximity.IPeerInformation3, Windows.Networking.Proximity.IPeerInformationWithHostAndService
 {
+extern(Windows):
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerInformation).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerInformation3).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer DiscoveryData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerInformation3).get_DiscoveryData(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.HostName HostName()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerInformationWithHostAndService).get_HostName(&_ret));
+		return _ret;
+	}
+	final HSTRING ServiceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerInformationWithHostAndService).get_ServiceName(&_ret));
+		return _ret;
+	}
 }
 
 interface PeerWatcher : Windows.Networking.Proximity.IPeerWatcher
 {
+extern(Windows):
+	final Windows.Networking.Proximity.PeerWatcherStatus Status()
+	{
+		Windows.Networking.Proximity.PeerWatcherStatus _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).get_Status(&_ret));
+		return _ret;
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).abi_Stop());
+	}
 }
 
 interface ProximityDevice : Windows.Networking.Proximity.IProximityDevice
 {
+extern(Windows):
+	final INT64 SubscribeForMessage(HSTRING messageType, Windows.Networking.Proximity.MessageReceivedHandler messageReceivedHandler)
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_SubscribeForMessage(messageType, messageReceivedHandler, &_ret));
+		return _ret;
+	}
+	final INT64 PublishMessage(HSTRING messageType, HSTRING message)
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_PublishMessage(messageType, message, &_ret));
+		return _ret;
+	}
+	final INT64 PublishMessageWithCallback(HSTRING messageType, HSTRING message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_PublishMessageWithCallback(messageType, message, messageTransmittedHandler, &_ret));
+		return _ret;
+	}
+	final INT64 PublishBinaryMessage(HSTRING messageType, Windows.Storage.Streams.IBuffer message)
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_PublishBinaryMessage(messageType, message, &_ret));
+		return _ret;
+	}
+	final INT64 PublishBinaryMessageWithCallback(HSTRING messageType, Windows.Storage.Streams.IBuffer message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_PublishBinaryMessageWithCallback(messageType, message, messageTransmittedHandler, &_ret));
+		return _ret;
+	}
+	final INT64 PublishUriMessage(Windows.Foundation.Uri message)
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_PublishUriMessage(message, &_ret));
+		return _ret;
+	}
+	final INT64 PublishUriMessageWithCallback(Windows.Foundation.Uri message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_PublishUriMessageWithCallback(message, messageTransmittedHandler, &_ret));
+		return _ret;
+	}
+	final void StopSubscribingForMessage(INT64 subscriptionId)
+	{
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_StopSubscribingForMessage(subscriptionId));
+	}
+	final void StopPublishingMessage(INT64 messageId)
+	{
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_StopPublishingMessage(messageId));
+	}
+	final UINT32 MaxMessageBytes()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).get_MaxMessageBytes(&_ret));
+		return _ret;
+	}
+	final UINT64 BitsPerSecond()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).get_BitsPerSecond(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).get_DeviceId(&_ret));
+		return _ret;
+	}
 }
 
 interface ProximityMessage : Windows.Networking.Proximity.IProximityMessage
 {
+extern(Windows):
+	final HSTRING MessageType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityMessage).get_MessageType(&_ret));
+		return _ret;
+	}
+	final INT64 SubscriptionId()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityMessage).get_SubscriptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer Data()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityMessage).get_Data(&_ret));
+		return _ret;
+	}
+	final HSTRING DataAsString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityMessage).get_DataAsString(&_ret));
+		return _ret;
+	}
 }
 
 interface TriggeredConnectionStateChangedEventArgs : Windows.Networking.Proximity.ITriggeredConnectionStateChangedEventArgs
 {
+extern(Windows):
+	final Windows.Networking.Proximity.TriggeredConnectState State()
+	{
+		Windows.Networking.Proximity.TriggeredConnectState _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.ITriggeredConnectionStateChangedEventArgs).get_State(&_ret));
+		return _ret;
+	}
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.ITriggeredConnectionStateChangedEventArgs).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.StreamSocket Socket()
+	{
+		Windows.Networking.Sockets.StreamSocket _ret;
+		Debug.OK(this.as!(Windows.Networking.Proximity.ITriggeredConnectionStateChangedEventArgs).get_Socket(&_ret));
+		return _ret;
+	}
 }
 
 @bitflags

@@ -37,8 +37,58 @@ extern(Windows):
 
 interface VariablePhotoCapturedEventArgs : Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.CapturedFrame Frame()
+	{
+		Windows.Media.Capture.CapturedFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs).get_Frame(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan CaptureTimeOffset()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs).get_CaptureTimeOffset(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) UsedFrameControllerIndex()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs).get_UsedFrameControllerIndex(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.CapturedFrameControlValues CapturedFrameControlValues()
+	{
+		Windows.Media.Capture.CapturedFrameControlValues _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs).get_CapturedFrameControlValues(&_ret));
+		return _ret;
+	}
 }
 
 interface VariablePhotoSequenceCapture : Windows.Media.Capture.Core.IVariablePhotoSequenceCapture, Windows.Media.Capture.Core.IVariablePhotoSequenceCapture2
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction StartAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).abi_StartAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StopAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).abi_StopAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction FinishAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).abi_FinishAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction UpdateSettingsAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture2).abi_UpdateSettingsAsync(&_ret));
+		return _ret;
+	}
 }

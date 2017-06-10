@@ -124,6 +124,31 @@ interface StoreConfiguration
 
 interface StoreHardwareManufacturerInfo : Windows.ApplicationModel.Store.Preview.IStoreHardwareManufacturerInfo
 {
+extern(Windows):
+	final HSTRING HardwareManufacturerId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStoreHardwareManufacturerInfo).get_HardwareManufacturerId(&_ret));
+		return _ret;
+	}
+	final HSTRING StoreContentModifierId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStoreHardwareManufacturerInfo).get_StoreContentModifierId(&_ret));
+		return _ret;
+	}
+	final HSTRING ModelName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStoreHardwareManufacturerInfo).get_ModelName(&_ret));
+		return _ret;
+	}
+	final HSTRING ManufacturerName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStoreHardwareManufacturerInfo).get_ManufacturerName(&_ret));
+		return _ret;
+	}
 }
 
 interface StorePreview
@@ -132,14 +157,107 @@ interface StorePreview
 
 interface StorePreviewProductInfo : Windows.ApplicationModel.Store.Preview.IStorePreviewProductInfo
 {
+extern(Windows):
+	final HSTRING ProductId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewProductInfo).get_ProductId(&_ret));
+		return _ret;
+	}
+	final HSTRING ProductType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewProductInfo).get_ProductType(&_ret));
+		return _ret;
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewProductInfo).get_Title(&_ret));
+		return _ret;
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewProductInfo).get_Description(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Store.Preview.StorePreviewSkuInfo) SkuInfoList()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Store.Preview.StorePreviewSkuInfo) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewProductInfo).get_SkuInfoList(&_ret));
+		return _ret;
+	}
 }
 
 interface StorePreviewPurchaseResults : Windows.ApplicationModel.Store.Preview.IStorePreviewPurchaseResults
 {
+extern(Windows):
+	final Windows.ApplicationModel.Store.Preview.StorePreviewProductPurchaseStatus ProductPurchaseStatus()
+	{
+		Windows.ApplicationModel.Store.Preview.StorePreviewProductPurchaseStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewPurchaseResults).get_ProductPurchaseStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface StorePreviewSkuInfo : Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo
 {
+extern(Windows):
+	final HSTRING ProductId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo).get_ProductId(&_ret));
+		return _ret;
+	}
+	final HSTRING SkuId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo).get_SkuId(&_ret));
+		return _ret;
+	}
+	final HSTRING SkuType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo).get_SkuType(&_ret));
+		return _ret;
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo).get_Title(&_ret));
+		return _ret;
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo).get_Description(&_ret));
+		return _ret;
+	}
+	final HSTRING CustomDeveloperData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo).get_CustomDeveloperData(&_ret));
+		return _ret;
+	}
+	final HSTRING CurrencyCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo).get_CurrencyCode(&_ret));
+		return _ret;
+	}
+	final HSTRING FormattedListPrice()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo).get_FormattedListPrice(&_ret));
+		return _ret;
+	}
+	final HSTRING ExtendedData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo).get_ExtendedData(&_ret));
+		return _ret;
+	}
 }
 
 interface WebAuthenticationCoreManagerHelper

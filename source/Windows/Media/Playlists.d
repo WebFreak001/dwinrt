@@ -23,6 +23,31 @@ extern(Windows):
 
 interface Playlist : Windows.Media.Playlists.IPlaylist
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Storage.StorageFile) Files()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Media.Playlists.IPlaylist).get_Files(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Playlists.IPlaylist).abi_SaveAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) SaveAsAsync(Windows.Storage.IStorageFolder saveLocation, HSTRING desiredName, Windows.Storage.NameCollisionOption option)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Media.Playlists.IPlaylist).abi_SaveAsAsync(saveLocation, desiredName, option, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) SaveAsWithFormatAsync(Windows.Storage.IStorageFolder saveLocation, HSTRING desiredName, Windows.Storage.NameCollisionOption option, Windows.Media.Playlists.PlaylistFormat playlistFormat)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Media.Playlists.IPlaylist).abi_SaveAsWithFormatAsync(saveLocation, desiredName, option, playlistFormat, &_ret));
+		return _ret;
+	}
 }
 
 enum PlaylistFormat

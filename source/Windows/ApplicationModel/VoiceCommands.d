@@ -142,22 +142,155 @@ extern(Windows):
 
 interface VoiceCommand : Windows.ApplicationModel.VoiceCommands.IVoiceCommand
 {
+extern(Windows):
+	final HSTRING CommandName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommand).get_CommandName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Foundation.Collections.IVectorView!(HSTRING)) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommand).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognitionResult SpeechRecognitionResult()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionResult _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommand).get_SpeechRecognitionResult(&_ret));
+		return _ret;
+	}
 }
 
 interface VoiceCommandCompletedEventArgs : Windows.ApplicationModel.VoiceCommands.IVoiceCommandCompletedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletionReason Reason()
+	{
+		Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletionReason _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandCompletedEventArgs).get_Reason(&_ret));
+		return _ret;
+	}
 }
 
 interface VoiceCommandConfirmationResult : Windows.ApplicationModel.VoiceCommands.IVoiceCommandConfirmationResult
 {
+extern(Windows):
+	final bool Confirmed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandConfirmationResult).get_Confirmed(&_ret));
+		return _ret;
+	}
 }
 
 interface VoiceCommandContentTile : Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).set_Title(value));
+	}
+	final HSTRING TextLine1()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).get_TextLine1(&_ret));
+		return _ret;
+	}
+	final void TextLine1(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).set_TextLine1(value));
+	}
+	final HSTRING TextLine2()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).get_TextLine2(&_ret));
+		return _ret;
+	}
+	final void TextLine2(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).set_TextLine2(value));
+	}
+	final HSTRING TextLine3()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).get_TextLine3(&_ret));
+		return _ret;
+	}
+	final void TextLine3(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).set_TextLine3(value));
+	}
+	final Windows.Storage.IStorageFile Image()
+	{
+		Windows.Storage.IStorageFile _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).get_Image(&_ret));
+		return _ret;
+	}
+	final void Image(Windows.Storage.IStorageFile value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).set_Image(value));
+	}
+	final IInspectable AppContext()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).get_AppContext(&_ret));
+		return _ret;
+	}
+	final void AppContext(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).set_AppContext(value));
+	}
+	final HSTRING AppLaunchArgument()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).get_AppLaunchArgument(&_ret));
+		return _ret;
+	}
+	final void AppLaunchArgument(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).set_AppLaunchArgument(value));
+	}
+	final Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTileType ContentTileType()
+	{
+		Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTileType _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).get_ContentTileType(&_ret));
+		return _ret;
+	}
+	final void ContentTileType(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTileType value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).set_ContentTileType(value));
+	}
 }
 
 interface VoiceCommandDefinition : Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinition
 {
+extern(Windows):
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinition).get_Language(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinition).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetPhraseListAsync(HSTRING phraseListName, Windows.Foundation.Collections.IIterable!(HSTRING) phraseList)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinition).abi_SetPhraseListAsync(phraseListName, phraseList, &_ret));
+		return _ret;
+	}
 }
 
 interface VoiceCommandDefinitionManager
@@ -166,18 +299,132 @@ interface VoiceCommandDefinitionManager
 
 interface VoiceCommandDisambiguationResult : Windows.ApplicationModel.VoiceCommands.IVoiceCommandDisambiguationResult
 {
+extern(Windows):
+	final Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile SelectedItem()
+	{
+		Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandDisambiguationResult).get_SelectedItem(&_ret));
+		return _ret;
+	}
 }
 
 interface VoiceCommandResponse : Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse
 {
+extern(Windows):
+	final Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage Message()
+	{
+		Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse).get_Message(&_ret));
+		return _ret;
+	}
+	final void Message(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse).set_Message(value));
+	}
+	final Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage RepeatMessage()
+	{
+		Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse).get_RepeatMessage(&_ret));
+		return _ret;
+	}
+	final void RepeatMessage(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse).set_RepeatMessage(value));
+	}
+	final HSTRING AppLaunchArgument()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse).get_AppLaunchArgument(&_ret));
+		return _ret;
+	}
+	final void AppLaunchArgument(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse).set_AppLaunchArgument(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) VoiceCommandContentTiles()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse).get_VoiceCommandContentTiles(&_ret));
+		return _ret;
+	}
 }
 
 interface VoiceCommandServiceConnection : Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.VoiceCommands.VoiceCommand) GetVoiceCommandAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.VoiceCommands.VoiceCommand) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection).abi_GetVoiceCommandAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.VoiceCommands.VoiceCommandConfirmationResult) RequestConfirmationAsync(Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse response)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.VoiceCommands.VoiceCommandConfirmationResult) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection).abi_RequestConfirmationAsync(response, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.VoiceCommands.VoiceCommandDisambiguationResult) RequestDisambiguationAsync(Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse response)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.VoiceCommands.VoiceCommandDisambiguationResult) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection).abi_RequestDisambiguationAsync(response, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportProgressAsync(Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse response)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection).abi_ReportProgressAsync(response, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportSuccessAsync(Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse response)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection).abi_ReportSuccessAsync(response, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailureAsync(Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse response)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection).abi_ReportFailureAsync(response, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RequestAppLaunchAsync(Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse response)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection).abi_RequestAppLaunchAsync(response, &_ret));
+		return _ret;
+	}
+	final Windows.Globalization.Language Language()
+	{
+		Windows.Globalization.Language _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection).get_Language(&_ret));
+		return _ret;
+	}
 }
 
 interface VoiceCommandUserMessage : Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage
 {
+extern(Windows):
+	final HSTRING DisplayMessage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage).get_DisplayMessage(&_ret));
+		return _ret;
+	}
+	final void DisplayMessage(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage).set_DisplayMessage(value));
+	}
+	final HSTRING SpokenMessage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage).get_SpokenMessage(&_ret));
+		return _ret;
+	}
+	final void SpokenMessage(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage).set_SpokenMessage(value));
+	}
 }
 
 enum VoiceCommandCompletionReason

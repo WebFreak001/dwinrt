@@ -71,16 +71,110 @@ extern(Windows):
 
 interface NotePlacementChangedPreviewEventArgs : Windows.ApplicationModel.Preview.Notes.INotePlacementChangedPreviewEventArgs
 {
+extern(Windows):
+	final INT32 ViewId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotePlacementChangedPreviewEventArgs).get_ViewId(&_ret));
+		return _ret;
+	}
 }
 
 interface NoteVisibilityChangedPreviewEventArgs : Windows.ApplicationModel.Preview.Notes.INoteVisibilityChangedPreviewEventArgs
 {
+extern(Windows):
+	final INT32 ViewId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INoteVisibilityChangedPreviewEventArgs).get_ViewId(&_ret));
+		return _ret;
+	}
+	final bool IsVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INoteVisibilityChangedPreviewEventArgs).get_IsVisible(&_ret));
+		return _ret;
+	}
 }
 
 interface NotesWindowManagerPreview : Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2
 {
+extern(Windows):
+	final bool IsScreenLocked()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).get_IsScreenLocked(&_ret));
+		return _ret;
+	}
+	final void ShowNote(INT32 noteViewId)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_ShowNote(noteViewId));
+	}
+	final void ShowNoteRelativeTo(INT32 noteViewId, INT32 anchorNoteViewId)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_ShowNoteRelativeTo(noteViewId, anchorNoteViewId));
+	}
+	final void ShowNoteWithPlacement(INT32 noteViewId, Windows.Storage.Streams.IBuffer data)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_ShowNoteWithPlacement(noteViewId, data));
+	}
+	final void HideNote(INT32 noteViewId)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_HideNote(noteViewId));
+	}
+	final Windows.Storage.Streams.IBuffer GetNotePlacement(INT32 noteViewId)
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_GetNotePlacement(noteViewId, &_ret));
+		return _ret;
+	}
+	final bool TrySetNoteSize(INT32 noteViewId, Windows.Foundation.Size size)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_TrySetNoteSize(noteViewId, size, &_ret));
+		return _ret;
+	}
+	final void SetFocusToNextView()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_SetFocusToNextView());
+	}
+	final Windows.Foundation.IAsyncAction SetNotesThumbnailAsync(Windows.Storage.Streams.IBuffer thumbnail)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_SetNotesThumbnailAsync(thumbnail, &_ret));
+		return _ret;
+	}
+	final void ShowNoteRelativeToWithOptions(INT32 noteViewId, INT32 anchorNoteViewId, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2).abi_ShowNoteRelativeToWithOptions(noteViewId, anchorNoteViewId, options));
+	}
+	final void ShowNoteWithPlacementWithOptions(INT32 noteViewId, Windows.Storage.Streams.IBuffer data, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2).abi_ShowNoteWithPlacementWithOptions(noteViewId, data, options));
+	}
+	final void SetFocusToPreviousView()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2).abi_SetFocusToPreviousView());
+	}
+	final Windows.Foundation.IAsyncAction SetThumbnailImageForTaskSwitcherAsync(Windows.Graphics.Imaging.SoftwareBitmap bitmap)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2).abi_SetThumbnailImageForTaskSwitcherAsync(bitmap, &_ret));
+		return _ret;
+	}
 }
 
 interface NotesWindowManagerPreviewShowNoteOptions : Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewShowNoteOptions
 {
+extern(Windows):
+	final bool ShowWithFocus()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewShowNoteOptions).get_ShowWithFocus(&_ret));
+		return _ret;
+	}
+	final void ShowWithFocus(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewShowNoteOptions).set_ShowWithFocus(value));
+	}
 }

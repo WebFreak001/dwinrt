@@ -548,126 +548,1393 @@ extern(Windows):
 
 interface VpnAppId : Windows.Networking.Vpn.IVpnAppId
 {
+extern(Windows):
+	final Windows.Networking.Vpn.VpnAppIdType Type()
+	{
+		Windows.Networking.Vpn.VpnAppIdType _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnAppId).get_Type(&_ret));
+		return _ret;
+	}
+	final void Type(Windows.Networking.Vpn.VpnAppIdType value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnAppId).set_Type(value));
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnAppId).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnAppId).set_Value(value));
+	}
 }
 
 interface VpnChannel : Windows.Networking.Vpn.IVpnChannel, Windows.Networking.Vpn.IVpnChannel2
 {
+extern(Windows):
+	final void AssociateTransport(IInspectable mainOuterTunnelTransport, IInspectable optionalOuterTunnelTransport)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_AssociateTransport(mainOuterTunnelTransport, optionalOuterTunnelTransport));
+	}
+	final void Start(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv4list, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv6list, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment routeScope, Windows.Networking.Vpn.VpnNamespaceAssignment namespaceScope, UINT32 mtuSize, UINT32 maxFrameSize, bool optimizeForLowCostNetwork, IInspectable mainOuterTunnelTransport, IInspectable optionalOuterTunnelTransport)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_Start(assignedClientIPv4list, assignedClientIPv6list, vpnInterfaceId, routeScope, namespaceScope, mtuSize, maxFrameSize, optimizeForLowCostNetwork, mainOuterTunnelTransport, optionalOuterTunnelTransport));
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_Stop());
+	}
+	final Windows.Networking.Vpn.VpnPickedCredential RequestCredentials(Windows.Networking.Vpn.VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, Windows.Security.Cryptography.Certificates.Certificate certificate)
+	{
+		Windows.Networking.Vpn.VpnPickedCredential _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_RequestCredentials(credType, isRetry, isSingleSignOnCredential, certificate, &_ret));
+		return _ret;
+	}
+	final void RequestVpnPacketBuffer(Windows.Networking.Vpn.VpnDataPathType type, Windows.Networking.Vpn.VpnPacketBuffer* out_vpnPacketBuffer)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_RequestVpnPacketBuffer(type, out_vpnPacketBuffer));
+	}
+	final void LogDiagnosticMessage(HSTRING message)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_LogDiagnosticMessage(message));
+	}
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Vpn.VpnChannelConfiguration Configuration()
+	{
+		Windows.Networking.Vpn.VpnChannelConfiguration _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).get_Configuration(&_ret));
+		return _ret;
+	}
+	final void PlugInContext(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).set_PlugInContext(value));
+	}
+	final IInspectable PlugInContext()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).get_PlugInContext(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Vpn.VpnSystemHealth SystemHealth()
+	{
+		Windows.Networking.Vpn.VpnSystemHealth _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).get_SystemHealth(&_ret));
+		return _ret;
+	}
+	final void RequestCustomPrompt(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Vpn.IVpnCustomPrompt) customPrompt)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_RequestCustomPrompt(customPrompt));
+	}
+	final void SetErrorMessage(HSTRING message)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_SetErrorMessage(message));
+	}
+	final void SetAllowedSslTlsVersions(IInspectable tunnelTransport, bool useTls12)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_SetAllowedSslTlsVersions(tunnelTransport, useTls12));
+	}
+	final void StartWithMainTransport(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv4list, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv6list, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedDomainName, UINT32 mtuSize, UINT32 maxFrameSize, bool Reserved, IInspectable mainOuterTunnelTransport)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_StartWithMainTransport(assignedClientIPv4list, assignedClientIPv6list, vpnInterfaceId, assignedRoutes, assignedDomainName, mtuSize, maxFrameSize, Reserved, mainOuterTunnelTransport));
+	}
+	final void StartExistingTransports(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv4list, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv6list, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedDomainName, UINT32 mtuSize, UINT32 maxFrameSize, bool Reserved)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_StartExistingTransports(assignedClientIPv4list, assignedClientIPv6list, vpnInterfaceId, assignedRoutes, assignedDomainName, mtuSize, maxFrameSize, Reserved));
+	}
+	final Windows.Networking.Vpn.VpnPacketBuffer GetVpnSendPacketBuffer()
+	{
+		Windows.Networking.Vpn.VpnPacketBuffer _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_GetVpnSendPacketBuffer(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Vpn.VpnPacketBuffer GetVpnReceivePacketBuffer()
+	{
+		Windows.Networking.Vpn.VpnPacketBuffer _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_GetVpnReceivePacketBuffer(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RequestCustomPromptAsync(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Vpn.IVpnCustomPromptElement) customPromptElement)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_RequestCustomPromptAsync(customPromptElement, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsWithCertificateAsync(Windows.Networking.Vpn.VpnCredentialType credType, UINT32 credOptions, Windows.Security.Cryptography.Certificates.Certificate certificate)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_RequestCredentialsWithCertificateAsync(credType, credOptions, certificate, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsWithOptionsAsync(Windows.Networking.Vpn.VpnCredentialType credType, UINT32 credOptions)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_RequestCredentialsWithOptionsAsync(credType, credOptions, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsSimpleAsync(Windows.Networking.Vpn.VpnCredentialType credType)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_RequestCredentialsSimpleAsync(credType, &_ret));
+		return _ret;
+	}
+	final void TerminateConnection(HSTRING message)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_TerminateConnection(message));
+	}
+	final void StartWithTrafficFilter(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIpv4List, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIpv6List, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedNamespace, UINT32 mtuSize, UINT32 maxFrameSize, bool reserved, IInspectable mainOuterTunnelTransport, IInspectable optionalOuterTunnelTransport, Windows.Networking.Vpn.VpnTrafficFilterAssignment assignedTrafficFilters)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_StartWithTrafficFilter(assignedClientIpv4List, assignedClientIpv6List, vpnInterfaceId, assignedRoutes, assignedNamespace, mtuSize, maxFrameSize, reserved, mainOuterTunnelTransport, optionalOuterTunnelTransport, assignedTrafficFilters));
+	}
 }
 
 interface VpnChannelActivityEventArgs : Windows.Networking.Vpn.IVpnChannelActivityEventArgs
 {
+extern(Windows):
+	final Windows.Networking.Vpn.VpnChannelActivityEventType Type()
+	{
+		Windows.Networking.Vpn.VpnChannelActivityEventType _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannelActivityEventArgs).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnChannelActivityStateChangedArgs : Windows.Networking.Vpn.IVpnChannelActivityStateChangedArgs
 {
+extern(Windows):
+	final Windows.Networking.Vpn.VpnChannelActivityEventType ActivityState()
+	{
+		Windows.Networking.Vpn.VpnChannelActivityEventType _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannelActivityStateChangedArgs).get_ActivityState(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnChannelConfiguration : Windows.Networking.Vpn.IVpnChannelConfiguration, Windows.Networking.Vpn.IVpnChannelConfiguration2
 {
+extern(Windows):
+	final HSTRING ServerServiceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannelConfiguration).get_ServerServiceName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) ServerHostNameList()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannelConfiguration).get_ServerHostNameList(&_ret));
+		return _ret;
+	}
+	final HSTRING CustomField()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannelConfiguration).get_CustomField(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Uri) ServerUris()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Uri) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannelConfiguration2).get_ServerUris(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnCredential : Windows.Networking.Vpn.IVpnCredential
 {
+extern(Windows):
+	final Windows.Security.Credentials.PasswordCredential PasskeyCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCredential).get_PasskeyCredential(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Certificates.Certificate CertificateCredential()
+	{
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCredential).get_CertificateCredential(&_ret));
+		return _ret;
+	}
+	final HSTRING AdditionalPin()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCredential).get_AdditionalPin(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Credentials.PasswordCredential OldPasswordCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCredential).get_OldPasswordCredential(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnCustomCheckBox : Windows.Networking.Vpn.IVpnCustomCheckBox, Windows.Networking.Vpn.IVpnCustomPrompt
 {
+extern(Windows):
+	final void InitialCheckState(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomCheckBox).set_InitialCheckState(value));
+	}
+	final bool InitialCheckState()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomCheckBox).get_InitialCheckState(&_ret));
+		return _ret;
+	}
+	final bool Checked()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomCheckBox).get_Checked(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Label(value));
+	}
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Label(&_ret));
+		return _ret;
+	}
+	final void Compulsory(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Compulsory(value));
+	}
+	final bool Compulsory()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Compulsory(&_ret));
+		return _ret;
+	}
+	final void Bordered(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Bordered(value));
+	}
+	final bool Bordered()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnCustomComboBox : Windows.Networking.Vpn.IVpnCustomComboBox, Windows.Networking.Vpn.IVpnCustomPrompt
 {
+extern(Windows):
+	final void OptionsText(Windows.Foundation.Collections.IVectorView!(HSTRING) value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomComboBox).set_OptionsText(value));
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) OptionsText()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomComboBox).get_OptionsText(&_ret));
+		return _ret;
+	}
+	final UINT32 Selected()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomComboBox).get_Selected(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Label(value));
+	}
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Label(&_ret));
+		return _ret;
+	}
+	final void Compulsory(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Compulsory(value));
+	}
+	final bool Compulsory()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Compulsory(&_ret));
+		return _ret;
+	}
+	final void Bordered(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Bordered(value));
+	}
+	final bool Bordered()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnCustomEditBox : Windows.Networking.Vpn.IVpnCustomEditBox, Windows.Networking.Vpn.IVpnCustomPrompt
 {
+extern(Windows):
+	final void DefaultText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomEditBox).set_DefaultText(value));
+	}
+	final HSTRING DefaultText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomEditBox).get_DefaultText(&_ret));
+		return _ret;
+	}
+	final void NoEcho(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomEditBox).set_NoEcho(value));
+	}
+	final bool NoEcho()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomEditBox).get_NoEcho(&_ret));
+		return _ret;
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomEditBox).get_Text(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Label(value));
+	}
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Label(&_ret));
+		return _ret;
+	}
+	final void Compulsory(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Compulsory(value));
+	}
+	final bool Compulsory()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Compulsory(&_ret));
+		return _ret;
+	}
+	final void Bordered(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Bordered(value));
+	}
+	final bool Bordered()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnCustomErrorBox : Windows.Networking.Vpn.IVpnCustomErrorBox, Windows.Networking.Vpn.IVpnCustomPrompt
 {
+extern(Windows):
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Label(value));
+	}
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Label(&_ret));
+		return _ret;
+	}
+	final void Compulsory(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Compulsory(value));
+	}
+	final bool Compulsory()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Compulsory(&_ret));
+		return _ret;
+	}
+	final void Bordered(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Bordered(value));
+	}
+	final bool Bordered()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnCustomPromptBooleanInput : Windows.Networking.Vpn.IVpnCustomPromptBooleanInput, Windows.Networking.Vpn.IVpnCustomPromptElement
 {
+extern(Windows):
+	final void InitialValue(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptBooleanInput).set_InitialValue(value));
+	}
+	final bool InitialValue()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptBooleanInput).get_InitialValue(&_ret));
+		return _ret;
+	}
+	final bool Value()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptBooleanInput).get_Value(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_DisplayName(value));
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void Compulsory(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Compulsory(value));
+	}
+	final bool Compulsory()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Compulsory(&_ret));
+		return _ret;
+	}
+	final void Emphasized(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Emphasized(value));
+	}
+	final bool Emphasized()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Emphasized(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnCustomPromptOptionSelector : Windows.Networking.Vpn.IVpnCustomPromptOptionSelector, Windows.Networking.Vpn.IVpnCustomPromptElement
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(HSTRING) Options()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptOptionSelector).get_Options(&_ret));
+		return _ret;
+	}
+	final UINT32 SelectedIndex()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptOptionSelector).get_SelectedIndex(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_DisplayName(value));
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void Compulsory(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Compulsory(value));
+	}
+	final bool Compulsory()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Compulsory(&_ret));
+		return _ret;
+	}
+	final void Emphasized(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Emphasized(value));
+	}
+	final bool Emphasized()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Emphasized(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnCustomPromptText : Windows.Networking.Vpn.IVpnCustomPromptText, Windows.Networking.Vpn.IVpnCustomPromptElement
 {
+extern(Windows):
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptText).set_Text(value));
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptText).get_Text(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_DisplayName(value));
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void Compulsory(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Compulsory(value));
+	}
+	final bool Compulsory()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Compulsory(&_ret));
+		return _ret;
+	}
+	final void Emphasized(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Emphasized(value));
+	}
+	final bool Emphasized()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Emphasized(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnCustomPromptTextInput : Windows.Networking.Vpn.IVpnCustomPromptTextInput, Windows.Networking.Vpn.IVpnCustomPromptElement
 {
+extern(Windows):
+	final void PlaceholderText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptTextInput).set_PlaceholderText(value));
+	}
+	final HSTRING PlaceholderText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptTextInput).get_PlaceholderText(&_ret));
+		return _ret;
+	}
+	final void IsTextHidden(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptTextInput).set_IsTextHidden(value));
+	}
+	final bool IsTextHidden()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptTextInput).get_IsTextHidden(&_ret));
+		return _ret;
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptTextInput).get_Text(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_DisplayName(value));
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void Compulsory(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Compulsory(value));
+	}
+	final bool Compulsory()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Compulsory(&_ret));
+		return _ret;
+	}
+	final void Emphasized(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Emphasized(value));
+	}
+	final bool Emphasized()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Emphasized(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnCustomTextBox : Windows.Networking.Vpn.IVpnCustomTextBox, Windows.Networking.Vpn.IVpnCustomPrompt
 {
+extern(Windows):
+	final void DisplayText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomTextBox).set_DisplayText(value));
+	}
+	final HSTRING DisplayText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomTextBox).get_DisplayText(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Label(value));
+	}
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Label(&_ret));
+		return _ret;
+	}
+	final void Compulsory(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Compulsory(value));
+	}
+	final bool Compulsory()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Compulsory(&_ret));
+		return _ret;
+	}
+	final void Bordered(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Bordered(value));
+	}
+	final bool Bordered()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnDomainNameAssignment : Windows.Networking.Vpn.IVpnDomainNameAssignment
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnDomainNameInfo) DomainNameList()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnDomainNameInfo) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameAssignment).get_DomainNameList(&_ret));
+		return _ret;
+	}
+	final void ProxyAutoConfigurationUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameAssignment).set_ProxyAutoConfigurationUri(value));
+	}
+	final Windows.Foundation.Uri ProxyAutoConfigurationUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameAssignment).get_ProxyAutoConfigurationUri(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnDomainNameInfo : Windows.Networking.Vpn.IVpnDomainNameInfo, Windows.Networking.Vpn.IVpnDomainNameInfo2
 {
+extern(Windows):
+	final void DomainName(Windows.Networking.HostName value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo).set_DomainName(value));
+	}
+	final Windows.Networking.HostName DomainName()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo).get_DomainName(&_ret));
+		return _ret;
+	}
+	final void DomainNameType(Windows.Networking.Vpn.VpnDomainNameType value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo).set_DomainNameType(value));
+	}
+	final Windows.Networking.Vpn.VpnDomainNameType DomainNameType()
+	{
+		Windows.Networking.Vpn.VpnDomainNameType _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo).get_DomainNameType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) DnsServers()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo).get_DnsServers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) WebProxyServers()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo).get_WebProxyServers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) WebProxyUris()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo2).get_WebProxyUris(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnInterfaceId : Windows.Networking.Vpn.IVpnInterfaceId
 {
+extern(Windows):
+	final void GetAddressInfo(UINT32* out___idSize, BYTE** out_id)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnInterfaceId).abi_GetAddressInfo(out___idSize, out_id));
+	}
 }
 
 interface VpnManagementAgent : Windows.Networking.Vpn.IVpnManagementAgent
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) AddProfileFromXmlAsync(HSTRING xml)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_AddProfileFromXmlAsync(xml, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) AddProfileFromObjectAsync(Windows.Networking.Vpn.IVpnProfile profile)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_AddProfileFromObjectAsync(profile, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) UpdateProfileFromXmlAsync(HSTRING xml)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_UpdateProfileFromXmlAsync(xml, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) UpdateProfileFromObjectAsync(Windows.Networking.Vpn.IVpnProfile profile)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_UpdateProfileFromObjectAsync(profile, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Vpn.IVpnProfile)) GetProfilesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Vpn.IVpnProfile)) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_GetProfilesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) DeleteProfileAsync(Windows.Networking.Vpn.IVpnProfile profile)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_DeleteProfileAsync(profile, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) ConnectProfileAsync(Windows.Networking.Vpn.IVpnProfile profile)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_ConnectProfileAsync(profile, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) ConnectProfileWithPasswordCredentialAsync(Windows.Networking.Vpn.IVpnProfile profile, Windows.Security.Credentials.PasswordCredential passwordCredential)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_ConnectProfileWithPasswordCredentialAsync(profile, passwordCredential, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) DisconnectProfileAsync(Windows.Networking.Vpn.IVpnProfile profile)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_DisconnectProfileAsync(profile, &_ret));
+		return _ret;
+	}
 }
 
 interface VpnNamespaceAssignment : Windows.Networking.Vpn.IVpnNamespaceAssignment
 {
+extern(Windows):
+	final void NamespaceList(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnNamespaceInfo) value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceAssignment).set_NamespaceList(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnNamespaceInfo) NamespaceList()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnNamespaceInfo) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceAssignment).get_NamespaceList(&_ret));
+		return _ret;
+	}
+	final void ProxyAutoConfigUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceAssignment).set_ProxyAutoConfigUri(value));
+	}
+	final Windows.Foundation.Uri ProxyAutoConfigUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceAssignment).get_ProxyAutoConfigUri(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnNamespaceInfo : Windows.Networking.Vpn.IVpnNamespaceInfo
 {
+extern(Windows):
+	final void Namespace(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceInfo).set_Namespace(value));
+	}
+	final HSTRING Namespace()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceInfo).get_Namespace(&_ret));
+		return _ret;
+	}
+	final void DnsServers(Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceInfo).set_DnsServers(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) DnsServers()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceInfo).get_DnsServers(&_ret));
+		return _ret;
+	}
+	final void WebProxyServers(Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceInfo).set_WebProxyServers(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) WebProxyServers()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceInfo).get_WebProxyServers(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnNativeProfile : Windows.Networking.Vpn.IVpnNativeProfile, Windows.Networking.Vpn.IVpnProfile, Windows.Networking.Vpn.IVpnNativeProfile2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(HSTRING) Servers()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).get_Servers(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Vpn.VpnRoutingPolicyType RoutingPolicyType()
+	{
+		Windows.Networking.Vpn.VpnRoutingPolicyType _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).get_RoutingPolicyType(&_ret));
+		return _ret;
+	}
+	final void RoutingPolicyType(Windows.Networking.Vpn.VpnRoutingPolicyType value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).set_RoutingPolicyType(value));
+	}
+	final Windows.Networking.Vpn.VpnNativeProtocolType NativeProtocolType()
+	{
+		Windows.Networking.Vpn.VpnNativeProtocolType _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).get_NativeProtocolType(&_ret));
+		return _ret;
+	}
+	final void NativeProtocolType(Windows.Networking.Vpn.VpnNativeProtocolType value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).set_NativeProtocolType(value));
+	}
+	final Windows.Networking.Vpn.VpnAuthenticationMethod UserAuthenticationMethod()
+	{
+		Windows.Networking.Vpn.VpnAuthenticationMethod _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).get_UserAuthenticationMethod(&_ret));
+		return _ret;
+	}
+	final void UserAuthenticationMethod(Windows.Networking.Vpn.VpnAuthenticationMethod value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).set_UserAuthenticationMethod(value));
+	}
+	final Windows.Networking.Vpn.VpnAuthenticationMethod TunnelAuthenticationMethod()
+	{
+		Windows.Networking.Vpn.VpnAuthenticationMethod _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).get_TunnelAuthenticationMethod(&_ret));
+		return _ret;
+	}
+	final void TunnelAuthenticationMethod(Windows.Networking.Vpn.VpnAuthenticationMethod value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).set_TunnelAuthenticationMethod(value));
+	}
+	final HSTRING EapConfiguration()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).get_EapConfiguration(&_ret));
+		return _ret;
+	}
+	final void EapConfiguration(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).set_EapConfiguration(value));
+	}
+	final HSTRING ProfileName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_ProfileName(&_ret));
+		return _ret;
+	}
+	final void ProfileName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).set_ProfileName(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnAppId) AppTriggers()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnAppId) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_AppTriggers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) Routes()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_Routes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnDomainNameInfo) DomainNameInfoList()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnDomainNameInfo) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_DomainNameInfoList(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnTrafficFilter) TrafficFilters()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnTrafficFilter) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_TrafficFilters(&_ret));
+		return _ret;
+	}
+	final bool RememberCredentials()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_RememberCredentials(&_ret));
+		return _ret;
+	}
+	final void RememberCredentials(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).set_RememberCredentials(value));
+	}
+	final bool AlwaysOn()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_AlwaysOn(&_ret));
+		return _ret;
+	}
+	final void AlwaysOn(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).set_AlwaysOn(value));
+	}
+	final bool RequireVpnClientAppUI()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile2).get_RequireVpnClientAppUI(&_ret));
+		return _ret;
+	}
+	final void RequireVpnClientAppUI(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile2).set_RequireVpnClientAppUI(value));
+	}
+	final Windows.Networking.Vpn.VpnManagementConnectionStatus ConnectionStatus()
+	{
+		Windows.Networking.Vpn.VpnManagementConnectionStatus _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile2).get_ConnectionStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnPacketBuffer : Windows.Networking.Vpn.IVpnPacketBuffer, Windows.Networking.Vpn.IVpnPacketBuffer2
 {
+extern(Windows):
+	final Windows.Storage.Streams.Buffer Buffer()
+	{
+		Windows.Storage.Streams.Buffer _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBuffer).get_Buffer(&_ret));
+		return _ret;
+	}
+	final void Status(Windows.Networking.Vpn.VpnPacketBufferStatus value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBuffer).set_Status(value));
+	}
+	final Windows.Networking.Vpn.VpnPacketBufferStatus Status()
+	{
+		Windows.Networking.Vpn.VpnPacketBufferStatus _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBuffer).get_Status(&_ret));
+		return _ret;
+	}
+	final void TransportAffinity(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBuffer).set_TransportAffinity(value));
+	}
+	final UINT32 TransportAffinity()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBuffer).get_TransportAffinity(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Vpn.VpnAppId AppId()
+	{
+		Windows.Networking.Vpn.VpnAppId _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBuffer2).get_AppId(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnPacketBufferList : Windows.Networking.Vpn.IVpnPacketBufferList, Windows.Foundation.Collections.IIterable!(Windows.Networking.Vpn.VpnPacketBuffer)
 {
+extern(Windows):
+	final void Append(Windows.Networking.Vpn.VpnPacketBuffer nextVpnPacketBuffer)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).abi_Append(nextVpnPacketBuffer));
+	}
+	final void AddAtBegin(Windows.Networking.Vpn.VpnPacketBuffer nextVpnPacketBuffer)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).abi_AddAtBegin(nextVpnPacketBuffer));
+	}
+	final Windows.Networking.Vpn.VpnPacketBuffer RemoveAtEnd()
+	{
+		Windows.Networking.Vpn.VpnPacketBuffer _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).abi_RemoveAtEnd(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Vpn.VpnPacketBuffer RemoveAtBegin()
+	{
+		Windows.Networking.Vpn.VpnPacketBuffer _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).abi_RemoveAtBegin(&_ret));
+		return _ret;
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).abi_Clear());
+	}
+	final void Status(Windows.Networking.Vpn.VpnPacketBufferStatus value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).set_Status(value));
+	}
+	final Windows.Networking.Vpn.VpnPacketBufferStatus Status()
+	{
+		Windows.Networking.Vpn.VpnPacketBufferStatus _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).get_Status(&_ret));
+		return _ret;
+	}
+	final UINT32 Size()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).get_Size(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnPickedCredential : Windows.Networking.Vpn.IVpnPickedCredential
 {
+extern(Windows):
+	final Windows.Security.Credentials.PasswordCredential PasskeyCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPickedCredential).get_PasskeyCredential(&_ret));
+		return _ret;
+	}
+	final HSTRING AdditionalPin()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPickedCredential).get_AdditionalPin(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Credentials.PasswordCredential OldPasswordCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPickedCredential).get_OldPasswordCredential(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnPlugInProfile : Windows.Networking.Vpn.IVpnPlugInProfile, Windows.Networking.Vpn.IVpnProfile, Windows.Networking.Vpn.IVpnPlugInProfile2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) ServerUris()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile).get_ServerUris(&_ret));
+		return _ret;
+	}
+	final HSTRING CustomConfiguration()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile).get_CustomConfiguration(&_ret));
+		return _ret;
+	}
+	final void CustomConfiguration(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile).set_CustomConfiguration(value));
+	}
+	final HSTRING VpnPluginPackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile).get_VpnPluginPackageFamilyName(&_ret));
+		return _ret;
+	}
+	final void VpnPluginPackageFamilyName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile).set_VpnPluginPackageFamilyName(value));
+	}
+	final HSTRING ProfileName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_ProfileName(&_ret));
+		return _ret;
+	}
+	final void ProfileName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).set_ProfileName(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnAppId) AppTriggers()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnAppId) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_AppTriggers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) Routes()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_Routes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnDomainNameInfo) DomainNameInfoList()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnDomainNameInfo) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_DomainNameInfoList(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnTrafficFilter) TrafficFilters()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnTrafficFilter) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_TrafficFilters(&_ret));
+		return _ret;
+	}
+	final bool RememberCredentials()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_RememberCredentials(&_ret));
+		return _ret;
+	}
+	final void RememberCredentials(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).set_RememberCredentials(value));
+	}
+	final bool AlwaysOn()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_AlwaysOn(&_ret));
+		return _ret;
+	}
+	final void AlwaysOn(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).set_AlwaysOn(value));
+	}
+	final bool RequireVpnClientAppUI()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile2).get_RequireVpnClientAppUI(&_ret));
+		return _ret;
+	}
+	final void RequireVpnClientAppUI(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile2).set_RequireVpnClientAppUI(value));
+	}
+	final Windows.Networking.Vpn.VpnManagementConnectionStatus ConnectionStatus()
+	{
+		Windows.Networking.Vpn.VpnManagementConnectionStatus _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile2).get_ConnectionStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnRoute : Windows.Networking.Vpn.IVpnRoute
 {
+extern(Windows):
+	final void Address(Windows.Networking.HostName value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRoute).set_Address(value));
+	}
+	final Windows.Networking.HostName Address()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRoute).get_Address(&_ret));
+		return _ret;
+	}
+	final void PrefixSize(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRoute).set_PrefixSize(value));
+	}
+	final BYTE PrefixSize()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRoute).get_PrefixSize(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnRouteAssignment : Windows.Networking.Vpn.IVpnRouteAssignment
 {
+extern(Windows):
+	final void Ipv4InclusionRoutes(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).set_Ipv4InclusionRoutes(value));
+	}
+	final void Ipv6InclusionRoutes(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).set_Ipv6InclusionRoutes(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) Ipv4InclusionRoutes()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).get_Ipv4InclusionRoutes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) Ipv6InclusionRoutes()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).get_Ipv6InclusionRoutes(&_ret));
+		return _ret;
+	}
+	final void Ipv4ExclusionRoutes(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).set_Ipv4ExclusionRoutes(value));
+	}
+	final void Ipv6ExclusionRoutes(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).set_Ipv6ExclusionRoutes(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) Ipv4ExclusionRoutes()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).get_Ipv4ExclusionRoutes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) Ipv6ExclusionRoutes()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).get_Ipv6ExclusionRoutes(&_ret));
+		return _ret;
+	}
+	final void ExcludeLocalSubnets(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).set_ExcludeLocalSubnets(value));
+	}
+	final bool ExcludeLocalSubnets()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).get_ExcludeLocalSubnets(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnSystemHealth : Windows.Networking.Vpn.IVpnSystemHealth
 {
+extern(Windows):
+	final Windows.Storage.Streams.Buffer StatementOfHealth()
+	{
+		Windows.Storage.Streams.Buffer _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnSystemHealth).get_StatementOfHealth(&_ret));
+		return _ret;
+	}
 }
 
 interface VpnTrafficFilter : Windows.Networking.Vpn.IVpnTrafficFilter
 {
+extern(Windows):
+	final Windows.Networking.Vpn.VpnAppId AppId()
+	{
+		Windows.Networking.Vpn.VpnAppId _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_AppId(&_ret));
+		return _ret;
+	}
+	final void AppId(Windows.Networking.Vpn.VpnAppId value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).set_AppId(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) AppClaims()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_AppClaims(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Vpn.VpnIPProtocol Protocol()
+	{
+		Windows.Networking.Vpn.VpnIPProtocol _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_Protocol(&_ret));
+		return _ret;
+	}
+	final void Protocol(Windows.Networking.Vpn.VpnIPProtocol value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).set_Protocol(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) LocalPortRanges()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_LocalPortRanges(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) RemotePortRanges()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_RemotePortRanges(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) LocalAddressRanges()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_LocalAddressRanges(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) RemoteAddressRanges()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_RemoteAddressRanges(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Vpn.VpnRoutingPolicyType RoutingPolicyType()
+	{
+		Windows.Networking.Vpn.VpnRoutingPolicyType _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_RoutingPolicyType(&_ret));
+		return _ret;
+	}
+	final void RoutingPolicyType(Windows.Networking.Vpn.VpnRoutingPolicyType value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).set_RoutingPolicyType(value));
+	}
 }
 
 interface VpnTrafficFilterAssignment : Windows.Networking.Vpn.IVpnTrafficFilterAssignment
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnTrafficFilter) TrafficFilterList()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnTrafficFilter) _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilterAssignment).get_TrafficFilterList(&_ret));
+		return _ret;
+	}
+	final bool AllowOutbound()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilterAssignment).get_AllowOutbound(&_ret));
+		return _ret;
+	}
+	final void AllowOutbound(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilterAssignment).set_AllowOutbound(value));
+	}
+	final bool AllowInbound()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilterAssignment).get_AllowInbound(&_ret));
+		return _ret;
+	}
+	final void AllowInbound(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilterAssignment).set_AllowInbound(value));
+	}
 }
 
 enum VpnAppIdType

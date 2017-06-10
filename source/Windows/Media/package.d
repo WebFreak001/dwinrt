@@ -476,18 +476,142 @@ extern(Windows):
 
 interface AudioBuffer : Windows.Media.IAudioBuffer, Windows.Foundation.IMemoryBuffer, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final UINT32 Capacity()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.IAudioBuffer).get_Capacity(&_ret));
+		return _ret;
+	}
+	final UINT32 Length()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.IAudioBuffer).get_Length(&_ret));
+		return _ret;
+	}
+	final void Length(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.IAudioBuffer).set_Length(value));
+	}
+	final Windows.Foundation.IMemoryBufferReference CreateReference()
+	{
+		Windows.Foundation.IMemoryBufferReference _ret;
+		Debug.OK(this.as!(Windows.Foundation.IMemoryBuffer).abi_CreateReference(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface AudioFrame : Windows.Media.IAudioFrame, Windows.Media.IMediaFrame, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Media.AudioBuffer LockBuffer(Windows.Media.AudioBufferAccessMode mode)
+	{
+		Windows.Media.AudioBuffer _ret;
+		Debug.OK(this.as!(Windows.Media.IAudioFrame).abi_LockBuffer(mode, &_ret));
+		return _ret;
+	}
+	final HSTRING Type()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_Type(&_ret));
+		return _ret;
+	}
+	final bool IsReadOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_IsReadOnly(&_ret));
+		return _ret;
+	}
+	final void RelativeTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_RelativeTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) RelativeTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_RelativeTime(&_ret));
+		return _ret;
+	}
+	final void SystemRelativeTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_SystemRelativeTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) SystemRelativeTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_SystemRelativeTime(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_Duration(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Duration()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_Duration(&_ret));
+		return _ret;
+	}
+	final void IsDiscontinuous(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_IsDiscontinuous(value));
+	}
+	final bool IsDiscontinuous()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_IsDiscontinuous(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet ExtendedProperties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_ExtendedProperties(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface AutoRepeatModeChangeRequestedEventArgs : Windows.Media.IAutoRepeatModeChangeRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Media.MediaPlaybackAutoRepeatMode RequestedAutoRepeatMode()
+	{
+		Windows.Media.MediaPlaybackAutoRepeatMode _ret;
+		Debug.OK(this.as!(Windows.Media.IAutoRepeatModeChangeRequestedEventArgs).get_RequestedAutoRepeatMode(&_ret));
+		return _ret;
+	}
 }
 
 interface ImageDisplayProperties : Windows.Media.IImageDisplayProperties
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.IImageDisplayProperties).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.IImageDisplayProperties).set_Title(value));
+	}
+	final HSTRING Subtitle()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.IImageDisplayProperties).get_Subtitle(&_ret));
+		return _ret;
+	}
+	final void Subtitle(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.IImageDisplayProperties).set_Subtitle(value));
+	}
 }
 
 interface MediaControl
@@ -496,6 +620,59 @@ interface MediaControl
 
 interface MediaExtensionManager : Windows.Media.IMediaExtensionManager, Windows.Media.IMediaExtensionManager2
 {
+extern(Windows):
+	final void RegisterSchemeHandler(HSTRING activatableClassId, HSTRING scheme)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager).abi_RegisterSchemeHandler(activatableClassId, scheme));
+	}
+	final void RegisterSchemeHandlerWithSettings(HSTRING activatableClassId, HSTRING scheme, Windows.Foundation.Collections.IPropertySet configuration)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager).abi_RegisterSchemeHandlerWithSettings(activatableClassId, scheme, configuration));
+	}
+	final void RegisterByteStreamHandler(HSTRING activatableClassId, HSTRING fileExtension, HSTRING mimeType)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager).abi_RegisterByteStreamHandler(activatableClassId, fileExtension, mimeType));
+	}
+	final void RegisterByteStreamHandlerWithSettings(HSTRING activatableClassId, HSTRING fileExtension, HSTRING mimeType, Windows.Foundation.Collections.IPropertySet configuration)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager).abi_RegisterByteStreamHandlerWithSettings(activatableClassId, fileExtension, mimeType, configuration));
+	}
+	final void RegisterAudioDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager).abi_RegisterAudioDecoder(activatableClassId, inputSubtype, outputSubtype));
+	}
+	final void RegisterAudioDecoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager).abi_RegisterAudioDecoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
+	}
+	final void RegisterAudioEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager).abi_RegisterAudioEncoder(activatableClassId, inputSubtype, outputSubtype));
+	}
+	final void RegisterAudioEncoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager).abi_RegisterAudioEncoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
+	}
+	final void RegisterVideoDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager).abi_RegisterVideoDecoder(activatableClassId, inputSubtype, outputSubtype));
+	}
+	final void RegisterVideoDecoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager).abi_RegisterVideoDecoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
+	}
+	final void RegisterVideoEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager).abi_RegisterVideoEncoder(activatableClassId, inputSubtype, outputSubtype));
+	}
+	final void RegisterVideoEncoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager).abi_RegisterVideoEncoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
+	}
+	final void RegisterMediaExtensionForAppService(Windows.Media.IMediaExtension extension, Windows.ApplicationModel.AppService.AppServiceConnection connection)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager2).abi_RegisterMediaExtensionForAppService(extension, connection));
+	}
 }
 
 interface MediaMarkerTypes
@@ -504,54 +681,537 @@ interface MediaMarkerTypes
 
 interface MediaProcessingTriggerDetails : Windows.Media.IMediaProcessingTriggerDetails
 {
+extern(Windows):
+	final Windows.Foundation.Collections.ValueSet Arguments()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaProcessingTriggerDetails).get_Arguments(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaTimelineController : Windows.Media.IMediaTimelineController, Windows.Media.IMediaTimelineController2
 {
+extern(Windows):
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).abi_Start());
+	}
+	final void Resume()
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).abi_Resume());
+	}
+	final void Pause()
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).abi_Pause());
+	}
+	final Windows.Foundation.TimeSpan Position()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).get_Position(&_ret));
+		return _ret;
+	}
+	final void Position(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).set_Position(value));
+	}
+	final double ClockRate()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).get_ClockRate(&_ret));
+		return _ret;
+	}
+	final void ClockRate(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).set_ClockRate(value));
+	}
+	final Windows.Media.MediaTimelineControllerState State()
+	{
+		Windows.Media.MediaTimelineControllerState _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).get_State(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Duration()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController2).get_Duration(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController2).set_Duration(value));
+	}
+	final bool IsLoopingEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController2).get_IsLoopingEnabled(&_ret));
+		return _ret;
+	}
+	final void IsLoopingEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController2).set_IsLoopingEnabled(value));
+	}
 }
 
 interface MediaTimelineControllerFailedEventArgs : Windows.Media.IMediaTimelineControllerFailedEventArgs
 {
+extern(Windows):
+	final HRESULT ExtendedError()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineControllerFailedEventArgs).get_ExtendedError(&_ret));
+		return _ret;
+	}
 }
 
 interface MusicDisplayProperties : Windows.Media.IMusicDisplayProperties, Windows.Media.IMusicDisplayProperties2, Windows.Media.IMusicDisplayProperties3
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.IMusicDisplayProperties).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMusicDisplayProperties).set_Title(value));
+	}
+	final HSTRING AlbumArtist()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.IMusicDisplayProperties).get_AlbumArtist(&_ret));
+		return _ret;
+	}
+	final void AlbumArtist(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMusicDisplayProperties).set_AlbumArtist(value));
+	}
+	final HSTRING Artist()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.IMusicDisplayProperties).get_Artist(&_ret));
+		return _ret;
+	}
+	final void Artist(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMusicDisplayProperties).set_Artist(value));
+	}
+	final HSTRING AlbumTitle()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.IMusicDisplayProperties2).get_AlbumTitle(&_ret));
+		return _ret;
+	}
+	final void AlbumTitle(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMusicDisplayProperties2).set_AlbumTitle(value));
+	}
+	final UINT32 TrackNumber()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.IMusicDisplayProperties2).get_TrackNumber(&_ret));
+		return _ret;
+	}
+	final void TrackNumber(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMusicDisplayProperties2).set_TrackNumber(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Genres()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Media.IMusicDisplayProperties2).get_Genres(&_ret));
+		return _ret;
+	}
+	final UINT32 AlbumTrackCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.IMusicDisplayProperties3).get_AlbumTrackCount(&_ret));
+		return _ret;
+	}
+	final void AlbumTrackCount(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMusicDisplayProperties3).set_AlbumTrackCount(value));
+	}
 }
 
 interface PlaybackPositionChangeRequestedEventArgs : Windows.Media.IPlaybackPositionChangeRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan RequestedPlaybackPosition()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.IPlaybackPositionChangeRequestedEventArgs).get_RequestedPlaybackPosition(&_ret));
+		return _ret;
+	}
 }
 
 interface PlaybackRateChangeRequestedEventArgs : Windows.Media.IPlaybackRateChangeRequestedEventArgs
 {
+extern(Windows):
+	final double RequestedPlaybackRate()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.IPlaybackRateChangeRequestedEventArgs).get_RequestedPlaybackRate(&_ret));
+		return _ret;
+	}
 }
 
 interface ShuffleEnabledChangeRequestedEventArgs : Windows.Media.IShuffleEnabledChangeRequestedEventArgs
 {
+extern(Windows):
+	final bool RequestedShuffleEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.IShuffleEnabledChangeRequestedEventArgs).get_RequestedShuffleEnabled(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemMediaTransportControls : Windows.Media.ISystemMediaTransportControls, Windows.Media.ISystemMediaTransportControls2
 {
+extern(Windows):
+	final Windows.Media.MediaPlaybackStatus PlaybackStatus()
+	{
+		Windows.Media.MediaPlaybackStatus _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_PlaybackStatus(&_ret));
+		return _ret;
+	}
+	final void PlaybackStatus(Windows.Media.MediaPlaybackStatus value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_PlaybackStatus(value));
+	}
+	final Windows.Media.SystemMediaTransportControlsDisplayUpdater DisplayUpdater()
+	{
+		Windows.Media.SystemMediaTransportControlsDisplayUpdater _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_DisplayUpdater(&_ret));
+		return _ret;
+	}
+	final Windows.Media.SoundLevel SoundLevel()
+	{
+		Windows.Media.SoundLevel _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_SoundLevel(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final void IsEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_IsEnabled(value));
+	}
+	final bool IsPlayEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_IsPlayEnabled(&_ret));
+		return _ret;
+	}
+	final void IsPlayEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_IsPlayEnabled(value));
+	}
+	final bool IsStopEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_IsStopEnabled(&_ret));
+		return _ret;
+	}
+	final void IsStopEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_IsStopEnabled(value));
+	}
+	final bool IsPauseEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_IsPauseEnabled(&_ret));
+		return _ret;
+	}
+	final void IsPauseEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_IsPauseEnabled(value));
+	}
+	final bool IsRecordEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_IsRecordEnabled(&_ret));
+		return _ret;
+	}
+	final void IsRecordEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_IsRecordEnabled(value));
+	}
+	final bool IsFastForwardEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_IsFastForwardEnabled(&_ret));
+		return _ret;
+	}
+	final void IsFastForwardEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_IsFastForwardEnabled(value));
+	}
+	final bool IsRewindEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_IsRewindEnabled(&_ret));
+		return _ret;
+	}
+	final void IsRewindEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_IsRewindEnabled(value));
+	}
+	final bool IsPreviousEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_IsPreviousEnabled(&_ret));
+		return _ret;
+	}
+	final void IsPreviousEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_IsPreviousEnabled(value));
+	}
+	final bool IsNextEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_IsNextEnabled(&_ret));
+		return _ret;
+	}
+	final void IsNextEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_IsNextEnabled(value));
+	}
+	final bool IsChannelUpEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_IsChannelUpEnabled(&_ret));
+		return _ret;
+	}
+	final void IsChannelUpEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_IsChannelUpEnabled(value));
+	}
+	final bool IsChannelDownEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).get_IsChannelDownEnabled(&_ret));
+		return _ret;
+	}
+	final void IsChannelDownEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_IsChannelDownEnabled(value));
+	}
+	final Windows.Media.MediaPlaybackAutoRepeatMode AutoRepeatMode()
+	{
+		Windows.Media.MediaPlaybackAutoRepeatMode _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).get_AutoRepeatMode(&_ret));
+		return _ret;
+	}
+	final void AutoRepeatMode(Windows.Media.MediaPlaybackAutoRepeatMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).set_AutoRepeatMode(value));
+	}
+	final bool ShuffleEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).get_ShuffleEnabled(&_ret));
+		return _ret;
+	}
+	final void ShuffleEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).set_ShuffleEnabled(value));
+	}
+	final double PlaybackRate()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).get_PlaybackRate(&_ret));
+		return _ret;
+	}
+	final void PlaybackRate(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).set_PlaybackRate(value));
+	}
+	final void UpdateTimelineProperties(Windows.Media.SystemMediaTransportControlsTimelineProperties timelineProperties)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).abi_UpdateTimelineProperties(timelineProperties));
+	}
 }
 
 interface SystemMediaTransportControlsButtonPressedEventArgs : Windows.Media.ISystemMediaTransportControlsButtonPressedEventArgs
 {
+extern(Windows):
+	final Windows.Media.SystemMediaTransportControlsButton Button()
+	{
+		Windows.Media.SystemMediaTransportControlsButton _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsButtonPressedEventArgs).get_Button(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemMediaTransportControlsDisplayUpdater : Windows.Media.ISystemMediaTransportControlsDisplayUpdater
 {
+extern(Windows):
+	final Windows.Media.MediaPlaybackType Type()
+	{
+		Windows.Media.MediaPlaybackType _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsDisplayUpdater).get_Type(&_ret));
+		return _ret;
+	}
+	final void Type(Windows.Media.MediaPlaybackType value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsDisplayUpdater).set_Type(value));
+	}
+	final HSTRING AppMediaId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsDisplayUpdater).get_AppMediaId(&_ret));
+		return _ret;
+	}
+	final void AppMediaId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsDisplayUpdater).set_AppMediaId(value));
+	}
+	final Windows.Storage.Streams.RandomAccessStreamReference Thumbnail()
+	{
+		Windows.Storage.Streams.RandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsDisplayUpdater).get_Thumbnail(&_ret));
+		return _ret;
+	}
+	final void Thumbnail(Windows.Storage.Streams.RandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsDisplayUpdater).set_Thumbnail(value));
+	}
+	final Windows.Media.MusicDisplayProperties MusicProperties()
+	{
+		Windows.Media.MusicDisplayProperties _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsDisplayUpdater).get_MusicProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Media.VideoDisplayProperties VideoProperties()
+	{
+		Windows.Media.VideoDisplayProperties _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsDisplayUpdater).get_VideoProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Media.ImageDisplayProperties ImageProperties()
+	{
+		Windows.Media.ImageDisplayProperties _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsDisplayUpdater).get_ImageProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) CopyFromFileAsync(Windows.Media.MediaPlaybackType type, Windows.Storage.StorageFile source)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsDisplayUpdater).abi_CopyFromFileAsync(type, source, &_ret));
+		return _ret;
+	}
+	final void ClearAll()
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsDisplayUpdater).abi_ClearAll());
+	}
+	final void Update()
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsDisplayUpdater).abi_Update());
+	}
 }
 
 interface SystemMediaTransportControlsPropertyChangedEventArgs : Windows.Media.ISystemMediaTransportControlsPropertyChangedEventArgs
 {
+extern(Windows):
+	final Windows.Media.SystemMediaTransportControlsProperty Property()
+	{
+		Windows.Media.SystemMediaTransportControlsProperty _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsPropertyChangedEventArgs).get_Property(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemMediaTransportControlsTimelineProperties : Windows.Media.ISystemMediaTransportControlsTimelineProperties
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan StartTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsTimelineProperties).get_StartTime(&_ret));
+		return _ret;
+	}
+	final void StartTime(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsTimelineProperties).set_StartTime(value));
+	}
+	final Windows.Foundation.TimeSpan EndTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsTimelineProperties).get_EndTime(&_ret));
+		return _ret;
+	}
+	final void EndTime(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsTimelineProperties).set_EndTime(value));
+	}
+	final Windows.Foundation.TimeSpan MinSeekTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsTimelineProperties).get_MinSeekTime(&_ret));
+		return _ret;
+	}
+	final void MinSeekTime(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsTimelineProperties).set_MinSeekTime(value));
+	}
+	final Windows.Foundation.TimeSpan MaxSeekTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsTimelineProperties).get_MaxSeekTime(&_ret));
+		return _ret;
+	}
+	final void MaxSeekTime(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsTimelineProperties).set_MaxSeekTime(value));
+	}
+	final Windows.Foundation.TimeSpan Position()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsTimelineProperties).get_Position(&_ret));
+		return _ret;
+	}
+	final void Position(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsTimelineProperties).set_Position(value));
+	}
 }
 
 interface VideoDisplayProperties : Windows.Media.IVideoDisplayProperties, Windows.Media.IVideoDisplayProperties2
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.IVideoDisplayProperties).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.IVideoDisplayProperties).set_Title(value));
+	}
+	final HSTRING Subtitle()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.IVideoDisplayProperties).get_Subtitle(&_ret));
+		return _ret;
+	}
+	final void Subtitle(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.IVideoDisplayProperties).set_Subtitle(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Genres()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Media.IVideoDisplayProperties2).get_Genres(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoEffects
@@ -560,6 +1220,87 @@ interface VideoEffects
 
 interface VideoFrame : Windows.Media.IVideoFrame, Windows.Media.IMediaFrame, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Graphics.Imaging.SoftwareBitmap SoftwareBitmap()
+	{
+		Windows.Graphics.Imaging.SoftwareBitmap _ret;
+		Debug.OK(this.as!(Windows.Media.IVideoFrame).get_SoftwareBitmap(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction CopyToAsync(Windows.Media.VideoFrame frame)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.IVideoFrame).abi_CopyToAsync(frame, &_ret));
+		return _ret;
+	}
+	final Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface Direct3DSurface()
+	{
+		Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface _ret;
+		Debug.OK(this.as!(Windows.Media.IVideoFrame).get_Direct3DSurface(&_ret));
+		return _ret;
+	}
+	final HSTRING Type()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_Type(&_ret));
+		return _ret;
+	}
+	final bool IsReadOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_IsReadOnly(&_ret));
+		return _ret;
+	}
+	final void RelativeTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_RelativeTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) RelativeTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_RelativeTime(&_ret));
+		return _ret;
+	}
+	final void SystemRelativeTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_SystemRelativeTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) SystemRelativeTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_SystemRelativeTime(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_Duration(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Duration()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_Duration(&_ret));
+		return _ret;
+	}
+	final void IsDiscontinuous(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_IsDiscontinuous(value));
+	}
+	final bool IsDiscontinuous()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_IsDiscontinuous(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet ExtendedProperties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_ExtendedProperties(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 enum AudioBufferAccessMode

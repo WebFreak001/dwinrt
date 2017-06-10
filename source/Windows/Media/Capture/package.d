@@ -1259,34 +1259,376 @@ extern(Windows):
 
 interface AdvancedCapturedPhoto : Windows.Media.Capture.IAdvancedCapturedPhoto, Windows.Media.Capture.IAdvancedCapturedPhoto2
 {
+extern(Windows):
+	final Windows.Media.Capture.CapturedFrame Frame()
+	{
+		Windows.Media.Capture.CapturedFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedCapturedPhoto).get_Frame(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.AdvancedPhotoMode Mode()
+	{
+		Windows.Media.Devices.AdvancedPhotoMode _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedCapturedPhoto).get_Mode(&_ret));
+		return _ret;
+	}
+	final IInspectable Context()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedCapturedPhoto).get_Context(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.Rect) FrameBoundsRelativeToReferencePhoto()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.Rect) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedCapturedPhoto2).get_FrameBoundsRelativeToReferencePhoto(&_ret));
+		return _ret;
+	}
 }
 
 interface AdvancedPhotoCapture : Windows.Media.Capture.IAdvancedPhotoCapture
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto) CaptureAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedPhotoCapture).abi_CaptureAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto) CaptureWithContextAsync(IInspectable context)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedPhotoCapture).abi_CaptureWithContextAsync(context, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction FinishAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedPhotoCapture).abi_FinishAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastBackgroundService : Windows.Media.Capture.IAppBroadcastBackgroundService
 {
+extern(Windows):
+	final void PlugInState(Windows.Media.Capture.AppBroadcastPlugInState value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).set_PlugInState(value));
+	}
+	final Windows.Media.Capture.AppBroadcastPlugInState PlugInState()
+	{
+		Windows.Media.Capture.AppBroadcastPlugInState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_PlugInState(&_ret));
+		return _ret;
+	}
+	final void SignInInfo(Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).set_SignInInfo(value));
+	}
+	final Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo SignInInfo()
+	{
+		Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_SignInInfo(&_ret));
+		return _ret;
+	}
+	final void StreamInfo(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).set_StreamInfo(value));
+	}
+	final Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo StreamInfo()
+	{
+		Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_StreamInfo(&_ret));
+		return _ret;
+	}
+	final HSTRING AppId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_AppId(&_ret));
+		return _ret;
+	}
+	final HSTRING BroadcastTitle()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_BroadcastTitle(&_ret));
+		return _ret;
+	}
+	final void ViewerCount(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).set_ViewerCount(value));
+	}
+	final UINT32 ViewerCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_ViewerCount(&_ret));
+		return _ret;
+	}
+	final void TerminateBroadcast(Windows.Media.Capture.AppBroadcastTerminationReason reason, UINT32 providerSpecificReason)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).abi_TerminateBroadcast(reason, providerSpecificReason));
+	}
+	final HSTRING TitleId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_TitleId(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastBackgroundServiceSignInInfo : Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo
 {
+extern(Windows):
+	final Windows.Media.Capture.AppBroadcastSignInState SignInState()
+	{
+		Windows.Media.Capture.AppBroadcastSignInState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).get_SignInState(&_ret));
+		return _ret;
+	}
+	final void OAuthRequestUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).set_OAuthRequestUri(value));
+	}
+	final Windows.Foundation.Uri OAuthRequestUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).get_OAuthRequestUri(&_ret));
+		return _ret;
+	}
+	final void OAuthCallbackUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).set_OAuthCallbackUri(value));
+	}
+	final Windows.Foundation.Uri OAuthCallbackUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).get_OAuthCallbackUri(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.WebAuthenticationResult AuthenticationResult()
+	{
+		Windows.Security.Authentication.Web.WebAuthenticationResult _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).get_AuthenticationResult(&_ret));
+		return _ret;
+	}
+	final void UserName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).set_UserName(value));
+	}
+	final HSTRING UserName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).get_UserName(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastBackgroundServiceStreamInfo : Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo
 {
+extern(Windows):
+	final Windows.Media.Capture.AppBroadcastStreamState StreamState()
+	{
+		Windows.Media.Capture.AppBroadcastStreamState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_StreamState(&_ret));
+		return _ret;
+	}
+	final void DesiredVideoEncodingBitrate(UINT64 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).set_DesiredVideoEncodingBitrate(value));
+	}
+	final UINT64 DesiredVideoEncodingBitrate()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_DesiredVideoEncodingBitrate(&_ret));
+		return _ret;
+	}
+	final void BandwidthTestBitrate(UINT64 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).set_BandwidthTestBitrate(value));
+	}
+	final UINT64 BandwidthTestBitrate()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_BandwidthTestBitrate(&_ret));
+		return _ret;
+	}
+	final void AudioCodec(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).set_AudioCodec(value));
+	}
+	final HSTRING AudioCodec()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_AudioCodec(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastStreamReader BroadcastStreamReader()
+	{
+		Windows.Media.Capture.AppBroadcastStreamReader _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_BroadcastStreamReader(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastCameraCaptureStateChangedEventArgs : Windows.Media.Capture.IAppBroadcastCameraCaptureStateChangedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.AppBroadcastCameraCaptureState State()
+	{
+		Windows.Media.Capture.AppBroadcastCameraCaptureState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastCameraCaptureStateChangedEventArgs).get_State(&_ret));
+		return _ret;
+	}
+	final UINT32 ErrorCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastCameraCaptureStateChangedEventArgs).get_ErrorCode(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastGlobalSettings : Windows.Media.Capture.IAppBroadcastGlobalSettings
 {
+extern(Windows):
+	final bool IsBroadcastEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsBroadcastEnabled(&_ret));
+		return _ret;
+	}
+	final bool IsDisabledByPolicy()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsDisabledByPolicy(&_ret));
+		return _ret;
+	}
+	final bool IsGpuConstrained()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsGpuConstrained(&_ret));
+		return _ret;
+	}
+	final bool HasHardwareEncoder()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_HasHardwareEncoder(&_ret));
+		return _ret;
+	}
+	final void IsAudioCaptureEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_IsAudioCaptureEnabled(value));
+	}
+	final bool IsAudioCaptureEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsAudioCaptureEnabled(&_ret));
+		return _ret;
+	}
+	final void IsMicrophoneCaptureEnabledByDefault(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_IsMicrophoneCaptureEnabledByDefault(value));
+	}
+	final bool IsMicrophoneCaptureEnabledByDefault()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsMicrophoneCaptureEnabledByDefault(&_ret));
+		return _ret;
+	}
+	final void IsEchoCancellationEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_IsEchoCancellationEnabled(value));
+	}
+	final bool IsEchoCancellationEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsEchoCancellationEnabled(&_ret));
+		return _ret;
+	}
+	final void SystemAudioGain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_SystemAudioGain(value));
+	}
+	final double SystemAudioGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_SystemAudioGain(&_ret));
+		return _ret;
+	}
+	final void MicrophoneGain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_MicrophoneGain(value));
+	}
+	final double MicrophoneGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_MicrophoneGain(&_ret));
+		return _ret;
+	}
+	final void IsCameraCaptureEnabledByDefault(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_IsCameraCaptureEnabledByDefault(value));
+	}
+	final bool IsCameraCaptureEnabledByDefault()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsCameraCaptureEnabledByDefault(&_ret));
+		return _ret;
+	}
+	final void SelectedCameraId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_SelectedCameraId(value));
+	}
+	final HSTRING SelectedCameraId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_SelectedCameraId(&_ret));
+		return _ret;
+	}
+	final void CameraOverlayLocation(Windows.Media.Capture.AppBroadcastCameraOverlayLocation value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_CameraOverlayLocation(value));
+	}
+	final Windows.Media.Capture.AppBroadcastCameraOverlayLocation CameraOverlayLocation()
+	{
+		Windows.Media.Capture.AppBroadcastCameraOverlayLocation _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_CameraOverlayLocation(&_ret));
+		return _ret;
+	}
+	final void CameraOverlaySize(Windows.Media.Capture.AppBroadcastCameraOverlaySize value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_CameraOverlaySize(value));
+	}
+	final Windows.Media.Capture.AppBroadcastCameraOverlaySize CameraOverlaySize()
+	{
+		Windows.Media.Capture.AppBroadcastCameraOverlaySize _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_CameraOverlaySize(&_ret));
+		return _ret;
+	}
+	final void IsCursorImageCaptureEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_IsCursorImageCaptureEnabled(value));
+	}
+	final bool IsCursorImageCaptureEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsCursorImageCaptureEnabled(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastHeartbeatRequestedEventArgs : Windows.Media.Capture.IAppBroadcastHeartbeatRequestedEventArgs
 {
+extern(Windows):
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastHeartbeatRequestedEventArgs).set_Handled(value));
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastHeartbeatRequestedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastManager
@@ -1295,102 +1637,927 @@ interface AppBroadcastManager
 
 interface AppBroadcastMicrophoneCaptureStateChangedEventArgs : Windows.Media.Capture.IAppBroadcastMicrophoneCaptureStateChangedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.AppBroadcastMicrophoneCaptureState State()
+	{
+		Windows.Media.Capture.AppBroadcastMicrophoneCaptureState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastMicrophoneCaptureStateChangedEventArgs).get_State(&_ret));
+		return _ret;
+	}
+	final UINT32 ErrorCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastMicrophoneCaptureStateChangedEventArgs).get_ErrorCode(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastPlugIn : Windows.Media.Capture.IAppBroadcastPlugIn
 {
+extern(Windows):
+	final HSTRING AppId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugIn).get_AppId(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastProviderSettings ProviderSettings()
+	{
+		Windows.Media.Capture.AppBroadcastProviderSettings _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugIn).get_ProviderSettings(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Logo()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugIn).get_Logo(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugIn).get_DisplayName(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastPlugInManager : Windows.Media.Capture.IAppBroadcastPlugInManager
 {
+extern(Windows):
+	final bool IsBroadcastProviderAvailable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugInManager).get_IsBroadcastProviderAvailable(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.AppBroadcastPlugIn) PlugInList()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.AppBroadcastPlugIn) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugInManager).get_PlugInList(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastPlugIn DefaultPlugIn()
+	{
+		Windows.Media.Capture.AppBroadcastPlugIn _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugInManager).get_DefaultPlugIn(&_ret));
+		return _ret;
+	}
+	final void DefaultPlugIn(Windows.Media.Capture.AppBroadcastPlugIn value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugInManager).set_DefaultPlugIn(value));
+	}
 }
 
 interface AppBroadcastPlugInStateChangedEventArgs : Windows.Media.Capture.IAppBroadcastPlugInStateChangedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.AppBroadcastPlugInState PlugInState()
+	{
+		Windows.Media.Capture.AppBroadcastPlugInState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugInStateChangedEventArgs).get_PlugInState(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastPreview : Windows.Media.Capture.IAppBroadcastPreview
 {
+extern(Windows):
+	final void StopPreview()
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreview).abi_StopPreview());
+	}
+	final Windows.Media.Capture.AppBroadcastPreviewState PreviewState()
+	{
+		Windows.Media.Capture.AppBroadcastPreviewState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreview).get_PreviewState(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) ErrorCode()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreview).get_ErrorCode(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastPreviewStreamReader PreviewStreamReader()
+	{
+		Windows.Media.Capture.AppBroadcastPreviewStreamReader _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreview).get_PreviewStreamReader(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastPreviewStateChangedEventArgs : Windows.Media.Capture.IAppBroadcastPreviewStateChangedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.AppBroadcastPreviewState PreviewState()
+	{
+		Windows.Media.Capture.AppBroadcastPreviewState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStateChangedEventArgs).get_PreviewState(&_ret));
+		return _ret;
+	}
+	final UINT32 ErrorCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStateChangedEventArgs).get_ErrorCode(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastPreviewStreamReader : Windows.Media.Capture.IAppBroadcastPreviewStreamReader
 {
+extern(Windows):
+	final UINT32 VideoWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).get_VideoWidth(&_ret));
+		return _ret;
+	}
+	final UINT32 VideoHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).get_VideoHeight(&_ret));
+		return _ret;
+	}
+	final UINT32 VideoStride()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).get_VideoStride(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapPixelFormat VideoBitmapPixelFormat()
+	{
+		Windows.Graphics.Imaging.BitmapPixelFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).get_VideoBitmapPixelFormat(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapAlphaMode VideoBitmapAlphaMode()
+	{
+		Windows.Graphics.Imaging.BitmapAlphaMode _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).get_VideoBitmapAlphaMode(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastPreviewStreamVideoFrame TryGetNextVideoFrame()
+	{
+		Windows.Media.Capture.AppBroadcastPreviewStreamVideoFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).abi_TryGetNextVideoFrame(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastPreviewStreamVideoFrame : Windows.Media.Capture.IAppBroadcastPreviewStreamVideoFrame
 {
+extern(Windows):
+	final Windows.Media.Capture.AppBroadcastPreviewStreamVideoHeader VideoHeader()
+	{
+		Windows.Media.Capture.AppBroadcastPreviewStreamVideoHeader _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoFrame).get_VideoHeader(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer VideoBuffer()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoFrame).get_VideoBuffer(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastPreviewStreamVideoHeader : Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader
 {
+extern(Windows):
+	final Windows.Foundation.DateTime AbsoluteTimestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader).get_AbsoluteTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan RelativeTimestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader).get_RelativeTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader).get_Duration(&_ret));
+		return _ret;
+	}
+	final UINT64 FrameId()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader).get_FrameId(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastProviderSettings : Windows.Media.Capture.IAppBroadcastProviderSettings
 {
+extern(Windows):
+	final void DefaultBroadcastTitle(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_DefaultBroadcastTitle(value));
+	}
+	final HSTRING DefaultBroadcastTitle()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_DefaultBroadcastTitle(&_ret));
+		return _ret;
+	}
+	final void AudioEncodingBitrate(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_AudioEncodingBitrate(value));
+	}
+	final UINT32 AudioEncodingBitrate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_AudioEncodingBitrate(&_ret));
+		return _ret;
+	}
+	final void CustomVideoEncodingBitrate(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_CustomVideoEncodingBitrate(value));
+	}
+	final UINT32 CustomVideoEncodingBitrate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_CustomVideoEncodingBitrate(&_ret));
+		return _ret;
+	}
+	final void CustomVideoEncodingHeight(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_CustomVideoEncodingHeight(value));
+	}
+	final UINT32 CustomVideoEncodingHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_CustomVideoEncodingHeight(&_ret));
+		return _ret;
+	}
+	final void CustomVideoEncodingWidth(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_CustomVideoEncodingWidth(value));
+	}
+	final UINT32 CustomVideoEncodingWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_CustomVideoEncodingWidth(&_ret));
+		return _ret;
+	}
+	final void VideoEncodingBitrateMode(Windows.Media.Capture.AppBroadcastVideoEncodingBitrateMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_VideoEncodingBitrateMode(value));
+	}
+	final Windows.Media.Capture.AppBroadcastVideoEncodingBitrateMode VideoEncodingBitrateMode()
+	{
+		Windows.Media.Capture.AppBroadcastVideoEncodingBitrateMode _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_VideoEncodingBitrateMode(&_ret));
+		return _ret;
+	}
+	final void VideoEncodingResolutionMode(Windows.Media.Capture.AppBroadcastVideoEncodingResolutionMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_VideoEncodingResolutionMode(value));
+	}
+	final Windows.Media.Capture.AppBroadcastVideoEncodingResolutionMode VideoEncodingResolutionMode()
+	{
+		Windows.Media.Capture.AppBroadcastVideoEncodingResolutionMode _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_VideoEncodingResolutionMode(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastServices : Windows.Media.Capture.IAppBroadcastServices
 {
+extern(Windows):
+	final Windows.Media.Capture.AppBroadcastCaptureTargetType CaptureTargetType()
+	{
+		Windows.Media.Capture.AppBroadcastCaptureTargetType _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).get_CaptureTargetType(&_ret));
+		return _ret;
+	}
+	final void CaptureTargetType(Windows.Media.Capture.AppBroadcastCaptureTargetType value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).set_CaptureTargetType(value));
+	}
+	final HSTRING BroadcastTitle()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).get_BroadcastTitle(&_ret));
+		return _ret;
+	}
+	final void BroadcastTitle(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).set_BroadcastTitle(value));
+	}
+	final HSTRING BroadcastLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).get_BroadcastLanguage(&_ret));
+		return _ret;
+	}
+	final void BroadcastLanguage(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).set_BroadcastLanguage(value));
+	}
+	final HSTRING UserName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).get_UserName(&_ret));
+		return _ret;
+	}
+	final bool CanCapture()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).get_CanCapture(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(UINT32) EnterBroadcastModeAsync(Windows.Media.Capture.AppBroadcastPlugIn plugIn)
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).abi_EnterBroadcastModeAsync(plugIn, &_ret));
+		return _ret;
+	}
+	final void ExitBroadcastMode(Windows.Media.Capture.AppBroadcastExitBroadcastModeReason reason)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).abi_ExitBroadcastMode(reason));
+	}
+	final void StartBroadcast()
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).abi_StartBroadcast());
+	}
+	final void PauseBroadcast()
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).abi_PauseBroadcast());
+	}
+	final void ResumeBroadcast()
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).abi_ResumeBroadcast());
+	}
+	final Windows.Media.Capture.AppBroadcastPreview StartPreview(Windows.Foundation.Size desiredSize)
+	{
+		Windows.Media.Capture.AppBroadcastPreview _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).abi_StartPreview(desiredSize, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastState State()
+	{
+		Windows.Media.Capture.AppBroadcastState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).get_State(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastSignInStateChangedEventArgs : Windows.Media.Capture.IAppBroadcastSignInStateChangedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.AppBroadcastSignInState SignInState()
+	{
+		Windows.Media.Capture.AppBroadcastSignInState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastSignInStateChangedEventArgs).get_SignInState(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastSignInResult Result()
+	{
+		Windows.Media.Capture.AppBroadcastSignInResult _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastSignInStateChangedEventArgs).get_Result(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastState : Windows.Media.Capture.IAppBroadcastState
 {
+extern(Windows):
+	final bool IsCaptureTargetRunning()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_IsCaptureTargetRunning(&_ret));
+		return _ret;
+	}
+	final UINT32 ViewerCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_ViewerCount(&_ret));
+		return _ret;
+	}
+	final bool ShouldCaptureMicrophone()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_ShouldCaptureMicrophone(&_ret));
+		return _ret;
+	}
+	final void ShouldCaptureMicrophone(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).set_ShouldCaptureMicrophone(value));
+	}
+	final void RestartMicrophoneCapture()
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).abi_RestartMicrophoneCapture());
+	}
+	final bool ShouldCaptureCamera()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_ShouldCaptureCamera(&_ret));
+		return _ret;
+	}
+	final void ShouldCaptureCamera(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).set_ShouldCaptureCamera(value));
+	}
+	final void RestartCameraCapture()
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).abi_RestartCameraCapture());
+	}
+	final Windows.Foundation.Size EncodedVideoSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_EncodedVideoSize(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastMicrophoneCaptureState MicrophoneCaptureState()
+	{
+		Windows.Media.Capture.AppBroadcastMicrophoneCaptureState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_MicrophoneCaptureState(&_ret));
+		return _ret;
+	}
+	final UINT32 MicrophoneCaptureError()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_MicrophoneCaptureError(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastCameraCaptureState CameraCaptureState()
+	{
+		Windows.Media.Capture.AppBroadcastCameraCaptureState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_CameraCaptureState(&_ret));
+		return _ret;
+	}
+	final UINT32 CameraCaptureError()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_CameraCaptureError(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastStreamState StreamState()
+	{
+		Windows.Media.Capture.AppBroadcastStreamState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_StreamState(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastPlugInState PlugInState()
+	{
+		Windows.Media.Capture.AppBroadcastPlugInState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_PlugInState(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri OAuthRequestUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_OAuthRequestUri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri OAuthCallbackUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_OAuthCallbackUri(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.WebAuthenticationResult AuthenticationResult()
+	{
+		Windows.Security.Authentication.Web.WebAuthenticationResult _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_AuthenticationResult(&_ret));
+		return _ret;
+	}
+	final void AuthenticationResult(Windows.Security.Authentication.Web.WebAuthenticationResult value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).set_AuthenticationResult(value));
+	}
+	final void SignInState(Windows.Media.Capture.AppBroadcastSignInState value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).set_SignInState(value));
+	}
+	final Windows.Media.Capture.AppBroadcastSignInState SignInState()
+	{
+		Windows.Media.Capture.AppBroadcastSignInState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_SignInState(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastTerminationReason TerminationReason()
+	{
+		Windows.Media.Capture.AppBroadcastTerminationReason _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_TerminationReason(&_ret));
+		return _ret;
+	}
+	final UINT32 TerminationReasonPlugInSpecific()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_TerminationReasonPlugInSpecific(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastStreamAudioFrame : Windows.Media.Capture.IAppBroadcastStreamAudioFrame
 {
+extern(Windows):
+	final Windows.Media.Capture.AppBroadcastStreamAudioHeader AudioHeader()
+	{
+		Windows.Media.Capture.AppBroadcastStreamAudioHeader _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioFrame).get_AudioHeader(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer AudioBuffer()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioFrame).get_AudioBuffer(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastStreamAudioHeader : Windows.Media.Capture.IAppBroadcastStreamAudioHeader
 {
+extern(Windows):
+	final Windows.Foundation.DateTime AbsoluteTimestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioHeader).get_AbsoluteTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan RelativeTimestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioHeader).get_RelativeTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioHeader).get_Duration(&_ret));
+		return _ret;
+	}
+	final bool HasDiscontinuity()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioHeader).get_HasDiscontinuity(&_ret));
+		return _ret;
+	}
+	final UINT64 FrameId()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioHeader).get_FrameId(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastStreamReader : Windows.Media.Capture.IAppBroadcastStreamReader
 {
+extern(Windows):
+	final UINT32 AudioChannels()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_AudioChannels(&_ret));
+		return _ret;
+	}
+	final UINT32 AudioSampleRate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_AudioSampleRate(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer AudioAacSequence()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_AudioAacSequence(&_ret));
+		return _ret;
+	}
+	final UINT32 AudioBitrate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_AudioBitrate(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastStreamAudioFrame TryGetNextAudioFrame()
+	{
+		Windows.Media.Capture.AppBroadcastStreamAudioFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).abi_TryGetNextAudioFrame(&_ret));
+		return _ret;
+	}
+	final UINT32 VideoWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_VideoWidth(&_ret));
+		return _ret;
+	}
+	final UINT32 VideoHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_VideoHeight(&_ret));
+		return _ret;
+	}
+	final UINT32 VideoBitrate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_VideoBitrate(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastStreamVideoFrame TryGetNextVideoFrame()
+	{
+		Windows.Media.Capture.AppBroadcastStreamVideoFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).abi_TryGetNextVideoFrame(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastStreamStateChangedEventArgs : Windows.Media.Capture.IAppBroadcastStreamStateChangedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.AppBroadcastStreamState StreamState()
+	{
+		Windows.Media.Capture.AppBroadcastStreamState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamStateChangedEventArgs).get_StreamState(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastStreamVideoFrame : Windows.Media.Capture.IAppBroadcastStreamVideoFrame
 {
+extern(Windows):
+	final Windows.Media.Capture.AppBroadcastStreamVideoHeader VideoHeader()
+	{
+		Windows.Media.Capture.AppBroadcastStreamVideoHeader _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoFrame).get_VideoHeader(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer VideoBuffer()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoFrame).get_VideoBuffer(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastStreamVideoHeader : Windows.Media.Capture.IAppBroadcastStreamVideoHeader
 {
+extern(Windows):
+	final Windows.Foundation.DateTime AbsoluteTimestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_AbsoluteTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan RelativeTimestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_RelativeTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_Duration(&_ret));
+		return _ret;
+	}
+	final bool IsKeyFrame()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_IsKeyFrame(&_ret));
+		return _ret;
+	}
+	final bool HasDiscontinuity()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_HasDiscontinuity(&_ret));
+		return _ret;
+	}
+	final UINT64 FrameId()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_FrameId(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastTriggerDetails : Windows.Media.Capture.IAppBroadcastTriggerDetails
 {
+extern(Windows):
+	final Windows.Media.Capture.AppBroadcastBackgroundService BackgroundService()
+	{
+		Windows.Media.Capture.AppBroadcastBackgroundService _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastTriggerDetails).get_BackgroundService(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastViewerCountChangedEventArgs : Windows.Media.Capture.IAppBroadcastViewerCountChangedEventArgs
 {
+extern(Windows):
+	final UINT32 ViewerCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastViewerCountChangedEventArgs).get_ViewerCount(&_ret));
+		return _ret;
+	}
 }
 
 interface AppCapture : Windows.Media.Capture.IAppCapture
 {
+extern(Windows):
+	final bool IsCapturingAudio()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCapture).get_IsCapturingAudio(&_ret));
+		return _ret;
+	}
+	final bool IsCapturingVideo()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCapture).get_IsCapturingVideo(&_ret));
+		return _ret;
+	}
 }
 
 interface AppCaptureAlternateShortcutKeys : Windows.Media.Capture.IAppCaptureAlternateShortcutKeys, Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2, Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3
 {
+extern(Windows):
+	final void ToggleGameBarKey(Windows.System.VirtualKey value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_ToggleGameBarKey(value));
+	}
+	final Windows.System.VirtualKey ToggleGameBarKey()
+	{
+		Windows.System.VirtualKey _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_ToggleGameBarKey(&_ret));
+		return _ret;
+	}
+	final void ToggleGameBarKeyModifiers(Windows.System.VirtualKeyModifiers value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_ToggleGameBarKeyModifiers(value));
+	}
+	final Windows.System.VirtualKeyModifiers ToggleGameBarKeyModifiers()
+	{
+		Windows.System.VirtualKeyModifiers _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_ToggleGameBarKeyModifiers(&_ret));
+		return _ret;
+	}
+	final void SaveHistoricalVideoKey(Windows.System.VirtualKey value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_SaveHistoricalVideoKey(value));
+	}
+	final Windows.System.VirtualKey SaveHistoricalVideoKey()
+	{
+		Windows.System.VirtualKey _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_SaveHistoricalVideoKey(&_ret));
+		return _ret;
+	}
+	final void SaveHistoricalVideoKeyModifiers(Windows.System.VirtualKeyModifiers value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_SaveHistoricalVideoKeyModifiers(value));
+	}
+	final Windows.System.VirtualKeyModifiers SaveHistoricalVideoKeyModifiers()
+	{
+		Windows.System.VirtualKeyModifiers _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_SaveHistoricalVideoKeyModifiers(&_ret));
+		return _ret;
+	}
+	final void ToggleRecordingKey(Windows.System.VirtualKey value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_ToggleRecordingKey(value));
+	}
+	final Windows.System.VirtualKey ToggleRecordingKey()
+	{
+		Windows.System.VirtualKey _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_ToggleRecordingKey(&_ret));
+		return _ret;
+	}
+	final void ToggleRecordingKeyModifiers(Windows.System.VirtualKeyModifiers value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_ToggleRecordingKeyModifiers(value));
+	}
+	final Windows.System.VirtualKeyModifiers ToggleRecordingKeyModifiers()
+	{
+		Windows.System.VirtualKeyModifiers _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_ToggleRecordingKeyModifiers(&_ret));
+		return _ret;
+	}
+	final void TakeScreenshotKey(Windows.System.VirtualKey value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_TakeScreenshotKey(value));
+	}
+	final Windows.System.VirtualKey TakeScreenshotKey()
+	{
+		Windows.System.VirtualKey _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_TakeScreenshotKey(&_ret));
+		return _ret;
+	}
+	final void TakeScreenshotKeyModifiers(Windows.System.VirtualKeyModifiers value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_TakeScreenshotKeyModifiers(value));
+	}
+	final Windows.System.VirtualKeyModifiers TakeScreenshotKeyModifiers()
+	{
+		Windows.System.VirtualKeyModifiers _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_TakeScreenshotKeyModifiers(&_ret));
+		return _ret;
+	}
+	final void ToggleRecordingIndicatorKey(Windows.System.VirtualKey value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_ToggleRecordingIndicatorKey(value));
+	}
+	final Windows.System.VirtualKey ToggleRecordingIndicatorKey()
+	{
+		Windows.System.VirtualKey _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_ToggleRecordingIndicatorKey(&_ret));
+		return _ret;
+	}
+	final void ToggleRecordingIndicatorKeyModifiers(Windows.System.VirtualKeyModifiers value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_ToggleRecordingIndicatorKeyModifiers(value));
+	}
+	final Windows.System.VirtualKeyModifiers ToggleRecordingIndicatorKeyModifiers()
+	{
+		Windows.System.VirtualKeyModifiers _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_ToggleRecordingIndicatorKeyModifiers(&_ret));
+		return _ret;
+	}
+	final void ToggleMicrophoneCaptureKey(Windows.System.VirtualKey value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2).set_ToggleMicrophoneCaptureKey(value));
+	}
+	final Windows.System.VirtualKey ToggleMicrophoneCaptureKey()
+	{
+		Windows.System.VirtualKey _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2).get_ToggleMicrophoneCaptureKey(&_ret));
+		return _ret;
+	}
+	final void ToggleMicrophoneCaptureKeyModifiers(Windows.System.VirtualKeyModifiers value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2).set_ToggleMicrophoneCaptureKeyModifiers(value));
+	}
+	final Windows.System.VirtualKeyModifiers ToggleMicrophoneCaptureKeyModifiers()
+	{
+		Windows.System.VirtualKeyModifiers _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2).get_ToggleMicrophoneCaptureKeyModifiers(&_ret));
+		return _ret;
+	}
+	final void ToggleCameraCaptureKey(Windows.System.VirtualKey value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).set_ToggleCameraCaptureKey(value));
+	}
+	final Windows.System.VirtualKey ToggleCameraCaptureKey()
+	{
+		Windows.System.VirtualKey _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).get_ToggleCameraCaptureKey(&_ret));
+		return _ret;
+	}
+	final void ToggleCameraCaptureKeyModifiers(Windows.System.VirtualKeyModifiers value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).set_ToggleCameraCaptureKeyModifiers(value));
+	}
+	final Windows.System.VirtualKeyModifiers ToggleCameraCaptureKeyModifiers()
+	{
+		Windows.System.VirtualKeyModifiers _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).get_ToggleCameraCaptureKeyModifiers(&_ret));
+		return _ret;
+	}
+	final void ToggleBroadcastKey(Windows.System.VirtualKey value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).set_ToggleBroadcastKey(value));
+	}
+	final Windows.System.VirtualKey ToggleBroadcastKey()
+	{
+		Windows.System.VirtualKey _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).get_ToggleBroadcastKey(&_ret));
+		return _ret;
+	}
+	final void ToggleBroadcastKeyModifiers(Windows.System.VirtualKeyModifiers value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).set_ToggleBroadcastKeyModifiers(value));
+	}
+	final Windows.System.VirtualKeyModifiers ToggleBroadcastKeyModifiers()
+	{
+		Windows.System.VirtualKeyModifiers _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).get_ToggleBroadcastKeyModifiers(&_ret));
+		return _ret;
+	}
 }
 
 interface AppCaptureDurationGeneratedEventArgs : Windows.Media.Capture.IAppCaptureDurationGeneratedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureDurationGeneratedEventArgs).get_Duration(&_ret));
+		return _ret;
+	}
 }
 
 interface AppCaptureFileGeneratedEventArgs : Windows.Media.Capture.IAppCaptureFileGeneratedEventArgs
 {
+extern(Windows):
+	final Windows.Storage.StorageFile File()
+	{
+		Windows.Storage.StorageFile _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureFileGeneratedEventArgs).get_File(&_ret));
+		return _ret;
+	}
 }
 
 interface AppCaptureManager
@@ -1399,38 +2566,541 @@ interface AppCaptureManager
 
 interface AppCaptureMicrophoneCaptureStateChangedEventArgs : Windows.Media.Capture.IAppCaptureMicrophoneCaptureStateChangedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.AppCaptureMicrophoneCaptureState State()
+	{
+		Windows.Media.Capture.AppCaptureMicrophoneCaptureState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureMicrophoneCaptureStateChangedEventArgs).get_State(&_ret));
+		return _ret;
+	}
+	final UINT32 ErrorCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureMicrophoneCaptureStateChangedEventArgs).get_ErrorCode(&_ret));
+		return _ret;
+	}
 }
 
 interface AppCaptureRecordOperation : Windows.Media.Capture.IAppCaptureRecordOperation
 {
+extern(Windows):
+	final void StopRecording()
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).abi_StopRecording());
+	}
+	final Windows.Media.Capture.AppCaptureRecordingState State()
+	{
+		Windows.Media.Capture.AppCaptureRecordingState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).get_State(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) ErrorCode()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).get_ErrorCode(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Duration()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).get_Duration(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFile File()
+	{
+		Windows.Storage.StorageFile _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).get_File(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(bool) IsFileTruncated()
+	{
+		Windows.Foundation.IReference!(bool) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).get_IsFileTruncated(&_ret));
+		return _ret;
+	}
 }
 
 interface AppCaptureRecordingStateChangedEventArgs : Windows.Media.Capture.IAppCaptureRecordingStateChangedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.AppCaptureRecordingState State()
+	{
+		Windows.Media.Capture.AppCaptureRecordingState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordingStateChangedEventArgs).get_State(&_ret));
+		return _ret;
+	}
+	final UINT32 ErrorCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordingStateChangedEventArgs).get_ErrorCode(&_ret));
+		return _ret;
+	}
 }
 
 interface AppCaptureServices : Windows.Media.Capture.IAppCaptureServices
 {
+extern(Windows):
+	final Windows.Media.Capture.AppCaptureRecordOperation Record()
+	{
+		Windows.Media.Capture.AppCaptureRecordOperation _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureServices).abi_Record(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppCaptureRecordOperation RecordTimeSpan(Windows.Foundation.DateTime startTime, Windows.Foundation.TimeSpan duration)
+	{
+		Windows.Media.Capture.AppCaptureRecordOperation _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureServices).abi_RecordTimeSpan(startTime, duration, &_ret));
+		return _ret;
+	}
+	final bool CanCapture()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureServices).get_CanCapture(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppCaptureState State()
+	{
+		Windows.Media.Capture.AppCaptureState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureServices).get_State(&_ret));
+		return _ret;
+	}
 }
 
 interface AppCaptureSettings : Windows.Media.Capture.IAppCaptureSettings, Windows.Media.Capture.IAppCaptureSettings2, Windows.Media.Capture.IAppCaptureSettings3, Windows.Media.Capture.IAppCaptureSettings4, Windows.Media.Capture.IAppCaptureSettings5
 {
+extern(Windows):
+	final void AppCaptureDestinationFolder(Windows.Storage.StorageFolder value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_AppCaptureDestinationFolder(value));
+	}
+	final Windows.Storage.StorageFolder AppCaptureDestinationFolder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_AppCaptureDestinationFolder(&_ret));
+		return _ret;
+	}
+	final void AudioEncodingBitrate(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_AudioEncodingBitrate(value));
+	}
+	final UINT32 AudioEncodingBitrate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_AudioEncodingBitrate(&_ret));
+		return _ret;
+	}
+	final void IsAudioCaptureEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_IsAudioCaptureEnabled(value));
+	}
+	final bool IsAudioCaptureEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsAudioCaptureEnabled(&_ret));
+		return _ret;
+	}
+	final void CustomVideoEncodingBitrate(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_CustomVideoEncodingBitrate(value));
+	}
+	final UINT32 CustomVideoEncodingBitrate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_CustomVideoEncodingBitrate(&_ret));
+		return _ret;
+	}
+	final void CustomVideoEncodingHeight(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_CustomVideoEncodingHeight(value));
+	}
+	final UINT32 CustomVideoEncodingHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_CustomVideoEncodingHeight(&_ret));
+		return _ret;
+	}
+	final void CustomVideoEncodingWidth(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_CustomVideoEncodingWidth(value));
+	}
+	final UINT32 CustomVideoEncodingWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_CustomVideoEncodingWidth(&_ret));
+		return _ret;
+	}
+	final void HistoricalBufferLength(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_HistoricalBufferLength(value));
+	}
+	final UINT32 HistoricalBufferLength()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_HistoricalBufferLength(&_ret));
+		return _ret;
+	}
+	final void HistoricalBufferLengthUnit(Windows.Media.Capture.AppCaptureHistoricalBufferLengthUnit value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_HistoricalBufferLengthUnit(value));
+	}
+	final Windows.Media.Capture.AppCaptureHistoricalBufferLengthUnit HistoricalBufferLengthUnit()
+	{
+		Windows.Media.Capture.AppCaptureHistoricalBufferLengthUnit _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_HistoricalBufferLengthUnit(&_ret));
+		return _ret;
+	}
+	final void IsHistoricalCaptureEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_IsHistoricalCaptureEnabled(value));
+	}
+	final bool IsHistoricalCaptureEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsHistoricalCaptureEnabled(&_ret));
+		return _ret;
+	}
+	final void IsHistoricalCaptureOnBatteryAllowed(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_IsHistoricalCaptureOnBatteryAllowed(value));
+	}
+	final bool IsHistoricalCaptureOnBatteryAllowed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsHistoricalCaptureOnBatteryAllowed(&_ret));
+		return _ret;
+	}
+	final void IsHistoricalCaptureOnWirelessDisplayAllowed(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_IsHistoricalCaptureOnWirelessDisplayAllowed(value));
+	}
+	final bool IsHistoricalCaptureOnWirelessDisplayAllowed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsHistoricalCaptureOnWirelessDisplayAllowed(&_ret));
+		return _ret;
+	}
+	final void MaximumRecordLength(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_MaximumRecordLength(value));
+	}
+	final Windows.Foundation.TimeSpan MaximumRecordLength()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_MaximumRecordLength(&_ret));
+		return _ret;
+	}
+	final void ScreenshotDestinationFolder(Windows.Storage.StorageFolder value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_ScreenshotDestinationFolder(value));
+	}
+	final Windows.Storage.StorageFolder ScreenshotDestinationFolder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_ScreenshotDestinationFolder(&_ret));
+		return _ret;
+	}
+	final void VideoEncodingBitrateMode(Windows.Media.Capture.AppCaptureVideoEncodingBitrateMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_VideoEncodingBitrateMode(value));
+	}
+	final Windows.Media.Capture.AppCaptureVideoEncodingBitrateMode VideoEncodingBitrateMode()
+	{
+		Windows.Media.Capture.AppCaptureVideoEncodingBitrateMode _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_VideoEncodingBitrateMode(&_ret));
+		return _ret;
+	}
+	final void VideoEncodingResolutionMode(Windows.Media.Capture.AppCaptureVideoEncodingResolutionMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_VideoEncodingResolutionMode(value));
+	}
+	final Windows.Media.Capture.AppCaptureVideoEncodingResolutionMode VideoEncodingResolutionMode()
+	{
+		Windows.Media.Capture.AppCaptureVideoEncodingResolutionMode _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_VideoEncodingResolutionMode(&_ret));
+		return _ret;
+	}
+	final void IsAppCaptureEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_IsAppCaptureEnabled(value));
+	}
+	final bool IsAppCaptureEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsAppCaptureEnabled(&_ret));
+		return _ret;
+	}
+	final bool IsCpuConstrained()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsCpuConstrained(&_ret));
+		return _ret;
+	}
+	final bool IsDisabledByPolicy()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsDisabledByPolicy(&_ret));
+		return _ret;
+	}
+	final bool IsMemoryConstrained()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsMemoryConstrained(&_ret));
+		return _ret;
+	}
+	final bool HasHardwareEncoder()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_HasHardwareEncoder(&_ret));
+		return _ret;
+	}
+	final bool IsGpuConstrained()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings2).get_IsGpuConstrained(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppCaptureAlternateShortcutKeys AlternateShortcutKeys()
+	{
+		Windows.Media.Capture.AppCaptureAlternateShortcutKeys _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings2).get_AlternateShortcutKeys(&_ret));
+		return _ret;
+	}
+	final void IsMicrophoneCaptureEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings3).set_IsMicrophoneCaptureEnabled(value));
+	}
+	final bool IsMicrophoneCaptureEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings3).get_IsMicrophoneCaptureEnabled(&_ret));
+		return _ret;
+	}
+	final void IsMicrophoneCaptureEnabledByDefault(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).set_IsMicrophoneCaptureEnabledByDefault(value));
+	}
+	final bool IsMicrophoneCaptureEnabledByDefault()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).get_IsMicrophoneCaptureEnabledByDefault(&_ret));
+		return _ret;
+	}
+	final void SystemAudioGain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).set_SystemAudioGain(value));
+	}
+	final double SystemAudioGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).get_SystemAudioGain(&_ret));
+		return _ret;
+	}
+	final void MicrophoneGain(double value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).set_MicrophoneGain(value));
+	}
+	final double MicrophoneGain()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).get_MicrophoneGain(&_ret));
+		return _ret;
+	}
+	final void VideoEncodingFrameRateMode(Windows.Media.Capture.AppCaptureVideoEncodingFrameRateMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).set_VideoEncodingFrameRateMode(value));
+	}
+	final Windows.Media.Capture.AppCaptureVideoEncodingFrameRateMode VideoEncodingFrameRateMode()
+	{
+		Windows.Media.Capture.AppCaptureVideoEncodingFrameRateMode _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).get_VideoEncodingFrameRateMode(&_ret));
+		return _ret;
+	}
+	final void IsEchoCancellationEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings5).set_IsEchoCancellationEnabled(value));
+	}
+	final bool IsEchoCancellationEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings5).get_IsEchoCancellationEnabled(&_ret));
+		return _ret;
+	}
+	final void IsCursorImageCaptureEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings5).set_IsCursorImageCaptureEnabled(value));
+	}
+	final bool IsCursorImageCaptureEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings5).get_IsCursorImageCaptureEnabled(&_ret));
+		return _ret;
+	}
 }
 
 interface AppCaptureState : Windows.Media.Capture.IAppCaptureState
 {
+extern(Windows):
+	final bool IsTargetRunning()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).get_IsTargetRunning(&_ret));
+		return _ret;
+	}
+	final bool IsHistoricalCaptureEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).get_IsHistoricalCaptureEnabled(&_ret));
+		return _ret;
+	}
+	final bool ShouldCaptureMicrophone()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).get_ShouldCaptureMicrophone(&_ret));
+		return _ret;
+	}
+	final void ShouldCaptureMicrophone(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).set_ShouldCaptureMicrophone(value));
+	}
+	final void RestartMicrophoneCapture()
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).abi_RestartMicrophoneCapture());
+	}
+	final Windows.Media.Capture.AppCaptureMicrophoneCaptureState MicrophoneCaptureState()
+	{
+		Windows.Media.Capture.AppCaptureMicrophoneCaptureState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).get_MicrophoneCaptureState(&_ret));
+		return _ret;
+	}
+	final UINT32 MicrophoneCaptureError()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).get_MicrophoneCaptureError(&_ret));
+		return _ret;
+	}
 }
 
 interface CameraCaptureUI : Windows.Media.Capture.ICameraCaptureUI
 {
+extern(Windows):
+	final Windows.Media.Capture.CameraCaptureUIPhotoCaptureSettings PhotoSettings()
+	{
+		Windows.Media.Capture.CameraCaptureUIPhotoCaptureSettings _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUI).get_PhotoSettings(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.CameraCaptureUIVideoCaptureSettings VideoSettings()
+	{
+		Windows.Media.Capture.CameraCaptureUIVideoCaptureSettings _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUI).get_VideoSettings(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CaptureFileAsync(Windows.Media.Capture.CameraCaptureUIMode mode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUI).abi_CaptureFileAsync(mode, &_ret));
+		return _ret;
+	}
 }
 
 interface CameraCaptureUIPhotoCaptureSettings : Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings
 {
+extern(Windows):
+	final Windows.Media.Capture.CameraCaptureUIPhotoFormat Format()
+	{
+		Windows.Media.Capture.CameraCaptureUIPhotoFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).get_Format(&_ret));
+		return _ret;
+	}
+	final void Format(Windows.Media.Capture.CameraCaptureUIPhotoFormat value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).set_Format(value));
+	}
+	final Windows.Media.Capture.CameraCaptureUIMaxPhotoResolution MaxResolution()
+	{
+		Windows.Media.Capture.CameraCaptureUIMaxPhotoResolution _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).get_MaxResolution(&_ret));
+		return _ret;
+	}
+	final void MaxResolution(Windows.Media.Capture.CameraCaptureUIMaxPhotoResolution value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).set_MaxResolution(value));
+	}
+	final Windows.Foundation.Size CroppedSizeInPixels()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).get_CroppedSizeInPixels(&_ret));
+		return _ret;
+	}
+	final void CroppedSizeInPixels(Windows.Foundation.Size value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).set_CroppedSizeInPixels(value));
+	}
+	final Windows.Foundation.Size CroppedAspectRatio()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).get_CroppedAspectRatio(&_ret));
+		return _ret;
+	}
+	final void CroppedAspectRatio(Windows.Foundation.Size value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).set_CroppedAspectRatio(value));
+	}
+	final bool AllowCropping()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).get_AllowCropping(&_ret));
+		return _ret;
+	}
+	final void AllowCropping(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).set_AllowCropping(value));
+	}
 }
 
 interface CameraCaptureUIVideoCaptureSettings : Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings
 {
+extern(Windows):
+	final Windows.Media.Capture.CameraCaptureUIVideoFormat Format()
+	{
+		Windows.Media.Capture.CameraCaptureUIVideoFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).get_Format(&_ret));
+		return _ret;
+	}
+	final void Format(Windows.Media.Capture.CameraCaptureUIVideoFormat value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).set_Format(value));
+	}
+	final Windows.Media.Capture.CameraCaptureUIMaxVideoResolution MaxResolution()
+	{
+		Windows.Media.Capture.CameraCaptureUIMaxVideoResolution _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).get_MaxResolution(&_ret));
+		return _ret;
+	}
+	final void MaxResolution(Windows.Media.Capture.CameraCaptureUIMaxVideoResolution value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).set_MaxResolution(value));
+	}
+	final FLOAT MaxDurationInSeconds()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).get_MaxDurationInSeconds(&_ret));
+		return _ret;
+	}
+	final void MaxDurationInSeconds(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).set_MaxDurationInSeconds(value));
+	}
+	final bool AllowTrimming()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).get_AllowTrimming(&_ret));
+		return _ret;
+	}
+	final void AllowTrimming(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).set_AllowTrimming(value));
+	}
 }
 
 interface CameraOptionsUI
@@ -1439,22 +3109,269 @@ interface CameraOptionsUI
 
 interface CapturedFrame : Windows.Media.Capture.ICapturedFrame, Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Media.Capture.ICapturedFrameWithSoftwareBitmap
 {
+extern(Windows):
+	final UINT32 Width()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrame).get_Width(&_ret));
+		return _ret;
+	}
+	final UINT32 Height()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrame).get_Height(&_ret));
+		return _ret;
+	}
+	final HSTRING ContentType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IContentTypeProvider).get_ContentType(&_ret));
+		return _ret;
+	}
+	final UINT64 Size()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
+		return _ret;
+	}
+	final void Size(UINT64 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
+	}
+	final Windows.Storage.Streams.IInputStream GetInputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final UINT64 Position()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
+		return _ret;
+	}
+	final void Seek(UINT64 position)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
+	}
+	final Windows.Storage.Streams.IRandomAccessStream CloneStream()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_CloneStream(&_ret));
+		return _ret;
+	}
+	final bool CanRead()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanRead(&_ret));
+		return _ret;
+	}
+	final bool CanWrite()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanWrite(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) WriteAsync(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_WriteAsync(buffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_FlushAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IInputStream).abi_ReadAsync(buffer, count, options, &_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.SoftwareBitmap SoftwareBitmap()
+	{
+		Windows.Graphics.Imaging.SoftwareBitmap _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameWithSoftwareBitmap).get_SoftwareBitmap(&_ret));
+		return _ret;
+	}
 }
 
 interface CapturedFrameControlValues : Windows.Media.Capture.ICapturedFrameControlValues, Windows.Media.Capture.ICapturedFrameControlValues2
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Exposure()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_Exposure(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(FLOAT) ExposureCompensation()
+	{
+		Windows.Foundation.IReference!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_ExposureCompensation(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) IsoSpeed()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_IsoSpeed(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) Focus()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_Focus(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Media.Devices.CaptureSceneMode) SceneMode()
+	{
+		Windows.Foundation.IReference!(Windows.Media.Devices.CaptureSceneMode) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_SceneMode(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(bool) Flashed()
+	{
+		Windows.Foundation.IReference!(bool) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_Flashed(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(FLOAT) FlashPowerPercent()
+	{
+		Windows.Foundation.IReference!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_FlashPowerPercent(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) WhiteBalance()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_WhiteBalance(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(FLOAT) ZoomFactor()
+	{
+		Windows.Foundation.IReference!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_ZoomFactor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Media.Devices.MediaCaptureFocusState) FocusState()
+	{
+		Windows.Foundation.IReference!(Windows.Media.Devices.MediaCaptureFocusState) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues2).get_FocusState(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) IsoDigitalGain()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues2).get_IsoDigitalGain(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) IsoAnalogGain()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues2).get_IsoAnalogGain(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.MediaRatio SensorFrameRate()
+	{
+		Windows.Media.MediaProperties.MediaRatio _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues2).get_SensorFrameRate(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Media.Capture.WhiteBalanceGain) WhiteBalanceGain()
+	{
+		Windows.Foundation.IReference!(Windows.Media.Capture.WhiteBalanceGain) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues2).get_WhiteBalanceGain(&_ret));
+		return _ret;
+	}
 }
 
 interface CapturedPhoto : Windows.Media.Capture.ICapturedPhoto
 {
+extern(Windows):
+	final Windows.Media.Capture.CapturedFrame Frame()
+	{
+		Windows.Media.Capture.CapturedFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedPhoto).get_Frame(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.CapturedFrame Thumbnail()
+	{
+		Windows.Media.Capture.CapturedFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ICapturedPhoto).get_Thumbnail(&_ret));
+		return _ret;
+	}
 }
 
 interface GameBarServices : Windows.Media.Capture.IGameBarServices
 {
+extern(Windows):
+	final Windows.Media.Capture.GameBarTargetCapturePolicy TargetCapturePolicy()
+	{
+		Windows.Media.Capture.GameBarTargetCapturePolicy _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).get_TargetCapturePolicy(&_ret));
+		return _ret;
+	}
+	final void EnableCapture()
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).abi_EnableCapture());
+	}
+	final void DisableCapture()
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).abi_DisableCapture());
+	}
+	final Windows.Media.Capture.GameBarServicesTargetInfo TargetInfo()
+	{
+		Windows.Media.Capture.GameBarServicesTargetInfo _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).get_TargetInfo(&_ret));
+		return _ret;
+	}
+	final HSTRING SessionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).get_SessionId(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppBroadcastServices AppBroadcastServices()
+	{
+		Windows.Media.Capture.AppBroadcastServices _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).get_AppBroadcastServices(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.AppCaptureServices AppCaptureServices()
+	{
+		Windows.Media.Capture.AppCaptureServices _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).get_AppCaptureServices(&_ret));
+		return _ret;
+	}
 }
 
 interface GameBarServicesCommandEventArgs : Windows.Media.Capture.IGameBarServicesCommandEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.GameBarCommand Command()
+	{
+		Windows.Media.Capture.GameBarCommand _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesCommandEventArgs).get_Command(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.GameBarCommandOrigin Origin()
+	{
+		Windows.Media.Capture.GameBarCommandOrigin _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesCommandEventArgs).get_Origin(&_ret));
+		return _ret;
+	}
 }
 
 interface GameBarServicesManager : Windows.Media.Capture.IGameBarServicesManager
@@ -1463,78 +3380,922 @@ interface GameBarServicesManager : Windows.Media.Capture.IGameBarServicesManager
 
 interface GameBarServicesManagerGameBarServicesCreatedEventArgs : Windows.Media.Capture.IGameBarServicesManagerGameBarServicesCreatedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.GameBarServices GameBarServices()
+	{
+		Windows.Media.Capture.GameBarServices _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesManagerGameBarServicesCreatedEventArgs).get_GameBarServices(&_ret));
+		return _ret;
+	}
 }
 
 interface GameBarServicesTargetInfo : Windows.Media.Capture.IGameBarServicesTargetInfo
 {
+extern(Windows):
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesTargetInfo).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING AppId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesTargetInfo).get_AppId(&_ret));
+		return _ret;
+	}
+	final HSTRING TitleId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesTargetInfo).get_TitleId(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.GameBarServicesDisplayMode DisplayMode()
+	{
+		Windows.Media.Capture.GameBarServicesDisplayMode _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesTargetInfo).get_DisplayMode(&_ret));
+		return _ret;
+	}
 }
 
 interface LowLagMediaRecording : Windows.Media.Capture.ILowLagMediaRecording, Windows.Media.Capture.ILowLagMediaRecording2, Windows.Media.Capture.ILowLagMediaRecording3
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction StartAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording).abi_StartAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StopAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording).abi_StopAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction FinishAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording).abi_FinishAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction PauseAsync(Windows.Media.Devices.MediaCapturePauseBehavior behavior)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording2).abi_PauseAsync(behavior, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ResumeAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording2).abi_ResumeAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCapturePauseResult) PauseWithResultAsync(Windows.Media.Devices.MediaCapturePauseBehavior behavior)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCapturePauseResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording3).abi_PauseWithResultAsync(behavior, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCaptureStopResult) StopWithResultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCaptureStopResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording3).abi_StopWithResultAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface LowLagPhotoCapture : Windows.Media.Capture.ILowLagPhotoCapture
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.CapturedPhoto) CaptureAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.CapturedPhoto) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ILowLagPhotoCapture).abi_CaptureAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction FinishAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ILowLagPhotoCapture).abi_FinishAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface LowLagPhotoSequenceCapture : Windows.Media.Capture.ILowLagPhotoSequenceCapture
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction StartAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ILowLagPhotoSequenceCapture).abi_StartAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StopAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ILowLagPhotoSequenceCapture).abi_StopAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction FinishAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.ILowLagPhotoSequenceCapture).abi_FinishAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaCapture : Windows.Media.Capture.IMediaCapture, Windows.Media.Capture.IMediaCaptureVideoPreview, Windows.Media.Capture.IMediaCapture2, Windows.Foundation.IClosable, Windows.Media.Capture.IMediaCapture3, Windows.Media.Capture.IMediaCapture4, Windows.Media.Capture.IMediaCapture5, Windows.Media.Capture.IMediaCapture6
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction InitializeAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_InitializeAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction InitializeWithSettingsAsync(Windows.Media.Capture.MediaCaptureInitializationSettings mediaCaptureInitializationSettings)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_InitializeWithSettingsAsync(mediaCaptureInitializationSettings, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_StartRecordToStorageFileAsync(encodingProfile, file, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StartRecordToStreamAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.Streams.IRandomAccessStream stream)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_StartRecordToStreamAsync(encodingProfile, stream, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StartRecordToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Media.IMediaExtension customMediaSink)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_StartRecordToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StartRecordToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_StartRecordToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StopRecordAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_StopRecordAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction CapturePhotoToStorageFileAsync(Windows.Media.MediaProperties.ImageEncodingProperties type, Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_CapturePhotoToStorageFileAsync(type, file, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction CapturePhotoToStreamAsync(Windows.Media.MediaProperties.ImageEncodingProperties type, Windows.Storage.Streams.IRandomAccessStream stream)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_CapturePhotoToStreamAsync(type, stream, &_ret));
+		return _ret;
+	}
+	deprecated("AddEffectAsync might not be available in future versions of Windows. Starting with Windows Threshold, use AddAudioEffectAsync and AddVideoEffectAsync instead")
+	final Windows.Foundation.IAsyncAction AddEffectAsync(Windows.Media.Capture.MediaStreamType mediaStreamType, HSTRING effectActivationID, Windows.Foundation.Collections.IPropertySet effectSettings)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_AddEffectAsync(mediaStreamType, effectActivationID, effectSettings, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ClearEffectsAsync(Windows.Media.Capture.MediaStreamType mediaStreamType)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_ClearEffectsAsync(mediaStreamType, &_ret));
+		return _ret;
+	}
+	final void SetEncoderProperty(Windows.Media.Capture.MediaStreamType mediaStreamType, GUID propertyId, IInspectable propertyValue)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_SetEncoderProperty(mediaStreamType, propertyId, propertyValue));
+	}
+	final IInspectable GetEncoderProperty(Windows.Media.Capture.MediaStreamType mediaStreamType, GUID propertyId)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_GetEncoderProperty(mediaStreamType, propertyId, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.MediaCaptureSettings MediaCaptureSettings()
+	{
+		Windows.Media.Capture.MediaCaptureSettings _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).get_MediaCaptureSettings(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.AudioDeviceController AudioDeviceController()
+	{
+		Windows.Media.Devices.AudioDeviceController _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).get_AudioDeviceController(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.VideoDeviceController VideoDeviceController()
+	{
+		Windows.Media.Devices.VideoDeviceController _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).get_VideoDeviceController(&_ret));
+		return _ret;
+	}
+	final void SetPreviewMirroring(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_SetPreviewMirroring(value));
+	}
+	final bool GetPreviewMirroring()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_GetPreviewMirroring(&_ret));
+		return _ret;
+	}
+	final void SetPreviewRotation(Windows.Media.Capture.VideoRotation value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_SetPreviewRotation(value));
+	}
+	final Windows.Media.Capture.VideoRotation GetPreviewRotation()
+	{
+		Windows.Media.Capture.VideoRotation _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_GetPreviewRotation(&_ret));
+		return _ret;
+	}
+	final void SetRecordRotation(Windows.Media.Capture.VideoRotation value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_SetRecordRotation(value));
+	}
+	final Windows.Media.Capture.VideoRotation GetRecordRotation()
+	{
+		Windows.Media.Capture.VideoRotation _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_GetRecordRotation(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StartPreviewAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoPreview).abi_StartPreviewAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StartPreviewToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Media.IMediaExtension customMediaSink)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoPreview).abi_StartPreviewToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StartPreviewToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoPreview).abi_StartPreviewToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StopPreviewAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoPreview).abi_StopPreviewAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) PrepareLowLagRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_PrepareLowLagRecordToStorageFileAsync(encodingProfile, file, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) PrepareLowLagRecordToStreamAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.Streams.IRandomAccessStream stream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_PrepareLowLagRecordToStreamAsync(encodingProfile, stream, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) PrepareLowLagRecordToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Media.IMediaExtension customMediaSink)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_PrepareLowLagRecordToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) PrepareLowLagRecordToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_PrepareLowLagRecordToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagPhotoCapture) PrepareLowLagPhotoCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties type)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagPhotoCapture) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_PrepareLowLagPhotoCaptureAsync(type, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagPhotoSequenceCapture) PrepareLowLagPhotoSequenceCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties type)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagPhotoSequenceCapture) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_PrepareLowLagPhotoSequenceCaptureAsync(type, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetEncodingPropertiesAsync(Windows.Media.Capture.MediaStreamType mediaStreamType, Windows.Media.MediaProperties.IMediaEncodingProperties mediaEncodingProperties, Windows.Media.MediaProperties.MediaPropertySet encoderProperties)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_SetEncodingPropertiesAsync(mediaStreamType, mediaEncodingProperties, encoderProperties, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture) PrepareVariablePhotoSequenceCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties type)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture3).abi_PrepareVariablePhotoSequenceCaptureAsync(type, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.IMediaExtension) AddAudioEffectAsync(Windows.Media.Effects.IAudioEffectDefinition definition)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.IMediaExtension) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_AddAudioEffectAsync(definition, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.IMediaExtension) AddVideoEffectAsync(Windows.Media.Effects.IVideoEffectDefinition definition, Windows.Media.Capture.MediaStreamType mediaStreamType)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.IMediaExtension) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_AddVideoEffectAsync(definition, mediaStreamType, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction PauseRecordAsync(Windows.Media.Devices.MediaCapturePauseBehavior behavior)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_PauseRecordAsync(behavior, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ResumeRecordAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_ResumeRecordAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.CameraStreamState CameraStreamState()
+	{
+		Windows.Media.Devices.CameraStreamState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).get_CameraStreamState(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame) GetPreviewFrameAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_GetPreviewFrameAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame) GetPreviewFrameCopyAsync(Windows.Media.VideoFrame destination)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_GetPreviewFrameCopyAsync(destination, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.MediaCaptureThermalStatus ThermalStatus()
+	{
+		Windows.Media.Capture.MediaCaptureThermalStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).get_ThermalStatus(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedPhotoCapture) PrepareAdvancedPhotoCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties encodingProperties)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedPhotoCapture) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_PrepareAdvancedPhotoCaptureAsync(encodingProperties, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RemoveEffectAsync(Windows.Media.IMediaExtension effect)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).abi_RemoveEffectAsync(effect, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCapturePauseResult) PauseRecordWithResultAsync(Windows.Media.Devices.MediaCapturePauseBehavior behavior)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCapturePauseResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).abi_PauseRecordWithResultAsync(behavior, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCaptureStopResult) StopRecordWithResultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCaptureStopResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).abi_StopRecordWithResultAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Media.Capture.Frames.MediaFrameSource) FrameSources()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Media.Capture.Frames.MediaFrameSource) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).get_FrameSources(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).abi_CreateFrameReaderAsync(inputSource, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderWithSubtypeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).abi_CreateFrameReaderWithSubtypeAsync(inputSource, outputSubtype, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderWithSubtypeAndSizeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).abi_CreateFrameReaderWithSubtypeAndSizeAsync(inputSource, outputSubtype, outputSize, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader) CreateMultiSourceFrameReaderAsync(Windows.Foundation.Collections.IIterable!(Windows.Media.Capture.Frames.MediaFrameSource) inputSources)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture6).abi_CreateMultiSourceFrameReaderAsync(inputSources, &_ret));
+		return _ret;
+	}
 }
 
 interface MediaCaptureDeviceExclusiveControlStatusChangedEventArgs : Windows.Media.Capture.IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatus Status()
+	{
+		Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaCaptureFailedEventArgs : Windows.Media.Capture.IMediaCaptureFailedEventArgs
 {
+extern(Windows):
+	final HSTRING Message()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureFailedEventArgs).get_Message(&_ret));
+		return _ret;
+	}
+	final UINT32 Code()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureFailedEventArgs).get_Code(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaCaptureFocusChangedEventArgs : Windows.Media.Capture.IMediaCaptureFocusChangedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Devices.MediaCaptureFocusState FocusState()
+	{
+		Windows.Media.Devices.MediaCaptureFocusState _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureFocusChangedEventArgs).get_FocusState(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaCaptureInitializationSettings : Windows.Media.Capture.IMediaCaptureInitializationSettings, Windows.Media.Capture.IMediaCaptureInitializationSettings2, Windows.Media.Capture.IMediaCaptureInitializationSettings3, Windows.Media.Capture.IMediaCaptureInitializationSettings4, Windows.Media.Capture.IMediaCaptureInitializationSettings5, Windows.Media.Capture.IMediaCaptureInitializationSettings6
 {
+extern(Windows):
+	final void AudioDeviceId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).set_AudioDeviceId(value));
+	}
+	final HSTRING AudioDeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).get_AudioDeviceId(&_ret));
+		return _ret;
+	}
+	final void VideoDeviceId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).set_VideoDeviceId(value));
+	}
+	final HSTRING VideoDeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).get_VideoDeviceId(&_ret));
+		return _ret;
+	}
+	final void StreamingCaptureMode(Windows.Media.Capture.StreamingCaptureMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).set_StreamingCaptureMode(value));
+	}
+	final Windows.Media.Capture.StreamingCaptureMode StreamingCaptureMode()
+	{
+		Windows.Media.Capture.StreamingCaptureMode _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).get_StreamingCaptureMode(&_ret));
+		return _ret;
+	}
+	final void PhotoCaptureSource(Windows.Media.Capture.PhotoCaptureSource value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).set_PhotoCaptureSource(value));
+	}
+	final Windows.Media.Capture.PhotoCaptureSource PhotoCaptureSource()
+	{
+		Windows.Media.Capture.PhotoCaptureSource _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).get_PhotoCaptureSource(&_ret));
+		return _ret;
+	}
+	final void MediaCategory(Windows.Media.Capture.MediaCategory value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings2).set_MediaCategory(value));
+	}
+	final Windows.Media.Capture.MediaCategory MediaCategory()
+	{
+		Windows.Media.Capture.MediaCategory _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings2).get_MediaCategory(&_ret));
+		return _ret;
+	}
+	final void AudioProcessing(Windows.Media.AudioProcessing value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings2).set_AudioProcessing(value));
+	}
+	final Windows.Media.AudioProcessing AudioProcessing()
+	{
+		Windows.Media.AudioProcessing _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings2).get_AudioProcessing(&_ret));
+		return _ret;
+	}
+	final void AudioSource(Windows.Media.Core.IMediaSource value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings3).set_AudioSource(value));
+	}
+	final Windows.Media.Core.IMediaSource AudioSource()
+	{
+		Windows.Media.Core.IMediaSource _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings3).get_AudioSource(&_ret));
+		return _ret;
+	}
+	final void VideoSource(Windows.Media.Core.IMediaSource value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings3).set_VideoSource(value));
+	}
+	final Windows.Media.Core.IMediaSource VideoSource()
+	{
+		Windows.Media.Core.IMediaSource _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings3).get_VideoSource(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.MediaCaptureVideoProfile VideoProfile()
+	{
+		Windows.Media.Capture.MediaCaptureVideoProfile _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).get_VideoProfile(&_ret));
+		return _ret;
+	}
+	final void VideoProfile(Windows.Media.Capture.MediaCaptureVideoProfile value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).set_VideoProfile(value));
+	}
+	final Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription PreviewMediaDescription()
+	{
+		Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).get_PreviewMediaDescription(&_ret));
+		return _ret;
+	}
+	final void PreviewMediaDescription(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).set_PreviewMediaDescription(value));
+	}
+	final Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription RecordMediaDescription()
+	{
+		Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).get_RecordMediaDescription(&_ret));
+		return _ret;
+	}
+	final void RecordMediaDescription(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).set_RecordMediaDescription(value));
+	}
+	final Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription PhotoMediaDescription()
+	{
+		Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).get_PhotoMediaDescription(&_ret));
+		return _ret;
+	}
+	final void PhotoMediaDescription(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).set_PhotoMediaDescription(value));
+	}
+	final Windows.Media.Capture.Frames.MediaFrameSourceGroup SourceGroup()
+	{
+		Windows.Media.Capture.Frames.MediaFrameSourceGroup _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings5).get_SourceGroup(&_ret));
+		return _ret;
+	}
+	final void SourceGroup(Windows.Media.Capture.Frames.MediaFrameSourceGroup value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings5).set_SourceGroup(value));
+	}
+	final Windows.Media.Capture.MediaCaptureSharingMode SharingMode()
+	{
+		Windows.Media.Capture.MediaCaptureSharingMode _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings5).get_SharingMode(&_ret));
+		return _ret;
+	}
+	final void SharingMode(Windows.Media.Capture.MediaCaptureSharingMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings5).set_SharingMode(value));
+	}
+	final Windows.Media.Capture.MediaCaptureMemoryPreference MemoryPreference()
+	{
+		Windows.Media.Capture.MediaCaptureMemoryPreference _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings5).get_MemoryPreference(&_ret));
+		return _ret;
+	}
+	final void MemoryPreference(Windows.Media.Capture.MediaCaptureMemoryPreference value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings5).set_MemoryPreference(value));
+	}
+	final bool AlwaysPlaySystemShutterSound()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings6).get_AlwaysPlaySystemShutterSound(&_ret));
+		return _ret;
+	}
+	final void AlwaysPlaySystemShutterSound(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings6).set_AlwaysPlaySystemShutterSound(value));
+	}
 }
 
 interface MediaCapturePauseResult : Windows.Media.Capture.IMediaCapturePauseResult, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Media.VideoFrame LastFrame()
+	{
+		Windows.Media.VideoFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapturePauseResult).get_LastFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan RecordDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapturePauseResult).get_RecordDuration(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface MediaCaptureSettings : Windows.Media.Capture.IMediaCaptureSettings, Windows.Media.Capture.IMediaCaptureSettings2
 {
+extern(Windows):
+	final HSTRING AudioDeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings).get_AudioDeviceId(&_ret));
+		return _ret;
+	}
+	final HSTRING VideoDeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings).get_VideoDeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.StreamingCaptureMode StreamingCaptureMode()
+	{
+		Windows.Media.Capture.StreamingCaptureMode _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings).get_StreamingCaptureMode(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.PhotoCaptureSource PhotoCaptureSource()
+	{
+		Windows.Media.Capture.PhotoCaptureSource _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings).get_PhotoCaptureSource(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.VideoDeviceCharacteristic VideoDeviceCharacteristic()
+	{
+		Windows.Media.Capture.VideoDeviceCharacteristic _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings).get_VideoDeviceCharacteristic(&_ret));
+		return _ret;
+	}
+	final bool ConcurrentRecordAndPhotoSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_ConcurrentRecordAndPhotoSupported(&_ret));
+		return _ret;
+	}
+	final bool ConcurrentRecordAndPhotoSequenceSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_ConcurrentRecordAndPhotoSequenceSupported(&_ret));
+		return _ret;
+	}
+	final bool CameraSoundRequiredForRegion()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_CameraSoundRequiredForRegion(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) Horizontal35mmEquivalentFocalLength()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_Horizontal35mmEquivalentFocalLength(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(INT32) PitchOffsetDegrees()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_PitchOffsetDegrees(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) Vertical35mmEquivalentFocalLength()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_Vertical35mmEquivalentFocalLength(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.MediaCategory MediaCategory()
+	{
+		Windows.Media.Capture.MediaCategory _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_MediaCategory(&_ret));
+		return _ret;
+	}
+	final Windows.Media.AudioProcessing AudioProcessing()
+	{
+		Windows.Media.AudioProcessing _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_AudioProcessing(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaCaptureStopResult : Windows.Media.Capture.IMediaCaptureStopResult, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Media.VideoFrame LastFrame()
+	{
+		Windows.Media.VideoFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureStopResult).get_LastFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan RecordDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureStopResult).get_RecordDuration(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface MediaCaptureVideoProfile : Windows.Media.Capture.IMediaCaptureVideoProfile
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfile).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING VideoDeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfile).get_VideoDeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) SupportedPreviewMediaDescription()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfile).get_SupportedPreviewMediaDescription(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) SupportedRecordMediaDescription()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfile).get_SupportedRecordMediaDescription(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) SupportedPhotoMediaDescription()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfile).get_SupportedPhotoMediaDescription(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) GetConcurrency()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfile).abi_GetConcurrency(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaCaptureVideoProfileMediaDescription : Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription
 {
+extern(Windows):
+	final UINT32 Width()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription).get_Width(&_ret));
+		return _ret;
+	}
+	final UINT32 Height()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription).get_Height(&_ret));
+		return _ret;
+	}
+	final double FrameRate()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription).get_FrameRate(&_ret));
+		return _ret;
+	}
+	final bool IsVariablePhotoSequenceSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription).get_IsVariablePhotoSequenceSupported(&_ret));
+		return _ret;
+	}
+	final bool IsHdrVideoSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription).get_IsHdrVideoSupported(&_ret));
+		return _ret;
+	}
 }
 
 interface OptionalReferencePhotoCapturedEventArgs : Windows.Media.Capture.IOptionalReferencePhotoCapturedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.CapturedFrame Frame()
+	{
+		Windows.Media.Capture.CapturedFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IOptionalReferencePhotoCapturedEventArgs).get_Frame(&_ret));
+		return _ret;
+	}
+	final IInspectable Context()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IOptionalReferencePhotoCapturedEventArgs).get_Context(&_ret));
+		return _ret;
+	}
 }
 
 interface PhotoCapturedEventArgs : Windows.Media.Capture.IPhotoCapturedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.CapturedFrame Frame()
+	{
+		Windows.Media.Capture.CapturedFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IPhotoCapturedEventArgs).get_Frame(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.CapturedFrame Thumbnail()
+	{
+		Windows.Media.Capture.CapturedFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IPhotoCapturedEventArgs).get_Thumbnail(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan CaptureTimeOffset()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IPhotoCapturedEventArgs).get_CaptureTimeOffset(&_ret));
+		return _ret;
+	}
 }
 
 interface PhotoConfirmationCapturedEventArgs : Windows.Media.Capture.IPhotoConfirmationCapturedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Capture.CapturedFrame Frame()
+	{
+		Windows.Media.Capture.CapturedFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IPhotoConfirmationCapturedEventArgs).get_Frame(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan CaptureTimeOffset()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IPhotoConfirmationCapturedEventArgs).get_CaptureTimeOffset(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoStreamConfiguration : Windows.Media.Capture.IVideoStreamConfiguration
 {
+extern(Windows):
+	final Windows.Media.MediaProperties.VideoEncodingProperties InputProperties()
+	{
+		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IVideoStreamConfiguration).get_InputProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.VideoEncodingProperties OutputProperties()
+	{
+		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.IVideoStreamConfiguration).get_OutputProperties(&_ret));
+		return _ret;
+	}
 }
 
 enum AppBroadcastCameraCaptureState

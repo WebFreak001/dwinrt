@@ -14,4 +14,23 @@ extern(Windows):
 
 interface HeadPose : Windows.Perception.People.IHeadPose
 {
+extern(Windows):
+	final Windows.Foundation.Numerics.Vector3 Position()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.Perception.People.IHeadPose).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Numerics.Vector3 ForwardDirection()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.Perception.People.IHeadPose).get_ForwardDirection(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Numerics.Vector3 UpDirection()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.Perception.People.IHeadPose).get_UpDirection(&_ret));
+		return _ret;
+	}
 }

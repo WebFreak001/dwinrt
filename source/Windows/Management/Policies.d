@@ -37,6 +37,73 @@ interface NamedPolicy
 
 interface NamedPolicyData : Windows.Management.Policies.INamedPolicyData
 {
+extern(Windows):
+	final HSTRING Area()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).get_Area(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Management.Policies.NamedPolicyKind Kind()
+	{
+		Windows.Management.Policies.NamedPolicyKind _ret;
+		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).get_Kind(&_ret));
+		return _ret;
+	}
+	final bool IsManaged()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).get_IsManaged(&_ret));
+		return _ret;
+	}
+	final bool IsUserPolicy()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).get_IsUserPolicy(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).get_User(&_ret));
+		return _ret;
+	}
+	final bool GetBoolean()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).abi_GetBoolean(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer GetBinary()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).abi_GetBinary(&_ret));
+		return _ret;
+	}
+	final INT32 GetInt32()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).abi_GetInt32(&_ret));
+		return _ret;
+	}
+	final INT64 GetInt64()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).abi_GetInt64(&_ret));
+		return _ret;
+	}
+	final HSTRING GetString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).abi_GetString(&_ret));
+		return _ret;
+	}
 }
 
 enum NamedPolicyKind

@@ -321,6 +321,117 @@ extern(Windows):
 
 interface Binding : Windows.UI.Xaml.Data.BindingBase, Windows.UI.Xaml.Data.IBinding, Windows.UI.Xaml.Data.IBinding2
 {
+extern(Windows):
+	final Windows.UI.Xaml.PropertyPath Path()
+	{
+		Windows.UI.Xaml.PropertyPath _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).get_Path(&_ret));
+		return _ret;
+	}
+	final void Path(Windows.UI.Xaml.PropertyPath value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).set_Path(value));
+	}
+	final Windows.UI.Xaml.Data.BindingMode Mode()
+	{
+		Windows.UI.Xaml.Data.BindingMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.UI.Xaml.Data.BindingMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).set_Mode(value));
+	}
+	final IInspectable Source()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).get_Source(&_ret));
+		return _ret;
+	}
+	final void Source(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).set_Source(value));
+	}
+	final Windows.UI.Xaml.Data.RelativeSource RelativeSource()
+	{
+		Windows.UI.Xaml.Data.RelativeSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).get_RelativeSource(&_ret));
+		return _ret;
+	}
+	final void RelativeSource(Windows.UI.Xaml.Data.RelativeSource value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).set_RelativeSource(value));
+	}
+	final HSTRING ElementName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).get_ElementName(&_ret));
+		return _ret;
+	}
+	final void ElementName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).set_ElementName(value));
+	}
+	final Windows.UI.Xaml.Data.IValueConverter Converter()
+	{
+		Windows.UI.Xaml.Data.IValueConverter _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).get_Converter(&_ret));
+		return _ret;
+	}
+	final void Converter(Windows.UI.Xaml.Data.IValueConverter value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).set_Converter(value));
+	}
+	final IInspectable ConverterParameter()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).get_ConverterParameter(&_ret));
+		return _ret;
+	}
+	final void ConverterParameter(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).set_ConverterParameter(value));
+	}
+	final HSTRING ConverterLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).get_ConverterLanguage(&_ret));
+		return _ret;
+	}
+	final void ConverterLanguage(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding).set_ConverterLanguage(value));
+	}
+	final IInspectable FallbackValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding2).get_FallbackValue(&_ret));
+		return _ret;
+	}
+	final void FallbackValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding2).set_FallbackValue(value));
+	}
+	final IInspectable TargetNullValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding2).get_TargetNullValue(&_ret));
+		return _ret;
+	}
+	final void TargetNullValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding2).set_TargetNullValue(value));
+	}
+	final Windows.UI.Xaml.Data.UpdateSourceTrigger UpdateSourceTrigger()
+	{
+		Windows.UI.Xaml.Data.UpdateSourceTrigger _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding2).get_UpdateSourceTrigger(&_ret));
+		return _ret;
+	}
+	final void UpdateSourceTrigger(Windows.UI.Xaml.Data.UpdateSourceTrigger value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding2).set_UpdateSourceTrigger(value));
+	}
 }
 
 interface BindingBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.IBindingBase
@@ -329,6 +440,23 @@ interface BindingBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.I
 
 interface BindingExpression : Windows.UI.Xaml.Data.BindingExpressionBase, Windows.UI.Xaml.Data.IBindingExpression
 {
+extern(Windows):
+	final IInspectable DataItem()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBindingExpression).get_DataItem(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Data.Binding ParentBinding()
+	{
+		Windows.UI.Xaml.Data.Binding _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBindingExpression).get_ParentBinding(&_ret));
+		return _ret;
+	}
+	final void UpdateSource()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBindingExpression).abi_UpdateSource());
+	}
 }
 
 interface BindingExpressionBase : Windows.UI.Xaml.Data.IBindingExpressionBase
@@ -341,22 +469,113 @@ interface BindingOperations : Windows.UI.Xaml.Data.IBindingOperations
 
 interface CollectionViewSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.ICollectionViewSource
 {
+extern(Windows):
+	final IInspectable Source()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICollectionViewSource).get_Source(&_ret));
+		return _ret;
+	}
+	final void Source(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICollectionViewSource).set_Source(value));
+	}
+	final Windows.UI.Xaml.Data.ICollectionView View()
+	{
+		Windows.UI.Xaml.Data.ICollectionView _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICollectionViewSource).get_View(&_ret));
+		return _ret;
+	}
+	final bool IsSourceGrouped()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICollectionViewSource).get_IsSourceGrouped(&_ret));
+		return _ret;
+	}
+	final void IsSourceGrouped(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICollectionViewSource).set_IsSourceGrouped(value));
+	}
+	final Windows.UI.Xaml.PropertyPath ItemsPath()
+	{
+		Windows.UI.Xaml.PropertyPath _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICollectionViewSource).get_ItemsPath(&_ret));
+		return _ret;
+	}
+	final void ItemsPath(Windows.UI.Xaml.PropertyPath value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICollectionViewSource).set_ItemsPath(value));
+	}
 }
 
 interface CurrentChangingEventArgs : Windows.UI.Xaml.Data.ICurrentChangingEventArgs
 {
+extern(Windows):
+	final bool Cancel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICurrentChangingEventArgs).get_Cancel(&_ret));
+		return _ret;
+	}
+	final void Cancel(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICurrentChangingEventArgs).set_Cancel(value));
+	}
+	final bool IsCancelable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICurrentChangingEventArgs).get_IsCancelable(&_ret));
+		return _ret;
+	}
 }
 
 interface ItemIndexRange : Windows.UI.Xaml.Data.IItemIndexRange
 {
+extern(Windows):
+	final INT32 FirstIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IItemIndexRange).get_FirstIndex(&_ret));
+		return _ret;
+	}
+	final UINT32 Length()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IItemIndexRange).get_Length(&_ret));
+		return _ret;
+	}
+	final INT32 LastIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IItemIndexRange).get_LastIndex(&_ret));
+		return _ret;
+	}
 }
 
 interface PropertyChangedEventArgs : Windows.UI.Xaml.Data.IPropertyChangedEventArgs
 {
+extern(Windows):
+	final HSTRING PropertyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IPropertyChangedEventArgs).get_PropertyName(&_ret));
+		return _ret;
+	}
 }
 
 interface RelativeSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.IRelativeSource
 {
+extern(Windows):
+	final Windows.UI.Xaml.Data.RelativeSourceMode Mode()
+	{
+		Windows.UI.Xaml.Data.RelativeSourceMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IRelativeSource).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.UI.Xaml.Data.RelativeSourceMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IRelativeSource).set_Mode(value));
+	}
 }
 
 enum BindingMode

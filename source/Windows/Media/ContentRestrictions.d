@@ -59,14 +59,103 @@ extern(Windows):
 
 interface ContentRestrictionsBrowsePolicy : Windows.Media.ContentRestrictions.IContentRestrictionsBrowsePolicy
 {
+extern(Windows):
+	final HSTRING GeographicRegion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IContentRestrictionsBrowsePolicy).get_GeographicRegion(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) MaxBrowsableAgeRating()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IContentRestrictionsBrowsePolicy).get_MaxBrowsableAgeRating(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) PreferredAgeRating()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IContentRestrictionsBrowsePolicy).get_PreferredAgeRating(&_ret));
+		return _ret;
+	}
 }
 
 interface RatedContentDescription : Windows.Media.ContentRestrictions.IRatedContentDescription
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentDescription).get_Id(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentDescription).set_Id(value));
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentDescription).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentDescription).set_Title(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Image()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentDescription).get_Image(&_ret));
+		return _ret;
+	}
+	final void Image(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentDescription).set_Image(value));
+	}
+	final Windows.Media.ContentRestrictions.RatedContentCategory Category()
+	{
+		Windows.Media.ContentRestrictions.RatedContentCategory _ret;
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentDescription).get_Category(&_ret));
+		return _ret;
+	}
+	final void Category(Windows.Media.ContentRestrictions.RatedContentCategory value)
+	{
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentDescription).set_Category(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Ratings()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentDescription).get_Ratings(&_ret));
+		return _ret;
+	}
+	final void Ratings(Windows.Foundation.Collections.IVector!(HSTRING) value)
+	{
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentDescription).set_Ratings(value));
+	}
 }
 
 interface RatedContentRestrictions : Windows.Media.ContentRestrictions.IRatedContentRestrictions
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.ContentRestrictions.ContentRestrictionsBrowsePolicy) GetBrowsePolicyAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.ContentRestrictions.ContentRestrictionsBrowsePolicy) _ret;
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentRestrictions).abi_GetBrowsePolicyAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.ContentRestrictions.ContentAccessRestrictionLevel) GetRestrictionLevelAsync(Windows.Media.ContentRestrictions.RatedContentDescription RatedContentDescription)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.ContentRestrictions.ContentAccessRestrictionLevel) _ret;
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentRestrictions).abi_GetRestrictionLevelAsync(RatedContentDescription, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestContentAccessAsync(Windows.Media.ContentRestrictions.RatedContentDescription RatedContentDescription)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentRestrictions).abi_RequestContentAccessAsync(RatedContentDescription, &_ret));
+		return _ret;
+	}
 }
 
 enum ContentAccessRestrictionLevel

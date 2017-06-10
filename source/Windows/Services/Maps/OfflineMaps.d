@@ -45,14 +45,65 @@ extern(Windows):
 
 interface OfflineMapPackage : Windows.Services.Maps.OfflineMaps.IOfflineMapPackage
 {
+extern(Windows):
+	final Windows.Services.Maps.OfflineMaps.OfflineMapPackageStatus Status()
+	{
+		Windows.Services.Maps.OfflineMaps.OfflineMapPackageStatus _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).get_Status(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING EnclosingRegionName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).get_EnclosingRegionName(&_ret));
+		return _ret;
+	}
+	final UINT64 EstimatedSizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).get_EstimatedSizeInBytes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadResult) RequestStartDownloadAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadResult) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).abi_RequestStartDownloadAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface OfflineMapPackageQueryResult : Windows.Services.Maps.OfflineMaps.IOfflineMapPackageQueryResult
 {
+extern(Windows):
+	final Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryStatus Status()
+	{
+		Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryStatus _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageQueryResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.OfflineMaps.OfflineMapPackage) Packages()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.OfflineMaps.OfflineMapPackage) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageQueryResult).get_Packages(&_ret));
+		return _ret;
+	}
 }
 
 interface OfflineMapPackageStartDownloadResult : Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStartDownloadResult
 {
+extern(Windows):
+	final Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadStatus Status()
+	{
+		Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadStatus _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStartDownloadResult).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 enum OfflineMapPackageQueryStatus

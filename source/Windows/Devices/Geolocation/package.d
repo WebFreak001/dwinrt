@@ -271,50 +271,415 @@ extern(Windows):
 
 interface CivicAddress : Windows.Devices.Geolocation.ICivicAddress
 {
+extern(Windows):
+	final HSTRING Country()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.ICivicAddress).get_Country(&_ret));
+		return _ret;
+	}
+	final HSTRING State()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.ICivicAddress).get_State(&_ret));
+		return _ret;
+	}
+	final HSTRING City()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.ICivicAddress).get_City(&_ret));
+		return _ret;
+	}
+	final HSTRING PostalCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.ICivicAddress).get_PostalCode(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.ICivicAddress).get_Timestamp(&_ret));
+		return _ret;
+	}
 }
 
 interface GeoboundingBox : Windows.Devices.Geolocation.IGeoboundingBox, Windows.Devices.Geolocation.IGeoshape
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.BasicGeoposition NorthwestCorner()
+	{
+		Windows.Devices.Geolocation.BasicGeoposition _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoboundingBox).get_NorthwestCorner(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.BasicGeoposition SoutheastCorner()
+	{
+		Windows.Devices.Geolocation.BasicGeoposition _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoboundingBox).get_SoutheastCorner(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.BasicGeoposition Center()
+	{
+		Windows.Devices.Geolocation.BasicGeoposition _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoboundingBox).get_Center(&_ret));
+		return _ret;
+	}
+	final double MinAltitude()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoboundingBox).get_MinAltitude(&_ret));
+		return _ret;
+	}
+	final double MaxAltitude()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoboundingBox).get_MaxAltitude(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.GeoshapeType GeoshapeType()
+	{
+		Windows.Devices.Geolocation.GeoshapeType _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_GeoshapeType(&_ret));
+		return _ret;
+	}
+	final UINT32 SpatialReferenceId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_SpatialReferenceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.AltitudeReferenceSystem AltitudeReferenceSystem()
+	{
+		Windows.Devices.Geolocation.AltitudeReferenceSystem _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_AltitudeReferenceSystem(&_ret));
+		return _ret;
+	}
 }
 
 interface Geocircle : Windows.Devices.Geolocation.IGeocircle, Windows.Devices.Geolocation.IGeoshape
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.BasicGeoposition Center()
+	{
+		Windows.Devices.Geolocation.BasicGeoposition _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocircle).get_Center(&_ret));
+		return _ret;
+	}
+	final double Radius()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocircle).get_Radius(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.GeoshapeType GeoshapeType()
+	{
+		Windows.Devices.Geolocation.GeoshapeType _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_GeoshapeType(&_ret));
+		return _ret;
+	}
+	final UINT32 SpatialReferenceId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_SpatialReferenceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.AltitudeReferenceSystem AltitudeReferenceSystem()
+	{
+		Windows.Devices.Geolocation.AltitudeReferenceSystem _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_AltitudeReferenceSystem(&_ret));
+		return _ret;
+	}
 }
 
 interface Geocoordinate : Windows.Devices.Geolocation.IGeocoordinate, Windows.Devices.Geolocation.IGeocoordinateWithPositionData, Windows.Devices.Geolocation.IGeocoordinateWithPoint, Windows.Devices.Geolocation.IGeocoordinateWithPositionSourceTimestamp
 {
+extern(Windows):
+	deprecated("Latitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Latitude")
+	final double Latitude()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Latitude(&_ret));
+		return _ret;
+	}
+	deprecated("Longitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Longitude")
+	final double Longitude()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Longitude(&_ret));
+		return _ret;
+	}
+	deprecated("Altitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Altitude")
+	final Windows.Foundation.IReference!(double) Altitude()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Altitude(&_ret));
+		return _ret;
+	}
+	final double Accuracy()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Accuracy(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) AltitudeAccuracy()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_AltitudeAccuracy(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) Heading()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Heading(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) Speed()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Speed(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.PositionSource PositionSource()
+	{
+		Windows.Devices.Geolocation.PositionSource _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateWithPositionData).get_PositionSource(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.GeocoordinateSatelliteData SatelliteData()
+	{
+		Windows.Devices.Geolocation.GeocoordinateSatelliteData _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateWithPositionData).get_SatelliteData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopoint Point()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateWithPoint).get_Point(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) PositionSourceTimestamp()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateWithPositionSourceTimestamp).get_PositionSourceTimestamp(&_ret));
+		return _ret;
+	}
 }
 
 interface GeocoordinateSatelliteData : Windows.Devices.Geolocation.IGeocoordinateSatelliteData
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(double) PositionDilutionOfPrecision()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateSatelliteData).get_PositionDilutionOfPrecision(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) HorizontalDilutionOfPrecision()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateSatelliteData).get_HorizontalDilutionOfPrecision(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) VerticalDilutionOfPrecision()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateSatelliteData).get_VerticalDilutionOfPrecision(&_ret));
+		return _ret;
+	}
 }
 
 interface Geolocator : Windows.Devices.Geolocation.IGeolocator, Windows.Devices.Geolocation.IGeolocatorWithScalarAccuracy, Windows.Devices.Geolocation.IGeolocator2
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.PositionAccuracy DesiredAccuracy()
+	{
+		Windows.Devices.Geolocation.PositionAccuracy _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).get_DesiredAccuracy(&_ret));
+		return _ret;
+	}
+	final void DesiredAccuracy(Windows.Devices.Geolocation.PositionAccuracy value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).set_DesiredAccuracy(value));
+	}
+	final double MovementThreshold()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).get_MovementThreshold(&_ret));
+		return _ret;
+	}
+	final void MovementThreshold(double value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).set_MovementThreshold(value));
+	}
+	final UINT32 ReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).get_ReportInterval(&_ret));
+		return _ret;
+	}
+	final void ReportInterval(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).set_ReportInterval(value));
+	}
+	final Windows.Devices.Geolocation.PositionStatus LocationStatus()
+	{
+		Windows.Devices.Geolocation.PositionStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).get_LocationStatus(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition) GetGeopositionAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).abi_GetGeopositionAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition) GetGeopositionAsyncWithAgeAndTimeout(Windows.Foundation.TimeSpan maximumAge, Windows.Foundation.TimeSpan timeout)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).abi_GetGeopositionAsyncWithAgeAndTimeout(maximumAge, timeout, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) DesiredAccuracyInMeters()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocatorWithScalarAccuracy).get_DesiredAccuracyInMeters(&_ret));
+		return _ret;
+	}
+	final void DesiredAccuracyInMeters(Windows.Foundation.IReference!(UINT32) value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocatorWithScalarAccuracy).set_DesiredAccuracyInMeters(value));
+	}
+	final void AllowFallbackToConsentlessPositions()
+	{
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator2).abi_AllowFallbackToConsentlessPositions());
+	}
 }
 
 interface Geopath : Windows.Devices.Geolocation.IGeopath, Windows.Devices.Geolocation.IGeoshape
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.BasicGeoposition) Positions()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.BasicGeoposition) _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeopath).get_Positions(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.GeoshapeType GeoshapeType()
+	{
+		Windows.Devices.Geolocation.GeoshapeType _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_GeoshapeType(&_ret));
+		return _ret;
+	}
+	final UINT32 SpatialReferenceId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_SpatialReferenceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.AltitudeReferenceSystem AltitudeReferenceSystem()
+	{
+		Windows.Devices.Geolocation.AltitudeReferenceSystem _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_AltitudeReferenceSystem(&_ret));
+		return _ret;
+	}
 }
 
 interface Geopoint : Windows.Devices.Geolocation.IGeopoint, Windows.Devices.Geolocation.IGeoshape
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.BasicGeoposition Position()
+	{
+		Windows.Devices.Geolocation.BasicGeoposition _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeopoint).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.GeoshapeType GeoshapeType()
+	{
+		Windows.Devices.Geolocation.GeoshapeType _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_GeoshapeType(&_ret));
+		return _ret;
+	}
+	final UINT32 SpatialReferenceId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_SpatialReferenceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.AltitudeReferenceSystem AltitudeReferenceSystem()
+	{
+		Windows.Devices.Geolocation.AltitudeReferenceSystem _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_AltitudeReferenceSystem(&_ret));
+		return _ret;
+	}
 }
 
 interface Geoposition : Windows.Devices.Geolocation.IGeoposition, Windows.Devices.Geolocation.IGeoposition2
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geocoordinate Coordinate()
+	{
+		Windows.Devices.Geolocation.Geocoordinate _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoposition).get_Coordinate(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.CivicAddress CivicAddress()
+	{
+		Windows.Devices.Geolocation.CivicAddress _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoposition).get_CivicAddress(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.VenueData VenueData()
+	{
+		Windows.Devices.Geolocation.VenueData _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoposition2).get_VenueData(&_ret));
+		return _ret;
+	}
 }
 
 interface PositionChangedEventArgs : Windows.Devices.Geolocation.IPositionChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geoposition Position()
+	{
+		Windows.Devices.Geolocation.Geoposition _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IPositionChangedEventArgs).get_Position(&_ret));
+		return _ret;
+	}
 }
 
 interface StatusChangedEventArgs : Windows.Devices.Geolocation.IStatusChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.PositionStatus Status()
+	{
+		Windows.Devices.Geolocation.PositionStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IStatusChangedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface VenueData : Windows.Devices.Geolocation.IVenueData
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IVenueData).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING Level()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IVenueData).get_Level(&_ret));
+		return _ret;
+	}
 }
 
 enum AltitudeReferenceSystem

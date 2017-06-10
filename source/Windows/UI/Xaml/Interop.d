@@ -101,6 +101,37 @@ extern(Windows):
 
 interface NotifyCollectionChangedEventArgs : Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Interop.NotifyCollectionChangedAction Action()
+	{
+		Windows.UI.Xaml.Interop.NotifyCollectionChangedAction _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_Action(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Interop.IBindableVector NewItems()
+	{
+		Windows.UI.Xaml.Interop.IBindableVector _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_NewItems(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Interop.IBindableVector OldItems()
+	{
+		Windows.UI.Xaml.Interop.IBindableVector _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_OldItems(&_ret));
+		return _ret;
+	}
+	final INT32 NewStartingIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_NewStartingIndex(&_ret));
+		return _ret;
+	}
+	final INT32 OldStartingIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_OldStartingIndex(&_ret));
+		return _ret;
+	}
 }
 
 enum NotifyCollectionChangedAction

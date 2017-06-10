@@ -31,6 +31,23 @@ extern(Windows):
 
 interface SystemNavigationCloseRequestedPreviewEventArgs : Windows.UI.Core.Preview.ISystemNavigationCloseRequestedPreviewEventArgs
 {
+extern(Windows):
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Core.Preview.ISystemNavigationCloseRequestedPreviewEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Core.Preview.ISystemNavigationCloseRequestedPreviewEventArgs).set_Handled(value));
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.UI.Core.Preview.ISystemNavigationCloseRequestedPreviewEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemNavigationManagerPreview : Windows.UI.Core.Preview.ISystemNavigationManagerPreview

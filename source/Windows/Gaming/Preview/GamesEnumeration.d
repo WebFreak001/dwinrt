@@ -48,6 +48,37 @@ interface GameList
 
 interface GameListEntry : Windows.Gaming.Preview.GamesEnumeration.IGameListEntry
 {
+extern(Windows):
+	final Windows.ApplicationModel.AppDisplayInfo DisplayInfo()
+	{
+		Windows.ApplicationModel.AppDisplayInfo _ret;
+		Debug.OK(this.as!(Windows.Gaming.Preview.GamesEnumeration.IGameListEntry).get_DisplayInfo(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) LaunchAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Gaming.Preview.GamesEnumeration.IGameListEntry).abi_LaunchAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.Preview.GamesEnumeration.GameListCategory Category()
+	{
+		Windows.Gaming.Preview.GamesEnumeration.GameListCategory _ret;
+		Debug.OK(this.as!(Windows.Gaming.Preview.GamesEnumeration.IGameListEntry).get_Category(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Gaming.Preview.GamesEnumeration.IGameListEntry).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetCategoryAsync(Windows.Gaming.Preview.GamesEnumeration.GameListCategory value)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Gaming.Preview.GamesEnumeration.IGameListEntry).abi_SetCategoryAsync(value, &_ret));
+		return _ret;
+	}
 }
 
 enum GameListCategory

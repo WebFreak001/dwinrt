@@ -145,48 +145,300 @@ extern(Windows):
 
 interface ProcessCpuUsage : Windows.System.Diagnostics.IProcessCpuUsage
 {
+extern(Windows):
+	final Windows.System.Diagnostics.ProcessCpuUsageReport GetReport()
+	{
+		Windows.System.Diagnostics.ProcessCpuUsageReport _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessCpuUsage).abi_GetReport(&_ret));
+		return _ret;
+	}
 }
 
 interface ProcessCpuUsageReport : Windows.System.Diagnostics.IProcessCpuUsageReport
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan KernelTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessCpuUsageReport).get_KernelTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan UserTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessCpuUsageReport).get_UserTime(&_ret));
+		return _ret;
+	}
 }
 
 interface ProcessDiagnosticInfo : Windows.System.Diagnostics.IProcessDiagnosticInfo
 {
+extern(Windows):
+	final UINT32 ProcessId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_ProcessId(&_ret));
+		return _ret;
+	}
+	final HSTRING ExecutableFileName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_ExecutableFileName(&_ret));
+		return _ret;
+	}
+	final Windows.System.Diagnostics.ProcessDiagnosticInfo Parent()
+	{
+		Windows.System.Diagnostics.ProcessDiagnosticInfo _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_Parent(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime ProcessStartTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_ProcessStartTime(&_ret));
+		return _ret;
+	}
+	final Windows.System.Diagnostics.ProcessDiskUsage DiskUsage()
+	{
+		Windows.System.Diagnostics.ProcessDiskUsage _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_DiskUsage(&_ret));
+		return _ret;
+	}
+	final Windows.System.Diagnostics.ProcessMemoryUsage MemoryUsage()
+	{
+		Windows.System.Diagnostics.ProcessMemoryUsage _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_MemoryUsage(&_ret));
+		return _ret;
+	}
+	final Windows.System.Diagnostics.ProcessCpuUsage CpuUsage()
+	{
+		Windows.System.Diagnostics.ProcessCpuUsage _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_CpuUsage(&_ret));
+		return _ret;
+	}
 }
 
 interface ProcessDiskUsage : Windows.System.Diagnostics.IProcessDiskUsage
 {
+extern(Windows):
+	final Windows.System.Diagnostics.ProcessDiskUsageReport GetReport()
+	{
+		Windows.System.Diagnostics.ProcessDiskUsageReport _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsage).abi_GetReport(&_ret));
+		return _ret;
+	}
 }
 
 interface ProcessDiskUsageReport : Windows.System.Diagnostics.IProcessDiskUsageReport
 {
+extern(Windows):
+	final INT64 ReadOperationCount()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsageReport).get_ReadOperationCount(&_ret));
+		return _ret;
+	}
+	final INT64 WriteOperationCount()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsageReport).get_WriteOperationCount(&_ret));
+		return _ret;
+	}
+	final INT64 OtherOperationCount()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsageReport).get_OtherOperationCount(&_ret));
+		return _ret;
+	}
+	final INT64 BytesReadCount()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsageReport).get_BytesReadCount(&_ret));
+		return _ret;
+	}
+	final INT64 BytesWrittenCount()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsageReport).get_BytesWrittenCount(&_ret));
+		return _ret;
+	}
+	final INT64 OtherBytesCount()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsageReport).get_OtherBytesCount(&_ret));
+		return _ret;
+	}
 }
 
 interface ProcessMemoryUsage : Windows.System.Diagnostics.IProcessMemoryUsage
 {
+extern(Windows):
+	final Windows.System.Diagnostics.ProcessMemoryUsageReport GetReport()
+	{
+		Windows.System.Diagnostics.ProcessMemoryUsageReport _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsage).abi_GetReport(&_ret));
+		return _ret;
+	}
 }
 
 interface ProcessMemoryUsageReport : Windows.System.Diagnostics.IProcessMemoryUsageReport
 {
+extern(Windows):
+	final UINT64 NonPagedPoolSizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_NonPagedPoolSizeInBytes(&_ret));
+		return _ret;
+	}
+	final UINT32 PageFaultCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PageFaultCount(&_ret));
+		return _ret;
+	}
+	final UINT64 PageFileSizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PageFileSizeInBytes(&_ret));
+		return _ret;
+	}
+	final UINT64 PagedPoolSizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PagedPoolSizeInBytes(&_ret));
+		return _ret;
+	}
+	final UINT64 PeakNonPagedPoolSizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakNonPagedPoolSizeInBytes(&_ret));
+		return _ret;
+	}
+	final UINT64 PeakPageFileSizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakPageFileSizeInBytes(&_ret));
+		return _ret;
+	}
+	final UINT64 PeakPagedPoolSizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakPagedPoolSizeInBytes(&_ret));
+		return _ret;
+	}
+	final UINT64 PeakVirtualMemorySizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakVirtualMemorySizeInBytes(&_ret));
+		return _ret;
+	}
+	final UINT64 PeakWorkingSetSizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakWorkingSetSizeInBytes(&_ret));
+		return _ret;
+	}
+	final UINT64 PrivatePageCount()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PrivatePageCount(&_ret));
+		return _ret;
+	}
+	final UINT64 VirtualMemorySizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_VirtualMemorySizeInBytes(&_ret));
+		return _ret;
+	}
+	final UINT64 WorkingSetSizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_WorkingSetSizeInBytes(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemCpuUsage : Windows.System.Diagnostics.ISystemCpuUsage
 {
+extern(Windows):
+	final Windows.System.Diagnostics.SystemCpuUsageReport GetReport()
+	{
+		Windows.System.Diagnostics.SystemCpuUsageReport _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemCpuUsage).abi_GetReport(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemCpuUsageReport : Windows.System.Diagnostics.ISystemCpuUsageReport
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan KernelTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemCpuUsageReport).get_KernelTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan UserTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemCpuUsageReport).get_UserTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan IdleTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemCpuUsageReport).get_IdleTime(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemDiagnosticInfo : Windows.System.Diagnostics.ISystemDiagnosticInfo
 {
+extern(Windows):
+	final Windows.System.Diagnostics.SystemMemoryUsage MemoryUsage()
+	{
+		Windows.System.Diagnostics.SystemMemoryUsage _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemDiagnosticInfo).get_MemoryUsage(&_ret));
+		return _ret;
+	}
+	final Windows.System.Diagnostics.SystemCpuUsage CpuUsage()
+	{
+		Windows.System.Diagnostics.SystemCpuUsage _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemDiagnosticInfo).get_CpuUsage(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemMemoryUsage : Windows.System.Diagnostics.ISystemMemoryUsage
 {
+extern(Windows):
+	final Windows.System.Diagnostics.SystemMemoryUsageReport GetReport()
+	{
+		Windows.System.Diagnostics.SystemMemoryUsageReport _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemMemoryUsage).abi_GetReport(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemMemoryUsageReport : Windows.System.Diagnostics.ISystemMemoryUsageReport
 {
+extern(Windows):
+	final UINT64 TotalPhysicalSizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemMemoryUsageReport).get_TotalPhysicalSizeInBytes(&_ret));
+		return _ret;
+	}
+	final UINT64 AvailableSizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemMemoryUsageReport).get_AvailableSizeInBytes(&_ret));
+		return _ret;
+	}
+	final UINT64 CommittedSizeInBytes()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemMemoryUsageReport).get_CommittedSizeInBytes(&_ret));
+		return _ret;
+	}
 }

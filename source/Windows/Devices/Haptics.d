@@ -68,14 +68,97 @@ interface KnownSimpleHapticsControllerWaveforms
 
 interface SimpleHapticsController : Windows.Devices.Haptics.ISimpleHapticsController
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Haptics.SimpleHapticsControllerFeedback) SupportedFeedback()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Haptics.SimpleHapticsControllerFeedback) _ret;
+		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).get_SupportedFeedback(&_ret));
+		return _ret;
+	}
+	final bool IsIntensitySupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).get_IsIntensitySupported(&_ret));
+		return _ret;
+	}
+	final bool IsPlayCountSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).get_IsPlayCountSupported(&_ret));
+		return _ret;
+	}
+	final bool IsPlayDurationSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).get_IsPlayDurationSupported(&_ret));
+		return _ret;
+	}
+	final bool IsReplayPauseIntervalSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).get_IsReplayPauseIntervalSupported(&_ret));
+		return _ret;
+	}
+	final void StopFeedback()
+	{
+		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).abi_StopFeedback());
+	}
+	final void SendHapticFeedback(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback)
+	{
+		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).abi_SendHapticFeedback(feedback));
+	}
+	final void SendHapticFeedbackWithIntensity(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity)
+	{
+		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).abi_SendHapticFeedbackWithIntensity(feedback, intensity));
+	}
+	final void SendHapticFeedbackForDuration(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity, Windows.Foundation.TimeSpan playDuration)
+	{
+		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).abi_SendHapticFeedbackForDuration(feedback, intensity, playDuration));
+	}
+	final void SendHapticFeedbackForPlayCount(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity, INT32 playCount, Windows.Foundation.TimeSpan replayPauseInterval)
+	{
+		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).abi_SendHapticFeedbackForPlayCount(feedback, intensity, playCount, replayPauseInterval));
+	}
 }
 
 interface SimpleHapticsControllerFeedback : Windows.Devices.Haptics.ISimpleHapticsControllerFeedback
 {
+extern(Windows):
+	final UINT16 Waveform()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsControllerFeedback).get_Waveform(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsControllerFeedback).get_Duration(&_ret));
+		return _ret;
+	}
 }
 
 interface VibrationDevice : Windows.Devices.Haptics.IVibrationDevice
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Haptics.IVibrationDevice).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
+	{
+		Windows.Devices.Haptics.SimpleHapticsController _ret;
+		Debug.OK(this.as!(Windows.Devices.Haptics.IVibrationDevice).get_SimpleHapticsController(&_ret));
+		return _ret;
+	}
 }
 
 enum VibrationAccessStatus

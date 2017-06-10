@@ -21,4 +21,65 @@ extern(Windows):
 
 interface SceneLightingEffect : Windows.UI.Composition.Effects.ISceneLightingEffect, Windows.Graphics.Effects.IGraphicsEffect, Windows.Graphics.Effects.IGraphicsEffectSource
 {
+extern(Windows):
+	final FLOAT AmbientAmount()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_AmbientAmount(&_ret));
+		return _ret;
+	}
+	final void AmbientAmount(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_AmbientAmount(value));
+	}
+	final FLOAT DiffuseAmount()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_DiffuseAmount(&_ret));
+		return _ret;
+	}
+	final void DiffuseAmount(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_DiffuseAmount(value));
+	}
+	final Windows.Graphics.Effects.IGraphicsEffectSource NormalMapSource()
+	{
+		Windows.Graphics.Effects.IGraphicsEffectSource _ret;
+		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_NormalMapSource(&_ret));
+		return _ret;
+	}
+	final void NormalMapSource(Windows.Graphics.Effects.IGraphicsEffectSource value)
+	{
+		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_NormalMapSource(value));
+	}
+	final FLOAT SpecularAmount()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_SpecularAmount(&_ret));
+		return _ret;
+	}
+	final void SpecularAmount(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_SpecularAmount(value));
+	}
+	final FLOAT SpecularShine()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_SpecularShine(&_ret));
+		return _ret;
+	}
+	final void SpecularShine(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_SpecularShine(value));
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Effects.IGraphicsEffect).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING name)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Effects.IGraphicsEffect).set_Name(name));
+	}
 }

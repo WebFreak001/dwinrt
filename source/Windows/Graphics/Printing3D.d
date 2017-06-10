@@ -444,106 +444,840 @@ interface Print3DManager : Windows.Graphics.Printing3D.IPrint3DManager
 
 interface Print3DTask : Windows.Graphics.Printing3D.IPrint3DTask
 {
+extern(Windows):
+	final Windows.Graphics.Printing3D.Printing3D3MFPackage Source()
+	{
+		Windows.Graphics.Printing3D.Printing3D3MFPackage _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).get_Source(&_ret));
+		return _ret;
+	}
 }
 
 interface Print3DTaskCompletedEventArgs : Windows.Graphics.Printing3D.IPrint3DTaskCompletedEventArgs
 {
+extern(Windows):
+	final Windows.Graphics.Printing3D.Print3DTaskCompletion Completion()
+	{
+		Windows.Graphics.Printing3D.Print3DTaskCompletion _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTaskCompletedEventArgs).get_Completion(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing3D.Print3DTaskDetail ExtendedStatus()
+	{
+		Windows.Graphics.Printing3D.Print3DTaskDetail _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTaskCompletedEventArgs).get_ExtendedStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface Print3DTaskRequest : Windows.Graphics.Printing3D.IPrint3DTaskRequest
 {
+extern(Windows):
+	final Windows.Graphics.Printing3D.Print3DTask CreateTask(HSTRING title, HSTRING printerId, Windows.Graphics.Printing3D.Print3DTaskSourceRequestedHandler handler)
+	{
+		Windows.Graphics.Printing3D.Print3DTask _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTaskRequest).abi_CreateTask(title, printerId, handler, &_ret));
+		return _ret;
+	}
 }
 
 interface Print3DTaskRequestedEventArgs : Windows.Graphics.Printing3D.IPrint3DTaskRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Graphics.Printing3D.Print3DTaskRequest Request()
+	{
+		Windows.Graphics.Printing3D.Print3DTaskRequest _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTaskRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 interface Print3DTaskSourceChangedEventArgs : Windows.Graphics.Printing3D.IPrint3DTaskSourceChangedEventArgs
 {
+extern(Windows):
+	final Windows.Graphics.Printing3D.Printing3D3MFPackage Source()
+	{
+		Windows.Graphics.Printing3D.Printing3D3MFPackage _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTaskSourceChangedEventArgs).get_Source(&_ret));
+		return _ret;
+	}
 }
 
 interface Print3DTaskSourceRequestedArgs : Windows.Graphics.Printing3D.IPrint3DTaskSourceRequestedArgs
 {
+extern(Windows):
+	final void SetSource(Windows.Graphics.Printing3D.Printing3D3MFPackage source)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTaskSourceRequestedArgs).abi_SetSource(source));
+	}
 }
 
 interface Printing3D3MFPackage : Windows.Graphics.Printing3D.IPrinting3D3MFPackage
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) SaveAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).abi_SaveAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IRandomAccessStream PrintTicket()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).get_PrintTicket(&_ret));
+		return _ret;
+	}
+	final void PrintTicket(Windows.Storage.Streams.IRandomAccessStream value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).set_PrintTicket(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStream ModelPart()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).get_ModelPart(&_ret));
+		return _ret;
+	}
+	final void ModelPart(Windows.Storage.Streams.IRandomAccessStream value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).set_ModelPart(value));
+	}
+	final Windows.Graphics.Printing3D.Printing3DTextureResource Thumbnail()
+	{
+		Windows.Graphics.Printing3D.Printing3DTextureResource _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).get_Thumbnail(&_ret));
+		return _ret;
+	}
+	final void Thumbnail(Windows.Graphics.Printing3D.Printing3DTextureResource value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).set_Thumbnail(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DTextureResource) Textures()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DTextureResource) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).get_Textures(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Printing3D.Printing3DModel) LoadModelFromPackageAsync(Windows.Storage.Streams.IRandomAccessStream value)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Printing3D.Printing3DModel) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).abi_LoadModelFromPackageAsync(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveModelToPackageAsync(Windows.Graphics.Printing3D.Printing3DModel value)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).abi_SaveModelToPackageAsync(value, &_ret));
+		return _ret;
+	}
 }
 
 interface Printing3DBaseMaterial : Windows.Graphics.Printing3D.IPrinting3DBaseMaterial
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial).set_Name(value));
+	}
+	final Windows.Graphics.Printing3D.Printing3DColorMaterial Color()
+	{
+		Windows.Graphics.Printing3D.Printing3DColorMaterial _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial).get_Color(&_ret));
+		return _ret;
+	}
+	final void Color(Windows.Graphics.Printing3D.Printing3DColorMaterial value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial).set_Color(value));
+	}
 }
 
 interface Printing3DBaseMaterialGroup : Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroup
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DBaseMaterial) Bases()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DBaseMaterial) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroup).get_Bases(&_ret));
+		return _ret;
+	}
+	final UINT32 MaterialGroupId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroup).get_MaterialGroupId(&_ret));
+		return _ret;
+	}
 }
 
 interface Printing3DColorMaterial : Windows.Graphics.Printing3D.IPrinting3DColorMaterial, Windows.Graphics.Printing3D.IPrinting3DColorMaterial2
 {
+extern(Windows):
+	final UINT32 Value()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterial).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterial).set_Value(value));
+	}
+	final Windows.UI.Color Color()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterial2).get_Color(&_ret));
+		return _ret;
+	}
+	final void Color(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterial2).set_Color(value));
+	}
 }
 
 interface Printing3DColorMaterialGroup : Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroup
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DColorMaterial) Colors()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DColorMaterial) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroup).get_Colors(&_ret));
+		return _ret;
+	}
+	final UINT32 MaterialGroupId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroup).get_MaterialGroupId(&_ret));
+		return _ret;
+	}
 }
 
 interface Printing3DComponent : Windows.Graphics.Printing3D.IPrinting3DComponent
 {
+extern(Windows):
+	final Windows.Graphics.Printing3D.Printing3DMesh Mesh()
+	{
+		Windows.Graphics.Printing3D.Printing3DMesh _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).get_Mesh(&_ret));
+		return _ret;
+	}
+	final void Mesh(Windows.Graphics.Printing3D.Printing3DMesh value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).set_Mesh(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DComponentWithMatrix) Components()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DComponentWithMatrix) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).get_Components(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing3D.Printing3DTextureResource Thumbnail()
+	{
+		Windows.Graphics.Printing3D.Printing3DTextureResource _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).get_Thumbnail(&_ret));
+		return _ret;
+	}
+	final void Thumbnail(Windows.Graphics.Printing3D.Printing3DTextureResource value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).set_Thumbnail(value));
+	}
+	final Windows.Graphics.Printing3D.Printing3DObjectType Type()
+	{
+		Windows.Graphics.Printing3D.Printing3DObjectType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).get_Type(&_ret));
+		return _ret;
+	}
+	final void Type(Windows.Graphics.Printing3D.Printing3DObjectType value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).set_Type(value));
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).set_Name(value));
+	}
+	final HSTRING PartNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).get_PartNumber(&_ret));
+		return _ret;
+	}
+	final void PartNumber(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).set_PartNumber(value));
+	}
 }
 
 interface Printing3DComponentWithMatrix : Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix
 {
+extern(Windows):
+	final Windows.Graphics.Printing3D.Printing3DComponent Component()
+	{
+		Windows.Graphics.Printing3D.Printing3DComponent _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix).get_Component(&_ret));
+		return _ret;
+	}
+	final void Component(Windows.Graphics.Printing3D.Printing3DComponent value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix).set_Component(value));
+	}
+	final Windows.Foundation.Numerics.Matrix4x4 Matrix()
+	{
+		Windows.Foundation.Numerics.Matrix4x4 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix).get_Matrix(&_ret));
+		return _ret;
+	}
+	final void Matrix(Windows.Foundation.Numerics.Matrix4x4 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix).set_Matrix(value));
+	}
 }
 
 interface Printing3DCompositeMaterial : Windows.Graphics.Printing3D.IPrinting3DCompositeMaterial
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(double) Values()
+	{
+		Windows.Foundation.Collections.IVector!(double) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterial).get_Values(&_ret));
+		return _ret;
+	}
 }
 
 interface Printing3DCompositeMaterialGroup : Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup, Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DCompositeMaterial) Composites()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DCompositeMaterial) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup).get_Composites(&_ret));
+		return _ret;
+	}
+	final UINT32 MaterialGroupId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup).get_MaterialGroupId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(UINT32) MaterialIndices()
+	{
+		Windows.Foundation.Collections.IVector!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup).get_MaterialIndices(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup BaseMaterialGroup()
+	{
+		Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup2).get_BaseMaterialGroup(&_ret));
+		return _ret;
+	}
+	final void BaseMaterialGroup(Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup2).set_BaseMaterialGroup(value));
+	}
 }
 
 interface Printing3DFaceReductionOptions : Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions
 {
+extern(Windows):
+	final double MaxReductionArea()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions).get_MaxReductionArea(&_ret));
+		return _ret;
+	}
+	final void MaxReductionArea(double value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions).set_MaxReductionArea(value));
+	}
+	final UINT32 TargetTriangleCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions).get_TargetTriangleCount(&_ret));
+		return _ret;
+	}
+	final void TargetTriangleCount(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions).set_TargetTriangleCount(value));
+	}
+	final double MaxEdgeLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions).get_MaxEdgeLength(&_ret));
+		return _ret;
+	}
+	final void MaxEdgeLength(double value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions).set_MaxEdgeLength(value));
+	}
 }
 
 interface Printing3DMaterial : Windows.Graphics.Printing3D.IPrinting3DMaterial
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup) BaseGroups()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMaterial).get_BaseGroups(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DColorMaterialGroup) ColorGroups()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DColorMaterialGroup) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMaterial).get_ColorGroups(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterialGroup) Texture2CoordGroups()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterialGroup) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMaterial).get_Texture2CoordGroups(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DCompositeMaterialGroup) CompositeGroups()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DCompositeMaterialGroup) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMaterial).get_CompositeGroups(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterialGroup) MultiplePropertyGroups()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterialGroup) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMaterial).get_MultiplePropertyGroups(&_ret));
+		return _ret;
+	}
 }
 
 interface Printing3DMesh : Windows.Graphics.Printing3D.IPrinting3DMesh
 {
+extern(Windows):
+	final UINT32 VertexCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_VertexCount(&_ret));
+		return _ret;
+	}
+	final void VertexCount(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).set_VertexCount(value));
+	}
+	final UINT32 IndexCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_IndexCount(&_ret));
+		return _ret;
+	}
+	final void IndexCount(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).set_IndexCount(value));
+	}
+	final Windows.Graphics.Printing3D.Printing3DBufferDescription VertexPositionsDescription()
+	{
+		Windows.Graphics.Printing3D.Printing3DBufferDescription _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_VertexPositionsDescription(&_ret));
+		return _ret;
+	}
+	final void VertexPositionsDescription(Windows.Graphics.Printing3D.Printing3DBufferDescription value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).set_VertexPositionsDescription(value));
+	}
+	final Windows.Graphics.Printing3D.Printing3DBufferDescription VertexNormalsDescription()
+	{
+		Windows.Graphics.Printing3D.Printing3DBufferDescription _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_VertexNormalsDescription(&_ret));
+		return _ret;
+	}
+	final void VertexNormalsDescription(Windows.Graphics.Printing3D.Printing3DBufferDescription value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).set_VertexNormalsDescription(value));
+	}
+	final Windows.Graphics.Printing3D.Printing3DBufferDescription TriangleIndicesDescription()
+	{
+		Windows.Graphics.Printing3D.Printing3DBufferDescription _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_TriangleIndicesDescription(&_ret));
+		return _ret;
+	}
+	final void TriangleIndicesDescription(Windows.Graphics.Printing3D.Printing3DBufferDescription value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).set_TriangleIndicesDescription(value));
+	}
+	final Windows.Graphics.Printing3D.Printing3DBufferDescription TriangleMaterialIndicesDescription()
+	{
+		Windows.Graphics.Printing3D.Printing3DBufferDescription _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_TriangleMaterialIndicesDescription(&_ret));
+		return _ret;
+	}
+	final void TriangleMaterialIndicesDescription(Windows.Graphics.Printing3D.Printing3DBufferDescription value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).set_TriangleMaterialIndicesDescription(value));
+	}
+	final Windows.Storage.Streams.IBuffer GetVertexPositions()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_GetVertexPositions(&_ret));
+		return _ret;
+	}
+	final void CreateVertexPositions(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_CreateVertexPositions(value));
+	}
+	final Windows.Storage.Streams.IBuffer GetVertexNormals()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_GetVertexNormals(&_ret));
+		return _ret;
+	}
+	final void CreateVertexNormals(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_CreateVertexNormals(value));
+	}
+	final Windows.Storage.Streams.IBuffer GetTriangleIndices()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_GetTriangleIndices(&_ret));
+		return _ret;
+	}
+	final void CreateTriangleIndices(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_CreateTriangleIndices(value));
+	}
+	final Windows.Storage.Streams.IBuffer GetTriangleMaterialIndices()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_GetTriangleMaterialIndices(&_ret));
+		return _ret;
+	}
+	final void CreateTriangleMaterialIndices(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_CreateTriangleMaterialIndices(value));
+	}
+	final Windows.Foundation.Collections.IPropertySet BufferDescriptionSet()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_BufferDescriptionSet(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet BufferSet()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_BufferSet(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Printing3D.Printing3DMeshVerificationResult) VerifyAsync(Windows.Graphics.Printing3D.Printing3DMeshVerificationMode value)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Printing3D.Printing3DMeshVerificationResult) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_VerifyAsync(value, &_ret));
+		return _ret;
+	}
 }
 
 interface Printing3DMeshVerificationResult : Windows.Graphics.Printing3D.IPrinting3DMeshVerificationResult
 {
+extern(Windows):
+	final bool IsValid()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMeshVerificationResult).get_IsValid(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(UINT32) NonmanifoldTriangles()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMeshVerificationResult).get_NonmanifoldTriangles(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(UINT32) ReversedNormalTriangles()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMeshVerificationResult).get_ReversedNormalTriangles(&_ret));
+		return _ret;
+	}
 }
 
 interface Printing3DModel : Windows.Graphics.Printing3D.IPrinting3DModel, Windows.Graphics.Printing3D.IPrinting3DModel2
 {
+extern(Windows):
+	final Windows.Graphics.Printing3D.Printing3DModelUnit Unit()
+	{
+		Windows.Graphics.Printing3D.Printing3DModelUnit _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Unit(&_ret));
+		return _ret;
+	}
+	final void Unit(Windows.Graphics.Printing3D.Printing3DModelUnit value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).set_Unit(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DModelTexture) Textures()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DModelTexture) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Textures(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DMesh) Meshes()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DMesh) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Meshes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DComponent) Components()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DComponent) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Components(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing3D.Printing3DMaterial Material()
+	{
+		Windows.Graphics.Printing3D.Printing3DMaterial _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Material(&_ret));
+		return _ret;
+	}
+	final void Material(Windows.Graphics.Printing3D.Printing3DMaterial value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).set_Material(value));
+	}
+	final Windows.Graphics.Printing3D.Printing3DComponent Build()
+	{
+		Windows.Graphics.Printing3D.Printing3DComponent _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Build(&_ret));
+		return _ret;
+	}
+	final void Build(Windows.Graphics.Printing3D.Printing3DComponent value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).set_Build(value));
+	}
+	final HSTRING Version()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Version(&_ret));
+		return _ret;
+	}
+	final void Version(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).set_Version(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) RequiredExtensions()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_RequiredExtensions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Metadata()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Metadata(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RepairAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).abi_RepairAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing3D.Printing3DModel Clone()
+	{
+		Windows.Graphics.Printing3D.Printing3DModel _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).abi_Clone(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryPartialRepairAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel2).abi_TryPartialRepairAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryPartialRepairWithTimeAsync(Windows.Foundation.TimeSpan maxWaitTime)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel2).abi_TryPartialRepairWithTimeAsync(maxWaitTime, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) TryReduceFacesAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(bool, double) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel2).abi_TryReduceFacesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) TryReduceFacesWithOptionsAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(bool, double) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel2).abi_TryReduceFacesWithOptionsAsync(printing3DFaceReductionOptions, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) TryReduceFacesWithOptionsAndTimeAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions, Windows.Foundation.TimeSpan maxWait)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(bool, double) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel2).abi_TryReduceFacesWithOptionsAndTimeAsync(printing3DFaceReductionOptions, maxWait, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) RepairWithProgressAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(bool, double) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel2).abi_RepairWithProgressAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface Printing3DModelTexture : Windows.Graphics.Printing3D.IPrinting3DModelTexture
 {
+extern(Windows):
+	final Windows.Graphics.Printing3D.Printing3DTextureResource TextureResource()
+	{
+		Windows.Graphics.Printing3D.Printing3DTextureResource _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModelTexture).get_TextureResource(&_ret));
+		return _ret;
+	}
+	final void TextureResource(Windows.Graphics.Printing3D.Printing3DTextureResource value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModelTexture).set_TextureResource(value));
+	}
+	final Windows.Graphics.Printing3D.Printing3DTextureEdgeBehavior TileStyleU()
+	{
+		Windows.Graphics.Printing3D.Printing3DTextureEdgeBehavior _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModelTexture).get_TileStyleU(&_ret));
+		return _ret;
+	}
+	final void TileStyleU(Windows.Graphics.Printing3D.Printing3DTextureEdgeBehavior value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModelTexture).set_TileStyleU(value));
+	}
+	final Windows.Graphics.Printing3D.Printing3DTextureEdgeBehavior TileStyleV()
+	{
+		Windows.Graphics.Printing3D.Printing3DTextureEdgeBehavior _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModelTexture).get_TileStyleV(&_ret));
+		return _ret;
+	}
+	final void TileStyleV(Windows.Graphics.Printing3D.Printing3DTextureEdgeBehavior value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModelTexture).set_TileStyleV(value));
+	}
 }
 
 interface Printing3DMultiplePropertyMaterial : Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterial
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(UINT32) MaterialIndices()
+	{
+		Windows.Foundation.Collections.IVector!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterial).get_MaterialIndices(&_ret));
+		return _ret;
+	}
 }
 
 interface Printing3DMultiplePropertyMaterialGroup : Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroup
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterial) MultipleProperties()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterial) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroup).get_MultipleProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(UINT32) MaterialGroupIndices()
+	{
+		Windows.Foundation.Collections.IVector!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroup).get_MaterialGroupIndices(&_ret));
+		return _ret;
+	}
+	final UINT32 MaterialGroupId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroup).get_MaterialGroupId(&_ret));
+		return _ret;
+	}
 }
 
 interface Printing3DTexture2CoordMaterial : Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial
 {
+extern(Windows):
+	final Windows.Graphics.Printing3D.Printing3DModelTexture Texture()
+	{
+		Windows.Graphics.Printing3D.Printing3DModelTexture _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial).get_Texture(&_ret));
+		return _ret;
+	}
+	final void Texture(Windows.Graphics.Printing3D.Printing3DModelTexture value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial).set_Texture(value));
+	}
+	final double U()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial).get_U(&_ret));
+		return _ret;
+	}
+	final void U(double value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial).set_U(value));
+	}
+	final double V()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial).get_V(&_ret));
+		return _ret;
+	}
+	final void V(double value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial).set_V(value));
+	}
 }
 
 interface Printing3DTexture2CoordMaterialGroup : Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup, Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterial) Texture2Coords()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterial) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup).get_Texture2Coords(&_ret));
+		return _ret;
+	}
+	final UINT32 MaterialGroupId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup).get_MaterialGroupId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing3D.Printing3DModelTexture Texture()
+	{
+		Windows.Graphics.Printing3D.Printing3DModelTexture _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup2).get_Texture(&_ret));
+		return _ret;
+	}
+	final void Texture(Windows.Graphics.Printing3D.Printing3DModelTexture value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup2).set_Texture(value));
+	}
 }
 
 interface Printing3DTextureResource : Windows.Graphics.Printing3D.IPrinting3DTextureResource
 {
+extern(Windows):
+	final Windows.Storage.Streams.IRandomAccessStreamWithContentType TextureData()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamWithContentType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTextureResource).get_TextureData(&_ret));
+		return _ret;
+	}
+	final void TextureData(Windows.Storage.Streams.IRandomAccessStreamWithContentType value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTextureResource).set_TextureData(value));
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTextureResource).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTextureResource).set_Name(value));
+	}
 }
 
 enum Print3DTaskCompletion

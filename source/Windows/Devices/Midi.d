@@ -258,90 +258,636 @@ extern(Windows):
 
 interface MidiActiveSensingMessage : Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiChannelPressureMessage : Windows.Devices.Midi.IMidiChannelPressureMessage, Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final BYTE Channel()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiChannelPressureMessage).get_Channel(&_ret));
+		return _ret;
+	}
+	final BYTE Pressure()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiChannelPressureMessage).get_Pressure(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiContinueMessage : Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiControlChangeMessage : Windows.Devices.Midi.IMidiControlChangeMessage, Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final BYTE Channel()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiControlChangeMessage).get_Channel(&_ret));
+		return _ret;
+	}
+	final BYTE Controller()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiControlChangeMessage).get_Controller(&_ret));
+		return _ret;
+	}
+	final BYTE ControlValue()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiControlChangeMessage).get_ControlValue(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiInPort : Windows.Devices.Midi.IMidiInPort, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiInPort).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface MidiMessageReceivedEventArgs : Windows.Devices.Midi.IMidiMessageReceivedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Midi.IMidiMessage Message()
+	{
+		Windows.Devices.Midi.IMidiMessage _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessageReceivedEventArgs).get_Message(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiNoteOffMessage : Windows.Devices.Midi.IMidiNoteOffMessage, Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final BYTE Channel()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOffMessage).get_Channel(&_ret));
+		return _ret;
+	}
+	final BYTE Note()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOffMessage).get_Note(&_ret));
+		return _ret;
+	}
+	final BYTE Velocity()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOffMessage).get_Velocity(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiNoteOnMessage : Windows.Devices.Midi.IMidiNoteOnMessage, Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final BYTE Channel()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOnMessage).get_Channel(&_ret));
+		return _ret;
+	}
+	final BYTE Note()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOnMessage).get_Note(&_ret));
+		return _ret;
+	}
+	final BYTE Velocity()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOnMessage).get_Velocity(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiOutPort : Windows.Devices.Midi.IMidiOutPort, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final void SendMessage(Windows.Devices.Midi.IMidiMessage midiMessage)
+	{
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiOutPort).abi_SendMessage(midiMessage));
+	}
+	final void SendBuffer(Windows.Storage.Streams.IBuffer midiData)
+	{
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiOutPort).abi_SendBuffer(midiData));
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiOutPort).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface MidiPitchBendChangeMessage : Windows.Devices.Midi.IMidiPitchBendChangeMessage, Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final BYTE Channel()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPitchBendChangeMessage).get_Channel(&_ret));
+		return _ret;
+	}
+	final UINT16 Bend()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPitchBendChangeMessage).get_Bend(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiPolyphonicKeyPressureMessage : Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage, Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final BYTE Channel()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage).get_Channel(&_ret));
+		return _ret;
+	}
+	final BYTE Note()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage).get_Note(&_ret));
+		return _ret;
+	}
+	final BYTE Pressure()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage).get_Pressure(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiProgramChangeMessage : Windows.Devices.Midi.IMidiProgramChangeMessage, Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final BYTE Channel()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiProgramChangeMessage).get_Channel(&_ret));
+		return _ret;
+	}
+	final BYTE Program()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiProgramChangeMessage).get_Program(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiSongPositionPointerMessage : Windows.Devices.Midi.IMidiSongPositionPointerMessage, Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final UINT16 Beats()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiSongPositionPointerMessage).get_Beats(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiSongSelectMessage : Windows.Devices.Midi.IMidiSongSelectMessage, Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final BYTE Song()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiSongSelectMessage).get_Song(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiStartMessage : Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiStopMessage : Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiSynthesizer : Windows.Devices.Midi.IMidiSynthesizer, Windows.Devices.Midi.IMidiOutPort, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceInformation AudioDevice()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiSynthesizer).get_AudioDevice(&_ret));
+		return _ret;
+	}
+	final double Volume()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiSynthesizer).get_Volume(&_ret));
+		return _ret;
+	}
+	final void Volume(double value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiSynthesizer).set_Volume(value));
+	}
+	final void SendMessage(Windows.Devices.Midi.IMidiMessage midiMessage)
+	{
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiOutPort).abi_SendMessage(midiMessage));
+	}
+	final void SendBuffer(Windows.Storage.Streams.IBuffer midiData)
+	{
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiOutPort).abi_SendBuffer(midiData));
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiOutPort).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface MidiSystemExclusiveMessage : Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiSystemResetMessage : Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiTimeCodeMessage : Windows.Devices.Midi.IMidiTimeCodeMessage, Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final BYTE FrameType()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiTimeCodeMessage).get_FrameType(&_ret));
+		return _ret;
+	}
+	final BYTE Values()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiTimeCodeMessage).get_Values(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiTimingClockMessage : Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface MidiTuneRequestMessage : Windows.Devices.Midi.IMidiMessage
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer RawData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Midi.MidiMessageType Type()
+	{
+		Windows.Devices.Midi.MidiMessageType _ret;
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 enum MidiMessageType

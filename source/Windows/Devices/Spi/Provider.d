@@ -55,6 +55,57 @@ extern(Windows):
 
 interface ProviderSpiConnectionSettings : Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings
 {
+extern(Windows):
+	final INT32 ChipSelectLine()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).get_ChipSelectLine(&_ret));
+		return _ret;
+	}
+	final void ChipSelectLine(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).set_ChipSelectLine(value));
+	}
+	final Windows.Devices.Spi.Provider.ProviderSpiMode Mode()
+	{
+		Windows.Devices.Spi.Provider.ProviderSpiMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.Devices.Spi.Provider.ProviderSpiMode value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).set_Mode(value));
+	}
+	final INT32 DataBitLength()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).get_DataBitLength(&_ret));
+		return _ret;
+	}
+	final void DataBitLength(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).set_DataBitLength(value));
+	}
+	final INT32 ClockFrequency()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).get_ClockFrequency(&_ret));
+		return _ret;
+	}
+	final void ClockFrequency(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).set_ClockFrequency(value));
+	}
+	final Windows.Devices.Spi.Provider.ProviderSpiSharingMode SharingMode()
+	{
+		Windows.Devices.Spi.Provider.ProviderSpiSharingMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).get_SharingMode(&_ret));
+		return _ret;
+	}
+	final void SharingMode(Windows.Devices.Spi.Provider.ProviderSpiSharingMode value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).set_SharingMode(value));
+	}
 }
 
 enum ProviderSpiMode

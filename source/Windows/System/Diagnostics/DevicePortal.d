@@ -44,10 +44,30 @@ interface DevicePortalConnection : Windows.System.Diagnostics.DevicePortal.IDevi
 
 interface DevicePortalConnectionClosedEventArgs : Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionClosedEventArgs
 {
+extern(Windows):
+	final Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedReason Reason()
+	{
+		Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedReason _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionClosedEventArgs).get_Reason(&_ret));
+		return _ret;
+	}
 }
 
 interface DevicePortalConnectionRequestReceivedEventArgs : Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionRequestReceivedEventArgs
 {
+extern(Windows):
+	final Windows.Web.Http.HttpRequestMessage RequestMessage()
+	{
+		Windows.Web.Http.HttpRequestMessage _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionRequestReceivedEventArgs).get_RequestMessage(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.HttpResponseMessage ResponseMessage()
+	{
+		Windows.Web.Http.HttpResponseMessage _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionRequestReceivedEventArgs).get_ResponseMessage(&_ret));
+		return _ret;
+	}
 }
 
 enum DevicePortalConnectionClosedReason

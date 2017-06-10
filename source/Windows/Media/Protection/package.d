@@ -145,6 +145,19 @@ extern(Windows):
 
 interface ComponentLoadFailedEventArgs : Windows.Media.Protection.IComponentLoadFailedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Protection.RevocationAndRenewalInformation Information()
+	{
+		Windows.Media.Protection.RevocationAndRenewalInformation _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IComponentLoadFailedEventArgs).get_Information(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.MediaProtectionServiceCompletion Completion()
+	{
+		Windows.Media.Protection.MediaProtectionServiceCompletion _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IComponentLoadFailedEventArgs).get_Completion(&_ret));
+		return _ret;
+	}
 }
 
 interface ComponentRenewal
@@ -153,34 +166,140 @@ interface ComponentRenewal
 
 interface HdcpSession : Windows.Media.Protection.IHdcpSession, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final bool IsEffectiveProtectionAtLeast(Windows.Media.Protection.HdcpProtection protection)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IHdcpSession).abi_IsEffectiveProtectionAtLeast(protection, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Media.Protection.HdcpProtection) GetEffectiveProtection()
+	{
+		Windows.Foundation.IReference!(Windows.Media.Protection.HdcpProtection) _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IHdcpSession).abi_GetEffectiveProtection(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.HdcpSetProtectionResult) SetDesiredMinProtectionAsync(Windows.Media.Protection.HdcpProtection protection)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.HdcpSetProtectionResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IHdcpSession).abi_SetDesiredMinProtectionAsync(protection, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface MediaProtectionManager : Windows.Media.Protection.IMediaProtectionManager
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaProtectionPMPServer : Windows.Media.Protection.IMediaProtectionPMPServer
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionPMPServer).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaProtectionServiceCompletion : Windows.Media.Protection.IMediaProtectionServiceCompletion
 {
+extern(Windows):
+	final void Complete(bool success)
+	{
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceCompletion).abi_Complete(success));
+	}
 }
 
 interface ProtectionCapabilities : Windows.Media.Protection.IProtectionCapabilities
 {
+extern(Windows):
+	final Windows.Media.Protection.ProtectionCapabilityResult IsTypeSupported(HSTRING type, HSTRING keySystem)
+	{
+		Windows.Media.Protection.ProtectionCapabilityResult _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IProtectionCapabilities).abi_IsTypeSupported(type, keySystem, &_ret));
+		return _ret;
+	}
 }
 
 interface RevocationAndRenewalInformation : Windows.Media.Protection.IRevocationAndRenewalInformation
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Protection.RevocationAndRenewalItem) Items()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Protection.RevocationAndRenewalItem) _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IRevocationAndRenewalInformation).get_Items(&_ret));
+		return _ret;
+	}
 }
 
 interface RevocationAndRenewalItem : Windows.Media.Protection.IRevocationAndRenewalItem
 {
+extern(Windows):
+	final Windows.Media.Protection.RevocationAndRenewalReasons Reasons()
+	{
+		Windows.Media.Protection.RevocationAndRenewalReasons _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IRevocationAndRenewalItem).get_Reasons(&_ret));
+		return _ret;
+	}
+	final HSTRING HeaderHash()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IRevocationAndRenewalItem).get_HeaderHash(&_ret));
+		return _ret;
+	}
+	final HSTRING PublicKeyHash()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IRevocationAndRenewalItem).get_PublicKeyHash(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IRevocationAndRenewalItem).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING RenewalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IRevocationAndRenewalItem).get_RenewalId(&_ret));
+		return _ret;
+	}
 }
 
 interface ServiceRequestedEventArgs : Windows.Media.Protection.IServiceRequestedEventArgs, Windows.Media.Protection.IServiceRequestedEventArgs2
 {
+extern(Windows):
+	final Windows.Media.Protection.IMediaProtectionServiceRequest Request()
+	{
+		Windows.Media.Protection.IMediaProtectionServiceRequest _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IServiceRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Protection.MediaProtectionServiceCompletion Completion()
+	{
+		Windows.Media.Protection.MediaProtectionServiceCompletion _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IServiceRequestedEventArgs).get_Completion(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Playback.MediaPlaybackItem MediaPlaybackItem()
+	{
+		Windows.Media.Playback.MediaPlaybackItem _ret;
+		Debug.OK(this.as!(Windows.Media.Protection.IServiceRequestedEventArgs2).get_MediaPlaybackItem(&_ret));
+		return _ret;
+	}
 }
 
 enum GraphicsTrustStatus

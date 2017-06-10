@@ -13,4 +13,13 @@ extern(Windows):
 
 interface DisplayRequest : Windows.System.Display.IDisplayRequest
 {
+extern(Windows):
+	final void RequestActive()
+	{
+		Debug.OK(this.as!(Windows.System.Display.IDisplayRequest).abi_RequestActive());
+	}
+	final void RequestRelease()
+	{
+		Debug.OK(this.as!(Windows.System.Display.IDisplayRequest).abi_RequestRelease());
+	}
 }

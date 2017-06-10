@@ -412,38 +412,487 @@ interface Clipboard
 
 interface DataPackage : Windows.ApplicationModel.DataTransfer.IDataPackage, Windows.ApplicationModel.DataTransfer.IDataPackage2, Windows.ApplicationModel.DataTransfer.IDataPackage3
 {
+extern(Windows):
+	final Windows.ApplicationModel.DataTransfer.DataPackageView GetView()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackageView _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).abi_GetView(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.DataTransfer.DataPackagePropertySet Properties()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackagePropertySet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.DataTransfer.DataPackageOperation RequestedOperation()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackageOperation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).get_RequestedOperation(&_ret));
+		return _ret;
+	}
+	final void RequestedOperation(Windows.ApplicationModel.DataTransfer.DataPackageOperation value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).set_RequestedOperation(value));
+	}
+	final void SetData(HSTRING formatId, IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).abi_SetData(formatId, value));
+	}
+	final void SetDataProvider(HSTRING formatId, Windows.ApplicationModel.DataTransfer.DataProviderHandler delayRenderer)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).abi_SetDataProvider(formatId, delayRenderer));
+	}
+	final void SetText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).abi_SetText(value));
+	}
+	deprecated("SetUri may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use SetWebLink or SetApplicationLink.")
+	final void SetUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).abi_SetUri(value));
+	}
+	final void SetHtmlFormat(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).abi_SetHtmlFormat(value));
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, Windows.Storage.Streams.RandomAccessStreamReference) ResourceMap()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, Windows.Storage.Streams.RandomAccessStreamReference) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).get_ResourceMap(&_ret));
+		return _ret;
+	}
+	final void SetRtf(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).abi_SetRtf(value));
+	}
+	final void SetBitmap(Windows.Storage.Streams.RandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).abi_SetBitmap(value));
+	}
+	final void SetStorageItemsReadOnly(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).abi_SetStorageItemsReadOnly(value));
+	}
+	final void SetStorageItems(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) value, bool readOnly)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).abi_SetStorageItems(value, readOnly));
+	}
+	final void SetApplicationLink(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage2).abi_SetApplicationLink(value));
+	}
+	final void SetWebLink(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage2).abi_SetWebLink(value));
+	}
 }
 
 interface DataPackagePropertySet : Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet, Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)), Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2, Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet3
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet).set_Title(value));
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet).get_Description(&_ret));
+		return _ret;
+	}
+	final void Description(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet).set_Description(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Thumbnail()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet).get_Thumbnail(&_ret));
+		return _ret;
+	}
+	final void Thumbnail(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet).set_Thumbnail(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) FileTypes()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet).get_FileTypes(&_ret));
+		return _ret;
+	}
+	final HSTRING ApplicationName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet).get_ApplicationName(&_ret));
+		return _ret;
+	}
+	final void ApplicationName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet).set_ApplicationName(value));
+	}
+	final Windows.Foundation.Uri ApplicationListingUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet).get_ApplicationListingUri(&_ret));
+		return _ret;
+	}
+	final void ApplicationListingUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet).set_ApplicationListingUri(value));
+	}
+	final Windows.Foundation.Uri ContentSourceWebLink()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2).get_ContentSourceWebLink(&_ret));
+		return _ret;
+	}
+	final void ContentSourceWebLink(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2).set_ContentSourceWebLink(value));
+	}
+	final Windows.Foundation.Uri ContentSourceApplicationLink()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2).get_ContentSourceApplicationLink(&_ret));
+		return _ret;
+	}
+	final void ContentSourceApplicationLink(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2).set_ContentSourceApplicationLink(value));
+	}
+	final HSTRING PackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2).get_PackageFamilyName(&_ret));
+		return _ret;
+	}
+	final void PackageFamilyName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2).set_PackageFamilyName(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Square30x30Logo()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2).get_Square30x30Logo(&_ret));
+		return _ret;
+	}
+	final void Square30x30Logo(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2).set_Square30x30Logo(value));
+	}
+	final Windows.UI.Color LogoBackgroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2).get_LogoBackgroundColor(&_ret));
+		return _ret;
+	}
+	final void LogoBackgroundColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2).set_LogoBackgroundColor(value));
+	}
+	final HSTRING EnterpriseId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet3).get_EnterpriseId(&_ret));
+		return _ret;
+	}
+	final void EnterpriseId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet3).set_EnterpriseId(value));
+	}
 }
 
 interface DataPackagePropertySetView : Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView, Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)), Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2, Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView3
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView).get_Title(&_ret));
+		return _ret;
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView).get_Description(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.RandomAccessStreamReference Thumbnail()
+	{
+		Windows.Storage.Streams.RandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView).get_Thumbnail(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) FileTypes()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView).get_FileTypes(&_ret));
+		return _ret;
+	}
+	final HSTRING ApplicationName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView).get_ApplicationName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ApplicationListingUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView).get_ApplicationListingUri(&_ret));
+		return _ret;
+	}
+	final HSTRING PackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2).get_PackageFamilyName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ContentSourceWebLink()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2).get_ContentSourceWebLink(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ContentSourceApplicationLink()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2).get_ContentSourceApplicationLink(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Square30x30Logo()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2).get_Square30x30Logo(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Color LogoBackgroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2).get_LogoBackgroundColor(&_ret));
+		return _ret;
+	}
+	final HSTRING EnterpriseId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView3).get_EnterpriseId(&_ret));
+		return _ret;
+	}
 }
 
 interface DataPackageView : Windows.ApplicationModel.DataTransfer.IDataPackageView, Windows.ApplicationModel.DataTransfer.IDataPackageView2, Windows.ApplicationModel.DataTransfer.IDataPackageView3, Windows.ApplicationModel.DataTransfer.IDataPackageView4
 {
+extern(Windows):
+	final Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView Properties()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.DataTransfer.DataPackageOperation RequestedOperation()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackageOperation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).get_RequestedOperation(&_ret));
+		return _ret;
+	}
+	final void ReportOperationCompleted(Windows.ApplicationModel.DataTransfer.DataPackageOperation value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).abi_ReportOperationCompleted(value));
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) AvailableFormats()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).get_AvailableFormats(&_ret));
+		return _ret;
+	}
+	final bool Contains(HSTRING formatId)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).abi_Contains(formatId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(IInspectable) GetDataAsync(HSTRING formatId)
+	{
+		Windows.Foundation.IAsyncOperation!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).abi_GetDataAsync(formatId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) GetTextAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).abi_GetTextAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) GetCustomTextAsync(HSTRING formatId)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).abi_GetCustomTextAsync(formatId, &_ret));
+		return _ret;
+	}
+	deprecated("GetUriAsync may be altered or unavailable for releases after Windows 8.1. Instead, use GetWebLinkAsync or GetApplicationLinkAsync.")
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Uri) GetUriAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Uri) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).abi_GetUriAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) GetHtmlFormatAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).abi_GetHtmlFormatAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Storage.Streams.RandomAccessStreamReference)) GetResourceMapAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Storage.Streams.RandomAccessStreamReference)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).abi_GetResourceMapAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) GetRtfAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).abi_GetRtfAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.RandomAccessStreamReference) GetBitmapAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.RandomAccessStreamReference) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).abi_GetBitmapAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) GetStorageItemsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView).abi_GetStorageItemsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Uri) GetApplicationLinkAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Uri) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView2).abi_GetApplicationLinkAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Uri) GetWebLinkAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Uri) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView2).abi_GetWebLinkAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) RequestAccessAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView3).abi_RequestAccessAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) RequestAccessWithEnterpriseIdAsync(HSTRING enterpriseId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView3).abi_RequestAccessWithEnterpriseIdAsync(enterpriseId, &_ret));
+		return _ret;
+	}
+	final Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult UnlockAndAssumeEnterpriseIdentity()
+	{
+		Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView3).abi_UnlockAndAssumeEnterpriseIdentity(&_ret));
+		return _ret;
+	}
+	final void SetAcceptedFormatId(HSTRING formatId)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackageView4).abi_SetAcceptedFormatId(formatId));
+	}
 }
 
 interface DataProviderDeferral : Windows.ApplicationModel.DataTransfer.IDataProviderDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataProviderDeferral).abi_Complete());
+	}
 }
 
 interface DataProviderRequest : Windows.ApplicationModel.DataTransfer.IDataProviderRequest
 {
+extern(Windows):
+	final HSTRING FormatId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataProviderRequest).get_FormatId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Deadline()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataProviderRequest).get_Deadline(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.DataTransfer.DataProviderDeferral GetDeferral()
+	{
+		Windows.ApplicationModel.DataTransfer.DataProviderDeferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataProviderRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final void SetData(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataProviderRequest).abi_SetData(value));
+	}
 }
 
 interface DataRequest : Windows.ApplicationModel.DataTransfer.IDataRequest
 {
+extern(Windows):
+	final Windows.ApplicationModel.DataTransfer.DataPackage Data()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackage _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataRequest).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(Windows.ApplicationModel.DataTransfer.DataPackage value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataRequest).set_Data(value));
+	}
+	final Windows.Foundation.DateTime Deadline()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataRequest).get_Deadline(&_ret));
+		return _ret;
+	}
+	final void FailWithDisplayText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataRequest).abi_FailWithDisplayText(value));
+	}
+	final Windows.ApplicationModel.DataTransfer.DataRequestDeferral GetDeferral()
+	{
+		Windows.ApplicationModel.DataTransfer.DataRequestDeferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface DataRequestDeferral : Windows.ApplicationModel.DataTransfer.IDataRequestDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataRequestDeferral).abi_Complete());
+	}
 }
 
 interface DataRequestedEventArgs : Windows.ApplicationModel.DataTransfer.IDataRequestedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.DataTransfer.DataRequest Request()
+	{
+		Windows.ApplicationModel.DataTransfer.DataRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 interface DataTransferManager : Windows.ApplicationModel.DataTransfer.IDataTransferManager, Windows.ApplicationModel.DataTransfer.IDataTransferManager2
@@ -456,26 +905,124 @@ interface HtmlFormatHelper
 
 interface OperationCompletedEventArgs : Windows.ApplicationModel.DataTransfer.IOperationCompletedEventArgs, Windows.ApplicationModel.DataTransfer.IOperationCompletedEventArgs2
 {
+extern(Windows):
+	final Windows.ApplicationModel.DataTransfer.DataPackageOperation Operation()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackageOperation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IOperationCompletedEventArgs).get_Operation(&_ret));
+		return _ret;
+	}
+	final HSTRING AcceptedFormatId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IOperationCompletedEventArgs2).get_AcceptedFormatId(&_ret));
+		return _ret;
+	}
 }
 
 interface ShareCompletedEventArgs : Windows.ApplicationModel.DataTransfer.IShareCompletedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.DataTransfer.ShareTargetInfo ShareTarget()
+	{
+		Windows.ApplicationModel.DataTransfer.ShareTargetInfo _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareCompletedEventArgs).get_ShareTarget(&_ret));
+		return _ret;
+	}
 }
 
 interface ShareProvider : Windows.ApplicationModel.DataTransfer.IShareProvider
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareProvider).get_Title(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.RandomAccessStreamReference DisplayIcon()
+	{
+		Windows.Storage.Streams.RandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareProvider).get_DisplayIcon(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Color BackgroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareProvider).get_BackgroundColor(&_ret));
+		return _ret;
+	}
+	final IInspectable Tag()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareProvider).get_Tag(&_ret));
+		return _ret;
+	}
+	final void Tag(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareProvider).set_Tag(value));
+	}
 }
 
 interface ShareProviderOperation : Windows.ApplicationModel.DataTransfer.IShareProviderOperation
 {
+extern(Windows):
+	final Windows.ApplicationModel.DataTransfer.DataPackageView Data()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackageView _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareProviderOperation).get_Data(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.DataTransfer.ShareProvider Provider()
+	{
+		Windows.ApplicationModel.DataTransfer.ShareProvider _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareProviderOperation).get_Provider(&_ret));
+		return _ret;
+	}
+	final void ReportCompleted()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareProviderOperation).abi_ReportCompleted());
+	}
 }
 
 interface ShareProvidersRequestedEventArgs : Windows.ApplicationModel.DataTransfer.IShareProvidersRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.DataTransfer.ShareProvider) Providers()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.DataTransfer.ShareProvider) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareProvidersRequestedEventArgs).get_Providers(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.DataTransfer.DataPackageView Data()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackageView _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareProvidersRequestedEventArgs).get_Data(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareProvidersRequestedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface ShareTargetInfo : Windows.ApplicationModel.DataTransfer.IShareTargetInfo
 {
+extern(Windows):
+	final HSTRING AppUserModelId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareTargetInfo).get_AppUserModelId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.DataTransfer.ShareProvider ShareProvider()
+	{
+		Windows.ApplicationModel.DataTransfer.ShareProvider _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareTargetInfo).get_ShareProvider(&_ret));
+		return _ret;
+	}
 }
 
 interface SharedStorageAccessManager
@@ -488,6 +1035,13 @@ interface StandardDataFormats
 
 interface TargetApplicationChosenEventArgs : Windows.ApplicationModel.DataTransfer.ITargetApplicationChosenEventArgs
 {
+extern(Windows):
+	final HSTRING ApplicationName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ITargetApplicationChosenEventArgs).get_ApplicationName(&_ret));
+		return _ret;
+	}
 }
 
 @bitflags

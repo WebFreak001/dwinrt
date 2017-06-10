@@ -75,14 +75,217 @@ extern(Windows):
 
 interface EasClientDeviceInformation : Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation, Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation2
 {
+extern(Windows):
+	final GUID Id()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING OperatingSystem()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation).get_OperatingSystem(&_ret));
+		return _ret;
+	}
+	final HSTRING FriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation).get_FriendlyName(&_ret));
+		return _ret;
+	}
+	final HSTRING SystemManufacturer()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation).get_SystemManufacturer(&_ret));
+		return _ret;
+	}
+	final HSTRING SystemProductName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation).get_SystemProductName(&_ret));
+		return _ret;
+	}
+	final HSTRING SystemSku()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation).get_SystemSku(&_ret));
+		return _ret;
+	}
+	final HSTRING SystemHardwareVersion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation2).get_SystemHardwareVersion(&_ret));
+		return _ret;
+	}
+	final HSTRING SystemFirmwareVersion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation2).get_SystemFirmwareVersion(&_ret));
+		return _ret;
+	}
 }
 
 interface EasClientSecurityPolicy : Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy
 {
+extern(Windows):
+	final bool RequireEncryption()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_RequireEncryption(&_ret));
+		return _ret;
+	}
+	final void RequireEncryption(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_RequireEncryption(value));
+	}
+	final BYTE MinPasswordLength()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_MinPasswordLength(&_ret));
+		return _ret;
+	}
+	final void MinPasswordLength(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_MinPasswordLength(value));
+	}
+	final bool DisallowConvenienceLogon()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_DisallowConvenienceLogon(&_ret));
+		return _ret;
+	}
+	final void DisallowConvenienceLogon(bool value)
+	{
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_DisallowConvenienceLogon(value));
+	}
+	final BYTE MinPasswordComplexCharacters()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_MinPasswordComplexCharacters(&_ret));
+		return _ret;
+	}
+	final void MinPasswordComplexCharacters(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_MinPasswordComplexCharacters(value));
+	}
+	final Windows.Foundation.TimeSpan PasswordExpiration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_PasswordExpiration(&_ret));
+		return _ret;
+	}
+	final void PasswordExpiration(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_PasswordExpiration(value));
+	}
+	final UINT32 PasswordHistory()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_PasswordHistory(&_ret));
+		return _ret;
+	}
+	final void PasswordHistory(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_PasswordHistory(value));
+	}
+	final BYTE MaxPasswordFailedAttempts()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_MaxPasswordFailedAttempts(&_ret));
+		return _ret;
+	}
+	final void MaxPasswordFailedAttempts(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_MaxPasswordFailedAttempts(value));
+	}
+	final Windows.Foundation.TimeSpan MaxInactivityTimeLock()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_MaxInactivityTimeLock(&_ret));
+		return _ret;
+	}
+	final void MaxInactivityTimeLock(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_MaxInactivityTimeLock(value));
+	}
+	final Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults CheckCompliance()
+	{
+		Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).abi_CheckCompliance(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults) ApplyAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults) _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).abi_ApplyAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface EasComplianceResults : Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults, Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults2
 {
+extern(Windows):
+	final bool Compliant()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_Compliant(&_ret));
+		return _ret;
+	}
+	final Windows.Security.ExchangeActiveSyncProvisioning.EasRequireEncryptionResult RequireEncryptionResult()
+	{
+		Windows.Security.ExchangeActiveSyncProvisioning.EasRequireEncryptionResult _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_RequireEncryptionResult(&_ret));
+		return _ret;
+	}
+	final Windows.Security.ExchangeActiveSyncProvisioning.EasMinPasswordLengthResult MinPasswordLengthResult()
+	{
+		Windows.Security.ExchangeActiveSyncProvisioning.EasMinPasswordLengthResult _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_MinPasswordLengthResult(&_ret));
+		return _ret;
+	}
+	final Windows.Security.ExchangeActiveSyncProvisioning.EasDisallowConvenienceLogonResult DisallowConvenienceLogonResult()
+	{
+		Windows.Security.ExchangeActiveSyncProvisioning.EasDisallowConvenienceLogonResult _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_DisallowConvenienceLogonResult(&_ret));
+		return _ret;
+	}
+	final Windows.Security.ExchangeActiveSyncProvisioning.EasMinPasswordComplexCharactersResult MinPasswordComplexCharactersResult()
+	{
+		Windows.Security.ExchangeActiveSyncProvisioning.EasMinPasswordComplexCharactersResult _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_MinPasswordComplexCharactersResult(&_ret));
+		return _ret;
+	}
+	final Windows.Security.ExchangeActiveSyncProvisioning.EasPasswordExpirationResult PasswordExpirationResult()
+	{
+		Windows.Security.ExchangeActiveSyncProvisioning.EasPasswordExpirationResult _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_PasswordExpirationResult(&_ret));
+		return _ret;
+	}
+	final Windows.Security.ExchangeActiveSyncProvisioning.EasPasswordHistoryResult PasswordHistoryResult()
+	{
+		Windows.Security.ExchangeActiveSyncProvisioning.EasPasswordHistoryResult _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_PasswordHistoryResult(&_ret));
+		return _ret;
+	}
+	final Windows.Security.ExchangeActiveSyncProvisioning.EasMaxPasswordFailedAttemptsResult MaxPasswordFailedAttemptsResult()
+	{
+		Windows.Security.ExchangeActiveSyncProvisioning.EasMaxPasswordFailedAttemptsResult _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_MaxPasswordFailedAttemptsResult(&_ret));
+		return _ret;
+	}
+	final Windows.Security.ExchangeActiveSyncProvisioning.EasMaxInactivityTimeLockResult MaxInactivityTimeLockResult()
+	{
+		Windows.Security.ExchangeActiveSyncProvisioning.EasMaxInactivityTimeLockResult _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_MaxInactivityTimeLockResult(&_ret));
+		return _ret;
+	}
+	final Windows.Security.ExchangeActiveSyncProvisioning.EasEncryptionProviderType EncryptionProviderType()
+	{
+		Windows.Security.ExchangeActiveSyncProvisioning.EasEncryptionProviderType _ret;
+		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults2).get_EncryptionProviderType(&_ret));
+		return _ret;
+	}
 }
 
 enum EasDisallowConvenienceLogonResult

@@ -200,14 +200,117 @@ extern(Windows):
 
 interface BluetoothLEAdvertisement : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFlags) Flags()
+	{
+		Windows.Foundation.IReference!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFlags) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement).get_Flags(&_ret));
+		return _ret;
+	}
+	final void Flags(Windows.Foundation.IReference!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFlags) value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement).set_Flags(value));
+	}
+	final HSTRING LocalName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement).get_LocalName(&_ret));
+		return _ret;
+	}
+	final void LocalName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement).set_LocalName(value));
+	}
+	final Windows.Foundation.Collections.IVector!(GUID) ServiceUuids()
+	{
+		Windows.Foundation.Collections.IVector!(GUID) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement).get_ServiceUuids(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData) ManufacturerData()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement).get_ManufacturerData(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection) DataSections()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement).get_DataSections(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData) GetManufacturerDataByCompanyId(UINT16 companyId)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement).abi_GetManufacturerDataByCompanyId(companyId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection) GetSectionsByType(BYTE type)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement).abi_GetSectionsByType(type, &_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAdvertisementBytePattern : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern
 {
+extern(Windows):
+	final BYTE DataType()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern).get_DataType(&_ret));
+		return _ret;
+	}
+	final void DataType(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern).set_DataType(value));
+	}
+	final INT16 Offset()
+	{
+		INT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern).get_Offset(&_ret));
+		return _ret;
+	}
+	final void Offset(INT16 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern).set_Offset(value));
+	}
+	final Windows.Storage.Streams.IBuffer Data()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern).set_Data(value));
+	}
 }
 
 interface BluetoothLEAdvertisementDataSection : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSection
 {
+extern(Windows):
+	final BYTE DataType()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSection).get_DataType(&_ret));
+		return _ret;
+	}
+	final void DataType(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSection).set_DataType(value));
+	}
+	final Windows.Storage.Streams.IBuffer Data()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSection).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSection).set_Data(value));
+	}
 }
 
 interface BluetoothLEAdvertisementDataTypes
@@ -216,30 +319,209 @@ interface BluetoothLEAdvertisementDataTypes
 
 interface BluetoothLEAdvertisementFilter : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementFilter
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement Advertisement()
+	{
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementFilter).get_Advertisement(&_ret));
+		return _ret;
+	}
+	final void Advertisement(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementFilter).set_Advertisement(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementBytePattern) BytePatterns()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementBytePattern) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementFilter).get_BytePatterns(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAdvertisementPublisher : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatus Status()
+	{
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement Advertisement()
+	{
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher).get_Advertisement(&_ret));
+		return _ret;
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher).abi_Stop());
+	}
 }
 
 interface BluetoothLEAdvertisementPublisherStatusChangedEventArgs : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisherStatusChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatus Status()
+	{
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisherStatusChangedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothError Error()
+	{
+		Windows.Devices.Bluetooth.BluetoothError _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisherStatusChangedEventArgs).get_Error(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAdvertisementReceivedEventArgs : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementReceivedEventArgs
 {
+extern(Windows):
+	final INT16 RawSignalStrengthInDBm()
+	{
+		INT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementReceivedEventArgs).get_RawSignalStrengthInDBm(&_ret));
+		return _ret;
+	}
+	final UINT64 BluetoothAddress()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementReceivedEventArgs).get_BluetoothAddress(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementType AdvertisementType()
+	{
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementType _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementReceivedEventArgs).get_AdvertisementType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementReceivedEventArgs).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement Advertisement()
+	{
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementReceivedEventArgs).get_Advertisement(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAdvertisementWatcher : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan MinSamplingInterval()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).get_MinSamplingInterval(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan MaxSamplingInterval()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).get_MaxSamplingInterval(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan MinOutOfRangeTimeout()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).get_MinOutOfRangeTimeout(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan MaxOutOfRangeTimeout()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).get_MaxOutOfRangeTimeout(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStatus Status()
+	{
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.Advertisement.BluetoothLEScanningMode ScanningMode()
+	{
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEScanningMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).get_ScanningMode(&_ret));
+		return _ret;
+	}
+	final void ScanningMode(Windows.Devices.Bluetooth.Advertisement.BluetoothLEScanningMode value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).set_ScanningMode(value));
+	}
+	final Windows.Devices.Bluetooth.BluetoothSignalStrengthFilter SignalStrengthFilter()
+	{
+		Windows.Devices.Bluetooth.BluetoothSignalStrengthFilter _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).get_SignalStrengthFilter(&_ret));
+		return _ret;
+	}
+	final void SignalStrengthFilter(Windows.Devices.Bluetooth.BluetoothSignalStrengthFilter value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).set_SignalStrengthFilter(value));
+	}
+	final Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFilter AdvertisementFilter()
+	{
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFilter _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).get_AdvertisementFilter(&_ret));
+		return _ret;
+	}
+	final void AdvertisementFilter(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFilter value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).set_AdvertisementFilter(value));
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).abi_Stop());
+	}
 }
 
 interface BluetoothLEAdvertisementWatcherStoppedEventArgs : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcherStoppedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.BluetoothError Error()
+	{
+		Windows.Devices.Bluetooth.BluetoothError _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcherStoppedEventArgs).get_Error(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEManufacturerData : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEManufacturerData
 {
+extern(Windows):
+	final UINT16 CompanyId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEManufacturerData).get_CompanyId(&_ret));
+		return _ret;
+	}
+	final void CompanyId(UINT16 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEManufacturerData).set_CompanyId(value));
+	}
+	final Windows.Storage.Streams.IBuffer Data()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEManufacturerData).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEManufacturerData).set_Data(value));
+	}
 }
 
 @bitflags

@@ -316,10 +316,110 @@ extern(Windows):
 
 interface AudioEncodingProperties : Windows.Media.MediaProperties.IAudioEncodingProperties, Windows.Media.MediaProperties.IMediaEncodingProperties, Windows.Media.MediaProperties.IAudioEncodingPropertiesWithFormatUserData, Windows.Media.MediaProperties.IAudioEncodingProperties2
 {
+extern(Windows):
+	final void Bitrate(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).set_Bitrate(value));
+	}
+	final UINT32 Bitrate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).get_Bitrate(&_ret));
+		return _ret;
+	}
+	final void ChannelCount(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).set_ChannelCount(value));
+	}
+	final UINT32 ChannelCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).get_ChannelCount(&_ret));
+		return _ret;
+	}
+	final void SampleRate(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).set_SampleRate(value));
+	}
+	final UINT32 SampleRate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).get_SampleRate(&_ret));
+		return _ret;
+	}
+	final void BitsPerSample(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).set_BitsPerSample(value));
+	}
+	final UINT32 BitsPerSample()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).get_BitsPerSample(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.MediaPropertySet Properties()
+	{
+		Windows.Media.MediaProperties.MediaPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Properties(&_ret));
+		return _ret;
+	}
+	final HSTRING Type()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Type(&_ret));
+		return _ret;
+	}
+	final void Subtype(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).set_Subtype(value));
+	}
+	final HSTRING Subtype()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Subtype(&_ret));
+		return _ret;
+	}
+	final void SetFormatUserData(UINT32 __valueSize, BYTE* value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesWithFormatUserData).abi_SetFormatUserData(__valueSize, value));
+	}
+	final void GetFormatUserData(UINT32* out___valueSize, BYTE** out_value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesWithFormatUserData).abi_GetFormatUserData(out___valueSize, out_value));
+	}
+	final bool IsSpatial()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties2).get_IsSpatial(&_ret));
+		return _ret;
+	}
 }
 
 interface ContainerEncodingProperties : Windows.Media.MediaProperties.IContainerEncodingProperties, Windows.Media.MediaProperties.IMediaEncodingProperties
 {
+extern(Windows):
+	final Windows.Media.MediaProperties.MediaPropertySet Properties()
+	{
+		Windows.Media.MediaProperties.MediaPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Properties(&_ret));
+		return _ret;
+	}
+	final HSTRING Type()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Type(&_ret));
+		return _ret;
+	}
+	final void Subtype(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).set_Subtype(value));
+	}
+	final HSTRING Subtype()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Subtype(&_ret));
+		return _ret;
+	}
 }
 
 interface H264ProfileIds
@@ -328,10 +428,84 @@ interface H264ProfileIds
 
 interface ImageEncodingProperties : Windows.Media.MediaProperties.IImageEncodingProperties, Windows.Media.MediaProperties.IMediaEncodingProperties
 {
+extern(Windows):
+	final void Width(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IImageEncodingProperties).set_Width(value));
+	}
+	final UINT32 Width()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IImageEncodingProperties).get_Width(&_ret));
+		return _ret;
+	}
+	final void Height(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IImageEncodingProperties).set_Height(value));
+	}
+	final UINT32 Height()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IImageEncodingProperties).get_Height(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.MediaPropertySet Properties()
+	{
+		Windows.Media.MediaProperties.MediaPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Properties(&_ret));
+		return _ret;
+	}
+	final HSTRING Type()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Type(&_ret));
+		return _ret;
+	}
+	final void Subtype(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).set_Subtype(value));
+	}
+	final HSTRING Subtype()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Subtype(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaEncodingProfile : Windows.Media.MediaProperties.IMediaEncodingProfile
 {
+extern(Windows):
+	final void Audio(Windows.Media.MediaProperties.AudioEncodingProperties value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProfile).set_Audio(value));
+	}
+	final Windows.Media.MediaProperties.AudioEncodingProperties Audio()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProfile).get_Audio(&_ret));
+		return _ret;
+	}
+	final void Video(Windows.Media.MediaProperties.VideoEncodingProperties value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProfile).set_Video(value));
+	}
+	final Windows.Media.MediaProperties.VideoEncodingProperties Video()
+	{
+		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProfile).get_Video(&_ret));
+		return _ret;
+	}
+	final void Container(Windows.Media.MediaProperties.ContainerEncodingProperties value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProfile).set_Container(value));
+	}
+	final Windows.Media.MediaProperties.ContainerEncodingProperties Container()
+	{
+		Windows.Media.MediaProperties.ContainerEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProfile).get_Container(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaEncodingSubtypes
@@ -344,6 +518,27 @@ interface MediaPropertySet : Windows.Foundation.Collections.IMap!(GUID, IInspect
 
 interface MediaRatio : Windows.Media.MediaProperties.IMediaRatio
 {
+extern(Windows):
+	final void Numerator(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaRatio).set_Numerator(value));
+	}
+	final UINT32 Numerator()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaRatio).get_Numerator(&_ret));
+		return _ret;
+	}
+	final void Denominator(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaRatio).set_Denominator(value));
+	}
+	final UINT32 Denominator()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaRatio).get_Denominator(&_ret));
+		return _ret;
+	}
 }
 
 interface Mpeg2ProfileIds
@@ -352,6 +547,101 @@ interface Mpeg2ProfileIds
 
 interface VideoEncodingProperties : Windows.Media.MediaProperties.IVideoEncodingProperties, Windows.Media.MediaProperties.IMediaEncodingProperties, Windows.Media.MediaProperties.IVideoEncodingProperties2, Windows.Media.MediaProperties.IVideoEncodingProperties3, Windows.Media.MediaProperties.IVideoEncodingProperties4
 {
+extern(Windows):
+	final void Bitrate(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).set_Bitrate(value));
+	}
+	final UINT32 Bitrate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).get_Bitrate(&_ret));
+		return _ret;
+	}
+	final void Width(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).set_Width(value));
+	}
+	final UINT32 Width()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).get_Width(&_ret));
+		return _ret;
+	}
+	final void Height(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).set_Height(value));
+	}
+	final UINT32 Height()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).get_Height(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.MediaRatio FrameRate()
+	{
+		Windows.Media.MediaProperties.MediaRatio _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).get_FrameRate(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.MediaRatio PixelAspectRatio()
+	{
+		Windows.Media.MediaProperties.MediaRatio _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).get_PixelAspectRatio(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.MediaPropertySet Properties()
+	{
+		Windows.Media.MediaProperties.MediaPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Properties(&_ret));
+		return _ret;
+	}
+	final HSTRING Type()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Type(&_ret));
+		return _ret;
+	}
+	final void Subtype(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).set_Subtype(value));
+	}
+	final HSTRING Subtype()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Subtype(&_ret));
+		return _ret;
+	}
+	final void SetFormatUserData(UINT32 __valueSize, BYTE* value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties2).abi_SetFormatUserData(__valueSize, value));
+	}
+	final void GetFormatUserData(UINT32* out___valueSize, BYTE** out_value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties2).abi_GetFormatUserData(out___valueSize, out_value));
+	}
+	final void ProfileId(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties2).set_ProfileId(value));
+	}
+	final INT32 ProfileId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties2).get_ProfileId(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.StereoscopicVideoPackingMode StereoscopicVideoPackingMode()
+	{
+		Windows.Media.MediaProperties.StereoscopicVideoPackingMode _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties3).get_StereoscopicVideoPackingMode(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.SphericalVideoFrameFormat SphericalVideoFrameFormat()
+	{
+		Windows.Media.MediaProperties.SphericalVideoFrameFormat _ret;
+		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties4).get_SphericalVideoFrameFormat(&_ret));
+		return _ret;
+	}
 }
 
 enum AudioEncodingQuality

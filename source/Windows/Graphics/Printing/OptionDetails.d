@@ -105,70 +105,873 @@ extern(Windows):
 
 interface PrintBindingOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVectorView!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails).get_Items(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintBorderingOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVectorView!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails).get_Items(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintCollationOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVectorView!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails).get_Items(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintColorModeOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVectorView!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails).get_Items(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintCopiesOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintNumberOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final UINT32 MinValue()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintNumberOptionDetails).get_MinValue(&_ret));
+		return _ret;
+	}
+	final UINT32 MaxValue()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintNumberOptionDetails).get_MaxValue(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintCustomItemDetails : Windows.Graphics.Printing.OptionDetails.IPrintCustomItemDetails
 {
+extern(Windows):
+	final HSTRING ItemId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintCustomItemDetails).get_ItemId(&_ret));
+		return _ret;
+	}
+	final void ItemDisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintCustomItemDetails).set_ItemDisplayName(value));
+	}
+	final HSTRING ItemDisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintCustomItemDetails).get_ItemDisplayName(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintCustomItemListOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintCustomItemListOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails).set_DisplayName(value));
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVectorView!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails).get_Items(&_ret));
+		return _ret;
+	}
+	final void AddItem(HSTRING itemId, HSTRING displayName)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintCustomItemListOptionDetails).abi_AddItem(itemId, displayName));
+	}
 }
 
 interface PrintCustomTextOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintCustomTextOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails).set_DisplayName(value));
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void MaxCharacters(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintCustomTextOptionDetails).set_MaxCharacters(value));
+	}
+	final UINT32 MaxCharacters()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintCustomTextOptionDetails).get_MaxCharacters(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintDuplexOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVectorView!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails).get_Items(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintHolePunchOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVectorView!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails).get_Items(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintMediaSizeOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVectorView!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails).get_Items(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintMediaTypeOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVectorView!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails).get_Items(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintOrientationOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVectorView!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails).get_Items(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintQualityOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVectorView!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails).get_Items(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintStapleOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
+extern(Windows):
+	final HSTRING OptionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionId(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionType _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_OptionType(&_ret));
+		return _ret;
+	}
+	final void ErrorText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_ErrorText(value));
+	}
+	final HSTRING ErrorText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_ErrorText(&_ret));
+		return _ret;
+	}
+	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).set_State(value));
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintOptionStates State()
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintOptionStates _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_State(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final bool TrySetValue(IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails).abi_TrySetValue(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVectorView!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails).get_Items(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintTaskOptionChangedEventArgs : Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionChangedEventArgs
 {
+extern(Windows):
+	final IInspectable OptionId()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionChangedEventArgs).get_OptionId(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintTaskOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails, Windows.Graphics.Printing.IPrintTaskOptionsCore, Windows.Graphics.Printing.IPrintTaskOptionsCoreUIConfiguration
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails) Options()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails).get_Options(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintCustomItemListOptionDetails CreateItemListOption(HSTRING optionId, HSTRING displayName)
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintCustomItemListOptionDetails _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails).abi_CreateItemListOption(optionId, displayName, &_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.OptionDetails.PrintCustomTextOptionDetails CreateTextOption(HSTRING optionId, HSTRING displayName)
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintCustomTextOptionDetails _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails).abi_CreateTextOption(optionId, displayName, &_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Printing.PrintPageDescription GetPageDescription(UINT32 jobPageNumber)
+	{
+		Windows.Graphics.Printing.PrintPageDescription _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCore).abi_GetPageDescription(jobPageNumber, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) DisplayedOptions()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreUIConfiguration).get_DisplayedOptions(&_ret));
+		return _ret;
+	}
 }
 
 @bitflags

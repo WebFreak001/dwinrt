@@ -1006,30 +1006,191 @@ extern(Windows):
 
 interface BarcodeScanner : Windows.Devices.PointOfService.IBarcodeScanner, Windows.Devices.PointOfService.IBarcodeScanner2, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.BarcodeScannerCapabilities Capabilities()
+	{
+		Windows.Devices.PointOfService.BarcodeScannerCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner).get_Capabilities(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedBarcodeScanner) ClaimScannerAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedBarcodeScanner) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner).abi_ClaimScannerAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) CheckHealthAsync(Windows.Devices.PointOfService.UnifiedPosHealthCheckLevel level)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner).abi_CheckHealthAsync(level, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(UINT32)) GetSupportedSymbologiesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(UINT32)) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner).abi_GetSupportedSymbologiesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) IsSymbologySupportedAsync(UINT32 barcodeSymbology)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner).abi_IsSymbologySupportedAsync(barcodeSymbology, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) RetrieveStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner).abi_RetrieveStatisticsAsync(statisticsCategories, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) GetSupportedProfiles()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner).abi_GetSupportedProfiles(&_ret));
+		return _ret;
+	}
+	final bool IsProfileSupported(HSTRING profile)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner).abi_IsProfileSupported(profile, &_ret));
+		return _ret;
+	}
+	final HSTRING VideoDeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner2).get_VideoDeviceId(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface BarcodeScannerCapabilities : Windows.Devices.PointOfService.IBarcodeScannerCapabilities, Windows.Devices.PointOfService.IBarcodeScannerCapabilities1
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.UnifiedPosPowerReportingType PowerReportingType()
+	{
+		Windows.Devices.PointOfService.UnifiedPosPowerReportingType _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerCapabilities).get_PowerReportingType(&_ret));
+		return _ret;
+	}
+	final bool IsStatisticsReportingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerCapabilities).get_IsStatisticsReportingSupported(&_ret));
+		return _ret;
+	}
+	final bool IsStatisticsUpdatingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerCapabilities).get_IsStatisticsUpdatingSupported(&_ret));
+		return _ret;
+	}
+	final bool IsImagePreviewSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerCapabilities).get_IsImagePreviewSupported(&_ret));
+		return _ret;
+	}
+	final bool IsSoftwareTriggerSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerCapabilities1).get_IsSoftwareTriggerSupported(&_ret));
+		return _ret;
+	}
 }
 
 interface BarcodeScannerDataReceivedEventArgs : Windows.Devices.PointOfService.IBarcodeScannerDataReceivedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.BarcodeScannerReport Report()
+	{
+		Windows.Devices.PointOfService.BarcodeScannerReport _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerDataReceivedEventArgs).get_Report(&_ret));
+		return _ret;
+	}
 }
 
 interface BarcodeScannerErrorOccurredEventArgs : Windows.Devices.PointOfService.IBarcodeScannerErrorOccurredEventArgs
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.BarcodeScannerReport PartialInputData()
+	{
+		Windows.Devices.PointOfService.BarcodeScannerReport _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerErrorOccurredEventArgs).get_PartialInputData(&_ret));
+		return _ret;
+	}
+	final bool IsRetriable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerErrorOccurredEventArgs).get_IsRetriable(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.UnifiedPosErrorData ErrorData()
+	{
+		Windows.Devices.PointOfService.UnifiedPosErrorData _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerErrorOccurredEventArgs).get_ErrorData(&_ret));
+		return _ret;
+	}
 }
 
 interface BarcodeScannerImagePreviewReceivedEventArgs : Windows.Devices.PointOfService.IBarcodeScannerImagePreviewReceivedEventArgs
 {
+extern(Windows):
+	final Windows.Storage.Streams.IRandomAccessStreamWithContentType Preview()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamWithContentType _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerImagePreviewReceivedEventArgs).get_Preview(&_ret));
+		return _ret;
+	}
 }
 
 interface BarcodeScannerReport : Windows.Devices.PointOfService.IBarcodeScannerReport
 {
+extern(Windows):
+	final UINT32 ScanDataType()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerReport).get_ScanDataType(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer ScanData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerReport).get_ScanData(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer ScanDataLabel()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerReport).get_ScanDataLabel(&_ret));
+		return _ret;
+	}
 }
 
 interface BarcodeScannerStatusUpdatedEventArgs : Windows.Devices.PointOfService.IBarcodeScannerStatusUpdatedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.BarcodeScannerStatus Status()
+	{
+		Windows.Devices.PointOfService.BarcodeScannerStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerStatusUpdatedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
+	final UINT32 ExtendedStatus()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScannerStatusUpdatedEventArgs).get_ExtendedStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface BarcodeSymbologies
@@ -1038,22 +1199,235 @@ interface BarcodeSymbologies
 
 interface BarcodeSymbologyAttributes : Windows.Devices.PointOfService.IBarcodeSymbologyAttributes
 {
+extern(Windows):
+	final bool IsCheckDigitValidationEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeSymbologyAttributes).get_IsCheckDigitValidationEnabled(&_ret));
+		return _ret;
+	}
+	final void IsCheckDigitValidationEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeSymbologyAttributes).set_IsCheckDigitValidationEnabled(value));
+	}
+	final bool IsCheckDigitValidationSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeSymbologyAttributes).get_IsCheckDigitValidationSupported(&_ret));
+		return _ret;
+	}
+	final bool IsCheckDigitTransmissionEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeSymbologyAttributes).get_IsCheckDigitTransmissionEnabled(&_ret));
+		return _ret;
+	}
+	final void IsCheckDigitTransmissionEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeSymbologyAttributes).set_IsCheckDigitTransmissionEnabled(value));
+	}
+	final bool IsCheckDigitTransmissionSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeSymbologyAttributes).get_IsCheckDigitTransmissionSupported(&_ret));
+		return _ret;
+	}
+	final UINT32 DecodeLength1()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeSymbologyAttributes).get_DecodeLength1(&_ret));
+		return _ret;
+	}
+	final void DecodeLength1(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeSymbologyAttributes).set_DecodeLength1(value));
+	}
+	final UINT32 DecodeLength2()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeSymbologyAttributes).get_DecodeLength2(&_ret));
+		return _ret;
+	}
+	final void DecodeLength2(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeSymbologyAttributes).set_DecodeLength2(value));
+	}
+	final Windows.Devices.PointOfService.BarcodeSymbologyDecodeLengthKind DecodeLengthKind()
+	{
+		Windows.Devices.PointOfService.BarcodeSymbologyDecodeLengthKind _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeSymbologyAttributes).get_DecodeLengthKind(&_ret));
+		return _ret;
+	}
+	final void DecodeLengthKind(Windows.Devices.PointOfService.BarcodeSymbologyDecodeLengthKind value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeSymbologyAttributes).set_DecodeLengthKind(value));
+	}
+	final bool IsDecodeLengthSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeSymbologyAttributes).get_IsDecodeLengthSupported(&_ret));
+		return _ret;
+	}
 }
 
 interface CashDrawer : Windows.Devices.PointOfService.ICashDrawer, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawer).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.CashDrawerCapabilities Capabilities()
+	{
+		Windows.Devices.PointOfService.CashDrawerCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawer).get_Capabilities(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.CashDrawerStatus Status()
+	{
+		Windows.Devices.PointOfService.CashDrawerStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawer).get_Status(&_ret));
+		return _ret;
+	}
+	final bool IsDrawerOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawer).get_IsDrawerOpen(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.CashDrawerEventSource DrawerEventSource()
+	{
+		Windows.Devices.PointOfService.CashDrawerEventSource _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawer).get_DrawerEventSource(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedCashDrawer) ClaimDrawerAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedCashDrawer) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawer).abi_ClaimDrawerAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) CheckHealthAsync(Windows.Devices.PointOfService.UnifiedPosHealthCheckLevel level)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawer).abi_CheckHealthAsync(level, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) GetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawer).abi_GetStatisticsAsync(statisticsCategories, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface CashDrawerCapabilities : Windows.Devices.PointOfService.ICashDrawerCapabilities
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.UnifiedPosPowerReportingType PowerReportingType()
+	{
+		Windows.Devices.PointOfService.UnifiedPosPowerReportingType _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCapabilities).get_PowerReportingType(&_ret));
+		return _ret;
+	}
+	final bool IsStatisticsReportingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCapabilities).get_IsStatisticsReportingSupported(&_ret));
+		return _ret;
+	}
+	final bool IsStatisticsUpdatingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCapabilities).get_IsStatisticsUpdatingSupported(&_ret));
+		return _ret;
+	}
+	final bool IsStatusReportingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCapabilities).get_IsStatusReportingSupported(&_ret));
+		return _ret;
+	}
+	final bool IsStatusMultiDrawerDetectSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCapabilities).get_IsStatusMultiDrawerDetectSupported(&_ret));
+		return _ret;
+	}
+	final bool IsDrawerOpenSensorAvailable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCapabilities).get_IsDrawerOpenSensorAvailable(&_ret));
+		return _ret;
+	}
 }
 
 interface CashDrawerCloseAlarm : Windows.Devices.PointOfService.ICashDrawerCloseAlarm
 {
+extern(Windows):
+	final void AlarmTimeout(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCloseAlarm).set_AlarmTimeout(value));
+	}
+	final Windows.Foundation.TimeSpan AlarmTimeout()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCloseAlarm).get_AlarmTimeout(&_ret));
+		return _ret;
+	}
+	final void BeepFrequency(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCloseAlarm).set_BeepFrequency(value));
+	}
+	final UINT32 BeepFrequency()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCloseAlarm).get_BeepFrequency(&_ret));
+		return _ret;
+	}
+	final void BeepDuration(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCloseAlarm).set_BeepDuration(value));
+	}
+	final Windows.Foundation.TimeSpan BeepDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCloseAlarm).get_BeepDuration(&_ret));
+		return _ret;
+	}
+	final void BeepDelay(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCloseAlarm).set_BeepDelay(value));
+	}
+	final Windows.Foundation.TimeSpan BeepDelay()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCloseAlarm).get_BeepDelay(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) StartAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCloseAlarm).abi_StartAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface CashDrawerClosedEventArgs : Windows.Devices.PointOfService.ICashDrawerEventSourceEventArgs
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.CashDrawer CashDrawer()
+	{
+		Windows.Devices.PointOfService.CashDrawer _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerEventSourceEventArgs).get_CashDrawer(&_ret));
+		return _ret;
+	}
 }
 
 interface CashDrawerEventSource : Windows.Devices.PointOfService.ICashDrawerEventSource
@@ -1062,82 +1436,1598 @@ interface CashDrawerEventSource : Windows.Devices.PointOfService.ICashDrawerEven
 
 interface CashDrawerOpenedEventArgs : Windows.Devices.PointOfService.ICashDrawerEventSourceEventArgs
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.CashDrawer CashDrawer()
+	{
+		Windows.Devices.PointOfService.CashDrawer _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerEventSourceEventArgs).get_CashDrawer(&_ret));
+		return _ret;
+	}
 }
 
 interface CashDrawerStatus : Windows.Devices.PointOfService.ICashDrawerStatus
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.CashDrawerStatusKind StatusKind()
+	{
+		Windows.Devices.PointOfService.CashDrawerStatusKind _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerStatus).get_StatusKind(&_ret));
+		return _ret;
+	}
+	final UINT32 ExtendedStatus()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerStatus).get_ExtendedStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface CashDrawerStatusUpdatedEventArgs : Windows.Devices.PointOfService.ICashDrawerStatusUpdatedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.CashDrawerStatus Status()
+	{
+		Windows.Devices.PointOfService.CashDrawerStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerStatusUpdatedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface ClaimedBarcodeScanner : Windows.Devices.PointOfService.IClaimedBarcodeScanner, Windows.Foundation.IClosable, Windows.Devices.PointOfService.IClaimedBarcodeScanner1, Windows.Devices.PointOfService.IClaimedBarcodeScanner2
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final void IsDisabledOnDataReceived(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).set_IsDisabledOnDataReceived(value));
+	}
+	final bool IsDisabledOnDataReceived()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).get_IsDisabledOnDataReceived(&_ret));
+		return _ret;
+	}
+	final void IsDecodeDataEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).set_IsDecodeDataEnabled(value));
+	}
+	final bool IsDecodeDataEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).get_IsDecodeDataEnabled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction EnableAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).abi_EnableAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DisableAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).abi_DisableAsync(&_ret));
+		return _ret;
+	}
+	final void RetainDevice()
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).abi_RetainDevice());
+	}
+	final Windows.Foundation.IAsyncAction SetActiveSymbologiesAsync(Windows.Foundation.Collections.IIterable!(UINT32) symbologies)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).abi_SetActiveSymbologiesAsync(symbologies, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ResetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).abi_ResetStatisticsAsync(statisticsCategories, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction UpdateStatisticsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) statistics)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).abi_UpdateStatisticsAsync(statistics, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetActiveProfileAsync(HSTRING profile)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).abi_SetActiveProfileAsync(profile, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.IAsyncAction StartSoftwareTriggerAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner1).abi_StartSoftwareTriggerAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StopSoftwareTriggerAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner1).abi_StopSoftwareTriggerAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeSymbologyAttributes) GetSymbologyAttributesAsync(UINT32 barcodeSymbology)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeSymbologyAttributes) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner2).abi_GetSymbologyAttributesAsync(barcodeSymbology, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) SetSymbologyAttributesAsync(UINT32 barcodeSymbology, Windows.Devices.PointOfService.BarcodeSymbologyAttributes attributes)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner2).abi_SetSymbologyAttributesAsync(barcodeSymbology, attributes, &_ret));
+		return _ret;
+	}
 }
 
 interface ClaimedCashDrawer : Windows.Devices.PointOfService.IClaimedCashDrawer, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final bool IsDrawerOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).get_IsDrawerOpen(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.CashDrawerCloseAlarm CloseAlarm()
+	{
+		Windows.Devices.PointOfService.CashDrawerCloseAlarm _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).get_CloseAlarm(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) OpenDrawerAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).abi_OpenDrawerAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) EnableAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).abi_EnableAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) DisableAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).abi_DisableAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RetainDeviceAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).abi_RetainDeviceAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) ResetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).abi_ResetStatisticsAsync(statisticsCategories, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) UpdateStatisticsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) statistics)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).abi_UpdateStatisticsAsync(statistics, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface ClaimedJournalPrinter : Windows.Devices.PointOfService.IClaimedJournalPrinter, Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.JournalPrintJob CreateJob()
+	{
+		Windows.Devices.PointOfService.JournalPrintJob _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedJournalPrinter).abi_CreateJob(&_ret));
+		return _ret;
+	}
+	final void CharactersPerLine(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_CharactersPerLine(value));
+	}
+	final UINT32 CharactersPerLine()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_CharactersPerLine(&_ret));
+		return _ret;
+	}
+	final void LineHeight(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_LineHeight(value));
+	}
+	final UINT32 LineHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_LineHeight(&_ret));
+		return _ret;
+	}
+	final void LineSpacing(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_LineSpacing(value));
+	}
+	final UINT32 LineSpacing()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_LineSpacing(&_ret));
+		return _ret;
+	}
+	final UINT32 LineWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_LineWidth(&_ret));
+		return _ret;
+	}
+	final void IsLetterQuality(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_IsLetterQuality(value));
+	}
+	final bool IsLetterQuality()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsLetterQuality(&_ret));
+		return _ret;
+	}
+	final bool IsPaperNearEnd()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsPaperNearEnd(&_ret));
+		return _ret;
+	}
+	final void ColorCartridge(Windows.Devices.PointOfService.PosPrinterColorCartridge value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_ColorCartridge(value));
+	}
+	final Windows.Devices.PointOfService.PosPrinterColorCartridge ColorCartridge()
+	{
+		Windows.Devices.PointOfService.PosPrinterColorCartridge _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_ColorCartridge(&_ret));
+		return _ret;
+	}
+	final bool IsCoverOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsCoverOpen(&_ret));
+		return _ret;
+	}
+	final bool IsCartridgeRemoved()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsCartridgeRemoved(&_ret));
+		return _ret;
+	}
+	final bool IsCartridgeEmpty()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsCartridgeEmpty(&_ret));
+		return _ret;
+	}
+	final bool IsHeadCleaning()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsHeadCleaning(&_ret));
+		return _ret;
+	}
+	final bool IsPaperEmpty()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsPaperEmpty(&_ret));
+		return _ret;
+	}
+	final bool IsReadyToPrint()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsReadyToPrint(&_ret));
+		return _ret;
+	}
+	final bool ValidateData(HSTRING data)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).abi_ValidateData(data, &_ret));
+		return _ret;
+	}
 }
 
 interface ClaimedLineDisplay : Windows.Devices.PointOfService.IClaimedLineDisplay, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedLineDisplay).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.LineDisplayCapabilities Capabilities()
+	{
+		Windows.Devices.PointOfService.LineDisplayCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedLineDisplay).get_Capabilities(&_ret));
+		return _ret;
+	}
+	final HSTRING PhysicalDeviceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedLineDisplay).get_PhysicalDeviceName(&_ret));
+		return _ret;
+	}
+	final HSTRING PhysicalDeviceDescription()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedLineDisplay).get_PhysicalDeviceDescription(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceControlDescription()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedLineDisplay).get_DeviceControlDescription(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceControlVersion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedLineDisplay).get_DeviceControlVersion(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceServiceVersion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedLineDisplay).get_DeviceServiceVersion(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.LineDisplayWindow DefaultWindow()
+	{
+		Windows.Devices.PointOfService.LineDisplayWindow _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedLineDisplay).get_DefaultWindow(&_ret));
+		return _ret;
+	}
+	final void RetainDevice()
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedLineDisplay).abi_RetainDevice());
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface ClaimedMagneticStripeReader : Windows.Devices.PointOfService.IClaimedMagneticStripeReader, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final void IsDisabledOnDataReceived(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).set_IsDisabledOnDataReceived(value));
+	}
+	final bool IsDisabledOnDataReceived()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).get_IsDisabledOnDataReceived(&_ret));
+		return _ret;
+	}
+	final void IsDecodeDataEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).set_IsDecodeDataEnabled(value));
+	}
+	final bool IsDecodeDataEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).get_IsDecodeDataEnabled(&_ret));
+		return _ret;
+	}
+	final bool IsDeviceAuthenticated()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).get_IsDeviceAuthenticated(&_ret));
+		return _ret;
+	}
+	final void DataEncryptionAlgorithm(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).set_DataEncryptionAlgorithm(value));
+	}
+	final UINT32 DataEncryptionAlgorithm()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).get_DataEncryptionAlgorithm(&_ret));
+		return _ret;
+	}
+	final void TracksToRead(Windows.Devices.PointOfService.MagneticStripeReaderTrackIds value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).set_TracksToRead(value));
+	}
+	final Windows.Devices.PointOfService.MagneticStripeReaderTrackIds TracksToRead()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderTrackIds _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).get_TracksToRead(&_ret));
+		return _ret;
+	}
+	final void IsTransmitSentinelsEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).set_IsTransmitSentinelsEnabled(value));
+	}
+	final bool IsTransmitSentinelsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).get_IsTransmitSentinelsEnabled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction EnableAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_EnableAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DisableAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_DisableAsync(&_ret));
+		return _ret;
+	}
+	final void RetainDevice()
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_RetainDevice());
+	}
+	final void SetErrorReportingType(Windows.Devices.PointOfService.MagneticStripeReaderErrorReportingType value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_SetErrorReportingType(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) RetrieveDeviceAuthenticationDataAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_RetrieveDeviceAuthenticationDataAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction AuthenticateDeviceAsync(UINT32 __responseTokenSize, BYTE* responseToken)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_AuthenticateDeviceAsync(__responseTokenSize, responseToken, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeAuthenticateDeviceAsync(UINT32 __responseTokenSize, BYTE* responseToken)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_DeAuthenticateDeviceAsync(__responseTokenSize, responseToken, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction UpdateKeyAsync(HSTRING key, HSTRING keyName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_UpdateKeyAsync(key, keyName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ResetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_ResetStatisticsAsync(statisticsCategories, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction UpdateStatisticsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) statistics)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_UpdateStatisticsAsync(statistics, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface ClaimedPosPrinter : Windows.Devices.PointOfService.IClaimedPosPrinter, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final void CharacterSet(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).set_CharacterSet(value));
+	}
+	final UINT32 CharacterSet()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).get_CharacterSet(&_ret));
+		return _ret;
+	}
+	final bool IsCoverOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).get_IsCoverOpen(&_ret));
+		return _ret;
+	}
+	final void IsCharacterSetMappingEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).set_IsCharacterSetMappingEnabled(value));
+	}
+	final bool IsCharacterSetMappingEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).get_IsCharacterSetMappingEnabled(&_ret));
+		return _ret;
+	}
+	final void MapMode(Windows.Devices.PointOfService.PosPrinterMapMode value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).set_MapMode(value));
+	}
+	final Windows.Devices.PointOfService.PosPrinterMapMode MapMode()
+	{
+		Windows.Devices.PointOfService.PosPrinterMapMode _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).get_MapMode(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.ClaimedReceiptPrinter Receipt()
+	{
+		Windows.Devices.PointOfService.ClaimedReceiptPrinter _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).get_Receipt(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.ClaimedSlipPrinter Slip()
+	{
+		Windows.Devices.PointOfService.ClaimedSlipPrinter _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).get_Slip(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.ClaimedJournalPrinter Journal()
+	{
+		Windows.Devices.PointOfService.ClaimedJournalPrinter _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).get_Journal(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) EnableAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).abi_EnableAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) DisableAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).abi_DisableAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RetainDeviceAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).abi_RetainDeviceAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) ResetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).abi_ResetStatisticsAsync(statisticsCategories, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) UpdateStatisticsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) statistics)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).abi_UpdateStatisticsAsync(statistics, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface ClaimedReceiptPrinter : Windows.Devices.PointOfService.IClaimedReceiptPrinter, Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation
 {
+extern(Windows):
+	final UINT32 SidewaysMaxLines()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedReceiptPrinter).get_SidewaysMaxLines(&_ret));
+		return _ret;
+	}
+	final UINT32 SidewaysMaxChars()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedReceiptPrinter).get_SidewaysMaxChars(&_ret));
+		return _ret;
+	}
+	final UINT32 LinesToPaperCut()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedReceiptPrinter).get_LinesToPaperCut(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size PageSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedReceiptPrinter).get_PageSize(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect PrintArea()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedReceiptPrinter).get_PrintArea(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.ReceiptPrintJob CreateJob()
+	{
+		Windows.Devices.PointOfService.ReceiptPrintJob _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedReceiptPrinter).abi_CreateJob(&_ret));
+		return _ret;
+	}
+	final void CharactersPerLine(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_CharactersPerLine(value));
+	}
+	final UINT32 CharactersPerLine()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_CharactersPerLine(&_ret));
+		return _ret;
+	}
+	final void LineHeight(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_LineHeight(value));
+	}
+	final UINT32 LineHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_LineHeight(&_ret));
+		return _ret;
+	}
+	final void LineSpacing(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_LineSpacing(value));
+	}
+	final UINT32 LineSpacing()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_LineSpacing(&_ret));
+		return _ret;
+	}
+	final UINT32 LineWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_LineWidth(&_ret));
+		return _ret;
+	}
+	final void IsLetterQuality(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_IsLetterQuality(value));
+	}
+	final bool IsLetterQuality()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsLetterQuality(&_ret));
+		return _ret;
+	}
+	final bool IsPaperNearEnd()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsPaperNearEnd(&_ret));
+		return _ret;
+	}
+	final void ColorCartridge(Windows.Devices.PointOfService.PosPrinterColorCartridge value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_ColorCartridge(value));
+	}
+	final Windows.Devices.PointOfService.PosPrinterColorCartridge ColorCartridge()
+	{
+		Windows.Devices.PointOfService.PosPrinterColorCartridge _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_ColorCartridge(&_ret));
+		return _ret;
+	}
+	final bool IsCoverOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsCoverOpen(&_ret));
+		return _ret;
+	}
+	final bool IsCartridgeRemoved()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsCartridgeRemoved(&_ret));
+		return _ret;
+	}
+	final bool IsCartridgeEmpty()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsCartridgeEmpty(&_ret));
+		return _ret;
+	}
+	final bool IsHeadCleaning()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsHeadCleaning(&_ret));
+		return _ret;
+	}
+	final bool IsPaperEmpty()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsPaperEmpty(&_ret));
+		return _ret;
+	}
+	final bool IsReadyToPrint()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsReadyToPrint(&_ret));
+		return _ret;
+	}
+	final bool ValidateData(HSTRING data)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).abi_ValidateData(data, &_ret));
+		return _ret;
+	}
 }
 
 interface ClaimedSlipPrinter : Windows.Devices.PointOfService.IClaimedSlipPrinter, Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation
 {
+extern(Windows):
+	final UINT32 SidewaysMaxLines()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedSlipPrinter).get_SidewaysMaxLines(&_ret));
+		return _ret;
+	}
+	final UINT32 SidewaysMaxChars()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedSlipPrinter).get_SidewaysMaxChars(&_ret));
+		return _ret;
+	}
+	final UINT32 MaxLines()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedSlipPrinter).get_MaxLines(&_ret));
+		return _ret;
+	}
+	final UINT32 LinesNearEndToEnd()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedSlipPrinter).get_LinesNearEndToEnd(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.PosPrinterPrintSide PrintSide()
+	{
+		Windows.Devices.PointOfService.PosPrinterPrintSide _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedSlipPrinter).get_PrintSide(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size PageSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedSlipPrinter).get_PageSize(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect PrintArea()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedSlipPrinter).get_PrintArea(&_ret));
+		return _ret;
+	}
+	final void OpenJaws()
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedSlipPrinter).abi_OpenJaws());
+	}
+	final void CloseJaws()
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedSlipPrinter).abi_CloseJaws());
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) InsertSlipAsync(Windows.Foundation.TimeSpan timeout)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedSlipPrinter).abi_InsertSlipAsync(timeout, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RemoveSlipAsync(Windows.Foundation.TimeSpan timeout)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedSlipPrinter).abi_RemoveSlipAsync(timeout, &_ret));
+		return _ret;
+	}
+	final void ChangePrintSide(Windows.Devices.PointOfService.PosPrinterPrintSide printSide)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedSlipPrinter).abi_ChangePrintSide(printSide));
+	}
+	final Windows.Devices.PointOfService.SlipPrintJob CreateJob()
+	{
+		Windows.Devices.PointOfService.SlipPrintJob _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedSlipPrinter).abi_CreateJob(&_ret));
+		return _ret;
+	}
+	final void CharactersPerLine(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_CharactersPerLine(value));
+	}
+	final UINT32 CharactersPerLine()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_CharactersPerLine(&_ret));
+		return _ret;
+	}
+	final void LineHeight(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_LineHeight(value));
+	}
+	final UINT32 LineHeight()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_LineHeight(&_ret));
+		return _ret;
+	}
+	final void LineSpacing(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_LineSpacing(value));
+	}
+	final UINT32 LineSpacing()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_LineSpacing(&_ret));
+		return _ret;
+	}
+	final UINT32 LineWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_LineWidth(&_ret));
+		return _ret;
+	}
+	final void IsLetterQuality(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_IsLetterQuality(value));
+	}
+	final bool IsLetterQuality()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsLetterQuality(&_ret));
+		return _ret;
+	}
+	final bool IsPaperNearEnd()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsPaperNearEnd(&_ret));
+		return _ret;
+	}
+	final void ColorCartridge(Windows.Devices.PointOfService.PosPrinterColorCartridge value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).set_ColorCartridge(value));
+	}
+	final Windows.Devices.PointOfService.PosPrinterColorCartridge ColorCartridge()
+	{
+		Windows.Devices.PointOfService.PosPrinterColorCartridge _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_ColorCartridge(&_ret));
+		return _ret;
+	}
+	final bool IsCoverOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsCoverOpen(&_ret));
+		return _ret;
+	}
+	final bool IsCartridgeRemoved()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsCartridgeRemoved(&_ret));
+		return _ret;
+	}
+	final bool IsCartridgeEmpty()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsCartridgeEmpty(&_ret));
+		return _ret;
+	}
+	final bool IsHeadCleaning()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsHeadCleaning(&_ret));
+		return _ret;
+	}
+	final bool IsPaperEmpty()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsPaperEmpty(&_ret));
+		return _ret;
+	}
+	final bool IsReadyToPrint()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).get_IsReadyToPrint(&_ret));
+		return _ret;
+	}
+	final bool ValidateData(HSTRING data)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation).abi_ValidateData(data, &_ret));
+		return _ret;
+	}
 }
 
 interface JournalPrintJob : Windows.Devices.PointOfService.IPosPrinterJob
 {
+extern(Windows):
+	final void Print(HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterJob).abi_Print(data));
+	}
+	final void PrintLine(HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterJob).abi_PrintLine(data));
+	}
+	final void PrintNewline()
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterJob).abi_PrintNewline());
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) ExecuteAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterJob).abi_ExecuteAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface JournalPrinterCapabilities : Windows.Devices.PointOfService.IJournalPrinterCapabilities, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities
 {
+extern(Windows):
+	final bool IsPrinterPresent()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsPrinterPresent(&_ret));
+		return _ret;
+	}
+	final bool IsDualColorSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsDualColorSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.PosPrinterColorCapabilities ColorCartridgeCapabilities()
+	{
+		Windows.Devices.PointOfService.PosPrinterColorCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_ColorCartridgeCapabilities(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.PosPrinterCartridgeSensors CartridgeSensors()
+	{
+		Windows.Devices.PointOfService.PosPrinterCartridgeSensors _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_CartridgeSensors(&_ret));
+		return _ret;
+	}
+	final bool IsBoldSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsBoldSupported(&_ret));
+		return _ret;
+	}
+	final bool IsItalicSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsItalicSupported(&_ret));
+		return _ret;
+	}
+	final bool IsUnderlineSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsUnderlineSupported(&_ret));
+		return _ret;
+	}
+	final bool IsDoubleHighPrintSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsDoubleHighPrintSupported(&_ret));
+		return _ret;
+	}
+	final bool IsDoubleWidePrintSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsDoubleWidePrintSupported(&_ret));
+		return _ret;
+	}
+	final bool IsDoubleHighDoubleWidePrintSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsDoubleHighDoubleWidePrintSupported(&_ret));
+		return _ret;
+	}
+	final bool IsPaperEmptySensorSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsPaperEmptySensorSupported(&_ret));
+		return _ret;
+	}
+	final bool IsPaperNearEndSensorSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsPaperNearEndSensorSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(UINT32) SupportedCharactersPerLine()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_SupportedCharactersPerLine(&_ret));
+		return _ret;
+	}
 }
 
 interface LineDisplay : Windows.Devices.PointOfService.ILineDisplay, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplay).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.LineDisplayCapabilities Capabilities()
+	{
+		Windows.Devices.PointOfService.LineDisplayCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplay).get_Capabilities(&_ret));
+		return _ret;
+	}
+	final HSTRING PhysicalDeviceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplay).get_PhysicalDeviceName(&_ret));
+		return _ret;
+	}
+	final HSTRING PhysicalDeviceDescription()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplay).get_PhysicalDeviceDescription(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceControlDescription()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplay).get_DeviceControlDescription(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceControlVersion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplay).get_DeviceControlVersion(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceServiceVersion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplay).get_DeviceServiceVersion(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedLineDisplay) ClaimAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedLineDisplay) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplay).abi_ClaimAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface LineDisplayCapabilities : Windows.Devices.PointOfService.ILineDisplayCapabilities
 {
+extern(Windows):
+	final bool IsStatisticsReportingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_IsStatisticsReportingSupported(&_ret));
+		return _ret;
+	}
+	final bool IsStatisticsUpdatingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_IsStatisticsUpdatingSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.UnifiedPosPowerReportingType PowerReportingType()
+	{
+		Windows.Devices.PointOfService.UnifiedPosPowerReportingType _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_PowerReportingType(&_ret));
+		return _ret;
+	}
+	final bool CanChangeScreenSize()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_CanChangeScreenSize(&_ret));
+		return _ret;
+	}
+	final bool CanDisplayBitmaps()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_CanDisplayBitmaps(&_ret));
+		return _ret;
+	}
+	final bool CanReadCharacterAtCursor()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_CanReadCharacterAtCursor(&_ret));
+		return _ret;
+	}
+	final bool CanMapCharacterSets()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_CanMapCharacterSets(&_ret));
+		return _ret;
+	}
+	final bool CanDisplayCustomGlyphs()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_CanDisplayCustomGlyphs(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.LineDisplayTextAttributeGranularity CanReverse()
+	{
+		Windows.Devices.PointOfService.LineDisplayTextAttributeGranularity _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_CanReverse(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.LineDisplayTextAttributeGranularity CanBlink()
+	{
+		Windows.Devices.PointOfService.LineDisplayTextAttributeGranularity _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_CanBlink(&_ret));
+		return _ret;
+	}
+	final bool CanChangeBlinkRate()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_CanChangeBlinkRate(&_ret));
+		return _ret;
+	}
+	final bool IsBrightnessSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_IsBrightnessSupported(&_ret));
+		return _ret;
+	}
+	final bool IsCursorSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_IsCursorSupported(&_ret));
+		return _ret;
+	}
+	final bool IsHorizontalMarqueeSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_IsHorizontalMarqueeSupported(&_ret));
+		return _ret;
+	}
+	final bool IsVerticalMarqueeSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_IsVerticalMarqueeSupported(&_ret));
+		return _ret;
+	}
+	final bool IsInterCharacterWaitSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_IsInterCharacterWaitSupported(&_ret));
+		return _ret;
+	}
+	final UINT32 SupportedDescriptors()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_SupportedDescriptors(&_ret));
+		return _ret;
+	}
+	final UINT32 SupportedWindows()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayCapabilities).get_SupportedWindows(&_ret));
+		return _ret;
+	}
 }
 
 interface LineDisplayWindow : Windows.Devices.PointOfService.ILineDisplayWindow, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Foundation.Size SizeInCharacters()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayWindow).get_SizeInCharacters(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan InterCharacterWaitInterval()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayWindow).get_InterCharacterWaitInterval(&_ret));
+		return _ret;
+	}
+	final void InterCharacterWaitInterval(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayWindow).set_InterCharacterWaitInterval(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryRefreshAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayWindow).abi_TryRefreshAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextAsync(HSTRING text, Windows.Devices.PointOfService.LineDisplayTextAttribute displayAttribute)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayWindow).abi_TryDisplayTextAsync(text, displayAttribute, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextAtPositionAsync(HSTRING text, Windows.Devices.PointOfService.LineDisplayTextAttribute displayAttribute, Windows.Foundation.Point startPosition)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayWindow).abi_TryDisplayTextAtPositionAsync(text, displayAttribute, startPosition, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextNormalAsync(HSTRING text)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayWindow).abi_TryDisplayTextNormalAsync(text, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryScrollTextAsync(Windows.Devices.PointOfService.LineDisplayScrollDirection direction, UINT32 numberOfColumnsOrRows)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayWindow).abi_TryScrollTextAsync(direction, numberOfColumnsOrRows, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryClearTextAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ILineDisplayWindow).abi_TryClearTextAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface MagneticStripeReader : Windows.Devices.PointOfService.IMagneticStripeReader, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReader).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.MagneticStripeReaderCapabilities Capabilities()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReader).get_Capabilities(&_ret));
+		return _ret;
+	}
+	final UINT32* SupportedCardTypes(UINT32* out___valueSize)
+	{
+		UINT32* _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReader).get_SupportedCardTypes(out___valueSize, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.MagneticStripeReaderAuthenticationProtocol DeviceAuthenticationProtocol()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderAuthenticationProtocol _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReader).get_DeviceAuthenticationProtocol(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) CheckHealthAsync(Windows.Devices.PointOfService.UnifiedPosHealthCheckLevel level)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReader).abi_CheckHealthAsync(level, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader) ClaimReaderAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReader).abi_ClaimReaderAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) RetrieveStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReader).abi_RetrieveStatisticsAsync(statisticsCategories, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.MagneticStripeReaderErrorReportingType GetErrorReportingType()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderErrorReportingType _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReader).abi_GetErrorReportingType(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface MagneticStripeReaderAamvaCardDataReceivedEventArgs : Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.MagneticStripeReaderReport Report()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderReport _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_Report(&_ret));
+		return _ret;
+	}
+	final HSTRING LicenseNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_LicenseNumber(&_ret));
+		return _ret;
+	}
+	final HSTRING ExpirationDate()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_ExpirationDate(&_ret));
+		return _ret;
+	}
+	final HSTRING Restrictions()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_Restrictions(&_ret));
+		return _ret;
+	}
+	final HSTRING Class()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_Class(&_ret));
+		return _ret;
+	}
+	final HSTRING Endorsements()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_Endorsements(&_ret));
+		return _ret;
+	}
+	final HSTRING BirthDate()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_BirthDate(&_ret));
+		return _ret;
+	}
+	final HSTRING FirstName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_FirstName(&_ret));
+		return _ret;
+	}
+	final HSTRING Surname()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_Surname(&_ret));
+		return _ret;
+	}
+	final HSTRING Suffix()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_Suffix(&_ret));
+		return _ret;
+	}
+	final HSTRING Gender()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_Gender(&_ret));
+		return _ret;
+	}
+	final HSTRING HairColor()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_HairColor(&_ret));
+		return _ret;
+	}
+	final HSTRING EyeColor()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_EyeColor(&_ret));
+		return _ret;
+	}
+	final HSTRING Height()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_Height(&_ret));
+		return _ret;
+	}
+	final HSTRING Weight()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_Weight(&_ret));
+		return _ret;
+	}
+	final HSTRING Address()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_Address(&_ret));
+		return _ret;
+	}
+	final HSTRING City()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_City(&_ret));
+		return _ret;
+	}
+	final HSTRING State()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_State(&_ret));
+		return _ret;
+	}
+	final HSTRING PostalCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs).get_PostalCode(&_ret));
+		return _ret;
+	}
 }
 
 interface MagneticStripeReaderBankCardDataReceivedEventArgs : Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.MagneticStripeReaderReport Report()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderReport _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs).get_Report(&_ret));
+		return _ret;
+	}
+	final HSTRING AccountNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs).get_AccountNumber(&_ret));
+		return _ret;
+	}
+	final HSTRING ExpirationDate()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs).get_ExpirationDate(&_ret));
+		return _ret;
+	}
+	final HSTRING ServiceCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs).get_ServiceCode(&_ret));
+		return _ret;
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs).get_Title(&_ret));
+		return _ret;
+	}
+	final HSTRING FirstName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs).get_FirstName(&_ret));
+		return _ret;
+	}
+	final HSTRING MiddleInitial()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs).get_MiddleInitial(&_ret));
+		return _ret;
+	}
+	final HSTRING Surname()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs).get_Surname(&_ret));
+		return _ret;
+	}
+	final HSTRING Suffix()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs).get_Suffix(&_ret));
+		return _ret;
+	}
 }
 
 interface MagneticStripeReaderCapabilities : Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities
 {
+extern(Windows):
+	final HSTRING CardAuthentication()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities).get_CardAuthentication(&_ret));
+		return _ret;
+	}
+	final UINT32 SupportedEncryptionAlgorithms()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities).get_SupportedEncryptionAlgorithms(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.MagneticStripeReaderAuthenticationLevel AuthenticationLevel()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderAuthenticationLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities).get_AuthenticationLevel(&_ret));
+		return _ret;
+	}
+	final bool IsIsoSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities).get_IsIsoSupported(&_ret));
+		return _ret;
+	}
+	final bool IsJisOneSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities).get_IsJisOneSupported(&_ret));
+		return _ret;
+	}
+	final bool IsJisTwoSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities).get_IsJisTwoSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.UnifiedPosPowerReportingType PowerReportingType()
+	{
+		Windows.Devices.PointOfService.UnifiedPosPowerReportingType _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities).get_PowerReportingType(&_ret));
+		return _ret;
+	}
+	final bool IsStatisticsReportingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities).get_IsStatisticsReportingSupported(&_ret));
+		return _ret;
+	}
+	final bool IsStatisticsUpdatingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities).get_IsStatisticsUpdatingSupported(&_ret));
+		return _ret;
+	}
+	final bool IsTrackDataMaskingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities).get_IsTrackDataMaskingSupported(&_ret));
+		return _ret;
+	}
+	final bool IsTransmitSentinelsSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities).get_IsTransmitSentinelsSupported(&_ret));
+		return _ret;
+	}
 }
 
 interface MagneticStripeReaderCardTypes
@@ -1150,30 +3040,275 @@ interface MagneticStripeReaderEncryptionAlgorithms
 
 interface MagneticStripeReaderErrorOccurredEventArgs : Windows.Devices.PointOfService.IMagneticStripeReaderErrorOccurredEventArgs
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.MagneticStripeReaderTrackErrorType Track1Status()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderTrackErrorType _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderErrorOccurredEventArgs).get_Track1Status(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.MagneticStripeReaderTrackErrorType Track2Status()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderTrackErrorType _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderErrorOccurredEventArgs).get_Track2Status(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.MagneticStripeReaderTrackErrorType Track3Status()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderTrackErrorType _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderErrorOccurredEventArgs).get_Track3Status(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.MagneticStripeReaderTrackErrorType Track4Status()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderTrackErrorType _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderErrorOccurredEventArgs).get_Track4Status(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.UnifiedPosErrorData ErrorData()
+	{
+		Windows.Devices.PointOfService.UnifiedPosErrorData _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderErrorOccurredEventArgs).get_ErrorData(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.MagneticStripeReaderReport PartialInputData()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderReport _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderErrorOccurredEventArgs).get_PartialInputData(&_ret));
+		return _ret;
+	}
 }
 
 interface MagneticStripeReaderReport : Windows.Devices.PointOfService.IMagneticStripeReaderReport
 {
+extern(Windows):
+	final UINT32 CardType()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderReport).get_CardType(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.MagneticStripeReaderTrackData Track1()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderTrackData _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderReport).get_Track1(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.MagneticStripeReaderTrackData Track2()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderTrackData _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderReport).get_Track2(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.MagneticStripeReaderTrackData Track3()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderTrackData _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderReport).get_Track3(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.MagneticStripeReaderTrackData Track4()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderTrackData _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderReport).get_Track4(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderReport).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer CardAuthenticationData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderReport).get_CardAuthenticationData(&_ret));
+		return _ret;
+	}
+	final UINT32 CardAuthenticationDataLength()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderReport).get_CardAuthenticationDataLength(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer AdditionalSecurityInformation()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderReport).get_AdditionalSecurityInformation(&_ret));
+		return _ret;
+	}
 }
 
 interface MagneticStripeReaderStatusUpdatedEventArgs : Windows.Devices.PointOfService.IMagneticStripeReaderStatusUpdatedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.MagneticStripeReaderStatus Status()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderStatusUpdatedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
+	final UINT32 ExtendedStatus()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderStatusUpdatedEventArgs).get_ExtendedStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface MagneticStripeReaderTrackData : Windows.Devices.PointOfService.IMagneticStripeReaderTrackData
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer Data()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderTrackData).get_Data(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer DiscretionaryData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderTrackData).get_DiscretionaryData(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer EncryptedData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderTrackData).get_EncryptedData(&_ret));
+		return _ret;
+	}
 }
 
 interface MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs : Windows.Devices.PointOfService.IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.MagneticStripeReaderReport Report()
+	{
+		Windows.Devices.PointOfService.MagneticStripeReaderReport _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs).get_Report(&_ret));
+		return _ret;
+	}
 }
 
 interface PosPrinter : Windows.Devices.PointOfService.IPosPrinter, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinter).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.PosPrinterCapabilities Capabilities()
+	{
+		Windows.Devices.PointOfService.PosPrinterCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinter).get_Capabilities(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(UINT32) SupportedCharacterSets()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinter).get_SupportedCharacterSets(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) SupportedTypeFaces()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinter).get_SupportedTypeFaces(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.PosPrinterStatus Status()
+	{
+		Windows.Devices.PointOfService.PosPrinterStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinter).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedPosPrinter) ClaimPrinterAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedPosPrinter) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinter).abi_ClaimPrinterAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) CheckHealthAsync(Windows.Devices.PointOfService.UnifiedPosHealthCheckLevel level)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinter).abi_CheckHealthAsync(level, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) GetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinter).abi_GetStatisticsAsync(statisticsCategories, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface PosPrinterCapabilities : Windows.Devices.PointOfService.IPosPrinterCapabilities
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.UnifiedPosPowerReportingType PowerReportingType()
+	{
+		Windows.Devices.PointOfService.UnifiedPosPowerReportingType _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterCapabilities).get_PowerReportingType(&_ret));
+		return _ret;
+	}
+	final bool IsStatisticsReportingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterCapabilities).get_IsStatisticsReportingSupported(&_ret));
+		return _ret;
+	}
+	final bool IsStatisticsUpdatingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterCapabilities).get_IsStatisticsUpdatingSupported(&_ret));
+		return _ret;
+	}
+	final UINT32 DefaultCharacterSet()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterCapabilities).get_DefaultCharacterSet(&_ret));
+		return _ret;
+	}
+	final bool HasCoverSensor()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterCapabilities).get_HasCoverSensor(&_ret));
+		return _ret;
+	}
+	final bool CanMapCharacterSet()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterCapabilities).get_CanMapCharacterSet(&_ret));
+		return _ret;
+	}
+	final bool IsTransactionSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterCapabilities).get_IsTransactionSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.ReceiptPrinterCapabilities Receipt()
+	{
+		Windows.Devices.PointOfService.ReceiptPrinterCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterCapabilities).get_Receipt(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.SlipPrinterCapabilities Slip()
+	{
+		Windows.Devices.PointOfService.SlipPrinterCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterCapabilities).get_Slip(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.JournalPrinterCapabilities Journal()
+	{
+		Windows.Devices.PointOfService.JournalPrinterCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterCapabilities).get_Journal(&_ret));
+		return _ret;
+	}
 }
 
 interface PosPrinterCharacterSetIds
@@ -1186,30 +3321,541 @@ interface PosPrinterReleaseDeviceRequestedEventArgs : Windows.Devices.PointOfSer
 
 interface PosPrinterStatus : Windows.Devices.PointOfService.IPosPrinterStatus
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.PosPrinterStatusKind StatusKind()
+	{
+		Windows.Devices.PointOfService.PosPrinterStatusKind _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterStatus).get_StatusKind(&_ret));
+		return _ret;
+	}
+	final UINT32 ExtendedStatus()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterStatus).get_ExtendedStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface PosPrinterStatusUpdatedEventArgs : Windows.Devices.PointOfService.IPosPrinterStatusUpdatedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.PointOfService.PosPrinterStatus Status()
+	{
+		Windows.Devices.PointOfService.PosPrinterStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterStatusUpdatedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface ReceiptPrintJob : Windows.Devices.PointOfService.IReceiptPrintJob, Windows.Devices.PointOfService.IReceiptOrSlipJob, Windows.Devices.PointOfService.IPosPrinterJob
 {
+extern(Windows):
+	final void MarkFeed(Windows.Devices.PointOfService.PosPrinterMarkFeedKind kind)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptPrintJob).abi_MarkFeed(kind));
+	}
+	final void CutPaper(double percentage)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptPrintJob).abi_CutPaper(percentage));
+	}
+	final void CutPaperDefault()
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptPrintJob).abi_CutPaperDefault());
+	}
+	final void SetBarcodeRotation(Windows.Devices.PointOfService.PosPrinterRotation value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetBarcodeRotation(value));
+	}
+	final void SetPrintRotation(Windows.Devices.PointOfService.PosPrinterRotation value, bool includeBitmaps)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetPrintRotation(value, includeBitmaps));
+	}
+	final void SetPrintArea(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetPrintArea(value));
+	}
+	final void SetBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetBitmap(bitmapNumber, bitmap, alignment));
+	}
+	final void SetBitmapCustomWidthStandardAlign(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetBitmapCustomWidthStandardAlign(bitmapNumber, bitmap, alignment, width));
+	}
+	final void SetCustomAlignedBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetCustomAlignedBitmap(bitmapNumber, bitmap, alignmentDistance));
+	}
+	final void SetBitmapCustomWidthCustomAlign(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetBitmapCustomWidthCustomAlign(bitmapNumber, bitmap, alignmentDistance, width));
+	}
+	final void PrintSavedBitmap(UINT32 bitmapNumber)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintSavedBitmap(bitmapNumber));
+	}
+	final void DrawRuledLine(HSTRING positionList, Windows.Devices.PointOfService.PosPrinterLineDirection lineDirection, UINT32 lineWidth, Windows.Devices.PointOfService.PosPrinterLineStyle lineStyle, UINT32 lineColor)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_DrawRuledLine(positionList, lineDirection, lineWidth, lineStyle, lineColor));
+	}
+	final void PrintBarcode(HSTRING data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, Windows.Devices.PointOfService.PosPrinterAlignment alignment)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintBarcode(data, symbology, height, width, textPosition, alignment));
+	}
+	final void PrintBarcodeCustomAlign(HSTRING data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, UINT32 alignmentDistance)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintBarcodeCustomAlign(data, symbology, height, width, textPosition, alignmentDistance));
+	}
+	final void PrintBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintBitmap(bitmap, alignment));
+	}
+	final void PrintBitmapCustomWidthStandardAlign(Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintBitmapCustomWidthStandardAlign(bitmap, alignment, width));
+	}
+	final void PrintCustomAlignedBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintCustomAlignedBitmap(bitmap, alignmentDistance));
+	}
+	final void PrintBitmapCustomWidthCustomAlign(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintBitmapCustomWidthCustomAlign(bitmap, alignmentDistance, width));
+	}
+	final void Print(HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterJob).abi_Print(data));
+	}
+	final void PrintLine(HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterJob).abi_PrintLine(data));
+	}
+	final void PrintNewline()
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterJob).abi_PrintNewline());
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) ExecuteAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterJob).abi_ExecuteAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface ReceiptPrinterCapabilities : Windows.Devices.PointOfService.IReceiptPrinterCapabilities, Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities
 {
+extern(Windows):
+	final bool CanCutPaper()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptPrinterCapabilities).get_CanCutPaper(&_ret));
+		return _ret;
+	}
+	final bool IsStampSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptPrinterCapabilities).get_IsStampSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.PosPrinterMarkFeedCapabilities MarkFeedCapabilities()
+	{
+		Windows.Devices.PointOfService.PosPrinterMarkFeedCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptPrinterCapabilities).get_MarkFeedCapabilities(&_ret));
+		return _ret;
+	}
+	final bool IsBarcodeSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_IsBarcodeSupported(&_ret));
+		return _ret;
+	}
+	final bool IsBitmapSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_IsBitmapSupported(&_ret));
+		return _ret;
+	}
+	final bool IsLeft90RotationSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_IsLeft90RotationSupported(&_ret));
+		return _ret;
+	}
+	final bool IsRight90RotationSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_IsRight90RotationSupported(&_ret));
+		return _ret;
+	}
+	final bool Is180RotationSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_Is180RotationSupported(&_ret));
+		return _ret;
+	}
+	final bool IsPrintAreaSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_IsPrintAreaSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.PosPrinterRuledLineCapabilities RuledLineCapabilities()
+	{
+		Windows.Devices.PointOfService.PosPrinterRuledLineCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_RuledLineCapabilities(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.PointOfService.PosPrinterRotation) SupportedBarcodeRotations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.PointOfService.PosPrinterRotation) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_SupportedBarcodeRotations(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.PointOfService.PosPrinterRotation) SupportedBitmapRotations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.PointOfService.PosPrinterRotation) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_SupportedBitmapRotations(&_ret));
+		return _ret;
+	}
+	final bool IsPrinterPresent()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsPrinterPresent(&_ret));
+		return _ret;
+	}
+	final bool IsDualColorSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsDualColorSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.PosPrinterColorCapabilities ColorCartridgeCapabilities()
+	{
+		Windows.Devices.PointOfService.PosPrinterColorCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_ColorCartridgeCapabilities(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.PosPrinterCartridgeSensors CartridgeSensors()
+	{
+		Windows.Devices.PointOfService.PosPrinterCartridgeSensors _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_CartridgeSensors(&_ret));
+		return _ret;
+	}
+	final bool IsBoldSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsBoldSupported(&_ret));
+		return _ret;
+	}
+	final bool IsItalicSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsItalicSupported(&_ret));
+		return _ret;
+	}
+	final bool IsUnderlineSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsUnderlineSupported(&_ret));
+		return _ret;
+	}
+	final bool IsDoubleHighPrintSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsDoubleHighPrintSupported(&_ret));
+		return _ret;
+	}
+	final bool IsDoubleWidePrintSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsDoubleWidePrintSupported(&_ret));
+		return _ret;
+	}
+	final bool IsDoubleHighDoubleWidePrintSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsDoubleHighDoubleWidePrintSupported(&_ret));
+		return _ret;
+	}
+	final bool IsPaperEmptySensorSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsPaperEmptySensorSupported(&_ret));
+		return _ret;
+	}
+	final bool IsPaperNearEndSensorSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsPaperNearEndSensorSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(UINT32) SupportedCharactersPerLine()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_SupportedCharactersPerLine(&_ret));
+		return _ret;
+	}
 }
 
 interface SlipPrintJob : Windows.Devices.PointOfService.IReceiptOrSlipJob, Windows.Devices.PointOfService.IPosPrinterJob
 {
+extern(Windows):
+	final void SetBarcodeRotation(Windows.Devices.PointOfService.PosPrinterRotation value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetBarcodeRotation(value));
+	}
+	final void SetPrintRotation(Windows.Devices.PointOfService.PosPrinterRotation value, bool includeBitmaps)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetPrintRotation(value, includeBitmaps));
+	}
+	final void SetPrintArea(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetPrintArea(value));
+	}
+	final void SetBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetBitmap(bitmapNumber, bitmap, alignment));
+	}
+	final void SetBitmapCustomWidthStandardAlign(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetBitmapCustomWidthStandardAlign(bitmapNumber, bitmap, alignment, width));
+	}
+	final void SetCustomAlignedBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetCustomAlignedBitmap(bitmapNumber, bitmap, alignmentDistance));
+	}
+	final void SetBitmapCustomWidthCustomAlign(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_SetBitmapCustomWidthCustomAlign(bitmapNumber, bitmap, alignmentDistance, width));
+	}
+	final void PrintSavedBitmap(UINT32 bitmapNumber)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintSavedBitmap(bitmapNumber));
+	}
+	final void DrawRuledLine(HSTRING positionList, Windows.Devices.PointOfService.PosPrinterLineDirection lineDirection, UINT32 lineWidth, Windows.Devices.PointOfService.PosPrinterLineStyle lineStyle, UINT32 lineColor)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_DrawRuledLine(positionList, lineDirection, lineWidth, lineStyle, lineColor));
+	}
+	final void PrintBarcode(HSTRING data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, Windows.Devices.PointOfService.PosPrinterAlignment alignment)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintBarcode(data, symbology, height, width, textPosition, alignment));
+	}
+	final void PrintBarcodeCustomAlign(HSTRING data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, UINT32 alignmentDistance)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintBarcodeCustomAlign(data, symbology, height, width, textPosition, alignmentDistance));
+	}
+	final void PrintBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintBitmap(bitmap, alignment));
+	}
+	final void PrintBitmapCustomWidthStandardAlign(Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintBitmapCustomWidthStandardAlign(bitmap, alignment, width));
+	}
+	final void PrintCustomAlignedBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintCustomAlignedBitmap(bitmap, alignmentDistance));
+	}
+	final void PrintBitmapCustomWidthCustomAlign(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IReceiptOrSlipJob).abi_PrintBitmapCustomWidthCustomAlign(bitmap, alignmentDistance, width));
+	}
+	final void Print(HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterJob).abi_Print(data));
+	}
+	final void PrintLine(HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterJob).abi_PrintLine(data));
+	}
+	final void PrintNewline()
+	{
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterJob).abi_PrintNewline());
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) ExecuteAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinterJob).abi_ExecuteAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface SlipPrinterCapabilities : Windows.Devices.PointOfService.ISlipPrinterCapabilities, Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities
 {
+extern(Windows):
+	final bool IsFullLengthSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ISlipPrinterCapabilities).get_IsFullLengthSupported(&_ret));
+		return _ret;
+	}
+	final bool IsBothSidesPrintingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ISlipPrinterCapabilities).get_IsBothSidesPrintingSupported(&_ret));
+		return _ret;
+	}
+	final bool IsBarcodeSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_IsBarcodeSupported(&_ret));
+		return _ret;
+	}
+	final bool IsBitmapSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_IsBitmapSupported(&_ret));
+		return _ret;
+	}
+	final bool IsLeft90RotationSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_IsLeft90RotationSupported(&_ret));
+		return _ret;
+	}
+	final bool IsRight90RotationSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_IsRight90RotationSupported(&_ret));
+		return _ret;
+	}
+	final bool Is180RotationSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_Is180RotationSupported(&_ret));
+		return _ret;
+	}
+	final bool IsPrintAreaSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_IsPrintAreaSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.PosPrinterRuledLineCapabilities RuledLineCapabilities()
+	{
+		Windows.Devices.PointOfService.PosPrinterRuledLineCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_RuledLineCapabilities(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.PointOfService.PosPrinterRotation) SupportedBarcodeRotations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.PointOfService.PosPrinterRotation) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_SupportedBarcodeRotations(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.PointOfService.PosPrinterRotation) SupportedBitmapRotations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.PointOfService.PosPrinterRotation) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities).get_SupportedBitmapRotations(&_ret));
+		return _ret;
+	}
+	final bool IsPrinterPresent()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsPrinterPresent(&_ret));
+		return _ret;
+	}
+	final bool IsDualColorSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsDualColorSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.PosPrinterColorCapabilities ColorCartridgeCapabilities()
+	{
+		Windows.Devices.PointOfService.PosPrinterColorCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_ColorCartridgeCapabilities(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.PosPrinterCartridgeSensors CartridgeSensors()
+	{
+		Windows.Devices.PointOfService.PosPrinterCartridgeSensors _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_CartridgeSensors(&_ret));
+		return _ret;
+	}
+	final bool IsBoldSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsBoldSupported(&_ret));
+		return _ret;
+	}
+	final bool IsItalicSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsItalicSupported(&_ret));
+		return _ret;
+	}
+	final bool IsUnderlineSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsUnderlineSupported(&_ret));
+		return _ret;
+	}
+	final bool IsDoubleHighPrintSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsDoubleHighPrintSupported(&_ret));
+		return _ret;
+	}
+	final bool IsDoubleWidePrintSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsDoubleWidePrintSupported(&_ret));
+		return _ret;
+	}
+	final bool IsDoubleHighDoubleWidePrintSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsDoubleHighDoubleWidePrintSupported(&_ret));
+		return _ret;
+	}
+	final bool IsPaperEmptySensorSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsPaperEmptySensorSupported(&_ret));
+		return _ret;
+	}
+	final bool IsPaperNearEndSensorSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_IsPaperNearEndSensorSupported(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(UINT32) SupportedCharactersPerLine()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities).get_SupportedCharactersPerLine(&_ret));
+		return _ret;
+	}
 }
 
 interface UnifiedPosErrorData : Windows.Devices.PointOfService.IUnifiedPosErrorData
 {
+extern(Windows):
+	final HSTRING Message()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IUnifiedPosErrorData).get_Message(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.UnifiedPosErrorSeverity Severity()
+	{
+		Windows.Devices.PointOfService.UnifiedPosErrorSeverity _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IUnifiedPosErrorData).get_Severity(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.PointOfService.UnifiedPosErrorReason Reason()
+	{
+		Windows.Devices.PointOfService.UnifiedPosErrorReason _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IUnifiedPosErrorData).get_Reason(&_ret));
+		return _ret;
+	}
+	final UINT32 ExtendedReason()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IUnifiedPosErrorData).get_ExtendedReason(&_ret));
+		return _ret;
+	}
 }
 
 enum BarcodeScannerStatus

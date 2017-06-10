@@ -59,10 +59,96 @@ extern(Windows):
 
 interface PhoneNumberFormatter : Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter
 {
+extern(Windows):
+	final HSTRING Format(Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo number)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter).abi_Format(number, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatWithOutputFormat(Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo number, Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormat numberFormat)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter).abi_FormatWithOutputFormat(number, numberFormat, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatPartialString(HSTRING number)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter).abi_FormatPartialString(number, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatString(HSTRING number)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter).abi_FormatString(number, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatStringWithLeftToRightMarkers(HSTRING number)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter).abi_FormatStringWithLeftToRightMarkers(number, &_ret));
+		return _ret;
+	}
 }
 
 interface PhoneNumberInfo : Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final INT32 CountryCode()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).get_CountryCode(&_ret));
+		return _ret;
+	}
+	final HSTRING PhoneNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).get_PhoneNumber(&_ret));
+		return _ret;
+	}
+	final INT32 GetLengthOfGeographicalAreaCode()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).abi_GetLengthOfGeographicalAreaCode(&_ret));
+		return _ret;
+	}
+	final HSTRING GetNationalSignificantNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).abi_GetNationalSignificantNumber(&_ret));
+		return _ret;
+	}
+	final INT32 GetLengthOfNationalDestinationCode()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).abi_GetLengthOfNationalDestinationCode(&_ret));
+		return _ret;
+	}
+	final Windows.Globalization.PhoneNumberFormatting.PredictedPhoneNumberKind PredictNumberKind()
+	{
+		Windows.Globalization.PhoneNumberFormatting.PredictedPhoneNumberKind _ret;
+		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).abi_PredictNumberKind(&_ret));
+		return _ret;
+	}
+	final HSTRING GetGeographicRegionCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).abi_GetGeographicRegionCode(&_ret));
+		return _ret;
+	}
+	final Windows.Globalization.PhoneNumberFormatting.PhoneNumberMatchResult CheckNumberMatch(Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo otherNumber)
+	{
+		Windows.Globalization.PhoneNumberFormatting.PhoneNumberMatchResult _ret;
+		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).abi_CheckNumberMatch(otherNumber, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 enum PhoneNumberFormat

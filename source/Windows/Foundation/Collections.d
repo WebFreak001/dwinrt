@@ -2,6 +2,108 @@ module Windows.Foundation.Collections;
 
 import dwinrt;
 
+interface MapChangedEventHandler(TKey, TValue) : IUnknown
+{
+extern(Windows):
+	HRESULT abi_Invoke(IObservableMap!(TKey, TValue) sender, IMapChangedEventArgs!(TKey) args);
+}
+
+interface VectorChangedEventHandler(Type) : IUnknown
+{
+extern(Windows):
+	HRESULT abi_Invoke(IObservableVector!(Type) sender, IVectorChangedEventArgs args);
+}
+
+interface IIterator(Type) : IInspectable
+{
+extern(Windows):
+	HRESULT get_Current(Type* return_current);
+	HRESULT get_HasCurrent(bool* return_hasCurrent);
+	HRESULT abi_MoveNext(bool* out_hasCurrent);
+	HRESULT abi_GetMany(uint capacity, Type* value, uint* actual);
+}
+
+interface IIterable(Type) : IInspectable
+{
+extern(Windows):
+	HRESULT abi_First(IIterator!(Type)* out_first);
+}
+
+interface IKeyValuePair(TKey, TValue) : IInspectable
+{
+extern(Windows):
+	HRESULT get_Key(TKey* return_key);
+	HRESULT get_Value(TValue* return_value);
+}
+
+interface IVectorView(Type) : IInspectable
+{
+extern(Windows):
+	HRESULT abi_GetAt(uint index, Type* out_item);
+	HRESULT get_Size(uint* return_size);
+	HRESULT get_IndexOf(Type value, uint* return_index, bool* out_found);
+	HRESULT abi_GetMany(uint startIndex, uint capacity, Type* out_value, uint* out_actual);
+}
+
+interface IVector(Type) : IInspectable
+{
+extern(Windows):
+	HRESULT get_GetAt(uint index, Type* return_item);
+	HRESULT get_Size(uint* return_size);
+	HRESULT abi_GetView(IVectorView!(Type)* out_view);
+	HRESULT get_IndexOf(Type value, uint* return_index, bool* out_found);
+	HRESULT abi_SetAt(uint index, Type item);
+	HRESULT abi_InsertAt(uint index, Type item);
+	HRESULT abi_RemoveAt(uint index);
+	HRESULT abi_Append(Type item);
+	HRESULT abi_RemoveAtEnd();
+	HRESULT abi_Clear();
+	HRESULT abi_GetMany(uint startIndex, uint capacity, Type* out_value, uint* out_actual);
+	HRESULT abi_ReplaceAll(uint count, Type* out_value);
+}
+
+interface IMapView(TKey, TValue) : IInspectable
+{
+extern(Windows):
+	HRESULT abi_Lookup(TKey key, TValue* return_value);
+	HRESULT get_Size(uint* return_size);
+	HRESULT abi_HasKey(TKey key, bool* return_found);
+	HRESULT abi_Split(IMapView!(TKey, TValue) out_firstPartition, IMapView!(TKey, TValue) out_secondPartition);
+}
+
+interface IMap(TKey, TValue) : IInspectable
+{
+extern(Windows):
+	HRESULT abi_Lookup(TKey key, TValue* return_value);
+	HRESULT get_Size(uint* return_size);
+	HRESULT abi_HasKey(TKey key, bool* return_found);
+	HRESULT abi_GetView(IMapView!(TKey, TValue)* return_view);
+	HRESULT abi_Insert(TKey key, TValue value, bool* return_replaced);
+	HRESULT abi_Remove(TKey key);
+	HRESULT abi_Clear();
+}
+
+interface IMapChangedEventArgs(TKey) : IInspectable
+{
+extern(Windows):
+	HRESULT get_CollectionChange(Windows.Foundation.Collections.CollectionChange* out_value);
+	HRESULT get_Key(TKey* out_value);
+}
+
+interface IObservableMap(TKey, TValue) : IInspectable
+{
+extern(Windows):
+	HRESULT add_MapChanged(MapChangedEventHandler!(TKey, TValue) handler, EventRegistrationToken* return_token);
+	HRESULT remove_MapChanged(EventRegistrationToken token);
+}
+
+interface IObservableVector(Type) : IInspectable
+{
+extern(Windows):
+	HRESULT add_VectorChanged(VectorChangedEventHandler!(Type) handler, EventRegistrationToken* return_token);
+	HRESULT remove_VectorChanged(EventRegistrationToken token);
+}
+
 @uuid("575933df-34fe-4480-af15-07691f3d5d9b")
 interface IVectorChangedEventArgs : IInspectable
 {
@@ -33,105 +135,4 @@ enum CollectionChange
 	ItemInserted,
 	ItemRemoved,
 	ItemChanged
-}
-interface MapChangedEventHandler(K, V) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IObservableMap!(K, V)* sender, IMapChangedEventArgs!K* args);
-}
-
-interface VectorChangedEventHandler(T) : IUnknown
-{
-extern (Windows):
-	HRESULT abi_Invoke(IObservableVector!T* sender, IVectorChangedEventArgs* args);
-}
-
-interface IIterator(T) : IInspectable
-{
-extern (Windows):
-	HRESULT get_Current(T* current);
-	HRESULT get_HasCurrent(bool* hasCurrent);
-	HRESULT abi_MoveNext(bool* hasCurrent);
-	HRESULT abi_GetMany(uint capacity, T* value, uint* actual);
-}
-
-interface IIterable(T) : IInspectable
-{
-extern (Windows):
-	HRESULT abi_First(IIterator!T* first);
-}
-
-interface IKeyValuePair(K, V) : IInspectable
-{
-extern (Windows):
-	HRESULT get_Key(K* key);
-	HRESULT get_Value(V* value);
-}
-
-interface IVectorView(T) : IInspectable
-{
-extern (Windows):
-	HRESULT abi_GetAt(uint index, T* item);
-	HRESULT get_Size(uint* size);
-	HRESULT abi_IndexOf(T value, uint* index, bool* found);
-	HRESULT abi_GetMany(uint startIndex, uint capacity, T* value, uint* actual);
-}
-
-interface IVector(T) : IInspectable
-{
-extern (Windows):
-	HRESULT abi_GetAt(uint index, T* item);
-	HRESULT get_Size(uint* size);
-	HRESULT abi_GetView(IVectorView!T* view);
-	HRESULT abi_IndexOf(T value, uint* index, bool* found);
-	HRESULT abi_SetAt(uint index, T item);
-	HRESULT abi_InsertAt(uint index, T item);
-	HRESULT abi_RemoveAt(uint index);
-	HRESULT abi_Append(T item);
-	HRESULT abi_RemoveAtEnd();
-	HRESULT abi_Clear();
-	HRESULT abi_GetMany(uint startIndex, uint capacity, T* value, uint* actual);
-	HRESULT abi_ReplaceAll(uint count, T* value);
-}
-
-interface IMapView(K, V) : IInspectable
-{
-extern (Windows):
-	HRESULT abi_Lookup(K key, V* value);
-	HRESULT get_Size(uint* size);
-	HRESULT abi_HasKey(K key, bool* found);
-	HRESULT abi_Split(IMapView!(K, V)* firstPartition, IMapView!(K, V)* secondPartition);
-}
-
-interface IMap(K, V) : IInspectable
-{
-extern (Windows):
-	HRESULT abi_Lookup(K key, V* value);
-	HRESULT get_Size(uint* size);
-	HRESULT abi_HasKey(K key, bool* found);
-	HRESULT abi_GetView(IMapView!(K, V)* view);
-	HRESULT abi_Insert(K key, V value, bool* replaced);
-	HRESULT abi_Remove(K key);
-	HRESULT abi_Clear();
-}
-
-interface IMapChangedEventArgs(K) : IInspectable
-{
-extern (Windows):
-	HRESULT get_CollectionChange(Windows.Foundation.Collections.CollectionChange* value);
-	HRESULT get_Key(K* value);
-}
-
-interface IObservableMap(K, V) : IInspectable
-{
-extern (Windows):
-	HRESULT add_MapChanged(MapChangedEventHandler!(K, V) handler, EventRegistrationToken* token);
-	HRESULT remove_MapChanged(EventRegistrationToken token);
-}
-
-interface IObservableVector(T) : IInspectable
-{
-extern (Windows):
-	HRESULT add_VectorChanged(VectorChangedEventHandler!T handler, EventRegistrationToken* token);
-	HRESULT remove_VectorChanged(EventRegistrationToken token);
 }

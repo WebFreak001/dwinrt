@@ -836,138 +836,876 @@ extern(Windows):
 
 interface Accelerometer : Windows.Devices.Sensors.IAccelerometer, Windows.Devices.Sensors.IAccelerometerDeviceId, Windows.Devices.Sensors.IAccelerometer2, Windows.Devices.Sensors.IAccelerometer3, Windows.Devices.Sensors.IAccelerometer4
 {
+extern(Windows):
+	final Windows.Devices.Sensors.AccelerometerReading GetCurrentReading()
+	{
+		Windows.Devices.Sensors.AccelerometerReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final UINT32 MinimumReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer).get_MinimumReportInterval(&_ret));
+		return _ret;
+	}
+	final void ReportInterval(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer).set_ReportInterval(value));
+	}
+	final UINT32 ReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer).get_ReportInterval(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometerDeviceId).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer2).set_ReadingTransform(value));
+	}
+	final Windows.Graphics.Display.DisplayOrientations ReadingTransform()
+	{
+		Windows.Graphics.Display.DisplayOrientations _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer2).get_ReadingTransform(&_ret));
+		return _ret;
+	}
+	final void ReportLatency(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer3).set_ReportLatency(value));
+	}
+	final UINT32 ReportLatency()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer3).get_ReportLatency(&_ret));
+		return _ret;
+	}
+	final UINT32 MaxBatchSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer3).get_MaxBatchSize(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.AccelerometerReadingType ReadingType()
+	{
+		Windows.Devices.Sensors.AccelerometerReadingType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer4).get_ReadingType(&_ret));
+		return _ret;
+	}
 }
 
 interface AccelerometerReading : Windows.Devices.Sensors.IAccelerometerReading
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometerReading).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final double AccelerationX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometerReading).get_AccelerationX(&_ret));
+		return _ret;
+	}
+	final double AccelerationY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometerReading).get_AccelerationY(&_ret));
+		return _ret;
+	}
+	final double AccelerationZ()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometerReading).get_AccelerationZ(&_ret));
+		return _ret;
+	}
 }
 
 interface AccelerometerReadingChangedEventArgs : Windows.Devices.Sensors.IAccelerometerReadingChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Sensors.AccelerometerReading Reading()
+	{
+		Windows.Devices.Sensors.AccelerometerReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometerReadingChangedEventArgs).get_Reading(&_ret));
+		return _ret;
+	}
 }
 
 interface AccelerometerShakenEventArgs : Windows.Devices.Sensors.IAccelerometerShakenEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometerShakenEventArgs).get_Timestamp(&_ret));
+		return _ret;
+	}
 }
 
 interface ActivitySensor : Windows.Devices.Sensors.IActivitySensor
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.ActivitySensorReading) GetCurrentReadingAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.ActivitySensorReading) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensor).abi_GetCurrentReadingAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.Sensors.ActivityType) SubscribedActivities()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.Sensors.ActivityType) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensor).get_SubscribedActivities(&_ret));
+		return _ret;
+	}
+	final double PowerInMilliwatts()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensor).get_PowerInMilliwatts(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensor).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivityType) SupportedActivities()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivityType) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensor).get_SupportedActivities(&_ret));
+		return _ret;
+	}
+	final UINT32 MinimumReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensor).get_MinimumReportInterval(&_ret));
+		return _ret;
+	}
 }
 
 interface ActivitySensorReading : Windows.Devices.Sensors.IActivitySensorReading
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensorReading).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.ActivityType Activity()
+	{
+		Windows.Devices.Sensors.ActivityType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensorReading).get_Activity(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.ActivitySensorReadingConfidence Confidence()
+	{
+		Windows.Devices.Sensors.ActivitySensorReadingConfidence _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensorReading).get_Confidence(&_ret));
+		return _ret;
+	}
 }
 
 interface ActivitySensorReadingChangeReport : Windows.Devices.Sensors.IActivitySensorReadingChangeReport
 {
+extern(Windows):
+	final Windows.Devices.Sensors.ActivitySensorReading Reading()
+	{
+		Windows.Devices.Sensors.ActivitySensorReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensorReadingChangeReport).get_Reading(&_ret));
+		return _ret;
+	}
 }
 
 interface ActivitySensorReadingChangedEventArgs : Windows.Devices.Sensors.IActivitySensorReadingChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Sensors.ActivitySensorReading Reading()
+	{
+		Windows.Devices.Sensors.ActivitySensorReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensorReadingChangedEventArgs).get_Reading(&_ret));
+		return _ret;
+	}
 }
 
 interface ActivitySensorTriggerDetails : Windows.Devices.Sensors.IActivitySensorTriggerDetails
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReadingChangeReport) ReadReports()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReadingChangeReport) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensorTriggerDetails).abi_ReadReports(&_ret));
+		return _ret;
+	}
 }
 
 interface Altimeter : Windows.Devices.Sensors.IAltimeter
 {
+extern(Windows):
+	final Windows.Devices.Sensors.AltimeterReading GetCurrentReading()
+	{
+		Windows.Devices.Sensors.AltimeterReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAltimeter).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAltimeter).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final UINT32 MinimumReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAltimeter).get_MinimumReportInterval(&_ret));
+		return _ret;
+	}
+	final void ReportInterval(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAltimeter).set_ReportInterval(value));
+	}
+	final UINT32 ReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAltimeter).get_ReportInterval(&_ret));
+		return _ret;
+	}
 }
 
 interface AltimeterReading : Windows.Devices.Sensors.IAltimeterReading
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAltimeterReading).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final double AltitudeChangeInMeters()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAltimeterReading).get_AltitudeChangeInMeters(&_ret));
+		return _ret;
+	}
 }
 
 interface AltimeterReadingChangedEventArgs : Windows.Devices.Sensors.IAltimeterReadingChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Sensors.AltimeterReading Reading()
+	{
+		Windows.Devices.Sensors.AltimeterReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAltimeterReadingChangedEventArgs).get_Reading(&_ret));
+		return _ret;
+	}
 }
 
 interface Barometer : Windows.Devices.Sensors.IBarometer
 {
+extern(Windows):
+	final Windows.Devices.Sensors.BarometerReading GetCurrentReading()
+	{
+		Windows.Devices.Sensors.BarometerReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IBarometer).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IBarometer).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final UINT32 MinimumReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IBarometer).get_MinimumReportInterval(&_ret));
+		return _ret;
+	}
+	final void ReportInterval(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IBarometer).set_ReportInterval(value));
+	}
+	final UINT32 ReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IBarometer).get_ReportInterval(&_ret));
+		return _ret;
+	}
 }
 
 interface BarometerReading : Windows.Devices.Sensors.IBarometerReading
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IBarometerReading).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final double StationPressureInHectopascals()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IBarometerReading).get_StationPressureInHectopascals(&_ret));
+		return _ret;
+	}
 }
 
 interface BarometerReadingChangedEventArgs : Windows.Devices.Sensors.IBarometerReadingChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Sensors.BarometerReading Reading()
+	{
+		Windows.Devices.Sensors.BarometerReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IBarometerReadingChangedEventArgs).get_Reading(&_ret));
+		return _ret;
+	}
 }
 
 interface Compass : Windows.Devices.Sensors.ICompass, Windows.Devices.Sensors.ICompassDeviceId, Windows.Devices.Sensors.ICompass2
 {
+extern(Windows):
+	final Windows.Devices.Sensors.CompassReading GetCurrentReading()
+	{
+		Windows.Devices.Sensors.CompassReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompass).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final UINT32 MinimumReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompass).get_MinimumReportInterval(&_ret));
+		return _ret;
+	}
+	final void ReportInterval(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompass).set_ReportInterval(value));
+	}
+	final UINT32 ReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompass).get_ReportInterval(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompassDeviceId).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompass2).set_ReadingTransform(value));
+	}
+	final Windows.Graphics.Display.DisplayOrientations ReadingTransform()
+	{
+		Windows.Graphics.Display.DisplayOrientations _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompass2).get_ReadingTransform(&_ret));
+		return _ret;
+	}
 }
 
 interface CompassReading : Windows.Devices.Sensors.ICompassReading, Windows.Devices.Sensors.ICompassReadingHeadingAccuracy
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompassReading).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final double HeadingMagneticNorth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompassReading).get_HeadingMagneticNorth(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) HeadingTrueNorth()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompassReading).get_HeadingTrueNorth(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.MagnetometerAccuracy HeadingAccuracy()
+	{
+		Windows.Devices.Sensors.MagnetometerAccuracy _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompassReadingHeadingAccuracy).get_HeadingAccuracy(&_ret));
+		return _ret;
+	}
 }
 
 interface CompassReadingChangedEventArgs : Windows.Devices.Sensors.ICompassReadingChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Sensors.CompassReading Reading()
+	{
+		Windows.Devices.Sensors.CompassReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompassReadingChangedEventArgs).get_Reading(&_ret));
+		return _ret;
+	}
 }
 
 interface Gyrometer : Windows.Devices.Sensors.IGyrometer, Windows.Devices.Sensors.IGyrometerDeviceId, Windows.Devices.Sensors.IGyrometer2
 {
+extern(Windows):
+	final Windows.Devices.Sensors.GyrometerReading GetCurrentReading()
+	{
+		Windows.Devices.Sensors.GyrometerReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometer).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final UINT32 MinimumReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometer).get_MinimumReportInterval(&_ret));
+		return _ret;
+	}
+	final void ReportInterval(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometer).set_ReportInterval(value));
+	}
+	final UINT32 ReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometer).get_ReportInterval(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometerDeviceId).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometer2).set_ReadingTransform(value));
+	}
+	final Windows.Graphics.Display.DisplayOrientations ReadingTransform()
+	{
+		Windows.Graphics.Display.DisplayOrientations _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometer2).get_ReadingTransform(&_ret));
+		return _ret;
+	}
 }
 
 interface GyrometerReading : Windows.Devices.Sensors.IGyrometerReading
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometerReading).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final double AngularVelocityX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometerReading).get_AngularVelocityX(&_ret));
+		return _ret;
+	}
+	final double AngularVelocityY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometerReading).get_AngularVelocityY(&_ret));
+		return _ret;
+	}
+	final double AngularVelocityZ()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometerReading).get_AngularVelocityZ(&_ret));
+		return _ret;
+	}
 }
 
 interface GyrometerReadingChangedEventArgs : Windows.Devices.Sensors.IGyrometerReadingChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Sensors.GyrometerReading Reading()
+	{
+		Windows.Devices.Sensors.GyrometerReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometerReadingChangedEventArgs).get_Reading(&_ret));
+		return _ret;
+	}
 }
 
 interface Inclinometer : Windows.Devices.Sensors.IInclinometer, Windows.Devices.Sensors.IInclinometerDeviceId, Windows.Devices.Sensors.IInclinometer2
 {
+extern(Windows):
+	final Windows.Devices.Sensors.InclinometerReading GetCurrentReading()
+	{
+		Windows.Devices.Sensors.InclinometerReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometer).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final UINT32 MinimumReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometer).get_MinimumReportInterval(&_ret));
+		return _ret;
+	}
+	final void ReportInterval(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometer).set_ReportInterval(value));
+	}
+	final UINT32 ReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometer).get_ReportInterval(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometerDeviceId).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometer2).set_ReadingTransform(value));
+	}
+	final Windows.Graphics.Display.DisplayOrientations ReadingTransform()
+	{
+		Windows.Graphics.Display.DisplayOrientations _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometer2).get_ReadingTransform(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.SensorReadingType ReadingType()
+	{
+		Windows.Devices.Sensors.SensorReadingType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometer2).get_ReadingType(&_ret));
+		return _ret;
+	}
 }
 
 interface InclinometerReading : Windows.Devices.Sensors.IInclinometerReading, Windows.Devices.Sensors.IInclinometerReadingYawAccuracy
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometerReading).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final FLOAT PitchDegrees()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometerReading).get_PitchDegrees(&_ret));
+		return _ret;
+	}
+	final FLOAT RollDegrees()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometerReading).get_RollDegrees(&_ret));
+		return _ret;
+	}
+	final FLOAT YawDegrees()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometerReading).get_YawDegrees(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.MagnetometerAccuracy YawAccuracy()
+	{
+		Windows.Devices.Sensors.MagnetometerAccuracy _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometerReadingYawAccuracy).get_YawAccuracy(&_ret));
+		return _ret;
+	}
 }
 
 interface InclinometerReadingChangedEventArgs : Windows.Devices.Sensors.IInclinometerReadingChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Sensors.InclinometerReading Reading()
+	{
+		Windows.Devices.Sensors.InclinometerReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometerReadingChangedEventArgs).get_Reading(&_ret));
+		return _ret;
+	}
 }
 
 interface LightSensor : Windows.Devices.Sensors.ILightSensor, Windows.Devices.Sensors.ILightSensorDeviceId
 {
+extern(Windows):
+	final Windows.Devices.Sensors.LightSensorReading GetCurrentReading()
+	{
+		Windows.Devices.Sensors.LightSensorReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensor).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final UINT32 MinimumReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensor).get_MinimumReportInterval(&_ret));
+		return _ret;
+	}
+	final void ReportInterval(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensor).set_ReportInterval(value));
+	}
+	final UINT32 ReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensor).get_ReportInterval(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensorDeviceId).get_DeviceId(&_ret));
+		return _ret;
+	}
 }
 
 interface LightSensorReading : Windows.Devices.Sensors.ILightSensorReading
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensorReading).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final FLOAT IlluminanceInLux()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensorReading).get_IlluminanceInLux(&_ret));
+		return _ret;
+	}
 }
 
 interface LightSensorReadingChangedEventArgs : Windows.Devices.Sensors.ILightSensorReadingChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Sensors.LightSensorReading Reading()
+	{
+		Windows.Devices.Sensors.LightSensorReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensorReadingChangedEventArgs).get_Reading(&_ret));
+		return _ret;
+	}
 }
 
 interface Magnetometer : Windows.Devices.Sensors.IMagnetometer, Windows.Devices.Sensors.IMagnetometerDeviceId, Windows.Devices.Sensors.IMagnetometer2
 {
+extern(Windows):
+	final Windows.Devices.Sensors.MagnetometerReading GetCurrentReading()
+	{
+		Windows.Devices.Sensors.MagnetometerReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometer).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final UINT32 MinimumReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometer).get_MinimumReportInterval(&_ret));
+		return _ret;
+	}
+	final void ReportInterval(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometer).set_ReportInterval(value));
+	}
+	final UINT32 ReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometer).get_ReportInterval(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometerDeviceId).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometer2).set_ReadingTransform(value));
+	}
+	final Windows.Graphics.Display.DisplayOrientations ReadingTransform()
+	{
+		Windows.Graphics.Display.DisplayOrientations _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometer2).get_ReadingTransform(&_ret));
+		return _ret;
+	}
 }
 
 interface MagnetometerReading : Windows.Devices.Sensors.IMagnetometerReading
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometerReading).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final FLOAT MagneticFieldX()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometerReading).get_MagneticFieldX(&_ret));
+		return _ret;
+	}
+	final FLOAT MagneticFieldY()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometerReading).get_MagneticFieldY(&_ret));
+		return _ret;
+	}
+	final FLOAT MagneticFieldZ()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometerReading).get_MagneticFieldZ(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.MagnetometerAccuracy DirectionalAccuracy()
+	{
+		Windows.Devices.Sensors.MagnetometerAccuracy _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometerReading).get_DirectionalAccuracy(&_ret));
+		return _ret;
+	}
 }
 
 interface MagnetometerReadingChangedEventArgs : Windows.Devices.Sensors.IMagnetometerReadingChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Sensors.MagnetometerReading Reading()
+	{
+		Windows.Devices.Sensors.MagnetometerReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometerReadingChangedEventArgs).get_Reading(&_ret));
+		return _ret;
+	}
 }
 
 interface OrientationSensor : Windows.Devices.Sensors.IOrientationSensor, Windows.Devices.Sensors.IOrientationSensorDeviceId, Windows.Devices.Sensors.IOrientationSensor2
 {
+extern(Windows):
+	final Windows.Devices.Sensors.OrientationSensorReading GetCurrentReading()
+	{
+		Windows.Devices.Sensors.OrientationSensorReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensor).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final UINT32 MinimumReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensor).get_MinimumReportInterval(&_ret));
+		return _ret;
+	}
+	final void ReportInterval(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensor).set_ReportInterval(value));
+	}
+	final UINT32 ReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensor).get_ReportInterval(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensorDeviceId).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensor2).set_ReadingTransform(value));
+	}
+	final Windows.Graphics.Display.DisplayOrientations ReadingTransform()
+	{
+		Windows.Graphics.Display.DisplayOrientations _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensor2).get_ReadingTransform(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.SensorReadingType ReadingType()
+	{
+		Windows.Devices.Sensors.SensorReadingType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensor2).get_ReadingType(&_ret));
+		return _ret;
+	}
 }
 
 interface OrientationSensorReading : Windows.Devices.Sensors.IOrientationSensorReading, Windows.Devices.Sensors.IOrientationSensorReadingYawAccuracy
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensorReading).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.SensorRotationMatrix RotationMatrix()
+	{
+		Windows.Devices.Sensors.SensorRotationMatrix _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensorReading).get_RotationMatrix(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.SensorQuaternion Quaternion()
+	{
+		Windows.Devices.Sensors.SensorQuaternion _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensorReading).get_Quaternion(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.MagnetometerAccuracy YawAccuracy()
+	{
+		Windows.Devices.Sensors.MagnetometerAccuracy _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensorReadingYawAccuracy).get_YawAccuracy(&_ret));
+		return _ret;
+	}
 }
 
 interface OrientationSensorReadingChangedEventArgs : Windows.Devices.Sensors.IOrientationSensorReadingChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Sensors.OrientationSensorReading Reading()
+	{
+		Windows.Devices.Sensors.OrientationSensorReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensorReadingChangedEventArgs).get_Reading(&_ret));
+		return _ret;
+	}
 }
 
 interface Pedometer : Windows.Devices.Sensors.IPedometer, Windows.Devices.Sensors.IPedometer2
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometer).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final double PowerInMilliwatts()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometer).get_PowerInMilliwatts(&_ret));
+		return _ret;
+	}
+	final UINT32 MinimumReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometer).get_MinimumReportInterval(&_ret));
+		return _ret;
+	}
+	final void ReportInterval(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometer).set_ReportInterval(value));
+	}
+	final UINT32 ReportInterval()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometer).get_ReportInterval(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(Windows.Devices.Sensors.PedometerStepKind, Windows.Devices.Sensors.PedometerReading) GetCurrentReadings()
+	{
+		Windows.Foundation.Collections.IMapView!(Windows.Devices.Sensors.PedometerStepKind, Windows.Devices.Sensors.PedometerReading) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometer2).abi_GetCurrentReadings(&_ret));
+		return _ret;
+	}
 }
 
 interface PedometerDataThreshold : Windows.Devices.Sensors.ISensorDataThreshold
@@ -976,14 +1714,77 @@ interface PedometerDataThreshold : Windows.Devices.Sensors.ISensorDataThreshold
 
 interface PedometerReading : Windows.Devices.Sensors.IPedometerReading
 {
+extern(Windows):
+	final Windows.Devices.Sensors.PedometerStepKind StepKind()
+	{
+		Windows.Devices.Sensors.PedometerStepKind _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometerReading).get_StepKind(&_ret));
+		return _ret;
+	}
+	final INT32 CumulativeSteps()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometerReading).get_CumulativeSteps(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometerReading).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan CumulativeStepsDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometerReading).get_CumulativeStepsDuration(&_ret));
+		return _ret;
+	}
 }
 
 interface PedometerReadingChangedEventArgs : Windows.Devices.Sensors.IPedometerReadingChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Sensors.PedometerReading Reading()
+	{
+		Windows.Devices.Sensors.PedometerReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometerReadingChangedEventArgs).get_Reading(&_ret));
+		return _ret;
+	}
 }
 
 interface ProximitySensor : Windows.Devices.Sensors.IProximitySensor
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensor).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) MaxDistanceInMillimeters()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensor).get_MaxDistanceInMillimeters(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) MinDistanceInMillimeters()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensor).get_MinDistanceInMillimeters(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.ProximitySensorReading GetCurrentReading()
+	{
+		Windows.Devices.Sensors.ProximitySensorReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensor).abi_GetCurrentReading(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.ProximitySensorDisplayOnOffController CreateDisplayOnOffController()
+	{
+		Windows.Devices.Sensors.ProximitySensorDisplayOnOffController _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensor).abi_CreateDisplayOnOffController(&_ret));
+		return _ret;
+	}
 }
 
 interface ProximitySensorDataThreshold : Windows.Devices.Sensors.ISensorDataThreshold
@@ -992,34 +1793,194 @@ interface ProximitySensorDataThreshold : Windows.Devices.Sensors.ISensorDataThre
 
 interface ProximitySensorDisplayOnOffController : Windows.Foundation.IClosable
 {
+extern(Windows):
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface ProximitySensorReading : Windows.Devices.Sensors.IProximitySensorReading
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensorReading).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final bool IsDetected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensorReading).get_IsDetected(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) DistanceInMillimeters()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensorReading).get_DistanceInMillimeters(&_ret));
+		return _ret;
+	}
 }
 
 interface ProximitySensorReadingChangedEventArgs : Windows.Devices.Sensors.IProximitySensorReadingChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Sensors.ProximitySensorReading Reading()
+	{
+		Windows.Devices.Sensors.ProximitySensorReading _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensorReadingChangedEventArgs).get_Reading(&_ret));
+		return _ret;
+	}
 }
 
 interface SensorDataThresholdTriggerDetails : Windows.Devices.Sensors.ISensorDataThresholdTriggerDetails
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorDataThresholdTriggerDetails).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.SensorType SensorType()
+	{
+		Windows.Devices.Sensors.SensorType _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorDataThresholdTriggerDetails).get_SensorType(&_ret));
+		return _ret;
+	}
 }
 
 interface SensorQuaternion : Windows.Devices.Sensors.ISensorQuaternion
 {
+extern(Windows):
+	final FLOAT W()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorQuaternion).get_W(&_ret));
+		return _ret;
+	}
+	final FLOAT X()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorQuaternion).get_X(&_ret));
+		return _ret;
+	}
+	final FLOAT Y()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorQuaternion).get_Y(&_ret));
+		return _ret;
+	}
+	final FLOAT Z()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorQuaternion).get_Z(&_ret));
+		return _ret;
+	}
 }
 
 interface SensorRotationMatrix : Windows.Devices.Sensors.ISensorRotationMatrix
 {
+extern(Windows):
+	final FLOAT M11()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M11(&_ret));
+		return _ret;
+	}
+	final FLOAT M12()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M12(&_ret));
+		return _ret;
+	}
+	final FLOAT M13()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M13(&_ret));
+		return _ret;
+	}
+	final FLOAT M21()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M21(&_ret));
+		return _ret;
+	}
+	final FLOAT M22()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M22(&_ret));
+		return _ret;
+	}
+	final FLOAT M23()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M23(&_ret));
+		return _ret;
+	}
+	final FLOAT M31()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M31(&_ret));
+		return _ret;
+	}
+	final FLOAT M32()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M32(&_ret));
+		return _ret;
+	}
+	final FLOAT M33()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M33(&_ret));
+		return _ret;
+	}
 }
 
 interface SimpleOrientationSensor : Windows.Devices.Sensors.ISimpleOrientationSensor, Windows.Devices.Sensors.ISimpleOrientationSensorDeviceId, Windows.Devices.Sensors.ISimpleOrientationSensor2
 {
+extern(Windows):
+	final Windows.Devices.Sensors.SimpleOrientation GetCurrentOrientation()
+	{
+		Windows.Devices.Sensors.SimpleOrientation _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISimpleOrientationSensor).abi_GetCurrentOrientation(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISimpleOrientationSensorDeviceId).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISimpleOrientationSensor2).set_ReadingTransform(value));
+	}
+	final Windows.Graphics.Display.DisplayOrientations ReadingTransform()
+	{
+		Windows.Graphics.Display.DisplayOrientations _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISimpleOrientationSensor2).get_ReadingTransform(&_ret));
+		return _ret;
+	}
 }
 
 interface SimpleOrientationSensorOrientationChangedEventArgs : Windows.Devices.Sensors.ISimpleOrientationSensorOrientationChangedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISimpleOrientationSensorOrientationChangedEventArgs).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sensors.SimpleOrientation Orientation()
+	{
+		Windows.Devices.Sensors.SimpleOrientation _ret;
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISimpleOrientationSensorOrientationChangedEventArgs).get_Orientation(&_ret));
+		return _ret;
+	}
 }
 
 enum AccelerometerReadingType

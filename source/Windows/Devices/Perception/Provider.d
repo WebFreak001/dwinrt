@@ -243,26 +243,160 @@ interface KnownPerceptionFrameKind
 
 interface PerceptionControlGroup : Windows.Devices.Perception.Provider.IPerceptionControlGroup
 {
+extern(Windows):
+	deprecated("PerceptionControlGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) FrameProviderIds()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionControlGroup).get_FrameProviderIds(&_ret));
+		return _ret;
+	}
 }
 
 interface PerceptionCorrelation : Windows.Devices.Perception.Provider.IPerceptionCorrelation
 {
+extern(Windows):
+	deprecated("PerceptionCorrelation may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final HSTRING TargetId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionCorrelation).get_TargetId(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionCorrelation may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final Windows.Foundation.Numerics.Vector3 Position()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionCorrelation).get_Position(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionCorrelation may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final Windows.Foundation.Numerics.Quaternion Orientation()
+	{
+		Windows.Foundation.Numerics.Quaternion _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionCorrelation).get_Orientation(&_ret));
+		return _ret;
+	}
 }
 
 interface PerceptionCorrelationGroup : Windows.Devices.Perception.Provider.IPerceptionCorrelationGroup
 {
+extern(Windows):
+	deprecated("PerceptionCorrelationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.Provider.PerceptionCorrelation) RelativeLocations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.Provider.PerceptionCorrelation) _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionCorrelationGroup).get_RelativeLocations(&_ret));
+		return _ret;
+	}
 }
 
 interface PerceptionFaceAuthenticationGroup : Windows.Devices.Perception.Provider.IPerceptionFaceAuthenticationGroup
 {
+extern(Windows):
+	deprecated("PerceptionFaceAuthenticationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) FrameProviderIds()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFaceAuthenticationGroup).get_FrameProviderIds(&_ret));
+		return _ret;
+	}
 }
 
 interface PerceptionFrame : Windows.Devices.Perception.Provider.IPerceptionFrame
 {
+extern(Windows):
+	deprecated("PerceptionFrame may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final Windows.Foundation.TimeSpan RelativeTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrame).get_RelativeTime(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionFrame may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final void RelativeTime(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrame).set_RelativeTime(value));
+	}
+	deprecated("PerceptionFrame may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final Windows.Foundation.Collections.ValueSet Properties()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrame).get_Properties(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionFrame may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final Windows.Foundation.IMemoryBuffer FrameData()
+	{
+		Windows.Foundation.IMemoryBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrame).get_FrameData(&_ret));
+		return _ret;
+	}
 }
 
 interface PerceptionFrameProviderInfo : Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo
 {
+extern(Windows):
+	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo).get_Id(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo).set_Id(value));
+	}
+	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo).get_DisplayName(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo).set_DisplayName(value));
+	}
+	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final HSTRING DeviceKind()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo).get_DeviceKind(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final void DeviceKind(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo).set_DeviceKind(value));
+	}
+	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final HSTRING FrameKind()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo).get_FrameKind(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final void FrameKind(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo).set_FrameKind(value));
+	}
+	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final bool Hidden()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo).get_Hidden(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final void Hidden(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo).set_Hidden(value));
+	}
 }
 
 interface PerceptionFrameProviderManagerService
@@ -271,8 +405,61 @@ interface PerceptionFrameProviderManagerService
 
 interface PerceptionPropertyChangeRequest : Windows.Devices.Perception.Provider.IPerceptionPropertyChangeRequest
 {
+extern(Windows):
+	deprecated("PerceptionPropertyChangeRequest may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionPropertyChangeRequest).get_Name(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionPropertyChangeRequest may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionPropertyChangeRequest).get_Value(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionPropertyChangeRequest may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeStatus Status()
+	{
+		Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionPropertyChangeRequest).get_Status(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionPropertyChangeRequest may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final void Status(Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeStatus value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionPropertyChangeRequest).set_Status(value));
+	}
+	deprecated("PerceptionPropertyChangeRequest may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionPropertyChangeRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface PerceptionVideoFrameAllocator : Windows.Devices.Perception.Provider.IPerceptionVideoFrameAllocator, Windows.Foundation.IClosable
 {
+extern(Windows):
+	deprecated("PerceptionVideoFrameAllocator may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final Windows.Devices.Perception.Provider.PerceptionFrame AllocateFrame()
+	{
+		Windows.Devices.Perception.Provider.PerceptionFrame _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionVideoFrameAllocator).abi_AllocateFrame(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionVideoFrameAllocator may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	final Windows.Devices.Perception.Provider.PerceptionFrame CopyFromVideoFrame(Windows.Media.VideoFrame frame)
+	{
+		Windows.Devices.Perception.Provider.PerceptionFrame _ret;
+		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionVideoFrameAllocator).abi_CopyFromVideoFrame(frame, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }

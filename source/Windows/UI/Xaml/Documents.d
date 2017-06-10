@@ -592,6 +592,47 @@ interface IUnderline : IInspectable
 
 interface Block : Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Documents.IBlock
 {
+extern(Windows):
+	final Windows.UI.Xaml.TextAlignment TextAlignment()
+	{
+		Windows.UI.Xaml.TextAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).get_TextAlignment(&_ret));
+		return _ret;
+	}
+	final void TextAlignment(Windows.UI.Xaml.TextAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).set_TextAlignment(value));
+	}
+	final double LineHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).get_LineHeight(&_ret));
+		return _ret;
+	}
+	final void LineHeight(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).set_LineHeight(value));
+	}
+	final Windows.UI.Xaml.LineStackingStrategy LineStackingStrategy()
+	{
+		Windows.UI.Xaml.LineStackingStrategy _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).get_LineStackingStrategy(&_ret));
+		return _ret;
+	}
+	final void LineStackingStrategy(Windows.UI.Xaml.LineStackingStrategy value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).set_LineStackingStrategy(value));
+	}
+	final Windows.UI.Xaml.Thickness Margin()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).get_Margin(&_ret));
+		return _ret;
+	}
+	final void Margin(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).set_Margin(value));
+	}
 }
 
 interface BlockCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Documents.Block)
@@ -604,10 +645,234 @@ interface Bold : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IBold
 
 interface Glyphs : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Documents.IGlyphs, Windows.UI.Xaml.Documents.IGlyphs2
 {
+extern(Windows):
+	final HSTRING UnicodeString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_UnicodeString(&_ret));
+		return _ret;
+	}
+	final void UnicodeString(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_UnicodeString(value));
+	}
+	final HSTRING Indices()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_Indices(&_ret));
+		return _ret;
+	}
+	final void Indices(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_Indices(value));
+	}
+	final Windows.Foundation.Uri FontUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_FontUri(&_ret));
+		return _ret;
+	}
+	final void FontUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_FontUri(value));
+	}
+	final Windows.UI.Xaml.Media.StyleSimulations StyleSimulations()
+	{
+		Windows.UI.Xaml.Media.StyleSimulations _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_StyleSimulations(&_ret));
+		return _ret;
+	}
+	final void StyleSimulations(Windows.UI.Xaml.Media.StyleSimulations value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_StyleSimulations(value));
+	}
+	final double FontRenderingEmSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_FontRenderingEmSize(&_ret));
+		return _ret;
+	}
+	final void FontRenderingEmSize(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_FontRenderingEmSize(value));
+	}
+	final double OriginX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_OriginX(&_ret));
+		return _ret;
+	}
+	final void OriginX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_OriginX(value));
+	}
+	final double OriginY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_OriginY(&_ret));
+		return _ret;
+	}
+	final void OriginY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_OriginY(value));
+	}
+	final Windows.UI.Xaml.Media.Brush Fill()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_Fill(&_ret));
+		return _ret;
+	}
+	final void Fill(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_Fill(value));
+	}
+	final bool IsColorFontEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs2).get_IsColorFontEnabled(&_ret));
+		return _ret;
+	}
+	final void IsColorFontEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs2).set_IsColorFontEnabled(value));
+	}
+	final INT32 ColorFontPaletteIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs2).get_ColorFontPaletteIndex(&_ret));
+		return _ret;
+	}
+	final void ColorFontPaletteIndex(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs2).set_ColorFontPaletteIndex(value));
+	}
 }
 
 interface Hyperlink : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IHyperlink, Windows.UI.Xaml.Documents.IHyperlink2, Windows.UI.Xaml.Documents.IHyperlink3, Windows.UI.Xaml.Documents.IHyperlink4
 {
+extern(Windows):
+	final Windows.Foundation.Uri NavigateUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink).get_NavigateUri(&_ret));
+		return _ret;
+	}
+	final void NavigateUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink).set_NavigateUri(value));
+	}
+	final Windows.UI.Xaml.Documents.UnderlineStyle UnderlineStyle()
+	{
+		Windows.UI.Xaml.Documents.UnderlineStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink2).get_UnderlineStyle(&_ret));
+		return _ret;
+	}
+	final void UnderlineStyle(Windows.UI.Xaml.Documents.UnderlineStyle value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink2).set_UnderlineStyle(value));
+	}
+	final Windows.UI.Xaml.DependencyObject XYFocusLeft()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).get_XYFocusLeft(&_ret));
+		return _ret;
+	}
+	final void XYFocusLeft(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).set_XYFocusLeft(value));
+	}
+	final Windows.UI.Xaml.DependencyObject XYFocusRight()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).get_XYFocusRight(&_ret));
+		return _ret;
+	}
+	final void XYFocusRight(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).set_XYFocusRight(value));
+	}
+	final Windows.UI.Xaml.DependencyObject XYFocusUp()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).get_XYFocusUp(&_ret));
+		return _ret;
+	}
+	final void XYFocusUp(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).set_XYFocusUp(value));
+	}
+	final Windows.UI.Xaml.DependencyObject XYFocusDown()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).get_XYFocusDown(&_ret));
+		return _ret;
+	}
+	final void XYFocusDown(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).set_XYFocusDown(value));
+	}
+	final Windows.UI.Xaml.ElementSoundMode ElementSoundMode()
+	{
+		Windows.UI.Xaml.ElementSoundMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).get_ElementSoundMode(&_ret));
+		return _ret;
+	}
+	final void ElementSoundMode(Windows.UI.Xaml.ElementSoundMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).set_ElementSoundMode(value));
+	}
+	final Windows.UI.Xaml.FocusState FocusState()
+	{
+		Windows.UI.Xaml.FocusState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).get_FocusState(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Input.XYFocusNavigationStrategy XYFocusUpNavigationStrategy()
+	{
+		Windows.UI.Xaml.Input.XYFocusNavigationStrategy _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).get_XYFocusUpNavigationStrategy(&_ret));
+		return _ret;
+	}
+	final void XYFocusUpNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).set_XYFocusUpNavigationStrategy(value));
+	}
+	final Windows.UI.Xaml.Input.XYFocusNavigationStrategy XYFocusDownNavigationStrategy()
+	{
+		Windows.UI.Xaml.Input.XYFocusNavigationStrategy _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).get_XYFocusDownNavigationStrategy(&_ret));
+		return _ret;
+	}
+	final void XYFocusDownNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).set_XYFocusDownNavigationStrategy(value));
+	}
+	final Windows.UI.Xaml.Input.XYFocusNavigationStrategy XYFocusLeftNavigationStrategy()
+	{
+		Windows.UI.Xaml.Input.XYFocusNavigationStrategy _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).get_XYFocusLeftNavigationStrategy(&_ret));
+		return _ret;
+	}
+	final void XYFocusLeftNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).set_XYFocusLeftNavigationStrategy(value));
+	}
+	final Windows.UI.Xaml.Input.XYFocusNavigationStrategy XYFocusRightNavigationStrategy()
+	{
+		Windows.UI.Xaml.Input.XYFocusNavigationStrategy _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).get_XYFocusRightNavigationStrategy(&_ret));
+		return _ret;
+	}
+	final void XYFocusRightNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).set_XYFocusRightNavigationStrategy(value));
+	}
+	final bool Focus(Windows.UI.Xaml.FocusState value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).abi_Focus(value, &_ret));
+		return _ret;
+	}
 }
 
 interface HyperlinkClickEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Documents.IHyperlinkClickEventArgs
@@ -624,6 +889,17 @@ interface InlineCollection : Windows.Foundation.Collections.IVector!(Windows.UI.
 
 interface InlineUIContainer : Windows.UI.Xaml.Documents.Inline, Windows.UI.Xaml.Documents.IInlineUIContainer
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement Child()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IInlineUIContainer).get_Child(&_ret));
+		return _ret;
+	}
+	final void Child(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IInlineUIContainer).set_Child(value));
+	}
 }
 
 interface Italic : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IItalic
@@ -636,22 +912,329 @@ interface LineBreak : Windows.UI.Xaml.Documents.Inline, Windows.UI.Xaml.Document
 
 interface Paragraph : Windows.UI.Xaml.Documents.Block, Windows.UI.Xaml.Documents.IParagraph
 {
+extern(Windows):
+	final Windows.UI.Xaml.Documents.InlineCollection Inlines()
+	{
+		Windows.UI.Xaml.Documents.InlineCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IParagraph).get_Inlines(&_ret));
+		return _ret;
+	}
+	final double TextIndent()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IParagraph).get_TextIndent(&_ret));
+		return _ret;
+	}
+	final void TextIndent(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IParagraph).set_TextIndent(value));
+	}
 }
 
 interface Run : Windows.UI.Xaml.Documents.Inline, Windows.UI.Xaml.Documents.IRun
 {
+extern(Windows):
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IRun).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IRun).set_Text(value));
+	}
+	final Windows.UI.Xaml.FlowDirection FlowDirection()
+	{
+		Windows.UI.Xaml.FlowDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IRun).get_FlowDirection(&_ret));
+		return _ret;
+	}
+	final void FlowDirection(Windows.UI.Xaml.FlowDirection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IRun).set_FlowDirection(value));
+	}
 }
 
 interface Span : Windows.UI.Xaml.Documents.Inline, Windows.UI.Xaml.Documents.ISpan
 {
+extern(Windows):
+	final Windows.UI.Xaml.Documents.InlineCollection Inlines()
+	{
+		Windows.UI.Xaml.Documents.InlineCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ISpan).get_Inlines(&_ret));
+		return _ret;
+	}
+	final void Inlines(Windows.UI.Xaml.Documents.InlineCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ISpan).set_Inlines(value));
+	}
 }
 
 interface TextElement : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Documents.ITextElement, Windows.UI.Xaml.Documents.ITextElementOverrides, Windows.UI.Xaml.Documents.ITextElement2, Windows.UI.Xaml.Documents.ITextElement3, Windows.UI.Xaml.Documents.ITextElement4
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_Name(&_ret));
+		return _ret;
+	}
+	final double FontSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontSize(&_ret));
+		return _ret;
+	}
+	final void FontSize(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontSize(value));
+	}
+	final Windows.UI.Xaml.Media.FontFamily FontFamily()
+	{
+		Windows.UI.Xaml.Media.FontFamily _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontFamily(&_ret));
+		return _ret;
+	}
+	final void FontFamily(Windows.UI.Xaml.Media.FontFamily value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontFamily(value));
+	}
+	final Windows.UI.Text.FontWeight FontWeight()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontWeight(&_ret));
+		return _ret;
+	}
+	final void FontWeight(Windows.UI.Text.FontWeight value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontWeight(value));
+	}
+	final Windows.UI.Text.FontStyle FontStyle()
+	{
+		Windows.UI.Text.FontStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontStyle(&_ret));
+		return _ret;
+	}
+	final void FontStyle(Windows.UI.Text.FontStyle value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontStyle(value));
+	}
+	final Windows.UI.Text.FontStretch FontStretch()
+	{
+		Windows.UI.Text.FontStretch _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontStretch(&_ret));
+		return _ret;
+	}
+	final void FontStretch(Windows.UI.Text.FontStretch value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontStretch(value));
+	}
+	final INT32 CharacterSpacing()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_CharacterSpacing(&_ret));
+		return _ret;
+	}
+	final void CharacterSpacing(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_CharacterSpacing(value));
+	}
+	final Windows.UI.Xaml.Media.Brush Foreground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_Foreground(&_ret));
+		return _ret;
+	}
+	final void Foreground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_Foreground(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_Language(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_Language(value));
+	}
+	final Windows.UI.Xaml.Documents.TextPointer ContentStart()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_ContentStart(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer ContentEnd()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_ContentEnd(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer ElementStart()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_ElementStart(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer ElementEnd()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_ElementEnd(&_ret));
+		return _ret;
+	}
+	final IInspectable FindName(HSTRING name)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).abi_FindName(name, &_ret));
+		return _ret;
+	}
+	final void OnDisconnectVisualChildren()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElementOverrides).abi_OnDisconnectVisualChildren());
+	}
+	final bool IsTextScaleFactorEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement2).get_IsTextScaleFactorEnabled(&_ret));
+		return _ret;
+	}
+	final void IsTextScaleFactorEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement2).set_IsTextScaleFactorEnabled(value));
+	}
+	final bool AllowFocusOnInteraction()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement3).get_AllowFocusOnInteraction(&_ret));
+		return _ret;
+	}
+	final void AllowFocusOnInteraction(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement3).set_AllowFocusOnInteraction(value));
+	}
+	final HSTRING AccessKey()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement3).get_AccessKey(&_ret));
+		return _ret;
+	}
+	final void AccessKey(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement3).set_AccessKey(value));
+	}
+	final bool ExitDisplayModeOnAccessKeyInvoked()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement3).get_ExitDisplayModeOnAccessKeyInvoked(&_ret));
+		return _ret;
+	}
+	final void ExitDisplayModeOnAccessKeyInvoked(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement3).set_ExitDisplayModeOnAccessKeyInvoked(value));
+	}
+	final Windows.UI.Text.TextDecorations TextDecorations()
+	{
+		Windows.UI.Text.TextDecorations _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).get_TextDecorations(&_ret));
+		return _ret;
+	}
+	final void TextDecorations(Windows.UI.Text.TextDecorations value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_TextDecorations(value));
+	}
+	final bool IsAccessKeyScope()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).get_IsAccessKeyScope(&_ret));
+		return _ret;
+	}
+	final void IsAccessKeyScope(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_IsAccessKeyScope(value));
+	}
+	final Windows.UI.Xaml.DependencyObject AccessKeyScopeOwner()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).get_AccessKeyScopeOwner(&_ret));
+		return _ret;
+	}
+	final void AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_AccessKeyScopeOwner(value));
+	}
+	final Windows.UI.Xaml.Input.KeyTipPlacementMode KeyTipPlacementMode()
+	{
+		Windows.UI.Xaml.Input.KeyTipPlacementMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).get_KeyTipPlacementMode(&_ret));
+		return _ret;
+	}
+	final void KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipPlacementMode(value));
+	}
+	final double KeyTipHorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).get_KeyTipHorizontalOffset(&_ret));
+		return _ret;
+	}
+	final void KeyTipHorizontalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipHorizontalOffset(value));
+	}
+	final double KeyTipVerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).get_KeyTipVerticalOffset(&_ret));
+		return _ret;
+	}
+	final void KeyTipVerticalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipVerticalOffset(value));
+	}
 }
 
 interface TextPointer : Windows.UI.Xaml.Documents.ITextPointer
 {
+extern(Windows):
+	final Windows.UI.Xaml.DependencyObject Parent()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextPointer).get_Parent(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.FrameworkElement VisualParent()
+	{
+		Windows.UI.Xaml.FrameworkElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextPointer).get_VisualParent(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.LogicalDirection LogicalDirection()
+	{
+		Windows.UI.Xaml.Documents.LogicalDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextPointer).get_LogicalDirection(&_ret));
+		return _ret;
+	}
+	final INT32 Offset()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextPointer).get_Offset(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect GetCharacterRect(Windows.UI.Xaml.Documents.LogicalDirection direction)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextPointer).abi_GetCharacterRect(direction, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer GetPositionAtOffset(INT32 offset, Windows.UI.Xaml.Documents.LogicalDirection direction)
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextPointer).abi_GetPositionAtOffset(offset, direction, &_ret));
+		return _ret;
+	}
 }
 
 interface Typography : Windows.UI.Xaml.Documents.ITypography

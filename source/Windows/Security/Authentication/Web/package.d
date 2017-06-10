@@ -40,6 +40,25 @@ interface WebAuthenticationBroker
 
 interface WebAuthenticationResult : Windows.Security.Authentication.Web.IWebAuthenticationResult
 {
+extern(Windows):
+	final HSTRING ResponseData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.IWebAuthenticationResult).get_ResponseData(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.WebAuthenticationStatus ResponseStatus()
+	{
+		Windows.Security.Authentication.Web.WebAuthenticationStatus _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.IWebAuthenticationResult).get_ResponseStatus(&_ret));
+		return _ret;
+	}
+	final UINT32 ResponseErrorDetail()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.IWebAuthenticationResult).get_ResponseErrorDetail(&_ret));
+		return _ret;
+	}
 }
 
 enum TokenBindingKeyType

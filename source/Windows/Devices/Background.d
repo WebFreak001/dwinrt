@@ -23,8 +23,40 @@ extern(Windows):
 
 interface DeviceServicingDetails : Windows.Devices.Background.IDeviceServicingDetails
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Background.IDeviceServicingDetails).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final HSTRING Arguments()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Background.IDeviceServicingDetails).get_Arguments(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan ExpectedDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Background.IDeviceServicingDetails).get_ExpectedDuration(&_ret));
+		return _ret;
+	}
 }
 
 interface DeviceUseDetails : Windows.Devices.Background.IDeviceUseDetails
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Background.IDeviceUseDetails).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final HSTRING Arguments()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Background.IDeviceUseDetails).get_Arguments(&_ret));
+		return _ret;
+	}
 }

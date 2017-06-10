@@ -45,10 +45,80 @@ extern(Windows):
 
 interface AdcChannel : Windows.Devices.Adc.IAdcChannel, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Devices.Adc.AdcController Controller()
+	{
+		Windows.Devices.Adc.AdcController _ret;
+		Debug.OK(this.as!(Windows.Devices.Adc.IAdcChannel).get_Controller(&_ret));
+		return _ret;
+	}
+	final INT32 ReadValue()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Adc.IAdcChannel).abi_ReadValue(&_ret));
+		return _ret;
+	}
+	final double ReadRatio()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Devices.Adc.IAdcChannel).abi_ReadRatio(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface AdcController : Windows.Devices.Adc.IAdcController
 {
+extern(Windows):
+	final INT32 ChannelCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Adc.IAdcController).get_ChannelCount(&_ret));
+		return _ret;
+	}
+	final INT32 ResolutionInBits()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Adc.IAdcController).get_ResolutionInBits(&_ret));
+		return _ret;
+	}
+	final INT32 MinValue()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Adc.IAdcController).get_MinValue(&_ret));
+		return _ret;
+	}
+	final INT32 MaxValue()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Adc.IAdcController).get_MaxValue(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Adc.AdcChannelMode ChannelMode()
+	{
+		Windows.Devices.Adc.AdcChannelMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Adc.IAdcController).get_ChannelMode(&_ret));
+		return _ret;
+	}
+	final void ChannelMode(Windows.Devices.Adc.AdcChannelMode value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Adc.IAdcController).set_ChannelMode(value));
+	}
+	final bool IsChannelModeSupported(Windows.Devices.Adc.AdcChannelMode channelMode)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Adc.IAdcController).abi_IsChannelModeSupported(channelMode, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.Adc.AdcChannel OpenChannel(INT32 channelNumber)
+	{
+		Windows.Devices.Adc.AdcChannel _ret;
+		Debug.OK(this.as!(Windows.Devices.Adc.IAdcController).abi_OpenChannel(channelNumber, &_ret));
+		return _ret;
+	}
 }
 
 enum AdcChannelMode

@@ -189,24 +189,262 @@ interface Ellipse : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IEllips
 
 interface Line : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.ILine
 {
+extern(Windows):
+	final double X1()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.ILine).get_X1(&_ret));
+		return _ret;
+	}
+	final void X1(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.ILine).set_X1(value));
+	}
+	final double Y1()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.ILine).get_Y1(&_ret));
+		return _ret;
+	}
+	final void Y1(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.ILine).set_Y1(value));
+	}
+	final double X2()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.ILine).get_X2(&_ret));
+		return _ret;
+	}
+	final void X2(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.ILine).set_X2(value));
+	}
+	final double Y2()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.ILine).get_Y2(&_ret));
+		return _ret;
+	}
+	final void Y2(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.ILine).set_Y2(value));
+	}
 }
 
 interface Path : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IPath
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Geometry Data()
+	{
+		Windows.UI.Xaml.Media.Geometry _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPath).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(Windows.UI.Xaml.Media.Geometry value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPath).set_Data(value));
+	}
 }
 
 interface Polygon : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IPolygon
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.FillRule FillRule()
+	{
+		Windows.UI.Xaml.Media.FillRule _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPolygon).get_FillRule(&_ret));
+		return _ret;
+	}
+	final void FillRule(Windows.UI.Xaml.Media.FillRule value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPolygon).set_FillRule(value));
+	}
+	final Windows.UI.Xaml.Media.PointCollection Points()
+	{
+		Windows.UI.Xaml.Media.PointCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPolygon).get_Points(&_ret));
+		return _ret;
+	}
+	final void Points(Windows.UI.Xaml.Media.PointCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPolygon).set_Points(value));
+	}
 }
 
 interface Polyline : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IPolyline
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.FillRule FillRule()
+	{
+		Windows.UI.Xaml.Media.FillRule _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPolyline).get_FillRule(&_ret));
+		return _ret;
+	}
+	final void FillRule(Windows.UI.Xaml.Media.FillRule value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPolyline).set_FillRule(value));
+	}
+	final Windows.UI.Xaml.Media.PointCollection Points()
+	{
+		Windows.UI.Xaml.Media.PointCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPolyline).get_Points(&_ret));
+		return _ret;
+	}
+	final void Points(Windows.UI.Xaml.Media.PointCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPolyline).set_Points(value));
+	}
 }
 
 interface Rectangle : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IRectangle
 {
+extern(Windows):
+	final double RadiusX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IRectangle).get_RadiusX(&_ret));
+		return _ret;
+	}
+	final void RadiusX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IRectangle).set_RadiusX(value));
+	}
+	final double RadiusY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IRectangle).get_RadiusY(&_ret));
+		return _ret;
+	}
+	final void RadiusY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IRectangle).set_RadiusY(value));
+	}
 }
 
 interface Shape : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Shapes.IShape, Windows.UI.Xaml.Shapes.IShape2
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Brush Fill()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).get_Fill(&_ret));
+		return _ret;
+	}
+	final void Fill(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).set_Fill(value));
+	}
+	final Windows.UI.Xaml.Media.Brush Stroke()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).get_Stroke(&_ret));
+		return _ret;
+	}
+	final void Stroke(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).set_Stroke(value));
+	}
+	final double StrokeMiterLimit()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeMiterLimit(&_ret));
+		return _ret;
+	}
+	final void StrokeMiterLimit(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeMiterLimit(value));
+	}
+	final double StrokeThickness()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeThickness(&_ret));
+		return _ret;
+	}
+	final void StrokeThickness(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeThickness(value));
+	}
+	final Windows.UI.Xaml.Media.PenLineCap StrokeStartLineCap()
+	{
+		Windows.UI.Xaml.Media.PenLineCap _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeStartLineCap(&_ret));
+		return _ret;
+	}
+	final void StrokeStartLineCap(Windows.UI.Xaml.Media.PenLineCap value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeStartLineCap(value));
+	}
+	final Windows.UI.Xaml.Media.PenLineCap StrokeEndLineCap()
+	{
+		Windows.UI.Xaml.Media.PenLineCap _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeEndLineCap(&_ret));
+		return _ret;
+	}
+	final void StrokeEndLineCap(Windows.UI.Xaml.Media.PenLineCap value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeEndLineCap(value));
+	}
+	final Windows.UI.Xaml.Media.PenLineJoin StrokeLineJoin()
+	{
+		Windows.UI.Xaml.Media.PenLineJoin _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeLineJoin(&_ret));
+		return _ret;
+	}
+	final void StrokeLineJoin(Windows.UI.Xaml.Media.PenLineJoin value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeLineJoin(value));
+	}
+	final double StrokeDashOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeDashOffset(&_ret));
+		return _ret;
+	}
+	final void StrokeDashOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeDashOffset(value));
+	}
+	final Windows.UI.Xaml.Media.PenLineCap StrokeDashCap()
+	{
+		Windows.UI.Xaml.Media.PenLineCap _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeDashCap(&_ret));
+		return _ret;
+	}
+	final void StrokeDashCap(Windows.UI.Xaml.Media.PenLineCap value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeDashCap(value));
+	}
+	final Windows.UI.Xaml.Media.DoubleCollection StrokeDashArray()
+	{
+		Windows.UI.Xaml.Media.DoubleCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeDashArray(&_ret));
+		return _ret;
+	}
+	final void StrokeDashArray(Windows.UI.Xaml.Media.DoubleCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeDashArray(value));
+	}
+	final Windows.UI.Xaml.Media.Stretch Stretch()
+	{
+		Windows.UI.Xaml.Media.Stretch _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).get_Stretch(&_ret));
+		return _ret;
+	}
+	final void Stretch(Windows.UI.Xaml.Media.Stretch value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).set_Stretch(value));
+	}
+	final Windows.UI.Xaml.Media.Transform GeometryTransform()
+	{
+		Windows.UI.Xaml.Media.Transform _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape).get_GeometryTransform(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Composition.CompositionBrush GetAlphaMask()
+	{
+		Windows.UI.Composition.CompositionBrush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape2).abi_GetAlphaMask(&_ret));
+		return _ret;
+	}
 }

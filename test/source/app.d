@@ -65,23 +65,21 @@ extern (Windows):
 		return S_OK;
 	}
 
-	override HRESULT abi_SetWindow(CoreWindow _window)
+	override HRESULT abi_SetWindow(CoreWindow window)
 	{
-		ICoreWindow window = _window.as!ICoreWindow;
 		Debug.WriteLine("SetWindow");
 
 		IInspectable insp;
 		auto f = activationFactory!ICompositor;
 		Debug.OK(f.abi_ActivateInstance(&insp));
-		ICompositor compositor = cast(ICompositor) insp;
+		Compositor compositor = cast(Compositor) insp;
 		compositor.inspect!Compositor;
 
-		ContainerVisual root;
-		Debug.OK(compositor.as!ICompositor.abi_CreateContainerVisual(&root));
+		ContainerVisual root = compositor.CreateContainerVisual();
 
-		Debug.OK(compositor.as!ICompositor.abi_CreateTargetForCurrentView(&target));
-		Debug.OK(target.as!ICompositionTarget.set_Root(root));
-		Debug.OK(root.as!IContainerVisual.get_Children(&visuals));
+		target = compositor.CreateTargetForCurrentView();
+		target.Root = root;
+		visuals = root.Children;
 
 		EventRegistrationToken token;
 		Debug.OK(window.add_PointerPressed((CoreWindow sender, PointerEventArgs args) {
@@ -96,12 +94,7 @@ extern (Windows):
 
 	void OnPointerPressed(CoreWindow sender, PointerEventArgs args)
 	{
-		PointerPoint currentPoint;
-		Debug.OK(args.as!IPointerEventArgs.get_CurrentPoint(&currentPoint));
-		Point point;
-		Debug.OK(currentPoint.as!IPointerPoint.get_Position(&point));
-
-		AddVisual(point);
+		AddVisual(args.CurrentPoint.Position);
 	}
 
 	void OnPointerMoved(CoreWindow sender, PointerEventArgs args)
@@ -111,22 +104,18 @@ extern (Windows):
 	uint last;
 	void AddVisual(in Point point)
 	{
-		Compositor compositor;
-		Debug.OK(visuals.as!ICompositionObject.get_Compositor(&compositor));
-		SpriteVisual visual;
-		Debug.OK(compositor.as!ICompositor.abi_CreateSpriteVisual(&visual));
+		Compositor compositor = visuals.Compositor;
+		SpriteVisual visual = compositor.CreateSpriteVisual();
 
 		uint next = cast(uint)(++last % colors.length);
-		CompositionColorBrush brush;
-		Debug.OK(compositor.as!ICompositor.abi_CreateColorBrushWithColor(colors[next], &brush));
-		Debug.OK(visual.as!ISpriteVisual.set_Brush(brush));
+		visual.Brush = compositor.CreateColorBrushWithColor(colors[next]);
 
 		enum BlockSize = 100.0f;
 
-		visual.as!IVisual.set_Size(Vector2(BlockSize, BlockSize));
-		visual.as!IVisual.set_Offset(Vector3(point.X - BlockSize / 2.0f, point.Y - BlockSize / 2.0f, 0));
+		visual.Size = Vector2(BlockSize, BlockSize);
+		visual.Offset = Vector3(point.X - BlockSize / 2.0f, point.Y - BlockSize / 2.0f, 0);
 
-		visuals.as!IVisualCollection.abi_InsertAtTop(visual);
+		visuals.InsertAtTop(visual);
 	}
 
 	override HRESULT abi_Load(HSTRING entryPoint)
@@ -144,12 +133,11 @@ extern (Windows):
 		Debug.OK(fac.abi_GetForCurrentThread(&window));
 
 		Debug.WriteLine("Window %s", window);
-		Debug.OK(window.abi_Activate());
+		window.Activate();
 		Debug.WriteLine("Window Activated");
 
-		CoreDispatcher dispatcher;
-		Debug.OK(window.get_Dispatcher(&dispatcher));
-		Debug.OK(dispatcher.abi_ProcessEvents(CoreProcessEventsOption.ProcessUntilQuit));
+		CoreDispatcher dispatcher = window.Dispatcher;
+		dispatcher.ProcessEvents(CoreProcessEventsOption.ProcessUntilQuit);
 
 		return S_OK;
 	}

@@ -28,4 +28,17 @@ extern(Windows):
 
 interface XsltProcessor : Windows.Data.Xml.Xsl.IXsltProcessor, Windows.Data.Xml.Xsl.IXsltProcessor2
 {
+extern(Windows):
+	final HSTRING TransformToString(Windows.Data.Xml.Dom.IXmlNode inputNode)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Xsl.IXsltProcessor).abi_TransformToString(inputNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument TransformToDocument(Windows.Data.Xml.Dom.IXmlNode inputNode)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Xsl.IXsltProcessor2).abi_TransformToDocument(inputNode, &_ret));
+		return _ret;
+	}
 }

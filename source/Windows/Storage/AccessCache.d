@@ -71,6 +71,13 @@ interface AccessListEntryView : Windows.Foundation.Collections.IVectorView!(Wind
 
 interface ItemRemovedEventArgs : Windows.Storage.AccessCache.IItemRemovedEventArgs
 {
+extern(Windows):
+	final Windows.Storage.AccessCache.AccessListEntry RemovedEntry()
+	{
+		Windows.Storage.AccessCache.AccessListEntry _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IItemRemovedEventArgs).get_RemovedEntry(&_ret));
+		return _ret;
+	}
 }
 
 interface StorageApplicationPermissions
@@ -79,10 +86,198 @@ interface StorageApplicationPermissions
 
 interface StorageItemAccessList : Windows.Storage.AccessCache.IStorageItemAccessList
 {
+extern(Windows):
+	final HSTRING AddOverloadDefaultMetadata(Windows.Storage.IStorageItem file)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_AddOverloadDefaultMetadata(file, &_ret));
+		return _ret;
+	}
+	final HSTRING Add(Windows.Storage.IStorageItem file, HSTRING metadata)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_Add(file, metadata, &_ret));
+		return _ret;
+	}
+	final void AddOrReplaceOverloadDefaultMetadata(HSTRING token, Windows.Storage.IStorageItem file)
+	{
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_AddOrReplaceOverloadDefaultMetadata(token, file));
+	}
+	final void AddOrReplace(HSTRING token, Windows.Storage.IStorageItem file, HSTRING metadata)
+	{
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_AddOrReplace(token, file, metadata));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) GetItemAsync(HSTRING token)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_GetItemAsync(token, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) GetFileAsync(HSTRING token)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_GetFileAsync(token, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) GetFolderAsync(HSTRING token)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_GetFolderAsync(token, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) GetItemWithOptionsAsync(HSTRING token, Windows.Storage.AccessCache.AccessCacheOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_GetItemWithOptionsAsync(token, options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) GetFileWithOptionsAsync(HSTRING token, Windows.Storage.AccessCache.AccessCacheOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_GetFileWithOptionsAsync(token, options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) GetFolderWithOptionsAsync(HSTRING token, Windows.Storage.AccessCache.AccessCacheOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_GetFolderWithOptionsAsync(token, options, &_ret));
+		return _ret;
+	}
+	final void Remove(HSTRING token)
+	{
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_Remove(token));
+	}
+	final bool ContainsItem(HSTRING token)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_ContainsItem(token, &_ret));
+		return _ret;
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_Clear());
+	}
+	final bool CheckAccess(Windows.Storage.IStorageItem file)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_CheckAccess(file, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.AccessCache.AccessListEntryView Entries()
+	{
+		Windows.Storage.AccessCache.AccessListEntryView _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).get_Entries(&_ret));
+		return _ret;
+	}
+	final UINT32 MaximumItemsAllowed()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).get_MaximumItemsAllowed(&_ret));
+		return _ret;
+	}
 }
 
 interface StorageItemMostRecentlyUsedList : Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.IStorageItemAccessList, Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList2
 {
+extern(Windows):
+	final HSTRING AddOverloadDefaultMetadata(Windows.Storage.IStorageItem file)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_AddOverloadDefaultMetadata(file, &_ret));
+		return _ret;
+	}
+	final HSTRING Add(Windows.Storage.IStorageItem file, HSTRING metadata)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_Add(file, metadata, &_ret));
+		return _ret;
+	}
+	final void AddOrReplaceOverloadDefaultMetadata(HSTRING token, Windows.Storage.IStorageItem file)
+	{
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_AddOrReplaceOverloadDefaultMetadata(token, file));
+	}
+	final void AddOrReplace(HSTRING token, Windows.Storage.IStorageItem file, HSTRING metadata)
+	{
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_AddOrReplace(token, file, metadata));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) GetItemAsync(HSTRING token)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_GetItemAsync(token, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) GetFileAsync(HSTRING token)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_GetFileAsync(token, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) GetFolderAsync(HSTRING token)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_GetFolderAsync(token, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) GetItemWithOptionsAsync(HSTRING token, Windows.Storage.AccessCache.AccessCacheOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_GetItemWithOptionsAsync(token, options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) GetFileWithOptionsAsync(HSTRING token, Windows.Storage.AccessCache.AccessCacheOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_GetFileWithOptionsAsync(token, options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) GetFolderWithOptionsAsync(HSTRING token, Windows.Storage.AccessCache.AccessCacheOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_GetFolderWithOptionsAsync(token, options, &_ret));
+		return _ret;
+	}
+	final void Remove(HSTRING token)
+	{
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_Remove(token));
+	}
+	final bool ContainsItem(HSTRING token)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_ContainsItem(token, &_ret));
+		return _ret;
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_Clear());
+	}
+	final bool CheckAccess(Windows.Storage.IStorageItem file)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).abi_CheckAccess(file, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.AccessCache.AccessListEntryView Entries()
+	{
+		Windows.Storage.AccessCache.AccessListEntryView _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).get_Entries(&_ret));
+		return _ret;
+	}
+	final UINT32 MaximumItemsAllowed()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemAccessList).get_MaximumItemsAllowed(&_ret));
+		return _ret;
+	}
+	final HSTRING AddWithMetadataAndVisibility(Windows.Storage.IStorageItem file, HSTRING metadata, Windows.Storage.AccessCache.RecentStorageItemVisibility visibility)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList2).abi_AddWithMetadataAndVisibility(file, metadata, visibility, &_ret));
+		return _ret;
+	}
+	final void AddOrReplaceWithMetadataAndVisibility(HSTRING token, Windows.Storage.IStorageItem file, HSTRING metadata, Windows.Storage.AccessCache.RecentStorageItemVisibility visibility)
+	{
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList2).abi_AddOrReplaceWithMetadataAndVisibility(token, file, metadata, visibility));
+	}
 }
 
 @bitflags

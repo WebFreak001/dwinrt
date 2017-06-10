@@ -358,46 +358,883 @@ interface AsyncCausalityTracer
 
 interface ErrorDetails : Windows.Foundation.Diagnostics.IErrorDetails
 {
+extern(Windows):
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IErrorDetails).get_Description(&_ret));
+		return _ret;
+	}
+	final HSTRING LongDescription()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IErrorDetails).get_LongDescription(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri HelpUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IErrorDetails).get_HelpUri(&_ret));
+		return _ret;
+	}
 }
 
 interface FileLoggingSession : Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).get_Name(&_ret));
+		return _ret;
+	}
+	final void AddLoggingChannel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).abi_AddLoggingChannel(loggingChannel));
+	}
+	final void AddLoggingChannelWithLevel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel, Windows.Foundation.Diagnostics.LoggingLevel maxLevel)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).abi_AddLoggingChannelWithLevel(loggingChannel, maxLevel));
+	}
+	final void RemoveLoggingChannel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).abi_RemoveLoggingChannel(loggingChannel));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CloseAndSaveToFileAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).abi_CloseAndSaveToFileAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface LogFileGeneratedEventArgs : Windows.Foundation.Diagnostics.ILogFileGeneratedEventArgs
 {
+extern(Windows):
+	final Windows.Storage.StorageFile File()
+	{
+		Windows.Storage.StorageFile _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILogFileGeneratedEventArgs).get_File(&_ret));
+		return _ret;
+	}
 }
 
 interface LoggingActivity : Windows.Foundation.Diagnostics.ILoggingActivity, Windows.Foundation.IClosable, Windows.Foundation.Diagnostics.ILoggingActivity2, Windows.Foundation.Diagnostics.ILoggingTarget
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingActivity).get_Name(&_ret));
+		return _ret;
+	}
+	final GUID Id()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingActivity).get_Id(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.Diagnostics.LoggingChannel Channel()
+	{
+		Windows.Foundation.Diagnostics.LoggingChannel _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingActivity2).get_Channel(&_ret));
+		return _ret;
+	}
+	final void StopActivity(HSTRING stopEventName)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingActivity2).abi_StopActivity(stopEventName));
+	}
+	final void StopActivityWithFields(HSTRING stopEventName, Windows.Foundation.Diagnostics.LoggingFields fields)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingActivity2).abi_StopActivityWithFields(stopEventName, fields));
+	}
+	final void StopActivityWithFieldsAndOptions(HSTRING stopEventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingOptions options)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingActivity2).abi_StopActivityWithFieldsAndOptions(stopEventName, fields, options));
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_IsEnabled(&_ret));
+		return _ret;
+	}
+	final bool IsEnabledWithLevel(Windows.Foundation.Diagnostics.LoggingLevel level)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_IsEnabledWithLevel(level, &_ret));
+		return _ret;
+	}
+	final bool IsEnabledWithLevelAndKeywords(Windows.Foundation.Diagnostics.LoggingLevel level, INT64 keywords)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_IsEnabledWithLevelAndKeywords(level, keywords, &_ret));
+		return _ret;
+	}
+	final void LogEvent(HSTRING eventName)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEvent(eventName));
+	}
+	final void LogEventWithFields(HSTRING eventName, Windows.Foundation.Diagnostics.LoggingFields fields)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEventWithFields(eventName, fields));
+	}
+	final void LogEventWithFieldsAndLevel(HSTRING eventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEventWithFieldsAndLevel(eventName, fields, level));
+	}
+	final void LogEventWithFieldsAndOptions(HSTRING eventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level, Windows.Foundation.Diagnostics.LoggingOptions options)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEventWithFieldsAndOptions(eventName, fields, level, options));
+	}
+	final Windows.Foundation.Diagnostics.LoggingActivity StartActivity(HSTRING startEventName)
+	{
+		Windows.Foundation.Diagnostics.LoggingActivity _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivity(startEventName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Diagnostics.LoggingActivity StartActivityWithFields(HSTRING startEventName, Windows.Foundation.Diagnostics.LoggingFields fields)
+	{
+		Windows.Foundation.Diagnostics.LoggingActivity _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFields(startEventName, fields, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Diagnostics.LoggingActivity StartActivityWithFieldsAndLevel(HSTRING startEventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level)
+	{
+		Windows.Foundation.Diagnostics.LoggingActivity _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFieldsAndLevel(startEventName, fields, level, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Diagnostics.LoggingActivity StartActivityWithFieldsAndOptions(HSTRING startEventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level, Windows.Foundation.Diagnostics.LoggingOptions options)
+	{
+		Windows.Foundation.Diagnostics.LoggingActivity _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFieldsAndOptions(startEventName, fields, level, options, &_ret));
+		return _ret;
+	}
 }
 
 interface LoggingChannel : Windows.Foundation.Diagnostics.ILoggingChannel, Windows.Foundation.IClosable, Windows.Foundation.Diagnostics.ILoggingChannel2, Windows.Foundation.Diagnostics.ILoggingTarget
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).get_Name(&_ret));
+		return _ret;
+	}
+	final bool Enabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).get_Enabled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Diagnostics.LoggingLevel Level()
+	{
+		Windows.Foundation.Diagnostics.LoggingLevel _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).get_Level(&_ret));
+		return _ret;
+	}
+	final void LogMessage(HSTRING eventString)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).abi_LogMessage(eventString));
+	}
+	final void LogMessageWithLevel(HSTRING eventString, Windows.Foundation.Diagnostics.LoggingLevel level)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).abi_LogMessageWithLevel(eventString, level));
+	}
+	final void LogValuePair(HSTRING value1, INT32 value2)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).abi_LogValuePair(value1, value2));
+	}
+	final void LogValuePairWithLevel(HSTRING value1, INT32 value2, Windows.Foundation.Diagnostics.LoggingLevel level)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).abi_LogValuePairWithLevel(value1, value2, level));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final GUID Id()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel2).get_Id(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_IsEnabled(&_ret));
+		return _ret;
+	}
+	final bool IsEnabledWithLevel(Windows.Foundation.Diagnostics.LoggingLevel level)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_IsEnabledWithLevel(level, &_ret));
+		return _ret;
+	}
+	final bool IsEnabledWithLevelAndKeywords(Windows.Foundation.Diagnostics.LoggingLevel level, INT64 keywords)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_IsEnabledWithLevelAndKeywords(level, keywords, &_ret));
+		return _ret;
+	}
+	final void LogEvent(HSTRING eventName)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEvent(eventName));
+	}
+	final void LogEventWithFields(HSTRING eventName, Windows.Foundation.Diagnostics.LoggingFields fields)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEventWithFields(eventName, fields));
+	}
+	final void LogEventWithFieldsAndLevel(HSTRING eventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEventWithFieldsAndLevel(eventName, fields, level));
+	}
+	final void LogEventWithFieldsAndOptions(HSTRING eventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level, Windows.Foundation.Diagnostics.LoggingOptions options)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEventWithFieldsAndOptions(eventName, fields, level, options));
+	}
+	final Windows.Foundation.Diagnostics.LoggingActivity StartActivity(HSTRING startEventName)
+	{
+		Windows.Foundation.Diagnostics.LoggingActivity _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivity(startEventName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Diagnostics.LoggingActivity StartActivityWithFields(HSTRING startEventName, Windows.Foundation.Diagnostics.LoggingFields fields)
+	{
+		Windows.Foundation.Diagnostics.LoggingActivity _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFields(startEventName, fields, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Diagnostics.LoggingActivity StartActivityWithFieldsAndLevel(HSTRING startEventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level)
+	{
+		Windows.Foundation.Diagnostics.LoggingActivity _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFieldsAndLevel(startEventName, fields, level, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Diagnostics.LoggingActivity StartActivityWithFieldsAndOptions(HSTRING startEventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level, Windows.Foundation.Diagnostics.LoggingOptions options)
+	{
+		Windows.Foundation.Diagnostics.LoggingActivity _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFieldsAndOptions(startEventName, fields, level, options, &_ret));
+		return _ret;
+	}
 }
 
 interface LoggingChannelOptions : Windows.Foundation.Diagnostics.ILoggingChannelOptions
 {
+extern(Windows):
+	final GUID Group()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannelOptions).get_Group(&_ret));
+		return _ret;
+	}
+	final void Group(GUID value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannelOptions).set_Group(value));
+	}
 }
 
 interface LoggingFields : Windows.Foundation.Diagnostics.ILoggingFields
 {
+extern(Windows):
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_Clear());
+	}
+	final void BeginStruct(HSTRING name)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_BeginStruct(name));
+	}
+	final void BeginStructWithTags(HSTRING name, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_BeginStructWithTags(name, tags));
+	}
+	final void EndStruct()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_EndStruct());
+	}
+	final void AddEmpty(HSTRING name)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddEmpty(name));
+	}
+	final void AddEmptyWithFormat(HSTRING name, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddEmptyWithFormat(name, format));
+	}
+	final void AddEmptyWithFormatAndTags(HSTRING name, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddEmptyWithFormatAndTags(name, format, tags));
+	}
+	final void AddUInt8(HSTRING name, BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt8(name, value));
+	}
+	final void AddUInt8WithFormat(HSTRING name, BYTE value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt8WithFormat(name, value, format));
+	}
+	final void AddUInt8WithFormatAndTags(HSTRING name, BYTE value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt8WithFormatAndTags(name, value, format, tags));
+	}
+	final void AddUInt8Array(HSTRING name, UINT32 __valueSize, BYTE* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt8Array(name, __valueSize, value));
+	}
+	final void AddUInt8ArrayWithFormat(HSTRING name, UINT32 __valueSize, BYTE* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt8ArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddUInt8ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, BYTE* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt8ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddInt16(HSTRING name, INT16 value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt16(name, value));
+	}
+	final void AddInt16WithFormat(HSTRING name, INT16 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt16WithFormat(name, value, format));
+	}
+	final void AddInt16WithFormatAndTags(HSTRING name, INT16 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt16WithFormatAndTags(name, value, format, tags));
+	}
+	final void AddInt16Array(HSTRING name, UINT32 __valueSize, INT16* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt16Array(name, __valueSize, value));
+	}
+	final void AddInt16ArrayWithFormat(HSTRING name, UINT32 __valueSize, INT16* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt16ArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddInt16ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, INT16* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt16ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddUInt16(HSTRING name, UINT16 value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt16(name, value));
+	}
+	final void AddUInt16WithFormat(HSTRING name, UINT16 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt16WithFormat(name, value, format));
+	}
+	final void AddUInt16WithFormatAndTags(HSTRING name, UINT16 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt16WithFormatAndTags(name, value, format, tags));
+	}
+	final void AddUInt16Array(HSTRING name, UINT32 __valueSize, UINT16* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt16Array(name, __valueSize, value));
+	}
+	final void AddUInt16ArrayWithFormat(HSTRING name, UINT32 __valueSize, UINT16* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt16ArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddUInt16ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, UINT16* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt16ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddInt32(HSTRING name, INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt32(name, value));
+	}
+	final void AddInt32WithFormat(HSTRING name, INT32 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt32WithFormat(name, value, format));
+	}
+	final void AddInt32WithFormatAndTags(HSTRING name, INT32 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt32WithFormatAndTags(name, value, format, tags));
+	}
+	final void AddInt32Array(HSTRING name, UINT32 __valueSize, INT32* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt32Array(name, __valueSize, value));
+	}
+	final void AddInt32ArrayWithFormat(HSTRING name, UINT32 __valueSize, INT32* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt32ArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddInt32ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, INT32* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt32ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddUInt32(HSTRING name, UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt32(name, value));
+	}
+	final void AddUInt32WithFormat(HSTRING name, UINT32 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt32WithFormat(name, value, format));
+	}
+	final void AddUInt32WithFormatAndTags(HSTRING name, UINT32 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt32WithFormatAndTags(name, value, format, tags));
+	}
+	final void AddUInt32Array(HSTRING name, UINT32 __valueSize, UINT32* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt32Array(name, __valueSize, value));
+	}
+	final void AddUInt32ArrayWithFormat(HSTRING name, UINT32 __valueSize, UINT32* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt32ArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddUInt32ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, UINT32* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt32ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddInt64(HSTRING name, INT64 value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt64(name, value));
+	}
+	final void AddInt64WithFormat(HSTRING name, INT64 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt64WithFormat(name, value, format));
+	}
+	final void AddInt64WithFormatAndTags(HSTRING name, INT64 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt64WithFormatAndTags(name, value, format, tags));
+	}
+	final void AddInt64Array(HSTRING name, UINT32 __valueSize, INT64* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt64Array(name, __valueSize, value));
+	}
+	final void AddInt64ArrayWithFormat(HSTRING name, UINT32 __valueSize, INT64* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt64ArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddInt64ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, INT64* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt64ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddUInt64(HSTRING name, UINT64 value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt64(name, value));
+	}
+	final void AddUInt64WithFormat(HSTRING name, UINT64 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt64WithFormat(name, value, format));
+	}
+	final void AddUInt64WithFormatAndTags(HSTRING name, UINT64 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt64WithFormatAndTags(name, value, format, tags));
+	}
+	final void AddUInt64Array(HSTRING name, UINT32 __valueSize, UINT64* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt64Array(name, __valueSize, value));
+	}
+	final void AddUInt64ArrayWithFormat(HSTRING name, UINT32 __valueSize, UINT64* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt64ArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddUInt64ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, UINT64* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt64ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddSingle(HSTRING name, FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSingle(name, value));
+	}
+	final void AddSingleWithFormat(HSTRING name, FLOAT value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSingleWithFormat(name, value, format));
+	}
+	final void AddSingleWithFormatAndTags(HSTRING name, FLOAT value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSingleWithFormatAndTags(name, value, format, tags));
+	}
+	final void AddSingleArray(HSTRING name, UINT32 __valueSize, FLOAT* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSingleArray(name, __valueSize, value));
+	}
+	final void AddSingleArrayWithFormat(HSTRING name, UINT32 __valueSize, FLOAT* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSingleArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddSingleArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, FLOAT* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSingleArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddDouble(HSTRING name, double value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDouble(name, value));
+	}
+	final void AddDoubleWithFormat(HSTRING name, double value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDoubleWithFormat(name, value, format));
+	}
+	final void AddDoubleWithFormatAndTags(HSTRING name, double value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDoubleWithFormatAndTags(name, value, format, tags));
+	}
+	final void AddDoubleArray(HSTRING name, UINT32 __valueSize, double* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDoubleArray(name, __valueSize, value));
+	}
+	final void AddDoubleArrayWithFormat(HSTRING name, UINT32 __valueSize, double* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDoubleArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddDoubleArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, double* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDoubleArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddChar16(HSTRING name, WCHAR value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddChar16(name, value));
+	}
+	final void AddChar16WithFormat(HSTRING name, WCHAR value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddChar16WithFormat(name, value, format));
+	}
+	final void AddChar16WithFormatAndTags(HSTRING name, WCHAR value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddChar16WithFormatAndTags(name, value, format, tags));
+	}
+	final void AddChar16Array(HSTRING name, UINT32 __valueSize, WCHAR* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddChar16Array(name, __valueSize, value));
+	}
+	final void AddChar16ArrayWithFormat(HSTRING name, UINT32 __valueSize, WCHAR* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddChar16ArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddChar16ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, WCHAR* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddChar16ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddBoolean(HSTRING name, bool value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddBoolean(name, value));
+	}
+	final void AddBooleanWithFormat(HSTRING name, bool value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddBooleanWithFormat(name, value, format));
+	}
+	final void AddBooleanWithFormatAndTags(HSTRING name, bool value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddBooleanWithFormatAndTags(name, value, format, tags));
+	}
+	final void AddBooleanArray(HSTRING name, UINT32 __valueSize, bool* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddBooleanArray(name, __valueSize, value));
+	}
+	final void AddBooleanArrayWithFormat(HSTRING name, UINT32 __valueSize, bool* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddBooleanArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddBooleanArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, bool* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddBooleanArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddString(HSTRING name, HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddString(name, value));
+	}
+	final void AddStringWithFormat(HSTRING name, HSTRING value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddStringWithFormat(name, value, format));
+	}
+	final void AddStringWithFormatAndTags(HSTRING name, HSTRING value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddStringWithFormatAndTags(name, value, format, tags));
+	}
+	final void AddStringArray(HSTRING name, UINT32 __valueSize, HSTRING* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddStringArray(name, __valueSize, value));
+	}
+	final void AddStringArrayWithFormat(HSTRING name, UINT32 __valueSize, HSTRING* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddStringArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddStringArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, HSTRING* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddStringArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddGuid(HSTRING name, GUID value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddGuid(name, value));
+	}
+	final void AddGuidWithFormat(HSTRING name, GUID value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddGuidWithFormat(name, value, format));
+	}
+	final void AddGuidWithFormatAndTags(HSTRING name, GUID value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddGuidWithFormatAndTags(name, value, format, tags));
+	}
+	final void AddGuidArray(HSTRING name, UINT32 __valueSize, GUID* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddGuidArray(name, __valueSize, value));
+	}
+	final void AddGuidArrayWithFormat(HSTRING name, UINT32 __valueSize, GUID* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddGuidArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddGuidArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, GUID* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddGuidArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddDateTime(HSTRING name, Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDateTime(name, value));
+	}
+	final void AddDateTimeWithFormat(HSTRING name, Windows.Foundation.DateTime value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDateTimeWithFormat(name, value, format));
+	}
+	final void AddDateTimeWithFormatAndTags(HSTRING name, Windows.Foundation.DateTime value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDateTimeWithFormatAndTags(name, value, format, tags));
+	}
+	final void AddDateTimeArray(HSTRING name, UINT32 __valueSize, Windows.Foundation.DateTime* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDateTimeArray(name, __valueSize, value));
+	}
+	final void AddDateTimeArrayWithFormat(HSTRING name, UINT32 __valueSize, Windows.Foundation.DateTime* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDateTimeArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddDateTimeArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, Windows.Foundation.DateTime* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDateTimeArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddTimeSpan(HSTRING name, Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddTimeSpan(name, value));
+	}
+	final void AddTimeSpanWithFormat(HSTRING name, Windows.Foundation.TimeSpan value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddTimeSpanWithFormat(name, value, format));
+	}
+	final void AddTimeSpanWithFormatAndTags(HSTRING name, Windows.Foundation.TimeSpan value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddTimeSpanWithFormatAndTags(name, value, format, tags));
+	}
+	final void AddTimeSpanArray(HSTRING name, UINT32 __valueSize, Windows.Foundation.TimeSpan* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddTimeSpanArray(name, __valueSize, value));
+	}
+	final void AddTimeSpanArrayWithFormat(HSTRING name, UINT32 __valueSize, Windows.Foundation.TimeSpan* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddTimeSpanArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddTimeSpanArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, Windows.Foundation.TimeSpan* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddTimeSpanArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddPoint(HSTRING name, Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddPoint(name, value));
+	}
+	final void AddPointWithFormat(HSTRING name, Windows.Foundation.Point value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddPointWithFormat(name, value, format));
+	}
+	final void AddPointWithFormatAndTags(HSTRING name, Windows.Foundation.Point value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddPointWithFormatAndTags(name, value, format, tags));
+	}
+	final void AddPointArray(HSTRING name, UINT32 __valueSize, Windows.Foundation.Point* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddPointArray(name, __valueSize, value));
+	}
+	final void AddPointArrayWithFormat(HSTRING name, UINT32 __valueSize, Windows.Foundation.Point* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddPointArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddPointArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, Windows.Foundation.Point* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddPointArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddSize(HSTRING name, Windows.Foundation.Size value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSize(name, value));
+	}
+	final void AddSizeWithFormat(HSTRING name, Windows.Foundation.Size value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSizeWithFormat(name, value, format));
+	}
+	final void AddSizeWithFormatAndTags(HSTRING name, Windows.Foundation.Size value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSizeWithFormatAndTags(name, value, format, tags));
+	}
+	final void AddSizeArray(HSTRING name, UINT32 __valueSize, Windows.Foundation.Size* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSizeArray(name, __valueSize, value));
+	}
+	final void AddSizeArrayWithFormat(HSTRING name, UINT32 __valueSize, Windows.Foundation.Size* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSizeArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddSizeArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, Windows.Foundation.Size* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSizeArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
+	final void AddRect(HSTRING name, Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddRect(name, value));
+	}
+	final void AddRectWithFormat(HSTRING name, Windows.Foundation.Rect value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddRectWithFormat(name, value, format));
+	}
+	final void AddRectWithFormatAndTags(HSTRING name, Windows.Foundation.Rect value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddRectWithFormatAndTags(name, value, format, tags));
+	}
+	final void AddRectArray(HSTRING name, UINT32 __valueSize, Windows.Foundation.Rect* value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddRectArray(name, __valueSize, value));
+	}
+	final void AddRectArrayWithFormat(HSTRING name, UINT32 __valueSize, Windows.Foundation.Rect* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddRectArrayWithFormat(name, __valueSize, value, format));
+	}
+	final void AddRectArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, Windows.Foundation.Rect* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddRectArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+	}
 }
 
 interface LoggingOptions : Windows.Foundation.Diagnostics.ILoggingOptions
 {
+extern(Windows):
+	final INT64 Keywords()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).get_Keywords(&_ret));
+		return _ret;
+	}
+	final void Keywords(INT64 value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_Keywords(value));
+	}
+	final INT32 Tags()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).get_Tags(&_ret));
+		return _ret;
+	}
+	final void Tags(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_Tags(value));
+	}
+	final INT16 Task()
+	{
+		INT16 _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).get_Task(&_ret));
+		return _ret;
+	}
+	final void Task(INT16 value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_Task(value));
+	}
+	final Windows.Foundation.Diagnostics.LoggingOpcode Opcode()
+	{
+		Windows.Foundation.Diagnostics.LoggingOpcode _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).get_Opcode(&_ret));
+		return _ret;
+	}
+	final void Opcode(Windows.Foundation.Diagnostics.LoggingOpcode value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_Opcode(value));
+	}
+	final GUID ActivityId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).get_ActivityId(&_ret));
+		return _ret;
+	}
+	final void ActivityId(GUID value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_ActivityId(value));
+	}
+	final GUID RelatedActivityId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).get_RelatedActivityId(&_ret));
+		return _ret;
+	}
+	final void RelatedActivityId(GUID value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_RelatedActivityId(value));
+	}
 }
 
 interface LoggingSession : Windows.Foundation.Diagnostics.ILoggingSession, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingSession).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) SaveToFileAsync(Windows.Storage.IStorageFolder folder, HSTRING fileName)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingSession).abi_SaveToFileAsync(folder, fileName, &_ret));
+		return _ret;
+	}
+	final void AddLoggingChannel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingSession).abi_AddLoggingChannel(loggingChannel));
+	}
+	final void AddLoggingChannelWithLevel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel, Windows.Foundation.Diagnostics.LoggingLevel maxLevel)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingSession).abi_AddLoggingChannelWithLevel(loggingChannel, maxLevel));
+	}
+	final void RemoveLoggingChannel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingSession).abi_RemoveLoggingChannel(loggingChannel));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface RuntimeBrokerErrorSettings : Windows.Foundation.Diagnostics.IErrorReportingSettings
 {
+extern(Windows):
+	final void SetErrorOptions(Windows.Foundation.Diagnostics.ErrorOptions value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IErrorReportingSettings).abi_SetErrorOptions(value));
+	}
+	final Windows.Foundation.Diagnostics.ErrorOptions GetErrorOptions()
+	{
+		Windows.Foundation.Diagnostics.ErrorOptions _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IErrorReportingSettings).abi_GetErrorOptions(&_ret));
+		return _ret;
+	}
 }
 
 interface TracingStatusChangedEventArgs : Windows.Foundation.Diagnostics.ITracingStatusChangedEventArgs
 {
+extern(Windows):
+	final bool Enabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ITracingStatusChangedEventArgs).get_Enabled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Diagnostics.CausalityTraceLevel TraceLevel()
+	{
+		Windows.Foundation.Diagnostics.CausalityTraceLevel _ret;
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ITracingStatusChangedEventArgs).get_TraceLevel(&_ret));
+		return _ret;
+	}
 }
 
 enum CausalityRelation

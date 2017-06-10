@@ -59,12 +59,79 @@ extern(Windows):
 
 interface DetectedFace : Windows.Media.FaceAnalysis.IDetectedFace
 {
+extern(Windows):
+	final Windows.Graphics.Imaging.BitmapBounds FaceBox()
+	{
+		Windows.Graphics.Imaging.BitmapBounds _ret;
+		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IDetectedFace).get_FaceBox(&_ret));
+		return _ret;
+	}
 }
 
 interface FaceDetector : Windows.Media.FaceAnalysis.IFaceDetector
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace)) DetectFacesAsync(Windows.Graphics.Imaging.SoftwareBitmap image)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace)) _ret;
+		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IFaceDetector).abi_DetectFacesAsync(image, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace)) DetectFacesWithSearchAreaAsync(Windows.Graphics.Imaging.SoftwareBitmap image, Windows.Graphics.Imaging.BitmapBounds searchArea)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace)) _ret;
+		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IFaceDetector).abi_DetectFacesWithSearchAreaAsync(image, searchArea, &_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapSize MinDetectableFaceSize()
+	{
+		Windows.Graphics.Imaging.BitmapSize _ret;
+		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IFaceDetector).get_MinDetectableFaceSize(&_ret));
+		return _ret;
+	}
+	final void MinDetectableFaceSize(Windows.Graphics.Imaging.BitmapSize value)
+	{
+		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IFaceDetector).set_MinDetectableFaceSize(value));
+	}
+	final Windows.Graphics.Imaging.BitmapSize MaxDetectableFaceSize()
+	{
+		Windows.Graphics.Imaging.BitmapSize _ret;
+		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IFaceDetector).get_MaxDetectableFaceSize(&_ret));
+		return _ret;
+	}
+	final void MaxDetectableFaceSize(Windows.Graphics.Imaging.BitmapSize value)
+	{
+		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IFaceDetector).set_MaxDetectableFaceSize(value));
+	}
 }
 
 interface FaceTracker : Windows.Media.FaceAnalysis.IFaceTracker
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace)) ProcessNextFrameAsync(Windows.Media.VideoFrame videoFrame)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace)) _ret;
+		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IFaceTracker).abi_ProcessNextFrameAsync(videoFrame, &_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.BitmapSize MinDetectableFaceSize()
+	{
+		Windows.Graphics.Imaging.BitmapSize _ret;
+		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IFaceTracker).get_MinDetectableFaceSize(&_ret));
+		return _ret;
+	}
+	final void MinDetectableFaceSize(Windows.Graphics.Imaging.BitmapSize value)
+	{
+		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IFaceTracker).set_MinDetectableFaceSize(value));
+	}
+	final Windows.Graphics.Imaging.BitmapSize MaxDetectableFaceSize()
+	{
+		Windows.Graphics.Imaging.BitmapSize _ret;
+		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IFaceTracker).get_MaxDetectableFaceSize(&_ret));
+		return _ret;
+	}
+	final void MaxDetectableFaceSize(Windows.Graphics.Imaging.BitmapSize value)
+	{
+		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IFaceTracker).set_MaxDetectableFaceSize(value));
+	}
 }

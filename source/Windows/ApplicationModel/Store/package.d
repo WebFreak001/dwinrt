@@ -256,30 +256,289 @@ interface CurrentAppSimulator
 
 interface LicenseInformation : Windows.ApplicationModel.Store.ILicenseInformation
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Store.ProductLicense) ProductLicenses()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Store.ProductLicense) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.ILicenseInformation).get_ProductLicenses(&_ret));
+		return _ret;
+	}
+	final bool IsActive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.ILicenseInformation).get_IsActive(&_ret));
+		return _ret;
+	}
+	final bool IsTrial()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.ILicenseInformation).get_IsTrial(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime ExpirationDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.ILicenseInformation).get_ExpirationDate(&_ret));
+		return _ret;
+	}
 }
 
 interface ListingInformation : Windows.ApplicationModel.Store.IListingInformation, Windows.ApplicationModel.Store.IListingInformation2
 {
+extern(Windows):
+	final HSTRING CurrentMarket()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IListingInformation).get_CurrentMarket(&_ret));
+		return _ret;
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IListingInformation).get_Description(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Store.ProductListing) ProductListings()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Store.ProductListing) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IListingInformation).get_ProductListings(&_ret));
+		return _ret;
+	}
+	final HSTRING FormattedPrice()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IListingInformation).get_FormattedPrice(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IListingInformation).get_Name(&_ret));
+		return _ret;
+	}
+	final UINT32 AgeRating()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IListingInformation).get_AgeRating(&_ret));
+		return _ret;
+	}
+	final HSTRING FormattedBasePrice()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IListingInformation2).get_FormattedBasePrice(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime SaleEndDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IListingInformation2).get_SaleEndDate(&_ret));
+		return _ret;
+	}
+	final bool IsOnSale()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IListingInformation2).get_IsOnSale(&_ret));
+		return _ret;
+	}
+	final HSTRING CurrencyCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IListingInformation2).get_CurrencyCode(&_ret));
+		return _ret;
+	}
 }
 
 interface ProductLicense : Windows.ApplicationModel.Store.IProductLicense, Windows.ApplicationModel.Store.IProductLicenseWithFulfillment
 {
+extern(Windows):
+	final HSTRING ProductId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductLicense).get_ProductId(&_ret));
+		return _ret;
+	}
+	final bool IsActive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductLicense).get_IsActive(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime ExpirationDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductLicense).get_ExpirationDate(&_ret));
+		return _ret;
+	}
+	final bool IsConsumable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductLicenseWithFulfillment).get_IsConsumable(&_ret));
+		return _ret;
+	}
 }
 
 interface ProductListing : Windows.ApplicationModel.Store.IProductListing, Windows.ApplicationModel.Store.IProductListingWithMetadata, Windows.ApplicationModel.Store.IProductListing2
 {
+extern(Windows):
+	final HSTRING ProductId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductListing).get_ProductId(&_ret));
+		return _ret;
+	}
+	final HSTRING FormattedPrice()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductListing).get_FormattedPrice(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductListing).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductListingWithMetadata).get_Description(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IIterable!(HSTRING) Keywords()
+	{
+		Windows.Foundation.Collections.IIterable!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductListingWithMetadata).get_Keywords(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Store.ProductType ProductType()
+	{
+		Windows.ApplicationModel.Store.ProductType _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductListingWithMetadata).get_ProductType(&_ret));
+		return _ret;
+	}
+	final HSTRING Tag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductListingWithMetadata).get_Tag(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri ImageUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductListingWithMetadata).get_ImageUri(&_ret));
+		return _ret;
+	}
+	final HSTRING FormattedBasePrice()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductListing2).get_FormattedBasePrice(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime SaleEndDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductListing2).get_SaleEndDate(&_ret));
+		return _ret;
+	}
+	final bool IsOnSale()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductListing2).get_IsOnSale(&_ret));
+		return _ret;
+	}
+	final HSTRING CurrencyCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductListing2).get_CurrencyCode(&_ret));
+		return _ret;
+	}
 }
 
 interface ProductPurchaseDisplayProperties : Windows.ApplicationModel.Store.IProductPurchaseDisplayProperties
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductPurchaseDisplayProperties).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductPurchaseDisplayProperties).set_Name(value));
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductPurchaseDisplayProperties).get_Description(&_ret));
+		return _ret;
+	}
+	final void Description(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductPurchaseDisplayProperties).set_Description(value));
+	}
+	final Windows.Foundation.Uri Image()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductPurchaseDisplayProperties).get_Image(&_ret));
+		return _ret;
+	}
+	final void Image(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductPurchaseDisplayProperties).set_Image(value));
+	}
 }
 
 interface PurchaseResults : Windows.ApplicationModel.Store.IPurchaseResults
 {
+extern(Windows):
+	final Windows.ApplicationModel.Store.ProductPurchaseStatus Status()
+	{
+		Windows.ApplicationModel.Store.ProductPurchaseStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IPurchaseResults).get_Status(&_ret));
+		return _ret;
+	}
+	final GUID TransactionId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IPurchaseResults).get_TransactionId(&_ret));
+		return _ret;
+	}
+	final HSTRING ReceiptXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IPurchaseResults).get_ReceiptXml(&_ret));
+		return _ret;
+	}
+	final HSTRING OfferId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IPurchaseResults).get_OfferId(&_ret));
+		return _ret;
+	}
 }
 
 interface UnfulfilledConsumable : Windows.ApplicationModel.Store.IUnfulfilledConsumable
 {
+extern(Windows):
+	final HSTRING ProductId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IUnfulfilledConsumable).get_ProductId(&_ret));
+		return _ret;
+	}
+	final GUID TransactionId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IUnfulfilledConsumable).get_TransactionId(&_ret));
+		return _ret;
+	}
+	final HSTRING OfferId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.IUnfulfilledConsumable).get_OfferId(&_ret));
+		return _ret;
+	}
 }
 
 enum FulfillmentResult

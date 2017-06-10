@@ -921,78 +921,955 @@ extern(Windows):
 
 interface AggregateContactManager : Windows.ApplicationModel.Contacts.IAggregateContactManager, Windows.ApplicationModel.Contacts.IAggregateContactManager2
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact)) FindRawContactsAsync(Windows.ApplicationModel.Contacts.Contact contact)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IAggregateContactManager).abi_FindRawContactsAsync(contact, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) TryLinkContactsAsync(Windows.ApplicationModel.Contacts.Contact primaryContact, Windows.ApplicationModel.Contacts.Contact secondaryContact)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IAggregateContactManager).abi_TryLinkContactsAsync(primaryContact, secondaryContact, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction UnlinkRawContactAsync(Windows.ApplicationModel.Contacts.Contact contact)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IAggregateContactManager).abi_UnlinkRawContactAsync(contact, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TrySetPreferredSourceForPictureAsync(Windows.ApplicationModel.Contacts.Contact aggregateContact, Windows.ApplicationModel.Contacts.Contact rawContact)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IAggregateContactManager).abi_TrySetPreferredSourceForPictureAsync(aggregateContact, rawContact, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetRemoteIdentificationInformationAsync(HSTRING contactListId, HSTRING remoteSourceId, HSTRING accountId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IAggregateContactManager2).abi_SetRemoteIdentificationInformationAsync(contactListId, remoteSourceId, accountId, &_ret));
+		return _ret;
+	}
 }
 
 interface Contact : Windows.ApplicationModel.Contacts.IContact, Windows.ApplicationModel.Contacts.IContact2, Windows.ApplicationModel.Contacts.IContactName, Windows.ApplicationModel.Contacts.IContact3
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact).set_Name(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Thumbnail()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact).get_Thumbnail(&_ret));
+		return _ret;
+	}
+	final void Thumbnail(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact).set_Thumbnail(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.IContactField) Fields()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.IContactField) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact).get_Fields(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).get_Id(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).set_Id(value));
+	}
+	final HSTRING Notes()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).get_Notes(&_ret));
+		return _ret;
+	}
+	final void Notes(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).set_Notes(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactPhone) Phones()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactPhone) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).get_Phones(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactEmail) Emails()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactEmail) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).get_Emails(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactAddress) Addresses()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactAddress) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).get_Addresses(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactConnectedServiceAccount) ConnectedServiceAccounts()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactConnectedServiceAccount) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).get_ConnectedServiceAccounts(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactDate) ImportantDates()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactDate) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).get_ImportantDates(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) DataSuppliers()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).get_DataSuppliers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactJobInfo) JobInfo()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactJobInfo) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).get_JobInfo(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactSignificantOther) SignificantOthers()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactSignificantOther) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).get_SignificantOthers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactWebsite) Websites()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactWebsite) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).get_Websites(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet ProviderProperties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact2).get_ProviderProperties(&_ret));
+		return _ret;
+	}
+	final HSTRING FirstName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).get_FirstName(&_ret));
+		return _ret;
+	}
+	final void FirstName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).set_FirstName(value));
+	}
+	final HSTRING LastName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).get_LastName(&_ret));
+		return _ret;
+	}
+	final void LastName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).set_LastName(value));
+	}
+	final HSTRING MiddleName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).get_MiddleName(&_ret));
+		return _ret;
+	}
+	final void MiddleName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).set_MiddleName(value));
+	}
+	final HSTRING YomiGivenName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).get_YomiGivenName(&_ret));
+		return _ret;
+	}
+	final void YomiGivenName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).set_YomiGivenName(value));
+	}
+	final HSTRING YomiFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).get_YomiFamilyName(&_ret));
+		return _ret;
+	}
+	final void YomiFamilyName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).set_YomiFamilyName(value));
+	}
+	final HSTRING HonorificNameSuffix()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).get_HonorificNameSuffix(&_ret));
+		return _ret;
+	}
+	final void HonorificNameSuffix(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).set_HonorificNameSuffix(value));
+	}
+	final HSTRING HonorificNamePrefix()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).get_HonorificNamePrefix(&_ret));
+		return _ret;
+	}
+	final void HonorificNamePrefix(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).set_HonorificNamePrefix(value));
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING YomiDisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactName).get_YomiDisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING ContactListId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_ContactListId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime DisplayPictureUserUpdateTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_DisplayPictureUserUpdateTime(&_ret));
+		return _ret;
+	}
+	final void DisplayPictureUserUpdateTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).set_DisplayPictureUserUpdateTime(value));
+	}
+	final bool IsMe()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_IsMe(&_ret));
+		return _ret;
+	}
+	final HSTRING AggregateId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_AggregateId(&_ret));
+		return _ret;
+	}
+	final HSTRING RemoteId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_RemoteId(&_ret));
+		return _ret;
+	}
+	final void RemoteId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).set_RemoteId(value));
+	}
+	final HSTRING RingToneToken()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_RingToneToken(&_ret));
+		return _ret;
+	}
+	final void RingToneToken(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).set_RingToneToken(value));
+	}
+	final bool IsDisplayPictureManuallySet()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_IsDisplayPictureManuallySet(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference LargeDisplayPicture()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_LargeDisplayPicture(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference SmallDisplayPicture()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_SmallDisplayPicture(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference SourceDisplayPicture()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_SourceDisplayPicture(&_ret));
+		return _ret;
+	}
+	final void SourceDisplayPicture(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).set_SourceDisplayPicture(value));
+	}
+	final HSTRING TextToneToken()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_TextToneToken(&_ret));
+		return _ret;
+	}
+	final void TextToneToken(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).set_TextToneToken(value));
+	}
+	final bool IsAggregate()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_IsAggregate(&_ret));
+		return _ret;
+	}
+	final HSTRING FullName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_FullName(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayNameOverride()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_DisplayNameOverride(&_ret));
+		return _ret;
+	}
+	final void DisplayNameOverride(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).set_DisplayNameOverride(value));
+	}
+	final HSTRING Nickname()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_Nickname(&_ret));
+		return _ret;
+	}
+	final void Nickname(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).set_Nickname(value));
+	}
+	final HSTRING SortName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_SortName(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactAddress : Windows.ApplicationModel.Contacts.IContactAddress
 {
+extern(Windows):
+	final HSTRING StreetAddress()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).get_StreetAddress(&_ret));
+		return _ret;
+	}
+	final void StreetAddress(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).set_StreetAddress(value));
+	}
+	final HSTRING Locality()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).get_Locality(&_ret));
+		return _ret;
+	}
+	final void Locality(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).set_Locality(value));
+	}
+	final HSTRING Region()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).get_Region(&_ret));
+		return _ret;
+	}
+	final void Region(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).set_Region(value));
+	}
+	final HSTRING Country()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).get_Country(&_ret));
+		return _ret;
+	}
+	final void Country(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).set_Country(value));
+	}
+	final HSTRING PostalCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).get_PostalCode(&_ret));
+		return _ret;
+	}
+	final void PostalCode(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).set_PostalCode(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactAddressKind Kind()
+	{
+		Windows.ApplicationModel.Contacts.ContactAddressKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).get_Kind(&_ret));
+		return _ret;
+	}
+	final void Kind(Windows.ApplicationModel.Contacts.ContactAddressKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).set_Kind(value));
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).get_Description(&_ret));
+		return _ret;
+	}
+	final void Description(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).set_Description(value));
+	}
 }
 
 interface ContactAnnotation : Windows.ApplicationModel.Contacts.IContactAnnotation, Windows.ApplicationModel.Contacts.IContactAnnotation2
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotation).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING AnnotationListId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotation).get_AnnotationListId(&_ret));
+		return _ret;
+	}
+	final HSTRING ContactId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotation).get_ContactId(&_ret));
+		return _ret;
+	}
+	final void ContactId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotation).set_ContactId(value));
+	}
+	final HSTRING RemoteId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotation).get_RemoteId(&_ret));
+		return _ret;
+	}
+	final void RemoteId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotation).set_RemoteId(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactAnnotationOperations SupportedOperations()
+	{
+		Windows.ApplicationModel.Contacts.ContactAnnotationOperations _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotation).get_SupportedOperations(&_ret));
+		return _ret;
+	}
+	final void SupportedOperations(Windows.ApplicationModel.Contacts.ContactAnnotationOperations value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotation).set_SupportedOperations(value));
+	}
+	final bool IsDisabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotation).get_IsDisabled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.ValueSet ProviderProperties()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotation).get_ProviderProperties(&_ret));
+		return _ret;
+	}
+	final HSTRING ContactListId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotation2).get_ContactListId(&_ret));
+		return _ret;
+	}
+	final void ContactListId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotation2).set_ContactListId(value));
+	}
 }
 
 interface ContactAnnotationList : Windows.ApplicationModel.Contacts.IContactAnnotationList
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationList).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING ProviderPackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationList).get_ProviderPackageFamilyName(&_ret));
+		return _ret;
+	}
+	final HSTRING UserDataAccountId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationList).get_UserDataAccountId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationList).abi_DeleteAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TrySaveAnnotationAsync(Windows.ApplicationModel.Contacts.ContactAnnotation annotation)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationList).abi_TrySaveAnnotationAsync(annotation, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotation) GetAnnotationAsync(HSTRING annotationId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotation) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationList).abi_GetAnnotationAsync(annotationId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) FindAnnotationsByRemoteIdAsync(HSTRING remoteId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationList).abi_FindAnnotationsByRemoteIdAsync(remoteId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) FindAnnotationsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationList).abi_FindAnnotationsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAnnotationAsync(Windows.ApplicationModel.Contacts.ContactAnnotation annotation)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationList).abi_DeleteAnnotationAsync(annotation, &_ret));
+		return _ret;
+	}
 }
 
 interface ContactAnnotationStore : Windows.ApplicationModel.Contacts.IContactAnnotationStore, Windows.ApplicationModel.Contacts.IContactAnnotationStore2
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) FindContactIdsByEmailAsync(HSTRING emailAddress)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationStore).abi_FindContactIdsByEmailAsync(emailAddress, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) FindContactIdsByPhoneNumberAsync(HSTRING phoneNumber)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationStore).abi_FindContactIdsByPhoneNumberAsync(phoneNumber, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) FindAnnotationsForContactAsync(Windows.ApplicationModel.Contacts.Contact contact)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationStore).abi_FindAnnotationsForContactAsync(contact, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DisableAnnotationAsync(Windows.ApplicationModel.Contacts.ContactAnnotation annotation)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationStore).abi_DisableAnnotationAsync(annotation, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) CreateAnnotationListAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationStore).abi_CreateAnnotationListAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) CreateAnnotationListInAccountAsync(HSTRING userDataAccountId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationStore).abi_CreateAnnotationListInAccountAsync(userDataAccountId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) GetAnnotationListAsync(HSTRING annotationListId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationStore).abi_GetAnnotationListAsync(annotationListId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotationList)) FindAnnotationListsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotationList)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationStore).abi_FindAnnotationListsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) FindAnnotationsForContactListAsync(HSTRING contactListId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotationStore2).abi_FindAnnotationsForContactListAsync(contactListId, &_ret));
+		return _ret;
+	}
 }
 
 interface ContactBatch : Windows.ApplicationModel.Contacts.IContactBatch
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact) Contacts()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactBatch).get_Contacts(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactBatchStatus Status()
+	{
+		Windows.ApplicationModel.Contacts.ContactBatchStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactBatch).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactCardDelayedDataLoader : Windows.ApplicationModel.Contacts.IContactCardDelayedDataLoader, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final void SetData(Windows.ApplicationModel.Contacts.Contact contact)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactCardDelayedDataLoader).abi_SetData(contact));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface ContactCardOptions : Windows.ApplicationModel.Contacts.IContactCardOptions, Windows.ApplicationModel.Contacts.IContactCardOptions2
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.ContactCardHeaderKind HeaderKind()
+	{
+		Windows.ApplicationModel.Contacts.ContactCardHeaderKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactCardOptions).get_HeaderKind(&_ret));
+		return _ret;
+	}
+	final void HeaderKind(Windows.ApplicationModel.Contacts.ContactCardHeaderKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactCardOptions).set_HeaderKind(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactCardTabKind InitialTabKind()
+	{
+		Windows.ApplicationModel.Contacts.ContactCardTabKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactCardOptions).get_InitialTabKind(&_ret));
+		return _ret;
+	}
+	final void InitialTabKind(Windows.ApplicationModel.Contacts.ContactCardTabKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactCardOptions).set_InitialTabKind(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) ServerSearchContactListIds()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactCardOptions2).get_ServerSearchContactListIds(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactChange : Windows.ApplicationModel.Contacts.IContactChange
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.ContactChangeType ChangeType()
+	{
+		Windows.ApplicationModel.Contacts.ContactChangeType _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactChange).get_ChangeType(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.Contact Contact()
+	{
+		Windows.ApplicationModel.Contacts.Contact _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactChange).get_Contact(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactChangeReader : Windows.ApplicationModel.Contacts.IContactChangeReader
 {
+extern(Windows):
+	final void AcceptChanges()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactChangeReader).abi_AcceptChanges());
+	}
+	final void AcceptChangesThrough(Windows.ApplicationModel.Contacts.ContactChange lastChangeToAccept)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactChangeReader).abi_AcceptChangesThrough(lastChangeToAccept));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactChange)) ReadBatchAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactChange)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactChangeReader).abi_ReadBatchAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactChangeTracker : Windows.ApplicationModel.Contacts.IContactChangeTracker
 {
+extern(Windows):
+	final void Enable()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactChangeTracker).abi_Enable());
+	}
+	final Windows.ApplicationModel.Contacts.ContactChangeReader GetChangeReader()
+	{
+		Windows.ApplicationModel.Contacts.ContactChangeReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactChangeTracker).abi_GetChangeReader(&_ret));
+		return _ret;
+	}
+	final void Reset()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactChangeTracker).abi_Reset());
+	}
 }
 
 interface ContactChangedDeferral : Windows.ApplicationModel.Contacts.IContactChangedDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactChangedDeferral).abi_Complete());
+	}
 }
 
 interface ContactChangedEventArgs : Windows.ApplicationModel.Contacts.IContactChangedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.ContactChangedDeferral GetDeferral()
+	{
+		Windows.ApplicationModel.Contacts.ContactChangedDeferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactChangedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactConnectedServiceAccount : Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount).get_Id(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount).set_Id(value));
+	}
+	final HSTRING ServiceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount).get_ServiceName(&_ret));
+		return _ret;
+	}
+	final void ServiceName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount).set_ServiceName(value));
+	}
 }
 
 interface ContactDate : Windows.ApplicationModel.Contacts.IContactDate
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(UINT32) Day()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactDate).get_Day(&_ret));
+		return _ret;
+	}
+	final void Day(Windows.Foundation.IReference!(UINT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactDate).set_Day(value));
+	}
+	final Windows.Foundation.IReference!(UINT32) Month()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactDate).get_Month(&_ret));
+		return _ret;
+	}
+	final void Month(Windows.Foundation.IReference!(UINT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactDate).set_Month(value));
+	}
+	final Windows.Foundation.IReference!(INT32) Year()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactDate).get_Year(&_ret));
+		return _ret;
+	}
+	final void Year(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactDate).set_Year(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactDateKind Kind()
+	{
+		Windows.ApplicationModel.Contacts.ContactDateKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactDate).get_Kind(&_ret));
+		return _ret;
+	}
+	final void Kind(Windows.ApplicationModel.Contacts.ContactDateKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactDate).set_Kind(value));
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactDate).get_Description(&_ret));
+		return _ret;
+	}
+	final void Description(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactDate).set_Description(value));
+	}
 }
 
 interface ContactEmail : Windows.ApplicationModel.Contacts.IContactEmail
 {
+extern(Windows):
+	final HSTRING Address()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactEmail).get_Address(&_ret));
+		return _ret;
+	}
+	final void Address(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactEmail).set_Address(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactEmailKind Kind()
+	{
+		Windows.ApplicationModel.Contacts.ContactEmailKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactEmail).get_Kind(&_ret));
+		return _ret;
+	}
+	final void Kind(Windows.ApplicationModel.Contacts.ContactEmailKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactEmail).set_Kind(value));
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactEmail).get_Description(&_ret));
+		return _ret;
+	}
+	final void Description(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactEmail).set_Description(value));
+	}
 }
 
 interface ContactField : Windows.ApplicationModel.Contacts.IContactField
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.ContactFieldType Type()
+	{
+		Windows.ApplicationModel.Contacts.ContactFieldType _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Type(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactFieldCategory Category()
+	{
+		Windows.ApplicationModel.Contacts.ContactFieldCategory _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Category(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Value(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactFieldFactory : Windows.ApplicationModel.Contacts.IContactFieldFactory, Windows.ApplicationModel.Contacts.IContactLocationFieldFactory, Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.ContactField CreateField_Default(HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type)
+	{
+		Windows.ApplicationModel.Contacts.ContactField _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactFieldFactory).abi_CreateField_Default(value, type, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactField CreateField_Category(HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	{
+		Windows.ApplicationModel.Contacts.ContactField _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactFieldFactory).abi_CreateField_Category(value, type, category, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactField CreateField_Custom(HSTRING name, HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	{
+		Windows.ApplicationModel.Contacts.ContactField _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactFieldFactory).abi_CreateField_Custom(name, value, type, category, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactLocationField CreateLocation_Default(HSTRING unstructuredAddress)
+	{
+		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory).abi_CreateLocation_Default(unstructuredAddress, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactLocationField CreateLocation_Category(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	{
+		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory).abi_CreateLocation_Category(unstructuredAddress, category, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactLocationField CreateLocation_All(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category, HSTRING street, HSTRING city, HSTRING region, HSTRING country, HSTRING postalCode)
+	{
+		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory).abi_CreateLocation_All(unstructuredAddress, category, street, city, region, country, postalCode, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactInstantMessageField CreateInstantMessage_Default(HSTRING userName)
+	{
+		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory).abi_CreateInstantMessage_Default(userName, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactInstantMessageField CreateInstantMessage_Category(HSTRING userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	{
+		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory).abi_CreateInstantMessage_Category(userName, category, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactInstantMessageField CreateInstantMessage_All(HSTRING userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category, HSTRING service, HSTRING displayText, Windows.Foundation.Uri verb)
+	{
+		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory).abi_CreateInstantMessage_All(userName, category, service, displayText, verb, &_ret));
+		return _ret;
+	}
 }
 
 interface ContactGroup : Windows.ApplicationModel.Contacts.IContactGroup
@@ -1001,14 +1878,193 @@ interface ContactGroup : Windows.ApplicationModel.Contacts.IContactGroup
 
 interface ContactInformation : Windows.ApplicationModel.Contacts.IContactInformation
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInformation).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) GetThumbnailAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInformation).abi_GetThumbnailAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactField) Emails()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactField) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInformation).get_Emails(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactField) PhoneNumbers()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactField) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInformation).get_PhoneNumbers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactLocationField) Locations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactLocationField) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInformation).get_Locations(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactInstantMessageField) InstantMessages()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactInstantMessageField) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInformation).get_InstantMessages(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactField) CustomFields()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactField) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInformation).get_CustomFields(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactField) QueryCustomFields(HSTRING customName)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactField) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInformation).abi_QueryCustomFields(customName, &_ret));
+		return _ret;
+	}
 }
 
 interface ContactInstantMessageField : Windows.ApplicationModel.Contacts.IContactInstantMessageField, Windows.ApplicationModel.Contacts.IContactField
 {
+extern(Windows):
+	final HSTRING UserName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInstantMessageField).get_UserName(&_ret));
+		return _ret;
+	}
+	final HSTRING Service()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInstantMessageField).get_Service(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInstantMessageField).get_DisplayText(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri LaunchUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInstantMessageField).get_LaunchUri(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactFieldType Type()
+	{
+		Windows.ApplicationModel.Contacts.ContactFieldType _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Type(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactFieldCategory Category()
+	{
+		Windows.ApplicationModel.Contacts.ContactFieldCategory _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Category(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Value(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactJobInfo : Windows.ApplicationModel.Contacts.IContactJobInfo
 {
+extern(Windows):
+	final HSTRING CompanyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).get_CompanyName(&_ret));
+		return _ret;
+	}
+	final void CompanyName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).set_CompanyName(value));
+	}
+	final HSTRING CompanyYomiName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).get_CompanyYomiName(&_ret));
+		return _ret;
+	}
+	final void CompanyYomiName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).set_CompanyYomiName(value));
+	}
+	final HSTRING Department()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).get_Department(&_ret));
+		return _ret;
+	}
+	final void Department(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).set_Department(value));
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).set_Title(value));
+	}
+	final HSTRING Manager()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).get_Manager(&_ret));
+		return _ret;
+	}
+	final void Manager(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).set_Manager(value));
+	}
+	final HSTRING Office()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).get_Office(&_ret));
+		return _ret;
+	}
+	final void Office(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).set_Office(value));
+	}
+	final HSTRING CompanyAddress()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).get_CompanyAddress(&_ret));
+		return _ret;
+	}
+	final void CompanyAddress(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).set_CompanyAddress(value));
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).get_Description(&_ret));
+		return _ret;
+	}
+	final void Description(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).set_Description(value));
+	}
 }
 
 interface ContactLaunchActionVerbs
@@ -1017,18 +2073,544 @@ interface ContactLaunchActionVerbs
 
 interface ContactList : Windows.ApplicationModel.Contacts.IContactList, Windows.ApplicationModel.Contacts.IContactList2
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).set_DisplayName(value));
+	}
+	final HSTRING SourceDisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).get_SourceDisplayName(&_ret));
+		return _ret;
+	}
+	final bool IsHidden()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).get_IsHidden(&_ret));
+		return _ret;
+	}
+	final void IsHidden(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).set_IsHidden(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactListOtherAppReadAccess OtherAppReadAccess()
+	{
+		Windows.ApplicationModel.Contacts.ContactListOtherAppReadAccess _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).get_OtherAppReadAccess(&_ret));
+		return _ret;
+	}
+	final void OtherAppReadAccess(Windows.ApplicationModel.Contacts.ContactListOtherAppReadAccess value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).set_OtherAppReadAccess(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactListOtherAppWriteAccess OtherAppWriteAccess()
+	{
+		Windows.ApplicationModel.Contacts.ContactListOtherAppWriteAccess _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).get_OtherAppWriteAccess(&_ret));
+		return _ret;
+	}
+	final void OtherAppWriteAccess(Windows.ApplicationModel.Contacts.ContactListOtherAppWriteAccess value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).set_OtherAppWriteAccess(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactChangeTracker ChangeTracker()
+	{
+		Windows.ApplicationModel.Contacts.ContactChangeTracker _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).get_ChangeTracker(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactListSyncManager SyncManager()
+	{
+		Windows.ApplicationModel.Contacts.ContactListSyncManager _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).get_SyncManager(&_ret));
+		return _ret;
+	}
+	final bool SupportsServerSearch()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).get_SupportsServerSearch(&_ret));
+		return _ret;
+	}
+	final HSTRING UserDataAccountId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).get_UserDataAccountId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).abi_SaveAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).abi_DeleteAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetContactFromRemoteIdAsync(HSTRING remoteId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).abi_GetContactFromRemoteIdAsync(remoteId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetMeContactAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).abi_GetMeContactAsync(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactReader GetContactReader()
+	{
+		Windows.ApplicationModel.Contacts.ContactReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).abi_GetContactReader(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactReader GetContactReaderWithOptions(Windows.ApplicationModel.Contacts.ContactQueryOptions options)
+	{
+		Windows.ApplicationModel.Contacts.ContactReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).abi_GetContactReaderWithOptions(options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveContactAsync(Windows.ApplicationModel.Contacts.Contact contact)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).abi_SaveContactAsync(contact, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteContactAsync(Windows.ApplicationModel.Contacts.Contact contact)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).abi_DeleteContactAsync(contact, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetContactAsync(HSTRING contactId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).abi_GetContactAsync(contactId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RegisterSyncManagerAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList2).abi_RegisterSyncManagerAsync(&_ret));
+		return _ret;
+	}
+	final void SupportsServerSearch(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList2).set_SupportsServerSearch(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactListSyncConstraints SyncConstraints()
+	{
+		Windows.ApplicationModel.Contacts.ContactListSyncConstraints _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList2).get_SyncConstraints(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactListSyncConstraints : Windows.ApplicationModel.Contacts.IContactListSyncConstraints
 {
+extern(Windows):
+	final bool CanSyncDescriptions()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_CanSyncDescriptions(&_ret));
+		return _ret;
+	}
+	final void CanSyncDescriptions(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_CanSyncDescriptions(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxHomePhoneNumbers()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxHomePhoneNumbers(&_ret));
+		return _ret;
+	}
+	final void MaxHomePhoneNumbers(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxHomePhoneNumbers(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxMobilePhoneNumbers()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxMobilePhoneNumbers(&_ret));
+		return _ret;
+	}
+	final void MaxMobilePhoneNumbers(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxMobilePhoneNumbers(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxWorkPhoneNumbers()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxWorkPhoneNumbers(&_ret));
+		return _ret;
+	}
+	final void MaxWorkPhoneNumbers(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxWorkPhoneNumbers(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxOtherPhoneNumbers()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxOtherPhoneNumbers(&_ret));
+		return _ret;
+	}
+	final void MaxOtherPhoneNumbers(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxOtherPhoneNumbers(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxPagerPhoneNumbers()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxPagerPhoneNumbers(&_ret));
+		return _ret;
+	}
+	final void MaxPagerPhoneNumbers(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxPagerPhoneNumbers(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxBusinessFaxPhoneNumbers()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxBusinessFaxPhoneNumbers(&_ret));
+		return _ret;
+	}
+	final void MaxBusinessFaxPhoneNumbers(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxBusinessFaxPhoneNumbers(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxHomeFaxPhoneNumbers()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxHomeFaxPhoneNumbers(&_ret));
+		return _ret;
+	}
+	final void MaxHomeFaxPhoneNumbers(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxHomeFaxPhoneNumbers(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxCompanyPhoneNumbers()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxCompanyPhoneNumbers(&_ret));
+		return _ret;
+	}
+	final void MaxCompanyPhoneNumbers(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxCompanyPhoneNumbers(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxAssistantPhoneNumbers()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxAssistantPhoneNumbers(&_ret));
+		return _ret;
+	}
+	final void MaxAssistantPhoneNumbers(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxAssistantPhoneNumbers(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxRadioPhoneNumbers()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxRadioPhoneNumbers(&_ret));
+		return _ret;
+	}
+	final void MaxRadioPhoneNumbers(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxRadioPhoneNumbers(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxPersonalEmailAddresses()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxPersonalEmailAddresses(&_ret));
+		return _ret;
+	}
+	final void MaxPersonalEmailAddresses(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxPersonalEmailAddresses(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxWorkEmailAddresses()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxWorkEmailAddresses(&_ret));
+		return _ret;
+	}
+	final void MaxWorkEmailAddresses(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxWorkEmailAddresses(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxOtherEmailAddresses()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxOtherEmailAddresses(&_ret));
+		return _ret;
+	}
+	final void MaxOtherEmailAddresses(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxOtherEmailAddresses(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxHomeAddresses()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxHomeAddresses(&_ret));
+		return _ret;
+	}
+	final void MaxHomeAddresses(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxHomeAddresses(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxWorkAddresses()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxWorkAddresses(&_ret));
+		return _ret;
+	}
+	final void MaxWorkAddresses(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxWorkAddresses(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxOtherAddresses()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxOtherAddresses(&_ret));
+		return _ret;
+	}
+	final void MaxOtherAddresses(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxOtherAddresses(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxBirthdayDates()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxBirthdayDates(&_ret));
+		return _ret;
+	}
+	final void MaxBirthdayDates(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxBirthdayDates(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxAnniversaryDates()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxAnniversaryDates(&_ret));
+		return _ret;
+	}
+	final void MaxAnniversaryDates(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxAnniversaryDates(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxOtherDates()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxOtherDates(&_ret));
+		return _ret;
+	}
+	final void MaxOtherDates(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxOtherDates(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxOtherRelationships()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxOtherRelationships(&_ret));
+		return _ret;
+	}
+	final void MaxOtherRelationships(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxOtherRelationships(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxSpouseRelationships()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxSpouseRelationships(&_ret));
+		return _ret;
+	}
+	final void MaxSpouseRelationships(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxSpouseRelationships(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxPartnerRelationships()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxPartnerRelationships(&_ret));
+		return _ret;
+	}
+	final void MaxPartnerRelationships(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxPartnerRelationships(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxSiblingRelationships()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxSiblingRelationships(&_ret));
+		return _ret;
+	}
+	final void MaxSiblingRelationships(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxSiblingRelationships(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxParentRelationships()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxParentRelationships(&_ret));
+		return _ret;
+	}
+	final void MaxParentRelationships(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxParentRelationships(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxChildRelationships()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxChildRelationships(&_ret));
+		return _ret;
+	}
+	final void MaxChildRelationships(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxChildRelationships(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxJobInfo()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxJobInfo(&_ret));
+		return _ret;
+	}
+	final void MaxJobInfo(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxJobInfo(value));
+	}
+	final Windows.Foundation.IReference!(INT32) MaxWebsites()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).get_MaxWebsites(&_ret));
+		return _ret;
+	}
+	final void MaxWebsites(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncConstraints).set_MaxWebsites(value));
+	}
 }
 
 interface ContactListSyncManager : Windows.ApplicationModel.Contacts.IContactListSyncManager, Windows.ApplicationModel.Contacts.IContactListSyncManager2
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.ContactListSyncStatus Status()
+	{
+		Windows.ApplicationModel.Contacts.ContactListSyncStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncManager).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime LastSuccessfulSyncTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncManager).get_LastSuccessfulSyncTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime LastAttemptedSyncTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncManager).get_LastAttemptedSyncTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) SyncAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncManager).abi_SyncAsync(&_ret));
+		return _ret;
+	}
+	final void Status(Windows.ApplicationModel.Contacts.ContactListSyncStatus value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncManager2).set_Status(value));
+	}
+	final void LastSuccessfulSyncTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncManager2).set_LastSuccessfulSyncTime(value));
+	}
+	final void LastAttemptedSyncTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncManager2).set_LastAttemptedSyncTime(value));
+	}
 }
 
 interface ContactLocationField : Windows.ApplicationModel.Contacts.IContactLocationField, Windows.ApplicationModel.Contacts.IContactField
 {
+extern(Windows):
+	final HSTRING UnstructuredAddress()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactLocationField).get_UnstructuredAddress(&_ret));
+		return _ret;
+	}
+	final HSTRING Street()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactLocationField).get_Street(&_ret));
+		return _ret;
+	}
+	final HSTRING City()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactLocationField).get_City(&_ret));
+		return _ret;
+	}
+	final HSTRING Region()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactLocationField).get_Region(&_ret));
+		return _ret;
+	}
+	final HSTRING Country()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactLocationField).get_Country(&_ret));
+		return _ret;
+	}
+	final HSTRING PostalCode()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactLocationField).get_PostalCode(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactFieldType Type()
+	{
+		Windows.ApplicationModel.Contacts.ContactFieldType _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Type(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactFieldCategory Category()
+	{
+		Windows.ApplicationModel.Contacts.ContactFieldCategory _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Category(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Value(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactManager
@@ -1037,50 +2619,454 @@ interface ContactManager
 
 interface ContactManagerForUser : Windows.ApplicationModel.Contacts.IContactManagerForUser, Windows.ApplicationModel.Contacts.IContactManagerForUser2
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.RandomAccessStreamReference) ConvertContactToVCardAsync(Windows.ApplicationModel.Contacts.Contact contact)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.RandomAccessStreamReference) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactManagerForUser).abi_ConvertContactToVCardAsync(contact, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.RandomAccessStreamReference) ConvertContactToVCardAsyncWithMaxBytes(Windows.ApplicationModel.Contacts.Contact contact, UINT32 maxBytes)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.RandomAccessStreamReference) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactManagerForUser).abi_ConvertContactToVCardAsyncWithMaxBytes(contact, maxBytes, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) ConvertVCardToContactAsync(Windows.Storage.Streams.IRandomAccessStreamReference vCard)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactManagerForUser).abi_ConvertVCardToContactAsync(vCard, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactStore) RequestStoreAsync(Windows.ApplicationModel.Contacts.ContactStoreAccessType accessType)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactStore) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactManagerForUser).abi_RequestStoreAsync(accessType, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationStore) RequestAnnotationStoreAsync(Windows.ApplicationModel.Contacts.ContactAnnotationStoreAccessType accessType)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationStore) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactManagerForUser).abi_RequestAnnotationStoreAsync(accessType, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactNameOrder SystemDisplayNameOrder()
+	{
+		Windows.ApplicationModel.Contacts.ContactNameOrder _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactManagerForUser).get_SystemDisplayNameOrder(&_ret));
+		return _ret;
+	}
+	final void SystemDisplayNameOrder(Windows.ApplicationModel.Contacts.ContactNameOrder value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactManagerForUser).set_SystemDisplayNameOrder(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactNameOrder SystemSortOrder()
+	{
+		Windows.ApplicationModel.Contacts.ContactNameOrder _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactManagerForUser).get_SystemSortOrder(&_ret));
+		return _ret;
+	}
+	final void SystemSortOrder(Windows.ApplicationModel.Contacts.ContactNameOrder value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactManagerForUser).set_SystemSortOrder(value));
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactManagerForUser).get_User(&_ret));
+		return _ret;
+	}
+	final void ShowFullContactCard(Windows.ApplicationModel.Contacts.Contact contact, Windows.ApplicationModel.Contacts.FullContactCardOptions fullContactCardOptions)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactManagerForUser2).abi_ShowFullContactCard(contact, fullContactCardOptions));
+	}
 }
 
 interface ContactMatchReason : Windows.ApplicationModel.Contacts.IContactMatchReason
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.ContactMatchReasonKind Field()
+	{
+		Windows.ApplicationModel.Contacts.ContactMatchReasonKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactMatchReason).get_Field(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment) Segments()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactMatchReason).get_Segments(&_ret));
+		return _ret;
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactMatchReason).get_Text(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactPanel : Windows.ApplicationModel.Contacts.IContactPanel
 {
+extern(Windows):
+	final void ClosePanel()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPanel).abi_ClosePanel());
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) HeaderColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPanel).get_HeaderColor(&_ret));
+		return _ret;
+	}
+	final void HeaderColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPanel).set_HeaderColor(value));
+	}
 }
 
 interface ContactPanelClosingEventArgs : Windows.ApplicationModel.Contacts.IContactPanelClosingEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPanelClosingEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactPanelLaunchFullAppRequestedEventArgs : Windows.ApplicationModel.Contacts.IContactPanelLaunchFullAppRequestedEventArgs
 {
+extern(Windows):
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPanelLaunchFullAppRequestedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPanelLaunchFullAppRequestedEventArgs).set_Handled(value));
+	}
 }
 
 interface ContactPhone : Windows.ApplicationModel.Contacts.IContactPhone
 {
+extern(Windows):
+	final HSTRING Number()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPhone).get_Number(&_ret));
+		return _ret;
+	}
+	final void Number(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPhone).set_Number(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactPhoneKind Kind()
+	{
+		Windows.ApplicationModel.Contacts.ContactPhoneKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPhone).get_Kind(&_ret));
+		return _ret;
+	}
+	final void Kind(Windows.ApplicationModel.Contacts.ContactPhoneKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPhone).set_Kind(value));
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPhone).get_Description(&_ret));
+		return _ret;
+	}
+	final void Description(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPhone).set_Description(value));
+	}
 }
 
 interface ContactPicker : Windows.ApplicationModel.Contacts.IContactPicker, Windows.ApplicationModel.Contacts.IContactPicker2, Windows.ApplicationModel.Contacts.IContactPicker3
 {
+extern(Windows):
+	final HSTRING CommitButtonText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPicker).get_CommitButtonText(&_ret));
+		return _ret;
+	}
+	final void CommitButtonText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPicker).set_CommitButtonText(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactSelectionMode SelectionMode()
+	{
+		Windows.ApplicationModel.Contacts.ContactSelectionMode _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPicker).get_SelectionMode(&_ret));
+		return _ret;
+	}
+	final void SelectionMode(Windows.ApplicationModel.Contacts.ContactSelectionMode value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPicker).set_SelectionMode(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) DesiredFields()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPicker).get_DesiredFields(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactInformation) PickSingleContactAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactInformation) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPicker).abi_PickSingleContactAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactInformation)) PickMultipleContactsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactInformation)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPicker).abi_PickMultipleContactsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactFieldType) DesiredFieldsWithContactFieldType()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactFieldType) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPicker2).get_DesiredFieldsWithContactFieldType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) PickContactAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPicker2).abi_PickContactAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.Contact)) PickContactsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.Contact)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPicker2).abi_PickContactsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPicker3).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactQueryOptions : Windows.ApplicationModel.Contacts.IContactQueryOptions
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.ContactQueryTextSearch TextSearch()
+	{
+		Windows.ApplicationModel.Contacts.ContactQueryTextSearch _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryOptions).get_TextSearch(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) ContactListIds()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryOptions).get_ContactListIds(&_ret));
+		return _ret;
+	}
+	final bool IncludeContactsFromHiddenLists()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryOptions).get_IncludeContactsFromHiddenLists(&_ret));
+		return _ret;
+	}
+	final void IncludeContactsFromHiddenLists(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryOptions).set_IncludeContactsFromHiddenLists(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactQueryDesiredFields DesiredFields()
+	{
+		Windows.ApplicationModel.Contacts.ContactQueryDesiredFields _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryOptions).get_DesiredFields(&_ret));
+		return _ret;
+	}
+	final void DesiredFields(Windows.ApplicationModel.Contacts.ContactQueryDesiredFields value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryOptions).set_DesiredFields(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactAnnotationOperations DesiredOperations()
+	{
+		Windows.ApplicationModel.Contacts.ContactAnnotationOperations _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryOptions).get_DesiredOperations(&_ret));
+		return _ret;
+	}
+	final void DesiredOperations(Windows.ApplicationModel.Contacts.ContactAnnotationOperations value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryOptions).set_DesiredOperations(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) AnnotationListIds()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryOptions).get_AnnotationListIds(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactQueryTextSearch : Windows.ApplicationModel.Contacts.IContactQueryTextSearch
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.ContactQuerySearchFields Fields()
+	{
+		Windows.ApplicationModel.Contacts.ContactQuerySearchFields _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryTextSearch).get_Fields(&_ret));
+		return _ret;
+	}
+	final void Fields(Windows.ApplicationModel.Contacts.ContactQuerySearchFields value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryTextSearch).set_Fields(value));
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryTextSearch).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryTextSearch).set_Text(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactQuerySearchScope SearchScope()
+	{
+		Windows.ApplicationModel.Contacts.ContactQuerySearchScope _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryTextSearch).get_SearchScope(&_ret));
+		return _ret;
+	}
+	final void SearchScope(Windows.ApplicationModel.Contacts.ContactQuerySearchScope value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryTextSearch).set_SearchScope(value));
+	}
 }
 
 interface ContactReader : Windows.ApplicationModel.Contacts.IContactReader
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactBatch) ReadBatchAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactBatch) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactReader).abi_ReadBatchAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactMatchReason) GetMatchingPropertiesWithMatchReason(Windows.ApplicationModel.Contacts.Contact contact)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactMatchReason) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactReader).abi_GetMatchingPropertiesWithMatchReason(contact, &_ret));
+		return _ret;
+	}
 }
 
 interface ContactSignificantOther : Windows.ApplicationModel.Contacts.IContactSignificantOther, Windows.ApplicationModel.Contacts.IContactSignificantOther2
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactSignificantOther).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactSignificantOther).set_Name(value));
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactSignificantOther).get_Description(&_ret));
+		return _ret;
+	}
+	final void Description(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactSignificantOther).set_Description(value));
+	}
+	final Windows.ApplicationModel.Contacts.ContactRelationship Relationship()
+	{
+		Windows.ApplicationModel.Contacts.ContactRelationship _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactSignificantOther2).get_Relationship(&_ret));
+		return _ret;
+	}
+	final void Relationship(Windows.ApplicationModel.Contacts.ContactRelationship value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactSignificantOther2).set_Relationship(value));
+	}
 }
 
 interface ContactStore : Windows.ApplicationModel.Contacts.IContactStore, Windows.ApplicationModel.Contacts.IContactStore2
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact)) FindContactsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore).abi_FindContactsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact)) FindContactsWithSearchTextAsync(HSTRING searchText)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore).abi_FindContactsWithSearchTextAsync(searchText, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetContactAsync(HSTRING contactId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore).abi_GetContactAsync(contactId, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactChangeTracker ChangeTracker()
+	{
+		Windows.ApplicationModel.Contacts.ContactChangeTracker _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore2).get_ChangeTracker(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.AggregateContactManager AggregateContactManager()
+	{
+		Windows.ApplicationModel.Contacts.AggregateContactManager _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore2).get_AggregateContactManager(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactList)) FindContactListsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactList)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore2).abi_FindContactListsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) GetContactListAsync(HSTRING contactListId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore2).abi_GetContactListAsync(contactListId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) CreateContactListAsync(HSTRING displayName)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore2).abi_CreateContactListAsync(displayName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetMeContactAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore2).abi_GetMeContactAsync(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactReader GetContactReader()
+	{
+		Windows.ApplicationModel.Contacts.ContactReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore2).abi_GetContactReader(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactReader GetContactReaderWithOptions(Windows.ApplicationModel.Contacts.ContactQueryOptions options)
+	{
+		Windows.ApplicationModel.Contacts.ContactReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore2).abi_GetContactReaderWithOptions(options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) CreateContactListInAccountAsync(HSTRING displayName, HSTRING userDataAccountId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore2).abi_CreateContactListInAccountAsync(displayName, userDataAccountId, &_ret));
+		return _ret;
+	}
 }
 
 interface ContactStoreNotificationTriggerDetails : Windows.ApplicationModel.Contacts.IContactStoreNotificationTriggerDetails
@@ -1089,10 +3075,52 @@ interface ContactStoreNotificationTriggerDetails : Windows.ApplicationModel.Cont
 
 interface ContactWebsite : Windows.ApplicationModel.Contacts.IContactWebsite, Windows.ApplicationModel.Contacts.IContactWebsite2
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactWebsite).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactWebsite).set_Uri(value));
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactWebsite).get_Description(&_ret));
+		return _ret;
+	}
+	final void Description(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactWebsite).set_Description(value));
+	}
+	final HSTRING RawValue()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactWebsite2).get_RawValue(&_ret));
+		return _ret;
+	}
+	final void RawValue(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactWebsite2).set_RawValue(value));
+	}
 }
 
 interface FullContactCardOptions : Windows.ApplicationModel.Contacts.IFullContactCardOptions
 {
+extern(Windows):
+	final Windows.UI.ViewManagement.ViewSizePreference DesiredRemainingView()
+	{
+		Windows.UI.ViewManagement.ViewSizePreference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IFullContactCardOptions).get_DesiredRemainingView(&_ret));
+		return _ret;
+	}
+	final void DesiredRemainingView(Windows.UI.ViewManagement.ViewSizePreference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IFullContactCardOptions).set_DesiredRemainingView(value));
+	}
 }
 
 interface KnownContactField
@@ -1101,10 +3129,64 @@ interface KnownContactField
 
 interface PinnedContactIdsQueryResult : Windows.ApplicationModel.Contacts.IPinnedContactIdsQueryResult
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(HSTRING) ContactIds()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IPinnedContactIdsQueryResult).get_ContactIds(&_ret));
+		return _ret;
+	}
 }
 
 interface PinnedContactManager : Windows.ApplicationModel.Contacts.IPinnedContactManager
 {
+extern(Windows):
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IPinnedContactManager).get_User(&_ret));
+		return _ret;
+	}
+	final bool IsPinSurfaceSupported(Windows.ApplicationModel.Contacts.PinnedContactSurface surface)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IPinnedContactManager).abi_IsPinSurfaceSupported(surface, &_ret));
+		return _ret;
+	}
+	final bool IsContactPinned(Windows.ApplicationModel.Contacts.Contact contact, Windows.ApplicationModel.Contacts.PinnedContactSurface surface)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IPinnedContactManager).abi_IsContactPinned(contact, surface, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestPinContactAsync(Windows.ApplicationModel.Contacts.Contact contact, Windows.ApplicationModel.Contacts.PinnedContactSurface surface)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IPinnedContactManager).abi_RequestPinContactAsync(contact, surface, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestPinContactsAsync(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Contacts.Contact) contacts, Windows.ApplicationModel.Contacts.PinnedContactSurface surface)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IPinnedContactManager).abi_RequestPinContactsAsync(contacts, surface, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestUnpinContactAsync(Windows.ApplicationModel.Contacts.Contact contact, Windows.ApplicationModel.Contacts.PinnedContactSurface surface)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IPinnedContactManager).abi_RequestUnpinContactAsync(contact, surface, &_ret));
+		return _ret;
+	}
+	final void SignalContactActivity(Windows.ApplicationModel.Contacts.Contact contact)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IPinnedContactManager).abi_SignalContactActivity(contact));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.PinnedContactIdsQueryResult) GetPinnedContactIdsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.PinnedContactIdsQueryResult) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IPinnedContactManager).abi_GetPinnedContactIdsAsync(&_ret));
+		return _ret;
+	}
 }
 
 enum ContactAddressKind

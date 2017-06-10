@@ -49,4 +49,17 @@ extern(Windows):
 
 interface ResourceLoader : Windows.ApplicationModel.Resources.IResourceLoader, Windows.ApplicationModel.Resources.IResourceLoader2
 {
+extern(Windows):
+	final HSTRING GetString(HSTRING resource)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.IResourceLoader).abi_GetString(resource, &_ret));
+		return _ret;
+	}
+	final HSTRING GetStringForUri(Windows.Foundation.Uri uri)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Resources.IResourceLoader2).abi_GetStringForUri(uri, &_ret));
+		return _ret;
+	}
 }

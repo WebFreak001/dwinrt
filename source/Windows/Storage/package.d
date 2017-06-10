@@ -555,6 +555,95 @@ extern(Windows):
 
 interface ApplicationData : Windows.Storage.IApplicationData, Windows.Storage.IApplicationData2, Windows.Storage.IApplicationData3
 {
+extern(Windows):
+	final UINT32 Version()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData).get_Version(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetVersionAsync(UINT32 desiredVersion, Windows.Storage.ApplicationDataSetVersionHandler handler)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData).abi_SetVersionAsync(desiredVersion, handler, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ClearAllAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData).abi_ClearAllAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ClearAsync(Windows.Storage.ApplicationDataLocality locality)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData).abi_ClearAsync(locality, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.ApplicationDataContainer LocalSettings()
+	{
+		Windows.Storage.ApplicationDataContainer _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData).get_LocalSettings(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.ApplicationDataContainer RoamingSettings()
+	{
+		Windows.Storage.ApplicationDataContainer _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData).get_RoamingSettings(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFolder LocalFolder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData).get_LocalFolder(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFolder RoamingFolder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData).get_RoamingFolder(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFolder TemporaryFolder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData).get_TemporaryFolder(&_ret));
+		return _ret;
+	}
+	final void SignalDataChanged()
+	{
+		Debug.OK(this.as!(Windows.Storage.IApplicationData).abi_SignalDataChanged());
+	}
+	final UINT64 RoamingStorageQuota()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData).get_RoamingStorageQuota(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFolder LocalCacheFolder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData2).get_LocalCacheFolder(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFolder GetPublisherCacheFolder(HSTRING folderName)
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData3).abi_GetPublisherCacheFolder(folderName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ClearPublisherCacheFolderAsync(HSTRING folderName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData3).abi_ClearPublisherCacheFolderAsync(folderName, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFolder SharedLocalFolder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationData3).get_SharedLocalFolder(&_ret));
+		return _ret;
+	}
 }
 
 interface ApplicationDataCompositeValue : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
@@ -563,6 +652,41 @@ interface ApplicationDataCompositeValue : Windows.Foundation.Collections.IProper
 
 interface ApplicationDataContainer : Windows.Storage.IApplicationDataContainer
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationDataContainer).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.ApplicationDataLocality Locality()
+	{
+		Windows.Storage.ApplicationDataLocality _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationDataContainer).get_Locality(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Values()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationDataContainer).get_Values(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Storage.ApplicationDataContainer) Containers()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Storage.ApplicationDataContainer) _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationDataContainer).get_Containers(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.ApplicationDataContainer CreateContainer(HSTRING name, Windows.Storage.ApplicationDataCreateDisposition disposition)
+	{
+		Windows.Storage.ApplicationDataContainer _ret;
+		Debug.OK(this.as!(Windows.Storage.IApplicationDataContainer).abi_CreateContainer(name, disposition, &_ret));
+		return _ret;
+	}
+	final void DeleteContainer(HSTRING name)
+	{
+		Debug.OK(this.as!(Windows.Storage.IApplicationDataContainer).abi_DeleteContainer(name));
+	}
 }
 
 interface ApplicationDataContainerSettings : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
@@ -591,70 +715,933 @@ interface PathIO
 
 interface SetVersionDeferral : Windows.Storage.ISetVersionDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.Storage.ISetVersionDeferral).abi_Complete());
+	}
 }
 
 interface SetVersionRequest : Windows.Storage.ISetVersionRequest
 {
+extern(Windows):
+	final UINT32 CurrentVersion()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.ISetVersionRequest).get_CurrentVersion(&_ret));
+		return _ret;
+	}
+	final UINT32 DesiredVersion()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Storage.ISetVersionRequest).get_DesiredVersion(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.SetVersionDeferral GetDeferral()
+	{
+		Windows.Storage.SetVersionDeferral _ret;
+		Debug.OK(this.as!(Windows.Storage.ISetVersionRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface StorageFile : Windows.Storage.IStorageFile, Windows.Storage.Streams.IInputStreamReference, Windows.Storage.Streams.IRandomAccessStreamReference, Windows.Storage.IStorageItem, Windows.Storage.IStorageItemProperties, Windows.Storage.IStorageItemProperties2, Windows.Storage.IStorageItem2, Windows.Storage.IStorageItemPropertiesWithProvider, Windows.Storage.IStorageFilePropertiesWithAvailability, Windows.Storage.IStorageFile2
 {
+extern(Windows):
+	final HSTRING FileType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile).get_FileType(&_ret));
+		return _ret;
+	}
+	final HSTRING ContentType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile).get_ContentType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) OpenAsync(Windows.Storage.FileAccessMode accessMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile).abi_OpenAsync(accessMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageStreamTransaction) OpenTransactedWriteAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageStreamTransaction) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile).abi_OpenTransactedWriteAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CopyOverloadDefaultNameAndOptions(Windows.Storage.IStorageFolder destinationFolder)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile).abi_CopyOverloadDefaultNameAndOptions(destinationFolder, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CopyOverloadDefaultOptions(Windows.Storage.IStorageFolder destinationFolder, HSTRING desiredNewName)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile).abi_CopyOverloadDefaultOptions(destinationFolder, desiredNewName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CopyOverload(Windows.Storage.IStorageFolder destinationFolder, HSTRING desiredNewName, Windows.Storage.NameCollisionOption option)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile).abi_CopyOverload(destinationFolder, desiredNewName, option, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction CopyAndReplaceAsync(Windows.Storage.IStorageFile fileToReplace)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile).abi_CopyAndReplaceAsync(fileToReplace, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MoveOverloadDefaultNameAndOptions(Windows.Storage.IStorageFolder destinationFolder)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile).abi_MoveOverloadDefaultNameAndOptions(destinationFolder, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MoveOverloadDefaultOptions(Windows.Storage.IStorageFolder destinationFolder, HSTRING desiredNewName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile).abi_MoveOverloadDefaultOptions(destinationFolder, desiredNewName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MoveOverload(Windows.Storage.IStorageFolder destinationFolder, HSTRING desiredNewName, Windows.Storage.NameCollisionOption option)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile).abi_MoveOverload(destinationFolder, desiredNewName, option, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MoveAndReplaceAsync(Windows.Storage.IStorageFile fileToReplace)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile).abi_MoveAndReplaceAsync(fileToReplace, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IInputStream) OpenSequentialReadAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IInputStream) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IInputStreamReference).abi_OpenSequentialReadAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) OpenReadAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStreamReference).abi_OpenReadAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RenameAsyncOverloadDefaultOptions(HSTRING desiredName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).abi_RenameAsyncOverloadDefaultOptions(desiredName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RenameAsync(HSTRING desiredName, Windows.Storage.NameCollisionOption option)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).abi_RenameAsync(desiredName, option, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAsyncOverloadDefaultOptions()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).abi_DeleteAsyncOverloadDefaultOptions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAsync(Windows.Storage.StorageDeleteOption option)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).abi_DeleteAsync(option, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.BasicProperties) GetBasicPropertiesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.BasicProperties) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).abi_GetBasicPropertiesAsync(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING Path()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).get_Path(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.FileAttributes Attributes()
+	{
+		Windows.Storage.FileAttributes _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).get_Attributes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime DateCreated()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).get_DateCreated(&_ret));
+		return _ret;
+	}
+	final bool IsOfType(Windows.Storage.StorageItemTypes type)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).abi_IsOfType(type, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).abi_GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(mode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetThumbnailAsyncOverloadDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).abi_GetThumbnailAsyncOverloadDefaultOptions(mode, requestedSize, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize, Windows.Storage.FileProperties.ThumbnailOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).abi_GetThumbnailAsync(mode, requestedSize, options, &_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).get_DisplayType(&_ret));
+		return _ret;
+	}
+	final HSTRING FolderRelativeId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).get_FolderRelativeId(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.FileProperties.StorageItemContentProperties Properties()
+	{
+		Windows.Storage.FileProperties.StorageItemContentProperties _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetScaledImageAsThumbnailAsyncOverloadDefaultSizeDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties2).abi_GetScaledImageAsThumbnailAsyncOverloadDefaultSizeDefaultOptions(mode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetScaledImageAsThumbnailAsyncOverloadDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties2).abi_GetScaledImageAsThumbnailAsyncOverloadDefaultOptions(mode, requestedSize, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetScaledImageAsThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize, Windows.Storage.FileProperties.ThumbnailOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties2).abi_GetScaledImageAsThumbnailAsync(mode, requestedSize, options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) GetParentAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem2).abi_GetParentAsync(&_ret));
+		return _ret;
+	}
+	final bool IsEqual(Windows.Storage.IStorageItem item)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem2).abi_IsEqual(item, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageProvider Provider()
+	{
+		Windows.Storage.StorageProvider _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemPropertiesWithProvider).get_Provider(&_ret));
+		return _ret;
+	}
+	final bool IsAvailable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFilePropertiesWithAvailability).get_IsAvailable(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) OpenWithOptionsAsync(Windows.Storage.FileAccessMode accessMode, Windows.Storage.StorageOpenOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile2).abi_OpenWithOptionsAsync(accessMode, options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageStreamTransaction) OpenTransactedWriteWithOptionsAsync(Windows.Storage.StorageOpenOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageStreamTransaction) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFile2).abi_OpenTransactedWriteWithOptionsAsync(options, &_ret));
+		return _ret;
+	}
 }
 
 interface StorageFolder : Windows.Storage.IStorageFolder, Windows.Storage.IStorageItem, Windows.Storage.Search.IStorageFolderQueryOperations, Windows.Storage.IStorageItemProperties, Windows.Storage.IStorageItemProperties2, Windows.Storage.IStorageItem2, Windows.Storage.IStorageFolder2, Windows.Storage.IStorageItemPropertiesWithProvider
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CreateFileAsyncOverloadDefaultOptions(HSTRING desiredName)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFolder).abi_CreateFileAsyncOverloadDefaultOptions(desiredName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CreateFileAsync(HSTRING desiredName, Windows.Storage.CreationCollisionOption options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFolder).abi_CreateFileAsync(desiredName, options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) CreateFolderAsyncOverloadDefaultOptions(HSTRING desiredName)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFolder).abi_CreateFolderAsyncOverloadDefaultOptions(desiredName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) CreateFolderAsync(HSTRING desiredName, Windows.Storage.CreationCollisionOption options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFolder).abi_CreateFolderAsync(desiredName, options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) GetFileAsync(HSTRING name)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFolder).abi_GetFileAsync(name, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) GetFolderAsync(HSTRING name)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFolder).abi_GetFolderAsync(name, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) GetItemAsync(HSTRING name)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFolder).abi_GetItemAsync(name, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)) GetFilesAsyncOverloadDefaultOptionsStartAndCount()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFolder).abi_GetFilesAsyncOverloadDefaultOptionsStartAndCount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) GetFoldersAsyncOverloadDefaultOptionsStartAndCount()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFolder).abi_GetFoldersAsyncOverloadDefaultOptionsStartAndCount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) GetItemsAsyncOverloadDefaultStartAndCount()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFolder).abi_GetItemsAsyncOverloadDefaultStartAndCount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RenameAsyncOverloadDefaultOptions(HSTRING desiredName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).abi_RenameAsyncOverloadDefaultOptions(desiredName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RenameAsync(HSTRING desiredName, Windows.Storage.NameCollisionOption option)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).abi_RenameAsync(desiredName, option, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAsyncOverloadDefaultOptions()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).abi_DeleteAsyncOverloadDefaultOptions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAsync(Windows.Storage.StorageDeleteOption option)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).abi_DeleteAsync(option, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.BasicProperties) GetBasicPropertiesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.BasicProperties) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).abi_GetBasicPropertiesAsync(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING Path()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).get_Path(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.FileAttributes Attributes()
+	{
+		Windows.Storage.FileAttributes _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).get_Attributes(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime DateCreated()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).get_DateCreated(&_ret));
+		return _ret;
+	}
+	final bool IsOfType(Windows.Storage.StorageItemTypes type)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem).abi_IsOfType(type, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Search.IndexedState) GetIndexedStateAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Search.IndexedState) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_GetIndexedStateAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.StorageFileQueryResult CreateFileQueryOverloadDefault()
+	{
+		Windows.Storage.Search.StorageFileQueryResult _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_CreateFileQueryOverloadDefault(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.StorageFileQueryResult CreateFileQuery(Windows.Storage.Search.CommonFileQuery query)
+	{
+		Windows.Storage.Search.StorageFileQueryResult _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_CreateFileQuery(query, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.StorageFileQueryResult CreateFileQueryWithOptions(Windows.Storage.Search.QueryOptions queryOptions)
+	{
+		Windows.Storage.Search.StorageFileQueryResult _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_CreateFileQueryWithOptions(queryOptions, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.StorageFolderQueryResult CreateFolderQueryOverloadDefault()
+	{
+		Windows.Storage.Search.StorageFolderQueryResult _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_CreateFolderQueryOverloadDefault(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.StorageFolderQueryResult CreateFolderQuery(Windows.Storage.Search.CommonFolderQuery query)
+	{
+		Windows.Storage.Search.StorageFolderQueryResult _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_CreateFolderQuery(query, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.StorageFolderQueryResult CreateFolderQueryWithOptions(Windows.Storage.Search.QueryOptions queryOptions)
+	{
+		Windows.Storage.Search.StorageFolderQueryResult _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_CreateFolderQueryWithOptions(queryOptions, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.StorageItemQueryResult CreateItemQuery()
+	{
+		Windows.Storage.Search.StorageItemQueryResult _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_CreateItemQuery(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.StorageItemQueryResult CreateItemQueryWithOptions(Windows.Storage.Search.QueryOptions queryOptions)
+	{
+		Windows.Storage.Search.StorageItemQueryResult _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_CreateItemQueryWithOptions(queryOptions, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)) GetFilesAsync(Windows.Storage.Search.CommonFileQuery query, UINT32 startIndex, UINT32 maxItemsToRetrieve)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_GetFilesAsync(query, startIndex, maxItemsToRetrieve, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)) GetFilesAsyncOverloadDefaultStartAndCount(Windows.Storage.Search.CommonFileQuery query)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_GetFilesAsyncOverloadDefaultStartAndCount(query, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) GetFoldersAsync(Windows.Storage.Search.CommonFolderQuery query, UINT32 startIndex, UINT32 maxItemsToRetrieve)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_GetFoldersAsync(query, startIndex, maxItemsToRetrieve, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) GetFoldersAsyncOverloadDefaultStartAndCount(Windows.Storage.Search.CommonFolderQuery query)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_GetFoldersAsyncOverloadDefaultStartAndCount(query, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) GetItemsAsync(UINT32 startIndex, UINT32 maxItemsToRetrieve)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_GetItemsAsync(startIndex, maxItemsToRetrieve, &_ret));
+		return _ret;
+	}
+	final bool AreQueryOptionsSupported(Windows.Storage.Search.QueryOptions queryOptions)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_AreQueryOptionsSupported(queryOptions, &_ret));
+		return _ret;
+	}
+	final bool IsCommonFolderQuerySupported(Windows.Storage.Search.CommonFolderQuery query)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_IsCommonFolderQuerySupported(query, &_ret));
+		return _ret;
+	}
+	final bool IsCommonFileQuerySupported(Windows.Storage.Search.CommonFileQuery query)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageFolderQueryOperations).abi_IsCommonFileQuerySupported(query, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).abi_GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(mode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetThumbnailAsyncOverloadDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).abi_GetThumbnailAsyncOverloadDefaultOptions(mode, requestedSize, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize, Windows.Storage.FileProperties.ThumbnailOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).abi_GetThumbnailAsync(mode, requestedSize, options, &_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).get_DisplayType(&_ret));
+		return _ret;
+	}
+	final HSTRING FolderRelativeId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).get_FolderRelativeId(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.FileProperties.StorageItemContentProperties Properties()
+	{
+		Windows.Storage.FileProperties.StorageItemContentProperties _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetScaledImageAsThumbnailAsyncOverloadDefaultSizeDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties2).abi_GetScaledImageAsThumbnailAsyncOverloadDefaultSizeDefaultOptions(mode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetScaledImageAsThumbnailAsyncOverloadDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties2).abi_GetScaledImageAsThumbnailAsyncOverloadDefaultOptions(mode, requestedSize, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetScaledImageAsThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize, Windows.Storage.FileProperties.ThumbnailOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemProperties2).abi_GetScaledImageAsThumbnailAsync(mode, requestedSize, options, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) GetParentAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem2).abi_GetParentAsync(&_ret));
+		return _ret;
+	}
+	final bool IsEqual(Windows.Storage.IStorageItem item)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItem2).abi_IsEqual(item, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) TryGetItemAsync(HSTRING name)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageFolder2).abi_TryGetItemAsync(name, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageProvider Provider()
+	{
+		Windows.Storage.StorageProvider _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageItemPropertiesWithProvider).get_Provider(&_ret));
+		return _ret;
+	}
 }
 
 interface StorageLibrary : Windows.Storage.IStorageLibrary, Windows.Storage.IStorageLibrary2
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) RequestAddFolderAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageLibrary).abi_RequestAddFolderAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestRemoveFolderAsync(Windows.Storage.StorageFolder folder)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageLibrary).abi_RequestRemoveFolderAsync(folder, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IObservableVector!(Windows.Storage.StorageFolder) Folders()
+	{
+		Windows.Foundation.Collections.IObservableVector!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageLibrary).get_Folders(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFolder SaveFolder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageLibrary).get_SaveFolder(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageLibraryChangeTracker ChangeTracker()
+	{
+		Windows.Storage.StorageLibraryChangeTracker _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageLibrary2).get_ChangeTracker(&_ret));
+		return _ret;
+	}
 }
 
 interface StorageLibraryChange : Windows.Storage.IStorageLibraryChange
 {
+extern(Windows):
+	final Windows.Storage.StorageLibraryChangeType ChangeType()
+	{
+		Windows.Storage.StorageLibraryChangeType _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageLibraryChange).get_ChangeType(&_ret));
+		return _ret;
+	}
+	final HSTRING Path()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageLibraryChange).get_Path(&_ret));
+		return _ret;
+	}
+	final HSTRING PreviousPath()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageLibraryChange).get_PreviousPath(&_ret));
+		return _ret;
+	}
+	final bool IsOfType(Windows.Storage.StorageItemTypes type)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageLibraryChange).abi_IsOfType(type, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) GetStorageItemAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.IStorageItem) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageLibraryChange).abi_GetStorageItemAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface StorageLibraryChangeReader : Windows.Storage.IStorageLibraryChangeReader
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageLibraryChange)) ReadBatchAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageLibraryChange)) _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageLibraryChangeReader).abi_ReadBatchAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction AcceptChangesAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageLibraryChangeReader).abi_AcceptChangesAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface StorageLibraryChangeTracker : Windows.Storage.IStorageLibraryChangeTracker
 {
+extern(Windows):
+	final Windows.Storage.StorageLibraryChangeReader GetChangeReader()
+	{
+		Windows.Storage.StorageLibraryChangeReader _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageLibraryChangeTracker).abi_GetChangeReader(&_ret));
+		return _ret;
+	}
+	final void Enable()
+	{
+		Debug.OK(this.as!(Windows.Storage.IStorageLibraryChangeTracker).abi_Enable());
+	}
+	final void Reset()
+	{
+		Debug.OK(this.as!(Windows.Storage.IStorageLibraryChangeTracker).abi_Reset());
+	}
 }
 
 interface StorageProvider : Windows.Storage.IStorageProvider
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageProvider).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageProvider).get_DisplayName(&_ret));
+		return _ret;
+	}
 }
 
 interface StorageStreamTransaction : Windows.Storage.IStorageStreamTransaction, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Storage.Streams.IRandomAccessStream Stream()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageStreamTransaction).get_Stream(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction CommitAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Storage.IStorageStreamTransaction).abi_CommitAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface StreamedFileDataRequest : Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.IStreamedFileDataRequest
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) WriteAsync(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_WriteAsync(buffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_FlushAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final void FailAndClose(Windows.Storage.StreamedFileFailureMode failureMode)
+	{
+		Debug.OK(this.as!(Windows.Storage.IStreamedFileDataRequest).abi_FailAndClose(failureMode));
+	}
 }
 
 interface SystemAudioProperties : Windows.Storage.ISystemAudioProperties
 {
+extern(Windows):
+	final HSTRING EncodingBitrate()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemAudioProperties).get_EncodingBitrate(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemGPSProperties : Windows.Storage.ISystemGPSProperties
 {
+extern(Windows):
+	final HSTRING LatitudeDecimal()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemGPSProperties).get_LatitudeDecimal(&_ret));
+		return _ret;
+	}
+	final HSTRING LongitudeDecimal()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemGPSProperties).get_LongitudeDecimal(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemImageProperties : Windows.Storage.ISystemImageProperties
 {
+extern(Windows):
+	final HSTRING HorizontalSize()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemImageProperties).get_HorizontalSize(&_ret));
+		return _ret;
+	}
+	final HSTRING VerticalSize()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemImageProperties).get_VerticalSize(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemMediaProperties : Windows.Storage.ISystemMediaProperties
 {
+extern(Windows):
+	final HSTRING Duration()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMediaProperties).get_Duration(&_ret));
+		return _ret;
+	}
+	final HSTRING Producer()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMediaProperties).get_Producer(&_ret));
+		return _ret;
+	}
+	final HSTRING Publisher()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMediaProperties).get_Publisher(&_ret));
+		return _ret;
+	}
+	final HSTRING SubTitle()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMediaProperties).get_SubTitle(&_ret));
+		return _ret;
+	}
+	final HSTRING Writer()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMediaProperties).get_Writer(&_ret));
+		return _ret;
+	}
+	final HSTRING Year()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMediaProperties).get_Year(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemMusicProperties : Windows.Storage.ISystemMusicProperties
 {
+extern(Windows):
+	final HSTRING AlbumArtist()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMusicProperties).get_AlbumArtist(&_ret));
+		return _ret;
+	}
+	final HSTRING AlbumTitle()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMusicProperties).get_AlbumTitle(&_ret));
+		return _ret;
+	}
+	final HSTRING Artist()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMusicProperties).get_Artist(&_ret));
+		return _ret;
+	}
+	final HSTRING Composer()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMusicProperties).get_Composer(&_ret));
+		return _ret;
+	}
+	final HSTRING Conductor()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMusicProperties).get_Conductor(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayArtist()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMusicProperties).get_DisplayArtist(&_ret));
+		return _ret;
+	}
+	final HSTRING Genre()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMusicProperties).get_Genre(&_ret));
+		return _ret;
+	}
+	final HSTRING TrackNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemMusicProperties).get_TrackNumber(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemPhotoProperties : Windows.Storage.ISystemPhotoProperties
 {
+extern(Windows):
+	final HSTRING CameraManufacturer()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemPhotoProperties).get_CameraManufacturer(&_ret));
+		return _ret;
+	}
+	final HSTRING CameraModel()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemPhotoProperties).get_CameraModel(&_ret));
+		return _ret;
+	}
+	final HSTRING DateTaken()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemPhotoProperties).get_DateTaken(&_ret));
+		return _ret;
+	}
+	final HSTRING Orientation()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemPhotoProperties).get_Orientation(&_ret));
+		return _ret;
+	}
+	final HSTRING PeopleNames()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemPhotoProperties).get_PeopleNames(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemProperties
@@ -663,6 +1650,37 @@ interface SystemProperties
 
 interface SystemVideoProperties : Windows.Storage.ISystemVideoProperties
 {
+extern(Windows):
+	final HSTRING Director()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemVideoProperties).get_Director(&_ret));
+		return _ret;
+	}
+	final HSTRING FrameHeight()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemVideoProperties).get_FrameHeight(&_ret));
+		return _ret;
+	}
+	final HSTRING FrameWidth()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemVideoProperties).get_FrameWidth(&_ret));
+		return _ret;
+	}
+	final HSTRING Orientation()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemVideoProperties).get_Orientation(&_ret));
+		return _ret;
+	}
+	final HSTRING TotalBitrate()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.ISystemVideoProperties).get_TotalBitrate(&_ret));
+		return _ret;
+	}
 }
 
 enum ApplicationDataCreateDisposition

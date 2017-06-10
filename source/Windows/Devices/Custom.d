@@ -51,10 +51,66 @@ extern(Windows):
 
 interface CustomDevice : Windows.Devices.Custom.ICustomDevice
 {
+extern(Windows):
+	final Windows.Storage.Streams.IInputStream InputStream()
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Devices.Custom.ICustomDevice).get_InputStream(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream OutputStream()
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Devices.Custom.ICustomDevice).get_OutputStream(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(UINT32) SendIOControlAsync(Windows.Devices.Custom.IIOControlCode ioControlCode, Windows.Storage.Streams.IBuffer inputBuffer, Windows.Storage.Streams.IBuffer outputBuffer)
+	{
+		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Custom.ICustomDevice).abi_SendIOControlAsync(ioControlCode, inputBuffer, outputBuffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TrySendIOControlAsync(Windows.Devices.Custom.IIOControlCode ioControlCode, Windows.Storage.Streams.IBuffer inputBuffer, Windows.Storage.Streams.IBuffer outputBuffer)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Devices.Custom.ICustomDevice).abi_TrySendIOControlAsync(ioControlCode, inputBuffer, outputBuffer, &_ret));
+		return _ret;
+	}
 }
 
 interface IOControlCode : Windows.Devices.Custom.IIOControlCode
 {
+extern(Windows):
+	final Windows.Devices.Custom.IOControlAccessMode AccessMode()
+	{
+		Windows.Devices.Custom.IOControlAccessMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Custom.IIOControlCode).get_AccessMode(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Custom.IOControlBufferingMethod BufferingMethod()
+	{
+		Windows.Devices.Custom.IOControlBufferingMethod _ret;
+		Debug.OK(this.as!(Windows.Devices.Custom.IIOControlCode).get_BufferingMethod(&_ret));
+		return _ret;
+	}
+	final UINT16 Function()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Custom.IIOControlCode).get_Function(&_ret));
+		return _ret;
+	}
+	final UINT16 DeviceType()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Custom.IIOControlCode).get_DeviceType(&_ret));
+		return _ret;
+	}
+	final UINT32 ControlCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Custom.IIOControlCode).get_ControlCode(&_ret));
+		return _ret;
+	}
 }
 
 interface KnownDeviceTypes

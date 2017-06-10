@@ -130,6 +130,127 @@ extern(Windows):
 
 interface CompositeTransform3D : Windows.UI.Xaml.Media.Media3D.Transform3D, Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D
 {
+extern(Windows):
+	final double CenterX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).get_CenterX(&_ret));
+		return _ret;
+	}
+	final void CenterX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).set_CenterX(value));
+	}
+	final double CenterY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).get_CenterY(&_ret));
+		return _ret;
+	}
+	final void CenterY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).set_CenterY(value));
+	}
+	final double CenterZ()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).get_CenterZ(&_ret));
+		return _ret;
+	}
+	final void CenterZ(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).set_CenterZ(value));
+	}
+	final double RotationX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).get_RotationX(&_ret));
+		return _ret;
+	}
+	final void RotationX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).set_RotationX(value));
+	}
+	final double RotationY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).get_RotationY(&_ret));
+		return _ret;
+	}
+	final void RotationY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).set_RotationY(value));
+	}
+	final double RotationZ()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).get_RotationZ(&_ret));
+		return _ret;
+	}
+	final void RotationZ(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).set_RotationZ(value));
+	}
+	final double ScaleX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).get_ScaleX(&_ret));
+		return _ret;
+	}
+	final void ScaleX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).set_ScaleX(value));
+	}
+	final double ScaleY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).get_ScaleY(&_ret));
+		return _ret;
+	}
+	final void ScaleY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).set_ScaleY(value));
+	}
+	final double ScaleZ()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).get_ScaleZ(&_ret));
+		return _ret;
+	}
+	final void ScaleZ(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).set_ScaleZ(value));
+	}
+	final double TranslateX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).get_TranslateX(&_ret));
+		return _ret;
+	}
+	final void TranslateX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).set_TranslateX(value));
+	}
+	final double TranslateY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).get_TranslateY(&_ret));
+		return _ret;
+	}
+	final void TranslateY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).set_TranslateY(value));
+	}
+	final double TranslateZ()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).get_TranslateZ(&_ret));
+		return _ret;
+	}
+	final void TranslateZ(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).set_TranslateZ(value));
+	}
 }
 
 interface Matrix3DHelper : Windows.UI.Xaml.Media.Media3D.IMatrix3DHelper
@@ -138,6 +259,37 @@ interface Matrix3DHelper : Windows.UI.Xaml.Media.Media3D.IMatrix3DHelper
 
 interface PerspectiveTransform3D : Windows.UI.Xaml.Media.Media3D.Transform3D, Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3D
 {
+extern(Windows):
+	final double Depth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3D).get_Depth(&_ret));
+		return _ret;
+	}
+	final void Depth(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3D).set_Depth(value));
+	}
+	final double OffsetX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3D).get_OffsetX(&_ret));
+		return _ret;
+	}
+	final void OffsetX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3D).set_OffsetX(value));
+	}
+	final double OffsetY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3D).get_OffsetY(&_ret));
+		return _ret;
+	}
+	final void OffsetY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3D).set_OffsetY(value));
+	}
 }
 
 interface Transform3D : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Media3D.ITransform3D

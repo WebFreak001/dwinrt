@@ -182,42 +182,336 @@ extern(Windows):
 
 interface HolographicCamera : Windows.Graphics.Holographic.IHolographicCamera, Windows.Graphics.Holographic.IHolographicCamera2
 {
+extern(Windows):
+	final Windows.Foundation.Size RenderTargetSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCamera).get_RenderTargetSize(&_ret));
+		return _ret;
+	}
+	final double ViewportScaleFactor()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCamera).get_ViewportScaleFactor(&_ret));
+		return _ret;
+	}
+	final void ViewportScaleFactor(double value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCamera).set_ViewportScaleFactor(value));
+	}
+	final bool IsStereo()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCamera).get_IsStereo(&_ret));
+		return _ret;
+	}
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCamera).get_Id(&_ret));
+		return _ret;
+	}
+	final void SetNearPlaneDistance(double value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCamera).abi_SetNearPlaneDistance(value));
+	}
+	final void SetFarPlaneDistance(double value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCamera).abi_SetFarPlaneDistance(value));
+	}
+	final Windows.Graphics.Holographic.HolographicCameraViewportParameters LeftViewportParameters()
+	{
+		Windows.Graphics.Holographic.HolographicCameraViewportParameters _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCamera2).get_LeftViewportParameters(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Holographic.HolographicCameraViewportParameters RightViewportParameters()
+	{
+		Windows.Graphics.Holographic.HolographicCameraViewportParameters _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCamera2).get_RightViewportParameters(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Holographic.HolographicDisplay Display()
+	{
+		Windows.Graphics.Holographic.HolographicDisplay _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCamera2).get_Display(&_ret));
+		return _ret;
+	}
 }
 
 interface HolographicCameraPose : Windows.Graphics.Holographic.IHolographicCameraPose
 {
+extern(Windows):
+	final Windows.Graphics.Holographic.HolographicCamera HolographicCamera()
+	{
+		Windows.Graphics.Holographic.HolographicCamera _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraPose).get_HolographicCamera(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect Viewport()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraPose).get_Viewport(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Graphics.Holographic.HolographicStereoTransform) TryGetViewTransform(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.Foundation.IReference!(Windows.Graphics.Holographic.HolographicStereoTransform) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraPose).abi_TryGetViewTransform(coordinateSystem, &_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Holographic.HolographicStereoTransform ProjectionTransform()
+	{
+		Windows.Graphics.Holographic.HolographicStereoTransform _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraPose).get_ProjectionTransform(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Perception.Spatial.SpatialBoundingFrustum) TryGetCullingFrustum(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.Foundation.IReference!(Windows.Perception.Spatial.SpatialBoundingFrustum) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraPose).abi_TryGetCullingFrustum(coordinateSystem, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Perception.Spatial.SpatialBoundingFrustum) TryGetVisibleFrustum(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.Foundation.IReference!(Windows.Perception.Spatial.SpatialBoundingFrustum) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraPose).abi_TryGetVisibleFrustum(coordinateSystem, &_ret));
+		return _ret;
+	}
+	final double NearPlaneDistance()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraPose).get_NearPlaneDistance(&_ret));
+		return _ret;
+	}
+	final double FarPlaneDistance()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraPose).get_FarPlaneDistance(&_ret));
+		return _ret;
+	}
 }
 
 interface HolographicCameraRenderingParameters : Windows.Graphics.Holographic.IHolographicCameraRenderingParameters, Windows.Graphics.Holographic.IHolographicCameraRenderingParameters2
 {
+extern(Windows):
+	final void SetFocusPoint(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters).abi_SetFocusPoint(coordinateSystem, position));
+	}
+	final void SetFocusPointWithNormal(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Vector3 normal)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters).abi_SetFocusPointWithNormal(coordinateSystem, position, normal));
+	}
+	final void SetFocusPointWithNormalLinearVelocity(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Vector3 normal, Windows.Foundation.Numerics.Vector3 linearVelocity)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters).abi_SetFocusPointWithNormalLinearVelocity(coordinateSystem, position, normal, linearVelocity));
+	}
+	final Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice Direct3D11Device()
+	{
+		Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters).get_Direct3D11Device(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface Direct3D11BackBuffer()
+	{
+		Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters).get_Direct3D11BackBuffer(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Holographic.HolographicReprojectionMode ReprojectionMode()
+	{
+		Windows.Graphics.Holographic.HolographicReprojectionMode _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters2).get_ReprojectionMode(&_ret));
+		return _ret;
+	}
+	final void ReprojectionMode(Windows.Graphics.Holographic.HolographicReprojectionMode value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters2).set_ReprojectionMode(value));
+	}
+	final void CommitDirect3D11DepthBuffer(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters2).abi_CommitDirect3D11DepthBuffer(value));
+	}
 }
 
 interface HolographicCameraViewportParameters : Windows.Graphics.Holographic.IHolographicCameraViewportParameters
 {
+extern(Windows):
+	final Windows.Foundation.Numerics.Vector2* HiddenAreaMesh(UINT32* out___valueSize)
+	{
+		Windows.Foundation.Numerics.Vector2* _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraViewportParameters).get_HiddenAreaMesh(out___valueSize, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Numerics.Vector2* VisibleAreaMesh(UINT32* out___valueSize)
+	{
+		Windows.Foundation.Numerics.Vector2* _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicCameraViewportParameters).get_VisibleAreaMesh(out___valueSize, &_ret));
+		return _ret;
+	}
 }
 
 interface HolographicDisplay : Windows.Graphics.Holographic.IHolographicDisplay
 {
+extern(Windows):
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicDisplay).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size MaxViewportSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicDisplay).get_MaxViewportSize(&_ret));
+		return _ret;
+	}
+	final bool IsStereo()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicDisplay).get_IsStereo(&_ret));
+		return _ret;
+	}
+	final bool IsOpaque()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicDisplay).get_IsOpaque(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Holographic.HolographicAdapterId AdapterId()
+	{
+		Windows.Graphics.Holographic.HolographicAdapterId _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicDisplay).get_AdapterId(&_ret));
+		return _ret;
+	}
+	final Windows.Perception.Spatial.SpatialLocator SpatialLocator()
+	{
+		Windows.Perception.Spatial.SpatialLocator _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicDisplay).get_SpatialLocator(&_ret));
+		return _ret;
+	}
 }
 
 interface HolographicFrame : Windows.Graphics.Holographic.IHolographicFrame
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Holographic.HolographicCamera) AddedCameras()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Holographic.HolographicCamera) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicFrame).get_AddedCameras(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Holographic.HolographicCamera) RemovedCameras()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Holographic.HolographicCamera) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicFrame).get_RemovedCameras(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Holographic.HolographicCameraRenderingParameters GetRenderingParameters(Windows.Graphics.Holographic.HolographicCameraPose cameraPose)
+	{
+		Windows.Graphics.Holographic.HolographicCameraRenderingParameters _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicFrame).abi_GetRenderingParameters(cameraPose, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicFrame).get_Duration(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Holographic.HolographicFramePrediction CurrentPrediction()
+	{
+		Windows.Graphics.Holographic.HolographicFramePrediction _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicFrame).get_CurrentPrediction(&_ret));
+		return _ret;
+	}
+	final void UpdateCurrentPrediction()
+	{
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicFrame).abi_UpdateCurrentPrediction());
+	}
+	final Windows.Graphics.Holographic.HolographicFramePresentResult PresentUsingCurrentPrediction()
+	{
+		Windows.Graphics.Holographic.HolographicFramePresentResult _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicFrame).abi_PresentUsingCurrentPrediction(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Holographic.HolographicFramePresentResult PresentUsingCurrentPredictionWithBehavior(Windows.Graphics.Holographic.HolographicFramePresentWaitBehavior waitBehavior)
+	{
+		Windows.Graphics.Holographic.HolographicFramePresentResult _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicFrame).abi_PresentUsingCurrentPredictionWithBehavior(waitBehavior, &_ret));
+		return _ret;
+	}
+	final void WaitForFrameToFinish()
+	{
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicFrame).abi_WaitForFrameToFinish());
+	}
 }
 
 interface HolographicFramePrediction : Windows.Graphics.Holographic.IHolographicFramePrediction
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Holographic.HolographicCameraPose) CameraPoses()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Holographic.HolographicCameraPose) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicFramePrediction).get_CameraPoses(&_ret));
+		return _ret;
+	}
+	final Windows.Perception.PerceptionTimestamp Timestamp()
+	{
+		Windows.Perception.PerceptionTimestamp _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicFramePrediction).get_Timestamp(&_ret));
+		return _ret;
+	}
 }
 
 interface HolographicSpace : Windows.Graphics.Holographic.IHolographicSpace
 {
+extern(Windows):
+	final Windows.Graphics.Holographic.HolographicAdapterId PrimaryAdapterId()
+	{
+		Windows.Graphics.Holographic.HolographicAdapterId _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicSpace).get_PrimaryAdapterId(&_ret));
+		return _ret;
+	}
+	final void SetDirect3D11Device(Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice value)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicSpace).abi_SetDirect3D11Device(value));
+	}
+	final Windows.Graphics.Holographic.HolographicFrame CreateNextFrame()
+	{
+		Windows.Graphics.Holographic.HolographicFrame _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicSpace).abi_CreateNextFrame(&_ret));
+		return _ret;
+	}
 }
 
 interface HolographicSpaceCameraAddedEventArgs : Windows.Graphics.Holographic.IHolographicSpaceCameraAddedEventArgs
 {
+extern(Windows):
+	final Windows.Graphics.Holographic.HolographicCamera Camera()
+	{
+		Windows.Graphics.Holographic.HolographicCamera _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicSpaceCameraAddedEventArgs).get_Camera(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicSpaceCameraAddedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface HolographicSpaceCameraRemovedEventArgs : Windows.Graphics.Holographic.IHolographicSpaceCameraRemovedEventArgs
 {
+extern(Windows):
+	final Windows.Graphics.Holographic.HolographicCamera Camera()
+	{
+		Windows.Graphics.Holographic.HolographicCamera _ret;
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicSpaceCameraRemovedEventArgs).get_Camera(&_ret));
+		return _ret;
+	}
 }
 
 enum HolographicFramePresentResult

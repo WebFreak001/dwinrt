@@ -446,178 +446,1788 @@ extern(Windows):
 
 interface AppointmentsProviderAddAppointmentActivatedEventArgs : Windows.ApplicationModel.Activation.IAppointmentsProviderAddAppointmentActivatedEventArgs, Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.AppointmentsProvider.AddAppointmentOperation AddAppointmentOperation()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentsProvider.AddAppointmentOperation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderAddAppointmentActivatedEventArgs).get_AddAppointmentOperation(&_ret));
+		return _ret;
+	}
+	final HSTRING Verb()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs).get_Verb(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentsProviderRemoveAppointmentActivatedEventArgs : Windows.ApplicationModel.Activation.IAppointmentsProviderRemoveAppointmentActivatedEventArgs, Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.AppointmentsProvider.RemoveAppointmentOperation RemoveAppointmentOperation()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentsProvider.RemoveAppointmentOperation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderRemoveAppointmentActivatedEventArgs).get_RemoveAppointmentOperation(&_ret));
+		return _ret;
+	}
+	final HSTRING Verb()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs).get_Verb(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentsProviderReplaceAppointmentActivatedEventArgs : Windows.ApplicationModel.Activation.IAppointmentsProviderReplaceAppointmentActivatedEventArgs, Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.ApplicationModel.Appointments.AppointmentsProvider.ReplaceAppointmentOperation ReplaceAppointmentOperation()
+	{
+		Windows.ApplicationModel.Appointments.AppointmentsProvider.ReplaceAppointmentOperation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderReplaceAppointmentActivatedEventArgs).get_ReplaceAppointmentOperation(&_ret));
+		return _ret;
+	}
+	final HSTRING Verb()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs).get_Verb(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentsProviderShowAppointmentDetailsActivatedEventArgs : Windows.ApplicationModel.Activation.IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs, Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) InstanceStartDate()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs).get_InstanceStartDate(&_ret));
+		return _ret;
+	}
+	final HSTRING LocalId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs).get_LocalId(&_ret));
+		return _ret;
+	}
+	final HSTRING RoamingId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs).get_RoamingId(&_ret));
+		return _ret;
+	}
+	final HSTRING Verb()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs).get_Verb(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentsProviderShowTimeFrameActivatedEventArgs : Windows.ApplicationModel.Activation.IAppointmentsProviderShowTimeFrameActivatedEventArgs, Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.Foundation.DateTime TimeToShow()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderShowTimeFrameActivatedEventArgs).get_TimeToShow(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderShowTimeFrameActivatedEventArgs).get_Duration(&_ret));
+		return _ret;
+	}
+	final HSTRING Verb()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs).get_Verb(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface BackgroundActivatedEventArgs : Windows.ApplicationModel.Activation.IBackgroundActivatedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Background.IBackgroundTaskInstance TaskInstance()
+	{
+		Windows.ApplicationModel.Background.IBackgroundTaskInstance _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IBackgroundActivatedEventArgs).get_TaskInstance(&_ret));
+		return _ret;
+	}
 }
 
 interface CachedFileUpdaterActivatedEventArgs : Windows.ApplicationModel.Activation.ICachedFileUpdaterActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.Storage.Provider.CachedFileUpdaterUI CachedFileUpdaterUI()
+	{
+		Windows.Storage.Provider.CachedFileUpdaterUI _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ICachedFileUpdaterActivatedEventArgs).get_CachedFileUpdaterUI(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface CameraSettingsActivatedEventArgs : Windows.ApplicationModel.Activation.ICameraSettingsActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final IInspectable VideoDeviceController()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ICameraSettingsActivatedEventArgs).get_VideoDeviceController(&_ret));
+		return _ret;
+	}
+	final IInspectable VideoDeviceExtension()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ICameraSettingsActivatedEventArgs).get_VideoDeviceExtension(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactCallActivatedEventArgs : Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final HSTRING ServiceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs).get_ServiceId(&_ret));
+		return _ret;
+	}
+	final HSTRING ServiceUserId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs).get_ServiceUserId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.Contact Contact()
+	{
+		Windows.ApplicationModel.Contacts.Contact _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final HSTRING Verb()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactActivatedEventArgs).get_Verb(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactMapActivatedEventArgs : Windows.ApplicationModel.Activation.IContactMapActivatedEventArgs, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.ContactAddress Address()
+	{
+		Windows.ApplicationModel.Contacts.ContactAddress _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactMapActivatedEventArgs).get_Address(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.Contact Contact()
+	{
+		Windows.ApplicationModel.Contacts.Contact _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactMapActivatedEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final HSTRING Verb()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactActivatedEventArgs).get_Verb(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactMessageActivatedEventArgs : Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final HSTRING ServiceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs).get_ServiceId(&_ret));
+		return _ret;
+	}
+	final HSTRING ServiceUserId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs).get_ServiceUserId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.Contact Contact()
+	{
+		Windows.ApplicationModel.Contacts.Contact _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final HSTRING Verb()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactActivatedEventArgs).get_Verb(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactPanelActivatedEventArgs : Windows.ApplicationModel.Activation.IContactPanelActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.ContactPanel ContactPanel()
+	{
+		Windows.ApplicationModel.Contacts.ContactPanel _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactPanelActivatedEventArgs).get_ContactPanel(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.Contact Contact()
+	{
+		Windows.ApplicationModel.Contacts.Contact _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactPanelActivatedEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactPickerActivatedEventArgs : Windows.ApplicationModel.Activation.IContactPickerActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.Provider.ContactPickerUI ContactPickerUI()
+	{
+		Windows.ApplicationModel.Contacts.Provider.ContactPickerUI _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactPickerActivatedEventArgs).get_ContactPickerUI(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactPostActivatedEventArgs : Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final HSTRING ServiceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs).get_ServiceId(&_ret));
+		return _ret;
+	}
+	final HSTRING ServiceUserId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs).get_ServiceUserId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.Contact Contact()
+	{
+		Windows.ApplicationModel.Contacts.Contact _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final HSTRING Verb()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactActivatedEventArgs).get_Verb(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactVideoCallActivatedEventArgs : Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final HSTRING ServiceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs).get_ServiceId(&_ret));
+		return _ret;
+	}
+	final HSTRING ServiceUserId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs).get_ServiceUserId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.Contact Contact()
+	{
+		Windows.ApplicationModel.Contacts.Contact _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final HSTRING Verb()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactActivatedEventArgs).get_Verb(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 interface DeviceActivatedEventArgs : Windows.ApplicationModel.Activation.IDeviceActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs, Windows.ApplicationModel.Activation.IViewSwitcherProvider, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final HSTRING DeviceInformationId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IDeviceActivatedEventArgs).get_DeviceInformationId(&_ret));
+		return _ret;
+	}
+	final HSTRING Verb()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IDeviceActivatedEventArgs).get_Verb(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final INT32 CurrentlyShownApplicationViewId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
+	{
+		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface DevicePairingActivatedEventArgs : Windows.ApplicationModel.Activation.IDevicePairingActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceInformation DeviceInformation()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IDevicePairingActivatedEventArgs).get_DeviceInformation(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface DialReceiverActivatedEventArgs : Windows.ApplicationModel.Activation.IDialReceiverActivatedEventArgs, Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs, Windows.ApplicationModel.Activation.IViewSwitcherProvider, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final HSTRING AppName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IDialReceiverActivatedEventArgs).get_AppName(&_ret));
+		return _ret;
+	}
+	final HSTRING Arguments()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs).get_Arguments(&_ret));
+		return _ret;
+	}
+	final HSTRING TileId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs).get_TileId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final INT32 CurrentlyShownApplicationViewId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
+	{
+		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface FileActivatedEventArgs : Windows.ApplicationModel.Activation.IFileActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IFileActivatedEventArgsWithNeighboringFiles, Windows.ApplicationModel.Activation.IFileActivatedEventArgsWithCallerPackageFamilyName, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs, Windows.ApplicationModel.Activation.IViewSwitcherProvider, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem) Files()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileActivatedEventArgs).get_Files(&_ret));
+		return _ret;
+	}
+	final HSTRING Verb()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileActivatedEventArgs).get_Verb(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Search.StorageFileQueryResult NeighboringFilesQuery()
+	{
+		Windows.Storage.Search.StorageFileQueryResult _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileActivatedEventArgsWithNeighboringFiles).get_NeighboringFilesQuery(&_ret));
+		return _ret;
+	}
+	final HSTRING CallerPackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileActivatedEventArgsWithCallerPackageFamilyName).get_CallerPackageFamilyName(&_ret));
+		return _ret;
+	}
+	final INT32 CurrentlyShownApplicationViewId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
+	{
+		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface FileOpenPickerActivatedEventArgs : Windows.ApplicationModel.Activation.IFileOpenPickerActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IFileOpenPickerActivatedEventArgs2, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.Storage.Pickers.Provider.FileOpenPickerUI FileOpenPickerUI()
+	{
+		Windows.Storage.Pickers.Provider.FileOpenPickerUI _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileOpenPickerActivatedEventArgs).get_FileOpenPickerUI(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final HSTRING CallerPackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileOpenPickerActivatedEventArgs2).get_CallerPackageFamilyName(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface FileOpenPickerContinuationEventArgs : Windows.ApplicationModel.Activation.IFileOpenPickerContinuationEventArgs, Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile) Files()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileOpenPickerContinuationEventArgs).get_Files(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.ValueSet ContinuationData()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs).get_ContinuationData(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface FileSavePickerActivatedEventArgs : Windows.ApplicationModel.Activation.IFileSavePickerActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IFileSavePickerActivatedEventArgs2, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.Storage.Pickers.Provider.FileSavePickerUI FileSavePickerUI()
+	{
+		Windows.Storage.Pickers.Provider.FileSavePickerUI _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileSavePickerActivatedEventArgs).get_FileSavePickerUI(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final HSTRING CallerPackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileSavePickerActivatedEventArgs2).get_CallerPackageFamilyName(&_ret));
+		return _ret;
+	}
+	final HSTRING EnterpriseId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileSavePickerActivatedEventArgs2).get_EnterpriseId(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface FileSavePickerContinuationEventArgs : Windows.ApplicationModel.Activation.IFileSavePickerContinuationEventArgs, Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.Storage.StorageFile File()
+	{
+		Windows.Storage.StorageFile _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileSavePickerContinuationEventArgs).get_File(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.ValueSet ContinuationData()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs).get_ContinuationData(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface FolderPickerContinuationEventArgs : Windows.ApplicationModel.Activation.IFolderPickerContinuationEventArgs, Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.Storage.StorageFolder Folder()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFolderPickerContinuationEventArgs).get_Folder(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.ValueSet ContinuationData()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs).get_ContinuationData(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface LaunchActivatedEventArgs : Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs, Windows.ApplicationModel.Activation.IPrelaunchActivatedEventArgs, Windows.ApplicationModel.Activation.IViewSwitcherProvider, Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs2, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final HSTRING Arguments()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs).get_Arguments(&_ret));
+		return _ret;
+	}
+	final HSTRING TileId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs).get_TileId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final INT32 CurrentlyShownApplicationViewId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		return _ret;
+	}
+	final bool PrelaunchActivated()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IPrelaunchActivatedEventArgs).get_PrelaunchActivated(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
+	{
+		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.TileActivatedInfo TileActivatedInfo()
+	{
+		Windows.ApplicationModel.Activation.TileActivatedInfo _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs2).get_TileActivatedInfo(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface LockScreenActivatedEventArgs : Windows.ApplicationModel.Activation.ILockScreenActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final IInspectable Info()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILockScreenActivatedEventArgs).get_Info(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface LockScreenCallActivatedEventArgs : Windows.ApplicationModel.Activation.ILockScreenCallActivatedEventArgs, Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs, Windows.ApplicationModel.Activation.IViewSwitcherProvider
 {
+extern(Windows):
+	final Windows.ApplicationModel.Calls.LockScreenCallUI CallUI()
+	{
+		Windows.ApplicationModel.Calls.LockScreenCallUI _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILockScreenCallActivatedEventArgs).get_CallUI(&_ret));
+		return _ret;
+	}
+	final HSTRING Arguments()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs).get_Arguments(&_ret));
+		return _ret;
+	}
+	final HSTRING TileId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs).get_TileId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final INT32 CurrentlyShownApplicationViewId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
+	{
+		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		return _ret;
+	}
 }
 
 interface LockScreenComponentActivatedEventArgs : Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 interface PickerReturnedActivatedEventArgs : Windows.ApplicationModel.Activation.IPickerReturnedActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final HSTRING PickerOperationId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IPickerReturnedActivatedEventArgs).get_PickerOperationId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 interface Print3DWorkflowActivatedEventArgs : Windows.ApplicationModel.Activation.IPrint3DWorkflowActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Printers.Extensions.Print3DWorkflow Workflow()
+	{
+		Windows.Devices.Printers.Extensions.Print3DWorkflow _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IPrint3DWorkflowActivatedEventArgs).get_Workflow(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintTaskSettingsActivatedEventArgs : Windows.ApplicationModel.Activation.IPrintTaskSettingsActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Printers.Extensions.PrintTaskConfiguration Configuration()
+	{
+		Windows.Devices.Printers.Extensions.PrintTaskConfiguration _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IPrintTaskSettingsActivatedEventArgs).get_Configuration(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 interface ProtocolActivatedEventArgs : Windows.ApplicationModel.Activation.IProtocolActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs, Windows.ApplicationModel.Activation.IViewSwitcherProvider, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgs).get_Uri(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final HSTRING CallerPackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData).get_CallerPackageFamilyName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.ValueSet Data()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData).get_Data(&_ret));
+		return _ret;
+	}
+	final INT32 CurrentlyShownApplicationViewId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
+	{
+		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface ProtocolForResultsActivatedEventArgs : Windows.ApplicationModel.Activation.IProtocolForResultsActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IProtocolActivatedEventArgs, Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs, Windows.ApplicationModel.Activation.IViewSwitcherProvider, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.System.ProtocolForResultsOperation ProtocolForResultsOperation()
+	{
+		Windows.System.ProtocolForResultsOperation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolForResultsActivatedEventArgs).get_ProtocolForResultsOperation(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgs).get_Uri(&_ret));
+		return _ret;
+	}
+	final HSTRING CallerPackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData).get_CallerPackageFamilyName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.ValueSet Data()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData).get_Data(&_ret));
+		return _ret;
+	}
+	final INT32 CurrentlyShownApplicationViewId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
+	{
+		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface RestrictedLaunchActivatedEventArgs : Windows.ApplicationModel.Activation.IRestrictedLaunchActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final IInspectable SharedContext()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IRestrictedLaunchActivatedEventArgs).get_SharedContext(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchActivatedEventArgs : Windows.ApplicationModel.Activation.ISearchActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs, Windows.ApplicationModel.Activation.ISearchActivatedEventArgsWithLinguisticDetails, Windows.ApplicationModel.Activation.IViewSwitcherProvider, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final HSTRING QueryText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ISearchActivatedEventArgs).get_QueryText(&_ret));
+		return _ret;
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ISearchActivatedEventArgs).get_Language(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final INT32 CurrentlyShownApplicationViewId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails LinguisticDetails()
+	{
+		Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ISearchActivatedEventArgsWithLinguisticDetails).get_LinguisticDetails(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
+	{
+		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface ShareTargetActivatedEventArgs : Windows.ApplicationModel.Activation.IShareTargetActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation ShareOperation()
+	{
+		Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IShareTargetActivatedEventArgs).get_ShareOperation(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface SplashScreen : Windows.ApplicationModel.Activation.ISplashScreen
 {
+extern(Windows):
+	final Windows.Foundation.Rect ImageLocation()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ISplashScreen).get_ImageLocation(&_ret));
+		return _ret;
+	}
 }
 
 interface TileActivatedInfo : Windows.ApplicationModel.Activation.ITileActivatedInfo
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ShownTileNotification) RecentlyShownNotifications()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ShownTileNotification) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ITileActivatedInfo).get_RecentlyShownNotifications(&_ret));
+		return _ret;
+	}
 }
 
 interface ToastNotificationActivatedEventArgs : Windows.ApplicationModel.Activation.IToastNotificationActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs
 {
+extern(Windows):
+	final HSTRING Argument()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IToastNotificationActivatedEventArgs).get_Argument(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.ValueSet UserInput()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IToastNotificationActivatedEventArgs).get_UserInput(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
+	final INT32 CurrentlyShownApplicationViewId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		return _ret;
+	}
 }
 
 interface UserDataAccountProviderActivatedEventArgs : Windows.ApplicationModel.Activation.IUserDataAccountProviderActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation Operation()
+	{
+		Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IUserDataAccountProviderActivatedEventArgs).get_Operation(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 interface VoiceCommandActivatedEventArgs : Windows.ApplicationModel.Activation.IVoiceCommandActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.Media.SpeechRecognition.SpeechRecognitionResult Result()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionResult _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IVoiceCommandActivatedEventArgs).get_Result(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface WalletActionActivatedEventArgs : Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final HSTRING ItemId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs).get_ItemId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Wallet.WalletActionKind ActionKind()
+	{
+		Windows.ApplicationModel.Wallet.WalletActionKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs).get_ActionKind(&_ret));
+		return _ret;
+	}
+	final HSTRING ActionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs).get_ActionId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 interface WebAccountProviderActivatedEventArgs : Windows.ApplicationModel.Activation.IWebAccountProviderActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
+extern(Windows):
+	final Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation Operation()
+	{
+		Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IWebAccountProviderActivatedEventArgs).get_Operation(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface WebAuthenticationBrokerContinuationEventArgs : Windows.ApplicationModel.Activation.IWebAuthenticationBrokerContinuationEventArgs, Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
+extern(Windows):
+	final Windows.Security.Authentication.Web.WebAuthenticationResult WebAuthenticationResult()
+	{
+		Windows.Security.Authentication.Web.WebAuthenticationResult _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IWebAuthenticationBrokerContinuationEventArgs).get_WebAuthenticationResult(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.ValueSet ContinuationData()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs).get_ContinuationData(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ActivationKind Kind()
+	{
+		Windows.ApplicationModel.Activation.ActivationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
+	{
+		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
+	{
+		Windows.ApplicationModel.Activation.SplashScreen _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		return _ret;
+	}
 }
 
 enum ActivationKind

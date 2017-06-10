@@ -23,4 +23,29 @@ extern(Windows):
 
 interface DataProtectionProvider : Windows.Security.Cryptography.DataProtection.IDataProtectionProvider
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) ProtectAsync(Windows.Storage.Streams.IBuffer data)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.DataProtection.IDataProtectionProvider).abi_ProtectAsync(data, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) UnprotectAsync(Windows.Storage.Streams.IBuffer data)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.DataProtection.IDataProtectionProvider).abi_UnprotectAsync(data, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ProtectStreamAsync(Windows.Storage.Streams.IInputStream src, Windows.Storage.Streams.IOutputStream dest)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.DataProtection.IDataProtectionProvider).abi_ProtectStreamAsync(src, dest, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction UnprotectStreamAsync(Windows.Storage.Streams.IInputStream src, Windows.Storage.Streams.IOutputStream dest)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Security.Cryptography.DataProtection.IDataProtectionProvider).abi_UnprotectStreamAsync(src, dest, &_ret));
+		return _ret;
+	}
 }

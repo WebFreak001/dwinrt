@@ -45,10 +45,60 @@ interface PlatformDiagnosticActions
 
 interface PlatformDiagnosticTraceInfo : Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo
 {
+extern(Windows):
+	final GUID ScenarioId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_ScenarioId(&_ret));
+		return _ret;
+	}
+	final UINT64 ProfileHash()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_ProfileHash(&_ret));
+		return _ret;
+	}
+	final bool IsExclusive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_IsExclusive(&_ret));
+		return _ret;
+	}
+	final bool IsAutoLogger()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_IsAutoLogger(&_ret));
+		return _ret;
+	}
+	final INT64 MaxTraceDurationFileTime()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_MaxTraceDurationFileTime(&_ret));
+		return _ret;
+	}
+	final Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTracePriority Priority()
+	{
+		Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTracePriority _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_Priority(&_ret));
+		return _ret;
+	}
 }
 
 interface PlatformDiagnosticTraceRuntimeInfo : Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceRuntimeInfo
 {
+extern(Windows):
+	final INT64 RuntimeFileTime()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceRuntimeInfo).get_RuntimeFileTime(&_ret));
+		return _ret;
+	}
+	final INT64 EtwRuntimeFileTime()
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceRuntimeInfo).get_EtwRuntimeFileTime(&_ret));
+		return _ret;
+	}
 }
 
 enum PlatformDiagnosticActionState

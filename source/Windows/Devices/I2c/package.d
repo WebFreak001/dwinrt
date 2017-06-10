@@ -72,14 +72,99 @@ extern(Windows):
 
 interface I2cConnectionSettings : Windows.Devices.I2c.II2cConnectionSettings
 {
+extern(Windows):
+	final INT32 SlaveAddress()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cConnectionSettings).get_SlaveAddress(&_ret));
+		return _ret;
+	}
+	final void SlaveAddress(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cConnectionSettings).set_SlaveAddress(value));
+	}
+	final Windows.Devices.I2c.I2cBusSpeed BusSpeed()
+	{
+		Windows.Devices.I2c.I2cBusSpeed _ret;
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cConnectionSettings).get_BusSpeed(&_ret));
+		return _ret;
+	}
+	final void BusSpeed(Windows.Devices.I2c.I2cBusSpeed value)
+	{
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cConnectionSettings).set_BusSpeed(value));
+	}
+	final Windows.Devices.I2c.I2cSharingMode SharingMode()
+	{
+		Windows.Devices.I2c.I2cSharingMode _ret;
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cConnectionSettings).get_SharingMode(&_ret));
+		return _ret;
+	}
+	final void SharingMode(Windows.Devices.I2c.I2cSharingMode value)
+	{
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cConnectionSettings).set_SharingMode(value));
+	}
 }
 
 interface I2cController : Windows.Devices.I2c.II2cController
 {
+extern(Windows):
+	final Windows.Devices.I2c.I2cDevice GetDevice(Windows.Devices.I2c.I2cConnectionSettings settings)
+	{
+		Windows.Devices.I2c.I2cDevice _ret;
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cController).abi_GetDevice(settings, &_ret));
+		return _ret;
+	}
 }
 
 interface I2cDevice : Windows.Devices.I2c.II2cDevice, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.I2c.I2cConnectionSettings ConnectionSettings()
+	{
+		Windows.Devices.I2c.I2cConnectionSettings _ret;
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).get_ConnectionSettings(&_ret));
+		return _ret;
+	}
+	final void Write(UINT32 __bufferSize, BYTE* buffer)
+	{
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_Write(__bufferSize, buffer));
+	}
+	final Windows.Devices.I2c.I2cTransferResult WritePartial(UINT32 __bufferSize, BYTE* buffer)
+	{
+		Windows.Devices.I2c.I2cTransferResult _ret;
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_WritePartial(__bufferSize, buffer, &_ret));
+		return _ret;
+	}
+	final void Read(UINT32 __bufferSize, BYTE* out_buffer)
+	{
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_Read(__bufferSize, out_buffer));
+	}
+	final Windows.Devices.I2c.I2cTransferResult ReadPartial(UINT32 __bufferSize, BYTE* out_buffer)
+	{
+		Windows.Devices.I2c.I2cTransferResult _ret;
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_ReadPartial(__bufferSize, out_buffer, &_ret));
+		return _ret;
+	}
+	final void WriteRead(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer)
+	{
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_WriteRead(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer));
+	}
+	final Windows.Devices.I2c.I2cTransferResult WriteReadPartial(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer)
+	{
+		Windows.Devices.I2c.I2cTransferResult _ret;
+		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_WriteReadPartial(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 enum I2cBusSpeed

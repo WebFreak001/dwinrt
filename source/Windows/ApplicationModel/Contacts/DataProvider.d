@@ -66,24 +66,124 @@ extern(Windows):
 
 interface ContactDataProviderConnection : Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection
 {
+extern(Windows):
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection).abi_Start());
+	}
 }
 
 interface ContactDataProviderTriggerDetails : Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderTriggerDetails
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection Connection()
+	{
+		Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderTriggerDetails).get_Connection(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactListServerSearchReadBatchRequest : Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest
 {
+extern(Windows):
+	final HSTRING SessionId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).get_SessionId(&_ret));
+		return _ret;
+	}
+	final HSTRING ContactListId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).get_ContactListId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactQueryOptions Options()
+	{
+		Windows.ApplicationModel.Contacts.ContactQueryOptions _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).get_Options(&_ret));
+		return _ret;
+	}
+	final UINT32 SuggestedBatchSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).get_SuggestedBatchSize(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveContactAsync(Windows.ApplicationModel.Contacts.Contact contact)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).abi_SaveContactAsync(contact, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync(Windows.ApplicationModel.Contacts.ContactBatchStatus batchStatus)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).abi_ReportFailedAsync(batchStatus, &_ret));
+		return _ret;
+	}
 }
 
 interface ContactListServerSearchReadBatchRequestEventArgs : Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequest Request()
+	{
+		Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactListSyncManagerSyncRequest : Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequest
 {
+extern(Windows):
+	final HSTRING ContactListId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequest).get_ContactListId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequest).abi_ReportCompletedAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ReportFailedAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequest).abi_ReportFailedAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactListSyncManagerSyncRequestEventArgs : Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequestEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest Request()
+	{
+		Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequestEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequestEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }

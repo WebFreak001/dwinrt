@@ -56,10 +56,94 @@ extern(Windows):
 
 interface EndpointPair : Windows.Networking.IEndpointPair
 {
+extern(Windows):
+	final Windows.Networking.HostName LocalHostName()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.IEndpointPair).get_LocalHostName(&_ret));
+		return _ret;
+	}
+	final void LocalHostName(Windows.Networking.HostName value)
+	{
+		Debug.OK(this.as!(Windows.Networking.IEndpointPair).set_LocalHostName(value));
+	}
+	final HSTRING LocalServiceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.IEndpointPair).get_LocalServiceName(&_ret));
+		return _ret;
+	}
+	final void LocalServiceName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.IEndpointPair).set_LocalServiceName(value));
+	}
+	final Windows.Networking.HostName RemoteHostName()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.IEndpointPair).get_RemoteHostName(&_ret));
+		return _ret;
+	}
+	final void RemoteHostName(Windows.Networking.HostName value)
+	{
+		Debug.OK(this.as!(Windows.Networking.IEndpointPair).set_RemoteHostName(value));
+	}
+	final HSTRING RemoteServiceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.IEndpointPair).get_RemoteServiceName(&_ret));
+		return _ret;
+	}
+	final void RemoteServiceName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Networking.IEndpointPair).set_RemoteServiceName(value));
+	}
 }
 
 interface HostName : Windows.Networking.IHostName, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Networking.Connectivity.IPInformation IPInformation()
+	{
+		Windows.Networking.Connectivity.IPInformation _ret;
+		Debug.OK(this.as!(Windows.Networking.IHostName).get_IPInformation(&_ret));
+		return _ret;
+	}
+	final HSTRING RawName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.IHostName).get_RawName(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.IHostName).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING CanonicalName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.IHostName).get_CanonicalName(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.HostNameType Type()
+	{
+		Windows.Networking.HostNameType _ret;
+		Debug.OK(this.as!(Windows.Networking.IHostName).get_Type(&_ret));
+		return _ret;
+	}
+	final bool IsEqual(Windows.Networking.HostName hostName)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.IHostName).abi_IsEqual(hostName, &_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 enum DomainNameType

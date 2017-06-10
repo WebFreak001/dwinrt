@@ -122,22 +122,229 @@ extern(Windows):
 
 interface GpioChangeCounter : Windows.Devices.Gpio.IGpioChangeCounter, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final void Polarity(Windows.Devices.Gpio.GpioChangePolarity value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).set_Polarity(value));
+	}
+	final Windows.Devices.Gpio.GpioChangePolarity Polarity()
+	{
+		Windows.Devices.Gpio.GpioChangePolarity _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).get_Polarity(&_ret));
+		return _ret;
+	}
+	final bool IsStarted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).get_IsStarted(&_ret));
+		return _ret;
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).abi_Stop());
+	}
+	final Windows.Devices.Gpio.GpioChangeCount Read()
+	{
+		Windows.Devices.Gpio.GpioChangeCount _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).abi_Read(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Gpio.GpioChangeCount Reset()
+	{
+		Windows.Devices.Gpio.GpioChangeCount _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).abi_Reset(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface GpioChangeReader : Windows.Devices.Gpio.IGpioChangeReader, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final INT32 Capacity()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).get_Capacity(&_ret));
+		return _ret;
+	}
+	final INT32 Length()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).get_Length(&_ret));
+		return _ret;
+	}
+	final bool IsEmpty()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).get_IsEmpty(&_ret));
+		return _ret;
+	}
+	final bool IsOverflowed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).get_IsOverflowed(&_ret));
+		return _ret;
+	}
+	final void Polarity(Windows.Devices.Gpio.GpioChangePolarity value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).set_Polarity(value));
+	}
+	final Windows.Devices.Gpio.GpioChangePolarity Polarity()
+	{
+		Windows.Devices.Gpio.GpioChangePolarity _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).get_Polarity(&_ret));
+		return _ret;
+	}
+	final bool IsStarted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).get_IsStarted(&_ret));
+		return _ret;
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_Stop());
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_Clear());
+	}
+	final Windows.Devices.Gpio.GpioChangeRecord GetNextItem()
+	{
+		Windows.Devices.Gpio.GpioChangeRecord _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_GetNextItem(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Gpio.GpioChangeRecord PeekNextItem()
+	{
+		Windows.Devices.Gpio.GpioChangeRecord _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_PeekNextItem(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.Gpio.GpioChangeRecord) GetAllItems()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.Gpio.GpioChangeRecord) _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_GetAllItems(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction WaitForItemsAsync(INT32 count)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_WaitForItemsAsync(count, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface GpioController : Windows.Devices.Gpio.IGpioController
 {
+extern(Windows):
+	final INT32 PinCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioController).get_PinCount(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Gpio.GpioPin OpenPin(INT32 pinNumber)
+	{
+		Windows.Devices.Gpio.GpioPin _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioController).abi_OpenPin(pinNumber, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.Gpio.GpioPin OpenPinWithSharingMode(INT32 pinNumber, Windows.Devices.Gpio.GpioSharingMode sharingMode)
+	{
+		Windows.Devices.Gpio.GpioPin _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioController).abi_OpenPinWithSharingMode(pinNumber, sharingMode, &_ret));
+		return _ret;
+	}
+	final bool TryOpenPin(INT32 pinNumber, Windows.Devices.Gpio.GpioSharingMode sharingMode, Windows.Devices.Gpio.GpioPin* out_pin, Windows.Devices.Gpio.GpioOpenStatus* out_openStatus)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioController).abi_TryOpenPin(pinNumber, sharingMode, out_pin, out_openStatus, &_ret));
+		return _ret;
+	}
 }
 
 interface GpioPin : Windows.Devices.Gpio.IGpioPin, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan DebounceTimeout()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).get_DebounceTimeout(&_ret));
+		return _ret;
+	}
+	final void DebounceTimeout(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).set_DebounceTimeout(value));
+	}
+	final INT32 PinNumber()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).get_PinNumber(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Gpio.GpioSharingMode SharingMode()
+	{
+		Windows.Devices.Gpio.GpioSharingMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).get_SharingMode(&_ret));
+		return _ret;
+	}
+	final bool IsDriveModeSupported(Windows.Devices.Gpio.GpioPinDriveMode driveMode)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).abi_IsDriveModeSupported(driveMode, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.Gpio.GpioPinDriveMode GetDriveMode()
+	{
+		Windows.Devices.Gpio.GpioPinDriveMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).abi_GetDriveMode(&_ret));
+		return _ret;
+	}
+	final void SetDriveMode(Windows.Devices.Gpio.GpioPinDriveMode value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).abi_SetDriveMode(value));
+	}
+	final void Write(Windows.Devices.Gpio.GpioPinValue value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).abi_Write(value));
+	}
+	final Windows.Devices.Gpio.GpioPinValue Read()
+	{
+		Windows.Devices.Gpio.GpioPinValue _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).abi_Read(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface GpioPinValueChangedEventArgs : Windows.Devices.Gpio.IGpioPinValueChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Gpio.GpioPinEdge Edge()
+	{
+		Windows.Devices.Gpio.GpioPinEdge _ret;
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPinValueChangedEventArgs).get_Edge(&_ret));
+		return _ret;
+	}
 }
 
 enum GpioChangePolarity

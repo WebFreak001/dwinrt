@@ -63,10 +63,97 @@ extern(Windows):
 
 interface SocialDashboardItemUpdater : Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater
 {
+extern(Windows):
+	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final HSTRING OwnerRemoteId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).get_OwnerRemoteId(&_ret));
+		return _ret;
+	}
+	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.ApplicationModel.SocialInfo.SocialFeedContent Content()
+	{
+		Windows.ApplicationModel.SocialInfo.SocialFeedContent _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).get_Content(&_ret));
+		return _ret;
+	}
+	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).get_Timestamp(&_ret));
+		return _ret;
+	}
+	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void Timestamp(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).set_Timestamp(value));
+	}
+	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void Thumbnail(Windows.ApplicationModel.SocialInfo.SocialItemThumbnail value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).set_Thumbnail(value));
+	}
+	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.ApplicationModel.SocialInfo.SocialItemThumbnail Thumbnail()
+	{
+		Windows.ApplicationModel.SocialInfo.SocialItemThumbnail _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).get_Thumbnail(&_ret));
+		return _ret;
+	}
+	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.IAsyncAction CommitAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).abi_CommitAsync(&_ret));
+		return _ret;
+	}
+	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.Uri TargetUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).get_TargetUri(&_ret));
+		return _ret;
+	}
+	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void TargetUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).set_TargetUri(value));
+	}
 }
 
 interface SocialFeedUpdater : Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater
 {
+extern(Windows):
+	deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final HSTRING OwnerRemoteId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater).get_OwnerRemoteId(&_ret));
+		return _ret;
+	}
+	deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.ApplicationModel.SocialInfo.SocialFeedKind Kind()
+	{
+		Windows.ApplicationModel.SocialInfo.SocialFeedKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater).get_Kind(&_ret));
+		return _ret;
+	}
+	deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.SocialInfo.SocialFeedItem) Items()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.SocialInfo.SocialFeedItem) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater).get_Items(&_ret));
+		return _ret;
+	}
+	deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.IAsyncAction CommitAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater).abi_CommitAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface SocialInfoProviderManager

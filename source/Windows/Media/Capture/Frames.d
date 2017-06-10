@@ -226,18 +226,100 @@ extern(Windows):
 
 interface BufferMediaFrame : Windows.Media.Capture.Frames.IBufferMediaFrame
 {
+extern(Windows):
+	final Windows.Media.Capture.Frames.MediaFrameReference FrameReference()
+	{
+		Windows.Media.Capture.Frames.MediaFrameReference _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IBufferMediaFrame).get_FrameReference(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer Buffer()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IBufferMediaFrame).get_Buffer(&_ret));
+		return _ret;
+	}
 }
 
 interface DepthMediaFrame : Windows.Media.Capture.Frames.IDepthMediaFrame, Windows.Media.Capture.Frames.IDepthMediaFrame2
 {
+extern(Windows):
+	final Windows.Media.Capture.Frames.MediaFrameReference FrameReference()
+	{
+		Windows.Media.Capture.Frames.MediaFrameReference _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IDepthMediaFrame).get_FrameReference(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.VideoMediaFrame VideoMediaFrame()
+	{
+		Windows.Media.Capture.Frames.VideoMediaFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IDepthMediaFrame).get_VideoMediaFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.DepthMediaFrameFormat DepthFormat()
+	{
+		Windows.Media.Capture.Frames.DepthMediaFrameFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IDepthMediaFrame).get_DepthFormat(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper TryCreateCoordinateMapper(Windows.Media.Devices.Core.CameraIntrinsics cameraIntrinsics, Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IDepthMediaFrame).abi_TryCreateCoordinateMapper(cameraIntrinsics, coordinateSystem, &_ret));
+		return _ret;
+	}
+	final UINT32 MaxReliableDepth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IDepthMediaFrame2).get_MaxReliableDepth(&_ret));
+		return _ret;
+	}
+	final UINT32 MinReliableDepth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IDepthMediaFrame2).get_MinReliableDepth(&_ret));
+		return _ret;
+	}
 }
 
 interface DepthMediaFrameFormat : Windows.Media.Capture.Frames.IDepthMediaFrameFormat
 {
+extern(Windows):
+	final Windows.Media.Capture.Frames.VideoMediaFrameFormat VideoFormat()
+	{
+		Windows.Media.Capture.Frames.VideoMediaFrameFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IDepthMediaFrameFormat).get_VideoFormat(&_ret));
+		return _ret;
+	}
+	final double DepthScaleInMeters()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IDepthMediaFrameFormat).get_DepthScaleInMeters(&_ret));
+		return _ret;
+	}
 }
 
 interface InfraredMediaFrame : Windows.Media.Capture.Frames.IInfraredMediaFrame
 {
+extern(Windows):
+	final Windows.Media.Capture.Frames.MediaFrameReference FrameReference()
+	{
+		Windows.Media.Capture.Frames.MediaFrameReference _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IInfraredMediaFrame).get_FrameReference(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.VideoMediaFrame VideoMediaFrame()
+	{
+		Windows.Media.Capture.Frames.VideoMediaFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IInfraredMediaFrame).get_VideoMediaFrame(&_ret));
+		return _ret;
+	}
+	final bool IsIlluminated()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IInfraredMediaFrame).get_IsIlluminated(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaFrameArrivedEventArgs : Windows.Media.Capture.Frames.IMediaFrameArrivedEventArgs
@@ -246,34 +328,284 @@ interface MediaFrameArrivedEventArgs : Windows.Media.Capture.Frames.IMediaFrameA
 
 interface MediaFrameFormat : Windows.Media.Capture.Frames.IMediaFrameFormat
 {
+extern(Windows):
+	final HSTRING MajorType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameFormat).get_MajorType(&_ret));
+		return _ret;
+	}
+	final HSTRING Subtype()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameFormat).get_Subtype(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.MediaRatio FrameRate()
+	{
+		Windows.Media.MediaProperties.MediaRatio _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameFormat).get_FrameRate(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(GUID, IInspectable) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(GUID, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameFormat).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.VideoMediaFrameFormat VideoFormat()
+	{
+		Windows.Media.Capture.Frames.VideoMediaFrameFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameFormat).get_VideoFormat(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaFrameReader : Windows.Media.Capture.Frames.IMediaFrameReader, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Media.Capture.Frames.MediaFrameReference TryAcquireLatestFrame()
+	{
+		Windows.Media.Capture.Frames.MediaFrameReference _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameReader).abi_TryAcquireLatestFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReaderStartStatus) StartAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReaderStartStatus) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameReader).abi_StartAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StopAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameReader).abi_StopAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface MediaFrameReference : Windows.Media.Capture.Frames.IMediaFrameReference, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Media.Capture.Frames.MediaFrameSourceKind SourceKind()
+	{
+		Windows.Media.Capture.Frames.MediaFrameSourceKind _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameReference).get_SourceKind(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.MediaFrameFormat Format()
+	{
+		Windows.Media.Capture.Frames.MediaFrameFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameReference).get_Format(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) SystemRelativeTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameReference).get_SystemRelativeTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameReference).get_Duration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(GUID, IInspectable) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(GUID, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameReference).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.BufferMediaFrame BufferMediaFrame()
+	{
+		Windows.Media.Capture.Frames.BufferMediaFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameReference).get_BufferMediaFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.VideoMediaFrame VideoMediaFrame()
+	{
+		Windows.Media.Capture.Frames.VideoMediaFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameReference).get_VideoMediaFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Perception.Spatial.SpatialCoordinateSystem CoordinateSystem()
+	{
+		Windows.Perception.Spatial.SpatialCoordinateSystem _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameReference).get_CoordinateSystem(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface MediaFrameSource : Windows.Media.Capture.Frames.IMediaFrameSource
 {
+extern(Windows):
+	final Windows.Media.Capture.Frames.MediaFrameSourceInfo Info()
+	{
+		Windows.Media.Capture.Frames.MediaFrameSourceInfo _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSource).get_Info(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.MediaFrameSourceController Controller()
+	{
+		Windows.Media.Capture.Frames.MediaFrameSourceController _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSource).get_Controller(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.Frames.MediaFrameFormat) SupportedFormats()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.Frames.MediaFrameFormat) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSource).get_SupportedFormats(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.MediaFrameFormat CurrentFormat()
+	{
+		Windows.Media.Capture.Frames.MediaFrameFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSource).get_CurrentFormat(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SetFormatAsync(Windows.Media.Capture.Frames.MediaFrameFormat format)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSource).abi_SetFormatAsync(format, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.Core.CameraIntrinsics TryGetCameraIntrinsics(Windows.Media.Capture.Frames.MediaFrameFormat format)
+	{
+		Windows.Media.Devices.Core.CameraIntrinsics _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSource).abi_TryGetCameraIntrinsics(format, &_ret));
+		return _ret;
+	}
 }
 
 interface MediaFrameSourceController : Windows.Media.Capture.Frames.IMediaFrameSourceController, Windows.Media.Capture.Frames.IMediaFrameSourceController2
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult) GetPropertyAsync(HSTRING propertyId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceController).abi_GetPropertyAsync(propertyId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus) SetPropertyAsync(HSTRING propertyId, IInspectable propertyValue)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceController).abi_SetPropertyAsync(propertyId, propertyValue, &_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.VideoDeviceController VideoDeviceController()
+	{
+		Windows.Media.Devices.VideoDeviceController _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceController).get_VideoDeviceController(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult) GetPropertyByExtendedIdAsync(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceController2).abi_GetPropertyByExtendedIdAsync(__extendedPropertyIdSize, extendedPropertyId, maxPropertyValueSize, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus) SetPropertyByExtendedIdAsync(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, UINT32 __propertyValueSize, BYTE* propertyValue)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceController2).abi_SetPropertyByExtendedIdAsync(__extendedPropertyIdSize, extendedPropertyId, __propertyValueSize, propertyValue, &_ret));
+		return _ret;
+	}
 }
 
 interface MediaFrameSourceGetPropertyResult : Windows.Media.Capture.Frames.IMediaFrameSourceGetPropertyResult
 {
+extern(Windows):
+	final Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus Status()
+	{
+		Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceGetPropertyResult).get_Status(&_ret));
+		return _ret;
+	}
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceGetPropertyResult).get_Value(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaFrameSourceGroup : Windows.Media.Capture.Frames.IMediaFrameSourceGroup
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceGroup).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceGroup).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.Frames.MediaFrameSourceInfo) SourceInfos()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.Frames.MediaFrameSourceInfo) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceGroup).get_SourceInfos(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaFrameSourceInfo : Windows.Media.Capture.Frames.IMediaFrameSourceInfo
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceInfo).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.MediaStreamType MediaStreamType()
+	{
+		Windows.Media.Capture.MediaStreamType _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceInfo).get_MediaStreamType(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.MediaFrameSourceKind SourceKind()
+	{
+		Windows.Media.Capture.Frames.MediaFrameSourceKind _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceInfo).get_SourceKind(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.MediaFrameSourceGroup SourceGroup()
+	{
+		Windows.Media.Capture.Frames.MediaFrameSourceGroup _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceInfo).get_SourceGroup(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DeviceInformation DeviceInformation()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceInfo).get_DeviceInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(GUID, IInspectable) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(GUID, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceInfo).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Perception.Spatial.SpatialCoordinateSystem CoordinateSystem()
+	{
+		Windows.Perception.Spatial.SpatialCoordinateSystem _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceInfo).get_CoordinateSystem(&_ret));
+		return _ret;
+	}
 }
 
 interface MultiSourceMediaFrameArrivedEventArgs : Windows.Media.Capture.Frames.IMultiSourceMediaFrameArrivedEventArgs
@@ -282,18 +614,126 @@ interface MultiSourceMediaFrameArrivedEventArgs : Windows.Media.Capture.Frames.I
 
 interface MultiSourceMediaFrameReader : Windows.Media.Capture.Frames.IMultiSourceMediaFrameReader, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Media.Capture.Frames.MultiSourceMediaFrameReference TryAcquireLatestFrame()
+	{
+		Windows.Media.Capture.Frames.MultiSourceMediaFrameReference _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMultiSourceMediaFrameReader).abi_TryAcquireLatestFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReaderStartStatus) StartAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReaderStartStatus) _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMultiSourceMediaFrameReader).abi_StartAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StopAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMultiSourceMediaFrameReader).abi_StopAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface MultiSourceMediaFrameReference : Windows.Media.Capture.Frames.IMultiSourceMediaFrameReference, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Media.Capture.Frames.MediaFrameReference TryGetFrameReferenceBySourceId(HSTRING sourceId)
+	{
+		Windows.Media.Capture.Frames.MediaFrameReference _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMultiSourceMediaFrameReference).abi_TryGetFrameReferenceBySourceId(sourceId, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface VideoMediaFrame : Windows.Media.Capture.Frames.IVideoMediaFrame
 {
+extern(Windows):
+	final Windows.Media.Capture.Frames.MediaFrameReference FrameReference()
+	{
+		Windows.Media.Capture.Frames.MediaFrameReference _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IVideoMediaFrame).get_FrameReference(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.VideoMediaFrameFormat VideoFormat()
+	{
+		Windows.Media.Capture.Frames.VideoMediaFrameFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IVideoMediaFrame).get_VideoFormat(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Imaging.SoftwareBitmap SoftwareBitmap()
+	{
+		Windows.Graphics.Imaging.SoftwareBitmap _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IVideoMediaFrame).get_SoftwareBitmap(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface Direct3DSurface()
+	{
+		Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IVideoMediaFrame).get_Direct3DSurface(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Devices.Core.CameraIntrinsics CameraIntrinsics()
+	{
+		Windows.Media.Devices.Core.CameraIntrinsics _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IVideoMediaFrame).get_CameraIntrinsics(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.InfraredMediaFrame InfraredMediaFrame()
+	{
+		Windows.Media.Capture.Frames.InfraredMediaFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IVideoMediaFrame).get_InfraredMediaFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.DepthMediaFrame DepthMediaFrame()
+	{
+		Windows.Media.Capture.Frames.DepthMediaFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IVideoMediaFrame).get_DepthMediaFrame(&_ret));
+		return _ret;
+	}
+	final Windows.Media.VideoFrame GetVideoFrame()
+	{
+		Windows.Media.VideoFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IVideoMediaFrame).abi_GetVideoFrame(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoMediaFrameFormat : Windows.Media.Capture.Frames.IVideoMediaFrameFormat
 {
+extern(Windows):
+	final Windows.Media.Capture.Frames.MediaFrameFormat MediaFrameFormat()
+	{
+		Windows.Media.Capture.Frames.MediaFrameFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IVideoMediaFrameFormat).get_MediaFrameFormat(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.Frames.DepthMediaFrameFormat DepthFormat()
+	{
+		Windows.Media.Capture.Frames.DepthMediaFrameFormat _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IVideoMediaFrameFormat).get_DepthFormat(&_ret));
+		return _ret;
+	}
+	final UINT32 Width()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IVideoMediaFrameFormat).get_Width(&_ret));
+		return _ret;
+	}
+	final UINT32 Height()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IVideoMediaFrameFormat).get_Height(&_ret));
+		return _ret;
+	}
 }
 
 enum MediaFrameReaderStartStatus

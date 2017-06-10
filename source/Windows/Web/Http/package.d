@@ -255,14 +255,209 @@ extern(Windows):
 
 interface HttpBufferContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Web.Http.Headers.HttpContentHeaderCollection Headers()
+	{
+		Windows.Web.Http.Headers.HttpContentHeaderCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).get_Headers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) BufferAllAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_BufferAllAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) ReadAsBufferAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsBufferAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) ReadAsInputStreamAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsInputStreamAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) ReadAsStringAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsStringAsync(&_ret));
+		return _ret;
+	}
+	final bool TryComputeLength(UINT64* out_length)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_TryComputeLength(out_length, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_WriteToStreamAsync(outputStream, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpClient : Windows.Web.Http.IHttpClient, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) DeleteAsync(Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpClient).abi_DeleteAsync(uri, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) GetAsync(Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpClient).abi_GetAsync(uri, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) GetWithOptionAsync(Windows.Foundation.Uri uri, Windows.Web.Http.HttpCompletionOption completionOption)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpClient).abi_GetWithOptionAsync(uri, completionOption, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, Windows.Web.Http.HttpProgress) GetBufferAsync(Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, Windows.Web.Http.HttpProgress) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpClient).abi_GetBufferAsync(uri, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, Windows.Web.Http.HttpProgress) GetInputStreamAsync(Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, Windows.Web.Http.HttpProgress) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpClient).abi_GetInputStreamAsync(uri, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, Windows.Web.Http.HttpProgress) GetStringAsync(Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, Windows.Web.Http.HttpProgress) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpClient).abi_GetStringAsync(uri, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) PostAsync(Windows.Foundation.Uri uri, Windows.Web.Http.IHttpContent content)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpClient).abi_PostAsync(uri, content, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) PutAsync(Windows.Foundation.Uri uri, Windows.Web.Http.IHttpContent content)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpClient).abi_PutAsync(uri, content, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) SendRequestAsync(Windows.Web.Http.HttpRequestMessage request)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpClient).abi_SendRequestAsync(request, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) SendRequestWithOptionAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Web.Http.HttpCompletionOption completionOption)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpClient).abi_SendRequestWithOptionAsync(request, completionOption, &_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Headers.HttpRequestHeaderCollection DefaultRequestHeaders()
+	{
+		Windows.Web.Http.Headers.HttpRequestHeaderCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpClient).get_DefaultRequestHeaders(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpCookie : Windows.Web.Http.IHttpCookie, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookie).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING Domain()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookie).get_Domain(&_ret));
+		return _ret;
+	}
+	final HSTRING Path()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookie).get_Path(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Expires()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookie).get_Expires(&_ret));
+		return _ret;
+	}
+	final void Expires(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookie).set_Expires(value));
+	}
+	final bool HttpOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookie).get_HttpOnly(&_ret));
+		return _ret;
+	}
+	final void HttpOnly(bool value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookie).set_HttpOnly(value));
+	}
+	final bool Secure()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookie).get_Secure(&_ret));
+		return _ret;
+	}
+	final void Secure(bool value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookie).set_Secure(value));
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookie).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookie).set_Value(value));
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpCookieCollection : Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.HttpCookie), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.HttpCookie)
@@ -271,42 +466,538 @@ interface HttpCookieCollection : Windows.Foundation.Collections.IVectorView!(Win
 
 interface HttpCookieManager : Windows.Web.Http.IHttpCookieManager
 {
+extern(Windows):
+	final bool SetCookie(Windows.Web.Http.HttpCookie cookie)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookieManager).abi_SetCookie(cookie, &_ret));
+		return _ret;
+	}
+	final bool SetCookieWithThirdParty(Windows.Web.Http.HttpCookie cookie, bool thirdParty)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookieManager).abi_SetCookieWithThirdParty(cookie, thirdParty, &_ret));
+		return _ret;
+	}
+	final void DeleteCookie(Windows.Web.Http.HttpCookie cookie)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookieManager).abi_DeleteCookie(cookie));
+	}
+	final Windows.Web.Http.HttpCookieCollection GetCookies(Windows.Foundation.Uri uri)
+	{
+		Windows.Web.Http.HttpCookieCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpCookieManager).abi_GetCookies(uri, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpFormUrlEncodedContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Web.Http.Headers.HttpContentHeaderCollection Headers()
+	{
+		Windows.Web.Http.Headers.HttpContentHeaderCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).get_Headers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) BufferAllAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_BufferAllAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) ReadAsBufferAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsBufferAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) ReadAsInputStreamAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsInputStreamAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) ReadAsStringAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsStringAsync(&_ret));
+		return _ret;
+	}
+	final bool TryComputeLength(UINT64* out_length)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_TryComputeLength(out_length, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_WriteToStreamAsync(outputStream, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpMethod : Windows.Web.Http.IHttpMethod, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final HSTRING Method()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpMethod).get_Method(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpMultipartContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Web.Http.IHttpMultipartContent, Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Web.Http.Headers.HttpContentHeaderCollection Headers()
+	{
+		Windows.Web.Http.Headers.HttpContentHeaderCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).get_Headers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) BufferAllAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_BufferAllAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) ReadAsBufferAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsBufferAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) ReadAsInputStreamAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsInputStreamAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) ReadAsStringAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsStringAsync(&_ret));
+		return _ret;
+	}
+	final bool TryComputeLength(UINT64* out_length)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_TryComputeLength(out_length, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_WriteToStreamAsync(outputStream, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final void Add(Windows.Web.Http.IHttpContent content)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpMultipartContent).abi_Add(content));
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpMultipartFormDataContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Web.Http.IHttpMultipartFormDataContent, Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent), Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Web.Http.Headers.HttpContentHeaderCollection Headers()
+	{
+		Windows.Web.Http.Headers.HttpContentHeaderCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).get_Headers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) BufferAllAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_BufferAllAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) ReadAsBufferAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsBufferAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) ReadAsInputStreamAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsInputStreamAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) ReadAsStringAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsStringAsync(&_ret));
+		return _ret;
+	}
+	final bool TryComputeLength(UINT64* out_length)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_TryComputeLength(out_length, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_WriteToStreamAsync(outputStream, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final void Add(Windows.Web.Http.IHttpContent content)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpMultipartFormDataContent).abi_Add(content));
+	}
+	final void AddWithName(Windows.Web.Http.IHttpContent content, HSTRING name)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpMultipartFormDataContent).abi_AddWithName(content, name));
+	}
+	final void AddWithNameAndFileName(Windows.Web.Http.IHttpContent content, HSTRING name, HSTRING fileName)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpMultipartFormDataContent).abi_AddWithNameAndFileName(content, name, fileName));
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpRequestMessage : Windows.Web.Http.IHttpRequestMessage, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Web.Http.IHttpContent Content()
+	{
+		Windows.Web.Http.IHttpContent _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpRequestMessage).get_Content(&_ret));
+		return _ret;
+	}
+	final void Content(Windows.Web.Http.IHttpContent value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpRequestMessage).set_Content(value));
+	}
+	final Windows.Web.Http.Headers.HttpRequestHeaderCollection Headers()
+	{
+		Windows.Web.Http.Headers.HttpRequestHeaderCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpRequestMessage).get_Headers(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.HttpMethod Method()
+	{
+		Windows.Web.Http.HttpMethod _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpRequestMessage).get_Method(&_ret));
+		return _ret;
+	}
+	final void Method(Windows.Web.Http.HttpMethod value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpRequestMessage).set_Method(value));
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, IInspectable) Properties()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpRequestMessage).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri RequestUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpRequestMessage).get_RequestUri(&_ret));
+		return _ret;
+	}
+	final void RequestUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpRequestMessage).set_RequestUri(value));
+	}
+	final Windows.Web.Http.HttpTransportInformation TransportInformation()
+	{
+		Windows.Web.Http.HttpTransportInformation _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpRequestMessage).get_TransportInformation(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpResponseMessage : Windows.Web.Http.IHttpResponseMessage, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Web.Http.IHttpContent Content()
+	{
+		Windows.Web.Http.IHttpContent _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).get_Content(&_ret));
+		return _ret;
+	}
+	final void Content(Windows.Web.Http.IHttpContent value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).set_Content(value));
+	}
+	final Windows.Web.Http.Headers.HttpResponseHeaderCollection Headers()
+	{
+		Windows.Web.Http.Headers.HttpResponseHeaderCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).get_Headers(&_ret));
+		return _ret;
+	}
+	final bool IsSuccessStatusCode()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).get_IsSuccessStatusCode(&_ret));
+		return _ret;
+	}
+	final HSTRING ReasonPhrase()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).get_ReasonPhrase(&_ret));
+		return _ret;
+	}
+	final void ReasonPhrase(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).set_ReasonPhrase(value));
+	}
+	final Windows.Web.Http.HttpRequestMessage RequestMessage()
+	{
+		Windows.Web.Http.HttpRequestMessage _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).get_RequestMessage(&_ret));
+		return _ret;
+	}
+	final void RequestMessage(Windows.Web.Http.HttpRequestMessage value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).set_RequestMessage(value));
+	}
+	final Windows.Web.Http.HttpResponseMessageSource Source()
+	{
+		Windows.Web.Http.HttpResponseMessageSource _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).get_Source(&_ret));
+		return _ret;
+	}
+	final void Source(Windows.Web.Http.HttpResponseMessageSource value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).set_Source(value));
+	}
+	final Windows.Web.Http.HttpStatusCode StatusCode()
+	{
+		Windows.Web.Http.HttpStatusCode _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).get_StatusCode(&_ret));
+		return _ret;
+	}
+	final void StatusCode(Windows.Web.Http.HttpStatusCode value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).set_StatusCode(value));
+	}
+	final Windows.Web.Http.HttpVersion Version()
+	{
+		Windows.Web.Http.HttpVersion _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).get_Version(&_ret));
+		return _ret;
+	}
+	final void Version(Windows.Web.Http.HttpVersion value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).set_Version(value));
+	}
+	final Windows.Web.Http.HttpResponseMessage EnsureSuccessStatusCode()
+	{
+		Windows.Web.Http.HttpResponseMessage _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpResponseMessage).abi_EnsureSuccessStatusCode(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpStreamContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Web.Http.Headers.HttpContentHeaderCollection Headers()
+	{
+		Windows.Web.Http.Headers.HttpContentHeaderCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).get_Headers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) BufferAllAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_BufferAllAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) ReadAsBufferAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsBufferAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) ReadAsInputStreamAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsInputStreamAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) ReadAsStringAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsStringAsync(&_ret));
+		return _ret;
+	}
+	final bool TryComputeLength(UINT64* out_length)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_TryComputeLength(out_length, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_WriteToStreamAsync(outputStream, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpStringContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Web.Http.Headers.HttpContentHeaderCollection Headers()
+	{
+		Windows.Web.Http.Headers.HttpContentHeaderCollection _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).get_Headers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) BufferAllAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_BufferAllAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) ReadAsBufferAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsBufferAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) ReadAsInputStreamAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsInputStreamAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) ReadAsStringAsync()
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsStringAsync(&_ret));
+		return _ret;
+	}
+	final bool TryComputeLength(UINT64* out_length)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_TryComputeLength(out_length, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_WriteToStreamAsync(outputStream, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpTransportInformation : Windows.Web.Http.IHttpTransportInformation, Windows.Foundation.IStringable
 {
+extern(Windows):
+	final Windows.Security.Cryptography.Certificates.Certificate ServerCertificate()
+	{
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpTransportInformation).get_ServerCertificate(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.SocketSslErrorSeverity ServerCertificateErrorSeverity()
+	{
+		Windows.Networking.Sockets.SocketSslErrorSeverity _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpTransportInformation).get_ServerCertificateErrorSeverity(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) ServerCertificateErrors()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpTransportInformation).get_ServerCertificateErrors(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) ServerIntermediateCertificates()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.IHttpTransportInformation).get_ServerIntermediateCertificates(&_ret));
+		return _ret;
+	}
+	final HSTRING ToString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
 }
 
 enum HttpCompletionOption

@@ -70,20 +70,97 @@ extern(Windows):
 
 interface LockApplicationHost : Windows.ApplicationModel.LockScreen.ILockApplicationHost
 {
+extern(Windows):
+	final void RequestUnlock()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockApplicationHost).abi_RequestUnlock());
+	}
 }
 
 interface LockScreenBadge : Windows.ApplicationModel.LockScreen.ILockScreenBadge
 {
+extern(Windows):
+	final Windows.Storage.Streams.IRandomAccessStream Logo()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenBadge).get_Logo(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IRandomAccessStream Glyph()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenBadge).get_Glyph(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) Number()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenBadge).get_Number(&_ret));
+		return _ret;
+	}
+	final HSTRING AutomationName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenBadge).get_AutomationName(&_ret));
+		return _ret;
+	}
+	final void LaunchApp()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenBadge).abi_LaunchApp());
+	}
 }
 
 interface LockScreenInfo : Windows.ApplicationModel.LockScreen.ILockScreenInfo
 {
+extern(Windows):
+	final Windows.Storage.Streams.IRandomAccessStream LockScreenImage()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).get_LockScreenImage(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.LockScreen.LockScreenBadge) Badges()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.LockScreen.LockScreenBadge) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).get_Badges(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) DetailText()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).get_DetailText(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IRandomAccessStream AlarmIcon()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).get_AlarmIcon(&_ret));
+		return _ret;
+	}
 }
 
 interface LockScreenUnlockingDeferral : Windows.ApplicationModel.LockScreen.ILockScreenUnlockingDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenUnlockingDeferral).abi_Complete());
+	}
 }
 
 interface LockScreenUnlockingEventArgs : Windows.ApplicationModel.LockScreen.ILockScreenUnlockingEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.LockScreen.LockScreenUnlockingDeferral GetDeferral()
+	{
+		Windows.ApplicationModel.LockScreen.LockScreenUnlockingDeferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenUnlockingEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Deadline()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenUnlockingEventArgs).get_Deadline(&_ret));
+		return _ret;
+	}
 }

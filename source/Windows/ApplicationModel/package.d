@@ -370,10 +370,54 @@ extern(Windows):
 
 interface AppDisplayInfo : Windows.ApplicationModel.IAppDisplayInfo
 {
+extern(Windows):
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IAppDisplayInfo).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IAppDisplayInfo).get_Description(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.RandomAccessStreamReference GetLogo(Windows.Foundation.Size size)
+	{
+		Windows.Storage.Streams.RandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IAppDisplayInfo).abi_GetLogo(size, &_ret));
+		return _ret;
+	}
 }
 
 interface AppInfo : Windows.ApplicationModel.IAppInfo
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IAppInfo).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING AppUserModelId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IAppInfo).get_AppUserModelId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.AppDisplayInfo DisplayInfo()
+	{
+		Windows.ApplicationModel.AppDisplayInfo _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IAppInfo).get_DisplayInfo(&_ret));
+		return _ret;
+	}
+	final HSTRING PackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IAppInfo).get_PackageFamilyName(&_ret));
+		return _ret;
+	}
 }
 
 interface DesignMode
@@ -382,6 +426,13 @@ interface DesignMode
 
 interface EnteredBackgroundEventArgs : Windows.ApplicationModel.IEnteredBackgroundEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IEnteredBackgroundEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface FullTrustProcessLauncher
@@ -390,70 +441,640 @@ interface FullTrustProcessLauncher
 
 interface LeavingBackgroundEventArgs : Windows.ApplicationModel.ILeavingBackgroundEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.ILeavingBackgroundEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface Package : Windows.ApplicationModel.IPackage, Windows.ApplicationModel.IPackage2, Windows.ApplicationModel.IPackage3, Windows.ApplicationModel.IPackageWithMetadata, Windows.ApplicationModel.IPackage4, Windows.ApplicationModel.IPackage5
 {
+extern(Windows):
+	final Windows.ApplicationModel.PackageId Id()
+	{
+		Windows.ApplicationModel.PackageId _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFolder InstalledLocation()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage).get_InstalledLocation(&_ret));
+		return _ret;
+	}
+	final bool IsFramework()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage).get_IsFramework(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Package) Dependencies()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Package) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage).get_Dependencies(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING PublisherDisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_PublisherDisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_Description(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri Logo()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_Logo(&_ret));
+		return _ret;
+	}
+	final bool IsResourcePackage()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_IsResourcePackage(&_ret));
+		return _ret;
+	}
+	final bool IsBundle()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_IsBundle(&_ret));
+		return _ret;
+	}
+	final bool IsDevelopmentMode()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_IsDevelopmentMode(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.PackageStatus Status()
+	{
+		Windows.ApplicationModel.PackageStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage3).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime InstalledDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage3).get_InstalledDate(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Core.AppListEntry)) GetAppListEntriesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Core.AppListEntry)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage3).abi_GetAppListEntriesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime InstallDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageWithMetadata).get_InstallDate(&_ret));
+		return _ret;
+	}
+	final HSTRING GetThumbnailToken()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageWithMetadata).abi_GetThumbnailToken(&_ret));
+		return _ret;
+	}
+	deprecated("Launch may be altered or unavailable for releases after Windows 8.1. Instead, for SmartCardTrigger scenarios use SmartCardTriggerDetails.TryLaunchSelfAsync")
+	final void Launch(HSTRING parameters)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageWithMetadata).abi_Launch(parameters));
+	}
+	final Windows.ApplicationModel.PackageSignatureKind SignatureKind()
+	{
+		Windows.ApplicationModel.PackageSignatureKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage4).get_SignatureKind(&_ret));
+		return _ret;
+	}
+	final bool IsOptional()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage4).get_IsOptional(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) VerifyContentIntegrityAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage4).abi_VerifyContentIntegrityAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) GetContentGroupsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage5).abi_GetContentGroupsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageContentGroup) GetContentGroupAsync(HSTRING name)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageContentGroup) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage5).abi_GetContentGroupAsync(name, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) StageContentGroupsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) names)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage5).abi_StageContentGroupsAsync(names, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) StageContentGroupsWithPriorityAsync(Windows.Foundation.Collections.IIterable!(HSTRING) names, bool moveToHeadOfQueue)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage5).abi_StageContentGroupsWithPriorityAsync(names, moveToHeadOfQueue, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) SetInUseAsync(bool inUse)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackage5).abi_SetInUseAsync(inUse, &_ret));
+		return _ret;
+	}
 }
 
 interface PackageCatalog : Windows.ApplicationModel.IPackageCatalog, Windows.ApplicationModel.IPackageCatalog2
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult) AddOptionalPackageAsync(HSTRING optionalPackageFamilyName)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog2).abi_AddOptionalPackageAsync(optionalPackageFamilyName, &_ret));
+		return _ret;
+	}
 }
 
 interface PackageCatalogAddOptionalPackageResult : Windows.ApplicationModel.IPackageCatalogAddOptionalPackageResult
 {
+extern(Windows):
+	final Windows.ApplicationModel.Package Package()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalogAddOptionalPackageResult).get_Package(&_ret));
+		return _ret;
+	}
+	final HRESULT ExtendedError()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalogAddOptionalPackageResult).get_ExtendedError(&_ret));
+		return _ret;
+	}
 }
 
 interface PackageContentGroup : Windows.ApplicationModel.IPackageContentGroup
 {
+extern(Windows):
+	final Windows.ApplicationModel.Package Package()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroup).get_Package(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroup).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.PackageContentGroupState State()
+	{
+		Windows.ApplicationModel.PackageContentGroupState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroup).get_State(&_ret));
+		return _ret;
+	}
+	final bool IsRequired()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroup).get_IsRequired(&_ret));
+		return _ret;
+	}
 }
 
 interface PackageContentGroupStagingEventArgs : Windows.ApplicationModel.IPackageContentGroupStagingEventArgs
 {
+extern(Windows):
+	final GUID ActivityId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_ActivityId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Package Package()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_Package(&_ret));
+		return _ret;
+	}
+	final double Progress()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_Progress(&_ret));
+		return _ret;
+	}
+	final bool IsComplete()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_IsComplete(&_ret));
+		return _ret;
+	}
+	final HRESULT ErrorCode()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_ErrorCode(&_ret));
+		return _ret;
+	}
+	final HSTRING ContentGroupName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_ContentGroupName(&_ret));
+		return _ret;
+	}
+	final bool IsContentGroupRequired()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_IsContentGroupRequired(&_ret));
+		return _ret;
+	}
 }
 
 interface PackageId : Windows.ApplicationModel.IPackageId, Windows.ApplicationModel.IPackageIdWithMetadata
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.PackageVersion Version()
+	{
+		Windows.ApplicationModel.PackageVersion _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_Version(&_ret));
+		return _ret;
+	}
+	final Windows.System.ProcessorArchitecture Architecture()
+	{
+		Windows.System.ProcessorArchitecture _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_Architecture(&_ret));
+		return _ret;
+	}
+	final HSTRING ResourceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_ResourceId(&_ret));
+		return _ret;
+	}
+	final HSTRING Publisher()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_Publisher(&_ret));
+		return _ret;
+	}
+	final HSTRING PublisherId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_PublisherId(&_ret));
+		return _ret;
+	}
+	final HSTRING FullName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_FullName(&_ret));
+		return _ret;
+	}
+	final HSTRING FamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_FamilyName(&_ret));
+		return _ret;
+	}
+	final HSTRING ProductId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageIdWithMetadata).get_ProductId(&_ret));
+		return _ret;
+	}
+	final HSTRING Author()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageIdWithMetadata).get_Author(&_ret));
+		return _ret;
+	}
 }
 
 interface PackageInstallingEventArgs : Windows.ApplicationModel.IPackageInstallingEventArgs
 {
+extern(Windows):
+	final GUID ActivityId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageInstallingEventArgs).get_ActivityId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Package Package()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageInstallingEventArgs).get_Package(&_ret));
+		return _ret;
+	}
+	final double Progress()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageInstallingEventArgs).get_Progress(&_ret));
+		return _ret;
+	}
+	final bool IsComplete()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageInstallingEventArgs).get_IsComplete(&_ret));
+		return _ret;
+	}
+	final HRESULT ErrorCode()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageInstallingEventArgs).get_ErrorCode(&_ret));
+		return _ret;
+	}
 }
 
 interface PackageStagingEventArgs : Windows.ApplicationModel.IPackageStagingEventArgs
 {
+extern(Windows):
+	final GUID ActivityId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStagingEventArgs).get_ActivityId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Package Package()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStagingEventArgs).get_Package(&_ret));
+		return _ret;
+	}
+	final double Progress()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStagingEventArgs).get_Progress(&_ret));
+		return _ret;
+	}
+	final bool IsComplete()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStagingEventArgs).get_IsComplete(&_ret));
+		return _ret;
+	}
+	final HRESULT ErrorCode()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStagingEventArgs).get_ErrorCode(&_ret));
+		return _ret;
+	}
 }
 
 interface PackageStatus : Windows.ApplicationModel.IPackageStatus, Windows.ApplicationModel.IPackageStatus2
 {
+extern(Windows):
+	final bool VerifyIsOK()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).abi_VerifyIsOK(&_ret));
+		return _ret;
+	}
+	final bool NotAvailable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_NotAvailable(&_ret));
+		return _ret;
+	}
+	final bool PackageOffline()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_PackageOffline(&_ret));
+		return _ret;
+	}
+	final bool DataOffline()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_DataOffline(&_ret));
+		return _ret;
+	}
+	final bool Disabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_Disabled(&_ret));
+		return _ret;
+	}
+	final bool NeedsRemediation()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_NeedsRemediation(&_ret));
+		return _ret;
+	}
+	final bool LicenseIssue()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_LicenseIssue(&_ret));
+		return _ret;
+	}
+	final bool Modified()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_Modified(&_ret));
+		return _ret;
+	}
+	final bool Tampered()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_Tampered(&_ret));
+		return _ret;
+	}
+	final bool DependencyIssue()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_DependencyIssue(&_ret));
+		return _ret;
+	}
+	final bool Servicing()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_Servicing(&_ret));
+		return _ret;
+	}
+	final bool DeploymentInProgress()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_DeploymentInProgress(&_ret));
+		return _ret;
+	}
+	final bool IsPartiallyStaged()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus2).get_IsPartiallyStaged(&_ret));
+		return _ret;
+	}
 }
 
 interface PackageStatusChangedEventArgs : Windows.ApplicationModel.IPackageStatusChangedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Package Package()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatusChangedEventArgs).get_Package(&_ret));
+		return _ret;
+	}
 }
 
 interface PackageUninstallingEventArgs : Windows.ApplicationModel.IPackageUninstallingEventArgs
 {
+extern(Windows):
+	final GUID ActivityId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUninstallingEventArgs).get_ActivityId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Package Package()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUninstallingEventArgs).get_Package(&_ret));
+		return _ret;
+	}
+	final double Progress()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUninstallingEventArgs).get_Progress(&_ret));
+		return _ret;
+	}
+	final bool IsComplete()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUninstallingEventArgs).get_IsComplete(&_ret));
+		return _ret;
+	}
+	final HRESULT ErrorCode()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUninstallingEventArgs).get_ErrorCode(&_ret));
+		return _ret;
+	}
 }
 
 interface PackageUpdatingEventArgs : Windows.ApplicationModel.IPackageUpdatingEventArgs
 {
+extern(Windows):
+	final GUID ActivityId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUpdatingEventArgs).get_ActivityId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Package SourcePackage()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUpdatingEventArgs).get_SourcePackage(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Package TargetPackage()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUpdatingEventArgs).get_TargetPackage(&_ret));
+		return _ret;
+	}
+	final double Progress()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUpdatingEventArgs).get_Progress(&_ret));
+		return _ret;
+	}
+	final bool IsComplete()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUpdatingEventArgs).get_IsComplete(&_ret));
+		return _ret;
+	}
+	final HRESULT ErrorCode()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUpdatingEventArgs).get_ErrorCode(&_ret));
+		return _ret;
+	}
 }
 
 interface StartupTask : Windows.ApplicationModel.IStartupTask
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.StartupTaskState) RequestEnableAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.StartupTaskState) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IStartupTask).abi_RequestEnableAsync(&_ret));
+		return _ret;
+	}
+	final void Disable()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.IStartupTask).abi_Disable());
+	}
+	final Windows.ApplicationModel.StartupTaskState State()
+	{
+		Windows.ApplicationModel.StartupTaskState _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IStartupTask).get_State(&_ret));
+		return _ret;
+	}
+	final HSTRING TaskId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.IStartupTask).get_TaskId(&_ret));
+		return _ret;
+	}
 }
 
 interface SuspendingDeferral : Windows.ApplicationModel.ISuspendingDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.ISuspendingDeferral).abi_Complete());
+	}
 }
 
 interface SuspendingEventArgs : Windows.ApplicationModel.ISuspendingEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.SuspendingOperation SuspendingOperation()
+	{
+		Windows.ApplicationModel.SuspendingOperation _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.ISuspendingEventArgs).get_SuspendingOperation(&_ret));
+		return _ret;
+	}
 }
 
 interface SuspendingOperation : Windows.ApplicationModel.ISuspendingOperation
 {
+extern(Windows):
+	final Windows.ApplicationModel.SuspendingDeferral GetDeferral()
+	{
+		Windows.ApplicationModel.SuspendingDeferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.ISuspendingOperation).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Deadline()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.ISuspendingOperation).get_Deadline(&_ret));
+		return _ret;
+	}
 }
 
 enum PackageContentGroupState

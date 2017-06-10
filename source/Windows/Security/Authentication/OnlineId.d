@@ -100,14 +100,87 @@ extern(Windows):
 
 interface OnlineIdAuthenticator : Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator
 {
+extern(Windows):
+	final Windows.Security.Authentication.OnlineId.UserAuthenticationOperation AuthenticateUserAsync(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest request)
+	{
+		Windows.Security.Authentication.OnlineId.UserAuthenticationOperation _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).abi_AuthenticateUserAsync(request, &_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.OnlineId.UserAuthenticationOperation AuthenticateUserAsyncAdvanced(Windows.Foundation.Collections.IIterable!(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest) requests, Windows.Security.Authentication.OnlineId.CredentialPromptType credentialPromptType)
+	{
+		Windows.Security.Authentication.OnlineId.UserAuthenticationOperation _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).abi_AuthenticateUserAsyncAdvanced(requests, credentialPromptType, &_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.OnlineId.SignOutUserOperation SignOutUserAsync()
+	{
+		Windows.Security.Authentication.OnlineId.SignOutUserOperation _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).abi_SignOutUserAsync(&_ret));
+		return _ret;
+	}
+	final void ApplicationId(GUID value)
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).set_ApplicationId(value));
+	}
+	final GUID ApplicationId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).get_ApplicationId(&_ret));
+		return _ret;
+	}
+	final bool CanSignOut()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).get_CanSignOut(&_ret));
+		return _ret;
+	}
+	final HSTRING AuthenticatedSafeCustomerId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).get_AuthenticatedSafeCustomerId(&_ret));
+		return _ret;
+	}
 }
 
 interface OnlineIdServiceTicket : Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicket
 {
+extern(Windows):
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicket).get_Value(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest Request()
+	{
+		Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicket).get_Request(&_ret));
+		return _ret;
+	}
+	final INT32 ErrorCode()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicket).get_ErrorCode(&_ret));
+		return _ret;
+	}
 }
 
 interface OnlineIdServiceTicketRequest : Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequest
 {
+extern(Windows):
+	final HSTRING Service()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequest).get_Service(&_ret));
+		return _ret;
+	}
+	final HSTRING Policy()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequest).get_Policy(&_ret));
+		return _ret;
+	}
 }
 
 interface OnlineIdSystemAuthenticator
@@ -116,18 +189,88 @@ interface OnlineIdSystemAuthenticator
 
 interface OnlineIdSystemAuthenticatorForUser : Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketResult) GetTicketAsync(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest request)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketResult) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser).abi_GetTicketAsync(request, &_ret));
+		return _ret;
+	}
+	final void ApplicationId(GUID value)
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser).set_ApplicationId(value));
+	}
+	final GUID ApplicationId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser).get_ApplicationId(&_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser).get_User(&_ret));
+		return _ret;
+	}
 }
 
 interface OnlineIdSystemIdentity : Windows.Security.Authentication.OnlineId.IOnlineIdSystemIdentity
 {
+extern(Windows):
+	final Windows.Security.Authentication.OnlineId.OnlineIdServiceTicket Ticket()
+	{
+		Windows.Security.Authentication.OnlineId.OnlineIdServiceTicket _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemIdentity).get_Ticket(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemIdentity).get_Id(&_ret));
+		return _ret;
+	}
 }
 
 interface OnlineIdSystemTicketResult : Windows.Security.Authentication.OnlineId.IOnlineIdSystemTicketResult
 {
+extern(Windows):
+	final Windows.Security.Authentication.OnlineId.OnlineIdSystemIdentity Identity()
+	{
+		Windows.Security.Authentication.OnlineId.OnlineIdSystemIdentity _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemTicketResult).get_Identity(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketStatus Status()
+	{
+		Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketStatus _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemTicketResult).get_Status(&_ret));
+		return _ret;
+	}
+	final HRESULT ExtendedError()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemTicketResult).get_ExtendedError(&_ret));
+		return _ret;
+	}
 }
 
 interface SignOutUserOperation : Windows.Foundation.IAsyncAction
 {
+extern(Windows):
+	final void Completed(Windows.Foundation.AsyncActionCompletedHandler handler)
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).set_Completed(handler));
+	}
+	final Windows.Foundation.AsyncActionCompletedHandler Completed()
+	{
+		Windows.Foundation.AsyncActionCompletedHandler _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).get_Completed(&_ret));
+		return _ret;
+	}
+	final void GetResults()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).abi_GetResults());
+	}
 }
 
 interface UserAuthenticationOperation : Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity)
@@ -136,6 +279,55 @@ interface UserAuthenticationOperation : Windows.Foundation.IAsyncOperation!(Wind
 
 interface UserIdentity : Windows.Security.Authentication.OnlineId.IUserIdentity
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicket) Tickets()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicket) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_Tickets(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING SafeCustomerId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_SafeCustomerId(&_ret));
+		return _ret;
+	}
+	final HSTRING SignInName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_SignInName(&_ret));
+		return _ret;
+	}
+	final HSTRING FirstName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_FirstName(&_ret));
+		return _ret;
+	}
+	final HSTRING LastName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_LastName(&_ret));
+		return _ret;
+	}
+	final bool IsBetaAccount()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_IsBetaAccount(&_ret));
+		return _ret;
+	}
+	final bool IsConfirmedPC()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_IsConfirmedPC(&_ret));
+		return _ret;
+	}
 }
 
 enum CredentialPromptType

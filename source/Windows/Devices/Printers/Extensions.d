@@ -100,14 +100,63 @@ extern(Windows):
 
 interface Print3DWorkflow : Windows.Devices.Printers.Extensions.IPrint3DWorkflow, Windows.Devices.Printers.Extensions.IPrint3DWorkflow2
 {
+extern(Windows):
+	final HSTRING DeviceID()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow).get_DeviceID(&_ret));
+		return _ret;
+	}
+	final IInspectable GetPrintModelPackage()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow).abi_GetPrintModelPackage(&_ret));
+		return _ret;
+	}
+	final bool IsPrintReady()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow).get_IsPrintReady(&_ret));
+		return _ret;
+	}
+	final void IsPrintReady(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow).set_IsPrintReady(value));
+	}
 }
 
 interface Print3DWorkflowPrintRequestedEventArgs : Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Printers.Extensions.Print3DWorkflowStatus Status()
+	{
+		Windows.Devices.Printers.Extensions.Print3DWorkflowStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
+	final void SetExtendedStatus(Windows.Devices.Printers.Extensions.Print3DWorkflowDetail value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs).abi_SetExtendedStatus(value));
+	}
+	final void SetSource(IInspectable source)
+	{
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs).abi_SetSource(source));
+	}
+	final void SetSourceChanged(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs).abi_SetSourceChanged(value));
+	}
 }
 
 interface Print3DWorkflowPrinterChangedEventArgs : Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrinterChangedEventArgs
 {
+extern(Windows):
+	final HSTRING NewDeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrinterChangedEventArgs).get_NewDeviceId(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintExtensionContext
@@ -116,22 +165,79 @@ interface PrintExtensionContext
 
 interface PrintNotificationEventDetails : Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails
 {
+extern(Windows):
+	final HSTRING PrinterName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails).get_PrinterName(&_ret));
+		return _ret;
+	}
+	final HSTRING EventData()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails).get_EventData(&_ret));
+		return _ret;
+	}
+	final void EventData(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails).set_EventData(value));
+	}
 }
 
 interface PrintTaskConfiguration : Windows.Devices.Printers.Extensions.IPrintTaskConfiguration
 {
+extern(Windows):
+	final IInspectable PrinterExtensionContext()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfiguration).get_PrinterExtensionContext(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintTaskConfigurationSaveRequest : Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest
 {
+extern(Windows):
+	final void Cancel()
+	{
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest).abi_Cancel());
+	}
+	final void Save(IInspectable printerExtensionContext)
+	{
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest).abi_Save(printerExtensionContext));
+	}
+	final Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedDeferral GetDeferral()
+	{
+		Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedDeferral _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Deadline()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest).get_Deadline(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintTaskConfigurationSaveRequestedDeferral : Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequestedDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequestedDeferral).abi_Complete());
+	}
 }
 
 interface PrintTaskConfigurationSaveRequestedEventArgs : Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequest Request()
+	{
+		Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequest _ret;
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 enum Print3DWorkflowDetail

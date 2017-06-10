@@ -389,114 +389,636 @@ extern(Windows):
 
 interface SpatialGestureRecognizer : Windows.UI.Input.Spatial.ISpatialGestureRecognizer
 {
+extern(Windows):
+	final void CaptureInteraction(Windows.UI.Input.Spatial.SpatialInteraction interaction)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).abi_CaptureInteraction(interaction));
+	}
+	final void CancelPendingGestures()
+	{
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).abi_CancelPendingGestures());
+	}
+	final bool TrySetGestureSettings(Windows.UI.Input.Spatial.SpatialGestureSettings settings)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).abi_TrySetGestureSettings(settings, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialGestureSettings GestureSettings()
+	{
+		Windows.UI.Input.Spatial.SpatialGestureSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).get_GestureSettings(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialHoldCanceledEventArgs : Windows.UI.Input.Spatial.ISpatialHoldCanceledEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialHoldCanceledEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialHoldCompletedEventArgs : Windows.UI.Input.Spatial.ISpatialHoldCompletedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialHoldCompletedEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialHoldStartedEventArgs : Windows.UI.Input.Spatial.ISpatialHoldStartedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialHoldStartedEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialHoldStartedEventArgs).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		return _ret;
+	}
 }
 
 interface SpatialInteraction : Windows.UI.Input.Spatial.ISpatialInteraction
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceState SourceState()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceState _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteraction).get_SourceState(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialInteractionController : Windows.UI.Input.Spatial.ISpatialInteractionController
 {
+extern(Windows):
+	final bool HasTouchpad()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionController).get_HasTouchpad(&_ret));
+		return _ret;
+	}
+	final bool HasThumbstick()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionController).get_HasThumbstick(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
+	{
+		Windows.Devices.Haptics.SimpleHapticsController _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionController).get_SimpleHapticsController(&_ret));
+		return _ret;
+	}
+	final UINT16 VendorId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionController).get_VendorId(&_ret));
+		return _ret;
+	}
+	final UINT16 ProductId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionController).get_ProductId(&_ret));
+		return _ret;
+	}
+	final UINT16 Version()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionController).get_Version(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialInteractionControllerProperties : Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties
 {
+extern(Windows):
+	final bool IsTouchpadTouched()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_IsTouchpadTouched(&_ret));
+		return _ret;
+	}
+	final bool IsTouchpadPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_IsTouchpadPressed(&_ret));
+		return _ret;
+	}
+	final bool IsThumbstickPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_IsThumbstickPressed(&_ret));
+		return _ret;
+	}
+	final double ThumbstickX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_ThumbstickX(&_ret));
+		return _ret;
+	}
+	final double ThumbstickY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_ThumbstickY(&_ret));
+		return _ret;
+	}
+	final double TouchpadX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_TouchpadX(&_ret));
+		return _ret;
+	}
+	final double TouchpadY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_TouchpadY(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialInteractionDetectedEventArgs : Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs, Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs2
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialInteraction Interaction()
+	{
+		Windows.UI.Input.Spatial.SpatialInteraction _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs).get_Interaction(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialInteractionSource InteractionSource()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSource _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs2).get_InteractionSource(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialInteractionManager : Windows.UI.Input.Spatial.ISpatialInteractionManager
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Spatial.SpatialInteractionSourceState) GetDetectedSourcesAtTimestamp(Windows.Perception.PerceptionTimestamp timeStamp)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Spatial.SpatialInteractionSourceState) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).abi_GetDetectedSourcesAtTimestamp(timeStamp, &_ret));
+		return _ret;
+	}
 }
 
 interface SpatialInteractionSource : Windows.UI.Input.Spatial.ISpatialInteractionSource, Windows.UI.Input.Spatial.ISpatialInteractionSource2
 {
+extern(Windows):
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind Kind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource).get_Kind(&_ret));
+		return _ret;
+	}
+	final bool IsPointingSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource2).get_IsPointingSupported(&_ret));
+		return _ret;
+	}
+	final bool IsMenuSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource2).get_IsMenuSupported(&_ret));
+		return _ret;
+	}
+	final bool IsGraspSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource2).get_IsGraspSupported(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialInteractionController Controller()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionController _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource2).get_Controller(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceState TryGetStateAtTimestamp(Windows.Perception.PerceptionTimestamp timestamp)
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceState _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource2).abi_TryGetStateAtTimestamp(timestamp, &_ret));
+		return _ret;
+	}
 }
 
 interface SpatialInteractionSourceEventArgs : Windows.UI.Input.Spatial.ISpatialInteractionSourceEventArgs, Windows.UI.Input.Spatial.ISpatialInteractionSourceEventArgs2
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceState State()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceState _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceEventArgs).get_State(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialInteractionPressKind PressKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionPressKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceEventArgs2).get_PressKind(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialInteractionSourceLocation : Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation, Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation2
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) Position()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) Velocity()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation).get_Velocity(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.Numerics.Quaternion) Orientation()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.Numerics.Quaternion) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation2).get_Orientation(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialInteractionSourceProperties : Windows.UI.Input.Spatial.ISpatialInteractionSourceProperties
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) TryGetSourceLossMitigationDirection(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceProperties).abi_TryGetSourceLossMitigationDirection(coordinateSystem, &_ret));
+		return _ret;
+	}
+	final double SourceLossRisk()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceProperties).get_SourceLossRisk(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceLocation TryGetLocation(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceLocation _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceProperties).abi_TryGetLocation(coordinateSystem, &_ret));
+		return _ret;
+	}
 }
 
 interface SpatialInteractionSourceState : Windows.UI.Input.Spatial.ISpatialInteractionSourceState, Windows.UI.Input.Spatial.ISpatialInteractionSourceState2
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSource Source()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSource _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState).get_Source(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceProperties Properties()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceProperties _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState).get_Properties(&_ret));
+		return _ret;
+	}
+	final bool IsPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState).get_IsPressed(&_ret));
+		return _ret;
+	}
+	final Windows.Perception.PerceptionTimestamp Timestamp()
+	{
+		Windows.Perception.PerceptionTimestamp _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		return _ret;
+	}
+	final bool IsSelectPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2).get_IsSelectPressed(&_ret));
+		return _ret;
+	}
+	final bool IsMenuPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2).get_IsMenuPressed(&_ret));
+		return _ret;
+	}
+	final bool IsGrasped()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2).get_IsGrasped(&_ret));
+		return _ret;
+	}
+	final double SelectPressedValue()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2).get_SelectPressedValue(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialInteractionControllerProperties ControllerProperties()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionControllerProperties _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2).get_ControllerProperties(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialManipulationCanceledEventArgs : Windows.UI.Input.Spatial.ISpatialManipulationCanceledEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationCanceledEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialManipulationCompletedEventArgs : Windows.UI.Input.Spatial.ISpatialManipulationCompletedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationCompletedEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialManipulationDelta TryGetCumulativeDelta(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.UI.Input.Spatial.SpatialManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationCompletedEventArgs).abi_TryGetCumulativeDelta(coordinateSystem, &_ret));
+		return _ret;
+	}
 }
 
 interface SpatialManipulationDelta : Windows.UI.Input.Spatial.ISpatialManipulationDelta
 {
+extern(Windows):
+	final Windows.Foundation.Numerics.Vector3 Translation()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationDelta).get_Translation(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialManipulationStartedEventArgs : Windows.UI.Input.Spatial.ISpatialManipulationStartedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationStartedEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationStartedEventArgs).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		return _ret;
+	}
 }
 
 interface SpatialManipulationUpdatedEventArgs : Windows.UI.Input.Spatial.ISpatialManipulationUpdatedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationUpdatedEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialManipulationDelta TryGetCumulativeDelta(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.UI.Input.Spatial.SpatialManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationUpdatedEventArgs).abi_TryGetCumulativeDelta(coordinateSystem, &_ret));
+		return _ret;
+	}
 }
 
 interface SpatialNavigationCanceledEventArgs : Windows.UI.Input.Spatial.ISpatialNavigationCanceledEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationCanceledEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialNavigationCompletedEventArgs : Windows.UI.Input.Spatial.ISpatialNavigationCompletedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationCompletedEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Numerics.Vector3 NormalizedOffset()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationCompletedEventArgs).get_NormalizedOffset(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialNavigationStartedEventArgs : Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		return _ret;
+	}
+	final bool IsNavigatingX()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs).get_IsNavigatingX(&_ret));
+		return _ret;
+	}
+	final bool IsNavigatingY()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs).get_IsNavigatingY(&_ret));
+		return _ret;
+	}
+	final bool IsNavigatingZ()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs).get_IsNavigatingZ(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialNavigationUpdatedEventArgs : Windows.UI.Input.Spatial.ISpatialNavigationUpdatedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationUpdatedEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Numerics.Vector3 NormalizedOffset()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationUpdatedEventArgs).get_NormalizedOffset(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialPointerInteractionSourcePose : Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose
 {
+extern(Windows):
+	final Windows.Foundation.Numerics.Vector3 Position()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Numerics.Vector3 ForwardDirection()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose).get_ForwardDirection(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Numerics.Vector3 UpDirection()
+	{
+		Windows.Foundation.Numerics.Vector3 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose).get_UpDirection(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialPointerPose : Windows.UI.Input.Spatial.ISpatialPointerPose, Windows.UI.Input.Spatial.ISpatialPointerPose2
 {
+extern(Windows):
+	final Windows.Perception.PerceptionTimestamp Timestamp()
+	{
+		Windows.Perception.PerceptionTimestamp _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialPointerPose).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Perception.People.HeadPose Head()
+	{
+		Windows.Perception.People.HeadPose _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialPointerPose).get_Head(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialPointerInteractionSourcePose TryGetInteractionSourcePose(Windows.UI.Input.Spatial.SpatialInteractionSource source)
+	{
+		Windows.UI.Input.Spatial.SpatialPointerInteractionSourcePose _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialPointerPose2).abi_TryGetInteractionSourcePose(source, &_ret));
+		return _ret;
+	}
 }
 
 interface SpatialRecognitionEndedEventArgs : Windows.UI.Input.Spatial.ISpatialRecognitionEndedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialRecognitionEndedEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialRecognitionStartedEventArgs : Windows.UI.Input.Spatial.ISpatialRecognitionStartedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialRecognitionStartedEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialRecognitionStartedEventArgs).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		return _ret;
+	}
+	final bool IsGesturePossible(Windows.UI.Input.Spatial.SpatialGestureSettings gesture)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialRecognitionStartedEventArgs).abi_IsGesturePossible(gesture, &_ret));
+		return _ret;
+	}
 }
 
 interface SpatialTappedEventArgs : Windows.UI.Input.Spatial.ISpatialTappedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
+	{
+		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialTappedEventArgs).get_InteractionSourceKind(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
+	{
+		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialTappedEventArgs).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		return _ret;
+	}
+	final UINT32 TapCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialTappedEventArgs).get_TapCount(&_ret));
+		return _ret;
+	}
 }
 
 @bitflags

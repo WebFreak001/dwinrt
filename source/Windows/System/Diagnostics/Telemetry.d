@@ -36,10 +36,38 @@ interface PlatformTelemetryClient
 
 interface PlatformTelemetryRegistrationResult : Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationResult
 {
+extern(Windows):
+	final Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationStatus Status()
+	{
+		Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationStatus _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationResult).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface PlatformTelemetryRegistrationSettings : Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings
 {
+extern(Windows):
+	final UINT32 StorageSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings).get_StorageSize(&_ret));
+		return _ret;
+	}
+	final void StorageSize(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings).set_StorageSize(value));
+	}
+	final UINT32 UploadQuotaSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings).get_UploadQuotaSize(&_ret));
+		return _ret;
+	}
+	final void UploadQuotaSize(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings).set_UploadQuotaSize(value));
+	}
 }
 
 enum PlatformTelemetryRegistrationStatus

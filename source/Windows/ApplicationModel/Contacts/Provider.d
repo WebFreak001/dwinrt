@@ -37,10 +37,60 @@ extern(Windows):
 
 interface ContactPickerUI : Windows.ApplicationModel.Contacts.Provider.IContactPickerUI, Windows.ApplicationModel.Contacts.Provider.IContactPickerUI2
 {
+extern(Windows):
+	deprecated("AddContact may be altered or unavailable for releases after Windows 8.1. Instead, use AddContact without the ID.")
+	final Windows.ApplicationModel.Contacts.Provider.AddContactResult AddContact(HSTRING id, Windows.ApplicationModel.Contacts.Contact contact)
+	{
+		Windows.ApplicationModel.Contacts.Provider.AddContactResult _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).abi_AddContact(id, contact, &_ret));
+		return _ret;
+	}
+	final void RemoveContact(HSTRING id)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).abi_RemoveContact(id));
+	}
+	final bool ContainsContact(HSTRING id)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).abi_ContainsContact(id, &_ret));
+		return _ret;
+	}
+	deprecated("DesiredFields may be altered or unavailable for releases after Windows 8.1. Instead, use DesiredFieldsWithContactFieldType.")
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) DesiredFields()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).get_DesiredFields(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.ContactSelectionMode SelectionMode()
+	{
+		Windows.ApplicationModel.Contacts.ContactSelectionMode _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).get_SelectionMode(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Contacts.Provider.AddContactResult AddContact(Windows.ApplicationModel.Contacts.Contact contact)
+	{
+		Windows.ApplicationModel.Contacts.Provider.AddContactResult _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI2).abi_AddContact(contact, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactFieldType) DesiredFieldsWithContactFieldType()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactFieldType) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI2).get_DesiredFieldsWithContactFieldType(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactRemovedEventArgs : Windows.ApplicationModel.Contacts.Provider.IContactRemovedEventArgs
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactRemovedEventArgs).get_Id(&_ret));
+		return _ret;
+	}
 }
 
 enum AddContactResult

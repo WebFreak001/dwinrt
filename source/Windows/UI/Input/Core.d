@@ -21,4 +21,17 @@ extern(Windows):
 
 interface RadialControllerIndependentInputSource : Windows.UI.Input.Core.IRadialControllerIndependentInputSource
 {
+extern(Windows):
+	final Windows.UI.Input.RadialController Controller()
+	{
+		Windows.UI.Input.RadialController _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Core.IRadialControllerIndependentInputSource).get_Controller(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CoreDispatcher Dispatcher()
+	{
+		Windows.UI.Core.CoreDispatcher _ret;
+		Debug.OK(this.as!(Windows.UI.Input.Core.IRadialControllerIndependentInputSource).get_Dispatcher(&_ret));
+		return _ret;
+	}
 }

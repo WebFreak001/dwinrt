@@ -406,18 +406,227 @@ extern(Windows):
 
 interface AccessibilitySettings : Windows.UI.ViewManagement.IAccessibilitySettings
 {
+extern(Windows):
+	final bool HighContrast()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IAccessibilitySettings).get_HighContrast(&_ret));
+		return _ret;
+	}
+	final HSTRING HighContrastScheme()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IAccessibilitySettings).get_HighContrastScheme(&_ret));
+		return _ret;
+	}
 }
 
 interface ActivationViewSwitcher : Windows.UI.ViewManagement.IActivationViewSwitcher
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction ShowAsStandaloneAsync(INT32 viewId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IActivationViewSwitcher).abi_ShowAsStandaloneAsync(viewId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ShowAsStandaloneWithSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IActivationViewSwitcher).abi_ShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, &_ret));
+		return _ret;
+	}
+	final bool IsViewPresentedOnActivationVirtualDesktop(INT32 viewId)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IActivationViewSwitcher).abi_IsViewPresentedOnActivationVirtualDesktop(viewId, &_ret));
+		return _ret;
+	}
 }
 
 interface ApplicationView : Windows.UI.ViewManagement.IApplicationView, Windows.UI.ViewManagement.IApplicationView2, Windows.UI.ViewManagement.IApplicationView3, Windows.UI.ViewManagement.IApplicationView4
 {
+extern(Windows):
+	final Windows.UI.ViewManagement.ApplicationViewOrientation Orientation()
+	{
+		Windows.UI.ViewManagement.ApplicationViewOrientation _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_Orientation(&_ret));
+		return _ret;
+	}
+	final bool AdjacentToLeftDisplayEdge()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_AdjacentToLeftDisplayEdge(&_ret));
+		return _ret;
+	}
+	final bool AdjacentToRightDisplayEdge()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_AdjacentToRightDisplayEdge(&_ret));
+		return _ret;
+	}
+	deprecated("To check full screen mode, use IsFullScreenMode. To check if the view is adjacent to both edges, use AdjacentToLeftDisplayEdge and AdjacentToRightDisplayEdge. For more info, see MSDN.")
+	final bool IsFullScreen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_IsFullScreen(&_ret));
+		return _ret;
+	}
+	final bool IsOnLockScreen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_IsOnLockScreen(&_ret));
+		return _ret;
+	}
+	final bool IsScreenCaptureEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_IsScreenCaptureEnabled(&_ret));
+		return _ret;
+	}
+	final void IsScreenCaptureEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).set_IsScreenCaptureEnabled(value));
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).set_Title(value));
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_Title(&_ret));
+		return _ret;
+	}
+	final INT32 Id()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_Id(&_ret));
+		return _ret;
+	}
+	deprecated("Use the TryEnterFullScreen method and IsFullScreenMode property instead of SuppressSystemOverlays. For more info, see MSDN.")
+	final bool SuppressSystemOverlays()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).get_SuppressSystemOverlays(&_ret));
+		return _ret;
+	}
+	deprecated("Use the TryEnterFullScreen method and IsFullScreenMode property instead of SuppressSystemOverlays. For more info, see MSDN.")
+	final void SuppressSystemOverlays(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).set_SuppressSystemOverlays(value));
+	}
+	final Windows.Foundation.Rect VisibleBounds()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).get_VisibleBounds(&_ret));
+		return _ret;
+	}
+	final bool SetDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode boundsMode)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).abi_SetDesiredBoundsMode(boundsMode, &_ret));
+		return _ret;
+	}
+	final Windows.UI.ViewManagement.ApplicationViewBoundsMode DesiredBoundsMode()
+	{
+		Windows.UI.ViewManagement.ApplicationViewBoundsMode _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).get_DesiredBoundsMode(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ViewManagement.ApplicationViewTitleBar TitleBar()
+	{
+		Windows.UI.ViewManagement.ApplicationViewTitleBar _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).get_TitleBar(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ViewManagement.FullScreenSystemOverlayMode FullScreenSystemOverlayMode()
+	{
+		Windows.UI.ViewManagement.FullScreenSystemOverlayMode _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).get_FullScreenSystemOverlayMode(&_ret));
+		return _ret;
+	}
+	final void FullScreenSystemOverlayMode(Windows.UI.ViewManagement.FullScreenSystemOverlayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).set_FullScreenSystemOverlayMode(value));
+	}
+	final bool IsFullScreenMode()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).get_IsFullScreenMode(&_ret));
+		return _ret;
+	}
+	final bool TryEnterFullScreenMode()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).abi_TryEnterFullScreenMode(&_ret));
+		return _ret;
+	}
+	final void ExitFullScreenMode()
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).abi_ExitFullScreenMode());
+	}
+	final void ShowStandardSystemOverlays()
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).abi_ShowStandardSystemOverlays());
+	}
+	final bool TryResizeView(Windows.Foundation.Size value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).abi_TryResizeView(value, &_ret));
+		return _ret;
+	}
+	final void SetPreferredMinSize(Windows.Foundation.Size minSize)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).abi_SetPreferredMinSize(minSize));
+	}
+	final Windows.UI.ViewManagement.ApplicationViewMode ViewMode()
+	{
+		Windows.UI.ViewManagement.ApplicationViewMode _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView4).get_ViewMode(&_ret));
+		return _ret;
+	}
+	final bool IsViewModeSupported(Windows.UI.ViewManagement.ApplicationViewMode viewMode)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView4).abi_IsViewModeSupported(viewMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryEnterViewModeAsync(Windows.UI.ViewManagement.ApplicationViewMode viewMode)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView4).abi_TryEnterViewModeAsync(viewMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryEnterViewModeWithPreferencesAsync(Windows.UI.ViewManagement.ApplicationViewMode viewMode, Windows.UI.ViewManagement.ViewModePreferences viewModePreferences)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView4).abi_TryEnterViewModeWithPreferencesAsync(viewMode, viewModePreferences, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryConsolidateAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView4).abi_TryConsolidateAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface ApplicationViewConsolidatedEventArgs : Windows.UI.ViewManagement.IApplicationViewConsolidatedEventArgs, Windows.UI.ViewManagement.IApplicationViewConsolidatedEventArgs2
 {
+extern(Windows):
+	final bool IsUserInitiated()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewConsolidatedEventArgs).get_IsUserInitiated(&_ret));
+		return _ret;
+	}
+	final bool IsAppInitiated()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewConsolidatedEventArgs2).get_IsAppInitiated(&_ret));
+		return _ret;
+	}
 }
 
 interface ApplicationViewScaling : Windows.UI.ViewManagement.IApplicationViewScaling
@@ -430,18 +639,196 @@ interface ApplicationViewSwitcher
 
 interface ApplicationViewTitleBar : Windows.UI.ViewManagement.IApplicationViewTitleBar
 {
+extern(Windows):
+	final void ForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ForegroundColor(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) ForegroundColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ForegroundColor(&_ret));
+		return _ret;
+	}
+	final void BackgroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_BackgroundColor(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) BackgroundColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_BackgroundColor(&_ret));
+		return _ret;
+	}
+	final void ButtonForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonForegroundColor(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonForegroundColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonForegroundColor(&_ret));
+		return _ret;
+	}
+	final void ButtonBackgroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonBackgroundColor(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonBackgroundColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonBackgroundColor(&_ret));
+		return _ret;
+	}
+	final void ButtonHoverForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonHoverForegroundColor(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonHoverForegroundColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonHoverForegroundColor(&_ret));
+		return _ret;
+	}
+	final void ButtonHoverBackgroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonHoverBackgroundColor(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonHoverBackgroundColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonHoverBackgroundColor(&_ret));
+		return _ret;
+	}
+	final void ButtonPressedForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonPressedForegroundColor(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonPressedForegroundColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonPressedForegroundColor(&_ret));
+		return _ret;
+	}
+	final void ButtonPressedBackgroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonPressedBackgroundColor(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonPressedBackgroundColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonPressedBackgroundColor(&_ret));
+		return _ret;
+	}
+	final void InactiveForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_InactiveForegroundColor(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) InactiveForegroundColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_InactiveForegroundColor(&_ret));
+		return _ret;
+	}
+	final void InactiveBackgroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_InactiveBackgroundColor(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) InactiveBackgroundColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_InactiveBackgroundColor(&_ret));
+		return _ret;
+	}
+	final void ButtonInactiveForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonInactiveForegroundColor(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonInactiveForegroundColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonInactiveForegroundColor(&_ret));
+		return _ret;
+	}
+	final void ButtonInactiveBackgroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonInactiveBackgroundColor(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonInactiveBackgroundColor()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonInactiveBackgroundColor(&_ret));
+		return _ret;
+	}
 }
 
 interface ApplicationViewTransferContext : Windows.UI.ViewManagement.IApplicationViewTransferContext
 {
+extern(Windows):
+	final INT32 ViewId()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTransferContext).get_ViewId(&_ret));
+		return _ret;
+	}
+	final void ViewId(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTransferContext).set_ViewId(value));
+	}
 }
 
 interface InputPane : Windows.UI.ViewManagement.IInputPane, Windows.UI.ViewManagement.IInputPane2, Windows.UI.ViewManagement.IInputPaneControl
 {
+extern(Windows):
+	final Windows.Foundation.Rect OccludedRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane).get_OccludedRect(&_ret));
+		return _ret;
+	}
+	final bool TryShow()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane2).abi_TryShow(&_ret));
+		return _ret;
+	}
+	final bool TryHide()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane2).abi_TryHide(&_ret));
+		return _ret;
+	}
+	final bool Visible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPaneControl).get_Visible(&_ret));
+		return _ret;
+	}
+	final void Visible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPaneControl).set_Visible(value));
+	}
 }
 
 interface InputPaneVisibilityEventArgs : Windows.UI.ViewManagement.IInputPaneVisibilityEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Rect OccludedRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPaneVisibilityEventArgs).get_OccludedRect(&_ret));
+		return _ret;
+	}
+	final void EnsuredFocusedElementInView(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPaneVisibilityEventArgs).set_EnsuredFocusedElementInView(value));
+	}
+	final bool EnsuredFocusedElementInView()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPaneVisibilityEventArgs).get_EnsuredFocusedElementInView(&_ret));
+		return _ret;
+	}
 }
 
 interface ProjectionManager
@@ -450,14 +837,139 @@ interface ProjectionManager
 
 interface UISettings : Windows.UI.ViewManagement.IUISettings, Windows.UI.ViewManagement.IUISettings2, Windows.UI.ViewManagement.IUISettings3, Windows.UI.ViewManagement.IUISettings4
 {
+extern(Windows):
+	final Windows.UI.ViewManagement.HandPreference HandPreference()
+	{
+		Windows.UI.ViewManagement.HandPreference _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_HandPreference(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size CursorSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_CursorSize(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size ScrollBarSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_ScrollBarSize(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size ScrollBarArrowSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_ScrollBarArrowSize(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size ScrollBarThumbBoxSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_ScrollBarThumbBoxSize(&_ret));
+		return _ret;
+	}
+	final UINT32 MessageDuration()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_MessageDuration(&_ret));
+		return _ret;
+	}
+	final bool AnimationsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_AnimationsEnabled(&_ret));
+		return _ret;
+	}
+	final bool CaretBrowsingEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_CaretBrowsingEnabled(&_ret));
+		return _ret;
+	}
+	final UINT32 CaretBlinkRate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_CaretBlinkRate(&_ret));
+		return _ret;
+	}
+	final UINT32 CaretWidth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_CaretWidth(&_ret));
+		return _ret;
+	}
+	final UINT32 DoubleClickTime()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_DoubleClickTime(&_ret));
+		return _ret;
+	}
+	final UINT32 MouseHoverTime()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_MouseHoverTime(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Color UIElementColor(Windows.UI.ViewManagement.UIElementType desiredElement)
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).abi_UIElementColor(desiredElement, &_ret));
+		return _ret;
+	}
+	final double TextScaleFactor()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings2).get_TextScaleFactor(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Color GetColorValue(Windows.UI.ViewManagement.UIColorType desiredColor)
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings3).abi_GetColorValue(desiredColor, &_ret));
+		return _ret;
+	}
+	final bool AdvancedEffectsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings4).get_AdvancedEffectsEnabled(&_ret));
+		return _ret;
+	}
 }
 
 interface UIViewSettings : Windows.UI.ViewManagement.IUIViewSettings
 {
+extern(Windows):
+	final Windows.UI.ViewManagement.UserInteractionMode UserInteractionMode()
+	{
+		Windows.UI.ViewManagement.UserInteractionMode _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUIViewSettings).get_UserInteractionMode(&_ret));
+		return _ret;
+	}
 }
 
 interface ViewModePreferences : Windows.UI.ViewManagement.IViewModePreferences
 {
+extern(Windows):
+	final Windows.UI.ViewManagement.ViewSizePreference ViewSizePreference()
+	{
+		Windows.UI.ViewManagement.ViewSizePreference _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IViewModePreferences).get_ViewSizePreference(&_ret));
+		return _ret;
+	}
+	final void ViewSizePreference(Windows.UI.ViewManagement.ViewSizePreference value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IViewModePreferences).set_ViewSizePreference(value));
+	}
+	final Windows.Foundation.Size CustomSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IViewModePreferences).get_CustomSize(&_ret));
+		return _ret;
+	}
+	final void CustomSize(Windows.Foundation.Size value)
+	{
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IViewModePreferences).set_CustomSize(value));
+	}
 }
 
 enum ApplicationViewBoundsMode

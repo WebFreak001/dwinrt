@@ -92,28 +92,161 @@ extern(Windows):
 
 interface AppExtension : Windows.ApplicationModel.AppExtensions.IAppExtension
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).get_Description(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Package Package()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).get_Package(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.AppInfo AppInfo()
+	{
+		Windows.ApplicationModel.AppInfo _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).get_AppInfo(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IPropertySet) GetExtensionPropertiesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IPropertySet) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).abi_GetExtensionPropertiesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) GetPublicFolderAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).abi_GetPublicFolderAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface AppExtensionCatalog : Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension)) FindAllAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).abi_FindAllAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) RequestRemovePackageAsync(HSTRING packageFullName)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).abi_RequestRemovePackageAsync(packageFullName, &_ret));
+		return _ret;
+	}
 }
 
 interface AppExtensionPackageInstalledEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs
 {
+extern(Windows):
+	final HSTRING AppExtensionName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs).get_AppExtensionName(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Package Package()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs).get_Package(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension) Extensions()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs).get_Extensions(&_ret));
+		return _ret;
+	}
 }
 
 interface AppExtensionPackageStatusChangedEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageStatusChangedEventArgs
 {
+extern(Windows):
+	final HSTRING AppExtensionName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageStatusChangedEventArgs).get_AppExtensionName(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Package Package()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageStatusChangedEventArgs).get_Package(&_ret));
+		return _ret;
+	}
 }
 
 interface AppExtensionPackageUninstallingEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUninstallingEventArgs
 {
+extern(Windows):
+	final HSTRING AppExtensionName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUninstallingEventArgs).get_AppExtensionName(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Package Package()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUninstallingEventArgs).get_Package(&_ret));
+		return _ret;
+	}
 }
 
 interface AppExtensionPackageUpdatedEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatedEventArgs
 {
+extern(Windows):
+	final HSTRING AppExtensionName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatedEventArgs).get_AppExtensionName(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Package Package()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatedEventArgs).get_Package(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension) Extensions()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatedEventArgs).get_Extensions(&_ret));
+		return _ret;
+	}
 }
 
 interface AppExtensionPackageUpdatingEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatingEventArgs
 {
+extern(Windows):
+	final HSTRING AppExtensionName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatingEventArgs).get_AppExtensionName(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Package Package()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatingEventArgs).get_Package(&_ret));
+		return _ret;
+	}
 }

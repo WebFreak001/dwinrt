@@ -39,8 +39,62 @@ extern(Windows):
 
 interface Lamp : Windows.Devices.Lights.ILamp, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final void IsEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).set_IsEnabled(value));
+	}
+	final FLOAT BrightnessLevel()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).get_BrightnessLevel(&_ret));
+		return _ret;
+	}
+	final void BrightnessLevel(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).set_BrightnessLevel(value));
+	}
+	final bool IsColorSettable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).get_IsColorSettable(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Color Color()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).get_Color(&_ret));
+		return _ret;
+	}
+	final void Color(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).set_Color(value));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface LampAvailabilityChangedEventArgs : Windows.Devices.Lights.ILampAvailabilityChangedEventArgs
 {
+extern(Windows):
+	final bool IsAvailable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Lights.ILampAvailabilityChangedEventArgs).get_IsAvailable(&_ret));
+		return _ret;
+	}
 }

@@ -197,18 +197,108 @@ interface AccountsSettingsPane : Windows.UI.ApplicationSettings.IAccountsSetting
 
 interface AccountsSettingsPaneCommandsRequestedEventArgs : Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.WebAccountProviderCommand) WebAccountProviderCommands()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.WebAccountProviderCommand) _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).get_WebAccountProviderCommands(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.WebAccountCommand) WebAccountCommands()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.WebAccountCommand) _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).get_WebAccountCommands(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.CredentialCommand) CredentialCommands()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.CredentialCommand) _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).get_CredentialCommands(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.SettingsCommand) Commands()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.SettingsCommand) _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).get_Commands(&_ret));
+		return _ret;
+	}
+	final HSTRING HeaderText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).get_HeaderText(&_ret));
+		return _ret;
+	}
+	final void HeaderText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).set_HeaderText(value));
+	}
+	final Windows.UI.ApplicationSettings.AccountsSettingsPaneEventDeferral GetDeferral()
+	{
+		Windows.UI.ApplicationSettings.AccountsSettingsPaneEventDeferral _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface AccountsSettingsPaneEventDeferral : Windows.UI.ApplicationSettings.IAccountsSettingsPaneEventDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneEventDeferral).abi_Complete());
+	}
 }
 
 interface CredentialCommand : Windows.UI.ApplicationSettings.ICredentialCommand
 {
+extern(Windows):
+	final Windows.Security.Credentials.PasswordCredential PasswordCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.ICredentialCommand).get_PasswordCredential(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler CredentialDeleted()
+	{
+		Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.ICredentialCommand).get_CredentialDeleted(&_ret));
+		return _ret;
+	}
 }
 
 interface SettingsCommand : Windows.UI.Popups.IUICommand
 {
+extern(Windows):
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Label(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Label(value));
+	}
+	final Windows.UI.Popups.UICommandInvokedHandler Invoked()
+	{
+		Windows.UI.Popups.UICommandInvokedHandler _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Invoked(&_ret));
+		return _ret;
+	}
+	final void Invoked(Windows.UI.Popups.UICommandInvokedHandler value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Invoked(value));
+	}
+	final IInspectable Id()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Id(&_ret));
+		return _ret;
+	}
+	final void Id(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Id(value));
+	}
 }
 
 interface SettingsPane : Windows.UI.ApplicationSettings.ISettingsPane
@@ -217,22 +307,77 @@ interface SettingsPane : Windows.UI.ApplicationSettings.ISettingsPane
 
 interface SettingsPaneCommandsRequest : Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequest
 {
+extern(Windows):
+	deprecated("SettingsPaneCommandsRequest is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.SettingsCommand) ApplicationCommands()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.SettingsCommand) _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequest).get_ApplicationCommands(&_ret));
+		return _ret;
+	}
 }
 
 interface SettingsPaneCommandsRequestedEventArgs : Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequestedEventArgs
 {
+extern(Windows):
+	deprecated("SettingsPaneCommandsRequestedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest Request()
+	{
+		Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 interface WebAccountCommand : Windows.UI.ApplicationSettings.IWebAccountCommand
 {
+extern(Windows):
+	final Windows.Security.Credentials.WebAccount WebAccount()
+	{
+		Windows.Security.Credentials.WebAccount _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountCommand).get_WebAccount(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler Invoked()
+	{
+		Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountCommand).get_Invoked(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ApplicationSettings.SupportedWebAccountActions Actions()
+	{
+		Windows.UI.ApplicationSettings.SupportedWebAccountActions _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountCommand).get_Actions(&_ret));
+		return _ret;
+	}
 }
 
 interface WebAccountInvokedArgs : Windows.UI.ApplicationSettings.IWebAccountInvokedArgs
 {
+extern(Windows):
+	final Windows.UI.ApplicationSettings.WebAccountAction Action()
+	{
+		Windows.UI.ApplicationSettings.WebAccountAction _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountInvokedArgs).get_Action(&_ret));
+		return _ret;
+	}
 }
 
 interface WebAccountProviderCommand : Windows.UI.ApplicationSettings.IWebAccountProviderCommand
 {
+extern(Windows):
+	final Windows.Security.Credentials.WebAccountProvider WebAccountProvider()
+	{
+		Windows.Security.Credentials.WebAccountProvider _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountProviderCommand).get_WebAccountProvider(&_ret));
+		return _ret;
+	}
+	final Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler Invoked()
+	{
+		Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler _ret;
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountProviderCommand).get_Invoked(&_ret));
+		return _ret;
+	}
 }
 
 enum SettingsEdgeLocation

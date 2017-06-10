@@ -590,6 +590,37 @@ extern(Windows):
 
 interface ChatCapabilities : Windows.ApplicationModel.Chat.IChatCapabilities
 {
+extern(Windows):
+	final bool IsOnline()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatCapabilities).get_IsOnline(&_ret));
+		return _ret;
+	}
+	final bool IsChatCapable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatCapabilities).get_IsChatCapable(&_ret));
+		return _ret;
+	}
+	final bool IsFileTransferCapable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatCapabilities).get_IsFileTransferCapable(&_ret));
+		return _ret;
+	}
+	final bool IsGeoLocationPushCapable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatCapabilities).get_IsGeoLocationPushCapable(&_ret));
+		return _ret;
+	}
+	final bool IsIntegratedMessagingCapable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatCapabilities).get_IsIntegratedMessagingCapable(&_ret));
+		return _ret;
+	}
 }
 
 interface ChatCapabilitiesManager
@@ -598,22 +629,513 @@ interface ChatCapabilitiesManager
 
 interface ChatConversation : Windows.ApplicationModel.Chat.IChatConversation, Windows.ApplicationModel.Chat.IChatConversation2, Windows.ApplicationModel.Chat.IChatItem
 {
+extern(Windows):
+	final bool HasUnreadMessages()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).get_HasUnreadMessages(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).get_Subject(&_ret));
+		return _ret;
+	}
+	final void Subject(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).set_Subject(value));
+	}
+	final bool IsConversationMuted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).get_IsConversationMuted(&_ret));
+		return _ret;
+	}
+	final void IsConversationMuted(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).set_IsConversationMuted(value));
+	}
+	final HSTRING MostRecentMessageId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).get_MostRecentMessageId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Participants()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).get_Participants(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatConversationThreadingInfo ThreadingInfo()
+	{
+		Windows.ApplicationModel.Chat.ChatConversationThreadingInfo _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).get_ThreadingInfo(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).abi_DeleteAsync(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatMessageReader GetMessageReader()
+	{
+		Windows.ApplicationModel.Chat.ChatMessageReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).abi_GetMessageReader(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MarkAllMessagesAsReadAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).abi_MarkAllMessagesAsReadAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MarkMessagesAsReadAsync(Windows.Foundation.DateTime value)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).abi_MarkMessagesAsReadAsync(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).abi_SaveAsync(&_ret));
+		return _ret;
+	}
+	final void NotifyLocalParticipantComposing(HSTRING transportId, HSTRING participantAddress, bool isComposing)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).abi_NotifyLocalParticipantComposing(transportId, participantAddress, isComposing));
+	}
+	final void NotifyRemoteParticipantComposing(HSTRING transportId, HSTRING participantAddress, bool isComposing)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).abi_NotifyRemoteParticipantComposing(transportId, participantAddress, isComposing));
+	}
+	final bool CanModifyParticipants()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation2).get_CanModifyParticipants(&_ret));
+		return _ret;
+	}
+	final void CanModifyParticipants(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation2).set_CanModifyParticipants(value));
+	}
+	final Windows.ApplicationModel.Chat.ChatItemKind ItemKind()
+	{
+		Windows.ApplicationModel.Chat.ChatItemKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatItem).get_ItemKind(&_ret));
+		return _ret;
+	}
 }
 
 interface ChatConversationReader : Windows.ApplicationModel.Chat.IChatConversationReader
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatConversation)) ReadBatchAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatConversation)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversationReader).abi_ReadBatchAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatConversation)) ReadBatchWithCountAsync(INT32 count)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatConversation)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversationReader).abi_ReadBatchWithCountAsync(count, &_ret));
+		return _ret;
+	}
 }
 
 interface ChatConversationThreadingInfo : Windows.ApplicationModel.Chat.IChatConversationThreadingInfo
 {
+extern(Windows):
+	final HSTRING ContactId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo).get_ContactId(&_ret));
+		return _ret;
+	}
+	final void ContactId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo).set_ContactId(value));
+	}
+	final HSTRING Custom()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo).get_Custom(&_ret));
+		return _ret;
+	}
+	final void Custom(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo).set_Custom(value));
+	}
+	final HSTRING ConversationId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo).get_ConversationId(&_ret));
+		return _ret;
+	}
+	final void ConversationId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo).set_ConversationId(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Participants()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo).get_Participants(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatConversationThreadingKind Kind()
+	{
+		Windows.ApplicationModel.Chat.ChatConversationThreadingKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo).get_Kind(&_ret));
+		return _ret;
+	}
+	final void Kind(Windows.ApplicationModel.Chat.ChatConversationThreadingKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo).set_Kind(value));
+	}
 }
 
 interface ChatMessage : Windows.ApplicationModel.Chat.IChatMessage, Windows.ApplicationModel.Chat.IChatMessage2, Windows.ApplicationModel.Chat.IChatMessage3, Windows.ApplicationModel.Chat.IChatMessage4, Windows.ApplicationModel.Chat.IChatItem
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Chat.ChatMessageAttachment) Attachments()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Chat.ChatMessageAttachment) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_Attachments(&_ret));
+		return _ret;
+	}
+	final HSTRING Body()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_Body(&_ret));
+		return _ret;
+	}
+	final void Body(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).set_Body(value));
+	}
+	final HSTRING From()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_From(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_Id(&_ret));
+		return _ret;
+	}
+	final bool IsForwardingDisabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_IsForwardingDisabled(&_ret));
+		return _ret;
+	}
+	final bool IsIncoming()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_IsIncoming(&_ret));
+		return _ret;
+	}
+	final bool IsRead()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_IsRead(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime LocalTimestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_LocalTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime NetworkTimestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_NetworkTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) Recipients()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_Recipients(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Chat.ChatMessageStatus) RecipientSendStatuses()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Chat.ChatMessageStatus) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_RecipientSendStatuses(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatMessageStatus Status()
+	{
+		Windows.ApplicationModel.Chat.ChatMessageStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_Status(&_ret));
+		return _ret;
+	}
+	final HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_Subject(&_ret));
+		return _ret;
+	}
+	final HSTRING TransportFriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_TransportFriendlyName(&_ret));
+		return _ret;
+	}
+	final HSTRING TransportId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).get_TransportId(&_ret));
+		return _ret;
+	}
+	final void TransportId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).set_TransportId(value));
+	}
+	final UINT64 EstimatedDownloadSize()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).get_EstimatedDownloadSize(&_ret));
+		return _ret;
+	}
+	final void EstimatedDownloadSize(UINT64 value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_EstimatedDownloadSize(value));
+	}
+	final void From(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_From(value));
+	}
+	final bool IsAutoReply()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).get_IsAutoReply(&_ret));
+		return _ret;
+	}
+	final void IsAutoReply(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_IsAutoReply(value));
+	}
+	final void IsForwardingDisabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_IsForwardingDisabled(value));
+	}
+	final bool IsReplyDisabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).get_IsReplyDisabled(&_ret));
+		return _ret;
+	}
+	final void IsIncoming(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_IsIncoming(value));
+	}
+	final void IsRead(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_IsRead(value));
+	}
+	final bool IsSeen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).get_IsSeen(&_ret));
+		return _ret;
+	}
+	final void IsSeen(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_IsSeen(value));
+	}
+	final bool IsSimMessage()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).get_IsSimMessage(&_ret));
+		return _ret;
+	}
+	final void LocalTimestamp(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_LocalTimestamp(value));
+	}
+	final Windows.ApplicationModel.Chat.ChatMessageKind MessageKind()
+	{
+		Windows.ApplicationModel.Chat.ChatMessageKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).get_MessageKind(&_ret));
+		return _ret;
+	}
+	final void MessageKind(Windows.ApplicationModel.Chat.ChatMessageKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_MessageKind(value));
+	}
+	final Windows.ApplicationModel.Chat.ChatMessageOperatorKind MessageOperatorKind()
+	{
+		Windows.ApplicationModel.Chat.ChatMessageOperatorKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).get_MessageOperatorKind(&_ret));
+		return _ret;
+	}
+	final void MessageOperatorKind(Windows.ApplicationModel.Chat.ChatMessageOperatorKind value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_MessageOperatorKind(value));
+	}
+	final void NetworkTimestamp(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_NetworkTimestamp(value));
+	}
+	final bool IsReceivedDuringQuietHours()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).get_IsReceivedDuringQuietHours(&_ret));
+		return _ret;
+	}
+	final void IsReceivedDuringQuietHours(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_IsReceivedDuringQuietHours(value));
+	}
+	final void RemoteId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_RemoteId(value));
+	}
+	final void Status(Windows.ApplicationModel.Chat.ChatMessageStatus value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_Status(value));
+	}
+	final void Subject(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_Subject(value));
+	}
+	final bool ShouldSuppressNotification()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).get_ShouldSuppressNotification(&_ret));
+		return _ret;
+	}
+	final void ShouldSuppressNotification(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_ShouldSuppressNotification(value));
+	}
+	final Windows.ApplicationModel.Chat.ChatConversationThreadingInfo ThreadingInfo()
+	{
+		Windows.ApplicationModel.Chat.ChatConversationThreadingInfo _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).get_ThreadingInfo(&_ret));
+		return _ret;
+	}
+	final void ThreadingInfo(Windows.ApplicationModel.Chat.ChatConversationThreadingInfo value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_ThreadingInfo(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Chat.ChatRecipientDeliveryInfo) RecipientsDeliveryInfos()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Chat.ChatRecipientDeliveryInfo) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).get_RecipientsDeliveryInfos(&_ret));
+		return _ret;
+	}
+	final HSTRING RemoteId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage3).get_RemoteId(&_ret));
+		return _ret;
+	}
+	final HSTRING SyncId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage4).get_SyncId(&_ret));
+		return _ret;
+	}
+	final void SyncId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage4).set_SyncId(value));
+	}
+	final Windows.ApplicationModel.Chat.ChatItemKind ItemKind()
+	{
+		Windows.ApplicationModel.Chat.ChatItemKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatItem).get_ItemKind(&_ret));
+		return _ret;
+	}
 }
 
 interface ChatMessageAttachment : Windows.ApplicationModel.Chat.IChatMessageAttachment, Windows.ApplicationModel.Chat.IChatMessageAttachment2
 {
+extern(Windows):
+	final Windows.Storage.Streams.IRandomAccessStreamReference DataStreamReference()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment).get_DataStreamReference(&_ret));
+		return _ret;
+	}
+	final void DataStreamReference(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment).set_DataStreamReference(value));
+	}
+	final UINT32 GroupId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment).get_GroupId(&_ret));
+		return _ret;
+	}
+	final void GroupId(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment).set_GroupId(value));
+	}
+	final HSTRING MimeType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment).get_MimeType(&_ret));
+		return _ret;
+	}
+	final void MimeType(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment).set_MimeType(value));
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment).set_Text(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Thumbnail()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment2).get_Thumbnail(&_ret));
+		return _ret;
+	}
+	final void Thumbnail(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment2).set_Thumbnail(value));
+	}
+	final double TransferProgress()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment2).get_TransferProgress(&_ret));
+		return _ret;
+	}
+	final void TransferProgress(double value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment2).set_TransferProgress(value));
+	}
+	final HSTRING OriginalFileName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment2).get_OriginalFileName(&_ret));
+		return _ret;
+	}
+	final void OriginalFileName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment2).set_OriginalFileName(value));
+	}
 }
 
 interface ChatMessageBlocking
@@ -622,22 +1144,77 @@ interface ChatMessageBlocking
 
 interface ChatMessageChange : Windows.ApplicationModel.Chat.IChatMessageChange
 {
+extern(Windows):
+	final Windows.ApplicationModel.Chat.ChatMessageChangeType ChangeType()
+	{
+		Windows.ApplicationModel.Chat.ChatMessageChangeType _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageChange).get_ChangeType(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatMessage Message()
+	{
+		Windows.ApplicationModel.Chat.ChatMessage _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageChange).get_Message(&_ret));
+		return _ret;
+	}
 }
 
 interface ChatMessageChangeReader : Windows.ApplicationModel.Chat.IChatMessageChangeReader
 {
+extern(Windows):
+	final void AcceptChanges()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageChangeReader).abi_AcceptChanges());
+	}
+	final void AcceptChangesThrough(Windows.ApplicationModel.Chat.ChatMessageChange lastChangeToAcknowledge)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageChangeReader).abi_AcceptChangesThrough(lastChangeToAcknowledge));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatMessageChange)) ReadBatchAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatMessageChange)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageChangeReader).abi_ReadBatchAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface ChatMessageChangeTracker : Windows.ApplicationModel.Chat.IChatMessageChangeTracker
 {
+extern(Windows):
+	final void Enable()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageChangeTracker).abi_Enable());
+	}
+	final Windows.ApplicationModel.Chat.ChatMessageChangeReader GetChangeReader()
+	{
+		Windows.ApplicationModel.Chat.ChatMessageChangeReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageChangeTracker).abi_GetChangeReader(&_ret));
+		return _ret;
+	}
+	final void Reset()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageChangeTracker).abi_Reset());
+	}
 }
 
 interface ChatMessageChangedDeferral : Windows.ApplicationModel.Chat.IChatMessageChangedDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageChangedDeferral).abi_Complete());
+	}
 }
 
 interface ChatMessageChangedEventArgs : Windows.ApplicationModel.Chat.IChatMessageChangedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Chat.ChatMessageChangedDeferral GetDeferral()
+	{
+		Windows.ApplicationModel.Chat.ChatMessageChangedDeferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageChangedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface ChatMessageManager
@@ -646,66 +1223,596 @@ interface ChatMessageManager
 
 interface ChatMessageNotificationTriggerDetails : Windows.ApplicationModel.Chat.IChatMessageNotificationTriggerDetails, Windows.ApplicationModel.Chat.IChatMessageNotificationTriggerDetails2
 {
+extern(Windows):
+	final Windows.ApplicationModel.Chat.ChatMessage ChatMessage()
+	{
+		Windows.ApplicationModel.Chat.ChatMessage _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageNotificationTriggerDetails).get_ChatMessage(&_ret));
+		return _ret;
+	}
+	final bool ShouldDisplayToast()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageNotificationTriggerDetails2).get_ShouldDisplayToast(&_ret));
+		return _ret;
+	}
+	final bool ShouldUpdateDetailText()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageNotificationTriggerDetails2).get_ShouldUpdateDetailText(&_ret));
+		return _ret;
+	}
+	final bool ShouldUpdateBadge()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageNotificationTriggerDetails2).get_ShouldUpdateBadge(&_ret));
+		return _ret;
+	}
+	final bool ShouldUpdateActionCenter()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageNotificationTriggerDetails2).get_ShouldUpdateActionCenter(&_ret));
+		return _ret;
+	}
 }
 
 interface ChatMessageReader : Windows.ApplicationModel.Chat.IChatMessageReader, Windows.ApplicationModel.Chat.IChatMessageReader2
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatMessage)) ReadBatchAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatMessage)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageReader).abi_ReadBatchAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatMessage)) ReadBatchWithCountAsync(INT32 count)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.ChatMessage)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageReader2).abi_ReadBatchWithCountAsync(count, &_ret));
+		return _ret;
+	}
 }
 
 interface ChatMessageStore : Windows.ApplicationModel.Chat.IChatMessageStore, Windows.ApplicationModel.Chat.IChatMessageStore2, Windows.ApplicationModel.Chat.IChatMessageStore3
 {
+extern(Windows):
+	final Windows.ApplicationModel.Chat.ChatMessageChangeTracker ChangeTracker()
+	{
+		Windows.ApplicationModel.Chat.ChatMessageChangeTracker _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).get_ChangeTracker(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteMessageAsync(HSTRING localMessageId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).abi_DeleteMessageAsync(localMessageId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DownloadMessageAsync(HSTRING localChatMessageId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).abi_DownloadMessageAsync(localChatMessageId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) GetMessageAsync(HSTRING localChatMessageId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).abi_GetMessageAsync(localChatMessageId, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatMessageReader GetMessageReader1()
+	{
+		Windows.ApplicationModel.Chat.ChatMessageReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).abi_GetMessageReader1(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatMessageReader GetMessageReader2(Windows.Foundation.TimeSpan recentTimeLimit)
+	{
+		Windows.ApplicationModel.Chat.ChatMessageReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).abi_GetMessageReader2(recentTimeLimit, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MarkMessageReadAsync(HSTRING localChatMessageId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).abi_MarkMessageReadAsync(localChatMessageId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RetrySendMessageAsync(HSTRING localChatMessageId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).abi_RetrySendMessageAsync(localChatMessageId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SendMessageAsync(Windows.ApplicationModel.Chat.ChatMessage chatMessage)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).abi_SendMessageAsync(chatMessage, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatMessageValidationResult ValidateMessage(Windows.ApplicationModel.Chat.ChatMessage chatMessage)
+	{
+		Windows.ApplicationModel.Chat.ChatMessageValidationResult _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).abi_ValidateMessage(chatMessage, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) ForwardMessageAsync(HSTRING localChatMessageId, Windows.Foundation.Collections.IIterable!(HSTRING) addresses)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_ForwardMessageAsync(localChatMessageId, addresses, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) GetConversationAsync(HSTRING conversationId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_GetConversationAsync(conversationId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) GetConversationForTransportsAsync(HSTRING conversationId, Windows.Foundation.Collections.IIterable!(HSTRING) transportIds)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_GetConversationForTransportsAsync(conversationId, transportIds, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) GetConversationFromThreadingInfoAsync(Windows.ApplicationModel.Chat.ChatConversationThreadingInfo threadingInfo)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_GetConversationFromThreadingInfoAsync(threadingInfo, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatConversationReader GetConversationReader()
+	{
+		Windows.ApplicationModel.Chat.ChatConversationReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_GetConversationReader(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatConversationReader GetConversationForTransportsReader(Windows.Foundation.Collections.IIterable!(HSTRING) transportIds)
+	{
+		Windows.ApplicationModel.Chat.ChatConversationReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_GetConversationForTransportsReader(transportIds, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) GetMessageByRemoteIdAsync(HSTRING transportId, HSTRING remoteId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_GetMessageByRemoteIdAsync(transportId, remoteId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(INT32) GetUnseenCountAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_GetUnseenCountAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(INT32) GetUnseenCountForTransportsReaderAsync(Windows.Foundation.Collections.IIterable!(HSTRING) transportIds)
+	{
+		Windows.Foundation.IAsyncOperation!(INT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_GetUnseenCountForTransportsReaderAsync(transportIds, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MarkAsSeenAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_MarkAsSeenAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction MarkAsSeenForTransportsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) transportIds)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_MarkAsSeenForTransportsAsync(transportIds, &_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatSearchReader GetSearchReader(Windows.ApplicationModel.Chat.ChatQueryOptions value)
+	{
+		Windows.ApplicationModel.Chat.ChatSearchReader _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_GetSearchReader(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SaveMessageAsync(Windows.ApplicationModel.Chat.ChatMessage chatMessage)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_SaveMessageAsync(chatMessage, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryCancelDownloadMessageAsync(HSTRING localChatMessageId)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_TryCancelDownloadMessageAsync(localChatMessageId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryCancelSendMessageAsync(HSTRING localChatMessageId)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_TryCancelSendMessageAsync(localChatMessageId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) GetMessageBySyncIdAsync(HSTRING syncId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore3).abi_GetMessageBySyncIdAsync(syncId, &_ret));
+		return _ret;
+	}
 }
 
 interface ChatMessageStoreChangedEventArgs : Windows.ApplicationModel.Chat.IChatMessageStoreChangedEventArgs
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStoreChangedEventArgs).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatStoreChangedEventKind Kind()
+	{
+		Windows.ApplicationModel.Chat.ChatStoreChangedEventKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStoreChangedEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
 }
 
 interface ChatMessageTransport : Windows.ApplicationModel.Chat.IChatMessageTransport, Windows.ApplicationModel.Chat.IChatMessageTransport2
 {
+extern(Windows):
+	final bool IsAppSetAsNotificationProvider()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageTransport).get_IsAppSetAsNotificationProvider(&_ret));
+		return _ret;
+	}
+	final bool IsActive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageTransport).get_IsActive(&_ret));
+		return _ret;
+	}
+	final HSTRING TransportFriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageTransport).get_TransportFriendlyName(&_ret));
+		return _ret;
+	}
+	final HSTRING TransportId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageTransport).get_TransportId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RequestSetAsNotificationProviderAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageTransport).abi_RequestSetAsNotificationProviderAsync(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatMessageTransportConfiguration Configuration()
+	{
+		Windows.ApplicationModel.Chat.ChatMessageTransportConfiguration _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageTransport2).get_Configuration(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatMessageTransportKind TransportKind()
+	{
+		Windows.ApplicationModel.Chat.ChatMessageTransportKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageTransport2).get_TransportKind(&_ret));
+		return _ret;
+	}
 }
 
 interface ChatMessageTransportConfiguration : Windows.ApplicationModel.Chat.IChatMessageTransportConfiguration
 {
+extern(Windows):
+	final INT32 MaxAttachmentCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageTransportConfiguration).get_MaxAttachmentCount(&_ret));
+		return _ret;
+	}
+	final INT32 MaxMessageSizeInKilobytes()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageTransportConfiguration).get_MaxMessageSizeInKilobytes(&_ret));
+		return _ret;
+	}
+	final INT32 MaxRecipientCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageTransportConfiguration).get_MaxRecipientCount(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.MediaEncodingProfile SupportedVideoFormat()
+	{
+		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageTransportConfiguration).get_SupportedVideoFormat(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) ExtendedProperties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageTransportConfiguration).get_ExtendedProperties(&_ret));
+		return _ret;
+	}
 }
 
 interface ChatMessageValidationResult : Windows.ApplicationModel.Chat.IChatMessageValidationResult
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(UINT32) MaxPartCount()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageValidationResult).get_MaxPartCount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) PartCount()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageValidationResult).get_PartCount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) RemainingCharacterCountInPart()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageValidationResult).get_RemainingCharacterCountInPart(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatMessageValidationStatus Status()
+	{
+		Windows.ApplicationModel.Chat.ChatMessageValidationStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageValidationResult).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface ChatQueryOptions : Windows.ApplicationModel.Chat.IChatQueryOptions
 {
+extern(Windows):
+	final HSTRING SearchString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatQueryOptions).get_SearchString(&_ret));
+		return _ret;
+	}
+	final void SearchString(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatQueryOptions).set_SearchString(value));
+	}
 }
 
 interface ChatRecipientDeliveryInfo : Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo
 {
+extern(Windows):
+	final HSTRING TransportAddress()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo).get_TransportAddress(&_ret));
+		return _ret;
+	}
+	final void TransportAddress(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo).set_TransportAddress(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) DeliveryTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo).get_DeliveryTime(&_ret));
+		return _ret;
+	}
+	final void DeliveryTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo).set_DeliveryTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ReadTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo).get_ReadTime(&_ret));
+		return _ret;
+	}
+	final void ReadTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo).set_ReadTime(value));
+	}
+	final Windows.ApplicationModel.Chat.ChatTransportErrorCodeCategory TransportErrorCodeCategory()
+	{
+		Windows.ApplicationModel.Chat.ChatTransportErrorCodeCategory _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo).get_TransportErrorCodeCategory(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatTransportInterpretedErrorCode TransportInterpretedErrorCode()
+	{
+		Windows.ApplicationModel.Chat.ChatTransportInterpretedErrorCode _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo).get_TransportInterpretedErrorCode(&_ret));
+		return _ret;
+	}
+	final INT32 TransportErrorCode()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo).get_TransportErrorCode(&_ret));
+		return _ret;
+	}
+	final bool IsErrorPermanent()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo).get_IsErrorPermanent(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.ChatMessageStatus Status()
+	{
+		Windows.ApplicationModel.Chat.ChatMessageStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface ChatSearchReader : Windows.ApplicationModel.Chat.IChatSearchReader
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.IChatItem)) ReadBatchAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.IChatItem)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatSearchReader).abi_ReadBatchAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.IChatItem)) ReadBatchWithCountAsync(INT32 count)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.IChatItem)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatSearchReader).abi_ReadBatchWithCountAsync(count, &_ret));
+		return _ret;
+	}
 }
 
 interface ChatSyncConfiguration : Windows.ApplicationModel.Chat.IChatSyncConfiguration
 {
+extern(Windows):
+	final bool IsSyncEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatSyncConfiguration).get_IsSyncEnabled(&_ret));
+		return _ret;
+	}
+	final void IsSyncEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatSyncConfiguration).set_IsSyncEnabled(value));
+	}
+	final Windows.ApplicationModel.Chat.ChatRestoreHistorySpan RestoreHistorySpan()
+	{
+		Windows.ApplicationModel.Chat.ChatRestoreHistorySpan _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatSyncConfiguration).get_RestoreHistorySpan(&_ret));
+		return _ret;
+	}
+	final void RestoreHistorySpan(Windows.ApplicationModel.Chat.ChatRestoreHistorySpan value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatSyncConfiguration).set_RestoreHistorySpan(value));
+	}
 }
 
 interface ChatSyncManager : Windows.ApplicationModel.Chat.IChatSyncManager
 {
+extern(Windows):
+	final Windows.ApplicationModel.Chat.ChatSyncConfiguration Configuration()
+	{
+		Windows.ApplicationModel.Chat.ChatSyncConfiguration _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatSyncManager).get_Configuration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction AssociateAccountAsync(Windows.Security.Credentials.WebAccount webAccount)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatSyncManager).abi_AssociateAccountAsync(webAccount, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction UnassociateAccountAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatSyncManager).abi_UnassociateAccountAsync(&_ret));
+		return _ret;
+	}
+	final bool IsAccountAssociated(Windows.Security.Credentials.WebAccount webAccount)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatSyncManager).abi_IsAccountAssociated(webAccount, &_ret));
+		return _ret;
+	}
+	final void StartSync()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatSyncManager).abi_StartSync());
+	}
+	final Windows.Foundation.IAsyncAction SetConfigurationAsync(Windows.ApplicationModel.Chat.ChatSyncConfiguration configuration)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatSyncManager).abi_SetConfigurationAsync(configuration, &_ret));
+		return _ret;
+	}
 }
 
 interface RcsEndUserMessage : Windows.ApplicationModel.Chat.IRcsEndUserMessage
 {
+extern(Windows):
+	final HSTRING TransportId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessage).get_TransportId(&_ret));
+		return _ret;
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessage).get_Title(&_ret));
+		return _ret;
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessage).get_Text(&_ret));
+		return _ret;
+	}
+	final bool IsPinRequired()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessage).get_IsPinRequired(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.RcsEndUserMessageAction) Actions()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.RcsEndUserMessageAction) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessage).get_Actions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SendResponseAsync(Windows.ApplicationModel.Chat.RcsEndUserMessageAction action)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessage).abi_SendResponseAsync(action, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction SendResponseWithPinAsync(Windows.ApplicationModel.Chat.RcsEndUserMessageAction action, HSTRING pin)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessage).abi_SendResponseWithPinAsync(action, pin, &_ret));
+		return _ret;
+	}
 }
 
 interface RcsEndUserMessageAction : Windows.ApplicationModel.Chat.IRcsEndUserMessageAction
 {
+extern(Windows):
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessageAction).get_Label(&_ret));
+		return _ret;
+	}
 }
 
 interface RcsEndUserMessageAvailableEventArgs : Windows.ApplicationModel.Chat.IRcsEndUserMessageAvailableEventArgs
 {
+extern(Windows):
+	final bool IsMessageAvailable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessageAvailableEventArgs).get_IsMessageAvailable(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.RcsEndUserMessage Message()
+	{
+		Windows.ApplicationModel.Chat.RcsEndUserMessage _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessageAvailableEventArgs).get_Message(&_ret));
+		return _ret;
+	}
 }
 
 interface RcsEndUserMessageAvailableTriggerDetails : Windows.ApplicationModel.Chat.IRcsEndUserMessageAvailableTriggerDetails
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessageAvailableTriggerDetails).get_Title(&_ret));
+		return _ret;
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessageAvailableTriggerDetails).get_Text(&_ret));
+		return _ret;
+	}
 }
 
 interface RcsEndUserMessageManager : Windows.ApplicationModel.Chat.IRcsEndUserMessageManager
@@ -718,18 +1825,124 @@ interface RcsManager
 
 interface RcsServiceKindSupportedChangedEventArgs : Windows.ApplicationModel.Chat.IRcsServiceKindSupportedChangedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.Chat.RcsServiceKind ServiceKind()
+	{
+		Windows.ApplicationModel.Chat.RcsServiceKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsServiceKindSupportedChangedEventArgs).get_ServiceKind(&_ret));
+		return _ret;
+	}
 }
 
 interface RcsTransport : Windows.ApplicationModel.Chat.IRcsTransport
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) ExtendedProperties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransport).get_ExtendedProperties(&_ret));
+		return _ret;
+	}
+	final bool IsActive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransport).get_IsActive(&_ret));
+		return _ret;
+	}
+	final HSTRING TransportFriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransport).get_TransportFriendlyName(&_ret));
+		return _ret;
+	}
+	final HSTRING TransportId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransport).get_TransportId(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Chat.RcsTransportConfiguration Configuration()
+	{
+		Windows.ApplicationModel.Chat.RcsTransportConfiguration _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransport).get_Configuration(&_ret));
+		return _ret;
+	}
+	final bool IsStoreAndForwardEnabled(Windows.ApplicationModel.Chat.RcsServiceKind serviceKind)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransport).abi_IsStoreAndForwardEnabled(serviceKind, &_ret));
+		return _ret;
+	}
+	final bool IsServiceKindSupported(Windows.ApplicationModel.Chat.RcsServiceKind serviceKind)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransport).abi_IsServiceKindSupported(serviceKind, &_ret));
+		return _ret;
+	}
 }
 
 interface RcsTransportConfiguration : Windows.ApplicationModel.Chat.IRcsTransportConfiguration
 {
+extern(Windows):
+	final INT32 MaxAttachmentCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransportConfiguration).get_MaxAttachmentCount(&_ret));
+		return _ret;
+	}
+	final INT32 MaxMessageSizeInKilobytes()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransportConfiguration).get_MaxMessageSizeInKilobytes(&_ret));
+		return _ret;
+	}
+	final INT32 MaxGroupMessageSizeInKilobytes()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransportConfiguration).get_MaxGroupMessageSizeInKilobytes(&_ret));
+		return _ret;
+	}
+	final INT32 MaxRecipientCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransportConfiguration).get_MaxRecipientCount(&_ret));
+		return _ret;
+	}
+	final INT32 MaxFileSizeInKilobytes()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransportConfiguration).get_MaxFileSizeInKilobytes(&_ret));
+		return _ret;
+	}
+	final INT32 WarningFileSizeInKilobytes()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransportConfiguration).get_WarningFileSizeInKilobytes(&_ret));
+		return _ret;
+	}
 }
 
 interface RemoteParticipantComposingChangedEventArgs : Windows.ApplicationModel.Chat.IRemoteParticipantComposingChangedEventArgs
 {
+extern(Windows):
+	final HSTRING TransportId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRemoteParticipantComposingChangedEventArgs).get_TransportId(&_ret));
+		return _ret;
+	}
+	final HSTRING ParticipantAddress()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRemoteParticipantComposingChangedEventArgs).get_ParticipantAddress(&_ret));
+		return _ret;
+	}
+	final bool IsComposing()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRemoteParticipantComposingChangedEventArgs).get_IsComposing(&_ret));
+		return _ret;
+	}
 }
 
 enum ChatConversationThreadingKind

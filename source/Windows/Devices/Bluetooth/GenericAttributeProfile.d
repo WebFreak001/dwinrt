@@ -758,6 +758,145 @@ extern(Windows):
 
 interface GattCharacteristic : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic2, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3
 {
+extern(Windows):
+	deprecated("Use GetDescriptorsForUuidAsync instead of GetDescriptors.  For more information, see MSDN.")
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptor) GetDescriptors(GUID descriptorUuid)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptor) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).abi_GetDescriptors(descriptorUuid, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicProperties CharacteristicProperties()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicProperties _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).get_CharacteristicProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel ProtectionLevel()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).get_ProtectionLevel(&_ret));
+		return _ret;
+	}
+	final void ProtectionLevel(Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).set_ProtectionLevel(value));
+	}
+	final HSTRING UserDescription()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).get_UserDescription(&_ret));
+		return _ret;
+	}
+	final GUID Uuid()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).get_Uuid(&_ret));
+		return _ret;
+	}
+	final UINT16 AttributeHandle()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).get_AttributeHandle(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat) PresentationFormats()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).get_PresentationFormats(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) ReadValueAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).abi_ReadValueAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) ReadValueWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).abi_ReadValueWithCacheModeAsync(cacheMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) WriteValueAsync(Windows.Storage.Streams.IBuffer value)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).abi_WriteValueAsync(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) WriteValueWithOptionAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption writeOption)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).abi_WriteValueWithOptionAsync(value, writeOption, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadClientCharacteristicConfigurationDescriptorResult) ReadClientCharacteristicConfigurationDescriptorAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadClientCharacteristicConfigurationDescriptorResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).abi_ReadClientCharacteristicConfigurationDescriptorAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) WriteClientCharacteristicConfigurationDescriptorAsync(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientCharacteristicConfigurationDescriptorValue clientCharacteristicConfigurationDescriptorValue)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).abi_WriteClientCharacteristicConfigurationDescriptorAsync(clientCharacteristicConfigurationDescriptorValue, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService Service()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic2).get_Service(&_ret));
+		return _ret;
+	}
+	deprecated("Use GetDescriptorsAsync instead of GetAllDescriptors.  For more information, see MSDN.")
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptor) GetAllDescriptors()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptor) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic2).abi_GetAllDescriptors(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) GetDescriptorsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3).abi_GetDescriptorsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) GetDescriptorsWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3).abi_GetDescriptorsWithCacheModeAsync(cacheMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) GetDescriptorsForUuidAsync(GUID descriptorUuid)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3).abi_GetDescriptorsForUuidAsync(descriptorUuid, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) GetDescriptorsForUuidWithCacheModeAsync(GUID descriptorUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3).abi_GetDescriptorsForUuidWithCacheModeAsync(descriptorUuid, cacheMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) WriteValueWithResultAsync(Windows.Storage.Streams.IBuffer value)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3).abi_WriteValueWithResultAsync(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) WriteValueWithResultAndOptionAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption writeOption)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3).abi_WriteValueWithResultAndOptionAsync(value, writeOption, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) WriteClientCharacteristicConfigurationDescriptorWithResultAsync(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientCharacteristicConfigurationDescriptorValue clientCharacteristicConfigurationDescriptorValue)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3).abi_WriteClientCharacteristicConfigurationDescriptorWithResultAsync(clientCharacteristicConfigurationDescriptorValue, &_ret));
+		return _ret;
+	}
 }
 
 interface GattCharacteristicUuids
@@ -766,14 +905,99 @@ interface GattCharacteristicUuids
 
 interface GattCharacteristicsResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristicsResult
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus Status()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristicsResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	{
+		Windows.Foundation.IReference!(BYTE) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristicsResult).get_ProtocolError(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic) Characteristics()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristicsResult).get_Characteristics(&_ret));
+		return _ret;
+	}
 }
 
 interface GattClientNotificationResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattClientNotificationResult
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient SubscribedClient()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattClientNotificationResult).get_SubscribedClient(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus Status()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattClientNotificationResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	{
+		Windows.Foundation.IReference!(BYTE) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattClientNotificationResult).get_ProtocolError(&_ret));
+		return _ret;
+	}
 }
 
 interface GattDescriptor : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor2
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel ProtectionLevel()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor).get_ProtectionLevel(&_ret));
+		return _ret;
+	}
+	final void ProtectionLevel(Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor).set_ProtectionLevel(value));
+	}
+	final GUID Uuid()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor).get_Uuid(&_ret));
+		return _ret;
+	}
+	final UINT16 AttributeHandle()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor).get_AttributeHandle(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) ReadValueAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor).abi_ReadValueAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) ReadValueWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor).abi_ReadValueWithCacheModeAsync(cacheMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) WriteValueAsync(Windows.Storage.Streams.IBuffer value)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor).abi_WriteValueAsync(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) WriteValueWithResultAsync(Windows.Storage.Streams.IBuffer value)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor2).abi_WriteValueWithResultAsync(value, &_ret));
+		return _ret;
+	}
 }
 
 interface GattDescriptorUuids
@@ -782,46 +1006,489 @@ interface GattDescriptorUuids
 
 interface GattDescriptorsResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptorsResult
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus Status()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptorsResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	{
+		Windows.Foundation.IReference!(BYTE) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptorsResult).get_ProtocolError(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptor) Descriptors()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptor) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptorsResult).get_Descriptors(&_ret));
+		return _ret;
+	}
 }
 
 interface GattDeviceService : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService, Windows.Foundation.IClosable, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService2, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3
 {
+extern(Windows):
+	deprecated("Use GetCharacteristicsForUuidAsync instead of GetCharacteristics.  For more information, see MSDN.")
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic) GetCharacteristics(GUID characteristicUuid)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService).abi_GetCharacteristics(characteristicUuid, &_ret));
+		return _ret;
+	}
+	deprecated("Use GetIncludedServicesForUuidAsync instead of GetIncludedServices.	 For more information, see MSDN.")
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService) GetIncludedServices(GUID serviceUuid)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService).abi_GetIncludedServices(serviceUuid, &_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final GUID Uuid()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService).get_Uuid(&_ret));
+		return _ret;
+	}
+	final UINT16 AttributeHandle()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService).get_AttributeHandle(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	deprecated("Use Session instead of Device property.	 For more information, see MSDN.")
+	final Windows.Devices.Bluetooth.BluetoothLEDevice Device()
+	{
+		Windows.Devices.Bluetooth.BluetoothLEDevice _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService2).get_Device(&_ret));
+		return _ret;
+	}
+	deprecated("ParentServices may be altered or unavailable in future releases.  For more information, see MSDN.")
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService) ParentServices()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService2).get_ParentServices(&_ret));
+		return _ret;
+	}
+	deprecated("Use GetCharacteristicsAsync instead of GetAllCharacteristics.  For more information, see MSDN.")
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic) GetAllCharacteristics()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService2).abi_GetAllCharacteristics(&_ret));
+		return _ret;
+	}
+	deprecated("Use GetIncludedServicesAsync instead of GetAllIncludedServices.	 For more information, see MSDN.")
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService) GetAllIncludedServices()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService2).abi_GetAllIncludedServices(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DeviceAccessInformation DeviceAccessInformation()
+	{
+		Windows.Devices.Enumeration.DeviceAccessInformation _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3).get_DeviceAccessInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession Session()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3).get_Session(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattSharingMode SharingMode()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattSharingMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3).get_SharingMode(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus) RequestAccessAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3).abi_RequestAccessAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattOpenStatus) OpenAsync(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSharingMode sharingMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattOpenStatus) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3).abi_OpenAsync(sharingMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) GetCharacteristicsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3).abi_GetCharacteristicsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) GetCharacteristicsWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3).abi_GetCharacteristicsWithCacheModeAsync(cacheMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) GetCharacteristicsForUuidAsync(GUID characteristicUuid)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3).abi_GetCharacteristicsForUuidAsync(characteristicUuid, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) GetCharacteristicsForUuidWithCacheModeAsync(GUID characteristicUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3).abi_GetCharacteristicsForUuidWithCacheModeAsync(characteristicUuid, cacheMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetIncludedServicesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3).abi_GetIncludedServicesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetIncludedServicesWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3).abi_GetIncludedServicesWithCacheModeAsync(cacheMode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetIncludedServicesForUuidAsync(GUID serviceUuid)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3).abi_GetIncludedServicesForUuidAsync(serviceUuid, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetIncludedServicesForUuidWithCacheModeAsync(GUID serviceUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3).abi_GetIncludedServicesForUuidWithCacheModeAsync(serviceUuid, cacheMode, &_ret));
+		return _ret;
+	}
 }
 
 interface GattDeviceServicesResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceServicesResult
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus Status()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceServicesResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	{
+		Windows.Foundation.IReference!(BYTE) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceServicesResult).get_ProtocolError(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService) Services()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceServicesResult).get_Services(&_ret));
+		return _ret;
+	}
 }
 
 interface GattLocalCharacteristic : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic
 {
+extern(Windows):
+	final GUID Uuid()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).get_Uuid(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer StaticValue()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).get_StaticValue(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicProperties CharacteristicProperties()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicProperties _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).get_CharacteristicProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel ReadProtectionLevel()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).get_ReadProtectionLevel(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel WriteProtectionLevel()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).get_WriteProtectionLevel(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptorResult) CreateDescriptorAsync(GUID descriptorUuid, Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptorParameters parameters)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptorResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).abi_CreateDescriptorAsync(descriptorUuid, parameters, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor) Descriptors()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).get_Descriptors(&_ret));
+		return _ret;
+	}
+	final HSTRING UserDescription()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).get_UserDescription(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat) PresentationFormats()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).get_PresentationFormats(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient) SubscribedClients()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).get_SubscribedClients(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult)) NotifyValueAsync(Windows.Storage.Streams.IBuffer value)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult)) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).abi_NotifyValueAsync(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult) NotifyValueForSubscribedClientAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient subscribedClient)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).abi_NotifyValueForSubscribedClientAsync(value, subscribedClient, &_ret));
+		return _ret;
+	}
 }
 
 interface GattLocalCharacteristicParameters : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters
 {
+extern(Windows):
+	final void StaticValue(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters).set_StaticValue(value));
+	}
+	final Windows.Storage.Streams.IBuffer StaticValue()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters).get_StaticValue(&_ret));
+		return _ret;
+	}
+	final void CharacteristicProperties(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicProperties value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters).set_CharacteristicProperties(value));
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicProperties CharacteristicProperties()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicProperties _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters).get_CharacteristicProperties(&_ret));
+		return _ret;
+	}
+	final void ReadProtectionLevel(Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters).set_ReadProtectionLevel(value));
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel ReadProtectionLevel()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters).get_ReadProtectionLevel(&_ret));
+		return _ret;
+	}
+	final void WriteProtectionLevel(Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters).set_WriteProtectionLevel(value));
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel WriteProtectionLevel()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters).get_WriteProtectionLevel(&_ret));
+		return _ret;
+	}
+	final void UserDescription(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters).set_UserDescription(value));
+	}
+	final HSTRING UserDescription()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters).get_UserDescription(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat) PresentationFormats()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters).get_PresentationFormats(&_ret));
+		return _ret;
+	}
 }
 
 interface GattLocalCharacteristicResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicResult
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic Characteristic()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicResult).get_Characteristic(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothError Error()
+	{
+		Windows.Devices.Bluetooth.BluetoothError _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicResult).get_Error(&_ret));
+		return _ret;
+	}
 }
 
 interface GattLocalDescriptor : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptor
 {
+extern(Windows):
+	final GUID Uuid()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptor).get_Uuid(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer StaticValue()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptor).get_StaticValue(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel ReadProtectionLevel()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptor).get_ReadProtectionLevel(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel WriteProtectionLevel()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptor).get_WriteProtectionLevel(&_ret));
+		return _ret;
+	}
 }
 
 interface GattLocalDescriptorParameters : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptorParameters
 {
+extern(Windows):
+	final void StaticValue(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptorParameters).set_StaticValue(value));
+	}
+	final Windows.Storage.Streams.IBuffer StaticValue()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptorParameters).get_StaticValue(&_ret));
+		return _ret;
+	}
+	final void ReadProtectionLevel(Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptorParameters).set_ReadProtectionLevel(value));
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel ReadProtectionLevel()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptorParameters).get_ReadProtectionLevel(&_ret));
+		return _ret;
+	}
+	final void WriteProtectionLevel(Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptorParameters).set_WriteProtectionLevel(value));
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel WriteProtectionLevel()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptorParameters).get_WriteProtectionLevel(&_ret));
+		return _ret;
+	}
 }
 
 interface GattLocalDescriptorResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptorResult
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor Descriptor()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptorResult).get_Descriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothError Error()
+	{
+		Windows.Devices.Bluetooth.BluetoothError _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptorResult).get_Error(&_ret));
+		return _ret;
+	}
 }
 
 interface GattLocalService : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalService
 {
+extern(Windows):
+	final GUID Uuid()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalService).get_Uuid(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristicResult) CreateCharacteristicAsync(GUID characteristicUuid, Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristicParameters parameters)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristicResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalService).abi_CreateCharacteristicAsync(characteristicUuid, parameters, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic) Characteristics()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalService).get_Characteristics(&_ret));
+		return _ret;
+	}
 }
 
 interface GattPresentationFormat : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattPresentationFormat
 {
+extern(Windows):
+	final BYTE FormatType()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattPresentationFormat).get_FormatType(&_ret));
+		return _ret;
+	}
+	final INT32 Exponent()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattPresentationFormat).get_Exponent(&_ret));
+		return _ret;
+	}
+	final UINT16 Unit()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattPresentationFormat).get_Unit(&_ret));
+		return _ret;
+	}
+	final BYTE Namespace()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattPresentationFormat).get_Namespace(&_ret));
+		return _ret;
+	}
+	final UINT16 Description()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattPresentationFormat).get_Description(&_ret));
+		return _ret;
+	}
 }
 
 interface GattPresentationFormatTypes
@@ -834,42 +1501,228 @@ interface GattProtocolError
 
 interface GattReadClientCharacteristicConfigurationDescriptorResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadClientCharacteristicConfigurationDescriptorResult, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadClientCharacteristicConfigurationDescriptorResult2
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus Status()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadClientCharacteristicConfigurationDescriptorResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientCharacteristicConfigurationDescriptorValue ClientCharacteristicConfigurationDescriptor()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientCharacteristicConfigurationDescriptorValue _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadClientCharacteristicConfigurationDescriptorResult).get_ClientCharacteristicConfigurationDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	{
+		Windows.Foundation.IReference!(BYTE) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadClientCharacteristicConfigurationDescriptorResult2).get_ProtocolError(&_ret));
+		return _ret;
+	}
 }
 
 interface GattReadRequest : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequest
 {
+extern(Windows):
+	final UINT32 Offset()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequest).get_Offset(&_ret));
+		return _ret;
+	}
+	final UINT32 Length()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequest).get_Length(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestState State()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestState _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequest).get_State(&_ret));
+		return _ret;
+	}
+	final void RespondWithValue(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequest).abi_RespondWithValue(value));
+	}
+	final void RespondWithProtocolError(BYTE protocolError)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequest).abi_RespondWithProtocolError(protocolError));
+	}
 }
 
 interface GattReadRequestedEventArgs : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession Session()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequestedEventArgs).get_Session(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequestedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequest) GetRequestAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequest) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequestedEventArgs).abi_GetRequestAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface GattReadResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadResult, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadResult2
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus Status()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer Value()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadResult).get_Value(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	{
+		Windows.Foundation.IReference!(BYTE) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadResult2).get_ProtocolError(&_ret));
+		return _ret;
+	}
 }
 
 interface GattReliableWriteTransaction : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReliableWriteTransaction, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReliableWriteTransaction2
 {
+extern(Windows):
+	final void WriteValue(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic characteristic, Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReliableWriteTransaction).abi_WriteValue(characteristic, value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) CommitAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReliableWriteTransaction).abi_CommitAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) CommitWithResultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReliableWriteTransaction2).abi_CommitWithResultAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface GattRequestStateChangedEventArgs : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattRequestStateChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestState State()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestState _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattRequestStateChangedEventArgs).get_State(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothError Error()
+	{
+		Windows.Devices.Bluetooth.BluetoothError _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattRequestStateChangedEventArgs).get_Error(&_ret));
+		return _ret;
+	}
 }
 
 interface GattServiceProvider : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalService Service()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalService _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider).get_Service(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatus AdvertisementStatus()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider).get_AdvertisementStatus(&_ret));
+		return _ret;
+	}
+	final void StartAdvertising()
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider).abi_StartAdvertising());
+	}
+	final void StartAdvertisingWithParameters(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisingParameters parameters)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider).abi_StartAdvertisingWithParameters(parameters));
+	}
+	final void StopAdvertising()
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider).abi_StopAdvertising());
+	}
 }
 
 interface GattServiceProviderAdvertisementStatusChangedEventArgs : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisementStatusChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.BluetoothError Error()
+	{
+		Windows.Devices.Bluetooth.BluetoothError _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisementStatusChangedEventArgs).get_Error(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatus Status()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisementStatusChangedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface GattServiceProviderAdvertisingParameters : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters
 {
+extern(Windows):
+	final void IsConnectable(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters).set_IsConnectable(value));
+	}
+	final bool IsConnectable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters).get_IsConnectable(&_ret));
+		return _ret;
+	}
+	final void IsDiscoverable(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters).set_IsDiscoverable(value));
+	}
+	final bool IsDiscoverable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters).get_IsDiscoverable(&_ret));
+		return _ret;
+	}
 }
 
 interface GattServiceProviderResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderResult
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.BluetoothError Error()
+	{
+		Windows.Devices.Bluetooth.BluetoothError _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderResult).get_Error(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProvider ServiceProvider()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProvider _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderResult).get_ServiceProvider(&_ret));
+		return _ret;
+	}
 }
 
 interface GattServiceUuids
@@ -878,30 +1731,173 @@ interface GattServiceUuids
 
 interface GattSession : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSession, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.BluetoothDeviceId DeviceId()
+	{
+		Windows.Devices.Bluetooth.BluetoothDeviceId _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSession).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final bool CanMaintainConnection()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSession).get_CanMaintainConnection(&_ret));
+		return _ret;
+	}
+	final void MaintainConnection(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSession).set_MaintainConnection(value));
+	}
+	final bool MaintainConnection()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSession).get_MaintainConnection(&_ret));
+		return _ret;
+	}
+	final UINT16 MaxPduSize()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSession).get_MaxPduSize(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattSessionStatus SessionStatus()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattSessionStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSession).get_SessionStatus(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface GattSessionStatusChangedEventArgs : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSessionStatusChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.BluetoothError Error()
+	{
+		Windows.Devices.Bluetooth.BluetoothError _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSessionStatusChangedEventArgs).get_Error(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattSessionStatus Status()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattSessionStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSessionStatusChangedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface GattSubscribedClient : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSubscribedClient
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession Session()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSubscribedClient).get_Session(&_ret));
+		return _ret;
+	}
+	final UINT16 MaxNotificationSize()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSubscribedClient).get_MaxNotificationSize(&_ret));
+		return _ret;
+	}
 }
 
 interface GattValueChangedEventArgs : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattValueChangedEventArgs
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer CharacteristicValue()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattValueChangedEventArgs).get_CharacteristicValue(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattValueChangedEventArgs).get_Timestamp(&_ret));
+		return _ret;
+	}
 }
 
 interface GattWriteRequest : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequest
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer Value()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequest).get_Value(&_ret));
+		return _ret;
+	}
+	final UINT32 Offset()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequest).get_Offset(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption Option()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequest).get_Option(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestState State()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestState _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequest).get_State(&_ret));
+		return _ret;
+	}
+	final void Respond()
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequest).abi_Respond());
+	}
+	final void RespondWithProtocolError(BYTE protocolError)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequest).abi_RespondWithProtocolError(protocolError));
+	}
 }
 
 interface GattWriteRequestedEventArgs : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession Session()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequestedEventArgs).get_Session(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequestedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequest) GetRequestAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequest) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequestedEventArgs).abi_GetRequestAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface GattWriteResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteResult
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus Status()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	{
+		Windows.Foundation.IReference!(BYTE) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteResult).get_ProtocolError(&_ret));
+		return _ret;
+	}
 }
 
 @bitflags

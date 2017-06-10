@@ -594,10 +594,48 @@ extern(Windows):
 
 interface CrossSlidingEventArgs : Windows.UI.Input.ICrossSlidingEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Input.ICrossSlidingEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.ICrossSlidingEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.CrossSlidingState CrossSlidingState()
+	{
+		Windows.UI.Input.CrossSlidingState _ret;
+		Debug.OK(this.as!(Windows.UI.Input.ICrossSlidingEventArgs).get_CrossSlidingState(&_ret));
+		return _ret;
+	}
 }
 
 interface DraggingEventArgs : Windows.UI.Input.IDraggingEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IDraggingEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IDraggingEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.DraggingState DraggingState()
+	{
+		Windows.UI.Input.DraggingState _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IDraggingEventArgs).get_DraggingState(&_ret));
+		return _ret;
+	}
 }
 
 interface EdgeGesture : Windows.UI.Input.IEdgeGesture
@@ -606,114 +644,1022 @@ interface EdgeGesture : Windows.UI.Input.IEdgeGesture
 
 interface EdgeGestureEventArgs : Windows.UI.Input.IEdgeGestureEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.EdgeGestureKind Kind()
+	{
+		Windows.UI.Input.EdgeGestureKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IEdgeGestureEventArgs).get_Kind(&_ret));
+		return _ret;
+	}
 }
 
 interface GestureRecognizer : Windows.UI.Input.IGestureRecognizer
 {
+extern(Windows):
+	final Windows.UI.Input.GestureSettings GestureSettings()
+	{
+		Windows.UI.Input.GestureSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_GestureSettings(&_ret));
+		return _ret;
+	}
+	final void GestureSettings(Windows.UI.Input.GestureSettings value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_GestureSettings(value));
+	}
+	final bool IsInertial()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_IsInertial(&_ret));
+		return _ret;
+	}
+	final bool IsActive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_IsActive(&_ret));
+		return _ret;
+	}
+	final bool ShowGestureFeedback()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_ShowGestureFeedback(&_ret));
+		return _ret;
+	}
+	final void ShowGestureFeedback(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_ShowGestureFeedback(value));
+	}
+	final Windows.Foundation.Point PivotCenter()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_PivotCenter(&_ret));
+		return _ret;
+	}
+	final void PivotCenter(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_PivotCenter(value));
+	}
+	final FLOAT PivotRadius()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_PivotRadius(&_ret));
+		return _ret;
+	}
+	final void PivotRadius(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_PivotRadius(value));
+	}
+	final FLOAT InertiaTranslationDeceleration()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaTranslationDeceleration(&_ret));
+		return _ret;
+	}
+	final void InertiaTranslationDeceleration(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaTranslationDeceleration(value));
+	}
+	final FLOAT InertiaRotationDeceleration()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaRotationDeceleration(&_ret));
+		return _ret;
+	}
+	final void InertiaRotationDeceleration(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaRotationDeceleration(value));
+	}
+	final FLOAT InertiaExpansionDeceleration()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaExpansionDeceleration(&_ret));
+		return _ret;
+	}
+	final void InertiaExpansionDeceleration(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaExpansionDeceleration(value));
+	}
+	final FLOAT InertiaTranslationDisplacement()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaTranslationDisplacement(&_ret));
+		return _ret;
+	}
+	final void InertiaTranslationDisplacement(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaTranslationDisplacement(value));
+	}
+	final FLOAT InertiaRotationAngle()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaRotationAngle(&_ret));
+		return _ret;
+	}
+	final void InertiaRotationAngle(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaRotationAngle(value));
+	}
+	final FLOAT InertiaExpansion()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaExpansion(&_ret));
+		return _ret;
+	}
+	final void InertiaExpansion(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaExpansion(value));
+	}
+	final bool ManipulationExact()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_ManipulationExact(&_ret));
+		return _ret;
+	}
+	final void ManipulationExact(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_ManipulationExact(value));
+	}
+	final Windows.UI.Input.CrossSlideThresholds CrossSlideThresholds()
+	{
+		Windows.UI.Input.CrossSlideThresholds _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_CrossSlideThresholds(&_ret));
+		return _ret;
+	}
+	final void CrossSlideThresholds(Windows.UI.Input.CrossSlideThresholds value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_CrossSlideThresholds(value));
+	}
+	final bool CrossSlideHorizontally()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_CrossSlideHorizontally(&_ret));
+		return _ret;
+	}
+	final void CrossSlideHorizontally(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_CrossSlideHorizontally(value));
+	}
+	final bool CrossSlideExact()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_CrossSlideExact(&_ret));
+		return _ret;
+	}
+	final void CrossSlideExact(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_CrossSlideExact(value));
+	}
+	final bool AutoProcessInertia()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_AutoProcessInertia(&_ret));
+		return _ret;
+	}
+	final void AutoProcessInertia(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_AutoProcessInertia(value));
+	}
+	final Windows.UI.Input.MouseWheelParameters MouseWheelParameters()
+	{
+		Windows.UI.Input.MouseWheelParameters _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_MouseWheelParameters(&_ret));
+		return _ret;
+	}
+	final bool CanBeDoubleTap(Windows.UI.Input.PointerPoint value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_CanBeDoubleTap(value, &_ret));
+		return _ret;
+	}
+	final void ProcessDownEvent(Windows.UI.Input.PointerPoint value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_ProcessDownEvent(value));
+	}
+	final void ProcessMoveEvents(Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_ProcessMoveEvents(value));
+	}
+	final void ProcessUpEvent(Windows.UI.Input.PointerPoint value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_ProcessUpEvent(value));
+	}
+	final void ProcessMouseWheelEvent(Windows.UI.Input.PointerPoint value, bool isShiftKeyDown, bool isControlKeyDown)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_ProcessMouseWheelEvent(value, isShiftKeyDown, isControlKeyDown));
+	}
+	final void ProcessInertia()
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_ProcessInertia());
+	}
+	final void CompleteGesture()
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_CompleteGesture());
+	}
 }
 
 interface HoldingEventArgs : Windows.UI.Input.IHoldingEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IHoldingEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IHoldingEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.HoldingState HoldingState()
+	{
+		Windows.UI.Input.HoldingState _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IHoldingEventArgs).get_HoldingState(&_ret));
+		return _ret;
+	}
 }
 
 interface KeyboardDeliveryInterceptor : Windows.UI.Input.IKeyboardDeliveryInterceptor
 {
+extern(Windows):
+	final bool IsInterceptionEnabledWhenInForeground()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IKeyboardDeliveryInterceptor).get_IsInterceptionEnabledWhenInForeground(&_ret));
+		return _ret;
+	}
+	final void IsInterceptionEnabledWhenInForeground(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IKeyboardDeliveryInterceptor).set_IsInterceptionEnabledWhenInForeground(value));
+	}
 }
 
 interface ManipulationCompletedEventArgs : Windows.UI.Input.IManipulationCompletedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationCompletedEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationCompletedEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationDelta Cumulative()
+	{
+		Windows.UI.Input.ManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationCompletedEventArgs).get_Cumulative(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationVelocities Velocities()
+	{
+		Windows.UI.Input.ManipulationVelocities _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationCompletedEventArgs).get_Velocities(&_ret));
+		return _ret;
+	}
 }
 
 interface ManipulationInertiaStartingEventArgs : Windows.UI.Input.IManipulationInertiaStartingEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationInertiaStartingEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationInertiaStartingEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationDelta Delta()
+	{
+		Windows.UI.Input.ManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationInertiaStartingEventArgs).get_Delta(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationDelta Cumulative()
+	{
+		Windows.UI.Input.ManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationInertiaStartingEventArgs).get_Cumulative(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationVelocities Velocities()
+	{
+		Windows.UI.Input.ManipulationVelocities _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationInertiaStartingEventArgs).get_Velocities(&_ret));
+		return _ret;
+	}
 }
 
 interface ManipulationStartedEventArgs : Windows.UI.Input.IManipulationStartedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationStartedEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationStartedEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationDelta Cumulative()
+	{
+		Windows.UI.Input.ManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationStartedEventArgs).get_Cumulative(&_ret));
+		return _ret;
+	}
 }
 
 interface ManipulationUpdatedEventArgs : Windows.UI.Input.IManipulationUpdatedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationUpdatedEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationUpdatedEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationDelta Delta()
+	{
+		Windows.UI.Input.ManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationUpdatedEventArgs).get_Delta(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationDelta Cumulative()
+	{
+		Windows.UI.Input.ManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationUpdatedEventArgs).get_Cumulative(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationVelocities Velocities()
+	{
+		Windows.UI.Input.ManipulationVelocities _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IManipulationUpdatedEventArgs).get_Velocities(&_ret));
+		return _ret;
+	}
 }
 
 interface MouseWheelParameters : Windows.UI.Input.IMouseWheelParameters
 {
+extern(Windows):
+	final Windows.Foundation.Point CharTranslation()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).get_CharTranslation(&_ret));
+		return _ret;
+	}
+	final void CharTranslation(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).set_CharTranslation(value));
+	}
+	final FLOAT DeltaScale()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).get_DeltaScale(&_ret));
+		return _ret;
+	}
+	final void DeltaScale(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).set_DeltaScale(value));
+	}
+	final FLOAT DeltaRotationAngle()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).get_DeltaRotationAngle(&_ret));
+		return _ret;
+	}
+	final void DeltaRotationAngle(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).set_DeltaRotationAngle(value));
+	}
+	final Windows.Foundation.Point PageTranslation()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).get_PageTranslation(&_ret));
+		return _ret;
+	}
+	final void PageTranslation(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).set_PageTranslation(value));
+	}
 }
 
 interface PointerPoint : Windows.UI.Input.IPointerPoint
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDevice PointerDevice()
+	{
+		Windows.Devices.Input.PointerDevice _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_PointerDevice(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point RawPosition()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_RawPosition(&_ret));
+		return _ret;
+	}
+	final UINT32 PointerId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_PointerId(&_ret));
+		return _ret;
+	}
+	final UINT32 FrameId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_FrameId(&_ret));
+		return _ret;
+	}
+	final UINT64 Timestamp()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final bool IsInContact()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_IsInContact(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.PointerPointProperties Properties()
+	{
+		Windows.UI.Input.PointerPointProperties _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface PointerPointProperties : Windows.UI.Input.IPointerPointProperties, Windows.UI.Input.IPointerPointProperties2
 {
+extern(Windows):
+	final FLOAT Pressure()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_Pressure(&_ret));
+		return _ret;
+	}
+	final bool IsInverted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsInverted(&_ret));
+		return _ret;
+	}
+	final bool IsEraser()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsEraser(&_ret));
+		return _ret;
+	}
+	final FLOAT Orientation()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_Orientation(&_ret));
+		return _ret;
+	}
+	final FLOAT XTilt()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_XTilt(&_ret));
+		return _ret;
+	}
+	final FLOAT YTilt()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_YTilt(&_ret));
+		return _ret;
+	}
+	final FLOAT Twist()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_Twist(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect ContactRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_ContactRect(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect ContactRectRaw()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_ContactRectRaw(&_ret));
+		return _ret;
+	}
+	final bool TouchConfidence()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_TouchConfidence(&_ret));
+		return _ret;
+	}
+	final bool IsLeftButtonPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsLeftButtonPressed(&_ret));
+		return _ret;
+	}
+	final bool IsRightButtonPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsRightButtonPressed(&_ret));
+		return _ret;
+	}
+	final bool IsMiddleButtonPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsMiddleButtonPressed(&_ret));
+		return _ret;
+	}
+	final INT32 MouseWheelDelta()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_MouseWheelDelta(&_ret));
+		return _ret;
+	}
+	final bool IsHorizontalMouseWheel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsHorizontalMouseWheel(&_ret));
+		return _ret;
+	}
+	final bool IsPrimary()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsPrimary(&_ret));
+		return _ret;
+	}
+	final bool IsInRange()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsInRange(&_ret));
+		return _ret;
+	}
+	final bool IsCanceled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsCanceled(&_ret));
+		return _ret;
+	}
+	final bool IsBarrelButtonPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsBarrelButtonPressed(&_ret));
+		return _ret;
+	}
+	final bool IsXButton1Pressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsXButton1Pressed(&_ret));
+		return _ret;
+	}
+	final bool IsXButton2Pressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsXButton2Pressed(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.PointerUpdateKind PointerUpdateKind()
+	{
+		Windows.UI.Input.PointerUpdateKind _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_PointerUpdateKind(&_ret));
+		return _ret;
+	}
+	final bool HasUsage(UINT32 usagePage, UINT32 usageId)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).abi_HasUsage(usagePage, usageId, &_ret));
+		return _ret;
+	}
+	final INT32 GetUsageValue(UINT32 usagePage, UINT32 usageId)
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).abi_GetUsageValue(usagePage, usageId, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(FLOAT) ZDistance()
+	{
+		Windows.Foundation.IReference!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties2).get_ZDistance(&_ret));
+		return _ret;
+	}
 }
 
 interface PointerVisualizationSettings : Windows.UI.Input.IPointerVisualizationSettings
 {
+extern(Windows):
+	final void IsContactFeedbackEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IPointerVisualizationSettings).set_IsContactFeedbackEnabled(value));
+	}
+	final bool IsContactFeedbackEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerVisualizationSettings).get_IsContactFeedbackEnabled(&_ret));
+		return _ret;
+	}
+	final void IsBarrelButtonFeedbackEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IPointerVisualizationSettings).set_IsBarrelButtonFeedbackEnabled(value));
+	}
+	final bool IsBarrelButtonFeedbackEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IPointerVisualizationSettings).get_IsBarrelButtonFeedbackEnabled(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialController : Windows.UI.Input.IRadialController, Windows.UI.Input.IRadialController2
 {
+extern(Windows):
+	final Windows.UI.Input.RadialControllerMenu Menu()
+	{
+		Windows.UI.Input.RadialControllerMenu _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).get_Menu(&_ret));
+		return _ret;
+	}
+	final double RotationResolutionInDegrees()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).get_RotationResolutionInDegrees(&_ret));
+		return _ret;
+	}
+	final void RotationResolutionInDegrees(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).set_RotationResolutionInDegrees(value));
+	}
+	final bool UseAutomaticHapticFeedback()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).get_UseAutomaticHapticFeedback(&_ret));
+		return _ret;
+	}
+	final void UseAutomaticHapticFeedback(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).set_UseAutomaticHapticFeedback(value));
+	}
 }
 
 interface RadialControllerButtonClickedEventArgs : Windows.UI.Input.IRadialControllerButtonClickedEventArgs, Windows.UI.Input.IRadialControllerButtonClickedEventArgs2
 {
+extern(Windows):
+	final Windows.UI.Input.RadialControllerScreenContact Contact()
+	{
+		Windows.UI.Input.RadialControllerScreenContact _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonClickedEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
+	{
+		Windows.Devices.Haptics.SimpleHapticsController _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonClickedEventArgs2).get_SimpleHapticsController(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialControllerButtonHoldingEventArgs : Windows.UI.Input.IRadialControllerButtonHoldingEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.RadialControllerScreenContact Contact()
+	{
+		Windows.UI.Input.RadialControllerScreenContact _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonHoldingEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
+	{
+		Windows.Devices.Haptics.SimpleHapticsController _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonHoldingEventArgs).get_SimpleHapticsController(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialControllerButtonPressedEventArgs : Windows.UI.Input.IRadialControllerButtonPressedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.RadialControllerScreenContact Contact()
+	{
+		Windows.UI.Input.RadialControllerScreenContact _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonPressedEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
+	{
+		Windows.Devices.Haptics.SimpleHapticsController _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonPressedEventArgs).get_SimpleHapticsController(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialControllerButtonReleasedEventArgs : Windows.UI.Input.IRadialControllerButtonReleasedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Input.RadialControllerScreenContact Contact()
+	{
+		Windows.UI.Input.RadialControllerScreenContact _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonReleasedEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
+	{
+		Windows.Devices.Haptics.SimpleHapticsController _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonReleasedEventArgs).get_SimpleHapticsController(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialControllerConfiguration : Windows.UI.Input.IRadialControllerConfiguration, Windows.UI.Input.IRadialControllerConfiguration2
 {
+extern(Windows):
+	final void SetDefaultMenuItems(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.RadialControllerSystemMenuItemKind) buttons)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration).abi_SetDefaultMenuItems(buttons));
+	}
+	final void ResetToDefaultMenuItems()
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration).abi_ResetToDefaultMenuItems());
+	}
+	final bool TrySelectDefaultMenuItem(Windows.UI.Input.RadialControllerSystemMenuItemKind type)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration).abi_TrySelectDefaultMenuItem(type, &_ret));
+		return _ret;
+	}
+	final void ActiveControllerWhenMenuIsSuppressed(Windows.UI.Input.RadialController value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration2).set_ActiveControllerWhenMenuIsSuppressed(value));
+	}
+	final Windows.UI.Input.RadialController ActiveControllerWhenMenuIsSuppressed()
+	{
+		Windows.UI.Input.RadialController _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration2).get_ActiveControllerWhenMenuIsSuppressed(&_ret));
+		return _ret;
+	}
+	final void IsMenuSuppressed(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration2).set_IsMenuSuppressed(value));
+	}
+	final bool IsMenuSuppressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration2).get_IsMenuSuppressed(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialControllerControlAcquiredEventArgs : Windows.UI.Input.IRadialControllerControlAcquiredEventArgs, Windows.UI.Input.IRadialControllerControlAcquiredEventArgs2
 {
+extern(Windows):
+	final Windows.UI.Input.RadialControllerScreenContact Contact()
+	{
+		Windows.UI.Input.RadialControllerScreenContact _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerControlAcquiredEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final bool IsButtonPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerControlAcquiredEventArgs2).get_IsButtonPressed(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
+	{
+		Windows.Devices.Haptics.SimpleHapticsController _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerControlAcquiredEventArgs2).get_SimpleHapticsController(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialControllerMenu : Windows.UI.Input.IRadialControllerMenu
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Input.RadialControllerMenuItem) Items()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Input.RadialControllerMenuItem) _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenu).get_Items(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenu).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final void IsEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenu).set_IsEnabled(value));
+	}
+	final Windows.UI.Input.RadialControllerMenuItem GetSelectedMenuItem()
+	{
+		Windows.UI.Input.RadialControllerMenuItem _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenu).abi_GetSelectedMenuItem(&_ret));
+		return _ret;
+	}
+	final void SelectMenuItem(Windows.UI.Input.RadialControllerMenuItem menuItem)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenu).abi_SelectMenuItem(menuItem));
+	}
+	final bool TrySelectPreviouslySelectedMenuItem()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenu).abi_TrySelectPreviouslySelectedMenuItem(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialControllerMenuItem : Windows.UI.Input.IRadialControllerMenuItem
 {
+extern(Windows):
+	final HSTRING DisplayText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenuItem).get_DisplayText(&_ret));
+		return _ret;
+	}
+	final IInspectable Tag()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenuItem).get_Tag(&_ret));
+		return _ret;
+	}
+	final void Tag(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenuItem).set_Tag(value));
+	}
 }
 
 interface RadialControllerRotationChangedEventArgs : Windows.UI.Input.IRadialControllerRotationChangedEventArgs, Windows.UI.Input.IRadialControllerRotationChangedEventArgs2
 {
+extern(Windows):
+	final double RotationDeltaInDegrees()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerRotationChangedEventArgs).get_RotationDeltaInDegrees(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.RadialControllerScreenContact Contact()
+	{
+		Windows.UI.Input.RadialControllerScreenContact _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerRotationChangedEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final bool IsButtonPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerRotationChangedEventArgs2).get_IsButtonPressed(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
+	{
+		Windows.Devices.Haptics.SimpleHapticsController _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerRotationChangedEventArgs2).get_SimpleHapticsController(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialControllerScreenContact : Windows.UI.Input.IRadialControllerScreenContact
 {
+extern(Windows):
+	final Windows.Foundation.Rect Bounds()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContact).get_Bounds(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContact).get_Position(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialControllerScreenContactContinuedEventArgs : Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs, Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs2
 {
+extern(Windows):
+	final Windows.UI.Input.RadialControllerScreenContact Contact()
+	{
+		Windows.UI.Input.RadialControllerScreenContact _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final bool IsButtonPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs2).get_IsButtonPressed(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
+	{
+		Windows.Devices.Haptics.SimpleHapticsController _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs2).get_SimpleHapticsController(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialControllerScreenContactEndedEventArgs : Windows.UI.Input.IRadialControllerScreenContactEndedEventArgs
 {
+extern(Windows):
+	final bool IsButtonPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactEndedEventArgs).get_IsButtonPressed(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
+	{
+		Windows.Devices.Haptics.SimpleHapticsController _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactEndedEventArgs).get_SimpleHapticsController(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialControllerScreenContactStartedEventArgs : Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs, Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs2
 {
+extern(Windows):
+	final Windows.UI.Input.RadialControllerScreenContact Contact()
+	{
+		Windows.UI.Input.RadialControllerScreenContact _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs).get_Contact(&_ret));
+		return _ret;
+	}
+	final bool IsButtonPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs2).get_IsButtonPressed(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
+	{
+		Windows.Devices.Haptics.SimpleHapticsController _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs2).get_SimpleHapticsController(&_ret));
+		return _ret;
+	}
 }
 
 interface RightTappedEventArgs : Windows.UI.Input.IRightTappedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRightTappedEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.IRightTappedEventArgs).get_Position(&_ret));
+		return _ret;
+	}
 }
 
 interface TappedEventArgs : Windows.UI.Input.ITappedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Input.ITappedEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Input.ITappedEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final UINT32 TapCount()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Input.ITappedEventArgs).get_TapCount(&_ret));
+		return _ret;
+	}
 }
 
 enum CrossSlidingState

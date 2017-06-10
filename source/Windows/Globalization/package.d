@@ -524,6 +524,563 @@ interface ApplicationLanguages
 
 interface Calendar : Windows.Globalization.ICalendar, Windows.Globalization.ITimeZoneOnCalendar
 {
+extern(Windows):
+	final Windows.Globalization.Calendar Clone()
+	{
+		Windows.Globalization.Calendar _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_Clone(&_ret));
+		return _ret;
+	}
+	final void SetToMin()
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_SetToMin());
+	}
+	final void SetToMax()
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_SetToMax());
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Languages(&_ret));
+		return _ret;
+	}
+	final HSTRING NumeralSystem()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumeralSystem(&_ret));
+		return _ret;
+	}
+	final void NumeralSystem(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_NumeralSystem(value));
+	}
+	final HSTRING GetCalendarSystem()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_GetCalendarSystem(&_ret));
+		return _ret;
+	}
+	final void ChangeCalendarSystem(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_ChangeCalendarSystem(value));
+	}
+	final HSTRING GetClock()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_GetClock(&_ret));
+		return _ret;
+	}
+	final void ChangeClock(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_ChangeClock(value));
+	}
+	final Windows.Foundation.DateTime GetDateTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_GetDateTime(&_ret));
+		return _ret;
+	}
+	final void SetDateTime(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_SetDateTime(value));
+	}
+	final void SetToNow()
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_SetToNow());
+	}
+	final INT32 FirstEra()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstEra(&_ret));
+		return _ret;
+	}
+	final INT32 LastEra()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastEra(&_ret));
+		return _ret;
+	}
+	final INT32 NumberOfEras()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfEras(&_ret));
+		return _ret;
+	}
+	final INT32 Era()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Era(&_ret));
+		return _ret;
+	}
+	final void Era(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Era(value));
+	}
+	final void AddEras(INT32 eras)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddEras(eras));
+	}
+	final HSTRING EraAsFullString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_EraAsFullString(&_ret));
+		return _ret;
+	}
+	final HSTRING EraAsString(INT32 idealLength)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_EraAsString(idealLength, &_ret));
+		return _ret;
+	}
+	final INT32 FirstYearInThisEra()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstYearInThisEra(&_ret));
+		return _ret;
+	}
+	final INT32 LastYearInThisEra()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastYearInThisEra(&_ret));
+		return _ret;
+	}
+	final INT32 NumberOfYearsInThisEra()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfYearsInThisEra(&_ret));
+		return _ret;
+	}
+	final INT32 Year()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Year(&_ret));
+		return _ret;
+	}
+	final void Year(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Year(value));
+	}
+	final void AddYears(INT32 years)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddYears(years));
+	}
+	final HSTRING YearAsString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_YearAsString(&_ret));
+		return _ret;
+	}
+	final HSTRING YearAsTruncatedString(INT32 remainingDigits)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_YearAsTruncatedString(remainingDigits, &_ret));
+		return _ret;
+	}
+	final HSTRING YearAsPaddedString(INT32 minDigits)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_YearAsPaddedString(minDigits, &_ret));
+		return _ret;
+	}
+	final INT32 FirstMonthInThisYear()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstMonthInThisYear(&_ret));
+		return _ret;
+	}
+	final INT32 LastMonthInThisYear()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastMonthInThisYear(&_ret));
+		return _ret;
+	}
+	final INT32 NumberOfMonthsInThisYear()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfMonthsInThisYear(&_ret));
+		return _ret;
+	}
+	final INT32 Month()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Month(&_ret));
+		return _ret;
+	}
+	final void Month(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Month(value));
+	}
+	final void AddMonths(INT32 months)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddMonths(months));
+	}
+	final HSTRING MonthAsFullString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MonthAsFullString(&_ret));
+		return _ret;
+	}
+	final HSTRING MonthAsString(INT32 idealLength)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MonthAsString(idealLength, &_ret));
+		return _ret;
+	}
+	final HSTRING MonthAsFullSoloString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MonthAsFullSoloString(&_ret));
+		return _ret;
+	}
+	final HSTRING MonthAsSoloString(INT32 idealLength)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MonthAsSoloString(idealLength, &_ret));
+		return _ret;
+	}
+	final HSTRING MonthAsNumericString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MonthAsNumericString(&_ret));
+		return _ret;
+	}
+	final HSTRING MonthAsPaddedNumericString(INT32 minDigits)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MonthAsPaddedNumericString(minDigits, &_ret));
+		return _ret;
+	}
+	final void AddWeeks(INT32 weeks)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddWeeks(weeks));
+	}
+	final INT32 FirstDayInThisMonth()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstDayInThisMonth(&_ret));
+		return _ret;
+	}
+	final INT32 LastDayInThisMonth()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastDayInThisMonth(&_ret));
+		return _ret;
+	}
+	final INT32 NumberOfDaysInThisMonth()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfDaysInThisMonth(&_ret));
+		return _ret;
+	}
+	final INT32 Day()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Day(&_ret));
+		return _ret;
+	}
+	final void Day(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Day(value));
+	}
+	final void AddDays(INT32 days)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddDays(days));
+	}
+	final HSTRING DayAsString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_DayAsString(&_ret));
+		return _ret;
+	}
+	final HSTRING DayAsPaddedString(INT32 minDigits)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_DayAsPaddedString(minDigits, &_ret));
+		return _ret;
+	}
+	final Windows.Globalization.DayOfWeek DayOfWeek()
+	{
+		Windows.Globalization.DayOfWeek _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_DayOfWeek(&_ret));
+		return _ret;
+	}
+	final HSTRING DayOfWeekAsFullString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_DayOfWeekAsFullString(&_ret));
+		return _ret;
+	}
+	final HSTRING DayOfWeekAsString(INT32 idealLength)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_DayOfWeekAsString(idealLength, &_ret));
+		return _ret;
+	}
+	final HSTRING DayOfWeekAsFullSoloString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_DayOfWeekAsFullSoloString(&_ret));
+		return _ret;
+	}
+	final HSTRING DayOfWeekAsSoloString(INT32 idealLength)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_DayOfWeekAsSoloString(idealLength, &_ret));
+		return _ret;
+	}
+	final INT32 FirstPeriodInThisDay()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstPeriodInThisDay(&_ret));
+		return _ret;
+	}
+	final INT32 LastPeriodInThisDay()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastPeriodInThisDay(&_ret));
+		return _ret;
+	}
+	final INT32 NumberOfPeriodsInThisDay()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfPeriodsInThisDay(&_ret));
+		return _ret;
+	}
+	final INT32 Period()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Period(&_ret));
+		return _ret;
+	}
+	final void Period(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Period(value));
+	}
+	final void AddPeriods(INT32 periods)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddPeriods(periods));
+	}
+	final HSTRING PeriodAsFullString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_PeriodAsFullString(&_ret));
+		return _ret;
+	}
+	final HSTRING PeriodAsString(INT32 idealLength)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_PeriodAsString(idealLength, &_ret));
+		return _ret;
+	}
+	final INT32 FirstHourInThisPeriod()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstHourInThisPeriod(&_ret));
+		return _ret;
+	}
+	final INT32 LastHourInThisPeriod()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastHourInThisPeriod(&_ret));
+		return _ret;
+	}
+	final INT32 NumberOfHoursInThisPeriod()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfHoursInThisPeriod(&_ret));
+		return _ret;
+	}
+	final INT32 Hour()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Hour(&_ret));
+		return _ret;
+	}
+	final void Hour(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Hour(value));
+	}
+	final void AddHours(INT32 hours)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddHours(hours));
+	}
+	final HSTRING HourAsString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_HourAsString(&_ret));
+		return _ret;
+	}
+	final HSTRING HourAsPaddedString(INT32 minDigits)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_HourAsPaddedString(minDigits, &_ret));
+		return _ret;
+	}
+	final INT32 Minute()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Minute(&_ret));
+		return _ret;
+	}
+	final void Minute(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Minute(value));
+	}
+	final void AddMinutes(INT32 minutes)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddMinutes(minutes));
+	}
+	final HSTRING MinuteAsString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MinuteAsString(&_ret));
+		return _ret;
+	}
+	final HSTRING MinuteAsPaddedString(INT32 minDigits)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MinuteAsPaddedString(minDigits, &_ret));
+		return _ret;
+	}
+	final INT32 Second()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Second(&_ret));
+		return _ret;
+	}
+	final void Second(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Second(value));
+	}
+	final void AddSeconds(INT32 seconds)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddSeconds(seconds));
+	}
+	final HSTRING SecondAsString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_SecondAsString(&_ret));
+		return _ret;
+	}
+	final HSTRING SecondAsPaddedString(INT32 minDigits)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_SecondAsPaddedString(minDigits, &_ret));
+		return _ret;
+	}
+	final INT32 Nanosecond()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Nanosecond(&_ret));
+		return _ret;
+	}
+	final void Nanosecond(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Nanosecond(value));
+	}
+	final void AddNanoseconds(INT32 nanoseconds)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddNanoseconds(nanoseconds));
+	}
+	final HSTRING NanosecondAsString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_NanosecondAsString(&_ret));
+		return _ret;
+	}
+	final HSTRING NanosecondAsPaddedString(INT32 minDigits)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_NanosecondAsPaddedString(minDigits, &_ret));
+		return _ret;
+	}
+	final INT32 Compare(Windows.Globalization.Calendar other)
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_Compare(other, &_ret));
+		return _ret;
+	}
+	final INT32 CompareDateTime(Windows.Foundation.DateTime other)
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_CompareDateTime(other, &_ret));
+		return _ret;
+	}
+	final void CopyTo(Windows.Globalization.Calendar other)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_CopyTo(other));
+	}
+	final INT32 FirstMinuteInThisHour()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstMinuteInThisHour(&_ret));
+		return _ret;
+	}
+	final INT32 LastMinuteInThisHour()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastMinuteInThisHour(&_ret));
+		return _ret;
+	}
+	final INT32 NumberOfMinutesInThisHour()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfMinutesInThisHour(&_ret));
+		return _ret;
+	}
+	final INT32 FirstSecondInThisMinute()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstSecondInThisMinute(&_ret));
+		return _ret;
+	}
+	final INT32 LastSecondInThisMinute()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastSecondInThisMinute(&_ret));
+		return _ret;
+	}
+	final INT32 NumberOfSecondsInThisMinute()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfSecondsInThisMinute(&_ret));
+		return _ret;
+	}
+	final HSTRING ResolvedLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_ResolvedLanguage(&_ret));
+		return _ret;
+	}
+	final bool IsDaylightSavingTime()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_IsDaylightSavingTime(&_ret));
+		return _ret;
+	}
+	final HSTRING GetTimeZone()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ITimeZoneOnCalendar).abi_GetTimeZone(&_ret));
+		return _ret;
+	}
+	final void ChangeTimeZone(HSTRING timeZoneId)
+	{
+		Debug.OK(this.as!(Windows.Globalization.ITimeZoneOnCalendar).abi_ChangeTimeZone(timeZoneId));
+	}
+	final HSTRING TimeZoneAsFullString()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ITimeZoneOnCalendar).abi_TimeZoneAsFullString(&_ret));
+		return _ret;
+	}
+	final HSTRING TimeZoneAsString(INT32 idealLength)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ITimeZoneOnCalendar).abi_TimeZoneAsString(idealLength, &_ret));
+		return _ret;
+	}
 }
 
 interface CalendarIdentifiers
@@ -540,10 +1097,72 @@ interface CurrencyIdentifiers
 
 interface GeographicRegion : Windows.Globalization.IGeographicRegion
 {
+extern(Windows):
+	final HSTRING Code()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_Code(&_ret));
+		return _ret;
+	}
+	final HSTRING CodeTwoLetter()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_CodeTwoLetter(&_ret));
+		return _ret;
+	}
+	final HSTRING CodeThreeLetter()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_CodeThreeLetter(&_ret));
+		return _ret;
+	}
+	final HSTRING CodeThreeDigit()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_CodeThreeDigit(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING NativeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_NativeName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) CurrenciesInUse()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_CurrenciesInUse(&_ret));
+		return _ret;
+	}
 }
 
 interface JapanesePhoneme : Windows.Globalization.IJapanesePhoneme
 {
+extern(Windows):
+	final HSTRING DisplayText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.IJapanesePhoneme).get_DisplayText(&_ret));
+		return _ret;
+	}
+	final HSTRING YomiText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.IJapanesePhoneme).get_YomiText(&_ret));
+		return _ret;
+	}
+	final bool IsPhraseStart()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.IJapanesePhoneme).get_IsPhraseStart(&_ret));
+		return _ret;
+	}
 }
 
 interface JapanesePhoneticAnalyzer
@@ -552,6 +1171,37 @@ interface JapanesePhoneticAnalyzer
 
 interface Language : Windows.Globalization.ILanguage, Windows.Globalization.ILanguageExtensionSubtags
 {
+extern(Windows):
+	final HSTRING LanguageTag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ILanguage).get_LanguageTag(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ILanguage).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING NativeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ILanguage).get_NativeName(&_ret));
+		return _ret;
+	}
+	final HSTRING Script()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.ILanguage).get_Script(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) GetExtensionSubtags(HSTRING singleton)
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Globalization.ILanguageExtensionSubtags).abi_GetExtensionSubtags(singleton, &_ret));
+		return _ret;
+	}
 }
 
 interface NumeralSystemIdentifiers

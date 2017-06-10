@@ -182,30 +182,834 @@ extern(Windows):
 
 interface CurrencyFormatter : Windows.Globalization.NumberFormatting.ICurrencyFormatter, Windows.Globalization.NumberFormatting.INumberParser, Windows.Globalization.NumberFormatting.INumberFormatter2, Windows.Globalization.NumberFormatting.INumberFormatter, Windows.Globalization.NumberFormatting.INumberFormatterOptions, Windows.Globalization.NumberFormatting.ICurrencyFormatter2, Windows.Globalization.NumberFormatting.ISignificantDigitsOption, Windows.Globalization.NumberFormatting.INumberRounderOption, Windows.Globalization.NumberFormatting.ISignedZeroOption
 {
+extern(Windows):
+	final HSTRING Currency()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ICurrencyFormatter).get_Currency(&_ret));
+		return _ret;
+	}
+	deprecated("Currency may be read-only for releases after Windows 8.1. Instead, use a new CurrencyFormatter.")
+	final void Currency(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ICurrencyFormatter).set_Currency(value));
+	}
+	final Windows.Foundation.IReference!(INT64) ParseInt(HSTRING text)
+	{
+		Windows.Foundation.IReference!(INT64) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseInt(text, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) ParseUInt(HSTRING text)
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseUInt(text, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) ParseDouble(HSTRING text)
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseDouble(text, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatInt(INT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatUInt(UINT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatUInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatDouble(double value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatDouble(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatInt(INT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatUInt(UINT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatUInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatDouble(double value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatDouble(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_Languages(&_ret));
+		return _ret;
+	}
+	final HSTRING GeographicRegion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_GeographicRegion(&_ret));
+		return _ret;
+	}
+	final INT32 IntegerDigits()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_IntegerDigits(&_ret));
+		return _ret;
+	}
+	final void IntegerDigits(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_IntegerDigits(value));
+	}
+	final INT32 FractionDigits()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_FractionDigits(&_ret));
+		return _ret;
+	}
+	final void FractionDigits(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_FractionDigits(value));
+	}
+	final bool IsGrouped()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_IsGrouped(&_ret));
+		return _ret;
+	}
+	final void IsGrouped(bool value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_IsGrouped(value));
+	}
+	final bool IsDecimalPointAlwaysDisplayed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_IsDecimalPointAlwaysDisplayed(&_ret));
+		return _ret;
+	}
+	final void IsDecimalPointAlwaysDisplayed(bool value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_IsDecimalPointAlwaysDisplayed(value));
+	}
+	final HSTRING NumeralSystem()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_NumeralSystem(&_ret));
+		return _ret;
+	}
+	final void NumeralSystem(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_NumeralSystem(value));
+	}
+	final HSTRING ResolvedLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_ResolvedLanguage(&_ret));
+		return _ret;
+	}
+	final HSTRING ResolvedGeographicRegion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_ResolvedGeographicRegion(&_ret));
+		return _ret;
+	}
+	final Windows.Globalization.NumberFormatting.CurrencyFormatterMode Mode()
+	{
+		Windows.Globalization.NumberFormatting.CurrencyFormatterMode _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ICurrencyFormatter2).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.Globalization.NumberFormatting.CurrencyFormatterMode value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ICurrencyFormatter2).set_Mode(value));
+	}
+	final void ApplyRoundingForCurrency(Windows.Globalization.NumberFormatting.RoundingAlgorithm roundingAlgorithm)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ICurrencyFormatter2).abi_ApplyRoundingForCurrency(roundingAlgorithm));
+	}
+	final INT32 SignificantDigits()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignificantDigitsOption).get_SignificantDigits(&_ret));
+		return _ret;
+	}
+	final void SignificantDigits(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignificantDigitsOption).set_SignificantDigits(value));
+	}
+	final Windows.Globalization.NumberFormatting.INumberRounder NumberRounder()
+	{
+		Windows.Globalization.NumberFormatting.INumberRounder _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounderOption).get_NumberRounder(&_ret));
+		return _ret;
+	}
+	final void NumberRounder(Windows.Globalization.NumberFormatting.INumberRounder value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounderOption).set_NumberRounder(value));
+	}
+	final bool IsZeroSigned()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignedZeroOption).get_IsZeroSigned(&_ret));
+		return _ret;
+	}
+	final void IsZeroSigned(bool value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignedZeroOption).set_IsZeroSigned(value));
+	}
 }
 
 interface DecimalFormatter : Windows.Globalization.NumberFormatting.INumberFormatterOptions, Windows.Globalization.NumberFormatting.INumberFormatter, Windows.Globalization.NumberFormatting.INumberFormatter2, Windows.Globalization.NumberFormatting.INumberParser, Windows.Globalization.NumberFormatting.ISignificantDigitsOption, Windows.Globalization.NumberFormatting.INumberRounderOption, Windows.Globalization.NumberFormatting.ISignedZeroOption
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_Languages(&_ret));
+		return _ret;
+	}
+	final HSTRING GeographicRegion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_GeographicRegion(&_ret));
+		return _ret;
+	}
+	final INT32 IntegerDigits()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_IntegerDigits(&_ret));
+		return _ret;
+	}
+	final void IntegerDigits(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_IntegerDigits(value));
+	}
+	final INT32 FractionDigits()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_FractionDigits(&_ret));
+		return _ret;
+	}
+	final void FractionDigits(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_FractionDigits(value));
+	}
+	final bool IsGrouped()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_IsGrouped(&_ret));
+		return _ret;
+	}
+	final void IsGrouped(bool value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_IsGrouped(value));
+	}
+	final bool IsDecimalPointAlwaysDisplayed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_IsDecimalPointAlwaysDisplayed(&_ret));
+		return _ret;
+	}
+	final void IsDecimalPointAlwaysDisplayed(bool value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_IsDecimalPointAlwaysDisplayed(value));
+	}
+	final HSTRING NumeralSystem()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_NumeralSystem(&_ret));
+		return _ret;
+	}
+	final void NumeralSystem(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_NumeralSystem(value));
+	}
+	final HSTRING ResolvedLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_ResolvedLanguage(&_ret));
+		return _ret;
+	}
+	final HSTRING ResolvedGeographicRegion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_ResolvedGeographicRegion(&_ret));
+		return _ret;
+	}
+	final HSTRING FormatInt(INT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatUInt(UINT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatUInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatDouble(double value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatDouble(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatInt(INT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatUInt(UINT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatUInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatDouble(double value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatDouble(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(INT64) ParseInt(HSTRING text)
+	{
+		Windows.Foundation.IReference!(INT64) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseInt(text, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) ParseUInt(HSTRING text)
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseUInt(text, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) ParseDouble(HSTRING text)
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseDouble(text, &_ret));
+		return _ret;
+	}
+	final INT32 SignificantDigits()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignificantDigitsOption).get_SignificantDigits(&_ret));
+		return _ret;
+	}
+	final void SignificantDigits(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignificantDigitsOption).set_SignificantDigits(value));
+	}
+	final Windows.Globalization.NumberFormatting.INumberRounder NumberRounder()
+	{
+		Windows.Globalization.NumberFormatting.INumberRounder _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounderOption).get_NumberRounder(&_ret));
+		return _ret;
+	}
+	final void NumberRounder(Windows.Globalization.NumberFormatting.INumberRounder value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounderOption).set_NumberRounder(value));
+	}
+	final bool IsZeroSigned()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignedZeroOption).get_IsZeroSigned(&_ret));
+		return _ret;
+	}
+	final void IsZeroSigned(bool value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignedZeroOption).set_IsZeroSigned(value));
+	}
 }
 
 interface IncrementNumberRounder : Windows.Globalization.NumberFormatting.INumberRounder, Windows.Globalization.NumberFormatting.IIncrementNumberRounder
 {
+extern(Windows):
+	final INT32 RoundInt32(INT32 value)
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundInt32(value, &_ret));
+		return _ret;
+	}
+	final UINT32 RoundUInt32(UINT32 value)
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundUInt32(value, &_ret));
+		return _ret;
+	}
+	final INT64 RoundInt64(INT64 value)
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundInt64(value, &_ret));
+		return _ret;
+	}
+	final UINT64 RoundUInt64(UINT64 value)
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundUInt64(value, &_ret));
+		return _ret;
+	}
+	final FLOAT RoundSingle(FLOAT value)
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundSingle(value, &_ret));
+		return _ret;
+	}
+	final double RoundDouble(double value)
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundDouble(value, &_ret));
+		return _ret;
+	}
+	final Windows.Globalization.NumberFormatting.RoundingAlgorithm RoundingAlgorithm()
+	{
+		Windows.Globalization.NumberFormatting.RoundingAlgorithm _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.IIncrementNumberRounder).get_RoundingAlgorithm(&_ret));
+		return _ret;
+	}
+	final void RoundingAlgorithm(Windows.Globalization.NumberFormatting.RoundingAlgorithm value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.IIncrementNumberRounder).set_RoundingAlgorithm(value));
+	}
+	final double Increment()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.IIncrementNumberRounder).get_Increment(&_ret));
+		return _ret;
+	}
+	final void Increment(double value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.IIncrementNumberRounder).set_Increment(value));
+	}
 }
 
 interface NumeralSystemTranslator : Windows.Globalization.NumberFormatting.INumeralSystemTranslator
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumeralSystemTranslator).get_Languages(&_ret));
+		return _ret;
+	}
+	final HSTRING ResolvedLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumeralSystemTranslator).get_ResolvedLanguage(&_ret));
+		return _ret;
+	}
+	final HSTRING NumeralSystem()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumeralSystemTranslator).get_NumeralSystem(&_ret));
+		return _ret;
+	}
+	final void NumeralSystem(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumeralSystemTranslator).set_NumeralSystem(value));
+	}
+	final HSTRING TranslateNumerals(HSTRING value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumeralSystemTranslator).abi_TranslateNumerals(value, &_ret));
+		return _ret;
+	}
 }
 
 interface PercentFormatter : Windows.Globalization.NumberFormatting.INumberFormatterOptions, Windows.Globalization.NumberFormatting.INumberFormatter, Windows.Globalization.NumberFormatting.INumberFormatter2, Windows.Globalization.NumberFormatting.INumberParser, Windows.Globalization.NumberFormatting.ISignificantDigitsOption, Windows.Globalization.NumberFormatting.INumberRounderOption, Windows.Globalization.NumberFormatting.ISignedZeroOption
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_Languages(&_ret));
+		return _ret;
+	}
+	final HSTRING GeographicRegion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_GeographicRegion(&_ret));
+		return _ret;
+	}
+	final INT32 IntegerDigits()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_IntegerDigits(&_ret));
+		return _ret;
+	}
+	final void IntegerDigits(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_IntegerDigits(value));
+	}
+	final INT32 FractionDigits()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_FractionDigits(&_ret));
+		return _ret;
+	}
+	final void FractionDigits(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_FractionDigits(value));
+	}
+	final bool IsGrouped()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_IsGrouped(&_ret));
+		return _ret;
+	}
+	final void IsGrouped(bool value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_IsGrouped(value));
+	}
+	final bool IsDecimalPointAlwaysDisplayed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_IsDecimalPointAlwaysDisplayed(&_ret));
+		return _ret;
+	}
+	final void IsDecimalPointAlwaysDisplayed(bool value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_IsDecimalPointAlwaysDisplayed(value));
+	}
+	final HSTRING NumeralSystem()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_NumeralSystem(&_ret));
+		return _ret;
+	}
+	final void NumeralSystem(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_NumeralSystem(value));
+	}
+	final HSTRING ResolvedLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_ResolvedLanguage(&_ret));
+		return _ret;
+	}
+	final HSTRING ResolvedGeographicRegion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_ResolvedGeographicRegion(&_ret));
+		return _ret;
+	}
+	final HSTRING FormatInt(INT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatUInt(UINT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatUInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatDouble(double value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatDouble(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatInt(INT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatUInt(UINT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatUInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatDouble(double value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatDouble(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(INT64) ParseInt(HSTRING text)
+	{
+		Windows.Foundation.IReference!(INT64) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseInt(text, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) ParseUInt(HSTRING text)
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseUInt(text, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) ParseDouble(HSTRING text)
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseDouble(text, &_ret));
+		return _ret;
+	}
+	final INT32 SignificantDigits()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignificantDigitsOption).get_SignificantDigits(&_ret));
+		return _ret;
+	}
+	final void SignificantDigits(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignificantDigitsOption).set_SignificantDigits(value));
+	}
+	final Windows.Globalization.NumberFormatting.INumberRounder NumberRounder()
+	{
+		Windows.Globalization.NumberFormatting.INumberRounder _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounderOption).get_NumberRounder(&_ret));
+		return _ret;
+	}
+	final void NumberRounder(Windows.Globalization.NumberFormatting.INumberRounder value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounderOption).set_NumberRounder(value));
+	}
+	final bool IsZeroSigned()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignedZeroOption).get_IsZeroSigned(&_ret));
+		return _ret;
+	}
+	final void IsZeroSigned(bool value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignedZeroOption).set_IsZeroSigned(value));
+	}
 }
 
 interface PermilleFormatter : Windows.Globalization.NumberFormatting.INumberFormatterOptions, Windows.Globalization.NumberFormatting.INumberFormatter, Windows.Globalization.NumberFormatting.INumberFormatter2, Windows.Globalization.NumberFormatting.INumberParser, Windows.Globalization.NumberFormatting.ISignificantDigitsOption, Windows.Globalization.NumberFormatting.INumberRounderOption, Windows.Globalization.NumberFormatting.ISignedZeroOption
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_Languages(&_ret));
+		return _ret;
+	}
+	final HSTRING GeographicRegion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_GeographicRegion(&_ret));
+		return _ret;
+	}
+	final INT32 IntegerDigits()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_IntegerDigits(&_ret));
+		return _ret;
+	}
+	final void IntegerDigits(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_IntegerDigits(value));
+	}
+	final INT32 FractionDigits()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_FractionDigits(&_ret));
+		return _ret;
+	}
+	final void FractionDigits(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_FractionDigits(value));
+	}
+	final bool IsGrouped()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_IsGrouped(&_ret));
+		return _ret;
+	}
+	final void IsGrouped(bool value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_IsGrouped(value));
+	}
+	final bool IsDecimalPointAlwaysDisplayed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_IsDecimalPointAlwaysDisplayed(&_ret));
+		return _ret;
+	}
+	final void IsDecimalPointAlwaysDisplayed(bool value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_IsDecimalPointAlwaysDisplayed(value));
+	}
+	final HSTRING NumeralSystem()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_NumeralSystem(&_ret));
+		return _ret;
+	}
+	final void NumeralSystem(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).set_NumeralSystem(value));
+	}
+	final HSTRING ResolvedLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_ResolvedLanguage(&_ret));
+		return _ret;
+	}
+	final HSTRING ResolvedGeographicRegion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatterOptions).get_ResolvedGeographicRegion(&_ret));
+		return _ret;
+	}
+	final HSTRING FormatInt(INT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatUInt(UINT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatUInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatDouble(double value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatDouble(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatInt(INT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatUInt(UINT64 value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatUInt(value, &_ret));
+		return _ret;
+	}
+	final HSTRING FormatDouble(double value)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatDouble(value, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(INT64) ParseInt(HSTRING text)
+	{
+		Windows.Foundation.IReference!(INT64) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseInt(text, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT64) ParseUInt(HSTRING text)
+	{
+		Windows.Foundation.IReference!(UINT64) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseUInt(text, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) ParseDouble(HSTRING text)
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseDouble(text, &_ret));
+		return _ret;
+	}
+	final INT32 SignificantDigits()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignificantDigitsOption).get_SignificantDigits(&_ret));
+		return _ret;
+	}
+	final void SignificantDigits(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignificantDigitsOption).set_SignificantDigits(value));
+	}
+	final Windows.Globalization.NumberFormatting.INumberRounder NumberRounder()
+	{
+		Windows.Globalization.NumberFormatting.INumberRounder _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounderOption).get_NumberRounder(&_ret));
+		return _ret;
+	}
+	final void NumberRounder(Windows.Globalization.NumberFormatting.INumberRounder value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounderOption).set_NumberRounder(value));
+	}
+	final bool IsZeroSigned()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignedZeroOption).get_IsZeroSigned(&_ret));
+		return _ret;
+	}
+	final void IsZeroSigned(bool value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignedZeroOption).set_IsZeroSigned(value));
+	}
 }
 
 interface SignificantDigitsNumberRounder : Windows.Globalization.NumberFormatting.INumberRounder, Windows.Globalization.NumberFormatting.ISignificantDigitsNumberRounder
 {
+extern(Windows):
+	final INT32 RoundInt32(INT32 value)
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundInt32(value, &_ret));
+		return _ret;
+	}
+	final UINT32 RoundUInt32(UINT32 value)
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundUInt32(value, &_ret));
+		return _ret;
+	}
+	final INT64 RoundInt64(INT64 value)
+	{
+		INT64 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundInt64(value, &_ret));
+		return _ret;
+	}
+	final UINT64 RoundUInt64(UINT64 value)
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundUInt64(value, &_ret));
+		return _ret;
+	}
+	final FLOAT RoundSingle(FLOAT value)
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundSingle(value, &_ret));
+		return _ret;
+	}
+	final double RoundDouble(double value)
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundDouble(value, &_ret));
+		return _ret;
+	}
+	final Windows.Globalization.NumberFormatting.RoundingAlgorithm RoundingAlgorithm()
+	{
+		Windows.Globalization.NumberFormatting.RoundingAlgorithm _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignificantDigitsNumberRounder).get_RoundingAlgorithm(&_ret));
+		return _ret;
+	}
+	final void RoundingAlgorithm(Windows.Globalization.NumberFormatting.RoundingAlgorithm value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignificantDigitsNumberRounder).set_RoundingAlgorithm(value));
+	}
+	final UINT32 SignificantDigits()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignificantDigitsNumberRounder).get_SignificantDigits(&_ret));
+		return _ret;
+	}
+	final void SignificantDigits(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignificantDigitsNumberRounder).set_SignificantDigits(value));
+	}
 }
 
 enum CurrencyFormatterMode

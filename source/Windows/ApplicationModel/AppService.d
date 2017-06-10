@@ -104,30 +104,159 @@ interface AppServiceCatalog
 
 interface AppServiceClosedEventArgs : Windows.ApplicationModel.AppService.IAppServiceClosedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.AppService.AppServiceClosedStatus Status()
+	{
+		Windows.ApplicationModel.AppService.AppServiceClosedStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceClosedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface AppServiceConnection : Windows.ApplicationModel.AppService.IAppServiceConnection, Windows.Foundation.IClosable, Windows.ApplicationModel.AppService.IAppServiceConnection2
 {
+extern(Windows):
+	final HSTRING AppServiceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).get_AppServiceName(&_ret));
+		return _ret;
+	}
+	final void AppServiceName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).set_AppServiceName(value));
+	}
+	final HSTRING PackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).get_PackageFamilyName(&_ret));
+		return _ret;
+	}
+	final void PackageFamilyName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).set_PackageFamilyName(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceConnectionStatus) OpenAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceConnectionStatus) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).abi_OpenAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceResponse) SendMessageAsync(Windows.Foundation.Collections.ValueSet message)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceResponse) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).abi_SendMessageAsync(message, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceConnectionStatus) OpenRemoteAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceConnectionStatus) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection2).abi_OpenRemoteAsync(remoteSystemConnectionRequest, &_ret));
+		return _ret;
+	}
+	final Windows.System.User User()
+	{
+		Windows.System.User _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection2).get_User(&_ret));
+		return _ret;
+	}
+	final void User(Windows.System.User value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection2).set_User(value));
+	}
 }
 
 interface AppServiceDeferral : Windows.ApplicationModel.AppService.IAppServiceDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceDeferral).abi_Complete());
+	}
 }
 
 interface AppServiceRequest : Windows.ApplicationModel.AppService.IAppServiceRequest
 {
+extern(Windows):
+	final Windows.Foundation.Collections.ValueSet Message()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceRequest).get_Message(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceResponseStatus) SendResponseAsync(Windows.Foundation.Collections.ValueSet message)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceResponseStatus) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceRequest).abi_SendResponseAsync(message, &_ret));
+		return _ret;
+	}
 }
 
 interface AppServiceRequestReceivedEventArgs : Windows.ApplicationModel.AppService.IAppServiceRequestReceivedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.AppService.AppServiceRequest Request()
+	{
+		Windows.ApplicationModel.AppService.AppServiceRequest _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceRequestReceivedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.AppService.AppServiceDeferral GetDeferral()
+	{
+		Windows.ApplicationModel.AppService.AppServiceDeferral _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceRequestReceivedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface AppServiceResponse : Windows.ApplicationModel.AppService.IAppServiceResponse
 {
+extern(Windows):
+	final Windows.Foundation.Collections.ValueSet Message()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceResponse).get_Message(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.AppService.AppServiceResponseStatus Status()
+	{
+		Windows.ApplicationModel.AppService.AppServiceResponseStatus _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceResponse).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface AppServiceTriggerDetails : Windows.ApplicationModel.AppService.IAppServiceTriggerDetails, Windows.ApplicationModel.AppService.IAppServiceTriggerDetails2
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails).get_Name(&_ret));
+		return _ret;
+	}
+	final HSTRING CallerPackageFamilyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails).get_CallerPackageFamilyName(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.AppService.AppServiceConnection AppServiceConnection()
+	{
+		Windows.ApplicationModel.AppService.AppServiceConnection _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails).get_AppServiceConnection(&_ret));
+		return _ret;
+	}
+	final bool IsRemoteSystemConnection()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails2).get_IsRemoteSystemConnection(&_ret));
+		return _ret;
+	}
 }
 
 enum AppServiceClosedStatus

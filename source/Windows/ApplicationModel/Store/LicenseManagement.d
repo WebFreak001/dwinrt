@@ -48,10 +48,66 @@ interface LicenseManager
 
 interface LicenseSatisfactionInfo : Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo
 {
+extern(Windows):
+	final bool SatisfiedByDevice()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_SatisfiedByDevice(&_ret));
+		return _ret;
+	}
+	final bool SatisfiedByOpenLicense()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_SatisfiedByOpenLicense(&_ret));
+		return _ret;
+	}
+	final bool SatisfiedByTrial()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_SatisfiedByTrial(&_ret));
+		return _ret;
+	}
+	final bool SatisfiedByPass()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_SatisfiedByPass(&_ret));
+		return _ret;
+	}
+	final bool SatisfiedByInstallMedia()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_SatisfiedByInstallMedia(&_ret));
+		return _ret;
+	}
+	final bool SatisfiedBySignedInUser()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_SatisfiedBySignedInUser(&_ret));
+		return _ret;
+	}
+	final bool IsSatisfied()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_IsSatisfied(&_ret));
+		return _ret;
+	}
 }
 
 interface LicenseSatisfactionResult : Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo) LicenseSatisfactionInfos()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult).get_LicenseSatisfactionInfos(&_ret));
+		return _ret;
+	}
+	final HRESULT ExtendedError()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult).get_ExtendedError(&_ret));
+		return _ret;
+	}
 }
 
 enum LicenseRefreshOption

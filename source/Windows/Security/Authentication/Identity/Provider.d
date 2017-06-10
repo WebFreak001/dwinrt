@@ -117,30 +117,175 @@ extern(Windows):
 
 interface SecondaryAuthenticationFactorAuthentication : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthentication
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer ServiceAuthenticationHmac()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthentication).get_ServiceAuthenticationHmac(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer SessionNonce()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthentication).get_SessionNonce(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer DeviceNonce()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthentication).get_DeviceNonce(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer DeviceConfigurationData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthentication).get_DeviceConfigurationData(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorFinishAuthenticationStatus) FinishAuthenticationAsync(Windows.Storage.Streams.IBuffer deviceHmac, Windows.Storage.Streams.IBuffer sessionHmac)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorFinishAuthenticationStatus) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthentication).abi_FinishAuthenticationAsync(deviceHmac, sessionHmac, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction AbortAuthenticationAsync(HSTRING errorLogMessage)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthentication).abi_AbortAuthenticationAsync(errorLogMessage, &_ret));
+		return _ret;
+	}
 }
 
 interface SecondaryAuthenticationFactorAuthenticationResult : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationResult
 {
+extern(Windows):
+	final Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStatus Status()
+	{
+		Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStatus _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthentication Authentication()
+	{
+		Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthentication _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationResult).get_Authentication(&_ret));
+		return _ret;
+	}
 }
 
 interface SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs
 {
+extern(Windows):
+	final Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageInfo StageInfo()
+	{
+		Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageInfo _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs).get_StageInfo(&_ret));
+		return _ret;
+	}
 }
 
 interface SecondaryAuthenticationFactorAuthenticationStageInfo : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStageInfo
 {
+extern(Windows):
+	final Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStage Stage()
+	{
+		Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStage _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStageInfo).get_Stage(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationScenario Scenario()
+	{
+		Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationScenario _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStageInfo).get_Scenario(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStageInfo).get_DeviceId(&_ret));
+		return _ret;
+	}
 }
 
 interface SecondaryAuthenticationFactorInfo : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo, Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo2
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceFriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo).get_DeviceFriendlyName(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceModelNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo).get_DeviceModelNumber(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer DeviceConfigurationData()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo).get_DeviceConfigurationData(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode PresenceMonitoringMode()
+	{
+		Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo2).get_PresenceMonitoringMode(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction UpdateDevicePresenceAsync(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresence presenceState)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo2).abi_UpdateDevicePresenceAsync(presenceState, &_ret));
+		return _ret;
+	}
+	final bool IsAuthenticationSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo2).get_IsAuthenticationSupported(&_ret));
+		return _ret;
+	}
 }
 
 interface SecondaryAuthenticationFactorRegistration : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorRegistration
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction FinishRegisteringDeviceAsync(Windows.Storage.Streams.IBuffer deviceConfigurationData)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorRegistration).abi_FinishRegisteringDeviceAsync(deviceConfigurationData, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction AbortRegisteringDeviceAsync(HSTRING errorLogMessage)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorRegistration).abi_AbortRegisteringDeviceAsync(errorLogMessage, &_ret));
+		return _ret;
+	}
 }
 
 interface SecondaryAuthenticationFactorRegistrationResult : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorRegistrationResult
 {
+extern(Windows):
+	final Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationStatus Status()
+	{
+		Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistrationStatus _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorRegistrationResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistration Registration()
+	{
+		Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistration _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorRegistrationResult).get_Registration(&_ret));
+		return _ret;
+	}
 }
 
 enum SecondaryAuthenticationFactorAuthenticationMessage

@@ -327,22 +327,121 @@ extern(Windows):
 
 interface DeviceAccessChangedEventArgs : Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs, Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs2
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceAccessStatus Status()
+	{
+		Windows.Devices.Enumeration.DeviceAccessStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs2).get_Id(&_ret));
+		return _ret;
+	}
 }
 
 interface DeviceAccessInformation : Windows.Devices.Enumeration.IDeviceAccessInformation
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceAccessStatus CurrentStatus()
+	{
+		Windows.Devices.Enumeration.DeviceAccessStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceAccessInformation).get_CurrentStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface DeviceConnectionChangeTriggerDetails : Windows.Devices.Enumeration.IDeviceConnectionChangeTriggerDetails
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceConnectionChangeTriggerDetails).get_DeviceId(&_ret));
+		return _ret;
+	}
 }
 
 interface DeviceDisconnectButtonClickedEventArgs : Windows.Devices.Enumeration.IDeviceDisconnectButtonClickedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceInformation Device()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceDisconnectButtonClickedEventArgs).get_Device(&_ret));
+		return _ret;
+	}
 }
 
 interface DeviceInformation : Windows.Devices.Enumeration.IDeviceInformation, Windows.Devices.Enumeration.IDeviceInformation2
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformation).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformation).get_Name(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformation).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final bool IsDefault()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformation).get_IsDefault(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.EnclosureLocation EnclosureLocation()
+	{
+		Windows.Devices.Enumeration.EnclosureLocation _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformation).get_EnclosureLocation(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformation).get_Properties(&_ret));
+		return _ret;
+	}
+	final void Update(Windows.Devices.Enumeration.DeviceInformationUpdate updateInfo)
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformation).abi_Update(updateInfo));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceThumbnail) GetThumbnailAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformation).abi_GetThumbnailAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceThumbnail) GetGlyphThumbnailAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceThumbnail) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformation).abi_GetGlyphThumbnailAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DeviceInformationKind Kind()
+	{
+		Windows.Devices.Enumeration.DeviceInformationKind _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformation2).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DeviceInformationPairing Pairing()
+	{
+		Windows.Devices.Enumeration.DeviceInformationPairing _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformation2).get_Pairing(&_ret));
+		return _ret;
+	}
 }
 
 interface DeviceInformationCollection : Windows.Foundation.Collections.IVectorView!(Windows.Devices.Enumeration.DeviceInformation), Windows.Foundation.Collections.IIterable!(Windows.Devices.Enumeration.DeviceInformation)
@@ -351,62 +450,491 @@ interface DeviceInformationCollection : Windows.Foundation.Collections.IVectorVi
 
 interface DeviceInformationCustomPairing : Windows.Devices.Enumeration.IDeviceInformationCustomPairing
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationCustomPairing).abi_PairAsync(pairingKindsSupported, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairWithProtectionLevelAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationCustomPairing).abi_PairWithProtectionLevelAsync(pairingKindsSupported, minProtectionLevel, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairWithProtectionLevelAndSettingsAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Devices.Enumeration.IDevicePairingSettings devicePairingSettings)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationCustomPairing).abi_PairWithProtectionLevelAndSettingsAsync(pairingKindsSupported, minProtectionLevel, devicePairingSettings, &_ret));
+		return _ret;
+	}
 }
 
 interface DeviceInformationPairing : Windows.Devices.Enumeration.IDeviceInformationPairing, Windows.Devices.Enumeration.IDeviceInformationPairing2
 {
+extern(Windows):
+	final bool IsPaired()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationPairing).get_IsPaired(&_ret));
+		return _ret;
+	}
+	final bool CanPair()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationPairing).get_CanPair(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationPairing).abi_PairAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairWithProtectionLevelAsync(Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationPairing).abi_PairWithProtectionLevelAsync(minProtectionLevel, &_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DevicePairingProtectionLevel ProtectionLevel()
+	{
+		Windows.Devices.Enumeration.DevicePairingProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationPairing2).get_ProtectionLevel(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DeviceInformationCustomPairing Custom()
+	{
+		Windows.Devices.Enumeration.DeviceInformationCustomPairing _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationPairing2).get_Custom(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairWithProtectionLevelAndSettingsAsync(Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Devices.Enumeration.IDevicePairingSettings devicePairingSettings)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationPairing2).abi_PairWithProtectionLevelAndSettingsAsync(minProtectionLevel, devicePairingSettings, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceUnpairingResult) UnpairAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceUnpairingResult) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationPairing2).abi_UnpairAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface DeviceInformationUpdate : Windows.Devices.Enumeration.IDeviceInformationUpdate, Windows.Devices.Enumeration.IDeviceInformationUpdate2
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationUpdate).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationUpdate).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DeviceInformationKind Kind()
+	{
+		Windows.Devices.Enumeration.DeviceInformationKind _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationUpdate2).get_Kind(&_ret));
+		return _ret;
+	}
 }
 
 interface DevicePairingRequestedEventArgs : Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceInformation DeviceInformation()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs).get_DeviceInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DevicePairingKinds PairingKind()
+	{
+		Windows.Devices.Enumeration.DevicePairingKinds _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs).get_PairingKind(&_ret));
+		return _ret;
+	}
+	final HSTRING Pin()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs).get_Pin(&_ret));
+		return _ret;
+	}
+	final void Accept()
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs).abi_Accept());
+	}
+	final void AcceptWithPin(HSTRING pin)
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs).abi_AcceptWithPin(pin));
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface DevicePairingResult : Windows.Devices.Enumeration.IDevicePairingResult
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DevicePairingResultStatus Status()
+	{
+		Windows.Devices.Enumeration.DevicePairingResultStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePairingResult).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DevicePairingProtectionLevel ProtectionLevelUsed()
+	{
+		Windows.Devices.Enumeration.DevicePairingProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePairingResult).get_ProtectionLevelUsed(&_ret));
+		return _ret;
+	}
 }
 
 interface DevicePicker : Windows.Devices.Enumeration.IDevicePicker
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DevicePickerFilter Filter()
+	{
+		Windows.Devices.Enumeration.DevicePickerFilter _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).get_Filter(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DevicePickerAppearance Appearance()
+	{
+		Windows.Devices.Enumeration.DevicePickerAppearance _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).get_Appearance(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) RequestedProperties()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).get_RequestedProperties(&_ret));
+		return _ret;
+	}
+	final void Show(Windows.Foundation.Rect selection)
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).abi_Show(selection));
+	}
+	final void ShowWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement placement)
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).abi_ShowWithPlacement(selection, placement));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) PickSingleDeviceAsync(Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).abi_PickSingleDeviceAsync(selection, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) PickSingleDeviceAsyncWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement placement)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).abi_PickSingleDeviceAsyncWithPlacement(selection, placement, &_ret));
+		return _ret;
+	}
+	final void Hide()
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).abi_Hide());
+	}
+	final void SetDisplayStatus(Windows.Devices.Enumeration.DeviceInformation device, HSTRING status, Windows.Devices.Enumeration.DevicePickerDisplayStatusOptions options)
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).abi_SetDisplayStatus(device, status, options));
+	}
 }
 
 interface DevicePickerAppearance : Windows.Devices.Enumeration.IDevicePickerAppearance
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).set_Title(value));
+	}
+	final Windows.UI.Color ForegroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).get_ForegroundColor(&_ret));
+		return _ret;
+	}
+	final void ForegroundColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).set_ForegroundColor(value));
+	}
+	final Windows.UI.Color BackgroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).get_BackgroundColor(&_ret));
+		return _ret;
+	}
+	final void BackgroundColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).set_BackgroundColor(value));
+	}
+	final Windows.UI.Color AccentColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).get_AccentColor(&_ret));
+		return _ret;
+	}
+	final void AccentColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).set_AccentColor(value));
+	}
+	final Windows.UI.Color SelectedForegroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).get_SelectedForegroundColor(&_ret));
+		return _ret;
+	}
+	final void SelectedForegroundColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).set_SelectedForegroundColor(value));
+	}
+	final Windows.UI.Color SelectedBackgroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).get_SelectedBackgroundColor(&_ret));
+		return _ret;
+	}
+	final void SelectedBackgroundColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).set_SelectedBackgroundColor(value));
+	}
+	final Windows.UI.Color SelectedAccentColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).get_SelectedAccentColor(&_ret));
+		return _ret;
+	}
+	final void SelectedAccentColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerAppearance).set_SelectedAccentColor(value));
+	}
 }
 
 interface DevicePickerFilter : Windows.Devices.Enumeration.IDevicePickerFilter
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.Enumeration.DeviceClass) SupportedDeviceClasses()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.Enumeration.DeviceClass) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerFilter).get_SupportedDeviceClasses(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) SupportedDeviceSelectors()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePickerFilter).get_SupportedDeviceSelectors(&_ret));
+		return _ret;
+	}
 }
 
 interface DeviceSelectedEventArgs : Windows.Devices.Enumeration.IDeviceSelectedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceInformation SelectedDevice()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceSelectedEventArgs).get_SelectedDevice(&_ret));
+		return _ret;
+	}
 }
 
 interface DeviceThumbnail : Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
+extern(Windows):
+	final HSTRING ContentType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IContentTypeProvider).get_ContentType(&_ret));
+		return _ret;
+	}
+	final UINT64 Size()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
+		return _ret;
+	}
+	final void Size(UINT64 value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
+	}
+	final Windows.Storage.Streams.IInputStream GetInputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(UINT64 position)
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
+		return _ret;
+	}
+	final UINT64 Position()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
+		return _ret;
+	}
+	final void Seek(UINT64 position)
+	{
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
+	}
+	final Windows.Storage.Streams.IRandomAccessStream CloneStream()
+	{
+		Windows.Storage.Streams.IRandomAccessStream _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_CloneStream(&_ret));
+		return _ret;
+	}
+	final bool CanRead()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanRead(&_ret));
+		return _ret;
+	}
+	final bool CanWrite()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanWrite(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) WriteAsync(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_WriteAsync(buffer, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_FlushAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) _ret;
+		Debug.OK(this.as!(Windows.Storage.Streams.IInputStream).abi_ReadAsync(buffer, count, options, &_ret));
+		return _ret;
+	}
 }
 
 interface DeviceUnpairingResult : Windows.Devices.Enumeration.IDeviceUnpairingResult
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceUnpairingResultStatus Status()
+	{
+		Windows.Devices.Enumeration.DeviceUnpairingResultStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceUnpairingResult).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface DeviceWatcher : Windows.Devices.Enumeration.IDeviceWatcher, Windows.Devices.Enumeration.IDeviceWatcher2
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceWatcherStatus Status()
+	{
+		Windows.Devices.Enumeration.DeviceWatcherStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher).get_Status(&_ret));
+		return _ret;
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher).abi_Stop());
+	}
+	final Windows.ApplicationModel.Background.DeviceWatcherTrigger GetBackgroundTrigger(Windows.Foundation.Collections.IIterable!(Windows.Devices.Enumeration.DeviceWatcherEventKind) requestedEventKinds)
+	{
+		Windows.ApplicationModel.Background.DeviceWatcherTrigger _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher2).abi_GetBackgroundTrigger(requestedEventKinds, &_ret));
+		return _ret;
+	}
 }
 
 interface DeviceWatcherEvent : Windows.Devices.Enumeration.IDeviceWatcherEvent
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceWatcherEventKind Kind()
+	{
+		Windows.Devices.Enumeration.DeviceWatcherEventKind _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcherEvent).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DeviceInformation DeviceInformation()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcherEvent).get_DeviceInformation(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.DeviceInformationUpdate DeviceInformationUpdate()
+	{
+		Windows.Devices.Enumeration.DeviceInformationUpdate _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcherEvent).get_DeviceInformationUpdate(&_ret));
+		return _ret;
+	}
 }
 
 interface DeviceWatcherTriggerDetails : Windows.Devices.Enumeration.IDeviceWatcherTriggerDetails
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Enumeration.DeviceWatcherEvent) DeviceWatcherEvents()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Enumeration.DeviceWatcherEvent) _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcherTriggerDetails).get_DeviceWatcherEvents(&_ret));
+		return _ret;
+	}
 }
 
 interface EnclosureLocation : Windows.Devices.Enumeration.IEnclosureLocation, Windows.Devices.Enumeration.IEnclosureLocation2
 {
+extern(Windows):
+	final bool InDock()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IEnclosureLocation).get_InDock(&_ret));
+		return _ret;
+	}
+	final bool InLid()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IEnclosureLocation).get_InLid(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Enumeration.Panel Panel()
+	{
+		Windows.Devices.Enumeration.Panel _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IEnclosureLocation).get_Panel(&_ret));
+		return _ret;
+	}
+	final UINT32 RotationAngleInDegreesClockwise()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IEnclosureLocation2).get_RotationAngleInDegreesClockwise(&_ret));
+		return _ret;
+	}
 }
 
 enum DeviceAccessStatus

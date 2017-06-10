@@ -1303,6 +1303,81 @@ extern(Windows):
 
 interface AppBarAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAppBarAutomationPeer, Windows.UI.Xaml.Automation.Provider.IToggleProvider, Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider, Windows.UI.Xaml.Automation.Provider.IWindowProvider
 {
+extern(Windows):
+	final Windows.UI.Xaml.Automation.ToggleState ToggleState()
+	{
+		Windows.UI.Xaml.Automation.ToggleState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(&_ret));
+		return _ret;
+	}
+	final void Toggle()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
+	}
+	final Windows.UI.Xaml.Automation.ExpandCollapseState ExpandCollapseState()
+	{
+		Windows.UI.Xaml.Automation.ExpandCollapseState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).get_ExpandCollapseState(&_ret));
+		return _ret;
+	}
+	final void Collapse()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Collapse());
+	}
+	final void Expand()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Expand());
+	}
+	final bool IsModal()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsModal(&_ret));
+		return _ret;
+	}
+	final bool IsTopmost()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsTopmost(&_ret));
+		return _ret;
+	}
+	final bool Maximizable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Maximizable(&_ret));
+		return _ret;
+	}
+	final bool Minimizable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Minimizable(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.WindowInteractionState InteractionState()
+	{
+		Windows.UI.Xaml.Automation.WindowInteractionState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_InteractionState(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.WindowVisualState VisualState()
+	{
+		Windows.UI.Xaml.Automation.WindowVisualState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_VisualState(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_Close());
+	}
+	final void SetVisualState(Windows.UI.Xaml.Automation.WindowVisualState state)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_SetVisualState(state));
+	}
+	final bool WaitForInputIdle(INT32 milliseconds)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_WaitForInputIdle(milliseconds, &_ret));
+		return _ret;
+	}
 }
 
 interface AppBarButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAppBarButtonAutomationPeer
@@ -1319,14 +1394,609 @@ interface AutoSuggestBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.Framew
 
 interface AutomationPeer : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Automation.Peers.IAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides, Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected, Windows.UI.Xaml.Automation.Peers.IAutomationPeer2, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2, Windows.UI.Xaml.Automation.Peers.IAutomationPeer3, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3, Windows.UI.Xaml.Automation.Peers.IAutomationPeer4, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4, Windows.UI.Xaml.Automation.Peers.IAutomationPeer5, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5, Windows.UI.Xaml.Automation.Peers.IAutomationPeer6, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6
 {
+extern(Windows):
+	final Windows.UI.Xaml.Automation.Peers.AutomationPeer EventsSource()
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).get_EventsSource(&_ret));
+		return _ret;
+	}
+	final void EventsSource(Windows.UI.Xaml.Automation.Peers.AutomationPeer value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).set_EventsSource(value));
+	}
+	final IInspectable GetPattern(Windows.UI.Xaml.Automation.Peers.PatternInterface patternInterface)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetPattern(patternInterface, &_ret));
+		return _ret;
+	}
+	final void RaiseAutomationEvent(Windows.UI.Xaml.Automation.Peers.AutomationEvents eventId)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_RaiseAutomationEvent(eventId));
+	}
+	final void RaisePropertyChangedEvent(Windows.UI.Xaml.Automation.AutomationProperty automationProperty, IInspectable oldValue, IInspectable newValue)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_RaisePropertyChangedEvent(automationProperty, oldValue, newValue));
+	}
+	final HSTRING GetAcceleratorKey()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAcceleratorKey(&_ret));
+		return _ret;
+	}
+	final HSTRING GetAccessKey()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAccessKey(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.AutomationControlType GetAutomationControlType()
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationControlType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAutomationControlType(&_ret));
+		return _ret;
+	}
+	final HSTRING GetAutomationId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAutomationId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect GetBoundingRectangle()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetBoundingRectangle(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetChildren()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetChildren(&_ret));
+		return _ret;
+	}
+	final HSTRING GetClassName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetClassName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point GetClickablePoint()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetClickablePoint(&_ret));
+		return _ret;
+	}
+	final HSTRING GetHelpText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetHelpText(&_ret));
+		return _ret;
+	}
+	final HSTRING GetItemStatus()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetItemStatus(&_ret));
+		return _ret;
+	}
+	final HSTRING GetItemType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetItemType(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.AutomationPeer GetLabeledBy()
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetLabeledBy(&_ret));
+		return _ret;
+	}
+	final HSTRING GetLocalizedControlType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetLocalizedControlType(&_ret));
+		return _ret;
+	}
+	final HSTRING GetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetName(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.AutomationOrientation GetOrientation()
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationOrientation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetOrientation(&_ret));
+		return _ret;
+	}
+	final bool HasKeyboardFocus()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_HasKeyboardFocus(&_ret));
+		return _ret;
+	}
+	final bool IsContentElement()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsContentElement(&_ret));
+		return _ret;
+	}
+	final bool IsControlElement()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsControlElement(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsEnabled(&_ret));
+		return _ret;
+	}
+	final bool IsKeyboardFocusable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsKeyboardFocusable(&_ret));
+		return _ret;
+	}
+	final bool IsOffscreen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsOffscreen(&_ret));
+		return _ret;
+	}
+	final bool IsPassword()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsPassword(&_ret));
+		return _ret;
+	}
+	final bool IsRequiredForForm()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsRequiredForForm(&_ret));
+		return _ret;
+	}
+	final void SetFocus()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_SetFocus());
+	}
+	deprecated("Consider using Navigate with AutomationNavigationDirection::Parent, which is an improved version of GetParent. For more info, see MSDN.")
+	final Windows.UI.Xaml.Automation.Peers.AutomationPeer GetParent()
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetParent(&_ret));
+		return _ret;
+	}
+	final void InvalidatePeer()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_InvalidatePeer());
+	}
+	deprecated("Consider using GetElementFromPoint, which is an improved version of GetPeerFromPoint. For more info, see MSDN.")
+	final Windows.UI.Xaml.Automation.Peers.AutomationPeer GetPeerFromPoint(Windows.Foundation.Point point)
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetPeerFromPoint(point, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting GetLiveSetting()
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetLiveSetting(&_ret));
+		return _ret;
+	}
+	final IInspectable GetPatternCore(Windows.UI.Xaml.Automation.Peers.PatternInterface patternInterface)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetPatternCore(patternInterface, &_ret));
+		return _ret;
+	}
+	final HSTRING GetAcceleratorKeyCore()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAcceleratorKeyCore(&_ret));
+		return _ret;
+	}
+	final HSTRING GetAccessKeyCore()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAccessKeyCore(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.AutomationControlType GetAutomationControlTypeCore()
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationControlType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAutomationControlTypeCore(&_ret));
+		return _ret;
+	}
+	final HSTRING GetAutomationIdCore()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAutomationIdCore(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect GetBoundingRectangleCore()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetBoundingRectangleCore(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetChildrenCore()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetChildrenCore(&_ret));
+		return _ret;
+	}
+	final HSTRING GetClassNameCore()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetClassNameCore(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point GetClickablePointCore()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetClickablePointCore(&_ret));
+		return _ret;
+	}
+	final HSTRING GetHelpTextCore()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetHelpTextCore(&_ret));
+		return _ret;
+	}
+	final HSTRING GetItemStatusCore()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetItemStatusCore(&_ret));
+		return _ret;
+	}
+	final HSTRING GetItemTypeCore()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetItemTypeCore(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.AutomationPeer GetLabeledByCore()
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetLabeledByCore(&_ret));
+		return _ret;
+	}
+	final HSTRING GetLocalizedControlTypeCore()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetLocalizedControlTypeCore(&_ret));
+		return _ret;
+	}
+	final HSTRING GetNameCore()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetNameCore(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.AutomationOrientation GetOrientationCore()
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationOrientation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetOrientationCore(&_ret));
+		return _ret;
+	}
+	final bool HasKeyboardFocusCore()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_HasKeyboardFocusCore(&_ret));
+		return _ret;
+	}
+	final bool IsContentElementCore()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsContentElementCore(&_ret));
+		return _ret;
+	}
+	final bool IsControlElementCore()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsControlElementCore(&_ret));
+		return _ret;
+	}
+	final bool IsEnabledCore()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsEnabledCore(&_ret));
+		return _ret;
+	}
+	final bool IsKeyboardFocusableCore()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsKeyboardFocusableCore(&_ret));
+		return _ret;
+	}
+	final bool IsOffscreenCore()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsOffscreenCore(&_ret));
+		return _ret;
+	}
+	final bool IsPasswordCore()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsPasswordCore(&_ret));
+		return _ret;
+	}
+	final bool IsRequiredForFormCore()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsRequiredForFormCore(&_ret));
+		return _ret;
+	}
+	final void SetFocusCore()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_SetFocusCore());
+	}
+	final Windows.UI.Xaml.Automation.Peers.AutomationPeer GetPeerFromPointCore(Windows.Foundation.Point point)
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetPeerFromPointCore(point, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting GetLiveSettingCore()
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetLiveSettingCore(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.AutomationPeer PeerFromProvider(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple provider)
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected).abi_PeerFromProvider(provider, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple ProviderFromPeer(Windows.UI.Xaml.Automation.Peers.AutomationPeer peer)
+	{
+		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected).abi_ProviderFromPeer(peer, &_ret));
+		return _ret;
+	}
+	final void ShowContextMenuCore()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2).abi_ShowContextMenuCore());
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetControlledPeersCore()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2).abi_GetControlledPeersCore(&_ret));
+		return _ret;
+	}
+	final IInspectable Navigate(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_Navigate(direction, &_ret));
+		return _ret;
+	}
+	final IInspectable GetElementFromPoint(Windows.Foundation.Point pointInWindowCoordinates)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetElementFromPoint(pointInWindowCoordinates, &_ret));
+		return _ret;
+	}
+	final IInspectable GetFocusedElement()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetFocusedElement(&_ret));
+		return _ret;
+	}
+	final void ShowContextMenu()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_ShowContextMenu());
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetControlledPeers()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetControlledPeers(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation) GetAnnotations()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetAnnotations(&_ret));
+		return _ret;
+	}
+	final void SetParent(Windows.UI.Xaml.Automation.Peers.AutomationPeer peer)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_SetParent(peer));
+	}
+	final void RaiseTextEditTextChangedEvent(Windows.UI.Xaml.Automation.AutomationTextEditChangeType automationTextEditChangeType, Windows.Foundation.Collections.IVectorView!(HSTRING) changedData)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_RaiseTextEditTextChangedEvent(automationTextEditChangeType, changedData));
+	}
+	final INT32 GetPositionInSet()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetPositionInSet(&_ret));
+		return _ret;
+	}
+	final INT32 GetSizeOfSet()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetSizeOfSet(&_ret));
+		return _ret;
+	}
+	final INT32 GetLevel()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetLevel(&_ret));
+		return _ret;
+	}
+	final void RaiseStructureChangedEvent(Windows.UI.Xaml.Automation.Peers.AutomationStructureChangeType structureChangeType, Windows.UI.Xaml.Automation.Peers.AutomationPeer child)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_RaiseStructureChangedEvent(structureChangeType, child));
+	}
+	final IInspectable NavigateCore(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_NavigateCore(direction, &_ret));
+		return _ret;
+	}
+	final IInspectable GetElementFromPointCore(Windows.Foundation.Point pointInWindowCoordinates)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetElementFromPointCore(pointInWindowCoordinates, &_ret));
+		return _ret;
+	}
+	final IInspectable GetFocusedElementCore()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetFocusedElementCore(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation) GetAnnotationsCore()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetAnnotationsCore(&_ret));
+		return _ret;
+	}
+	final INT32 GetPositionInSetCore()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetPositionInSetCore(&_ret));
+		return _ret;
+	}
+	final INT32 GetSizeOfSetCore()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetSizeOfSetCore(&_ret));
+		return _ret;
+	}
+	final INT32 GetLevelCore()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetLevelCore(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType GetLandmarkType()
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4).abi_GetLandmarkType(&_ret));
+		return _ret;
+	}
+	final HSTRING GetLocalizedLandmarkType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4).abi_GetLocalizedLandmarkType(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType GetLandmarkTypeCore()
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4).abi_GetLandmarkTypeCore(&_ret));
+		return _ret;
+	}
+	final HSTRING GetLocalizedLandmarkTypeCore()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4).abi_GetLocalizedLandmarkTypeCore(&_ret));
+		return _ret;
+	}
+	final bool IsPeripheral()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5).abi_IsPeripheral(&_ret));
+		return _ret;
+	}
+	final bool IsDataValidForForm()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5).abi_IsDataValidForForm(&_ret));
+		return _ret;
+	}
+	final HSTRING GetFullDescription()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5).abi_GetFullDescription(&_ret));
+		return _ret;
+	}
+	final bool IsPeripheralCore()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_IsPeripheralCore(&_ret));
+		return _ret;
+	}
+	final bool IsDataValidForFormCore()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_IsDataValidForFormCore(&_ret));
+		return _ret;
+	}
+	final HSTRING GetFullDescriptionCore()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetFullDescriptionCore(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetDescribedByCore()
+	{
+		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetDescribedByCore(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetFlowsToCore()
+	{
+		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetFlowsToCore(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetFlowsFromCore()
+	{
+		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetFlowsFromCore(&_ret));
+		return _ret;
+	}
+	final INT32 GetCulture()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer6).abi_GetCulture(&_ret));
+		return _ret;
+	}
+	final INT32 GetCultureCore()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6).abi_GetCultureCore(&_ret));
+		return _ret;
+	}
 }
 
 interface AutomationPeerAnnotation : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation
 {
+extern(Windows):
+	final Windows.UI.Xaml.Automation.AnnotationType Type()
+	{
+		Windows.UI.Xaml.Automation.AnnotationType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation).get_Type(&_ret));
+		return _ret;
+	}
+	final void Type(Windows.UI.Xaml.Automation.AnnotationType value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation).set_Type(value));
+	}
+	final Windows.UI.Xaml.Automation.Peers.AutomationPeer Peer()
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation).get_Peer(&_ret));
+		return _ret;
+	}
+	final void Peer(Windows.UI.Xaml.Automation.Peers.AutomationPeer value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation).set_Peer(value));
+	}
 }
 
 interface ButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IButtonAutomationPeer, Windows.UI.Xaml.Automation.Provider.IInvokeProvider
 {
+extern(Windows):
+	final void Invoke()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke());
+	}
 }
 
 interface ButtonBaseAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IButtonBaseAutomationPeer
@@ -1343,6 +2013,87 @@ interface CheckBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButton
 
 interface ComboBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer, Windows.UI.Xaml.Automation.Peers.IComboBoxAutomationPeer, Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider, Windows.UI.Xaml.Automation.Provider.IValueProvider, Windows.UI.Xaml.Automation.Provider.IWindowProvider
 {
+extern(Windows):
+	final Windows.UI.Xaml.Automation.ExpandCollapseState ExpandCollapseState()
+	{
+		Windows.UI.Xaml.Automation.ExpandCollapseState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).get_ExpandCollapseState(&_ret));
+		return _ret;
+	}
+	final void Collapse()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Collapse());
+	}
+	final void Expand()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Expand());
+	}
+	final bool IsReadOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IValueProvider).get_IsReadOnly(&_ret));
+		return _ret;
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IValueProvider).get_Value(&_ret));
+		return _ret;
+	}
+	final void SetValue(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IValueProvider).abi_SetValue(value));
+	}
+	final bool IsModal()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsModal(&_ret));
+		return _ret;
+	}
+	final bool IsTopmost()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsTopmost(&_ret));
+		return _ret;
+	}
+	final bool Maximizable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Maximizable(&_ret));
+		return _ret;
+	}
+	final bool Minimizable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Minimizable(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.WindowInteractionState InteractionState()
+	{
+		Windows.UI.Xaml.Automation.WindowInteractionState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_InteractionState(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.WindowVisualState VisualState()
+	{
+		Windows.UI.Xaml.Automation.WindowVisualState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_VisualState(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_Close());
+	}
+	final void SetVisualState(Windows.UI.Xaml.Automation.WindowVisualState state)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_SetVisualState(state));
+	}
+	final bool WaitForInputIdle(INT32 milliseconds)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_WaitForInputIdle(milliseconds, &_ret));
+		return _ret;
+	}
 }
 
 interface ComboBoxItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IComboBoxItemAutomationPeer
@@ -1351,6 +2102,11 @@ interface ComboBoxItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.Framewor
 
 interface ComboBoxItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IComboBoxItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
 {
+extern(Windows):
+	final void ScrollIntoView()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+	}
 }
 
 interface DatePickerAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IDatePickerAutomationPeer
@@ -1371,6 +2127,11 @@ interface FlipViewItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.Framewor
 
 interface FlipViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlipViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
 {
+extern(Windows):
+	final void ScrollIntoView()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+	}
 }
 
 interface FlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlyoutPresenterAutomationPeer
@@ -1379,6 +2140,13 @@ interface FlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.Frame
 
 interface FrameworkElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer, Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeer
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement Owner()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeer).get_Owner(&_ret));
+		return _ret;
+	}
 }
 
 interface GridViewAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewAutomationPeer
@@ -1395,6 +2163,11 @@ interface GridViewItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.Framewor
 
 interface GridViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
 {
+extern(Windows):
+	final void ScrollIntoView()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+	}
 }
 
 interface GroupItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGroupItemAutomationPeer
@@ -1407,10 +2180,20 @@ interface HubAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementA
 
 interface HubSectionAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IHubSectionAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
 {
+extern(Windows):
+	final void ScrollIntoView()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+	}
 }
 
 interface HyperlinkButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IHyperlinkButtonAutomationPeer, Windows.UI.Xaml.Automation.Provider.IInvokeProvider
 {
+extern(Windows):
+	final void Invoke()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke());
+	}
 }
 
 interface ImageAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IImageAutomationPeer
@@ -1423,10 +2206,46 @@ interface InkToolbarAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkE
 
 interface ItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer, Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer, Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider
 {
+extern(Windows):
+	final IInspectable Item()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer).get_Item(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer ItemsControlAutomationPeer()
+	{
+		Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer).get_ItemsControlAutomationPeer(&_ret));
+		return _ret;
+	}
+	final void Realize()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider).abi_Realize());
+	}
 }
 
 interface ItemsControlAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer, Windows.UI.Xaml.Automation.Provider.IItemContainerProvider, Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer2, Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeerOverrides2
 {
+extern(Windows):
+	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple FindItemByProperty(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple startAfter, Windows.UI.Xaml.Automation.AutomationProperty automationProperty, IInspectable value)
+	{
+		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IItemContainerProvider).abi_FindItemByProperty(startAfter, automationProperty, value, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer CreateItemAutomationPeer(IInspectable item)
+	{
+		Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer2).abi_CreateItemAutomationPeer(item, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer OnCreateItemAutomationPeer(IInspectable item)
+	{
+		Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeerOverrides2).abi_OnCreateItemAutomationPeer(item, &_ret));
+		return _ret;
+	}
 }
 
 interface ListBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListBoxAutomationPeer
@@ -1439,6 +2258,11 @@ interface ListBoxItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.Framework
 
 interface ListBoxItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListBoxItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
 {
+extern(Windows):
+	final void ScrollIntoView()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+	}
 }
 
 interface ListPickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListPickerFlyoutPresenterAutomationPeer
@@ -1451,6 +2275,19 @@ interface ListViewAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBase
 
 interface ListViewBaseAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewBaseAutomationPeer, Windows.UI.Xaml.Automation.Provider.IDropTargetProvider
 {
+extern(Windows):
+	final HSTRING DropEffect()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider).get_DropEffect(&_ret));
+		return _ret;
+	}
+	final HSTRING* DropEffects(UINT32* out___valueSize)
+	{
+		HSTRING* _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider).get_DropEffects(out___valueSize, &_ret));
+		return _ret;
+	}
 }
 
 interface ListViewBaseHeaderItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewBaseHeaderItemAutomationPeer
@@ -1467,22 +2304,251 @@ interface ListViewItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.Framewor
 
 interface ListViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
 {
+extern(Windows):
+	final void ScrollIntoView()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+	}
 }
 
 interface LoopingSelectorAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ILoopingSelectorAutomationPeer, Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider, Windows.UI.Xaml.Automation.Provider.IItemContainerProvider, Windows.UI.Xaml.Automation.Provider.IScrollProvider, Windows.UI.Xaml.Automation.Provider.ISelectionProvider
 {
+extern(Windows):
+	final Windows.UI.Xaml.Automation.ExpandCollapseState ExpandCollapseState()
+	{
+		Windows.UI.Xaml.Automation.ExpandCollapseState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).get_ExpandCollapseState(&_ret));
+		return _ret;
+	}
+	final void Collapse()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Collapse());
+	}
+	final void Expand()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Expand());
+	}
+	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple FindItemByProperty(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple startAfter, Windows.UI.Xaml.Automation.AutomationProperty automationProperty, IInspectable value)
+	{
+		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IItemContainerProvider).abi_FindItemByProperty(startAfter, automationProperty, value, &_ret));
+		return _ret;
+	}
+	final bool HorizontallyScrollable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontallyScrollable(&_ret));
+		return _ret;
+	}
+	final double HorizontalScrollPercent()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalScrollPercent(&_ret));
+		return _ret;
+	}
+	final double HorizontalViewSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalViewSize(&_ret));
+		return _ret;
+	}
+	final bool VerticallyScrollable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticallyScrollable(&_ret));
+		return _ret;
+	}
+	final double VerticalScrollPercent()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalScrollPercent(&_ret));
+		return _ret;
+	}
+	final double VerticalViewSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalViewSize(&_ret));
+		return _ret;
+	}
+	final void Scroll(Windows.UI.Xaml.Automation.ScrollAmount horizontalAmount, Windows.UI.Xaml.Automation.ScrollAmount verticalAmount)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_Scroll(horizontalAmount, verticalAmount));
+	}
+	final void SetScrollPercent(double horizontalPercent, double verticalPercent)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_SetScrollPercent(horizontalPercent, verticalPercent));
+	}
+	final bool CanSelectMultiple()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_CanSelectMultiple(&_ret));
+		return _ret;
+	}
+	final bool IsSelectionRequired()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_IsSelectionRequired(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* GetSelection(UINT32* out___returnValueSize)
+	{
+		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).abi_GetSelection(out___returnValueSize, &_ret));
+		return _ret;
+	}
 }
 
 interface LoopingSelectorItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ILoopingSelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider, Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider
 {
+extern(Windows):
+	final void ScrollIntoView()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+	}
+	final bool IsSelected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_IsSelected(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple SelectionContainer()
+	{
+		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_SelectionContainer(&_ret));
+		return _ret;
+	}
+	final void AddToSelection()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_AddToSelection());
+	}
+	final void RemoveFromSelection()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_RemoveFromSelection());
+	}
+	final void Select()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select());
+	}
 }
 
 interface LoopingSelectorItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer, Windows.UI.Xaml.Automation.Peers.ILoopingSelectorItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider
 {
+extern(Windows):
+	final void Realize()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider).abi_Realize());
+	}
 }
 
 interface MapControlAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMapControlAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollProvider, Windows.UI.Xaml.Automation.Provider.ITransformProvider2, Windows.UI.Xaml.Automation.Provider.ITransformProvider
 {
+extern(Windows):
+	final bool HorizontallyScrollable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontallyScrollable(&_ret));
+		return _ret;
+	}
+	final double HorizontalScrollPercent()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalScrollPercent(&_ret));
+		return _ret;
+	}
+	final double HorizontalViewSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalViewSize(&_ret));
+		return _ret;
+	}
+	final bool VerticallyScrollable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticallyScrollable(&_ret));
+		return _ret;
+	}
+	final double VerticalScrollPercent()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalScrollPercent(&_ret));
+		return _ret;
+	}
+	final double VerticalViewSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalViewSize(&_ret));
+		return _ret;
+	}
+	final void Scroll(Windows.UI.Xaml.Automation.ScrollAmount horizontalAmount, Windows.UI.Xaml.Automation.ScrollAmount verticalAmount)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_Scroll(horizontalAmount, verticalAmount));
+	}
+	final void SetScrollPercent(double horizontalPercent, double verticalPercent)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_SetScrollPercent(horizontalPercent, verticalPercent));
+	}
+	final bool CanZoom()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider2).get_CanZoom(&_ret));
+		return _ret;
+	}
+	final double ZoomLevel()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider2).get_ZoomLevel(&_ret));
+		return _ret;
+	}
+	final double MaxZoom()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider2).get_MaxZoom(&_ret));
+		return _ret;
+	}
+	final double MinZoom()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider2).get_MinZoom(&_ret));
+		return _ret;
+	}
+	final void Zoom(double zoom)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider2).abi_Zoom(zoom));
+	}
+	final void ZoomByUnit(Windows.UI.Xaml.Automation.ZoomUnit zoomUnit)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider2).abi_ZoomByUnit(zoomUnit));
+	}
+	final bool CanMove()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider).get_CanMove(&_ret));
+		return _ret;
+	}
+	final bool CanResize()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider).get_CanResize(&_ret));
+		return _ret;
+	}
+	final bool CanRotate()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider).get_CanRotate(&_ret));
+		return _ret;
+	}
+	final void Move(double x, double y)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider).abi_Move(x, y));
+	}
+	final void Resize(double width, double height)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider).abi_Resize(width, height));
+	}
+	final void Rotate(double degrees)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider).abi_Rotate(degrees));
+	}
 }
 
 interface MediaElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMediaElementAutomationPeer
@@ -1499,6 +2565,11 @@ interface MediaTransportControlsAutomationPeer : Windows.UI.Xaml.Automation.Peer
 
 interface MenuFlyoutItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMenuFlyoutItemAutomationPeer, Windows.UI.Xaml.Automation.Provider.IInvokeProvider
 {
+extern(Windows):
+	final void Invoke()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke());
+	}
 }
 
 interface MenuFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMenuFlyoutPresenterAutomationPeer
@@ -1515,6 +2586,69 @@ interface PickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers
 
 interface PivotAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer, Windows.UI.Xaml.Automation.Peers.IPivotAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollProvider, Windows.UI.Xaml.Automation.Provider.ISelectionProvider
 {
+extern(Windows):
+	final bool HorizontallyScrollable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontallyScrollable(&_ret));
+		return _ret;
+	}
+	final double HorizontalScrollPercent()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalScrollPercent(&_ret));
+		return _ret;
+	}
+	final double HorizontalViewSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalViewSize(&_ret));
+		return _ret;
+	}
+	final bool VerticallyScrollable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticallyScrollable(&_ret));
+		return _ret;
+	}
+	final double VerticalScrollPercent()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalScrollPercent(&_ret));
+		return _ret;
+	}
+	final double VerticalViewSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalViewSize(&_ret));
+		return _ret;
+	}
+	final void Scroll(Windows.UI.Xaml.Automation.ScrollAmount horizontalAmount, Windows.UI.Xaml.Automation.ScrollAmount verticalAmount)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_Scroll(horizontalAmount, verticalAmount));
+	}
+	final void SetScrollPercent(double horizontalPercent, double verticalPercent)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_SetScrollPercent(horizontalPercent, verticalPercent));
+	}
+	final bool CanSelectMultiple()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_CanSelectMultiple(&_ret));
+		return _ret;
+	}
+	final bool IsSelectionRequired()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_IsSelectionRequired(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* GetSelection(UINT32* out___returnValueSize)
+	{
+		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).abi_GetSelection(out___returnValueSize, &_ret));
+		return _ret;
+	}
 }
 
 interface PivotItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IPivotItemAutomationPeer
@@ -1523,6 +2657,39 @@ interface PivotItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkEl
 
 interface PivotItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IPivotItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider, Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider, Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider
 {
+extern(Windows):
+	final void ScrollIntoView()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+	}
+	final bool IsSelected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_IsSelected(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple SelectionContainer()
+	{
+		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_SelectionContainer(&_ret));
+		return _ret;
+	}
+	final void AddToSelection()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_AddToSelection());
+	}
+	final void RemoveFromSelection()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_RemoveFromSelection());
+	}
+	final void Select()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select());
+	}
+	final void Realize()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider).abi_Realize());
+	}
 }
 
 interface ProgressBarAutomationPeer : Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IProgressBarAutomationPeer
@@ -1535,14 +2702,85 @@ interface ProgressRingAutomationPeer : Windows.UI.Xaml.Automation.Peers.Framewor
 
 interface RadioButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRadioButtonAutomationPeer, Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider
 {
+extern(Windows):
+	final bool IsSelected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_IsSelected(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple SelectionContainer()
+	{
+		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_SelectionContainer(&_ret));
+		return _ret;
+	}
+	final void AddToSelection()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_AddToSelection());
+	}
+	final void RemoveFromSelection()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_RemoveFromSelection());
+	}
+	final void Select()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select());
+	}
 }
 
 interface RangeBaseAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRangeBaseAutomationPeer, Windows.UI.Xaml.Automation.Provider.IRangeValueProvider
 {
+extern(Windows):
+	final bool IsReadOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_IsReadOnly(&_ret));
+		return _ret;
+	}
+	final double LargeChange()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_LargeChange(&_ret));
+		return _ret;
+	}
+	final double Maximum()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_Maximum(&_ret));
+		return _ret;
+	}
+	final double Minimum()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_Minimum(&_ret));
+		return _ret;
+	}
+	final double SmallChange()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_SmallChange(&_ret));
+		return _ret;
+	}
+	final double Value()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_Value(&_ret));
+		return _ret;
+	}
+	final void SetValue(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).abi_SetValue(value));
+	}
 }
 
 interface RepeatButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRepeatButtonAutomationPeer, Windows.UI.Xaml.Automation.Provider.IInvokeProvider
 {
+extern(Windows):
+	final void Invoke()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke());
+	}
 }
 
 interface RichEditBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRichEditBoxAutomationPeer
@@ -1563,6 +2801,51 @@ interface ScrollBarAutomationPeer : Windows.UI.Xaml.Automation.Peers.RangeBaseAu
 
 interface ScrollViewerAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IScrollViewerAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollProvider
 {
+extern(Windows):
+	final bool HorizontallyScrollable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontallyScrollable(&_ret));
+		return _ret;
+	}
+	final double HorizontalScrollPercent()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalScrollPercent(&_ret));
+		return _ret;
+	}
+	final double HorizontalViewSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalViewSize(&_ret));
+		return _ret;
+	}
+	final bool VerticallyScrollable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticallyScrollable(&_ret));
+		return _ret;
+	}
+	final double VerticalScrollPercent()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalScrollPercent(&_ret));
+		return _ret;
+	}
+	final double VerticalViewSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalViewSize(&_ret));
+		return _ret;
+	}
+	final void Scroll(Windows.UI.Xaml.Automation.ScrollAmount horizontalAmount, Windows.UI.Xaml.Automation.ScrollAmount verticalAmount)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_Scroll(horizontalAmount, verticalAmount));
+	}
+	final void SetScrollPercent(double horizontalPercent, double verticalPercent)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_SetScrollPercent(horizontalPercent, verticalPercent));
+	}
 }
 
 interface SearchBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISearchBoxAutomationPeer
@@ -1571,14 +2854,69 @@ interface SearchBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkEl
 
 interface SelectorAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISelectorAutomationPeer, Windows.UI.Xaml.Automation.Provider.ISelectionProvider
 {
+extern(Windows):
+	final bool CanSelectMultiple()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_CanSelectMultiple(&_ret));
+		return _ret;
+	}
+	final bool IsSelectionRequired()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_IsSelectionRequired(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* GetSelection(UINT32* out___returnValueSize)
+	{
+		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).abi_GetSelection(out___returnValueSize, &_ret));
+		return _ret;
+	}
 }
 
 interface SelectorItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider
 {
+extern(Windows):
+	final bool IsSelected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_IsSelected(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple SelectionContainer()
+	{
+		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_SelectionContainer(&_ret));
+		return _ret;
+	}
+	final void AddToSelection()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_AddToSelection());
+	}
+	final void RemoveFromSelection()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_RemoveFromSelection());
+	}
+	final void Select()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select());
+	}
 }
 
 interface SemanticZoomAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISemanticZoomAutomationPeer, Windows.UI.Xaml.Automation.Provider.IToggleProvider
 {
+extern(Windows):
+	final Windows.UI.Xaml.Automation.ToggleState ToggleState()
+	{
+		Windows.UI.Xaml.Automation.ToggleState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(&_ret));
+		return _ret;
+	}
+	final void Toggle()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
+	}
 }
 
 interface SettingsFlyoutAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISettingsFlyoutAutomationPeer
@@ -1611,14 +2949,47 @@ interface TimePickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.P
 
 interface ToggleButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleButtonAutomationPeer, Windows.UI.Xaml.Automation.Provider.IToggleProvider
 {
+extern(Windows):
+	final Windows.UI.Xaml.Automation.ToggleState ToggleState()
+	{
+		Windows.UI.Xaml.Automation.ToggleState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(&_ret));
+		return _ret;
+	}
+	final void Toggle()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
+	}
 }
 
 interface ToggleMenuFlyoutItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleMenuFlyoutItemAutomationPeer, Windows.UI.Xaml.Automation.Provider.IToggleProvider
 {
+extern(Windows):
+	final Windows.UI.Xaml.Automation.ToggleState ToggleState()
+	{
+		Windows.UI.Xaml.Automation.ToggleState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(&_ret));
+		return _ret;
+	}
+	final void Toggle()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
+	}
 }
 
 interface ToggleSwitchAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleSwitchAutomationPeer, Windows.UI.Xaml.Automation.Provider.IToggleProvider
 {
+extern(Windows):
+	final Windows.UI.Xaml.Automation.ToggleState ToggleState()
+	{
+		Windows.UI.Xaml.Automation.ToggleState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(&_ret));
+		return _ret;
+	}
+	final void Toggle()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
+	}
 }
 
 enum AccessibilityView

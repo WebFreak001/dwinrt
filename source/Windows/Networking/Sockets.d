@@ -565,50 +565,546 @@ extern(Windows):
 
 interface ControlChannelTrigger : Windows.Networking.Sockets.IControlChannelTrigger, Windows.Foundation.IClosable, Windows.Networking.Sockets.IControlChannelTrigger2
 {
+extern(Windows):
+	final HSTRING ControlChannelTriggerId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).get_ControlChannelTriggerId(&_ret));
+		return _ret;
+	}
+	final UINT32 ServerKeepAliveIntervalInMinutes()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).get_ServerKeepAliveIntervalInMinutes(&_ret));
+		return _ret;
+	}
+	final void ServerKeepAliveIntervalInMinutes(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).set_ServerKeepAliveIntervalInMinutes(value));
+	}
+	final UINT32 CurrentKeepAliveIntervalInMinutes()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).get_CurrentKeepAliveIntervalInMinutes(&_ret));
+		return _ret;
+	}
+	final IInspectable TransportObject()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).get_TransportObject(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Background.IBackgroundTrigger KeepAliveTrigger()
+	{
+		Windows.ApplicationModel.Background.IBackgroundTrigger _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).get_KeepAliveTrigger(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Background.IBackgroundTrigger PushNotificationTrigger()
+	{
+		Windows.ApplicationModel.Background.IBackgroundTrigger _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).get_PushNotificationTrigger(&_ret));
+		return _ret;
+	}
+	final void UsingTransport(IInspectable transport)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).abi_UsingTransport(transport));
+	}
+	final Windows.Networking.Sockets.ControlChannelTriggerStatus WaitForPushEnabled()
+	{
+		Windows.Networking.Sockets.ControlChannelTriggerStatus _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).abi_WaitForPushEnabled(&_ret));
+		return _ret;
+	}
+	final void DecreaseNetworkKeepAliveInterval()
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).abi_DecreaseNetworkKeepAliveInterval());
+	}
+	final void FlushTransport()
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).abi_FlushTransport());
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final bool IsWakeFromLowPowerSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger2).get_IsWakeFromLowPowerSupported(&_ret));
+		return _ret;
+	}
 }
 
 interface DatagramSocket : Windows.Networking.Sockets.IDatagramSocket, Windows.Foundation.IClosable, Windows.Networking.Sockets.IDatagramSocket2, Windows.Networking.Sockets.IDatagramSocket3
 {
+extern(Windows):
+	final Windows.Networking.Sockets.DatagramSocketControl Control()
+	{
+		Windows.Networking.Sockets.DatagramSocketControl _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).get_Control(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.DatagramSocketInformation Information()
+	{
+		Windows.Networking.Sockets.DatagramSocketInformation _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).get_Information(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream OutputStream()
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).get_OutputStream(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ConnectAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_ConnectAsync(remoteHostName, remoteServiceName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ConnectWithEndpointPairAsync(Windows.Networking.EndpointPair endpointPair)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_ConnectWithEndpointPairAsync(endpointPair, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction BindServiceNameAsync(HSTRING localServiceName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_BindServiceNameAsync(localServiceName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction BindEndpointAsync(Windows.Networking.HostName localHostName, HSTRING localServiceName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_BindEndpointAsync(localHostName, localServiceName, &_ret));
+		return _ret;
+	}
+	final void JoinMulticastGroup(Windows.Networking.HostName host)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_JoinMulticastGroup(host));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IOutputStream) GetOutputStreamAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IOutputStream) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_GetOutputStreamAsync(remoteHostName, remoteServiceName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IOutputStream) GetOutputStreamWithEndpointPairAsync(Windows.Networking.EndpointPair endpointPair)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IOutputStream) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_GetOutputStreamWithEndpointPairAsync(endpointPair, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.IAsyncAction BindServiceNameAndAdapterAsync(HSTRING localServiceName, Windows.Networking.Connectivity.NetworkAdapter adapter)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket2).abi_BindServiceNameAndAdapterAsync(localServiceName, adapter, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction CancelIOAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket3).abi_CancelIOAsync(&_ret));
+		return _ret;
+	}
+	final void EnableTransferOwnership(GUID taskId)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket3).abi_EnableTransferOwnership(taskId));
+	}
+	final void EnableTransferOwnershipWithConnectedStandbyAction(GUID taskId, Windows.Networking.Sockets.SocketActivityConnectedStandbyAction connectedStandbyAction)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket3).abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
+	}
+	final void TransferOwnership(HSTRING socketId)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket3).abi_TransferOwnership(socketId));
+	}
+	final void TransferOwnershipWithContext(HSTRING socketId, Windows.Networking.Sockets.SocketActivityContext data)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket3).abi_TransferOwnershipWithContext(socketId, data));
+	}
+	final void TransferOwnershipWithContextAndKeepAliveTime(HSTRING socketId, Windows.Networking.Sockets.SocketActivityContext data, Windows.Foundation.TimeSpan keepAliveTime)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket3).abi_TransferOwnershipWithContextAndKeepAliveTime(socketId, data, keepAliveTime));
+	}
 }
 
 interface DatagramSocketControl : Windows.Networking.Sockets.IDatagramSocketControl, Windows.Networking.Sockets.IDatagramSocketControl2, Windows.Networking.Sockets.IDatagramSocketControl3
 {
+extern(Windows):
+	final Windows.Networking.Sockets.SocketQualityOfService QualityOfService()
+	{
+		Windows.Networking.Sockets.SocketQualityOfService _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl).get_QualityOfService(&_ret));
+		return _ret;
+	}
+	final void QualityOfService(Windows.Networking.Sockets.SocketQualityOfService value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl).set_QualityOfService(value));
+	}
+	final BYTE OutboundUnicastHopLimit()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl).get_OutboundUnicastHopLimit(&_ret));
+		return _ret;
+	}
+	final void OutboundUnicastHopLimit(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl).set_OutboundUnicastHopLimit(value));
+	}
+	final UINT32 InboundBufferSizeInBytes()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl2).get_InboundBufferSizeInBytes(&_ret));
+		return _ret;
+	}
+	final void InboundBufferSizeInBytes(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl2).set_InboundBufferSizeInBytes(value));
+	}
+	final bool DontFragment()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl2).get_DontFragment(&_ret));
+		return _ret;
+	}
+	final void DontFragment(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl2).set_DontFragment(value));
+	}
+	final bool MulticastOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl3).get_MulticastOnly(&_ret));
+		return _ret;
+	}
+	final void MulticastOnly(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl3).set_MulticastOnly(value));
+	}
 }
 
 interface DatagramSocketInformation : Windows.Networking.Sockets.IDatagramSocketInformation
 {
+extern(Windows):
+	final Windows.Networking.HostName LocalAddress()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketInformation).get_LocalAddress(&_ret));
+		return _ret;
+	}
+	final HSTRING LocalPort()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketInformation).get_LocalPort(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.HostName RemoteAddress()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketInformation).get_RemoteAddress(&_ret));
+		return _ret;
+	}
+	final HSTRING RemotePort()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketInformation).get_RemotePort(&_ret));
+		return _ret;
+	}
 }
 
 interface DatagramSocketMessageReceivedEventArgs : Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs
 {
+extern(Windows):
+	final Windows.Networking.HostName RemoteAddress()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs).get_RemoteAddress(&_ret));
+		return _ret;
+	}
+	final HSTRING RemotePort()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs).get_RemotePort(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.HostName LocalAddress()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs).get_LocalAddress(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.DataReader GetDataReader()
+	{
+		Windows.Storage.Streams.DataReader _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs).abi_GetDataReader(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IInputStream GetDataStream()
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs).abi_GetDataStream(&_ret));
+		return _ret;
+	}
 }
 
 interface MessageWebSocket : Windows.Networking.Sockets.IMessageWebSocket, Windows.Networking.Sockets.IWebSocket, Windows.Foundation.IClosable, Windows.Networking.Sockets.IMessageWebSocket2
 {
+extern(Windows):
+	final Windows.Networking.Sockets.MessageWebSocketControl Control()
+	{
+		Windows.Networking.Sockets.MessageWebSocketControl _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket).get_Control(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.MessageWebSocketInformation Information()
+	{
+		Windows.Networking.Sockets.MessageWebSocketInformation _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket).get_Information(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream OutputStream()
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).get_OutputStream(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ConnectAsync(Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_ConnectAsync(uri, &_ret));
+		return _ret;
+	}
+	final void SetRequestHeader(HSTRING headerName, HSTRING headerValue)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_SetRequestHeader(headerName, headerValue));
+	}
+	final void CloseWithStatus(UINT16 code, HSTRING reason)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_CloseWithStatus(code, reason));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface MessageWebSocketControl : Windows.Networking.Sockets.IMessageWebSocketControl, Windows.Networking.Sockets.IWebSocketControl, Windows.Networking.Sockets.IWebSocketControl2
 {
+extern(Windows):
+	final UINT32 MaxMessageSize()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketControl).get_MaxMessageSize(&_ret));
+		return _ret;
+	}
+	final void MaxMessageSize(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketControl).set_MaxMessageSize(value));
+	}
+	final Windows.Networking.Sockets.SocketMessageType MessageType()
+	{
+		Windows.Networking.Sockets.SocketMessageType _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketControl).get_MessageType(&_ret));
+		return _ret;
+	}
+	final void MessageType(Windows.Networking.Sockets.SocketMessageType value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketControl).set_MessageType(value));
+	}
+	final UINT32 OutboundBufferSizeInBytes()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_OutboundBufferSizeInBytes(&_ret));
+		return _ret;
+	}
+	final void OutboundBufferSizeInBytes(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).set_OutboundBufferSizeInBytes(value));
+	}
+	final Windows.Security.Credentials.PasswordCredential ServerCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_ServerCredential(&_ret));
+		return _ret;
+	}
+	final void ServerCredential(Windows.Security.Credentials.PasswordCredential value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).set_ServerCredential(value));
+	}
+	final Windows.Security.Credentials.PasswordCredential ProxyCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_ProxyCredential(&_ret));
+		return _ret;
+	}
+	final void ProxyCredential(Windows.Security.Credentials.PasswordCredential value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).set_ProxyCredential(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) SupportedProtocols()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_SupportedProtocols(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) IgnorableServerCertificateErrors()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl2).get_IgnorableServerCertificateErrors(&_ret));
+		return _ret;
+	}
 }
 
 interface MessageWebSocketInformation : Windows.Networking.Sockets.IWebSocketInformation, Windows.Networking.Sockets.IWebSocketInformation2
 {
+extern(Windows):
+	final Windows.Networking.HostName LocalAddress()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation).get_LocalAddress(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.BandwidthStatistics BandwidthStatistics()
+	{
+		Windows.Networking.Sockets.BandwidthStatistics _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation).get_BandwidthStatistics(&_ret));
+		return _ret;
+	}
+	final HSTRING Protocol()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation).get_Protocol(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Certificates.Certificate ServerCertificate()
+	{
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerCertificate(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.SocketSslErrorSeverity ServerCertificateErrorSeverity()
+	{
+		Windows.Networking.Sockets.SocketSslErrorSeverity _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerCertificateErrorSeverity(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) ServerCertificateErrors()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerCertificateErrors(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) ServerIntermediateCertificates()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerIntermediateCertificates(&_ret));
+		return _ret;
+	}
 }
 
 interface MessageWebSocketMessageReceivedEventArgs : Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs
 {
+extern(Windows):
+	final Windows.Networking.Sockets.SocketMessageType MessageType()
+	{
+		Windows.Networking.Sockets.SocketMessageType _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs).get_MessageType(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.DataReader GetDataReader()
+	{
+		Windows.Storage.Streams.DataReader _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs).abi_GetDataReader(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IInputStream GetDataStream()
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs).abi_GetDataStream(&_ret));
+		return _ret;
+	}
 }
 
 interface SocketActivityContext : Windows.Networking.Sockets.ISocketActivityContext
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer Data()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityContext).get_Data(&_ret));
+		return _ret;
+	}
 }
 
 interface SocketActivityInformation : Windows.Networking.Sockets.ISocketActivityInformation
 {
+extern(Windows):
+	final GUID TaskId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_TaskId(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.SocketActivityKind SocketKind()
+	{
+		Windows.Networking.Sockets.SocketActivityKind _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_SocketKind(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.SocketActivityContext Context()
+	{
+		Windows.Networking.Sockets.SocketActivityContext _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_Context(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.DatagramSocket DatagramSocket()
+	{
+		Windows.Networking.Sockets.DatagramSocket _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_DatagramSocket(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.StreamSocket StreamSocket()
+	{
+		Windows.Networking.Sockets.StreamSocket _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_StreamSocket(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.StreamSocketListener StreamSocketListener()
+	{
+		Windows.Networking.Sockets.StreamSocketListener _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_StreamSocketListener(&_ret));
+		return _ret;
+	}
 }
 
 interface SocketActivityTriggerDetails : Windows.Networking.Sockets.ISocketActivityTriggerDetails
 {
+extern(Windows):
+	final Windows.Networking.Sockets.SocketActivityTriggerReason Reason()
+	{
+		Windows.Networking.Sockets.SocketActivityTriggerReason _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityTriggerDetails).get_Reason(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.SocketActivityInformation SocketInformation()
+	{
+		Windows.Networking.Sockets.SocketActivityInformation _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityTriggerDetails).get_SocketInformation(&_ret));
+		return _ret;
+	}
 }
 
 interface SocketError
@@ -617,46 +1113,579 @@ interface SocketError
 
 interface StreamSocket : Windows.Networking.Sockets.IStreamSocket, Windows.Foundation.IClosable, Windows.Networking.Sockets.IStreamSocket2, Windows.Networking.Sockets.IStreamSocket3
 {
+extern(Windows):
+	final Windows.Networking.Sockets.StreamSocketControl Control()
+	{
+		Windows.Networking.Sockets.StreamSocketControl _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).get_Control(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.StreamSocketInformation Information()
+	{
+		Windows.Networking.Sockets.StreamSocketInformation _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).get_Information(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IInputStream InputStream()
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).get_InputStream(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream OutputStream()
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).get_OutputStream(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ConnectWithEndpointPairAsync(Windows.Networking.EndpointPair endpointPair)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).abi_ConnectWithEndpointPairAsync(endpointPair, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ConnectAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).abi_ConnectAsync(remoteHostName, remoteServiceName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ConnectWithEndpointPairAndProtectionLevelAsync(Windows.Networking.EndpointPair endpointPair, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).abi_ConnectWithEndpointPairAndProtectionLevelAsync(endpointPair, protectionLevel, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ConnectWithProtectionLevelAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).abi_ConnectWithProtectionLevelAsync(remoteHostName, remoteServiceName, protectionLevel, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction UpgradeToSslAsync(Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Networking.HostName validationHostName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).abi_UpgradeToSslAsync(protectionLevel, validationHostName, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.IAsyncAction ConnectWithProtectionLevelAndAdapterAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Networking.Connectivity.NetworkAdapter adapter)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket2).abi_ConnectWithProtectionLevelAndAdapterAsync(remoteHostName, remoteServiceName, protectionLevel, adapter, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction CancelIOAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket3).abi_CancelIOAsync(&_ret));
+		return _ret;
+	}
+	final void EnableTransferOwnership(GUID taskId)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket3).abi_EnableTransferOwnership(taskId));
+	}
+	final void EnableTransferOwnershipWithConnectedStandbyAction(GUID taskId, Windows.Networking.Sockets.SocketActivityConnectedStandbyAction connectedStandbyAction)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket3).abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
+	}
+	final void TransferOwnership(HSTRING socketId)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket3).abi_TransferOwnership(socketId));
+	}
+	final void TransferOwnershipWithContext(HSTRING socketId, Windows.Networking.Sockets.SocketActivityContext data)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket3).abi_TransferOwnershipWithContext(socketId, data));
+	}
+	final void TransferOwnershipWithContextAndKeepAliveTime(HSTRING socketId, Windows.Networking.Sockets.SocketActivityContext data, Windows.Foundation.TimeSpan keepAliveTime)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket3).abi_TransferOwnershipWithContextAndKeepAliveTime(socketId, data, keepAliveTime));
+	}
 }
 
 interface StreamSocketControl : Windows.Networking.Sockets.IStreamSocketControl, Windows.Networking.Sockets.IStreamSocketControl2, Windows.Networking.Sockets.IStreamSocketControl3
 {
+extern(Windows):
+	final bool NoDelay()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).get_NoDelay(&_ret));
+		return _ret;
+	}
+	final void NoDelay(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).set_NoDelay(value));
+	}
+	final bool KeepAlive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).get_KeepAlive(&_ret));
+		return _ret;
+	}
+	final void KeepAlive(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).set_KeepAlive(value));
+	}
+	final UINT32 OutboundBufferSizeInBytes()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).get_OutboundBufferSizeInBytes(&_ret));
+		return _ret;
+	}
+	final void OutboundBufferSizeInBytes(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).set_OutboundBufferSizeInBytes(value));
+	}
+	final Windows.Networking.Sockets.SocketQualityOfService QualityOfService()
+	{
+		Windows.Networking.Sockets.SocketQualityOfService _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).get_QualityOfService(&_ret));
+		return _ret;
+	}
+	final void QualityOfService(Windows.Networking.Sockets.SocketQualityOfService value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).set_QualityOfService(value));
+	}
+	final BYTE OutboundUnicastHopLimit()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).get_OutboundUnicastHopLimit(&_ret));
+		return _ret;
+	}
+	final void OutboundUnicastHopLimit(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).set_OutboundUnicastHopLimit(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) IgnorableServerCertificateErrors()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl2).get_IgnorableServerCertificateErrors(&_ret));
+		return _ret;
+	}
+	final bool SerializeConnectionAttempts()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl3).get_SerializeConnectionAttempts(&_ret));
+		return _ret;
+	}
+	final void SerializeConnectionAttempts(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl3).set_SerializeConnectionAttempts(value));
+	}
+	final Windows.Security.Cryptography.Certificates.Certificate ClientCertificate()
+	{
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl3).get_ClientCertificate(&_ret));
+		return _ret;
+	}
+	final void ClientCertificate(Windows.Security.Cryptography.Certificates.Certificate value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl3).set_ClientCertificate(value));
+	}
 }
 
 interface StreamSocketInformation : Windows.Networking.Sockets.IStreamSocketInformation, Windows.Networking.Sockets.IStreamSocketInformation2
 {
+extern(Windows):
+	final Windows.Networking.HostName LocalAddress()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_LocalAddress(&_ret));
+		return _ret;
+	}
+	final HSTRING LocalPort()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_LocalPort(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.HostName RemoteHostName()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_RemoteHostName(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.HostName RemoteAddress()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_RemoteAddress(&_ret));
+		return _ret;
+	}
+	final HSTRING RemoteServiceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_RemoteServiceName(&_ret));
+		return _ret;
+	}
+	final HSTRING RemotePort()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_RemotePort(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.RoundTripTimeStatistics RoundTripTimeStatistics()
+	{
+		Windows.Networking.Sockets.RoundTripTimeStatistics _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_RoundTripTimeStatistics(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.BandwidthStatistics BandwidthStatistics()
+	{
+		Windows.Networking.Sockets.BandwidthStatistics _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_BandwidthStatistics(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.SocketProtectionLevel ProtectionLevel()
+	{
+		Windows.Networking.Sockets.SocketProtectionLevel _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_ProtectionLevel(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer SessionKey()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_SessionKey(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.SocketSslErrorSeverity ServerCertificateErrorSeverity()
+	{
+		Windows.Networking.Sockets.SocketSslErrorSeverity _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation2).get_ServerCertificateErrorSeverity(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) ServerCertificateErrors()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation2).get_ServerCertificateErrors(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Certificates.Certificate ServerCertificate()
+	{
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation2).get_ServerCertificate(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) ServerIntermediateCertificates()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation2).get_ServerIntermediateCertificates(&_ret));
+		return _ret;
+	}
 }
 
 interface StreamSocketListener : Windows.Networking.Sockets.IStreamSocketListener, Windows.Foundation.IClosable, Windows.Networking.Sockets.IStreamSocketListener2, Windows.Networking.Sockets.IStreamSocketListener3
 {
+extern(Windows):
+	final Windows.Networking.Sockets.StreamSocketListenerControl Control()
+	{
+		Windows.Networking.Sockets.StreamSocketListenerControl _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).get_Control(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.StreamSocketListenerInformation Information()
+	{
+		Windows.Networking.Sockets.StreamSocketListenerInformation _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).get_Information(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction BindServiceNameAsync(HSTRING localServiceName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).abi_BindServiceNameAsync(localServiceName, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction BindEndpointAsync(Windows.Networking.HostName localHostName, HSTRING localServiceName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).abi_BindEndpointAsync(localHostName, localServiceName, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Foundation.IAsyncAction BindServiceNameWithProtectionLevelAsync(HSTRING localServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener2).abi_BindServiceNameWithProtectionLevelAsync(localServiceName, protectionLevel, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction BindServiceNameWithProtectionLevelAndAdapterAsync(HSTRING localServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Networking.Connectivity.NetworkAdapter adapter)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener2).abi_BindServiceNameWithProtectionLevelAndAdapterAsync(localServiceName, protectionLevel, adapter, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction CancelIOAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener3).abi_CancelIOAsync(&_ret));
+		return _ret;
+	}
+	final void EnableTransferOwnership(GUID taskId)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener3).abi_EnableTransferOwnership(taskId));
+	}
+	final void EnableTransferOwnershipWithConnectedStandbyAction(GUID taskId, Windows.Networking.Sockets.SocketActivityConnectedStandbyAction connectedStandbyAction)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener3).abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
+	}
+	final void TransferOwnership(HSTRING socketId)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener3).abi_TransferOwnership(socketId));
+	}
+	final void TransferOwnershipWithContext(HSTRING socketId, Windows.Networking.Sockets.SocketActivityContext data)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener3).abi_TransferOwnershipWithContext(socketId, data));
+	}
 }
 
 interface StreamSocketListenerConnectionReceivedEventArgs : Windows.Networking.Sockets.IStreamSocketListenerConnectionReceivedEventArgs
 {
+extern(Windows):
+	final Windows.Networking.Sockets.StreamSocket Socket()
+	{
+		Windows.Networking.Sockets.StreamSocket _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerConnectionReceivedEventArgs).get_Socket(&_ret));
+		return _ret;
+	}
 }
 
 interface StreamSocketListenerControl : Windows.Networking.Sockets.IStreamSocketListenerControl, Windows.Networking.Sockets.IStreamSocketListenerControl2
 {
+extern(Windows):
+	final Windows.Networking.Sockets.SocketQualityOfService QualityOfService()
+	{
+		Windows.Networking.Sockets.SocketQualityOfService _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl).get_QualityOfService(&_ret));
+		return _ret;
+	}
+	final void QualityOfService(Windows.Networking.Sockets.SocketQualityOfService value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl).set_QualityOfService(value));
+	}
+	final bool NoDelay()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).get_NoDelay(&_ret));
+		return _ret;
+	}
+	final void NoDelay(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).set_NoDelay(value));
+	}
+	final bool KeepAlive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).get_KeepAlive(&_ret));
+		return _ret;
+	}
+	final void KeepAlive(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).set_KeepAlive(value));
+	}
+	final UINT32 OutboundBufferSizeInBytes()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).get_OutboundBufferSizeInBytes(&_ret));
+		return _ret;
+	}
+	final void OutboundBufferSizeInBytes(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).set_OutboundBufferSizeInBytes(value));
+	}
+	final BYTE OutboundUnicastHopLimit()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).get_OutboundUnicastHopLimit(&_ret));
+		return _ret;
+	}
+	final void OutboundUnicastHopLimit(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).set_OutboundUnicastHopLimit(value));
+	}
 }
 
 interface StreamSocketListenerInformation : Windows.Networking.Sockets.IStreamSocketListenerInformation
 {
+extern(Windows):
+	final HSTRING LocalPort()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerInformation).get_LocalPort(&_ret));
+		return _ret;
+	}
 }
 
 interface StreamWebSocket : Windows.Networking.Sockets.IStreamWebSocket, Windows.Networking.Sockets.IWebSocket, Windows.Foundation.IClosable, Windows.Networking.Sockets.IStreamWebSocket2
 {
+extern(Windows):
+	final Windows.Networking.Sockets.StreamWebSocketControl Control()
+	{
+		Windows.Networking.Sockets.StreamWebSocketControl _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocket).get_Control(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.StreamWebSocketInformation Information()
+	{
+		Windows.Networking.Sockets.StreamWebSocketInformation _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocket).get_Information(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IInputStream InputStream()
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocket).get_InputStream(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream OutputStream()
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).get_OutputStream(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ConnectAsync(Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_ConnectAsync(uri, &_ret));
+		return _ret;
+	}
+	final void SetRequestHeader(HSTRING headerName, HSTRING headerValue)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_SetRequestHeader(headerName, headerValue));
+	}
+	final void CloseWithStatus(UINT16 code, HSTRING reason)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_CloseWithStatus(code, reason));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface StreamWebSocketControl : Windows.Networking.Sockets.IStreamWebSocketControl, Windows.Networking.Sockets.IWebSocketControl, Windows.Networking.Sockets.IWebSocketControl2
 {
+extern(Windows):
+	final bool NoDelay()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocketControl).get_NoDelay(&_ret));
+		return _ret;
+	}
+	final void NoDelay(bool value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocketControl).set_NoDelay(value));
+	}
+	final UINT32 OutboundBufferSizeInBytes()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_OutboundBufferSizeInBytes(&_ret));
+		return _ret;
+	}
+	final void OutboundBufferSizeInBytes(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).set_OutboundBufferSizeInBytes(value));
+	}
+	final Windows.Security.Credentials.PasswordCredential ServerCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_ServerCredential(&_ret));
+		return _ret;
+	}
+	final void ServerCredential(Windows.Security.Credentials.PasswordCredential value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).set_ServerCredential(value));
+	}
+	final Windows.Security.Credentials.PasswordCredential ProxyCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_ProxyCredential(&_ret));
+		return _ret;
+	}
+	final void ProxyCredential(Windows.Security.Credentials.PasswordCredential value)
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).set_ProxyCredential(value));
+	}
+	final Windows.Foundation.Collections.IVector!(HSTRING) SupportedProtocols()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_SupportedProtocols(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) IgnorableServerCertificateErrors()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl2).get_IgnorableServerCertificateErrors(&_ret));
+		return _ret;
+	}
 }
 
 interface StreamWebSocketInformation : Windows.Networking.Sockets.IWebSocketInformation, Windows.Networking.Sockets.IWebSocketInformation2
 {
+extern(Windows):
+	final Windows.Networking.HostName LocalAddress()
+	{
+		Windows.Networking.HostName _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation).get_LocalAddress(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.BandwidthStatistics BandwidthStatistics()
+	{
+		Windows.Networking.Sockets.BandwidthStatistics _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation).get_BandwidthStatistics(&_ret));
+		return _ret;
+	}
+	final HSTRING Protocol()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation).get_Protocol(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Certificates.Certificate ServerCertificate()
+	{
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerCertificate(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.SocketSslErrorSeverity ServerCertificateErrorSeverity()
+	{
+		Windows.Networking.Sockets.SocketSslErrorSeverity _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerCertificateErrorSeverity(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) ServerCertificateErrors()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerCertificateErrors(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) ServerIntermediateCertificates()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerIntermediateCertificates(&_ret));
+		return _ret;
+	}
 }
 
 interface WebSocketClosedEventArgs : Windows.Networking.Sockets.IWebSocketClosedEventArgs
 {
+extern(Windows):
+	final UINT16 Code()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketClosedEventArgs).get_Code(&_ret));
+		return _ret;
+	}
+	final HSTRING Reason()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketClosedEventArgs).get_Reason(&_ret));
+		return _ret;
+	}
 }
 
 interface WebSocketError
@@ -665,10 +1694,50 @@ interface WebSocketError
 
 interface WebSocketKeepAlive : Windows.ApplicationModel.Background.IBackgroundTask
 {
+extern(Windows):
+	final void Run(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTask).abi_Run(taskInstance));
+	}
 }
 
 interface WebSocketServerCustomValidationRequestedEventArgs : Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Security.Cryptography.Certificates.Certificate ServerCertificate()
+	{
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs).get_ServerCertificate(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.SocketSslErrorSeverity ServerCertificateErrorSeverity()
+	{
+		Windows.Networking.Sockets.SocketSslErrorSeverity _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs).get_ServerCertificateErrorSeverity(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) ServerCertificateErrors()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs).get_ServerCertificateErrors(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) ServerIntermediateCertificates()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs).get_ServerIntermediateCertificates(&_ret));
+		return _ret;
+	}
+	final void Reject()
+	{
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs).abi_Reject());
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 enum ControlChannelTriggerResetReason

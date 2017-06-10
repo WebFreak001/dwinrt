@@ -165,14 +165,91 @@ extern(Windows):
 
 interface WiFiDirectAdvertisement : Windows.Devices.WiFiDirect.IWiFiDirectAdvertisement, Windows.Devices.WiFiDirect.IWiFiDirectAdvertisement2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectInformationElement) InformationElements()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectInformationElement) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisement).get_InformationElements(&_ret));
+		return _ret;
+	}
+	final void InformationElements(Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectInformationElement) value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisement).set_InformationElements(value));
+	}
+	final Windows.Devices.WiFiDirect.WiFiDirectAdvertisementListenStateDiscoverability ListenStateDiscoverability()
+	{
+		Windows.Devices.WiFiDirect.WiFiDirectAdvertisementListenStateDiscoverability _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisement).get_ListenStateDiscoverability(&_ret));
+		return _ret;
+	}
+	final void ListenStateDiscoverability(Windows.Devices.WiFiDirect.WiFiDirectAdvertisementListenStateDiscoverability value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisement).set_ListenStateDiscoverability(value));
+	}
+	final bool IsAutonomousGroupOwnerEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisement).get_IsAutonomousGroupOwnerEnabled(&_ret));
+		return _ret;
+	}
+	final void IsAutonomousGroupOwnerEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisement).set_IsAutonomousGroupOwnerEnabled(value));
+	}
+	final Windows.Devices.WiFiDirect.WiFiDirectLegacySettings LegacySettings()
+	{
+		Windows.Devices.WiFiDirect.WiFiDirectLegacySettings _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisement).get_LegacySettings(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectConfigurationMethod) SupportedConfigurationMethods()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectConfigurationMethod) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisement2).get_SupportedConfigurationMethods(&_ret));
+		return _ret;
+	}
 }
 
 interface WiFiDirectAdvertisementPublisher : Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisher
 {
+extern(Windows):
+	final Windows.Devices.WiFiDirect.WiFiDirectAdvertisement Advertisement()
+	{
+		Windows.Devices.WiFiDirect.WiFiDirectAdvertisement _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisher).get_Advertisement(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatus Status()
+	{
+		Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisher).get_Status(&_ret));
+		return _ret;
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisher).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisher).abi_Stop());
+	}
 }
 
 interface WiFiDirectAdvertisementPublisherStatusChangedEventArgs : Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisherStatusChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatus Status()
+	{
+		Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisherStatusChangedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.WiFiDirect.WiFiDirectError Error()
+	{
+		Windows.Devices.WiFiDirect.WiFiDirectError _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisherStatusChangedEventArgs).get_Error(&_ret));
+		return _ret;
+	}
 }
 
 interface WiFiDirectConnectionListener : Windows.Devices.WiFiDirect.IWiFiDirectConnectionListener
@@ -181,26 +258,156 @@ interface WiFiDirectConnectionListener : Windows.Devices.WiFiDirect.IWiFiDirectC
 
 interface WiFiDirectConnectionParameters : Windows.Devices.WiFiDirect.IWiFiDirectConnectionParameters, Windows.Devices.WiFiDirect.IWiFiDirectConnectionParameters2, Windows.Devices.Enumeration.IDevicePairingSettings
 {
+extern(Windows):
+	final INT16 GroupOwnerIntent()
+	{
+		INT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionParameters).get_GroupOwnerIntent(&_ret));
+		return _ret;
+	}
+	final void GroupOwnerIntent(INT16 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionParameters).set_GroupOwnerIntent(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectConfigurationMethod) PreferenceOrderedConfigurationMethods()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectConfigurationMethod) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionParameters2).get_PreferenceOrderedConfigurationMethods(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.WiFiDirect.WiFiDirectPairingProcedure PreferredPairingProcedure()
+	{
+		Windows.Devices.WiFiDirect.WiFiDirectPairingProcedure _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionParameters2).get_PreferredPairingProcedure(&_ret));
+		return _ret;
+	}
+	final void PreferredPairingProcedure(Windows.Devices.WiFiDirect.WiFiDirectPairingProcedure value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionParameters2).set_PreferredPairingProcedure(value));
+	}
 }
 
 interface WiFiDirectConnectionRequest : Windows.Devices.WiFiDirect.IWiFiDirectConnectionRequest, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Devices.Enumeration.DeviceInformation DeviceInformation()
+	{
+		Windows.Devices.Enumeration.DeviceInformation _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionRequest).get_DeviceInformation(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface WiFiDirectConnectionRequestedEventArgs : Windows.Devices.WiFiDirect.IWiFiDirectConnectionRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.WiFiDirect.WiFiDirectConnectionRequest GetConnectionRequest()
+	{
+		Windows.Devices.WiFiDirect.WiFiDirectConnectionRequest _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionRequestedEventArgs).abi_GetConnectionRequest(&_ret));
+		return _ret;
+	}
 }
 
 interface WiFiDirectDevice : Windows.Devices.WiFiDirect.IWiFiDirectDevice, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Devices.WiFiDirect.WiFiDirectConnectionStatus ConnectionStatus()
+	{
+		Windows.Devices.WiFiDirect.WiFiDirectConnectionStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectDevice).get_ConnectionStatus(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectDevice).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair) GetConnectionEndpointPairs()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair) _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectDevice).abi_GetConnectionEndpointPairs(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface WiFiDirectInformationElement : Windows.Devices.WiFiDirect.IWiFiDirectInformationElement
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer Oui()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElement).get_Oui(&_ret));
+		return _ret;
+	}
+	final void Oui(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElement).set_Oui(value));
+	}
+	final BYTE OuiType()
+	{
+		BYTE _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElement).get_OuiType(&_ret));
+		return _ret;
+	}
+	final void OuiType(BYTE value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElement).set_OuiType(value));
+	}
+	final Windows.Storage.Streams.IBuffer Value()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElement).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElement).set_Value(value));
+	}
 }
 
 interface WiFiDirectLegacySettings : Windows.Devices.WiFiDirect.IWiFiDirectLegacySettings
 {
+extern(Windows):
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectLegacySettings).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final void IsEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectLegacySettings).set_IsEnabled(value));
+	}
+	final HSTRING Ssid()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectLegacySettings).get_Ssid(&_ret));
+		return _ret;
+	}
+	final void Ssid(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectLegacySettings).set_Ssid(value));
+	}
+	final Windows.Security.Credentials.PasswordCredential Passphrase()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectLegacySettings).get_Passphrase(&_ret));
+		return _ret;
+	}
+	final void Passphrase(Windows.Security.Credentials.PasswordCredential value)
+	{
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectLegacySettings).set_Passphrase(value));
+	}
 }
 
 enum WiFiDirectAdvertisementListenStateDiscoverability

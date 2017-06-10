@@ -1050,30 +1050,247 @@ extern(Windows):
 
 interface AudioStreamDescriptor : Windows.Media.Core.IAudioStreamDescriptor, Windows.Media.Core.IMediaStreamDescriptor, Windows.Media.Core.IAudioStreamDescriptor2
 {
+extern(Windows):
+	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IAudioStreamDescriptor).get_EncodingProperties(&_ret));
+		return _ret;
+	}
+	final bool IsSelected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamDescriptor).get_IsSelected(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamDescriptor).set_Name(value));
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamDescriptor).get_Name(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamDescriptor).set_Language(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamDescriptor).get_Language(&_ret));
+		return _ret;
+	}
+	final void LeadingEncoderPadding(Windows.Foundation.IReference!(UINT32) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IAudioStreamDescriptor2).set_LeadingEncoderPadding(value));
+	}
+	final Windows.Foundation.IReference!(UINT32) LeadingEncoderPadding()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IAudioStreamDescriptor2).get_LeadingEncoderPadding(&_ret));
+		return _ret;
+	}
+	final void TrailingEncoderPadding(Windows.Foundation.IReference!(UINT32) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IAudioStreamDescriptor2).set_TrailingEncoderPadding(value));
+	}
+	final Windows.Foundation.IReference!(UINT32) TrailingEncoderPadding()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IAudioStreamDescriptor2).get_TrailingEncoderPadding(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioTrack : Windows.Media.Core.IMediaTrack, Windows.Media.Core.IAudioTrack
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_Language(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaTrackKind TrackKind()
+	{
+		Windows.Media.Core.MediaTrackKind _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_TrackKind(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).set_Label(value));
+	}
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_Label(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.AudioEncodingProperties GetEncodingProperties()
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IAudioTrack).abi_GetEncodingProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Playback.MediaPlaybackItem PlaybackItem()
+	{
+		Windows.Media.Playback.MediaPlaybackItem _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IAudioTrack).get_PlaybackItem(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IAudioTrack).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.AudioTrackSupportInfo SupportInfo()
+	{
+		Windows.Media.Core.AudioTrackSupportInfo _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IAudioTrack).get_SupportInfo(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioTrackOpenFailedEventArgs : Windows.Media.Core.IAudioTrackOpenFailedEventArgs
 {
+extern(Windows):
+	final HRESULT ExtendedError()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IAudioTrackOpenFailedEventArgs).get_ExtendedError(&_ret));
+		return _ret;
+	}
 }
 
 interface AudioTrackSupportInfo : Windows.Media.Core.IAudioTrackSupportInfo
 {
+extern(Windows):
+	final Windows.Media.Core.MediaDecoderStatus DecoderStatus()
+	{
+		Windows.Media.Core.MediaDecoderStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IAudioTrackSupportInfo).get_DecoderStatus(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.AudioDecoderDegradation Degradation()
+	{
+		Windows.Media.Core.AudioDecoderDegradation _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IAudioTrackSupportInfo).get_Degradation(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.AudioDecoderDegradationReason DegradationReason()
+	{
+		Windows.Media.Core.AudioDecoderDegradationReason _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IAudioTrackSupportInfo).get_DegradationReason(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaSourceStatus MediaSourceStatus()
+	{
+		Windows.Media.Core.MediaSourceStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IAudioTrackSupportInfo).get_MediaSourceStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface ChapterCue : Windows.Media.Core.IChapterCue, Windows.Media.Core.IMediaCue
 {
+extern(Windows):
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IChapterCue).set_Title(value));
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IChapterCue).get_Title(&_ret));
+		return _ret;
+	}
+	final void StartTime(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_StartTime(value));
+	}
+	final Windows.Foundation.TimeSpan StartTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_StartTime(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_Duration(value));
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Duration(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_Id(value));
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Id(&_ret));
+		return _ret;
+	}
 }
 
 interface CodecInfo : Windows.Media.Core.ICodecInfo
 {
+extern(Windows):
+	final Windows.Media.Core.CodecKind Kind()
+	{
+		Windows.Media.Core.CodecKind _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ICodecInfo).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.CodecCategory Category()
+	{
+		Windows.Media.Core.CodecCategory _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ICodecInfo).get_Category(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) Subtypes()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ICodecInfo).get_Subtypes(&_ret));
+		return _ret;
+	}
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ICodecInfo).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final bool IsTrusted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ICodecInfo).get_IsTrusted(&_ret));
+		return _ret;
+	}
 }
 
 interface CodecQuery : Windows.Media.Core.ICodecQuery
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.CodecInfo)) FindAllAsync(Windows.Media.Core.CodecKind kind, Windows.Media.Core.CodecCategory category, HSTRING subType)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.CodecInfo)) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ICodecQuery).abi_FindAllAsync(kind, category, subType, &_ret));
+		return _ret;
+	}
 }
 
 interface CodecSubtypes
@@ -1082,66 +1299,556 @@ interface CodecSubtypes
 
 interface DataCue : Windows.Media.Core.IDataCue, Windows.Media.Core.IMediaCue, Windows.Media.Core.IDataCue2
 {
+extern(Windows):
+	final void Data(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IDataCue).set_Data(value));
+	}
+	final Windows.Storage.Streams.IBuffer Data()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IDataCue).get_Data(&_ret));
+		return _ret;
+	}
+	final void StartTime(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_StartTime(value));
+	}
+	final Windows.Foundation.TimeSpan StartTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_StartTime(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_Duration(value));
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Duration(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_Id(value));
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.PropertySet Properties()
+	{
+		Windows.Foundation.Collections.PropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IDataCue2).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface FaceDetectedEventArgs : Windows.Media.Core.IFaceDetectedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Core.FaceDetectionEffectFrame ResultFrame()
+	{
+		Windows.Media.Core.FaceDetectionEffectFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectedEventArgs).get_ResultFrame(&_ret));
+		return _ret;
+	}
 }
 
 interface FaceDetectionEffect : Windows.Media.Core.IFaceDetectionEffect, Windows.Media.IMediaExtension
 {
+extern(Windows):
+	final void Enabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffect).set_Enabled(value));
+	}
+	final bool Enabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffect).get_Enabled(&_ret));
+		return _ret;
+	}
+	final void DesiredDetectionInterval(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffect).set_DesiredDetectionInterval(value));
+	}
+	final Windows.Foundation.TimeSpan DesiredDetectionInterval()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffect).get_DesiredDetectionInterval(&_ret));
+		return _ret;
+	}
+	final void SetProperties(Windows.Foundation.Collections.IPropertySet configuration)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtension).abi_SetProperties(configuration));
+	}
 }
 
 interface FaceDetectionEffectDefinition : Windows.Media.Effects.IVideoEffectDefinition, Windows.Media.Core.IFaceDetectionEffectDefinition
 {
+extern(Windows):
+	final HSTRING ActivatableClassId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_ActivatableClassId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_Properties(&_ret));
+		return _ret;
+	}
+	final void DetectionMode(Windows.Media.Core.FaceDetectionMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffectDefinition).set_DetectionMode(value));
+	}
+	final Windows.Media.Core.FaceDetectionMode DetectionMode()
+	{
+		Windows.Media.Core.FaceDetectionMode _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffectDefinition).get_DetectionMode(&_ret));
+		return _ret;
+	}
+	final void SynchronousDetectionEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffectDefinition).set_SynchronousDetectionEnabled(value));
+	}
+	final bool SynchronousDetectionEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffectDefinition).get_SynchronousDetectionEnabled(&_ret));
+		return _ret;
+	}
 }
 
 interface FaceDetectionEffectFrame : Windows.Media.Core.IFaceDetectionEffectFrame, Windows.Media.IMediaFrame, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.FaceAnalysis.DetectedFace) DetectedFaces()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.FaceAnalysis.DetectedFace) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffectFrame).get_DetectedFaces(&_ret));
+		return _ret;
+	}
+	final HSTRING Type()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_Type(&_ret));
+		return _ret;
+	}
+	final bool IsReadOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_IsReadOnly(&_ret));
+		return _ret;
+	}
+	final void RelativeTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_RelativeTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) RelativeTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_RelativeTime(&_ret));
+		return _ret;
+	}
+	final void SystemRelativeTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_SystemRelativeTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) SystemRelativeTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_SystemRelativeTime(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_Duration(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Duration()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_Duration(&_ret));
+		return _ret;
+	}
+	final void IsDiscontinuous(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_IsDiscontinuous(value));
+	}
+	final bool IsDiscontinuous()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_IsDiscontinuous(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet ExtendedProperties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_ExtendedProperties(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface HighDynamicRangeControl : Windows.Media.Core.IHighDynamicRangeControl
 {
+extern(Windows):
+	final void Enabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IHighDynamicRangeControl).set_Enabled(value));
+	}
+	final bool Enabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IHighDynamicRangeControl).get_Enabled(&_ret));
+		return _ret;
+	}
 }
 
 interface HighDynamicRangeOutput : Windows.Media.Core.IHighDynamicRangeOutput
 {
+extern(Windows):
+	final double Certainty()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IHighDynamicRangeOutput).get_Certainty(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.Core.FrameController) FrameControllers()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.Core.FrameController) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IHighDynamicRangeOutput).get_FrameControllers(&_ret));
+		return _ret;
+	}
 }
 
 interface ImageCue : Windows.Media.Core.IImageCue, Windows.Media.Core.IMediaCue
 {
+extern(Windows):
+	final Windows.Media.Core.TimedTextPoint Position()
+	{
+		Windows.Media.Core.TimedTextPoint _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IImageCue).get_Position(&_ret));
+		return _ret;
+	}
+	final void Position(Windows.Media.Core.TimedTextPoint value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IImageCue).set_Position(value));
+	}
+	final Windows.Media.Core.TimedTextSize Extent()
+	{
+		Windows.Media.Core.TimedTextSize _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IImageCue).get_Extent(&_ret));
+		return _ret;
+	}
+	final void Extent(Windows.Media.Core.TimedTextSize value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IImageCue).set_Extent(value));
+	}
+	final void SoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IImageCue).set_SoftwareBitmap(value));
+	}
+	final Windows.Graphics.Imaging.SoftwareBitmap SoftwareBitmap()
+	{
+		Windows.Graphics.Imaging.SoftwareBitmap _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IImageCue).get_SoftwareBitmap(&_ret));
+		return _ret;
+	}
+	final void StartTime(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_StartTime(value));
+	}
+	final Windows.Foundation.TimeSpan StartTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_StartTime(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_Duration(value));
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Duration(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_Id(value));
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Id(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaBinder : Windows.Media.Core.IMediaBinder
 {
+extern(Windows):
+	final HSTRING Token()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBinder).get_Token(&_ret));
+		return _ret;
+	}
+	final void Token(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBinder).set_Token(value));
+	}
+	final Windows.Media.Core.MediaSource Source()
+	{
+		Windows.Media.Core.MediaSource _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBinder).get_Source(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaBindingEventArgs : Windows.Media.Core.IMediaBindingEventArgs, Windows.Media.Core.IMediaBindingEventArgs2
 {
+extern(Windows):
+	final Windows.Media.Core.MediaBinder MediaBinder()
+	{
+		Windows.Media.Core.MediaBinder _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBindingEventArgs).get_MediaBinder(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBindingEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final void SetUri(Windows.Foundation.Uri uri)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBindingEventArgs).abi_SetUri(uri));
+	}
+	final void SetStream(Windows.Storage.Streams.IRandomAccessStream stream, HSTRING contentType)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBindingEventArgs).abi_SetStream(stream, contentType));
+	}
+	final void SetStreamReference(Windows.Storage.Streams.IRandomAccessStreamReference stream, HSTRING contentType)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBindingEventArgs).abi_SetStreamReference(stream, contentType));
+	}
+	final void SetAdaptiveMediaSource(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource mediaSource)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBindingEventArgs2).abi_SetAdaptiveMediaSource(mediaSource));
+	}
+	final void SetStorageFile(Windows.Storage.IStorageFile file)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBindingEventArgs2).abi_SetStorageFile(file));
+	}
 }
 
 interface MediaCueEventArgs : Windows.Media.Core.IMediaCueEventArgs
 {
+extern(Windows):
+	final Windows.Media.Core.IMediaCue Cue()
+	{
+		Windows.Media.Core.IMediaCue _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCueEventArgs).get_Cue(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaSource : Windows.Media.Core.IMediaSource2, Windows.Foundation.IClosable, Windows.Media.Playback.IMediaPlaybackSource, Windows.Media.Core.IMediaSource3, Windows.Media.Core.IMediaSource4
 {
+extern(Windows):
+	final Windows.Foundation.Collections.ValueSet CustomProperties()
+	{
+		Windows.Foundation.Collections.ValueSet _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource2).get_CustomProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Duration()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource2).get_Duration(&_ret));
+		return _ret;
+	}
+	final bool IsOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource2).get_IsOpen(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IObservableVector!(Windows.Media.Core.TimedTextSource) ExternalTimedTextSources()
+	{
+		Windows.Foundation.Collections.IObservableVector!(Windows.Media.Core.TimedTextSource) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource2).get_ExternalTimedTextSources(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IObservableVector!(Windows.Media.Core.TimedMetadataTrack) ExternalTimedMetadataTracks()
+	{
+		Windows.Foundation.Collections.IObservableVector!(Windows.Media.Core.TimedMetadataTrack) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource2).get_ExternalTimedMetadataTracks(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Media.Core.MediaSourceState State()
+	{
+		Windows.Media.Core.MediaSourceState _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource3).get_State(&_ret));
+		return _ret;
+	}
+	final void Reset()
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource3).abi_Reset());
+	}
+	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSource AdaptiveMediaSource()
+	{
+		Windows.Media.Streaming.Adaptive.AdaptiveMediaSource _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource4).get_AdaptiveMediaSource(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaStreamSource MediaStreamSource()
+	{
+		Windows.Media.Core.MediaStreamSource _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource4).get_MediaStreamSource(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MseStreamSource MseStreamSource()
+	{
+		Windows.Media.Core.MseStreamSource _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource4).get_MseStreamSource(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource4).get_Uri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction OpenAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource4).abi_OpenAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaSourceError : Windows.Media.Core.IMediaSourceError
 {
+extern(Windows):
+	final HRESULT ExtendedError()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSourceError).get_ExtendedError(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaSourceOpenOperationCompletedEventArgs : Windows.Media.Core.IMediaSourceOpenOperationCompletedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Core.MediaSourceError Error()
+	{
+		Windows.Media.Core.MediaSourceError _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSourceOpenOperationCompletedEventArgs).get_Error(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaSourceStateChangedEventArgs : Windows.Media.Core.IMediaSourceStateChangedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Core.MediaSourceState OldState()
+	{
+		Windows.Media.Core.MediaSourceState _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSourceStateChangedEventArgs).get_OldState(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaSourceState NewState()
+	{
+		Windows.Media.Core.MediaSourceState _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSourceStateChangedEventArgs).get_NewState(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaStreamSample : Windows.Media.Core.IMediaStreamSample
 {
+extern(Windows):
+	final Windows.Storage.Streams.Buffer Buffer()
+	{
+		Windows.Storage.Streams.Buffer _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).get_Buffer(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Timestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaStreamSamplePropertySet ExtendedProperties()
+	{
+		Windows.Media.Core.MediaStreamSamplePropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).get_ExtendedProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaStreamSampleProtectionProperties Protection()
+	{
+		Windows.Media.Core.MediaStreamSampleProtectionProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).get_Protection(&_ret));
+		return _ret;
+	}
+	final void DecodeTimestamp(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).set_DecodeTimestamp(value));
+	}
+	final Windows.Foundation.TimeSpan DecodeTimestamp()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).get_DecodeTimestamp(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).set_Duration(value));
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).get_Duration(&_ret));
+		return _ret;
+	}
+	final void KeyFrame(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).set_KeyFrame(value));
+	}
+	final bool KeyFrame()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).get_KeyFrame(&_ret));
+		return _ret;
+	}
+	final void Discontinuous(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).set_Discontinuous(value));
+	}
+	final bool Discontinuous()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).get_Discontinuous(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaStreamSamplePropertySet : Windows.Foundation.Collections.IMap!(GUID, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(GUID, IInspectable))
@@ -1150,114 +1857,936 @@ interface MediaStreamSamplePropertySet : Windows.Foundation.Collections.IMap!(GU
 
 interface MediaStreamSampleProtectionProperties : Windows.Media.Core.IMediaStreamSampleProtectionProperties
 {
+extern(Windows):
+	final void SetKeyIdentifier(UINT32 __valueSize, BYTE* value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSampleProtectionProperties).abi_SetKeyIdentifier(__valueSize, value));
+	}
+	final void GetKeyIdentifier(UINT32* out___valueSize, BYTE** out_value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSampleProtectionProperties).abi_GetKeyIdentifier(out___valueSize, out_value));
+	}
+	final void SetInitializationVector(UINT32 __valueSize, BYTE* value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSampleProtectionProperties).abi_SetInitializationVector(__valueSize, value));
+	}
+	final void GetInitializationVector(UINT32* out___valueSize, BYTE** out_value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSampleProtectionProperties).abi_GetInitializationVector(out___valueSize, out_value));
+	}
+	final void SetSubSampleMapping(UINT32 __valueSize, BYTE* value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSampleProtectionProperties).abi_SetSubSampleMapping(__valueSize, value));
+	}
+	final void GetSubSampleMapping(UINT32* out___valueSize, BYTE** out_value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSampleProtectionProperties).abi_GetSubSampleMapping(out___valueSize, out_value));
+	}
 }
 
 interface MediaStreamSource : Windows.Media.Core.IMediaStreamSource, Windows.Media.Core.IMediaSource, Windows.Media.Core.IMediaStreamSource2, Windows.Media.Core.IMediaStreamSource3
 {
+extern(Windows):
+	final void NotifyError(Windows.Media.Core.MediaStreamSourceErrorStatus errorStatus)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).abi_NotifyError(errorStatus));
+	}
+	final void AddStreamDescriptor(Windows.Media.Core.IMediaStreamDescriptor descriptor)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).abi_AddStreamDescriptor(descriptor));
+	}
+	final void MediaProtectionManager(Windows.Media.Protection.MediaProtectionManager value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).set_MediaProtectionManager(value));
+	}
+	final Windows.Media.Protection.MediaProtectionManager MediaProtectionManager()
+	{
+		Windows.Media.Protection.MediaProtectionManager _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).get_MediaProtectionManager(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).set_Duration(value));
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).get_Duration(&_ret));
+		return _ret;
+	}
+	final void CanSeek(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).set_CanSeek(value));
+	}
+	final bool CanSeek()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).get_CanSeek(&_ret));
+		return _ret;
+	}
+	final void BufferTime(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).set_BufferTime(value));
+	}
+	final Windows.Foundation.TimeSpan BufferTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).get_BufferTime(&_ret));
+		return _ret;
+	}
+	final void SetBufferedRange(Windows.Foundation.TimeSpan startOffset, Windows.Foundation.TimeSpan endOffset)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).abi_SetBufferedRange(startOffset, endOffset));
+	}
+	final Windows.Storage.FileProperties.MusicProperties MusicProperties()
+	{
+		Windows.Storage.FileProperties.MusicProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).get_MusicProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.FileProperties.VideoProperties VideoProperties()
+	{
+		Windows.Storage.FileProperties.VideoProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).get_VideoProperties(&_ret));
+		return _ret;
+	}
+	final void Thumbnail(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).set_Thumbnail(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Thumbnail()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).get_Thumbnail(&_ret));
+		return _ret;
+	}
+	final void AddProtectionKey(Windows.Media.Core.IMediaStreamDescriptor streamDescriptor, UINT32 __keyIdentifierSize, BYTE* keyIdentifier, UINT32 __licenseDataSize, BYTE* licenseData)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).abi_AddProtectionKey(streamDescriptor, __keyIdentifierSize, keyIdentifier, __licenseDataSize, licenseData));
+	}
+	final void MaxSupportedPlaybackRate(Windows.Foundation.IReference!(double) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource3).set_MaxSupportedPlaybackRate(value));
+	}
+	final Windows.Foundation.IReference!(double) MaxSupportedPlaybackRate()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource3).get_MaxSupportedPlaybackRate(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaStreamSourceClosedEventArgs : Windows.Media.Core.IMediaStreamSourceClosedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Core.MediaStreamSourceClosedRequest Request()
+	{
+		Windows.Media.Core.MediaStreamSourceClosedRequest _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceClosedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaStreamSourceClosedRequest : Windows.Media.Core.IMediaStreamSourceClosedRequest
 {
+extern(Windows):
+	final Windows.Media.Core.MediaStreamSourceClosedReason Reason()
+	{
+		Windows.Media.Core.MediaStreamSourceClosedReason _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceClosedRequest).get_Reason(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaStreamSourceSampleRenderedEventArgs : Windows.Media.Core.IMediaStreamSourceSampleRenderedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan SampleLag()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceSampleRenderedEventArgs).get_SampleLag(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaStreamSourceSampleRequest : Windows.Media.Core.IMediaStreamSourceSampleRequest
 {
+extern(Windows):
+	final Windows.Media.Core.IMediaStreamDescriptor StreamDescriptor()
+	{
+		Windows.Media.Core.IMediaStreamDescriptor _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceSampleRequest).get_StreamDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaStreamSourceSampleRequestDeferral GetDeferral()
+	{
+		Windows.Media.Core.MediaStreamSourceSampleRequestDeferral _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceSampleRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final void Sample(Windows.Media.Core.MediaStreamSample value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceSampleRequest).set_Sample(value));
+	}
+	final Windows.Media.Core.MediaStreamSample Sample()
+	{
+		Windows.Media.Core.MediaStreamSample _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceSampleRequest).get_Sample(&_ret));
+		return _ret;
+	}
+	final void ReportSampleProgress(UINT32 progress)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceSampleRequest).abi_ReportSampleProgress(progress));
+	}
 }
 
 interface MediaStreamSourceSampleRequestDeferral : Windows.Media.Core.IMediaStreamSourceSampleRequestDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceSampleRequestDeferral).abi_Complete());
+	}
 }
 
 interface MediaStreamSourceSampleRequestedEventArgs : Windows.Media.Core.IMediaStreamSourceSampleRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Core.MediaStreamSourceSampleRequest Request()
+	{
+		Windows.Media.Core.MediaStreamSourceSampleRequest _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceSampleRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaStreamSourceStartingEventArgs : Windows.Media.Core.IMediaStreamSourceStartingEventArgs
 {
+extern(Windows):
+	final Windows.Media.Core.MediaStreamSourceStartingRequest Request()
+	{
+		Windows.Media.Core.MediaStreamSourceStartingRequest _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceStartingEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaStreamSourceStartingRequest : Windows.Media.Core.IMediaStreamSourceStartingRequest
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) StartPosition()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceStartingRequest).get_StartPosition(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaStreamSourceStartingRequestDeferral GetDeferral()
+	{
+		Windows.Media.Core.MediaStreamSourceStartingRequestDeferral _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceStartingRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final void SetActualStartPosition(Windows.Foundation.TimeSpan position)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceStartingRequest).abi_SetActualStartPosition(position));
+	}
 }
 
 interface MediaStreamSourceStartingRequestDeferral : Windows.Media.Core.IMediaStreamSourceStartingRequestDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceStartingRequestDeferral).abi_Complete());
+	}
 }
 
 interface MediaStreamSourceSwitchStreamsRequest : Windows.Media.Core.IMediaStreamSourceSwitchStreamsRequest
 {
+extern(Windows):
+	final Windows.Media.Core.IMediaStreamDescriptor OldStreamDescriptor()
+	{
+		Windows.Media.Core.IMediaStreamDescriptor _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceSwitchStreamsRequest).get_OldStreamDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.IMediaStreamDescriptor NewStreamDescriptor()
+	{
+		Windows.Media.Core.IMediaStreamDescriptor _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceSwitchStreamsRequest).get_NewStreamDescriptor(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestDeferral GetDeferral()
+	{
+		Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestDeferral _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceSwitchStreamsRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaStreamSourceSwitchStreamsRequestDeferral : Windows.Media.Core.IMediaStreamSourceSwitchStreamsRequestDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceSwitchStreamsRequestDeferral).abi_Complete());
+	}
 }
 
 interface MediaStreamSourceSwitchStreamsRequestedEventArgs : Windows.Media.Core.IMediaStreamSourceSwitchStreamsRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Core.MediaStreamSourceSwitchStreamsRequest Request()
+	{
+		Windows.Media.Core.MediaStreamSourceSwitchStreamsRequest _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSourceSwitchStreamsRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 interface MseSourceBuffer : Windows.Media.Core.IMseSourceBuffer
 {
+extern(Windows):
+	final Windows.Media.Core.MseAppendMode Mode()
+	{
+		Windows.Media.Core.MseAppendMode _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.Media.Core.MseAppendMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).set_Mode(value));
+	}
+	final bool IsUpdating()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).get_IsUpdating(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.MseTimeRange) Buffered()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.MseTimeRange) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).get_Buffered(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan TimestampOffset()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).get_TimestampOffset(&_ret));
+		return _ret;
+	}
+	final void TimestampOffset(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).set_TimestampOffset(value));
+	}
+	final Windows.Foundation.TimeSpan AppendWindowStart()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).get_AppendWindowStart(&_ret));
+		return _ret;
+	}
+	final void AppendWindowStart(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).set_AppendWindowStart(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) AppendWindowEnd()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).get_AppendWindowEnd(&_ret));
+		return _ret;
+	}
+	final void AppendWindowEnd(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).set_AppendWindowEnd(value));
+	}
+	final void AppendBuffer(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).abi_AppendBuffer(buffer));
+	}
+	final void AppendStream(Windows.Storage.Streams.IInputStream stream)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).abi_AppendStream(stream));
+	}
+	final void AppendStreamMaxSize(Windows.Storage.Streams.IInputStream stream, UINT64 maxSize)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).abi_AppendStreamMaxSize(stream, maxSize));
+	}
+	final void Abort()
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).abi_Abort());
+	}
+	final void Remove(Windows.Foundation.TimeSpan start, Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) end)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).abi_Remove(start, end));
+	}
 }
 
 interface MseSourceBufferList : Windows.Media.Core.IMseSourceBufferList
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.MseSourceBuffer) Buffers()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.MseSourceBuffer) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBufferList).get_Buffers(&_ret));
+		return _ret;
+	}
 }
 
 interface MseStreamSource : Windows.Media.Core.IMseStreamSource, Windows.Media.Core.IMediaSource
 {
+extern(Windows):
+	final Windows.Media.Core.MseSourceBufferList SourceBuffers()
+	{
+		Windows.Media.Core.MseSourceBufferList _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).get_SourceBuffers(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MseSourceBufferList ActiveSourceBuffers()
+	{
+		Windows.Media.Core.MseSourceBufferList _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).get_ActiveSourceBuffers(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MseReadyState ReadyState()
+	{
+		Windows.Media.Core.MseReadyState _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).get_ReadyState(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Duration()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).get_Duration(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).set_Duration(value));
+	}
+	final Windows.Media.Core.MseSourceBuffer AddSourceBuffer(HSTRING mimeType)
+	{
+		Windows.Media.Core.MseSourceBuffer _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).abi_AddSourceBuffer(mimeType, &_ret));
+		return _ret;
+	}
+	final void RemoveSourceBuffer(Windows.Media.Core.MseSourceBuffer buffer)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).abi_RemoveSourceBuffer(buffer));
+	}
+	final void EndOfStream(Windows.Media.Core.MseEndOfStreamStatus status)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).abi_EndOfStream(status));
+	}
 }
 
 interface SceneAnalysisEffect : Windows.Media.Core.ISceneAnalysisEffect, Windows.Media.IMediaExtension
 {
+extern(Windows):
+	final Windows.Media.Core.HighDynamicRangeControl HighDynamicRangeAnalyzer()
+	{
+		Windows.Media.Core.HighDynamicRangeControl _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ISceneAnalysisEffect).get_HighDynamicRangeAnalyzer(&_ret));
+		return _ret;
+	}
+	final void DesiredAnalysisInterval(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ISceneAnalysisEffect).set_DesiredAnalysisInterval(value));
+	}
+	final Windows.Foundation.TimeSpan DesiredAnalysisInterval()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ISceneAnalysisEffect).get_DesiredAnalysisInterval(&_ret));
+		return _ret;
+	}
+	final void SetProperties(Windows.Foundation.Collections.IPropertySet configuration)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtension).abi_SetProperties(configuration));
+	}
 }
 
 interface SceneAnalysisEffectDefinition : Windows.Media.Effects.IVideoEffectDefinition
 {
+extern(Windows):
+	final HSTRING ActivatableClassId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_ActivatableClassId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface SceneAnalysisEffectFrame : Windows.Media.Core.ISceneAnalysisEffectFrame, Windows.Media.IMediaFrame, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Media.Capture.CapturedFrameControlValues FrameControlValues()
+	{
+		Windows.Media.Capture.CapturedFrameControlValues _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ISceneAnalysisEffectFrame).get_FrameControlValues(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.HighDynamicRangeOutput HighDynamicRange()
+	{
+		Windows.Media.Core.HighDynamicRangeOutput _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ISceneAnalysisEffectFrame).get_HighDynamicRange(&_ret));
+		return _ret;
+	}
+	final HSTRING Type()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_Type(&_ret));
+		return _ret;
+	}
+	final bool IsReadOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_IsReadOnly(&_ret));
+		return _ret;
+	}
+	final void RelativeTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_RelativeTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) RelativeTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_RelativeTime(&_ret));
+		return _ret;
+	}
+	final void SystemRelativeTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_SystemRelativeTime(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) SystemRelativeTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_SystemRelativeTime(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_Duration(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Duration()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_Duration(&_ret));
+		return _ret;
+	}
+	final void IsDiscontinuous(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).set_IsDiscontinuous(value));
+	}
+	final bool IsDiscontinuous()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_IsDiscontinuous(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet ExtendedProperties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.IMediaFrame).get_ExtendedProperties(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface SceneAnalyzedEventArgs : Windows.Media.Core.ISceneAnalyzedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Core.SceneAnalysisEffectFrame ResultFrame()
+	{
+		Windows.Media.Core.SceneAnalysisEffectFrame _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ISceneAnalyzedEventArgs).get_ResultFrame(&_ret));
+		return _ret;
+	}
 }
 
 interface SpeechCue : Windows.Media.Core.ISpeechCue, Windows.Media.Core.IMediaCue
 {
+extern(Windows):
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ISpeechCue).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ISpeechCue).set_Text(value));
+	}
+	final Windows.Foundation.IReference!(INT32) StartPositionInInput()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ISpeechCue).get_StartPositionInInput(&_ret));
+		return _ret;
+	}
+	final void StartPositionInInput(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ISpeechCue).set_StartPositionInInput(value));
+	}
+	final Windows.Foundation.IReference!(INT32) EndPositionInInput()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ISpeechCue).get_EndPositionInInput(&_ret));
+		return _ret;
+	}
+	final void EndPositionInInput(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ISpeechCue).set_EndPositionInInput(value));
+	}
+	final void StartTime(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_StartTime(value));
+	}
+	final Windows.Foundation.TimeSpan StartTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_StartTime(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_Duration(value));
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Duration(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_Id(value));
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Id(&_ret));
+		return _ret;
+	}
 }
 
 interface TimedMetadataTrack : Windows.Media.Core.ITimedMetadataTrack, Windows.Media.Core.IMediaTrack, Windows.Media.Core.ITimedMetadataTrack2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.IMediaCue) Cues()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.IMediaCue) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack).get_Cues(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.IMediaCue) ActiveCues()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.IMediaCue) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack).get_ActiveCues(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.TimedMetadataKind TimedMetadataKind()
+	{
+		Windows.Media.Core.TimedMetadataKind _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack).get_TimedMetadataKind(&_ret));
+		return _ret;
+	}
+	final HSTRING DispatchType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack).get_DispatchType(&_ret));
+		return _ret;
+	}
+	final void AddCue(Windows.Media.Core.IMediaCue cue)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack).abi_AddCue(cue));
+	}
+	final void RemoveCue(Windows.Media.Core.IMediaCue cue)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack).abi_RemoveCue(cue));
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_Language(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaTrackKind TrackKind()
+	{
+		Windows.Media.Core.MediaTrackKind _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_TrackKind(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).set_Label(value));
+	}
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_Label(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Playback.MediaPlaybackItem PlaybackItem()
+	{
+		Windows.Media.Playback.MediaPlaybackItem _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack2).get_PlaybackItem(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack2).get_Name(&_ret));
+		return _ret;
+	}
 }
 
 interface TimedMetadataTrackError : Windows.Media.Core.ITimedMetadataTrackError
 {
+extern(Windows):
+	final Windows.Media.Core.TimedMetadataTrackErrorCode ErrorCode()
+	{
+		Windows.Media.Core.TimedMetadataTrackErrorCode _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrackError).get_ErrorCode(&_ret));
+		return _ret;
+	}
+	final HRESULT ExtendedError()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrackError).get_ExtendedError(&_ret));
+		return _ret;
+	}
 }
 
 interface TimedMetadataTrackFailedEventArgs : Windows.Media.Core.ITimedMetadataTrackFailedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Core.TimedMetadataTrackError Error()
+	{
+		Windows.Media.Core.TimedMetadataTrackError _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrackFailedEventArgs).get_Error(&_ret));
+		return _ret;
+	}
 }
 
 interface TimedTextCue : Windows.Media.Core.ITimedTextCue, Windows.Media.Core.IMediaCue
 {
+extern(Windows):
+	final Windows.Media.Core.TimedTextRegion CueRegion()
+	{
+		Windows.Media.Core.TimedTextRegion _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextCue).get_CueRegion(&_ret));
+		return _ret;
+	}
+	final void CueRegion(Windows.Media.Core.TimedTextRegion value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextCue).set_CueRegion(value));
+	}
+	final Windows.Media.Core.TimedTextStyle CueStyle()
+	{
+		Windows.Media.Core.TimedTextStyle _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextCue).get_CueStyle(&_ret));
+		return _ret;
+	}
+	final void CueStyle(Windows.Media.Core.TimedTextStyle value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextCue).set_CueStyle(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Core.TimedTextLine) Lines()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Core.TimedTextLine) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextCue).get_Lines(&_ret));
+		return _ret;
+	}
+	final void StartTime(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_StartTime(value));
+	}
+	final Windows.Foundation.TimeSpan StartTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_StartTime(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_Duration(value));
+	}
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Duration(&_ret));
+		return _ret;
+	}
+	final void Id(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).set_Id(value));
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Id(&_ret));
+		return _ret;
+	}
 }
 
 interface TimedTextLine : Windows.Media.Core.ITimedTextLine
 {
+extern(Windows):
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextLine).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextLine).set_Text(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.Core.TimedTextSubformat) Subformats()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.Core.TimedTextSubformat) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextLine).get_Subformats(&_ret));
+		return _ret;
+	}
 }
 
 interface TimedTextRegion : Windows.Media.Core.ITimedTextRegion
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).set_Name(value));
+	}
+	final Windows.Media.Core.TimedTextPoint Position()
+	{
+		Windows.Media.Core.TimedTextPoint _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).get_Position(&_ret));
+		return _ret;
+	}
+	final void Position(Windows.Media.Core.TimedTextPoint value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).set_Position(value));
+	}
+	final Windows.Media.Core.TimedTextSize Extent()
+	{
+		Windows.Media.Core.TimedTextSize _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).get_Extent(&_ret));
+		return _ret;
+	}
+	final void Extent(Windows.Media.Core.TimedTextSize value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).set_Extent(value));
+	}
+	final Windows.UI.Color Background()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).get_Background(&_ret));
+		return _ret;
+	}
+	final void Background(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).set_Background(value));
+	}
+	final Windows.Media.Core.TimedTextWritingMode WritingMode()
+	{
+		Windows.Media.Core.TimedTextWritingMode _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).get_WritingMode(&_ret));
+		return _ret;
+	}
+	final void WritingMode(Windows.Media.Core.TimedTextWritingMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).set_WritingMode(value));
+	}
+	final Windows.Media.Core.TimedTextDisplayAlignment DisplayAlignment()
+	{
+		Windows.Media.Core.TimedTextDisplayAlignment _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).get_DisplayAlignment(&_ret));
+		return _ret;
+	}
+	final void DisplayAlignment(Windows.Media.Core.TimedTextDisplayAlignment value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).set_DisplayAlignment(value));
+	}
+	final Windows.Media.Core.TimedTextDouble LineHeight()
+	{
+		Windows.Media.Core.TimedTextDouble _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).get_LineHeight(&_ret));
+		return _ret;
+	}
+	final void LineHeight(Windows.Media.Core.TimedTextDouble value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).set_LineHeight(value));
+	}
+	final bool IsOverflowClipped()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).get_IsOverflowClipped(&_ret));
+		return _ret;
+	}
+	final void IsOverflowClipped(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).set_IsOverflowClipped(value));
+	}
+	final Windows.Media.Core.TimedTextPadding Padding()
+	{
+		Windows.Media.Core.TimedTextPadding _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).get_Padding(&_ret));
+		return _ret;
+	}
+	final void Padding(Windows.Media.Core.TimedTextPadding value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).set_Padding(value));
+	}
+	final Windows.Media.Core.TimedTextWrapping TextWrapping()
+	{
+		Windows.Media.Core.TimedTextWrapping _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).get_TextWrapping(&_ret));
+		return _ret;
+	}
+	final void TextWrapping(Windows.Media.Core.TimedTextWrapping value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).set_TextWrapping(value));
+	}
+	final INT32 ZIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).get_ZIndex(&_ret));
+		return _ret;
+	}
+	final void ZIndex(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).set_ZIndex(value));
+	}
+	final Windows.Media.Core.TimedTextScrollMode ScrollMode()
+	{
+		Windows.Media.Core.TimedTextScrollMode _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).get_ScrollMode(&_ret));
+		return _ret;
+	}
+	final void ScrollMode(Windows.Media.Core.TimedTextScrollMode value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).set_ScrollMode(value));
+	}
 }
 
 interface TimedTextSource : Windows.Media.Core.ITimedTextSource
@@ -1266,42 +2795,394 @@ interface TimedTextSource : Windows.Media.Core.ITimedTextSource
 
 interface TimedTextSourceResolveResultEventArgs : Windows.Media.Core.ITimedTextSourceResolveResultEventArgs
 {
+extern(Windows):
+	final Windows.Media.Core.TimedMetadataTrackError Error()
+	{
+		Windows.Media.Core.TimedMetadataTrackError _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextSourceResolveResultEventArgs).get_Error(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack) Tracks()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack) _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextSourceResolveResultEventArgs).get_Tracks(&_ret));
+		return _ret;
+	}
 }
 
 interface TimedTextStyle : Windows.Media.Core.ITimedTextStyle, Windows.Media.Core.ITimedTextStyle2
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).set_Name(value));
+	}
+	final HSTRING FontFamily()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).get_FontFamily(&_ret));
+		return _ret;
+	}
+	final void FontFamily(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).set_FontFamily(value));
+	}
+	final Windows.Media.Core.TimedTextDouble FontSize()
+	{
+		Windows.Media.Core.TimedTextDouble _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).get_FontSize(&_ret));
+		return _ret;
+	}
+	final void FontSize(Windows.Media.Core.TimedTextDouble value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).set_FontSize(value));
+	}
+	final Windows.Media.Core.TimedTextWeight FontWeight()
+	{
+		Windows.Media.Core.TimedTextWeight _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).get_FontWeight(&_ret));
+		return _ret;
+	}
+	final void FontWeight(Windows.Media.Core.TimedTextWeight value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).set_FontWeight(value));
+	}
+	final Windows.UI.Color Foreground()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).get_Foreground(&_ret));
+		return _ret;
+	}
+	final void Foreground(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).set_Foreground(value));
+	}
+	final Windows.UI.Color Background()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).get_Background(&_ret));
+		return _ret;
+	}
+	final void Background(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).set_Background(value));
+	}
+	final bool IsBackgroundAlwaysShown()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).get_IsBackgroundAlwaysShown(&_ret));
+		return _ret;
+	}
+	final void IsBackgroundAlwaysShown(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).set_IsBackgroundAlwaysShown(value));
+	}
+	final Windows.Media.Core.TimedTextFlowDirection FlowDirection()
+	{
+		Windows.Media.Core.TimedTextFlowDirection _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).get_FlowDirection(&_ret));
+		return _ret;
+	}
+	final void FlowDirection(Windows.Media.Core.TimedTextFlowDirection value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).set_FlowDirection(value));
+	}
+	final Windows.Media.Core.TimedTextLineAlignment LineAlignment()
+	{
+		Windows.Media.Core.TimedTextLineAlignment _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).get_LineAlignment(&_ret));
+		return _ret;
+	}
+	final void LineAlignment(Windows.Media.Core.TimedTextLineAlignment value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).set_LineAlignment(value));
+	}
+	final Windows.UI.Color OutlineColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).get_OutlineColor(&_ret));
+		return _ret;
+	}
+	final void OutlineColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).set_OutlineColor(value));
+	}
+	final Windows.Media.Core.TimedTextDouble OutlineThickness()
+	{
+		Windows.Media.Core.TimedTextDouble _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).get_OutlineThickness(&_ret));
+		return _ret;
+	}
+	final void OutlineThickness(Windows.Media.Core.TimedTextDouble value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).set_OutlineThickness(value));
+	}
+	final Windows.Media.Core.TimedTextDouble OutlineRadius()
+	{
+		Windows.Media.Core.TimedTextDouble _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).get_OutlineRadius(&_ret));
+		return _ret;
+	}
+	final void OutlineRadius(Windows.Media.Core.TimedTextDouble value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle).set_OutlineRadius(value));
+	}
+	final Windows.Media.Core.TimedTextFontStyle FontStyle()
+	{
+		Windows.Media.Core.TimedTextFontStyle _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle2).get_FontStyle(&_ret));
+		return _ret;
+	}
+	final void FontStyle(Windows.Media.Core.TimedTextFontStyle value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle2).set_FontStyle(value));
+	}
+	final bool IsUnderlineEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle2).get_IsUnderlineEnabled(&_ret));
+		return _ret;
+	}
+	final void IsUnderlineEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle2).set_IsUnderlineEnabled(value));
+	}
+	final bool IsLineThroughEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle2).get_IsLineThroughEnabled(&_ret));
+		return _ret;
+	}
+	final void IsLineThroughEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle2).set_IsLineThroughEnabled(value));
+	}
+	final bool IsOverlineEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle2).get_IsOverlineEnabled(&_ret));
+		return _ret;
+	}
+	final void IsOverlineEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle2).set_IsOverlineEnabled(value));
+	}
 }
 
 interface TimedTextSubformat : Windows.Media.Core.ITimedTextSubformat
 {
+extern(Windows):
+	final INT32 StartIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextSubformat).get_StartIndex(&_ret));
+		return _ret;
+	}
+	final void StartIndex(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextSubformat).set_StartIndex(value));
+	}
+	final INT32 Length()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextSubformat).get_Length(&_ret));
+		return _ret;
+	}
+	final void Length(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextSubformat).set_Length(value));
+	}
+	final Windows.Media.Core.TimedTextStyle SubformatStyle()
+	{
+		Windows.Media.Core.TimedTextStyle _ret;
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextSubformat).get_SubformatStyle(&_ret));
+		return _ret;
+	}
+	final void SubformatStyle(Windows.Media.Core.TimedTextStyle value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextSubformat).set_SubformatStyle(value));
+	}
 }
 
 interface VideoStabilizationEffect : Windows.Media.Core.IVideoStabilizationEffect, Windows.Media.IMediaExtension
 {
+extern(Windows):
+	final void Enabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IVideoStabilizationEffect).set_Enabled(value));
+	}
+	final bool Enabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IVideoStabilizationEffect).get_Enabled(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Capture.VideoStreamConfiguration GetRecommendedStreamConfiguration(Windows.Media.Devices.VideoDeviceController controller, Windows.Media.MediaProperties.VideoEncodingProperties desiredProperties)
+	{
+		Windows.Media.Capture.VideoStreamConfiguration _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IVideoStabilizationEffect).abi_GetRecommendedStreamConfiguration(controller, desiredProperties, &_ret));
+		return _ret;
+	}
+	final void SetProperties(Windows.Foundation.Collections.IPropertySet configuration)
+	{
+		Debug.OK(this.as!(Windows.Media.IMediaExtension).abi_SetProperties(configuration));
+	}
 }
 
 interface VideoStabilizationEffectDefinition : Windows.Media.Effects.IVideoEffectDefinition
 {
+extern(Windows):
+	final HSTRING ActivatableClassId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_ActivatableClassId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoStabilizationEffectEnabledChangedEventArgs : Windows.Media.Core.IVideoStabilizationEffectEnabledChangedEventArgs
 {
+extern(Windows):
+	final Windows.Media.Core.VideoStabilizationEffectEnabledChangedReason Reason()
+	{
+		Windows.Media.Core.VideoStabilizationEffectEnabledChangedReason _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IVideoStabilizationEffectEnabledChangedEventArgs).get_Reason(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoStreamDescriptor : Windows.Media.Core.IVideoStreamDescriptor, Windows.Media.Core.IMediaStreamDescriptor
 {
+extern(Windows):
+	final Windows.Media.MediaProperties.VideoEncodingProperties EncodingProperties()
+	{
+		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IVideoStreamDescriptor).get_EncodingProperties(&_ret));
+		return _ret;
+	}
+	final bool IsSelected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamDescriptor).get_IsSelected(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamDescriptor).set_Name(value));
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamDescriptor).get_Name(&_ret));
+		return _ret;
+	}
+	final void Language(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamDescriptor).set_Language(value));
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamDescriptor).get_Language(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoTrack : Windows.Media.Core.IMediaTrack, Windows.Media.Core.IVideoTrack
 {
+extern(Windows):
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_Id(&_ret));
+		return _ret;
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_Language(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaTrackKind TrackKind()
+	{
+		Windows.Media.Core.MediaTrackKind _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_TrackKind(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).set_Label(value));
+	}
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_Label(&_ret));
+		return _ret;
+	}
+	final Windows.Media.MediaProperties.VideoEncodingProperties GetEncodingProperties()
+	{
+		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IVideoTrack).abi_GetEncodingProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Playback.MediaPlaybackItem PlaybackItem()
+	{
+		Windows.Media.Playback.MediaPlaybackItem _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IVideoTrack).get_PlaybackItem(&_ret));
+		return _ret;
+	}
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IVideoTrack).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.VideoTrackSupportInfo SupportInfo()
+	{
+		Windows.Media.Core.VideoTrackSupportInfo _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IVideoTrack).get_SupportInfo(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoTrackOpenFailedEventArgs : Windows.Media.Core.IVideoTrackOpenFailedEventArgs
 {
+extern(Windows):
+	final HRESULT ExtendedError()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IVideoTrackOpenFailedEventArgs).get_ExtendedError(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoTrackSupportInfo : Windows.Media.Core.IVideoTrackSupportInfo
 {
+extern(Windows):
+	final Windows.Media.Core.MediaDecoderStatus DecoderStatus()
+	{
+		Windows.Media.Core.MediaDecoderStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IVideoTrackSupportInfo).get_DecoderStatus(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Core.MediaSourceStatus MediaSourceStatus()
+	{
+		Windows.Media.Core.MediaSourceStatus _ret;
+		Debug.OK(this.as!(Windows.Media.Core.IVideoTrackSupportInfo).get_MediaSourceStatus(&_ret));
+		return _ret;
+	}
 }
 
 enum AudioDecoderDegradation

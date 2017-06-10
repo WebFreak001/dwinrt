@@ -277,22 +277,179 @@ extern(Windows):
 
 interface BitmapImage : Windows.UI.Xaml.Media.Imaging.BitmapSource, Windows.UI.Xaml.Media.Imaging.IBitmapImage, Windows.UI.Xaml.Media.Imaging.IBitmapImage2, Windows.UI.Xaml.Media.Imaging.IBitmapImage3
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Imaging.BitmapCreateOptions CreateOptions()
+	{
+		Windows.UI.Xaml.Media.Imaging.BitmapCreateOptions _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).get_CreateOptions(&_ret));
+		return _ret;
+	}
+	final void CreateOptions(Windows.UI.Xaml.Media.Imaging.BitmapCreateOptions value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).set_CreateOptions(value));
+	}
+	final Windows.Foundation.Uri UriSource()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).get_UriSource(&_ret));
+		return _ret;
+	}
+	final void UriSource(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).set_UriSource(value));
+	}
+	final INT32 DecodePixelWidth()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).get_DecodePixelWidth(&_ret));
+		return _ret;
+	}
+	final void DecodePixelWidth(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).set_DecodePixelWidth(value));
+	}
+	final INT32 DecodePixelHeight()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).get_DecodePixelHeight(&_ret));
+		return _ret;
+	}
+	final void DecodePixelHeight(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).set_DecodePixelHeight(value));
+	}
+	final Windows.UI.Xaml.Media.Imaging.DecodePixelType DecodePixelType()
+	{
+		Windows.UI.Xaml.Media.Imaging.DecodePixelType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage2).get_DecodePixelType(&_ret));
+		return _ret;
+	}
+	final void DecodePixelType(Windows.UI.Xaml.Media.Imaging.DecodePixelType value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage2).set_DecodePixelType(value));
+	}
+	final bool IsAnimatedBitmap()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage3).get_IsAnimatedBitmap(&_ret));
+		return _ret;
+	}
+	final bool IsPlaying()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage3).get_IsPlaying(&_ret));
+		return _ret;
+	}
+	final bool AutoPlay()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage3).get_AutoPlay(&_ret));
+		return _ret;
+	}
+	final void AutoPlay(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage3).set_AutoPlay(value));
+	}
+	final void Play()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage3).abi_Play());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage3).abi_Stop());
+	}
 }
 
 interface BitmapSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.IBitmapSource
 {
+extern(Windows):
+	final INT32 PixelWidth()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).get_PixelWidth(&_ret));
+		return _ret;
+	}
+	final INT32 PixelHeight()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).get_PixelHeight(&_ret));
+		return _ret;
+	}
+	final void SetSource(Windows.Storage.Streams.IRandomAccessStream streamSource)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).abi_SetSource(streamSource));
+	}
+	final Windows.Foundation.IAsyncAction SetSourceAsync(Windows.Storage.Streams.IRandomAccessStream streamSource)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).abi_SetSourceAsync(streamSource, &_ret));
+		return _ret;
+	}
 }
 
 interface DownloadProgressEventArgs : Windows.UI.Xaml.Media.Imaging.IDownloadProgressEventArgs
 {
+extern(Windows):
+	final INT32 Progress()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IDownloadProgressEventArgs).get_Progress(&_ret));
+		return _ret;
+	}
+	final void Progress(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IDownloadProgressEventArgs).set_Progress(value));
+	}
 }
 
 interface RenderTargetBitmap : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap
 {
+extern(Windows):
+	final INT32 PixelWidth()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap).get_PixelWidth(&_ret));
+		return _ret;
+	}
+	final INT32 PixelHeight()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap).get_PixelHeight(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RenderAsync(Windows.UI.Xaml.UIElement element)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap).abi_RenderAsync(element, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction RenderToSizeAsync(Windows.UI.Xaml.UIElement element, INT32 scaledWidth, INT32 scaledHeight)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap).abi_RenderToSizeAsync(element, scaledWidth, scaledHeight, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) GetPixelsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap).abi_GetPixelsAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface SoftwareBitmapSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.ISoftwareBitmapSource, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction SetBitmapAsync(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISoftwareBitmapSource).abi_SetBitmapAsync(softwareBitmap, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface SurfaceImageSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.ISurfaceImageSource
@@ -301,10 +458,54 @@ interface SurfaceImageSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xam
 
 interface SvgImageSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.ISvgImageSource
 {
+extern(Windows):
+	final Windows.Foundation.Uri UriSource()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).get_UriSource(&_ret));
+		return _ret;
+	}
+	final void UriSource(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_UriSource(value));
+	}
+	final double RasterizePixelWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).get_RasterizePixelWidth(&_ret));
+		return _ret;
+	}
+	final void RasterizePixelWidth(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_RasterizePixelWidth(value));
+	}
+	final double RasterizePixelHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).get_RasterizePixelHeight(&_ret));
+		return _ret;
+	}
+	final void RasterizePixelHeight(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_RasterizePixelHeight(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus) SetSourceAsync(Windows.Storage.Streams.IRandomAccessStream streamSource)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).abi_SetSourceAsync(streamSource, &_ret));
+		return _ret;
+	}
 }
 
 interface SvgImageSourceFailedEventArgs : Windows.UI.Xaml.Media.Imaging.ISvgImageSourceFailedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus Status()
+	{
+		Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSourceFailedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface SvgImageSourceOpenedEventArgs : Windows.UI.Xaml.Media.Imaging.ISvgImageSourceOpenedEventArgs
@@ -317,10 +518,26 @@ interface VirtualSurfaceImageSource : Windows.UI.Xaml.Media.Imaging.SurfaceImage
 
 interface WriteableBitmap : Windows.UI.Xaml.Media.Imaging.BitmapSource, Windows.UI.Xaml.Media.Imaging.IWriteableBitmap
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer PixelBuffer()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IWriteableBitmap).get_PixelBuffer(&_ret));
+		return _ret;
+	}
+	final void Invalidate()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IWriteableBitmap).abi_Invalidate());
+	}
 }
 
 interface XamlRenderingBackgroundTask : Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTask, Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTaskOverrides
 {
+extern(Windows):
+	final void OnRun(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTaskOverrides).abi_OnRun(taskInstance));
+	}
 }
 
 @bitflags

@@ -91,26 +91,214 @@ extern(Windows):
 
 interface HttpDiagnosticProvider : Windows.Web.Http.Diagnostics.IHttpDiagnosticProvider
 {
+extern(Windows):
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProvider).abi_Start());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProvider).abi_Stop());
+	}
 }
 
 interface HttpDiagnosticProviderRequestResponseCompletedEventArgs : Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseCompletedEventArgs
 {
+extern(Windows):
+	final GUID ActivityId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseCompletedEventArgs).get_ActivityId(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestResponseTimestamps Timestamps()
+	{
+		Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestResponseTimestamps _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseCompletedEventArgs).get_Timestamps(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri RequestedUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseCompletedEventArgs).get_RequestedUri(&_ret));
+		return _ret;
+	}
+	final UINT32 ProcessId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseCompletedEventArgs).get_ProcessId(&_ret));
+		return _ret;
+	}
+	final UINT32 ThreadId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseCompletedEventArgs).get_ThreadId(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Diagnostics.HttpDiagnosticRequestInitiator Initiator()
+	{
+		Windows.Web.Http.Diagnostics.HttpDiagnosticRequestInitiator _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseCompletedEventArgs).get_Initiator(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Diagnostics.HttpDiagnosticSourceLocation) SourceLocations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Diagnostics.HttpDiagnosticSourceLocation) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseCompletedEventArgs).get_SourceLocations(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpDiagnosticProviderRequestResponseTimestamps : Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseTimestamps
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) CacheCheckedTimestamp()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseTimestamps).get_CacheCheckedTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ConnectionInitiatedTimestamp()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseTimestamps).get_ConnectionInitiatedTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) NameResolvedTimestamp()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseTimestamps).get_NameResolvedTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) SslNegotiatedTimestamp()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseTimestamps).get_SslNegotiatedTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ConnectionCompletedTimestamp()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseTimestamps).get_ConnectionCompletedTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) RequestSentTimestamp()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseTimestamps).get_RequestSentTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) RequestCompletedTimestamp()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseTimestamps).get_RequestCompletedTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ResponseReceivedTimestamp()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseTimestamps).get_ResponseReceivedTimestamp(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ResponseCompletedTimestamp()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseTimestamps).get_ResponseCompletedTimestamp(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpDiagnosticProviderRequestSentEventArgs : Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestSentEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestSentEventArgs).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final GUID ActivityId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestSentEventArgs).get_ActivityId(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.HttpRequestMessage Message()
+	{
+		Windows.Web.Http.HttpRequestMessage _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestSentEventArgs).get_Message(&_ret));
+		return _ret;
+	}
+	final UINT32 ProcessId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestSentEventArgs).get_ProcessId(&_ret));
+		return _ret;
+	}
+	final UINT32 ThreadId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestSentEventArgs).get_ThreadId(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.Diagnostics.HttpDiagnosticRequestInitiator Initiator()
+	{
+		Windows.Web.Http.Diagnostics.HttpDiagnosticRequestInitiator _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestSentEventArgs).get_Initiator(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Diagnostics.HttpDiagnosticSourceLocation) SourceLocations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Diagnostics.HttpDiagnosticSourceLocation) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestSentEventArgs).get_SourceLocations(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpDiagnosticProviderResponseReceivedEventArgs : Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderResponseReceivedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.DateTime Timestamp()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderResponseReceivedEventArgs).get_Timestamp(&_ret));
+		return _ret;
+	}
+	final GUID ActivityId()
+	{
+		GUID _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderResponseReceivedEventArgs).get_ActivityId(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.HttpResponseMessage Message()
+	{
+		Windows.Web.Http.HttpResponseMessage _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderResponseReceivedEventArgs).get_Message(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpDiagnosticSourceLocation : Windows.Web.Http.Diagnostics.IHttpDiagnosticSourceLocation
 {
+extern(Windows):
+	final Windows.Foundation.Uri SourceUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticSourceLocation).get_SourceUri(&_ret));
+		return _ret;
+	}
+	final UINT64 LineNumber()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticSourceLocation).get_LineNumber(&_ret));
+		return _ret;
+	}
+	final UINT64 ColumnNumber()
+	{
+		UINT64 _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticSourceLocation).get_ColumnNumber(&_ret));
+		return _ret;
+	}
 }
 
 enum HttpDiagnosticRequestInitiator

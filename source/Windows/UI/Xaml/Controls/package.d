@@ -7258,78 +7258,1315 @@ extern(Windows):
 
 interface AppBar : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IAppBar, Windows.UI.Xaml.Controls.IAppBarOverrides, Windows.UI.Xaml.Controls.IAppBar2, Windows.UI.Xaml.Controls.IAppBar3, Windows.UI.Xaml.Controls.IAppBarOverrides3, Windows.UI.Xaml.Controls.IAppBar4
 {
+extern(Windows):
+	final bool IsOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar).get_IsOpen(&_ret));
+		return _ret;
+	}
+	final void IsOpen(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar).set_IsOpen(value));
+	}
+	final bool IsSticky()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar).get_IsSticky(&_ret));
+		return _ret;
+	}
+	final void IsSticky(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar).set_IsSticky(value));
+	}
+	final void OnClosed(IInspectable e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarOverrides).abi_OnClosed(e));
+	}
+	final void OnOpened(IInspectable e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarOverrides).abi_OnOpened(e));
+	}
+	final Windows.UI.Xaml.Controls.AppBarClosedDisplayMode ClosedDisplayMode()
+	{
+		Windows.UI.Xaml.Controls.AppBarClosedDisplayMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar2).get_ClosedDisplayMode(&_ret));
+		return _ret;
+	}
+	final void ClosedDisplayMode(Windows.UI.Xaml.Controls.AppBarClosedDisplayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar2).set_ClosedDisplayMode(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.AppBarTemplateSettings TemplateSettings()
+	{
+		Windows.UI.Xaml.Controls.Primitives.AppBarTemplateSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar3).get_TemplateSettings(&_ret));
+		return _ret;
+	}
+	final void OnClosing(IInspectable e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarOverrides3).abi_OnClosing(e));
+	}
+	final void OnOpening(IInspectable e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarOverrides3).abi_OnOpening(e));
+	}
+	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
+	{
+		Windows.UI.Xaml.Controls.LightDismissOverlayMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar4).get_LightDismissOverlayMode(&_ret));
+		return _ret;
+	}
+	final void LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar4).set_LightDismissOverlayMode(value));
+	}
 }
 
 interface AppBarButton : Windows.UI.Xaml.Controls.Button, Windows.UI.Xaml.Controls.IAppBarButton, Windows.UI.Xaml.Controls.ICommandBarElement, Windows.UI.Xaml.Controls.IAppBarButton3, Windows.UI.Xaml.Controls.ICommandBarElement2
 {
+extern(Windows):
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarButton).get_Label(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarButton).set_Label(value));
+	}
+	final Windows.UI.Xaml.Controls.IconElement Icon()
+	{
+		Windows.UI.Xaml.Controls.IconElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarButton).get_Icon(&_ret));
+		return _ret;
+	}
+	final void Icon(Windows.UI.Xaml.Controls.IconElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarButton).set_Icon(value));
+	}
+	final bool IsCompact()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement).get_IsCompact(&_ret));
+		return _ret;
+	}
+	final void IsCompact(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement).set_IsCompact(value));
+	}
+	final Windows.UI.Xaml.Controls.CommandBarLabelPosition LabelPosition()
+	{
+		Windows.UI.Xaml.Controls.CommandBarLabelPosition _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarButton3).get_LabelPosition(&_ret));
+		return _ret;
+	}
+	final void LabelPosition(Windows.UI.Xaml.Controls.CommandBarLabelPosition value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarButton3).set_LabelPosition(value));
+	}
+	final bool IsInOverflow()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).get_IsInOverflow(&_ret));
+		return _ret;
+	}
+	final INT32 DynamicOverflowOrder()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).get_DynamicOverflowOrder(&_ret));
+		return _ret;
+	}
+	final void DynamicOverflowOrder(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).set_DynamicOverflowOrder(value));
+	}
 }
 
 interface AppBarSeparator : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IAppBarSeparator, Windows.UI.Xaml.Controls.ICommandBarElement, Windows.UI.Xaml.Controls.ICommandBarElement2
 {
+extern(Windows):
+	final bool IsCompact()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement).get_IsCompact(&_ret));
+		return _ret;
+	}
+	final void IsCompact(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement).set_IsCompact(value));
+	}
+	final bool IsInOverflow()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).get_IsInOverflow(&_ret));
+		return _ret;
+	}
+	final INT32 DynamicOverflowOrder()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).get_DynamicOverflowOrder(&_ret));
+		return _ret;
+	}
+	final void DynamicOverflowOrder(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).set_DynamicOverflowOrder(value));
+	}
 }
 
 interface AppBarToggleButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.UI.Xaml.Controls.IAppBarToggleButton, Windows.UI.Xaml.Controls.ICommandBarElement, Windows.UI.Xaml.Controls.IAppBarToggleButton3, Windows.UI.Xaml.Controls.ICommandBarElement2
 {
+extern(Windows):
+	final HSTRING Label()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarToggleButton).get_Label(&_ret));
+		return _ret;
+	}
+	final void Label(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarToggleButton).set_Label(value));
+	}
+	final Windows.UI.Xaml.Controls.IconElement Icon()
+	{
+		Windows.UI.Xaml.Controls.IconElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarToggleButton).get_Icon(&_ret));
+		return _ret;
+	}
+	final void Icon(Windows.UI.Xaml.Controls.IconElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarToggleButton).set_Icon(value));
+	}
+	final bool IsCompact()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement).get_IsCompact(&_ret));
+		return _ret;
+	}
+	final void IsCompact(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement).set_IsCompact(value));
+	}
+	final Windows.UI.Xaml.Controls.CommandBarLabelPosition LabelPosition()
+	{
+		Windows.UI.Xaml.Controls.CommandBarLabelPosition _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarToggleButton3).get_LabelPosition(&_ret));
+		return _ret;
+	}
+	final void LabelPosition(Windows.UI.Xaml.Controls.CommandBarLabelPosition value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarToggleButton3).set_LabelPosition(value));
+	}
+	final bool IsInOverflow()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).get_IsInOverflow(&_ret));
+		return _ret;
+	}
+	final INT32 DynamicOverflowOrder()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).get_DynamicOverflowOrder(&_ret));
+		return _ret;
+	}
+	final void DynamicOverflowOrder(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).set_DynamicOverflowOrder(value));
+	}
 }
 
 interface AutoSuggestBox : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.IAutoSuggestBox, Windows.UI.Xaml.Controls.IAutoSuggestBox2, Windows.UI.Xaml.Controls.IAutoSuggestBox3
 {
+extern(Windows):
+	final double MaxSuggestionListHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).get_MaxSuggestionListHeight(&_ret));
+		return _ret;
+	}
+	final void MaxSuggestionListHeight(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).set_MaxSuggestionListHeight(value));
+	}
+	final bool IsSuggestionListOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).get_IsSuggestionListOpen(&_ret));
+		return _ret;
+	}
+	final void IsSuggestionListOpen(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).set_IsSuggestionListOpen(value));
+	}
+	final HSTRING TextMemberPath()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).get_TextMemberPath(&_ret));
+		return _ret;
+	}
+	final void TextMemberPath(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).set_TextMemberPath(value));
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).set_Text(value));
+	}
+	final bool UpdateTextOnSelect()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).get_UpdateTextOnSelect(&_ret));
+		return _ret;
+	}
+	final void UpdateTextOnSelect(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).set_UpdateTextOnSelect(value));
+	}
+	final HSTRING PlaceholderText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).get_PlaceholderText(&_ret));
+		return _ret;
+	}
+	final void PlaceholderText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).set_PlaceholderText(value));
+	}
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).set_Header(value));
+	}
+	final bool AutoMaximizeSuggestionArea()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).get_AutoMaximizeSuggestionArea(&_ret));
+		return _ret;
+	}
+	final void AutoMaximizeSuggestionArea(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).set_AutoMaximizeSuggestionArea(value));
+	}
+	final Windows.UI.Xaml.Style TextBoxStyle()
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).get_TextBoxStyle(&_ret));
+		return _ret;
+	}
+	final void TextBoxStyle(Windows.UI.Xaml.Style value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).set_TextBoxStyle(value));
+	}
+	final Windows.UI.Xaml.Controls.IconElement QueryIcon()
+	{
+		Windows.UI.Xaml.Controls.IconElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox2).get_QueryIcon(&_ret));
+		return _ret;
+	}
+	final void QueryIcon(Windows.UI.Xaml.Controls.IconElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox2).set_QueryIcon(value));
+	}
+	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
+	{
+		Windows.UI.Xaml.Controls.LightDismissOverlayMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox3).get_LightDismissOverlayMode(&_ret));
+		return _ret;
+	}
+	final void LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox3).set_LightDismissOverlayMode(value));
+	}
 }
 
 interface AutoSuggestBoxQuerySubmittedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IAutoSuggestBoxQuerySubmittedEventArgs
 {
+extern(Windows):
+	final HSTRING QueryText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBoxQuerySubmittedEventArgs).get_QueryText(&_ret));
+		return _ret;
+	}
+	final IInspectable ChosenSuggestion()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBoxQuerySubmittedEventArgs).get_ChosenSuggestion(&_ret));
+		return _ret;
+	}
 }
 
 interface AutoSuggestBoxSuggestionChosenEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IAutoSuggestBoxSuggestionChosenEventArgs
 {
+extern(Windows):
+	final IInspectable SelectedItem()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBoxSuggestionChosenEventArgs).get_SelectedItem(&_ret));
+		return _ret;
+	}
 }
 
 interface AutoSuggestBoxTextChangedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IAutoSuggestBoxTextChangedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.AutoSuggestionBoxTextChangeReason Reason()
+	{
+		Windows.UI.Xaml.Controls.AutoSuggestionBoxTextChangeReason _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBoxTextChangedEventArgs).get_Reason(&_ret));
+		return _ret;
+	}
+	final void Reason(Windows.UI.Xaml.Controls.AutoSuggestionBoxTextChangeReason value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBoxTextChangedEventArgs).set_Reason(value));
+	}
+	final bool CheckCurrent()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBoxTextChangedEventArgs).abi_CheckCurrent(&_ret));
+		return _ret;
+	}
 }
 
 interface BackClickEventArgs : Windows.UI.Xaml.Controls.IBackClickEventArgs
 {
+extern(Windows):
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBackClickEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBackClickEventArgs).set_Handled(value));
+	}
 }
 
 interface BitmapIcon : Windows.UI.Xaml.Controls.IconElement, Windows.UI.Xaml.Controls.IBitmapIcon, Windows.UI.Xaml.Controls.IBitmapIcon2
 {
+extern(Windows):
+	final Windows.Foundation.Uri UriSource()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBitmapIcon).get_UriSource(&_ret));
+		return _ret;
+	}
+	final void UriSource(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBitmapIcon).set_UriSource(value));
+	}
+	final bool ShowAsMonochrome()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBitmapIcon2).get_ShowAsMonochrome(&_ret));
+		return _ret;
+	}
+	final void ShowAsMonochrome(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBitmapIcon2).set_ShowAsMonochrome(value));
+	}
 }
 
 interface Border : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IBorder
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Brush BorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).get_BorderBrush(&_ret));
+		return _ret;
+	}
+	final void BorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).set_BorderBrush(value));
+	}
+	final Windows.UI.Xaml.Thickness BorderThickness()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).get_BorderThickness(&_ret));
+		return _ret;
+	}
+	final void BorderThickness(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).set_BorderThickness(value));
+	}
+	final Windows.UI.Xaml.Media.Brush Background()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).get_Background(&_ret));
+		return _ret;
+	}
+	final void Background(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).set_Background(value));
+	}
+	final Windows.UI.Xaml.CornerRadius CornerRadius()
+	{
+		Windows.UI.Xaml.CornerRadius _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).get_CornerRadius(&_ret));
+		return _ret;
+	}
+	final void CornerRadius(Windows.UI.Xaml.CornerRadius value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).set_CornerRadius(value));
+	}
+	final Windows.UI.Xaml.Thickness Padding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).get_Padding(&_ret));
+		return _ret;
+	}
+	final void Padding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).set_Padding(value));
+	}
+	final Windows.UI.Xaml.UIElement Child()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).get_Child(&_ret));
+		return _ret;
+	}
+	final void Child(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).set_Child(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.TransitionCollection ChildTransitions()
+	{
+		Windows.UI.Xaml.Media.Animation.TransitionCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).get_ChildTransitions(&_ret));
+		return _ret;
+	}
+	final void ChildTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBorder).set_ChildTransitions(value));
+	}
 }
 
 interface Button : Windows.UI.Xaml.Controls.Primitives.ButtonBase, Windows.UI.Xaml.Controls.IButton, Windows.UI.Xaml.Controls.IButtonWithFlyout
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Primitives.FlyoutBase Flyout()
+	{
+		Windows.UI.Xaml.Controls.Primitives.FlyoutBase _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IButtonWithFlyout).get_Flyout(&_ret));
+		return _ret;
+	}
+	final void Flyout(Windows.UI.Xaml.Controls.Primitives.FlyoutBase value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IButtonWithFlyout).set_Flyout(value));
+	}
 }
 
 interface CalendarDatePicker : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ICalendarDatePicker, Windows.UI.Xaml.Controls.ICalendarDatePicker2
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Date()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_Date(&_ret));
+		return _ret;
+	}
+	final void Date(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_Date(value));
+	}
+	final bool IsCalendarOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_IsCalendarOpen(&_ret));
+		return _ret;
+	}
+	final void IsCalendarOpen(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_IsCalendarOpen(value));
+	}
+	final HSTRING DateFormat()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_DateFormat(&_ret));
+		return _ret;
+	}
+	final void DateFormat(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_DateFormat(value));
+	}
+	final HSTRING PlaceholderText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_PlaceholderText(&_ret));
+		return _ret;
+	}
+	final void PlaceholderText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_PlaceholderText(value));
+	}
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_Header(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_HeaderTemplate(value));
+	}
+	final Windows.UI.Xaml.Style CalendarViewStyle()
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_CalendarViewStyle(&_ret));
+		return _ret;
+	}
+	final void CalendarViewStyle(Windows.UI.Xaml.Style value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_CalendarViewStyle(value));
+	}
+	final Windows.Foundation.DateTime MinDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_MinDate(&_ret));
+		return _ret;
+	}
+	final void MinDate(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_MinDate(value));
+	}
+	final Windows.Foundation.DateTime MaxDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_MaxDate(&_ret));
+		return _ret;
+	}
+	final void MaxDate(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_MaxDate(value));
+	}
+	final bool IsTodayHighlighted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_IsTodayHighlighted(&_ret));
+		return _ret;
+	}
+	final void IsTodayHighlighted(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_IsTodayHighlighted(value));
+	}
+	final Windows.UI.Xaml.Controls.CalendarViewDisplayMode DisplayMode()
+	{
+		Windows.UI.Xaml.Controls.CalendarViewDisplayMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_DisplayMode(&_ret));
+		return _ret;
+	}
+	final void DisplayMode(Windows.UI.Xaml.Controls.CalendarViewDisplayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_DisplayMode(value));
+	}
+	final Windows.Globalization.DayOfWeek FirstDayOfWeek()
+	{
+		Windows.Globalization.DayOfWeek _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_FirstDayOfWeek(&_ret));
+		return _ret;
+	}
+	final void FirstDayOfWeek(Windows.Globalization.DayOfWeek value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_FirstDayOfWeek(value));
+	}
+	final HSTRING DayOfWeekFormat()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_DayOfWeekFormat(&_ret));
+		return _ret;
+	}
+	final void DayOfWeekFormat(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_DayOfWeekFormat(value));
+	}
+	final HSTRING CalendarIdentifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_CalendarIdentifier(&_ret));
+		return _ret;
+	}
+	final void CalendarIdentifier(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_CalendarIdentifier(value));
+	}
+	final bool IsOutOfScopeEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_IsOutOfScopeEnabled(&_ret));
+		return _ret;
+	}
+	final void IsOutOfScopeEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_IsOutOfScopeEnabled(value));
+	}
+	final bool IsGroupLabelVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_IsGroupLabelVisible(&_ret));
+		return _ret;
+	}
+	final void IsGroupLabelVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_IsGroupLabelVisible(value));
+	}
+	final void SetDisplayDate(Windows.Foundation.DateTime date)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).abi_SetDisplayDate(date));
+	}
+	final void SetYearDecadeDisplayDimensions(INT32 columns, INT32 rows)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).abi_SetYearDecadeDisplayDimensions(columns, rows));
+	}
+	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
+	{
+		Windows.UI.Xaml.Controls.LightDismissOverlayMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker2).get_LightDismissOverlayMode(&_ret));
+		return _ret;
+	}
+	final void LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker2).set_LightDismissOverlayMode(value));
+	}
 }
 
 interface CalendarDatePickerDateChangedEventArgs : Windows.UI.Xaml.Controls.ICalendarDatePickerDateChangedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) NewDate()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePickerDateChangedEventArgs).get_NewDate(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) OldDate()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePickerDateChangedEventArgs).get_OldDate(&_ret));
+		return _ret;
+	}
 }
 
 interface CalendarView : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ICalendarView
 {
+extern(Windows):
+	final HSTRING CalendarIdentifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_CalendarIdentifier(&_ret));
+		return _ret;
+	}
+	final void CalendarIdentifier(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarIdentifier(value));
+	}
+	final HSTRING DayOfWeekFormat()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_DayOfWeekFormat(&_ret));
+		return _ret;
+	}
+	final void DayOfWeekFormat(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_DayOfWeekFormat(value));
+	}
+	final bool IsGroupLabelVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_IsGroupLabelVisible(&_ret));
+		return _ret;
+	}
+	final void IsGroupLabelVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_IsGroupLabelVisible(value));
+	}
+	final Windows.UI.Xaml.Controls.CalendarViewDisplayMode DisplayMode()
+	{
+		Windows.UI.Xaml.Controls.CalendarViewDisplayMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_DisplayMode(&_ret));
+		return _ret;
+	}
+	final void DisplayMode(Windows.UI.Xaml.Controls.CalendarViewDisplayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_DisplayMode(value));
+	}
+	final Windows.Globalization.DayOfWeek FirstDayOfWeek()
+	{
+		Windows.Globalization.DayOfWeek _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstDayOfWeek(&_ret));
+		return _ret;
+	}
+	final void FirstDayOfWeek(Windows.Globalization.DayOfWeek value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstDayOfWeek(value));
+	}
+	final bool IsOutOfScopeEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_IsOutOfScopeEnabled(&_ret));
+		return _ret;
+	}
+	final void IsOutOfScopeEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_IsOutOfScopeEnabled(value));
+	}
+	final bool IsTodayHighlighted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_IsTodayHighlighted(&_ret));
+		return _ret;
+	}
+	final void IsTodayHighlighted(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_IsTodayHighlighted(value));
+	}
+	final Windows.Foundation.DateTime MaxDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_MaxDate(&_ret));
+		return _ret;
+	}
+	final void MaxDate(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_MaxDate(value));
+	}
+	final Windows.Foundation.DateTime MinDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_MinDate(&_ret));
+		return _ret;
+	}
+	final void MinDate(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_MinDate(value));
+	}
+	final INT32 NumberOfWeeksInView()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_NumberOfWeeksInView(&_ret));
+		return _ret;
+	}
+	final void NumberOfWeeksInView(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_NumberOfWeeksInView(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Foundation.DateTime) SelectedDates()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_SelectedDates(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.CalendarViewSelectionMode SelectionMode()
+	{
+		Windows.UI.Xaml.Controls.CalendarViewSelectionMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_SelectionMode(&_ret));
+		return _ret;
+	}
+	final void SelectionMode(Windows.UI.Xaml.Controls.CalendarViewSelectionMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_SelectionMode(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.CalendarViewTemplateSettings TemplateSettings()
+	{
+		Windows.UI.Xaml.Controls.Primitives.CalendarViewTemplateSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_TemplateSettings(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Brush FocusBorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FocusBorderBrush(&_ret));
+		return _ret;
+	}
+	final void FocusBorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FocusBorderBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedHoverBorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_SelectedHoverBorderBrush(&_ret));
+		return _ret;
+	}
+	final void SelectedHoverBorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_SelectedHoverBorderBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedPressedBorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_SelectedPressedBorderBrush(&_ret));
+		return _ret;
+	}
+	final void SelectedPressedBorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_SelectedPressedBorderBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedBorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_SelectedBorderBrush(&_ret));
+		return _ret;
+	}
+	final void SelectedBorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_SelectedBorderBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush HoverBorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_HoverBorderBrush(&_ret));
+		return _ret;
+	}
+	final void HoverBorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_HoverBorderBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush PressedBorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_PressedBorderBrush(&_ret));
+		return _ret;
+	}
+	final void PressedBorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_PressedBorderBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush CalendarItemBorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_CalendarItemBorderBrush(&_ret));
+		return _ret;
+	}
+	final void CalendarItemBorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarItemBorderBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush OutOfScopeBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_OutOfScopeBackground(&_ret));
+		return _ret;
+	}
+	final void OutOfScopeBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_OutOfScopeBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush CalendarItemBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_CalendarItemBackground(&_ret));
+		return _ret;
+	}
+	final void CalendarItemBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarItemBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush PressedForeground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_PressedForeground(&_ret));
+		return _ret;
+	}
+	final void PressedForeground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_PressedForeground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush TodayForeground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_TodayForeground(&_ret));
+		return _ret;
+	}
+	final void TodayForeground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_TodayForeground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush BlackoutForeground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_BlackoutForeground(&_ret));
+		return _ret;
+	}
+	final void BlackoutForeground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_BlackoutForeground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedForeground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_SelectedForeground(&_ret));
+		return _ret;
+	}
+	final void SelectedForeground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_SelectedForeground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush OutOfScopeForeground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_OutOfScopeForeground(&_ret));
+		return _ret;
+	}
+	final void OutOfScopeForeground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_OutOfScopeForeground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush CalendarItemForeground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_CalendarItemForeground(&_ret));
+		return _ret;
+	}
+	final void CalendarItemForeground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarItemForeground(value));
+	}
+	final Windows.UI.Xaml.Media.FontFamily DayItemFontFamily()
+	{
+		Windows.UI.Xaml.Media.FontFamily _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_DayItemFontFamily(&_ret));
+		return _ret;
+	}
+	final void DayItemFontFamily(Windows.UI.Xaml.Media.FontFamily value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_DayItemFontFamily(value));
+	}
+	final double DayItemFontSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_DayItemFontSize(&_ret));
+		return _ret;
+	}
+	final void DayItemFontSize(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_DayItemFontSize(value));
+	}
+	final Windows.UI.Text.FontStyle DayItemFontStyle()
+	{
+		Windows.UI.Text.FontStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_DayItemFontStyle(&_ret));
+		return _ret;
+	}
+	final void DayItemFontStyle(Windows.UI.Text.FontStyle value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_DayItemFontStyle(value));
+	}
+	final Windows.UI.Text.FontWeight DayItemFontWeight()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_DayItemFontWeight(&_ret));
+		return _ret;
+	}
+	final void DayItemFontWeight(Windows.UI.Text.FontWeight value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_DayItemFontWeight(value));
+	}
+	final Windows.UI.Text.FontWeight TodayFontWeight()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_TodayFontWeight(&_ret));
+		return _ret;
+	}
+	final void TodayFontWeight(Windows.UI.Text.FontWeight value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_TodayFontWeight(value));
+	}
+	final Windows.UI.Xaml.Media.FontFamily FirstOfMonthLabelFontFamily()
+	{
+		Windows.UI.Xaml.Media.FontFamily _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfMonthLabelFontFamily(&_ret));
+		return _ret;
+	}
+	final void FirstOfMonthLabelFontFamily(Windows.UI.Xaml.Media.FontFamily value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfMonthLabelFontFamily(value));
+	}
+	final double FirstOfMonthLabelFontSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfMonthLabelFontSize(&_ret));
+		return _ret;
+	}
+	final void FirstOfMonthLabelFontSize(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfMonthLabelFontSize(value));
+	}
+	final Windows.UI.Text.FontStyle FirstOfMonthLabelFontStyle()
+	{
+		Windows.UI.Text.FontStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfMonthLabelFontStyle(&_ret));
+		return _ret;
+	}
+	final void FirstOfMonthLabelFontStyle(Windows.UI.Text.FontStyle value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfMonthLabelFontStyle(value));
+	}
+	final Windows.UI.Text.FontWeight FirstOfMonthLabelFontWeight()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfMonthLabelFontWeight(&_ret));
+		return _ret;
+	}
+	final void FirstOfMonthLabelFontWeight(Windows.UI.Text.FontWeight value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfMonthLabelFontWeight(value));
+	}
+	final Windows.UI.Xaml.Media.FontFamily MonthYearItemFontFamily()
+	{
+		Windows.UI.Xaml.Media.FontFamily _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_MonthYearItemFontFamily(&_ret));
+		return _ret;
+	}
+	final void MonthYearItemFontFamily(Windows.UI.Xaml.Media.FontFamily value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_MonthYearItemFontFamily(value));
+	}
+	final double MonthYearItemFontSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_MonthYearItemFontSize(&_ret));
+		return _ret;
+	}
+	final void MonthYearItemFontSize(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_MonthYearItemFontSize(value));
+	}
+	final Windows.UI.Text.FontStyle MonthYearItemFontStyle()
+	{
+		Windows.UI.Text.FontStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_MonthYearItemFontStyle(&_ret));
+		return _ret;
+	}
+	final void MonthYearItemFontStyle(Windows.UI.Text.FontStyle value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_MonthYearItemFontStyle(value));
+	}
+	final Windows.UI.Text.FontWeight MonthYearItemFontWeight()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_MonthYearItemFontWeight(&_ret));
+		return _ret;
+	}
+	final void MonthYearItemFontWeight(Windows.UI.Text.FontWeight value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_MonthYearItemFontWeight(value));
+	}
+	final Windows.UI.Xaml.Media.FontFamily FirstOfYearDecadeLabelFontFamily()
+	{
+		Windows.UI.Xaml.Media.FontFamily _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfYearDecadeLabelFontFamily(&_ret));
+		return _ret;
+	}
+	final void FirstOfYearDecadeLabelFontFamily(Windows.UI.Xaml.Media.FontFamily value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfYearDecadeLabelFontFamily(value));
+	}
+	final double FirstOfYearDecadeLabelFontSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfYearDecadeLabelFontSize(&_ret));
+		return _ret;
+	}
+	final void FirstOfYearDecadeLabelFontSize(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfYearDecadeLabelFontSize(value));
+	}
+	final Windows.UI.Text.FontStyle FirstOfYearDecadeLabelFontStyle()
+	{
+		Windows.UI.Text.FontStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfYearDecadeLabelFontStyle(&_ret));
+		return _ret;
+	}
+	final void FirstOfYearDecadeLabelFontStyle(Windows.UI.Text.FontStyle value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfYearDecadeLabelFontStyle(value));
+	}
+	final Windows.UI.Text.FontWeight FirstOfYearDecadeLabelFontWeight()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfYearDecadeLabelFontWeight(&_ret));
+		return _ret;
+	}
+	final void FirstOfYearDecadeLabelFontWeight(Windows.UI.Text.FontWeight value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfYearDecadeLabelFontWeight(value));
+	}
+	final Windows.UI.Xaml.HorizontalAlignment HorizontalDayItemAlignment()
+	{
+		Windows.UI.Xaml.HorizontalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_HorizontalDayItemAlignment(&_ret));
+		return _ret;
+	}
+	final void HorizontalDayItemAlignment(Windows.UI.Xaml.HorizontalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_HorizontalDayItemAlignment(value));
+	}
+	final Windows.UI.Xaml.VerticalAlignment VerticalDayItemAlignment()
+	{
+		Windows.UI.Xaml.VerticalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_VerticalDayItemAlignment(&_ret));
+		return _ret;
+	}
+	final void VerticalDayItemAlignment(Windows.UI.Xaml.VerticalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_VerticalDayItemAlignment(value));
+	}
+	final Windows.UI.Xaml.HorizontalAlignment HorizontalFirstOfMonthLabelAlignment()
+	{
+		Windows.UI.Xaml.HorizontalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_HorizontalFirstOfMonthLabelAlignment(&_ret));
+		return _ret;
+	}
+	final void HorizontalFirstOfMonthLabelAlignment(Windows.UI.Xaml.HorizontalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_HorizontalFirstOfMonthLabelAlignment(value));
+	}
+	final Windows.UI.Xaml.VerticalAlignment VerticalFirstOfMonthLabelAlignment()
+	{
+		Windows.UI.Xaml.VerticalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_VerticalFirstOfMonthLabelAlignment(&_ret));
+		return _ret;
+	}
+	final void VerticalFirstOfMonthLabelAlignment(Windows.UI.Xaml.VerticalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_VerticalFirstOfMonthLabelAlignment(value));
+	}
+	final Windows.UI.Xaml.Thickness CalendarItemBorderThickness()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_CalendarItemBorderThickness(&_ret));
+		return _ret;
+	}
+	final void CalendarItemBorderThickness(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarItemBorderThickness(value));
+	}
+	final Windows.UI.Xaml.Style CalendarViewDayItemStyle()
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).get_CalendarViewDayItemStyle(&_ret));
+		return _ret;
+	}
+	final void CalendarViewDayItemStyle(Windows.UI.Xaml.Style value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarViewDayItemStyle(value));
+	}
+	final void SetDisplayDate(Windows.Foundation.DateTime date)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).abi_SetDisplayDate(date));
+	}
+	final void SetYearDecadeDisplayDimensions(INT32 columns, INT32 rows)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).abi_SetYearDecadeDisplayDimensions(columns, rows));
+	}
 }
 
 interface CalendarViewDayItem : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ICalendarViewDayItem
 {
+extern(Windows):
+	final bool IsBlackout()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItem).get_IsBlackout(&_ret));
+		return _ret;
+	}
+	final void IsBlackout(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItem).set_IsBlackout(value));
+	}
+	final Windows.Foundation.DateTime Date()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItem).get_Date(&_ret));
+		return _ret;
+	}
+	final void SetDensityColors(Windows.Foundation.Collections.IIterable!(Windows.UI.Color) colors)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItem).abi_SetDensityColors(colors));
+	}
 }
 
 interface CalendarViewDayItemChangingEventArgs : Windows.UI.Xaml.Controls.ICalendarViewDayItemChangingEventArgs
 {
+extern(Windows):
+	final bool InRecycleQueue()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItemChangingEventArgs).get_InRecycleQueue(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.CalendarViewDayItem Item()
+	{
+		Windows.UI.Xaml.Controls.CalendarViewDayItem _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItemChangingEventArgs).get_Item(&_ret));
+		return _ret;
+	}
+	final UINT32 Phase()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItemChangingEventArgs).get_Phase(&_ret));
+		return _ret;
+	}
+	final void RegisterUpdateCallback(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs) callback)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItemChangingEventArgs).abi_RegisterUpdateCallback(callback));
+	}
+	final void RegisterUpdateCallbackWithPhase(UINT32 callbackPhase, Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs) callback)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItemChangingEventArgs).abi_RegisterUpdateCallbackWithPhase(callbackPhase, callback));
+	}
 }
 
 interface CalendarViewSelectedDatesChangedEventArgs : Windows.UI.Xaml.Controls.ICalendarViewSelectedDatesChangedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.DateTime) AddedDates()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarViewSelectedDatesChangedEventArgs).get_AddedDates(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.DateTime) RemovedDates()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarViewSelectedDatesChangedEventArgs).get_RemovedDates(&_ret));
+		return _ret;
+	}
 }
 
 interface CandidateWindowBoundsChangedEventArgs : Windows.UI.Xaml.Controls.ICandidateWindowBoundsChangedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Rect Bounds()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICandidateWindowBoundsChangedEventArgs).get_Bounds(&_ret));
+		return _ret;
+	}
 }
 
 interface Canvas : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.ICanvas
@@ -7338,6 +8575,27 @@ interface Canvas : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.ICan
 
 interface CaptureElement : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.ICaptureElement
 {
+extern(Windows):
+	final Windows.Media.Capture.MediaCapture Source()
+	{
+		Windows.Media.Capture.MediaCapture _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICaptureElement).get_Source(&_ret));
+		return _ret;
+	}
+	final void Source(Windows.Media.Capture.MediaCapture value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICaptureElement).set_Source(value));
+	}
+	final Windows.UI.Xaml.Media.Stretch Stretch()
+	{
+		Windows.UI.Xaml.Media.Stretch _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICaptureElement).get_Stretch(&_ret));
+		return _ret;
+	}
+	final void Stretch(Windows.UI.Xaml.Media.Stretch value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICaptureElement).set_Stretch(value));
+	}
 }
 
 interface CheckBox : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.UI.Xaml.Controls.ICheckBox
@@ -7346,18 +8604,134 @@ interface CheckBox : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.U
 
 interface ChoosingGroupHeaderContainerEventArgs : Windows.UI.Xaml.Controls.IChoosingGroupHeaderContainerEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.ListViewBaseHeaderItem GroupHeaderContainer()
+	{
+		Windows.UI.Xaml.Controls.ListViewBaseHeaderItem _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IChoosingGroupHeaderContainerEventArgs).get_GroupHeaderContainer(&_ret));
+		return _ret;
+	}
+	final void GroupHeaderContainer(Windows.UI.Xaml.Controls.ListViewBaseHeaderItem value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IChoosingGroupHeaderContainerEventArgs).set_GroupHeaderContainer(value));
+	}
+	final INT32 GroupIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IChoosingGroupHeaderContainerEventArgs).get_GroupIndex(&_ret));
+		return _ret;
+	}
+	final IInspectable Group()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IChoosingGroupHeaderContainerEventArgs).get_Group(&_ret));
+		return _ret;
+	}
 }
 
 interface ChoosingItemContainerEventArgs : Windows.UI.Xaml.Controls.IChoosingItemContainerEventArgs
 {
+extern(Windows):
+	final INT32 ItemIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IChoosingItemContainerEventArgs).get_ItemIndex(&_ret));
+		return _ret;
+	}
+	final IInspectable Item()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IChoosingItemContainerEventArgs).get_Item(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Primitives.SelectorItem ItemContainer()
+	{
+		Windows.UI.Xaml.Controls.Primitives.SelectorItem _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IChoosingItemContainerEventArgs).get_ItemContainer(&_ret));
+		return _ret;
+	}
+	final void ItemContainer(Windows.UI.Xaml.Controls.Primitives.SelectorItem value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IChoosingItemContainerEventArgs).set_ItemContainer(value));
+	}
+	final bool IsContainerPrepared()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IChoosingItemContainerEventArgs).get_IsContainerPrepared(&_ret));
+		return _ret;
+	}
+	final void IsContainerPrepared(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IChoosingItemContainerEventArgs).set_IsContainerPrepared(value));
+	}
 }
 
 interface CleanUpVirtualizedItemEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.ICleanUpVirtualizedItemEventArgs
 {
+extern(Windows):
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICleanUpVirtualizedItemEventArgs).get_Value(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.UIElement UIElement()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICleanUpVirtualizedItemEventArgs).get_UIElement(&_ret));
+		return _ret;
+	}
+	final bool Cancel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICleanUpVirtualizedItemEventArgs).get_Cancel(&_ret));
+		return _ret;
+	}
+	final void Cancel(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICleanUpVirtualizedItemEventArgs).set_Cancel(value));
+	}
 }
 
 interface ColumnDefinition : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IColumnDefinition
 {
+extern(Windows):
+	final Windows.UI.Xaml.GridLength Width()
+	{
+		Windows.UI.Xaml.GridLength _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IColumnDefinition).get_Width(&_ret));
+		return _ret;
+	}
+	final void Width(Windows.UI.Xaml.GridLength value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IColumnDefinition).set_Width(value));
+	}
+	final double MaxWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IColumnDefinition).get_MaxWidth(&_ret));
+		return _ret;
+	}
+	final void MaxWidth(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IColumnDefinition).set_MaxWidth(value));
+	}
+	final double MinWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IColumnDefinition).get_MinWidth(&_ret));
+		return _ret;
+	}
+	final void MinWidth(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IColumnDefinition).set_MinWidth(value));
+	}
+	final double ActualWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IColumnDefinition).get_ActualWidth(&_ret));
+		return _ret;
+	}
 }
 
 interface ColumnDefinitionCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.ColumnDefinition), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Controls.ColumnDefinition)
@@ -7366,6 +8740,125 @@ interface ColumnDefinitionCollection : Windows.Foundation.Collections.IVector!(W
 
 interface ComboBox : Windows.UI.Xaml.Controls.Primitives.Selector, Windows.UI.Xaml.Controls.IComboBox, Windows.UI.Xaml.Controls.IComboBoxOverrides, Windows.UI.Xaml.Controls.IComboBox2, Windows.UI.Xaml.Controls.IComboBox3, Windows.UI.Xaml.Controls.IComboBox4
 {
+extern(Windows):
+	final bool IsDropDownOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox).get_IsDropDownOpen(&_ret));
+		return _ret;
+	}
+	final void IsDropDownOpen(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox).set_IsDropDownOpen(value));
+	}
+	final bool IsEditable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox).get_IsEditable(&_ret));
+		return _ret;
+	}
+	final bool IsSelectionBoxHighlighted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox).get_IsSelectionBoxHighlighted(&_ret));
+		return _ret;
+	}
+	final double MaxDropDownHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox).get_MaxDropDownHeight(&_ret));
+		return _ret;
+	}
+	final void MaxDropDownHeight(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox).set_MaxDropDownHeight(value));
+	}
+	final IInspectable SelectionBoxItem()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox).get_SelectionBoxItem(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.DataTemplate SelectionBoxItemTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox).get_SelectionBoxItemTemplate(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Primitives.ComboBoxTemplateSettings TemplateSettings()
+	{
+		Windows.UI.Xaml.Controls.Primitives.ComboBoxTemplateSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox).get_TemplateSettings(&_ret));
+		return _ret;
+	}
+	final void OnDropDownClosed(IInspectable e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBoxOverrides).abi_OnDropDownClosed(e));
+	}
+	final void OnDropDownOpened(IInspectable e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBoxOverrides).abi_OnDropDownOpened(e));
+	}
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox2).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox2).set_Header(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox2).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox2).set_HeaderTemplate(value));
+	}
+	final HSTRING PlaceholderText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox2).get_PlaceholderText(&_ret));
+		return _ret;
+	}
+	final void PlaceholderText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox2).set_PlaceholderText(value));
+	}
+	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
+	{
+		Windows.UI.Xaml.Controls.LightDismissOverlayMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox3).get_LightDismissOverlayMode(&_ret));
+		return _ret;
+	}
+	final void LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox3).set_LightDismissOverlayMode(value));
+	}
+	final bool IsTextSearchEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox3).get_IsTextSearchEnabled(&_ret));
+		return _ret;
+	}
+	final void IsTextSearchEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox3).set_IsTextSearchEnabled(value));
+	}
+	final Windows.UI.Xaml.Controls.ComboBoxSelectionChangedTrigger SelectionChangedTrigger()
+	{
+		Windows.UI.Xaml.Controls.ComboBoxSelectionChangedTrigger _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox4).get_SelectionChangedTrigger(&_ret));
+		return _ret;
+	}
+	final void SelectionChangedTrigger(Windows.UI.Xaml.Controls.ComboBoxSelectionChangedTrigger value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox4).set_SelectionChangedTrigger(value));
+	}
 }
 
 interface ComboBoxItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IComboBoxItem
@@ -7374,6 +8867,65 @@ interface ComboBoxItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windo
 
 interface CommandBar : Windows.UI.Xaml.Controls.AppBar, Windows.UI.Xaml.Controls.ICommandBar, Windows.UI.Xaml.Controls.ICommandBar2, Windows.UI.Xaml.Controls.ICommandBar3
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.Controls.ICommandBarElement) PrimaryCommands()
+	{
+		Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.Controls.ICommandBarElement) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBar).get_PrimaryCommands(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.Controls.ICommandBarElement) SecondaryCommands()
+	{
+		Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.Controls.ICommandBarElement) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBar).get_SecondaryCommands(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Style CommandBarOverflowPresenterStyle()
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBar2).get_CommandBarOverflowPresenterStyle(&_ret));
+		return _ret;
+	}
+	final void CommandBarOverflowPresenterStyle(Windows.UI.Xaml.Style value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBar2).set_CommandBarOverflowPresenterStyle(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.CommandBarTemplateSettings CommandBarTemplateSettings()
+	{
+		Windows.UI.Xaml.Controls.Primitives.CommandBarTemplateSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBar2).get_CommandBarTemplateSettings(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.CommandBarDefaultLabelPosition DefaultLabelPosition()
+	{
+		Windows.UI.Xaml.Controls.CommandBarDefaultLabelPosition _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBar3).get_DefaultLabelPosition(&_ret));
+		return _ret;
+	}
+	final void DefaultLabelPosition(Windows.UI.Xaml.Controls.CommandBarDefaultLabelPosition value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBar3).set_DefaultLabelPosition(value));
+	}
+	final Windows.UI.Xaml.Controls.CommandBarOverflowButtonVisibility OverflowButtonVisibility()
+	{
+		Windows.UI.Xaml.Controls.CommandBarOverflowButtonVisibility _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBar3).get_OverflowButtonVisibility(&_ret));
+		return _ret;
+	}
+	final void OverflowButtonVisibility(Windows.UI.Xaml.Controls.CommandBarOverflowButtonVisibility value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBar3).set_OverflowButtonVisibility(value));
+	}
+	final bool IsDynamicOverflowEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBar3).get_IsDynamicOverflowEnabled(&_ret));
+		return _ret;
+	}
+	final void IsDynamicOverflowEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBar3).set_IsDynamicOverflowEnabled(value));
+	}
 }
 
 interface CommandBarOverflowPresenter : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.ICommandBarOverflowPresenter
@@ -7382,34 +8934,390 @@ interface CommandBarOverflowPresenter : Windows.UI.Xaml.Controls.ItemsControl, W
 
 interface ContainerContentChangingEventArgs : Windows.UI.Xaml.Controls.IContainerContentChangingEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Primitives.SelectorItem ItemContainer()
+	{
+		Windows.UI.Xaml.Controls.Primitives.SelectorItem _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContainerContentChangingEventArgs).get_ItemContainer(&_ret));
+		return _ret;
+	}
+	final bool InRecycleQueue()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContainerContentChangingEventArgs).get_InRecycleQueue(&_ret));
+		return _ret;
+	}
+	final INT32 ItemIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContainerContentChangingEventArgs).get_ItemIndex(&_ret));
+		return _ret;
+	}
+	final IInspectable Item()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContainerContentChangingEventArgs).get_Item(&_ret));
+		return _ret;
+	}
+	final UINT32 Phase()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContainerContentChangingEventArgs).get_Phase(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContainerContentChangingEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContainerContentChangingEventArgs).set_Handled(value));
+	}
+	final void RegisterUpdateCallback(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs) callback)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContainerContentChangingEventArgs).abi_RegisterUpdateCallback(callback));
+	}
+	final void RegisterUpdateCallbackWithPhase(UINT32 callbackPhase, Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs) callback)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContainerContentChangingEventArgs).abi_RegisterUpdateCallbackWithPhase(callbackPhase, callback));
+	}
 }
 
 interface ContentControl : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IContentControl, Windows.UI.Xaml.Controls.IContentControlOverrides, Windows.UI.Xaml.Controls.IContentControl2
 {
+extern(Windows):
+	final IInspectable Content()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControl).get_Content(&_ret));
+		return _ret;
+	}
+	final void Content(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControl).set_Content(value));
+	}
+	final Windows.UI.Xaml.DataTemplate ContentTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControl).get_ContentTemplate(&_ret));
+		return _ret;
+	}
+	final void ContentTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControl).set_ContentTemplate(value));
+	}
+	final Windows.UI.Xaml.Controls.DataTemplateSelector ContentTemplateSelector()
+	{
+		Windows.UI.Xaml.Controls.DataTemplateSelector _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControl).get_ContentTemplateSelector(&_ret));
+		return _ret;
+	}
+	final void ContentTemplateSelector(Windows.UI.Xaml.Controls.DataTemplateSelector value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControl).set_ContentTemplateSelector(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.TransitionCollection ContentTransitions()
+	{
+		Windows.UI.Xaml.Media.Animation.TransitionCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControl).get_ContentTransitions(&_ret));
+		return _ret;
+	}
+	final void ContentTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControl).set_ContentTransitions(value));
+	}
+	final void OnContentChanged(IInspectable oldContent, IInspectable newContent)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControlOverrides).abi_OnContentChanged(oldContent, newContent));
+	}
+	final void OnContentTemplateChanged(Windows.UI.Xaml.DataTemplate oldContentTemplate, Windows.UI.Xaml.DataTemplate newContentTemplate)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControlOverrides).abi_OnContentTemplateChanged(oldContentTemplate, newContentTemplate));
+	}
+	final void OnContentTemplateSelectorChanged(Windows.UI.Xaml.Controls.DataTemplateSelector oldContentTemplateSelector, Windows.UI.Xaml.Controls.DataTemplateSelector newContentTemplateSelector)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControlOverrides).abi_OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector));
+	}
+	final Windows.UI.Xaml.UIElement ContentTemplateRoot()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControl2).get_ContentTemplateRoot(&_ret));
+		return _ret;
+	}
 }
 
 interface ContentDialog : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IContentDialog, Windows.UI.Xaml.Controls.IContentDialog2
 {
+extern(Windows):
+	final IInspectable Title()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).set_Title(value));
+	}
+	final Windows.UI.Xaml.DataTemplate TitleTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).get_TitleTemplate(&_ret));
+		return _ret;
+	}
+	final void TitleTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).set_TitleTemplate(value));
+	}
+	final bool FullSizeDesired()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).get_FullSizeDesired(&_ret));
+		return _ret;
+	}
+	final void FullSizeDesired(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).set_FullSizeDesired(value));
+	}
+	final HSTRING PrimaryButtonText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).get_PrimaryButtonText(&_ret));
+		return _ret;
+	}
+	final void PrimaryButtonText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).set_PrimaryButtonText(value));
+	}
+	final HSTRING SecondaryButtonText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).get_SecondaryButtonText(&_ret));
+		return _ret;
+	}
+	final void SecondaryButtonText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).set_SecondaryButtonText(value));
+	}
+	final Windows.UI.Xaml.Input.ICommand PrimaryButtonCommand()
+	{
+		Windows.UI.Xaml.Input.ICommand _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).get_PrimaryButtonCommand(&_ret));
+		return _ret;
+	}
+	final void PrimaryButtonCommand(Windows.UI.Xaml.Input.ICommand value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).set_PrimaryButtonCommand(value));
+	}
+	final Windows.UI.Xaml.Input.ICommand SecondaryButtonCommand()
+	{
+		Windows.UI.Xaml.Input.ICommand _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).get_SecondaryButtonCommand(&_ret));
+		return _ret;
+	}
+	final void SecondaryButtonCommand(Windows.UI.Xaml.Input.ICommand value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).set_SecondaryButtonCommand(value));
+	}
+	final IInspectable PrimaryButtonCommandParameter()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).get_PrimaryButtonCommandParameter(&_ret));
+		return _ret;
+	}
+	final void PrimaryButtonCommandParameter(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).set_PrimaryButtonCommandParameter(value));
+	}
+	final IInspectable SecondaryButtonCommandParameter()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).get_SecondaryButtonCommandParameter(&_ret));
+		return _ret;
+	}
+	final void SecondaryButtonCommandParameter(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).set_SecondaryButtonCommandParameter(value));
+	}
+	final bool IsPrimaryButtonEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).get_IsPrimaryButtonEnabled(&_ret));
+		return _ret;
+	}
+	final void IsPrimaryButtonEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).set_IsPrimaryButtonEnabled(value));
+	}
+	final bool IsSecondaryButtonEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).get_IsSecondaryButtonEnabled(&_ret));
+		return _ret;
+	}
+	final void IsSecondaryButtonEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).set_IsSecondaryButtonEnabled(value));
+	}
+	final void Hide()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).abi_Hide());
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Controls.ContentDialogResult) ShowAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Controls.ContentDialogResult) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).abi_ShowAsync(&_ret));
+		return _ret;
+	}
+	final HSTRING CloseButtonText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_CloseButtonText(&_ret));
+		return _ret;
+	}
+	final void CloseButtonText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_CloseButtonText(value));
+	}
+	final Windows.UI.Xaml.Input.ICommand CloseButtonCommand()
+	{
+		Windows.UI.Xaml.Input.ICommand _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_CloseButtonCommand(&_ret));
+		return _ret;
+	}
+	final void CloseButtonCommand(Windows.UI.Xaml.Input.ICommand value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_CloseButtonCommand(value));
+	}
+	final IInspectable CloseButtonCommandParameter()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_CloseButtonCommandParameter(&_ret));
+		return _ret;
+	}
+	final void CloseButtonCommandParameter(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_CloseButtonCommandParameter(value));
+	}
+	final Windows.UI.Xaml.Style PrimaryButtonStyle()
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_PrimaryButtonStyle(&_ret));
+		return _ret;
+	}
+	final void PrimaryButtonStyle(Windows.UI.Xaml.Style value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_PrimaryButtonStyle(value));
+	}
+	final Windows.UI.Xaml.Style SecondaryButtonStyle()
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_SecondaryButtonStyle(&_ret));
+		return _ret;
+	}
+	final void SecondaryButtonStyle(Windows.UI.Xaml.Style value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_SecondaryButtonStyle(value));
+	}
+	final Windows.UI.Xaml.Style CloseButtonStyle()
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_CloseButtonStyle(&_ret));
+		return _ret;
+	}
+	final void CloseButtonStyle(Windows.UI.Xaml.Style value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_CloseButtonStyle(value));
+	}
+	final Windows.UI.Xaml.Controls.ContentDialogButton DefaultButton()
+	{
+		Windows.UI.Xaml.Controls.ContentDialogButton _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_DefaultButton(&_ret));
+		return _ret;
+	}
+	final void DefaultButton(Windows.UI.Xaml.Controls.ContentDialogButton value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_DefaultButton(value));
+	}
 }
 
 interface ContentDialogButtonClickDeferral : Windows.UI.Xaml.Controls.IContentDialogButtonClickDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialogButtonClickDeferral).abi_Complete());
+	}
 }
 
 interface ContentDialogButtonClickEventArgs : Windows.UI.Xaml.Controls.IContentDialogButtonClickEventArgs
 {
+extern(Windows):
+	final bool Cancel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialogButtonClickEventArgs).get_Cancel(&_ret));
+		return _ret;
+	}
+	final void Cancel(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialogButtonClickEventArgs).set_Cancel(value));
+	}
+	final Windows.UI.Xaml.Controls.ContentDialogButtonClickDeferral GetDeferral()
+	{
+		Windows.UI.Xaml.Controls.ContentDialogButtonClickDeferral _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialogButtonClickEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface ContentDialogClosedEventArgs : Windows.UI.Xaml.Controls.IContentDialogClosedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.ContentDialogResult Result()
+	{
+		Windows.UI.Xaml.Controls.ContentDialogResult _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialogClosedEventArgs).get_Result(&_ret));
+		return _ret;
+	}
 }
 
 interface ContentDialogClosingDeferral : Windows.UI.Xaml.Controls.IContentDialogClosingDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialogClosingDeferral).abi_Complete());
+	}
 }
 
 interface ContentDialogClosingEventArgs : Windows.UI.Xaml.Controls.IContentDialogClosingEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.ContentDialogResult Result()
+	{
+		Windows.UI.Xaml.Controls.ContentDialogResult _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialogClosingEventArgs).get_Result(&_ret));
+		return _ret;
+	}
+	final bool Cancel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialogClosingEventArgs).get_Cancel(&_ret));
+		return _ret;
+	}
+	final void Cancel(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialogClosingEventArgs).set_Cancel(value));
+	}
+	final Windows.UI.Xaml.Controls.ContentDialogClosingDeferral GetDeferral()
+	{
+		Windows.UI.Xaml.Controls.ContentDialogClosingDeferral _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialogClosingEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface ContentDialogOpenedEventArgs : Windows.UI.Xaml.Controls.IContentDialogOpenedEventArgs
@@ -7418,38 +9326,1091 @@ interface ContentDialogOpenedEventArgs : Windows.UI.Xaml.Controls.IContentDialog
 
 interface ContentPresenter : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IContentPresenter, Windows.UI.Xaml.Controls.IContentPresenterOverrides, Windows.UI.Xaml.Controls.IContentPresenter2, Windows.UI.Xaml.Controls.IContentPresenter3, Windows.UI.Xaml.Controls.IContentPresenter4
 {
+extern(Windows):
+	final IInspectable Content()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_Content(&_ret));
+		return _ret;
+	}
+	final void Content(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_Content(value));
+	}
+	final Windows.UI.Xaml.DataTemplate ContentTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_ContentTemplate(&_ret));
+		return _ret;
+	}
+	final void ContentTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_ContentTemplate(value));
+	}
+	final Windows.UI.Xaml.Controls.DataTemplateSelector ContentTemplateSelector()
+	{
+		Windows.UI.Xaml.Controls.DataTemplateSelector _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_ContentTemplateSelector(&_ret));
+		return _ret;
+	}
+	final void ContentTemplateSelector(Windows.UI.Xaml.Controls.DataTemplateSelector value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_ContentTemplateSelector(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.TransitionCollection ContentTransitions()
+	{
+		Windows.UI.Xaml.Media.Animation.TransitionCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_ContentTransitions(&_ret));
+		return _ret;
+	}
+	final void ContentTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_ContentTransitions(value));
+	}
+	final double FontSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_FontSize(&_ret));
+		return _ret;
+	}
+	final void FontSize(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_FontSize(value));
+	}
+	final Windows.UI.Xaml.Media.FontFamily FontFamily()
+	{
+		Windows.UI.Xaml.Media.FontFamily _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_FontFamily(&_ret));
+		return _ret;
+	}
+	final void FontFamily(Windows.UI.Xaml.Media.FontFamily value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_FontFamily(value));
+	}
+	final Windows.UI.Text.FontWeight FontWeight()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_FontWeight(&_ret));
+		return _ret;
+	}
+	final void FontWeight(Windows.UI.Text.FontWeight value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_FontWeight(value));
+	}
+	final Windows.UI.Text.FontStyle FontStyle()
+	{
+		Windows.UI.Text.FontStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_FontStyle(&_ret));
+		return _ret;
+	}
+	final void FontStyle(Windows.UI.Text.FontStyle value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_FontStyle(value));
+	}
+	final Windows.UI.Text.FontStretch FontStretch()
+	{
+		Windows.UI.Text.FontStretch _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_FontStretch(&_ret));
+		return _ret;
+	}
+	final void FontStretch(Windows.UI.Text.FontStretch value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_FontStretch(value));
+	}
+	final INT32 CharacterSpacing()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_CharacterSpacing(&_ret));
+		return _ret;
+	}
+	final void CharacterSpacing(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_CharacterSpacing(value));
+	}
+	final Windows.UI.Xaml.Media.Brush Foreground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_Foreground(&_ret));
+		return _ret;
+	}
+	final void Foreground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_Foreground(value));
+	}
+	final void OnContentTemplateChanged(Windows.UI.Xaml.DataTemplate oldContentTemplate, Windows.UI.Xaml.DataTemplate newContentTemplate)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenterOverrides).abi_OnContentTemplateChanged(oldContentTemplate, newContentTemplate));
+	}
+	final void OnContentTemplateSelectorChanged(Windows.UI.Xaml.Controls.DataTemplateSelector oldContentTemplateSelector, Windows.UI.Xaml.Controls.DataTemplateSelector newContentTemplateSelector)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenterOverrides).abi_OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector));
+	}
+	final Windows.UI.Xaml.OpticalMarginAlignment OpticalMarginAlignment()
+	{
+		Windows.UI.Xaml.OpticalMarginAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter2).get_OpticalMarginAlignment(&_ret));
+		return _ret;
+	}
+	final void OpticalMarginAlignment(Windows.UI.Xaml.OpticalMarginAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter2).set_OpticalMarginAlignment(value));
+	}
+	final Windows.UI.Xaml.TextLineBounds TextLineBounds()
+	{
+		Windows.UI.Xaml.TextLineBounds _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter2).get_TextLineBounds(&_ret));
+		return _ret;
+	}
+	final void TextLineBounds(Windows.UI.Xaml.TextLineBounds value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter2).set_TextLineBounds(value));
+	}
+	final bool IsTextScaleFactorEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter3).get_IsTextScaleFactorEnabled(&_ret));
+		return _ret;
+	}
+	final void IsTextScaleFactorEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter3).set_IsTextScaleFactorEnabled(value));
+	}
+	final Windows.UI.Xaml.TextWrapping TextWrapping()
+	{
+		Windows.UI.Xaml.TextWrapping _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_TextWrapping(&_ret));
+		return _ret;
+	}
+	final void TextWrapping(Windows.UI.Xaml.TextWrapping value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_TextWrapping(value));
+	}
+	final INT32 MaxLines()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_MaxLines(&_ret));
+		return _ret;
+	}
+	final void MaxLines(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_MaxLines(value));
+	}
+	final Windows.UI.Xaml.LineStackingStrategy LineStackingStrategy()
+	{
+		Windows.UI.Xaml.LineStackingStrategy _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_LineStackingStrategy(&_ret));
+		return _ret;
+	}
+	final void LineStackingStrategy(Windows.UI.Xaml.LineStackingStrategy value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_LineStackingStrategy(value));
+	}
+	final double LineHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_LineHeight(&_ret));
+		return _ret;
+	}
+	final void LineHeight(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_LineHeight(value));
+	}
+	final Windows.UI.Xaml.Media.Brush BorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_BorderBrush(&_ret));
+		return _ret;
+	}
+	final void BorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_BorderBrush(value));
+	}
+	final Windows.UI.Xaml.Thickness BorderThickness()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_BorderThickness(&_ret));
+		return _ret;
+	}
+	final void BorderThickness(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_BorderThickness(value));
+	}
+	final Windows.UI.Xaml.CornerRadius CornerRadius()
+	{
+		Windows.UI.Xaml.CornerRadius _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_CornerRadius(&_ret));
+		return _ret;
+	}
+	final void CornerRadius(Windows.UI.Xaml.CornerRadius value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_CornerRadius(value));
+	}
+	final Windows.UI.Xaml.Thickness Padding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_Padding(&_ret));
+		return _ret;
+	}
+	final void Padding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_Padding(value));
+	}
+	final Windows.UI.Xaml.Media.Brush Background()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_Background(&_ret));
+		return _ret;
+	}
+	final void Background(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_Background(value));
+	}
+	final Windows.UI.Xaml.HorizontalAlignment HorizontalContentAlignment()
+	{
+		Windows.UI.Xaml.HorizontalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_HorizontalContentAlignment(&_ret));
+		return _ret;
+	}
+	final void HorizontalContentAlignment(Windows.UI.Xaml.HorizontalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_HorizontalContentAlignment(value));
+	}
+	final Windows.UI.Xaml.VerticalAlignment VerticalContentAlignment()
+	{
+		Windows.UI.Xaml.VerticalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_VerticalContentAlignment(&_ret));
+		return _ret;
+	}
+	final void VerticalContentAlignment(Windows.UI.Xaml.VerticalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_VerticalContentAlignment(value));
+	}
 }
 
 interface ContextMenuEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.IContextMenuEventArgs
 {
+extern(Windows):
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContextMenuEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContextMenuEventArgs).set_Handled(value));
+	}
+	final double CursorLeft()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContextMenuEventArgs).get_CursorLeft(&_ret));
+		return _ret;
+	}
+	final double CursorTop()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContextMenuEventArgs).get_CursorTop(&_ret));
+		return _ret;
+	}
 }
 
 interface Control : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IControl, Windows.UI.Xaml.Controls.IControlOverrides, Windows.UI.Xaml.Controls.IControlProtected, Windows.UI.Xaml.Controls.IControl2, Windows.UI.Xaml.Controls.IControl3, Windows.UI.Xaml.Controls.IControl4, Windows.UI.Xaml.Controls.IControl5
 {
+extern(Windows):
+	final double FontSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_FontSize(&_ret));
+		return _ret;
+	}
+	final void FontSize(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_FontSize(value));
+	}
+	final Windows.UI.Xaml.Media.FontFamily FontFamily()
+	{
+		Windows.UI.Xaml.Media.FontFamily _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_FontFamily(&_ret));
+		return _ret;
+	}
+	final void FontFamily(Windows.UI.Xaml.Media.FontFamily value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_FontFamily(value));
+	}
+	final Windows.UI.Text.FontWeight FontWeight()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_FontWeight(&_ret));
+		return _ret;
+	}
+	final void FontWeight(Windows.UI.Text.FontWeight value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_FontWeight(value));
+	}
+	final Windows.UI.Text.FontStyle FontStyle()
+	{
+		Windows.UI.Text.FontStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_FontStyle(&_ret));
+		return _ret;
+	}
+	final void FontStyle(Windows.UI.Text.FontStyle value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_FontStyle(value));
+	}
+	final Windows.UI.Text.FontStretch FontStretch()
+	{
+		Windows.UI.Text.FontStretch _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_FontStretch(&_ret));
+		return _ret;
+	}
+	final void FontStretch(Windows.UI.Text.FontStretch value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_FontStretch(value));
+	}
+	final INT32 CharacterSpacing()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_CharacterSpacing(&_ret));
+		return _ret;
+	}
+	final void CharacterSpacing(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_CharacterSpacing(value));
+	}
+	final Windows.UI.Xaml.Media.Brush Foreground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_Foreground(&_ret));
+		return _ret;
+	}
+	final void Foreground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_Foreground(value));
+	}
+	final bool IsTabStop()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_IsTabStop(&_ret));
+		return _ret;
+	}
+	final void IsTabStop(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_IsTabStop(value));
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final void IsEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_IsEnabled(value));
+	}
+	final INT32 TabIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_TabIndex(&_ret));
+		return _ret;
+	}
+	final void TabIndex(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_TabIndex(value));
+	}
+	final Windows.UI.Xaml.Input.KeyboardNavigationMode TabNavigation()
+	{
+		Windows.UI.Xaml.Input.KeyboardNavigationMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_TabNavigation(&_ret));
+		return _ret;
+	}
+	final void TabNavigation(Windows.UI.Xaml.Input.KeyboardNavigationMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_TabNavigation(value));
+	}
+	final Windows.UI.Xaml.Controls.ControlTemplate Template()
+	{
+		Windows.UI.Xaml.Controls.ControlTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_Template(&_ret));
+		return _ret;
+	}
+	final void Template(Windows.UI.Xaml.Controls.ControlTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_Template(value));
+	}
+	final Windows.UI.Xaml.Thickness Padding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_Padding(&_ret));
+		return _ret;
+	}
+	final void Padding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_Padding(value));
+	}
+	final Windows.UI.Xaml.HorizontalAlignment HorizontalContentAlignment()
+	{
+		Windows.UI.Xaml.HorizontalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_HorizontalContentAlignment(&_ret));
+		return _ret;
+	}
+	final void HorizontalContentAlignment(Windows.UI.Xaml.HorizontalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_HorizontalContentAlignment(value));
+	}
+	final Windows.UI.Xaml.VerticalAlignment VerticalContentAlignment()
+	{
+		Windows.UI.Xaml.VerticalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_VerticalContentAlignment(&_ret));
+		return _ret;
+	}
+	final void VerticalContentAlignment(Windows.UI.Xaml.VerticalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_VerticalContentAlignment(value));
+	}
+	final Windows.UI.Xaml.Media.Brush Background()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_Background(&_ret));
+		return _ret;
+	}
+	final void Background(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_Background(value));
+	}
+	final Windows.UI.Xaml.Thickness BorderThickness()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_BorderThickness(&_ret));
+		return _ret;
+	}
+	final void BorderThickness(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_BorderThickness(value));
+	}
+	final Windows.UI.Xaml.Media.Brush BorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_BorderBrush(&_ret));
+		return _ret;
+	}
+	final void BorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).set_BorderBrush(value));
+	}
+	final Windows.UI.Xaml.FocusState FocusState()
+	{
+		Windows.UI.Xaml.FocusState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_FocusState(&_ret));
+		return _ret;
+	}
+	final bool ApplyTemplate()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).abi_ApplyTemplate(&_ret));
+		return _ret;
+	}
+	final bool Focus(Windows.UI.Xaml.FocusState value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).abi_Focus(value, &_ret));
+		return _ret;
+	}
+	final void OnPointerEntered(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerEntered(e));
+	}
+	final void OnPointerPressed(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerPressed(e));
+	}
+	final void OnPointerMoved(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerMoved(e));
+	}
+	final void OnPointerReleased(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerReleased(e));
+	}
+	final void OnPointerExited(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerExited(e));
+	}
+	final void OnPointerCaptureLost(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerCaptureLost(e));
+	}
+	final void OnPointerCanceled(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerCanceled(e));
+	}
+	final void OnPointerWheelChanged(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerWheelChanged(e));
+	}
+	final void OnTapped(Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnTapped(e));
+	}
+	final void OnDoubleTapped(Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDoubleTapped(e));
+	}
+	final void OnHolding(Windows.UI.Xaml.Input.HoldingRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnHolding(e));
+	}
+	final void OnRightTapped(Windows.UI.Xaml.Input.RightTappedRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnRightTapped(e));
+	}
+	final void OnManipulationStarting(Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationStarting(e));
+	}
+	final void OnManipulationInertiaStarting(Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationInertiaStarting(e));
+	}
+	final void OnManipulationStarted(Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationStarted(e));
+	}
+	final void OnManipulationDelta(Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationDelta(e));
+	}
+	final void OnManipulationCompleted(Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationCompleted(e));
+	}
+	final void OnKeyUp(Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnKeyUp(e));
+	}
+	final void OnKeyDown(Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnKeyDown(e));
+	}
+	final void OnGotFocus(Windows.UI.Xaml.RoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnGotFocus(e));
+	}
+	final void OnLostFocus(Windows.UI.Xaml.RoutedEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnLostFocus(e));
+	}
+	final void OnDragEnter(Windows.UI.Xaml.DragEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDragEnter(e));
+	}
+	final void OnDragLeave(Windows.UI.Xaml.DragEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDragLeave(e));
+	}
+	final void OnDragOver(Windows.UI.Xaml.DragEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDragOver(e));
+	}
+	final void OnDrop(Windows.UI.Xaml.DragEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDrop(e));
+	}
+	final IInspectable DefaultStyleKey()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlProtected).get_DefaultStyleKey(&_ret));
+		return _ret;
+	}
+	final void DefaultStyleKey(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlProtected).set_DefaultStyleKey(value));
+	}
+	final Windows.UI.Xaml.DependencyObject GetTemplateChild(HSTRING childName)
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlProtected).abi_GetTemplateChild(childName, &_ret));
+		return _ret;
+	}
+	final bool IsTextScaleFactorEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl2).get_IsTextScaleFactorEnabled(&_ret));
+		return _ret;
+	}
+	final void IsTextScaleFactorEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl2).set_IsTextScaleFactorEnabled(value));
+	}
+	final bool UseSystemFocusVisuals()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl3).get_UseSystemFocusVisuals(&_ret));
+		return _ret;
+	}
+	final void UseSystemFocusVisuals(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl3).set_UseSystemFocusVisuals(value));
+	}
+	final bool IsFocusEngagementEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).get_IsFocusEngagementEnabled(&_ret));
+		return _ret;
+	}
+	final void IsFocusEngagementEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).set_IsFocusEngagementEnabled(value));
+	}
+	final bool IsFocusEngaged()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).get_IsFocusEngaged(&_ret));
+		return _ret;
+	}
+	final void IsFocusEngaged(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).set_IsFocusEngaged(value));
+	}
+	final Windows.UI.Xaml.Controls.RequiresPointer RequiresPointer()
+	{
+		Windows.UI.Xaml.Controls.RequiresPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).get_RequiresPointer(&_ret));
+		return _ret;
+	}
+	final void RequiresPointer(Windows.UI.Xaml.Controls.RequiresPointer value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).set_RequiresPointer(value));
+	}
+	final Windows.UI.Xaml.DependencyObject XYFocusLeft()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).get_XYFocusLeft(&_ret));
+		return _ret;
+	}
+	final void XYFocusLeft(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).set_XYFocusLeft(value));
+	}
+	final Windows.UI.Xaml.DependencyObject XYFocusRight()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).get_XYFocusRight(&_ret));
+		return _ret;
+	}
+	final void XYFocusRight(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).set_XYFocusRight(value));
+	}
+	final Windows.UI.Xaml.DependencyObject XYFocusUp()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).get_XYFocusUp(&_ret));
+		return _ret;
+	}
+	final void XYFocusUp(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).set_XYFocusUp(value));
+	}
+	final Windows.UI.Xaml.DependencyObject XYFocusDown()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).get_XYFocusDown(&_ret));
+		return _ret;
+	}
+	final void XYFocusDown(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).set_XYFocusDown(value));
+	}
+	final Windows.UI.Xaml.ElementSoundMode ElementSoundMode()
+	{
+		Windows.UI.Xaml.ElementSoundMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).get_ElementSoundMode(&_ret));
+		return _ret;
+	}
+	final void ElementSoundMode(Windows.UI.Xaml.ElementSoundMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).set_ElementSoundMode(value));
+	}
+	final void RemoveFocusEngagement()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).abi_RemoveFocusEngagement());
+	}
+	final Windows.Foundation.Uri DefaultStyleResourceUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl5).get_DefaultStyleResourceUri(&_ret));
+		return _ret;
+	}
+	final void DefaultStyleResourceUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl5).set_DefaultStyleResourceUri(value));
+	}
 }
 
 interface ControlTemplate : Windows.UI.Xaml.FrameworkTemplate, Windows.UI.Xaml.Controls.IControlTemplate
 {
+extern(Windows):
+	final Windows.UI.Xaml.Interop.TypeName TargetType()
+	{
+		Windows.UI.Xaml.Interop.TypeName _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlTemplate).get_TargetType(&_ret));
+		return _ret;
+	}
+	final void TargetType(Windows.UI.Xaml.Interop.TypeName value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlTemplate).set_TargetType(value));
+	}
 }
 
 interface DataTemplateSelector : Windows.UI.Xaml.Controls.IDataTemplateSelector, Windows.UI.Xaml.Controls.IDataTemplateSelectorOverrides, Windows.UI.Xaml.Controls.IDataTemplateSelector2, Windows.UI.Xaml.Controls.IDataTemplateSelectorOverrides2
 {
+extern(Windows):
+	final Windows.UI.Xaml.DataTemplate SelectTemplate(IInspectable item, Windows.UI.Xaml.DependencyObject container)
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDataTemplateSelector).abi_SelectTemplate(item, container, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.DataTemplate SelectTemplateCore(IInspectable item, Windows.UI.Xaml.DependencyObject container)
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDataTemplateSelectorOverrides).abi_SelectTemplateCore(item, container, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.DataTemplate SelectTemplateForItem(IInspectable item)
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDataTemplateSelector2).abi_SelectTemplateForItem(item, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.DataTemplate SelectTemplateForItemCore(IInspectable item)
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDataTemplateSelectorOverrides2).abi_SelectTemplateForItemCore(item, &_ret));
+		return _ret;
+	}
 }
 
 interface DatePickedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IDatePickedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.DateTime OldDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickedEventArgs).get_OldDate(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime NewDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickedEventArgs).get_NewDate(&_ret));
+		return _ret;
+	}
 }
 
 interface DatePicker : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IDatePicker, Windows.UI.Xaml.Controls.IDatePicker2
 {
+extern(Windows):
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_Header(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_HeaderTemplate(value));
+	}
+	final HSTRING CalendarIdentifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).get_CalendarIdentifier(&_ret));
+		return _ret;
+	}
+	final void CalendarIdentifier(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_CalendarIdentifier(value));
+	}
+	final Windows.Foundation.DateTime Date()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).get_Date(&_ret));
+		return _ret;
+	}
+	final void Date(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_Date(value));
+	}
+	final bool DayVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).get_DayVisible(&_ret));
+		return _ret;
+	}
+	final void DayVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_DayVisible(value));
+	}
+	final bool MonthVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).get_MonthVisible(&_ret));
+		return _ret;
+	}
+	final void MonthVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_MonthVisible(value));
+	}
+	final bool YearVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).get_YearVisible(&_ret));
+		return _ret;
+	}
+	final void YearVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_YearVisible(value));
+	}
+	final HSTRING DayFormat()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).get_DayFormat(&_ret));
+		return _ret;
+	}
+	final void DayFormat(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_DayFormat(value));
+	}
+	final HSTRING MonthFormat()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).get_MonthFormat(&_ret));
+		return _ret;
+	}
+	final void MonthFormat(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_MonthFormat(value));
+	}
+	final HSTRING YearFormat()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).get_YearFormat(&_ret));
+		return _ret;
+	}
+	final void YearFormat(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_YearFormat(value));
+	}
+	final Windows.Foundation.DateTime MinYear()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).get_MinYear(&_ret));
+		return _ret;
+	}
+	final void MinYear(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_MinYear(value));
+	}
+	final Windows.Foundation.DateTime MaxYear()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).get_MaxYear(&_ret));
+		return _ret;
+	}
+	final void MaxYear(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_MaxYear(value));
+	}
+	final Windows.UI.Xaml.Controls.Orientation Orientation()
+	{
+		Windows.UI.Xaml.Controls.Orientation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).get_Orientation(&_ret));
+		return _ret;
+	}
+	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_Orientation(value));
+	}
+	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
+	{
+		Windows.UI.Xaml.Controls.LightDismissOverlayMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker2).get_LightDismissOverlayMode(&_ret));
+		return _ret;
+	}
+	final void LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker2).set_LightDismissOverlayMode(value));
+	}
 }
 
 interface DatePickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase, Windows.UI.Xaml.Controls.IDatePickerFlyout, Windows.UI.Xaml.Controls.IDatePickerFlyout2
 {
+extern(Windows):
+	final HSTRING CalendarIdentifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).get_CalendarIdentifier(&_ret));
+		return _ret;
+	}
+	final void CalendarIdentifier(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).set_CalendarIdentifier(value));
+	}
+	final Windows.Foundation.DateTime Date()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).get_Date(&_ret));
+		return _ret;
+	}
+	final void Date(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).set_Date(value));
+	}
+	final bool DayVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).get_DayVisible(&_ret));
+		return _ret;
+	}
+	final void DayVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).set_DayVisible(value));
+	}
+	final bool MonthVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).get_MonthVisible(&_ret));
+		return _ret;
+	}
+	final void MonthVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).set_MonthVisible(value));
+	}
+	final bool YearVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).get_YearVisible(&_ret));
+		return _ret;
+	}
+	final void YearVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).set_YearVisible(value));
+	}
+	final Windows.Foundation.DateTime MinYear()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).get_MinYear(&_ret));
+		return _ret;
+	}
+	final void MinYear(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).set_MinYear(value));
+	}
+	final Windows.Foundation.DateTime MaxYear()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).get_MaxYear(&_ret));
+		return _ret;
+	}
+	final void MaxYear(Windows.Foundation.DateTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).set_MaxYear(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.IReference!(Windows.Foundation.DateTime)) ShowAtAsync(Windows.UI.Xaml.FrameworkElement target)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.IReference!(Windows.Foundation.DateTime)) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).abi_ShowAtAsync(target, &_ret));
+		return _ret;
+	}
+	final HSTRING DayFormat()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout2).get_DayFormat(&_ret));
+		return _ret;
+	}
+	final void DayFormat(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout2).set_DayFormat(value));
+	}
+	final HSTRING MonthFormat()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout2).get_MonthFormat(&_ret));
+		return _ret;
+	}
+	final void MonthFormat(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout2).set_MonthFormat(value));
+	}
+	final HSTRING YearFormat()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout2).get_YearFormat(&_ret));
+		return _ret;
+	}
+	final void YearFormat(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout2).set_YearFormat(value));
+	}
 }
 
 interface DatePickerFlyoutItem : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IDatePickerFlyoutItem, Windows.UI.Xaml.Data.ICustomPropertyProvider
 {
+extern(Windows):
+	final HSTRING PrimaryText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyoutItem).get_PrimaryText(&_ret));
+		return _ret;
+	}
+	final void PrimaryText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyoutItem).set_PrimaryText(value));
+	}
+	final HSTRING SecondaryText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyoutItem).get_SecondaryText(&_ret));
+		return _ret;
+	}
+	final void SecondaryText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyoutItem).set_SecondaryText(value));
+	}
+	final Windows.UI.Xaml.Data.ICustomProperty GetCustomProperty(HSTRING name)
+	{
+		Windows.UI.Xaml.Data.ICustomProperty _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICustomPropertyProvider).abi_GetCustomProperty(name, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Data.ICustomProperty GetIndexedProperty(HSTRING name, Windows.UI.Xaml.Interop.TypeName type)
+	{
+		Windows.UI.Xaml.Data.ICustomProperty _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICustomPropertyProvider).abi_GetIndexedProperty(name, type, &_ret));
+		return _ret;
+	}
+	final HSTRING GetStringRepresentation()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICustomPropertyProvider).abi_GetStringRepresentation(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Interop.TypeName Type()
+	{
+		Windows.UI.Xaml.Interop.TypeName _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICustomPropertyProvider).get_Type(&_ret));
+		return _ret;
+	}
 }
 
 interface DatePickerFlyoutPresenter : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IDatePickerFlyoutPresenter
@@ -7458,22 +10419,89 @@ interface DatePickerFlyoutPresenter : Windows.UI.Xaml.Controls.Control, Windows.
 
 interface DatePickerValueChangedEventArgs : Windows.UI.Xaml.Controls.IDatePickerValueChangedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.DateTime OldDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerValueChangedEventArgs).get_OldDate(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime NewDate()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerValueChangedEventArgs).get_NewDate(&_ret));
+		return _ret;
+	}
 }
 
 interface DragItemsCompletedEventArgs : Windows.UI.Xaml.Controls.IDragItemsCompletedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVectorView!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDragItemsCompletedEventArgs).get_Items(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.DataTransfer.DataPackageOperation DropResult()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackageOperation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDragItemsCompletedEventArgs).get_DropResult(&_ret));
+		return _ret;
+	}
 }
 
 interface DragItemsStartingEventArgs : Windows.UI.Xaml.Controls.IDragItemsStartingEventArgs
 {
+extern(Windows):
+	final bool Cancel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDragItemsStartingEventArgs).get_Cancel(&_ret));
+		return _ret;
+	}
+	final void Cancel(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDragItemsStartingEventArgs).set_Cancel(value));
+	}
+	final Windows.Foundation.Collections.IVector!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVector!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDragItemsStartingEventArgs).get_Items(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.DataTransfer.DataPackage Data()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackage _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDragItemsStartingEventArgs).get_Data(&_ret));
+		return _ret;
+	}
 }
 
 interface DynamicOverflowItemsChangingEventArgs : Windows.UI.Xaml.Controls.IDynamicOverflowItemsChangingEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.CommandBarDynamicOverflowAction Action()
+	{
+		Windows.UI.Xaml.Controls.CommandBarDynamicOverflowAction _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDynamicOverflowItemsChangingEventArgs).get_Action(&_ret));
+		return _ret;
+	}
 }
 
 interface FlipView : Windows.UI.Xaml.Controls.Primitives.Selector, Windows.UI.Xaml.Controls.IFlipView, Windows.UI.Xaml.Controls.IFlipView2
 {
+extern(Windows):
+	final bool UseTouchAnimationsForAllNavigation()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFlipView2).get_UseTouchAnimationsForAllNavigation(&_ret));
+		return _ret;
+	}
+	final void UseTouchAnimationsForAllNavigation(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFlipView2).set_UseTouchAnimationsForAllNavigation(value));
+	}
 }
 
 interface FlipViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IFlipViewItem
@@ -7482,6 +10510,27 @@ interface FlipViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windo
 
 interface Flyout : Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.IFlyout
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement Content()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFlyout).get_Content(&_ret));
+		return _ret;
+	}
+	final void Content(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFlyout).set_Content(value));
+	}
+	final Windows.UI.Xaml.Style FlyoutPresenterStyle()
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFlyout).get_FlyoutPresenterStyle(&_ret));
+		return _ret;
+	}
+	final void FlyoutPresenterStyle(Windows.UI.Xaml.Style value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFlyout).set_FlyoutPresenterStyle(value));
+	}
 }
 
 interface FlyoutPresenter : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IFlyoutPresenter
@@ -7494,18 +10543,254 @@ interface FocusDisengagedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI
 
 interface FocusEngagedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.IFocusEngagedEventArgs, Windows.UI.Xaml.Controls.IFocusEngagedEventArgs2
 {
+extern(Windows):
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFocusEngagedEventArgs2).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFocusEngagedEventArgs2).set_Handled(value));
+	}
 }
 
 interface FontIcon : Windows.UI.Xaml.Controls.IconElement, Windows.UI.Xaml.Controls.IFontIcon, Windows.UI.Xaml.Controls.IFontIcon2, Windows.UI.Xaml.Controls.IFontIcon3
 {
+extern(Windows):
+	final HSTRING Glyph()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon).get_Glyph(&_ret));
+		return _ret;
+	}
+	final void Glyph(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon).set_Glyph(value));
+	}
+	final double FontSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon).get_FontSize(&_ret));
+		return _ret;
+	}
+	final void FontSize(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon).set_FontSize(value));
+	}
+	final Windows.UI.Xaml.Media.FontFamily FontFamily()
+	{
+		Windows.UI.Xaml.Media.FontFamily _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon).get_FontFamily(&_ret));
+		return _ret;
+	}
+	final void FontFamily(Windows.UI.Xaml.Media.FontFamily value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon).set_FontFamily(value));
+	}
+	final Windows.UI.Text.FontWeight FontWeight()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon).get_FontWeight(&_ret));
+		return _ret;
+	}
+	final void FontWeight(Windows.UI.Text.FontWeight value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon).set_FontWeight(value));
+	}
+	final Windows.UI.Text.FontStyle FontStyle()
+	{
+		Windows.UI.Text.FontStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon).get_FontStyle(&_ret));
+		return _ret;
+	}
+	final void FontStyle(Windows.UI.Text.FontStyle value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon).set_FontStyle(value));
+	}
+	final bool IsTextScaleFactorEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon2).get_IsTextScaleFactorEnabled(&_ret));
+		return _ret;
+	}
+	final void IsTextScaleFactorEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon2).set_IsTextScaleFactorEnabled(value));
+	}
+	final bool MirroredWhenRightToLeft()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon3).get_MirroredWhenRightToLeft(&_ret));
+		return _ret;
+	}
+	final void MirroredWhenRightToLeft(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon3).set_MirroredWhenRightToLeft(value));
+	}
 }
 
 interface Frame : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IFrame, Windows.UI.Xaml.Controls.INavigate, Windows.UI.Xaml.Controls.IFrame2, Windows.UI.Xaml.Controls.IFrame3, Windows.UI.Xaml.Controls.IFrame4
 {
+extern(Windows):
+	final INT32 CacheSize()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).get_CacheSize(&_ret));
+		return _ret;
+	}
+	final void CacheSize(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).set_CacheSize(value));
+	}
+	final bool CanGoBack()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).get_CanGoBack(&_ret));
+		return _ret;
+	}
+	final bool CanGoForward()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).get_CanGoForward(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Interop.TypeName CurrentSourcePageType()
+	{
+		Windows.UI.Xaml.Interop.TypeName _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).get_CurrentSourcePageType(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Interop.TypeName SourcePageType()
+	{
+		Windows.UI.Xaml.Interop.TypeName _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).get_SourcePageType(&_ret));
+		return _ret;
+	}
+	final void SourcePageType(Windows.UI.Xaml.Interop.TypeName value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).set_SourcePageType(value));
+	}
+	final INT32 BackStackDepth()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).get_BackStackDepth(&_ret));
+		return _ret;
+	}
+	final void GoBack()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).abi_GoBack());
+	}
+	final void GoForward()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).abi_GoForward());
+	}
+	final bool Navigate(Windows.UI.Xaml.Interop.TypeName sourcePageType, IInspectable parameter)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).abi_Navigate(sourcePageType, parameter, &_ret));
+		return _ret;
+	}
+	final HSTRING GetNavigationState()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).abi_GetNavigationState(&_ret));
+		return _ret;
+	}
+	final void SetNavigationState(HSTRING navigationState)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).abi_SetNavigationState(navigationState));
+	}
+	final bool Navigate(Windows.UI.Xaml.Interop.TypeName sourcePageType)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.INavigate).abi_Navigate(sourcePageType, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Navigation.PageStackEntry) BackStack()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Navigation.PageStackEntry) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame2).get_BackStack(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Navigation.PageStackEntry) ForwardStack()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Navigation.PageStackEntry) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame2).get_ForwardStack(&_ret));
+		return _ret;
+	}
+	final bool Navigate(Windows.UI.Xaml.Interop.TypeName sourcePageType, IInspectable parameter, Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo infoOverride)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame2).abi_Navigate(sourcePageType, parameter, infoOverride, &_ret));
+		return _ret;
+	}
+	final void GoBack(Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo transitionInfoOverride)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame3).abi_GoBack(transitionInfoOverride));
+	}
+	final void SetNavigationStateWithNavigationControl(HSTRING navigationState, bool suppressNavigate)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame4).abi_SetNavigationStateWithNavigationControl(navigationState, suppressNavigate));
+	}
 }
 
 interface Grid : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IGrid, Windows.UI.Xaml.Controls.IGrid2
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.RowDefinitionCollection RowDefinitions()
+	{
+		Windows.UI.Xaml.Controls.RowDefinitionCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGrid).get_RowDefinitions(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.ColumnDefinitionCollection ColumnDefinitions()
+	{
+		Windows.UI.Xaml.Controls.ColumnDefinitionCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGrid).get_ColumnDefinitions(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Brush BorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGrid2).get_BorderBrush(&_ret));
+		return _ret;
+	}
+	final void BorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGrid2).set_BorderBrush(value));
+	}
+	final Windows.UI.Xaml.Thickness BorderThickness()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGrid2).get_BorderThickness(&_ret));
+		return _ret;
+	}
+	final void BorderThickness(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGrid2).set_BorderThickness(value));
+	}
+	final Windows.UI.Xaml.CornerRadius CornerRadius()
+	{
+		Windows.UI.Xaml.CornerRadius _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGrid2).get_CornerRadius(&_ret));
+		return _ret;
+	}
+	final void CornerRadius(Windows.UI.Xaml.CornerRadius value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGrid2).set_CornerRadius(value));
+	}
+	final Windows.UI.Xaml.Thickness Padding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGrid2).get_Padding(&_ret));
+		return _ret;
+	}
+	final void Padding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGrid2).set_Padding(value));
+	}
 }
 
 interface GridView : Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.IGridView
@@ -7518,6 +10803,13 @@ interface GridViewHeaderItem : Windows.UI.Xaml.Controls.ListViewBaseHeaderItem, 
 
 interface GridViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IGridViewItem
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Primitives.GridViewItemTemplateSettings TemplateSettings()
+	{
+		Windows.UI.Xaml.Controls.Primitives.GridViewItemTemplateSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGridViewItem).get_TemplateSettings(&_ret));
+		return _ret;
+	}
 }
 
 interface GroupItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IGroupItem
@@ -7526,18 +10818,268 @@ interface GroupItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.C
 
 interface GroupStyle : Windows.UI.Xaml.Controls.IGroupStyle, Windows.UI.Xaml.Data.INotifyPropertyChanged, Windows.UI.Xaml.Controls.IGroupStyle2
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.ItemsPanelTemplate Panel()
+	{
+		Windows.UI.Xaml.Controls.ItemsPanelTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle).get_Panel(&_ret));
+		return _ret;
+	}
+	final void Panel(Windows.UI.Xaml.Controls.ItemsPanelTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle).set_Panel(value));
+	}
+	deprecated("ContainerStyle may be altered or unavailable for releases after Windows 8.1, and is not supported for ItemsControl.GroupStyle.")
+	final Windows.UI.Xaml.Style ContainerStyle()
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle).get_ContainerStyle(&_ret));
+		return _ret;
+	}
+	deprecated("ContainerStyle may be altered or unavailable for releases after Windows 8.1, and is not supported for ItemsControl.GroupStyle.")
+	final void ContainerStyle(Windows.UI.Xaml.Style value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle).set_ContainerStyle(value));
+	}
+	deprecated("ContainerStyleSelector may be altered or unavailable for releases after Windows 8.1, and is not supported for ItemsControl.GroupStyle.")
+	final Windows.UI.Xaml.Controls.StyleSelector ContainerStyleSelector()
+	{
+		Windows.UI.Xaml.Controls.StyleSelector _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle).get_ContainerStyleSelector(&_ret));
+		return _ret;
+	}
+	deprecated("ContainerStyleSelector may be altered or unavailable for releases after Windows 8.1, and is not supported for ItemsControl.GroupStyle.")
+	final void ContainerStyleSelector(Windows.UI.Xaml.Controls.StyleSelector value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle).set_ContainerStyleSelector(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle).set_HeaderTemplate(value));
+	}
+	final Windows.UI.Xaml.Controls.DataTemplateSelector HeaderTemplateSelector()
+	{
+		Windows.UI.Xaml.Controls.DataTemplateSelector _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle).get_HeaderTemplateSelector(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplateSelector(Windows.UI.Xaml.Controls.DataTemplateSelector value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle).set_HeaderTemplateSelector(value));
+	}
+	final bool HidesIfEmpty()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle).get_HidesIfEmpty(&_ret));
+		return _ret;
+	}
+	final void HidesIfEmpty(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle).set_HidesIfEmpty(value));
+	}
+	final Windows.UI.Xaml.Style HeaderContainerStyle()
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle2).get_HeaderContainerStyle(&_ret));
+		return _ret;
+	}
+	final void HeaderContainerStyle(Windows.UI.Xaml.Style value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle2).set_HeaderContainerStyle(value));
+	}
 }
 
 interface GroupStyleSelector : Windows.UI.Xaml.Controls.IGroupStyleSelector, Windows.UI.Xaml.Controls.IGroupStyleSelectorOverrides
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.GroupStyle SelectGroupStyle(IInspectable group, UINT32 level)
+	{
+		Windows.UI.Xaml.Controls.GroupStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyleSelector).abi_SelectGroupStyle(group, level, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.GroupStyle SelectGroupStyleCore(IInspectable group, UINT32 level)
+	{
+		Windows.UI.Xaml.Controls.GroupStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyleSelectorOverrides).abi_SelectGroupStyleCore(group, level, &_ret));
+		return _ret;
+	}
 }
 
 interface Hub : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IHub, Windows.UI.Xaml.Controls.ISemanticZoomInformation
 {
+extern(Windows):
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHub).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHub).set_Header(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHub).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHub).set_HeaderTemplate(value));
+	}
+	final Windows.UI.Xaml.Controls.Orientation Orientation()
+	{
+		Windows.UI.Xaml.Controls.Orientation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHub).get_Orientation(&_ret));
+		return _ret;
+	}
+	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHub).set_Orientation(value));
+	}
+	final INT32 DefaultSectionIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHub).get_DefaultSectionIndex(&_ret));
+		return _ret;
+	}
+	final void DefaultSectionIndex(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHub).set_DefaultSectionIndex(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection) Sections()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHub).get_Sections(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection) SectionsInView()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHub).get_SectionsInView(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IObservableVector!(IInspectable) SectionHeaders()
+	{
+		Windows.Foundation.Collections.IObservableVector!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHub).get_SectionHeaders(&_ret));
+		return _ret;
+	}
+	final void ScrollToSection(Windows.UI.Xaml.Controls.HubSection section)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHub).abi_ScrollToSection(section));
+	}
+	final Windows.UI.Xaml.Controls.SemanticZoom SemanticZoomOwner()
+	{
+		Windows.UI.Xaml.Controls.SemanticZoom _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).get_SemanticZoomOwner(&_ret));
+		return _ret;
+	}
+	final void SemanticZoomOwner(Windows.UI.Xaml.Controls.SemanticZoom value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).set_SemanticZoomOwner(value));
+	}
+	final bool IsActiveView()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).get_IsActiveView(&_ret));
+		return _ret;
+	}
+	final void IsActiveView(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).set_IsActiveView(value));
+	}
+	final bool IsZoomedInView()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).get_IsZoomedInView(&_ret));
+		return _ret;
+	}
+	final void IsZoomedInView(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).set_IsZoomedInView(value));
+	}
+	final void InitializeViewChange()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_InitializeViewChange());
+	}
+	final void CompleteViewChange()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_CompleteViewChange());
+	}
+	final void MakeVisible(Windows.UI.Xaml.Controls.SemanticZoomLocation item)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_MakeVisible(item));
+	}
+	final void StartViewChangeFrom(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_StartViewChangeFrom(source, destination));
+	}
+	final void StartViewChangeTo(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_StartViewChangeTo(source, destination));
+	}
+	final void CompleteViewChangeFrom(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_CompleteViewChangeFrom(source, destination));
+	}
+	final void CompleteViewChangeTo(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_CompleteViewChangeTo(source, destination));
+	}
 }
 
 interface HubSection : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IHubSection
 {
+extern(Windows):
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHubSection).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHubSection).set_Header(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHubSection).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHubSection).set_HeaderTemplate(value));
+	}
+	final Windows.UI.Xaml.DataTemplate ContentTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHubSection).get_ContentTemplate(&_ret));
+		return _ret;
+	}
+	final void ContentTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHubSection).set_ContentTemplate(value));
+	}
+	final bool IsHeaderInteractive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHubSection).get_IsHeaderInteractive(&_ret));
+		return _ret;
+	}
+	final void IsHeaderInteractive(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHubSection).set_IsHeaderInteractive(value));
+	}
 }
 
 interface HubSectionCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Controls.HubSection)
@@ -7546,26 +11088,213 @@ interface HubSectionCollection : Windows.Foundation.Collections.IVector!(Windows
 
 interface HubSectionHeaderClickEventArgs : Windows.UI.Xaml.Controls.IHubSectionHeaderClickEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.HubSection Section()
+	{
+		Windows.UI.Xaml.Controls.HubSection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHubSectionHeaderClickEventArgs).get_Section(&_ret));
+		return _ret;
+	}
 }
 
 interface HyperlinkButton : Windows.UI.Xaml.Controls.Primitives.ButtonBase, Windows.UI.Xaml.Controls.IHyperlinkButton
 {
+extern(Windows):
+	final Windows.Foundation.Uri NavigateUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHyperlinkButton).get_NavigateUri(&_ret));
+		return _ret;
+	}
+	final void NavigateUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHyperlinkButton).set_NavigateUri(value));
+	}
 }
 
 interface IconElement : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IIconElement
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Brush Foreground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IIconElement).get_Foreground(&_ret));
+		return _ret;
+	}
+	final void Foreground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IIconElement).set_Foreground(value));
+	}
 }
 
 interface Image : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IImage, Windows.UI.Xaml.Controls.IImage2, Windows.UI.Xaml.Controls.IImage3
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.ImageSource Source()
+	{
+		Windows.UI.Xaml.Media.ImageSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IImage).get_Source(&_ret));
+		return _ret;
+	}
+	final void Source(Windows.UI.Xaml.Media.ImageSource value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IImage).set_Source(value));
+	}
+	final Windows.UI.Xaml.Media.Stretch Stretch()
+	{
+		Windows.UI.Xaml.Media.Stretch _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IImage).get_Stretch(&_ret));
+		return _ret;
+	}
+	final void Stretch(Windows.UI.Xaml.Media.Stretch value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IImage).set_Stretch(value));
+	}
+	final Windows.UI.Xaml.Thickness NineGrid()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IImage).get_NineGrid(&_ret));
+		return _ret;
+	}
+	final void NineGrid(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IImage).set_NineGrid(value));
+	}
+	deprecated("PlayToSource may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource.")
+	final Windows.Media.PlayTo.PlayToSource PlayToSource()
+	{
+		Windows.Media.PlayTo.PlayToSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IImage).get_PlayToSource(&_ret));
+		return _ret;
+	}
+	final Windows.Media.Casting.CastingSource GetAsCastingSource()
+	{
+		Windows.Media.Casting.CastingSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IImage2).abi_GetAsCastingSource(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Composition.CompositionBrush GetAlphaMask()
+	{
+		Windows.UI.Composition.CompositionBrush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IImage3).abi_GetAlphaMask(&_ret));
+		return _ret;
+	}
 }
 
 interface InkCanvas : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IInkCanvas
 {
+extern(Windows):
+	final Windows.UI.Input.Inking.InkPresenter InkPresenter()
+	{
+		Windows.UI.Input.Inking.InkPresenter _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkCanvas).get_InkPresenter(&_ret));
+		return _ret;
+	}
 }
 
 interface InkToolbar : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IInkToolbar, Windows.UI.Xaml.Controls.IInkToolbar2
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.InkToolbarInitialControls InitialControls()
+	{
+		Windows.UI.Xaml.Controls.InkToolbarInitialControls _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).get_InitialControls(&_ret));
+		return _ret;
+	}
+	final void InitialControls(Windows.UI.Xaml.Controls.InkToolbarInitialControls value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).set_InitialControls(value));
+	}
+	final Windows.UI.Xaml.DependencyObjectCollection Children()
+	{
+		Windows.UI.Xaml.DependencyObjectCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).get_Children(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.InkToolbarToolButton ActiveTool()
+	{
+		Windows.UI.Xaml.Controls.InkToolbarToolButton _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).get_ActiveTool(&_ret));
+		return _ret;
+	}
+	final void ActiveTool(Windows.UI.Xaml.Controls.InkToolbarToolButton value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).set_ActiveTool(value));
+	}
+	final Windows.UI.Input.Inking.InkDrawingAttributes InkDrawingAttributes()
+	{
+		Windows.UI.Input.Inking.InkDrawingAttributes _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).get_InkDrawingAttributes(&_ret));
+		return _ret;
+	}
+	final bool IsRulerButtonChecked()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).get_IsRulerButtonChecked(&_ret));
+		return _ret;
+	}
+	final void IsRulerButtonChecked(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).set_IsRulerButtonChecked(value));
+	}
+	final Windows.UI.Xaml.Controls.InkCanvas TargetInkCanvas()
+	{
+		Windows.UI.Xaml.Controls.InkCanvas _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).get_TargetInkCanvas(&_ret));
+		return _ret;
+	}
+	final void TargetInkCanvas(Windows.UI.Xaml.Controls.InkCanvas value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).set_TargetInkCanvas(value));
+	}
+	final Windows.UI.Xaml.Controls.InkToolbarToolButton GetToolButton(Windows.UI.Xaml.Controls.InkToolbarTool tool)
+	{
+		Windows.UI.Xaml.Controls.InkToolbarToolButton _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).abi_GetToolButton(tool, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.InkToolbarToggleButton GetToggleButton(Windows.UI.Xaml.Controls.InkToolbarToggle tool)
+	{
+		Windows.UI.Xaml.Controls.InkToolbarToggleButton _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).abi_GetToggleButton(tool, &_ret));
+		return _ret;
+	}
+	final bool IsStencilButtonChecked()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar2).get_IsStencilButtonChecked(&_ret));
+		return _ret;
+	}
+	final void IsStencilButtonChecked(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar2).set_IsStencilButtonChecked(value));
+	}
+	final Windows.UI.Xaml.Controls.InkToolbarButtonFlyoutPlacement ButtonFlyoutPlacement()
+	{
+		Windows.UI.Xaml.Controls.InkToolbarButtonFlyoutPlacement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar2).get_ButtonFlyoutPlacement(&_ret));
+		return _ret;
+	}
+	final void ButtonFlyoutPlacement(Windows.UI.Xaml.Controls.InkToolbarButtonFlyoutPlacement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar2).set_ButtonFlyoutPlacement(value));
+	}
+	final Windows.UI.Xaml.Controls.Orientation Orientation()
+	{
+		Windows.UI.Xaml.Controls.Orientation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar2).get_Orientation(&_ret));
+		return _ret;
+	}
+	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar2).set_Orientation(value));
+	}
+	final Windows.UI.Xaml.Controls.InkToolbarMenuButton GetMenuButton(Windows.UI.Xaml.Controls.InkToolbarMenuKind menu)
+	{
+		Windows.UI.Xaml.Controls.InkToolbarMenuButton _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar2).abi_GetMenuButton(menu, &_ret));
+		return _ret;
+	}
 }
 
 interface InkToolbarBallpointPenButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarBallpointPenButton
@@ -7574,10 +11303,44 @@ interface InkToolbarBallpointPenButton : Windows.UI.Xaml.Controls.InkToolbarPenB
 
 interface InkToolbarCustomPen : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IInkToolbarCustomPen, Windows.UI.Xaml.Controls.IInkToolbarCustomPenOverrides
 {
+extern(Windows):
+	final Windows.UI.Input.Inking.InkDrawingAttributes CreateInkDrawingAttributes(Windows.UI.Xaml.Media.Brush brush, double strokeWidth)
+	{
+		Windows.UI.Input.Inking.InkDrawingAttributes _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPen).abi_CreateInkDrawingAttributes(brush, strokeWidth, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Inking.InkDrawingAttributes CreateInkDrawingAttributesCore(Windows.UI.Xaml.Media.Brush brush, double strokeWidth)
+	{
+		Windows.UI.Input.Inking.InkDrawingAttributes _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPenOverrides).abi_CreateInkDrawingAttributesCore(brush, strokeWidth, &_ret));
+		return _ret;
+	}
 }
 
 interface InkToolbarCustomPenButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarCustomPenButton
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.InkToolbarCustomPen CustomPen()
+	{
+		Windows.UI.Xaml.Controls.InkToolbarCustomPen _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPenButton).get_CustomPen(&_ret));
+		return _ret;
+	}
+	final void CustomPen(Windows.UI.Xaml.Controls.InkToolbarCustomPen value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPenButton).set_CustomPen(value));
+	}
+	final Windows.UI.Xaml.UIElement ConfigurationContent()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPenButton).get_ConfigurationContent(&_ret));
+		return _ret;
+	}
+	final void ConfigurationContent(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPenButton).set_ConfigurationContent(value));
+	}
 }
 
 interface InkToolbarCustomToggleButton : Windows.UI.Xaml.Controls.InkToolbarToggleButton, Windows.UI.Xaml.Controls.IInkToolbarCustomToggleButton
@@ -7586,14 +11349,57 @@ interface InkToolbarCustomToggleButton : Windows.UI.Xaml.Controls.InkToolbarTogg
 
 interface InkToolbarCustomToolButton : Windows.UI.Xaml.Controls.InkToolbarToolButton, Windows.UI.Xaml.Controls.IInkToolbarCustomToolButton
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement ConfigurationContent()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomToolButton).get_ConfigurationContent(&_ret));
+		return _ret;
+	}
+	final void ConfigurationContent(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomToolButton).set_ConfigurationContent(value));
+	}
 }
 
 interface InkToolbarEraserButton : Windows.UI.Xaml.Controls.InkToolbarToolButton, Windows.UI.Xaml.Controls.IInkToolbarEraserButton, Windows.UI.Xaml.Controls.IInkToolbarEraserButton2
 {
+extern(Windows):
+	final bool IsClearAllVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarEraserButton2).get_IsClearAllVisible(&_ret));
+		return _ret;
+	}
+	final void IsClearAllVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarEraserButton2).set_IsClearAllVisible(value));
+	}
 }
 
 interface InkToolbarFlyoutItem : Windows.UI.Xaml.Controls.Primitives.ButtonBase, Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.InkToolbarFlyoutItemKind Kind()
+	{
+		Windows.UI.Xaml.Controls.InkToolbarFlyoutItemKind _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).get_Kind(&_ret));
+		return _ret;
+	}
+	final void Kind(Windows.UI.Xaml.Controls.InkToolbarFlyoutItemKind value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).set_Kind(value));
+	}
+	final bool IsChecked()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).get_IsChecked(&_ret));
+		return _ret;
+	}
+	final void IsChecked(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).set_IsChecked(value));
+	}
 }
 
 interface InkToolbarHighlighterButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarHighlighterButton
@@ -7602,18 +11408,112 @@ interface InkToolbarHighlighterButton : Windows.UI.Xaml.Controls.InkToolbarPenBu
 
 interface InkToolbarIsStencilButtonCheckedChangedEventArgs : Windows.UI.Xaml.Controls.IInkToolbarIsStencilButtonCheckedChangedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.InkToolbarStencilButton StencilButton()
+	{
+		Windows.UI.Xaml.Controls.InkToolbarStencilButton _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarIsStencilButtonCheckedChangedEventArgs).get_StencilButton(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.InkToolbarStencilKind StencilKind()
+	{
+		Windows.UI.Xaml.Controls.InkToolbarStencilKind _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarIsStencilButtonCheckedChangedEventArgs).get_StencilKind(&_ret));
+		return _ret;
+	}
 }
 
 interface InkToolbarMenuButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.UI.Xaml.Controls.IInkToolbarMenuButton
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.InkToolbarMenuKind MenuKind()
+	{
+		Windows.UI.Xaml.Controls.InkToolbarMenuKind _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarMenuButton).get_MenuKind(&_ret));
+		return _ret;
+	}
+	final bool IsExtensionGlyphShown()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarMenuButton).get_IsExtensionGlyphShown(&_ret));
+		return _ret;
+	}
+	final void IsExtensionGlyphShown(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarMenuButton).set_IsExtensionGlyphShown(value));
+	}
 }
 
 interface InkToolbarPenButton : Windows.UI.Xaml.Controls.InkToolbarToolButton, Windows.UI.Xaml.Controls.IInkToolbarPenButton
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush) Palette()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).get_Palette(&_ret));
+		return _ret;
+	}
+	final void Palette(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).set_Palette(value));
+	}
+	final double MinStrokeWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).get_MinStrokeWidth(&_ret));
+		return _ret;
+	}
+	final void MinStrokeWidth(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).set_MinStrokeWidth(value));
+	}
+	final double MaxStrokeWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).get_MaxStrokeWidth(&_ret));
+		return _ret;
+	}
+	final void MaxStrokeWidth(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).set_MaxStrokeWidth(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).get_SelectedBrush(&_ret));
+		return _ret;
+	}
+	final INT32 SelectedBrushIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).get_SelectedBrushIndex(&_ret));
+		return _ret;
+	}
+	final void SelectedBrushIndex(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).set_SelectedBrushIndex(value));
+	}
+	final double SelectedStrokeWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).get_SelectedStrokeWidth(&_ret));
+		return _ret;
+	}
+	final void SelectedStrokeWidth(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).set_SelectedStrokeWidth(value));
+	}
 }
 
 interface InkToolbarPenConfigurationControl : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IInkToolbarPenConfigurationControl
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.InkToolbarPenButton PenButton()
+	{
+		Windows.UI.Xaml.Controls.InkToolbarPenButton _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarPenConfigurationControl).get_PenButton(&_ret));
+		return _ret;
+	}
 }
 
 interface InkToolbarPencilButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarPencilButton
@@ -7622,22 +11522,104 @@ interface InkToolbarPencilButton : Windows.UI.Xaml.Controls.InkToolbarPenButton,
 
 interface InkToolbarRulerButton : Windows.UI.Xaml.Controls.InkToolbarToggleButton, Windows.UI.Xaml.Controls.IInkToolbarRulerButton
 {
+extern(Windows):
+	deprecated("InkToolbarRulerButton is deprecated starting from Windows 10 Creators Update. Please use InkToolbarStencilButton going forward. For more info, see MSDN.")
+	final Windows.UI.Input.Inking.InkPresenterRuler Ruler()
+	{
+		Windows.UI.Input.Inking.InkPresenterRuler _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarRulerButton).get_Ruler(&_ret));
+		return _ret;
+	}
 }
 
 interface InkToolbarStencilButton : Windows.UI.Xaml.Controls.InkToolbarMenuButton, Windows.UI.Xaml.Controls.IInkToolbarStencilButton
 {
+extern(Windows):
+	final Windows.UI.Input.Inking.InkPresenterRuler Ruler()
+	{
+		Windows.UI.Input.Inking.InkPresenterRuler _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).get_Ruler(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.Inking.InkPresenterProtractor Protractor()
+	{
+		Windows.UI.Input.Inking.InkPresenterProtractor _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).get_Protractor(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.InkToolbarStencilKind SelectedStencil()
+	{
+		Windows.UI.Xaml.Controls.InkToolbarStencilKind _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).get_SelectedStencil(&_ret));
+		return _ret;
+	}
+	final void SelectedStencil(Windows.UI.Xaml.Controls.InkToolbarStencilKind value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).set_SelectedStencil(value));
+	}
+	final bool IsRulerItemVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).get_IsRulerItemVisible(&_ret));
+		return _ret;
+	}
+	final void IsRulerItemVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).set_IsRulerItemVisible(value));
+	}
+	final bool IsProtractorItemVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).get_IsProtractorItemVisible(&_ret));
+		return _ret;
+	}
+	final void IsProtractorItemVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).set_IsProtractorItemVisible(value));
+	}
 }
 
 interface InkToolbarToggleButton : Windows.UI.Xaml.Controls.CheckBox, Windows.UI.Xaml.Controls.IInkToolbarToggleButton
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.InkToolbarToggle ToggleKind()
+	{
+		Windows.UI.Xaml.Controls.InkToolbarToggle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarToggleButton).get_ToggleKind(&_ret));
+		return _ret;
+	}
 }
 
 interface InkToolbarToolButton : Windows.UI.Xaml.Controls.RadioButton, Windows.UI.Xaml.Controls.IInkToolbarToolButton
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.InkToolbarTool ToolKind()
+	{
+		Windows.UI.Xaml.Controls.InkToolbarTool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarToolButton).get_ToolKind(&_ret));
+		return _ret;
+	}
+	final bool IsExtensionGlyphShown()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarToolButton).get_IsExtensionGlyphShown(&_ret));
+		return _ret;
+	}
+	final void IsExtensionGlyphShown(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarToolButton).set_IsExtensionGlyphShown(value));
+	}
 }
 
 interface ItemClickEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.IItemClickEventArgs
 {
+extern(Windows):
+	final IInspectable ClickedItem()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemClickEventArgs).get_ClickedItem(&_ret));
+		return _ret;
+	}
 }
 
 interface ItemCollection : Windows.Foundation.Collections.IObservableVector!(IInspectable), Windows.Foundation.Collections.IVector!(IInspectable), Windows.Foundation.Collections.IIterable!(IInspectable)
@@ -7646,10 +11628,282 @@ interface ItemCollection : Windows.Foundation.Collections.IObservableVector!(IIn
 
 interface ItemContainerGenerator : Windows.UI.Xaml.Controls.IItemContainerGenerator
 {
+extern(Windows):
+	deprecated("ItemFromContainer may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.ItemFromContainer.")
+	final IInspectable ItemFromContainer(Windows.UI.Xaml.DependencyObject container)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_ItemFromContainer(container, &_ret));
+		return _ret;
+	}
+	deprecated("ContainerFromItem may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.ContainerFromItem.")
+	final Windows.UI.Xaml.DependencyObject ContainerFromItem(IInspectable item)
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_ContainerFromItem(item, &_ret));
+		return _ret;
+	}
+	deprecated("IndexFromContainer may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.IndexFromContainer.")
+	final INT32 IndexFromContainer(Windows.UI.Xaml.DependencyObject container)
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_IndexFromContainer(container, &_ret));
+		return _ret;
+	}
+	deprecated("ContainerFromIndex may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.ContainerFromIndex.")
+	final Windows.UI.Xaml.DependencyObject ContainerFromIndex(INT32 index)
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_ContainerFromIndex(index, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.ItemContainerGenerator GetItemContainerGeneratorForPanel(Windows.UI.Xaml.Controls.Panel panel)
+	{
+		Windows.UI.Xaml.Controls.ItemContainerGenerator _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_GetItemContainerGeneratorForPanel(panel, &_ret));
+		return _ret;
+	}
+	final void StartAt(Windows.UI.Xaml.Controls.Primitives.GeneratorPosition position, Windows.UI.Xaml.Controls.Primitives.GeneratorDirection direction, bool allowStartAtRealizedItem)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_StartAt(position, direction, allowStartAtRealizedItem));
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_Stop());
+	}
+	final Windows.UI.Xaml.DependencyObject GenerateNext(bool* out_isNewlyRealized)
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_GenerateNext(out_isNewlyRealized, &_ret));
+		return _ret;
+	}
+	final void PrepareItemContainer(Windows.UI.Xaml.DependencyObject container)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_PrepareItemContainer(container));
+	}
+	final void RemoveAll()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_RemoveAll());
+	}
+	final void Remove(Windows.UI.Xaml.Controls.Primitives.GeneratorPosition position, INT32 count)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_Remove(position, count));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.GeneratorPosition GeneratorPositionFromIndex(INT32 itemIndex)
+	{
+		Windows.UI.Xaml.Controls.Primitives.GeneratorPosition _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_GeneratorPositionFromIndex(itemIndex, &_ret));
+		return _ret;
+	}
+	final INT32 IndexFromGeneratorPosition(Windows.UI.Xaml.Controls.Primitives.GeneratorPosition position)
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_IndexFromGeneratorPosition(position, &_ret));
+		return _ret;
+	}
+	final void Recycle(Windows.UI.Xaml.Controls.Primitives.GeneratorPosition position, INT32 count)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerGenerator).abi_Recycle(position, count));
+	}
 }
 
 interface ItemsControl : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IItemsControl, Windows.UI.Xaml.Controls.IItemsControlOverrides, Windows.UI.Xaml.Controls.IItemsControl2, Windows.UI.Xaml.Controls.IItemContainerMapping, Windows.UI.Xaml.Controls.IItemsControl3
 {
+extern(Windows):
+	final IInspectable ItemsSource()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemsSource(&_ret));
+		return _ret;
+	}
+	final void ItemsSource(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemsSource(value));
+	}
+	final Windows.UI.Xaml.Controls.ItemCollection Items()
+	{
+		Windows.UI.Xaml.Controls.ItemCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_Items(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.DataTemplate ItemTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemTemplate(&_ret));
+		return _ret;
+	}
+	final void ItemTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemTemplate(value));
+	}
+	final Windows.UI.Xaml.Controls.DataTemplateSelector ItemTemplateSelector()
+	{
+		Windows.UI.Xaml.Controls.DataTemplateSelector _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemTemplateSelector(&_ret));
+		return _ret;
+	}
+	final void ItemTemplateSelector(Windows.UI.Xaml.Controls.DataTemplateSelector value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemTemplateSelector(value));
+	}
+	final Windows.UI.Xaml.Controls.ItemsPanelTemplate ItemsPanel()
+	{
+		Windows.UI.Xaml.Controls.ItemsPanelTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemsPanel(&_ret));
+		return _ret;
+	}
+	final void ItemsPanel(Windows.UI.Xaml.Controls.ItemsPanelTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemsPanel(value));
+	}
+	final HSTRING DisplayMemberPath()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_DisplayMemberPath(&_ret));
+		return _ret;
+	}
+	final void DisplayMemberPath(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).set_DisplayMemberPath(value));
+	}
+	final Windows.UI.Xaml.Style ItemContainerStyle()
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemContainerStyle(&_ret));
+		return _ret;
+	}
+	final void ItemContainerStyle(Windows.UI.Xaml.Style value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemContainerStyle(value));
+	}
+	final Windows.UI.Xaml.Controls.StyleSelector ItemContainerStyleSelector()
+	{
+		Windows.UI.Xaml.Controls.StyleSelector _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemContainerStyleSelector(&_ret));
+		return _ret;
+	}
+	final void ItemContainerStyleSelector(Windows.UI.Xaml.Controls.StyleSelector value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemContainerStyleSelector(value));
+	}
+	final Windows.UI.Xaml.Controls.ItemContainerGenerator ItemContainerGenerator()
+	{
+		Windows.UI.Xaml.Controls.ItemContainerGenerator _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemContainerGenerator(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Animation.TransitionCollection ItemContainerTransitions()
+	{
+		Windows.UI.Xaml.Media.Animation.TransitionCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemContainerTransitions(&_ret));
+		return _ret;
+	}
+	final void ItemContainerTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemContainerTransitions(value));
+	}
+	final Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.Controls.GroupStyle) GroupStyle()
+	{
+		Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.Controls.GroupStyle) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_GroupStyle(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.GroupStyleSelector GroupStyleSelector()
+	{
+		Windows.UI.Xaml.Controls.GroupStyleSelector _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_GroupStyleSelector(&_ret));
+		return _ret;
+	}
+	final void GroupStyleSelector(Windows.UI.Xaml.Controls.GroupStyleSelector value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).set_GroupStyleSelector(value));
+	}
+	final bool IsGrouping()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_IsGrouping(&_ret));
+		return _ret;
+	}
+	final bool IsItemItsOwnContainerOverride(IInspectable item)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_IsItemItsOwnContainerOverride(item, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.DependencyObject GetContainerForItemOverride()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_GetContainerForItemOverride(&_ret));
+		return _ret;
+	}
+	final void ClearContainerForItemOverride(Windows.UI.Xaml.DependencyObject element, IInspectable item)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_ClearContainerForItemOverride(element, item));
+	}
+	final void PrepareContainerForItemOverride(Windows.UI.Xaml.DependencyObject element, IInspectable item)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_PrepareContainerForItemOverride(element, item));
+	}
+	final void OnItemsChanged(IInspectable e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemsChanged(e));
+	}
+	final void OnItemContainerStyleChanged(Windows.UI.Xaml.Style oldItemContainerStyle, Windows.UI.Xaml.Style newItemContainerStyle)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemContainerStyleChanged(oldItemContainerStyle, newItemContainerStyle));
+	}
+	final void OnItemContainerStyleSelectorChanged(Windows.UI.Xaml.Controls.StyleSelector oldItemContainerStyleSelector, Windows.UI.Xaml.Controls.StyleSelector newItemContainerStyleSelector)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemContainerStyleSelectorChanged(oldItemContainerStyleSelector, newItemContainerStyleSelector));
+	}
+	final void OnItemTemplateChanged(Windows.UI.Xaml.DataTemplate oldItemTemplate, Windows.UI.Xaml.DataTemplate newItemTemplate)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemTemplateChanged(oldItemTemplate, newItemTemplate));
+	}
+	final void OnItemTemplateSelectorChanged(Windows.UI.Xaml.Controls.DataTemplateSelector oldItemTemplateSelector, Windows.UI.Xaml.Controls.DataTemplateSelector newItemTemplateSelector)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemTemplateSelectorChanged(oldItemTemplateSelector, newItemTemplateSelector));
+	}
+	final void OnGroupStyleSelectorChanged(Windows.UI.Xaml.Controls.GroupStyleSelector oldGroupStyleSelector, Windows.UI.Xaml.Controls.GroupStyleSelector newGroupStyleSelector)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnGroupStyleSelectorChanged(oldGroupStyleSelector, newGroupStyleSelector));
+	}
+	final Windows.UI.Xaml.Controls.Panel ItemsPanelRoot()
+	{
+		Windows.UI.Xaml.Controls.Panel _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl2).get_ItemsPanelRoot(&_ret));
+		return _ret;
+	}
+	final IInspectable ItemFromContainer(Windows.UI.Xaml.DependencyObject container)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerMapping).abi_ItemFromContainer(container, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.DependencyObject ContainerFromItem(IInspectable item)
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerMapping).abi_ContainerFromItem(item, &_ret));
+		return _ret;
+	}
+	final INT32 IndexFromContainer(Windows.UI.Xaml.DependencyObject container)
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerMapping).abi_IndexFromContainer(container, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.DependencyObject ContainerFromIndex(INT32 index)
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemContainerMapping).abi_ContainerFromIndex(index, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.DependencyObject GroupHeaderContainerFromItemContainer(Windows.UI.Xaml.DependencyObject itemContainer)
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl3).abi_GroupHeaderContainerFromItemContainer(itemContainer, &_ret));
+		return _ret;
+	}
 }
 
 interface ItemsPanelTemplate : Windows.UI.Xaml.FrameworkTemplate, Windows.UI.Xaml.Controls.IItemsPanelTemplate
@@ -7658,22 +11912,367 @@ interface ItemsPanelTemplate : Windows.UI.Xaml.FrameworkTemplate, Windows.UI.Xam
 
 interface ItemsPickedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IItemsPickedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(IInspectable) AddedItems()
+	{
+		Windows.Foundation.Collections.IVector!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPickedEventArgs).get_AddedItems(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(IInspectable) RemovedItems()
+	{
+		Windows.Foundation.Collections.IVector!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPickedEventArgs).get_RemovedItems(&_ret));
+		return _ret;
+	}
 }
 
 interface ItemsPresenter : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IItemsPresenter, Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo, Windows.UI.Xaml.Controls.IItemsPresenter2
 {
+extern(Windows):
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter).set_Header(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter).set_HeaderTemplate(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.TransitionCollection HeaderTransitions()
+	{
+		Windows.UI.Xaml.Media.Animation.TransitionCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter).get_HeaderTransitions(&_ret));
+		return _ret;
+	}
+	final void HeaderTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter).set_HeaderTransitions(value));
+	}
+	final Windows.UI.Xaml.Thickness Padding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter).get_Padding(&_ret));
+		return _ret;
+	}
+	final void Padding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter).set_Padding(value));
+	}
+	final bool AreHorizontalSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreHorizontalSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final bool AreVerticalSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
+	{
+		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetIrregularSnapPoints(orientation, alignment, &_ret));
+		return _ret;
+	}
+	final FLOAT GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, FLOAT* out_offset)
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
+		return _ret;
+	}
+	final IInspectable Footer()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter2).get_Footer(&_ret));
+		return _ret;
+	}
+	final void Footer(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter2).set_Footer(value));
+	}
+	final Windows.UI.Xaml.DataTemplate FooterTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter2).get_FooterTemplate(&_ret));
+		return _ret;
+	}
+	final void FooterTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter2).set_FooterTemplate(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.TransitionCollection FooterTransitions()
+	{
+		Windows.UI.Xaml.Media.Animation.TransitionCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter2).get_FooterTransitions(&_ret));
+		return _ret;
+	}
+	final void FooterTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsPresenter2).set_FooterTransitions(value));
+	}
 }
 
 interface ItemsStackPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IItemsStackPanel, Windows.UI.Xaml.Controls.IItemsStackPanel2
 {
+extern(Windows):
+	final Windows.UI.Xaml.Thickness GroupPadding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).get_GroupPadding(&_ret));
+		return _ret;
+	}
+	final void GroupPadding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).set_GroupPadding(value));
+	}
+	final Windows.UI.Xaml.Controls.Orientation Orientation()
+	{
+		Windows.UI.Xaml.Controls.Orientation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).get_Orientation(&_ret));
+		return _ret;
+	}
+	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).set_Orientation(value));
+	}
+	final INT32 FirstCacheIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).get_FirstCacheIndex(&_ret));
+		return _ret;
+	}
+	final INT32 FirstVisibleIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).get_FirstVisibleIndex(&_ret));
+		return _ret;
+	}
+	final INT32 LastVisibleIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).get_LastVisibleIndex(&_ret));
+		return _ret;
+	}
+	final INT32 LastCacheIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).get_LastCacheIndex(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.PanelScrollingDirection ScrollingDirection()
+	{
+		Windows.UI.Xaml.Controls.PanelScrollingDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).get_ScrollingDirection(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Primitives.GroupHeaderPlacement GroupHeaderPlacement()
+	{
+		Windows.UI.Xaml.Controls.Primitives.GroupHeaderPlacement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).get_GroupHeaderPlacement(&_ret));
+		return _ret;
+	}
+	final void GroupHeaderPlacement(Windows.UI.Xaml.Controls.Primitives.GroupHeaderPlacement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).set_GroupHeaderPlacement(value));
+	}
+	final Windows.UI.Xaml.Controls.ItemsUpdatingScrollMode ItemsUpdatingScrollMode()
+	{
+		Windows.UI.Xaml.Controls.ItemsUpdatingScrollMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).get_ItemsUpdatingScrollMode(&_ret));
+		return _ret;
+	}
+	final void ItemsUpdatingScrollMode(Windows.UI.Xaml.Controls.ItemsUpdatingScrollMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).set_ItemsUpdatingScrollMode(value));
+	}
+	final double CacheLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).get_CacheLength(&_ret));
+		return _ret;
+	}
+	final void CacheLength(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel).set_CacheLength(value));
+	}
+	final bool AreStickyGroupHeadersEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel2).get_AreStickyGroupHeadersEnabled(&_ret));
+		return _ret;
+	}
+	final void AreStickyGroupHeadersEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsStackPanel2).set_AreStickyGroupHeadersEnabled(value));
+	}
 }
 
 interface ItemsWrapGrid : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IItemsWrapGrid, Windows.UI.Xaml.Controls.IItemsWrapGrid2
 {
+extern(Windows):
+	final Windows.UI.Xaml.Thickness GroupPadding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).get_GroupPadding(&_ret));
+		return _ret;
+	}
+	final void GroupPadding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).set_GroupPadding(value));
+	}
+	final Windows.UI.Xaml.Controls.Orientation Orientation()
+	{
+		Windows.UI.Xaml.Controls.Orientation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).get_Orientation(&_ret));
+		return _ret;
+	}
+	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).set_Orientation(value));
+	}
+	final INT32 MaximumRowsOrColumns()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).get_MaximumRowsOrColumns(&_ret));
+		return _ret;
+	}
+	final void MaximumRowsOrColumns(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).set_MaximumRowsOrColumns(value));
+	}
+	final double ItemWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).get_ItemWidth(&_ret));
+		return _ret;
+	}
+	final void ItemWidth(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).set_ItemWidth(value));
+	}
+	final double ItemHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).get_ItemHeight(&_ret));
+		return _ret;
+	}
+	final void ItemHeight(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).set_ItemHeight(value));
+	}
+	final INT32 FirstCacheIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).get_FirstCacheIndex(&_ret));
+		return _ret;
+	}
+	final INT32 FirstVisibleIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).get_FirstVisibleIndex(&_ret));
+		return _ret;
+	}
+	final INT32 LastVisibleIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).get_LastVisibleIndex(&_ret));
+		return _ret;
+	}
+	final INT32 LastCacheIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).get_LastCacheIndex(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.PanelScrollingDirection ScrollingDirection()
+	{
+		Windows.UI.Xaml.Controls.PanelScrollingDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).get_ScrollingDirection(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Primitives.GroupHeaderPlacement GroupHeaderPlacement()
+	{
+		Windows.UI.Xaml.Controls.Primitives.GroupHeaderPlacement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).get_GroupHeaderPlacement(&_ret));
+		return _ret;
+	}
+	final void GroupHeaderPlacement(Windows.UI.Xaml.Controls.Primitives.GroupHeaderPlacement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).set_GroupHeaderPlacement(value));
+	}
+	final double CacheLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).get_CacheLength(&_ret));
+		return _ret;
+	}
+	final void CacheLength(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid).set_CacheLength(value));
+	}
+	final bool AreStickyGroupHeadersEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid2).get_AreStickyGroupHeadersEnabled(&_ret));
+		return _ret;
+	}
+	final void AreStickyGroupHeadersEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsWrapGrid2).set_AreStickyGroupHeadersEnabled(value));
+	}
 }
 
 interface ListBox : Windows.UI.Xaml.Controls.Primitives.Selector, Windows.UI.Xaml.Controls.IListBox, Windows.UI.Xaml.Controls.IListBox2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(IInspectable) SelectedItems()
+	{
+		Windows.Foundation.Collections.IVector!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListBox).get_SelectedItems(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.SelectionMode SelectionMode()
+	{
+		Windows.UI.Xaml.Controls.SelectionMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListBox).get_SelectionMode(&_ret));
+		return _ret;
+	}
+	final void SelectionMode(Windows.UI.Xaml.Controls.SelectionMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListBox).set_SelectionMode(value));
+	}
+	final void ScrollIntoView(IInspectable item)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListBox).abi_ScrollIntoView(item));
+	}
+	final void SelectAll()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListBox).abi_SelectAll());
+	}
+	final bool SingleSelectionFollowsFocus()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListBox2).get_SingleSelectionFollowsFocus(&_ret));
+		return _ret;
+	}
+	final void SingleSelectionFollowsFocus(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListBox2).set_SingleSelectionFollowsFocus(value));
+	}
 }
 
 interface ListBoxItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IListBoxItem
@@ -7682,6 +12281,99 @@ interface ListBoxItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Window
 
 interface ListPickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase, Windows.UI.Xaml.Controls.IListPickerFlyout
 {
+extern(Windows):
+	final IInspectable ItemsSource()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).get_ItemsSource(&_ret));
+		return _ret;
+	}
+	final void ItemsSource(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).set_ItemsSource(value));
+	}
+	final Windows.UI.Xaml.DataTemplate ItemTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).get_ItemTemplate(&_ret));
+		return _ret;
+	}
+	final void ItemTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).set_ItemTemplate(value));
+	}
+	final HSTRING DisplayMemberPath()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).get_DisplayMemberPath(&_ret));
+		return _ret;
+	}
+	final void DisplayMemberPath(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).set_DisplayMemberPath(value));
+	}
+	final Windows.UI.Xaml.Controls.ListPickerFlyoutSelectionMode SelectionMode()
+	{
+		Windows.UI.Xaml.Controls.ListPickerFlyoutSelectionMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).get_SelectionMode(&_ret));
+		return _ret;
+	}
+	final void SelectionMode(Windows.UI.Xaml.Controls.ListPickerFlyoutSelectionMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).set_SelectionMode(value));
+	}
+	final INT32 SelectedIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).get_SelectedIndex(&_ret));
+		return _ret;
+	}
+	final void SelectedIndex(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).set_SelectedIndex(value));
+	}
+	final IInspectable SelectedItem()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).get_SelectedItem(&_ret));
+		return _ret;
+	}
+	final void SelectedItem(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).set_SelectedItem(value));
+	}
+	final IInspectable SelectedValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).get_SelectedValue(&_ret));
+		return _ret;
+	}
+	final void SelectedValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).set_SelectedValue(value));
+	}
+	final HSTRING SelectedValuePath()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).get_SelectedValuePath(&_ret));
+		return _ret;
+	}
+	final void SelectedValuePath(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).set_SelectedValuePath(value));
+	}
+	final Windows.Foundation.Collections.IVector!(IInspectable) SelectedItems()
+	{
+		Windows.Foundation.Collections.IVector!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).get_SelectedItems(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(IInspectable)) ShowAtAsync(Windows.UI.Xaml.FrameworkElement target)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(IInspectable)) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).abi_ShowAtAsync(target, &_ret));
+		return _ret;
+	}
 }
 
 interface ListPickerFlyoutPresenter : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IListPickerFlyoutPresenter
@@ -7694,6 +12386,305 @@ interface ListView : Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Cont
 
 interface ListViewBase : Windows.UI.Xaml.Controls.Primitives.Selector, Windows.UI.Xaml.Controls.IListViewBase, Windows.UI.Xaml.Controls.ISemanticZoomInformation, Windows.UI.Xaml.Controls.IListViewBase2, Windows.UI.Xaml.Controls.IListViewBase3, Windows.UI.Xaml.Controls.IListViewBase4, Windows.UI.Xaml.Controls.IListViewBase5, Windows.UI.Xaml.Controls.IListViewBase6
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(IInspectable) SelectedItems()
+	{
+		Windows.Foundation.Collections.IVector!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).get_SelectedItems(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.ListViewSelectionMode SelectionMode()
+	{
+		Windows.UI.Xaml.Controls.ListViewSelectionMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).get_SelectionMode(&_ret));
+		return _ret;
+	}
+	final void SelectionMode(Windows.UI.Xaml.Controls.ListViewSelectionMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).set_SelectionMode(value));
+	}
+	final bool IsSwipeEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).get_IsSwipeEnabled(&_ret));
+		return _ret;
+	}
+	final void IsSwipeEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).set_IsSwipeEnabled(value));
+	}
+	final bool CanDragItems()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).get_CanDragItems(&_ret));
+		return _ret;
+	}
+	final void CanDragItems(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).set_CanDragItems(value));
+	}
+	final bool CanReorderItems()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).get_CanReorderItems(&_ret));
+		return _ret;
+	}
+	final void CanReorderItems(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).set_CanReorderItems(value));
+	}
+	final bool IsItemClickEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).get_IsItemClickEnabled(&_ret));
+		return _ret;
+	}
+	final void IsItemClickEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).set_IsItemClickEnabled(value));
+	}
+	final double DataFetchSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).get_DataFetchSize(&_ret));
+		return _ret;
+	}
+	final void DataFetchSize(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).set_DataFetchSize(value));
+	}
+	final double IncrementalLoadingThreshold()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).get_IncrementalLoadingThreshold(&_ret));
+		return _ret;
+	}
+	final void IncrementalLoadingThreshold(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).set_IncrementalLoadingThreshold(value));
+	}
+	final Windows.UI.Xaml.Controls.IncrementalLoadingTrigger IncrementalLoadingTrigger()
+	{
+		Windows.UI.Xaml.Controls.IncrementalLoadingTrigger _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).get_IncrementalLoadingTrigger(&_ret));
+		return _ret;
+	}
+	final void IncrementalLoadingTrigger(Windows.UI.Xaml.Controls.IncrementalLoadingTrigger value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).set_IncrementalLoadingTrigger(value));
+	}
+	final void ScrollIntoView(IInspectable item)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).abi_ScrollIntoView(item));
+	}
+	final void SelectAll()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).abi_SelectAll());
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Data.LoadMoreItemsResult) LoadMoreItemsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Data.LoadMoreItemsResult) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).abi_LoadMoreItemsAsync(&_ret));
+		return _ret;
+	}
+	final void ScrollIntoViewWithAlignment(IInspectable item, Windows.UI.Xaml.Controls.ScrollIntoViewAlignment alignment)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).abi_ScrollIntoViewWithAlignment(item, alignment));
+	}
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).set_Header(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).set_HeaderTemplate(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.TransitionCollection HeaderTransitions()
+	{
+		Windows.UI.Xaml.Media.Animation.TransitionCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).get_HeaderTransitions(&_ret));
+		return _ret;
+	}
+	final void HeaderTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).set_HeaderTransitions(value));
+	}
+	final Windows.UI.Xaml.Controls.SemanticZoom SemanticZoomOwner()
+	{
+		Windows.UI.Xaml.Controls.SemanticZoom _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).get_SemanticZoomOwner(&_ret));
+		return _ret;
+	}
+	final void SemanticZoomOwner(Windows.UI.Xaml.Controls.SemanticZoom value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).set_SemanticZoomOwner(value));
+	}
+	final bool IsActiveView()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).get_IsActiveView(&_ret));
+		return _ret;
+	}
+	final void IsActiveView(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).set_IsActiveView(value));
+	}
+	final bool IsZoomedInView()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).get_IsZoomedInView(&_ret));
+		return _ret;
+	}
+	final void IsZoomedInView(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).set_IsZoomedInView(value));
+	}
+	final void InitializeViewChange()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_InitializeViewChange());
+	}
+	final void CompleteViewChange()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_CompleteViewChange());
+	}
+	final void MakeVisible(Windows.UI.Xaml.Controls.SemanticZoomLocation item)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_MakeVisible(item));
+	}
+	final void StartViewChangeFrom(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_StartViewChangeFrom(source, destination));
+	}
+	final void StartViewChangeTo(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_StartViewChangeTo(source, destination));
+	}
+	final void CompleteViewChangeFrom(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_CompleteViewChangeFrom(source, destination));
+	}
+	final void CompleteViewChangeTo(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_CompleteViewChangeTo(source, destination));
+	}
+	final bool ShowsScrollingPlaceholders()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase2).get_ShowsScrollingPlaceholders(&_ret));
+		return _ret;
+	}
+	final void ShowsScrollingPlaceholders(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase2).set_ShowsScrollingPlaceholders(value));
+	}
+	final void SetDesiredContainerUpdateDuration(Windows.Foundation.TimeSpan duration)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase2).abi_SetDesiredContainerUpdateDuration(duration));
+	}
+	final IInspectable Footer()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase2).get_Footer(&_ret));
+		return _ret;
+	}
+	final void Footer(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase2).set_Footer(value));
+	}
+	final Windows.UI.Xaml.DataTemplate FooterTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase2).get_FooterTemplate(&_ret));
+		return _ret;
+	}
+	final void FooterTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase2).set_FooterTemplate(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.TransitionCollection FooterTransitions()
+	{
+		Windows.UI.Xaml.Media.Animation.TransitionCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase2).get_FooterTransitions(&_ret));
+		return _ret;
+	}
+	final void FooterTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase2).set_FooterTransitions(value));
+	}
+	final Windows.UI.Xaml.Controls.ListViewReorderMode ReorderMode()
+	{
+		Windows.UI.Xaml.Controls.ListViewReorderMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase3).get_ReorderMode(&_ret));
+		return _ret;
+	}
+	final void ReorderMode(Windows.UI.Xaml.Controls.ListViewReorderMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase3).set_ReorderMode(value));
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Data.ItemIndexRange) SelectedRanges()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Data.ItemIndexRange) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase4).get_SelectedRanges(&_ret));
+		return _ret;
+	}
+	final bool IsMultiSelectCheckBoxEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase4).get_IsMultiSelectCheckBoxEnabled(&_ret));
+		return _ret;
+	}
+	final void IsMultiSelectCheckBoxEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase4).set_IsMultiSelectCheckBoxEnabled(value));
+	}
+	final void SelectRange(Windows.UI.Xaml.Data.ItemIndexRange itemIndexRange)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase4).abi_SelectRange(itemIndexRange));
+	}
+	final void DeselectRange(Windows.UI.Xaml.Data.ItemIndexRange itemIndexRange)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase4).abi_DeselectRange(itemIndexRange));
+	}
+	final bool SingleSelectionFollowsFocus()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase5).get_SingleSelectionFollowsFocus(&_ret));
+		return _ret;
+	}
+	final void SingleSelectionFollowsFocus(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase5).set_SingleSelectionFollowsFocus(value));
+	}
+	final bool IsDragSource()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase5).abi_IsDragSource(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) TryStartConnectedAnimationAsync(Windows.UI.Xaml.Media.Animation.ConnectedAnimation animation, IInspectable item, HSTRING elementName)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase6).abi_TryStartConnectedAnimationAsync(animation, item, elementName, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Animation.ConnectedAnimation PrepareConnectedAnimation(HSTRING key, IInspectable item, HSTRING elementName)
+	{
+		Windows.UI.Xaml.Media.Animation.ConnectedAnimation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase6).abi_PrepareConnectedAnimation(key, item, elementName, &_ret));
+		return _ret;
+	}
 }
 
 interface ListViewBaseHeaderItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IListViewBaseHeaderItem
@@ -7706,6 +12697,13 @@ interface ListViewHeaderItem : Windows.UI.Xaml.Controls.ListViewBaseHeaderItem, 
 
 interface ListViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IListViewItem
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Primitives.ListViewItemTemplateSettings TemplateSettings()
+	{
+		Windows.UI.Xaml.Controls.Primitives.ListViewItemTemplateSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewItem).get_TemplateSettings(&_ret));
+		return _ret;
+	}
 }
 
 interface ListViewPersistenceHelper : Windows.UI.Xaml.Controls.IListViewPersistenceHelper
@@ -7714,18 +12712,751 @@ interface ListViewPersistenceHelper : Windows.UI.Xaml.Controls.IListViewPersiste
 
 interface MediaElement : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IMediaElement, Windows.UI.Xaml.Controls.IMediaElement2, Windows.UI.Xaml.Controls.IMediaElement3
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.ImageSource PosterSource()
+	{
+		Windows.UI.Xaml.Media.ImageSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_PosterSource(&_ret));
+		return _ret;
+	}
+	final void PosterSource(Windows.UI.Xaml.Media.ImageSource value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_PosterSource(value));
+	}
+	final Windows.Foundation.Uri Source()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_Source(&_ret));
+		return _ret;
+	}
+	final void Source(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_Source(value));
+	}
+	final bool IsMuted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_IsMuted(&_ret));
+		return _ret;
+	}
+	final void IsMuted(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_IsMuted(value));
+	}
+	final bool IsAudioOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_IsAudioOnly(&_ret));
+		return _ret;
+	}
+	final bool AutoPlay()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_AutoPlay(&_ret));
+		return _ret;
+	}
+	final void AutoPlay(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_AutoPlay(value));
+	}
+	final double Volume()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_Volume(&_ret));
+		return _ret;
+	}
+	final void Volume(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_Volume(value));
+	}
+	final double Balance()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_Balance(&_ret));
+		return _ret;
+	}
+	final void Balance(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_Balance(value));
+	}
+	final INT32 NaturalVideoHeight()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_NaturalVideoHeight(&_ret));
+		return _ret;
+	}
+	final INT32 NaturalVideoWidth()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_NaturalVideoWidth(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Duration NaturalDuration()
+	{
+		Windows.UI.Xaml.Duration _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_NaturalDuration(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan Position()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_Position(&_ret));
+		return _ret;
+	}
+	final void Position(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_Position(value));
+	}
+	final double DownloadProgress()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_DownloadProgress(&_ret));
+		return _ret;
+	}
+	final double BufferingProgress()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_BufferingProgress(&_ret));
+		return _ret;
+	}
+	final double DownloadProgressOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_DownloadProgressOffset(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.MediaElementState CurrentState()
+	{
+		Windows.UI.Xaml.Media.MediaElementState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_CurrentState(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.TimelineMarkerCollection Markers()
+	{
+		Windows.UI.Xaml.Media.TimelineMarkerCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_Markers(&_ret));
+		return _ret;
+	}
+	final bool CanSeek()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_CanSeek(&_ret));
+		return _ret;
+	}
+	final bool CanPause()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_CanPause(&_ret));
+		return _ret;
+	}
+	final INT32 AudioStreamCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_AudioStreamCount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(INT32) AudioStreamIndex()
+	{
+		Windows.Foundation.IReference!(INT32) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_AudioStreamIndex(&_ret));
+		return _ret;
+	}
+	final void AudioStreamIndex(Windows.Foundation.IReference!(INT32) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_AudioStreamIndex(value));
+	}
+	final double PlaybackRate()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_PlaybackRate(&_ret));
+		return _ret;
+	}
+	final void PlaybackRate(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_PlaybackRate(value));
+	}
+	final bool IsLooping()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_IsLooping(&_ret));
+		return _ret;
+	}
+	final void IsLooping(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_IsLooping(value));
+	}
+	deprecated("PlayToSource may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource.")
+	final Windows.Media.PlayTo.PlayToSource PlayToSource()
+	{
+		Windows.Media.PlayTo.PlayToSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_PlayToSource(&_ret));
+		return _ret;
+	}
+	final double DefaultPlaybackRate()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_DefaultPlaybackRate(&_ret));
+		return _ret;
+	}
+	final void DefaultPlaybackRate(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_DefaultPlaybackRate(value));
+	}
+	final INT32 AspectRatioWidth()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_AspectRatioWidth(&_ret));
+		return _ret;
+	}
+	final INT32 AspectRatioHeight()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_AspectRatioHeight(&_ret));
+		return _ret;
+	}
+	final bool RealTimePlayback()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_RealTimePlayback(&_ret));
+		return _ret;
+	}
+	final void RealTimePlayback(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_RealTimePlayback(value));
+	}
+	final Windows.UI.Xaml.Media.AudioCategory AudioCategory()
+	{
+		Windows.UI.Xaml.Media.AudioCategory _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_AudioCategory(&_ret));
+		return _ret;
+	}
+	final void AudioCategory(Windows.UI.Xaml.Media.AudioCategory value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_AudioCategory(value));
+	}
+	final Windows.UI.Xaml.Media.AudioDeviceType AudioDeviceType()
+	{
+		Windows.UI.Xaml.Media.AudioDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_AudioDeviceType(&_ret));
+		return _ret;
+	}
+	final void AudioDeviceType(Windows.UI.Xaml.Media.AudioDeviceType value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_AudioDeviceType(value));
+	}
+	final Windows.Media.Protection.MediaProtectionManager ProtectionManager()
+	{
+		Windows.Media.Protection.MediaProtectionManager _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_ProtectionManager(&_ret));
+		return _ret;
+	}
+	final void ProtectionManager(Windows.Media.Protection.MediaProtectionManager value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_ProtectionManager(value));
+	}
+	final Windows.UI.Xaml.Media.Stereo3DVideoPackingMode Stereo3DVideoPackingMode()
+	{
+		Windows.UI.Xaml.Media.Stereo3DVideoPackingMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_Stereo3DVideoPackingMode(&_ret));
+		return _ret;
+	}
+	final void Stereo3DVideoPackingMode(Windows.UI.Xaml.Media.Stereo3DVideoPackingMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_Stereo3DVideoPackingMode(value));
+	}
+	final Windows.UI.Xaml.Media.Stereo3DVideoRenderMode Stereo3DVideoRenderMode()
+	{
+		Windows.UI.Xaml.Media.Stereo3DVideoRenderMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_Stereo3DVideoRenderMode(&_ret));
+		return _ret;
+	}
+	final void Stereo3DVideoRenderMode(Windows.UI.Xaml.Media.Stereo3DVideoRenderMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).set_Stereo3DVideoRenderMode(value));
+	}
+	final bool IsStereo3DVideo()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_IsStereo3DVideo(&_ret));
+		return _ret;
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).abi_Stop());
+	}
+	final void Play()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).abi_Play());
+	}
+	final void Pause()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).abi_Pause());
+	}
+	final Windows.UI.Xaml.Media.MediaCanPlayResponse CanPlayType(HSTRING type)
+	{
+		Windows.UI.Xaml.Media.MediaCanPlayResponse _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).abi_CanPlayType(type, &_ret));
+		return _ret;
+	}
+	final void SetSource(Windows.Storage.Streams.IRandomAccessStream stream, HSTRING mimeType)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).abi_SetSource(stream, mimeType));
+	}
+	final HSTRING GetAudioStreamLanguage(Windows.Foundation.IReference!(INT32) index)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).abi_GetAudioStreamLanguage(index, &_ret));
+		return _ret;
+	}
+	final void AddAudioEffect(HSTRING effectID, bool effectOptional, Windows.Foundation.Collections.IPropertySet effectConfiguration)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).abi_AddAudioEffect(effectID, effectOptional, effectConfiguration));
+	}
+	final void AddVideoEffect(HSTRING effectID, bool effectOptional, Windows.Foundation.Collections.IPropertySet effectConfiguration)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).abi_AddVideoEffect(effectID, effectOptional, effectConfiguration));
+	}
+	final void RemoveAllEffects()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).abi_RemoveAllEffects());
+	}
+	final Windows.UI.Xaml.Media.Stereo3DVideoPackingMode ActualStereo3DVideoPackingMode()
+	{
+		Windows.UI.Xaml.Media.Stereo3DVideoPackingMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_ActualStereo3DVideoPackingMode(&_ret));
+		return _ret;
+	}
+	final bool AreTransportControlsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement2).get_AreTransportControlsEnabled(&_ret));
+		return _ret;
+	}
+	final void AreTransportControlsEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement2).set_AreTransportControlsEnabled(value));
+	}
+	final Windows.UI.Xaml.Media.Stretch Stretch()
+	{
+		Windows.UI.Xaml.Media.Stretch _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement2).get_Stretch(&_ret));
+		return _ret;
+	}
+	final void Stretch(Windows.UI.Xaml.Media.Stretch value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement2).set_Stretch(value));
+	}
+	final bool IsFullWindow()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement2).get_IsFullWindow(&_ret));
+		return _ret;
+	}
+	final void IsFullWindow(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement2).set_IsFullWindow(value));
+	}
+	final void SetMediaStreamSource(Windows.Media.Core.IMediaSource source)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement2).abi_SetMediaStreamSource(source));
+	}
+	deprecated("PlayToPreferredSourceUri may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource().PreferredSourceUri.")
+	final Windows.Foundation.Uri PlayToPreferredSourceUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement2).get_PlayToPreferredSourceUri(&_ret));
+		return _ret;
+	}
+	deprecated("PlayToPreferredSourceUri may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource().PreferredSourceUri.")
+	final void PlayToPreferredSourceUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement2).set_PlayToPreferredSourceUri(value));
+	}
+	final Windows.UI.Xaml.Controls.MediaTransportControls TransportControls()
+	{
+		Windows.UI.Xaml.Controls.MediaTransportControls _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement3).get_TransportControls(&_ret));
+		return _ret;
+	}
+	final void TransportControls(Windows.UI.Xaml.Controls.MediaTransportControls value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement3).set_TransportControls(value));
+	}
+	final void SetPlaybackSource(Windows.Media.Playback.IMediaPlaybackSource source)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement3).abi_SetPlaybackSource(source));
+	}
+	final Windows.Media.Casting.CastingSource GetAsCastingSource()
+	{
+		Windows.Media.Casting.CastingSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement3).abi_GetAsCastingSource(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaPlayerElement : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IMediaPlayerElement
 {
+extern(Windows):
+	final Windows.Media.Playback.IMediaPlaybackSource Source()
+	{
+		Windows.Media.Playback.IMediaPlaybackSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_Source(&_ret));
+		return _ret;
+	}
+	final void Source(Windows.Media.Playback.IMediaPlaybackSource value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_Source(value));
+	}
+	final Windows.UI.Xaml.Controls.MediaTransportControls TransportControls()
+	{
+		Windows.UI.Xaml.Controls.MediaTransportControls _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_TransportControls(&_ret));
+		return _ret;
+	}
+	final void TransportControls(Windows.UI.Xaml.Controls.MediaTransportControls value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_TransportControls(value));
+	}
+	final bool AreTransportControlsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_AreTransportControlsEnabled(&_ret));
+		return _ret;
+	}
+	final void AreTransportControlsEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_AreTransportControlsEnabled(value));
+	}
+	final Windows.UI.Xaml.Media.ImageSource PosterSource()
+	{
+		Windows.UI.Xaml.Media.ImageSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_PosterSource(&_ret));
+		return _ret;
+	}
+	final void PosterSource(Windows.UI.Xaml.Media.ImageSource value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_PosterSource(value));
+	}
+	final Windows.UI.Xaml.Media.Stretch Stretch()
+	{
+		Windows.UI.Xaml.Media.Stretch _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_Stretch(&_ret));
+		return _ret;
+	}
+	final void Stretch(Windows.UI.Xaml.Media.Stretch value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_Stretch(value));
+	}
+	final bool AutoPlay()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_AutoPlay(&_ret));
+		return _ret;
+	}
+	final void AutoPlay(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_AutoPlay(value));
+	}
+	final bool IsFullWindow()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_IsFullWindow(&_ret));
+		return _ret;
+	}
+	final void IsFullWindow(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_IsFullWindow(value));
+	}
+	final Windows.Media.Playback.MediaPlayer MediaPlayer()
+	{
+		Windows.Media.Playback.MediaPlayer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_MediaPlayer(&_ret));
+		return _ret;
+	}
+	final void SetMediaPlayer(Windows.Media.Playback.MediaPlayer mediaPlayer)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).abi_SetMediaPlayer(mediaPlayer));
+	}
 }
 
 interface MediaPlayerPresenter : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IMediaPlayerPresenter
 {
+extern(Windows):
+	final Windows.Media.Playback.MediaPlayer MediaPlayer()
+	{
+		Windows.Media.Playback.MediaPlayer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenter).get_MediaPlayer(&_ret));
+		return _ret;
+	}
+	final void MediaPlayer(Windows.Media.Playback.MediaPlayer value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenter).set_MediaPlayer(value));
+	}
+	final Windows.UI.Xaml.Media.Stretch Stretch()
+	{
+		Windows.UI.Xaml.Media.Stretch _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenter).get_Stretch(&_ret));
+		return _ret;
+	}
+	final void Stretch(Windows.UI.Xaml.Media.Stretch value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenter).set_Stretch(value));
+	}
+	final bool IsFullWindow()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenter).get_IsFullWindow(&_ret));
+		return _ret;
+	}
+	final void IsFullWindow(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenter).set_IsFullWindow(value));
+	}
 }
 
 interface MediaTransportControls : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IMediaTransportControls, Windows.UI.Xaml.Controls.IMediaTransportControls2
 {
+extern(Windows):
+	final bool IsFullWindowButtonVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsFullWindowButtonVisible(&_ret));
+		return _ret;
+	}
+	final void IsFullWindowButtonVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsFullWindowButtonVisible(value));
+	}
+	final bool IsFullWindowEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsFullWindowEnabled(&_ret));
+		return _ret;
+	}
+	final void IsFullWindowEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsFullWindowEnabled(value));
+	}
+	final bool IsZoomButtonVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsZoomButtonVisible(&_ret));
+		return _ret;
+	}
+	final void IsZoomButtonVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsZoomButtonVisible(value));
+	}
+	final bool IsZoomEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsZoomEnabled(&_ret));
+		return _ret;
+	}
+	final void IsZoomEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsZoomEnabled(value));
+	}
+	final bool IsFastForwardButtonVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsFastForwardButtonVisible(&_ret));
+		return _ret;
+	}
+	final void IsFastForwardButtonVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsFastForwardButtonVisible(value));
+	}
+	final bool IsFastForwardEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsFastForwardEnabled(&_ret));
+		return _ret;
+	}
+	final void IsFastForwardEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsFastForwardEnabled(value));
+	}
+	final bool IsFastRewindButtonVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsFastRewindButtonVisible(&_ret));
+		return _ret;
+	}
+	final void IsFastRewindButtonVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsFastRewindButtonVisible(value));
+	}
+	final bool IsFastRewindEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsFastRewindEnabled(&_ret));
+		return _ret;
+	}
+	final void IsFastRewindEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsFastRewindEnabled(value));
+	}
+	final bool IsStopButtonVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsStopButtonVisible(&_ret));
+		return _ret;
+	}
+	final void IsStopButtonVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsStopButtonVisible(value));
+	}
+	final bool IsStopEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsStopEnabled(&_ret));
+		return _ret;
+	}
+	final void IsStopEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsStopEnabled(value));
+	}
+	final bool IsVolumeButtonVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsVolumeButtonVisible(&_ret));
+		return _ret;
+	}
+	final void IsVolumeButtonVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsVolumeButtonVisible(value));
+	}
+	final bool IsVolumeEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsVolumeEnabled(&_ret));
+		return _ret;
+	}
+	final void IsVolumeEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsVolumeEnabled(value));
+	}
+	final bool IsPlaybackRateButtonVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsPlaybackRateButtonVisible(&_ret));
+		return _ret;
+	}
+	final void IsPlaybackRateButtonVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsPlaybackRateButtonVisible(value));
+	}
+	final bool IsPlaybackRateEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsPlaybackRateEnabled(&_ret));
+		return _ret;
+	}
+	final void IsPlaybackRateEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsPlaybackRateEnabled(value));
+	}
+	final bool IsSeekBarVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsSeekBarVisible(&_ret));
+		return _ret;
+	}
+	final void IsSeekBarVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsSeekBarVisible(value));
+	}
+	final bool IsSeekEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsSeekEnabled(&_ret));
+		return _ret;
+	}
+	final void IsSeekEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsSeekEnabled(value));
+	}
+	final bool IsCompact()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsCompact(&_ret));
+		return _ret;
+	}
+	final void IsCompact(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsCompact(value));
+	}
+	final bool IsSkipForwardButtonVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_IsSkipForwardButtonVisible(&_ret));
+		return _ret;
+	}
+	final void IsSkipForwardButtonVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_IsSkipForwardButtonVisible(value));
+	}
+	final bool IsSkipForwardEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_IsSkipForwardEnabled(&_ret));
+		return _ret;
+	}
+	final void IsSkipForwardEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_IsSkipForwardEnabled(value));
+	}
+	final bool IsSkipBackwardButtonVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_IsSkipBackwardButtonVisible(&_ret));
+		return _ret;
+	}
+	final void IsSkipBackwardButtonVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_IsSkipBackwardButtonVisible(value));
+	}
+	final bool IsSkipBackwardEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_IsSkipBackwardEnabled(&_ret));
+		return _ret;
+	}
+	final void IsSkipBackwardEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_IsSkipBackwardEnabled(value));
+	}
+	final bool IsNextTrackButtonVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_IsNextTrackButtonVisible(&_ret));
+		return _ret;
+	}
+	final void IsNextTrackButtonVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_IsNextTrackButtonVisible(value));
+	}
+	final bool IsPreviousTrackButtonVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_IsPreviousTrackButtonVisible(&_ret));
+		return _ret;
+	}
+	final void IsPreviousTrackButtonVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_IsPreviousTrackButtonVisible(value));
+	}
+	final Windows.UI.Xaml.Media.FastPlayFallbackBehaviour FastPlayFallbackBehaviour()
+	{
+		Windows.UI.Xaml.Media.FastPlayFallbackBehaviour _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_FastPlayFallbackBehaviour(&_ret));
+		return _ret;
+	}
+	final void FastPlayFallbackBehaviour(Windows.UI.Xaml.Media.FastPlayFallbackBehaviour value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_FastPlayFallbackBehaviour(value));
+	}
 }
 
 interface MediaTransportControlsHelper : Windows.UI.Xaml.Controls.IMediaTransportControlsHelper
@@ -7734,10 +13465,72 @@ interface MediaTransportControlsHelper : Windows.UI.Xaml.Controls.IMediaTranspor
 
 interface MenuFlyout : Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.IMenuFlyout, Windows.UI.Xaml.Controls.IMenuFlyout2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.MenuFlyoutItemBase) Items()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.MenuFlyoutItemBase) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyout).get_Items(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Style MenuFlyoutPresenterStyle()
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyout).get_MenuFlyoutPresenterStyle(&_ret));
+		return _ret;
+	}
+	final void MenuFlyoutPresenterStyle(Windows.UI.Xaml.Style value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyout).set_MenuFlyoutPresenterStyle(value));
+	}
+	final void ShowAt(Windows.UI.Xaml.UIElement targetElement, Windows.Foundation.Point point)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyout2).abi_ShowAt(targetElement, point));
+	}
 }
 
 interface MenuFlyoutItem : Windows.UI.Xaml.Controls.MenuFlyoutItemBase, Windows.UI.Xaml.Controls.IMenuFlyoutItem, Windows.UI.Xaml.Controls.IMenuFlyoutItem2
 {
+extern(Windows):
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).set_Text(value));
+	}
+	final Windows.UI.Xaml.Input.ICommand Command()
+	{
+		Windows.UI.Xaml.Input.ICommand _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).get_Command(&_ret));
+		return _ret;
+	}
+	final void Command(Windows.UI.Xaml.Input.ICommand value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).set_Command(value));
+	}
+	final IInspectable CommandParameter()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).get_CommandParameter(&_ret));
+		return _ret;
+	}
+	final void CommandParameter(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).set_CommandParameter(value));
+	}
+	final Windows.UI.Xaml.Controls.IconElement Icon()
+	{
+		Windows.UI.Xaml.Controls.IconElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem2).get_Icon(&_ret));
+		return _ret;
+	}
+	final void Icon(Windows.UI.Xaml.Controls.IconElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem2).set_Icon(value));
+	}
 }
 
 interface MenuFlyoutItemBase : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IMenuFlyoutItemBase
@@ -7746,6 +13539,13 @@ interface MenuFlyoutItemBase : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml
 
 interface MenuFlyoutPresenter : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.IMenuFlyoutPresenter, Windows.UI.Xaml.Controls.IMenuFlyoutPresenter2
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Primitives.MenuFlyoutPresenterTemplateSettings TemplateSettings()
+	{
+		Windows.UI.Xaml.Controls.Primitives.MenuFlyoutPresenterTemplateSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutPresenter2).get_TemplateSettings(&_ret));
+		return _ret;
+	}
 }
 
 interface MenuFlyoutSeparator : Windows.UI.Xaml.Controls.MenuFlyoutItemBase, Windows.UI.Xaml.Controls.IMenuFlyoutSeparator
@@ -7754,26 +13554,286 @@ interface MenuFlyoutSeparator : Windows.UI.Xaml.Controls.MenuFlyoutItemBase, Win
 
 interface MenuFlyoutSubItem : Windows.UI.Xaml.Controls.MenuFlyoutItemBase, Windows.UI.Xaml.Controls.IMenuFlyoutSubItem, Windows.UI.Xaml.Controls.IMenuFlyoutSubItem2
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.MenuFlyoutItemBase) Items()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.MenuFlyoutItemBase) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutSubItem).get_Items(&_ret));
+		return _ret;
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutSubItem).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutSubItem).set_Text(value));
+	}
+	final Windows.UI.Xaml.Controls.IconElement Icon()
+	{
+		Windows.UI.Xaml.Controls.IconElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutSubItem2).get_Icon(&_ret));
+		return _ret;
+	}
+	final void Icon(Windows.UI.Xaml.Controls.IconElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutSubItem2).set_Icon(value));
+	}
 }
 
 interface NotifyEventArgs : Windows.UI.Xaml.Controls.INotifyEventArgs, Windows.UI.Xaml.Controls.INotifyEventArgs2
 {
+extern(Windows):
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.INotifyEventArgs).get_Value(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri CallingUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.INotifyEventArgs2).get_CallingUri(&_ret));
+		return _ret;
+	}
 }
 
 interface Page : Windows.UI.Xaml.Controls.UserControl, Windows.UI.Xaml.Controls.IPage, Windows.UI.Xaml.Controls.IPageOverrides
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Frame Frame()
+	{
+		Windows.UI.Xaml.Controls.Frame _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPage).get_Frame(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Navigation.NavigationCacheMode NavigationCacheMode()
+	{
+		Windows.UI.Xaml.Navigation.NavigationCacheMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPage).get_NavigationCacheMode(&_ret));
+		return _ret;
+	}
+	final void NavigationCacheMode(Windows.UI.Xaml.Navigation.NavigationCacheMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPage).set_NavigationCacheMode(value));
+	}
+	final Windows.UI.Xaml.Controls.AppBar TopAppBar()
+	{
+		Windows.UI.Xaml.Controls.AppBar _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPage).get_TopAppBar(&_ret));
+		return _ret;
+	}
+	final void TopAppBar(Windows.UI.Xaml.Controls.AppBar value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPage).set_TopAppBar(value));
+	}
+	final Windows.UI.Xaml.Controls.AppBar BottomAppBar()
+	{
+		Windows.UI.Xaml.Controls.AppBar _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPage).get_BottomAppBar(&_ret));
+		return _ret;
+	}
+	final void BottomAppBar(Windows.UI.Xaml.Controls.AppBar value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPage).set_BottomAppBar(value));
+	}
+	final void OnNavigatedFrom(Windows.UI.Xaml.Navigation.NavigationEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPageOverrides).abi_OnNavigatedFrom(e));
+	}
+	final void OnNavigatedTo(Windows.UI.Xaml.Navigation.NavigationEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPageOverrides).abi_OnNavigatedTo(e));
+	}
+	final void OnNavigatingFrom(Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPageOverrides).abi_OnNavigatingFrom(e));
+	}
 }
 
 interface Panel : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IPanel
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.UIElementCollection Children()
+	{
+		Windows.UI.Xaml.Controls.UIElementCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPanel).get_Children(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Brush Background()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPanel).get_Background(&_ret));
+		return _ret;
+	}
+	final void Background(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPanel).set_Background(value));
+	}
+	final bool IsItemsHost()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPanel).get_IsItemsHost(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Animation.TransitionCollection ChildrenTransitions()
+	{
+		Windows.UI.Xaml.Media.Animation.TransitionCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPanel).get_ChildrenTransitions(&_ret));
+		return _ret;
+	}
+	final void ChildrenTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPanel).set_ChildrenTransitions(value));
+	}
 }
 
 interface PasswordBox : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IPasswordBox, Windows.UI.Xaml.Controls.IPasswordBox2, Windows.UI.Xaml.Controls.IPasswordBox3
 {
+extern(Windows):
+	final HSTRING Password()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox).get_Password(&_ret));
+		return _ret;
+	}
+	final void Password(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox).set_Password(value));
+	}
+	final HSTRING PasswordChar()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox).get_PasswordChar(&_ret));
+		return _ret;
+	}
+	final void PasswordChar(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox).set_PasswordChar(value));
+	}
+	deprecated("IsPasswordRevealButtonEnabledProperty may be altered or unavailable for releases after Windows 10.0. Instead, use PasswordRevealModeProperty.")
+	final bool IsPasswordRevealButtonEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox).get_IsPasswordRevealButtonEnabled(&_ret));
+		return _ret;
+	}
+	deprecated("IsPasswordRevealButtonEnabledProperty may be altered or unavailable for releases after Windows 10.0. Instead, use PasswordRevealModeProperty.")
+	final void IsPasswordRevealButtonEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox).set_IsPasswordRevealButtonEnabled(value));
+	}
+	final INT32 MaxLength()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox).get_MaxLength(&_ret));
+		return _ret;
+	}
+	final void MaxLength(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox).set_MaxLength(value));
+	}
+	final void SelectAll()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox).abi_SelectAll());
+	}
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox2).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox2).set_Header(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox2).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox2).set_HeaderTemplate(value));
+	}
+	final HSTRING PlaceholderText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox2).get_PlaceholderText(&_ret));
+		return _ret;
+	}
+	final void PlaceholderText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox2).set_PlaceholderText(value));
+	}
+	final Windows.UI.Xaml.Media.SolidColorBrush SelectionHighlightColor()
+	{
+		Windows.UI.Xaml.Media.SolidColorBrush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox2).get_SelectionHighlightColor(&_ret));
+		return _ret;
+	}
+	final void SelectionHighlightColor(Windows.UI.Xaml.Media.SolidColorBrush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox2).set_SelectionHighlightColor(value));
+	}
+	final bool PreventKeyboardDisplayOnProgrammaticFocus()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox2).get_PreventKeyboardDisplayOnProgrammaticFocus(&_ret));
+		return _ret;
+	}
+	final void PreventKeyboardDisplayOnProgrammaticFocus(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox2).set_PreventKeyboardDisplayOnProgrammaticFocus(value));
+	}
+	final Windows.UI.Xaml.Controls.PasswordRevealMode PasswordRevealMode()
+	{
+		Windows.UI.Xaml.Controls.PasswordRevealMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox3).get_PasswordRevealMode(&_ret));
+		return _ret;
+	}
+	final void PasswordRevealMode(Windows.UI.Xaml.Controls.PasswordRevealMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox3).set_PasswordRevealMode(value));
+	}
+	final Windows.UI.Xaml.TextReadingOrder TextReadingOrder()
+	{
+		Windows.UI.Xaml.TextReadingOrder _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox3).get_TextReadingOrder(&_ret));
+		return _ret;
+	}
+	final void TextReadingOrder(Windows.UI.Xaml.TextReadingOrder value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox3).set_TextReadingOrder(value));
+	}
+	final Windows.UI.Xaml.Input.InputScope InputScope()
+	{
+		Windows.UI.Xaml.Input.InputScope _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox3).get_InputScope(&_ret));
+		return _ret;
+	}
+	final void InputScope(Windows.UI.Xaml.Input.InputScope value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox3).set_InputScope(value));
+	}
 }
 
 interface PathIcon : Windows.UI.Xaml.Controls.IconElement, Windows.UI.Xaml.Controls.IPathIcon
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Geometry Data()
+	{
+		Windows.UI.Xaml.Media.Geometry _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPathIcon).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(Windows.UI.Xaml.Media.Geometry value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPathIcon).set_Data(value));
+	}
 }
 
 interface PickerConfirmedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IPickerConfirmedEventArgs
@@ -7782,6 +13842,33 @@ interface PickerConfirmedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.U
 
 interface PickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase, Windows.UI.Xaml.Controls.IPickerFlyout
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement Content()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPickerFlyout).get_Content(&_ret));
+		return _ret;
+	}
+	final void Content(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPickerFlyout).set_Content(value));
+	}
+	final bool ConfirmationButtonsVisible()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPickerFlyout).get_ConfirmationButtonsVisible(&_ret));
+		return _ret;
+	}
+	final void ConfirmationButtonsVisible(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPickerFlyout).set_ConfirmationButtonsVisible(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(bool) ShowAtAsync(Windows.UI.Xaml.FrameworkElement target)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPickerFlyout).abi_ShowAtAsync(target, &_ret));
+		return _ret;
+	}
 }
 
 interface PickerFlyoutPresenter : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IPickerFlyoutPresenter
@@ -7790,50 +13877,918 @@ interface PickerFlyoutPresenter : Windows.UI.Xaml.Controls.ContentControl, Windo
 
 interface Pivot : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.IPivot, Windows.UI.Xaml.Controls.IPivot2, Windows.UI.Xaml.Controls.IPivot3
 {
+extern(Windows):
+	final IInspectable Title()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot).set_Title(value));
+	}
+	final Windows.UI.Xaml.DataTemplate TitleTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot).get_TitleTemplate(&_ret));
+		return _ret;
+	}
+	final void TitleTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot).set_TitleTemplate(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot).set_HeaderTemplate(value));
+	}
+	final INT32 SelectedIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot).get_SelectedIndex(&_ret));
+		return _ret;
+	}
+	final void SelectedIndex(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot).set_SelectedIndex(value));
+	}
+	final IInspectable SelectedItem()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot).get_SelectedItem(&_ret));
+		return _ret;
+	}
+	final void SelectedItem(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot).set_SelectedItem(value));
+	}
+	final bool IsLocked()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot).get_IsLocked(&_ret));
+		return _ret;
+	}
+	final void IsLocked(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot).set_IsLocked(value));
+	}
+	final IInspectable LeftHeader()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot2).get_LeftHeader(&_ret));
+		return _ret;
+	}
+	final void LeftHeader(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot2).set_LeftHeader(value));
+	}
+	final Windows.UI.Xaml.DataTemplate LeftHeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot2).get_LeftHeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void LeftHeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot2).set_LeftHeaderTemplate(value));
+	}
+	final IInspectable RightHeader()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot2).get_RightHeader(&_ret));
+		return _ret;
+	}
+	final void RightHeader(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot2).set_RightHeader(value));
+	}
+	final Windows.UI.Xaml.DataTemplate RightHeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot2).get_RightHeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void RightHeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot2).set_RightHeaderTemplate(value));
+	}
+	final Windows.UI.Xaml.Controls.PivotHeaderFocusVisualPlacement HeaderFocusVisualPlacement()
+	{
+		Windows.UI.Xaml.Controls.PivotHeaderFocusVisualPlacement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot3).get_HeaderFocusVisualPlacement(&_ret));
+		return _ret;
+	}
+	final void HeaderFocusVisualPlacement(Windows.UI.Xaml.Controls.PivotHeaderFocusVisualPlacement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot3).set_HeaderFocusVisualPlacement(value));
+	}
+	final bool IsHeaderItemsCarouselEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot3).get_IsHeaderItemsCarouselEnabled(&_ret));
+		return _ret;
+	}
+	final void IsHeaderItemsCarouselEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot3).set_IsHeaderItemsCarouselEnabled(value));
+	}
 }
 
 interface PivotItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IPivotItem
 {
+extern(Windows):
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivotItem).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivotItem).set_Header(value));
+	}
 }
 
 interface PivotItemEventArgs : Windows.UI.Xaml.Controls.IPivotItemEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.PivotItem Item()
+	{
+		Windows.UI.Xaml.Controls.PivotItem _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivotItemEventArgs).get_Item(&_ret));
+		return _ret;
+	}
+	final void Item(Windows.UI.Xaml.Controls.PivotItem value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivotItemEventArgs).set_Item(value));
+	}
 }
 
 interface ProgressBar : Windows.UI.Xaml.Controls.Primitives.RangeBase, Windows.UI.Xaml.Controls.IProgressBar
 {
+extern(Windows):
+	final bool IsIndeterminate()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IProgressBar).get_IsIndeterminate(&_ret));
+		return _ret;
+	}
+	final void IsIndeterminate(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IProgressBar).set_IsIndeterminate(value));
+	}
+	final bool ShowError()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IProgressBar).get_ShowError(&_ret));
+		return _ret;
+	}
+	final void ShowError(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IProgressBar).set_ShowError(value));
+	}
+	final bool ShowPaused()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IProgressBar).get_ShowPaused(&_ret));
+		return _ret;
+	}
+	final void ShowPaused(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IProgressBar).set_ShowPaused(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.ProgressBarTemplateSettings TemplateSettings()
+	{
+		Windows.UI.Xaml.Controls.Primitives.ProgressBarTemplateSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IProgressBar).get_TemplateSettings(&_ret));
+		return _ret;
+	}
 }
 
 interface ProgressRing : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IProgressRing
 {
+extern(Windows):
+	final bool IsActive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IProgressRing).get_IsActive(&_ret));
+		return _ret;
+	}
+	final void IsActive(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IProgressRing).set_IsActive(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.ProgressRingTemplateSettings TemplateSettings()
+	{
+		Windows.UI.Xaml.Controls.Primitives.ProgressRingTemplateSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IProgressRing).get_TemplateSettings(&_ret));
+		return _ret;
+	}
 }
 
 interface RadioButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.UI.Xaml.Controls.IRadioButton
 {
+extern(Windows):
+	final HSTRING GroupName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRadioButton).get_GroupName(&_ret));
+		return _ret;
+	}
+	final void GroupName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRadioButton).set_GroupName(value));
+	}
 }
 
 interface RelativePanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IRelativePanel
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Brush BorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRelativePanel).get_BorderBrush(&_ret));
+		return _ret;
+	}
+	final void BorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRelativePanel).set_BorderBrush(value));
+	}
+	final Windows.UI.Xaml.Thickness BorderThickness()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRelativePanel).get_BorderThickness(&_ret));
+		return _ret;
+	}
+	final void BorderThickness(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRelativePanel).set_BorderThickness(value));
+	}
+	final Windows.UI.Xaml.CornerRadius CornerRadius()
+	{
+		Windows.UI.Xaml.CornerRadius _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRelativePanel).get_CornerRadius(&_ret));
+		return _ret;
+	}
+	final void CornerRadius(Windows.UI.Xaml.CornerRadius value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRelativePanel).set_CornerRadius(value));
+	}
+	final Windows.UI.Xaml.Thickness Padding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRelativePanel).get_Padding(&_ret));
+		return _ret;
+	}
+	final void Padding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRelativePanel).set_Padding(value));
+	}
 }
 
 interface RichEditBox : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IRichEditBox, Windows.UI.Xaml.Controls.IRichEditBox2, Windows.UI.Xaml.Controls.IRichEditBox3, Windows.UI.Xaml.Controls.IRichEditBox4, Windows.UI.Xaml.Controls.IRichEditBox5
 {
+extern(Windows):
+	final bool IsReadOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_IsReadOnly(&_ret));
+		return _ret;
+	}
+	final void IsReadOnly(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_IsReadOnly(value));
+	}
+	final bool AcceptsReturn()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_AcceptsReturn(&_ret));
+		return _ret;
+	}
+	final void AcceptsReturn(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_AcceptsReturn(value));
+	}
+	final Windows.UI.Xaml.TextAlignment TextAlignment()
+	{
+		Windows.UI.Xaml.TextAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_TextAlignment(&_ret));
+		return _ret;
+	}
+	final void TextAlignment(Windows.UI.Xaml.TextAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_TextAlignment(value));
+	}
+	final Windows.UI.Xaml.TextWrapping TextWrapping()
+	{
+		Windows.UI.Xaml.TextWrapping _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_TextWrapping(&_ret));
+		return _ret;
+	}
+	final void TextWrapping(Windows.UI.Xaml.TextWrapping value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_TextWrapping(value));
+	}
+	final bool IsSpellCheckEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_IsSpellCheckEnabled(&_ret));
+		return _ret;
+	}
+	final void IsSpellCheckEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_IsSpellCheckEnabled(value));
+	}
+	final bool IsTextPredictionEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_IsTextPredictionEnabled(&_ret));
+		return _ret;
+	}
+	final void IsTextPredictionEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_IsTextPredictionEnabled(value));
+	}
+	final Windows.UI.Text.ITextDocument Document()
+	{
+		Windows.UI.Text.ITextDocument _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_Document(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Input.InputScope InputScope()
+	{
+		Windows.UI.Xaml.Input.InputScope _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_InputScope(&_ret));
+		return _ret;
+	}
+	final void InputScope(Windows.UI.Xaml.Input.InputScope value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_InputScope(value));
+	}
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox2).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox2).set_Header(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox2).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox2).set_HeaderTemplate(value));
+	}
+	final HSTRING PlaceholderText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox2).get_PlaceholderText(&_ret));
+		return _ret;
+	}
+	final void PlaceholderText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox2).set_PlaceholderText(value));
+	}
+	final Windows.UI.Xaml.Media.SolidColorBrush SelectionHighlightColor()
+	{
+		Windows.UI.Xaml.Media.SolidColorBrush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox2).get_SelectionHighlightColor(&_ret));
+		return _ret;
+	}
+	final void SelectionHighlightColor(Windows.UI.Xaml.Media.SolidColorBrush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox2).set_SelectionHighlightColor(value));
+	}
+	final bool PreventKeyboardDisplayOnProgrammaticFocus()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox2).get_PreventKeyboardDisplayOnProgrammaticFocus(&_ret));
+		return _ret;
+	}
+	final void PreventKeyboardDisplayOnProgrammaticFocus(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox2).set_PreventKeyboardDisplayOnProgrammaticFocus(value));
+	}
+	final bool IsColorFontEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox2).get_IsColorFontEnabled(&_ret));
+		return _ret;
+	}
+	final void IsColorFontEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox2).set_IsColorFontEnabled(value));
+	}
+	final Windows.UI.Xaml.TextReadingOrder TextReadingOrder()
+	{
+		Windows.UI.Xaml.TextReadingOrder _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox3).get_TextReadingOrder(&_ret));
+		return _ret;
+	}
+	final void TextReadingOrder(Windows.UI.Xaml.TextReadingOrder value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox3).set_TextReadingOrder(value));
+	}
+	final Windows.UI.Xaml.Controls.CandidateWindowAlignment DesiredCandidateWindowAlignment()
+	{
+		Windows.UI.Xaml.Controls.CandidateWindowAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox3).get_DesiredCandidateWindowAlignment(&_ret));
+		return _ret;
+	}
+	final void DesiredCandidateWindowAlignment(Windows.UI.Xaml.Controls.CandidateWindowAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox3).set_DesiredCandidateWindowAlignment(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetLinguisticAlternativesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox4).abi_GetLinguisticAlternativesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.RichEditClipboardFormat ClipboardCopyFormat()
+	{
+		Windows.UI.Xaml.Controls.RichEditClipboardFormat _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox4).get_ClipboardCopyFormat(&_ret));
+		return _ret;
+	}
+	final void ClipboardCopyFormat(Windows.UI.Xaml.Controls.RichEditClipboardFormat value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox4).set_ClipboardCopyFormat(value));
+	}
+	final Windows.UI.Xaml.Media.SolidColorBrush SelectionHighlightColorWhenNotFocused()
+	{
+		Windows.UI.Xaml.Media.SolidColorBrush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox5).get_SelectionHighlightColorWhenNotFocused(&_ret));
+		return _ret;
+	}
+	final void SelectionHighlightColorWhenNotFocused(Windows.UI.Xaml.Media.SolidColorBrush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox5).set_SelectionHighlightColorWhenNotFocused(value));
+	}
+	final INT32 MaxLength()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox5).get_MaxLength(&_ret));
+		return _ret;
+	}
+	final void MaxLength(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox5).set_MaxLength(value));
+	}
 }
 
 interface RichEditBoxTextChangingEventArgs : Windows.UI.Xaml.Controls.IRichEditBoxTextChangingEventArgs, Windows.UI.Xaml.Controls.IRichEditBoxTextChangingEventArgs2
 {
+extern(Windows):
+	final bool IsContentChanging()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBoxTextChangingEventArgs2).get_IsContentChanging(&_ret));
+		return _ret;
+	}
 }
 
 interface RichTextBlock : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IRichTextBlock, Windows.UI.Xaml.Controls.IRichTextBlock2, Windows.UI.Xaml.Controls.IRichTextBlock3, Windows.UI.Xaml.Controls.IRichTextBlock4
 {
+extern(Windows):
+	final double FontSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_FontSize(&_ret));
+		return _ret;
+	}
+	final void FontSize(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_FontSize(value));
+	}
+	final Windows.UI.Xaml.Media.FontFamily FontFamily()
+	{
+		Windows.UI.Xaml.Media.FontFamily _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_FontFamily(&_ret));
+		return _ret;
+	}
+	final void FontFamily(Windows.UI.Xaml.Media.FontFamily value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_FontFamily(value));
+	}
+	final Windows.UI.Text.FontWeight FontWeight()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_FontWeight(&_ret));
+		return _ret;
+	}
+	final void FontWeight(Windows.UI.Text.FontWeight value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_FontWeight(value));
+	}
+	final Windows.UI.Text.FontStyle FontStyle()
+	{
+		Windows.UI.Text.FontStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_FontStyle(&_ret));
+		return _ret;
+	}
+	final void FontStyle(Windows.UI.Text.FontStyle value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_FontStyle(value));
+	}
+	final Windows.UI.Text.FontStretch FontStretch()
+	{
+		Windows.UI.Text.FontStretch _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_FontStretch(&_ret));
+		return _ret;
+	}
+	final void FontStretch(Windows.UI.Text.FontStretch value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_FontStretch(value));
+	}
+	final Windows.UI.Xaml.Media.Brush Foreground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_Foreground(&_ret));
+		return _ret;
+	}
+	final void Foreground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_Foreground(value));
+	}
+	final Windows.UI.Xaml.TextWrapping TextWrapping()
+	{
+		Windows.UI.Xaml.TextWrapping _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_TextWrapping(&_ret));
+		return _ret;
+	}
+	final void TextWrapping(Windows.UI.Xaml.TextWrapping value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_TextWrapping(value));
+	}
+	final Windows.UI.Xaml.TextTrimming TextTrimming()
+	{
+		Windows.UI.Xaml.TextTrimming _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_TextTrimming(&_ret));
+		return _ret;
+	}
+	final void TextTrimming(Windows.UI.Xaml.TextTrimming value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_TextTrimming(value));
+	}
+	final Windows.UI.Xaml.TextAlignment TextAlignment()
+	{
+		Windows.UI.Xaml.TextAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_TextAlignment(&_ret));
+		return _ret;
+	}
+	final void TextAlignment(Windows.UI.Xaml.TextAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_TextAlignment(value));
+	}
+	final Windows.UI.Xaml.Documents.BlockCollection Blocks()
+	{
+		Windows.UI.Xaml.Documents.BlockCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_Blocks(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Thickness Padding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_Padding(&_ret));
+		return _ret;
+	}
+	final void Padding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_Padding(value));
+	}
+	final double LineHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_LineHeight(&_ret));
+		return _ret;
+	}
+	final void LineHeight(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_LineHeight(value));
+	}
+	final Windows.UI.Xaml.LineStackingStrategy LineStackingStrategy()
+	{
+		Windows.UI.Xaml.LineStackingStrategy _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_LineStackingStrategy(&_ret));
+		return _ret;
+	}
+	final void LineStackingStrategy(Windows.UI.Xaml.LineStackingStrategy value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_LineStackingStrategy(value));
+	}
+	final INT32 CharacterSpacing()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_CharacterSpacing(&_ret));
+		return _ret;
+	}
+	final void CharacterSpacing(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_CharacterSpacing(value));
+	}
+	final Windows.UI.Xaml.Controls.RichTextBlockOverflow OverflowContentTarget()
+	{
+		Windows.UI.Xaml.Controls.RichTextBlockOverflow _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_OverflowContentTarget(&_ret));
+		return _ret;
+	}
+	final void OverflowContentTarget(Windows.UI.Xaml.Controls.RichTextBlockOverflow value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_OverflowContentTarget(value));
+	}
+	final bool IsTextSelectionEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_IsTextSelectionEnabled(&_ret));
+		return _ret;
+	}
+	final void IsTextSelectionEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_IsTextSelectionEnabled(value));
+	}
+	final bool HasOverflowContent()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_HasOverflowContent(&_ret));
+		return _ret;
+	}
+	final HSTRING SelectedText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_SelectedText(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer ContentStart()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_ContentStart(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer ContentEnd()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_ContentEnd(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer SelectionStart()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_SelectionStart(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer SelectionEnd()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_SelectionEnd(&_ret));
+		return _ret;
+	}
+	final double BaselineOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_BaselineOffset(&_ret));
+		return _ret;
+	}
+	final void SelectAll()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).abi_SelectAll());
+	}
+	final void Select(Windows.UI.Xaml.Documents.TextPointer start, Windows.UI.Xaml.Documents.TextPointer end)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).abi_Select(start, end));
+	}
+	final Windows.UI.Xaml.Documents.TextPointer GetPositionFromPoint(Windows.Foundation.Point point)
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).abi_GetPositionFromPoint(point, &_ret));
+		return _ret;
+	}
+	final bool Focus(Windows.UI.Xaml.FocusState value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).abi_Focus(value, &_ret));
+		return _ret;
+	}
+	final double TextIndent()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_TextIndent(&_ret));
+		return _ret;
+	}
+	final void TextIndent(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).set_TextIndent(value));
+	}
+	final INT32 MaxLines()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock2).get_MaxLines(&_ret));
+		return _ret;
+	}
+	final void MaxLines(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock2).set_MaxLines(value));
+	}
+	final Windows.UI.Xaml.TextLineBounds TextLineBounds()
+	{
+		Windows.UI.Xaml.TextLineBounds _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock2).get_TextLineBounds(&_ret));
+		return _ret;
+	}
+	final void TextLineBounds(Windows.UI.Xaml.TextLineBounds value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock2).set_TextLineBounds(value));
+	}
+	final Windows.UI.Xaml.Media.SolidColorBrush SelectionHighlightColor()
+	{
+		Windows.UI.Xaml.Media.SolidColorBrush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock2).get_SelectionHighlightColor(&_ret));
+		return _ret;
+	}
+	final void SelectionHighlightColor(Windows.UI.Xaml.Media.SolidColorBrush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock2).set_SelectionHighlightColor(value));
+	}
+	final Windows.UI.Xaml.OpticalMarginAlignment OpticalMarginAlignment()
+	{
+		Windows.UI.Xaml.OpticalMarginAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock2).get_OpticalMarginAlignment(&_ret));
+		return _ret;
+	}
+	final void OpticalMarginAlignment(Windows.UI.Xaml.OpticalMarginAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock2).set_OpticalMarginAlignment(value));
+	}
+	final bool IsColorFontEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock2).get_IsColorFontEnabled(&_ret));
+		return _ret;
+	}
+	final void IsColorFontEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock2).set_IsColorFontEnabled(value));
+	}
+	final Windows.UI.Xaml.TextReadingOrder TextReadingOrder()
+	{
+		Windows.UI.Xaml.TextReadingOrder _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock2).get_TextReadingOrder(&_ret));
+		return _ret;
+	}
+	final void TextReadingOrder(Windows.UI.Xaml.TextReadingOrder value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock2).set_TextReadingOrder(value));
+	}
+	final bool IsTextScaleFactorEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock3).get_IsTextScaleFactorEnabled(&_ret));
+		return _ret;
+	}
+	final void IsTextScaleFactorEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock3).set_IsTextScaleFactorEnabled(value));
+	}
+	final Windows.UI.Text.TextDecorations TextDecorations()
+	{
+		Windows.UI.Text.TextDecorations _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock4).get_TextDecorations(&_ret));
+		return _ret;
+	}
+	final void TextDecorations(Windows.UI.Text.TextDecorations value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock4).set_TextDecorations(value));
+	}
 }
 
 interface RichTextBlockOverflow : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IRichTextBlockOverflow, Windows.UI.Xaml.Controls.IRichTextBlockOverflow2
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.RichTextBlockOverflow OverflowContentTarget()
+	{
+		Windows.UI.Xaml.Controls.RichTextBlockOverflow _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlockOverflow).get_OverflowContentTarget(&_ret));
+		return _ret;
+	}
+	final void OverflowContentTarget(Windows.UI.Xaml.Controls.RichTextBlockOverflow value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlockOverflow).set_OverflowContentTarget(value));
+	}
+	final Windows.UI.Xaml.Thickness Padding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlockOverflow).get_Padding(&_ret));
+		return _ret;
+	}
+	final void Padding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlockOverflow).set_Padding(value));
+	}
+	final Windows.UI.Xaml.Controls.RichTextBlock ContentSource()
+	{
+		Windows.UI.Xaml.Controls.RichTextBlock _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlockOverflow).get_ContentSource(&_ret));
+		return _ret;
+	}
+	final bool HasOverflowContent()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlockOverflow).get_HasOverflowContent(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer ContentStart()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlockOverflow).get_ContentStart(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer ContentEnd()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlockOverflow).get_ContentEnd(&_ret));
+		return _ret;
+	}
+	final double BaselineOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlockOverflow).get_BaselineOffset(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer GetPositionFromPoint(Windows.Foundation.Point point)
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlockOverflow).abi_GetPositionFromPoint(point, &_ret));
+		return _ret;
+	}
+	final bool Focus(Windows.UI.Xaml.FocusState value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlockOverflow).abi_Focus(value, &_ret));
+		return _ret;
+	}
+	final INT32 MaxLines()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlockOverflow2).get_MaxLines(&_ret));
+		return _ret;
+	}
+	final void MaxLines(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlockOverflow2).set_MaxLines(value));
+	}
 }
 
 interface RowDefinition : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IRowDefinition
 {
+extern(Windows):
+	final Windows.UI.Xaml.GridLength Height()
+	{
+		Windows.UI.Xaml.GridLength _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRowDefinition).get_Height(&_ret));
+		return _ret;
+	}
+	final void Height(Windows.UI.Xaml.GridLength value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRowDefinition).set_Height(value));
+	}
+	final double MaxHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRowDefinition).get_MaxHeight(&_ret));
+		return _ret;
+	}
+	final void MaxHeight(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRowDefinition).set_MaxHeight(value));
+	}
+	final double MinHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRowDefinition).get_MinHeight(&_ret));
+		return _ret;
+	}
+	final void MinHeight(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRowDefinition).set_MinHeight(value));
+	}
+	final double ActualHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRowDefinition).get_ActualHeight(&_ret));
+		return _ret;
+	}
 }
 
 interface RowDefinitionCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.RowDefinition), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Controls.RowDefinition)
@@ -7842,110 +14797,1856 @@ interface RowDefinitionCollection : Windows.Foundation.Collections.IVector!(Wind
 
 interface ScrollContentPresenter : Windows.UI.Xaml.Controls.ContentPresenter, Windows.UI.Xaml.Controls.IScrollContentPresenter
 {
+extern(Windows):
+	final bool CanVerticallyScroll()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).get_CanVerticallyScroll(&_ret));
+		return _ret;
+	}
+	final void CanVerticallyScroll(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).set_CanVerticallyScroll(value));
+	}
+	final bool CanHorizontallyScroll()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).get_CanHorizontallyScroll(&_ret));
+		return _ret;
+	}
+	final void CanHorizontallyScroll(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).set_CanHorizontallyScroll(value));
+	}
+	final double ExtentWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).get_ExtentWidth(&_ret));
+		return _ret;
+	}
+	final double ExtentHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).get_ExtentHeight(&_ret));
+		return _ret;
+	}
+	final double ViewportWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).get_ViewportWidth(&_ret));
+		return _ret;
+	}
+	final double ViewportHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).get_ViewportHeight(&_ret));
+		return _ret;
+	}
+	final double HorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).get_HorizontalOffset(&_ret));
+		return _ret;
+	}
+	final double VerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).get_VerticalOffset(&_ret));
+		return _ret;
+	}
+	final IInspectable ScrollOwner()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).get_ScrollOwner(&_ret));
+		return _ret;
+	}
+	final void ScrollOwner(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).set_ScrollOwner(value));
+	}
+	final void LineUp()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_LineUp());
+	}
+	final void LineDown()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_LineDown());
+	}
+	final void LineLeft()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_LineLeft());
+	}
+	final void LineRight()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_LineRight());
+	}
+	final void PageUp()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_PageUp());
+	}
+	final void PageDown()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_PageDown());
+	}
+	final void PageLeft()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_PageLeft());
+	}
+	final void PageRight()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_PageRight());
+	}
+	final void MouseWheelUp()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_MouseWheelUp());
+	}
+	final void MouseWheelDown()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_MouseWheelDown());
+	}
+	final void MouseWheelLeft()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_MouseWheelLeft());
+	}
+	final void MouseWheelRight()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_MouseWheelRight());
+	}
+	final void SetHorizontalOffset(double offset)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_SetHorizontalOffset(offset));
+	}
+	final void SetVerticalOffset(double offset)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_SetVerticalOffset(offset));
+	}
+	final Windows.Foundation.Rect MakeVisible(Windows.UI.Xaml.UIElement visual, Windows.Foundation.Rect rectangle)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollContentPresenter).abi_MakeVisible(visual, rectangle, &_ret));
+		return _ret;
+	}
 }
 
 interface ScrollViewer : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IScrollViewer, Windows.UI.Xaml.Controls.IScrollViewer2, Windows.UI.Xaml.Controls.IScrollViewer3
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.ScrollBarVisibility HorizontalScrollBarVisibility()
+	{
+		Windows.UI.Xaml.Controls.ScrollBarVisibility _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_HorizontalScrollBarVisibility(&_ret));
+		return _ret;
+	}
+	final void HorizontalScrollBarVisibility(Windows.UI.Xaml.Controls.ScrollBarVisibility value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_HorizontalScrollBarVisibility(value));
+	}
+	final Windows.UI.Xaml.Controls.ScrollBarVisibility VerticalScrollBarVisibility()
+	{
+		Windows.UI.Xaml.Controls.ScrollBarVisibility _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_VerticalScrollBarVisibility(&_ret));
+		return _ret;
+	}
+	final void VerticalScrollBarVisibility(Windows.UI.Xaml.Controls.ScrollBarVisibility value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_VerticalScrollBarVisibility(value));
+	}
+	final bool IsHorizontalRailEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_IsHorizontalRailEnabled(&_ret));
+		return _ret;
+	}
+	final void IsHorizontalRailEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_IsHorizontalRailEnabled(value));
+	}
+	final bool IsVerticalRailEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_IsVerticalRailEnabled(&_ret));
+		return _ret;
+	}
+	final void IsVerticalRailEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_IsVerticalRailEnabled(value));
+	}
+	final bool IsHorizontalScrollChainingEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_IsHorizontalScrollChainingEnabled(&_ret));
+		return _ret;
+	}
+	final void IsHorizontalScrollChainingEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_IsHorizontalScrollChainingEnabled(value));
+	}
+	final bool IsVerticalScrollChainingEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_IsVerticalScrollChainingEnabled(&_ret));
+		return _ret;
+	}
+	final void IsVerticalScrollChainingEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_IsVerticalScrollChainingEnabled(value));
+	}
+	final bool IsZoomChainingEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_IsZoomChainingEnabled(&_ret));
+		return _ret;
+	}
+	final void IsZoomChainingEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_IsZoomChainingEnabled(value));
+	}
+	final bool IsScrollInertiaEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_IsScrollInertiaEnabled(&_ret));
+		return _ret;
+	}
+	final void IsScrollInertiaEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_IsScrollInertiaEnabled(value));
+	}
+	final bool IsZoomInertiaEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_IsZoomInertiaEnabled(&_ret));
+		return _ret;
+	}
+	final void IsZoomInertiaEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_IsZoomInertiaEnabled(value));
+	}
+	final Windows.UI.Xaml.Controls.ScrollMode HorizontalScrollMode()
+	{
+		Windows.UI.Xaml.Controls.ScrollMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_HorizontalScrollMode(&_ret));
+		return _ret;
+	}
+	final void HorizontalScrollMode(Windows.UI.Xaml.Controls.ScrollMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_HorizontalScrollMode(value));
+	}
+	final Windows.UI.Xaml.Controls.ScrollMode VerticalScrollMode()
+	{
+		Windows.UI.Xaml.Controls.ScrollMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_VerticalScrollMode(&_ret));
+		return _ret;
+	}
+	final void VerticalScrollMode(Windows.UI.Xaml.Controls.ScrollMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_VerticalScrollMode(value));
+	}
+	final Windows.UI.Xaml.Controls.ZoomMode ZoomMode()
+	{
+		Windows.UI.Xaml.Controls.ZoomMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ZoomMode(&_ret));
+		return _ret;
+	}
+	final void ZoomMode(Windows.UI.Xaml.Controls.ZoomMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_ZoomMode(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment HorizontalSnapPointsAlignment()
+	{
+		Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_HorizontalSnapPointsAlignment(&_ret));
+		return _ret;
+	}
+	final void HorizontalSnapPointsAlignment(Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_HorizontalSnapPointsAlignment(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment VerticalSnapPointsAlignment()
+	{
+		Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_VerticalSnapPointsAlignment(&_ret));
+		return _ret;
+	}
+	final void VerticalSnapPointsAlignment(Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_VerticalSnapPointsAlignment(value));
+	}
+	final Windows.UI.Xaml.Controls.SnapPointsType HorizontalSnapPointsType()
+	{
+		Windows.UI.Xaml.Controls.SnapPointsType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_HorizontalSnapPointsType(&_ret));
+		return _ret;
+	}
+	final void HorizontalSnapPointsType(Windows.UI.Xaml.Controls.SnapPointsType value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_HorizontalSnapPointsType(value));
+	}
+	final Windows.UI.Xaml.Controls.SnapPointsType VerticalSnapPointsType()
+	{
+		Windows.UI.Xaml.Controls.SnapPointsType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_VerticalSnapPointsType(&_ret));
+		return _ret;
+	}
+	final void VerticalSnapPointsType(Windows.UI.Xaml.Controls.SnapPointsType value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_VerticalSnapPointsType(value));
+	}
+	final Windows.UI.Xaml.Controls.SnapPointsType ZoomSnapPointsType()
+	{
+		Windows.UI.Xaml.Controls.SnapPointsType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ZoomSnapPointsType(&_ret));
+		return _ret;
+	}
+	final void ZoomSnapPointsType(Windows.UI.Xaml.Controls.SnapPointsType value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_ZoomSnapPointsType(value));
+	}
+	final double HorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_HorizontalOffset(&_ret));
+		return _ret;
+	}
+	final double ViewportWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ViewportWidth(&_ret));
+		return _ret;
+	}
+	final double ScrollableWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ScrollableWidth(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Visibility ComputedHorizontalScrollBarVisibility()
+	{
+		Windows.UI.Xaml.Visibility _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ComputedHorizontalScrollBarVisibility(&_ret));
+		return _ret;
+	}
+	final double ExtentWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ExtentWidth(&_ret));
+		return _ret;
+	}
+	final double VerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_VerticalOffset(&_ret));
+		return _ret;
+	}
+	final double ViewportHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ViewportHeight(&_ret));
+		return _ret;
+	}
+	final double ScrollableHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ScrollableHeight(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Visibility ComputedVerticalScrollBarVisibility()
+	{
+		Windows.UI.Xaml.Visibility _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ComputedVerticalScrollBarVisibility(&_ret));
+		return _ret;
+	}
+	final double ExtentHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ExtentHeight(&_ret));
+		return _ret;
+	}
+	final FLOAT MinZoomFactor()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_MinZoomFactor(&_ret));
+		return _ret;
+	}
+	final void MinZoomFactor(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_MinZoomFactor(value));
+	}
+	final FLOAT MaxZoomFactor()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_MaxZoomFactor(&_ret));
+		return _ret;
+	}
+	final void MaxZoomFactor(FLOAT value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_MaxZoomFactor(value));
+	}
+	final FLOAT ZoomFactor()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ZoomFactor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(FLOAT) ZoomSnapPoints()
+	{
+		Windows.Foundation.Collections.IVector!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ZoomSnapPoints(&_ret));
+		return _ret;
+	}
+	deprecated("ScrollToHorizontalOffset may be altered or unavailable for releases after Windows 8.1. Instead, use ChangeView.")
+	final void ScrollToHorizontalOffset(double offset)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).abi_ScrollToHorizontalOffset(offset));
+	}
+	deprecated("ScrollToVerticalOffset may be altered or unavailable for releases after Windows 8.1. Instead, use ChangeView.")
+	final void ScrollToVerticalOffset(double offset)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).abi_ScrollToVerticalOffset(offset));
+	}
+	deprecated("ZoomToFactor may be altered or unavailable for releases after Windows 8.1. Instead, use ChangeView.")
+	final void ZoomToFactor(FLOAT factor)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).abi_ZoomToFactor(factor));
+	}
+	final void InvalidateScrollInfo()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).abi_InvalidateScrollInfo());
+	}
+	final bool IsDeferredScrollingEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_IsDeferredScrollingEnabled(&_ret));
+		return _ret;
+	}
+	final void IsDeferredScrollingEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_IsDeferredScrollingEnabled(value));
+	}
+	final bool BringIntoViewOnFocusChange()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_BringIntoViewOnFocusChange(&_ret));
+		return _ret;
+	}
+	final void BringIntoViewOnFocusChange(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_BringIntoViewOnFocusChange(value));
+	}
+	final Windows.UI.Xaml.UIElement TopLeftHeader()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).get_TopLeftHeader(&_ret));
+		return _ret;
+	}
+	final void TopLeftHeader(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).set_TopLeftHeader(value));
+	}
+	final Windows.UI.Xaml.UIElement LeftHeader()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).get_LeftHeader(&_ret));
+		return _ret;
+	}
+	final void LeftHeader(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).set_LeftHeader(value));
+	}
+	final Windows.UI.Xaml.UIElement TopHeader()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).get_TopHeader(&_ret));
+		return _ret;
+	}
+	final void TopHeader(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).set_TopHeader(value));
+	}
+	final bool ChangeView(Windows.Foundation.IReference!(double) horizontalOffset, Windows.Foundation.IReference!(double) verticalOffset, Windows.Foundation.IReference!(FLOAT) zoomFactor)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).abi_ChangeView(horizontalOffset, verticalOffset, zoomFactor, &_ret));
+		return _ret;
+	}
+	final bool ChangeViewWithOptionalAnimation(Windows.Foundation.IReference!(double) horizontalOffset, Windows.Foundation.IReference!(double) verticalOffset, Windows.Foundation.IReference!(FLOAT) zoomFactor, bool disableAnimation)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).abi_ChangeViewWithOptionalAnimation(horizontalOffset, verticalOffset, zoomFactor, disableAnimation, &_ret));
+		return _ret;
+	}
 }
 
 interface ScrollViewerView : Windows.UI.Xaml.Controls.IScrollViewerView
 {
+extern(Windows):
+	final double HorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewerView).get_HorizontalOffset(&_ret));
+		return _ret;
+	}
+	final double VerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewerView).get_VerticalOffset(&_ret));
+		return _ret;
+	}
+	final FLOAT ZoomFactor()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewerView).get_ZoomFactor(&_ret));
+		return _ret;
+	}
 }
 
 interface ScrollViewerViewChangedEventArgs : Windows.UI.Xaml.Controls.IScrollViewerViewChangedEventArgs
 {
+extern(Windows):
+	final bool IsIntermediate()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewerViewChangedEventArgs).get_IsIntermediate(&_ret));
+		return _ret;
+	}
 }
 
 interface ScrollViewerViewChangingEventArgs : Windows.UI.Xaml.Controls.IScrollViewerViewChangingEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.ScrollViewerView NextView()
+	{
+		Windows.UI.Xaml.Controls.ScrollViewerView _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewerViewChangingEventArgs).get_NextView(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.ScrollViewerView FinalView()
+	{
+		Windows.UI.Xaml.Controls.ScrollViewerView _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewerViewChangingEventArgs).get_FinalView(&_ret));
+		return _ret;
+	}
+	final bool IsInertial()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewerViewChangingEventArgs).get_IsInertial(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchBox : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ISearchBox
 {
+extern(Windows):
+	final bool SearchHistoryEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).get_SearchHistoryEnabled(&_ret));
+		return _ret;
+	}
+	final void SearchHistoryEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).set_SearchHistoryEnabled(value));
+	}
+	final HSTRING SearchHistoryContext()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).get_SearchHistoryContext(&_ret));
+		return _ret;
+	}
+	final void SearchHistoryContext(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).set_SearchHistoryContext(value));
+	}
+	final HSTRING PlaceholderText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).get_PlaceholderText(&_ret));
+		return _ret;
+	}
+	final void PlaceholderText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).set_PlaceholderText(value));
+	}
+	final HSTRING QueryText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).get_QueryText(&_ret));
+		return _ret;
+	}
+	final void QueryText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).set_QueryText(value));
+	}
+	final bool FocusOnKeyboardInput()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).get_FocusOnKeyboardInput(&_ret));
+		return _ret;
+	}
+	final void FocusOnKeyboardInput(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).set_FocusOnKeyboardInput(value));
+	}
+	final bool ChooseSuggestionOnEnter()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).get_ChooseSuggestionOnEnter(&_ret));
+		return _ret;
+	}
+	final void ChooseSuggestionOnEnter(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).set_ChooseSuggestionOnEnter(value));
+	}
+	final void SetLocalContentSuggestionSettings(Windows.ApplicationModel.Search.LocalContentSuggestionSettings settings)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).abi_SetLocalContentSuggestionSettings(settings));
+	}
 }
 
 interface SearchBoxQueryChangedEventArgs : Windows.UI.Xaml.Controls.ISearchBoxQueryChangedEventArgs
 {
+extern(Windows):
+	final HSTRING QueryText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBoxQueryChangedEventArgs).get_QueryText(&_ret));
+		return _ret;
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBoxQueryChangedEventArgs).get_Language(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Search.SearchQueryLinguisticDetails LinguisticDetails()
+	{
+		Windows.ApplicationModel.Search.SearchQueryLinguisticDetails _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBoxQueryChangedEventArgs).get_LinguisticDetails(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchBoxQuerySubmittedEventArgs : Windows.UI.Xaml.Controls.ISearchBoxQuerySubmittedEventArgs
 {
+extern(Windows):
+	final HSTRING QueryText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBoxQuerySubmittedEventArgs).get_QueryText(&_ret));
+		return _ret;
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBoxQuerySubmittedEventArgs).get_Language(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Search.SearchQueryLinguisticDetails LinguisticDetails()
+	{
+		Windows.ApplicationModel.Search.SearchQueryLinguisticDetails _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBoxQuerySubmittedEventArgs).get_LinguisticDetails(&_ret));
+		return _ret;
+	}
+	final Windows.System.VirtualKeyModifiers KeyModifiers()
+	{
+		Windows.System.VirtualKeyModifiers _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBoxQuerySubmittedEventArgs).get_KeyModifiers(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchBoxResultSuggestionChosenEventArgs : Windows.UI.Xaml.Controls.ISearchBoxResultSuggestionChosenEventArgs
 {
+extern(Windows):
+	final HSTRING Tag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBoxResultSuggestionChosenEventArgs).get_Tag(&_ret));
+		return _ret;
+	}
+	final Windows.System.VirtualKeyModifiers KeyModifiers()
+	{
+		Windows.System.VirtualKeyModifiers _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBoxResultSuggestionChosenEventArgs).get_KeyModifiers(&_ret));
+		return _ret;
+	}
 }
 
 interface SearchBoxSuggestionsRequestedEventArgs : Windows.UI.Xaml.Controls.ISearchBoxSuggestionsRequestedEventArgs
 {
+extern(Windows):
+	final HSTRING QueryText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBoxSuggestionsRequestedEventArgs).get_QueryText(&_ret));
+		return _ret;
+	}
+	final HSTRING Language()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBoxSuggestionsRequestedEventArgs).get_Language(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Search.SearchQueryLinguisticDetails LinguisticDetails()
+	{
+		Windows.ApplicationModel.Search.SearchQueryLinguisticDetails _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBoxSuggestionsRequestedEventArgs).get_LinguisticDetails(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Search.SearchSuggestionsRequest Request()
+	{
+		Windows.ApplicationModel.Search.SearchSuggestionsRequest _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBoxSuggestionsRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 interface SectionsInViewChangedEventArgs : Windows.UI.Xaml.Controls.ISectionsInViewChangedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection) AddedSections()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISectionsInViewChangedEventArgs).get_AddedSections(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection) RemovedSections()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISectionsInViewChangedEventArgs).get_RemovedSections(&_ret));
+		return _ret;
+	}
 }
 
 interface SelectionChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.ISelectionChangedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(IInspectable) AddedItems()
+	{
+		Windows.Foundation.Collections.IVector!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISelectionChangedEventArgs).get_AddedItems(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(IInspectable) RemovedItems()
+	{
+		Windows.Foundation.Collections.IVector!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISelectionChangedEventArgs).get_RemovedItems(&_ret));
+		return _ret;
+	}
 }
 
 interface SemanticZoom : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ISemanticZoom
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.ISemanticZoomInformation ZoomedInView()
+	{
+		Windows.UI.Xaml.Controls.ISemanticZoomInformation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoom).get_ZoomedInView(&_ret));
+		return _ret;
+	}
+	final void ZoomedInView(Windows.UI.Xaml.Controls.ISemanticZoomInformation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoom).set_ZoomedInView(value));
+	}
+	final Windows.UI.Xaml.Controls.ISemanticZoomInformation ZoomedOutView()
+	{
+		Windows.UI.Xaml.Controls.ISemanticZoomInformation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoom).get_ZoomedOutView(&_ret));
+		return _ret;
+	}
+	final void ZoomedOutView(Windows.UI.Xaml.Controls.ISemanticZoomInformation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoom).set_ZoomedOutView(value));
+	}
+	final bool IsZoomedInViewActive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoom).get_IsZoomedInViewActive(&_ret));
+		return _ret;
+	}
+	final void IsZoomedInViewActive(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoom).set_IsZoomedInViewActive(value));
+	}
+	final bool CanChangeViews()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoom).get_CanChangeViews(&_ret));
+		return _ret;
+	}
+	final void CanChangeViews(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoom).set_CanChangeViews(value));
+	}
+	final void ToggleActiveView()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoom).abi_ToggleActiveView());
+	}
+	final bool IsZoomOutButtonEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoom).get_IsZoomOutButtonEnabled(&_ret));
+		return _ret;
+	}
+	final void IsZoomOutButtonEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoom).set_IsZoomOutButtonEnabled(value));
+	}
 }
 
 interface SemanticZoomLocation : Windows.UI.Xaml.Controls.ISemanticZoomLocation
 {
+extern(Windows):
+	final IInspectable Item()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomLocation).get_Item(&_ret));
+		return _ret;
+	}
+	final void Item(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomLocation).set_Item(value));
+	}
+	final Windows.Foundation.Rect Bounds()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomLocation).get_Bounds(&_ret));
+		return _ret;
+	}
+	final void Bounds(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomLocation).set_Bounds(value));
+	}
 }
 
 interface SemanticZoomViewChangedEventArgs : Windows.UI.Xaml.Controls.ISemanticZoomViewChangedEventArgs
 {
+extern(Windows):
+	final bool IsSourceZoomedInView()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomViewChangedEventArgs).get_IsSourceZoomedInView(&_ret));
+		return _ret;
+	}
+	final void IsSourceZoomedInView(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomViewChangedEventArgs).set_IsSourceZoomedInView(value));
+	}
+	final Windows.UI.Xaml.Controls.SemanticZoomLocation SourceItem()
+	{
+		Windows.UI.Xaml.Controls.SemanticZoomLocation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomViewChangedEventArgs).get_SourceItem(&_ret));
+		return _ret;
+	}
+	final void SourceItem(Windows.UI.Xaml.Controls.SemanticZoomLocation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomViewChangedEventArgs).set_SourceItem(value));
+	}
+	final Windows.UI.Xaml.Controls.SemanticZoomLocation DestinationItem()
+	{
+		Windows.UI.Xaml.Controls.SemanticZoomLocation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomViewChangedEventArgs).get_DestinationItem(&_ret));
+		return _ret;
+	}
+	final void DestinationItem(Windows.UI.Xaml.Controls.SemanticZoomLocation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomViewChangedEventArgs).set_DestinationItem(value));
+	}
 }
 
 interface SettingsFlyout : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.ISettingsFlyout
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).set_Title(value));
+	}
+	final Windows.UI.Xaml.Media.Brush HeaderBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).get_HeaderBackground(&_ret));
+		return _ret;
+	}
+	final void HeaderBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).set_HeaderBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush HeaderForeground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).get_HeaderForeground(&_ret));
+		return _ret;
+	}
+	final void HeaderForeground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).set_HeaderForeground(value));
+	}
+	final Windows.UI.Xaml.Media.ImageSource IconSource()
+	{
+		Windows.UI.Xaml.Media.ImageSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).get_IconSource(&_ret));
+		return _ret;
+	}
+	final void IconSource(Windows.UI.Xaml.Media.ImageSource value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).set_IconSource(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.SettingsFlyoutTemplateSettings TemplateSettings()
+	{
+		Windows.UI.Xaml.Controls.Primitives.SettingsFlyoutTemplateSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).get_TemplateSettings(&_ret));
+		return _ret;
+	}
+	final void Show()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).abi_Show());
+	}
+	final void ShowIndependent()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).abi_ShowIndependent());
+	}
+	final void Hide()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).abi_Hide());
+	}
 }
 
 interface Slider : Windows.UI.Xaml.Controls.Primitives.RangeBase, Windows.UI.Xaml.Controls.ISlider, Windows.UI.Xaml.Controls.ISlider2
 {
+extern(Windows):
+	final double IntermediateValue()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).get_IntermediateValue(&_ret));
+		return _ret;
+	}
+	final void IntermediateValue(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).set_IntermediateValue(value));
+	}
+	final double StepFrequency()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).get_StepFrequency(&_ret));
+		return _ret;
+	}
+	final void StepFrequency(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).set_StepFrequency(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.SliderSnapsTo SnapsTo()
+	{
+		Windows.UI.Xaml.Controls.Primitives.SliderSnapsTo _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).get_SnapsTo(&_ret));
+		return _ret;
+	}
+	final void SnapsTo(Windows.UI.Xaml.Controls.Primitives.SliderSnapsTo value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).set_SnapsTo(value));
+	}
+	final double TickFrequency()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).get_TickFrequency(&_ret));
+		return _ret;
+	}
+	final void TickFrequency(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).set_TickFrequency(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.TickPlacement TickPlacement()
+	{
+		Windows.UI.Xaml.Controls.Primitives.TickPlacement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).get_TickPlacement(&_ret));
+		return _ret;
+	}
+	final void TickPlacement(Windows.UI.Xaml.Controls.Primitives.TickPlacement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).set_TickPlacement(value));
+	}
+	final Windows.UI.Xaml.Controls.Orientation Orientation()
+	{
+		Windows.UI.Xaml.Controls.Orientation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).get_Orientation(&_ret));
+		return _ret;
+	}
+	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).set_Orientation(value));
+	}
+	final bool IsDirectionReversed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).get_IsDirectionReversed(&_ret));
+		return _ret;
+	}
+	final void IsDirectionReversed(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).set_IsDirectionReversed(value));
+	}
+	final bool IsThumbToolTipEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).get_IsThumbToolTipEnabled(&_ret));
+		return _ret;
+	}
+	final void IsThumbToolTipEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).set_IsThumbToolTipEnabled(value));
+	}
+	final Windows.UI.Xaml.Data.IValueConverter ThumbToolTipValueConverter()
+	{
+		Windows.UI.Xaml.Data.IValueConverter _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).get_ThumbToolTipValueConverter(&_ret));
+		return _ret;
+	}
+	final void ThumbToolTipValueConverter(Windows.UI.Xaml.Data.IValueConverter value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider).set_ThumbToolTipValueConverter(value));
+	}
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider2).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider2).set_Header(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider2).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider2).set_HeaderTemplate(value));
+	}
 }
 
 interface SplitView : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ISplitView, Windows.UI.Xaml.Controls.ISplitView2
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement Content()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).get_Content(&_ret));
+		return _ret;
+	}
+	final void Content(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).set_Content(value));
+	}
+	final Windows.UI.Xaml.UIElement Pane()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).get_Pane(&_ret));
+		return _ret;
+	}
+	final void Pane(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).set_Pane(value));
+	}
+	final bool IsPaneOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).get_IsPaneOpen(&_ret));
+		return _ret;
+	}
+	final void IsPaneOpen(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).set_IsPaneOpen(value));
+	}
+	final double OpenPaneLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).get_OpenPaneLength(&_ret));
+		return _ret;
+	}
+	final void OpenPaneLength(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).set_OpenPaneLength(value));
+	}
+	final double CompactPaneLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).get_CompactPaneLength(&_ret));
+		return _ret;
+	}
+	final void CompactPaneLength(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).set_CompactPaneLength(value));
+	}
+	final Windows.UI.Xaml.Controls.SplitViewPanePlacement PanePlacement()
+	{
+		Windows.UI.Xaml.Controls.SplitViewPanePlacement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).get_PanePlacement(&_ret));
+		return _ret;
+	}
+	final void PanePlacement(Windows.UI.Xaml.Controls.SplitViewPanePlacement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).set_PanePlacement(value));
+	}
+	final Windows.UI.Xaml.Controls.SplitViewDisplayMode DisplayMode()
+	{
+		Windows.UI.Xaml.Controls.SplitViewDisplayMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).get_DisplayMode(&_ret));
+		return _ret;
+	}
+	final void DisplayMode(Windows.UI.Xaml.Controls.SplitViewDisplayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).set_DisplayMode(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.SplitViewTemplateSettings TemplateSettings()
+	{
+		Windows.UI.Xaml.Controls.Primitives.SplitViewTemplateSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).get_TemplateSettings(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Brush PaneBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).get_PaneBackground(&_ret));
+		return _ret;
+	}
+	final void PaneBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).set_PaneBackground(value));
+	}
+	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
+	{
+		Windows.UI.Xaml.Controls.LightDismissOverlayMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView2).get_LightDismissOverlayMode(&_ret));
+		return _ret;
+	}
+	final void LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView2).set_LightDismissOverlayMode(value));
+	}
 }
 
 interface SplitViewPaneClosingEventArgs : Windows.UI.Xaml.Controls.ISplitViewPaneClosingEventArgs
 {
+extern(Windows):
+	final bool Cancel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitViewPaneClosingEventArgs).get_Cancel(&_ret));
+		return _ret;
+	}
+	final void Cancel(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitViewPaneClosingEventArgs).set_Cancel(value));
+	}
 }
 
 interface StackPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IStackPanel, Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo, Windows.UI.Xaml.Controls.IStackPanel2, Windows.UI.Xaml.Controls.IInsertionPanel
 {
+extern(Windows):
+	final bool AreScrollSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStackPanel).get_AreScrollSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final void AreScrollSnapPointsRegular(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStackPanel).set_AreScrollSnapPointsRegular(value));
+	}
+	final Windows.UI.Xaml.Controls.Orientation Orientation()
+	{
+		Windows.UI.Xaml.Controls.Orientation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStackPanel).get_Orientation(&_ret));
+		return _ret;
+	}
+	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStackPanel).set_Orientation(value));
+	}
+	final bool AreHorizontalSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreHorizontalSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final bool AreVerticalSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
+	{
+		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetIrregularSnapPoints(orientation, alignment, &_ret));
+		return _ret;
+	}
+	final FLOAT GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, FLOAT* out_offset)
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Brush BorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStackPanel2).get_BorderBrush(&_ret));
+		return _ret;
+	}
+	final void BorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStackPanel2).set_BorderBrush(value));
+	}
+	final Windows.UI.Xaml.Thickness BorderThickness()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStackPanel2).get_BorderThickness(&_ret));
+		return _ret;
+	}
+	final void BorderThickness(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStackPanel2).set_BorderThickness(value));
+	}
+	final Windows.UI.Xaml.CornerRadius CornerRadius()
+	{
+		Windows.UI.Xaml.CornerRadius _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStackPanel2).get_CornerRadius(&_ret));
+		return _ret;
+	}
+	final void CornerRadius(Windows.UI.Xaml.CornerRadius value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStackPanel2).set_CornerRadius(value));
+	}
+	final Windows.UI.Xaml.Thickness Padding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStackPanel2).get_Padding(&_ret));
+		return _ret;
+	}
+	final void Padding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStackPanel2).set_Padding(value));
+	}
+	final void GetInsertionIndexes(Windows.Foundation.Point position, INT32* out_first, INT32* out_second)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInsertionPanel).abi_GetInsertionIndexes(position, out_first, out_second));
+	}
 }
 
 interface StyleSelector : Windows.UI.Xaml.Controls.IStyleSelector, Windows.UI.Xaml.Controls.IStyleSelectorOverrides
 {
+extern(Windows):
+	final Windows.UI.Xaml.Style SelectStyle(IInspectable item, Windows.UI.Xaml.DependencyObject container)
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStyleSelector).abi_SelectStyle(item, container, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Style SelectStyleCore(IInspectable item, Windows.UI.Xaml.DependencyObject container)
+	{
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStyleSelectorOverrides).abi_SelectStyleCore(item, container, &_ret));
+		return _ret;
+	}
 }
 
 interface SwapChainBackgroundPanel : Windows.UI.Xaml.Controls.Grid, Windows.UI.Xaml.Controls.ISwapChainBackgroundPanel, Windows.UI.Xaml.Controls.ISwapChainBackgroundPanel2
 {
+extern(Windows):
+	final Windows.UI.Core.CoreIndependentInputSource CreateCoreIndependentInputSource(Windows.UI.Core.CoreInputDeviceTypes deviceTypes)
+	{
+		Windows.UI.Core.CoreIndependentInputSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISwapChainBackgroundPanel2).abi_CreateCoreIndependentInputSource(deviceTypes, &_ret));
+		return _ret;
+	}
 }
 
 interface SwapChainPanel : Windows.UI.Xaml.Controls.Grid, Windows.UI.Xaml.Controls.ISwapChainPanel
 {
+extern(Windows):
+	final FLOAT CompositionScaleX()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISwapChainPanel).get_CompositionScaleX(&_ret));
+		return _ret;
+	}
+	final FLOAT CompositionScaleY()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISwapChainPanel).get_CompositionScaleY(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CoreIndependentInputSource CreateCoreIndependentInputSource(Windows.UI.Core.CoreInputDeviceTypes deviceTypes)
+	{
+		Windows.UI.Core.CoreIndependentInputSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISwapChainPanel).abi_CreateCoreIndependentInputSource(deviceTypes, &_ret));
+		return _ret;
+	}
 }
 
 interface SymbolIcon : Windows.UI.Xaml.Controls.IconElement, Windows.UI.Xaml.Controls.ISymbolIcon
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Symbol Symbol()
+	{
+		Windows.UI.Xaml.Controls.Symbol _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISymbolIcon).get_Symbol(&_ret));
+		return _ret;
+	}
+	final void Symbol(Windows.UI.Xaml.Controls.Symbol value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISymbolIcon).set_Symbol(value));
+	}
 }
 
 interface TextBlock : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.ITextBlock, Windows.UI.Xaml.Controls.ITextBlock2, Windows.UI.Xaml.Controls.ITextBlock3, Windows.UI.Xaml.Controls.ITextBlock4, Windows.UI.Xaml.Controls.ITextBlock5
 {
+extern(Windows):
+	final double FontSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_FontSize(&_ret));
+		return _ret;
+	}
+	final void FontSize(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_FontSize(value));
+	}
+	final Windows.UI.Xaml.Media.FontFamily FontFamily()
+	{
+		Windows.UI.Xaml.Media.FontFamily _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_FontFamily(&_ret));
+		return _ret;
+	}
+	final void FontFamily(Windows.UI.Xaml.Media.FontFamily value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_FontFamily(value));
+	}
+	final Windows.UI.Text.FontWeight FontWeight()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_FontWeight(&_ret));
+		return _ret;
+	}
+	final void FontWeight(Windows.UI.Text.FontWeight value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_FontWeight(value));
+	}
+	final Windows.UI.Text.FontStyle FontStyle()
+	{
+		Windows.UI.Text.FontStyle _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_FontStyle(&_ret));
+		return _ret;
+	}
+	final void FontStyle(Windows.UI.Text.FontStyle value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_FontStyle(value));
+	}
+	final Windows.UI.Text.FontStretch FontStretch()
+	{
+		Windows.UI.Text.FontStretch _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_FontStretch(&_ret));
+		return _ret;
+	}
+	final void FontStretch(Windows.UI.Text.FontStretch value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_FontStretch(value));
+	}
+	final INT32 CharacterSpacing()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_CharacterSpacing(&_ret));
+		return _ret;
+	}
+	final void CharacterSpacing(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_CharacterSpacing(value));
+	}
+	final Windows.UI.Xaml.Media.Brush Foreground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_Foreground(&_ret));
+		return _ret;
+	}
+	final void Foreground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_Foreground(value));
+	}
+	final Windows.UI.Xaml.TextWrapping TextWrapping()
+	{
+		Windows.UI.Xaml.TextWrapping _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_TextWrapping(&_ret));
+		return _ret;
+	}
+	final void TextWrapping(Windows.UI.Xaml.TextWrapping value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_TextWrapping(value));
+	}
+	final Windows.UI.Xaml.TextTrimming TextTrimming()
+	{
+		Windows.UI.Xaml.TextTrimming _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_TextTrimming(&_ret));
+		return _ret;
+	}
+	final void TextTrimming(Windows.UI.Xaml.TextTrimming value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_TextTrimming(value));
+	}
+	final Windows.UI.Xaml.TextAlignment TextAlignment()
+	{
+		Windows.UI.Xaml.TextAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_TextAlignment(&_ret));
+		return _ret;
+	}
+	final void TextAlignment(Windows.UI.Xaml.TextAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_TextAlignment(value));
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_Text(value));
+	}
+	final Windows.UI.Xaml.Documents.InlineCollection Inlines()
+	{
+		Windows.UI.Xaml.Documents.InlineCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_Inlines(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Thickness Padding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_Padding(&_ret));
+		return _ret;
+	}
+	final void Padding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_Padding(value));
+	}
+	final double LineHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_LineHeight(&_ret));
+		return _ret;
+	}
+	final void LineHeight(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_LineHeight(value));
+	}
+	final Windows.UI.Xaml.LineStackingStrategy LineStackingStrategy()
+	{
+		Windows.UI.Xaml.LineStackingStrategy _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_LineStackingStrategy(&_ret));
+		return _ret;
+	}
+	final void LineStackingStrategy(Windows.UI.Xaml.LineStackingStrategy value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_LineStackingStrategy(value));
+	}
+	final bool IsTextSelectionEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_IsTextSelectionEnabled(&_ret));
+		return _ret;
+	}
+	final void IsTextSelectionEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).set_IsTextSelectionEnabled(value));
+	}
+	final HSTRING SelectedText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_SelectedText(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer ContentStart()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_ContentStart(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer ContentEnd()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_ContentEnd(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer SelectionStart()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_SelectionStart(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Documents.TextPointer SelectionEnd()
+	{
+		Windows.UI.Xaml.Documents.TextPointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_SelectionEnd(&_ret));
+		return _ret;
+	}
+	final double BaselineOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_BaselineOffset(&_ret));
+		return _ret;
+	}
+	final void SelectAll()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).abi_SelectAll());
+	}
+	final void Select(Windows.UI.Xaml.Documents.TextPointer start, Windows.UI.Xaml.Documents.TextPointer end)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).abi_Select(start, end));
+	}
+	final bool Focus(Windows.UI.Xaml.FocusState value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).abi_Focus(value, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.SolidColorBrush SelectionHighlightColor()
+	{
+		Windows.UI.Xaml.Media.SolidColorBrush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock2).get_SelectionHighlightColor(&_ret));
+		return _ret;
+	}
+	final void SelectionHighlightColor(Windows.UI.Xaml.Media.SolidColorBrush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock2).set_SelectionHighlightColor(value));
+	}
+	final INT32 MaxLines()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock2).get_MaxLines(&_ret));
+		return _ret;
+	}
+	final void MaxLines(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock2).set_MaxLines(value));
+	}
+	final Windows.UI.Xaml.TextLineBounds TextLineBounds()
+	{
+		Windows.UI.Xaml.TextLineBounds _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock2).get_TextLineBounds(&_ret));
+		return _ret;
+	}
+	final void TextLineBounds(Windows.UI.Xaml.TextLineBounds value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock2).set_TextLineBounds(value));
+	}
+	final Windows.UI.Xaml.OpticalMarginAlignment OpticalMarginAlignment()
+	{
+		Windows.UI.Xaml.OpticalMarginAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock2).get_OpticalMarginAlignment(&_ret));
+		return _ret;
+	}
+	final void OpticalMarginAlignment(Windows.UI.Xaml.OpticalMarginAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock2).set_OpticalMarginAlignment(value));
+	}
+	final bool IsColorFontEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock2).get_IsColorFontEnabled(&_ret));
+		return _ret;
+	}
+	final void IsColorFontEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock2).set_IsColorFontEnabled(value));
+	}
+	final Windows.UI.Xaml.TextReadingOrder TextReadingOrder()
+	{
+		Windows.UI.Xaml.TextReadingOrder _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock2).get_TextReadingOrder(&_ret));
+		return _ret;
+	}
+	final void TextReadingOrder(Windows.UI.Xaml.TextReadingOrder value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock2).set_TextReadingOrder(value));
+	}
+	final bool IsTextScaleFactorEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock3).get_IsTextScaleFactorEnabled(&_ret));
+		return _ret;
+	}
+	final void IsTextScaleFactorEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock3).set_IsTextScaleFactorEnabled(value));
+	}
+	final Windows.UI.Composition.CompositionBrush GetAlphaMask()
+	{
+		Windows.UI.Composition.CompositionBrush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock4).abi_GetAlphaMask(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Text.TextDecorations TextDecorations()
+	{
+		Windows.UI.Text.TextDecorations _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock5).get_TextDecorations(&_ret));
+		return _ret;
+	}
+	final void TextDecorations(Windows.UI.Text.TextDecorations value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock5).set_TextDecorations(value));
+	}
 }
 
 interface TextBox : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ITextBox, Windows.UI.Xaml.Controls.ITextBox2, Windows.UI.Xaml.Controls.ITextBox3, Windows.UI.Xaml.Controls.ITextBox4, Windows.UI.Xaml.Controls.ITextBox5
 {
+extern(Windows):
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).set_Text(value));
+	}
+	final HSTRING SelectedText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).get_SelectedText(&_ret));
+		return _ret;
+	}
+	final void SelectedText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).set_SelectedText(value));
+	}
+	final INT32 SelectionLength()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).get_SelectionLength(&_ret));
+		return _ret;
+	}
+	final void SelectionLength(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).set_SelectionLength(value));
+	}
+	final INT32 SelectionStart()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).get_SelectionStart(&_ret));
+		return _ret;
+	}
+	final void SelectionStart(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).set_SelectionStart(value));
+	}
+	final INT32 MaxLength()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).get_MaxLength(&_ret));
+		return _ret;
+	}
+	final void MaxLength(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).set_MaxLength(value));
+	}
+	final bool IsReadOnly()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).get_IsReadOnly(&_ret));
+		return _ret;
+	}
+	final void IsReadOnly(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).set_IsReadOnly(value));
+	}
+	final bool AcceptsReturn()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).get_AcceptsReturn(&_ret));
+		return _ret;
+	}
+	final void AcceptsReturn(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).set_AcceptsReturn(value));
+	}
+	final Windows.UI.Xaml.TextAlignment TextAlignment()
+	{
+		Windows.UI.Xaml.TextAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).get_TextAlignment(&_ret));
+		return _ret;
+	}
+	final void TextAlignment(Windows.UI.Xaml.TextAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).set_TextAlignment(value));
+	}
+	final Windows.UI.Xaml.TextWrapping TextWrapping()
+	{
+		Windows.UI.Xaml.TextWrapping _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).get_TextWrapping(&_ret));
+		return _ret;
+	}
+	final void TextWrapping(Windows.UI.Xaml.TextWrapping value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).set_TextWrapping(value));
+	}
+	final bool IsSpellCheckEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).get_IsSpellCheckEnabled(&_ret));
+		return _ret;
+	}
+	final void IsSpellCheckEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).set_IsSpellCheckEnabled(value));
+	}
+	final bool IsTextPredictionEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).get_IsTextPredictionEnabled(&_ret));
+		return _ret;
+	}
+	final void IsTextPredictionEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).set_IsTextPredictionEnabled(value));
+	}
+	final Windows.UI.Xaml.Input.InputScope InputScope()
+	{
+		Windows.UI.Xaml.Input.InputScope _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).get_InputScope(&_ret));
+		return _ret;
+	}
+	final void InputScope(Windows.UI.Xaml.Input.InputScope value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).set_InputScope(value));
+	}
+	final void Select(INT32 start, INT32 length)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).abi_Select(start, length));
+	}
+	final void SelectAll()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).abi_SelectAll());
+	}
+	final Windows.Foundation.Rect GetRectFromCharacterIndex(INT32 charIndex, bool trailingEdge)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).abi_GetRectFromCharacterIndex(charIndex, trailingEdge, &_ret));
+		return _ret;
+	}
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox2).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox2).set_Header(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox2).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox2).set_HeaderTemplate(value));
+	}
+	final HSTRING PlaceholderText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox2).get_PlaceholderText(&_ret));
+		return _ret;
+	}
+	final void PlaceholderText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox2).set_PlaceholderText(value));
+	}
+	final Windows.UI.Xaml.Media.SolidColorBrush SelectionHighlightColor()
+	{
+		Windows.UI.Xaml.Media.SolidColorBrush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox2).get_SelectionHighlightColor(&_ret));
+		return _ret;
+	}
+	final void SelectionHighlightColor(Windows.UI.Xaml.Media.SolidColorBrush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox2).set_SelectionHighlightColor(value));
+	}
+	final bool PreventKeyboardDisplayOnProgrammaticFocus()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox2).get_PreventKeyboardDisplayOnProgrammaticFocus(&_ret));
+		return _ret;
+	}
+	final void PreventKeyboardDisplayOnProgrammaticFocus(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox2).set_PreventKeyboardDisplayOnProgrammaticFocus(value));
+	}
+	final bool IsColorFontEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox2).get_IsColorFontEnabled(&_ret));
+		return _ret;
+	}
+	final void IsColorFontEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox2).set_IsColorFontEnabled(value));
+	}
+	final Windows.UI.Xaml.TextReadingOrder TextReadingOrder()
+	{
+		Windows.UI.Xaml.TextReadingOrder _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox3).get_TextReadingOrder(&_ret));
+		return _ret;
+	}
+	final void TextReadingOrder(Windows.UI.Xaml.TextReadingOrder value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox3).set_TextReadingOrder(value));
+	}
+	final Windows.UI.Xaml.Controls.CandidateWindowAlignment DesiredCandidateWindowAlignment()
+	{
+		Windows.UI.Xaml.Controls.CandidateWindowAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox3).get_DesiredCandidateWindowAlignment(&_ret));
+		return _ret;
+	}
+	final void DesiredCandidateWindowAlignment(Windows.UI.Xaml.Controls.CandidateWindowAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox3).set_DesiredCandidateWindowAlignment(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetLinguisticAlternativesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox4).abi_GetLinguisticAlternativesAsync(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.SolidColorBrush SelectionHighlightColorWhenNotFocused()
+	{
+		Windows.UI.Xaml.Media.SolidColorBrush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox5).get_SelectionHighlightColorWhenNotFocused(&_ret));
+		return _ret;
+	}
+	final void SelectionHighlightColorWhenNotFocused(Windows.UI.Xaml.Media.SolidColorBrush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox5).set_SelectionHighlightColorWhenNotFocused(value));
+	}
 }
 
 interface TextBoxTextChangingEventArgs : Windows.UI.Xaml.Controls.ITextBoxTextChangingEventArgs, Windows.UI.Xaml.Controls.ITextBoxTextChangingEventArgs2
 {
+extern(Windows):
+	final bool IsContentChanging()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBoxTextChangingEventArgs2).get_IsContentChanging(&_ret));
+		return _ret;
+	}
 }
 
 interface TextChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.ITextChangedEventArgs
@@ -7954,30 +16655,191 @@ interface TextChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xam
 
 interface TextCompositionChangedEventArgs : Windows.UI.Xaml.Controls.ITextCompositionChangedEventArgs
 {
+extern(Windows):
+	final INT32 StartIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextCompositionChangedEventArgs).get_StartIndex(&_ret));
+		return _ret;
+	}
+	final INT32 Length()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextCompositionChangedEventArgs).get_Length(&_ret));
+		return _ret;
+	}
 }
 
 interface TextCompositionEndedEventArgs : Windows.UI.Xaml.Controls.ITextCompositionEndedEventArgs
 {
+extern(Windows):
+	final INT32 StartIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextCompositionEndedEventArgs).get_StartIndex(&_ret));
+		return _ret;
+	}
+	final INT32 Length()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextCompositionEndedEventArgs).get_Length(&_ret));
+		return _ret;
+	}
 }
 
 interface TextCompositionStartedEventArgs : Windows.UI.Xaml.Controls.ITextCompositionStartedEventArgs
 {
+extern(Windows):
+	final INT32 StartIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextCompositionStartedEventArgs).get_StartIndex(&_ret));
+		return _ret;
+	}
+	final INT32 Length()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextCompositionStartedEventArgs).get_Length(&_ret));
+		return _ret;
+	}
 }
 
 interface TextControlPasteEventArgs : Windows.UI.Xaml.Controls.ITextControlPasteEventArgs
 {
+extern(Windows):
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextControlPasteEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextControlPasteEventArgs).set_Handled(value));
+	}
 }
 
 interface TimePickedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.ITimePickedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan OldTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePickedEventArgs).get_OldTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan NewTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePickedEventArgs).get_NewTime(&_ret));
+		return _ret;
+	}
 }
 
 interface TimePicker : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ITimePicker, Windows.UI.Xaml.Controls.ITimePicker2
 {
+extern(Windows):
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker).set_Header(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker).set_HeaderTemplate(value));
+	}
+	final HSTRING ClockIdentifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker).get_ClockIdentifier(&_ret));
+		return _ret;
+	}
+	final void ClockIdentifier(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker).set_ClockIdentifier(value));
+	}
+	final INT32 MinuteIncrement()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker).get_MinuteIncrement(&_ret));
+		return _ret;
+	}
+	final void MinuteIncrement(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker).set_MinuteIncrement(value));
+	}
+	final Windows.Foundation.TimeSpan Time()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker).get_Time(&_ret));
+		return _ret;
+	}
+	final void Time(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker).set_Time(value));
+	}
+	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
+	{
+		Windows.UI.Xaml.Controls.LightDismissOverlayMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker2).get_LightDismissOverlayMode(&_ret));
+		return _ret;
+	}
+	final void LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker2).set_LightDismissOverlayMode(value));
+	}
 }
 
 interface TimePickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase, Windows.UI.Xaml.Controls.ITimePickerFlyout
 {
+extern(Windows):
+	final HSTRING ClockIdentifier()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePickerFlyout).get_ClockIdentifier(&_ret));
+		return _ret;
+	}
+	final void ClockIdentifier(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePickerFlyout).set_ClockIdentifier(value));
+	}
+	final Windows.Foundation.TimeSpan Time()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePickerFlyout).get_Time(&_ret));
+		return _ret;
+	}
+	final void Time(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePickerFlyout).set_Time(value));
+	}
+	final INT32 MinuteIncrement()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePickerFlyout).get_MinuteIncrement(&_ret));
+		return _ret;
+	}
+	final void MinuteIncrement(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePickerFlyout).set_MinuteIncrement(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)) ShowAtAsync(Windows.UI.Xaml.FrameworkElement target)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePickerFlyout).abi_ShowAtAsync(target, &_ret));
+		return _ret;
+	}
 }
 
 interface TimePickerFlyoutPresenter : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ITimePickerFlyoutPresenter
@@ -7986,18 +16848,192 @@ interface TimePickerFlyoutPresenter : Windows.UI.Xaml.Controls.Control, Windows.
 
 interface TimePickerValueChangedEventArgs : Windows.UI.Xaml.Controls.ITimePickerValueChangedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan OldTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePickerValueChangedEventArgs).get_OldTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan NewTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePickerValueChangedEventArgs).get_NewTime(&_ret));
+		return _ret;
+	}
 }
 
 interface ToggleMenuFlyoutItem : Windows.UI.Xaml.Controls.MenuFlyoutItem, Windows.UI.Xaml.Controls.IToggleMenuFlyoutItem
 {
+extern(Windows):
+	final bool IsChecked()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleMenuFlyoutItem).get_IsChecked(&_ret));
+		return _ret;
+	}
+	final void IsChecked(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleMenuFlyoutItem).set_IsChecked(value));
+	}
 }
 
 interface ToggleSwitch : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IToggleSwitch, Windows.UI.Xaml.Controls.IToggleSwitchOverrides
 {
+extern(Windows):
+	final bool IsOn()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).get_IsOn(&_ret));
+		return _ret;
+	}
+	final void IsOn(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).set_IsOn(value));
+	}
+	final IInspectable Header()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).get_Header(&_ret));
+		return _ret;
+	}
+	final void Header(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).set_Header(value));
+	}
+	final Windows.UI.Xaml.DataTemplate HeaderTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).get_HeaderTemplate(&_ret));
+		return _ret;
+	}
+	final void HeaderTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).set_HeaderTemplate(value));
+	}
+	final IInspectable OnContent()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).get_OnContent(&_ret));
+		return _ret;
+	}
+	final void OnContent(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).set_OnContent(value));
+	}
+	final Windows.UI.Xaml.DataTemplate OnContentTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).get_OnContentTemplate(&_ret));
+		return _ret;
+	}
+	final void OnContentTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).set_OnContentTemplate(value));
+	}
+	final IInspectable OffContent()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).get_OffContent(&_ret));
+		return _ret;
+	}
+	final void OffContent(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).set_OffContent(value));
+	}
+	final Windows.UI.Xaml.DataTemplate OffContentTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).get_OffContentTemplate(&_ret));
+		return _ret;
+	}
+	final void OffContentTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).set_OffContentTemplate(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.ToggleSwitchTemplateSettings TemplateSettings()
+	{
+		Windows.UI.Xaml.Controls.Primitives.ToggleSwitchTemplateSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).get_TemplateSettings(&_ret));
+		return _ret;
+	}
+	final void OnToggled()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitchOverrides).abi_OnToggled());
+	}
+	final void OnOnContentChanged(IInspectable oldContent, IInspectable newContent)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitchOverrides).abi_OnOnContentChanged(oldContent, newContent));
+	}
+	final void OnOffContentChanged(IInspectable oldContent, IInspectable newContent)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitchOverrides).abi_OnOffContentChanged(oldContent, newContent));
+	}
+	final void OnHeaderChanged(IInspectable oldContent, IInspectable newContent)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitchOverrides).abi_OnHeaderChanged(oldContent, newContent));
+	}
 }
 
 interface ToolTip : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IToolTip
 {
+extern(Windows):
+	final double HorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToolTip).get_HorizontalOffset(&_ret));
+		return _ret;
+	}
+	final void HorizontalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToolTip).set_HorizontalOffset(value));
+	}
+	final bool IsOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToolTip).get_IsOpen(&_ret));
+		return _ret;
+	}
+	final void IsOpen(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToolTip).set_IsOpen(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.PlacementMode Placement()
+	{
+		Windows.UI.Xaml.Controls.Primitives.PlacementMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToolTip).get_Placement(&_ret));
+		return _ret;
+	}
+	final void Placement(Windows.UI.Xaml.Controls.Primitives.PlacementMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToolTip).set_Placement(value));
+	}
+	final Windows.UI.Xaml.UIElement PlacementTarget()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToolTip).get_PlacementTarget(&_ret));
+		return _ret;
+	}
+	final void PlacementTarget(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToolTip).set_PlacementTarget(value));
+	}
+	final double VerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToolTip).get_VerticalOffset(&_ret));
+		return _ret;
+	}
+	final void VerticalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToolTip).set_VerticalOffset(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.ToolTipTemplateSettings TemplateSettings()
+	{
+		Windows.UI.Xaml.Controls.Primitives.ToolTipTemplateSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToolTip).get_TemplateSettings(&_ret));
+		return _ret;
+	}
 }
 
 interface ToolTipService : Windows.UI.Xaml.Controls.IToolTipService
@@ -8006,90 +17042,766 @@ interface ToolTipService : Windows.UI.Xaml.Controls.IToolTipService
 
 interface UIElementCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.UIElement), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement), Windows.UI.Xaml.Controls.IUIElementCollection
 {
+extern(Windows):
+	final void Move(UINT32 oldIndex, UINT32 newIndex)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IUIElementCollection).abi_Move(oldIndex, newIndex));
+	}
 }
 
 interface UserControl : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IUserControl
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement Content()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IUserControl).get_Content(&_ret));
+		return _ret;
+	}
+	final void Content(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IUserControl).set_Content(value));
+	}
 }
 
 interface VariableSizedWrapGrid : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IVariableSizedWrapGrid
 {
+extern(Windows):
+	final double ItemHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVariableSizedWrapGrid).get_ItemHeight(&_ret));
+		return _ret;
+	}
+	final void ItemHeight(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVariableSizedWrapGrid).set_ItemHeight(value));
+	}
+	final double ItemWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVariableSizedWrapGrid).get_ItemWidth(&_ret));
+		return _ret;
+	}
+	final void ItemWidth(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVariableSizedWrapGrid).set_ItemWidth(value));
+	}
+	final Windows.UI.Xaml.Controls.Orientation Orientation()
+	{
+		Windows.UI.Xaml.Controls.Orientation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVariableSizedWrapGrid).get_Orientation(&_ret));
+		return _ret;
+	}
+	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVariableSizedWrapGrid).set_Orientation(value));
+	}
+	final Windows.UI.Xaml.HorizontalAlignment HorizontalChildrenAlignment()
+	{
+		Windows.UI.Xaml.HorizontalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVariableSizedWrapGrid).get_HorizontalChildrenAlignment(&_ret));
+		return _ret;
+	}
+	final void HorizontalChildrenAlignment(Windows.UI.Xaml.HorizontalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVariableSizedWrapGrid).set_HorizontalChildrenAlignment(value));
+	}
+	final Windows.UI.Xaml.VerticalAlignment VerticalChildrenAlignment()
+	{
+		Windows.UI.Xaml.VerticalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVariableSizedWrapGrid).get_VerticalChildrenAlignment(&_ret));
+		return _ret;
+	}
+	final void VerticalChildrenAlignment(Windows.UI.Xaml.VerticalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVariableSizedWrapGrid).set_VerticalChildrenAlignment(value));
+	}
+	final INT32 MaximumRowsOrColumns()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVariableSizedWrapGrid).get_MaximumRowsOrColumns(&_ret));
+		return _ret;
+	}
+	final void MaximumRowsOrColumns(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVariableSizedWrapGrid).set_MaximumRowsOrColumns(value));
+	}
 }
 
 interface Viewbox : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IViewbox
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement Child()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IViewbox).get_Child(&_ret));
+		return _ret;
+	}
+	final void Child(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IViewbox).set_Child(value));
+	}
+	final Windows.UI.Xaml.Media.Stretch Stretch()
+	{
+		Windows.UI.Xaml.Media.Stretch _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IViewbox).get_Stretch(&_ret));
+		return _ret;
+	}
+	final void Stretch(Windows.UI.Xaml.Media.Stretch value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IViewbox).set_Stretch(value));
+	}
+	final Windows.UI.Xaml.Controls.StretchDirection StretchDirection()
+	{
+		Windows.UI.Xaml.Controls.StretchDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IViewbox).get_StretchDirection(&_ret));
+		return _ret;
+	}
+	final void StretchDirection(Windows.UI.Xaml.Controls.StretchDirection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IViewbox).set_StretchDirection(value));
+	}
 }
 
 interface VirtualizingPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IVirtualizingPanel, Windows.UI.Xaml.Controls.IVirtualizingPanelOverrides, Windows.UI.Xaml.Controls.IVirtualizingPanelProtected
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.ItemContainerGenerator ItemContainerGenerator()
+	{
+		Windows.UI.Xaml.Controls.ItemContainerGenerator _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingPanel).get_ItemContainerGenerator(&_ret));
+		return _ret;
+	}
+	final void OnItemsChanged(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.ItemsChangedEventArgs args)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelOverrides).abi_OnItemsChanged(sender, args));
+	}
+	final void OnClearChildren()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelOverrides).abi_OnClearChildren());
+	}
+	final void BringIndexIntoView(INT32 index)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelOverrides).abi_BringIndexIntoView(index));
+	}
+	final void AddInternalChild(Windows.UI.Xaml.UIElement child)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelProtected).abi_AddInternalChild(child));
+	}
+	final void InsertInternalChild(INT32 index, Windows.UI.Xaml.UIElement child)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelProtected).abi_InsertInternalChild(index, child));
+	}
+	final void RemoveInternalChildRange(INT32 index, INT32 range)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelProtected).abi_RemoveInternalChildRange(index, range));
+	}
 }
 
 interface VirtualizingStackPanel : Windows.UI.Xaml.Controls.Primitives.OrientedVirtualizingPanel, Windows.UI.Xaml.Controls.IVirtualizingStackPanel, Windows.UI.Xaml.Controls.IVirtualizingStackPanelOverrides
 {
+extern(Windows):
+	final bool AreScrollSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingStackPanel).get_AreScrollSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final void AreScrollSnapPointsRegular(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingStackPanel).set_AreScrollSnapPointsRegular(value));
+	}
+	final Windows.UI.Xaml.Controls.Orientation Orientation()
+	{
+		Windows.UI.Xaml.Controls.Orientation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingStackPanel).get_Orientation(&_ret));
+		return _ret;
+	}
+	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingStackPanel).set_Orientation(value));
+	}
+	final void OnCleanUpVirtualizedItem(Windows.UI.Xaml.Controls.CleanUpVirtualizedItemEventArgs e)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingStackPanelOverrides).abi_OnCleanUpVirtualizedItem(e));
+	}
 }
 
 interface WebView : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IWebView, Windows.UI.Xaml.Controls.IWebView2, Windows.UI.Xaml.Controls.IWebView3, Windows.UI.Xaml.Controls.IWebView4, Windows.UI.Xaml.Controls.IWebView5
 {
+extern(Windows):
+	final Windows.Foundation.Uri Source()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView).get_Source(&_ret));
+		return _ret;
+	}
+	final void Source(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView).set_Source(value));
+	}
+	deprecated("AllowedScriptNotifyUris is unavailable for releases beginning with Windows 8.1. Instead, list URIs under ApplicationContentUriRules in the package manifest. For more info, see the AllowedScriptNotifyUris documentation.")
+	final Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) AllowedScriptNotifyUris()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView).get_AllowedScriptNotifyUris(&_ret));
+		return _ret;
+	}
+	deprecated("AllowedScriptNotifyUris is unavailable for releases beginning with Windows 8.1. Instead, list URIs under ApplicationContentUriRules in the package manifest. For more info, see the AllowedScriptNotifyUris documentation.")
+	final void AllowedScriptNotifyUris(Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView).set_AllowedScriptNotifyUris(value));
+	}
+	deprecated("Use CaptureSelectedContentToDataPackageAsync instead of DataTransferPackage. For more info, see MSDN.")
+	final Windows.ApplicationModel.DataTransfer.DataPackage DataTransferPackage()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackage _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView).get_DataTransferPackage(&_ret));
+		return _ret;
+	}
+	deprecated("Use InvokeScriptAsync instead of InvokeScript. For more info, see MSDN.")
+	final HSTRING InvokeScript(HSTRING scriptName, UINT32 __argumentsSize, HSTRING* arguments)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView).abi_InvokeScript(scriptName, __argumentsSize, arguments, &_ret));
+		return _ret;
+	}
+	final void Navigate(Windows.Foundation.Uri source)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView).abi_Navigate(source));
+	}
+	final void NavigateToString(HSTRING text)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView).abi_NavigateToString(text));
+	}
+	final bool CanGoBack()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).get_CanGoBack(&_ret));
+		return _ret;
+	}
+	final bool CanGoForward()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).get_CanGoForward(&_ret));
+		return _ret;
+	}
+	final HSTRING DocumentTitle()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).get_DocumentTitle(&_ret));
+		return _ret;
+	}
+	final void GoForward()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).abi_GoForward());
+	}
+	final void GoBack()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).abi_GoBack());
+	}
+	final void Refresh()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).abi_Refresh());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).abi_Stop());
+	}
+	final Windows.Foundation.IAsyncAction CapturePreviewToStreamAsync(Windows.Storage.Streams.IRandomAccessStream stream)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).abi_CapturePreviewToStreamAsync(stream, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) InvokeScriptAsync(HSTRING scriptName, Windows.Foundation.Collections.IIterable!(HSTRING) arguments)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).abi_InvokeScriptAsync(scriptName, arguments, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackage) CaptureSelectedContentToDataPackageAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackage) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).abi_CaptureSelectedContentToDataPackageAsync(&_ret));
+		return _ret;
+	}
+	final void NavigateToLocalStreamUri(Windows.Foundation.Uri source, Windows.Web.IUriToStreamResolver streamResolver)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).abi_NavigateToLocalStreamUri(source, streamResolver));
+	}
+	final Windows.Foundation.Uri BuildLocalStreamUri(HSTRING contentIdentifier, HSTRING relativePath)
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).abi_BuildLocalStreamUri(contentIdentifier, relativePath, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Color DefaultBackgroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).get_DefaultBackgroundColor(&_ret));
+		return _ret;
+	}
+	final void DefaultBackgroundColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).set_DefaultBackgroundColor(value));
+	}
+	final void NavigateWithHttpRequestMessage(Windows.Web.Http.HttpRequestMessage requestMessage)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).abi_NavigateWithHttpRequestMessage(requestMessage));
+	}
+	final bool Focus(Windows.UI.Xaml.FocusState value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).abi_Focus(value, &_ret));
+		return _ret;
+	}
+	final bool ContainsFullScreenElement()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView3).get_ContainsFullScreenElement(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.WebViewExecutionMode ExecutionMode()
+	{
+		Windows.UI.Xaml.Controls.WebViewExecutionMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView4).get_ExecutionMode(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.WebViewDeferredPermissionRequest) DeferredPermissionRequests()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.WebViewDeferredPermissionRequest) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView4).get_DeferredPermissionRequests(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.WebViewSettings Settings()
+	{
+		Windows.UI.Xaml.Controls.WebViewSettings _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView4).get_Settings(&_ret));
+		return _ret;
+	}
+	final void AddWebAllowedObject(HSTRING name, IInspectable pObject)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView4).abi_AddWebAllowedObject(name, pObject));
+	}
+	final Windows.UI.Xaml.Controls.WebViewDeferredPermissionRequest DeferredPermissionRequestById(UINT32 id)
+	{
+		Windows.UI.Xaml.Controls.WebViewDeferredPermissionRequest _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView4).abi_DeferredPermissionRequestById(id, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.DependencyObject XYFocusLeft()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView5).get_XYFocusLeft(&_ret));
+		return _ret;
+	}
+	final void XYFocusLeft(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView5).set_XYFocusLeft(value));
+	}
+	final Windows.UI.Xaml.DependencyObject XYFocusRight()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView5).get_XYFocusRight(&_ret));
+		return _ret;
+	}
+	final void XYFocusRight(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView5).set_XYFocusRight(value));
+	}
+	final Windows.UI.Xaml.DependencyObject XYFocusUp()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView5).get_XYFocusUp(&_ret));
+		return _ret;
+	}
+	final void XYFocusUp(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView5).set_XYFocusUp(value));
+	}
+	final Windows.UI.Xaml.DependencyObject XYFocusDown()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView5).get_XYFocusDown(&_ret));
+		return _ret;
+	}
+	final void XYFocusDown(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView5).set_XYFocusDown(value));
+	}
 }
 
 interface WebViewBrush : Windows.UI.Xaml.Media.TileBrush, Windows.UI.Xaml.Controls.IWebViewBrush
 {
+extern(Windows):
+	final HSTRING SourceName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewBrush).get_SourceName(&_ret));
+		return _ret;
+	}
+	final void SourceName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewBrush).set_SourceName(value));
+	}
+	final void Redraw()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewBrush).abi_Redraw());
+	}
+	final void SetSource(Windows.UI.Xaml.Controls.WebView source)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewBrush).abi_SetSource(source));
+	}
 }
 
 interface WebViewContentLoadingEventArgs : Windows.UI.Xaml.Controls.IWebViewContentLoadingEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewContentLoadingEventArgs).get_Uri(&_ret));
+		return _ret;
+	}
 }
 
 interface WebViewDOMContentLoadedEventArgs : Windows.UI.Xaml.Controls.IWebViewDOMContentLoadedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewDOMContentLoadedEventArgs).get_Uri(&_ret));
+		return _ret;
+	}
 }
 
 interface WebViewDeferredPermissionRequest : Windows.UI.Xaml.Controls.IWebViewDeferredPermissionRequest
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewDeferredPermissionRequest).get_Uri(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.WebViewPermissionType PermissionType()
+	{
+		Windows.UI.Xaml.Controls.WebViewPermissionType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewDeferredPermissionRequest).get_PermissionType(&_ret));
+		return _ret;
+	}
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewDeferredPermissionRequest).get_Id(&_ret));
+		return _ret;
+	}
+	final void Allow()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewDeferredPermissionRequest).abi_Allow());
+	}
+	final void Deny()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewDeferredPermissionRequest).abi_Deny());
+	}
 }
 
 interface WebViewLongRunningScriptDetectedEventArgs : Windows.UI.Xaml.Controls.IWebViewLongRunningScriptDetectedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan ExecutionTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewLongRunningScriptDetectedEventArgs).get_ExecutionTime(&_ret));
+		return _ret;
+	}
+	final bool StopPageScriptExecution()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewLongRunningScriptDetectedEventArgs).get_StopPageScriptExecution(&_ret));
+		return _ret;
+	}
+	final void StopPageScriptExecution(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewLongRunningScriptDetectedEventArgs).set_StopPageScriptExecution(value));
+	}
 }
 
 interface WebViewNavigationCompletedEventArgs : Windows.UI.Xaml.Controls.IWebViewNavigationCompletedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewNavigationCompletedEventArgs).get_Uri(&_ret));
+		return _ret;
+	}
+	final bool IsSuccess()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewNavigationCompletedEventArgs).get_IsSuccess(&_ret));
+		return _ret;
+	}
+	final Windows.Web.WebErrorStatus WebErrorStatus()
+	{
+		Windows.Web.WebErrorStatus _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewNavigationCompletedEventArgs).get_WebErrorStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface WebViewNavigationFailedEventArgs : Windows.UI.Xaml.Controls.IWebViewNavigationFailedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewNavigationFailedEventArgs).get_Uri(&_ret));
+		return _ret;
+	}
+	final Windows.Web.WebErrorStatus WebErrorStatus()
+	{
+		Windows.Web.WebErrorStatus _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewNavigationFailedEventArgs).get_WebErrorStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface WebViewNavigationStartingEventArgs : Windows.UI.Xaml.Controls.IWebViewNavigationStartingEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewNavigationStartingEventArgs).get_Uri(&_ret));
+		return _ret;
+	}
+	final bool Cancel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewNavigationStartingEventArgs).get_Cancel(&_ret));
+		return _ret;
+	}
+	final void Cancel(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewNavigationStartingEventArgs).set_Cancel(value));
+	}
 }
 
 interface WebViewNewWindowRequestedEventArgs : Windows.UI.Xaml.Controls.IWebViewNewWindowRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewNewWindowRequestedEventArgs).get_Uri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri Referrer()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewNewWindowRequestedEventArgs).get_Referrer(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewNewWindowRequestedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewNewWindowRequestedEventArgs).set_Handled(value));
+	}
 }
 
 interface WebViewPermissionRequest : Windows.UI.Xaml.Controls.IWebViewPermissionRequest
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewPermissionRequest).get_Uri(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.WebViewPermissionType PermissionType()
+	{
+		Windows.UI.Xaml.Controls.WebViewPermissionType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewPermissionRequest).get_PermissionType(&_ret));
+		return _ret;
+	}
+	final UINT32 Id()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewPermissionRequest).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.WebViewPermissionState State()
+	{
+		Windows.UI.Xaml.Controls.WebViewPermissionState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewPermissionRequest).get_State(&_ret));
+		return _ret;
+	}
+	final void Defer()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewPermissionRequest).abi_Defer());
+	}
+	final void Allow()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewPermissionRequest).abi_Allow());
+	}
+	final void Deny()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewPermissionRequest).abi_Deny());
+	}
 }
 
 interface WebViewPermissionRequestedEventArgs : Windows.UI.Xaml.Controls.IWebViewPermissionRequestedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.WebViewPermissionRequest PermissionRequest()
+	{
+		Windows.UI.Xaml.Controls.WebViewPermissionRequest _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewPermissionRequestedEventArgs).get_PermissionRequest(&_ret));
+		return _ret;
+	}
 }
 
 interface WebViewSettings : Windows.UI.Xaml.Controls.IWebViewSettings
 {
+extern(Windows):
+	final bool IsJavaScriptEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewSettings).get_IsJavaScriptEnabled(&_ret));
+		return _ret;
+	}
+	final void IsJavaScriptEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewSettings).set_IsJavaScriptEnabled(value));
+	}
+	final bool IsIndexedDBEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewSettings).get_IsIndexedDBEnabled(&_ret));
+		return _ret;
+	}
+	final void IsIndexedDBEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewSettings).set_IsIndexedDBEnabled(value));
+	}
 }
 
 interface WebViewUnsupportedUriSchemeIdentifiedEventArgs : Windows.UI.Xaml.Controls.IWebViewUnsupportedUriSchemeIdentifiedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewUnsupportedUriSchemeIdentifiedEventArgs).get_Uri(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewUnsupportedUriSchemeIdentifiedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewUnsupportedUriSchemeIdentifiedEventArgs).set_Handled(value));
+	}
 }
 
 interface WebViewUnviewableContentIdentifiedEventArgs : Windows.UI.Xaml.Controls.IWebViewUnviewableContentIdentifiedEventArgs, Windows.UI.Xaml.Controls.IWebViewUnviewableContentIdentifiedEventArgs2
 {
+extern(Windows):
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewUnviewableContentIdentifiedEventArgs).get_Uri(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri Referrer()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewUnviewableContentIdentifiedEventArgs).get_Referrer(&_ret));
+		return _ret;
+	}
+	final HSTRING MediaType()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebViewUnviewableContentIdentifiedEventArgs2).get_MediaType(&_ret));
+		return _ret;
+	}
 }
 
 interface WrapGrid : Windows.UI.Xaml.Controls.Primitives.OrientedVirtualizingPanel, Windows.UI.Xaml.Controls.IWrapGrid
 {
+extern(Windows):
+	final double ItemWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWrapGrid).get_ItemWidth(&_ret));
+		return _ret;
+	}
+	final void ItemWidth(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWrapGrid).set_ItemWidth(value));
+	}
+	final double ItemHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWrapGrid).get_ItemHeight(&_ret));
+		return _ret;
+	}
+	final void ItemHeight(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWrapGrid).set_ItemHeight(value));
+	}
+	final Windows.UI.Xaml.Controls.Orientation Orientation()
+	{
+		Windows.UI.Xaml.Controls.Orientation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWrapGrid).get_Orientation(&_ret));
+		return _ret;
+	}
+	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWrapGrid).set_Orientation(value));
+	}
+	final Windows.UI.Xaml.HorizontalAlignment HorizontalChildrenAlignment()
+	{
+		Windows.UI.Xaml.HorizontalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWrapGrid).get_HorizontalChildrenAlignment(&_ret));
+		return _ret;
+	}
+	final void HorizontalChildrenAlignment(Windows.UI.Xaml.HorizontalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWrapGrid).set_HorizontalChildrenAlignment(value));
+	}
+	final Windows.UI.Xaml.VerticalAlignment VerticalChildrenAlignment()
+	{
+		Windows.UI.Xaml.VerticalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWrapGrid).get_VerticalChildrenAlignment(&_ret));
+		return _ret;
+	}
+	final void VerticalChildrenAlignment(Windows.UI.Xaml.VerticalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWrapGrid).set_VerticalChildrenAlignment(value));
+	}
+	final INT32 MaximumRowsOrColumns()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWrapGrid).get_MaximumRowsOrColumns(&_ret));
+		return _ret;
+	}
+	final void MaximumRowsOrColumns(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWrapGrid).set_MaximumRowsOrColumns(value));
+	}
 }
 
 enum AppBarClosedDisplayMode

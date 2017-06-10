@@ -71,14 +71,187 @@ extern(Windows):
 
 interface ErrorReceivedEventArgs : Windows.Devices.SerialCommunication.IErrorReceivedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.SerialCommunication.SerialError Error()
+	{
+		Windows.Devices.SerialCommunication.SerialError _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.IErrorReceivedEventArgs).get_Error(&_ret));
+		return _ret;
+	}
 }
 
 interface PinChangedEventArgs : Windows.Devices.SerialCommunication.IPinChangedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.SerialCommunication.SerialPinChange PinChange()
+	{
+		Windows.Devices.SerialCommunication.SerialPinChange _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.IPinChangedEventArgs).get_PinChange(&_ret));
+		return _ret;
+	}
 }
 
 interface SerialDevice : Windows.Devices.SerialCommunication.ISerialDevice, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final UINT32 BaudRate()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_BaudRate(&_ret));
+		return _ret;
+	}
+	final void BaudRate(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).set_BaudRate(value));
+	}
+	final bool BreakSignalState()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_BreakSignalState(&_ret));
+		return _ret;
+	}
+	final void BreakSignalState(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).set_BreakSignalState(value));
+	}
+	final UINT32 BytesReceived()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_BytesReceived(&_ret));
+		return _ret;
+	}
+	final bool CarrierDetectState()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_CarrierDetectState(&_ret));
+		return _ret;
+	}
+	final bool ClearToSendState()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_ClearToSendState(&_ret));
+		return _ret;
+	}
+	final UINT16 DataBits()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_DataBits(&_ret));
+		return _ret;
+	}
+	final void DataBits(UINT16 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).set_DataBits(value));
+	}
+	final bool DataSetReadyState()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_DataSetReadyState(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.SerialCommunication.SerialHandshake Handshake()
+	{
+		Windows.Devices.SerialCommunication.SerialHandshake _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_Handshake(&_ret));
+		return _ret;
+	}
+	final void Handshake(Windows.Devices.SerialCommunication.SerialHandshake value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).set_Handshake(value));
+	}
+	final bool IsDataTerminalReadyEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_IsDataTerminalReadyEnabled(&_ret));
+		return _ret;
+	}
+	final void IsDataTerminalReadyEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).set_IsDataTerminalReadyEnabled(value));
+	}
+	final bool IsRequestToSendEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_IsRequestToSendEnabled(&_ret));
+		return _ret;
+	}
+	final void IsRequestToSendEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).set_IsRequestToSendEnabled(value));
+	}
+	final Windows.Devices.SerialCommunication.SerialParity Parity()
+	{
+		Windows.Devices.SerialCommunication.SerialParity _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_Parity(&_ret));
+		return _ret;
+	}
+	final void Parity(Windows.Devices.SerialCommunication.SerialParity value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).set_Parity(value));
+	}
+	final HSTRING PortName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_PortName(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan ReadTimeout()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_ReadTimeout(&_ret));
+		return _ret;
+	}
+	final void ReadTimeout(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).set_ReadTimeout(value));
+	}
+	final Windows.Devices.SerialCommunication.SerialStopBitCount StopBits()
+	{
+		Windows.Devices.SerialCommunication.SerialStopBitCount _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_StopBits(&_ret));
+		return _ret;
+	}
+	final void StopBits(Windows.Devices.SerialCommunication.SerialStopBitCount value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).set_StopBits(value));
+	}
+	final UINT16 UsbVendorId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_UsbVendorId(&_ret));
+		return _ret;
+	}
+	final UINT16 UsbProductId()
+	{
+		UINT16 _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_UsbProductId(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan WriteTimeout()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_WriteTimeout(&_ret));
+		return _ret;
+	}
+	final void WriteTimeout(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).set_WriteTimeout(value));
+	}
+	final Windows.Storage.Streams.IInputStream InputStream()
+	{
+		Windows.Storage.Streams.IInputStream _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_InputStream(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IOutputStream OutputStream()
+	{
+		Windows.Storage.Streams.IOutputStream _ret;
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_OutputStream(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 enum SerialError

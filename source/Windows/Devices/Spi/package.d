@@ -80,18 +80,134 @@ extern(Windows):
 
 interface SpiBusInfo : Windows.Devices.Spi.ISpiBusInfo
 {
+extern(Windows):
+	final INT32 ChipSelectLineCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiBusInfo).get_ChipSelectLineCount(&_ret));
+		return _ret;
+	}
+	final INT32 MinClockFrequency()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiBusInfo).get_MinClockFrequency(&_ret));
+		return _ret;
+	}
+	final INT32 MaxClockFrequency()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiBusInfo).get_MaxClockFrequency(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(INT32) SupportedDataBitLengths()
+	{
+		Windows.Foundation.Collections.IVectorView!(INT32) _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiBusInfo).get_SupportedDataBitLengths(&_ret));
+		return _ret;
+	}
 }
 
 interface SpiConnectionSettings : Windows.Devices.Spi.ISpiConnectionSettings
 {
+extern(Windows):
+	final INT32 ChipSelectLine()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).get_ChipSelectLine(&_ret));
+		return _ret;
+	}
+	final void ChipSelectLine(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).set_ChipSelectLine(value));
+	}
+	final Windows.Devices.Spi.SpiMode Mode()
+	{
+		Windows.Devices.Spi.SpiMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.Devices.Spi.SpiMode value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).set_Mode(value));
+	}
+	final INT32 DataBitLength()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).get_DataBitLength(&_ret));
+		return _ret;
+	}
+	final void DataBitLength(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).set_DataBitLength(value));
+	}
+	final INT32 ClockFrequency()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).get_ClockFrequency(&_ret));
+		return _ret;
+	}
+	final void ClockFrequency(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).set_ClockFrequency(value));
+	}
+	final Windows.Devices.Spi.SpiSharingMode SharingMode()
+	{
+		Windows.Devices.Spi.SpiSharingMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).get_SharingMode(&_ret));
+		return _ret;
+	}
+	final void SharingMode(Windows.Devices.Spi.SpiSharingMode value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).set_SharingMode(value));
+	}
 }
 
 interface SpiController : Windows.Devices.Spi.ISpiController
 {
+extern(Windows):
+	final Windows.Devices.Spi.SpiDevice GetDevice(Windows.Devices.Spi.SpiConnectionSettings settings)
+	{
+		Windows.Devices.Spi.SpiDevice _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiController).abi_GetDevice(settings, &_ret));
+		return _ret;
+	}
 }
 
 interface SpiDevice : Windows.Devices.Spi.ISpiDevice, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).get_DeviceId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Spi.SpiConnectionSettings ConnectionSettings()
+	{
+		Windows.Devices.Spi.SpiConnectionSettings _ret;
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).get_ConnectionSettings(&_ret));
+		return _ret;
+	}
+	final void Write(UINT32 __bufferSize, BYTE* buffer)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).abi_Write(__bufferSize, buffer));
+	}
+	final void Read(UINT32 __bufferSize, BYTE* out_buffer)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).abi_Read(__bufferSize, out_buffer));
+	}
+	final void TransferSequential(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).abi_TransferSequential(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer));
+	}
+	final void TransferFullDuplex(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer)
+	{
+		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).abi_TransferFullDuplex(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 enum SpiMode

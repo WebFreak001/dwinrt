@@ -61,14 +61,65 @@ interface GameBar
 
 interface GameChatMessageReceivedEventArgs : Windows.Gaming.UI.IGameChatMessageReceivedEventArgs
 {
+extern(Windows):
+	final HSTRING AppId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs).get_AppId(&_ret));
+		return _ret;
+	}
+	final HSTRING AppDisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs).get_AppDisplayName(&_ret));
+		return _ret;
+	}
+	final HSTRING SenderName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs).get_SenderName(&_ret));
+		return _ret;
+	}
+	final HSTRING Message()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs).get_Message(&_ret));
+		return _ret;
+	}
+	final Windows.Gaming.UI.GameChatMessageOrigin Origin()
+	{
+		Windows.Gaming.UI.GameChatMessageOrigin _ret;
+		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs).get_Origin(&_ret));
+		return _ret;
+	}
 }
 
 interface GameChatOverlay : Windows.Gaming.UI.IGameChatOverlay
 {
+extern(Windows):
+	final Windows.Gaming.UI.GameChatOverlayPosition DesiredPosition()
+	{
+		Windows.Gaming.UI.GameChatOverlayPosition _ret;
+		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlay).get_DesiredPosition(&_ret));
+		return _ret;
+	}
+	final void DesiredPosition(Windows.Gaming.UI.GameChatOverlayPosition value)
+	{
+		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlay).set_DesiredPosition(value));
+	}
+	final void AddMessage(HSTRING sender, HSTRING message, Windows.Gaming.UI.GameChatMessageOrigin origin)
+	{
+		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlay).abi_AddMessage(sender, message, origin));
+	}
 }
 
 interface GameChatOverlayMessageSource : Windows.Gaming.UI.IGameChatOverlayMessageSource
 {
+extern(Windows):
+	final void SetDelayBeforeClosingAfterMessageReceived(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlayMessageSource).abi_SetDelayBeforeClosingAfterMessageReceived(value));
+	}
 }
 
 enum GameChatMessageOrigin

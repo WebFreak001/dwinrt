@@ -145,6 +145,13 @@ extern(Windows):
 
 interface WebAccountEventArgs : Windows.Security.Authentication.Web.Core.IWebAccountEventArgs
 {
+extern(Windows):
+	final Windows.Security.Credentials.WebAccount Account()
+	{
+		Windows.Security.Credentials.WebAccount _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebAccountEventArgs).get_Account(&_ret));
+		return _ret;
+	}
 }
 
 interface WebAccountMonitor : Windows.Security.Authentication.Web.Core.IWebAccountMonitor
@@ -157,18 +164,134 @@ interface WebAuthenticationCoreManager
 
 interface WebProviderError : Windows.Security.Authentication.Web.Core.IWebProviderError
 {
+extern(Windows):
+	final UINT32 ErrorCode()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebProviderError).get_ErrorCode(&_ret));
+		return _ret;
+	}
+	final HSTRING ErrorMessage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebProviderError).get_ErrorMessage(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Properties()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebProviderError).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface WebTokenRequest : Windows.Security.Authentication.Web.Core.IWebTokenRequest, Windows.Security.Authentication.Web.Core.IWebTokenRequest2, Windows.Security.Authentication.Web.Core.IWebTokenRequest3
 {
+extern(Windows):
+	final Windows.Security.Credentials.WebAccountProvider WebAccountProvider()
+	{
+		Windows.Security.Credentials.WebAccountProvider _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequest).get_WebAccountProvider(&_ret));
+		return _ret;
+	}
+	final HSTRING Scope()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequest).get_Scope(&_ret));
+		return _ret;
+	}
+	final HSTRING ClientId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequest).get_ClientId(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.Core.WebTokenRequestPromptType PromptType()
+	{
+		Windows.Security.Authentication.Web.Core.WebTokenRequestPromptType _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequest).get_PromptType(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Properties()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequest).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) AppProperties()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequest2).get_AppProperties(&_ret));
+		return _ret;
+	}
+	final HSTRING CorrelationId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequest3).get_CorrelationId(&_ret));
+		return _ret;
+	}
+	final void CorrelationId(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequest3).set_CorrelationId(value));
+	}
 }
 
 interface WebTokenRequestResult : Windows.Security.Authentication.Web.Core.IWebTokenRequestResult
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.Web.Core.WebTokenResponse) ResponseData()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.Web.Core.WebTokenResponse) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequestResult).get_ResponseData(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.Core.WebTokenRequestStatus ResponseStatus()
+	{
+		Windows.Security.Authentication.Web.Core.WebTokenRequestStatus _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequestResult).get_ResponseStatus(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.Core.WebProviderError ResponseError()
+	{
+		Windows.Security.Authentication.Web.Core.WebProviderError _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequestResult).get_ResponseError(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction InvalidateCacheAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequestResult).abi_InvalidateCacheAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface WebTokenResponse : Windows.Security.Authentication.Web.Core.IWebTokenResponse
 {
+extern(Windows):
+	final HSTRING Token()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenResponse).get_Token(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Authentication.Web.Core.WebProviderError ProviderError()
+	{
+		Windows.Security.Authentication.Web.Core.WebProviderError _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenResponse).get_ProviderError(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Credentials.WebAccount WebAccount()
+	{
+		Windows.Security.Credentials.WebAccount _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenResponse).get_WebAccount(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Properties()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenResponse).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 enum WebTokenRequestPromptType

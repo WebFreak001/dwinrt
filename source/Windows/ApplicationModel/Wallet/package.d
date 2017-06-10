@@ -196,18 +196,416 @@ extern(Windows):
 
 interface WalletBarcode : Windows.ApplicationModel.Wallet.IWalletBarcode
 {
+extern(Windows):
+	final Windows.ApplicationModel.Wallet.WalletBarcodeSymbology Symbology()
+	{
+		Windows.ApplicationModel.Wallet.WalletBarcodeSymbology _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletBarcode).get_Symbology(&_ret));
+		return _ret;
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletBarcode).get_Value(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamReference) GetImageAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamReference) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletBarcode).abi_GetImageAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface WalletItem : Windows.ApplicationModel.Wallet.IWalletItem
 {
+extern(Windows):
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final void DisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_DisplayName(value));
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_Id(&_ret));
+		return _ret;
+	}
+	final bool IsAcknowledged()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_IsAcknowledged(&_ret));
+		return _ret;
+	}
+	final void IsAcknowledged(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_IsAcknowledged(value));
+	}
+	final HSTRING IssuerDisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_IssuerDisplayName(&_ret));
+		return _ret;
+	}
+	final void IssuerDisplayName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_IssuerDisplayName(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) LastUpdated()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_LastUpdated(&_ret));
+		return _ret;
+	}
+	final void LastUpdated(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_LastUpdated(value));
+	}
+	final Windows.ApplicationModel.Wallet.WalletItemKind Kind()
+	{
+		Windows.ApplicationModel.Wallet.WalletItemKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_Kind(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.Wallet.WalletBarcode Barcode()
+	{
+		Windows.ApplicationModel.Wallet.WalletBarcode _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_Barcode(&_ret));
+		return _ret;
+	}
+	final void Barcode(Windows.ApplicationModel.Wallet.WalletBarcode value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_Barcode(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationDate()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_ExpirationDate(&_ret));
+		return _ret;
+	}
+	final void ExpirationDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_ExpirationDate(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Logo159x159()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_Logo159x159(&_ret));
+		return _ret;
+	}
+	final void Logo159x159(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_Logo159x159(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Logo336x336()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_Logo336x336(&_ret));
+		return _ret;
+	}
+	final void Logo336x336(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_Logo336x336(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Logo99x99()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_Logo99x99(&_ret));
+		return _ret;
+	}
+	final void Logo99x99(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_Logo99x99(value));
+	}
+	final HSTRING DisplayMessage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_DisplayMessage(&_ret));
+		return _ret;
+	}
+	final void DisplayMessage(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_DisplayMessage(value));
+	}
+	final bool IsDisplayMessageLaunchable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_IsDisplayMessageLaunchable(&_ret));
+		return _ret;
+	}
+	final void IsDisplayMessageLaunchable(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_IsDisplayMessageLaunchable(value));
+	}
+	final HSTRING LogoText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_LogoText(&_ret));
+		return _ret;
+	}
+	final void LogoText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_LogoText(value));
+	}
+	final Windows.UI.Color HeaderColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_HeaderColor(&_ret));
+		return _ret;
+	}
+	final void HeaderColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_HeaderColor(value));
+	}
+	final Windows.UI.Color BodyColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_BodyColor(&_ret));
+		return _ret;
+	}
+	final void BodyColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_BodyColor(value));
+	}
+	final Windows.UI.Color HeaderFontColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_HeaderFontColor(&_ret));
+		return _ret;
+	}
+	final void HeaderFontColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_HeaderFontColor(value));
+	}
+	final Windows.UI.Color BodyFontColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_BodyFontColor(&_ret));
+		return _ret;
+	}
+	final void BodyFontColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_BodyFontColor(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference HeaderBackgroundImage()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_HeaderBackgroundImage(&_ret));
+		return _ret;
+	}
+	final void HeaderBackgroundImage(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_HeaderBackgroundImage(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference BodyBackgroundImage()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_BodyBackgroundImage(&_ret));
+		return _ret;
+	}
+	final void BodyBackgroundImage(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_BodyBackgroundImage(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference LogoImage()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_LogoImage(&_ret));
+		return _ret;
+	}
+	final void LogoImage(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_LogoImage(value));
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference PromotionalImage()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_PromotionalImage(&_ret));
+		return _ret;
+	}
+	final void PromotionalImage(Windows.Storage.Streams.IRandomAccessStreamReference value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_PromotionalImage(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) RelevantDate()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_RelevantDate(&_ret));
+		return _ret;
+	}
+	final void RelevantDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_RelevantDate(value));
+	}
+	final HSTRING RelevantDateDisplayMessage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_RelevantDateDisplayMessage(&_ret));
+		return _ret;
+	}
+	final void RelevantDateDisplayMessage(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_RelevantDateDisplayMessage(value));
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, Windows.ApplicationModel.Wallet.WalletTransaction) TransactionHistory()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, Windows.ApplicationModel.Wallet.WalletTransaction) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_TransactionHistory(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, Windows.ApplicationModel.Wallet.WalletRelevantLocation) RelevantLocations()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, Windows.ApplicationModel.Wallet.WalletRelevantLocation) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_RelevantLocations(&_ret));
+		return _ret;
+	}
+	final bool IsMoreTransactionHistoryLaunchable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_IsMoreTransactionHistoryLaunchable(&_ret));
+		return _ret;
+	}
+	final void IsMoreTransactionHistoryLaunchable(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).set_IsMoreTransactionHistoryLaunchable(value));
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, Windows.ApplicationModel.Wallet.WalletItemCustomProperty) DisplayProperties()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, Windows.ApplicationModel.Wallet.WalletItemCustomProperty) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_DisplayProperties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMap!(HSTRING, Windows.ApplicationModel.Wallet.WalletVerb) Verbs()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, Windows.ApplicationModel.Wallet.WalletVerb) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_Verbs(&_ret));
+		return _ret;
+	}
 }
 
 interface WalletItemCustomProperty : Windows.ApplicationModel.Wallet.IWalletItemCustomProperty
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty).set_Name(value));
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty).set_Value(value));
+	}
+	final bool AutoDetectLinks()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty).get_AutoDetectLinks(&_ret));
+		return _ret;
+	}
+	final void AutoDetectLinks(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty).set_AutoDetectLinks(value));
+	}
+	final Windows.ApplicationModel.Wallet.WalletDetailViewPosition DetailViewPosition()
+	{
+		Windows.ApplicationModel.Wallet.WalletDetailViewPosition _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty).get_DetailViewPosition(&_ret));
+		return _ret;
+	}
+	final void DetailViewPosition(Windows.ApplicationModel.Wallet.WalletDetailViewPosition value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty).set_DetailViewPosition(value));
+	}
+	final Windows.ApplicationModel.Wallet.WalletSummaryViewPosition SummaryViewPosition()
+	{
+		Windows.ApplicationModel.Wallet.WalletSummaryViewPosition _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty).get_SummaryViewPosition(&_ret));
+		return _ret;
+	}
+	final void SummaryViewPosition(Windows.ApplicationModel.Wallet.WalletSummaryViewPosition value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty).set_SummaryViewPosition(value));
+	}
 }
 
 interface WalletItemStore : Windows.ApplicationModel.Wallet.IWalletItemStore
 {
+extern(Windows):
+	final Windows.Foundation.IAsyncAction AddAsync(HSTRING id, Windows.ApplicationModel.Wallet.WalletItem item)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemStore).abi_AddAsync(id, item, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ClearAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemStore).abi_ClearAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem) GetWalletItemAsync(HSTRING id)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemStore).abi_GetWalletItemAsync(id, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem)) GetItemsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemStore).abi_GetItemsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem)) GetItemsWithKindAsync(Windows.ApplicationModel.Wallet.WalletItemKind kind)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem)) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemStore).abi_GetItemsWithKindAsync(kind, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem) ImportItemAsync(Windows.Storage.Streams.IRandomAccessStreamReference stream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemStore).abi_ImportItemAsync(stream, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction DeleteAsync(HSTRING id)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemStore).abi_DeleteAsync(id, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ShowAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemStore).abi_ShowAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction ShowItemAsync(HSTRING id)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemStore).abi_ShowItemAsync(id, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction UpdateAsync(Windows.ApplicationModel.Wallet.WalletItem item)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemStore).abi_UpdateAsync(item, &_ret));
+		return _ret;
+	}
 }
 
 interface WalletManager
@@ -216,14 +614,107 @@ interface WalletManager
 
 interface WalletRelevantLocation : Windows.ApplicationModel.Wallet.IWalletRelevantLocation
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.BasicGeoposition Position()
+	{
+		Windows.Devices.Geolocation.BasicGeoposition _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletRelevantLocation).get_Position(&_ret));
+		return _ret;
+	}
+	final void Position(Windows.Devices.Geolocation.BasicGeoposition value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletRelevantLocation).set_Position(value));
+	}
+	final HSTRING DisplayMessage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletRelevantLocation).get_DisplayMessage(&_ret));
+		return _ret;
+	}
+	final void DisplayMessage(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletRelevantLocation).set_DisplayMessage(value));
+	}
 }
 
 interface WalletTransaction : Windows.ApplicationModel.Wallet.IWalletTransaction
 {
+extern(Windows):
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletTransaction).get_Description(&_ret));
+		return _ret;
+	}
+	final void Description(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletTransaction).set_Description(value));
+	}
+	final HSTRING DisplayAmount()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletTransaction).get_DisplayAmount(&_ret));
+		return _ret;
+	}
+	final void DisplayAmount(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletTransaction).set_DisplayAmount(value));
+	}
+	final bool IgnoreTimeOfDay()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletTransaction).get_IgnoreTimeOfDay(&_ret));
+		return _ret;
+	}
+	final void IgnoreTimeOfDay(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletTransaction).set_IgnoreTimeOfDay(value));
+	}
+	final HSTRING DisplayLocation()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletTransaction).get_DisplayLocation(&_ret));
+		return _ret;
+	}
+	final void DisplayLocation(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletTransaction).set_DisplayLocation(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) TransactionDate()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletTransaction).get_TransactionDate(&_ret));
+		return _ret;
+	}
+	final void TransactionDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletTransaction).set_TransactionDate(value));
+	}
+	final bool IsLaunchable()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletTransaction).get_IsLaunchable(&_ret));
+		return _ret;
+	}
+	final void IsLaunchable(bool value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletTransaction).set_IsLaunchable(value));
+	}
 }
 
 interface WalletVerb : Windows.ApplicationModel.Wallet.IWalletVerb
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletVerb).get_Name(&_ret));
+		return _ret;
+	}
+	final void Name(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletVerb).set_Name(value));
+	}
 }
 
 enum WalletActionKind

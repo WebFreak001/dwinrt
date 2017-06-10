@@ -145,10 +145,124 @@ extern(Windows):
 
 interface BrightnessOverride : Windows.Graphics.Display.IBrightnessOverride
 {
+extern(Windows):
+	final bool IsSupported()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).get_IsSupported(&_ret));
+		return _ret;
+	}
+	final bool IsOverrideActive()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).get_IsOverrideActive(&_ret));
+		return _ret;
+	}
+	final double BrightnessLevel()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).get_BrightnessLevel(&_ret));
+		return _ret;
+	}
+	final void SetBrightnessLevel(double brightnessLevel, Windows.Graphics.Display.DisplayBrightnessOverrideOptions options)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).abi_SetBrightnessLevel(brightnessLevel, options));
+	}
+	final void SetBrightnessScenario(Windows.Graphics.Display.DisplayBrightnessScenario scenario, Windows.Graphics.Display.DisplayBrightnessOverrideOptions options)
+	{
+		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).abi_SetBrightnessScenario(scenario, options));
+	}
+	final double GetLevelForScenario(Windows.Graphics.Display.DisplayBrightnessScenario scenario)
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).abi_GetLevelForScenario(scenario, &_ret));
+		return _ret;
+	}
+	final void StartOverride()
+	{
+		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).abi_StartOverride());
+	}
+	final void StopOverride()
+	{
+		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).abi_StopOverride());
+	}
 }
 
 interface DisplayInformation : Windows.Graphics.Display.IDisplayInformation, Windows.Graphics.Display.IDisplayInformation2, Windows.Graphics.Display.IDisplayInformation3, Windows.Graphics.Display.IDisplayInformation4
 {
+extern(Windows):
+	final Windows.Graphics.Display.DisplayOrientations CurrentOrientation()
+	{
+		Windows.Graphics.Display.DisplayOrientations _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_CurrentOrientation(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Display.DisplayOrientations NativeOrientation()
+	{
+		Windows.Graphics.Display.DisplayOrientations _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_NativeOrientation(&_ret));
+		return _ret;
+	}
+	final Windows.Graphics.Display.ResolutionScale ResolutionScale()
+	{
+		Windows.Graphics.Display.ResolutionScale _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_ResolutionScale(&_ret));
+		return _ret;
+	}
+	final FLOAT LogicalDpi()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_LogicalDpi(&_ret));
+		return _ret;
+	}
+	final FLOAT RawDpiX()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_RawDpiX(&_ret));
+		return _ret;
+	}
+	final FLOAT RawDpiY()
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_RawDpiY(&_ret));
+		return _ret;
+	}
+	final bool StereoEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_StereoEnabled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) GetColorProfileAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).abi_GetColorProfileAsync(&_ret));
+		return _ret;
+	}
+	final double RawPixelsPerViewPixel()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation2).get_RawPixelsPerViewPixel(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(double) DiagonalSizeInInches()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation3).get_DiagonalSizeInInches(&_ret));
+		return _ret;
+	}
+	final UINT32 ScreenWidthInRawPixels()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation4).get_ScreenWidthInRawPixels(&_ret));
+		return _ret;
+	}
+	final UINT32 ScreenHeightInRawPixels()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation4).get_ScreenHeightInRawPixels(&_ret));
+		return _ret;
+	}
 }
 
 interface DisplayProperties

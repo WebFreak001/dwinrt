@@ -258,70 +258,541 @@ extern(Windows):
 
 interface SpeechContinuousRecognitionCompletedEventArgs : Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionCompletedEventArgs
 {
+extern(Windows):
+	final Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus Status()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionCompletedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface SpeechContinuousRecognitionResultGeneratedEventArgs : Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionResultGeneratedEventArgs
 {
+extern(Windows):
+	final Windows.Media.SpeechRecognition.SpeechRecognitionResult Result()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionResult _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionResultGeneratedEventArgs).get_Result(&_ret));
+		return _ret;
+	}
 }
 
 interface SpeechContinuousRecognitionSession : Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan AutoStopSilenceTimeout()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).get_AutoStopSilenceTimeout(&_ret));
+		return _ret;
+	}
+	final void AutoStopSilenceTimeout(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).set_AutoStopSilenceTimeout(value));
+	}
+	final Windows.Foundation.IAsyncAction StartAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_StartAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StartWithModeAsync(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionMode mode)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_StartWithModeAsync(mode, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StopAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_StopAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction CancelAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_CancelAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction PauseAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_PauseAsync(&_ret));
+		return _ret;
+	}
+	final void Resume()
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_Resume());
+	}
 }
 
 interface SpeechRecognitionCompilationResult : Windows.Media.SpeechRecognition.ISpeechRecognitionCompilationResult
 {
+extern(Windows):
+	final Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus Status()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionCompilationResult).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface SpeechRecognitionGrammarFileConstraint : Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraint, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint
 {
+extern(Windows):
+	final Windows.Storage.StorageFile GrammarFile()
+	{
+		Windows.Storage.StorageFile _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraint).get_GrammarFile(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final void IsEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_IsEnabled(value));
+	}
+	final HSTRING Tag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Tag(&_ret));
+		return _ret;
+	}
+	final void Tag(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Tag(value));
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType Type()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Type(&_ret));
+		return _ret;
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability Probability()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Probability(&_ret));
+		return _ret;
+	}
+	final void Probability(Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Probability(value));
+	}
 }
 
 interface SpeechRecognitionHypothesis : Windows.Media.SpeechRecognition.ISpeechRecognitionHypothesis
 {
+extern(Windows):
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionHypothesis).get_Text(&_ret));
+		return _ret;
+	}
 }
 
 interface SpeechRecognitionHypothesisGeneratedEventArgs : Windows.Media.SpeechRecognition.ISpeechRecognitionHypothesisGeneratedEventArgs
 {
+extern(Windows):
+	final Windows.Media.SpeechRecognition.SpeechRecognitionHypothesis Hypothesis()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionHypothesis _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionHypothesisGeneratedEventArgs).get_Hypothesis(&_ret));
+		return _ret;
+	}
 }
 
 interface SpeechRecognitionListConstraint : Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraint, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(HSTRING) Commands()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraint).get_Commands(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final void IsEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_IsEnabled(value));
+	}
+	final HSTRING Tag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Tag(&_ret));
+		return _ret;
+	}
+	final void Tag(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Tag(value));
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType Type()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Type(&_ret));
+		return _ret;
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability Probability()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Probability(&_ret));
+		return _ret;
+	}
+	final void Probability(Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Probability(value));
+	}
 }
 
 interface SpeechRecognitionQualityDegradingEventArgs : Windows.Media.SpeechRecognition.ISpeechRecognitionQualityDegradingEventArgs
 {
+extern(Windows):
+	final Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem Problem()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionQualityDegradingEventArgs).get_Problem(&_ret));
+		return _ret;
+	}
 }
 
 interface SpeechRecognitionResult : Windows.Media.SpeechRecognition.ISpeechRecognitionResult, Windows.Media.SpeechRecognition.ISpeechRecognitionResult2
 {
+extern(Windows):
+	final Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus Status()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_Status(&_ret));
+		return _ret;
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_Text(&_ret));
+		return _ret;
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognitionConfidence Confidence()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionConfidence _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_Confidence(&_ret));
+		return _ret;
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation SemanticInterpretation()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_SemanticInterpretation(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.SpeechRecognition.SpeechRecognitionResult) GetAlternates(UINT32 maxAlternates)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.SpeechRecognition.SpeechRecognitionResult) _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).abi_GetAlternates(maxAlternates, &_ret));
+		return _ret;
+	}
+	final Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint Constraint()
+	{
+		Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_Constraint(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) RulePath()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_RulePath(&_ret));
+		return _ret;
+	}
+	final double RawConfidence()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_RawConfidence(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.DateTime PhraseStartTime()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult2).get_PhraseStartTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan PhraseDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult2).get_PhraseDuration(&_ret));
+		return _ret;
+	}
 }
 
 interface SpeechRecognitionSemanticInterpretation : Windows.Media.SpeechRecognition.ISpeechRecognitionSemanticInterpretation
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Foundation.Collections.IVectorView!(HSTRING)) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionSemanticInterpretation).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface SpeechRecognitionTopicConstraint : Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraint, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint
 {
+extern(Windows):
+	final Windows.Media.SpeechRecognition.SpeechRecognitionScenario Scenario()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionScenario _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraint).get_Scenario(&_ret));
+		return _ret;
+	}
+	final HSTRING TopicHint()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraint).get_TopicHint(&_ret));
+		return _ret;
+	}
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final void IsEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_IsEnabled(value));
+	}
+	final HSTRING Tag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Tag(&_ret));
+		return _ret;
+	}
+	final void Tag(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Tag(value));
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType Type()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Type(&_ret));
+		return _ret;
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability Probability()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Probability(&_ret));
+		return _ret;
+	}
+	final void Probability(Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Probability(value));
+	}
 }
 
 interface SpeechRecognitionVoiceCommandDefinitionConstraint : Windows.Media.SpeechRecognition.ISpeechRecognitionVoiceCommandDefinitionConstraint, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint
 {
+extern(Windows):
+	final bool IsEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_IsEnabled(&_ret));
+		return _ret;
+	}
+	final void IsEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_IsEnabled(value));
+	}
+	final HSTRING Tag()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Tag(&_ret));
+		return _ret;
+	}
+	final void Tag(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Tag(value));
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType Type()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Type(&_ret));
+		return _ret;
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability Probability()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Probability(&_ret));
+		return _ret;
+	}
+	final void Probability(Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Probability(value));
+	}
 }
 
 interface SpeechRecognizer : Windows.Media.SpeechRecognition.ISpeechRecognizer, Windows.Foundation.IClosable, Windows.Media.SpeechRecognition.ISpeechRecognizer2
 {
+extern(Windows):
+	final Windows.Globalization.Language CurrentLanguage()
+	{
+		Windows.Globalization.Language _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).get_CurrentLanguage(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint) Constraints()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint) _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).get_Constraints(&_ret));
+		return _ret;
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts Timeouts()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).get_Timeouts(&_ret));
+		return _ret;
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions UIOptions()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).get_UIOptions(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionCompilationResult) CompileConstraintsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionCompilationResult) _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).abi_CompileConstraintsAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionResult) RecognizeAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionResult) _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).abi_RecognizeAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionResult) RecognizeWithUIAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionResult) _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).abi_RecognizeWithUIAsync(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession ContinuousRecognitionSession()
+	{
+		Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer2).get_ContinuousRecognitionSession(&_ret));
+		return _ret;
+	}
+	final Windows.Media.SpeechRecognition.SpeechRecognizerState State()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognizerState _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer2).get_State(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StopRecognitionAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer2).abi_StopRecognitionAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface SpeechRecognizerStateChangedEventArgs : Windows.Media.SpeechRecognition.ISpeechRecognizerStateChangedEventArgs
 {
+extern(Windows):
+	final Windows.Media.SpeechRecognition.SpeechRecognizerState State()
+	{
+		Windows.Media.SpeechRecognition.SpeechRecognizerState _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerStateChangedEventArgs).get_State(&_ret));
+		return _ret;
+	}
 }
 
 interface SpeechRecognizerTimeouts : Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan InitialSilenceTimeout()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts).get_InitialSilenceTimeout(&_ret));
+		return _ret;
+	}
+	final void InitialSilenceTimeout(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts).set_InitialSilenceTimeout(value));
+	}
+	final Windows.Foundation.TimeSpan EndSilenceTimeout()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts).get_EndSilenceTimeout(&_ret));
+		return _ret;
+	}
+	final void EndSilenceTimeout(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts).set_EndSilenceTimeout(value));
+	}
+	final Windows.Foundation.TimeSpan BabbleTimeout()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts).get_BabbleTimeout(&_ret));
+		return _ret;
+	}
+	final void BabbleTimeout(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts).set_BabbleTimeout(value));
+	}
 }
 
 interface SpeechRecognizerUIOptions : Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions
 {
+extern(Windows):
+	final HSTRING ExampleText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).get_ExampleText(&_ret));
+		return _ret;
+	}
+	final void ExampleText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).set_ExampleText(value));
+	}
+	final HSTRING AudiblePrompt()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).get_AudiblePrompt(&_ret));
+		return _ret;
+	}
+	final void AudiblePrompt(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).set_AudiblePrompt(value));
+	}
+	final bool IsReadBackEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).get_IsReadBackEnabled(&_ret));
+		return _ret;
+	}
+	final void IsReadBackEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).set_IsReadBackEnabled(value));
+	}
+	final bool ShowConfirmation()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).get_ShowConfirmation(&_ret));
+		return _ret;
+	}
+	final void ShowConfirmation(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).set_ShowConfirmation(value));
+	}
 }
 
 enum SpeechContinuousRecognitionMode

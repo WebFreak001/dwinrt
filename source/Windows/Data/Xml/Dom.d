@@ -270,66 +270,2668 @@ extern(Windows):
 
 interface DtdEntity : Windows.Data.Xml.Dom.IDtdEntity, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
+extern(Windows):
+	final IInspectable PublicId()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IDtdEntity).get_PublicId(&_ret));
+		return _ret;
+	}
+	final IInspectable SystemId()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IDtdEntity).get_SystemId(&_ret));
+		return _ret;
+	}
+	final IInspectable NotationName()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IDtdEntity).get_NotationName(&_ret));
+		return _ret;
+	}
+	final IInspectable NodeValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_NodeValue(value));
+	}
+	final Windows.Data.Xml.Dom.NodeType NodeType()
+	{
+		Windows.Data.Xml.Dom.NodeType _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeType(&_ret));
+		return _ret;
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ParentNode(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList ChildNodes()
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode FirstChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_FirstChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode LastChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LastChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode PreviousSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_PreviousSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode NextSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NextSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Attributes()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Attributes(&_ret));
+		return _ret;
+	}
+	final bool HasChildNodes()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_HasChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument OwnerDocument()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_OwnerDocument(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode InsertBefore(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_InsertBefore(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ReplaceChild(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_ReplaceChild(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveChild(Windows.Data.Xml.Dom.IXmlNode childNode)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_RemoveChild(childNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode AppendChild(Windows.Data.Xml.Dom.IXmlNode newChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_AppendChild(newChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode CloneNode(bool deep)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_CloneNode(deep, &_ret));
+		return _ret;
+	}
+	final IInspectable NamespaceUri()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NamespaceUri(&_ret));
+		return _ret;
+	}
+	final IInspectable LocalName()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LocalName(&_ret));
+		return _ret;
+	}
+	final IInspectable Prefix()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Prefix(&_ret));
+		return _ret;
+	}
+	final void Normalize()
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_Normalize());
+	}
+	final void Prefix(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_Prefix(value));
+	}
+	final HSTRING GetXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).abi_GetXml(&_ret));
+		return _ret;
+	}
+	final HSTRING InnerText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).get_InnerText(&_ret));
+		return _ret;
+	}
+	final void InnerText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).set_InnerText(value));
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNode(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodes(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
 }
 
 interface DtdNotation : Windows.Data.Xml.Dom.IDtdNotation, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
+extern(Windows):
+	final IInspectable PublicId()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IDtdNotation).get_PublicId(&_ret));
+		return _ret;
+	}
+	final IInspectable SystemId()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IDtdNotation).get_SystemId(&_ret));
+		return _ret;
+	}
+	final IInspectable NodeValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_NodeValue(value));
+	}
+	final Windows.Data.Xml.Dom.NodeType NodeType()
+	{
+		Windows.Data.Xml.Dom.NodeType _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeType(&_ret));
+		return _ret;
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ParentNode(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList ChildNodes()
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode FirstChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_FirstChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode LastChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LastChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode PreviousSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_PreviousSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode NextSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NextSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Attributes()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Attributes(&_ret));
+		return _ret;
+	}
+	final bool HasChildNodes()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_HasChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument OwnerDocument()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_OwnerDocument(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode InsertBefore(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_InsertBefore(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ReplaceChild(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_ReplaceChild(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveChild(Windows.Data.Xml.Dom.IXmlNode childNode)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_RemoveChild(childNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode AppendChild(Windows.Data.Xml.Dom.IXmlNode newChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_AppendChild(newChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode CloneNode(bool deep)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_CloneNode(deep, &_ret));
+		return _ret;
+	}
+	final IInspectable NamespaceUri()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NamespaceUri(&_ret));
+		return _ret;
+	}
+	final IInspectable LocalName()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LocalName(&_ret));
+		return _ret;
+	}
+	final IInspectable Prefix()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Prefix(&_ret));
+		return _ret;
+	}
+	final void Normalize()
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_Normalize());
+	}
+	final void Prefix(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_Prefix(value));
+	}
+	final HSTRING GetXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).abi_GetXml(&_ret));
+		return _ret;
+	}
+	final HSTRING InnerText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).get_InnerText(&_ret));
+		return _ret;
+	}
+	final void InnerText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).set_InnerText(value));
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNode(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodes(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
 }
 
 interface XmlAttribute : Windows.Data.Xml.Dom.IXmlAttribute, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlAttribute).get_Name(&_ret));
+		return _ret;
+	}
+	final bool Specified()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlAttribute).get_Specified(&_ret));
+		return _ret;
+	}
+	final HSTRING Value()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlAttribute).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlAttribute).set_Value(value));
+	}
+	final IInspectable NodeValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_NodeValue(value));
+	}
+	final Windows.Data.Xml.Dom.NodeType NodeType()
+	{
+		Windows.Data.Xml.Dom.NodeType _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeType(&_ret));
+		return _ret;
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ParentNode(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList ChildNodes()
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode FirstChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_FirstChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode LastChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LastChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode PreviousSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_PreviousSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode NextSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NextSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Attributes()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Attributes(&_ret));
+		return _ret;
+	}
+	final bool HasChildNodes()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_HasChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument OwnerDocument()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_OwnerDocument(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode InsertBefore(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_InsertBefore(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ReplaceChild(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_ReplaceChild(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveChild(Windows.Data.Xml.Dom.IXmlNode childNode)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_RemoveChild(childNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode AppendChild(Windows.Data.Xml.Dom.IXmlNode newChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_AppendChild(newChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode CloneNode(bool deep)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_CloneNode(deep, &_ret));
+		return _ret;
+	}
+	final IInspectable NamespaceUri()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NamespaceUri(&_ret));
+		return _ret;
+	}
+	final IInspectable LocalName()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LocalName(&_ret));
+		return _ret;
+	}
+	final IInspectable Prefix()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Prefix(&_ret));
+		return _ret;
+	}
+	final void Normalize()
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_Normalize());
+	}
+	final void Prefix(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_Prefix(value));
+	}
+	final HSTRING GetXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).abi_GetXml(&_ret));
+		return _ret;
+	}
+	final HSTRING InnerText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).get_InnerText(&_ret));
+		return _ret;
+	}
+	final void InnerText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).set_InnerText(value));
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNode(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodes(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
 }
 
 interface XmlCDataSection : Windows.Data.Xml.Dom.IXmlCDataSection, Windows.Data.Xml.Dom.IXmlText, Windows.Data.Xml.Dom.IXmlCharacterData, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
+extern(Windows):
+	final Windows.Data.Xml.Dom.IXmlText SplitText(UINT32 offset)
+	{
+		Windows.Data.Xml.Dom.IXmlText _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlText).abi_SplitText(offset, &_ret));
+		return _ret;
+	}
+	final HSTRING Data()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).set_Data(value));
+	}
+	final UINT32 Length()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).get_Length(&_ret));
+		return _ret;
+	}
+	final HSTRING SubstringData(UINT32 offset, UINT32 count)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_SubstringData(offset, count, &_ret));
+		return _ret;
+	}
+	final void AppendData(HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_AppendData(data));
+	}
+	final void InsertData(UINT32 offset, HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_InsertData(offset, data));
+	}
+	final void DeleteData(UINT32 offset, UINT32 count)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_DeleteData(offset, count));
+	}
+	final void ReplaceData(UINT32 offset, UINT32 count, HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_ReplaceData(offset, count, data));
+	}
+	final IInspectable NodeValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_NodeValue(value));
+	}
+	final Windows.Data.Xml.Dom.NodeType NodeType()
+	{
+		Windows.Data.Xml.Dom.NodeType _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeType(&_ret));
+		return _ret;
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ParentNode(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList ChildNodes()
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode FirstChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_FirstChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode LastChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LastChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode PreviousSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_PreviousSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode NextSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NextSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Attributes()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Attributes(&_ret));
+		return _ret;
+	}
+	final bool HasChildNodes()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_HasChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument OwnerDocument()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_OwnerDocument(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode InsertBefore(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_InsertBefore(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ReplaceChild(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_ReplaceChild(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveChild(Windows.Data.Xml.Dom.IXmlNode childNode)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_RemoveChild(childNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode AppendChild(Windows.Data.Xml.Dom.IXmlNode newChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_AppendChild(newChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode CloneNode(bool deep)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_CloneNode(deep, &_ret));
+		return _ret;
+	}
+	final IInspectable NamespaceUri()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NamespaceUri(&_ret));
+		return _ret;
+	}
+	final IInspectable LocalName()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LocalName(&_ret));
+		return _ret;
+	}
+	final IInspectable Prefix()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Prefix(&_ret));
+		return _ret;
+	}
+	final void Normalize()
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_Normalize());
+	}
+	final void Prefix(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_Prefix(value));
+	}
+	final HSTRING GetXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).abi_GetXml(&_ret));
+		return _ret;
+	}
+	final HSTRING InnerText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).get_InnerText(&_ret));
+		return _ret;
+	}
+	final void InnerText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).set_InnerText(value));
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNode(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodes(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
 }
 
 interface XmlComment : Windows.Data.Xml.Dom.IXmlComment, Windows.Data.Xml.Dom.IXmlCharacterData, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
+extern(Windows):
+	final HSTRING Data()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).set_Data(value));
+	}
+	final UINT32 Length()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).get_Length(&_ret));
+		return _ret;
+	}
+	final HSTRING SubstringData(UINT32 offset, UINT32 count)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_SubstringData(offset, count, &_ret));
+		return _ret;
+	}
+	final void AppendData(HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_AppendData(data));
+	}
+	final void InsertData(UINT32 offset, HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_InsertData(offset, data));
+	}
+	final void DeleteData(UINT32 offset, UINT32 count)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_DeleteData(offset, count));
+	}
+	final void ReplaceData(UINT32 offset, UINT32 count, HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_ReplaceData(offset, count, data));
+	}
+	final IInspectable NodeValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_NodeValue(value));
+	}
+	final Windows.Data.Xml.Dom.NodeType NodeType()
+	{
+		Windows.Data.Xml.Dom.NodeType _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeType(&_ret));
+		return _ret;
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ParentNode(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList ChildNodes()
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode FirstChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_FirstChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode LastChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LastChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode PreviousSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_PreviousSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode NextSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NextSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Attributes()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Attributes(&_ret));
+		return _ret;
+	}
+	final bool HasChildNodes()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_HasChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument OwnerDocument()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_OwnerDocument(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode InsertBefore(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_InsertBefore(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ReplaceChild(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_ReplaceChild(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveChild(Windows.Data.Xml.Dom.IXmlNode childNode)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_RemoveChild(childNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode AppendChild(Windows.Data.Xml.Dom.IXmlNode newChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_AppendChild(newChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode CloneNode(bool deep)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_CloneNode(deep, &_ret));
+		return _ret;
+	}
+	final IInspectable NamespaceUri()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NamespaceUri(&_ret));
+		return _ret;
+	}
+	final IInspectable LocalName()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LocalName(&_ret));
+		return _ret;
+	}
+	final IInspectable Prefix()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Prefix(&_ret));
+		return _ret;
+	}
+	final void Normalize()
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_Normalize());
+	}
+	final void Prefix(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_Prefix(value));
+	}
+	final HSTRING GetXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).abi_GetXml(&_ret));
+		return _ret;
+	}
+	final HSTRING InnerText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).get_InnerText(&_ret));
+		return _ret;
+	}
+	final void InnerText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).set_InnerText(value));
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNode(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodes(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
 }
 
 interface XmlDocument : Windows.Data.Xml.Dom.IXmlDocument, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlDocumentIO, Windows.Data.Xml.Dom.IXmlDocumentIO2
 {
+extern(Windows):
+	final Windows.Data.Xml.Dom.XmlDocumentType Doctype()
+	{
+		Windows.Data.Xml.Dom.XmlDocumentType _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).get_Doctype(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDomImplementation Implementation()
+	{
+		Windows.Data.Xml.Dom.XmlDomImplementation _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).get_Implementation(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlElement DocumentElement()
+	{
+		Windows.Data.Xml.Dom.XmlElement _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).get_DocumentElement(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlElement CreateElement(HSTRING tagName)
+	{
+		Windows.Data.Xml.Dom.XmlElement _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).abi_CreateElement(tagName, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocumentFragment CreateDocumentFragment()
+	{
+		Windows.Data.Xml.Dom.XmlDocumentFragment _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).abi_CreateDocumentFragment(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlText CreateTextNode(HSTRING data)
+	{
+		Windows.Data.Xml.Dom.XmlText _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).abi_CreateTextNode(data, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlComment CreateComment(HSTRING data)
+	{
+		Windows.Data.Xml.Dom.XmlComment _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).abi_CreateComment(data, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlProcessingInstruction CreateProcessingInstruction(HSTRING target, HSTRING data)
+	{
+		Windows.Data.Xml.Dom.XmlProcessingInstruction _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).abi_CreateProcessingInstruction(target, data, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlAttribute CreateAttribute(HSTRING name)
+	{
+		Windows.Data.Xml.Dom.XmlAttribute _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).abi_CreateAttribute(name, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlEntityReference CreateEntityReference(HSTRING name)
+	{
+		Windows.Data.Xml.Dom.XmlEntityReference _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).abi_CreateEntityReference(name, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList GetElementsByTagName(HSTRING tagName)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).abi_GetElementsByTagName(tagName, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlCDataSection CreateCDataSection(HSTRING data)
+	{
+		Windows.Data.Xml.Dom.XmlCDataSection _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).abi_CreateCDataSection(data, &_ret));
+		return _ret;
+	}
+	final HSTRING DocumentUri()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).get_DocumentUri(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlAttribute CreateAttributeNS(IInspectable namespaceUri, HSTRING qualifiedName)
+	{
+		Windows.Data.Xml.Dom.XmlAttribute _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).abi_CreateAttributeNS(namespaceUri, qualifiedName, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlElement CreateElementNS(IInspectable namespaceUri, HSTRING qualifiedName)
+	{
+		Windows.Data.Xml.Dom.XmlElement _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).abi_CreateElementNS(namespaceUri, qualifiedName, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlElement GetElementById(HSTRING elementId)
+	{
+		Windows.Data.Xml.Dom.XmlElement _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).abi_GetElementById(elementId, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ImportNode(Windows.Data.Xml.Dom.IXmlNode node, bool deep)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocument).abi_ImportNode(node, deep, &_ret));
+		return _ret;
+	}
+	final IInspectable NodeValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_NodeValue(value));
+	}
+	final Windows.Data.Xml.Dom.NodeType NodeType()
+	{
+		Windows.Data.Xml.Dom.NodeType _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeType(&_ret));
+		return _ret;
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ParentNode(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList ChildNodes()
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode FirstChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_FirstChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode LastChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LastChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode PreviousSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_PreviousSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode NextSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NextSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Attributes()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Attributes(&_ret));
+		return _ret;
+	}
+	final bool HasChildNodes()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_HasChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument OwnerDocument()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_OwnerDocument(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode InsertBefore(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_InsertBefore(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ReplaceChild(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_ReplaceChild(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveChild(Windows.Data.Xml.Dom.IXmlNode childNode)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_RemoveChild(childNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode AppendChild(Windows.Data.Xml.Dom.IXmlNode newChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_AppendChild(newChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode CloneNode(bool deep)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_CloneNode(deep, &_ret));
+		return _ret;
+	}
+	final IInspectable NamespaceUri()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NamespaceUri(&_ret));
+		return _ret;
+	}
+	final IInspectable LocalName()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LocalName(&_ret));
+		return _ret;
+	}
+	final IInspectable Prefix()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Prefix(&_ret));
+		return _ret;
+	}
+	final void Normalize()
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_Normalize());
+	}
+	final void Prefix(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_Prefix(value));
+	}
+	final HSTRING GetXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).abi_GetXml(&_ret));
+		return _ret;
+	}
+	final HSTRING InnerText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).get_InnerText(&_ret));
+		return _ret;
+	}
+	final void InnerText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).set_InnerText(value));
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNode(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodes(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
+	final void LoadXml(HSTRING xml)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocumentIO).abi_LoadXml(xml));
+	}
+	final void LoadXmlWithSettings(HSTRING xml, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocumentIO).abi_LoadXmlWithSettings(xml, loadSettings));
+	}
+	final Windows.Foundation.IAsyncAction SaveToFileAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocumentIO).abi_SaveToFileAsync(file, &_ret));
+		return _ret;
+	}
+	final void LoadXmlFromBuffer(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocumentIO2).abi_LoadXmlFromBuffer(buffer));
+	}
+	final void LoadXmlFromBufferWithSettings(Windows.Storage.Streams.IBuffer buffer, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocumentIO2).abi_LoadXmlFromBufferWithSettings(buffer, loadSettings));
+	}
 }
 
 interface XmlDocumentFragment : Windows.Data.Xml.Dom.IXmlDocumentFragment, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
+extern(Windows):
+	final IInspectable NodeValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_NodeValue(value));
+	}
+	final Windows.Data.Xml.Dom.NodeType NodeType()
+	{
+		Windows.Data.Xml.Dom.NodeType _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeType(&_ret));
+		return _ret;
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ParentNode(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList ChildNodes()
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode FirstChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_FirstChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode LastChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LastChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode PreviousSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_PreviousSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode NextSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NextSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Attributes()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Attributes(&_ret));
+		return _ret;
+	}
+	final bool HasChildNodes()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_HasChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument OwnerDocument()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_OwnerDocument(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode InsertBefore(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_InsertBefore(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ReplaceChild(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_ReplaceChild(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveChild(Windows.Data.Xml.Dom.IXmlNode childNode)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_RemoveChild(childNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode AppendChild(Windows.Data.Xml.Dom.IXmlNode newChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_AppendChild(newChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode CloneNode(bool deep)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_CloneNode(deep, &_ret));
+		return _ret;
+	}
+	final IInspectable NamespaceUri()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NamespaceUri(&_ret));
+		return _ret;
+	}
+	final IInspectable LocalName()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LocalName(&_ret));
+		return _ret;
+	}
+	final IInspectable Prefix()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Prefix(&_ret));
+		return _ret;
+	}
+	final void Normalize()
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_Normalize());
+	}
+	final void Prefix(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_Prefix(value));
+	}
+	final HSTRING GetXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).abi_GetXml(&_ret));
+		return _ret;
+	}
+	final HSTRING InnerText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).get_InnerText(&_ret));
+		return _ret;
+	}
+	final void InnerText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).set_InnerText(value));
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNode(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodes(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
 }
 
 interface XmlDocumentType : Windows.Data.Xml.Dom.IXmlDocumentType, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
+extern(Windows):
+	final HSTRING Name()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocumentType).get_Name(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Entities()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocumentType).get_Entities(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Notations()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocumentType).get_Notations(&_ret));
+		return _ret;
+	}
+	final IInspectable NodeValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_NodeValue(value));
+	}
+	final Windows.Data.Xml.Dom.NodeType NodeType()
+	{
+		Windows.Data.Xml.Dom.NodeType _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeType(&_ret));
+		return _ret;
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ParentNode(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList ChildNodes()
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode FirstChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_FirstChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode LastChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LastChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode PreviousSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_PreviousSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode NextSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NextSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Attributes()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Attributes(&_ret));
+		return _ret;
+	}
+	final bool HasChildNodes()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_HasChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument OwnerDocument()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_OwnerDocument(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode InsertBefore(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_InsertBefore(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ReplaceChild(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_ReplaceChild(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveChild(Windows.Data.Xml.Dom.IXmlNode childNode)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_RemoveChild(childNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode AppendChild(Windows.Data.Xml.Dom.IXmlNode newChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_AppendChild(newChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode CloneNode(bool deep)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_CloneNode(deep, &_ret));
+		return _ret;
+	}
+	final IInspectable NamespaceUri()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NamespaceUri(&_ret));
+		return _ret;
+	}
+	final IInspectable LocalName()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LocalName(&_ret));
+		return _ret;
+	}
+	final IInspectable Prefix()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Prefix(&_ret));
+		return _ret;
+	}
+	final void Normalize()
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_Normalize());
+	}
+	final void Prefix(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_Prefix(value));
+	}
+	final HSTRING GetXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).abi_GetXml(&_ret));
+		return _ret;
+	}
+	final HSTRING InnerText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).get_InnerText(&_ret));
+		return _ret;
+	}
+	final void InnerText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).set_InnerText(value));
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNode(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodes(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
 }
 
 interface XmlDomImplementation : Windows.Data.Xml.Dom.IXmlDomImplementation
 {
+extern(Windows):
+	final bool HasFeature(HSTRING feature, IInspectable version_)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDomImplementation).abi_HasFeature(feature, version_, &_ret));
+		return _ret;
+	}
 }
 
 interface XmlElement : Windows.Data.Xml.Dom.IXmlElement, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
+extern(Windows):
+	final HSTRING TagName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlElement).get_TagName(&_ret));
+		return _ret;
+	}
+	final HSTRING GetAttribute(HSTRING attributeName)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlElement).abi_GetAttribute(attributeName, &_ret));
+		return _ret;
+	}
+	final void SetAttribute(HSTRING attributeName, HSTRING attributeValue)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlElement).abi_SetAttribute(attributeName, attributeValue));
+	}
+	final void RemoveAttribute(HSTRING attributeName)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlElement).abi_RemoveAttribute(attributeName));
+	}
+	final Windows.Data.Xml.Dom.XmlAttribute GetAttributeNode(HSTRING attributeName)
+	{
+		Windows.Data.Xml.Dom.XmlAttribute _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlElement).abi_GetAttributeNode(attributeName, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlAttribute SetAttributeNode(Windows.Data.Xml.Dom.XmlAttribute newAttribute)
+	{
+		Windows.Data.Xml.Dom.XmlAttribute _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlElement).abi_SetAttributeNode(newAttribute, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlAttribute RemoveAttributeNode(Windows.Data.Xml.Dom.XmlAttribute attributeNode)
+	{
+		Windows.Data.Xml.Dom.XmlAttribute _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlElement).abi_RemoveAttributeNode(attributeNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList GetElementsByTagName(HSTRING tagName)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlElement).abi_GetElementsByTagName(tagName, &_ret));
+		return _ret;
+	}
+	final void SetAttributeNS(IInspectable namespaceUri, HSTRING qualifiedName, HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlElement).abi_SetAttributeNS(namespaceUri, qualifiedName, value));
+	}
+	final HSTRING GetAttributeNS(IInspectable namespaceUri, HSTRING localName)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlElement).abi_GetAttributeNS(namespaceUri, localName, &_ret));
+		return _ret;
+	}
+	final void RemoveAttributeNS(IInspectable namespaceUri, HSTRING localName)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlElement).abi_RemoveAttributeNS(namespaceUri, localName));
+	}
+	final Windows.Data.Xml.Dom.XmlAttribute SetAttributeNodeNS(Windows.Data.Xml.Dom.XmlAttribute newAttribute)
+	{
+		Windows.Data.Xml.Dom.XmlAttribute _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlElement).abi_SetAttributeNodeNS(newAttribute, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlAttribute GetAttributeNodeNS(IInspectable namespaceUri, HSTRING localName)
+	{
+		Windows.Data.Xml.Dom.XmlAttribute _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlElement).abi_GetAttributeNodeNS(namespaceUri, localName, &_ret));
+		return _ret;
+	}
+	final IInspectable NodeValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_NodeValue(value));
+	}
+	final Windows.Data.Xml.Dom.NodeType NodeType()
+	{
+		Windows.Data.Xml.Dom.NodeType _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeType(&_ret));
+		return _ret;
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ParentNode(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList ChildNodes()
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode FirstChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_FirstChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode LastChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LastChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode PreviousSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_PreviousSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode NextSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NextSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Attributes()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Attributes(&_ret));
+		return _ret;
+	}
+	final bool HasChildNodes()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_HasChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument OwnerDocument()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_OwnerDocument(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode InsertBefore(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_InsertBefore(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ReplaceChild(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_ReplaceChild(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveChild(Windows.Data.Xml.Dom.IXmlNode childNode)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_RemoveChild(childNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode AppendChild(Windows.Data.Xml.Dom.IXmlNode newChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_AppendChild(newChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode CloneNode(bool deep)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_CloneNode(deep, &_ret));
+		return _ret;
+	}
+	final IInspectable NamespaceUri()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NamespaceUri(&_ret));
+		return _ret;
+	}
+	final IInspectable LocalName()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LocalName(&_ret));
+		return _ret;
+	}
+	final IInspectable Prefix()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Prefix(&_ret));
+		return _ret;
+	}
+	final void Normalize()
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_Normalize());
+	}
+	final void Prefix(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_Prefix(value));
+	}
+	final HSTRING GetXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).abi_GetXml(&_ret));
+		return _ret;
+	}
+	final HSTRING InnerText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).get_InnerText(&_ret));
+		return _ret;
+	}
+	final void InnerText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).set_InnerText(value));
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNode(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodes(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
 }
 
 interface XmlEntityReference : Windows.Data.Xml.Dom.IXmlEntityReference, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
+extern(Windows):
+	final IInspectable NodeValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_NodeValue(value));
+	}
+	final Windows.Data.Xml.Dom.NodeType NodeType()
+	{
+		Windows.Data.Xml.Dom.NodeType _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeType(&_ret));
+		return _ret;
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ParentNode(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList ChildNodes()
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode FirstChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_FirstChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode LastChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LastChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode PreviousSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_PreviousSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode NextSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NextSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Attributes()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Attributes(&_ret));
+		return _ret;
+	}
+	final bool HasChildNodes()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_HasChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument OwnerDocument()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_OwnerDocument(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode InsertBefore(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_InsertBefore(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ReplaceChild(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_ReplaceChild(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveChild(Windows.Data.Xml.Dom.IXmlNode childNode)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_RemoveChild(childNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode AppendChild(Windows.Data.Xml.Dom.IXmlNode newChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_AppendChild(newChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode CloneNode(bool deep)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_CloneNode(deep, &_ret));
+		return _ret;
+	}
+	final IInspectable NamespaceUri()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NamespaceUri(&_ret));
+		return _ret;
+	}
+	final IInspectable LocalName()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LocalName(&_ret));
+		return _ret;
+	}
+	final IInspectable Prefix()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Prefix(&_ret));
+		return _ret;
+	}
+	final void Normalize()
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_Normalize());
+	}
+	final void Prefix(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_Prefix(value));
+	}
+	final HSTRING GetXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).abi_GetXml(&_ret));
+		return _ret;
+	}
+	final HSTRING InnerText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).get_InnerText(&_ret));
+		return _ret;
+	}
+	final void InnerText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).set_InnerText(value));
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNode(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodes(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
 }
 
 interface XmlLoadSettings : Windows.Data.Xml.Dom.IXmlLoadSettings
 {
+extern(Windows):
+	final UINT32 MaxElementDepth()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlLoadSettings).get_MaxElementDepth(&_ret));
+		return _ret;
+	}
+	final void MaxElementDepth(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlLoadSettings).set_MaxElementDepth(value));
+	}
+	final bool ProhibitDtd()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlLoadSettings).get_ProhibitDtd(&_ret));
+		return _ret;
+	}
+	final void ProhibitDtd(bool value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlLoadSettings).set_ProhibitDtd(value));
+	}
+	final bool ResolveExternals()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlLoadSettings).get_ResolveExternals(&_ret));
+		return _ret;
+	}
+	final void ResolveExternals(bool value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlLoadSettings).set_ResolveExternals(value));
+	}
+	final bool ValidateOnParse()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlLoadSettings).get_ValidateOnParse(&_ret));
+		return _ret;
+	}
+	final void ValidateOnParse(bool value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlLoadSettings).set_ValidateOnParse(value));
+	}
+	final bool ElementContentWhiteSpace()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlLoadSettings).get_ElementContentWhiteSpace(&_ret));
+		return _ret;
+	}
+	final void ElementContentWhiteSpace(bool value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlLoadSettings).set_ElementContentWhiteSpace(value));
+	}
 }
 
 interface XmlNamedNodeMap : Windows.Data.Xml.Dom.IXmlNamedNodeMap, Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode), Windows.Foundation.Collections.IIterable!(Windows.Data.Xml.Dom.IXmlNode)
 {
+extern(Windows):
+	final UINT32 Length()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNamedNodeMap).get_Length(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode Item(UINT32 index)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNamedNodeMap).abi_Item(index, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode GetNamedItem(HSTRING name)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNamedNodeMap).abi_GetNamedItem(name, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SetNamedItem(Windows.Data.Xml.Dom.IXmlNode node)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNamedNodeMap).abi_SetNamedItem(node, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveNamedItem(HSTRING name)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNamedNodeMap).abi_RemoveNamedItem(name, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode GetNamedItemNS(IInspectable namespaceUri, HSTRING name)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNamedNodeMap).abi_GetNamedItemNS(namespaceUri, name, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveNamedItemNS(IInspectable namespaceUri, HSTRING name)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNamedNodeMap).abi_RemoveNamedItemNS(namespaceUri, name, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SetNamedItemNS(Windows.Data.Xml.Dom.IXmlNode node)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNamedNodeMap).abi_SetNamedItemNS(node, &_ret));
+		return _ret;
+	}
 }
 
 interface XmlNodeList : Windows.Data.Xml.Dom.IXmlNodeList, Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode), Windows.Foundation.Collections.IIterable!(Windows.Data.Xml.Dom.IXmlNode)
 {
+extern(Windows):
+	final UINT32 Length()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeList).get_Length(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode Item(UINT32 index)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeList).abi_Item(index, &_ret));
+		return _ret;
+	}
 }
 
 interface XmlProcessingInstruction : Windows.Data.Xml.Dom.IXmlProcessingInstruction, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
+extern(Windows):
+	final HSTRING Target()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlProcessingInstruction).get_Target(&_ret));
+		return _ret;
+	}
+	final HSTRING Data()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlProcessingInstruction).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlProcessingInstruction).set_Data(value));
+	}
+	final IInspectable NodeValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_NodeValue(value));
+	}
+	final Windows.Data.Xml.Dom.NodeType NodeType()
+	{
+		Windows.Data.Xml.Dom.NodeType _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeType(&_ret));
+		return _ret;
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ParentNode(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList ChildNodes()
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode FirstChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_FirstChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode LastChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LastChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode PreviousSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_PreviousSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode NextSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NextSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Attributes()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Attributes(&_ret));
+		return _ret;
+	}
+	final bool HasChildNodes()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_HasChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument OwnerDocument()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_OwnerDocument(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode InsertBefore(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_InsertBefore(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ReplaceChild(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_ReplaceChild(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveChild(Windows.Data.Xml.Dom.IXmlNode childNode)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_RemoveChild(childNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode AppendChild(Windows.Data.Xml.Dom.IXmlNode newChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_AppendChild(newChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode CloneNode(bool deep)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_CloneNode(deep, &_ret));
+		return _ret;
+	}
+	final IInspectable NamespaceUri()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NamespaceUri(&_ret));
+		return _ret;
+	}
+	final IInspectable LocalName()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LocalName(&_ret));
+		return _ret;
+	}
+	final IInspectable Prefix()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Prefix(&_ret));
+		return _ret;
+	}
+	final void Normalize()
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_Normalize());
+	}
+	final void Prefix(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_Prefix(value));
+	}
+	final HSTRING GetXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).abi_GetXml(&_ret));
+		return _ret;
+	}
+	final HSTRING InnerText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).get_InnerText(&_ret));
+		return _ret;
+	}
+	final void InnerText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).set_InnerText(value));
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNode(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodes(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
 }
 
 interface XmlText : Windows.Data.Xml.Dom.IXmlText, Windows.Data.Xml.Dom.IXmlCharacterData, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
+extern(Windows):
+	final Windows.Data.Xml.Dom.IXmlText SplitText(UINT32 offset)
+	{
+		Windows.Data.Xml.Dom.IXmlText _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlText).abi_SplitText(offset, &_ret));
+		return _ret;
+	}
+	final HSTRING Data()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).get_Data(&_ret));
+		return _ret;
+	}
+	final void Data(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).set_Data(value));
+	}
+	final UINT32 Length()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).get_Length(&_ret));
+		return _ret;
+	}
+	final HSTRING SubstringData(UINT32 offset, UINT32 count)
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_SubstringData(offset, count, &_ret));
+		return _ret;
+	}
+	final void AppendData(HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_AppendData(data));
+	}
+	final void InsertData(UINT32 offset, HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_InsertData(offset, data));
+	}
+	final void DeleteData(UINT32 offset, UINT32 count)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_DeleteData(offset, count));
+	}
+	final void ReplaceData(UINT32 offset, UINT32 count, HSTRING data)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlCharacterData).abi_ReplaceData(offset, count, data));
+	}
+	final IInspectable NodeValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeValue(&_ret));
+		return _ret;
+	}
+	final void NodeValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_NodeValue(value));
+	}
+	final Windows.Data.Xml.Dom.NodeType NodeType()
+	{
+		Windows.Data.Xml.Dom.NodeType _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeType(&_ret));
+		return _ret;
+	}
+	final HSTRING NodeName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NodeName(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ParentNode(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList ChildNodes()
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_ChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode FirstChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_FirstChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode LastChild()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LastChild(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode PreviousSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_PreviousSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode NextSibling()
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NextSibling(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNamedNodeMap Attributes()
+	{
+		Windows.Data.Xml.Dom.XmlNamedNodeMap _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Attributes(&_ret));
+		return _ret;
+	}
+	final bool HasChildNodes()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_HasChildNodes(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlDocument OwnerDocument()
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_OwnerDocument(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode InsertBefore(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_InsertBefore(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode ReplaceChild(Windows.Data.Xml.Dom.IXmlNode newChild, Windows.Data.Xml.Dom.IXmlNode referenceChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_ReplaceChild(newChild, referenceChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode RemoveChild(Windows.Data.Xml.Dom.IXmlNode childNode)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_RemoveChild(childNode, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode AppendChild(Windows.Data.Xml.Dom.IXmlNode newChild)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_AppendChild(newChild, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode CloneNode(bool deep)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_CloneNode(deep, &_ret));
+		return _ret;
+	}
+	final IInspectable NamespaceUri()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_NamespaceUri(&_ret));
+		return _ret;
+	}
+	final IInspectable LocalName()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_LocalName(&_ret));
+		return _ret;
+	}
+	final IInspectable Prefix()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).get_Prefix(&_ret));
+		return _ret;
+	}
+	final void Normalize()
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).abi_Normalize());
+	}
+	final void Prefix(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNode).set_Prefix(value));
+	}
+	final HSTRING GetXml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).abi_GetXml(&_ret));
+		return _ret;
+	}
+	final HSTRING InnerText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).get_InnerText(&_ret));
+		return _ret;
+	}
+	final void InnerText(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSerializer).set_InnerText(value));
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNode(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodes(xpath, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeSelector).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		return _ret;
+	}
 }
 
 enum NodeType

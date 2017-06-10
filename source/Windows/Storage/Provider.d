@@ -78,18 +78,108 @@ interface CachedFileUpdater
 
 interface CachedFileUpdaterUI : Windows.Storage.Provider.ICachedFileUpdaterUI, Windows.Storage.Provider.ICachedFileUpdaterUI2
 {
+extern(Windows):
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Provider.ICachedFileUpdaterUI).get_Title(&_ret));
+		return _ret;
+	}
+	final void Title(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Provider.ICachedFileUpdaterUI).set_Title(value));
+	}
+	final Windows.Storage.Provider.CachedFileTarget UpdateTarget()
+	{
+		Windows.Storage.Provider.CachedFileTarget _ret;
+		Debug.OK(this.as!(Windows.Storage.Provider.ICachedFileUpdaterUI).get_UpdateTarget(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Provider.UIStatus UIStatus()
+	{
+		Windows.Storage.Provider.UIStatus _ret;
+		Debug.OK(this.as!(Windows.Storage.Provider.ICachedFileUpdaterUI).get_UIStatus(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Provider.FileUpdateRequest UpdateRequest()
+	{
+		Windows.Storage.Provider.FileUpdateRequest _ret;
+		Debug.OK(this.as!(Windows.Storage.Provider.ICachedFileUpdaterUI2).get_UpdateRequest(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Provider.FileUpdateRequestDeferral GetDeferral()
+	{
+		Windows.Storage.Provider.FileUpdateRequestDeferral _ret;
+		Debug.OK(this.as!(Windows.Storage.Provider.ICachedFileUpdaterUI2).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface FileUpdateRequest : Windows.Storage.Provider.IFileUpdateRequest, Windows.Storage.Provider.IFileUpdateRequest2
 {
+extern(Windows):
+	final HSTRING ContentId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Provider.IFileUpdateRequest).get_ContentId(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.StorageFile File()
+	{
+		Windows.Storage.StorageFile _ret;
+		Debug.OK(this.as!(Windows.Storage.Provider.IFileUpdateRequest).get_File(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Provider.FileUpdateStatus Status()
+	{
+		Windows.Storage.Provider.FileUpdateStatus _ret;
+		Debug.OK(this.as!(Windows.Storage.Provider.IFileUpdateRequest).get_Status(&_ret));
+		return _ret;
+	}
+	final void Status(Windows.Storage.Provider.FileUpdateStatus value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Provider.IFileUpdateRequest).set_Status(value));
+	}
+	final Windows.Storage.Provider.FileUpdateRequestDeferral GetDeferral()
+	{
+		Windows.Storage.Provider.FileUpdateRequestDeferral _ret;
+		Debug.OK(this.as!(Windows.Storage.Provider.IFileUpdateRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	final void UpdateLocalFile(Windows.Storage.IStorageFile value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Provider.IFileUpdateRequest).abi_UpdateLocalFile(value));
+	}
+	final HSTRING UserInputNeededMessage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Storage.Provider.IFileUpdateRequest2).get_UserInputNeededMessage(&_ret));
+		return _ret;
+	}
+	final void UserInputNeededMessage(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Storage.Provider.IFileUpdateRequest2).set_UserInputNeededMessage(value));
+	}
 }
 
 interface FileUpdateRequestDeferral : Windows.Storage.Provider.IFileUpdateRequestDeferral
 {
+extern(Windows):
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.Storage.Provider.IFileUpdateRequestDeferral).abi_Complete());
+	}
 }
 
 interface FileUpdateRequestedEventArgs : Windows.Storage.Provider.IFileUpdateRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Storage.Provider.FileUpdateRequest Request()
+	{
+		Windows.Storage.Provider.FileUpdateRequest _ret;
+		Debug.OK(this.as!(Windows.Storage.Provider.IFileUpdateRequestedEventArgs).get_Request(&_ret));
+		return _ret;
+	}
 }
 
 @bitflags

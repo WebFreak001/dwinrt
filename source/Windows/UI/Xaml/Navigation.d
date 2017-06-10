@@ -117,18 +117,136 @@ extern(Windows):
 
 interface NavigatingCancelEventArgs : Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs, Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2
 {
+extern(Windows):
+	final bool Cancel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs).get_Cancel(&_ret));
+		return _ret;
+	}
+	final void Cancel(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs).set_Cancel(value));
+	}
+	final Windows.UI.Xaml.Navigation.NavigationMode NavigationMode()
+	{
+		Windows.UI.Xaml.Navigation.NavigationMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs).get_NavigationMode(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Interop.TypeName SourcePageType()
+	{
+		Windows.UI.Xaml.Interop.TypeName _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs).get_SourcePageType(&_ret));
+		return _ret;
+	}
+	final IInspectable Parameter()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2).get_Parameter(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo NavigationTransitionInfo()
+	{
+		Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2).get_NavigationTransitionInfo(&_ret));
+		return _ret;
+	}
 }
 
 interface NavigationEventArgs : Windows.UI.Xaml.Navigation.INavigationEventArgs, Windows.UI.Xaml.Navigation.INavigationEventArgs2
 {
+extern(Windows):
+	final IInspectable Content()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs).get_Content(&_ret));
+		return _ret;
+	}
+	final IInspectable Parameter()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs).get_Parameter(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Interop.TypeName SourcePageType()
+	{
+		Windows.UI.Xaml.Interop.TypeName _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs).get_SourcePageType(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Navigation.NavigationMode NavigationMode()
+	{
+		Windows.UI.Xaml.Navigation.NavigationMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs).get_NavigationMode(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Uri Uri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs).get_Uri(&_ret));
+		return _ret;
+	}
+	final void Uri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs).set_Uri(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo NavigationTransitionInfo()
+	{
+		Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs2).get_NavigationTransitionInfo(&_ret));
+		return _ret;
+	}
 }
 
 interface NavigationFailedEventArgs : Windows.UI.Xaml.Navigation.INavigationFailedEventArgs
 {
+extern(Windows):
+	final HRESULT Exception()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationFailedEventArgs).get_Exception(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationFailedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationFailedEventArgs).set_Handled(value));
+	}
+	final Windows.UI.Xaml.Interop.TypeName SourcePageType()
+	{
+		Windows.UI.Xaml.Interop.TypeName _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationFailedEventArgs).get_SourcePageType(&_ret));
+		return _ret;
+	}
 }
 
 interface PageStackEntry : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Navigation.IPageStackEntry
 {
+extern(Windows):
+	final Windows.UI.Xaml.Interop.TypeName SourcePageType()
+	{
+		Windows.UI.Xaml.Interop.TypeName _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.IPageStackEntry).get_SourcePageType(&_ret));
+		return _ret;
+	}
+	final IInspectable Parameter()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.IPageStackEntry).get_Parameter(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo NavigationTransitionInfo()
+	{
+		Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.IPageStackEntry).get_NavigationTransitionInfo(&_ret));
+		return _ret;
+	}
 }
 
 enum NavigationCacheMode

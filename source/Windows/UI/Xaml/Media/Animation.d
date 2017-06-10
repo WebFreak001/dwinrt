@@ -1409,14 +1409,57 @@ interface AddDeleteThemeTransition : Windows.UI.Xaml.Media.Animation.Transition,
 
 interface BackEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IBackEase
 {
+extern(Windows):
+	final double Amplitude()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBackEase).get_Amplitude(&_ret));
+		return _ret;
+	}
+	final void Amplitude(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBackEase).set_Amplitude(value));
+	}
 }
 
 interface BeginStoryboard : Windows.UI.Xaml.TriggerAction, Windows.UI.Xaml.Media.Animation.IBeginStoryboard
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.Storyboard Storyboard()
+	{
+		Windows.UI.Xaml.Media.Animation.Storyboard _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBeginStoryboard).get_Storyboard(&_ret));
+		return _ret;
+	}
+	final void Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBeginStoryboard).set_Storyboard(value));
+	}
 }
 
 interface BounceEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IBounceEase
 {
+extern(Windows):
+	final INT32 Bounces()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBounceEase).get_Bounces(&_ret));
+		return _ret;
+	}
+	final void Bounces(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBounceEase).set_Bounces(value));
+	}
+	final double Bounciness()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBounceEase).get_Bounciness(&_ret));
+		return _ret;
+	}
+	final void Bounciness(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBounceEase).set_Bounciness(value));
+	}
 }
 
 interface CircleEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.ICircleEase
@@ -1425,14 +1468,103 @@ interface CircleEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windo
 
 interface ColorAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IColorAnimation
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.UI.Color) From()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).get_From(&_ret));
+		return _ret;
+	}
+	final void From(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).set_From(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) To()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).get_To(&_ret));
+		return _ret;
+	}
+	final void To(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).set_To(value));
+	}
+	final Windows.Foundation.IReference!(Windows.UI.Color) By()
+	{
+		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).get_By(&_ret));
+		return _ret;
+	}
+	final void By(Windows.Foundation.IReference!(Windows.UI.Color) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).set_By(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.EasingFunctionBase EasingFunction()
+	{
+		Windows.UI.Xaml.Media.Animation.EasingFunctionBase _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).get_EasingFunction(&_ret));
+		return _ret;
+	}
+	final void EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).set_EasingFunction(value));
+	}
+	final bool EnableDependentAnimation()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).get_EnableDependentAnimation(&_ret));
+		return _ret;
+	}
+	final void EnableDependentAnimation(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).set_EnableDependentAnimation(value));
+	}
 }
 
 interface ColorAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.ColorKeyFrameCollection KeyFrames()
+	{
+		Windows.UI.Xaml.Media.Animation.ColorKeyFrameCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames).get_KeyFrames(&_ret));
+		return _ret;
+	}
+	final bool EnableDependentAnimation()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames).get_EnableDependentAnimation(&_ret));
+		return _ret;
+	}
+	final void EnableDependentAnimation(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames).set_EnableDependentAnimation(value));
+	}
 }
 
 interface ColorKeyFrame : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IColorKeyFrame
 {
+extern(Windows):
+	final Windows.UI.Color Value()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).set_Value(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.KeyTime KeyTime()
+	{
+		Windows.UI.Xaml.Media.Animation.KeyTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).get_KeyTime(&_ret));
+		return _ret;
+	}
+	final void KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).set_KeyTime(value));
+	}
 }
 
 interface ColorKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)
@@ -1441,22 +1573,129 @@ interface ColorKeyFrameCollection : Windows.Foundation.Collections.IVector!(Wind
 
 interface CommonNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfo
 {
+extern(Windows):
+	final bool IsStaggeringEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfo).get_IsStaggeringEnabled(&_ret));
+		return _ret;
+	}
+	final void IsStaggeringEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfo).set_IsStaggeringEnabled(value));
+	}
 }
 
 interface ConnectedAnimation : Windows.UI.Xaml.Media.Animation.IConnectedAnimation, Windows.UI.Xaml.Media.Animation.IConnectedAnimation2
 {
+extern(Windows):
+	final bool TryStart(Windows.UI.Xaml.UIElement destination)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation).abi_TryStart(destination, &_ret));
+		return _ret;
+	}
+	final void Cancel()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation).abi_Cancel());
+	}
+	final bool IsScaleAnimationEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2).get_IsScaleAnimationEnabled(&_ret));
+		return _ret;
+	}
+	final void IsScaleAnimationEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2).set_IsScaleAnimationEnabled(value));
+	}
+	final bool TryStartWithCoordinatedElements(Windows.UI.Xaml.UIElement destination, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) coordinatedElements)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2).abi_TryStartWithCoordinatedElements(destination, coordinatedElements, &_ret));
+		return _ret;
+	}
+	final void SetAnimationComponent(Windows.UI.Xaml.Media.Animation.ConnectedAnimationComponent component, Windows.UI.Composition.ICompositionAnimationBase animation)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2).abi_SetAnimationComponent(component, animation));
+	}
 }
 
 interface ConnectedAnimationService : Windows.UI.Xaml.Media.Animation.IConnectedAnimationService
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan DefaultDuration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService).get_DefaultDuration(&_ret));
+		return _ret;
+	}
+	final void DefaultDuration(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService).set_DefaultDuration(value));
+	}
+	final Windows.UI.Composition.CompositionEasingFunction DefaultEasingFunction()
+	{
+		Windows.UI.Composition.CompositionEasingFunction _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService).get_DefaultEasingFunction(&_ret));
+		return _ret;
+	}
+	final void DefaultEasingFunction(Windows.UI.Composition.CompositionEasingFunction value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService).set_DefaultEasingFunction(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.ConnectedAnimation PrepareToAnimate(HSTRING key, Windows.UI.Xaml.UIElement source)
+	{
+		Windows.UI.Xaml.Media.Animation.ConnectedAnimation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService).abi_PrepareToAnimate(key, source, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Animation.ConnectedAnimation GetAnimation(HSTRING key)
+	{
+		Windows.UI.Xaml.Media.Animation.ConnectedAnimation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService).abi_GetAnimation(key, &_ret));
+		return _ret;
+	}
 }
 
 interface ContentThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IContentThemeTransition
 {
+extern(Windows):
+	final double HorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransition).get_HorizontalOffset(&_ret));
+		return _ret;
+	}
+	final void HorizontalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransition).set_HorizontalOffset(value));
+	}
+	final double VerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransition).get_VerticalOffset(&_ret));
+		return _ret;
+	}
+	final void VerticalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransition).set_VerticalOffset(value));
+	}
 }
 
 interface ContinuumNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfo
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement ExitElement()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfo).get_ExitElement(&_ret));
+		return _ret;
+	}
+	final void ExitElement(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfo).set_ExitElement(value));
+	}
 }
 
 interface CubicEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.ICubicEase
@@ -1481,14 +1720,103 @@ interface DiscretePointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame,
 
 interface DoubleAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDoubleAnimation
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(double) From()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).get_From(&_ret));
+		return _ret;
+	}
+	final void From(Windows.Foundation.IReference!(double) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).set_From(value));
+	}
+	final Windows.Foundation.IReference!(double) To()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).get_To(&_ret));
+		return _ret;
+	}
+	final void To(Windows.Foundation.IReference!(double) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).set_To(value));
+	}
+	final Windows.Foundation.IReference!(double) By()
+	{
+		Windows.Foundation.IReference!(double) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).get_By(&_ret));
+		return _ret;
+	}
+	final void By(Windows.Foundation.IReference!(double) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).set_By(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.EasingFunctionBase EasingFunction()
+	{
+		Windows.UI.Xaml.Media.Animation.EasingFunctionBase _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).get_EasingFunction(&_ret));
+		return _ret;
+	}
+	final void EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).set_EasingFunction(value));
+	}
+	final bool EnableDependentAnimation()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).get_EnableDependentAnimation(&_ret));
+		return _ret;
+	}
+	final void EnableDependentAnimation(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).set_EnableDependentAnimation(value));
+	}
 }
 
 interface DoubleAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.DoubleKeyFrameCollection KeyFrames()
+	{
+		Windows.UI.Xaml.Media.Animation.DoubleKeyFrameCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames).get_KeyFrames(&_ret));
+		return _ret;
+	}
+	final bool EnableDependentAnimation()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames).get_EnableDependentAnimation(&_ret));
+		return _ret;
+	}
+	final void EnableDependentAnimation(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames).set_EnableDependentAnimation(value));
+	}
 }
 
 interface DoubleKeyFrame : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame
 {
+extern(Windows):
+	final double Value()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).set_Value(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.KeyTime KeyTime()
+	{
+		Windows.UI.Xaml.Media.Animation.KeyTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).get_KeyTime(&_ret));
+		return _ret;
+	}
+	final void KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).set_KeyTime(value));
+	}
 }
 
 interface DoubleKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)
@@ -1497,10 +1825,52 @@ interface DoubleKeyFrameCollection : Windows.Foundation.Collections.IVector!(Win
 
 interface DragItemThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation
 {
+extern(Windows):
+	final HSTRING TargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation).get_TargetName(&_ret));
+		return _ret;
+	}
+	final void TargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation).set_TargetName(value));
+	}
 }
 
 interface DragOverThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation
 {
+extern(Windows):
+	final HSTRING TargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation).get_TargetName(&_ret));
+		return _ret;
+	}
+	final void TargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation).set_TargetName(value));
+	}
+	final double ToOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation).get_ToOffset(&_ret));
+		return _ret;
+	}
+	final void ToOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation).set_ToOffset(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.AnimationDirection Direction()
+	{
+		Windows.UI.Xaml.Controls.Primitives.AnimationDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation).get_Direction(&_ret));
+		return _ret;
+	}
+	final void Direction(Windows.UI.Xaml.Controls.Primitives.AnimationDirection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation).set_Direction(value));
+	}
 }
 
 interface DrillInNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.IDrillInNavigationTransitionInfo
@@ -1509,38 +1879,213 @@ interface DrillInNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.Navi
 
 interface DrillInThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation
 {
+extern(Windows):
+	final HSTRING EntranceTargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).get_EntranceTargetName(&_ret));
+		return _ret;
+	}
+	final void EntranceTargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).set_EntranceTargetName(value));
+	}
+	final Windows.UI.Xaml.DependencyObject EntranceTarget()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).get_EntranceTarget(&_ret));
+		return _ret;
+	}
+	final void EntranceTarget(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).set_EntranceTarget(value));
+	}
+	final HSTRING ExitTargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).get_ExitTargetName(&_ret));
+		return _ret;
+	}
+	final void ExitTargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).set_ExitTargetName(value));
+	}
+	final Windows.UI.Xaml.DependencyObject ExitTarget()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).get_ExitTarget(&_ret));
+		return _ret;
+	}
+	final void ExitTarget(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).set_ExitTarget(value));
+	}
 }
 
 interface DrillOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation
 {
+extern(Windows):
+	final HSTRING EntranceTargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).get_EntranceTargetName(&_ret));
+		return _ret;
+	}
+	final void EntranceTargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).set_EntranceTargetName(value));
+	}
+	final Windows.UI.Xaml.DependencyObject EntranceTarget()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).get_EntranceTarget(&_ret));
+		return _ret;
+	}
+	final void EntranceTarget(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).set_EntranceTarget(value));
+	}
+	final HSTRING ExitTargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).get_ExitTargetName(&_ret));
+		return _ret;
+	}
+	final void ExitTargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).set_ExitTargetName(value));
+	}
+	final Windows.UI.Xaml.DependencyObject ExitTarget()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).get_ExitTarget(&_ret));
+		return _ret;
+	}
+	final void ExitTarget(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).set_ExitTarget(value));
+	}
 }
 
 interface DropTargetItemThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation
 {
+extern(Windows):
+	final HSTRING TargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation).get_TargetName(&_ret));
+		return _ret;
+	}
+	final void TargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation).set_TargetName(value));
+	}
 }
 
 interface EasingColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame, Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrame
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.EasingFunctionBase EasingFunction()
+	{
+		Windows.UI.Xaml.Media.Animation.EasingFunctionBase _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrame).get_EasingFunction(&_ret));
+		return _ret;
+	}
+	final void EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrame).set_EasingFunction(value));
+	}
 }
 
 interface EasingDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrame
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.EasingFunctionBase EasingFunction()
+	{
+		Windows.UI.Xaml.Media.Animation.EasingFunctionBase _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrame).get_EasingFunction(&_ret));
+		return _ret;
+	}
+	final void EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrame).set_EasingFunction(value));
+	}
 }
 
 interface EasingFunctionBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IEasingFunctionBase
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.EasingMode EasingMode()
+	{
+		Windows.UI.Xaml.Media.Animation.EasingMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase).get_EasingMode(&_ret));
+		return _ret;
+	}
+	final void EasingMode(Windows.UI.Xaml.Media.Animation.EasingMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase).set_EasingMode(value));
+	}
+	final double Ease(double normalizedTime)
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase).abi_Ease(normalizedTime, &_ret));
+		return _ret;
+	}
 }
 
 interface EasingPointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame, Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrame
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.EasingFunctionBase EasingFunction()
+	{
+		Windows.UI.Xaml.Media.Animation.EasingFunctionBase _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrame).get_EasingFunction(&_ret));
+		return _ret;
+	}
+	final void EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrame).set_EasingFunction(value));
+	}
 }
 
 interface EdgeUIThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransition
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation Edge()
+	{
+		Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransition).get_Edge(&_ret));
+		return _ret;
+	}
+	final void Edge(Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransition).set_Edge(value));
+	}
 }
 
 interface ElasticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IElasticEase
 {
+extern(Windows):
+	final INT32 Oscillations()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IElasticEase).get_Oscillations(&_ret));
+		return _ret;
+	}
+	final void Oscillations(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IElasticEase).set_Oscillations(value));
+	}
+	final double Springiness()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IElasticEase).get_Springiness(&_ret));
+		return _ret;
+	}
+	final void Springiness(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IElasticEase).set_Springiness(value));
+	}
 }
 
 interface EntranceNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfo
@@ -1549,22 +2094,107 @@ interface EntranceNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.Nav
 
 interface EntranceThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition
 {
+extern(Windows):
+	final double FromHorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition).get_FromHorizontalOffset(&_ret));
+		return _ret;
+	}
+	final void FromHorizontalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition).set_FromHorizontalOffset(value));
+	}
+	final double FromVerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition).get_FromVerticalOffset(&_ret));
+		return _ret;
+	}
+	final void FromVerticalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition).set_FromVerticalOffset(value));
+	}
+	final bool IsStaggeringEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition).get_IsStaggeringEnabled(&_ret));
+		return _ret;
+	}
+	final void IsStaggeringEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition).set_IsStaggeringEnabled(value));
+	}
 }
 
 interface ExponentialEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IExponentialEase
 {
+extern(Windows):
+	final double Exponent()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IExponentialEase).get_Exponent(&_ret));
+		return _ret;
+	}
+	final void Exponent(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IExponentialEase).set_Exponent(value));
+	}
 }
 
 interface FadeInThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimation
 {
+extern(Windows):
+	final HSTRING TargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimation).get_TargetName(&_ret));
+		return _ret;
+	}
+	final void TargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimation).set_TargetName(value));
+	}
 }
 
 interface FadeOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation
 {
+extern(Windows):
+	final HSTRING TargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation).get_TargetName(&_ret));
+		return _ret;
+	}
+	final void TargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation).set_TargetName(value));
+	}
 }
 
 interface KeySpline : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IKeySpline
 {
+extern(Windows):
+	final Windows.Foundation.Point ControlPoint1()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IKeySpline).get_ControlPoint1(&_ret));
+		return _ret;
+	}
+	final void ControlPoint1(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IKeySpline).set_ControlPoint1(value));
+	}
+	final Windows.Foundation.Point ControlPoint2()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IKeySpline).get_ControlPoint2(&_ret));
+		return _ret;
+	}
+	final void ControlPoint2(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IKeySpline).set_ControlPoint2(value));
+	}
 }
 
 interface KeyTimeHelper : Windows.UI.Xaml.Media.Animation.IKeyTimeHelper
@@ -1585,18 +2215,78 @@ interface LinearPointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame, W
 
 interface NavigationThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.INavigationThemeTransition
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo DefaultNavigationTransitionInfo()
+	{
+		Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.INavigationThemeTransition).get_DefaultNavigationTransitionInfo(&_ret));
+		return _ret;
+	}
+	final void DefaultNavigationTransitionInfo(Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.INavigationThemeTransition).set_DefaultNavigationTransitionInfo(value));
+	}
 }
 
 interface NavigationTransitionInfo : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.INavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides
 {
+extern(Windows):
+	final HSTRING GetNavigationStateCore()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides).abi_GetNavigationStateCore(&_ret));
+		return _ret;
+	}
+	final void SetNavigationStateCore(HSTRING navigationState)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides).abi_SetNavigationStateCore(navigationState));
+	}
 }
 
 interface ObjectAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFrames
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.ObjectKeyFrameCollection KeyFrames()
+	{
+		Windows.UI.Xaml.Media.Animation.ObjectKeyFrameCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFrames).get_KeyFrames(&_ret));
+		return _ret;
+	}
+	final bool EnableDependentAnimation()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFrames).get_EnableDependentAnimation(&_ret));
+		return _ret;
+	}
+	final void EnableDependentAnimation(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFrames).set_EnableDependentAnimation(value));
+	}
 }
 
 interface ObjectKeyFrame : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IObjectKeyFrame
 {
+extern(Windows):
+	final IInspectable Value()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).set_Value(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.KeyTime KeyTime()
+	{
+		Windows.UI.Xaml.Media.Animation.KeyTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).get_KeyTime(&_ret));
+		return _ret;
+	}
+	final void KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).set_KeyTime(value));
+	}
 }
 
 interface ObjectKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)
@@ -1605,18 +2295,118 @@ interface ObjectKeyFrameCollection : Windows.Foundation.Collections.IVector!(Win
 
 interface PaneThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IPaneThemeTransition
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation Edge()
+	{
+		Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPaneThemeTransition).get_Edge(&_ret));
+		return _ret;
+	}
+	final void Edge(Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPaneThemeTransition).set_Edge(value));
+	}
 }
 
 interface PointAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointAnimation
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(Windows.Foundation.Point) From()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.Point) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).get_From(&_ret));
+		return _ret;
+	}
+	final void From(Windows.Foundation.IReference!(Windows.Foundation.Point) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).set_From(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.Point) To()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.Point) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).get_To(&_ret));
+		return _ret;
+	}
+	final void To(Windows.Foundation.IReference!(Windows.Foundation.Point) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).set_To(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.Point) By()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.Point) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).get_By(&_ret));
+		return _ret;
+	}
+	final void By(Windows.Foundation.IReference!(Windows.Foundation.Point) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).set_By(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.EasingFunctionBase EasingFunction()
+	{
+		Windows.UI.Xaml.Media.Animation.EasingFunctionBase _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).get_EasingFunction(&_ret));
+		return _ret;
+	}
+	final void EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).set_EasingFunction(value));
+	}
+	final bool EnableDependentAnimation()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).get_EnableDependentAnimation(&_ret));
+		return _ret;
+	}
+	final void EnableDependentAnimation(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).set_EnableDependentAnimation(value));
+	}
 }
 
 interface PointAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.PointKeyFrameCollection KeyFrames()
+	{
+		Windows.UI.Xaml.Media.Animation.PointKeyFrameCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames).get_KeyFrames(&_ret));
+		return _ret;
+	}
+	final bool EnableDependentAnimation()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames).get_EnableDependentAnimation(&_ret));
+		return _ret;
+	}
+	final void EnableDependentAnimation(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames).set_EnableDependentAnimation(value));
+	}
 }
 
 interface PointKeyFrame : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IPointKeyFrame
 {
+extern(Windows):
+	final Windows.Foundation.Point Value()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).set_Value(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.KeyTime KeyTime()
+	{
+		Windows.UI.Xaml.Media.Animation.KeyTime _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).get_KeyTime(&_ret));
+		return _ret;
+	}
+	final void KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).set_KeyTime(value));
+	}
 }
 
 interface PointKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)
@@ -1625,26 +2415,122 @@ interface PointKeyFrameCollection : Windows.Foundation.Collections.IVector!(Wind
 
 interface PointerDownThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation
 {
+extern(Windows):
+	final HSTRING TargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation).get_TargetName(&_ret));
+		return _ret;
+	}
+	final void TargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation).set_TargetName(value));
+	}
 }
 
 interface PointerUpThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation
 {
+extern(Windows):
+	final HSTRING TargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation).get_TargetName(&_ret));
+		return _ret;
+	}
+	final void TargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation).set_TargetName(value));
+	}
 }
 
 interface PopInThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation
 {
+extern(Windows):
+	final HSTRING TargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation).get_TargetName(&_ret));
+		return _ret;
+	}
+	final void TargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation).set_TargetName(value));
+	}
+	final double FromHorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation).get_FromHorizontalOffset(&_ret));
+		return _ret;
+	}
+	final void FromHorizontalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation).set_FromHorizontalOffset(value));
+	}
+	final double FromVerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation).get_FromVerticalOffset(&_ret));
+		return _ret;
+	}
+	final void FromVerticalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation).set_FromVerticalOffset(value));
+	}
 }
 
 interface PopOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation
 {
+extern(Windows):
+	final HSTRING TargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation).get_TargetName(&_ret));
+		return _ret;
+	}
+	final void TargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation).set_TargetName(value));
+	}
 }
 
 interface PopupThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IPopupThemeTransition
 {
+extern(Windows):
+	final double FromHorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransition).get_FromHorizontalOffset(&_ret));
+		return _ret;
+	}
+	final void FromHorizontalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransition).set_FromHorizontalOffset(value));
+	}
+	final double FromVerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransition).get_FromVerticalOffset(&_ret));
+		return _ret;
+	}
+	final void FromVerticalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransition).set_FromVerticalOffset(value));
+	}
 }
 
 interface PowerEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IPowerEase
 {
+extern(Windows):
+	final double Power()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPowerEase).get_Power(&_ret));
+		return _ret;
+	}
+	final void Power(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPowerEase).set_Power(value));
+	}
 }
 
 interface QuadraticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IQuadraticEase
@@ -1669,10 +2555,52 @@ interface RepeatBehaviorHelper : Windows.UI.Xaml.Media.Animation.IRepeatBehavior
 
 interface RepositionThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation
 {
+extern(Windows):
+	final HSTRING TargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation).get_TargetName(&_ret));
+		return _ret;
+	}
+	final void TargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation).set_TargetName(value));
+	}
+	final double FromHorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation).get_FromHorizontalOffset(&_ret));
+		return _ret;
+	}
+	final void FromHorizontalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation).set_FromHorizontalOffset(value));
+	}
+	final double FromVerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation).get_FromVerticalOffset(&_ret));
+		return _ret;
+	}
+	final void FromVerticalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation).set_FromVerticalOffset(value));
+	}
 }
 
 interface RepositionThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition, Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition2
 {
+extern(Windows):
+	final bool IsStaggeringEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition2).get_IsStaggeringEnabled(&_ret));
+		return _ret;
+	}
+	final void IsStaggeringEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition2).set_IsStaggeringEnabled(value));
+	}
 }
 
 interface SineEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.ISineEase
@@ -1685,26 +2613,328 @@ interface SlideNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.Naviga
 
 interface SplineColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame, Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrame
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.KeySpline KeySpline()
+	{
+		Windows.UI.Xaml.Media.Animation.KeySpline _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrame).get_KeySpline(&_ret));
+		return _ret;
+	}
+	final void KeySpline(Windows.UI.Xaml.Media.Animation.KeySpline value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrame).set_KeySpline(value));
+	}
 }
 
 interface SplineDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrame
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.KeySpline KeySpline()
+	{
+		Windows.UI.Xaml.Media.Animation.KeySpline _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrame).get_KeySpline(&_ret));
+		return _ret;
+	}
+	final void KeySpline(Windows.UI.Xaml.Media.Animation.KeySpline value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrame).set_KeySpline(value));
+	}
 }
 
 interface SplinePointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame, Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrame
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.KeySpline KeySpline()
+	{
+		Windows.UI.Xaml.Media.Animation.KeySpline _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrame).get_KeySpline(&_ret));
+		return _ret;
+	}
+	final void KeySpline(Windows.UI.Xaml.Media.Animation.KeySpline value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrame).set_KeySpline(value));
+	}
 }
 
 interface SplitCloseThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation
 {
+extern(Windows):
+	final HSTRING OpenedTargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_OpenedTargetName(&_ret));
+		return _ret;
+	}
+	final void OpenedTargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_OpenedTargetName(value));
+	}
+	final Windows.UI.Xaml.DependencyObject OpenedTarget()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_OpenedTarget(&_ret));
+		return _ret;
+	}
+	final void OpenedTarget(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_OpenedTarget(value));
+	}
+	final HSTRING ClosedTargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ClosedTargetName(&_ret));
+		return _ret;
+	}
+	final void ClosedTargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ClosedTargetName(value));
+	}
+	final Windows.UI.Xaml.DependencyObject ClosedTarget()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ClosedTarget(&_ret));
+		return _ret;
+	}
+	final void ClosedTarget(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ClosedTarget(value));
+	}
+	final HSTRING ContentTargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ContentTargetName(&_ret));
+		return _ret;
+	}
+	final void ContentTargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ContentTargetName(value));
+	}
+	final Windows.UI.Xaml.DependencyObject ContentTarget()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ContentTarget(&_ret));
+		return _ret;
+	}
+	final void ContentTarget(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ContentTarget(value));
+	}
+	final double OpenedLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_OpenedLength(&_ret));
+		return _ret;
+	}
+	final void OpenedLength(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_OpenedLength(value));
+	}
+	final double ClosedLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ClosedLength(&_ret));
+		return _ret;
+	}
+	final void ClosedLength(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ClosedLength(value));
+	}
+	final double OffsetFromCenter()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_OffsetFromCenter(&_ret));
+		return _ret;
+	}
+	final void OffsetFromCenter(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_OffsetFromCenter(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.AnimationDirection ContentTranslationDirection()
+	{
+		Windows.UI.Xaml.Controls.Primitives.AnimationDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ContentTranslationDirection(&_ret));
+		return _ret;
+	}
+	final void ContentTranslationDirection(Windows.UI.Xaml.Controls.Primitives.AnimationDirection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ContentTranslationDirection(value));
+	}
+	final double ContentTranslationOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ContentTranslationOffset(&_ret));
+		return _ret;
+	}
+	final void ContentTranslationOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ContentTranslationOffset(value));
+	}
 }
 
 interface SplitOpenThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation
 {
+extern(Windows):
+	final HSTRING OpenedTargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_OpenedTargetName(&_ret));
+		return _ret;
+	}
+	final void OpenedTargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_OpenedTargetName(value));
+	}
+	final Windows.UI.Xaml.DependencyObject OpenedTarget()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_OpenedTarget(&_ret));
+		return _ret;
+	}
+	final void OpenedTarget(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_OpenedTarget(value));
+	}
+	final HSTRING ClosedTargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ClosedTargetName(&_ret));
+		return _ret;
+	}
+	final void ClosedTargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ClosedTargetName(value));
+	}
+	final Windows.UI.Xaml.DependencyObject ClosedTarget()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ClosedTarget(&_ret));
+		return _ret;
+	}
+	final void ClosedTarget(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ClosedTarget(value));
+	}
+	final HSTRING ContentTargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ContentTargetName(&_ret));
+		return _ret;
+	}
+	final void ContentTargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ContentTargetName(value));
+	}
+	final Windows.UI.Xaml.DependencyObject ContentTarget()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ContentTarget(&_ret));
+		return _ret;
+	}
+	final void ContentTarget(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ContentTarget(value));
+	}
+	final double OpenedLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_OpenedLength(&_ret));
+		return _ret;
+	}
+	final void OpenedLength(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_OpenedLength(value));
+	}
+	final double ClosedLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ClosedLength(&_ret));
+		return _ret;
+	}
+	final void ClosedLength(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ClosedLength(value));
+	}
+	final double OffsetFromCenter()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_OffsetFromCenter(&_ret));
+		return _ret;
+	}
+	final void OffsetFromCenter(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_OffsetFromCenter(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.AnimationDirection ContentTranslationDirection()
+	{
+		Windows.UI.Xaml.Controls.Primitives.AnimationDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ContentTranslationDirection(&_ret));
+		return _ret;
+	}
+	final void ContentTranslationDirection(Windows.UI.Xaml.Controls.Primitives.AnimationDirection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ContentTranslationDirection(value));
+	}
+	final double ContentTranslationOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ContentTranslationOffset(&_ret));
+		return _ret;
+	}
+	final void ContentTranslationOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ContentTranslationOffset(value));
+	}
 }
 
 interface Storyboard : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IStoryboard
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Animation.TimelineCollection Children()
+	{
+		Windows.UI.Xaml.Media.Animation.TimelineCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).get_Children(&_ret));
+		return _ret;
+	}
+	final void Seek(Windows.Foundation.TimeSpan offset)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_Seek(offset));
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_Stop());
+	}
+	final void Begin()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_Begin());
+	}
+	final void Pause()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_Pause());
+	}
+	final void Resume()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_Resume());
+	}
+	final Windows.UI.Xaml.Media.Animation.ClockState GetCurrentState()
+	{
+		Windows.UI.Xaml.Media.Animation.ClockState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_GetCurrentState(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan GetCurrentTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_GetCurrentTime(&_ret));
+		return _ret;
+	}
+	final void SeekAlignedToLastTick(Windows.Foundation.TimeSpan offset)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_SeekAlignedToLastTick(offset));
+	}
+	final void SkipToFill()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_SkipToFill());
+	}
 }
 
 interface SuppressNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.ISuppressNavigationTransitionInfo
@@ -1713,14 +2943,137 @@ interface SuppressNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.Nav
 
 interface SwipeBackThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation
 {
+extern(Windows):
+	final HSTRING TargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation).get_TargetName(&_ret));
+		return _ret;
+	}
+	final void TargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation).set_TargetName(value));
+	}
+	final double FromHorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation).get_FromHorizontalOffset(&_ret));
+		return _ret;
+	}
+	final void FromHorizontalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation).set_FromHorizontalOffset(value));
+	}
+	final double FromVerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation).get_FromVerticalOffset(&_ret));
+		return _ret;
+	}
+	final void FromVerticalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation).set_FromVerticalOffset(value));
+	}
 }
 
 interface SwipeHintThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation
 {
+extern(Windows):
+	final HSTRING TargetName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation).get_TargetName(&_ret));
+		return _ret;
+	}
+	final void TargetName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation).set_TargetName(value));
+	}
+	final double ToHorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation).get_ToHorizontalOffset(&_ret));
+		return _ret;
+	}
+	final void ToHorizontalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation).set_ToHorizontalOffset(value));
+	}
+	final double ToVerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation).get_ToVerticalOffset(&_ret));
+		return _ret;
+	}
+	final void ToVerticalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation).set_ToVerticalOffset(value));
+	}
 }
 
 interface Timeline : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.ITimeline
 {
+extern(Windows):
+	final bool AutoReverse()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_AutoReverse(&_ret));
+		return _ret;
+	}
+	final void AutoReverse(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_AutoReverse(value));
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) BeginTime()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_BeginTime(&_ret));
+		return _ret;
+	}
+	final void BeginTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_BeginTime(value));
+	}
+	final Windows.UI.Xaml.Duration Duration()
+	{
+		Windows.UI.Xaml.Duration _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_Duration(&_ret));
+		return _ret;
+	}
+	final void Duration(Windows.UI.Xaml.Duration value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_Duration(value));
+	}
+	final double SpeedRatio()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_SpeedRatio(&_ret));
+		return _ret;
+	}
+	final void SpeedRatio(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_SpeedRatio(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.FillBehavior FillBehavior()
+	{
+		Windows.UI.Xaml.Media.Animation.FillBehavior _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_FillBehavior(&_ret));
+		return _ret;
+	}
+	final void FillBehavior(Windows.UI.Xaml.Media.Animation.FillBehavior value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_FillBehavior(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.RepeatBehavior RepeatBehavior()
+	{
+		Windows.UI.Xaml.Media.Animation.RepeatBehavior _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_RepeatBehavior(&_ret));
+		return _ret;
+	}
+	final void RepeatBehavior(Windows.UI.Xaml.Media.Animation.RepeatBehavior value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_RepeatBehavior(value));
+	}
 }
 
 interface TimelineCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Timeline)

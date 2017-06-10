@@ -261,66 +261,440 @@ extern(Windows):
 
 interface CurrentTimeChangeRequestedEventArgs : Windows.Media.PlayTo.ICurrentTimeChangeRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Time()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.ICurrentTimeChangeRequestedEventArgs).get_Time(&_ret));
+		return _ret;
+	}
 }
 
 interface MuteChangeRequestedEventArgs : Windows.Media.PlayTo.IMuteChangeRequestedEventArgs
 {
+extern(Windows):
+	final bool Mute()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IMuteChangeRequestedEventArgs).get_Mute(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayToConnection : Windows.Media.PlayTo.IPlayToConnection
 {
+extern(Windows):
+	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
+	final Windows.Media.PlayTo.PlayToConnectionState State()
+	{
+		Windows.Media.PlayTo.PlayToConnectionState _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnection).get_State(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayToConnectionErrorEventArgs : Windows.Media.PlayTo.IPlayToConnectionErrorEventArgs
 {
+extern(Windows):
+	deprecated("PlayToConnectionErrorEventArgs may be altered or unavailable for releases after Windows 10. Instead, use CastingConnectionErrorOccurredEventArgs.")
+	final Windows.Media.PlayTo.PlayToConnectionError Code()
+	{
+		Windows.Media.PlayTo.PlayToConnectionError _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnectionErrorEventArgs).get_Code(&_ret));
+		return _ret;
+	}
+	deprecated("PlayToConnectionErrorEventArgs may be altered or unavailable for releases after Windows 10. Instead, use CastingConnectionErrorOccurredEventArgs.")
+	final HSTRING Message()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnectionErrorEventArgs).get_Message(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayToConnectionStateChangedEventArgs : Windows.Media.PlayTo.IPlayToConnectionStateChangedEventArgs
 {
+extern(Windows):
+	deprecated("PlayToConnectionStateChangedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final Windows.Media.PlayTo.PlayToConnectionState PreviousState()
+	{
+		Windows.Media.PlayTo.PlayToConnectionState _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnectionStateChangedEventArgs).get_PreviousState(&_ret));
+		return _ret;
+	}
+	deprecated("PlayToConnectionStateChangedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final Windows.Media.PlayTo.PlayToConnectionState CurrentState()
+	{
+		Windows.Media.PlayTo.PlayToConnectionState _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnectionStateChangedEventArgs).get_CurrentState(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayToConnectionTransferredEventArgs : Windows.Media.PlayTo.IPlayToConnectionTransferredEventArgs
 {
+extern(Windows):
+	deprecated("PlayToConnectionTransferredEventArgs may be altered or unavailable for releases after Windows 10.")
+	final Windows.Media.PlayTo.PlayToSource PreviousSource()
+	{
+		Windows.Media.PlayTo.PlayToSource _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnectionTransferredEventArgs).get_PreviousSource(&_ret));
+		return _ret;
+	}
+	deprecated("PlayToConnectionTransferredEventArgs may be altered or unavailable for releases after Windows 10.")
+	final Windows.Media.PlayTo.PlayToSource CurrentSource()
+	{
+		Windows.Media.PlayTo.PlayToSource _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnectionTransferredEventArgs).get_CurrentSource(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayToManager : Windows.Media.PlayTo.IPlayToManager
 {
+extern(Windows):
+	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
+	final void DefaultSourceSelection(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToManager).set_DefaultSourceSelection(value));
+	}
+	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
+	final bool DefaultSourceSelection()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToManager).get_DefaultSourceSelection(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayToReceiver : Windows.Media.PlayTo.IPlayToReceiver
 {
+extern(Windows):
+	final void NotifyVolumeChange(double volume, bool mute)
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyVolumeChange(volume, mute));
+	}
+	final void NotifyRateChange(double rate)
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyRateChange(rate));
+	}
+	final void NotifyLoadedMetadata()
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyLoadedMetadata());
+	}
+	final void NotifyTimeUpdate(Windows.Foundation.TimeSpan currentTime)
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyTimeUpdate(currentTime));
+	}
+	final void NotifyDurationChange(Windows.Foundation.TimeSpan duration)
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyDurationChange(duration));
+	}
+	final void NotifySeeking()
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifySeeking());
+	}
+	final void NotifySeeked()
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifySeeked());
+	}
+	final void NotifyPaused()
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyPaused());
+	}
+	final void NotifyPlaying()
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyPlaying());
+	}
+	final void NotifyEnded()
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyEnded());
+	}
+	final void NotifyError()
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyError());
+	}
+	final void NotifyStopped()
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyStopped());
+	}
+	final HSTRING FriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).get_FriendlyName(&_ret));
+		return _ret;
+	}
+	final void FriendlyName(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).set_FriendlyName(value));
+	}
+	final void SupportsImage(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).set_SupportsImage(value));
+	}
+	final bool SupportsImage()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).get_SupportsImage(&_ret));
+		return _ret;
+	}
+	final void SupportsAudio(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).set_SupportsAudio(value));
+	}
+	final bool SupportsAudio()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).get_SupportsAudio(&_ret));
+		return _ret;
+	}
+	final void SupportsVideo(bool value)
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).set_SupportsVideo(value));
+	}
+	final bool SupportsVideo()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).get_SupportsVideo(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).get_Properties(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StartAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_StartAsync(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncAction StopAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_StopAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayToSource : Windows.Media.PlayTo.IPlayToSource, Windows.Media.PlayTo.IPlayToSourceWithPreferredSourceUri
 {
+extern(Windows):
+	deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")
+	final Windows.Media.PlayTo.PlayToConnection Connection()
+	{
+		Windows.Media.PlayTo.PlayToConnection _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSource).get_Connection(&_ret));
+		return _ret;
+	}
+	deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")
+	final Windows.Media.PlayTo.PlayToSource Next()
+	{
+		Windows.Media.PlayTo.PlayToSource _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSource).get_Next(&_ret));
+		return _ret;
+	}
+	deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")
+	final void Next(Windows.Media.PlayTo.PlayToSource value)
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSource).set_Next(value));
+	}
+	deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")
+	final void PlayNext()
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSource).abi_PlayNext());
+	}
+	deprecated("PlayToSourceWithPreferredSourceUri may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")
+	final Windows.Foundation.Uri PreferredSourceUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceWithPreferredSourceUri).get_PreferredSourceUri(&_ret));
+		return _ret;
+	}
+	deprecated("PlayToSourceWithPreferredSourceUri may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")
+	final void PreferredSourceUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceWithPreferredSourceUri).set_PreferredSourceUri(value));
+	}
 }
 
 interface PlayToSourceDeferral : Windows.Media.PlayTo.IPlayToSourceDeferral
 {
+extern(Windows):
+	deprecated("PlayToSourceDeferral may be altered or unavailable for releases after Windows 10.")
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceDeferral).abi_Complete());
+	}
 }
 
 interface PlayToSourceRequest : Windows.Media.PlayTo.IPlayToSourceRequest
 {
+extern(Windows):
+	deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")
+	final Windows.Foundation.DateTime Deadline()
+	{
+		Windows.Foundation.DateTime _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceRequest).get_Deadline(&_ret));
+		return _ret;
+	}
+	deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")
+	final void DisplayErrorString(HSTRING errorString)
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceRequest).abi_DisplayErrorString(errorString));
+	}
+	deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")
+	final Windows.Media.PlayTo.PlayToSourceDeferral GetDeferral()
+	{
+		Windows.Media.PlayTo.PlayToSourceDeferral _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceRequest).abi_GetDeferral(&_ret));
+		return _ret;
+	}
+	deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")
+	final void SetSource(Windows.Media.PlayTo.PlayToSource value)
+	{
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceRequest).abi_SetSource(value));
+	}
 }
 
 interface PlayToSourceRequestedEventArgs : Windows.Media.PlayTo.IPlayToSourceRequestedEventArgs
 {
+extern(Windows):
+	deprecated("PlayToSourceRequestedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final Windows.Media.PlayTo.PlayToSourceRequest SourceRequest()
+	{
+		Windows.Media.PlayTo.PlayToSourceRequest _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceRequestedEventArgs).get_SourceRequest(&_ret));
+		return _ret;
+	}
 }
 
 interface PlayToSourceSelectedEventArgs : Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs
 {
+extern(Windows):
+	deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final HSTRING FriendlyName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs).get_FriendlyName(&_ret));
+		return _ret;
+	}
+	deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final Windows.Storage.Streams.IRandomAccessStreamWithContentType Icon()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamWithContentType _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs).get_Icon(&_ret));
+		return _ret;
+	}
+	deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final bool SupportsImage()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs).get_SupportsImage(&_ret));
+		return _ret;
+	}
+	deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final bool SupportsAudio()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs).get_SupportsAudio(&_ret));
+		return _ret;
+	}
+	deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")
+	final bool SupportsVideo()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs).get_SupportsVideo(&_ret));
+		return _ret;
+	}
 }
 
 interface PlaybackRateChangeRequestedEventArgs : Windows.Media.PlayTo.IPlaybackRateChangeRequestedEventArgs
 {
+extern(Windows):
+	final double Rate()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IPlaybackRateChangeRequestedEventArgs).get_Rate(&_ret));
+		return _ret;
+	}
 }
 
 interface SourceChangeRequestedEventArgs : Windows.Media.PlayTo.ISourceChangeRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Storage.Streams.IRandomAccessStreamWithContentType Stream()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamWithContentType _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Stream(&_ret));
+		return _ret;
+	}
+	final HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Title(&_ret));
+		return _ret;
+	}
+	final HSTRING Author()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Author(&_ret));
+		return _ret;
+	}
+	final HSTRING Album()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Album(&_ret));
+		return _ret;
+	}
+	final HSTRING Genre()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Genre(&_ret));
+		return _ret;
+	}
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Description(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Date()
+	{
+		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Date(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IRandomAccessStreamReference Thumbnail()
+	{
+		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Thumbnail(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IReference!(UINT32) Rating()
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Rating(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Properties(&_ret));
+		return _ret;
+	}
 }
 
 interface VolumeChangeRequestedEventArgs : Windows.Media.PlayTo.IVolumeChangeRequestedEventArgs
 {
+extern(Windows):
+	final double Volume()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Media.PlayTo.IVolumeChangeRequestedEventArgs).get_Volume(&_ret));
+		return _ret;
+	}
 }
 
 enum PlayToConnectionError

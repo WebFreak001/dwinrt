@@ -90,14 +90,209 @@ extern(Windows):
 
 interface HttpBaseProtocolFilter : Windows.Web.Http.Filters.IHttpBaseProtocolFilter, Windows.Web.Http.Filters.IHttpFilter, Windows.Foundation.IClosable, Windows.Web.Http.Filters.IHttpBaseProtocolFilter2, Windows.Web.Http.Filters.IHttpBaseProtocolFilter3, Windows.Web.Http.Filters.IHttpBaseProtocolFilter4
 {
+extern(Windows):
+	final bool AllowAutoRedirect()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_AllowAutoRedirect(&_ret));
+		return _ret;
+	}
+	final void AllowAutoRedirect(bool value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_AllowAutoRedirect(value));
+	}
+	final bool AllowUI()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_AllowUI(&_ret));
+		return _ret;
+	}
+	final void AllowUI(bool value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_AllowUI(value));
+	}
+	final bool AutomaticDecompression()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_AutomaticDecompression(&_ret));
+		return _ret;
+	}
+	final void AutomaticDecompression(bool value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_AutomaticDecompression(value));
+	}
+	final Windows.Web.Http.Filters.HttpCacheControl CacheControl()
+	{
+		Windows.Web.Http.Filters.HttpCacheControl _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_CacheControl(&_ret));
+		return _ret;
+	}
+	final Windows.Web.Http.HttpCookieManager CookieManager()
+	{
+		Windows.Web.Http.HttpCookieManager _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_CookieManager(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Certificates.Certificate ClientCertificate()
+	{
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_ClientCertificate(&_ret));
+		return _ret;
+	}
+	final void ClientCertificate(Windows.Security.Cryptography.Certificates.Certificate value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_ClientCertificate(value));
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) IgnorableServerCertificateErrors()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_IgnorableServerCertificateErrors(&_ret));
+		return _ret;
+	}
+	final UINT32 MaxConnectionsPerServer()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_MaxConnectionsPerServer(&_ret));
+		return _ret;
+	}
+	final void MaxConnectionsPerServer(UINT32 value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_MaxConnectionsPerServer(value));
+	}
+	final Windows.Security.Credentials.PasswordCredential ProxyCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_ProxyCredential(&_ret));
+		return _ret;
+	}
+	final void ProxyCredential(Windows.Security.Credentials.PasswordCredential value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_ProxyCredential(value));
+	}
+	final Windows.Security.Credentials.PasswordCredential ServerCredential()
+	{
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_ServerCredential(&_ret));
+		return _ret;
+	}
+	final void ServerCredential(Windows.Security.Credentials.PasswordCredential value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_ServerCredential(value));
+	}
+	final bool UseProxy()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_UseProxy(&_ret));
+		return _ret;
+	}
+	final void UseProxy(bool value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_UseProxy(value));
+	}
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) SendRequestAsync(Windows.Web.Http.HttpRequestMessage request)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpFilter).abi_SendRequestAsync(request, &_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final Windows.Web.Http.HttpVersion MaxVersion()
+	{
+		Windows.Web.Http.HttpVersion _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter2).get_MaxVersion(&_ret));
+		return _ret;
+	}
+	final void MaxVersion(Windows.Web.Http.HttpVersion value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter2).set_MaxVersion(value));
+	}
+	final Windows.Web.Http.Filters.HttpCookieUsageBehavior CookieUsageBehavior()
+	{
+		Windows.Web.Http.Filters.HttpCookieUsageBehavior _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter3).get_CookieUsageBehavior(&_ret));
+		return _ret;
+	}
+	final void CookieUsageBehavior(Windows.Web.Http.Filters.HttpCookieUsageBehavior value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter3).set_CookieUsageBehavior(value));
+	}
+	final void ClearAuthenticationCache()
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter4).abi_ClearAuthenticationCache());
+	}
 }
 
 interface HttpCacheControl : Windows.Web.Http.Filters.IHttpCacheControl
 {
+extern(Windows):
+	final Windows.Web.Http.Filters.HttpCacheReadBehavior ReadBehavior()
+	{
+		Windows.Web.Http.Filters.HttpCacheReadBehavior _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpCacheControl).get_ReadBehavior(&_ret));
+		return _ret;
+	}
+	final void ReadBehavior(Windows.Web.Http.Filters.HttpCacheReadBehavior value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpCacheControl).set_ReadBehavior(value));
+	}
+	final Windows.Web.Http.Filters.HttpCacheWriteBehavior WriteBehavior()
+	{
+		Windows.Web.Http.Filters.HttpCacheWriteBehavior _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpCacheControl).get_WriteBehavior(&_ret));
+		return _ret;
+	}
+	final void WriteBehavior(Windows.Web.Http.Filters.HttpCacheWriteBehavior value)
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpCacheControl).set_WriteBehavior(value));
+	}
 }
 
 interface HttpServerCustomValidationRequestedEventArgs : Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Web.Http.HttpRequestMessage RequestMessage()
+	{
+		Windows.Web.Http.HttpRequestMessage _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).get_RequestMessage(&_ret));
+		return _ret;
+	}
+	final Windows.Security.Cryptography.Certificates.Certificate ServerCertificate()
+	{
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).get_ServerCertificate(&_ret));
+		return _ret;
+	}
+	final Windows.Networking.Sockets.SocketSslErrorSeverity ServerCertificateErrorSeverity()
+	{
+		Windows.Networking.Sockets.SocketSslErrorSeverity _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).get_ServerCertificateErrorSeverity(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) ServerCertificateErrors()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).get_ServerCertificateErrors(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) ServerIntermediateCertificates()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).get_ServerIntermediateCertificates(&_ret));
+		return _ret;
+	}
+	final void Reject()
+	{
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).abi_Reject());
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 enum HttpCacheReadBehavior

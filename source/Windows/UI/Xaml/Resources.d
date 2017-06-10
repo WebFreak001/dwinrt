@@ -35,4 +35,11 @@ extern(Windows):
 
 interface CustomXamlResourceLoader : Windows.UI.Xaml.Resources.ICustomXamlResourceLoader, Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderOverrides
 {
+extern(Windows):
+	final IInspectable GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderOverrides).abi_GetResource(resourceId, objectType, propertyName, propertyType, &_ret));
+		return _ret;
+	}
 }

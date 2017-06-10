@@ -26,10 +26,48 @@ extern(Windows):
 
 interface ExtendedExecutionForegroundRevokedEventArgs : Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundRevokedEventArgs
 {
+extern(Windows):
+	final Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedReason Reason()
+	{
+		Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedReason _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundRevokedEventArgs).get_Reason(&_ret));
+		return _ret;
+	}
 }
 
 interface ExtendedExecutionForegroundSession : Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession, Windows.Foundation.IClosable
 {
+extern(Windows):
+	final HSTRING Description()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).get_Description(&_ret));
+		return _ret;
+	}
+	final void Description(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).set_Description(value));
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundResult) RequestExtensionAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundResult) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).abi_RequestExtensionAsync(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundReason Reason()
+	{
+		Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundReason _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).get_Reason(&_ret));
+		return _ret;
+	}
+	final void Reason(Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundReason value)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).set_Reason(value));
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 enum ExtendedExecutionForegroundReason

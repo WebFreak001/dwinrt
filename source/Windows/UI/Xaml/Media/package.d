@@ -1125,10 +1125,92 @@ extern(Windows):
 
 interface ArcSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IArcSegment
 {
+extern(Windows):
+	final Windows.Foundation.Point Point()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).get_Point(&_ret));
+		return _ret;
+	}
+	final void Point(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).set_Point(value));
+	}
+	final Windows.Foundation.Size Size()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).get_Size(&_ret));
+		return _ret;
+	}
+	final void Size(Windows.Foundation.Size value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).set_Size(value));
+	}
+	final double RotationAngle()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).get_RotationAngle(&_ret));
+		return _ret;
+	}
+	final void RotationAngle(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).set_RotationAngle(value));
+	}
+	final bool IsLargeArc()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).get_IsLargeArc(&_ret));
+		return _ret;
+	}
+	final void IsLargeArc(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).set_IsLargeArc(value));
+	}
+	final Windows.UI.Xaml.Media.SweepDirection SweepDirection()
+	{
+		Windows.UI.Xaml.Media.SweepDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).get_SweepDirection(&_ret));
+		return _ret;
+	}
+	final void SweepDirection(Windows.UI.Xaml.Media.SweepDirection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).set_SweepDirection(value));
+	}
 }
 
 interface BezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IBezierSegment
 {
+extern(Windows):
+	final Windows.Foundation.Point Point1()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBezierSegment).get_Point1(&_ret));
+		return _ret;
+	}
+	final void Point1(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBezierSegment).set_Point1(value));
+	}
+	final Windows.Foundation.Point Point2()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBezierSegment).get_Point2(&_ret));
+		return _ret;
+	}
+	final void Point2(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBezierSegment).set_Point2(value));
+	}
+	final Windows.Foundation.Point Point3()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBezierSegment).get_Point3(&_ret));
+		return _ret;
+	}
+	final void Point3(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBezierSegment).set_Point3(value));
+	}
 }
 
 interface BitmapCache : Windows.UI.Xaml.Media.CacheMode, Windows.UI.Xaml.Media.IBitmapCache
@@ -1137,6 +1219,37 @@ interface BitmapCache : Windows.UI.Xaml.Media.CacheMode, Windows.UI.Xaml.Media.I
 
 interface Brush : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IBrush
 {
+extern(Windows):
+	final double Opacity()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).get_Opacity(&_ret));
+		return _ret;
+	}
+	final void Opacity(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).set_Opacity(value));
+	}
+	final Windows.UI.Xaml.Media.Transform Transform()
+	{
+		Windows.UI.Xaml.Media.Transform _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).get_Transform(&_ret));
+		return _ret;
+	}
+	final void Transform(Windows.UI.Xaml.Media.Transform value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).set_Transform(value));
+	}
+	final Windows.UI.Xaml.Media.Transform RelativeTransform()
+	{
+		Windows.UI.Xaml.Media.Transform _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).get_RelativeTransform(&_ret));
+		return _ret;
+	}
+	final void RelativeTransform(Windows.UI.Xaml.Media.Transform value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).set_RelativeTransform(value));
+	}
 }
 
 interface BrushCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Brush)
@@ -1149,6 +1262,97 @@ interface CacheMode : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IC
 
 interface CompositeTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.ICompositeTransform
 {
+extern(Windows):
+	final double CenterX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_CenterX(&_ret));
+		return _ret;
+	}
+	final void CenterX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_CenterX(value));
+	}
+	final double CenterY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_CenterY(&_ret));
+		return _ret;
+	}
+	final void CenterY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_CenterY(value));
+	}
+	final double ScaleX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_ScaleX(&_ret));
+		return _ret;
+	}
+	final void ScaleX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_ScaleX(value));
+	}
+	final double ScaleY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_ScaleY(&_ret));
+		return _ret;
+	}
+	final void ScaleY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_ScaleY(value));
+	}
+	final double SkewX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_SkewX(&_ret));
+		return _ret;
+	}
+	final void SkewX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_SkewX(value));
+	}
+	final double SkewY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_SkewY(&_ret));
+		return _ret;
+	}
+	final void SkewY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_SkewY(value));
+	}
+	final double Rotation()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_Rotation(&_ret));
+		return _ret;
+	}
+	final void Rotation(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_Rotation(value));
+	}
+	final double TranslateX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_TranslateX(&_ret));
+		return _ret;
+	}
+	final void TranslateX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_TranslateX(value));
+	}
+	final double TranslateY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_TranslateY(&_ret));
+		return _ret;
+	}
+	final void TranslateY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_TranslateY(value));
+	}
 }
 
 interface CompositionTarget : Windows.UI.Xaml.Media.ICompositionTarget
@@ -1161,18 +1365,116 @@ interface DoubleCollection : Windows.Foundation.Collections.IVector!(double), Wi
 
 interface EllipseGeometry : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.IEllipseGeometry
 {
+extern(Windows):
+	final Windows.Foundation.Point Center()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IEllipseGeometry).get_Center(&_ret));
+		return _ret;
+	}
+	final void Center(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IEllipseGeometry).set_Center(value));
+	}
+	final double RadiusX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IEllipseGeometry).get_RadiusX(&_ret));
+		return _ret;
+	}
+	final void RadiusX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IEllipseGeometry).set_RadiusX(value));
+	}
+	final double RadiusY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IEllipseGeometry).get_RadiusY(&_ret));
+		return _ret;
+	}
+	final void RadiusY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IEllipseGeometry).set_RadiusY(value));
+	}
 }
 
 interface FontFamily : Windows.UI.Xaml.Media.IFontFamily
 {
+extern(Windows):
+	final HSTRING Source()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IFontFamily).get_Source(&_ret));
+		return _ret;
+	}
 }
 
 interface GeneralTransform : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IGeneralTransform, Windows.UI.Xaml.Media.IGeneralTransformOverrides
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.GeneralTransform Inverse()
+	{
+		Windows.UI.Xaml.Media.GeneralTransform _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransform).get_Inverse(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point TransformPoint(Windows.Foundation.Point point)
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TransformPoint(point, &_ret));
+		return _ret;
+	}
+	final bool TryTransform(Windows.Foundation.Point inPoint, Windows.Foundation.Point* out_outPoint)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TryTransform(inPoint, out_outPoint, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect TransformBounds(Windows.Foundation.Rect rect)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TransformBounds(rect, &_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.GeneralTransform InverseCore()
+	{
+		Windows.UI.Xaml.Media.GeneralTransform _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransformOverrides).get_InverseCore(&_ret));
+		return _ret;
+	}
+	final bool TryTransformCore(Windows.Foundation.Point inPoint, Windows.Foundation.Point* out_outPoint)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransformOverrides).abi_TryTransformCore(inPoint, out_outPoint, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect TransformBoundsCore(Windows.Foundation.Rect rect)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransformOverrides).abi_TransformBoundsCore(rect, &_ret));
+		return _ret;
+	}
 }
 
 interface Geometry : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IGeometry
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Transform Transform()
+	{
+		Windows.UI.Xaml.Media.Transform _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometry).get_Transform(&_ret));
+		return _ret;
+	}
+	final void Transform(Windows.UI.Xaml.Media.Transform value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometry).set_Transform(value));
+	}
+	final Windows.Foundation.Rect Bounds()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometry).get_Bounds(&_ret));
+		return _ret;
+	}
 }
 
 interface GeometryCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Geometry)
@@ -1181,14 +1483,97 @@ interface GeometryCollection : Windows.Foundation.Collections.IVector!(Windows.U
 
 interface GeometryGroup : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.IGeometryGroup
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.FillRule FillRule()
+	{
+		Windows.UI.Xaml.Media.FillRule _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometryGroup).get_FillRule(&_ret));
+		return _ret;
+	}
+	final void FillRule(Windows.UI.Xaml.Media.FillRule value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometryGroup).set_FillRule(value));
+	}
+	final Windows.UI.Xaml.Media.GeometryCollection Children()
+	{
+		Windows.UI.Xaml.Media.GeometryCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometryGroup).get_Children(&_ret));
+		return _ret;
+	}
+	final void Children(Windows.UI.Xaml.Media.GeometryCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometryGroup).set_Children(value));
+	}
 }
 
 interface GradientBrush : Windows.UI.Xaml.Media.Brush, Windows.UI.Xaml.Media.IGradientBrush
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.GradientSpreadMethod SpreadMethod()
+	{
+		Windows.UI.Xaml.Media.GradientSpreadMethod _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).get_SpreadMethod(&_ret));
+		return _ret;
+	}
+	final void SpreadMethod(Windows.UI.Xaml.Media.GradientSpreadMethod value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).set_SpreadMethod(value));
+	}
+	final Windows.UI.Xaml.Media.BrushMappingMode MappingMode()
+	{
+		Windows.UI.Xaml.Media.BrushMappingMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).get_MappingMode(&_ret));
+		return _ret;
+	}
+	final void MappingMode(Windows.UI.Xaml.Media.BrushMappingMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).set_MappingMode(value));
+	}
+	final Windows.UI.Xaml.Media.ColorInterpolationMode ColorInterpolationMode()
+	{
+		Windows.UI.Xaml.Media.ColorInterpolationMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).get_ColorInterpolationMode(&_ret));
+		return _ret;
+	}
+	final void ColorInterpolationMode(Windows.UI.Xaml.Media.ColorInterpolationMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).set_ColorInterpolationMode(value));
+	}
+	final Windows.UI.Xaml.Media.GradientStopCollection GradientStops()
+	{
+		Windows.UI.Xaml.Media.GradientStopCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).get_GradientStops(&_ret));
+		return _ret;
+	}
+	final void GradientStops(Windows.UI.Xaml.Media.GradientStopCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).set_GradientStops(value));
+	}
 }
 
 interface GradientStop : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IGradientStop
 {
+extern(Windows):
+	final Windows.UI.Color Color()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientStop).get_Color(&_ret));
+		return _ret;
+	}
+	final void Color(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientStop).set_Color(value));
+	}
+	final double Offset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientStop).get_Offset(&_ret));
+		return _ret;
+	}
+	final void Offset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientStop).set_Offset(value));
+	}
 }
 
 interface GradientStopCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.GradientStop)
@@ -1197,6 +1582,17 @@ interface GradientStopCollection : Windows.Foundation.Collections.IVector!(Windo
 
 interface ImageBrush : Windows.UI.Xaml.Media.TileBrush, Windows.UI.Xaml.Media.IImageBrush
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.ImageSource ImageSource()
+	{
+		Windows.UI.Xaml.Media.ImageSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).get_ImageSource(&_ret));
+		return _ret;
+	}
+	final void ImageSource(Windows.UI.Xaml.Media.ImageSource value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).set_ImageSource(value));
+	}
 }
 
 interface ImageSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IImageSource
@@ -1205,26 +1601,120 @@ interface ImageSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.
 
 interface LineGeometry : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.ILineGeometry
 {
+extern(Windows):
+	final Windows.Foundation.Point StartPoint()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineGeometry).get_StartPoint(&_ret));
+		return _ret;
+	}
+	final void StartPoint(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineGeometry).set_StartPoint(value));
+	}
+	final Windows.Foundation.Point EndPoint()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineGeometry).get_EndPoint(&_ret));
+		return _ret;
+	}
+	final void EndPoint(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineGeometry).set_EndPoint(value));
+	}
 }
 
 interface LineSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.ILineSegment
 {
+extern(Windows):
+	final Windows.Foundation.Point Point()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineSegment).get_Point(&_ret));
+		return _ret;
+	}
+	final void Point(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineSegment).set_Point(value));
+	}
 }
 
 interface LinearGradientBrush : Windows.UI.Xaml.Media.GradientBrush, Windows.UI.Xaml.Media.ILinearGradientBrush
 {
+extern(Windows):
+	final Windows.Foundation.Point StartPoint()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILinearGradientBrush).get_StartPoint(&_ret));
+		return _ret;
+	}
+	final void StartPoint(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILinearGradientBrush).set_StartPoint(value));
+	}
+	final Windows.Foundation.Point EndPoint()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILinearGradientBrush).get_EndPoint(&_ret));
+		return _ret;
+	}
+	final void EndPoint(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILinearGradientBrush).set_EndPoint(value));
+	}
 }
 
 interface LoadedImageSourceLoadCompletedEventArgs : Windows.UI.Xaml.Media.ILoadedImageSourceLoadCompletedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.LoadedImageSourceLoadStatus Status()
+	{
+		Windows.UI.Xaml.Media.LoadedImageSourceLoadStatus _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSourceLoadCompletedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
 }
 
 interface LoadedImageSurface : Windows.UI.Xaml.Media.ILoadedImageSurface, Windows.Foundation.IClosable, Windows.UI.Composition.ICompositionSurface
 {
+extern(Windows):
+	final Windows.Foundation.Size DecodedPhysicalSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSurface).get_DecodedPhysicalSize(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size DecodedSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSurface).get_DecodedSize(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Size NaturalSize()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSurface).get_NaturalSize(&_ret));
+		return _ret;
+	}
+	final void Close()
+	{
+		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
 }
 
 interface Matrix3DProjection : Windows.UI.Xaml.Media.Projection, Windows.UI.Xaml.Media.IMatrix3DProjection
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Media3D.Matrix3D ProjectionMatrix()
+	{
+		Windows.UI.Xaml.Media.Media3D.Matrix3D _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMatrix3DProjection).get_ProjectionMatrix(&_ret));
+		return _ret;
+	}
+	final void ProjectionMatrix(Windows.UI.Xaml.Media.Media3D.Matrix3D value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMatrix3DProjection).set_ProjectionMatrix(value));
+	}
 }
 
 interface MatrixHelper : Windows.UI.Xaml.Media.IMatrixHelper
@@ -1233,18 +1723,94 @@ interface MatrixHelper : Windows.UI.Xaml.Media.IMatrixHelper
 
 interface MatrixTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.IMatrixTransform
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Matrix Matrix()
+	{
+		Windows.UI.Xaml.Media.Matrix _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMatrixTransform).get_Matrix(&_ret));
+		return _ret;
+	}
+	final void Matrix(Windows.UI.Xaml.Media.Matrix value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMatrixTransform).set_Matrix(value));
+	}
 }
 
 interface MediaTransportControlsThumbnailRequestedEventArgs : Windows.UI.Xaml.Media.IMediaTransportControlsThumbnailRequestedEventArgs
 {
+extern(Windows):
+	final void SetThumbnailImage(Windows.Storage.Streams.IInputStream source)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMediaTransportControlsThumbnailRequestedEventArgs).abi_SetThumbnailImage(source));
+	}
+	final Windows.Foundation.Deferral GetDeferral()
+	{
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMediaTransportControlsThumbnailRequestedEventArgs).abi_GetDeferral(&_ret));
+		return _ret;
+	}
 }
 
 interface PartialMediaFailureDetectedEventArgs : Windows.UI.Xaml.Media.IPartialMediaFailureDetectedEventArgs, Windows.UI.Xaml.Media.IPartialMediaFailureDetectedEventArgs2
 {
+extern(Windows):
+	final Windows.Media.Playback.FailedMediaStreamKind StreamKind()
+	{
+		Windows.Media.Playback.FailedMediaStreamKind _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPartialMediaFailureDetectedEventArgs).get_StreamKind(&_ret));
+		return _ret;
+	}
+	final HRESULT ExtendedError()
+	{
+		HRESULT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPartialMediaFailureDetectedEventArgs2).get_ExtendedError(&_ret));
+		return _ret;
+	}
 }
 
 interface PathFigure : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IPathFigure
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.PathSegmentCollection Segments()
+	{
+		Windows.UI.Xaml.Media.PathSegmentCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).get_Segments(&_ret));
+		return _ret;
+	}
+	final void Segments(Windows.UI.Xaml.Media.PathSegmentCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).set_Segments(value));
+	}
+	final Windows.Foundation.Point StartPoint()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).get_StartPoint(&_ret));
+		return _ret;
+	}
+	final void StartPoint(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).set_StartPoint(value));
+	}
+	final bool IsClosed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).get_IsClosed(&_ret));
+		return _ret;
+	}
+	final void IsClosed(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).set_IsClosed(value));
+	}
+	final bool IsFilled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).get_IsFilled(&_ret));
+		return _ret;
+	}
+	final void IsFilled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).set_IsFilled(value));
+	}
 }
 
 interface PathFigureCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.PathFigure)
@@ -1253,6 +1819,27 @@ interface PathFigureCollection : Windows.Foundation.Collections.IVector!(Windows
 
 interface PathGeometry : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.IPathGeometry
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.FillRule FillRule()
+	{
+		Windows.UI.Xaml.Media.FillRule _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathGeometry).get_FillRule(&_ret));
+		return _ret;
+	}
+	final void FillRule(Windows.UI.Xaml.Media.FillRule value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathGeometry).set_FillRule(value));
+	}
+	final Windows.UI.Xaml.Media.PathFigureCollection Figures()
+	{
+		Windows.UI.Xaml.Media.PathFigureCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathGeometry).get_Figures(&_ret));
+		return _ret;
+	}
+	final void Figures(Windows.UI.Xaml.Media.PathFigureCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathGeometry).set_Figures(value));
+	}
 }
 
 interface PathSegment : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IPathSegment
@@ -1265,6 +1852,133 @@ interface PathSegmentCollection : Windows.Foundation.Collections.IVector!(Window
 
 interface PlaneProjection : Windows.UI.Xaml.Media.Projection, Windows.UI.Xaml.Media.IPlaneProjection
 {
+extern(Windows):
+	final double LocalOffsetX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_LocalOffsetX(&_ret));
+		return _ret;
+	}
+	final void LocalOffsetX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_LocalOffsetX(value));
+	}
+	final double LocalOffsetY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_LocalOffsetY(&_ret));
+		return _ret;
+	}
+	final void LocalOffsetY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_LocalOffsetY(value));
+	}
+	final double LocalOffsetZ()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_LocalOffsetZ(&_ret));
+		return _ret;
+	}
+	final void LocalOffsetZ(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_LocalOffsetZ(value));
+	}
+	final double RotationX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_RotationX(&_ret));
+		return _ret;
+	}
+	final void RotationX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_RotationX(value));
+	}
+	final double RotationY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_RotationY(&_ret));
+		return _ret;
+	}
+	final void RotationY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_RotationY(value));
+	}
+	final double RotationZ()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_RotationZ(&_ret));
+		return _ret;
+	}
+	final void RotationZ(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_RotationZ(value));
+	}
+	final double CenterOfRotationX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_CenterOfRotationX(&_ret));
+		return _ret;
+	}
+	final void CenterOfRotationX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_CenterOfRotationX(value));
+	}
+	final double CenterOfRotationY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_CenterOfRotationY(&_ret));
+		return _ret;
+	}
+	final void CenterOfRotationY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_CenterOfRotationY(value));
+	}
+	final double CenterOfRotationZ()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_CenterOfRotationZ(&_ret));
+		return _ret;
+	}
+	final void CenterOfRotationZ(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_CenterOfRotationZ(value));
+	}
+	final double GlobalOffsetX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_GlobalOffsetX(&_ret));
+		return _ret;
+	}
+	final void GlobalOffsetX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_GlobalOffsetX(value));
+	}
+	final double GlobalOffsetY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_GlobalOffsetY(&_ret));
+		return _ret;
+	}
+	final void GlobalOffsetY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_GlobalOffsetY(value));
+	}
+	final double GlobalOffsetZ()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_GlobalOffsetZ(&_ret));
+		return _ret;
+	}
+	final void GlobalOffsetZ(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_GlobalOffsetZ(value));
+	}
+	final Windows.UI.Xaml.Media.Media3D.Matrix3D ProjectionMatrix()
+	{
+		Windows.UI.Xaml.Media.Media3D.Matrix3D _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_ProjectionMatrix(&_ret));
+		return _ret;
+	}
 }
 
 interface PointCollection : Windows.Foundation.Collections.IVector!(Windows.Foundation.Point), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point)
@@ -1273,14 +1987,47 @@ interface PointCollection : Windows.Foundation.Collections.IVector!(Windows.Foun
 
 interface PolyBezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IPolyBezierSegment
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.PointCollection Points()
+	{
+		Windows.UI.Xaml.Media.PointCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyBezierSegment).get_Points(&_ret));
+		return _ret;
+	}
+	final void Points(Windows.UI.Xaml.Media.PointCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyBezierSegment).set_Points(value));
+	}
 }
 
 interface PolyLineSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IPolyLineSegment
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.PointCollection Points()
+	{
+		Windows.UI.Xaml.Media.PointCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyLineSegment).get_Points(&_ret));
+		return _ret;
+	}
+	final void Points(Windows.UI.Xaml.Media.PointCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyLineSegment).set_Points(value));
+	}
 }
 
 interface PolyQuadraticBezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IPolyQuadraticBezierSegment
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.PointCollection Points()
+	{
+		Windows.UI.Xaml.Media.PointCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyQuadraticBezierSegment).get_Points(&_ret));
+		return _ret;
+	}
+	final void Points(Windows.UI.Xaml.Media.PointCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyQuadraticBezierSegment).set_Points(value));
+	}
 }
 
 interface Projection : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IProjection
@@ -1289,6 +2036,27 @@ interface Projection : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.I
 
 interface QuadraticBezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IQuadraticBezierSegment
 {
+extern(Windows):
+	final Windows.Foundation.Point Point1()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegment).get_Point1(&_ret));
+		return _ret;
+	}
+	final void Point1(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegment).set_Point1(value));
+	}
+	final Windows.Foundation.Point Point2()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegment).get_Point2(&_ret));
+		return _ret;
+	}
+	final void Point2(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegment).set_Point2(value));
+	}
 }
 
 interface RateChangedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Media.IRateChangedRoutedEventArgs
@@ -1297,34 +2065,238 @@ interface RateChangedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.
 
 interface RectangleGeometry : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.IRectangleGeometry
 {
+extern(Windows):
+	final Windows.Foundation.Rect Rect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRectangleGeometry).get_Rect(&_ret));
+		return _ret;
+	}
+	final void Rect(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRectangleGeometry).set_Rect(value));
+	}
 }
 
 interface RenderingEventArgs : Windows.UI.Xaml.Media.IRenderingEventArgs
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan RenderingTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRenderingEventArgs).get_RenderingTime(&_ret));
+		return _ret;
+	}
 }
 
 interface RotateTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.IRotateTransform
 {
+extern(Windows):
+	final double CenterX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRotateTransform).get_CenterX(&_ret));
+		return _ret;
+	}
+	final void CenterX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRotateTransform).set_CenterX(value));
+	}
+	final double CenterY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRotateTransform).get_CenterY(&_ret));
+		return _ret;
+	}
+	final void CenterY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRotateTransform).set_CenterY(value));
+	}
+	final double Angle()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRotateTransform).get_Angle(&_ret));
+		return _ret;
+	}
+	final void Angle(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRotateTransform).set_Angle(value));
+	}
 }
 
 interface ScaleTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.IScaleTransform
 {
+extern(Windows):
+	final double CenterX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).get_CenterX(&_ret));
+		return _ret;
+	}
+	final void CenterX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).set_CenterX(value));
+	}
+	final double CenterY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).get_CenterY(&_ret));
+		return _ret;
+	}
+	final void CenterY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).set_CenterY(value));
+	}
+	final double ScaleX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).get_ScaleX(&_ret));
+		return _ret;
+	}
+	final void ScaleX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).set_ScaleX(value));
+	}
+	final double ScaleY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).get_ScaleY(&_ret));
+		return _ret;
+	}
+	final void ScaleY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).set_ScaleY(value));
+	}
 }
 
 interface SkewTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.ISkewTransform
 {
+extern(Windows):
+	final double CenterX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).get_CenterX(&_ret));
+		return _ret;
+	}
+	final void CenterX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).set_CenterX(value));
+	}
+	final double CenterY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).get_CenterY(&_ret));
+		return _ret;
+	}
+	final void CenterY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).set_CenterY(value));
+	}
+	final double AngleX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).get_AngleX(&_ret));
+		return _ret;
+	}
+	final void AngleX(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).set_AngleX(value));
+	}
+	final double AngleY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).get_AngleY(&_ret));
+		return _ret;
+	}
+	final void AngleY(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).set_AngleY(value));
+	}
 }
 
 interface SolidColorBrush : Windows.UI.Xaml.Media.Brush, Windows.UI.Xaml.Media.ISolidColorBrush
 {
+extern(Windows):
+	final Windows.UI.Color Color()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISolidColorBrush).get_Color(&_ret));
+		return _ret;
+	}
+	final void Color(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISolidColorBrush).set_Color(value));
+	}
 }
 
 interface TileBrush : Windows.UI.Xaml.Media.Brush, Windows.UI.Xaml.Media.ITileBrush
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.AlignmentX AlignmentX()
+	{
+		Windows.UI.Xaml.Media.AlignmentX _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).get_AlignmentX(&_ret));
+		return _ret;
+	}
+	final void AlignmentX(Windows.UI.Xaml.Media.AlignmentX value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).set_AlignmentX(value));
+	}
+	final Windows.UI.Xaml.Media.AlignmentY AlignmentY()
+	{
+		Windows.UI.Xaml.Media.AlignmentY _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).get_AlignmentY(&_ret));
+		return _ret;
+	}
+	final void AlignmentY(Windows.UI.Xaml.Media.AlignmentY value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).set_AlignmentY(value));
+	}
+	final Windows.UI.Xaml.Media.Stretch Stretch()
+	{
+		Windows.UI.Xaml.Media.Stretch _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).get_Stretch(&_ret));
+		return _ret;
+	}
+	final void Stretch(Windows.UI.Xaml.Media.Stretch value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).set_Stretch(value));
+	}
 }
 
 interface TimelineMarker : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.ITimelineMarker
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Time()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarker).get_Time(&_ret));
+		return _ret;
+	}
+	final void Time(Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarker).set_Time(value));
+	}
+	final HSTRING Type()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarker).get_Type(&_ret));
+		return _ret;
+	}
+	final void Type(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarker).set_Type(value));
+	}
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarker).get_Text(&_ret));
+		return _ret;
+	}
+	final void Text(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarker).set_Text(value));
+	}
 }
 
 interface TimelineMarkerCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.TimelineMarker)
@@ -1333,6 +2305,17 @@ interface TimelineMarkerCollection : Windows.Foundation.Collections.IVector!(Win
 
 interface TimelineMarkerRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Media.ITimelineMarkerRoutedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.TimelineMarker Marker()
+	{
+		Windows.UI.Xaml.Media.TimelineMarker _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarkerRoutedEventArgs).get_Marker(&_ret));
+		return _ret;
+	}
+	final void Marker(Windows.UI.Xaml.Media.TimelineMarker value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarkerRoutedEventArgs).set_Marker(value));
+	}
 }
 
 interface Transform : Windows.UI.Xaml.Media.GeneralTransform, Windows.UI.Xaml.Media.ITransform
@@ -1345,10 +2328,48 @@ interface TransformCollection : Windows.Foundation.Collections.IVector!(Windows.
 
 interface TransformGroup : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.ITransformGroup
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.TransformCollection Children()
+	{
+		Windows.UI.Xaml.Media.TransformCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITransformGroup).get_Children(&_ret));
+		return _ret;
+	}
+	final void Children(Windows.UI.Xaml.Media.TransformCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITransformGroup).set_Children(value));
+	}
+	final Windows.UI.Xaml.Media.Matrix Value()
+	{
+		Windows.UI.Xaml.Media.Matrix _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITransformGroup).get_Value(&_ret));
+		return _ret;
+	}
 }
 
 interface TranslateTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.ITranslateTransform
 {
+extern(Windows):
+	final double X()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITranslateTransform).get_X(&_ret));
+		return _ret;
+	}
+	final void X(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITranslateTransform).set_X(value));
+	}
+	final double Y()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITranslateTransform).get_Y(&_ret));
+		return _ret;
+	}
+	final void Y(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITranslateTransform).set_Y(value));
+	}
 }
 
 interface VisualTreeHelper : Windows.UI.Xaml.Media.IVisualTreeHelper
@@ -1357,10 +2378,64 @@ interface VisualTreeHelper : Windows.UI.Xaml.Media.IVisualTreeHelper
 
 interface XamlCompositionBrushBase : Windows.UI.Xaml.Media.Brush, Windows.UI.Xaml.Media.IXamlCompositionBrushBase, Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides, Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected
 {
+extern(Windows):
+	final Windows.UI.Color FallbackColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBase).get_FallbackColor(&_ret));
+		return _ret;
+	}
+	final void FallbackColor(Windows.UI.Color value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBase).set_FallbackColor(value));
+	}
+	final void OnConnected()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides).abi_OnConnected());
+	}
+	final void OnDisconnected()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides).abi_OnDisconnected());
+	}
+	final Windows.UI.Composition.CompositionBrush CompositionBrush()
+	{
+		Windows.UI.Composition.CompositionBrush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected).get_CompositionBrush(&_ret));
+		return _ret;
+	}
+	final void CompositionBrush(Windows.UI.Composition.CompositionBrush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected).set_CompositionBrush(value));
+	}
 }
 
 interface XamlLight : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IXamlLight, Windows.UI.Xaml.Media.IXamlLightOverrides, Windows.UI.Xaml.Media.IXamlLightProtected
 {
+extern(Windows):
+	final HSTRING GetId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlLightOverrides).abi_GetId(&_ret));
+		return _ret;
+	}
+	final void OnConnected(Windows.UI.Xaml.UIElement newElement)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlLightOverrides).abi_OnConnected(newElement));
+	}
+	final void OnDisconnected(Windows.UI.Xaml.UIElement oldElement)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlLightOverrides).abi_OnDisconnected(oldElement));
+	}
+	final Windows.UI.Composition.CompositionLight CompositionLight()
+	{
+		Windows.UI.Composition.CompositionLight _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlLightProtected).get_CompositionLight(&_ret));
+		return _ret;
+	}
+	final void CompositionLight(Windows.UI.Composition.CompositionLight value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlLightProtected).set_CompositionLight(value));
+	}
 }
 
 enum AlignmentX

@@ -100,34 +100,182 @@ extern(Windows):
 
 interface BluetoothLEAdvertisementPublisherTriggerDetails : Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementPublisherTriggerDetails
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatus Status()
+	{
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatus _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementPublisherTriggerDetails).get_Status(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothError Error()
+	{
+		Windows.Devices.Bluetooth.BluetoothError _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementPublisherTriggerDetails).get_Error(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAdvertisementWatcherTriggerDetails : Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementWatcherTriggerDetails
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.BluetoothError Error()
+	{
+		Windows.Devices.Bluetooth.BluetoothError _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementWatcherTriggerDetails).get_Error(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs) Advertisements()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementWatcherTriggerDetails).get_Advertisements(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothSignalStrengthFilter SignalStrengthFilter()
+	{
+		Windows.Devices.Bluetooth.BluetoothSignalStrengthFilter _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementWatcherTriggerDetails).get_SignalStrengthFilter(&_ret));
+		return _ret;
+	}
 }
 
 interface GattCharacteristicNotificationTriggerDetails : Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails, Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails2
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic Characteristic()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails).get_Characteristic(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer Value()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails).get_Value(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothError Error()
+	{
+		Windows.Devices.Bluetooth.BluetoothError _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails2).get_Error(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.Background.BluetoothEventTriggeringMode EventTriggeringMode()
+	{
+		Windows.Devices.Bluetooth.Background.BluetoothEventTriggeringMode _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails2).get_EventTriggeringMode(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattValueChangedEventArgs) ValueChangedEvents()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattValueChangedEventArgs) _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails2).get_ValueChangedEvents(&_ret));
+		return _ret;
+	}
 }
 
 interface GattServiceProviderConnection : Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection
 {
+extern(Windows):
+	final HSTRING TriggerId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection).get_TriggerId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalService Service()
+	{
+		Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalService _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection).get_Service(&_ret));
+		return _ret;
+	}
+	final void Start()
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection).abi_Start());
+	}
 }
 
 interface GattServiceProviderTriggerDetails : Windows.Devices.Bluetooth.Background.IGattServiceProviderTriggerDetails
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.Background.GattServiceProviderConnection Connection()
+	{
+		Windows.Devices.Bluetooth.Background.GattServiceProviderConnection _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattServiceProviderTriggerDetails).get_Connection(&_ret));
+		return _ret;
+	}
 }
 
 interface RfcommConnectionTriggerDetails : Windows.Devices.Bluetooth.Background.IRfcommConnectionTriggerDetails
 {
+extern(Windows):
+	final Windows.Networking.Sockets.StreamSocket Socket()
+	{
+		Windows.Networking.Sockets.StreamSocket _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommConnectionTriggerDetails).get_Socket(&_ret));
+		return _ret;
+	}
+	final bool Incoming()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommConnectionTriggerDetails).get_Incoming(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Bluetooth.BluetoothDevice RemoteDevice()
+	{
+		Windows.Devices.Bluetooth.BluetoothDevice _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommConnectionTriggerDetails).get_RemoteDevice(&_ret));
+		return _ret;
+	}
 }
 
 interface RfcommInboundConnectionInformation : Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer SdpRecord()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation).get_SdpRecord(&_ret));
+		return _ret;
+	}
+	final void SdpRecord(Windows.Storage.Streams.IBuffer value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation).set_SdpRecord(value));
+	}
+	final Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId LocalServiceId()
+	{
+		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation).get_LocalServiceId(&_ret));
+		return _ret;
+	}
+	final void LocalServiceId(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation).set_LocalServiceId(value));
+	}
+	final Windows.Devices.Bluetooth.BluetoothServiceCapabilities ServiceCapabilities()
+	{
+		Windows.Devices.Bluetooth.BluetoothServiceCapabilities _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation).get_ServiceCapabilities(&_ret));
+		return _ret;
+	}
+	final void ServiceCapabilities(Windows.Devices.Bluetooth.BluetoothServiceCapabilities value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation).set_ServiceCapabilities(value));
+	}
 }
 
 interface RfcommOutboundConnectionInformation : Windows.Devices.Bluetooth.Background.IRfcommOutboundConnectionInformation
 {
+extern(Windows):
+	final Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId RemoteServiceId()
+	{
+		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommOutboundConnectionInformation).get_RemoteServiceId(&_ret));
+		return _ret;
+	}
+	final void RemoteServiceId(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId value)
+	{
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommOutboundConnectionInformation).set_RemoteServiceId(value));
+	}
 }
 
 enum BluetoothEventTriggeringMode

@@ -49,18 +49,94 @@ extern(Windows):
 
 interface UserDataAccountPartnerAccountInfo : Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountPartnerAccountInfo
 {
+extern(Windows):
+	final HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountPartnerAccountInfo).get_DisplayName(&_ret));
+		return _ret;
+	}
+	final UINT32 Priority()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountPartnerAccountInfo).get_Priority(&_ret));
+		return _ret;
+	}
+	final Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderPartnerAccountKind AccountKind()
+	{
+		Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderPartnerAccountKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountPartnerAccountInfo).get_AccountKind(&_ret));
+		return _ret;
+	}
 }
 
 interface UserDataAccountProviderAddAccountOperation : Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderAddAccountOperation, Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation
 {
+extern(Windows):
+	final Windows.ApplicationModel.UserDataAccounts.UserDataAccountContentKinds ContentKinds()
+	{
+		Windows.ApplicationModel.UserDataAccounts.UserDataAccountContentKinds _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderAddAccountOperation).get_ContentKinds(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccountInfo) PartnerAccountInfos()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccountInfo) _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderAddAccountOperation).get_PartnerAccountInfos(&_ret));
+		return _ret;
+	}
+	final void ReportCompleted(HSTRING userDataAccountId)
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderAddAccountOperation).abi_ReportCompleted(userDataAccountId));
+	}
+	final Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind Kind()
+	{
+		Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation).get_Kind(&_ret));
+		return _ret;
+	}
 }
 
 interface UserDataAccountProviderResolveErrorsOperation : Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderResolveErrorsOperation, Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation
 {
+extern(Windows):
+	final HSTRING UserDataAccountId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderResolveErrorsOperation).get_UserDataAccountId(&_ret));
+		return _ret;
+	}
+	final void ReportCompleted()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderResolveErrorsOperation).abi_ReportCompleted());
+	}
+	final Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind Kind()
+	{
+		Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation).get_Kind(&_ret));
+		return _ret;
+	}
 }
 
 interface UserDataAccountProviderSettingsOperation : Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderSettingsOperation, Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation
 {
+extern(Windows):
+	final HSTRING UserDataAccountId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderSettingsOperation).get_UserDataAccountId(&_ret));
+		return _ret;
+	}
+	final void ReportCompleted()
+	{
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderSettingsOperation).abi_ReportCompleted());
+	}
+	final Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind Kind()
+	{
+		Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind _ret;
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation).get_Kind(&_ret));
+		return _ret;
+	}
 }
 
 enum UserDataAccountProviderOperationKind

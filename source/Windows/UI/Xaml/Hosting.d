@@ -93,4 +93,47 @@ interface ElementCompositionPreview : Windows.UI.Xaml.Hosting.IElementCompositio
 
 interface XamlUIPresenter : Windows.UI.Xaml.Hosting.IXamlUIPresenter
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement RootElement()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).get_RootElement(&_ret));
+		return _ret;
+	}
+	final void RootElement(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).set_RootElement(value));
+	}
+	final HSTRING ThemeKey()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).get_ThemeKey(&_ret));
+		return _ret;
+	}
+	final void ThemeKey(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).set_ThemeKey(value));
+	}
+	final HSTRING ThemeResourcesXaml()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).get_ThemeResourcesXaml(&_ret));
+		return _ret;
+	}
+	final void ThemeResourcesXaml(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).set_ThemeResourcesXaml(value));
+	}
+	final void SetSize(INT32 width, INT32 height)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).abi_SetSize(width, height));
+	}
+	final void Render()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).abi_Render());
+	}
+	final void Present()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).abi_Present());
+	}
 }

@@ -519,10 +519,28 @@ interface AccessKeyDisplayDismissedEventArgs : Windows.UI.Xaml.Input.IAccessKeyD
 
 interface AccessKeyDisplayRequestedEventArgs : Windows.UI.Xaml.Input.IAccessKeyDisplayRequestedEventArgs
 {
+extern(Windows):
+	final HSTRING PressedKeys()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IAccessKeyDisplayRequestedEventArgs).get_PressedKeys(&_ret));
+		return _ret;
+	}
 }
 
 interface AccessKeyInvokedEventArgs : Windows.UI.Xaml.Input.IAccessKeyInvokedEventArgs
 {
+extern(Windows):
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IAccessKeyInvokedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IAccessKeyInvokedEventArgs).set_Handled(value));
+	}
 }
 
 interface AccessKeyManager : Windows.UI.Xaml.Input.IAccessKeyManager
@@ -531,14 +549,95 @@ interface AccessKeyManager : Windows.UI.Xaml.Input.IAccessKeyManager
 
 interface ContextRequestedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IContextRequestedEventArgs
 {
+extern(Windows):
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IContextRequestedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IContextRequestedEventArgs).set_Handled(value));
+	}
+	final bool TryGetPosition(Windows.UI.Xaml.UIElement relativeTo, Windows.Foundation.Point* out_point)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IContextRequestedEventArgs).abi_TryGetPosition(relativeTo, out_point, &_ret));
+		return _ret;
+	}
 }
 
 interface DoubleTappedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IDoubleTappedRoutedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IDoubleTappedRoutedEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IDoubleTappedRoutedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IDoubleTappedRoutedEventArgs).set_Handled(value));
+	}
+	final Windows.Foundation.Point GetPosition(Windows.UI.Xaml.UIElement relativeTo)
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IDoubleTappedRoutedEventArgs).abi_GetPosition(relativeTo, &_ret));
+		return _ret;
+	}
 }
 
 interface FindNextElementOptions : Windows.UI.Xaml.Input.IFindNextElementOptions
 {
+extern(Windows):
+	final Windows.UI.Xaml.DependencyObject SearchRoot()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IFindNextElementOptions).get_SearchRoot(&_ret));
+		return _ret;
+	}
+	final void SearchRoot(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IFindNextElementOptions).set_SearchRoot(value));
+	}
+	final Windows.Foundation.Rect ExclusionRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IFindNextElementOptions).get_ExclusionRect(&_ret));
+		return _ret;
+	}
+	final void ExclusionRect(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IFindNextElementOptions).set_ExclusionRect(value));
+	}
+	final Windows.Foundation.Rect HintRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IFindNextElementOptions).get_HintRect(&_ret));
+		return _ret;
+	}
+	final void HintRect(Windows.Foundation.Rect value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IFindNextElementOptions).set_HintRect(value));
+	}
+	final Windows.UI.Xaml.Input.XYFocusNavigationStrategyOverride XYFocusNavigationStrategyOverride()
+	{
+		Windows.UI.Xaml.Input.XYFocusNavigationStrategyOverride _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IFindNextElementOptions).get_XYFocusNavigationStrategyOverride(&_ret));
+		return _ret;
+	}
+	final void XYFocusNavigationStrategyOverride(Windows.UI.Xaml.Input.XYFocusNavigationStrategyOverride value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IFindNextElementOptions).set_XYFocusNavigationStrategyOverride(value));
+	}
 }
 
 interface FocusManager : Windows.UI.Xaml.Input.IFocusManager
@@ -547,82 +646,742 @@ interface FocusManager : Windows.UI.Xaml.Input.IFocusManager
 
 interface GettingFocusEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IGettingFocusEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.DependencyObject OldFocusedElement()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IGettingFocusEventArgs).get_OldFocusedElement(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.DependencyObject NewFocusedElement()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IGettingFocusEventArgs).get_NewFocusedElement(&_ret));
+		return _ret;
+	}
+	final void NewFocusedElement(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IGettingFocusEventArgs).set_NewFocusedElement(value));
+	}
+	final Windows.UI.Xaml.FocusState FocusState()
+	{
+		Windows.UI.Xaml.FocusState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IGettingFocusEventArgs).get_FocusState(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Input.FocusNavigationDirection Direction()
+	{
+		Windows.UI.Xaml.Input.FocusNavigationDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IGettingFocusEventArgs).get_Direction(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IGettingFocusEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IGettingFocusEventArgs).set_Handled(value));
+	}
+	final Windows.UI.Xaml.Input.FocusInputDeviceKind InputDevice()
+	{
+		Windows.UI.Xaml.Input.FocusInputDeviceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IGettingFocusEventArgs).get_InputDevice(&_ret));
+		return _ret;
+	}
+	final bool Cancel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IGettingFocusEventArgs).get_Cancel(&_ret));
+		return _ret;
+	}
+	final void Cancel(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IGettingFocusEventArgs).set_Cancel(value));
+	}
 }
 
 interface HoldingRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IHoldingRoutedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IHoldingRoutedEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.HoldingState HoldingState()
+	{
+		Windows.UI.Input.HoldingState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IHoldingRoutedEventArgs).get_HoldingState(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IHoldingRoutedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IHoldingRoutedEventArgs).set_Handled(value));
+	}
+	final Windows.Foundation.Point GetPosition(Windows.UI.Xaml.UIElement relativeTo)
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IHoldingRoutedEventArgs).abi_GetPosition(relativeTo, &_ret));
+		return _ret;
+	}
 }
 
 interface InertiaExpansionBehavior : Windows.UI.Xaml.Input.IInertiaExpansionBehavior
 {
+extern(Windows):
+	final double DesiredDeceleration()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInertiaExpansionBehavior).get_DesiredDeceleration(&_ret));
+		return _ret;
+	}
+	final void DesiredDeceleration(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInertiaExpansionBehavior).set_DesiredDeceleration(value));
+	}
+	final double DesiredExpansion()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInertiaExpansionBehavior).get_DesiredExpansion(&_ret));
+		return _ret;
+	}
+	final void DesiredExpansion(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInertiaExpansionBehavior).set_DesiredExpansion(value));
+	}
 }
 
 interface InertiaRotationBehavior : Windows.UI.Xaml.Input.IInertiaRotationBehavior
 {
+extern(Windows):
+	final double DesiredDeceleration()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInertiaRotationBehavior).get_DesiredDeceleration(&_ret));
+		return _ret;
+	}
+	final void DesiredDeceleration(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInertiaRotationBehavior).set_DesiredDeceleration(value));
+	}
+	final double DesiredRotation()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInertiaRotationBehavior).get_DesiredRotation(&_ret));
+		return _ret;
+	}
+	final void DesiredRotation(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInertiaRotationBehavior).set_DesiredRotation(value));
+	}
 }
 
 interface InertiaTranslationBehavior : Windows.UI.Xaml.Input.IInertiaTranslationBehavior
 {
+extern(Windows):
+	final double DesiredDeceleration()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInertiaTranslationBehavior).get_DesiredDeceleration(&_ret));
+		return _ret;
+	}
+	final void DesiredDeceleration(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInertiaTranslationBehavior).set_DesiredDeceleration(value));
+	}
+	final double DesiredDisplacement()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInertiaTranslationBehavior).get_DesiredDisplacement(&_ret));
+		return _ret;
+	}
+	final void DesiredDisplacement(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInertiaTranslationBehavior).set_DesiredDisplacement(value));
+	}
 }
 
 interface InputScope : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Input.IInputScope
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Input.InputScopeName) Names()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Input.InputScopeName) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInputScope).get_Names(&_ret));
+		return _ret;
+	}
 }
 
 interface InputScopeName : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Input.IInputScopeName
 {
+extern(Windows):
+	final Windows.UI.Xaml.Input.InputScopeNameValue NameValue()
+	{
+		Windows.UI.Xaml.Input.InputScopeNameValue _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInputScopeName).get_NameValue(&_ret));
+		return _ret;
+	}
+	final void NameValue(Windows.UI.Xaml.Input.InputScopeNameValue value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInputScopeName).set_NameValue(value));
+	}
 }
 
 interface KeyRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IKeyRoutedEventArgs, Windows.UI.Xaml.Input.IKeyRoutedEventArgs2, Windows.UI.Xaml.Input.IKeyRoutedEventArgs3
 {
+extern(Windows):
+	final Windows.System.VirtualKey Key()
+	{
+		Windows.System.VirtualKey _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IKeyRoutedEventArgs).get_Key(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Core.CorePhysicalKeyStatus KeyStatus()
+	{
+		Windows.UI.Core.CorePhysicalKeyStatus _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IKeyRoutedEventArgs).get_KeyStatus(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IKeyRoutedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IKeyRoutedEventArgs).set_Handled(value));
+	}
+	final Windows.System.VirtualKey OriginalKey()
+	{
+		Windows.System.VirtualKey _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IKeyRoutedEventArgs2).get_OriginalKey(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceId()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IKeyRoutedEventArgs3).get_DeviceId(&_ret));
+		return _ret;
+	}
 }
 
 interface LosingFocusEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.ILosingFocusEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.DependencyObject OldFocusedElement()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ILosingFocusEventArgs).get_OldFocusedElement(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.DependencyObject NewFocusedElement()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ILosingFocusEventArgs).get_NewFocusedElement(&_ret));
+		return _ret;
+	}
+	final void NewFocusedElement(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ILosingFocusEventArgs).set_NewFocusedElement(value));
+	}
+	final Windows.UI.Xaml.FocusState FocusState()
+	{
+		Windows.UI.Xaml.FocusState _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ILosingFocusEventArgs).get_FocusState(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Input.FocusNavigationDirection Direction()
+	{
+		Windows.UI.Xaml.Input.FocusNavigationDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ILosingFocusEventArgs).get_Direction(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ILosingFocusEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ILosingFocusEventArgs).set_Handled(value));
+	}
+	final Windows.UI.Xaml.Input.FocusInputDeviceKind InputDevice()
+	{
+		Windows.UI.Xaml.Input.FocusInputDeviceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ILosingFocusEventArgs).get_InputDevice(&_ret));
+		return _ret;
+	}
+	final bool Cancel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ILosingFocusEventArgs).get_Cancel(&_ret));
+		return _ret;
+	}
+	final void Cancel(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ILosingFocusEventArgs).set_Cancel(value));
+	}
 }
 
 interface ManipulationCompletedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IManipulationCompletedRoutedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement Container()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationCompletedRoutedEventArgs).get_Container(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationCompletedRoutedEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final bool IsInertial()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationCompletedRoutedEventArgs).get_IsInertial(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationDelta Cumulative()
+	{
+		Windows.UI.Input.ManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationCompletedRoutedEventArgs).get_Cumulative(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationVelocities Velocities()
+	{
+		Windows.UI.Input.ManipulationVelocities _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationCompletedRoutedEventArgs).get_Velocities(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationCompletedRoutedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationCompletedRoutedEventArgs).set_Handled(value));
+	}
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationCompletedRoutedEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
 }
 
 interface ManipulationDeltaRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement Container()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs).get_Container(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final bool IsInertial()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs).get_IsInertial(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationDelta Delta()
+	{
+		Windows.UI.Input.ManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs).get_Delta(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationDelta Cumulative()
+	{
+		Windows.UI.Input.ManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs).get_Cumulative(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationVelocities Velocities()
+	{
+		Windows.UI.Input.ManipulationVelocities _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs).get_Velocities(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs).set_Handled(value));
+	}
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs).abi_Complete());
+	}
 }
 
 interface ManipulationInertiaStartingRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement Container()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).get_Container(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Input.InertiaExpansionBehavior ExpansionBehavior()
+	{
+		Windows.UI.Xaml.Input.InertiaExpansionBehavior _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).get_ExpansionBehavior(&_ret));
+		return _ret;
+	}
+	final void ExpansionBehavior(Windows.UI.Xaml.Input.InertiaExpansionBehavior value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).set_ExpansionBehavior(value));
+	}
+	final Windows.UI.Xaml.Input.InertiaRotationBehavior RotationBehavior()
+	{
+		Windows.UI.Xaml.Input.InertiaRotationBehavior _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).get_RotationBehavior(&_ret));
+		return _ret;
+	}
+	final void RotationBehavior(Windows.UI.Xaml.Input.InertiaRotationBehavior value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).set_RotationBehavior(value));
+	}
+	final Windows.UI.Xaml.Input.InertiaTranslationBehavior TranslationBehavior()
+	{
+		Windows.UI.Xaml.Input.InertiaTranslationBehavior _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).get_TranslationBehavior(&_ret));
+		return _ret;
+	}
+	final void TranslationBehavior(Windows.UI.Xaml.Input.InertiaTranslationBehavior value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).set_TranslationBehavior(value));
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).set_Handled(value));
+	}
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationDelta Delta()
+	{
+		Windows.UI.Input.ManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).get_Delta(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationDelta Cumulative()
+	{
+		Windows.UI.Input.ManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).get_Cumulative(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationVelocities Velocities()
+	{
+		Windows.UI.Input.ManipulationVelocities _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).get_Velocities(&_ret));
+		return _ret;
+	}
 }
 
 interface ManipulationPivot : Windows.UI.Xaml.Input.IManipulationPivot
 {
+extern(Windows):
+	final Windows.Foundation.Point Center()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationPivot).get_Center(&_ret));
+		return _ret;
+	}
+	final void Center(Windows.Foundation.Point value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationPivot).set_Center(value));
+	}
+	final double Radius()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationPivot).get_Radius(&_ret));
+		return _ret;
+	}
+	final void Radius(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationPivot).set_Radius(value));
+	}
 }
 
 interface ManipulationStartedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement Container()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).get_Container(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Point Position()
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).set_Handled(value));
+	}
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Input.ManipulationDelta Cumulative()
+	{
+		Windows.UI.Input.ManipulationDelta _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).get_Cumulative(&_ret));
+		return _ret;
+	}
+	final void Complete()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).abi_Complete());
+	}
 }
 
 interface ManipulationStartingRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IManipulationStartingRoutedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Input.ManipulationModes Mode()
+	{
+		Windows.UI.Xaml.Input.ManipulationModes _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartingRoutedEventArgs).get_Mode(&_ret));
+		return _ret;
+	}
+	final void Mode(Windows.UI.Xaml.Input.ManipulationModes value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartingRoutedEventArgs).set_Mode(value));
+	}
+	final Windows.UI.Xaml.UIElement Container()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartingRoutedEventArgs).get_Container(&_ret));
+		return _ret;
+	}
+	final void Container(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartingRoutedEventArgs).set_Container(value));
+	}
+	final Windows.UI.Xaml.Input.ManipulationPivot Pivot()
+	{
+		Windows.UI.Xaml.Input.ManipulationPivot _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartingRoutedEventArgs).get_Pivot(&_ret));
+		return _ret;
+	}
+	final void Pivot(Windows.UI.Xaml.Input.ManipulationPivot value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartingRoutedEventArgs).set_Pivot(value));
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartingRoutedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartingRoutedEventArgs).set_Handled(value));
+	}
 }
 
 interface NoFocusCandidateFoundEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.INoFocusCandidateFoundEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Input.FocusNavigationDirection Direction()
+	{
+		Windows.UI.Xaml.Input.FocusNavigationDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.INoFocusCandidateFoundEventArgs).get_Direction(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.INoFocusCandidateFoundEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.INoFocusCandidateFoundEventArgs).set_Handled(value));
+	}
+	final Windows.UI.Xaml.Input.FocusInputDeviceKind InputDevice()
+	{
+		Windows.UI.Xaml.Input.FocusInputDeviceKind _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.INoFocusCandidateFoundEventArgs).get_InputDevice(&_ret));
+		return _ret;
+	}
 }
 
 interface Pointer : Windows.UI.Xaml.Input.IPointer
 {
+extern(Windows):
+	final UINT32 PointerId()
+	{
+		UINT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IPointer).get_PointerId(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IPointer).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final bool IsInContact()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IPointer).get_IsInContact(&_ret));
+		return _ret;
+	}
+	final bool IsInRange()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IPointer).get_IsInRange(&_ret));
+		return _ret;
+	}
 }
 
 interface PointerRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IPointerRoutedEventArgs
 {
+extern(Windows):
+	final Windows.UI.Xaml.Input.Pointer Pointer()
+	{
+		Windows.UI.Xaml.Input.Pointer _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IPointerRoutedEventArgs).get_Pointer(&_ret));
+		return _ret;
+	}
+	final Windows.System.VirtualKeyModifiers KeyModifiers()
+	{
+		Windows.System.VirtualKeyModifiers _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IPointerRoutedEventArgs).get_KeyModifiers(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IPointerRoutedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IPointerRoutedEventArgs).set_Handled(value));
+	}
+	final Windows.UI.Input.PointerPoint GetCurrentPoint(Windows.UI.Xaml.UIElement relativeTo)
+	{
+		Windows.UI.Input.PointerPoint _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IPointerRoutedEventArgs).abi_GetCurrentPoint(relativeTo, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) GetIntermediatePoints(Windows.UI.Xaml.UIElement relativeTo)
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IPointerRoutedEventArgs).abi_GetIntermediatePoints(relativeTo, &_ret));
+		return _ret;
+	}
 }
 
 interface RightTappedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IRightTappedRoutedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IRightTappedRoutedEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IRightTappedRoutedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IRightTappedRoutedEventArgs).set_Handled(value));
+	}
+	final Windows.Foundation.Point GetPosition(Windows.UI.Xaml.UIElement relativeTo)
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.IRightTappedRoutedEventArgs).abi_GetPosition(relativeTo, &_ret));
+		return _ret;
+	}
 }
 
 interface TappedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.ITappedRoutedEventArgs
 {
+extern(Windows):
+	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
+	{
+		Windows.Devices.Input.PointerDeviceType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ITappedRoutedEventArgs).get_PointerDeviceType(&_ret));
+		return _ret;
+	}
+	final bool Handled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ITappedRoutedEventArgs).get_Handled(&_ret));
+		return _ret;
+	}
+	final void Handled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ITappedRoutedEventArgs).set_Handled(value));
+	}
+	final Windows.Foundation.Point GetPosition(Windows.UI.Xaml.UIElement relativeTo)
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Input.ITappedRoutedEventArgs).abi_GetPosition(relativeTo, &_ret));
+		return _ret;
+	}
 }
 
 enum FocusInputDeviceKind

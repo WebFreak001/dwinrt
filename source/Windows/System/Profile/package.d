@@ -135,6 +135,19 @@ interface AnalyticsInfo
 
 interface AnalyticsVersionInfo : Windows.System.Profile.IAnalyticsVersionInfo
 {
+extern(Windows):
+	final HSTRING DeviceFamily()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.System.Profile.IAnalyticsVersionInfo).get_DeviceFamily(&_ret));
+		return _ret;
+	}
+	final HSTRING DeviceFamilyVersion()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.System.Profile.IAnalyticsVersionInfo).get_DeviceFamilyVersion(&_ret));
+		return _ret;
+	}
 }
 
 interface EducationSettings
@@ -147,6 +160,25 @@ interface HardwareIdentification
 
 interface HardwareToken : Windows.System.Profile.IHardwareToken
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer Id()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.System.Profile.IHardwareToken).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer Signature()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.System.Profile.IHardwareToken).get_Signature(&_ret));
+		return _ret;
+	}
+	final Windows.Storage.Streams.IBuffer Certificate()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.System.Profile.IHardwareToken).get_Certificate(&_ret));
+		return _ret;
+	}
 }
 
 interface KnownRetailInfoProperties
@@ -171,6 +203,19 @@ interface SystemIdentification
 
 interface SystemIdentificationInfo : Windows.System.Profile.ISystemIdentificationInfo
 {
+extern(Windows):
+	final Windows.Storage.Streams.IBuffer Id()
+	{
+		Windows.Storage.Streams.IBuffer _ret;
+		Debug.OK(this.as!(Windows.System.Profile.ISystemIdentificationInfo).get_Id(&_ret));
+		return _ret;
+	}
+	final Windows.System.Profile.SystemIdentificationSource Source()
+	{
+		Windows.System.Profile.SystemIdentificationSource _ret;
+		Debug.OK(this.as!(Windows.System.Profile.ISystemIdentificationInfo).get_Source(&_ret));
+		return _ret;
+	}
 }
 
 enum PlatformDataCollectionLevel

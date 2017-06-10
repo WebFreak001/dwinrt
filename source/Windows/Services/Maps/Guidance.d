@@ -218,46 +218,509 @@ extern(Windows):
 
 interface GuidanceAudioNotificationRequestedEventArgs : Windows.Services.Maps.Guidance.IGuidanceAudioNotificationRequestedEventArgs
 {
+extern(Windows):
+	final Windows.Services.Maps.Guidance.GuidanceAudioNotificationKind AudioNotification()
+	{
+		Windows.Services.Maps.Guidance.GuidanceAudioNotificationKind _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceAudioNotificationRequestedEventArgs).get_AudioNotification(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) AudioFilePaths()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceAudioNotificationRequestedEventArgs).get_AudioFilePaths(&_ret));
+		return _ret;
+	}
+	final HSTRING AudioText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceAudioNotificationRequestedEventArgs).get_AudioText(&_ret));
+		return _ret;
+	}
 }
 
 interface GuidanceLaneInfo : Windows.Services.Maps.Guidance.IGuidanceLaneInfo
 {
+extern(Windows):
+	final Windows.Services.Maps.Guidance.GuidanceLaneMarkers LaneMarkers()
+	{
+		Windows.Services.Maps.Guidance.GuidanceLaneMarkers _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceLaneInfo).get_LaneMarkers(&_ret));
+		return _ret;
+	}
+	final bool IsOnRoute()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceLaneInfo).get_IsOnRoute(&_ret));
+		return _ret;
+	}
 }
 
 interface GuidanceManeuver : Windows.Services.Maps.Guidance.IGuidanceManeuver
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geopoint StartLocation()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_StartLocation(&_ret));
+		return _ret;
+	}
+	final INT32 DistanceFromRouteStart()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_DistanceFromRouteStart(&_ret));
+		return _ret;
+	}
+	final INT32 DistanceFromPreviousManeuver()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_DistanceFromPreviousManeuver(&_ret));
+		return _ret;
+	}
+	final HSTRING DepartureRoadName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_DepartureRoadName(&_ret));
+		return _ret;
+	}
+	final HSTRING NextRoadName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_NextRoadName(&_ret));
+		return _ret;
+	}
+	final HSTRING DepartureShortRoadName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_DepartureShortRoadName(&_ret));
+		return _ret;
+	}
+	final HSTRING NextShortRoadName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_NextShortRoadName(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.Guidance.GuidanceManeuverKind Kind()
+	{
+		Windows.Services.Maps.Guidance.GuidanceManeuverKind _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_Kind(&_ret));
+		return _ret;
+	}
+	final INT32 StartAngle()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_StartAngle(&_ret));
+		return _ret;
+	}
+	final INT32 EndAngle()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_EndAngle(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.Guidance.GuidanceRoadSignpost RoadSignpost()
+	{
+		Windows.Services.Maps.Guidance.GuidanceRoadSignpost _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_RoadSignpost(&_ret));
+		return _ret;
+	}
+	final HSTRING InstructionText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_InstructionText(&_ret));
+		return _ret;
+	}
 }
 
 interface GuidanceMapMatchedCoordinate : Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate
 {
+extern(Windows):
+	final Windows.Devices.Geolocation.Geopoint Location()
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate).get_Location(&_ret));
+		return _ret;
+	}
+	final double CurrentHeading()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate).get_CurrentHeading(&_ret));
+		return _ret;
+	}
+	final double CurrentSpeed()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate).get_CurrentSpeed(&_ret));
+		return _ret;
+	}
+	final bool IsOnStreet()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate).get_IsOnStreet(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.Guidance.GuidanceRoadSegment Road()
+	{
+		Windows.Services.Maps.Guidance.GuidanceRoadSegment _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate).get_Road(&_ret));
+		return _ret;
+	}
 }
 
 interface GuidanceNavigator : Windows.Services.Maps.Guidance.IGuidanceNavigator, Windows.Services.Maps.Guidance.IGuidanceNavigator2
 {
+extern(Windows):
+	final void StartNavigating(Windows.Services.Maps.Guidance.GuidanceRoute route)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_StartNavigating(route));
+	}
+	final void StartSimulating(Windows.Services.Maps.Guidance.GuidanceRoute route, INT32 speedInMetersPerSecond)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_StartSimulating(route, speedInMetersPerSecond));
+	}
+	final void StartTracking()
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_StartTracking());
+	}
+	final void Pause()
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_Pause());
+	}
+	final void Resume()
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_Resume());
+	}
+	final void Stop()
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_Stop());
+	}
+	final void RepeatLastAudioNotification()
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_RepeatLastAudioNotification());
+	}
+	final Windows.Services.Maps.Guidance.GuidanceAudioMeasurementSystem AudioMeasurementSystem()
+	{
+		Windows.Services.Maps.Guidance.GuidanceAudioMeasurementSystem _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).get_AudioMeasurementSystem(&_ret));
+		return _ret;
+	}
+	final void AudioMeasurementSystem(Windows.Services.Maps.Guidance.GuidanceAudioMeasurementSystem value)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).set_AudioMeasurementSystem(value));
+	}
+	final Windows.Services.Maps.Guidance.GuidanceAudioNotifications AudioNotifications()
+	{
+		Windows.Services.Maps.Guidance.GuidanceAudioNotifications _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).get_AudioNotifications(&_ret));
+		return _ret;
+	}
+	final void AudioNotifications(Windows.Services.Maps.Guidance.GuidanceAudioNotifications value)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).set_AudioNotifications(value));
+	}
+	final void SetGuidanceVoice(INT32 voiceId, HSTRING voiceFolder)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_SetGuidanceVoice(voiceId, voiceFolder));
+	}
+	final void UpdateUserLocation(Windows.Devices.Geolocation.Geocoordinate userLocation)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_UpdateUserLocation(userLocation));
+	}
+	final void UpdateUserLocationWithPositionOverride(Windows.Devices.Geolocation.Geocoordinate userLocation, Windows.Devices.Geolocation.BasicGeoposition positionOverride)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_UpdateUserLocationWithPositionOverride(userLocation, positionOverride));
+	}
+	final bool IsGuidanceAudioMuted()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator2).get_IsGuidanceAudioMuted(&_ret));
+		return _ret;
+	}
+	final void IsGuidanceAudioMuted(bool value)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator2).set_IsGuidanceAudioMuted(value));
+	}
 }
 
 interface GuidanceReroutedEventArgs : Windows.Services.Maps.Guidance.IGuidanceReroutedEventArgs
 {
+extern(Windows):
+	final Windows.Services.Maps.Guidance.GuidanceRoute Route()
+	{
+		Windows.Services.Maps.Guidance.GuidanceRoute _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceReroutedEventArgs).get_Route(&_ret));
+		return _ret;
+	}
 }
 
 interface GuidanceRoadSegment : Windows.Services.Maps.Guidance.IGuidanceRoadSegment
 {
+extern(Windows):
+	final HSTRING RoadName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_RoadName(&_ret));
+		return _ret;
+	}
+	final HSTRING ShortRoadName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_ShortRoadName(&_ret));
+		return _ret;
+	}
+	final double SpeedLimit()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_SpeedLimit(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan TravelTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_TravelTime(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopath Path()
+	{
+		Windows.Devices.Geolocation.Geopath _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_Path(&_ret));
+		return _ret;
+	}
+	final HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_Id(&_ret));
+		return _ret;
+	}
+	final bool IsHighway()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_IsHighway(&_ret));
+		return _ret;
+	}
+	final bool IsTunnel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_IsTunnel(&_ret));
+		return _ret;
+	}
+	final bool IsTollRoad()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_IsTollRoad(&_ret));
+		return _ret;
+	}
 }
 
 interface GuidanceRoadSignpost : Windows.Services.Maps.Guidance.IGuidanceRoadSignpost
 {
+extern(Windows):
+	final HSTRING ExitNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost).get_ExitNumber(&_ret));
+		return _ret;
+	}
+	final HSTRING Exit()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost).get_Exit(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Color BackgroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost).get_BackgroundColor(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Color ForegroundColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost).get_ForegroundColor(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) ExitDirections()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost).get_ExitDirections(&_ret));
+		return _ret;
+	}
 }
 
 interface GuidanceRoute : Windows.Services.Maps.Guidance.IGuidanceRoute
 {
+extern(Windows):
+	final Windows.Foundation.TimeSpan Duration()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).get_Duration(&_ret));
+		return _ret;
+	}
+	final INT32 Distance()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).get_Distance(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.Guidance.GuidanceManeuver) Maneuvers()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.Guidance.GuidanceManeuver) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).get_Maneuvers(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.GeoboundingBox BoundingBox()
+	{
+		Windows.Devices.Geolocation.GeoboundingBox _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).get_BoundingBox(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Geolocation.Geopath Path()
+	{
+		Windows.Devices.Geolocation.Geopath _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).get_Path(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.Guidance.GuidanceRoadSegment) RoadSegments()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.Guidance.GuidanceRoadSegment) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).get_RoadSegments(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.MapRoute ConvertToMapRoute()
+	{
+		Windows.Services.Maps.MapRoute _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).abi_ConvertToMapRoute(&_ret));
+		return _ret;
+	}
 }
 
 interface GuidanceTelemetryCollector : Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector
 {
+extern(Windows):
+	final bool Enabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).get_Enabled(&_ret));
+		return _ret;
+	}
+	final void Enabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).set_Enabled(value));
+	}
+	final void ClearLocalData()
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).abi_ClearLocalData());
+	}
+	final double SpeedTrigger()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).get_SpeedTrigger(&_ret));
+		return _ret;
+	}
+	final void SpeedTrigger(double value)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).set_SpeedTrigger(value));
+	}
+	final INT32 UploadFrequency()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).get_UploadFrequency(&_ret));
+		return _ret;
+	}
+	final void UploadFrequency(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).set_UploadFrequency(value));
+	}
 }
 
 interface GuidanceUpdatedEventArgs : Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs
 {
+extern(Windows):
+	final Windows.Services.Maps.Guidance.GuidanceMode Mode()
+	{
+		Windows.Services.Maps.Guidance.GuidanceMode _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_Mode(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.Guidance.GuidanceManeuver NextManeuver()
+	{
+		Windows.Services.Maps.Guidance.GuidanceManeuver _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_NextManeuver(&_ret));
+		return _ret;
+	}
+	final INT32 NextManeuverDistance()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_NextManeuverDistance(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.Guidance.GuidanceManeuver AfterNextManeuver()
+	{
+		Windows.Services.Maps.Guidance.GuidanceManeuver _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_AfterNextManeuver(&_ret));
+		return _ret;
+	}
+	final INT32 AfterNextManeuverDistance()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_AfterNextManeuverDistance(&_ret));
+		return _ret;
+	}
+	final INT32 DistanceToDestination()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_DistanceToDestination(&_ret));
+		return _ret;
+	}
+	final INT32 ElapsedDistance()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_ElapsedDistance(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan ElapsedTime()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_ElapsedTime(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.TimeSpan TimeToDestination()
+	{
+		Windows.Foundation.TimeSpan _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_TimeToDestination(&_ret));
+		return _ret;
+	}
+	final HSTRING RoadName()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_RoadName(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.Guidance.GuidanceRoute Route()
+	{
+		Windows.Services.Maps.Guidance.GuidanceRoute _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_Route(&_ret));
+		return _ret;
+	}
+	final Windows.Services.Maps.Guidance.GuidanceMapMatchedCoordinate CurrentLocation()
+	{
+		Windows.Services.Maps.Guidance.GuidanceMapMatchedCoordinate _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_CurrentLocation(&_ret));
+		return _ret;
+	}
+	final bool IsNewManeuver()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_IsNewManeuver(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.Guidance.GuidanceLaneInfo) LaneInfo()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.Guidance.GuidanceLaneInfo) _ret;
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_LaneInfo(&_ret));
+		return _ret;
+	}
 }
 
 enum GuidanceAudioMeasurementSystem

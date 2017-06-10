@@ -1251,10 +1251,96 @@ extern(Windows):
 
 interface AppBarTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IAppBarTemplateSettings
 {
+extern(Windows):
+	final Windows.Foundation.Rect ClipRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IAppBarTemplateSettings).get_ClipRect(&_ret));
+		return _ret;
+	}
+	final double CompactVerticalDelta()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IAppBarTemplateSettings).get_CompactVerticalDelta(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Thickness CompactRootMargin()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IAppBarTemplateSettings).get_CompactRootMargin(&_ret));
+		return _ret;
+	}
+	final double MinimalVerticalDelta()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IAppBarTemplateSettings).get_MinimalVerticalDelta(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Thickness MinimalRootMargin()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IAppBarTemplateSettings).get_MinimalRootMargin(&_ret));
+		return _ret;
+	}
+	final double HiddenVerticalDelta()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IAppBarTemplateSettings).get_HiddenVerticalDelta(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Thickness HiddenRootMargin()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IAppBarTemplateSettings).get_HiddenRootMargin(&_ret));
+		return _ret;
+	}
 }
 
 interface ButtonBase : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.Primitives.IButtonBase
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.ClickMode ClickMode()
+	{
+		Windows.UI.Xaml.Controls.ClickMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBase).get_ClickMode(&_ret));
+		return _ret;
+	}
+	final void ClickMode(Windows.UI.Xaml.Controls.ClickMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBase).set_ClickMode(value));
+	}
+	final bool IsPointerOver()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBase).get_IsPointerOver(&_ret));
+		return _ret;
+	}
+	final bool IsPressed()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBase).get_IsPressed(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Input.ICommand Command()
+	{
+		Windows.UI.Xaml.Input.ICommand _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBase).get_Command(&_ret));
+		return _ret;
+	}
+	final void Command(Windows.UI.Xaml.Input.ICommand value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBase).set_Command(value));
+	}
+	final IInspectable CommandParameter()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBase).get_CommandParameter(&_ret));
+		return _ret;
+	}
+	final void CommandParameter(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBase).set_CommandParameter(value));
+	}
 }
 
 interface CalendarPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.Primitives.ICalendarPanel
@@ -1263,38 +1349,505 @@ interface CalendarPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Contro
 
 interface CalendarViewTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings
 {
+extern(Windows):
+	final double MinViewWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_MinViewWidth(&_ret));
+		return _ret;
+	}
+	final HSTRING HeaderText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_HeaderText(&_ret));
+		return _ret;
+	}
+	final HSTRING WeekDay1()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_WeekDay1(&_ret));
+		return _ret;
+	}
+	final HSTRING WeekDay2()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_WeekDay2(&_ret));
+		return _ret;
+	}
+	final HSTRING WeekDay3()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_WeekDay3(&_ret));
+		return _ret;
+	}
+	final HSTRING WeekDay4()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_WeekDay4(&_ret));
+		return _ret;
+	}
+	final HSTRING WeekDay5()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_WeekDay5(&_ret));
+		return _ret;
+	}
+	final HSTRING WeekDay6()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_WeekDay6(&_ret));
+		return _ret;
+	}
+	final HSTRING WeekDay7()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_WeekDay7(&_ret));
+		return _ret;
+	}
+	final bool HasMoreContentAfter()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_HasMoreContentAfter(&_ret));
+		return _ret;
+	}
+	final bool HasMoreContentBefore()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_HasMoreContentBefore(&_ret));
+		return _ret;
+	}
+	final bool HasMoreViews()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_HasMoreViews(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect ClipRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_ClipRect(&_ret));
+		return _ret;
+	}
+	final double CenterX()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_CenterX(&_ret));
+		return _ret;
+	}
+	final double CenterY()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings).get_CenterY(&_ret));
+		return _ret;
+	}
 }
 
 interface CarouselPanel : Windows.UI.Xaml.Controls.VirtualizingPanel, Windows.UI.Xaml.Controls.Primitives.ICarouselPanel, Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo
 {
+extern(Windows):
+	final bool CanVerticallyScroll()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).get_CanVerticallyScroll(&_ret));
+		return _ret;
+	}
+	final void CanVerticallyScroll(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).set_CanVerticallyScroll(value));
+	}
+	final bool CanHorizontallyScroll()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).get_CanHorizontallyScroll(&_ret));
+		return _ret;
+	}
+	final void CanHorizontallyScroll(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).set_CanHorizontallyScroll(value));
+	}
+	final double ExtentWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).get_ExtentWidth(&_ret));
+		return _ret;
+	}
+	final double ExtentHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).get_ExtentHeight(&_ret));
+		return _ret;
+	}
+	final double ViewportWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).get_ViewportWidth(&_ret));
+		return _ret;
+	}
+	final double ViewportHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).get_ViewportHeight(&_ret));
+		return _ret;
+	}
+	final double HorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).get_HorizontalOffset(&_ret));
+		return _ret;
+	}
+	final double VerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).get_VerticalOffset(&_ret));
+		return _ret;
+	}
+	final IInspectable ScrollOwner()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).get_ScrollOwner(&_ret));
+		return _ret;
+	}
+	final void ScrollOwner(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).set_ScrollOwner(value));
+	}
+	final void LineUp()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_LineUp());
+	}
+	final void LineDown()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_LineDown());
+	}
+	final void LineLeft()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_LineLeft());
+	}
+	final void LineRight()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_LineRight());
+	}
+	final void PageUp()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_PageUp());
+	}
+	final void PageDown()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_PageDown());
+	}
+	final void PageLeft()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_PageLeft());
+	}
+	final void PageRight()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_PageRight());
+	}
+	final void MouseWheelUp()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_MouseWheelUp());
+	}
+	final void MouseWheelDown()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_MouseWheelDown());
+	}
+	final void MouseWheelLeft()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_MouseWheelLeft());
+	}
+	final void MouseWheelRight()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_MouseWheelRight());
+	}
+	final void SetHorizontalOffset(double offset)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_SetHorizontalOffset(offset));
+	}
+	final void SetVerticalOffset(double offset)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_SetVerticalOffset(offset));
+	}
+	final Windows.Foundation.Rect MakeVisible(Windows.UI.Xaml.UIElement visual, Windows.Foundation.Rect rectangle)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICarouselPanel).abi_MakeVisible(visual, rectangle, &_ret));
+		return _ret;
+	}
+	final bool AreHorizontalSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreHorizontalSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final bool AreVerticalSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
+	{
+		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetIrregularSnapPoints(orientation, alignment, &_ret));
+		return _ret;
+	}
+	final FLOAT GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, FLOAT* out_offset)
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
+		return _ret;
+	}
 }
 
 interface ComboBoxTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IComboBoxTemplateSettings, Windows.UI.Xaml.Controls.Primitives.IComboBoxTemplateSettings2
 {
+extern(Windows):
+	final double DropDownOpenedHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IComboBoxTemplateSettings).get_DropDownOpenedHeight(&_ret));
+		return _ret;
+	}
+	final double DropDownClosedHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IComboBoxTemplateSettings).get_DropDownClosedHeight(&_ret));
+		return _ret;
+	}
+	final double DropDownOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IComboBoxTemplateSettings).get_DropDownOffset(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Primitives.AnimationDirection SelectedItemDirection()
+	{
+		Windows.UI.Xaml.Controls.Primitives.AnimationDirection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IComboBoxTemplateSettings).get_SelectedItemDirection(&_ret));
+		return _ret;
+	}
+	final double DropDownContentMinWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IComboBoxTemplateSettings2).get_DropDownContentMinWidth(&_ret));
+		return _ret;
+	}
 }
 
 interface CommandBarTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings, Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings2, Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings3
 {
+extern(Windows):
+	final double ContentHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings).get_ContentHeight(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Rect OverflowContentClipRect()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings).get_OverflowContentClipRect(&_ret));
+		return _ret;
+	}
+	final double OverflowContentMinWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings).get_OverflowContentMinWidth(&_ret));
+		return _ret;
+	}
+	final double OverflowContentMaxHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings).get_OverflowContentMaxHeight(&_ret));
+		return _ret;
+	}
+	final double OverflowContentHorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings).get_OverflowContentHorizontalOffset(&_ret));
+		return _ret;
+	}
+	final double OverflowContentHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings).get_OverflowContentHeight(&_ret));
+		return _ret;
+	}
+	final double NegativeOverflowContentHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings).get_NegativeOverflowContentHeight(&_ret));
+		return _ret;
+	}
+	final double OverflowContentMaxWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings2).get_OverflowContentMaxWidth(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Visibility EffectiveOverflowButtonVisibility()
+	{
+		Windows.UI.Xaml.Visibility _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ICommandBarTemplateSettings3).get_EffectiveOverflowButtonVisibility(&_ret));
+		return _ret;
+	}
 }
 
 interface DragCompletedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.Primitives.IDragCompletedEventArgs
 {
+extern(Windows):
+	final double HorizontalChange()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IDragCompletedEventArgs).get_HorizontalChange(&_ret));
+		return _ret;
+	}
+	final double VerticalChange()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IDragCompletedEventArgs).get_VerticalChange(&_ret));
+		return _ret;
+	}
+	final bool Canceled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IDragCompletedEventArgs).get_Canceled(&_ret));
+		return _ret;
+	}
 }
 
 interface DragDeltaEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.Primitives.IDragDeltaEventArgs
 {
+extern(Windows):
+	final double HorizontalChange()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IDragDeltaEventArgs).get_HorizontalChange(&_ret));
+		return _ret;
+	}
+	final double VerticalChange()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IDragDeltaEventArgs).get_VerticalChange(&_ret));
+		return _ret;
+	}
 }
 
 interface DragStartedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.Primitives.IDragStartedEventArgs
 {
+extern(Windows):
+	final double HorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IDragStartedEventArgs).get_HorizontalOffset(&_ret));
+		return _ret;
+	}
+	final double VerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IDragStartedEventArgs).get_VerticalOffset(&_ret));
+		return _ret;
+	}
 }
 
 interface FlyoutBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IFlyoutBase, Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides, Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2, Windows.UI.Xaml.Controls.Primitives.IFlyoutBase3
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode Placement()
+	{
+		Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase).get_Placement(&_ret));
+		return _ret;
+	}
+	final void Placement(Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase).set_Placement(value));
+	}
+	final void ShowAt(Windows.UI.Xaml.FrameworkElement placementTarget)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase).abi_ShowAt(placementTarget));
+	}
+	final void Hide()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase).abi_Hide());
+	}
+	final Windows.UI.Xaml.Controls.Control CreatePresenter()
+	{
+		Windows.UI.Xaml.Controls.Control _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides).abi_CreatePresenter(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.FrameworkElement Target()
+	{
+		Windows.UI.Xaml.FrameworkElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2).get_Target(&_ret));
+		return _ret;
+	}
+	final bool AllowFocusOnInteraction()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2).get_AllowFocusOnInteraction(&_ret));
+		return _ret;
+	}
+	final void AllowFocusOnInteraction(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2).set_AllowFocusOnInteraction(value));
+	}
+	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
+	{
+		Windows.UI.Xaml.Controls.LightDismissOverlayMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2).get_LightDismissOverlayMode(&_ret));
+		return _ret;
+	}
+	final void LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2).set_LightDismissOverlayMode(value));
+	}
+	final bool AllowFocusWhenDisabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2).get_AllowFocusWhenDisabled(&_ret));
+		return _ret;
+	}
+	final void AllowFocusWhenDisabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2).set_AllowFocusWhenDisabled(value));
+	}
+	final Windows.UI.Xaml.ElementSoundMode ElementSoundMode()
+	{
+		Windows.UI.Xaml.ElementSoundMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2).get_ElementSoundMode(&_ret));
+		return _ret;
+	}
+	final void ElementSoundMode(Windows.UI.Xaml.ElementSoundMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2).set_ElementSoundMode(value));
+	}
+	final Windows.UI.Xaml.DependencyObject OverlayInputPassThroughElement()
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase3).get_OverlayInputPassThroughElement(&_ret));
+		return _ret;
+	}
+	final void OverlayInputPassThroughElement(Windows.UI.Xaml.DependencyObject value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase3).set_OverlayInputPassThroughElement(value));
+	}
 }
 
 interface FlyoutBaseClosingEventArgs : Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseClosingEventArgs
 {
+extern(Windows):
+	final bool Cancel()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseClosingEventArgs).get_Cancel(&_ret));
+		return _ret;
+	}
+	final void Cancel(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseClosingEventArgs).set_Cancel(value));
+	}
 }
 
 interface GeneratorPositionHelper : Windows.UI.Xaml.Controls.Primitives.IGeneratorPositionHelper
@@ -1303,22 +1856,353 @@ interface GeneratorPositionHelper : Windows.UI.Xaml.Controls.Primitives.IGenerat
 
 interface GridViewItemPresenter : Windows.UI.Xaml.Controls.ContentPresenter, Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter
 {
+extern(Windows):
+	final bool SelectionCheckMarkVisualEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_SelectionCheckMarkVisualEnabled(&_ret));
+		return _ret;
+	}
+	final void SelectionCheckMarkVisualEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_SelectionCheckMarkVisualEnabled(value));
+	}
+	final Windows.UI.Xaml.Media.Brush CheckHintBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_CheckHintBrush(&_ret));
+		return _ret;
+	}
+	final void CheckHintBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_CheckHintBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush CheckSelectingBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_CheckSelectingBrush(&_ret));
+		return _ret;
+	}
+	final void CheckSelectingBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_CheckSelectingBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush CheckBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_CheckBrush(&_ret));
+		return _ret;
+	}
+	final void CheckBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_CheckBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush DragBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_DragBackground(&_ret));
+		return _ret;
+	}
+	final void DragBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_DragBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush DragForeground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_DragForeground(&_ret));
+		return _ret;
+	}
+	final void DragForeground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_DragForeground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush FocusBorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_FocusBorderBrush(&_ret));
+		return _ret;
+	}
+	final void FocusBorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_FocusBorderBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush PlaceholderBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_PlaceholderBackground(&_ret));
+		return _ret;
+	}
+	final void PlaceholderBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_PlaceholderBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush PointerOverBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_PointerOverBackground(&_ret));
+		return _ret;
+	}
+	final void PointerOverBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_PointerOverBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_SelectedBackground(&_ret));
+		return _ret;
+	}
+	final void SelectedBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_SelectedBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedForeground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_SelectedForeground(&_ret));
+		return _ret;
+	}
+	final void SelectedForeground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_SelectedForeground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedPointerOverBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_SelectedPointerOverBackground(&_ret));
+		return _ret;
+	}
+	final void SelectedPointerOverBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_SelectedPointerOverBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedPointerOverBorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_SelectedPointerOverBorderBrush(&_ret));
+		return _ret;
+	}
+	final void SelectedPointerOverBorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_SelectedPointerOverBorderBrush(value));
+	}
+	final Windows.UI.Xaml.Thickness SelectedBorderThickness()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_SelectedBorderThickness(&_ret));
+		return _ret;
+	}
+	final void SelectedBorderThickness(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_SelectedBorderThickness(value));
+	}
+	final double DisabledOpacity()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_DisabledOpacity(&_ret));
+		return _ret;
+	}
+	final void DisabledOpacity(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_DisabledOpacity(value));
+	}
+	final double DragOpacity()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_DragOpacity(&_ret));
+		return _ret;
+	}
+	final void DragOpacity(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_DragOpacity(value));
+	}
+	final double ReorderHintOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_ReorderHintOffset(&_ret));
+		return _ret;
+	}
+	final void ReorderHintOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_ReorderHintOffset(value));
+	}
+	deprecated("Use ContentPresenter.HorizontalContentAlignment instead of GridViewItemPresenterHorizontalContentAlignment. For more info, see MSDN.")
+	final Windows.UI.Xaml.HorizontalAlignment GridViewItemPresenterHorizontalContentAlignment()
+	{
+		Windows.UI.Xaml.HorizontalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_GridViewItemPresenterHorizontalContentAlignment(&_ret));
+		return _ret;
+	}
+	deprecated("Use ContentPresenter.HorizontalContentAlignment instead of GridViewItemPresenterHorizontalContentAlignment. For more info, see MSDN.")
+	final void GridViewItemPresenterHorizontalContentAlignment(Windows.UI.Xaml.HorizontalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_GridViewItemPresenterHorizontalContentAlignment(value));
+	}
+	deprecated("Use ContentPresenter.VerticalContentAlignment instead of GridViewItemPresenterVerticalContentAlignment. For more info, see MSDN.")
+	final Windows.UI.Xaml.VerticalAlignment GridViewItemPresenterVerticalContentAlignment()
+	{
+		Windows.UI.Xaml.VerticalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_GridViewItemPresenterVerticalContentAlignment(&_ret));
+		return _ret;
+	}
+	deprecated("Use ContentPresenter.VerticalContentAlignment instead of GridViewItemPresenterVerticalContentAlignment. For more info, see MSDN.")
+	final void GridViewItemPresenterVerticalContentAlignment(Windows.UI.Xaml.VerticalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_GridViewItemPresenterVerticalContentAlignment(value));
+	}
+	deprecated("Use ContentPresenter.Padding instead of GridViewItemPresenterPadding. For more info, see MSDN.")
+	final Windows.UI.Xaml.Thickness GridViewItemPresenterPadding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_GridViewItemPresenterPadding(&_ret));
+		return _ret;
+	}
+	deprecated("Use ContentPresenter.Padding instead of GridViewItemPresenterPadding. For more info, see MSDN.")
+	final void GridViewItemPresenterPadding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_GridViewItemPresenterPadding(value));
+	}
+	final Windows.UI.Xaml.Thickness PointerOverBackgroundMargin()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_PointerOverBackgroundMargin(&_ret));
+		return _ret;
+	}
+	final void PointerOverBackgroundMargin(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_PointerOverBackgroundMargin(value));
+	}
+	final Windows.UI.Xaml.Thickness ContentMargin()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).get_ContentMargin(&_ret));
+		return _ret;
+	}
+	final void ContentMargin(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_ContentMargin(value));
+	}
 }
 
 interface GridViewItemTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IGridViewItemTemplateSettings
 {
+extern(Windows):
+	final INT32 DragItemsCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemTemplateSettings).get_DragItemsCount(&_ret));
+		return _ret;
+	}
 }
 
 interface ItemsChangedEventArgs : Windows.UI.Xaml.Controls.Primitives.IItemsChangedEventArgs
 {
+extern(Windows):
+	final INT32 Action()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IItemsChangedEventArgs).get_Action(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Primitives.GeneratorPosition Position()
+	{
+		Windows.UI.Xaml.Controls.Primitives.GeneratorPosition _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IItemsChangedEventArgs).get_Position(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Primitives.GeneratorPosition OldPosition()
+	{
+		Windows.UI.Xaml.Controls.Primitives.GeneratorPosition _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IItemsChangedEventArgs).get_OldPosition(&_ret));
+		return _ret;
+	}
+	final INT32 ItemCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IItemsChangedEventArgs).get_ItemCount(&_ret));
+		return _ret;
+	}
+	final INT32 ItemUICount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IItemsChangedEventArgs).get_ItemUICount(&_ret));
+		return _ret;
+	}
 }
 
 interface JumpListItemBackgroundConverter : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IJumpListItemBackgroundConverter, Windows.UI.Xaml.Data.IValueConverter
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Brush Enabled()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemBackgroundConverter).get_Enabled(&_ret));
+		return _ret;
+	}
+	final void Enabled(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemBackgroundConverter).set_Enabled(value));
+	}
+	final Windows.UI.Xaml.Media.Brush Disabled()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemBackgroundConverter).get_Disabled(&_ret));
+		return _ret;
+	}
+	final void Disabled(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemBackgroundConverter).set_Disabled(value));
+	}
+	final IInspectable Convert(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, HSTRING language)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IValueConverter).abi_Convert(value, targetType, parameter, language, &_ret));
+		return _ret;
+	}
+	final IInspectable ConvertBack(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, HSTRING language)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IValueConverter).abi_ConvertBack(value, targetType, parameter, language, &_ret));
+		return _ret;
+	}
 }
 
 interface JumpListItemForegroundConverter : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverter, Windows.UI.Xaml.Data.IValueConverter
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Brush Enabled()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverter).get_Enabled(&_ret));
+		return _ret;
+	}
+	final void Enabled(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverter).set_Enabled(value));
+	}
+	final Windows.UI.Xaml.Media.Brush Disabled()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverter).get_Disabled(&_ret));
+		return _ret;
+	}
+	final void Disabled(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverter).set_Disabled(value));
+	}
+	final IInspectable Convert(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, HSTRING language)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IValueConverter).abi_Convert(value, targetType, parameter, language, &_ret));
+		return _ret;
+	}
+	final IInspectable ConvertBack(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, HSTRING language)
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Data.IValueConverter).abi_ConvertBack(value, targetType, parameter, language, &_ret));
+		return _ret;
+	}
 }
 
 interface LayoutInformation : Windows.UI.Xaml.Controls.Primitives.ILayoutInformation
@@ -1327,14 +2211,379 @@ interface LayoutInformation : Windows.UI.Xaml.Controls.Primitives.ILayoutInforma
 
 interface ListViewItemPresenter : Windows.UI.Xaml.Controls.ContentPresenter, Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter, Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2
 {
+extern(Windows):
+	final bool SelectionCheckMarkVisualEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_SelectionCheckMarkVisualEnabled(&_ret));
+		return _ret;
+	}
+	final void SelectionCheckMarkVisualEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_SelectionCheckMarkVisualEnabled(value));
+	}
+	final Windows.UI.Xaml.Media.Brush CheckHintBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_CheckHintBrush(&_ret));
+		return _ret;
+	}
+	final void CheckHintBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_CheckHintBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush CheckSelectingBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_CheckSelectingBrush(&_ret));
+		return _ret;
+	}
+	final void CheckSelectingBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_CheckSelectingBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush CheckBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_CheckBrush(&_ret));
+		return _ret;
+	}
+	final void CheckBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_CheckBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush DragBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_DragBackground(&_ret));
+		return _ret;
+	}
+	final void DragBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_DragBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush DragForeground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_DragForeground(&_ret));
+		return _ret;
+	}
+	final void DragForeground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_DragForeground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush FocusBorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_FocusBorderBrush(&_ret));
+		return _ret;
+	}
+	final void FocusBorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_FocusBorderBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush PlaceholderBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_PlaceholderBackground(&_ret));
+		return _ret;
+	}
+	final void PlaceholderBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_PlaceholderBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush PointerOverBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_PointerOverBackground(&_ret));
+		return _ret;
+	}
+	final void PointerOverBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_PointerOverBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_SelectedBackground(&_ret));
+		return _ret;
+	}
+	final void SelectedBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_SelectedBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedForeground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_SelectedForeground(&_ret));
+		return _ret;
+	}
+	final void SelectedForeground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_SelectedForeground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedPointerOverBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_SelectedPointerOverBackground(&_ret));
+		return _ret;
+	}
+	final void SelectedPointerOverBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_SelectedPointerOverBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedPointerOverBorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_SelectedPointerOverBorderBrush(&_ret));
+		return _ret;
+	}
+	final void SelectedPointerOverBorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_SelectedPointerOverBorderBrush(value));
+	}
+	final Windows.UI.Xaml.Thickness SelectedBorderThickness()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_SelectedBorderThickness(&_ret));
+		return _ret;
+	}
+	final void SelectedBorderThickness(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_SelectedBorderThickness(value));
+	}
+	final double DisabledOpacity()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_DisabledOpacity(&_ret));
+		return _ret;
+	}
+	final void DisabledOpacity(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_DisabledOpacity(value));
+	}
+	final double DragOpacity()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_DragOpacity(&_ret));
+		return _ret;
+	}
+	final void DragOpacity(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_DragOpacity(value));
+	}
+	final double ReorderHintOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_ReorderHintOffset(&_ret));
+		return _ret;
+	}
+	final void ReorderHintOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_ReorderHintOffset(value));
+	}
+	deprecated("Use ContentPresenter.HorizontalContentAlignment instead of ListViewItemPresenterHorizontalContentAlignment. For more info, see MSDN.")
+	final Windows.UI.Xaml.HorizontalAlignment ListViewItemPresenterHorizontalContentAlignment()
+	{
+		Windows.UI.Xaml.HorizontalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_ListViewItemPresenterHorizontalContentAlignment(&_ret));
+		return _ret;
+	}
+	deprecated("Use ContentPresenter.HorizontalContentAlignment instead of ListViewItemPresenterHorizontalContentAlignment. For more info, see MSDN.")
+	final void ListViewItemPresenterHorizontalContentAlignment(Windows.UI.Xaml.HorizontalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_ListViewItemPresenterHorizontalContentAlignment(value));
+	}
+	deprecated("Use ContentPresenter.VerticalContentAlignment instead of ListViewItemPresenterVerticalContentAlignment. For more info, see MSDN.")
+	final Windows.UI.Xaml.VerticalAlignment ListViewItemPresenterVerticalContentAlignment()
+	{
+		Windows.UI.Xaml.VerticalAlignment _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_ListViewItemPresenterVerticalContentAlignment(&_ret));
+		return _ret;
+	}
+	deprecated("Use ContentPresenter.VerticalContentAlignment instead of ListViewItemPresenterVerticalContentAlignment. For more info, see MSDN.")
+	final void ListViewItemPresenterVerticalContentAlignment(Windows.UI.Xaml.VerticalAlignment value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_ListViewItemPresenterVerticalContentAlignment(value));
+	}
+	deprecated("Use ContentPresenter.Padding instead of GridViewItemPresenterPadding. For more info, see MSDN.")
+	final Windows.UI.Xaml.Thickness ListViewItemPresenterPadding()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_ListViewItemPresenterPadding(&_ret));
+		return _ret;
+	}
+	deprecated("Use ContentPresenter.Padding instead of GridViewItemPresenterPadding. For more info, see MSDN.")
+	final void ListViewItemPresenterPadding(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_ListViewItemPresenterPadding(value));
+	}
+	final Windows.UI.Xaml.Thickness PointerOverBackgroundMargin()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_PointerOverBackgroundMargin(&_ret));
+		return _ret;
+	}
+	final void PointerOverBackgroundMargin(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_PointerOverBackgroundMargin(value));
+	}
+	final Windows.UI.Xaml.Thickness ContentMargin()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).get_ContentMargin(&_ret));
+		return _ret;
+	}
+	final void ContentMargin(Windows.UI.Xaml.Thickness value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter).set_ContentMargin(value));
+	}
+	final Windows.UI.Xaml.Media.Brush SelectedPressedBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2).get_SelectedPressedBackground(&_ret));
+		return _ret;
+	}
+	final void SelectedPressedBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2).set_SelectedPressedBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush PressedBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2).get_PressedBackground(&_ret));
+		return _ret;
+	}
+	final void PressedBackground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2).set_PressedBackground(value));
+	}
+	final Windows.UI.Xaml.Media.Brush CheckBoxBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2).get_CheckBoxBrush(&_ret));
+		return _ret;
+	}
+	final void CheckBoxBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2).set_CheckBoxBrush(value));
+	}
+	final Windows.UI.Xaml.Media.Brush FocusSecondaryBorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2).get_FocusSecondaryBorderBrush(&_ret));
+		return _ret;
+	}
+	final void FocusSecondaryBorderBrush(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2).set_FocusSecondaryBorderBrush(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenterCheckMode CheckMode()
+	{
+		Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenterCheckMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2).get_CheckMode(&_ret));
+		return _ret;
+	}
+	final void CheckMode(Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenterCheckMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2).set_CheckMode(value));
+	}
+	final Windows.UI.Xaml.Media.Brush PointerOverForeground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2).get_PointerOverForeground(&_ret));
+		return _ret;
+	}
+	final void PointerOverForeground(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2).set_PointerOverForeground(value));
+	}
 }
 
 interface ListViewItemTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IListViewItemTemplateSettings
 {
+extern(Windows):
+	final INT32 DragItemsCount()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemTemplateSettings).get_DragItemsCount(&_ret));
+		return _ret;
+	}
 }
 
 interface LoopingSelector : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.Primitives.ILoopingSelector
 {
+extern(Windows):
+	final bool ShouldLoop()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).get_ShouldLoop(&_ret));
+		return _ret;
+	}
+	final void ShouldLoop(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).set_ShouldLoop(value));
+	}
+	final Windows.Foundation.Collections.IVector!(IInspectable) Items()
+	{
+		Windows.Foundation.Collections.IVector!(IInspectable) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).get_Items(&_ret));
+		return _ret;
+	}
+	final void Items(Windows.Foundation.Collections.IVector!(IInspectable) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).set_Items(value));
+	}
+	final INT32 SelectedIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).get_SelectedIndex(&_ret));
+		return _ret;
+	}
+	final void SelectedIndex(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).set_SelectedIndex(value));
+	}
+	final IInspectable SelectedItem()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).get_SelectedItem(&_ret));
+		return _ret;
+	}
+	final void SelectedItem(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).set_SelectedItem(value));
+	}
+	final INT32 ItemWidth()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).get_ItemWidth(&_ret));
+		return _ret;
+	}
+	final void ItemWidth(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).set_ItemWidth(value));
+	}
+	final INT32 ItemHeight()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).get_ItemHeight(&_ret));
+		return _ret;
+	}
+	final void ItemHeight(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).set_ItemHeight(value));
+	}
+	final Windows.UI.Xaml.DataTemplate ItemTemplate()
+	{
+		Windows.UI.Xaml.DataTemplate _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).get_ItemTemplate(&_ret));
+		return _ret;
+	}
+	final void ItemTemplate(Windows.UI.Xaml.DataTemplate value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).set_ItemTemplate(value));
+	}
 }
 
 interface LoopingSelectorItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorItem
@@ -1343,18 +2592,218 @@ interface LoopingSelectorItem : Windows.UI.Xaml.Controls.ContentControl, Windows
 
 interface LoopingSelectorPanel : Windows.UI.Xaml.Controls.Canvas, Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorPanel, Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo
 {
+extern(Windows):
+	final bool AreHorizontalSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreHorizontalSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final bool AreVerticalSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
+	{
+		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetIrregularSnapPoints(orientation, alignment, &_ret));
+		return _ret;
+	}
+	final FLOAT GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, FLOAT* out_offset)
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
+		return _ret;
+	}
 }
 
 interface MenuFlyoutPresenterTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IMenuFlyoutPresenterTemplateSettings
 {
+extern(Windows):
+	final double FlyoutContentMinWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IMenuFlyoutPresenterTemplateSettings).get_FlyoutContentMinWidth(&_ret));
+		return _ret;
+	}
 }
 
 interface OrientedVirtualizingPanel : Windows.UI.Xaml.Controls.VirtualizingPanel, Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel, Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo, Windows.UI.Xaml.Controls.IInsertionPanel
 {
+extern(Windows):
+	final bool CanVerticallyScroll()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).get_CanVerticallyScroll(&_ret));
+		return _ret;
+	}
+	final void CanVerticallyScroll(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).set_CanVerticallyScroll(value));
+	}
+	final bool CanHorizontallyScroll()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).get_CanHorizontallyScroll(&_ret));
+		return _ret;
+	}
+	final void CanHorizontallyScroll(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).set_CanHorizontallyScroll(value));
+	}
+	final double ExtentWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).get_ExtentWidth(&_ret));
+		return _ret;
+	}
+	final double ExtentHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).get_ExtentHeight(&_ret));
+		return _ret;
+	}
+	final double ViewportWidth()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).get_ViewportWidth(&_ret));
+		return _ret;
+	}
+	final double ViewportHeight()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).get_ViewportHeight(&_ret));
+		return _ret;
+	}
+	final double HorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).get_HorizontalOffset(&_ret));
+		return _ret;
+	}
+	final double VerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).get_VerticalOffset(&_ret));
+		return _ret;
+	}
+	final IInspectable ScrollOwner()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).get_ScrollOwner(&_ret));
+		return _ret;
+	}
+	final void ScrollOwner(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).set_ScrollOwner(value));
+	}
+	final void LineUp()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_LineUp());
+	}
+	final void LineDown()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_LineDown());
+	}
+	final void LineLeft()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_LineLeft());
+	}
+	final void LineRight()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_LineRight());
+	}
+	final void PageUp()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_PageUp());
+	}
+	final void PageDown()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_PageDown());
+	}
+	final void PageLeft()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_PageLeft());
+	}
+	final void PageRight()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_PageRight());
+	}
+	final void MouseWheelUp()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_MouseWheelUp());
+	}
+	final void MouseWheelDown()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_MouseWheelDown());
+	}
+	final void MouseWheelLeft()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_MouseWheelLeft());
+	}
+	final void MouseWheelRight()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_MouseWheelRight());
+	}
+	final void SetHorizontalOffset(double offset)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_SetHorizontalOffset(offset));
+	}
+	final void SetVerticalOffset(double offset)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_SetVerticalOffset(offset));
+	}
+	final Windows.Foundation.Rect MakeVisible(Windows.UI.Xaml.UIElement visual, Windows.Foundation.Rect rectangle)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel).abi_MakeVisible(visual, rectangle, &_ret));
+		return _ret;
+	}
+	final bool AreHorizontalSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreHorizontalSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final bool AreVerticalSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
+	{
+		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetIrregularSnapPoints(orientation, alignment, &_ret));
+		return _ret;
+	}
+	final FLOAT GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, FLOAT* out_offset)
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
+		return _ret;
+	}
+	final void GetInsertionIndexes(Windows.Foundation.Point position, INT32* out_first, INT32* out_second)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInsertionPanel).abi_GetInsertionIndexes(position, out_first, out_second));
+	}
 }
 
 interface PickerFlyoutBase : Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBase, Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseOverrides
 {
+extern(Windows):
+	final void OnConfirmed()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseOverrides).abi_OnConfirmed());
+	}
+	final bool ShouldShowConfirmationButtons()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseOverrides).abi_ShouldShowConfirmationButtons(&_ret));
+		return _ret;
+	}
 }
 
 interface PivotHeaderItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.Primitives.IPivotHeaderItem
@@ -1367,74 +2816,618 @@ interface PivotHeaderPanel : Windows.UI.Xaml.Controls.Canvas, Windows.UI.Xaml.Co
 
 interface PivotPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.Primitives.IPivotPanel, Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo
 {
+extern(Windows):
+	final bool AreHorizontalSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreHorizontalSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final bool AreVerticalSnapPointsRegular()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
+	{
+		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetIrregularSnapPoints(orientation, alignment, &_ret));
+		return _ret;
+	}
+	final FLOAT GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, FLOAT* out_offset)
+	{
+		FLOAT _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
+		return _ret;
+	}
 }
 
 interface Popup : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.Primitives.IPopup, Windows.UI.Xaml.Controls.Primitives.IPopup2
 {
+extern(Windows):
+	final Windows.UI.Xaml.UIElement Child()
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).get_Child(&_ret));
+		return _ret;
+	}
+	final void Child(Windows.UI.Xaml.UIElement value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).set_Child(value));
+	}
+	final bool IsOpen()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).get_IsOpen(&_ret));
+		return _ret;
+	}
+	final void IsOpen(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).set_IsOpen(value));
+	}
+	final double HorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).get_HorizontalOffset(&_ret));
+		return _ret;
+	}
+	final void HorizontalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).set_HorizontalOffset(value));
+	}
+	final double VerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).get_VerticalOffset(&_ret));
+		return _ret;
+	}
+	final void VerticalOffset(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).set_VerticalOffset(value));
+	}
+	final Windows.UI.Xaml.Media.Animation.TransitionCollection ChildTransitions()
+	{
+		Windows.UI.Xaml.Media.Animation.TransitionCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).get_ChildTransitions(&_ret));
+		return _ret;
+	}
+	final void ChildTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).set_ChildTransitions(value));
+	}
+	final bool IsLightDismissEnabled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).get_IsLightDismissEnabled(&_ret));
+		return _ret;
+	}
+	final void IsLightDismissEnabled(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).set_IsLightDismissEnabled(value));
+	}
+	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
+	{
+		Windows.UI.Xaml.Controls.LightDismissOverlayMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup2).get_LightDismissOverlayMode(&_ret));
+		return _ret;
+	}
+	final void LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup2).set_LightDismissOverlayMode(value));
+	}
 }
 
 interface ProgressBarTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IProgressBarTemplateSettings
 {
+extern(Windows):
+	final double EllipseDiameter()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IProgressBarTemplateSettings).get_EllipseDiameter(&_ret));
+		return _ret;
+	}
+	final double EllipseOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IProgressBarTemplateSettings).get_EllipseOffset(&_ret));
+		return _ret;
+	}
+	final double EllipseAnimationWellPosition()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IProgressBarTemplateSettings).get_EllipseAnimationWellPosition(&_ret));
+		return _ret;
+	}
+	final double EllipseAnimationEndPosition()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IProgressBarTemplateSettings).get_EllipseAnimationEndPosition(&_ret));
+		return _ret;
+	}
+	final double ContainerAnimationStartPosition()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IProgressBarTemplateSettings).get_ContainerAnimationStartPosition(&_ret));
+		return _ret;
+	}
+	final double ContainerAnimationEndPosition()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IProgressBarTemplateSettings).get_ContainerAnimationEndPosition(&_ret));
+		return _ret;
+	}
+	final double IndicatorLengthDelta()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IProgressBarTemplateSettings).get_IndicatorLengthDelta(&_ret));
+		return _ret;
+	}
 }
 
 interface ProgressRingTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IProgressRingTemplateSettings
 {
+extern(Windows):
+	final double EllipseDiameter()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IProgressRingTemplateSettings).get_EllipseDiameter(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Thickness EllipseOffset()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IProgressRingTemplateSettings).get_EllipseOffset(&_ret));
+		return _ret;
+	}
+	final double MaxSideLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IProgressRingTemplateSettings).get_MaxSideLength(&_ret));
+		return _ret;
+	}
 }
 
 interface RangeBase : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.Primitives.IRangeBase, Windows.UI.Xaml.Controls.Primitives.IRangeBaseOverrides
 {
+extern(Windows):
+	final double Minimum()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).get_Minimum(&_ret));
+		return _ret;
+	}
+	final void Minimum(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).set_Minimum(value));
+	}
+	final double Maximum()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).get_Maximum(&_ret));
+		return _ret;
+	}
+	final void Maximum(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).set_Maximum(value));
+	}
+	final double SmallChange()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).get_SmallChange(&_ret));
+		return _ret;
+	}
+	final void SmallChange(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).set_SmallChange(value));
+	}
+	final double LargeChange()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).get_LargeChange(&_ret));
+		return _ret;
+	}
+	final void LargeChange(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).set_LargeChange(value));
+	}
+	final double Value()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).get_Value(&_ret));
+		return _ret;
+	}
+	final void Value(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).set_Value(value));
+	}
+	final void OnMinimumChanged(double oldMinimum, double newMinimum)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBaseOverrides).abi_OnMinimumChanged(oldMinimum, newMinimum));
+	}
+	final void OnMaximumChanged(double oldMaximum, double newMaximum)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBaseOverrides).abi_OnMaximumChanged(oldMaximum, newMaximum));
+	}
+	final void OnValueChanged(double oldValue, double newValue)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBaseOverrides).abi_OnValueChanged(oldValue, newValue));
+	}
 }
 
 interface RangeBaseValueChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.Primitives.IRangeBaseValueChangedEventArgs
 {
+extern(Windows):
+	final double OldValue()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBaseValueChangedEventArgs).get_OldValue(&_ret));
+		return _ret;
+	}
+	final double NewValue()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBaseValueChangedEventArgs).get_NewValue(&_ret));
+		return _ret;
+	}
 }
 
 interface RepeatButton : Windows.UI.Xaml.Controls.Primitives.ButtonBase, Windows.UI.Xaml.Controls.Primitives.IRepeatButton
 {
+extern(Windows):
+	final INT32 Delay()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRepeatButton).get_Delay(&_ret));
+		return _ret;
+	}
+	final void Delay(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRepeatButton).set_Delay(value));
+	}
+	final INT32 Interval()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRepeatButton).get_Interval(&_ret));
+		return _ret;
+	}
+	final void Interval(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRepeatButton).set_Interval(value));
+	}
 }
 
 interface ScrollBar : Windows.UI.Xaml.Controls.Primitives.RangeBase, Windows.UI.Xaml.Controls.Primitives.IScrollBar
 {
+extern(Windows):
+	final Windows.UI.Xaml.Controls.Orientation Orientation()
+	{
+		Windows.UI.Xaml.Controls.Orientation _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBar).get_Orientation(&_ret));
+		return _ret;
+	}
+	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBar).set_Orientation(value));
+	}
+	final double ViewportSize()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBar).get_ViewportSize(&_ret));
+		return _ret;
+	}
+	final void ViewportSize(double value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBar).set_ViewportSize(value));
+	}
+	final Windows.UI.Xaml.Controls.Primitives.ScrollingIndicatorMode IndicatorMode()
+	{
+		Windows.UI.Xaml.Controls.Primitives.ScrollingIndicatorMode _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBar).get_IndicatorMode(&_ret));
+		return _ret;
+	}
+	final void IndicatorMode(Windows.UI.Xaml.Controls.Primitives.ScrollingIndicatorMode value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBar).set_IndicatorMode(value));
+	}
 }
 
 interface ScrollEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.Primitives.IScrollEventArgs
 {
+extern(Windows):
+	final double NewValue()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollEventArgs).get_NewValue(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Controls.Primitives.ScrollEventType ScrollEventType()
+	{
+		Windows.UI.Xaml.Controls.Primitives.ScrollEventType _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollEventArgs).get_ScrollEventType(&_ret));
+		return _ret;
+	}
 }
 
 interface Selector : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.Primitives.ISelector
 {
+extern(Windows):
+	final INT32 SelectedIndex()
+	{
+		INT32 _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).get_SelectedIndex(&_ret));
+		return _ret;
+	}
+	final void SelectedIndex(INT32 value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).set_SelectedIndex(value));
+	}
+	final IInspectable SelectedItem()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).get_SelectedItem(&_ret));
+		return _ret;
+	}
+	final void SelectedItem(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).set_SelectedItem(value));
+	}
+	final IInspectable SelectedValue()
+	{
+		IInspectable _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).get_SelectedValue(&_ret));
+		return _ret;
+	}
+	final void SelectedValue(IInspectable value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).set_SelectedValue(value));
+	}
+	final HSTRING SelectedValuePath()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).get_SelectedValuePath(&_ret));
+		return _ret;
+	}
+	final void SelectedValuePath(HSTRING value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).set_SelectedValuePath(value));
+	}
+	final Windows.Foundation.IReference!(bool) IsSynchronizedWithCurrentItem()
+	{
+		Windows.Foundation.IReference!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).get_IsSynchronizedWithCurrentItem(&_ret));
+		return _ret;
+	}
+	final void IsSynchronizedWithCurrentItem(Windows.Foundation.IReference!(bool) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).set_IsSynchronizedWithCurrentItem(value));
+	}
 }
 
 interface SelectorItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.Primitives.ISelectorItem
 {
+extern(Windows):
+	final bool IsSelected()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelectorItem).get_IsSelected(&_ret));
+		return _ret;
+	}
+	final void IsSelected(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelectorItem).set_IsSelected(value));
+	}
 }
 
 interface SettingsFlyoutTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.ISettingsFlyoutTemplateSettings
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Brush HeaderBackground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISettingsFlyoutTemplateSettings).get_HeaderBackground(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Brush HeaderForeground()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISettingsFlyoutTemplateSettings).get_HeaderForeground(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Brush BorderBrush()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISettingsFlyoutTemplateSettings).get_BorderBrush(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Thickness BorderThickness()
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISettingsFlyoutTemplateSettings).get_BorderThickness(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.ImageSource IconSource()
+	{
+		Windows.UI.Xaml.Media.ImageSource _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISettingsFlyoutTemplateSettings).get_IconSource(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.Media.Animation.TransitionCollection ContentTransitions()
+	{
+		Windows.UI.Xaml.Media.Animation.TransitionCollection _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISettingsFlyoutTemplateSettings).get_ContentTransitions(&_ret));
+		return _ret;
+	}
 }
 
 interface SplitViewTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.ISplitViewTemplateSettings
 {
+extern(Windows):
+	final double OpenPaneLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISplitViewTemplateSettings).get_OpenPaneLength(&_ret));
+		return _ret;
+	}
+	final double NegativeOpenPaneLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISplitViewTemplateSettings).get_NegativeOpenPaneLength(&_ret));
+		return _ret;
+	}
+	final double OpenPaneLengthMinusCompactLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISplitViewTemplateSettings).get_OpenPaneLengthMinusCompactLength(&_ret));
+		return _ret;
+	}
+	final double NegativeOpenPaneLengthMinusCompactLength()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISplitViewTemplateSettings).get_NegativeOpenPaneLengthMinusCompactLength(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.GridLength OpenPaneGridLength()
+	{
+		Windows.UI.Xaml.GridLength _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISplitViewTemplateSettings).get_OpenPaneGridLength(&_ret));
+		return _ret;
+	}
+	final Windows.UI.Xaml.GridLength CompactPaneGridLength()
+	{
+		Windows.UI.Xaml.GridLength _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISplitViewTemplateSettings).get_CompactPaneGridLength(&_ret));
+		return _ret;
+	}
 }
 
 interface Thumb : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.Primitives.IThumb
 {
+extern(Windows):
+	final bool IsDragging()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).get_IsDragging(&_ret));
+		return _ret;
+	}
+	final void CancelDrag()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).abi_CancelDrag());
+	}
 }
 
 interface TickBar : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.Primitives.ITickBar
 {
+extern(Windows):
+	final Windows.UI.Xaml.Media.Brush Fill()
+	{
+		Windows.UI.Xaml.Media.Brush _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ITickBar).get_Fill(&_ret));
+		return _ret;
+	}
+	final void Fill(Windows.UI.Xaml.Media.Brush value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ITickBar).set_Fill(value));
+	}
 }
 
 interface ToggleButton : Windows.UI.Xaml.Controls.Primitives.ButtonBase, Windows.UI.Xaml.Controls.Primitives.IToggleButton, Windows.UI.Xaml.Controls.Primitives.IToggleButtonOverrides
 {
+extern(Windows):
+	final Windows.Foundation.IReference!(bool) IsChecked()
+	{
+		Windows.Foundation.IReference!(bool) _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).get_IsChecked(&_ret));
+		return _ret;
+	}
+	final void IsChecked(Windows.Foundation.IReference!(bool) value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).set_IsChecked(value));
+	}
+	final bool IsThreeState()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).get_IsThreeState(&_ret));
+		return _ret;
+	}
+	final void IsThreeState(bool value)
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).set_IsThreeState(value));
+	}
+	final void OnToggle()
+	{
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButtonOverrides).abi_OnToggle());
+	}
 }
 
 interface ToggleSwitchTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IToggleSwitchTemplateSettings
 {
+extern(Windows):
+	final double KnobCurrentToOnOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleSwitchTemplateSettings).get_KnobCurrentToOnOffset(&_ret));
+		return _ret;
+	}
+	final double KnobCurrentToOffOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleSwitchTemplateSettings).get_KnobCurrentToOffOffset(&_ret));
+		return _ret;
+	}
+	final double KnobOnToOffOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleSwitchTemplateSettings).get_KnobOnToOffOffset(&_ret));
+		return _ret;
+	}
+	final double KnobOffToOnOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleSwitchTemplateSettings).get_KnobOffToOnOffset(&_ret));
+		return _ret;
+	}
+	final double CurtainCurrentToOnOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleSwitchTemplateSettings).get_CurtainCurrentToOnOffset(&_ret));
+		return _ret;
+	}
+	final double CurtainCurrentToOffOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleSwitchTemplateSettings).get_CurtainCurrentToOffOffset(&_ret));
+		return _ret;
+	}
+	final double CurtainOnToOffOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleSwitchTemplateSettings).get_CurtainOnToOffOffset(&_ret));
+		return _ret;
+	}
+	final double CurtainOffToOnOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleSwitchTemplateSettings).get_CurtainOffToOnOffset(&_ret));
+		return _ret;
+	}
 }
 
 interface ToolTipTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IToolTipTemplateSettings
 {
+extern(Windows):
+	final double FromHorizontalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToolTipTemplateSettings).get_FromHorizontalOffset(&_ret));
+		return _ret;
+	}
+	final double FromVerticalOffset()
+	{
+		double _ret;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToolTipTemplateSettings).get_FromVerticalOffset(&_ret));
+		return _ret;
+	}
 }
 
 enum AnimationDirection

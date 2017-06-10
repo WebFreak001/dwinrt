@@ -206,34 +206,190 @@ extern(Windows):
 
 interface AlternateWordForm : Windows.Data.Text.IAlternateWordForm
 {
+extern(Windows):
+	final Windows.Data.Text.TextSegment SourceTextSegment()
+	{
+		Windows.Data.Text.TextSegment _ret;
+		Debug.OK(this.as!(Windows.Data.Text.IAlternateWordForm).get_SourceTextSegment(&_ret));
+		return _ret;
+	}
+	final HSTRING AlternateText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Text.IAlternateWordForm).get_AlternateText(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Text.AlternateNormalizationFormat NormalizationFormat()
+	{
+		Windows.Data.Text.AlternateNormalizationFormat _ret;
+		Debug.OK(this.as!(Windows.Data.Text.IAlternateWordForm).get_NormalizationFormat(&_ret));
+		return _ret;
+	}
 }
 
 interface SelectableWordSegment : Windows.Data.Text.ISelectableWordSegment
 {
+extern(Windows):
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ISelectableWordSegment).get_Text(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Text.TextSegment SourceTextSegment()
+	{
+		Windows.Data.Text.TextSegment _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ISelectableWordSegment).get_SourceTextSegment(&_ret));
+		return _ret;
+	}
 }
 
 interface SelectableWordsSegmenter : Windows.Data.Text.ISelectableWordsSegmenter
 {
+extern(Windows):
+	final HSTRING ResolvedLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ISelectableWordsSegmenter).get_ResolvedLanguage(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Text.SelectableWordSegment GetTokenAt(HSTRING text, UINT32 startIndex)
+	{
+		Windows.Data.Text.SelectableWordSegment _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ISelectableWordsSegmenter).abi_GetTokenAt(text, startIndex, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.SelectableWordSegment) GetTokens(HSTRING text)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.SelectableWordSegment) _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ISelectableWordsSegmenter).abi_GetTokens(text, &_ret));
+		return _ret;
+	}
+	final void Tokenize(HSTRING text, UINT32 startIndex, Windows.Data.Text.SelectableWordSegmentsTokenizingHandler handler)
+	{
+		Debug.OK(this.as!(Windows.Data.Text.ISelectableWordsSegmenter).abi_Tokenize(text, startIndex, handler));
+	}
 }
 
 interface SemanticTextQuery : Windows.Data.Text.ISemanticTextQuery
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment) Find(HSTRING content)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment) _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ISemanticTextQuery).abi_Find(content, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment) FindInProperty(HSTRING propertyContent, HSTRING propertyName)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment) _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ISemanticTextQuery).abi_FindInProperty(propertyContent, propertyName, &_ret));
+		return _ret;
+	}
 }
 
 interface TextConversionGenerator : Windows.Data.Text.ITextConversionGenerator
 {
+extern(Windows):
+	final HSTRING ResolvedLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextConversionGenerator).get_ResolvedLanguage(&_ret));
+		return _ret;
+	}
+	final bool LanguageAvailableButNotInstalled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextConversionGenerator).get_LanguageAvailableButNotInstalled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetCandidatesAsync(HSTRING input)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextConversionGenerator).abi_GetCandidatesAsync(input, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetCandidatesWithMaxCountAsync(HSTRING input, UINT32 maxCandidates)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextConversionGenerator).abi_GetCandidatesWithMaxCountAsync(input, maxCandidates, &_ret));
+		return _ret;
+	}
 }
 
 interface TextPhoneme : Windows.Data.Text.ITextPhoneme
 {
+extern(Windows):
+	final HSTRING DisplayText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextPhoneme).get_DisplayText(&_ret));
+		return _ret;
+	}
+	final HSTRING ReadingText()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextPhoneme).get_ReadingText(&_ret));
+		return _ret;
+	}
 }
 
 interface TextPredictionGenerator : Windows.Data.Text.ITextPredictionGenerator
 {
+extern(Windows):
+	final HSTRING ResolvedLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextPredictionGenerator).get_ResolvedLanguage(&_ret));
+		return _ret;
+	}
+	final bool LanguageAvailableButNotInstalled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextPredictionGenerator).get_LanguageAvailableButNotInstalled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetCandidatesAsync(HSTRING input)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextPredictionGenerator).abi_GetCandidatesAsync(input, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetCandidatesWithMaxCountAsync(HSTRING input, UINT32 maxCandidates)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextPredictionGenerator).abi_GetCandidatesWithMaxCountAsync(input, maxCandidates, &_ret));
+		return _ret;
+	}
 }
 
 interface TextReverseConversionGenerator : Windows.Data.Text.ITextReverseConversionGenerator, Windows.Data.Text.ITextReverseConversionGenerator2
 {
+extern(Windows):
+	final HSTRING ResolvedLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextReverseConversionGenerator).get_ResolvedLanguage(&_ret));
+		return _ret;
+	}
+	final bool LanguageAvailableButNotInstalled()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextReverseConversionGenerator).get_LanguageAvailableButNotInstalled(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(HSTRING) ConvertBackAsync(HSTRING input)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextReverseConversionGenerator).abi_ConvertBackAsync(input, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextPhoneme)) GetPhonemesAsync(HSTRING input)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextPhoneme)) _ret;
+		Debug.OK(this.as!(Windows.Data.Text.ITextReverseConversionGenerator2).abi_GetPhonemesAsync(input, &_ret));
+		return _ret;
+	}
 }
 
 interface UnicodeCharacters
@@ -242,10 +398,52 @@ interface UnicodeCharacters
 
 interface WordSegment : Windows.Data.Text.IWordSegment
 {
+extern(Windows):
+	final HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Text.IWordSegment).get_Text(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Text.TextSegment SourceTextSegment()
+	{
+		Windows.Data.Text.TextSegment _ret;
+		Debug.OK(this.as!(Windows.Data.Text.IWordSegment).get_SourceTextSegment(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.AlternateWordForm) AlternateForms()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.AlternateWordForm) _ret;
+		Debug.OK(this.as!(Windows.Data.Text.IWordSegment).get_AlternateForms(&_ret));
+		return _ret;
+	}
 }
 
 interface WordsSegmenter : Windows.Data.Text.IWordsSegmenter
 {
+extern(Windows):
+	final HSTRING ResolvedLanguage()
+	{
+		HSTRING _ret;
+		Debug.OK(this.as!(Windows.Data.Text.IWordsSegmenter).get_ResolvedLanguage(&_ret));
+		return _ret;
+	}
+	final Windows.Data.Text.WordSegment GetTokenAt(HSTRING text, UINT32 startIndex)
+	{
+		Windows.Data.Text.WordSegment _ret;
+		Debug.OK(this.as!(Windows.Data.Text.IWordsSegmenter).abi_GetTokenAt(text, startIndex, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.WordSegment) GetTokens(HSTRING text)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.WordSegment) _ret;
+		Debug.OK(this.as!(Windows.Data.Text.IWordsSegmenter).abi_GetTokens(text, &_ret));
+		return _ret;
+	}
+	final void Tokenize(HSTRING text, UINT32 startIndex, Windows.Data.Text.WordSegmentsTokenizingHandler handler)
+	{
+		Debug.OK(this.as!(Windows.Data.Text.IWordsSegmenter).abi_Tokenize(text, startIndex, handler));
+	}
 }
 
 enum AlternateNormalizationFormat
