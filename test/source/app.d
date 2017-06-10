@@ -6,8 +6,10 @@ import std.conv;
 import dwinrt;
 
 import Windows.ApplicationModel.Core;
+import Windows.Foundation;
 import Windows.Foundation.Numerics;
 import Windows.UI;
+import Windows.UI.Input;
 import Windows.UI.Core;
 import Windows.UI.Composition;
 
@@ -41,6 +43,11 @@ int myWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int
 	Thread.sleep(1.seconds);
 	return 0;
 }
+
+static Color[] colors = [
+	Color(0xDC, 0x5B, 0x9B, 0xD5), Color(0xDC, 0xED, 0x7D, 0x31), Color(0xDC,
+		0x70, 0xAD, 0x47), Color(0xDC, 0xFF, 0xC0, 0x00)
+];
 
 class App : Inspectable!App, IFrameworkViewSource, IFrameworkView
 {
@@ -77,14 +84,49 @@ extern (Windows):
 		Debug.OK(root.as!IContainerVisual.get_Children(&visuals));
 
 		EventRegistrationToken token;
-		Debug.OK(window.add_PointerPressed((Windows.UI.Core.CoreWindow sender,
-				Windows.UI.Core.PointerEventArgs args) {
-				Debug.WriteLine("Point Pressed Event");
-				Debug.WriteLine("Sender: %s", sender);
-				Debug.WriteLine("Args: %s", args);
+		Debug.OK(window.add_PointerPressed((CoreWindow sender, PointerEventArgs args) {
+				OnPointerPressed(sender, args);
+			}.event, &token));
+		Debug.OK(window.add_PointerMoved((CoreWindow sender, PointerEventArgs args) {
+				OnPointerMoved(sender, args);
 			}.event, &token));
 
 		return S_OK;
+	}
+
+	void OnPointerPressed(CoreWindow sender, PointerEventArgs args)
+	{
+		PointerPoint currentPoint;
+		Debug.OK(args.as!IPointerEventArgs.get_CurrentPoint(&currentPoint));
+		Point point;
+		Debug.OK(currentPoint.as!IPointerPoint.get_Position(&point));
+
+		AddVisual(point);
+	}
+
+	void OnPointerMoved(CoreWindow sender, PointerEventArgs args)
+	{
+	}
+
+	uint last;
+	void AddVisual(in Point point)
+	{
+		Compositor compositor;
+		Debug.OK(visuals.as!ICompositionObject.get_Compositor(&compositor));
+		SpriteVisual visual;
+		Debug.OK(compositor.as!ICompositor.abi_CreateSpriteVisual(&visual));
+
+		uint next = cast(uint)(++last % colors.length);
+		CompositionColorBrush brush;
+		Debug.OK(compositor.as!ICompositor.abi_CreateColorBrushWithColor(colors[next], &brush));
+		Debug.OK(visual.as!ISpriteVisual.set_Brush(brush));
+
+		enum BlockSize = 100.0f;
+
+		visual.as!IVisual.set_Size(Vector2(BlockSize, BlockSize));
+		visual.as!IVisual.set_Offset(Vector3(point.X - BlockSize / 2.0f, point.Y - BlockSize / 2.0f, 0));
+
+		visuals.as!IVisualCollection.abi_InsertAtTop(visual);
 	}
 
 	override HRESULT abi_Load(HSTRING entryPoint)
