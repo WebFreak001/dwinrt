@@ -28,30 +28,30 @@ Module[] modules = [
 		]),
 		Interface("IAsyncActionWithProgress", ["IInspectable"], [], [], ["TProgress"], "", "", false, false, [
 			InterfaceMethod("Progress", "HRESULT", "", InterfaceType.propset, [
-				InterfaceArgument(ArgumentDirection.in_, "AsyncActionProgressHandler!(TProgress)", "handler")
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.AsyncActionProgressHandler!(TProgress)", "handler")
 			], true),
 			InterfaceMethod("Progress", "HRESULT", "", InterfaceType.propget, [
-				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "AsyncActionProgressHandler!(TProgress)*", "handler")
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "Windows.Foundation.AsyncActionProgressHandler!(TProgress)*", "handler")
 			], true),
 		]),
 		Interface("AsyncActionProgressHandler", ["IUnknown"], [], [], ["TProgress"], "", "", false, false, [
 			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
-				InterfaceArgument(ArgumentDirection.in_, "IAsyncActionWithProgress!(TProgress)", "asyncInfo"),
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.IAsyncActionWithProgress!(TProgress)", "asyncInfo"),
 				InterfaceArgument(ArgumentDirection.in_, "TProgress", "progressInfo"),
 			], true),
 		]),
 		Interface("AsyncActionWithProgressCompletedHandler", ["IUnknown"], [], [], ["TProgress"], "", "", false, false, [
 			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
-				InterfaceArgument(ArgumentDirection.in_, "IAsyncActionWithProgress!(TProgress)", "asyncInfo"),
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.IAsyncActionWithProgress!(TProgress)", "asyncInfo"),
 				InterfaceArgument(ArgumentDirection.in_, "AsyncStatus", "status"),
 			], true),
 		]),
 		Interface("IAsyncOperation", ["IInspectable"], [], [], ["TResult"], "", "", false, false, [
 			InterfaceMethod("Completed", "HRESULT", "", InterfaceType.propset, [
-				InterfaceArgument(ArgumentDirection.in_, "AsyncOperationCompletedHandler!(TResult)", "handler"),
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.AsyncOperationCompletedHandler!(TResult)", "handler"),
 			], true),
 			InterfaceMethod("Completed", "HRESULT", "", InterfaceType.propget, [
-				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "AsyncOperationCompletedHandler!(TResult)*", "handler"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "Windows.Foundation.AsyncOperationCompletedHandler!(TResult)*", "handler"),
 			], true),
 			InterfaceMethod("Results", "HRESULT", "", InterfaceType.propget, [
 				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "TResult*", "results"),
@@ -59,28 +59,28 @@ Module[] modules = [
 		]),
 		Interface("AsyncOperationProgressHandler", ["IUnknown"], [], [], ["TResult", "TProgress"], "", "", false, false, [
 			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
-				InterfaceArgument(ArgumentDirection.in_, "IAsyncOperationWithProgress!(TResult, TProgress)", "asyncInfo"),
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress)", "asyncInfo"),
 				InterfaceArgument(ArgumentDirection.in_, "TProgress", "progressInfo"),
 			], true),
 		]),
 		Interface("AsyncOperationCompletedHandler", ["IUnknown"], [], [], ["TResult"], "", "", false, false, [
 			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
-				InterfaceArgument(ArgumentDirection.in_, "IAsyncOperation!(TResult)", "asyncInfo"),
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.IAsyncOperation!(TResult)", "asyncInfo"),
 				InterfaceArgument(ArgumentDirection.in_, "AsyncStatus", "status"),
 			], true),
 		]),
 		Interface("IAsyncOperationWithProgress", ["IInspectable"], [], [], ["TResult", "TProgress"], "", "", false, false, [
 			InterfaceMethod("Progress", "HRESULT", "", InterfaceType.propset, [
-				InterfaceArgument(ArgumentDirection.in_, "AsyncOperationProgressHandler!(TResult, TProgress)", "handler"),
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress)", "handler"),
 			], true),
 			InterfaceMethod("Progress", "HRESULT", "", InterfaceType.propget, [
-				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "AsyncOperationProgressHandler!(TResult, TProgress)*", "handler"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress)*", "handler"),
 			], true),
 			InterfaceMethod("Completed", "HRESULT", "", InterfaceType.propset, [
-				InterfaceArgument(ArgumentDirection.in_, "AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)", "handler"),
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)", "handler"),
 			], true),
 			InterfaceMethod("Completed", "HRESULT", "", InterfaceType.propget, [
-				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)*", "handler"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)*", "handler"),
 			], true),
 			InterfaceMethod("Results", "HRESULT", "", InterfaceType.propget, [
 				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "TResult*", "results"),
@@ -88,7 +88,7 @@ Module[] modules = [
 		]),
 		Interface("AsyncOperationWithProgressCompletedHandler", ["IUnknown"], [], [], ["TResult", "TProgress"], "", "", false, false, [
 			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
-				InterfaceArgument(ArgumentDirection.in_, "IAsyncOperationWithProgress!(TResult, TProgress)", "asyncInfo"),
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress)", "asyncInfo"),
 				InterfaceArgument(ArgumentDirection.in_, "AsyncStatus", "status"),
 			], true),
 		]),
@@ -101,14 +101,14 @@ Module[] modules = [
 	Module(["Windows", "Foundation", "Collections"], [], [
 		Interface("MapChangedEventHandler", ["IUnknown"], [], [], ["TKey", "TValue"], "", "", false, false, [
 			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
-				InterfaceArgument(ArgumentDirection.in_, "IObservableMap!(TKey, TValue)", "sender"),
-				InterfaceArgument(ArgumentDirection.in_, "IMapChangedEventArgs!(TKey)", "args")
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.Collections.IObservableMap!(TKey, TValue)", "sender"),
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.Collections.IMapChangedEventArgs!(TKey)", "args")
 			], true),
 		]),
 		Interface("VectorChangedEventHandler", ["IUnknown"], [], [], ["Type"], "", "", false, false, [
 			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
-				InterfaceArgument(ArgumentDirection.in_, "IObservableVector!(Type)", "sender"),
-				InterfaceArgument(ArgumentDirection.in_, "IVectorChangedEventArgs", "args")
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.Collections.IObservableVector!(Type)", "sender"),
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.Collections.IVectorChangedEventArgs", "args")
 			], true),
 		]),
 		Interface("IIterator", ["IInspectable"], [], [], ["Type"], "", "", false, false, [
@@ -129,7 +129,7 @@ Module[] modules = [
 		]),
 		Interface("IIterable", ["IInspectable"], [], [], ["Type"], "", "", false, false, [
 			InterfaceMethod("First", "HRESULT", "", InterfaceType.call, [
-				InterfaceArgument(ArgumentDirection.out_, "IIterator!(Type)*", "first")
+				InterfaceArgument(ArgumentDirection.out_, "Windows.Foundation.Collections.IIterator!(Type)*", "first")
 			], true),
 		]),
 		Interface("IKeyValuePair", ["IInspectable"], [], [], ["TKey", "TValue"], "", "", false, false, [
@@ -169,7 +169,7 @@ Module[] modules = [
 				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "uint*", "size"),
 			], true),
 			InterfaceMethod("GetView", "HRESULT", "", InterfaceType.call, [
-				InterfaceArgument(ArgumentDirection.out_, "IVectorView!(Type)*", "view"),
+				InterfaceArgument(ArgumentDirection.out_, "Windows.Foundation.Collections.IVectorView!(Type)*", "view"),
 			], true),
 			InterfaceMethod("IndexOf", "HRESULT", "", InterfaceType.propget, [
 				InterfaceArgument(ArgumentDirection.in_, "Type", "value"),
@@ -216,8 +216,8 @@ Module[] modules = [
 				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "bool*", "found"),
 			], true),
 			InterfaceMethod("Split", "HRESULT", "", InterfaceType.call, [
-				InterfaceArgument(ArgumentDirection.out_, "IMapView!(TKey, TValue)", "firstPartition"),
-				InterfaceArgument(ArgumentDirection.out_, "IMapView!(TKey, TValue)", "secondPartition"),
+				InterfaceArgument(ArgumentDirection.out_, "Windows.Foundation.Collections.IMapView!(TKey, TValue)", "firstPartition"),
+				InterfaceArgument(ArgumentDirection.out_, "Windows.Foundation.Collections.IMapView!(TKey, TValue)", "secondPartition"),
 			], true),
 		]),
 		Interface("IMap", ["IInspectable"], [], [], ["TKey", "TValue"], "", "", false, false, [
@@ -233,7 +233,7 @@ Module[] modules = [
 				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "bool*", "found"),
 			], true),
 			InterfaceMethod("GetView", "HRESULT", "", InterfaceType.call, [
-				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "IMapView!(TKey, TValue)*", "view"),
+				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "Windows.Foundation.Collections.IMapView!(TKey, TValue)*", "view"),
 			], true),
 			InterfaceMethod("Insert", "HRESULT", "", InterfaceType.call, [
 				InterfaceArgument(ArgumentDirection.in_, "TKey", "key"),
@@ -255,7 +255,7 @@ Module[] modules = [
 		]),
 		Interface("IObservableMap", ["IInspectable"], [], [], ["TKey", "TValue"], "", "", false, false, [
 			InterfaceMethod("MapChanged", "HRESULT", "", InterfaceType.eventadd, [
-				InterfaceArgument(ArgumentDirection.in_, "MapChangedEventHandler!(TKey, TValue)", "handler"),
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.Collections.MapChangedEventHandler!(TKey, TValue)", "handler"),
 				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "EventRegistrationToken*", "token")
 			], true),
 			InterfaceMethod("MapChanged", "HRESULT", "", InterfaceType.eventremove, [
@@ -264,7 +264,7 @@ Module[] modules = [
 		]),
 		Interface("IObservableVector", ["IInspectable"], [], [], ["Type"], "", "", false, false, [
 			InterfaceMethod("VectorChanged", "HRESULT", "", InterfaceType.eventadd, [
-				InterfaceArgument(ArgumentDirection.in_, "VectorChangedEventHandler!(Type)", "handler"),
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.Collections.VectorChangedEventHandler!(Type)", "handler"),
 				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "EventRegistrationToken*", "token")
 			], true),
 			InterfaceMethod("VectorChanged", "HRESULT", "", InterfaceType.eventremove, [
@@ -1116,8 +1116,9 @@ struct Interface
 	string exclusiveto;
 	bool isDelegate;
 	bool isRuntimeClass;
+	InterfaceMethod[] methods;
 
-	Interface instance(string[] types) const
+	Interface instance(string[] types)
 	{
 		enforce(templateArgs.length == types.length);
 		Interface instanced;
@@ -1130,11 +1131,11 @@ struct Interface
 		instanced.exclusiveto = exclusiveto;
 		instanced.isDelegate = isDelegate;
 		instanced.isRuntimeClass = isRuntimeClass;
-		foreach (i, ref method; instanced.methods)
-		{
+		instanced.methods = methods.dup;
+		foreach (ref method; instanced.methods)
 			foreach (ref arg; method.arguments)
-				arg.type = arg.type.replace(templateArgs[i], types[i]);
-		}
+				for (int i = 0; i < types.length; i++)
+					arg.type = arg.type.replace(templateArgs[i], types[i]);
 		return instanced;
 	}
 
@@ -1149,8 +1150,6 @@ struct Interface
 		foreach (ref method; methods)
 			method.fixTypes();
 	}
-
-	InterfaceMethod[] methods;
 
 	void implement()
 	{

@@ -514,6 +514,49 @@ interface MediaEncodingSubtypes
 
 interface MediaPropertySet : Windows.Foundation.Collections.IMap!(GUID, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(GUID, IInspectable))
 {
+extern(Windows):
+	final  IInspectable Lookup(HSTRING key)
+	{
+		 IInspectable _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_Lookup(key, &_ret));
+		return _ret;
+	}
+	final uint Size()
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).get_Size(&_ret));
+		return _ret;
+	}
+	final bool HasKey(HSTRING key)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_HasKey(key, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_GetView(&_ret));
+		return _ret;
+	}
+	final bool Insert(HSTRING key,	IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_Insert(key, value, &_ret));
+		return _ret;
+	}
+	final void Remove(HSTRING key)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_Remove(key));
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_Clear());
+	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(GUID, IInspectable))).abi_First(out_first));
+	}
 }
 
 interface MediaRatio : Windows.Media.MediaProperties.IMediaRatio

@@ -472,14 +472,75 @@ extern(Windows):
 
 interface GetSmsDeviceOperation : Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice)
 {
+extern(Windows):
+	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) handler)
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice)).set_Completed(handler));
+	}
+	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) Completed()
+	{
+		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice)).get_Completed(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsDevice Results()
+	{
+		Windows.Devices.Sms.SmsDevice _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice)).get_Results(&_ret));
+		return _ret;
+	}
 }
 
 interface GetSmsMessageOperation : Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage)
 {
+extern(Windows):
+	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) handler)
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage)).set_Completed(handler));
+	}
+	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) Completed()
+	{
+		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage)).get_Completed(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsDevice Results()
+	{
+		Windows.Devices.Sms.SmsDevice _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage)).get_Results(&_ret));
+		return _ret;
+	}
 }
 
 interface GetSmsMessagesOperation : Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32)
 {
+extern(Windows):
+	final void Progress(Windows.Foundation.AsyncOperationProgressHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),	 INT32) handler)
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32)).set_Progress(handler));
+	}
+	final Windows.Foundation.AsyncOperationProgressHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),  INT32) Progress()
+	{
+		Windows.Foundation.AsyncOperationProgressHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),	 INT32) _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32)).get_Progress(&_ret));
+		return _ret;
+	}
+	final void Completed(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),  INT32) handler)
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32)).set_Completed(handler));
+	}
+	final Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),	INT32) Completed()
+	{
+		Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),  INT32) _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32)).get_Completed(&_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage) Results()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage) _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32)).get_Results(&_ret));
+		return _ret;
+	}
 }
 
 interface SendSmsMessageOperation : Windows.Foundation.IAsyncAction

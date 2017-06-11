@@ -2501,6 +2501,30 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNamedNodeMap).abi_SetNamedItemNS(node, &_ret));
 		return _ret;
 	}
+	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode)).abi_GetAt(index, out_item));
+	}
+	final uint Size()
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode)).get_Size(&_ret));
+		return _ret;
+	}
+	final uint IndexOf(Windows.Foundation.IWwwFormUrlDecoderEntry value, bool* out_found)
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode)).get_IndexOf(value, &_ret, out_found));
+		return _ret;
+	}
+	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.IWwwFormUrlDecoderEntry* out_value, uint* out_actual)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Data.Xml.Dom.IXmlNode)).abi_First(out_first));
+	}
 }
 
 interface XmlNodeList : Windows.Data.Xml.Dom.IXmlNodeList, Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode), Windows.Foundation.Collections.IIterable!(Windows.Data.Xml.Dom.IXmlNode)
@@ -2517,6 +2541,30 @@ extern(Windows):
 		Windows.Data.Xml.Dom.IXmlNode _ret;
 		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlNodeList).abi_Item(index, &_ret));
 		return _ret;
+	}
+	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode)).abi_GetAt(index, out_item));
+	}
+	final uint Size()
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode)).get_Size(&_ret));
+		return _ret;
+	}
+	final uint IndexOf(Windows.Foundation.IWwwFormUrlDecoderEntry value, bool* out_found)
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode)).get_IndexOf(value, &_ret, out_found));
+		return _ret;
+	}
+	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.IWwwFormUrlDecoderEntry* out_value, uint* out_actual)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Data.Xml.Dom.IXmlNode)).abi_First(out_first));
 	}
 }
 

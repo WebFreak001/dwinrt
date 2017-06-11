@@ -74,56 +74,56 @@ extern(Windows):
 interface IAsyncActionWithProgress(TProgress) : IInspectable
 {
 extern(Windows):
-	HRESULT set_Progress(AsyncActionProgressHandler!(TProgress) handler);
-	HRESULT get_Progress(AsyncActionProgressHandler!(TProgress)* return_handler);
+	HRESULT set_Progress(Windows.Foundation.AsyncActionProgressHandler!(TProgress) handler);
+	HRESULT get_Progress(Windows.Foundation.AsyncActionProgressHandler!(TProgress)* return_handler);
 }
 
 interface AsyncActionProgressHandler(TProgress) : IUnknown
 {
 extern(Windows):
-	HRESULT abi_Invoke(IAsyncActionWithProgress!(TProgress) asyncInfo, TProgress progressInfo);
+	HRESULT abi_Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, TProgress progressInfo);
 }
 
 interface AsyncActionWithProgressCompletedHandler(TProgress) : IUnknown
 {
 extern(Windows):
-	HRESULT abi_Invoke(IAsyncActionWithProgress!(TProgress) asyncInfo, AsyncStatus status);
+	HRESULT abi_Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, AsyncStatus status);
 }
 
 interface IAsyncOperation(TResult) : IInspectable
 {
 extern(Windows):
-	HRESULT set_Completed(AsyncOperationCompletedHandler!(TResult) handler);
-	HRESULT get_Completed(AsyncOperationCompletedHandler!(TResult)* return_handler);
-	HRESULT get_Results(TResult* return_results);
+	HRESULT set_Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) handler);
+	HRESULT get_Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice)* return_handler);
+	HRESULT get_Results(Windows.Devices.Sms.SmsDevice* return_results);
 }
 
 interface AsyncOperationProgressHandler(TResult, TProgress) : IUnknown
 {
 extern(Windows):
-	HRESULT abi_Invoke(IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, TProgress progressInfo);
+	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, TProgress progressInfo);
 }
 
 interface AsyncOperationCompletedHandler(TResult) : IUnknown
 {
 extern(Windows):
-	HRESULT abi_Invoke(IAsyncOperation!(TResult) asyncInfo, AsyncStatus status);
+	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperation!(TResult) asyncInfo, AsyncStatus status);
 }
 
 interface IAsyncOperationWithProgress(TResult, TProgress) : IInspectable
 {
 extern(Windows):
-	HRESULT set_Progress(AsyncOperationProgressHandler!(TResult, TProgress) handler);
-	HRESULT get_Progress(AsyncOperationProgressHandler!(TResult, TProgress)* return_handler);
-	HRESULT set_Completed(AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) handler);
-	HRESULT get_Completed(AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)* return_handler);
-	HRESULT get_Results(TResult* return_results);
+	HRESULT set_Progress(Windows.Foundation.AsyncOperationProgressHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),  INT32) handler);
+	HRESULT get_Progress(Windows.Foundation.AsyncOperationProgressHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),  INT32)* return_handler);
+	HRESULT set_Completed(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),	INT32) handler);
+	HRESULT get_Completed(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),	INT32)* return_handler);
+	HRESULT get_Results(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage)* return_results);
 }
 
 interface AsyncOperationWithProgressCompletedHandler(TResult, TProgress) : IUnknown
 {
 extern(Windows):
-	HRESULT abi_Invoke(IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status);
+	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status);
 }
 
 interface IReference(Type) : IUnknown
@@ -594,6 +594,30 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IWwwFormUrlDecoderRuntimeClass).abi_GetFirstValueByName(name, &_ret));
 		return _ret;
+	}
+	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry)).abi_GetAt(index, out_item));
+	}
+	final uint Size()
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry)).get_Size(&_ret));
+		return _ret;
+	}
+	final uint IndexOf(Windows.Foundation.IWwwFormUrlDecoderEntry value, bool* out_found)
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry)).get_IndexOf(value, &_ret, out_found));
+		return _ret;
+	}
+	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.IWwwFormUrlDecoderEntry* out_value, uint* out_actual)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.IWwwFormUrlDecoderEntry)).abi_First(out_first));
 	}
 }
 

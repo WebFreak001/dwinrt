@@ -408,16 +408,30 @@ Interface factory(Class : IUnknown, Interface : IUnknown)()
 auto tryAs(U : IUnknown, T : IUnknown)(T base)
 {
 	U tmp = null;
-	static immutable id = uuidOf!U;
-	base.QueryInterface(&id, cast(void**)&tmp);
+	static immutable id = uuidOf!(U, false);
+	static if (id != GUID.init)
+	{
+		base.QueryInterface(&id, cast(void**)&tmp);
+	}
+	else
+	{
+		tmp = cast(U) base;
+	}
 	return tmp;
 }
 
 auto as(U : IUnknown, T : IUnknown)(T base)
 {
 	U tmp = null;
-	static immutable id = uuidOf!U;
-	Debug.OK(base.QueryInterface(&id, cast(void**)&tmp));
+	static immutable id = uuidOf!(U, false);
+	static if (id != GUID.init)
+	{
+		Debug.OK(base.QueryInterface(&id, cast(void**)&tmp));
+	}
+	else
+	{
+		tmp = cast(U) base;
+	}
 	return tmp;
 }
 

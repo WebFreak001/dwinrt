@@ -896,10 +896,36 @@ extern(Windows):
 
 interface PlayReadyDomainIterable : Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadyDomain)
 {
+extern(Windows):
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadyDomain)).abi_First(out_first));
+	}
 }
 
 interface PlayReadyDomainIterator : Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyDomain)
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource) Current()
+	{
+		Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource) _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyDomain)).get_Current(&_ret));
+		return _ret;
+	}
+	final bool HasCurrent()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyDomain)).get_HasCurrent(&_ret));
+		return _ret;
+	}
+	final void MoveNext(bool* out_hasCurrent)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyDomain)).abi_MoveNext(out_hasCurrent));
+	}
+	final void GetMany(uint capacity, Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource)* value, uint* actual)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyDomain)).abi_GetMany(capacity, value, actual));
+	}
 }
 
 interface PlayReadyDomainJoinServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyDomainJoinServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
@@ -1336,10 +1362,36 @@ extern(Windows):
 
 interface PlayReadyLicenseIterable : Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)
 {
+extern(Windows):
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)).abi_First(out_first));
+	}
 }
 
 interface PlayReadyLicenseIterator : Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource) Current()
+	{
+		Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource) _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)).get_Current(&_ret));
+		return _ret;
+	}
+	final bool HasCurrent()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)).get_HasCurrent(&_ret));
+		return _ret;
+	}
+	final void MoveNext(bool* out_hasCurrent)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)).abi_MoveNext(out_hasCurrent));
+	}
+	final void GetMany(uint capacity, Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource)* value, uint* actual)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)).abi_GetMany(capacity, value, actual));
+	}
 }
 
 interface PlayReadyLicenseManagement
@@ -1513,10 +1565,36 @@ extern(Windows):
 
 interface PlayReadySecureStopIterable : Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest)
 {
+extern(Windows):
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest)).abi_First(out_first));
+	}
 }
 
 interface PlayReadySecureStopIterator : Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest)
 {
+extern(Windows):
+	final Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource) Current()
+	{
+		Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource) _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest)).get_Current(&_ret));
+		return _ret;
+	}
+	final bool HasCurrent()
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest)).get_HasCurrent(&_ret));
+		return _ret;
+	}
+	final void MoveNext(bool* out_hasCurrent)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest)).abi_MoveNext(out_hasCurrent));
+	}
+	final void GetMany(uint capacity, Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource)* value, uint* actual)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest)).abi_GetMany(capacity, value, actual));
+	}
 }
 
 interface PlayReadySecureStopServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest

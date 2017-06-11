@@ -454,6 +454,65 @@ extern(Windows):
 
 interface SortEntryVector : Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry), Windows.Foundation.Collections.IIterable!(Windows.Storage.Search.SortEntry)
 {
+extern(Windows):
+	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	{
+		Windows.Data.Json.IJsonValue _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry)).get_GetAt(index, &_ret));
+		return _ret;
+	}
+	final uint Size()
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry)).get_Size(&_ret));
+		return _ret;
+	}
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry)).abi_GetView(out_view));
+	}
+	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry)).get_IndexOf(value, &_ret, out_found));
+		return _ret;
+	}
+	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry)).abi_SetAt(index, item));
+	}
+	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry)).abi_InsertAt(index, item));
+	}
+	final void RemoveAt(uint index)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry)).abi_RemoveAt(index));
+	}
+	final void Append(Windows.Data.Json.IJsonValue item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry)).abi_Append(item));
+	}
+	final void RemoveAtEnd()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry)).abi_RemoveAtEnd());
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry)).abi_Clear());
+	}
+	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+	}
+	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry)).abi_ReplaceAll(count, out_value));
+	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Storage.Search.SortEntry)).abi_First(out_first));
+	}
 }
 
 interface StorageFileQueryResult : Windows.Storage.Search.IStorageFileQueryResult, Windows.Storage.Search.IStorageQueryResultBase, Windows.Storage.Search.IStorageFileQueryResult2

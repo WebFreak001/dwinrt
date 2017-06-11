@@ -318,6 +318,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.ICompositionInteractionSourceCollection).abi_RemoveAll());
 	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.ICompositionInteractionSource)).abi_First(out_first));
+	}
 }
 
 interface InteractionTracker : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.Interactions.IInteractionTracker, Windows.UI.Composition.Interactions.IInteractionTracker2

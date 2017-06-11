@@ -275,6 +275,23 @@ extern(Windows):
 
 interface UserAuthenticationOperation : Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity)
 {
+extern(Windows):
+	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) handler)
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity)).set_Completed(handler));
+	}
+	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) Completed()
+	{
+		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity)).get_Completed(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsDevice Results()
+	{
+		Windows.Devices.Sms.SmsDevice _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity)).get_Results(&_ret));
+		return _ret;
+	}
 }
 
 interface UserIdentity : Windows.Security.Authentication.OnlineId.IUserIdentity

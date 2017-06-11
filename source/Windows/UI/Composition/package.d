@@ -1019,6 +1019,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionAnimationGroup).abi_RemoveAll());
 	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.CompositionAnimation)).abi_First(out_first));
+	}
 }
 
 interface CompositionBackdropBrush : Windows.UI.Composition.CompositionBrush, Windows.UI.Composition.ICompositionBackdropBrush
@@ -2151,6 +2155,49 @@ extern(Windows):
 
 interface ImplicitAnimationCollection : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.IImplicitAnimationCollection, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)), Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)
 {
+extern(Windows):
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase))).abi_First(out_first));
+	}
+	final  IInspectable Lookup(HSTRING key)
+	{
+		 IInspectable _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)).abi_Lookup(key, &_ret));
+		return _ret;
+	}
+	final uint Size()
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)).get_Size(&_ret));
+		return _ret;
+	}
+	final bool HasKey(HSTRING key)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)).abi_HasKey(key, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)).abi_GetView(&_ret));
+		return _ret;
+	}
+	final bool Insert(HSTRING key,	IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)).abi_Insert(key, value, &_ret));
+		return _ret;
+	}
+	final void Remove(HSTRING key)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)).abi_Remove(key));
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)).abi_Clear());
+	}
 }
 
 interface InsetClip : Windows.UI.Composition.CompositionClip, Windows.UI.Composition.IInsetClip
@@ -2886,6 +2933,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVisualCollection).abi_RemoveAll());
 	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Visual)).abi_First(out_first));
+	}
 }
 
 interface VisualUnorderedCollection : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.IVisualUnorderedCollection, Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Visual)
@@ -2908,6 +2959,10 @@ extern(Windows):
 	final void RemoveAll()
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVisualUnorderedCollection).abi_RemoveAll());
+	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Visual)).abi_First(out_first));
 	}
 }
 

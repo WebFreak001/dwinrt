@@ -172,6 +172,33 @@ extern(Windows):
 
 interface FirstSignInSettings : Windows.System.UserProfile.IFirstSignInSettings, Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
 {
+extern(Windows):
+	final  IInspectable Lookup(HSTRING key)
+	{
+		 IInspectable _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)).abi_Lookup(key, &_ret));
+		return _ret;
+	}
+	final uint Size()
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)).get_Size(&_ret));
+		return _ret;
+	}
+	final bool HasKey(HSTRING key)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)).abi_HasKey(key, &_ret));
+		return _ret;
+	}
+	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	IInspectable) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) out_secondPartition)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)).abi_Split(out_firstPartition, out_secondPartition));
+	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))).abi_First(out_first));
+	}
 }
 
 interface GlobalizationPreferences

@@ -547,6 +547,48 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet).set_ApplicationListingUri(value));
 	}
+	final  IInspectable Lookup(HSTRING key)
+	{
+		 IInspectable _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_Lookup(key, &_ret));
+		return _ret;
+	}
+	final uint Size()
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).get_Size(&_ret));
+		return _ret;
+	}
+	final bool HasKey(HSTRING key)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_HasKey(key, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_GetView(&_ret));
+		return _ret;
+	}
+	final bool Insert(HSTRING key,	IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_Insert(key, value, &_ret));
+		return _ret;
+	}
+	final void Remove(HSTRING key)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_Remove(key));
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_Clear());
+	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))).abi_First(out_first));
+	}
 	final Windows.Foundation.Uri ContentSourceWebLink()
 	{
 		Windows.Foundation.Uri _ret;
@@ -647,6 +689,32 @@ extern(Windows):
 		Windows.Foundation.Uri _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView).get_ApplicationListingUri(&_ret));
 		return _ret;
+	}
+	final  IInspectable Lookup(HSTRING key)
+	{
+		 IInspectable _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)).abi_Lookup(key, &_ret));
+		return _ret;
+	}
+	final uint Size()
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)).get_Size(&_ret));
+		return _ret;
+	}
+	final bool HasKey(HSTRING key)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)).abi_HasKey(key, &_ret));
+		return _ret;
+	}
+	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	IInspectable) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) out_secondPartition)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)).abi_Split(out_firstPartition, out_secondPartition));
+	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))).abi_First(out_first));
 	}
 	final HSTRING PackageFamilyName()
 	{

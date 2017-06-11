@@ -373,6 +373,23 @@ extern(Windows):
 
 interface DataReaderLoadOperation : Windows.Foundation.IAsyncOperation!(UINT32)
 {
+extern(Windows):
+	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) handler)
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(UINT32)).set_Completed(handler));
+	}
+	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) Completed()
+	{
+		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(UINT32)).get_Completed(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsDevice Results()
+	{
+		Windows.Devices.Sms.SmsDevice _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(UINT32)).get_Results(&_ret));
+		return _ret;
+	}
 }
 
 interface DataWriter : Windows.Storage.Streams.IDataWriter, Windows.Foundation.IClosable
@@ -512,6 +529,23 @@ extern(Windows):
 
 interface DataWriterStoreOperation : Windows.Foundation.IAsyncOperation!(UINT32)
 {
+extern(Windows):
+	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) handler)
+	{
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(UINT32)).set_Completed(handler));
+	}
+	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) Completed()
+	{
+		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(UINT32)).get_Completed(&_ret));
+		return _ret;
+	}
+	final Windows.Devices.Sms.SmsDevice Results()
+	{
+		Windows.Devices.Sms.SmsDevice _ret;
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(UINT32)).get_Results(&_ret));
+		return _ret;
+	}
 }
 
 interface FileInputStream : Windows.Storage.Streams.IInputStream, Windows.Foundation.IClosable

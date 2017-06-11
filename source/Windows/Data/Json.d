@@ -175,6 +175,64 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetObject(&_ret));
 		return _ret;
 	}
+	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	{
+		Windows.Data.Json.IJsonValue _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).get_GetAt(index, &_ret));
+		return _ret;
+	}
+	final uint Size()
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).get_Size(&_ret));
+		return _ret;
+	}
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_GetView(out_view));
+	}
+	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).get_IndexOf(value, &_ret, out_found));
+		return _ret;
+	}
+	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_SetAt(index, item));
+	}
+	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_InsertAt(index, item));
+	}
+	final void RemoveAt(uint index)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_RemoveAt(index));
+	}
+	final void Append(Windows.Data.Json.IJsonValue item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_Append(item));
+	}
+	final void RemoveAtEnd()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_RemoveAtEnd());
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_Clear());
+	}
+	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+	}
+	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_ReplaceAll(count, out_value));
+	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Data.Json.IJsonValue)).abi_First(out_first));
+	}
 	final HSTRING ToString()
 	{
 		HSTRING _ret;
@@ -271,6 +329,48 @@ extern(Windows):
 		Windows.Data.Json.JsonObject _ret;
 		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetObject(&_ret));
 		return _ret;
+	}
+	final  IInspectable Lookup(HSTRING key)
+	{
+		 IInspectable _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).abi_Lookup(key, &_ret));
+		return _ret;
+	}
+	final uint Size()
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).get_Size(&_ret));
+		return _ret;
+	}
+	final bool HasKey(HSTRING key)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).abi_HasKey(key, &_ret));
+		return _ret;
+	}
+	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).abi_GetView(&_ret));
+		return _ret;
+	}
+	final bool Insert(HSTRING key,	IInspectable value)
+	{
+		bool _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).abi_Insert(key, value, &_ret));
+		return _ret;
+	}
+	final void Remove(HSTRING key)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).abi_Remove(key));
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).abi_Clear());
+	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Data.Json.IJsonValue))).abi_First(out_first));
 	}
 	final Windows.Data.Json.JsonValue GetNamedValueOrDefault(HSTRING name, Windows.Data.Json.JsonValue defaultValue)
 	{

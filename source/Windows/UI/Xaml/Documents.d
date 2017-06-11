@@ -637,6 +637,65 @@ extern(Windows):
 
 interface BlockCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Documents.Block)
 {
+extern(Windows):
+	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	{
+		Windows.Data.Json.IJsonValue _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).get_GetAt(index, &_ret));
+		return _ret;
+	}
+	final uint Size()
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).get_Size(&_ret));
+		return _ret;
+	}
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_GetView(out_view));
+	}
+	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).get_IndexOf(value, &_ret, out_found));
+		return _ret;
+	}
+	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_SetAt(index, item));
+	}
+	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_InsertAt(index, item));
+	}
+	final void RemoveAt(uint index)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_RemoveAt(index));
+	}
+	final void Append(Windows.Data.Json.IJsonValue item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_Append(item));
+	}
+	final void RemoveAtEnd()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_RemoveAtEnd());
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_Clear());
+	}
+	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+	}
+	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_ReplaceAll(count, out_value));
+	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Documents.Block)).abi_First(out_first));
+	}
 }
 
 interface Bold : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IBold
@@ -885,6 +944,65 @@ interface Inline : Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Docume
 
 interface InlineCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Documents.Inline)
 {
+extern(Windows):
+	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	{
+		Windows.Data.Json.IJsonValue _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).get_GetAt(index, &_ret));
+		return _ret;
+	}
+	final uint Size()
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).get_Size(&_ret));
+		return _ret;
+	}
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_GetView(out_view));
+	}
+	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	{
+		uint _ret;
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).get_IndexOf(value, &_ret, out_found));
+		return _ret;
+	}
+	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_SetAt(index, item));
+	}
+	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_InsertAt(index, item));
+	}
+	final void RemoveAt(uint index)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_RemoveAt(index));
+	}
+	final void Append(Windows.Data.Json.IJsonValue item)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_Append(item));
+	}
+	final void RemoveAtEnd()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_RemoveAtEnd());
+	}
+	final void Clear()
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_Clear());
+	}
+	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+	}
+	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_ReplaceAll(count, out_value));
+	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Documents.Inline)).abi_First(out_first));
+	}
 }
 
 interface InlineUIContainer : Windows.UI.Xaml.Documents.Inline, Windows.UI.Xaml.Documents.IInlineUIContainer

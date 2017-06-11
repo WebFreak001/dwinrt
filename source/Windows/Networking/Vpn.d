@@ -1624,6 +1624,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).get_Size(&_ret));
 		return _ret;
 	}
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	{
+		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Networking.Vpn.VpnPacketBuffer)).abi_First(out_first));
+	}
 }
 
 interface VpnPickedCredential : Windows.Networking.Vpn.IVpnPickedCredential
