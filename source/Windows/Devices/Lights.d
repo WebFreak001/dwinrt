@@ -82,6 +82,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).set_Color(value));
 	}
+	final void removeAvailabilityChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AvailabilityChanged(token));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());

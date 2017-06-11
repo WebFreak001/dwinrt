@@ -310,6 +310,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallUI).abi_Dismiss());
 	}
+	final void removeEndRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_EndRequested(token));
+	}
+	final void removeClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closed(token));
+	}
 	final HSTRING CallTitle()
 	{
 		HSTRING _ret;
@@ -694,6 +702,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_ReserveCallResourcesAsync(taskEntryPoint, &_ret));
 		return _ret;
 	}
+	final void removeMuteStateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MuteStateChanged(token));
+	}
 	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestNewIncomingCall(HSTRING context, HSTRING contactName, HSTRING contactNumber, Windows.Foundation.Uri contactImage, HSTRING serviceName, Windows.Foundation.Uri brandingImage, HSTRING callDetails, Windows.Foundation.Uri ringtone, Windows.ApplicationModel.Calls.VoipPhoneCallMedia media, Windows.Foundation.TimeSpan ringTimeout)
 	{
 		Windows.ApplicationModel.Calls.VoipPhoneCall _ret;
@@ -739,6 +751,26 @@ extern(Windows):
 interface VoipPhoneCall : Windows.ApplicationModel.Calls.IVoipPhoneCall
 {
 extern(Windows):
+	final void removeEndRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_EndRequested(token));
+	}
+	final void removeHoldRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HoldRequested(token));
+	}
+	final void removeResumeRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ResumeRequested(token));
+	}
+	final void removeAnswerRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AnswerRequested(token));
+	}
+	final void removeRejectRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RejectRequested(token));
+	}
 	final void NotifyCallHeld()
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).abi_NotifyCallHeld());

@@ -152,6 +152,26 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).abi_RequestRemovePackageAsync(packageFullName, &_ret));
 		return _ret;
 	}
+	final void removePackageInstalled(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PackageInstalled(token));
+	}
+	final void removePackageUpdating(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PackageUpdating(token));
+	}
+	final void removePackageUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PackageUpdated(token));
+	}
+	final void removePackageUninstalling(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PackageUninstalling(token));
+	}
+	final void removePackageStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PackageStatusChanged(token));
+	}
 }
 
 interface AppExtensionPackageInstalledEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs

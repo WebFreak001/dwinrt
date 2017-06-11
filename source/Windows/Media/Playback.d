@@ -897,6 +897,22 @@ extern(Windows):
 interface MediaBreakManager : Windows.Media.Playback.IMediaBreakManager
 {
 extern(Windows):
+	final void removeBreaksSeekedOver(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BreaksSeekedOver(token));
+	}
+	final void removeBreakStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BreakStarted(token));
+	}
+	final void removeBreakEnded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BreakEnded(token));
+	}
+	final void removeBreakSkipped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BreakSkipped(token));
+	}
 	final Windows.Media.Playback.MediaBreak CurrentBreak()
 	{
 		Windows.Media.Playback.MediaBreak _ret;
@@ -922,6 +938,10 @@ extern(Windows):
 interface MediaBreakSchedule : Windows.Media.Playback.IMediaBreakSchedule
 {
 extern(Windows):
+	final void removeScheduleChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ScheduleChanged(token));
+	}
 	final void InsertMidrollBreak(Windows.Media.Playback.MediaBreak mediaBreak)
 	{
 		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSchedule).abi_InsertMidrollBreak(mediaBreak));
@@ -1077,6 +1097,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Core.AudioTrack)).abi_First(out_first));
 	}
+	final void removeSelectedIndexChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SelectedIndexChanged(token));
+	}
 	final void SelectedIndex(INT32 value)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.ISingleSelectMediaTrackList).set_SelectedIndex(value));
@@ -1168,6 +1192,46 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).get_RateBehavior(&_ret));
 		return _ret;
 	}
+	final void removePlayReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PlayReceived(token));
+	}
+	final void removePauseReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PauseReceived(token));
+	}
+	final void removeNextReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NextReceived(token));
+	}
+	final void removePreviousReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PreviousReceived(token));
+	}
+	final void removeFastForwardReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FastForwardReceived(token));
+	}
+	final void removeRewindReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RewindReceived(token));
+	}
+	final void removeShuffleReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ShuffleReceived(token));
+	}
+	final void removeAutoRepeatModeReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AutoRepeatModeReceived(token));
+	}
+	final void removePositionReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PositionReceived(token));
+	}
+	final void removeRateReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RateReceived(token));
+	}
 }
 
 interface MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs : Windows.Media.Playback.IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs
@@ -1221,6 +1285,10 @@ extern(Windows):
 	final void EnablingRule(Windows.Media.Playback.MediaCommandEnablingRule value)
 	{
 		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior).set_EnablingRule(value));
+	}
+	final void removeIsEnabledChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_IsEnabledChanged(token));
 	}
 }
 
@@ -1434,6 +1502,18 @@ extern(Windows):
 interface MediaPlaybackItem : Windows.Media.Playback.IMediaPlaybackItem, Windows.Media.Playback.IMediaPlaybackSource, Windows.Media.Playback.IMediaPlaybackItem2, Windows.Media.Playback.IMediaPlaybackItem3
 {
 extern(Windows):
+	final void removeAudioTracksChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AudioTracksChanged(token));
+	}
+	final void removeVideoTracksChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VideoTracksChanged(token));
+	}
+	final void removeTimedMetadataTracksChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TimedMetadataTracksChanged(token));
+	}
 	final Windows.Media.Core.MediaSource Source()
 	{
 		Windows.Media.Core.MediaSource _ret;
@@ -1572,6 +1652,18 @@ extern(Windows):
 interface MediaPlaybackList : Windows.Media.Playback.IMediaPlaybackList, Windows.Media.Playback.IMediaPlaybackSource, Windows.Media.Playback.IMediaPlaybackList2, Windows.Media.Playback.IMediaPlaybackList3
 {
 extern(Windows):
+	final void removeItemFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ItemFailed(token));
+	}
+	final void removeCurrentItemChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CurrentItemChanged(token));
+	}
+	final void removeItemOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ItemOpened(token));
+	}
 	final Windows.Foundation.Collections.IObservableVector!(Windows.Media.Playback.MediaPlaybackItem) Items()
 	{
 		Windows.Foundation.Collections.IObservableVector!(Windows.Media.Playback.MediaPlaybackItem) _ret;
@@ -1673,6 +1765,46 @@ extern(Windows):
 interface MediaPlaybackSession : Windows.Media.Playback.IMediaPlaybackSession, Windows.Media.Playback.IMediaPlaybackSession2
 {
 extern(Windows):
+	final void removePlaybackStateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PlaybackStateChanged(token));
+	}
+	final void removePlaybackRateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PlaybackRateChanged(token));
+	}
+	final void removeSeekCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SeekCompleted(token));
+	}
+	final void removeBufferingStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BufferingStarted(token));
+	}
+	final void removeBufferingEnded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BufferingEnded(token));
+	}
+	final void removeBufferingProgressChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BufferingProgressChanged(token));
+	}
+	final void removeDownloadProgressChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DownloadProgressChanged(token));
+	}
+	final void removeNaturalDurationChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NaturalDurationChanged(token));
+	}
+	final void removePositionChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PositionChanged(token));
+	}
+	final void removeNaturalVideoSizeChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NaturalVideoSizeChanged(token));
+	}
 	final Windows.Media.Playback.MediaPlayer MediaPlayer()
 	{
 		Windows.Media.Playback.MediaPlayer _ret;
@@ -1772,6 +1904,22 @@ extern(Windows):
 	final void StereoscopicVideoPackingMode(Windows.Media.MediaProperties.StereoscopicVideoPackingMode value)
 	{
 		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).set_StereoscopicVideoPackingMode(value));
+	}
+	final void removeBufferedRangesChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BufferedRangesChanged(token));
+	}
+	final void removePlayedRangesChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PlayedRangesChanged(token));
+	}
+	final void removeSeekableRangesChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SeekableRangesChanged(token));
+	}
+	final void removeSupportedPlaybackRatesChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SupportedPlaybackRatesChanged(token));
 	}
 	final Windows.Media.Playback.MediaPlaybackSphericalVideoProjection SphericalVideoProjection()
 	{
@@ -1897,6 +2045,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Core.TimedMetadataTrack)).abi_First(out_first));
 	}
+	final void removePresentationModeChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PresentationModeChanged(token));
+	}
 	final Windows.Media.Playback.TimedMetadataTrackPresentationMode GetPresentationMode(UINT32 index)
 	{
 		Windows.Media.Playback.TimedMetadataTrackPresentationMode _ret;
@@ -1935,6 +2087,10 @@ extern(Windows):
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Core.VideoTrack)).abi_First(out_first));
+	}
+	final void removeSelectedIndexChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SelectedIndexChanged(token));
 	}
 	final void SelectedIndex(INT32 value)
 	{
@@ -2064,6 +2220,52 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_PlaybackMediaMarkers(&_ret));
 		return _ret;
 	}
+	final void removeMediaOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MediaOpened(token));
+	}
+	final void removeMediaEnded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MediaEnded(token));
+	}
+	final void removeMediaFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MediaFailed(token));
+	}
+	deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")
+	final void removeCurrentStateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CurrentStateChanged(token));
+	}
+	deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.	For more info, see MSDN.")
+	final void removePlaybackMediaMarkerReached(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PlaybackMediaMarkerReached(token));
+	}
+	deprecated("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.	For more info, see MSDN.")
+	final void removeMediaPlayerRateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MediaPlayerRateChanged(token));
+	}
+	final void removeVolumeChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VolumeChanged(token));
+	}
+	deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.	 For more info, see MSDN.")
+	final void removeSeekCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SeekCompleted(token));
+	}
+	deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")
+	final void removeBufferingStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BufferingStarted(token));
+	}
+	deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")
+	final void removeBufferingEnded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BufferingEnded(token));
+	}
 	final void Play()
 	{
 		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).abi_Play());
@@ -2149,6 +2351,14 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final void removeIsMutedChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_IsMutedChanged(token));
+	}
+	final void removeSourceChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SourceChanged(token));
 	}
 	final double AudioBalance()
 	{
@@ -2255,6 +2465,10 @@ extern(Windows):
 	final void AddVideoEffect(HSTRING activatableClassId, bool effectOptional, Windows.Foundation.Collections.IPropertySet effectConfiguration)
 	{
 		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerEffects2).abi_AddVideoEffect(activatableClassId, effectOptional, effectConfiguration));
+	}
+	final void removeVideoFrameAvailable(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VideoFrameAvailable(token));
 	}
 	final bool IsVideoFrameServerEnabled()
 	{

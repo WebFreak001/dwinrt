@@ -73,6 +73,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).get_DeviceId(&_ret));
 		return _ret;
 	}
+	final void removeReadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadingChanged(token));
+	}
 }
 
 interface CustomSensorReading : Windows.Devices.Sensors.Custom.ICustomSensorReading

@@ -936,6 +936,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInPipe).abi_ClearStallAsync(&_ret));
 		return _ret;
 	}
+	final void removeDataReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DataReceived(token));
+	}
 }
 
 interface UsbInterruptOutEndpointDescriptor : Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor

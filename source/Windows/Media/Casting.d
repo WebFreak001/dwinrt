@@ -123,6 +123,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Casting.ICastingConnection).set_Source(value));
 	}
+	final void removeStateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StateChanged(token));
+	}
+	final void removeErrorOccurred(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ErrorOccurred(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Casting.CastingConnectionErrorStatus) RequestStartCastingAsync(Windows.Media.Casting.CastingSource value)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Casting.CastingConnectionErrorStatus) _ret;
@@ -207,6 +215,14 @@ extern(Windows):
 		Windows.Devices.Enumeration.DevicePickerAppearance _ret;
 		Debug.OK(this.as!(Windows.Media.Casting.ICastingDevicePicker).get_Appearance(&_ret));
 		return _ret;
+	}
+	final void removeCastingDeviceSelected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CastingDeviceSelected(token));
+	}
+	final void removeCastingDevicePickerDismissed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CastingDevicePickerDismissed(token));
 	}
 	final void Show(Windows.Foundation.Rect selection)
 	{

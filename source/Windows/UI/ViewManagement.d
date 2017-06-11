@@ -419,6 +419,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IAccessibilitySettings).get_HighContrastScheme(&_ret));
 		return _ret;
 	}
+	final void removeHighContrastChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_HighContrastChanged(cookie));
+	}
 }
 
 interface ActivationViewSwitcher : Windows.UI.ViewManagement.IActivationViewSwitcher
@@ -504,6 +508,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_Id(&_ret));
 		return _ret;
 	}
+	final void removeConsolidated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Consolidated(token));
+	}
 	deprecated("Use the TryEnterFullScreen method and IsFullScreenMode property instead of SuppressSystemOverlays. For more info, see MSDN.")
 	final bool SuppressSystemOverlays()
 	{
@@ -521,6 +529,10 @@ extern(Windows):
 		Windows.Foundation.Rect _ret;
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).get_VisibleBounds(&_ret));
 		return _ret;
+	}
+	final void removeVisibleBoundsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VisibleBoundsChanged(token));
 	}
 	final bool SetDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode boundsMode)
 	{
@@ -780,6 +792,14 @@ extern(Windows):
 interface InputPane : Windows.UI.ViewManagement.IInputPane, Windows.UI.ViewManagement.IInputPane2, Windows.UI.ViewManagement.IInputPaneControl
 {
 extern(Windows):
+	final void removeShowing(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Showing(token));
+	}
+	final void removeHiding(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Hiding(token));
+	}
 	final Windows.Foundation.Rect OccludedRect()
 	{
 		Windows.Foundation.Rect _ret;
@@ -922,17 +942,29 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings2).get_TextScaleFactor(&_ret));
 		return _ret;
 	}
+	final void removeTextScaleFactorChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_TextScaleFactorChanged(cookie));
+	}
 	final Windows.UI.Color GetColorValue(Windows.UI.ViewManagement.UIColorType desiredColor)
 	{
 		Windows.UI.Color _ret;
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings3).abi_GetColorValue(desiredColor, &_ret));
 		return _ret;
 	}
+	final void removeColorValuesChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ColorValuesChanged(cookie));
+	}
 	final bool AdvancedEffectsEnabled()
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings4).get_AdvancedEffectsEnabled(&_ret));
 		return _ret;
+	}
+	final void removeAdvancedEffectsEnabledChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_AdvancedEffectsEnabledChanged(cookie));
 	}
 }
 

@@ -185,6 +185,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevicePicker).get_Appearance(&_ret));
 		return _ret;
 	}
+	final void removeDialDeviceSelected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DialDeviceSelected(token));
+	}
+	final void removeDisconnectButtonClicked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DisconnectButtonClicked(token));
+	}
+	final void removeDialDevicePickerDismissed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DialDevicePickerDismissed(token));
+	}
 	final void Show(Windows.Foundation.Rect selection)
 	{
 		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevicePicker).abi_Show(selection));

@@ -100,6 +100,18 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProvider).abi_Stop());
 	}
+	final void removeRequestSent(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RequestSent(token));
+	}
+	final void removeResponseReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ResponseReceived(token));
+	}
+	final void removeRequestResponseCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RequestResponseCompleted(token));
+	}
 }
 
 interface HttpDiagnosticProviderRequestResponseCompletedEventArgs : Windows.Web.Http.Diagnostics.IHttpDiagnosticProviderRequestResponseCompletedEventArgs

@@ -68,6 +68,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).get_SelectionMode(&_ret));
 		return _ret;
 	}
+	final void removeContactRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ContactRemoved(token));
+	}
 	final Windows.ApplicationModel.Contacts.Provider.AddContactResult AddContact(Windows.ApplicationModel.Contacts.Contact contact)
 	{
 		Windows.ApplicationModel.Contacts.Provider.AddContactResult _ret;

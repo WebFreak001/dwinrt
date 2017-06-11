@@ -129,11 +129,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).get_LastKnownGeoposition(&_ret));
 		return _ret;
 	}
+	final void removeGeofenceStateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_GeofenceStateChanged(token));
+	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geofencing.GeofenceStateChangeReport) ReadReports()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geofencing.GeofenceStateChangeReport) _ret;
 		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).abi_ReadReports(&_ret));
 		return _ret;
+	}
+	final void removeStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StatusChanged(token));
 	}
 }
 

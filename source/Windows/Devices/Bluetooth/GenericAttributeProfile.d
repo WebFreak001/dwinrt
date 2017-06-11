@@ -842,6 +842,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).abi_WriteClientCharacteristicConfigurationDescriptorAsync(clientCharacteristicConfigurationDescriptorValue, &_ret));
 		return _ret;
 	}
+	final void removeValueChanged(EventRegistrationToken valueChangedEventCookie)
+	{
+		Debug.OK(remove_ValueChanged(valueChangedEventCookie));
+	}
 	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService Service()
 	{
 		Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService _ret;
@@ -1260,6 +1264,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).get_SubscribedClients(&_ret));
 		return _ret;
 	}
+	final void removeSubscribedClientsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SubscribedClientsChanged(token));
+	}
+	final void removeReadRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadRequested(token));
+	}
+	final void removeWriteRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_WriteRequested(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult)) NotifyValueAsync(Windows.Storage.Streams.IBuffer value)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult)) _ret;
@@ -1378,6 +1394,14 @@ extern(Windows):
 		Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptor).get_WriteProtectionLevel(&_ret));
 		return _ret;
+	}
+	final void removeReadRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadRequested(token));
+	}
+	final void removeWriteRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_WriteRequested(token));
 	}
 }
 
@@ -1543,6 +1567,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequest).get_State(&_ret));
 		return _ret;
 	}
+	final void removeStateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StateChanged(token));
+	}
 	final void RespondWithValue(Windows.Storage.Streams.IBuffer value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequest).abi_RespondWithValue(value));
@@ -1651,6 +1679,10 @@ extern(Windows):
 		Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatus _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider).get_AdvertisementStatus(&_ret));
 		return _ret;
+	}
+	final void removeAdvertisementStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AdvertisementStatusChanged(token));
 	}
 	final void StartAdvertising()
 	{
@@ -1766,6 +1798,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSession).get_SessionStatus(&_ret));
 		return _ret;
 	}
+	final void removeMaxPduSizeChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MaxPduSizeChanged(token));
+	}
+	final void removeSessionStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SessionStatusChanged(token));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
@@ -1803,6 +1843,10 @@ extern(Windows):
 		UINT16 _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSubscribedClient).get_MaxNotificationSize(&_ret));
 		return _ret;
+	}
+	final void removeMaxNotificationSizeChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MaxNotificationSizeChanged(token));
 	}
 }
 
@@ -1849,6 +1893,10 @@ extern(Windows):
 		Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestState _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequest).get_State(&_ret));
 		return _ret;
+	}
+	final void removeStateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StateChanged(token));
 	}
 	final void Respond()
 	{

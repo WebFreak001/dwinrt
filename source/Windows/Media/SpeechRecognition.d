@@ -325,6 +325,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_Resume());
 	}
+	final void removeCompleted(EventRegistrationToken value)
+	{
+		Debug.OK(remove_Completed(value));
+	}
+	final void removeResultGenerated(EventRegistrationToken value)
+	{
+		Debug.OK(remove_ResultGenerated(value));
+	}
 }
 
 interface SpeechRecognitionCompilationResult : Windows.Media.SpeechRecognition.ISpeechRecognitionCompilationResult
@@ -680,6 +688,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).abi_RecognizeWithUIAsync(&_ret));
 		return _ret;
 	}
+	final void removeRecognitionQualityDegrading(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_RecognitionQualityDegrading(cookie));
+	}
+	final void removeStateChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_StateChanged(cookie));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
@@ -701,6 +717,10 @@ extern(Windows):
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer2).abi_StopRecognitionAsync(&_ret));
 		return _ret;
+	}
+	final void removeHypothesisGenerated(EventRegistrationToken value)
+	{
+		Debug.OK(remove_HypothesisGenerated(value));
 	}
 }
 

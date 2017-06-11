@@ -288,6 +288,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.IArcadeStick).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
+	final void removeHeadsetConnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HeadsetConnected(token));
+	}
+	final void removeHeadsetDisconnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HeadsetDisconnected(token));
+	}
+	final void removeUserChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UserChanged(token));
+	}
 	final Windows.Gaming.Input.Headset Headset()
 	{
 		Windows.Gaming.Input.Headset _ret;
@@ -335,6 +347,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.IFlightStick).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
+	final void removeHeadsetConnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HeadsetConnected(token));
+	}
+	final void removeHeadsetDisconnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HeadsetDisconnected(token));
+	}
+	final void removeUserChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UserChanged(token));
+	}
 	final Windows.Gaming.Input.Headset Headset()
 	{
 		Windows.Gaming.Input.Headset _ret;
@@ -379,6 +403,18 @@ extern(Windows):
 		Windows.Gaming.Input.GamepadReading _ret;
 		Debug.OK(this.as!(Windows.Gaming.Input.IGamepad).abi_GetCurrentReading(&_ret));
 		return _ret;
+	}
+	final void removeHeadsetConnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HeadsetConnected(token));
+	}
+	final void removeHeadsetDisconnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HeadsetDisconnected(token));
+	}
+	final void removeUserChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UserChanged(token));
 	}
 	final Windows.Gaming.Input.Headset Headset()
 	{
@@ -486,6 +522,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
+	final void removeHeadsetConnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HeadsetConnected(token));
+	}
+	final void removeHeadsetDisconnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HeadsetDisconnected(token));
+	}
+	final void removeUserChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UserChanged(token));
+	}
 	final Windows.Gaming.Input.Headset Headset()
 	{
 		Windows.Gaming.Input.Headset _ret;
@@ -569,6 +617,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).abi_GetSwitchKind(switchIndex, &_ret));
 		return _ret;
 	}
+	final void removeHeadsetConnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HeadsetConnected(token));
+	}
+	final void removeHeadsetDisconnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HeadsetDisconnected(token));
+	}
+	final void removeUserChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UserChanged(token));
+	}
 	final Windows.Gaming.Input.Headset Headset()
 	{
 		Windows.Gaming.Input.Headset _ret;
@@ -615,6 +675,18 @@ extern(Windows):
 		Windows.Gaming.Input.GameControllerButtonLabel _ret;
 		Debug.OK(this.as!(Windows.Gaming.Input.IUINavigationController).abi_GetRequiredButtonLabel(button, &_ret));
 		return _ret;
+	}
+	final void removeHeadsetConnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HeadsetConnected(token));
+	}
+	final void removeHeadsetDisconnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HeadsetDisconnected(token));
+	}
+	final void removeUserChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UserChanged(token));
 	}
 	final Windows.Gaming.Input.Headset Headset()
 	{

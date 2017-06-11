@@ -1995,6 +1995,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ISplashScreen).get_ImageLocation(&_ret));
 		return _ret;
 	}
+	final void removeDismissed(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Dismissed(cookie));
+	}
 }
 
 interface TileActivatedInfo : Windows.ApplicationModel.Activation.ITileActivatedInfo

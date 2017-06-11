@@ -324,6 +324,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore2).abi_CreateAccountWithPackageRelativeAppIdAsync(userDisplayName, packageRelativeAppId, &_ret));
 		return _ret;
 	}
+	final void removeStoreChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StoreChanged(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) _ret;

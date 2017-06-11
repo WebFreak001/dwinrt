@@ -890,6 +890,16 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).get_DeviceStatus(&_ret));
 		return _ret;
 	}
+	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
+	final void removeSmsMessageReceived(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_SmsMessageReceived(eventCookie));
+	}
+	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
+	final void removeSmsDeviceStatusChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_SmsDeviceStatusChanged(eventCookie));
+	}
 }
 
 interface SmsDevice2 : Windows.Devices.Sms.ISmsDevice2
@@ -946,6 +956,10 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsSendMessageResult) _ret;
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).abi_SendMessageAndGetResultAsync(message, &_ret));
 		return _ret;
+	}
+	final void removeDeviceStatusChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_DeviceStatusChanged(eventCookie));
 	}
 }
 
@@ -1179,6 +1193,10 @@ extern(Windows):
 	final void Unregister()
 	{
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageRegistration).abi_Unregister());
+	}
+	final void removeMessageReceived(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_MessageReceived(eventCookie));
 	}
 }
 

@@ -148,6 +148,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).abi_SendMessageAsync(message, &_ret));
 		return _ret;
 	}
+	final void removeRequestReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RequestReceived(token));
+	}
+	final void removeServiceClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ServiceClosed(token));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());

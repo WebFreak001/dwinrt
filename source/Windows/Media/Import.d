@@ -505,11 +505,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedTotalSizeInBytes(&_ret));
 		return _ret;
 	}
+	final void removeSelectionChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SelectionChanged(token));
+	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportImportItemsResult, Windows.Media.Import.PhotoImportProgress) ImportItemsAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportImportItemsResult, Windows.Media.Import.PhotoImportProgress) _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).abi_ImportItemsAsync(&_ret));
 		return _ret;
+	}
+	final void removeItemImported(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ItemImported(token));
 	}
 	final void AddItemsInDateRangeToSelection(Windows.Foundation.DateTime rangeStart, Windows.Foundation.TimeSpan rangeLength)
 	{

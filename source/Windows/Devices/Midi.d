@@ -381,6 +381,10 @@ extern(Windows):
 interface MidiInPort : Windows.Devices.Midi.IMidiInPort, Windows.Foundation.IClosable
 {
 extern(Windows):
+	final void removeMessageReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MessageReceived(token));
+	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;

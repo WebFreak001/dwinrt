@@ -156,6 +156,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentRestrictions).abi_RequestContentAccessAsync(RatedContentDescription, &_ret));
 		return _ret;
 	}
+	final void removeRestrictionsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RestrictionsChanged(token));
+	}
 }
 
 enum ContentAccessRestrictionLevel

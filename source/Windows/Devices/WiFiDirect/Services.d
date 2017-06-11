@@ -188,6 +188,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).get_ServiceError(&_ret));
 		return _ret;
 	}
+	final void removeSessionDeferred(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SessionDeferred(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceProvisioningInfo) GetProvisioningInfoAsync(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceConfigurationMethod selectedConfigurationMethod)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceProvisioningInfo) _ret;
@@ -300,6 +304,18 @@ extern(Windows):
 		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceError _ret;
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).get_ServiceError(&_ret));
 		return _ret;
+	}
+	final void removeSessionRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SessionRequested(token));
+	}
+	final void removeAutoAcceptSessionConnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AutoAcceptSessionConnected(token));
+	}
+	final void removeAdvertisementStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AdvertisementStatusChanged(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) ConnectAsync(Windows.Devices.Enumeration.DeviceInformation deviceInfo)
 	{
@@ -425,6 +441,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).abi_GetConnectionEndpointPairs(&_ret));
 		return _ret;
 	}
+	final void removeSessionStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SessionStatusChanged(token));
+	}
 	final Windows.Foundation.IAsyncAction AddStreamSocketListenerAsync(Windows.Networking.Sockets.StreamSocketListener value)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -436,6 +456,10 @@ extern(Windows):
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).abi_AddDatagramSocketAsync(value, &_ret));
 		return _ret;
+	}
+	final void removeRemotePortAdded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RemotePortAdded(token));
 	}
 	final void Close()
 	{

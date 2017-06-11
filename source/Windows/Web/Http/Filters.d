@@ -219,6 +219,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter3).set_CookieUsageBehavior(value));
 	}
+	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_ServerCustomValidationRequested(eventCookie));
+	}
 	final void ClearAuthenticationCache()
 	{
 		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter4).abi_ClearAuthenticationCache());

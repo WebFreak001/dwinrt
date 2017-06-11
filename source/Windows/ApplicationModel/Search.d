@@ -327,6 +327,31 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final void removeVisibilityChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VisibilityChanged(token));
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final void removeQueryChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_QueryChanged(token));
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final void removeSuggestionsRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SuggestionsRequested(token));
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final void removeQuerySubmitted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_QuerySubmitted(token));
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final void removeResultSuggestionChosen(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ResultSuggestionChosen(token));
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
 	final void SetLocalContentSuggestionSettings(Windows.ApplicationModel.Search.LocalContentSuggestionSettings settings)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchPane).abi_SetLocalContentSuggestionSettings(settings));

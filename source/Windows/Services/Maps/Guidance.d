@@ -419,6 +419,34 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).set_AudioNotifications(value));
 	}
+	final void removeGuidanceUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_GuidanceUpdated(token));
+	}
+	final void removeDestinationReached(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DestinationReached(token));
+	}
+	final void removeRerouting(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Rerouting(token));
+	}
+	final void removeRerouted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Rerouted(token));
+	}
+	final void removeRerouteFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RerouteFailed(token));
+	}
+	final void removeUserLocationLost(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UserLocationLost(token));
+	}
+	final void removeUserLocationRestored(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UserLocationRestored(token));
+	}
 	final void SetGuidanceVoice(INT32 voiceId, HSTRING voiceFolder)
 	{
 		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_SetGuidanceVoice(voiceId, voiceFolder));
@@ -430,6 +458,10 @@ extern(Windows):
 	final void UpdateUserLocationWithPositionOverride(Windows.Devices.Geolocation.Geocoordinate userLocation, Windows.Devices.Geolocation.BasicGeoposition positionOverride)
 	{
 		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_UpdateUserLocationWithPositionOverride(userLocation, positionOverride));
+	}
+	final void removeAudioNotificationRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AudioNotificationRequested(token));
 	}
 	final bool IsGuidanceAudioMuted()
 	{

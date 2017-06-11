@@ -868,6 +868,26 @@ extern(Windows):
 interface MobileBroadbandAccountWatcher : Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher
 {
 extern(Windows):
+	final void removeAccountAdded(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_AccountAdded(cookie));
+	}
+	final void removeAccountUpdated(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_AccountUpdated(cookie));
+	}
+	final void removeAccountRemoved(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_AccountRemoved(cookie));
+	}
+	final void removeEnumerationCompleted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_EnumerationCompleted(cookie));
+	}
+	final void removeStopped(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Stopped(cookie));
+	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcherStatus Status()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcherStatus _ret;
@@ -1099,6 +1119,10 @@ extern(Windows):
 	final void CloseSession()
 	{
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataSession).abi_CloseSession());
+	}
+	final void removeDataReceived(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_DataReceived(eventCookie));
 	}
 }
 

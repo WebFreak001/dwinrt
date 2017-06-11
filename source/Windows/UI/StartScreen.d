@@ -551,6 +551,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).get_RoamingEnabled(&_ret));
 		return _ret;
 	}
+	final void removeVisualElementsRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VisualElementsRequested(token));
+	}
 }
 
 interface SecondaryTileVisualElements : Windows.UI.StartScreen.ISecondaryTileVisualElements, Windows.UI.StartScreen.ISecondaryTileVisualElements2, Windows.UI.StartScreen.ISecondaryTileVisualElements3

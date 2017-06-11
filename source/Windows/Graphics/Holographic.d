@@ -478,6 +478,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicSpace).abi_SetDirect3D11Device(value));
 	}
+	final void removeCameraAdded(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_CameraAdded(cookie));
+	}
+	final void removeCameraRemoved(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_CameraRemoved(cookie));
+	}
 	final Windows.Graphics.Holographic.HolographicFrame CreateNextFrame()
 	{
 		Windows.Graphics.Holographic.HolographicFrame _ret;

@@ -640,6 +640,19 @@ extern(Windows):
 
 interface EdgeGesture : Windows.UI.Input.IEdgeGesture
 {
+extern(Windows):
+	final void removeStarting(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Starting(token));
+	}
+	final void removeCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Completed(token));
+	}
+	final void removeCanceled(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Canceled(token));
+	}
 }
 
 interface EdgeGestureEventArgs : Windows.UI.Input.IEdgeGestureEventArgs
@@ -854,6 +867,42 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_CompleteGesture());
 	}
+	final void removeTapped(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Tapped(cookie));
+	}
+	final void removeRightTapped(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_RightTapped(cookie));
+	}
+	final void removeHolding(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Holding(cookie));
+	}
+	final void removeDragging(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Dragging(cookie));
+	}
+	final void removeManipulationStarted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ManipulationStarted(cookie));
+	}
+	final void removeManipulationUpdated(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ManipulationUpdated(cookie));
+	}
+	final void removeManipulationInertiaStarting(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ManipulationInertiaStarting(cookie));
+	}
+	final void removeManipulationCompleted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ManipulationCompleted(cookie));
+	}
+	final void removeCrossSliding(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_CrossSliding(cookie));
+	}
 }
 
 interface HoldingEventArgs : Windows.UI.Input.IHoldingEventArgs
@@ -891,6 +940,14 @@ extern(Windows):
 	final void IsInterceptionEnabledWhenInForeground(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IKeyboardDeliveryInterceptor).set_IsInterceptionEnabledWhenInForeground(value));
+	}
+	final void removeKeyDown(EventRegistrationToken token)
+	{
+		Debug.OK(remove_KeyDown(token));
+	}
+	final void removeKeyUp(EventRegistrationToken token)
+	{
+		Debug.OK(remove_KeyUp(token));
 	}
 }
 
@@ -1323,6 +1380,46 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IRadialController).set_UseAutomaticHapticFeedback(value));
 	}
+	final void removeScreenContactStarted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ScreenContactStarted(cookie));
+	}
+	final void removeScreenContactEnded(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ScreenContactEnded(cookie));
+	}
+	final void removeScreenContactContinued(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ScreenContactContinued(cookie));
+	}
+	final void removeControlLost(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ControlLost(cookie));
+	}
+	final void removeRotationChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RotationChanged(token));
+	}
+	final void removeButtonClicked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ButtonClicked(token));
+	}
+	final void removeControlAcquired(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ControlAcquired(cookie));
+	}
+	final void removeButtonPressed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ButtonPressed(token));
+	}
+	final void removeButtonHolding(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ButtonHolding(token));
+	}
+	final void removeButtonReleased(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ButtonReleased(token));
+	}
 }
 
 interface RadialControllerButtonClickedEventArgs : Windows.UI.Input.IRadialControllerButtonClickedEventArgs, Windows.UI.Input.IRadialControllerButtonClickedEventArgs2
@@ -1510,6 +1607,10 @@ extern(Windows):
 	final void Tag(IInspectable value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenuItem).set_Tag(value));
+	}
+	final void removeInvoked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Invoked(token));
 	}
 }
 

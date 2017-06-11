@@ -120,6 +120,10 @@ interface IPropertySet : IInspectable
 interface PropertySet : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
 {
 extern(Windows):
+	final void removeMapChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapChanged(token));
+	}
 	final  IInspectable Lookup(HSTRING key)
 	{
 		 IInspectable _ret;
@@ -209,11 +213,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))).abi_First(out_first));
 	}
+	final void removeMapChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapChanged(token));
+	}
 }
 
 interface ValueSet : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
 {
 extern(Windows):
+	final void removeMapChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapChanged(token));
+	}
 	final  IInspectable Lookup(HSTRING key)
 	{
 		 IInspectable _ret;

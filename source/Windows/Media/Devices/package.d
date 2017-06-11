@@ -801,6 +801,10 @@ extern(Windows):
 interface AudioDeviceModulesManager : Windows.Media.Devices.IAudioDeviceModulesManager
 {
 extern(Windows):
+	final void removeModuleNotificationReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ModuleNotificationReceived(token));
+	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AudioDeviceModule) FindAllById(HSTRING moduleId)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AudioDeviceModule) _ret;
@@ -843,6 +847,30 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).get_HasRinger(&_ret));
 		return _ret;
+	}
+	final void removeAnswerRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AnswerRequested(token));
+	}
+	final void removeHangUpRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HangUpRequested(token));
+	}
+	final void removeDialRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DialRequested(token));
+	}
+	final void removeRedialRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RedialRequested(token));
+	}
+	final void removeKeypadPressed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_KeypadPressed(token));
+	}
+	final void removeAudioTransferRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AudioTransferRequested(token));
 	}
 }
 

@@ -574,6 +574,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSession).get_ControllerDisplayName(&_ret));
 		return _ret;
 	}
+	final void removeDisconnected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Disconnected(token));
+	}
 	final Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher CreateParticipantWatcher()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher _ret;
@@ -606,6 +610,10 @@ extern(Windows):
 interface RemoteSystemSessionController : Windows.System.RemoteSystems.IRemoteSystemSessionController
 {
 extern(Windows):
+	final void removeJoinRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_JoinRequested(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(bool) RemoveParticipantAsync(Windows.System.RemoteSystems.RemoteSystemSessionParticipant pParticipant)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
@@ -690,6 +698,11 @@ extern(Windows):
 
 interface RemoteSystemSessionInvitationListener : Windows.System.RemoteSystems.IRemoteSystemSessionInvitationListener
 {
+extern(Windows):
+	final void removeInvitationReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_InvitationReceived(token));
+	}
 }
 
 interface RemoteSystemSessionInvitationReceivedEventArgs : Windows.System.RemoteSystems.IRemoteSystemSessionInvitationReceivedEventArgs
@@ -779,6 +792,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel).abi_SendValueSetToParticipantsAsync(messageData, participants, &_ret));
 		return _ret;
 	}
+	final void removeValueSetReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ValueSetReceived(token));
+	}
 }
 
 interface RemoteSystemSessionOptions : Windows.System.RemoteSystems.IRemoteSystemSessionOptions
@@ -852,6 +869,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher).get_Status(&_ret));
 		return _ret;
 	}
+	final void removeAdded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Added(token));
+	}
+	final void removeRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Removed(token));
+	}
+	final void removeEnumerationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_EnumerationCompleted(token));
+	}
 }
 
 interface RemoteSystemSessionRemovedEventArgs : Windows.System.RemoteSystems.IRemoteSystemSessionRemovedEventArgs
@@ -910,6 +939,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher).get_Status(&_ret));
 		return _ret;
 	}
+	final void removeAdded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Added(token));
+	}
+	final void removeUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Updated(token));
+	}
+	final void removeRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Removed(token));
+	}
 }
 
 interface RemoteSystemStatusTypeFilter : Windows.System.RemoteSystems.IRemoteSystemStatusTypeFilter, Windows.System.RemoteSystems.IRemoteSystemFilter
@@ -944,6 +985,18 @@ extern(Windows):
 	final void Stop()
 	{
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemWatcher).abi_Stop());
+	}
+	final void removeRemoteSystemAdded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RemoteSystemAdded(token));
+	}
+	final void removeRemoteSystemUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RemoteSystemUpdated(token));
+	}
+	final void removeRemoteSystemRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RemoteSystemRemoved(token));
 	}
 }
 

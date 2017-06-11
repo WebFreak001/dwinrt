@@ -299,6 +299,10 @@ extern(Windows):
 interface PasswordCredentialPropertyStore : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
 {
 extern(Windows):
+	final void removeMapChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapChanged(token));
+	}
 	final  IInspectable Lookup(HSTRING key)
 	{
 		 IInspectable _ret;

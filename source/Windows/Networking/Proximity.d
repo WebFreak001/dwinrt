@@ -229,6 +229,26 @@ extern(Windows):
 interface PeerWatcher : Windows.Networking.Proximity.IPeerWatcher
 {
 extern(Windows):
+	final void removeAdded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Added(token));
+	}
+	final void removeRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Removed(token));
+	}
+	final void removeUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Updated(token));
+	}
+	final void removeEnumerationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_EnumerationCompleted(token));
+	}
+	final void removeStopped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Stopped(token));
+	}
 	final Windows.Networking.Proximity.PeerWatcherStatus Status()
 	{
 		Windows.Networking.Proximity.PeerWatcherStatus _ret;
@@ -297,6 +317,14 @@ extern(Windows):
 	final void StopPublishingMessage(INT64 messageId)
 	{
 		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_StopPublishingMessage(messageId));
+	}
+	final void removeDeviceArrived(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_DeviceArrived(cookie));
+	}
+	final void removeDeviceDeparted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_DeviceDeparted(cookie));
 	}
 	final UINT32 MaxMessageBytes()
 	{

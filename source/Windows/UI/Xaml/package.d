@@ -1767,6 +1767,18 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).set_RequestedTheme(value));
 	}
+	final void removeUnhandledException(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UnhandledException(token));
+	}
+	final void removeSuspending(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Suspending(token));
+	}
+	final void removeResuming(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Resuming(token));
+	}
 	final void Exit()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).abi_Exit());
@@ -1826,6 +1838,14 @@ extern(Windows):
 	final void RequiresPointerMode(Windows.UI.Xaml.ApplicationRequiresPointerMode value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).set_RequiresPointerMode(value));
+	}
+	final void removeLeavingBackground(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LeavingBackground(token));
+	}
+	final void removeEnteredBackground(EventRegistrationToken token)
+	{
+		Debug.OK(remove_EnteredBackground(token));
 	}
 	final void OnBackgroundActivated(Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs args)
 	{
@@ -1967,6 +1987,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings).set_IsOverdrawHeatMapEnabled(value));
 	}
+	final void removeBindingFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BindingFailed(token));
+	}
 	final bool EnableRedrawRegions()
 	{
 		bool _ret;
@@ -2039,6 +2063,10 @@ extern(Windows):
 interface DependencyObjectCollection : Windows.UI.Xaml.DependencyObject, Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.DependencyObject), Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.DependencyObject)
 {
 extern(Windows):
+	final void removeVectorChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VectorChanged(token));
+	}
 	final Windows.Data.Json.IJsonValue GetAt(uint index)
 	{
 		Windows.Data.Json.IJsonValue _ret;
@@ -2151,6 +2179,10 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.IDispatcherTimer).get_IsEnabled(&_ret));
 		return _ret;
+	}
+	final void removeTick(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Tick(token));
 	}
 	final void Start()
 	{
@@ -2625,6 +2657,22 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_FlowDirection(value));
 	}
+	final void removeLoaded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Loaded(token));
+	}
+	final void removeUnloaded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Unloaded(token));
+	}
+	final void removeSizeChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SizeChanged(token));
+	}
+	final void removeLayoutUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LayoutUpdated(token));
+	}
 	final IInspectable FindName(HSTRING name)
 	{
 		IInspectable _ret;
@@ -2661,6 +2709,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement2).set_RequestedTheme(value));
 	}
+	final void removeDataContextChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DataContextChanged(token));
+	}
 	final Windows.UI.Xaml.Data.BindingExpression GetBindingExpression(Windows.UI.Xaml.DependencyProperty dp)
 	{
 		Windows.UI.Xaml.Data.BindingExpression _ret;
@@ -2672,6 +2724,10 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElementOverrides2).abi_GoToElementStateCore(stateName, useTransitions, &_ret));
 		return _ret;
+	}
+	final void removeLoading(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Loading(token));
 	}
 	final bool AllowFocusOnInteraction()
 	{
@@ -3465,6 +3521,106 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_PointerCaptures(&_ret));
 		return _ret;
 	}
+	final void removeKeyUp(EventRegistrationToken token)
+	{
+		Debug.OK(remove_KeyUp(token));
+	}
+	final void removeKeyDown(EventRegistrationToken token)
+	{
+		Debug.OK(remove_KeyDown(token));
+	}
+	final void removeGotFocus(EventRegistrationToken token)
+	{
+		Debug.OK(remove_GotFocus(token));
+	}
+	final void removeLostFocus(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LostFocus(token));
+	}
+	final void removeDragEnter(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DragEnter(token));
+	}
+	final void removeDragLeave(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DragLeave(token));
+	}
+	final void removeDragOver(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DragOver(token));
+	}
+	final void removeDrop(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Drop(token));
+	}
+	final void removePointerPressed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PointerPressed(token));
+	}
+	final void removePointerMoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PointerMoved(token));
+	}
+	final void removePointerReleased(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PointerReleased(token));
+	}
+	final void removePointerEntered(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PointerEntered(token));
+	}
+	final void removePointerExited(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PointerExited(token));
+	}
+	final void removePointerCaptureLost(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PointerCaptureLost(token));
+	}
+	final void removePointerCanceled(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PointerCanceled(token));
+	}
+	final void removePointerWheelChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PointerWheelChanged(token));
+	}
+	final void removeTapped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Tapped(token));
+	}
+	final void removeDoubleTapped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DoubleTapped(token));
+	}
+	final void removeHolding(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Holding(token));
+	}
+	final void removeRightTapped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RightTapped(token));
+	}
+	final void removeManipulationStarting(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ManipulationStarting(token));
+	}
+	final void removeManipulationInertiaStarting(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ManipulationInertiaStarting(token));
+	}
+	final void removeManipulationStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ManipulationStarted(token));
+	}
+	final void removeManipulationDelta(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ManipulationDelta(token));
+	}
+	final void removeManipulationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ManipulationCompleted(token));
+	}
 	final void Measure(Windows.Foundation.Size availableSize)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).abi_Measure(availableSize));
@@ -3565,6 +3721,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).set_CanDrag(value));
 	}
+	final void removeDragStarting(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DragStarting(token));
+	}
+	final void removeDropCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DropCompleted(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation) StartDragAsync(Windows.UI.Input.PointerPoint pointerPoint)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation) _ret;
@@ -3620,6 +3784,26 @@ extern(Windows):
 	final void AccessKey(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).set_AccessKey(value));
+	}
+	final void removeContextRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ContextRequested(token));
+	}
+	final void removeContextCanceled(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ContextCanceled(token));
+	}
+	final void removeAccessKeyDisplayRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AccessKeyDisplayRequested(token));
+	}
+	final void removeAccessKeyDisplayDismissed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AccessKeyDisplayDismissed(token));
+	}
+	final void removeAccessKeyInvoked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AccessKeyInvoked(token));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.XamlLight) Lights()
 	{
@@ -3726,6 +3910,18 @@ extern(Windows):
 	final void TabFocusNavigation(Windows.UI.Xaml.Input.KeyboardNavigationMode value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).set_TabFocusNavigation(value));
+	}
+	final void removeGettingFocus(EventRegistrationToken token)
+	{
+		Debug.OK(remove_GettingFocus(token));
+	}
+	final void removeLosingFocus(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LosingFocus(token));
+	}
+	final void removeNoFocusCandidateFound(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NoFocusCandidateFound(token));
 	}
 	final void StartBringIntoView()
 	{
@@ -3859,6 +4055,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).get_CurrentState(&_ret));
 		return _ret;
 	}
+	final void removeCurrentStateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CurrentStateChanged(token));
+	}
+	final void removeCurrentStateChanging(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CurrentStateChanging(token));
+	}
 }
 
 interface VisualStateManager : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IVisualStateManager, Windows.UI.Xaml.IVisualStateManagerOverrides, Windows.UI.Xaml.IVisualStateManagerProtected
@@ -3971,6 +4175,22 @@ extern(Windows):
 		Windows.UI.Core.CoreDispatcher _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).get_Dispatcher(&_ret));
 		return _ret;
+	}
+	final void removeActivated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Activated(token));
+	}
+	final void removeClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closed(token));
+	}
+	final void removeSizeChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SizeChanged(token));
+	}
+	final void removeVisibilityChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VisibilityChanged(token));
 	}
 	final void Activate()
 	{

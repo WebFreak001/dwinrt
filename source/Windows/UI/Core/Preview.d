@@ -52,4 +52,9 @@ extern(Windows):
 
 interface SystemNavigationManagerPreview : Windows.UI.Core.Preview.ISystemNavigationManagerPreview
 {
+extern(Windows):
+	final void removeCloseRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CloseRequested(token));
+	}
 }

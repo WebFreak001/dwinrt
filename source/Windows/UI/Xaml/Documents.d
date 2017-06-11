@@ -820,6 +820,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink).set_NavigateUri(value));
 	}
+	final void removeClick(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Click(token));
+	}
 	final Windows.UI.Xaml.Documents.UnderlineStyle UnderlineStyle()
 	{
 		Windows.UI.Xaml.Documents.UnderlineStyle _ret;
@@ -925,6 +929,14 @@ extern(Windows):
 	final void XYFocusRightNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).set_XYFocusRightNavigationStrategy(value));
+	}
+	final void removeGotFocus(EventRegistrationToken token)
+	{
+		Debug.OK(remove_GotFocus(token));
+	}
+	final void removeLostFocus(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LostFocus(token));
 	}
 	final bool Focus(Windows.UI.Xaml.FocusState value)
 	{
@@ -1311,6 +1323,18 @@ extern(Windows):
 	final void KeyTipVerticalOffset(double value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipVerticalOffset(value));
+	}
+	final void removeAccessKeyDisplayRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AccessKeyDisplayRequested(token));
+	}
+	final void removeAccessKeyDisplayDismissed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AccessKeyDisplayDismissed(token));
+	}
+	final void removeAccessKeyInvoked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AccessKeyInvoked(token));
 	}
 }
 

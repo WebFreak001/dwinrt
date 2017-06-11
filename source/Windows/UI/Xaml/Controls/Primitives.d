@@ -1341,6 +1341,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBase).set_CommandParameter(value));
 	}
+	final void removeClick(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Click(token));
+	}
 }
 
 interface CalendarPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.Primitives.ICalendarPanel
@@ -1585,6 +1589,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
 		return _ret;
 	}
+	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+	}
+	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VerticalSnapPointsChanged(token));
+	}
 	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
 		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
@@ -1763,6 +1775,18 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase).set_Placement(value));
 	}
+	final void removeOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Opened(token));
+	}
+	final void removeClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closed(token));
+	}
+	final void removeOpening(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Opening(token));
+	}
 	final void ShowAt(Windows.UI.Xaml.FrameworkElement placementTarget)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase).abi_ShowAt(placementTarget));
@@ -1822,6 +1846,10 @@ extern(Windows):
 	final void ElementSoundMode(Windows.UI.Xaml.ElementSoundMode value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2).set_ElementSoundMode(value));
+	}
+	final void removeClosing(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closing(token));
 	}
 	final Windows.UI.Xaml.DependencyObject OverlayInputPassThroughElement()
 	{
@@ -2584,6 +2612,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).set_ItemTemplate(value));
 	}
+	final void removeSelectionChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SelectionChanged(token));
+	}
 }
 
 interface LoopingSelectorItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorItem
@@ -2604,6 +2636,14 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
 		return _ret;
+	}
+	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+	}
+	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VerticalSnapPointsChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
@@ -2773,6 +2813,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
 		return _ret;
 	}
+	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+	}
+	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VerticalSnapPointsChanged(token));
+	}
 	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
 		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
@@ -2828,6 +2876,14 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
 		return _ret;
+	}
+	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+	}
+	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VerticalSnapPointsChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
@@ -2905,6 +2961,14 @@ extern(Windows):
 	final void IsLightDismissEnabled(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).set_IsLightDismissEnabled(value));
+	}
+	final void removeOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Opened(token));
+	}
+	final void removeClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closed(token));
 	}
 	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
 	{
@@ -3041,6 +3105,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).set_Value(value));
 	}
+	final void removeValueChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ValueChanged(token));
+	}
 	final void OnMinimumChanged(double oldMinimum, double newMinimum)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBaseOverrides).abi_OnMinimumChanged(oldMinimum, newMinimum));
@@ -3130,6 +3198,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBar).set_IndicatorMode(value));
 	}
+	final void removeScroll(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Scroll(token));
+	}
 }
 
 interface ScrollEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.Primitives.IScrollEventArgs
@@ -3201,6 +3273,10 @@ extern(Windows):
 	final void IsSynchronizedWithCurrentItem(Windows.Foundation.IReference!(bool) value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).set_IsSynchronizedWithCurrentItem(value));
+	}
+	final void removeSelectionChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SelectionChanged(token));
 	}
 }
 
@@ -3310,6 +3386,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).get_IsDragging(&_ret));
 		return _ret;
 	}
+	final void removeDragStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DragStarted(token));
+	}
+	final void removeDragDelta(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DragDelta(token));
+	}
+	final void removeDragCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DragCompleted(token));
+	}
 	final void CancelDrag()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).abi_CancelDrag());
@@ -3353,6 +3441,18 @@ extern(Windows):
 	final void IsThreeState(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).set_IsThreeState(value));
+	}
+	final void removeChecked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Checked(token));
+	}
+	final void removeUnchecked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Unchecked(token));
+	}
+	final void removeIndeterminate(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Indeterminate(token));
 	}
 	final void OnToggle()
 	{

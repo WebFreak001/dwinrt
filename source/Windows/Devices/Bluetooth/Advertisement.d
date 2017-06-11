@@ -361,6 +361,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher).abi_Stop());
 	}
+	final void removeStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StatusChanged(token));
+	}
 }
 
 interface BluetoothLEAdvertisementPublisherStatusChangedEventArgs : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisherStatusChangedEventArgs
@@ -485,6 +489,14 @@ extern(Windows):
 	final void Stop()
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).abi_Stop());
+	}
+	final void removeReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Received(token));
+	}
+	final void removeStopped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Stopped(token));
 	}
 }
 

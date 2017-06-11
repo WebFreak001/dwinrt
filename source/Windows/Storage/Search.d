@@ -542,6 +542,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).get_Folder(&_ret));
 		return _ret;
 	}
+	final void removeContentsChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_ContentsChanged(eventCookie));
+	}
+	final void removeOptionsChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_OptionsChanged(eventCookie));
+	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) FindStartIndexAsync(IInspectable value)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
@@ -593,6 +601,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).get_Folder(&_ret));
 		return _ret;
 	}
+	final void removeContentsChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_ContentsChanged(eventCookie));
+	}
+	final void removeOptionsChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_OptionsChanged(eventCookie));
+	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) FindStartIndexAsync(IInspectable value)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
@@ -637,6 +653,14 @@ extern(Windows):
 		Windows.Storage.StorageFolder _ret;
 		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).get_Folder(&_ret));
 		return _ret;
+	}
+	final void removeContentsChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_ContentsChanged(eventCookie));
+	}
+	final void removeOptionsChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_OptionsChanged(eventCookie));
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) FindStartIndexAsync(IInspectable value)
 	{

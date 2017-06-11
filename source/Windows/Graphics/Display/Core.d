@@ -98,6 +98,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_RequestSetCurrentDisplayModeWithHdrAndMetadataAsync(mode, hdrOption, hdrMetadata, &_ret));
 		return _ret;
 	}
+	final void removeDisplayModesChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DisplayModesChanged(token));
+	}
 }
 
 interface HdmiDisplayMode : Windows.Graphics.Display.Core.IHdmiDisplayMode

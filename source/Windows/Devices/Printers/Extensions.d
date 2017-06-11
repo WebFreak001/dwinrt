@@ -123,6 +123,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow).set_IsPrintReady(value));
 	}
+	final void removePrintRequested(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_PrintRequested(eventCookie));
+	}
+	final void removePrinterChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_PrinterChanged(eventCookie));
+	}
 }
 
 interface Print3DWorkflowPrintRequestedEventArgs : Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs
@@ -192,6 +200,10 @@ extern(Windows):
 		IInspectable _ret;
 		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfiguration).get_PrinterExtensionContext(&_ret));
 		return _ret;
+	}
+	final void removeSaveRequested(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_SaveRequested(eventCookie));
 	}
 }
 

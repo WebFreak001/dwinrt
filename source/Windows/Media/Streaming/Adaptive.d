@@ -364,6 +364,26 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).set_InboundBitsPerSecondWindow(value));
 	}
+	final void removeDownloadBitrateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DownloadBitrateChanged(token));
+	}
+	final void removePlaybackBitrateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PlaybackBitrateChanged(token));
+	}
+	final void removeDownloadRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DownloadRequested(token));
+	}
+	final void removeDownloadCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DownloadCompleted(token));
+	}
+	final void removeDownloadFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DownloadFailed(token));
+	}
 	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceAdvancedSettings AdvancedSettings()
 	{
 		Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceAdvancedSettings _ret;
@@ -558,6 +578,11 @@ extern(Windows):
 
 interface AdaptiveMediaSourceDiagnostics : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnostics
 {
+extern(Windows):
+	final void removeDiagnosticAvailable(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DiagnosticAvailable(token));
+	}
 }
 
 interface AdaptiveMediaSourceDownloadBitrateChangedEventArgs : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadBitrateChangedEventArgs, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2

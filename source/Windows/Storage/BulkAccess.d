@@ -84,6 +84,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.BulkAccess.IStorageItemInformation).get_Thumbnail(&_ret));
 		return _ret;
 	}
+	final void removeThumbnailUpdated(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_ThumbnailUpdated(eventCookie));
+	}
+	final void removePropertiesUpdated(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_PropertiesUpdated(eventCookie));
+	}
 	final HSTRING FileType()
 	{
 		HSTRING _ret;
@@ -405,6 +413,14 @@ extern(Windows):
 		Windows.Storage.FileProperties.StorageItemThumbnail _ret;
 		Debug.OK(this.as!(Windows.Storage.BulkAccess.IStorageItemInformation).get_Thumbnail(&_ret));
 		return _ret;
+	}
+	final void removeThumbnailUpdated(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_ThumbnailUpdated(eventCookie));
+	}
+	final void removePropertiesUpdated(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_PropertiesUpdated(eventCookie));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CreateFileAsyncOverloadDefaultOptions(HSTRING desiredName)
 	{

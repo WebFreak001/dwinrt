@@ -718,6 +718,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).abi_NotifyRemoteParticipantComposing(transportId, participantAddress, isComposing));
 	}
+	final void removeRemoteParticipantComposingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RemoteParticipantComposingChanged(token));
+	}
 	final bool CanModifyParticipants()
 	{
 		bool _ret;
@@ -1336,6 +1340,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).abi_ValidateMessage(chatMessage, &_ret));
 		return _ret;
 	}
+	final void removeMessageChanged(EventRegistrationToken value)
+	{
+		Debug.OK(remove_MessageChanged(value));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) ForwardMessageAsync(HSTRING localChatMessageId, Windows.Foundation.Collections.IIterable!(HSTRING) addresses)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) _ret;
@@ -1425,6 +1433,10 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_TryCancelSendMessageAsync(localChatMessageId, &_ret));
 		return _ret;
+	}
+	final void removeStoreChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StoreChanged(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) GetMessageBySyncIdAsync(HSTRING syncId)
 	{
@@ -1817,6 +1829,11 @@ extern(Windows):
 
 interface RcsEndUserMessageManager : Windows.ApplicationModel.Chat.IRcsEndUserMessageManager
 {
+extern(Windows):
+	final void removeMessageAvailableChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MessageAvailableChanged(token));
+	}
 }
 
 interface RcsManager
@@ -1878,6 +1895,10 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransport).abi_IsServiceKindSupported(serviceKind, &_ret));
 		return _ret;
+	}
+	final void removeServiceKindSupportedChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ServiceKindSupportedChanged(token));
 	}
 }
 

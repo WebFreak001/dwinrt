@@ -640,6 +640,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskInstance).get_TriggerDetails(&_ret));
 		return _ret;
 	}
+	final void removeCanceled(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Canceled(cookie));
+	}
 	final UINT32 SuspendedCount()
 	{
 		UINT32 _ret;

@@ -546,6 +546,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).abi_GetGeopositionAsyncWithAgeAndTimeout(maximumAge, timeout, &_ret));
 		return _ret;
 	}
+	final void removePositionChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PositionChanged(token));
+	}
+	final void removeStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StatusChanged(token));
+	}
 	final Windows.Foundation.IReference!(UINT32) DesiredAccuracyInMeters()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;

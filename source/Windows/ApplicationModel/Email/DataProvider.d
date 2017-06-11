@@ -371,6 +371,66 @@ extern(Windows):
 interface EmailDataProviderConnection : Windows.ApplicationModel.Email.DataProvider.IEmailDataProviderConnection
 {
 extern(Windows):
+	final void removeMailboxSyncRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MailboxSyncRequested(token));
+	}
+	final void removeDownloadMessageRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DownloadMessageRequested(token));
+	}
+	final void removeDownloadAttachmentRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DownloadAttachmentRequested(token));
+	}
+	final void removeCreateFolderRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CreateFolderRequested(token));
+	}
+	final void removeDeleteFolderRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DeleteFolderRequested(token));
+	}
+	final void removeEmptyFolderRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_EmptyFolderRequested(token));
+	}
+	final void removeMoveFolderRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MoveFolderRequested(token));
+	}
+	final void removeUpdateMeetingResponseRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UpdateMeetingResponseRequested(token));
+	}
+	final void removeForwardMeetingRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ForwardMeetingRequested(token));
+	}
+	final void removeProposeNewTimeForMeetingRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ProposeNewTimeForMeetingRequested(token));
+	}
+	final void removeSetAutoReplySettingsRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SetAutoReplySettingsRequested(token));
+	}
+	final void removeGetAutoReplySettingsRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_GetAutoReplySettingsRequested(token));
+	}
+	final void removeResolveRecipientsRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ResolveRecipientsRequested(token));
+	}
+	final void removeValidateCertificatesRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ValidateCertificatesRequested(token));
+	}
+	final void removeServerSearchReadBatchRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ServerSearchReadBatchRequested(token));
+	}
 	final void Start()
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.DataProvider.IEmailDataProviderConnection).abi_Start());

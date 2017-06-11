@@ -697,6 +697,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_GetOutputStreamWithEndpointPairAsync(endpointPair, &_ret));
 		return _ret;
 	}
+	final void removeMessageReceived(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_MessageReceived(eventCookie));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
@@ -869,6 +873,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket).get_Information(&_ret));
 		return _ret;
 	}
+	final void removeMessageReceived(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_MessageReceived(eventCookie));
+	}
 	final Windows.Storage.Streams.IOutputStream OutputStream()
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
@@ -885,6 +893,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_SetRequestHeader(headerName, headerValue));
 	}
+	final void removeClosed(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_Closed(eventCookie));
+	}
 	final void CloseWithStatus(UINT16 code, HSTRING reason)
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_CloseWithStatus(code, reason));
@@ -892,6 +904,10 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_ServerCustomValidationRequested(eventCookie));
 	}
 }
 
@@ -1403,6 +1419,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).abi_BindEndpointAsync(localHostName, localServiceName, &_ret));
 		return _ret;
 	}
+	final void removeConnectionReceived(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_ConnectionReceived(eventCookie));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
@@ -1557,6 +1577,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_SetRequestHeader(headerName, headerValue));
 	}
+	final void removeClosed(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_Closed(eventCookie));
+	}
 	final void CloseWithStatus(UINT16 code, HSTRING reason)
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_CloseWithStatus(code, reason));
@@ -1564,6 +1588,10 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_ServerCustomValidationRequested(eventCookie));
 	}
 }
 

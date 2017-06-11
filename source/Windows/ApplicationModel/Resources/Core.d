@@ -589,6 +589,10 @@ extern(Windows):
 interface ResourceQualifierObservableMap : Windows.Foundation.Collections.IObservableMap!(HSTRING, HSTRING), Windows.Foundation.Collections.IMap!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))
 {
 extern(Windows):
+	final void removeMapChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapChanged(token));
+	}
 	final  IInspectable Lookup(HSTRING key)
 	{
 		 IInspectable _ret;

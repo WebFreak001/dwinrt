@@ -1136,6 +1136,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_Label(&_ret));
 		return _ret;
 	}
+	final void removeOpenFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_OpenFailed(token));
+	}
 	final Windows.Media.MediaProperties.AudioEncodingProperties GetEncodingProperties()
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
@@ -1382,6 +1386,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffect).get_DesiredDetectionInterval(&_ret));
 		return _ret;
 	}
+	final void removeFaceDetected(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_FaceDetected(cookie));
+	}
 	final void SetProperties(Windows.Foundation.Collections.IPropertySet configuration)
 	{
 		Debug.OK(this.as!(Windows.Media.IMediaExtension).abi_SetProperties(configuration));
@@ -1598,6 +1606,10 @@ extern(Windows):
 interface MediaBinder : Windows.Media.Core.IMediaBinder
 {
 extern(Windows):
+	final void removeBinding(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Binding(token));
+	}
 	final HSTRING Token()
 	{
 		HSTRING _ret;
@@ -1619,6 +1631,10 @@ extern(Windows):
 interface MediaBindingEventArgs : Windows.Media.Core.IMediaBindingEventArgs, Windows.Media.Core.IMediaBindingEventArgs2
 {
 extern(Windows):
+	final void removeCanceled(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Canceled(token));
+	}
 	final Windows.Media.Core.MediaBinder MediaBinder()
 	{
 		Windows.Media.Core.MediaBinder _ret;
@@ -1667,6 +1683,10 @@ extern(Windows):
 interface MediaSource : Windows.Media.Core.IMediaSource2, Windows.Foundation.IClosable, Windows.Media.Playback.IMediaPlaybackSource, Windows.Media.Core.IMediaSource3, Windows.Media.Core.IMediaSource4
 {
 extern(Windows):
+	final void removeOpenOperationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_OpenOperationCompleted(token));
+	}
 	final Windows.Foundation.Collections.ValueSet CustomProperties()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
@@ -1700,6 +1720,10 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final void removeStateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StateChanged(token));
 	}
 	final Windows.Media.Core.MediaSourceState State()
 	{
@@ -1785,6 +1809,10 @@ extern(Windows):
 interface MediaStreamSample : Windows.Media.Core.IMediaStreamSample
 {
 extern(Windows):
+	final void removeProcessed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Processed(token));
+	}
 	final Windows.Storage.Streams.Buffer Buffer()
 	{
 		Windows.Storage.Streams.Buffer _ret;
@@ -1930,6 +1958,26 @@ extern(Windows):
 interface MediaStreamSource : Windows.Media.Core.IMediaStreamSource, Windows.Media.Core.IMediaSource, Windows.Media.Core.IMediaStreamSource2, Windows.Media.Core.IMediaStreamSource3
 {
 extern(Windows):
+	final void removeClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closed(token));
+	}
+	final void removeStarting(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Starting(token));
+	}
+	final void removePaused(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Paused(token));
+	}
+	final void removeSampleRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SampleRequested(token));
+	}
+	final void removeSwitchStreamsRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SwitchStreamsRequested(token));
+	}
 	final void NotifyError(Windows.Media.Core.MediaStreamSourceErrorStatus errorStatus)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).abi_NotifyError(errorStatus));
@@ -2007,6 +2055,10 @@ extern(Windows):
 	final void AddProtectionKey(Windows.Media.Core.IMediaStreamDescriptor streamDescriptor, UINT32 __keyIdentifierSize, BYTE* keyIdentifier, UINT32 __licenseDataSize, BYTE* licenseData)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).abi_AddProtectionKey(streamDescriptor, __keyIdentifierSize, keyIdentifier, __licenseDataSize, licenseData));
+	}
+	final void removeSampleRendered(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SampleRendered(token));
 	}
 	final void MaxSupportedPlaybackRate(Windows.Foundation.IReference!(double) value)
 	{
@@ -2191,6 +2243,26 @@ extern(Windows):
 interface MseSourceBuffer : Windows.Media.Core.IMseSourceBuffer
 {
 extern(Windows):
+	final void removeUpdateStarting(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UpdateStarting(token));
+	}
+	final void removeUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Updated(token));
+	}
+	final void removeUpdateEnded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UpdateEnded(token));
+	}
+	final void removeErrorOccurred(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ErrorOccurred(token));
+	}
+	final void removeAborted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Aborted(token));
+	}
 	final Windows.Media.Core.MseAppendMode Mode()
 	{
 		Windows.Media.Core.MseAppendMode _ret;
@@ -2268,6 +2340,14 @@ extern(Windows):
 interface MseSourceBufferList : Windows.Media.Core.IMseSourceBufferList
 {
 extern(Windows):
+	final void removeSourceBufferAdded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SourceBufferAdded(token));
+	}
+	final void removeSourceBufferRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SourceBufferRemoved(token));
+	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.MseSourceBuffer) Buffers()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.MseSourceBuffer) _ret;
@@ -2279,6 +2359,18 @@ extern(Windows):
 interface MseStreamSource : Windows.Media.Core.IMseStreamSource, Windows.Media.Core.IMediaSource
 {
 extern(Windows):
+	final void removeOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Opened(token));
+	}
+	final void removeEnded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Ended(token));
+	}
+	final void removeClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closed(token));
+	}
 	final Windows.Media.Core.MseSourceBufferList SourceBuffers()
 	{
 		Windows.Media.Core.MseSourceBufferList _ret;
@@ -2341,6 +2433,10 @@ extern(Windows):
 		Windows.Foundation.TimeSpan _ret;
 		Debug.OK(this.as!(Windows.Media.Core.ISceneAnalysisEffect).get_DesiredAnalysisInterval(&_ret));
 		return _ret;
+	}
+	final void removeSceneAnalyzed(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_SceneAnalyzed(cookie));
 	}
 	final void SetProperties(Windows.Foundation.Collections.IPropertySet configuration)
 	{
@@ -2523,6 +2619,18 @@ extern(Windows):
 interface TimedMetadataTrack : Windows.Media.Core.ITimedMetadataTrack, Windows.Media.Core.IMediaTrack, Windows.Media.Core.ITimedMetadataTrack2
 {
 extern(Windows):
+	final void removeCueEntered(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CueEntered(token));
+	}
+	final void removeCueExited(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CueExited(token));
+	}
+	final void removeTrackFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TrackFailed(token));
+	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.IMediaCue) Cues()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.IMediaCue) _ret;
@@ -2834,6 +2942,11 @@ extern(Windows):
 
 interface TimedTextSource : Windows.Media.Core.ITimedTextSource
 {
+extern(Windows):
+	final void removeResolved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Resolved(token));
+	}
 }
 
 interface TimedTextSourceResolveResultEventArgs : Windows.Media.Core.ITimedTextSourceResolveResultEventArgs
@@ -3066,6 +3179,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.IVideoStabilizationEffect).get_Enabled(&_ret));
 		return _ret;
 	}
+	final void removeEnabledChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_EnabledChanged(cookie));
+	}
 	final Windows.Media.Capture.VideoStreamConfiguration GetRecommendedStreamConfiguration(Windows.Media.Devices.VideoDeviceController controller, Windows.Media.MediaProperties.VideoEncodingProperties desiredProperties)
 	{
 		Windows.Media.Capture.VideoStreamConfiguration _ret;
@@ -3173,6 +3290,10 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_Label(&_ret));
 		return _ret;
+	}
+	final void removeOpenFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_OpenFailed(token));
 	}
 	final Windows.Media.MediaProperties.VideoEncodingProperties GetEncodingProperties()
 	{

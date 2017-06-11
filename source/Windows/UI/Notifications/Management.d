@@ -40,6 +40,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_GetAccessStatus(&_ret));
 		return _ret;
 	}
+	final void removeNotificationChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NotificationChanged(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.UserNotification)) GetNotificationsAsync(Windows.UI.Notifications.NotificationKinds kinds)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.UserNotification)) _ret;

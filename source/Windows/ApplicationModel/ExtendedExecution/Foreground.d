@@ -48,6 +48,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).set_Description(value));
 	}
+	final void removeRevoked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Revoked(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundResult) RequestExtensionAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundResult) _ret;

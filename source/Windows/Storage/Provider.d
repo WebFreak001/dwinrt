@@ -95,6 +95,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Provider.ICachedFileUpdaterUI).get_UpdateTarget(&_ret));
 		return _ret;
 	}
+	final void removeFileUpdateRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FileUpdateRequested(token));
+	}
+	final void removeUIRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UIRequested(token));
+	}
 	final Windows.Storage.Provider.UIStatus UIStatus()
 	{
 		Windows.Storage.Provider.UIStatus _ret;

@@ -596,6 +596,31 @@ interface NDClient : Windows.Media.Protection.PlayReady.INDClient
 {
 extern(Windows):
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void removeRegistrationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RegistrationCompleted(token));
+	}
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void removeProximityDetectionCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ProximityDetectionCompleted(token));
+	}
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void removeLicenseFetchCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LicenseFetchCompleted(token));
+	}
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void removeReRegistrationNeeded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReRegistrationNeeded(token));
+	}
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void removeClosedCaptionDataReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ClosedCaptionDataReceived(token));
+	}
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDStartResult) StartAsync(Windows.Foundation.Uri contentUrl, UINT32 startAsyncOptions, Windows.Media.Protection.PlayReady.INDCustomData registrationCustomData, Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor licenseFetchDescriptor)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDStartResult) _ret;

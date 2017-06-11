@@ -318,6 +318,18 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).set_DecodePixelHeight(value));
 	}
+	final void removeDownloadProgress(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DownloadProgress(token));
+	}
+	final void removeImageOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ImageOpened(token));
+	}
+	final void removeImageFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ImageFailed(token));
+	}
 	final Windows.UI.Xaml.Media.Imaging.DecodePixelType DecodePixelType()
 	{
 		Windows.UI.Xaml.Media.Imaging.DecodePixelType _ret;
@@ -488,6 +500,14 @@ extern(Windows):
 	final void RasterizePixelHeight(double value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_RasterizePixelHeight(value));
+	}
+	final void removeOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Opened(token));
+	}
+	final void removeOpenFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_OpenFailed(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus) SetSourceAsync(Windows.Storage.Streams.IRandomAccessStream streamSource)
 	{

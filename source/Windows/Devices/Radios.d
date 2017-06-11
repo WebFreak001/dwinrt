@@ -35,6 +35,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).abi_SetStateAsync(value, &_ret));
 		return _ret;
 	}
+	final void removeStateChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_StateChanged(eventCookie));
+	}
 	final Windows.Devices.Radios.RadioState State()
 	{
 		Windows.Devices.Radios.RadioState _ret;

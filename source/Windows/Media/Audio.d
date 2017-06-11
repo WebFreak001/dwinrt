@@ -750,6 +750,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_SourceFile(&_ret));
 		return _ret;
 	}
+	final void removeFileCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FileCompleted(token));
+	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) OutgoingConnections()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) _ret;
@@ -948,6 +952,14 @@ extern(Windows):
 		UINT64 _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).get_QueuedSampleCount(&_ret));
 		return _ret;
+	}
+	final void removeAudioFrameCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AudioFrameCompleted(token));
+	}
+	final void removeQuantumStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_QuantumStarted(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) OutgoingConnections()
 	{
@@ -1190,6 +1202,18 @@ extern(Windows):
 	final void ResetAllNodes()
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_ResetAllNodes());
+	}
+	final void removeQuantumStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_QuantumStarted(token));
+	}
+	final void removeQuantumProcessed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_QuantumProcessed(token));
+	}
+	final void removeUnrecoverableErrorOccurred(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UnrecoverableErrorOccurred(token));
 	}
 	final UINT64 CompletedQuantumCount()
 	{

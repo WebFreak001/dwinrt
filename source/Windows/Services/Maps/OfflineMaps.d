@@ -70,6 +70,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).get_EstimatedSizeInBytes(&_ret));
 		return _ret;
 	}
+	final void removeStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StatusChanged(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadResult) RequestStartDownloadAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadResult) _ret;

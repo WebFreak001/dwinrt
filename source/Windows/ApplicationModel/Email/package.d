@@ -1579,6 +1579,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_TryProposeNewTimeForMeetingAsync(meeting, newStartTime, newDuration, subject, comment, &_ret));
 		return _ret;
 	}
+	final void removeMailboxChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MailboxChanged(token));
+	}
 	final Windows.Foundation.IAsyncAction SmartSendMessageAsync(Windows.ApplicationModel.Email.EmailMessage message, bool smartSend)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -2104,6 +2108,10 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxSyncManager).abi_SyncAsync(&_ret));
 		return _ret;
+	}
+	final void removeSyncStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SyncStatusChanged(token));
 	}
 	final void Status(Windows.ApplicationModel.Email.EmailMailboxSyncStatus value)
 	{

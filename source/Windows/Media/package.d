@@ -731,6 +731,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).get_State(&_ret));
 		return _ret;
 	}
+	final void removePositionChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_PositionChanged(eventCookie));
+	}
+	final void removeStateChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_StateChanged(eventCookie));
+	}
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Duration()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
@@ -750,6 +758,14 @@ extern(Windows):
 	final void IsLoopingEnabled(bool value)
 	{
 		Debug.OK(this.as!(Windows.Media.IMediaTimelineController2).set_IsLoopingEnabled(value));
+	}
+	final void removeFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Failed(token));
+	}
+	final void removeEnded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Ended(token));
 	}
 }
 
@@ -1003,6 +1019,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_IsChannelDownEnabled(value));
 	}
+	final void removeButtonPressed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ButtonPressed(token));
+	}
+	final void removePropertyChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PropertyChanged(token));
+	}
 	final Windows.Media.MediaPlaybackAutoRepeatMode AutoRepeatMode()
 	{
 		Windows.Media.MediaPlaybackAutoRepeatMode _ret;
@@ -1036,6 +1060,22 @@ extern(Windows):
 	final void UpdateTimelineProperties(Windows.Media.SystemMediaTransportControlsTimelineProperties timelineProperties)
 	{
 		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).abi_UpdateTimelineProperties(timelineProperties));
+	}
+	final void removePlaybackPositionChangeRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PlaybackPositionChangeRequested(token));
+	}
+	final void removePlaybackRateChangeRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PlaybackRateChangeRequested(token));
+	}
+	final void removeShuffleEnabledChangeRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ShuffleEnabledChangeRequested(token));
+	}
+	final void removeAutoRepeatModeChangeRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AutoRepeatModeChangeRequested(token));
 	}
 }
 

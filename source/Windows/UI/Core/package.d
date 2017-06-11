@@ -750,6 +750,11 @@ extern(Windows):
 
 interface CoreAcceleratorKeys : Windows.UI.Core.ICoreAcceleratorKeys
 {
+extern(Windows):
+	final void removeAcceleratorKeyActivated(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_AcceleratorKeyActivated(cookie));
+	}
 }
 
 interface CoreComponentInputSource : Windows.UI.Core.ICoreInputSourceBase, Windows.UI.Core.ICorePointerInputSource, Windows.UI.Core.ICoreKeyboardInputSource, Windows.UI.Core.ICoreComponentFocusable, Windows.UI.Core.ICoreTouchHitTesting, Windows.UI.Core.ICoreClosestInteractiveBoundsRequested, Windows.UI.Core.ICoreKeyboardInputSource2
@@ -770,6 +775,10 @@ extern(Windows):
 	final void IsInputEnabled(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).set_IsInputEnabled(value));
+	}
+	final void removeInputEnabled(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_InputEnabled(cookie));
 	}
 	final void ReleasePointerCapture()
 	{
@@ -801,17 +810,73 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).set_PointerCursor(value));
 	}
+	final void removePointerCaptureLost(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerCaptureLost(cookie));
+	}
+	final void removePointerEntered(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerEntered(cookie));
+	}
+	final void removePointerExited(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerExited(cookie));
+	}
+	final void removePointerMoved(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerMoved(cookie));
+	}
+	final void removePointerPressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerPressed(cookie));
+	}
+	final void removePointerReleased(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerReleased(cookie));
+	}
+	final void removePointerWheelChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerWheelChanged(cookie));
+	}
 	final Windows.UI.Core.CoreVirtualKeyStates GetCurrentKeyState(Windows.System.VirtualKey virtualKey)
 	{
 		Windows.UI.Core.CoreVirtualKeyStates _ret;
 		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).abi_GetCurrentKeyState(virtualKey, &_ret));
 		return _ret;
 	}
+	final void removeCharacterReceived(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_CharacterReceived(cookie));
+	}
+	final void removeKeyDown(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_KeyDown(cookie));
+	}
+	final void removeKeyUp(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_KeyUp(cookie));
+	}
 	final bool HasFocus()
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Core.ICoreComponentFocusable).get_HasFocus(&_ret));
 		return _ret;
+	}
+	final void removeGotFocus(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_GotFocus(cookie));
+	}
+	final void removeLostFocus(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_LostFocus(cookie));
+	}
+	final void removeTouchHitTesting(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_TouchHitTesting(cookie));
+	}
+	final void removeClosestInteractiveBoundsRequested(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ClosestInteractiveBoundsRequested(cookie));
 	}
 	final HSTRING GetCurrentKeyEventDeviceId()
 	{
@@ -862,6 +927,10 @@ extern(Windows):
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcher).abi_RunIdleAsync(agileCallback, &_ret));
 		return _ret;
+	}
+	final void removeAcceleratorKeyActivated(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_AcceleratorKeyActivated(cookie));
 	}
 	final Windows.UI.Core.CoreDispatcherPriority CurrentPriority()
 	{
@@ -922,6 +991,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).set_IsInputEnabled(value));
 	}
+	final void removeInputEnabled(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_InputEnabled(cookie));
+	}
 	final void ReleasePointerCapture()
 	{
 		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).abi_ReleasePointerCapture());
@@ -951,6 +1024,34 @@ extern(Windows):
 	final void PointerCursor(Windows.UI.Core.CoreCursor value)
 	{
 		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).set_PointerCursor(value));
+	}
+	final void removePointerCaptureLost(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerCaptureLost(cookie));
+	}
+	final void removePointerEntered(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerEntered(cookie));
+	}
+	final void removePointerExited(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerExited(cookie));
+	}
+	final void removePointerMoved(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerMoved(cookie));
+	}
+	final void removePointerPressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerPressed(cookie));
+	}
+	final void removePointerReleased(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerReleased(cookie));
+	}
+	final void removePointerWheelChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerWheelChanged(cookie));
 	}
 }
 
@@ -1051,9 +1152,93 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).abi_SetPointerCapture());
 	}
+	final void removeActivated(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Activated(cookie));
+	}
+	final void removeAutomationProviderRequested(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_AutomationProviderRequested(cookie));
+	}
+	final void removeCharacterReceived(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_CharacterReceived(cookie));
+	}
+	final void removeClosed(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Closed(cookie));
+	}
+	final void removeInputEnabled(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_InputEnabled(cookie));
+	}
+	final void removeKeyDown(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_KeyDown(cookie));
+	}
+	final void removeKeyUp(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_KeyUp(cookie));
+	}
+	final void removePointerCaptureLost(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerCaptureLost(cookie));
+	}
+	final void removePointerEntered(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerEntered(cookie));
+	}
+	final void removePointerExited(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerExited(cookie));
+	}
+	final void removePointerMoved(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerMoved(cookie));
+	}
+	final void removePointerPressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerPressed(cookie));
+	}
+	final void removePointerReleased(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerReleased(cookie));
+	}
+	final void removeTouchHitTesting(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_TouchHitTesting(cookie));
+	}
+	final void removePointerWheelChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerWheelChanged(cookie));
+	}
+	final void removeSizeChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_SizeChanged(cookie));
+	}
+	final void removeVisibilityChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_VisibilityChanged(cookie));
+	}
 	final void PointerPosition(Windows.Foundation.Point value)
 	{
 		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow2).set_PointerPosition(value));
+	}
+	final void removePointerRoutedAway(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerRoutedAway(cookie));
+	}
+	final void removePointerRoutedTo(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerRoutedTo(cookie));
+	}
+	final void removePointerRoutedReleased(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerRoutedReleased(cookie));
+	}
+	final void removeClosestInteractiveBoundsRequested(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ClosestInteractiveBoundsRequested(cookie));
 	}
 	final HSTRING GetCurrentKeyEventDeviceId()
 	{
@@ -1061,11 +1246,23 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow3).abi_GetCurrentKeyEventDeviceId(&_ret));
 		return _ret;
 	}
+	final void removeResizeStarted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ResizeStarted(cookie));
+	}
+	final void removeResizeCompleted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ResizeCompleted(cookie));
+	}
 }
 
 interface CoreWindowDialog : Windows.UI.Core.ICoreWindowDialog
 {
 extern(Windows):
+	final void removeShowing(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Showing(cookie));
+	}
 	final Windows.Foundation.Size MaxSize()
 	{
 		Windows.Foundation.Size _ret;
@@ -1160,6 +1357,10 @@ extern(Windows):
 interface CoreWindowFlyout : Windows.UI.Core.ICoreWindowFlyout
 {
 extern(Windows):
+	final void removeShowing(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Showing(cookie));
+	}
 	final Windows.Foundation.Size MaxSize()
 	{
 		Windows.Foundation.Size _ret;
@@ -1355,6 +1556,10 @@ extern(Windows):
 interface SystemNavigationManager : Windows.UI.Core.ISystemNavigationManager, Windows.UI.Core.ISystemNavigationManager2
 {
 extern(Windows):
+	final void removeBackRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BackRequested(token));
+	}
 	final Windows.UI.Core.AppViewBackButtonVisibility AppViewBackButtonVisibility()
 	{
 		Windows.UI.Core.AppViewBackButtonVisibility _ret;

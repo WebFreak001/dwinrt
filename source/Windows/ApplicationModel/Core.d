@@ -223,6 +223,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView).get_CoreWindow(&_ret));
 		return _ret;
 	}
+	final void removeActivated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Activated(token));
+	}
 	final bool IsMain()
 	{
 		bool _ret;
@@ -252,6 +256,10 @@ extern(Windows):
 		Windows.ApplicationModel.Core.CoreApplicationViewTitleBar _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView3).get_TitleBar(&_ret));
 		return _ret;
+	}
+	final void removeHostedViewClosing(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HostedViewClosing(token));
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
@@ -292,11 +300,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).get_Height(&_ret));
 		return _ret;
 	}
+	final void removeLayoutMetricsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LayoutMetricsChanged(token));
+	}
 	final bool IsVisible()
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).get_IsVisible(&_ret));
 		return _ret;
+	}
+	final void removeIsVisibleChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_IsVisibleChanged(token));
 	}
 }
 

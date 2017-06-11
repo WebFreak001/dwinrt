@@ -988,6 +988,34 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.System.IUserWatcher).abi_Stop());
 	}
+	final void removeAdded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Added(token));
+	}
+	final void removeRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Removed(token));
+	}
+	final void removeUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Updated(token));
+	}
+	final void removeAuthenticationStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AuthenticationStatusChanged(token));
+	}
+	final void removeAuthenticationStatusChanging(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AuthenticationStatusChanging(token));
+	}
+	final void removeEnumerationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_EnumerationCompleted(token));
+	}
+	final void removeStopped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Stopped(token));
+	}
 }
 
 enum AppMemoryUsageLevel

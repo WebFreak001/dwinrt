@@ -225,6 +225,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisher).get_Status(&_ret));
 		return _ret;
 	}
+	final void removeStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StatusChanged(token));
+	}
 	final void Start()
 	{
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisher).abi_Start());
@@ -254,6 +258,11 @@ extern(Windows):
 
 interface WiFiDirectConnectionListener : Windows.Devices.WiFiDirect.IWiFiDirectConnectionListener
 {
+extern(Windows):
+	final void removeConnectionRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ConnectionRequested(token));
+	}
 }
 
 interface WiFiDirectConnectionParameters : Windows.Devices.WiFiDirect.IWiFiDirectConnectionParameters, Windows.Devices.WiFiDirect.IWiFiDirectConnectionParameters2, Windows.Devices.Enumeration.IDevicePairingSettings
@@ -327,6 +336,10 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectDevice).get_DeviceId(&_ret));
 		return _ret;
+	}
+	final void removeConnectionStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ConnectionStatusChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair) GetConnectionEndpointPairs()
 	{

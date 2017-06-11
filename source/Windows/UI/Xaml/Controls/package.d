@@ -7279,6 +7279,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar).set_IsSticky(value));
 	}
+	final void removeOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Opened(token));
+	}
+	final void removeClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closed(token));
+	}
 	final void OnClosed(IInspectable e)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarOverrides).abi_OnClosed(e));
@@ -7302,6 +7310,14 @@ extern(Windows):
 		Windows.UI.Xaml.Controls.Primitives.AppBarTemplateSettings _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar3).get_TemplateSettings(&_ret));
 		return _ret;
+	}
+	final void removeOpening(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Opening(token));
+	}
+	final void removeClosing(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closing(token));
 	}
 	final void OnClosing(IInspectable e)
 	{
@@ -7569,6 +7585,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).set_TextBoxStyle(value));
 	}
+	final void removeSuggestionChosen(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SuggestionChosen(token));
+	}
+	final void removeTextChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TextChanged(token));
+	}
 	final Windows.UI.Xaml.Controls.IconElement QueryIcon()
 	{
 		Windows.UI.Xaml.Controls.IconElement _ret;
@@ -7578,6 +7602,10 @@ extern(Windows):
 	final void QueryIcon(Windows.UI.Xaml.Controls.IconElement value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox2).set_QueryIcon(value));
+	}
+	final void removeQuerySubmitted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_QuerySubmitted(token));
 	}
 	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
 	{
@@ -7932,6 +7960,22 @@ extern(Windows):
 	final void IsGroupLabelVisible(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_IsGroupLabelVisible(value));
+	}
+	final void removeCalendarViewDayItemChanging(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CalendarViewDayItemChanging(token));
+	}
+	final void removeDateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DateChanged(token));
+	}
+	final void removeOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Opened(token));
+	}
+	final void removeClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closed(token));
 	}
 	final void SetDisplayDate(Windows.Foundation.DateTime date)
 	{
@@ -8475,6 +8519,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarViewDayItemStyle(value));
 	}
+	final void removeCalendarViewDayItemChanging(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CalendarViewDayItemChanging(token));
+	}
+	final void removeSelectedDatesChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SelectedDatesChanged(token));
+	}
 	final void SetDisplayDate(Windows.Foundation.DateTime date)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).abi_SetDisplayDate(date));
@@ -8850,6 +8902,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox).get_TemplateSettings(&_ret));
 		return _ret;
 	}
+	final void removeDropDownClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DropDownClosed(token));
+	}
+	final void removeDropDownOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DropDownOpened(token));
+	}
 	final void OnDropDownClosed(IInspectable e)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBoxOverrides).abi_OnDropDownClosed(e));
@@ -8984,6 +9044,10 @@ extern(Windows):
 	final void IsDynamicOverflowEnabled(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBar3).set_IsDynamicOverflowEnabled(value));
+	}
+	final void removeDynamicOverflowItemsChanging(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DynamicOverflowItemsChanging(token));
 	}
 }
 
@@ -9220,6 +9284,26 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).set_IsSecondaryButtonEnabled(value));
 	}
+	final void removeClosing(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closing(token));
+	}
+	final void removeClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closed(token));
+	}
+	final void removeOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Opened(token));
+	}
+	final void removePrimaryButtonClick(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PrimaryButtonClick(token));
+	}
+	final void removeSecondaryButtonClick(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SecondaryButtonClick(token));
+	}
 	final void Hide()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).abi_Hide());
@@ -9299,6 +9383,10 @@ extern(Windows):
 	final void DefaultButton(Windows.UI.Xaml.Controls.ContentDialogButton value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_DefaultButton(value));
+	}
+	final void removeCloseButtonClick(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CloseButtonClick(token));
 	}
 }
 
@@ -9862,6 +9950,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).get_FocusState(&_ret));
 		return _ret;
 	}
+	final void removeIsEnabledChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_IsEnabledChanged(token));
+	}
 	final bool ApplyTemplate()
 	{
 		bool _ret;
@@ -10090,6 +10182,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).set_ElementSoundMode(value));
 	}
+	final void removeFocusEngaged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FocusEngaged(token));
+	}
+	final void removeFocusDisengaged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FocusDisengaged(token));
+	}
 	final void RemoveFocusEngagement()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).abi_RemoveFocusEngagement());
@@ -10300,6 +10400,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_Orientation(value));
 	}
+	final void removeDateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DateChanged(token));
+	}
 	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
 	{
 		Windows.UI.Xaml.Controls.LightDismissOverlayMode _ret;
@@ -10384,6 +10488,10 @@ extern(Windows):
 	final void MaxYear(Windows.Foundation.DateTime value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).set_MaxYear(value));
+	}
+	final void removeDatePicked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DatePicked(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.IReference!(Windows.Foundation.DateTime)) ShowAtAsync(Windows.UI.Xaml.FrameworkElement target)
 	{
@@ -10737,6 +10845,22 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).get_BackStackDepth(&_ret));
 		return _ret;
 	}
+	final void removeNavigated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Navigated(token));
+	}
+	final void removeNavigating(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Navigating(token));
+	}
+	final void removeNavigationFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NavigationFailed(token));
+	}
+	final void removeNavigationStopped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NavigationStopped(token));
+	}
 	final void GoBack()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame).abi_GoBack());
@@ -10942,6 +11066,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle).set_HidesIfEmpty(value));
 	}
+	final void removePropertyChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PropertyChanged(token));
+	}
 	final Windows.UI.Xaml.Style HeaderContainerStyle()
 	{
 		Windows.UI.Xaml.Style _ret;
@@ -11031,6 +11159,14 @@ extern(Windows):
 		Windows.Foundation.Collections.IObservableVector!(IInspectable) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHub).get_SectionHeaders(&_ret));
 		return _ret;
+	}
+	final void removeSectionHeaderClick(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SectionHeaderClick(token));
+	}
+	final void removeSectionsInViewChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SectionsInViewChanged(token));
 	}
 	final void ScrollToSection(Windows.UI.Xaml.Controls.HubSection section)
 	{
@@ -11285,6 +11421,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IImage).get_PlayToSource(&_ret));
 		return _ret;
 	}
+	final void removeImageFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ImageFailed(token));
+	}
+	final void removeImageOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ImageOpened(token));
+	}
 	final Windows.Media.Casting.CastingSource GetAsCastingSource()
 	{
 		Windows.Media.Casting.CastingSource _ret;
@@ -11365,6 +11509,23 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).set_TargetInkCanvas(value));
 	}
+	final void removeActiveToolChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ActiveToolChanged(token));
+	}
+	final void removeInkDrawingAttributesChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_InkDrawingAttributesChanged(token));
+	}
+	final void removeEraseAllClicked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_EraseAllClicked(token));
+	}
+	deprecated("InkToolbarRulerButton is replaced by InkToolbarStencilButton starting from Windows 10 Creators Update. For more info, see MSDN.")
+	final void removeIsRulerButtonCheckedChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_IsRulerButtonCheckedChanged(token));
+	}
 	final Windows.UI.Xaml.Controls.InkToolbarToolButton GetToolButton(Windows.UI.Xaml.Controls.InkToolbarTool tool)
 	{
 		Windows.UI.Xaml.Controls.InkToolbarToolButton _ret;
@@ -11406,6 +11567,10 @@ extern(Windows):
 	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar2).set_Orientation(value));
+	}
+	final void removeIsStencilButtonCheckedChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_IsStencilButtonCheckedChanged(token));
 	}
 	final Windows.UI.Xaml.Controls.InkToolbarMenuButton GetMenuButton(Windows.UI.Xaml.Controls.InkToolbarMenuKind menu)
 	{
@@ -11517,6 +11682,14 @@ extern(Windows):
 	final void IsChecked(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).set_IsChecked(value));
+	}
+	final void removeChecked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Checked(token));
+	}
+	final void removeUnchecked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Unchecked(token));
 	}
 }
 
@@ -11743,6 +11916,10 @@ extern(Windows):
 interface ItemCollection : Windows.Foundation.Collections.IObservableVector!(IInspectable), Windows.Foundation.Collections.IVector!(IInspectable), Windows.Foundation.Collections.IIterable!(IInspectable)
 {
 extern(Windows):
+	final void removeVectorChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VectorChanged(token));
+	}
 	final Windows.Data.Json.IJsonValue GetAt(uint index)
 	{
 		Windows.Data.Json.IJsonValue _ret;
@@ -11806,6 +11983,10 @@ extern(Windows):
 interface ItemContainerGenerator : Windows.UI.Xaml.Controls.IItemContainerGenerator
 {
 extern(Windows):
+	final void removeItemsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ItemsChanged(token));
+	}
 	deprecated("ItemFromContainer may be altered or unavailable for releases after Windows 8.1. Instead, use ItemsControl.ItemFromContainer.")
 	final IInspectable ItemFromContainer(Windows.UI.Xaml.DependencyObject container)
 	{
@@ -12158,6 +12339,14 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
 		return _ret;
+	}
+	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+	}
+	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VerticalSnapPointsChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
@@ -12545,6 +12734,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).get_SelectedItems(&_ret));
 		return _ret;
 	}
+	final void removeItemsPicked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ItemsPicked(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(IInspectable)) ShowAtAsync(Windows.UI.Xaml.FrameworkElement target)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(IInspectable)) _ret;
@@ -12649,6 +12842,14 @@ extern(Windows):
 	final void IncrementalLoadingTrigger(Windows.UI.Xaml.Controls.IncrementalLoadingTrigger value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase).set_IncrementalLoadingTrigger(value));
+	}
+	final void removeItemClick(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ItemClick(token));
+	}
+	final void removeDragItemsStarting(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DragItemsStarting(token));
 	}
 	final void ScrollIntoView(IInspectable item)
 	{
@@ -12766,6 +12967,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase2).set_ShowsScrollingPlaceholders(value));
 	}
+	final void removeContainerContentChanging(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ContainerContentChanging(token));
+	}
 	final void SetDesiredContainerUpdateDuration(Windows.Foundation.TimeSpan duration)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase2).abi_SetDesiredContainerUpdateDuration(duration));
@@ -12825,6 +13030,18 @@ extern(Windows):
 	final void IsMultiSelectCheckBoxEnabled(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase4).set_IsMultiSelectCheckBoxEnabled(value));
+	}
+	final void removeDragItemsCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DragItemsCompleted(token));
+	}
+	final void removeChoosingItemContainer(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ChoosingItemContainer(token));
+	}
+	final void removeChoosingGroupHeaderContainer(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ChoosingGroupHeaderContainer(token));
 	}
 	final void SelectRange(Windows.UI.Xaml.Data.ItemIndexRange itemIndexRange)
 	{
@@ -13157,6 +13374,46 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).get_IsStereo3DVideo(&_ret));
 		return _ret;
 	}
+	final void removeMediaOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MediaOpened(token));
+	}
+	final void removeMediaEnded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MediaEnded(token));
+	}
+	final void removeMediaFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MediaFailed(token));
+	}
+	final void removeDownloadProgressChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DownloadProgressChanged(token));
+	}
+	final void removeBufferingProgressChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BufferingProgressChanged(token));
+	}
+	final void removeCurrentStateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CurrentStateChanged(token));
+	}
+	final void removeMarkerReached(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MarkerReached(token));
+	}
+	final void removeRateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RateChanged(token));
+	}
+	final void removeVolumeChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VolumeChanged(token));
+	}
+	final void removeSeekCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SeekCompleted(token));
+	}
 	final void Stop()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement).abi_Stop());
@@ -13258,6 +13515,10 @@ extern(Windows):
 	final void TransportControls(Windows.UI.Xaml.Controls.MediaTransportControls value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement3).set_TransportControls(value));
+	}
+	final void removePartialMediaFailureDetected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PartialMediaFailureDetected(token));
 	}
 	final void SetPlaybackSource(Windows.Media.Playback.IMediaPlaybackSource source)
 	{
@@ -13634,6 +13895,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_FastPlayFallbackBehaviour(value));
 	}
+	final void removeThumbnailRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ThumbnailRequested(token));
+	}
 }
 
 interface MediaTransportControlsHelper : Windows.UI.Xaml.Controls.IMediaTransportControlsHelper
@@ -13697,6 +13962,10 @@ extern(Windows):
 	final void CommandParameter(IInspectable value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).set_CommandParameter(value));
+	}
+	final void removeClick(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Click(token));
 	}
 	final Windows.UI.Xaml.Controls.IconElement Icon()
 	{
@@ -13912,6 +14181,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox).set_MaxLength(value));
 	}
+	final void removePasswordChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PasswordChanged(token));
+	}
+	final void removeContextMenuOpening(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ContextMenuOpening(token));
+	}
 	final void SelectAll()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox).abi_SelectAll());
@@ -13965,6 +14242,10 @@ extern(Windows):
 	final void PreventKeyboardDisplayOnProgrammaticFocus(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPasswordBox2).set_PreventKeyboardDisplayOnProgrammaticFocus(value));
+	}
+	final void removePaste(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Paste(token));
 	}
 	final Windows.UI.Xaml.Controls.PasswordRevealMode PasswordRevealMode()
 	{
@@ -14040,6 +14321,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPickerFlyout).set_ConfirmationButtonsVisible(value));
 	}
+	final void removeConfirmed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Confirmed(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(bool) ShowAtAsync(Windows.UI.Xaml.FrameworkElement target)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
@@ -14114,6 +14399,26 @@ extern(Windows):
 	final void IsLocked(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot).set_IsLocked(value));
+	}
+	final void removeSelectionChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SelectionChanged(token));
+	}
+	final void removePivotItemLoading(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PivotItemLoading(token));
+	}
+	final void removePivotItemLoaded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PivotItemLoaded(token));
+	}
+	final void removePivotItemUnloading(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PivotItemUnloading(token));
+	}
+	final void removePivotItemUnloaded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PivotItemUnloaded(token));
 	}
 	final IInspectable LeftHeader()
 	{
@@ -14408,6 +14713,18 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_InputScope(value));
 	}
+	final void removeTextChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TextChanged(token));
+	}
+	final void removeSelectionChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SelectionChanged(token));
+	}
+	final void removeContextMenuOpening(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ContextMenuOpening(token));
+	}
 	final IInspectable Header()
 	{
 		IInspectable _ret;
@@ -14468,6 +14785,22 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox2).set_IsColorFontEnabled(value));
 	}
+	final void removePaste(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Paste(token));
+	}
+	final void removeTextCompositionStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TextCompositionStarted(token));
+	}
+	final void removeTextCompositionChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TextCompositionChanged(token));
+	}
+	final void removeTextCompositionEnded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TextCompositionEnded(token));
+	}
 	final Windows.UI.Xaml.TextReadingOrder TextReadingOrder()
 	{
 		Windows.UI.Xaml.TextReadingOrder _ret;
@@ -14487,6 +14820,14 @@ extern(Windows):
 	final void DesiredCandidateWindowAlignment(Windows.UI.Xaml.Controls.CandidateWindowAlignment value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox3).set_DesiredCandidateWindowAlignment(value));
+	}
+	final void removeCandidateWindowBoundsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CandidateWindowBoundsChanged(token));
+	}
+	final void removeTextChanging(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TextChanging(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetLinguisticAlternativesAsync()
 	{
@@ -14737,6 +15078,14 @@ extern(Windows):
 		double _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichTextBlock).get_BaselineOffset(&_ret));
 		return _ret;
+	}
+	final void removeSelectionChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SelectionChanged(token));
+	}
+	final void removeContextMenuOpening(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ContextMenuOpening(token));
 	}
 	final void SelectAll()
 	{
@@ -15429,6 +15778,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ZoomSnapPoints(&_ret));
 		return _ret;
 	}
+	final void removeViewChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ViewChanged(token));
+	}
 	deprecated("ScrollToHorizontalOffset may be altered or unavailable for releases after Windows 8.1. Instead, use ChangeView.")
 	final void ScrollToHorizontalOffset(double offset)
 	{
@@ -15498,6 +15851,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).set_TopHeader(value));
 	}
+	final void removeViewChanging(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ViewChanging(token));
+	}
 	final bool ChangeView(Windows.Foundation.IReference!(double) horizontalOffset, Windows.Foundation.IReference!(double) verticalOffset, Windows.Foundation.IReference!(FLOAT) zoomFactor)
 	{
 		bool _ret;
@@ -15509,6 +15866,14 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).abi_ChangeViewWithOptionalAnimation(horizontalOffset, verticalOffset, zoomFactor, disableAnimation, &_ret));
 		return _ret;
+	}
+	final void removeDirectManipulationStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DirectManipulationStarted(token));
+	}
+	final void removeDirectManipulationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DirectManipulationCompleted(token));
 	}
 }
 
@@ -15631,6 +15996,26 @@ extern(Windows):
 	final void ChooseSuggestionOnEnter(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).set_ChooseSuggestionOnEnter(value));
+	}
+	final void removeQueryChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_QueryChanged(token));
+	}
+	final void removeSuggestionsRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SuggestionsRequested(token));
+	}
+	final void removeQuerySubmitted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_QuerySubmitted(token));
+	}
+	final void removeResultSuggestionChosen(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ResultSuggestionChosen(token));
+	}
+	final void removePrepareForFocusOnKeyboardInput(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PrepareForFocusOnKeyboardInput(token));
 	}
 	final void SetLocalContentSuggestionSettings(Windows.ApplicationModel.Search.LocalContentSuggestionSettings settings)
 	{
@@ -15813,6 +16198,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoom).set_CanChangeViews(value));
 	}
+	final void removeViewChangeStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ViewChangeStarted(token));
+	}
+	final void removeViewChangeCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ViewChangeCompleted(token));
+	}
 	final void ToggleActiveView()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoom).abi_ToggleActiveView());
@@ -15937,6 +16330,10 @@ extern(Windows):
 		Windows.UI.Xaml.Controls.Primitives.SettingsFlyoutTemplateSettings _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).get_TemplateSettings(&_ret));
 		return _ret;
+	}
+	final void removeBackClick(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BackClick(token));
 	}
 	final void Show()
 	{
@@ -16156,6 +16553,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).set_PaneBackground(value));
 	}
+	final void removePaneClosing(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PaneClosing(token));
+	}
+	final void removePaneClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PaneClosed(token));
+	}
 	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
 	{
 		Windows.UI.Xaml.Controls.LightDismissOverlayMode _ret;
@@ -16217,6 +16622,14 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
 		return _ret;
+	}
+	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+	}
+	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VerticalSnapPointsChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
@@ -16318,6 +16731,10 @@ extern(Windows):
 		FLOAT _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISwapChainPanel).get_CompositionScaleY(&_ret));
 		return _ret;
+	}
+	final void removeCompositionScaleChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CompositionScaleChanged(token));
 	}
 	final Windows.UI.Core.CoreIndependentInputSource CreateCoreIndependentInputSource(Windows.UI.Core.CoreInputDeviceTypes deviceTypes)
 	{
@@ -16536,6 +16953,14 @@ extern(Windows):
 		double _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBlock).get_BaselineOffset(&_ret));
 		return _ret;
+	}
+	final void removeSelectionChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SelectionChanged(token));
+	}
+	final void removeContextMenuOpening(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ContextMenuOpening(token));
 	}
 	final void SelectAll()
 	{
@@ -16762,6 +17187,18 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).set_InputScope(value));
 	}
+	final void removeTextChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TextChanged(token));
+	}
+	final void removeSelectionChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SelectionChanged(token));
+	}
+	final void removeContextMenuOpening(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ContextMenuOpening(token));
+	}
 	final void Select(INT32 start, INT32 length)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox).abi_Select(start, length));
@@ -16836,6 +17273,22 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox2).set_IsColorFontEnabled(value));
 	}
+	final void removePaste(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Paste(token));
+	}
+	final void removeTextCompositionStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TextCompositionStarted(token));
+	}
+	final void removeTextCompositionChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TextCompositionChanged(token));
+	}
+	final void removeTextCompositionEnded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TextCompositionEnded(token));
+	}
 	final Windows.UI.Xaml.TextReadingOrder TextReadingOrder()
 	{
 		Windows.UI.Xaml.TextReadingOrder _ret;
@@ -16855,6 +17308,14 @@ extern(Windows):
 	final void DesiredCandidateWindowAlignment(Windows.UI.Xaml.Controls.CandidateWindowAlignment value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox3).set_DesiredCandidateWindowAlignment(value));
+	}
+	final void removeCandidateWindowBoundsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CandidateWindowBoundsChanged(token));
+	}
+	final void removeTextChanging(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TextChanging(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetLinguisticAlternativesAsync()
 	{
@@ -17025,6 +17486,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker).set_Time(value));
 	}
+	final void removeTimeChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TimeChanged(token));
+	}
 	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
 	{
 		Windows.UI.Xaml.Controls.LightDismissOverlayMode _ret;
@@ -17069,6 +17534,10 @@ extern(Windows):
 	final void MinuteIncrement(INT32 value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePickerFlyout).set_MinuteIncrement(value));
+	}
+	final void removeTimePicked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TimePicked(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)) ShowAtAsync(Windows.UI.Xaml.FrameworkElement target)
 	{
@@ -17193,6 +17662,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitch).get_TemplateSettings(&_ret));
 		return _ret;
 	}
+	final void removeToggled(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Toggled(token));
+	}
 	final void OnToggled()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitchOverrides).abi_OnToggled());
@@ -17269,6 +17742,14 @@ extern(Windows):
 		Windows.UI.Xaml.Controls.Primitives.ToolTipTemplateSettings _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToolTip).get_TemplateSettings(&_ret));
 		return _ret;
+	}
+	final void removeClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closed(token));
+	}
+	final void removeOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Opened(token));
 	}
 }
 
@@ -17516,6 +17997,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingStackPanel).set_Orientation(value));
 	}
+	final void removeCleanUpVirtualizedItemEvent(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CleanUpVirtualizedItemEvent(token));
+	}
 	final void OnCleanUpVirtualizedItem(Windows.UI.Xaml.Controls.CleanUpVirtualizedItemEventArgs e)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingStackPanelOverrides).abi_OnCleanUpVirtualizedItem(e));
@@ -17554,6 +18039,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView).get_DataTransferPackage(&_ret));
 		return _ret;
 	}
+	deprecated("LoadCompleted may be altered or unavailable for releases after Windows 8.1. Instead, use NavigationCompleted.")
+	final void removeLoadCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LoadCompleted(token));
+	}
+	final void removeScriptNotify(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ScriptNotify(token));
+	}
+	deprecated("NavigationFailed may be altered or unavailable for releases after Windows 8.1. Instead, use NavigationCompleted.")
+	final void removeNavigationFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NavigationFailed(token));
+	}
 	deprecated("Use InvokeScriptAsync instead of InvokeScript. For more info, see MSDN.")
 	final HSTRING InvokeScript(HSTRING scriptName, UINT32 __argumentsSize, HSTRING* arguments)
 	{
@@ -17586,6 +18085,18 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).get_DocumentTitle(&_ret));
 		return _ret;
+	}
+	final void removeNavigationStarting(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NavigationStarting(token));
+	}
+	final void removeContentLoading(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ContentLoading(token));
+	}
+	final void removeDOMContentLoaded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DOMContentLoaded(token));
 	}
 	final void GoForward()
 	{
@@ -17641,6 +18152,38 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).set_DefaultBackgroundColor(value));
 	}
+	final void removeNavigationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NavigationCompleted(token));
+	}
+	final void removeFrameNavigationStarting(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FrameNavigationStarting(token));
+	}
+	final void removeFrameContentLoading(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FrameContentLoading(token));
+	}
+	final void removeFrameDOMContentLoaded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FrameDOMContentLoaded(token));
+	}
+	final void removeFrameNavigationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FrameNavigationCompleted(token));
+	}
+	final void removeLongRunningScriptDetected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LongRunningScriptDetected(token));
+	}
+	final void removeUnsafeContentWarningDisplaying(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UnsafeContentWarningDisplaying(token));
+	}
+	final void removeUnviewableContentIdentified(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UnviewableContentIdentified(token));
+	}
 	final void NavigateWithHttpRequestMessage(Windows.Web.Http.HttpRequestMessage requestMessage)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).abi_NavigateWithHttpRequestMessage(requestMessage));
@@ -17656,6 +18199,10 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView3).get_ContainsFullScreenElement(&_ret));
 		return _ret;
+	}
+	final void removeContainsFullScreenElementChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ContainsFullScreenElementChanged(token));
 	}
 	final Windows.UI.Xaml.Controls.WebViewExecutionMode ExecutionMode()
 	{
@@ -17674,6 +18221,18 @@ extern(Windows):
 		Windows.UI.Xaml.Controls.WebViewSettings _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView4).get_Settings(&_ret));
 		return _ret;
+	}
+	final void removeUnsupportedUriSchemeIdentified(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UnsupportedUriSchemeIdentified(token));
+	}
+	final void removeNewWindowRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NewWindowRequested(token));
+	}
+	final void removePermissionRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PermissionRequested(token));
 	}
 	final void AddWebAllowedObject(HSTRING name, IInspectable pObject)
 	{

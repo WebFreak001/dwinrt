@@ -258,4 +258,8 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver).abi_SetBoundingVolumes(bounds));
 	}
+	final void removeObservedSurfacesChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ObservedSurfacesChanged(token));
+	}
 }

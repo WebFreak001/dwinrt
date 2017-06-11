@@ -85,6 +85,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).get_NetworkReport(&_ret));
 		return _ret;
 	}
+	final void removeAvailableNetworksChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_AvailableNetworksChanged(eventCookie));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) _ret;

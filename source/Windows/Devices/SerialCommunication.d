@@ -248,6 +248,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_OutputStream(&_ret));
 		return _ret;
 	}
+	final void removeErrorReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ErrorReceived(token));
+	}
+	final void removePinChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PinChanged(token));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());

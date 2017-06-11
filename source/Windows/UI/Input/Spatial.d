@@ -390,6 +390,62 @@ extern(Windows):
 interface SpatialGestureRecognizer : Windows.UI.Input.Spatial.ISpatialGestureRecognizer
 {
 extern(Windows):
+	final void removeRecognitionStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RecognitionStarted(token));
+	}
+	final void removeRecognitionEnded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RecognitionEnded(token));
+	}
+	final void removeTapped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Tapped(token));
+	}
+	final void removeHoldStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HoldStarted(token));
+	}
+	final void removeHoldCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HoldCompleted(token));
+	}
+	final void removeHoldCanceled(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HoldCanceled(token));
+	}
+	final void removeManipulationStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ManipulationStarted(token));
+	}
+	final void removeManipulationUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ManipulationUpdated(token));
+	}
+	final void removeManipulationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ManipulationCompleted(token));
+	}
+	final void removeManipulationCanceled(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ManipulationCanceled(token));
+	}
+	final void removeNavigationStarted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NavigationStarted(token));
+	}
+	final void removeNavigationUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NavigationUpdated(token));
+	}
+	final void removeNavigationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NavigationCompleted(token));
+	}
+	final void removeNavigationCanceled(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NavigationCanceled(token));
+	}
 	final void CaptureInteraction(Windows.UI.Input.Spatial.SpatialInteraction interaction)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).abi_CaptureInteraction(interaction));
@@ -582,6 +638,30 @@ extern(Windows):
 interface SpatialInteractionManager : Windows.UI.Input.Spatial.ISpatialInteractionManager
 {
 extern(Windows):
+	final void removeSourceDetected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SourceDetected(token));
+	}
+	final void removeSourceLost(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SourceLost(token));
+	}
+	final void removeSourceUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SourceUpdated(token));
+	}
+	final void removeSourcePressed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SourcePressed(token));
+	}
+	final void removeSourceReleased(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SourceReleased(token));
+	}
+	final void removeInteractionDetected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_InteractionDetected(token));
+	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Spatial.SpatialInteractionSourceState) GetDetectedSourcesAtTimestamp(Windows.Perception.PerceptionTimestamp timeStamp)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Spatial.SpatialInteractionSourceState) _ret;

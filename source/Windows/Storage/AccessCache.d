@@ -205,6 +205,10 @@ extern(Windows):
 interface StorageItemMostRecentlyUsedList : Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.IStorageItemAccessList, Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList2
 {
 extern(Windows):
+	final void removeItemRemoved(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_ItemRemoved(eventCookie));
+	}
 	final HSTRING AddOverloadDefaultMetadata(Windows.Storage.IStorageItem file)
 	{
 		HSTRING _ret;

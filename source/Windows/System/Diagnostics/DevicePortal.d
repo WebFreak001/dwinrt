@@ -40,6 +40,15 @@ extern(Windows):
 
 interface DevicePortalConnection : Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection
 {
+extern(Windows):
+	final void removeClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closed(token));
+	}
+	final void removeRequestReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RequestReceived(token));
+	}
 }
 
 interface DevicePortalConnectionClosedEventArgs : Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionClosedEventArgs

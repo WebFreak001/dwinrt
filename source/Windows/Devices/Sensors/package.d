@@ -859,6 +859,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer).get_ReportInterval(&_ret));
 		return _ret;
 	}
+	final void removeReadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadingChanged(token));
+	}
+	final void removeShaken(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Shaken(token));
+	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
@@ -989,6 +997,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensor).get_MinimumReportInterval(&_ret));
 		return _ret;
 	}
+	final void removeReadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadingChanged(token));
+	}
 }
 
 interface ActivitySensorReading : Windows.Devices.Sensors.IActivitySensorReading
@@ -1078,6 +1090,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IAltimeter).get_ReportInterval(&_ret));
 		return _ret;
 	}
+	final void removeReadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadingChanged(token));
+	}
 }
 
 interface AltimeterReading : Windows.Devices.Sensors.IAltimeterReading
@@ -1139,6 +1155,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IBarometer).get_ReportInterval(&_ret));
 		return _ret;
 	}
+	final void removeReadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadingChanged(token));
+	}
 }
 
 interface BarometerReading : Windows.Devices.Sensors.IBarometerReading
@@ -1193,6 +1213,10 @@ extern(Windows):
 		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ICompass).get_ReportInterval(&_ret));
 		return _ret;
+	}
+	final void removeReadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadingChanged(token));
 	}
 	final HSTRING DeviceId()
 	{
@@ -1277,6 +1301,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometer).get_ReportInterval(&_ret));
 		return _ret;
 	}
+	final void removeReadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadingChanged(token));
+	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
@@ -1359,6 +1387,10 @@ extern(Windows):
 		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometer).get_ReportInterval(&_ret));
 		return _ret;
+	}
+	final void removeReadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadingChanged(token));
 	}
 	final HSTRING DeviceId()
 	{
@@ -1455,6 +1487,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensor).get_ReportInterval(&_ret));
 		return _ret;
 	}
+	final void removeReadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadingChanged(token));
+	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
@@ -1515,6 +1551,10 @@ extern(Windows):
 		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometer).get_ReportInterval(&_ret));
 		return _ret;
+	}
+	final void removeReadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadingChanged(token));
 	}
 	final HSTRING DeviceId()
 	{
@@ -1604,6 +1644,10 @@ extern(Windows):
 		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensor).get_ReportInterval(&_ret));
 		return _ret;
+	}
+	final void removeReadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadingChanged(token));
 	}
 	final HSTRING DeviceId()
 	{
@@ -1700,6 +1744,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometer).get_ReportInterval(&_ret));
 		return _ret;
 	}
+	final void removeReadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadingChanged(token));
+	}
 	final Windows.Foundation.Collections.IMapView!(Windows.Devices.Sensors.PedometerStepKind, Windows.Devices.Sensors.PedometerReading) GetCurrentReadings()
 	{
 		Windows.Foundation.Collections.IMapView!(Windows.Devices.Sensors.PedometerStepKind, Windows.Devices.Sensors.PedometerReading) _ret;
@@ -1778,6 +1826,10 @@ extern(Windows):
 		Windows.Devices.Sensors.ProximitySensorReading _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensor).abi_GetCurrentReading(&_ret));
 		return _ret;
+	}
+	final void removeReadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReadingChanged(token));
 	}
 	final Windows.Devices.Sensors.ProximitySensorDisplayOnOffController CreateDisplayOnOffController()
 	{
@@ -1947,6 +1999,10 @@ extern(Windows):
 		Windows.Devices.Sensors.SimpleOrientation _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISimpleOrientationSensor).abi_GetCurrentOrientation(&_ret));
 		return _ret;
+	}
+	final void removeOrientationChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_OrientationChanged(token));
 	}
 	final HSTRING DeviceId()
 	{

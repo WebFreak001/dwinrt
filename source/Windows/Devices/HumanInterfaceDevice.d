@@ -393,6 +393,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_GetNumericControlDescriptions(reportType, usagePage, usageId, &_ret));
 		return _ret;
 	}
+	final void removeInputReportReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_InputReportReceived(token));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());

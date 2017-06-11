@@ -193,6 +193,11 @@ extern(Windows):
 
 interface AccountsSettingsPane : Windows.UI.ApplicationSettings.IAccountsSettingsPane
 {
+extern(Windows):
+	final void removeAccountCommandsRequested(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_AccountCommandsRequested(cookie));
+	}
 }
 
 interface AccountsSettingsPaneCommandsRequestedEventArgs : Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs
@@ -303,6 +308,12 @@ extern(Windows):
 
 interface SettingsPane : Windows.UI.ApplicationSettings.ISettingsPane
 {
+extern(Windows):
+	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final void removeCommandsRequested(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_CommandsRequested(cookie));
+	}
 }
 
 interface SettingsPaneCommandsRequest : Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequest

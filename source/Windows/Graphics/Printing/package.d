@@ -247,6 +247,11 @@ extern(Windows):
 
 interface PrintManager : Windows.Graphics.Printing.IPrintManager
 {
+extern(Windows):
+	final void removePrintTaskRequested(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_PrintTaskRequested(eventCookie));
+	}
 }
 
 interface PrintPageInfo : Windows.Graphics.Printing.IPrintPageInfo
@@ -324,6 +329,22 @@ extern(Windows):
 		Windows.Graphics.Printing.PrintTaskOptions _ret;
 		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).get_Options(&_ret));
 		return _ret;
+	}
+	final void removePreviewing(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_Previewing(eventCookie));
+	}
+	final void removeSubmitting(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_Submitting(eventCookie));
+	}
+	final void removeProgressing(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_Progressing(eventCookie));
+	}
+	final void removeCompleted(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_Completed(eventCookie));
 	}
 	final void IsPrinterTargetEnabled(bool value)
 	{

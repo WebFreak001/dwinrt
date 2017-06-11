@@ -72,6 +72,34 @@ extern(Windows):
 interface CoreInkIndependentInputSource : Windows.UI.Input.Inking.Core.ICoreInkIndependentInputSource
 {
 extern(Windows):
+	final void removePointerEntering(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerEntering(cookie));
+	}
+	final void removePointerHovering(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerHovering(cookie));
+	}
+	final void removePointerExiting(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerExiting(cookie));
+	}
+	final void removePointerPressing(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerPressing(cookie));
+	}
+	final void removePointerMoving(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerMoving(cookie));
+	}
+	final void removePointerReleasing(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerReleasing(cookie));
+	}
+	final void removePointerLost(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerLost(cookie));
+	}
 	final Windows.UI.Input.Inking.InkPresenter InkPresenter()
 	{
 		Windows.UI.Input.Inking.InkPresenter _ret;
@@ -110,6 +138,26 @@ extern(Windows):
 interface CoreWetStrokeUpdateSource : Windows.UI.Input.Inking.Core.ICoreWetStrokeUpdateSource
 {
 extern(Windows):
+	final void removeWetStrokeStarting(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_WetStrokeStarting(cookie));
+	}
+	final void removeWetStrokeContinuing(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_WetStrokeContinuing(cookie));
+	}
+	final void removeWetStrokeStopping(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_WetStrokeStopping(cookie));
+	}
+	final void removeWetStrokeCompleted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_WetStrokeCompleted(cookie));
+	}
+	final void removeWetStrokeCanceled(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_WetStrokeCanceled(cookie));
+	}
 	final Windows.UI.Input.Inking.InkPresenter InkPresenter()
 	{
 		Windows.UI.Input.Inking.InkPresenter _ret;

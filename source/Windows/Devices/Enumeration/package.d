@@ -345,6 +345,10 @@ extern(Windows):
 interface DeviceAccessInformation : Windows.Devices.Enumeration.IDeviceAccessInformation
 {
 extern(Windows):
+	final void removeAccessChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_AccessChanged(cookie));
+	}
 	final Windows.Devices.Enumeration.DeviceAccessStatus CurrentStatus()
 	{
 		Windows.Devices.Enumeration.DeviceAccessStatus _ret;
@@ -493,6 +497,10 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) _ret;
 		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationCustomPairing).abi_PairWithProtectionLevelAndSettingsAsync(pairingKindsSupported, minProtectionLevel, devicePairingSettings, &_ret));
 		return _ret;
+	}
+	final void removePairingRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PairingRequested(token));
 	}
 }
 
@@ -646,6 +654,18 @@ extern(Windows):
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
 		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).get_RequestedProperties(&_ret));
 		return _ret;
+	}
+	final void removeDeviceSelected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DeviceSelected(token));
+	}
+	final void removeDisconnectButtonClicked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DisconnectButtonClicked(token));
+	}
+	final void removeDevicePickerDismissed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DevicePickerDismissed(token));
 	}
 	final void Show(Windows.Foundation.Rect selection)
 	{
@@ -877,6 +897,26 @@ extern(Windows):
 interface DeviceWatcher : Windows.Devices.Enumeration.IDeviceWatcher, Windows.Devices.Enumeration.IDeviceWatcher2
 {
 extern(Windows):
+	final void removeAdded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Added(token));
+	}
+	final void removeUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Updated(token));
+	}
+	final void removeRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Removed(token));
+	}
+	final void removeEnumerationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_EnumerationCompleted(token));
+	}
+	final void removeStopped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Stopped(token));
+	}
 	final Windows.Devices.Enumeration.DeviceWatcherStatus Status()
 	{
 		Windows.Devices.Enumeration.DeviceWatcherStatus _ret;

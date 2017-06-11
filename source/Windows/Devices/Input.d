@@ -152,6 +152,11 @@ extern(Windows):
 
 interface MouseDevice : Windows.Devices.Input.IMouseDevice
 {
+extern(Windows):
+	final void removeMouseMoved(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_MouseMoved(cookie));
+	}
 }
 
 interface MouseEventArgs : Windows.Devices.Input.IMouseEventArgs

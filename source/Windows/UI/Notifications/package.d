@@ -1360,6 +1360,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).get_ExpirationTime(&_ret));
 		return _ret;
 	}
+	final void removeDismissed(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Dismissed(cookie));
+	}
+	final void removeActivated(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Activated(cookie));
+	}
+	final void removeFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Failed(token));
+	}
 	final void Tag(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification2).set_Tag(value));

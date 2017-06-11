@@ -101,6 +101,10 @@ extern(Windows):
 interface CoreDragDropManager : Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragDropManager
 {
 extern(Windows):
+	final void removeTargetRequested(EventRegistrationToken value)
+	{
+		Debug.OK(remove_TargetRequested(value));
+	}
 	final bool AreConcurrentOperationsEnabled()
 	{
 		bool _ret;

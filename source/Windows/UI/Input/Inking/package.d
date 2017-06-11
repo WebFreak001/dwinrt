@@ -815,6 +815,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).abi_SetPredefinedConfiguration(value));
 	}
+	final void removeStrokesCollected(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_StrokesCollected(cookie));
+	}
+	final void removeStrokesErased(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_StrokesErased(cookie));
+	}
 	final Windows.UI.Input.Inking.InkHighContrastAdjustment HighContrastAdjustment()
 	{
 		Windows.UI.Input.Inking.InkHighContrastAdjustment _ret;
@@ -1334,6 +1342,22 @@ extern(Windows):
 interface InkStrokeInput : Windows.UI.Input.Inking.IInkStrokeInput
 {
 extern(Windows):
+	final void removeStrokeStarted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_StrokeStarted(cookie));
+	}
+	final void removeStrokeContinued(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_StrokeContinued(cookie));
+	}
+	final void removeStrokeEnded(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_StrokeEnded(cookie));
+	}
+	final void removeStrokeCanceled(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_StrokeCanceled(cookie));
+	}
 	final Windows.UI.Input.Inking.InkPresenter InkPresenter()
 	{
 		Windows.UI.Input.Inking.InkPresenter _ret;
@@ -1429,6 +1453,34 @@ extern(Windows):
 interface InkUnprocessedInput : Windows.UI.Input.Inking.IInkUnprocessedInput
 {
 extern(Windows):
+	final void removePointerEntered(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerEntered(cookie));
+	}
+	final void removePointerHovered(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerHovered(cookie));
+	}
+	final void removePointerExited(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerExited(cookie));
+	}
+	final void removePointerPressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerPressed(cookie));
+	}
+	final void removePointerMoved(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerMoved(cookie));
+	}
+	final void removePointerReleased(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerReleased(cookie));
+	}
+	final void removePointerLost(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PointerLost(cookie));
+	}
 	final Windows.UI.Input.Inking.InkPresenter InkPresenter()
 	{
 		Windows.UI.Input.Inking.InkPresenter _ret;

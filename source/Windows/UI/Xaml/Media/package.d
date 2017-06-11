@@ -1829,6 +1829,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).set_ImageSource(value));
 	}
+	final void removeImageFailed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ImageFailed(token));
+	}
+	final void removeImageOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ImageOpened(token));
+	}
 }
 
 interface ImageSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IImageSource
@@ -1931,6 +1939,10 @@ extern(Windows):
 		Windows.Foundation.Size _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSurface).get_NaturalSize(&_ret));
 		return _ret;
+	}
+	final void removeLoadCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LoadCompleted(token));
 	}
 	final void Close()
 	{

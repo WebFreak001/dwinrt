@@ -440,6 +440,11 @@ extern(Windows):
 
 interface Print3DManager : Windows.Graphics.Printing3D.IPrint3DManager
 {
+extern(Windows):
+	final void removeTaskRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TaskRequested(token));
+	}
 }
 
 interface Print3DTask : Windows.Graphics.Printing3D.IPrint3DTask
@@ -450,6 +455,18 @@ extern(Windows):
 		Windows.Graphics.Printing3D.Printing3D3MFPackage _ret;
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).get_Source(&_ret));
 		return _ret;
+	}
+	final void removeSubmitting(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_Submitting(eventCookie));
+	}
+	final void removeCompleted(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_Completed(eventCookie));
+	}
+	final void removeSourceChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_SourceChanged(eventCookie));
 	}
 }
 

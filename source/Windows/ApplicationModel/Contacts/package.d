@@ -2150,6 +2150,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).get_UserDataAccountId(&_ret));
 		return _ret;
 	}
+	final void removeContactChanged(EventRegistrationToken value)
+	{
+		Debug.OK(remove_ContactChanged(value));
+	}
 	final Windows.Foundation.IAsyncAction SaveAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -2534,6 +2538,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncManager).abi_SyncAsync(&_ret));
 		return _ret;
 	}
+	final void removeSyncStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SyncStatusChanged(token));
+	}
 	final void Status(Windows.ApplicationModel.Contacts.ContactListSyncStatus value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncManager2).set_Status(value));
@@ -2721,6 +2729,14 @@ extern(Windows):
 	final void HeaderColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPanel).set_HeaderColor(value));
+	}
+	final void removeLaunchFullAppRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LaunchFullAppRequested(token));
+	}
+	final void removeClosing(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closing(token));
 	}
 }
 
@@ -3018,6 +3034,10 @@ extern(Windows):
 		Windows.ApplicationModel.Contacts.ContactChangeTracker _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore2).get_ChangeTracker(&_ret));
 		return _ret;
+	}
+	final void removeContactChanged(EventRegistrationToken value)
+	{
+		Debug.OK(remove_ContactChanged(value));
 	}
 	final Windows.ApplicationModel.Contacts.AggregateContactManager AggregateContactManager()
 	{

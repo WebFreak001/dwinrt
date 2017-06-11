@@ -144,6 +144,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_SetNotesThumbnailAsync(thumbnail, &_ret));
 		return _ret;
 	}
+	final void removeSystemLockStateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SystemLockStateChanged(token));
+	}
+	final void removeNotePlacementChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NotePlacementChanged(token));
+	}
+	final void removeNoteVisibilityChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NoteVisibilityChanged(token));
+	}
 	final void ShowNoteRelativeToWithOptions(INT32 noteViewId, INT32 anchorNoteViewId, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2).abi_ShowNoteRelativeToWithOptions(noteViewId, anchorNoteViewId, options));

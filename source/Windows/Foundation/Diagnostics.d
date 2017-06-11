@@ -406,6 +406,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).abi_CloseAndSaveToFileAsync(&_ret));
 		return _ret;
 	}
+	final void removeLogFileGenerated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LogFileGenerated(token));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
@@ -556,6 +560,10 @@ extern(Windows):
 	final void LogValuePairWithLevel(HSTRING value1, INT32 value2, Windows.Foundation.Diagnostics.LoggingLevel level)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).abi_LogValuePairWithLevel(value1, value2, level));
+	}
+	final void removeLoggingEnabled(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LoggingEnabled(token));
 	}
 	final void Close()
 	{

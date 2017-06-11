@@ -155,6 +155,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).set_Title(value));
 	}
+	deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")
+	final void removeFileRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FileRemoved(token));
+	}
+	final void removeClosing(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Closing(token));
+	}
 }
 
 interface FileRemovedEventArgs : Windows.Storage.Pickers.Provider.IFileRemovedEventArgs
@@ -205,6 +214,14 @@ extern(Windows):
 		Windows.Storage.Pickers.Provider.SetFileNameResult _ret;
 		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).abi_TrySetFileName(value, &_ret));
 		return _ret;
+	}
+	final void removeFileNameChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FileNameChanged(token));
+	}
+	final void removeTargetFileRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TargetFileRequested(token));
 	}
 }
 

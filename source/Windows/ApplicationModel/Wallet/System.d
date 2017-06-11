@@ -64,6 +64,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore).abi_LaunchAppForItemAsync(item, &_ret));
 		return _ret;
 	}
+	final void removeItemsChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ItemsChanged(cookie));
+	}
 }
 
 interface WalletManagerSystem

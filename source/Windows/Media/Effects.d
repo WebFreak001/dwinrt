@@ -193,6 +193,10 @@ extern(Windows):
 interface AudioCaptureEffectsManager : Windows.Media.Effects.IAudioCaptureEffectsManager
 {
 extern(Windows):
+	final void removeAudioCaptureEffectsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AudioCaptureEffectsChanged(token));
+	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) GetAudioCaptureEffects()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) _ret;
@@ -236,6 +240,10 @@ interface AudioEffectsManager
 interface AudioRenderEffectsManager : Windows.Media.Effects.IAudioRenderEffectsManager, Windows.Media.Effects.IAudioRenderEffectsManager2
 {
 extern(Windows):
+	final void removeAudioRenderEffectsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AudioRenderEffectsChanged(token));
+	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) GetAudioRenderEffects()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) _ret;

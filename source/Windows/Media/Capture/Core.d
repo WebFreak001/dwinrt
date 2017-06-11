@@ -85,6 +85,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).abi_FinishAsync(&_ret));
 		return _ret;
 	}
+	final void removePhotoCaptured(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PhotoCaptured(token));
+	}
+	final void removeStopped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Stopped(token));
+	}
 	final Windows.Foundation.IAsyncAction UpdateSettingsAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;

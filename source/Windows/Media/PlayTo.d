@@ -291,6 +291,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnection).get_State(&_ret));
 		return _ret;
 	}
+	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
+	final void removeStateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StateChanged(token));
+	}
+	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
+	final void removeTransferred(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Transferred(token));
+	}
+	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
+	final void removeError(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Error(token));
+	}
 }
 
 interface PlayToConnectionErrorEventArgs : Windows.Media.PlayTo.IPlayToConnectionErrorEventArgs
@@ -354,6 +369,16 @@ interface PlayToManager : Windows.Media.PlayTo.IPlayToManager
 {
 extern(Windows):
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
+	final void removeSourceRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SourceRequested(token));
+	}
+	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
+	final void removeSourceSelected(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SourceSelected(token));
+	}
+	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
 	final void DefaultSourceSelection(bool value)
 	{
 		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToManager).set_DefaultSourceSelection(value));
@@ -370,6 +395,42 @@ extern(Windows):
 interface PlayToReceiver : Windows.Media.PlayTo.IPlayToReceiver
 {
 extern(Windows):
+	final void removePlayRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PlayRequested(token));
+	}
+	final void removePauseRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PauseRequested(token));
+	}
+	final void removeSourceChangeRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SourceChangeRequested(token));
+	}
+	final void removePlaybackRateChangeRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PlaybackRateChangeRequested(token));
+	}
+	final void removeCurrentTimeChangeRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CurrentTimeChangeRequested(token));
+	}
+	final void removeMuteChangeRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MuteChangeRequested(token));
+	}
+	final void removeVolumeChangeRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VolumeChangeRequested(token));
+	}
+	final void removeTimeUpdateRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TimeUpdateRequested(token));
+	}
+	final void removeStopRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StopRequested(token));
+	}
 	final void NotifyVolumeChange(double volume, bool mute)
 	{
 		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyVolumeChange(volume, mute));

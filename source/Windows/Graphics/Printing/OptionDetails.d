@@ -960,6 +960,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails).abi_CreateTextOption(optionId, displayName, &_ret));
 		return _ret;
 	}
+	final void removeOptionChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_OptionChanged(eventCookie));
+	}
+	final void removeBeginValidation(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_BeginValidation(eventCookie));
+	}
 	final Windows.Graphics.Printing.PrintPageDescription GetPageDescription(UINT32 jobPageNumber)
 	{
 		Windows.Graphics.Printing.PrintPageDescription _ret;

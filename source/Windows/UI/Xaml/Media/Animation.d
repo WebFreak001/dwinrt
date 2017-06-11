@@ -1648,6 +1648,10 @@ extern(Windows):
 interface ConnectedAnimation : Windows.UI.Xaml.Media.Animation.IConnectedAnimation, Windows.UI.Xaml.Media.Animation.IConnectedAnimation2
 {
 extern(Windows):
+	final void removeCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Completed(token));
+	}
 	final bool TryStart(Windows.UI.Xaml.UIElement destination)
 	{
 		bool _ret;
@@ -3309,6 +3313,10 @@ extern(Windows):
 	final void RepeatBehavior(Windows.UI.Xaml.Media.Animation.RepeatBehavior value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_RepeatBehavior(value));
+	}
+	final void removeCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Completed(token));
 	}
 }
 

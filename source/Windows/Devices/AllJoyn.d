@@ -770,11 +770,27 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).abi_Disconnect());
 	}
+	final void removeStateChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StateChanged(token));
+	}
 	final Windows.Foundation.Collections.IVector!(Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism) AuthenticationMechanisms()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism) _ret;
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).get_AuthenticationMechanisms(&_ret));
 		return _ret;
+	}
+	final void removeCredentialsRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CredentialsRequested(token));
+	}
+	final void removeCredentialsVerificationRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CredentialsVerificationRequested(token));
+	}
+	final void removeAuthenticationComplete(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AuthenticationComplete(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) GetAboutDataAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo)
 	{
@@ -787,6 +803,14 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) _ret;
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment2).abi_GetAboutDataWithLanguageAsync(serviceInfo, language, &_ret));
 		return _ret;
+	}
+	final void removeAcceptSessionJoinerRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AcceptSessionJoinerRequested(token));
+	}
+	final void removeSessionJoined(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SessionJoined(token));
 	}
 }
 
@@ -833,6 +857,10 @@ extern(Windows):
 		Windows.Devices.AllJoyn.AllJoynSession _ret;
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObject).get_Session(&_ret));
 		return _ret;
+	}
+	final void removeStopped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Stopped(token));
 	}
 }
 
@@ -1050,6 +1078,18 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(INT32) _ret;
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).abi_RemoveMemberAsync(uniqueName, &_ret));
 		return _ret;
+	}
+	final void removeMemberAdded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MemberAdded(token));
+	}
+	final void removeMemberRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MemberRemoved(token));
+	}
+	final void removeLost(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Lost(token));
 	}
 }
 

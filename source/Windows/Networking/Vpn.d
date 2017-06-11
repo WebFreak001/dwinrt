@@ -612,6 +612,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).get_Configuration(&_ret));
 		return _ret;
 	}
+	final void removeActivityChange(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ActivityChange(token));
+	}
 	final void PlugInContext(IInspectable value)
 	{
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).set_PlugInContext(value));
@@ -647,6 +651,10 @@ extern(Windows):
 	final void StartExistingTransports(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv4list, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv6list, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedDomainName, UINT32 mtuSize, UINT32 maxFrameSize, bool Reserved)
 	{
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_StartExistingTransports(assignedClientIPv4list, assignedClientIPv6list, vpnInterfaceId, assignedRoutes, assignedDomainName, mtuSize, maxFrameSize, Reserved));
+	}
+	final void removeActivityStateChange(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ActivityStateChange(token));
 	}
 	final Windows.Networking.Vpn.VpnPacketBuffer GetVpnSendPacketBuffer()
 	{

@@ -131,6 +131,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).get_DocumentSource(&_ret));
 		return _ret;
 	}
+	final void removePaginate(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Paginate(token));
+	}
+	final void removeGetPreviewPage(EventRegistrationToken token)
+	{
+		Debug.OK(remove_GetPreviewPage(token));
+	}
+	final void removeAddPages(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AddPages(token));
+	}
 	final void AddPage(Windows.UI.Xaml.UIElement pageVisual)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_AddPage(pageVisual));

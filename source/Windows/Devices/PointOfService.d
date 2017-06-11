@@ -1061,6 +1061,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner).abi_IsProfileSupported(profile, &_ret));
 		return _ret;
 	}
+	final void removeStatusUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StatusUpdated(token));
+	}
 	final HSTRING VideoDeviceId()
 	{
 		HSTRING _ret;
@@ -1321,6 +1325,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawer).abi_GetStatisticsAsync(statisticsCategories, &_ret));
 		return _ret;
 	}
+	final void removeStatusUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StatusUpdated(token));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
@@ -1411,6 +1419,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCloseAlarm).get_BeepDelay(&_ret));
 		return _ret;
 	}
+	final void removeAlarmTimeoutExpired(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AlarmTimeoutExpired(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(bool) StartAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
@@ -1432,6 +1444,15 @@ extern(Windows):
 
 interface CashDrawerEventSource : Windows.Devices.PointOfService.ICashDrawerEventSource
 {
+extern(Windows):
+	final void removeDrawerClosed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DrawerClosed(token));
+	}
+	final void removeDrawerOpened(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DrawerOpened(token));
+	}
 }
 
 interface CashDrawerOpenedEventArgs : Windows.Devices.PointOfService.ICashDrawerEventSourceEventArgs
@@ -1548,6 +1569,30 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).abi_SetActiveProfileAsync(profile, &_ret));
 		return _ret;
 	}
+	final void removeDataReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DataReceived(token));
+	}
+	final void removeTriggerPressed(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TriggerPressed(token));
+	}
+	final void removeTriggerReleased(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TriggerReleased(token));
+	}
+	final void removeReleaseDeviceRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReleaseDeviceRequested(token));
+	}
+	final void removeImagePreviewReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ImagePreviewReceived(token));
+	}
+	final void removeErrorOccurred(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ErrorOccurred(token));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
@@ -1640,6 +1685,10 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).abi_UpdateStatisticsAsync(statistics, &_ret));
 		return _ret;
+	}
+	final void removeReleaseDeviceRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReleaseDeviceRequested(token));
 	}
 	final void Close()
 	{
@@ -1817,6 +1866,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedLineDisplay).abi_RetainDevice());
 	}
+	final void removeReleaseDeviceRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReleaseDeviceRequested(token));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
@@ -1950,6 +2003,26 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_UpdateStatisticsAsync(statistics, &_ret));
 		return _ret;
 	}
+	final void removeBankCardDataReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BankCardDataReceived(token));
+	}
+	final void removeAamvaCardDataReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AamvaCardDataReceived(token));
+	}
+	final void removeVendorSpecificDataReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VendorSpecificDataReceived(token));
+	}
+	final void removeReleaseDeviceRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReleaseDeviceRequested(token));
+	}
+	final void removeErrorOccurred(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ErrorOccurred(token));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
@@ -2054,6 +2127,10 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).abi_UpdateStatisticsAsync(statistics, &_ret));
 		return _ret;
+	}
+	final void removeReleaseDeviceRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReleaseDeviceRequested(token));
 	}
 	final void Close()
 	{
@@ -2775,6 +2852,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReader).abi_GetErrorReportingType(&_ret));
 		return _ret;
 	}
+	final void removeStatusUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StatusUpdated(token));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
@@ -3239,6 +3320,10 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinter).abi_GetStatisticsAsync(statisticsCategories, &_ret));
 		return _ret;
+	}
+	final void removeStatusUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StatusUpdated(token));
 	}
 	final void Close()
 	{

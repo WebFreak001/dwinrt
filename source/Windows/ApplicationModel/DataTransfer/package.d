@@ -435,6 +435,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).set_RequestedOperation(value));
 	}
+	final void removeOperationCompleted(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_OperationCompleted(eventCookie));
+	}
+	final void removeDestroyed(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_Destroyed(eventCookie));
+	}
 	final void SetData(HSTRING formatId, IInspectable value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).abi_SetData(formatId, value));
@@ -485,6 +493,10 @@ extern(Windows):
 	final void SetWebLink(Windows.Foundation.Uri value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage2).abi_SetWebLink(value));
+	}
+	final void removeShareCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ShareCompleted(token));
 	}
 }
 
@@ -965,6 +977,19 @@ extern(Windows):
 
 interface DataTransferManager : Windows.ApplicationModel.DataTransfer.IDataTransferManager, Windows.ApplicationModel.DataTransfer.IDataTransferManager2
 {
+extern(Windows):
+	final void removeDataRequested(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_DataRequested(eventCookie));
+	}
+	final void removeTargetApplicationChosen(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_TargetApplicationChosen(eventCookie));
+	}
+	final void removeShareProvidersRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ShareProvidersRequested(token));
+	}
 }
 
 interface HtmlFormatHelper

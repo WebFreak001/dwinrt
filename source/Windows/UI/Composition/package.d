@@ -1052,6 +1052,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionCapabilities).abi_AreEffectsFast(&_ret));
 		return _ret;
 	}
+	final void removeChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Changed(token));
+	}
 }
 
 interface CompositionClip : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionClip, Windows.UI.Composition.ICompositionClip2
@@ -1158,6 +1162,10 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionCommitBatch).get_IsEnded(&_ret));
 		return _ret;
+	}
+	final void removeCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Completed(token));
 	}
 }
 
@@ -1271,6 +1279,10 @@ extern(Windows):
 		Windows.UI.Composition.CompositionDrawingSurface _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionGraphicsDevice).abi_CreateDrawingSurface(sizePixels, pixelFormat, alphaMode, &_ret));
 		return _ret;
+	}
+	final void removeRenderingDeviceReplaced(EventRegistrationToken token)
+	{
+		Debug.OK(remove_RenderingDeviceReplaced(token));
 	}
 	final Windows.UI.Composition.CompositionDrawingSurface CreateDrawingSurface2(Windows.Graphics.SizeInt32 sizePixels, Windows.Graphics.DirectX.DirectXPixelFormat pixelFormat, Windows.Graphics.DirectX.DirectXAlphaMode alphaMode)
 	{
@@ -1627,6 +1639,10 @@ extern(Windows):
 	final void Suspend()
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionScopedBatch).abi_Suspend());
+	}
+	final void removeCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Completed(token));
 	}
 }
 

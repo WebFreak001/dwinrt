@@ -110,6 +110,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationChannel).abi_Close());
 	}
+	final void removePushNotificationReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PushNotificationReceived(token));
+	}
 }
 
 interface PushNotificationChannelManager

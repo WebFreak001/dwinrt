@@ -610,6 +610,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.IApplicationData).get_TemporaryFolder(&_ret));
 		return _ret;
 	}
+	final void removeDataChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DataChanged(token));
+	}
 	final void SignalDataChanged()
 	{
 		Debug.OK(this.as!(Windows.Storage.IApplicationData).abi_SignalDataChanged());
@@ -649,6 +653,10 @@ extern(Windows):
 interface ApplicationDataCompositeValue : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
 {
 extern(Windows):
+	final void removeMapChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapChanged(token));
+	}
 	final  IInspectable Lookup(HSTRING key)
 	{
 		 IInspectable _ret;
@@ -735,6 +743,10 @@ extern(Windows):
 interface ApplicationDataContainerSettings : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
 {
 extern(Windows):
+	final void removeMapChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapChanged(token));
+	}
 	final  IInspectable Lookup(HSTRING key)
 	{
 		 IInspectable _ret;
@@ -1413,6 +1425,10 @@ extern(Windows):
 		Windows.Storage.StorageFolder _ret;
 		Debug.OK(this.as!(Windows.Storage.IStorageLibrary).get_SaveFolder(&_ret));
 		return _ret;
+	}
+	final void removeDefinitionChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(remove_DefinitionChanged(eventCookie));
 	}
 	final Windows.Storage.StorageLibraryChangeTracker ChangeTracker()
 	{

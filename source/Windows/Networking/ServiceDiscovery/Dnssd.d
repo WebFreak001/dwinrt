@@ -210,6 +210,18 @@ extern(Windows):
 interface DnssdServiceWatcher : Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher
 {
 extern(Windows):
+	final void removeAdded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Added(token));
+	}
+	final void removeEnumerationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_EnumerationCompleted(token));
+	}
+	final void removeStopped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Stopped(token));
+	}
 	final Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcherStatus Status()
 	{
 		Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcherStatus _ret;

@@ -316,6 +316,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Perception.Spatial.ISpatialAnchor).get_RawCoordinateSystem(&_ret));
 		return _ret;
 	}
+	final void removeRawCoordinateSystemAdjusted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_RawCoordinateSystemAdjusted(cookie));
+	}
 	final bool RemovedByUser()
 	{
 		bool _ret;
@@ -471,6 +475,22 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Perception.Spatial.ISpatialEntityWatcher).get_Status(&_ret));
 		return _ret;
 	}
+	final void removeAdded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Added(token));
+	}
+	final void removeUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Updated(token));
+	}
+	final void removeRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Removed(token));
+	}
+	final void removeEnumerationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_EnumerationCompleted(token));
+	}
 	final void Start()
 	{
 		Debug.OK(this.as!(Windows.Perception.Spatial.ISpatialEntityWatcher).abi_Start());
@@ -530,6 +550,14 @@ extern(Windows):
 		Windows.Perception.Spatial.SpatialLocatability _ret;
 		Debug.OK(this.as!(Windows.Perception.Spatial.ISpatialLocator).get_Locatability(&_ret));
 		return _ret;
+	}
+	final void removeLocatabilityChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_LocatabilityChanged(cookie));
+	}
+	final void removePositionalTrackingDeactivating(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_PositionalTrackingDeactivating(cookie));
 	}
 	final Windows.Perception.Spatial.SpatialLocation TryLocateAtTimestamp(Windows.Perception.PerceptionTimestamp timestamp, Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
 	{

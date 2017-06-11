@@ -518,6 +518,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).abi_SyncAsync(&_ret));
 		return _ret;
 	}
+	final void removeSyncStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SyncStatusChanged(token));
+	}
 }
 
 interface UserDataTaskManager : Windows.ApplicationModel.UserDataTasks.IUserDataTaskManager

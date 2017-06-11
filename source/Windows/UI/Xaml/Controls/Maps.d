@@ -1010,6 +1010,11 @@ extern(Windows):
 
 interface CustomMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource, Windows.UI.Xaml.Controls.Maps.ICustomMapTileDataSource
 {
+extern(Windows):
+	final void removeBitmapRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BitmapRequested(token));
+	}
 }
 
 interface HttpMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource, Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource
@@ -1041,6 +1046,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).set_AllowCaching(value));
 	}
+	final void removeUriRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UriRequested(token));
+	}
 }
 
 interface LocalMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource, Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource
@@ -1055,6 +1064,10 @@ extern(Windows):
 	final void UriFormatString(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource).set_UriFormatString(value));
+	}
+	final void removeUriRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UriRequested(token));
 	}
 }
 
@@ -1392,6 +1405,42 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).get_TileSources(&_ret));
 		return _ret;
 	}
+	final void removeCenterChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CenterChanged(token));
+	}
+	final void removeHeadingChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_HeadingChanged(token));
+	}
+	final void removeLoadingStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LoadingStatusChanged(token));
+	}
+	final void removeMapDoubleTapped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapDoubleTapped(token));
+	}
+	final void removeMapHolding(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapHolding(token));
+	}
+	final void removeMapTapped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapTapped(token));
+	}
+	final void removePitchChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PitchChanged(token));
+	}
+	final void removeTransformOriginChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TransformOriginChanged(token));
+	}
+	final void removeZoomLevelChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ZoomLevelChanged(token));
+	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement) FindMapElementsAtOffset(Windows.Foundation.Point offset)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement) _ret;
@@ -1544,6 +1593,34 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).set_CustomExperience(value));
 	}
+	final void removeMapElementClick(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapElementClick(token));
+	}
+	final void removeMapElementPointerEntered(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapElementPointerEntered(token));
+	}
+	final void removeMapElementPointerExited(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapElementPointerExited(token));
+	}
+	final void removeActualCameraChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ActualCameraChanged(token));
+	}
+	final void removeActualCameraChanging(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ActualCameraChanging(token));
+	}
+	final void removeTargetCameraChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TargetCameraChanged(token));
+	}
+	final void removeCustomExperienceChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CustomExperienceChanged(token));
+	}
 	final void StartContinuousRotate(double rateInDegreesPerSecond)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_StartContinuousRotate(rateInDegreesPerSecond));
@@ -1622,6 +1699,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).abi_TrySetSceneWithAnimationAsync(scene, animationKind, &_ret));
 		return _ret;
 	}
+	final void removeMapRightTapped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapRightTapped(token));
+	}
 	final bool BusinessLandmarksEnabled()
 	{
 		bool _ret;
@@ -1677,6 +1758,10 @@ extern(Windows):
 	final void ViewPadding(Windows.UI.Xaml.Thickness value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).set_ViewPadding(value));
+	}
+	final void removeMapContextRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MapContextRequested(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement) FindMapElementsAtOffsetWithRadius(Windows.Foundation.Point offset, double radius)
 	{
@@ -1756,6 +1841,39 @@ extern(Windows):
 
 interface MapControlDataHelper : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper, Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper2
 {
+extern(Windows):
+	final void removeBusinessLandmarkClick(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BusinessLandmarkClick(token));
+	}
+	final void removeTransitFeatureClick(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TransitFeatureClick(token));
+	}
+	final void removeBusinessLandmarkRightTapped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BusinessLandmarkRightTapped(token));
+	}
+	final void removeTransitFeatureRightTapped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TransitFeatureRightTapped(token));
+	}
+	final void removeBusinessLandmarkPointerEntered(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BusinessLandmarkPointerEntered(token));
+	}
+	final void removeTransitFeaturePointerEntered(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TransitFeaturePointerEntered(token));
+	}
+	final void removeBusinessLandmarkPointerExited(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BusinessLandmarkPointerExited(token));
+	}
+	final void removeTransitFeaturePointerExited(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TransitFeaturePointerExited(token));
+	}
 }
 
 interface MapControlTransitFeatureClickEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureClickEventArgs
@@ -2227,6 +2345,10 @@ extern(Windows):
 		Windows.UI.Xaml.Controls.Maps.MapCamera _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapScene).get_TargetCamera(&_ret));
 		return _ret;
+	}
+	final void removeTargetCameraChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_TargetCameraChanged(token));
 	}
 }
 

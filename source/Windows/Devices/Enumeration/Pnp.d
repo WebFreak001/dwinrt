@@ -137,6 +137,26 @@ extern(Windows):
 interface PnpObjectWatcher : Windows.Devices.Enumeration.Pnp.IPnpObjectWatcher
 {
 extern(Windows):
+	final void removeAdded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Added(token));
+	}
+	final void removeUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Updated(token));
+	}
+	final void removeRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Removed(token));
+	}
+	final void removeEnumerationCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_EnumerationCompleted(token));
+	}
+	final void removeStopped(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Stopped(token));
+	}
 	final Windows.Devices.Enumeration.DeviceWatcherStatus Status()
 	{
 		Windows.Devices.Enumeration.DeviceWatcherStatus _ret;

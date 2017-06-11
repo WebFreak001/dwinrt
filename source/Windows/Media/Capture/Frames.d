@@ -364,6 +364,10 @@ extern(Windows):
 interface MediaFrameReader : Windows.Media.Capture.Frames.IMediaFrameReader, Windows.Foundation.IClosable
 {
 extern(Windows):
+	final void removeFrameArrived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FrameArrived(token));
+	}
 	final Windows.Media.Capture.Frames.MediaFrameReference TryAcquireLatestFrame()
 	{
 		Windows.Media.Capture.Frames.MediaFrameReference _ret;
@@ -477,6 +481,10 @@ extern(Windows):
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSource).abi_SetFormatAsync(format, &_ret));
 		return _ret;
+	}
+	final void removeFormatChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FormatChanged(token));
 	}
 	final Windows.Media.Devices.Core.CameraIntrinsics TryGetCameraIntrinsics(Windows.Media.Capture.Frames.MediaFrameFormat format)
 	{
@@ -615,6 +623,10 @@ interface MultiSourceMediaFrameArrivedEventArgs : Windows.Media.Capture.Frames.I
 interface MultiSourceMediaFrameReader : Windows.Media.Capture.Frames.IMultiSourceMediaFrameReader, Windows.Foundation.IClosable
 {
 extern(Windows):
+	final void removeFrameArrived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_FrameArrived(token));
+	}
 	final Windows.Media.Capture.Frames.MultiSourceMediaFrameReference TryAcquireLatestFrame()
 	{
 		Windows.Media.Capture.Frames.MultiSourceMediaFrameReference _ret;

@@ -323,6 +323,42 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).set_InputPaneDisplayPolicy(value));
 	}
+	final void removeTextRequested(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_TextRequested(cookie));
+	}
+	final void removeSelectionRequested(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_SelectionRequested(cookie));
+	}
+	final void removeLayoutRequested(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_LayoutRequested(cookie));
+	}
+	final void removeTextUpdating(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_TextUpdating(cookie));
+	}
+	final void removeSelectionUpdating(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_SelectionUpdating(cookie));
+	}
+	final void removeFormatUpdating(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_FormatUpdating(cookie));
+	}
+	final void removeCompositionStarted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_CompositionStarted(cookie));
+	}
+	final void removeCompositionCompleted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_CompositionCompleted(cookie));
+	}
+	final void removeFocusRemoved(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_FocusRemoved(cookie));
+	}
 	final void NotifyFocusEnter()
 	{
 		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).abi_NotifyFocusEnter());
@@ -342,6 +378,10 @@ extern(Windows):
 	final void NotifyLayoutChanged()
 	{
 		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).abi_NotifyLayoutChanged());
+	}
+	final void removeNotifyFocusLeaveCompleted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_NotifyFocusLeaveCompleted(cookie));
 	}
 }
 
@@ -556,6 +596,10 @@ extern(Windows):
 		Windows.Globalization.Language _ret;
 		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextServicesManager).get_InputLanguage(&_ret));
 		return _ret;
+	}
+	final void removeInputLanguageChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_InputLanguageChanged(cookie));
 	}
 	final Windows.UI.Text.Core.CoreTextEditContext CreateEditContext()
 	{

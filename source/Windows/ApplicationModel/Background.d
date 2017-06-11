@@ -1017,6 +1017,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistration).get_Name(&_ret));
 		return _ret;
 	}
+	final void removeProgress(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Progress(cookie));
+	}
+	final void removeCompleted(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_Completed(cookie));
+	}
 	final void Unregister(bool cancelTask)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistration).abi_Unregister(cancelTask));
@@ -1049,6 +1057,10 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistrationGroup).get_Name(&_ret));
 		return _ret;
+	}
+	final void removeBackgroundActivated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BackgroundActivated(token));
 	}
 	final Windows.Foundation.Collections.IMapView!(GUID, Windows.ApplicationModel.Background.BackgroundTaskRegistration) AllTasks()
 	{

@@ -281,6 +281,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Store.ILicenseInformation).get_ExpirationDate(&_ret));
 		return _ret;
 	}
+	final void removeLicenseChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_LicenseChanged(cookie));
+	}
 }
 
 interface ListingInformation : Windows.ApplicationModel.Store.IListingInformation, Windows.ApplicationModel.Store.IListingInformation2

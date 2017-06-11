@@ -75,6 +75,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockApplicationHost).abi_RequestUnlock());
 	}
+	final void removeUnlocking(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Unlocking(token));
+	}
 }
 
 interface LockScreenBadge : Windows.ApplicationModel.LockScreen.ILockScreenBadge
@@ -113,11 +117,19 @@ extern(Windows):
 interface LockScreenInfo : Windows.ApplicationModel.LockScreen.ILockScreenInfo
 {
 extern(Windows):
+	final void removeLockScreenImageChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LockScreenImageChanged(token));
+	}
 	final Windows.Storage.Streams.IRandomAccessStream LockScreenImage()
 	{
 		Windows.Storage.Streams.IRandomAccessStream _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).get_LockScreenImage(&_ret));
 		return _ret;
+	}
+	final void removeBadgesChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BadgesChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.LockScreen.LockScreenBadge) Badges()
 	{
@@ -125,11 +137,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).get_Badges(&_ret));
 		return _ret;
 	}
+	final void removeDetailTextChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DetailTextChanged(token));
+	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) DetailText()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).get_DetailText(&_ret));
 		return _ret;
+	}
+	final void removeAlarmIconChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_AlarmIconChanged(token));
 	}
 	final Windows.Storage.Streams.IRandomAccessStream AlarmIcon()
 	{

@@ -569,6 +569,30 @@ extern(Windows):
 interface AppointmentDataProviderConnection : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection
 {
 extern(Windows):
+	final void removeSyncRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SyncRequested(token));
+	}
+	final void removeCreateOrUpdateAppointmentRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CreateOrUpdateAppointmentRequested(token));
+	}
+	final void removeCancelMeetingRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CancelMeetingRequested(token));
+	}
+	final void removeForwardMeetingRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ForwardMeetingRequested(token));
+	}
+	final void removeProposeNewTimeForMeetingRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ProposeNewTimeForMeetingRequested(token));
+	}
+	final void removeUpdateMeetingResponseRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_UpdateMeetingResponseRequested(token));
+	}
 	final void Start()
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).abi_Start());

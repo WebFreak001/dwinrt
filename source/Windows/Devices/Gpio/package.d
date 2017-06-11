@@ -282,6 +282,10 @@ extern(Windows):
 interface GpioPin : Windows.Devices.Gpio.IGpioPin, Windows.Foundation.IClosable
 {
 extern(Windows):
+	final void removeValueChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ValueChanged(token));
+	}
 	final Windows.Foundation.TimeSpan DebounceTimeout()
 	{
 		Windows.Foundation.TimeSpan _ret;

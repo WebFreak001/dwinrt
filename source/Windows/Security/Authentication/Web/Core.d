@@ -156,6 +156,19 @@ extern(Windows):
 
 interface WebAccountMonitor : Windows.Security.Authentication.Web.Core.IWebAccountMonitor
 {
+extern(Windows):
+	final void removeUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Updated(token));
+	}
+	final void removeRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Removed(token));
+	}
+	final void removeDefaultSignInAccountChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DefaultSignInAccountChanged(token));
+	}
 }
 
 interface WebAuthenticationCoreManager

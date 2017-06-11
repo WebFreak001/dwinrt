@@ -400,6 +400,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection).get_Language(&_ret));
 		return _ret;
 	}
+	final void removeVoiceCommandCompleted(EventRegistrationToken token)
+	{
+		Debug.OK(remove_VoiceCommandCompleted(token));
+	}
 }
 
 interface VoiceCommandUserMessage : Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage

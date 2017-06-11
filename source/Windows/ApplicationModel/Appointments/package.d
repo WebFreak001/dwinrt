@@ -1033,6 +1033,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager).abi_SyncAsync(&_ret));
 		return _ret;
 	}
+	final void removeSyncStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SyncStatusChanged(token));
+	}
 	final void Status(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncStatus value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager2).set_Status(value));
@@ -1489,6 +1493,10 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_FindLocalIdsFromRoamingIdAsync(roamingId, &_ret));
 		return _ret;
+	}
+	final void removeStoreChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StoreChanged(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentCalendar) CreateAppointmentCalendarInAccountAsync(HSTRING name, HSTRING userDataAccountId)
 	{

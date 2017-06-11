@@ -554,6 +554,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Services.Store.IStoreContext).get_User(&_ret));
 		return _ret;
 	}
+	final void removeOfflineLicensesChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_OfflineLicensesChanged(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(HSTRING) GetCustomerPurchaseIdAsync(HSTRING serviceTicket, HSTRING publisherUserId)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
@@ -743,6 +747,10 @@ extern(Windows):
 interface StorePackageLicense : Windows.Services.Store.IStorePackageLicense, Windows.Foundation.IClosable
 {
 extern(Windows):
+	final void removeLicenseLost(EventRegistrationToken token)
+	{
+		Debug.OK(remove_LicenseLost(token));
+	}
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;

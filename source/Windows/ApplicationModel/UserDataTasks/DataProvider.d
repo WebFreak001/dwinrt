@@ -130,6 +130,26 @@ extern(Windows):
 interface UserDataTaskDataProviderConnection : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskDataProviderConnection
 {
 extern(Windows):
+	final void removeCreateOrUpdateTaskRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CreateOrUpdateTaskRequested(token));
+	}
+	final void removeSyncRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SyncRequested(token));
+	}
+	final void removeSkipOccurrenceRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SkipOccurrenceRequested(token));
+	}
+	final void removeCompleteTaskRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CompleteTaskRequested(token));
+	}
+	final void removeDeleteTaskRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DeleteTaskRequested(token));
+	}
 	final void Start()
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskDataProviderConnection).abi_Start());

@@ -432,6 +432,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).get_BluetoothAddress(&_ret));
 		return _ret;
 	}
+	final void removeNameChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NameChanged(token));
+	}
+	final void removeSdpRecordsChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SdpRecordsChanged(token));
+	}
+	final void removeConnectionStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ConnectionStatusChanged(token));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
@@ -574,6 +586,18 @@ extern(Windows):
 		Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).abi_GetGattService(serviceUuid, &_ret));
 		return _ret;
+	}
+	final void removeNameChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_NameChanged(token));
+	}
+	final void removeGattServicesChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_GattServicesChanged(token));
+	}
+	final void removeConnectionStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ConnectionStatusChanged(token));
 	}
 	final void Close()
 	{

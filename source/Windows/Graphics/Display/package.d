@@ -186,6 +186,18 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).abi_StopOverride());
 	}
+	final void removeIsSupportedChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_IsSupportedChanged(token));
+	}
+	final void removeIsOverrideActiveChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_IsOverrideActiveChanged(token));
+	}
+	final void removeBrightnessLevelChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_BrightnessLevelChanged(token));
+	}
 }
 
 interface DisplayInformation : Windows.Graphics.Display.IDisplayInformation, Windows.Graphics.Display.IDisplayInformation2, Windows.Graphics.Display.IDisplayInformation3, Windows.Graphics.Display.IDisplayInformation4
@@ -202,6 +214,10 @@ extern(Windows):
 		Windows.Graphics.Display.DisplayOrientations _ret;
 		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_NativeOrientation(&_ret));
 		return _ret;
+	}
+	final void removeOrientationChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_OrientationChanged(token));
 	}
 	final Windows.Graphics.Display.ResolutionScale ResolutionScale()
 	{
@@ -227,17 +243,29 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_RawDpiY(&_ret));
 		return _ret;
 	}
+	final void removeDpiChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_DpiChanged(token));
+	}
 	final bool StereoEnabled()
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_StereoEnabled(&_ret));
 		return _ret;
 	}
+	final void removeStereoEnabledChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_StereoEnabledChanged(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) GetColorProfileAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) _ret;
 		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).abi_GetColorProfileAsync(&_ret));
 		return _ret;
+	}
+	final void removeColorProfileChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ColorProfileChanged(token));
 	}
 	final double RawPixelsPerViewPixel()
 	{

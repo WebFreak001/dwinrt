@@ -607,6 +607,30 @@ extern(Windows):
 interface PackageCatalog : Windows.ApplicationModel.IPackageCatalog, Windows.ApplicationModel.IPackageCatalog2
 {
 extern(Windows):
+	final void removePackageStaging(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PackageStaging(token));
+	}
+	final void removePackageInstalling(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PackageInstalling(token));
+	}
+	final void removePackageUpdating(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PackageUpdating(token));
+	}
+	final void removePackageUninstalling(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PackageUninstalling(token));
+	}
+	final void removePackageStatusChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PackageStatusChanged(token));
+	}
+	final void removePackageContentGroupStaging(EventRegistrationToken token)
+	{
+		Debug.OK(remove_PackageContentGroupStaging(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult) AddOptionalPackageAsync(HSTRING optionalPackageFamilyName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult) _ret;

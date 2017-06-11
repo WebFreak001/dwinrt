@@ -454,6 +454,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardReader).abi_FindAllCardsAsync(&_ret));
 		return _ret;
 	}
+	final void removeCardAdded(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CardAdded(token));
+	}
+	final void removeCardRemoved(EventRegistrationToken token)
+	{
+		Debug.OK(remove_CardRemoved(token));
+	}
 }
 
 enum SmartCardPinCharacterPolicyOption

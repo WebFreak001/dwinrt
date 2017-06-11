@@ -67,6 +67,14 @@ extern(Windows):
 interface ContactDataProviderConnection : Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection
 {
 extern(Windows):
+	final void removeSyncRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_SyncRequested(token));
+	}
+	final void removeServerSearchReadBatchRequested(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ServerSearchReadBatchRequested(token));
+	}
 	final void Start()
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection).abi_Start());

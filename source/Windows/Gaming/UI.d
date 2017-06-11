@@ -116,6 +116,10 @@ extern(Windows):
 interface GameChatOverlayMessageSource : Windows.Gaming.UI.IGameChatOverlayMessageSource
 {
 extern(Windows):
+	final void removeMessageReceived(EventRegistrationToken token)
+	{
+		Debug.OK(remove_MessageReceived(token));
+	}
 	final void SetDelayBeforeClosingAfterMessageReceived(Windows.Foundation.TimeSpan value)
 	{
 		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlayMessageSource).abi_SetDelayBeforeClosingAfterMessageReceived(value));

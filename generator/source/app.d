@@ -1170,11 +1170,17 @@ struct Interface
 		{
 			if (method.type == InterfaceType.eventadd)
 			{
-				writeln("TODO: Implement " ~ method.fullName);
+				writeln("TODO: Implement ", method);
 			}
 			else if (method.type == InterfaceType.eventremove)
 			{
-				writeln("TODO: Implement " ~ method.fullName);
+				enforce(method.arguments.length == 1);
+				string name = method.fullName;
+				method.name = "remove" ~ method.name;
+				method.returnType = "void";
+				method.implementation = "Debug.OK(" ~ name ~ "(" ~ method.arguments[0].fullName ~ "));";
+				writeln(method);
+				methods ~= method;
 			}
 			else
 			{

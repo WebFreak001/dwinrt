@@ -50,6 +50,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Power.IBattery).abi_GetReport(&_ret));
 		return _ret;
 	}
+	final void removeReportUpdated(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ReportUpdated(token));
+	}
 }
 
 interface BatteryReport : Windows.Devices.Power.IBatteryReport

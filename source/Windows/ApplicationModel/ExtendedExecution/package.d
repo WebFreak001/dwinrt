@@ -70,6 +70,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession).set_PercentProgress(value));
 	}
+	final void removeRevoked(EventRegistrationToken token)
+	{
+		Debug.OK(remove_Revoked(token));
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionResult) RequestExtensionAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionResult) _ret;

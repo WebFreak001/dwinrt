@@ -185,6 +185,10 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.IHdcpSession).abi_SetDesiredMinProtectionAsync(protection, &_ret));
 		return _ret;
 	}
+	final void removeProtectionChanged(EventRegistrationToken token)
+	{
+		Debug.OK(remove_ProtectionChanged(token));
+	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
@@ -194,6 +198,18 @@ extern(Windows):
 interface MediaProtectionManager : Windows.Media.Protection.IMediaProtectionManager
 {
 extern(Windows):
+	final void removeServiceRequested(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ServiceRequested(cookie));
+	}
+	final void removeRebootNeeded(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_RebootNeeded(cookie));
+	}
+	final void removeComponentLoadFailed(EventRegistrationToken cookie)
+	{
+		Debug.OK(remove_ComponentLoadFailed(cookie));
+	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
