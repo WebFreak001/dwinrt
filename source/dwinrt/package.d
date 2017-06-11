@@ -551,8 +551,8 @@ extern (Windows):
 	LONG count = 0; // object reference count
 }
 
-class TypedEvent(TSender, TArgs) : ComObject,
-	Windows.Foundation.TypedEventHandler!(TSender, TArgs)
+class TypedEvent(TSender, TArgs, Base = Windows.Foundation.TypedEventHandler!(TSender, TArgs))
+	: ComObject, Base
 {
 	alias Callback = extern (Windows) void delegate(TSender, TArgs);
 
@@ -578,9 +578,11 @@ class TypedEvent(TSender, TArgs) : ComObject,
 	}
 }
 
-auto event(TSender, TArgs)(void delegate(TSender, TArgs) cb)
+auto event(Base = Windows.Foundation.TypedEventHandler!(TSender, TArgs), TSender, TArgs, Fn)(Fn cb)
 {
-	return new TypedEvent!(TSender, TArgs)((sender, args) { cb(sender, args); });
+	return new TypedEvent!(TSender, TArgs, Base)((sender, args) {
+		cb(sender, args);
+	});
 }
 
 enum bitflags;

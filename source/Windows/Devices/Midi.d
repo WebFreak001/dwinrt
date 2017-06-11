@@ -381,6 +381,12 @@ extern(Windows):
 interface MidiInPort : Windows.Devices.Midi.IMidiInPort, Windows.Foundation.IClosable
 {
 extern(Windows):
+	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs), Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeMessageReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_MessageReceived(token));

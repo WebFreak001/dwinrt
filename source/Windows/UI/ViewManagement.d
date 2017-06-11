@@ -419,6 +419,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IAccessibilitySettings).get_HighContrastScheme(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnHighContrastChanged(void delegate(Windows.UI.ViewManagement.AccessibilitySettings, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HighContrastChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.AccessibilitySettings, IInspectable), Windows.UI.ViewManagement.AccessibilitySettings, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeHighContrastChanged(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_HighContrastChanged(cookie));
@@ -508,6 +514,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_Id(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnConsolidated(void delegate(Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Consolidated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs), Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeConsolidated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Consolidated(token));
@@ -529,6 +541,12 @@ extern(Windows):
 		Windows.Foundation.Rect _ret;
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).get_VisibleBounds(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnVisibleBoundsChanged(void delegate(Windows.UI.ViewManagement.ApplicationView, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VisibleBoundsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView, IInspectable), Windows.UI.ViewManagement.ApplicationView, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeVisibleBoundsChanged(EventRegistrationToken token)
 	{
@@ -792,9 +810,21 @@ extern(Windows):
 interface InputPane : Windows.UI.ViewManagement.IInputPane, Windows.UI.ViewManagement.IInputPane2, Windows.UI.ViewManagement.IInputPaneControl
 {
 extern(Windows):
+	final EventRegistrationToken OnShowing(void delegate(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Showing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs), Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeShowing(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Showing(token));
+	}
+	final EventRegistrationToken OnHiding(void delegate(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Hiding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs), Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeHiding(EventRegistrationToken token)
 	{
@@ -942,6 +972,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings2).get_TextScaleFactor(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnTextScaleFactorChanged(void delegate(Windows.UI.ViewManagement.UISettings, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TextScaleFactorChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeTextScaleFactorChanged(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_TextScaleFactorChanged(cookie));
@@ -952,6 +988,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings3).abi_GetColorValue(desiredColor, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnColorValuesChanged(void delegate(Windows.UI.ViewManagement.UISettings, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ColorValuesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeColorValuesChanged(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_ColorValuesChanged(cookie));
@@ -961,6 +1003,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings4).get_AdvancedEffectsEnabled(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnAdvancedEffectsEnabledChanged(void delegate(Windows.UI.ViewManagement.UISettings, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AdvancedEffectsEnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeAdvancedEffectsEnabledChanged(EventRegistrationToken cookie)
 	{

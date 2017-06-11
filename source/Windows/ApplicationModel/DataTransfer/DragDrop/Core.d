@@ -101,6 +101,12 @@ extern(Windows):
 interface CoreDragDropManager : Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragDropManager
 {
 extern(Windows):
+	final EventRegistrationToken OnTargetRequested(void delegate(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager, Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDropOperationTargetRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TargetRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager, Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDropOperationTargetRequestedEventArgs), Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager, Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDropOperationTargetRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeTargetRequested(EventRegistrationToken value)
 	{
 		Debug.OK(remove_TargetRequested(value));

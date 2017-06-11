@@ -393,6 +393,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).abi_GetNumericControlDescriptions(reportType, usagePage, usageId, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnInputReportReceived(void delegate(Windows.Devices.HumanInterfaceDevice.HidDevice, Windows.Devices.HumanInterfaceDevice.HidInputReportReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_InputReportReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.HumanInterfaceDevice.HidDevice, Windows.Devices.HumanInterfaceDevice.HidInputReportReceivedEventArgs), Windows.Devices.HumanInterfaceDevice.HidDevice, Windows.Devices.HumanInterfaceDevice.HidInputReportReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeInputReportReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_InputReportReceived(token));

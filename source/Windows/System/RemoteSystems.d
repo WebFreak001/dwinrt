@@ -574,6 +574,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSession).get_ControllerDisplayName(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnDisconnected(void delegate(Windows.System.RemoteSystems.RemoteSystemSession, Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Disconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSession, Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedEventArgs), Windows.System.RemoteSystems.RemoteSystemSession, Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDisconnected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Disconnected(token));
@@ -610,6 +616,12 @@ extern(Windows):
 interface RemoteSystemSessionController : Windows.System.RemoteSystems.IRemoteSystemSessionController
 {
 extern(Windows):
+	final EventRegistrationToken OnJoinRequested(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionController, Windows.System.RemoteSystems.RemoteSystemSessionJoinRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_JoinRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionController, Windows.System.RemoteSystems.RemoteSystemSessionJoinRequestedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionController, Windows.System.RemoteSystems.RemoteSystemSessionJoinRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeJoinRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_JoinRequested(token));
@@ -699,6 +711,12 @@ extern(Windows):
 interface RemoteSystemSessionInvitationListener : Windows.System.RemoteSystems.IRemoteSystemSessionInvitationListener
 {
 extern(Windows):
+	final EventRegistrationToken OnInvitationReceived(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionInvitationListener, Windows.System.RemoteSystems.RemoteSystemSessionInvitationReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_InvitationReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionInvitationListener, Windows.System.RemoteSystems.RemoteSystemSessionInvitationReceivedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionInvitationListener, Windows.System.RemoteSystems.RemoteSystemSessionInvitationReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeInvitationReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_InvitationReceived(token));
@@ -792,6 +810,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel).abi_SendValueSetToParticipantsAsync(messageData, participants, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnValueSetReceived(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel, Windows.System.RemoteSystems.RemoteSystemSessionValueSetReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ValueSetReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel, Windows.System.RemoteSystems.RemoteSystemSessionValueSetReceivedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel, Windows.System.RemoteSystems.RemoteSystemSessionValueSetReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeValueSetReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ValueSetReceived(token));
@@ -869,13 +893,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher).get_Status(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnAdded(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantAddedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantAddedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantAddedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Added(token));
 	}
+	final EventRegistrationToken OnRemoved(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantRemovedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantRemovedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantRemovedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Removed(token));
+	}
+	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, IInspectable), Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
@@ -939,13 +981,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher).get_Status(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnAdded(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionAddedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionAddedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionAddedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Added(token));
 	}
+	final EventRegistrationToken OnUpdated(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionUpdatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionUpdatedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionUpdatedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Updated(token));
+	}
+	final EventRegistrationToken OnRemoved(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionRemovedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionRemovedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionRemovedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
@@ -986,13 +1046,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemWatcher).abi_Stop());
 	}
+	final EventRegistrationToken OnRemoteSystemAdded(void delegate(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemAddedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RemoteSystemAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemAddedEventArgs), Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemAddedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeRemoteSystemAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_RemoteSystemAdded(token));
 	}
+	final EventRegistrationToken OnRemoteSystemUpdated(void delegate(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RemoteSystemUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs), Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeRemoteSystemUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_RemoteSystemUpdated(token));
+	}
+	final EventRegistrationToken OnRemoteSystemRemoved(void delegate(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RemoteSystemRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs), Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeRemoteSystemRemoved(EventRegistrationToken token)
 	{

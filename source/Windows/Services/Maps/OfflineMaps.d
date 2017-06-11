@@ -74,6 +74,12 @@ extern(Windows):
 	{
 		Debug.OK(remove_StatusChanged(token));
 	}
+	final EventRegistrationToken OnStatusChanged(void delegate(Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable), Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadResult) RequestStartDownloadAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadResult) _ret;

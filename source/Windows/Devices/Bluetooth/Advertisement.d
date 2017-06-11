@@ -361,6 +361,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher).abi_Stop());
 	}
+	final EventRegistrationToken OnStatusChanged(void delegate(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatusChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatusChangedEventArgs), Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatusChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeStatusChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StatusChanged(token));
@@ -490,9 +496,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).abi_Stop());
 	}
+	final EventRegistrationToken OnReceived(void delegate(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Received(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs), Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Received(token));
+	}
+	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStoppedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStoppedEventArgs), Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStoppedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{

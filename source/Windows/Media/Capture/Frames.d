@@ -364,6 +364,12 @@ extern(Windows):
 interface MediaFrameReader : Windows.Media.Capture.Frames.IMediaFrameReader, Windows.Foundation.IClosable
 {
 extern(Windows):
+	final EventRegistrationToken OnFrameArrived(void delegate(Windows.Media.Capture.Frames.MediaFrameReader, Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MediaFrameReader, Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs), Windows.Media.Capture.Frames.MediaFrameReader, Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeFrameArrived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_FrameArrived(token));
@@ -481,6 +487,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSource).abi_SetFormatAsync(format, &_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnFormatChanged(void delegate(Windows.Media.Capture.Frames.MediaFrameSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FormatChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MediaFrameSource, IInspectable), Windows.Media.Capture.Frames.MediaFrameSource, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeFormatChanged(EventRegistrationToken token)
 	{
@@ -623,6 +635,12 @@ interface MultiSourceMediaFrameArrivedEventArgs : Windows.Media.Capture.Frames.I
 interface MultiSourceMediaFrameReader : Windows.Media.Capture.Frames.IMultiSourceMediaFrameReader, Windows.Foundation.IClosable
 {
 extern(Windows):
+	final EventRegistrationToken OnFrameArrived(void delegate(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader, Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader, Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs), Windows.Media.Capture.Frames.MultiSourceMediaFrameReader, Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeFrameArrived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_FrameArrived(token));

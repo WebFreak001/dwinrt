@@ -936,6 +936,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInPipe).abi_ClearStallAsync(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnDataReceived(void delegate(Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs), Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDataReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DataReceived(token));

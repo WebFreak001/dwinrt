@@ -282,6 +282,12 @@ extern(Windows):
 interface GpioPin : Windows.Devices.Gpio.IGpioPin, Windows.Foundation.IClosable
 {
 extern(Windows):
+	final EventRegistrationToken OnValueChanged(void delegate(Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ValueChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs), Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeValueChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ValueChanged(token));

@@ -35,6 +35,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).abi_SetStateAsync(value, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnStateChanged(void delegate(Windows.Devices.Radios.Radio, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Radios.Radio, IInspectable), Windows.Devices.Radios.Radio, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeStateChanged(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_StateChanged(eventCookie));

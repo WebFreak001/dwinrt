@@ -435,9 +435,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).set_RequestedOperation(value));
 	}
+	final EventRegistrationToken OnOperationCompleted(void delegate(Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_OperationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs), Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeOperationCompleted(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_OperationCompleted(eventCookie));
+	}
+	final EventRegistrationToken OnDestroyed(void delegate(Windows.ApplicationModel.DataTransfer.DataPackage, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Destroyed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage, IInspectable), Windows.ApplicationModel.DataTransfer.DataPackage, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeDestroyed(EventRegistrationToken eventCookie)
 	{
@@ -493,6 +505,12 @@ extern(Windows):
 	final void SetWebLink(Windows.Foundation.Uri value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage2).abi_SetWebLink(value));
+	}
+	final EventRegistrationToken OnShareCompleted(void delegate(Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.ShareCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ShareCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.ShareCompletedEventArgs), Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.ShareCompletedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeShareCompleted(EventRegistrationToken token)
 	{
@@ -978,13 +996,31 @@ extern(Windows):
 interface DataTransferManager : Windows.ApplicationModel.DataTransfer.IDataTransferManager, Windows.ApplicationModel.DataTransfer.IDataTransferManager2
 {
 extern(Windows):
+	final EventRegistrationToken OnDataRequested(void delegate(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DataRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs), Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDataRequested(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_DataRequested(eventCookie));
 	}
+	final EventRegistrationToken OnTargetApplicationChosen(void delegate(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TargetApplicationChosen(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs), Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeTargetApplicationChosen(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_TargetApplicationChosen(eventCookie));
+	}
+	final EventRegistrationToken OnShareProvidersRequested(void delegate(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.ShareProvidersRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ShareProvidersRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.ShareProvidersRequestedEventArgs), Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.ShareProvidersRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeShareProvidersRequested(EventRegistrationToken token)
 	{

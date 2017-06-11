@@ -1136,6 +1136,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_Label(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnOpenFailed(void delegate(Windows.Media.Core.AudioTrack, Windows.Media.Core.AudioTrackOpenFailedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_OpenFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.AudioTrack, Windows.Media.Core.AudioTrackOpenFailedEventArgs), Windows.Media.Core.AudioTrack, Windows.Media.Core.AudioTrackOpenFailedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeOpenFailed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_OpenFailed(token));
@@ -1386,6 +1392,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffect).get_DesiredDetectionInterval(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnFaceDetected(void delegate(Windows.Media.Core.FaceDetectionEffect, Windows.Media.Core.FaceDetectedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FaceDetected(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.FaceDetectionEffect, Windows.Media.Core.FaceDetectedEventArgs), Windows.Media.Core.FaceDetectionEffect, Windows.Media.Core.FaceDetectedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeFaceDetected(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_FaceDetected(cookie));
@@ -1606,6 +1618,12 @@ extern(Windows):
 interface MediaBinder : Windows.Media.Core.IMediaBinder
 {
 extern(Windows):
+	final EventRegistrationToken OnBinding(void delegate(Windows.Media.Core.MediaBinder, Windows.Media.Core.MediaBindingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Binding(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaBinder, Windows.Media.Core.MediaBindingEventArgs), Windows.Media.Core.MediaBinder, Windows.Media.Core.MediaBindingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeBinding(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Binding(token));
@@ -1631,6 +1649,12 @@ extern(Windows):
 interface MediaBindingEventArgs : Windows.Media.Core.IMediaBindingEventArgs, Windows.Media.Core.IMediaBindingEventArgs2
 {
 extern(Windows):
+	final EventRegistrationToken OnCanceled(void delegate(Windows.Media.Core.MediaBindingEventArgs, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Canceled(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaBindingEventArgs, IInspectable), Windows.Media.Core.MediaBindingEventArgs, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeCanceled(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Canceled(token));
@@ -1683,6 +1707,12 @@ extern(Windows):
 interface MediaSource : Windows.Media.Core.IMediaSource2, Windows.Foundation.IClosable, Windows.Media.Playback.IMediaPlaybackSource, Windows.Media.Core.IMediaSource3, Windows.Media.Core.IMediaSource4
 {
 extern(Windows):
+	final EventRegistrationToken OnOpenOperationCompleted(void delegate(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceOpenOperationCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_OpenOperationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceOpenOperationCompletedEventArgs), Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceOpenOperationCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeOpenOperationCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_OpenOperationCompleted(token));
@@ -1720,6 +1750,12 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final EventRegistrationToken OnStateChanged(void delegate(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceStateChangedEventArgs), Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceStateChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeStateChanged(EventRegistrationToken token)
 	{
@@ -1809,6 +1845,12 @@ extern(Windows):
 interface MediaStreamSample : Windows.Media.Core.IMediaStreamSample
 {
 extern(Windows):
+	final EventRegistrationToken OnProcessed(void delegate(Windows.Media.Core.MediaStreamSample, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Processed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSample, IInspectable), Windows.Media.Core.MediaStreamSample, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeProcessed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Processed(token));
@@ -1958,21 +2000,51 @@ extern(Windows):
 interface MediaStreamSource : Windows.Media.Core.IMediaStreamSource, Windows.Media.Core.IMediaSource, Windows.Media.Core.IMediaStreamSource2, Windows.Media.Core.IMediaStreamSource3
 {
 extern(Windows):
+	final EventRegistrationToken OnClosed(void delegate(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceClosedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceClosedEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceClosedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeClosed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Closed(token));
+	}
+	final EventRegistrationToken OnStarting(void delegate(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceStartingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Starting(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceStartingEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceStartingEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeStarting(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Starting(token));
 	}
+	final EventRegistrationToken OnPaused(void delegate(Windows.Media.Core.MediaStreamSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Paused(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, IInspectable), Windows.Media.Core.MediaStreamSource, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removePaused(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Paused(token));
 	}
+	final EventRegistrationToken OnSampleRequested(void delegate(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SampleRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRequestedEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeSampleRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SampleRequested(token));
+	}
+	final EventRegistrationToken OnSwitchStreamsRequested(void delegate(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SwitchStreamsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestedEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSwitchStreamsRequested(EventRegistrationToken token)
 	{
@@ -2055,6 +2127,12 @@ extern(Windows):
 	final void AddProtectionKey(Windows.Media.Core.IMediaStreamDescriptor streamDescriptor, UINT32 __keyIdentifierSize, BYTE* keyIdentifier, UINT32 __licenseDataSize, BYTE* licenseData)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).abi_AddProtectionKey(streamDescriptor, __keyIdentifierSize, keyIdentifier, __licenseDataSize, licenseData));
+	}
+	final EventRegistrationToken OnSampleRendered(void delegate(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SampleRendered(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSampleRendered(EventRegistrationToken token)
 	{
@@ -2243,21 +2321,51 @@ extern(Windows):
 interface MseSourceBuffer : Windows.Media.Core.IMseSourceBuffer
 {
 extern(Windows):
+	final EventRegistrationToken OnUpdateStarting(void delegate(Windows.Media.Core.MseSourceBuffer, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UpdateStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeUpdateStarting(EventRegistrationToken token)
 	{
 		Debug.OK(remove_UpdateStarting(token));
+	}
+	final EventRegistrationToken OnUpdated(void delegate(Windows.Media.Core.MseSourceBuffer, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Updated(token));
 	}
+	final EventRegistrationToken OnUpdateEnded(void delegate(Windows.Media.Core.MseSourceBuffer, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UpdateEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeUpdateEnded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_UpdateEnded(token));
 	}
+	final EventRegistrationToken OnErrorOccurred(void delegate(Windows.Media.Core.MseSourceBuffer, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeErrorOccurred(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ErrorOccurred(token));
+	}
+	final EventRegistrationToken OnAborted(void delegate(Windows.Media.Core.MseSourceBuffer, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Aborted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeAborted(EventRegistrationToken token)
 	{
@@ -2340,9 +2448,21 @@ extern(Windows):
 interface MseSourceBufferList : Windows.Media.Core.IMseSourceBufferList
 {
 extern(Windows):
+	final EventRegistrationToken OnSourceBufferAdded(void delegate(Windows.Media.Core.MseSourceBufferList, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceBufferAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBufferList, IInspectable), Windows.Media.Core.MseSourceBufferList, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeSourceBufferAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SourceBufferAdded(token));
+	}
+	final EventRegistrationToken OnSourceBufferRemoved(void delegate(Windows.Media.Core.MseSourceBufferList, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceBufferRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBufferList, IInspectable), Windows.Media.Core.MseSourceBufferList, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeSourceBufferRemoved(EventRegistrationToken token)
 	{
@@ -2359,13 +2479,31 @@ extern(Windows):
 interface MseStreamSource : Windows.Media.Core.IMseStreamSource, Windows.Media.Core.IMediaSource
 {
 extern(Windows):
+	final EventRegistrationToken OnOpened(void delegate(Windows.Media.Core.MseStreamSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Opened(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource, IInspectable), Windows.Media.Core.MseStreamSource, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeOpened(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Opened(token));
 	}
+	final EventRegistrationToken OnEnded(void delegate(Windows.Media.Core.MseStreamSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Ended(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource, IInspectable), Windows.Media.Core.MseStreamSource, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeEnded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Ended(token));
+	}
+	final EventRegistrationToken OnClosed(void delegate(Windows.Media.Core.MseStreamSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource, IInspectable), Windows.Media.Core.MseStreamSource, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
@@ -2433,6 +2571,12 @@ extern(Windows):
 		Windows.Foundation.TimeSpan _ret;
 		Debug.OK(this.as!(Windows.Media.Core.ISceneAnalysisEffect).get_DesiredAnalysisInterval(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnSceneAnalyzed(void delegate(Windows.Media.Core.SceneAnalysisEffect, Windows.Media.Core.SceneAnalyzedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SceneAnalyzed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.SceneAnalysisEffect, Windows.Media.Core.SceneAnalyzedEventArgs), Windows.Media.Core.SceneAnalysisEffect, Windows.Media.Core.SceneAnalyzedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSceneAnalyzed(EventRegistrationToken cookie)
 	{
@@ -2619,13 +2763,31 @@ extern(Windows):
 interface TimedMetadataTrack : Windows.Media.Core.ITimedMetadataTrack, Windows.Media.Core.IMediaTrack, Windows.Media.Core.ITimedMetadataTrack2
 {
 extern(Windows):
+	final EventRegistrationToken OnCueEntered(void delegate(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CueEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs), Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCueEntered(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CueEntered(token));
 	}
+	final EventRegistrationToken OnCueExited(void delegate(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CueExited(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs), Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCueExited(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CueExited(token));
+	}
+	final EventRegistrationToken OnTrackFailed(void delegate(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.TimedMetadataTrackFailedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TrackFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.TimedMetadataTrackFailedEventArgs), Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.TimedMetadataTrackFailedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeTrackFailed(EventRegistrationToken token)
 	{
@@ -2943,6 +3105,12 @@ extern(Windows):
 interface TimedTextSource : Windows.Media.Core.ITimedTextSource
 {
 extern(Windows):
+	final EventRegistrationToken OnResolved(void delegate(Windows.Media.Core.TimedTextSource, Windows.Media.Core.TimedTextSourceResolveResultEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Resolved(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedTextSource, Windows.Media.Core.TimedTextSourceResolveResultEventArgs), Windows.Media.Core.TimedTextSource, Windows.Media.Core.TimedTextSourceResolveResultEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeResolved(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Resolved(token));
@@ -3179,6 +3347,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.IVideoStabilizationEffect).get_Enabled(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnEnabledChanged(void delegate(Windows.Media.Core.VideoStabilizationEffect, Windows.Media.Core.VideoStabilizationEffectEnabledChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.VideoStabilizationEffect, Windows.Media.Core.VideoStabilizationEffectEnabledChangedEventArgs), Windows.Media.Core.VideoStabilizationEffect, Windows.Media.Core.VideoStabilizationEffectEnabledChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeEnabledChanged(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_EnabledChanged(cookie));
@@ -3290,6 +3464,12 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Media.Core.IMediaTrack).get_Label(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnOpenFailed(void delegate(Windows.Media.Core.VideoTrack, Windows.Media.Core.VideoTrackOpenFailedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_OpenFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.VideoTrack, Windows.Media.Core.VideoTrackOpenFailedEventArgs), Windows.Media.Core.VideoTrack, Windows.Media.Core.VideoTrackOpenFailedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeOpenFailed(EventRegistrationToken token)
 	{

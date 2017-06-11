@@ -229,21 +229,51 @@ extern(Windows):
 interface PeerWatcher : Windows.Networking.Proximity.IPeerWatcher
 {
 extern(Windows):
+	final EventRegistrationToken OnAdded(void delegate(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
+		return tok;
+	}
 	final void removeAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Added(token));
+	}
+	final EventRegistrationToken OnRemoved(void delegate(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
+		return tok;
 	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Removed(token));
 	}
+	final EventRegistrationToken OnUpdated(void delegate(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
+		return tok;
+	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Updated(token));
 	}
+	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Networking.Proximity.PeerWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, IInspectable), Windows.Networking.Proximity.PeerWatcher, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_EnumerationCompleted(token));
+	}
+	final EventRegistrationToken OnStopped(void delegate(Windows.Networking.Proximity.PeerWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, IInspectable), Windows.Networking.Proximity.PeerWatcher, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{

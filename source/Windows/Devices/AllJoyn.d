@@ -770,6 +770,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).abi_Disconnect());
 	}
+	final EventRegistrationToken OnStateChanged(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StateChanged(token));
@@ -780,13 +786,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).get_AuthenticationMechanisms(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnCredentialsRequested(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CredentialsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCredentialsRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CredentialsRequested(token));
 	}
+	final EventRegistrationToken OnCredentialsVerificationRequested(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CredentialsVerificationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCredentialsVerificationRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CredentialsVerificationRequested(token));
+	}
+	final EventRegistrationToken OnAuthenticationComplete(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AuthenticationComplete(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeAuthenticationComplete(EventRegistrationToken token)
 	{
@@ -804,9 +828,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment2).abi_GetAboutDataWithLanguageAsync(serviceInfo, language, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnAcceptSessionJoinerRequested(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AcceptSessionJoinerRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAcceptSessionJoinerRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AcceptSessionJoinerRequested(token));
+	}
+	final EventRegistrationToken OnSessionJoined(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SessionJoined(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSessionJoined(EventRegistrationToken token)
 	{
@@ -857,6 +893,12 @@ extern(Windows):
 		Windows.Devices.AllJoyn.AllJoynSession _ret;
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObject).get_Session(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs), Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{
@@ -1079,13 +1121,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).abi_RemoveMemberAsync(uniqueName, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnMemberAdded(void delegate(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MemberAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeMemberAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_MemberAdded(token));
 	}
+	final EventRegistrationToken OnMemberRemoved(void delegate(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MemberRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeMemberRemoved(EventRegistrationToken token)
 	{
 		Debug.OK(remove_MemberRemoved(token));
+	}
+	final EventRegistrationToken OnLost(void delegate(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Lost(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeLost(EventRegistrationToken token)
 	{

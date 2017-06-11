@@ -750,6 +750,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_SourceFile(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnFileCompleted(void delegate(Windows.Media.Audio.AudioFileInputNode, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FileCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFileInputNode, IInspectable), Windows.Media.Audio.AudioFileInputNode, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeFileCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_FileCompleted(token));
@@ -953,9 +959,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).get_QueuedSampleCount(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnAudioFrameCompleted(void delegate(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AudioFrameCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs), Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAudioFrameCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AudioFrameCompleted(token));
+	}
+	final EventRegistrationToken OnQuantumStarted(void delegate(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_QuantumStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs), Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeQuantumStarted(EventRegistrationToken token)
 	{
@@ -1203,13 +1221,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_ResetAllNodes());
 	}
+	final EventRegistrationToken OnQuantumStarted(void delegate(Windows.Media.Audio.AudioGraph, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_QuantumStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, IInspectable), Windows.Media.Audio.AudioGraph, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeQuantumStarted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_QuantumStarted(token));
 	}
+	final EventRegistrationToken OnQuantumProcessed(void delegate(Windows.Media.Audio.AudioGraph, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_QuantumProcessed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, IInspectable), Windows.Media.Audio.AudioGraph, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeQuantumProcessed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_QuantumProcessed(token));
+	}
+	final EventRegistrationToken OnUnrecoverableErrorOccurred(void delegate(Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UnrecoverableErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs), Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeUnrecoverableErrorOccurred(EventRegistrationToken token)
 	{

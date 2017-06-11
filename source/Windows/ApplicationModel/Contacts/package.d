@@ -2150,6 +2150,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).get_UserDataAccountId(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnContactChanged(void delegate(Windows.ApplicationModel.Contacts.ContactList, Windows.ApplicationModel.Contacts.ContactChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ContactChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactList, Windows.ApplicationModel.Contacts.ContactChangedEventArgs), Windows.ApplicationModel.Contacts.ContactList, Windows.ApplicationModel.Contacts.ContactChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeContactChanged(EventRegistrationToken value)
 	{
 		Debug.OK(remove_ContactChanged(value));
@@ -2538,6 +2544,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncManager).abi_SyncAsync(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnSyncStatusChanged(void delegate(Windows.ApplicationModel.Contacts.ContactListSyncManager, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactListSyncManager, IInspectable), Windows.ApplicationModel.Contacts.ContactListSyncManager, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeSyncStatusChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SyncStatusChanged(token));
@@ -2730,9 +2742,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPanel).set_HeaderColor(value));
 	}
+	final EventRegistrationToken OnLaunchFullAppRequested(void delegate(Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_LaunchFullAppRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs), Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeLaunchFullAppRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_LaunchFullAppRequested(token));
+	}
+	final EventRegistrationToken OnClosing(void delegate(Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closing(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs), Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeClosing(EventRegistrationToken token)
 	{
@@ -3034,6 +3058,12 @@ extern(Windows):
 		Windows.ApplicationModel.Contacts.ContactChangeTracker _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore2).get_ChangeTracker(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnContactChanged(void delegate(Windows.ApplicationModel.Contacts.ContactStore, Windows.ApplicationModel.Contacts.ContactChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ContactChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactStore, Windows.ApplicationModel.Contacts.ContactChangedEventArgs), Windows.ApplicationModel.Contacts.ContactStore, Windows.ApplicationModel.Contacts.ContactChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeContactChanged(EventRegistrationToken value)
 	{

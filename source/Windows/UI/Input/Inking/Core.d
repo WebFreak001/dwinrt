@@ -72,29 +72,71 @@ extern(Windows):
 interface CoreInkIndependentInputSource : Windows.UI.Input.Inking.Core.ICoreInkIndependentInputSource
 {
 extern(Windows):
+	final EventRegistrationToken OnPointerEntering(void delegate(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PointerEntering(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePointerEntering(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_PointerEntering(cookie));
+	}
+	final EventRegistrationToken OnPointerHovering(void delegate(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PointerHovering(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePointerHovering(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_PointerHovering(cookie));
 	}
+	final EventRegistrationToken OnPointerExiting(void delegate(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PointerExiting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePointerExiting(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_PointerExiting(cookie));
+	}
+	final EventRegistrationToken OnPointerPressing(void delegate(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PointerPressing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePointerPressing(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_PointerPressing(cookie));
 	}
+	final EventRegistrationToken OnPointerMoving(void delegate(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PointerMoving(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePointerMoving(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_PointerMoving(cookie));
 	}
+	final EventRegistrationToken OnPointerReleasing(void delegate(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PointerReleasing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePointerReleasing(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_PointerReleasing(cookie));
+	}
+	final EventRegistrationToken OnPointerLost(void delegate(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PointerLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.Core.CoreInkIndependentInputSource, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePointerLost(EventRegistrationToken cookie)
 	{
@@ -138,21 +180,51 @@ extern(Windows):
 interface CoreWetStrokeUpdateSource : Windows.UI.Input.Inking.Core.ICoreWetStrokeUpdateSource
 {
 extern(Windows):
+	final EventRegistrationToken OnWetStrokeStarting(void delegate(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_WetStrokeStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs), Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeWetStrokeStarting(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_WetStrokeStarting(cookie));
+	}
+	final EventRegistrationToken OnWetStrokeContinuing(void delegate(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_WetStrokeContinuing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs), Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeWetStrokeContinuing(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_WetStrokeContinuing(cookie));
 	}
+	final EventRegistrationToken OnWetStrokeStopping(void delegate(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_WetStrokeStopping(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs), Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeWetStrokeStopping(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_WetStrokeStopping(cookie));
 	}
+	final EventRegistrationToken OnWetStrokeCompleted(void delegate(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_WetStrokeCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs), Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeWetStrokeCompleted(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_WetStrokeCompleted(cookie));
+	}
+	final EventRegistrationToken OnWetStrokeCanceled(void delegate(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_WetStrokeCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs), Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateSource, Windows.UI.Input.Inking.Core.CoreWetStrokeUpdateEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeWetStrokeCanceled(EventRegistrationToken cookie)
 	{

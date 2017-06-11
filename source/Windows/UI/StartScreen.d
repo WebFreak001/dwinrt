@@ -551,6 +551,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).get_RoamingEnabled(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnVisualElementsRequested(void delegate(Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VisualElementsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs), Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeVisualElementsRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_VisualElementsRequested(token));

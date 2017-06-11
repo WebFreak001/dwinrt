@@ -325,9 +325,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_Resume());
 	}
+	final EventRegistrationToken OnCompleted(void delegate(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs), Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCompleted(EventRegistrationToken value)
 	{
 		Debug.OK(remove_Completed(value));
+	}
+	final EventRegistrationToken OnResultGenerated(void delegate(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ResultGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs), Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeResultGenerated(EventRegistrationToken value)
 	{
@@ -688,9 +700,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).abi_RecognizeWithUIAsync(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnRecognitionQualityDegrading(void delegate(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RecognitionQualityDegrading(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs), Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeRecognitionQualityDegrading(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_RecognitionQualityDegrading(cookie));
+	}
+	final EventRegistrationToken OnStateChanged(void delegate(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs), Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeStateChanged(EventRegistrationToken cookie)
 	{
@@ -717,6 +741,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer2).abi_StopRecognitionAsync(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnHypothesisGenerated(void delegate(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HypothesisGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs), Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeHypothesisGenerated(EventRegistrationToken value)
 	{

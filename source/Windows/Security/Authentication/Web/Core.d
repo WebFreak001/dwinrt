@@ -157,13 +157,31 @@ extern(Windows):
 interface WebAccountMonitor : Windows.Security.Authentication.Web.Core.IWebAccountMonitor
 {
 extern(Windows):
+	final EventRegistrationToken OnUpdated(void delegate(Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs), Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Updated(token));
 	}
+	final EventRegistrationToken OnRemoved(void delegate(Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs), Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Removed(token));
+	}
+	final EventRegistrationToken OnDefaultSignInAccountChanged(void delegate(Windows.Security.Authentication.Web.Core.WebAccountMonitor, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DefaultSignInAccountChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor, IInspectable), Windows.Security.Authentication.Web.Core.WebAccountMonitor, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeDefaultSignInAccountChanged(EventRegistrationToken token)
 	{

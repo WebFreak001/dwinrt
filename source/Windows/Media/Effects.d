@@ -193,6 +193,12 @@ extern(Windows):
 interface AudioCaptureEffectsManager : Windows.Media.Effects.IAudioCaptureEffectsManager
 {
 extern(Windows):
+	final EventRegistrationToken OnAudioCaptureEffectsChanged(void delegate(Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AudioCaptureEffectsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable), Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeAudioCaptureEffectsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AudioCaptureEffectsChanged(token));
@@ -240,6 +246,12 @@ interface AudioEffectsManager
 interface AudioRenderEffectsManager : Windows.Media.Effects.IAudioRenderEffectsManager, Windows.Media.Effects.IAudioRenderEffectsManager2
 {
 extern(Windows):
+	final EventRegistrationToken OnAudioRenderEffectsChanged(void delegate(Windows.Media.Effects.AudioRenderEffectsManager, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AudioRenderEffectsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioRenderEffectsManager, IInspectable), Windows.Media.Effects.AudioRenderEffectsManager, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeAudioRenderEffectsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AudioRenderEffectsChanged(token));

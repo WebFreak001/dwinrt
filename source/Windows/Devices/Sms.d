@@ -957,6 +957,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).abi_SendMessageAndGetResultAsync(message, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnDeviceStatusChanged(void delegate(Windows.Devices.Sms.SmsDevice2, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DeviceStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsDevice2, IInspectable), Windows.Devices.Sms.SmsDevice2, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeDeviceStatusChanged(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_DeviceStatusChanged(eventCookie));
@@ -1193,6 +1199,12 @@ extern(Windows):
 	final void Unregister()
 	{
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageRegistration).abi_Unregister());
+	}
+	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails), Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails)(fn), &tok));
+		return tok;
 	}
 	final void removeMessageReceived(EventRegistrationToken eventCookie)
 	{

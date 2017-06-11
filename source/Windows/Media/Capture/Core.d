@@ -85,9 +85,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).abi_FinishAsync(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnPhotoCaptured(void delegate(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PhotoCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs), Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePhotoCaptured(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PhotoCaptured(token));
+	}
+	final EventRegistrationToken OnStopped(void delegate(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable), Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{

@@ -478,9 +478,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicSpace).abi_SetDirect3D11Device(value));
 	}
+	final EventRegistrationToken OnCameraAdded(void delegate(Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraAddedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CameraAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraAddedEventArgs), Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraAddedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCameraAdded(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_CameraAdded(cookie));
+	}
+	final EventRegistrationToken OnCameraRemoved(void delegate(Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraRemovedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CameraRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraRemovedEventArgs), Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraRemovedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeCameraRemoved(EventRegistrationToken cookie)
 	{

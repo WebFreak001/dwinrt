@@ -1940,6 +1940,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSurface).get_NaturalSize(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnLoadCompleted(void delegate(Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_LoadCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs), Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeLoadCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_LoadCompleted(token));

@@ -7585,9 +7585,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox).set_TextBoxStyle(value));
 	}
+	final EventRegistrationToken OnSuggestionChosen(void delegate(Windows.UI.Xaml.Controls.AutoSuggestBox, Windows.UI.Xaml.Controls.AutoSuggestBoxSuggestionChosenEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SuggestionChosen(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.AutoSuggestBox, Windows.UI.Xaml.Controls.AutoSuggestBoxSuggestionChosenEventArgs), Windows.UI.Xaml.Controls.AutoSuggestBox, Windows.UI.Xaml.Controls.AutoSuggestBoxSuggestionChosenEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeSuggestionChosen(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SuggestionChosen(token));
+	}
+	final EventRegistrationToken OnTextChanged(void delegate(Windows.UI.Xaml.Controls.AutoSuggestBox, Windows.UI.Xaml.Controls.AutoSuggestBoxTextChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TextChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.AutoSuggestBox, Windows.UI.Xaml.Controls.AutoSuggestBoxTextChangedEventArgs), Windows.UI.Xaml.Controls.AutoSuggestBox, Windows.UI.Xaml.Controls.AutoSuggestBoxTextChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeTextChanged(EventRegistrationToken token)
 	{
@@ -7602,6 +7614,12 @@ extern(Windows):
 	final void QueryIcon(Windows.UI.Xaml.Controls.IconElement value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAutoSuggestBox2).set_QueryIcon(value));
+	}
+	final EventRegistrationToken OnQuerySubmitted(void delegate(Windows.UI.Xaml.Controls.AutoSuggestBox, Windows.UI.Xaml.Controls.AutoSuggestBoxQuerySubmittedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_QuerySubmitted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.AutoSuggestBox, Windows.UI.Xaml.Controls.AutoSuggestBoxQuerySubmittedEventArgs), Windows.UI.Xaml.Controls.AutoSuggestBox, Windows.UI.Xaml.Controls.AutoSuggestBoxQuerySubmittedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeQuerySubmitted(EventRegistrationToken token)
 	{
@@ -7964,6 +7982,12 @@ extern(Windows):
 	final void removeCalendarViewDayItemChanging(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CalendarViewDayItemChanging(token));
+	}
+	final EventRegistrationToken OnDateChanged(void delegate(Windows.UI.Xaml.Controls.CalendarDatePicker, Windows.UI.Xaml.Controls.CalendarDatePickerDateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarDatePicker, Windows.UI.Xaml.Controls.CalendarDatePickerDateChangedEventArgs), Windows.UI.Xaml.Controls.CalendarDatePicker, Windows.UI.Xaml.Controls.CalendarDatePickerDateChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeDateChanged(EventRegistrationToken token)
 	{
@@ -8519,9 +8543,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarViewDayItemStyle(value));
 	}
+	final EventRegistrationToken OnCalendarViewDayItemChanging(void delegate(Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CalendarViewDayItemChanging(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs), Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCalendarViewDayItemChanging(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CalendarViewDayItemChanging(token));
+	}
+	final EventRegistrationToken OnSelectedDatesChanged(void delegate(Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewSelectedDatesChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SelectedDatesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewSelectedDatesChangedEventArgs), Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewSelectedDatesChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSelectedDatesChanged(EventRegistrationToken token)
 	{
@@ -9045,6 +9081,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBar3).set_IsDynamicOverflowEnabled(value));
 	}
+	final EventRegistrationToken OnDynamicOverflowItemsChanging(void delegate(Windows.UI.Xaml.Controls.CommandBar, Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DynamicOverflowItemsChanging(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CommandBar, Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs), Windows.UI.Xaml.Controls.CommandBar, Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDynamicOverflowItemsChanging(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DynamicOverflowItemsChanging(token));
@@ -9284,21 +9326,51 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog).set_IsSecondaryButtonEnabled(value));
 	}
+	final EventRegistrationToken OnClosing(void delegate(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs), Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeClosing(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Closing(token));
+	}
+	final EventRegistrationToken OnClosed(void delegate(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogClosedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogClosedEventArgs), Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogClosedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Closed(token));
 	}
+	final EventRegistrationToken OnOpened(void delegate(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogOpenedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Opened(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogOpenedEventArgs), Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogOpenedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeOpened(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Opened(token));
 	}
+	final EventRegistrationToken OnPrimaryButtonClick(void delegate(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PrimaryButtonClick(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs), Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePrimaryButtonClick(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PrimaryButtonClick(token));
+	}
+	final EventRegistrationToken OnSecondaryButtonClick(void delegate(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SecondaryButtonClick(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs), Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSecondaryButtonClick(EventRegistrationToken token)
 	{
@@ -9383,6 +9455,12 @@ extern(Windows):
 	final void DefaultButton(Windows.UI.Xaml.Controls.ContentDialogButton value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_DefaultButton(value));
+	}
+	final EventRegistrationToken OnCloseButtonClick(void delegate(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CloseButtonClick(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs), Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeCloseButtonClick(EventRegistrationToken token)
 	{
@@ -10182,9 +10260,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl4).set_ElementSoundMode(value));
 	}
+	final EventRegistrationToken OnFocusEngaged(void delegate(Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.FocusEngagedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FocusEngaged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.FocusEngagedEventArgs), Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.FocusEngagedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeFocusEngaged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_FocusEngaged(token));
+	}
+	final EventRegistrationToken OnFocusDisengaged(void delegate(Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.FocusDisengagedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FocusDisengaged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.FocusDisengagedEventArgs), Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.FocusDisengagedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeFocusDisengaged(EventRegistrationToken token)
 	{
@@ -10488,6 +10578,12 @@ extern(Windows):
 	final void MaxYear(Windows.Foundation.DateTime value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePickerFlyout).set_MaxYear(value));
+	}
+	final EventRegistrationToken OnDatePicked(void delegate(Windows.UI.Xaml.Controls.DatePickerFlyout, Windows.UI.Xaml.Controls.DatePickedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DatePicked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.DatePickerFlyout, Windows.UI.Xaml.Controls.DatePickedEventArgs), Windows.UI.Xaml.Controls.DatePickerFlyout, Windows.UI.Xaml.Controls.DatePickedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeDatePicked(EventRegistrationToken token)
 	{
@@ -11509,17 +11605,42 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar).set_TargetInkCanvas(value));
 	}
+	final EventRegistrationToken OnActiveToolChanged(void delegate(Windows.UI.Xaml.Controls.InkToolbar, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ActiveToolChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, IInspectable), Windows.UI.Xaml.Controls.InkToolbar, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeActiveToolChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ActiveToolChanged(token));
+	}
+	final EventRegistrationToken OnInkDrawingAttributesChanged(void delegate(Windows.UI.Xaml.Controls.InkToolbar, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_InkDrawingAttributesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, IInspectable), Windows.UI.Xaml.Controls.InkToolbar, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeInkDrawingAttributesChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_InkDrawingAttributesChanged(token));
 	}
+	final EventRegistrationToken OnEraseAllClicked(void delegate(Windows.UI.Xaml.Controls.InkToolbar, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EraseAllClicked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, IInspectable), Windows.UI.Xaml.Controls.InkToolbar, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeEraseAllClicked(EventRegistrationToken token)
 	{
 		Debug.OK(remove_EraseAllClicked(token));
+	}
+	deprecated("InkToolbarRulerButton is replaced by InkToolbarStencilButton starting from Windows 10 Creators Update. For more info, see MSDN.")
+	final EventRegistrationToken OnIsRulerButtonCheckedChanged(void delegate(Windows.UI.Xaml.Controls.InkToolbar, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_IsRulerButtonCheckedChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, IInspectable), Windows.UI.Xaml.Controls.InkToolbar, IInspectable)(fn), &tok));
+		return tok;
 	}
 	deprecated("InkToolbarRulerButton is replaced by InkToolbarStencilButton starting from Windows 10 Creators Update. For more info, see MSDN.")
 	final void removeIsRulerButtonCheckedChanged(EventRegistrationToken token)
@@ -11567,6 +11688,12 @@ extern(Windows):
 	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbar2).set_Orientation(value));
+	}
+	final EventRegistrationToken OnIsStencilButtonCheckedChanged(void delegate(Windows.UI.Xaml.Controls.InkToolbar, Windows.UI.Xaml.Controls.InkToolbarIsStencilButtonCheckedChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_IsStencilButtonCheckedChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, Windows.UI.Xaml.Controls.InkToolbarIsStencilButtonCheckedChangedEventArgs), Windows.UI.Xaml.Controls.InkToolbar, Windows.UI.Xaml.Controls.InkToolbarIsStencilButtonCheckedChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeIsStencilButtonCheckedChanged(EventRegistrationToken token)
 	{
@@ -11683,9 +11810,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).set_IsChecked(value));
 	}
+	final EventRegistrationToken OnChecked(void delegate(Windows.UI.Xaml.Controls.InkToolbarFlyoutItem, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Checked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbarFlyoutItem, IInspectable), Windows.UI.Xaml.Controls.InkToolbarFlyoutItem, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeChecked(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Checked(token));
+	}
+	final EventRegistrationToken OnUnchecked(void delegate(Windows.UI.Xaml.Controls.InkToolbarFlyoutItem, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Unchecked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbarFlyoutItem, IInspectable), Windows.UI.Xaml.Controls.InkToolbarFlyoutItem, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeUnchecked(EventRegistrationToken token)
 	{
@@ -12734,6 +12873,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListPickerFlyout).get_SelectedItems(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnItemsPicked(void delegate(Windows.UI.Xaml.Controls.ListPickerFlyout, Windows.UI.Xaml.Controls.ItemsPickedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ItemsPicked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListPickerFlyout, Windows.UI.Xaml.Controls.ItemsPickedEventArgs), Windows.UI.Xaml.Controls.ListPickerFlyout, Windows.UI.Xaml.Controls.ItemsPickedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeItemsPicked(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ItemsPicked(token));
@@ -12967,6 +13112,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase2).set_ShowsScrollingPlaceholders(value));
 	}
+	final EventRegistrationToken OnContainerContentChanging(void delegate(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ContainerContentChanging(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs), Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeContainerContentChanging(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ContainerContentChanging(token));
@@ -13031,13 +13182,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewBase4).set_IsMultiSelectCheckBoxEnabled(value));
 	}
+	final EventRegistrationToken OnDragItemsCompleted(void delegate(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.DragItemsCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DragItemsCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.DragItemsCompletedEventArgs), Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.DragItemsCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDragItemsCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DragItemsCompleted(token));
 	}
+	final EventRegistrationToken OnChoosingItemContainer(void delegate(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ChoosingItemContainerEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ChoosingItemContainer(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ChoosingItemContainerEventArgs), Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ChoosingItemContainerEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeChoosingItemContainer(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ChoosingItemContainer(token));
+	}
+	final EventRegistrationToken OnChoosingGroupHeaderContainer(void delegate(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ChoosingGroupHeaderContainerEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ChoosingGroupHeaderContainer(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ChoosingGroupHeaderContainerEventArgs), Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ChoosingGroupHeaderContainerEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeChoosingGroupHeaderContainer(EventRegistrationToken token)
 	{
@@ -13516,6 +13685,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaElement3).set_TransportControls(value));
 	}
+	final EventRegistrationToken OnPartialMediaFailureDetected(void delegate(Windows.UI.Xaml.Controls.MediaElement, Windows.UI.Xaml.Media.PartialMediaFailureDetectedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PartialMediaFailureDetected(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.MediaElement, Windows.UI.Xaml.Media.PartialMediaFailureDetectedEventArgs), Windows.UI.Xaml.Controls.MediaElement, Windows.UI.Xaml.Media.PartialMediaFailureDetectedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePartialMediaFailureDetected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PartialMediaFailureDetected(token));
@@ -13894,6 +14069,12 @@ extern(Windows):
 	final void FastPlayFallbackBehaviour(Windows.UI.Xaml.Media.FastPlayFallbackBehaviour value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_FastPlayFallbackBehaviour(value));
+	}
+	final EventRegistrationToken OnThumbnailRequested(void delegate(Windows.UI.Xaml.Controls.MediaTransportControls, Windows.UI.Xaml.Media.MediaTransportControlsThumbnailRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ThumbnailRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.MediaTransportControls, Windows.UI.Xaml.Media.MediaTransportControlsThumbnailRequestedEventArgs), Windows.UI.Xaml.Controls.MediaTransportControls, Windows.UI.Xaml.Media.MediaTransportControlsThumbnailRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeThumbnailRequested(EventRegistrationToken token)
 	{
@@ -14321,6 +14502,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPickerFlyout).set_ConfirmationButtonsVisible(value));
 	}
+	final EventRegistrationToken OnConfirmed(void delegate(Windows.UI.Xaml.Controls.PickerFlyout, Windows.UI.Xaml.Controls.PickerConfirmedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Confirmed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.PickerFlyout, Windows.UI.Xaml.Controls.PickerConfirmedEventArgs), Windows.UI.Xaml.Controls.PickerFlyout, Windows.UI.Xaml.Controls.PickerConfirmedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeConfirmed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Confirmed(token));
@@ -14404,17 +14591,41 @@ extern(Windows):
 	{
 		Debug.OK(remove_SelectionChanged(token));
 	}
+	final EventRegistrationToken OnPivotItemLoading(void delegate(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PivotItemLoading(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs), Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePivotItemLoading(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PivotItemLoading(token));
+	}
+	final EventRegistrationToken OnPivotItemLoaded(void delegate(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PivotItemLoaded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs), Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePivotItemLoaded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PivotItemLoaded(token));
 	}
+	final EventRegistrationToken OnPivotItemUnloading(void delegate(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PivotItemUnloading(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs), Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePivotItemUnloading(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PivotItemUnloading(token));
+	}
+	final EventRegistrationToken OnPivotItemUnloaded(void delegate(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PivotItemUnloaded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs), Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePivotItemUnloaded(EventRegistrationToken token)
 	{
@@ -14789,13 +15000,31 @@ extern(Windows):
 	{
 		Debug.OK(remove_Paste(token));
 	}
+	final EventRegistrationToken OnTextCompositionStarted(void delegate(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TextCompositionStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs), Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeTextCompositionStarted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_TextCompositionStarted(token));
 	}
+	final EventRegistrationToken OnTextCompositionChanged(void delegate(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TextCompositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs), Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeTextCompositionChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_TextCompositionChanged(token));
+	}
+	final EventRegistrationToken OnTextCompositionEnded(void delegate(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TextCompositionEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs), Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeTextCompositionEnded(EventRegistrationToken token)
 	{
@@ -14821,9 +15050,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox3).set_DesiredCandidateWindowAlignment(value));
 	}
+	final EventRegistrationToken OnCandidateWindowBoundsChanged(void delegate(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CandidateWindowBoundsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs), Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCandidateWindowBoundsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CandidateWindowBoundsChanged(token));
+	}
+	final EventRegistrationToken OnTextChanging(void delegate(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.RichEditBoxTextChangingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TextChanging(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.RichEditBoxTextChangingEventArgs), Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.RichEditBoxTextChangingEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeTextChanging(EventRegistrationToken token)
 	{
@@ -15997,21 +16238,51 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).set_ChooseSuggestionOnEnter(value));
 	}
+	final EventRegistrationToken OnQueryChanged(void delegate(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxQueryChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_QueryChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxQueryChangedEventArgs), Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxQueryChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeQueryChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_QueryChanged(token));
+	}
+	final EventRegistrationToken OnSuggestionsRequested(void delegate(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxSuggestionsRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SuggestionsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxSuggestionsRequestedEventArgs), Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxSuggestionsRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSuggestionsRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SuggestionsRequested(token));
 	}
+	final EventRegistrationToken OnQuerySubmitted(void delegate(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxQuerySubmittedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_QuerySubmitted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxQuerySubmittedEventArgs), Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxQuerySubmittedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeQuerySubmitted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_QuerySubmitted(token));
 	}
+	final EventRegistrationToken OnResultSuggestionChosen(void delegate(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxResultSuggestionChosenEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ResultSuggestionChosen(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxResultSuggestionChosenEventArgs), Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxResultSuggestionChosenEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeResultSuggestionChosen(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ResultSuggestionChosen(token));
+	}
+	final EventRegistrationToken OnPrepareForFocusOnKeyboardInput(void delegate(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PrepareForFocusOnKeyboardInput(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.RoutedEventArgs), Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePrepareForFocusOnKeyboardInput(EventRegistrationToken token)
 	{
@@ -16553,9 +16824,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView).set_PaneBackground(value));
 	}
+	final EventRegistrationToken OnPaneClosing(void delegate(Windows.UI.Xaml.Controls.SplitView, Windows.UI.Xaml.Controls.SplitViewPaneClosingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PaneClosing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SplitView, Windows.UI.Xaml.Controls.SplitViewPaneClosingEventArgs), Windows.UI.Xaml.Controls.SplitView, Windows.UI.Xaml.Controls.SplitViewPaneClosingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePaneClosing(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PaneClosing(token));
+	}
+	final EventRegistrationToken OnPaneClosed(void delegate(Windows.UI.Xaml.Controls.SplitView, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PaneClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SplitView, IInspectable), Windows.UI.Xaml.Controls.SplitView, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removePaneClosed(EventRegistrationToken token)
 	{
@@ -16731,6 +17014,12 @@ extern(Windows):
 		FLOAT _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISwapChainPanel).get_CompositionScaleY(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnCompositionScaleChanged(void delegate(Windows.UI.Xaml.Controls.SwapChainPanel, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CompositionScaleChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SwapChainPanel, IInspectable), Windows.UI.Xaml.Controls.SwapChainPanel, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeCompositionScaleChanged(EventRegistrationToken token)
 	{
@@ -17277,13 +17566,31 @@ extern(Windows):
 	{
 		Debug.OK(remove_Paste(token));
 	}
+	final EventRegistrationToken OnTextCompositionStarted(void delegate(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TextCompositionStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs), Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeTextCompositionStarted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_TextCompositionStarted(token));
 	}
+	final EventRegistrationToken OnTextCompositionChanged(void delegate(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TextCompositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs), Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeTextCompositionChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_TextCompositionChanged(token));
+	}
+	final EventRegistrationToken OnTextCompositionEnded(void delegate(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TextCompositionEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs), Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeTextCompositionEnded(EventRegistrationToken token)
 	{
@@ -17309,9 +17616,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox3).set_DesiredCandidateWindowAlignment(value));
 	}
+	final EventRegistrationToken OnCandidateWindowBoundsChanged(void delegate(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CandidateWindowBoundsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs), Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCandidateWindowBoundsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CandidateWindowBoundsChanged(token));
+	}
+	final EventRegistrationToken OnTextChanging(void delegate(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextBoxTextChangingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TextChanging(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextBoxTextChangingEventArgs), Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextBoxTextChangingEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeTextChanging(EventRegistrationToken token)
 	{
@@ -17534,6 +17853,12 @@ extern(Windows):
 	final void MinuteIncrement(INT32 value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePickerFlyout).set_MinuteIncrement(value));
+	}
+	final EventRegistrationToken OnTimePicked(void delegate(Windows.UI.Xaml.Controls.TimePickerFlyout, Windows.UI.Xaml.Controls.TimePickedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TimePicked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TimePickerFlyout, Windows.UI.Xaml.Controls.TimePickedEventArgs), Windows.UI.Xaml.Controls.TimePickerFlyout, Windows.UI.Xaml.Controls.TimePickedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeTimePicked(EventRegistrationToken token)
 	{
@@ -18086,13 +18411,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).get_DocumentTitle(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnNavigationStarting(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationStartingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NavigationStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationStartingEventArgs), Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationStartingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeNavigationStarting(EventRegistrationToken token)
 	{
 		Debug.OK(remove_NavigationStarting(token));
 	}
+	final EventRegistrationToken OnContentLoading(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewContentLoadingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ContentLoading(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewContentLoadingEventArgs), Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewContentLoadingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeContentLoading(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ContentLoading(token));
+	}
+	final EventRegistrationToken OnDOMContentLoaded(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewDOMContentLoadedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DOMContentLoaded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewDOMContentLoadedEventArgs), Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewDOMContentLoadedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeDOMContentLoaded(EventRegistrationToken token)
 	{
@@ -18152,33 +18495,81 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView2).set_DefaultBackgroundColor(value));
 	}
+	final EventRegistrationToken OnNavigationCompleted(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NavigationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs), Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeNavigationCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_NavigationCompleted(token));
+	}
+	final EventRegistrationToken OnFrameNavigationStarting(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationStartingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FrameNavigationStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationStartingEventArgs), Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationStartingEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeFrameNavigationStarting(EventRegistrationToken token)
 	{
 		Debug.OK(remove_FrameNavigationStarting(token));
 	}
+	final EventRegistrationToken OnFrameContentLoading(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewContentLoadingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FrameContentLoading(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewContentLoadingEventArgs), Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewContentLoadingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeFrameContentLoading(EventRegistrationToken token)
 	{
 		Debug.OK(remove_FrameContentLoading(token));
+	}
+	final EventRegistrationToken OnFrameDOMContentLoaded(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewDOMContentLoadedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FrameDOMContentLoaded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewDOMContentLoadedEventArgs), Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewDOMContentLoadedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeFrameDOMContentLoaded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_FrameDOMContentLoaded(token));
 	}
+	final EventRegistrationToken OnFrameNavigationCompleted(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FrameNavigationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs), Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeFrameNavigationCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_FrameNavigationCompleted(token));
+	}
+	final EventRegistrationToken OnLongRunningScriptDetected(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_LongRunningScriptDetected(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs), Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeLongRunningScriptDetected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_LongRunningScriptDetected(token));
 	}
+	final EventRegistrationToken OnUnsafeContentWarningDisplaying(void delegate(Windows.UI.Xaml.Controls.WebView, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UnsafeContentWarningDisplaying(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, IInspectable), Windows.UI.Xaml.Controls.WebView, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeUnsafeContentWarningDisplaying(EventRegistrationToken token)
 	{
 		Debug.OK(remove_UnsafeContentWarningDisplaying(token));
+	}
+	final EventRegistrationToken OnUnviewableContentIdentified(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewUnviewableContentIdentifiedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UnviewableContentIdentified(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewUnviewableContentIdentifiedEventArgs), Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewUnviewableContentIdentifiedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeUnviewableContentIdentified(EventRegistrationToken token)
 	{
@@ -18199,6 +18590,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView3).get_ContainsFullScreenElement(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnContainsFullScreenElementChanged(void delegate(Windows.UI.Xaml.Controls.WebView, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ContainsFullScreenElementChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, IInspectable), Windows.UI.Xaml.Controls.WebView, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeContainsFullScreenElementChanged(EventRegistrationToken token)
 	{
@@ -18222,13 +18619,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IWebView4).get_Settings(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnUnsupportedUriSchemeIdentified(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewUnsupportedUriSchemeIdentifiedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UnsupportedUriSchemeIdentified(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewUnsupportedUriSchemeIdentifiedEventArgs), Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewUnsupportedUriSchemeIdentifiedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeUnsupportedUriSchemeIdentified(EventRegistrationToken token)
 	{
 		Debug.OK(remove_UnsupportedUriSchemeIdentified(token));
 	}
+	final EventRegistrationToken OnNewWindowRequested(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNewWindowRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NewWindowRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNewWindowRequestedEventArgs), Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNewWindowRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeNewWindowRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_NewWindowRequested(token));
+	}
+	final EventRegistrationToken OnPermissionRequested(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewPermissionRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PermissionRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewPermissionRequestedEventArgs), Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewPermissionRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePermissionRequested(EventRegistrationToken token)
 	{

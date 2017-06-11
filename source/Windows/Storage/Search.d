@@ -542,9 +542,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).get_Folder(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnContentsChanged(void delegate(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ContentsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeContentsChanged(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_ContentsChanged(eventCookie));
+	}
+	final EventRegistrationToken OnOptionsChanged(void delegate(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_OptionsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeOptionsChanged(EventRegistrationToken eventCookie)
 	{
@@ -601,9 +613,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).get_Folder(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnContentsChanged(void delegate(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ContentsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeContentsChanged(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_ContentsChanged(eventCookie));
+	}
+	final EventRegistrationToken OnOptionsChanged(void delegate(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_OptionsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeOptionsChanged(EventRegistrationToken eventCookie)
 	{
@@ -654,9 +678,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).get_Folder(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnContentsChanged(void delegate(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ContentsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeContentsChanged(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_ContentsChanged(eventCookie));
+	}
+	final EventRegistrationToken OnOptionsChanged(void delegate(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_OptionsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeOptionsChanged(EventRegistrationToken eventCookie)
 	{

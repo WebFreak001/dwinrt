@@ -612,6 +612,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).get_Configuration(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnActivityChange(void delegate(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ActivityChange(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs), Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeActivityChange(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ActivityChange(token));
@@ -651,6 +657,12 @@ extern(Windows):
 	final void StartExistingTransports(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv4list, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv6list, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedDomainName, UINT32 mtuSize, UINT32 maxFrameSize, bool Reserved)
 	{
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_StartExistingTransports(assignedClientIPv4list, assignedClientIPv6list, vpnInterfaceId, assignedRoutes, assignedDomainName, mtuSize, maxFrameSize, Reserved));
+	}
+	final EventRegistrationToken OnActivityStateChange(void delegate(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ActivityStateChange(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs), Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeActivityStateChange(EventRegistrationToken token)
 	{

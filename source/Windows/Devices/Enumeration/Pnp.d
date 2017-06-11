@@ -137,21 +137,51 @@ extern(Windows):
 interface PnpObjectWatcher : Windows.Devices.Enumeration.Pnp.IPnpObjectWatcher
 {
 extern(Windows):
+	final EventRegistrationToken OnAdded(void delegate(Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, Windows.Devices.Enumeration.Pnp.PnpObject) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, Windows.Devices.Enumeration.Pnp.PnpObject), Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, Windows.Devices.Enumeration.Pnp.PnpObject)(fn), &tok));
+		return tok;
+	}
 	final void removeAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Added(token));
+	}
+	final EventRegistrationToken OnUpdated(void delegate(Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, Windows.Devices.Enumeration.Pnp.PnpObjectUpdate) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, Windows.Devices.Enumeration.Pnp.PnpObjectUpdate), Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, Windows.Devices.Enumeration.Pnp.PnpObjectUpdate)(fn), &tok));
+		return tok;
 	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Updated(token));
 	}
+	final EventRegistrationToken OnRemoved(void delegate(Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, Windows.Devices.Enumeration.Pnp.PnpObjectUpdate) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, Windows.Devices.Enumeration.Pnp.PnpObjectUpdate), Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, Windows.Devices.Enumeration.Pnp.PnpObjectUpdate)(fn), &tok));
+		return tok;
+	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Removed(token));
 	}
+	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, IInspectable), Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_EnumerationCompleted(token));
+	}
+	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, IInspectable), Windows.Devices.Enumeration.Pnp.PnpObjectWatcher, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{

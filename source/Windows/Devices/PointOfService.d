@@ -1061,6 +1061,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner).abi_IsProfileSupported(profile, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnStatusUpdated(void delegate(Windows.Devices.PointOfService.BarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerStatusUpdatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StatusUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.BarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerStatusUpdatedEventArgs), Windows.Devices.PointOfService.BarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerStatusUpdatedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeStatusUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StatusUpdated(token));
@@ -1325,6 +1331,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawer).abi_GetStatisticsAsync(statisticsCategories, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnStatusUpdated(void delegate(Windows.Devices.PointOfService.CashDrawer, Windows.Devices.PointOfService.CashDrawerStatusUpdatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StatusUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawer, Windows.Devices.PointOfService.CashDrawerStatusUpdatedEventArgs), Windows.Devices.PointOfService.CashDrawer, Windows.Devices.PointOfService.CashDrawerStatusUpdatedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeStatusUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StatusUpdated(token));
@@ -1419,6 +1431,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCloseAlarm).get_BeepDelay(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnAlarmTimeoutExpired(void delegate(Windows.Devices.PointOfService.CashDrawerCloseAlarm, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AlarmTimeoutExpired(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerCloseAlarm, IInspectable), Windows.Devices.PointOfService.CashDrawerCloseAlarm, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeAlarmTimeoutExpired(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AlarmTimeoutExpired(token));
@@ -1445,9 +1463,21 @@ extern(Windows):
 interface CashDrawerEventSource : Windows.Devices.PointOfService.ICashDrawerEventSource
 {
 extern(Windows):
+	final EventRegistrationToken OnDrawerClosed(void delegate(Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerClosedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DrawerClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerClosedEventArgs), Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerClosedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDrawerClosed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DrawerClosed(token));
+	}
+	final EventRegistrationToken OnDrawerOpened(void delegate(Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerOpenedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DrawerOpened(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerOpenedEventArgs), Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerOpenedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeDrawerOpened(EventRegistrationToken token)
 	{
@@ -1569,6 +1599,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).abi_SetActiveProfileAsync(profile, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnDataReceived(void delegate(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerDataReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerDataReceivedEventArgs), Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerDataReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDataReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DataReceived(token));
@@ -1585,9 +1621,21 @@ extern(Windows):
 	{
 		Debug.OK(remove_ReleaseDeviceRequested(token));
 	}
+	final EventRegistrationToken OnImagePreviewReceived(void delegate(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerImagePreviewReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ImagePreviewReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerImagePreviewReceivedEventArgs), Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerImagePreviewReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeImagePreviewReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ImagePreviewReceived(token));
+	}
+	final EventRegistrationToken OnErrorOccurred(void delegate(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerErrorOccurredEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerErrorOccurredEventArgs), Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerErrorOccurredEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeErrorOccurred(EventRegistrationToken token)
 	{
@@ -1685,6 +1733,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).abi_UpdateStatisticsAsync(statistics, &_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnReleaseDeviceRequested(void delegate(Windows.Devices.PointOfService.ClaimedCashDrawer, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReleaseDeviceRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedCashDrawer, IInspectable), Windows.Devices.PointOfService.ClaimedCashDrawer, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeReleaseDeviceRequested(EventRegistrationToken token)
 	{
@@ -1866,6 +1920,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedLineDisplay).abi_RetainDevice());
 	}
+	final EventRegistrationToken OnReleaseDeviceRequested(void delegate(Windows.Devices.PointOfService.ClaimedLineDisplay, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReleaseDeviceRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedLineDisplay, IInspectable), Windows.Devices.PointOfService.ClaimedLineDisplay, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeReleaseDeviceRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReleaseDeviceRequested(token));
@@ -2003,13 +2063,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_UpdateStatisticsAsync(statistics, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnBankCardDataReceived(void delegate(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_BankCardDataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs), Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeBankCardDataReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_BankCardDataReceived(token));
 	}
+	final EventRegistrationToken OnAamvaCardDataReceived(void delegate(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AamvaCardDataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs), Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAamvaCardDataReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AamvaCardDataReceived(token));
+	}
+	final EventRegistrationToken OnVendorSpecificDataReceived(void delegate(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VendorSpecificDataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs), Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeVendorSpecificDataReceived(EventRegistrationToken token)
 	{
@@ -2018,6 +2096,12 @@ extern(Windows):
 	final void removeReleaseDeviceRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReleaseDeviceRequested(token));
+	}
+	final EventRegistrationToken OnErrorOccurred(void delegate(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs), Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeErrorOccurred(EventRegistrationToken token)
 	{
@@ -2127,6 +2211,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).abi_UpdateStatisticsAsync(statistics, &_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnReleaseDeviceRequested(void delegate(Windows.Devices.PointOfService.ClaimedPosPrinter, Windows.Devices.PointOfService.PosPrinterReleaseDeviceRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReleaseDeviceRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedPosPrinter, Windows.Devices.PointOfService.PosPrinterReleaseDeviceRequestedEventArgs), Windows.Devices.PointOfService.ClaimedPosPrinter, Windows.Devices.PointOfService.PosPrinterReleaseDeviceRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeReleaseDeviceRequested(EventRegistrationToken token)
 	{
@@ -2852,6 +2942,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReader).abi_GetErrorReportingType(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnStatusUpdated(void delegate(Windows.Devices.PointOfService.MagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StatusUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.MagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs), Windows.Devices.PointOfService.MagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeStatusUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StatusUpdated(token));
@@ -3320,6 +3416,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinter).abi_GetStatisticsAsync(statisticsCategories, &_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnStatusUpdated(void delegate(Windows.Devices.PointOfService.PosPrinter, Windows.Devices.PointOfService.PosPrinterStatusUpdatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StatusUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.PosPrinter, Windows.Devices.PointOfService.PosPrinterStatusUpdatedEventArgs), Windows.Devices.PointOfService.PosPrinter, Windows.Devices.PointOfService.PosPrinterStatusUpdatedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeStatusUpdated(EventRegistrationToken token)
 	{

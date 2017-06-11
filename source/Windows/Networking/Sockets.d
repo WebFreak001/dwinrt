@@ -697,6 +697,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_GetOutputStreamWithEndpointPairAsync(endpointPair, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs), Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeMessageReceived(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_MessageReceived(eventCookie));
@@ -873,6 +879,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket).get_Information(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs), Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeMessageReceived(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_MessageReceived(eventCookie));
@@ -893,6 +905,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_SetRequestHeader(headerName, headerValue));
 	}
+	final EventRegistrationToken OnClosed(void delegate(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs), Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeClosed(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_Closed(eventCookie));
@@ -904,6 +922,12 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final EventRegistrationToken OnServerCustomValidationRequested(void delegate(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs), Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
 	{
@@ -1419,6 +1443,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).abi_BindEndpointAsync(localHostName, localServiceName, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnConnectionReceived(void delegate(Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ConnectionReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs), Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeConnectionReceived(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_ConnectionReceived(eventCookie));
@@ -1577,6 +1607,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_SetRequestHeader(headerName, headerValue));
 	}
+	final EventRegistrationToken OnClosed(void delegate(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs), Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeClosed(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_Closed(eventCookie));
@@ -1588,6 +1624,12 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	final EventRegistrationToken OnServerCustomValidationRequested(void delegate(Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs), Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
 	{

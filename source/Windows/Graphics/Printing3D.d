@@ -441,6 +441,12 @@ extern(Windows):
 interface Print3DManager : Windows.Graphics.Printing3D.IPrint3DManager
 {
 extern(Windows):
+	final EventRegistrationToken OnTaskRequested(void delegate(Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TaskRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs), Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeTaskRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_TaskRequested(token));
@@ -456,13 +462,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).get_Source(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnSubmitting(void delegate(Windows.Graphics.Printing3D.Print3DTask, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Submitting(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, IInspectable), Windows.Graphics.Printing3D.Print3DTask, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeSubmitting(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_Submitting(eventCookie));
 	}
+	final EventRegistrationToken OnCompleted(void delegate(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs), Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCompleted(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_Completed(eventCookie));
+	}
+	final EventRegistrationToken OnSourceChanged(void delegate(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs), Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSourceChanged(EventRegistrationToken eventCookie)
 	{

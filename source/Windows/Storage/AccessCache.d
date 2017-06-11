@@ -205,6 +205,12 @@ extern(Windows):
 interface StorageItemMostRecentlyUsedList : Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.IStorageItemAccessList, Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList2
 {
 extern(Windows):
+	final EventRegistrationToken OnItemRemoved(void delegate(Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.ItemRemovedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ItemRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.ItemRemovedEventArgs), Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.ItemRemovedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeItemRemoved(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_ItemRemoved(eventCookie));

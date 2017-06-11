@@ -518,6 +518,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).abi_SyncAsync(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnSyncStatusChanged(void delegate(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable), Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeSyncStatusChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SyncStatusChanged(token));

@@ -1648,6 +1648,12 @@ extern(Windows):
 interface ConnectedAnimation : Windows.UI.Xaml.Media.Animation.IConnectedAnimation, Windows.UI.Xaml.Media.Animation.IConnectedAnimation2
 {
 extern(Windows):
+	final EventRegistrationToken OnCompleted(void delegate(Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable), Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Completed(token));

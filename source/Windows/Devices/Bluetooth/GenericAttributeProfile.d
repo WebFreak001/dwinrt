@@ -842,6 +842,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic).abi_WriteClientCharacteristicConfigurationDescriptorAsync(clientCharacteristicConfigurationDescriptorValue, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnValueChanged(void delegate(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattValueChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ValueChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattValueChangedEventArgs), Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattValueChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeValueChanged(EventRegistrationToken valueChangedEventCookie)
 	{
 		Debug.OK(remove_ValueChanged(valueChangedEventCookie));
@@ -1264,13 +1270,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic).get_SubscribedClients(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnSubscribedClientsChanged(void delegate(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SubscribedClientsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic, IInspectable), Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeSubscribedClientsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SubscribedClientsChanged(token));
 	}
+	final EventRegistrationToken OnReadRequested(void delegate(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequestedEventArgs), Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeReadRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReadRequested(token));
+	}
+	final EventRegistrationToken OnWriteRequested(void delegate(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_WriteRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequestedEventArgs), Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeWriteRequested(EventRegistrationToken token)
 	{
@@ -1395,9 +1419,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptor).get_WriteProtectionLevel(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnReadRequested(void delegate(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor, Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor, Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequestedEventArgs), Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor, Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeReadRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReadRequested(token));
+	}
+	final EventRegistrationToken OnWriteRequested(void delegate(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_WriteRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequestedEventArgs), Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalDescriptor, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeWriteRequested(EventRegistrationToken token)
 	{
@@ -1567,6 +1603,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequest).get_State(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnStateChanged(void delegate(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequest, Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequest, Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestStateChangedEventArgs), Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequest, Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestStateChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StateChanged(token));
@@ -1679,6 +1721,12 @@ extern(Windows):
 		Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatus _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider).get_AdvertisementStatus(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnAdvertisementStatusChanged(void delegate(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProvider, Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatusChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AdvertisementStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProvider, Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatusChangedEventArgs), Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProvider, Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatusChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeAdvertisementStatusChanged(EventRegistrationToken token)
 	{
@@ -1798,9 +1846,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSession).get_SessionStatus(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnMaxPduSizeChanged(void delegate(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MaxPduSizeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession, IInspectable), Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeMaxPduSizeChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_MaxPduSizeChanged(token));
+	}
+	final EventRegistrationToken OnSessionStatusChanged(void delegate(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession, Windows.Devices.Bluetooth.GenericAttributeProfile.GattSessionStatusChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SessionStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession, Windows.Devices.Bluetooth.GenericAttributeProfile.GattSessionStatusChangedEventArgs), Windows.Devices.Bluetooth.GenericAttributeProfile.GattSession, Windows.Devices.Bluetooth.GenericAttributeProfile.GattSessionStatusChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSessionStatusChanged(EventRegistrationToken token)
 	{
@@ -1843,6 +1903,12 @@ extern(Windows):
 		UINT16 _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattSubscribedClient).get_MaxNotificationSize(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnMaxNotificationSizeChanged(void delegate(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MaxNotificationSizeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient, IInspectable), Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeMaxNotificationSizeChanged(EventRegistrationToken token)
 	{
@@ -1893,6 +1959,12 @@ extern(Windows):
 		Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestState _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequest).get_State(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnStateChanged(void delegate(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequest, Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequest, Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestStateChangedEventArgs), Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequest, Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestStateChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeStateChanged(EventRegistrationToken token)
 	{

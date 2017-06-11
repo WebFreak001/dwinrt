@@ -1058,6 +1058,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistrationGroup).get_Name(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnBackgroundActivated(void delegate(Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup, Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_BackgroundActivated(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup, Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs), Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup, Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeBackgroundActivated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_BackgroundActivated(token));

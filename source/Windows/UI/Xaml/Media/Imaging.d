@@ -501,9 +501,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_RasterizePixelHeight(value));
 	}
+	final EventRegistrationToken OnOpened(void delegate(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Opened(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs), Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeOpened(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Opened(token));
+	}
+	final EventRegistrationToken OnOpenFailed(void delegate(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_OpenFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs), Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeOpenFailed(EventRegistrationToken token)
 	{

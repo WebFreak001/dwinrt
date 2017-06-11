@@ -95,9 +95,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Provider.ICachedFileUpdaterUI).get_UpdateTarget(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnFileUpdateRequested(void delegate(Windows.Storage.Provider.CachedFileUpdaterUI, Windows.Storage.Provider.FileUpdateRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FileUpdateRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Provider.CachedFileUpdaterUI, Windows.Storage.Provider.FileUpdateRequestedEventArgs), Windows.Storage.Provider.CachedFileUpdaterUI, Windows.Storage.Provider.FileUpdateRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeFileUpdateRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_FileUpdateRequested(token));
+	}
+	final EventRegistrationToken OnUIRequested(void delegate(Windows.Storage.Provider.CachedFileUpdaterUI, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UIRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Provider.CachedFileUpdaterUI, IInspectable), Windows.Storage.Provider.CachedFileUpdaterUI, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeUIRequested(EventRegistrationToken token)
 	{

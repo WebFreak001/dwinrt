@@ -1052,6 +1052,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionCapabilities).abi_AreEffectsFast(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnChanged(void delegate(Windows.UI.Composition.CompositionCapabilities, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Changed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Composition.CompositionCapabilities, IInspectable), Windows.UI.Composition.CompositionCapabilities, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Changed(token));
@@ -1162,6 +1168,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionCommitBatch).get_IsEnded(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnCompleted(void delegate(IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Completed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs), IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken token)
 	{
@@ -1279,6 +1291,12 @@ extern(Windows):
 		Windows.UI.Composition.CompositionDrawingSurface _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionGraphicsDevice).abi_CreateDrawingSurface(sizePixels, pixelFormat, alphaMode, &_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnRenderingDeviceReplaced(void delegate(Windows.UI.Composition.CompositionGraphicsDevice, Windows.UI.Composition.RenderingDeviceReplacedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RenderingDeviceReplaced(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Composition.CompositionGraphicsDevice, Windows.UI.Composition.RenderingDeviceReplacedEventArgs), Windows.UI.Composition.CompositionGraphicsDevice, Windows.UI.Composition.RenderingDeviceReplacedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeRenderingDeviceReplaced(EventRegistrationToken token)
 	{
@@ -1639,6 +1657,12 @@ extern(Windows):
 	final void Suspend()
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionScopedBatch).abi_Suspend());
+	}
+	final EventRegistrationToken OnCompleted(void delegate(IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Completed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs), IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken token)
 	{

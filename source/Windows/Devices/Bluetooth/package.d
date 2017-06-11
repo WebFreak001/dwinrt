@@ -432,13 +432,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).get_BluetoothAddress(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnNameChanged(void delegate(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NameChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothDevice, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeNameChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_NameChanged(token));
 	}
+	final EventRegistrationToken OnSdpRecordsChanged(void delegate(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SdpRecordsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothDevice, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeSdpRecordsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SdpRecordsChanged(token));
+	}
+	final EventRegistrationToken OnConnectionStatusChanged(void delegate(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ConnectionStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothDevice, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{
@@ -587,13 +605,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).abi_GetGattService(serviceUuid, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnNameChanged(void delegate(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NameChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeNameChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_NameChanged(token));
 	}
+	final EventRegistrationToken OnGattServicesChanged(void delegate(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_GattServicesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeGattServicesChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_GattServicesChanged(token));
+	}
+	final EventRegistrationToken OnConnectionStatusChanged(void delegate(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ConnectionStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{

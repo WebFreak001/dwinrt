@@ -1360,13 +1360,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).get_ExpirationTime(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnDismissed(void delegate(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Dismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs), Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDismissed(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_Dismissed(cookie));
 	}
+	final EventRegistrationToken OnActivated(void delegate(Windows.UI.Notifications.ToastNotification, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Activated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, IInspectable), Windows.UI.Notifications.ToastNotification, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeActivated(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_Activated(cookie));
+	}
+	final EventRegistrationToken OnFailed(void delegate(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Failed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs), Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeFailed(EventRegistrationToken token)
 	{

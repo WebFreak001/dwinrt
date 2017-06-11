@@ -148,9 +148,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).abi_SendMessageAsync(message, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnRequestReceived(void delegate(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RequestReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs), Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeRequestReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_RequestReceived(token));
+	}
+	final EventRegistrationToken OnServiceClosed(void delegate(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ServiceClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs), Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeServiceClosed(EventRegistrationToken token)
 	{

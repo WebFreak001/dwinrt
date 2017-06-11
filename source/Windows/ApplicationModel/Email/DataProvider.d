@@ -371,61 +371,151 @@ extern(Windows):
 interface EmailDataProviderConnection : Windows.ApplicationModel.Email.DataProvider.IEmailDataProviderConnection
 {
 extern(Windows):
+	final EventRegistrationToken OnMailboxSyncRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MailboxSyncRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxSyncManagerSyncRequestEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeMailboxSyncRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_MailboxSyncRequested(token));
+	}
+	final EventRegistrationToken OnDownloadMessageRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DownloadMessageRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadMessageRequestEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeDownloadMessageRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DownloadMessageRequested(token));
 	}
+	final EventRegistrationToken OnDownloadAttachmentRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DownloadAttachmentRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxDownloadAttachmentRequestEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDownloadAttachmentRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DownloadAttachmentRequested(token));
+	}
+	final EventRegistrationToken OnCreateFolderRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CreateFolderRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxCreateFolderRequestEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeCreateFolderRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CreateFolderRequested(token));
 	}
+	final EventRegistrationToken OnDeleteFolderRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DeleteFolderRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxDeleteFolderRequestEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDeleteFolderRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DeleteFolderRequested(token));
+	}
+	final EventRegistrationToken OnEmptyFolderRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EmptyFolderRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxEmptyFolderRequestEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeEmptyFolderRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_EmptyFolderRequested(token));
 	}
+	final EventRegistrationToken OnMoveFolderRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MoveFolderRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxMoveFolderRequestEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeMoveFolderRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_MoveFolderRequested(token));
+	}
+	final EventRegistrationToken OnUpdateMeetingResponseRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UpdateMeetingResponseRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxUpdateMeetingResponseRequestEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeUpdateMeetingResponseRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_UpdateMeetingResponseRequested(token));
 	}
+	final EventRegistrationToken OnForwardMeetingRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ForwardMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxForwardMeetingRequestEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeForwardMeetingRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ForwardMeetingRequested(token));
+	}
+	final EventRegistrationToken OnProposeNewTimeForMeetingRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ProposeNewTimeForMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxProposeNewTimeForMeetingRequestEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeProposeNewTimeForMeetingRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ProposeNewTimeForMeetingRequested(token));
 	}
+	final EventRegistrationToken OnSetAutoReplySettingsRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SetAutoReplySettingsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxSetAutoReplySettingsRequestEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeSetAutoReplySettingsRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SetAutoReplySettingsRequested(token));
+	}
+	final EventRegistrationToken OnGetAutoReplySettingsRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_GetAutoReplySettingsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxGetAutoReplySettingsRequestEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeGetAutoReplySettingsRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_GetAutoReplySettingsRequested(token));
 	}
+	final EventRegistrationToken OnResolveRecipientsRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ResolveRecipientsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxResolveRecipientsRequestEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeResolveRecipientsRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ResolveRecipientsRequested(token));
 	}
+	final EventRegistrationToken OnValidateCertificatesRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ValidateCertificatesRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxValidateCertificatesRequestEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeValidateCertificatesRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ValidateCertificatesRequested(token));
+	}
+	final EventRegistrationToken OnServerSearchReadBatchRequested(void delegate(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ServerSearchReadBatchRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequestEventArgs), Windows.ApplicationModel.Email.DataProvider.EmailDataProviderConnection, Windows.ApplicationModel.Email.DataProvider.EmailMailboxServerSearchReadBatchRequestEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeServerSearchReadBatchRequested(EventRegistrationToken token)
 	{

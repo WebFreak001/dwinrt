@@ -110,6 +110,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationChannel).abi_Close());
 	}
+	final EventRegistrationToken OnPushNotificationReceived(void delegate(Windows.Networking.PushNotifications.PushNotificationChannel, Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PushNotificationReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.PushNotifications.PushNotificationChannel, Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs), Windows.Networking.PushNotifications.PushNotificationChannel, Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePushNotificationReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PushNotificationReceived(token));

@@ -123,9 +123,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Casting.ICastingConnection).set_Source(value));
 	}
+	final EventRegistrationToken OnStateChanged(void delegate(Windows.Media.Casting.CastingConnection, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Casting.CastingConnection, IInspectable), Windows.Media.Casting.CastingConnection, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StateChanged(token));
+	}
+	final EventRegistrationToken OnErrorOccurred(void delegate(Windows.Media.Casting.CastingConnection, Windows.Media.Casting.CastingConnectionErrorOccurredEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Casting.CastingConnection, Windows.Media.Casting.CastingConnectionErrorOccurredEventArgs), Windows.Media.Casting.CastingConnection, Windows.Media.Casting.CastingConnectionErrorOccurredEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeErrorOccurred(EventRegistrationToken token)
 	{
@@ -216,9 +228,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Casting.ICastingDevicePicker).get_Appearance(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnCastingDeviceSelected(void delegate(Windows.Media.Casting.CastingDevicePicker, Windows.Media.Casting.CastingDeviceSelectedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CastingDeviceSelected(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Casting.CastingDevicePicker, Windows.Media.Casting.CastingDeviceSelectedEventArgs), Windows.Media.Casting.CastingDevicePicker, Windows.Media.Casting.CastingDeviceSelectedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCastingDeviceSelected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CastingDeviceSelected(token));
+	}
+	final EventRegistrationToken OnCastingDevicePickerDismissed(void delegate(Windows.Media.Casting.CastingDevicePicker, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CastingDevicePickerDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Casting.CastingDevicePicker, IInspectable), Windows.Media.Casting.CastingDevicePicker, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeCastingDevicePickerDismissed(EventRegistrationToken token)
 	{

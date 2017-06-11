@@ -316,6 +316,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Perception.Spatial.ISpatialAnchor).get_RawCoordinateSystem(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnRawCoordinateSystemAdjusted(void delegate(Windows.Perception.Spatial.SpatialAnchor, Windows.Perception.Spatial.SpatialAnchorRawCoordinateSystemAdjustedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RawCoordinateSystemAdjusted(event!(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialAnchor, Windows.Perception.Spatial.SpatialAnchorRawCoordinateSystemAdjustedEventArgs), Windows.Perception.Spatial.SpatialAnchor, Windows.Perception.Spatial.SpatialAnchorRawCoordinateSystemAdjustedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeRawCoordinateSystemAdjusted(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_RawCoordinateSystemAdjusted(cookie));
@@ -475,17 +481,41 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Perception.Spatial.ISpatialEntityWatcher).get_Status(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnAdded(void delegate(Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityAddedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityAddedEventArgs), Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityAddedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Added(token));
+	}
+	final EventRegistrationToken OnUpdated(void delegate(Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityUpdatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityUpdatedEventArgs), Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityUpdatedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Updated(token));
 	}
+	final EventRegistrationToken OnRemoved(void delegate(Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityRemovedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityRemovedEventArgs), Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityRemovedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Removed(token));
+	}
+	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Perception.Spatial.SpatialEntityWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialEntityWatcher, IInspectable), Windows.Perception.Spatial.SpatialEntityWatcher, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
@@ -551,9 +581,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Perception.Spatial.ISpatialLocator).get_Locatability(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnLocatabilityChanged(void delegate(Windows.Perception.Spatial.SpatialLocator, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_LocatabilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialLocator, IInspectable), Windows.Perception.Spatial.SpatialLocator, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeLocatabilityChanged(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_LocatabilityChanged(cookie));
+	}
+	final EventRegistrationToken OnPositionalTrackingDeactivating(void delegate(Windows.Perception.Spatial.SpatialLocator, Windows.Perception.Spatial.SpatialLocatorPositionalTrackingDeactivatingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PositionalTrackingDeactivating(event!(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.SpatialLocator, Windows.Perception.Spatial.SpatialLocatorPositionalTrackingDeactivatingEventArgs), Windows.Perception.Spatial.SpatialLocator, Windows.Perception.Spatial.SpatialLocatorPositionalTrackingDeactivatingEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePositionalTrackingDeactivating(EventRegistrationToken cookie)
 	{

@@ -1301,9 +1301,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedPhotoCapture).abi_CaptureWithContextAsync(context, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnOptionalReferencePhotoCaptured(void delegate(Windows.Media.Capture.AdvancedPhotoCapture, Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_OptionalReferencePhotoCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AdvancedPhotoCapture, Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs), Windows.Media.Capture.AdvancedPhotoCapture, Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeOptionalReferencePhotoCaptured(EventRegistrationToken token)
 	{
 		Debug.OK(remove_OptionalReferencePhotoCaptured(token));
+	}
+	final EventRegistrationToken OnAllPhotosCaptured(void delegate(Windows.Media.Capture.AdvancedPhotoCapture, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AllPhotosCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AdvancedPhotoCapture, IInspectable), Windows.Media.Capture.AdvancedPhotoCapture, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeAllPhotosCaptured(EventRegistrationToken token)
 	{
@@ -1376,6 +1388,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).abi_TerminateBroadcast(reason, providerSpecificReason));
 	}
+	final EventRegistrationToken OnHeartbeatRequested(void delegate(Windows.Media.Capture.AppBroadcastBackgroundService, Windows.Media.Capture.AppBroadcastHeartbeatRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HeartbeatRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundService, Windows.Media.Capture.AppBroadcastHeartbeatRequestedEventArgs), Windows.Media.Capture.AppBroadcastBackgroundService, Windows.Media.Capture.AppBroadcastHeartbeatRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeHeartbeatRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HeartbeatRequested(token));
@@ -1433,6 +1451,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).get_UserName(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnSignInStateChanged(void delegate(Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo, Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SignInStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo, Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs), Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo, Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeSignInStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SignInStateChanged(token));
@@ -1484,13 +1508,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_BroadcastStreamReader(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnStreamStateChanged(void delegate(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StreamStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs), Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeStreamStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StreamStateChanged(token));
 	}
+	final EventRegistrationToken OnVideoEncodingResolutionChanged(void delegate(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VideoEncodingResolutionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable), Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeVideoEncodingResolutionChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_VideoEncodingResolutionChanged(token));
+	}
+	final EventRegistrationToken OnVideoEncodingBitrateChanged(void delegate(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VideoEncodingBitrateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable), Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeVideoEncodingBitrateChanged(EventRegistrationToken token)
 	{
@@ -1766,6 +1808,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreview).get_ErrorCode(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnPreviewStateChanged(void delegate(Windows.Media.Capture.AppBroadcastPreview, Windows.Media.Capture.AppBroadcastPreviewStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PreviewStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastPreview, Windows.Media.Capture.AppBroadcastPreviewStateChangedEventArgs), Windows.Media.Capture.AppBroadcastPreview, Windows.Media.Capture.AppBroadcastPreviewStateChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePreviewStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PreviewStateChanged(token));
@@ -1833,6 +1881,12 @@ extern(Windows):
 		Windows.Media.Capture.AppBroadcastPreviewStreamVideoFrame _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).abi_TryGetNextVideoFrame(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnVideoFrameArrived(void delegate(Windows.Media.Capture.AppBroadcastPreviewStreamReader, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VideoFrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastPreviewStreamReader, IInspectable), Windows.Media.Capture.AppBroadcastPreviewStreamReader, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeVideoFrameArrived(EventRegistrationToken token)
 	{
@@ -2188,25 +2242,61 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_TerminationReasonPlugInSpecific(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnViewerCountChanged(void delegate(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastViewerCountChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ViewerCountChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastViewerCountChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastViewerCountChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeViewerCountChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ViewerCountChanged(token));
+	}
+	final EventRegistrationToken OnMicrophoneCaptureStateChanged(void delegate(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastMicrophoneCaptureStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MicrophoneCaptureStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastMicrophoneCaptureStateChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastMicrophoneCaptureStateChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeMicrophoneCaptureStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_MicrophoneCaptureStateChanged(token));
 	}
+	final EventRegistrationToken OnCameraCaptureStateChanged(void delegate(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastCameraCaptureStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CameraCaptureStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastCameraCaptureStateChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastCameraCaptureStateChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCameraCaptureStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CameraCaptureStateChanged(token));
+	}
+	final EventRegistrationToken OnPlugInStateChanged(void delegate(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastPlugInStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PlugInStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastPlugInStateChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastPlugInStateChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePlugInStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PlugInStateChanged(token));
 	}
+	final EventRegistrationToken OnStreamStateChanged(void delegate(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StreamStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeStreamStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StreamStateChanged(token));
+	}
+	final EventRegistrationToken OnCaptureTargetClosed(void delegate(Windows.Media.Capture.AppBroadcastState, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CaptureTargetClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, IInspectable), Windows.Media.Capture.AppBroadcastState, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeCaptureTargetClosed(EventRegistrationToken token)
 	{
@@ -2323,9 +2413,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).abi_TryGetNextVideoFrame(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnAudioFrameArrived(void delegate(Windows.Media.Capture.AppBroadcastStreamReader, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AudioFrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastStreamReader, IInspectable), Windows.Media.Capture.AppBroadcastStreamReader, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeAudioFrameArrived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AudioFrameArrived(token));
+	}
+	final EventRegistrationToken OnVideoFrameArrived(void delegate(Windows.Media.Capture.AppBroadcastStreamReader, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VideoFrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastStreamReader, IInspectable), Windows.Media.Capture.AppBroadcastStreamReader, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeVideoFrameArrived(EventRegistrationToken token)
 	{
@@ -2438,6 +2540,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.IAppCapture).get_IsCapturingVideo(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnCapturingChanged(void delegate(Windows.Media.Capture.AppCapture, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CapturingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCapture, IInspectable), Windows.Media.Capture.AppCapture, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeCapturingChanged(EventRegistrationToken token)
 	{
@@ -2690,13 +2798,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).get_IsFileTruncated(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnStateChanged(void delegate(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureRecordingStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureRecordingStateChangedEventArgs), Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureRecordingStateChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StateChanged(token));
 	}
+	final EventRegistrationToken OnDurationGenerated(void delegate(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureDurationGeneratedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DurationGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureDurationGeneratedEventArgs), Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureDurationGeneratedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDurationGenerated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DurationGenerated(token));
+	}
+	final EventRegistrationToken OnFileGenerated(void delegate(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureFileGeneratedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FileGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureFileGeneratedEventArgs), Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureFileGeneratedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeFileGenerated(EventRegistrationToken token)
 	{
@@ -3062,9 +3188,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).get_MicrophoneCaptureError(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnMicrophoneCaptureStateChanged(void delegate(Windows.Media.Capture.AppCaptureState, Windows.Media.Capture.AppCaptureMicrophoneCaptureStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MicrophoneCaptureStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureState, Windows.Media.Capture.AppCaptureMicrophoneCaptureStateChangedEventArgs), Windows.Media.Capture.AppCaptureState, Windows.Media.Capture.AppCaptureMicrophoneCaptureStateChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeMicrophoneCaptureStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_MicrophoneCaptureStateChanged(token));
+	}
+	final EventRegistrationToken OnCaptureTargetClosed(void delegate(Windows.Media.Capture.AppCaptureState, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CaptureTargetClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureState, IInspectable), Windows.Media.Capture.AppCaptureState, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeCaptureTargetClosed(EventRegistrationToken token)
 	{
@@ -3447,6 +3585,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).get_AppCaptureServices(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnCommandReceived(void delegate(Windows.Media.Capture.GameBarServices, Windows.Media.Capture.GameBarServicesCommandEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CommandReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.GameBarServices, Windows.Media.Capture.GameBarServicesCommandEventArgs), Windows.Media.Capture.GameBarServices, Windows.Media.Capture.GameBarServicesCommandEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCommandReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CommandReceived(token));
@@ -3473,6 +3617,12 @@ extern(Windows):
 interface GameBarServicesManager : Windows.Media.Capture.IGameBarServicesManager
 {
 extern(Windows):
+	final EventRegistrationToken OnGameBarServicesCreated(void delegate(Windows.Media.Capture.GameBarServicesManager, Windows.Media.Capture.GameBarServicesManagerGameBarServicesCreatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_GameBarServicesCreated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.GameBarServicesManager, Windows.Media.Capture.GameBarServicesManagerGameBarServicesCreatedEventArgs), Windows.Media.Capture.GameBarServicesManager, Windows.Media.Capture.GameBarServicesManagerGameBarServicesCreatedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeGameBarServicesCreated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_GameBarServicesCreated(token));
@@ -3603,6 +3753,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.ILowLagPhotoSequenceCapture).abi_FinishAsync(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnPhotoCaptured(void delegate(Windows.Media.Capture.LowLagPhotoSequenceCapture, Windows.Media.Capture.PhotoCapturedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PhotoCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.LowLagPhotoSequenceCapture, Windows.Media.Capture.PhotoCapturedEventArgs), Windows.Media.Capture.LowLagPhotoSequenceCapture, Windows.Media.Capture.PhotoCapturedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePhotoCaptured(EventRegistrationToken token)
 	{
@@ -3822,9 +3978,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture3).abi_PrepareVariablePhotoSequenceCaptureAsync(type, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnFocusChanged(void delegate(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFocusChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FocusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFocusChangedEventArgs), Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFocusChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeFocusChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_FocusChanged(token));
+	}
+	final EventRegistrationToken OnPhotoConfirmationCaptured(void delegate(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.PhotoConfirmationCapturedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PhotoConfirmationCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.PhotoConfirmationCapturedEventArgs), Windows.Media.Capture.MediaCapture, Windows.Media.Capture.PhotoConfirmationCapturedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePhotoConfirmationCaptured(EventRegistrationToken token)
 	{
@@ -3854,6 +4022,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_ResumeRecordAsync(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnCameraStreamStateChanged(void delegate(Windows.Media.Capture.MediaCapture, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CameraStreamStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, IInspectable), Windows.Media.Capture.MediaCapture, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeCameraStreamStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CameraStreamStateChanged(token));
@@ -3875,6 +4049,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame) _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_GetPreviewFrameCopyAsync(destination, &_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnThermalStatusChanged(void delegate(Windows.Media.Capture.MediaCapture, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ThermalStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, IInspectable), Windows.Media.Capture.MediaCapture, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeThermalStatusChanged(EventRegistrationToken token)
 	{
@@ -3933,6 +4113,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).abi_CreateFrameReaderWithSubtypeAndSizeAsync(inputSource, outputSubtype, outputSize, &_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnCaptureDeviceExclusiveControlStatusChanged(void delegate(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CaptureDeviceExclusiveControlStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs), Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeCaptureDeviceExclusiveControlStatusChanged(EventRegistrationToken token)
 	{

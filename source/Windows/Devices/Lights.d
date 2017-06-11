@@ -82,6 +82,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).set_Color(value));
 	}
+	final EventRegistrationToken OnAvailabilityChanged(void delegate(Windows.Devices.Lights.Lamp, Windows.Devices.Lights.LampAvailabilityChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AvailabilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Lights.Lamp, Windows.Devices.Lights.LampAvailabilityChangedEventArgs), Windows.Devices.Lights.Lamp, Windows.Devices.Lights.LampAvailabilityChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAvailabilityChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AvailabilityChanged(token));

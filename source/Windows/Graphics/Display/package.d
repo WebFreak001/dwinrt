@@ -186,13 +186,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).abi_StopOverride());
 	}
+	final EventRegistrationToken OnIsSupportedChanged(void delegate(Windows.Graphics.Display.BrightnessOverride, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_IsSupportedChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride, IInspectable), Windows.Graphics.Display.BrightnessOverride, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeIsSupportedChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_IsSupportedChanged(token));
 	}
+	final EventRegistrationToken OnIsOverrideActiveChanged(void delegate(Windows.Graphics.Display.BrightnessOverride, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_IsOverrideActiveChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride, IInspectable), Windows.Graphics.Display.BrightnessOverride, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeIsOverrideActiveChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_IsOverrideActiveChanged(token));
+	}
+	final EventRegistrationToken OnBrightnessLevelChanged(void delegate(Windows.Graphics.Display.BrightnessOverride, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_BrightnessLevelChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride, IInspectable), Windows.Graphics.Display.BrightnessOverride, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeBrightnessLevelChanged(EventRegistrationToken token)
 	{
@@ -214,6 +232,12 @@ extern(Windows):
 		Windows.Graphics.Display.DisplayOrientations _ret;
 		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_NativeOrientation(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnOrientationChanged(void delegate(Windows.Graphics.Display.DisplayInformation, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_OrientationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeOrientationChanged(EventRegistrationToken token)
 	{
@@ -243,6 +267,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_RawDpiY(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnDpiChanged(void delegate(Windows.Graphics.Display.DisplayInformation, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DpiChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeDpiChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DpiChanged(token));
@@ -253,6 +283,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_StereoEnabled(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnStereoEnabledChanged(void delegate(Windows.Graphics.Display.DisplayInformation, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StereoEnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeStereoEnabledChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StereoEnabledChanged(token));
@@ -262,6 +298,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) _ret;
 		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).abi_GetColorProfileAsync(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnColorProfileChanged(void delegate(Windows.Graphics.Display.DisplayInformation, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ColorProfileChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeColorProfileChanged(EventRegistrationToken token)
 	{

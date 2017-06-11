@@ -2709,6 +2709,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement2).set_RequestedTheme(value));
 	}
+	final EventRegistrationToken OnDataContextChanged(void delegate(Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DataContextChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs), Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDataContextChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DataContextChanged(token));
@@ -2724,6 +2730,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElementOverrides2).abi_GoToElementStateCore(stateName, useTransitions, &_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnLoading(void delegate(Windows.UI.Xaml.FrameworkElement, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Loading(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, IInspectable), Windows.UI.Xaml.FrameworkElement, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeLoading(EventRegistrationToken token)
 	{
@@ -3721,9 +3733,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).set_CanDrag(value));
 	}
+	final EventRegistrationToken OnDragStarting(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DragStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDragStarting(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DragStarting(token));
+	}
+	final EventRegistrationToken OnDropCompleted(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DropCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeDropCompleted(EventRegistrationToken token)
 	{
@@ -3785,21 +3809,51 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).set_AccessKey(value));
 	}
+	final EventRegistrationToken OnContextRequested(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ContextRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeContextRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ContextRequested(token));
+	}
+	final EventRegistrationToken OnContextCanceled(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ContextCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeContextCanceled(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ContextCanceled(token));
 	}
+	final EventRegistrationToken OnAccessKeyDisplayRequested(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AccessKeyDisplayRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAccessKeyDisplayRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AccessKeyDisplayRequested(token));
 	}
+	final EventRegistrationToken OnAccessKeyDisplayDismissed(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AccessKeyDisplayDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAccessKeyDisplayDismissed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AccessKeyDisplayDismissed(token));
+	}
+	final EventRegistrationToken OnAccessKeyInvoked(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AccessKeyInvoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeAccessKeyInvoked(EventRegistrationToken token)
 	{
@@ -3911,13 +3965,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).set_TabFocusNavigation(value));
 	}
+	final EventRegistrationToken OnGettingFocus(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_GettingFocus(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeGettingFocus(EventRegistrationToken token)
 	{
 		Debug.OK(remove_GettingFocus(token));
 	}
+	final EventRegistrationToken OnLosingFocus(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_LosingFocus(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeLosingFocus(EventRegistrationToken token)
 	{
 		Debug.OK(remove_LosingFocus(token));
+	}
+	final EventRegistrationToken OnNoFocusCandidateFound(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NoFocusCandidateFound(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeNoFocusCandidateFound(EventRegistrationToken token)
 	{

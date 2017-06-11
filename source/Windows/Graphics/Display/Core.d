@@ -98,6 +98,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_RequestSetCurrentDisplayModeWithHdrAndMetadataAsync(mode, hdrOption, hdrMetadata, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnDisplayModesChanged(void delegate(Windows.Graphics.Display.Core.HdmiDisplayInformation, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DisplayModesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.Core.HdmiDisplayInformation, IInspectable), Windows.Graphics.Display.Core.HdmiDisplayInformation, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeDisplayModesChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DisplayModesChanged(token));

@@ -73,6 +73,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).get_DeviceId(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs), Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReadingChanged(token));

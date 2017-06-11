@@ -546,9 +546,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).abi_GetGeopositionAsyncWithAgeAndTimeout(maximumAge, timeout, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnPositionChanged(void delegate(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs), Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePositionChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PositionChanged(token));
+	}
+	final EventRegistrationToken OnStatusChanged(void delegate(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs), Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeStatusChanged(EventRegistrationToken token)
 	{

@@ -607,25 +607,61 @@ extern(Windows):
 interface PackageCatalog : Windows.ApplicationModel.IPackageCatalog, Windows.ApplicationModel.IPackageCatalog2
 {
 extern(Windows):
+	final EventRegistrationToken OnPackageStaging(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PackageStaging(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePackageStaging(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PackageStaging(token));
+	}
+	final EventRegistrationToken OnPackageInstalling(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PackageInstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePackageInstalling(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PackageInstalling(token));
 	}
+	final EventRegistrationToken OnPackageUpdating(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PackageUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePackageUpdating(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PackageUpdating(token));
+	}
+	final EventRegistrationToken OnPackageUninstalling(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PackageUninstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePackageUninstalling(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PackageUninstalling(token));
 	}
+	final EventRegistrationToken OnPackageStatusChanged(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PackageStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePackageStatusChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PackageStatusChanged(token));
+	}
+	final EventRegistrationToken OnPackageContentGroupStaging(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PackageContentGroupStaging(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePackageContentGroupStaging(EventRegistrationToken token)
 	{

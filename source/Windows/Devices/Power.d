@@ -50,6 +50,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Power.IBattery).abi_GetReport(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnReportUpdated(void delegate(Windows.Devices.Power.Battery, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReportUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Power.Battery, IInspectable), Windows.Devices.Power.Battery, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeReportUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReportUpdated(token));

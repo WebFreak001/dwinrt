@@ -85,6 +85,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).get_NetworkReport(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnAvailableNetworksChanged(void delegate(Windows.Devices.WiFi.WiFiAdapter, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AvailableNetworksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFi.WiFiAdapter, IInspectable), Windows.Devices.WiFi.WiFiAdapter, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeAvailableNetworksChanged(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_AvailableNetworksChanged(eventCookie));

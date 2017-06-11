@@ -225,6 +225,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisher).get_Status(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnStatusChanged(void delegate(Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisher, Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatusChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisher, Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatusChangedEventArgs), Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisher, Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatusChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeStatusChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StatusChanged(token));
@@ -259,6 +265,12 @@ extern(Windows):
 interface WiFiDirectConnectionListener : Windows.Devices.WiFiDirect.IWiFiDirectConnectionListener
 {
 extern(Windows):
+	final EventRegistrationToken OnConnectionRequested(void delegate(Windows.Devices.WiFiDirect.WiFiDirectConnectionListener, Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ConnectionRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectConnectionListener, Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs), Windows.Devices.WiFiDirect.WiFiDirectConnectionListener, Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeConnectionRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ConnectionRequested(token));
@@ -336,6 +348,12 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectDevice).get_DeviceId(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnConnectionStatusChanged(void delegate(Windows.Devices.WiFiDirect.WiFiDirectDevice, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ConnectionStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectDevice, IInspectable), Windows.Devices.WiFiDirect.WiFiDirectDevice, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{

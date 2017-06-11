@@ -988,29 +988,71 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.System.IUserWatcher).abi_Stop());
 	}
+	final EventRegistrationToken OnAdded(void delegate(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Added(token));
+	}
+	final EventRegistrationToken OnRemoved(void delegate(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Removed(token));
 	}
+	final EventRegistrationToken OnUpdated(void delegate(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Updated(token));
+	}
+	final EventRegistrationToken OnAuthenticationStatusChanged(void delegate(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AuthenticationStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeAuthenticationStatusChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AuthenticationStatusChanged(token));
 	}
+	final EventRegistrationToken OnAuthenticationStatusChanging(void delegate(Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AuthenticationStatusChanging(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs), Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAuthenticationStatusChanging(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AuthenticationStatusChanging(token));
 	}
+	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.System.UserWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, IInspectable), Windows.System.UserWatcher, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_EnumerationCompleted(token));
+	}
+	final EventRegistrationToken OnStopped(void delegate(Windows.System.UserWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, IInspectable), Windows.System.UserWatcher, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{

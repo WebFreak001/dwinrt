@@ -960,9 +960,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails).abi_CreateTextOption(optionId, displayName, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnOptionChanged(void delegate(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, Windows.Graphics.Printing.OptionDetails.PrintTaskOptionChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_OptionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, Windows.Graphics.Printing.OptionDetails.PrintTaskOptionChangedEventArgs), Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, Windows.Graphics.Printing.OptionDetails.PrintTaskOptionChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeOptionChanged(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_OptionChanged(eventCookie));
+	}
+	final EventRegistrationToken OnBeginValidation(void delegate(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_BeginValidation(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, IInspectable), Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeBeginValidation(EventRegistrationToken eventCookie)
 	{

@@ -1168,9 +1168,30 @@ struct Interface
 			implement(mem, findInterface(mem));
 		foreach ( /* noref */ method; base.methods)
 		{
+			if (method.implementation.length)
+				continue;
 			if (method.type == InterfaceType.eventadd)
 			{
-				writeln("TODO: Implement ", method);
+				enforce(method.arguments.length == 2);
+				string name = method.fullName;
+				if (method.arguments[0].type.startsWith("Windows.Foundation.TypedEventHandler!("))
+				{
+					enforce(method.arguments[1].type == "EventRegistrationToken*", method.arguments[1].type);
+					string type = method.arguments[0].type;
+					string args = type["Windows.Foundation.TypedEventHandler!(".length .. $ - 1];
+					method.arguments = [InterfaceArgument(ArgumentDirection.in_,
+							"void delegate(" ~ args ~ ")", "fn")];
+					method.name = "On" ~ method.name;
+					method.returnType = "EventRegistrationToken";
+					string registerCall = "Debug.OK(" ~ name ~ "(event!(" ~ type ~ ", "
+						~ args ~ ")(fn), &tok));";
+					method.implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
+					methods ~= method;
+				}
+				else
+				{
+					writeln("TODO implement EventHandler Type ", method.arguments[0].type);
+				}
 			}
 			else if (method.type == InterfaceType.eventremove)
 			{

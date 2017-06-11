@@ -144,13 +144,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_SetNotesThumbnailAsync(thumbnail, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnSystemLockStateChanged(void delegate(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SystemLockStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeSystemLockStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SystemLockStateChanged(token));
 	}
+	final EventRegistrationToken OnNotePlacementChanged(void delegate(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NotePlacementChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeNotePlacementChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_NotePlacementChanged(token));
+	}
+	final EventRegistrationToken OnNoteVisibilityChanged(void delegate(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NoteVisibilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeNoteVisibilityChanged(EventRegistrationToken token)
 	{

@@ -400,6 +400,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection).get_Language(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnVoiceCommandCompleted(void delegate(Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection, Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VoiceCommandCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection, Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletedEventArgs), Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection, Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeVoiceCommandCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_VoiceCommandCompleted(token));

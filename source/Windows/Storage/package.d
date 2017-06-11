@@ -610,6 +610,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.IApplicationData).get_TemporaryFolder(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnDataChanged(void delegate(Windows.Storage.ApplicationData, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DataChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.ApplicationData, IInspectable), Windows.Storage.ApplicationData, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeDataChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DataChanged(token));
@@ -1425,6 +1431,12 @@ extern(Windows):
 		Windows.Storage.StorageFolder _ret;
 		Debug.OK(this.as!(Windows.Storage.IStorageLibrary).get_SaveFolder(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnDefinitionChanged(void delegate(Windows.Storage.StorageLibrary, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DefinitionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.StorageLibrary, IInspectable), Windows.Storage.StorageLibrary, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeDefinitionChanged(EventRegistrationToken eventCookie)
 	{

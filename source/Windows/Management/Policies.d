@@ -104,6 +104,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).abi_GetString(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnChanged(void delegate(Windows.Management.Policies.NamedPolicyData, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Changed(event!(Windows.Foundation.TypedEventHandler!(Windows.Management.Policies.NamedPolicyData, IInspectable), Windows.Management.Policies.NamedPolicyData, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeChanged(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_Changed(cookie));

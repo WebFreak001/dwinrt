@@ -153,6 +153,12 @@ extern(Windows):
 interface MouseDevice : Windows.Devices.Input.IMouseDevice
 {
 extern(Windows):
+	final EventRegistrationToken OnMouseMoved(void delegate(Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MouseMoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs), Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeMouseMoved(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_MouseMoved(cookie));

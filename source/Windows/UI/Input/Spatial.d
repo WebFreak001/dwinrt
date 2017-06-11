@@ -390,57 +390,141 @@ extern(Windows):
 interface SpatialGestureRecognizer : Windows.UI.Input.Spatial.ISpatialGestureRecognizer
 {
 extern(Windows):
+	final EventRegistrationToken OnRecognitionStarted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionStartedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RecognitionStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionStartedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionStartedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeRecognitionStarted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_RecognitionStarted(token));
+	}
+	final EventRegistrationToken OnRecognitionEnded(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionEndedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RecognitionEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionEndedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionEndedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeRecognitionEnded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_RecognitionEnded(token));
 	}
+	final EventRegistrationToken OnTapped(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialTappedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Tapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialTappedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialTappedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeTapped(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Tapped(token));
+	}
+	final EventRegistrationToken OnHoldStarted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldStartedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HoldStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldStartedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldStartedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeHoldStarted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HoldStarted(token));
 	}
+	final EventRegistrationToken OnHoldCompleted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HoldCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCompletedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeHoldCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HoldCompleted(token));
+	}
+	final EventRegistrationToken OnHoldCanceled(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCanceledEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HoldCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCanceledEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCanceledEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeHoldCanceled(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HoldCanceled(token));
 	}
+	final EventRegistrationToken OnManipulationStarted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationStartedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ManipulationStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationStartedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationStartedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeManipulationStarted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ManipulationStarted(token));
+	}
+	final EventRegistrationToken OnManipulationUpdated(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationUpdatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ManipulationUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationUpdatedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationUpdatedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeManipulationUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ManipulationUpdated(token));
 	}
+	final EventRegistrationToken OnManipulationCompleted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ManipulationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCompletedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeManipulationCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ManipulationCompleted(token));
+	}
+	final EventRegistrationToken OnManipulationCanceled(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCanceledEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ManipulationCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCanceledEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCanceledEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeManipulationCanceled(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ManipulationCanceled(token));
 	}
+	final EventRegistrationToken OnNavigationStarted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationStartedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NavigationStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationStartedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationStartedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeNavigationStarted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_NavigationStarted(token));
+	}
+	final EventRegistrationToken OnNavigationUpdated(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationUpdatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NavigationUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationUpdatedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationUpdatedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeNavigationUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_NavigationUpdated(token));
 	}
+	final EventRegistrationToken OnNavigationCompleted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NavigationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCompletedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeNavigationCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_NavigationCompleted(token));
+	}
+	final EventRegistrationToken OnNavigationCanceled(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCanceledEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NavigationCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCanceledEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCanceledEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeNavigationCanceled(EventRegistrationToken token)
 	{
@@ -638,25 +722,61 @@ extern(Windows):
 interface SpatialInteractionManager : Windows.UI.Input.Spatial.ISpatialInteractionManager
 {
 extern(Windows):
+	final EventRegistrationToken OnSourceDetected(void delegate(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceDetected(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeSourceDetected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SourceDetected(token));
+	}
+	final EventRegistrationToken OnSourceLost(void delegate(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSourceLost(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SourceLost(token));
 	}
+	final EventRegistrationToken OnSourceUpdated(void delegate(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeSourceUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SourceUpdated(token));
+	}
+	final EventRegistrationToken OnSourcePressed(void delegate(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourcePressed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSourcePressed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SourcePressed(token));
 	}
+	final EventRegistrationToken OnSourceReleased(void delegate(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeSourceReleased(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SourceReleased(token));
+	}
+	final EventRegistrationToken OnInteractionDetected(void delegate(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_InteractionDetected(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeInteractionDetected(EventRegistrationToken token)
 	{

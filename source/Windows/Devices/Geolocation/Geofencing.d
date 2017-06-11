@@ -129,6 +129,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).get_LastKnownGeoposition(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnGeofenceStateChanged(void delegate(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_GeofenceStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable), Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeGeofenceStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_GeofenceStateChanged(token));
@@ -138,6 +144,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geofencing.GeofenceStateChangeReport) _ret;
 		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).abi_ReadReports(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnStatusChanged(void delegate(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable), Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeStatusChanged(EventRegistrationToken token)
 	{

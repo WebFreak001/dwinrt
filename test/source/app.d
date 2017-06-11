@@ -82,12 +82,8 @@ extern (Windows):
 		visuals = root.Children;
 
 		EventRegistrationToken token;
-		Debug.OK(window.add_PointerPressed((CoreWindow sender, PointerEventArgs args) {
-				OnPointerPressed(sender, args);
-			}.event, &token));
-		Debug.OK(window.add_PointerMoved((CoreWindow sender, PointerEventArgs args) {
-				OnPointerMoved(sender, args);
-			}.event, &token));
+		window.OnPointerPressed(&OnPointerPressed);
+		window.OnPointerMoved(&OnPointerMoved);
 
 		return S_OK;
 	}

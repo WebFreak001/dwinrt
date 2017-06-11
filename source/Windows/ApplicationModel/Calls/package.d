@@ -310,9 +310,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallUI).abi_Dismiss());
 	}
+	final EventRegistrationToken OnEndRequested(void delegate(Windows.ApplicationModel.Calls.LockScreenCallUI, Windows.ApplicationModel.Calls.LockScreenCallEndRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EndRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.LockScreenCallUI, Windows.ApplicationModel.Calls.LockScreenCallEndRequestedEventArgs), Windows.ApplicationModel.Calls.LockScreenCallUI, Windows.ApplicationModel.Calls.LockScreenCallEndRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeEndRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_EndRequested(token));
+	}
+	final EventRegistrationToken OnClosed(void delegate(Windows.ApplicationModel.Calls.LockScreenCallUI, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.LockScreenCallUI, IInspectable), Windows.ApplicationModel.Calls.LockScreenCallUI, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
@@ -702,6 +714,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_ReserveCallResourcesAsync(taskEntryPoint, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnMuteStateChanged(void delegate(Windows.ApplicationModel.Calls.VoipCallCoordinator, Windows.ApplicationModel.Calls.MuteChangeEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MuteStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipCallCoordinator, Windows.ApplicationModel.Calls.MuteChangeEventArgs), Windows.ApplicationModel.Calls.VoipCallCoordinator, Windows.ApplicationModel.Calls.MuteChangeEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeMuteStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_MuteStateChanged(token));
@@ -751,21 +769,51 @@ extern(Windows):
 interface VoipPhoneCall : Windows.ApplicationModel.Calls.IVoipPhoneCall
 {
 extern(Windows):
+	final EventRegistrationToken OnEndRequested(void delegate(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EndRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeEndRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_EndRequested(token));
+	}
+	final EventRegistrationToken OnHoldRequested(void delegate(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HoldRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeHoldRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HoldRequested(token));
 	}
+	final EventRegistrationToken OnResumeRequested(void delegate(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ResumeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeResumeRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ResumeRequested(token));
 	}
+	final EventRegistrationToken OnAnswerRequested(void delegate(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallAnswerEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AnswerRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallAnswerEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallAnswerEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAnswerRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AnswerRequested(token));
+	}
+	final EventRegistrationToken OnRejectRequested(void delegate(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallRejectEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RejectRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallRejectEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallRejectEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeRejectRequested(EventRegistrationToken token)
 	{

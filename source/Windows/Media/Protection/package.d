@@ -185,6 +185,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.IHdcpSession).abi_SetDesiredMinProtectionAsync(protection, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnProtectionChanged(void delegate(Windows.Media.Protection.HdcpSession, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ProtectionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.HdcpSession, IInspectable), Windows.Media.Protection.HdcpSession, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeProtectionChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ProtectionChanged(token));

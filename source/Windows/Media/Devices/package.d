@@ -801,6 +801,12 @@ extern(Windows):
 interface AudioDeviceModulesManager : Windows.Media.Devices.IAudioDeviceModulesManager
 {
 extern(Windows):
+	final EventRegistrationToken OnModuleNotificationReceived(void delegate(Windows.Media.Devices.AudioDeviceModulesManager, Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ModuleNotificationReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Devices.AudioDeviceModulesManager, Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs), Windows.Media.Devices.AudioDeviceModulesManager, Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeModuleNotificationReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ModuleNotificationReceived(token));

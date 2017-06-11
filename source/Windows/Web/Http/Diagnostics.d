@@ -100,13 +100,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticProvider).abi_Stop());
 	}
+	final EventRegistrationToken OnRequestSent(void delegate(Windows.Web.Http.Diagnostics.HttpDiagnosticProvider, Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestSentEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RequestSent(event!(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Diagnostics.HttpDiagnosticProvider, Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestSentEventArgs), Windows.Web.Http.Diagnostics.HttpDiagnosticProvider, Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestSentEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeRequestSent(EventRegistrationToken token)
 	{
 		Debug.OK(remove_RequestSent(token));
 	}
+	final EventRegistrationToken OnResponseReceived(void delegate(Windows.Web.Http.Diagnostics.HttpDiagnosticProvider, Windows.Web.Http.Diagnostics.HttpDiagnosticProviderResponseReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ResponseReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Diagnostics.HttpDiagnosticProvider, Windows.Web.Http.Diagnostics.HttpDiagnosticProviderResponseReceivedEventArgs), Windows.Web.Http.Diagnostics.HttpDiagnosticProvider, Windows.Web.Http.Diagnostics.HttpDiagnosticProviderResponseReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeResponseReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ResponseReceived(token));
+	}
+	final EventRegistrationToken OnRequestResponseCompleted(void delegate(Windows.Web.Http.Diagnostics.HttpDiagnosticProvider, Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestResponseCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RequestResponseCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Diagnostics.HttpDiagnosticProvider, Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestResponseCompletedEventArgs), Windows.Web.Http.Diagnostics.HttpDiagnosticProvider, Windows.Web.Http.Diagnostics.HttpDiagnosticProviderRequestResponseCompletedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeRequestResponseCompleted(EventRegistrationToken token)
 	{

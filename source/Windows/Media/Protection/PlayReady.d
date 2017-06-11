@@ -596,9 +596,23 @@ interface NDClient : Windows.Media.Protection.PlayReady.INDClient
 {
 extern(Windows):
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final EventRegistrationToken OnRegistrationCompleted(void delegate(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDRegistrationCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RegistrationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDRegistrationCompletedEventArgs), Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDRegistrationCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void removeRegistrationCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_RegistrationCompleted(token));
+	}
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final EventRegistrationToken OnProximityDetectionCompleted(void delegate(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDProximityDetectionCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ProximityDetectionCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDProximityDetectionCompletedEventArgs), Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDProximityDetectionCompletedEventArgs)(fn), &tok));
+		return tok;
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void removeProximityDetectionCompleted(EventRegistrationToken token)
@@ -606,14 +620,35 @@ extern(Windows):
 		Debug.OK(remove_ProximityDetectionCompleted(token));
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final EventRegistrationToken OnLicenseFetchCompleted(void delegate(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDLicenseFetchCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_LicenseFetchCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDLicenseFetchCompletedEventArgs), Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDLicenseFetchCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void removeLicenseFetchCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_LicenseFetchCompleted(token));
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final EventRegistrationToken OnReRegistrationNeeded(void delegate(Windows.Media.Protection.PlayReady.NDClient, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReRegistrationNeeded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, IInspectable), Windows.Media.Protection.PlayReady.NDClient, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void removeReRegistrationNeeded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReRegistrationNeeded(token));
+	}
+	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final EventRegistrationToken OnClosedCaptionDataReceived(void delegate(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDClosedCaptionDataReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ClosedCaptionDataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDClosedCaptionDataReceivedEventArgs), Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDClosedCaptionDataReceivedEventArgs)(fn), &tok));
+		return tok;
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void removeClosedCaptionDataReceived(EventRegistrationToken token)

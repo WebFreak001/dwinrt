@@ -323,37 +323,91 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).set_InputPaneDisplayPolicy(value));
 	}
+	final EventRegistrationToken OnTextRequested(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TextRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeTextRequested(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_TextRequested(cookie));
+	}
+	final EventRegistrationToken OnSelectionRequested(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SelectionRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSelectionRequested(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_SelectionRequested(cookie));
 	}
+	final EventRegistrationToken OnLayoutRequested(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_LayoutRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeLayoutRequested(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_LayoutRequested(cookie));
+	}
+	final EventRegistrationToken OnTextUpdating(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TextUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeTextUpdating(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_TextUpdating(cookie));
 	}
+	final EventRegistrationToken OnSelectionUpdating(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SelectionUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeSelectionUpdating(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_SelectionUpdating(cookie));
+	}
+	final EventRegistrationToken OnFormatUpdating(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FormatUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeFormatUpdating(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_FormatUpdating(cookie));
 	}
+	final EventRegistrationToken OnCompositionStarted(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CompositionStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCompositionStarted(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_CompositionStarted(cookie));
 	}
+	final EventRegistrationToken OnCompositionCompleted(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CompositionCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCompositionCompleted(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_CompositionCompleted(cookie));
+	}
+	final EventRegistrationToken OnFocusRemoved(void delegate(Windows.UI.Text.Core.CoreTextEditContext, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FocusRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, IInspectable), Windows.UI.Text.Core.CoreTextEditContext, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeFocusRemoved(EventRegistrationToken cookie)
 	{
@@ -378,6 +432,12 @@ extern(Windows):
 	final void NotifyLayoutChanged()
 	{
 		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).abi_NotifyLayoutChanged());
+	}
+	final EventRegistrationToken OnNotifyFocusLeaveCompleted(void delegate(Windows.UI.Text.Core.CoreTextEditContext, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NotifyFocusLeaveCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, IInspectable), Windows.UI.Text.Core.CoreTextEditContext, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeNotifyFocusLeaveCompleted(EventRegistrationToken cookie)
 	{
@@ -596,6 +656,12 @@ extern(Windows):
 		Windows.Globalization.Language _ret;
 		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextServicesManager).get_InputLanguage(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnInputLanguageChanged(void delegate(Windows.UI.Text.Core.CoreTextServicesManager, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_InputLanguageChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextServicesManager, IInspectable), Windows.UI.Text.Core.CoreTextServicesManager, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeInputLanguageChanged(EventRegistrationToken cookie)
 	{

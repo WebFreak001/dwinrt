@@ -345,6 +345,12 @@ extern(Windows):
 interface DeviceAccessInformation : Windows.Devices.Enumeration.IDeviceAccessInformation
 {
 extern(Windows):
+	final EventRegistrationToken OnAccessChanged(void delegate(Windows.Devices.Enumeration.DeviceAccessInformation, Windows.Devices.Enumeration.DeviceAccessChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AccessChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceAccessInformation, Windows.Devices.Enumeration.DeviceAccessChangedEventArgs), Windows.Devices.Enumeration.DeviceAccessInformation, Windows.Devices.Enumeration.DeviceAccessChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAccessChanged(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_AccessChanged(cookie));
@@ -497,6 +503,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) _ret;
 		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationCustomPairing).abi_PairWithProtectionLevelAndSettingsAsync(pairingKindsSupported, minProtectionLevel, devicePairingSettings, &_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnPairingRequested(void delegate(Windows.Devices.Enumeration.DeviceInformationCustomPairing, Windows.Devices.Enumeration.DevicePairingRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PairingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceInformationCustomPairing, Windows.Devices.Enumeration.DevicePairingRequestedEventArgs), Windows.Devices.Enumeration.DeviceInformationCustomPairing, Windows.Devices.Enumeration.DevicePairingRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePairingRequested(EventRegistrationToken token)
 	{
@@ -655,13 +667,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).get_RequestedProperties(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnDeviceSelected(void delegate(Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceSelectedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DeviceSelected(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceSelectedEventArgs), Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceSelectedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDeviceSelected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DeviceSelected(token));
 	}
+	final EventRegistrationToken OnDisconnectButtonClicked(void delegate(Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceDisconnectButtonClickedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DisconnectButtonClicked(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceDisconnectButtonClickedEventArgs), Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceDisconnectButtonClickedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDisconnectButtonClicked(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DisconnectButtonClicked(token));
+	}
+	final EventRegistrationToken OnDevicePickerDismissed(void delegate(Windows.Devices.Enumeration.DevicePicker, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DevicePickerDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker, IInspectable), Windows.Devices.Enumeration.DevicePicker, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeDevicePickerDismissed(EventRegistrationToken token)
 	{
@@ -897,21 +927,51 @@ extern(Windows):
 interface DeviceWatcher : Windows.Devices.Enumeration.IDeviceWatcher, Windows.Devices.Enumeration.IDeviceWatcher2
 {
 extern(Windows):
+	final EventRegistrationToken OnAdded(void delegate(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformation) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformation), Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformation)(fn), &tok));
+		return tok;
+	}
 	final void removeAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Added(token));
+	}
+	final EventRegistrationToken OnUpdated(void delegate(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate), Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate)(fn), &tok));
+		return tok;
 	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Updated(token));
 	}
+	final EventRegistrationToken OnRemoved(void delegate(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate), Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate)(fn), &tok));
+		return tok;
+	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Removed(token));
 	}
+	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Devices.Enumeration.DeviceWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, IInspectable), Windows.Devices.Enumeration.DeviceWatcher, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_EnumerationCompleted(token));
+	}
+	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.Enumeration.DeviceWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, IInspectable), Windows.Devices.Enumeration.DeviceWatcher, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{

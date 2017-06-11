@@ -219,6 +219,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter3).set_CookieUsageBehavior(value));
 	}
+	final EventRegistrationToken OnServerCustomValidationRequested(void delegate(Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs), Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_ServerCustomValidationRequested(eventCookie));

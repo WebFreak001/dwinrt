@@ -248,6 +248,12 @@ extern(Windows):
 interface PrintManager : Windows.Graphics.Printing.IPrintManager
 {
 extern(Windows):
+	final EventRegistrationToken OnPrintTaskRequested(void delegate(Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PrintTaskRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs), Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePrintTaskRequested(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_PrintTaskRequested(eventCookie));
@@ -330,17 +336,41 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).get_Options(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnPreviewing(void delegate(Windows.Graphics.Printing.PrintTask, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Previewing(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, IInspectable), Windows.Graphics.Printing.PrintTask, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removePreviewing(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_Previewing(eventCookie));
+	}
+	final EventRegistrationToken OnSubmitting(void delegate(Windows.Graphics.Printing.PrintTask, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Submitting(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, IInspectable), Windows.Graphics.Printing.PrintTask, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeSubmitting(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_Submitting(eventCookie));
 	}
+	final EventRegistrationToken OnProgressing(void delegate(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Progressing(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs), Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeProgressing(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_Progressing(eventCookie));
+	}
+	final EventRegistrationToken OnCompleted(void delegate(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs), Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken eventCookie)
 	{

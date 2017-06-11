@@ -1847,6 +1847,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2).set_ElementSoundMode(value));
 	}
+	final EventRegistrationToken OnClosing(void delegate(Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs), Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeClosing(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Closing(token));

@@ -798,6 +798,13 @@ interface PerceptionColorFrameReader : Windows.Devices.Perception.IPerceptionCol
 {
 extern(Windows):
 	deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
+	final EventRegistrationToken OnFrameArrived(void delegate(Windows.Devices.Perception.PerceptionColorFrameReader, Windows.Devices.Perception.PerceptionColorFrameArrivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameReader, Windows.Devices.Perception.PerceptionColorFrameArrivedEventArgs), Windows.Devices.Perception.PerceptionColorFrameReader, Windows.Devices.Perception.PerceptionColorFrameArrivedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final void removeFrameArrived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_FrameArrived(token));
@@ -838,9 +845,23 @@ interface PerceptionColorFrameSource : Windows.Devices.Perception.IPerceptionCol
 {
 extern(Windows):
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnAvailableChanged(void delegate(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AvailableChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeAvailableChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AvailableChanged(token));
+	}
+	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnActiveChanged(void delegate(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ActiveChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable)(fn), &tok));
+		return tok;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeActiveChanged(EventRegistrationToken token)
@@ -848,14 +869,35 @@ extern(Windows):
 		Debug.OK(remove_ActiveChanged(token));
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnPropertiesChanged(void delegate(Windows.Devices.Perception.PerceptionColorFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PropertiesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs), Windows.Devices.Perception.PerceptionColorFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removePropertiesChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PropertiesChanged(token));
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnVideoProfileChanged(void delegate(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VideoProfileChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeVideoProfileChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_VideoProfileChanged(token));
+	}
+	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnCameraIntrinsicsChanged(void delegate(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CameraIntrinsicsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable)(fn), &tok));
+		return tok;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeCameraIntrinsicsChanged(EventRegistrationToken token)
@@ -1032,9 +1074,23 @@ interface PerceptionColorFrameSourceWatcher : Windows.Devices.Perception.IPercep
 {
 extern(Windows):
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
+	final EventRegistrationToken OnSourceAdded(void delegate(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceAddedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceAddedEventArgs), Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceAddedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeSourceAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SourceAdded(token));
+	}
+	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
+	final EventRegistrationToken OnSourceRemoved(void delegate(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceRemovedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceRemovedEventArgs), Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceRemovedEventArgs)(fn), &tok));
+		return tok;
 	}
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeSourceRemoved(EventRegistrationToken token)
@@ -1042,9 +1098,23 @@ extern(Windows):
 		Debug.OK(remove_SourceRemoved(token));
 	}
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
+	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeStopped(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Stopped(token));
+	}
+	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
+	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable)(fn), &tok));
+		return tok;
 	}
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeEnumerationCompleted(EventRegistrationToken token)
@@ -1073,6 +1143,13 @@ extern(Windows):
 interface PerceptionControlSession : Windows.Devices.Perception.IPerceptionControlSession, Windows.Foundation.IClosable
 {
 extern(Windows):
+	deprecated("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
+	final EventRegistrationToken OnControlLost(void delegate(Windows.Devices.Perception.PerceptionControlSession, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ControlLost(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionControlSession, IInspectable), Windows.Devices.Perception.PerceptionControlSession, IInspectable)(fn), &tok));
+		return tok;
+	}
 	deprecated("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	final void removeControlLost(EventRegistrationToken token)
 	{
@@ -1192,6 +1269,13 @@ interface PerceptionDepthFrameReader : Windows.Devices.Perception.IPerceptionDep
 {
 extern(Windows):
 	deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
+	final EventRegistrationToken OnFrameArrived(void delegate(Windows.Devices.Perception.PerceptionDepthFrameReader, Windows.Devices.Perception.PerceptionDepthFrameArrivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameReader, Windows.Devices.Perception.PerceptionDepthFrameArrivedEventArgs), Windows.Devices.Perception.PerceptionDepthFrameReader, Windows.Devices.Perception.PerceptionDepthFrameArrivedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final void removeFrameArrived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_FrameArrived(token));
@@ -1232,9 +1316,23 @@ interface PerceptionDepthFrameSource : Windows.Devices.Perception.IPerceptionDep
 {
 extern(Windows):
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnAvailableChanged(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AvailableChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeAvailableChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AvailableChanged(token));
+	}
+	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnActiveChanged(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ActiveChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable)(fn), &tok));
+		return tok;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeActiveChanged(EventRegistrationToken token)
@@ -1242,14 +1340,35 @@ extern(Windows):
 		Debug.OK(remove_ActiveChanged(token));
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnPropertiesChanged(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PropertiesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs), Windows.Devices.Perception.PerceptionDepthFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removePropertiesChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PropertiesChanged(token));
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnVideoProfileChanged(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VideoProfileChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeVideoProfileChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_VideoProfileChanged(token));
+	}
+	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnCameraIntrinsicsChanged(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CameraIntrinsicsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable)(fn), &tok));
+		return tok;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeCameraIntrinsicsChanged(EventRegistrationToken token)
@@ -1426,9 +1545,23 @@ interface PerceptionDepthFrameSourceWatcher : Windows.Devices.Perception.IPercep
 {
 extern(Windows):
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
+	final EventRegistrationToken OnSourceAdded(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceAddedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceAddedEventArgs), Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceAddedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeSourceAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SourceAdded(token));
+	}
+	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
+	final EventRegistrationToken OnSourceRemoved(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceRemovedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceRemovedEventArgs), Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceRemovedEventArgs)(fn), &tok));
+		return tok;
 	}
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeSourceRemoved(EventRegistrationToken token)
@@ -1436,9 +1569,23 @@ extern(Windows):
 		Debug.OK(remove_SourceRemoved(token));
 	}
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
+	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeStopped(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Stopped(token));
+	}
+	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
+	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable)(fn), &tok));
+		return tok;
 	}
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeEnumerationCompleted(EventRegistrationToken token)
@@ -1541,6 +1688,13 @@ interface PerceptionInfraredFrameReader : Windows.Devices.Perception.IPerception
 {
 extern(Windows):
 	deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
+	final EventRegistrationToken OnFrameArrived(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameReader, Windows.Devices.Perception.PerceptionInfraredFrameArrivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameReader, Windows.Devices.Perception.PerceptionInfraredFrameArrivedEventArgs), Windows.Devices.Perception.PerceptionInfraredFrameReader, Windows.Devices.Perception.PerceptionInfraredFrameArrivedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final void removeFrameArrived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_FrameArrived(token));
@@ -1581,9 +1735,23 @@ interface PerceptionInfraredFrameSource : Windows.Devices.Perception.IPerception
 {
 extern(Windows):
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnAvailableChanged(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AvailableChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeAvailableChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AvailableChanged(token));
+	}
+	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnActiveChanged(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ActiveChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable)(fn), &tok));
+		return tok;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeActiveChanged(EventRegistrationToken token)
@@ -1591,14 +1759,35 @@ extern(Windows):
 		Debug.OK(remove_ActiveChanged(token));
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnPropertiesChanged(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PropertiesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs), Windows.Devices.Perception.PerceptionInfraredFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removePropertiesChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PropertiesChanged(token));
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnVideoProfileChanged(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VideoProfileChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeVideoProfileChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_VideoProfileChanged(token));
+	}
+	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
+	final EventRegistrationToken OnCameraIntrinsicsChanged(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CameraIntrinsicsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable)(fn), &tok));
+		return tok;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeCameraIntrinsicsChanged(EventRegistrationToken token)
@@ -1775,9 +1964,23 @@ interface PerceptionInfraredFrameSourceWatcher : Windows.Devices.Perception.IPer
 {
 extern(Windows):
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
+	final EventRegistrationToken OnSourceAdded(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceAddedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceAddedEventArgs), Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceAddedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeSourceAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SourceAdded(token));
+	}
+	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
+	final EventRegistrationToken OnSourceRemoved(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceRemovedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceRemovedEventArgs), Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceRemovedEventArgs)(fn), &tok));
+		return tok;
 	}
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeSourceRemoved(EventRegistrationToken token)
@@ -1785,9 +1988,23 @@ extern(Windows):
 		Debug.OK(remove_SourceRemoved(token));
 	}
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
+	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeStopped(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Stopped(token));
+	}
+	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
+	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable)(fn), &tok));
+		return tok;
 	}
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeEnumerationCompleted(EventRegistrationToken token)

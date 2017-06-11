@@ -820,6 +820,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink).set_NavigateUri(value));
 	}
+	final EventRegistrationToken OnClick(void delegate(Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Click(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs), Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeClick(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Click(token));
@@ -1324,13 +1330,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipVerticalOffset(value));
 	}
+	final EventRegistrationToken OnAccessKeyDisplayRequested(void delegate(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AccessKeyDisplayRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAccessKeyDisplayRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AccessKeyDisplayRequested(token));
 	}
+	final EventRegistrationToken OnAccessKeyDisplayDismissed(void delegate(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AccessKeyDisplayDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAccessKeyDisplayDismissed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_AccessKeyDisplayDismissed(token));
+	}
+	final EventRegistrationToken OnAccessKeyInvoked(void delegate(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AccessKeyInvoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeAccessKeyInvoked(EventRegistrationToken token)
 	{

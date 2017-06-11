@@ -1033,6 +1033,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager).abi_SyncAsync(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnSyncStatusChanged(void delegate(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager, IInspectable), Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeSyncStatusChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SyncStatusChanged(token));
@@ -1493,6 +1499,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore).abi_FindLocalIdsFromRoamingIdAsync(roamingId, &_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnStoreChanged(void delegate(Windows.ApplicationModel.Appointments.AppointmentStore, Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StoreChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.AppointmentStore, Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs), Windows.ApplicationModel.Appointments.AppointmentStore, Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeStoreChanged(EventRegistrationToken token)
 	{

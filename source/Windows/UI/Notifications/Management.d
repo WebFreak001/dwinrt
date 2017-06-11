@@ -40,6 +40,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_GetAccessStatus(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnNotificationChanged(void delegate(Windows.UI.Notifications.Management.UserNotificationListener, Windows.UI.Notifications.UserNotificationChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_NotificationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.Management.UserNotificationListener, Windows.UI.Notifications.UserNotificationChangedEventArgs), Windows.UI.Notifications.Management.UserNotificationListener, Windows.UI.Notifications.UserNotificationChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeNotificationChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_NotificationChanged(token));

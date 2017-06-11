@@ -454,9 +454,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardReader).abi_FindAllCardsAsync(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnCardAdded(void delegate(Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardAddedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CardAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardAddedEventArgs), Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardAddedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCardAdded(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CardAdded(token));
+	}
+	final EventRegistrationToken OnCardRemoved(void delegate(Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardRemovedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CardRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardRemovedEventArgs), Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardRemovedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeCardRemoved(EventRegistrationToken token)
 	{

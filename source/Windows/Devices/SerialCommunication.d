@@ -248,9 +248,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).get_OutputStream(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnErrorReceived(void delegate(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.ErrorReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ErrorReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.ErrorReceivedEventArgs), Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.ErrorReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeErrorReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ErrorReceived(token));
+	}
+	final EventRegistrationToken OnPinChanged(void delegate(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.PinChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PinChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.PinChangedEventArgs), Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.PinChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePinChanged(EventRegistrationToken token)
 	{

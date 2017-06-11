@@ -859,9 +859,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer).get_ReportInterval(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs), Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReadingChanged(token));
+	}
+	final EventRegistrationToken OnShaken(void delegate(Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerShakenEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Shaken(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerShakenEventArgs), Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerShakenEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeShaken(EventRegistrationToken token)
 	{
@@ -997,6 +1009,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensor).get_MinimumReportInterval(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.ActivitySensor, Windows.Devices.Sensors.ActivitySensorReadingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.ActivitySensor, Windows.Devices.Sensors.ActivitySensorReadingChangedEventArgs), Windows.Devices.Sensors.ActivitySensor, Windows.Devices.Sensors.ActivitySensorReadingChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReadingChanged(token));
@@ -1090,6 +1108,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IAltimeter).get_ReportInterval(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Altimeter, Windows.Devices.Sensors.AltimeterReadingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Altimeter, Windows.Devices.Sensors.AltimeterReadingChangedEventArgs), Windows.Devices.Sensors.Altimeter, Windows.Devices.Sensors.AltimeterReadingChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReadingChanged(token));
@@ -1155,6 +1179,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IBarometer).get_ReportInterval(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Barometer, Windows.Devices.Sensors.BarometerReadingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Barometer, Windows.Devices.Sensors.BarometerReadingChangedEventArgs), Windows.Devices.Sensors.Barometer, Windows.Devices.Sensors.BarometerReadingChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReadingChanged(token));
@@ -1213,6 +1243,12 @@ extern(Windows):
 		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ICompass).get_ReportInterval(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Compass, Windows.Devices.Sensors.CompassReadingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Compass, Windows.Devices.Sensors.CompassReadingChangedEventArgs), Windows.Devices.Sensors.Compass, Windows.Devices.Sensors.CompassReadingChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
@@ -1301,6 +1337,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometer).get_ReportInterval(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Gyrometer, Windows.Devices.Sensors.GyrometerReadingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Gyrometer, Windows.Devices.Sensors.GyrometerReadingChangedEventArgs), Windows.Devices.Sensors.Gyrometer, Windows.Devices.Sensors.GyrometerReadingChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReadingChanged(token));
@@ -1387,6 +1429,12 @@ extern(Windows):
 		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometer).get_ReportInterval(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Inclinometer, Windows.Devices.Sensors.InclinometerReadingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Inclinometer, Windows.Devices.Sensors.InclinometerReadingChangedEventArgs), Windows.Devices.Sensors.Inclinometer, Windows.Devices.Sensors.InclinometerReadingChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
@@ -1487,6 +1535,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensor).get_ReportInterval(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.LightSensor, Windows.Devices.Sensors.LightSensorReadingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.LightSensor, Windows.Devices.Sensors.LightSensorReadingChangedEventArgs), Windows.Devices.Sensors.LightSensor, Windows.Devices.Sensors.LightSensorReadingChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReadingChanged(token));
@@ -1551,6 +1605,12 @@ extern(Windows):
 		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometer).get_ReportInterval(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Magnetometer, Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Magnetometer, Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs), Windows.Devices.Sensors.Magnetometer, Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
@@ -1644,6 +1704,12 @@ extern(Windows):
 		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensor).get_ReportInterval(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.OrientationSensor, Windows.Devices.Sensors.OrientationSensorReadingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.OrientationSensor, Windows.Devices.Sensors.OrientationSensorReadingChangedEventArgs), Windows.Devices.Sensors.OrientationSensor, Windows.Devices.Sensors.OrientationSensorReadingChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
@@ -1744,6 +1810,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometer).get_ReportInterval(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Pedometer, Windows.Devices.Sensors.PedometerReadingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Pedometer, Windows.Devices.Sensors.PedometerReadingChangedEventArgs), Windows.Devices.Sensors.Pedometer, Windows.Devices.Sensors.PedometerReadingChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ReadingChanged(token));
@@ -1826,6 +1898,12 @@ extern(Windows):
 		Windows.Devices.Sensors.ProximitySensorReading _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensor).abi_GetCurrentReading(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.ProximitySensor, Windows.Devices.Sensors.ProximitySensorReadingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.ProximitySensor, Windows.Devices.Sensors.ProximitySensorReadingChangedEventArgs), Windows.Devices.Sensors.ProximitySensor, Windows.Devices.Sensors.ProximitySensorReadingChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
@@ -1999,6 +2077,12 @@ extern(Windows):
 		Windows.Devices.Sensors.SimpleOrientation _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISimpleOrientationSensor).abi_GetCurrentOrientation(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnOrientationChanged(void delegate(Windows.Devices.Sensors.SimpleOrientationSensor, Windows.Devices.Sensors.SimpleOrientationSensorOrientationChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_OrientationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.SimpleOrientationSensor, Windows.Devices.Sensors.SimpleOrientationSensorOrientationChangedEventArgs), Windows.Devices.Sensors.SimpleOrientationSensor, Windows.Devices.Sensors.SimpleOrientationSensorOrientationChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeOrientationChanged(EventRegistrationToken token)
 	{

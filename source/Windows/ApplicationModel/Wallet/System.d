@@ -64,6 +64,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore).abi_LaunchAppForItemAsync(item, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnItemsChanged(void delegate(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ItemsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable), Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeItemsChanged(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_ItemsChanged(cookie));

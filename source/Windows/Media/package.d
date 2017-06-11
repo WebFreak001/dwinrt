@@ -731,9 +731,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).get_State(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnPositionChanged(void delegate(Windows.Media.MediaTimelineController, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, IInspectable), Windows.Media.MediaTimelineController, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removePositionChanged(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(remove_PositionChanged(eventCookie));
+	}
+	final EventRegistrationToken OnStateChanged(void delegate(Windows.Media.MediaTimelineController, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, IInspectable), Windows.Media.MediaTimelineController, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeStateChanged(EventRegistrationToken eventCookie)
 	{
@@ -759,9 +771,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.IMediaTimelineController2).set_IsLoopingEnabled(value));
 	}
+	final EventRegistrationToken OnFailed(void delegate(Windows.Media.MediaTimelineController, Windows.Media.MediaTimelineControllerFailedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Failed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, Windows.Media.MediaTimelineControllerFailedEventArgs), Windows.Media.MediaTimelineController, Windows.Media.MediaTimelineControllerFailedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeFailed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Failed(token));
+	}
+	final EventRegistrationToken OnEnded(void delegate(Windows.Media.MediaTimelineController, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Ended(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, IInspectable), Windows.Media.MediaTimelineController, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeEnded(EventRegistrationToken token)
 	{
@@ -1019,9 +1043,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).set_IsChannelDownEnabled(value));
 	}
+	final EventRegistrationToken OnButtonPressed(void delegate(Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsButtonPressedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ButtonPressed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsButtonPressedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsButtonPressedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeButtonPressed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ButtonPressed(token));
+	}
+	final EventRegistrationToken OnPropertyChanged(void delegate(Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsPropertyChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PropertyChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsPropertyChangedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsPropertyChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePropertyChanged(EventRegistrationToken token)
 	{
@@ -1061,17 +1097,41 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).abi_UpdateTimelineProperties(timelineProperties));
 	}
+	final EventRegistrationToken OnPlaybackPositionChangeRequested(void delegate(Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackPositionChangeRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PlaybackPositionChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackPositionChangeRequestedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackPositionChangeRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePlaybackPositionChangeRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PlaybackPositionChangeRequested(token));
+	}
+	final EventRegistrationToken OnPlaybackRateChangeRequested(void delegate(Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackRateChangeRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PlaybackRateChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackRateChangeRequestedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackRateChangeRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePlaybackRateChangeRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PlaybackRateChangeRequested(token));
 	}
+	final EventRegistrationToken OnShuffleEnabledChangeRequested(void delegate(Windows.Media.SystemMediaTransportControls, Windows.Media.ShuffleEnabledChangeRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ShuffleEnabledChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.ShuffleEnabledChangeRequestedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.ShuffleEnabledChangeRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeShuffleEnabledChangeRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ShuffleEnabledChangeRequested(token));
+	}
+	final EventRegistrationToken OnAutoRepeatModeChangeRequested(void delegate(Windows.Media.SystemMediaTransportControls, Windows.Media.AutoRepeatModeChangeRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AutoRepeatModeChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.AutoRepeatModeChangeRequestedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.AutoRepeatModeChangeRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeAutoRepeatModeChangeRequested(EventRegistrationToken token)
 	{

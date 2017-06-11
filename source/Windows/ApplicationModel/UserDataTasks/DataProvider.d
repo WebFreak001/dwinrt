@@ -130,21 +130,51 @@ extern(Windows):
 interface UserDataTaskDataProviderConnection : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskDataProviderConnection
 {
 extern(Windows):
+	final EventRegistrationToken OnCreateOrUpdateTaskRequested(void delegate(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListCreateOrUpdateTaskRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CreateOrUpdateTaskRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListCreateOrUpdateTaskRequestEventArgs), Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListCreateOrUpdateTaskRequestEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCreateOrUpdateTaskRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CreateOrUpdateTaskRequested(token));
+	}
+	final EventRegistrationToken OnSyncRequested(void delegate(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSyncManagerSyncRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SyncRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSyncManagerSyncRequestEventArgs), Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSyncManagerSyncRequestEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSyncRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SyncRequested(token));
 	}
+	final EventRegistrationToken OnSkipOccurrenceRequested(void delegate(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSkipOccurrenceRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SkipOccurrenceRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSkipOccurrenceRequestEventArgs), Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSkipOccurrenceRequestEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeSkipOccurrenceRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SkipOccurrenceRequested(token));
 	}
+	final EventRegistrationToken OnCompleteTaskRequested(void delegate(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListCompleteTaskRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CompleteTaskRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListCompleteTaskRequestEventArgs), Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListCompleteTaskRequestEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCompleteTaskRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CompleteTaskRequested(token));
+	}
+	final EventRegistrationToken OnDeleteTaskRequested(void delegate(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListDeleteTaskRequestEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DeleteTaskRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListDeleteTaskRequestEventArgs), Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskDataProviderConnection, Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListDeleteTaskRequestEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeDeleteTaskRequested(EventRegistrationToken token)
 	{

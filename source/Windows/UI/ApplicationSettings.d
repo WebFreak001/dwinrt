@@ -194,6 +194,12 @@ extern(Windows):
 interface AccountsSettingsPane : Windows.UI.ApplicationSettings.IAccountsSettingsPane
 {
 extern(Windows):
+	final EventRegistrationToken OnAccountCommandsRequested(void delegate(Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AccountCommandsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs), Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAccountCommandsRequested(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_AccountCommandsRequested(cookie));
@@ -309,6 +315,13 @@ extern(Windows):
 interface SettingsPane : Windows.UI.ApplicationSettings.ISettingsPane
 {
 extern(Windows):
+	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+	final EventRegistrationToken OnCommandsRequested(void delegate(Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CommandsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs), Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void removeCommandsRequested(EventRegistrationToken cookie)
 	{

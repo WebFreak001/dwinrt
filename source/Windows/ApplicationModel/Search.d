@@ -327,9 +327,23 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final EventRegistrationToken OnVisibilityChanged(void delegate(Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneVisibilityChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VisibilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneVisibilityChangedEventArgs), Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneVisibilityChangedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
 	final void removeVisibilityChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_VisibilityChanged(token));
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final EventRegistrationToken OnQueryChanged(void delegate(Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneQueryChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_QueryChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneQueryChangedEventArgs), Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneQueryChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
 	final void removeQueryChanged(EventRegistrationToken token)
@@ -337,14 +351,35 @@ extern(Windows):
 		Debug.OK(remove_QueryChanged(token));
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final EventRegistrationToken OnSuggestionsRequested(void delegate(Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneSuggestionsRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SuggestionsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneSuggestionsRequestedEventArgs), Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneSuggestionsRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
 	final void removeSuggestionsRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SuggestionsRequested(token));
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final EventRegistrationToken OnQuerySubmitted(void delegate(Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneQuerySubmittedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_QuerySubmitted(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneQuerySubmittedEventArgs), Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneQuerySubmittedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
 	final void removeQuerySubmitted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_QuerySubmitted(token));
+	}
+	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
+	final EventRegistrationToken OnResultSuggestionChosen(void delegate(Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneResultSuggestionChosenEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ResultSuggestionChosen(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneResultSuggestionChosenEventArgs), Windows.ApplicationModel.Search.SearchPane, Windows.ApplicationModel.Search.SearchPaneResultSuggestionChosenEventArgs)(fn), &tok));
+		return tok;
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
 	final void removeResultSuggestionChosen(EventRegistrationToken token)

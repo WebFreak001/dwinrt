@@ -505,6 +505,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedTotalSizeInBytes(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnSelectionChanged(void delegate(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SelectionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs), Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeSelectionChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SelectionChanged(token));
@@ -514,6 +520,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportImportItemsResult, Windows.Media.Import.PhotoImportProgress) _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).abi_ImportItemsAsync(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnItemImported(void delegate(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ItemImported(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs), Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeItemImported(EventRegistrationToken token)
 	{

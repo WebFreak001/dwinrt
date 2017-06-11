@@ -868,21 +868,51 @@ extern(Windows):
 interface MobileBroadbandAccountWatcher : Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher
 {
 extern(Windows):
+	final EventRegistrationToken OnAccountAdded(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AccountAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAccountAdded(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_AccountAdded(cookie));
+	}
+	final EventRegistrationToken OnAccountUpdated(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AccountUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeAccountUpdated(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_AccountUpdated(cookie));
 	}
+	final EventRegistrationToken OnAccountRemoved(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AccountRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeAccountRemoved(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_AccountRemoved(cookie));
 	}
+	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeEnumerationCompleted(EventRegistrationToken cookie)
 	{
 		Debug.OK(remove_EnumerationCompleted(cookie));
+	}
+	final EventRegistrationToken OnStopped(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeStopped(EventRegistrationToken cookie)
 	{
@@ -1119,6 +1149,12 @@ extern(Windows):
 	final void CloseSession()
 	{
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataSession).abi_CloseSession());
+	}
+	final EventRegistrationToken OnDataReceived(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeDataReceived(EventRegistrationToken eventCookie)
 	{

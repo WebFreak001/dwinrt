@@ -554,6 +554,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Services.Store.IStoreContext).get_User(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnOfflineLicensesChanged(void delegate(Windows.Services.Store.StoreContext, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_OfflineLicensesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StoreContext, IInspectable), Windows.Services.Store.StoreContext, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeOfflineLicensesChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_OfflineLicensesChanged(token));
@@ -747,6 +753,12 @@ extern(Windows):
 interface StorePackageLicense : Windows.Services.Store.IStorePackageLicense, Windows.Foundation.IClosable
 {
 extern(Windows):
+	final EventRegistrationToken OnLicenseLost(void delegate(Windows.Services.Store.StorePackageLicense, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_LicenseLost(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StorePackageLicense, IInspectable), Windows.Services.Store.StorePackageLicense, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeLicenseLost(EventRegistrationToken token)
 	{
 		Debug.OK(remove_LicenseLost(token));

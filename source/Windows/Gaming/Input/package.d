@@ -288,13 +288,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.IArcadeStick).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnHeadsetConnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		return tok;
+	}
 	final void removeHeadsetConnected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HeadsetConnected(token));
 	}
+	final EventRegistrationToken OnHeadsetDisconnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		return tok;
+	}
 	final void removeHeadsetDisconnected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HeadsetDisconnected(token));
+	}
+	final EventRegistrationToken OnUserChanged(void delegate(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeUserChanged(EventRegistrationToken token)
 	{
@@ -347,13 +365,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.IFlightStick).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnHeadsetConnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		return tok;
+	}
 	final void removeHeadsetConnected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HeadsetConnected(token));
 	}
+	final EventRegistrationToken OnHeadsetDisconnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		return tok;
+	}
 	final void removeHeadsetDisconnected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HeadsetDisconnected(token));
+	}
+	final EventRegistrationToken OnUserChanged(void delegate(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeUserChanged(EventRegistrationToken token)
 	{
@@ -404,13 +440,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.IGamepad).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnHeadsetConnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		return tok;
+	}
 	final void removeHeadsetConnected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HeadsetConnected(token));
 	}
+	final EventRegistrationToken OnHeadsetDisconnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		return tok;
+	}
 	final void removeHeadsetDisconnected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HeadsetDisconnected(token));
+	}
+	final EventRegistrationToken OnUserChanged(void delegate(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeUserChanged(EventRegistrationToken token)
 	{
@@ -522,13 +576,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnHeadsetConnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		return tok;
+	}
 	final void removeHeadsetConnected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HeadsetConnected(token));
 	}
+	final EventRegistrationToken OnHeadsetDisconnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		return tok;
+	}
 	final void removeHeadsetDisconnected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HeadsetDisconnected(token));
+	}
+	final EventRegistrationToken OnUserChanged(void delegate(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeUserChanged(EventRegistrationToken token)
 	{
@@ -617,13 +689,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).abi_GetSwitchKind(switchIndex, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnHeadsetConnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		return tok;
+	}
 	final void removeHeadsetConnected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HeadsetConnected(token));
 	}
+	final EventRegistrationToken OnHeadsetDisconnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		return tok;
+	}
 	final void removeHeadsetDisconnected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HeadsetDisconnected(token));
+	}
+	final EventRegistrationToken OnUserChanged(void delegate(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeUserChanged(EventRegistrationToken token)
 	{
@@ -676,13 +766,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.IUINavigationController).abi_GetRequiredButtonLabel(button, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnHeadsetConnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		return tok;
+	}
 	final void removeHeadsetConnected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HeadsetConnected(token));
 	}
+	final EventRegistrationToken OnHeadsetDisconnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		return tok;
+	}
 	final void removeHeadsetDisconnected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HeadsetDisconnected(token));
+	}
+	final EventRegistrationToken OnUserChanged(void delegate(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeUserChanged(EventRegistrationToken token)
 	{

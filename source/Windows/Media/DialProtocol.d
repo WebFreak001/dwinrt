@@ -185,13 +185,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevicePicker).get_Appearance(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnDialDeviceSelected(void delegate(Windows.Media.DialProtocol.DialDevicePicker, Windows.Media.DialProtocol.DialDeviceSelectedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DialDeviceSelected(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.DialProtocol.DialDevicePicker, Windows.Media.DialProtocol.DialDeviceSelectedEventArgs), Windows.Media.DialProtocol.DialDevicePicker, Windows.Media.DialProtocol.DialDeviceSelectedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDialDeviceSelected(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DialDeviceSelected(token));
 	}
+	final EventRegistrationToken OnDisconnectButtonClicked(void delegate(Windows.Media.DialProtocol.DialDevicePicker, Windows.Media.DialProtocol.DialDisconnectButtonClickedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DisconnectButtonClicked(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.DialProtocol.DialDevicePicker, Windows.Media.DialProtocol.DialDisconnectButtonClickedEventArgs), Windows.Media.DialProtocol.DialDevicePicker, Windows.Media.DialProtocol.DialDisconnectButtonClickedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDisconnectButtonClicked(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DisconnectButtonClicked(token));
+	}
+	final EventRegistrationToken OnDialDevicePickerDismissed(void delegate(Windows.Media.DialProtocol.DialDevicePicker, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DialDevicePickerDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.DialProtocol.DialDevicePicker, IInspectable), Windows.Media.DialProtocol.DialDevicePicker, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeDialDevicePickerDismissed(EventRegistrationToken token)
 	{

@@ -48,6 +48,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).set_Description(value));
 	}
+	final EventRegistrationToken OnRevoked(void delegate(IInspectable, Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Revoked(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedEventArgs), IInspectable, Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeRevoked(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Revoked(token));

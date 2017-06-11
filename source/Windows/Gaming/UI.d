@@ -116,6 +116,12 @@ extern(Windows):
 interface GameChatOverlayMessageSource : Windows.Gaming.UI.IGameChatOverlayMessageSource
 {
 extern(Windows):
+	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs), Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeMessageReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_MessageReceived(token));

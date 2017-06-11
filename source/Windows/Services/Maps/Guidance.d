@@ -419,29 +419,71 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).set_AudioNotifications(value));
 	}
+	final EventRegistrationToken OnGuidanceUpdated(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_GuidanceUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeGuidanceUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_GuidanceUpdated(token));
+	}
+	final EventRegistrationToken OnDestinationReached(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DestinationReached(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeDestinationReached(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DestinationReached(token));
 	}
+	final EventRegistrationToken OnRerouting(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Rerouting(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeRerouting(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Rerouting(token));
+	}
+	final EventRegistrationToken OnRerouted(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Rerouted(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeRerouted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Rerouted(token));
 	}
+	final EventRegistrationToken OnRerouteFailed(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RerouteFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeRerouteFailed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_RerouteFailed(token));
 	}
+	final EventRegistrationToken OnUserLocationLost(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UserLocationLost(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeUserLocationLost(EventRegistrationToken token)
 	{
 		Debug.OK(remove_UserLocationLost(token));
+	}
+	final EventRegistrationToken OnUserLocationRestored(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_UserLocationRestored(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeUserLocationRestored(EventRegistrationToken token)
 	{
@@ -458,6 +500,12 @@ extern(Windows):
 	final void UpdateUserLocationWithPositionOverride(Windows.Devices.Geolocation.Geocoordinate userLocation, Windows.Devices.Geolocation.BasicGeoposition positionOverride)
 	{
 		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_UpdateUserLocationWithPositionOverride(userLocation, positionOverride));
+	}
+	final EventRegistrationToken OnAudioNotificationRequested(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_AudioNotificationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeAudioNotificationRequested(EventRegistrationToken token)
 	{

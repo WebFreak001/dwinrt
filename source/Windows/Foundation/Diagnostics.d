@@ -406,6 +406,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).abi_CloseAndSaveToFileAsync(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnLogFileGenerated(void delegate(Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_LogFileGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs), Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeLogFileGenerated(EventRegistrationToken token)
 	{
 		Debug.OK(remove_LogFileGenerated(token));
@@ -560,6 +566,12 @@ extern(Windows):
 	final void LogValuePairWithLevel(HSTRING value1, INT32 value2, Windows.Foundation.Diagnostics.LoggingLevel level)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).abi_LogValuePairWithLevel(value1, value2, level));
+	}
+	final EventRegistrationToken OnLoggingEnabled(void delegate(Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_LoggingEnabled(event!(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable), Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeLoggingEnabled(EventRegistrationToken token)
 	{

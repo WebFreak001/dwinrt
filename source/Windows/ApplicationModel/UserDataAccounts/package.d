@@ -324,6 +324,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore2).abi_CreateAccountWithPackageRelativeAppIdAsync(userDisplayName, packageRelativeAppId, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnStoreChanged(void delegate(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StoreChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs), Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeStoreChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StoreChanged(token));

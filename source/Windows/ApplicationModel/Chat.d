@@ -718,6 +718,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).abi_NotifyRemoteParticipantComposing(transportId, participantAddress, isComposing));
 	}
+	final EventRegistrationToken OnRemoteParticipantComposingChanged(void delegate(Windows.ApplicationModel.Chat.ChatConversation, Windows.ApplicationModel.Chat.RemoteParticipantComposingChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RemoteParticipantComposingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatConversation, Windows.ApplicationModel.Chat.RemoteParticipantComposingChangedEventArgs), Windows.ApplicationModel.Chat.ChatConversation, Windows.ApplicationModel.Chat.RemoteParticipantComposingChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeRemoteParticipantComposingChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_RemoteParticipantComposingChanged(token));
@@ -1340,6 +1346,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).abi_ValidateMessage(chatMessage, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnMessageChanged(void delegate(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MessageChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageChangedEventArgs), Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeMessageChanged(EventRegistrationToken value)
 	{
 		Debug.OK(remove_MessageChanged(value));
@@ -1433,6 +1445,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).abi_TryCancelSendMessageAsync(localChatMessageId, &_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnStoreChanged(void delegate(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StoreChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs), Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeStoreChanged(EventRegistrationToken token)
 	{
@@ -1830,6 +1848,12 @@ extern(Windows):
 interface RcsEndUserMessageManager : Windows.ApplicationModel.Chat.IRcsEndUserMessageManager
 {
 extern(Windows):
+	final EventRegistrationToken OnMessageAvailableChanged(void delegate(Windows.ApplicationModel.Chat.RcsEndUserMessageManager, Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MessageAvailableChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.RcsEndUserMessageManager, Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableEventArgs), Windows.ApplicationModel.Chat.RcsEndUserMessageManager, Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeMessageAvailableChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_MessageAvailableChanged(token));
@@ -1895,6 +1919,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransport).abi_IsServiceKindSupported(serviceKind, &_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnServiceKindSupportedChanged(void delegate(Windows.ApplicationModel.Chat.RcsTransport, Windows.ApplicationModel.Chat.RcsServiceKindSupportedChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ServiceKindSupportedChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.RcsTransport, Windows.ApplicationModel.Chat.RcsServiceKindSupportedChangedEventArgs), Windows.ApplicationModel.Chat.RcsTransport, Windows.ApplicationModel.Chat.RcsServiceKindSupportedChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeServiceKindSupportedChanged(EventRegistrationToken token)
 	{

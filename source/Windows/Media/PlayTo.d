@@ -292,14 +292,35 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
+	final EventRegistrationToken OnStateChanged(void delegate(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionStateChangedEventArgs), Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionStateChangedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	final void removeStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_StateChanged(token));
 	}
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
+	final EventRegistrationToken OnTransferred(void delegate(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionTransferredEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Transferred(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionTransferredEventArgs), Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionTransferredEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	final void removeTransferred(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Transferred(token));
+	}
+	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
+	final EventRegistrationToken OnError(void delegate(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionErrorEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Error(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionErrorEventArgs), Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionErrorEventArgs)(fn), &tok));
+		return tok;
 	}
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	final void removeError(EventRegistrationToken token)
@@ -369,9 +390,23 @@ interface PlayToManager : Windows.Media.PlayTo.IPlayToManager
 {
 extern(Windows):
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
+	final EventRegistrationToken OnSourceRequested(void delegate(Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceRequestedEventArgs), Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
 	final void removeSourceRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SourceRequested(token));
+	}
+	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
+	final EventRegistrationToken OnSourceSelected(void delegate(Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceSelectedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceSelected(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceSelectedEventArgs), Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceSelectedEventArgs)(fn), &tok));
+		return tok;
 	}
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
 	final void removeSourceSelected(EventRegistrationToken token)
@@ -395,37 +430,91 @@ extern(Windows):
 interface PlayToReceiver : Windows.Media.PlayTo.IPlayToReceiver
 {
 extern(Windows):
+	final EventRegistrationToken OnPlayRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PlayRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable), Windows.Media.PlayTo.PlayToReceiver, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removePlayRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PlayRequested(token));
+	}
+	final EventRegistrationToken OnPauseRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PauseRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable), Windows.Media.PlayTo.PlayToReceiver, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removePauseRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PauseRequested(token));
 	}
+	final EventRegistrationToken OnSourceChangeRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.SourceChangeRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_SourceChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.SourceChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.SourceChangeRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeSourceChangeRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SourceChangeRequested(token));
+	}
+	final EventRegistrationToken OnPlaybackRateChangeRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.PlaybackRateChangeRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_PlaybackRateChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.PlaybackRateChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.PlaybackRateChangeRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePlaybackRateChangeRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_PlaybackRateChangeRequested(token));
 	}
+	final EventRegistrationToken OnCurrentTimeChangeRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.CurrentTimeChangeRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CurrentTimeChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.CurrentTimeChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.CurrentTimeChangeRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCurrentTimeChangeRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CurrentTimeChangeRequested(token));
+	}
+	final EventRegistrationToken OnMuteChangeRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.MuteChangeRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_MuteChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.MuteChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.MuteChangeRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeMuteChangeRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_MuteChangeRequested(token));
 	}
+	final EventRegistrationToken OnVolumeChangeRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.VolumeChangeRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VolumeChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.VolumeChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.VolumeChangeRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeVolumeChangeRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_VolumeChangeRequested(token));
 	}
+	final EventRegistrationToken OnTimeUpdateRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TimeUpdateRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable), Windows.Media.PlayTo.PlayToReceiver, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeTimeUpdateRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_TimeUpdateRequested(token));
+	}
+	final EventRegistrationToken OnStopRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_StopRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable), Windows.Media.PlayTo.PlayToReceiver, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeStopRequested(EventRegistrationToken token)
 	{

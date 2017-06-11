@@ -41,9 +41,21 @@ extern(Windows):
 interface DevicePortalConnection : Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection
 {
 extern(Windows):
+	final EventRegistrationToken OnClosed(void delegate(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs), Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeClosed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Closed(token));
+	}
+	final EventRegistrationToken OnRequestReceived(void delegate(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RequestReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs), Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeRequestReceived(EventRegistrationToken token)
 	{
