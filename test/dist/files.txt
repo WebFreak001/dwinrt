@@ -3,9 +3,9 @@
 "ResourceId" "English"
 
 [Files]
-"C:\Users\Admin\Documents\dwinrt\dist\Assets\Logo.png" "Assets\Logo.png"
-"C:\Users\Admin\Documents\dwinrt\dist\Assets\SmallLogo.png" "Assets\SmallLogo.png"
-"C:\Users\Admin\Documents\dwinrt\dist\Assets\SplashScreen.png" "Assets\SplashScreen.png"
-"C:\Users\Admin\Documents\dwinrt\dist\Assets\StoreLogo.png" "Assets\StoreLogo.png"
-"C:\Users\Admin\Documents\dwinrt\dist\Assets\WideLogo.png" "Assets\WideLogo.png"
-"C:\Users\Admin\Documents\dwinrt\dist\dwinrt.exe" "dwinrt.exe"
+"Assets\Logo.png" "Assets\Logo.png"
+"Assets\SmallLogo.png" "Assets\SmallLogo.png"
+"Assets\SplashScreen.png" "Assets\SplashScreen.png"
+"Assets\StoreLogo.png" "Assets\StoreLogo.png"
+"Assets\WideLogo.png" "Assets\WideLogo.png"
+"dwinrt.exe" "dwinrt.exe"

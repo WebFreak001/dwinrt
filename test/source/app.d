@@ -151,7 +151,7 @@ private:
 
 void run()
 {
-	MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
+	//MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
 
 	Debug.OK(factory!ICoreApplication.abi_Run(new App));
 }

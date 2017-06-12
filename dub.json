@@ -6,7 +6,7 @@
 	"description": "WinRT for D",
 	"copyright": "Copyright © 2017, webfreak",
 	"license": "MIT",
-	"lflags": [
+	"lflags-x86_64": [
 		"/MANIFEST:NO",
 		"/NXCOMPAT",
 		"/PDB:dwinrt.pdb",
@@ -14,6 +14,23 @@
 		"WindowsApp.lib",
 		"/DEBUG:FASTLINK",
 		"/MACHINE:X64",
+		"/WINMD",
+		"/APPCONTAINER",
+		"/INCREMENTAL",
+		"/SUBSYSTEM:WINDOWS",
+		"/ERRORREPORT:PROMPT",
+		"/NOLOGO",
+		"/WINMDFILE:dwinrt.winmd",
+		"/TLBID:1"
+	],
+	"lflags-x86": [
+		"/MANIFEST:NO",
+		"/NXCOMPAT",
+		"/PDB:dwinrt.pdb",
+		"/DYNAMICBASE",
+		"WindowsApp.lib",
+		"/DEBUG:FASTLINK",
+		"/MACHINE:X86",
 		"/WINMD",
 		"/APPCONTAINER",
 		"/INCREMENTAL",

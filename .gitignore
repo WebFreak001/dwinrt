@@ -12,3 +12,4 @@ source/core/sys/windows
 processed/
 tmp/
 *.lib
+*.pfx

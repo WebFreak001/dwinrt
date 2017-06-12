@@ -92,25 +92,12 @@ enum winrtFactory(T) = WinrtFactory(winrtNameOf!T);
 
 extern (Windows)
 {
-	version (Win32)
-	{
-		pragma(mangle, "GetRestrictedErrorInfo@4") HRESULT GetRestrictedErrorInfo(IUnknown** info);
-		pragma(mangle, "RoGetActivationFactory@12") HRESULT RoGetActivationFactory(
-				HSTRING classId, const ref GUID iid, void** factory);
-		pragma(mangle, "RoInitialize@4") HRESULT RoInitialize(uint type);
-		pragma(mangle, "RoOriginateError@8") BOOL RoOriginateError(HRESULT error, HSTRING message);
-		pragma(mangle, "RoUninitialize@0") void RoUninitialize();
-		pragma(mangle, "SetRestrictedErrorInfo@4") HRESULT SetRestrictedErrorInfo(IUnknown* info);
-	}
-	else
-	{
-		HRESULT GetRestrictedErrorInfo(IUnknown** info);
-		HRESULT RoGetActivationFactory(HSTRING classId, const ref GUID iid, void** factory);
-		HRESULT RoInitialize(uint type);
-		BOOL RoOriginateError(HRESULT error, HSTRING message);
-		void RoUninitialize();
-		HRESULT SetRestrictedErrorInfo(IUnknown* info);
-	}
+	HRESULT GetRestrictedErrorInfo(IUnknown** info);
+	HRESULT RoGetActivationFactory(HSTRING classId, const ref GUID iid, void** factory);
+	HRESULT RoInitialize(uint type);
+	BOOL RoOriginateError(HRESULT error, HSTRING message);
+	void RoUninitialize();
+	HRESULT SetRestrictedErrorInfo(IUnknown* info);
 }
 
 struct Debug
