@@ -1570,9 +1570,9 @@ extern(Windows):
 interface ColorKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)
 {
 extern(Windows):
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.UI.Xaml.Media.Animation.ColorKeyFrame GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.UI.Xaml.Media.Animation.ColorKeyFrame _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -1582,21 +1582,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.UI.Xaml.Media.Animation.ColorKeyFrame value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.UI.Xaml.Media.Animation.ColorKeyFrame item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.UI.Xaml.Media.Animation.ColorKeyFrame item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_InsertAt(index, item));
 	}
@@ -1604,7 +1604,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.UI.Xaml.Media.Animation.ColorKeyFrame item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_Append(item));
 	}
@@ -1616,15 +1616,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Animation.ColorKeyFrame* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Animation.ColorKeyFrame* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_First(out_first));
 	}
@@ -1891,9 +1891,9 @@ extern(Windows):
 interface DoubleKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)
 {
 extern(Windows):
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.UI.Xaml.Media.Animation.DoubleKeyFrame GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.UI.Xaml.Media.Animation.DoubleKeyFrame _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -1903,21 +1903,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.UI.Xaml.Media.Animation.DoubleKeyFrame item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.UI.Xaml.Media.Animation.DoubleKeyFrame item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_InsertAt(index, item));
 	}
@@ -1925,7 +1925,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_Append(item));
 	}
@@ -1937,15 +1937,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Animation.DoubleKeyFrame* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Animation.DoubleKeyFrame* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_First(out_first));
 	}
@@ -2420,9 +2420,9 @@ extern(Windows):
 interface ObjectKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)
 {
 extern(Windows):
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.UI.Xaml.Media.Animation.ObjectKeyFrame GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.UI.Xaml.Media.Animation.ObjectKeyFrame _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -2432,21 +2432,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.UI.Xaml.Media.Animation.ObjectKeyFrame item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.UI.Xaml.Media.Animation.ObjectKeyFrame item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_InsertAt(index, item));
 	}
@@ -2454,7 +2454,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_Append(item));
 	}
@@ -2466,15 +2466,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Animation.ObjectKeyFrame* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Animation.ObjectKeyFrame* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_First(out_first));
 	}
@@ -2599,9 +2599,9 @@ extern(Windows):
 interface PointKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)
 {
 extern(Windows):
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.UI.Xaml.Media.Animation.PointKeyFrame GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.UI.Xaml.Media.Animation.PointKeyFrame _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -2611,21 +2611,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.UI.Xaml.Media.Animation.PointKeyFrame value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.UI.Xaml.Media.Animation.PointKeyFrame item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.UI.Xaml.Media.Animation.PointKeyFrame item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_InsertAt(index, item));
 	}
@@ -2633,7 +2633,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.UI.Xaml.Media.Animation.PointKeyFrame item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_Append(item));
 	}
@@ -2645,15 +2645,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Animation.PointKeyFrame* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Animation.PointKeyFrame* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_First(out_first));
 	}
@@ -3329,9 +3329,9 @@ extern(Windows):
 interface TimelineCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Timeline)
 {
 extern(Windows):
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.UI.Xaml.Media.Animation.Timeline GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.UI.Xaml.Media.Animation.Timeline _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -3341,21 +3341,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Animation.Timeline)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.UI.Xaml.Media.Animation.Timeline value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.UI.Xaml.Media.Animation.Timeline item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.UI.Xaml.Media.Animation.Timeline item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_InsertAt(index, item));
 	}
@@ -3363,7 +3363,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.UI.Xaml.Media.Animation.Timeline item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_Append(item));
 	}
@@ -3375,15 +3375,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Animation.Timeline* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Animation.Timeline* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Animation.Timeline)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_First(out_first));
 	}
@@ -3396,9 +3396,9 @@ interface Transition : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.A
 interface TransitionCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Transition)
 {
 extern(Windows):
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.UI.Xaml.Media.Animation.Transition GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.UI.Xaml.Media.Animation.Transition _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -3408,21 +3408,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Animation.Transition)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.UI.Xaml.Media.Animation.Transition value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.UI.Xaml.Media.Animation.Transition item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.UI.Xaml.Media.Animation.Transition item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_InsertAt(index, item));
 	}
@@ -3430,7 +3430,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.UI.Xaml.Media.Animation.Transition item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_Append(item));
 	}
@@ -3442,15 +3442,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Animation.Transition* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Animation.Transition* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Animation.Transition)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Transition)).abi_First(out_first));
 	}

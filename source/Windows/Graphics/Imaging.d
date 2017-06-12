@@ -642,9 +642,9 @@ extern(Windows):
 interface BitmapPropertySet : Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))
 {
 extern(Windows):
-	final  IInspectable Lookup(HSTRING key)
+	final  Windows.Graphics.Imaging.BitmapTypedValue Lookup(HSTRING key)
 	{
-		 IInspectable _ret;
+		 Windows.Graphics.Imaging.BitmapTypedValue _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)).abi_Lookup(key, &_ret));
 		return _ret;
 	}
@@ -660,13 +660,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)).abi_HasKey(key, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
+	final Windows.Foundation.Collections.IMapView!(HSTRING,	 Windows.Graphics.Imaging.BitmapTypedValue) GetView()
 	{
-		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
+		Windows.Foundation.Collections.IMapView!(HSTRING,  Windows.Graphics.Imaging.BitmapTypedValue) _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	IInspectable value)
+	final bool Insert(HSTRING key,	Windows.Graphics.Imaging.BitmapTypedValue value)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)).abi_Insert(key, value, &_ret));
@@ -680,7 +680,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)).abi_Clear());
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))).abi_First(out_first));
 	}

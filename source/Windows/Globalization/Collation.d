@@ -53,7 +53,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.Collation.ICharacterGroupings).abi_Lookup(text, &_ret));
 		return _ret;
 	}
-	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
+	final void GetAt(uint index, Windows.Globalization.Collation.CharacterGrouping* out_item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Collation.CharacterGrouping)).abi_GetAt(index, out_item));
 	}
@@ -63,17 +63,17 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Collation.CharacterGrouping)).get_Size(&_ret));
 		return _ret;
 	}
-	final uint IndexOf(Windows.Foundation.IWwwFormUrlDecoderEntry value, bool* out_found)
+	final uint IndexOf(Windows.Globalization.Collation.CharacterGrouping value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Collation.CharacterGrouping)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.IWwwFormUrlDecoderEntry* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Globalization.Collation.CharacterGrouping* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Collation.CharacterGrouping)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Globalization.Collation.CharacterGrouping)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Globalization.Collation.CharacterGrouping)).abi_First(out_first));
 	}

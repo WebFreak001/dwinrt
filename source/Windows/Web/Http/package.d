@@ -463,7 +463,7 @@ extern(Windows):
 interface HttpCookieCollection : Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.HttpCookie), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.HttpCookie)
 {
 extern(Windows):
-	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
+	final void GetAt(uint index, Windows.Web.Http.HttpCookie* out_item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.HttpCookie)).abi_GetAt(index, out_item));
 	}
@@ -473,17 +473,17 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.HttpCookie)).get_Size(&_ret));
 		return _ret;
 	}
-	final uint IndexOf(Windows.Foundation.IWwwFormUrlDecoderEntry value, bool* out_found)
+	final uint IndexOf(Windows.Web.Http.HttpCookie value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.HttpCookie)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.IWwwFormUrlDecoderEntry* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Web.Http.HttpCookie* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.HttpCookie)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.HttpCookie)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.HttpCookie)).abi_First(out_first));
 	}
@@ -643,7 +643,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Web.Http.IHttpMultipartContent).abi_Add(content));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.IHttpContent)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent)).abi_First(out_first));
 	}
@@ -716,7 +716,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Web.Http.IHttpMultipartFormDataContent).abi_AddWithNameAndFileName(content, name, fileName));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.IHttpContent)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent)).abi_First(out_first));
 	}

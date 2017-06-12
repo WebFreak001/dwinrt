@@ -1019,7 +1019,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionAnimationGroup).abi_RemoveAll());
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Composition.CompositionAnimation)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.CompositionAnimation)).abi_First(out_first));
 	}
@@ -2196,13 +2196,13 @@ extern(Windows):
 interface ImplicitAnimationCollection : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.IImplicitAnimationCollection, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)), Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)
 {
 extern(Windows):
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase))* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase))).abi_First(out_first));
 	}
-	final  IInspectable Lookup(HSTRING key)
+	final  Windows.UI.Composition.ICompositionAnimationBase Lookup(HSTRING key)
 	{
-		 IInspectable _ret;
+		 Windows.UI.Composition.ICompositionAnimationBase _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)).abi_Lookup(key, &_ret));
 		return _ret;
 	}
@@ -2218,13 +2218,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)).abi_HasKey(key, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
+	final Windows.Foundation.Collections.IMapView!(HSTRING,	 Windows.UI.Composition.ICompositionAnimationBase) GetView()
 	{
-		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
+		Windows.Foundation.Collections.IMapView!(HSTRING,  Windows.UI.Composition.ICompositionAnimationBase) _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	IInspectable value)
+	final bool Insert(HSTRING key,	Windows.UI.Composition.ICompositionAnimationBase value)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)).abi_Insert(key, value, &_ret));
@@ -2973,7 +2973,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVisualCollection).abi_RemoveAll());
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Composition.Visual)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Visual)).abi_First(out_first));
 	}
@@ -3000,7 +3000,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVisualUnorderedCollection).abi_RemoveAll());
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Composition.Visual)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Visual)).abi_First(out_first));
 	}

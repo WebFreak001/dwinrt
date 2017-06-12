@@ -2067,9 +2067,9 @@ extern(Windows):
 	{
 		Debug.OK(remove_VectorChanged(token));
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.UI.Xaml.DependencyObject GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.UI.Xaml.DependencyObject _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -2079,21 +2079,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.DependencyObject)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.UI.Xaml.DependencyObject value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.UI.Xaml.DependencyObject item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.UI.Xaml.DependencyObject item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_InsertAt(index, item));
 	}
@@ -2101,7 +2101,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.UI.Xaml.DependencyObject item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_Append(item));
 	}
@@ -2113,15 +2113,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.DependencyObject* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.UI.Xaml.DependencyObject* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.DependencyObject)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.DependencyObject)).abi_First(out_first));
 	}
@@ -2929,7 +2929,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IResourceDictionary).get_ThemeDictionaries(&_ret));
 		return _ret;
 	}
-	final  IInspectable Lookup(HSTRING key)
+	final  IInspectable Lookup(IInspectable key)
 	{
 		 IInspectable _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Lookup(key, &_ret));
@@ -2941,25 +2941,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).get_Size(&_ret));
 		return _ret;
 	}
-	final bool HasKey(HSTRING key)
+	final bool HasKey(IInspectable key)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_HasKey(key, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
+	final Windows.Foundation.Collections.IMapView!(IInspectable,  IInspectable) GetView()
 	{
-		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
+		Windows.Foundation.Collections.IMapView!(IInspectable,	IInspectable) _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	IInspectable value)
+	final bool Insert(IInspectable key,	 IInspectable value)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Insert(key, value, &_ret));
 		return _ret;
 	}
-	final void Remove(HSTRING key)
+	final void Remove(IInspectable key)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Remove(key));
 	}
@@ -2967,7 +2967,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Clear());
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))).abi_First(out_first));
 	}
@@ -3043,9 +3043,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.ISetterBaseCollection).get_IsSealed(&_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.UI.Xaml.SetterBase GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.UI.Xaml.SetterBase _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -3055,21 +3055,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.SetterBase)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.UI.Xaml.SetterBase value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.UI.Xaml.SetterBase item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.UI.Xaml.SetterBase item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_InsertAt(index, item));
 	}
@@ -3077,7 +3077,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.UI.Xaml.SetterBase item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_Append(item));
 	}
@@ -3089,15 +3089,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.SetterBase* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.UI.Xaml.SetterBase* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.SetterBase)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.SetterBase)).abi_First(out_first));
 	}
@@ -3225,9 +3225,9 @@ interface TriggerAction : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.ITri
 interface TriggerActionCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.TriggerAction)
 {
 extern(Windows):
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.UI.Xaml.TriggerAction GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.UI.Xaml.TriggerAction _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -3237,21 +3237,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.TriggerAction)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.UI.Xaml.TriggerAction value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.UI.Xaml.TriggerAction item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.UI.Xaml.TriggerAction item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_InsertAt(index, item));
 	}
@@ -3259,7 +3259,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.UI.Xaml.TriggerAction item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_Append(item));
 	}
@@ -3271,15 +3271,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.TriggerAction* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.UI.Xaml.TriggerAction* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.TriggerAction)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.TriggerAction)).abi_First(out_first));
 	}
@@ -3292,9 +3292,9 @@ interface TriggerBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.ITrigg
 interface TriggerCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.TriggerBase)
 {
 extern(Windows):
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.UI.Xaml.TriggerBase GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.UI.Xaml.TriggerBase _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -3304,21 +3304,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.TriggerBase)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.UI.Xaml.TriggerBase value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.UI.Xaml.TriggerBase item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.UI.Xaml.TriggerBase item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_InsertAt(index, item));
 	}
@@ -3326,7 +3326,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.UI.Xaml.TriggerBase item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_Append(item));
 	}
@@ -3338,15 +3338,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.TriggerBase* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.UI.Xaml.TriggerBase* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.TriggerBase)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.TriggerBase)).abi_First(out_first));
 	}

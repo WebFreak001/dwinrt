@@ -446,6 +446,39 @@ enum AsyncStatus
 	Error,
 }
 
+private bool isSta()
+{
+	APTTYPE aptType;
+	APTTYPEQUALIFIER aptTypeQualifier;
+	return SUCCEEDED(CoGetApartmentType(&aptType, &aptTypeQualifier))
+		&& ((aptType == APTTYPE_STA) || (aptType == APTTYPE_MAINSTA));
+}
+
+void blocking_suspend(Async)(Async async)
+{
+	import core.sync.mutex;
+
+	assert(!isSta);
+
+	if (async.Status == AsyncStatus.Completed)
+		return;
+
+	Condition c = new Condition(new Mutex);
+	bool completed = false;
+
+	async.Completed = (result, status) {
+		synchronized (c.mutex)
+		{
+			completed = true;
+			c.notify();
+		}
+	};
+
+	synchronized (c.mutex)
+		while (!completed)
+			c.wait();
+}
+
 @uuid("4edb8ee2-96dd-49a7-94f7-4607ddab8e3c")
 interface IGetActivationFactory : IInspectable
 {

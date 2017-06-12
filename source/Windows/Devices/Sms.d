@@ -494,19 +494,19 @@ extern(Windows):
 interface GetSmsMessageOperation : Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage)
 {
 extern(Windows):
-	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) handler)
+	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.ISmsMessage) handler)
 	{
 		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage)).set_Completed(handler));
 	}
-	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) Completed()
+	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.ISmsMessage) Completed()
 	{
-		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) _ret;
+		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.ISmsMessage) _ret;
 		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage)).get_Completed(&_ret));
 		return _ret;
 	}
-	final Windows.Devices.Sms.SmsDevice Results()
+	final Windows.Devices.Sms.ISmsMessage Results()
 	{
-		Windows.Devices.Sms.SmsDevice _ret;
+		Windows.Devices.Sms.ISmsMessage _ret;
 		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage)).get_Results(&_ret));
 		return _ret;
 	}

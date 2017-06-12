@@ -276,19 +276,19 @@ extern(Windows):
 interface UserAuthenticationOperation : Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity)
 {
 extern(Windows):
-	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) handler)
+	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Security.Authentication.OnlineId.UserIdentity) handler)
 	{
 		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity)).set_Completed(handler));
 	}
-	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) Completed()
+	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Security.Authentication.OnlineId.UserIdentity) Completed()
 	{
-		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) _ret;
+		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Security.Authentication.OnlineId.UserIdentity) _ret;
 		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity)).get_Completed(&_ret));
 		return _ret;
 	}
-	final Windows.Devices.Sms.SmsDevice Results()
+	final Windows.Security.Authentication.OnlineId.UserIdentity Results()
 	{
-		Windows.Devices.Sms.SmsDevice _ret;
+		Windows.Security.Authentication.OnlineId.UserIdentity _ret;
 		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity)).get_Results(&_ret));
 		return _ret;
 	}

@@ -245,7 +245,7 @@ extern(Windows):
 interface ResourceCandidateVectorView : Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate), Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Resources.Core.ResourceCandidate)
 {
 extern(Windows):
-	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
+	final void GetAt(uint index, Windows.ApplicationModel.Resources.Core.ResourceCandidate* out_item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate)).abi_GetAt(index, out_item));
 	}
@@ -255,17 +255,17 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate)).get_Size(&_ret));
 		return _ret;
 	}
-	final uint IndexOf(Windows.Foundation.IWwwFormUrlDecoderEntry value, bool* out_found)
+	final uint IndexOf(Windows.ApplicationModel.Resources.Core.ResourceCandidate value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.IWwwFormUrlDecoderEntry* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.ApplicationModel.Resources.Core.ResourceCandidate* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.ApplicationModel.Resources.Core.ResourceCandidate)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Resources.Core.ResourceCandidate)).abi_First(out_first));
 	}
@@ -313,7 +313,7 @@ extern(Windows):
 interface ResourceContextLanguagesVectorView : Windows.Foundation.Collections.IVectorView!(HSTRING), Windows.Foundation.Collections.IIterable!(HSTRING)
 {
 extern(Windows):
-	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
+	final void GetAt(uint index, HSTRING* out_item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(HSTRING)).abi_GetAt(index, out_item));
 	}
@@ -323,17 +323,17 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(HSTRING)).get_Size(&_ret));
 		return _ret;
 	}
-	final uint IndexOf(Windows.Foundation.IWwwFormUrlDecoderEntry value, bool* out_found)
+	final uint IndexOf(HSTRING value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(HSTRING)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.IWwwFormUrlDecoderEntry* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, HSTRING* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(HSTRING)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(HSTRING)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(HSTRING)).abi_First(out_first));
 	}
@@ -411,9 +411,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceMap).abi_GetSubtree(reference, &_ret));
 		return _ret;
 	}
-	final  IInspectable Lookup(HSTRING key)
+	final  Windows.ApplicationModel.Resources.Core.NamedResource Lookup(HSTRING key)
 	{
-		 IInspectable _ret;
+		 Windows.ApplicationModel.Resources.Core.NamedResource _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource)).abi_Lookup(key, &_ret));
 		return _ret;
 	}
@@ -429,11 +429,11 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource)).abi_HasKey(key, &_ret));
 		return _ret;
 	}
-	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	IInspectable) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) out_secondPartition)
+	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	Windows.ApplicationModel.Resources.Core.NamedResource) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,  Windows.ApplicationModel.Resources.Core.NamedResource) out_secondPartition)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource)).abi_Split(out_firstPartition, out_secondPartition));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource))* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource))).abi_First(out_first));
 	}
@@ -467,9 +467,9 @@ extern(Windows):
 interface ResourceMapMapView : Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap))
 {
 extern(Windows):
-	final  IInspectable Lookup(HSTRING key)
+	final  Windows.ApplicationModel.Resources.Core.ResourceMap Lookup(HSTRING key)
 	{
-		 IInspectable _ret;
+		 Windows.ApplicationModel.Resources.Core.ResourceMap _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap)).abi_Lookup(key, &_ret));
 		return _ret;
 	}
@@ -485,11 +485,11 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap)).abi_HasKey(key, &_ret));
 		return _ret;
 	}
-	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	IInspectable) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) out_secondPartition)
+	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	Windows.ApplicationModel.Resources.Core.ResourceMap) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,	Windows.ApplicationModel.Resources.Core.ResourceMap) out_secondPartition)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap)).abi_Split(out_firstPartition, out_secondPartition));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap))* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap))).abi_First(out_first));
 	}
@@ -498,9 +498,9 @@ extern(Windows):
 interface ResourceMapMapViewIterator : Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap))
 {
 extern(Windows):
-	final Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource) Current()
+	final Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap) Current()
 	{
-		Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource) _ret;
+		Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap) _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap))).get_Current(&_ret));
 		return _ret;
 	}
@@ -514,7 +514,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap))).abi_MoveNext(out_hasCurrent));
 	}
-	final void GetMany(uint capacity, Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource)* value, uint* actual)
+	final void GetMany(uint capacity, Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap)* value, uint* actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap))).abi_GetMany(capacity, value, actual));
 	}
@@ -558,9 +558,9 @@ extern(Windows):
 interface ResourceQualifierMapView : Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))
 {
 extern(Windows):
-	final  IInspectable Lookup(HSTRING key)
+	final  HSTRING Lookup(HSTRING key)
 	{
-		 IInspectable _ret;
+		 HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING)).abi_Lookup(key, &_ret));
 		return _ret;
 	}
@@ -576,11 +576,11 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING)).abi_HasKey(key, &_ret));
 		return _ret;
 	}
-	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	IInspectable) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) out_secondPartition)
+	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	HSTRING) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,	HSTRING) out_secondPartition)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING)).abi_Split(out_firstPartition, out_secondPartition));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))).abi_First(out_first));
 	}
@@ -593,9 +593,9 @@ extern(Windows):
 	{
 		Debug.OK(remove_MapChanged(token));
 	}
-	final  IInspectable Lookup(HSTRING key)
+	final  HSTRING Lookup(HSTRING key)
 	{
-		 IInspectable _ret;
+		 HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Lookup(key, &_ret));
 		return _ret;
 	}
@@ -611,13 +611,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_HasKey(key, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
+	final Windows.Foundation.Collections.IMapView!(HSTRING,	 HSTRING) GetView()
 	{
-		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
+		Windows.Foundation.Collections.IMapView!(HSTRING,  HSTRING) _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	IInspectable value)
+	final bool Insert(HSTRING key,	HSTRING value)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Insert(key, value, &_ret));
@@ -631,7 +631,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Clear());
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))).abi_First(out_first));
 	}
@@ -640,7 +640,7 @@ extern(Windows):
 interface ResourceQualifierVectorView : Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceQualifier), Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Resources.Core.ResourceQualifier)
 {
 extern(Windows):
-	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
+	final void GetAt(uint index, Windows.ApplicationModel.Resources.Core.ResourceQualifier* out_item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceQualifier)).abi_GetAt(index, out_item));
 	}
@@ -650,17 +650,17 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceQualifier)).get_Size(&_ret));
 		return _ret;
 	}
-	final uint IndexOf(Windows.Foundation.IWwwFormUrlDecoderEntry value, bool* out_found)
+	final uint IndexOf(Windows.ApplicationModel.Resources.Core.ResourceQualifier value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceQualifier)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.IWwwFormUrlDecoderEntry* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.ApplicationModel.Resources.Core.ResourceQualifier* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceQualifier)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.ApplicationModel.Resources.Core.ResourceQualifier)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Resources.Core.ResourceQualifier)).abi_First(out_first));
 	}

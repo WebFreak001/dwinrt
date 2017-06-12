@@ -1103,7 +1103,7 @@ extern(Windows):
 interface MediaPlaybackAudioTrackList : Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack), Windows.Foundation.Collections.IIterable!(Windows.Media.Core.AudioTrack), Windows.Media.Core.ISingleSelectMediaTrackList
 {
 extern(Windows):
-	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
+	final void GetAt(uint index, Windows.Media.Core.AudioTrack* out_item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack)).abi_GetAt(index, out_item));
 	}
@@ -1113,17 +1113,17 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack)).get_Size(&_ret));
 		return _ret;
 	}
-	final uint IndexOf(Windows.Foundation.IWwwFormUrlDecoderEntry value, bool* out_found)
+	final uint IndexOf(Windows.Media.Core.AudioTrack value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.IWwwFormUrlDecoderEntry* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Media.Core.AudioTrack* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Media.Core.AudioTrack)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Core.AudioTrack)).abi_First(out_first));
 	}
@@ -2243,7 +2243,7 @@ extern(Windows):
 interface MediaPlaybackTimedMetadataTrackList : Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack), Windows.Foundation.Collections.IIterable!(Windows.Media.Core.TimedMetadataTrack), Windows.Media.Playback.IMediaPlaybackTimedMetadataTrackList
 {
 extern(Windows):
-	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
+	final void GetAt(uint index, Windows.Media.Core.TimedMetadataTrack* out_item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack)).abi_GetAt(index, out_item));
 	}
@@ -2253,17 +2253,17 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack)).get_Size(&_ret));
 		return _ret;
 	}
-	final uint IndexOf(Windows.Foundation.IWwwFormUrlDecoderEntry value, bool* out_found)
+	final uint IndexOf(Windows.Media.Core.TimedMetadataTrack value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.IWwwFormUrlDecoderEntry* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Media.Core.TimedMetadataTrack* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Media.Core.TimedMetadataTrack)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Core.TimedMetadataTrack)).abi_First(out_first));
 	}
@@ -2292,7 +2292,7 @@ extern(Windows):
 interface MediaPlaybackVideoTrackList : Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack), Windows.Foundation.Collections.IIterable!(Windows.Media.Core.VideoTrack), Windows.Media.Core.ISingleSelectMediaTrackList
 {
 extern(Windows):
-	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
+	final void GetAt(uint index, Windows.Media.Core.VideoTrack* out_item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack)).abi_GetAt(index, out_item));
 	}
@@ -2302,17 +2302,17 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack)).get_Size(&_ret));
 		return _ret;
 	}
-	final uint IndexOf(Windows.Foundation.IWwwFormUrlDecoderEntry value, bool* out_found)
+	final uint IndexOf(Windows.Media.Core.VideoTrack value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.IWwwFormUrlDecoderEntry* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Media.Core.VideoTrack* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Media.Core.VideoTrack)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Core.VideoTrack)).abi_First(out_first));
 	}
@@ -2935,7 +2935,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Playback.IPlaybackMediaMarkerSequence).abi_Clear());
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Media.Playback.PlaybackMediaMarker)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Playback.PlaybackMediaMarker)).abi_First(out_first));
 	}

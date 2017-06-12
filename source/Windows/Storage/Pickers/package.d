@@ -120,9 +120,9 @@ extern(Windows):
 interface FileExtensionVector : Windows.Foundation.Collections.IVector!(HSTRING), Windows.Foundation.Collections.IIterable!(HSTRING)
 {
 extern(Windows):
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final HSTRING GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(HSTRING)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -132,21 +132,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(HSTRING)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(HSTRING)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(HSTRING)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(HSTRING value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(HSTRING)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, HSTRING item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(HSTRING)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, HSTRING item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(HSTRING)).abi_InsertAt(index, item));
 	}
@@ -154,7 +154,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(HSTRING)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(HSTRING item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(HSTRING)).abi_Append(item));
 	}
@@ -166,15 +166,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(HSTRING)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, HSTRING* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(HSTRING)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, HSTRING* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(HSTRING)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(HSTRING)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(HSTRING)).abi_First(out_first));
 	}
@@ -269,9 +269,9 @@ extern(Windows):
 interface FilePickerFileTypesOrderedMap : Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))
 {
 extern(Windows):
-	final  IInspectable Lookup(HSTRING key)
+	final  Windows.Foundation.Collections.IVector!(HSTRING) Lookup(HSTRING key)
 	{
-		 IInspectable _ret;
+		 Windows.Foundation.Collections.IVector!(HSTRING) _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING))).abi_Lookup(key, &_ret));
 		return _ret;
 	}
@@ -287,13 +287,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING))).abi_HasKey(key, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
+	final Windows.Foundation.Collections.IMapView!(HSTRING,	 Windows.Foundation.Collections.IVector!(HSTRING)) GetView()
 	{
-		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
+		Windows.Foundation.Collections.IMapView!(HSTRING,  Windows.Foundation.Collections.IVector!(HSTRING)) _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING))).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	IInspectable value)
+	final bool Insert(HSTRING key,	Windows.Foundation.Collections.IVector!(HSTRING) value)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING))).abi_Insert(key, value, &_ret));
@@ -307,7 +307,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING))).abi_Clear());
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))).abi_First(out_first));
 	}
@@ -316,7 +316,7 @@ extern(Windows):
 interface FilePickerSelectedFilesArray : Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile), Windows.Foundation.Collections.IIterable!(Windows.Storage.StorageFile)
 {
 extern(Windows):
-	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
+	final void GetAt(uint index, Windows.Storage.StorageFile* out_item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)).abi_GetAt(index, out_item));
 	}
@@ -326,17 +326,17 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)).get_Size(&_ret));
 		return _ret;
 	}
-	final uint IndexOf(Windows.Foundation.IWwwFormUrlDecoderEntry value, bool* out_found)
+	final uint IndexOf(Windows.Storage.StorageFile value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.IWwwFormUrlDecoderEntry* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Storage.StorageFile* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Storage.StorageFile)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Storage.StorageFile)).abi_First(out_first));
 	}

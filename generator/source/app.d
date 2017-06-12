@@ -56,6 +56,7 @@ Module[] modules = [
 			InterfaceMethod("Results", "HRESULT", "", InterfaceType.propget, [
 				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "TResult*", "results"),
 			], true),
+			InterfaceMethod("get", "TResult", "", InterfaceType.call, [], true, "blocking_suspend(this);\nreturn Results;"),
 		]),
 		Interface("AsyncOperationProgressHandler", ["IUnknown"], [], [], ["TResult", "TProgress"], "", "", false, false, [
 			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
@@ -297,6 +298,18 @@ void main(string[] args)
 		return;
 	}
 
+	foreach (ref obj; modules[0].interfaces) // Implementations of built-in types
+	{
+		auto num = obj.methods.length;
+		for (int i = 0; i < num; i++)
+		{
+			auto copy = obj.methods[i];
+			if (copy.implementation.length)
+				continue;
+			copy.implement("Windows.Foundation." ~ obj.name);
+			obj.methods ~= copy;
+		}
+	}
 	dirEntries("base", SpanMode.shallow).array.sort!"a < b".each!(processIDL);
 	foreach (ref mod; modules)
 		mod.fixTypes;
@@ -412,7 +425,8 @@ void processIDL(string file)
 					enforce(content.name == "IDL.definition_content");
 					if (content.children.length == 1 && content.children[0].name == "IDL.uuid")
 					{
-						uuid = content.children[0].children.map!(a => a.matches[0]).join("-").toLower;
+						uuid = content.children[0].children.map!(a => a.matches[0])
+							.join("-").toLower;
 						return;
 					}
 				}
@@ -537,7 +551,8 @@ void processIDL(string file)
 					foreach_reverse (content; attrib.children)
 					{
 						enforce(content.name == "IDL.definition_content");
-						if (content.children.length == 1 && content.children[0].name == "IDL.exclusiveto")
+						if (content.children.length == 1
+								&& content.children[0].name == "IDL.exclusiveto")
 						{
 							enforce(content.children[0].children[0].name == "IDL.scoped_name");
 							obj.exclusiveto = content.children[0].children[0].matches.join("");
@@ -763,7 +778,8 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 				}
 				else
 				{
-					if (spec.children.length == 1 && spec.children[0].name == "IDL.op_overload_attribute")
+					if (spec.children.length == 1
+							&& spec.children[0].name == "IDL.op_overload_attribute")
 					{
 						enforce(spec.children[0].children.length == 1);
 						method.name = spec.children[0].children[0].parseString;
@@ -802,7 +818,8 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 									argument.direction |= ArgumentDirection.out_;
 									break;
 								case "inout":
-									argument.direction |= ArgumentDirection.in_ | ArgumentDirection.out_;
+									argument.direction |= ArgumentDirection.in_
+										| ArgumentDirection.out_;
 									break;
 								case "retval":
 									argument.direction |= ArgumentDirection.retval;
@@ -811,7 +828,8 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 								case "unique":
 									break;
 								default:
-									throw new Exception("Invalid parameter attribute: " ~ attr.matches[0]);
+									throw new Exception(
+											"Invalid parameter attribute: " ~ attr.matches[0]);
 								}
 							}
 						}
@@ -1028,8 +1046,8 @@ Interface findInterface(string fullname)
 		}
 	}
 	throw new Exception(
-			"Interface not found: " ~ fullname ~ ", searched for " ~ name ~ " in " ~ parts[0 .. $ - 1].join(
-			"."));
+			"Interface not found: " ~ fullname ~ ", searched for " ~ name ~ " in "
+			~ parts[0 .. $ - 1].join("."));
 }
 
 struct Enum
@@ -1131,11 +1149,18 @@ struct Interface
 		instanced.exclusiveto = exclusiveto;
 		instanced.isDelegate = isDelegate;
 		instanced.isRuntimeClass = isRuntimeClass;
-		instanced.methods = methods.dup;
-		foreach (ref method; instanced.methods)
-			foreach (ref arg; method.arguments)
+		foreach (method; methods)
+		{
+			auto copy = method;
+			copy.arguments = [];
+			foreach (arg; method.arguments)
+			{
 				for (int i = 0; i < types.length; i++)
 					arg.type = arg.type.replace(templateArgs[i], types[i]);
+				copy.arguments ~= arg;
+			}
+			instanced.methods ~= copy;
+		}
 		return instanced;
 	}
 
@@ -1155,7 +1180,8 @@ struct Interface
 	{
 		if (!isRuntimeClass)
 			return;
-		enforce(methods.length == 0, "Is runtime class but got " ~ methods.to!string ~ " as methods.");
+		enforce(methods.length == 0,
+				"Is runtime class but got " ~ methods.to!string ~ " as methods.");
 		foreach (base; implements)
 			implement(base, findInterface(base));
 	}
@@ -1170,78 +1196,9 @@ struct Interface
 		{
 			if (method.implementation.length)
 				continue;
-			if (method.type == InterfaceType.eventadd)
-			{
-				enforce(method.arguments.length == 2);
-				string name = method.fullName;
-				if (method.arguments[0].type.startsWith("Windows.Foundation.TypedEventHandler!("))
-				{
-					enforce(method.arguments[1].type == "EventRegistrationToken*", method.arguments[1].type);
-					string type = method.arguments[0].type;
-					string args = type["Windows.Foundation.TypedEventHandler!(".length .. $ - 1];
-					method.arguments = [InterfaceArgument(ArgumentDirection.in_,
-							"void delegate(" ~ args ~ ")", "fn")];
-					method.name = "On" ~ method.name;
-					method.returnType = "EventRegistrationToken";
-					string registerCall = "Debug.OK(" ~ name ~ "(event!(" ~ type ~ ", "
-						~ args ~ ")(fn), &tok));";
-					method.implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
-					methods ~= method;
-				}
-				else
-				{
-					writeln("TODO implement EventHandler Type ", method.arguments[0].type);
-				}
-			}
-			else if (method.type == InterfaceType.eventremove)
-			{
-				enforce(method.arguments.length == 1);
-				string name = method.fullName;
-				method.name = "remove" ~ method.name;
-				method.returnType = "void";
-				method.implementation = "Debug.OK(" ~ name ~ "(" ~ method.arguments[0].fullName ~ "));";
-				writeln(method);
+			method.implement(baseName);
+			if (method.implementation.length)
 				methods ~= method;
-			}
-			else
-			{
-				string name = method.fullName;
-				int returnIndex = -1;
-				foreach (i, arg; method.arguments)
-				{
-					if (arg.direction & ArgumentDirection.retval)
-					{
-						method.returnType = arg.type;
-						enforce(method.returnType[$ - 1] == '*');
-						method.returnType.length--;
-						returnIndex = cast(int) i;
-						break;
-					}
-				}
-				if (returnIndex != -1)
-				{
-					string argsPre = method.arguments[0 .. returnIndex].map!"a.fullName".join(", ");
-					if (argsPre.length)
-						argsPre ~= ", ";
-					string argsPost = method.arguments[returnIndex + 1 .. $].map!"a.fullName".join(", ");
-					method.arguments = method.arguments[0 .. returnIndex]
-						~ method.arguments[returnIndex + 1 .. $];
-					string pre = method.returnType ~ " _ret;\n";
-					string args = argsPre ~ "&_ret";
-					if (argsPost.length)
-						args ~= ", " ~ argsPost;
-					string post = "\nreturn _ret;";
-					method.implementation = pre ~ "Debug.OK(this.as!(" ~ baseName ~ ")."
-						~ name ~ "(" ~ args ~ "));" ~ post;
-				}
-				else
-				{
-					string args = method.arguments.map!"a.fullName".join(", ");
-					method.returnType = "void";
-					method.implementation = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ name ~ "(" ~ args ~ "));";
-				}
-				methods ~= method;
-			}
 		}
 	}
 
@@ -1287,6 +1244,77 @@ struct InterfaceMethod
 	InterfaceArgument[] arguments;
 	bool typeFixed;
 	string implementation;
+
+	void implement(string baseName)
+	{
+		if (type == InterfaceType.eventadd)
+		{
+			enforce(arguments.length == 2);
+			string fname = fullName;
+			if (arguments[0].type.startsWith("Windows.Foundation.TypedEventHandler!("))
+			{
+				enforce(arguments[1].type == "EventRegistrationToken*", arguments[1].type);
+				string type = arguments[0].type;
+				string args = type["Windows.Foundation.TypedEventHandler!(".length .. $ - 1];
+				arguments = [InterfaceArgument(ArgumentDirection.in_,
+						"void delegate(" ~ args ~ ")", "fn")];
+				name = "On" ~ name;
+				returnType = "EventRegistrationToken";
+				string registerCall = "Debug.OK(" ~ fname ~ "(event!(" ~ type
+					~ ", " ~ args ~ ")(fn), &tok));";
+				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
+			}
+			else
+			{
+				writeln("TODO implement EventHandler Type ", arguments[0].type);
+			}
+		}
+		else if (type == InterfaceType.eventremove)
+		{
+			enforce(arguments.length == 1);
+			string fname = fullName;
+			name = "remove" ~ name;
+			returnType = "void";
+			implementation = "Debug.OK(" ~ fname ~ "(" ~ arguments[0].fullName ~ "));";
+		}
+		else
+		{
+			string fname = fullName;
+			int returnIndex = -1;
+			foreach (i, arg; arguments)
+			{
+				if (arg.direction & ArgumentDirection.retval)
+				{
+					returnType = arg.type;
+					enforce(returnType[$ - 1] == '*');
+					returnType.length--;
+					returnIndex = cast(int) i;
+					break;
+				}
+			}
+			if (returnIndex != -1)
+			{
+				string argsPre = arguments[0 .. returnIndex].map!"a.fullName".join(", ");
+				if (argsPre.length)
+					argsPre ~= ", ";
+				string argsPost = arguments[returnIndex + 1 .. $].map!"a.fullName".join(", ");
+				arguments = arguments[0 .. returnIndex] ~ arguments[returnIndex + 1 .. $];
+				string pre = returnType ~ " _ret;\n";
+				string args = argsPre ~ "&_ret";
+				if (argsPost.length)
+					args ~= ", " ~ argsPost;
+				string post = "\nreturn _ret;";
+				implementation = pre ~ "Debug.OK(this.as!(" ~ baseName ~ ")."
+					~ fname ~ "(" ~ args ~ "));" ~ post;
+			}
+			else
+			{
+				string args = arguments.map!"a.fullName".join(", ");
+				returnType = "void";
+				implementation = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname ~ "(" ~ args ~ "));";
+			}
+		}
+	}
 
 	void fixTypes()
 	{

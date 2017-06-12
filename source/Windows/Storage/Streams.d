@@ -374,19 +374,19 @@ extern(Windows):
 interface DataReaderLoadOperation : Windows.Foundation.IAsyncOperation!(UINT32)
 {
 extern(Windows):
-	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) handler)
+	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(UINT32) handler)
 	{
 		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(UINT32)).set_Completed(handler));
 	}
-	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) Completed()
+	final Windows.Foundation.AsyncOperationCompletedHandler!(UINT32) Completed()
 	{
-		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) _ret;
+		Windows.Foundation.AsyncOperationCompletedHandler!(UINT32) _ret;
 		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(UINT32)).get_Completed(&_ret));
 		return _ret;
 	}
-	final Windows.Devices.Sms.SmsDevice Results()
+	final UINT32 Results()
 	{
-		Windows.Devices.Sms.SmsDevice _ret;
+		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(UINT32)).get_Results(&_ret));
 		return _ret;
 	}
@@ -530,19 +530,19 @@ extern(Windows):
 interface DataWriterStoreOperation : Windows.Foundation.IAsyncOperation!(UINT32)
 {
 extern(Windows):
-	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) handler)
+	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(UINT32) handler)
 	{
 		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(UINT32)).set_Completed(handler));
 	}
-	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) Completed()
+	final Windows.Foundation.AsyncOperationCompletedHandler!(UINT32) Completed()
 	{
-		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) _ret;
+		Windows.Foundation.AsyncOperationCompletedHandler!(UINT32) _ret;
 		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(UINT32)).get_Completed(&_ret));
 		return _ret;
 	}
-	final Windows.Devices.Sms.SmsDevice Results()
+	final UINT32 Results()
 	{
-		Windows.Devices.Sms.SmsDevice _ret;
+		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(UINT32)).get_Results(&_ret));
 		return _ret;
 	}

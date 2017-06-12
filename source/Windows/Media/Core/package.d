@@ -1924,7 +1924,7 @@ extern(Windows):
 interface MediaStreamSamplePropertySet : Windows.Foundation.Collections.IMap!(GUID, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(GUID, IInspectable))
 {
 extern(Windows):
-	final  IInspectable Lookup(HSTRING key)
+	final  IInspectable Lookup(GUID key)
 	{
 		 IInspectable _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_Lookup(key, &_ret));
@@ -1936,25 +1936,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).get_Size(&_ret));
 		return _ret;
 	}
-	final bool HasKey(HSTRING key)
+	final bool HasKey(GUID key)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_HasKey(key, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
+	final Windows.Foundation.Collections.IMapView!(GUID,  IInspectable) GetView()
 	{
-		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
+		Windows.Foundation.Collections.IMapView!(GUID,	IInspectable) _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	IInspectable value)
+	final bool Insert(GUID key,	 IInspectable value)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_Insert(key, value, &_ret));
 		return _ret;
 	}
-	final void Remove(HSTRING key)
+	final void Remove(GUID key)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_Remove(key));
 	}
@@ -1962,7 +1962,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_Clear());
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(GUID, IInspectable))* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(GUID, IInspectable))).abi_First(out_first));
 	}

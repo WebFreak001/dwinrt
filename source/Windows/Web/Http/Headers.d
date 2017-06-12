@@ -736,9 +736,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCacheDirectiveHeaderValueCollection).abi_TryParseAdd(input, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.Web.Http.Headers.HttpNameValueHeaderValue GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.Web.Http.Headers.HttpNameValueHeaderValue _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -748,21 +748,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.Web.Http.Headers.HttpNameValueHeaderValue value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.Web.Http.Headers.HttpNameValueHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.Web.Http.Headers.HttpNameValueHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)).abi_InsertAt(index, item));
 	}
@@ -770,7 +770,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.Web.Http.Headers.HttpNameValueHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)).abi_Append(item));
 	}
@@ -782,15 +782,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Web.Http.Headers.HttpNameValueHeaderValue* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.Web.Http.Headers.HttpNameValueHeaderValue* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)).abi_First(out_first));
 	}
@@ -844,9 +844,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpChallengeHeaderValueCollection).abi_TryParseAdd(input, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.Web.Http.Headers.HttpChallengeHeaderValue GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.Web.Http.Headers.HttpChallengeHeaderValue _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -856,21 +856,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.Web.Http.Headers.HttpChallengeHeaderValue value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.Web.Http.Headers.HttpChallengeHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.Web.Http.Headers.HttpChallengeHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)).abi_InsertAt(index, item));
 	}
@@ -878,7 +878,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.Web.Http.Headers.HttpChallengeHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)).abi_Append(item));
 	}
@@ -890,15 +890,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Web.Http.Headers.HttpChallengeHeaderValue* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.Web.Http.Headers.HttpChallengeHeaderValue* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)).abi_First(out_first));
 	}
@@ -940,9 +940,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpConnectionOptionHeaderValueCollection).abi_TryParseAdd(input, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -952,21 +952,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)).abi_InsertAt(index, item));
 	}
@@ -974,7 +974,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)).abi_Append(item));
 	}
@@ -986,15 +986,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)).abi_First(out_first));
 	}
@@ -1036,9 +1036,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentCodingHeaderValueCollection).abi_TryParseAdd(input, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.Web.Http.Headers.HttpContentCodingHeaderValue GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.Web.Http.Headers.HttpContentCodingHeaderValue _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -1048,21 +1048,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.Web.Http.Headers.HttpContentCodingHeaderValue value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.Web.Http.Headers.HttpContentCodingHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.Web.Http.Headers.HttpContentCodingHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)).abi_InsertAt(index, item));
 	}
@@ -1070,7 +1070,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.Web.Http.Headers.HttpContentCodingHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)).abi_Append(item));
 	}
@@ -1082,15 +1082,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Web.Http.Headers.HttpContentCodingHeaderValue* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.Web.Http.Headers.HttpContentCodingHeaderValue* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)).abi_First(out_first));
 	}
@@ -1138,9 +1138,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentCodingWithQualityHeaderValueCollection).abi_TryParseAdd(input, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -1150,21 +1150,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)).abi_InsertAt(index, item));
 	}
@@ -1172,7 +1172,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)).abi_Append(item));
 	}
@@ -1184,15 +1184,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)).abi_First(out_first));
 	}
@@ -1376,9 +1376,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).abi_TryAppendWithoutValidation(name, value, &_ret));
 		return _ret;
 	}
-	final  IInspectable Lookup(HSTRING key)
+	final  HSTRING Lookup(HSTRING key)
 	{
-		 IInspectable _ret;
+		 HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Lookup(key, &_ret));
 		return _ret;
 	}
@@ -1394,13 +1394,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_HasKey(key, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
+	final Windows.Foundation.Collections.IMapView!(HSTRING,	 HSTRING) GetView()
 	{
-		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
+		Windows.Foundation.Collections.IMapView!(HSTRING,  HSTRING) _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	IInspectable value)
+	final bool Insert(HSTRING key,	HSTRING value)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Insert(key, value, &_ret));
@@ -1414,7 +1414,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Clear());
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))).abi_First(out_first));
 	}
@@ -1505,9 +1505,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpCookiePairHeaderValueCollection).abi_TryParseAdd(input, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.Web.Http.Headers.HttpCookiePairHeaderValue GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.Web.Http.Headers.HttpCookiePairHeaderValue _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -1517,21 +1517,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.Web.Http.Headers.HttpCookiePairHeaderValue value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.Web.Http.Headers.HttpCookiePairHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.Web.Http.Headers.HttpCookiePairHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)).abi_InsertAt(index, item));
 	}
@@ -1539,7 +1539,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.Web.Http.Headers.HttpCookiePairHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)).abi_Append(item));
 	}
@@ -1551,15 +1551,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Web.Http.Headers.HttpCookiePairHeaderValue* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.Web.Http.Headers.HttpCookiePairHeaderValue* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)).abi_First(out_first));
 	}
@@ -1669,9 +1669,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpExpectationHeaderValueCollection).abi_TryParseAdd(input, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.Web.Http.Headers.HttpExpectationHeaderValue GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.Web.Http.Headers.HttpExpectationHeaderValue _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -1681,21 +1681,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.Web.Http.Headers.HttpExpectationHeaderValue value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.Web.Http.Headers.HttpExpectationHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.Web.Http.Headers.HttpExpectationHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)).abi_InsertAt(index, item));
 	}
@@ -1703,7 +1703,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.Web.Http.Headers.HttpExpectationHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)).abi_Append(item));
 	}
@@ -1715,15 +1715,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Web.Http.Headers.HttpExpectationHeaderValue* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.Web.Http.Headers.HttpExpectationHeaderValue* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)).abi_First(out_first));
 	}
@@ -1748,9 +1748,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpLanguageHeaderValueCollection).abi_TryParseAdd(input, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.Globalization.Language GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.Globalization.Language _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Globalization.Language)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -1760,21 +1760,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Globalization.Language)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Globalization.Language)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.Globalization.Language value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Globalization.Language)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.Globalization.Language item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Globalization.Language)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.Globalization.Language item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Globalization.Language)).abi_InsertAt(index, item));
 	}
@@ -1782,7 +1782,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Globalization.Language)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.Globalization.Language item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Globalization.Language)).abi_Append(item));
 	}
@@ -1794,15 +1794,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Globalization.Language)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Globalization.Language* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Globalization.Language)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.Globalization.Language* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Globalization.Language)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Globalization.Language)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Globalization.Language)).abi_First(out_first));
 	}
@@ -1850,9 +1850,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpLanguageRangeWithQualityHeaderValueCollection).abi_TryParseAdd(input, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -1862,21 +1862,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)).abi_InsertAt(index, item));
 	}
@@ -1884,7 +1884,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)).abi_Append(item));
 	}
@@ -1896,15 +1896,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)).abi_First(out_first));
 	}
@@ -2013,9 +2013,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValueCollection).abi_TryParseAdd(input, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -2025,21 +2025,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)).abi_InsertAt(index, item));
 	}
@@ -2047,7 +2047,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)).abi_Append(item));
 	}
@@ -2059,15 +2059,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)).abi_First(out_first));
 	}
@@ -2092,9 +2092,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpMethodHeaderValueCollection).abi_TryParseAdd(input, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.Web.Http.HttpMethod GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.Web.Http.HttpMethod _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -2104,21 +2104,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.HttpMethod)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.Web.Http.HttpMethod value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.Web.Http.HttpMethod item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.Web.Http.HttpMethod item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod)).abi_InsertAt(index, item));
 	}
@@ -2126,7 +2126,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.Web.Http.HttpMethod item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod)).abi_Append(item));
 	}
@@ -2138,15 +2138,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Web.Http.HttpMethod* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.Web.Http.HttpMethod* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.HttpMethod)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.HttpMethod)).abi_First(out_first));
 	}
@@ -2244,9 +2244,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpProductInfoHeaderValueCollection).abi_TryParseAdd(input, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.Web.Http.Headers.HttpProductInfoHeaderValue GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.Web.Http.Headers.HttpProductInfoHeaderValue _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -2256,21 +2256,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.Web.Http.Headers.HttpProductInfoHeaderValue value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.Web.Http.Headers.HttpProductInfoHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.Web.Http.Headers.HttpProductInfoHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)).abi_InsertAt(index, item));
 	}
@@ -2278,7 +2278,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.Web.Http.Headers.HttpProductInfoHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)).abi_Append(item));
 	}
@@ -2290,15 +2290,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Web.Http.Headers.HttpProductInfoHeaderValue* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.Web.Http.Headers.HttpProductInfoHeaderValue* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)).abi_First(out_first));
 	}
@@ -2467,9 +2467,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpRequestHeaderCollection).abi_TryAppendWithoutValidation(name, value, &_ret));
 		return _ret;
 	}
-	final  IInspectable Lookup(HSTRING key)
+	final  HSTRING Lookup(HSTRING key)
 	{
-		 IInspectable _ret;
+		 HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Lookup(key, &_ret));
 		return _ret;
 	}
@@ -2485,13 +2485,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_HasKey(key, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
+	final Windows.Foundation.Collections.IMapView!(HSTRING,	 HSTRING) GetView()
 	{
-		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
+		Windows.Foundation.Collections.IMapView!(HSTRING,  HSTRING) _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	IInspectable value)
+	final bool Insert(HSTRING key,	HSTRING value)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Insert(key, value, &_ret));
@@ -2505,7 +2505,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Clear());
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))).abi_First(out_first));
 	}
@@ -2606,9 +2606,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpResponseHeaderCollection).abi_TryAppendWithoutValidation(name, value, &_ret));
 		return _ret;
 	}
-	final  IInspectable Lookup(HSTRING key)
+	final  HSTRING Lookup(HSTRING key)
 	{
-		 IInspectable _ret;
+		 HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Lookup(key, &_ret));
 		return _ret;
 	}
@@ -2624,13 +2624,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_HasKey(key, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
+	final Windows.Foundation.Collections.IMapView!(HSTRING,	 HSTRING) GetView()
 	{
-		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
+		Windows.Foundation.Collections.IMapView!(HSTRING,  HSTRING) _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	IInspectable value)
+	final bool Insert(HSTRING key,	HSTRING value)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Insert(key, value, &_ret));
@@ -2644,7 +2644,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Clear());
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))).abi_First(out_first));
 	}
@@ -2692,9 +2692,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpTransferCodingHeaderValueCollection).abi_TryParseAdd(input, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.IJsonValue GetAt(uint index)
+	final Windows.Web.Http.Headers.HttpTransferCodingHeaderValue GetAt(uint index)
 	{
-		Windows.Data.Json.IJsonValue _ret;
+		Windows.Web.Http.Headers.HttpTransferCodingHeaderValue _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)).get_GetAt(index, &_ret));
 		return _ret;
 	}
@@ -2704,21 +2704,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)).get_Size(&_ret));
 		return _ret;
 	}
-	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
+	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)* out_view)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)).abi_GetView(out_view));
 	}
-	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
+	final uint IndexOf(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue value, bool* out_found)
 	{
 		uint _ret;
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void SetAt(uint index, Windows.Web.Http.Headers.HttpTransferCodingHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)).abi_SetAt(index, item));
 	}
-	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
+	final void InsertAt(uint index, Windows.Web.Http.Headers.HttpTransferCodingHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)).abi_InsertAt(index, item));
 	}
@@ -2726,7 +2726,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)).abi_RemoveAt(index));
 	}
-	final void Append(Windows.Data.Json.IJsonValue item)
+	final void Append(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue item)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)).abi_Append(item));
 	}
@@ -2738,15 +2738,15 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)).abi_Clear());
 	}
-	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
+	final void GetMany(uint startIndex, uint capacity, Windows.Web.Http.Headers.HttpTransferCodingHeaderValue* out_value, uint* out_actual)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
-	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
+	final void ReplaceAll(uint count, Windows.Web.Http.Headers.HttpTransferCodingHeaderValue* out_value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)).abi_ReplaceAll(count, out_value));
 	}
-	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
+	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)).abi_First(out_first));
 	}
