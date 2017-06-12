@@ -39,7 +39,7 @@ extern(Windows):
 
 @uuid("f584184a-8b57-4820-b6a4-70a5b6fcf44a")
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebAuthenticationCoreManager")
-interface IWebAuthenticationCoreManagerStatics2 : IInspectable
+interface IWebAuthenticationCoreManagerStatics2 : IInspectable, Windows.Security.Authentication.Web.Core.IWebAuthenticationCoreManagerStatics
 {
 extern(Windows):
 	HRESULT abi_FindAccountProviderWithAuthorityForUserAsync(HSTRING webAccountProviderId, HSTRING authority, Windows.System.User user, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider)* return_asyncInfo);
@@ -47,7 +47,7 @@ extern(Windows):
 
 @uuid("2404eeb2-8924-4d93-ab3a-99688b419d56")
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebAuthenticationCoreManager")
-interface IWebAuthenticationCoreManagerStatics3 : IInspectable
+interface IWebAuthenticationCoreManagerStatics3 : IInspectable, Windows.Security.Authentication.Web.Core.IWebAuthenticationCoreManagerStatics
 {
 extern(Windows):
 	HRESULT abi_CreateWebAccountMonitor(Windows.Foundation.Collections.IIterable!(Windows.Security.Credentials.WebAccount) webAccounts, Windows.Security.Authentication.Web.Core.WebAccountMonitor* return_result);

@@ -85,7 +85,7 @@ extern(Windows):
 
 @uuid("0f534261-c55d-4e6b-a895-a19de69a42e3")
 @WinrtFactory("Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver")
-interface ISpatialSurfaceObserverStatics2 : IInspectable
+interface ISpatialSurfaceObserverStatics2 : IInspectable, Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserverStatics
 {
 extern(Windows):
 	HRESULT abi_IsSupported(bool* return_value);

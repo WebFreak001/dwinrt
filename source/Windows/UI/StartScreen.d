@@ -105,7 +105,7 @@ extern(Windows):
 
 @uuid("b2f6cc35-3250-4990-923c-294ab4b694dd")
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTile")
-interface ISecondaryTile2 : IInspectable
+interface ISecondaryTile2 : IInspectable, Windows.UI.StartScreen.ISecondaryTile
 {
 extern(Windows):
 	HRESULT set_PhoneticName(HSTRING value);
@@ -131,7 +131,7 @@ extern(Windows):
 
 @uuid("274b8a3b-522d-448e-9eb2-d0672ab345c8")
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTile")
-interface ISecondaryTileFactory2 : IInspectable
+interface ISecondaryTileFactory2 : IInspectable, Windows.UI.StartScreen.ISecondaryTileFactory
 {
 extern(Windows):
 	HRESULT abi_CreateMinimalTile(HSTRING tileId, HSTRING displayName, HSTRING arguments, Windows.Foundation.Uri square150x150Logo, Windows.UI.StartScreen.TileSize desiredSize, Windows.UI.StartScreen.SecondaryTile* return_value);

@@ -157,7 +157,7 @@ extern(Windows):
 
 @uuid("fc535c8a-f667-40f3-ba3c-045a63abb3ac")
 @WinrtFactory("Windows.ApplicationModel.Store.ProductLicense")
-interface IProductLicenseWithFulfillment : IInspectable
+interface IProductLicenseWithFulfillment : IInspectable, Windows.ApplicationModel.Store.IProductLicense
 {
 extern(Windows):
 	HRESULT get_IsConsumable(bool* return_value);
@@ -194,7 +194,7 @@ extern(Windows):
 
 @uuid("124da567-23f8-423e-9532-189943c40ace")
 @WinrtFactory("Windows.ApplicationModel.Store.ProductListing")
-interface IProductListingWithMetadata : IInspectable
+interface IProductListingWithMetadata : IInspectable, Windows.ApplicationModel.Store.IProductListing
 {
 extern(Windows):
 	HRESULT get_Description(HSTRING* return_value);

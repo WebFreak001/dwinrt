@@ -33,7 +33,7 @@ extern(Windows):
 
 @uuid("c54691e5-e6fb-4d74-b4b1-8a3c17f25e9e")
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragInfo")
-interface ICoreDragInfo2 : IInspectable
+interface ICoreDragInfo2 : IInspectable, Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragInfo
 {
 extern(Windows):
 	HRESULT get_AllowedOperations(Windows.ApplicationModel.DataTransfer.DataPackageOperation* return_value);
@@ -55,7 +55,7 @@ extern(Windows):
 
 @uuid("824b1e2c-d99a-4fc3-8507-6c182f33b46a")
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragOperation")
-interface ICoreDragOperation2 : IInspectable
+interface ICoreDragOperation2 : IInspectable, Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation
 {
 extern(Windows):
 	HRESULT get_AllowedOperations(Windows.ApplicationModel.DataTransfer.DataPackageOperation* return_value);

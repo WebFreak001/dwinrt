@@ -26,7 +26,7 @@ extern(Windows):
 
 @uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67")
 @WinrtFactory("Windows.Devices.Scanners.ImageScannerFeederConfiguration")
-interface IImageScannerFeederConfiguration : IInspectable
+interface IImageScannerFeederConfiguration : IInspectable, Windows.Devices.Scanners.IImageScannerFormatConfiguration, Windows.Devices.Scanners.IImageScannerSourceConfiguration
 {
 extern(Windows):
 	HRESULT get_CanAutoDetectPageSize(bool* return_value);
@@ -76,7 +76,7 @@ extern(Windows):
 }
 
 @uuid("bfb50055-0b44-4c82-9e89-205f9c234e59")
-interface IImageScannerSourceConfiguration : IInspectable
+interface IImageScannerSourceConfiguration : IInspectable, Windows.Devices.Scanners.IImageScannerFormatConfiguration
 {
 extern(Windows):
 	HRESULT get_MinScanArea(Windows.Foundation.Size* return_value);

@@ -12,7 +12,7 @@ extern(Windows):
 
 @uuid("af908a2d-118b-48f1-9308-0c4fc41e200f")
 @WinrtFactory("Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionSession")
-interface IExtendedExecutionSession : IInspectable
+interface IExtendedExecutionSession : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_Reason(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionReason* return_value);

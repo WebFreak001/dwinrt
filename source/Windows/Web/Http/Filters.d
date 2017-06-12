@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb")
 @WinrtFactory("Windows.Web.Http.Filters.HttpBaseProtocolFilter")
-interface IHttpBaseProtocolFilter : IInspectable
+interface IHttpBaseProtocolFilter : IInspectable, Windows.Web.Http.Filters.IHttpFilter, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_AllowAutoRedirect(bool* return_value);
@@ -30,7 +30,7 @@ extern(Windows):
 
 @uuid("2ec30013-9427-4900-a017-fa7da3b5c9ae")
 @WinrtFactory("Windows.Web.Http.Filters.HttpBaseProtocolFilter")
-interface IHttpBaseProtocolFilter2 : IInspectable
+interface IHttpBaseProtocolFilter2 : IInspectable, Windows.Web.Http.Filters.IHttpFilter, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_MaxVersion(Windows.Web.Http.HttpVersion* return_value);
@@ -39,7 +39,7 @@ extern(Windows):
 
 @uuid("d43f4d4c-bd42-43ae-8717-ad2c8f4b2937")
 @WinrtFactory("Windows.Web.Http.Filters.HttpBaseProtocolFilter")
-interface IHttpBaseProtocolFilter3 : IInspectable
+interface IHttpBaseProtocolFilter3 : IInspectable, Windows.Web.Http.Filters.IHttpFilter, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_CookieUsageBehavior(Windows.Web.Http.Filters.HttpCookieUsageBehavior* return_value);
@@ -48,7 +48,7 @@ extern(Windows):
 
 @uuid("9fe36ccf-2983-4893-941f-eb518ca8cef9")
 @WinrtFactory("Windows.Web.Http.Filters.HttpBaseProtocolFilter")
-interface IHttpBaseProtocolFilter4 : IInspectable
+interface IHttpBaseProtocolFilter4 : IInspectable, Windows.Web.Http.Filters.IHttpFilter, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
@@ -68,7 +68,7 @@ extern(Windows):
 }
 
 @uuid("a4cb6dd5-0902-439e-bfd7-e12552b165ce")
-interface IHttpFilter : IInspectable
+interface IHttpFilter : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT abi_SendRequestAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);

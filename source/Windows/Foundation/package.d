@@ -65,7 +65,7 @@ extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, TArgs args);
 	final void Invoke(IInspectable sender, TArgs args)
 	{
-		Debug.OK(this.as!(Windows.Foundation.EventHandler).abi_Invoke(sender, args));
+		Debug.OK(this.as!(Windows.Foundation.EventHandler!(TArgs)).abi_Invoke(sender, args));
 	}
 }
 
@@ -75,7 +75,7 @@ extern(Windows):
 	HRESULT abi_Invoke(TSender sender, TArgs args);
 	final void Invoke(TSender sender, TArgs args)
 	{
-		Debug.OK(this.as!(Windows.Foundation.TypedEventHandler).abi_Invoke(sender, args));
+		Debug.OK(this.as!(Windows.Foundation.TypedEventHandler!(TSender, TArgs)).abi_Invoke(sender, args));
 	}
 }
 
@@ -86,12 +86,12 @@ extern(Windows):
 	HRESULT get_Progress(Windows.Foundation.AsyncActionProgressHandler!(TProgress)* return_handler);
 	final void Progress(Windows.Foundation.AsyncActionProgressHandler!(TProgress) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncActionWithProgress).set_Progress(handler));
+		Debug.OK(this.as!(Windows.Foundation.IAsyncActionWithProgress!(TProgress)).set_Progress(handler));
 	}
 	final Windows.Foundation.AsyncActionProgressHandler!(TProgress) Progress()
 	{
 		Windows.Foundation.AsyncActionProgressHandler!(TProgress) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncActionWithProgress).get_Progress(&_ret));
+		Debug.OK(this.as!(Windows.Foundation.IAsyncActionWithProgress!(TProgress)).get_Progress(&_ret));
 		return _ret;
 	}
 }
@@ -102,7 +102,7 @@ extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, TProgress progressInfo);
 	final void Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, TProgress progressInfo)
 	{
-		Debug.OK(this.as!(Windows.Foundation.AsyncActionProgressHandler).abi_Invoke(asyncInfo, progressInfo));
+		Debug.OK(this.as!(Windows.Foundation.AsyncActionProgressHandler!(TProgress)).abi_Invoke(asyncInfo, progressInfo));
 	}
 }
 
@@ -112,35 +112,30 @@ extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, AsyncStatus status);
 	final void Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, AsyncStatus status)
 	{
-		Debug.OK(this.as!(Windows.Foundation.AsyncActionWithProgressCompletedHandler).abi_Invoke(asyncInfo, status));
+		Debug.OK(this.as!(Windows.Foundation.AsyncActionWithProgressCompletedHandler!(TProgress)).abi_Invoke(asyncInfo, status));
 	}
 }
 
-interface IAsyncOperation(TResult) : IInspectable
+interface IAsyncOperation(TResult) : IAsyncInfo
 {
 extern(Windows):
 	HRESULT set_Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult) handler);
 	HRESULT get_Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult)* return_handler);
 	HRESULT get_Results(TResult* return_results);
-	final TResult get()
-	{
-		blocking_suspend(this);
-		return Results;
-	}
 	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation).set_Completed(handler));
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(TResult)).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncOperationCompletedHandler!(TResult) Completed()
 	{
 		Windows.Foundation.AsyncOperationCompletedHandler!(TResult) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation).get_Completed(&_ret));
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(TResult)).get_Completed(&_ret));
 		return _ret;
 	}
 	final TResult Results()
 	{
 		TResult _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation).get_Results(&_ret));
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(TResult)).get_Results(&_ret));
 		return _ret;
 	}
 }
@@ -151,7 +146,7 @@ extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, TProgress progressInfo);
 	final void Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, TProgress progressInfo)
 	{
-		Debug.OK(this.as!(Windows.Foundation.AsyncOperationProgressHandler).abi_Invoke(asyncInfo, progressInfo));
+		Debug.OK(this.as!(Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress)).abi_Invoke(asyncInfo, progressInfo));
 	}
 }
 
@@ -161,7 +156,7 @@ extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperation!(TResult) asyncInfo, AsyncStatus status);
 	final void Invoke(Windows.Foundation.IAsyncOperation!(TResult) asyncInfo, AsyncStatus status)
 	{
-		Debug.OK(this.as!(Windows.Foundation.AsyncOperationCompletedHandler).abi_Invoke(asyncInfo, status));
+		Debug.OK(this.as!(Windows.Foundation.AsyncOperationCompletedHandler!(TResult)).abi_Invoke(asyncInfo, status));
 	}
 }
 
@@ -175,28 +170,28 @@ extern(Windows):
 	HRESULT get_Results(TResult* return_results);
 	final void Progress(Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress).set_Progress(handler));
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress)).set_Progress(handler));
 	}
 	final Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress) Progress()
 	{
 		Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress).get_Progress(&_ret));
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress)).get_Progress(&_ret));
 		return _ret;
 	}
 	final void Completed(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress).set_Completed(handler));
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress)).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) Completed()
 	{
 		Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress).get_Completed(&_ret));
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress)).get_Completed(&_ret));
 		return _ret;
 	}
 	final TResult Results()
 	{
 		TResult _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress).get_Results(&_ret));
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress)).get_Results(&_ret));
 		return _ret;
 	}
 }
@@ -207,7 +202,7 @@ extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status);
 	final void Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status)
 	{
-		Debug.OK(this.as!(Windows.Foundation.AsyncOperationWithProgressCompletedHandler).abi_Invoke(asyncInfo, status));
+		Debug.OK(this.as!(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)).abi_Invoke(asyncInfo, status));
 	}
 }
 
@@ -218,7 +213,7 @@ extern(Windows):
 	final Type Value()
 	{
 		Type _ret;
-		Debug.OK(this.as!(Windows.Foundation.IReference).get_Value(&_ret));
+		Debug.OK(this.as!(Windows.Foundation.IReference!(Type)).get_Value(&_ret));
 		return _ret;
 	}
 }
@@ -285,12 +280,22 @@ extern(Windows):
 }
 
 @uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")
-interface IAsyncAction : IInspectable
+interface IAsyncAction : IInspectable, IAsyncInfo
 {
 extern(Windows):
 	HRESULT set_Completed(Windows.Foundation.AsyncActionCompletedHandler handler);
 	HRESULT get_Completed(Windows.Foundation.AsyncActionCompletedHandler* return_handler);
 	HRESULT abi_GetResults();
+	final Windows.Foundation.AsyncActionCompletedHandler Completed()
+	{
+		Windows.Foundation.AsyncActionCompletedHandler ret;
+		Debug.OK(this.as!(IAsyncAction).get_Completed(&ret));
+		return ret;
+	}
+	final void Completed(Windows.Foundation.AsyncActionCompletedHandler handler)
+	{
+		Debug.OK(this.as!(IAsyncAction).set_Completed(handler));
+	}
 }
 
 @uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e")
@@ -302,7 +307,7 @@ extern(Windows):
 
 @uuid("d6269732-3b7f-46a7-b40b-4fdca2a2c693")
 @WinrtFactory("Windows.Foundation.Deferral")
-interface IDeferral : IInspectable
+interface IDeferral : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT abi_Complete();
@@ -324,7 +329,7 @@ extern(Windows):
 }
 
 @uuid("fbc4dd2a-245b-11e4-af98-689423260cf8")
-interface IMemoryBuffer : IInspectable
+interface IMemoryBuffer : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT abi_CreateReference(Windows.Foundation.IMemoryBufferReference* return_reference);
@@ -339,7 +344,7 @@ extern(Windows):
 }
 
 @uuid("fbc4dd29-245b-11e4-af98-689423260cf8")
-interface IMemoryBufferReference : IInspectable
+interface IMemoryBufferReference : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_Capacity(UINT32* return_value);
@@ -506,7 +511,7 @@ extern(Windows):
 
 @uuid("d45a0451-f225-4542-9296-0e1df5d254df")
 @WinrtFactory("Windows.Foundation.WwwFormUrlDecoder")
-interface IWwwFormUrlDecoderRuntimeClass : IInspectable
+interface IWwwFormUrlDecoderRuntimeClass : IInspectable, Windows.Foundation.Collections.IIterable!(Windows.Foundation.IWwwFormUrlDecoderEntry), Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry)
 {
 extern(Windows):
 	HRESULT abi_GetFirstValueByName(HSTRING name, HSTRING* return_phstrValue);
@@ -809,7 +814,7 @@ struct AwaitAdapter(Async) if (IsAsync!Async)
 		IContextCallback context;
 		Debug.OK(CoGetObjectContext(uuidOf!IContextCallback, cast(void**)&context));
 
-		async.Completed((AsyncStatus) {
+		async.Completed = (result, status) {
 			ComCallData data;
 			data.pUserDefined = cast(void*)&callback;
 
@@ -820,7 +825,7 @@ struct AwaitAdapter(Async) if (IsAsync!Async)
 
 			Debug.OK(context.ContextCallback(cb, &data,
 				IID_ICallbackWithNoReentrancyToApplicationSTA, 5, null));
-		});
+		};
 	}
 
 	auto await_resume() const

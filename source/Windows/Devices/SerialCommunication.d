@@ -20,7 +20,7 @@ extern(Windows):
 
 @uuid("e187ccc6-2210-414f-b65a-f5553a03372a")
 @WinrtFactory("Windows.Devices.SerialCommunication.SerialDevice")
-interface ISerialDevice : IInspectable
+interface ISerialDevice : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_BaudRate(UINT32* return_value);

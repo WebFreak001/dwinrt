@@ -121,7 +121,7 @@ extern(Windows):
 }
 
 @uuid("794f7ab9-b37d-3b33-a10d-30626419ce65")
-interface IPerceptionFrameProvider : IInspectable
+interface IPerceptionFrameProvider : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	deprecated("IPerceptionFrameProvider may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
@@ -166,7 +166,7 @@ extern(Windows):
 }
 
 @uuid("a959ce07-ead3-33df-8ec1-b924abe019c4")
-interface IPerceptionFrameProviderManager : IInspectable
+interface IPerceptionFrameProviderManager : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	deprecated("IPerceptionFrameProviderManager may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
@@ -219,7 +219,7 @@ extern(Windows):
 
 @uuid("4c38a7da-fdd8-4ed4-a039-2a6f9b235038")
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionVideoFrameAllocator")
-interface IPerceptionVideoFrameAllocator : IInspectable
+interface IPerceptionVideoFrameAllocator : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	deprecated("PerceptionVideoFrameAllocator may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")

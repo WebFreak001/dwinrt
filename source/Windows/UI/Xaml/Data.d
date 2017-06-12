@@ -122,7 +122,7 @@ extern(Windows):
 }
 
 @uuid("8be8bfe4-dbef-44df-8126-a31a89121ddc")
-interface ICollectionView : IInspectable
+interface ICollectionView : IInspectable, Windows.Foundation.Collections.IObservableVector!(IInspectable), Windows.Foundation.Collections.IVector!(IInspectable), Windows.Foundation.Collections.IIterable!(IInspectable)
 {
 extern(Windows):
 	HRESULT get_CurrentItem(IInspectable* return_value);
@@ -246,7 +246,7 @@ extern(Windows):
 }
 
 @uuid("f05f5665-71fd-45a2-be13-a081d294a68d")
-interface IItemsRangeInfo : IInspectable
+interface IItemsRangeInfo : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT abi_RangesChanged(Windows.UI.Xaml.Data.ItemIndexRange visibleRange, Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Data.ItemIndexRange) trackedItems);

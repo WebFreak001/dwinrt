@@ -233,7 +233,7 @@ extern(Windows):
 }
 
 @uuid("fa3f6186-4214-428c-a64c-14c9ac7315ea")
-interface IStorageFile : IInspectable
+interface IStorageFile : IInspectable, Windows.Storage.IStorageItem, Windows.Storage.Streams.IRandomAccessStreamReference, Windows.Storage.Streams.IInputStreamReference
 {
 extern(Windows):
 	HRESULT get_FileType(HSTRING* return_value);
@@ -279,7 +279,7 @@ extern(Windows):
 }
 
 @uuid("72d1cb78-b3ef-4f75-a80b-6fd9dae2944b")
-interface IStorageFolder : IInspectable
+interface IStorageFolder : IInspectable, Windows.Storage.IStorageItem
 {
 extern(Windows):
 	HRESULT abi_CreateFileAsyncOverloadDefaultOptions(HSTRING desiredName, Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile)* return_operation);
@@ -326,7 +326,7 @@ extern(Windows):
 }
 
 @uuid("53f926d2-083c-4283-b45b-81c007237e44")
-interface IStorageItem2 : IInspectable
+interface IStorageItem2 : IInspectable, Windows.Storage.IStorageItem
 {
 extern(Windows):
 	HRESULT abi_GetParentAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder)* return_operation);
@@ -347,7 +347,7 @@ extern(Windows):
 }
 
 @uuid("8e86a951-04b9-4bd2-929d-fef3f71621d0")
-interface IStorageItemProperties2 : IInspectable
+interface IStorageItemProperties2 : IInspectable, Windows.Storage.IStorageItemProperties
 {
 extern(Windows):
 	HRESULT abi_GetScaledImageAsThumbnailAsyncOverloadDefaultSizeDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode, Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail)* return_operation);
@@ -356,7 +356,7 @@ extern(Windows):
 }
 
 @uuid("861bf39b-6368-4dee-b40e-74684a5ce714")
-interface IStorageItemPropertiesWithProvider : IInspectable
+interface IStorageItemPropertiesWithProvider : IInspectable, Windows.Storage.IStorageItemProperties
 {
 extern(Windows):
 	HRESULT get_Provider(Windows.Storage.StorageProvider* return_value);
@@ -441,7 +441,7 @@ extern(Windows):
 
 @uuid("f67cf363-a53d-4d94-ae2c-67232d93acdd")
 @WinrtFactory("Windows.Storage.StorageStreamTransaction")
-interface IStorageStreamTransaction : IInspectable
+interface IStorageStreamTransaction : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_Stream(Windows.Storage.Streams.IRandomAccessStream* return_value);

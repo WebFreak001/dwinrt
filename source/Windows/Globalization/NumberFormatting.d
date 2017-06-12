@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("11730ca5-4b00-41b2-b332-73b12a497d54")
 @WinrtFactory("Windows.Globalization.NumberFormatting.CurrencyFormatter")
-interface ICurrencyFormatter : IInspectable
+interface ICurrencyFormatter : IInspectable, Windows.Globalization.NumberFormatting.INumberFormatterOptions, Windows.Globalization.NumberFormatting.INumberFormatter, Windows.Globalization.NumberFormatting.INumberFormatter2, Windows.Globalization.NumberFormatting.INumberParser
 {
 extern(Windows):
 	HRESULT get_Currency(HSTRING* return_value);

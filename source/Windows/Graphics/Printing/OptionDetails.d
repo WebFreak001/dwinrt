@@ -14,14 +14,14 @@ extern(Windows):
 
 @uuid("a5fafd88-58f2-4ebd-b90f-51e4f2944c5d")
 @WinrtFactory("Windows.Graphics.Printing.OptionDetails.PrintCustomItemListOptionDetails")
-interface IPrintCustomItemListOptionDetails : IInspectable
+interface IPrintCustomItemListOptionDetails : IInspectable, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails
 {
 extern(Windows):
 	HRESULT abi_AddItem(HSTRING itemId, HSTRING displayName);
 }
 
 @uuid("e32bde1c-28af-4b90-95da-a3acf320b929")
-interface IPrintCustomOptionDetails : IInspectable
+interface IPrintCustomOptionDetails : IInspectable, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails
 {
 extern(Windows):
 	HRESULT set_DisplayName(HSTRING value);
@@ -30,7 +30,7 @@ extern(Windows):
 
 @uuid("2ad171f8-c8bd-4905-9192-0d75136e8b31")
 @WinrtFactory("Windows.Graphics.Printing.OptionDetails.PrintCustomTextOptionDetails")
-interface IPrintCustomTextOptionDetails : IInspectable
+interface IPrintCustomTextOptionDetails : IInspectable, Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails
 {
 extern(Windows):
 	HRESULT set_MaxCharacters(UINT32 value);
@@ -38,14 +38,14 @@ extern(Windows):
 }
 
 @uuid("9a2257bf-fe61-43d8-a24f-a3f6ab7320e7")
-interface IPrintItemListOptionDetails : IInspectable
+interface IPrintItemListOptionDetails : IInspectable, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails
 {
 extern(Windows):
 	HRESULT get_Items(Windows.Foundation.Collections.IVectorView!(IInspectable)* return_value);
 }
 
 @uuid("4d01bbaf-645c-4de9-965f-6fc6bbc47cab")
-interface IPrintNumberOptionDetails : IInspectable
+interface IPrintNumberOptionDetails : IInspectable, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails
 {
 extern(Windows):
 	HRESULT get_MinValue(UINT32* return_value);
@@ -97,7 +97,7 @@ extern(Windows):
 }
 
 @uuid("ad75e563-5ce4-46bc-9918-ab9fad144c5b")
-interface IPrintTextOptionDetails : IInspectable
+interface IPrintTextOptionDetails : IInspectable, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails
 {
 extern(Windows):
 	HRESULT get_MaxCharacters(UINT32* return_value);

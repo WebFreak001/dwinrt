@@ -20,7 +20,7 @@ extern(Windows):
 
 @uuid("9dd474a2-871f-4d52-89a9-9e090531bd27")
 @WinrtFactory("Windows.ApplicationModel.AppService.AppServiceConnection")
-interface IAppServiceConnection : IInspectable
+interface IAppServiceConnection : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_AppServiceName(HSTRING* return_value);

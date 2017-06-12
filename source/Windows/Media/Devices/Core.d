@@ -41,7 +41,7 @@ extern(Windows):
 
 @uuid("f95d89fb-8af0-4cb0-926d-696866e5046a")
 @WinrtFactory("Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper")
-interface IDepthCorrelatedCoordinateMapper : IInspectable
+interface IDepthCorrelatedCoordinateMapper : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT abi_UnprojectPoint(Windows.Foundation.Point sourcePoint, Windows.Perception.Spatial.SpatialCoordinateSystem targetCoordinateSystem, Windows.Foundation.Numerics.Vector3* return_result);

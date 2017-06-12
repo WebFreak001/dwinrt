@@ -147,7 +147,7 @@ extern(Windows):
 
 @uuid("0c465714-14e1-4973-bd14-f77724271e99")
 @WinrtFactory("Windows.Services.Store.StorePackageLicense")
-interface IStorePackageLicense : IInspectable
+interface IStorePackageLicense : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT add_LicenseLost(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StorePackageLicense, IInspectable) handler, EventRegistrationToken* return_token);

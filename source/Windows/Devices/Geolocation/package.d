@@ -23,7 +23,7 @@ extern(Windows):
 
 @uuid("0896c80b-274f-43da-9a06-cbfcdaeb4ec2")
 @WinrtFactory("Windows.Devices.Geolocation.GeoboundingBox")
-interface IGeoboundingBox : IInspectable
+interface IGeoboundingBox : IInspectable, Windows.Devices.Geolocation.IGeoshape
 {
 extern(Windows):
 	HRESULT get_NorthwestCorner(Windows.Devices.Geolocation.BasicGeoposition* return_value);
@@ -55,7 +55,7 @@ extern(Windows):
 
 @uuid("39e45843-a7f9-4e63-92a7-ba0c28d124b1")
 @WinrtFactory("Windows.Devices.Geolocation.Geocircle")
-interface IGeocircle : IInspectable
+interface IGeocircle : IInspectable, Windows.Devices.Geolocation.IGeoshape
 {
 extern(Windows):
 	HRESULT get_Center(Windows.Devices.Geolocation.BasicGeoposition* return_value);
@@ -110,7 +110,7 @@ extern(Windows):
 
 @uuid("95e634be-dbd6-40ac-b8f2-a65c0340d9a6")
 @WinrtFactory("Windows.Devices.Geolocation.Geocoordinate")
-interface IGeocoordinateWithPositionData : IInspectable
+interface IGeocoordinateWithPositionData : IInspectable, Windows.Devices.Geolocation.IGeocoordinate
 {
 extern(Windows):
 	HRESULT get_PositionSource(Windows.Devices.Geolocation.PositionSource* return_pValue);
@@ -175,7 +175,7 @@ extern(Windows):
 
 @uuid("96f5d3c1-b80f-460a-994d-a96c47a51aa4")
 @WinrtFactory("Windows.Devices.Geolocation.Geolocator")
-interface IGeolocatorWithScalarAccuracy : IInspectable
+interface IGeolocatorWithScalarAccuracy : IInspectable, Windows.Devices.Geolocation.IGeolocator
 {
 extern(Windows):
 	HRESULT get_DesiredAccuracyInMeters(Windows.Foundation.IReference!(UINT32)* return_value);
@@ -184,7 +184,7 @@ extern(Windows):
 
 @uuid("e53fd7b9-2da4-4714-a652-de8593289898")
 @WinrtFactory("Windows.Devices.Geolocation.Geopath")
-interface IGeopath : IInspectable
+interface IGeopath : IInspectable, Windows.Devices.Geolocation.IGeoshape
 {
 extern(Windows):
 	HRESULT get_Positions(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.BasicGeoposition)* return_value);
@@ -202,7 +202,7 @@ extern(Windows):
 
 @uuid("6bfa00eb-e56e-49bb-9caf-cbaa78a8bcef")
 @WinrtFactory("Windows.Devices.Geolocation.Geopoint")
-interface IGeopoint : IInspectable
+interface IGeopoint : IInspectable, Windows.Devices.Geolocation.IGeoshape
 {
 extern(Windows):
 	HRESULT get_Position(Windows.Devices.Geolocation.BasicGeoposition* return_value);
@@ -229,7 +229,7 @@ extern(Windows):
 
 @uuid("7f62f697-8671-4b0d-86f8-474a8496187c")
 @WinrtFactory("Windows.Devices.Geolocation.Geoposition")
-interface IGeoposition2 : IInspectable
+interface IGeoposition2 : IInspectable, Windows.Devices.Geolocation.IGeoposition
 {
 extern(Windows):
 	HRESULT get_VenueData(Windows.Devices.Geolocation.VenueData* return_value);

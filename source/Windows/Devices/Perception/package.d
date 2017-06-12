@@ -124,7 +124,7 @@ extern(Windows):
 
 @uuid("fe621549-2cbf-4f94-9861-f817ea317747")
 @WinrtFactory("Windows.Devices.Perception.PerceptionColorFrame")
-interface IPerceptionColorFrame : IInspectable
+interface IPerceptionColorFrame : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	deprecated("PerceptionColorFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.VideoMediaFrame instead.")
@@ -144,7 +144,7 @@ extern(Windows):
 
 @uuid("7650f56e-b9f5-461b-83ad-f222af2aaadc")
 @WinrtFactory("Windows.Devices.Perception.PerceptionColorFrameReader")
-interface IPerceptionColorFrameReader : IInspectable
+interface IPerceptionColorFrameReader : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
@@ -299,7 +299,7 @@ extern(Windows):
 
 @uuid("99998653-5a3d-417f-9239-f1889e548b48")
 @WinrtFactory("Windows.Devices.Perception.PerceptionControlSession")
-interface IPerceptionControlSession : IInspectable
+interface IPerceptionControlSession : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	deprecated("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
@@ -342,7 +342,7 @@ extern(Windows):
 
 @uuid("a37b81fc-9906-4ffd-9161-0024b360b657")
 @WinrtFactory("Windows.Devices.Perception.PerceptionDepthFrame")
-interface IPerceptionDepthFrame : IInspectable
+interface IPerceptionDepthFrame : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	deprecated("PerceptionDepthFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")
@@ -362,7 +362,7 @@ extern(Windows):
 
 @uuid("b1a3c09f-299b-4612-a4f7-270f25a096ec")
 @WinrtFactory("Windows.Devices.Perception.PerceptionDepthFrameReader")
-interface IPerceptionDepthFrameReader : IInspectable
+interface IPerceptionDepthFrameReader : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
@@ -539,7 +539,7 @@ extern(Windows):
 
 @uuid("b0886276-849e-4c7a-8ae6-b56064532153")
 @WinrtFactory("Windows.Devices.Perception.PerceptionInfraredFrame")
-interface IPerceptionInfraredFrame : IInspectable
+interface IPerceptionInfraredFrame : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	deprecated("PerceptionInfraredFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.InfraredMediaFrame instead.")
@@ -559,7 +559,7 @@ extern(Windows):
 
 @uuid("7960ce18-d39b-4fc8-a04a-929734c6756c")
 @WinrtFactory("Windows.Devices.Perception.PerceptionInfraredFrameReader")
-interface IPerceptionInfraredFrameReader : IInspectable
+interface IPerceptionInfraredFrameReader : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameReader instead.")

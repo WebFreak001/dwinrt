@@ -12,6 +12,7 @@ import Windows.UI;
 import Windows.UI.Input;
 import Windows.UI.Core;
 import Windows.UI.Composition;
+import Windows.UI.Popups;
 
 extern (Windows) int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		LPSTR lpCmdLine, int nCmdShow)
@@ -152,6 +153,12 @@ private:
 void run()
 {
 	//MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
+	IInspectable insp;
+	auto f = activationFactory!IMessageDialog;
+	Debug.OK(f.abi_ActivateInstance(&insp));
+	auto dialog = insp.as!MessageDialog;
+	dialog.Content = hstring("Async methods in D using Fibers or Sleeping!").handle;
+	dialog.ShowAsync().wait;
 
 	Debug.OK(factory!ICoreApplication.abi_Run(new App));
 }

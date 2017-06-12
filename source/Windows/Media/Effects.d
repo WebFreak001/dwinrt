@@ -72,7 +72,7 @@ extern(Windows):
 }
 
 @uuid("8c062c53-6bc0-48b8-a99a-4b41550f1359")
-interface IBasicAudioEffect : IInspectable
+interface IBasicAudioEffect : IInspectable, Windows.Media.IMediaExtension
 {
 extern(Windows):
 	HRESULT get_UseInputFrameForOutput(bool* return_value);
@@ -84,7 +84,7 @@ extern(Windows):
 }
 
 @uuid("8262c7ef-b360-40be-949b-2ff42ff35693")
-interface IBasicVideoEffect : IInspectable
+interface IBasicVideoEffect : IInspectable, Windows.Media.IMediaExtension
 {
 extern(Windows):
 	HRESULT get_IsReadOnly(bool* return_value);
@@ -127,7 +127,7 @@ extern(Windows):
 }
 
 @uuid("8510b43e-420c-420f-96c7-7c98bba1fc55")
-interface IVideoCompositor : IInspectable
+interface IVideoCompositor : IInspectable, Windows.Media.IMediaExtension
 {
 extern(Windows):
 	HRESULT get_TimeIndependent(bool* return_value);
@@ -173,7 +173,7 @@ extern(Windows):
 
 @uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2")
 @WinrtFactory("Windows.Media.Effects.VideoTransformEffectDefinition")
-interface IVideoTransformEffectDefinition : IInspectable
+interface IVideoTransformEffectDefinition : IInspectable, Windows.Media.Effects.IVideoEffectDefinition
 {
 extern(Windows):
 	HRESULT get_PaddingColor(Windows.UI.Color* return_value);

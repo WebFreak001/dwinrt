@@ -13,6 +13,7 @@ import idl.grammar;
 
 //dfmt off
 Module[] modules = [
+	// must be first
 	Module(["Windows", "Foundation"], [], [
 		Interface("EventHandler", ["IUnknown"], [], [], ["TArgs"], "", "", false, false, [
 			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
@@ -46,7 +47,7 @@ Module[] modules = [
 				InterfaceArgument(ArgumentDirection.in_, "AsyncStatus", "status"),
 			], true),
 		]),
-		Interface("IAsyncOperation", ["IInspectable"], [], [], ["TResult"], "", "", false, false, [
+		Interface("IAsyncOperation", ["IAsyncInfo"], [], [], ["TResult"], "", "", false, false, [
 			InterfaceMethod("Completed", "HRESULT", "", InterfaceType.propset, [
 				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.AsyncOperationCompletedHandler!(TResult)", "handler"),
 			], true),
@@ -55,8 +56,7 @@ Module[] modules = [
 			], true),
 			InterfaceMethod("Results", "HRESULT", "", InterfaceType.propget, [
 				InterfaceArgument(ArgumentDirection.out_ | ArgumentDirection.retval, "TResult*", "results"),
-			], true),
-			InterfaceMethod("get", "TResult", "", InterfaceType.call, [], true, "blocking_suspend(this);\nreturn Results;"),
+			], true)
 		]),
 		Interface("AsyncOperationProgressHandler", ["IUnknown"], [], [], ["TResult", "TProgress"], "", "", false, false, [
 			InterfaceMethod("Invoke", "HRESULT", "", InterfaceType.call, [
@@ -274,13 +274,26 @@ Module[] modules = [
 		]),
 	])
 ];
+// Extra patches for specific interfaces
+InterfaceMethod[][string] extraMethods;
+shared static this() {
+	extraMethods = [
+		"IAsyncAction": [
+			InterfaceMethod("Completed", "Windows.Foundation.AsyncActionCompletedHandler", "", InterfaceType.propget, [
+			], true, "Windows.Foundation.AsyncActionCompletedHandler ret;\nDebug.OK(this.as!(IAsyncAction).get_Completed(&ret));\nreturn ret;"),
+			InterfaceMethod("Completed", "void", "", InterfaceType.propset, [
+				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.AsyncActionCompletedHandler", "handler")
+			], true, "Debug.OK(this.as!(IAsyncAction).set_Completed(handler));"),
+		]
+	];
+}
 //dfmt on
 string[] ignored = [
 	"activation.idl", "AsyncInfo.idl", "EventToken.idl", "hstring.idl",
 	"inspectable.idl", "DocumentSource.idl", "rdpappcontainerclient.idl"
 ];
 // Rest will be filled
-string[] pointerTypes = ["IInspectable", "IUnknown"];
+string[] pointerTypes = ["IInspectable", "IUnknown", "IAsyncInfo"];
 // Can't bother to fix, cppwinrt doesn't have those either
 string[] blockedInterfaces = [
 	"IMetaDataDispenser", "IMetaDataDispenserEx", "IMetaDataAssemblyImport",
@@ -306,7 +319,7 @@ void main(string[] args)
 			auto copy = obj.methods[i];
 			if (copy.implementation.length)
 				continue;
-			copy.implement("Windows.Foundation." ~ obj.name);
+			copy.implement("Windows.Foundation." ~ obj.name ~ "!(" ~ obj.templateArgs.join(", ") ~ ")");
 			obj.methods ~= copy;
 		}
 	}
@@ -425,8 +438,7 @@ void processIDL(string file)
 					enforce(content.name == "IDL.definition_content");
 					if (content.children.length == 1 && content.children[0].name == "IDL.uuid")
 					{
-						uuid = content.children[0].children.map!(a => a.matches[0])
-							.join("-").toLower;
+						uuid = content.children[0].children.map!(a => a.matches[0]).join("-").toLower;
 						return;
 					}
 				}
@@ -551,8 +563,7 @@ void processIDL(string file)
 					foreach_reverse (content; attrib.children)
 					{
 						enforce(content.name == "IDL.definition_content");
-						if (content.children.length == 1
-								&& content.children[0].name == "IDL.exclusiveto")
+						if (content.children.length == 1 && content.children[0].name == "IDL.exclusiveto")
 						{
 							enforce(content.children[0].children[0].name == "IDL.scoped_name");
 							obj.exclusiveto = content.children[0].children[0].matches.join("");
@@ -778,8 +789,7 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 				}
 				else
 				{
-					if (spec.children.length == 1
-							&& spec.children[0].name == "IDL.op_overload_attribute")
+					if (spec.children.length == 1 && spec.children[0].name == "IDL.op_overload_attribute")
 					{
 						enforce(spec.children[0].children.length == 1);
 						method.name = spec.children[0].children[0].parseString;
@@ -818,8 +828,7 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 									argument.direction |= ArgumentDirection.out_;
 									break;
 								case "inout":
-									argument.direction |= ArgumentDirection.in_
-										| ArgumentDirection.out_;
+									argument.direction |= ArgumentDirection.in_ | ArgumentDirection.out_;
 									break;
 								case "retval":
 									argument.direction |= ArgumentDirection.retval;
@@ -828,8 +837,7 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 								case "unique":
 									break;
 								default:
-									throw new Exception(
-											"Invalid parameter attribute: " ~ attr.matches[0]);
+									throw new Exception("Invalid parameter attribute: " ~ attr.matches[0]);
 								}
 							}
 						}
@@ -1023,7 +1031,7 @@ ref Module makeMod(string[] name, string[] deps = [])
 
 Interface findInterface(string fullname)
 {
-	if (fullname == "IInspectable" || fullname == "IUnknown")
+	if (fullname == "IInspectable" || fullname == "IUnknown" || fullname == "IAsyncInfo")
 		return Interface.init;
 	enforce(fullname.startsWith("Windows."), fullname);
 	string templateImpl;
@@ -1046,8 +1054,8 @@ Interface findInterface(string fullname)
 		}
 	}
 	throw new Exception(
-			"Interface not found: " ~ fullname ~ ", searched for " ~ name ~ " in "
-			~ parts[0 .. $ - 1].join("."));
+			"Interface not found: " ~ fullname ~ ", searched for " ~ name ~ " in " ~ parts[0 .. $ - 1].join(
+			"."));
 }
 
 struct Enum
@@ -1180,8 +1188,7 @@ struct Interface
 	{
 		if (!isRuntimeClass)
 			return;
-		enforce(methods.length == 0,
-				"Is runtime class but got " ~ methods.to!string ~ " as methods.");
+		enforce(methods.length == 0, "Is runtime class but got " ~ methods.to!string ~ " as methods.");
 		foreach (base; implements)
 			implement(base, findInterface(base));
 	}
@@ -1212,16 +1219,13 @@ struct Interface
 		ret ~= "interface " ~ name;
 		if (templateArgs.length)
 			ret ~= "(" ~ templateArgs.join(", ") ~ ")";
-		if (inherits.length + implements.length)
-			ret ~= " : " ~ (inherits ~ implements).join(", ");
+		if (inherits.length + implements.length + requires.length)
+			ret ~= " : " ~ (inherits ~ implements ~ requires).join(", ");
 		ret ~= "\n{\n";
-		if (methods.length && !isDelegate)
-		{
-			// TODO: generate D methods
-		}
 		if (methods.length)
 			ret ~= "extern(Windows):\n";
-		foreach (method; methods)
+		auto extra = name in extraMethods;
+		foreach (method; methods ~ (extra ? *extra : []))
 			ret ~= method.toString.indent ~ "\n";
 		ret ~= "}";
 		return ret;
@@ -1256,12 +1260,11 @@ struct InterfaceMethod
 				enforce(arguments[1].type == "EventRegistrationToken*", arguments[1].type);
 				string type = arguments[0].type;
 				string args = type["Windows.Foundation.TypedEventHandler!(".length .. $ - 1];
-				arguments = [InterfaceArgument(ArgumentDirection.in_,
-						"void delegate(" ~ args ~ ")", "fn")];
+				arguments = [InterfaceArgument(ArgumentDirection.in_, "void delegate(" ~ args ~ ")", "fn")];
 				name = "On" ~ name;
 				returnType = "EventRegistrationToken";
-				string registerCall = "Debug.OK(" ~ fname ~ "(event!(" ~ type
-					~ ", " ~ args ~ ")(fn), &tok));";
+				string registerCall = "Debug.OK(" ~ fname ~ "(event!(" ~ type ~ ", "
+					~ args ~ ")(fn), &tok));";
 				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
 			}
 			else
@@ -1304,8 +1307,8 @@ struct InterfaceMethod
 				if (argsPost.length)
 					args ~= ", " ~ argsPost;
 				string post = "\nreturn _ret;";
-				implementation = pre ~ "Debug.OK(this.as!(" ~ baseName ~ ")."
-					~ fname ~ "(" ~ args ~ "));" ~ post;
+				implementation = pre ~ "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname
+					~ "(" ~ args ~ "));" ~ post;
 			}
 			else
 			{
@@ -1533,7 +1536,7 @@ struct AwaitAdapter(Async) if (IsAsync!Async)
 		IContextCallback context;
 		Debug.OK(CoGetObjectContext(uuidOf!IContextCallback, cast(void**)&context));
 
-		async.Completed((AsyncStatus) {
+		async.Completed = (result, status) {
 			ComCallData data;
 			data.pUserDefined = cast(void*)&callback;
 
@@ -1544,7 +1547,7 @@ struct AwaitAdapter(Async) if (IsAsync!Async)
 
 			Debug.OK(context.ContextCallback(cb, &data,
 				IID_ICallbackWithNoReentrancyToApplicationSTA, 5, null));
-		});
+		};
 	}
 
 	auto await_resume() const

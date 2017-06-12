@@ -22,7 +22,7 @@ extern(Windows):
 
 @uuid("8ceb6cd2-b446-46f7-b265-90f8e55ad650")
 @WinrtFactory("Windows.Storage.Pickers.FileOpenPicker")
-interface IFileOpenPicker2 : IInspectable
+interface IFileOpenPicker2 : IInspectable, Windows.Storage.Pickers.IFileOpenPicker
 {
 extern(Windows):
 	deprecated("Instead, use PickSingleFileAsync/PickMultipleFilesAsync")
@@ -73,7 +73,7 @@ extern(Windows):
 
 @uuid("0ec313a2-d24b-449a-8197-e89104fd42cc")
 @WinrtFactory("Windows.Storage.Pickers.FileSavePicker")
-interface IFileSavePicker2 : IInspectable
+interface IFileSavePicker2 : IInspectable, Windows.Storage.Pickers.IFileSavePicker
 {
 extern(Windows):
 	HRESULT get_ContinuationData(Windows.Foundation.Collections.ValueSet* return_value);
@@ -83,7 +83,7 @@ extern(Windows):
 
 @uuid("698aec69-ba3c-4e51-bd90-4abcbbf4cfaf")
 @WinrtFactory("Windows.Storage.Pickers.FileSavePicker")
-interface IFileSavePicker3 : IInspectable
+interface IFileSavePicker3 : IInspectable, Windows.Storage.Pickers.IFileSavePicker
 {
 extern(Windows):
 	HRESULT get_EnterpriseId(HSTRING* return_value);
@@ -109,7 +109,7 @@ extern(Windows):
 
 @uuid("8eb3ba97-dc85-4616-be94-9660881f2f5d")
 @WinrtFactory("Windows.Storage.Pickers.FolderPicker")
-interface IFolderPicker2 : IInspectable
+interface IFolderPicker2 : IInspectable, Windows.Storage.Pickers.IFolderPicker
 {
 extern(Windows):
 	HRESULT get_ContinuationData(Windows.Foundation.Collections.ValueSet* return_value);

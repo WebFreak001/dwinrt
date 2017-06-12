@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("9a586b89-d5d0-4fbe-bd9d-b5b3636811b4")
 @WinrtFactory("Windows.Web.Http.Headers.HttpCacheDirectiveHeaderValueCollection")
-interface IHttpCacheDirectiveHeaderValueCollection : IInspectable
+interface IHttpCacheDirectiveHeaderValueCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)
 {
 extern(Windows):
 	HRESULT get_MaxAge(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
@@ -31,7 +31,7 @@ extern(Windows):
 
 @uuid("ca9e5f81-aee0-4353-a10b-e625babd64c2")
 @WinrtFactory("Windows.Web.Http.Headers.HttpChallengeHeaderValueCollection")
-interface IHttpChallengeHeaderValueCollection : IInspectable
+interface IHttpChallengeHeaderValueCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpChallengeHeaderValue)
 {
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
@@ -66,7 +66,7 @@ extern(Windows):
 
 @uuid("e4f56c1d-5142-4e00-8e0f-019509337629")
 @WinrtFactory("Windows.Web.Http.Headers.HttpConnectionOptionHeaderValueCollection")
-interface IHttpConnectionOptionHeaderValueCollection : IInspectable
+interface IHttpConnectionOptionHeaderValueCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue)
 {
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
@@ -100,7 +100,7 @@ extern(Windows):
 
 @uuid("7d221721-a6db-436e-8e83-91596192819c")
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentCodingHeaderValueCollection")
-interface IHttpContentCodingHeaderValueCollection : IInspectable
+interface IHttpContentCodingHeaderValueCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue)
 {
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
@@ -135,7 +135,7 @@ extern(Windows):
 
 @uuid("7c0d753e-e899-4378-b5c8-412d820711cc")
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValueCollection")
-interface IHttpContentCodingWithQualityHeaderValueCollection : IInspectable
+interface IHttpContentCodingWithQualityHeaderValueCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue)
 {
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
@@ -197,7 +197,7 @@ extern(Windows):
 
 @uuid("40612a44-47ae-4b7e-9124-69628b64aa18")
 @WinrtFactory("Windows.Web.Http.Headers.HttpContentHeaderCollection")
-interface IHttpContentHeaderCollection : IInspectable
+interface IHttpContentHeaderCollection : IInspectable, Windows.Foundation.Collections.IMap!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))
 {
 extern(Windows):
 	HRESULT get_ContentDisposition(Windows.Web.Http.Headers.HttpContentDispositionHeaderValue* return_value);
@@ -265,7 +265,7 @@ extern(Windows):
 
 @uuid("f3f44350-581e-4ecc-9f59-e507d04f06e6")
 @WinrtFactory("Windows.Web.Http.Headers.HttpCookiePairHeaderValueCollection")
-interface IHttpCookiePairHeaderValueCollection : IInspectable
+interface IHttpCookiePairHeaderValueCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue)
 {
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
@@ -349,7 +349,7 @@ extern(Windows):
 
 @uuid("e78521b3-a0e2-4ac4-9e66-79706cb9fd58")
 @WinrtFactory("Windows.Web.Http.Headers.HttpExpectationHeaderValueCollection")
-interface IHttpExpectationHeaderValueCollection : IInspectable
+interface IHttpExpectationHeaderValueCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpExpectationHeaderValue)
 {
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
@@ -376,7 +376,7 @@ extern(Windows):
 
 @uuid("9ebd7ca3-8219-44f6-9902-8c56dfd3340c")
 @WinrtFactory("Windows.Web.Http.Headers.HttpLanguageHeaderValueCollection")
-interface IHttpLanguageHeaderValueCollection : IInspectable
+interface IHttpLanguageHeaderValueCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.Globalization.Language), Windows.Foundation.Collections.IIterable!(Windows.Globalization.Language)
 {
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
@@ -394,7 +394,7 @@ extern(Windows):
 
 @uuid("885d5abd-4b4f-480a-89ce-8aedcee6e3a0")
 @WinrtFactory("Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValueCollection")
-interface IHttpLanguageRangeWithQualityHeaderValueCollection : IInspectable
+interface IHttpLanguageRangeWithQualityHeaderValueCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue)
 {
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
@@ -464,7 +464,7 @@ extern(Windows):
 
 @uuid("3c0c6b73-1342-4587-a056-18d02ff67165")
 @WinrtFactory("Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValueCollection")
-interface IHttpMediaTypeWithQualityHeaderValueCollection : IInspectable
+interface IHttpMediaTypeWithQualityHeaderValueCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue)
 {
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
@@ -491,7 +491,7 @@ extern(Windows):
 
 @uuid("43bc3ff4-6119-4adf-938c-34bfffcf92ed")
 @WinrtFactory("Windows.Web.Http.Headers.HttpMethodHeaderValueCollection")
-interface IHttpMethodHeaderValueCollection : IInspectable
+interface IHttpMethodHeaderValueCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.HttpMethod)
 {
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
@@ -564,7 +564,7 @@ extern(Windows):
 
 @uuid("877df74a-d69b-44f8-ad4f-453af9c42ed0")
 @WinrtFactory("Windows.Web.Http.Headers.HttpProductInfoHeaderValueCollection")
-interface IHttpProductInfoHeaderValueCollection : IInspectable
+interface IHttpProductInfoHeaderValueCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue)
 {
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
@@ -591,7 +591,7 @@ extern(Windows):
 
 @uuid("af40329b-b544-469b-86b9-ac3d466fea36")
 @WinrtFactory("Windows.Web.Http.Headers.HttpRequestHeaderCollection")
-interface IHttpRequestHeaderCollection : IInspectable
+interface IHttpRequestHeaderCollection : IInspectable, Windows.Foundation.Collections.IMap!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))
 {
 extern(Windows):
 	HRESULT get_Accept(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValueCollection* return_value);
@@ -627,7 +627,7 @@ extern(Windows):
 
 @uuid("7a990969-fa3f-41ed-aac6-bf957975c16b")
 @WinrtFactory("Windows.Web.Http.Headers.HttpResponseHeaderCollection")
-interface IHttpResponseHeaderCollection : IInspectable
+interface IHttpResponseHeaderCollection : IInspectable, Windows.Foundation.Collections.IMap!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))
 {
 extern(Windows):
 	HRESULT get_Age(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
@@ -659,7 +659,7 @@ extern(Windows):
 
 @uuid("202c8c34-2c03-49b8-9665-73e27cb2fc79")
 @WinrtFactory("Windows.Web.Http.Headers.HttpTransferCodingHeaderValueCollection")
-interface IHttpTransferCodingHeaderValueCollection : IInspectable
+interface IHttpTransferCodingHeaderValueCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue)
 {
 extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);

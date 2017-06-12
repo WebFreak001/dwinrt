@@ -42,7 +42,7 @@ extern(Windows):
 
 @uuid("718845e9-64d7-426d-809b-1be461941a2a")
 @WinrtFactory("Windows.Media.Protection.HdcpSession")
-interface IHdcpSession : IInspectable
+interface IHdcpSession : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT abi_IsEffectiveProtectionAtLeast(Windows.Media.Protection.HdcpProtection protection, bool* return_value);

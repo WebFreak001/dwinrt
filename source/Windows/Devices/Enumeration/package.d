@@ -12,7 +12,7 @@ extern(Windows):
 
 @uuid("82523262-934b-4b30-a178-adc39f2f2be3")
 @WinrtFactory("Windows.Devices.Enumeration.DeviceAccessChangedEventArgs")
-interface IDeviceAccessChangedEventArgs2 : IInspectable
+interface IDeviceAccessChangedEventArgs2 : IInspectable, Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs
 {
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
@@ -319,7 +319,7 @@ extern(Windows):
 
 @uuid("2885995b-e07d-485d-8a9e-bdf29aef4f66")
 @WinrtFactory("Windows.Devices.Enumeration.EnclosureLocation")
-interface IEnclosureLocation2 : IInspectable
+interface IEnclosureLocation2 : IInspectable, Windows.Devices.Enumeration.IEnclosureLocation
 {
 extern(Windows):
 	HRESULT get_RotationAngleInDegreesClockwise(UINT32* return_value);

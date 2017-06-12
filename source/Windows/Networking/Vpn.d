@@ -116,7 +116,7 @@ extern(Windows):
 
 @uuid("43878753-03c5-4e61-93d7-a957714c4282")
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomCheckBox")
-interface IVpnCustomCheckBox : IInspectable
+interface IVpnCustomCheckBox : IInspectable, Windows.Networking.Vpn.IVpnCustomPrompt
 {
 extern(Windows):
 	HRESULT set_InitialCheckState(bool value);
@@ -126,7 +126,7 @@ extern(Windows):
 
 @uuid("9a24158e-dba1-4c6f-8270-dcf3c9761c4c")
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomComboBox")
-interface IVpnCustomComboBox : IInspectable
+interface IVpnCustomComboBox : IInspectable, Windows.Networking.Vpn.IVpnCustomPrompt
 {
 extern(Windows):
 	HRESULT set_OptionsText(Windows.Foundation.Collections.IVectorView!(HSTRING) value);
@@ -136,7 +136,7 @@ extern(Windows):
 
 @uuid("3002d9a0-cfbf-4c0b-8f3c-66f503c20b39")
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomEditBox")
-interface IVpnCustomEditBox : IInspectable
+interface IVpnCustomEditBox : IInspectable, Windows.Networking.Vpn.IVpnCustomPrompt
 {
 extern(Windows):
 	HRESULT set_DefaultText(HSTRING value);
@@ -148,7 +148,7 @@ extern(Windows):
 
 @uuid("9ec4efb2-c942-42af-b223-588b48328721")
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomErrorBox")
-interface IVpnCustomErrorBox : IInspectable
+interface IVpnCustomErrorBox : IInspectable, Windows.Networking.Vpn.IVpnCustomPrompt
 {
 }
 
@@ -166,7 +166,7 @@ extern(Windows):
 
 @uuid("c4c9a69e-ff47-4527-9f27-a49292019979")
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomPromptBooleanInput")
-interface IVpnCustomPromptBooleanInput : IInspectable
+interface IVpnCustomPromptBooleanInput : IInspectable, Windows.Networking.Vpn.IVpnCustomPromptElement
 {
 extern(Windows):
 	HRESULT set_InitialValue(bool value);
@@ -188,7 +188,7 @@ extern(Windows):
 
 @uuid("3b8f34d9-8ec1-4e95-9a4e-7ba64d38f330")
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomPromptOptionSelector")
-interface IVpnCustomPromptOptionSelector : IInspectable
+interface IVpnCustomPromptOptionSelector : IInspectable, Windows.Networking.Vpn.IVpnCustomPromptElement
 {
 extern(Windows):
 	HRESULT get_Options(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
@@ -197,7 +197,7 @@ extern(Windows):
 
 @uuid("3bc8bdee-3a42-49a3-abdd-07b2edea752d")
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomPromptText")
-interface IVpnCustomPromptText : IInspectable
+interface IVpnCustomPromptText : IInspectable, Windows.Networking.Vpn.IVpnCustomPromptElement
 {
 extern(Windows):
 	HRESULT set_Text(HSTRING value);
@@ -206,7 +206,7 @@ extern(Windows):
 
 @uuid("c9da9c75-913c-47d5-88ba-48fc48930235")
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomPromptTextInput")
-interface IVpnCustomPromptTextInput : IInspectable
+interface IVpnCustomPromptTextInput : IInspectable, Windows.Networking.Vpn.IVpnCustomPromptElement
 {
 extern(Windows):
 	HRESULT set_PlaceholderText(HSTRING value);
@@ -218,7 +218,7 @@ extern(Windows):
 
 @uuid("daa4c3ca-8f23-4d36-91f1-76d937827942")
 @WinrtFactory("Windows.Networking.Vpn.VpnCustomTextBox")
-interface IVpnCustomTextBox : IInspectable
+interface IVpnCustomTextBox : IInspectable, Windows.Networking.Vpn.IVpnCustomPrompt
 {
 extern(Windows):
 	HRESULT set_DisplayText(HSTRING value);
@@ -327,7 +327,7 @@ extern(Windows):
 
 @uuid("a4aee29e-6417-4333-9842-f0a66db69802")
 @WinrtFactory("Windows.Networking.Vpn.VpnNativeProfile")
-interface IVpnNativeProfile : IInspectable
+interface IVpnNativeProfile : IInspectable, Windows.Networking.Vpn.IVpnProfile
 {
 extern(Windows):
 	HRESULT get_Servers(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
@@ -382,7 +382,7 @@ extern(Windows):
 
 @uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce77")
 @WinrtFactory("Windows.Networking.Vpn.VpnPacketBufferList")
-interface IVpnPacketBufferList : IInspectable
+interface IVpnPacketBufferList : IInspectable, Windows.Foundation.Collections.IIterable!(Windows.Networking.Vpn.VpnPacketBuffer)
 {
 extern(Windows):
 	HRESULT abi_Append(Windows.Networking.Vpn.VpnPacketBuffer nextVpnPacketBuffer);
@@ -397,7 +397,7 @@ extern(Windows):
 
 @uuid("3e7acfe5-ea1e-482a-8d98-c065f57d89ea")
 @WinrtFactory("Windows.Networking.Vpn.VpnPacketBufferList")
-interface IVpnPacketBufferList2 : IInspectable
+interface IVpnPacketBufferList2 : IInspectable, Windows.Foundation.Collections.IIterable!(Windows.Networking.Vpn.VpnPacketBuffer)
 {
 extern(Windows):
 	HRESULT abi_AddLeadingPacket(Windows.Networking.Vpn.VpnPacketBuffer nextVpnPacketBuffer);
@@ -429,7 +429,7 @@ extern(Windows):
 
 @uuid("0edf0da4-4f00-4589-8d7b-4bf988f6542c")
 @WinrtFactory("Windows.Networking.Vpn.VpnPlugInProfile")
-interface IVpnPlugInProfile : IInspectable
+interface IVpnPlugInProfile : IInspectable, Windows.Networking.Vpn.IVpnProfile
 {
 extern(Windows):
 	HRESULT get_ServerUris(Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri)* return_value);
@@ -441,7 +441,7 @@ extern(Windows):
 
 @uuid("611c4892-cf94-4ad6-ba99-00f4ff34565e")
 @WinrtFactory("Windows.Networking.Vpn.VpnPlugInProfile")
-interface IVpnPlugInProfile2 : IInspectable
+interface IVpnPlugInProfile2 : IInspectable, Windows.Networking.Vpn.IVpnProfile
 {
 extern(Windows):
 	HRESULT get_RequireVpnClientAppUI(bool* return_value);

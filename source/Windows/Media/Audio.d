@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("b01b6be1-6f4e-49e2-ac01-559d62beb3a9")
 @WinrtFactory("Windows.Media.Audio.AudioDeviceInputNode")
-interface IAudioDeviceInputNode : IInspectable
+interface IAudioDeviceInputNode : IInspectable, Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_Device(Windows.Devices.Enumeration.DeviceInformation* return_value);
@@ -12,7 +12,7 @@ extern(Windows):
 
 @uuid("362edbff-ff1c-4434-9e0f-bd2ef522ac82")
 @WinrtFactory("Windows.Media.Audio.AudioDeviceOutputNode")
-interface IAudioDeviceOutputNode : IInspectable
+interface IAudioDeviceOutputNode : IInspectable, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_Device(Windows.Devices.Enumeration.DeviceInformation* return_value);
@@ -20,7 +20,7 @@ extern(Windows):
 
 @uuid("905b67c8-6f65-4cd4-8890-4694843c276d")
 @WinrtFactory("Windows.Media.Audio.AudioFileInputNode")
-interface IAudioFileInputNode : IInspectable
+interface IAudioFileInputNode : IInspectable, Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT set_PlaybackSpeedFactor(double value);
@@ -41,7 +41,7 @@ extern(Windows):
 
 @uuid("50e01980-5166-4093-80f8-ada00089e9cf")
 @WinrtFactory("Windows.Media.Audio.AudioFileOutputNode")
-interface IAudioFileOutputNode : IInspectable
+interface IAudioFileOutputNode : IInspectable, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_File(Windows.Storage.IStorageFile* return_value);
@@ -59,7 +59,7 @@ extern(Windows):
 
 @uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237")
 @WinrtFactory("Windows.Media.Audio.AudioFrameInputNode")
-interface IAudioFrameInputNode : IInspectable
+interface IAudioFrameInputNode : IInspectable, Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT set_PlaybackSpeedFactor(double value);
@@ -75,7 +75,7 @@ extern(Windows):
 
 @uuid("b847371b-3299-45f5-88b3-c9d12a3f1cc8")
 @WinrtFactory("Windows.Media.Audio.AudioFrameOutputNode")
-interface IAudioFrameOutputNode : IInspectable
+interface IAudioFrameOutputNode : IInspectable, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT abi_GetFrame(Windows.Media.AudioFrame* return_audioFrame);
@@ -83,7 +83,7 @@ extern(Windows):
 
 @uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8")
 @WinrtFactory("Windows.Media.Audio.AudioGraph")
-interface IAudioGraph : IInspectable
+interface IAudioGraph : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT abi_CreateFrameInputNode(Windows.Media.Audio.AudioFrameInputNode* return_frameInputNode);
@@ -118,7 +118,7 @@ extern(Windows):
 
 @uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839")
 @WinrtFactory("Windows.Media.Audio.AudioGraph")
-interface IAudioGraph2 : IInspectable
+interface IAudioGraph2 : IInspectable, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioGraph
 {
 extern(Windows):
 	HRESULT abi_CreateFrameInputNodeWithFormatAndEmitter(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter, Windows.Media.Audio.AudioFrameInputNode* return_frameInputNode);
@@ -182,7 +182,7 @@ extern(Windows):
 }
 
 @uuid("d148005c-8428-4784-b7fd-a99d468c5d20")
-interface IAudioInputNode : IInspectable
+interface IAudioInputNode : IInspectable, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_OutgoingConnections(Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection)* return_value);
@@ -192,14 +192,14 @@ extern(Windows):
 }
 
 @uuid("905156b7-ca68-4c6d-a8bc-e3ee17fe3fd2")
-interface IAudioInputNode2 : IInspectable
+interface IAudioInputNode2 : IInspectable, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioInputNode
 {
 extern(Windows):
 	HRESULT get_Emitter(Windows.Media.Audio.AudioNodeEmitter* return_value);
 }
 
 @uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d")
-interface IAudioNode : IInspectable
+interface IAudioNode : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_EffectDefinitions(Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition)* return_value);
@@ -327,7 +327,7 @@ extern(Windows):
 }
 
 @uuid("0e0f907c-79ff-4544-9eeb-01257b15105a")
-interface IAudioNodeWithListener : IInspectable
+interface IAudioNodeWithListener : IInspectable, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioNode
 {
 extern(Windows):
 	HRESULT set_Listener(Windows.Media.Audio.AudioNodeListener value);
@@ -381,7 +381,7 @@ extern(Windows):
 
 @uuid("0e4d3faa-36b8-4c91-b9da-11f44a8a6610")
 @WinrtFactory("Windows.Media.Audio.EchoEffectDefinition")
-interface IEchoEffectDefinition : IInspectable
+interface IEchoEffectDefinition : IInspectable, Windows.Media.Effects.IAudioEffectDefinition
 {
 extern(Windows):
 	HRESULT set_WetDryMix(double value);
@@ -415,7 +415,7 @@ extern(Windows):
 
 @uuid("023f6f1f-83fe-449a-a822-c696442d16b0")
 @WinrtFactory("Windows.Media.Audio.EqualizerEffectDefinition")
-interface IEqualizerEffectDefinition : IInspectable
+interface IEqualizerEffectDefinition : IInspectable, Windows.Media.Effects.IAudioEffectDefinition
 {
 extern(Windows):
 	HRESULT get_Bands(Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.EqualizerBand)* return_value);
@@ -439,7 +439,7 @@ extern(Windows):
 
 @uuid("6b755d19-2603-47ba-bdeb-39055e3486dc")
 @WinrtFactory("Windows.Media.Audio.LimiterEffectDefinition")
-interface ILimiterEffectDefinition : IInspectable
+interface ILimiterEffectDefinition : IInspectable, Windows.Media.Effects.IAudioEffectDefinition
 {
 extern(Windows):
 	HRESULT set_Release(UINT32 value);
@@ -458,7 +458,7 @@ extern(Windows):
 
 @uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84")
 @WinrtFactory("Windows.Media.Audio.ReverbEffectDefinition")
-interface IReverbEffectDefinition : IInspectable
+interface IReverbEffectDefinition : IInspectable, Windows.Media.Effects.IAudioEffectDefinition
 {
 extern(Windows):
 	HRESULT set_WetDryMix(double value);

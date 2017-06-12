@@ -71,7 +71,7 @@ extern(Windows):
 
 @uuid("0133f954-b156-4dd0-b1f5-c11bc31a5163")
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothDevice")
-interface IBluetoothDevice2 : IInspectable
+interface IBluetoothDevice2 : IInspectable, Windows.Devices.Bluetooth.IBluetoothDevice
 {
 extern(Windows):
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);
@@ -79,7 +79,7 @@ extern(Windows):
 
 @uuid("57fff78b-651a-4454-b90f-eb21ef0b0d71")
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothDevice")
-interface IBluetoothDevice3 : IInspectable
+interface IBluetoothDevice3 : IInspectable, Windows.Devices.Bluetooth.IBluetoothDevice2, Windows.Devices.Bluetooth.IBluetoothDevice
 {
 extern(Windows):
 	HRESULT get_DeviceAccessInformation(Windows.Devices.Enumeration.DeviceAccessInformation* return_value);
@@ -113,7 +113,7 @@ extern(Windows):
 
 @uuid("c29e8e2f-4e14-4477-aa1b-b8b47e5b7ece")
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothDevice")
-interface IBluetoothDeviceStatics2 : IInspectable
+interface IBluetoothDeviceStatics2 : IInspectable, Windows.Devices.Bluetooth.IBluetoothDeviceStatics
 {
 extern(Windows):
 	HRESULT abi_GetDeviceSelectorFromPairingState(bool pairingState, HSTRING* return_deviceSelector);
@@ -229,7 +229,7 @@ extern(Windows):
 
 @uuid("26f062b3-7aee-4d31-baba-b1b9775f5916")
 @WinrtFactory("Windows.Devices.Bluetooth.BluetoothLEDevice")
-interface IBluetoothLEDevice2 : IInspectable
+interface IBluetoothLEDevice2 : IInspectable, Windows.Devices.Bluetooth.IBluetoothLEDevice
 {
 extern(Windows):
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);

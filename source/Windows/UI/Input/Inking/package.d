@@ -78,7 +78,7 @@ extern(Windows):
 
 @uuid("4744737d-671b-4163-9c95-4e8d7a035fe1")
 @WinrtFactory("Windows.UI.Input.Inking.InkManager")
-interface IInkManager : IInspectable
+interface IInkManager : IInspectable, Windows.UI.Input.Inking.IInkStrokeContainer, Windows.UI.Input.Inking.IInkRecognizerContainer
 {
 extern(Windows):
 	HRESULT get_Mode(Windows.UI.Input.Inking.InkManipulationMode* return_value);
@@ -150,7 +150,7 @@ extern(Windows):
 
 @uuid("cf53e612-9a34-11e6-9f33-a24fc0d9649c")
 @WinrtFactory("Windows.UI.Input.Inking.InkPresenter")
-interface IInkPresenter2 : IInspectable
+interface IInkPresenter2 : IInspectable, Windows.UI.Input.Inking.IInkPresenter
 {
 extern(Windows):
 	HRESULT get_HighContrastAdjustment(Windows.UI.Input.Inking.InkHighContrastAdjustment* return_value);
@@ -159,7 +159,7 @@ extern(Windows):
 
 @uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17")
 @WinrtFactory("Windows.UI.Input.Inking.InkPresenterProtractor")
-interface IInkPresenterProtractor : IInspectable
+interface IInkPresenterProtractor : IInspectable, Windows.UI.Input.Inking.IInkPresenterStencil
 {
 extern(Windows):
 	HRESULT get_AreTickMarksVisible(bool* return_value);
@@ -188,7 +188,7 @@ extern(Windows):
 
 @uuid("6cda7d5a-dec7-4dd7-877a-2133f183d48a")
 @WinrtFactory("Windows.UI.Input.Inking.InkPresenterRuler")
-interface IInkPresenterRuler : IInspectable
+interface IInkPresenterRuler : IInspectable, Windows.UI.Input.Inking.IInkPresenterStencil
 {
 extern(Windows):
 	HRESULT get_Length(double* return_value);

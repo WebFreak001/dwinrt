@@ -37,7 +37,7 @@ extern(Windows):
 
 @uuid("192a5319-c9c4-4947-81cc-44794a61ef91")
 @WinrtFactory("Windows.Devices.SmartCards.SmartCardChallengeContext")
-interface ISmartCardChallengeContext : IInspectable
+interface ISmartCardChallengeContext : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_Challenge(Windows.Storage.Streams.IBuffer* return_value);
@@ -57,7 +57,7 @@ extern(Windows):
 
 @uuid("7edb991a-a81a-47bc-a649-156be6b7f231")
 @WinrtFactory("Windows.Devices.SmartCards.SmartCardConnection")
-interface ISmartCardConnection : IInspectable
+interface ISmartCardConnection : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT abi_TransmitAsync(Windows.Storage.Streams.IBuffer command, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_result);

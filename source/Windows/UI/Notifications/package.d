@@ -12,7 +12,7 @@ extern(Windows):
 
 @uuid("46d4a3be-609a-4326-a40b-bfde872034a3")
 @WinrtFactory("Windows.UI.Notifications.AdaptiveNotificationText")
-interface IAdaptiveNotificationText : IInspectable
+interface IAdaptiveNotificationText : IInspectable, Windows.UI.Notifications.IAdaptiveNotificationContent
 {
 extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);

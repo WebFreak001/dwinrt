@@ -35,7 +35,7 @@ extern(Windows):
 }
 
 @uuid("0d1c3443-304b-405c-b4f7-f5ab1074461e")
-interface ISpiDeviceProvider : IInspectable
+interface ISpiDeviceProvider : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);

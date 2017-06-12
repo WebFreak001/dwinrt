@@ -92,7 +92,7 @@ extern(Windows):
 
 @uuid("81142163-e426-47cb-8640-e1b3588bf26f")
 @WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession")
-interface IWiFiDirectServiceSession : IInspectable
+interface IWiFiDirectServiceSession : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_ServiceName(HSTRING* return_value);
@@ -121,7 +121,7 @@ extern(Windows):
 
 @uuid("a0e27c8b-50cb-4a58-9bcf-e472b99fba04")
 @WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequest")
-interface IWiFiDirectServiceSessionRequest : IInspectable
+interface IWiFiDirectServiceSessionRequest : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);

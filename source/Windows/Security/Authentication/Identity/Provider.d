@@ -78,7 +78,7 @@ extern(Windows):
 
 @uuid("14d981a3-fc26-4ff7-abc3-48e82a512a0a")
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorInfo")
-interface ISecondaryAuthenticationFactorInfo2 : IInspectable
+interface ISecondaryAuthenticationFactorInfo2 : IInspectable, Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo
 {
 extern(Windows):
 	HRESULT get_PresenceMonitoringMode(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode* return_value);

@@ -16,7 +16,7 @@ extern(Windows):
 }
 
 @uuid("ad342654-57e8-453e-8329-d1e447d103a9")
-interface II2cDeviceProvider : IInspectable
+interface II2cDeviceProvider : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);

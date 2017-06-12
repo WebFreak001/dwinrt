@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("047d5b9a-ea45-4b2b-b1a2-14dff00bde7b")
 @WinrtFactory("Windows.Devices.Lights.Lamp")
-interface ILamp : IInspectable
+interface ILamp : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);

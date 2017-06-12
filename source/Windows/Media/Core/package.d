@@ -39,7 +39,7 @@ struct TimedTextSize
 
 @uuid("1e3692e4-4027-4847-a70b-df1d9a2a7b04")
 @WinrtFactory("Windows.Media.Core.AudioStreamDescriptor")
-interface IAudioStreamDescriptor : IInspectable
+interface IAudioStreamDescriptor : IInspectable, Windows.Media.Core.IMediaStreamDescriptor
 {
 extern(Windows):
 	HRESULT get_EncodingProperties(Windows.Media.MediaProperties.AudioEncodingProperties* return_encodingProperties);
@@ -47,7 +47,7 @@ extern(Windows):
 
 @uuid("2e68f1f6-a448-497b-8840-85082665acf9")
 @WinrtFactory("Windows.Media.Core.AudioStreamDescriptor")
-interface IAudioStreamDescriptor2 : IInspectable
+interface IAudioStreamDescriptor2 : IInspectable, Windows.Media.Core.IMediaStreamDescriptor
 {
 extern(Windows):
 	HRESULT set_LeadingEncoderPadding(Windows.Foundation.IReference!(UINT32) value);
@@ -98,7 +98,7 @@ extern(Windows):
 
 @uuid("72a98001-d38a-4c0a-8fa6-75cddaf4664c")
 @WinrtFactory("Windows.Media.Core.ChapterCue")
-interface IChapterCue : IInspectable
+interface IChapterCue : IInspectable, Windows.Media.Core.IMediaCue
 {
 extern(Windows):
 	HRESULT set_Title(HSTRING value);
@@ -185,7 +185,7 @@ extern(Windows):
 
 @uuid("7c7f676d-1fbc-4e2d-9a87-ee38bd1dc637")
 @WinrtFactory("Windows.Media.Core.DataCue")
-interface IDataCue : IInspectable
+interface IDataCue : IInspectable, Windows.Media.Core.IMediaCue
 {
 extern(Windows):
 	HRESULT set_Data(Windows.Storage.Streams.IBuffer value);
@@ -194,7 +194,7 @@ extern(Windows):
 
 @uuid("bc561b15-95f2-49e8-96f1-8dd5dac68d93")
 @WinrtFactory("Windows.Media.Core.DataCue")
-interface IDataCue2 : IInspectable
+interface IDataCue2 : IInspectable, Windows.Media.Core.IDataCue, Windows.Media.Core.IMediaCue
 {
 extern(Windows):
 	HRESULT get_Properties(Windows.Foundation.Collections.PropertySet* return_value);
@@ -210,7 +210,7 @@ extern(Windows):
 
 @uuid("ae15ebd2-0542-42a9-bc90-f283a29f46c1")
 @WinrtFactory("Windows.Media.Core.FaceDetectionEffect")
-interface IFaceDetectionEffect : IInspectable
+interface IFaceDetectionEffect : IInspectable, Windows.Media.IMediaExtension
 {
 extern(Windows):
 	HRESULT set_Enabled(bool value);
@@ -223,7 +223,7 @@ extern(Windows):
 
 @uuid("43dca081-b848-4f33-b702-1fd2624fb016")
 @WinrtFactory("Windows.Media.Core.FaceDetectionEffectDefinition")
-interface IFaceDetectionEffectDefinition : IInspectable
+interface IFaceDetectionEffectDefinition : IInspectable, Windows.Media.Effects.IVideoEffectDefinition
 {
 extern(Windows):
 	HRESULT set_DetectionMode(Windows.Media.Core.FaceDetectionMode value);
@@ -234,7 +234,7 @@ extern(Windows):
 
 @uuid("8ab08993-5dc8-447b-a247-5270bd802ece")
 @WinrtFactory("Windows.Media.Core.FaceDetectionEffectFrame")
-interface IFaceDetectionEffectFrame : IInspectable
+interface IFaceDetectionEffectFrame : IInspectable, Windows.Media.IMediaFrame, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_DetectedFaces(Windows.Foundation.Collections.IVectorView!(Windows.Media.FaceAnalysis.DetectedFace)* return_value);
@@ -260,7 +260,7 @@ extern(Windows):
 
 @uuid("52828282-367b-440b-9116-3c84570dd270")
 @WinrtFactory("Windows.Media.Core.ImageCue")
-interface IImageCue : IInspectable
+interface IImageCue : IInspectable, Windows.Media.Core.IMediaCue
 {
 extern(Windows):
 	HRESULT get_Position(Windows.Media.Core.TimedTextPoint* return_value);
@@ -333,7 +333,7 @@ interface IMediaSource : IInspectable
 
 @uuid("2eb61048-655f-4c37-b813-b4e45dfa0abe")
 @WinrtFactory("Windows.Media.Core.MediaSource")
-interface IMediaSource2 : IInspectable
+interface IMediaSource2 : IInspectable, Windows.Media.Playback.IMediaPlaybackSource, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT add_OpenOperationCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceOpenOperationCompletedEventArgs) handler, EventRegistrationToken* return_token);
@@ -347,7 +347,7 @@ extern(Windows):
 
 @uuid("b59f0d9b-4b6e-41ed-bbb4-7c7509a994ad")
 @WinrtFactory("Windows.Media.Core.MediaSource")
-interface IMediaSource3 : IInspectable
+interface IMediaSource3 : IInspectable, Windows.Media.Core.IMediaSource2, Windows.Media.Playback.IMediaPlaybackSource, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceStateChangedEventArgs) handler, EventRegistrationToken* return_token);
@@ -358,7 +358,7 @@ extern(Windows):
 
 @uuid("bdafad57-8eff-4c63-85a6-84de0ae3e4f2")
 @WinrtFactory("Windows.Media.Core.MediaSource")
-interface IMediaSource4 : IInspectable
+interface IMediaSource4 : IInspectable, Windows.Media.Core.IMediaSource3, Windows.Media.Core.IMediaSource2, Windows.Media.Playback.IMediaPlaybackSource, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_AdaptiveMediaSource(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource* return_value);
@@ -472,7 +472,7 @@ extern(Windows):
 
 @uuid("3712d543-45eb-4138-aa62-c01e26f3843f")
 @WinrtFactory("Windows.Media.Core.MediaStreamSource")
-interface IMediaStreamSource : IInspectable
+interface IMediaStreamSource : IInspectable, Windows.Media.Core.IMediaSource
 {
 extern(Windows):
 	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceClosedEventArgs) handler, EventRegistrationToken* return_token);
@@ -505,7 +505,7 @@ extern(Windows):
 
 @uuid("ec55d0ad-2e6a-4f74-adbb-b562d1533849")
 @WinrtFactory("Windows.Media.Core.MediaStreamSource")
-interface IMediaStreamSource2 : IInspectable
+interface IMediaStreamSource2 : IInspectable, Windows.Media.Core.IMediaStreamSource, Windows.Media.Core.IMediaSource
 {
 extern(Windows):
 	HRESULT add_SampleRendered(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs) handler, EventRegistrationToken* return_token);
@@ -514,7 +514,7 @@ extern(Windows):
 
 @uuid("6a2a2746-3ddd-4ddf-a121-94045ecf9440")
 @WinrtFactory("Windows.Media.Core.MediaStreamSource")
-interface IMediaStreamSource3 : IInspectable
+interface IMediaStreamSource3 : IInspectable, Windows.Media.Core.IMediaStreamSource, Windows.Media.Core.IMediaSource
 {
 extern(Windows):
 	HRESULT set_MaxSupportedPlaybackRate(Windows.Foundation.IReference!(double) value);
@@ -691,7 +691,7 @@ extern(Windows):
 
 @uuid("b0b4198d-02f4-4923-88dd-81bc3f360ffa")
 @WinrtFactory("Windows.Media.Core.MseStreamSource")
-interface IMseStreamSource : IInspectable
+interface IMseStreamSource : IInspectable, Windows.Media.Core.IMediaSource
 {
 extern(Windows):
 	HRESULT add_Opened(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource, IInspectable) handler, EventRegistrationToken* return_token);
@@ -720,7 +720,7 @@ extern(Windows):
 
 @uuid("c04ba319-ca41-4813-bffd-7b08b0ed2557")
 @WinrtFactory("Windows.Media.Core.SceneAnalysisEffect")
-interface ISceneAnalysisEffect : IInspectable
+interface ISceneAnalysisEffect : IInspectable, Windows.Media.IMediaExtension
 {
 extern(Windows):
 	HRESULT get_HighDynamicRangeAnalyzer(Windows.Media.Core.HighDynamicRangeControl* return_value);
@@ -732,7 +732,7 @@ extern(Windows):
 
 @uuid("d8b10e4c-7fd9-42e1-85eb-6572c297c987")
 @WinrtFactory("Windows.Media.Core.SceneAnalysisEffectFrame")
-interface ISceneAnalysisEffectFrame : IInspectable
+interface ISceneAnalysisEffectFrame : IInspectable, Windows.Media.IMediaFrame, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_FrameControlValues(Windows.Media.Capture.CapturedFrameControlValues* return_value);
@@ -759,7 +759,7 @@ extern(Windows):
 
 @uuid("aee254dc-1725-4bad-8043-a98499b017a2")
 @WinrtFactory("Windows.Media.Core.SpeechCue")
-interface ISpeechCue : IInspectable
+interface ISpeechCue : IInspectable, Windows.Media.Core.IMediaCue
 {
 extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);
@@ -772,7 +772,7 @@ extern(Windows):
 
 @uuid("9e6aed9e-f67a-49a9-b330-cf03b0e9cf07")
 @WinrtFactory("Windows.Media.Core.TimedMetadataTrack")
-interface ITimedMetadataTrack : IInspectable
+interface ITimedMetadataTrack : IInspectable, Windows.Media.Core.IMediaTrack
 {
 extern(Windows):
 	HRESULT add_CueEntered(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs) handler, EventRegistrationToken* return_token);
@@ -791,7 +791,7 @@ extern(Windows):
 
 @uuid("21b4b648-9f9d-40ba-a8f3-1a92753aef0b")
 @WinrtFactory("Windows.Media.Core.TimedMetadataTrack")
-interface ITimedMetadataTrack2 : IInspectable
+interface ITimedMetadataTrack2 : IInspectable, Windows.Media.Core.ITimedMetadataTrack, Windows.Media.Core.IMediaTrack
 {
 extern(Windows):
 	HRESULT get_PlaybackItem(Windows.Media.Playback.MediaPlaybackItem* return_value);
@@ -832,7 +832,7 @@ extern(Windows):
 
 @uuid("51c79e51-3b86-494d-b359-bb2ea7aca9a9")
 @WinrtFactory("Windows.Media.Core.TimedTextCue")
-interface ITimedTextCue : IInspectable
+interface ITimedTextCue : IInspectable, Windows.Media.Core.IMediaCue
 {
 extern(Windows):
 	HRESULT get_CueRegion(Windows.Media.Core.TimedTextRegion* return_value);
@@ -984,7 +984,7 @@ extern(Windows):
 
 @uuid("0808a650-9698-4e57-877b-bd7cb2ee0f8a")
 @WinrtFactory("Windows.Media.Core.VideoStabilizationEffect")
-interface IVideoStabilizationEffect : IInspectable
+interface IVideoStabilizationEffect : IInspectable, Windows.Media.IMediaExtension
 {
 extern(Windows):
 	HRESULT set_Enabled(bool value);
@@ -1004,7 +1004,7 @@ extern(Windows):
 
 @uuid("12ee0d55-9c2b-4440-8057-2c7a90f0cbec")
 @WinrtFactory("Windows.Media.Core.VideoStreamDescriptor")
-interface IVideoStreamDescriptor : IInspectable
+interface IVideoStreamDescriptor : IInspectable, Windows.Media.Core.IMediaStreamDescriptor
 {
 extern(Windows):
 	HRESULT get_EncodingProperties(Windows.Media.MediaProperties.VideoEncodingProperties* return_encodingProperties);

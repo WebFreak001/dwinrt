@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("cd951653-c2f1-4498-8b78-5fb4cd3640dd")
 @WinrtFactory("Windows.Media.Casting.CastingConnection")
-interface ICastingConnection : IInspectable
+interface ICastingConnection : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_State(Windows.Media.Casting.CastingConnectionState* return_value);

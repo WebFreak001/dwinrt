@@ -37,7 +37,7 @@ extern(Windows):
 
 @uuid("eace5644-19df-4115-b32a-2793e2aea3bb")
 @WinrtFactory("Windows.Gaming.Input.Custom.GameControllerFactoryManager")
-interface IGameControllerFactoryManagerStatics2 : IInspectable
+interface IGameControllerFactoryManagerStatics2 : IInspectable, Windows.Gaming.Input.Custom.IGameControllerFactoryManagerStatics
 {
 extern(Windows):
 	HRESULT abi_TryGetFactoryControllerFromGameController(Windows.Gaming.Input.Custom.ICustomGameControllerFactory factory, Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.IGameController* return_factoryController);
@@ -73,7 +73,7 @@ extern(Windows):
 }
 
 @uuid("a2108abf-09f1-43bc-a140-80f899ec36fb")
-interface IGipGameControllerInputSink : IInspectable
+interface IGipGameControllerInputSink : IInspectable, Windows.Gaming.Input.Custom.IGameControllerInputSink
 {
 extern(Windows):
 	HRESULT abi_OnKeyReceived(UINT64 timestamp, BYTE keyCode, bool isPressed);
@@ -82,7 +82,7 @@ extern(Windows):
 
 @uuid("dbcf1e19-1af5-45a8-bf02-a0ee50c823fc")
 @WinrtFactory("Windows.Gaming.Input.Custom.GipGameControllerProvider")
-interface IGipGameControllerProvider : IInspectable
+interface IGipGameControllerProvider : IInspectable, Windows.Gaming.Input.Custom.IGameControllerProvider
 {
 extern(Windows):
 	HRESULT abi_SendMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, BYTE messageId, UINT32 __messageBufferSize, BYTE* messageBuffer);
@@ -91,7 +91,7 @@ extern(Windows):
 }
 
 @uuid("f754c322-182d-40e4-a126-fcee4ffa1e31")
-interface IHidGameControllerInputSink : IInspectable
+interface IHidGameControllerInputSink : IInspectable, Windows.Gaming.Input.Custom.IGameControllerInputSink
 {
 extern(Windows):
 	HRESULT abi_OnInputReportReceived(UINT64 timestamp, BYTE reportId, UINT32 __reportBufferSize, BYTE* reportBuffer);
@@ -99,7 +99,7 @@ extern(Windows):
 
 @uuid("95ce3af4-abf0-4b68-a081-3b7de73ff0e7")
 @WinrtFactory("Windows.Gaming.Input.Custom.HidGameControllerProvider")
-interface IHidGameControllerProvider : IInspectable
+interface IHidGameControllerProvider : IInspectable, Windows.Gaming.Input.Custom.IGameControllerProvider
 {
 extern(Windows):
 	HRESULT get_UsageId(UINT16* return_value);
@@ -110,7 +110,7 @@ extern(Windows):
 }
 
 @uuid("b2ac1d95-6ecb-42b3-8aab-025401ca4712")
-interface IXusbGameControllerInputSink : IInspectable
+interface IXusbGameControllerInputSink : IInspectable, Windows.Gaming.Input.Custom.IGameControllerInputSink
 {
 extern(Windows):
 	HRESULT abi_OnInputReceived(UINT64 timestamp, BYTE reportId, UINT32 __inputBufferSize, BYTE* inputBuffer);
@@ -118,7 +118,7 @@ extern(Windows):
 
 @uuid("6e2971eb-0efb-48b4-808b-837643b2f216")
 @WinrtFactory("Windows.Gaming.Input.Custom.XusbGameControllerProvider")
-interface IXusbGameControllerProvider : IInspectable
+interface IXusbGameControllerProvider : IInspectable, Windows.Gaming.Input.Custom.IGameControllerProvider
 {
 extern(Windows):
 	HRESULT abi_SetVibration(double lowFrequencyMotorSpeed, double highFrequencyMotorSpeed);

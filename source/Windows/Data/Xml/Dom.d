@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("6a0b5ffc-63b4-480f-9e6a-8a92816aade4")
 @WinrtFactory("Windows.Data.Xml.Dom.DtdEntity")
-interface IDtdEntity : IInspectable
+interface IDtdEntity : IInspectable, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 extern(Windows):
 	HRESULT get_PublicId(IInspectable* return_value);
@@ -14,7 +14,7 @@ extern(Windows):
 
 @uuid("8cb4e04d-6d46-4edb-ab73-df83c51ad397")
 @WinrtFactory("Windows.Data.Xml.Dom.DtdNotation")
-interface IDtdNotation : IInspectable
+interface IDtdNotation : IInspectable, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 extern(Windows):
 	HRESULT get_PublicId(IInspectable* return_value);
@@ -23,7 +23,7 @@ extern(Windows):
 
 @uuid("ac144aa4-b4f1-4db6-b206-8a22c308db0a")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlAttribute")
-interface IXmlAttribute : IInspectable
+interface IXmlAttribute : IInspectable, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
@@ -34,12 +34,12 @@ extern(Windows):
 
 @uuid("4d04b46f-c8bd-45b4-8899-0400d7c2c60f")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlCDataSection")
-interface IXmlCDataSection : IInspectable
+interface IXmlCDataSection : IInspectable, Windows.Data.Xml.Dom.IXmlText, Windows.Data.Xml.Dom.IXmlCharacterData, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 }
 
 @uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26")
-interface IXmlCharacterData : IInspectable
+interface IXmlCharacterData : IInspectable, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 extern(Windows):
 	HRESULT get_Data(HSTRING* return_value);
@@ -54,13 +54,13 @@ extern(Windows):
 
 @uuid("bca474d5-b61f-4611-9cac-2e92e3476d47")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlComment")
-interface IXmlComment : IInspectable
+interface IXmlComment : IInspectable, Windows.Data.Xml.Dom.IXmlCharacterData, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 }
 
 @uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDocument")
-interface IXmlDocument : IInspectable
+interface IXmlDocument : IInspectable, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 extern(Windows):
 	HRESULT get_Doctype(Windows.Data.Xml.Dom.XmlDocumentType* return_value);
@@ -84,7 +84,7 @@ extern(Windows):
 
 @uuid("e2ea6a96-0c21-44a5-8bc9-9e4a262708ec")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDocumentFragment")
-interface IXmlDocumentFragment : IInspectable
+interface IXmlDocumentFragment : IInspectable, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 }
 
@@ -120,7 +120,7 @@ extern(Windows):
 
 @uuid("f7342425-9781-4964-8e94-9b1c6dfc9bc7")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDocumentType")
-interface IXmlDocumentType : IInspectable
+interface IXmlDocumentType : IInspectable, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
@@ -138,7 +138,7 @@ extern(Windows):
 
 @uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlElement")
-interface IXmlElement : IInspectable
+interface IXmlElement : IInspectable, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 extern(Windows):
 	HRESULT get_TagName(HSTRING* return_value);
@@ -158,7 +158,7 @@ extern(Windows):
 
 @uuid("2e2f47bc-c3d0-4ccf-bb86-0ab8c36a61cf")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlEntityReference")
-interface IXmlEntityReference : IInspectable
+interface IXmlEntityReference : IInspectable, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 }
 
@@ -181,7 +181,7 @@ extern(Windows):
 
 @uuid("b3a69eb0-aab0-4b82-a6fa-b1453f7c021b")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlNamedNodeMap")
-interface IXmlNamedNodeMap : IInspectable
+interface IXmlNamedNodeMap : IInspectable, Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode), Windows.Foundation.Collections.IIterable!(Windows.Data.Xml.Dom.IXmlNode)
 {
 extern(Windows):
 	HRESULT get_Length(UINT32* return_value);
@@ -195,7 +195,7 @@ extern(Windows):
 }
 
 @uuid("1c741d59-2122-47d5-a856-83f3d4214875")
-interface IXmlNode : IInspectable
+interface IXmlNode : IInspectable, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 extern(Windows):
 	HRESULT get_NodeValue(IInspectable* return_value);
@@ -225,7 +225,7 @@ extern(Windows):
 
 @uuid("8c60ad77-83a4-4ec1-9c54-7ba429e13da6")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlNodeList")
-interface IXmlNodeList : IInspectable
+interface IXmlNodeList : IInspectable, Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode), Windows.Foundation.Collections.IIterable!(Windows.Data.Xml.Dom.IXmlNode)
 {
 extern(Windows):
 	HRESULT get_Length(UINT32* return_value);
@@ -253,7 +253,7 @@ extern(Windows):
 
 @uuid("2707fd1e-1e92-4ece-b6f4-26f069078ddc")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlProcessingInstruction")
-interface IXmlProcessingInstruction : IInspectable
+interface IXmlProcessingInstruction : IInspectable, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 extern(Windows):
 	HRESULT get_Target(HSTRING* return_value);
@@ -262,7 +262,7 @@ extern(Windows):
 }
 
 @uuid("f931a4cb-308d-4760-a1d5-43b67450ac7e")
-interface IXmlText : IInspectable
+interface IXmlText : IInspectable, Windows.Data.Xml.Dom.IXmlCharacterData, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer
 {
 extern(Windows):
 	HRESULT abi_SplitText(UINT32 offset, Windows.Data.Xml.Dom.IXmlText* return_secondPart);

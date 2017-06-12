@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("0ac3645a-57ac-4ee1-b702-84d39d5424e0")
 @WinrtFactory("Windows.Storage.Compression.Compressor")
-interface ICompressor : IInspectable
+interface ICompressor : IInspectable, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT abi_FinishAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
@@ -22,7 +22,7 @@ extern(Windows):
 
 @uuid("b883fe46-d68a-4c8b-ada0-4ee813fc5283")
 @WinrtFactory("Windows.Storage.Compression.Decompressor")
-interface IDecompressor : IInspectable
+interface IDecompressor : IInspectable, Windows.Storage.Streams.IInputStream, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT abi_DetachStream(Windows.Storage.Streams.IInputStream* return_stream);

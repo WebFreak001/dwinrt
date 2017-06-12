@@ -26,7 +26,7 @@ struct BitmapSize
 
 @uuid("a53e04c4-399c-438c-b28f-a63a6b83d1a1")
 @WinrtFactory("Windows.Graphics.Imaging.BitmapBuffer")
-interface IBitmapBuffer : IInspectable
+interface IBitmapBuffer : IInspectable, Windows.Foundation.IMemoryBuffer, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT abi_GetPlaneCount(INT32* return_value);
@@ -139,7 +139,7 @@ extern(Windows):
 }
 
 @uuid("fe287c9a-420c-4963-87ad-691436e08383")
-interface IBitmapFrameWithSoftwareBitmap : IInspectable
+interface IBitmapFrameWithSoftwareBitmap : IInspectable, Windows.Graphics.Imaging.IBitmapFrame
 {
 extern(Windows):
 	HRESULT abi_GetSoftwareBitmapAsync(Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap)* return_value);
@@ -149,7 +149,7 @@ extern(Windows):
 
 @uuid("ea9f4f1b-b505-4450-a4d1-e8ca94529d8d")
 @WinrtFactory("Windows.Graphics.Imaging.BitmapProperties")
-interface IBitmapProperties : IInspectable
+interface IBitmapProperties : IInspectable, Windows.Graphics.Imaging.IBitmapPropertiesView
 {
 extern(Windows):
 	HRESULT abi_SetPropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)) propertiesToSet, Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -208,7 +208,7 @@ extern(Windows):
 
 @uuid("689e0708-7eef-483f-963f-da938818e073")
 @WinrtFactory("Windows.Graphics.Imaging.SoftwareBitmap")
-interface ISoftwareBitmap : IInspectable
+interface ISoftwareBitmap : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_BitmapPixelFormat(Windows.Graphics.Imaging.BitmapPixelFormat* return_value);

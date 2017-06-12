@@ -60,7 +60,7 @@ struct UINavigationReading
 
 @uuid("b14a539d-befb-4c81-8051-15ecf3b13036")
 @WinrtFactory("Windows.Gaming.Input.ArcadeStick")
-interface IArcadeStick : IInspectable
+interface IArcadeStick : IInspectable, Windows.Gaming.Input.IGameController
 {
 extern(Windows):
 	HRESULT abi_GetButtonLabel(Windows.Gaming.Input.ArcadeStickButtons button, Windows.Gaming.Input.GameControllerButtonLabel* return_value);
@@ -81,7 +81,7 @@ extern(Windows):
 
 @uuid("52b5d744-bb86-445a-b59c-596f0e2a49df")
 @WinrtFactory("Windows.Gaming.Input.ArcadeStick")
-interface IArcadeStickStatics2 : IInspectable
+interface IArcadeStickStatics2 : IInspectable, Windows.Gaming.Input.IArcadeStickStatics
 {
 extern(Windows):
 	HRESULT abi_FromGameController(Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.ArcadeStick* return_value);
@@ -89,7 +89,7 @@ extern(Windows):
 
 @uuid("b4a2c01c-b83b-4459-a1a9-97b03c33da7c")
 @WinrtFactory("Windows.Gaming.Input.FlightStick")
-interface IFlightStick : IInspectable
+interface IFlightStick : IInspectable, Windows.Gaming.Input.IGameController
 {
 extern(Windows):
 	HRESULT get_HatSwitchKind(Windows.Gaming.Input.GameControllerSwitchKind* return_value);
@@ -134,7 +134,7 @@ extern(Windows):
 
 @uuid("bc7bb43c-0a69-3903-9e9d-a50f86a45de5")
 @WinrtFactory("Windows.Gaming.Input.Gamepad")
-interface IGamepad : IInspectable
+interface IGamepad : IInspectable, Windows.Gaming.Input.IGameController
 {
 extern(Windows):
 	HRESULT get_Vibration(Windows.Gaming.Input.GamepadVibration* return_value);
@@ -144,7 +144,7 @@ extern(Windows):
 
 @uuid("3c1689bd-5915-4245-b0c0-c89fae0308ff")
 @WinrtFactory("Windows.Gaming.Input.Gamepad")
-interface IGamepad2 : IInspectable
+interface IGamepad2 : IInspectable, Windows.Gaming.Input.IGamepad, Windows.Gaming.Input.IGameController
 {
 extern(Windows):
 	HRESULT abi_GetButtonLabel(Windows.Gaming.Input.GamepadButtons button, Windows.Gaming.Input.GameControllerButtonLabel* return_value);
@@ -164,7 +164,7 @@ extern(Windows):
 
 @uuid("42676dc5-0856-47c4-9213-b395504c3a3c")
 @WinrtFactory("Windows.Gaming.Input.Gamepad")
-interface IGamepadStatics2 : IInspectable
+interface IGamepadStatics2 : IInspectable, Windows.Gaming.Input.IGamepadStatics
 {
 extern(Windows):
 	HRESULT abi_FromGameController(Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.Gamepad* return_value);
@@ -181,7 +181,7 @@ extern(Windows):
 
 @uuid("f546656f-e106-4c82-a90f-554012904b85")
 @WinrtFactory("Windows.Gaming.Input.RacingWheel")
-interface IRacingWheel : IInspectable
+interface IRacingWheel : IInspectable, Windows.Gaming.Input.IGameController
 {
 extern(Windows):
 	HRESULT get_HasClutch(bool* return_value);
@@ -208,7 +208,7 @@ extern(Windows):
 
 @uuid("e666bcaa-edfd-4323-a9f6-3c384048d1ed")
 @WinrtFactory("Windows.Gaming.Input.RacingWheel")
-interface IRacingWheelStatics2 : IInspectable
+interface IRacingWheelStatics2 : IInspectable, Windows.Gaming.Input.IRacingWheelStatics
 {
 extern(Windows):
 	HRESULT abi_FromGameController(Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.RacingWheel* return_value);
@@ -216,7 +216,7 @@ extern(Windows):
 
 @uuid("7cad6d91-a7e1-4f71-9a78-33e9c5dfea62")
 @WinrtFactory("Windows.Gaming.Input.RawGameController")
-interface IRawGameController : IInspectable
+interface IRawGameController : IInspectable, Windows.Gaming.Input.IGameController
 {
 extern(Windows):
 	HRESULT get_AxisCount(INT32* return_value);
@@ -245,7 +245,7 @@ extern(Windows):
 
 @uuid("e5aeefdd-f50e-4a55-8cdc-d33229548175")
 @WinrtFactory("Windows.Gaming.Input.UINavigationController")
-interface IUINavigationController : IInspectable
+interface IUINavigationController : IInspectable, Windows.Gaming.Input.IGameController
 {
 extern(Windows):
 	HRESULT abi_GetCurrentReading(Windows.Gaming.Input.UINavigationReading* return_value);
@@ -267,7 +267,7 @@ extern(Windows):
 
 @uuid("e0cb28e3-b20b-4b0b-9ed4-f3d53cec0de4")
 @WinrtFactory("Windows.Gaming.Input.UINavigationController")
-interface IUINavigationControllerStatics2 : IInspectable
+interface IUINavigationControllerStatics2 : IInspectable, Windows.Gaming.Input.IUINavigationControllerStatics
 {
 extern(Windows):
 	HRESULT abi_FromGameController(Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.UINavigationController* return_value);

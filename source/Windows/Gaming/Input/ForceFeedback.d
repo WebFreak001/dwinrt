@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("32d1ea68-3695-4e69-85c0-cd1944189140")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.ConditionForceEffect")
-interface IConditionForceEffect : IInspectable
+interface IConditionForceEffect : IInspectable, Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
 {
 extern(Windows):
 	HRESULT get_Kind(Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind* return_value);
@@ -21,7 +21,7 @@ extern(Windows):
 
 @uuid("9bfa0140-f3c7-415c-b068-0f068734bce0")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.ConstantForceEffect")
-interface IConstantForceEffect : IInspectable
+interface IConstantForceEffect : IInspectable, Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
 {
 extern(Windows):
 	HRESULT abi_SetParameters(Windows.Foundation.Numerics.Vector3 vector, Windows.Foundation.TimeSpan duration);
@@ -61,7 +61,7 @@ extern(Windows):
 
 @uuid("5c5138d7-fc75-4d52-9a0a-efe4cab5fe64")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect")
-interface IPeriodicForceEffect : IInspectable
+interface IPeriodicForceEffect : IInspectable, Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
 {
 extern(Windows):
 	HRESULT get_Kind(Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind* return_value);
@@ -79,7 +79,7 @@ extern(Windows):
 
 @uuid("f1f81259-1ca6-4080-b56d-b43f3354d052")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.RampForceEffect")
-interface IRampForceEffect : IInspectable
+interface IRampForceEffect : IInspectable, Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect
 {
 extern(Windows):
 	HRESULT abi_SetParameters(Windows.Foundation.Numerics.Vector3 startVector, Windows.Foundation.Numerics.Vector3 endVector, Windows.Foundation.TimeSpan duration);

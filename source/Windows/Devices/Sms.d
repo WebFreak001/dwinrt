@@ -27,7 +27,7 @@ extern(Windows):
 
 @uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54")
 @WinrtFactory("Windows.Devices.Sms.SmsAppMessage")
-interface ISmsAppMessage : IInspectable
+interface ISmsAppMessage : IInspectable, Windows.Devices.Sms.ISmsMessageBase
 {
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
@@ -55,7 +55,7 @@ extern(Windows):
 }
 
 @uuid("5bf4e813-3b53-4c6e-b61a-d86a63755650")
-interface ISmsBinaryMessage : IInspectable
+interface ISmsBinaryMessage : IInspectable, Windows.Devices.Sms.ISmsMessage
 {
 extern(Windows):
 	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
@@ -70,7 +70,7 @@ extern(Windows):
 
 @uuid("75aebbf1-e4b7-4874-a09c-2956e592f957")
 @WinrtFactory("Windows.Devices.Sms.SmsBroadcastMessage")
-interface ISmsBroadcastMessage : IInspectable
+interface ISmsBroadcastMessage : IInspectable, Windows.Devices.Sms.ISmsMessageBase
 {
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
@@ -329,7 +329,7 @@ extern(Windows):
 
 @uuid("e6d28342-b70b-4677-9379-c9783fdff8f4")
 @WinrtFactory("Windows.Devices.Sms.SmsStatusMessage")
-interface ISmsStatusMessage : IInspectable
+interface ISmsStatusMessage : IInspectable, Windows.Devices.Sms.ISmsMessageBase
 {
 extern(Windows):
 	HRESULT get_To(HSTRING* return_value);
@@ -342,7 +342,7 @@ extern(Windows):
 }
 
 @uuid("d61c904c-a495-487f-9a6f-971548c5bc9f")
-interface ISmsTextMessage : IInspectable
+interface ISmsTextMessage : IInspectable, Windows.Devices.Sms.ISmsMessage
 {
 extern(Windows):
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
@@ -375,7 +375,7 @@ extern(Windows):
 
 @uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d")
 @WinrtFactory("Windows.Devices.Sms.SmsTextMessage2")
-interface ISmsTextMessage2 : IInspectable
+interface ISmsTextMessage2 : IInspectable, Windows.Devices.Sms.ISmsMessageBase
 {
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
@@ -409,7 +409,7 @@ extern(Windows):
 
 @uuid("271aa0a6-95b1-44ff-bcb8-b8fdd7e08bc3")
 @WinrtFactory("Windows.Devices.Sms.SmsVoicemailMessage")
-interface ISmsVoicemailMessage : IInspectable
+interface ISmsVoicemailMessage : IInspectable, Windows.Devices.Sms.ISmsMessageBase
 {
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
@@ -420,7 +420,7 @@ extern(Windows):
 
 @uuid("cd937743-7a55-4d3b-9021-f22e022d09c5")
 @WinrtFactory("Windows.Devices.Sms.SmsWapMessage")
-interface ISmsWapMessage : IInspectable
+interface ISmsWapMessage : IInspectable, Windows.Devices.Sms.ISmsMessageBase
 {
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);

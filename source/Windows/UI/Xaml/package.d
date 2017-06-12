@@ -1054,7 +1054,7 @@ extern(Windows):
 
 @uuid("03c40ca8-909e-4117-811c-a4529496bdf1")
 @WinrtFactory("Windows.UI.Xaml.SetterBaseCollection")
-interface ISetterBaseCollection : IInspectable
+interface ISetterBaseCollection : IInspectable, Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.SetterBase)
 {
 extern(Windows):
 	HRESULT get_IsSealed(bool* return_value);

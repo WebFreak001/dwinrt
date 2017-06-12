@@ -70,7 +70,7 @@ extern(Windows):
 
 @uuid("e4c94395-2028-48ed-90b0-d1c1b162e24c")
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameReader")
-interface IMediaFrameReader : IInspectable
+interface IMediaFrameReader : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT add_FrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MediaFrameReader, Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs) handler, EventRegistrationToken* return_token);
@@ -82,7 +82,7 @@ extern(Windows):
 
 @uuid("f6b88641-f0dc-4044-8dc9-961cedd05bad")
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameReference")
-interface IMediaFrameReference : IInspectable
+interface IMediaFrameReference : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT get_SourceKind(Windows.Media.Capture.Frames.MediaFrameSourceKind* return_value);
@@ -180,7 +180,7 @@ interface IMultiSourceMediaFrameArrivedEventArgs : IInspectable
 
 @uuid("8d144402-f763-488d-98f2-b437bcf075e7")
 @WinrtFactory("Windows.Media.Capture.Frames.MultiSourceMediaFrameReader")
-interface IMultiSourceMediaFrameReader : IInspectable
+interface IMultiSourceMediaFrameReader : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT add_FrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader, Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs) handler, EventRegistrationToken* return_token);
@@ -192,7 +192,7 @@ extern(Windows):
 
 @uuid("21964b1a-7fe2-44d6-92e5-298e6d2810e9")
 @WinrtFactory("Windows.Media.Capture.Frames.MultiSourceMediaFrameReference")
-interface IMultiSourceMediaFrameReference : IInspectable
+interface IMultiSourceMediaFrameReference : IInspectable, Windows.Foundation.IClosable
 {
 extern(Windows):
 	HRESULT abi_TryGetFrameReferenceBySourceId(HSTRING sourceId, Windows.Media.Capture.Frames.MediaFrameReference* return_value);

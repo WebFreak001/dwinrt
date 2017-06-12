@@ -24,7 +24,7 @@ struct BackgroundUploadProgress
 
 @uuid("c1c79333-6649-4b1d-a826-a4b3dd234d0b")
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundDownloader")
-interface IBackgroundDownloader : IInspectable
+interface IBackgroundDownloader : IInspectable, Windows.Networking.BackgroundTransfer.IBackgroundTransferBase
 {
 extern(Windows):
 	HRESULT abi_CreateDownload(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Networking.BackgroundTransfer.DownloadOperation* return_operation);
@@ -199,7 +199,7 @@ extern(Windows):
 
 @uuid("c595c9ae-cead-465b-8801-c55ac90a01ce")
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundUploader")
-interface IBackgroundUploader : IInspectable
+interface IBackgroundUploader : IInspectable, Windows.Networking.BackgroundTransfer.IBackgroundTransferBase
 {
 extern(Windows):
 	HRESULT abi_CreateUpload(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile sourceFile, Windows.Networking.BackgroundTransfer.UploadOperation* return_operation);
@@ -289,7 +289,7 @@ extern(Windows):
 
 @uuid("bd87ebb0-5714-4e09-ba68-bef73903b0d7")
 @WinrtFactory("Windows.Networking.BackgroundTransfer.DownloadOperation")
-interface IDownloadOperation : IInspectable
+interface IDownloadOperation : IInspectable, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation
 {
 extern(Windows):
 	HRESULT get_ResultFile(Windows.Storage.IStorageFile* return_value);
@@ -330,7 +330,7 @@ extern(Windows):
 
 @uuid("3e5624e0-7389-434c-8b35-427fd36bbdae")
 @WinrtFactory("Windows.Networking.BackgroundTransfer.UploadOperation")
-interface IUploadOperation : IInspectable
+interface IUploadOperation : IInspectable, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation
 {
 extern(Windows):
 	HRESULT get_SourceFile(Windows.Storage.IStorageFile* return_value);

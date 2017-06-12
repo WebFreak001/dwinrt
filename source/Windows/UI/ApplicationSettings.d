@@ -65,7 +65,7 @@ extern(Windows):
 
 @uuid("d21df7c2-ce0d-484f-b8e8-e823c215765e")
 @WinrtFactory("Windows.UI.ApplicationSettings.AccountsSettingsPane")
-interface IAccountsSettingsPaneStatics2 : IInspectable
+interface IAccountsSettingsPaneStatics2 : IInspectable, Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics
 {
 extern(Windows):
 	HRESULT abi_ShowManageAccountsAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);

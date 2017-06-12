@@ -115,7 +115,7 @@ extern(Windows):
 
 @uuid("86668332-543f-49f5-ac71-6c2afc6565fd")
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessage")
-interface IChatMessage2 : IInspectable
+interface IChatMessage2 : IInspectable, Windows.ApplicationModel.Chat.IChatMessage3, Windows.ApplicationModel.Chat.IChatMessage
 {
 extern(Windows):
 	HRESULT get_EstimatedDownloadSize(UINT64* return_result);
@@ -150,7 +150,7 @@ extern(Windows):
 
 @uuid("74eb2fb0-3ba7-459f-8e0b-e8af0febd9ad")
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessage")
-interface IChatMessage3 : IInspectable
+interface IChatMessage3 : IInspectable, Windows.ApplicationModel.Chat.IChatMessage
 {
 extern(Windows):
 	HRESULT get_RemoteId(HSTRING* return_value);
@@ -158,7 +158,7 @@ extern(Windows):
 
 @uuid("2d144b0f-d2bf-460c-aa68-6d3f8483c9bf")
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessage")
-interface IChatMessage4 : IInspectable
+interface IChatMessage4 : IInspectable, Windows.ApplicationModel.Chat.IChatMessage
 {
 extern(Windows):
 	HRESULT get_SyncId(HSTRING* return_result);
@@ -182,7 +182,7 @@ extern(Windows):
 
 @uuid("5ed99270-7dd1-4a87-a8ce-acdd87d80dc8")
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageAttachment")
-interface IChatMessageAttachment2 : IInspectable
+interface IChatMessageAttachment2 : IInspectable, Windows.ApplicationModel.Chat.IChatMessageAttachment
 {
 extern(Windows):
 	HRESULT get_Thumbnail(Windows.Storage.Streams.IRandomAccessStreamReference* return_result);
@@ -256,7 +256,7 @@ extern(Windows):
 
 @uuid("1d45390f-9f4f-4e35-964e-1b9ca61ac044")
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageManager")
-interface IChatMessageManager2Statics : IInspectable
+interface IChatMessageManager2Statics : IInspectable, Windows.ApplicationModel.Chat.IChatMessageManagerStatic
 {
 extern(Windows):
 	HRESULT abi_RegisterTransportAsync(Windows.Foundation.IAsyncOperation!(HSTRING)* return_result);
@@ -276,7 +276,7 @@ extern(Windows):
 
 @uuid("208b830d-6755-48cc-9ab3-fd03c463fc92")
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageManager")
-interface IChatMessageManagerStatics3 : IInspectable
+interface IChatMessageManagerStatics3 : IInspectable, Windows.ApplicationModel.Chat.IChatMessageManagerStatic
 {
 extern(Windows):
 	HRESULT abi_RequestSyncManagerAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatSyncManager)* return_result);
@@ -292,7 +292,7 @@ extern(Windows):
 
 @uuid("6bb522e0-aa07-4fd1-9471-77934fb75ee6")
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageNotificationTriggerDetails")
-interface IChatMessageNotificationTriggerDetails2 : IInspectable
+interface IChatMessageNotificationTriggerDetails2 : IInspectable, Windows.ApplicationModel.Chat.IChatMessageNotificationTriggerDetails
 {
 extern(Windows):
 	HRESULT get_ShouldDisplayToast(bool* return_result);
@@ -338,7 +338,7 @@ extern(Windows):
 
 @uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768")
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageStore")
-interface IChatMessageStore2 : IInspectable
+interface IChatMessageStore2 : IInspectable, Windows.ApplicationModel.Chat.IChatMessageStore
 {
 extern(Windows):
 	HRESULT abi_ForwardMessageAsync(HSTRING localChatMessageId, Windows.Foundation.Collections.IIterable!(HSTRING) addresses, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage)* return_result);
@@ -362,7 +362,7 @@ extern(Windows):
 
 @uuid("9adbbb09-4345-4ec1-8b74-b7338243719c")
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageStore")
-interface IChatMessageStore3 : IInspectable
+interface IChatMessageStore3 : IInspectable, Windows.ApplicationModel.Chat.IChatMessageStore
 {
 extern(Windows):
 	HRESULT abi_GetMessageBySyncIdAsync(HSTRING syncId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage)* return_result);
@@ -391,7 +391,7 @@ extern(Windows):
 
 @uuid("90a75622-d84a-4c22-a94d-544444edc8a1")
 @WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageTransport")
-interface IChatMessageTransport2 : IInspectable
+interface IChatMessageTransport2 : IInspectable, Windows.ApplicationModel.Chat.IChatMessageTransport
 {
 extern(Windows):
 	HRESULT get_Configuration(Windows.ApplicationModel.Chat.ChatMessageTransportConfiguration* return_result);

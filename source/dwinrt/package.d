@@ -7,6 +7,8 @@ public import dwinrt.winstring;
 
 import core.atomic;
 import core.sys.windows.com;
+import core.thread;
+import core.sync.mutex;
 
 pragma(lib, "User32");
 pragma(lib, "windowsapp");
@@ -98,6 +100,7 @@ extern (Windows)
 	BOOL RoOriginateError(HRESULT error, HSTRING message);
 	void RoUninitialize();
 	HRESULT SetRestrictedErrorInfo(IUnknown* info);
+	HRESULT CoGetApartmentType(int* pAptType, int* pAptQualifier);
 }
 
 struct Debug
@@ -446,38 +449,170 @@ enum AsyncStatus
 	Error,
 }
 
+@uuid("00000036-0000-0000-C000-000000000046")
+interface IAsyncInfo : IInspectable
+{
+	HRESULT get_Id(uint* id);
+	HRESULT get_Status(AsyncStatus* status);
+	HRESULT get_ErrorCode(HRESULT* errorCode);
+	HRESULT abi_Cancel();
+	HRESULT abi_Close();
+
+	final uint Id()
+	{
+		uint ret;
+		Debug.OK(this.as!IAsyncInfo.get_Id(&ret));
+		return ret;
+	}
+
+	final AsyncStatus Status()
+	{
+		AsyncStatus ret;
+		Debug.OK(this.as!IAsyncInfo.get_Status(&ret));
+		return ret;
+	}
+
+	final HRESULT ErrorCode()
+	{
+		HRESULT ret;
+		Debug.OK(this.as!IAsyncInfo.get_ErrorCode(&ret));
+		return ret;
+	}
+
+	final void Cancel()
+	{
+		Debug.OK(this.as!IAsyncInfo.abi_Cancel());
+	}
+
+	final void Close()
+	{
+		Debug.OK(this.as!IAsyncInfo.abi_Close());
+	}
+}
+
 private bool isSta()
 {
-	APTTYPE aptType;
-	APTTYPEQUALIFIER aptTypeQualifier;
-	return SUCCEEDED(CoGetApartmentType(&aptType, &aptTypeQualifier))
-		&& ((aptType == APTTYPE_STA) || (aptType == APTTYPE_MAINSTA));
+	int aptType;
+	int aptTypeQualifier;
+	return SUCCEEDED(CoGetApartmentType(&aptType, &aptTypeQualifier)) && ((aptType == 0 /* STA */ )
+			|| (aptType == 3 /* MAINSTA */ ));
 }
 
-void blocking_suspend(Async)(Async async)
+Handler handler(Handler, Args...)(void delegate(Args) cb)
+		if (__traits(hasMember, Handler.init, "abi_Invoke"))
 {
-	import core.sync.mutex;
+	final class Impl : ComObject, Handler
+	{
+	extern (Windows):
+		override HRESULT abi_Invoke(Args args)
+		{
+			cb(args);
+			return S_OK;
+		}
+	}
 
+	return new Impl();
+}
+
+auto yielding_suspend(Async)(Async async)
+{
+	return suspend!(Fiber.yield, Async)(async);
+}
+
+auto wait(Async)(Async async)
+{
+	return suspend!({ Thread.sleep(1.msecs); }, Async)(async);
+}
+
+auto suspend(alias waitFunc, Async)(Async async)
+{
 	assert(!isSta);
 
-	if (async.Status == AsyncStatus.Completed)
-		return;
+	static if (is(Async == Windows.Foundation.IAsyncAction))
+	{
+		if (async.Status == AsyncStatus.Completed)
+			return;
+	}
+	else
+	{
+		if (async.Status == AsyncStatus.Completed)
+			return async.Results;
+	}
 
-	Condition c = new Condition(new Mutex);
+	auto mutex = new Mutex;
 	bool completed = false;
 
-	async.Completed = (result, status) {
-		synchronized (c.mutex)
-		{
-			completed = true;
-			c.notify();
-		}
-	};
+	import Windows.Foundation;
 
-	synchronized (c.mutex)
-		while (!completed)
-			c.wait();
+	static if (is(Async == Windows.Foundation.IAsyncAction))
+		async.Completed = (Windows.Foundation.IAsyncAction result, AsyncStatus status) {
+			synchronized (mutex)
+				completed = true;
+		}.handler!(Windows.Foundation.AsyncActionCompletedHandler);
+	else static if (is(Async == IAsyncOperation!T, T))
+		async.Completed = (Windows.Foundation.IAsyncOperation!T info, AsyncStatus status) {
+			synchronized (mutex)
+				completed = true;
+		}.handler!(Windows.Foundation.AsyncOperationCompletedHandler!T);
+
+	while (true)
+	{
+		synchronized (mutex)
+			if (completed)
+				break;
+		waitFunc();
+	}
+
+	static if (is(Async == Windows.Foundation.IAsyncAction))
+		async.abi_GetResults();
+	else
+		return async.Results;
 }
+
+struct AsyncRunner
+{
+	Fiber[] fibers;
+
+	void run(alias func, Args...)(Args args)
+	{
+		fibers ~= new Fiber({ func(args); });
+	}
+
+	void run(void delegate() fn)
+	{
+		fibers ~= new Fiber(fn);
+	}
+
+	void run(Fiber fiber)
+	{
+		fibers ~= fiber;
+	}
+
+	void run(Async)(Async async)
+			if (is(Async : Windows.Foundation.IAsyncOperation!Result, Result))
+	{
+		fibers ~= new Fiber({ suspend!(Fiber.yield)(async); });
+	}
+
+	void run(Windows.Foundation.IAsyncAction async)
+	{
+		fibers ~= new Fiber({ suspend!(Fiber.yield)(async); });
+	}
+
+	void step()
+	{
+		foreach (fiber; fibers)
+			fiber.call();
+	}
+
+	void loop()
+	{
+		while (true)
+			step();
+	}
+}
+
+__gshared AsyncRunner async;
 
 @uuid("4edb8ee2-96dd-49a7-94f7-4607ddab8e3c")
 interface IGetActivationFactory : IInspectable

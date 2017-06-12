@@ -25,7 +25,7 @@ extern(Windows):
 
 @uuid("078cd89f-de82-404b-8195-c8a3ac198f60")
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccount")
-interface IUserDataAccount2 : IInspectable
+interface IUserDataAccount2 : IInspectable, Windows.ApplicationModel.UserDataAccounts.IUserDataAccount
 {
 extern(Windows):
 	HRESULT get_EnterpriseId(HSTRING* return_value);
@@ -97,7 +97,7 @@ extern(Windows):
 
 @uuid("b1e0aef7-9560-4631-8af0-061d30161469")
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore")
-interface IUserDataAccountStore2 : IInspectable
+interface IUserDataAccountStore2 : IInspectable, Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore
 {
 extern(Windows):
 	HRESULT abi_CreateAccountWithPackageRelativeAppIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount)* return_result);
@@ -107,7 +107,7 @@ extern(Windows):
 
 @uuid("8142c094-f3c9-478b-b117-6585bebb6789")
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore")
-interface IUserDataAccountStore3 : IInspectable
+interface IUserDataAccountStore3 : IInspectable, Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore
 {
 extern(Windows):
 	HRESULT abi_CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount)* return_result);

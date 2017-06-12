@@ -25,7 +25,7 @@ extern(Windows):
 
 @uuid("d0dd4342-e37b-4823-a5fe-6b31dfefdeb0")
 @WinrtFactory("Windows.ApplicationModel.Background.ActivitySensorTrigger")
-interface IActivitySensorTrigger : IInspectable
+interface IActivitySensorTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_SubscribedActivities(Windows.Foundation.Collections.IVector!(Windows.Devices.Sensors.ActivityType)* return_value);
@@ -53,7 +53,7 @@ extern(Windows):
 
 @uuid("74d4f496-8d37-44ec-9481-2a0b9854eb48")
 @WinrtFactory("Windows.ApplicationModel.Background.AppBroadcastTrigger")
-interface IAppBroadcastTrigger : IInspectable
+interface IAppBroadcastTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT set_ProviderInfo(Windows.ApplicationModel.Background.AppBroadcastTriggerProviderInfo value);
@@ -89,7 +89,7 @@ extern(Windows):
 
 @uuid("0b468630-9574-492c-9e93-1a3ae6335fe9")
 @WinrtFactory("Windows.ApplicationModel.Background.ApplicationTrigger")
-interface IApplicationTrigger : IInspectable
+interface IApplicationTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT abi_RequestAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.ApplicationTriggerResult)* return_result);
@@ -106,7 +106,7 @@ extern(Windows):
 
 @uuid("64d4040c-c201-42ad-aa2a-e21ba3425b6d")
 @WinrtFactory("Windows.ApplicationModel.Background.AppointmentStoreNotificationTrigger")
-interface IAppointmentStoreNotificationTrigger : IInspectable
+interface IAppointmentStoreNotificationTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
@@ -151,7 +151,7 @@ extern(Windows):
 
 @uuid("6ae7cfb1-104f-406d-8db6-844a570f42bb")
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskBuilder")
-interface IBackgroundTaskBuilder2 : IInspectable
+interface IBackgroundTaskBuilder2 : IInspectable, Windows.ApplicationModel.Background.IBackgroundTaskBuilder
 {
 extern(Windows):
 	HRESULT set_CancelOnConditionLoss(bool value);
@@ -160,7 +160,7 @@ extern(Windows):
 
 @uuid("28c74f4a-8ba9-4c09-a24f-19683e2c924c")
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskBuilder")
-interface IBackgroundTaskBuilder3 : IInspectable
+interface IBackgroundTaskBuilder3 : IInspectable, Windows.ApplicationModel.Background.IBackgroundTaskBuilder
 {
 extern(Windows):
 	HRESULT set_IsNetworkRequested(bool value);
@@ -169,7 +169,7 @@ extern(Windows):
 
 @uuid("4755e522-cba2-4e35-bd16-a6da7f1c19aa")
 @WinrtFactory("Windows.ApplicationModel.Background.BackgroundTaskBuilder")
-interface IBackgroundTaskBuilder4 : IInspectable
+interface IBackgroundTaskBuilder4 : IInspectable, Windows.ApplicationModel.Background.IBackgroundTaskBuilder
 {
 extern(Windows):
 	HRESULT get_TaskGroup(Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup* return_value);
@@ -209,14 +209,14 @@ extern(Windows):
 }
 
 @uuid("4f7d0176-0c76-4fb4-896d-5de1864122f6")
-interface IBackgroundTaskInstance2 : IInspectable
+interface IBackgroundTaskInstance2 : IInspectable, Windows.ApplicationModel.Background.IBackgroundTaskInstance
 {
 extern(Windows):
 	HRESULT abi_GetThrottleCount(Windows.ApplicationModel.Background.BackgroundTaskThrottleCounter counter, UINT32* return_value);
 }
 
 @uuid("7f29f23c-aa04-4b08-97b0-06d874cdabf5")
-interface IBackgroundTaskInstance4 : IInspectable
+interface IBackgroundTaskInstance4 : IInspectable, Windows.ApplicationModel.Background.IBackgroundTaskInstance
 {
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_value);
@@ -245,14 +245,14 @@ extern(Windows):
 }
 
 @uuid("6138c703-bb86-4112-afc3-7f939b166e3b")
-interface IBackgroundTaskRegistration2 : IInspectable
+interface IBackgroundTaskRegistration2 : IInspectable, Windows.ApplicationModel.Background.IBackgroundTaskRegistration
 {
 extern(Windows):
 	HRESULT get_Trigger(Windows.ApplicationModel.Background.IBackgroundTrigger* return_value);
 }
 
 @uuid("fe338195-9423-4d8b-830d-b1dd2c7badd5")
-interface IBackgroundTaskRegistration3 : IInspectable
+interface IBackgroundTaskRegistration3 : IInspectable, Windows.ApplicationModel.Background.IBackgroundTaskRegistration
 {
 extern(Windows):
 	HRESULT get_TaskGroup(Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup* return_value);
@@ -311,7 +311,7 @@ extern(Windows):
 
 @uuid("ab3e2612-25d3-48ae-8724-d81877ae6129")
 @WinrtFactory("Windows.ApplicationModel.Background.BluetoothLEAdvertisementPublisherTrigger")
-interface IBluetoothLEAdvertisementPublisherTrigger : IInspectable
+interface IBluetoothLEAdvertisementPublisherTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_Advertisement(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement* return_value);
@@ -319,7 +319,7 @@ extern(Windows):
 
 @uuid("1aab1819-bce1-48eb-a827-59fb7cee52a6")
 @WinrtFactory("Windows.ApplicationModel.Background.BluetoothLEAdvertisementWatcherTrigger")
-interface IBluetoothLEAdvertisementWatcherTrigger : IInspectable
+interface IBluetoothLEAdvertisementWatcherTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_MinSamplingInterval(Windows.Foundation.TimeSpan* return_value);
@@ -334,7 +334,7 @@ extern(Windows):
 
 @uuid("e21caeeb-32f2-4d31-b553-b9e01bde37e0")
 @WinrtFactory("Windows.ApplicationModel.Background.CachedFileUpdaterTrigger")
-interface ICachedFileUpdaterTrigger : IInspectable
+interface ICachedFileUpdaterTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
@@ -350,25 +350,25 @@ extern(Windows):
 
 @uuid("513b43bf-1d40-5c5d-78f5-c923fee3739e")
 @WinrtFactory("Windows.ApplicationModel.Background.ChatMessageNotificationTrigger")
-interface IChatMessageNotificationTrigger : IInspectable
+interface IChatMessageNotificationTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
 @uuid("3ea3760e-baf5-4077-88e9-060cf6f0c6d5")
 @WinrtFactory("Windows.ApplicationModel.Background.ChatMessageReceivedNotificationTrigger")
-interface IChatMessageReceivedNotificationTrigger : IInspectable
+interface IChatMessageReceivedNotificationTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
 @uuid("c833419b-4705-4571-9a16-06b997bf9c96")
 @WinrtFactory("Windows.ApplicationModel.Background.ContactStoreNotificationTrigger")
-interface IContactStoreNotificationTrigger : IInspectable
+interface IContactStoreNotificationTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
 @uuid("710627ee-04fa-440b-80c0-173202199e5d")
 @WinrtFactory("Windows.ApplicationModel.Background.ContentPrefetchTrigger")
-interface IContentPrefetchTrigger : IInspectable
+interface IContentPrefetchTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_WaitInterval(Windows.Foundation.TimeSpan* return_waitInterval);
@@ -384,7 +384,7 @@ extern(Windows):
 
 @uuid("90875e64-3cdd-4efb-ab1c-5b3b6a60ce34")
 @WinrtFactory("Windows.ApplicationModel.Background.DeviceConnectionChangeTrigger")
-interface IDeviceConnectionChangeTrigger : IInspectable
+interface IDeviceConnectionChangeTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -403,7 +403,7 @@ extern(Windows):
 
 @uuid("81278ab5-41ab-16da-86c2-7f7bf0912f5b")
 @WinrtFactory("Windows.ApplicationModel.Background.DeviceManufacturerNotificationTrigger")
-interface IDeviceManufacturerNotificationTrigger : IInspectable
+interface IDeviceManufacturerNotificationTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_TriggerQualifier(HSTRING* return_value);
@@ -420,7 +420,7 @@ extern(Windows):
 
 @uuid("1ab217ad-6e34-49d3-9e6f-17f1b6dfa881")
 @WinrtFactory("Windows.ApplicationModel.Background.DeviceServicingTrigger")
-interface IDeviceServicingTrigger : IInspectable
+interface IDeviceServicingTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT abi_RequestAsyncSimple(HSTRING deviceId, Windows.Foundation.TimeSpan expectedDuration, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
@@ -429,7 +429,7 @@ extern(Windows):
 
 @uuid("0da68011-334f-4d57-b6ec-6dca64b412e4")
 @WinrtFactory("Windows.ApplicationModel.Background.DeviceUseTrigger")
-interface IDeviceUseTrigger : IInspectable
+interface IDeviceUseTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT abi_RequestAsyncSimple(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
@@ -438,19 +438,19 @@ extern(Windows):
 
 @uuid("a4617fdd-8573-4260-befc-5bec89cb693d")
 @WinrtFactory("Windows.ApplicationModel.Background.DeviceWatcherTrigger")
-interface IDeviceWatcherTrigger : IInspectable
+interface IDeviceWatcherTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
 @uuid("986d06da-47eb-4268-a4f2-f3f77188388a")
 @WinrtFactory("Windows.ApplicationModel.Background.EmailStoreNotificationTrigger")
-interface IEmailStoreNotificationTrigger : IInspectable
+interface IEmailStoreNotificationTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
 @uuid("e25f8fc8-0696-474f-a732-f292b0cebc5d")
 @WinrtFactory("Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger")
-interface IGattCharacteristicNotificationTrigger : IInspectable
+interface IGattCharacteristicNotificationTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_Characteristic(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic* return_value);
@@ -510,7 +510,7 @@ extern(Windows):
 
 @uuid("47666a1c-6877-481e-8026-ff7e14a811a0")
 @WinrtFactory("Windows.ApplicationModel.Background.LocationTrigger")
-interface ILocationTrigger : IInspectable
+interface ILocationTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_TriggerType(Windows.ApplicationModel.Background.LocationTriggerType* return_triggerType);
@@ -526,7 +526,7 @@ extern(Windows):
 
 @uuid("68184c83-fc22-4ce5-841a-7239a9810047")
 @WinrtFactory("Windows.ApplicationModel.Background.MaintenanceTrigger")
-interface IMaintenanceTrigger : IInspectable
+interface IMaintenanceTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_FreshnessTime(UINT32* return_freshnessTime);
@@ -543,7 +543,7 @@ extern(Windows):
 
 @uuid("9a95be65-8a52-4b30-9011-cf38040ea8b0")
 @WinrtFactory("Windows.ApplicationModel.Background.MediaProcessingTrigger")
-interface IMediaProcessingTrigger : IInspectable
+interface IMediaProcessingTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT abi_RequestAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.MediaProcessingTriggerResult)* return_result);
@@ -552,13 +552,13 @@ extern(Windows):
 
 @uuid("e756c791-3001-4de5-83c7-de61d88831d0")
 @WinrtFactory("Windows.ApplicationModel.Background.NetworkOperatorHotspotAuthenticationTrigger")
-interface INetworkOperatorHotspotAuthenticationTrigger : IInspectable
+interface INetworkOperatorHotspotAuthenticationTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
 @uuid("90089cc6-63cd-480c-95d1-6e6aef801e4a")
 @WinrtFactory("Windows.ApplicationModel.Background.NetworkOperatorNotificationTrigger")
-interface INetworkOperatorNotificationTrigger : IInspectable
+interface INetworkOperatorNotificationTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_NetworkAccountId(HSTRING* return_value);
@@ -574,7 +574,7 @@ extern(Windows):
 
 @uuid("8dcfe99b-d4c5-49f1-b7d3-82e87a0e9dde")
 @WinrtFactory("Windows.ApplicationModel.Background.PhoneTrigger")
-interface IPhoneTrigger : IInspectable
+interface IPhoneTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_OneShot(bool* return_value);
@@ -599,13 +599,13 @@ extern(Windows):
 
 @uuid("986d0d6a-b2f6-467f-a978-a44091c11a66")
 @WinrtFactory("Windows.ApplicationModel.Background.RcsEndUserMessageAvailableTrigger")
-interface IRcsEndUserMessageAvailableTrigger : IInspectable
+interface IRcsEndUserMessageAvailableTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
 @uuid("e8c4cae2-0b53-4464-9394-fd875654de64")
 @WinrtFactory("Windows.ApplicationModel.Background.RfcommConnectionTrigger")
-interface IRfcommConnectionTrigger : IInspectable
+interface IRfcommConnectionTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_InboundConnection(Windows.Devices.Bluetooth.Background.RfcommInboundConnectionInformation* return_value);
@@ -620,13 +620,13 @@ extern(Windows):
 
 @uuid("f237f327-5181-4f24-96a7-700a4e5fac62")
 @WinrtFactory("Windows.ApplicationModel.Background.SecondaryAuthenticationFactorAuthenticationTrigger")
-interface ISecondaryAuthenticationFactorAuthenticationTrigger : IInspectable
+interface ISecondaryAuthenticationFactorAuthenticationTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
 @uuid("5bc0f372-d48b-4b7f-abec-15f9bacc12e2")
 @WinrtFactory("Windows.ApplicationModel.Background.SensorDataThresholdTrigger")
-interface ISensorDataThresholdTrigger : IInspectable
+interface ISensorDataThresholdTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
@@ -656,7 +656,7 @@ extern(Windows):
 
 @uuid("1637e0a7-829c-45bc-929b-a1e7ea78d89b")
 @WinrtFactory("Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger")
-interface IStorageLibraryContentChangedTrigger : IInspectable
+interface IStorageLibraryContentChangedTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 }
 
@@ -671,7 +671,7 @@ extern(Windows):
 
 @uuid("c15fb476-89c5-420b-abd3-fb3030472128")
 @WinrtFactory("Windows.ApplicationModel.Background.SystemCondition")
-interface ISystemCondition : IInspectable
+interface ISystemCondition : IInspectable, Windows.ApplicationModel.Background.IBackgroundCondition
 {
 extern(Windows):
 	HRESULT get_ConditionType(Windows.ApplicationModel.Background.SystemConditionType* return_conditionType);
@@ -687,7 +687,7 @@ extern(Windows):
 
 @uuid("1d80c776-3748-4463-8d7e-276dc139ac1c")
 @WinrtFactory("Windows.ApplicationModel.Background.SystemTrigger")
-interface ISystemTrigger : IInspectable
+interface ISystemTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_OneShot(bool* return_oneShot);
@@ -704,7 +704,7 @@ extern(Windows):
 
 @uuid("656e5556-0b2a-4377-ba70-3b45a935547f")
 @WinrtFactory("Windows.ApplicationModel.Background.TimeTrigger")
-interface ITimeTrigger : IInspectable
+interface ITimeTrigger : IInspectable, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
 	HRESULT get_FreshnessTime(UINT32* return_freshnessTime);

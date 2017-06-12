@@ -251,7 +251,7 @@ extern(Windows):
 
 @uuid("14f8e404-6ca2-4ab2-9241-79cd7bf46346")
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailbox")
-interface IEmailMailbox2 : IInspectable
+interface IEmailMailbox2 : IInspectable, Windows.ApplicationModel.Email.IEmailMailbox
 {
 extern(Windows):
 	HRESULT get_LinkedMailboxId(HSTRING* return_value);
@@ -261,7 +261,7 @@ extern(Windows):
 
 @uuid("3da5897b-458b-408a-8e37-ac8b05d8af56")
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailbox")
-interface IEmailMailbox3 : IInspectable
+interface IEmailMailbox3 : IInspectable, Windows.ApplicationModel.Email.IEmailMailbox2, Windows.ApplicationModel.Email.IEmailMailbox
 {
 extern(Windows):
 	HRESULT abi_ResolveRecipientsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) recipients, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailRecipientResolutionResult))* return_result);

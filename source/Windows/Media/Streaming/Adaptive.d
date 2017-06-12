@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("4c7332ef-d39f-4396-b4d9-043957a7c964")
 @WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSource")
-interface IAdaptiveMediaSource : IInspectable
+interface IAdaptiveMediaSource : IInspectable, Windows.Media.Core.IMediaSource
 {
 extern(Windows):
 	HRESULT get_IsLive(bool* return_value);
