@@ -35,7 +35,7 @@ extern(Windows):
 
 @uuid("f312f365-bb77-4c94-802d-8328cee40c08")
 @WinrtFactory("Windows.ApplicationModel.Contacts.Contact")
-interface IContact2 : IInspectable, Windows.ApplicationModel.Contacts.IContact
+interface IContact2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
@@ -56,7 +56,7 @@ extern(Windows):
 
 @uuid("48201e67-e08e-42a4-b561-41d08ca9575d")
 @WinrtFactory("Windows.ApplicationModel.Contacts.Contact")
-interface IContact3 : IInspectable, Windows.ApplicationModel.Contacts.IContact2, Windows.ApplicationModel.Contacts.IContact
+interface IContact3 : IInspectable
 {
 extern(Windows):
 	HRESULT get_ContactListId(HSTRING* return_value);
@@ -181,7 +181,7 @@ extern(Windows):
 
 @uuid("b60af902-1546-434d-869c-6e3520760ef3")
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactCardDelayedDataLoader")
-interface IContactCardDelayedDataLoader : IInspectable, Windows.Foundation.IClosable
+interface IContactCardDelayedDataLoader : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SetData(Windows.ApplicationModel.Contacts.Contact contact);
@@ -200,7 +200,7 @@ extern(Windows):
 
 @uuid("8f271ba0-d74b-4cc6-9f53-1b0eb5d1273c")
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactCardOptions")
-interface IContactCardOptions2 : IInspectable, Windows.ApplicationModel.Contacts.IContactCardOptions
+interface IContactCardOptions2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_ServerSearchContactListIds(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
@@ -334,7 +334,7 @@ extern(Windows):
 
 @uuid("cce33b37-0d85-41fa-b43d-da599c3eb009")
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactInstantMessageField")
-interface IContactInstantMessageField : IInspectable, Windows.ApplicationModel.Contacts.IContactField
+interface IContactInstantMessageField : IInspectable
 {
 extern(Windows):
 	HRESULT get_UserName(HSTRING* return_value);
@@ -517,7 +517,7 @@ extern(Windows):
 
 @uuid("9ec00f82-ab6e-4b36-89e3-b23bc0a1dacc")
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactLocationField")
-interface IContactLocationField : IInspectable, Windows.ApplicationModel.Contacts.IContactField
+interface IContactLocationField : IInspectable
 {
 extern(Windows):
 	HRESULT get_UnstructuredAddress(HSTRING* return_value);
@@ -574,7 +574,7 @@ extern(Windows):
 
 @uuid("a178e620-47d8-48cc-963c-9592b6e510c6")
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactManager")
-interface IContactManagerStatics2 : IInspectable, Windows.ApplicationModel.Contacts.IContactManagerStatics
+interface IContactManagerStatics2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RequestStoreAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactStore)* return_store);
@@ -582,7 +582,7 @@ extern(Windows):
 
 @uuid("c4cc3d42-7586-492a-930b-7bc138fc2139")
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactManager")
-interface IContactManagerStatics3 : IInspectable, Windows.ApplicationModel.Contacts.IContactManagerStatics2, Windows.ApplicationModel.Contacts.IContactManagerStatics
+interface IContactManagerStatics3 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ConvertContactToVCardAsync(Windows.ApplicationModel.Contacts.Contact contact, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.RandomAccessStreamReference)* return_vCard);
@@ -797,7 +797,7 @@ extern(Windows):
 
 @uuid("8d7bd474-3f03-45f8-ba0f-c4ed37d64219")
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactSignificantOther")
-interface IContactSignificantOther2 : IInspectable, Windows.ApplicationModel.Contacts.IContactSignificantOther
+interface IContactSignificantOther2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_Relationship(Windows.ApplicationModel.Contacts.ContactRelationship* return_value);
@@ -816,7 +816,7 @@ extern(Windows):
 
 @uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8")
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactStore")
-interface IContactStore2 : IInspectable, Windows.ApplicationModel.Contacts.IContactStore
+interface IContactStore2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_ChangeTracker(Windows.ApplicationModel.Contacts.ContactChangeTracker* return_value);
@@ -851,7 +851,7 @@ extern(Windows):
 
 @uuid("f87ee91e-5647-4068-bb5e-4b6f437ce308")
 @WinrtFactory("Windows.ApplicationModel.Contacts.ContactWebsite")
-interface IContactWebsite2 : IInspectable, Windows.ApplicationModel.Contacts.IContactWebsite
+interface IContactWebsite2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_RawValue(HSTRING* return_value);

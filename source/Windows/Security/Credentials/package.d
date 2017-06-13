@@ -101,7 +101,7 @@ extern(Windows):
 
 @uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824")
 @WinrtFactory("Windows.Security.Credentials.WebAccount")
-interface IWebAccount2 : IInspectable, Windows.Security.Credentials.IWebAccount
+interface IWebAccount2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
@@ -132,7 +132,7 @@ extern(Windows):
 
 @uuid("4a01eb05-4e42-41d4-b518-e008a5163614")
 @WinrtFactory("Windows.Security.Credentials.WebAccountProvider")
-interface IWebAccountProvider2 : IInspectable, Windows.Security.Credentials.IWebAccountProvider
+interface IWebAccountProvider2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_DisplayPurpose(HSTRING* return_value);
@@ -141,7 +141,7 @@ extern(Windows):
 
 @uuid("da1c518b-970d-4d49-825c-f2706f8ca7fe")
 @WinrtFactory("Windows.Security.Credentials.WebAccountProvider")
-interface IWebAccountProvider3 : IInspectable, Windows.Security.Credentials.IWebAccountProvider2, Windows.Security.Credentials.IWebAccountProvider
+interface IWebAccountProvider3 : IInspectable
 {
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_user);

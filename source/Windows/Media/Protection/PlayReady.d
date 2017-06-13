@@ -304,7 +304,7 @@ extern(Windows):
 
 @uuid("359c79f4-2180-498c-965b-e754d875eab2")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyContentHeader")
-interface IPlayReadyContentHeader2 : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyContentHeader
+interface IPlayReadyContentHeader2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_KeyIds(UINT32* out___contentKeyIdsSize, GUID** return_contentKeyIds);
@@ -358,7 +358,7 @@ extern(Windows):
 
 @uuid("171b4a5a-405f-4739-b040-67b9f0c38758")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyDomainJoinServiceRequest")
-interface IPlayReadyDomainJoinServiceRequest : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
+interface IPlayReadyDomainJoinServiceRequest : IInspectable
 {
 extern(Windows):
 	HRESULT get_DomainAccountId(GUID* return_value);
@@ -371,7 +371,7 @@ extern(Windows):
 
 @uuid("062d58be-97ad-4917-aa03-46d4c252d464")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyDomainLeaveServiceRequest")
-interface IPlayReadyDomainLeaveServiceRequest : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
+interface IPlayReadyDomainLeaveServiceRequest : IInspectable
 {
 extern(Windows):
 	HRESULT get_DomainAccountId(GUID* return_value);
@@ -390,7 +390,7 @@ extern(Windows):
 
 @uuid("21f5a86b-008c-4611-ab2f-aaa6c69f0e24")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyIndividualizationServiceRequest")
-interface IPlayReadyIndividualizationServiceRequest : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
+interface IPlayReadyIndividualizationServiceRequest : IInspectable
 {
 }
 
@@ -409,7 +409,7 @@ extern(Windows):
 
 @uuid("30f4e7a7-d8e3-48a0-bcda-ff9f40530436")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyLicense")
-interface IPlayReadyLicense2 : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyLicense
+interface IPlayReadyLicense2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_SecureStopId(GUID* return_value);
@@ -419,7 +419,7 @@ extern(Windows):
 }
 
 @uuid("5d85ff45-3e9f-4f48-93e1-9530c8d58c3e")
-interface IPlayReadyLicenseAcquisitionServiceRequest : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
+interface IPlayReadyLicenseAcquisitionServiceRequest : IInspectable
 {
 extern(Windows):
 	HRESULT get_ContentHeader(Windows.Media.Protection.PlayReady.PlayReadyContentHeader* return_value);
@@ -430,7 +430,7 @@ extern(Windows):
 
 @uuid("b7fa5eb5-fe0c-b225-bc60-5a9edd32ceb5")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyLicenseAcquisitionServiceRequest")
-interface IPlayReadyLicenseAcquisitionServiceRequest2 : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
+interface IPlayReadyLicenseAcquisitionServiceRequest2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_SessionId(GUID* return_value);
@@ -438,7 +438,7 @@ extern(Windows):
 
 @uuid("394e5f4d-7f75-430d-b2e7-7f75f34b2d75")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyLicenseAcquisitionServiceRequest")
-interface IPlayReadyLicenseAcquisitionServiceRequest3 : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest2, Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
+interface IPlayReadyLicenseAcquisitionServiceRequest3 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateLicenseIterable(Windows.Media.Protection.PlayReady.PlayReadyContentHeader contentHeader, bool fullyEvaluated, Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable* return_result);
@@ -469,7 +469,7 @@ extern(Windows):
 }
 
 @uuid("4909be3a-3aed-4656-8ad7-ee0fd7799510")
-interface IPlayReadyLicenseSession2 : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession
+interface IPlayReadyLicenseSession2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateLicenseIterable(Windows.Media.Protection.PlayReady.PlayReadyContentHeader contentHeader, bool fullyEvaluated, Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable* return_licenseIterable);
@@ -485,7 +485,7 @@ extern(Windows):
 
 @uuid("c12b231c-0ecd-4f11-a185-1e24a4a67fb7")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyMeteringReportServiceRequest")
-interface IPlayReadyMeteringReportServiceRequest : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
+interface IPlayReadyMeteringReportServiceRequest : IInspectable
 {
 extern(Windows):
 	HRESULT get_MeteringCertificate(UINT32* out___meteringCertBytesSize, BYTE** return_meteringCertBytes);
@@ -494,7 +494,7 @@ extern(Windows):
 
 @uuid("543d66ac-faf0-4560-84a5-0e4acec939e4")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyRevocationServiceRequest")
-interface IPlayReadyRevocationServiceRequest : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
+interface IPlayReadyRevocationServiceRequest : IInspectable
 {
 }
 
@@ -507,7 +507,7 @@ extern(Windows):
 }
 
 @uuid("b5501ee5-01bf-4401-9677-05630a6a4cc8")
-interface IPlayReadySecureStopServiceRequest : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
+interface IPlayReadySecureStopServiceRequest : IInspectable
 {
 extern(Windows):
 	HRESULT get_SessionID(GUID* return_value);
@@ -527,7 +527,7 @@ extern(Windows):
 }
 
 @uuid("8bad2836-a703-45a6-a180-76f3565aa725")
-interface IPlayReadyServiceRequest : IInspectable, Windows.Media.Protection.IMediaProtectionServiceRequest
+interface IPlayReadyServiceRequest : IInspectable
 {
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
@@ -568,7 +568,7 @@ extern(Windows):
 
 @uuid("1f8d6a92-5f9a-423e-9466-b33969af7a3d")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyStatics")
-interface IPlayReadyStatics2 : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyStatics
+interface IPlayReadyStatics2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_PlayReadyCertificateSecurityLevel(UINT32* return_value);
@@ -576,7 +576,7 @@ extern(Windows):
 
 @uuid("3fa33f71-2dd3-4bed-ae49-f7148e63e710")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyStatics")
-interface IPlayReadyStatics3 : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyStatics2, Windows.Media.Protection.PlayReady.IPlayReadyStatics
+interface IPlayReadyStatics3 : IInspectable
 {
 extern(Windows):
 	HRESULT get_SecureStopServiceRequestType(GUID* return_value);
@@ -585,7 +585,7 @@ extern(Windows):
 
 @uuid("50a91300-d824-4231-9d5e-78ef8844c7d7")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyStatics")
-interface IPlayReadyStatics4 : IInspectable, Windows.Media.Protection.PlayReady.IPlayReadyStatics3, Windows.Media.Protection.PlayReady.IPlayReadyStatics2, Windows.Media.Protection.PlayReady.IPlayReadyStatics
+interface IPlayReadyStatics4 : IInspectable
 {
 extern(Windows):
 	HRESULT get_InputTrustAuthorityToCreate(HSTRING* return_value);

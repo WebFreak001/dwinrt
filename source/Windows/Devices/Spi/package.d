@@ -57,7 +57,7 @@ extern(Windows):
 
 @uuid("05d5356d-11b6-4d39-84d5-95dfb4c9f2ce")
 @WinrtFactory("Windows.Devices.Spi.SpiDevice")
-interface ISpiDevice : IInspectable, Windows.Foundation.IClosable
+interface ISpiDevice : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);

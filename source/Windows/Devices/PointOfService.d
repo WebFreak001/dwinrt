@@ -342,7 +342,7 @@ extern(Windows):
 
 @uuid("4a63b49c-8fa4-4332-bb26-945d11d81e0f")
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedBarcodeScanner")
-interface IClaimedBarcodeScanner : IInspectable, Windows.Foundation.IClosable
+interface IClaimedBarcodeScanner : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -374,7 +374,7 @@ extern(Windows):
 
 @uuid("f61aad0c-8551-42b4-998c-970c20210a22")
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedBarcodeScanner")
-interface IClaimedBarcodeScanner1 : IInspectable, Windows.Foundation.IClosable
+interface IClaimedBarcodeScanner1 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_StartSoftwareTriggerAsync(Windows.Foundation.IAsyncAction* return_result);
@@ -383,7 +383,7 @@ extern(Windows):
 
 @uuid("e3b59e8c-2d8b-4f70-8af3-3448bedd5fe2")
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedBarcodeScanner")
-interface IClaimedBarcodeScanner2 : IInspectable, Windows.Foundation.IClosable
+interface IClaimedBarcodeScanner2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetSymbologyAttributesAsync(UINT32 barcodeSymbology, Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeSymbologyAttributes)* return_result);
@@ -392,7 +392,7 @@ extern(Windows):
 
 @uuid("ca3f99af-abb8-42c1-8a84-5c66512f5a75")
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedCashDrawer")
-interface IClaimedCashDrawer : IInspectable, Windows.Foundation.IClosable
+interface IClaimedCashDrawer : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -411,7 +411,7 @@ extern(Windows):
 
 @uuid("67ea0630-517d-487f-9fdf-d2e0a0a264a5")
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedJournalPrinter")
-interface IClaimedJournalPrinter : IInspectable, Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation
+interface IClaimedJournalPrinter : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateJob(Windows.Devices.PointOfService.JournalPrintJob* return_value);
@@ -419,7 +419,7 @@ extern(Windows):
 
 @uuid("120ac970-9a75-4acf-aae7-09972bcf8794")
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedLineDisplay")
-interface IClaimedLineDisplay : IInspectable, Windows.Foundation.IClosable
+interface IClaimedLineDisplay : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -447,7 +447,7 @@ extern(Windows):
 
 @uuid("475ca8f3-9417-48bc-b9d7-4163a7844c02")
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedMagneticStripeReader")
-interface IClaimedMagneticStripeReader : IInspectable, Windows.Foundation.IClosable
+interface IClaimedMagneticStripeReader : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -487,7 +487,7 @@ extern(Windows):
 
 @uuid("6d64ce0c-e03e-4b14-a38e-c28c34b86353")
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedPosPrinter")
-interface IClaimedPosPrinter : IInspectable, Windows.Foundation.IClosable
+interface IClaimedPosPrinter : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -513,7 +513,7 @@ extern(Windows):
 
 @uuid("9ad27a74-dd61-4ee2-9837-5b5d72d538b9")
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedReceiptPrinter")
-interface IClaimedReceiptPrinter : IInspectable, Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation
+interface IClaimedReceiptPrinter : IInspectable
 {
 extern(Windows):
 	HRESULT get_SidewaysMaxLines(UINT32* return_value);
@@ -526,7 +526,7 @@ extern(Windows):
 
 @uuid("bd5deff2-af90-4e8a-b77b-e3ae9ca63a7f")
 @WinrtFactory("Windows.Devices.PointOfService.ClaimedSlipPrinter")
-interface IClaimedSlipPrinter : IInspectable, Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation
+interface IClaimedSlipPrinter : IInspectable
 {
 extern(Windows):
 	HRESULT get_SidewaysMaxLines(UINT32* return_value);
@@ -589,7 +589,7 @@ extern(Windows):
 }
 
 @uuid("09286b8b-9873-4d05-bfbe-4727a6038f69")
-interface ICommonReceiptSlipCapabilities : IInspectable, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities
+interface ICommonReceiptSlipCapabilities : IInspectable
 {
 extern(Windows):
 	HRESULT get_IsBarcodeSupported(bool* return_value);
@@ -605,13 +605,13 @@ extern(Windows):
 
 @uuid("3b5ccc43-e047-4463-bb58-17b5ba1d8056")
 @WinrtFactory("Windows.Devices.PointOfService.JournalPrinterCapabilities")
-interface IJournalPrinterCapabilities : IInspectable, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities
+interface IJournalPrinterCapabilities : IInspectable
 {
 }
 
 @uuid("24f5df4e-3c99-44e2-b73f-e51be3637a8c")
 @WinrtFactory("Windows.Devices.PointOfService.LineDisplay")
-interface ILineDisplay : IInspectable, Windows.Foundation.IClosable
+interface ILineDisplay : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -662,7 +662,7 @@ extern(Windows):
 
 @uuid("d21feef4-2364-4be5-bee1-851680af4964")
 @WinrtFactory("Windows.Devices.PointOfService.LineDisplayWindow")
-interface ILineDisplayWindow : IInspectable, Windows.Foundation.IClosable
+interface ILineDisplayWindow : IInspectable
 {
 extern(Windows):
 	HRESULT get_SizeInCharacters(Windows.Foundation.Size* return_value);
@@ -944,7 +944,7 @@ extern(Windows):
 }
 
 @uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc")
-interface IReceiptOrSlipJob : IInspectable, Windows.Devices.PointOfService.IPosPrinterJob
+interface IReceiptOrSlipJob : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SetBarcodeRotation(Windows.Devices.PointOfService.PosPrinterRotation value);
@@ -966,7 +966,7 @@ extern(Windows):
 
 @uuid("aa96066e-acad-4b79-9d0f-c0cfc08dc77b")
 @WinrtFactory("Windows.Devices.PointOfService.ReceiptPrintJob")
-interface IReceiptPrintJob : IInspectable, Windows.Devices.PointOfService.IReceiptOrSlipJob, Windows.Devices.PointOfService.IPosPrinterJob
+interface IReceiptPrintJob : IInspectable
 {
 extern(Windows):
 	HRESULT abi_MarkFeed(Windows.Devices.PointOfService.PosPrinterMarkFeedKind kind);
@@ -976,7 +976,7 @@ extern(Windows):
 
 @uuid("b8f0b58f-51a8-43fc-9bd5-8de272a6415b")
 @WinrtFactory("Windows.Devices.PointOfService.ReceiptPrinterCapabilities")
-interface IReceiptPrinterCapabilities : IInspectable, Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities
+interface IReceiptPrinterCapabilities : IInspectable
 {
 extern(Windows):
 	HRESULT get_CanCutPaper(bool* return_value);
@@ -986,7 +986,7 @@ extern(Windows):
 
 @uuid("99b16399-488c-4157-8ac2-9f57f708d3db")
 @WinrtFactory("Windows.Devices.PointOfService.SlipPrinterCapabilities")
-interface ISlipPrinterCapabilities : IInspectable, Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities
+interface ISlipPrinterCapabilities : IInspectable
 {
 extern(Windows):
 	HRESULT get_IsFullLengthSupported(bool* return_value);

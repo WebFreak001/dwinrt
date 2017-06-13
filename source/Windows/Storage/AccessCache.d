@@ -49,7 +49,7 @@ extern(Windows):
 
 @uuid("016239d5-510d-411e-8cf1-c3d1effa4c33")
 @WinrtFactory("Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList")
-interface IStorageItemMostRecentlyUsedList : IInspectable, Windows.Storage.AccessCache.IStorageItemAccessList
+interface IStorageItemMostRecentlyUsedList : IInspectable
 {
 extern(Windows):
 	HRESULT add_ItemRemoved(Windows.Foundation.TypedEventHandler!(Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.ItemRemovedEventArgs) handler, EventRegistrationToken* return_eventCookie);
@@ -58,7 +58,7 @@ extern(Windows):
 
 @uuid("da481ea0-ed8d-4731-a1db-e44ee2204093")
 @WinrtFactory("Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList")
-interface IStorageItemMostRecentlyUsedList2 : IInspectable, Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.IStorageItemAccessList
+interface IStorageItemMostRecentlyUsedList2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_AddWithMetadataAndVisibility(Windows.Storage.IStorageItem file, HSTRING metadata, Windows.Storage.AccessCache.RecentStorageItemVisibility visibility, HSTRING* return_token);

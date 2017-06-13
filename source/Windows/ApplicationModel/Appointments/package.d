@@ -36,7 +36,7 @@ extern(Windows):
 
 @uuid("5e85983c-540f-3452-9b5c-0dd7ad4c65a2")
 @WinrtFactory("Windows.ApplicationModel.Appointments.Appointment")
-interface IAppointment2 : IInspectable, Windows.ApplicationModel.Appointments.IAppointment
+interface IAppointment2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_LocalId(HSTRING* return_value);
@@ -63,7 +63,7 @@ extern(Windows):
 
 @uuid("bfcc45a9-8961-4991-934b-c48768e5a96c")
 @WinrtFactory("Windows.ApplicationModel.Appointments.Appointment")
-interface IAppointment3 : IInspectable, Windows.ApplicationModel.Appointments.IAppointment2, Windows.ApplicationModel.Appointments.IAppointment
+interface IAppointment3 : IInspectable
 {
 extern(Windows):
 	HRESULT get_ChangeNumber(UINT64* return_value);
@@ -108,7 +108,7 @@ extern(Windows):
 
 @uuid("18e7e422-2467-4e1c-a459-d8a29303d092")
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentCalendar")
-interface IAppointmentCalendar2 : IInspectable, Windows.ApplicationModel.Appointments.IAppointmentCalendar
+interface IAppointmentCalendar2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_SyncManager(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager* return_value);
@@ -190,7 +190,7 @@ extern(Windows):
 
 @uuid("13bf0796-9842-495b-b0e7-ef8f79c0701d")
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentInvitee")
-interface IAppointmentInvitee : IInspectable, Windows.ApplicationModel.Appointments.IAppointmentParticipant
+interface IAppointmentInvitee : IInspectable
 {
 extern(Windows):
 	HRESULT get_Role(Windows.ApplicationModel.Appointments.AppointmentParticipantRole* return_value);
@@ -297,7 +297,7 @@ extern(Windows):
 
 @uuid("dffc434b-b017-45dd-8af5-d163d10801bb")
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentProperties")
-interface IAppointmentPropertiesStatics2 : IInspectable, Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics
+interface IAppointmentPropertiesStatics2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_ChangeNumber(HSTRING* return_value);
@@ -330,7 +330,7 @@ extern(Windows):
 
 @uuid("3df3a2e0-05a7-4f50-9f86-b03f9436254d")
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentRecurrence")
-interface IAppointmentRecurrence2 : IInspectable, Windows.ApplicationModel.Appointments.IAppointmentRecurrence
+interface IAppointmentRecurrence2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecurrenceType(Windows.ApplicationModel.Appointments.RecurrenceType* return_value);
@@ -340,7 +340,7 @@ extern(Windows):
 
 @uuid("89ff96d9-da4d-4a17-8dd2-1cebc2b5ff9d")
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentRecurrence")
-interface IAppointmentRecurrence3 : IInspectable, Windows.ApplicationModel.Appointments.IAppointmentRecurrence2, Windows.ApplicationModel.Appointments.IAppointmentRecurrence
+interface IAppointmentRecurrence3 : IInspectable
 {
 extern(Windows):
 	HRESULT get_CalendarIdentifier(HSTRING* return_value);
@@ -376,7 +376,7 @@ extern(Windows):
 
 @uuid("25c48c20-1c41-424f-8084-67c1cfe0a854")
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentStore")
-interface IAppointmentStore2 : IInspectable, Windows.ApplicationModel.Appointments.IAppointmentStore
+interface IAppointmentStore2 : IInspectable
 {
 extern(Windows):
 	HRESULT add_StoreChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.AppointmentStore, Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs) pHandler, EventRegistrationToken* return_pToken);
@@ -395,7 +395,7 @@ extern(Windows):
 
 @uuid("b37d0dce-5211-4402-a608-a96fe70b8ee2")
 @WinrtFactory("Windows.ApplicationModel.Appointments.AppointmentStoreChange")
-interface IAppointmentStoreChange2 : IInspectable, Windows.ApplicationModel.Appointments.IAppointmentStoreChange
+interface IAppointmentStoreChange2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_AppointmentCalendar(Windows.ApplicationModel.Appointments.AppointmentCalendar* return_value);

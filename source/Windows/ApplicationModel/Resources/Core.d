@@ -124,7 +124,7 @@ extern(Windows):
 
 @uuid("72284824-db8c-42f8-b08c-53ff357dad82")
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceMap")
-interface IResourceMap : IInspectable, Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource))
+interface IResourceMap : IInspectable
 {
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_uri);

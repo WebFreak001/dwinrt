@@ -70,7 +70,7 @@ extern(Windows):
 
 @uuid("73ebdccf-4378-4c79-9335-a5d7ab81594e")
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountProviderAddAccountOperation")
-interface IWebAccountProviderAddAccountOperation : IInspectable, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation
+interface IWebAccountProviderAddAccountOperation : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ReportCompleted();
@@ -86,7 +86,7 @@ extern(Windows):
 
 @uuid("0abb48b8-9e01-49c9-a355-7d48caf7d6ca")
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountProviderDeleteAccountOperation")
-interface IWebAccountProviderDeleteAccountOperation : IInspectable, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation
+interface IWebAccountProviderDeleteAccountOperation : IInspectable
 {
 extern(Windows):
 	HRESULT get_WebAccount(Windows.Security.Credentials.WebAccount* return_value);
@@ -94,7 +94,7 @@ extern(Windows):
 
 @uuid("ed20dc5c-d21b-463e-a9b7-c1fd0edae978")
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountProviderManageAccountOperation")
-interface IWebAccountProviderManageAccountOperation : IInspectable, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation
+interface IWebAccountProviderManageAccountOperation : IInspectable
 {
 extern(Windows):
 	HRESULT get_WebAccount(Windows.Security.Credentials.WebAccount* return_value);
@@ -110,7 +110,7 @@ extern(Windows):
 
 @uuid("5a040441-0fa3-4ab1-a01c-20b110358594")
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountProviderRetrieveCookiesOperation")
-interface IWebAccountProviderRetrieveCookiesOperation : IInspectable, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation
+interface IWebAccountProviderRetrieveCookiesOperation : IInspectable
 {
 extern(Windows):
 	HRESULT get_Context(Windows.Foundation.Uri* return_webCookieRequestContext);
@@ -122,7 +122,7 @@ extern(Windows):
 
 @uuid("b890e21d-0c55-47bc-8c72-04a6fc7cac07")
 @WinrtFactory("Windows.Security.Authentication.Web.Provider.WebAccountProviderSignOutAccountOperation")
-interface IWebAccountProviderSignOutAccountOperation : IInspectable, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation
+interface IWebAccountProviderSignOutAccountOperation : IInspectable
 {
 extern(Windows):
 	HRESULT get_WebAccount(Windows.Security.Credentials.WebAccount* return_value);
@@ -131,7 +131,7 @@ extern(Windows):
 }
 
 @uuid("e0b545f8-3b0f-44da-924c-7b18baaa62a9")
-interface IWebAccountProviderSilentReportOperation : IInspectable, Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation
+interface IWebAccountProviderSilentReportOperation : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ReportUserInteractionRequired();
@@ -146,14 +146,14 @@ extern(Windows):
 }
 
 @uuid("1020b893-5ca5-4fff-95fb-b820273fc395")
-interface IWebAccountProviderTokenObjects2 : IInspectable, Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenObjects
+interface IWebAccountProviderTokenObjects2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_value);
 }
 
 @uuid("95c613be-2034-4c38-9434-d26c14b2b4b2")
-interface IWebAccountProviderTokenOperation : IInspectable, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation
+interface IWebAccountProviderTokenOperation : IInspectable
 {
 extern(Windows):
 	HRESULT get_ProviderRequest(Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest* return_webTokenRequest);
@@ -163,7 +163,7 @@ extern(Windows):
 }
 
 @uuid("28ff92d3-8f80-42fb-944f-b2107bbd42e6")
-interface IWebAccountProviderUIReportOperation : IInspectable, Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation
+interface IWebAccountProviderUIReportOperation : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ReportUserCanceled();

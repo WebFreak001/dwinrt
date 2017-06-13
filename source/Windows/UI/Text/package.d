@@ -137,7 +137,7 @@ extern(Windows):
 
 @uuid("f2311112-8c89-49c9-9118-f057cbb814ee")
 @WinrtFactory("Windows.UI.Text.RichEditTextDocument")
-interface ITextDocument2 : IInspectable, Windows.UI.Text.ITextDocument
+interface ITextDocument2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_AlignmentIncludesTrailingWhitespace(bool* return_value);
@@ -259,7 +259,7 @@ extern(Windows):
 }
 
 @uuid("a6d36724-f28f-430a-b2cf-c343671ec0e9")
-interface ITextSelection : IInspectable, Windows.UI.Text.ITextRange
+interface ITextSelection : IInspectable
 {
 extern(Windows):
 	HRESULT get_Options(Windows.UI.Text.SelectionOptions* return_value);

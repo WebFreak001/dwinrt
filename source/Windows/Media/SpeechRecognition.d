@@ -60,7 +60,7 @@ extern(Windows):
 
 @uuid("b5031a8f-85ca-4fa4-b11a-474fc41b3835")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint")
-interface ISpeechRecognitionGrammarFileConstraint : IInspectable, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint
+interface ISpeechRecognitionGrammarFileConstraint : IInspectable
 {
 extern(Windows):
 	HRESULT get_GrammarFile(Windows.Storage.StorageFile* return_value);
@@ -93,7 +93,7 @@ extern(Windows):
 
 @uuid("09c487e9-e4ad-4526-81f2-4946fb481d98")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint")
-interface ISpeechRecognitionListConstraint : IInspectable, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint
+interface ISpeechRecognitionListConstraint : IInspectable
 {
 extern(Windows):
 	HRESULT get_Commands(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
@@ -150,7 +150,7 @@ extern(Windows):
 
 @uuid("bf6fdf19-825d-4e69-a681-36e48cf1c93e")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint")
-interface ISpeechRecognitionTopicConstraint : IInspectable, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint
+interface ISpeechRecognitionTopicConstraint : IInspectable
 {
 extern(Windows):
 	HRESULT get_Scenario(Windows.Media.SpeechRecognition.SpeechRecognitionScenario* return_value);
@@ -168,13 +168,13 @@ extern(Windows):
 
 @uuid("f2791c2b-1ef4-4ae7-9d77-b6ff10b8a3c2")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint")
-interface ISpeechRecognitionVoiceCommandDefinitionConstraint : IInspectable, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint
+interface ISpeechRecognitionVoiceCommandDefinitionConstraint : IInspectable
 {
 }
 
 @uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognizer")
-interface ISpeechRecognizer : IInspectable, Windows.Foundation.IClosable
+interface ISpeechRecognizer : IInspectable
 {
 extern(Windows):
 	HRESULT get_CurrentLanguage(Windows.Globalization.Language* return_language);

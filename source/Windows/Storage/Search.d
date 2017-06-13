@@ -111,7 +111,7 @@ extern(Windows):
 
 @uuid("52fda447-2baa-412c-b29f-d4b1778efa1e")
 @WinrtFactory("Windows.Storage.Search.StorageFileQueryResult")
-interface IStorageFileQueryResult : IInspectable, Windows.Storage.Search.IStorageQueryResultBase
+interface IStorageFileQueryResult : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetFilesAsync(UINT32 startIndex, UINT32 maxNumberOfItems, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile))* return_operation);
@@ -120,7 +120,7 @@ extern(Windows):
 
 @uuid("4e5db9dd-7141-46c4-8be3-e9dc9e27275c")
 @WinrtFactory("Windows.Storage.Search.StorageFileQueryResult")
-interface IStorageFileQueryResult2 : IInspectable, Windows.Storage.Search.IStorageQueryResultBase
+interface IStorageFileQueryResult2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetMatchingPropertiesWithRanges(Windows.Storage.StorageFile file, Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment))* return_result);
@@ -151,7 +151,7 @@ extern(Windows):
 
 @uuid("6654c911-7d66-46fa-aecf-e4a4baa93ab8")
 @WinrtFactory("Windows.Storage.Search.StorageFolderQueryResult")
-interface IStorageFolderQueryResult : IInspectable, Windows.Storage.Search.IStorageQueryResultBase
+interface IStorageFolderQueryResult : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetFoldersAsync(UINT32 startIndex, UINT32 maxNumberOfItems, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder))* return_operation);
@@ -160,7 +160,7 @@ extern(Windows):
 
 @uuid("e8948079-9d58-47b8-b2b2-41b07f4795f9")
 @WinrtFactory("Windows.Storage.Search.StorageItemQueryResult")
-interface IStorageItemQueryResult : IInspectable, Windows.Storage.Search.IStorageQueryResultBase
+interface IStorageItemQueryResult : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetItemsAsync(UINT32 startIndex, UINT32 maxNumberOfItems, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem))* return_operation);

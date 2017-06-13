@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("ee049368-6110-4136-95f9-ee809fc20030")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisInkBullet")
-interface IInkAnalysisInkBullet : IInspectable, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
+interface IInkAnalysisInkBullet : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
@@ -12,7 +12,7 @@ extern(Windows):
 
 @uuid("6a85ed1f-1fe4-4e15-898c-8e112377e021")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisInkDrawing")
-interface IInkAnalysisInkDrawing : IInspectable, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
+interface IInkAnalysisInkDrawing : IInspectable
 {
 extern(Windows):
 	HRESULT get_DrawingKind(Windows.UI.Input.Inking.Analysis.InkAnalysisDrawingKind* return_value);
@@ -22,7 +22,7 @@ extern(Windows):
 
 @uuid("4bd228ad-83af-4034-8f3b-f8687dfff436")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisInkWord")
-interface IInkAnalysisInkWord : IInspectable, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
+interface IInkAnalysisInkWord : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
@@ -31,7 +31,7 @@ extern(Windows):
 
 @uuid("a06d048d-2b8d-4754-ad5a-d0871193a956")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisLine")
-interface IInkAnalysisLine : IInspectable, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
+interface IInkAnalysisLine : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
@@ -40,7 +40,7 @@ extern(Windows):
 
 @uuid("b4e3c23f-c4c3-4c3a-a1a6-9d85547ee586")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisListItem")
-interface IInkAnalysisListItem : IInspectable, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
+interface IInkAnalysisListItem : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
@@ -61,7 +61,7 @@ extern(Windows):
 
 @uuid("d9ad045c-0cd1-4dd4-a68b-eb1f12b3d727")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisParagraph")
-interface IInkAnalysisParagraph : IInspectable, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
+interface IInkAnalysisParagraph : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
@@ -77,7 +77,7 @@ extern(Windows):
 
 @uuid("3fb6a3c4-2fde-4061-8502-a90f32545b84")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisRoot")
-interface IInkAnalysisRoot : IInspectable, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
+interface IInkAnalysisRoot : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
@@ -86,7 +86,7 @@ extern(Windows):
 
 @uuid("dd6d6231-bd16-4663-b5ae-941d3043ef5b")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisWritingRegion")
-interface IInkAnalysisWritingRegion : IInspectable, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
+interface IInkAnalysisWritingRegion : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);

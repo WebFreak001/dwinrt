@@ -105,7 +105,7 @@ extern(Windows):
 
 @uuid("5249b992-c456-44d5-ad5e-24f5a089f63b")
 @WinrtFactory("Windows.Devices.Usb.UsbDevice")
-interface IUsbDevice : IInspectable, Windows.Foundation.IClosable
+interface IUsbDevice : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SendControlOutTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Storage.Streams.IBuffer buffer, Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);

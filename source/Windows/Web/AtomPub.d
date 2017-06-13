@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("35392c38-cded-4d4c-9637-05f15c1c9406")
 @WinrtFactory("Windows.Web.AtomPub.AtomPubClient")
-interface IAtomPubClient : IInspectable, Windows.Web.Syndication.ISyndicationClient
+interface IAtomPubClient : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RetrieveServiceDocumentAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.AtomPub.ServiceDocument, Windows.Web.Syndication.RetrievalProgress)* return_operation);
@@ -30,7 +30,7 @@ extern(Windows):
 
 @uuid("7f5fd609-bc88-41d4-88fa-3de6704d428e")
 @WinrtFactory("Windows.Web.AtomPub.ResourceCollection")
-interface IResourceCollection : IInspectable, Windows.Web.Syndication.ISyndicationNode
+interface IResourceCollection : IInspectable
 {
 extern(Windows):
 	HRESULT get_Title(Windows.Web.Syndication.ISyndicationText* return_value);
@@ -41,7 +41,7 @@ extern(Windows):
 
 @uuid("8b7ec771-2ab3-4dbe-8bcc-778f92b75e51")
 @WinrtFactory("Windows.Web.AtomPub.ServiceDocument")
-interface IServiceDocument : IInspectable, Windows.Web.Syndication.ISyndicationNode
+interface IServiceDocument : IInspectable
 {
 extern(Windows):
 	HRESULT get_Workspaces(Windows.Foundation.Collections.IVectorView!(Windows.Web.AtomPub.Workspace)* return_value);
@@ -49,7 +49,7 @@ extern(Windows):
 
 @uuid("b41da63b-a4b8-4036-89c5-83c31266ba49")
 @WinrtFactory("Windows.Web.AtomPub.Workspace")
-interface IWorkspace : IInspectable, Windows.Web.Syndication.ISyndicationNode
+interface IWorkspace : IInspectable
 {
 extern(Windows):
 	HRESULT get_Title(Windows.Web.Syndication.ISyndicationText* return_value);

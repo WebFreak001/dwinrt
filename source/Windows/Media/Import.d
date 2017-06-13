@@ -160,7 +160,7 @@ extern(Windows):
 
 @uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb")
 @WinrtFactory("Windows.Media.Import.PhotoImportSession")
-interface IPhotoImportSession : IInspectable, Windows.Foundation.IClosable
+interface IPhotoImportSession : IInspectable
 {
 extern(Windows):
 	HRESULT get_Source(Windows.Media.Import.PhotoImportSource* return_value);

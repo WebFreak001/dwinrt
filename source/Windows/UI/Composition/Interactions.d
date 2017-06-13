@@ -28,7 +28,7 @@ interface ICompositionInteractionSource : IInspectable
 
 @uuid("1b468e4b-a5bf-47d8-a547-3894155a158c")
 @WinrtFactory("Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection")
-interface ICompositionInteractionSourceCollection : IInspectable, Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.ICompositionInteractionSource)
+interface ICompositionInteractionSourceCollection : IInspectable
 {
 extern(Windows):
 	HRESULT get_Count(INT32* return_value);

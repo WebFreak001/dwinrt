@@ -306,7 +306,7 @@ extern(Windows):
 
 @uuid("0f69a02f-9c34-43c7-a8c3-70b30a7f7504")
 @WinrtFactory("Windows.System.ShutdownManager")
-interface IShutdownManagerStatics2 : IInspectable, Windows.System.IShutdownManagerStatics
+interface IShutdownManagerStatics2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_IsPowerStateSupported(Windows.System.PowerState powerState, bool* return_value);

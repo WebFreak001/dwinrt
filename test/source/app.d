@@ -29,6 +29,7 @@ extern (Windows) int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	{
 		import core.sys.windows.windows;
 
+		Debug.WriteLine("Exception:\n%s", e);
 		MessageBoxA(null, e.toString().toStringz(), null, MB_ICONEXCLAMATION);
 		result = 1; // failed
 	}
@@ -91,6 +92,21 @@ extern (Windows):
 
 	void OnPointerPressed(CoreWindow sender, PointerEventArgs args)
 	{
+		/*dispatcher.RunAsync(CoreDispatcherPriority.Normal, () {
+			Debug.WriteLine("Async Click PogChamp");
+		}.handler!DispatchedHandler);*/
+		MessageDialog dialog;
+		Debug.OK(dwinrt.factory!IMessageDialogFactory.abi_CreateWithTitle(hstring("Async method called")
+				.handle, hstring("D rox!").handle, &dialog));
+		dialog.ShowAsync().then((IUICommand command) {
+			wstring label = hstring(command.as!UICommand.Label).d_str;
+			MessageDialog dialog2;
+			Debug.OK(dwinrt.factory!IMessageDialogFactory.abi_CreateWithTitle(hstring("You pressed "w ~ label)
+					.handle, hstring("Response!").handle, &dialog2));
+			dialog2.ShowAsync().then((IUICommand command) {
+				Debug.WriteLine("Command { Label = %s }", hstring(command.as!UICommand.Label).d_str);
+			});
+		});
 		AddVisual(args.CurrentPoint.Position);
 	}
 
@@ -133,7 +149,7 @@ extern (Windows):
 		window.Activate();
 		Debug.WriteLine("Window Activated");
 
-		CoreDispatcher dispatcher = window.Dispatcher;
+		dispatcher = window.Dispatcher;
 		dispatcher.ProcessEvents(CoreProcessEventsOption.ProcessUntilQuit);
 
 		return S_OK;
@@ -148,17 +164,12 @@ extern (Windows):
 private:
 	CompositionTarget target;
 	VisualCollection visuals;
+	CoreDispatcher dispatcher;
 }
 
 void run()
 {
-	//MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
-	IInspectable insp;
-	auto f = activationFactory!IMessageDialog;
-	Debug.OK(f.abi_ActivateInstance(&insp));
-	auto dialog = insp.as!MessageDialog;
-	dialog.Content = hstring("Async methods in D using Fibers or Sleeping!").handle;
-	dialog.ShowAsync().wait;
+	MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
 
 	Debug.OK(factory!ICoreApplication.abi_Run(new App));
 }

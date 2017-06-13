@@ -23,7 +23,7 @@ extern(Windows):
 
 @uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d")
 @WinrtFactory("Windows.Web.Http.HttpClient")
-interface IHttpClient : IInspectable, Windows.Foundation.IClosable
+interface IHttpClient : IInspectable
 {
 extern(Windows):
 	HRESULT abi_DeleteAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
@@ -48,7 +48,7 @@ extern(Windows):
 }
 
 @uuid("6b14a441-fba7-4bd2-af0a-839de7c295da")
-interface IHttpContent : IInspectable, Windows.Foundation.IClosable
+interface IHttpContent : IInspectable
 {
 extern(Windows):
 	HRESULT get_Headers(Windows.Web.Http.Headers.HttpContentHeaderCollection* return_value);
@@ -137,7 +137,7 @@ extern(Windows):
 
 @uuid("df916aff-9926-4ac9-aaf1-e0d04ef09bb9")
 @WinrtFactory("Windows.Web.Http.HttpMultipartContent")
-interface IHttpMultipartContent : IInspectable, Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent)
+interface IHttpMultipartContent : IInspectable
 {
 extern(Windows):
 	HRESULT abi_Add(Windows.Web.Http.IHttpContent content);
@@ -154,7 +154,7 @@ extern(Windows):
 
 @uuid("64d337e2-e967-4624-b6d1-cf74604a4a42")
 @WinrtFactory("Windows.Web.Http.HttpMultipartFormDataContent")
-interface IHttpMultipartFormDataContent : IInspectable, Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent)
+interface IHttpMultipartFormDataContent : IInspectable
 {
 extern(Windows):
 	HRESULT abi_Add(Windows.Web.Http.IHttpContent content);
@@ -172,7 +172,7 @@ extern(Windows):
 
 @uuid("f5762b3c-74d4-4811-b5dc-9f8b4e2f9abf")
 @WinrtFactory("Windows.Web.Http.HttpRequestMessage")
-interface IHttpRequestMessage : IInspectable, Windows.Foundation.IClosable
+interface IHttpRequestMessage : IInspectable
 {
 extern(Windows):
 	HRESULT get_Content(Windows.Web.Http.IHttpContent* return_value);
@@ -196,7 +196,7 @@ extern(Windows):
 
 @uuid("fee200fb-8664-44e0-95d9-42696199bffc")
 @WinrtFactory("Windows.Web.Http.HttpResponseMessage")
-interface IHttpResponseMessage : IInspectable, Windows.Foundation.IClosable
+interface IHttpResponseMessage : IInspectable
 {
 extern(Windows):
 	HRESULT get_Content(Windows.Web.Http.IHttpContent* return_value);

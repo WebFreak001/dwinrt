@@ -12,7 +12,7 @@ extern(Windows):
 
 @uuid("fbf440e1-9d10-4201-b01e-c83275296f2e")
 @WinrtFactory("Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundSession")
-interface IExtendedExecutionForegroundSession : IInspectable, Windows.Foundation.IClosable
+interface IExtendedExecutionForegroundSession : IInspectable
 {
 extern(Windows):
 	HRESULT get_Description(HSTRING* return_value);

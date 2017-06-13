@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("62bc7a16-005c-4b3b-8a0b-0a090e9687f3")
 @WinrtFactory("Windows.Media.MediaProperties.AudioEncodingProperties")
-interface IAudioEncodingProperties : IInspectable, Windows.Media.MediaProperties.IMediaEncodingProperties
+interface IAudioEncodingProperties : IInspectable
 {
 extern(Windows):
 	HRESULT set_Bitrate(UINT32 value);
@@ -57,7 +57,7 @@ extern(Windows):
 
 @uuid("59ac2a57-b32a-479e-8a61-4b7f2e9e7ea0")
 @WinrtFactory("Windows.Media.MediaProperties.ContainerEncodingProperties")
-interface IContainerEncodingProperties : IInspectable, Windows.Media.MediaProperties.IMediaEncodingProperties
+interface IContainerEncodingProperties : IInspectable
 {
 }
 
@@ -80,7 +80,7 @@ extern(Windows):
 
 @uuid("78625635-f331-4189-b1c3-b48d5ae034f1")
 @WinrtFactory("Windows.Media.MediaProperties.ImageEncodingProperties")
-interface IImageEncodingProperties : IInspectable, Windows.Media.MediaProperties.IMediaEncodingProperties
+interface IImageEncodingProperties : IInspectable
 {
 extern(Windows):
 	HRESULT set_Width(UINT32 value);
@@ -256,7 +256,7 @@ extern(Windows):
 
 @uuid("76ee6c9a-37c2-4f2a-880a-1282bbb4373d")
 @WinrtFactory("Windows.Media.MediaProperties.VideoEncodingProperties")
-interface IVideoEncodingProperties : IInspectable, Windows.Media.MediaProperties.IMediaEncodingProperties
+interface IVideoEncodingProperties : IInspectable
 {
 extern(Windows):
 	HRESULT set_Bitrate(UINT32 value);

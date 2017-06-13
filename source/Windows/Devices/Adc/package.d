@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("040bf414-2588-4a56-abef-73a260acc60a")
 @WinrtFactory("Windows.Devices.Adc.AdcChannel")
-interface IAdcChannel : IInspectable, Windows.Foundation.IClosable
+interface IAdcChannel : IInspectable
 {
 extern(Windows):
 	HRESULT get_Controller(Windows.Devices.Adc.AdcController* return_value);

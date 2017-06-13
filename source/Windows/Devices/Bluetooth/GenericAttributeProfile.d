@@ -28,7 +28,7 @@ extern(Windows):
 
 @uuid("ae1ab578-ec06-4764-b780-9835a1d35d6e")
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic")
-interface IGattCharacteristic2 : IInspectable, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic
+interface IGattCharacteristic2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_Service(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService* return_value);
@@ -230,7 +230,7 @@ extern(Windows):
 
 @uuid("ac7b7c05-b33c-47cf-990f-6b8f5577df71")
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService")
-interface IGattDeviceService : IInspectable, Windows.Foundation.IClosable
+interface IGattDeviceService : IInspectable
 {
 extern(Windows):
 	deprecated("Use GetCharacteristicsForUuidAsync instead of GetCharacteristics.  For more information, see MSDN.")
@@ -244,7 +244,7 @@ extern(Windows):
 
 @uuid("fc54520b-0b0d-4708-bae0-9ffd9489bc59")
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService")
-interface IGattDeviceService2 : IInspectable, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService, Windows.Foundation.IClosable
+interface IGattDeviceService2 : IInspectable
 {
 extern(Windows):
 	deprecated("Use Session instead of Device property.	 For more information, see MSDN.")
@@ -433,7 +433,7 @@ extern(Windows):
 
 @uuid("a9c21713-b82f-435e-b634-21fd85a43c07")
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat")
-interface IGattPresentationFormatStatics2 : IInspectable, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattPresentationFormatStatics
+interface IGattPresentationFormatStatics2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_FromParts(BYTE formatType, INT32 exponent, UINT16 unit, BYTE namespaceId, UINT16 description, Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat* return_result);

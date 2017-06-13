@@ -16,7 +16,7 @@ struct GpioChangeRecord
 
 @uuid("cb5ec0de-6801-43ff-803d-4576628a8b26")
 @WinrtFactory("Windows.Devices.Gpio.GpioChangeCounter")
-interface IGpioChangeCounter : IInspectable, Windows.Foundation.IClosable
+interface IGpioChangeCounter : IInspectable
 {
 extern(Windows):
 	HRESULT set_Polarity(Windows.Devices.Gpio.GpioChangePolarity value);
@@ -38,7 +38,7 @@ extern(Windows):
 
 @uuid("0abc885f-e031-48e8-8590-70de78363c6d")
 @WinrtFactory("Windows.Devices.Gpio.GpioChangeReader")
-interface IGpioChangeReader : IInspectable, Windows.Foundation.IClosable
+interface IGpioChangeReader : IInspectable
 {
 extern(Windows):
 	HRESULT get_Capacity(INT32* return_value);
@@ -96,7 +96,7 @@ extern(Windows):
 
 @uuid("11d9b087-afae-4790-9ee9-e0eac942d201")
 @WinrtFactory("Windows.Devices.Gpio.GpioPin")
-interface IGpioPin : IInspectable, Windows.Foundation.IClosable
+interface IGpioPin : IInspectable
 {
 extern(Windows):
 	HRESULT add_ValueChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs) handler, EventRegistrationToken* return_token);

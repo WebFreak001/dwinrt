@@ -39,7 +39,7 @@ extern(Windows):
 }
 
 @uuid("fe1eb536-7e7f-4f90-ac9a-474984aae512")
-interface IBindableObservableVector : IInspectable, Windows.UI.Xaml.Interop.IBindableVector, Windows.UI.Xaml.Interop.IBindableIterable
+interface IBindableObservableVector : IInspectable
 {
 extern(Windows):
 	HRESULT add_VectorChanged(Windows.UI.Xaml.Interop.BindableVectorChangedEventHandler value, EventRegistrationToken* return_token);
@@ -47,7 +47,7 @@ extern(Windows):
 }
 
 @uuid("393de7de-6fd0-4c0d-bb71-47244a113e93")
-interface IBindableVector : IInspectable, Windows.UI.Xaml.Interop.IBindableIterable
+interface IBindableVector : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetAt(UINT32 index, IInspectable* return_returnValue);
@@ -63,7 +63,7 @@ extern(Windows):
 }
 
 @uuid("346dd6e7-976e-4bc3-815d-ece243bc0f33")
-interface IBindableVectorView : IInspectable, Windows.UI.Xaml.Interop.IBindableIterable
+interface IBindableVectorView : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetAt(UINT32 index, IInspectable* return_returnValue);

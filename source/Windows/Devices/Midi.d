@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("be1fa860-62b4-4d52-a37e-92e54d35b909")
 @WinrtFactory("Windows.Devices.Midi.MidiChannelPressureMessage")
-interface IMidiChannelPressureMessage : IInspectable, Windows.Devices.Midi.IMidiMessage
+interface IMidiChannelPressureMessage : IInspectable
 {
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
@@ -21,7 +21,7 @@ extern(Windows):
 
 @uuid("b7e15f83-780d-405f-b781-3e1598c97f40")
 @WinrtFactory("Windows.Devices.Midi.MidiControlChangeMessage")
-interface IMidiControlChangeMessage : IInspectable, Windows.Devices.Midi.IMidiMessage
+interface IMidiControlChangeMessage : IInspectable
 {
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
@@ -39,7 +39,7 @@ extern(Windows):
 
 @uuid("d5c1d9db-971a-4eaf-a23d-ea19fe607ff9")
 @WinrtFactory("Windows.Devices.Midi.MidiInPort")
-interface IMidiInPort : IInspectable, Windows.Foundation.IClosable
+interface IMidiInPort : IInspectable
 {
 extern(Windows):
 	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs) handler, EventRegistrationToken* return_token);
@@ -75,7 +75,7 @@ extern(Windows):
 
 @uuid("16fd8af4-198e-4d8f-a654-d305a293548f")
 @WinrtFactory("Windows.Devices.Midi.MidiNoteOffMessage")
-interface IMidiNoteOffMessage : IInspectable, Windows.Devices.Midi.IMidiMessage
+interface IMidiNoteOffMessage : IInspectable
 {
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
@@ -93,7 +93,7 @@ extern(Windows):
 
 @uuid("e0224af5-6181-46dd-afa2-410004c057aa")
 @WinrtFactory("Windows.Devices.Midi.MidiNoteOnMessage")
-interface IMidiNoteOnMessage : IInspectable, Windows.Devices.Midi.IMidiMessage
+interface IMidiNoteOnMessage : IInspectable
 {
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
@@ -110,7 +110,7 @@ extern(Windows):
 }
 
 @uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693")
-interface IMidiOutPort : IInspectable, Windows.Foundation.IClosable
+interface IMidiOutPort : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SendMessage(Windows.Devices.Midi.IMidiMessage midiMessage);
@@ -129,7 +129,7 @@ extern(Windows):
 
 @uuid("29df4cb1-2e9f-4faf-8c2b-9cb82a9079ca")
 @WinrtFactory("Windows.Devices.Midi.MidiPitchBendChangeMessage")
-interface IMidiPitchBendChangeMessage : IInspectable, Windows.Devices.Midi.IMidiMessage
+interface IMidiPitchBendChangeMessage : IInspectable
 {
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
@@ -146,7 +146,7 @@ extern(Windows):
 
 @uuid("1f7337fe-ace8-48a0-868e-7cdbf20f04d6")
 @WinrtFactory("Windows.Devices.Midi.MidiPolyphonicKeyPressureMessage")
-interface IMidiPolyphonicKeyPressureMessage : IInspectable, Windows.Devices.Midi.IMidiMessage
+interface IMidiPolyphonicKeyPressureMessage : IInspectable
 {
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
@@ -164,7 +164,7 @@ extern(Windows):
 
 @uuid("9cbb3c78-7a3e-4327-aa98-20b8e4485af8")
 @WinrtFactory("Windows.Devices.Midi.MidiProgramChangeMessage")
-interface IMidiProgramChangeMessage : IInspectable, Windows.Devices.Midi.IMidiMessage
+interface IMidiProgramChangeMessage : IInspectable
 {
 extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
@@ -181,7 +181,7 @@ extern(Windows):
 
 @uuid("4ca50c56-ec5e-4ae4-a115-88dc57cc2b79")
 @WinrtFactory("Windows.Devices.Midi.MidiSongPositionPointerMessage")
-interface IMidiSongPositionPointerMessage : IInspectable, Windows.Devices.Midi.IMidiMessage
+interface IMidiSongPositionPointerMessage : IInspectable
 {
 extern(Windows):
 	HRESULT get_Beats(UINT16* return_value);
@@ -197,7 +197,7 @@ extern(Windows):
 
 @uuid("49f0f27f-6d83-4741-a5bf-4629f6be974f")
 @WinrtFactory("Windows.Devices.Midi.MidiSongSelectMessage")
-interface IMidiSongSelectMessage : IInspectable, Windows.Devices.Midi.IMidiMessage
+interface IMidiSongSelectMessage : IInspectable
 {
 extern(Windows):
 	HRESULT get_Song(BYTE* return_value);
@@ -213,7 +213,7 @@ extern(Windows):
 
 @uuid("f0da155e-db90-405f-b8ae-21d2e17f2e45")
 @WinrtFactory("Windows.Devices.Midi.MidiSynthesizer")
-interface IMidiSynthesizer : IInspectable, Windows.Devices.Midi.IMidiOutPort, Windows.Foundation.IClosable
+interface IMidiSynthesizer : IInspectable
 {
 extern(Windows):
 	HRESULT get_AudioDevice(Windows.Devices.Enumeration.DeviceInformation* return_value);
@@ -241,7 +241,7 @@ extern(Windows):
 
 @uuid("0bf7087d-fa63-4a1c-8deb-c0e87796a6d7")
 @WinrtFactory("Windows.Devices.Midi.MidiTimeCodeMessage")
-interface IMidiTimeCodeMessage : IInspectable, Windows.Devices.Midi.IMidiMessage
+interface IMidiTimeCodeMessage : IInspectable
 {
 extern(Windows):
 	HRESULT get_FrameType(BYTE* return_value);

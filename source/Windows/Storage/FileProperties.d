@@ -14,7 +14,7 @@ extern(Windows):
 
 @uuid("7eab19bc-1821-4923-b4a9-0aea404d0070")
 @WinrtFactory("Windows.Storage.FileProperties.DocumentProperties")
-interface IDocumentProperties : IInspectable, Windows.Storage.FileProperties.IStorageItemExtraProperties
+interface IDocumentProperties : IInspectable
 {
 extern(Windows):
 	HRESULT get_Author(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
@@ -37,7 +37,7 @@ extern(Windows):
 
 @uuid("523c9424-fcff-4275-afee-ecdb9ab47973")
 @WinrtFactory("Windows.Storage.FileProperties.ImageProperties")
-interface IImageProperties : IInspectable, Windows.Storage.FileProperties.IStorageItemExtraProperties
+interface IImageProperties : IInspectable
 {
 extern(Windows):
 	HRESULT get_Rating(UINT32* return_value);
@@ -61,7 +61,7 @@ extern(Windows):
 
 @uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da")
 @WinrtFactory("Windows.Storage.FileProperties.MusicProperties")
-interface IMusicProperties : IInspectable, Windows.Storage.FileProperties.IStorageItemExtraProperties
+interface IMusicProperties : IInspectable
 {
 extern(Windows):
 	HRESULT get_Album(HSTRING* return_value);
@@ -93,7 +93,7 @@ extern(Windows):
 
 @uuid("05294bad-bc38-48bf-85d7-770e0e2ae0ba")
 @WinrtFactory("Windows.Storage.FileProperties.StorageItemContentProperties")
-interface IStorageItemContentProperties : IInspectable, Windows.Storage.FileProperties.IStorageItemExtraProperties
+interface IStorageItemContentProperties : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetMusicPropertiesAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.MusicProperties)* return_operation);
@@ -124,7 +124,7 @@ extern(Windows):
 
 @uuid("719ae507-68de-4db8-97de-49998c059f2f")
 @WinrtFactory("Windows.Storage.FileProperties.VideoProperties")
-interface IVideoProperties : IInspectable, Windows.Storage.FileProperties.IStorageItemExtraProperties
+interface IVideoProperties : IInspectable
 {
 extern(Windows):
 	HRESULT get_Rating(UINT32* return_value);

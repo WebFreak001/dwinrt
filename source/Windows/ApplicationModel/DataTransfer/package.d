@@ -75,7 +75,7 @@ extern(Windows):
 
 @uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689")
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackagePropertySet")
-interface IDataPackagePropertySet : IInspectable, Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
+interface IDataPackagePropertySet : IInspectable
 {
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
@@ -119,7 +119,7 @@ extern(Windows):
 
 @uuid("b94cec01-0c1a-4c57-be55-75d01289735d")
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView")
-interface IDataPackagePropertySetView : IInspectable, Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
+interface IDataPackagePropertySetView : IInspectable
 {
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);

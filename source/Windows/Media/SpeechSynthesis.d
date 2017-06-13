@@ -13,7 +13,7 @@ extern(Windows):
 
 @uuid("83e46e93-244c-4622-ba0b-6229c4d0d65d")
 @WinrtFactory("Windows.Media.SpeechSynthesis.SpeechSynthesisStream")
-interface ISpeechSynthesisStream : IInspectable, Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IRandomAccessStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Storage.Streams.IOutputStream, Windows.Storage.Streams.IContentTypeProvider
+interface ISpeechSynthesisStream : IInspectable
 {
 extern(Windows):
 	HRESULT get_Markers(Windows.Foundation.Collections.IVectorView!(Windows.Media.IMediaMarker)* return_value);

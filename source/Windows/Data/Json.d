@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("08c1ddb6-0cbd-4a9a-b5d3-2f852dc37e81")
 @WinrtFactory("Windows.Data.Json.JsonArray")
-interface IJsonArray : IInspectable, Windows.Data.Json.IJsonValue
+interface IJsonArray : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetObjectAt(UINT32 index, Windows.Data.Json.JsonObject* return_returnValue);
@@ -33,7 +33,7 @@ extern(Windows):
 
 @uuid("064e24dd-29c2-4f83-9ac1-9ee11578beb3")
 @WinrtFactory("Windows.Data.Json.JsonObject")
-interface IJsonObject : IInspectable, Windows.Data.Json.IJsonValue
+interface IJsonObject : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetNamedValue(HSTRING name, Windows.Data.Json.JsonValue* return_returnValue);
@@ -56,7 +56,7 @@ extern(Windows):
 
 @uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13")
 @WinrtFactory("Windows.Data.Json.JsonObject")
-interface IJsonObjectWithDefaultValues : IInspectable, Windows.Data.Json.IJsonObject, Windows.Data.Json.IJsonValue
+interface IJsonObjectWithDefaultValues : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetNamedValueOrDefault(HSTRING name, Windows.Data.Json.JsonValue defaultValue, Windows.Data.Json.JsonValue* return_returnValue);

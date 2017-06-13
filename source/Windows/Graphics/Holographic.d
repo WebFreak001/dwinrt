@@ -30,7 +30,7 @@ extern(Windows):
 
 @uuid("b55b9f1a-ba8c-4f84-ad79-2e7e1e2450f3")
 @WinrtFactory("Windows.Graphics.Holographic.HolographicCamera")
-interface IHolographicCamera2 : IInspectable, Windows.Graphics.Holographic.IHolographicCamera
+interface IHolographicCamera2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_LeftViewportParameters(Windows.Graphics.Holographic.HolographicCameraViewportParameters* return_result);
@@ -67,7 +67,7 @@ extern(Windows):
 
 @uuid("261270e3-b696-4634-94d6-be0681643599")
 @WinrtFactory("Windows.Graphics.Holographic.HolographicCameraRenderingParameters")
-interface IHolographicCameraRenderingParameters2 : IInspectable, Windows.Graphics.Holographic.IHolographicCameraRenderingParameters
+interface IHolographicCameraRenderingParameters2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_ReprojectionMode(Windows.Graphics.Holographic.HolographicReprojectionMode* return_value);

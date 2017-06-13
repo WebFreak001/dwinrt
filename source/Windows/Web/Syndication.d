@@ -39,7 +39,7 @@ extern(Windows):
 
 @uuid("8715626f-0cba-4a7f-89ff-ecb5281423b6")
 @WinrtFactory("Windows.Web.Syndication.SyndicationCategory")
-interface ISyndicationCategory : IInspectable, Windows.Web.Syndication.ISyndicationNode
+interface ISyndicationCategory : IInspectable
 {
 extern(Windows):
 	HRESULT get_Label(HSTRING* return_value);
@@ -87,7 +87,7 @@ extern(Windows):
 
 @uuid("4641fefe-0e55-40d0-b8d0-6a2ccba9fc7c")
 @WinrtFactory("Windows.Web.Syndication.SyndicationContent")
-interface ISyndicationContent : IInspectable, Windows.Web.Syndication.ISyndicationText, Windows.Web.Syndication.ISyndicationNode
+interface ISyndicationContent : IInspectable
 {
 extern(Windows):
 	HRESULT get_SourceUri(Windows.Foundation.Uri* return_value);
@@ -113,7 +113,7 @@ extern(Windows):
 
 @uuid("7ffe3cd2-5b66-4d62-8403-1bc10d910d6b")
 @WinrtFactory("Windows.Web.Syndication.SyndicationFeed")
-interface ISyndicationFeed : IInspectable, Windows.Web.Syndication.ISyndicationNode
+interface ISyndicationFeed : IInspectable
 {
 extern(Windows):
 	HRESULT get_Authors(Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationPerson)* return_value);
@@ -177,7 +177,7 @@ extern(Windows):
 
 @uuid("548db883-c384-45c1-8ae8-a378c4ec486c")
 @WinrtFactory("Windows.Web.Syndication.SyndicationItem")
-interface ISyndicationItem : IInspectable, Windows.Web.Syndication.ISyndicationNode
+interface ISyndicationItem : IInspectable
 {
 extern(Windows):
 	HRESULT get_Authors(Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationPerson)* return_value);
@@ -220,7 +220,7 @@ extern(Windows):
 
 @uuid("27553abd-a10e-41b5-86bd-9759086eb0c5")
 @WinrtFactory("Windows.Web.Syndication.SyndicationLink")
-interface ISyndicationLink : IInspectable, Windows.Web.Syndication.ISyndicationNode
+interface ISyndicationLink : IInspectable
 {
 extern(Windows):
 	HRESULT get_Length(UINT32* return_value);
@@ -275,7 +275,7 @@ extern(Windows):
 
 @uuid("fa1ee5da-a7c6-4517-a096-0143faf29327")
 @WinrtFactory("Windows.Web.Syndication.SyndicationPerson")
-interface ISyndicationPerson : IInspectable, Windows.Web.Syndication.ISyndicationNode
+interface ISyndicationPerson : IInspectable
 {
 extern(Windows):
 	HRESULT get_Email(HSTRING* return_value);
@@ -296,7 +296,7 @@ extern(Windows):
 }
 
 @uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9")
-interface ISyndicationText : IInspectable, Windows.Web.Syndication.ISyndicationNode
+interface ISyndicationText : IInspectable
 {
 extern(Windows):
 	HRESULT get_Text(HSTRING* return_value);

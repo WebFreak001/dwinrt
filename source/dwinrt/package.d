@@ -94,13 +94,28 @@ enum winrtFactory(T) = WinrtFactory(winrtNameOf!T);
 
 extern (Windows)
 {
-	HRESULT GetRestrictedErrorInfo(IUnknown** info);
+	HRESULT GetRestrictedErrorInfo(IRestrictedErrorInfo* info);
 	HRESULT RoGetActivationFactory(HSTRING classId, const ref GUID iid, void** factory);
 	HRESULT RoInitialize(uint type);
 	BOOL RoOriginateError(HRESULT error, HSTRING message);
 	void RoUninitialize();
-	HRESULT SetRestrictedErrorInfo(IUnknown* info);
+	HRESULT SetRestrictedErrorInfo(IRestrictedErrorInfo info);
 	HRESULT CoGetApartmentType(int* pAptType, int* pAptQualifier);
+	HRESULT RoGetAgileReference(int options, REFIID riid, IUnknown pUnk,
+			IAgileReference* ppAgileReference);
+}
+
+@uuid("c03f6a43-65a4-9818-987e-e0b810d2a6f2")
+interface IAgileReference : IUnknown
+{
+extern (Windows):
+	HRESULT abi_Resolve(REFIID riid, void** ppvObjectReference);
+}
+
+enum
+{
+	AGILEREFERENCE_DEFAULT = 0,
+	AGILEREFERENCE_DELAYEDMARSHAL = 1,
 }
 
 struct Debug
@@ -136,12 +151,17 @@ struct Debug
 	}
 
 	static void OK(HRESULT hr, string file = __FILE__, int line = __LINE__,
-			string func = __PRETTY_FUNCTION__) nothrow
+			string func = __PRETTY_FUNCTION__)
 	{
+		import std.conv;
+
 		if (hr != S_OK)
 		{
-			WriteLine("HRESULT fail in %s:%s in function %s", file, line, func);
-			throw new Error("HRESULT fail " ~ file);
+			auto ex = new HResultException(hr, file, line);
+			WriteLine("HRESULT fail (0x%s / %s) in %s:%s in function %s",
+					hr.to!string(16), (cast(HResultEnum) hr).to!string, file, line, func);
+			WriteLine("Exception: %s", ex);
+			throw ex;
 		}
 	}
 }
@@ -162,7 +182,7 @@ HSTRING create_string(const(wchar)* value, uint length)
 	return result;
 }
 
-bool embedded_null(HSTRING value) nothrow
+bool embedded_null(HSTRING value)
 {
 	BOOL result = 0;
 	auto hr = WindowsStringHasEmbeddedNull(value, &result);
@@ -204,7 +224,7 @@ struct hstring
 		m_handle = val;
 	}
 
-	void clear() nothrow
+	void clear()
 	{
 		auto result = WindowsDeleteString(handle);
 		Debug.OK(result);
@@ -287,6 +307,11 @@ struct hstring
 		return m_handle;
 	}
 
+	HSTRING* ptr() nothrow
+	{
+		return &m_handle;
+	}
+
 package:
 	HSTRING m_handle;
 }
@@ -305,7 +330,7 @@ pragma(inline, true) void init_apartment(in ApartmentType type = ApartmentType.m
 		Debug.WriteLine("RoInitialize %s", type);
 	const result = RoInitialize(cast(uint) type);
 	if (result < 0)
-		throw new Exception("HResult Error " ~ result.to!string);
+		throw new HResultException(result);
 }
 
 pragma(inline, true) void uninit_apartment()
@@ -467,7 +492,7 @@ interface IAsyncInfo : IInspectable
 
 	final AsyncStatus Status()
 	{
-		AsyncStatus ret;
+		AsyncStatus ret = cast(AsyncStatus)-1;
 		Debug.OK(this.as!IAsyncInfo.get_Status(&ret));
 		return ret;
 	}
@@ -494,24 +519,151 @@ private bool isSta()
 {
 	int aptType;
 	int aptTypeQualifier;
-	return SUCCEEDED(CoGetApartmentType(&aptType, &aptTypeQualifier)) && ((aptType == 0 /* STA */ )
-			|| (aptType == 3 /* MAINSTA */ ));
+	return SUCCEEDED(CoGetApartmentType(&aptType, &aptTypeQualifier))
+		&& ((aptType == 0 /* STA */ ) || (aptType == 3 /* MAINSTA */ ));
+}
+
+interface ISequentialStream : IUnknown
+{
+	HRESULT Read(void*, ULONG, ULONG*);
+	HRESULT Write(void*, ULONG, ULONG*);
+}
+
+import core.sys.windows.objidl : STATSTG;
+
+alias LPSTREAM = IStream;
+
+@uuid("0000000c-0000-0000-C000-000000000046")
+interface IStream : ISequentialStream
+{
+	HRESULT Seek(LARGE_INTEGER, DWORD, ULARGE_INTEGER*);
+	HRESULT SetSize(ULARGE_INTEGER);
+	HRESULT CopyTo(IStream, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*);
+	HRESULT Commit(DWORD);
+	HRESULT Revert();
+	HRESULT LockRegion(ULARGE_INTEGER, ULARGE_INTEGER, DWORD);
+	HRESULT UnlockRegion(ULARGE_INTEGER, ULARGE_INTEGER, DWORD);
+	HRESULT Stat(STATSTG*, DWORD);
+	HRESULT Clone(LPSTREAM*);
+}
+
+@uuid("00000003-0000-0000-C000-000000000046")
+interface IMarshal : IUnknown
+{
+	HRESULT GetUnmarshalClass(REFIID, PVOID, DWORD, PVOID, DWORD, CLSID*);
+	HRESULT GetMarshalSizeMax(REFIID, PVOID, DWORD, PVOID, DWORD, ULONG*);
+	HRESULT MarshalInterface(IStream, REFIID, PVOID, DWORD, PVOID, DWORD);
+	HRESULT UnmarshalInterface(IStream, REFIID, void**);
+	HRESULT ReleaseMarshalData(IStream);
+	HRESULT DisconnectObject(DWORD);
+}
+
+class Marshaler(T) : TComObject!T, IMarshal
+{
+extern (Windows):
+	final HRESULT GetUnmarshalClass(REFIID riid, void* pv, DWORD dwDestContext,
+			void* pvDestContext, DWORD mshlflags, CLSID* pCid)
+	{
+		IMarshal marshal;
+		if ((marshal = get_marshaler()) !is null)
+		{
+			return marshal.GetUnmarshalClass(riid, pv, dwDestContext,
+					pvDestContext, mshlflags, pCid);
+		}
+
+		return E_OUTOFMEMORY;
+	}
+
+	final HRESULT GetMarshalSizeMax(REFIID riid, void* pv, DWORD dwDestContext,
+			void* pvDestContext, DWORD mshlflags, DWORD* pSize)
+	{
+		IMarshal marshal;
+		if ((marshal = get_marshaler()) !is null)
+		{
+			return marshal.GetMarshalSizeMax(riid, pv, dwDestContext,
+					pvDestContext, mshlflags, pSize);
+		}
+
+		return E_OUTOFMEMORY;
+	}
+
+	final HRESULT MarshalInterface(IStream pStm, REFIID riid, void* pv,
+			DWORD dwDestContext, void* pvDestContext, DWORD mshlflags)
+	{
+		IMarshal marshal;
+		if ((marshal = get_marshaler()) !is null)
+		{
+			return marshal.MarshalInterface(pStm, riid, pv, dwDestContext,
+					pvDestContext, mshlflags);
+		}
+
+		return E_OUTOFMEMORY;
+	}
+
+	final HRESULT UnmarshalInterface(IStream pStm, REFIID riid, void** ppv)
+	{
+		IMarshal marshal;
+		if ((marshal = get_marshaler()) !is null)
+		{
+			return marshal.UnmarshalInterface(pStm, riid, ppv);
+		}
+
+		return E_OUTOFMEMORY;
+	}
+
+	final HRESULT ReleaseMarshalData(IStream pStm)
+	{
+		IMarshal marshal;
+		if ((marshal = get_marshaler()) !is null)
+		{
+			return marshal.ReleaseMarshalData(pStm);
+		}
+
+		return E_OUTOFMEMORY;
+	}
+
+	final HRESULT DisconnectObject(DWORD dwReserved)
+	{
+		IMarshal marshal;
+		if ((marshal = get_marshaler()) !is null)
+		{
+			return marshal.DisconnectObject(dwReserved);
+		}
+
+		return E_OUTOFMEMORY;
+	}
+
+	static IMarshal get_marshaler()
+	{
+		IUnknown unknown;
+		CoCreateFreeThreadedMarshaler(null, &unknown);
+		return unknown ? unknown.tryAs!IMarshal : null;
+	}
+}
+
+final class GenericMarshaledHandler(T, Args...)
+	: Marshaler!(GenericMarshaledHandler!(T, Args)), T, IAgileObject
+{
+extern (Windows):
+	override HRESULT abi_Invoke(Args args)
+	{
+		cb(args);
+		return S_OK;
+	}
+
+extern (D):
+	this(void delegate(Args) cb)
+	{
+		this.cb = cb;
+	}
+
+	void delegate(Args) cb;
 }
 
 Handler handler(Handler, Args...)(void delegate(Args) cb)
 		if (__traits(hasMember, Handler.init, "abi_Invoke"))
 {
-	final class Impl : ComObject, Handler
-	{
-	extern (Windows):
-		override HRESULT abi_Invoke(Args args)
-		{
-			cb(args);
-			return S_OK;
-		}
-	}
-
-	return new Impl();
+	return cast(Handler) new GenericMarshaledHandler!(Handler, Args)(cb);
 }
 
 auto yielding_suspend(Async)(Async async)
@@ -526,7 +678,7 @@ auto wait(Async)(Async async)
 
 auto suspend(alias waitFunc, Async)(Async async)
 {
-	assert(!isSta);
+	//assert(!isSta);
 
 	static if (is(Async == Windows.Foundation.IAsyncAction))
 	{
@@ -544,16 +696,16 @@ auto suspend(alias waitFunc, Async)(Async async)
 
 	import Windows.Foundation;
 
-	static if (is(Async == Windows.Foundation.IAsyncAction))
+	/*static if (is(Async == Windows.Foundation.IAsyncAction))
 		async.Completed = (Windows.Foundation.IAsyncAction result, AsyncStatus status) {
 			synchronized (mutex)
 				completed = true;
 		}.handler!(Windows.Foundation.AsyncActionCompletedHandler);
 	else static if (is(Async == IAsyncOperation!T, T))
-		async.Completed = (Windows.Foundation.IAsyncOperation!T info, AsyncStatus status) {
+		async.Completed = null;/*(Windows.Foundation.IAsyncOperation!T info, AsyncStatus status) {
 			synchronized (mutex)
 				completed = true;
-		}.handler!(Windows.Foundation.AsyncOperationCompletedHandler!T);
+		}.handler!(Windows.Foundation.AsyncOperationCompletedHandler!T);*/
 
 	while (true)
 	{
@@ -567,6 +719,34 @@ auto suspend(alias waitFunc, Async)(Async async)
 		async.abi_GetResults();
 	else
 		return async.Results;
+}
+
+void then(Async, Args...)(Async async, void delegate(Args) cb)
+{
+	import Windows.Foundation;
+
+	if (async.Status == AsyncStatus.Completed)
+	{
+		static if (is(Async == Windows.Foundation.IAsyncAction))
+			return cb();
+		else
+			return cb(async.Results);
+	}
+	static if (is(Async == Windows.Foundation.IAsyncAction))
+		async.Completed = (Windows.Foundation.IAsyncAction result, AsyncStatus status) {
+			cb();
+		}.handler!(Windows.Foundation.AsyncActionCompletedHandler);
+	else static if (is(Async == IAsyncOperation!T, T))
+		async.Completed = (Windows.Foundation.IAsyncOperation!T info, AsyncStatus status) {
+			cb(async.Results);
+		}.handler!(Windows.Foundation.AsyncOperationCompletedHandler!T);
+}
+
+IAgileReference agileRef(T : IUnknown)(T obj)
+{
+	IAgileReference _ref;
+	Debug.OK(RoGetAgileReference(AGILEREFERENCE_DEFAULT, uuidOf!T, obj, &_ref));
+	return _ref;
 }
 
 struct AsyncRunner
@@ -614,6 +794,109 @@ struct AsyncRunner
 
 __gshared AsyncRunner async;
 
+@uuid("82ba7092-4c88-427d-a7bc-16dd93feb67e")
+interface IRestrictedErrorInfo : IUnknown
+{
+extern (Windows):
+	HRESULT GetErrorDetails(wchar** description, HRESULT* error,
+			wchar** restrictedDescription, wchar** capabilitySid);
+	HRESULT GetReference(wchar** reference);
+}
+
+hstring trim_hresult_message(const(wchar)* message, uint size)
+{
+	import std.ascii;
+
+	const(wchar)* back = message + size - 1;
+
+	while (size && isWhite(*back))
+	{
+		--size;
+		--back;
+	}
+
+	hstring result;
+	WindowsCreateString(message, size, result.ptr);
+	return result;
+}
+
+enum HResultEnum : HRESULT
+{
+	S_OK = 0x00000000,
+	E_NOTIMPL = 0x80004001,
+	E_NOINTERFACE = 0x80004002,
+	E_POINTER = 0x80004003,
+	E_ABORT = 0x80004004,
+	E_FAIL = 0x80004005,
+	E_UNEXPECTED = 0x8000FFFF,
+	E_ACCESSDENIED = 0x80070005,
+	E_HANDLE = 0x80070006,
+	E_OUTOFMEMORY = 0x8007000E,
+	E_INVALIDARG = 0x80070057,
+}
+
+class HResultException : Exception
+{
+	this(HRESULT hresult, string file = __FILE__, size_t line = __LINE__)
+	{
+		import std.conv;
+
+		code = hresult;
+		if (hresult == S_OK)
+		{
+			super("Nothing wrong (S_OK)", file, line);
+			return;
+		}
+
+		RoOriginateError(hresult, null);
+		GetRestrictedErrorInfo(&info);
+		string error = "HRESULT Fail: ";
+		wstring info = windowsMessage;
+		if (info.length)
+			error ~= info.to!string ~ " ";
+		super(error ~ "Code " ~ (cast(HResultEnum) hresult)
+				.to!string ~ " (0x" ~ hresult.to!string(16) ~ ")", file, line);
+	}
+
+	wstring windowsMessage()
+	{
+		import std.conv;
+		import std.string;
+
+		if (info)
+		{
+			HRESULT code;
+			wchar* fallback, message, unused;
+			if (info.GetErrorDetails(&fallback, &code, &message, &unused) == S_OK)
+			{
+				if (code == this.code)
+				{
+					if (message)
+					{
+						return trim_hresult_message(message, SysStringLen(message)).d_str;
+					}
+					else
+					{
+						return trim_hresult_message(fallback, SysStringLen(fallback)).d_str;
+					}
+				}
+			}
+		}
+
+		wchar* message;
+		auto len = FormatMessageW(
+				FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+				null, code, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+				cast(wchar*)&message, 0, null);
+		wstring ret = message[0 .. len].strip.idup;
+		LocalFree(message);
+		return ret;
+	}
+
+	HRESULT code;
+	IRestrictedErrorInfo info;
+}
+
 @uuid("4edb8ee2-96dd-49a7-94f7-4607ddab8e3c")
 interface IGetActivationFactory : IInspectable
 {
@@ -640,45 +923,41 @@ GUID[] listUUIDs(T)()
 	return arr;
 }
 
-class Inspectable(T) : IInspectable
+class TComObject(T) : IUnknown
 {
 extern (Windows):
-	HRESULT abi_GetIids(uint* iidCount, GUID** iids)
-	{
-		static immutable arr = listUUIDs!T;
-
-		*iidCount = cast(uint) arr.length;
-		*iids = cast(GUID*) arr.ptr;
-		return S_OK;
-	}
-
-	HRESULT abi_GetRuntimeClassName(HSTRING* className)
+	HRESULT QueryInterface(const(IID)* riid, void** ppv)
 	{
 		import std.traits;
 
-		*className = hstring(fullyQualifiedName!T).handle;
-		return S_OK;
-	}
-
-	HRESULT abi_GetTrustLevel(TrustLevel* trustLevel)
-	{
-		*trustLevel = TrustLevel.BaseTrust;
-		return S_OK;
-	}
-
-	HRESULT QueryInterface(const(IID)* riid, void** ppv)
-	{
-		if (*riid == IID_IUnknown)
+		auto iid = *riid;
+		Debug.WriteLine("QueryInterface %s", iid.guidToString);
+		if (iid == IID_IUnknown)
 		{
 			*ppv = cast(void*) cast(IUnknown) this;
 			AddRef();
 			return S_OK;
 		}
-		else
+		pragma(msg, InterfacesTuple!T);
+		foreach (Base; InterfacesTuple!T)
 		{
-			*ppv = null;
-			return E_NOINTERFACE;
+			enum uuid = uuidOf!(Base, false);
+			static if (uuid != GUID.init)
+			{
+				pragma(msg, Base);
+				pragma(msg, uuid);
+				Debug.WriteLine("Base %s [%s] ?= %s", Base.stringof,
+						uuid.guidToString, iid.guidToString);
+				if (uuid == iid)
+				{
+					*ppv = cast(void*) cast(Base) this;
+					AddRef();
+					return S_OK;
+				}
+			}
 		}
+		*ppv = null;
+		return E_NOINTERFACE;
 	}
 
 	ULONG AddRef()
@@ -704,6 +983,33 @@ extern (Windows):
 	}
 
 	LONG count = 0; // object reference count
+}
+
+class Inspectable(T) : TComObject!T, IInspectable
+{
+extern (Windows):
+	HRESULT abi_GetIids(uint* iidCount, GUID** iids)
+	{
+		static immutable arr = listUUIDs!T;
+
+		*iidCount = cast(uint) arr.length;
+		*iids = cast(GUID*) arr.ptr;
+		return S_OK;
+	}
+
+	HRESULT abi_GetRuntimeClassName(HSTRING* className)
+	{
+		import std.traits;
+
+		*className = hstring(fullyQualifiedName!T).handle;
+		return S_OK;
+	}
+
+	HRESULT abi_GetTrustLevel(TrustLevel* trustLevel)
+	{
+		*trustLevel = TrustLevel.BaseTrust;
+		return S_OK;
+	}
 }
 
 class TypedEvent(TSender, TArgs, Base = Windows.Foundation.TypedEventHandler!(TSender, TArgs))

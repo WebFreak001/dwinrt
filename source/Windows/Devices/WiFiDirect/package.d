@@ -84,7 +84,7 @@ extern(Windows):
 
 @uuid("8eb99605-914f-49c3-a614-d18dc5b19b43")
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectConnectionRequest")
-interface IWiFiDirectConnectionRequest : IInspectable, Windows.Foundation.IClosable
+interface IWiFiDirectConnectionRequest : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);
@@ -100,7 +100,7 @@ extern(Windows):
 
 @uuid("72deaaa8-72eb-4dae-8a28-8513355d2777")
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectDevice")
-interface IWiFiDirectDevice : IInspectable, Windows.Foundation.IClosable
+interface IWiFiDirectDevice : IInspectable
 {
 extern(Windows):
 	HRESULT get_ConnectionStatus(Windows.Devices.WiFiDirect.WiFiDirectConnectionStatus* return_value);

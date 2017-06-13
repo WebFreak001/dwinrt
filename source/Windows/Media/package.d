@@ -10,7 +10,7 @@ struct MediaTimeRange
 
 @uuid("35175827-724b-4c6a-b130-f6537f9ae0d0")
 @WinrtFactory("Windows.Media.AudioBuffer")
-interface IAudioBuffer : IInspectable, Windows.Foundation.IMemoryBuffer, Windows.Foundation.IClosable
+interface IAudioBuffer : IInspectable
 {
 extern(Windows):
 	HRESULT get_Capacity(UINT32* return_value);
@@ -20,7 +20,7 @@ extern(Windows):
 
 @uuid("e36ac304-aab2-4277-9ed0-43cedf8e29c6")
 @WinrtFactory("Windows.Media.AudioFrame")
-interface IAudioFrame : IInspectable, Windows.Media.IMediaFrame, Windows.Foundation.IClosable
+interface IAudioFrame : IInspectable
 {
 extern(Windows):
 	HRESULT abi_LockBuffer(Windows.Media.AudioBufferAccessMode mode, Windows.Media.AudioBuffer* return_value);
@@ -154,14 +154,14 @@ extern(Windows):
 
 @uuid("5bcebf47-4043-4fed-acaf-54ec29dfb1f7")
 @WinrtFactory("Windows.Media.MediaExtensionManager")
-interface IMediaExtensionManager2 : IInspectable, Windows.Media.IMediaExtensionManager
+interface IMediaExtensionManager2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RegisterMediaExtensionForAppService(Windows.Media.IMediaExtension extension, Windows.ApplicationModel.AppService.AppServiceConnection connection);
 }
 
 @uuid("bfb52f8c-5943-47d8-8e10-05308aa5fbd0")
-interface IMediaFrame : IInspectable, Windows.Foundation.IClosable
+interface IMediaFrame : IInspectable
 {
 extern(Windows):
 	HRESULT get_Type(HSTRING* return_value);
@@ -457,7 +457,7 @@ extern(Windows):
 
 @uuid("0cc06625-90fc-4c92-bd95-7ded21819d1c")
 @WinrtFactory("Windows.Media.VideoFrame")
-interface IVideoFrame : IInspectable, Windows.Media.IMediaFrame, Windows.Foundation.IClosable
+interface IVideoFrame : IInspectable
 {
 extern(Windows):
 	HRESULT get_SoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap* return_value);

@@ -38,7 +38,7 @@ extern(Windows):
 
 @uuid("1d80a51e-996e-40a9-be48-e66ec90b2b7d")
 @WinrtFactory("Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs")
-interface ICurrentMediaPlaybackItemChangedEventArgs2 : IInspectable, Windows.Media.Playback.ICurrentMediaPlaybackItemChangedEventArgs
+interface ICurrentMediaPlaybackItemChangedEventArgs2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_Reason(Windows.Media.Playback.MediaPlaybackItemChangedReason* return_value);
@@ -319,7 +319,7 @@ extern(Windows):
 
 @uuid("047097d2-e4af-48ab-b283-6929e674ece2")
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
-interface IMediaPlaybackItem : IInspectable, Windows.Media.Playback.IMediaPlaybackSource
+interface IMediaPlaybackItem : IInspectable
 {
 extern(Windows):
 	HRESULT add_AudioTracksChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs) handler, EventRegistrationToken* return_token);
@@ -336,7 +336,7 @@ extern(Windows):
 
 @uuid("d859d171-d7ef-4b81-ac1f-f40493cbb091")
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
-interface IMediaPlaybackItem2 : IInspectable, Windows.Media.Playback.IMediaPlaybackItem, Windows.Media.Playback.IMediaPlaybackSource
+interface IMediaPlaybackItem2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_BreakSchedule(Windows.Media.Playback.MediaBreakSchedule* return_value);
@@ -350,7 +350,7 @@ extern(Windows):
 
 @uuid("0d328220-b80a-4d09-9ff8-f87094a1c831")
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
-interface IMediaPlaybackItem3 : IInspectable, Windows.Media.Playback.IMediaPlaybackItem2, Windows.Media.Playback.IMediaPlaybackItem, Windows.Media.Playback.IMediaPlaybackSource
+interface IMediaPlaybackItem3 : IInspectable
 {
 extern(Windows):
 	HRESULT get_IsDisabledInPlaybackList(bool* return_value);
@@ -379,7 +379,7 @@ extern(Windows):
 
 @uuid("d77cdf3a-b947-4972-b35d-adfb931a71e6")
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
-interface IMediaPlaybackItemFactory2 : IInspectable, Windows.Media.Playback.IMediaPlaybackItemFactory
+interface IMediaPlaybackItemFactory2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateWithStartTime(Windows.Media.Core.MediaSource source, Windows.Foundation.TimeSpan startTime, Windows.Media.Playback.MediaPlaybackItem* return_result);
@@ -413,7 +413,7 @@ extern(Windows):
 
 @uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925")
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackList")
-interface IMediaPlaybackList : IInspectable, Windows.Media.Playback.IMediaPlaybackSource
+interface IMediaPlaybackList : IInspectable
 {
 extern(Windows):
 	HRESULT add_ItemFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemFailedEventArgs) handler, EventRegistrationToken* return_token);
@@ -436,7 +436,7 @@ extern(Windows):
 
 @uuid("0e09b478-600a-4274-a14b-0b6723d0f48b")
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackList")
-interface IMediaPlaybackList2 : IInspectable, Windows.Media.Playback.IMediaPlaybackList, Windows.Media.Playback.IMediaPlaybackSource
+interface IMediaPlaybackList2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_MaxPrefetchTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
@@ -449,7 +449,7 @@ extern(Windows):
 
 @uuid("dd24bba9-bc47-4463-aa90-c18b7e5ffde1")
 @WinrtFactory("Windows.Media.Playback.MediaPlaybackList")
-interface IMediaPlaybackList3 : IInspectable, Windows.Media.Playback.IMediaPlaybackList2, Windows.Media.Playback.IMediaPlaybackList, Windows.Media.Playback.IMediaPlaybackSource
+interface IMediaPlaybackList3 : IInspectable
 {
 extern(Windows):
 	HRESULT get_MaxPlayedItemsToKeepOpen(Windows.Foundation.IReference!(UINT32)* return_value);
@@ -799,7 +799,7 @@ extern(Windows):
 
 @uuid("f2810cee-638b-46cf-8817-1d111fe9d8c4")
 @WinrtFactory("Windows.Media.Playback.PlaybackMediaMarkerSequence")
-interface IPlaybackMediaMarkerSequence : IInspectable, Windows.Foundation.Collections.IIterable!(Windows.Media.Playback.PlaybackMediaMarker)
+interface IPlaybackMediaMarkerSequence : IInspectable
 {
 extern(Windows):
 	HRESULT get_Size(UINT32* return_value);

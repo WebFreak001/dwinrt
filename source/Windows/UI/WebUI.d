@@ -69,7 +69,7 @@ extern(Windows):
 
 @uuid("cea6469a-0e05-467a-abc9-36ec1d4cdcb6")
 @WinrtFactory("Windows.UI.WebUI.HtmlPrintDocumentSource")
-interface IHtmlPrintDocumentSource : IInspectable, Windows.Graphics.Printing.IPrintDocumentSource
+interface IHtmlPrintDocumentSource : IInspectable
 {
 extern(Windows):
 	HRESULT get_Content(Windows.UI.WebUI.PrintContent* return_value);

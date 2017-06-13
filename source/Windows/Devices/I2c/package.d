@@ -48,7 +48,7 @@ extern(Windows):
 
 @uuid("8636c136-b9c5-4f70-9449-cc46dc6f57eb")
 @WinrtFactory("Windows.Devices.I2c.I2cDevice")
-interface II2cDevice : IInspectable, Windows.Foundation.IClosable
+interface II2cDevice : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);

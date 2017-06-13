@@ -165,7 +165,7 @@ extern(Windows):
 
 @uuid("c89b8a2f-ac56-4460-8d2f-80023bec4fc5")
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPaneSuggestionsRequestedEventArgs")
-interface ISearchPaneSuggestionsRequestedEventArgs : IInspectable, Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs
+interface ISearchPaneSuggestionsRequestedEventArgs : IInspectable
 {
 extern(Windows):
 	deprecated("ISearchPaneSuggestionsRequestedEventArgs may be altered or unavailable for releases after Windows 10.")

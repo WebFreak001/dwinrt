@@ -116,7 +116,7 @@ extern(Windows):
 
 @uuid("edd4a388-79c7-4f7c-90e8-ef934b21580a")
 @WinrtFactory("Windows.Media.Devices.AudioDeviceController")
-interface IAudioDeviceController : IInspectable, Windows.Media.Devices.IMediaDeviceController
+interface IAudioDeviceController : IInspectable
 {
 extern(Windows):
 	HRESULT set_Muted(bool value);
@@ -579,7 +579,7 @@ extern(Windows):
 
 @uuid("99555575-2e2e-40b8-b6c7-f82d10013210")
 @WinrtFactory("Windows.Media.Devices.VideoDeviceController")
-interface IVideoDeviceController : IInspectable, Windows.Media.Devices.IMediaDeviceController
+interface IVideoDeviceController : IInspectable
 {
 extern(Windows):
 	HRESULT get_Brightness(Windows.Media.Devices.MediaDeviceControl* return_value);

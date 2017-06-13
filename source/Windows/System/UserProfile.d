@@ -47,7 +47,7 @@ extern(Windows):
 
 @uuid("3e945153-3a5e-452e-a601-f5baad2a4870")
 @WinrtFactory("Windows.System.UserProfile.FirstSignInSettings")
-interface IFirstSignInSettings : IInspectable, Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
+interface IFirstSignInSettings : IInspectable
 {
 }
 

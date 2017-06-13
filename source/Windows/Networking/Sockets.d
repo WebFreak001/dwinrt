@@ -22,7 +22,7 @@ struct RoundTripTimeStatistics
 
 @uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3")
 @WinrtFactory("Windows.Networking.Sockets.ControlChannelTrigger")
-interface IControlChannelTrigger : IInspectable, Windows.Foundation.IClosable
+interface IControlChannelTrigger : IInspectable
 {
 extern(Windows):
 	HRESULT get_ControlChannelTriggerId(HSTRING* return_value);
@@ -73,7 +73,7 @@ extern(Windows):
 
 @uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af")
 @WinrtFactory("Windows.Networking.Sockets.DatagramSocket")
-interface IDatagramSocket : IInspectable, Windows.Foundation.IClosable
+interface IDatagramSocket : IInspectable
 {
 extern(Windows):
 	HRESULT get_Control(Windows.Networking.Sockets.DatagramSocketControl* return_value);
@@ -92,7 +92,7 @@ extern(Windows):
 
 @uuid("d83ba354-9a9d-4185-a20a-1424c9c2a7cd")
 @WinrtFactory("Windows.Networking.Sockets.DatagramSocket")
-interface IDatagramSocket2 : IInspectable, Windows.Foundation.IClosable
+interface IDatagramSocket2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_BindServiceNameAndAdapterAsync(HSTRING localServiceName, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Foundation.IAsyncAction* return_operation);
@@ -176,7 +176,7 @@ extern(Windows):
 
 @uuid("33727d08-34d5-4746-ad7b-8dde5bc2ef88")
 @WinrtFactory("Windows.Networking.Sockets.MessageWebSocket")
-interface IMessageWebSocket : IInspectable, Windows.Networking.Sockets.IWebSocket, Windows.Foundation.IClosable
+interface IMessageWebSocket : IInspectable
 {
 extern(Windows):
 	HRESULT get_Control(Windows.Networking.Sockets.MessageWebSocketControl* return_value);
@@ -187,7 +187,7 @@ extern(Windows):
 
 @uuid("bed0cee7-f9c8-440a-9ad5-737281d9742e")
 @WinrtFactory("Windows.Networking.Sockets.MessageWebSocket")
-interface IMessageWebSocket2 : IInspectable, Windows.Networking.Sockets.IMessageWebSocket, Windows.Networking.Sockets.IWebSocket, Windows.Foundation.IClosable
+interface IMessageWebSocket2 : IInspectable
 {
 extern(Windows):
 	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
@@ -196,7 +196,7 @@ extern(Windows):
 
 @uuid("8118388a-c629-4f0a-80fb-81fc05538862")
 @WinrtFactory("Windows.Networking.Sockets.MessageWebSocketControl")
-interface IMessageWebSocketControl : IInspectable, Windows.Networking.Sockets.IWebSocketControl
+interface IMessageWebSocketControl : IInspectable
 {
 extern(Windows):
 	HRESULT get_MaxMessageSize(UINT32* return_value);
@@ -272,7 +272,7 @@ extern(Windows):
 
 @uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49")
 @WinrtFactory("Windows.Networking.Sockets.StreamSocket")
-interface IStreamSocket : IInspectable, Windows.Foundation.IClosable
+interface IStreamSocket : IInspectable
 {
 extern(Windows):
 	HRESULT get_Control(Windows.Networking.Sockets.StreamSocketControl* return_value);
@@ -288,7 +288,7 @@ extern(Windows):
 
 @uuid("29d0e575-f314-4d09-adf0-0fbd967fbd9f")
 @WinrtFactory("Windows.Networking.Sockets.StreamSocket")
-interface IStreamSocket2 : IInspectable, Windows.Foundation.IClosable
+interface IStreamSocket2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ConnectWithProtectionLevelAndAdapterAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Foundation.IAsyncAction* return_operation);
@@ -373,7 +373,7 @@ extern(Windows):
 
 @uuid("ff513437-df9f-4df0-bf82-0ec5d7b35aae")
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketListener")
-interface IStreamSocketListener : IInspectable, Windows.Foundation.IClosable
+interface IStreamSocketListener : IInspectable
 {
 extern(Windows):
 	HRESULT get_Control(Windows.Networking.Sockets.StreamSocketListenerControl* return_value);
@@ -386,7 +386,7 @@ extern(Windows):
 
 @uuid("658dc13e-bb3e-4458-b232-ed1088694b98")
 @WinrtFactory("Windows.Networking.Sockets.StreamSocketListener")
-interface IStreamSocketListener2 : IInspectable, Windows.Foundation.IClosable
+interface IStreamSocketListener2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_BindServiceNameWithProtectionLevelAsync(HSTRING localServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Foundation.IAsyncAction* return_operation);
@@ -456,7 +456,7 @@ extern(Windows):
 
 @uuid("bd4a49d8-b289-45bb-97eb-c7525205a843")
 @WinrtFactory("Windows.Networking.Sockets.StreamWebSocket")
-interface IStreamWebSocket : IInspectable, Windows.Networking.Sockets.IWebSocket, Windows.Foundation.IClosable
+interface IStreamWebSocket : IInspectable
 {
 extern(Windows):
 	HRESULT get_Control(Windows.Networking.Sockets.StreamWebSocketControl* return_value);
@@ -466,7 +466,7 @@ extern(Windows):
 
 @uuid("aa4d08cb-93f5-4678-8236-57cce5417ed5")
 @WinrtFactory("Windows.Networking.Sockets.StreamWebSocket")
-interface IStreamWebSocket2 : IInspectable, Windows.Networking.Sockets.IStreamWebSocket, Windows.Networking.Sockets.IWebSocket, Windows.Foundation.IClosable
+interface IStreamWebSocket2 : IInspectable
 {
 extern(Windows):
 	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
@@ -475,7 +475,7 @@ extern(Windows):
 
 @uuid("b4f478b1-a45a-48db-953a-645b7d964c07")
 @WinrtFactory("Windows.Networking.Sockets.StreamWebSocketControl")
-interface IStreamWebSocketControl : IInspectable, Windows.Networking.Sockets.IWebSocketControl
+interface IStreamWebSocketControl : IInspectable
 {
 extern(Windows):
 	HRESULT get_NoDelay(bool* return_value);
@@ -483,7 +483,7 @@ extern(Windows):
 }
 
 @uuid("f877396f-99b1-4e18-bc08-850c9adf156e")
-interface IWebSocket : IInspectable, Windows.Foundation.IClosable
+interface IWebSocket : IInspectable
 {
 extern(Windows):
 	HRESULT get_OutputStream(Windows.Storage.Streams.IOutputStream* return_value);
@@ -517,7 +517,7 @@ extern(Windows):
 }
 
 @uuid("79c3be03-f2ca-461e-af4e-9665bc2d0620")
-interface IWebSocketControl2 : IInspectable, Windows.Networking.Sockets.IWebSocketControl
+interface IWebSocketControl2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_IgnorableServerCertificateErrors(Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult)* return_value);
@@ -541,7 +541,7 @@ extern(Windows):
 }
 
 @uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a")
-interface IWebSocketInformation2 : IInspectable, Windows.Networking.Sockets.IWebSocketInformation
+interface IWebSocketInformation2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_ServerCertificate(Windows.Security.Cryptography.Certificates.Certificate* return_value);

@@ -43,7 +43,7 @@ extern(Windows):
 
 @uuid("22972dc8-c6cf-4821-b7f9-c6454fb6af79")
 @WinrtFactory("Windows.Devices.Pwm.PwmPin")
-interface IPwmPin : IInspectable, Windows.Foundation.IClosable
+interface IPwmPin : IInspectable
 {
 extern(Windows):
 	HRESULT get_Controller(Windows.Devices.Pwm.PwmController* return_value);

@@ -13,7 +13,7 @@ extern(Windows):
 
 @uuid("b8d20a75-d4cf-4055-80e5-ce169c226496")
 @WinrtFactory("Windows.Globalization.Collation.CharacterGroupings")
-interface ICharacterGroupings : IInspectable, Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Collation.CharacterGrouping), Windows.Foundation.Collections.IIterable!(Windows.Globalization.Collation.CharacterGrouping)
+interface ICharacterGroupings : IInspectable
 {
 extern(Windows):
 	HRESULT abi_Lookup(HSTRING text, HSTRING* return_result);

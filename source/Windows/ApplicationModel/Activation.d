@@ -12,49 +12,49 @@ extern(Windows):
 }
 
 @uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c")
-interface IActivatedEventArgsWithUser : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IActivatedEventArgsWithUser : IInspectable
 {
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_value);
 }
 
 @uuid("930cef4b-b829-40fc-88f4-8513e8a64738")
-interface IApplicationViewActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IApplicationViewActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_CurrentlyShownApplicationViewId(INT32* return_value);
 }
 
 @uuid("3364c405-933c-4e7d-a034-500fb8dcd9f3")
-interface IAppointmentsProviderActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IAppointmentsProviderActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Verb(HSTRING* return_value);
 }
 
 @uuid("a2861367-cee5-4e4d-9ed7-41c34ec18b02")
-interface IAppointmentsProviderAddAppointmentActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IAppointmentsProviderAddAppointmentActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_AddAppointmentOperation(Windows.ApplicationModel.Appointments.AppointmentsProvider.AddAppointmentOperation* return_value);
 }
 
 @uuid("751f3ab8-0b8e-451c-9f15-966e699bac25")
-interface IAppointmentsProviderRemoveAppointmentActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IAppointmentsProviderRemoveAppointmentActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_RemoveAppointmentOperation(Windows.ApplicationModel.Appointments.AppointmentsProvider.RemoveAppointmentOperation* return_value);
 }
 
 @uuid("1551b7d4-a981-4067-8a62-0524e4ade121")
-interface IAppointmentsProviderReplaceAppointmentActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IAppointmentsProviderReplaceAppointmentActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_ReplaceAppointmentOperation(Windows.ApplicationModel.Appointments.AppointmentsProvider.ReplaceAppointmentOperation* return_value);
 }
 
 @uuid("3958f065-9841-4ca5-999b-885198b9ef2a")
-interface IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_InstanceStartDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
@@ -63,7 +63,7 @@ extern(Windows):
 }
 
 @uuid("9baeaba6-0e0b-49aa-babc-12b1dc774986")
-interface IAppointmentsProviderShowTimeFrameActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IAppointmentsProviderShowTimeFrameActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_TimeToShow(Windows.Foundation.DateTime* return_value);
@@ -78,14 +78,14 @@ extern(Windows):
 }
 
 @uuid("d06eb1c7-3805-4ecb-b757-6cf15e26fef3")
-interface ICachedFileUpdaterActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface ICachedFileUpdaterActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_CachedFileUpdaterUI(Windows.Storage.Provider.CachedFileUpdaterUI* return_value);
 }
 
 @uuid("fb67a508-2dad-490a-9170-dca036eb114b")
-interface ICameraSettingsActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface ICameraSettingsActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_VideoDeviceController(IInspectable* return_value);
@@ -93,14 +93,14 @@ extern(Windows):
 }
 
 @uuid("d627a1c4-c025-4c41-9def-f1eafad075e7")
-interface IContactActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IContactActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Verb(HSTRING* return_value);
 }
 
 @uuid("c2df14c7-30eb-41c6-b3bc-5b1694f9dab3")
-interface IContactCallActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IContactCallActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_ServiceId(HSTRING* return_value);
@@ -109,7 +109,7 @@ extern(Windows):
 }
 
 @uuid("b32bf870-eee7-4ad2-aaf1-a87effcf00a4")
-interface IContactMapActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IContactMapActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Address(Windows.ApplicationModel.Contacts.ContactAddress* return_value);
@@ -117,7 +117,7 @@ extern(Windows):
 }
 
 @uuid("de598db2-0e03-43b0-bf56-bcc40b3162df")
-interface IContactMessageActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IContactMessageActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_ServiceId(HSTRING* return_value);
@@ -134,14 +134,14 @@ extern(Windows):
 }
 
 @uuid("ce57aae7-6449-45a7-971f-d113be7a8936")
-interface IContactPickerActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IContactPickerActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_ContactPickerUI(Windows.ApplicationModel.Contacts.Provider.ContactPickerUI* return_value);
 }
 
 @uuid("b35a3c67-f1e7-4655-ad6e-4857588f552f")
-interface IContactPostActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IContactPostActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_ServiceId(HSTRING* return_value);
@@ -150,7 +150,7 @@ extern(Windows):
 }
 
 @uuid("61079db8-e3e7-4b4f-858d-5c63a96ef684")
-interface IContactVideoCallActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IContactVideoCallActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_ServiceId(HSTRING* return_value);
@@ -159,21 +159,21 @@ extern(Windows):
 }
 
 @uuid("4580dca8-5750-4916-aa52-c0829521eb94")
-interface IContactsProviderActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IContactsProviderActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Verb(HSTRING* return_value);
 }
 
 @uuid("e58106b5-155f-4a94-a742-c7e08f4e188c")
-interface IContinuationActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IContinuationActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_ContinuationData(Windows.Foundation.Collections.ValueSet* return_value);
 }
 
 @uuid("cd50b9a9-ce10-44d2-8234-c355a073ef33")
-interface IDeviceActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IDeviceActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceInformationId(HSTRING* return_value);
@@ -181,21 +181,21 @@ extern(Windows):
 }
 
 @uuid("eba0d1e4-ecc6-4148-94ed-f4b37ec05b3e")
-interface IDevicePairingActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IDevicePairingActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);
 }
 
 @uuid("fb777ed7-85ee-456e-a44d-85d730e70aed")
-interface IDialReceiverActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IDialReceiverActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_AppName(HSTRING* return_value);
 }
 
 @uuid("bb2afc33-93b1-42ed-8b26-236dd9c78496")
-interface IFileActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IFileActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Files(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)* return_value);
@@ -203,21 +203,21 @@ extern(Windows):
 }
 
 @uuid("2d60f06b-d25f-4d25-8653-e1c5e1108309")
-interface IFileActivatedEventArgsWithCallerPackageFamilyName : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IFileActivatedEventArgsWithCallerPackageFamilyName : IInspectable
 {
 extern(Windows):
 	HRESULT get_CallerPackageFamilyName(HSTRING* return_value);
 }
 
 @uuid("433ba1a4-e1e2-48fd-b7fc-b5d6eee65033")
-interface IFileActivatedEventArgsWithNeighboringFiles : IInspectable, Windows.ApplicationModel.Activation.IFileActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IFileActivatedEventArgsWithNeighboringFiles : IInspectable
 {
 extern(Windows):
 	HRESULT get_NeighboringFilesQuery(Windows.Storage.Search.StorageFileQueryResult* return_value);
 }
 
 @uuid("72827082-5525-4bf2-bc09-1f5095d4964d")
-interface IFileOpenPickerActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IFileOpenPickerActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_FileOpenPickerUI(Windows.Storage.Pickers.Provider.FileOpenPickerUI* return_value);
@@ -231,14 +231,14 @@ extern(Windows):
 }
 
 @uuid("f0fa3f3a-d4e8-4ad3-9c34-2308f32fcec9")
-interface IFileOpenPickerContinuationEventArgs : IInspectable, Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IFileOpenPickerContinuationEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Files(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile)* return_value);
 }
 
 @uuid("81c19cf1-74e6-4387-82eb-bb8fd64b4346")
-interface IFileSavePickerActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IFileSavePickerActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_FileSavePickerUI(Windows.Storage.Pickers.Provider.FileSavePickerUI* return_value);
@@ -253,21 +253,21 @@ extern(Windows):
 }
 
 @uuid("2c846fe1-3bad-4f33-8c8b-e46fae824b4b")
-interface IFileSavePickerContinuationEventArgs : IInspectable, Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IFileSavePickerContinuationEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_File(Windows.Storage.StorageFile* return_value);
 }
 
 @uuid("51882366-9f4b-498f-beb0-42684f6e1c29")
-interface IFolderPickerContinuationEventArgs : IInspectable, Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IFolderPickerContinuationEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Folder(Windows.Storage.StorageFolder* return_value);
 }
 
 @uuid("fbc93e26-a14a-4b4f-82b0-33bed920af52")
-interface ILaunchActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface ILaunchActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Arguments(HSTRING* return_value);
@@ -275,63 +275,63 @@ extern(Windows):
 }
 
 @uuid("0fd37ebc-9dc9-46b5-9ace-bd95d4565345")
-interface ILaunchActivatedEventArgs2 : IInspectable, Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface ILaunchActivatedEventArgs2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_TileActivatedInfo(Windows.ApplicationModel.Activation.TileActivatedInfo* return_value);
 }
 
 @uuid("3ca77966-6108-4a41-8220-ee7d133c8532")
-interface ILockScreenActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface ILockScreenActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Info(IInspectable* return_value);
 }
 
 @uuid("06f37fbe-b5f2-448b-b13e-e328ac1c516a")
-interface ILockScreenCallActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface ILockScreenCallActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_CallUI(Windows.ApplicationModel.Calls.LockScreenCallUI* return_value);
 }
 
 @uuid("360defb9-a9d3-4984-a4ed-9ec734604921")
-interface IPickerReturnedActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IPickerReturnedActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_PickerOperationId(HSTRING* return_value);
 }
 
 @uuid("0c44717b-19f7-48d6-b046-cf22826eaa74")
-interface IPrelaunchActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IPrelaunchActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_PrelaunchActivated(bool* return_value);
 }
 
 @uuid("3f57e78b-f2ac-4619-8302-ef855e1c9b90")
-interface IPrint3DWorkflowActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IPrint3DWorkflowActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Workflow(Windows.Devices.Printers.Extensions.Print3DWorkflow* return_value);
 }
 
 @uuid("ee30a0c9-ce56-4865-ba8e-8954ac271107")
-interface IPrintTaskSettingsActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IPrintTaskSettingsActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Configuration(Windows.Devices.Printers.Extensions.PrintTaskConfiguration* return_value);
 }
 
 @uuid("6095f4dd-b7c0-46ab-81fe-d90f36d00d24")
-interface IProtocolActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IProtocolActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 }
 
 @uuid("d84a0c12-5c8f-438c-83cb-c28fcc0b2fdb")
-interface IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData : IInspectable
 {
 extern(Windows):
 	HRESULT get_CallerPackageFamilyName(HSTRING* return_value);
@@ -339,21 +339,21 @@ extern(Windows):
 }
 
 @uuid("e75132c2-7ae7-4517-80ac-dbe8d7cc5b9c")
-interface IProtocolForResultsActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IProtocolForResultsActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_ProtocolForResultsOperation(Windows.System.ProtocolForResultsOperation* return_value);
 }
 
 @uuid("e0b7ac81-bfc3-4344-a5da-19fd5a27baae")
-interface IRestrictedLaunchActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IRestrictedLaunchActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_SharedContext(IInspectable* return_value);
 }
 
 @uuid("8cb36951-58c8-43e3-94bc-41d33f8b630e")
-interface ISearchActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface ISearchActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_QueryText(HSTRING* return_value);
@@ -368,7 +368,7 @@ extern(Windows):
 }
 
 @uuid("4bdaf9c8-cdb2-4acb-bfc3-6648563378ec")
-interface IShareTargetActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IShareTargetActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_ShareOperation(Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation* return_value);
@@ -393,7 +393,7 @@ extern(Windows):
 }
 
 @uuid("92a86f82-5290-431d-be85-c4aaeeb8685f")
-interface IToastNotificationActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IToastNotificationActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Argument(HSTRING* return_argument);
@@ -401,28 +401,28 @@ extern(Windows):
 }
 
 @uuid("1bc9f723-8ef1-4a51-a63a-fe711eeab607")
-interface IUserDataAccountProviderActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IUserDataAccountProviderActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Operation(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation* return_value);
 }
 
 @uuid("33f288a6-5c2c-4d27-bac7-7536088f1219")
-interface IViewSwitcherProvider : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IViewSwitcherProvider : IInspectable
 {
 extern(Windows):
 	HRESULT get_ViewSwitcher(Windows.UI.ViewManagement.ActivationViewSwitcher* return_value);
 }
 
 @uuid("ab92dcfd-8d43-4de6-9775-20704b581b00")
-interface IVoiceCommandActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IVoiceCommandActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Result(Windows.Media.SpeechRecognition.SpeechRecognitionResult* return_value);
 }
 
 @uuid("fcfc027b-1a1a-4d22-923f-ae6f45fa52d9")
-interface IWalletActionActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IWalletActionActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_ItemId(HSTRING* return_value);
@@ -431,14 +431,14 @@ extern(Windows):
 }
 
 @uuid("72b71774-98ea-4ccf-9752-46d9051004f1")
-interface IWebAccountProviderActivatedEventArgs : IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IWebAccountProviderActivatedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_Operation(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation* return_value);
 }
 
 @uuid("75dda3d4-7714-453d-b7ff-b95e3a1709da")
-interface IWebAuthenticationBrokerContinuationEventArgs : IInspectable, Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
+interface IWebAuthenticationBrokerContinuationEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_WebAuthenticationResult(Windows.Security.Authentication.Web.WebAuthenticationResult* return_result);

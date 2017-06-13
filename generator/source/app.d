@@ -1219,8 +1219,8 @@ struct Interface
 		ret ~= "interface " ~ name;
 		if (templateArgs.length)
 			ret ~= "(" ~ templateArgs.join(", ") ~ ")";
-		if (inherits.length + implements.length + requires.length)
-			ret ~= " : " ~ (inherits ~ implements ~ requires).join(", ");
+		if (inherits.length + implements.length)
+			ret ~= " : " ~ (inherits ~ implements).join(", ");
 		ret ~= "\n{\n";
 		if (methods.length)
 			ret ~= "extern(Windows):\n";

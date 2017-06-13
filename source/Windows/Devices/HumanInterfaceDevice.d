@@ -49,7 +49,7 @@ extern(Windows):
 
 @uuid("5f8a14e7-2200-432e-95da-d09b87d574a8")
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidDevice")
-interface IHidDevice : IInspectable, Windows.Foundation.IClosable
+interface IHidDevice : IInspectable
 {
 extern(Windows):
 	HRESULT get_VendorId(UINT16* return_value);

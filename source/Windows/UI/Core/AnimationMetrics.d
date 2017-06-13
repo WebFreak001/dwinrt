@@ -24,7 +24,7 @@ extern(Windows):
 
 @uuid("803aabe5-ee7e-455f-84e9-2506afb8d2b4")
 @WinrtFactory("Windows.UI.Core.AnimationMetrics.OpacityAnimation")
-interface IOpacityAnimation : IInspectable, Windows.UI.Core.AnimationMetrics.IPropertyAnimation
+interface IOpacityAnimation : IInspectable
 {
 extern(Windows):
 	HRESULT get_InitialOpacity(Windows.Foundation.IReference!(FLOAT)* return_value);
@@ -44,7 +44,7 @@ extern(Windows):
 
 @uuid("023552c7-71ab-428c-9c9f-d31780964995")
 @WinrtFactory("Windows.UI.Core.AnimationMetrics.ScaleAnimation")
-interface IScaleAnimation : IInspectable, Windows.UI.Core.AnimationMetrics.IPropertyAnimation
+interface IScaleAnimation : IInspectable
 {
 extern(Windows):
 	HRESULT get_InitialScaleX(Windows.Foundation.IReference!(FLOAT)* return_value);

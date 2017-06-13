@@ -125,7 +125,7 @@ extern(Windows):
 }
 
 @uuid("905a0fe2-bc53-11df-8c49-001e4fc686da")
-interface IInputStream : IInspectable, Windows.Foundation.IClosable
+interface IInputStream : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32)* return_operation);
@@ -139,7 +139,7 @@ extern(Windows):
 }
 
 @uuid("905a0fe6-bc53-11df-8c49-001e4fc686da")
-interface IOutputStream : IInspectable, Windows.Foundation.IClosable
+interface IOutputStream : IInspectable
 {
 extern(Windows):
 	HRESULT abi_WriteAsync(Windows.Storage.Streams.IBuffer buffer, Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32)* return_operation);
@@ -147,7 +147,7 @@ extern(Windows):
 }
 
 @uuid("905a0fe1-bc53-11df-8c49-001e4fc686da")
-interface IRandomAccessStream : IInspectable, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Storage.Streams.IOutputStream
+interface IRandomAccessStream : IInspectable
 {
 extern(Windows):
 	HRESULT get_Size(UINT64* return_value);
@@ -189,7 +189,7 @@ extern(Windows):
 }
 
 @uuid("cc254827-4b3d-438f-9232-10c76bc7e038")
-interface IRandomAccessStreamWithContentType : IInspectable, Windows.Storage.Streams.IRandomAccessStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Storage.Streams.IOutputStream, Windows.Storage.Streams.IContentTypeProvider
+interface IRandomAccessStreamWithContentType : IInspectable
 {
 }
 

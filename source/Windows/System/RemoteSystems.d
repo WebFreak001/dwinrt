@@ -133,7 +133,7 @@ extern(Windows):
 
 @uuid("69476a01-9ada-490f-9549-d31cb14c9e95")
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSession")
-interface IRemoteSystemSession : IInspectable, Windows.Foundation.IClosable
+interface IRemoteSystemSession : IInspectable
 {
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);

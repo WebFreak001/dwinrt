@@ -27,7 +27,7 @@ extern(Windows):
 
 @uuid("8856a21c-8699-4340-9f49-f7cad7fe8991")
 @WinrtFactory("Windows.Storage.Provider.CachedFileUpdaterUI")
-interface ICachedFileUpdaterUI2 : IInspectable, Windows.Storage.Provider.ICachedFileUpdaterUI
+interface ICachedFileUpdaterUI2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_UpdateRequest(Windows.Storage.Provider.FileUpdateRequest* return_value);
@@ -49,7 +49,7 @@ extern(Windows):
 
 @uuid("82484648-bdbe-447b-a2ee-7afe6a032a94")
 @WinrtFactory("Windows.Storage.Provider.FileUpdateRequest")
-interface IFileUpdateRequest2 : IInspectable, Windows.Storage.Provider.IFileUpdateRequest
+interface IFileUpdateRequest2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_UserInputNeededMessage(HSTRING* return_value);

@@ -762,7 +762,7 @@ extern(Windows):
 
 @uuid("1dd2de1f-571b-44d8-8e80-a08a1578766e")
 @WinrtFactory("Windows.Media.Capture.CapturedFrame")
-interface ICapturedFrame : IInspectable, Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IRandomAccessStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Storage.Streams.IOutputStream, Windows.Storage.Streams.IContentTypeProvider
+interface ICapturedFrame : IInspectable
 {
 extern(Windows):
 	HRESULT get_Width(UINT32* return_value);

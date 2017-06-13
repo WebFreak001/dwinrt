@@ -121,7 +121,7 @@ extern(Windows):
 
 @uuid("7b263e93-5f13-419c-97d5-834678266aa6")
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs")
-interface ISpatialInteractionDetectedEventArgs2 : IInspectable, Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs
+interface ISpatialInteractionDetectedEventArgs2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_InteractionSource(Windows.UI.Input.Spatial.SpatialInteractionSource* return_value);
@@ -166,7 +166,7 @@ extern(Windows):
 
 @uuid("e4c5b70c-0470-4028-88c0-a0eb44d34efe")
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSource")
-interface ISpatialInteractionSource2 : IInspectable, Windows.UI.Input.Spatial.ISpatialInteractionSource
+interface ISpatialInteractionSource2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_IsPointingSupported(bool* return_value);
@@ -186,7 +186,7 @@ extern(Windows):
 
 @uuid("d8b4b467-e648-4d52-ab49-e0d227199f63")
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs")
-interface ISpatialInteractionSourceEventArgs2 : IInspectable, Windows.UI.Input.Spatial.ISpatialInteractionSourceEventArgs
+interface ISpatialInteractionSourceEventArgs2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_PressKind(Windows.UI.Input.Spatial.SpatialInteractionPressKind* return_value);
@@ -233,7 +233,7 @@ extern(Windows):
 
 @uuid("45f6d0bd-1773-492e-9ba3-8ac1cbe77c08")
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSourceState")
-interface ISpatialInteractionSourceState2 : IInspectable, Windows.UI.Input.Spatial.ISpatialInteractionSourceState
+interface ISpatialInteractionSourceState2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_IsSelectPressed(bool* return_value);
@@ -345,7 +345,7 @@ extern(Windows):
 
 @uuid("9d202b17-954e-4e0c-96d1-b6790b6fc2fd")
 @WinrtFactory("Windows.UI.Input.Spatial.SpatialPointerPose")
-interface ISpatialPointerPose2 : IInspectable, Windows.UI.Input.Spatial.ISpatialPointerPose
+interface ISpatialPointerPose2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_TryGetInteractionSourcePose(Windows.UI.Input.Spatial.SpatialInteractionSource source, Windows.UI.Input.Spatial.SpatialPointerInteractionSourcePose* return_value);

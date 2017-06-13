@@ -17,7 +17,7 @@ extern(Windows):
 
 @uuid("ffb35923-bb26-4d6a-81bc-165aee0ad754")
 @WinrtFactory("Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation")
-interface IEasClientDeviceInformation2 : IInspectable, Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation
+interface IEasClientDeviceInformation2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_SystemHardwareVersion(HSTRING* return_value);
@@ -67,7 +67,7 @@ extern(Windows):
 
 @uuid("2fbe60c9-1aa8-47f5-88bb-cb3ef0bffb15")
 @WinrtFactory("Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults")
-interface IEasComplianceResults2 : IInspectable, Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults
+interface IEasComplianceResults2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_EncryptionProviderType(Windows.Security.ExchangeActiveSyncProvisioning.EasEncryptionProviderType* return_value);
