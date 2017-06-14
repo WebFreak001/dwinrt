@@ -72,7 +72,7 @@ IDL:
 	declare_definition < declare_interface ";"
 	declare_interface < "interface" type
 	# Added namespace, removed module
-	module_           <  "namespace" scoped_name "{" definition+ "}"
+	module_           <  "namespace" scoped_name "{" definition* "}"
 	interface_        <  interface_dcl / forward_dcl
 	interface_dcl     <  interface_header "{" interface_body "}"
 	# Added delegate
@@ -177,6 +177,7 @@ IDL:
 	                   / "default_overload"
 	                   / op_overload_attribute
 	                   / deprecation
+	                   / helpstring
 	                   / op_range_attribute
 	                   / op_size_is_attribute
 	                   / op_length_is_attribute

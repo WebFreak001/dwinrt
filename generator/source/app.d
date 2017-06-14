@@ -323,7 +323,7 @@ void main(string[] args)
 			obj.methods ~= copy;
 		}
 	}
-	dirEntries("base", SpanMode.shallow).array.sort!"a < b".each!(processIDL);
+	dirEntries(`C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\winrt`, SpanMode.shallow).array.sort!"a < b".each!(processIDL);
 	foreach (ref mod; modules)
 		mod.fixTypes;
 	foreach (ref mod; modules)
@@ -342,6 +342,9 @@ void main(string[] args)
 void processIDL(string file)
 {
 	if (ignored.canFind(file.baseName))
+		return;
+
+	if (file.extension != ".idl")
 		return;
 
 	//if (file.baseName != "windows.ui.xaml.controls.idl")
@@ -420,7 +423,7 @@ void processIDL(string file)
 	}
 
 	ParseTree parsed = parseIDL(code);
-	enforce(parsed.successful, "Could not parse " ~ file);
+	enforce(parsed.successful, "Could not parse " ~ file ~ "\n\nParseTree:\n" ~ parsed.toString);
 	enforce(parsed.children.length == 1, "Could not parse " ~ file);
 	auto spec = parsed.children[0];
 	enforce(spec.name == "IDL.specification");
@@ -798,6 +801,11 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 					{
 						enforce(spec.children[0].children.length >= 1);
 						method.deprecation = spec.children[0].children[0].parseString(true);
+					}
+					else if (spec.children.length == 1 && spec.children[0].name == "IDL.helpstring")
+					{
+						enforce(spec.children[0].children.length >= 1);
+						method.documentation = spec.children[0].children[0].parseString(true);
 					}
 					else
 						throw new Exception("Attribute not implemented: " ~ spec.toString);
@@ -1231,7 +1239,15 @@ struct Interface
 			ret ~= method.toString.indent ~ "\n";
 		ret ~= "}";
 		if (requires.length)
-			ret ~= "\ninterface " ~ name ~ " : " ~ name ~ "_Base, " ~ requires.join(", ") ~ " {}";
+		{
+			ret ~= "\ninterface " ~ name;
+			if (templateArgs.length)
+				ret ~= "(" ~ templateArgs.join(", ") ~ ")";
+			ret ~= " : " ~ name ~ "_Base";
+			if (templateArgs.length)
+				ret ~= "!(" ~ templateArgs.join(", ") ~ ")";
+			ret ~= ", " ~ requires.join(", ") ~ " {}";
+		}
 		return ret;
 	}
 }
@@ -1251,7 +1267,7 @@ struct InterfaceMethod
 	InterfaceType type;
 	InterfaceArgument[] arguments;
 	bool typeFixed;
-	string implementation;
+	string implementation, documentation;
 
 	void implement(string baseName)
 	{
@@ -1362,6 +1378,8 @@ struct InterfaceMethod
 	string toString() const
 	{
 		string ret;
+		if (documentation.length)
+			ret ~= "/// " ~ documentation ~ "\n";
 		if (deprecation.length)
 			ret ~= "deprecated(" ~ deprecation ~ ")\n";
 		if (implementation.length)
@@ -1498,7 +1516,7 @@ void addAlias(string from, string to)
 
 Alias[] aliases = [
 	Alias("unsigned", "uint"), Alias("ULONG32", "uint"), Alias("__int3264",
-		"size_t"), Alias("DOUBLE", "double")
+		"size_t"), Alias("DOUBLE", "double"), Alias("BSTR", "wchar*")
 ];
 
 /// async base in Windows.Foundation

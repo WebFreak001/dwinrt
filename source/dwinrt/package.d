@@ -850,6 +850,83 @@ hstring trim_hresult_message(const(wchar)* message, uint size)
 	return result;
 }
 
+@uuid("332c4427-26cb-11d0-b483-00c04fd90119")
+interface IHTMLWindow2 : IHTMLFramesCollection2
+{
+public:
+	HRESULT get_frames(IHTMLFramesCollection2* p);
+	HRESULT put_defaultStatus(wchar* v);
+	HRESULT get_defaultStatus(wchar** p);
+	HRESULT put_status(wchar* v);
+	HRESULT get_status(wchar** p);
+	HRESULT setTimeout(wchar* expression, long msec, VARIANT* language, long* timerID);
+	HRESULT clearTimeout(long timerID);
+	HRESULT alert(wchar* message = "");
+	HRESULT confirm(wchar* message, VARIANT_BOOL* confirmed);
+	HRESULT prompt(wchar* message, wchar* defstr, VARIANT* textdata);
+	HRESULT get_Image(IHTMLImageElementFactory* p);
+	HRESULT get_location(IHTMLLocation* p);
+	HRESULT get_history(IOmHistory* p);
+	HRESULT close();
+	HRESULT put_opener(VARIANT v);
+	HRESULT get_opener(VARIANT* p);
+	HRESULT get_navigator(IOmNavigator* p);
+	HRESULT put_name(wchar* v);
+	HRESULT get_name(wchar** p);
+	HRESULT get_parent(IHTMLWindow2* p);
+	HRESULT open(wchar* url, wchar* name, wchar* features, /* [in][defaultvalue] */
+			VARIANT_BOOL replace,
+			IHTMLWindow2* pomWindowResult);
+	HRESULT get_self(IHTMLWindow2* p);
+	HRESULT get_top(IHTMLWindow2* p);
+	HRESULT get_window(IHTMLWindow2* p);
+	HRESULT navigate(wchar* url);
+	HRESULT put_onfocus(VARIANT v);
+	HRESULT get_onfocus(VARIANT* p);
+	HRESULT put_onblur(VARIANT v);
+	HRESULT get_onblur(VARIANT* p);
+	HRESULT put_onload(VARIANT v);
+	HRESULT get_onload(VARIANT* p);
+	HRESULT put_onbeforeunload(VARIANT v);
+	HRESULT get_onbeforeunload(VARIANT* p);
+	HRESULT put_onunload(VARIANT v);
+	HRESULT get_onunload(VARIANT* p);
+	HRESULT put_onhelp(VARIANT v);
+	HRESULT get_onhelp(VARIANT* p);
+	HRESULT put_onerror(VARIANT v);
+	HRESULT get_onerror(VARIANT* p);
+	HRESULT put_onresize(VARIANT v);
+	HRESULT get_onresize(VARIANT* p);
+	HRESULT put_onscroll(VARIANT v);
+	HRESULT get_onscroll(VARIANT* p);
+	HRESULT get_document(IHTMLDocument2* p);
+	HRESULT get_event(IHTMLEventObj* p);
+	HRESULT get__newEnum(IUnknown* p);
+	HRESULT showModalDialog(wchar* dialog, VARIANT* varArgIn,
+			VARIANT* varOptions, VARIANT* varArgOut);
+	HRESULT showHelp(wchar* helpURL, VARIANT helpArg, wchar* features = "");
+	HRESULT get_screen(IHTMLScreen* p);
+	HRESULT get_Option(IHTMLOptionElementFactory* p);
+	HRESULT focus(void);
+	HRESULT get_closed(VARIANT_BOOL* p);
+	HRESULT blur(void);
+	HRESULT scroll(long x, long y);
+	HRESULT get_clientInformation(IOmNavigator* p);
+	HRESULT setInterval(wchar* expression, long msec, VARIANT* language, long* timerID);
+	HRESULT clearInterval(long timerID);
+	HRESULT put_offscreenBuffering(VARIANT v);
+	HRESULT get_offscreenBuffering(VARIANT* p);
+	HRESULT execScript(wchar* code, wchar* language, VARIANT* pvarRet);
+	HRESULT toString(wchar** String);
+	HRESULT scrollBy(long x, long y);
+	HRESULT scrollTo(long x, long y);
+	HRESULT moveTo(long x, long y);
+	HRESULT moveBy(long x, long y);
+	HRESULT resizeTo(long x, long y);
+	HRESULT resizeBy(long x, long y);
+	HRESULT get_external(IDispatch* p);
+};
+
 enum HResultEnum : HRESULT
 {
 	S_OK = 0x00000000,

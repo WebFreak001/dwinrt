@@ -139,7 +139,7 @@ extern(Windows):
 		return _ret;
 	}
 }
-interface IAsyncOperation : IAsyncOperation_Base, IAsyncInfo {}
+interface IAsyncOperation(TResult) : IAsyncOperation_Base!(TResult), IAsyncInfo {}
 
 interface AsyncOperationProgressHandler(TResult, TProgress) : IUnknown
 {
@@ -219,6 +219,30 @@ extern(Windows):
 	}
 }
 
+@uuid("45d64a29-a63e-4cb6-b498-5781d298cb4f")
+interface ICoreWindowInterop : IUnknown
+{
+extern(Windows):
+	HRESULT get_WindowHandle(HWND* return_hwnd);
+	HRESULT set_MessageHandled(bool value);
+}
+
+@uuid("40bfe3e3-b75a-4479-ac96-475365749bb8")
+interface ICoreInputInterop : IUnknown
+{
+extern(Windows):
+	HRESULT abi_SetInputSource(IUnknown value);
+	HRESULT set_MessageHandled(bool value);
+}
+
+@uuid("0576ab31-a310-4c40-ba31-fd37e0298dfa")
+interface ICoreWindowComponentInterop : IUnknown
+{
+extern(Windows):
+	HRESULT abi_ConfigureComponentInput(UINT32 hostViewInstanceId, HWND hwndHost, IUnknown inputSourceVisual);
+	HRESULT abi_GetViewInstanceId(UINT32* out_componentViewInstanceId);
+}
+
 @uuid("d8f579ab-402d-4b8e-82d9-5d63b1065c68")
 interface IMetaDataTables : IUnknown
 {
@@ -264,6 +288,84 @@ interface IWeakReferenceSource : IUnknown
 {
 extern(Windows):
 	HRESULT abi_GetWeakReference(IWeakReference* return_weakReference);
+}
+
+@uuid("7c3f6998-1567-4bba-b52b-48d32141d613")
+interface IWebApplicationScriptEvents : IUnknown
+{
+extern(Windows):
+	/// "Fired before any script is executed on the page."
+	HRESULT abi_BeforeScriptExecute(IHTMLWindow2* htmlWindow);
+	/// "Fired when an unhandled script error occurs."
+	HRESULT abi_ScriptError(IHTMLWindow2* htmlWindow, IActiveScriptError* scriptError, LPCWSTR url, BOOL errorHandled);
+}
+
+@uuid("c22615d2-d318-4da2-8422-1fcaf77b10e4")
+interface IWebApplicationNavigationEvents : IUnknown
+{
+extern(Windows):
+	/// "Fired before navigate occurs in the given host (window or frameset element)."
+	HRESULT abi_BeforeNavigate(IHTMLWindow2* htmlWindow, LPCWSTR url, DWORD navigationFlags, LPCWSTR targetFrameName);
+	/// "Fired when the document being navigated to becomes visible and enters the navigation stack."
+	HRESULT abi_NavigateComplete(IHTMLWindow2* htmlWindow, LPCWSTR url);
+	/// "Fired when a binding error occurs (window or frameset element)."
+	HRESULT abi_NavigateError(IHTMLWindow2* htmlWindow, LPCWSTR url, LPCWSTR targetFrameName, DWORD statusCode);
+	/// "Fired when the document being navigated to reaches ReadyState_Complete."
+	HRESULT abi_DocumentComplete(IHTMLWindow2* htmlWindow, LPCWSTR url);
+	/// "Download of a page started."
+	HRESULT abi_DownloadBegin();
+	/// "Download of a page has completed."
+	HRESULT abi_DownloadComplete();
+}
+
+@uuid("5b2b3f99-328c-41d5-a6f7-7483ed8e71dd")
+interface IWebApplicationUIEvents : IUnknown
+{
+extern(Windows):
+	/// "Notifies the authoring application about an authentication problem."
+	HRESULT abi_SecurityProblem(DWORD securityProblem, HRESULT* out_result);
+}
+
+@uuid("3e59e6b7-c652-4daf-ad5e-16feb350cde3")
+interface IWebApplicationUpdateEvents : IUnknown
+{
+extern(Windows):
+	/// "Notifies the authoring application about Paint surface modifications."
+	HRESULT abi_OnPaint();
+	/// "Notifies the authoring application about CSS changes."
+	HRESULT abi_OnCssChanged();
+}
+
+@uuid("cecbd2c3-a3a5-4749-9681-20e9161c6794")
+interface IWebApplicationHost : IUnknown
+{
+extern(Windows):
+	/// "Returns the HWND of the current WWAHost window."
+	HRESULT get_HWND(HWND* return_hwnd);
+	/// "Returns the HTML Document Object Model."
+	HRESULT get_Document(IHTMLDocument2** return_htmlDocument);
+	/// "Refresh the current document without sending a 'Pragma:no-cache' HTTP header to the server"
+	HRESULT abi_Refresh();
+	/// "Establishes a connection to allow a client to receive events."
+	HRESULT abi_Advise(REFIID interfaceId, IUnknown callback, DWORD* out_cookie);
+	/// "Removes a previously established connection."
+	HRESULT abi_Unadvise(DWORD cookie);
+}
+
+@uuid("bcdcd0de-330e-481b-b843-4898a6a8ebac")
+interface IWebApplicationActivation : IUnknown
+{
+extern(Windows):
+	/// "Cancels a pending activation."
+	HRESULT abi_CancelPendingActivation();
+}
+
+@uuid("720aea93-1964-4db0-b005-29eb9e2b18a9")
+interface IWebApplicationAuthoringMode : IServiceProvider
+{
+extern(Windows):
+	/// "Gets the full local path to a DLL that will be loaded into the WWAHost process."
+	HRESULT get_AuthoringClientBinary(BSTR* return_designModeDllPath);
 }
 
 @uuid("a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7")
