@@ -4,6 +4,7 @@ debug = DWinRT;
 
 public import core.sys.windows.windows;
 public import dwinrt.winstring;
+import dwinrt.uuids;
 
 import core.atomic;
 import core.sys.windows.com;
@@ -25,6 +26,25 @@ GUID uuid(string s)
 	guid.Data3 = uuid.data[7] | (uuid.data[6] << 8);
 	guid.Data4 = uuid.data[8 .. 16];
 	return guid;
+}
+
+GUID sha1UUID(string s, string base)
+{
+	import sha1ct : sha1UUID;
+	import std.uuid : parseUUID;
+
+	auto uuid = sha1UUID(s, parseUUID(base));
+	GUID guid;
+	guid.Data1 = uuid.data[3] | (uuid.data[2] << 8) | (uuid.data[1] << 16) | (uuid.data[0] << 24);
+	guid.Data2 = uuid.data[5] | (uuid.data[4] << 8);
+	guid.Data3 = uuid.data[7] | (uuid.data[6] << 8);
+	guid.Data4 = uuid.data[8 .. 16];
+	return guid;
+}
+
+struct dynamicUUID
+{
+	string base;
 }
 
 string guidToString(GUID guid)
@@ -53,14 +73,24 @@ unittest
 
 GUID uuidOf(T, bool throwIfNotThere = true)()
 {
-	GUID ret;
-	foreach (attr; __traits(getAttributes, T))
-		static if (is(typeof(attr) == GUID))
-			ret = attr;
-	static if (throwIfNotThere)
-		if (ret == GUID.init)
-			assert(false, T.stringof ~ " has no GUID attached to it! Use @uuid(...) to attach");
-	return ret;
+	enum instanced = uuidOfInstanced!T;
+	static if (instanced != GUID.init)
+		return instanced;
+	else
+	{
+		GUID ret;
+		foreach (attr; __traits(getAttributes, T))
+		{
+			static if (is(typeof(attr) == GUID))
+				ret = attr;
+			else static if (is(typeof(attr) == dynamicUUID))
+				ret = sha1UUID(T.stringof, attr.base);
+		}
+		static if (throwIfNotThere)
+			if (ret == GUID.init)
+				assert(false, T.stringof ~ " has no GUID attached to it! Use @uuid(...) to attach");
+		return ret;
+	}
 }
 
 wstring factoryNameOf(T)()

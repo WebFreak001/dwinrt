@@ -3,6 +3,11 @@
 	"authors": [
 		"webfreak"
 	],
+	"dependencies": {
+		"sha1ct": {
+			"path": "../sha1ct"
+		}
+	},
 	"description": "WinRT for D",
 	"copyright": "Copyright © 2017, webfreak",
 	"license": "MIT",

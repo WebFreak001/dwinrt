@@ -92,19 +92,17 @@ extern (Windows):
 
 	void OnPointerPressed(CoreWindow sender, PointerEventArgs args)
 	{
-		/*dispatcher.RunAsync(CoreDispatcherPriority.Normal, () {
-			Debug.WriteLine("Async Click PogChamp");
-		}.handler!DispatchedHandler);*/
 		MessageDialog dialog;
-		Debug.OK(dwinrt.factory!IMessageDialogFactory.abi_CreateWithTitle(hstring("Async method called")
-				.handle, hstring("D rox!").handle, &dialog));
+		Debug.OK(dwinrt.factory!IMessageDialogFactory.abi_CreateWithTitle(hstring("Running UI code from separate thread")
+			.handle, hstring("D rox!").handle, &dialog));
 		dialog.ShowAsync().then((IUICommand command) {
-			wstring label = hstring(command.as!UICommand.Label).d_str;
-			MessageDialog dialog2;
-			Debug.OK(dwinrt.factory!IMessageDialogFactory.abi_CreateWithTitle(hstring("You pressed "w ~ label)
-					.handle, hstring("Response!").handle, &dialog2));
-			dialog2.ShowAsync().then((IUICommand command) {
-				Debug.WriteLine("Command { Label = %s }", hstring(command.as!UICommand.Label).d_str);
+			dispatcher.RunAsync(CoreDispatcherPriority.Normal, () {
+				MessageDialog dialog2;
+				Debug.OK(dwinrt.factory!IMessageDialogFactory.abi_CreateWithTitle(hstring("PogChamp PogChamp PogChamp")
+					.handle, hstring("D rox!").handle, &dialog2));
+				dialog2.ShowAsync();
+			}.handler!DispatchedHandler).then({
+				Debug.WriteLine("Run");
 			});
 		});
 		AddVisual(args.CurrentPoint.Position);
@@ -169,7 +167,7 @@ private:
 
 void run()
 {
-	MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
+	//MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
 
 	Debug.OK(factory!ICoreApplication.abi_Run(new App));
 }

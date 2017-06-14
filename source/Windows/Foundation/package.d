@@ -116,7 +116,8 @@ extern(Windows):
 	}
 }
 
-interface IAsyncOperation(TResult) : IAsyncInfo
+//@dynamicUUID("e3625a0b-162a-41ab-bcc4-40a81bdc09fe")
+interface IAsyncOperationBase(TResult) : IInspectable
 {
 extern(Windows):
 	HRESULT set_Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult) handler);
@@ -124,20 +125,25 @@ extern(Windows):
 	HRESULT get_Results(TResult* return_results);
 	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(TResult)).set_Completed(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationBase!(TResult))this).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncOperationCompletedHandler!(TResult) Completed()
 	{
 		Windows.Foundation.AsyncOperationCompletedHandler!(TResult) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(TResult)).get_Completed(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationBase!(TResult))this).get_Completed(&_ret));
 		return _ret;
 	}
 	final TResult Results()
 	{
 		TResult _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(TResult)).get_Results(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationBase!(TResult))this).get_Results(&_ret));
 		return _ret;
 	}
+}
+
+//@dynamicUUID("e3625a0b-162a-41ab-bcc4-40a81bdc09fe")
+interface IAsyncOperation(TResult) : IAsyncOperationBase!TResult, IAsyncInfo
+{
 }
 
 interface AsyncOperationProgressHandler(TResult, TProgress) : IUnknown
@@ -279,8 +285,7 @@ extern(Windows):
 	HRESULT abi_Invoke();
 }
 
-@uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")
-interface IAsyncAction : IInspectable
+interface IAsyncActionBase : IInspectable
 {
 extern(Windows):
 	HRESULT set_Completed(Windows.Foundation.AsyncActionCompletedHandler handler);
@@ -296,6 +301,11 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(IAsyncAction).set_Completed(handler));
 	}
+}
+
+@uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")
+interface IAsyncAction : IAsyncActionBase, IAsyncInfo
+{
 }
 
 @uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e")
