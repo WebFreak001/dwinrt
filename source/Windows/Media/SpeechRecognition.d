@@ -60,11 +60,12 @@ extern(Windows):
 
 @uuid("b5031a8f-85ca-4fa4-b11a-474fc41b3835")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint")
-interface ISpeechRecognitionGrammarFileConstraint : IInspectable
+interface ISpeechRecognitionGrammarFileConstraint_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_GrammarFile(Windows.Storage.StorageFile* return_value);
 }
+interface ISpeechRecognitionGrammarFileConstraint : ISpeechRecognitionGrammarFileConstraint_Base, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint {}
 
 @uuid("3da770eb-c479-4c27-9f19-89974ef392d1")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint")
@@ -93,11 +94,12 @@ extern(Windows):
 
 @uuid("09c487e9-e4ad-4526-81f2-4946fb481d98")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint")
-interface ISpeechRecognitionListConstraint : IInspectable
+interface ISpeechRecognitionListConstraint_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Commands(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 }
+interface ISpeechRecognitionListConstraint : ISpeechRecognitionListConstraint_Base, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint {}
 
 @uuid("40f3cdc7-562a-426a-9f3b-3b4e282be1d5")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint")
@@ -150,12 +152,13 @@ extern(Windows):
 
 @uuid("bf6fdf19-825d-4e69-a681-36e48cf1c93e")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint")
-interface ISpeechRecognitionTopicConstraint : IInspectable
+interface ISpeechRecognitionTopicConstraint_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Scenario(Windows.Media.SpeechRecognition.SpeechRecognitionScenario* return_value);
 	HRESULT get_TopicHint(HSTRING* return_value);
 }
+interface ISpeechRecognitionTopicConstraint : ISpeechRecognitionTopicConstraint_Base, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint {}
 
 @uuid("6e6863df-ec05-47d7-a5df-56a3431e58d2")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint")
@@ -168,13 +171,14 @@ extern(Windows):
 
 @uuid("f2791c2b-1ef4-4ae7-9d77-b6ff10b8a3c2")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint")
-interface ISpeechRecognitionVoiceCommandDefinitionConstraint : IInspectable
+interface ISpeechRecognitionVoiceCommandDefinitionConstraint_Base : IInspectable
 {
 }
+interface ISpeechRecognitionVoiceCommandDefinitionConstraint : ISpeechRecognitionVoiceCommandDefinitionConstraint_Base, Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint {}
 
 @uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognizer")
-interface ISpeechRecognizer : IInspectable
+interface ISpeechRecognizer_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_CurrentLanguage(Windows.Globalization.Language* return_language);
@@ -189,6 +193,7 @@ extern(Windows):
 	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs) stateChangedHandler, EventRegistrationToken* return_cookie);
 	HRESULT remove_StateChanged(EventRegistrationToken cookie);
 }
+interface ISpeechRecognizer : ISpeechRecognizer_Base, Windows.Foundation.IClosable {}
 
 @uuid("63c9baf1-91e3-4ea4-86a1-7c3867d084a6")
 @WinrtFactory("Windows.Media.SpeechRecognition.SpeechRecognizer")

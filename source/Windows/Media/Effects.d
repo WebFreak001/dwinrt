@@ -72,7 +72,7 @@ extern(Windows):
 }
 
 @uuid("8c062c53-6bc0-48b8-a99a-4b41550f1359")
-interface IBasicAudioEffect : IInspectable
+interface IBasicAudioEffect_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_UseInputFrameForOutput(bool* return_value);
@@ -82,9 +82,10 @@ extern(Windows):
 	HRESULT abi_Close(Windows.Media.Effects.MediaEffectClosedReason reason);
 	HRESULT abi_DiscardQueuedFrames();
 }
+interface IBasicAudioEffect : IBasicAudioEffect_Base, Windows.Media.IMediaExtension {}
 
 @uuid("8262c7ef-b360-40be-949b-2ff42ff35693")
-interface IBasicVideoEffect : IInspectable
+interface IBasicVideoEffect_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_IsReadOnly(bool* return_value);
@@ -96,6 +97,7 @@ extern(Windows):
 	HRESULT abi_Close(Windows.Media.Effects.MediaEffectClosedReason reason);
 	HRESULT abi_DiscardQueuedFrames();
 }
+interface IBasicVideoEffect : IBasicVideoEffect_Base, Windows.Media.IMediaExtension {}
 
 @uuid("6c30024b-f514-4278-a5f7-b9188049d110")
 @WinrtFactory("Windows.Media.Effects.CompositeVideoFrameContext")
@@ -127,7 +129,7 @@ extern(Windows):
 }
 
 @uuid("8510b43e-420c-420f-96c7-7c98bba1fc55")
-interface IVideoCompositor : IInspectable
+interface IVideoCompositor_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_TimeIndependent(bool* return_value);
@@ -136,6 +138,7 @@ extern(Windows):
 	HRESULT abi_Close(Windows.Media.Effects.MediaEffectClosedReason reason);
 	HRESULT abi_DiscardQueuedFrames();
 }
+interface IVideoCompositor : IVideoCompositor_Base, Windows.Media.IMediaExtension {}
 
 @uuid("7946b8d0-2010-4ae3-9ab2-2cef42edd4d2")
 interface IVideoCompositorDefinition : IInspectable
@@ -173,7 +176,7 @@ extern(Windows):
 
 @uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2")
 @WinrtFactory("Windows.Media.Effects.VideoTransformEffectDefinition")
-interface IVideoTransformEffectDefinition : IInspectable
+interface IVideoTransformEffectDefinition_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_PaddingColor(Windows.UI.Color* return_value);
@@ -189,6 +192,7 @@ extern(Windows):
 	HRESULT set_ProcessingAlgorithm(Windows.Media.Transcoding.MediaVideoProcessingAlgorithm value);
 	HRESULT get_ProcessingAlgorithm(Windows.Media.Transcoding.MediaVideoProcessingAlgorithm* return_value);
 }
+interface IVideoTransformEffectDefinition : IVideoTransformEffectDefinition_Base, Windows.Media.Effects.IVideoEffectDefinition {}
 
 interface AudioCaptureEffectsManager : Windows.Media.Effects.IAudioCaptureEffectsManager
 {

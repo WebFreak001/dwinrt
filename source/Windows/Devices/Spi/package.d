@@ -57,7 +57,7 @@ extern(Windows):
 
 @uuid("05d5356d-11b6-4d39-84d5-95dfb4c9f2ce")
 @WinrtFactory("Windows.Devices.Spi.SpiDevice")
-interface ISpiDevice : IInspectable
+interface ISpiDevice_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -67,6 +67,7 @@ extern(Windows):
 	HRESULT abi_TransferSequential(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer);
 	HRESULT abi_TransferFullDuplex(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer);
 }
+interface ISpiDevice : ISpiDevice_Base, Windows.Foundation.IClosable {}
 
 @uuid("a278e559-5720-4d3f-bd93-56f5ff5a5879")
 interface ISpiDeviceStatics : IInspectable

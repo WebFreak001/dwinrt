@@ -16,7 +16,7 @@ extern(Windows):
 }
 
 @uuid("ad342654-57e8-453e-8329-d1e447d103a9")
-interface II2cDeviceProvider : IInspectable
+interface II2cDeviceProvider_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -27,6 +27,7 @@ extern(Windows):
 	HRESULT abi_WriteRead(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer);
 	HRESULT abi_WriteReadPartial(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer, Windows.Devices.I2c.Provider.ProviderI2cTransferResult* return_result);
 }
+interface II2cDeviceProvider : II2cDeviceProvider_Base, Windows.Foundation.IClosable {}
 
 @uuid("6f13083e-bf62-4fe2-a95a-f08999669818")
 interface II2cProvider : IInspectable

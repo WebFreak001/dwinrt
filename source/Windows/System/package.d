@@ -306,13 +306,14 @@ extern(Windows):
 
 @uuid("0f69a02f-9c34-43c7-a8c3-70b30a7f7504")
 @WinrtFactory("Windows.System.ShutdownManager")
-interface IShutdownManagerStatics2 : IInspectable
+interface IShutdownManagerStatics2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_IsPowerStateSupported(Windows.System.PowerState powerState, bool* return_value);
 	HRESULT abi_EnterPowerState(Windows.System.PowerState powerState);
 	HRESULT abi_EnterPowerStateWithTimeSpan(Windows.System.PowerState powerState, Windows.Foundation.TimeSpan wakeUpAfter);
 }
+interface IShutdownManagerStatics2 : IShutdownManagerStatics2_Base, Windows.System.IShutdownManagerStatics {}
 
 @uuid("9b3b2bea-a101-41ae-9fbd-028728bab73d")
 @WinrtFactory("Windows.System.TimeZoneSettings")

@@ -10,21 +10,23 @@ struct MediaTimeRange
 
 @uuid("35175827-724b-4c6a-b130-f6537f9ae0d0")
 @WinrtFactory("Windows.Media.AudioBuffer")
-interface IAudioBuffer : IInspectable
+interface IAudioBuffer_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Capacity(UINT32* return_value);
 	HRESULT get_Length(UINT32* return_value);
 	HRESULT set_Length(UINT32 value);
 }
+interface IAudioBuffer : IAudioBuffer_Base, Windows.Foundation.IMemoryBuffer, Windows.Foundation.IClosable {}
 
 @uuid("e36ac304-aab2-4277-9ed0-43cedf8e29c6")
 @WinrtFactory("Windows.Media.AudioFrame")
-interface IAudioFrame : IInspectable
+interface IAudioFrame_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_LockBuffer(Windows.Media.AudioBufferAccessMode mode, Windows.Media.AudioBuffer* return_value);
 }
+interface IAudioFrame : IAudioFrame_Base, Windows.Media.IMediaFrame, Windows.Foundation.IClosable {}
 
 @uuid("91a90ade-2422-40a6-b9ad-30d02404317d")
 @WinrtFactory("Windows.Media.AudioFrame")
@@ -154,14 +156,15 @@ extern(Windows):
 
 @uuid("5bcebf47-4043-4fed-acaf-54ec29dfb1f7")
 @WinrtFactory("Windows.Media.MediaExtensionManager")
-interface IMediaExtensionManager2 : IInspectable
+interface IMediaExtensionManager2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RegisterMediaExtensionForAppService(Windows.Media.IMediaExtension extension, Windows.ApplicationModel.AppService.AppServiceConnection connection);
 }
+interface IMediaExtensionManager2 : IMediaExtensionManager2_Base, Windows.Media.IMediaExtensionManager {}
 
 @uuid("bfb52f8c-5943-47d8-8e10-05308aa5fbd0")
-interface IMediaFrame : IInspectable
+interface IMediaFrame_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Type(HSTRING* return_value);
@@ -176,6 +179,7 @@ extern(Windows):
 	HRESULT get_IsDiscontinuous(bool* return_value);
 	HRESULT get_ExtendedProperties(Windows.Foundation.Collections.IPropertySet* return_value);
 }
+interface IMediaFrame : IMediaFrame_Base, Windows.Foundation.IClosable {}
 
 @uuid("1803def8-dca5-4b6f-9c20-e3d3c0643625")
 interface IMediaMarker : IInspectable
@@ -457,13 +461,14 @@ extern(Windows):
 
 @uuid("0cc06625-90fc-4c92-bd95-7ded21819d1c")
 @WinrtFactory("Windows.Media.VideoFrame")
-interface IVideoFrame : IInspectable
+interface IVideoFrame_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_SoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap* return_value);
 	HRESULT abi_CopyToAsync(Windows.Media.VideoFrame frame, Windows.Foundation.IAsyncAction* return_value);
 	HRESULT get_Direct3DSurface(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface* return_value);
 }
+interface IVideoFrame : IVideoFrame_Base, Windows.Media.IMediaFrame, Windows.Foundation.IClosable {}
 
 @uuid("014b6d69-2228-4c92-92ff-50c380d3e776")
 @WinrtFactory("Windows.Media.VideoFrame")

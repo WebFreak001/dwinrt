@@ -18,20 +18,22 @@ extern(Windows):
 
 @uuid("536ced14-ebcd-49fe-bf9f-40efc689b20d")
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService")
-interface IRfcommDeviceService2 : IInspectable
+interface IRfcommDeviceService2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Device(Windows.Devices.Bluetooth.BluetoothDevice* return_value);
 }
+interface IRfcommDeviceService2 : IRfcommDeviceService2_Base, Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService {}
 
 @uuid("1c22ace6-dd44-4d23-866d-8f3486ee6490")
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService")
-interface IRfcommDeviceService3 : IInspectable
+interface IRfcommDeviceService3_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceAccessInformation(Windows.Devices.Enumeration.DeviceAccessInformation* return_value);
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus)* return_value);
 }
+interface IRfcommDeviceService3 : IRfcommDeviceService3_Base, Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService2, Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService {}
 
 @uuid("a4a149ef-626d-41ac-b253-87ac5c27e28a")
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService")
@@ -44,7 +46,7 @@ extern(Windows):
 
 @uuid("aa8cb1c9-e78d-4be4-8076-0a3d87a0a05f")
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService")
-interface IRfcommDeviceServiceStatics2 : IInspectable
+interface IRfcommDeviceServiceStatics2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetDeviceSelectorForBluetoothDevice(Windows.Devices.Bluetooth.BluetoothDevice bluetoothDevice, HSTRING* return_selector);
@@ -52,6 +54,7 @@ extern(Windows):
 	HRESULT abi_GetDeviceSelectorForBluetoothDeviceAndServiceId(Windows.Devices.Bluetooth.BluetoothDevice bluetoothDevice, Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId, HSTRING* return_selector);
 	HRESULT abi_GetDeviceSelectorForBluetoothDeviceAndServiceIdWithCacheMode(Windows.Devices.Bluetooth.BluetoothDevice bluetoothDevice, Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, HSTRING* return_selector);
 }
+interface IRfcommDeviceServiceStatics2 : IRfcommDeviceServiceStatics2_Base, Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServiceStatics {}
 
 @uuid("3b48388c-7ccf-488e-9625-d259a5732d55")
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult")
@@ -100,11 +103,12 @@ extern(Windows):
 
 @uuid("736bdfc6-3c81-4d1e-baf2-ddbb81284512")
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider")
-interface IRfcommServiceProvider2 : IInspectable
+interface IRfcommServiceProvider2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_StartAdvertisingWithRadioDiscoverability(Windows.Networking.Sockets.StreamSocketListener listener, bool radioDiscoverable);
 }
+interface IRfcommServiceProvider2 : IRfcommServiceProvider2_Base, Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider {}
 
 @uuid("98888303-69ca-413a-84f7-4344c7292997")
 @WinrtFactory("Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider")

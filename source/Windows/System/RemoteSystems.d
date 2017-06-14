@@ -133,7 +133,7 @@ extern(Windows):
 
 @uuid("69476a01-9ada-490f-9549-d31cb14c9e95")
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSession")
-interface IRemoteSystemSession : IInspectable
+interface IRemoteSystemSession_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
@@ -144,6 +144,7 @@ extern(Windows):
 	HRESULT abi_CreateParticipantWatcher(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher* return_result);
 	HRESULT abi_SendInvitationAsync(Windows.System.RemoteSystems.RemoteSystem invitee, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 }
+interface IRemoteSystemSession : IRemoteSystemSession_Base, Windows.Foundation.IClosable {}
 
 @uuid("d585d754-bc97-4c39-99b4-beca76e04c3f")
 @WinrtFactory("Windows.System.RemoteSystems.RemoteSystemSessionAddedEventArgs")

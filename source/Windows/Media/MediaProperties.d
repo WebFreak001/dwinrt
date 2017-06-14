@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("62bc7a16-005c-4b3b-8a0b-0a090e9687f3")
 @WinrtFactory("Windows.Media.MediaProperties.AudioEncodingProperties")
-interface IAudioEncodingProperties : IInspectable
+interface IAudioEncodingProperties_Base : IInspectable
 {
 extern(Windows):
 	HRESULT set_Bitrate(UINT32 value);
@@ -16,6 +16,7 @@ extern(Windows):
 	HRESULT set_BitsPerSample(UINT32 value);
 	HRESULT get_BitsPerSample(UINT32* return_value);
 }
+interface IAudioEncodingProperties : IAudioEncodingProperties_Base, Windows.Media.MediaProperties.IMediaEncodingProperties {}
 
 @uuid("c45d54da-80bd-4c23-80d5-72d4a181e894")
 @WinrtFactory("Windows.Media.MediaProperties.AudioEncodingProperties")
@@ -57,9 +58,10 @@ extern(Windows):
 
 @uuid("59ac2a57-b32a-479e-8a61-4b7f2e9e7ea0")
 @WinrtFactory("Windows.Media.MediaProperties.ContainerEncodingProperties")
-interface IContainerEncodingProperties : IInspectable
+interface IContainerEncodingProperties_Base : IInspectable
 {
 }
+interface IContainerEncodingProperties : IContainerEncodingProperties_Base, Windows.Media.MediaProperties.IMediaEncodingProperties {}
 
 @uuid("38654ca7-846a-4f97-a2e5-c3a15bbf70fd")
 @WinrtFactory("Windows.Media.MediaProperties.H264ProfileIds")
@@ -80,7 +82,7 @@ extern(Windows):
 
 @uuid("78625635-f331-4189-b1c3-b48d5ae034f1")
 @WinrtFactory("Windows.Media.MediaProperties.ImageEncodingProperties")
-interface IImageEncodingProperties : IInspectable
+interface IImageEncodingProperties_Base : IInspectable
 {
 extern(Windows):
 	HRESULT set_Width(UINT32 value);
@@ -88,6 +90,7 @@ extern(Windows):
 	HRESULT set_Height(UINT32 value);
 	HRESULT get_Height(UINT32* return_value);
 }
+interface IImageEncodingProperties : IImageEncodingProperties_Base, Windows.Media.MediaProperties.IMediaEncodingProperties {}
 
 @uuid("257c68dc-8b99-439e-aa59-913a36161297")
 @WinrtFactory("Windows.Media.MediaProperties.ImageEncodingProperties")
@@ -256,7 +259,7 @@ extern(Windows):
 
 @uuid("76ee6c9a-37c2-4f2a-880a-1282bbb4373d")
 @WinrtFactory("Windows.Media.MediaProperties.VideoEncodingProperties")
-interface IVideoEncodingProperties : IInspectable
+interface IVideoEncodingProperties_Base : IInspectable
 {
 extern(Windows):
 	HRESULT set_Bitrate(UINT32 value);
@@ -268,6 +271,7 @@ extern(Windows):
 	HRESULT get_FrameRate(Windows.Media.MediaProperties.MediaRatio* return_value);
 	HRESULT get_PixelAspectRatio(Windows.Media.MediaProperties.MediaRatio* return_value);
 }
+interface IVideoEncodingProperties : IVideoEncodingProperties_Base, Windows.Media.MediaProperties.IMediaEncodingProperties {}
 
 @uuid("f743a1ef-d465-4290-a94b-ef0f1528f8e3")
 @WinrtFactory("Windows.Media.MediaProperties.VideoEncodingProperties")

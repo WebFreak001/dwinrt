@@ -43,7 +43,7 @@ extern(Windows):
 }
 
 @uuid("24c74216-fed2-404c-895f-1f9699cb02f7")
-interface IFileLoggingSession : IInspectable
+interface IFileLoggingSession_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
@@ -54,6 +54,7 @@ extern(Windows):
 	HRESULT add_LogFileGenerated(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_LogFileGenerated(EventRegistrationToken token);
 }
+interface IFileLoggingSession : IFileLoggingSession_Base, Windows.Foundation.IClosable {}
 
 @uuid("eea08dce-8447-4daa-9133-12eb46f697d4")
 @WinrtFactory("Windows.Foundation.Diagnostics.FileLoggingSession")
@@ -73,16 +74,17 @@ extern(Windows):
 
 @uuid("bc032941-b766-4cb5-9848-97ac6ba6d60c")
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingActivity")
-interface ILoggingActivity : IInspectable
+interface ILoggingActivity_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Id(GUID* return_value);
 }
+interface ILoggingActivity : ILoggingActivity_Base, Windows.Foundation.IClosable {}
 
 @uuid("26c29808-6322-456a-af82-80c8642f178b")
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingActivity")
-interface ILoggingActivity2 : IInspectable
+interface ILoggingActivity2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Channel(Windows.Foundation.Diagnostics.LoggingChannel* return_value);
@@ -90,6 +92,7 @@ extern(Windows):
 	HRESULT abi_StopActivityWithFields(HSTRING stopEventName, Windows.Foundation.Diagnostics.LoggingFields fields);
 	HRESULT abi_StopActivityWithFieldsAndOptions(HSTRING stopEventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingOptions options);
 }
+interface ILoggingActivity2 : ILoggingActivity2_Base, Windows.Foundation.Diagnostics.ILoggingActivity, Windows.Foundation.IClosable, Windows.Foundation.Diagnostics.ILoggingTarget {}
 
 @uuid("6b33b483-e10a-4c58-97d5-10fb451074fb")
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingActivity")
@@ -101,7 +104,7 @@ extern(Windows):
 }
 
 @uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8")
-interface ILoggingChannel : IInspectable
+interface ILoggingChannel_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
@@ -114,14 +117,16 @@ extern(Windows):
 	HRESULT add_LoggingEnabled(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_LoggingEnabled(EventRegistrationToken token);
 }
+interface ILoggingChannel : ILoggingChannel_Base, Windows.Foundation.IClosable {}
 
 @uuid("9f4c3cf3-0bac-45a5-9e33-baf3f3a246a5")
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingChannel")
-interface ILoggingChannel2 : IInspectable
+interface ILoggingChannel2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Id(GUID* return_value);
 }
+interface ILoggingChannel2 : ILoggingChannel2_Base, Windows.Foundation.Diagnostics.ILoggingChannel, Windows.Foundation.IClosable, Windows.Foundation.Diagnostics.ILoggingTarget {}
 
 @uuid("4edc5b9c-af80-4a9b-b0dc-398f9ae5207b")
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingChannel")
@@ -308,7 +313,7 @@ extern(Windows):
 }
 
 @uuid("6221f306-9380-4ad7-baf5-41ea9310d768")
-interface ILoggingSession : IInspectable
+interface ILoggingSession_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
@@ -317,6 +322,7 @@ extern(Windows):
 	HRESULT abi_AddLoggingChannelWithLevel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel, Windows.Foundation.Diagnostics.LoggingLevel maxLevel);
 	HRESULT abi_RemoveLoggingChannel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel);
 }
+interface ILoggingSession : ILoggingSession_Base, Windows.Foundation.IClosable {}
 
 @uuid("4e937ee5-58fd-45e0-8c2f-a132eff95c1e")
 @WinrtFactory("Windows.Foundation.Diagnostics.LoggingSession")

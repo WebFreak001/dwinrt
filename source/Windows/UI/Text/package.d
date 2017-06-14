@@ -137,7 +137,7 @@ extern(Windows):
 
 @uuid("f2311112-8c89-49c9-9118-f057cbb814ee")
 @WinrtFactory("Windows.UI.Text.RichEditTextDocument")
-interface ITextDocument2 : IInspectable
+interface ITextDocument2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_AlignmentIncludesTrailingWhitespace(bool* return_value);
@@ -145,6 +145,7 @@ extern(Windows):
 	HRESULT get_IgnoreTrailingCharacterSpacing(bool* return_value);
 	HRESULT set_IgnoreTrailingCharacterSpacing(bool value);
 }
+interface ITextDocument2 : ITextDocument2_Base, Windows.UI.Text.ITextDocument {}
 
 @uuid("2cf8cfa6-4676-498a-93f5-bbdbfc0bd883")
 interface ITextParagraphFormat : IInspectable
@@ -259,7 +260,7 @@ extern(Windows):
 }
 
 @uuid("a6d36724-f28f-430a-b2cf-c343671ec0e9")
-interface ITextSelection : IInspectable
+interface ITextSelection_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Options(Windows.UI.Text.SelectionOptions* return_value);
@@ -273,6 +274,7 @@ extern(Windows):
 	HRESULT abi_MoveUp(Windows.UI.Text.TextRangeUnit unit, INT32 count, bool extend, INT32* return_delta);
 	HRESULT abi_TypeText(HSTRING value);
 }
+interface ITextSelection : ITextSelection_Base, Windows.UI.Text.ITextRange {}
 
 interface FontWeights : Windows.UI.Text.IFontWeights
 {

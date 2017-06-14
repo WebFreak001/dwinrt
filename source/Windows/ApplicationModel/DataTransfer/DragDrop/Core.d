@@ -33,11 +33,12 @@ extern(Windows):
 
 @uuid("c54691e5-e6fb-4d74-b4b1-8a3c17f25e9e")
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragInfo")
-interface ICoreDragInfo2 : IInspectable
+interface ICoreDragInfo2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_AllowedOperations(Windows.ApplicationModel.DataTransfer.DataPackageOperation* return_value);
 }
+interface ICoreDragInfo2 : ICoreDragInfo2_Base, Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragInfo {}
 
 @uuid("cc06de4f-6db0-4e62-ab1b-a74a02dc6d85")
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragOperation")
@@ -55,12 +56,13 @@ extern(Windows):
 
 @uuid("824b1e2c-d99a-4fc3-8507-6c182f33b46a")
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragOperation")
-interface ICoreDragOperation2 : IInspectable
+interface ICoreDragOperation2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_AllowedOperations(Windows.ApplicationModel.DataTransfer.DataPackageOperation* return_value);
 	HRESULT set_AllowedOperations(Windows.ApplicationModel.DataTransfer.DataPackageOperation value);
 }
+interface ICoreDragOperation2 : ICoreDragOperation2_Base, Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation {}
 
 @uuid("89a85064-3389-4f4f-8897-7e8a3ffb3c93")
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragUIOverride")

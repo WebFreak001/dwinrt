@@ -4,13 +4,14 @@ import dwinrt;
 
 @uuid("11730ca5-4b00-41b2-b332-73b12a497d54")
 @WinrtFactory("Windows.Globalization.NumberFormatting.CurrencyFormatter")
-interface ICurrencyFormatter : IInspectable
+interface ICurrencyFormatter_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Currency(HSTRING* return_value);
 	deprecated("Currency may be read-only for releases after Windows 8.1. Instead, use a new CurrencyFormatter.")
 	HRESULT set_Currency(HSTRING value);
 }
+interface ICurrencyFormatter : ICurrencyFormatter_Base, Windows.Globalization.NumberFormatting.INumberFormatterOptions, Windows.Globalization.NumberFormatting.INumberFormatter, Windows.Globalization.NumberFormatting.INumberFormatter2, Windows.Globalization.NumberFormatting.INumberParser {}
 
 @uuid("072c2f1d-e7ba-4197-920e-247c92f7dea6")
 @WinrtFactory("Windows.Globalization.NumberFormatting.CurrencyFormatter")

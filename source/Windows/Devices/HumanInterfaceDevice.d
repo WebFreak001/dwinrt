@@ -49,7 +49,7 @@ extern(Windows):
 
 @uuid("5f8a14e7-2200-432e-95da-d09b87d574a8")
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidDevice")
-interface IHidDevice : IInspectable
+interface IHidDevice_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_VendorId(UINT16* return_value);
@@ -72,6 +72,7 @@ extern(Windows):
 	HRESULT add_InputReportReceived(Windows.Foundation.TypedEventHandler!(Windows.Devices.HumanInterfaceDevice.HidDevice, Windows.Devices.HumanInterfaceDevice.HidInputReportReceivedEventArgs) reportHandler, EventRegistrationToken* return_token);
 	HRESULT remove_InputReportReceived(EventRegistrationToken token);
 }
+interface IHidDevice : IHidDevice_Base, Windows.Foundation.IClosable {}
 
 @uuid("9e5981e4-9856-418c-9f73-77de0cd85754")
 @WinrtFactory("Windows.Devices.HumanInterfaceDevice.HidDevice")

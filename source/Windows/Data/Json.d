@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("08c1ddb6-0cbd-4a9a-b5d3-2f852dc37e81")
 @WinrtFactory("Windows.Data.Json.JsonArray")
-interface IJsonArray : IInspectable
+interface IJsonArray_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetObjectAt(UINT32 index, Windows.Data.Json.JsonObject* return_returnValue);
@@ -13,6 +13,7 @@ extern(Windows):
 	HRESULT abi_GetNumberAt(UINT32 index, double* return_returnValue);
 	HRESULT abi_GetBooleanAt(UINT32 index, bool* return_returnValue);
 }
+interface IJsonArray : IJsonArray_Base, Windows.Data.Json.IJsonValue {}
 
 @uuid("db1434a9-e164-499f-93e2-8a8f49bb90ba")
 @WinrtFactory("Windows.Data.Json.JsonArray")
@@ -33,7 +34,7 @@ extern(Windows):
 
 @uuid("064e24dd-29c2-4f83-9ac1-9ee11578beb3")
 @WinrtFactory("Windows.Data.Json.JsonObject")
-interface IJsonObject : IInspectable
+interface IJsonObject_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetNamedValue(HSTRING name, Windows.Data.Json.JsonValue* return_returnValue);
@@ -44,6 +45,7 @@ extern(Windows):
 	HRESULT abi_GetNamedNumber(HSTRING name, double* return_returnValue);
 	HRESULT abi_GetNamedBoolean(HSTRING name, bool* return_returnValue);
 }
+interface IJsonObject : IJsonObject_Base, Windows.Data.Json.IJsonValue {}
 
 @uuid("2289f159-54de-45d8-abcc-22603fa066a0")
 @WinrtFactory("Windows.Data.Json.JsonObject")
@@ -56,7 +58,7 @@ extern(Windows):
 
 @uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13")
 @WinrtFactory("Windows.Data.Json.JsonObject")
-interface IJsonObjectWithDefaultValues : IInspectable
+interface IJsonObjectWithDefaultValues_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetNamedValueOrDefault(HSTRING name, Windows.Data.Json.JsonValue defaultValue, Windows.Data.Json.JsonValue* return_returnValue);
@@ -66,6 +68,7 @@ extern(Windows):
 	HRESULT abi_GetNamedNumberOrDefault(HSTRING name, double defaultValue, double* return_returnValue);
 	HRESULT abi_GetNamedBooleanOrDefault(HSTRING name, bool defaultValue, bool* return_returnValue);
 }
+interface IJsonObjectWithDefaultValues : IJsonObjectWithDefaultValues_Base, Windows.Data.Json.IJsonObject, Windows.Data.Json.IJsonValue {}
 
 @uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e")
 interface IJsonValue : IInspectable

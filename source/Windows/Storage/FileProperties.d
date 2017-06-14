@@ -14,7 +14,7 @@ extern(Windows):
 
 @uuid("7eab19bc-1821-4923-b4a9-0aea404d0070")
 @WinrtFactory("Windows.Storage.FileProperties.DocumentProperties")
-interface IDocumentProperties : IInspectable
+interface IDocumentProperties_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Author(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
@@ -24,6 +24,7 @@ extern(Windows):
 	HRESULT get_Comment(HSTRING* return_value);
 	HRESULT set_Comment(HSTRING value);
 }
+interface IDocumentProperties : IDocumentProperties_Base, Windows.Storage.FileProperties.IStorageItemExtraProperties {}
 
 @uuid("41493244-2524-4655-86a6-ed16f5fc716b")
 @WinrtFactory("Windows.Storage.FileProperties.GeotagHelper")
@@ -37,7 +38,7 @@ extern(Windows):
 
 @uuid("523c9424-fcff-4275-afee-ecdb9ab47973")
 @WinrtFactory("Windows.Storage.FileProperties.ImageProperties")
-interface IImageProperties : IInspectable
+interface IImageProperties_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Rating(UINT32* return_value);
@@ -58,10 +59,11 @@ extern(Windows):
 	HRESULT get_Orientation(Windows.Storage.FileProperties.PhotoOrientation* return_value);
 	HRESULT get_PeopleNames(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 }
+interface IImageProperties : IImageProperties_Base, Windows.Storage.FileProperties.IStorageItemExtraProperties {}
 
 @uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da")
 @WinrtFactory("Windows.Storage.FileProperties.MusicProperties")
-interface IMusicProperties : IInspectable
+interface IMusicProperties_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Album(HSTRING* return_value);
@@ -90,10 +92,11 @@ extern(Windows):
 	HRESULT get_Year(UINT32* return_value);
 	HRESULT set_Year(UINT32 value);
 }
+interface IMusicProperties : IMusicProperties_Base, Windows.Storage.FileProperties.IStorageItemExtraProperties {}
 
 @uuid("05294bad-bc38-48bf-85d7-770e0e2ae0ba")
 @WinrtFactory("Windows.Storage.FileProperties.StorageItemContentProperties")
-interface IStorageItemContentProperties : IInspectable
+interface IStorageItemContentProperties_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetMusicPropertiesAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.MusicProperties)* return_operation);
@@ -101,6 +104,7 @@ extern(Windows):
 	HRESULT abi_GetImagePropertiesAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.ImageProperties)* return_operation);
 	HRESULT abi_GetDocumentPropertiesAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.DocumentProperties)* return_operation);
 }
+interface IStorageItemContentProperties : IStorageItemContentProperties_Base, Windows.Storage.FileProperties.IStorageItemExtraProperties {}
 
 @uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7")
 interface IStorageItemExtraProperties : IInspectable
@@ -124,7 +128,7 @@ extern(Windows):
 
 @uuid("719ae507-68de-4db8-97de-49998c059f2f")
 @WinrtFactory("Windows.Storage.FileProperties.VideoProperties")
-interface IVideoProperties : IInspectable
+interface IVideoProperties_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Rating(UINT32* return_value);
@@ -149,6 +153,7 @@ extern(Windows):
 	HRESULT get_Directors(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 	HRESULT get_Orientation(Windows.Storage.FileProperties.VideoOrientation* return_value);
 }
+interface IVideoProperties : IVideoProperties_Base, Windows.Storage.FileProperties.IStorageItemExtraProperties {}
 
 interface BasicProperties : Windows.Storage.FileProperties.IBasicProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {

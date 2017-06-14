@@ -160,7 +160,7 @@ extern(Windows):
 
 @uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb")
 @WinrtFactory("Windows.Media.Import.PhotoImportSession")
-interface IPhotoImportSession : IInspectable
+interface IPhotoImportSession_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Source(Windows.Media.Import.PhotoImportSource* return_value);
@@ -175,6 +175,7 @@ extern(Windows):
 	HRESULT get_DestinationFileNamePrefix(HSTRING* return_value);
 	HRESULT abi_FindItemsAsync(Windows.Media.Import.PhotoImportContentTypeFilter contentTypeFilter, Windows.Media.Import.PhotoImportItemSelectionMode itemSelectionMode, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportFindItemsResult, UINT32)* return_operation);
 }
+interface IPhotoImportSession : IPhotoImportSession_Base, Windows.Foundation.IClosable {}
 
 @uuid("2a526710-3ec6-469d-a375-2b9f4785391e")
 @WinrtFactory("Windows.Media.Import.PhotoImportSession")

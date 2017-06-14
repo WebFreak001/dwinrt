@@ -84,11 +84,12 @@ extern(Windows):
 
 @uuid("8eb99605-914f-49c3-a614-d18dc5b19b43")
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectConnectionRequest")
-interface IWiFiDirectConnectionRequest : IInspectable
+interface IWiFiDirectConnectionRequest_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);
 }
+interface IWiFiDirectConnectionRequest : IWiFiDirectConnectionRequest_Base, Windows.Foundation.IClosable {}
 
 @uuid("f99d20be-d38d-484f-8215-e7b65abf244c")
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs")
@@ -100,7 +101,7 @@ extern(Windows):
 
 @uuid("72deaaa8-72eb-4dae-8a28-8513355d2777")
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectDevice")
-interface IWiFiDirectDevice : IInspectable
+interface IWiFiDirectDevice_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_ConnectionStatus(Windows.Devices.WiFiDirect.WiFiDirectConnectionStatus* return_value);
@@ -109,6 +110,7 @@ extern(Windows):
 	HRESULT remove_ConnectionStatusChanged(EventRegistrationToken token);
 	HRESULT abi_GetConnectionEndpointPairs(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)* return_value);
 }
+interface IWiFiDirectDevice : IWiFiDirectDevice_Base, Windows.Foundation.IClosable {}
 
 @uuid("e86cb57c-3aac-4851-a792-482aaf931b04")
 @WinrtFactory("Windows.Devices.WiFiDirect.WiFiDirectDevice")

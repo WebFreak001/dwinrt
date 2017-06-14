@@ -63,7 +63,7 @@ interface ICompositionAnimationFactory : IInspectable
 
 @uuid("5e7cc90c-cd14-4e07-8a55-c72527aabdac")
 @WinrtFactory("Windows.UI.Composition.CompositionAnimationGroup")
-interface ICompositionAnimationGroup : IInspectable
+interface ICompositionAnimationGroup_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Count(INT32* return_value);
@@ -71,6 +71,7 @@ extern(Windows):
 	HRESULT abi_Remove(Windows.UI.Composition.CompositionAnimation value);
 	HRESULT abi_RemoveAll();
 }
+interface ICompositionAnimationGroup : ICompositionAnimationGroup_Base, Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.CompositionAnimation) {}
 
 @uuid("c5acae58-3898-499e-8d7f-224e91286a5d")
 @WinrtFactory("Windows.UI.Composition.CompositionBackdropBrush")
@@ -230,11 +231,12 @@ extern(Windows):
 
 @uuid("858ab13a-3292-4e4e-b3bb-2b6c6544a6ee")
 @WinrtFactory("Windows.UI.Composition.CompositionEffectSourceParameter")
-interface ICompositionEffectSourceParameter : IInspectable
+interface ICompositionEffectSourceParameter_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 }
+interface ICompositionEffectSourceParameter : ICompositionEffectSourceParameter_Base, Windows.Graphics.Effects.IGraphicsEffectSource {}
 
 @uuid("b3d9f276-aba3-4724-acf3-d0397464db1c")
 @WinrtFactory("Windows.UI.Composition.CompositionEffectSourceParameter")
@@ -597,9 +599,10 @@ extern(Windows):
 
 @uuid("0598a3ff-0a92-4c9d-a427-b25519250dbf")
 @WinrtFactory("Windows.UI.Composition.ImplicitAnimationCollection")
-interface IImplicitAnimationCollection : IInspectable
+interface IImplicitAnimationCollection_Base : IInspectable
 {
 }
+interface IImplicitAnimationCollection : IImplicitAnimationCollection_Base, Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)) {}
 
 @uuid("1e73e647-84c7-477a-b474-5880e0442e15")
 @WinrtFactory("Windows.UI.Composition.InsetClip")
@@ -868,7 +871,7 @@ extern(Windows):
 
 @uuid("8b745505-fd3e-4a98-84a8-e949468c6bcb")
 @WinrtFactory("Windows.UI.Composition.VisualCollection")
-interface IVisualCollection : IInspectable
+interface IVisualCollection_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Count(INT32* return_value);
@@ -879,6 +882,7 @@ extern(Windows):
 	HRESULT abi_Remove(Windows.UI.Composition.Visual child);
 	HRESULT abi_RemoveAll();
 }
+interface IVisualCollection : IVisualCollection_Base, Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Visual) {}
 
 @uuid("ad0ff93e-b502-4eb5-87b4-9a38a71d0137")
 @WinrtFactory("Windows.UI.Composition.Visual")
@@ -888,7 +892,7 @@ interface IVisualFactory : IInspectable
 
 @uuid("338faa70-54c8-40a7-8029-c9ceeb0aa250")
 @WinrtFactory("Windows.UI.Composition.VisualUnorderedCollection")
-interface IVisualUnorderedCollection : IInspectable
+interface IVisualUnorderedCollection_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Count(INT32* return_value);
@@ -896,6 +900,7 @@ extern(Windows):
 	HRESULT abi_Remove(Windows.UI.Composition.Visual visual);
 	HRESULT abi_RemoveAll();
 }
+interface IVisualUnorderedCollection : IVisualUnorderedCollection_Base, Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Visual) {}
 
 interface AmbientLight : Windows.UI.Composition.CompositionLight, Windows.UI.Composition.IAmbientLight
 {

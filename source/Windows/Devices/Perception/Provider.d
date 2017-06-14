@@ -121,7 +121,7 @@ extern(Windows):
 }
 
 @uuid("794f7ab9-b37d-3b33-a10d-30626419ce65")
-interface IPerceptionFrameProvider : IInspectable
+interface IPerceptionFrameProvider_Base : IInspectable
 {
 extern(Windows):
 	deprecated("IPerceptionFrameProvider may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
@@ -137,6 +137,7 @@ extern(Windows):
 	deprecated("IPerceptionFrameProvider may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_SetProperty(Windows.Devices.Perception.Provider.PerceptionPropertyChangeRequest value);
 }
+interface IPerceptionFrameProvider : IPerceptionFrameProvider_Base, Windows.Foundation.IClosable {}
 
 @uuid("cca959e8-797e-4e83-9b87-036a74142fc4")
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionFrameProviderInfo")
@@ -166,12 +167,13 @@ extern(Windows):
 }
 
 @uuid("a959ce07-ead3-33df-8ec1-b924abe019c4")
-interface IPerceptionFrameProviderManager : IInspectable
+interface IPerceptionFrameProviderManager_Base : IInspectable
 {
 extern(Windows):
 	deprecated("IPerceptionFrameProviderManager may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_GetFrameProvider(Windows.Devices.Perception.Provider.PerceptionFrameProviderInfo frameProviderInfo, Windows.Devices.Perception.Provider.IPerceptionFrameProvider* return_result);
 }
+interface IPerceptionFrameProviderManager : IPerceptionFrameProviderManager_Base, Windows.Foundation.IClosable {}
 
 @uuid("ae8386e6-cad9-4359-8f96-8eae51810526")
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionFrameProviderManagerService")
@@ -219,7 +221,7 @@ extern(Windows):
 
 @uuid("4c38a7da-fdd8-4ed4-a039-2a6f9b235038")
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionVideoFrameAllocator")
-interface IPerceptionVideoFrameAllocator : IInspectable
+interface IPerceptionVideoFrameAllocator_Base : IInspectable
 {
 extern(Windows):
 	deprecated("PerceptionVideoFrameAllocator may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
@@ -227,6 +229,7 @@ extern(Windows):
 	deprecated("PerceptionVideoFrameAllocator may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_CopyFromVideoFrame(Windows.Media.VideoFrame frame, Windows.Devices.Perception.Provider.PerceptionFrame* return_value);
 }
+interface IPerceptionVideoFrameAllocator : IPerceptionVideoFrameAllocator_Base, Windows.Foundation.IClosable {}
 
 @uuid("1a58b0e1-e91a-481e-b876-a89e2bbc6b33")
 @WinrtFactory("Windows.Devices.Perception.Provider.PerceptionVideoFrameAllocator")

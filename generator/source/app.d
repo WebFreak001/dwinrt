@@ -47,7 +47,7 @@ Module[] modules = [
 				InterfaceArgument(ArgumentDirection.in_, "AsyncStatus", "status"),
 			], true),
 		]),
-		Interface("IAsyncOperation", ["IAsyncInfo"], [], [], ["TResult"], "", "", false, false, [
+		Interface("IAsyncOperation", ["IInspectable"], ["IAsyncInfo"], [], ["TResult"], "", "", false, false, [
 			InterfaceMethod("Completed", "HRESULT", "", InterfaceType.propset, [
 				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.AsyncOperationCompletedHandler!(TResult)", "handler"),
 			], true),
@@ -1217,6 +1217,8 @@ struct Interface
 		if (exclusiveto.length)
 			ret ~= "@WinrtFactory(\"" ~ exclusiveto ~ "\")\n";
 		ret ~= "interface " ~ name;
+		if (requires.length)
+			ret ~= "_Base";
 		if (templateArgs.length)
 			ret ~= "(" ~ templateArgs.join(", ") ~ ")";
 		if (inherits.length + implements.length)
@@ -1228,6 +1230,8 @@ struct Interface
 		foreach (method; methods ~ (extra ? *extra : []))
 			ret ~= method.toString.indent ~ "\n";
 		ret ~= "}";
+		if (requires.length)
+			ret ~= "\ninterface " ~ name ~ " : " ~ name ~ "_Base, " ~ requires.join(", ") ~ " {}";
 		return ret;
 	}
 }

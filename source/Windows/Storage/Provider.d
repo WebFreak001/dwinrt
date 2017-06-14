@@ -27,12 +27,13 @@ extern(Windows):
 
 @uuid("8856a21c-8699-4340-9f49-f7cad7fe8991")
 @WinrtFactory("Windows.Storage.Provider.CachedFileUpdaterUI")
-interface ICachedFileUpdaterUI2 : IInspectable
+interface ICachedFileUpdaterUI2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_UpdateRequest(Windows.Storage.Provider.FileUpdateRequest* return_value);
 	HRESULT abi_GetDeferral(Windows.Storage.Provider.FileUpdateRequestDeferral* return_value);
 }
+interface ICachedFileUpdaterUI2 : ICachedFileUpdaterUI2_Base, Windows.Storage.Provider.ICachedFileUpdaterUI {}
 
 @uuid("40c82536-c1fe-4d93-a792-1e736bc70837")
 @WinrtFactory("Windows.Storage.Provider.FileUpdateRequest")
@@ -49,12 +50,13 @@ extern(Windows):
 
 @uuid("82484648-bdbe-447b-a2ee-7afe6a032a94")
 @WinrtFactory("Windows.Storage.Provider.FileUpdateRequest")
-interface IFileUpdateRequest2 : IInspectable
+interface IFileUpdateRequest2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_UserInputNeededMessage(HSTRING* return_value);
 	HRESULT set_UserInputNeededMessage(HSTRING value);
 }
+interface IFileUpdateRequest2 : IFileUpdateRequest2_Base, Windows.Storage.Provider.IFileUpdateRequest {}
 
 @uuid("ffcedb2b-8ade-44a5-bb00-164c4e72f13a")
 @WinrtFactory("Windows.Storage.Provider.FileUpdateRequestDeferral")

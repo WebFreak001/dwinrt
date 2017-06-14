@@ -4,26 +4,28 @@ import dwinrt;
 
 @uuid("6a0b5ffc-63b4-480f-9e6a-8a92816aade4")
 @WinrtFactory("Windows.Data.Xml.Dom.DtdEntity")
-interface IDtdEntity : IInspectable
+interface IDtdEntity_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_PublicId(IInspectable* return_value);
 	HRESULT get_SystemId(IInspectable* return_value);
 	HRESULT get_NotationName(IInspectable* return_value);
 }
+interface IDtdEntity : IDtdEntity_Base, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 @uuid("8cb4e04d-6d46-4edb-ab73-df83c51ad397")
 @WinrtFactory("Windows.Data.Xml.Dom.DtdNotation")
-interface IDtdNotation : IInspectable
+interface IDtdNotation_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_PublicId(IInspectable* return_value);
 	HRESULT get_SystemId(IInspectable* return_value);
 }
+interface IDtdNotation : IDtdNotation_Base, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 @uuid("ac144aa4-b4f1-4db6-b206-8a22c308db0a")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlAttribute")
-interface IXmlAttribute : IInspectable
+interface IXmlAttribute_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
@@ -31,15 +33,17 @@ extern(Windows):
 	HRESULT get_Value(HSTRING* return_value);
 	HRESULT set_Value(HSTRING value);
 }
+interface IXmlAttribute : IXmlAttribute_Base, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 @uuid("4d04b46f-c8bd-45b4-8899-0400d7c2c60f")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlCDataSection")
-interface IXmlCDataSection : IInspectable
+interface IXmlCDataSection_Base : IInspectable
 {
 }
+interface IXmlCDataSection : IXmlCDataSection_Base, Windows.Data.Xml.Dom.IXmlText, Windows.Data.Xml.Dom.IXmlCharacterData, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 @uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26")
-interface IXmlCharacterData : IInspectable
+interface IXmlCharacterData_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Data(HSTRING* return_value);
@@ -51,16 +55,18 @@ extern(Windows):
 	HRESULT abi_DeleteData(UINT32 offset, UINT32 count);
 	HRESULT abi_ReplaceData(UINT32 offset, UINT32 count, HSTRING data);
 }
+interface IXmlCharacterData : IXmlCharacterData_Base, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 @uuid("bca474d5-b61f-4611-9cac-2e92e3476d47")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlComment")
-interface IXmlComment : IInspectable
+interface IXmlComment_Base : IInspectable
 {
 }
+interface IXmlComment : IXmlComment_Base, Windows.Data.Xml.Dom.IXmlCharacterData, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 @uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDocument")
-interface IXmlDocument : IInspectable
+interface IXmlDocument_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Doctype(Windows.Data.Xml.Dom.XmlDocumentType* return_value);
@@ -81,12 +87,14 @@ extern(Windows):
 	HRESULT abi_GetElementById(HSTRING elementId, Windows.Data.Xml.Dom.XmlElement* return_element);
 	HRESULT abi_ImportNode(Windows.Data.Xml.Dom.IXmlNode node, bool deep, Windows.Data.Xml.Dom.IXmlNode* return_newNode);
 }
+interface IXmlDocument : IXmlDocument_Base, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 @uuid("e2ea6a96-0c21-44a5-8bc9-9e4a262708ec")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDocumentFragment")
-interface IXmlDocumentFragment : IInspectable
+interface IXmlDocumentFragment_Base : IInspectable
 {
 }
+interface IXmlDocumentFragment : IXmlDocumentFragment_Base, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 @uuid("6cd0e74e-ee65-4489-9ebf-ca43e87ba637")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDocument")
@@ -120,13 +128,14 @@ extern(Windows):
 
 @uuid("f7342425-9781-4964-8e94-9b1c6dfc9bc7")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDocumentType")
-interface IXmlDocumentType : IInspectable
+interface IXmlDocumentType_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT get_Entities(Windows.Data.Xml.Dom.XmlNamedNodeMap* return_value);
 	HRESULT get_Notations(Windows.Data.Xml.Dom.XmlNamedNodeMap* return_value);
 }
+interface IXmlDocumentType : IXmlDocumentType_Base, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 @uuid("6de58132-f11d-4fbb-8cc6-583cba93112f")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlDomImplementation")
@@ -138,7 +147,7 @@ extern(Windows):
 
 @uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlElement")
-interface IXmlElement : IInspectable
+interface IXmlElement_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_TagName(HSTRING* return_value);
@@ -155,12 +164,14 @@ extern(Windows):
 	HRESULT abi_SetAttributeNodeNS(Windows.Data.Xml.Dom.XmlAttribute newAttribute, Windows.Data.Xml.Dom.XmlAttribute* return_previousAttribute);
 	HRESULT abi_GetAttributeNodeNS(IInspectable namespaceUri, HSTRING localName, Windows.Data.Xml.Dom.XmlAttribute* return_previousAttribute);
 }
+interface IXmlElement : IXmlElement_Base, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 @uuid("2e2f47bc-c3d0-4ccf-bb86-0ab8c36a61cf")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlEntityReference")
-interface IXmlEntityReference : IInspectable
+interface IXmlEntityReference_Base : IInspectable
 {
 }
+interface IXmlEntityReference : IXmlEntityReference_Base, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 @uuid("58aa07a8-fed6-46f7-b4c5-fb1ba72108d6")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlLoadSettings")
@@ -181,7 +192,7 @@ extern(Windows):
 
 @uuid("b3a69eb0-aab0-4b82-a6fa-b1453f7c021b")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlNamedNodeMap")
-interface IXmlNamedNodeMap : IInspectable
+interface IXmlNamedNodeMap_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Length(UINT32* return_value);
@@ -193,9 +204,10 @@ extern(Windows):
 	HRESULT abi_RemoveNamedItemNS(IInspectable namespaceUri, HSTRING name, Windows.Data.Xml.Dom.IXmlNode* return_previousNode);
 	HRESULT abi_SetNamedItemNS(Windows.Data.Xml.Dom.IXmlNode node, Windows.Data.Xml.Dom.IXmlNode* return_previousNode);
 }
+interface IXmlNamedNodeMap : IXmlNamedNodeMap_Base, Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode), Windows.Foundation.Collections.IIterable!(Windows.Data.Xml.Dom.IXmlNode) {}
 
 @uuid("1c741d59-2122-47d5-a856-83f3d4214875")
-interface IXmlNode : IInspectable
+interface IXmlNode_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_NodeValue(IInspectable* return_value);
@@ -222,15 +234,17 @@ extern(Windows):
 	HRESULT abi_Normalize();
 	HRESULT set_Prefix(IInspectable value);
 }
+interface IXmlNode : IXmlNode_Base, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 @uuid("8c60ad77-83a4-4ec1-9c54-7ba429e13da6")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlNodeList")
-interface IXmlNodeList : IInspectable
+interface IXmlNodeList_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Length(UINT32* return_value);
 	HRESULT abi_Item(UINT32 index, Windows.Data.Xml.Dom.IXmlNode* return_node);
 }
+interface IXmlNodeList : IXmlNodeList_Base, Windows.Foundation.Collections.IVectorView!(Windows.Data.Xml.Dom.IXmlNode), Windows.Foundation.Collections.IIterable!(Windows.Data.Xml.Dom.IXmlNode) {}
 
 @uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b")
 interface IXmlNodeSelector : IInspectable
@@ -253,20 +267,22 @@ extern(Windows):
 
 @uuid("2707fd1e-1e92-4ece-b6f4-26f069078ddc")
 @WinrtFactory("Windows.Data.Xml.Dom.XmlProcessingInstruction")
-interface IXmlProcessingInstruction : IInspectable
+interface IXmlProcessingInstruction_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Target(HSTRING* return_value);
 	HRESULT get_Data(HSTRING* return_value);
 	HRESULT set_Data(HSTRING value);
 }
+interface IXmlProcessingInstruction : IXmlProcessingInstruction_Base, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 @uuid("f931a4cb-308d-4760-a1d5-43b67450ac7e")
-interface IXmlText : IInspectable
+interface IXmlText_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SplitText(UINT32 offset, Windows.Data.Xml.Dom.IXmlText* return_secondPart);
 }
+interface IXmlText : IXmlText_Base, Windows.Data.Xml.Dom.IXmlCharacterData, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSelector, Windows.Data.Xml.Dom.IXmlNodeSerializer {}
 
 interface DtdEntity : Windows.Data.Xml.Dom.IDtdEntity, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {

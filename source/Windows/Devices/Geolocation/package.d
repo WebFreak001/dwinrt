@@ -23,7 +23,7 @@ extern(Windows):
 
 @uuid("0896c80b-274f-43da-9a06-cbfcdaeb4ec2")
 @WinrtFactory("Windows.Devices.Geolocation.GeoboundingBox")
-interface IGeoboundingBox : IInspectable
+interface IGeoboundingBox_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_NorthwestCorner(Windows.Devices.Geolocation.BasicGeoposition* return_value);
@@ -32,6 +32,7 @@ extern(Windows):
 	HRESULT get_MinAltitude(double* return_value);
 	HRESULT get_MaxAltitude(double* return_value);
 }
+interface IGeoboundingBox : IGeoboundingBox_Base, Windows.Devices.Geolocation.IGeoshape {}
 
 @uuid("4dfba589-0411-4abc-b3b5-5bbccb57d98c")
 @WinrtFactory("Windows.Devices.Geolocation.GeoboundingBox")
@@ -55,12 +56,13 @@ extern(Windows):
 
 @uuid("39e45843-a7f9-4e63-92a7-ba0c28d124b1")
 @WinrtFactory("Windows.Devices.Geolocation.Geocircle")
-interface IGeocircle : IInspectable
+interface IGeocircle_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Center(Windows.Devices.Geolocation.BasicGeoposition* return_value);
 	HRESULT get_Radius(double* return_value);
 }
+interface IGeocircle : IGeocircle_Base, Windows.Devices.Geolocation.IGeoshape {}
 
 @uuid("afd6531f-72b1-4f7d-87cc-4ed4c9849c05")
 @WinrtFactory("Windows.Devices.Geolocation.Geocircle")
@@ -110,12 +112,13 @@ extern(Windows):
 
 @uuid("95e634be-dbd6-40ac-b8f2-a65c0340d9a6")
 @WinrtFactory("Windows.Devices.Geolocation.Geocoordinate")
-interface IGeocoordinateWithPositionData : IInspectable
+interface IGeocoordinateWithPositionData_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_PositionSource(Windows.Devices.Geolocation.PositionSource* return_pValue);
 	HRESULT get_SatelliteData(Windows.Devices.Geolocation.GeocoordinateSatelliteData* return_ppValue);
 }
+interface IGeocoordinateWithPositionData : IGeocoordinateWithPositionData_Base, Windows.Devices.Geolocation.IGeocoordinate {}
 
 @uuid("8543fc02-c9f1-4610-afe0-8bc3a6a87036")
 @WinrtFactory("Windows.Devices.Geolocation.Geocoordinate")
@@ -175,20 +178,22 @@ extern(Windows):
 
 @uuid("96f5d3c1-b80f-460a-994d-a96c47a51aa4")
 @WinrtFactory("Windows.Devices.Geolocation.Geolocator")
-interface IGeolocatorWithScalarAccuracy : IInspectable
+interface IGeolocatorWithScalarAccuracy_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_DesiredAccuracyInMeters(Windows.Foundation.IReference!(UINT32)* return_value);
 	HRESULT set_DesiredAccuracyInMeters(Windows.Foundation.IReference!(UINT32) value);
 }
+interface IGeolocatorWithScalarAccuracy : IGeolocatorWithScalarAccuracy_Base, Windows.Devices.Geolocation.IGeolocator {}
 
 @uuid("e53fd7b9-2da4-4714-a652-de8593289898")
 @WinrtFactory("Windows.Devices.Geolocation.Geopath")
-interface IGeopath : IInspectable
+interface IGeopath_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Positions(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.BasicGeoposition)* return_value);
 }
+interface IGeopath : IGeopath_Base, Windows.Devices.Geolocation.IGeoshape {}
 
 @uuid("27bea9c8-c7e7-4359-9b9b-fca3e05ef593")
 @WinrtFactory("Windows.Devices.Geolocation.Geopath")
@@ -202,11 +207,12 @@ extern(Windows):
 
 @uuid("6bfa00eb-e56e-49bb-9caf-cbaa78a8bcef")
 @WinrtFactory("Windows.Devices.Geolocation.Geopoint")
-interface IGeopoint : IInspectable
+interface IGeopoint_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Position(Windows.Devices.Geolocation.BasicGeoposition* return_value);
 }
+interface IGeopoint : IGeopoint_Base, Windows.Devices.Geolocation.IGeoshape {}
 
 @uuid("db6b8d33-76bd-4e30-8af7-a844dc37b7a0")
 @WinrtFactory("Windows.Devices.Geolocation.Geopoint")
@@ -229,11 +235,12 @@ extern(Windows):
 
 @uuid("7f62f697-8671-4b0d-86f8-474a8496187c")
 @WinrtFactory("Windows.Devices.Geolocation.Geoposition")
-interface IGeoposition2 : IInspectable
+interface IGeoposition2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_VenueData(Windows.Devices.Geolocation.VenueData* return_value);
 }
+interface IGeoposition2 : IGeoposition2_Base, Windows.Devices.Geolocation.IGeoposition {}
 
 @uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e")
 interface IGeoshape : IInspectable

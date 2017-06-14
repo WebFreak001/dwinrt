@@ -75,7 +75,7 @@ extern(Windows):
 
 @uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689")
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackagePropertySet")
-interface IDataPackagePropertySet : IInspectable
+interface IDataPackagePropertySet_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
@@ -90,6 +90,7 @@ extern(Windows):
 	HRESULT get_ApplicationListingUri(Windows.Foundation.Uri* return_value);
 	HRESULT set_ApplicationListingUri(Windows.Foundation.Uri value);
 }
+interface IDataPackagePropertySet : IDataPackagePropertySet_Base, Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)) {}
 
 @uuid("eb505d4a-9800-46aa-b181-7b6f0f2b919a")
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackagePropertySet")
@@ -119,7 +120,7 @@ extern(Windows):
 
 @uuid("b94cec01-0c1a-4c57-be55-75d01289735d")
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView")
-interface IDataPackagePropertySetView : IInspectable
+interface IDataPackagePropertySetView_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Title(HSTRING* return_value);
@@ -129,6 +130,7 @@ extern(Windows):
 	HRESULT get_ApplicationName(HSTRING* return_value);
 	HRESULT get_ApplicationListingUri(Windows.Foundation.Uri* return_value);
 }
+interface IDataPackagePropertySetView : IDataPackagePropertySetView_Base, Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)) {}
 
 @uuid("6054509b-8ebe-4feb-9c1e-75e69de54b84")
 @WinrtFactory("Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView")

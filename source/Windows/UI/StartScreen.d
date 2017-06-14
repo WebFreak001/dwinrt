@@ -105,7 +105,7 @@ extern(Windows):
 
 @uuid("b2f6cc35-3250-4990-923c-294ab4b694dd")
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTile")
-interface ISecondaryTile2 : IInspectable
+interface ISecondaryTile2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT set_PhoneticName(HSTRING value);
@@ -116,6 +116,7 @@ extern(Windows):
 	HRESULT add_VisualElementsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_VisualElementsRequested(EventRegistrationToken token);
 }
+interface ISecondaryTile2 : ISecondaryTile2_Base, Windows.UI.StartScreen.ISecondaryTile {}
 
 @uuid("57f52ca0-51bc-4abf-8ebf-627a0398b05a")
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTile")
@@ -131,11 +132,12 @@ extern(Windows):
 
 @uuid("274b8a3b-522d-448e-9eb2-d0672ab345c8")
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTile")
-interface ISecondaryTileFactory2 : IInspectable
+interface ISecondaryTileFactory2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateMinimalTile(HSTRING tileId, HSTRING displayName, HSTRING arguments, Windows.Foundation.Uri square150x150Logo, Windows.UI.StartScreen.TileSize desiredSize, Windows.UI.StartScreen.SecondaryTile* return_value);
 }
+interface ISecondaryTileFactory2 : ISecondaryTileFactory2_Base, Windows.UI.StartScreen.ISecondaryTileFactory {}
 
 @uuid("99908dae-d051-4676-87fe-9ec242d83c74")
 @WinrtFactory("Windows.UI.StartScreen.SecondaryTile")

@@ -124,7 +124,7 @@ extern(Windows):
 
 @uuid("72284824-db8c-42f8-b08c-53ff357dad82")
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceMap")
-interface IResourceMap : IInspectable
+interface IResourceMap_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_uri);
@@ -133,6 +133,7 @@ extern(Windows):
 	HRESULT abi_GetValueForContext(HSTRING resource, Windows.ApplicationModel.Resources.Core.ResourceContext context, Windows.ApplicationModel.Resources.Core.ResourceCandidate* return_value);
 	HRESULT abi_GetSubtree(HSTRING reference, Windows.ApplicationModel.Resources.Core.ResourceMap* return_map);
 }
+interface IResourceMap : IResourceMap_Base, Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource)) {}
 
 @uuid("785da5b2-4afd-4376-a888-c5f9a6b7a05c")
 @WinrtFactory("Windows.ApplicationModel.Resources.Core.ResourceQualifier")

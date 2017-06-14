@@ -125,11 +125,12 @@ extern(Windows):
 }
 
 @uuid("905a0fe2-bc53-11df-8c49-001e4fc686da")
-interface IInputStream : IInspectable
+interface IInputStream_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32)* return_operation);
 }
+interface IInputStream : IInputStream_Base, Windows.Foundation.IClosable {}
 
 @uuid("43929d18-5ec9-4b5a-919c-4205b0c804b6")
 interface IInputStreamReference : IInspectable
@@ -139,15 +140,16 @@ extern(Windows):
 }
 
 @uuid("905a0fe6-bc53-11df-8c49-001e4fc686da")
-interface IOutputStream : IInspectable
+interface IOutputStream_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_WriteAsync(Windows.Storage.Streams.IBuffer buffer, Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32)* return_operation);
 	HRESULT abi_FlushAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 }
+interface IOutputStream : IOutputStream_Base, Windows.Foundation.IClosable {}
 
 @uuid("905a0fe1-bc53-11df-8c49-001e4fc686da")
-interface IRandomAccessStream : IInspectable
+interface IRandomAccessStream_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Size(UINT64* return_value);
@@ -160,6 +162,7 @@ extern(Windows):
 	HRESULT get_CanRead(bool* return_value);
 	HRESULT get_CanWrite(bool* return_value);
 }
+interface IRandomAccessStream : IRandomAccessStream_Base, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Storage.Streams.IOutputStream {}
 
 @uuid("33ee3134-1dd6-4e3a-8067-d1c162e8642b")
 interface IRandomAccessStreamReference : IInspectable
@@ -189,9 +192,10 @@ extern(Windows):
 }
 
 @uuid("cc254827-4b3d-438f-9232-10c76bc7e038")
-interface IRandomAccessStreamWithContentType : IInspectable
+interface IRandomAccessStreamWithContentType_Base : IInspectable
 {
 }
+interface IRandomAccessStreamWithContentType : IRandomAccessStreamWithContentType_Base, Windows.Storage.Streams.IRandomAccessStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Storage.Streams.IOutputStream, Windows.Storage.Streams.IContentTypeProvider {}
 
 interface Buffer : Windows.Storage.Streams.IBuffer
 {

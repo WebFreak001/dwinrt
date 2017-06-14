@@ -12,7 +12,7 @@ extern(Windows):
 
 @uuid("af908a2d-118b-48f1-9308-0c4fc41e200f")
 @WinrtFactory("Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionSession")
-interface IExtendedExecutionSession : IInspectable
+interface IExtendedExecutionSession_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Reason(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionReason* return_value);
@@ -25,6 +25,7 @@ extern(Windows):
 	HRESULT remove_Revoked(EventRegistrationToken token);
 	HRESULT abi_RequestExtensionAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionResult)* return_operation);
 }
+interface IExtendedExecutionSession : IExtendedExecutionSession_Base, Windows.Foundation.IClosable {}
 
 interface ExtendedExecutionRevokedEventArgs : Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionRevokedEventArgs
 {

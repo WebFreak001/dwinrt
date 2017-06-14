@@ -93,30 +93,33 @@ extern(Windows):
 
 @uuid("ff1c4c4a-9287-470b-836e-9086e3126ade")
 @WinrtFactory("Windows.UI.Core.AcceleratorKeyEventArgs")
-interface IAcceleratorKeyEventArgs : IInspectable
+interface IAcceleratorKeyEventArgs_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_EventType(Windows.UI.Core.CoreAcceleratorKeyEventType* return_value);
 	HRESULT get_VirtualKey(Windows.System.VirtualKey* return_value);
 	HRESULT get_KeyStatus(Windows.UI.Core.CorePhysicalKeyStatus* return_value);
 }
+interface IAcceleratorKeyEventArgs : IAcceleratorKeyEventArgs_Base, Windows.UI.Core.ICoreWindowEventArgs {}
 
 @uuid("d300a9f6-2f7e-4873-a555-166e596ee1c5")
 @WinrtFactory("Windows.UI.Core.AcceleratorKeyEventArgs")
-interface IAcceleratorKeyEventArgs2 : IInspectable
+interface IAcceleratorKeyEventArgs2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
+interface IAcceleratorKeyEventArgs2 : IAcceleratorKeyEventArgs2_Base, Windows.UI.Core.ICoreWindowEventArgs {}
 
 @uuid("961ff258-21bf-4b42-a298-fa479d4c52e2")
 @WinrtFactory("Windows.UI.Core.AutomationProviderRequestedEventArgs")
-interface IAutomationProviderRequestedEventArgs : IInspectable
+interface IAutomationProviderRequestedEventArgs_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_AutomationProvider(IInspectable* return_value);
 	HRESULT set_AutomationProvider(IInspectable value);
 }
+interface IAutomationProviderRequestedEventArgs : IAutomationProviderRequestedEventArgs_Base, Windows.UI.Core.ICoreWindowEventArgs {}
 
 @uuid("d603d28a-e411-4a4e-ba41-6a327a8675bc")
 @WinrtFactory("Windows.UI.Core.BackRequestedEventArgs")
@@ -129,12 +132,13 @@ extern(Windows):
 
 @uuid("c584659f-99b2-4bcc-bd33-04e63f42902e")
 @WinrtFactory("Windows.UI.Core.CharacterReceivedEventArgs")
-interface ICharacterReceivedEventArgs : IInspectable
+interface ICharacterReceivedEventArgs_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_KeyCode(UINT32* return_value);
 	HRESULT get_KeyStatus(Windows.UI.Core.CorePhysicalKeyStatus* return_value);
 }
+interface ICharacterReceivedEventArgs : ICharacterReceivedEventArgs_Base, Windows.UI.Core.ICoreWindowEventArgs {}
 
 @uuid("347c11d7-f6f8-40e3-b29f-ae50d3e86486")
 @WinrtFactory("Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs")
@@ -195,7 +199,7 @@ extern(Windows):
 
 @uuid("60db2fa8-b705-4fde-a7d6-ebbb1891d39e")
 @WinrtFactory("Windows.UI.Core.CoreDispatcher")
-interface ICoreDispatcher : IInspectable
+interface ICoreDispatcher_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_HasThreadAccess(bool* return_value);
@@ -203,6 +207,7 @@ extern(Windows):
 	HRESULT abi_RunAsync(Windows.UI.Core.CoreDispatcherPriority priority, Windows.UI.Core.DispatchedHandler agileCallback, Windows.Foundation.IAsyncAction* return_asyncAction);
 	HRESULT abi_RunIdleAsync(Windows.UI.Core.IdleDispatchedHandler agileCallback, Windows.Foundation.IAsyncAction* return_asyncAction);
 }
+interface ICoreDispatcher : ICoreDispatcher_Base, Windows.UI.Core.ICoreAcceleratorKeys {}
 
 @uuid("6f5e63c7-e3aa-4eae-b0e0-dcf321ca4b2f")
 @WinrtFactory("Windows.UI.Core.CoreDispatcher")
@@ -519,38 +524,42 @@ extern(Windows):
 
 @uuid("80371d4f-2fd8-4c24-aa86-3163a87b4e5a")
 @WinrtFactory("Windows.UI.Core.InputEnabledEventArgs")
-interface IInputEnabledEventArgs : IInspectable
+interface IInputEnabledEventArgs_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_InputEnabled(bool* return_value);
 }
+interface IInputEnabledEventArgs : IInputEnabledEventArgs_Base, Windows.UI.Core.ICoreWindowEventArgs {}
 
 @uuid("5ff5e930-2544-4a17-bd78-1f2fdebb106b")
 @WinrtFactory("Windows.UI.Core.KeyEventArgs")
-interface IKeyEventArgs : IInspectable
+interface IKeyEventArgs_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_VirtualKey(Windows.System.VirtualKey* return_value);
 	HRESULT get_KeyStatus(Windows.UI.Core.CorePhysicalKeyStatus* return_value);
 }
+interface IKeyEventArgs : IKeyEventArgs_Base, Windows.UI.Core.ICoreWindowEventArgs {}
 
 @uuid("583add98-0790-4571-9b12-645ef9d79e42")
 @WinrtFactory("Windows.UI.Core.KeyEventArgs")
-interface IKeyEventArgs2 : IInspectable
+interface IKeyEventArgs2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
+interface IKeyEventArgs2 : IKeyEventArgs2_Base, Windows.UI.Core.ICoreWindowEventArgs {}
 
 @uuid("920d9cb1-a5fc-4a21-8c09-49dfe6ffe25f")
 @WinrtFactory("Windows.UI.Core.PointerEventArgs")
-interface IPointerEventArgs : IInspectable
+interface IPointerEventArgs_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_CurrentPoint(Windows.UI.Input.PointerPoint* return_value);
 	HRESULT get_KeyModifiers(Windows.System.VirtualKeyModifiers* return_value);
 	HRESULT abi_GetIntermediatePoints(Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint)* return_value);
 }
+interface IPointerEventArgs : IPointerEventArgs_Base, Windows.UI.Core.ICoreWindowEventArgs {}
 
 @uuid("93023118-cf50-42a6-9706-69107fa122e1")
 @WinrtFactory("Windows.UI.Core.SystemNavigationManager")
@@ -580,7 +589,7 @@ extern(Windows):
 
 @uuid("22f3b823-0b7c-424e-9df7-33d4f962931b")
 @WinrtFactory("Windows.UI.Core.TouchHitTestingEventArgs")
-interface ITouchHitTestingEventArgs : IInspectable
+interface ITouchHitTestingEventArgs_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_ProximityEvaluation(Windows.UI.Core.CoreProximityEvaluation* return_value);
@@ -590,30 +599,34 @@ extern(Windows):
 	HRESULT abi_EvaluateProximityToRect(Windows.Foundation.Rect controlBoundingBox, Windows.UI.Core.CoreProximityEvaluation* return_proximityEvaluation);
 	HRESULT abi_EvaluateProximityToPolygon(UINT32 __controlVerticesSize, Windows.Foundation.Point* controlVertices, Windows.UI.Core.CoreProximityEvaluation* return_proximityEvaluation);
 }
+interface ITouchHitTestingEventArgs : ITouchHitTestingEventArgs_Base, Windows.UI.Core.ICoreWindowEventArgs {}
 
 @uuid("bf9918ea-d801-4564-a495-b1e84f8ad085")
 @WinrtFactory("Windows.UI.Core.VisibilityChangedEventArgs")
-interface IVisibilityChangedEventArgs : IInspectable
+interface IVisibilityChangedEventArgs_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Visible(bool* return_value);
 }
+interface IVisibilityChangedEventArgs : IVisibilityChangedEventArgs_Base, Windows.UI.Core.ICoreWindowEventArgs {}
 
 @uuid("179d65e7-4658-4cb6-aa13-41d094ea255e")
 @WinrtFactory("Windows.UI.Core.WindowActivatedEventArgs")
-interface IWindowActivatedEventArgs : IInspectable
+interface IWindowActivatedEventArgs_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_WindowActivationState(Windows.UI.Core.CoreWindowActivationState* return_value);
 }
+interface IWindowActivatedEventArgs : IWindowActivatedEventArgs_Base, Windows.UI.Core.ICoreWindowEventArgs {}
 
 @uuid("5a200ec7-0426-47dc-b86c-6f475915e451")
 @WinrtFactory("Windows.UI.Core.WindowSizeChangedEventArgs")
-interface IWindowSizeChangedEventArgs : IInspectable
+interface IWindowSizeChangedEventArgs_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Size(Windows.Foundation.Size* return_value);
 }
+interface IWindowSizeChangedEventArgs : IWindowSizeChangedEventArgs_Base, Windows.UI.Core.ICoreWindowEventArgs {}
 
 interface AcceleratorKeyEventArgs : Windows.UI.Core.IAcceleratorKeyEventArgs, Windows.UI.Core.ICoreWindowEventArgs, Windows.UI.Core.IAcceleratorKeyEventArgs2
 {

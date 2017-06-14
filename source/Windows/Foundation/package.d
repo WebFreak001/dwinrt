@@ -116,8 +116,7 @@ extern(Windows):
 	}
 }
 
-//@dynamicUUID("e3625a0b-162a-41ab-bcc4-40a81bdc09fe")
-interface IAsyncOperationBase(TResult) : IInspectable
+interface IAsyncOperation_Base(TResult) : IInspectable
 {
 extern(Windows):
 	HRESULT set_Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult) handler);
@@ -125,26 +124,22 @@ extern(Windows):
 	HRESULT get_Results(TResult* return_results);
 	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult) handler)
 	{
-		Debug.OK((cast(Windows.Foundation.IAsyncOperationBase!(TResult))this).set_Completed(handler));
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(TResult)).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncOperationCompletedHandler!(TResult) Completed()
 	{
 		Windows.Foundation.AsyncOperationCompletedHandler!(TResult) _ret;
-		Debug.OK((cast(Windows.Foundation.IAsyncOperationBase!(TResult))this).get_Completed(&_ret));
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(TResult)).get_Completed(&_ret));
 		return _ret;
 	}
 	final TResult Results()
 	{
 		TResult _ret;
-		Debug.OK((cast(Windows.Foundation.IAsyncOperationBase!(TResult))this).get_Results(&_ret));
+		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(TResult)).get_Results(&_ret));
 		return _ret;
 	}
 }
-
-//@dynamicUUID("e3625a0b-162a-41ab-bcc4-40a81bdc09fe")
-interface IAsyncOperation(TResult) : IAsyncOperationBase!TResult, IAsyncInfo
-{
-}
+interface IAsyncOperation : IAsyncOperation_Base, IAsyncInfo {}
 
 interface AsyncOperationProgressHandler(TResult, TProgress) : IUnknown
 {
@@ -285,7 +280,8 @@ extern(Windows):
 	HRESULT abi_Invoke();
 }
 
-interface IAsyncActionBase : IInspectable
+@uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")
+interface IAsyncAction_Base : IInspectable
 {
 extern(Windows):
 	HRESULT set_Completed(Windows.Foundation.AsyncActionCompletedHandler handler);
@@ -302,11 +298,7 @@ extern(Windows):
 		Debug.OK(this.as!(IAsyncAction).set_Completed(handler));
 	}
 }
-
-@uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")
-interface IAsyncAction : IAsyncActionBase, IAsyncInfo
-{
-}
+interface IAsyncAction : IAsyncAction_Base, IAsyncInfo {}
 
 @uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e")
 interface IClosable : IInspectable
@@ -317,11 +309,12 @@ extern(Windows):
 
 @uuid("d6269732-3b7f-46a7-b40b-4fdca2a2c693")
 @WinrtFactory("Windows.Foundation.Deferral")
-interface IDeferral : IInspectable
+interface IDeferral_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_Complete();
 }
+interface IDeferral : IDeferral_Base, Windows.Foundation.IClosable {}
 
 @uuid("65a1ecc5-3fb5-4832-8ca9-f061b281d13a")
 @WinrtFactory("Windows.Foundation.Deferral")
@@ -339,11 +332,12 @@ extern(Windows):
 }
 
 @uuid("fbc4dd2a-245b-11e4-af98-689423260cf8")
-interface IMemoryBuffer : IInspectable
+interface IMemoryBuffer_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateReference(Windows.Foundation.IMemoryBufferReference* return_reference);
 }
+interface IMemoryBuffer : IMemoryBuffer_Base, Windows.Foundation.IClosable {}
 
 @uuid("fbc4dd2b-245b-11e4-af98-689423260cf8")
 @WinrtFactory("Windows.Foundation.MemoryBuffer")
@@ -354,13 +348,14 @@ extern(Windows):
 }
 
 @uuid("fbc4dd29-245b-11e4-af98-689423260cf8")
-interface IMemoryBufferReference : IInspectable
+interface IMemoryBufferReference_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Capacity(UINT32* return_value);
 	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.Foundation.IMemoryBufferReference, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Closed(EventRegistrationToken cookie);
 }
+interface IMemoryBufferReference : IMemoryBufferReference_Base, Windows.Foundation.IClosable {}
 
 @uuid("4bd682dd-7554-40e9-9a9b-82654ede7e62")
 interface IPropertyValue : IInspectable
@@ -521,11 +516,12 @@ extern(Windows):
 
 @uuid("d45a0451-f225-4542-9296-0e1df5d254df")
 @WinrtFactory("Windows.Foundation.WwwFormUrlDecoder")
-interface IWwwFormUrlDecoderRuntimeClass : IInspectable
+interface IWwwFormUrlDecoderRuntimeClass_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetFirstValueByName(HSTRING name, HSTRING* return_phstrValue);
 }
+interface IWwwFormUrlDecoderRuntimeClass : IWwwFormUrlDecoderRuntimeClass_Base, Windows.Foundation.Collections.IIterable!(Windows.Foundation.IWwwFormUrlDecoderEntry), Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry) {}
 
 @uuid("5b8c6b3d-24ae-41b5-a1bf-f0c3d544845b")
 @WinrtFactory("Windows.Foundation.WwwFormUrlDecoder")

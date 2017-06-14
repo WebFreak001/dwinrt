@@ -113,9 +113,10 @@ extern(Windows):
 }
 
 @uuid("8a43ed9f-f4e6-4421-acf9-1dab2986820c")
-interface IPropertySet : IInspectable
+interface IPropertySet_Base : IInspectable
 {
 }
+interface IPropertySet : IPropertySet_Base, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)) {}
 
 interface PropertySet : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
 {

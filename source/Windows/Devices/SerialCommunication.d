@@ -20,7 +20,7 @@ extern(Windows):
 
 @uuid("e187ccc6-2210-414f-b65a-f5553a03372a")
 @WinrtFactory("Windows.Devices.SerialCommunication.SerialDevice")
-interface ISerialDevice : IInspectable
+interface ISerialDevice_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_BaudRate(UINT32* return_value);
@@ -57,6 +57,7 @@ extern(Windows):
 	HRESULT add_PinChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.PinChangedEventArgs) reportHandler, EventRegistrationToken* return_token);
 	HRESULT remove_PinChanged(EventRegistrationToken token);
 }
+interface ISerialDevice : ISerialDevice_Base, Windows.Foundation.IClosable {}
 
 @uuid("058c4a70-0836-4993-ae1a-b61ae3be056b")
 @WinrtFactory("Windows.Devices.SerialCommunication.SerialDevice")

@@ -4,47 +4,52 @@ import dwinrt;
 
 @uuid("ee049368-6110-4136-95f9-ee809fc20030")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisInkBullet")
-interface IInkAnalysisInkBullet : IInspectable
+interface IInkAnalysisInkBullet_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 }
+interface IInkAnalysisInkBullet : IInkAnalysisInkBullet_Base, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode {}
 
 @uuid("6a85ed1f-1fe4-4e15-898c-8e112377e021")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisInkDrawing")
-interface IInkAnalysisInkDrawing : IInspectable
+interface IInkAnalysisInkDrawing_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_DrawingKind(Windows.UI.Input.Inking.Analysis.InkAnalysisDrawingKind* return_value);
 	HRESULT get_Center(Windows.Foundation.Point* return_value);
 	HRESULT get_Points(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point)* return_value);
 }
+interface IInkAnalysisInkDrawing : IInkAnalysisInkDrawing_Base, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode {}
 
 @uuid("4bd228ad-83af-4034-8f3b-f8687dfff436")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisInkWord")
-interface IInkAnalysisInkWord : IInspectable
+interface IInkAnalysisInkWord_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 	HRESULT get_TextAlternates(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 }
+interface IInkAnalysisInkWord : IInkAnalysisInkWord_Base, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode {}
 
 @uuid("a06d048d-2b8d-4754-ad5a-d0871193a956")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisLine")
-interface IInkAnalysisLine : IInspectable
+interface IInkAnalysisLine_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 	HRESULT get_IndentLevel(INT32* return_value);
 }
+interface IInkAnalysisLine : IInkAnalysisLine_Base, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode {}
 
 @uuid("b4e3c23f-c4c3-4c3a-a1a6-9d85547ee586")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisListItem")
-interface IInkAnalysisListItem : IInspectable
+interface IInkAnalysisListItem_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 }
+interface IInkAnalysisListItem : IInkAnalysisListItem_Base, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode {}
 
 @uuid("30831f05-5f64-4a2c-ba37-4f4887879574")
 interface IInkAnalysisNode : IInspectable
@@ -61,11 +66,12 @@ extern(Windows):
 
 @uuid("d9ad045c-0cd1-4dd4-a68b-eb1f12b3d727")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisParagraph")
-interface IInkAnalysisParagraph : IInspectable
+interface IInkAnalysisParagraph_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 }
+interface IInkAnalysisParagraph : IInkAnalysisParagraph_Base, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode {}
 
 @uuid("8948ba79-a243-4aa3-a294-1f98bd0ff580")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisResult")
@@ -77,20 +83,22 @@ extern(Windows):
 
 @uuid("3fb6a3c4-2fde-4061-8502-a90f32545b84")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisRoot")
-interface IInkAnalysisRoot : IInspectable
+interface IInkAnalysisRoot_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 	HRESULT abi_FindNodes(Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind nodeKind, Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)* return_result);
 }
+interface IInkAnalysisRoot : IInkAnalysisRoot_Base, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode {}
 
 @uuid("dd6d6231-bd16-4663-b5ae-941d3043ef5b")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalysisWritingRegion")
-interface IInkAnalysisWritingRegion : IInspectable
+interface IInkAnalysisWritingRegion_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_RecognizedText(HSTRING* return_value);
 }
+interface IInkAnalysisWritingRegion : IInkAnalysisWritingRegion_Base, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode {}
 
 @uuid("f12b8f95-0866-4dc5-8c77-f88614dfe38c")
 @WinrtFactory("Windows.UI.Input.Inking.Analysis.InkAnalyzer")

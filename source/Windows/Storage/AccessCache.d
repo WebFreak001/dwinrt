@@ -49,21 +49,23 @@ extern(Windows):
 
 @uuid("016239d5-510d-411e-8cf1-c3d1effa4c33")
 @WinrtFactory("Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList")
-interface IStorageItemMostRecentlyUsedList : IInspectable
+interface IStorageItemMostRecentlyUsedList_Base : IInspectable
 {
 extern(Windows):
 	HRESULT add_ItemRemoved(Windows.Foundation.TypedEventHandler!(Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.ItemRemovedEventArgs) handler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ItemRemoved(EventRegistrationToken eventCookie);
 }
+interface IStorageItemMostRecentlyUsedList : IStorageItemMostRecentlyUsedList_Base, Windows.Storage.AccessCache.IStorageItemAccessList {}
 
 @uuid("da481ea0-ed8d-4731-a1db-e44ee2204093")
 @WinrtFactory("Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList")
-interface IStorageItemMostRecentlyUsedList2 : IInspectable
+interface IStorageItemMostRecentlyUsedList2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_AddWithMetadataAndVisibility(Windows.Storage.IStorageItem file, HSTRING metadata, Windows.Storage.AccessCache.RecentStorageItemVisibility visibility, HSTRING* return_token);
 	HRESULT abi_AddOrReplaceWithMetadataAndVisibility(HSTRING token, Windows.Storage.IStorageItem file, HSTRING metadata, Windows.Storage.AccessCache.RecentStorageItemVisibility visibility);
 }
+interface IStorageItemMostRecentlyUsedList2 : IStorageItemMostRecentlyUsedList2_Base, Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.IStorageItemAccessList {}
 
 interface AccessListEntryView : Windows.Foundation.Collections.IVectorView!(Windows.Storage.AccessCache.AccessListEntry), Windows.Foundation.Collections.IIterable!(Windows.Storage.AccessCache.AccessListEntry)
 {

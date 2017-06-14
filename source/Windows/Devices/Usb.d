@@ -105,7 +105,7 @@ extern(Windows):
 
 @uuid("5249b992-c456-44d5-ad5e-24f5a089f63b")
 @WinrtFactory("Windows.Devices.Usb.UsbDevice")
-interface IUsbDevice : IInspectable
+interface IUsbDevice_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SendControlOutTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Storage.Streams.IBuffer buffer, Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
@@ -116,6 +116,7 @@ extern(Windows):
 	HRESULT get_DeviceDescriptor(Windows.Devices.Usb.UsbDeviceDescriptor* return_value);
 	HRESULT get_Configuration(Windows.Devices.Usb.UsbConfiguration* return_value);
 }
+interface IUsbDevice : IUsbDevice_Base, Windows.Foundation.IClosable {}
 
 @uuid("051942f9-845e-47eb-b12a-38f2f617afe7")
 @WinrtFactory("Windows.Devices.Usb.UsbDeviceClass")

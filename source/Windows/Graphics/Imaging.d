@@ -26,12 +26,13 @@ struct BitmapSize
 
 @uuid("a53e04c4-399c-438c-b28f-a63a6b83d1a1")
 @WinrtFactory("Windows.Graphics.Imaging.BitmapBuffer")
-interface IBitmapBuffer : IInspectable
+interface IBitmapBuffer_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetPlaneCount(INT32* return_value);
 	HRESULT abi_GetPlaneDescription(INT32 index, Windows.Graphics.Imaging.BitmapPlaneDescription* return_value);
 }
+interface IBitmapBuffer : IBitmapBuffer_Base, Windows.Foundation.IMemoryBuffer, Windows.Foundation.IClosable {}
 
 @uuid("400caaf2-c4b0-4392-a3b0-6f6f9ba95cb4")
 @WinrtFactory("Windows.Graphics.Imaging.BitmapCodecInformation")
@@ -139,21 +140,23 @@ extern(Windows):
 }
 
 @uuid("fe287c9a-420c-4963-87ad-691436e08383")
-interface IBitmapFrameWithSoftwareBitmap : IInspectable
+interface IBitmapFrameWithSoftwareBitmap_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetSoftwareBitmapAsync(Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap)* return_value);
 	HRESULT abi_GetSoftwareBitmapConvertedAsync(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap)* return_value);
 	HRESULT abi_GetSoftwareBitmapTransformedAsync(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, Windows.Graphics.Imaging.BitmapTransform transform, Windows.Graphics.Imaging.ExifOrientationMode exifOrientationMode, Windows.Graphics.Imaging.ColorManagementMode colorManagementMode, Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap)* return_value);
 }
+interface IBitmapFrameWithSoftwareBitmap : IBitmapFrameWithSoftwareBitmap_Base, Windows.Graphics.Imaging.IBitmapFrame {}
 
 @uuid("ea9f4f1b-b505-4450-a4d1-e8ca94529d8d")
 @WinrtFactory("Windows.Graphics.Imaging.BitmapProperties")
-interface IBitmapProperties : IInspectable
+interface IBitmapProperties_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SetPropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)) propertiesToSet, Windows.Foundation.IAsyncAction* return_asyncInfo);
 }
+interface IBitmapProperties : IBitmapProperties_Base, Windows.Graphics.Imaging.IBitmapPropertiesView {}
 
 @uuid("7e0fe87a-3a70-48f8-9c55-196cf5a545f5")
 interface IBitmapPropertiesView : IInspectable
@@ -208,7 +211,7 @@ extern(Windows):
 
 @uuid("689e0708-7eef-483f-963f-da938818e073")
 @WinrtFactory("Windows.Graphics.Imaging.SoftwareBitmap")
-interface ISoftwareBitmap : IInspectable
+interface ISoftwareBitmap_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_BitmapPixelFormat(Windows.Graphics.Imaging.BitmapPixelFormat* return_value);
@@ -226,6 +229,7 @@ extern(Windows):
 	HRESULT abi_CopyToBuffer(Windows.Storage.Streams.IBuffer buffer);
 	HRESULT abi_GetReadOnlyView(Windows.Graphics.Imaging.SoftwareBitmap* return_value);
 }
+interface ISoftwareBitmap : ISoftwareBitmap_Base, Windows.Foundation.IClosable {}
 
 @uuid("c99feb69-2d62-4d47-a6b3-4fdb6a07fdf8")
 @WinrtFactory("Windows.Graphics.Imaging.SoftwareBitmap")

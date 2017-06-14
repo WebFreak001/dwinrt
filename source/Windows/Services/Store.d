@@ -147,7 +147,7 @@ extern(Windows):
 
 @uuid("0c465714-14e1-4973-bd14-f77724271e99")
 @WinrtFactory("Windows.Services.Store.StorePackageLicense")
-interface IStorePackageLicense : IInspectable
+interface IStorePackageLicense_Base : IInspectable
 {
 extern(Windows):
 	HRESULT add_LicenseLost(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StorePackageLicense, IInspectable) handler, EventRegistrationToken* return_token);
@@ -156,6 +156,7 @@ extern(Windows):
 	HRESULT get_IsValid(bool* return_value);
 	HRESULT abi_ReleaseLicense();
 }
+interface IStorePackageLicense : IStorePackageLicense_Base, Windows.Foundation.IClosable {}
 
 @uuid("140fa150-3cbf-4a35-b91f-48271c31b072")
 @WinrtFactory("Windows.Services.Store.StorePackageUpdate")

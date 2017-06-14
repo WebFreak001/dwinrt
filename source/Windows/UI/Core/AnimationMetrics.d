@@ -24,12 +24,13 @@ extern(Windows):
 
 @uuid("803aabe5-ee7e-455f-84e9-2506afb8d2b4")
 @WinrtFactory("Windows.UI.Core.AnimationMetrics.OpacityAnimation")
-interface IOpacityAnimation : IInspectable
+interface IOpacityAnimation_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_InitialOpacity(Windows.Foundation.IReference!(FLOAT)* return_value);
 	HRESULT get_FinalOpacity(FLOAT* return_value);
 }
+interface IOpacityAnimation : IOpacityAnimation_Base, Windows.UI.Core.AnimationMetrics.IPropertyAnimation {}
 
 @uuid("3a01b4da-4d8c-411e-b615-1ade683a9903")
 interface IPropertyAnimation : IInspectable
@@ -44,7 +45,7 @@ extern(Windows):
 
 @uuid("023552c7-71ab-428c-9c9f-d31780964995")
 @WinrtFactory("Windows.UI.Core.AnimationMetrics.ScaleAnimation")
-interface IScaleAnimation : IInspectable
+interface IScaleAnimation_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_InitialScaleX(Windows.Foundation.IReference!(FLOAT)* return_value);
@@ -53,6 +54,7 @@ extern(Windows):
 	HRESULT get_FinalScaleY(FLOAT* return_value);
 	HRESULT get_NormalizedOrigin(Windows.Foundation.Point* return_value);
 }
+interface IScaleAnimation : IScaleAnimation_Base, Windows.UI.Core.AnimationMetrics.IPropertyAnimation {}
 
 interface AnimationDescription : Windows.UI.Core.AnimationMetrics.IAnimationDescription
 {

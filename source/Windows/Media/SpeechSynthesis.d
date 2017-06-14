@@ -13,11 +13,12 @@ extern(Windows):
 
 @uuid("83e46e93-244c-4622-ba0b-6229c4d0d65d")
 @WinrtFactory("Windows.Media.SpeechSynthesis.SpeechSynthesisStream")
-interface ISpeechSynthesisStream : IInspectable
+interface ISpeechSynthesisStream_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Markers(Windows.Foundation.Collections.IVectorView!(Windows.Media.IMediaMarker)* return_value);
 }
+interface ISpeechSynthesisStream : ISpeechSynthesisStream_Base, Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IRandomAccessStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Storage.Streams.IOutputStream, Windows.Storage.Streams.IContentTypeProvider {}
 
 @uuid("ce9f7c76-97f4-4ced-ad68-d51c458e45c6")
 @WinrtFactory("Windows.Media.SpeechSynthesis.SpeechSynthesizer")

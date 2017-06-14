@@ -251,17 +251,18 @@ extern(Windows):
 
 @uuid("14f8e404-6ca2-4ab2-9241-79cd7bf46346")
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailbox")
-interface IEmailMailbox2 : IInspectable
+interface IEmailMailbox2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_LinkedMailboxId(HSTRING* return_value);
 	HRESULT get_NetworkAccountId(HSTRING* return_value);
 	HRESULT get_NetworkId(HSTRING* return_value);
 }
+interface IEmailMailbox2 : IEmailMailbox2_Base, Windows.ApplicationModel.Email.IEmailMailbox {}
 
 @uuid("3da5897b-458b-408a-8e37-ac8b05d8af56")
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailbox")
-interface IEmailMailbox3 : IInspectable
+interface IEmailMailbox3_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ResolveRecipientsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) recipients, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailRecipientResolutionResult))* return_result);
@@ -270,6 +271,7 @@ extern(Windows):
 	HRESULT abi_TryCreateFolderAsync(HSTRING parentFolderId, HSTRING name, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailboxCreateFolderResult)* return_result);
 	HRESULT abi_TryDeleteFolderAsync(HSTRING folderId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailboxDeleteFolderStatus)* return_result);
 }
+interface IEmailMailbox3 : IEmailMailbox3_Base, Windows.ApplicationModel.Email.IEmailMailbox2, Windows.ApplicationModel.Email.IEmailMailbox {}
 
 @uuid("5d1f301b-f222-48a7-b7b6-716356cd26a1")
 @WinrtFactory("Windows.ApplicationModel.Email.EmailMailbox")

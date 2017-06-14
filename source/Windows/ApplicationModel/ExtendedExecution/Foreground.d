@@ -12,7 +12,7 @@ extern(Windows):
 
 @uuid("fbf440e1-9d10-4201-b01e-c83275296f2e")
 @WinrtFactory("Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundSession")
-interface IExtendedExecutionForegroundSession : IInspectable
+interface IExtendedExecutionForegroundSession_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Description(HSTRING* return_value);
@@ -23,6 +23,7 @@ extern(Windows):
 	HRESULT get_Reason(Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundReason* return_value);
 	HRESULT set_Reason(Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundReason value);
 }
+interface IExtendedExecutionForegroundSession : IExtendedExecutionForegroundSession_Base, Windows.Foundation.IClosable {}
 
 interface ExtendedExecutionForegroundRevokedEventArgs : Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundRevokedEventArgs
 {

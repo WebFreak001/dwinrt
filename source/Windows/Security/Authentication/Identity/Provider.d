@@ -78,13 +78,14 @@ extern(Windows):
 
 @uuid("14d981a3-fc26-4ff7-abc3-48e82a512a0a")
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorInfo")
-interface ISecondaryAuthenticationFactorInfo2 : IInspectable
+interface ISecondaryAuthenticationFactorInfo2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_PresenceMonitoringMode(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode* return_value);
 	HRESULT abi_UpdateDevicePresenceAsync(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresence presenceState, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT get_IsAuthenticationSupported(bool* return_value);
 }
+interface ISecondaryAuthenticationFactorInfo2 : ISecondaryAuthenticationFactorInfo2_Base, Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo {}
 
 @uuid("9f4cbbb4-8cba-48b0-840d-dbb22a54c678")
 @WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorRegistration")

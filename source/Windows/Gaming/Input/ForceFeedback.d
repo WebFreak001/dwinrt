@@ -4,12 +4,13 @@ import dwinrt;
 
 @uuid("32d1ea68-3695-4e69-85c0-cd1944189140")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.ConditionForceEffect")
-interface IConditionForceEffect : IInspectable
+interface IConditionForceEffect_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Kind(Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind* return_value);
 	HRESULT abi_SetParameters(Windows.Foundation.Numerics.Vector3 direction, FLOAT positiveCoefficient, FLOAT negativeCoefficient, FLOAT maxPositiveMagnitude, FLOAT maxNegativeMagnitude, FLOAT deadZone, FLOAT bias);
 }
+interface IConditionForceEffect : IConditionForceEffect_Base, Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect {}
 
 @uuid("91a99264-1810-4eb6-a773-bfd3b8cddbab")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.ConditionForceEffect")
@@ -21,12 +22,13 @@ extern(Windows):
 
 @uuid("9bfa0140-f3c7-415c-b068-0f068734bce0")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.ConstantForceEffect")
-interface IConstantForceEffect : IInspectable
+interface IConstantForceEffect_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SetParameters(Windows.Foundation.Numerics.Vector3 vector, Windows.Foundation.TimeSpan duration);
 	HRESULT abi_SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 vector, FLOAT attackGain, FLOAT sustainGain, FLOAT releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount);
 }
+interface IConstantForceEffect : IConstantForceEffect_Base, Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect {}
 
 @uuid("a17fba0c-2ae4-48c2-8063-eabd0777cb89")
 interface IForceFeedbackEffect : IInspectable
@@ -61,13 +63,14 @@ extern(Windows):
 
 @uuid("5c5138d7-fc75-4d52-9a0a-efe4cab5fe64")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect")
-interface IPeriodicForceEffect : IInspectable
+interface IPeriodicForceEffect_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Kind(Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind* return_value);
 	HRESULT abi_SetParameters(Windows.Foundation.Numerics.Vector3 vector, FLOAT frequency, FLOAT phase, FLOAT bias, Windows.Foundation.TimeSpan duration);
 	HRESULT abi_SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 vector, FLOAT frequency, FLOAT phase, FLOAT bias, FLOAT attackGain, FLOAT sustainGain, FLOAT releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount);
 }
+interface IPeriodicForceEffect : IPeriodicForceEffect_Base, Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect {}
 
 @uuid("6f62eb1a-9851-477b-b318-35ecaa15070f")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect")
@@ -79,12 +82,13 @@ extern(Windows):
 
 @uuid("f1f81259-1ca6-4080-b56d-b43f3354d052")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.RampForceEffect")
-interface IRampForceEffect : IInspectable
+interface IRampForceEffect_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SetParameters(Windows.Foundation.Numerics.Vector3 startVector, Windows.Foundation.Numerics.Vector3 endVector, Windows.Foundation.TimeSpan duration);
 	HRESULT abi_SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 startVector, Windows.Foundation.Numerics.Vector3 endVector, FLOAT attackGain, FLOAT sustainGain, FLOAT releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount);
 }
+interface IRampForceEffect : IRampForceEffect_Base, Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect {}
 
 interface ConditionForceEffect : Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect, Windows.Gaming.Input.ForceFeedback.IConditionForceEffect
 {

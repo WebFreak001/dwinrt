@@ -65,11 +65,12 @@ extern(Windows):
 
 @uuid("4dcd0021-fad1-4b8e-8edf-775887b8bf19")
 @WinrtFactory("Windows.Graphics.Display.DisplayInformation")
-interface IDisplayInformation2 : IInspectable
+interface IDisplayInformation2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_RawPixelsPerViewPixel(double* return_value);
 }
+interface IDisplayInformation2 : IDisplayInformation2_Base, Windows.Graphics.Display.IDisplayInformation {}
 
 @uuid("db15011d-0f09-4466-8ff3-11de9a3c929a")
 @WinrtFactory("Windows.Graphics.Display.DisplayInformation")

@@ -14,13 +14,14 @@ extern(Windows):
 
 @uuid("b9c72530-3f84-4b5d-8eaa-45e97aa842ed")
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderAddAccountOperation")
-interface IUserDataAccountProviderAddAccountOperation : IInspectable
+interface IUserDataAccountProviderAddAccountOperation_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_ContentKinds(Windows.ApplicationModel.UserDataAccounts.UserDataAccountContentKinds* return_value);
 	HRESULT get_PartnerAccountInfos(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountPartnerAccountInfo)* return_value);
 	HRESULT abi_ReportCompleted(HSTRING userDataAccountId);
 }
+interface IUserDataAccountProviderAddAccountOperation : IUserDataAccountProviderAddAccountOperation_Base, Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation {}
 
 @uuid("a20aad63-888c-4a62-a3dd-34d07a802b2b")
 interface IUserDataAccountProviderOperation : IInspectable
@@ -31,21 +32,23 @@ extern(Windows):
 
 @uuid("6235dc15-bfcb-41e1-9957-9759a28846cc")
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderResolveErrorsOperation")
-interface IUserDataAccountProviderResolveErrorsOperation : IInspectable
+interface IUserDataAccountProviderResolveErrorsOperation_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_UserDataAccountId(HSTRING* return_value);
 	HRESULT abi_ReportCompleted();
 }
+interface IUserDataAccountProviderResolveErrorsOperation : IUserDataAccountProviderResolveErrorsOperation_Base, Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation {}
 
 @uuid("92034db7-8648-4f30-acfa-3002658ca80d")
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderSettingsOperation")
-interface IUserDataAccountProviderSettingsOperation : IInspectable
+interface IUserDataAccountProviderSettingsOperation_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_UserDataAccountId(HSTRING* return_value);
 	HRESULT abi_ReportCompleted();
 }
+interface IUserDataAccountProviderSettingsOperation : IUserDataAccountProviderSettingsOperation_Base, Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation {}
 
 interface UserDataAccountPartnerAccountInfo : Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountPartnerAccountInfo
 {

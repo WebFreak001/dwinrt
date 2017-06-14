@@ -69,7 +69,7 @@ extern(Windows):
 
 @uuid("cea6469a-0e05-467a-abc9-36ec1d4cdcb6")
 @WinrtFactory("Windows.UI.WebUI.HtmlPrintDocumentSource")
-interface IHtmlPrintDocumentSource : IInspectable
+interface IHtmlPrintDocumentSource_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Content(Windows.UI.WebUI.PrintContent* return_value);
@@ -91,6 +91,7 @@ extern(Windows):
 	HRESULT get_PageRange(HSTRING* return_pstrPageRange);
 	HRESULT abi_TrySetPageRange(HSTRING strPageRange, bool* return_pfSuccess);
 }
+interface IHtmlPrintDocumentSource : IHtmlPrintDocumentSource_Base, Windows.Graphics.Printing.IPrintDocumentSource {}
 
 @uuid("351b86bd-43b3-482b-85db-35d87b517ad9")
 @WinrtFactory("Windows.UI.WebUI.WebUIApplication")

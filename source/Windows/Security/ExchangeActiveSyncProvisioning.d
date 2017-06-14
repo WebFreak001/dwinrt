@@ -17,12 +17,13 @@ extern(Windows):
 
 @uuid("ffb35923-bb26-4d6a-81bc-165aee0ad754")
 @WinrtFactory("Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation")
-interface IEasClientDeviceInformation2 : IInspectable
+interface IEasClientDeviceInformation2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_SystemHardwareVersion(HSTRING* return_value);
 	HRESULT get_SystemFirmwareVersion(HSTRING* return_value);
 }
+interface IEasClientDeviceInformation2 : IEasClientDeviceInformation2_Base, Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation {}
 
 @uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420")
 @WinrtFactory("Windows.Security.ExchangeActiveSyncProvisioning.EasClientSecurityPolicy")
@@ -67,11 +68,12 @@ extern(Windows):
 
 @uuid("2fbe60c9-1aa8-47f5-88bb-cb3ef0bffb15")
 @WinrtFactory("Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults")
-interface IEasComplianceResults2 : IInspectable
+interface IEasComplianceResults2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_EncryptionProviderType(Windows.Security.ExchangeActiveSyncProvisioning.EasEncryptionProviderType* return_value);
 }
+interface IEasComplianceResults2 : IEasComplianceResults2_Base, Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults {}
 
 interface EasClientDeviceInformation : Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation, Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation2
 {

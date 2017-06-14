@@ -70,7 +70,7 @@ extern(Windows):
 
 @uuid("e4c94395-2028-48ed-90b0-d1c1b162e24c")
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameReader")
-interface IMediaFrameReader : IInspectable
+interface IMediaFrameReader_Base : IInspectable
 {
 extern(Windows):
 	HRESULT add_FrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MediaFrameReader, Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs) handler, EventRegistrationToken* return_token);
@@ -79,10 +79,11 @@ extern(Windows):
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReaderStartStatus)* return_operation);
 	HRESULT abi_StopAsync(Windows.Foundation.IAsyncAction* return_action);
 }
+interface IMediaFrameReader : IMediaFrameReader_Base, Windows.Foundation.IClosable {}
 
 @uuid("f6b88641-f0dc-4044-8dc9-961cedd05bad")
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameReference")
-interface IMediaFrameReference : IInspectable
+interface IMediaFrameReference_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_SourceKind(Windows.Media.Capture.Frames.MediaFrameSourceKind* return_value);
@@ -94,6 +95,7 @@ extern(Windows):
 	HRESULT get_VideoMediaFrame(Windows.Media.Capture.Frames.VideoMediaFrame* return_value);
 	HRESULT get_CoordinateSystem(Windows.Perception.Spatial.SpatialCoordinateSystem* return_value);
 }
+interface IMediaFrameReference : IMediaFrameReference_Base, Windows.Foundation.IClosable {}
 
 @uuid("d6782953-90db-46a8-8add-2aa884a8d253")
 @WinrtFactory("Windows.Media.Capture.Frames.MediaFrameSource")
@@ -180,7 +182,7 @@ interface IMultiSourceMediaFrameArrivedEventArgs : IInspectable
 
 @uuid("8d144402-f763-488d-98f2-b437bcf075e7")
 @WinrtFactory("Windows.Media.Capture.Frames.MultiSourceMediaFrameReader")
-interface IMultiSourceMediaFrameReader : IInspectable
+interface IMultiSourceMediaFrameReader_Base : IInspectable
 {
 extern(Windows):
 	HRESULT add_FrameArrived(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader, Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs) handler, EventRegistrationToken* return_token);
@@ -189,14 +191,16 @@ extern(Windows):
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReaderStartStatus)* return_operation);
 	HRESULT abi_StopAsync(Windows.Foundation.IAsyncAction* return_action);
 }
+interface IMultiSourceMediaFrameReader : IMultiSourceMediaFrameReader_Base, Windows.Foundation.IClosable {}
 
 @uuid("21964b1a-7fe2-44d6-92e5-298e6d2810e9")
 @WinrtFactory("Windows.Media.Capture.Frames.MultiSourceMediaFrameReference")
-interface IMultiSourceMediaFrameReference : IInspectable
+interface IMultiSourceMediaFrameReference_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_TryGetFrameReferenceBySourceId(HSTRING sourceId, Windows.Media.Capture.Frames.MediaFrameReference* return_value);
 }
+interface IMultiSourceMediaFrameReference : IMultiSourceMediaFrameReference_Base, Windows.Foundation.IClosable {}
 
 @uuid("00dd4ccb-32bd-4fe1-a013-7cc13cf5dbcf")
 @WinrtFactory("Windows.Media.Capture.Frames.VideoMediaFrame")

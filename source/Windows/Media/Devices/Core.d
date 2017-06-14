@@ -41,7 +41,7 @@ extern(Windows):
 
 @uuid("f95d89fb-8af0-4cb0-926d-696866e5046a")
 @WinrtFactory("Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper")
-interface IDepthCorrelatedCoordinateMapper : IInspectable
+interface IDepthCorrelatedCoordinateMapper_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_UnprojectPoint(Windows.Foundation.Point sourcePoint, Windows.Perception.Spatial.SpatialCoordinateSystem targetCoordinateSystem, Windows.Foundation.Numerics.Vector3* return_result);
@@ -49,6 +49,7 @@ extern(Windows):
 	HRESULT abi_MapPoint(Windows.Foundation.Point sourcePoint, Windows.Perception.Spatial.SpatialCoordinateSystem targetCoordinateSystem, Windows.Media.Devices.Core.CameraIntrinsics targetCameraIntrinsics, Windows.Foundation.Point* return_result);
 	HRESULT abi_MapPoints(UINT32 __sourcePointsSize, Windows.Foundation.Point* sourcePoints, Windows.Perception.Spatial.SpatialCoordinateSystem targetCoordinateSystem, Windows.Media.Devices.Core.CameraIntrinsics targetCameraIntrinsics, UINT32 __resultsSize, Windows.Foundation.Point* out_results);
 }
+interface IDepthCorrelatedCoordinateMapper : IDepthCorrelatedCoordinateMapper_Base, Windows.Foundation.IClosable {}
 
 @uuid("a8ffae60-4e9e-4377-a789-e24c4ae7e544")
 @WinrtFactory("Windows.Media.Devices.Core.FrameControlCapabilities")

@@ -17,18 +17,20 @@ struct Direct3DSurfaceDescription
 }
 
 @uuid("a37624ab-8d5f-4650-9d3e-9eae3d9bc670")
-interface IDirect3DDevice : IInspectable
+interface IDirect3DDevice_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_Trim();
 }
+interface IDirect3DDevice : IDirect3DDevice_Base, Windows.Foundation.IClosable {}
 
 @uuid("0bf4a146-13c1-4694-bee3-7abf15eaf586")
-interface IDirect3DSurface : IInspectable
+interface IDirect3DSurface_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Description(Windows.Graphics.DirectX.Direct3D11.Direct3DSurfaceDescription* return_value);
 }
+interface IDirect3DSurface : IDirect3DSurface_Base, Windows.Foundation.IClosable {}
 
 @bitflags
 enum Direct3DBindings

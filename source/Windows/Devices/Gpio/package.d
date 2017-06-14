@@ -16,7 +16,7 @@ struct GpioChangeRecord
 
 @uuid("cb5ec0de-6801-43ff-803d-4576628a8b26")
 @WinrtFactory("Windows.Devices.Gpio.GpioChangeCounter")
-interface IGpioChangeCounter : IInspectable
+interface IGpioChangeCounter_Base : IInspectable
 {
 extern(Windows):
 	HRESULT set_Polarity(Windows.Devices.Gpio.GpioChangePolarity value);
@@ -27,6 +27,7 @@ extern(Windows):
 	HRESULT abi_Read(Windows.Devices.Gpio.GpioChangeCount* return_value);
 	HRESULT abi_Reset(Windows.Devices.Gpio.GpioChangeCount* return_value);
 }
+interface IGpioChangeCounter : IGpioChangeCounter_Base, Windows.Foundation.IClosable {}
 
 @uuid("147d94b6-0a9e-410c-b4fa-f89f4052084d")
 @WinrtFactory("Windows.Devices.Gpio.GpioChangeCounter")
@@ -38,7 +39,7 @@ extern(Windows):
 
 @uuid("0abc885f-e031-48e8-8590-70de78363c6d")
 @WinrtFactory("Windows.Devices.Gpio.GpioChangeReader")
-interface IGpioChangeReader : IInspectable
+interface IGpioChangeReader_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Capacity(INT32* return_value);
@@ -56,6 +57,7 @@ extern(Windows):
 	HRESULT abi_GetAllItems(Windows.Foundation.Collections.IVector!(Windows.Devices.Gpio.GpioChangeRecord)* return_value);
 	HRESULT abi_WaitForItemsAsync(INT32 count, Windows.Foundation.IAsyncAction* return_operation);
 }
+interface IGpioChangeReader : IGpioChangeReader_Base, Windows.Foundation.IClosable {}
 
 @uuid("a9598ef3-390e-441a-9d1c-e8de0b2df0df")
 @WinrtFactory("Windows.Devices.Gpio.GpioChangeReader")
@@ -96,7 +98,7 @@ extern(Windows):
 
 @uuid("11d9b087-afae-4790-9ee9-e0eac942d201")
 @WinrtFactory("Windows.Devices.Gpio.GpioPin")
-interface IGpioPin : IInspectable
+interface IGpioPin_Base : IInspectable
 {
 extern(Windows):
 	HRESULT add_ValueChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs) handler, EventRegistrationToken* return_token);
@@ -111,6 +113,7 @@ extern(Windows):
 	HRESULT abi_Write(Windows.Devices.Gpio.GpioPinValue value);
 	HRESULT abi_Read(Windows.Devices.Gpio.GpioPinValue* return_value);
 }
+interface IGpioPin : IGpioPin_Base, Windows.Foundation.IClosable {}
 
 @uuid("3137aae1-703d-4059-bd24-b5b25dffb84e")
 @WinrtFactory("Windows.Devices.Gpio.GpioPinValueChangedEventArgs")

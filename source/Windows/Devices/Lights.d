@@ -4,7 +4,7 @@ import dwinrt;
 
 @uuid("047d5b9a-ea45-4b2b-b1a2-14dff00bde7b")
 @WinrtFactory("Windows.Devices.Lights.Lamp")
-interface ILamp : IInspectable
+interface ILamp_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -18,6 +18,7 @@ extern(Windows):
 	HRESULT add_AvailabilityChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Lights.Lamp, Windows.Devices.Lights.LampAvailabilityChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AvailabilityChanged(EventRegistrationToken token);
 }
+interface ILamp : ILamp_Base, Windows.Foundation.IClosable {}
 
 @uuid("4f6e3ded-07a2-499d-9260-67e304532ba4")
 @WinrtFactory("Windows.Devices.Lights.LampAvailabilityChangedEventArgs")

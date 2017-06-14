@@ -48,7 +48,7 @@ extern(Windows):
 
 @uuid("8636c136-b9c5-4f70-9449-cc46dc6f57eb")
 @WinrtFactory("Windows.Devices.I2c.I2cDevice")
-interface II2cDevice : IInspectable
+interface II2cDevice_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
@@ -60,6 +60,7 @@ extern(Windows):
 	HRESULT abi_WriteRead(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer);
 	HRESULT abi_WriteReadPartial(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer, Windows.Devices.I2c.I2cTransferResult* return_result);
 }
+interface II2cDevice : II2cDevice_Base, Windows.Foundation.IClosable {}
 
 @uuid("91a33be3-7334-4512-96bc-fbae9459f5f6")
 interface II2cDeviceStatics : IInspectable

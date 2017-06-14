@@ -165,12 +165,13 @@ extern(Windows):
 
 @uuid("c89b8a2f-ac56-4460-8d2f-80023bec4fc5")
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPaneSuggestionsRequestedEventArgs")
-interface ISearchPaneSuggestionsRequestedEventArgs : IInspectable
+interface ISearchPaneSuggestionsRequestedEventArgs_Base : IInspectable
 {
 extern(Windows):
 	deprecated("ISearchPaneSuggestionsRequestedEventArgs may be altered or unavailable for releases after Windows 10.")
 	HRESULT get_Request(Windows.ApplicationModel.Search.SearchPaneSuggestionsRequest* return_value);
 }
+interface ISearchPaneSuggestionsRequestedEventArgs : ISearchPaneSuggestionsRequestedEventArgs_Base, Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs {}
 
 @uuid("3c4d3046-ac4b-49f2-97d6-020e6182cb9c")
 @WinrtFactory("Windows.ApplicationModel.Search.SearchPaneVisibilityChangedEventArgs")

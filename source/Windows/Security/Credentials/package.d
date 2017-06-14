@@ -101,7 +101,7 @@ extern(Windows):
 
 @uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824")
 @WinrtFactory("Windows.Security.Credentials.WebAccount")
-interface IWebAccount2 : IInspectable
+interface IWebAccount2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
@@ -110,6 +110,7 @@ extern(Windows):
 	HRESULT abi_SignOutAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_SignOutWithClientIdAsync(HSTRING clientId, Windows.Foundation.IAsyncAction* return_asyncInfo);
 }
+interface IWebAccount2 : IWebAccount2_Base, Windows.Security.Credentials.IWebAccount {}
 
 @uuid("ac9afb39-1de9-4e92-b78f-0581a87f6e5c")
 @WinrtFactory("Windows.Security.Credentials.WebAccount")
@@ -132,20 +133,22 @@ extern(Windows):
 
 @uuid("4a01eb05-4e42-41d4-b518-e008a5163614")
 @WinrtFactory("Windows.Security.Credentials.WebAccountProvider")
-interface IWebAccountProvider2 : IInspectable
+interface IWebAccountProvider2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_DisplayPurpose(HSTRING* return_value);
 	HRESULT get_Authority(HSTRING* return_value);
 }
+interface IWebAccountProvider2 : IWebAccountProvider2_Base, Windows.Security.Credentials.IWebAccountProvider {}
 
 @uuid("da1c518b-970d-4d49-825c-f2706f8ca7fe")
 @WinrtFactory("Windows.Security.Credentials.WebAccountProvider")
-interface IWebAccountProvider3 : IInspectable
+interface IWebAccountProvider3_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_User(Windows.System.User* return_user);
 }
+interface IWebAccountProvider3 : IWebAccountProvider3_Base, Windows.Security.Credentials.IWebAccountProvider2, Windows.Security.Credentials.IWebAccountProvider {}
 
 @uuid("1d767df1-e1e1-4b9a-a774-5c7c7e3bf371")
 @WinrtFactory("Windows.Security.Credentials.WebAccountProvider")

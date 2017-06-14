@@ -39,15 +39,16 @@ extern(Windows):
 }
 
 @uuid("fe1eb536-7e7f-4f90-ac9a-474984aae512")
-interface IBindableObservableVector : IInspectable
+interface IBindableObservableVector_Base : IInspectable
 {
 extern(Windows):
 	HRESULT add_VectorChanged(Windows.UI.Xaml.Interop.BindableVectorChangedEventHandler value, EventRegistrationToken* return_token);
 	HRESULT remove_VectorChanged(EventRegistrationToken token);
 }
+interface IBindableObservableVector : IBindableObservableVector_Base, Windows.UI.Xaml.Interop.IBindableVector, Windows.UI.Xaml.Interop.IBindableIterable {}
 
 @uuid("393de7de-6fd0-4c0d-bb71-47244a113e93")
-interface IBindableVector : IInspectable
+interface IBindableVector_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetAt(UINT32 index, IInspectable* return_returnValue);
@@ -61,15 +62,17 @@ extern(Windows):
 	HRESULT abi_RemoveAtEnd();
 	HRESULT abi_Clear();
 }
+interface IBindableVector : IBindableVector_Base, Windows.UI.Xaml.Interop.IBindableIterable {}
 
 @uuid("346dd6e7-976e-4bc3-815d-ece243bc0f33")
-interface IBindableVectorView : IInspectable
+interface IBindableVectorView_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetAt(UINT32 index, IInspectable* return_returnValue);
 	HRESULT get_Size(UINT32* return_value);
 	HRESULT abi_IndexOf(IInspectable value, UINT32* out_index, bool* return_returnValue);
 }
+interface IBindableVectorView : IBindableVectorView_Base, Windows.UI.Xaml.Interop.IBindableIterable {}
 
 @uuid("28b167d5-1a31-465b-9b25-d5c3ae686c40")
 interface INotifyCollectionChanged : IInspectable

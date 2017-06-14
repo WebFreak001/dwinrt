@@ -26,7 +26,7 @@ extern(Windows):
 
 @uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67")
 @WinrtFactory("Windows.Devices.Scanners.ImageScannerFeederConfiguration")
-interface IImageScannerFeederConfiguration : IInspectable
+interface IImageScannerFeederConfiguration_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_CanAutoDetectPageSize(bool* return_value);
@@ -47,6 +47,7 @@ extern(Windows):
 	HRESULT get_ScanAhead(bool* return_value);
 	HRESULT set_ScanAhead(bool value);
 }
+interface IImageScannerFeederConfiguration : IImageScannerFeederConfiguration_Base, Windows.Devices.Scanners.IImageScannerFormatConfiguration, Windows.Devices.Scanners.IImageScannerSourceConfiguration {}
 
 @uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0")
 interface IImageScannerFormatConfiguration : IInspectable
@@ -76,7 +77,7 @@ extern(Windows):
 }
 
 @uuid("bfb50055-0b44-4c82-9e89-205f9c234e59")
-interface IImageScannerSourceConfiguration : IInspectable
+interface IImageScannerSourceConfiguration_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_MinScanArea(Windows.Foundation.Size* return_value);
@@ -109,6 +110,7 @@ extern(Windows):
 	HRESULT get_Contrast(INT32* return_value);
 	HRESULT set_Contrast(INT32 value);
 }
+interface IImageScannerSourceConfiguration : IImageScannerSourceConfiguration_Base, Windows.Devices.Scanners.IImageScannerFormatConfiguration {}
 
 @uuid("bc57e70e-d804-4477-9fb5-b911b5473897")
 @WinrtFactory("Windows.Devices.Scanners.ImageScanner")

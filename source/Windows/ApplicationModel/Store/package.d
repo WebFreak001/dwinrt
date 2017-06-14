@@ -157,11 +157,12 @@ extern(Windows):
 
 @uuid("fc535c8a-f667-40f3-ba3c-045a63abb3ac")
 @WinrtFactory("Windows.ApplicationModel.Store.ProductLicense")
-interface IProductLicenseWithFulfillment : IInspectable
+interface IProductLicenseWithFulfillment_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_IsConsumable(bool* return_value);
 }
+interface IProductLicenseWithFulfillment : IProductLicenseWithFulfillment_Base, Windows.ApplicationModel.Store.IProductLicense {}
 
 @uuid("45a7d6ad-c750-4d9c-947c-b00dcbf9e9c2")
 @WinrtFactory("Windows.ApplicationModel.Store.ProductListing")
@@ -194,7 +195,7 @@ extern(Windows):
 
 @uuid("124da567-23f8-423e-9532-189943c40ace")
 @WinrtFactory("Windows.ApplicationModel.Store.ProductListing")
-interface IProductListingWithMetadata : IInspectable
+interface IProductListingWithMetadata_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Description(HSTRING* return_value);
@@ -203,6 +204,7 @@ extern(Windows):
 	HRESULT get_Tag(HSTRING* return_value);
 	HRESULT get_ImageUri(Windows.Foundation.Uri* return_value);
 }
+interface IProductListingWithMetadata : IProductListingWithMetadata_Base, Windows.ApplicationModel.Store.IProductListing {}
 
 @uuid("d70b7420-bc92-401b-a809-c9b2e5dbbdaf")
 @WinrtFactory("Windows.ApplicationModel.Store.ProductPurchaseDisplayProperties")

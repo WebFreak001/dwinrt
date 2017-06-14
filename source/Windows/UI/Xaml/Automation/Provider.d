@@ -229,12 +229,13 @@ extern(Windows):
 }
 
 @uuid("ea3605b4-3a05-400e-b5f9-4e91b40f6176")
-interface ITextEditProvider : IInspectable
+interface ITextEditProvider_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetActiveComposition(Windows.UI.Xaml.Automation.Provider.ITextRangeProvider* return_returnValue);
 	HRESULT abi_GetConversionTarget(Windows.UI.Xaml.Automation.Provider.ITextRangeProvider* return_returnValue);
 }
+interface ITextEditProvider : ITextEditProvider_Base, Windows.UI.Xaml.Automation.Provider.ITextProvider {}
 
 @uuid("db5bbc9f-4807-4f2a-8678-1b13f3c60e22")
 interface ITextProvider : IInspectable
@@ -249,12 +250,13 @@ extern(Windows):
 }
 
 @uuid("df1d48bc-0487-4e7f-9d5e-f09e77e41246")
-interface ITextProvider2 : IInspectable
+interface ITextProvider2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RangeFromAnnotation(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple annotationElement, Windows.UI.Xaml.Automation.Provider.ITextRangeProvider* return_returnValue);
 	HRESULT abi_GetCaretRange(bool* out_isActive, Windows.UI.Xaml.Automation.Provider.ITextRangeProvider* return_returnValue);
 }
+interface ITextProvider2 : ITextProvider2_Base, Windows.UI.Xaml.Automation.Provider.ITextProvider {}
 
 @uuid("0274688d-06e9-4f66-9446-28a5be98fbd0")
 interface ITextRangeProvider : IInspectable
@@ -281,11 +283,12 @@ extern(Windows):
 }
 
 @uuid("d3be3dfb-9f54-4642-a7a5-5c18d5ee2a3f")
-interface ITextRangeProvider2 : IInspectable
+interface ITextRangeProvider2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ShowContextMenu();
 }
+interface ITextRangeProvider2 : ITextRangeProvider2_Base, Windows.UI.Xaml.Automation.Provider.ITextRangeProvider {}
 
 @uuid("93b88290-656f-44f7-aeaf-78b8f944d062")
 interface IToggleProvider : IInspectable
@@ -308,7 +311,7 @@ extern(Windows):
 }
 
 @uuid("a8b11756-a39f-4e97-8c7d-c1ea8dd633c5")
-interface ITransformProvider2 : IInspectable
+interface ITransformProvider2_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_CanZoom(bool* return_value);
@@ -318,6 +321,7 @@ extern(Windows):
 	HRESULT abi_Zoom(double zoom);
 	HRESULT abi_ZoomByUnit(Windows.UI.Xaml.Automation.ZoomUnit zoomUnit);
 }
+interface ITransformProvider2 : ITransformProvider2_Base, Windows.UI.Xaml.Automation.Provider.ITransformProvider {}
 
 @uuid("2086b7a7-ac0e-47d1-ab9b-2a64292afdf8")
 interface IValueProvider : IInspectable
