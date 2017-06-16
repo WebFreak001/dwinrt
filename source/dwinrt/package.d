@@ -11,6 +11,10 @@ import core.sys.windows.com;
 import core.thread;
 import core.sync.mutex;
 
+import core.sys.windows.objidl : STATSTG;
+import core.sys.windows.wtypes;
+import core.sys.windows.oaidl;
+
 pragma(lib, "User32");
 pragma(lib, "windowsapp");
 pragma(lib, "uuid");
@@ -504,7 +508,7 @@ enum AsyncStatus
 	Error,
 }
 
-@uuid("00000036-0000-0000-C000-000000000046")
+@uuid("00000036-0000-0000-c000-000000000046")
 interface IAsyncInfo : IInspectable
 {
 	HRESULT get_Id(uint* id);
@@ -559,11 +563,9 @@ interface ISequentialStream : IUnknown
 	HRESULT Write(void*, ULONG, ULONG*);
 }
 
-import core.sys.windows.objidl : STATSTG;
-
 alias LPSTREAM = IStream;
 
-@uuid("0000000c-0000-0000-C000-000000000046")
+@uuid("0000000c-0000-0000-c000-000000000046")
 interface IStream : ISequentialStream
 {
 	HRESULT Seek(LARGE_INTEGER, DWORD, ULARGE_INTEGER*);
@@ -577,7 +579,7 @@ interface IStream : ISequentialStream
 	HRESULT Clone(LPSTREAM*);
 }
 
-@uuid("00000003-0000-0000-C000-000000000046")
+@uuid("00000003-0000-0000-c000-000000000046")
 interface IMarshal : IUnknown
 {
 	HRESULT GetUnmarshalClass(REFIID, PVOID, DWORD, PVOID, DWORD, CLSID*);
@@ -850,82 +852,189 @@ hstring trim_hresult_message(const(wchar)* message, uint size)
 	return result;
 }
 
+@uuid("332c4426-26cb-11d0-b483-00c04fd90119")
+interface IHTMLFramesCollection2 : IDispatch
+{
+extern (Windows):
+	HRESULT abi_Item(VARIANT* pvarIndex, VARIANT* pvarResult);
+	HRESULT get_Length(long* p);
+}
+
+@uuid("3050f38e-98b5-11cf-bb82-00aa00bdce0b")
+interface IHTMLImageElementFactory : IDispatch
+{
+extern (Windows):
+	HRESULT abi_Create(VARIANT width, VARIANT height,
+			IHTMLImgElement* __MIDL__IHTMLImageElementFactory0000);
+}
+
+@uuid("3050f38c-98b5-11cf-bb82-00aa00bdce0b")
+interface IHTMLOptionElementFactory : IDispatch
+{
+extern (Windows):
+	HRESULT abi_Create(VARIANT text, VARIANT value, VARIANT defaultselected,
+			VARIANT selected, IHTMLOptionElement* __MIDL__IHTMLOptionElementFactory0000);
+}
+
+@uuid("feceaaa2-8405-11cf-8ba1-00aa00476da6")
+interface IOmHistory : IDispatch
+{
+extern (Windows):
+	HRESULT get_length(short* p);
+	HRESULT back(VARIANT* pvargdistance);
+	HRESULT forward(VARIANT* pvargdistance);
+	HRESULT go(VARIANT* pvargdistance);
+}
+
+@uuid("163bb1e0-6e00-11cf-837a-48dc04c10000")
+interface IHTMLLocation : IDispatch
+{
+extern (Windows):
+	/* TODO */
+}
+
+@uuid("feceaaa5-8405-11cf-8ba1-00aa00476da6")
+interface IOmNavigator : IDispatch
+{
+extern (Windows):
+	/* TODO */
+}
+
+@uuid("3050f240-98b5-11cf-bb82-00aa00bdce0b")
+interface IHTMLImgElement : IDispatch
+{
+extern (Windows):
+	/* TODO */
+}
+
+@uuid("3050f211-98b5-11cf-bb82-00aa00bdce0b")
+interface IHTMLOptionElement : IDispatch
+{
+extern (Windows):
+	/* TODO */
+}
+
+@uuid("626fc520-a41e-11cf-a731-00a0c9082637")
+interface IHTMLDocument : IDispatch
+{
+extern (Windows):
+	HRESULT get_Script(IDispatch* p);
+
+};
+
+@uuid("332c4425-26cb-11d0-b483-00c04fd90119")
+interface IHTMLDocument2 : IHTMLDocument
+{
+extern (Windows):
+	/* TODO */
+}
+
+@uuid("3050f32d-98b5-11cf-bb82-00aa00bdce0b")
+interface IHTMLEventObj : IDispatch
+{
+extern (Windows):
+	/* TODO */
+}
+
+@uuid("3050f35c-98b5-11cf-bb82-00aa00bdce0b")
+interface IHTMLScreen : IDispatch
+{
+extern (Windows):
+	/* TODO */
+}
+
 @uuid("332c4427-26cb-11d0-b483-00c04fd90119")
 interface IHTMLWindow2 : IHTMLFramesCollection2
 {
-public:
-	HRESULT get_frames(IHTMLFramesCollection2* p);
-	HRESULT put_defaultStatus(wchar* v);
-	HRESULT get_defaultStatus(wchar** p);
-	HRESULT put_status(wchar* v);
-	HRESULT get_status(wchar** p);
-	HRESULT setTimeout(wchar* expression, long msec, VARIANT* language, long* timerID);
-	HRESULT clearTimeout(long timerID);
-	HRESULT alert(wchar* message = "");
-	HRESULT confirm(wchar* message, VARIANT_BOOL* confirmed);
-	HRESULT prompt(wchar* message, wchar* defstr, VARIANT* textdata);
+extern (Windows):
+	HRESULT get_Frames(IHTMLFramesCollection2* p);
+	HRESULT put_DefaultStatus(wchar* v);
+	HRESULT get_DefaultStatus(wchar** p);
+	HRESULT put_Status(wchar* v);
+	HRESULT get_Status(wchar** p);
+	HRESULT abi_SetTimeout(wchar* expression, long msec, VARIANT* language, long* timerID);
+	HRESULT abi_ClearTimeout(long timerID);
+	HRESULT abi_Alert(wchar* message = null);
+	HRESULT abi_Confirm(wchar* message, VARIANT_BOOL* confirmed);
+	HRESULT abi_Prompt(wchar* message, wchar* defstr, VARIANT* textdata);
 	HRESULT get_Image(IHTMLImageElementFactory* p);
-	HRESULT get_location(IHTMLLocation* p);
-	HRESULT get_history(IOmHistory* p);
-	HRESULT close();
-	HRESULT put_opener(VARIANT v);
-	HRESULT get_opener(VARIANT* p);
-	HRESULT get_navigator(IOmNavigator* p);
-	HRESULT put_name(wchar* v);
-	HRESULT get_name(wchar** p);
-	HRESULT get_parent(IHTMLWindow2* p);
-	HRESULT open(wchar* url, wchar* name, wchar* features, /* [in][defaultvalue] */
-			VARIANT_BOOL replace,
-			IHTMLWindow2* pomWindowResult);
-	HRESULT get_self(IHTMLWindow2* p);
-	HRESULT get_top(IHTMLWindow2* p);
-	HRESULT get_window(IHTMLWindow2* p);
-	HRESULT navigate(wchar* url);
-	HRESULT put_onfocus(VARIANT v);
-	HRESULT get_onfocus(VARIANT* p);
-	HRESULT put_onblur(VARIANT v);
-	HRESULT get_onblur(VARIANT* p);
-	HRESULT put_onload(VARIANT v);
-	HRESULT get_onload(VARIANT* p);
-	HRESULT put_onbeforeunload(VARIANT v);
-	HRESULT get_onbeforeunload(VARIANT* p);
-	HRESULT put_onunload(VARIANT v);
-	HRESULT get_onunload(VARIANT* p);
-	HRESULT put_onhelp(VARIANT v);
-	HRESULT get_onhelp(VARIANT* p);
-	HRESULT put_onerror(VARIANT v);
-	HRESULT get_onerror(VARIANT* p);
-	HRESULT put_onresize(VARIANT v);
-	HRESULT get_onresize(VARIANT* p);
-	HRESULT put_onscroll(VARIANT v);
-	HRESULT get_onscroll(VARIANT* p);
-	HRESULT get_document(IHTMLDocument2* p);
-	HRESULT get_event(IHTMLEventObj* p);
+	HRESULT get_Location(IHTMLLocation* p);
+	HRESULT get_History(IOmHistory* p);
+	HRESULT abi_Close();
+	HRESULT put_Opener(VARIANT v);
+	HRESULT get_Opener(VARIANT* p);
+	HRESULT get_Navigator(IOmNavigator* p);
+	HRESULT put_Name(wchar* v);
+	HRESULT get_Name(wchar** p);
+	HRESULT get_Parent(IHTMLWindow2* p);
+	HRESULT abi_Open(wchar* url, wchar* name, wchar* features,
+			VARIANT_BOOL replace, IHTMLWindow2* pomWindowResult);
+	HRESULT get_Self(IHTMLWindow2* p);
+	HRESULT get_Top(IHTMLWindow2* p);
+	HRESULT get_Window(IHTMLWindow2* p);
+	HRESULT abi_Navigate(wchar* url);
+	HRESULT put_OnFocus(VARIANT v);
+	HRESULT get_OnFocus(VARIANT* p);
+	HRESULT put_OnBlur(VARIANT v);
+	HRESULT get_OnBlur(VARIANT* p);
+	HRESULT put_OnLoad(VARIANT v);
+	HRESULT get_OnLoad(VARIANT* p);
+	HRESULT put_OnBeforeUnload(VARIANT v);
+	HRESULT get_OnBeforeUnload(VARIANT* p);
+	HRESULT put_OnUnload(VARIANT v);
+	HRESULT get_OnUnload(VARIANT* p);
+	HRESULT put_OnHelp(VARIANT v);
+	HRESULT get_OnHelp(VARIANT* p);
+	HRESULT put_OnError(VARIANT v);
+	HRESULT get_OnError(VARIANT* p);
+	HRESULT put_OnResize(VARIANT v);
+	HRESULT get_OnResize(VARIANT* p);
+	HRESULT put_OnScroll(VARIANT v);
+	HRESULT get_OnScroll(VARIANT* p);
+	HRESULT get_Document(IHTMLDocument2* p);
+	HRESULT get_Event(IHTMLEventObj* p);
 	HRESULT get__newEnum(IUnknown* p);
-	HRESULT showModalDialog(wchar* dialog, VARIANT* varArgIn,
+	HRESULT abi_showModalDialog(wchar* dialog, VARIANT* varArgIn,
 			VARIANT* varOptions, VARIANT* varArgOut);
-	HRESULT showHelp(wchar* helpURL, VARIANT helpArg, wchar* features = "");
-	HRESULT get_screen(IHTMLScreen* p);
+	HRESULT abi_ShowHelp(wchar* helpURL, VARIANT helpArg, wchar* features = null);
+	HRESULT get_Screen(IHTMLScreen* p);
 	HRESULT get_Option(IHTMLOptionElementFactory* p);
-	HRESULT focus(void);
-	HRESULT get_closed(VARIANT_BOOL* p);
-	HRESULT blur(void);
-	HRESULT scroll(long x, long y);
-	HRESULT get_clientInformation(IOmNavigator* p);
-	HRESULT setInterval(wchar* expression, long msec, VARIANT* language, long* timerID);
-	HRESULT clearInterval(long timerID);
-	HRESULT put_offscreenBuffering(VARIANT v);
-	HRESULT get_offscreenBuffering(VARIANT* p);
-	HRESULT execScript(wchar* code, wchar* language, VARIANT* pvarRet);
-	HRESULT toString(wchar** String);
-	HRESULT scrollBy(long x, long y);
-	HRESULT scrollTo(long x, long y);
-	HRESULT moveTo(long x, long y);
-	HRESULT moveBy(long x, long y);
-	HRESULT resizeTo(long x, long y);
-	HRESULT resizeBy(long x, long y);
-	HRESULT get_external(IDispatch* p);
-};
+	HRESULT abi_Focus();
+	HRESULT get_Closed(VARIANT_BOOL* p);
+	HRESULT abi_Blur();
+	HRESULT abi_Scroll(long x, long y);
+	HRESULT get_ClientInformation(IOmNavigator* p);
+	HRESULT abi_SetInterval(wchar* expression, long msec, VARIANT* language, long* timerID);
+	HRESULT abi_ClearInterval(long timerID);
+	HRESULT put_OffscreenBuffering(VARIANT v);
+	HRESULT get_OffscreenBuffering(VARIANT* p);
+	HRESULT abi_ExecScript(wchar* code, wchar* language, VARIANT* pvarRet);
+	HRESULT abi_ToString(wchar** String);
+	HRESULT abi_ScrollBy(long x, long y);
+	HRESULT abi_ScrollTo(long x, long y);
+	HRESULT abi_MoveTo(long x, long y);
+	HRESULT abi_MoveBy(long x, long y);
+	HRESULT abi_ResizeTo(long x, long y);
+	HRESULT abi_ResizeBy(long x, long y);
+	HRESULT get_External(IDispatch* p);
+}
+
+@uuid("eae1ba61-a4ed-11cf-8f20-00805f2cd064")
+interface IActiveScriptError : IDispatch
+{
+extern (Windows):
+	HRESULT GetExceptionInfo(EXCEPINFO* pexcepinfo);
+	HRESULT GetSourcePosition(DWORD* pdwSourceContext, ULONG* pulLineNumber,
+			LONG* plCharacterPosition);
+	HRESULT GetSourceLineText(wchar** pbstrSourceLine);
+}
+
+@uuid("6d5140c1-7436-11ce-8034-00aa006009fa")
+interface IServiceProvider : IUnknown
+{
+extern (Windows):
+	HRESULT QueryService(REFGUID guidService, REFIID riid, void** ppvObject);
+}
 
 enum HResultEnum : HRESULT
 {

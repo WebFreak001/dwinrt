@@ -365,7 +365,7 @@ interface IWebApplicationAuthoringMode : IServiceProvider
 {
 extern(Windows):
 	/// "Gets the full local path to a DLL that will be loaded into the WWAHost process."
-	HRESULT get_AuthoringClientBinary(BSTR* return_designModeDllPath);
+	HRESULT get_AuthoringClientBinary(wchar** return_designModeDllPath);
 }
 
 @uuid("a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7")
