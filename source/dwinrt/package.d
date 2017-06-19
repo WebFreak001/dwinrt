@@ -708,12 +708,12 @@ Handler handler(Handler, Args...)(void delegate(Args) cb)
 	return cast(Handler) new GenericMarshaledHandler!(Handler, Args)(cb);
 }
 
-auto yielding_suspend(Async)(Async async)
+auto yield(Async)(Async async)
 {
 	return suspend!(Fiber.yield, Async)(async);
 }
 
-auto wait(Async)(Async async)
+auto sleep(Async)(Async async)
 {
 	return suspend!({ Thread.sleep(1.msecs); }, Async)(async);
 }
@@ -738,16 +738,16 @@ auto suspend(alias waitFunc, Async)(Async async)
 
 	import Windows.Foundation;
 
-	/*static if (is(Async == Windows.Foundation.IAsyncAction))
+	static if (is(Async == Windows.Foundation.IAsyncAction))
 		async.Completed = (Windows.Foundation.IAsyncAction result, AsyncStatus status) {
 			synchronized (mutex)
 				completed = true;
 		}.handler!(Windows.Foundation.AsyncActionCompletedHandler);
 	else static if (is(Async == IAsyncOperation!T, T))
-		async.Completed = null;/*(Windows.Foundation.IAsyncOperation!T info, AsyncStatus status) {
+		async.Completed = (Windows.Foundation.IAsyncOperation!T info, AsyncStatus status) {
 			synchronized (mutex)
 				completed = true;
-		}.handler!(Windows.Foundation.AsyncOperationCompletedHandler!T);*/
+		}.handler!(Windows.Foundation.AsyncOperationCompletedHandler!T);
 
 	while (true)
 	{
@@ -811,17 +811,11 @@ struct AsyncRunner
 	}
 
 	void run(Async)(Async async)
-			if (is(Async : Windows.Foundation.IAsyncOperation!Result, Result))
 	{
-		fibers ~= new Fiber({ suspend!(Fiber.yield)(async); });
+		fibers ~= new Fiber({ async.yield; });
 	}
 
-	void run(Windows.Foundation.IAsyncAction async)
-	{
-		fibers ~= new Fiber({ suspend!(Fiber.yield)(async); });
-	}
-
-	void step()
+	void tick()
 	{
 		foreach (fiber; fibers)
 			fiber.call();
@@ -830,7 +824,7 @@ struct AsyncRunner
 	void loop()
 	{
 		while (true)
-			step();
+			tick();
 	}
 }
 
