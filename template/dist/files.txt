@@ -1,0 +1,11 @@
+[ResourceMetadata]
+"ResourceDimensions" "language-en-us"
+"ResourceId" "English"
+
+[Files]
+"Assets\Logo.png" "Assets\Logo.png"
+"Assets\SmallLogo.png" "Assets\SmallLogo.png"
+"Assets\SplashScreen.png" "Assets\SplashScreen.png"
+"Assets\StoreLogo.png" "Assets\StoreLogo.png"
+"Assets\WideLogo.png" "Assets\WideLogo.png"
+"app.exe" "app.exe"

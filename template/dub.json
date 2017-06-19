@@ -1,0 +1,13 @@
+{
+	"name": "template",
+	"targetName": "app",
+	"dependencies": {
+		"dwinrt": {
+			"path": ".."
+		}
+	},
+	"postBuildCommands-windows": [
+		"cmd /c copy app.exe dist\\app.exe",
+		"cmd /c copy dwinrt.pdb dist\\dwinrt.pdb"
+	]
+}
