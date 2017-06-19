@@ -7279,9 +7279,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar).set_IsSticky(value));
 	}
+	final EventRegistrationToken OnOpened(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Opened(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeOpened(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Opened(token));
+	}
+	final EventRegistrationToken OnClosed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
@@ -7311,9 +7323,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar3).get_TemplateSettings(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnOpening(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Opening(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeOpening(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Opening(token));
+	}
+	final EventRegistrationToken OnClosing(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closing(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeClosing(EventRegistrationToken token)
 	{
@@ -7993,9 +8017,21 @@ extern(Windows):
 	{
 		Debug.OK(remove_DateChanged(token));
 	}
+	final EventRegistrationToken OnOpened(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Opened(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeOpened(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Opened(token));
+	}
+	final EventRegistrationToken OnClosed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
@@ -8938,9 +8974,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox).get_TemplateSettings(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnDropDownClosed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DropDownClosed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeDropDownClosed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DropDownClosed(token));
+	}
+	final EventRegistrationToken OnDropDownOpened(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DropDownOpened(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeDropDownOpened(EventRegistrationToken token)
 	{
@@ -10489,6 +10537,12 @@ extern(Windows):
 	final void Orientation(Windows.UI.Xaml.Controls.Orientation value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker).set_Orientation(value));
+	}
+	final EventRegistrationToken OnDateChanged(void delegate(IInspectable, Windows.UI.Xaml.Controls.DatePickerValueChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DateChanged(event!(Windows.Foundation.EventHandler!(Windows.UI.Xaml.Controls.DatePickerValueChangedEventArgs), IInspectable, Windows.UI.Xaml.Controls.DatePickerValueChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeDateChanged(EventRegistrationToken token)
 	{
@@ -12479,9 +12533,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnHorizontalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+	}
+	final EventRegistrationToken OnVerticalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
 	{
@@ -16019,6 +16085,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ZoomSnapPoints(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnViewChanged(void delegate(IInspectable, Windows.UI.Xaml.Controls.ScrollViewerViewChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ViewChanged(event!(Windows.Foundation.EventHandler!(Windows.UI.Xaml.Controls.ScrollViewerViewChangedEventArgs), IInspectable, Windows.UI.Xaml.Controls.ScrollViewerViewChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeViewChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ViewChanged(token));
@@ -16092,6 +16164,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).set_TopHeader(value));
 	}
+	final EventRegistrationToken OnViewChanging(void delegate(IInspectable, Windows.UI.Xaml.Controls.ScrollViewerViewChangingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ViewChanging(event!(Windows.Foundation.EventHandler!(Windows.UI.Xaml.Controls.ScrollViewerViewChangingEventArgs), IInspectable, Windows.UI.Xaml.Controls.ScrollViewerViewChangingEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeViewChanging(EventRegistrationToken token)
 	{
 		Debug.OK(remove_ViewChanging(token));
@@ -16108,9 +16186,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).abi_ChangeViewWithOptionalAnimation(horizontalOffset, verticalOffset, zoomFactor, disableAnimation, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnDirectManipulationStarted(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DirectManipulationStarted(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeDirectManipulationStarted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_DirectManipulationStarted(token));
+	}
+	final EventRegistrationToken OnDirectManipulationCompleted(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_DirectManipulationCompleted(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeDirectManipulationCompleted(EventRegistrationToken token)
 	{
@@ -16906,9 +16996,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnHorizontalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+	}
+	final EventRegistrationToken OnVerticalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
 	{
@@ -17804,6 +17906,12 @@ extern(Windows):
 	final void Time(Windows.Foundation.TimeSpan value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker).set_Time(value));
+	}
+	final EventRegistrationToken OnTimeChanged(void delegate(IInspectable, Windows.UI.Xaml.Controls.TimePickerValueChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TimeChanged(event!(Windows.Foundation.EventHandler!(Windows.UI.Xaml.Controls.TimePickerValueChangedEventArgs), IInspectable, Windows.UI.Xaml.Controls.TimePickerValueChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeTimeChanged(EventRegistrationToken token)
 	{

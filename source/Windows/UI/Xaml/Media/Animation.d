@@ -3320,6 +3320,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_RepeatBehavior(value));
 	}
+	final EventRegistrationToken OnCompleted(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Completed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeCompleted(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Completed(token));

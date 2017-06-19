@@ -1661,13 +1661,31 @@ extern(Windows):
 	{
 		Debug.OK(remove_DataReceived(token));
 	}
+	final EventRegistrationToken OnTriggerPressed(void delegate(IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TriggerPressed(event!(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner), IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner)(fn), &tok));
+		return tok;
+	}
 	final void removeTriggerPressed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_TriggerPressed(token));
 	}
+	final EventRegistrationToken OnTriggerReleased(void delegate(IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_TriggerReleased(event!(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner), IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner)(fn), &tok));
+		return tok;
+	}
 	final void removeTriggerReleased(EventRegistrationToken token)
 	{
 		Debug.OK(remove_TriggerReleased(token));
+	}
+	final EventRegistrationToken OnReleaseDeviceRequested(void delegate(IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReleaseDeviceRequested(event!(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner), IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner)(fn), &tok));
+		return tok;
 	}
 	final void removeReleaseDeviceRequested(EventRegistrationToken token)
 	{
@@ -2144,6 +2162,12 @@ extern(Windows):
 	final void removeVendorSpecificDataReceived(EventRegistrationToken token)
 	{
 		Debug.OK(remove_VendorSpecificDataReceived(token));
+	}
+	final EventRegistrationToken OnReleaseDeviceRequested(void delegate(IInspectable, Windows.Devices.PointOfService.ClaimedMagneticStripeReader) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_ReleaseDeviceRequested(event!(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader), IInspectable, Windows.Devices.PointOfService.ClaimedMagneticStripeReader)(fn), &tok));
+		return tok;
 	}
 	final void removeReleaseDeviceRequested(EventRegistrationToken token)
 	{

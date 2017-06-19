@@ -1778,6 +1778,12 @@ extern(Windows):
 	{
 		Debug.OK(remove_Suspending(token));
 	}
+	final EventRegistrationToken OnResuming(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Resuming(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeResuming(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Resuming(token));
@@ -2182,6 +2188,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.IDispatcherTimer).get_IsEnabled(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnTick(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Tick(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeTick(EventRegistrationToken token)
 	{
@@ -2671,6 +2683,12 @@ extern(Windows):
 	final void removeSizeChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_SizeChanged(token));
+	}
+	final EventRegistrationToken OnLayoutUpdated(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_LayoutUpdated(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeLayoutUpdated(EventRegistrationToken token)
 	{

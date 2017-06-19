@@ -156,6 +156,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentRestrictions).abi_RequestContentAccessAsync(RatedContentDescription, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnRestrictionsChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_RestrictionsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeRestrictionsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_RestrictionsChanged(token));

@@ -53,6 +53,12 @@ extern(Windows):
 interface SystemNavigationManagerPreview : Windows.UI.Core.Preview.ISystemNavigationManagerPreview
 {
 extern(Windows):
+	final EventRegistrationToken OnCloseRequested(void delegate(IInspectable, Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_CloseRequested(event!(Windows.Foundation.EventHandler!(Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs), IInspectable, Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCloseRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CloseRequested(token));

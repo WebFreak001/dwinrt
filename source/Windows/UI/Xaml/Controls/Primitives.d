@@ -1589,9 +1589,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnHorizontalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+	}
+	final EventRegistrationToken OnVerticalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
 	{
@@ -1775,13 +1787,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase).set_Placement(value));
 	}
+	final EventRegistrationToken OnOpened(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Opened(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeOpened(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Opened(token));
 	}
+	final EventRegistrationToken OnClosed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeClosed(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Closed(token));
+	}
+	final EventRegistrationToken OnOpening(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Opening(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeOpening(EventRegistrationToken token)
 	{
@@ -2643,9 +2673,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnHorizontalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+	}
+	final EventRegistrationToken OnVerticalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
 	{
@@ -2819,9 +2861,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnHorizontalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+	}
+	final EventRegistrationToken OnVerticalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
 	{
@@ -2883,9 +2937,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnHorizontalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+	}
+	final EventRegistrationToken OnVerticalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
 	{
@@ -2968,9 +3034,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).set_IsLightDismissEnabled(value));
 	}
+	final EventRegistrationToken OnOpened(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Opened(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
 	final void removeOpened(EventRegistrationToken token)
 	{
 		Debug.OK(remove_Opened(token));
+	}
+	final EventRegistrationToken OnClosed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_Closed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{

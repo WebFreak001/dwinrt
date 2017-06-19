@@ -1895,6 +1895,12 @@ extern(Windows):
 interface SystemNavigationManager : Windows.UI.Core.ISystemNavigationManager, Windows.UI.Core.ISystemNavigationManager2
 {
 extern(Windows):
+	final EventRegistrationToken OnBackRequested(void delegate(IInspectable, Windows.UI.Core.BackRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(add_BackRequested(event!(Windows.Foundation.EventHandler!(Windows.UI.Core.BackRequestedEventArgs), IInspectable, Windows.UI.Core.BackRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeBackRequested(EventRegistrationToken token)
 	{
 		Debug.OK(remove_BackRequested(token));

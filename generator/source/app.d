@@ -1425,6 +1425,19 @@ struct InterfaceMethod
 					~ ", " ~ args ~ ")(fn), &tok));";
 				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
 			}
+			else if (arguments[0].type.startsWith("Windows.Foundation.EventHandler!("))
+			{
+				enforce(arguments[1].type == "EventRegistrationToken*", arguments[1].type);
+				string type = arguments[0].type;
+				string args = type["Windows.Foundation.EventHandler!(".length .. $ - 1];
+				arguments = [InterfaceArgument(ArgumentDirection.in_,
+						"void delegate(IInspectable, " ~ args ~ ")", "fn")];
+				name = "On" ~ name;
+				returnType = "EventRegistrationToken";
+				string registerCall = "Debug.OK(" ~ fname ~ "(event!(" ~ type
+					~ ", IInspectable, " ~ args ~ ")(fn), &tok));";
+				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
+			}
 			else
 			{
 				writeln("TODO implement EventHandler Type ", arguments[0].type);
