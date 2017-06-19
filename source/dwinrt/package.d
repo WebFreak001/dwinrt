@@ -600,7 +600,7 @@ interface IMarshal : IUnknown
 	HRESULT DisconnectObject(DWORD);
 }
 
-class Marshaler(T) : TComObject!T, IMarshal
+class Marshaler(T) : Inspectable!T, IMarshal
 {
 extern (Windows):
 	final HRESULT GetUnmarshalClass(REFIID riid, void* pv, DWORD dwDestContext,
@@ -1261,6 +1261,24 @@ auto event(Base = Windows.Foundation.TypedEventHandler!(TSender, TArgs), TSender
 	return new TypedEvent!(TSender, TArgs, Base)((sender, args) {
 		cb(sender, args);
 	});
+}
+
+struct makable(Composable, Class, Interface)
+{
+}
+
+auto make(T, Args...)(Args args)
+{
+	foreach (attr; __traits(getAttributes, T))
+	{
+		static if (is(attr : makable!(Composable, Class, Interface), Composable, Class, Interface))
+		{
+			T t = new T(args);
+			Class inst;
+			Debug.OK(activationFactory!(Class, Interface).abi_CreateInstance(t, &t.m_inner, &inst));
+			return t.as!Composable;
+		}
+	}
 }
 
 enum bitflags;

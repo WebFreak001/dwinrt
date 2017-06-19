@@ -13,6 +13,8 @@ import Windows.UI.Input;
 import Windows.UI.Core;
 import Windows.UI.Composition;
 import Windows.UI.Popups;
+import Windows.UI.Xaml : IDispatcherTimer, DispatcherTimer,
+	IDispatcherTimerFactory;
 
 extern (Windows) int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		LPSTR lpCmdLine, int nCmdShow)
@@ -158,6 +160,9 @@ extern (Windows):
 		Debug.WriteLine("Window Activated");
 
 		dispatcher = window.Dispatcher;
+
+		auto timer = make!DispatcherTimerT;
+
 		dispatcher.ProcessEvents(CoreProcessEventsOption.ProcessUntilQuit);
 
 		return S_OK;
@@ -175,9 +180,68 @@ private:
 	CoreDispatcher dispatcher;
 }
 
+@makable!(DispatcherTimer, DispatcherTimer, IDispatcherTimerFactory) class DispatcherTimerT
+	: Marshaler!DispatcherTimerT, DispatcherTimer
+{
+	override HRESULT get_Interval(Windows.Foundation.TimeSpan* return_value)
+	{
+		return m_inner.as!DispatcherTimer.get_Interval(return_value);
+	}
+
+	override HRESULT set_Interval(Windows.Foundation.TimeSpan value)
+	{
+		return m_inner.as!DispatcherTimer.set_Interval(value);
+	}
+
+	override HRESULT get_IsEnabled(bool* return_value)
+	{
+		return m_inner.as!DispatcherTimer.get_IsEnabled(return_value);
+	}
+
+	override HRESULT add_Tick(Windows.Foundation.EventHandler!(IInspectable) value,
+			EventRegistrationToken* return_token)
+	{
+		return m_inner.as!DispatcherTimer.add_Tick(value, return_token);
+	}
+
+	override HRESULT remove_Tick(EventRegistrationToken token)
+	{
+		return m_inner.as!DispatcherTimer.remove_Tick(token);
+	}
+
+	override HRESULT abi_Start()
+	{
+		return m_inner.as!DispatcherTimer.abi_Start();
+	}
+
+	override HRESULT abi_Stop()
+	{
+		return m_inner.as!DispatcherTimer.abi_Stop();
+	}
+
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	U as(U)()
+	{
+		return m_inner.as!U;
+	}
+
+	this()
+	{
+	}
+
+	IInspectable m_inner;
+}
+
 void run()
 {
-	//MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
+	MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
 
 	Debug.OK(factory!ICoreApplication.abi_Run(new App));
 }
