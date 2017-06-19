@@ -77,24 +77,26 @@ unittest
 
 GUID uuidOf(T, bool throwIfNotThere = true)()
 {
-	enum instanced = uuidOfInstanced!T;
-	static if (instanced != GUID.init)
-		return instanced;
-	else
+	GUID ret;
+	foreach (attr; __traits(getAttributes, T))
 	{
-		GUID ret;
-		foreach (attr; __traits(getAttributes, T))
-		{
-			static if (is(typeof(attr) == GUID))
-				ret = attr;
-			else static if (is(typeof(attr) == dynamicUUID))
-				ret = sha1UUID(T.stringof, attr.base);
-		}
-		static if (throwIfNotThere)
-			if (ret == GUID.init)
-				assert(false, T.stringof ~ " has no GUID attached to it! Use @uuid(...) to attach");
-		return ret;
+		static if (is(typeof(attr) == GUID))
+			ret = attr;
+		else static if (is(typeof(attr) == dynamicUUID))
+			ret = sha1UUID(T.stringof, attr.base);
 	}
+	static if (throwIfNotThere)
+		if (ret == GUID.init)
+			assert(false, T.stringof ~ " has no GUID attached to it! Use @uuid(...) to attach");
+	return ret;
+}
+
+GUID uuidOfRt(T)()
+{
+	auto uuid = uuidOf!(T, false);
+	if (uuid == GUID.init)
+		uuid = uuidOfInstanced(T.stringof);
+	return uuid;
 }
 
 wstring factoryNameOf(T)()
@@ -405,7 +407,7 @@ void inspect(T : IInspectable)(IInspectable inspectable)
 	if (hstring(name).d_str != target)
 	{
 		string dname = hstring(name).d_str.to!string;
-		enum uuids = listUUIDs!T;
+		auto uuids = listUUIDs!T;
 		uint num;
 		GUID* iids;
 		inspectable.abi_GetIids(&num, &iids);
@@ -434,7 +436,7 @@ struct EventRegistrationToken
 T factory(T : IUnknown)()
 {
 	T p;
-	static immutable id = uuidOf!T;
+	auto id = uuidOfRt!T;
 	debug (DWinRT)
 		Debug.WriteLine("RoGetActivationFactory(%s, %s)", factoryNameOf!T, id.guidToString);
 	auto result = RoGetActivationFactory(hstring(factoryNameOf!T).handle, id, cast(void**)&p);
@@ -445,7 +447,7 @@ T factory(T : IUnknown)()
 Interface factory(Class : IUnknown, Interface : IUnknown)()
 {
 	Interface factory;
-	static immutable id = uuidOf!Interface;
+	auto id = uuidOfRt!Interface;
 	enum rt = winrtNameOf!Class;
 	debug (DWinRT)
 		Debug.WriteLine("RoGetActivationFactory(%s, %s)", rt, id.guidToString);
@@ -464,7 +466,11 @@ auto tryAs(U : IUnknown, T : IUnknown)(T base)
 	}
 	else
 	{
-		tmp = cast(U) base;
+		auto rtID = uuidOfInstanced(U.stringof);
+		if (rtID != GUID.init)
+			base.QueryInterface(&rtID, cast(void**)&tmp);
+		else
+			tmp = cast(U) base;
 	}
 	return tmp;
 }
@@ -479,7 +485,11 @@ auto as(U : IUnknown, T : IUnknown)(T base)
 	}
 	else
 	{
-		tmp = cast(U) base;
+		auto rtID = uuidOfInstanced(U.stringof);
+		if (rtID != GUID.init)
+			base.QueryInterface(&rtID, cast(void**)&tmp);
+		else
+			tmp = cast(U) base;
 	}
 	return tmp;
 }
@@ -777,7 +787,7 @@ void then(Async, Args...)(Async async, void delegate(Args) cb)
 IAgileReference agileRef(T : IUnknown)(T obj)
 {
 	IAgileReference _ref;
-	Debug.OK(RoGetAgileReference(AGILEREFERENCE_DEFAULT, uuidOf!T, obj, &_ref));
+	Debug.OK(RoGetAgileReference(AGILEREFERENCE_DEFAULT, uuidOfRt!T, obj, &_ref));
 	return _ref;
 }
 
@@ -1132,7 +1142,7 @@ GUID[] listUUIDs(T)()
 	GUID[] arr;
 	foreach (Base; InterfacesTuple!T)
 	{
-		auto uuid = uuidOf!(Base, false);
+		auto uuid = uuidOfRt!Base;
 		if (uuid != GUID.init && !arr.canFind(uuid))
 			arr ~= uuid;
 	}
@@ -1154,14 +1164,11 @@ extern (Windows):
 			AddRef();
 			return S_OK;
 		}
-		pragma(msg, InterfacesTuple!T);
 		foreach (Base; InterfacesTuple!T)
 		{
-			enum uuid = uuidOf!(Base, false);
-			static if (uuid != GUID.init)
+			enum uuid = uuidOfRt!Base;
+			if (uuid != GUID.init)
 			{
-				pragma(msg, Base);
-				pragma(msg, uuid);
 				Debug.WriteLine("Base %s [%s] ?= %s", Base.stringof,
 						uuid.guidToString, iid.guidToString);
 				if (uuid == iid)
@@ -1206,7 +1213,7 @@ class Inspectable(T) : TComObject!T, IInspectable
 extern (Windows):
 	HRESULT abi_GetIids(uint* iidCount, GUID** iids)
 	{
-		static immutable arr = listUUIDs!T;
+		auto arr = listUUIDs!T;
 
 		*iidCount = cast(uint) arr.length;
 		*iids = cast(GUID*) arr.ptr;

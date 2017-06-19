@@ -92,20 +92,19 @@ extern (Windows):
 
 	void OnPointerPressed(CoreWindow sender, PointerEventArgs args)
 	{
-		MessageDialog dialog;
-		Debug.OK(dwinrt.factory!IMessageDialogFactory.abi_CreateWithTitle(hstring("Running UI code from separate thread")
-			.handle, hstring("D rox!").handle, &dialog));
-		dialog.ShowAsync().then((IUICommand command) {
-			dispatcher.RunAsync(CoreDispatcherPriority.Normal, () {
-				MessageDialog dialog2;
-				Debug.OK(dwinrt.factory!IMessageDialogFactory.abi_CreateWithTitle(hstring("PogChamp PogChamp PogChamp")
-					.handle, hstring("D rox!").handle, &dialog2));
-				dialog2.ShowAsync();
-			}.handler!DispatchedHandler).then({
-				Debug.WriteLine("Run");
-			});
-		});
+		spam();
 		AddVisual(args.CurrentPoint.Position);
+	}
+
+	extern (D) void spam()
+	{
+		MessageDialog dialog;
+		Debug.OK(dwinrt.factory!IMessageDialogFactory.abi_CreateWithTitle(
+				hstring("You are the 1 millionth visitor! Claim your price now.")
+				.handle, hstring("Congratulations!").handle, &dialog));
+		dialog.ShowAsync().then((IUICommand command) {
+			dispatcher.RunAsync(CoreDispatcherPriority.Normal, handler!DispatchedHandler(&spam));
+		});
 	}
 
 	void OnPointerMoved(CoreWindow sender, PointerEventArgs args)
