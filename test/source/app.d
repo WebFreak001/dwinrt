@@ -90,7 +90,7 @@ extern (Windows):
 		return S_OK;
 	}
 
-	void OnPointerPressed(CoreWindow sender, PointerEventArgs args)
+	void OnPointerPressed(CoreWindow, PointerEventArgs args)
 	{
 		spam();
 		AddVisual(args.CurrentPoint.Position);
@@ -102,12 +102,23 @@ extern (Windows):
 		Debug.OK(dwinrt.factory!IMessageDialogFactory.abi_CreateWithTitle(
 				hstring("You are the 1 millionth visitor! Claim your price now.")
 				.handle, hstring("Congratulations!").handle, &dialog));
-		dialog.ShowAsync().then((IUICommand command) {
-			dispatcher.RunAsync(CoreDispatcherPriority.Normal, handler!DispatchedHandler(&spam));
+		UICommand defaultCommand, cancelCommand;
+		Debug.OK(dwinrt.factory!IUICommandFactory.abi_Create(hstring("Claim Reward")
+				.handle, &defaultCommand));
+		Debug.OK(dwinrt.factory!IUICommandFactory.abi_Create(hstring("Later")
+				.handle, &cancelCommand));
+		Debug.OK(dialog.Commands.abi_Append(defaultCommand));
+		Debug.OK(dialog.Commands.abi_Append(cancelCommand));
+		dialog.DefaultCommandIndex = 0;
+		dialog.CancelCommandIndex = 1;
+		dialog.ShowAsync().then((IUICommand c) {
+			auto com = c;
+			if (com == cancelCommand)
+				dispatcher.RunAsync(CoreDispatcherPriority.Low, handler!DispatchedHandler(&spam));
 		});
 	}
 
-	void OnPointerMoved(CoreWindow sender, PointerEventArgs args)
+	void OnPointerMoved(CoreWindow, PointerEventArgs)
 	{
 	}
 
