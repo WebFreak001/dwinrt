@@ -34,6 +34,8 @@ extern(Windows):
 	HRESULT add_ServiceClosed(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ServiceClosed(EventRegistrationToken token);
 }
+@uuid("9dd474a2-871f-4d52-89a9-9e090531bd27")
+@WinrtFactory("Windows.ApplicationModel.AppService.AppServiceConnection")
 interface IAppServiceConnection : IAppServiceConnection_Base, Windows.Foundation.IClosable {}
 
 @uuid("8bdfcd5f-2302-4fbd-8061-52511c2f8bf9")

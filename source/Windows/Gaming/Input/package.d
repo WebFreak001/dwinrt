@@ -66,6 +66,8 @@ extern(Windows):
 	HRESULT abi_GetButtonLabel(Windows.Gaming.Input.ArcadeStickButtons button, Windows.Gaming.Input.GameControllerButtonLabel* return_value);
 	HRESULT abi_GetCurrentReading(Windows.Gaming.Input.ArcadeStickReading* return_value);
 }
+@uuid("b14a539d-befb-4c81-8051-15ecf3b13036")
+@WinrtFactory("Windows.Gaming.Input.ArcadeStick")
 interface IArcadeStick : IArcadeStick_Base, Windows.Gaming.Input.IGameController {}
 
 @uuid("5c37b8c8-37b1-4ad8-9458-200f1a30018e")
@@ -87,6 +89,8 @@ interface IArcadeStickStatics2_Base : IInspectable
 extern(Windows):
 	HRESULT abi_FromGameController(Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.ArcadeStick* return_value);
 }
+@uuid("52b5d744-bb86-445a-b59c-596f0e2a49df")
+@WinrtFactory("Windows.Gaming.Input.ArcadeStick")
 interface IArcadeStickStatics2 : IArcadeStickStatics2_Base, Windows.Gaming.Input.IArcadeStickStatics {}
 
 @uuid("b4a2c01c-b83b-4459-a1a9-97b03c33da7c")
@@ -98,6 +102,8 @@ extern(Windows):
 	HRESULT abi_GetButtonLabel(Windows.Gaming.Input.FlightStickButtons button, Windows.Gaming.Input.GameControllerButtonLabel* return_value);
 	HRESULT abi_GetCurrentReading(Windows.Gaming.Input.FlightStickReading* return_value);
 }
+@uuid("b4a2c01c-b83b-4459-a1a9-97b03c33da7c")
+@WinrtFactory("Windows.Gaming.Input.FlightStick")
 interface IFlightStick : IFlightStick_Base, Windows.Gaming.Input.IGameController {}
 
 @uuid("5514924a-fecc-435e-83dc-5cec8a18a520")
@@ -144,6 +150,8 @@ extern(Windows):
 	HRESULT set_Vibration(Windows.Gaming.Input.GamepadVibration value);
 	HRESULT abi_GetCurrentReading(Windows.Gaming.Input.GamepadReading* return_value);
 }
+@uuid("bc7bb43c-0a69-3903-9e9d-a50f86a45de5")
+@WinrtFactory("Windows.Gaming.Input.Gamepad")
 interface IGamepad : IGamepad_Base, Windows.Gaming.Input.IGameController {}
 
 @uuid("3c1689bd-5915-4245-b0c0-c89fae0308ff")
@@ -153,6 +161,8 @@ interface IGamepad2_Base : IInspectable
 extern(Windows):
 	HRESULT abi_GetButtonLabel(Windows.Gaming.Input.GamepadButtons button, Windows.Gaming.Input.GameControllerButtonLabel* return_value);
 }
+@uuid("3c1689bd-5915-4245-b0c0-c89fae0308ff")
+@WinrtFactory("Windows.Gaming.Input.Gamepad")
 interface IGamepad2 : IGamepad2_Base, Windows.Gaming.Input.IGamepad, Windows.Gaming.Input.IGameController {}
 
 @uuid("8bbce529-d49c-39e9-9560-e47dde96b7c8")
@@ -174,6 +184,8 @@ interface IGamepadStatics2_Base : IInspectable
 extern(Windows):
 	HRESULT abi_FromGameController(Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.Gamepad* return_value);
 }
+@uuid("42676dc5-0856-47c4-9213-b395504c3a3c")
+@WinrtFactory("Windows.Gaming.Input.Gamepad")
 interface IGamepadStatics2 : IGamepadStatics2_Base, Windows.Gaming.Input.IGamepadStatics {}
 
 @uuid("3fd156ef-6925-3fa8-9181-029c5223ae3b")
@@ -199,6 +211,8 @@ extern(Windows):
 	HRESULT abi_GetButtonLabel(Windows.Gaming.Input.RacingWheelButtons button, Windows.Gaming.Input.GameControllerButtonLabel* return_value);
 	HRESULT abi_GetCurrentReading(Windows.Gaming.Input.RacingWheelReading* return_value);
 }
+@uuid("f546656f-e106-4c82-a90f-554012904b85")
+@WinrtFactory("Windows.Gaming.Input.RacingWheel")
 interface IRacingWheel : IRacingWheel_Base, Windows.Gaming.Input.IGameController {}
 
 @uuid("3ac12cd5-581b-4936-9f94-69f1e6514c7d")
@@ -220,6 +234,8 @@ interface IRacingWheelStatics2_Base : IInspectable
 extern(Windows):
 	HRESULT abi_FromGameController(Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.RacingWheel* return_value);
 }
+@uuid("e666bcaa-edfd-4323-a9f6-3c384048d1ed")
+@WinrtFactory("Windows.Gaming.Input.RacingWheel")
 interface IRacingWheelStatics2 : IRacingWheelStatics2_Base, Windows.Gaming.Input.IRacingWheelStatics {}
 
 @uuid("7cad6d91-a7e1-4f71-9a78-33e9c5dfea62")
@@ -237,6 +253,8 @@ extern(Windows):
 	HRESULT abi_GetCurrentReading(UINT32 __buttonArraySize, bool* out_buttonArray, UINT32 __switchArraySize, Windows.Gaming.Input.GameControllerSwitchPosition* out_switchArray, UINT32 __axisArraySize, double* out_axisArray, UINT64* return_timestamp);
 	HRESULT abi_GetSwitchKind(INT32 switchIndex, Windows.Gaming.Input.GameControllerSwitchKind* return_value);
 }
+@uuid("7cad6d91-a7e1-4f71-9a78-33e9c5dfea62")
+@WinrtFactory("Windows.Gaming.Input.RawGameController")
 interface IRawGameController : IRawGameController_Base, Windows.Gaming.Input.IGameController {}
 
 @uuid("eb8d0792-e95a-4b19-afc7-0a59f8bf759e")
@@ -261,6 +279,8 @@ extern(Windows):
 	HRESULT abi_GetOptionalButtonLabel(Windows.Gaming.Input.OptionalUINavigationButtons button, Windows.Gaming.Input.GameControllerButtonLabel* return_value);
 	HRESULT abi_GetRequiredButtonLabel(Windows.Gaming.Input.RequiredUINavigationButtons button, Windows.Gaming.Input.GameControllerButtonLabel* return_value);
 }
+@uuid("e5aeefdd-f50e-4a55-8cdc-d33229548175")
+@WinrtFactory("Windows.Gaming.Input.UINavigationController")
 interface IUINavigationController : IUINavigationController_Base, Windows.Gaming.Input.IGameController {}
 
 @uuid("2f14930a-f6f8-4a48-8d89-94786cca0c2e")
@@ -282,6 +302,8 @@ interface IUINavigationControllerStatics2_Base : IInspectable
 extern(Windows):
 	HRESULT abi_FromGameController(Windows.Gaming.Input.IGameController gameController, Windows.Gaming.Input.UINavigationController* return_value);
 }
+@uuid("e0cb28e3-b20b-4b0b-9ed4-f3d53cec0de4")
+@WinrtFactory("Windows.Gaming.Input.UINavigationController")
 interface IUINavigationControllerStatics2 : IUINavigationControllerStatics2_Base, Windows.Gaming.Input.IUINavigationControllerStatics {}
 
 interface ArcadeStick : Windows.Gaming.Input.IArcadeStick, Windows.Gaming.Input.IGameController, Windows.Gaming.Input.IGameControllerBatteryInfo

@@ -9,6 +9,8 @@ interface IAudioDeviceInputNode_Base : IInspectable
 extern(Windows):
 	HRESULT get_Device(Windows.Devices.Enumeration.DeviceInformation* return_value);
 }
+@uuid("b01b6be1-6f4e-49e2-ac01-559d62beb3a9")
+@WinrtFactory("Windows.Media.Audio.AudioDeviceInputNode")
 interface IAudioDeviceInputNode : IAudioDeviceInputNode_Base, Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable {}
 
 @uuid("362edbff-ff1c-4434-9e0f-bd2ef522ac82")
@@ -18,6 +20,8 @@ interface IAudioDeviceOutputNode_Base : IInspectable
 extern(Windows):
 	HRESULT get_Device(Windows.Devices.Enumeration.DeviceInformation* return_value);
 }
+@uuid("362edbff-ff1c-4434-9e0f-bd2ef522ac82")
+@WinrtFactory("Windows.Media.Audio.AudioDeviceOutputNode")
 interface IAudioDeviceOutputNode : IAudioDeviceOutputNode_Base, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable {}
 
 @uuid("905b67c8-6f65-4cd4-8890-4694843c276d")
@@ -40,6 +44,8 @@ extern(Windows):
 	HRESULT add_FileCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFileInputNode, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_FileCompleted(EventRegistrationToken token);
 }
+@uuid("905b67c8-6f65-4cd4-8890-4694843c276d")
+@WinrtFactory("Windows.Media.Audio.AudioFileInputNode")
 interface IAudioFileInputNode : IAudioFileInputNode_Base, Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable {}
 
 @uuid("50e01980-5166-4093-80f8-ada00089e9cf")
@@ -51,6 +57,8 @@ extern(Windows):
 	HRESULT get_FileEncodingProfile(Windows.Media.MediaProperties.MediaEncodingProfile* return_value);
 	HRESULT abi_FinalizeAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.TranscodeFailureReason)* return_result);
 }
+@uuid("50e01980-5166-4093-80f8-ada00089e9cf")
+@WinrtFactory("Windows.Media.Audio.AudioFileOutputNode")
 interface IAudioFileOutputNode : IAudioFileOutputNode_Base, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable {}
 
 @uuid("dc7c829e-0208-4504-a5a8-f0f268920a65")
@@ -76,6 +84,8 @@ extern(Windows):
 	HRESULT add_QuantumStarted(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_QuantumStarted(EventRegistrationToken token);
 }
+@uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237")
+@WinrtFactory("Windows.Media.Audio.AudioFrameInputNode")
 interface IAudioFrameInputNode : IAudioFrameInputNode_Base, Windows.Media.Audio.IAudioInputNode, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable {}
 
 @uuid("b847371b-3299-45f5-88b3-c9d12a3f1cc8")
@@ -85,6 +95,8 @@ interface IAudioFrameOutputNode_Base : IInspectable
 extern(Windows):
 	HRESULT abi_GetFrame(Windows.Media.AudioFrame* return_audioFrame);
 }
+@uuid("b847371b-3299-45f5-88b3-c9d12a3f1cc8")
+@WinrtFactory("Windows.Media.Audio.AudioFrameOutputNode")
 interface IAudioFrameOutputNode : IAudioFrameOutputNode_Base, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable {}
 
 @uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8")
@@ -121,6 +133,8 @@ extern(Windows):
 	HRESULT get_RenderDeviceAudioProcessing(Windows.Media.AudioProcessing* return_value);
 	HRESULT get_SamplesPerQuantum(INT32* return_value);
 }
+@uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8")
+@WinrtFactory("Windows.Media.Audio.AudioGraph")
 interface IAudioGraph : IAudioGraph_Base, Windows.Foundation.IClosable {}
 
 @uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839")
@@ -134,6 +148,8 @@ extern(Windows):
 	HRESULT abi_CreateSubmixNodeWithFormatAndEmitter(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter, Windows.Media.Audio.AudioSubmixNode* return_submixNode);
 	HRESULT abi_CreateBatchUpdater(Windows.Media.Audio.AudioGraphBatchUpdater* return_updater);
 }
+@uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839")
+@WinrtFactory("Windows.Media.Audio.AudioGraph")
 interface IAudioGraph2 : IAudioGraph2_Base, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioGraph {}
 
 @uuid("763070ed-d04e-4fac-b233-600b42edd469")
@@ -198,6 +214,7 @@ extern(Windows):
 	HRESULT abi_AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain);
 	HRESULT abi_RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination);
 }
+@uuid("d148005c-8428-4784-b7fd-a99d468c5d20")
 interface IAudioInputNode : IAudioInputNode_Base, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable {}
 
 @uuid("905156b7-ca68-4c6d-a8bc-e3ee17fe3fd2")
@@ -206,6 +223,7 @@ interface IAudioInputNode2_Base : IInspectable
 extern(Windows):
 	HRESULT get_Emitter(Windows.Media.Audio.AudioNodeEmitter* return_value);
 }
+@uuid("905156b7-ca68-4c6d-a8bc-e3ee17fe3fd2")
 interface IAudioInputNode2 : IAudioInputNode2_Base, Windows.Media.Audio.IAudioNode, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioInputNode {}
 
 @uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d")
@@ -224,6 +242,7 @@ extern(Windows):
 	HRESULT abi_DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition);
 	HRESULT abi_EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition);
 }
+@uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d")
 interface IAudioNode : IAudioNode_Base, Windows.Foundation.IClosable {}
 
 @uuid("3676971d-880a-47b8-adf7-1323a9d965be")
@@ -344,6 +363,7 @@ extern(Windows):
 	HRESULT set_Listener(Windows.Media.Audio.AudioNodeListener value);
 	HRESULT get_Listener(Windows.Media.Audio.AudioNodeListener* return_value);
 }
+@uuid("0e0f907c-79ff-4544-9eeb-01257b15105a")
 interface IAudioNodeWithListener : IAudioNodeWithListener_Base, Windows.Foundation.IClosable, Windows.Media.Audio.IAudioNode {}
 
 @uuid("16eec7a8-1ca7-40ef-91a4-d346e0aa1bba")
@@ -403,6 +423,8 @@ extern(Windows):
 	HRESULT set_Delay(double value);
 	HRESULT get_Delay(double* return_value);
 }
+@uuid("0e4d3faa-36b8-4c91-b9da-11f44a8a6610")
+@WinrtFactory("Windows.Media.Audio.EchoEffectDefinition")
 interface IEchoEffectDefinition : IEchoEffectDefinition_Base, Windows.Media.Effects.IAudioEffectDefinition {}
 
 @uuid("0d4e2257-aaf2-4e86-a54c-fb79db8f6c12")
@@ -433,6 +455,8 @@ interface IEqualizerEffectDefinition_Base : IInspectable
 extern(Windows):
 	HRESULT get_Bands(Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.EqualizerBand)* return_value);
 }
+@uuid("023f6f1f-83fe-449a-a822-c696442d16b0")
+@WinrtFactory("Windows.Media.Audio.EqualizerEffectDefinition")
 interface IEqualizerEffectDefinition : IEqualizerEffectDefinition_Base, Windows.Media.Effects.IAudioEffectDefinition {}
 
 @uuid("d2876fc4-d410-4eb5-9e69-c9aa1277eaf0")
@@ -461,6 +485,8 @@ extern(Windows):
 	HRESULT set_Loudness(UINT32 value);
 	HRESULT get_Loudness(UINT32* return_value);
 }
+@uuid("6b755d19-2603-47ba-bdeb-39055e3486dc")
+@WinrtFactory("Windows.Media.Audio.LimiterEffectDefinition")
 interface ILimiterEffectDefinition : ILimiterEffectDefinition_Base, Windows.Media.Effects.IAudioEffectDefinition {}
 
 @uuid("ecbae6f1-61ff-45ef-b8f5-48659a57c72d")
@@ -523,6 +549,8 @@ extern(Windows):
 	HRESULT set_DisableLateField(bool value);
 	HRESULT get_DisableLateField(bool* return_value);
 }
+@uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84")
+@WinrtFactory("Windows.Media.Audio.ReverbEffectDefinition")
 interface IReverbEffectDefinition : IReverbEffectDefinition_Base, Windows.Media.Effects.IAudioEffectDefinition {}
 
 @uuid("a7d5cbfe-100b-4ff0-9da6-dc4e05a759f0")

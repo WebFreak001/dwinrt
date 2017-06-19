@@ -116,6 +116,8 @@ extern(Windows):
 	HRESULT get_DeviceDescriptor(Windows.Devices.Usb.UsbDeviceDescriptor* return_value);
 	HRESULT get_Configuration(Windows.Devices.Usb.UsbConfiguration* return_value);
 }
+@uuid("5249b992-c456-44d5-ad5e-24f5a089f63b")
+@WinrtFactory("Windows.Devices.Usb.UsbDevice")
 interface IUsbDevice : IUsbDevice_Base, Windows.Foundation.IClosable {}
 
 @uuid("051942f9-845e-47eb-b12a-38f2f617afe7")

@@ -36,6 +36,8 @@ extern(Windows):
 	HRESULT abi_Remove(Windows.UI.Composition.Interactions.ICompositionInteractionSource value);
 	HRESULT abi_RemoveAll();
 }
+@uuid("1b468e4b-a5bf-47d8-a547-3894155a158c")
+@WinrtFactory("Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection")
 interface ICompositionInteractionSourceCollection : ICompositionInteractionSourceCollection_Base, Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.ICompositionInteractionSource) {}
 
 @uuid("2a8e8cb1-1000-4416-8363-cc27fb877308")

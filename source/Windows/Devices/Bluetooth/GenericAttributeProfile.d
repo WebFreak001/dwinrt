@@ -35,6 +35,8 @@ extern(Windows):
 	deprecated("Use GetDescriptorsAsync instead of GetAllDescriptors.  For more information, see MSDN.")
 	HRESULT abi_GetAllDescriptors(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptor)* return_descriptors);
 }
+@uuid("ae1ab578-ec06-4764-b780-9835a1d35d6e")
+@WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic")
 interface IGattCharacteristic2 : IGattCharacteristic2_Base, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic {}
 
 @uuid("3f3c663e-93d4-406b-b817-db81f8ed53b3")
@@ -242,6 +244,8 @@ extern(Windows):
 	HRESULT get_Uuid(GUID* return_value);
 	HRESULT get_AttributeHandle(UINT16* return_value);
 }
+@uuid("ac7b7c05-b33c-47cf-990f-6b8f5577df71")
+@WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService")
 interface IGattDeviceService : IGattDeviceService_Base, Windows.Foundation.IClosable {}
 
 @uuid("fc54520b-0b0d-4708-bae0-9ffd9489bc59")
@@ -258,6 +262,8 @@ extern(Windows):
 	deprecated("Use GetIncludedServicesAsync instead of GetAllIncludedServices.	 For more information, see MSDN.")
 	HRESULT abi_GetAllIncludedServices(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService)* return_includedServices);
 }
+@uuid("fc54520b-0b0d-4708-bae0-9ffd9489bc59")
+@WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService")
 interface IGattDeviceService2 : IGattDeviceService2_Base, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService, Windows.Foundation.IClosable {}
 
 @uuid("b293a950-0c53-437c-a9b3-5c3210c6e569")
@@ -441,6 +447,8 @@ interface IGattPresentationFormatStatics2_Base : IInspectable
 extern(Windows):
 	HRESULT abi_FromParts(BYTE formatType, INT32 exponent, UINT16 unit, BYTE namespaceId, UINT16 description, Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat* return_result);
 }
+@uuid("a9c21713-b82f-435e-b634-21fd85a43c07")
+@WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat")
 interface IGattPresentationFormatStatics2 : IGattPresentationFormatStatics2_Base, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattPresentationFormatStatics {}
 
 @uuid("faf1ba0a-30ba-409c-bef7-cffb6d03b8fb")

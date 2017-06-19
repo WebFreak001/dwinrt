@@ -11,6 +11,8 @@ extern(Windows):
 	HRESULT abi_ReadValue(INT32* return_result);
 	HRESULT abi_ReadRatio(double* return_result);
 }
+@uuid("040bf414-2588-4a56-abef-73a260acc60a")
+@WinrtFactory("Windows.Devices.Adc.AdcChannel")
 interface IAdcChannel : IAdcChannel_Base, Windows.Foundation.IClosable {}
 
 @uuid("2a76e4b0-a896-4219-86b6-ea8cdce98f56")

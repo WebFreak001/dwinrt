@@ -19,6 +19,8 @@ interface IPrintCustomItemListOptionDetails_Base : IInspectable
 extern(Windows):
 	HRESULT abi_AddItem(HSTRING itemId, HSTRING displayName);
 }
+@uuid("a5fafd88-58f2-4ebd-b90f-51e4f2944c5d")
+@WinrtFactory("Windows.Graphics.Printing.OptionDetails.PrintCustomItemListOptionDetails")
 interface IPrintCustomItemListOptionDetails : IPrintCustomItemListOptionDetails_Base, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails {}
 
 @uuid("e32bde1c-28af-4b90-95da-a3acf320b929")
@@ -28,6 +30,7 @@ extern(Windows):
 	HRESULT set_DisplayName(HSTRING value);
 	HRESULT get_DisplayName(HSTRING* return_value);
 }
+@uuid("e32bde1c-28af-4b90-95da-a3acf320b929")
 interface IPrintCustomOptionDetails : IPrintCustomOptionDetails_Base, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails {}
 
 @uuid("2ad171f8-c8bd-4905-9192-0d75136e8b31")
@@ -38,6 +41,8 @@ extern(Windows):
 	HRESULT set_MaxCharacters(UINT32 value);
 	HRESULT get_MaxCharacters(UINT32* return_value);
 }
+@uuid("2ad171f8-c8bd-4905-9192-0d75136e8b31")
+@WinrtFactory("Windows.Graphics.Printing.OptionDetails.PrintCustomTextOptionDetails")
 interface IPrintCustomTextOptionDetails : IPrintCustomTextOptionDetails_Base, Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails {}
 
 @uuid("9a2257bf-fe61-43d8-a24f-a3f6ab7320e7")
@@ -46,6 +51,7 @@ interface IPrintItemListOptionDetails_Base : IInspectable
 extern(Windows):
 	HRESULT get_Items(Windows.Foundation.Collections.IVectorView!(IInspectable)* return_value);
 }
+@uuid("9a2257bf-fe61-43d8-a24f-a3f6ab7320e7")
 interface IPrintItemListOptionDetails : IPrintItemListOptionDetails_Base, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails {}
 
 @uuid("4d01bbaf-645c-4de9-965f-6fc6bbc47cab")
@@ -55,6 +61,7 @@ extern(Windows):
 	HRESULT get_MinValue(UINT32* return_value);
 	HRESULT get_MaxValue(UINT32* return_value);
 }
+@uuid("4d01bbaf-645c-4de9-965f-6fc6bbc47cab")
 interface IPrintNumberOptionDetails : IPrintNumberOptionDetails_Base, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails {}
 
 @uuid("390686cf-d682-495f-adfe-d7333f5c1808")
@@ -107,6 +114,7 @@ interface IPrintTextOptionDetails_Base : IInspectable
 extern(Windows):
 	HRESULT get_MaxCharacters(UINT32* return_value);
 }
+@uuid("ad75e563-5ce4-46bc-9918-ab9fad144c5b")
 interface IPrintTextOptionDetails : IPrintTextOptionDetails_Base, Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails {}
 
 interface PrintBindingOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails

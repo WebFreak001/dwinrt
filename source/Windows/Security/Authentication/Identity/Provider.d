@@ -85,6 +85,8 @@ extern(Windows):
 	HRESULT abi_UpdateDevicePresenceAsync(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresence presenceState, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT get_IsAuthenticationSupported(bool* return_value);
 }
+@uuid("14d981a3-fc26-4ff7-abc3-48e82a512a0a")
+@WinrtFactory("Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorInfo")
 interface ISecondaryAuthenticationFactorInfo2 : ISecondaryAuthenticationFactorInfo2_Base, Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo {}
 
 @uuid("9f4cbbb4-8cba-48b0-840d-dbb22a54c678")

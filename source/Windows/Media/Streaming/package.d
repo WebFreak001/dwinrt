@@ -83,6 +83,7 @@ extern(Windows):
 	HRESULT get_PhysicalNetworkInterface(GUID* return_physicalNetworkInterface);
 	HRESULT abi_NotifyStreamingStatus(bool fIsStreaming);
 }
+@uuid("b64d6974-6e79-49af-9933-908b6e9a160c")
 interface IActiveBasicDevice : IActiveBasicDevice_Base, Windows.Media.Streaming.IBasicDevice {}
 
 @uuid("6d33255d-3642-4618-9db6-43524f4deadc")
@@ -184,6 +185,7 @@ extern(Windows):
 	HRESULT remove_RenderingParametersUpdate(EventRegistrationToken token);
 	HRESULT abi_NextAsync(Windows.Foundation.IAsyncAction* return_value);
 }
+@uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b")
 interface IMediaRenderer : IMediaRenderer_Base, Windows.Media.Streaming.IBasicDevice {}
 
 @uuid("66fbbfee-5ab0-4a4f-8d15-e5056b26beda")

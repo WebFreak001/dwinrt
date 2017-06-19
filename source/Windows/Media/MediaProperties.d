@@ -16,6 +16,8 @@ extern(Windows):
 	HRESULT set_BitsPerSample(UINT32 value);
 	HRESULT get_BitsPerSample(UINT32* return_value);
 }
+@uuid("62bc7a16-005c-4b3b-8a0b-0a090e9687f3")
+@WinrtFactory("Windows.Media.MediaProperties.AudioEncodingProperties")
 interface IAudioEncodingProperties : IAudioEncodingProperties_Base, Windows.Media.MediaProperties.IMediaEncodingProperties {}
 
 @uuid("c45d54da-80bd-4c23-80d5-72d4a181e894")
@@ -61,6 +63,8 @@ extern(Windows):
 interface IContainerEncodingProperties_Base : IInspectable
 {
 }
+@uuid("59ac2a57-b32a-479e-8a61-4b7f2e9e7ea0")
+@WinrtFactory("Windows.Media.MediaProperties.ContainerEncodingProperties")
 interface IContainerEncodingProperties : IContainerEncodingProperties_Base, Windows.Media.MediaProperties.IMediaEncodingProperties {}
 
 @uuid("38654ca7-846a-4f97-a2e5-c3a15bbf70fd")
@@ -90,6 +94,8 @@ extern(Windows):
 	HRESULT set_Height(UINT32 value);
 	HRESULT get_Height(UINT32* return_value);
 }
+@uuid("78625635-f331-4189-b1c3-b48d5ae034f1")
+@WinrtFactory("Windows.Media.MediaProperties.ImageEncodingProperties")
 interface IImageEncodingProperties : IImageEncodingProperties_Base, Windows.Media.MediaProperties.IMediaEncodingProperties {}
 
 @uuid("257c68dc-8b99-439e-aa59-913a36161297")
@@ -271,6 +277,8 @@ extern(Windows):
 	HRESULT get_FrameRate(Windows.Media.MediaProperties.MediaRatio* return_value);
 	HRESULT get_PixelAspectRatio(Windows.Media.MediaProperties.MediaRatio* return_value);
 }
+@uuid("76ee6c9a-37c2-4f2a-880a-1282bbb4373d")
+@WinrtFactory("Windows.Media.MediaProperties.VideoEncodingProperties")
 interface IVideoEncodingProperties : IVideoEncodingProperties_Base, Windows.Media.MediaProperties.IMediaEncodingProperties {}
 
 @uuid("f743a1ef-d465-4290-a94b-ef0f1528f8e3")

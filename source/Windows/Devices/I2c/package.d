@@ -60,6 +60,8 @@ extern(Windows):
 	HRESULT abi_WriteRead(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer);
 	HRESULT abi_WriteReadPartial(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer, Windows.Devices.I2c.I2cTransferResult* return_result);
 }
+@uuid("8636c136-b9c5-4f70-9449-cc46dc6f57eb")
+@WinrtFactory("Windows.Devices.I2c.I2cDevice")
 interface II2cDevice : II2cDevice_Base, Windows.Foundation.IClosable {}
 
 @uuid("91a33be3-7334-4512-96bc-fbae9459f5f6")

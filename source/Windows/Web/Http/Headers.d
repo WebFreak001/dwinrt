@@ -18,6 +18,8 @@ extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
 }
+@uuid("9a586b89-d5d0-4fbe-bd9d-b5b3636811b4")
+@WinrtFactory("Windows.Web.Http.Headers.HttpCacheDirectiveHeaderValueCollection")
 interface IHttpCacheDirectiveHeaderValueCollection : IHttpCacheDirectiveHeaderValueCollection_Base, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpNameValueHeaderValue) {}
 
 @uuid("393361af-0f7d-4820-9fdd-a2b956eeaeab")
@@ -38,6 +40,8 @@ extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
 }
+@uuid("ca9e5f81-aee0-4353-a10b-e625babd64c2")
+@WinrtFactory("Windows.Web.Http.Headers.HttpChallengeHeaderValueCollection")
 interface IHttpChallengeHeaderValueCollection : IHttpChallengeHeaderValueCollection_Base, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpChallengeHeaderValue) {}
 
 @uuid("c452c451-d99c-40aa-9399-90eeb98fc613")
@@ -74,6 +78,8 @@ extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
 }
+@uuid("e4f56c1d-5142-4e00-8e0f-019509337629")
+@WinrtFactory("Windows.Web.Http.Headers.HttpConnectionOptionHeaderValueCollection")
 interface IHttpConnectionOptionHeaderValueCollection : IHttpConnectionOptionHeaderValueCollection_Base, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue) {}
 
 @uuid("d93ccc1e-0b7d-4c3f-a58d-a2a1bdeabc0a")
@@ -109,6 +115,8 @@ extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
 }
+@uuid("7d221721-a6db-436e-8e83-91596192819c")
+@WinrtFactory("Windows.Web.Http.Headers.HttpContentCodingHeaderValueCollection")
 interface IHttpContentCodingHeaderValueCollection : IHttpContentCodingHeaderValueCollection_Base, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpContentCodingHeaderValue) {}
 
 @uuid("c53d2bd7-332b-4350-8510-2e67a2289a5a")
@@ -145,6 +153,8 @@ extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
 }
+@uuid("7c0d753e-e899-4378-b5c8-412d820711cc")
+@WinrtFactory("Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValueCollection")
 interface IHttpContentCodingWithQualityHeaderValueCollection : IHttpContentCodingWithQualityHeaderValueCollection_Base, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue) {}
 
 @uuid("c45eee1a-c553-46fc-ade2-d75c1d53df7b")
@@ -226,6 +236,8 @@ extern(Windows):
 	HRESULT abi_Append(HSTRING name, HSTRING value);
 	HRESULT abi_TryAppendWithoutValidation(HSTRING name, HSTRING value, bool* return_succeeded);
 }
+@uuid("40612a44-47ae-4b7e-9124-69628b64aa18")
+@WinrtFactory("Windows.Web.Http.Headers.HttpContentHeaderCollection")
 interface IHttpContentHeaderCollection : IHttpContentHeaderCollection_Base, Windows.Foundation.Collections.IMap!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) {}
 
 @uuid("04d967d3-a4f6-495c-9530-8579fcba8aa9")
@@ -277,6 +289,8 @@ extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
 }
+@uuid("f3f44350-581e-4ecc-9f59-e507d04f06e6")
+@WinrtFactory("Windows.Web.Http.Headers.HttpCookiePairHeaderValueCollection")
 interface IHttpCookiePairHeaderValueCollection : IHttpCookiePairHeaderValueCollection_Base, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpCookiePairHeaderValue) {}
 
 @uuid("635e326f-146f-4f56-aa21-2cb7d6d58b1e")
@@ -362,6 +376,8 @@ extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
 }
+@uuid("e78521b3-a0e2-4ac4-9e66-79706cb9fd58")
+@WinrtFactory("Windows.Web.Http.Headers.HttpExpectationHeaderValueCollection")
 interface IHttpExpectationHeaderValueCollection : IHttpExpectationHeaderValueCollection_Base, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpExpectationHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpExpectationHeaderValue) {}
 
 @uuid("4ea275cb-d53e-4868-8856-1e21a5030dc0")
@@ -390,6 +406,8 @@ extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
 }
+@uuid("9ebd7ca3-8219-44f6-9902-8c56dfd3340c")
+@WinrtFactory("Windows.Web.Http.Headers.HttpLanguageHeaderValueCollection")
 interface IHttpLanguageHeaderValueCollection : IHttpLanguageHeaderValueCollection_Base, Windows.Foundation.Collections.IVector!(Windows.Globalization.Language), Windows.Foundation.Collections.IIterable!(Windows.Globalization.Language) {}
 
 @uuid("7256e102-0080-4db4-a083-7de7b2e5ba4c")
@@ -409,6 +427,8 @@ extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
 }
+@uuid("885d5abd-4b4f-480a-89ce-8aedcee6e3a0")
+@WinrtFactory("Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValueCollection")
 interface IHttpLanguageRangeWithQualityHeaderValueCollection : IHttpLanguageRangeWithQualityHeaderValueCollection_Base, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue) {}
 
 @uuid("7bb83970-780f-4c83-9fe4-dc3087f6bd55")
@@ -480,6 +500,8 @@ extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
 }
+@uuid("3c0c6b73-1342-4587-a056-18d02ff67165")
+@WinrtFactory("Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValueCollection")
 interface IHttpMediaTypeWithQualityHeaderValueCollection : IHttpMediaTypeWithQualityHeaderValueCollection_Base, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue) {}
 
 @uuid("4c6d20f4-9457-44e6-a323-d122b958780b")
@@ -508,6 +530,8 @@ extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
 }
+@uuid("43bc3ff4-6119-4adf-938c-34bfffcf92ed")
+@WinrtFactory("Windows.Web.Http.Headers.HttpMethodHeaderValueCollection")
 interface IHttpMethodHeaderValueCollection : IHttpMethodHeaderValueCollection_Base, Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpMethod), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.HttpMethod) {}
 
 @uuid("d8ba7463-5b9a-4d1b-93f9-aa5b44ecfddf")
@@ -582,6 +606,8 @@ extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
 }
+@uuid("877df74a-d69b-44f8-ad4f-453af9c42ed0")
+@WinrtFactory("Windows.Web.Http.Headers.HttpProductInfoHeaderValueCollection")
 interface IHttpProductInfoHeaderValueCollection : IHttpProductInfoHeaderValueCollection_Base, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpProductInfoHeaderValue) {}
 
 @uuid("24220fbe-eabe-4464-b460-ec010b7c41e2")
@@ -637,6 +663,8 @@ extern(Windows):
 	HRESULT abi_Append(HSTRING name, HSTRING value);
 	HRESULT abi_TryAppendWithoutValidation(HSTRING name, HSTRING value, bool* return_succeeded);
 }
+@uuid("af40329b-b544-469b-86b9-ac3d466fea36")
+@WinrtFactory("Windows.Web.Http.Headers.HttpRequestHeaderCollection")
 interface IHttpRequestHeaderCollection : IHttpRequestHeaderCollection_Base, Windows.Foundation.Collections.IMap!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) {}
 
 @uuid("7a990969-fa3f-41ed-aac6-bf957975c16b")
@@ -661,6 +689,8 @@ extern(Windows):
 	HRESULT abi_Append(HSTRING name, HSTRING value);
 	HRESULT abi_TryAppendWithoutValidation(HSTRING name, HSTRING value, bool* return_succeeded);
 }
+@uuid("7a990969-fa3f-41ed-aac6-bf957975c16b")
+@WinrtFactory("Windows.Web.Http.Headers.HttpResponseHeaderCollection")
 interface IHttpResponseHeaderCollection : IHttpResponseHeaderCollection_Base, Windows.Foundation.Collections.IMap!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) {}
 
 @uuid("436f32f9-3ded-42bd-b38a-5496a2511ce6")
@@ -680,6 +710,8 @@ extern(Windows):
 	HRESULT abi_ParseAdd(HSTRING input);
 	HRESULT abi_TryParseAdd(HSTRING input, bool* return_succeeded);
 }
+@uuid("202c8c34-2c03-49b8-9665-73e27cb2fc79")
+@WinrtFactory("Windows.Web.Http.Headers.HttpTransferCodingHeaderValueCollection")
 interface IHttpTransferCodingHeaderValueCollection : IHttpTransferCodingHeaderValueCollection_Base, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpTransferCodingHeaderValue) {}
 
 @uuid("bb62dffc-e361-4f08-8e4f-c9e723de703b")

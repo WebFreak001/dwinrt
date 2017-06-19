@@ -38,6 +38,8 @@ extern(Windows):
 	HRESULT abi_SendRequestWithOptionAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Web.Http.HttpCompletionOption completionOption, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
 	HRESULT get_DefaultRequestHeaders(Windows.Web.Http.Headers.HttpRequestHeaderCollection* return_value);
 }
+@uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d")
+@WinrtFactory("Windows.Web.Http.HttpClient")
 interface IHttpClient : IHttpClient_Base, Windows.Foundation.IClosable {}
 
 @uuid("c30c4eca-e3fa-4f99-afb4-63cc65009462")
@@ -60,6 +62,7 @@ extern(Windows):
 	HRESULT abi_TryComputeLength(UINT64* out_length, bool* return_succeeded);
 	HRESULT abi_WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64)* return_operation);
 }
+@uuid("6b14a441-fba7-4bd2-af0a-839de7c295da")
 interface IHttpContent : IHttpContent_Base, Windows.Foundation.IClosable {}
 
 @uuid("1f5488e2-cc2d-4779-86a7-88f10687d249")
@@ -144,6 +147,8 @@ interface IHttpMultipartContent_Base : IInspectable
 extern(Windows):
 	HRESULT abi_Add(Windows.Web.Http.IHttpContent content);
 }
+@uuid("df916aff-9926-4ac9-aaf1-e0d04ef09bb9")
+@WinrtFactory("Windows.Web.Http.HttpMultipartContent")
 interface IHttpMultipartContent : IHttpMultipartContent_Base, Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent) {}
 
 @uuid("7eb42e62-0222-4f20-b372-47d5db5d33b4")
@@ -164,6 +169,8 @@ extern(Windows):
 	HRESULT abi_AddWithName(Windows.Web.Http.IHttpContent content, HSTRING name);
 	HRESULT abi_AddWithNameAndFileName(Windows.Web.Http.IHttpContent content, HSTRING name, HSTRING fileName);
 }
+@uuid("64d337e2-e967-4624-b6d1-cf74604a4a42")
+@WinrtFactory("Windows.Web.Http.HttpMultipartFormDataContent")
 interface IHttpMultipartFormDataContent : IHttpMultipartFormDataContent_Base, Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent) {}
 
 @uuid("a04d7311-5017-4622-93a8-49b24a4fcbfc")
@@ -189,6 +196,8 @@ extern(Windows):
 	HRESULT set_RequestUri(Windows.Foundation.Uri value);
 	HRESULT get_TransportInformation(Windows.Web.Http.HttpTransportInformation* return_value);
 }
+@uuid("f5762b3c-74d4-4811-b5dc-9f8b4e2f9abf")
+@WinrtFactory("Windows.Web.Http.HttpRequestMessage")
 interface IHttpRequestMessage : IHttpRequestMessage_Base, Windows.Foundation.IClosable {}
 
 @uuid("5bac994e-3886-412e-aec3-52ec7f25616f")
@@ -220,6 +229,8 @@ extern(Windows):
 	HRESULT set_Version(Windows.Web.Http.HttpVersion value);
 	HRESULT abi_EnsureSuccessStatusCode(Windows.Web.Http.HttpResponseMessage* return_httpResponseMessage);
 }
+@uuid("fee200fb-8664-44e0-95d9-42696199bffc")
+@WinrtFactory("Windows.Web.Http.HttpResponseMessage")
 interface IHttpResponseMessage : IHttpResponseMessage_Base, Windows.Foundation.IClosable {}
 
 @uuid("52a8af99-f095-43da-b60f-7cfc2bc7ea2f")

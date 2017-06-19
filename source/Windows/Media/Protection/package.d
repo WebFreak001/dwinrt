@@ -51,6 +51,8 @@ extern(Windows):
 	HRESULT add_ProtectionChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.HdcpSession, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ProtectionChanged(EventRegistrationToken token);
 }
+@uuid("718845e9-64d7-426d-809b-1be461941a2a")
+@WinrtFactory("Windows.Media.Protection.HdcpSession")
 interface IHdcpSession : IHdcpSession_Base, Windows.Foundation.IClosable {}
 
 @uuid("45694947-c741-434b-a79e-474c12d93d2f")

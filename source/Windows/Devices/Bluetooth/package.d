@@ -76,6 +76,8 @@ interface IBluetoothDevice2_Base : IInspectable
 extern(Windows):
 	HRESULT get_DeviceInformation(Windows.Devices.Enumeration.DeviceInformation* return_value);
 }
+@uuid("0133f954-b156-4dd0-b1f5-c11bc31a5163")
+@WinrtFactory("Windows.Devices.Bluetooth.BluetoothDevice")
 interface IBluetoothDevice2 : IBluetoothDevice2_Base, Windows.Devices.Bluetooth.IBluetoothDevice {}
 
 @uuid("57fff78b-651a-4454-b90f-eb21ef0b0d71")
@@ -90,6 +92,8 @@ extern(Windows):
 	HRESULT abi_GetRfcommServicesForIdAsync(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult)* return_operation);
 	HRESULT abi_GetRfcommServicesForIdWithCacheModeAsync(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult)* return_operation);
 }
+@uuid("57fff78b-651a-4454-b90f-eb21ef0b0d71")
+@WinrtFactory("Windows.Devices.Bluetooth.BluetoothDevice")
 interface IBluetoothDevice3 : IBluetoothDevice3_Base, Windows.Devices.Bluetooth.IBluetoothDevice2, Windows.Devices.Bluetooth.IBluetoothDevice {}
 
 @uuid("c17949af-57c1-4642-bcce-e6c06b20ae76")
@@ -124,6 +128,8 @@ extern(Windows):
 	HRESULT abi_GetDeviceSelectorFromBluetoothAddress(UINT64 bluetoothAddress, HSTRING* return_deviceSelector);
 	HRESULT abi_GetDeviceSelectorFromClassOfDevice(Windows.Devices.Bluetooth.BluetoothClassOfDevice classOfDevice, HSTRING* return_deviceSelector);
 }
+@uuid("c29e8e2f-4e14-4477-aa1b-b8b47e5b7ece")
+@WinrtFactory("Windows.Devices.Bluetooth.BluetoothDevice")
 interface IBluetoothDeviceStatics2 : IBluetoothDeviceStatics2_Base, Windows.Devices.Bluetooth.IBluetoothDeviceStatics {}
 
 @uuid("5d2079f2-66a8-4258-985e-02b4d9509f18")
@@ -239,6 +245,8 @@ extern(Windows):
 	HRESULT get_Appearance(Windows.Devices.Bluetooth.BluetoothLEAppearance* return_value);
 	HRESULT get_BluetoothAddressType(Windows.Devices.Bluetooth.BluetoothAddressType* return_value);
 }
+@uuid("26f062b3-7aee-4d31-baba-b1b9775f5916")
+@WinrtFactory("Windows.Devices.Bluetooth.BluetoothLEDevice")
 interface IBluetoothLEDevice2 : IBluetoothLEDevice2_Base, Windows.Devices.Bluetooth.IBluetoothLEDevice {}
 
 @uuid("aee9e493-44ac-40dc-af33-b2c13c01ca46")

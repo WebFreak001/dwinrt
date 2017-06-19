@@ -10,6 +10,8 @@ extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
 	HRESULT get_Pressure(BYTE* return_value);
 }
+@uuid("be1fa860-62b4-4d52-a37e-92e54d35b909")
+@WinrtFactory("Windows.Devices.Midi.MidiChannelPressureMessage")
 interface IMidiChannelPressureMessage : IMidiChannelPressureMessage_Base, Windows.Devices.Midi.IMidiMessage {}
 
 @uuid("6218ed2f-2284-412a-94cf-10fb04842c6c")
@@ -29,6 +31,8 @@ extern(Windows):
 	HRESULT get_Controller(BYTE* return_value);
 	HRESULT get_ControlValue(BYTE* return_value);
 }
+@uuid("b7e15f83-780d-405f-b781-3e1598c97f40")
+@WinrtFactory("Windows.Devices.Midi.MidiControlChangeMessage")
 interface IMidiControlChangeMessage : IMidiControlChangeMessage_Base, Windows.Devices.Midi.IMidiMessage {}
 
 @uuid("2ab14321-956c-46ad-9752-f87f55052fe3")
@@ -48,6 +52,8 @@ extern(Windows):
 	HRESULT remove_MessageReceived(EventRegistrationToken token);
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
+@uuid("d5c1d9db-971a-4eaf-a23d-ea19fe607ff9")
+@WinrtFactory("Windows.Devices.Midi.MidiInPort")
 interface IMidiInPort : IMidiInPort_Base, Windows.Foundation.IClosable {}
 
 @uuid("44c439dc-67ff-4a6e-8bac-fdb6610cf296")
@@ -85,6 +91,8 @@ extern(Windows):
 	HRESULT get_Note(BYTE* return_value);
 	HRESULT get_Velocity(BYTE* return_value);
 }
+@uuid("16fd8af4-198e-4d8f-a654-d305a293548f")
+@WinrtFactory("Windows.Devices.Midi.MidiNoteOffMessage")
 interface IMidiNoteOffMessage : IMidiNoteOffMessage_Base, Windows.Devices.Midi.IMidiMessage {}
 
 @uuid("a6b240e0-a749-425f-8af4-a4d979cc15b5")
@@ -104,6 +112,8 @@ extern(Windows):
 	HRESULT get_Note(BYTE* return_value);
 	HRESULT get_Velocity(BYTE* return_value);
 }
+@uuid("e0224af5-6181-46dd-afa2-410004c057aa")
+@WinrtFactory("Windows.Devices.Midi.MidiNoteOnMessage")
 interface IMidiNoteOnMessage : IMidiNoteOnMessage_Base, Windows.Devices.Midi.IMidiMessage {}
 
 @uuid("9b4280a0-59c1-420e-b517-15a10aa9606b")
@@ -122,6 +132,7 @@ extern(Windows):
 	HRESULT abi_SendBuffer(Windows.Storage.Streams.IBuffer midiData);
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
+@uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693")
 interface IMidiOutPort : IMidiOutPort_Base, Windows.Foundation.IClosable {}
 
 @uuid("065cc3e9-0f88-448b-9b64-a95826c65b8f")
@@ -141,6 +152,8 @@ extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
 	HRESULT get_Bend(UINT16* return_value);
 }
+@uuid("29df4cb1-2e9f-4faf-8c2b-9cb82a9079ca")
+@WinrtFactory("Windows.Devices.Midi.MidiPitchBendChangeMessage")
 interface IMidiPitchBendChangeMessage : IMidiPitchBendChangeMessage_Base, Windows.Devices.Midi.IMidiMessage {}
 
 @uuid("f5eedf55-cfc8-4926-b30e-a3622393306c")
@@ -160,6 +173,8 @@ extern(Windows):
 	HRESULT get_Note(BYTE* return_value);
 	HRESULT get_Pressure(BYTE* return_value);
 }
+@uuid("1f7337fe-ace8-48a0-868e-7cdbf20f04d6")
+@WinrtFactory("Windows.Devices.Midi.MidiPolyphonicKeyPressureMessage")
 interface IMidiPolyphonicKeyPressureMessage : IMidiPolyphonicKeyPressureMessage_Base, Windows.Devices.Midi.IMidiMessage {}
 
 @uuid("e98f483e-c4b3-4dd2-917c-e349815a1b3b")
@@ -178,6 +193,8 @@ extern(Windows):
 	HRESULT get_Channel(BYTE* return_value);
 	HRESULT get_Program(BYTE* return_value);
 }
+@uuid("9cbb3c78-7a3e-4327-aa98-20b8e4485af8")
+@WinrtFactory("Windows.Devices.Midi.MidiProgramChangeMessage")
 interface IMidiProgramChangeMessage : IMidiProgramChangeMessage_Base, Windows.Devices.Midi.IMidiMessage {}
 
 @uuid("d6b04387-524b-4104-9c99-6572bfd2e261")
@@ -195,6 +212,8 @@ interface IMidiSongPositionPointerMessage_Base : IInspectable
 extern(Windows):
 	HRESULT get_Beats(UINT16* return_value);
 }
+@uuid("4ca50c56-ec5e-4ae4-a115-88dc57cc2b79")
+@WinrtFactory("Windows.Devices.Midi.MidiSongPositionPointerMessage")
 interface IMidiSongPositionPointerMessage : IMidiSongPositionPointerMessage_Base, Windows.Devices.Midi.IMidiMessage {}
 
 @uuid("9c00e996-f10b-4fea-b395-f5d6cf80f64e")
@@ -212,6 +231,8 @@ interface IMidiSongSelectMessage_Base : IInspectable
 extern(Windows):
 	HRESULT get_Song(BYTE* return_value);
 }
+@uuid("49f0f27f-6d83-4741-a5bf-4629f6be974f")
+@WinrtFactory("Windows.Devices.Midi.MidiSongSelectMessage")
 interface IMidiSongSelectMessage : IMidiSongSelectMessage_Base, Windows.Devices.Midi.IMidiMessage {}
 
 @uuid("848878e4-8748-4129-a66c-a05493f75daa")
@@ -231,6 +252,8 @@ extern(Windows):
 	HRESULT get_Volume(double* return_value);
 	HRESULT set_Volume(double value);
 }
+@uuid("f0da155e-db90-405f-b8ae-21d2e17f2e45")
+@WinrtFactory("Windows.Devices.Midi.MidiSynthesizer")
 interface IMidiSynthesizer : IMidiSynthesizer_Base, Windows.Devices.Midi.IMidiOutPort, Windows.Foundation.IClosable {}
 
 @uuid("4224eaa8-6629-4d6b-aa8f-d4521a5a31ce")
@@ -259,6 +282,8 @@ extern(Windows):
 	HRESULT get_FrameType(BYTE* return_value);
 	HRESULT get_Values(BYTE* return_value);
 }
+@uuid("0bf7087d-fa63-4a1c-8deb-c0e87796a6d7")
+@WinrtFactory("Windows.Devices.Midi.MidiTimeCodeMessage")
 interface IMidiTimeCodeMessage : IMidiTimeCodeMessage_Base, Windows.Devices.Midi.IMidiMessage {}
 
 @uuid("eb3099c5-771c-40de-b961-175a7489a85e")

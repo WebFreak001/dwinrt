@@ -19,6 +19,8 @@ extern(Windows):
 	HRESULT abi_DeleteResourceItemAsync(Windows.Web.Syndication.SyndicationItem item, Windows.Foundation.IAsyncActionWithProgress!(Windows.Web.Syndication.TransferProgress)* return_operation);
 	HRESULT abi_CancelAsyncOperations();
 }
+@uuid("35392c38-cded-4d4c-9637-05f15c1c9406")
+@WinrtFactory("Windows.Web.AtomPub.AtomPubClient")
 interface IAtomPubClient : IAtomPubClient_Base, Windows.Web.Syndication.ISyndicationClient {}
 
 @uuid("49d55012-57cb-4bde-ab9f-2610b172777b")
@@ -39,6 +41,8 @@ extern(Windows):
 	HRESULT get_Categories(Windows.Foundation.Collections.IVectorView!(Windows.Web.Syndication.SyndicationCategory)* return_value);
 	HRESULT get_Accepts(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 }
+@uuid("7f5fd609-bc88-41d4-88fa-3de6704d428e")
+@WinrtFactory("Windows.Web.AtomPub.ResourceCollection")
 interface IResourceCollection : IResourceCollection_Base, Windows.Web.Syndication.ISyndicationNode {}
 
 @uuid("8b7ec771-2ab3-4dbe-8bcc-778f92b75e51")
@@ -48,6 +52,8 @@ interface IServiceDocument_Base : IInspectable
 extern(Windows):
 	HRESULT get_Workspaces(Windows.Foundation.Collections.IVectorView!(Windows.Web.AtomPub.Workspace)* return_value);
 }
+@uuid("8b7ec771-2ab3-4dbe-8bcc-778f92b75e51")
+@WinrtFactory("Windows.Web.AtomPub.ServiceDocument")
 interface IServiceDocument : IServiceDocument_Base, Windows.Web.Syndication.ISyndicationNode {}
 
 @uuid("b41da63b-a4b8-4036-89c5-83c31266ba49")
@@ -58,6 +64,8 @@ extern(Windows):
 	HRESULT get_Title(Windows.Web.Syndication.ISyndicationText* return_value);
 	HRESULT get_Collections(Windows.Foundation.Collections.IVectorView!(Windows.Web.AtomPub.ResourceCollection)* return_value);
 }
+@uuid("b41da63b-a4b8-4036-89c5-83c31266ba49")
+@WinrtFactory("Windows.Web.AtomPub.Workspace")
 interface IWorkspace : IWorkspace_Base, Windows.Web.Syndication.ISyndicationNode {}
 
 interface AtomPubClient : Windows.Web.AtomPub.IAtomPubClient, Windows.Web.Syndication.ISyndicationClient

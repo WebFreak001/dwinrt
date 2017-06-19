@@ -20,6 +20,8 @@ extern(Windows):
 	HRESULT get_Language(HSTRING* return_value);
 	HRESULT set_Language(HSTRING value);
 }
+@uuid("46d4a3be-609a-4326-a40b-bfde872034a3")
+@WinrtFactory("Windows.UI.Notifications.AdaptiveNotificationText")
 interface IAdaptiveNotificationText : IAdaptiveNotificationText_Base, Windows.UI.Notifications.IAdaptiveNotificationContent {}
 
 @uuid("075cb4ca-d08a-4e2f-9233-7e289c1f7722")

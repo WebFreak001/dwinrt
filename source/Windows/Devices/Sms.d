@@ -53,6 +53,8 @@ extern(Windows):
 	HRESULT get_BinaryBody(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT set_BinaryBody(Windows.Storage.Streams.IBuffer value);
 }
+@uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54")
+@WinrtFactory("Windows.Devices.Sms.SmsAppMessage")
 interface ISmsAppMessage : ISmsAppMessage_Base, Windows.Devices.Sms.ISmsMessageBase {}
 
 @uuid("5bf4e813-3b53-4c6e-b61a-d86a63755650")
@@ -68,6 +70,7 @@ extern(Windows):
 	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
 	HRESULT abi_SetData(UINT32 __valueSize, BYTE* value);
 }
+@uuid("5bf4e813-3b53-4c6e-b61a-d86a63755650")
 interface ISmsBinaryMessage : ISmsBinaryMessage_Base, Windows.Devices.Sms.ISmsMessage {}
 
 @uuid("75aebbf1-e4b7-4874-a09c-2956e592f957")
@@ -86,6 +89,8 @@ extern(Windows):
 	HRESULT get_IsEmergencyAlert(bool* return_value);
 	HRESULT get_IsUserPopupRequested(bool* return_value);
 }
+@uuid("75aebbf1-e4b7-4874-a09c-2956e592f957")
+@WinrtFactory("Windows.Devices.Sms.SmsBroadcastMessage")
 interface ISmsBroadcastMessage : ISmsBroadcastMessage_Base, Windows.Devices.Sms.ISmsMessageBase {}
 
 @uuid("091791ed-872b-4eec-9c72-ab11627b34ec")
@@ -343,6 +348,8 @@ extern(Windows):
 	HRESULT get_ServiceCenterTimestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_DischargeTime(Windows.Foundation.DateTime* return_value);
 }
+@uuid("e6d28342-b70b-4677-9379-c9783fdff8f4")
+@WinrtFactory("Windows.Devices.Sms.SmsStatusMessage")
 interface ISmsStatusMessage : ISmsStatusMessage_Base, Windows.Devices.Sms.ISmsMessageBase {}
 
 @uuid("d61c904c-a495-487f-9a6f-971548c5bc9f")
@@ -376,6 +383,7 @@ extern(Windows):
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	HRESULT abi_ToBinaryMessages(Windows.Devices.Sms.SmsDataFormat format, Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsBinaryMessage)* return_messages);
 }
+@uuid("d61c904c-a495-487f-9a6f-971548c5bc9f")
 interface ISmsTextMessage : ISmsTextMessage_Base, Windows.Devices.Sms.ISmsMessage {}
 
 @uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d")
@@ -400,6 +408,8 @@ extern(Windows):
 	HRESULT get_TeleserviceId(INT32* return_value);
 	HRESULT get_ProtocolId(INT32* return_value);
 }
+@uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d")
+@WinrtFactory("Windows.Devices.Sms.SmsTextMessage2")
 interface ISmsTextMessage2 : ISmsTextMessage2_Base, Windows.Devices.Sms.ISmsMessageBase {}
 
 @uuid("7f68c5ed-3ccc-47a3-8c55-380d3b010892")
@@ -423,6 +433,8 @@ extern(Windows):
 	HRESULT get_Body(HSTRING* return_value);
 	HRESULT get_MessageCount(Windows.Foundation.IReference!(INT32)* return_value);
 }
+@uuid("271aa0a6-95b1-44ff-bcb8-b8fdd7e08bc3")
+@WinrtFactory("Windows.Devices.Sms.SmsVoicemailMessage")
 interface ISmsVoicemailMessage : ISmsVoicemailMessage_Base, Windows.Devices.Sms.ISmsMessageBase {}
 
 @uuid("cd937743-7a55-4d3b-9021-f22e022d09c5")
@@ -438,6 +450,8 @@ extern(Windows):
 	HRESULT get_BinaryBody(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_Headers(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 }
+@uuid("cd937743-7a55-4d3b-9021-f22e022d09c5")
+@WinrtFactory("Windows.Devices.Sms.SmsWapMessage")
 interface ISmsWapMessage : ISmsWapMessage_Base, Windows.Devices.Sms.ISmsMessageBase {}
 
 interface DeleteSmsMessageOperation : Windows.Foundation.IAsyncAction

@@ -110,6 +110,8 @@ extern(Windows):
 	HRESULT add_RemotePortAdded(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceRemotePortAddedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_RemotePortAdded(EventRegistrationToken token);
 }
+@uuid("81142163-e426-47cb-8640-e1b3588bf26f")
+@WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession")
 interface IWiFiDirectServiceSession : IWiFiDirectServiceSession_Base, Windows.Foundation.IClosable {}
 
 @uuid("8dfc197f-1201-4f1f-b6f4-5df1b7b9fb2e")
@@ -129,6 +131,8 @@ extern(Windows):
 	HRESULT get_ProvisioningInfo(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceProvisioningInfo* return_value);
 	HRESULT get_SessionInfo(Windows.Storage.Streams.IBuffer* return_value);
 }
+@uuid("a0e27c8b-50cb-4a58-9bcf-e472b99fba04")
+@WinrtFactory("Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequest")
 interface IWiFiDirectServiceSessionRequest : IWiFiDirectServiceSessionRequest_Base, Windows.Foundation.IClosable {}
 
 @uuid("74bdcc11-53d6-4999-b4f8-6c8ecc1771e7")

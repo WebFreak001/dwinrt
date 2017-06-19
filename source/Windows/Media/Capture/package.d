@@ -768,6 +768,8 @@ extern(Windows):
 	HRESULT get_Width(UINT32* return_value);
 	HRESULT get_Height(UINT32* return_value);
 }
+@uuid("1dd2de1f-571b-44d8-8e80-a08a1578766e")
+@WinrtFactory("Windows.Media.Capture.CapturedFrame")
 interface ICapturedFrame : ICapturedFrame_Base, Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IRandomAccessStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Storage.Streams.IOutputStream, Windows.Storage.Streams.IContentTypeProvider {}
 
 @uuid("90c65b7f-4e0d-4ca4-882d-7a144fed0a90")

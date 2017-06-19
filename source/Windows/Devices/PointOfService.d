@@ -371,6 +371,8 @@ extern(Windows):
 	HRESULT add_ErrorOccurred(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerErrorOccurredEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ErrorOccurred(EventRegistrationToken token);
 }
+@uuid("4a63b49c-8fa4-4332-bb26-945d11d81e0f")
+@WinrtFactory("Windows.Devices.PointOfService.ClaimedBarcodeScanner")
 interface IClaimedBarcodeScanner : IClaimedBarcodeScanner_Base, Windows.Foundation.IClosable {}
 
 @uuid("f61aad0c-8551-42b4-998c-970c20210a22")
@@ -381,6 +383,8 @@ extern(Windows):
 	HRESULT abi_StartSoftwareTriggerAsync(Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_StopSoftwareTriggerAsync(Windows.Foundation.IAsyncAction* return_result);
 }
+@uuid("f61aad0c-8551-42b4-998c-970c20210a22")
+@WinrtFactory("Windows.Devices.PointOfService.ClaimedBarcodeScanner")
 interface IClaimedBarcodeScanner1 : IClaimedBarcodeScanner1_Base, Windows.Foundation.IClosable {}
 
 @uuid("e3b59e8c-2d8b-4f70-8af3-3448bedd5fe2")
@@ -391,6 +395,8 @@ extern(Windows):
 	HRESULT abi_GetSymbologyAttributesAsync(UINT32 barcodeSymbology, Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeSymbologyAttributes)* return_result);
 	HRESULT abi_SetSymbologyAttributesAsync(UINT32 barcodeSymbology, Windows.Devices.PointOfService.BarcodeSymbologyAttributes attributes, Windows.Foundation.IAsyncOperation!(bool)* return_result);
 }
+@uuid("e3b59e8c-2d8b-4f70-8af3-3448bedd5fe2")
+@WinrtFactory("Windows.Devices.PointOfService.ClaimedBarcodeScanner")
 interface IClaimedBarcodeScanner2 : IClaimedBarcodeScanner2_Base, Windows.Foundation.IClosable {}
 
 @uuid("ca3f99af-abb8-42c1-8a84-5c66512f5a75")
@@ -411,6 +417,8 @@ extern(Windows):
 	HRESULT add_ReleaseDeviceRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedCashDrawer, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReleaseDeviceRequested(EventRegistrationToken token);
 }
+@uuid("ca3f99af-abb8-42c1-8a84-5c66512f5a75")
+@WinrtFactory("Windows.Devices.PointOfService.ClaimedCashDrawer")
 interface IClaimedCashDrawer : IClaimedCashDrawer_Base, Windows.Foundation.IClosable {}
 
 @uuid("67ea0630-517d-487f-9fdf-d2e0a0a264a5")
@@ -420,6 +428,8 @@ interface IClaimedJournalPrinter_Base : IInspectable
 extern(Windows):
 	HRESULT abi_CreateJob(Windows.Devices.PointOfService.JournalPrintJob* return_value);
 }
+@uuid("67ea0630-517d-487f-9fdf-d2e0a0a264a5")
+@WinrtFactory("Windows.Devices.PointOfService.ClaimedJournalPrinter")
 interface IClaimedJournalPrinter : IClaimedJournalPrinter_Base, Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation {}
 
 @uuid("120ac970-9a75-4acf-aae7-09972bcf8794")
@@ -439,6 +449,8 @@ extern(Windows):
 	HRESULT add_ReleaseDeviceRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedLineDisplay, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReleaseDeviceRequested(EventRegistrationToken token);
 }
+@uuid("120ac970-9a75-4acf-aae7-09972bcf8794")
+@WinrtFactory("Windows.Devices.PointOfService.ClaimedLineDisplay")
 interface IClaimedLineDisplay : IClaimedLineDisplay_Base, Windows.Foundation.IClosable {}
 
 @uuid("78ca98fb-8b6b-4973-86f0-3e570c351825")
@@ -490,6 +502,8 @@ extern(Windows):
 	HRESULT add_ErrorOccurred(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ErrorOccurred(EventRegistrationToken token);
 }
+@uuid("475ca8f3-9417-48bc-b9d7-4163a7844c02")
+@WinrtFactory("Windows.Devices.PointOfService.ClaimedMagneticStripeReader")
 interface IClaimedMagneticStripeReader : IClaimedMagneticStripeReader_Base, Windows.Foundation.IClosable {}
 
 @uuid("6d64ce0c-e03e-4b14-a38e-c28c34b86353")
@@ -517,6 +531,8 @@ extern(Windows):
 	HRESULT add_ReleaseDeviceRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedPosPrinter, Windows.Devices.PointOfService.PosPrinterReleaseDeviceRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ReleaseDeviceRequested(EventRegistrationToken token);
 }
+@uuid("6d64ce0c-e03e-4b14-a38e-c28c34b86353")
+@WinrtFactory("Windows.Devices.PointOfService.ClaimedPosPrinter")
 interface IClaimedPosPrinter : IClaimedPosPrinter_Base, Windows.Foundation.IClosable {}
 
 @uuid("9ad27a74-dd61-4ee2-9837-5b5d72d538b9")
@@ -531,6 +547,8 @@ extern(Windows):
 	HRESULT get_PrintArea(Windows.Foundation.Rect* return_value);
 	HRESULT abi_CreateJob(Windows.Devices.PointOfService.ReceiptPrintJob* return_value);
 }
+@uuid("9ad27a74-dd61-4ee2-9837-5b5d72d538b9")
+@WinrtFactory("Windows.Devices.PointOfService.ClaimedReceiptPrinter")
 interface IClaimedReceiptPrinter : IClaimedReceiptPrinter_Base, Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation {}
 
 @uuid("bd5deff2-af90-4e8a-b77b-e3ae9ca63a7f")
@@ -552,6 +570,8 @@ extern(Windows):
 	HRESULT abi_ChangePrintSide(Windows.Devices.PointOfService.PosPrinterPrintSide printSide);
 	HRESULT abi_CreateJob(Windows.Devices.PointOfService.SlipPrintJob* return_value);
 }
+@uuid("bd5deff2-af90-4e8a-b77b-e3ae9ca63a7f")
+@WinrtFactory("Windows.Devices.PointOfService.ClaimedSlipPrinter")
 interface IClaimedSlipPrinter : IClaimedSlipPrinter_Base, Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation {}
 
 @uuid("b7eb66a8-fe8a-4cfb-8b42-e35b280cb27c")
@@ -612,6 +632,7 @@ extern(Windows):
 	HRESULT get_SupportedBarcodeRotations(Windows.Foundation.Collections.IVectorView!(Windows.Devices.PointOfService.PosPrinterRotation)* return_value);
 	HRESULT get_SupportedBitmapRotations(Windows.Foundation.Collections.IVectorView!(Windows.Devices.PointOfService.PosPrinterRotation)* return_value);
 }
+@uuid("09286b8b-9873-4d05-bfbe-4727a6038f69")
 interface ICommonReceiptSlipCapabilities : ICommonReceiptSlipCapabilities_Base, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities {}
 
 @uuid("3b5ccc43-e047-4463-bb58-17b5ba1d8056")
@@ -619,6 +640,8 @@ interface ICommonReceiptSlipCapabilities : ICommonReceiptSlipCapabilities_Base, 
 interface IJournalPrinterCapabilities_Base : IInspectable
 {
 }
+@uuid("3b5ccc43-e047-4463-bb58-17b5ba1d8056")
+@WinrtFactory("Windows.Devices.PointOfService.JournalPrinterCapabilities")
 interface IJournalPrinterCapabilities : IJournalPrinterCapabilities_Base, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities {}
 
 @uuid("24f5df4e-3c99-44e2-b73f-e51be3637a8c")
@@ -635,6 +658,8 @@ extern(Windows):
 	HRESULT get_DeviceServiceVersion(HSTRING* return_value);
 	HRESULT abi_ClaimAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedLineDisplay)* return_result);
 }
+@uuid("24f5df4e-3c99-44e2-b73f-e51be3637a8c")
+@WinrtFactory("Windows.Devices.PointOfService.LineDisplay")
 interface ILineDisplay : ILineDisplay_Base, Windows.Foundation.IClosable {}
 
 @uuid("5a15b5d1-8dc5-4b9c-9172-303e47b70c55")
@@ -688,6 +713,8 @@ extern(Windows):
 	HRESULT abi_TryScrollTextAsync(Windows.Devices.PointOfService.LineDisplayScrollDirection direction, UINT32 numberOfColumnsOrRows, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_TryClearTextAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 }
+@uuid("d21feef4-2364-4be5-bee1-851680af4964")
+@WinrtFactory("Windows.Devices.PointOfService.LineDisplayWindow")
 interface ILineDisplayWindow : ILineDisplayWindow_Base, Windows.Foundation.IClosable {}
 
 @uuid("1a92b015-47c3-468a-9333-0c6517574883")
@@ -977,6 +1004,7 @@ extern(Windows):
 	HRESULT abi_PrintCustomAlignedBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance);
 	HRESULT abi_PrintBitmapCustomWidthCustomAlign(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width);
 }
+@uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc")
 interface IReceiptOrSlipJob : IReceiptOrSlipJob_Base, Windows.Devices.PointOfService.IPosPrinterJob {}
 
 @uuid("aa96066e-acad-4b79-9d0f-c0cfc08dc77b")
@@ -988,6 +1016,8 @@ extern(Windows):
 	HRESULT abi_CutPaper(double percentage);
 	HRESULT abi_CutPaperDefault();
 }
+@uuid("aa96066e-acad-4b79-9d0f-c0cfc08dc77b")
+@WinrtFactory("Windows.Devices.PointOfService.ReceiptPrintJob")
 interface IReceiptPrintJob : IReceiptPrintJob_Base, Windows.Devices.PointOfService.IReceiptOrSlipJob, Windows.Devices.PointOfService.IPosPrinterJob {}
 
 @uuid("b8f0b58f-51a8-43fc-9bd5-8de272a6415b")
@@ -999,6 +1029,8 @@ extern(Windows):
 	HRESULT get_IsStampSupported(bool* return_value);
 	HRESULT get_MarkFeedCapabilities(Windows.Devices.PointOfService.PosPrinterMarkFeedCapabilities* return_value);
 }
+@uuid("b8f0b58f-51a8-43fc-9bd5-8de272a6415b")
+@WinrtFactory("Windows.Devices.PointOfService.ReceiptPrinterCapabilities")
 interface IReceiptPrinterCapabilities : IReceiptPrinterCapabilities_Base, Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities {}
 
 @uuid("99b16399-488c-4157-8ac2-9f57f708d3db")
@@ -1009,6 +1041,8 @@ extern(Windows):
 	HRESULT get_IsFullLengthSupported(bool* return_value);
 	HRESULT get_IsBothSidesPrintingSupported(bool* return_value);
 }
+@uuid("99b16399-488c-4157-8ac2-9f57f708d3db")
+@WinrtFactory("Windows.Devices.PointOfService.SlipPrinterCapabilities")
 interface ISlipPrinterCapabilities : ISlipPrinterCapabilities_Base, Windows.Devices.PointOfService.ICommonReceiptSlipCapabilities, Windows.Devices.PointOfService.ICommonPosPrintStationCapabilities {}
 
 @uuid("2b998c3a-555c-4889-8ed8-c599bb3a712a")

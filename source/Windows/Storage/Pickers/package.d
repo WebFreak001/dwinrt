@@ -32,6 +32,8 @@ extern(Windows):
 	deprecated("Instead, use PickMultipleFilesAsync")
 	HRESULT abi_PickMultipleFilesAndContinue();
 }
+@uuid("8ceb6cd2-b446-46f7-b265-90f8e55ad650")
+@WinrtFactory("Windows.Storage.Pickers.FileOpenPicker")
 interface IFileOpenPicker2 : IFileOpenPicker2_Base, Windows.Storage.Pickers.IFileOpenPicker {}
 
 @uuid("6821573b-2f02-4833-96d4-abbfad72b67b")
@@ -81,6 +83,8 @@ extern(Windows):
 	deprecated("Instead, use PickSaveFileAsync")
 	HRESULT abi_PickSaveFileAndContinue();
 }
+@uuid("0ec313a2-d24b-449a-8197-e89104fd42cc")
+@WinrtFactory("Windows.Storage.Pickers.FileSavePicker")
 interface IFileSavePicker2 : IFileSavePicker2_Base, Windows.Storage.Pickers.IFileSavePicker {}
 
 @uuid("698aec69-ba3c-4e51-bd90-4abcbbf4cfaf")
@@ -91,6 +95,8 @@ extern(Windows):
 	HRESULT get_EnterpriseId(HSTRING* return_value);
 	HRESULT set_EnterpriseId(HSTRING value);
 }
+@uuid("698aec69-ba3c-4e51-bd90-4abcbbf4cfaf")
+@WinrtFactory("Windows.Storage.Pickers.FileSavePicker")
 interface IFileSavePicker3 : IFileSavePicker3_Base, Windows.Storage.Pickers.IFileSavePicker {}
 
 @uuid("084f7799-f3fb-400a-99b1-7b4a772fd60d")
@@ -119,6 +125,8 @@ extern(Windows):
 	deprecated("Instead, use PickSingleFolderAsync")
 	HRESULT abi_PickFolderAndContinue();
 }
+@uuid("8eb3ba97-dc85-4616-be94-9660881f2f5d")
+@WinrtFactory("Windows.Storage.Pickers.FolderPicker")
 interface IFolderPicker2 : IFolderPicker2_Base, Windows.Storage.Pickers.IFolderPicker {}
 
 interface FileExtensionVector : Windows.Foundation.Collections.IVector!(HSTRING), Windows.Foundation.Collections.IIterable!(HSTRING)

@@ -24,6 +24,8 @@ extern(Windows):
 	HRESULT get_Comment(HSTRING* return_value);
 	HRESULT set_Comment(HSTRING value);
 }
+@uuid("7eab19bc-1821-4923-b4a9-0aea404d0070")
+@WinrtFactory("Windows.Storage.FileProperties.DocumentProperties")
 interface IDocumentProperties : IDocumentProperties_Base, Windows.Storage.FileProperties.IStorageItemExtraProperties {}
 
 @uuid("41493244-2524-4655-86a6-ed16f5fc716b")
@@ -59,6 +61,8 @@ extern(Windows):
 	HRESULT get_Orientation(Windows.Storage.FileProperties.PhotoOrientation* return_value);
 	HRESULT get_PeopleNames(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 }
+@uuid("523c9424-fcff-4275-afee-ecdb9ab47973")
+@WinrtFactory("Windows.Storage.FileProperties.ImageProperties")
 interface IImageProperties : IImageProperties_Base, Windows.Storage.FileProperties.IStorageItemExtraProperties {}
 
 @uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da")
@@ -92,6 +96,8 @@ extern(Windows):
 	HRESULT get_Year(UINT32* return_value);
 	HRESULT set_Year(UINT32 value);
 }
+@uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da")
+@WinrtFactory("Windows.Storage.FileProperties.MusicProperties")
 interface IMusicProperties : IMusicProperties_Base, Windows.Storage.FileProperties.IStorageItemExtraProperties {}
 
 @uuid("05294bad-bc38-48bf-85d7-770e0e2ae0ba")
@@ -104,6 +110,8 @@ extern(Windows):
 	HRESULT abi_GetImagePropertiesAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.ImageProperties)* return_operation);
 	HRESULT abi_GetDocumentPropertiesAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.DocumentProperties)* return_operation);
 }
+@uuid("05294bad-bc38-48bf-85d7-770e0e2ae0ba")
+@WinrtFactory("Windows.Storage.FileProperties.StorageItemContentProperties")
 interface IStorageItemContentProperties : IStorageItemContentProperties_Base, Windows.Storage.FileProperties.IStorageItemExtraProperties {}
 
 @uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7")
@@ -153,6 +161,8 @@ extern(Windows):
 	HRESULT get_Directors(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 	HRESULT get_Orientation(Windows.Storage.FileProperties.VideoOrientation* return_value);
 }
+@uuid("719ae507-68de-4db8-97de-49998c059f2f")
+@WinrtFactory("Windows.Storage.FileProperties.VideoProperties")
 interface IVideoProperties : IVideoProperties_Base, Windows.Storage.FileProperties.IStorageItemExtraProperties {}
 
 interface BasicProperties : Windows.Storage.FileProperties.IBasicProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties

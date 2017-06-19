@@ -117,6 +117,8 @@ extern(Windows):
 	HRESULT abi_GetFilesAsync(UINT32 startIndex, UINT32 maxNumberOfItems, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile))* return_operation);
 	HRESULT abi_GetFilesAsyncDefaultStartAndCount(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile))* return_operation);
 }
+@uuid("52fda447-2baa-412c-b29f-d4b1778efa1e")
+@WinrtFactory("Windows.Storage.Search.StorageFileQueryResult")
 interface IStorageFileQueryResult : IStorageFileQueryResult_Base, Windows.Storage.Search.IStorageQueryResultBase {}
 
 @uuid("4e5db9dd-7141-46c4-8be3-e9dc9e27275c")
@@ -126,6 +128,8 @@ interface IStorageFileQueryResult2_Base : IInspectable
 extern(Windows):
 	HRESULT abi_GetMatchingPropertiesWithRanges(Windows.Storage.StorageFile file, Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment))* return_result);
 }
+@uuid("4e5db9dd-7141-46c4-8be3-e9dc9e27275c")
+@WinrtFactory("Windows.Storage.Search.StorageFileQueryResult")
 interface IStorageFileQueryResult2 : IStorageFileQueryResult2_Base, Windows.Storage.Search.IStorageQueryResultBase {}
 
 @uuid("cb43ccc9-446b-4a4f-be97-757771be5203")
@@ -159,6 +163,8 @@ extern(Windows):
 	HRESULT abi_GetFoldersAsync(UINT32 startIndex, UINT32 maxNumberOfItems, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder))* return_operation);
 	HRESULT abi_GetFoldersAsyncDefaultStartAndCount(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder))* return_operation);
 }
+@uuid("6654c911-7d66-46fa-aecf-e4a4baa93ab8")
+@WinrtFactory("Windows.Storage.Search.StorageFolderQueryResult")
 interface IStorageFolderQueryResult : IStorageFolderQueryResult_Base, Windows.Storage.Search.IStorageQueryResultBase {}
 
 @uuid("e8948079-9d58-47b8-b2b2-41b07f4795f9")
@@ -169,6 +175,8 @@ extern(Windows):
 	HRESULT abi_GetItemsAsync(UINT32 startIndex, UINT32 maxNumberOfItems, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem))* return_operation);
 	HRESULT abi_GetItemsAsyncDefaultStartAndCount(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem))* return_operation);
 }
+@uuid("e8948079-9d58-47b8-b2b2-41b07f4795f9")
+@WinrtFactory("Windows.Storage.Search.StorageItemQueryResult")
 interface IStorageItemQueryResult : IStorageItemQueryResult_Base, Windows.Storage.Search.IStorageQueryResultBase {}
 
 @uuid("2a371977-abbf-4e1d-8aa5-6385d8884799")

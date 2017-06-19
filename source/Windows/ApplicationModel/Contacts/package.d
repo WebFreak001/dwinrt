@@ -53,6 +53,8 @@ extern(Windows):
 	HRESULT get_Websites(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactWebsite)* return_value);
 	HRESULT get_ProviderProperties(Windows.Foundation.Collections.IPropertySet* return_value);
 }
+@uuid("f312f365-bb77-4c94-802d-8328cee40c08")
+@WinrtFactory("Windows.ApplicationModel.Contacts.Contact")
 interface IContact2 : IContact2_Base, Windows.ApplicationModel.Contacts.IContact {}
 
 @uuid("48201e67-e08e-42a4-b561-41d08ca9575d")
@@ -84,6 +86,8 @@ extern(Windows):
 	HRESULT set_Nickname(HSTRING value);
 	HRESULT get_SortName(HSTRING* return_value);
 }
+@uuid("48201e67-e08e-42a4-b561-41d08ca9575d")
+@WinrtFactory("Windows.ApplicationModel.Contacts.Contact")
 interface IContact3 : IContact3_Base, Windows.ApplicationModel.Contacts.IContact2, Windows.ApplicationModel.Contacts.IContact {}
 
 @uuid("9739d39a-42ce-4872-8d70-3063aa584b70")
@@ -188,6 +192,8 @@ interface IContactCardDelayedDataLoader_Base : IInspectable
 extern(Windows):
 	HRESULT abi_SetData(Windows.ApplicationModel.Contacts.Contact contact);
 }
+@uuid("b60af902-1546-434d-869c-6e3520760ef3")
+@WinrtFactory("Windows.ApplicationModel.Contacts.ContactCardDelayedDataLoader")
 interface IContactCardDelayedDataLoader : IContactCardDelayedDataLoader_Base, Windows.Foundation.IClosable {}
 
 @uuid("8c0a4f7e-6ab6-4f3f-be72-817236eeea5b")
@@ -208,6 +214,8 @@ interface IContactCardOptions2_Base : IInspectable
 extern(Windows):
 	HRESULT get_ServerSearchContactListIds(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 }
+@uuid("8f271ba0-d74b-4cc6-9f53-1b0eb5d1273c")
+@WinrtFactory("Windows.ApplicationModel.Contacts.ContactCardOptions")
 interface IContactCardOptions2 : IContactCardOptions2_Base, Windows.ApplicationModel.Contacts.IContactCardOptions {}
 
 @uuid("951d4b10-6a59-4720-a4e1-363d98c135d5")
@@ -346,6 +354,8 @@ extern(Windows):
 	HRESULT get_DisplayText(HSTRING* return_value);
 	HRESULT get_LaunchUri(Windows.Foundation.Uri* return_value);
 }
+@uuid("cce33b37-0d85-41fa-b43d-da599c3eb009")
+@WinrtFactory("Windows.ApplicationModel.Contacts.ContactInstantMessageField")
 interface IContactInstantMessageField : IContactInstantMessageField_Base, Windows.ApplicationModel.Contacts.IContactField {}
 
 @uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09")
@@ -532,6 +542,8 @@ extern(Windows):
 	HRESULT get_Country(HSTRING* return_value);
 	HRESULT get_PostalCode(HSTRING* return_value);
 }
+@uuid("9ec00f82-ab6e-4b36-89e3-b23bc0a1dacc")
+@WinrtFactory("Windows.ApplicationModel.Contacts.ContactLocationField")
 interface IContactLocationField : IContactLocationField_Base, Windows.ApplicationModel.Contacts.IContactField {}
 
 @uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe")
@@ -585,6 +597,8 @@ interface IContactManagerStatics2_Base : IInspectable
 extern(Windows):
 	HRESULT abi_RequestStoreAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactStore)* return_store);
 }
+@uuid("a178e620-47d8-48cc-963c-9592b6e510c6")
+@WinrtFactory("Windows.ApplicationModel.Contacts.ContactManager")
 interface IContactManagerStatics2 : IContactManagerStatics2_Base, Windows.ApplicationModel.Contacts.IContactManagerStatics {}
 
 @uuid("c4cc3d42-7586-492a-930b-7bc138fc2139")
@@ -607,6 +621,8 @@ extern(Windows):
 	HRESULT get_SystemSortOrder(Windows.ApplicationModel.Contacts.ContactNameOrder* return_value);
 	HRESULT set_SystemSortOrder(Windows.ApplicationModel.Contacts.ContactNameOrder value);
 }
+@uuid("c4cc3d42-7586-492a-930b-7bc138fc2139")
+@WinrtFactory("Windows.ApplicationModel.Contacts.ContactManager")
 interface IContactManagerStatics3 : IContactManagerStatics3_Base, Windows.ApplicationModel.Contacts.IContactManagerStatics2, Windows.ApplicationModel.Contacts.IContactManagerStatics {}
 
 @uuid("24982272-347b-46dc-8d95-51bd41e15aaf")
@@ -811,6 +827,8 @@ extern(Windows):
 	HRESULT get_Relationship(Windows.ApplicationModel.Contacts.ContactRelationship* return_value);
 	HRESULT set_Relationship(Windows.ApplicationModel.Contacts.ContactRelationship value);
 }
+@uuid("8d7bd474-3f03-45f8-ba0f-c4ed37d64219")
+@WinrtFactory("Windows.ApplicationModel.Contacts.ContactSignificantOther")
 interface IContactSignificantOther2 : IContactSignificantOther2_Base, Windows.ApplicationModel.Contacts.IContactSignificantOther {}
 
 @uuid("2c220b10-3a6c-4293-b9bc-fe987f6e0d52")
@@ -840,6 +858,8 @@ extern(Windows):
 	HRESULT abi_GetContactReaderWithOptions(Windows.ApplicationModel.Contacts.ContactQueryOptions options, Windows.ApplicationModel.Contacts.ContactReader* return_value);
 	HRESULT abi_CreateContactListInAccountAsync(HSTRING displayName, HSTRING userDataAccountId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList)* return_value);
 }
+@uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8")
+@WinrtFactory("Windows.ApplicationModel.Contacts.ContactStore")
 interface IContactStore2 : IContactStore2_Base, Windows.ApplicationModel.Contacts.IContactStore {}
 
 @uuid("abb298d6-878a-4f8b-a9ce-46bb7d1c84ce")
@@ -867,6 +887,8 @@ extern(Windows):
 	HRESULT get_RawValue(HSTRING* return_value);
 	HRESULT set_RawValue(HSTRING value);
 }
+@uuid("f87ee91e-5647-4068-bb5e-4b6f437ce308")
+@WinrtFactory("Windows.ApplicationModel.Contacts.ContactWebsite")
 interface IContactWebsite2 : IContactWebsite2_Base, Windows.ApplicationModel.Contacts.IContactWebsite {}
 
 @uuid("8744436c-5cf9-4683-bdca-a1fdebf8dbce")

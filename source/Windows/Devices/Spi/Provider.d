@@ -45,6 +45,7 @@ extern(Windows):
 	HRESULT abi_TransferSequential(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer);
 	HRESULT abi_TransferFullDuplex(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer);
 }
+@uuid("0d1c3443-304b-405c-b4f7-f5ab1074461e")
 interface ISpiDeviceProvider : ISpiDeviceProvider_Base, Windows.Foundation.IClosable {}
 
 @uuid("96b461e2-77d4-48ce-aaa0-75715a8362cf")

@@ -1059,6 +1059,8 @@ interface ISetterBaseCollection_Base : IInspectable
 extern(Windows):
 	HRESULT get_IsSealed(bool* return_value);
 }
+@uuid("03c40ca8-909e-4117-811c-a4529496bdf1")
+@WinrtFactory("Windows.UI.Xaml.SetterBaseCollection")
 interface ISetterBaseCollection : ISetterBaseCollection_Base, Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.SetterBase) {}
 
 @uuid("81f8ad60-1ce8-469d-a667-16e37cef8ba9")

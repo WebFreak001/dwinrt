@@ -34,6 +34,8 @@ extern(Windows):
 	HRESULT add_DownloadFailed(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DownloadFailed(EventRegistrationToken token);
 }
+@uuid("4c7332ef-d39f-4396-b4d9-043957a7c964")
+@WinrtFactory("Windows.Media.Streaming.Adaptive.AdaptiveMediaSource")
 interface IAdaptiveMediaSource : IAdaptiveMediaSource_Base, Windows.Media.Core.IMediaSource {}
 
 @uuid("17890342-6760-4bb9-a58a-f7aa98b08c0e")

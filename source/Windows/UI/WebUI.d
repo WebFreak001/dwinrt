@@ -91,6 +91,8 @@ extern(Windows):
 	HRESULT get_PageRange(HSTRING* return_pstrPageRange);
 	HRESULT abi_TrySetPageRange(HSTRING strPageRange, bool* return_pfSuccess);
 }
+@uuid("cea6469a-0e05-467a-abc9-36ec1d4cdcb6")
+@WinrtFactory("Windows.UI.WebUI.HtmlPrintDocumentSource")
 interface IHtmlPrintDocumentSource : IHtmlPrintDocumentSource_Base, Windows.Graphics.Printing.IPrintDocumentSource {}
 
 @uuid("351b86bd-43b3-482b-85db-35d87b517ad9")

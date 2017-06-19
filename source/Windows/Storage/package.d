@@ -249,6 +249,7 @@ extern(Windows):
 	HRESULT abi_MoveOverload(Windows.Storage.IStorageFolder destinationFolder, HSTRING desiredNewName, Windows.Storage.NameCollisionOption option, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_MoveAndReplaceAsync(Windows.Storage.IStorageFile fileToReplace, Windows.Foundation.IAsyncAction* return_operation);
 }
+@uuid("fa3f6186-4214-428c-a64c-14c9ac7315ea")
 interface IStorageFile : IStorageFile_Base, Windows.Storage.IStorageItem, Windows.Storage.Streams.IRandomAccessStreamReference, Windows.Storage.Streams.IInputStreamReference {}
 
 @uuid("954e4bcf-0a77-42fb-b777-c2ed58a52e44")
@@ -294,6 +295,7 @@ extern(Windows):
 	HRESULT abi_GetFoldersAsyncOverloadDefaultOptionsStartAndCount(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder))* return_operation);
 	HRESULT abi_GetItemsAsyncOverloadDefaultStartAndCount(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem))* return_operation);
 }
+@uuid("72d1cb78-b3ef-4f75-a80b-6fd9dae2944b")
 interface IStorageFolder : IStorageFolder_Base, Windows.Storage.IStorageItem {}
 
 @uuid("e827e8b9-08d9-4a8e-a0ac-fe5ed3cbbbd3")
@@ -334,6 +336,7 @@ extern(Windows):
 	HRESULT abi_GetParentAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder)* return_operation);
 	HRESULT abi_IsEqual(Windows.Storage.IStorageItem item, bool* return_value);
 }
+@uuid("53f926d2-083c-4283-b45b-81c007237e44")
 interface IStorageItem2 : IStorageItem2_Base, Windows.Storage.IStorageItem {}
 
 @uuid("86664478-8029-46fe-a789-1c2f3e2ffb5c")
@@ -357,6 +360,7 @@ extern(Windows):
 	HRESULT abi_GetScaledImageAsThumbnailAsyncOverloadDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize, Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail)* return_operation);
 	HRESULT abi_GetScaledImageAsThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize, Windows.Storage.FileProperties.ThumbnailOptions options, Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail)* return_operation);
 }
+@uuid("8e86a951-04b9-4bd2-929d-fef3f71621d0")
 interface IStorageItemProperties2 : IStorageItemProperties2_Base, Windows.Storage.IStorageItemProperties {}
 
 @uuid("861bf39b-6368-4dee-b40e-74684a5ce714")
@@ -365,6 +369,7 @@ interface IStorageItemPropertiesWithProvider_Base : IInspectable
 extern(Windows):
 	HRESULT get_Provider(Windows.Storage.StorageProvider* return_value);
 }
+@uuid("861bf39b-6368-4dee-b40e-74684a5ce714")
 interface IStorageItemPropertiesWithProvider : IStorageItemPropertiesWithProvider_Base, Windows.Storage.IStorageItemProperties {}
 
 @uuid("1edd7103-0e5e-4d6c-b5e8-9318983d6a03")
@@ -452,6 +457,8 @@ extern(Windows):
 	HRESULT get_Stream(Windows.Storage.Streams.IRandomAccessStream* return_value);
 	HRESULT abi_CommitAsync(Windows.Foundation.IAsyncAction* return_operation);
 }
+@uuid("f67cf363-a53d-4d94-ae2c-67232d93acdd")
+@WinrtFactory("Windows.Storage.StorageStreamTransaction")
 interface IStorageStreamTransaction : IStorageStreamTransaction_Base, Windows.Foundation.IClosable {}
 
 @uuid("1673fcce-dabd-4d50-beee-180b8a8191b6")

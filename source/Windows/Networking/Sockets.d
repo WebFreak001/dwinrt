@@ -37,6 +37,8 @@ extern(Windows):
 	HRESULT abi_DecreaseNetworkKeepAliveInterval();
 	HRESULT abi_FlushTransport();
 }
+@uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3")
+@WinrtFactory("Windows.Networking.Sockets.ControlChannelTrigger")
 interface IControlChannelTrigger : IControlChannelTrigger_Base, Windows.Foundation.IClosable {}
 
 @uuid("af00d237-51be-4514-9725-3556e1879580")
@@ -90,6 +92,8 @@ extern(Windows):
 	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_MessageReceived(EventRegistrationToken eventCookie);
 }
+@uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af")
+@WinrtFactory("Windows.Networking.Sockets.DatagramSocket")
 interface IDatagramSocket : IDatagramSocket_Base, Windows.Foundation.IClosable {}
 
 @uuid("d83ba354-9a9d-4185-a20a-1424c9c2a7cd")
@@ -99,6 +103,8 @@ interface IDatagramSocket2_Base : IInspectable
 extern(Windows):
 	HRESULT abi_BindServiceNameAndAdapterAsync(HSTRING localServiceName, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Foundation.IAsyncAction* return_operation);
 }
+@uuid("d83ba354-9a9d-4185-a20a-1424c9c2a7cd")
+@WinrtFactory("Windows.Networking.Sockets.DatagramSocket")
 interface IDatagramSocket2 : IDatagramSocket2_Base, Windows.Foundation.IClosable {}
 
 @uuid("37544f09-ab92-4306-9ac1-0c381283d9c6")
@@ -187,6 +193,8 @@ extern(Windows):
 	HRESULT add_MessageReceived(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_MessageReceived(EventRegistrationToken eventCookie);
 }
+@uuid("33727d08-34d5-4746-ad7b-8dde5bc2ef88")
+@WinrtFactory("Windows.Networking.Sockets.MessageWebSocket")
 interface IMessageWebSocket : IMessageWebSocket_Base, Windows.Networking.Sockets.IWebSocket, Windows.Foundation.IClosable {}
 
 @uuid("bed0cee7-f9c8-440a-9ad5-737281d9742e")
@@ -197,6 +205,8 @@ extern(Windows):
 	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ServerCustomValidationRequested(EventRegistrationToken eventCookie);
 }
+@uuid("bed0cee7-f9c8-440a-9ad5-737281d9742e")
+@WinrtFactory("Windows.Networking.Sockets.MessageWebSocket")
 interface IMessageWebSocket2 : IMessageWebSocket2_Base, Windows.Networking.Sockets.IMessageWebSocket, Windows.Networking.Sockets.IWebSocket, Windows.Foundation.IClosable {}
 
 @uuid("8118388a-c629-4f0a-80fb-81fc05538862")
@@ -209,6 +219,8 @@ extern(Windows):
 	HRESULT get_MessageType(Windows.Networking.Sockets.SocketMessageType* return_value);
 	HRESULT set_MessageType(Windows.Networking.Sockets.SocketMessageType value);
 }
+@uuid("8118388a-c629-4f0a-80fb-81fc05538862")
+@WinrtFactory("Windows.Networking.Sockets.MessageWebSocketControl")
 interface IMessageWebSocketControl : IMessageWebSocketControl_Base, Windows.Networking.Sockets.IWebSocketControl {}
 
 @uuid("478c22ac-4c4b-42ed-9ed7-1ef9f94fa3d5")
@@ -291,6 +303,8 @@ extern(Windows):
 	HRESULT abi_ConnectWithProtectionLevelAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_UpgradeToSslAsync(Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Networking.HostName validationHostName, Windows.Foundation.IAsyncAction* return_operation);
 }
+@uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49")
+@WinrtFactory("Windows.Networking.Sockets.StreamSocket")
 interface IStreamSocket : IStreamSocket_Base, Windows.Foundation.IClosable {}
 
 @uuid("29d0e575-f314-4d09-adf0-0fbd967fbd9f")
@@ -300,6 +314,8 @@ interface IStreamSocket2_Base : IInspectable
 extern(Windows):
 	HRESULT abi_ConnectWithProtectionLevelAndAdapterAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Foundation.IAsyncAction* return_operation);
 }
+@uuid("29d0e575-f314-4d09-adf0-0fbd967fbd9f")
+@WinrtFactory("Windows.Networking.Sockets.StreamSocket")
 interface IStreamSocket2 : IStreamSocket2_Base, Windows.Foundation.IClosable {}
 
 @uuid("3f430b00-9d28-4854-bac3-2301941ec223")
@@ -391,6 +407,8 @@ extern(Windows):
 	HRESULT add_ConnectionReceived(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ConnectionReceived(EventRegistrationToken eventCookie);
 }
+@uuid("ff513437-df9f-4df0-bf82-0ec5d7b35aae")
+@WinrtFactory("Windows.Networking.Sockets.StreamSocketListener")
 interface IStreamSocketListener : IStreamSocketListener_Base, Windows.Foundation.IClosable {}
 
 @uuid("658dc13e-bb3e-4458-b232-ed1088694b98")
@@ -401,6 +419,8 @@ extern(Windows):
 	HRESULT abi_BindServiceNameWithProtectionLevelAsync(HSTRING localServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_BindServiceNameWithProtectionLevelAndAdapterAsync(HSTRING localServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Foundation.IAsyncAction* return_operation);
 }
+@uuid("658dc13e-bb3e-4458-b232-ed1088694b98")
+@WinrtFactory("Windows.Networking.Sockets.StreamSocketListener")
 interface IStreamSocketListener2 : IStreamSocketListener2_Base, Windows.Foundation.IClosable {}
 
 @uuid("4798201c-bdf8-4919-8542-28d450e74507")
@@ -473,6 +493,8 @@ extern(Windows):
 	HRESULT get_Information(Windows.Networking.Sockets.StreamWebSocketInformation* return_value);
 	HRESULT get_InputStream(Windows.Storage.Streams.IInputStream* return_value);
 }
+@uuid("bd4a49d8-b289-45bb-97eb-c7525205a843")
+@WinrtFactory("Windows.Networking.Sockets.StreamWebSocket")
 interface IStreamWebSocket : IStreamWebSocket_Base, Windows.Networking.Sockets.IWebSocket, Windows.Foundation.IClosable {}
 
 @uuid("aa4d08cb-93f5-4678-8236-57cce5417ed5")
@@ -483,6 +505,8 @@ extern(Windows):
 	HRESULT add_ServerCustomValidationRequested(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) eventHandler, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_ServerCustomValidationRequested(EventRegistrationToken eventCookie);
 }
+@uuid("aa4d08cb-93f5-4678-8236-57cce5417ed5")
+@WinrtFactory("Windows.Networking.Sockets.StreamWebSocket")
 interface IStreamWebSocket2 : IStreamWebSocket2_Base, Windows.Networking.Sockets.IStreamWebSocket, Windows.Networking.Sockets.IWebSocket, Windows.Foundation.IClosable {}
 
 @uuid("b4f478b1-a45a-48db-953a-645b7d964c07")
@@ -493,6 +517,8 @@ extern(Windows):
 	HRESULT get_NoDelay(bool* return_value);
 	HRESULT set_NoDelay(bool value);
 }
+@uuid("b4f478b1-a45a-48db-953a-645b7d964c07")
+@WinrtFactory("Windows.Networking.Sockets.StreamWebSocketControl")
 interface IStreamWebSocketControl : IStreamWebSocketControl_Base, Windows.Networking.Sockets.IWebSocketControl {}
 
 @uuid("f877396f-99b1-4e18-bc08-850c9adf156e")
@@ -506,6 +532,7 @@ extern(Windows):
 	HRESULT remove_Closed(EventRegistrationToken eventCookie);
 	HRESULT abi_CloseWithStatus(UINT16 code, HSTRING reason);
 }
+@uuid("f877396f-99b1-4e18-bc08-850c9adf156e")
 interface IWebSocket : IWebSocket_Base, Windows.Foundation.IClosable {}
 
 @uuid("ceb78d07-d0a8-4703-a091-c8c2c0915bc3")
@@ -536,6 +563,7 @@ interface IWebSocketControl2_Base : IInspectable
 extern(Windows):
 	HRESULT get_IgnorableServerCertificateErrors(Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult)* return_value);
 }
+@uuid("79c3be03-f2ca-461e-af4e-9665bc2d0620")
 interface IWebSocketControl2 : IWebSocketControl2_Base, Windows.Networking.Sockets.IWebSocketControl {}
 
 @uuid("27cdf35b-1f61-4709-8e02-61283ada4e9d")
@@ -564,6 +592,7 @@ extern(Windows):
 	HRESULT get_ServerCertificateErrors(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult)* return_value);
 	HRESULT get_ServerIntermediateCertificates(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)* return_value);
 }
+@uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a")
 interface IWebSocketInformation2 : IWebSocketInformation2_Base, Windows.Networking.Sockets.IWebSocketInformation {}
 
 @uuid("ffeffe48-022a-4ab7-8b36-e10af4640e6b")

@@ -71,6 +71,8 @@ extern(Windows):
 	HRESULT abi_ShowManageAccountsAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_ShowAddAccountAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 }
+@uuid("d21df7c2-ce0d-484f-b8e8-e823c215765e")
+@WinrtFactory("Windows.UI.ApplicationSettings.AccountsSettingsPane")
 interface IAccountsSettingsPaneStatics2 : IAccountsSettingsPaneStatics2_Base, Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics {}
 
 @uuid("a5f665e6-6143-4a7a-a971-b017ba978ce2")

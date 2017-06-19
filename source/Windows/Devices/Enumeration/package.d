@@ -17,6 +17,8 @@ interface IDeviceAccessChangedEventArgs2_Base : IInspectable
 extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 }
+@uuid("82523262-934b-4b30-a178-adc39f2f2be3")
+@WinrtFactory("Windows.Devices.Enumeration.DeviceAccessChangedEventArgs")
 interface IDeviceAccessChangedEventArgs2 : IDeviceAccessChangedEventArgs2_Base, Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs {}
 
 @uuid("0baa9a73-6de5-4915-8ddd-9a0554a6f545")
@@ -325,6 +327,8 @@ interface IEnclosureLocation2_Base : IInspectable
 extern(Windows):
 	HRESULT get_RotationAngleInDegreesClockwise(UINT32* return_value);
 }
+@uuid("2885995b-e07d-485d-8a9e-bdf29aef4f66")
+@WinrtFactory("Windows.Devices.Enumeration.EnclosureLocation")
 interface IEnclosureLocation2 : IEnclosureLocation2_Base, Windows.Devices.Enumeration.IEnclosureLocation {}
 
 interface DeviceAccessChangedEventArgs : Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs, Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs2

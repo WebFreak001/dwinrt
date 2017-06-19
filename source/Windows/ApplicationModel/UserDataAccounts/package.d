@@ -31,6 +31,8 @@ extern(Windows):
 	HRESULT get_EnterpriseId(HSTRING* return_value);
 	HRESULT get_IsProtectedUnderLock(bool* return_value);
 }
+@uuid("078cd89f-de82-404b-8195-c8a3ac198f60")
+@WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccount")
 interface IUserDataAccount2 : IUserDataAccount2_Base, Windows.ApplicationModel.UserDataAccounts.IUserDataAccount {}
 
 @uuid("01533845-6c43-4286-9d69-3e1709a1f266")
@@ -105,6 +107,8 @@ extern(Windows):
 	HRESULT add_StoreChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StoreChanged(EventRegistrationToken token);
 }
+@uuid("b1e0aef7-9560-4631-8af0-061d30161469")
+@WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore")
 interface IUserDataAccountStore2 : IUserDataAccountStore2_Base, Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore {}
 
 @uuid("8142c094-f3c9-478b-b117-6585bebb6789")
@@ -114,6 +118,8 @@ interface IUserDataAccountStore3_Base : IInspectable
 extern(Windows):
 	HRESULT abi_CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount)* return_result);
 }
+@uuid("8142c094-f3c9-478b-b117-6585bebb6789")
+@WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore")
 interface IUserDataAccountStore3 : IUserDataAccountStore3_Base, Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore {}
 
 @uuid("84e3e2e5-8820-4512-b1f6-2e035be1072c")

@@ -145,6 +145,8 @@ interface IConnectionSession_Base : IInspectable
 extern(Windows):
 	HRESULT get_ConnectionProfile(Windows.Networking.Connectivity.ConnectionProfile* return_value);
 }
+@uuid("ff905d4c-f83b-41b0-8a0c-1462d9c56b73")
+@WinrtFactory("Windows.Networking.Connectivity.ConnectionSession")
 interface IConnectionSession : IConnectionSession_Base, Windows.Foundation.IClosable {}
 
 @uuid("4faa3fff-6746-4824-a964-eed8e87f8709")

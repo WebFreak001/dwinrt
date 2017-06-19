@@ -18,6 +18,8 @@ extern(Windows):
 	HRESULT abi_RequestStartCastingAsync(Windows.Media.Casting.CastingSource value, Windows.Foundation.IAsyncOperation!(Windows.Media.Casting.CastingConnectionErrorStatus)* return_operation);
 	HRESULT abi_DisconnectAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Casting.CastingConnectionErrorStatus)* return_operation);
 }
+@uuid("cd951653-c2f1-4498-8b78-5fb4cd3640dd")
+@WinrtFactory("Windows.Media.Casting.CastingConnection")
 interface ICastingConnection : ICastingConnection_Base, Windows.Foundation.IClosable {}
 
 @uuid("a7fb3c69-8719-4f00-81fb-961863c79a32")

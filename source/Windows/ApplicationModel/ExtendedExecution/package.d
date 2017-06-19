@@ -25,6 +25,8 @@ extern(Windows):
 	HRESULT remove_Revoked(EventRegistrationToken token);
 	HRESULT abi_RequestExtensionAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionResult)* return_operation);
 }
+@uuid("af908a2d-118b-48f1-9308-0c4fc41e200f")
+@WinrtFactory("Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionSession")
 interface IExtendedExecutionSession : IExtendedExecutionSession_Base, Windows.Foundation.IClosable {}
 
 interface ExtendedExecutionRevokedEventArgs : Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionRevokedEventArgs

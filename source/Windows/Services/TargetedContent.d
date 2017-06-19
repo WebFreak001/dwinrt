@@ -69,6 +69,8 @@ extern(Windows):
 	HRESULT get_Height(UINT32* return_value);
 	HRESULT get_Width(UINT32* return_value);
 }
+@uuid("a7a585d9-779f-4b1e-bbb1-8eaf53fbeab2")
+@WinrtFactory("Windows.Services.TargetedContent.TargetedContentImage")
 interface ITargetedContentImage : ITargetedContentImage_Base, Windows.Storage.Streams.IRandomAccessStreamReference {}
 
 @uuid("38168dc4-276c-4c32-96ba-565c6e406e74")

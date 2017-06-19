@@ -126,6 +126,8 @@ interface ISpatialInteractionDetectedEventArgs2_Base : IInspectable
 extern(Windows):
 	HRESULT get_InteractionSource(Windows.UI.Input.Spatial.SpatialInteractionSource* return_value);
 }
+@uuid("7b263e93-5f13-419c-97d5-834678266aa6")
+@WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs")
 interface ISpatialInteractionDetectedEventArgs2 : ISpatialInteractionDetectedEventArgs2_Base, Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs {}
 
 @uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef")
@@ -176,6 +178,8 @@ extern(Windows):
 	HRESULT get_Controller(Windows.UI.Input.Spatial.SpatialInteractionController* return_value);
 	HRESULT abi_TryGetStateAtTimestamp(Windows.Perception.PerceptionTimestamp timestamp, Windows.UI.Input.Spatial.SpatialInteractionSourceState* return_value);
 }
+@uuid("e4c5b70c-0470-4028-88c0-a0eb44d34efe")
+@WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSource")
 interface ISpatialInteractionSource2 : ISpatialInteractionSource2_Base, Windows.UI.Input.Spatial.ISpatialInteractionSource {}
 
 @uuid("23b786cf-ec23-3979-b27c-eb0e12feb7c7")
@@ -193,6 +197,8 @@ interface ISpatialInteractionSourceEventArgs2_Base : IInspectable
 extern(Windows):
 	HRESULT get_PressKind(Windows.UI.Input.Spatial.SpatialInteractionPressKind* return_value);
 }
+@uuid("d8b4b467-e648-4d52-ab49-e0d227199f63")
+@WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs")
 interface ISpatialInteractionSourceEventArgs2 : ISpatialInteractionSourceEventArgs2_Base, Windows.UI.Input.Spatial.ISpatialInteractionSourceEventArgs {}
 
 @uuid("ea4696c4-7e8b-30ca-bcc5-c77189cea30a")
@@ -245,6 +251,8 @@ extern(Windows):
 	HRESULT get_SelectPressedValue(double* return_value);
 	HRESULT get_ControllerProperties(Windows.UI.Input.Spatial.SpatialInteractionControllerProperties* return_value);
 }
+@uuid("45f6d0bd-1773-492e-9ba3-8ac1cbe77c08")
+@WinrtFactory("Windows.UI.Input.Spatial.SpatialInteractionSourceState")
 interface ISpatialInteractionSourceState2 : ISpatialInteractionSourceState2_Base, Windows.UI.Input.Spatial.ISpatialInteractionSourceState {}
 
 @uuid("2d40d1cb-e7da-4220-b0bf-819301674780")
@@ -354,6 +362,8 @@ interface ISpatialPointerPose2_Base : IInspectable
 extern(Windows):
 	HRESULT abi_TryGetInteractionSourcePose(Windows.UI.Input.Spatial.SpatialInteractionSource source, Windows.UI.Input.Spatial.SpatialPointerInteractionSourcePose* return_value);
 }
+@uuid("9d202b17-954e-4e0c-96d1-b6790b6fc2fd")
+@WinrtFactory("Windows.UI.Input.Spatial.SpatialPointerPose")
 interface ISpatialPointerPose2 : ISpatialPointerPose2_Base, Windows.UI.Input.Spatial.ISpatialPointerPose {}
 
 @uuid("a25591a9-aca1-3ee0-9816-785cfb2e3fb8")

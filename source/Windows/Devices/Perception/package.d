@@ -130,6 +130,8 @@ extern(Windows):
 	deprecated("PerceptionColorFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.VideoMediaFrame instead.")
 	HRESULT get_VideoFrame(Windows.Media.VideoFrame* return_value);
 }
+@uuid("fe621549-2cbf-4f94-9861-f817ea317747")
+@WinrtFactory("Windows.Devices.Perception.PerceptionColorFrame")
 interface IPerceptionColorFrame : IPerceptionColorFrame_Base, Windows.Foundation.IClosable {}
 
 @uuid("8fad02d5-86f7-4d8d-b966-5a3761ba9f59")
@@ -161,6 +163,8 @@ extern(Windows):
 	deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	HRESULT abi_TryReadLatestFrame(Windows.Devices.Perception.PerceptionColorFrame* return_result);
 }
+@uuid("7650f56e-b9f5-461b-83ad-f222af2aaadc")
+@WinrtFactory("Windows.Devices.Perception.PerceptionColorFrameReader")
 interface IPerceptionColorFrameReader : IPerceptionColorFrameReader_Base, Windows.Foundation.IClosable {}
 
 @uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c")
@@ -311,6 +315,8 @@ extern(Windows):
 	deprecated("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	HRESULT abi_TrySetPropertyAsync(HSTRING name, IInspectable value, Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeResult)* return_result);
 }
+@uuid("99998653-5a3d-417f-9239-f1889e548b48")
+@WinrtFactory("Windows.Devices.Perception.PerceptionControlSession")
 interface IPerceptionControlSession : IPerceptionControlSession_Base, Windows.Foundation.IClosable {}
 
 @uuid("6548ca01-86de-5be1-6582-807fcf4c95cf")
@@ -351,6 +357,8 @@ extern(Windows):
 	deprecated("PerceptionDepthFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")
 	HRESULT get_VideoFrame(Windows.Media.VideoFrame* return_value);
 }
+@uuid("a37b81fc-9906-4ffd-9161-0024b360b657")
+@WinrtFactory("Windows.Devices.Perception.PerceptionDepthFrame")
 interface IPerceptionDepthFrame : IPerceptionDepthFrame_Base, Windows.Foundation.IClosable {}
 
 @uuid("443d25b2-b282-4637-9173-ac978435c985")
@@ -382,6 +390,8 @@ extern(Windows):
 	deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	HRESULT abi_TryReadLatestFrame(Windows.Devices.Perception.PerceptionDepthFrame* return_result);
 }
+@uuid("b1a3c09f-299b-4612-a4f7-270f25a096ec")
+@WinrtFactory("Windows.Devices.Perception.PerceptionDepthFrameReader")
 interface IPerceptionDepthFrameReader : IPerceptionDepthFrameReader_Base, Windows.Foundation.IClosable {}
 
 @uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942")
@@ -550,6 +560,8 @@ extern(Windows):
 	deprecated("PerceptionInfraredFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.InfraredMediaFrame instead.")
 	HRESULT get_VideoFrame(Windows.Media.VideoFrame* return_value);
 }
+@uuid("b0886276-849e-4c7a-8ae6-b56064532153")
+@WinrtFactory("Windows.Devices.Perception.PerceptionInfraredFrame")
 interface IPerceptionInfraredFrame : IPerceptionInfraredFrame_Base, Windows.Foundation.IClosable {}
 
 @uuid("9f77fac7-b4bd-4857-9d50-be8ef075daef")
@@ -581,6 +593,8 @@ extern(Windows):
 	deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	HRESULT abi_TryReadLatestFrame(Windows.Devices.Perception.PerceptionInfraredFrame* return_result);
 }
+@uuid("7960ce18-d39b-4fc8-a04a-929734c6756c")
+@WinrtFactory("Windows.Devices.Perception.PerceptionInfraredFrameReader")
 interface IPerceptionInfraredFrameReader : IPerceptionInfraredFrameReader_Base, Windows.Foundation.IClosable {}
 
 @uuid("55b08742-1808-494e-9e30-9d2a7be8f700")

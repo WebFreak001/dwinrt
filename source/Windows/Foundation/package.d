@@ -400,6 +400,7 @@ extern(Windows):
 		Debug.OK(this.as!(IAsyncAction).set_Completed(handler));
 	}
 }
+@uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")
 interface IAsyncAction : IAsyncAction_Base, IAsyncInfo {}
 
 @uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e")
@@ -416,6 +417,8 @@ interface IDeferral_Base : IInspectable
 extern(Windows):
 	HRESULT abi_Complete();
 }
+@uuid("d6269732-3b7f-46a7-b40b-4fdca2a2c693")
+@WinrtFactory("Windows.Foundation.Deferral")
 interface IDeferral : IDeferral_Base, Windows.Foundation.IClosable {}
 
 @uuid("65a1ecc5-3fb5-4832-8ca9-f061b281d13a")
@@ -439,6 +442,7 @@ interface IMemoryBuffer_Base : IInspectable
 extern(Windows):
 	HRESULT abi_CreateReference(Windows.Foundation.IMemoryBufferReference* return_reference);
 }
+@uuid("fbc4dd2a-245b-11e4-af98-689423260cf8")
 interface IMemoryBuffer : IMemoryBuffer_Base, Windows.Foundation.IClosable {}
 
 @uuid("fbc4dd2b-245b-11e4-af98-689423260cf8")
@@ -457,6 +461,7 @@ extern(Windows):
 	HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.Foundation.IMemoryBufferReference, IInspectable) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_Closed(EventRegistrationToken cookie);
 }
+@uuid("fbc4dd29-245b-11e4-af98-689423260cf8")
 interface IMemoryBufferReference : IMemoryBufferReference_Base, Windows.Foundation.IClosable {}
 
 @uuid("4bd682dd-7554-40e9-9a9b-82654ede7e62")
@@ -623,6 +628,8 @@ interface IWwwFormUrlDecoderRuntimeClass_Base : IInspectable
 extern(Windows):
 	HRESULT abi_GetFirstValueByName(HSTRING name, HSTRING* return_phstrValue);
 }
+@uuid("d45a0451-f225-4542-9296-0e1df5d254df")
+@WinrtFactory("Windows.Foundation.WwwFormUrlDecoder")
 interface IWwwFormUrlDecoderRuntimeClass : IWwwFormUrlDecoderRuntimeClass_Base, Windows.Foundation.Collections.IIterable!(Windows.Foundation.IWwwFormUrlDecoderEntry), Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry) {}
 
 @uuid("5b8c6b3d-24ae-41b5-a1bf-f0c3d544845b")

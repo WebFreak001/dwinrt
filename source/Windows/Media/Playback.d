@@ -43,6 +43,8 @@ interface ICurrentMediaPlaybackItemChangedEventArgs2_Base : IInspectable
 extern(Windows):
 	HRESULT get_Reason(Windows.Media.Playback.MediaPlaybackItemChangedReason* return_value);
 }
+@uuid("1d80a51e-996e-40a9-be48-e66ec90b2b7d")
+@WinrtFactory("Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs")
 interface ICurrentMediaPlaybackItemChangedEventArgs2 : ICurrentMediaPlaybackItemChangedEventArgs2_Base, Windows.Media.Playback.ICurrentMediaPlaybackItemChangedEventArgs {}
 
 @uuid("714be270-0def-4ebc-a489-6b34930e1558")
@@ -334,6 +336,8 @@ extern(Windows):
 	HRESULT get_VideoTracks(Windows.Media.Playback.MediaPlaybackVideoTrackList* return_value);
 	HRESULT get_TimedMetadataTracks(Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList* return_value);
 }
+@uuid("047097d2-e4af-48ab-b283-6929e674ece2")
+@WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
 interface IMediaPlaybackItem : IMediaPlaybackItem_Base, Windows.Media.Playback.IMediaPlaybackSource {}
 
 @uuid("d859d171-d7ef-4b81-ac1f-f40493cbb091")
@@ -349,6 +353,8 @@ extern(Windows):
 	HRESULT abi_GetDisplayProperties(Windows.Media.Playback.MediaItemDisplayProperties* return_value);
 	HRESULT abi_ApplyDisplayProperties(Windows.Media.Playback.MediaItemDisplayProperties value);
 }
+@uuid("d859d171-d7ef-4b81-ac1f-f40493cbb091")
+@WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
 interface IMediaPlaybackItem2 : IMediaPlaybackItem2_Base, Windows.Media.Playback.IMediaPlaybackItem, Windows.Media.Playback.IMediaPlaybackSource {}
 
 @uuid("0d328220-b80a-4d09-9ff8-f87094a1c831")
@@ -362,6 +368,8 @@ extern(Windows):
 	HRESULT get_AutoLoadedDisplayProperties(Windows.Media.Playback.AutoLoadedDisplayPropertyKind* return_value);
 	HRESULT set_AutoLoadedDisplayProperties(Windows.Media.Playback.AutoLoadedDisplayPropertyKind value);
 }
+@uuid("0d328220-b80a-4d09-9ff8-f87094a1c831")
+@WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
 interface IMediaPlaybackItem3 : IMediaPlaybackItem3_Base, Windows.Media.Playback.IMediaPlaybackItem2, Windows.Media.Playback.IMediaPlaybackItem, Windows.Media.Playback.IMediaPlaybackSource {}
 
 @uuid("69fbef2b-dcd6-4df9-a450-dbf4c6f1c2c2")
@@ -389,6 +397,8 @@ extern(Windows):
 	HRESULT abi_CreateWithStartTime(Windows.Media.Core.MediaSource source, Windows.Foundation.TimeSpan startTime, Windows.Media.Playback.MediaPlaybackItem* return_result);
 	HRESULT abi_CreateWithStartTimeAndDurationLimit(Windows.Media.Core.MediaSource source, Windows.Foundation.TimeSpan startTime, Windows.Foundation.TimeSpan durationLimit, Windows.Media.Playback.MediaPlaybackItem* return_result);
 }
+@uuid("d77cdf3a-b947-4972-b35d-adfb931a71e6")
+@WinrtFactory("Windows.Media.Playback.MediaPlaybackItem")
 interface IMediaPlaybackItemFactory2 : IMediaPlaybackItemFactory2_Base, Windows.Media.Playback.IMediaPlaybackItemFactory {}
 
 @uuid("7703134a-e9a7-47c3-862c-c656d30683d4")
@@ -438,6 +448,8 @@ extern(Windows):
 	HRESULT abi_MovePrevious(Windows.Media.Playback.MediaPlaybackItem* return_item);
 	HRESULT abi_MoveTo(UINT32 itemIndex, Windows.Media.Playback.MediaPlaybackItem* return_item);
 }
+@uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925")
+@WinrtFactory("Windows.Media.Playback.MediaPlaybackList")
 interface IMediaPlaybackList : IMediaPlaybackList_Base, Windows.Media.Playback.IMediaPlaybackSource {}
 
 @uuid("0e09b478-600a-4274-a14b-0b6723d0f48b")
@@ -452,6 +464,8 @@ extern(Windows):
 	HRESULT get_ShuffledItems(Windows.Foundation.Collections.IVectorView!(Windows.Media.Playback.MediaPlaybackItem)* return_value);
 	HRESULT abi_SetShuffledItems(Windows.Foundation.Collections.IIterable!(Windows.Media.Playback.MediaPlaybackItem) value);
 }
+@uuid("0e09b478-600a-4274-a14b-0b6723d0f48b")
+@WinrtFactory("Windows.Media.Playback.MediaPlaybackList")
 interface IMediaPlaybackList2 : IMediaPlaybackList2_Base, Windows.Media.Playback.IMediaPlaybackList, Windows.Media.Playback.IMediaPlaybackSource {}
 
 @uuid("dd24bba9-bc47-4463-aa90-c18b7e5ffde1")
@@ -462,6 +476,8 @@ extern(Windows):
 	HRESULT get_MaxPlayedItemsToKeepOpen(Windows.Foundation.IReference!(UINT32)* return_value);
 	HRESULT set_MaxPlayedItemsToKeepOpen(Windows.Foundation.IReference!(UINT32) value);
 }
+@uuid("dd24bba9-bc47-4463-aa90-c18b7e5ffde1")
+@WinrtFactory("Windows.Media.Playback.MediaPlaybackList")
 interface IMediaPlaybackList3 : IMediaPlaybackList3_Base, Windows.Media.Playback.IMediaPlaybackList2, Windows.Media.Playback.IMediaPlaybackList, Windows.Media.Playback.IMediaPlaybackSource {}
 
 @uuid("c32b683d-0407-41ba-8946-8b345a5a5435")
@@ -814,6 +830,8 @@ extern(Windows):
 	HRESULT abi_Insert(Windows.Media.Playback.PlaybackMediaMarker value);
 	HRESULT abi_Clear();
 }
+@uuid("f2810cee-638b-46cf-8817-1d111fe9d8c4")
+@WinrtFactory("Windows.Media.Playback.PlaybackMediaMarkerSequence")
 interface IPlaybackMediaMarkerSequence : IPlaybackMediaMarkerSequence_Base, Windows.Foundation.Collections.IIterable!(Windows.Media.Playback.PlaybackMediaMarker) {}
 
 @uuid("d1636099-65df-45ae-8cef-dc0b53fdc2bb")

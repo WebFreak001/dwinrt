@@ -319,11 +319,13 @@ void main(string[] args)
 			auto copy = obj.methods[i];
 			if (copy.implementation.length)
 				continue;
-			copy.implement("Windows.Foundation." ~ obj.name ~ "!(" ~ obj.templateArgs.join(", ") ~ ")");
+			copy.implement("Windows.Foundation." ~ obj.name ~ "!(" ~ obj.templateArgs.join(
+					", ") ~ ")");
 			obj.methods ~= copy;
 		}
 	}
-	dirEntries(`C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\winrt`, SpanMode.shallow).array.sort!"a < b".each!(processIDL);
+	dirEntries(`C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\winrt`,
+			SpanMode.shallow).array.sort!"a < b".each!(processIDL);
 	foreach (ref mod; modules)
 		mod.fixTypes;
 	foreach (ref mod; modules)
@@ -336,7 +338,124 @@ void main(string[] args)
 		std.file.write(fileName, mod.toString);
 	}
 	append(buildPath("source", "Windows", "Foundation", "package.d"), foundationSuffix);
+	writeln("Finding template UUIDs");
+	dirEntries(`C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0`, SpanMode.breadth).filter!(
+			a => a.extension == ".h").array.sort!"a < b".each!findUUIDs;
+	if (templateUUIDs.length)
+	{
+		string uuidsIfs = "\t" ~ templateUUIDs.to!(string[])
+			.map!indent.join("\n")["\telse ".length .. $];
+		//dfmt off
+		string uuidsContent = [
+			"module dwinrt.uuids;",
+			"",
+			"import dwinrt;",
+			"",
+			"GUID uuidOfInstanced(string T)",
+			"{",
+			uuidsIfs,
+			"\telse",
+			"\t\treturn GUID.init;",
+			"}"
+		].join("\n");
+		//dfmt on
+		std.file.write(buildPath("source", "dwinrt", "uuids.d"), uuidsContent);
+	}
 	modules.each!(mod => writeln("public static import " ~ mod.name.join(".") ~ ";"));
+}
+
+struct TemplateUUID
+{
+	string dType;
+	string uuid;
+
+	string toString() const
+	{
+		return "else if (T == \"" ~ dType ~ "\")\n\treturn uuid(\"" ~ uuid ~ "\");";
+	}
+}
+
+TemplateUUID[] templateUUIDs;
+
+void findUUIDs(string file)
+{
+	enum magic = "struct __declspec(uuid(\"";
+
+	string currentUUID;
+	foreach (line; File(file).byLine(KeepTerminator.no))
+	{
+		line = line.strip;
+		if (line.startsWith(magic) && line.endsWith("\"))"))
+			currentUUID = line[magic.length .. $ - 3].idup;
+		else if (currentUUID.length)
+		{
+			scope (exit)
+				currentUUID.length = 0;
+			if (!line.canFind("<"))
+				continue;
+			if (line.canFind("__"))
+				continue;
+			auto inherit = line.indexOf(" : ");
+			auto def = line.indexOf(" {");
+			if (inherit == -1)
+				inherit = ptrdiff_t.max;
+			if (def == -1)
+				def = ptrdiff_t.max;
+			auto end = inherit < def ? inherit : def;
+			if (end == ptrdiff_t.max)
+			{
+				writeln("Invalid line ", line);
+				continue;
+			}
+			string dtype = line[0 .. end].idup.translateType.replace("::", ".").replace("ABI.", "");
+			auto templateIndex = dtype.indexOf("!");
+			enforce(templateIndex > 0);
+			auto parts = dtype[templateIndex + 1 .. $].splitTypes;
+			string[] fixedTypes;
+			bool exists = true;
+			foreach (part; parts)
+			{
+				part = part.strip;
+				if (!part.length)
+					throw new Exception("Invalid empty part");
+				if (part.startsWith("struct "))
+					fixedTypes ~= part["struct ".length .. $];
+				else if (part.startsWith("enum "))
+					fixedTypes ~= part["enum ".length .. $];
+				else
+				{
+					part.fixType;
+					if (part.canFind(".") && part[$ - 1] == '*')
+						writeln("Type probably not properly resolved: ", part);
+					if (part.startsWith("Microsoft."))
+					{
+						exists = false;
+						break;
+					}
+					fixedTypes ~= part.stripNamespace;
+				}
+			}
+			if (!exists)
+				continue;
+			string baseType = dtype[0 .. templateIndex];
+			switch (baseType)
+			{
+			case "IAsyncActionProgressHandler":
+			case "IAsyncActionWithProgressCompletedHandler":
+			case "IAsyncOperationCompletedHandler":
+			case "IAsyncOperationProgressHandler":
+			case "IAsyncOperationWithProgressCompletedHandler":
+			case "ITypedEventHandler":
+			case "IEventHandler":
+				baseType = baseType[1 .. $];
+				break;
+			default:
+				break;
+			}
+			string rebuilt = baseType.stripNamespace ~ "!(" ~ fixedTypes.join(", ") ~ ")";
+			templateUUIDs ~= TemplateUUID(rebuilt, currentUUID);
+		}
+	}
 }
 
 void processIDL(string file)
@@ -441,7 +560,8 @@ void processIDL(string file)
 					enforce(content.name == "IDL.definition_content");
 					if (content.children.length == 1 && content.children[0].name == "IDL.uuid")
 					{
-						uuid = content.children[0].children.map!(a => a.matches[0]).join("-").toLower;
+						uuid = content.children[0].children.map!(a => a.matches[0])
+							.join("-").toLower;
 						return;
 					}
 				}
@@ -566,7 +686,8 @@ void processIDL(string file)
 					foreach_reverse (content; attrib.children)
 					{
 						enforce(content.name == "IDL.definition_content");
-						if (content.children.length == 1 && content.children[0].name == "IDL.exclusiveto")
+						if (content.children.length == 1
+								&& content.children[0].name == "IDL.exclusiveto")
 						{
 							enforce(content.children[0].children[0].name == "IDL.scoped_name");
 							obj.exclusiveto = content.children[0].children[0].matches.join("");
@@ -792,7 +913,8 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 				}
 				else
 				{
-					if (spec.children.length == 1 && spec.children[0].name == "IDL.op_overload_attribute")
+					if (spec.children.length == 1
+							&& spec.children[0].name == "IDL.op_overload_attribute")
 					{
 						enforce(spec.children[0].children.length == 1);
 						method.name = spec.children[0].children[0].parseString;
@@ -836,7 +958,8 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 									argument.direction |= ArgumentDirection.out_;
 									break;
 								case "inout":
-									argument.direction |= ArgumentDirection.in_ | ArgumentDirection.out_;
+									argument.direction |= ArgumentDirection.in_
+										| ArgumentDirection.out_;
 									break;
 								case "retval":
 									argument.direction |= ArgumentDirection.retval;
@@ -845,7 +968,8 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 								case "unique":
 									break;
 								default:
-									throw new Exception("Invalid parameter attribute: " ~ attr.matches[0]);
+									throw new Exception(
+											"Invalid parameter attribute: " ~ attr.matches[0]);
 								}
 							}
 						}
@@ -1017,6 +1141,14 @@ struct Module
 	}
 }
 
+bool moduleExists(string[] name)
+{
+	foreach (ref mod; modules)
+		if (mod.name == name)
+			return true;
+	return false;
+}
+
 ref Module makeMod(string[] name, string[] deps = [])
 {
 	if (name.length == 0)
@@ -1062,8 +1194,8 @@ Interface findInterface(string fullname)
 		}
 	}
 	throw new Exception(
-			"Interface not found: " ~ fullname ~ ", searched for " ~ name ~ " in " ~ parts[0 .. $ - 1].join(
-			"."));
+			"Interface not found: " ~ fullname ~ ", searched for " ~ name ~ " in "
+			~ parts[0 .. $ - 1].join("."));
 }
 
 struct Enum
@@ -1196,7 +1328,8 @@ struct Interface
 	{
 		if (!isRuntimeClass)
 			return;
-		enforce(methods.length == 0, "Is runtime class but got " ~ methods.to!string ~ " as methods.");
+		enforce(methods.length == 0,
+				"Is runtime class but got " ~ methods.to!string ~ " as methods.");
 		foreach (base; implements)
 			implement(base, findInterface(base));
 	}
@@ -1240,6 +1373,10 @@ struct Interface
 		ret ~= "}";
 		if (requires.length)
 		{
+			if (uuid.length)
+				ret ~= "\n@uuid(\"" ~ uuid ~ "\")";
+			if (exclusiveto.length)
+				ret ~= "\n@WinrtFactory(\"" ~ exclusiveto ~ "\")";
 			ret ~= "\ninterface " ~ name;
 			if (templateArgs.length)
 				ret ~= "(" ~ templateArgs.join(", ") ~ ")";
@@ -1280,11 +1417,12 @@ struct InterfaceMethod
 				enforce(arguments[1].type == "EventRegistrationToken*", arguments[1].type);
 				string type = arguments[0].type;
 				string args = type["Windows.Foundation.TypedEventHandler!(".length .. $ - 1];
-				arguments = [InterfaceArgument(ArgumentDirection.in_, "void delegate(" ~ args ~ ")", "fn")];
+				arguments = [InterfaceArgument(ArgumentDirection.in_,
+						"void delegate(" ~ args ~ ")", "fn")];
 				name = "On" ~ name;
 				returnType = "EventRegistrationToken";
-				string registerCall = "Debug.OK(" ~ fname ~ "(event!(" ~ type ~ ", "
-					~ args ~ ")(fn), &tok));";
+				string registerCall = "Debug.OK(" ~ fname ~ "(event!(" ~ type
+					~ ", " ~ args ~ ")(fn), &tok));";
 				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
 			}
 			else
@@ -1327,8 +1465,8 @@ struct InterfaceMethod
 				if (argsPost.length)
 					args ~= ", " ~ argsPost;
 				string post = "\nreturn _ret;";
-				implementation = pre ~ "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname
-					~ "(" ~ args ~ "));" ~ post;
+				implementation = pre ~ "Debug.OK(this.as!(" ~ baseName ~ ")."
+					~ fname ~ "(" ~ args ~ "));" ~ post;
 			}
 			else
 			{
@@ -1455,6 +1593,19 @@ string[] splitTypes(string type)
 			ret[$ - 1] ~= c;
 	}
 	return ret;
+}
+
+string stripNamespace(string type)
+{
+	auto templateIndex = type.indexOf("!");
+	if (templateIndex == -1)
+		return type.split('.')[$ - 1];
+	else
+	{
+		string pre = type[0 .. templateIndex];
+		auto args = type[templateIndex + 1 .. $].splitTypes.map!stripNamespace;
+		return pre.stripNamespace ~ "!(" ~ args.join(", ") ~ ")";
+	}
 }
 
 enum ArgumentDirection

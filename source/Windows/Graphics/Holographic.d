@@ -37,6 +37,8 @@ extern(Windows):
 	HRESULT get_RightViewportParameters(Windows.Graphics.Holographic.HolographicCameraViewportParameters* return_result);
 	HRESULT get_Display(Windows.Graphics.Holographic.HolographicDisplay* return_result);
 }
+@uuid("b55b9f1a-ba8c-4f84-ad79-2e7e1e2450f3")
+@WinrtFactory("Windows.Graphics.Holographic.HolographicCamera")
 interface IHolographicCamera2 : IHolographicCamera2_Base, Windows.Graphics.Holographic.IHolographicCamera {}
 
 @uuid("0d7d7e30-12de-45bd-912b-c7f6561599d1")
@@ -75,6 +77,8 @@ extern(Windows):
 	HRESULT set_ReprojectionMode(Windows.Graphics.Holographic.HolographicReprojectionMode value);
 	HRESULT abi_CommitDirect3D11DepthBuffer(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface value);
 }
+@uuid("261270e3-b696-4634-94d6-be0681643599")
+@WinrtFactory("Windows.Graphics.Holographic.HolographicCameraRenderingParameters")
 interface IHolographicCameraRenderingParameters2 : IHolographicCameraRenderingParameters2_Base, Windows.Graphics.Holographic.IHolographicCameraRenderingParameters {}
 
 @uuid("80cdf3f7-842a-41e1-93ed-5692ab1fbb10")

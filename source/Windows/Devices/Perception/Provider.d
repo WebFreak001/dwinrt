@@ -137,6 +137,7 @@ extern(Windows):
 	deprecated("IPerceptionFrameProvider may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_SetProperty(Windows.Devices.Perception.Provider.PerceptionPropertyChangeRequest value);
 }
+@uuid("794f7ab9-b37d-3b33-a10d-30626419ce65")
 interface IPerceptionFrameProvider : IPerceptionFrameProvider_Base, Windows.Foundation.IClosable {}
 
 @uuid("cca959e8-797e-4e83-9b87-036a74142fc4")
@@ -173,6 +174,7 @@ extern(Windows):
 	deprecated("IPerceptionFrameProviderManager may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_GetFrameProvider(Windows.Devices.Perception.Provider.PerceptionFrameProviderInfo frameProviderInfo, Windows.Devices.Perception.Provider.IPerceptionFrameProvider* return_result);
 }
+@uuid("a959ce07-ead3-33df-8ec1-b924abe019c4")
 interface IPerceptionFrameProviderManager : IPerceptionFrameProviderManager_Base, Windows.Foundation.IClosable {}
 
 @uuid("ae8386e6-cad9-4359-8f96-8eae51810526")
@@ -229,6 +231,8 @@ extern(Windows):
 	deprecated("PerceptionVideoFrameAllocator may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	HRESULT abi_CopyFromVideoFrame(Windows.Media.VideoFrame frame, Windows.Devices.Perception.Provider.PerceptionFrame* return_value);
 }
+@uuid("4c38a7da-fdd8-4ed4-a039-2a6f9b235038")
+@WinrtFactory("Windows.Devices.Perception.Provider.PerceptionVideoFrameAllocator")
 interface IPerceptionVideoFrameAllocator : IPerceptionVideoFrameAllocator_Base, Windows.Foundation.IClosable {}
 
 @uuid("1a58b0e1-e91a-481e-b876-a89e2bbc6b33")

@@ -31,6 +31,8 @@ extern(Windows):
 	HRESULT abi_CreateDownloadFromFile(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Storage.IStorageFile requestBodyFile, Windows.Networking.BackgroundTransfer.DownloadOperation* return_operation);
 	HRESULT abi_CreateDownloadAsync(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Storage.Streams.IInputStream requestBodyStream, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.DownloadOperation)* return_operation);
 }
+@uuid("c1c79333-6649-4b1d-a826-a4b3dd234d0b")
+@WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundDownloader")
 interface IBackgroundDownloader : IBackgroundDownloader_Base, Windows.Networking.BackgroundTransfer.IBackgroundTransferBase {}
 
 @uuid("a94a5847-348d-4a35-890e-8a1ef3798479")
@@ -209,6 +211,8 @@ extern(Windows):
 	HRESULT abi_CreateUploadWithSubTypeAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
 	HRESULT abi_CreateUploadWithSubTypeAndBoundaryAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType, HSTRING boundary, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
 }
+@uuid("c595c9ae-cead-465b-8801-c55ac90a01ce")
+@WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundUploader")
 interface IBackgroundUploader : IBackgroundUploader_Base, Windows.Networking.BackgroundTransfer.IBackgroundTransferBase {}
 
 @uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad")
@@ -301,6 +305,8 @@ extern(Windows):
 	HRESULT abi_Pause();
 	HRESULT abi_Resume();
 }
+@uuid("bd87ebb0-5714-4e09-ba68-bef73903b0d7")
+@WinrtFactory("Windows.Networking.BackgroundTransfer.DownloadOperation")
 interface IDownloadOperation : IDownloadOperation_Base, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation {}
 
 @uuid("a3cced40-8f9c-4353-9cd4-290dee387c38")
@@ -341,6 +347,8 @@ extern(Windows):
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation, Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
 	HRESULT abi_AttachAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation, Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
 }
+@uuid("3e5624e0-7389-434c-8b35-427fd36bbdae")
+@WinrtFactory("Windows.Networking.BackgroundTransfer.UploadOperation")
 interface IUploadOperation : IUploadOperation_Base, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation {}
 
 @uuid("556189f2-2774-4df6-9fa5-209f2bfb12f7")

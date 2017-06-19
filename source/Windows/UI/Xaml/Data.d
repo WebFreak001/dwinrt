@@ -143,6 +143,7 @@ extern(Windows):
 	HRESULT abi_MoveCurrentToPrevious(bool* return_returnValue);
 	HRESULT abi_LoadMoreItemsAsync(UINT32 count, Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Data.LoadMoreItemsResult)* return_returnValue);
 }
+@uuid("8be8bfe4-dbef-44df-8126-a31a89121ddc")
 interface ICollectionView : ICollectionView_Base, Windows.Foundation.Collections.IObservableVector!(IInspectable), Windows.Foundation.Collections.IVector!(IInspectable), Windows.Foundation.Collections.IIterable!(IInspectable) {}
 
 @uuid("34d4aaf4-8e72-4950-9192-ecd07d399d0a")
@@ -252,6 +253,7 @@ interface IItemsRangeInfo_Base : IInspectable
 extern(Windows):
 	HRESULT abi_RangesChanged(Windows.UI.Xaml.Data.ItemIndexRange visibleRange, Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Data.ItemIndexRange) trackedItems);
 }
+@uuid("f05f5665-71fd-45a2-be13-a081d294a68d")
 interface IItemsRangeInfo : IItemsRangeInfo_Base, Windows.Foundation.IClosable {}
 
 @uuid("cf75d69c-f2f4-486b-b302-bb4c09baebfa")

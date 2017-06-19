@@ -147,6 +147,8 @@ extern(Windows):
 	HRESULT set_ThreadingInfo(Windows.ApplicationModel.Chat.ChatConversationThreadingInfo value);
 	HRESULT get_RecipientsDeliveryInfos(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Chat.ChatRecipientDeliveryInfo)* return_result);
 }
+@uuid("86668332-543f-49f5-ac71-6c2afc6565fd")
+@WinrtFactory("Windows.ApplicationModel.Chat.ChatMessage")
 interface IChatMessage2 : IChatMessage2_Base, Windows.ApplicationModel.Chat.IChatMessage3, Windows.ApplicationModel.Chat.IChatMessage {}
 
 @uuid("74eb2fb0-3ba7-459f-8e0b-e8af0febd9ad")
@@ -156,6 +158,8 @@ interface IChatMessage3_Base : IInspectable
 extern(Windows):
 	HRESULT get_RemoteId(HSTRING* return_value);
 }
+@uuid("74eb2fb0-3ba7-459f-8e0b-e8af0febd9ad")
+@WinrtFactory("Windows.ApplicationModel.Chat.ChatMessage")
 interface IChatMessage3 : IChatMessage3_Base, Windows.ApplicationModel.Chat.IChatMessage {}
 
 @uuid("2d144b0f-d2bf-460c-aa68-6d3f8483c9bf")
@@ -166,6 +170,8 @@ extern(Windows):
 	HRESULT get_SyncId(HSTRING* return_result);
 	HRESULT set_SyncId(HSTRING value);
 }
+@uuid("2d144b0f-d2bf-460c-aa68-6d3f8483c9bf")
+@WinrtFactory("Windows.ApplicationModel.Chat.ChatMessage")
 interface IChatMessage4 : IChatMessage4_Base, Windows.ApplicationModel.Chat.IChatMessage {}
 
 @uuid("c7c4fd74-bf63-58eb-508c-8b863ff16b67")
@@ -195,6 +201,8 @@ extern(Windows):
 	HRESULT get_OriginalFileName(HSTRING* return_result);
 	HRESULT set_OriginalFileName(HSTRING value);
 }
+@uuid("5ed99270-7dd1-4a87-a8ce-acdd87d80dc8")
+@WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageAttachment")
 interface IChatMessageAttachment2 : IChatMessageAttachment2_Base, Windows.ApplicationModel.Chat.IChatMessageAttachment {}
 
 @uuid("205852a2-a356-5b71-6ca9-66c985b7d0d5")
@@ -266,6 +274,8 @@ extern(Windows):
 	HRESULT abi_RegisterTransportAsync(Windows.Foundation.IAsyncOperation!(HSTRING)* return_result);
 	HRESULT abi_GetTransportAsync(HSTRING transportId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessageTransport)* return_result);
 }
+@uuid("1d45390f-9f4f-4e35-964e-1b9ca61ac044")
+@WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageManager")
 interface IChatMessageManager2Statics : IChatMessageManager2Statics_Base, Windows.ApplicationModel.Chat.IChatMessageManagerStatic {}
 
 @uuid("f15c60f7-d5e8-5e92-556d-e03b60253104")
@@ -286,6 +296,8 @@ interface IChatMessageManagerStatics3_Base : IInspectable
 extern(Windows):
 	HRESULT abi_RequestSyncManagerAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatSyncManager)* return_result);
 }
+@uuid("208b830d-6755-48cc-9ab3-fd03c463fc92")
+@WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageManager")
 interface IChatMessageManagerStatics3 : IChatMessageManagerStatics3_Base, Windows.ApplicationModel.Chat.IChatMessageManagerStatic {}
 
 @uuid("fd344dfb-3063-4e17-8586-c6c08262e6c0")
@@ -306,6 +318,8 @@ extern(Windows):
 	HRESULT get_ShouldUpdateBadge(bool* return_result);
 	HRESULT get_ShouldUpdateActionCenter(bool* return_result);
 }
+@uuid("6bb522e0-aa07-4fd1-9471-77934fb75ee6")
+@WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageNotificationTriggerDetails")
 interface IChatMessageNotificationTriggerDetails2 : IChatMessageNotificationTriggerDetails2_Base, Windows.ApplicationModel.Chat.IChatMessageNotificationTriggerDetails {}
 
 @uuid("b6ea78ce-4489-56f9-76aa-e204682514cf")
@@ -366,6 +380,8 @@ extern(Windows):
 	HRESULT add_StoreChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StoreChanged(EventRegistrationToken token);
 }
+@uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768")
+@WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageStore")
 interface IChatMessageStore2 : IChatMessageStore2_Base, Windows.ApplicationModel.Chat.IChatMessageStore {}
 
 @uuid("9adbbb09-4345-4ec1-8b74-b7338243719c")
@@ -375,6 +391,8 @@ interface IChatMessageStore3_Base : IInspectable
 extern(Windows):
 	HRESULT abi_GetMessageBySyncIdAsync(HSTRING syncId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage)* return_result);
 }
+@uuid("9adbbb09-4345-4ec1-8b74-b7338243719c")
+@WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageStore")
 interface IChatMessageStore3 : IChatMessageStore3_Base, Windows.ApplicationModel.Chat.IChatMessageStore {}
 
 @uuid("65c66fac-fe8c-46d4-9119-57b8410311d5")
@@ -406,6 +424,8 @@ extern(Windows):
 	HRESULT get_Configuration(Windows.ApplicationModel.Chat.ChatMessageTransportConfiguration* return_result);
 	HRESULT get_TransportKind(Windows.ApplicationModel.Chat.ChatMessageTransportKind* return_result);
 }
+@uuid("90a75622-d84a-4c22-a94d-544444edc8a1")
+@WinrtFactory("Windows.ApplicationModel.Chat.ChatMessageTransport")
 interface IChatMessageTransport2 : IChatMessageTransport2_Base, Windows.ApplicationModel.Chat.IChatMessageTransport {}
 
 @uuid("879ff725-1a08-4aca-a075-3355126312e6")

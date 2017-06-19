@@ -46,6 +46,8 @@ extern(Windows):
 	HRESULT abi_ProvisionAsyncWithNewCardId(Windows.Storage.Streams.IBuffer response, bool formatCard, GUID newCardId, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_ChangeAdministrativeKeyAsync(Windows.Storage.Streams.IBuffer response, Windows.Storage.Streams.IBuffer newAdministrativeKey, Windows.Foundation.IAsyncAction* return_result);
 }
+@uuid("192a5319-c9c4-4947-81cc-44794a61ef91")
+@WinrtFactory("Windows.Devices.SmartCards.SmartCardChallengeContext")
 interface ISmartCardChallengeContext : ISmartCardChallengeContext_Base, Windows.Foundation.IClosable {}
 
 @uuid("2fdf87e5-028d-491e-a058-3382c3986f40")
@@ -63,6 +65,8 @@ interface ISmartCardConnection_Base : IInspectable
 extern(Windows):
 	HRESULT abi_TransmitAsync(Windows.Storage.Streams.IBuffer command, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_result);
 }
+@uuid("7edb991a-a81a-47bc-a649-156be6b7f231")
+@WinrtFactory("Windows.Devices.SmartCards.SmartCardConnection")
 interface ISmartCardConnection : ISmartCardConnection_Base, Windows.Foundation.IClosable {}
 
 @uuid("183ce184-4db6-4841-ac9e-2ac1f39b7304")

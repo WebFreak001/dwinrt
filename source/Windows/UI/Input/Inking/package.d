@@ -89,6 +89,8 @@ extern(Windows):
 	HRESULT abi_SetDefaultDrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes drawingAttributes);
 	HRESULT abi_RecognizeAsync2(Windows.UI.Input.Inking.InkRecognitionTarget recognitionTarget, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult))* return_recognitionResults);
 }
+@uuid("4744737d-671b-4163-9c95-4e8d7a035fe1")
+@WinrtFactory("Windows.UI.Input.Inking.InkManager")
 interface IInkManager : IInkManager_Base, Windows.UI.Input.Inking.IInkStrokeContainer, Windows.UI.Input.Inking.IInkRecognizerContainer {}
 
 @uuid("9f87272b-858c-46a5-9b41-d195970459fd")
@@ -157,6 +159,8 @@ extern(Windows):
 	HRESULT get_HighContrastAdjustment(Windows.UI.Input.Inking.InkHighContrastAdjustment* return_value);
 	HRESULT set_HighContrastAdjustment(Windows.UI.Input.Inking.InkHighContrastAdjustment value);
 }
+@uuid("cf53e612-9a34-11e6-9f33-a24fc0d9649c")
+@WinrtFactory("Windows.UI.Input.Inking.InkPresenter")
 interface IInkPresenter2 : IInkPresenter2_Base, Windows.UI.Input.Inking.IInkPresenter {}
 
 @uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17")
@@ -179,6 +183,8 @@ extern(Windows):
 	HRESULT get_AccentColor(Windows.UI.Color* return_value);
 	HRESULT set_AccentColor(Windows.UI.Color value);
 }
+@uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17")
+@WinrtFactory("Windows.UI.Input.Inking.InkPresenterProtractor")
 interface IInkPresenterProtractor : IInkPresenterProtractor_Base, Windows.UI.Input.Inking.IInkPresenterStencil {}
 
 @uuid("320103c9-68fa-47e9-8127-8370711fc46c")
@@ -199,6 +205,8 @@ extern(Windows):
 	HRESULT get_Width(double* return_value);
 	HRESULT set_Width(double value);
 }
+@uuid("6cda7d5a-dec7-4dd7-877a-2133f183d48a")
+@WinrtFactory("Windows.UI.Input.Inking.InkPresenterRuler")
 interface IInkPresenterRuler : IInkPresenterRuler_Base, Windows.UI.Input.Inking.IInkPresenterStencil {}
 
 @uuid("45130dc1-bc61-44d4-a423-54712ae671c4")

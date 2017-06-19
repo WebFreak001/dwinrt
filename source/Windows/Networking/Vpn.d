@@ -123,6 +123,8 @@ extern(Windows):
 	HRESULT get_InitialCheckState(bool* return_value);
 	HRESULT get_Checked(bool* return_value);
 }
+@uuid("43878753-03c5-4e61-93d7-a957714c4282")
+@WinrtFactory("Windows.Networking.Vpn.VpnCustomCheckBox")
 interface IVpnCustomCheckBox : IVpnCustomCheckBox_Base, Windows.Networking.Vpn.IVpnCustomPrompt {}
 
 @uuid("9a24158e-dba1-4c6f-8270-dcf3c9761c4c")
@@ -134,6 +136,8 @@ extern(Windows):
 	HRESULT get_OptionsText(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
 	HRESULT get_Selected(UINT32* return_value);
 }
+@uuid("9a24158e-dba1-4c6f-8270-dcf3c9761c4c")
+@WinrtFactory("Windows.Networking.Vpn.VpnCustomComboBox")
 interface IVpnCustomComboBox : IVpnCustomComboBox_Base, Windows.Networking.Vpn.IVpnCustomPrompt {}
 
 @uuid("3002d9a0-cfbf-4c0b-8f3c-66f503c20b39")
@@ -147,6 +151,8 @@ extern(Windows):
 	HRESULT get_NoEcho(bool* return_value);
 	HRESULT get_Text(HSTRING* return_value);
 }
+@uuid("3002d9a0-cfbf-4c0b-8f3c-66f503c20b39")
+@WinrtFactory("Windows.Networking.Vpn.VpnCustomEditBox")
 interface IVpnCustomEditBox : IVpnCustomEditBox_Base, Windows.Networking.Vpn.IVpnCustomPrompt {}
 
 @uuid("9ec4efb2-c942-42af-b223-588b48328721")
@@ -154,6 +160,8 @@ interface IVpnCustomEditBox : IVpnCustomEditBox_Base, Windows.Networking.Vpn.IVp
 interface IVpnCustomErrorBox_Base : IInspectable
 {
 }
+@uuid("9ec4efb2-c942-42af-b223-588b48328721")
+@WinrtFactory("Windows.Networking.Vpn.VpnCustomErrorBox")
 interface IVpnCustomErrorBox : IVpnCustomErrorBox_Base, Windows.Networking.Vpn.IVpnCustomPrompt {}
 
 @uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244")
@@ -177,6 +185,8 @@ extern(Windows):
 	HRESULT get_InitialValue(bool* return_value);
 	HRESULT get_Value(bool* return_value);
 }
+@uuid("c4c9a69e-ff47-4527-9f27-a49292019979")
+@WinrtFactory("Windows.Networking.Vpn.VpnCustomPromptBooleanInput")
 interface IVpnCustomPromptBooleanInput : IVpnCustomPromptBooleanInput_Base, Windows.Networking.Vpn.IVpnCustomPromptElement {}
 
 @uuid("73bd5638-6f04-404d-93dd-50a44924a38b")
@@ -199,6 +209,8 @@ extern(Windows):
 	HRESULT get_Options(Windows.Foundation.Collections.IVector!(HSTRING)* return_value);
 	HRESULT get_SelectedIndex(UINT32* return_value);
 }
+@uuid("3b8f34d9-8ec1-4e95-9a4e-7ba64d38f330")
+@WinrtFactory("Windows.Networking.Vpn.VpnCustomPromptOptionSelector")
 interface IVpnCustomPromptOptionSelector : IVpnCustomPromptOptionSelector_Base, Windows.Networking.Vpn.IVpnCustomPromptElement {}
 
 @uuid("3bc8bdee-3a42-49a3-abdd-07b2edea752d")
@@ -209,6 +221,8 @@ extern(Windows):
 	HRESULT set_Text(HSTRING value);
 	HRESULT get_Text(HSTRING* return_value);
 }
+@uuid("3bc8bdee-3a42-49a3-abdd-07b2edea752d")
+@WinrtFactory("Windows.Networking.Vpn.VpnCustomPromptText")
 interface IVpnCustomPromptText : IVpnCustomPromptText_Base, Windows.Networking.Vpn.IVpnCustomPromptElement {}
 
 @uuid("c9da9c75-913c-47d5-88ba-48fc48930235")
@@ -222,6 +236,8 @@ extern(Windows):
 	HRESULT get_IsTextHidden(bool* return_value);
 	HRESULT get_Text(HSTRING* return_value);
 }
+@uuid("c9da9c75-913c-47d5-88ba-48fc48930235")
+@WinrtFactory("Windows.Networking.Vpn.VpnCustomPromptTextInput")
 interface IVpnCustomPromptTextInput : IVpnCustomPromptTextInput_Base, Windows.Networking.Vpn.IVpnCustomPromptElement {}
 
 @uuid("daa4c3ca-8f23-4d36-91f1-76d937827942")
@@ -232,6 +248,8 @@ extern(Windows):
 	HRESULT set_DisplayText(HSTRING value);
 	HRESULT get_DisplayText(HSTRING* return_value);
 }
+@uuid("daa4c3ca-8f23-4d36-91f1-76d937827942")
+@WinrtFactory("Windows.Networking.Vpn.VpnCustomTextBox")
 interface IVpnCustomTextBox : IVpnCustomTextBox_Base, Windows.Networking.Vpn.IVpnCustomPrompt {}
 
 @uuid("4135b141-ccdb-49b5-9401-039a8ae767e9")
@@ -351,6 +369,8 @@ extern(Windows):
 	HRESULT get_EapConfiguration(HSTRING* return_Value);
 	HRESULT set_EapConfiguration(HSTRING value);
 }
+@uuid("a4aee29e-6417-4333-9842-f0a66db69802")
+@WinrtFactory("Windows.Networking.Vpn.VpnNativeProfile")
 interface IVpnNativeProfile : IVpnNativeProfile_Base, Windows.Networking.Vpn.IVpnProfile {}
 
 @uuid("0fec2467-cdb5-4ac7-b5a3-0afb5ec47682")
@@ -404,6 +424,8 @@ extern(Windows):
 	HRESULT get_Status(Windows.Networking.Vpn.VpnPacketBufferStatus* return_value);
 	HRESULT get_Size(UINT32* return_value);
 }
+@uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce77")
+@WinrtFactory("Windows.Networking.Vpn.VpnPacketBufferList")
 interface IVpnPacketBufferList : IVpnPacketBufferList_Base, Windows.Foundation.Collections.IIterable!(Windows.Networking.Vpn.VpnPacketBuffer) {}
 
 @uuid("3e7acfe5-ea1e-482a-8d98-c065f57d89ea")
@@ -416,6 +438,8 @@ extern(Windows):
 	HRESULT abi_AddTrailingPacket(Windows.Networking.Vpn.VpnPacketBuffer nextVpnPacketBuffer);
 	HRESULT abi_RemoveTrailingPacket(Windows.Networking.Vpn.VpnPacketBuffer* return_nextVpnPacketBuffer);
 }
+@uuid("3e7acfe5-ea1e-482a-8d98-c065f57d89ea")
+@WinrtFactory("Windows.Networking.Vpn.VpnPacketBufferList")
 interface IVpnPacketBufferList2 : IVpnPacketBufferList2_Base, Windows.Foundation.Collections.IIterable!(Windows.Networking.Vpn.VpnPacketBuffer) {}
 
 @uuid("9a793ac7-8854-4e52-ad97-24dd9a842bce")
@@ -450,6 +474,8 @@ extern(Windows):
 	HRESULT get_VpnPluginPackageFamilyName(HSTRING* return_value);
 	HRESULT set_VpnPluginPackageFamilyName(HSTRING value);
 }
+@uuid("0edf0da4-4f00-4589-8d7b-4bf988f6542c")
+@WinrtFactory("Windows.Networking.Vpn.VpnPlugInProfile")
 interface IVpnPlugInProfile : IVpnPlugInProfile_Base, Windows.Networking.Vpn.IVpnProfile {}
 
 @uuid("611c4892-cf94-4ad6-ba99-00f4ff34565e")
@@ -461,6 +487,8 @@ extern(Windows):
 	HRESULT set_RequireVpnClientAppUI(bool value);
 	HRESULT get_ConnectionStatus(Windows.Networking.Vpn.VpnManagementConnectionStatus* return_value);
 }
+@uuid("611c4892-cf94-4ad6-ba99-00f4ff34565e")
+@WinrtFactory("Windows.Networking.Vpn.VpnPlugInProfile")
 interface IVpnPlugInProfile2 : IVpnPlugInProfile2_Base, Windows.Networking.Vpn.IVpnProfile {}
 
 @uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a")

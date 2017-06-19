@@ -50,6 +50,8 @@ extern(Windows):
 interface IFirstSignInSettings_Base : IInspectable
 {
 }
+@uuid("3e945153-3a5e-452e-a601-f5baad2a4870")
+@WinrtFactory("Windows.System.UserProfile.FirstSignInSettings")
 interface IFirstSignInSettings : IFirstSignInSettings_Base, Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)) {}
 
 @uuid("1ce18f0f-1c41-4ea0-b7a2-6f0c1c7e8438")

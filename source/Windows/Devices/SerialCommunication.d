@@ -57,6 +57,8 @@ extern(Windows):
 	HRESULT add_PinChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.PinChangedEventArgs) reportHandler, EventRegistrationToken* return_token);
 	HRESULT remove_PinChanged(EventRegistrationToken token);
 }
+@uuid("e187ccc6-2210-414f-b65a-f5553a03372a")
+@WinrtFactory("Windows.Devices.SerialCommunication.SerialDevice")
 interface ISerialDevice : ISerialDevice_Base, Windows.Foundation.IClosable {}
 
 @uuid("058c4a70-0836-4993-ae1a-b61ae3be056b")

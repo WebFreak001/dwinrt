@@ -124,6 +124,8 @@ extern(Windows):
 	HRESULT set_VolumePercent(FLOAT value);
 	HRESULT get_VolumePercent(FLOAT* return_value);
 }
+@uuid("edd4a388-79c7-4f7c-90e8-ef934b21580a")
+@WinrtFactory("Windows.Media.Devices.AudioDeviceController")
 interface IAudioDeviceController : IAudioDeviceController_Base, Windows.Media.Devices.IMediaDeviceController {}
 
 @uuid("86cfac36-47c1-4b33-9852-8773ec4be123")
@@ -597,6 +599,8 @@ extern(Windows):
 	HRESULT abi_TrySetPowerlineFrequency(Windows.Media.Capture.PowerlineFrequency value, bool* return_succeeded);
 	HRESULT abi_TryGetPowerlineFrequency(Windows.Media.Capture.PowerlineFrequency* out_value, bool* return_succeeded);
 }
+@uuid("99555575-2e2e-40b8-b6c7-f82d10013210")
+@WinrtFactory("Windows.Media.Devices.VideoDeviceController")
 interface IVideoDeviceController : IVideoDeviceController_Base, Windows.Media.Devices.IMediaDeviceController {}
 
 @uuid("c5d88395-6ed5-4790-8b5d-0ef13935d0f8")

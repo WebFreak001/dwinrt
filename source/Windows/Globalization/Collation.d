@@ -18,6 +18,8 @@ interface ICharacterGroupings_Base : IInspectable
 extern(Windows):
 	HRESULT abi_Lookup(HSTRING text, HSTRING* return_result);
 }
+@uuid("b8d20a75-d4cf-4055-80e5-ce169c226496")
+@WinrtFactory("Windows.Globalization.Collation.CharacterGroupings")
 interface ICharacterGroupings : ICharacterGroupings_Base, Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Collation.CharacterGrouping), Windows.Foundation.Collections.IIterable!(Windows.Globalization.Collation.CharacterGrouping) {}
 
 @uuid("99ea9fd9-886d-4401-9f98-69c82d4c2f78")

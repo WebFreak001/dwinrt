@@ -49,6 +49,8 @@ extern(Windows):
 	HRESULT get_Term(HSTRING* return_value);
 	HRESULT set_Term(HSTRING value);
 }
+@uuid("8715626f-0cba-4a7f-89ff-ecb5281423b6")
+@WinrtFactory("Windows.Web.Syndication.SyndicationCategory")
 interface ISyndicationCategory : ISyndicationCategory_Base, Windows.Web.Syndication.ISyndicationNode {}
 
 @uuid("ab42802f-49e0-4525-8ab2-ab45c02528ff")
@@ -94,6 +96,8 @@ extern(Windows):
 	HRESULT get_SourceUri(Windows.Foundation.Uri* return_value);
 	HRESULT set_SourceUri(Windows.Foundation.Uri value);
 }
+@uuid("4641fefe-0e55-40d0-b8d0-6a2ccba9fc7c")
+@WinrtFactory("Windows.Web.Syndication.SyndicationContent")
 interface ISyndicationContent : ISyndicationContent_Base, Windows.Web.Syndication.ISyndicationText, Windows.Web.Syndication.ISyndicationNode {}
 
 @uuid("3d2fbb93-9520-4173-9388-7e2df324a8a0")
@@ -147,6 +151,8 @@ extern(Windows):
 	HRESULT abi_Load(HSTRING feed);
 	HRESULT abi_LoadFromXml(Windows.Data.Xml.Dom.XmlDocument feedDocument);
 }
+@uuid("7ffe3cd2-5b66-4d62-8403-1bc10d910d6b")
+@WinrtFactory("Windows.Web.Syndication.SyndicationFeed")
 interface ISyndicationFeed : ISyndicationFeed_Base, Windows.Web.Syndication.ISyndicationNode {}
 
 @uuid("23472232-8be9-48b7-8934-6205131d9357")
@@ -212,6 +218,8 @@ extern(Windows):
 	HRESULT abi_Load(HSTRING item);
 	HRESULT abi_LoadFromXml(Windows.Data.Xml.Dom.XmlDocument itemDocument);
 }
+@uuid("548db883-c384-45c1-8ae8-a378c4ec486c")
+@WinrtFactory("Windows.Web.Syndication.SyndicationItem")
 interface ISyndicationItem : ISyndicationItem_Base, Windows.Web.Syndication.ISyndicationNode {}
 
 @uuid("251d434f-7db8-487a-85e4-10d191e66ebb")
@@ -240,6 +248,8 @@ extern(Windows):
 	HRESULT get_ResourceLanguage(HSTRING* return_value);
 	HRESULT set_ResourceLanguage(HSTRING value);
 }
+@uuid("27553abd-a10e-41b5-86bd-9759086eb0c5")
+@WinrtFactory("Windows.Web.Syndication.SyndicationLink")
 interface ISyndicationLink : ISyndicationLink_Base, Windows.Web.Syndication.ISyndicationNode {}
 
 @uuid("5ed863d4-5535-48ac-98d4-c190995080b3")
@@ -290,6 +300,8 @@ extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_value);
 	HRESULT set_Uri(Windows.Foundation.Uri value);
 }
+@uuid("fa1ee5da-a7c6-4517-a096-0143faf29327")
+@WinrtFactory("Windows.Web.Syndication.SyndicationPerson")
 interface ISyndicationPerson : ISyndicationPerson_Base, Windows.Web.Syndication.ISyndicationNode {}
 
 @uuid("dcf4886d-229d-4b58-a49b-f3d2f0f5c99f")
@@ -312,6 +324,7 @@ extern(Windows):
 	HRESULT get_Xml(Windows.Data.Xml.Dom.XmlDocument* return_value);
 	HRESULT set_Xml(Windows.Data.Xml.Dom.XmlDocument value);
 }
+@uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9")
 interface ISyndicationText : ISyndicationText_Base, Windows.Web.Syndication.ISyndicationNode {}
 
 @uuid("ee7342f7-11c6-4b25-ab62-e596bd162946")

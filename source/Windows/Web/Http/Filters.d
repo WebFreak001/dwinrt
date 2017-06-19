@@ -27,6 +27,8 @@ extern(Windows):
 	HRESULT get_UseProxy(bool* return_value);
 	HRESULT set_UseProxy(bool value);
 }
+@uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb")
+@WinrtFactory("Windows.Web.Http.Filters.HttpBaseProtocolFilter")
 interface IHttpBaseProtocolFilter : IHttpBaseProtocolFilter_Base, Windows.Web.Http.Filters.IHttpFilter, Windows.Foundation.IClosable {}
 
 @uuid("2ec30013-9427-4900-a017-fa7da3b5c9ae")
@@ -37,6 +39,8 @@ extern(Windows):
 	HRESULT get_MaxVersion(Windows.Web.Http.HttpVersion* return_value);
 	HRESULT set_MaxVersion(Windows.Web.Http.HttpVersion value);
 }
+@uuid("2ec30013-9427-4900-a017-fa7da3b5c9ae")
+@WinrtFactory("Windows.Web.Http.Filters.HttpBaseProtocolFilter")
 interface IHttpBaseProtocolFilter2 : IHttpBaseProtocolFilter2_Base, Windows.Web.Http.Filters.IHttpFilter, Windows.Foundation.IClosable {}
 
 @uuid("d43f4d4c-bd42-43ae-8717-ad2c8f4b2937")
@@ -47,6 +51,8 @@ extern(Windows):
 	HRESULT get_CookieUsageBehavior(Windows.Web.Http.Filters.HttpCookieUsageBehavior* return_value);
 	HRESULT set_CookieUsageBehavior(Windows.Web.Http.Filters.HttpCookieUsageBehavior value);
 }
+@uuid("d43f4d4c-bd42-43ae-8717-ad2c8f4b2937")
+@WinrtFactory("Windows.Web.Http.Filters.HttpBaseProtocolFilter")
 interface IHttpBaseProtocolFilter3 : IHttpBaseProtocolFilter3_Base, Windows.Web.Http.Filters.IHttpFilter, Windows.Foundation.IClosable {}
 
 @uuid("9fe36ccf-2983-4893-941f-eb518ca8cef9")
@@ -58,6 +64,8 @@ extern(Windows):
 	HRESULT remove_ServerCustomValidationRequested(EventRegistrationToken eventCookie);
 	HRESULT abi_ClearAuthenticationCache();
 }
+@uuid("9fe36ccf-2983-4893-941f-eb518ca8cef9")
+@WinrtFactory("Windows.Web.Http.Filters.HttpBaseProtocolFilter")
 interface IHttpBaseProtocolFilter4 : IHttpBaseProtocolFilter4_Base, Windows.Web.Http.Filters.IHttpFilter, Windows.Foundation.IClosable {}
 
 @uuid("c77e1cb4-3cea-4eb5-ac85-04e186e63ab7")
@@ -77,6 +85,7 @@ interface IHttpFilter_Base : IInspectable
 extern(Windows):
 	HRESULT abi_SendRequestAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
 }
+@uuid("a4cb6dd5-0902-439e-bfd7-e12552b165ce")
 interface IHttpFilter : IHttpFilter_Base, Windows.Foundation.IClosable {}
 
 @uuid("3165fe32-e7dd-48b7-a361-939c750e63cc")
