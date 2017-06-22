@@ -426,10 +426,10 @@ struct D3D11_DEPTH_STENCILOP_DESC
 
 struct D3D11_DEPTH_STENCIL_DESC
 {
-	bool DepthEnable;
+	BOOL DepthEnable;
 	D3D11_DEPTH_WRITE_MASK DepthWriteMask;
 	D3D11_COMPARISON_FUNC DepthFunc;
-	bool StencilEnable;
+	BOOL StencilEnable;
 	UINT8 StencilReadMask;
 	UINT8 StencilWriteMask;
 	D3D11_DEPTH_STENCILOP_DESC FrontFace;
@@ -438,7 +438,7 @@ struct D3D11_DEPTH_STENCIL_DESC
 
 struct D3D11_RENDER_TARGET_BLEND_DESC
 {
-	bool BlendEnable;
+	BOOL BlendEnable;
 	D3D11_BLEND SrcBlend;
 	D3D11_BLEND DestBlend;
 	D3D11_BLEND_OP BlendOp;
@@ -450,8 +450,8 @@ struct D3D11_RENDER_TARGET_BLEND_DESC
 
 struct D3D11_BLEND_DESC
 {
-	bool AlphaToCoverageEnable;
-	bool IndependentBlendEnable;
+	BOOL AlphaToCoverageEnable;
+	BOOL IndependentBlendEnable;
 	D3D11_RENDER_TARGET_BLEND_DESC RenderTarget;
 }
 
@@ -459,14 +459,14 @@ struct D3D11_RASTERIZER_DESC
 {
 	D3D11_FILL_MODE FillMode;
 	D3D11_CULL_MODE CullMode;
-	bool FrontCounterClockwise;
+	BOOL FrontCounterClockwise;
 	INT DepthBias;
 	float DepthBiasClamp;
 	float SlopeScaledDepthBias;
-	bool DepthClipEnable;
-	bool ScissorEnable;
-	bool MultisampleEnable;
-	bool AntialiasedLineEnable;
+	BOOL DepthClipEnable;
+	BOOL ScissorEnable;
+	BOOL MultisampleEnable;
+	BOOL AntialiasedLineEnable;
 }
 
 struct D3D11_SUBRESOURCE_DATA
@@ -769,7 +769,7 @@ struct D3D11_QUERY_DESC
 struct D3D11_QUERY_DATA_TIMESTAMP_DISJOINT
 {
 	ulong Frequency;
-	bool Disjoint;
+	BOOL Disjoint;
 }
 
 struct D3D11_QUERY_DATA_PIPELINE_STATISTICS
@@ -815,18 +815,18 @@ struct D3D11_CLASS_INSTANCE_DESC
 	uint BaseConstantBufferOffset;
 	uint BaseTexture;
 	uint BaseSampler;
-	bool Created;
+	BOOL Created;
 }
 
 struct D3D11_FEATURE_DATA_THREADING
 {
-	bool DriverConcurrentCreates;
-	bool DriverCommandLists;
+	BOOL DriverConcurrentCreates;
+	BOOL DriverCommandLists;
 }
 
 struct D3D11_FEATURE_DATA_DOUBLES
 {
-	bool DoublePrecisionFloatShaderOps;
+	BOOL DoublePrecisionFloatShaderOps;
 }
 
 struct D3D11_FEATURE_DATA_FORMAT_SUPPORT
@@ -843,40 +843,40 @@ struct D3D11_FEATURE_DATA_FORMAT_SUPPORT2
 
 struct D3D11_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS
 {
-	bool ComputeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x;
+	BOOL ComputeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x;
 }
 
 struct D3D11_FEATURE_DATA_D3D11_OPTIONS
 {
-	bool OutputMergerLogicOp;
-	bool UAVOnlyRenderingForcedSampleCount;
-	bool DiscardAPIsSeenByDriver;
-	bool FlagsForUpdateAndCopySeenByDriver;
-	bool ClearView;
-	bool CopyWithOverlap;
-	bool ConstantBufferPartialUpdate;
-	bool ConstantBufferOffsetting;
-	bool MapNoOverwriteOnDynamicConstantBuffer;
-	bool MapNoOverwriteOnDynamicBufferSRV;
-	bool MultisampleRTVWithForcedSampleCountOne;
-	bool SAD4ShaderInstructions;
-	bool ExtendedDoublesShaderInstructions;
-	bool ExtendedResourceSharing;
+	BOOL OutputMergerLogicOp;
+	BOOL UAVOnlyRenderingForcedSampleCount;
+	BOOL DiscardAPIsSeenByDriver;
+	BOOL FlagsForUpdateAndCopySeenByDriver;
+	BOOL ClearView;
+	BOOL CopyWithOverlap;
+	BOOL ConstantBufferPartialUpdate;
+	BOOL ConstantBufferOffsetting;
+	BOOL MapNoOverwriteOnDynamicConstantBuffer;
+	BOOL MapNoOverwriteOnDynamicBufferSRV;
+	BOOL MultisampleRTVWithForcedSampleCountOne;
+	BOOL SAD4ShaderInstructions;
+	BOOL ExtendedDoublesShaderInstructions;
+	BOOL ExtendedResourceSharing;
 }
 
 struct D3D11_FEATURE_DATA_ARCHITECTURE_INFO
 {
-	bool TileBasedDeferredRenderer;
+	BOOL TileBasedDeferredRenderer;
 }
 
 struct D3D11_FEATURE_DATA_D3D9_OPTIONS
 {
-	bool FullNonPow2TextureSupport;
+	BOOL FullNonPow2TextureSupport;
 }
 
 struct D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT
 {
-	bool SupportsDepthAsTextureWithLessEqualComparisonFilter;
+	BOOL SupportsDepthAsTextureWithLessEqualComparisonFilter;
 }
 
 struct D3D11_FEATURE_DATA_SHADER_MIN_PRECISION_SUPPORT
@@ -888,44 +888,44 @@ struct D3D11_FEATURE_DATA_SHADER_MIN_PRECISION_SUPPORT
 struct D3D11_FEATURE_DATA_D3D11_OPTIONS1
 {
 	D3D11_TILED_RESOURCES_TIER TiledResourcesTier;
-	bool MinMaxFiltering;
-	bool ClearViewAlsoSupportsDepthOnlyFormats;
-	bool MapOnDefaultBuffers;
+	BOOL MinMaxFiltering;
+	BOOL ClearViewAlsoSupportsDepthOnlyFormats;
+	BOOL MapOnDefaultBuffers;
 }
 
 struct D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT
 {
-	bool SimpleInstancingSupported;
+	BOOL SimpleInstancingSupported;
 }
 
 struct D3D11_FEATURE_DATA_MARKER_SUPPORT
 {
-	bool Profile;
+	BOOL Profile;
 }
 
 struct D3D11_FEATURE_DATA_D3D9_OPTIONS1
 {
-	bool FullNonPow2TextureSupported;
-	bool DepthAsTextureWithLessEqualComparisonFilterSupported;
-	bool SimpleInstancingSupported;
-	bool TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
+	BOOL FullNonPow2TextureSupported;
+	BOOL DepthAsTextureWithLessEqualComparisonFilterSupported;
+	BOOL SimpleInstancingSupported;
+	BOOL TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
 }
 
 struct D3D11_FEATURE_DATA_D3D11_OPTIONS2
 {
-	bool PSSpecifiedStencilRefSupported;
-	bool TypedUAVLoadAdditionalFormats;
-	bool ROVsSupported;
+	BOOL PSSpecifiedStencilRefSupported;
+	BOOL TypedUAVLoadAdditionalFormats;
+	BOOL ROVsSupported;
 	D3D11_CONSERVATIVE_RASTERIZATION_TIER ConservativeRasterizationTier;
 	D3D11_TILED_RESOURCES_TIER TiledResourcesTier;
-	bool MapOnDefaultTextures;
-	bool StandardSwizzle;
-	bool UnifiedMemoryArchitecture;
+	BOOL MapOnDefaultTextures;
+	BOOL StandardSwizzle;
+	BOOL UnifiedMemoryArchitecture;
 }
 
 struct D3D11_FEATURE_DATA_D3D11_OPTIONS3
 {
-	bool VPAndRTArrayIndexFromAnyShaderFeedingRasterizer;
+	BOOL VPAndRTArrayIndexFromAnyShaderFeedingRasterizer;
 }
 
 struct D3D11_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT
@@ -995,7 +995,7 @@ struct D3D11_VIDEO_DECODER_BUFFER_DESC
 	uint ReservedBits;
 	void* pIV;
 	uint IVSize;
-	bool PartialEncryption;
+	BOOL PartialEncryption;
 	D3D11_ENCRYPTED_BLOCK_INFO EncryptedBlockInfo;
 }
 
@@ -1044,7 +1044,7 @@ struct D3D11_VIDEO_PROCESSOR_CUSTOM_RATE
 {
 	DXGI_RATIONAL CustomRate;
 	uint OutputFrames;
-	bool InputInterlaced;
+	BOOL InputInterlaced;
 	uint InputFramesOrFields;
 }
 
@@ -1100,7 +1100,7 @@ struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
 
 struct D3D11_VIDEO_PROCESSOR_STREAM
 {
-	bool Enable;
+	BOOL Enable;
 	uint OutputIndex;
 	uint InputFrameOrField;
 	uint PastFrames;
@@ -1228,8 +1228,8 @@ struct D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT
 {
 	D3D11_AUTHENTICATED_QUERY_OUTPUT Output;
 	D3D11_BUS_TYPE BusType;
-	bool AccessibleInContiguousBlocks;
-	bool AccessibleInNonContiguousBlocks;
+	BOOL AccessibleInContiguousBlocks;
+	BOOL AccessibleInNonContiguousBlocks;
 }
 
 struct D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_COUNT_OUTPUT
@@ -1300,7 +1300,7 @@ struct D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT
 	D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
 	D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE ProcessType;
 	HANDLE ProcessHandle;
-	bool AllowAccess;
+	BOOL AllowAccess;
 }
 
 struct D3D11_AUTHENTICATED_CONFIGURE_ACCESSIBLE_ENCRYPTION_INPUT
@@ -1351,8 +1351,8 @@ struct D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC
 
 struct D3D11_RENDER_TARGET_BLEND_DESC1
 {
-	bool BlendEnable;
-	bool LogicOpEnable;
+	BOOL BlendEnable;
+	BOOL LogicOpEnable;
 	D3D11_BLEND SrcBlend;
 	D3D11_BLEND DestBlend;
 	D3D11_BLEND_OP BlendOp;
@@ -1365,8 +1365,8 @@ struct D3D11_RENDER_TARGET_BLEND_DESC1
 
 struct D3D11_BLEND_DESC1
 {
-	bool AlphaToCoverageEnable;
-	bool IndependentBlendEnable;
+	BOOL AlphaToCoverageEnable;
+	BOOL IndependentBlendEnable;
 	D3D11_RENDER_TARGET_BLEND_DESC1 RenderTarget;
 }
 
@@ -1374,14 +1374,14 @@ struct D3D11_RASTERIZER_DESC1
 {
 	D3D11_FILL_MODE FillMode;
 	D3D11_CULL_MODE CullMode;
-	bool FrontCounterClockwise;
+	BOOL FrontCounterClockwise;
 	INT DepthBias;
 	float DepthBiasClamp;
 	float SlopeScaledDepthBias;
-	bool DepthClipEnable;
-	bool ScissorEnable;
-	bool MultisampleEnable;
-	bool AntialiasedLineEnable;
+	BOOL DepthClipEnable;
+	BOOL ScissorEnable;
+	BOOL MultisampleEnable;
+	BOOL AntialiasedLineEnable;
 	uint ForcedSampleCount;
 }
 
@@ -1414,7 +1414,7 @@ struct D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION
 
 struct D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT
 {
-	bool Enable;
+	BOOL Enable;
 	uint Width;
 	uint Height;
 	DXGI_FORMAT Format;
@@ -1464,7 +1464,7 @@ struct D3D11_TILED_RESOURCE_COORDINATE
 struct D3D11_TILE_REGION_SIZE
 {
 	uint NumTiles;
-	bool bUseBox;
+	BOOL bUseBox;
 	uint Width;
 	UINT16 Height;
 	UINT16 Depth;
@@ -1526,14 +1526,14 @@ struct D3D11_RASTERIZER_DESC2
 {
 	D3D11_FILL_MODE FillMode;
 	D3D11_CULL_MODE CullMode;
-	bool FrontCounterClockwise;
+	BOOL FrontCounterClockwise;
 	INT DepthBias;
 	float DepthBiasClamp;
 	float SlopeScaledDepthBias;
-	bool DepthClipEnable;
-	bool ScissorEnable;
-	bool MultisampleEnable;
-	bool AntialiasedLineEnable;
+	BOOL DepthClipEnable;
+	BOOL ScissorEnable;
+	BOOL MultisampleEnable;
+	BOOL AntialiasedLineEnable;
 	uint ForcedSampleCount;
 	D3D11_CONSERVATIVE_RASTERIZATION_MODE ConservativeRaster;
 }
@@ -1609,7 +1609,7 @@ struct D3D11_QUERY_DESC1
 
 struct D3D11_FEATURE_DATA_D3D11_OPTIONS4
 {
-	bool ExtendedNV12SharedTextureSupported;
+	BOOL ExtendedNV12SharedTextureSupported;
 }
 
 struct DXGI_FRAME_STATISTICS
@@ -1650,7 +1650,7 @@ struct DXGI_OUTPUT_DESC
 {
 	wchar DeviceName;
 	RECT DesktopCoordinates;
-	bool AttachedToDesktop;
+	BOOL AttachedToDesktop;
 	DXGI_MODE_ROTATION Rotation;
 	HANDLE Monitor;
 }
@@ -1675,7 +1675,7 @@ struct DXGI_SWAP_CHAIN_DESC
 	uint BufferUsage;
 	uint BufferCount;
 	HWND OutputWindow;
-	bool Windowed;
+	BOOL Windowed;
 	DXGI_SWAP_EFFECT SwapEffect;
 	uint Flags;
 }
@@ -1736,7 +1736,7 @@ struct DXGI_GAMMA_CONTROL
 
 struct DXGI_GAMMA_CONTROL_CAPABILITIES
 {
-	bool ScaleAndOffsetSupported;
+	BOOL ScaleAndOffsetSupported;
 	float MaxConvertedValue;
 	float MinConvertedValue;
 	uint NumGammaControlPoints;
@@ -2009,7 +2009,7 @@ extern(Windows):
 	void Begin(ID3D11Asynchronous pAsync);
 	void End(ID3D11Asynchronous pAsync);
 	HRESULT GetData(ID3D11Asynchronous pAsync, void* pData, uint DataSize, uint GetDataFlags);
-	void SetPredication(ID3D11Predicate pPredicate, bool PredicateValue);
+	void SetPredication(ID3D11Predicate pPredicate, BOOL PredicateValue);
 	void GSSetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView* ppShaderResourceViews);
 	void GSSetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState* ppSamplers);
 	void OMSetRenderTargets(uint NumViews, ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView pDepthStencilView);
@@ -2037,7 +2037,7 @@ extern(Windows):
 	void SetResourceMinLOD(ID3D11Resource pResource, float MinLOD);
 	float GetResourceMinLOD(ID3D11Resource pResource);
 	void ResolveSubresource(ID3D11Resource pDstResource, uint DstSubresource, ID3D11Resource pSrcResource, uint SrcSubresource, DXGI_FORMAT Format);
-	void ExecuteCommandList(ID3D11CommandList pCommandList, bool RestoreContextState);
+	void ExecuteCommandList(ID3D11CommandList pCommandList, BOOL RestoreContextState);
 	void HSSetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView* ppShaderResourceViews);
 	void HSSetShader(ID3D11HullShader pHullShader, ID3D11ClassInstance* ppClassInstances, uint NumClassInstances);
 	void HSSetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState* ppSamplers);
@@ -2065,7 +2065,7 @@ extern(Windows):
 	void IAGetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY* pTopology);
 	void VSGetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView* ppShaderResourceViews);
 	void VSGetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState* ppSamplers);
-	void GetPredication(ID3D11Predicate* ppPredicate, bool* pPredicateValue);
+	void GetPredication(ID3D11Predicate* ppPredicate, BOOL* pPredicateValue);
 	void GSGetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView* ppShaderResourceViews);
 	void GSGetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState* ppSamplers);
 	void OMGetRenderTargets(uint NumViews, ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* ppDepthStencilView);
@@ -2093,7 +2093,7 @@ extern(Windows):
 	void Flush();
 	D3D11_DEVICE_CONTEXT_TYPE GetType();
 	uint GetContextFlags();
-	HRESULT FinishCommandList(bool RestoreDeferredContextState, ID3D11CommandList* ppCommandList);
+	HRESULT FinishCommandList(BOOL RestoreDeferredContextState, ID3D11CommandList* ppCommandList);
 }
 
 @uuid("3c9c5b51-995d-48d1-9b8d-fa5caeded65c")
@@ -2175,45 +2175,45 @@ extern(Windows):
 	HRESULT DecoderEndFrame(ID3D11VideoDecoder pDecoder);
 	HRESULT SubmitDecoderBuffers(ID3D11VideoDecoder pDecoder, uint NumBuffers, const(D3D11_VIDEO_DECODER_BUFFER_DESC)* pBufferDesc);
 	HRESULT DecoderExtension(ID3D11VideoDecoder pDecoder, const(D3D11_VIDEO_DECODER_EXTENSION)* pExtensionData);
-	void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor pVideoProcessor, bool Enable, const(RECT)* pRect);
-	void VideoProcessorSetOutputBackgroundColor(ID3D11VideoProcessor pVideoProcessor, bool YCbCr, const(D3D11_VIDEO_COLOR)* pColor);
+	void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor pVideoProcessor, BOOL Enable, const(RECT)* pRect);
+	void VideoProcessorSetOutputBackgroundColor(ID3D11VideoProcessor pVideoProcessor, BOOL YCbCr, const(D3D11_VIDEO_COLOR)* pColor);
 	void VideoProcessorSetOutputColorSpace(ID3D11VideoProcessor pVideoProcessor, const(D3D11_VIDEO_PROCESSOR_COLOR_SPACE)* pColorSpace);
 	void VideoProcessorSetOutputAlphaFillMode(ID3D11VideoProcessor pVideoProcessor, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE AlphaFillMode, uint StreamIndex);
-	void VideoProcessorSetOutputConstriction(ID3D11VideoProcessor pVideoProcessor, bool Enable, SIZE Size);
-	void VideoProcessorSetOutputStereoMode(ID3D11VideoProcessor pVideoProcessor, bool Enable);
+	void VideoProcessorSetOutputConstriction(ID3D11VideoProcessor pVideoProcessor, BOOL Enable, SIZE Size);
+	void VideoProcessorSetOutputStereoMode(ID3D11VideoProcessor pVideoProcessor, BOOL Enable);
 	HRESULT VideoProcessorSetOutputExtension(ID3D11VideoProcessor pVideoProcessor, const(GUID)* pExtensionGuid, uint DataSize, void* pData);
-	void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor pVideoProcessor, bool* Enabled, RECT* pRect);
-	void VideoProcessorGetOutputBackgroundColor(ID3D11VideoProcessor pVideoProcessor, bool* pYCbCr, D3D11_VIDEO_COLOR* pColor);
+	void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor pVideoProcessor, BOOL* Enabled, RECT* pRect);
+	void VideoProcessorGetOutputBackgroundColor(ID3D11VideoProcessor pVideoProcessor, BOOL* pYCbCr, D3D11_VIDEO_COLOR* pColor);
 	void VideoProcessorGetOutputColorSpace(ID3D11VideoProcessor pVideoProcessor, D3D11_VIDEO_PROCESSOR_COLOR_SPACE* pColorSpace);
 	void VideoProcessorGetOutputAlphaFillMode(ID3D11VideoProcessor pVideoProcessor, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE* pAlphaFillMode, uint* pStreamIndex);
-	void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor pVideoProcessor, bool* pEnabled, SIZE* pSize);
-	void VideoProcessorGetOutputStereoMode(ID3D11VideoProcessor pVideoProcessor, bool* pEnabled);
+	void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor pVideoProcessor, BOOL* pEnabled, SIZE* pSize);
+	void VideoProcessorGetOutputStereoMode(ID3D11VideoProcessor pVideoProcessor, BOOL* pEnabled);
 	HRESULT VideoProcessorGetOutputExtension(ID3D11VideoProcessor pVideoProcessor, const(GUID)* pExtensionGuid, uint DataSize, void* pData);
 	void VideoProcessorSetStreamFrameFormat(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, D3D11_VIDEO_FRAME_FORMAT FrameFormat);
 	void VideoProcessorSetStreamColorSpace(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, const(D3D11_VIDEO_PROCESSOR_COLOR_SPACE)* pColorSpace);
-	void VideoProcessorSetStreamOutputRate(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE OutputRate, bool RepeatFrame, const(DXGI_RATIONAL)* pCustomRate);
-	void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool Enable, const(RECT)* pRect);
-	void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool Enable, const(RECT)* pRect);
-	void VideoProcessorSetStreamAlpha(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool Enable, float Alpha);
+	void VideoProcessorSetStreamOutputRate(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE OutputRate, BOOL RepeatFrame, const(DXGI_RATIONAL)* pCustomRate);
+	void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL Enable, const(RECT)* pRect);
+	void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL Enable, const(RECT)* pRect);
+	void VideoProcessorSetStreamAlpha(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL Enable, float Alpha);
 	void VideoProcessorSetStreamPalette(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, uint Count, const(uint)* pEntries);
-	void VideoProcessorSetStreamPixelAspectRatio(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool Enable, const(DXGI_RATIONAL)* pSourceAspectRatio, const(DXGI_RATIONAL)* pDestinationAspectRatio);
-	void VideoProcessorSetStreamLumaKey(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool Enable, float Lower, float Upper);
-	void VideoProcessorSetStreamStereoFormat(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool Enable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT Format, bool LeftViewFrame0, bool BaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE FlipMode, int MonoOffset);
-	void VideoProcessorSetStreamAutoProcessingMode(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool Enable);
-	void VideoProcessorSetStreamFilter(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, bool Enable, int Level);
+	void VideoProcessorSetStreamPixelAspectRatio(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL Enable, const(DXGI_RATIONAL)* pSourceAspectRatio, const(DXGI_RATIONAL)* pDestinationAspectRatio);
+	void VideoProcessorSetStreamLumaKey(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL Enable, float Lower, float Upper);
+	void VideoProcessorSetStreamStereoFormat(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT Format, BOOL LeftViewFrame0, BOOL BaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE FlipMode, int MonoOffset);
+	void VideoProcessorSetStreamAutoProcessingMode(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL Enable);
+	void VideoProcessorSetStreamFilter(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, BOOL Enable, int Level);
 	HRESULT VideoProcessorSetStreamExtension(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, const(GUID)* pExtensionGuid, uint DataSize, void* pData);
 	void VideoProcessorGetStreamFrameFormat(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, D3D11_VIDEO_FRAME_FORMAT* pFrameFormat);
 	void VideoProcessorGetStreamColorSpace(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, D3D11_VIDEO_PROCESSOR_COLOR_SPACE* pColorSpace);
-	void VideoProcessorGetStreamOutputRate(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE* pOutputRate, bool* pRepeatFrame, DXGI_RATIONAL* pCustomRate);
-	void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool* pEnabled, RECT* pRect);
-	void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool* pEnabled, RECT* pRect);
-	void VideoProcessorGetStreamAlpha(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool* pEnabled, float* pAlpha);
+	void VideoProcessorGetStreamOutputRate(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE* pOutputRate, BOOL* pRepeatFrame, DXGI_RATIONAL* pCustomRate);
+	void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL* pEnabled, RECT* pRect);
+	void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL* pEnabled, RECT* pRect);
+	void VideoProcessorGetStreamAlpha(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL* pEnabled, float* pAlpha);
 	void VideoProcessorGetStreamPalette(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, uint Count, uint* pEntries);
-	void VideoProcessorGetStreamPixelAspectRatio(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool* pEnabled, DXGI_RATIONAL* pSourceAspectRatio, DXGI_RATIONAL* pDestinationAspectRatio);
-	void VideoProcessorGetStreamLumaKey(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool* pEnabled, float* pLower, float* pUpper);
-	void VideoProcessorGetStreamStereoFormat(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool* pEnable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT* pFormat, bool* pLeftViewFrame0, bool* pBaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE* pFlipMode, int* MonoOffset);
-	void VideoProcessorGetStreamAutoProcessingMode(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool* pEnabled);
-	void VideoProcessorGetStreamFilter(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, bool* pEnabled, int* pLevel);
+	void VideoProcessorGetStreamPixelAspectRatio(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL* pEnabled, DXGI_RATIONAL* pSourceAspectRatio, DXGI_RATIONAL* pDestinationAspectRatio);
+	void VideoProcessorGetStreamLumaKey(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL* pEnabled, float* pLower, float* pUpper);
+	void VideoProcessorGetStreamStereoFormat(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL* pEnable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT* pFormat, BOOL* pLeftViewFrame0, BOOL* pBaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE* pFlipMode, int* MonoOffset);
+	void VideoProcessorGetStreamAutoProcessingMode(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL* pEnabled);
+	void VideoProcessorGetStreamFilter(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, BOOL* pEnabled, int* pLevel);
 	HRESULT VideoProcessorGetStreamExtension(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, const(GUID)* pExtensionGuid, uint DataSize, void* pData);
 	HRESULT VideoProcessorBlt(ID3D11VideoProcessor pVideoProcessor, ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, const(D3D11_VIDEO_PROCESSOR_STREAM)* pStreams);
 	HRESULT NegotiateCryptoSessionKeyExchange(ID3D11CryptoSession pCryptoSession, uint DataSize, void* pData);
@@ -2225,8 +2225,8 @@ extern(Windows):
 	HRESULT NegotiateAuthenticatedChannelKeyExchange(ID3D11AuthenticatedChannel pChannel, uint DataSize, void* pData);
 	HRESULT QueryAuthenticatedChannel(ID3D11AuthenticatedChannel pChannel, uint InputSize, const(void)* pInput, uint OutputSize, void* pOutput);
 	HRESULT ConfigureAuthenticatedChannel(ID3D11AuthenticatedChannel pChannel, uint InputSize, const(void)* pInput, D3D11_AUTHENTICATED_CONFIGURE_OUTPUT* pOutput);
-	void VideoProcessorSetStreamRotation(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool Enable, D3D11_VIDEO_PROCESSOR_ROTATION Rotation);
-	void VideoProcessorGetStreamRotation(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool* pEnable, D3D11_VIDEO_PROCESSOR_ROTATION* pRotation);
+	void VideoProcessorSetStreamRotation(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_ROTATION Rotation);
+	void VideoProcessorGetStreamRotation(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL* pEnable, D3D11_VIDEO_PROCESSOR_ROTATION* pRotation);
 }
 
 @uuid("10ec4d5b-975a-4689-b9e4-d0aac30fe333")
@@ -2243,7 +2243,7 @@ extern(Windows):
 	HRESULT CreateVideoProcessorEnumerator(const(D3D11_VIDEO_PROCESSOR_CONTENT_DESC)* pDesc, ID3D11VideoProcessorEnumerator* ppEnum);
 	uint GetVideoDecoderProfileCount();
 	HRESULT GetVideoDecoderProfile(uint Index, GUID* pDecoderProfile);
-	HRESULT CheckVideoDecoderFormat(const(GUID)* pDecoderProfile, DXGI_FORMAT Format, bool* pSupported);
+	HRESULT CheckVideoDecoderFormat(const(GUID)* pDecoderProfile, DXGI_FORMAT Format, BOOL* pSupported);
 	HRESULT GetVideoDecoderConfigCount(const(D3D11_VIDEO_DECODER_DESC)* pDesc, uint* pCount);
 	HRESULT GetVideoDecoderConfig(const(D3D11_VIDEO_DECODER_DESC)* pDesc, uint Index, D3D11_VIDEO_DECODER_CONFIG* pConfig);
 	HRESULT GetContentProtectionCaps(const(GUID)* pCryptoType, const(GUID)* pDecoderProfile, D3D11_VIDEO_CONTENT_PROTECTION_CAPS* pCaps);
@@ -2352,13 +2352,13 @@ extern(Windows):
 	HRESULT DecoderEnableDownsampling(ID3D11VideoDecoder pDecoder, DXGI_COLOR_SPACE_TYPE InputColorSpace, const(D3D11_VIDEO_SAMPLE_DESC)* pOutputDesc, uint ReferenceFrameCount);
 	HRESULT DecoderUpdateDownsampling(ID3D11VideoDecoder pDecoder, const(D3D11_VIDEO_SAMPLE_DESC)* pOutputDesc);
 	void VideoProcessorSetOutputColorSpace1(ID3D11VideoProcessor pVideoProcessor, DXGI_COLOR_SPACE_TYPE ColorSpace);
-	void VideoProcessorSetOutputShaderUsage(ID3D11VideoProcessor pVideoProcessor, bool ShaderUsage);
+	void VideoProcessorSetOutputShaderUsage(ID3D11VideoProcessor pVideoProcessor, BOOL ShaderUsage);
 	void VideoProcessorGetOutputColorSpace1(ID3D11VideoProcessor pVideoProcessor, DXGI_COLOR_SPACE_TYPE* pColorSpace);
-	void VideoProcessorGetOutputShaderUsage(ID3D11VideoProcessor pVideoProcessor, bool* pShaderUsage);
+	void VideoProcessorGetOutputShaderUsage(ID3D11VideoProcessor pVideoProcessor, BOOL* pShaderUsage);
 	void VideoProcessorSetStreamColorSpace1(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, DXGI_COLOR_SPACE_TYPE ColorSpace);
-	void VideoProcessorSetStreamMirror(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool Enable, bool FlipHorizontal, bool FlipVertical);
+	void VideoProcessorSetStreamMirror(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL Enable, BOOL FlipHorizontal, BOOL FlipVertical);
 	void VideoProcessorGetStreamColorSpace1(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, DXGI_COLOR_SPACE_TYPE* pColorSpace);
-	void VideoProcessorGetStreamMirror(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, bool* pEnable, bool* pFlipHorizontal, bool* pFlipVertical);
+	void VideoProcessorGetStreamMirror(ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, BOOL* pEnable, BOOL* pFlipHorizontal, BOOL* pFlipVertical);
 	HRESULT VideoProcessorGetBehaviorHints(ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, DXGI_FORMAT OutputFormat, uint StreamCount, const(D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT)* pStreams, uint* pBehaviorHints);
 }
 
@@ -2368,7 +2368,7 @@ interface ID3D11VideoDevice1 : ID3D11VideoDevice
 extern(Windows):
 	HRESULT GetCryptoSessionPrivateDataSize(const(GUID)* pCryptoType, const(GUID)* pDecoderProfile, const(GUID)* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize);
 	HRESULT GetVideoDecoderCaps(const(GUID)* pDecoderProfile, uint SampleWidth, uint SampleHeight, const(DXGI_RATIONAL)* pFrameRate, uint BitRate, const(GUID)* pCryptoType, uint* pDecoderCaps);
-	HRESULT CheckVideoDecoderDownsampling(const(D3D11_VIDEO_DECODER_DESC)* pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, const(D3D11_VIDEO_DECODER_CONFIG)* pInputConfig, const(DXGI_RATIONAL)* pFrameRate, const(D3D11_VIDEO_SAMPLE_DESC)* pOutputDesc, bool* pSupported, bool* pRealTimeHint);
+	HRESULT CheckVideoDecoderDownsampling(const(D3D11_VIDEO_DECODER_DESC)* pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, const(D3D11_VIDEO_DECODER_CONFIG)* pInputConfig, const(DXGI_RATIONAL)* pFrameRate, const(D3D11_VIDEO_SAMPLE_DESC)* pOutputDesc, BOOL* pSupported, BOOL* pRealTimeHint);
 	HRESULT RecommendVideoDecoderDownsampleParameters(const(D3D11_VIDEO_DECODER_DESC)* pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, const(D3D11_VIDEO_DECODER_CONFIG)* pInputConfig, const(DXGI_RATIONAL)* pFrameRate, D3D11_VIDEO_SAMPLE_DESC* pRecommendedOutputDesc);
 }
 
@@ -2376,7 +2376,7 @@ extern(Windows):
 interface ID3D11VideoProcessorEnumerator1 : ID3D11VideoProcessorEnumerator
 {
 extern(Windows):
-	HRESULT CheckVideoProcessorFormatConversion(DXGI_FORMAT InputFormat, DXGI_COLOR_SPACE_TYPE InputColorSpace, DXGI_FORMAT OutputFormat, DXGI_COLOR_SPACE_TYPE OutputColorSpace, bool* pSupported);
+	HRESULT CheckVideoProcessorFormatConversion(DXGI_FORMAT InputFormat, DXGI_COLOR_SPACE_TYPE InputColorSpace, DXGI_FORMAT OutputFormat, DXGI_COLOR_SPACE_TYPE OutputColorSpace, BOOL* pSupported);
 }
 
 @uuid("a04bfb29-08ef-43d6-a49c-a9bdbdcbe686")
@@ -2399,7 +2399,7 @@ extern(Windows):
 	INT BeginEvent(LPCWSTR Name);
 	INT EndEvent();
 	void SetMarker(LPCWSTR Name);
-	bool GetStatus();
+	BOOL GetStatus();
 }
 
 @uuid("420d5b32-b90c-4da4-bef0-359f6a24a83a")
@@ -2412,7 +2412,7 @@ extern(Windows):
 	void UpdateTiles(ID3D11Resource pDestTiledResource, const(D3D11_TILED_RESOURCE_COORDINATE)* pDestTileRegionStartCoordinate, const(D3D11_TILE_REGION_SIZE)* pDestTileRegionSize, const(void)* pSourceTileData, uint Flags);
 	HRESULT ResizeTilePool(ID3D11Buffer pTilePool, ulong NewSizeInBytes);
 	void TiledResourceBarrier(ID3D11DeviceChild pTiledResourceOrViewAccessBeforeBarrier, ID3D11DeviceChild pTiledResourceOrViewAccessAfterBarrier);
-	bool IsAnnotationEnabled();
+	BOOL IsAnnotationEnabled();
 	void SetMarkerInt(LPCWSTR pLabel, INT Data);
 	void BeginEventInt(LPCWSTR pLabel, INT Data);
 	void EndEvent();
@@ -2482,8 +2482,8 @@ interface ID3D11DeviceContext3 : ID3D11DeviceContext2
 {
 extern(Windows):
 	void Flush1(D3D11_CONTEXT_TYPE ContextType, HANDLE hEvent);
-	void SetHardwareProtectionState(bool HwProtectionEnable);
-	void GetHardwareProtectionState(bool* pHwProtectionEnable);
+	void SetHardwareProtectionState(BOOL HwProtectionEnable);
+	void GetHardwareProtectionState(BOOL* pHwProtectionEnable);
 }
 
 @uuid("affde9d1-1df7-4bb7-8a34-0f46251dab80")
@@ -2542,8 +2542,8 @@ interface ID3D11Multithread : IUnknown
 extern(Windows):
 	void Enter();
 	void Leave();
-	bool SetMultithreadProtected(bool bMTProtect);
-	bool GetMultithreadProtected();
+	BOOL SetMultithreadProtected(BOOL bMTProtect);
+	BOOL GetMultithreadProtected();
 }
 
 @uuid("c4e7374c-6243-4d1b-ae87-52b4f740e261")
@@ -2604,7 +2604,7 @@ extern(Windows):
 interface IDXGISurface1 : IDXGISurface
 {
 extern(Windows):
-	HRESULT GetDC(bool Discard, HDC* out_phdc);
+	HRESULT GetDC(BOOL Discard, HDC* out_phdc);
 	HRESULT ReleaseDC(RECT* pDirtyRect);
 }
 
@@ -2625,7 +2625,7 @@ extern(Windows):
 	HRESULT GetDisplayModeList(DXGI_FORMAT EnumFormat, uint Flags, uint* out_pNumModes, DXGI_MODE_DESC* out_pDesc);
 	HRESULT FindClosestMatchingMode(const(DXGI_MODE_DESC)* pModeToMatch, DXGI_MODE_DESC* out_pClosestMatch, IUnknown pConcernedDevice);
 	HRESULT WaitForVBlank();
-	HRESULT TakeOwnership(IUnknown pDevice, bool Exclusive);
+	HRESULT TakeOwnership(IUnknown pDevice, BOOL Exclusive);
 	void ReleaseOwnership();
 	HRESULT GetGammaControlCapabilities(DXGI_GAMMA_CONTROL_CAPABILITIES* out_pGammaCaps);
 	HRESULT SetGammaControl(const(DXGI_GAMMA_CONTROL)* pArray);
@@ -2641,8 +2641,8 @@ interface IDXGISwapChain : IDXGIDeviceSubObject
 extern(Windows):
 	HRESULT Present(uint SyncInterval, uint Flags);
 	HRESULT GetBuffer(uint Buffer, REFIID riid, void** out_ppSurface);
-	HRESULT SetFullscreenState(bool Fullscreen, IDXGIOutput pTarget);
-	HRESULT GetFullscreenState(bool* out_pFullscreen, IDXGIOutput* out_ppTarget);
+	HRESULT SetFullscreenState(BOOL Fullscreen, IDXGIOutput pTarget);
+	HRESULT GetFullscreenState(BOOL* out_pFullscreen, IDXGIOutput* out_ppTarget);
 	HRESULT GetDesc(DXGI_SWAP_CHAIN_DESC* out_pDesc);
 	HRESULT ResizeBuffers(uint BufferCount, uint Width, uint Height, DXGI_FORMAT NewFormat, uint SwapChainFlags);
 	HRESULT ResizeTarget(const(DXGI_MODE_DESC)* pNewTargetParameters);
@@ -2678,7 +2678,7 @@ interface IDXGIFactory1 : IDXGIFactory
 {
 extern(Windows):
 	HRESULT EnumAdapters1(uint Adapter, IDXGIAdapter1* out_ppAdapter);
-	bool IsCurrent();
+	BOOL IsCurrent();
 }
 
 @uuid("29038f61-3839-4626-91fd-086879011a05")

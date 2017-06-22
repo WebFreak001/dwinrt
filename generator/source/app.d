@@ -1789,7 +1789,7 @@ void addAlias(string from, string to)
 Alias[] aliases = [
 	Alias("unsigned", "uint"), Alias("ULONG32", "uint"), Alias("__int3264",
 		"size_t"), Alias("DOUBLE", "double"), Alias("BSTR", "wchar*"),
-	Alias("UINT", "uint"), Alias("BOOL", "bool"), Alias("USHORT", "ushort"),
+	Alias("UINT", "uint"), Alias("BOOLEAN", "bool"), Alias("USHORT", "ushort"),
 	Alias("UINT64", "ulong"), Alias("WCHAR", "wchar"), Alias("SIZE_T", "size_t"),
 	Alias("FLOAT", "float"), Alias("BYTE", "ubyte"), Alias("LPVOID", "void*")
 ];
