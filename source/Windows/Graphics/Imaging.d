@@ -91,7 +91,7 @@ extern(Windows):
 	HRESULT get_GeneratedThumbnailHeight(UINT32* return_value);
 	HRESULT set_GeneratedThumbnailHeight(UINT32 value);
 	HRESULT get_BitmapTransform(Windows.Graphics.Imaging.BitmapTransform* return_value);
-	HRESULT abi_SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, UINT32 width, UINT32 height, double dpiX, double dpiY, UINT32 __pixelsSize, BYTE* pixels);
+	HRESULT abi_SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, UINT32 width, UINT32 height, double dpiX, double dpiY, UINT32 __pixelsSize, ubyte* pixels);
 	HRESULT abi_GoToNextFrameAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_GoToNextFrameWithEncodingOptionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)) encodingOptions, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_FlushAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -211,7 +211,7 @@ extern(Windows):
 interface IPixelDataProvider : IInspectable
 {
 extern(Windows):
-	HRESULT abi_DetachPixelData(UINT32* out___pixelDataSize, BYTE** return_pixelData);
+	HRESULT abi_DetachPixelData(UINT32* out___pixelDataSize, ubyte** return_pixelData);
 }
 
 @uuid("689e0708-7eef-483f-963f-da938818e073")
@@ -499,7 +499,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).get_BitmapTransform(&_ret));
 		return _ret;
 	}
-	final void SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, UINT32 width, UINT32 height, double dpiX, double dpiY, UINT32 __pixelsSize, BYTE* pixels)
+	final void SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, UINT32 width, UINT32 height, double dpiX, double dpiY, UINT32 __pixelsSize, ubyte* pixels)
 	{
 		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoder).abi_SetPixelData(pixelFormat, alphaMode, width, height, dpiX, dpiY, __pixelsSize, pixels));
 	}
@@ -788,35 +788,35 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Streams.IContentTypeProvider).get_ContentType(&_ret));
 		return _ret;
 	}
-	final UINT64 Size()
+	final ulong Size()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
 		return _ret;
 	}
-	final void Size(UINT64 value)
+	final void Size(ulong value)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
 	}
-	final Windows.Storage.Streams.IInputStream GetInputStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IInputStream GetInputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IInputStream _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
 		return _ret;
 	}
-	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
 		return _ret;
 	}
-	final UINT64 Position()
+	final ulong Position()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
 		return _ret;
 	}
-	final void Seek(UINT64 position)
+	final void Seek(ulong position)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
 	}
@@ -865,9 +865,9 @@ extern(Windows):
 interface PixelDataProvider : Windows.Graphics.Imaging.IPixelDataProvider
 {
 extern(Windows):
-	final BYTE* DetachPixelData(UINT32* out___pixelDataSize)
+	final ubyte* DetachPixelData(UINT32* out___pixelDataSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Graphics.Imaging.IPixelDataProvider).abi_DetachPixelData(out___pixelDataSize, &_ret));
 		return _ret;
 	}

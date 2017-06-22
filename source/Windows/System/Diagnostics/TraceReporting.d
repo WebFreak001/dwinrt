@@ -12,7 +12,7 @@ extern(Windows):
 	HRESULT abi_DownloadLatestSettingsForNamespace(HSTRING partner, HSTRING feature, bool isScenarioNamespace, bool downloadOverCostedNetwork, bool downloadOverBattery, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState* return_result);
 	HRESULT abi_GetActiveScenarioList(Windows.Foundation.Collections.IVectorView!(GUID)* return_scenarioIds);
 	HRESULT abi_ForceUpload(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticEventBufferLatencies latency, bool uploadOverCostedNetwork, bool uploadOverBattery, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState* return_result);
-	HRESULT abi_IsTraceRunning(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotType slotType, GUID scenarioId, UINT64 traceProfileHash, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotState* return_slotState);
+	HRESULT abi_IsTraceRunning(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotType slotType, GUID scenarioId, ulong traceProfileHash, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotState* return_slotState);
 	HRESULT abi_GetActiveTraceRuntime(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotType slotType, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceRuntimeInfo* return_traceRuntimeInfo);
 	HRESULT abi_GetKnownTraceList(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotType slotType, Windows.Foundation.Collections.IVectorView!(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceInfo)* return_traceInfo);
 }
@@ -23,7 +23,7 @@ interface IPlatformDiagnosticTraceInfo : IInspectable
 {
 extern(Windows):
 	HRESULT get_ScenarioId(GUID* return_value);
-	HRESULT get_ProfileHash(UINT64* return_value);
+	HRESULT get_ProfileHash(ulong* return_value);
 	HRESULT get_IsExclusive(bool* return_value);
 	HRESULT get_IsAutoLogger(bool* return_value);
 	HRESULT get_MaxTraceDurationFileTime(INT64* return_value);
@@ -52,9 +52,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_ScenarioId(&_ret));
 		return _ret;
 	}
-	final UINT64 ProfileHash()
+	final ulong ProfileHash()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_ProfileHash(&_ret));
 		return _ret;
 	}

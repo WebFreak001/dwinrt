@@ -9,9 +9,9 @@ interface ICertificate : IInspectable
 extern(Windows):
 	HRESULT abi_BuildChainAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates, Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain)* return_value);
 	HRESULT abi_BuildChainWithParametersAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates, Windows.Security.Cryptography.Certificates.ChainBuildingParameters parameters, Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain)* return_value);
-	HRESULT get_SerialNumber(UINT32* out___valueSize, BYTE** return_value);
-	HRESULT abi_GetHashValue(UINT32* out___valueSize, BYTE** return_value);
-	HRESULT abi_GetHashValueWithAlgorithm(HSTRING hashAlgorithmName, UINT32* out___valueSize, BYTE** return_value);
+	HRESULT get_SerialNumber(UINT32* out___valueSize, ubyte** return_value);
+	HRESULT abi_GetHashValue(UINT32* out___valueSize, ubyte** return_value);
+	HRESULT abi_GetHashValueWithAlgorithm(HSTRING hashAlgorithmName, UINT32* out___valueSize, ubyte** return_value);
 	HRESULT abi_GetCertificateBlob(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_Subject(HSTRING* return_value);
 	HRESULT get_Issuer(HSTRING* return_value);
@@ -94,8 +94,8 @@ extern(Windows):
 	HRESULT get_IsCritical(bool* return_value);
 	HRESULT set_IsCritical(bool value);
 	HRESULT abi_EncodeValue(HSTRING value);
-	HRESULT get_Value(UINT32* out___valueSize, BYTE** return_value);
-	HRESULT set_Value(UINT32 __valueSize, BYTE* value);
+	HRESULT get_Value(UINT32* out___valueSize, ubyte** return_value);
+	HRESULT set_Value(UINT32 __valueSize, ubyte* value);
 }
 
 @uuid("17b4221c-4baf-44a2-9608-04fb62b16942")
@@ -139,8 +139,8 @@ extern(Windows):
 	HRESULT set_IssuerName(HSTRING value);
 	HRESULT get_FriendlyName(HSTRING* return_value);
 	HRESULT set_FriendlyName(HSTRING value);
-	HRESULT get_Thumbprint(UINT32* out___valueSize, BYTE** return_value);
-	HRESULT set_Thumbprint(UINT32 __valueSize, BYTE* value);
+	HRESULT get_Thumbprint(UINT32* out___valueSize, ubyte** return_value);
+	HRESULT set_Thumbprint(UINT32 __valueSize, ubyte* value);
 	HRESULT get_HardwareOnly(bool* return_value);
 	HRESULT set_HardwareOnly(bool value);
 }
@@ -203,8 +203,8 @@ interface ICertificateRequestProperties3 : IInspectable
 extern(Windows):
 	HRESULT get_CurveName(HSTRING* return_value);
 	HRESULT set_CurveName(HSTRING value);
-	HRESULT get_CurveParameters(UINT32* out___valueSize, BYTE** return_value);
-	HRESULT set_CurveParameters(UINT32 __valueSize, BYTE* value);
+	HRESULT get_CurveParameters(UINT32* out___valueSize, ubyte** return_value);
+	HRESULT set_CurveParameters(UINT32 __valueSize, ubyte* value);
 	HRESULT get_ContainerNamePrefix(HSTRING* return_value);
 	HRESULT set_ContainerNamePrefix(HSTRING value);
 	HRESULT get_ContainerName(HSTRING* return_value);
@@ -296,7 +296,7 @@ interface ICmsAttachedSignature : IInspectable
 {
 extern(Windows):
 	HRESULT get_Certificates(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)* return_value);
-	HRESULT get_Content(UINT32* out___valueSize, BYTE** return_value);
+	HRESULT get_Content(UINT32* out___valueSize, ubyte** return_value);
 	HRESULT get_Signers(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.CmsSignerInfo)* return_value);
 	HRESULT abi_VerifySignature(Windows.Security.Cryptography.Certificates.SignatureValidationResult* return_value);
 }
@@ -526,21 +526,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).abi_BuildChainWithParametersAsync(certificates, parameters, &_ret));
 		return _ret;
 	}
-	final BYTE* SerialNumber(UINT32* out___valueSize)
+	final ubyte* SerialNumber(UINT32* out___valueSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).get_SerialNumber(out___valueSize, &_ret));
 		return _ret;
 	}
-	final BYTE* GetHashValue(UINT32* out___valueSize)
+	final ubyte* GetHashValue(UINT32* out___valueSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).abi_GetHashValue(out___valueSize, &_ret));
 		return _ret;
 	}
-	final BYTE* GetHashValueWithAlgorithm(HSTRING hashAlgorithmName, UINT32* out___valueSize)
+	final ubyte* GetHashValueWithAlgorithm(HSTRING hashAlgorithmName, UINT32* out___valueSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate).abi_GetHashValueWithAlgorithm(hashAlgorithmName, out___valueSize, &_ret));
 		return _ret;
 	}
@@ -712,13 +712,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateExtension).abi_EncodeValue(value));
 	}
-	final BYTE* Value(UINT32* out___valueSize)
+	final ubyte* Value(UINT32* out___valueSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateExtension).get_Value(out___valueSize, &_ret));
 		return _ret;
 	}
-	final void Value(UINT32 __valueSize, BYTE* value)
+	final void Value(UINT32 __valueSize, ubyte* value)
 	{
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateExtension).set_Value(__valueSize, value));
 	}
@@ -838,13 +838,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery).set_FriendlyName(value));
 	}
-	final BYTE* Thumbprint(UINT32* out___valueSize)
+	final ubyte* Thumbprint(UINT32* out___valueSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery).get_Thumbprint(out___valueSize, &_ret));
 		return _ret;
 	}
-	final void Thumbprint(UINT32 __valueSize, BYTE* value)
+	final void Thumbprint(UINT32 __valueSize, ubyte* value)
 	{
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery).set_Thumbprint(__valueSize, value));
 	}
@@ -1023,13 +1023,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3).set_CurveName(value));
 	}
-	final BYTE* CurveParameters(UINT32* out___valueSize)
+	final ubyte* CurveParameters(UINT32* out___valueSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3).get_CurveParameters(out___valueSize, &_ret));
 		return _ret;
 	}
-	final void CurveParameters(UINT32 __valueSize, BYTE* value)
+	final void CurveParameters(UINT32 __valueSize, ubyte* value)
 	{
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3).set_CurveParameters(__valueSize, value));
 	}
@@ -1207,9 +1207,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsAttachedSignature).get_Certificates(&_ret));
 		return _ret;
 	}
-	final BYTE* Content(UINT32* out___valueSize)
+	final ubyte* Content(UINT32* out___valueSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsAttachedSignature).get_Content(out___valueSize, &_ret));
 		return _ret;
 	}

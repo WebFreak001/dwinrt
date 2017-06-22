@@ -4,8 +4,8 @@ import dwinrt;
 
 struct BackgroundDownloadProgress
 {
-	UINT64 BytesReceived;
-	UINT64 TotalBytesToReceive;
+	ulong BytesReceived;
+	ulong TotalBytesToReceive;
 	Windows.Networking.BackgroundTransfer.BackgroundTransferStatus Status;
 	bool HasResponseChanged;
 	bool HasRestarted;
@@ -13,10 +13,10 @@ struct BackgroundDownloadProgress
 
 struct BackgroundUploadProgress
 {
-	UINT64 BytesReceived;
-	UINT64 BytesSent;
-	UINT64 TotalBytesToReceive;
-	UINT64 TotalBytesToSend;
+	ulong BytesReceived;
+	ulong BytesSent;
+	ulong TotalBytesToReceive;
+	ulong TotalBytesToSend;
 	Windows.Networking.BackgroundTransfer.BackgroundTransferStatus Status;
 	bool HasResponseChanged;
 	bool HasRestarted;
@@ -188,7 +188,7 @@ extern(Windows):
 	HRESULT get_Group(HSTRING* return_value);
 	HRESULT get_CostPolicy(Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy* return_value);
 	HRESULT set_CostPolicy(Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy value);
-	HRESULT abi_GetResultStreamAt(UINT64 position, Windows.Storage.Streams.IInputStream* return_value);
+	HRESULT abi_GetResultStreamAt(ulong position, Windows.Storage.Streams.IInputStream* return_value);
 	HRESULT abi_GetResponseInformation(Windows.Networking.BackgroundTransfer.ResponseInformation* return_value);
 }
 
@@ -795,7 +795,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).set_CostPolicy(value));
 	}
-	final Windows.Storage.Streams.IInputStream GetResultStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IInputStream GetResultStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IInputStream _ret;
 		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).abi_GetResultStreamAt(position, &_ret));
@@ -928,7 +928,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).set_CostPolicy(value));
 	}
-	final Windows.Storage.Streams.IInputStream GetResultStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IInputStream GetResultStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IInputStream _ret;
 		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).abi_GetResultStreamAt(position, &_ret));

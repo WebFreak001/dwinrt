@@ -20,12 +20,12 @@ interface II2cDeviceProvider_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
-	HRESULT abi_Write(UINT32 __bufferSize, BYTE* buffer);
-	HRESULT abi_WritePartial(UINT32 __bufferSize, BYTE* buffer, Windows.Devices.I2c.Provider.ProviderI2cTransferResult* return_result);
-	HRESULT abi_Read(UINT32 __bufferSize, BYTE* out_buffer);
-	HRESULT abi_ReadPartial(UINT32 __bufferSize, BYTE* out_buffer, Windows.Devices.I2c.Provider.ProviderI2cTransferResult* return_result);
-	HRESULT abi_WriteRead(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer);
-	HRESULT abi_WriteReadPartial(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer, Windows.Devices.I2c.Provider.ProviderI2cTransferResult* return_result);
+	HRESULT abi_Write(UINT32 __bufferSize, ubyte* buffer);
+	HRESULT abi_WritePartial(UINT32 __bufferSize, ubyte* buffer, Windows.Devices.I2c.Provider.ProviderI2cTransferResult* return_result);
+	HRESULT abi_Read(UINT32 __bufferSize, ubyte* out_buffer);
+	HRESULT abi_ReadPartial(UINT32 __bufferSize, ubyte* out_buffer, Windows.Devices.I2c.Provider.ProviderI2cTransferResult* return_result);
+	HRESULT abi_WriteRead(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer);
+	HRESULT abi_WriteReadPartial(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer, Windows.Devices.I2c.Provider.ProviderI2cTransferResult* return_result);
 }
 @uuid("ad342654-57e8-453e-8329-d1e447d103a9")
 interface II2cDeviceProvider : II2cDeviceProvider_Base, Windows.Foundation.IClosable {}

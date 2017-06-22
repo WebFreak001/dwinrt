@@ -62,10 +62,10 @@ interface ISpiDevice_Base : IInspectable
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_ConnectionSettings(Windows.Devices.Spi.SpiConnectionSettings* return_value);
-	HRESULT abi_Write(UINT32 __bufferSize, BYTE* buffer);
-	HRESULT abi_Read(UINT32 __bufferSize, BYTE* out_buffer);
-	HRESULT abi_TransferSequential(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer);
-	HRESULT abi_TransferFullDuplex(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer);
+	HRESULT abi_Write(UINT32 __bufferSize, ubyte* buffer);
+	HRESULT abi_Read(UINT32 __bufferSize, ubyte* out_buffer);
+	HRESULT abi_TransferSequential(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer);
+	HRESULT abi_TransferFullDuplex(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer);
 }
 @uuid("05d5356d-11b6-4d39-84d5-95dfb4c9f2ce")
 @WinrtFactory("Windows.Devices.Spi.SpiDevice")
@@ -191,19 +191,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).get_ConnectionSettings(&_ret));
 		return _ret;
 	}
-	final void Write(UINT32 __bufferSize, BYTE* buffer)
+	final void Write(UINT32 __bufferSize, ubyte* buffer)
 	{
 		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).abi_Write(__bufferSize, buffer));
 	}
-	final void Read(UINT32 __bufferSize, BYTE* out_buffer)
+	final void Read(UINT32 __bufferSize, ubyte* out_buffer)
 	{
 		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).abi_Read(__bufferSize, out_buffer));
 	}
-	final void TransferSequential(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer)
+	final void TransferSequential(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer)
 	{
 		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).abi_TransferSequential(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer));
 	}
-	final void TransferFullDuplex(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer)
+	final void TransferFullDuplex(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer)
 	{
 		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).abi_TransferFullDuplex(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer));
 	}

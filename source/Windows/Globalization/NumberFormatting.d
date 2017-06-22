@@ -58,7 +58,7 @@ interface INumberFormatter : IInspectable
 {
 extern(Windows):
 	HRESULT abi_FormatInt(INT64 value, HSTRING* return_result);
-	HRESULT abi_FormatUInt(UINT64 value, HSTRING* return_result);
+	HRESULT abi_FormatUInt(ulong value, HSTRING* return_result);
 	HRESULT abi_FormatDouble(double value, HSTRING* return_result);
 }
 
@@ -67,7 +67,7 @@ interface INumberFormatter2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_FormatInt(INT64 value, HSTRING* return_result);
-	HRESULT abi_FormatUInt(UINT64 value, HSTRING* return_result);
+	HRESULT abi_FormatUInt(ulong value, HSTRING* return_result);
 	HRESULT abi_FormatDouble(double value, HSTRING* return_result);
 }
 
@@ -96,7 +96,7 @@ interface INumberParser : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ParseInt(HSTRING text, Windows.Foundation.IReference!(INT64)* return_result);
-	HRESULT abi_ParseUInt(HSTRING text, Windows.Foundation.IReference!(UINT64)* return_result);
+	HRESULT abi_ParseUInt(HSTRING text, Windows.Foundation.IReference!(ulong)* return_result);
 	HRESULT abi_ParseDouble(HSTRING text, Windows.Foundation.IReference!(double)* return_result);
 }
 
@@ -107,8 +107,8 @@ extern(Windows):
 	HRESULT abi_RoundInt32(INT32 value, INT32* return_result);
 	HRESULT abi_RoundUInt32(UINT32 value, UINT32* return_result);
 	HRESULT abi_RoundInt64(INT64 value, INT64* return_result);
-	HRESULT abi_RoundUInt64(UINT64 value, UINT64* return_result);
-	HRESULT abi_RoundSingle(FLOAT value, FLOAT* return_result);
+	HRESULT abi_RoundUInt64(ulong value, ulong* return_result);
+	HRESULT abi_RoundSingle(float value, float* return_result);
 	HRESULT abi_RoundDouble(double value, double* return_result);
 }
 
@@ -203,9 +203,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseInt(text, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) ParseUInt(HSTRING text)
+	final Windows.Foundation.IReference!(ulong) ParseUInt(HSTRING text)
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseUInt(text, &_ret));
 		return _ret;
 	}
@@ -221,7 +221,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatInt(value, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatUInt(UINT64 value)
+	final HSTRING FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatUInt(value, &_ret));
@@ -239,7 +239,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatInt(value, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatUInt(UINT64 value)
+	final HSTRING FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatUInt(value, &_ret));
@@ -454,7 +454,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatInt(value, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatUInt(UINT64 value)
+	final HSTRING FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatUInt(value, &_ret));
@@ -472,7 +472,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatInt(value, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatUInt(UINT64 value)
+	final HSTRING FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatUInt(value, &_ret));
@@ -490,9 +490,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseInt(text, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) ParseUInt(HSTRING text)
+	final Windows.Foundation.IReference!(ulong) ParseUInt(HSTRING text)
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseUInt(text, &_ret));
 		return _ret;
 	}
@@ -555,15 +555,15 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundInt64(value, &_ret));
 		return _ret;
 	}
-	final UINT64 RoundUInt64(UINT64 value)
+	final ulong RoundUInt64(ulong value)
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundUInt64(value, &_ret));
 		return _ret;
 	}
-	final FLOAT RoundSingle(FLOAT value)
+	final float RoundSingle(float value)
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundSingle(value, &_ret));
 		return _ret;
 	}
@@ -711,7 +711,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatInt(value, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatUInt(UINT64 value)
+	final HSTRING FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatUInt(value, &_ret));
@@ -729,7 +729,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatInt(value, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatUInt(UINT64 value)
+	final HSTRING FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatUInt(value, &_ret));
@@ -747,9 +747,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseInt(text, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) ParseUInt(HSTRING text)
+	final Windows.Foundation.IReference!(ulong) ParseUInt(HSTRING text)
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseUInt(text, &_ret));
 		return _ret;
 	}
@@ -874,7 +874,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatInt(value, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatUInt(UINT64 value)
+	final HSTRING FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter).abi_FormatUInt(value, &_ret));
@@ -892,7 +892,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatInt(value, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatUInt(UINT64 value)
+	final HSTRING FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberFormatter2).abi_FormatUInt(value, &_ret));
@@ -910,9 +910,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseInt(text, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) ParseUInt(HSTRING text)
+	final Windows.Foundation.IReference!(ulong) ParseUInt(HSTRING text)
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberParser).abi_ParseUInt(text, &_ret));
 		return _ret;
 	}
@@ -975,15 +975,15 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundInt64(value, &_ret));
 		return _ret;
 	}
-	final UINT64 RoundUInt64(UINT64 value)
+	final ulong RoundUInt64(ulong value)
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundUInt64(value, &_ret));
 		return _ret;
 	}
-	final FLOAT RoundSingle(FLOAT value)
+	final float RoundSingle(float value)
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumberRounder).abi_RoundSingle(value, &_ret));
 		return _ret;
 	}

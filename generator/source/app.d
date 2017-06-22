@@ -881,7 +881,7 @@ string fixEnumName(string name, string enumName, bool value = false)
 {
 	if (value && name.isNumeric)
 		return name;
-	if (value && name.length >= 3 && name[0] == '0' && name[1] == 'x' && name[2 .. $].isNumeric)
+	if (value && name.length >= 3 && name[0] == '0' && name[1] == 'x')
 		return name;
 	string ret = name;
 	if ((enumName.endsWith("_MODE") || enumName.endsWith("_TYPE")

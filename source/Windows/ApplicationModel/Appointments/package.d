@@ -69,9 +69,9 @@ interface IAppointment2 : IAppointment2_Base, Windows.ApplicationModel.Appointme
 interface IAppointment3_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_ChangeNumber(UINT64* return_value);
-	HRESULT get_RemoteChangeNumber(UINT64* return_value);
-	HRESULT set_RemoteChangeNumber(UINT64 value);
+	HRESULT get_ChangeNumber(ulong* return_value);
+	HRESULT get_RemoteChangeNumber(ulong* return_value);
+	HRESULT set_RemoteChangeNumber(ulong value);
 	HRESULT get_DetailsKind(Windows.ApplicationModel.Appointments.AppointmentDetailsKind* return_value);
 	HRESULT set_DetailsKind(Windows.ApplicationModel.Appointments.AppointmentDetailsKind value);
 }
@@ -716,19 +716,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment2).set_IsOrganizedByUser(value));
 	}
-	final UINT64 ChangeNumber()
+	final ulong ChangeNumber()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment3).get_ChangeNumber(&_ret));
 		return _ret;
 	}
-	final UINT64 RemoteChangeNumber()
+	final ulong RemoteChangeNumber()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment3).get_RemoteChangeNumber(&_ret));
 		return _ret;
 	}
-	final void RemoteChangeNumber(UINT64 value)
+	final void RemoteChangeNumber(ulong value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment3).set_RemoteChangeNumber(value));
 	}

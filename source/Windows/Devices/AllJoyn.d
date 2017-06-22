@@ -87,7 +87,7 @@ extern(Windows):
 interface IAllJoynAcceptSessionJoinerEventArgsFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_Create(HSTRING uniqueName, UINT16 sessionPort, Windows.Devices.AllJoyn.AllJoynTrafficType trafficType, BYTE proximity, Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoiner acceptSessionJoiner, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs* return_result);
+	HRESULT abi_Create(HSTRING uniqueName, UINT16 sessionPort, Windows.Devices.AllJoyn.AllJoynTrafficType trafficType, ubyte proximity, Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoiner acceptSessionJoiner, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs* return_result);
 }
 
 @uuid("97b4701c-15dc-4b53-b6a4-7d134300d7bf")

@@ -50,9 +50,9 @@ extern(Windows):
 	HRESULT add_OrientationChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_OrientationChanged(EventRegistrationToken token);
 	HRESULT get_ResolutionScale(Windows.Graphics.Display.ResolutionScale* return_value);
-	HRESULT get_LogicalDpi(FLOAT* return_value);
-	HRESULT get_RawDpiX(FLOAT* return_value);
-	HRESULT get_RawDpiY(FLOAT* return_value);
+	HRESULT get_LogicalDpi(float* return_value);
+	HRESULT get_RawDpiX(float* return_value);
+	HRESULT get_RawDpiY(float* return_value);
 	HRESULT add_DpiChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DpiChanged(EventRegistrationToken token);
 	HRESULT get_StereoEnabled(bool* return_value);
@@ -123,7 +123,7 @@ extern(Windows):
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	HRESULT get_ResolutionScale(Windows.Graphics.Display.ResolutionScale* return_value);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
-	HRESULT get_LogicalDpi(FLOAT* return_value);
+	HRESULT get_LogicalDpi(float* return_value);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	HRESULT add_LogicalDpiChanged(Windows.Graphics.Display.DisplayPropertiesEventHandler handler, EventRegistrationToken* return_token);
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
@@ -252,21 +252,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_ResolutionScale(&_ret));
 		return _ret;
 	}
-	final FLOAT LogicalDpi()
+	final float LogicalDpi()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_LogicalDpi(&_ret));
 		return _ret;
 	}
-	final FLOAT RawDpiX()
+	final float RawDpiX()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_RawDpiX(&_ret));
 		return _ret;
 	}
-	final FLOAT RawDpiY()
+	final float RawDpiY()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_RawDpiY(&_ret));
 		return _ret;
 	}

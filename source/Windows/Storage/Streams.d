@@ -46,8 +46,8 @@ extern(Windows):
 	HRESULT set_ByteOrder(Windows.Storage.Streams.ByteOrder value);
 	HRESULT get_InputStreamOptions(Windows.Storage.Streams.InputStreamOptions* return_value);
 	HRESULT set_InputStreamOptions(Windows.Storage.Streams.InputStreamOptions value);
-	HRESULT abi_ReadByte(BYTE* return_value);
-	HRESULT abi_ReadBytes(UINT32 __valueSize, BYTE* out_value);
+	HRESULT abi_ReadByte(ubyte* return_value);
+	HRESULT abi_ReadBytes(UINT32 __valueSize, ubyte* out_value);
 	HRESULT abi_ReadBuffer(UINT32 length, Windows.Storage.Streams.IBuffer* return_buffer);
 	HRESULT abi_ReadBoolean(bool* return_value);
 	HRESULT abi_ReadGuid(GUID* return_value);
@@ -56,8 +56,8 @@ extern(Windows):
 	HRESULT abi_ReadInt64(INT64* return_value);
 	HRESULT abi_ReadUInt16(UINT16* return_value);
 	HRESULT abi_ReadUInt32(UINT32* return_value);
-	HRESULT abi_ReadUInt64(UINT64* return_value);
-	HRESULT abi_ReadSingle(FLOAT* return_value);
+	HRESULT abi_ReadUInt64(ulong* return_value);
+	HRESULT abi_ReadSingle(float* return_value);
 	HRESULT abi_ReadDouble(double* return_value);
 	HRESULT abi_ReadString(UINT32 codeUnitCount, HSTRING* return_value);
 	HRESULT abi_ReadDateTime(Windows.Foundation.DateTime* return_value);
@@ -92,8 +92,8 @@ extern(Windows):
 	HRESULT set_UnicodeEncoding(Windows.Storage.Streams.UnicodeEncoding value);
 	HRESULT get_ByteOrder(Windows.Storage.Streams.ByteOrder* return_value);
 	HRESULT set_ByteOrder(Windows.Storage.Streams.ByteOrder value);
-	HRESULT abi_WriteByte(BYTE value);
-	HRESULT abi_WriteBytes(UINT32 __valueSize, BYTE* value);
+	HRESULT abi_WriteByte(ubyte value);
+	HRESULT abi_WriteBytes(UINT32 __valueSize, ubyte* value);
 	HRESULT abi_WriteBuffer(Windows.Storage.Streams.IBuffer buffer);
 	HRESULT abi_WriteBufferRange(Windows.Storage.Streams.IBuffer buffer, UINT32 start, UINT32 count);
 	HRESULT abi_WriteBoolean(bool value);
@@ -103,8 +103,8 @@ extern(Windows):
 	HRESULT abi_WriteInt64(INT64 value);
 	HRESULT abi_WriteUInt16(UINT16 value);
 	HRESULT abi_WriteUInt32(UINT32 value);
-	HRESULT abi_WriteUInt64(UINT64 value);
-	HRESULT abi_WriteSingle(FLOAT value);
+	HRESULT abi_WriteUInt64(ulong value);
+	HRESULT abi_WriteSingle(float value);
 	HRESULT abi_WriteDouble(double value);
 	HRESULT abi_WriteDateTime(Windows.Foundation.DateTime value);
 	HRESULT abi_WriteTimeSpan(Windows.Foundation.TimeSpan value);
@@ -154,12 +154,12 @@ interface IOutputStream : IOutputStream_Base, Windows.Foundation.IClosable {}
 interface IRandomAccessStream_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_Size(UINT64* return_value);
-	HRESULT set_Size(UINT64 value);
-	HRESULT abi_GetInputStreamAt(UINT64 position, Windows.Storage.Streams.IInputStream* return_stream);
-	HRESULT abi_GetOutputStreamAt(UINT64 position, Windows.Storage.Streams.IOutputStream* return_stream);
-	HRESULT get_Position(UINT64* return_value);
-	HRESULT abi_Seek(UINT64 position);
+	HRESULT get_Size(ulong* return_value);
+	HRESULT set_Size(ulong value);
+	HRESULT abi_GetInputStreamAt(ulong position, Windows.Storage.Streams.IInputStream* return_stream);
+	HRESULT abi_GetOutputStreamAt(ulong position, Windows.Storage.Streams.IOutputStream* return_stream);
+	HRESULT get_Position(ulong* return_value);
+	HRESULT abi_Seek(ulong position);
 	HRESULT abi_CloneStream(Windows.Storage.Streams.IRandomAccessStream* return_stream);
 	HRESULT get_CanRead(bool* return_value);
 	HRESULT get_CanWrite(bool* return_value);
@@ -189,9 +189,9 @@ extern(Windows):
 interface IRandomAccessStreamStatics : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CopyAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64)* return_operation);
-	HRESULT abi_CopySizeAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, UINT64 bytesToCopy, Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64)* return_operation);
-	HRESULT abi_CopyAndCloseAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64)* return_operation);
+	HRESULT abi_CopyAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong)* return_operation);
+	HRESULT abi_CopySizeAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, ulong bytesToCopy, Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong)* return_operation);
+	HRESULT abi_CopyAndCloseAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong)* return_operation);
 }
 
 @uuid("cc254827-4b3d-438f-9232-10c76bc7e038")
@@ -261,13 +261,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).set_InputStreamOptions(value));
 	}
-	final BYTE ReadByte()
+	final ubyte ReadByte()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadByte(&_ret));
 		return _ret;
 	}
-	final void ReadBytes(UINT32 __valueSize, BYTE* out_value)
+	final void ReadBytes(UINT32 __valueSize, ubyte* out_value)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadBytes(__valueSize, out_value));
 	}
@@ -319,15 +319,15 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadUInt32(&_ret));
 		return _ret;
 	}
-	final UINT64 ReadUInt64()
+	final ulong ReadUInt64()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadUInt64(&_ret));
 		return _ret;
 	}
-	final FLOAT ReadSingle()
+	final float ReadSingle()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IDataReader).abi_ReadSingle(&_ret));
 		return _ret;
 	}
@@ -429,11 +429,11 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).set_ByteOrder(value));
 	}
-	final void WriteByte(BYTE value)
+	final void WriteByte(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteByte(value));
 	}
-	final void WriteBytes(UINT32 __valueSize, BYTE* value)
+	final void WriteBytes(UINT32 __valueSize, ubyte* value)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteBytes(__valueSize, value));
 	}
@@ -473,11 +473,11 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteUInt32(value));
 	}
-	final void WriteUInt64(UINT64 value)
+	final void WriteUInt64(ulong value)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteUInt64(value));
 	}
-	final void WriteSingle(FLOAT value)
+	final void WriteSingle(float value)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IDataWriter).abi_WriteSingle(value));
 	}
@@ -595,35 +595,35 @@ extern(Windows):
 interface FileRandomAccessStream : Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
 extern(Windows):
-	final UINT64 Size()
+	final ulong Size()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
 		return _ret;
 	}
-	final void Size(UINT64 value)
+	final void Size(ulong value)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
 	}
-	final Windows.Storage.Streams.IInputStream GetInputStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IInputStream GetInputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IInputStream _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
 		return _ret;
 	}
-	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
 		return _ret;
 	}
-	final UINT64 Position()
+	final ulong Position()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
 		return _ret;
 	}
-	final void Seek(UINT64 position)
+	final void Seek(ulong position)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
 	}
@@ -672,35 +672,35 @@ extern(Windows):
 interface InMemoryRandomAccessStream : Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
 extern(Windows):
-	final UINT64 Size()
+	final ulong Size()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
 		return _ret;
 	}
-	final void Size(UINT64 value)
+	final void Size(ulong value)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
 	}
-	final Windows.Storage.Streams.IInputStream GetInputStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IInputStream GetInputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IInputStream _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
 		return _ret;
 	}
-	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
 		return _ret;
 	}
-	final UINT64 Position()
+	final ulong Position()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
 		return _ret;
 	}
-	final void Seek(UINT64 position)
+	final void Seek(ulong position)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
 	}
@@ -789,35 +789,35 @@ interface RandomAccessStream
 interface RandomAccessStreamOverStream : Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
 extern(Windows):
-	final UINT64 Size()
+	final ulong Size()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
 		return _ret;
 	}
-	final void Size(UINT64 value)
+	final void Size(ulong value)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
 	}
-	final Windows.Storage.Streams.IInputStream GetInputStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IInputStream GetInputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IInputStream _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
 		return _ret;
 	}
-	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
 		return _ret;
 	}
-	final UINT64 Position()
+	final ulong Position()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
 		return _ret;
 	}
-	final void Seek(UINT64 position)
+	final void Seek(ulong position)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
 	}

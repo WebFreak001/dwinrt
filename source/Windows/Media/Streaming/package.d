@@ -76,9 +76,9 @@ extern(Windows):
 	HRESULT abi_GetCachedSinkProtocolInfo(HSTRING* return_value);
 	HRESULT abi_SetCachedSinkProtocolInfo(HSTRING value);
 	HRESULT abi_GetCachedExtraSinkProtocolInfo(HSTRING* return_value);
-	HRESULT abi_GetEffectiveBandwidth(bool transmitSpeed, UINT64* return_currentSpeed);
-	HRESULT abi_GetCachedBitrateMeasurement(GUID physicalNetworkInterface, UINT64* return_bitrate);
-	HRESULT abi_SetCachedBitrateMeasurement(GUID physicalNetworkInterface, UINT64 bitrate);
+	HRESULT abi_GetEffectiveBandwidth(bool transmitSpeed, ulong* return_currentSpeed);
+	HRESULT abi_GetCachedBitrateMeasurement(GUID physicalNetworkInterface, ulong* return_bitrate);
+	HRESULT abi_SetCachedBitrateMeasurement(GUID physicalNetworkInterface, ulong bitrate);
 	HRESULT get_LogicalNetworkInterface(GUID* return_logicalNetworkInterface);
 	HRESULT get_PhysicalNetworkInterface(GUID* return_physicalNetworkInterface);
 	HRESULT abi_NotifyStreamingStatus(bool fIsStreaming);
@@ -290,19 +290,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).abi_GetCachedExtraSinkProtocolInfo(&_ret));
 		return _ret;
 	}
-	final UINT64 GetEffectiveBandwidth(bool transmitSpeed)
+	final ulong GetEffectiveBandwidth(bool transmitSpeed)
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).abi_GetEffectiveBandwidth(transmitSpeed, &_ret));
 		return _ret;
 	}
-	final UINT64 GetCachedBitrateMeasurement(GUID physicalNetworkInterface)
+	final ulong GetCachedBitrateMeasurement(GUID physicalNetworkInterface)
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).abi_GetCachedBitrateMeasurement(physicalNetworkInterface, &_ret));
 		return _ret;
 	}
-	final void SetCachedBitrateMeasurement(GUID physicalNetworkInterface, UINT64 bitrate)
+	final void SetCachedBitrateMeasurement(GUID physicalNetworkInterface, ulong bitrate)
 	{
 		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).abi_SetCachedBitrateMeasurement(physicalNetworkInterface, bitrate));
 	}

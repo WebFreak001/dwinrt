@@ -74,20 +74,20 @@ interface IHtmlPrintDocumentSource_Base : IInspectable
 extern(Windows):
 	HRESULT get_Content(Windows.UI.WebUI.PrintContent* return_value);
 	HRESULT set_Content(Windows.UI.WebUI.PrintContent value);
-	HRESULT get_LeftMargin(FLOAT* return_value);
-	HRESULT set_LeftMargin(FLOAT value);
-	HRESULT get_TopMargin(FLOAT* return_value);
-	HRESULT set_TopMargin(FLOAT value);
-	HRESULT get_RightMargin(FLOAT* return_value);
-	HRESULT set_RightMargin(FLOAT value);
-	HRESULT get_BottomMargin(FLOAT* return_value);
-	HRESULT set_BottomMargin(FLOAT value);
+	HRESULT get_LeftMargin(float* return_value);
+	HRESULT set_LeftMargin(float value);
+	HRESULT get_TopMargin(float* return_value);
+	HRESULT set_TopMargin(float value);
+	HRESULT get_RightMargin(float* return_value);
+	HRESULT set_RightMargin(float value);
+	HRESULT get_BottomMargin(float* return_value);
+	HRESULT set_BottomMargin(float value);
 	HRESULT get_EnableHeaderFooter(bool* return_value);
 	HRESULT set_EnableHeaderFooter(bool value);
 	HRESULT get_ShrinkToFit(bool* return_value);
 	HRESULT set_ShrinkToFit(bool value);
-	HRESULT get_PercentScale(FLOAT* return_pScalePercent);
-	HRESULT set_PercentScale(FLOAT scalePercent);
+	HRESULT get_PercentScale(float* return_pScalePercent);
+	HRESULT set_PercentScale(float scalePercent);
 	HRESULT get_PageRange(HSTRING* return_pstrPageRange);
 	HRESULT abi_TrySetPageRange(HSTRING strPageRange, bool* return_pfSuccess);
 }
@@ -205,43 +205,43 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.WebUI.IHtmlPrintDocumentSource).set_Content(value));
 	}
-	final FLOAT LeftMargin()
+	final float LeftMargin()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.WebUI.IHtmlPrintDocumentSource).get_LeftMargin(&_ret));
 		return _ret;
 	}
-	final void LeftMargin(FLOAT value)
+	final void LeftMargin(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.WebUI.IHtmlPrintDocumentSource).set_LeftMargin(value));
 	}
-	final FLOAT TopMargin()
+	final float TopMargin()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.WebUI.IHtmlPrintDocumentSource).get_TopMargin(&_ret));
 		return _ret;
 	}
-	final void TopMargin(FLOAT value)
+	final void TopMargin(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.WebUI.IHtmlPrintDocumentSource).set_TopMargin(value));
 	}
-	final FLOAT RightMargin()
+	final float RightMargin()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.WebUI.IHtmlPrintDocumentSource).get_RightMargin(&_ret));
 		return _ret;
 	}
-	final void RightMargin(FLOAT value)
+	final void RightMargin(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.WebUI.IHtmlPrintDocumentSource).set_RightMargin(value));
 	}
-	final FLOAT BottomMargin()
+	final float BottomMargin()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.WebUI.IHtmlPrintDocumentSource).get_BottomMargin(&_ret));
 		return _ret;
 	}
-	final void BottomMargin(FLOAT value)
+	final void BottomMargin(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.WebUI.IHtmlPrintDocumentSource).set_BottomMargin(value));
 	}
@@ -265,13 +265,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.WebUI.IHtmlPrintDocumentSource).set_ShrinkToFit(value));
 	}
-	final FLOAT PercentScale()
+	final float PercentScale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.WebUI.IHtmlPrintDocumentSource).get_PercentScale(&_ret));
 		return _ret;
 	}
-	final void PercentScale(FLOAT scalePercent)
+	final void PercentScale(float scalePercent)
 	{
 		Debug.OK(this.as!(Windows.UI.WebUI.IHtmlPrintDocumentSource).set_PercentScale(scalePercent));
 	}

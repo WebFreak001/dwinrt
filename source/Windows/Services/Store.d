@@ -5,8 +5,8 @@ import dwinrt;
 struct StorePackageUpdateStatus
 {
 	HSTRING PackageFamilyName;
-	UINT64 PackageDownloadSizeInBytes;
-	UINT64 PackageBytesDownloaded;
+	ulong PackageDownloadSizeInBytes;
+	ulong PackageBytesDownloaded;
 	double PackageDownloadProgress;
 	double TotalDownloadProgress;
 	Windows.Services.Store.StorePackageUpdateState PackageUpdateState;

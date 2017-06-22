@@ -141,7 +141,7 @@ extern(Windows):
 	HRESULT add_DeviceDeparted(Windows.Networking.Proximity.DeviceDepartedEventHandler departedHandler, EventRegistrationToken* return_cookie);
 	HRESULT remove_DeviceDeparted(EventRegistrationToken cookie);
 	HRESULT get_MaxMessageBytes(UINT32* return_value);
-	HRESULT get_BitsPerSecond(UINT64* return_value);
+	HRESULT get_BitsPerSecond(ulong* return_value);
 	HRESULT get_DeviceId(HSTRING* return_value);
 }
 
@@ -362,9 +362,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).get_MaxMessageBytes(&_ret));
 		return _ret;
 	}
-	final UINT64 BitsPerSecond()
+	final ulong BitsPerSecond()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).get_BitsPerSecond(&_ret));
 		return _ret;
 	}

@@ -3710,17 +3710,17 @@ GUID uuidOfInstanced(string T)
 		return uuid("94d64ac6-4491-53ef-8be8-36481f3ff1e8");
 	else if (T == "IAsyncActionWithProgress!(double)")
 		return uuid("4f1430a6-a825-56ca-b047-1a9bad52ba67");
-	else if (T == "AsyncActionProgressHandler!(UINT64)")
+	else if (T == "AsyncActionProgressHandler!(ulong)")
 		return uuid("55e233ca-f243-5ae2-853b-f9cc7c0ae0cf");
-	else if (T == "AsyncActionWithProgressCompletedHandler!(UINT64)")
+	else if (T == "AsyncActionWithProgressCompletedHandler!(ulong)")
 		return uuid("e6ff857b-f160-571a-a934-2c61f98c862d");
-	else if (T == "IAsyncActionWithProgress!(UINT64)")
+	else if (T == "IAsyncActionWithProgress!(ulong)")
 		return uuid("43f713d0-c49d-5e55-aebf-af395768351e");
-	else if (T == "AsyncOperationProgressHandler!(HSTRING, UINT64)")
+	else if (T == "AsyncOperationProgressHandler!(HSTRING, ulong)")
 		return uuid("14da7de7-40df-5d4c-823f-cf310625ad39");
-	else if (T == "AsyncOperationWithProgressCompletedHandler!(HSTRING, UINT64)")
+	else if (T == "AsyncOperationWithProgressCompletedHandler!(HSTRING, ulong)")
 		return uuid("bd75eebe-e7b5-5af6-8415-a4b9c9045202");
-	else if (T == "IAsyncOperationWithProgress!(HSTRING, UINT64)")
+	else if (T == "IAsyncOperationWithProgress!(HSTRING, ulong)")
 		return uuid("c8bbcb29-6b64-5ce2-a831-038f6e02199e");
 	else if (T == "AsyncOperationProgressHandler!(UINT32, UINT32)")
 		return uuid("ea0fe405-d432-5ac7-9ef8-5a65e1f97d7e");
@@ -3728,11 +3728,11 @@ GUID uuidOfInstanced(string T)
 		return uuid("1e466dc5-840f-54f9-b877-5e3a9f4b6c74");
 	else if (T == "IAsyncOperationWithProgress!(UINT32, UINT32)")
 		return uuid("eccb574a-c684-5572-a679-6b0842cfb57f");
-	else if (T == "AsyncOperationProgressHandler!(UINT64, UINT64)")
+	else if (T == "AsyncOperationProgressHandler!(ulong, ulong)")
 		return uuid("ffb2b65d-4120-5d13-826d-107851e6bb1c");
-	else if (T == "AsyncOperationWithProgressCompletedHandler!(UINT64, UINT64)")
+	else if (T == "AsyncOperationWithProgressCompletedHandler!(ulong, ulong)")
 		return uuid("d2024e41-5500-5b5a-ba46-cb7009596a2f");
-	else if (T == "IAsyncOperationWithProgress!(UINT64, UINT64)")
+	else if (T == "IAsyncOperationWithProgress!(ulong, ulong)")
 		return uuid("8f1db6e3-6556-5516-825c-1021ee27cd0c");
 	else if (T == "AsyncOperationProgressHandler!(bool, double)")
 		return uuid("cadf3784-1200-5633-8280-163849914ab3");
@@ -3760,9 +3760,9 @@ GUID uuidOfInstanced(string T)
 		return uuid("9343b6e7-e3d2-5e4a-ab2d-2bce4919a6a4");
 	else if (T == "IAsyncOperation!(UINT32)")
 		return uuid("ef60385f-be78-584b-aaef-7829ada2b0de");
-	else if (T == "AsyncOperationCompletedHandler!(UINT64)")
+	else if (T == "AsyncOperationCompletedHandler!(ulong)")
 		return uuid("ee8aeb02-fb00-51fa-8f57-32583ea241f9");
-	else if (T == "IAsyncOperation!(UINT64)")
+	else if (T == "IAsyncOperation!(ulong)")
 		return uuid("2a70d630-0767-5f0a-a1c2-deb08126e26e");
 	else if (T == "IReference!(Windows.Foundation.DateTime)")
 		return uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c");
@@ -3790,7 +3790,7 @@ GUID uuidOfInstanced(string T)
 		return uuid("548cefbd-bc8a-5fa0-8df2-957440fc8bf4");
 	else if (T == "IReference!(UINT32)")
 		return uuid("513ef3af-e784-5325-a91e-97c2b8111cf3");
-	else if (T == "IReference!(UINT64)")
+	else if (T == "IReference!(ulong)")
 		return uuid("6755e376-53bb-568b-a11d-17239868309e");
 	else if (T == "IReference!(Windows.Foundation.Point)")
 		return uuid("84f14c22-a00a-5272-8d3d-82112e66df00");
@@ -3942,7 +3942,7 @@ GUID uuidOfInstanced(string T)
 		return uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e");
 	else if (T == "IVectorView!(HSTRING)")
 		return uuid("2f13c006-a03a-5f69-b090-75a43e33423e");
-	else if (T == "IReference!(UINT64)")
+	else if (T == "IReference!(ulong)")
 		return uuid("6755e376-53bb-568b-a11d-17239868309e");
 	else if (T == "IReference!(double)")
 		return uuid("2f2d6c29-5473-5f3e-92e7-96572bb990e2");
@@ -4320,9 +4320,9 @@ GUID uuidOfInstanced(string T)
 		return uuid("0263c4d4-195c-5dc5-a7ca-6806ceca420b");
 	else if (T == "IVector!(Package)")
 		return uuid("d1bb509e-6989-5c69-b1ff-d1702fe8aca3");
-	else if (T == "AsyncOperationCompletedHandler!(UINT64)")
+	else if (T == "AsyncOperationCompletedHandler!(ulong)")
 		return uuid("ee8aeb02-fb00-51fa-8f57-32583ea241f9");
-	else if (T == "IAsyncOperation!(UINT64)")
+	else if (T == "IAsyncOperation!(ulong)")
 		return uuid("2a70d630-0767-5f0a-a1c2-deb08126e26e");
 	else if (T == "IIterator!(MdmAlert)")
 		return uuid("b4a6ebea-b19f-5da5-b3d1-e859f1f4df17");
@@ -5664,7 +5664,7 @@ GUID uuidOfInstanced(string T)
 		return uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c");
 	else if (T == "IReference!(int)")
 		return uuid("548cefbd-bc8a-5fa0-8df2-957440fc8bf4");
-	else if (T == "IReference!(UINT64)")
+	else if (T == "IReference!(ulong)")
 		return uuid("6755e376-53bb-568b-a11d-17239868309e");
 	else if (T == "AsyncOperationProgressHandler!(Windows.Media.Transcoding.TranscodeFailureReason, double)")
 		return uuid("009c6245-0e59-53b0-9fd2-d250e45a00a3");
@@ -5796,7 +5796,7 @@ GUID uuidOfInstanced(string T)
 		return uuid("3c00fd60-2950-5939-a21a-2d12c5a01b8a");
 	else if (T == "IReference!(UINT32)")
 		return uuid("513ef3af-e784-5325-a91e-97c2b8111cf3");
-	else if (T == "IReference!(UINT64)")
+	else if (T == "IReference!(ulong)")
 		return uuid("6755e376-53bb-568b-a11d-17239868309e");
 	else if (T == "IReference!(Windows.Foundation.DateTime)")
 		return uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c");
@@ -7158,17 +7158,17 @@ GUID uuidOfInstanced(string T)
 		return uuid("06386a7a-e009-5b0b-ab68-a8e48b516647");
 	else if (T == "IAsyncOperationWithProgress!(IBuffer, UINT32)")
 		return uuid("d26b2819-897f-5c7d-84d6-56d796561431");
-	else if (T == "AsyncOperationProgressHandler!(IBuffer, UINT64)")
+	else if (T == "AsyncOperationProgressHandler!(IBuffer, ulong)")
 		return uuid("d17f5eb6-b422-5e26-a817-7e0fd08f75d5");
-	else if (T == "AsyncOperationWithProgressCompletedHandler!(IBuffer, UINT64)")
+	else if (T == "AsyncOperationWithProgressCompletedHandler!(IBuffer, ulong)")
 		return uuid("abc81235-39c7-59bf-9948-2d14a93d40fd");
-	else if (T == "IAsyncOperationWithProgress!(IBuffer, UINT64)")
+	else if (T == "IAsyncOperationWithProgress!(IBuffer, ulong)")
 		return uuid("ad960e7f-d73b-56e4-a58c-6ec7678cfd88");
-	else if (T == "AsyncOperationProgressHandler!(IInputStream, UINT64)")
+	else if (T == "AsyncOperationProgressHandler!(IInputStream, ulong)")
 		return uuid("f9b2e7f6-762f-50db-95dd-7f6c6ec47090");
-	else if (T == "AsyncOperationWithProgressCompletedHandler!(IInputStream, UINT64)")
+	else if (T == "AsyncOperationWithProgressCompletedHandler!(IInputStream, ulong)")
 		return uuid("8db69706-3dd1-5a28-986a-93be0776d9c3");
-	else if (T == "IAsyncOperationWithProgress!(IInputStream, UINT64)")
+	else if (T == "IAsyncOperationWithProgress!(IInputStream, ulong)")
 		return uuid("455aa601-f13e-5dee-b9cb-16b531996327");
 	else if (T == "AsyncOperationCompletedHandler!(IBuffer)")
 		return uuid("51c3d2fd-b8a1-5620-b746-7ee6d533aca3");
@@ -7212,11 +7212,11 @@ GUID uuidOfInstanced(string T)
 		return uuid("1e466dc5-840f-54f9-b877-5e3a9f4b6c74");
 	else if (T == "IAsyncOperationWithProgress!(UINT32, UINT32)")
 		return uuid("eccb574a-c684-5572-a679-6b0842cfb57f");
-	else if (T == "AsyncOperationProgressHandler!(UINT64, UINT64)")
+	else if (T == "AsyncOperationProgressHandler!(ulong, ulong)")
 		return uuid("ffb2b65d-4120-5d13-826d-107851e6bb1c");
-	else if (T == "AsyncOperationWithProgressCompletedHandler!(UINT64, UINT64)")
+	else if (T == "AsyncOperationWithProgressCompletedHandler!(ulong, ulong)")
 		return uuid("d2024e41-5500-5b5a-ba46-cb7009596a2f");
-	else if (T == "IAsyncOperationWithProgress!(UINT64, UINT64)")
+	else if (T == "IAsyncOperationWithProgress!(ulong, ulong)")
 		return uuid("8f1db6e3-6556-5516-825c-1021ee27cd0c");
 	else if (T == "TypedEventHandler!(DevicePortalConnection, DevicePortalConnectionClosedEventArgs)")
 		return uuid("2aad93a8-52fa-54b3-9556-15d651208b3f");
@@ -7718,11 +7718,11 @@ GUID uuidOfInstanced(string T)
 		return uuid("c602b59e-0a8e-5e99-b478-2b564585278d");
 	else if (T == "IIterable!(Windows.Foundation.Point)")
 		return uuid("c192280d-3a09-5423-9dc5-67b83ebde41d");
-	else if (T == "AsyncActionProgressHandler!(UINT64)")
+	else if (T == "AsyncActionProgressHandler!(ulong)")
 		return uuid("55e233ca-f243-5ae2-853b-f9cc7c0ae0cf");
-	else if (T == "AsyncActionWithProgressCompletedHandler!(UINT64)")
+	else if (T == "AsyncActionWithProgressCompletedHandler!(ulong)")
 		return uuid("e6ff857b-f160-571a-a934-2c61f98c862d");
-	else if (T == "IAsyncActionWithProgress!(UINT64)")
+	else if (T == "IAsyncActionWithProgress!(ulong)")
 		return uuid("43f713d0-c49d-5e55-aebf-af395768351e");
 	else if (T == "AsyncOperationProgressHandler!(UINT32, UINT32)")
 		return uuid("ea0fe405-d432-5ac7-9ef8-5a65e1f97d7e");
@@ -9060,7 +9060,7 @@ GUID uuidOfInstanced(string T)
 		return uuid("2eef1846-8176-52af-8d2b-e0c932512e9f");
 	else if (T == "IReference!(Windows.Foundation.DateTime)")
 		return uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c");
-	else if (T == "IReference!(UINT64)")
+	else if (T == "IReference!(ulong)")
 		return uuid("6755e376-53bb-568b-a11d-17239868309e");
 	else if (T == "TypedEventHandler!(HttpBaseProtocolFilter, HttpServerCustomValidationRequestedEventArgs)")
 		return uuid("ed0260c6-41f2-5a04-9a8b-2930d7ff8a9e");
@@ -9084,7 +9084,7 @@ GUID uuidOfInstanced(string T)
 		return uuid("0c7d1423-e8fd-5a91-b55c-8bfbe7ac2d40");
 	else if (T == "IVectorView!(Certificate)")
 		return uuid("963f7013-77c2-51c5-8038-b5bcef633edb");
-	else if (T == "IReference!(UINT64)")
+	else if (T == "IReference!(ulong)")
 		return uuid("6755e376-53bb-568b-a11d-17239868309e");
 	else if (T == "IIterator!(HttpCookie)")
 		return uuid("626bc177-8403-5030-a88c-7485cc89d730");
@@ -9136,29 +9136,29 @@ GUID uuidOfInstanced(string T)
 		return uuid("ac7f26f2-feb7-5b2a-8ac4-345bc62caede");
 	else if (T == "IMap!(HSTRING, HSTRING)")
 		return uuid("f6d1f700-49c2-52ae-8154-826f9908773c");
-	else if (T == "AsyncOperationProgressHandler!(UINT64, UINT64)")
+	else if (T == "AsyncOperationProgressHandler!(ulong, ulong)")
 		return uuid("ffb2b65d-4120-5d13-826d-107851e6bb1c");
-	else if (T == "AsyncOperationWithProgressCompletedHandler!(UINT64, UINT64)")
+	else if (T == "AsyncOperationWithProgressCompletedHandler!(ulong, ulong)")
 		return uuid("d2024e41-5500-5b5a-ba46-cb7009596a2f");
-	else if (T == "IAsyncOperationWithProgress!(UINT64, UINT64)")
+	else if (T == "IAsyncOperationWithProgress!(ulong, ulong)")
 		return uuid("8f1db6e3-6556-5516-825c-1021ee27cd0c");
-	else if (T == "AsyncOperationProgressHandler!(IBuffer, UINT64)")
+	else if (T == "AsyncOperationProgressHandler!(IBuffer, ulong)")
 		return uuid("d17f5eb6-b422-5e26-a817-7e0fd08f75d5");
-	else if (T == "AsyncOperationWithProgressCompletedHandler!(IBuffer, UINT64)")
+	else if (T == "AsyncOperationWithProgressCompletedHandler!(IBuffer, ulong)")
 		return uuid("abc81235-39c7-59bf-9948-2d14a93d40fd");
-	else if (T == "IAsyncOperationWithProgress!(IBuffer, UINT64)")
+	else if (T == "IAsyncOperationWithProgress!(IBuffer, ulong)")
 		return uuid("ad960e7f-d73b-56e4-a58c-6ec7678cfd88");
-	else if (T == "AsyncOperationProgressHandler!(IInputStream, UINT64)")
+	else if (T == "AsyncOperationProgressHandler!(IInputStream, ulong)")
 		return uuid("f9b2e7f6-762f-50db-95dd-7f6c6ec47090");
-	else if (T == "AsyncOperationWithProgressCompletedHandler!(IInputStream, UINT64)")
+	else if (T == "AsyncOperationWithProgressCompletedHandler!(IInputStream, ulong)")
 		return uuid("8db69706-3dd1-5a28-986a-93be0776d9c3");
-	else if (T == "IAsyncOperationWithProgress!(IInputStream, UINT64)")
+	else if (T == "IAsyncOperationWithProgress!(IInputStream, ulong)")
 		return uuid("455aa601-f13e-5dee-b9cb-16b531996327");
-	else if (T == "AsyncOperationProgressHandler!(HSTRING, UINT64)")
+	else if (T == "AsyncOperationProgressHandler!(HSTRING, ulong)")
 		return uuid("14da7de7-40df-5d4c-823f-cf310625ad39");
-	else if (T == "AsyncOperationWithProgressCompletedHandler!(HSTRING, UINT64)")
+	else if (T == "AsyncOperationWithProgressCompletedHandler!(HSTRING, ulong)")
 		return uuid("bd75eebe-e7b5-5af6-8415-a4b9c9045202");
-	else if (T == "IAsyncOperationWithProgress!(HSTRING, UINT64)")
+	else if (T == "IAsyncOperationWithProgress!(HSTRING, ulong)")
 		return uuid("c8bbcb29-6b64-5ce2-a831-038f6e02199e");
 	else if (T == "IReference!(Windows.Foundation.DateTime)")
 		return uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c");
@@ -9272,7 +9272,7 @@ GUID uuidOfInstanced(string T)
 		return uuid("604d0c4c-91de-5c2a-935f-362f13eaf800");
 	else if (T == "IReference!(double)")
 		return uuid("2f2d6c29-5473-5f3e-92e7-96572bb990e2");
-	else if (T == "IReference!(UINT64)")
+	else if (T == "IReference!(ulong)")
 		return uuid("6755e376-53bb-568b-a11d-17239868309e");
 	else if (T == "IKeyValuePair!(HSTRING, HSTRING)")
 		return uuid("60310303-49c5-52e6-abc6-a9b36eccc716");

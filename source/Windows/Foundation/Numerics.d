@@ -4,66 +4,66 @@ import dwinrt;
 
 struct Matrix3x2
 {
-	FLOAT M11;
-	FLOAT M12;
-	FLOAT M21;
-	FLOAT M22;
-	FLOAT M31;
-	FLOAT M32;
+	float M11;
+	float M12;
+	float M21;
+	float M22;
+	float M31;
+	float M32;
 }
 
 struct Matrix4x4
 {
-	FLOAT M11;
-	FLOAT M12;
-	FLOAT M13;
-	FLOAT M14;
-	FLOAT M21;
-	FLOAT M22;
-	FLOAT M23;
-	FLOAT M24;
-	FLOAT M31;
-	FLOAT M32;
-	FLOAT M33;
-	FLOAT M34;
-	FLOAT M41;
-	FLOAT M42;
-	FLOAT M43;
-	FLOAT M44;
+	float M11;
+	float M12;
+	float M13;
+	float M14;
+	float M21;
+	float M22;
+	float M23;
+	float M24;
+	float M31;
+	float M32;
+	float M33;
+	float M34;
+	float M41;
+	float M42;
+	float M43;
+	float M44;
 }
 
 struct Vector3
 {
-	FLOAT X;
-	FLOAT Y;
-	FLOAT Z;
+	float X;
+	float Y;
+	float Z;
 }
 
 struct Plane
 {
 	Windows.Foundation.Numerics.Vector3 Normal;
-	FLOAT D;
+	float D;
 }
 
 struct Quaternion
 {
-	FLOAT X;
-	FLOAT Y;
-	FLOAT Z;
-	FLOAT W;
+	float X;
+	float Y;
+	float Z;
+	float W;
 }
 
 struct Vector2
 {
-	FLOAT X;
-	FLOAT Y;
+	float X;
+	float Y;
 }
 
 struct Vector4
 {
-	FLOAT X;
-	FLOAT Y;
-	FLOAT Z;
-	FLOAT W;
+	float X;
+	float Y;
+	float Z;
+	float W;
 }
 

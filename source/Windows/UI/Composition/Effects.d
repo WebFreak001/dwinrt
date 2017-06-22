@@ -7,38 +7,38 @@ import dwinrt;
 interface ISceneLightingEffect : IInspectable
 {
 extern(Windows):
-	HRESULT get_AmbientAmount(FLOAT* return_value);
-	HRESULT set_AmbientAmount(FLOAT value);
-	HRESULT get_DiffuseAmount(FLOAT* return_value);
-	HRESULT set_DiffuseAmount(FLOAT value);
+	HRESULT get_AmbientAmount(float* return_value);
+	HRESULT set_AmbientAmount(float value);
+	HRESULT get_DiffuseAmount(float* return_value);
+	HRESULT set_DiffuseAmount(float value);
 	HRESULT get_NormalMapSource(Windows.Graphics.Effects.IGraphicsEffectSource* return_value);
 	HRESULT set_NormalMapSource(Windows.Graphics.Effects.IGraphicsEffectSource value);
-	HRESULT get_SpecularAmount(FLOAT* return_value);
-	HRESULT set_SpecularAmount(FLOAT value);
-	HRESULT get_SpecularShine(FLOAT* return_value);
-	HRESULT set_SpecularShine(FLOAT value);
+	HRESULT get_SpecularAmount(float* return_value);
+	HRESULT set_SpecularAmount(float value);
+	HRESULT get_SpecularShine(float* return_value);
+	HRESULT set_SpecularShine(float value);
 }
 
 interface SceneLightingEffect : Windows.UI.Composition.Effects.ISceneLightingEffect, Windows.Graphics.Effects.IGraphicsEffect, Windows.Graphics.Effects.IGraphicsEffectSource
 {
 extern(Windows):
-	final FLOAT AmbientAmount()
+	final float AmbientAmount()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_AmbientAmount(&_ret));
 		return _ret;
 	}
-	final void AmbientAmount(FLOAT value)
+	final void AmbientAmount(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_AmbientAmount(value));
 	}
-	final FLOAT DiffuseAmount()
+	final float DiffuseAmount()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_DiffuseAmount(&_ret));
 		return _ret;
 	}
-	final void DiffuseAmount(FLOAT value)
+	final void DiffuseAmount(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_DiffuseAmount(value));
 	}
@@ -52,23 +52,23 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_NormalMapSource(value));
 	}
-	final FLOAT SpecularAmount()
+	final float SpecularAmount()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_SpecularAmount(&_ret));
 		return _ret;
 	}
-	final void SpecularAmount(FLOAT value)
+	final void SpecularAmount(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_SpecularAmount(value));
 	}
-	final FLOAT SpecularShine()
+	final float SpecularShine()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_SpecularShine(&_ret));
 		return _ret;
 	}
-	final void SpecularShine(FLOAT value)
+	final void SpecularShine(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_SpecularShine(value));
 	}

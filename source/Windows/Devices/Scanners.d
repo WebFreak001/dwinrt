@@ -4,8 +4,8 @@ import dwinrt;
 
 struct ImageScannerResolution
 {
-	FLOAT DpiX;
-	FLOAT DpiY;
+	float DpiX;
+	float DpiY;
 }
 
 @uuid("53a88f78-5298-48a0-8da3-8087519665e0")

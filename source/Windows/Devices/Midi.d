@@ -7,8 +7,8 @@ import dwinrt;
 interface IMidiChannelPressureMessage_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_Channel(BYTE* return_value);
-	HRESULT get_Pressure(BYTE* return_value);
+	HRESULT get_Channel(ubyte* return_value);
+	HRESULT get_Pressure(ubyte* return_value);
 }
 @uuid("be1fa860-62b4-4d52-a37e-92e54d35b909")
 @WinrtFactory("Windows.Devices.Midi.MidiChannelPressureMessage")
@@ -19,7 +19,7 @@ interface IMidiChannelPressureMessage : IMidiChannelPressureMessage_Base, Window
 interface IMidiChannelPressureMessageFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateMidiChannelPressureMessage(BYTE channel, BYTE pressure, Windows.Devices.Midi.MidiChannelPressureMessage* return_value);
+	HRESULT abi_CreateMidiChannelPressureMessage(ubyte channel, ubyte pressure, Windows.Devices.Midi.MidiChannelPressureMessage* return_value);
 }
 
 @uuid("b7e15f83-780d-405f-b781-3e1598c97f40")
@@ -27,9 +27,9 @@ extern(Windows):
 interface IMidiControlChangeMessage_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_Channel(BYTE* return_value);
-	HRESULT get_Controller(BYTE* return_value);
-	HRESULT get_ControlValue(BYTE* return_value);
+	HRESULT get_Channel(ubyte* return_value);
+	HRESULT get_Controller(ubyte* return_value);
+	HRESULT get_ControlValue(ubyte* return_value);
 }
 @uuid("b7e15f83-780d-405f-b781-3e1598c97f40")
 @WinrtFactory("Windows.Devices.Midi.MidiControlChangeMessage")
@@ -40,7 +40,7 @@ interface IMidiControlChangeMessage : IMidiControlChangeMessage_Base, Windows.De
 interface IMidiControlChangeMessageFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateMidiControlChangeMessage(BYTE channel, BYTE controller, BYTE controlValue, Windows.Devices.Midi.MidiControlChangeMessage* return_value);
+	HRESULT abi_CreateMidiControlChangeMessage(ubyte channel, ubyte controller, ubyte controlValue, Windows.Devices.Midi.MidiControlChangeMessage* return_value);
 }
 
 @uuid("d5c1d9db-971a-4eaf-a23d-ea19fe607ff9")
@@ -87,9 +87,9 @@ extern(Windows):
 interface IMidiNoteOffMessage_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_Channel(BYTE* return_value);
-	HRESULT get_Note(BYTE* return_value);
-	HRESULT get_Velocity(BYTE* return_value);
+	HRESULT get_Channel(ubyte* return_value);
+	HRESULT get_Note(ubyte* return_value);
+	HRESULT get_Velocity(ubyte* return_value);
 }
 @uuid("16fd8af4-198e-4d8f-a654-d305a293548f")
 @WinrtFactory("Windows.Devices.Midi.MidiNoteOffMessage")
@@ -100,7 +100,7 @@ interface IMidiNoteOffMessage : IMidiNoteOffMessage_Base, Windows.Devices.Midi.I
 interface IMidiNoteOffMessageFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateMidiNoteOffMessage(BYTE channel, BYTE note, BYTE velocity, Windows.Devices.Midi.MidiNoteOffMessage* return_value);
+	HRESULT abi_CreateMidiNoteOffMessage(ubyte channel, ubyte note, ubyte velocity, Windows.Devices.Midi.MidiNoteOffMessage* return_value);
 }
 
 @uuid("e0224af5-6181-46dd-afa2-410004c057aa")
@@ -108,9 +108,9 @@ extern(Windows):
 interface IMidiNoteOnMessage_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_Channel(BYTE* return_value);
-	HRESULT get_Note(BYTE* return_value);
-	HRESULT get_Velocity(BYTE* return_value);
+	HRESULT get_Channel(ubyte* return_value);
+	HRESULT get_Note(ubyte* return_value);
+	HRESULT get_Velocity(ubyte* return_value);
 }
 @uuid("e0224af5-6181-46dd-afa2-410004c057aa")
 @WinrtFactory("Windows.Devices.Midi.MidiNoteOnMessage")
@@ -121,7 +121,7 @@ interface IMidiNoteOnMessage : IMidiNoteOnMessage_Base, Windows.Devices.Midi.IMi
 interface IMidiNoteOnMessageFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateMidiNoteOnMessage(BYTE channel, BYTE note, BYTE velocity, Windows.Devices.Midi.MidiNoteOnMessage* return_value);
+	HRESULT abi_CreateMidiNoteOnMessage(ubyte channel, ubyte note, ubyte velocity, Windows.Devices.Midi.MidiNoteOnMessage* return_value);
 }
 
 @uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693")
@@ -149,7 +149,7 @@ extern(Windows):
 interface IMidiPitchBendChangeMessage_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_Channel(BYTE* return_value);
+	HRESULT get_Channel(ubyte* return_value);
 	HRESULT get_Bend(UINT16* return_value);
 }
 @uuid("29df4cb1-2e9f-4faf-8c2b-9cb82a9079ca")
@@ -161,7 +161,7 @@ interface IMidiPitchBendChangeMessage : IMidiPitchBendChangeMessage_Base, Window
 interface IMidiPitchBendChangeMessageFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateMidiPitchBendChangeMessage(BYTE channel, UINT16 bend, Windows.Devices.Midi.MidiPitchBendChangeMessage* return_value);
+	HRESULT abi_CreateMidiPitchBendChangeMessage(ubyte channel, UINT16 bend, Windows.Devices.Midi.MidiPitchBendChangeMessage* return_value);
 }
 
 @uuid("1f7337fe-ace8-48a0-868e-7cdbf20f04d6")
@@ -169,9 +169,9 @@ extern(Windows):
 interface IMidiPolyphonicKeyPressureMessage_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_Channel(BYTE* return_value);
-	HRESULT get_Note(BYTE* return_value);
-	HRESULT get_Pressure(BYTE* return_value);
+	HRESULT get_Channel(ubyte* return_value);
+	HRESULT get_Note(ubyte* return_value);
+	HRESULT get_Pressure(ubyte* return_value);
 }
 @uuid("1f7337fe-ace8-48a0-868e-7cdbf20f04d6")
 @WinrtFactory("Windows.Devices.Midi.MidiPolyphonicKeyPressureMessage")
@@ -182,7 +182,7 @@ interface IMidiPolyphonicKeyPressureMessage : IMidiPolyphonicKeyPressureMessage_
 interface IMidiPolyphonicKeyPressureMessageFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateMidiPolyphonicKeyPressureMessage(BYTE channel, BYTE note, BYTE pressure, Windows.Devices.Midi.MidiPolyphonicKeyPressureMessage* return_value);
+	HRESULT abi_CreateMidiPolyphonicKeyPressureMessage(ubyte channel, ubyte note, ubyte pressure, Windows.Devices.Midi.MidiPolyphonicKeyPressureMessage* return_value);
 }
 
 @uuid("9cbb3c78-7a3e-4327-aa98-20b8e4485af8")
@@ -190,8 +190,8 @@ extern(Windows):
 interface IMidiProgramChangeMessage_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_Channel(BYTE* return_value);
-	HRESULT get_Program(BYTE* return_value);
+	HRESULT get_Channel(ubyte* return_value);
+	HRESULT get_Program(ubyte* return_value);
 }
 @uuid("9cbb3c78-7a3e-4327-aa98-20b8e4485af8")
 @WinrtFactory("Windows.Devices.Midi.MidiProgramChangeMessage")
@@ -202,7 +202,7 @@ interface IMidiProgramChangeMessage : IMidiProgramChangeMessage_Base, Windows.De
 interface IMidiProgramChangeMessageFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateMidiProgramChangeMessage(BYTE channel, BYTE program, Windows.Devices.Midi.MidiProgramChangeMessage* return_value);
+	HRESULT abi_CreateMidiProgramChangeMessage(ubyte channel, ubyte program, Windows.Devices.Midi.MidiProgramChangeMessage* return_value);
 }
 
 @uuid("4ca50c56-ec5e-4ae4-a115-88dc57cc2b79")
@@ -229,7 +229,7 @@ extern(Windows):
 interface IMidiSongSelectMessage_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_Song(BYTE* return_value);
+	HRESULT get_Song(ubyte* return_value);
 }
 @uuid("49f0f27f-6d83-4741-a5bf-4629f6be974f")
 @WinrtFactory("Windows.Devices.Midi.MidiSongSelectMessage")
@@ -240,7 +240,7 @@ interface IMidiSongSelectMessage : IMidiSongSelectMessage_Base, Windows.Devices.
 interface IMidiSongSelectMessageFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateMidiSongSelectMessage(BYTE song, Windows.Devices.Midi.MidiSongSelectMessage* return_value);
+	HRESULT abi_CreateMidiSongSelectMessage(ubyte song, Windows.Devices.Midi.MidiSongSelectMessage* return_value);
 }
 
 @uuid("f0da155e-db90-405f-b8ae-21d2e17f2e45")
@@ -279,8 +279,8 @@ extern(Windows):
 interface IMidiTimeCodeMessage_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_FrameType(BYTE* return_value);
-	HRESULT get_Values(BYTE* return_value);
+	HRESULT get_FrameType(ubyte* return_value);
+	HRESULT get_Values(ubyte* return_value);
 }
 @uuid("0bf7087d-fa63-4a1c-8deb-c0e87796a6d7")
 @WinrtFactory("Windows.Devices.Midi.MidiTimeCodeMessage")
@@ -291,7 +291,7 @@ interface IMidiTimeCodeMessage : IMidiTimeCodeMessage_Base, Windows.Devices.Midi
 interface IMidiTimeCodeMessageFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateMidiTimeCodeMessage(BYTE frameType, BYTE values, Windows.Devices.Midi.MidiTimeCodeMessage* return_value);
+	HRESULT abi_CreateMidiTimeCodeMessage(ubyte frameType, ubyte values, Windows.Devices.Midi.MidiTimeCodeMessage* return_value);
 }
 
 interface MidiActiveSensingMessage : Windows.Devices.Midi.IMidiMessage
@@ -320,15 +320,15 @@ extern(Windows):
 interface MidiChannelPressureMessage : Windows.Devices.Midi.IMidiChannelPressureMessage, Windows.Devices.Midi.IMidiMessage
 {
 extern(Windows):
-	final BYTE Channel()
+	final ubyte Channel()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiChannelPressureMessage).get_Channel(&_ret));
 		return _ret;
 	}
-	final BYTE Pressure()
+	final ubyte Pressure()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiChannelPressureMessage).get_Pressure(&_ret));
 		return _ret;
 	}
@@ -378,21 +378,21 @@ extern(Windows):
 interface MidiControlChangeMessage : Windows.Devices.Midi.IMidiControlChangeMessage, Windows.Devices.Midi.IMidiMessage
 {
 extern(Windows):
-	final BYTE Channel()
+	final ubyte Channel()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiControlChangeMessage).get_Channel(&_ret));
 		return _ret;
 	}
-	final BYTE Controller()
+	final ubyte Controller()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiControlChangeMessage).get_Controller(&_ret));
 		return _ret;
 	}
-	final BYTE ControlValue()
+	final ubyte ControlValue()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiControlChangeMessage).get_ControlValue(&_ret));
 		return _ret;
 	}
@@ -455,21 +455,21 @@ extern(Windows):
 interface MidiNoteOffMessage : Windows.Devices.Midi.IMidiNoteOffMessage, Windows.Devices.Midi.IMidiMessage
 {
 extern(Windows):
-	final BYTE Channel()
+	final ubyte Channel()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOffMessage).get_Channel(&_ret));
 		return _ret;
 	}
-	final BYTE Note()
+	final ubyte Note()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOffMessage).get_Note(&_ret));
 		return _ret;
 	}
-	final BYTE Velocity()
+	final ubyte Velocity()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOffMessage).get_Velocity(&_ret));
 		return _ret;
 	}
@@ -496,21 +496,21 @@ extern(Windows):
 interface MidiNoteOnMessage : Windows.Devices.Midi.IMidiNoteOnMessage, Windows.Devices.Midi.IMidiMessage
 {
 extern(Windows):
-	final BYTE Channel()
+	final ubyte Channel()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOnMessage).get_Channel(&_ret));
 		return _ret;
 	}
-	final BYTE Note()
+	final ubyte Note()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOnMessage).get_Note(&_ret));
 		return _ret;
 	}
-	final BYTE Velocity()
+	final ubyte Velocity()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOnMessage).get_Velocity(&_ret));
 		return _ret;
 	}
@@ -560,9 +560,9 @@ extern(Windows):
 interface MidiPitchBendChangeMessage : Windows.Devices.Midi.IMidiPitchBendChangeMessage, Windows.Devices.Midi.IMidiMessage
 {
 extern(Windows):
-	final BYTE Channel()
+	final ubyte Channel()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPitchBendChangeMessage).get_Channel(&_ret));
 		return _ret;
 	}
@@ -595,21 +595,21 @@ extern(Windows):
 interface MidiPolyphonicKeyPressureMessage : Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage, Windows.Devices.Midi.IMidiMessage
 {
 extern(Windows):
-	final BYTE Channel()
+	final ubyte Channel()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage).get_Channel(&_ret));
 		return _ret;
 	}
-	final BYTE Note()
+	final ubyte Note()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage).get_Note(&_ret));
 		return _ret;
 	}
-	final BYTE Pressure()
+	final ubyte Pressure()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage).get_Pressure(&_ret));
 		return _ret;
 	}
@@ -636,15 +636,15 @@ extern(Windows):
 interface MidiProgramChangeMessage : Windows.Devices.Midi.IMidiProgramChangeMessage, Windows.Devices.Midi.IMidiMessage
 {
 extern(Windows):
-	final BYTE Channel()
+	final ubyte Channel()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiProgramChangeMessage).get_Channel(&_ret));
 		return _ret;
 	}
-	final BYTE Program()
+	final ubyte Program()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiProgramChangeMessage).get_Program(&_ret));
 		return _ret;
 	}
@@ -700,9 +700,9 @@ extern(Windows):
 interface MidiSongSelectMessage : Windows.Devices.Midi.IMidiSongSelectMessage, Windows.Devices.Midi.IMidiMessage
 {
 extern(Windows):
-	final BYTE Song()
+	final ubyte Song()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiSongSelectMessage).get_Song(&_ret));
 		return _ret;
 	}
@@ -860,15 +860,15 @@ extern(Windows):
 interface MidiTimeCodeMessage : Windows.Devices.Midi.IMidiTimeCodeMessage, Windows.Devices.Midi.IMidiMessage
 {
 extern(Windows):
-	final BYTE FrameType()
+	final ubyte FrameType()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiTimeCodeMessage).get_FrameType(&_ret));
 		return _ret;
 	}
-	final BYTE Values()
+	final ubyte Values()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiTimeCodeMessage).get_Values(&_ret));
 		return _ret;
 	}

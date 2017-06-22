@@ -141,8 +141,8 @@ interface IWiFiDirectInformationElement : IInspectable
 extern(Windows):
 	HRESULT get_Oui(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT set_Oui(Windows.Storage.Streams.IBuffer value);
-	HRESULT get_OuiType(BYTE* return_value);
-	HRESULT set_OuiType(BYTE value);
+	HRESULT get_OuiType(ubyte* return_value);
+	HRESULT set_OuiType(ubyte value);
 	HRESULT get_Value(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT set_Value(Windows.Storage.Streams.IBuffer value);
 }
@@ -390,13 +390,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElement).set_Oui(value));
 	}
-	final BYTE OuiType()
+	final ubyte OuiType()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElement).get_OuiType(&_ret));
 		return _ret;
 	}
-	final void OuiType(BYTE value)
+	final void OuiType(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElement).set_OuiType(value));
 	}

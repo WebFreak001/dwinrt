@@ -157,7 +157,7 @@ interface IUnicodeCharactersStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetCodepointFromSurrogatePair(UINT32 highSurrogate, UINT32 lowSurrogate, UINT32* return_codepoint);
-	HRESULT abi_GetSurrogatePairFromCodepoint(UINT32 codepoint, WCHAR* out_highSurrogate, WCHAR* out_lowSurrogate);
+	HRESULT abi_GetSurrogatePairFromCodepoint(UINT32 codepoint, wchar* out_highSurrogate, wchar* out_lowSurrogate);
 	HRESULT abi_IsHighSurrogate(UINT32 codepoint, bool* return_value);
 	HRESULT abi_IsLowSurrogate(UINT32 codepoint, bool* return_value);
 	HRESULT abi_IsSupplementary(UINT32 codepoint, bool* return_value);

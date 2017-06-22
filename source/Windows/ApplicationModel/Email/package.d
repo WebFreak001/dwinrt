@@ -25,8 +25,8 @@ extern(Windows):
 	HRESULT set_ContentLocation(HSTRING value);
 	HRESULT get_DownloadState(Windows.ApplicationModel.Email.EmailAttachmentDownloadState* return_value);
 	HRESULT set_DownloadState(Windows.ApplicationModel.Email.EmailAttachmentDownloadState value);
-	HRESULT get_EstimatedDownloadSizeInBytes(UINT64* return_value);
-	HRESULT set_EstimatedDownloadSizeInBytes(UINT64 value);
+	HRESULT get_EstimatedDownloadSizeInBytes(ulong* return_value);
+	HRESULT set_EstimatedDownloadSizeInBytes(ulong value);
 	HRESULT get_IsFromBaseMessage(bool* return_value);
 	HRESULT get_IsInline(bool* return_value);
 	HRESULT set_IsInline(bool value);
@@ -291,7 +291,7 @@ interface IEmailMailboxAction : IInspectable
 {
 extern(Windows):
 	HRESULT get_Kind(Windows.ApplicationModel.Email.EmailMailboxActionKind* return_value);
-	HRESULT get_ChangeNumber(UINT64* return_value);
+	HRESULT get_ChangeNumber(ulong* return_value);
 }
 
 @uuid("e223254c-8ab4-485b-b31f-04d15476bd59")
@@ -546,8 +546,8 @@ extern(Windows):
 	HRESULT set_RecurrenceStartTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value);
 	HRESULT get_Recurrence(Windows.ApplicationModel.Appointments.AppointmentRecurrence* return_value);
 	HRESULT set_Recurrence(Windows.ApplicationModel.Appointments.AppointmentRecurrence value);
-	HRESULT get_RemoteChangeNumber(UINT64* return_value);
-	HRESULT set_RemoteChangeNumber(UINT64 value);
+	HRESULT get_RemoteChangeNumber(ulong* return_value);
+	HRESULT set_RemoteChangeNumber(ulong value);
 	HRESULT get_StartTime(Windows.Foundation.DateTime* return_value);
 	HRESULT set_StartTime(Windows.Foundation.DateTime value);
 }
@@ -588,7 +588,7 @@ extern(Windows):
 	HRESULT get_FolderId(HSTRING* return_value);
 	HRESULT get_AllowInternetImages(bool* return_value);
 	HRESULT set_AllowInternetImages(bool value);
-	HRESULT get_ChangeNumber(UINT64* return_value);
+	HRESULT get_ChangeNumber(ulong* return_value);
 	HRESULT get_DownloadState(Windows.ApplicationModel.Email.EmailMessageDownloadState* return_value);
 	HRESULT set_DownloadState(Windows.ApplicationModel.Email.EmailMessageDownloadState value);
 	HRESULT get_EstimatedDownloadSizeInBytes(UINT32* return_value);
@@ -823,13 +823,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).set_DownloadState(value));
 	}
-	final UINT64 EstimatedDownloadSizeInBytes()
+	final ulong EstimatedDownloadSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).get_EstimatedDownloadSizeInBytes(&_ret));
 		return _ret;
 	}
-	final void EstimatedDownloadSizeInBytes(UINT64 value)
+	final void EstimatedDownloadSizeInBytes(ulong value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).set_EstimatedDownloadSizeInBytes(value));
 	}
@@ -1678,9 +1678,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAction).get_Kind(&_ret));
 		return _ret;
 	}
-	final UINT64 ChangeNumber()
+	final ulong ChangeNumber()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAction).get_ChangeNumber(&_ret));
 		return _ret;
 	}
@@ -2285,13 +2285,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_Recurrence(value));
 	}
-	final UINT64 RemoteChangeNumber()
+	final ulong RemoteChangeNumber()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_RemoteChangeNumber(&_ret));
 		return _ret;
 	}
-	final void RemoteChangeNumber(UINT64 value)
+	final void RemoteChangeNumber(ulong value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_RemoteChangeNumber(value));
 	}
@@ -2404,9 +2404,9 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_AllowInternetImages(value));
 	}
-	final UINT64 ChangeNumber()
+	final ulong ChangeNumber()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_ChangeNumber(&_ret));
 		return _ret;
 	}

@@ -76,18 +76,18 @@ extern(Windows):
 interface IProcessMemoryUsageReport : IInspectable
 {
 extern(Windows):
-	HRESULT get_NonPagedPoolSizeInBytes(UINT64* return_value);
+	HRESULT get_NonPagedPoolSizeInBytes(ulong* return_value);
 	HRESULT get_PageFaultCount(UINT32* return_value);
-	HRESULT get_PageFileSizeInBytes(UINT64* return_value);
-	HRESULT get_PagedPoolSizeInBytes(UINT64* return_value);
-	HRESULT get_PeakNonPagedPoolSizeInBytes(UINT64* return_value);
-	HRESULT get_PeakPageFileSizeInBytes(UINT64* return_value);
-	HRESULT get_PeakPagedPoolSizeInBytes(UINT64* return_value);
-	HRESULT get_PeakVirtualMemorySizeInBytes(UINT64* return_value);
-	HRESULT get_PeakWorkingSetSizeInBytes(UINT64* return_value);
-	HRESULT get_PrivatePageCount(UINT64* return_value);
-	HRESULT get_VirtualMemorySizeInBytes(UINT64* return_value);
-	HRESULT get_WorkingSetSizeInBytes(UINT64* return_value);
+	HRESULT get_PageFileSizeInBytes(ulong* return_value);
+	HRESULT get_PagedPoolSizeInBytes(ulong* return_value);
+	HRESULT get_PeakNonPagedPoolSizeInBytes(ulong* return_value);
+	HRESULT get_PeakPageFileSizeInBytes(ulong* return_value);
+	HRESULT get_PeakPagedPoolSizeInBytes(ulong* return_value);
+	HRESULT get_PeakVirtualMemorySizeInBytes(ulong* return_value);
+	HRESULT get_PeakWorkingSetSizeInBytes(ulong* return_value);
+	HRESULT get_PrivatePageCount(ulong* return_value);
+	HRESULT get_VirtualMemorySizeInBytes(ulong* return_value);
+	HRESULT get_WorkingSetSizeInBytes(ulong* return_value);
 }
 
 @uuid("6037b3ac-02d6-4234-8362-7fe3adc81f5f")
@@ -138,9 +138,9 @@ extern(Windows):
 interface ISystemMemoryUsageReport : IInspectable
 {
 extern(Windows):
-	HRESULT get_TotalPhysicalSizeInBytes(UINT64* return_value);
-	HRESULT get_AvailableSizeInBytes(UINT64* return_value);
-	HRESULT get_CommittedSizeInBytes(UINT64* return_value);
+	HRESULT get_TotalPhysicalSizeInBytes(ulong* return_value);
+	HRESULT get_AvailableSizeInBytes(ulong* return_value);
+	HRESULT get_CommittedSizeInBytes(ulong* return_value);
 }
 
 interface ProcessCpuUsage : Windows.System.Diagnostics.IProcessCpuUsage
@@ -284,9 +284,9 @@ extern(Windows):
 interface ProcessMemoryUsageReport : Windows.System.Diagnostics.IProcessMemoryUsageReport
 {
 extern(Windows):
-	final UINT64 NonPagedPoolSizeInBytes()
+	final ulong NonPagedPoolSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_NonPagedPoolSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -296,63 +296,63 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PageFaultCount(&_ret));
 		return _ret;
 	}
-	final UINT64 PageFileSizeInBytes()
+	final ulong PageFileSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PageFileSizeInBytes(&_ret));
 		return _ret;
 	}
-	final UINT64 PagedPoolSizeInBytes()
+	final ulong PagedPoolSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PagedPoolSizeInBytes(&_ret));
 		return _ret;
 	}
-	final UINT64 PeakNonPagedPoolSizeInBytes()
+	final ulong PeakNonPagedPoolSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakNonPagedPoolSizeInBytes(&_ret));
 		return _ret;
 	}
-	final UINT64 PeakPageFileSizeInBytes()
+	final ulong PeakPageFileSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakPageFileSizeInBytes(&_ret));
 		return _ret;
 	}
-	final UINT64 PeakPagedPoolSizeInBytes()
+	final ulong PeakPagedPoolSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakPagedPoolSizeInBytes(&_ret));
 		return _ret;
 	}
-	final UINT64 PeakVirtualMemorySizeInBytes()
+	final ulong PeakVirtualMemorySizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakVirtualMemorySizeInBytes(&_ret));
 		return _ret;
 	}
-	final UINT64 PeakWorkingSetSizeInBytes()
+	final ulong PeakWorkingSetSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakWorkingSetSizeInBytes(&_ret));
 		return _ret;
 	}
-	final UINT64 PrivatePageCount()
+	final ulong PrivatePageCount()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PrivatePageCount(&_ret));
 		return _ret;
 	}
-	final UINT64 VirtualMemorySizeInBytes()
+	final ulong VirtualMemorySizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_VirtualMemorySizeInBytes(&_ret));
 		return _ret;
 	}
-	final UINT64 WorkingSetSizeInBytes()
+	final ulong WorkingSetSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_WorkingSetSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -423,21 +423,21 @@ extern(Windows):
 interface SystemMemoryUsageReport : Windows.System.Diagnostics.ISystemMemoryUsageReport
 {
 extern(Windows):
-	final UINT64 TotalPhysicalSizeInBytes()
+	final ulong TotalPhysicalSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemMemoryUsageReport).get_TotalPhysicalSizeInBytes(&_ret));
 		return _ret;
 	}
-	final UINT64 AvailableSizeInBytes()
+	final ulong AvailableSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemMemoryUsageReport).get_AvailableSizeInBytes(&_ret));
 		return _ret;
 	}
-	final UINT64 CommittedSizeInBytes()
+	final ulong CommittedSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemMemoryUsageReport).get_CommittedSizeInBytes(&_ret));
 		return _ret;
 	}

@@ -39,7 +39,7 @@ extern(Windows):
 	HRESULT get_Bssid(HSTRING* return_value);
 	HRESULT get_ChannelCenterFrequencyInKilohertz(INT32* return_value);
 	HRESULT get_NetworkRssiInDecibelMilliwatts(double* return_value);
-	HRESULT get_SignalBars(BYTE* return_value);
+	HRESULT get_SignalBars(ubyte* return_value);
 	HRESULT get_NetworkKind(Windows.Devices.WiFi.WiFiNetworkKind* return_value);
 	HRESULT get_PhyKind(Windows.Devices.WiFi.WiFiPhyKind* return_value);
 	HRESULT get_SecuritySettings(Windows.Networking.Connectivity.NetworkSecuritySettings* return_value);
@@ -152,9 +152,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_NetworkRssiInDecibelMilliwatts(&_ret));
 		return _ret;
 	}
-	final BYTE SignalBars()
+	final ubyte SignalBars()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_SignalBars(&_ret));
 		return _ret;
 	}

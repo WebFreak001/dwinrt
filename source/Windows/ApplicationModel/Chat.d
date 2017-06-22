@@ -118,8 +118,8 @@ extern(Windows):
 interface IChatMessage2_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_EstimatedDownloadSize(UINT64* return_result);
-	HRESULT set_EstimatedDownloadSize(UINT64 value);
+	HRESULT get_EstimatedDownloadSize(ulong* return_result);
+	HRESULT set_EstimatedDownloadSize(ulong value);
 	HRESULT set_From(HSTRING value);
 	HRESULT get_IsAutoReply(bool* return_result);
 	HRESULT set_IsAutoReply(bool value);
@@ -945,13 +945,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage).set_TransportId(value));
 	}
-	final UINT64 EstimatedDownloadSize()
+	final ulong EstimatedDownloadSize()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).get_EstimatedDownloadSize(&_ret));
 		return _ret;
 	}
-	final void EstimatedDownloadSize(UINT64 value)
+	final void EstimatedDownloadSize(ulong value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessage2).set_EstimatedDownloadSize(value));
 	}

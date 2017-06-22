@@ -17,10 +17,10 @@ struct OSINFO
 
 struct ASSEMBLYMETADATA
 {
-	USHORT usMajorVersion;
-	USHORT usMinorVersion;
-	USHORT usBuildNumber;
-	USHORT usRevisionNumber;
+	ushort usMajorVersion;
+	ushort usMinorVersion;
+	ushort usBuildNumber;
+	ushort usRevisionNumber;
 	LPWSTR szLocale;
 	ULONG cbLocale;
 	DWORD* rProcessor;
@@ -36,22 +36,22 @@ struct DateTime
 
 struct Point
 {
-	FLOAT X;
-	FLOAT Y;
+	float X;
+	float Y;
 }
 
 struct Rect
 {
-	FLOAT X;
-	FLOAT Y;
-	FLOAT Width;
-	FLOAT Height;
+	float X;
+	float Y;
+	float Width;
+	float Height;
 }
 
 struct Size
 {
-	FLOAT Width;
-	FLOAT Height;
+	float Width;
+	float Height;
 }
 
 struct TimeSpan
@@ -256,12 +256,12 @@ extern(Windows):
 	HRESULT abi_GetTableInfo(ULONG ixTbl, ULONG* out_pcbRow, ULONG* out_pcRows, ULONG* out_pcCols, ULONG* out_piKey, LPCSTR* out_ppName);
 	HRESULT abi_GetColumnInfo(ULONG ixTbl, ULONG ixCol, ULONG* out_poCol, ULONG* out_pcbCol, ULONG* out_pType, LPCSTR* out_ppName);
 	HRESULT abi_GetCodedTokenInfo(ULONG ixCdTkn, ULONG* out_pcTokens, const(ULONG)** out_ppTokens, LPCSTR* out_ppName);
-	HRESULT abi_GetRow(ULONG ixTbl, ULONG rid, const(BYTE)* out_ppRow);
+	HRESULT abi_GetRow(ULONG ixTbl, ULONG rid, const(ubyte)* out_ppRow);
 	HRESULT abi_GetColumn(ULONG ixTbl, ULONG ixCol, ULONG rid, ULONG* out_pVal);
 	HRESULT abi_GetString(ULONG ixString, LPCSTR* out_ppString);
-	HRESULT abi_GetBlob(ULONG ixBlob, ULONG* out_pcbData, const(BYTE)** out_ppData);
+	HRESULT abi_GetBlob(ULONG ixBlob, ULONG* out_pcbData, const(ubyte)** out_ppData);
 	HRESULT abi_GetGuid(ULONG ixGuid, const(GUID)** out_ppGUID);
-	HRESULT abi_GetUserString(ULONG ixUserString, ULONG* out_pcbData, const(BYTE)** out_ppData);
+	HRESULT abi_GetUserString(ULONG ixUserString, ULONG* out_pcbData, const(ubyte)** out_ppData);
 	HRESULT abi_GetNextString(ULONG ixString, ULONG* out_pNext);
 	HRESULT abi_GetNextBlob(ULONG ixBlob, ULONG* out_pNext);
 	HRESULT abi_GetNextGuid(ULONG ixGuid, ULONG* out_pNext);
@@ -272,8 +272,8 @@ extern(Windows):
 interface IMetaDataTables2 : IMetaDataTables
 {
 extern(Windows):
-	HRESULT abi_GetMetaDataStorage(const(BYTE)** out_ppvMd, ULONG* out_pcbMd);
-	HRESULT abi_GetMetaDataStreamInfo(ULONG ix, LPCSTR* out_ppchName, const(BYTE)** out_ppv, ULONG* out_pcb);
+	HRESULT abi_GetMetaDataStorage(const(ubyte)** out_ppvMd, ULONG* out_pcbMd);
+	HRESULT abi_GetMetaDataStreamInfo(ULONG ix, LPCSTR* out_ppchName, const(ubyte)** out_ppv, ULONG* out_pcb);
 }
 
 @uuid("00000037-0000-0000-c000-000000000046")
@@ -470,16 +470,16 @@ interface IPropertyValue : IInspectable
 extern(Windows):
 	HRESULT get_Type(Windows.Foundation.PropertyType* return_value);
 	HRESULT get_IsNumericScalar(bool* return_value);
-	HRESULT abi_GetUInt8(BYTE* return_value);
+	HRESULT abi_GetUInt8(ubyte* return_value);
 	HRESULT abi_GetInt16(INT16* return_value);
 	HRESULT abi_GetUInt16(UINT16* return_value);
 	HRESULT abi_GetInt32(INT32* return_value);
 	HRESULT abi_GetUInt32(UINT32* return_value);
 	HRESULT abi_GetInt64(INT64* return_value);
-	HRESULT abi_GetUInt64(UINT64* return_value);
-	HRESULT abi_GetSingle(FLOAT* return_value);
+	HRESULT abi_GetUInt64(ulong* return_value);
+	HRESULT abi_GetSingle(float* return_value);
 	HRESULT abi_GetDouble(double* return_value);
-	HRESULT abi_GetChar16(WCHAR* return_value);
+	HRESULT abi_GetChar16(wchar* return_value);
 	HRESULT abi_GetBoolean(bool* return_value);
 	HRESULT abi_GetString(HSTRING* return_value);
 	HRESULT abi_GetGuid(GUID* return_value);
@@ -488,16 +488,16 @@ extern(Windows):
 	HRESULT abi_GetPoint(Windows.Foundation.Point* return_value);
 	HRESULT abi_GetSize(Windows.Foundation.Size* return_value);
 	HRESULT abi_GetRect(Windows.Foundation.Rect* return_value);
-	HRESULT abi_GetUInt8Array(UINT32* out___valueSize, BYTE** out_value);
+	HRESULT abi_GetUInt8Array(UINT32* out___valueSize, ubyte** out_value);
 	HRESULT abi_GetInt16Array(UINT32* out___valueSize, INT16** out_value);
 	HRESULT abi_GetUInt16Array(UINT32* out___valueSize, UINT16** out_value);
 	HRESULT abi_GetInt32Array(UINT32* out___valueSize, INT32** out_value);
 	HRESULT abi_GetUInt32Array(UINT32* out___valueSize, UINT32** out_value);
 	HRESULT abi_GetInt64Array(UINT32* out___valueSize, INT64** out_value);
-	HRESULT abi_GetUInt64Array(UINT32* out___valueSize, UINT64** out_value);
-	HRESULT abi_GetSingleArray(UINT32* out___valueSize, FLOAT** out_value);
+	HRESULT abi_GetUInt64Array(UINT32* out___valueSize, ulong** out_value);
+	HRESULT abi_GetSingleArray(UINT32* out___valueSize, float** out_value);
 	HRESULT abi_GetDoubleArray(UINT32* out___valueSize, double** out_value);
-	HRESULT abi_GetChar16Array(UINT32* out___valueSize, WCHAR** out_value);
+	HRESULT abi_GetChar16Array(UINT32* out___valueSize, wchar** out_value);
 	HRESULT abi_GetBooleanArray(UINT32* out___valueSize, bool** out_value);
 	HRESULT abi_GetStringArray(UINT32* out___valueSize, HSTRING** out_value);
 	HRESULT abi_GetInspectableArray(UINT32* out___valueSize, IInspectable** out_value);
@@ -515,16 +515,16 @@ interface IPropertyValueStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateEmpty(IInspectable* return_propertyValue);
-	HRESULT abi_CreateUInt8(BYTE value, IInspectable* return_propertyValue);
+	HRESULT abi_CreateUInt8(ubyte value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateInt16(INT16 value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateUInt16(UINT16 value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateInt32(INT32 value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateUInt32(UINT32 value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateInt64(INT64 value, IInspectable* return_propertyValue);
-	HRESULT abi_CreateUInt64(UINT64 value, IInspectable* return_propertyValue);
-	HRESULT abi_CreateSingle(FLOAT value, IInspectable* return_propertyValue);
+	HRESULT abi_CreateUInt64(ulong value, IInspectable* return_propertyValue);
+	HRESULT abi_CreateSingle(float value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateDouble(double value, IInspectable* return_propertyValue);
-	HRESULT abi_CreateChar16(WCHAR value, IInspectable* return_propertyValue);
+	HRESULT abi_CreateChar16(wchar value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateBoolean(bool value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateString(HSTRING value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateInspectable(IInspectable value, IInspectable* return_propertyValue);
@@ -534,16 +534,16 @@ extern(Windows):
 	HRESULT abi_CreatePoint(Windows.Foundation.Point value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateSize(Windows.Foundation.Size value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateRect(Windows.Foundation.Rect value, IInspectable* return_propertyValue);
-	HRESULT abi_CreateUInt8Array(UINT32 __valueSize, BYTE* value, IInspectable* return_propertyValue);
+	HRESULT abi_CreateUInt8Array(UINT32 __valueSize, ubyte* value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateInt16Array(UINT32 __valueSize, INT16* value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateUInt16Array(UINT32 __valueSize, UINT16* value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateInt32Array(UINT32 __valueSize, INT32* value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateUInt32Array(UINT32 __valueSize, UINT32* value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateInt64Array(UINT32 __valueSize, INT64* value, IInspectable* return_propertyValue);
-	HRESULT abi_CreateUInt64Array(UINT32 __valueSize, UINT64* value, IInspectable* return_propertyValue);
-	HRESULT abi_CreateSingleArray(UINT32 __valueSize, FLOAT* value, IInspectable* return_propertyValue);
+	HRESULT abi_CreateUInt64Array(UINT32 __valueSize, ulong* value, IInspectable* return_propertyValue);
+	HRESULT abi_CreateSingleArray(UINT32 __valueSize, float* value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateDoubleArray(UINT32 __valueSize, double* value, IInspectable* return_propertyValue);
-	HRESULT abi_CreateChar16Array(UINT32 __valueSize, WCHAR* value, IInspectable* return_propertyValue);
+	HRESULT abi_CreateChar16Array(UINT32 __valueSize, wchar* value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateBooleanArray(UINT32 __valueSize, bool* value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateStringArray(UINT32 __valueSize, HSTRING* value, IInspectable* return_propertyValue);
 	HRESULT abi_CreateInspectableArray(UINT32 __valueSize, IInspectable* value, IInspectable* return_propertyValue);

@@ -99,7 +99,7 @@ interface IInkPoint : IInspectable
 {
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
-	HRESULT get_Pressure(FLOAT* return_value);
+	HRESULT get_Pressure(float* return_value);
 }
 
 @uuid("fba9c3f7-ae56-4d5c-bd2f-0ac45f5e4af9")
@@ -107,16 +107,16 @@ extern(Windows):
 interface IInkPoint2 : IInspectable
 {
 extern(Windows):
-	HRESULT get_TiltX(FLOAT* return_value);
-	HRESULT get_TiltY(FLOAT* return_value);
-	HRESULT get_Timestamp(UINT64* return_value);
+	HRESULT get_TiltX(float* return_value);
+	HRESULT get_TiltY(float* return_value);
+	HRESULT get_Timestamp(ulong* return_value);
 }
 
 @uuid("29e5d51c-c98f-405d-9f3b-e53e31068d4d")
 interface IInkPointFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateInkPoint(Windows.Foundation.Point position, FLOAT pressure, Windows.UI.Input.Inking.InkPoint* return_result);
+	HRESULT abi_CreateInkPoint(Windows.Foundation.Point position, float pressure, Windows.UI.Input.Inking.InkPoint* return_result);
 }
 
 @uuid("e0145e85-daff-45f2-ad69-050d8256a209")
@@ -124,7 +124,7 @@ extern(Windows):
 interface IInkPointFactory2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateInkPointWithTiltAndTimestamp(Windows.Foundation.Point position, FLOAT pressure, FLOAT tiltX, FLOAT tiltY, UINT64 timestamp, Windows.UI.Input.Inking.InkPoint* return_result);
+	HRESULT abi_CreateInkPointWithTiltAndTimestamp(Windows.Foundation.Point position, float pressure, float tiltX, float tiltY, ulong timestamp, Windows.UI.Input.Inking.InkPoint* return_result);
 }
 
 @uuid("a69b70e2-887b-458f-b173-4fe4438930a3")
@@ -347,7 +347,7 @@ extern(Windows):
 	HRESULT abi_CopySelectedToClipboard();
 	HRESULT abi_PasteFromClipboard(Windows.Foundation.Point position, Windows.Foundation.Rect* return_invalidatedRectangle);
 	HRESULT abi_CanPasteFromClipboard(bool* return_canPaste);
-	HRESULT abi_LoadAsync(Windows.Storage.Streams.IInputStream inputStream, Windows.Foundation.IAsyncActionWithProgress!(UINT64)* return_loadAction);
+	HRESULT abi_LoadAsync(Windows.Storage.Streams.IInputStream inputStream, Windows.Foundation.IAsyncActionWithProgress!(ulong)* return_loadAction);
 	HRESULT abi_SaveAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32)* return_outputStreamOperation);
 	HRESULT abi_UpdateRecognitionResults(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) recognitionResults);
 	HRESULT abi_GetStrokes(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke)* return_strokeView);
@@ -396,10 +396,10 @@ extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Point* return_value);
 	HRESULT get_BezierControlPoint1(Windows.Foundation.Point* return_value);
 	HRESULT get_BezierControlPoint2(Windows.Foundation.Point* return_value);
-	HRESULT get_Pressure(FLOAT* return_value);
-	HRESULT get_TiltX(FLOAT* return_value);
-	HRESULT get_TiltY(FLOAT* return_value);
-	HRESULT get_Twist(FLOAT* return_value);
+	HRESULT get_Pressure(float* return_value);
+	HRESULT get_TiltX(float* return_value);
+	HRESULT get_TiltY(float* return_value);
+	HRESULT get_Twist(float* return_value);
 }
 
 @uuid("c4f3f229-1938-495c-b4d9-6de4b08d4811")
@@ -691,9 +691,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_CanPasteFromClipboard(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncActionWithProgress!(UINT64) LoadAsync(Windows.Storage.Streams.IInputStream inputStream)
+	final Windows.Foundation.IAsyncActionWithProgress!(ulong) LoadAsync(Windows.Storage.Streams.IInputStream inputStream)
 	{
-		Windows.Foundation.IAsyncActionWithProgress!(UINT64) _ret;
+		Windows.Foundation.IAsyncActionWithProgress!(ulong) _ret;
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_LoadAsync(inputStream, &_ret));
 		return _ret;
 	}
@@ -730,27 +730,27 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint).get_Position(&_ret));
 		return _ret;
 	}
-	final FLOAT Pressure()
+	final float Pressure()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint).get_Pressure(&_ret));
 		return _ret;
 	}
-	final FLOAT TiltX()
+	final float TiltX()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint2).get_TiltX(&_ret));
 		return _ret;
 	}
-	final FLOAT TiltY()
+	final float TiltY()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint2).get_TiltY(&_ret));
 		return _ret;
 	}
-	final UINT64 Timestamp()
+	final ulong Timestamp()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint2).get_Timestamp(&_ret));
 		return _ret;
 	}
@@ -1313,9 +1313,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_CanPasteFromClipboard(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncActionWithProgress!(UINT64) LoadAsync(Windows.Storage.Streams.IInputStream inputStream)
+	final Windows.Foundation.IAsyncActionWithProgress!(ulong) LoadAsync(Windows.Storage.Streams.IInputStream inputStream)
 	{
-		Windows.Foundation.IAsyncActionWithProgress!(UINT64) _ret;
+		Windows.Foundation.IAsyncActionWithProgress!(ulong) _ret;
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_LoadAsync(inputStream, &_ret));
 		return _ret;
 	}
@@ -1435,27 +1435,27 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_BezierControlPoint2(&_ret));
 		return _ret;
 	}
-	final FLOAT Pressure()
+	final float Pressure()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_Pressure(&_ret));
 		return _ret;
 	}
-	final FLOAT TiltX()
+	final float TiltX()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_TiltX(&_ret));
 		return _ret;
 	}
-	final FLOAT TiltY()
+	final float TiltY()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_TiltY(&_ret));
 		return _ret;
 	}
-	final FLOAT Twist()
+	final float Twist()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_Twist(&_ret));
 		return _ret;
 	}

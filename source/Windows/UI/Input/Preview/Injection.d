@@ -14,7 +14,7 @@ struct InjectedInputPointerInfo
 	Windows.UI.Input.Preview.Injection.InjectedInputPointerOptions PointerOptions;
 	Windows.UI.Input.Preview.Injection.InjectedInputPoint PixelLocation;
 	UINT32 TimeOffsetInMilliseconds;
-	UINT64 PerformanceCount;
+	ulong PerformanceCount;
 }
 
 struct InjectedInputRectangle

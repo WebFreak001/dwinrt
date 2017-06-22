@@ -56,7 +56,7 @@ interface IAsymmetricKeyAlgorithmProvider2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateKeyPairWithCurveName(HSTRING curveName, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
-	HRESULT abi_CreateKeyPairWithCurveParameters(UINT32 __parametersSize, BYTE* parameters, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
+	HRESULT abi_CreateKeyPairWithCurveParameters(UINT32 __parametersSize, ubyte* parameters, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
 }
 
 @uuid("425bde18-a7f3-47a6-a8d2-c48d6033a65c")
@@ -436,7 +436,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider2).abi_CreateKeyPairWithCurveName(curveName, &_ret));
 		return _ret;
 	}
-	final Windows.Security.Cryptography.Core.CryptographicKey CreateKeyPairWithCurveParameters(UINT32 __parametersSize, BYTE* parameters)
+	final Windows.Security.Cryptography.Core.CryptographicKey CreateKeyPairWithCurveParameters(UINT32 __parametersSize, ubyte* parameters)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
 		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider2).abi_CreateKeyPairWithCurveParameters(__parametersSize, parameters, &_ret));

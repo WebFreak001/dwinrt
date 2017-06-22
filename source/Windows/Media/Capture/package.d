@@ -99,10 +99,10 @@ interface IAppBroadcastBackgroundServiceStreamInfo : IInspectable
 {
 extern(Windows):
 	HRESULT get_StreamState(Windows.Media.Capture.AppBroadcastStreamState* return_value);
-	HRESULT set_DesiredVideoEncodingBitrate(UINT64 value);
-	HRESULT get_DesiredVideoEncodingBitrate(UINT64* return_value);
-	HRESULT set_BandwidthTestBitrate(UINT64 value);
-	HRESULT get_BandwidthTestBitrate(UINT64* return_value);
+	HRESULT set_DesiredVideoEncodingBitrate(ulong value);
+	HRESULT get_DesiredVideoEncodingBitrate(ulong* return_value);
+	HRESULT set_BandwidthTestBitrate(ulong value);
+	HRESULT get_BandwidthTestBitrate(ulong* return_value);
 	HRESULT set_AudioCodec(HSTRING value);
 	HRESULT get_AudioCodec(HSTRING* return_value);
 	HRESULT get_BroadcastStreamReader(Windows.Media.Capture.AppBroadcastStreamReader* return_value);
@@ -276,7 +276,7 @@ extern(Windows):
 	HRESULT get_AbsoluteTimestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_RelativeTimestamp(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_Duration(Windows.Foundation.TimeSpan* return_value);
-	HRESULT get_FrameId(UINT64* return_value);
+	HRESULT get_FrameId(ulong* return_value);
 }
 
 @uuid("c30bdf62-9948-458f-ad50-aa06ec03da08")
@@ -391,7 +391,7 @@ extern(Windows):
 	HRESULT get_RelativeTimestamp(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_Duration(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_HasDiscontinuity(bool* return_value);
-	HRESULT get_FrameId(UINT64* return_value);
+	HRESULT get_FrameId(ulong* return_value);
 }
 
 @uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2")
@@ -441,7 +441,7 @@ extern(Windows):
 	HRESULT get_Duration(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_IsKeyFrame(bool* return_value);
 	HRESULT get_HasDiscontinuity(bool* return_value);
-	HRESULT get_FrameId(UINT64* return_value);
+	HRESULT get_FrameId(ulong* return_value);
 }
 
 @uuid("deebab35-ec5e-4d8f-b1c0-5da6e8c75638")
@@ -746,8 +746,8 @@ extern(Windows):
 	HRESULT set_Format(Windows.Media.Capture.CameraCaptureUIVideoFormat value);
 	HRESULT get_MaxResolution(Windows.Media.Capture.CameraCaptureUIMaxVideoResolution* return_value);
 	HRESULT set_MaxResolution(Windows.Media.Capture.CameraCaptureUIMaxVideoResolution value);
-	HRESULT get_MaxDurationInSeconds(FLOAT* return_value);
-	HRESULT set_MaxDurationInSeconds(FLOAT value);
+	HRESULT get_MaxDurationInSeconds(float* return_value);
+	HRESULT set_MaxDurationInSeconds(float value);
 	HRESULT get_AllowTrimming(bool* return_value);
 	HRESULT set_AllowTrimming(bool value);
 }
@@ -778,14 +778,14 @@ interface ICapturedFrameControlValues : IInspectable
 {
 extern(Windows):
 	HRESULT get_Exposure(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
-	HRESULT get_ExposureCompensation(Windows.Foundation.IReference!(FLOAT)* return_value);
+	HRESULT get_ExposureCompensation(Windows.Foundation.IReference!(float)* return_value);
 	HRESULT get_IsoSpeed(Windows.Foundation.IReference!(UINT32)* return_value);
 	HRESULT get_Focus(Windows.Foundation.IReference!(UINT32)* return_value);
 	HRESULT get_SceneMode(Windows.Foundation.IReference!(Windows.Media.Devices.CaptureSceneMode)* return_value);
 	HRESULT get_Flashed(Windows.Foundation.IReference!(bool)* return_value);
-	HRESULT get_FlashPowerPercent(Windows.Foundation.IReference!(FLOAT)* return_value);
+	HRESULT get_FlashPowerPercent(Windows.Foundation.IReference!(float)* return_value);
 	HRESULT get_WhiteBalance(Windows.Foundation.IReference!(UINT32)* return_value);
-	HRESULT get_ZoomFactor(Windows.Foundation.IReference!(FLOAT)* return_value);
+	HRESULT get_ZoomFactor(Windows.Foundation.IReference!(float)* return_value);
 }
 
 @uuid("500b2b88-06d2-4aa7-a7db-d37af73321d8")
@@ -1475,23 +1475,23 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_StreamState(&_ret));
 		return _ret;
 	}
-	final void DesiredVideoEncodingBitrate(UINT64 value)
+	final void DesiredVideoEncodingBitrate(ulong value)
 	{
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).set_DesiredVideoEncodingBitrate(value));
 	}
-	final UINT64 DesiredVideoEncodingBitrate()
+	final ulong DesiredVideoEncodingBitrate()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_DesiredVideoEncodingBitrate(&_ret));
 		return _ret;
 	}
-	final void BandwidthTestBitrate(UINT64 value)
+	final void BandwidthTestBitrate(ulong value)
 	{
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).set_BandwidthTestBitrate(value));
 	}
-	final UINT64 BandwidthTestBitrate()
+	final ulong BandwidthTestBitrate()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_BandwidthTestBitrate(&_ret));
 		return _ret;
 	}
@@ -1935,9 +1935,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader).get_Duration(&_ret));
 		return _ret;
 	}
-	final UINT64 FrameId()
+	final ulong FrameId()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader).get_FrameId(&_ret));
 		return _ret;
 	}
@@ -2351,9 +2351,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioHeader).get_HasDiscontinuity(&_ret));
 		return _ret;
 	}
-	final UINT64 FrameId()
+	final ulong FrameId()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioHeader).get_FrameId(&_ret));
 		return _ret;
 	}
@@ -2499,9 +2499,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_HasDiscontinuity(&_ret));
 		return _ret;
 	}
-	final UINT64 FrameId()
+	final ulong FrameId()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_FrameId(&_ret));
 		return _ret;
 	}
@@ -3314,13 +3314,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).set_MaxResolution(value));
 	}
-	final FLOAT MaxDurationInSeconds()
+	final float MaxDurationInSeconds()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).get_MaxDurationInSeconds(&_ret));
 		return _ret;
 	}
-	final void MaxDurationInSeconds(FLOAT value)
+	final void MaxDurationInSeconds(float value)
 	{
 		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).set_MaxDurationInSeconds(value));
 	}
@@ -3361,35 +3361,35 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Streams.IContentTypeProvider).get_ContentType(&_ret));
 		return _ret;
 	}
-	final UINT64 Size()
+	final ulong Size()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
 		return _ret;
 	}
-	final void Size(UINT64 value)
+	final void Size(ulong value)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
 	}
-	final Windows.Storage.Streams.IInputStream GetInputStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IInputStream GetInputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IInputStream _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
 		return _ret;
 	}
-	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
 		return _ret;
 	}
-	final UINT64 Position()
+	final ulong Position()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
 		return _ret;
 	}
-	final void Seek(UINT64 position)
+	final void Seek(ulong position)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
 	}
@@ -3450,9 +3450,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_Exposure(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(FLOAT) ExposureCompensation()
+	final Windows.Foundation.IReference!(float) ExposureCompensation()
 	{
-		Windows.Foundation.IReference!(FLOAT) _ret;
+		Windows.Foundation.IReference!(float) _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_ExposureCompensation(&_ret));
 		return _ret;
 	}
@@ -3480,9 +3480,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_Flashed(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(FLOAT) FlashPowerPercent()
+	final Windows.Foundation.IReference!(float) FlashPowerPercent()
 	{
-		Windows.Foundation.IReference!(FLOAT) _ret;
+		Windows.Foundation.IReference!(float) _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_FlashPowerPercent(&_ret));
 		return _ret;
 	}
@@ -3492,9 +3492,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_WhiteBalance(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(FLOAT) ZoomFactor()
+	final Windows.Foundation.IReference!(float) ZoomFactor()
 	{
-		Windows.Foundation.IReference!(FLOAT) _ret;
+		Windows.Foundation.IReference!(float) _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_ZoomFactor(&_ret));
 		return _ret;
 	}

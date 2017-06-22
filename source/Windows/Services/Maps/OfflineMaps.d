@@ -10,7 +10,7 @@ extern(Windows):
 	HRESULT get_Status(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStatus* return_value);
 	HRESULT get_DisplayName(HSTRING* return_value);
 	HRESULT get_EnclosingRegionName(HSTRING* return_value);
-	HRESULT get_EstimatedSizeInBytes(UINT64* return_value);
+	HRESULT get_EstimatedSizeInBytes(ulong* return_value);
 	HRESULT remove_StatusChanged(EventRegistrationToken token);
 	HRESULT add_StatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT abi_RequestStartDownloadAsync(Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadResult)* return_value);
@@ -64,9 +64,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).get_EnclosingRegionName(&_ret));
 		return _ret;
 	}
-	final UINT64 EstimatedSizeInBytes()
+	final ulong EstimatedSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).get_EstimatedSizeInBytes(&_ret));
 		return _ret;
 	}

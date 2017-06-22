@@ -111,9 +111,9 @@ interface IFrameExposureCompensationCapabilities : IInspectable
 {
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
-	HRESULT get_Min(FLOAT* return_value);
-	HRESULT get_Max(FLOAT* return_value);
-	HRESULT get_Step(FLOAT* return_value);
+	HRESULT get_Min(float* return_value);
+	HRESULT get_Max(float* return_value);
+	HRESULT get_Step(float* return_value);
 }
 
 @uuid("e95896c9-f7f9-48ca-8591-a26531cb1578")
@@ -121,8 +121,8 @@ extern(Windows):
 interface IFrameExposureCompensationControl : IInspectable
 {
 extern(Windows):
-	HRESULT get_Value(Windows.Foundation.IReference!(FLOAT)* return_value);
-	HRESULT set_Value(Windows.Foundation.IReference!(FLOAT) value);
+	HRESULT get_Value(Windows.Foundation.IReference!(float)* return_value);
+	HRESULT set_Value(Windows.Foundation.IReference!(float) value);
 }
 
 @uuid("b1605a61-ffaf-4752-b621-f5b6f117f432")
@@ -157,8 +157,8 @@ extern(Windows):
 	HRESULT set_Auto(bool value);
 	HRESULT get_RedEyeReduction(bool* return_value);
 	HRESULT set_RedEyeReduction(bool value);
-	HRESULT get_PowerPercent(FLOAT* return_value);
-	HRESULT set_PowerPercent(FLOAT value);
+	HRESULT get_PowerPercent(float* return_value);
+	HRESULT set_PowerPercent(float value);
 }
 
 @uuid("7b25cd58-01c0-4065-9c40-c1a721425c1a")
@@ -209,9 +209,9 @@ interface IVariablePhotoSequenceController : IInspectable
 {
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
-	HRESULT get_MaxPhotosPerSecond(FLOAT* return_value);
-	HRESULT get_PhotosPerSecondLimit(FLOAT* return_value);
-	HRESULT set_PhotosPerSecondLimit(FLOAT value);
+	HRESULT get_MaxPhotosPerSecond(float* return_value);
+	HRESULT get_PhotosPerSecondLimit(float* return_value);
+	HRESULT set_PhotosPerSecondLimit(float value);
 	HRESULT abi_GetHighestConcurrentFrameRate(Windows.Media.MediaProperties.IMediaEncodingProperties captureProperties, Windows.Media.MediaProperties.MediaRatio* return_value);
 	HRESULT abi_GetCurrentFrameRate(Windows.Media.MediaProperties.MediaRatio* return_value);
 	HRESULT get_FrameCapabilities(Windows.Media.Devices.Core.FrameControlCapabilities* return_value);
@@ -458,21 +458,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IFrameExposureCompensationCapabilities).get_Supported(&_ret));
 		return _ret;
 	}
-	final FLOAT Min()
+	final float Min()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IFrameExposureCompensationCapabilities).get_Min(&_ret));
 		return _ret;
 	}
-	final FLOAT Max()
+	final float Max()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IFrameExposureCompensationCapabilities).get_Max(&_ret));
 		return _ret;
 	}
-	final FLOAT Step()
+	final float Step()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IFrameExposureCompensationCapabilities).get_Step(&_ret));
 		return _ret;
 	}
@@ -481,13 +481,13 @@ extern(Windows):
 interface FrameExposureCompensationControl : Windows.Media.Devices.Core.IFrameExposureCompensationControl
 {
 extern(Windows):
-	final Windows.Foundation.IReference!(FLOAT) Value()
+	final Windows.Foundation.IReference!(float) Value()
 	{
-		Windows.Foundation.IReference!(FLOAT) _ret;
+		Windows.Foundation.IReference!(float) _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IFrameExposureCompensationControl).get_Value(&_ret));
 		return _ret;
 	}
-	final void Value(Windows.Foundation.IReference!(FLOAT) value)
+	final void Value(Windows.Foundation.IReference!(float) value)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IFrameExposureCompensationControl).set_Value(value));
 	}
@@ -574,13 +574,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IFrameFlashControl).set_RedEyeReduction(value));
 	}
-	final FLOAT PowerPercent()
+	final float PowerPercent()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IFrameFlashControl).get_PowerPercent(&_ret));
 		return _ret;
 	}
-	final void PowerPercent(FLOAT value)
+	final void PowerPercent(float value)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IFrameFlashControl).set_PowerPercent(value));
 	}
@@ -693,19 +693,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IVariablePhotoSequenceController).get_Supported(&_ret));
 		return _ret;
 	}
-	final FLOAT MaxPhotosPerSecond()
+	final float MaxPhotosPerSecond()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IVariablePhotoSequenceController).get_MaxPhotosPerSecond(&_ret));
 		return _ret;
 	}
-	final FLOAT PhotosPerSecondLimit()
+	final float PhotosPerSecondLimit()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IVariablePhotoSequenceController).get_PhotosPerSecondLimit(&_ret));
 		return _ret;
 	}
-	final void PhotosPerSecondLimit(FLOAT value)
+	final void PhotosPerSecondLimit(float value)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IVariablePhotoSequenceController).set_PhotosPerSecondLimit(value));
 	}

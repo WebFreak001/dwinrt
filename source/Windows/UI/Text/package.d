@@ -51,8 +51,8 @@ extern(Windows):
 	HRESULT set_Hidden(Windows.UI.Text.FormatEffect value);
 	HRESULT get_Italic(Windows.UI.Text.FormatEffect* return_value);
 	HRESULT set_Italic(Windows.UI.Text.FormatEffect value);
-	HRESULT get_Kerning(FLOAT* return_value);
-	HRESULT set_Kerning(FLOAT value);
+	HRESULT get_Kerning(float* return_value);
+	HRESULT set_Kerning(float value);
 	HRESULT get_LanguageTag(HSTRING* return_value);
 	HRESULT set_LanguageTag(HSTRING value);
 	HRESULT get_LinkType(Windows.UI.Text.LinkType* return_value);
@@ -60,16 +60,16 @@ extern(Windows):
 	HRESULT set_Name(HSTRING value);
 	HRESULT get_Outline(Windows.UI.Text.FormatEffect* return_value);
 	HRESULT set_Outline(Windows.UI.Text.FormatEffect value);
-	HRESULT get_Position(FLOAT* return_value);
-	HRESULT set_Position(FLOAT value);
+	HRESULT get_Position(float* return_value);
+	HRESULT set_Position(float value);
 	HRESULT get_ProtectedText(Windows.UI.Text.FormatEffect* return_value);
 	HRESULT set_ProtectedText(Windows.UI.Text.FormatEffect value);
-	HRESULT get_Size(FLOAT* return_value);
-	HRESULT set_Size(FLOAT value);
+	HRESULT get_Size(float* return_value);
+	HRESULT set_Size(float value);
 	HRESULT get_SmallCaps(Windows.UI.Text.FormatEffect* return_value);
 	HRESULT set_SmallCaps(Windows.UI.Text.FormatEffect value);
-	HRESULT get_Spacing(FLOAT* return_value);
-	HRESULT set_Spacing(FLOAT value);
+	HRESULT get_Spacing(float* return_value);
+	HRESULT set_Spacing(float value);
 	HRESULT get_Strikethrough(Windows.UI.Text.FormatEffect* return_value);
 	HRESULT set_Strikethrough(Windows.UI.Text.FormatEffect value);
 	HRESULT get_Subscript(Windows.UI.Text.FormatEffect* return_value);
@@ -96,7 +96,7 @@ extern(Windows):
 	HRESULT get_MinUnitCount(INT32* return_value);
 	HRESULT get_MaxUnitCount(INT32* return_value);
 	HRESULT get_UndefinedColor(Windows.UI.Color* return_value);
-	HRESULT get_UndefinedFloatValue(FLOAT* return_value);
+	HRESULT get_UndefinedFloatValue(float* return_value);
 	HRESULT get_UndefinedInt32Value(INT32* return_value);
 	HRESULT get_UndefinedFontStretch(Windows.UI.Text.FontStretch* return_value);
 	HRESULT get_UndefinedFontStyle(Windows.UI.Text.FontStyle* return_value);
@@ -108,8 +108,8 @@ interface ITextDocument : IInspectable
 extern(Windows):
 	HRESULT get_CaretType(Windows.UI.Text.CaretType* return_value);
 	HRESULT set_CaretType(Windows.UI.Text.CaretType value);
-	HRESULT get_DefaultTabStop(FLOAT* return_value);
-	HRESULT set_DefaultTabStop(FLOAT value);
+	HRESULT get_DefaultTabStop(float* return_value);
+	HRESULT set_DefaultTabStop(float value);
 	HRESULT get_Selection(Windows.UI.Text.ITextSelection* return_value);
 	HRESULT get_UndoLimit(UINT32* return_value);
 	HRESULT set_UndoLimit(UINT32 value);
@@ -155,13 +155,13 @@ interface ITextParagraphFormat : IInspectable
 extern(Windows):
 	HRESULT get_Alignment(Windows.UI.Text.ParagraphAlignment* return_value);
 	HRESULT set_Alignment(Windows.UI.Text.ParagraphAlignment value);
-	HRESULT get_FirstLineIndent(FLOAT* return_value);
+	HRESULT get_FirstLineIndent(float* return_value);
 	HRESULT get_KeepTogether(Windows.UI.Text.FormatEffect* return_value);
 	HRESULT set_KeepTogether(Windows.UI.Text.FormatEffect value);
 	HRESULT get_KeepWithNext(Windows.UI.Text.FormatEffect* return_value);
 	HRESULT set_KeepWithNext(Windows.UI.Text.FormatEffect value);
-	HRESULT get_LeftIndent(FLOAT* return_value);
-	HRESULT get_LineSpacing(FLOAT* return_value);
+	HRESULT get_LeftIndent(float* return_value);
+	HRESULT get_LineSpacing(float* return_value);
 	HRESULT get_LineSpacingRule(Windows.UI.Text.LineSpacingRule* return_value);
 	HRESULT get_ListAlignment(Windows.UI.Text.MarkerAlignment* return_value);
 	HRESULT set_ListAlignment(Windows.UI.Text.MarkerAlignment value);
@@ -171,44 +171,44 @@ extern(Windows):
 	HRESULT set_ListStart(INT32 value);
 	HRESULT get_ListStyle(Windows.UI.Text.MarkerStyle* return_value);
 	HRESULT set_ListStyle(Windows.UI.Text.MarkerStyle value);
-	HRESULT get_ListTab(FLOAT* return_value);
-	HRESULT set_ListTab(FLOAT value);
+	HRESULT get_ListTab(float* return_value);
+	HRESULT set_ListTab(float value);
 	HRESULT get_ListType(Windows.UI.Text.MarkerType* return_value);
 	HRESULT set_ListType(Windows.UI.Text.MarkerType value);
 	HRESULT get_NoLineNumber(Windows.UI.Text.FormatEffect* return_value);
 	HRESULT set_NoLineNumber(Windows.UI.Text.FormatEffect value);
 	HRESULT get_PageBreakBefore(Windows.UI.Text.FormatEffect* return_value);
 	HRESULT set_PageBreakBefore(Windows.UI.Text.FormatEffect value);
-	HRESULT get_RightIndent(FLOAT* return_value);
-	HRESULT set_RightIndent(FLOAT value);
+	HRESULT get_RightIndent(float* return_value);
+	HRESULT set_RightIndent(float value);
 	HRESULT get_RightToLeft(Windows.UI.Text.FormatEffect* return_value);
 	HRESULT set_RightToLeft(Windows.UI.Text.FormatEffect value);
 	HRESULT get_Style(Windows.UI.Text.ParagraphStyle* return_value);
 	HRESULT set_Style(Windows.UI.Text.ParagraphStyle value);
-	HRESULT get_SpaceAfter(FLOAT* return_value);
-	HRESULT set_SpaceAfter(FLOAT value);
-	HRESULT get_SpaceBefore(FLOAT* return_value);
-	HRESULT set_SpaceBefore(FLOAT value);
+	HRESULT get_SpaceAfter(float* return_value);
+	HRESULT set_SpaceAfter(float value);
+	HRESULT get_SpaceBefore(float* return_value);
+	HRESULT set_SpaceBefore(float value);
 	HRESULT get_WidowControl(Windows.UI.Text.FormatEffect* return_value);
 	HRESULT set_WidowControl(Windows.UI.Text.FormatEffect value);
 	HRESULT get_TabCount(INT32* return_value);
-	HRESULT abi_AddTab(FLOAT position, Windows.UI.Text.TabAlignment align_, Windows.UI.Text.TabLeader leader);
+	HRESULT abi_AddTab(float position, Windows.UI.Text.TabAlignment align_, Windows.UI.Text.TabLeader leader);
 	HRESULT abi_ClearAllTabs();
-	HRESULT abi_DeleteTab(FLOAT position);
+	HRESULT abi_DeleteTab(float position);
 	HRESULT abi_GetClone(Windows.UI.Text.ITextParagraphFormat* return_value);
-	HRESULT abi_GetTab(INT32 index, FLOAT* out_position, Windows.UI.Text.TabAlignment* out_align_, Windows.UI.Text.TabLeader* out_leader);
+	HRESULT abi_GetTab(INT32 index, float* out_position, Windows.UI.Text.TabAlignment* out_align_, Windows.UI.Text.TabLeader* out_leader);
 	HRESULT abi_IsEqual(Windows.UI.Text.ITextParagraphFormat format, bool* return_value);
 	HRESULT abi_SetClone(Windows.UI.Text.ITextParagraphFormat format);
-	HRESULT abi_SetIndents(FLOAT start, FLOAT left, FLOAT right);
-	HRESULT abi_SetLineSpacing(Windows.UI.Text.LineSpacingRule rule, FLOAT spacing);
+	HRESULT abi_SetIndents(float start, float left, float right);
+	HRESULT abi_SetLineSpacing(Windows.UI.Text.LineSpacingRule rule, float spacing);
 }
 
 @uuid("5b9e4e57-c072-42a0-8945-af503ee54768")
 interface ITextRange : IInspectable
 {
 extern(Windows):
-	HRESULT get_Character(WCHAR* return_value);
-	HRESULT set_Character(WCHAR value);
+	HRESULT get_Character(wchar* return_value);
+	HRESULT set_Character(wchar value);
 	HRESULT get_CharacterFormat(Windows.UI.Text.ITextCharacterFormat* return_value);
 	HRESULT set_CharacterFormat(Windows.UI.Text.ITextCharacterFormat value);
 	HRESULT get_FormattedText(Windows.UI.Text.ITextRange* return_value);
@@ -296,13 +296,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).set_CaretType(value));
 	}
-	final FLOAT DefaultTabStop()
+	final float DefaultTabStop()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).get_DefaultTabStop(&_ret));
 		return _ret;
 	}
-	final void DefaultTabStop(FLOAT value)
+	final void DefaultTabStop(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).set_DefaultTabStop(value));
 	}

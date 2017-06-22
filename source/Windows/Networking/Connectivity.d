@@ -20,8 +20,8 @@ extern(Windows):
 interface IAttributedNetworkUsage : IInspectable
 {
 extern(Windows):
-	HRESULT get_BytesSent(UINT64* return_value);
-	HRESULT get_BytesReceived(UINT64* return_value);
+	HRESULT get_BytesSent(ulong* return_value);
+	HRESULT get_BytesReceived(ulong* return_value);
 	HRESULT get_AttributionId(HSTRING* return_value);
 	HRESULT get_AttributionName(HSTRING* return_value);
 	HRESULT get_AttributionThumbnail(Windows.Storage.Streams.IRandomAccessStreamReference* return_value);
@@ -93,7 +93,7 @@ extern(Windows):
 	HRESULT get_WwanConnectionProfileDetails(Windows.Networking.Connectivity.WwanConnectionProfileDetails* return_value);
 	HRESULT get_WlanConnectionProfileDetails(Windows.Networking.Connectivity.WlanConnectionProfileDetails* return_value);
 	HRESULT get_ServiceProviderGuid(Windows.Foundation.IReference!(GUID)* return_value);
-	HRESULT abi_GetSignalBars(Windows.Foundation.IReference!(BYTE)* return_value);
+	HRESULT abi_GetSignalBars(Windows.Foundation.IReference!(ubyte)* return_value);
 	HRESULT abi_GetDomainConnectivityLevel(Windows.Networking.Connectivity.DomainConnectivityLevel* return_value);
 	HRESULT abi_GetNetworkUsageAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.DateTime endTime, Windows.Networking.Connectivity.DataUsageGranularity granularity, Windows.Networking.Connectivity.NetworkUsageStates states, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.NetworkUsage))* return_value);
 	HRESULT abi_GetConnectivityIntervalsAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.DateTime endTime, Windows.Networking.Connectivity.NetworkUsageStates states, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.ConnectivityInterval))* return_value);
@@ -175,8 +175,8 @@ interface IDataPlanStatus : IInspectable
 extern(Windows):
 	HRESULT get_DataPlanUsage(Windows.Networking.Connectivity.DataPlanUsage* return_value);
 	HRESULT get_DataLimitInMegabytes(Windows.Foundation.IReference!(UINT32)* return_value);
-	HRESULT get_InboundBitsPerSecond(Windows.Foundation.IReference!(UINT64)* return_value);
-	HRESULT get_OutboundBitsPerSecond(Windows.Foundation.IReference!(UINT64)* return_value);
+	HRESULT get_InboundBitsPerSecond(Windows.Foundation.IReference!(ulong)* return_value);
+	HRESULT get_OutboundBitsPerSecond(Windows.Foundation.IReference!(ulong)* return_value);
 	HRESULT get_NextBillingCycle(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value);
 	HRESULT get_MaxTransferSizeInMegabytes(Windows.Foundation.IReference!(UINT32)* return_value);
 }
@@ -196,9 +196,9 @@ interface IDataUsage : IInspectable
 {
 extern(Windows):
 	deprecated("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")
-	HRESULT get_BytesSent(UINT64* return_value);
+	HRESULT get_BytesSent(ulong* return_value);
 	deprecated("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")
-	HRESULT get_BytesReceived(UINT64* return_value);
+	HRESULT get_BytesReceived(ulong* return_value);
 }
 
 @uuid("d85145e0-138f-47d7-9b3a-36bb488cef33")
@@ -207,7 +207,7 @@ interface IIPInformation : IInspectable
 {
 extern(Windows):
 	HRESULT get_NetworkAdapter(Windows.Networking.Connectivity.NetworkAdapter* return_value);
-	HRESULT get_PrefixLength(Windows.Foundation.IReference!(BYTE)* return_value);
+	HRESULT get_PrefixLength(Windows.Foundation.IReference!(ubyte)* return_value);
 }
 
 @uuid("48aa53aa-1108-4546-a6cb-9a74da4b7ba0")
@@ -226,7 +226,7 @@ interface ILanIdentifierData : IInspectable
 {
 extern(Windows):
 	HRESULT get_Type(UINT32* return_value);
-	HRESULT get_Value(Windows.Foundation.Collections.IVectorView!(BYTE)* return_value);
+	HRESULT get_Value(Windows.Foundation.Collections.IVectorView!(ubyte)* return_value);
 }
 
 @uuid("3b542e03-5388-496c-a8a3-affd39aec2e6")
@@ -234,8 +234,8 @@ extern(Windows):
 interface INetworkAdapter : IInspectable
 {
 extern(Windows):
-	HRESULT get_OutboundMaxBitsPerSecond(UINT64* return_value);
-	HRESULT get_InboundMaxBitsPerSecond(UINT64* return_value);
+	HRESULT get_OutboundMaxBitsPerSecond(ulong* return_value);
+	HRESULT get_InboundMaxBitsPerSecond(ulong* return_value);
 	HRESULT get_IanaInterfaceType(UINT32* return_value);
 	HRESULT get_NetworkItem(Windows.Networking.Connectivity.NetworkItem* return_value);
 	HRESULT get_NetworkAdapterId(GUID* return_value);
@@ -310,8 +310,8 @@ extern(Windows):
 interface INetworkUsage : IInspectable
 {
 extern(Windows):
-	HRESULT get_BytesSent(UINT64* return_value);
-	HRESULT get_BytesReceived(UINT64* return_value);
+	HRESULT get_BytesSent(ulong* return_value);
+	HRESULT get_BytesReceived(ulong* return_value);
 	HRESULT get_ConnectionDuration(Windows.Foundation.TimeSpan* return_duration);
 }
 
@@ -364,15 +364,15 @@ extern(Windows):
 interface AttributedNetworkUsage : Windows.Networking.Connectivity.IAttributedNetworkUsage
 {
 extern(Windows):
-	final UINT64 BytesSent()
+	final ulong BytesSent()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.IAttributedNetworkUsage).get_BytesSent(&_ret));
 		return _ret;
 	}
-	final UINT64 BytesReceived()
+	final ulong BytesReceived()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.IAttributedNetworkUsage).get_BytesReceived(&_ret));
 		return _ret;
 	}
@@ -585,9 +585,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile2).get_ServiceProviderGuid(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(BYTE) GetSignalBars()
+	final Windows.Foundation.IReference!(ubyte) GetSignalBars()
 	{
-		Windows.Foundation.IReference!(BYTE) _ret;
+		Windows.Foundation.IReference!(ubyte) _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile2).abi_GetSignalBars(&_ret));
 		return _ret;
 	}
@@ -759,15 +759,15 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataPlanStatus).get_DataLimitInMegabytes(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) InboundBitsPerSecond()
+	final Windows.Foundation.IReference!(ulong) InboundBitsPerSecond()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataPlanStatus).get_InboundBitsPerSecond(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) OutboundBitsPerSecond()
+	final Windows.Foundation.IReference!(ulong) OutboundBitsPerSecond()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataPlanStatus).get_OutboundBitsPerSecond(&_ret));
 		return _ret;
 	}
@@ -806,16 +806,16 @@ interface DataUsage : Windows.Networking.Connectivity.IDataUsage
 {
 extern(Windows):
 	deprecated("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")
-	final UINT64 BytesSent()
+	final ulong BytesSent()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataUsage).get_BytesSent(&_ret));
 		return _ret;
 	}
 	deprecated("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")
-	final UINT64 BytesReceived()
+	final ulong BytesReceived()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataUsage).get_BytesReceived(&_ret));
 		return _ret;
 	}
@@ -830,9 +830,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Connectivity.IIPInformation).get_NetworkAdapter(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(BYTE) PrefixLength()
+	final Windows.Foundation.IReference!(ubyte) PrefixLength()
 	{
-		Windows.Foundation.IReference!(BYTE) _ret;
+		Windows.Foundation.IReference!(ubyte) _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.IIPInformation).get_PrefixLength(&_ret));
 		return _ret;
 	}
@@ -870,9 +870,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Connectivity.ILanIdentifierData).get_Type(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IVectorView!(BYTE) Value()
+	final Windows.Foundation.Collections.IVectorView!(ubyte) Value()
 	{
-		Windows.Foundation.Collections.IVectorView!(BYTE) _ret;
+		Windows.Foundation.Collections.IVectorView!(ubyte) _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.ILanIdentifierData).get_Value(&_ret));
 		return _ret;
 	}
@@ -881,15 +881,15 @@ extern(Windows):
 interface NetworkAdapter : Windows.Networking.Connectivity.INetworkAdapter
 {
 extern(Windows):
-	final UINT64 OutboundMaxBitsPerSecond()
+	final ulong OutboundMaxBitsPerSecond()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkAdapter).get_OutboundMaxBitsPerSecond(&_ret));
 		return _ret;
 	}
-	final UINT64 InboundMaxBitsPerSecond()
+	final ulong InboundMaxBitsPerSecond()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkAdapter).get_InboundMaxBitsPerSecond(&_ret));
 		return _ret;
 	}
@@ -1013,15 +1013,15 @@ extern(Windows):
 interface NetworkUsage : Windows.Networking.Connectivity.INetworkUsage
 {
 extern(Windows):
-	final UINT64 BytesSent()
+	final ulong BytesSent()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkUsage).get_BytesSent(&_ret));
 		return _ret;
 	}
-	final UINT64 BytesReceived()
+	final ulong BytesReceived()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkUsage).get_BytesReceived(&_ret));
 		return _ret;
 	}

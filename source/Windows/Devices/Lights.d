@@ -10,8 +10,8 @@ extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_IsEnabled(bool* return_value);
 	HRESULT set_IsEnabled(bool value);
-	HRESULT get_BrightnessLevel(FLOAT* return_value);
-	HRESULT set_BrightnessLevel(FLOAT value);
+	HRESULT get_BrightnessLevel(float* return_value);
+	HRESULT set_BrightnessLevel(float value);
 	HRESULT get_IsColorSettable(bool* return_value);
 	HRESULT get_Color(Windows.UI.Color* return_value);
 	HRESULT set_Color(Windows.UI.Color value);
@@ -59,13 +59,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).set_IsEnabled(value));
 	}
-	final FLOAT BrightnessLevel()
+	final float BrightnessLevel()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).get_BrightnessLevel(&_ret));
 		return _ret;
 	}
-	final void BrightnessLevel(FLOAT value)
+	final void BrightnessLevel(float value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).set_BrightnessLevel(value));
 	}

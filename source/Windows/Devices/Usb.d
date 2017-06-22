@@ -8,7 +8,7 @@ interface IUsbBulkInEndpointDescriptor : IInspectable
 {
 extern(Windows):
 	HRESULT get_MaxPacketSize(UINT32* return_value);
-	HRESULT get_EndpointNumber(BYTE* return_value);
+	HRESULT get_EndpointNumber(ubyte* return_value);
 	HRESULT get_Pipe(Windows.Devices.Usb.UsbBulkInPipe* return_value);
 }
 
@@ -32,7 +32,7 @@ interface IUsbBulkOutEndpointDescriptor : IInspectable
 {
 extern(Windows):
 	HRESULT get_MaxPacketSize(UINT32* return_value);
-	HRESULT get_EndpointNumber(BYTE* return_value);
+	HRESULT get_EndpointNumber(ubyte* return_value);
 	HRESULT get_Pipe(Windows.Devices.Usb.UsbBulkOutPipe* return_value);
 }
 
@@ -63,7 +63,7 @@ extern(Windows):
 interface IUsbConfigurationDescriptor : IInspectable
 {
 extern(Windows):
-	HRESULT get_ConfigurationValue(BYTE* return_value);
+	HRESULT get_ConfigurationValue(ubyte* return_value);
 	HRESULT get_MaxPowerMilliamps(UINT32* return_value);
 	HRESULT get_SelfPowered(bool* return_value);
 	HRESULT get_RemoteWakeup(bool* return_value);
@@ -89,8 +89,8 @@ extern(Windows):
 	HRESULT set_ControlTransferType(Windows.Devices.Usb.UsbControlTransferType value);
 	HRESULT get_Recipient(Windows.Devices.Usb.UsbControlRecipient* return_value);
 	HRESULT set_Recipient(Windows.Devices.Usb.UsbControlRecipient value);
-	HRESULT get_AsByte(BYTE* return_value);
-	HRESULT set_AsByte(BYTE value);
+	HRESULT get_AsByte(ubyte* return_value);
+	HRESULT set_AsByte(ubyte value);
 }
 
 @uuid("0a89f216-5f9d-4874-8904-da9ad3f5528f")
@@ -98,8 +98,8 @@ extern(Windows):
 interface IUsbDescriptor : IInspectable
 {
 extern(Windows):
-	HRESULT get_Length(BYTE* return_value);
-	HRESULT get_DescriptorType(BYTE* return_value);
+	HRESULT get_Length(ubyte* return_value);
+	HRESULT get_DescriptorType(ubyte* return_value);
 	HRESULT abi_ReadDescriptorBuffer(Windows.Storage.Streams.IBuffer buffer);
 }
 
@@ -125,12 +125,12 @@ interface IUsbDevice : IUsbDevice_Base, Windows.Foundation.IClosable {}
 interface IUsbDeviceClass : IInspectable
 {
 extern(Windows):
-	HRESULT get_ClassCode(BYTE* return_value);
-	HRESULT set_ClassCode(BYTE value);
-	HRESULT get_SubclassCode(Windows.Foundation.IReference!(BYTE)* return_value);
-	HRESULT set_SubclassCode(Windows.Foundation.IReference!(BYTE) value);
-	HRESULT get_ProtocolCode(Windows.Foundation.IReference!(BYTE)* return_value);
-	HRESULT set_ProtocolCode(Windows.Foundation.IReference!(BYTE) value);
+	HRESULT get_ClassCode(ubyte* return_value);
+	HRESULT set_ClassCode(ubyte value);
+	HRESULT get_SubclassCode(Windows.Foundation.IReference!(ubyte)* return_value);
+	HRESULT set_SubclassCode(Windows.Foundation.IReference!(ubyte) value);
+	HRESULT get_ProtocolCode(Windows.Foundation.IReference!(ubyte)* return_value);
+	HRESULT set_ProtocolCode(Windows.Foundation.IReference!(ubyte) value);
 }
 
 @uuid("686f955d-9b92-4b30-9781-c22c55ac35cb")
@@ -161,11 +161,11 @@ interface IUsbDeviceDescriptor : IInspectable
 {
 extern(Windows):
 	HRESULT get_BcdUsb(UINT32* return_value);
-	HRESULT get_MaxPacketSize0(BYTE* return_value);
+	HRESULT get_MaxPacketSize0(ubyte* return_value);
 	HRESULT get_VendorId(UINT32* return_value);
 	HRESULT get_ProductId(UINT32* return_value);
 	HRESULT get_BcdDeviceRevision(UINT32* return_value);
-	HRESULT get_NumberOfConfigurations(BYTE* return_value);
+	HRESULT get_NumberOfConfigurations(ubyte* return_value);
 }
 
 @uuid("066b85a2-09b7-4446-8502-6fe6dcaa7309")
@@ -185,7 +185,7 @@ extern(Windows):
 interface IUsbEndpointDescriptor : IInspectable
 {
 extern(Windows):
-	HRESULT get_EndpointNumber(BYTE* return_value);
+	HRESULT get_EndpointNumber(ubyte* return_value);
 	HRESULT get_Direction(Windows.Devices.Usb.UsbTransferDirection* return_value);
 	HRESULT get_EndpointType(Windows.Devices.Usb.UsbEndpointType* return_value);
 	HRESULT get_AsBulkInEndpointDescriptor(Windows.Devices.Usb.UsbBulkInEndpointDescriptor* return_value);
@@ -213,7 +213,7 @@ extern(Windows):
 	HRESULT get_BulkOutPipes(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkOutPipe)* return_value);
 	HRESULT get_InterruptOutPipes(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptOutPipe)* return_value);
 	HRESULT get_InterfaceSettings(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterfaceSetting)* return_value);
-	HRESULT get_InterfaceNumber(BYTE* return_value);
+	HRESULT get_InterfaceNumber(ubyte* return_value);
 	HRESULT get_Descriptors(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbDescriptor)* return_value);
 }
 
@@ -222,11 +222,11 @@ extern(Windows):
 interface IUsbInterfaceDescriptor : IInspectable
 {
 extern(Windows):
-	HRESULT get_ClassCode(BYTE* return_value);
-	HRESULT get_SubclassCode(BYTE* return_value);
-	HRESULT get_ProtocolCode(BYTE* return_value);
-	HRESULT get_AlternateSettingNumber(BYTE* return_value);
-	HRESULT get_InterfaceNumber(BYTE* return_value);
+	HRESULT get_ClassCode(ubyte* return_value);
+	HRESULT get_SubclassCode(ubyte* return_value);
+	HRESULT get_ProtocolCode(ubyte* return_value);
+	HRESULT get_AlternateSettingNumber(ubyte* return_value);
+	HRESULT get_InterfaceNumber(ubyte* return_value);
 }
 
 @uuid("e34a9ff5-77d6-48b6-b0be-16c6422316fe")
@@ -259,7 +259,7 @@ interface IUsbInterruptInEndpointDescriptor : IInspectable
 {
 extern(Windows):
 	HRESULT get_MaxPacketSize(UINT32* return_value);
-	HRESULT get_EndpointNumber(BYTE* return_value);
+	HRESULT get_EndpointNumber(ubyte* return_value);
 	HRESULT get_Interval(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_Pipe(Windows.Devices.Usb.UsbInterruptInPipe* return_value);
 }
@@ -289,7 +289,7 @@ interface IUsbInterruptOutEndpointDescriptor : IInspectable
 {
 extern(Windows):
 	HRESULT get_MaxPacketSize(UINT32* return_value);
-	HRESULT get_EndpointNumber(BYTE* return_value);
+	HRESULT get_EndpointNumber(ubyte* return_value);
 	HRESULT get_Interval(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_Pipe(Windows.Devices.Usb.UsbInterruptOutPipe* return_value);
 }
@@ -313,8 +313,8 @@ interface IUsbSetupPacket : IInspectable
 extern(Windows):
 	HRESULT get_RequestType(Windows.Devices.Usb.UsbControlRequestType* return_value);
 	HRESULT set_RequestType(Windows.Devices.Usb.UsbControlRequestType value);
-	HRESULT get_Request(BYTE* return_value);
-	HRESULT set_Request(BYTE value);
+	HRESULT get_Request(ubyte* return_value);
+	HRESULT set_Request(ubyte value);
 	HRESULT get_Value(UINT32* return_value);
 	HRESULT set_Value(UINT32 value);
 	HRESULT get_Index(UINT32* return_value);
@@ -340,9 +340,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInEndpointDescriptor).get_MaxPacketSize(&_ret));
 		return _ret;
 	}
-	final BYTE EndpointNumber()
+	final ubyte EndpointNumber()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInEndpointDescriptor).get_EndpointNumber(&_ret));
 		return _ret;
 	}
@@ -406,9 +406,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutEndpointDescriptor).get_MaxPacketSize(&_ret));
 		return _ret;
 	}
-	final BYTE EndpointNumber()
+	final ubyte EndpointNumber()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutEndpointDescriptor).get_EndpointNumber(&_ret));
 		return _ret;
 	}
@@ -479,9 +479,9 @@ extern(Windows):
 interface UsbConfigurationDescriptor : Windows.Devices.Usb.IUsbConfigurationDescriptor
 {
 extern(Windows):
-	final BYTE ConfigurationValue()
+	final ubyte ConfigurationValue()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfigurationDescriptor).get_ConfigurationValue(&_ret));
 		return _ret;
 	}
@@ -538,13 +538,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).set_Recipient(value));
 	}
-	final BYTE AsByte()
+	final ubyte AsByte()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).get_AsByte(&_ret));
 		return _ret;
 	}
-	final void AsByte(BYTE value)
+	final void AsByte(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).set_AsByte(value));
 	}
@@ -553,15 +553,15 @@ extern(Windows):
 interface UsbDescriptor : Windows.Devices.Usb.IUsbDescriptor
 {
 extern(Windows):
-	final BYTE Length()
+	final ubyte Length()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDescriptor).get_Length(&_ret));
 		return _ret;
 	}
-	final BYTE DescriptorType()
+	final ubyte DescriptorType()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDescriptor).get_DescriptorType(&_ret));
 		return _ret;
 	}
@@ -625,33 +625,33 @@ extern(Windows):
 interface UsbDeviceClass : Windows.Devices.Usb.IUsbDeviceClass
 {
 extern(Windows):
-	final BYTE ClassCode()
+	final ubyte ClassCode()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).get_ClassCode(&_ret));
 		return _ret;
 	}
-	final void ClassCode(BYTE value)
+	final void ClassCode(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).set_ClassCode(value));
 	}
-	final Windows.Foundation.IReference!(BYTE) SubclassCode()
+	final Windows.Foundation.IReference!(ubyte) SubclassCode()
 	{
-		Windows.Foundation.IReference!(BYTE) _ret;
+		Windows.Foundation.IReference!(ubyte) _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).get_SubclassCode(&_ret));
 		return _ret;
 	}
-	final void SubclassCode(Windows.Foundation.IReference!(BYTE) value)
+	final void SubclassCode(Windows.Foundation.IReference!(ubyte) value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).set_SubclassCode(value));
 	}
-	final Windows.Foundation.IReference!(BYTE) ProtocolCode()
+	final Windows.Foundation.IReference!(ubyte) ProtocolCode()
 	{
-		Windows.Foundation.IReference!(BYTE) _ret;
+		Windows.Foundation.IReference!(ubyte) _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).get_ProtocolCode(&_ret));
 		return _ret;
 	}
-	final void ProtocolCode(Windows.Foundation.IReference!(BYTE) value)
+	final void ProtocolCode(Windows.Foundation.IReference!(ubyte) value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).set_ProtocolCode(value));
 	}
@@ -670,9 +670,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_BcdUsb(&_ret));
 		return _ret;
 	}
-	final BYTE MaxPacketSize0()
+	final ubyte MaxPacketSize0()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_MaxPacketSize0(&_ret));
 		return _ret;
 	}
@@ -694,9 +694,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_BcdDeviceRevision(&_ret));
 		return _ret;
 	}
-	final BYTE NumberOfConfigurations()
+	final ubyte NumberOfConfigurations()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_NumberOfConfigurations(&_ret));
 		return _ret;
 	}
@@ -705,9 +705,9 @@ extern(Windows):
 interface UsbEndpointDescriptor : Windows.Devices.Usb.IUsbEndpointDescriptor
 {
 extern(Windows):
-	final BYTE EndpointNumber()
+	final ubyte EndpointNumber()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_EndpointNumber(&_ret));
 		return _ret;
 	}
@@ -782,9 +782,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_InterfaceSettings(&_ret));
 		return _ret;
 	}
-	final BYTE InterfaceNumber()
+	final ubyte InterfaceNumber()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_InterfaceNumber(&_ret));
 		return _ret;
 	}
@@ -799,33 +799,33 @@ extern(Windows):
 interface UsbInterfaceDescriptor : Windows.Devices.Usb.IUsbInterfaceDescriptor
 {
 extern(Windows):
-	final BYTE ClassCode()
+	final ubyte ClassCode()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_ClassCode(&_ret));
 		return _ret;
 	}
-	final BYTE SubclassCode()
+	final ubyte SubclassCode()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_SubclassCode(&_ret));
 		return _ret;
 	}
-	final BYTE ProtocolCode()
+	final ubyte ProtocolCode()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_ProtocolCode(&_ret));
 		return _ret;
 	}
-	final BYTE AlternateSettingNumber()
+	final ubyte AlternateSettingNumber()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_AlternateSettingNumber(&_ret));
 		return _ret;
 	}
-	final BYTE InterfaceNumber()
+	final ubyte InterfaceNumber()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_InterfaceNumber(&_ret));
 		return _ret;
 	}
@@ -893,9 +893,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor).get_MaxPacketSize(&_ret));
 		return _ret;
 	}
-	final BYTE EndpointNumber()
+	final ubyte EndpointNumber()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor).get_EndpointNumber(&_ret));
 		return _ret;
 	}
@@ -960,9 +960,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor).get_MaxPacketSize(&_ret));
 		return _ret;
 	}
-	final BYTE EndpointNumber()
+	final ubyte EndpointNumber()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor).get_EndpointNumber(&_ret));
 		return _ret;
 	}
@@ -1026,13 +1026,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_RequestType(value));
 	}
-	final BYTE Request()
+	final ubyte Request()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).get_Request(&_ret));
 		return _ret;
 	}
-	final void Request(BYTE value)
+	final void Request(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_Request(value));
 	}

@@ -40,10 +40,10 @@ interface ISpiDeviceProvider_Base : IInspectable
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_ConnectionSettings(Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings* return_value);
-	HRESULT abi_Write(UINT32 __bufferSize, BYTE* buffer);
-	HRESULT abi_Read(UINT32 __bufferSize, BYTE* out_buffer);
-	HRESULT abi_TransferSequential(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer);
-	HRESULT abi_TransferFullDuplex(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer);
+	HRESULT abi_Write(UINT32 __bufferSize, ubyte* buffer);
+	HRESULT abi_Read(UINT32 __bufferSize, ubyte* out_buffer);
+	HRESULT abi_TransferSequential(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer);
+	HRESULT abi_TransferFullDuplex(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer);
 }
 @uuid("0d1c3443-304b-405c-b4f7-f5ab1074461e")
 interface ISpiDeviceProvider : ISpiDeviceProvider_Base, Windows.Foundation.IClosable {}

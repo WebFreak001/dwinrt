@@ -15,7 +15,7 @@ extern(Windows):
 	HRESULT get_ManufacturerData(Windows.Foundation.Collections.IVector!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData)* return_value);
 	HRESULT get_DataSections(Windows.Foundation.Collections.IVector!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection)* return_value);
 	HRESULT abi_GetManufacturerDataByCompanyId(UINT16 companyId, Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData)* return_dataList);
-	HRESULT abi_GetSectionsByType(BYTE type, Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection)* return_sectionList);
+	HRESULT abi_GetSectionsByType(ubyte type, Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection)* return_sectionList);
 }
 
 @uuid("fbfad7f2-b9c5-4a08-bc51-502f8ef68a79")
@@ -23,8 +23,8 @@ extern(Windows):
 interface IBluetoothLEAdvertisementBytePattern : IInspectable
 {
 extern(Windows):
-	HRESULT get_DataType(BYTE* return_value);
-	HRESULT set_DataType(BYTE value);
+	HRESULT get_DataType(ubyte* return_value);
+	HRESULT set_DataType(ubyte value);
 	HRESULT get_Offset(INT16* return_value);
 	HRESULT set_Offset(INT16 value);
 	HRESULT get_Data(Windows.Storage.Streams.IBuffer* return_value);
@@ -36,7 +36,7 @@ extern(Windows):
 interface IBluetoothLEAdvertisementBytePatternFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_Create(BYTE dataType, INT16 offset, Windows.Storage.Streams.IBuffer data, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementBytePattern* return_value);
+	HRESULT abi_Create(ubyte dataType, INT16 offset, Windows.Storage.Streams.IBuffer data, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementBytePattern* return_value);
 }
 
 @uuid("d7213314-3a43-40f9-b6f0-92bfefc34ae3")
@@ -44,8 +44,8 @@ extern(Windows):
 interface IBluetoothLEAdvertisementDataSection : IInspectable
 {
 extern(Windows):
-	HRESULT get_DataType(BYTE* return_value);
-	HRESULT set_DataType(BYTE value);
+	HRESULT get_DataType(ubyte* return_value);
+	HRESULT set_DataType(ubyte value);
 	HRESULT get_Data(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT set_Data(Windows.Storage.Streams.IBuffer value);
 }
@@ -55,7 +55,7 @@ extern(Windows):
 interface IBluetoothLEAdvertisementDataSectionFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_Create(BYTE dataType, Windows.Storage.Streams.IBuffer data, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection* return_value);
+	HRESULT abi_Create(ubyte dataType, Windows.Storage.Streams.IBuffer data, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection* return_value);
 }
 
 @uuid("3bb6472f-0606-434b-a76e-74159f0684d3")
@@ -63,28 +63,28 @@ extern(Windows):
 interface IBluetoothLEAdvertisementDataTypesStatics : IInspectable
 {
 extern(Windows):
-	HRESULT get_Flags(BYTE* return_value);
-	HRESULT get_IncompleteService16BitUuids(BYTE* return_value);
-	HRESULT get_CompleteService16BitUuids(BYTE* return_value);
-	HRESULT get_IncompleteService32BitUuids(BYTE* return_value);
-	HRESULT get_CompleteService32BitUuids(BYTE* return_value);
-	HRESULT get_IncompleteService128BitUuids(BYTE* return_value);
-	HRESULT get_CompleteService128BitUuids(BYTE* return_value);
-	HRESULT get_ShortenedLocalName(BYTE* return_value);
-	HRESULT get_CompleteLocalName(BYTE* return_value);
-	HRESULT get_TxPowerLevel(BYTE* return_value);
-	HRESULT get_SlaveConnectionIntervalRange(BYTE* return_value);
-	HRESULT get_ServiceSolicitation16BitUuids(BYTE* return_value);
-	HRESULT get_ServiceSolicitation32BitUuids(BYTE* return_value);
-	HRESULT get_ServiceSolicitation128BitUuids(BYTE* return_value);
-	HRESULT get_ServiceData16BitUuids(BYTE* return_value);
-	HRESULT get_ServiceData32BitUuids(BYTE* return_value);
-	HRESULT get_ServiceData128BitUuids(BYTE* return_value);
-	HRESULT get_PublicTargetAddress(BYTE* return_value);
-	HRESULT get_RandomTargetAddress(BYTE* return_value);
-	HRESULT get_Appearance(BYTE* return_value);
-	HRESULT get_AdvertisingInterval(BYTE* return_value);
-	HRESULT get_ManufacturerSpecificData(BYTE* return_value);
+	HRESULT get_Flags(ubyte* return_value);
+	HRESULT get_IncompleteService16BitUuids(ubyte* return_value);
+	HRESULT get_CompleteService16BitUuids(ubyte* return_value);
+	HRESULT get_IncompleteService32BitUuids(ubyte* return_value);
+	HRESULT get_CompleteService32BitUuids(ubyte* return_value);
+	HRESULT get_IncompleteService128BitUuids(ubyte* return_value);
+	HRESULT get_CompleteService128BitUuids(ubyte* return_value);
+	HRESULT get_ShortenedLocalName(ubyte* return_value);
+	HRESULT get_CompleteLocalName(ubyte* return_value);
+	HRESULT get_TxPowerLevel(ubyte* return_value);
+	HRESULT get_SlaveConnectionIntervalRange(ubyte* return_value);
+	HRESULT get_ServiceSolicitation16BitUuids(ubyte* return_value);
+	HRESULT get_ServiceSolicitation32BitUuids(ubyte* return_value);
+	HRESULT get_ServiceSolicitation128BitUuids(ubyte* return_value);
+	HRESULT get_ServiceData16BitUuids(ubyte* return_value);
+	HRESULT get_ServiceData32BitUuids(ubyte* return_value);
+	HRESULT get_ServiceData128BitUuids(ubyte* return_value);
+	HRESULT get_PublicTargetAddress(ubyte* return_value);
+	HRESULT get_RandomTargetAddress(ubyte* return_value);
+	HRESULT get_Appearance(ubyte* return_value);
+	HRESULT get_AdvertisingInterval(ubyte* return_value);
+	HRESULT get_ManufacturerSpecificData(ubyte* return_value);
 }
 
 @uuid("131eb0d3-d04e-47b1-837e-49405bf6f80f")
@@ -133,7 +133,7 @@ interface IBluetoothLEAdvertisementReceivedEventArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_RawSignalStrengthInDBm(INT16* return_value);
-	HRESULT get_BluetoothAddress(UINT64* return_value);
+	HRESULT get_BluetoothAddress(ulong* return_value);
 	HRESULT get_AdvertisementType(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementType* return_value);
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
 	HRESULT get_Advertisement(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement* return_value);
@@ -245,7 +245,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement).abi_GetManufacturerDataByCompanyId(companyId, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection) GetSectionsByType(BYTE type)
+	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection) GetSectionsByType(ubyte type)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection) _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement).abi_GetSectionsByType(type, &_ret));
@@ -256,13 +256,13 @@ extern(Windows):
 interface BluetoothLEAdvertisementBytePattern : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern
 {
 extern(Windows):
-	final BYTE DataType()
+	final ubyte DataType()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern).get_DataType(&_ret));
 		return _ret;
 	}
-	final void DataType(BYTE value)
+	final void DataType(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern).set_DataType(value));
 	}
@@ -291,13 +291,13 @@ extern(Windows):
 interface BluetoothLEAdvertisementDataSection : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSection
 {
 extern(Windows):
-	final BYTE DataType()
+	final ubyte DataType()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSection).get_DataType(&_ret));
 		return _ret;
 	}
-	final void DataType(BYTE value)
+	final void DataType(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSection).set_DataType(value));
 	}
@@ -399,9 +399,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementReceivedEventArgs).get_RawSignalStrengthInDBm(&_ret));
 		return _ret;
 	}
-	final UINT64 BluetoothAddress()
+	final ulong BluetoothAddress()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementReceivedEventArgs).get_BluetoothAddress(&_ret));
 		return _ret;
 	}

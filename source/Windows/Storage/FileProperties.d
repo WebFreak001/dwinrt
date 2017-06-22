@@ -7,7 +7,7 @@ import dwinrt;
 interface IBasicProperties : IInspectable
 {
 extern(Windows):
-	HRESULT get_Size(UINT64* return_value);
+	HRESULT get_Size(ulong* return_value);
 	HRESULT get_DateModified(Windows.Foundation.DateTime* return_value);
 	HRESULT get_ItemDate(Windows.Foundation.DateTime* return_value);
 }
@@ -168,9 +168,9 @@ interface IVideoProperties : IVideoProperties_Base, Windows.Storage.FileProperti
 interface BasicProperties : Windows.Storage.FileProperties.IBasicProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
 extern(Windows):
-	final UINT64 Size()
+	final ulong Size()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.FileProperties.IBasicProperties).get_Size(&_ret));
 		return _ret;
 	}
@@ -591,35 +591,35 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Streams.IContentTypeProvider).get_ContentType(&_ret));
 		return _ret;
 	}
-	final UINT64 Size()
+	final ulong Size()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
 		return _ret;
 	}
-	final void Size(UINT64 value)
+	final void Size(ulong value)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
 	}
-	final Windows.Storage.Streams.IInputStream GetInputStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IInputStream GetInputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IInputStream _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
 		return _ret;
 	}
-	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(UINT64 position)
+	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
 		return _ret;
 	}
-	final UINT64 Position()
+	final ulong Position()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
 		return _ret;
 	}
-	final void Seek(UINT64 position)
+	final void Seek(ulong position)
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
 	}

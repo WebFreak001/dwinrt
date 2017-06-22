@@ -19,7 +19,7 @@ extern(Windows):
 	HRESULT abi_DeleteMultipleAsync(Windows.Foundation.Collections.IIterable!(HSTRING) contentIds, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_DeleteAllAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_RetrievePropertiesAsync(HSTRING contentId, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))* return_operation);
-	HRESULT get_Revision(UINT64* return_value);
+	HRESULT get_Revision(ulong* return_value);
 }
 
 @uuid("70e3b0f8-4bfc-428a-8889-cc51da9a7b9d")
@@ -253,9 +253,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexer).abi_RetrievePropertiesAsync(contentId, propertiesToRetrieve, &_ret));
 		return _ret;
 	}
-	final UINT64 Revision()
+	final ulong Revision()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexer).get_Revision(&_ret));
 		return _ret;
 	}

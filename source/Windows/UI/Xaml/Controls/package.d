@@ -5429,12 +5429,12 @@ extern(Windows):
 	HRESULT get_ScrollableHeight(double* return_value);
 	HRESULT get_ComputedVerticalScrollBarVisibility(Windows.UI.Xaml.Visibility* return_value);
 	HRESULT get_ExtentHeight(double* return_value);
-	HRESULT get_MinZoomFactor(FLOAT* return_value);
-	HRESULT set_MinZoomFactor(FLOAT value);
-	HRESULT get_MaxZoomFactor(FLOAT* return_value);
-	HRESULT set_MaxZoomFactor(FLOAT value);
-	HRESULT get_ZoomFactor(FLOAT* return_value);
-	HRESULT get_ZoomSnapPoints(Windows.Foundation.Collections.IVector!(FLOAT)* return_value);
+	HRESULT get_MinZoomFactor(float* return_value);
+	HRESULT set_MinZoomFactor(float value);
+	HRESULT get_MaxZoomFactor(float* return_value);
+	HRESULT set_MaxZoomFactor(float value);
+	HRESULT get_ZoomFactor(float* return_value);
+	HRESULT get_ZoomSnapPoints(Windows.Foundation.Collections.IVector!(float)* return_value);
 	HRESULT add_ViewChanged(Windows.Foundation.EventHandler!(Windows.UI.Xaml.Controls.ScrollViewerViewChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ViewChanged(EventRegistrationToken token);
 	deprecated("ScrollToHorizontalOffset may be altered or unavailable for releases after Windows 8.1. Instead, use ChangeView.")
@@ -5442,7 +5442,7 @@ extern(Windows):
 	deprecated("ScrollToVerticalOffset may be altered or unavailable for releases after Windows 8.1. Instead, use ChangeView.")
 	HRESULT abi_ScrollToVerticalOffset(double offset);
 	deprecated("ZoomToFactor may be altered or unavailable for releases after Windows 8.1. Instead, use ChangeView.")
-	HRESULT abi_ZoomToFactor(FLOAT factor);
+	HRESULT abi_ZoomToFactor(float factor);
 	HRESULT abi_InvalidateScrollInfo();
 	HRESULT get_IsDeferredScrollingEnabled(bool* return_value);
 	HRESULT set_IsDeferredScrollingEnabled(bool value);
@@ -5463,8 +5463,8 @@ extern(Windows):
 	HRESULT set_TopHeader(Windows.UI.Xaml.UIElement value);
 	HRESULT add_ViewChanging(Windows.Foundation.EventHandler!(Windows.UI.Xaml.Controls.ScrollViewerViewChangingEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_ViewChanging(EventRegistrationToken token);
-	HRESULT abi_ChangeView(Windows.Foundation.IReference!(double) horizontalOffset, Windows.Foundation.IReference!(double) verticalOffset, Windows.Foundation.IReference!(FLOAT) zoomFactor, bool* return_returnValue);
-	HRESULT abi_ChangeViewWithOptionalAnimation(Windows.Foundation.IReference!(double) horizontalOffset, Windows.Foundation.IReference!(double) verticalOffset, Windows.Foundation.IReference!(FLOAT) zoomFactor, bool disableAnimation, bool* return_returnValue);
+	HRESULT abi_ChangeView(Windows.Foundation.IReference!(double) horizontalOffset, Windows.Foundation.IReference!(double) verticalOffset, Windows.Foundation.IReference!(float) zoomFactor, bool* return_returnValue);
+	HRESULT abi_ChangeViewWithOptionalAnimation(Windows.Foundation.IReference!(double) horizontalOffset, Windows.Foundation.IReference!(double) verticalOffset, Windows.Foundation.IReference!(float) zoomFactor, bool disableAnimation, bool* return_returnValue);
 }
 
 @uuid("74e9be21-5de2-595e-bc08-dbd3c577492c")
@@ -5563,7 +5563,7 @@ interface IScrollViewerView : IInspectable
 extern(Windows):
 	HRESULT get_HorizontalOffset(double* return_value);
 	HRESULT get_VerticalOffset(double* return_value);
-	HRESULT get_ZoomFactor(FLOAT* return_value);
+	HRESULT get_ZoomFactor(float* return_value);
 }
 
 @uuid("4dd04f7e-7a11-4b2e-9933-577df39252b6")
@@ -6077,8 +6077,8 @@ extern(Windows):
 interface ISwapChainPanel : IInspectable
 {
 extern(Windows):
-	HRESULT get_CompositionScaleX(FLOAT* return_value);
-	HRESULT get_CompositionScaleY(FLOAT* return_value);
+	HRESULT get_CompositionScaleX(float* return_value);
+	HRESULT get_CompositionScaleY(float* return_value);
 	HRESULT add_CompositionScaleChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SwapChainPanel, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_CompositionScaleChanged(EventRegistrationToken token);
 	HRESULT abi_CreateCoreIndependentInputSource(Windows.UI.Core.CoreInputDeviceTypes deviceTypes, Windows.UI.Core.CoreIndependentInputSource* return_returnValue);
@@ -12553,15 +12553,15 @@ extern(Windows):
 	{
 		Debug.OK(remove_VerticalSnapPointsChanged(token));
 	}
-	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
+	final Windows.Foundation.Collections.IVectorView!(float) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
-		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
+		Windows.Foundation.Collections.IVectorView!(float) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetIrregularSnapPoints(orientation, alignment, &_ret));
 		return _ret;
 	}
-	final FLOAT GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, FLOAT* out_offset)
+	final float GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, float* out_offset)
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
 		return _ret;
 	}
@@ -16053,35 +16053,35 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ExtentHeight(&_ret));
 		return _ret;
 	}
-	final FLOAT MinZoomFactor()
+	final float MinZoomFactor()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_MinZoomFactor(&_ret));
 		return _ret;
 	}
-	final void MinZoomFactor(FLOAT value)
+	final void MinZoomFactor(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_MinZoomFactor(value));
 	}
-	final FLOAT MaxZoomFactor()
+	final float MaxZoomFactor()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_MaxZoomFactor(&_ret));
 		return _ret;
 	}
-	final void MaxZoomFactor(FLOAT value)
+	final void MaxZoomFactor(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).set_MaxZoomFactor(value));
 	}
-	final FLOAT ZoomFactor()
+	final float ZoomFactor()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ZoomFactor(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IVector!(FLOAT) ZoomSnapPoints()
+	final Windows.Foundation.Collections.IVector!(float) ZoomSnapPoints()
 	{
-		Windows.Foundation.Collections.IVector!(FLOAT) _ret;
+		Windows.Foundation.Collections.IVector!(float) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).get_ZoomSnapPoints(&_ret));
 		return _ret;
 	}
@@ -16106,7 +16106,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).abi_ScrollToVerticalOffset(offset));
 	}
 	deprecated("ZoomToFactor may be altered or unavailable for releases after Windows 8.1. Instead, use ChangeView.")
-	final void ZoomToFactor(FLOAT factor)
+	final void ZoomToFactor(float factor)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer).abi_ZoomToFactor(factor));
 	}
@@ -16174,13 +16174,13 @@ extern(Windows):
 	{
 		Debug.OK(remove_ViewChanging(token));
 	}
-	final bool ChangeView(Windows.Foundation.IReference!(double) horizontalOffset, Windows.Foundation.IReference!(double) verticalOffset, Windows.Foundation.IReference!(FLOAT) zoomFactor)
+	final bool ChangeView(Windows.Foundation.IReference!(double) horizontalOffset, Windows.Foundation.IReference!(double) verticalOffset, Windows.Foundation.IReference!(float) zoomFactor)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).abi_ChangeView(horizontalOffset, verticalOffset, zoomFactor, &_ret));
 		return _ret;
 	}
-	final bool ChangeViewWithOptionalAnimation(Windows.Foundation.IReference!(double) horizontalOffset, Windows.Foundation.IReference!(double) verticalOffset, Windows.Foundation.IReference!(FLOAT) zoomFactor, bool disableAnimation)
+	final bool ChangeViewWithOptionalAnimation(Windows.Foundation.IReference!(double) horizontalOffset, Windows.Foundation.IReference!(double) verticalOffset, Windows.Foundation.IReference!(float) zoomFactor, bool disableAnimation)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewer2).abi_ChangeViewWithOptionalAnimation(horizontalOffset, verticalOffset, zoomFactor, disableAnimation, &_ret));
@@ -16223,9 +16223,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewerView).get_VerticalOffset(&_ret));
 		return _ret;
 	}
-	final FLOAT ZoomFactor()
+	final float ZoomFactor()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IScrollViewerView).get_ZoomFactor(&_ret));
 		return _ret;
 	}
@@ -17016,15 +17016,15 @@ extern(Windows):
 	{
 		Debug.OK(remove_VerticalSnapPointsChanged(token));
 	}
-	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
+	final Windows.Foundation.Collections.IVectorView!(float) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
-		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
+		Windows.Foundation.Collections.IVectorView!(float) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetIrregularSnapPoints(orientation, alignment, &_ret));
 		return _ret;
 	}
-	final FLOAT GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, FLOAT* out_offset)
+	final float GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, float* out_offset)
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
 		return _ret;
 	}
@@ -17105,15 +17105,15 @@ extern(Windows):
 interface SwapChainPanel : Windows.UI.Xaml.Controls.Grid, Windows.UI.Xaml.Controls.ISwapChainPanel
 {
 extern(Windows):
-	final FLOAT CompositionScaleX()
+	final float CompositionScaleX()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISwapChainPanel).get_CompositionScaleX(&_ret));
 		return _ret;
 	}
-	final FLOAT CompositionScaleY()
+	final float CompositionScaleY()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISwapChainPanel).get_CompositionScaleY(&_ret));
 		return _ret;
 	}

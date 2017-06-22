@@ -66,9 +66,9 @@ extern(Windows):
 	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
 	HRESULT set_Format(Windows.Devices.Sms.SmsDataFormat value);
 	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
-	HRESULT abi_GetData(UINT32* out___valueSize, BYTE** return_value);
+	HRESULT abi_GetData(UINT32* out___valueSize, ubyte** return_value);
 	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
-	HRESULT abi_SetData(UINT32 __valueSize, BYTE* value);
+	HRESULT abi_SetData(UINT32 __valueSize, ubyte* value);
 }
 @uuid("5bf4e813-3b53-4c6e-b61a-d86a63755650")
 interface ISmsBinaryMessage : ISmsBinaryMessage_Base, Windows.Devices.Sms.ISmsMessage {}
@@ -420,7 +420,7 @@ extern(Windows):
 	deprecated("ISmsTextMessageStatics may be altered or unavailable for releases after Windows 10.")
 	HRESULT abi_FromBinaryMessage(Windows.Devices.Sms.SmsBinaryMessage binaryMessage, Windows.Devices.Sms.SmsTextMessage* return_textMessage);
 	deprecated("ISmsTextMessageStatics may be altered or unavailable for releases after Windows 10.")
-	HRESULT abi_FromBinaryData(Windows.Devices.Sms.SmsDataFormat format, UINT32 __valueSize, BYTE* value, Windows.Devices.Sms.SmsTextMessage* return_textMessage);
+	HRESULT abi_FromBinaryData(Windows.Devices.Sms.SmsDataFormat format, UINT32 __valueSize, ubyte* value, Windows.Devices.Sms.SmsTextMessage* return_textMessage);
 }
 
 @uuid("271aa0a6-95b1-44ff-bcb8-b8fdd7e08bc3")
@@ -747,14 +747,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBinaryMessage).set_Format(value));
 	}
 	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
-	final BYTE* GetData(UINT32* out___valueSize)
+	final ubyte* GetData(UINT32* out___valueSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBinaryMessage).abi_GetData(out___valueSize, &_ret));
 		return _ret;
 	}
 	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
-	final void SetData(UINT32 __valueSize, BYTE* value)
+	final void SetData(UINT32 __valueSize, ubyte* value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBinaryMessage).abi_SetData(__valueSize, value));
 	}

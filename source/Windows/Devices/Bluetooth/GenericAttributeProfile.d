@@ -163,7 +163,7 @@ interface IGattCharacteristicsResult : IInspectable
 {
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus* return_value);
-	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);
+	HRESULT get_ProtocolError(Windows.Foundation.IReference!(ubyte)* return_value);
 	HRESULT get_Characteristics(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic)* return_value);
 }
 
@@ -174,7 +174,7 @@ interface IGattClientNotificationResult : IInspectable
 extern(Windows):
 	HRESULT get_SubscribedClient(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient* return_value);
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus* return_value);
-	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);
+	HRESULT get_ProtocolError(Windows.Foundation.IReference!(ubyte)* return_value);
 }
 
 @uuid("92055f2b-8084-4344-b4c2-284de19a8506")
@@ -227,7 +227,7 @@ interface IGattDescriptorsResult : IInspectable
 {
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus* return_value);
-	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);
+	HRESULT get_ProtocolError(Windows.Foundation.IReference!(ubyte)* return_value);
 	HRESULT get_Descriptors(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptor)* return_value);
 }
 
@@ -317,7 +317,7 @@ interface IGattDeviceServicesResult : IInspectable
 {
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus* return_value);
-	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);
+	HRESULT get_ProtocolError(Windows.Foundation.IReference!(ubyte)* return_value);
 	HRESULT get_Services(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService)* return_value);
 }
 
@@ -425,10 +425,10 @@ extern(Windows):
 interface IGattPresentationFormat : IInspectable
 {
 extern(Windows):
-	HRESULT get_FormatType(BYTE* return_value);
+	HRESULT get_FormatType(ubyte* return_value);
 	HRESULT get_Exponent(INT32* return_value);
 	HRESULT get_Unit(UINT16* return_value);
-	HRESULT get_Namespace(BYTE* return_value);
+	HRESULT get_Namespace(ubyte* return_value);
 	HRESULT get_Description(UINT16* return_value);
 }
 
@@ -437,7 +437,7 @@ extern(Windows):
 interface IGattPresentationFormatStatics : IInspectable
 {
 extern(Windows):
-	HRESULT get_BluetoothSigAssignedNumbers(BYTE* return_value);
+	HRESULT get_BluetoothSigAssignedNumbers(ubyte* return_value);
 }
 
 @uuid("a9c21713-b82f-435e-b634-21fd85a43c07")
@@ -445,7 +445,7 @@ extern(Windows):
 interface IGattPresentationFormatStatics2_Base : IInspectable
 {
 extern(Windows):
-	HRESULT abi_FromParts(BYTE formatType, INT32 exponent, UINT16 unit, BYTE namespaceId, UINT16 description, Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat* return_result);
+	HRESULT abi_FromParts(ubyte formatType, INT32 exponent, UINT16 unit, ubyte namespaceId, UINT16 description, Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat* return_result);
 }
 @uuid("a9c21713-b82f-435e-b634-21fd85a43c07")
 @WinrtFactory("Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat")
@@ -456,33 +456,33 @@ interface IGattPresentationFormatStatics2 : IGattPresentationFormatStatics2_Base
 interface IGattPresentationFormatTypesStatics : IInspectable
 {
 extern(Windows):
-	HRESULT get_Boolean(BYTE* return_value);
-	HRESULT get_Bit2(BYTE* return_value);
-	HRESULT get_Nibble(BYTE* return_value);
-	HRESULT get_UInt8(BYTE* return_value);
-	HRESULT get_UInt12(BYTE* return_value);
-	HRESULT get_UInt16(BYTE* return_value);
-	HRESULT get_UInt24(BYTE* return_value);
-	HRESULT get_UInt32(BYTE* return_value);
-	HRESULT get_UInt48(BYTE* return_value);
-	HRESULT get_UInt64(BYTE* return_value);
-	HRESULT get_UInt128(BYTE* return_value);
-	HRESULT get_SInt8(BYTE* return_value);
-	HRESULT get_SInt12(BYTE* return_value);
-	HRESULT get_SInt16(BYTE* return_value);
-	HRESULT get_SInt24(BYTE* return_value);
-	HRESULT get_SInt32(BYTE* return_value);
-	HRESULT get_SInt48(BYTE* return_value);
-	HRESULT get_SInt64(BYTE* return_value);
-	HRESULT get_SInt128(BYTE* return_value);
-	HRESULT get_Float32(BYTE* return_value);
-	HRESULT get_Float64(BYTE* return_value);
-	HRESULT get_SFloat(BYTE* return_value);
-	HRESULT get_Float(BYTE* return_value);
-	HRESULT get_DUInt16(BYTE* return_value);
-	HRESULT get_Utf8(BYTE* return_value);
-	HRESULT get_Utf16(BYTE* return_value);
-	HRESULT get_Struct(BYTE* return_value);
+	HRESULT get_Boolean(ubyte* return_value);
+	HRESULT get_Bit2(ubyte* return_value);
+	HRESULT get_Nibble(ubyte* return_value);
+	HRESULT get_UInt8(ubyte* return_value);
+	HRESULT get_UInt12(ubyte* return_value);
+	HRESULT get_UInt16(ubyte* return_value);
+	HRESULT get_UInt24(ubyte* return_value);
+	HRESULT get_UInt32(ubyte* return_value);
+	HRESULT get_UInt48(ubyte* return_value);
+	HRESULT get_UInt64(ubyte* return_value);
+	HRESULT get_UInt128(ubyte* return_value);
+	HRESULT get_SInt8(ubyte* return_value);
+	HRESULT get_SInt12(ubyte* return_value);
+	HRESULT get_SInt16(ubyte* return_value);
+	HRESULT get_SInt24(ubyte* return_value);
+	HRESULT get_SInt32(ubyte* return_value);
+	HRESULT get_SInt48(ubyte* return_value);
+	HRESULT get_SInt64(ubyte* return_value);
+	HRESULT get_SInt128(ubyte* return_value);
+	HRESULT get_Float32(ubyte* return_value);
+	HRESULT get_Float64(ubyte* return_value);
+	HRESULT get_SFloat(ubyte* return_value);
+	HRESULT get_Float(ubyte* return_value);
+	HRESULT get_DUInt16(ubyte* return_value);
+	HRESULT get_Utf8(ubyte* return_value);
+	HRESULT get_Utf16(ubyte* return_value);
+	HRESULT get_Struct(ubyte* return_value);
 }
 
 @uuid("ca46c5c5-0ecc-4809-bea3-cf79bc991e37")
@@ -490,23 +490,23 @@ extern(Windows):
 interface IGattProtocolErrorStatics : IInspectable
 {
 extern(Windows):
-	HRESULT get_InvalidHandle(BYTE* return_value);
-	HRESULT get_ReadNotPermitted(BYTE* return_value);
-	HRESULT get_WriteNotPermitted(BYTE* return_value);
-	HRESULT get_InvalidPdu(BYTE* return_value);
-	HRESULT get_InsufficientAuthentication(BYTE* return_value);
-	HRESULT get_RequestNotSupported(BYTE* return_value);
-	HRESULT get_InvalidOffset(BYTE* return_value);
-	HRESULT get_InsufficientAuthorization(BYTE* return_value);
-	HRESULT get_PrepareQueueFull(BYTE* return_value);
-	HRESULT get_AttributeNotFound(BYTE* return_value);
-	HRESULT get_AttributeNotLong(BYTE* return_value);
-	HRESULT get_InsufficientEncryptionKeySize(BYTE* return_value);
-	HRESULT get_InvalidAttributeValueLength(BYTE* return_value);
-	HRESULT get_UnlikelyError(BYTE* return_value);
-	HRESULT get_InsufficientEncryption(BYTE* return_value);
-	HRESULT get_UnsupportedGroupType(BYTE* return_value);
-	HRESULT get_InsufficientResources(BYTE* return_value);
+	HRESULT get_InvalidHandle(ubyte* return_value);
+	HRESULT get_ReadNotPermitted(ubyte* return_value);
+	HRESULT get_WriteNotPermitted(ubyte* return_value);
+	HRESULT get_InvalidPdu(ubyte* return_value);
+	HRESULT get_InsufficientAuthentication(ubyte* return_value);
+	HRESULT get_RequestNotSupported(ubyte* return_value);
+	HRESULT get_InvalidOffset(ubyte* return_value);
+	HRESULT get_InsufficientAuthorization(ubyte* return_value);
+	HRESULT get_PrepareQueueFull(ubyte* return_value);
+	HRESULT get_AttributeNotFound(ubyte* return_value);
+	HRESULT get_AttributeNotLong(ubyte* return_value);
+	HRESULT get_InsufficientEncryptionKeySize(ubyte* return_value);
+	HRESULT get_InvalidAttributeValueLength(ubyte* return_value);
+	HRESULT get_UnlikelyError(ubyte* return_value);
+	HRESULT get_InsufficientEncryption(ubyte* return_value);
+	HRESULT get_UnsupportedGroupType(ubyte* return_value);
+	HRESULT get_InsufficientResources(ubyte* return_value);
 }
 
 @uuid("63a66f09-1aea-4c4c-a50f-97bae474b348")
@@ -523,7 +523,7 @@ extern(Windows):
 interface IGattReadClientCharacteristicConfigurationDescriptorResult2 : IInspectable
 {
 extern(Windows):
-	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);
+	HRESULT get_ProtocolError(Windows.Foundation.IReference!(ubyte)* return_value);
 }
 
 @uuid("f1dd6535-6acd-42a6-a4bb-d789dae0043e")
@@ -537,7 +537,7 @@ extern(Windows):
 	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadRequest, Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestStateChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StateChanged(EventRegistrationToken token);
 	HRESULT abi_RespondWithValue(Windows.Storage.Streams.IBuffer value);
-	HRESULT abi_RespondWithProtocolError(BYTE protocolError);
+	HRESULT abi_RespondWithProtocolError(ubyte protocolError);
 }
 
 @uuid("93497243-f39c-484b-8ab6-996ba486cfa3")
@@ -564,7 +564,7 @@ extern(Windows):
 interface IGattReadResult2 : IInspectable
 {
 extern(Windows):
-	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);
+	HRESULT get_ProtocolError(Windows.Foundation.IReference!(ubyte)* return_value);
 }
 
 @uuid("63a66f07-1aea-4c4c-a50f-97bae474b348")
@@ -746,7 +746,7 @@ extern(Windows):
 	HRESULT add_StateChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequest, Windows.Devices.Bluetooth.GenericAttributeProfile.GattRequestStateChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StateChanged(EventRegistrationToken token);
 	HRESULT abi_Respond();
-	HRESULT abi_RespondWithProtocolError(BYTE protocolError);
+	HRESULT abi_RespondWithProtocolError(ubyte protocolError);
 }
 
 @uuid("2dec8bbe-a73a-471a-94d5-037deadd0806")
@@ -765,7 +765,7 @@ interface IGattWriteResult : IInspectable
 {
 extern(Windows):
 	HRESULT get_Status(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus* return_value);
-	HRESULT get_ProtocolError(Windows.Foundation.IReference!(BYTE)* return_value);
+	HRESULT get_ProtocolError(Windows.Foundation.IReference!(ubyte)* return_value);
 }
 
 interface GattCharacteristic : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic2, Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3
@@ -934,9 +934,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristicsResult).get_Status(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	final Windows.Foundation.IReference!(ubyte) ProtocolError()
 	{
-		Windows.Foundation.IReference!(BYTE) _ret;
+		Windows.Foundation.IReference!(ubyte) _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristicsResult).get_ProtocolError(&_ret));
 		return _ret;
 	}
@@ -963,9 +963,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattClientNotificationResult).get_Status(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	final Windows.Foundation.IReference!(ubyte) ProtocolError()
 	{
-		Windows.Foundation.IReference!(BYTE) _ret;
+		Windows.Foundation.IReference!(ubyte) _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattClientNotificationResult).get_ProtocolError(&_ret));
 		return _ret;
 	}
@@ -1035,9 +1035,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptorsResult).get_Status(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	final Windows.Foundation.IReference!(ubyte) ProtocolError()
 	{
-		Windows.Foundation.IReference!(BYTE) _ret;
+		Windows.Foundation.IReference!(ubyte) _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptorsResult).get_ProtocolError(&_ret));
 		return _ret;
 	}
@@ -1205,9 +1205,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceServicesResult).get_Status(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	final Windows.Foundation.IReference!(ubyte) ProtocolError()
 	{
-		Windows.Foundation.IReference!(BYTE) _ret;
+		Windows.Foundation.IReference!(ubyte) _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceServicesResult).get_ProtocolError(&_ret));
 		return _ret;
 	}
@@ -1531,9 +1531,9 @@ extern(Windows):
 interface GattPresentationFormat : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattPresentationFormat
 {
 extern(Windows):
-	final BYTE FormatType()
+	final ubyte FormatType()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattPresentationFormat).get_FormatType(&_ret));
 		return _ret;
 	}
@@ -1549,9 +1549,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattPresentationFormat).get_Unit(&_ret));
 		return _ret;
 	}
-	final BYTE Namespace()
+	final ubyte Namespace()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattPresentationFormat).get_Namespace(&_ret));
 		return _ret;
 	}
@@ -1586,9 +1586,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadClientCharacteristicConfigurationDescriptorResult).get_ClientCharacteristicConfigurationDescriptor(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	final Windows.Foundation.IReference!(ubyte) ProtocolError()
 	{
-		Windows.Foundation.IReference!(BYTE) _ret;
+		Windows.Foundation.IReference!(ubyte) _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadClientCharacteristicConfigurationDescriptorResult2).get_ProtocolError(&_ret));
 		return _ret;
 	}
@@ -1629,7 +1629,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequest).abi_RespondWithValue(value));
 	}
-	final void RespondWithProtocolError(BYTE protocolError)
+	final void RespondWithProtocolError(ubyte protocolError)
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadRequest).abi_RespondWithProtocolError(protocolError));
 	}
@@ -1673,9 +1673,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadResult).get_Value(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	final Windows.Foundation.IReference!(ubyte) ProtocolError()
 	{
-		Windows.Foundation.IReference!(BYTE) _ret;
+		Windows.Foundation.IReference!(ubyte) _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReadResult2).get_ProtocolError(&_ret));
 		return _ret;
 	}
@@ -1986,7 +1986,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequest).abi_Respond());
 	}
-	final void RespondWithProtocolError(BYTE protocolError)
+	final void RespondWithProtocolError(ubyte protocolError)
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteRequest).abi_RespondWithProtocolError(protocolError));
 	}
@@ -2024,9 +2024,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteResult).get_Status(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(BYTE) ProtocolError()
+	final Windows.Foundation.IReference!(ubyte) ProtocolError()
 	{
-		Windows.Foundation.IReference!(BYTE) _ret;
+		Windows.Foundation.IReference!(ubyte) _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattWriteResult).get_ProtocolError(&_ret));
 		return _ret;
 	}

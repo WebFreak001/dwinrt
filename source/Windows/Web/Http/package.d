@@ -5,10 +5,10 @@ import dwinrt;
 struct HttpProgress
 {
 	Windows.Web.Http.HttpProgressStage Stage;
-	UINT64 BytesSent;
-	Windows.Foundation.IReference!(UINT64) TotalBytesToSend;
-	UINT64 BytesReceived;
-	Windows.Foundation.IReference!(UINT64) TotalBytesToReceive;
+	ulong BytesSent;
+	Windows.Foundation.IReference!(ulong) TotalBytesToSend;
+	ulong BytesReceived;
+	Windows.Foundation.IReference!(ulong) TotalBytesToReceive;
 	UINT32 Retries;
 }
 
@@ -55,12 +55,12 @@ interface IHttpContent_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Headers(Windows.Web.Http.Headers.HttpContentHeaderCollection* return_value);
-	HRESULT abi_BufferAllAsync(Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64)* return_operation);
-	HRESULT abi_ReadAsBufferAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64)* return_operation);
-	HRESULT abi_ReadAsInputStreamAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64)* return_operation);
-	HRESULT abi_ReadAsStringAsync(Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64)* return_operation);
-	HRESULT abi_TryComputeLength(UINT64* out_length, bool* return_succeeded);
-	HRESULT abi_WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64)* return_operation);
+	HRESULT abi_BufferAllAsync(Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong)* return_operation);
+	HRESULT abi_ReadAsBufferAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, ulong)* return_operation);
+	HRESULT abi_ReadAsInputStreamAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, ulong)* return_operation);
+	HRESULT abi_ReadAsStringAsync(Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, ulong)* return_operation);
+	HRESULT abi_TryComputeLength(ulong* out_length, bool* return_succeeded);
+	HRESULT abi_WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong)* return_operation);
 }
 @uuid("6b14a441-fba7-4bd2-af0a-839de7c295da")
 interface IHttpContent : IHttpContent_Base, Windows.Foundation.IClosable {}
@@ -279,39 +279,39 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).get_Headers(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) BufferAllAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) BufferAllAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_BufferAllAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) ReadAsBufferAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, ulong) ReadAsBufferAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsBufferAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) ReadAsInputStreamAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, ulong) ReadAsInputStreamAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsInputStreamAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) ReadAsStringAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, ulong) ReadAsStringAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsStringAsync(&_ret));
 		return _ret;
 	}
-	final bool TryComputeLength(UINT64* out_length)
+	final bool TryComputeLength(ulong* out_length)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_TryComputeLength(out_length, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	final Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_WriteToStreamAsync(outputStream, &_ret));
 		return _ret;
 	}
@@ -542,39 +542,39 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).get_Headers(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) BufferAllAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) BufferAllAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_BufferAllAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) ReadAsBufferAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, ulong) ReadAsBufferAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsBufferAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) ReadAsInputStreamAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, ulong) ReadAsInputStreamAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsInputStreamAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) ReadAsStringAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, ulong) ReadAsStringAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsStringAsync(&_ret));
 		return _ret;
 	}
-	final bool TryComputeLength(UINT64* out_length)
+	final bool TryComputeLength(ulong* out_length)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_TryComputeLength(out_length, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	final Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_WriteToStreamAsync(outputStream, &_ret));
 		return _ret;
 	}
@@ -616,39 +616,39 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).get_Headers(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) BufferAllAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) BufferAllAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_BufferAllAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) ReadAsBufferAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, ulong) ReadAsBufferAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsBufferAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) ReadAsInputStreamAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, ulong) ReadAsInputStreamAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsInputStreamAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) ReadAsStringAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, ulong) ReadAsStringAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsStringAsync(&_ret));
 		return _ret;
 	}
-	final bool TryComputeLength(UINT64* out_length)
+	final bool TryComputeLength(ulong* out_length)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_TryComputeLength(out_length, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	final Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_WriteToStreamAsync(outputStream, &_ret));
 		return _ret;
 	}
@@ -681,39 +681,39 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).get_Headers(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) BufferAllAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) BufferAllAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_BufferAllAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) ReadAsBufferAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, ulong) ReadAsBufferAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsBufferAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) ReadAsInputStreamAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, ulong) ReadAsInputStreamAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsInputStreamAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) ReadAsStringAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, ulong) ReadAsStringAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsStringAsync(&_ret));
 		return _ret;
 	}
-	final bool TryComputeLength(UINT64* out_length)
+	final bool TryComputeLength(ulong* out_length)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_TryComputeLength(out_length, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	final Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_WriteToStreamAsync(outputStream, &_ret));
 		return _ret;
 	}
@@ -910,39 +910,39 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).get_Headers(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) BufferAllAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) BufferAllAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_BufferAllAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) ReadAsBufferAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, ulong) ReadAsBufferAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsBufferAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) ReadAsInputStreamAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, ulong) ReadAsInputStreamAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsInputStreamAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) ReadAsStringAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, ulong) ReadAsStringAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsStringAsync(&_ret));
 		return _ret;
 	}
-	final bool TryComputeLength(UINT64* out_length)
+	final bool TryComputeLength(ulong* out_length)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_TryComputeLength(out_length, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	final Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_WriteToStreamAsync(outputStream, &_ret));
 		return _ret;
 	}
@@ -967,39 +967,39 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).get_Headers(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) BufferAllAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) BufferAllAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_BufferAllAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) ReadAsBufferAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, ulong) ReadAsBufferAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsBufferAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) ReadAsInputStreamAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, ulong) ReadAsInputStreamAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsInputStreamAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) ReadAsStringAsync()
+	final Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, ulong) ReadAsStringAsync()
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_ReadAsStringAsync(&_ret));
 		return _ret;
 	}
-	final bool TryComputeLength(UINT64* out_length)
+	final bool TryComputeLength(ulong* out_length)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_TryComputeLength(out_length, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
+	final Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) WriteToStreamAsync(Windows.Storage.Streams.IOutputStream outputStream)
 	{
-		Windows.Foundation.IAsyncOperationWithProgress!(UINT64, UINT64) _ret;
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.IHttpContent).abi_WriteToStreamAsync(outputStream, &_ret));
 		return _ret;
 	}

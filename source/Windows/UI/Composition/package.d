@@ -18,8 +18,8 @@ interface IColorKeyFrameAnimation : IInspectable
 extern(Windows):
 	HRESULT get_InterpolationColorSpace(Windows.UI.Composition.CompositionColorSpace* return_value);
 	HRESULT set_InterpolationColorSpace(Windows.UI.Composition.CompositionColorSpace value);
-	HRESULT abi_InsertKeyFrame(FLOAT normalizedProgressKey, Windows.UI.Color value);
-	HRESULT abi_InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.UI.Color value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
+	HRESULT abi_InsertKeyFrame(float normalizedProgressKey, Windows.UI.Color value);
+	HRESULT abi_InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows.UI.Color value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
 }
 
 @uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca")
@@ -34,7 +34,7 @@ extern(Windows):
 	HRESULT abi_SetMatrix4x4Parameter(HSTRING key, Windows.Foundation.Numerics.Matrix4x4 value);
 	HRESULT abi_SetQuaternionParameter(HSTRING key, Windows.Foundation.Numerics.Quaternion value);
 	HRESULT abi_SetReferenceParameter(HSTRING key, Windows.UI.Composition.CompositionObject compositionObject);
-	HRESULT abi_SetScalarParameter(HSTRING key, FLOAT value);
+	HRESULT abi_SetScalarParameter(HSTRING key, float value);
 	HRESULT abi_SetVector2Parameter(HSTRING key, Windows.Foundation.Numerics.Vector2 value);
 	HRESULT abi_SetVector3Parameter(HSTRING key, Windows.Foundation.Numerics.Vector3 value);
 	HRESULT abi_SetVector4Parameter(HSTRING key, Windows.Foundation.Numerics.Vector4 value);
@@ -135,10 +135,10 @@ extern(Windows):
 	HRESULT set_CenterPoint(Windows.Foundation.Numerics.Vector2 value);
 	HRESULT get_Offset(Windows.Foundation.Numerics.Vector2* return_value);
 	HRESULT set_Offset(Windows.Foundation.Numerics.Vector2 value);
-	HRESULT get_RotationAngle(FLOAT* return_value);
-	HRESULT set_RotationAngle(FLOAT value);
-	HRESULT get_RotationAngleInDegrees(FLOAT* return_value);
-	HRESULT set_RotationAngleInDegrees(FLOAT value);
+	HRESULT get_RotationAngle(float* return_value);
+	HRESULT set_RotationAngle(float value);
+	HRESULT get_RotationAngleInDegrees(float* return_value);
+	HRESULT set_RotationAngleInDegrees(float value);
 	HRESULT get_Scale(Windows.Foundation.Numerics.Vector2* return_value);
 	HRESULT set_Scale(Windows.Foundation.Numerics.Vector2 value);
 	HRESULT get_TransformMatrix(Windows.Foundation.Numerics.Matrix3x2* return_value);
@@ -299,30 +299,30 @@ extern(Windows):
 interface ICompositionNineGridBrush : IInspectable
 {
 extern(Windows):
-	HRESULT get_BottomInset(FLOAT* return_value);
-	HRESULT set_BottomInset(FLOAT value);
-	HRESULT get_BottomInsetScale(FLOAT* return_value);
-	HRESULT set_BottomInsetScale(FLOAT value);
+	HRESULT get_BottomInset(float* return_value);
+	HRESULT set_BottomInset(float value);
+	HRESULT get_BottomInsetScale(float* return_value);
+	HRESULT set_BottomInsetScale(float value);
 	HRESULT get_IsCenterHollow(bool* return_value);
 	HRESULT set_IsCenterHollow(bool value);
-	HRESULT get_LeftInset(FLOAT* return_value);
-	HRESULT set_LeftInset(FLOAT value);
-	HRESULT get_LeftInsetScale(FLOAT* return_value);
-	HRESULT set_LeftInsetScale(FLOAT value);
-	HRESULT get_RightInset(FLOAT* return_value);
-	HRESULT set_RightInset(FLOAT value);
-	HRESULT get_RightInsetScale(FLOAT* return_value);
-	HRESULT set_RightInsetScale(FLOAT value);
+	HRESULT get_LeftInset(float* return_value);
+	HRESULT set_LeftInset(float value);
+	HRESULT get_LeftInsetScale(float* return_value);
+	HRESULT set_LeftInsetScale(float value);
+	HRESULT get_RightInset(float* return_value);
+	HRESULT set_RightInset(float value);
+	HRESULT get_RightInsetScale(float* return_value);
+	HRESULT set_RightInsetScale(float value);
 	HRESULT get_Source(Windows.UI.Composition.CompositionBrush* return_value);
 	HRESULT set_Source(Windows.UI.Composition.CompositionBrush value);
-	HRESULT get_TopInset(FLOAT* return_value);
-	HRESULT set_TopInset(FLOAT value);
-	HRESULT get_TopInsetScale(FLOAT* return_value);
-	HRESULT set_TopInsetScale(FLOAT value);
-	HRESULT abi_SetInsets(FLOAT inset);
-	HRESULT abi_SetInsetsWithValues(FLOAT left, FLOAT top, FLOAT right, FLOAT bottom);
-	HRESULT abi_SetInsetScales(FLOAT scale);
-	HRESULT abi_SetInsetScalesWithValues(FLOAT left, FLOAT top, FLOAT right, FLOAT bottom);
+	HRESULT get_TopInset(float* return_value);
+	HRESULT set_TopInset(float value);
+	HRESULT get_TopInsetScale(float* return_value);
+	HRESULT set_TopInsetScale(float value);
+	HRESULT abi_SetInsets(float inset);
+	HRESULT abi_SetInsetsWithValues(float left, float top, float right, float bottom);
+	HRESULT abi_SetInsetScales(float scale);
+	HRESULT abi_SetInsetScalesWithValues(float left, float top, float right, float bottom);
 }
 
 @uuid("bcb4ad45-7609-4550-934f-16002a68fded")
@@ -365,7 +365,7 @@ extern(Windows):
 	HRESULT abi_InsertMatrix3x2(HSTRING propertyName, Windows.Foundation.Numerics.Matrix3x2 value);
 	HRESULT abi_InsertMatrix4x4(HSTRING propertyName, Windows.Foundation.Numerics.Matrix4x4 value);
 	HRESULT abi_InsertQuaternion(HSTRING propertyName, Windows.Foundation.Numerics.Quaternion value);
-	HRESULT abi_InsertScalar(HSTRING propertyName, FLOAT value);
+	HRESULT abi_InsertScalar(HSTRING propertyName, float value);
 	HRESULT abi_InsertVector2(HSTRING propertyName, Windows.Foundation.Numerics.Vector2 value);
 	HRESULT abi_InsertVector3(HSTRING propertyName, Windows.Foundation.Numerics.Vector3 value);
 	HRESULT abi_InsertVector4(HSTRING propertyName, Windows.Foundation.Numerics.Vector4 value);
@@ -373,7 +373,7 @@ extern(Windows):
 	HRESULT abi_TryGetMatrix3x2(HSTRING propertyName, Windows.Foundation.Numerics.Matrix3x2* out_value, Windows.UI.Composition.CompositionGetValueStatus* return_result);
 	HRESULT abi_TryGetMatrix4x4(HSTRING propertyName, Windows.Foundation.Numerics.Matrix4x4* out_value, Windows.UI.Composition.CompositionGetValueStatus* return_result);
 	HRESULT abi_TryGetQuaternion(HSTRING propertyName, Windows.Foundation.Numerics.Quaternion* out_value, Windows.UI.Composition.CompositionGetValueStatus* return_result);
-	HRESULT abi_TryGetScalar(HSTRING propertyName, FLOAT* out_value, Windows.UI.Composition.CompositionGetValueStatus* return_result);
+	HRESULT abi_TryGetScalar(HSTRING propertyName, float* out_value, Windows.UI.Composition.CompositionGetValueStatus* return_result);
 	HRESULT abi_TryGetVector2(HSTRING propertyName, Windows.Foundation.Numerics.Vector2* out_value, Windows.UI.Composition.CompositionGetValueStatus* return_result);
 	HRESULT abi_TryGetVector3(HSTRING propertyName, Windows.Foundation.Numerics.Vector3* out_value, Windows.UI.Composition.CompositionGetValueStatus* return_result);
 	HRESULT abi_TryGetVector4(HSTRING propertyName, Windows.Foundation.Numerics.Vector4* out_value, Windows.UI.Composition.CompositionGetValueStatus* return_result);
@@ -426,14 +426,14 @@ interface ICompositionSurfaceBrush : IInspectable
 extern(Windows):
 	HRESULT get_BitmapInterpolationMode(Windows.UI.Composition.CompositionBitmapInterpolationMode* return_value);
 	HRESULT set_BitmapInterpolationMode(Windows.UI.Composition.CompositionBitmapInterpolationMode value);
-	HRESULT get_HorizontalAlignmentRatio(FLOAT* return_value);
-	HRESULT set_HorizontalAlignmentRatio(FLOAT value);
+	HRESULT get_HorizontalAlignmentRatio(float* return_value);
+	HRESULT set_HorizontalAlignmentRatio(float value);
 	HRESULT get_Stretch(Windows.UI.Composition.CompositionStretch* return_value);
 	HRESULT set_Stretch(Windows.UI.Composition.CompositionStretch value);
 	HRESULT get_Surface(Windows.UI.Composition.ICompositionSurface* return_value);
 	HRESULT set_Surface(Windows.UI.Composition.ICompositionSurface value);
-	HRESULT get_VerticalAlignmentRatio(FLOAT* return_value);
-	HRESULT set_VerticalAlignmentRatio(FLOAT value);
+	HRESULT get_VerticalAlignmentRatio(float* return_value);
+	HRESULT set_VerticalAlignmentRatio(float value);
 }
 
 @uuid("d27174d5-64f5-4692-9dc7-71b61d7e5880")
@@ -447,10 +447,10 @@ extern(Windows):
 	HRESULT set_CenterPoint(Windows.Foundation.Numerics.Vector2 value);
 	HRESULT get_Offset(Windows.Foundation.Numerics.Vector2* return_value);
 	HRESULT set_Offset(Windows.Foundation.Numerics.Vector2 value);
-	HRESULT get_RotationAngle(FLOAT* return_value);
-	HRESULT set_RotationAngle(FLOAT value);
-	HRESULT get_RotationAngleInDegrees(FLOAT* return_value);
-	HRESULT set_RotationAngleInDegrees(FLOAT value);
+	HRESULT get_RotationAngle(float* return_value);
+	HRESULT set_RotationAngle(float value);
+	HRESULT get_RotationAngleInDegrees(float* return_value);
+	HRESULT set_RotationAngleInDegrees(float value);
 	HRESULT get_Scale(Windows.Foundation.Numerics.Vector2* return_value);
 	HRESULT set_Scale(Windows.Foundation.Numerics.Vector2 value);
 	HRESULT get_TransformMatrix(Windows.Foundation.Numerics.Matrix3x2* return_value);
@@ -495,7 +495,7 @@ extern(Windows):
 	HRESULT abi_CreateExpressionAnimation(Windows.UI.Composition.ExpressionAnimation* return_result);
 	HRESULT abi_CreateExpressionAnimationWithExpression(HSTRING expression, Windows.UI.Composition.ExpressionAnimation* return_result);
 	HRESULT abi_CreateInsetClip(Windows.UI.Composition.InsetClip* return_result);
-	HRESULT abi_CreateInsetClipWithInsets(FLOAT leftInset, FLOAT topInset, FLOAT rightInset, FLOAT bottomInset, Windows.UI.Composition.InsetClip* return_result);
+	HRESULT abi_CreateInsetClipWithInsets(float leftInset, float topInset, float rightInset, float bottomInset, Windows.UI.Composition.InsetClip* return_result);
 	HRESULT abi_CreateLinearEasingFunction(Windows.UI.Composition.LinearEasingFunction* return_result);
 	HRESULT abi_CreatePropertySet(Windows.UI.Composition.CompositionPropertySet* return_result);
 	HRESULT abi_CreateQuaternionKeyFrameAnimation(Windows.UI.Composition.QuaternionKeyFrameAnimation* return_result);
@@ -580,16 +580,16 @@ extern(Windows):
 interface IDropShadow : IInspectable
 {
 extern(Windows):
-	HRESULT get_BlurRadius(FLOAT* return_value);
-	HRESULT set_BlurRadius(FLOAT value);
+	HRESULT get_BlurRadius(float* return_value);
+	HRESULT set_BlurRadius(float value);
 	HRESULT get_Color(Windows.UI.Color* return_value);
 	HRESULT set_Color(Windows.UI.Color value);
 	HRESULT get_Mask(Windows.UI.Composition.CompositionBrush* return_value);
 	HRESULT set_Mask(Windows.UI.Composition.CompositionBrush value);
 	HRESULT get_Offset(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT set_Offset(Windows.Foundation.Numerics.Vector3 value);
-	HRESULT get_Opacity(FLOAT* return_value);
-	HRESULT set_Opacity(FLOAT value);
+	HRESULT get_Opacity(float* return_value);
+	HRESULT set_Opacity(float value);
 }
 
 @uuid("6acc5431-7d3d-4bf3-abb6-f44bdc4888c1")
@@ -615,14 +615,14 @@ interface IImplicitAnimationCollection : IImplicitAnimationCollection_Base, Wind
 interface IInsetClip : IInspectable
 {
 extern(Windows):
-	HRESULT get_BottomInset(FLOAT* return_value);
-	HRESULT set_BottomInset(FLOAT value);
-	HRESULT get_LeftInset(FLOAT* return_value);
-	HRESULT set_LeftInset(FLOAT value);
-	HRESULT get_RightInset(FLOAT* return_value);
-	HRESULT set_RightInset(FLOAT value);
-	HRESULT get_TopInset(FLOAT* return_value);
-	HRESULT set_TopInset(FLOAT value);
+	HRESULT get_BottomInset(float* return_value);
+	HRESULT set_BottomInset(float value);
+	HRESULT get_LeftInset(float* return_value);
+	HRESULT set_LeftInset(float value);
+	HRESULT get_RightInset(float* return_value);
+	HRESULT set_RightInset(float value);
+	HRESULT get_TopInset(float* return_value);
+	HRESULT set_TopInset(float value);
 }
 
 @uuid("126e7f22-3ae9-4540-9a8a-deae8a4a4a84")
@@ -641,8 +641,8 @@ extern(Windows):
 	HRESULT get_KeyFrameCount(INT32* return_value);
 	HRESULT get_StopBehavior(Windows.UI.Composition.AnimationStopBehavior* return_value);
 	HRESULT set_StopBehavior(Windows.UI.Composition.AnimationStopBehavior value);
-	HRESULT abi_InsertExpressionKeyFrame(FLOAT normalizedProgressKey, HSTRING value);
-	HRESULT abi_InsertExpressionKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, HSTRING value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
+	HRESULT abi_InsertExpressionKeyFrame(float normalizedProgressKey, HSTRING value);
+	HRESULT abi_InsertExpressionKeyFrameWithEasingFunction(float normalizedProgressKey, HSTRING value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
 }
 
 @uuid("f4b488bb-2940-4ec0-a41a-eb6d801a2f18")
@@ -691,16 +691,16 @@ interface IPointLight : IInspectable
 extern(Windows):
 	HRESULT get_Color(Windows.UI.Color* return_value);
 	HRESULT set_Color(Windows.UI.Color value);
-	HRESULT get_ConstantAttenuation(FLOAT* return_value);
-	HRESULT set_ConstantAttenuation(FLOAT value);
+	HRESULT get_ConstantAttenuation(float* return_value);
+	HRESULT set_ConstantAttenuation(float value);
 	HRESULT get_CoordinateSpace(Windows.UI.Composition.Visual* return_value);
 	HRESULT set_CoordinateSpace(Windows.UI.Composition.Visual value);
-	HRESULT get_LinearAttenuation(FLOAT* return_value);
-	HRESULT set_LinearAttenuation(FLOAT value);
+	HRESULT get_LinearAttenuation(float* return_value);
+	HRESULT set_LinearAttenuation(float value);
 	HRESULT get_Offset(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT set_Offset(Windows.Foundation.Numerics.Vector3 value);
-	HRESULT get_QuadraticAttenuation(FLOAT* return_value);
-	HRESULT set_QuadraticAttenuation(FLOAT value);
+	HRESULT get_QuadraticAttenuation(float* return_value);
+	HRESULT set_QuadraticAttenuation(float value);
 }
 
 @uuid("404e5835-ecf6-4240-8520-671279cf36bc")
@@ -708,8 +708,8 @@ extern(Windows):
 interface IQuaternionKeyFrameAnimation : IInspectable
 {
 extern(Windows):
-	HRESULT abi_InsertKeyFrame(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Quaternion value);
-	HRESULT abi_InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Quaternion value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
+	HRESULT abi_InsertKeyFrame(float normalizedProgressKey, Windows.Foundation.Numerics.Quaternion value);
+	HRESULT abi_InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows.Foundation.Numerics.Quaternion value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
 }
 
 @uuid("3a31ac7d-28bf-4e7a-8524-71679d480f38")
@@ -725,8 +725,8 @@ extern(Windows):
 interface IScalarKeyFrameAnimation : IInspectable
 {
 extern(Windows):
-	HRESULT abi_InsertKeyFrame(FLOAT normalizedProgressKey, FLOAT value);
-	HRESULT abi_InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, FLOAT value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
+	HRESULT abi_InsertKeyFrame(float normalizedProgressKey, float value);
+	HRESULT abi_InsertKeyFrameWithEasingFunction(float normalizedProgressKey, float value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
 }
 
 @uuid("5a9fe273-44a1-4f95-a422-8fa5116bdb44")
@@ -734,30 +734,30 @@ extern(Windows):
 interface ISpotLight : IInspectable
 {
 extern(Windows):
-	HRESULT get_ConstantAttenuation(FLOAT* return_value);
-	HRESULT set_ConstantAttenuation(FLOAT value);
+	HRESULT get_ConstantAttenuation(float* return_value);
+	HRESULT set_ConstantAttenuation(float value);
 	HRESULT get_CoordinateSpace(Windows.UI.Composition.Visual* return_value);
 	HRESULT set_CoordinateSpace(Windows.UI.Composition.Visual value);
 	HRESULT get_Direction(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT set_Direction(Windows.Foundation.Numerics.Vector3 value);
-	HRESULT get_InnerConeAngle(FLOAT* return_value);
-	HRESULT set_InnerConeAngle(FLOAT value);
-	HRESULT get_InnerConeAngleInDegrees(FLOAT* return_value);
-	HRESULT set_InnerConeAngleInDegrees(FLOAT value);
+	HRESULT get_InnerConeAngle(float* return_value);
+	HRESULT set_InnerConeAngle(float value);
+	HRESULT get_InnerConeAngleInDegrees(float* return_value);
+	HRESULT set_InnerConeAngleInDegrees(float value);
 	HRESULT get_InnerConeColor(Windows.UI.Color* return_value);
 	HRESULT set_InnerConeColor(Windows.UI.Color value);
-	HRESULT get_LinearAttenuation(FLOAT* return_value);
-	HRESULT set_LinearAttenuation(FLOAT value);
+	HRESULT get_LinearAttenuation(float* return_value);
+	HRESULT set_LinearAttenuation(float value);
 	HRESULT get_Offset(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT set_Offset(Windows.Foundation.Numerics.Vector3 value);
-	HRESULT get_OuterConeAngle(FLOAT* return_value);
-	HRESULT set_OuterConeAngle(FLOAT value);
-	HRESULT get_OuterConeAngleInDegrees(FLOAT* return_value);
-	HRESULT set_OuterConeAngleInDegrees(FLOAT value);
+	HRESULT get_OuterConeAngle(float* return_value);
+	HRESULT set_OuterConeAngle(float value);
+	HRESULT get_OuterConeAngleInDegrees(float* return_value);
+	HRESULT set_OuterConeAngleInDegrees(float value);
 	HRESULT get_OuterConeColor(Windows.UI.Color* return_value);
 	HRESULT set_OuterConeColor(Windows.UI.Color value);
-	HRESULT get_QuadraticAttenuation(FLOAT* return_value);
-	HRESULT set_QuadraticAttenuation(FLOAT value);
+	HRESULT get_QuadraticAttenuation(float* return_value);
+	HRESULT set_QuadraticAttenuation(float value);
 }
 
 @uuid("08e05581-1ad1-4f97-9757-402d76e4233b")
@@ -800,8 +800,8 @@ extern(Windows):
 interface IVector2KeyFrameAnimation : IInspectable
 {
 extern(Windows):
-	HRESULT abi_InsertKeyFrame(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector2 value);
-	HRESULT abi_InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector2 value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
+	HRESULT abi_InsertKeyFrame(float normalizedProgressKey, Windows.Foundation.Numerics.Vector2 value);
+	HRESULT abi_InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows.Foundation.Numerics.Vector2 value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
 }
 
 @uuid("c8039daa-a281-43c2-a73d-b68e3c533c40")
@@ -809,8 +809,8 @@ extern(Windows):
 interface IVector3KeyFrameAnimation : IInspectable
 {
 extern(Windows):
-	HRESULT abi_InsertKeyFrame(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector3 value);
-	HRESULT abi_InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector3 value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
+	HRESULT abi_InsertKeyFrame(float normalizedProgressKey, Windows.Foundation.Numerics.Vector3 value);
+	HRESULT abi_InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows.Foundation.Numerics.Vector3 value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
 }
 
 @uuid("2457945b-addd-4385-9606-b6a3d5e4e1b9")
@@ -818,8 +818,8 @@ extern(Windows):
 interface IVector4KeyFrameAnimation : IInspectable
 {
 extern(Windows):
-	HRESULT abi_InsertKeyFrame(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector4 value);
-	HRESULT abi_InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector4 value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
+	HRESULT abi_InsertKeyFrame(float normalizedProgressKey, Windows.Foundation.Numerics.Vector4 value);
+	HRESULT abi_InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows.Foundation.Numerics.Vector4 value, Windows.UI.Composition.CompositionEasingFunction easingFunction);
 }
 
 @uuid("117e202d-a859-4c89-873b-c2aa566788e3")
@@ -843,15 +843,15 @@ extern(Windows):
 	HRESULT set_IsVisible(bool value);
 	HRESULT get_Offset(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT set_Offset(Windows.Foundation.Numerics.Vector3 value);
-	HRESULT get_Opacity(FLOAT* return_value);
-	HRESULT set_Opacity(FLOAT value);
+	HRESULT get_Opacity(float* return_value);
+	HRESULT set_Opacity(float value);
 	HRESULT get_Orientation(Windows.Foundation.Numerics.Quaternion* return_value);
 	HRESULT set_Orientation(Windows.Foundation.Numerics.Quaternion value);
 	HRESULT get_Parent(Windows.UI.Composition.ContainerVisual* return_value);
-	HRESULT get_RotationAngle(FLOAT* return_value);
-	HRESULT set_RotationAngle(FLOAT value);
-	HRESULT get_RotationAngleInDegrees(FLOAT* return_value);
-	HRESULT set_RotationAngleInDegrees(FLOAT value);
+	HRESULT get_RotationAngle(float* return_value);
+	HRESULT set_RotationAngle(float value);
+	HRESULT get_RotationAngleInDegrees(float* return_value);
+	HRESULT set_RotationAngleInDegrees(float value);
 	HRESULT get_RotationAxis(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT set_RotationAxis(Windows.Foundation.Numerics.Vector3 value);
 	HRESULT get_Scale(Windows.Foundation.Numerics.Vector3* return_value);
@@ -940,11 +940,11 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IColorKeyFrameAnimation).set_InterpolationColorSpace(value));
 	}
-	final void InsertKeyFrame(FLOAT normalizedProgressKey, Windows.UI.Color value)
+	final void InsertKeyFrame(float normalizedProgressKey, Windows.UI.Color value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IColorKeyFrameAnimation).abi_InsertKeyFrame(normalizedProgressKey, value));
 	}
-	final void InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.UI.Color value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
+	final void InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows.UI.Color value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IColorKeyFrameAnimation).abi_InsertKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
@@ -981,7 +981,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionAnimation).abi_SetReferenceParameter(key, compositionObject));
 	}
-	final void SetScalarParameter(HSTRING key, FLOAT value)
+	final void SetScalarParameter(HSTRING key, float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionAnimation).abi_SetScalarParameter(key, value));
 	}
@@ -1112,23 +1112,23 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionClip2).set_Offset(value));
 	}
-	final FLOAT RotationAngle()
+	final float RotationAngle()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionClip2).get_RotationAngle(&_ret));
 		return _ret;
 	}
-	final void RotationAngle(FLOAT value)
+	final void RotationAngle(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionClip2).set_RotationAngle(value));
 	}
-	final FLOAT RotationAngleInDegrees()
+	final float RotationAngleInDegrees()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionClip2).get_RotationAngleInDegrees(&_ret));
 		return _ret;
 	}
-	final void RotationAngleInDegrees(FLOAT value)
+	final void RotationAngleInDegrees(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionClip2).set_RotationAngleInDegrees(value));
 	}
@@ -1370,23 +1370,23 @@ extern(Windows):
 interface CompositionNineGridBrush : Windows.UI.Composition.CompositionBrush, Windows.UI.Composition.ICompositionNineGridBrush
 {
 extern(Windows):
-	final FLOAT BottomInset()
+	final float BottomInset()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).get_BottomInset(&_ret));
 		return _ret;
 	}
-	final void BottomInset(FLOAT value)
+	final void BottomInset(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).set_BottomInset(value));
 	}
-	final FLOAT BottomInsetScale()
+	final float BottomInsetScale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).get_BottomInsetScale(&_ret));
 		return _ret;
 	}
-	final void BottomInsetScale(FLOAT value)
+	final void BottomInsetScale(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).set_BottomInsetScale(value));
 	}
@@ -1400,43 +1400,43 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).set_IsCenterHollow(value));
 	}
-	final FLOAT LeftInset()
+	final float LeftInset()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).get_LeftInset(&_ret));
 		return _ret;
 	}
-	final void LeftInset(FLOAT value)
+	final void LeftInset(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).set_LeftInset(value));
 	}
-	final FLOAT LeftInsetScale()
+	final float LeftInsetScale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).get_LeftInsetScale(&_ret));
 		return _ret;
 	}
-	final void LeftInsetScale(FLOAT value)
+	final void LeftInsetScale(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).set_LeftInsetScale(value));
 	}
-	final FLOAT RightInset()
+	final float RightInset()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).get_RightInset(&_ret));
 		return _ret;
 	}
-	final void RightInset(FLOAT value)
+	final void RightInset(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).set_RightInset(value));
 	}
-	final FLOAT RightInsetScale()
+	final float RightInsetScale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).get_RightInsetScale(&_ret));
 		return _ret;
 	}
-	final void RightInsetScale(FLOAT value)
+	final void RightInsetScale(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).set_RightInsetScale(value));
 	}
@@ -1450,39 +1450,39 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).set_Source(value));
 	}
-	final FLOAT TopInset()
+	final float TopInset()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).get_TopInset(&_ret));
 		return _ret;
 	}
-	final void TopInset(FLOAT value)
+	final void TopInset(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).set_TopInset(value));
 	}
-	final FLOAT TopInsetScale()
+	final float TopInsetScale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).get_TopInsetScale(&_ret));
 		return _ret;
 	}
-	final void TopInsetScale(FLOAT value)
+	final void TopInsetScale(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).set_TopInsetScale(value));
 	}
-	final void SetInsets(FLOAT inset)
+	final void SetInsets(float inset)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).abi_SetInsets(inset));
 	}
-	final void SetInsetsWithValues(FLOAT left, FLOAT top, FLOAT right, FLOAT bottom)
+	final void SetInsetsWithValues(float left, float top, float right, float bottom)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).abi_SetInsetsWithValues(left, top, right, bottom));
 	}
-	final void SetInsetScales(FLOAT scale)
+	final void SetInsetScales(float scale)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).abi_SetInsetScales(scale));
 	}
-	final void SetInsetScalesWithValues(FLOAT left, FLOAT top, FLOAT right, FLOAT bottom)
+	final void SetInsetScalesWithValues(float left, float top, float right, float bottom)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionNineGridBrush).abi_SetInsetScalesWithValues(left, top, right, bottom));
 	}
@@ -1570,7 +1570,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionPropertySet).abi_InsertQuaternion(propertyName, value));
 	}
-	final void InsertScalar(HSTRING propertyName, FLOAT value)
+	final void InsertScalar(HSTRING propertyName, float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionPropertySet).abi_InsertScalar(propertyName, value));
 	}
@@ -1610,7 +1610,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionPropertySet).abi_TryGetQuaternion(propertyName, out_value, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Composition.CompositionGetValueStatus TryGetScalar(HSTRING propertyName, FLOAT* out_value)
+	final Windows.UI.Composition.CompositionGetValueStatus TryGetScalar(HSTRING propertyName, float* out_value)
 	{
 		Windows.UI.Composition.CompositionGetValueStatus _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionPropertySet).abi_TryGetScalar(propertyName, out_value, &_ret));
@@ -1702,13 +1702,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionSurfaceBrush).set_BitmapInterpolationMode(value));
 	}
-	final FLOAT HorizontalAlignmentRatio()
+	final float HorizontalAlignmentRatio()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionSurfaceBrush).get_HorizontalAlignmentRatio(&_ret));
 		return _ret;
 	}
-	final void HorizontalAlignmentRatio(FLOAT value)
+	final void HorizontalAlignmentRatio(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionSurfaceBrush).set_HorizontalAlignmentRatio(value));
 	}
@@ -1732,13 +1732,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionSurfaceBrush).set_Surface(value));
 	}
-	final FLOAT VerticalAlignmentRatio()
+	final float VerticalAlignmentRatio()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionSurfaceBrush).get_VerticalAlignmentRatio(&_ret));
 		return _ret;
 	}
-	final void VerticalAlignmentRatio(FLOAT value)
+	final void VerticalAlignmentRatio(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionSurfaceBrush).set_VerticalAlignmentRatio(value));
 	}
@@ -1772,23 +1772,23 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionSurfaceBrush2).set_Offset(value));
 	}
-	final FLOAT RotationAngle()
+	final float RotationAngle()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionSurfaceBrush2).get_RotationAngle(&_ret));
 		return _ret;
 	}
-	final void RotationAngle(FLOAT value)
+	final void RotationAngle(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionSurfaceBrush2).set_RotationAngle(value));
 	}
-	final FLOAT RotationAngleInDegrees()
+	final float RotationAngleInDegrees()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionSurfaceBrush2).get_RotationAngleInDegrees(&_ret));
 		return _ret;
 	}
-	final void RotationAngleInDegrees(FLOAT value)
+	final void RotationAngleInDegrees(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionSurfaceBrush2).set_RotationAngleInDegrees(value));
 	}
@@ -1901,7 +1901,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositor).abi_CreateInsetClip(&_ret));
 		return _ret;
 	}
-	final Windows.UI.Composition.InsetClip CreateInsetClipWithInsets(FLOAT leftInset, FLOAT topInset, FLOAT rightInset, FLOAT bottomInset)
+	final Windows.UI.Composition.InsetClip CreateInsetClipWithInsets(float leftInset, float topInset, float rightInset, float bottomInset)
 	{
 		Windows.UI.Composition.InsetClip _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositor).abi_CreateInsetClipWithInsets(leftInset, topInset, rightInset, bottomInset, &_ret));
@@ -2141,13 +2141,13 @@ extern(Windows):
 interface DropShadow : Windows.UI.Composition.CompositionShadow, Windows.UI.Composition.IDropShadow
 {
 extern(Windows):
-	final FLOAT BlurRadius()
+	final float BlurRadius()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.IDropShadow).get_BlurRadius(&_ret));
 		return _ret;
 	}
-	final void BlurRadius(FLOAT value)
+	final void BlurRadius(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IDropShadow).set_BlurRadius(value));
 	}
@@ -2181,13 +2181,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IDropShadow).set_Offset(value));
 	}
-	final FLOAT Opacity()
+	final float Opacity()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.IDropShadow).get_Opacity(&_ret));
 		return _ret;
 	}
-	final void Opacity(FLOAT value)
+	final void Opacity(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IDropShadow).set_Opacity(value));
 	}
@@ -2258,43 +2258,43 @@ extern(Windows):
 interface InsetClip : Windows.UI.Composition.CompositionClip, Windows.UI.Composition.IInsetClip
 {
 extern(Windows):
-	final FLOAT BottomInset()
+	final float BottomInset()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.IInsetClip).get_BottomInset(&_ret));
 		return _ret;
 	}
-	final void BottomInset(FLOAT value)
+	final void BottomInset(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IInsetClip).set_BottomInset(value));
 	}
-	final FLOAT LeftInset()
+	final float LeftInset()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.IInsetClip).get_LeftInset(&_ret));
 		return _ret;
 	}
-	final void LeftInset(FLOAT value)
+	final void LeftInset(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IInsetClip).set_LeftInset(value));
 	}
-	final FLOAT RightInset()
+	final float RightInset()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.IInsetClip).get_RightInset(&_ret));
 		return _ret;
 	}
-	final void RightInset(FLOAT value)
+	final void RightInset(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IInsetClip).set_RightInset(value));
 	}
-	final FLOAT TopInset()
+	final float TopInset()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.IInsetClip).get_TopInset(&_ret));
 		return _ret;
 	}
-	final void TopInset(FLOAT value)
+	final void TopInset(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IInsetClip).set_TopInset(value));
 	}
@@ -2359,11 +2359,11 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IKeyFrameAnimation).set_StopBehavior(value));
 	}
-	final void InsertExpressionKeyFrame(FLOAT normalizedProgressKey, HSTRING value)
+	final void InsertExpressionKeyFrame(float normalizedProgressKey, HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IKeyFrameAnimation).abi_InsertExpressionKeyFrame(normalizedProgressKey, value));
 	}
-	final void InsertExpressionKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, HSTRING value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
+	final void InsertExpressionKeyFrameWithEasingFunction(float normalizedProgressKey, HSTRING value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IKeyFrameAnimation).abi_InsertExpressionKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
@@ -2421,13 +2421,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IPointLight).set_Color(value));
 	}
-	final FLOAT ConstantAttenuation()
+	final float ConstantAttenuation()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.IPointLight).get_ConstantAttenuation(&_ret));
 		return _ret;
 	}
-	final void ConstantAttenuation(FLOAT value)
+	final void ConstantAttenuation(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IPointLight).set_ConstantAttenuation(value));
 	}
@@ -2441,13 +2441,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IPointLight).set_CoordinateSpace(value));
 	}
-	final FLOAT LinearAttenuation()
+	final float LinearAttenuation()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.IPointLight).get_LinearAttenuation(&_ret));
 		return _ret;
 	}
-	final void LinearAttenuation(FLOAT value)
+	final void LinearAttenuation(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IPointLight).set_LinearAttenuation(value));
 	}
@@ -2461,13 +2461,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IPointLight).set_Offset(value));
 	}
-	final FLOAT QuadraticAttenuation()
+	final float QuadraticAttenuation()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.IPointLight).get_QuadraticAttenuation(&_ret));
 		return _ret;
 	}
-	final void QuadraticAttenuation(FLOAT value)
+	final void QuadraticAttenuation(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IPointLight).set_QuadraticAttenuation(value));
 	}
@@ -2476,11 +2476,11 @@ extern(Windows):
 interface QuaternionKeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation, Windows.UI.Composition.IQuaternionKeyFrameAnimation
 {
 extern(Windows):
-	final void InsertKeyFrame(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Quaternion value)
+	final void InsertKeyFrame(float normalizedProgressKey, Windows.Foundation.Numerics.Quaternion value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IQuaternionKeyFrameAnimation).abi_InsertKeyFrame(normalizedProgressKey, value));
 	}
-	final void InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Quaternion value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
+	final void InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows.Foundation.Numerics.Quaternion value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IQuaternionKeyFrameAnimation).abi_InsertKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
@@ -2500,11 +2500,11 @@ extern(Windows):
 interface ScalarKeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation, Windows.UI.Composition.IScalarKeyFrameAnimation
 {
 extern(Windows):
-	final void InsertKeyFrame(FLOAT normalizedProgressKey, FLOAT value)
+	final void InsertKeyFrame(float normalizedProgressKey, float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IScalarKeyFrameAnimation).abi_InsertKeyFrame(normalizedProgressKey, value));
 	}
-	final void InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, FLOAT value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
+	final void InsertKeyFrameWithEasingFunction(float normalizedProgressKey, float value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IScalarKeyFrameAnimation).abi_InsertKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
@@ -2513,13 +2513,13 @@ extern(Windows):
 interface SpotLight : Windows.UI.Composition.CompositionLight, Windows.UI.Composition.ISpotLight
 {
 extern(Windows):
-	final FLOAT ConstantAttenuation()
+	final float ConstantAttenuation()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).get_ConstantAttenuation(&_ret));
 		return _ret;
 	}
-	final void ConstantAttenuation(FLOAT value)
+	final void ConstantAttenuation(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).set_ConstantAttenuation(value));
 	}
@@ -2543,23 +2543,23 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).set_Direction(value));
 	}
-	final FLOAT InnerConeAngle()
+	final float InnerConeAngle()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).get_InnerConeAngle(&_ret));
 		return _ret;
 	}
-	final void InnerConeAngle(FLOAT value)
+	final void InnerConeAngle(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).set_InnerConeAngle(value));
 	}
-	final FLOAT InnerConeAngleInDegrees()
+	final float InnerConeAngleInDegrees()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).get_InnerConeAngleInDegrees(&_ret));
 		return _ret;
 	}
-	final void InnerConeAngleInDegrees(FLOAT value)
+	final void InnerConeAngleInDegrees(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).set_InnerConeAngleInDegrees(value));
 	}
@@ -2573,13 +2573,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).set_InnerConeColor(value));
 	}
-	final FLOAT LinearAttenuation()
+	final float LinearAttenuation()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).get_LinearAttenuation(&_ret));
 		return _ret;
 	}
-	final void LinearAttenuation(FLOAT value)
+	final void LinearAttenuation(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).set_LinearAttenuation(value));
 	}
@@ -2593,23 +2593,23 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).set_Offset(value));
 	}
-	final FLOAT OuterConeAngle()
+	final float OuterConeAngle()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).get_OuterConeAngle(&_ret));
 		return _ret;
 	}
-	final void OuterConeAngle(FLOAT value)
+	final void OuterConeAngle(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).set_OuterConeAngle(value));
 	}
-	final FLOAT OuterConeAngleInDegrees()
+	final float OuterConeAngleInDegrees()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).get_OuterConeAngleInDegrees(&_ret));
 		return _ret;
 	}
-	final void OuterConeAngleInDegrees(FLOAT value)
+	final void OuterConeAngleInDegrees(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).set_OuterConeAngleInDegrees(value));
 	}
@@ -2623,13 +2623,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).set_OuterConeColor(value));
 	}
-	final FLOAT QuadraticAttenuation()
+	final float QuadraticAttenuation()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).get_QuadraticAttenuation(&_ret));
 		return _ret;
 	}
-	final void QuadraticAttenuation(FLOAT value)
+	final void QuadraticAttenuation(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ISpotLight).set_QuadraticAttenuation(value));
 	}
@@ -2718,11 +2718,11 @@ extern(Windows):
 interface Vector2KeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation, Windows.UI.Composition.IVector2KeyFrameAnimation
 {
 extern(Windows):
-	final void InsertKeyFrame(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector2 value)
+	final void InsertKeyFrame(float normalizedProgressKey, Windows.Foundation.Numerics.Vector2 value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVector2KeyFrameAnimation).abi_InsertKeyFrame(normalizedProgressKey, value));
 	}
-	final void InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector2 value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
+	final void InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows.Foundation.Numerics.Vector2 value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVector2KeyFrameAnimation).abi_InsertKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
@@ -2731,11 +2731,11 @@ extern(Windows):
 interface Vector3KeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation, Windows.UI.Composition.IVector3KeyFrameAnimation
 {
 extern(Windows):
-	final void InsertKeyFrame(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector3 value)
+	final void InsertKeyFrame(float normalizedProgressKey, Windows.Foundation.Numerics.Vector3 value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVector3KeyFrameAnimation).abi_InsertKeyFrame(normalizedProgressKey, value));
 	}
-	final void InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector3 value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
+	final void InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows.Foundation.Numerics.Vector3 value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVector3KeyFrameAnimation).abi_InsertKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
@@ -2744,11 +2744,11 @@ extern(Windows):
 interface Vector4KeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation, Windows.UI.Composition.IVector4KeyFrameAnimation
 {
 extern(Windows):
-	final void InsertKeyFrame(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector4 value)
+	final void InsertKeyFrame(float normalizedProgressKey, Windows.Foundation.Numerics.Vector4 value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVector4KeyFrameAnimation).abi_InsertKeyFrame(normalizedProgressKey, value));
 	}
-	final void InsertKeyFrameWithEasingFunction(FLOAT normalizedProgressKey, Windows.Foundation.Numerics.Vector4 value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
+	final void InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows.Foundation.Numerics.Vector4 value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVector4KeyFrameAnimation).abi_InsertKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
@@ -2837,13 +2837,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVisual).set_Offset(value));
 	}
-	final FLOAT Opacity()
+	final float Opacity()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.IVisual).get_Opacity(&_ret));
 		return _ret;
 	}
-	final void Opacity(FLOAT value)
+	final void Opacity(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVisual).set_Opacity(value));
 	}
@@ -2863,23 +2863,23 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.IVisual).get_Parent(&_ret));
 		return _ret;
 	}
-	final FLOAT RotationAngle()
+	final float RotationAngle()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.IVisual).get_RotationAngle(&_ret));
 		return _ret;
 	}
-	final void RotationAngle(FLOAT value)
+	final void RotationAngle(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVisual).set_RotationAngle(value));
 	}
-	final FLOAT RotationAngleInDegrees()
+	final float RotationAngleInDegrees()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.IVisual).get_RotationAngleInDegrees(&_ret));
 		return _ret;
 	}
-	final void RotationAngleInDegrees(FLOAT value)
+	final void RotationAngleInDegrees(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVisual).set_RotationAngleInDegrees(value));
 	}

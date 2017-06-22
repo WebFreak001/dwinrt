@@ -8,7 +8,7 @@ interface IBluetoothAdapter : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
-	HRESULT get_BluetoothAddress(UINT64* return_value);
+	HRESULT get_BluetoothAddress(ulong* return_value);
 	HRESULT get_IsClassicSupported(bool* return_value);
 	HRESULT get_IsLowEnergySupported(bool* return_value);
 	HRESULT get_IsPeripheralRoleSupported(bool* return_value);
@@ -60,7 +60,7 @@ extern(Windows):
 	deprecated("Use GetRfcommServicesAsync instead of RfcommServices.  For more info, see MSDN.")
 	HRESULT get_RfcommServices(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService)* return_value);
 	HRESULT get_ConnectionStatus(Windows.Devices.Bluetooth.BluetoothConnectionStatus* return_value);
-	HRESULT get_BluetoothAddress(UINT64* return_value);
+	HRESULT get_BluetoothAddress(ulong* return_value);
 	HRESULT add_NameChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_NameChanged(EventRegistrationToken token);
 	HRESULT add_SdpRecordsChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable) handler, EventRegistrationToken* return_token);
@@ -113,7 +113,7 @@ interface IBluetoothDeviceStatics : IInspectable
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice)* return_operation);
 	HRESULT abi_FromHostNameAsync(Windows.Networking.HostName hostName, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice)* return_operation);
-	HRESULT abi_FromBluetoothAddressAsync(UINT64 address, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice)* return_operation);
+	HRESULT abi_FromBluetoothAddressAsync(ulong address, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice)* return_operation);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_deviceSelector);
 }
 
@@ -125,7 +125,7 @@ extern(Windows):
 	HRESULT abi_GetDeviceSelectorFromPairingState(bool pairingState, HSTRING* return_deviceSelector);
 	HRESULT abi_GetDeviceSelectorFromConnectionStatus(Windows.Devices.Bluetooth.BluetoothConnectionStatus connectionStatus, HSTRING* return_deviceSelector);
 	HRESULT abi_GetDeviceSelectorFromDeviceName(HSTRING deviceName, HSTRING* return_deviceSelector);
-	HRESULT abi_GetDeviceSelectorFromBluetoothAddress(UINT64 bluetoothAddress, HSTRING* return_deviceSelector);
+	HRESULT abi_GetDeviceSelectorFromBluetoothAddress(ulong bluetoothAddress, HSTRING* return_deviceSelector);
 	HRESULT abi_GetDeviceSelectorFromClassOfDevice(Windows.Devices.Bluetooth.BluetoothClassOfDevice classOfDevice, HSTRING* return_deviceSelector);
 }
 @uuid("c29e8e2f-4e14-4477-aa1b-b8b47e5b7ece")
@@ -225,7 +225,7 @@ extern(Windows):
 	deprecated("Use GetGattServicesAsync instead of GattServices.  For more information, see MSDN.")
 	HRESULT get_GattServices(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService)* return_value);
 	HRESULT get_ConnectionStatus(Windows.Devices.Bluetooth.BluetoothConnectionStatus* return_value);
-	HRESULT get_BluetoothAddress(UINT64* return_value);
+	HRESULT get_BluetoothAddress(ulong* return_value);
 	deprecated("Use GetGattServicesForUuidAsync instead of GetGattService.	For more information, see MSDN.")
 	HRESULT abi_GetGattService(GUID serviceUuid, Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService* return_service);
 	HRESULT add_NameChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable) handler, EventRegistrationToken* return_token);
@@ -268,7 +268,7 @@ interface IBluetoothLEDeviceStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice)* return_operation);
-	HRESULT abi_FromBluetoothAddressAsync(UINT64 bluetoothAddress, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice)* return_operation);
+	HRESULT abi_FromBluetoothAddressAsync(ulong bluetoothAddress, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice)* return_operation);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_deviceSelector);
 }
 
@@ -280,10 +280,10 @@ extern(Windows):
 	HRESULT abi_GetDeviceSelectorFromPairingState(bool pairingState, HSTRING* return_deviceSelector);
 	HRESULT abi_GetDeviceSelectorFromConnectionStatus(Windows.Devices.Bluetooth.BluetoothConnectionStatus connectionStatus, HSTRING* return_deviceSelector);
 	HRESULT abi_GetDeviceSelectorFromDeviceName(HSTRING deviceName, HSTRING* return_deviceSelector);
-	HRESULT abi_GetDeviceSelectorFromBluetoothAddress(UINT64 bluetoothAddress, HSTRING* return_deviceSelector);
-	HRESULT abi_GetDeviceSelectorFromBluetoothAddressWithBluetoothAddressType(UINT64 bluetoothAddress, Windows.Devices.Bluetooth.BluetoothAddressType bluetoothAddressType, HSTRING* return_deviceSelector);
+	HRESULT abi_GetDeviceSelectorFromBluetoothAddress(ulong bluetoothAddress, HSTRING* return_deviceSelector);
+	HRESULT abi_GetDeviceSelectorFromBluetoothAddressWithBluetoothAddressType(ulong bluetoothAddress, Windows.Devices.Bluetooth.BluetoothAddressType bluetoothAddressType, HSTRING* return_deviceSelector);
 	HRESULT abi_GetDeviceSelectorFromAppearance(Windows.Devices.Bluetooth.BluetoothLEAppearance appearance, HSTRING* return_deviceSelector);
-	HRESULT abi_FromBluetoothAddressWithBluetoothAddressTypeAsync(UINT64 bluetoothAddress, Windows.Devices.Bluetooth.BluetoothAddressType bluetoothAddressType, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice)* return_operation);
+	HRESULT abi_FromBluetoothAddressWithBluetoothAddressTypeAsync(ulong bluetoothAddress, Windows.Devices.Bluetooth.BluetoothAddressType bluetoothAddressType, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice)* return_operation);
 }
 
 @uuid("df7b7391-6bb5-4cfe-90b1-5d7324edcf7f")
@@ -319,9 +319,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothAdapter).get_DeviceId(&_ret));
 		return _ret;
 	}
-	final UINT64 BluetoothAddress()
+	final ulong BluetoothAddress()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothAdapter).get_BluetoothAddress(&_ret));
 		return _ret;
 	}
@@ -438,9 +438,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).get_ConnectionStatus(&_ret));
 		return _ret;
 	}
-	final UINT64 BluetoothAddress()
+	final ulong BluetoothAddress()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).get_BluetoothAddress(&_ret));
 		return _ret;
 	}
@@ -604,9 +604,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).get_ConnectionStatus(&_ret));
 		return _ret;
 	}
-	final UINT64 BluetoothAddress()
+	final ulong BluetoothAddress()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).get_BluetoothAddress(&_ret));
 		return _ret;
 	}

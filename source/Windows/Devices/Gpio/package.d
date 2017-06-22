@@ -4,7 +4,7 @@ import dwinrt;
 
 struct GpioChangeCount
 {
-	UINT64 Count;
+	ulong Count;
 	Windows.Foundation.TimeSpan RelativeTime;
 }
 

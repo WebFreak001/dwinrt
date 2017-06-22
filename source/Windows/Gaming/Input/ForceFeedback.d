@@ -8,7 +8,7 @@ interface IConditionForceEffect_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Kind(Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind* return_value);
-	HRESULT abi_SetParameters(Windows.Foundation.Numerics.Vector3 direction, FLOAT positiveCoefficient, FLOAT negativeCoefficient, FLOAT maxPositiveMagnitude, FLOAT maxNegativeMagnitude, FLOAT deadZone, FLOAT bias);
+	HRESULT abi_SetParameters(Windows.Foundation.Numerics.Vector3 direction, float positiveCoefficient, float negativeCoefficient, float maxPositiveMagnitude, float maxNegativeMagnitude, float deadZone, float bias);
 }
 @uuid("32d1ea68-3695-4e69-85c0-cd1944189140")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.ConditionForceEffect")
@@ -28,7 +28,7 @@ interface IConstantForceEffect_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SetParameters(Windows.Foundation.Numerics.Vector3 vector, Windows.Foundation.TimeSpan duration);
-	HRESULT abi_SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 vector, FLOAT attackGain, FLOAT sustainGain, FLOAT releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount);
+	HRESULT abi_SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 vector, float attackGain, float sustainGain, float releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount);
 }
 @uuid("9bfa0140-f3c7-415c-b068-0f068734bce0")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.ConstantForceEffect")
@@ -71,8 +71,8 @@ interface IPeriodicForceEffect_Base : IInspectable
 {
 extern(Windows):
 	HRESULT get_Kind(Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind* return_value);
-	HRESULT abi_SetParameters(Windows.Foundation.Numerics.Vector3 vector, FLOAT frequency, FLOAT phase, FLOAT bias, Windows.Foundation.TimeSpan duration);
-	HRESULT abi_SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 vector, FLOAT frequency, FLOAT phase, FLOAT bias, FLOAT attackGain, FLOAT sustainGain, FLOAT releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount);
+	HRESULT abi_SetParameters(Windows.Foundation.Numerics.Vector3 vector, float frequency, float phase, float bias, Windows.Foundation.TimeSpan duration);
+	HRESULT abi_SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 vector, float frequency, float phase, float bias, float attackGain, float sustainGain, float releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount);
 }
 @uuid("5c5138d7-fc75-4d52-9a0a-efe4cab5fe64")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect")
@@ -92,7 +92,7 @@ interface IRampForceEffect_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SetParameters(Windows.Foundation.Numerics.Vector3 startVector, Windows.Foundation.Numerics.Vector3 endVector, Windows.Foundation.TimeSpan duration);
-	HRESULT abi_SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 startVector, Windows.Foundation.Numerics.Vector3 endVector, FLOAT attackGain, FLOAT sustainGain, FLOAT releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount);
+	HRESULT abi_SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 startVector, Windows.Foundation.Numerics.Vector3 endVector, float attackGain, float sustainGain, float releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount);
 }
 @uuid("f1f81259-1ca6-4080-b56d-b43f3354d052")
 @WinrtFactory("Windows.Gaming.Input.ForceFeedback.RampForceEffect")
@@ -131,7 +131,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.ForceFeedback.IConditionForceEffect).get_Kind(&_ret));
 		return _ret;
 	}
-	final void SetParameters(Windows.Foundation.Numerics.Vector3 direction, FLOAT positiveCoefficient, FLOAT negativeCoefficient, FLOAT maxPositiveMagnitude, FLOAT maxNegativeMagnitude, FLOAT deadZone, FLOAT bias)
+	final void SetParameters(Windows.Foundation.Numerics.Vector3 direction, float positiveCoefficient, float negativeCoefficient, float maxPositiveMagnitude, float maxNegativeMagnitude, float deadZone, float bias)
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.ForceFeedback.IConditionForceEffect).abi_SetParameters(direction, positiveCoefficient, negativeCoefficient, maxPositiveMagnitude, maxNegativeMagnitude, deadZone, bias));
 	}
@@ -168,7 +168,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.ForceFeedback.IConstantForceEffect).abi_SetParameters(vector, duration));
 	}
-	final void SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 vector, FLOAT attackGain, FLOAT sustainGain, FLOAT releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount)
+	final void SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 vector, float attackGain, float sustainGain, float releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount)
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.ForceFeedback.IConstantForceEffect).abi_SetParametersWithEnvelope(vector, attackGain, sustainGain, releaseGain, startDelay, attackDuration, sustainDuration, releaseDuration, repeatCount));
 	}
@@ -282,11 +282,11 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.ForceFeedback.IPeriodicForceEffect).get_Kind(&_ret));
 		return _ret;
 	}
-	final void SetParameters(Windows.Foundation.Numerics.Vector3 vector, FLOAT frequency, FLOAT phase, FLOAT bias, Windows.Foundation.TimeSpan duration)
+	final void SetParameters(Windows.Foundation.Numerics.Vector3 vector, float frequency, float phase, float bias, Windows.Foundation.TimeSpan duration)
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.ForceFeedback.IPeriodicForceEffect).abi_SetParameters(vector, frequency, phase, bias, duration));
 	}
-	final void SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 vector, FLOAT frequency, FLOAT phase, FLOAT bias, FLOAT attackGain, FLOAT sustainGain, FLOAT releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount)
+	final void SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 vector, float frequency, float phase, float bias, float attackGain, float sustainGain, float releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount)
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.ForceFeedback.IPeriodicForceEffect).abi_SetParametersWithEnvelope(vector, frequency, phase, bias, attackGain, sustainGain, releaseGain, startDelay, attackDuration, sustainDuration, releaseDuration, repeatCount));
 	}
@@ -323,7 +323,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.ForceFeedback.IRampForceEffect).abi_SetParameters(startVector, endVector, duration));
 	}
-	final void SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 startVector, Windows.Foundation.Numerics.Vector3 endVector, FLOAT attackGain, FLOAT sustainGain, FLOAT releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount)
+	final void SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 startVector, Windows.Foundation.Numerics.Vector3 endVector, float attackGain, float sustainGain, float releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount)
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.ForceFeedback.IRampForceEffect).abi_SetParametersWithEnvelope(startVector, endVector, attackGain, sustainGain, releaseGain, startDelay, attackDuration, sustainDuration, releaseDuration, repeatCount));
 	}

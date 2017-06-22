@@ -110,8 +110,8 @@ extern(Windows):
 	HRESULT get_Id(HSTRING* return_value);
 	HRESULT abi_GetDevicePropertyById(HSTRING propertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize, Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult* return_value);
 	HRESULT abi_SetDevicePropertyById(HSTRING propertyId, IInspectable propertyValue, Windows.Media.Devices.VideoDeviceControllerSetDevicePropertyStatus* return_value);
-	HRESULT abi_GetDevicePropertyByExtendedId(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize, Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult* return_value);
-	HRESULT abi_SetDevicePropertyByExtendedId(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, UINT32 __propertyValueSize, BYTE* propertyValue, Windows.Media.Devices.VideoDeviceControllerSetDevicePropertyStatus* return_value);
+	HRESULT abi_GetDevicePropertyByExtendedId(UINT32 __extendedPropertyIdSize, ubyte* extendedPropertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize, Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult* return_value);
+	HRESULT abi_SetDevicePropertyByExtendedId(UINT32 __extendedPropertyIdSize, ubyte* extendedPropertyId, UINT32 __propertyValueSize, ubyte* propertyValue, Windows.Media.Devices.VideoDeviceControllerSetDevicePropertyStatus* return_value);
 }
 
 @uuid("edd4a388-79c7-4f7c-90e8-ef934b21580a")
@@ -121,8 +121,8 @@ interface IAudioDeviceController_Base : IInspectable
 extern(Windows):
 	HRESULT set_Muted(bool value);
 	HRESULT get_Muted(bool* return_value);
-	HRESULT set_VolumePercent(FLOAT value);
-	HRESULT get_VolumePercent(FLOAT* return_value);
+	HRESULT set_VolumePercent(float value);
+	HRESULT get_VolumePercent(float* return_value);
 }
 @uuid("edd4a388-79c7-4f7c-90e8-ef934b21580a")
 @WinrtFactory("Windows.Media.Devices.AudioDeviceController")
@@ -174,10 +174,10 @@ extern(Windows):
 interface ICallControl : IInspectable
 {
 extern(Windows):
-	HRESULT abi_IndicateNewIncomingCall(bool enableRinger, HSTRING callerId, UINT64* return_callToken);
-	HRESULT abi_IndicateNewOutgoingCall(UINT64* return_callToken);
-	HRESULT abi_IndicateActiveCall(UINT64 callToken);
-	HRESULT abi_EndCall(UINT64 callToken);
+	HRESULT abi_IndicateNewIncomingCall(bool enableRinger, HSTRING callerId, ulong* return_callToken);
+	HRESULT abi_IndicateNewOutgoingCall(ulong* return_callToken);
+	HRESULT abi_IndicateActiveCall(ulong callToken);
+	HRESULT abi_EndCall(ulong callToken);
 	HRESULT get_HasRinger(bool* return_value);
 	HRESULT add_AnswerRequested(Windows.Media.Devices.CallControlEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_AnswerRequested(EventRegistrationToken token);
@@ -225,11 +225,11 @@ interface IExposureCompensationControl : IInspectable
 {
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
-	HRESULT get_Min(FLOAT* return_value);
-	HRESULT get_Max(FLOAT* return_value);
-	HRESULT get_Step(FLOAT* return_value);
-	HRESULT get_Value(FLOAT* return_value);
-	HRESULT abi_SetValueAsync(FLOAT value, Windows.Foundation.IAsyncAction* return_asyncInfo);
+	HRESULT get_Min(float* return_value);
+	HRESULT get_Max(float* return_value);
+	HRESULT get_Step(float* return_value);
+	HRESULT get_Value(float* return_value);
+	HRESULT abi_SetValueAsync(float value, Windows.Foundation.IAsyncAction* return_asyncInfo);
 }
 
 @uuid("09e8cbe2-ad96-4f28-a0e0-96ed7e1b5fd2")
@@ -271,8 +271,8 @@ extern(Windows):
 	HRESULT set_Auto(bool value);
 	HRESULT get_RedEyeReduction(bool* return_value);
 	HRESULT set_RedEyeReduction(bool value);
-	HRESULT get_PowerPercent(FLOAT* return_value);
-	HRESULT set_PowerPercent(FLOAT value);
+	HRESULT get_PowerPercent(float* return_value);
+	HRESULT set_PowerPercent(float value);
 }
 
 @uuid("7d29cc9e-75e1-4af7-bd7d-4e38e1c06cd6")
@@ -409,11 +409,11 @@ interface ILowLagPhotoSequenceControl : IInspectable
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
 	HRESULT get_MaxPastPhotos(UINT32* return_value);
-	HRESULT get_MaxPhotosPerSecond(FLOAT* return_value);
+	HRESULT get_MaxPhotosPerSecond(float* return_value);
 	HRESULT get_PastPhotoLimit(UINT32* return_value);
 	HRESULT set_PastPhotoLimit(UINT32 value);
-	HRESULT get_PhotosPerSecondLimit(FLOAT* return_value);
-	HRESULT set_PhotosPerSecondLimit(FLOAT value);
+	HRESULT get_PhotosPerSecondLimit(float* return_value);
+	HRESULT set_PhotosPerSecondLimit(float value);
 	HRESULT abi_GetHighestConcurrentFrameRate(Windows.Media.MediaProperties.IMediaEncodingProperties captureProperties, Windows.Media.MediaProperties.MediaRatio* return_value);
 	HRESULT abi_GetCurrentFrameRate(Windows.Media.MediaProperties.MediaRatio* return_value);
 	HRESULT get_ThumbnailEnabled(bool* return_value);
@@ -576,8 +576,8 @@ extern(Windows):
 	HRESULT get_PowerSupported(bool* return_value);
 	HRESULT get_Enabled(bool* return_value);
 	HRESULT set_Enabled(bool value);
-	HRESULT get_PowerPercent(FLOAT* return_value);
-	HRESULT set_PowerPercent(FLOAT value);
+	HRESULT get_PowerPercent(float* return_value);
+	HRESULT set_PowerPercent(float value);
 }
 
 @uuid("99555575-2e2e-40b8-b6c7-f82d10013210")
@@ -633,11 +633,11 @@ interface IZoomControl : IInspectable
 {
 extern(Windows):
 	HRESULT get_Supported(bool* return_value);
-	HRESULT get_Min(FLOAT* return_value);
-	HRESULT get_Max(FLOAT* return_value);
-	HRESULT get_Step(FLOAT* return_value);
-	HRESULT get_Value(FLOAT* return_value);
-	HRESULT set_Value(FLOAT value);
+	HRESULT get_Min(float* return_value);
+	HRESULT get_Max(float* return_value);
+	HRESULT get_Step(float* return_value);
+	HRESULT get_Value(float* return_value);
+	HRESULT set_Value(float value);
 }
 
 @uuid("69843db0-2e99-4641-8529-184f319d1671")
@@ -657,8 +657,8 @@ interface IZoomSettings : IInspectable
 extern(Windows):
 	HRESULT get_Mode(Windows.Media.Devices.ZoomTransitionMode* return_value);
 	HRESULT set_Mode(Windows.Media.Devices.ZoomTransitionMode value);
-	HRESULT get_Value(FLOAT* return_value);
-	HRESULT set_Value(FLOAT value);
+	HRESULT get_Value(float* return_value);
+	HRESULT set_Value(float value);
 }
 
 interface AdvancedPhotoCaptureSettings : Windows.Media.Devices.IAdvancedPhotoCaptureSettings
@@ -716,13 +716,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceController).get_Muted(&_ret));
 		return _ret;
 	}
-	final void VolumePercent(FLOAT value)
+	final void VolumePercent(float value)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceController).set_VolumePercent(value));
 	}
-	final FLOAT VolumePercent()
+	final float VolumePercent()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceController).get_VolumePercent(&_ret));
 		return _ret;
 	}
@@ -834,23 +834,23 @@ extern(Windows):
 interface CallControl : Windows.Media.Devices.ICallControl
 {
 extern(Windows):
-	final UINT64 IndicateNewIncomingCall(bool enableRinger, HSTRING callerId)
+	final ulong IndicateNewIncomingCall(bool enableRinger, HSTRING callerId)
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).abi_IndicateNewIncomingCall(enableRinger, callerId, &_ret));
 		return _ret;
 	}
-	final UINT64 IndicateNewOutgoingCall()
+	final ulong IndicateNewOutgoingCall()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).abi_IndicateNewOutgoingCall(&_ret));
 		return _ret;
 	}
-	final void IndicateActiveCall(UINT64 callToken)
+	final void IndicateActiveCall(ulong callToken)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).abi_IndicateActiveCall(callToken));
 	}
-	final void EndCall(UINT64 callToken)
+	final void EndCall(ulong callToken)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).abi_EndCall(callToken));
 	}
@@ -944,31 +944,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Devices.IExposureCompensationControl).get_Supported(&_ret));
 		return _ret;
 	}
-	final FLOAT Min()
+	final float Min()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IExposureCompensationControl).get_Min(&_ret));
 		return _ret;
 	}
-	final FLOAT Max()
+	final float Max()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IExposureCompensationControl).get_Max(&_ret));
 		return _ret;
 	}
-	final FLOAT Step()
+	final float Step()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IExposureCompensationControl).get_Step(&_ret));
 		return _ret;
 	}
-	final FLOAT Value()
+	final float Value()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IExposureCompensationControl).get_Value(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SetValueAsync(FLOAT value)
+	final Windows.Foundation.IAsyncAction SetValueAsync(float value)
 	{
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IExposureCompensationControl).abi_SetValueAsync(value, &_ret));
@@ -1101,13 +1101,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).set_RedEyeReduction(value));
 	}
-	final FLOAT PowerPercent()
+	final float PowerPercent()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).get_PowerPercent(&_ret));
 		return _ret;
 	}
-	final void PowerPercent(FLOAT value)
+	final void PowerPercent(float value)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.IFlashControl).set_PowerPercent(value));
 	}
@@ -1503,9 +1503,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).get_MaxPastPhotos(&_ret));
 		return _ret;
 	}
-	final FLOAT MaxPhotosPerSecond()
+	final float MaxPhotosPerSecond()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).get_MaxPhotosPerSecond(&_ret));
 		return _ret;
 	}
@@ -1519,13 +1519,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).set_PastPhotoLimit(value));
 	}
-	final FLOAT PhotosPerSecondLimit()
+	final float PhotosPerSecondLimit()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).get_PhotosPerSecondLimit(&_ret));
 		return _ret;
 	}
-	final void PhotosPerSecondLimit(FLOAT value)
+	final void PhotosPerSecondLimit(float value)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.ILowLagPhotoSequenceControl).set_PhotosPerSecondLimit(value));
 	}
@@ -1913,13 +1913,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.ITorchControl).set_Enabled(value));
 	}
-	final FLOAT PowerPercent()
+	final float PowerPercent()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.ITorchControl).get_PowerPercent(&_ret));
 		return _ret;
 	}
-	final void PowerPercent(FLOAT value)
+	final void PowerPercent(float value)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.ITorchControl).set_PowerPercent(value));
 	}
@@ -2180,13 +2180,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5).abi_SetDevicePropertyById(propertyId, propertyValue, &_ret));
 		return _ret;
 	}
-	final Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult GetDevicePropertyByExtendedId(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize)
+	final Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult GetDevicePropertyByExtendedId(UINT32 __extendedPropertyIdSize, ubyte* extendedPropertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize)
 	{
 		Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5).abi_GetDevicePropertyByExtendedId(__extendedPropertyIdSize, extendedPropertyId, maxPropertyValueSize, &_ret));
 		return _ret;
 	}
-	final Windows.Media.Devices.VideoDeviceControllerSetDevicePropertyStatus SetDevicePropertyByExtendedId(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, UINT32 __propertyValueSize, BYTE* propertyValue)
+	final Windows.Media.Devices.VideoDeviceControllerSetDevicePropertyStatus SetDevicePropertyByExtendedId(UINT32 __extendedPropertyIdSize, ubyte* extendedPropertyId, UINT32 __propertyValueSize, ubyte* propertyValue)
 	{
 		Windows.Media.Devices.VideoDeviceControllerSetDevicePropertyStatus _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5).abi_SetDevicePropertyByExtendedId(__extendedPropertyIdSize, extendedPropertyId, __propertyValueSize, propertyValue, &_ret));
@@ -2273,31 +2273,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl).get_Supported(&_ret));
 		return _ret;
 	}
-	final FLOAT Min()
+	final float Min()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl).get_Min(&_ret));
 		return _ret;
 	}
-	final FLOAT Max()
+	final float Max()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl).get_Max(&_ret));
 		return _ret;
 	}
-	final FLOAT Step()
+	final float Step()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl).get_Step(&_ret));
 		return _ret;
 	}
-	final FLOAT Value()
+	final float Value()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl).get_Value(&_ret));
 		return _ret;
 	}
-	final void Value(FLOAT value)
+	final void Value(float value)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.IZoomControl).set_Value(value));
 	}
@@ -2332,13 +2332,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.IZoomSettings).set_Mode(value));
 	}
-	final FLOAT Value()
+	final float Value()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Media.Devices.IZoomSettings).get_Value(&_ret));
 		return _ret;
 	}
-	final void Value(FLOAT value)
+	final void Value(float value)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.IZoomSettings).set_Value(value));
 	}

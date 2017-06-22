@@ -189,8 +189,8 @@ extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
 	HRESULT set_Name(HSTRING value);
 	HRESULT get_Parameters(Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpNameValueHeaderValue)* return_value);
-	HRESULT get_Size(Windows.Foundation.IReference!(UINT64)* return_value);
-	HRESULT set_Size(Windows.Foundation.IReference!(UINT64) value);
+	HRESULT get_Size(Windows.Foundation.IReference!(ulong)* return_value);
+	HRESULT set_Size(Windows.Foundation.IReference!(ulong) value);
 }
 
 @uuid("9915bbc4-456c-4e81-8295-b2ab3cbcf545")
@@ -219,8 +219,8 @@ extern(Windows):
 	HRESULT set_ContentDisposition(Windows.Web.Http.Headers.HttpContentDispositionHeaderValue value);
 	HRESULT get_ContentEncoding(Windows.Web.Http.Headers.HttpContentCodingHeaderValueCollection* return_value);
 	HRESULT get_ContentLanguage(Windows.Web.Http.Headers.HttpLanguageHeaderValueCollection* return_value);
-	HRESULT get_ContentLength(Windows.Foundation.IReference!(UINT64)* return_value);
-	HRESULT set_ContentLength(Windows.Foundation.IReference!(UINT64) value);
+	HRESULT get_ContentLength(Windows.Foundation.IReference!(ulong)* return_value);
+	HRESULT set_ContentLength(Windows.Foundation.IReference!(ulong) value);
 	HRESULT get_ContentLocation(Windows.Foundation.Uri* return_value);
 	HRESULT set_ContentLocation(Windows.Foundation.Uri value);
 	HRESULT get_ContentMD5(Windows.Storage.Streams.IBuffer* return_value);
@@ -245,9 +245,9 @@ interface IHttpContentHeaderCollection : IHttpContentHeaderCollection_Base, Wind
 interface IHttpContentRangeHeaderValue : IInspectable
 {
 extern(Windows):
-	HRESULT get_FirstBytePosition(Windows.Foundation.IReference!(UINT64)* return_value);
-	HRESULT get_LastBytePosition(Windows.Foundation.IReference!(UINT64)* return_value);
-	HRESULT get_Length(Windows.Foundation.IReference!(UINT64)* return_value);
+	HRESULT get_FirstBytePosition(Windows.Foundation.IReference!(ulong)* return_value);
+	HRESULT get_LastBytePosition(Windows.Foundation.IReference!(ulong)* return_value);
+	HRESULT get_Length(Windows.Foundation.IReference!(ulong)* return_value);
 	HRESULT get_Unit(HSTRING* return_value);
 	HRESULT set_Unit(HSTRING value);
 }
@@ -257,9 +257,9 @@ extern(Windows):
 interface IHttpContentRangeHeaderValueFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateFromLength(UINT64 length, Windows.Web.Http.Headers.HttpContentRangeHeaderValue* return_contentRangeHeaderValue);
-	HRESULT abi_CreateFromRange(UINT64 from, UINT64 to, Windows.Web.Http.Headers.HttpContentRangeHeaderValue* return_contentRangeHeaderValue);
-	HRESULT abi_CreateFromRangeWithLength(UINT64 from, UINT64 to, UINT64 length, Windows.Web.Http.Headers.HttpContentRangeHeaderValue* return_contentRangeHeaderValue);
+	HRESULT abi_CreateFromLength(ulong length, Windows.Web.Http.Headers.HttpContentRangeHeaderValue* return_contentRangeHeaderValue);
+	HRESULT abi_CreateFromRange(ulong from, ulong to, Windows.Web.Http.Headers.HttpContentRangeHeaderValue* return_contentRangeHeaderValue);
+	HRESULT abi_CreateFromRangeWithLength(ulong from, ulong to, ulong length, Windows.Web.Http.Headers.HttpContentRangeHeaderValue* return_contentRangeHeaderValue);
 }
 
 @uuid("80a346ca-174c-4fae-821c-134cd294aa38")
@@ -1301,13 +1301,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).get_Parameters(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) Size()
+	final Windows.Foundation.IReference!(ulong) Size()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).get_Size(&_ret));
 		return _ret;
 	}
-	final void Size(Windows.Foundation.IReference!(UINT64) value)
+	final void Size(Windows.Foundation.IReference!(ulong) value)
 	{
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValue).set_Size(value));
 	}
@@ -1344,13 +1344,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).get_ContentLanguage(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) ContentLength()
+	final Windows.Foundation.IReference!(ulong) ContentLength()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).get_ContentLength(&_ret));
 		return _ret;
 	}
-	final void ContentLength(Windows.Foundation.IReference!(UINT64) value)
+	final void ContentLength(Windows.Foundation.IReference!(ulong) value)
 	{
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentHeaderCollection).set_ContentLength(value));
 	}
@@ -1477,21 +1477,21 @@ extern(Windows):
 interface HttpContentRangeHeaderValue : Windows.Web.Http.Headers.IHttpContentRangeHeaderValue, Windows.Foundation.IStringable
 {
 extern(Windows):
-	final Windows.Foundation.IReference!(UINT64) FirstBytePosition()
+	final Windows.Foundation.IReference!(ulong) FirstBytePosition()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentRangeHeaderValue).get_FirstBytePosition(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) LastBytePosition()
+	final Windows.Foundation.IReference!(ulong) LastBytePosition()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentRangeHeaderValue).get_LastBytePosition(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) Length()
+	final Windows.Foundation.IReference!(ulong) Length()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Web.Http.Headers.IHttpContentRangeHeaderValue).get_Length(&_ret));
 		return _ret;
 	}

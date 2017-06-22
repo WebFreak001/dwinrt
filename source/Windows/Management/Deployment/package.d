@@ -159,7 +159,7 @@ interface IPackageVolume2 : IInspectable
 extern(Windows):
 	HRESULT get_IsFullTrustPackageSupported(bool* return_value);
 	HRESULT get_IsAppxInstallSupported(bool* return_value);
-	HRESULT abi_GetAvailableSpaceAsync(Windows.Foundation.IAsyncOperation!(UINT64)* return_operation);
+	HRESULT abi_GetAvailableSpaceAsync(Windows.Foundation.IAsyncOperation!(ulong)* return_operation);
 }
 
 interface DeploymentResult : Windows.Management.Deployment.IDeploymentResult, Windows.Management.Deployment.IDeploymentResult2
@@ -633,9 +633,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Management.Deployment.IPackageVolume2).get_IsAppxInstallSupported(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(UINT64) GetAvailableSpaceAsync()
+	final Windows.Foundation.IAsyncOperation!(ulong) GetAvailableSpaceAsync()
 	{
-		Windows.Foundation.IAsyncOperation!(UINT64) _ret;
+		Windows.Foundation.IAsyncOperation!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Management.Deployment.IPackageVolume2).abi_GetAvailableSpaceAsync(&_ret));
 		return _ret;
 	}

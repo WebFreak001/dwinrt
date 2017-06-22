@@ -6,8 +6,8 @@ struct PhotoImportProgress
 {
 	UINT32 ItemsImported;
 	UINT32 TotalItemsToImport;
-	UINT64 BytesImported;
-	UINT64 TotalBytesToImport;
+	ulong BytesImported;
+	ulong TotalBytesToImport;
 	double ImportProgress;
 }
 
@@ -20,15 +20,15 @@ extern(Windows):
 	HRESULT get_HasSucceeded(bool* return_value);
 	HRESULT get_DeletedItems(Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportItem)* return_value);
 	HRESULT get_PhotosCount(UINT32* return_value);
-	HRESULT get_PhotosSizeInBytes(UINT64* return_value);
+	HRESULT get_PhotosSizeInBytes(ulong* return_value);
 	HRESULT get_VideosCount(UINT32* return_value);
-	HRESULT get_VideosSizeInBytes(UINT64* return_value);
+	HRESULT get_VideosSizeInBytes(ulong* return_value);
 	HRESULT get_SidecarsCount(UINT32* return_value);
-	HRESULT get_SidecarsSizeInBytes(UINT64* return_value);
+	HRESULT get_SidecarsSizeInBytes(ulong* return_value);
 	HRESULT get_SiblingsCount(UINT32* return_value);
-	HRESULT get_SiblingsSizeInBytes(UINT64* return_value);
+	HRESULT get_SiblingsSizeInBytes(ulong* return_value);
 	HRESULT get_TotalCount(UINT32* return_value);
-	HRESULT get_TotalSizeInBytes(UINT64* return_value);
+	HRESULT get_TotalSizeInBytes(ulong* return_value);
 }
 
 @uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9")
@@ -40,30 +40,30 @@ extern(Windows):
 	HRESULT get_HasSucceeded(bool* return_value);
 	HRESULT get_FoundItems(Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportItem)* return_value);
 	HRESULT get_PhotosCount(UINT32* return_value);
-	HRESULT get_PhotosSizeInBytes(UINT64* return_value);
+	HRESULT get_PhotosSizeInBytes(ulong* return_value);
 	HRESULT get_VideosCount(UINT32* return_value);
-	HRESULT get_VideosSizeInBytes(UINT64* return_value);
+	HRESULT get_VideosSizeInBytes(ulong* return_value);
 	HRESULT get_SidecarsCount(UINT32* return_value);
-	HRESULT get_SidecarsSizeInBytes(UINT64* return_value);
+	HRESULT get_SidecarsSizeInBytes(ulong* return_value);
 	HRESULT get_SiblingsCount(UINT32* return_value);
-	HRESULT get_SiblingsSizeInBytes(UINT64* return_value);
+	HRESULT get_SiblingsSizeInBytes(ulong* return_value);
 	HRESULT get_TotalCount(UINT32* return_value);
-	HRESULT get_TotalSizeInBytes(UINT64* return_value);
+	HRESULT get_TotalSizeInBytes(ulong* return_value);
 	HRESULT abi_SelectAll();
 	HRESULT abi_SelectNone();
 	HRESULT abi_SelectNewAsync(Windows.Foundation.IAsyncAction* return_action);
 	HRESULT abi_SetImportMode(Windows.Media.Import.PhotoImportImportMode value);
 	HRESULT get_ImportMode(Windows.Media.Import.PhotoImportImportMode* return_value);
 	HRESULT get_SelectedPhotosCount(UINT32* return_value);
-	HRESULT get_SelectedPhotosSizeInBytes(UINT64* return_value);
+	HRESULT get_SelectedPhotosSizeInBytes(ulong* return_value);
 	HRESULT get_SelectedVideosCount(UINT32* return_value);
-	HRESULT get_SelectedVideosSizeInBytes(UINT64* return_value);
+	HRESULT get_SelectedVideosSizeInBytes(ulong* return_value);
 	HRESULT get_SelectedSidecarsCount(UINT32* return_value);
-	HRESULT get_SelectedSidecarsSizeInBytes(UINT64* return_value);
+	HRESULT get_SelectedSidecarsSizeInBytes(ulong* return_value);
 	HRESULT get_SelectedSiblingsCount(UINT32* return_value);
-	HRESULT get_SelectedSiblingsSizeInBytes(UINT64* return_value);
+	HRESULT get_SelectedSiblingsSizeInBytes(ulong* return_value);
 	HRESULT get_SelectedTotalCount(UINT32* return_value);
-	HRESULT get_SelectedTotalSizeInBytes(UINT64* return_value);
+	HRESULT get_SelectedTotalSizeInBytes(ulong* return_value);
 	HRESULT add_SelectionChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_SelectionChanged(EventRegistrationToken token);
 	HRESULT abi_ImportItemsAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportImportItemsResult, Windows.Media.Import.PhotoImportProgress)* return_operation);
@@ -88,15 +88,15 @@ extern(Windows):
 	HRESULT get_HasSucceeded(bool* return_value);
 	HRESULT get_ImportedItems(Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportItem)* return_value);
 	HRESULT get_PhotosCount(UINT32* return_value);
-	HRESULT get_PhotosSizeInBytes(UINT64* return_value);
+	HRESULT get_PhotosSizeInBytes(ulong* return_value);
 	HRESULT get_VideosCount(UINT32* return_value);
-	HRESULT get_VideosSizeInBytes(UINT64* return_value);
+	HRESULT get_VideosSizeInBytes(ulong* return_value);
 	HRESULT get_SidecarsCount(UINT32* return_value);
-	HRESULT get_SidecarsSizeInBytes(UINT64* return_value);
+	HRESULT get_SidecarsSizeInBytes(ulong* return_value);
 	HRESULT get_SiblingsCount(UINT32* return_value);
-	HRESULT get_SiblingsSizeInBytes(UINT64* return_value);
+	HRESULT get_SiblingsSizeInBytes(ulong* return_value);
 	HRESULT get_TotalCount(UINT32* return_value);
-	HRESULT get_TotalSizeInBytes(UINT64* return_value);
+	HRESULT get_TotalSizeInBytes(ulong* return_value);
 	HRESULT abi_DeleteImportedItemsFromSourceAsync(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult, double)* return_result);
 }
 
@@ -106,9 +106,9 @@ interface IPhotoImportItem : IInspectable
 {
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
-	HRESULT get_ItemKey(UINT64* return_value);
+	HRESULT get_ItemKey(ulong* return_value);
 	HRESULT get_ContentType(Windows.Media.Import.PhotoImportContentType* return_value);
-	HRESULT get_SizeInBytes(UINT64* return_value);
+	HRESULT get_SizeInBytes(ulong* return_value);
 	HRESULT get_Date(Windows.Foundation.DateTime* return_value);
 	HRESULT get_Sibling(Windows.Media.Import.PhotoImportSidecar* return_value);
 	HRESULT get_Sidecars(Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportSidecar)* return_value);
@@ -196,7 +196,7 @@ interface IPhotoImportSidecar : IInspectable
 {
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
-	HRESULT get_SizeInBytes(UINT64* return_value);
+	HRESULT get_SizeInBytes(ulong* return_value);
 	HRESULT get_Date(Windows.Foundation.DateTime* return_value);
 }
 
@@ -243,8 +243,8 @@ extern(Windows):
 	HRESULT get_SerialNumber(HSTRING* return_value);
 	HRESULT get_StorageMediumType(Windows.Media.Import.PhotoImportStorageMediumType* return_value);
 	HRESULT get_SupportedAccessMode(Windows.Media.Import.PhotoImportAccessMode* return_value);
-	HRESULT get_CapacityInBytes(UINT64* return_value);
-	HRESULT get_AvailableSpaceInBytes(UINT64* return_value);
+	HRESULT get_CapacityInBytes(ulong* return_value);
+	HRESULT get_AvailableSpaceInBytes(ulong* return_value);
 	HRESULT abi_Refresh();
 }
 
@@ -254,7 +254,7 @@ interface IPhotoImportVideoSegment : IInspectable
 {
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
-	HRESULT get_SizeInBytes(UINT64* return_value);
+	HRESULT get_SizeInBytes(ulong* return_value);
 	HRESULT get_Date(Windows.Foundation.DateTime* return_value);
 	HRESULT get_Sibling(Windows.Media.Import.PhotoImportSidecar* return_value);
 	HRESULT get_Sidecars(Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportSidecar)* return_value);
@@ -287,9 +287,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_PhotosCount(&_ret));
 		return _ret;
 	}
-	final UINT64 PhotosSizeInBytes()
+	final ulong PhotosSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_PhotosSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -299,9 +299,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_VideosCount(&_ret));
 		return _ret;
 	}
-	final UINT64 VideosSizeInBytes()
+	final ulong VideosSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_VideosSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -311,9 +311,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_SidecarsCount(&_ret));
 		return _ret;
 	}
-	final UINT64 SidecarsSizeInBytes()
+	final ulong SidecarsSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_SidecarsSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -323,9 +323,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_SiblingsCount(&_ret));
 		return _ret;
 	}
-	final UINT64 SiblingsSizeInBytes()
+	final ulong SiblingsSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_SiblingsSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -335,9 +335,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_TotalCount(&_ret));
 		return _ret;
 	}
-	final UINT64 TotalSizeInBytes()
+	final ulong TotalSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_TotalSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -370,9 +370,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_PhotosCount(&_ret));
 		return _ret;
 	}
-	final UINT64 PhotosSizeInBytes()
+	final ulong PhotosSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_PhotosSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -382,9 +382,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_VideosCount(&_ret));
 		return _ret;
 	}
-	final UINT64 VideosSizeInBytes()
+	final ulong VideosSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_VideosSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -394,9 +394,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SidecarsCount(&_ret));
 		return _ret;
 	}
-	final UINT64 SidecarsSizeInBytes()
+	final ulong SidecarsSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SidecarsSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -406,9 +406,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SiblingsCount(&_ret));
 		return _ret;
 	}
-	final UINT64 SiblingsSizeInBytes()
+	final ulong SiblingsSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SiblingsSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -418,9 +418,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_TotalCount(&_ret));
 		return _ret;
 	}
-	final UINT64 TotalSizeInBytes()
+	final ulong TotalSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_TotalSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -454,9 +454,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedPhotosCount(&_ret));
 		return _ret;
 	}
-	final UINT64 SelectedPhotosSizeInBytes()
+	final ulong SelectedPhotosSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedPhotosSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -466,9 +466,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedVideosCount(&_ret));
 		return _ret;
 	}
-	final UINT64 SelectedVideosSizeInBytes()
+	final ulong SelectedVideosSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedVideosSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -478,9 +478,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedSidecarsCount(&_ret));
 		return _ret;
 	}
-	final UINT64 SelectedSidecarsSizeInBytes()
+	final ulong SelectedSidecarsSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedSidecarsSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -490,9 +490,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedSiblingsCount(&_ret));
 		return _ret;
 	}
-	final UINT64 SelectedSiblingsSizeInBytes()
+	final ulong SelectedSiblingsSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedSiblingsSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -502,9 +502,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedTotalCount(&_ret));
 		return _ret;
 	}
-	final UINT64 SelectedTotalSizeInBytes()
+	final ulong SelectedTotalSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedTotalSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -567,9 +567,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_PhotosCount(&_ret));
 		return _ret;
 	}
-	final UINT64 PhotosSizeInBytes()
+	final ulong PhotosSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_PhotosSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -579,9 +579,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_VideosCount(&_ret));
 		return _ret;
 	}
-	final UINT64 VideosSizeInBytes()
+	final ulong VideosSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_VideosSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -591,9 +591,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_SidecarsCount(&_ret));
 		return _ret;
 	}
-	final UINT64 SidecarsSizeInBytes()
+	final ulong SidecarsSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_SidecarsSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -603,9 +603,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_SiblingsCount(&_ret));
 		return _ret;
 	}
-	final UINT64 SiblingsSizeInBytes()
+	final ulong SiblingsSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_SiblingsSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -615,9 +615,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_TotalCount(&_ret));
 		return _ret;
 	}
-	final UINT64 TotalSizeInBytes()
+	final ulong TotalSizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_TotalSizeInBytes(&_ret));
 		return _ret;
 	}
@@ -638,9 +638,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_Name(&_ret));
 		return _ret;
 	}
-	final UINT64 ItemKey()
+	final ulong ItemKey()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_ItemKey(&_ret));
 		return _ret;
 	}
@@ -650,9 +650,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_ContentType(&_ret));
 		return _ret;
 	}
-	final UINT64 SizeInBytes()
+	final ulong SizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_SizeInBytes(&_ret));
 		return _ret;
 	}
@@ -867,9 +867,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSidecar).get_Name(&_ret));
 		return _ret;
 	}
-	final UINT64 SizeInBytes()
+	final ulong SizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSidecar).get_SizeInBytes(&_ret));
 		return _ret;
 	}
@@ -1021,15 +1021,15 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportStorageMedium).get_SupportedAccessMode(&_ret));
 		return _ret;
 	}
-	final UINT64 CapacityInBytes()
+	final ulong CapacityInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportStorageMedium).get_CapacityInBytes(&_ret));
 		return _ret;
 	}
-	final UINT64 AvailableSpaceInBytes()
+	final ulong AvailableSpaceInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportStorageMedium).get_AvailableSpaceInBytes(&_ret));
 		return _ret;
 	}
@@ -1048,9 +1048,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportVideoSegment).get_Name(&_ret));
 		return _ret;
 	}
-	final UINT64 SizeInBytes()
+	final ulong SizeInBytes()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportVideoSegment).get_SizeInBytes(&_ret));
 		return _ret;
 	}

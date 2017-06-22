@@ -1050,8 +1050,8 @@ extern(Windows):
 	HRESULT remove_HorizontalSnapPointsChanged(EventRegistrationToken token);
 	HRESULT add_VerticalSnapPointsChanged(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_VerticalSnapPointsChanged(EventRegistrationToken token);
-	HRESULT abi_GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, Windows.Foundation.Collections.IVectorView!(FLOAT)* return_returnValue);
-	HRESULT abi_GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, FLOAT* out_offset, FLOAT* return_returnValue);
+	HRESULT abi_GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, Windows.Foundation.Collections.IVectorView!(float)* return_returnValue);
+	HRESULT abi_GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, float* out_offset, float* return_returnValue);
 }
 
 @uuid("e30eb3a5-b36b-42dc-8527-cd25136c083c")
@@ -1609,15 +1609,15 @@ extern(Windows):
 	{
 		Debug.OK(remove_VerticalSnapPointsChanged(token));
 	}
-	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
+	final Windows.Foundation.Collections.IVectorView!(float) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
-		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
+		Windows.Foundation.Collections.IVectorView!(float) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetIrregularSnapPoints(orientation, alignment, &_ret));
 		return _ret;
 	}
-	final FLOAT GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, FLOAT* out_offset)
+	final float GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, float* out_offset)
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
 		return _ret;
 	}
@@ -2693,15 +2693,15 @@ extern(Windows):
 	{
 		Debug.OK(remove_VerticalSnapPointsChanged(token));
 	}
-	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
+	final Windows.Foundation.Collections.IVectorView!(float) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
-		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
+		Windows.Foundation.Collections.IVectorView!(float) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetIrregularSnapPoints(orientation, alignment, &_ret));
 		return _ret;
 	}
-	final FLOAT GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, FLOAT* out_offset)
+	final float GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, float* out_offset)
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
 		return _ret;
 	}
@@ -2881,15 +2881,15 @@ extern(Windows):
 	{
 		Debug.OK(remove_VerticalSnapPointsChanged(token));
 	}
-	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
+	final Windows.Foundation.Collections.IVectorView!(float) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
-		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
+		Windows.Foundation.Collections.IVectorView!(float) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetIrregularSnapPoints(orientation, alignment, &_ret));
 		return _ret;
 	}
-	final FLOAT GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, FLOAT* out_offset)
+	final float GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, float* out_offset)
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
 		return _ret;
 	}
@@ -2957,15 +2957,15 @@ extern(Windows):
 	{
 		Debug.OK(remove_VerticalSnapPointsChanged(token));
 	}
-	final Windows.Foundation.Collections.IVectorView!(FLOAT) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
+	final Windows.Foundation.Collections.IVectorView!(float) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
-		Windows.Foundation.Collections.IVectorView!(FLOAT) _ret;
+		Windows.Foundation.Collections.IVectorView!(float) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetIrregularSnapPoints(orientation, alignment, &_ret));
 		return _ret;
 	}
-	final FLOAT GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, FLOAT* out_offset)
+	final float GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, float* out_offset)
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
 		return _ret;
 	}

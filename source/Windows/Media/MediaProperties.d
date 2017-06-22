@@ -54,8 +54,8 @@ extern(Windows):
 interface IAudioEncodingPropertiesWithFormatUserData : IInspectable
 {
 extern(Windows):
-	HRESULT abi_SetFormatUserData(UINT32 __valueSize, BYTE* value);
-	HRESULT abi_GetFormatUserData(UINT32* out___valueSize, BYTE** out_value);
+	HRESULT abi_SetFormatUserData(UINT32 __valueSize, ubyte* value);
+	HRESULT abi_GetFormatUserData(UINT32* out___valueSize, ubyte** out_value);
 }
 
 @uuid("59ac2a57-b32a-479e-8a61-4b7f2e9e7ea0")
@@ -286,8 +286,8 @@ interface IVideoEncodingProperties : IVideoEncodingProperties_Base, Windows.Medi
 interface IVideoEncodingProperties2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_SetFormatUserData(UINT32 __valueSize, BYTE* value);
-	HRESULT abi_GetFormatUserData(UINT32* out___valueSize, BYTE** out_value);
+	HRESULT abi_SetFormatUserData(UINT32 __valueSize, ubyte* value);
+	HRESULT abi_GetFormatUserData(UINT32* out___valueSize, ubyte** out_value);
 	HRESULT set_ProfileId(INT32 value);
 	HRESULT get_ProfileId(INT32* return_value);
 }
@@ -391,11 +391,11 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Subtype(&_ret));
 		return _ret;
 	}
-	final void SetFormatUserData(UINT32 __valueSize, BYTE* value)
+	final void SetFormatUserData(UINT32 __valueSize, ubyte* value)
 	{
 		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesWithFormatUserData).abi_SetFormatUserData(__valueSize, value));
 	}
-	final void GetFormatUserData(UINT32* out___valueSize, BYTE** out_value)
+	final void GetFormatUserData(UINT32* out___valueSize, ubyte** out_value)
 	{
 		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesWithFormatUserData).abi_GetFormatUserData(out___valueSize, out_value));
 	}
@@ -667,11 +667,11 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Subtype(&_ret));
 		return _ret;
 	}
-	final void SetFormatUserData(UINT32 __valueSize, BYTE* value)
+	final void SetFormatUserData(UINT32 __valueSize, ubyte* value)
 	{
 		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties2).abi_SetFormatUserData(__valueSize, value));
 	}
-	final void GetFormatUserData(UINT32* out___valueSize, BYTE** out_value)
+	final void GetFormatUserData(UINT32* out___valueSize, ubyte** out_value)
 	{
 		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties2).abi_GetFormatUserData(out___valueSize, out_value));
 	}

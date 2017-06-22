@@ -295,14 +295,14 @@ extern(Windows):
 interface IVpnInterfaceId : IInspectable
 {
 extern(Windows):
-	HRESULT abi_GetAddressInfo(UINT32* out___idSize, BYTE** out_id);
+	HRESULT abi_GetAddressInfo(UINT32* out___idSize, ubyte** out_id);
 }
 
 @uuid("9e2ddca2-1712-4ce4-b179-8c652c6d1000")
 interface IVpnInterfaceIdFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateVpnInterfaceId(UINT32 __addressSize, BYTE* address, Windows.Networking.Vpn.VpnInterfaceId* return_vpnInterfaceId);
+	HRESULT abi_CreateVpnInterfaceId(UINT32 __addressSize, ubyte* address, Windows.Networking.Vpn.VpnInterfaceId* return_vpnInterfaceId);
 }
 
 @uuid("193696cd-a5c4-4abe-852b-785be4cb3e34")
@@ -514,8 +514,8 @@ interface IVpnRoute : IInspectable
 extern(Windows):
 	HRESULT set_Address(Windows.Networking.HostName value);
 	HRESULT get_Address(Windows.Networking.HostName* return_value);
-	HRESULT set_PrefixSize(BYTE value);
-	HRESULT get_PrefixSize(BYTE* return_value);
+	HRESULT set_PrefixSize(ubyte value);
+	HRESULT get_PrefixSize(ubyte* return_value);
 }
 
 @uuid("db64de22-ce39-4a76-9550-f61039f80e48")
@@ -539,7 +539,7 @@ extern(Windows):
 interface IVpnRouteFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateVpnRoute(Windows.Networking.HostName address, BYTE prefixSize, Windows.Networking.Vpn.VpnRoute* return_route);
+	HRESULT abi_CreateVpnRoute(Windows.Networking.HostName address, ubyte prefixSize, Windows.Networking.Vpn.VpnRoute* return_route);
 }
 
 @uuid("99a8f8af-c0ee-4e75-817a-f231aee5123d")
@@ -1350,7 +1350,7 @@ extern(Windows):
 interface VpnInterfaceId : Windows.Networking.Vpn.IVpnInterfaceId
 {
 extern(Windows):
-	final void GetAddressInfo(UINT32* out___idSize, BYTE** out_id)
+	final void GetAddressInfo(UINT32* out___idSize, ubyte** out_id)
 	{
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnInterfaceId).abi_GetAddressInfo(out___idSize, out_id));
 	}
@@ -1829,13 +1829,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRoute).get_Address(&_ret));
 		return _ret;
 	}
-	final void PrefixSize(BYTE value)
+	final void PrefixSize(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRoute).set_PrefixSize(value));
 	}
-	final BYTE PrefixSize()
+	final ubyte PrefixSize()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRoute).get_PrefixSize(&_ret));
 		return _ret;
 	}

@@ -4,25 +4,25 @@ import dwinrt;
 
 struct CrossSlideThresholds
 {
-	FLOAT SelectionStart;
-	FLOAT SpeedBumpStart;
-	FLOAT SpeedBumpEnd;
-	FLOAT RearrangeStart;
+	float SelectionStart;
+	float SpeedBumpStart;
+	float SpeedBumpEnd;
+	float RearrangeStart;
 }
 
 struct ManipulationDelta
 {
 	Windows.Foundation.Point Translation;
-	FLOAT Scale;
-	FLOAT Rotation;
-	FLOAT Expansion;
+	float Scale;
+	float Rotation;
+	float Expansion;
 }
 
 struct ManipulationVelocities
 {
 	Windows.Foundation.Point Linear;
-	FLOAT Angular;
-	FLOAT Expansion;
+	float Angular;
+	float Expansion;
 }
 
 @uuid("e9374738-6f88-41d9-8720-78e08e398349")
@@ -87,20 +87,20 @@ extern(Windows):
 	HRESULT set_ShowGestureFeedback(bool value);
 	HRESULT get_PivotCenter(Windows.Foundation.Point* return_value);
 	HRESULT set_PivotCenter(Windows.Foundation.Point value);
-	HRESULT get_PivotRadius(FLOAT* return_value);
-	HRESULT set_PivotRadius(FLOAT value);
-	HRESULT get_InertiaTranslationDeceleration(FLOAT* return_value);
-	HRESULT set_InertiaTranslationDeceleration(FLOAT value);
-	HRESULT get_InertiaRotationDeceleration(FLOAT* return_value);
-	HRESULT set_InertiaRotationDeceleration(FLOAT value);
-	HRESULT get_InertiaExpansionDeceleration(FLOAT* return_value);
-	HRESULT set_InertiaExpansionDeceleration(FLOAT value);
-	HRESULT get_InertiaTranslationDisplacement(FLOAT* return_value);
-	HRESULT set_InertiaTranslationDisplacement(FLOAT value);
-	HRESULT get_InertiaRotationAngle(FLOAT* return_value);
-	HRESULT set_InertiaRotationAngle(FLOAT value);
-	HRESULT get_InertiaExpansion(FLOAT* return_value);
-	HRESULT set_InertiaExpansion(FLOAT value);
+	HRESULT get_PivotRadius(float* return_value);
+	HRESULT set_PivotRadius(float value);
+	HRESULT get_InertiaTranslationDeceleration(float* return_value);
+	HRESULT set_InertiaTranslationDeceleration(float value);
+	HRESULT get_InertiaRotationDeceleration(float* return_value);
+	HRESULT set_InertiaRotationDeceleration(float value);
+	HRESULT get_InertiaExpansionDeceleration(float* return_value);
+	HRESULT set_InertiaExpansionDeceleration(float value);
+	HRESULT get_InertiaTranslationDisplacement(float* return_value);
+	HRESULT set_InertiaTranslationDisplacement(float value);
+	HRESULT get_InertiaRotationAngle(float* return_value);
+	HRESULT set_InertiaRotationAngle(float value);
+	HRESULT get_InertiaExpansion(float* return_value);
+	HRESULT set_InertiaExpansion(float value);
 	HRESULT get_ManipulationExact(bool* return_value);
 	HRESULT set_ManipulationExact(bool value);
 	HRESULT get_CrossSlideThresholds(Windows.UI.Input.CrossSlideThresholds* return_value);
@@ -222,10 +222,10 @@ interface IMouseWheelParameters : IInspectable
 extern(Windows):
 	HRESULT get_CharTranslation(Windows.Foundation.Point* return_value);
 	HRESULT set_CharTranslation(Windows.Foundation.Point value);
-	HRESULT get_DeltaScale(FLOAT* return_value);
-	HRESULT set_DeltaScale(FLOAT value);
-	HRESULT get_DeltaRotationAngle(FLOAT* return_value);
-	HRESULT set_DeltaRotationAngle(FLOAT value);
+	HRESULT get_DeltaScale(float* return_value);
+	HRESULT set_DeltaScale(float value);
+	HRESULT get_DeltaRotationAngle(float* return_value);
+	HRESULT set_DeltaRotationAngle(float value);
 	HRESULT get_PageTranslation(Windows.Foundation.Point* return_value);
 	HRESULT set_PageTranslation(Windows.Foundation.Point value);
 }
@@ -240,7 +240,7 @@ extern(Windows):
 	HRESULT get_RawPosition(Windows.Foundation.Point* return_value);
 	HRESULT get_PointerId(UINT32* return_value);
 	HRESULT get_FrameId(UINT32* return_value);
-	HRESULT get_Timestamp(UINT64* return_value);
+	HRESULT get_Timestamp(ulong* return_value);
 	HRESULT get_IsInContact(bool* return_value);
 	HRESULT get_Properties(Windows.UI.Input.PointerPointProperties* return_value);
 }
@@ -250,13 +250,13 @@ extern(Windows):
 interface IPointerPointProperties : IInspectable
 {
 extern(Windows):
-	HRESULT get_Pressure(FLOAT* return_value);
+	HRESULT get_Pressure(float* return_value);
 	HRESULT get_IsInverted(bool* return_value);
 	HRESULT get_IsEraser(bool* return_value);
-	HRESULT get_Orientation(FLOAT* return_value);
-	HRESULT get_XTilt(FLOAT* return_value);
-	HRESULT get_YTilt(FLOAT* return_value);
-	HRESULT get_Twist(FLOAT* return_value);
+	HRESULT get_Orientation(float* return_value);
+	HRESULT get_XTilt(float* return_value);
+	HRESULT get_YTilt(float* return_value);
+	HRESULT get_Twist(float* return_value);
 	HRESULT get_ContactRect(Windows.Foundation.Rect* return_value);
 	HRESULT get_ContactRectRaw(Windows.Foundation.Rect* return_value);
 	HRESULT get_TouchConfidence(bool* return_value);
@@ -281,7 +281,7 @@ extern(Windows):
 interface IPointerPointProperties2 : IInspectable
 {
 extern(Windows):
-	HRESULT get_ZDistance(Windows.Foundation.IReference!(FLOAT)* return_value);
+	HRESULT get_ZDistance(Windows.Foundation.IReference!(float)* return_value);
 }
 
 @uuid("a506638d-2a1a-413e-bc75-9f38381cc069")
@@ -729,73 +729,73 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_PivotCenter(value));
 	}
-	final FLOAT PivotRadius()
+	final float PivotRadius()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_PivotRadius(&_ret));
 		return _ret;
 	}
-	final void PivotRadius(FLOAT value)
+	final void PivotRadius(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_PivotRadius(value));
 	}
-	final FLOAT InertiaTranslationDeceleration()
+	final float InertiaTranslationDeceleration()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaTranslationDeceleration(&_ret));
 		return _ret;
 	}
-	final void InertiaTranslationDeceleration(FLOAT value)
+	final void InertiaTranslationDeceleration(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaTranslationDeceleration(value));
 	}
-	final FLOAT InertiaRotationDeceleration()
+	final float InertiaRotationDeceleration()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaRotationDeceleration(&_ret));
 		return _ret;
 	}
-	final void InertiaRotationDeceleration(FLOAT value)
+	final void InertiaRotationDeceleration(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaRotationDeceleration(value));
 	}
-	final FLOAT InertiaExpansionDeceleration()
+	final float InertiaExpansionDeceleration()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaExpansionDeceleration(&_ret));
 		return _ret;
 	}
-	final void InertiaExpansionDeceleration(FLOAT value)
+	final void InertiaExpansionDeceleration(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaExpansionDeceleration(value));
 	}
-	final FLOAT InertiaTranslationDisplacement()
+	final float InertiaTranslationDisplacement()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaTranslationDisplacement(&_ret));
 		return _ret;
 	}
-	final void InertiaTranslationDisplacement(FLOAT value)
+	final void InertiaTranslationDisplacement(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaTranslationDisplacement(value));
 	}
-	final FLOAT InertiaRotationAngle()
+	final float InertiaRotationAngle()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaRotationAngle(&_ret));
 		return _ret;
 	}
-	final void InertiaRotationAngle(FLOAT value)
+	final void InertiaRotationAngle(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaRotationAngle(value));
 	}
-	final FLOAT InertiaExpansion()
+	final float InertiaExpansion()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaExpansion(&_ret));
 		return _ret;
 	}
-	final void InertiaExpansion(FLOAT value)
+	final void InertiaExpansion(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaExpansion(value));
 	}
@@ -1170,23 +1170,23 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).set_CharTranslation(value));
 	}
-	final FLOAT DeltaScale()
+	final float DeltaScale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).get_DeltaScale(&_ret));
 		return _ret;
 	}
-	final void DeltaScale(FLOAT value)
+	final void DeltaScale(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).set_DeltaScale(value));
 	}
-	final FLOAT DeltaRotationAngle()
+	final float DeltaRotationAngle()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).get_DeltaRotationAngle(&_ret));
 		return _ret;
 	}
-	final void DeltaRotationAngle(FLOAT value)
+	final void DeltaRotationAngle(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).set_DeltaRotationAngle(value));
 	}
@@ -1235,9 +1235,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_FrameId(&_ret));
 		return _ret;
 	}
-	final UINT64 Timestamp()
+	final ulong Timestamp()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_Timestamp(&_ret));
 		return _ret;
 	}
@@ -1258,9 +1258,9 @@ extern(Windows):
 interface PointerPointProperties : Windows.UI.Input.IPointerPointProperties, Windows.UI.Input.IPointerPointProperties2
 {
 extern(Windows):
-	final FLOAT Pressure()
+	final float Pressure()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_Pressure(&_ret));
 		return _ret;
 	}
@@ -1276,27 +1276,27 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsEraser(&_ret));
 		return _ret;
 	}
-	final FLOAT Orientation()
+	final float Orientation()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_Orientation(&_ret));
 		return _ret;
 	}
-	final FLOAT XTilt()
+	final float XTilt()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_XTilt(&_ret));
 		return _ret;
 	}
-	final FLOAT YTilt()
+	final float YTilt()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_YTilt(&_ret));
 		return _ret;
 	}
-	final FLOAT Twist()
+	final float Twist()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_Twist(&_ret));
 		return _ret;
 	}
@@ -1402,9 +1402,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).abi_GetUsageValue(usagePage, usageId, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(FLOAT) ZDistance()
+	final Windows.Foundation.IReference!(float) ZDistance()
 	{
-		Windows.Foundation.IReference!(FLOAT) _ret;
+		Windows.Foundation.IReference!(float) _ret;
 		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties2).get_ZDistance(&_ret));
 		return _ret;
 	}

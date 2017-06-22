@@ -33,7 +33,7 @@ extern(Windows):
 	HRESULT add_DataChanged(Windows.Foundation.TypedEventHandler!(Windows.Storage.ApplicationData, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DataChanged(EventRegistrationToken token);
 	HRESULT abi_SignalDataChanged();
-	HRESULT get_RoamingStorageQuota(UINT64* return_value);
+	HRESULT get_RoamingStorageQuota(ulong* return_value);
 }
 
 @uuid("9e65cd69-0ba3-4e32-be29-b02de6607638")
@@ -133,7 +133,7 @@ extern(Windows):
 	HRESULT abi_AppendLinesWithEncodingAsync(Windows.Storage.IStorageFile file, Windows.Foundation.Collections.IIterable!(HSTRING) lines, Windows.Storage.Streams.UnicodeEncoding encoding, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_ReadBufferAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_operation);
 	HRESULT abi_WriteBufferAsync(Windows.Storage.IStorageFile file, Windows.Storage.Streams.IBuffer buffer, Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT abi_WriteBytesAsync(Windows.Storage.IStorageFile file, UINT32 __bufferSize, BYTE* buffer, Windows.Foundation.IAsyncAction* return_operation);
+	HRESULT abi_WriteBytesAsync(Windows.Storage.IStorageFile file, UINT32 __bufferSize, ubyte* buffer, Windows.Foundation.IAsyncAction* return_operation);
 }
 
 @uuid("5d115e66-27e8-492f-b8e5-2f90896cd4cd")
@@ -211,7 +211,7 @@ extern(Windows):
 	HRESULT abi_AppendLinesWithEncodingAsync(HSTRING absolutePath, Windows.Foundation.Collections.IIterable!(HSTRING) lines, Windows.Storage.Streams.UnicodeEncoding encoding, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_ReadBufferAsync(HSTRING absolutePath, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_operation);
 	HRESULT abi_WriteBufferAsync(HSTRING absolutePath, Windows.Storage.Streams.IBuffer buffer, Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT abi_WriteBytesAsync(HSTRING absolutePath, UINT32 __bufferSize, BYTE* buffer, Windows.Foundation.IAsyncAction* return_operation);
+	HRESULT abi_WriteBytesAsync(HSTRING absolutePath, UINT32 __bufferSize, ubyte* buffer, Windows.Foundation.IAsyncAction* return_operation);
 }
 
 @uuid("033508a2-781a-437a-b078-3f32badcfe47")
@@ -637,9 +637,9 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Storage.IApplicationData).abi_SignalDataChanged());
 	}
-	final UINT64 RoamingStorageQuota()
+	final ulong RoamingStorageQuota()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Storage.IApplicationData).get_RoamingStorageQuota(&_ret));
 		return _ret;
 	}

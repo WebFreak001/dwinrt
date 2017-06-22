@@ -9,7 +9,7 @@ interface IAnimationDescription : IInspectable
 extern(Windows):
 	HRESULT get_Animations(Windows.Foundation.Collections.IVectorView!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)* return_value);
 	HRESULT get_StaggerDelay(Windows.Foundation.TimeSpan* return_value);
-	HRESULT get_StaggerDelayFactor(FLOAT* return_value);
+	HRESULT get_StaggerDelayFactor(float* return_value);
 	HRESULT get_DelayLimit(Windows.Foundation.TimeSpan* return_value);
 	HRESULT get_ZOrder(INT32* return_value);
 }
@@ -27,8 +27,8 @@ extern(Windows):
 interface IOpacityAnimation_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_InitialOpacity(Windows.Foundation.IReference!(FLOAT)* return_value);
-	HRESULT get_FinalOpacity(FLOAT* return_value);
+	HRESULT get_InitialOpacity(Windows.Foundation.IReference!(float)* return_value);
+	HRESULT get_FinalOpacity(float* return_value);
 }
 @uuid("803aabe5-ee7e-455f-84e9-2506afb8d2b4")
 @WinrtFactory("Windows.UI.Core.AnimationMetrics.OpacityAnimation")
@@ -50,10 +50,10 @@ extern(Windows):
 interface IScaleAnimation_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_InitialScaleX(Windows.Foundation.IReference!(FLOAT)* return_value);
-	HRESULT get_InitialScaleY(Windows.Foundation.IReference!(FLOAT)* return_value);
-	HRESULT get_FinalScaleX(FLOAT* return_value);
-	HRESULT get_FinalScaleY(FLOAT* return_value);
+	HRESULT get_InitialScaleX(Windows.Foundation.IReference!(float)* return_value);
+	HRESULT get_InitialScaleY(Windows.Foundation.IReference!(float)* return_value);
+	HRESULT get_FinalScaleX(float* return_value);
+	HRESULT get_FinalScaleY(float* return_value);
 	HRESULT get_NormalizedOrigin(Windows.Foundation.Point* return_value);
 }
 @uuid("023552c7-71ab-428c-9c9f-d31780964995")
@@ -75,9 +75,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescription).get_StaggerDelay(&_ret));
 		return _ret;
 	}
-	final FLOAT StaggerDelayFactor()
+	final float StaggerDelayFactor()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescription).get_StaggerDelayFactor(&_ret));
 		return _ret;
 	}
@@ -98,15 +98,15 @@ extern(Windows):
 interface OpacityAnimation : Windows.UI.Core.AnimationMetrics.IOpacityAnimation, Windows.UI.Core.AnimationMetrics.IPropertyAnimation
 {
 extern(Windows):
-	final Windows.Foundation.IReference!(FLOAT) InitialOpacity()
+	final Windows.Foundation.IReference!(float) InitialOpacity()
 	{
-		Windows.Foundation.IReference!(FLOAT) _ret;
+		Windows.Foundation.IReference!(float) _ret;
 		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IOpacityAnimation).get_InitialOpacity(&_ret));
 		return _ret;
 	}
-	final FLOAT FinalOpacity()
+	final float FinalOpacity()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IOpacityAnimation).get_FinalOpacity(&_ret));
 		return _ret;
 	}
@@ -180,27 +180,27 @@ extern(Windows):
 interface ScaleAnimation : Windows.UI.Core.AnimationMetrics.IScaleAnimation, Windows.UI.Core.AnimationMetrics.IPropertyAnimation
 {
 extern(Windows):
-	final Windows.Foundation.IReference!(FLOAT) InitialScaleX()
+	final Windows.Foundation.IReference!(float) InitialScaleX()
 	{
-		Windows.Foundation.IReference!(FLOAT) _ret;
+		Windows.Foundation.IReference!(float) _ret;
 		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_InitialScaleX(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(FLOAT) InitialScaleY()
+	final Windows.Foundation.IReference!(float) InitialScaleY()
 	{
-		Windows.Foundation.IReference!(FLOAT) _ret;
+		Windows.Foundation.IReference!(float) _ret;
 		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_InitialScaleY(&_ret));
 		return _ret;
 	}
-	final FLOAT FinalScaleX()
+	final float FinalScaleX()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_FinalScaleX(&_ret));
 		return _ret;
 	}
-	final FLOAT FinalScaleY()
+	final float FinalScaleY()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_FinalScaleY(&_ret));
 		return _ret;
 	}

@@ -23,10 +23,10 @@ extern(Windows):
 interface IAppMemoryReport : IInspectable
 {
 extern(Windows):
-	HRESULT get_PrivateCommitUsage(UINT64* return_value);
-	HRESULT get_PeakPrivateCommitUsage(UINT64* return_value);
-	HRESULT get_TotalCommitUsage(UINT64* return_value);
-	HRESULT get_TotalCommitLimit(UINT64* return_value);
+	HRESULT get_PrivateCommitUsage(ulong* return_value);
+	HRESULT get_PeakPrivateCommitUsage(ulong* return_value);
+	HRESULT get_TotalCommitUsage(ulong* return_value);
+	HRESULT get_TotalCommitLimit(ulong* return_value);
 }
 
 @uuid("79f86664-feca-4da5-9e40-2bc63efdc979")
@@ -34,8 +34,8 @@ extern(Windows):
 interface IAppMemoryUsageLimitChangingEventArgs : IInspectable
 {
 extern(Windows):
-	HRESULT get_OldLimit(UINT64* return_value);
-	HRESULT get_NewLimit(UINT64* return_value);
+	HRESULT get_OldLimit(ulong* return_value);
+	HRESULT get_NewLimit(ulong* return_value);
 }
 
 @uuid("bb91c27d-6b87-432a-bd04-776c6f5fb2ab")
@@ -198,8 +198,8 @@ extern(Windows):
 interface IMemoryManagerStatics : IInspectable
 {
 extern(Windows):
-	HRESULT get_AppMemoryUsage(UINT64* return_value);
-	HRESULT get_AppMemoryUsageLimit(UINT64* return_value);
+	HRESULT get_AppMemoryUsage(ulong* return_value);
+	HRESULT get_AppMemoryUsageLimit(ulong* return_value);
 	HRESULT get_AppMemoryUsageLevel(Windows.System.AppMemoryUsageLevel* return_value);
 	HRESULT add_AppMemoryUsageIncreased(Windows.Foundation.EventHandler!(IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AppMemoryUsageIncreased(EventRegistrationToken token);
@@ -223,7 +223,7 @@ extern(Windows):
 interface IMemoryManagerStatics3 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_TrySetAppMemoryUsageLimit(UINT64 value, bool* return_result);
+	HRESULT abi_TrySetAppMemoryUsageLimit(ulong value, bool* return_result);
 }
 
 @uuid("3080b9cf-f444-4a83-beaf-a549a0f3229c")
@@ -263,8 +263,8 @@ extern(Windows):
 interface IProcessMemoryReport : IInspectable
 {
 extern(Windows):
-	HRESULT get_PrivateWorkingSetUsage(UINT64* return_value);
-	HRESULT get_TotalWorkingSetUsage(UINT64* return_value);
+	HRESULT get_PrivateWorkingSetUsage(ulong* return_value);
+	HRESULT get_TotalWorkingSetUsage(ulong* return_value);
 }
 
 @uuid("d581293a-6de9-4d28-9378-f86782e182bb")
@@ -458,27 +458,27 @@ extern(Windows):
 interface AppMemoryReport : Windows.System.IAppMemoryReport
 {
 extern(Windows):
-	final UINT64 PrivateCommitUsage()
+	final ulong PrivateCommitUsage()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.IAppMemoryReport).get_PrivateCommitUsage(&_ret));
 		return _ret;
 	}
-	final UINT64 PeakPrivateCommitUsage()
+	final ulong PeakPrivateCommitUsage()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.IAppMemoryReport).get_PeakPrivateCommitUsage(&_ret));
 		return _ret;
 	}
-	final UINT64 TotalCommitUsage()
+	final ulong TotalCommitUsage()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.IAppMemoryReport).get_TotalCommitUsage(&_ret));
 		return _ret;
 	}
-	final UINT64 TotalCommitLimit()
+	final ulong TotalCommitLimit()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.IAppMemoryReport).get_TotalCommitLimit(&_ret));
 		return _ret;
 	}
@@ -487,15 +487,15 @@ extern(Windows):
 interface AppMemoryUsageLimitChangingEventArgs : Windows.System.IAppMemoryUsageLimitChangingEventArgs
 {
 extern(Windows):
-	final UINT64 OldLimit()
+	final ulong OldLimit()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.IAppMemoryUsageLimitChangingEventArgs).get_OldLimit(&_ret));
 		return _ret;
 	}
-	final UINT64 NewLimit()
+	final ulong NewLimit()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.IAppMemoryUsageLimitChangingEventArgs).get_NewLimit(&_ret));
 		return _ret;
 	}
@@ -770,15 +770,15 @@ extern(Windows):
 interface ProcessMemoryReport : Windows.System.IProcessMemoryReport
 {
 extern(Windows):
-	final UINT64 PrivateWorkingSetUsage()
+	final ulong PrivateWorkingSetUsage()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.IProcessMemoryReport).get_PrivateWorkingSetUsage(&_ret));
 		return _ret;
 	}
-	final UINT64 TotalWorkingSetUsage()
+	final ulong TotalWorkingSetUsage()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.System.IProcessMemoryReport).get_TotalWorkingSetUsage(&_ret));
 		return _ret;
 	}

@@ -20,7 +20,7 @@ extern(Windows):
 	HRESULT get_DesiredMaxBitrate(Windows.Foundation.IReference!(UINT32)* return_value);
 	HRESULT set_DesiredMaxBitrate(Windows.Foundation.IReference!(UINT32) value);
 	HRESULT get_AudioOnlyPlayback(bool* return_value);
-	HRESULT get_InboundBitsPerSecond(UINT64* return_value);
+	HRESULT get_InboundBitsPerSecond(ulong* return_value);
 	HRESULT get_InboundBitsPerSecondWindow(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_InboundBitsPerSecondWindow(Windows.Foundation.TimeSpan value);
 	HRESULT add_DownloadBitrateChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedEventArgs) handler, EventRegistrationToken* return_token);
@@ -108,11 +108,11 @@ extern(Windows):
 	HRESULT get_DiagnosticType(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticType* return_value);
 	HRESULT get_RequestId(Windows.Foundation.IReference!(INT32)* return_value);
 	HRESULT get_Position(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
-	HRESULT get_SegmentId(Windows.Foundation.IReference!(UINT64)* return_value);
+	HRESULT get_SegmentId(Windows.Foundation.IReference!(ulong)* return_value);
 	HRESULT get_ResourceType(Windows.Foundation.IReference!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType)* return_value);
 	HRESULT get_ResourceUri(Windows.Foundation.Uri* return_value);
-	HRESULT get_ResourceByteRangeOffset(Windows.Foundation.IReference!(UINT64)* return_value);
-	HRESULT get_ResourceByteRangeLength(Windows.Foundation.IReference!(UINT64)* return_value);
+	HRESULT get_ResourceByteRangeOffset(Windows.Foundation.IReference!(ulong)* return_value);
+	HRESULT get_ResourceByteRangeLength(Windows.Foundation.IReference!(ulong)* return_value);
 	HRESULT get_Bitrate(Windows.Foundation.IReference!(UINT32)* return_value);
 }
 
@@ -149,8 +149,8 @@ interface IAdaptiveMediaSourceDownloadCompletedEventArgs : IInspectable
 extern(Windows):
 	HRESULT get_ResourceType(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType* return_value);
 	HRESULT get_ResourceUri(Windows.Foundation.Uri* return_value);
-	HRESULT get_ResourceByteRangeOffset(Windows.Foundation.IReference!(UINT64)* return_value);
-	HRESULT get_ResourceByteRangeLength(Windows.Foundation.IReference!(UINT64)* return_value);
+	HRESULT get_ResourceByteRangeOffset(Windows.Foundation.IReference!(ulong)* return_value);
+	HRESULT get_ResourceByteRangeLength(Windows.Foundation.IReference!(ulong)* return_value);
 	HRESULT get_HttpResponseMessage(Windows.Web.Http.HttpResponseMessage* return_value);
 }
 
@@ -171,8 +171,8 @@ interface IAdaptiveMediaSourceDownloadFailedEventArgs : IInspectable
 extern(Windows):
 	HRESULT get_ResourceType(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType* return_value);
 	HRESULT get_ResourceUri(Windows.Foundation.Uri* return_value);
-	HRESULT get_ResourceByteRangeOffset(Windows.Foundation.IReference!(UINT64)* return_value);
-	HRESULT get_ResourceByteRangeLength(Windows.Foundation.IReference!(UINT64)* return_value);
+	HRESULT get_ResourceByteRangeOffset(Windows.Foundation.IReference!(ulong)* return_value);
+	HRESULT get_ResourceByteRangeLength(Windows.Foundation.IReference!(ulong)* return_value);
 	HRESULT get_HttpResponseMessage(Windows.Web.Http.HttpResponseMessage* return_value);
 }
 
@@ -202,8 +202,8 @@ interface IAdaptiveMediaSourceDownloadRequestedEventArgs : IInspectable
 extern(Windows):
 	HRESULT get_ResourceType(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType* return_value);
 	HRESULT get_ResourceUri(Windows.Foundation.Uri* return_value);
-	HRESULT get_ResourceByteRangeOffset(Windows.Foundation.IReference!(UINT64)* return_value);
-	HRESULT get_ResourceByteRangeLength(Windows.Foundation.IReference!(UINT64)* return_value);
+	HRESULT get_ResourceByteRangeOffset(Windows.Foundation.IReference!(ulong)* return_value);
+	HRESULT get_ResourceByteRangeLength(Windows.Foundation.IReference!(ulong)* return_value);
 	HRESULT get_Result(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadResult* return_value);
 	HRESULT abi_GetDeferral(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedDeferral* return_deferral);
 }
@@ -239,10 +239,10 @@ extern(Windows):
 interface IAdaptiveMediaSourceDownloadResult2 : IInspectable
 {
 extern(Windows):
-	HRESULT get_ResourceByteRangeOffset(Windows.Foundation.IReference!(UINT64)* return_value);
-	HRESULT set_ResourceByteRangeOffset(Windows.Foundation.IReference!(UINT64) value);
-	HRESULT get_ResourceByteRangeLength(Windows.Foundation.IReference!(UINT64)* return_value);
-	HRESULT set_ResourceByteRangeLength(Windows.Foundation.IReference!(UINT64) value);
+	HRESULT get_ResourceByteRangeOffset(Windows.Foundation.IReference!(ulong)* return_value);
+	HRESULT set_ResourceByteRangeOffset(Windows.Foundation.IReference!(ulong) value);
+	HRESULT get_ResourceByteRangeLength(Windows.Foundation.IReference!(ulong)* return_value);
+	HRESULT set_ResourceByteRangeLength(Windows.Foundation.IReference!(ulong) value);
 }
 
 @uuid("a306cefb-e96a-4dff-a9b8-1ae08c01ae98")
@@ -250,7 +250,7 @@ extern(Windows):
 interface IAdaptiveMediaSourceDownloadStatistics : IInspectable
 {
 extern(Windows):
-	HRESULT get_ContentBytesReceivedCount(UINT64* return_value);
+	HRESULT get_ContentBytesReceivedCount(ulong* return_value);
 	HRESULT get_TimeToHeadersReceived(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
 	HRESULT get_TimeToFirstByteReceived(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
 	HRESULT get_TimeToLastByteReceived(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value);
@@ -351,9 +351,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).get_AudioOnlyPlayback(&_ret));
 		return _ret;
 	}
-	final UINT64 InboundBitsPerSecond()
+	final ulong InboundBitsPerSecond()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).get_InboundBitsPerSecond(&_ret));
 		return _ret;
 	}
@@ -571,9 +571,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_Position(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) SegmentId()
+	final Windows.Foundation.IReference!(ulong) SegmentId()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_SegmentId(&_ret));
 		return _ret;
 	}
@@ -589,15 +589,15 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_ResourceUri(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeOffset()
+	final Windows.Foundation.IReference!(ulong) ResourceByteRangeOffset()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_ResourceByteRangeOffset(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeLength()
+	final Windows.Foundation.IReference!(ulong) ResourceByteRangeLength()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs).get_ResourceByteRangeLength(&_ret));
 		return _ret;
 	}
@@ -662,15 +662,15 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs).get_ResourceUri(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeOffset()
+	final Windows.Foundation.IReference!(ulong) ResourceByteRangeOffset()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs).get_ResourceByteRangeOffset(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeLength()
+	final Windows.Foundation.IReference!(ulong) ResourceByteRangeLength()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs).get_ResourceByteRangeLength(&_ret));
 		return _ret;
 	}
@@ -715,15 +715,15 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs).get_ResourceUri(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeOffset()
+	final Windows.Foundation.IReference!(ulong) ResourceByteRangeOffset()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs).get_ResourceByteRangeOffset(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeLength()
+	final Windows.Foundation.IReference!(ulong) ResourceByteRangeLength()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs).get_ResourceByteRangeLength(&_ret));
 		return _ret;
 	}
@@ -783,15 +783,15 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs).get_ResourceUri(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeOffset()
+	final Windows.Foundation.IReference!(ulong) ResourceByteRangeOffset()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs).get_ResourceByteRangeOffset(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeLength()
+	final Windows.Foundation.IReference!(ulong) ResourceByteRangeLength()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs).get_ResourceByteRangeLength(&_ret));
 		return _ret;
 	}
@@ -874,23 +874,23 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult).set_ExtendedStatus(value));
 	}
-	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeOffset()
+	final Windows.Foundation.IReference!(ulong) ResourceByteRangeOffset()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult2).get_ResourceByteRangeOffset(&_ret));
 		return _ret;
 	}
-	final void ResourceByteRangeOffset(Windows.Foundation.IReference!(UINT64) value)
+	final void ResourceByteRangeOffset(Windows.Foundation.IReference!(ulong) value)
 	{
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult2).set_ResourceByteRangeOffset(value));
 	}
-	final Windows.Foundation.IReference!(UINT64) ResourceByteRangeLength()
+	final Windows.Foundation.IReference!(ulong) ResourceByteRangeLength()
 	{
-		Windows.Foundation.IReference!(UINT64) _ret;
+		Windows.Foundation.IReference!(ulong) _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult2).get_ResourceByteRangeLength(&_ret));
 		return _ret;
 	}
-	final void ResourceByteRangeLength(Windows.Foundation.IReference!(UINT64) value)
+	final void ResourceByteRangeLength(Windows.Foundation.IReference!(ulong) value)
 	{
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult2).set_ResourceByteRangeLength(value));
 	}
@@ -899,9 +899,9 @@ extern(Windows):
 interface AdaptiveMediaSourceDownloadStatistics : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadStatistics
 {
 extern(Windows):
-	final UINT64 ContentBytesReceivedCount()
+	final ulong ContentBytesReceivedCount()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadStatistics).get_ContentBytesReceivedCount(&_ret));
 		return _ret;
 	}

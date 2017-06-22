@@ -4,13 +4,13 @@ import dwinrt;
 
 struct ArcadeStickReading
 {
-	UINT64 Timestamp;
+	ulong Timestamp;
 	Windows.Gaming.Input.ArcadeStickButtons Buttons;
 }
 
 struct FlightStickReading
 {
-	UINT64 Timestamp;
+	ulong Timestamp;
 	Windows.Gaming.Input.FlightStickButtons Buttons;
 	Windows.Gaming.Input.GameControllerSwitchPosition HatSwitch;
 	double Roll;
@@ -21,7 +21,7 @@ struct FlightStickReading
 
 struct GamepadReading
 {
-	UINT64 Timestamp;
+	ulong Timestamp;
 	Windows.Gaming.Input.GamepadButtons Buttons;
 	double LeftTrigger;
 	double RightTrigger;
@@ -41,7 +41,7 @@ struct GamepadVibration
 
 struct RacingWheelReading
 {
-	UINT64 Timestamp;
+	ulong Timestamp;
 	Windows.Gaming.Input.RacingWheelButtons Buttons;
 	INT32 PatternShifterGear;
 	double Wheel;
@@ -53,7 +53,7 @@ struct RacingWheelReading
 
 struct UINavigationReading
 {
-	UINT64 Timestamp;
+	ulong Timestamp;
 	Windows.Gaming.Input.RequiredUINavigationButtons RequiredButtons;
 	Windows.Gaming.Input.OptionalUINavigationButtons OptionalButtons;
 }
@@ -250,7 +250,7 @@ extern(Windows):
 	HRESULT get_HardwareVendorId(UINT16* return_value);
 	HRESULT get_SwitchCount(INT32* return_value);
 	HRESULT abi_GetButtonLabel(INT32 buttonIndex, Windows.Gaming.Input.GameControllerButtonLabel* return_value);
-	HRESULT abi_GetCurrentReading(UINT32 __buttonArraySize, bool* out_buttonArray, UINT32 __switchArraySize, Windows.Gaming.Input.GameControllerSwitchPosition* out_switchArray, UINT32 __axisArraySize, double* out_axisArray, UINT64* return_timestamp);
+	HRESULT abi_GetCurrentReading(UINT32 __buttonArraySize, bool* out_buttonArray, UINT32 __switchArraySize, Windows.Gaming.Input.GameControllerSwitchPosition* out_switchArray, UINT32 __axisArraySize, double* out_axisArray, ulong* return_timestamp);
 	HRESULT abi_GetSwitchKind(INT32 switchIndex, Windows.Gaming.Input.GameControllerSwitchKind* return_value);
 }
 @uuid("7cad6d91-a7e1-4f71-9a78-33e9c5dfea62")
@@ -710,9 +710,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).abi_GetButtonLabel(buttonIndex, &_ret));
 		return _ret;
 	}
-	final UINT64 GetCurrentReading(UINT32 __buttonArraySize, bool* out_buttonArray, UINT32 __switchArraySize, Windows.Gaming.Input.GameControllerSwitchPosition* out_switchArray, UINT32 __axisArraySize, double* out_axisArray)
+	final ulong GetCurrentReading(UINT32 __buttonArraySize, bool* out_buttonArray, UINT32 __switchArraySize, Windows.Gaming.Input.GameControllerSwitchPosition* out_switchArray, UINT32 __axisArraySize, double* out_axisArray)
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).abi_GetCurrentReading(__buttonArraySize, out_buttonArray, __switchArraySize, out_switchArray, __axisArraySize, out_axisArray, &_ret));
 		return _ret;
 	}

@@ -55,7 +55,7 @@ extern(Windows):
 	deprecated("INDClosedCaptionDataReceivedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_PresentationTimestamp(INT64* return_presentationTimestamp);
 	deprecated("INDClosedCaptionDataReceivedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT get_ClosedCaptionData(UINT32* out___ccDataBytesSize, BYTE** return_ccDataBytes);
+	HRESULT get_ClosedCaptionData(UINT32* out___ccDataBytesSize, ubyte** return_ccDataBytes);
 }
 
 @uuid("f5cb0fdc-2d09-4f19-b5e1-76a0b3ee9267")
@@ -63,9 +63,9 @@ interface INDCustomData : IInspectable
 {
 extern(Windows):
 	deprecated("INDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT get_CustomDataTypeID(UINT32* out___customDataTypeIDBytesSize, BYTE** return_customDataTypeIDBytes);
+	HRESULT get_CustomDataTypeID(UINT32* out___customDataTypeIDBytesSize, ubyte** return_customDataTypeIDBytes);
 	deprecated("INDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT get_CustomData(UINT32* out___customDataBytesSize, BYTE** return_customDataBytes);
+	HRESULT get_CustomData(UINT32* out___customDataBytesSize, ubyte** return_customDataBytes);
 }
 
 @uuid("d65405ab-3424-4833-8c9a-af5fdeb22872")
@@ -74,7 +74,7 @@ interface INDCustomDataFactory : IInspectable
 {
 extern(Windows):
 	deprecated("INDCustomDataFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT abi_CreateInstance(UINT32 __customDataTypeIDBytesSize, BYTE* customDataTypeIDBytes, UINT32 __customDataBytesSize, BYTE* customDataBytes, Windows.Media.Protection.PlayReady.NDCustomData* return_instance);
+	HRESULT abi_CreateInstance(UINT32 __customDataTypeIDBytesSize, ubyte* customDataTypeIDBytes, UINT32 __customDataBytesSize, ubyte* customDataBytes, Windows.Media.Protection.PlayReady.NDCustomData* return_instance);
 }
 
 @uuid("2d223d65-c4b6-4438-8d46-b96e6d0fb21f")
@@ -82,7 +82,7 @@ interface INDDownloadEngine : IInspectable
 {
 extern(Windows):
 	deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT abi_Open(Windows.Foundation.Uri uri, UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes);
+	HRESULT abi_Open(Windows.Foundation.Uri uri, UINT32 __sessionIDBytesSize, ubyte* sessionIDBytes);
 	deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_Pause();
 	deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -108,11 +108,11 @@ extern(Windows):
 	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_OnStreamOpened();
 	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT abi_OnPlayReadyObjectReceived(UINT32 __dataBytesSize, BYTE* dataBytes);
+	HRESULT abi_OnPlayReadyObjectReceived(UINT32 __dataBytesSize, ubyte* dataBytes);
 	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_OnContentIDReceived(Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor licenseFetchDescriptor);
 	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT abi_OnDataReceived(UINT32 __dataBytesSize, BYTE* dataBytes, UINT32 bytesReceived);
+	HRESULT abi_OnDataReceived(UINT32 __dataBytesSize, ubyte* dataBytes, UINT32 bytesReceived);
 	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_OnEndOfStream();
 	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -134,7 +134,7 @@ extern(Windows):
 	deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_ContentIDType(Windows.Media.Protection.PlayReady.NDContentIDType* return_contentIDType);
 	deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT get_ContentID(UINT32* out___contentIDBytesSize, BYTE** return_contentIDBytes);
+	HRESULT get_ContentID(UINT32* out___contentIDBytesSize, ubyte** return_contentIDBytes);
 	deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_LicenseFetchChallengeCustomData(Windows.Media.Protection.PlayReady.INDCustomData* return_licenseFetchChallengeCustomData);
 	deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -147,7 +147,7 @@ interface INDLicenseFetchDescriptorFactory : IInspectable
 {
 extern(Windows):
 	deprecated("INDLicenseFetchDescriptorFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT abi_CreateInstance(Windows.Media.Protection.PlayReady.NDContentIDType contentIDType, UINT32 __contentIDBytesSize, BYTE* contentIDBytes, Windows.Media.Protection.PlayReady.INDCustomData licenseFetchChallengeCustomData, Windows.Media.Protection.PlayReady.NDLicenseFetchDescriptor* return_instance);
+	HRESULT abi_CreateInstance(Windows.Media.Protection.PlayReady.NDContentIDType contentIDType, UINT32 __contentIDBytesSize, ubyte* contentIDBytes, Windows.Media.Protection.PlayReady.INDCustomData licenseFetchChallengeCustomData, Windows.Media.Protection.PlayReady.NDLicenseFetchDescriptor* return_instance);
 }
 
 @uuid("21d39698-aa62-45ff-a5ff-8037e5433825")
@@ -163,13 +163,13 @@ interface INDMessenger : IInspectable
 {
 extern(Windows):
 	deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT abi_SendRegistrationRequestAsync(UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes, UINT32 __challengeDataBytesSize, BYTE* challengeDataBytes, Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult)* return_result);
+	HRESULT abi_SendRegistrationRequestAsync(UINT32 __sessionIDBytesSize, ubyte* sessionIDBytes, UINT32 __challengeDataBytesSize, ubyte* challengeDataBytes, Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult)* return_result);
 	deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT abi_SendProximityDetectionStartAsync(Windows.Media.Protection.PlayReady.NDProximityDetectionType pdType, UINT32 __transmitterChannelBytesSize, BYTE* transmitterChannelBytes, UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes, UINT32 __challengeDataBytesSize, BYTE* challengeDataBytes, Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult)* return_result);
+	HRESULT abi_SendProximityDetectionStartAsync(Windows.Media.Protection.PlayReady.NDProximityDetectionType pdType, UINT32 __transmitterChannelBytesSize, ubyte* transmitterChannelBytes, UINT32 __sessionIDBytesSize, ubyte* sessionIDBytes, UINT32 __challengeDataBytesSize, ubyte* challengeDataBytes, Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult)* return_result);
 	deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT abi_SendProximityDetectionResponseAsync(Windows.Media.Protection.PlayReady.NDProximityDetectionType pdType, UINT32 __transmitterChannelBytesSize, BYTE* transmitterChannelBytes, UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes, UINT32 __responseDataBytesSize, BYTE* responseDataBytes, Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult)* return_result);
+	HRESULT abi_SendProximityDetectionResponseAsync(Windows.Media.Protection.PlayReady.NDProximityDetectionType pdType, UINT32 __transmitterChannelBytesSize, ubyte* transmitterChannelBytes, UINT32 __sessionIDBytesSize, ubyte* sessionIDBytes, UINT32 __responseDataBytesSize, ubyte* responseDataBytes, Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult)* return_result);
 	deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT abi_SendLicenseFetchRequestAsync(UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes, UINT32 __challengeDataBytesSize, BYTE* challengeDataBytes, Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult)* return_result);
+	HRESULT abi_SendLicenseFetchRequestAsync(UINT32 __sessionIDBytesSize, ubyte* sessionIDBytes, UINT32 __challengeDataBytesSize, ubyte* challengeDataBytes, Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult)* return_result);
 }
 
 @uuid("2a706328-da25-4f8c-9eb7-5d0fc3658bca")
@@ -199,7 +199,7 @@ interface INDSendResult : IInspectable
 {
 extern(Windows):
 	deprecated("INDSendResult is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT get_Response(UINT32* out___responseDataBytesSize, BYTE** return_responseDataBytes);
+	HRESULT get_Response(UINT32* out___responseDataBytesSize, ubyte** return_responseDataBytes);
 }
 
 @uuid("79f6e96e-f50f-4015-8ba4-c2bc344ebd4e")
@@ -223,7 +223,7 @@ interface INDStreamParser : IInspectable
 {
 extern(Windows):
 	deprecated("INDStreamParser is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT abi_ParseData(UINT32 __dataBytesSize, BYTE* dataBytes);
+	HRESULT abi_ParseData(UINT32 __dataBytesSize, ubyte* dataBytes);
 	deprecated("INDStreamParser is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_GetStreamInformation(Windows.Media.Core.IMediaStreamDescriptor descriptor, Windows.Media.Protection.PlayReady.NDMediaStreamType* out_streamType, UINT32* return_streamID);
 	deprecated("INDStreamParser is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -243,9 +243,9 @@ extern(Windows):
 	deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT abi_OnMediaStreamDescriptorCreated(Windows.Foundation.Collections.IVector!(Windows.Media.Core.AudioStreamDescriptor) audioStreamDescriptors, Windows.Foundation.Collections.IVector!(Windows.Media.Core.VideoStreamDescriptor) videoStreamDescriptors);
 	deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT abi_OnSampleParsed(UINT32 streamID, Windows.Media.Protection.PlayReady.NDMediaStreamType streamType, Windows.Media.Core.MediaStreamSample streamSample, INT64 pts, Windows.Media.Protection.PlayReady.NDClosedCaptionFormat ccFormat, UINT32 __ccDataBytesSize, BYTE* ccDataBytes);
+	HRESULT abi_OnSampleParsed(UINT32 streamID, Windows.Media.Protection.PlayReady.NDMediaStreamType streamType, Windows.Media.Core.MediaStreamSample streamSample, INT64 pts, Windows.Media.Protection.PlayReady.NDClosedCaptionFormat ccFormat, UINT32 __ccDataBytesSize, ubyte* ccDataBytes);
 	deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT abi_OnBeginSetupDecryptor(Windows.Media.Core.IMediaStreamDescriptor descriptor, GUID keyID, UINT32 __proBytesSize, BYTE* proBytes);
+	HRESULT abi_OnBeginSetupDecryptor(Windows.Media.Core.IMediaStreamDescriptor descriptor, GUID keyID, UINT32 __proBytesSize, ubyte* proBytes);
 }
 
 @uuid("7dd85cfe-1b99-4f68-8f82-8177f7cedf2b")
@@ -274,9 +274,9 @@ extern(Windows):
 	deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_ExpirationDate(Windows.Foundation.DateTime* return_expirationDate);
 	deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT get_ClientID(UINT32* out___clientIDBytesSize, BYTE** return_clientIDBytes);
+	HRESULT get_ClientID(UINT32* out___clientIDBytesSize, ubyte** return_clientIDBytes);
 	deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")
-	HRESULT get_ModelDigest(UINT32* out___modelDigestBytesSize, BYTE** return_modelDigestBytes);
+	HRESULT get_ModelDigest(UINT32* out___modelDigestBytesSize, ubyte** return_modelDigestBytes);
 	deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")
 	HRESULT get_ModelManufacturerName(HSTRING* return_modelManufacturerName);
 	deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")
@@ -298,7 +298,7 @@ extern(Windows):
 	HRESULT get_EncryptionType(Windows.Media.Protection.PlayReady.PlayReadyEncryptionAlgorithm* return_value);
 	HRESULT get_CustomAttributes(HSTRING* return_value);
 	HRESULT get_DecryptorSetup(Windows.Media.Protection.PlayReady.PlayReadyDecryptorSetup* return_value);
-	HRESULT abi_GetSerializedHeader(UINT32* out___headerBytesSize, BYTE** return_headerBytes);
+	HRESULT abi_GetSerializedHeader(UINT32* out___headerBytesSize, ubyte** return_headerBytes);
 	HRESULT get_HeaderWithEmbeddedUpdates(Windows.Media.Protection.PlayReady.PlayReadyContentHeader* return_value);
 }
 
@@ -319,9 +319,9 @@ interface IPlayReadyContentHeader2 : IPlayReadyContentHeader2_Base, Windows.Medi
 interface IPlayReadyContentHeaderFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateInstanceFromWindowsMediaDrmHeader(UINT32 __headerBytesSize, BYTE* headerBytes, Windows.Foundation.Uri licenseAcquisitionUrl, Windows.Foundation.Uri licenseAcquisitionUserInterfaceUrl, HSTRING customAttributes, GUID domainServiceId, Windows.Media.Protection.PlayReady.PlayReadyContentHeader* return_instance);
+	HRESULT abi_CreateInstanceFromWindowsMediaDrmHeader(UINT32 __headerBytesSize, ubyte* headerBytes, Windows.Foundation.Uri licenseAcquisitionUrl, Windows.Foundation.Uri licenseAcquisitionUserInterfaceUrl, HSTRING customAttributes, GUID domainServiceId, Windows.Media.Protection.PlayReady.PlayReadyContentHeader* return_instance);
 	HRESULT abi_CreateInstanceFromComponents(GUID contentKeyId, HSTRING contentKeyIdString, Windows.Media.Protection.PlayReady.PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, Windows.Foundation.Uri licenseAcquisitionUrl, Windows.Foundation.Uri licenseAcquisitionUserInterfaceUrl, HSTRING customAttributes, GUID domainServiceId, Windows.Media.Protection.PlayReady.PlayReadyContentHeader* return_instance);
-	HRESULT abi_CreateInstanceFromPlayReadyHeader(UINT32 __headerBytesSize, BYTE* headerBytes, Windows.Media.Protection.PlayReady.PlayReadyContentHeader* return_instance);
+	HRESULT abi_CreateInstanceFromPlayReadyHeader(UINT32 __headerBytesSize, ubyte* headerBytes, Windows.Media.Protection.PlayReady.PlayReadyContentHeader* return_instance);
 }
 
 @uuid("d1239cf5-ae6d-4778-97fd-6e3a2eeadbeb")
@@ -394,7 +394,7 @@ interface IPlayReadyDomainLeaveServiceRequest : IPlayReadyDomainLeaveServiceRequ
 interface IPlayReadyITADataGenerator : IInspectable
 {
 extern(Windows):
-	HRESULT abi_GenerateData(GUID guidCPSystemId, UINT32 countOfStreams, Windows.Foundation.Collections.IPropertySet configuration, Windows.Media.Protection.PlayReady.PlayReadyITADataFormat format, UINT32* out___dataBytesSize, BYTE** return_dataBytes);
+	HRESULT abi_GenerateData(GUID guidCPSystemId, UINT32 countOfStreams, Windows.Foundation.Collections.IPropertySet configuration, Windows.Media.Protection.PlayReady.PlayReadyITADataFormat format, UINT32* out___dataBytesSize, ubyte** return_dataBytes);
 }
 
 @uuid("21f5a86b-008c-4611-ab2f-aaa6c69f0e24")
@@ -513,8 +513,8 @@ extern(Windows):
 interface IPlayReadyMeteringReportServiceRequest_Base : IInspectable
 {
 extern(Windows):
-	HRESULT get_MeteringCertificate(UINT32* out___meteringCertBytesSize, BYTE** return_meteringCertBytes);
-	HRESULT set_MeteringCertificate(UINT32 __meteringCertBytesSize, BYTE* meteringCertBytes);
+	HRESULT get_MeteringCertificate(UINT32* out___meteringCertBytesSize, ubyte** return_meteringCertBytes);
+	HRESULT set_MeteringCertificate(UINT32 __meteringCertBytesSize, ubyte* meteringCertBytes);
 }
 @uuid("c12b231c-0ecd-4f11-a185-1e24a4a67fb7")
 @WinrtFactory("Windows.Media.Protection.PlayReady.PlayReadyMeteringReportServiceRequest")
@@ -534,7 +534,7 @@ interface IPlayReadyRevocationServiceRequest : IPlayReadyRevocationServiceReques
 interface IPlayReadySecureStopIterableFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateInstance(UINT32 __publisherCertBytesSize, BYTE* publisherCertBytes, Windows.Media.Protection.PlayReady.PlayReadySecureStopIterable* return_instance);
+	HRESULT abi_CreateInstance(UINT32 __publisherCertBytesSize, ubyte* publisherCertBytes, Windows.Media.Protection.PlayReady.PlayReadySecureStopIterable* return_instance);
 }
 
 @uuid("b5501ee5-01bf-4401-9677-05630a6a4cc8")
@@ -545,7 +545,7 @@ extern(Windows):
 	HRESULT get_StartTime(Windows.Foundation.DateTime* return_value);
 	HRESULT get_UpdateTime(Windows.Foundation.DateTime* return_value);
 	HRESULT get_Stopped(bool* return_value);
-	HRESULT get_PublisherCertificate(UINT32* out___publisherCertBytesSize, BYTE** return_publisherCertBytes);
+	HRESULT get_PublisherCertificate(UINT32* out___publisherCertBytesSize, ubyte** return_publisherCertBytes);
 }
 @uuid("b5501ee5-01bf-4401-9677-05630a6a4cc8")
 interface IPlayReadySecureStopServiceRequest : IPlayReadySecureStopServiceRequest_Base, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest {}
@@ -555,8 +555,8 @@ interface IPlayReadySecureStopServiceRequest : IPlayReadySecureStopServiceReques
 interface IPlayReadySecureStopServiceRequestFactory : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateInstance(UINT32 __publisherCertBytesSize, BYTE* publisherCertBytes, Windows.Media.Protection.PlayReady.PlayReadySecureStopServiceRequest* return_instance);
-	HRESULT abi_CreateInstanceFromSessionID(GUID sessionID, UINT32 __publisherCertBytesSize, BYTE* publisherCertBytes, Windows.Media.Protection.PlayReady.PlayReadySecureStopServiceRequest* return_instance);
+	HRESULT abi_CreateInstance(UINT32 __publisherCertBytesSize, ubyte* publisherCertBytes, Windows.Media.Protection.PlayReady.PlayReadySecureStopServiceRequest* return_instance);
+	HRESULT abi_CreateInstanceFromSessionID(GUID sessionID, UINT32 __publisherCertBytesSize, ubyte* publisherCertBytes, Windows.Media.Protection.PlayReady.PlayReadySecureStopServiceRequest* return_instance);
 }
 
 @uuid("8bad2836-a703-45a6-a180-76f3565aa725")
@@ -571,7 +571,7 @@ extern(Windows):
 	HRESULT abi_BeginServiceRequest(Windows.Foundation.IAsyncAction* return_action);
 	HRESULT abi_NextServiceRequest(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest* return_serviceRequest);
 	HRESULT abi_GenerateManualEnablingChallenge(Windows.Media.Protection.PlayReady.PlayReadySoapMessage* return_challengeMessage);
-	HRESULT abi_ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes, HRESULT* return_result);
+	HRESULT abi_ProcessManualEnablingResponse(UINT32 __responseBytesSize, ubyte* responseBytes, HRESULT* return_result);
 }
 @uuid("8bad2836-a703-45a6-a180-76f3565aa725")
 interface IPlayReadyServiceRequest : IPlayReadyServiceRequest_Base, Windows.Media.Protection.IMediaProtectionServiceRequest {}
@@ -581,7 +581,7 @@ interface IPlayReadyServiceRequest : IPlayReadyServiceRequest_Base, Windows.Medi
 interface IPlayReadySoapMessage : IInspectable
 {
 extern(Windows):
-	HRESULT abi_GetMessageBody(UINT32* out___messageBodyBytesSize, BYTE** return_messageBodyBytes);
+	HRESULT abi_GetMessageBody(UINT32* out___messageBodyBytesSize, ubyte** return_messageBodyBytes);
 	HRESULT get_MessageHeaders(Windows.Foundation.Collections.IPropertySet* return_value);
 	HRESULT get_Uri(Windows.Foundation.Uri* return_messageUri);
 }
@@ -731,16 +731,16 @@ interface NDCustomData : Windows.Media.Protection.PlayReady.INDCustomData
 {
 extern(Windows):
 	deprecated("INDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final BYTE* CustomDataTypeID(UINT32* out___customDataTypeIDBytesSize)
+	final ubyte* CustomDataTypeID(UINT32* out___customDataTypeIDBytesSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDCustomData).get_CustomDataTypeID(out___customDataTypeIDBytesSize, &_ret));
 		return _ret;
 	}
 	deprecated("INDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final BYTE* CustomData(UINT32* out___customDataBytesSize)
+	final ubyte* CustomData(UINT32* out___customDataBytesSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDCustomData).get_CustomData(out___customDataBytesSize, &_ret));
 		return _ret;
 	}
@@ -755,7 +755,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDDownloadEngineNotifier).abi_OnStreamOpened());
 	}
 	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final void OnPlayReadyObjectReceived(UINT32 __dataBytesSize, BYTE* dataBytes)
+	final void OnPlayReadyObjectReceived(UINT32 __dataBytesSize, ubyte* dataBytes)
 	{
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDDownloadEngineNotifier).abi_OnPlayReadyObjectReceived(__dataBytesSize, dataBytes));
 	}
@@ -765,7 +765,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDDownloadEngineNotifier).abi_OnContentIDReceived(licenseFetchDescriptor));
 	}
 	deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final void OnDataReceived(UINT32 __dataBytesSize, BYTE* dataBytes, UINT32 bytesReceived)
+	final void OnDataReceived(UINT32 __dataBytesSize, ubyte* dataBytes, UINT32 bytesReceived)
 	{
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDDownloadEngineNotifier).abi_OnDataReceived(__dataBytesSize, dataBytes, bytesReceived));
 	}
@@ -792,9 +792,9 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final BYTE* ContentID(UINT32* out___contentIDBytesSize)
+	final ubyte* ContentID(UINT32* out___contentIDBytesSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor).get_ContentID(out___contentIDBytesSize, &_ret));
 		return _ret;
 	}
@@ -838,12 +838,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDStreamParserNotifier).abi_OnMediaStreamDescriptorCreated(audioStreamDescriptors, videoStreamDescriptors));
 	}
 	deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final void OnSampleParsed(UINT32 streamID, Windows.Media.Protection.PlayReady.NDMediaStreamType streamType, Windows.Media.Core.MediaStreamSample streamSample, INT64 pts, Windows.Media.Protection.PlayReady.NDClosedCaptionFormat ccFormat, UINT32 __ccDataBytesSize, BYTE* ccDataBytes)
+	final void OnSampleParsed(UINT32 streamID, Windows.Media.Protection.PlayReady.NDMediaStreamType streamType, Windows.Media.Core.MediaStreamSample streamSample, INT64 pts, Windows.Media.Protection.PlayReady.NDClosedCaptionFormat ccFormat, UINT32 __ccDataBytesSize, ubyte* ccDataBytes)
 	{
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDStreamParserNotifier).abi_OnSampleParsed(streamID, streamType, streamSample, pts, ccFormat, __ccDataBytesSize, ccDataBytes));
 	}
 	deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final void OnBeginSetupDecryptor(Windows.Media.Core.IMediaStreamDescriptor descriptor, GUID keyID, UINT32 __proBytesSize, BYTE* proBytes)
+	final void OnBeginSetupDecryptor(Windows.Media.Core.IMediaStreamDescriptor descriptor, GUID keyID, UINT32 __proBytesSize, ubyte* proBytes)
 	{
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDStreamParserNotifier).abi_OnBeginSetupDecryptor(descriptor, keyID, __proBytesSize, proBytes));
 	}
@@ -853,28 +853,28 @@ interface NDTCPMessenger : Windows.Media.Protection.PlayReady.INDMessenger
 {
 extern(Windows):
 	deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) SendRegistrationRequestAsync(UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes, UINT32 __challengeDataBytesSize, BYTE* challengeDataBytes)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) SendRegistrationRequestAsync(UINT32 __sessionIDBytesSize, ubyte* sessionIDBytes, UINT32 __challengeDataBytesSize, ubyte* challengeDataBytes)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDMessenger).abi_SendRegistrationRequestAsync(__sessionIDBytesSize, sessionIDBytes, __challengeDataBytesSize, challengeDataBytes, &_ret));
 		return _ret;
 	}
 	deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) SendProximityDetectionStartAsync(Windows.Media.Protection.PlayReady.NDProximityDetectionType pdType, UINT32 __transmitterChannelBytesSize, BYTE* transmitterChannelBytes, UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes, UINT32 __challengeDataBytesSize, BYTE* challengeDataBytes)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) SendProximityDetectionStartAsync(Windows.Media.Protection.PlayReady.NDProximityDetectionType pdType, UINT32 __transmitterChannelBytesSize, ubyte* transmitterChannelBytes, UINT32 __sessionIDBytesSize, ubyte* sessionIDBytes, UINT32 __challengeDataBytesSize, ubyte* challengeDataBytes)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDMessenger).abi_SendProximityDetectionStartAsync(pdType, __transmitterChannelBytesSize, transmitterChannelBytes, __sessionIDBytesSize, sessionIDBytes, __challengeDataBytesSize, challengeDataBytes, &_ret));
 		return _ret;
 	}
 	deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) SendProximityDetectionResponseAsync(Windows.Media.Protection.PlayReady.NDProximityDetectionType pdType, UINT32 __transmitterChannelBytesSize, BYTE* transmitterChannelBytes, UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes, UINT32 __responseDataBytesSize, BYTE* responseDataBytes)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) SendProximityDetectionResponseAsync(Windows.Media.Protection.PlayReady.NDProximityDetectionType pdType, UINT32 __transmitterChannelBytesSize, ubyte* transmitterChannelBytes, UINT32 __sessionIDBytesSize, ubyte* sessionIDBytes, UINT32 __responseDataBytesSize, ubyte* responseDataBytes)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDMessenger).abi_SendProximityDetectionResponseAsync(pdType, __transmitterChannelBytesSize, transmitterChannelBytes, __sessionIDBytesSize, sessionIDBytes, __responseDataBytesSize, responseDataBytes, &_ret));
 		return _ret;
 	}
 	deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) SendLicenseFetchRequestAsync(UINT32 __sessionIDBytesSize, BYTE* sessionIDBytes, UINT32 __challengeDataBytesSize, BYTE* challengeDataBytes)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) SendLicenseFetchRequestAsync(UINT32 __sessionIDBytesSize, ubyte* sessionIDBytes, UINT32 __challengeDataBytesSize, ubyte* challengeDataBytes)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDMessenger).abi_SendLicenseFetchRequestAsync(__sessionIDBytesSize, sessionIDBytes, __challengeDataBytesSize, challengeDataBytes, &_ret));
@@ -933,9 +933,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader).get_DecryptorSetup(&_ret));
 		return _ret;
 	}
-	final BYTE* GetSerializedHeader(UINT32* out___headerBytesSize)
+	final ubyte* GetSerializedHeader(UINT32* out___headerBytesSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader).abi_GetSerializedHeader(out___headerBytesSize, &_ret));
 		return _ret;
 	}
@@ -1109,7 +1109,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
 		return _ret;
 	}
-	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, ubyte* responseBytes)
 	{
 		HRESULT _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
@@ -1196,7 +1196,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
 		return _ret;
 	}
-	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, ubyte* responseBytes)
 	{
 		HRESULT _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
@@ -1219,9 +1219,9 @@ extern(Windows):
 interface PlayReadyITADataGenerator : Windows.Media.Protection.PlayReady.IPlayReadyITADataGenerator
 {
 extern(Windows):
-	final BYTE* GenerateData(GUID guidCPSystemId, UINT32 countOfStreams, Windows.Foundation.Collections.IPropertySet configuration, Windows.Media.Protection.PlayReady.PlayReadyITADataFormat format, UINT32* out___dataBytesSize)
+	final ubyte* GenerateData(GUID guidCPSystemId, UINT32 countOfStreams, Windows.Foundation.Collections.IPropertySet configuration, Windows.Media.Protection.PlayReady.PlayReadyITADataFormat format, UINT32* out___dataBytesSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyITADataGenerator).abi_GenerateData(guidCPSystemId, countOfStreams, configuration, format, out___dataBytesSize, &_ret));
 		return _ret;
 	}
@@ -1274,7 +1274,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
 		return _ret;
 	}
-	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, ubyte* responseBytes)
 	{
 		HRESULT _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
@@ -1432,7 +1432,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
 		return _ret;
 	}
-	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, ubyte* responseBytes)
 	{
 		HRESULT _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
@@ -1526,13 +1526,13 @@ extern(Windows):
 interface PlayReadyMeteringReportServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyMeteringReportServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
 {
 extern(Windows):
-	final BYTE* MeteringCertificate(UINT32* out___meteringCertBytesSize)
+	final ubyte* MeteringCertificate(UINT32* out___meteringCertBytesSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyMeteringReportServiceRequest).get_MeteringCertificate(out___meteringCertBytesSize, &_ret));
 		return _ret;
 	}
-	final void MeteringCertificate(UINT32 __meteringCertBytesSize, BYTE* meteringCertBytes)
+	final void MeteringCertificate(UINT32 __meteringCertBytesSize, ubyte* meteringCertBytes)
 	{
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyMeteringReportServiceRequest).set_MeteringCertificate(__meteringCertBytesSize, meteringCertBytes));
 	}
@@ -1580,7 +1580,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
 		return _ret;
 	}
-	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, ubyte* responseBytes)
 	{
 		HRESULT _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
@@ -1647,7 +1647,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
 		return _ret;
 	}
-	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, ubyte* responseBytes)
 	{
 		HRESULT _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
@@ -1728,9 +1728,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest).get_Stopped(&_ret));
 		return _ret;
 	}
-	final BYTE* PublisherCertificate(UINT32* out___publisherCertBytesSize)
+	final ubyte* PublisherCertificate(UINT32* out___publisherCertBytesSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest).get_PublisherCertificate(out___publisherCertBytesSize, &_ret));
 		return _ret;
 	}
@@ -1778,7 +1778,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_GenerateManualEnablingChallenge(&_ret));
 		return _ret;
 	}
-	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, BYTE* responseBytes)
+	final HRESULT ProcessManualEnablingResponse(UINT32 __responseBytesSize, ubyte* responseBytes)
 	{
 		HRESULT _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest).abi_ProcessManualEnablingResponse(__responseBytesSize, responseBytes, &_ret));
@@ -1801,9 +1801,9 @@ extern(Windows):
 interface PlayReadySoapMessage : Windows.Media.Protection.PlayReady.IPlayReadySoapMessage
 {
 extern(Windows):
-	final BYTE* GetMessageBody(UINT32* out___messageBodyBytesSize)
+	final ubyte* GetMessageBody(UINT32* out___messageBodyBytesSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadySoapMessage).abi_GetMessageBody(out___messageBodyBytesSize, &_ret));
 		return _ret;
 	}

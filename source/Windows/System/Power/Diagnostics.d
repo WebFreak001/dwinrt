@@ -8,7 +8,7 @@ interface IBackgroundEnergyDiagnosticsStatics : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceSpecificConversionFactor(double* return_value);
-	HRESULT abi_ComputeTotalEnergyUsage(UINT64* return_value);
+	HRESULT abi_ComputeTotalEnergyUsage(ulong* return_value);
 	HRESULT abi_ResetTotalEnergyUsage();
 }
 
@@ -18,7 +18,7 @@ interface IForegroundEnergyDiagnosticsStatics : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeviceSpecificConversionFactor(double* return_value);
-	HRESULT abi_ComputeTotalEnergyUsage(UINT64* return_value);
+	HRESULT abi_ComputeTotalEnergyUsage(ulong* return_value);
 	HRESULT abi_ResetTotalEnergyUsage();
 }
 

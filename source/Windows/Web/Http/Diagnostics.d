@@ -85,8 +85,8 @@ interface IHttpDiagnosticSourceLocation : IInspectable
 {
 extern(Windows):
 	HRESULT get_SourceUri(Windows.Foundation.Uri* return_value);
-	HRESULT get_LineNumber(UINT64* return_value);
-	HRESULT get_ColumnNumber(UINT64* return_value);
+	HRESULT get_LineNumber(ulong* return_value);
+	HRESULT get_ColumnNumber(ulong* return_value);
 }
 
 interface HttpDiagnosticProvider : Windows.Web.Http.Diagnostics.IHttpDiagnosticProvider
@@ -317,15 +317,15 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticSourceLocation).get_SourceUri(&_ret));
 		return _ret;
 	}
-	final UINT64 LineNumber()
+	final ulong LineNumber()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticSourceLocation).get_LineNumber(&_ret));
 		return _ret;
 	}
-	final UINT64 ColumnNumber()
+	final ulong ColumnNumber()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Web.Http.Diagnostics.IHttpDiagnosticSourceLocation).get_ColumnNumber(&_ret));
 		return _ret;
 	}

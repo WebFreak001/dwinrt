@@ -489,12 +489,12 @@ extern(Windows):
 interface IMediaStreamSampleProtectionProperties : IInspectable
 {
 extern(Windows):
-	HRESULT abi_SetKeyIdentifier(UINT32 __valueSize, BYTE* value);
-	HRESULT abi_GetKeyIdentifier(UINT32* out___valueSize, BYTE** out_value);
-	HRESULT abi_SetInitializationVector(UINT32 __valueSize, BYTE* value);
-	HRESULT abi_GetInitializationVector(UINT32* out___valueSize, BYTE** out_value);
-	HRESULT abi_SetSubSampleMapping(UINT32 __valueSize, BYTE* value);
-	HRESULT abi_GetSubSampleMapping(UINT32* out___valueSize, BYTE** out_value);
+	HRESULT abi_SetKeyIdentifier(UINT32 __valueSize, ubyte* value);
+	HRESULT abi_GetKeyIdentifier(UINT32* out___valueSize, ubyte** out_value);
+	HRESULT abi_SetInitializationVector(UINT32 __valueSize, ubyte* value);
+	HRESULT abi_GetInitializationVector(UINT32* out___valueSize, ubyte** out_value);
+	HRESULT abi_SetSubSampleMapping(UINT32 __valueSize, ubyte* value);
+	HRESULT abi_GetSubSampleMapping(UINT32* out___valueSize, ubyte** out_value);
 }
 
 @uuid("dfdf218f-a6cf-4579-be41-73dd941ad972")
@@ -536,7 +536,7 @@ extern(Windows):
 	HRESULT get_VideoProperties(Windows.Storage.FileProperties.VideoProperties* return_value);
 	HRESULT set_Thumbnail(Windows.Storage.Streams.IRandomAccessStreamReference value);
 	HRESULT get_Thumbnail(Windows.Storage.Streams.IRandomAccessStreamReference* return_value);
-	HRESULT abi_AddProtectionKey(Windows.Media.Core.IMediaStreamDescriptor streamDescriptor, UINT32 __keyIdentifierSize, BYTE* keyIdentifier, UINT32 __licenseDataSize, BYTE* licenseData);
+	HRESULT abi_AddProtectionKey(Windows.Media.Core.IMediaStreamDescriptor streamDescriptor, UINT32 __keyIdentifierSize, ubyte* keyIdentifier, UINT32 __licenseDataSize, ubyte* licenseData);
 }
 @uuid("3712d543-45eb-4138-aa62-c01e26f3843f")
 @WinrtFactory("Windows.Media.Core.MediaStreamSource")
@@ -717,7 +717,7 @@ extern(Windows):
 	HRESULT set_AppendWindowEnd(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value);
 	HRESULT abi_AppendBuffer(Windows.Storage.Streams.IBuffer buffer);
 	HRESULT abi_AppendStream(Windows.Storage.Streams.IInputStream stream);
-	HRESULT abi_AppendStreamMaxSize(Windows.Storage.Streams.IInputStream stream, UINT64 maxSize);
+	HRESULT abi_AppendStreamMaxSize(Windows.Storage.Streams.IInputStream stream, ulong maxSize);
 	HRESULT abi_Abort();
 	HRESULT abi_Remove(Windows.Foundation.TimeSpan start, Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) end);
 }
@@ -2043,27 +2043,27 @@ extern(Windows):
 interface MediaStreamSampleProtectionProperties : Windows.Media.Core.IMediaStreamSampleProtectionProperties
 {
 extern(Windows):
-	final void SetKeyIdentifier(UINT32 __valueSize, BYTE* value)
+	final void SetKeyIdentifier(UINT32 __valueSize, ubyte* value)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSampleProtectionProperties).abi_SetKeyIdentifier(__valueSize, value));
 	}
-	final void GetKeyIdentifier(UINT32* out___valueSize, BYTE** out_value)
+	final void GetKeyIdentifier(UINT32* out___valueSize, ubyte** out_value)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSampleProtectionProperties).abi_GetKeyIdentifier(out___valueSize, out_value));
 	}
-	final void SetInitializationVector(UINT32 __valueSize, BYTE* value)
+	final void SetInitializationVector(UINT32 __valueSize, ubyte* value)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSampleProtectionProperties).abi_SetInitializationVector(__valueSize, value));
 	}
-	final void GetInitializationVector(UINT32* out___valueSize, BYTE** out_value)
+	final void GetInitializationVector(UINT32* out___valueSize, ubyte** out_value)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSampleProtectionProperties).abi_GetInitializationVector(out___valueSize, out_value));
 	}
-	final void SetSubSampleMapping(UINT32 __valueSize, BYTE* value)
+	final void SetSubSampleMapping(UINT32 __valueSize, ubyte* value)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSampleProtectionProperties).abi_SetSubSampleMapping(__valueSize, value));
 	}
-	final void GetSubSampleMapping(UINT32* out___valueSize, BYTE** out_value)
+	final void GetSubSampleMapping(UINT32* out___valueSize, ubyte** out_value)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSampleProtectionProperties).abi_GetSubSampleMapping(out___valueSize, out_value));
 	}
@@ -2196,7 +2196,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).get_Thumbnail(&_ret));
 		return _ret;
 	}
-	final void AddProtectionKey(Windows.Media.Core.IMediaStreamDescriptor streamDescriptor, UINT32 __keyIdentifierSize, BYTE* keyIdentifier, UINT32 __licenseDataSize, BYTE* licenseData)
+	final void AddProtectionKey(Windows.Media.Core.IMediaStreamDescriptor streamDescriptor, UINT32 __keyIdentifierSize, ubyte* keyIdentifier, UINT32 __licenseDataSize, ubyte* licenseData)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).abi_AddProtectionKey(streamDescriptor, __keyIdentifierSize, keyIdentifier, __licenseDataSize, licenseData));
 	}
@@ -2503,7 +2503,7 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).abi_AppendStream(stream));
 	}
-	final void AppendStreamMaxSize(Windows.Storage.Streams.IInputStream stream, UINT64 maxSize)
+	final void AppendStreamMaxSize(Windows.Storage.Streams.IInputStream stream, ulong maxSize)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).abi_AppendStreamMaxSize(stream, maxSize));
 	}

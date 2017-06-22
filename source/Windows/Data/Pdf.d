@@ -35,7 +35,7 @@ extern(Windows):
 	HRESULT get_Size(Windows.Foundation.Size* return_value);
 	HRESULT get_Dimensions(Windows.Data.Pdf.PdfPageDimensions* return_value);
 	HRESULT get_Rotation(Windows.Data.Pdf.PdfPageRotation* return_value);
-	HRESULT get_PreferredZoom(FLOAT* return_value);
+	HRESULT get_PreferredZoom(float* return_value);
 }
 
 @uuid("22170471-313e-44e8-835d-63a3e7624a10")
@@ -137,9 +137,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPage).get_Rotation(&_ret));
 		return _ret;
 	}
-	final FLOAT PreferredZoom()
+	final float PreferredZoom()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPage).get_PreferredZoom(&_ret));
 		return _ret;
 	}

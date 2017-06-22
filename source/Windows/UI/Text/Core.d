@@ -185,7 +185,7 @@ extern(Windows):
 interface ICoreTextServicesStatics : IInspectable
 {
 extern(Windows):
-	HRESULT get_HiddenCharacter(WCHAR* return_value);
+	HRESULT get_HiddenCharacter(wchar* return_value);
 }
 
 @uuid("50d950a9-f51e-4cc1-8ca1-e6346d1a61be")

@@ -4,10 +4,10 @@ import dwinrt;
 
 struct Color
 {
-	BYTE A;
-	BYTE R;
-	BYTE G;
-	BYTE B;
+	ubyte A;
+	ubyte R;
+	ubyte G;
+	ubyte B;
 }
 
 @uuid("193cfbe7-65c7-4540-ad08-6283ba76879a")
@@ -21,7 +21,7 @@ interface IColorHelper : IInspectable
 interface IColorHelperStatics : IInspectable
 {
 extern(Windows):
-	HRESULT abi_FromArgb(BYTE a, BYTE r, BYTE g, BYTE b, Windows.UI.Color* return_returnValue);
+	HRESULT abi_FromArgb(ubyte a, ubyte r, ubyte g, ubyte b, Windows.UI.Color* return_returnValue);
 }
 
 @uuid("24d9af02-6eb0-4b94-855c-fcf0818d9a16")

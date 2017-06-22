@@ -50,8 +50,8 @@ interface IGameControllerFactoryManagerStatics2 : IGameControllerFactoryManagerS
 interface IGameControllerInputSink : IInspectable
 {
 extern(Windows):
-	HRESULT abi_OnInputResumed(UINT64 timestamp);
-	HRESULT abi_OnInputSuspended(UINT64 timestamp);
+	HRESULT abi_OnInputResumed(ulong timestamp);
+	HRESULT abi_OnInputSuspended(ulong timestamp);
 }
 
 @uuid("e6d73982-2996-4559-b16c-3e57d46e58d6")
@@ -79,8 +79,8 @@ extern(Windows):
 interface IGipGameControllerInputSink_Base : IInspectable
 {
 extern(Windows):
-	HRESULT abi_OnKeyReceived(UINT64 timestamp, BYTE keyCode, bool isPressed);
-	HRESULT abi_OnMessageReceived(UINT64 timestamp, Windows.Gaming.Input.Custom.GipMessageClass messageClass, BYTE messageId, BYTE sequenceId, UINT32 __messageBufferSize, BYTE* messageBuffer);
+	HRESULT abi_OnKeyReceived(ulong timestamp, ubyte keyCode, bool isPressed);
+	HRESULT abi_OnMessageReceived(ulong timestamp, Windows.Gaming.Input.Custom.GipMessageClass messageClass, ubyte messageId, ubyte sequenceId, UINT32 __messageBufferSize, ubyte* messageBuffer);
 }
 @uuid("a2108abf-09f1-43bc-a140-80f899ec36fb")
 interface IGipGameControllerInputSink : IGipGameControllerInputSink_Base, Windows.Gaming.Input.Custom.IGameControllerInputSink {}
@@ -90,8 +90,8 @@ interface IGipGameControllerInputSink : IGipGameControllerInputSink_Base, Window
 interface IGipGameControllerProvider_Base : IInspectable
 {
 extern(Windows):
-	HRESULT abi_SendMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, BYTE messageId, UINT32 __messageBufferSize, BYTE* messageBuffer);
-	HRESULT abi_SendReceiveMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, BYTE messageId, UINT32 __requestMessageBufferSize, BYTE* requestMessageBuffer, UINT32 __responseMessageBufferSize, BYTE* out_responseMessageBuffer);
+	HRESULT abi_SendMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, ubyte messageId, UINT32 __messageBufferSize, ubyte* messageBuffer);
+	HRESULT abi_SendReceiveMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, ubyte messageId, UINT32 __requestMessageBufferSize, ubyte* requestMessageBuffer, UINT32 __responseMessageBufferSize, ubyte* out_responseMessageBuffer);
 	HRESULT abi_UpdateFirmwareAsync(Windows.Storage.Streams.IInputStream firmwareImage, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Gaming.Input.Custom.GipFirmwareUpdateResult, Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress)* return_result);
 }
 @uuid("dbcf1e19-1af5-45a8-bf02-a0ee50c823fc")
@@ -102,7 +102,7 @@ interface IGipGameControllerProvider : IGipGameControllerProvider_Base, Windows.
 interface IHidGameControllerInputSink_Base : IInspectable
 {
 extern(Windows):
-	HRESULT abi_OnInputReportReceived(UINT64 timestamp, BYTE reportId, UINT32 __reportBufferSize, BYTE* reportBuffer);
+	HRESULT abi_OnInputReportReceived(ulong timestamp, ubyte reportId, UINT32 __reportBufferSize, ubyte* reportBuffer);
 }
 @uuid("f754c322-182d-40e4-a126-fcee4ffa1e31")
 interface IHidGameControllerInputSink : IHidGameControllerInputSink_Base, Windows.Gaming.Input.Custom.IGameControllerInputSink {}
@@ -114,9 +114,9 @@ interface IHidGameControllerProvider_Base : IInspectable
 extern(Windows):
 	HRESULT get_UsageId(UINT16* return_value);
 	HRESULT get_UsagePage(UINT16* return_value);
-	HRESULT abi_GetFeatureReport(BYTE reportId, UINT32 __reportBufferSize, BYTE* out_reportBuffer);
-	HRESULT abi_SendFeatureReport(BYTE reportId, UINT32 __reportBufferSize, BYTE* reportBuffer);
-	HRESULT abi_SendOutputReport(BYTE reportId, UINT32 __reportBufferSize, BYTE* reportBuffer);
+	HRESULT abi_GetFeatureReport(ubyte reportId, UINT32 __reportBufferSize, ubyte* out_reportBuffer);
+	HRESULT abi_SendFeatureReport(ubyte reportId, UINT32 __reportBufferSize, ubyte* reportBuffer);
+	HRESULT abi_SendOutputReport(ubyte reportId, UINT32 __reportBufferSize, ubyte* reportBuffer);
 }
 @uuid("95ce3af4-abf0-4b68-a081-3b7de73ff0e7")
 @WinrtFactory("Windows.Gaming.Input.Custom.HidGameControllerProvider")
@@ -126,7 +126,7 @@ interface IHidGameControllerProvider : IHidGameControllerProvider_Base, Windows.
 interface IXusbGameControllerInputSink_Base : IInspectable
 {
 extern(Windows):
-	HRESULT abi_OnInputReceived(UINT64 timestamp, BYTE reportId, UINT32 __inputBufferSize, BYTE* inputBuffer);
+	HRESULT abi_OnInputReceived(ulong timestamp, ubyte reportId, UINT32 __inputBufferSize, ubyte* inputBuffer);
 }
 @uuid("b2ac1d95-6ecb-42b3-8aab-025401ca4712")
 interface IXusbGameControllerInputSink : IXusbGameControllerInputSink_Base, Windows.Gaming.Input.Custom.IGameControllerInputSink {}
@@ -172,11 +172,11 @@ extern(Windows):
 interface GipGameControllerProvider : Windows.Gaming.Input.Custom.IGipGameControllerProvider, Windows.Gaming.Input.Custom.IGameControllerProvider
 {
 extern(Windows):
-	final void SendMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, BYTE messageId, UINT32 __messageBufferSize, BYTE* messageBuffer)
+	final void SendMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, ubyte messageId, UINT32 __messageBufferSize, ubyte* messageBuffer)
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipGameControllerProvider).abi_SendMessage(messageClass, messageId, __messageBufferSize, messageBuffer));
 	}
-	final void SendReceiveMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, BYTE messageId, UINT32 __requestMessageBufferSize, BYTE* requestMessageBuffer, UINT32 __responseMessageBufferSize, BYTE* out_responseMessageBuffer)
+	final void SendReceiveMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, ubyte messageId, UINT32 __requestMessageBufferSize, ubyte* requestMessageBuffer, UINT32 __responseMessageBufferSize, ubyte* out_responseMessageBuffer)
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipGameControllerProvider).abi_SendReceiveMessage(messageClass, messageId, __requestMessageBufferSize, requestMessageBuffer, __responseMessageBufferSize, out_responseMessageBuffer));
 	}
@@ -233,15 +233,15 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).get_UsagePage(&_ret));
 		return _ret;
 	}
-	final void GetFeatureReport(BYTE reportId, UINT32 __reportBufferSize, BYTE* out_reportBuffer)
+	final void GetFeatureReport(ubyte reportId, UINT32 __reportBufferSize, ubyte* out_reportBuffer)
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).abi_GetFeatureReport(reportId, __reportBufferSize, out_reportBuffer));
 	}
-	final void SendFeatureReport(BYTE reportId, UINT32 __reportBufferSize, BYTE* reportBuffer)
+	final void SendFeatureReport(ubyte reportId, UINT32 __reportBufferSize, ubyte* reportBuffer)
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).abi_SendFeatureReport(reportId, __reportBufferSize, reportBuffer));
 	}
-	final void SendOutputReport(BYTE reportId, UINT32 __reportBufferSize, BYTE* reportBuffer)
+	final void SendOutputReport(ubyte reportId, UINT32 __reportBufferSize, ubyte* reportBuffer)
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).abi_SendOutputReport(reportId, __reportBufferSize, reportBuffer));
 	}

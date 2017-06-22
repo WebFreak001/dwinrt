@@ -908,7 +908,7 @@ interface IPointHelper : IInspectable
 interface IPointHelperStatics : IInspectable
 {
 extern(Windows):
-	HRESULT abi_FromCoordinates(FLOAT x, FLOAT y, Windows.Foundation.Point* return_returnValue);
+	HRESULT abi_FromCoordinates(float x, float y, Windows.Foundation.Point* return_returnValue);
 }
 
 @uuid("814ef30d-8d18-448a-8644-f2cb51e70380")
@@ -968,14 +968,14 @@ interface IRectHelperStatics : IInspectable
 {
 extern(Windows):
 	HRESULT get_Empty(Windows.Foundation.Rect* return_value);
-	HRESULT abi_FromCoordinatesAndDimensions(FLOAT x, FLOAT y, FLOAT width, FLOAT height, Windows.Foundation.Rect* return_returnValue);
+	HRESULT abi_FromCoordinatesAndDimensions(float x, float y, float width, float height, Windows.Foundation.Rect* return_returnValue);
 	HRESULT abi_FromPoints(Windows.Foundation.Point point1, Windows.Foundation.Point point2, Windows.Foundation.Rect* return_returnValue);
 	HRESULT abi_FromLocationAndSize(Windows.Foundation.Point location, Windows.Foundation.Size size, Windows.Foundation.Rect* return_returnValue);
 	HRESULT abi_GetIsEmpty(Windows.Foundation.Rect target, bool* return_value);
-	HRESULT abi_GetBottom(Windows.Foundation.Rect target, FLOAT* return_value);
-	HRESULT abi_GetLeft(Windows.Foundation.Rect target, FLOAT* return_value);
-	HRESULT abi_GetRight(Windows.Foundation.Rect target, FLOAT* return_value);
-	HRESULT abi_GetTop(Windows.Foundation.Rect target, FLOAT* return_value);
+	HRESULT abi_GetBottom(Windows.Foundation.Rect target, float* return_value);
+	HRESULT abi_GetLeft(Windows.Foundation.Rect target, float* return_value);
+	HRESULT abi_GetRight(Windows.Foundation.Rect target, float* return_value);
+	HRESULT abi_GetTop(Windows.Foundation.Rect target, float* return_value);
 	HRESULT abi_Contains(Windows.Foundation.Rect target, Windows.Foundation.Point point, bool* return_returnValue);
 	HRESULT abi_Equals(Windows.Foundation.Rect target, Windows.Foundation.Rect value, bool* return_returnValue);
 	HRESULT abi_Intersect(Windows.Foundation.Rect target, Windows.Foundation.Rect rect, Windows.Foundation.Rect* return_returnValue);
@@ -1098,7 +1098,7 @@ interface ISizeHelperStatics : IInspectable
 {
 extern(Windows):
 	HRESULT get_Empty(Windows.Foundation.Size* return_value);
-	HRESULT abi_FromDimensions(FLOAT width, FLOAT height, Windows.Foundation.Size* return_returnValue);
+	HRESULT abi_FromDimensions(float width, float height, Windows.Foundation.Size* return_returnValue);
 	HRESULT abi_GetIsEmpty(Windows.Foundation.Size target, bool* return_value);
 	HRESULT abi_Equals(Windows.Foundation.Size target, Windows.Foundation.Size value, bool* return_returnValue);
 }

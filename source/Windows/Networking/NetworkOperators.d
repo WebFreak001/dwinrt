@@ -13,7 +13,7 @@ struct ProfileUsage
 interface IHotspotAuthenticationContext : IInspectable
 {
 extern(Windows):
-	HRESULT get_WirelessNetworkId(UINT32* out___valueSize, BYTE** return_value);
+	HRESULT get_WirelessNetworkId(UINT32* out___valueSize, ubyte** return_value);
 	HRESULT get_NetworkAdapter(Windows.Networking.Connectivity.NetworkAdapter* return_value);
 	HRESULT get_RedirectMessageUrl(Windows.Foundation.Uri* return_value);
 	HRESULT get_RedirectMessageXml(Windows.Data.Xml.Dom.XmlDocument* return_value);
@@ -497,7 +497,7 @@ interface INetworkOperatorNotificationEventDetails : IInspectable
 extern(Windows):
 	HRESULT get_NotificationType(Windows.Networking.NetworkOperators.NetworkOperatorEventMessageType* return_value);
 	HRESULT get_NetworkAccountId(HSTRING* return_value);
-	HRESULT get_EncodingType(BYTE* return_value);
+	HRESULT get_EncodingType(ubyte* return_value);
 	HRESULT get_Message(HSTRING* return_value);
 	HRESULT get_RuleId(HSTRING* return_value);
 	HRESULT get_SmsMessage(Windows.Devices.Sms.ISmsMessage* return_value);
@@ -628,10 +628,10 @@ extern(Windows):
 interface IUssdMessage : IInspectable
 {
 extern(Windows):
-	HRESULT get_DataCodingScheme(BYTE* return_value);
-	HRESULT set_DataCodingScheme(BYTE value);
-	HRESULT abi_GetPayload(UINT32* out___valueSize, BYTE** return_value);
-	HRESULT abi_SetPayload(UINT32 __valueSize, BYTE* value);
+	HRESULT get_DataCodingScheme(ubyte* return_value);
+	HRESULT set_DataCodingScheme(ubyte value);
+	HRESULT abi_GetPayload(UINT32* out___valueSize, ubyte** return_value);
+	HRESULT abi_SetPayload(UINT32 __valueSize, ubyte* value);
 	HRESULT get_PayloadAsText(HSTRING* return_value);
 	HRESULT set_PayloadAsText(HSTRING value);
 }
@@ -674,9 +674,9 @@ extern(Windows):
 interface HotspotAuthenticationContext : Windows.Networking.NetworkOperators.IHotspotAuthenticationContext, Windows.Networking.NetworkOperators.IHotspotAuthenticationContext2
 {
 extern(Windows):
-	final BYTE* WirelessNetworkId(UINT32* out___valueSize)
+	final ubyte* WirelessNetworkId(UINT32* out___valueSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext).get_WirelessNetworkId(out___valueSize, &_ret));
 		return _ret;
 	}
@@ -1708,9 +1708,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails).get_NetworkAccountId(&_ret));
 		return _ret;
 	}
-	final BYTE EncodingType()
+	final ubyte EncodingType()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails).get_EncodingType(&_ret));
 		return _ret;
 	}
@@ -1900,23 +1900,23 @@ extern(Windows):
 interface UssdMessage : Windows.Networking.NetworkOperators.IUssdMessage
 {
 extern(Windows):
-	final BYTE DataCodingScheme()
+	final ubyte DataCodingScheme()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdMessage).get_DataCodingScheme(&_ret));
 		return _ret;
 	}
-	final void DataCodingScheme(BYTE value)
+	final void DataCodingScheme(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdMessage).set_DataCodingScheme(value));
 	}
-	final BYTE* GetPayload(UINT32* out___valueSize)
+	final ubyte* GetPayload(UINT32* out___valueSize)
 	{
-		BYTE* _ret;
+		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdMessage).abi_GetPayload(out___valueSize, &_ret));
 		return _ret;
 	}
-	final void SetPayload(UINT32 __valueSize, BYTE* value)
+	final void SetPayload(UINT32 __valueSize, ubyte* value)
 	{
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdMessage).abi_SetPayload(__valueSize, value));
 	}

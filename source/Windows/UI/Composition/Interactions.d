@@ -49,25 +49,25 @@ extern(Windows):
 	HRESULT get_IsPositionRoundingSuggested(bool* return_value);
 	HRESULT get_MaxPosition(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT set_MaxPosition(Windows.Foundation.Numerics.Vector3 value);
-	HRESULT get_MaxScale(FLOAT* return_value);
-	HRESULT set_MaxScale(FLOAT value);
+	HRESULT get_MaxScale(float* return_value);
+	HRESULT set_MaxScale(float value);
 	HRESULT get_MinPosition(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT set_MinPosition(Windows.Foundation.Numerics.Vector3 value);
-	HRESULT get_MinScale(FLOAT* return_value);
-	HRESULT set_MinScale(FLOAT value);
+	HRESULT get_MinScale(float* return_value);
+	HRESULT set_MinScale(float value);
 	HRESULT get_NaturalRestingPosition(Windows.Foundation.Numerics.Vector3* return_value);
-	HRESULT get_NaturalRestingScale(FLOAT* return_value);
+	HRESULT get_NaturalRestingScale(float* return_value);
 	HRESULT get_Owner(Windows.UI.Composition.Interactions.IInteractionTrackerOwner* return_value);
 	HRESULT get_Position(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT get_PositionInertiaDecayRate(Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3)* return_value);
 	HRESULT set_PositionInertiaDecayRate(Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) value);
 	HRESULT get_PositionVelocityInPixelsPerSecond(Windows.Foundation.Numerics.Vector3* return_value);
-	HRESULT get_Scale(FLOAT* return_value);
-	HRESULT get_ScaleInertiaDecayRate(Windows.Foundation.IReference!(FLOAT)* return_value);
-	HRESULT set_ScaleInertiaDecayRate(Windows.Foundation.IReference!(FLOAT) value);
-	HRESULT get_ScaleVelocityInPercentPerSecond(FLOAT* return_value);
-	HRESULT abi_AdjustPositionXIfGreaterThanThreshold(FLOAT adjustment, FLOAT positionThreshold);
-	HRESULT abi_AdjustPositionYIfGreaterThanThreshold(FLOAT adjustment, FLOAT positionThreshold);
+	HRESULT get_Scale(float* return_value);
+	HRESULT get_ScaleInertiaDecayRate(Windows.Foundation.IReference!(float)* return_value);
+	HRESULT set_ScaleInertiaDecayRate(Windows.Foundation.IReference!(float) value);
+	HRESULT get_ScaleVelocityInPercentPerSecond(float* return_value);
+	HRESULT abi_AdjustPositionXIfGreaterThanThreshold(float adjustment, float positionThreshold);
+	HRESULT abi_AdjustPositionYIfGreaterThanThreshold(float adjustment, float positionThreshold);
 	HRESULT abi_ConfigurePositionXInertiaModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier) modifiers);
 	HRESULT abi_ConfigurePositionYInertiaModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier) modifiers);
 	HRESULT abi_ConfigureScaleInertiaModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier) modifiers);
@@ -75,9 +75,9 @@ extern(Windows):
 	HRESULT abi_TryUpdatePositionBy(Windows.Foundation.Numerics.Vector3 amount, INT32* return_requestId);
 	HRESULT abi_TryUpdatePositionWithAnimation(Windows.UI.Composition.CompositionAnimation animation, INT32* return_requestId);
 	HRESULT abi_TryUpdatePositionWithAdditionalVelocity(Windows.Foundation.Numerics.Vector3 velocityInPixelsPerSecond, INT32* return_requestId);
-	HRESULT abi_TryUpdateScale(FLOAT value, Windows.Foundation.Numerics.Vector3 centerPoint, INT32* return_requestId);
+	HRESULT abi_TryUpdateScale(float value, Windows.Foundation.Numerics.Vector3 centerPoint, INT32* return_requestId);
 	HRESULT abi_TryUpdateScaleWithAnimation(Windows.UI.Composition.CompositionAnimation animation, Windows.Foundation.Numerics.Vector3 centerPoint, INT32* return_requestId);
-	HRESULT abi_TryUpdateScaleWithAdditionalVelocity(FLOAT velocityInPercentPerSecond, Windows.Foundation.Numerics.Vector3 centerPoint, INT32* return_requestId);
+	HRESULT abi_TryUpdateScaleWithAdditionalVelocity(float velocityInPercentPerSecond, Windows.Foundation.Numerics.Vector3 centerPoint, INT32* return_requestId);
 }
 
 @uuid("25769a3e-ce6d-448c-8386-92620d240756")
@@ -161,12 +161,12 @@ interface IInteractionTrackerInertiaStateEnteredArgs : IInspectable
 {
 extern(Windows):
 	HRESULT get_ModifiedRestingPosition(Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3)* return_value);
-	HRESULT get_ModifiedRestingScale(Windows.Foundation.IReference!(FLOAT)* return_value);
+	HRESULT get_ModifiedRestingScale(Windows.Foundation.IReference!(float)* return_value);
 	HRESULT get_NaturalRestingPosition(Windows.Foundation.Numerics.Vector3* return_value);
-	HRESULT get_NaturalRestingScale(FLOAT* return_value);
+	HRESULT get_NaturalRestingScale(float* return_value);
 	HRESULT get_PositionVelocityInPixelsPerSecond(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT get_RequestId(INT32* return_value);
-	HRESULT get_ScaleVelocityInPercentPerSecond(FLOAT* return_value);
+	HRESULT get_ScaleVelocityInPercentPerSecond(float* return_value);
 }
 
 @uuid("a7263939-a17b-4011-99fd-b5c24f143748")
@@ -213,7 +213,7 @@ interface IInteractionTrackerValuesChangedArgs : IInspectable
 extern(Windows):
 	HRESULT get_Position(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT get_RequestId(INT32* return_value);
-	HRESULT get_Scale(FLOAT* return_value);
+	HRESULT get_Scale(float* return_value);
 }
 
 @uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed")
@@ -249,11 +249,11 @@ interface IVisualInteractionSource2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_DeltaPosition(Windows.Foundation.Numerics.Vector3* return_value);
-	HRESULT get_DeltaScale(FLOAT* return_value);
+	HRESULT get_DeltaScale(float* return_value);
 	HRESULT get_Position(Windows.Foundation.Numerics.Vector3* return_value);
 	HRESULT get_PositionVelocity(Windows.Foundation.Numerics.Vector3* return_value);
-	HRESULT get_Scale(FLOAT* return_value);
-	HRESULT get_ScaleVelocity(FLOAT* return_value);
+	HRESULT get_Scale(float* return_value);
+	HRESULT get_ScaleVelocity(float* return_value);
 	HRESULT abi_ConfigureCenterPointXModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues);
 	HRESULT abi_ConfigureCenterPointYModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues);
 	HRESULT abi_ConfigureDeltaPositionXModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues);
@@ -352,13 +352,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).set_MaxPosition(value));
 	}
-	final FLOAT MaxScale()
+	final float MaxScale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_MaxScale(&_ret));
 		return _ret;
 	}
-	final void MaxScale(FLOAT value)
+	final void MaxScale(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).set_MaxScale(value));
 	}
@@ -372,13 +372,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).set_MinPosition(value));
 	}
-	final FLOAT MinScale()
+	final float MinScale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_MinScale(&_ret));
 		return _ret;
 	}
-	final void MinScale(FLOAT value)
+	final void MinScale(float value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).set_MinScale(value));
 	}
@@ -388,9 +388,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_NaturalRestingPosition(&_ret));
 		return _ret;
 	}
-	final FLOAT NaturalRestingScale()
+	final float NaturalRestingScale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_NaturalRestingScale(&_ret));
 		return _ret;
 	}
@@ -422,33 +422,33 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_PositionVelocityInPixelsPerSecond(&_ret));
 		return _ret;
 	}
-	final FLOAT Scale()
+	final float Scale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_Scale(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(FLOAT) ScaleInertiaDecayRate()
+	final Windows.Foundation.IReference!(float) ScaleInertiaDecayRate()
 	{
-		Windows.Foundation.IReference!(FLOAT) _ret;
+		Windows.Foundation.IReference!(float) _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_ScaleInertiaDecayRate(&_ret));
 		return _ret;
 	}
-	final void ScaleInertiaDecayRate(Windows.Foundation.IReference!(FLOAT) value)
+	final void ScaleInertiaDecayRate(Windows.Foundation.IReference!(float) value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).set_ScaleInertiaDecayRate(value));
 	}
-	final FLOAT ScaleVelocityInPercentPerSecond()
+	final float ScaleVelocityInPercentPerSecond()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_ScaleVelocityInPercentPerSecond(&_ret));
 		return _ret;
 	}
-	final void AdjustPositionXIfGreaterThanThreshold(FLOAT adjustment, FLOAT positionThreshold)
+	final void AdjustPositionXIfGreaterThanThreshold(float adjustment, float positionThreshold)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_AdjustPositionXIfGreaterThanThreshold(adjustment, positionThreshold));
 	}
-	final void AdjustPositionYIfGreaterThanThreshold(FLOAT adjustment, FLOAT positionThreshold)
+	final void AdjustPositionYIfGreaterThanThreshold(float adjustment, float positionThreshold)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_AdjustPositionYIfGreaterThanThreshold(adjustment, positionThreshold));
 	}
@@ -488,7 +488,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_TryUpdatePositionWithAdditionalVelocity(velocityInPixelsPerSecond, &_ret));
 		return _ret;
 	}
-	final INT32 TryUpdateScale(FLOAT value, Windows.Foundation.Numerics.Vector3 centerPoint)
+	final INT32 TryUpdateScale(float value, Windows.Foundation.Numerics.Vector3 centerPoint)
 	{
 		INT32 _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_TryUpdateScale(value, centerPoint, &_ret));
@@ -500,7 +500,7 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_TryUpdateScaleWithAnimation(animation, centerPoint, &_ret));
 		return _ret;
 	}
-	final INT32 TryUpdateScaleWithAdditionalVelocity(FLOAT velocityInPercentPerSecond, Windows.Foundation.Numerics.Vector3 centerPoint)
+	final INT32 TryUpdateScaleWithAdditionalVelocity(float velocityInPercentPerSecond, Windows.Foundation.Numerics.Vector3 centerPoint)
 	{
 		INT32 _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_TryUpdateScaleWithAdditionalVelocity(velocityInPercentPerSecond, centerPoint, &_ret));
@@ -601,9 +601,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs).get_ModifiedRestingPosition(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(FLOAT) ModifiedRestingScale()
+	final Windows.Foundation.IReference!(float) ModifiedRestingScale()
 	{
-		Windows.Foundation.IReference!(FLOAT) _ret;
+		Windows.Foundation.IReference!(float) _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs).get_ModifiedRestingScale(&_ret));
 		return _ret;
 	}
@@ -613,9 +613,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs).get_NaturalRestingPosition(&_ret));
 		return _ret;
 	}
-	final FLOAT NaturalRestingScale()
+	final float NaturalRestingScale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs).get_NaturalRestingScale(&_ret));
 		return _ret;
 	}
@@ -631,9 +631,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs).get_RequestId(&_ret));
 		return _ret;
 	}
-	final FLOAT ScaleVelocityInPercentPerSecond()
+	final float ScaleVelocityInPercentPerSecond()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs).get_ScaleVelocityInPercentPerSecond(&_ret));
 		return _ret;
 	}
@@ -676,9 +676,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerValuesChangedArgs).get_RequestId(&_ret));
 		return _ret;
 	}
-	final FLOAT Scale()
+	final float Scale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerValuesChangedArgs).get_Scale(&_ret));
 		return _ret;
 	}
@@ -793,9 +793,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_DeltaPosition(&_ret));
 		return _ret;
 	}
-	final FLOAT DeltaScale()
+	final float DeltaScale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_DeltaScale(&_ret));
 		return _ret;
 	}
@@ -811,15 +811,15 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_PositionVelocity(&_ret));
 		return _ret;
 	}
-	final FLOAT Scale()
+	final float Scale()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_Scale(&_ret));
 		return _ret;
 	}
-	final FLOAT ScaleVelocity()
+	final float ScaleVelocity()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_ScaleVelocity(&_ret));
 		return _ret;
 	}

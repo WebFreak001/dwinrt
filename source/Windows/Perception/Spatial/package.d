@@ -28,7 +28,7 @@ struct SpatialBoundingOrientedBox
 struct SpatialBoundingSphere
 {
 	Windows.Foundation.Numerics.Vector3 Center;
-	FLOAT Radius;
+	float Radius;
 }
 
 @uuid("0529e5ce-1d34-3702-bcec-eabff578a869")

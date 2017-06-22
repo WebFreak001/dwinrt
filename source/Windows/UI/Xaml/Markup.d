@@ -70,19 +70,19 @@ extern(Windows):
 	HRESULT abi_ConvertValue(Windows.UI.Xaml.Interop.TypeName type, IInspectable value, IInspectable* return_returnValue);
 	HRESULT abi_SetPropertyFromString(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, HSTRING value);
 	HRESULT abi_SetPropertyFromBoolean(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, bool value);
-	HRESULT abi_SetPropertyFromChar16(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, WCHAR value);
+	HRESULT abi_SetPropertyFromChar16(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, wchar value);
 	HRESULT abi_SetPropertyFromDateTime(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, Windows.Foundation.DateTime value);
 	HRESULT abi_SetPropertyFromDouble(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, double value);
 	HRESULT abi_SetPropertyFromInt32(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, INT32 value);
 	HRESULT abi_SetPropertyFromUInt32(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, UINT32 value);
 	HRESULT abi_SetPropertyFromInt64(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, INT64 value);
-	HRESULT abi_SetPropertyFromUInt64(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, UINT64 value);
-	HRESULT abi_SetPropertyFromSingle(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, FLOAT value);
+	HRESULT abi_SetPropertyFromUInt64(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, ulong value);
+	HRESULT abi_SetPropertyFromSingle(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, float value);
 	HRESULT abi_SetPropertyFromPoint(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, Windows.Foundation.Point value);
 	HRESULT abi_SetPropertyFromRect(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, Windows.Foundation.Rect value);
 	HRESULT abi_SetPropertyFromSize(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, Windows.Foundation.Size value);
 	HRESULT abi_SetPropertyFromTimeSpan(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, Windows.Foundation.TimeSpan value);
-	HRESULT abi_SetPropertyFromByte(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, BYTE value);
+	HRESULT abi_SetPropertyFromByte(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, ubyte value);
 	HRESULT abi_SetPropertyFromUri(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, Windows.Foundation.Uri value);
 	HRESULT abi_SetPropertyFromObject(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, IInspectable value);
 }

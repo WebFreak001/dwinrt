@@ -34,18 +34,18 @@ interface IEasClientSecurityPolicy : IInspectable
 extern(Windows):
 	HRESULT get_RequireEncryption(bool* return_value);
 	HRESULT set_RequireEncryption(bool value);
-	HRESULT get_MinPasswordLength(BYTE* return_value);
-	HRESULT set_MinPasswordLength(BYTE value);
+	HRESULT get_MinPasswordLength(ubyte* return_value);
+	HRESULT set_MinPasswordLength(ubyte value);
 	HRESULT get_DisallowConvenienceLogon(bool* return_value);
 	HRESULT set_DisallowConvenienceLogon(bool value);
-	HRESULT get_MinPasswordComplexCharacters(BYTE* return_value);
-	HRESULT set_MinPasswordComplexCharacters(BYTE value);
+	HRESULT get_MinPasswordComplexCharacters(ubyte* return_value);
+	HRESULT set_MinPasswordComplexCharacters(ubyte value);
 	HRESULT get_PasswordExpiration(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_PasswordExpiration(Windows.Foundation.TimeSpan value);
 	HRESULT get_PasswordHistory(UINT32* return_value);
 	HRESULT set_PasswordHistory(UINT32 value);
-	HRESULT get_MaxPasswordFailedAttempts(BYTE* return_value);
-	HRESULT set_MaxPasswordFailedAttempts(BYTE value);
+	HRESULT get_MaxPasswordFailedAttempts(ubyte* return_value);
+	HRESULT set_MaxPasswordFailedAttempts(ubyte value);
 	HRESULT get_MaxInactivityTimeLock(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_MaxInactivityTimeLock(Windows.Foundation.TimeSpan value);
 	HRESULT abi_CheckCompliance(Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults* return_result);
@@ -145,13 +145,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_RequireEncryption(value));
 	}
-	final BYTE MinPasswordLength()
+	final ubyte MinPasswordLength()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_MinPasswordLength(&_ret));
 		return _ret;
 	}
-	final void MinPasswordLength(BYTE value)
+	final void MinPasswordLength(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_MinPasswordLength(value));
 	}
@@ -165,13 +165,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_DisallowConvenienceLogon(value));
 	}
-	final BYTE MinPasswordComplexCharacters()
+	final ubyte MinPasswordComplexCharacters()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_MinPasswordComplexCharacters(&_ret));
 		return _ret;
 	}
-	final void MinPasswordComplexCharacters(BYTE value)
+	final void MinPasswordComplexCharacters(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_MinPasswordComplexCharacters(value));
 	}
@@ -195,13 +195,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_PasswordHistory(value));
 	}
-	final BYTE MaxPasswordFailedAttempts()
+	final ubyte MaxPasswordFailedAttempts()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_MaxPasswordFailedAttempts(&_ret));
 		return _ret;
 	}
-	final void MaxPasswordFailedAttempts(BYTE value)
+	final void MaxPasswordFailedAttempts(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_MaxPasswordFailedAttempts(value));
 	}

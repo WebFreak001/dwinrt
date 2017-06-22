@@ -10,8 +10,8 @@ extern(Windows):
 	HRESULT abi_Compare(Windows.Storage.Streams.IBuffer object1, Windows.Storage.Streams.IBuffer object2, bool* return_isEqual);
 	HRESULT abi_GenerateRandom(UINT32 length, Windows.Storage.Streams.IBuffer* return_buffer);
 	HRESULT abi_GenerateRandomNumber(UINT32* return_value);
-	HRESULT abi_CreateFromByteArray(UINT32 __valueSize, BYTE* value, Windows.Storage.Streams.IBuffer* return_buffer);
-	HRESULT abi_CopyToByteArray(Windows.Storage.Streams.IBuffer buffer, UINT32* out___valueSize, BYTE** out_value);
+	HRESULT abi_CreateFromByteArray(UINT32 __valueSize, ubyte* value, Windows.Storage.Streams.IBuffer* return_buffer);
+	HRESULT abi_CopyToByteArray(Windows.Storage.Streams.IBuffer buffer, UINT32* out___valueSize, ubyte** out_value);
 	HRESULT abi_DecodeFromHexString(HSTRING value, Windows.Storage.Streams.IBuffer* return_buffer);
 	HRESULT abi_EncodeToHexString(Windows.Storage.Streams.IBuffer buffer, HSTRING* return_value);
 	HRESULT abi_DecodeFromBase64String(HSTRING value, Windows.Storage.Streams.IBuffer* return_buffer);

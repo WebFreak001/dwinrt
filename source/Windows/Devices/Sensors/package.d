@@ -392,9 +392,9 @@ interface IInclinometerReading : IInspectable
 {
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
-	HRESULT get_PitchDegrees(FLOAT* return_value);
-	HRESULT get_RollDegrees(FLOAT* return_value);
-	HRESULT get_YawDegrees(FLOAT* return_value);
+	HRESULT get_PitchDegrees(float* return_value);
+	HRESULT get_RollDegrees(float* return_value);
+	HRESULT get_YawDegrees(float* return_value);
 }
 
 @uuid("4ae91dc1-e7eb-4938-8511-ae0d6b440438")
@@ -464,7 +464,7 @@ interface ILightSensorReading : IInspectable
 {
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
-	HRESULT get_IlluminanceInLux(FLOAT* return_value);
+	HRESULT get_IlluminanceInLux(float* return_value);
 }
 
 @uuid("a3a2f4cf-258b-420c-b8ab-8edd601ecf50")
@@ -519,9 +519,9 @@ interface IMagnetometerReading : IInspectable
 {
 extern(Windows):
 	HRESULT get_Timestamp(Windows.Foundation.DateTime* return_value);
-	HRESULT get_MagneticFieldX(FLOAT* return_value);
-	HRESULT get_MagneticFieldY(FLOAT* return_value);
-	HRESULT get_MagneticFieldZ(FLOAT* return_value);
+	HRESULT get_MagneticFieldX(float* return_value);
+	HRESULT get_MagneticFieldY(float* return_value);
+	HRESULT get_MagneticFieldZ(float* return_value);
 	HRESULT get_DirectionalAccuracy(Windows.Devices.Sensors.MagnetometerAccuracy* return_value);
 }
 
@@ -768,10 +768,10 @@ extern(Windows):
 interface ISensorQuaternion : IInspectable
 {
 extern(Windows):
-	HRESULT get_W(FLOAT* return_value);
-	HRESULT get_X(FLOAT* return_value);
-	HRESULT get_Y(FLOAT* return_value);
-	HRESULT get_Z(FLOAT* return_value);
+	HRESULT get_W(float* return_value);
+	HRESULT get_X(float* return_value);
+	HRESULT get_Y(float* return_value);
+	HRESULT get_Z(float* return_value);
 }
 
 @uuid("0a3d5a67-22f4-4392-9538-65d0bd064aa6")
@@ -779,15 +779,15 @@ extern(Windows):
 interface ISensorRotationMatrix : IInspectable
 {
 extern(Windows):
-	HRESULT get_M11(FLOAT* return_value);
-	HRESULT get_M12(FLOAT* return_value);
-	HRESULT get_M13(FLOAT* return_value);
-	HRESULT get_M21(FLOAT* return_value);
-	HRESULT get_M22(FLOAT* return_value);
-	HRESULT get_M23(FLOAT* return_value);
-	HRESULT get_M31(FLOAT* return_value);
-	HRESULT get_M32(FLOAT* return_value);
-	HRESULT get_M33(FLOAT* return_value);
+	HRESULT get_M11(float* return_value);
+	HRESULT get_M12(float* return_value);
+	HRESULT get_M13(float* return_value);
+	HRESULT get_M21(float* return_value);
+	HRESULT get_M22(float* return_value);
+	HRESULT get_M23(float* return_value);
+	HRESULT get_M31(float* return_value);
+	HRESULT get_M32(float* return_value);
+	HRESULT get_M33(float* return_value);
 }
 
 @uuid("5ff53856-214a-4dee-a3f9-616f1ab06ffd")
@@ -1473,21 +1473,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometerReading).get_Timestamp(&_ret));
 		return _ret;
 	}
-	final FLOAT PitchDegrees()
+	final float PitchDegrees()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometerReading).get_PitchDegrees(&_ret));
 		return _ret;
 	}
-	final FLOAT RollDegrees()
+	final float RollDegrees()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometerReading).get_RollDegrees(&_ret));
 		return _ret;
 	}
-	final FLOAT YawDegrees()
+	final float YawDegrees()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometerReading).get_YawDegrees(&_ret));
 		return _ret;
 	}
@@ -1562,9 +1562,9 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensorReading).get_Timestamp(&_ret));
 		return _ret;
 	}
-	final FLOAT IlluminanceInLux()
+	final float IlluminanceInLux()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensorReading).get_IlluminanceInLux(&_ret));
 		return _ret;
 	}
@@ -1643,21 +1643,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometerReading).get_Timestamp(&_ret));
 		return _ret;
 	}
-	final FLOAT MagneticFieldX()
+	final float MagneticFieldX()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometerReading).get_MagneticFieldX(&_ret));
 		return _ret;
 	}
-	final FLOAT MagneticFieldY()
+	final float MagneticFieldY()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometerReading).get_MagneticFieldY(&_ret));
 		return _ret;
 	}
-	final FLOAT MagneticFieldZ()
+	final float MagneticFieldZ()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometerReading).get_MagneticFieldZ(&_ret));
 		return _ret;
 	}
@@ -1984,27 +1984,27 @@ extern(Windows):
 interface SensorQuaternion : Windows.Devices.Sensors.ISensorQuaternion
 {
 extern(Windows):
-	final FLOAT W()
+	final float W()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorQuaternion).get_W(&_ret));
 		return _ret;
 	}
-	final FLOAT X()
+	final float X()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorQuaternion).get_X(&_ret));
 		return _ret;
 	}
-	final FLOAT Y()
+	final float Y()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorQuaternion).get_Y(&_ret));
 		return _ret;
 	}
-	final FLOAT Z()
+	final float Z()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorQuaternion).get_Z(&_ret));
 		return _ret;
 	}
@@ -2013,57 +2013,57 @@ extern(Windows):
 interface SensorRotationMatrix : Windows.Devices.Sensors.ISensorRotationMatrix
 {
 extern(Windows):
-	final FLOAT M11()
+	final float M11()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M11(&_ret));
 		return _ret;
 	}
-	final FLOAT M12()
+	final float M12()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M12(&_ret));
 		return _ret;
 	}
-	final FLOAT M13()
+	final float M13()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M13(&_ret));
 		return _ret;
 	}
-	final FLOAT M21()
+	final float M21()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M21(&_ret));
 		return _ret;
 	}
-	final FLOAT M22()
+	final float M22()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M22(&_ret));
 		return _ret;
 	}
-	final FLOAT M23()
+	final float M23()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M23(&_ret));
 		return _ret;
 	}
-	final FLOAT M31()
+	final float M31()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M31(&_ret));
 		return _ret;
 	}
-	final FLOAT M32()
+	final float M32()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M32(&_ret));
 		return _ret;
 	}
-	final FLOAT M33()
+	final float M33()
 	{
-		FLOAT _ret;
+		float _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISensorRotationMatrix).get_M33(&_ret));
 		return _ret;
 	}

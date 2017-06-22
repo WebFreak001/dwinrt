@@ -17,7 +17,7 @@ struct PointerDeviceUsage
 	INT32 MinPhysical;
 	INT32 MaxPhysical;
 	UINT32 Unit;
-	FLOAT PhysicalMultiplier;
+	float PhysicalMultiplier;
 }
 
 @uuid("3a3f9b56-6798-4bbc-833e-0f34b17c65ff")

@@ -78,7 +78,7 @@ extern(Windows):
 	HRESULT get_PlaybackSpeedFactor(double* return_value);
 	HRESULT abi_AddFrame(Windows.Media.AudioFrame frame);
 	HRESULT abi_DiscardQueuedFrames();
-	HRESULT get_QueuedSampleCount(UINT64* return_value);
+	HRESULT get_QueuedSampleCount(ulong* return_value);
 	HRESULT add_AudioFrameCompleted(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AudioFrameCompleted(EventRegistrationToken token);
 	HRESULT add_QuantumStarted(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs) handler, EventRegistrationToken* return_token);
@@ -126,7 +126,7 @@ extern(Windows):
 	HRESULT remove_QuantumProcessed(EventRegistrationToken token);
 	HRESULT add_UnrecoverableErrorOccurred(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_UnrecoverableErrorOccurred(EventRegistrationToken token);
-	HRESULT get_CompletedQuantumCount(UINT64* return_value);
+	HRESULT get_CompletedQuantumCount(ulong* return_value);
 	HRESULT get_EncodingProperties(Windows.Media.MediaProperties.AudioEncodingProperties* return_value);
 	HRESULT get_LatencyInSamples(INT32* return_value);
 	HRESULT get_PrimaryRenderDevice(Windows.Devices.Enumeration.DeviceInformation* return_value);
@@ -506,30 +506,30 @@ extern(Windows):
 	HRESULT get_WetDryMix(double* return_value);
 	HRESULT set_ReflectionsDelay(UINT32 value);
 	HRESULT get_ReflectionsDelay(UINT32* return_value);
-	HRESULT set_ReverbDelay(BYTE value);
-	HRESULT get_ReverbDelay(BYTE* return_value);
-	HRESULT set_RearDelay(BYTE value);
-	HRESULT get_RearDelay(BYTE* return_value);
-	HRESULT set_PositionLeft(BYTE value);
-	HRESULT get_PositionLeft(BYTE* return_value);
-	HRESULT set_PositionRight(BYTE value);
-	HRESULT get_PositionRight(BYTE* return_value);
-	HRESULT set_PositionMatrixLeft(BYTE value);
-	HRESULT get_PositionMatrixLeft(BYTE* return_value);
-	HRESULT set_PositionMatrixRight(BYTE value);
-	HRESULT get_PositionMatrixRight(BYTE* return_value);
-	HRESULT set_EarlyDiffusion(BYTE value);
-	HRESULT get_EarlyDiffusion(BYTE* return_value);
-	HRESULT set_LateDiffusion(BYTE value);
-	HRESULT get_LateDiffusion(BYTE* return_value);
-	HRESULT set_LowEQGain(BYTE value);
-	HRESULT get_LowEQGain(BYTE* return_value);
-	HRESULT set_LowEQCutoff(BYTE value);
-	HRESULT get_LowEQCutoff(BYTE* return_value);
-	HRESULT set_HighEQGain(BYTE value);
-	HRESULT get_HighEQGain(BYTE* return_value);
-	HRESULT set_HighEQCutoff(BYTE value);
-	HRESULT get_HighEQCutoff(BYTE* return_value);
+	HRESULT set_ReverbDelay(ubyte value);
+	HRESULT get_ReverbDelay(ubyte* return_value);
+	HRESULT set_RearDelay(ubyte value);
+	HRESULT get_RearDelay(ubyte* return_value);
+	HRESULT set_PositionLeft(ubyte value);
+	HRESULT get_PositionLeft(ubyte* return_value);
+	HRESULT set_PositionRight(ubyte value);
+	HRESULT get_PositionRight(ubyte* return_value);
+	HRESULT set_PositionMatrixLeft(ubyte value);
+	HRESULT get_PositionMatrixLeft(ubyte* return_value);
+	HRESULT set_PositionMatrixRight(ubyte value);
+	HRESULT get_PositionMatrixRight(ubyte* return_value);
+	HRESULT set_EarlyDiffusion(ubyte value);
+	HRESULT get_EarlyDiffusion(ubyte* return_value);
+	HRESULT set_LateDiffusion(ubyte value);
+	HRESULT get_LateDiffusion(ubyte* return_value);
+	HRESULT set_LowEQGain(ubyte value);
+	HRESULT get_LowEQGain(ubyte* return_value);
+	HRESULT set_LowEQCutoff(ubyte value);
+	HRESULT get_LowEQCutoff(ubyte* return_value);
+	HRESULT set_HighEQGain(ubyte value);
+	HRESULT get_HighEQGain(ubyte* return_value);
+	HRESULT set_HighEQCutoff(ubyte value);
+	HRESULT get_HighEQCutoff(ubyte* return_value);
 	HRESULT set_RoomFilterFreq(double value);
 	HRESULT get_RoomFilterFreq(double* return_value);
 	HRESULT set_RoomFilterMain(double value);
@@ -997,9 +997,9 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).abi_DiscardQueuedFrames());
 	}
-	final UINT64 QueuedSampleCount()
+	final ulong QueuedSampleCount()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).get_QueuedSampleCount(&_ret));
 		return _ret;
 	}
@@ -1295,9 +1295,9 @@ extern(Windows):
 	{
 		Debug.OK(remove_UnrecoverableErrorOccurred(token));
 	}
-	final UINT64 CompletedQuantumCount()
+	final ulong CompletedQuantumCount()
 	{
-		UINT64 _ret;
+		ulong _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).get_CompletedQuantumCount(&_ret));
 		return _ret;
 	}
@@ -2043,123 +2043,123 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_ReflectionsDelay(&_ret));
 		return _ret;
 	}
-	final void ReverbDelay(BYTE value)
+	final void ReverbDelay(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_ReverbDelay(value));
 	}
-	final BYTE ReverbDelay()
+	final ubyte ReverbDelay()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_ReverbDelay(&_ret));
 		return _ret;
 	}
-	final void RearDelay(BYTE value)
+	final void RearDelay(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_RearDelay(value));
 	}
-	final BYTE RearDelay()
+	final ubyte RearDelay()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_RearDelay(&_ret));
 		return _ret;
 	}
-	final void PositionLeft(BYTE value)
+	final void PositionLeft(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_PositionLeft(value));
 	}
-	final BYTE PositionLeft()
+	final ubyte PositionLeft()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_PositionLeft(&_ret));
 		return _ret;
 	}
-	final void PositionRight(BYTE value)
+	final void PositionRight(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_PositionRight(value));
 	}
-	final BYTE PositionRight()
+	final ubyte PositionRight()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_PositionRight(&_ret));
 		return _ret;
 	}
-	final void PositionMatrixLeft(BYTE value)
+	final void PositionMatrixLeft(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_PositionMatrixLeft(value));
 	}
-	final BYTE PositionMatrixLeft()
+	final ubyte PositionMatrixLeft()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_PositionMatrixLeft(&_ret));
 		return _ret;
 	}
-	final void PositionMatrixRight(BYTE value)
+	final void PositionMatrixRight(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_PositionMatrixRight(value));
 	}
-	final BYTE PositionMatrixRight()
+	final ubyte PositionMatrixRight()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_PositionMatrixRight(&_ret));
 		return _ret;
 	}
-	final void EarlyDiffusion(BYTE value)
+	final void EarlyDiffusion(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_EarlyDiffusion(value));
 	}
-	final BYTE EarlyDiffusion()
+	final ubyte EarlyDiffusion()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_EarlyDiffusion(&_ret));
 		return _ret;
 	}
-	final void LateDiffusion(BYTE value)
+	final void LateDiffusion(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_LateDiffusion(value));
 	}
-	final BYTE LateDiffusion()
+	final ubyte LateDiffusion()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_LateDiffusion(&_ret));
 		return _ret;
 	}
-	final void LowEQGain(BYTE value)
+	final void LowEQGain(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_LowEQGain(value));
 	}
-	final BYTE LowEQGain()
+	final ubyte LowEQGain()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_LowEQGain(&_ret));
 		return _ret;
 	}
-	final void LowEQCutoff(BYTE value)
+	final void LowEQCutoff(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_LowEQCutoff(value));
 	}
-	final BYTE LowEQCutoff()
+	final ubyte LowEQCutoff()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_LowEQCutoff(&_ret));
 		return _ret;
 	}
-	final void HighEQGain(BYTE value)
+	final void HighEQGain(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_HighEQGain(value));
 	}
-	final BYTE HighEQGain()
+	final ubyte HighEQGain()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_HighEQGain(&_ret));
 		return _ret;
 	}
-	final void HighEQCutoff(BYTE value)
+	final void HighEQCutoff(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_HighEQCutoff(value));
 	}
-	final BYTE HighEQCutoff()
+	final ubyte HighEQCutoff()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_HighEQCutoff(&_ret));
 		return _ret;
 	}

@@ -53,12 +53,12 @@ interface II2cDevice_Base : IInspectable
 extern(Windows):
 	HRESULT get_DeviceId(HSTRING* return_value);
 	HRESULT get_ConnectionSettings(Windows.Devices.I2c.I2cConnectionSettings* return_value);
-	HRESULT abi_Write(UINT32 __bufferSize, BYTE* buffer);
-	HRESULT abi_WritePartial(UINT32 __bufferSize, BYTE* buffer, Windows.Devices.I2c.I2cTransferResult* return_result);
-	HRESULT abi_Read(UINT32 __bufferSize, BYTE* out_buffer);
-	HRESULT abi_ReadPartial(UINT32 __bufferSize, BYTE* out_buffer, Windows.Devices.I2c.I2cTransferResult* return_result);
-	HRESULT abi_WriteRead(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer);
-	HRESULT abi_WriteReadPartial(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer, Windows.Devices.I2c.I2cTransferResult* return_result);
+	HRESULT abi_Write(UINT32 __bufferSize, ubyte* buffer);
+	HRESULT abi_WritePartial(UINT32 __bufferSize, ubyte* buffer, Windows.Devices.I2c.I2cTransferResult* return_result);
+	HRESULT abi_Read(UINT32 __bufferSize, ubyte* out_buffer);
+	HRESULT abi_ReadPartial(UINT32 __bufferSize, ubyte* out_buffer, Windows.Devices.I2c.I2cTransferResult* return_result);
+	HRESULT abi_WriteRead(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer);
+	HRESULT abi_WriteReadPartial(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer, Windows.Devices.I2c.I2cTransferResult* return_result);
 }
 @uuid("8636c136-b9c5-4f70-9449-cc46dc6f57eb")
 @WinrtFactory("Windows.Devices.I2c.I2cDevice")
@@ -134,31 +134,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).get_ConnectionSettings(&_ret));
 		return _ret;
 	}
-	final void Write(UINT32 __bufferSize, BYTE* buffer)
+	final void Write(UINT32 __bufferSize, ubyte* buffer)
 	{
 		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_Write(__bufferSize, buffer));
 	}
-	final Windows.Devices.I2c.I2cTransferResult WritePartial(UINT32 __bufferSize, BYTE* buffer)
+	final Windows.Devices.I2c.I2cTransferResult WritePartial(UINT32 __bufferSize, ubyte* buffer)
 	{
 		Windows.Devices.I2c.I2cTransferResult _ret;
 		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_WritePartial(__bufferSize, buffer, &_ret));
 		return _ret;
 	}
-	final void Read(UINT32 __bufferSize, BYTE* out_buffer)
+	final void Read(UINT32 __bufferSize, ubyte* out_buffer)
 	{
 		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_Read(__bufferSize, out_buffer));
 	}
-	final Windows.Devices.I2c.I2cTransferResult ReadPartial(UINT32 __bufferSize, BYTE* out_buffer)
+	final Windows.Devices.I2c.I2cTransferResult ReadPartial(UINT32 __bufferSize, ubyte* out_buffer)
 	{
 		Windows.Devices.I2c.I2cTransferResult _ret;
 		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_ReadPartial(__bufferSize, out_buffer, &_ret));
 		return _ret;
 	}
-	final void WriteRead(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer)
+	final void WriteRead(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer)
 	{
 		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_WriteRead(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer));
 	}
-	final Windows.Devices.I2c.I2cTransferResult WriteReadPartial(UINT32 __writeBufferSize, BYTE* writeBuffer, UINT32 __readBufferSize, BYTE* out_readBuffer)
+	final Windows.Devices.I2c.I2cTransferResult WriteReadPartial(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer)
 	{
 		Windows.Devices.I2c.I2cTransferResult _ret;
 		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_WriteReadPartial(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer, &_ret));

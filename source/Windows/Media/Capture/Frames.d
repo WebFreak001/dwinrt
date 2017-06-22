@@ -131,8 +131,8 @@ extern(Windows):
 interface IMediaFrameSourceController2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_GetPropertyByExtendedIdAsync(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult)* return_operation);
-	HRESULT abi_SetPropertyByExtendedIdAsync(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, UINT32 __propertyValueSize, BYTE* propertyValue, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus)* return_operation);
+	HRESULT abi_GetPropertyByExtendedIdAsync(UINT32 __extendedPropertyIdSize, ubyte* extendedPropertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult)* return_operation);
+	HRESULT abi_SetPropertyByExtendedIdAsync(UINT32 __extendedPropertyIdSize, ubyte* extendedPropertyId, UINT32 __propertyValueSize, ubyte* propertyValue, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus)* return_operation);
 }
 
 @uuid("088616c2-3a64-4bd5-bd2b-e7c898d2f37a")
@@ -539,13 +539,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceController).get_VideoDeviceController(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult) GetPropertyByExtendedIdAsync(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult) GetPropertyByExtendedIdAsync(UINT32 __extendedPropertyIdSize, ubyte* extendedPropertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult) _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceController2).abi_GetPropertyByExtendedIdAsync(__extendedPropertyIdSize, extendedPropertyId, maxPropertyValueSize, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus) SetPropertyByExtendedIdAsync(UINT32 __extendedPropertyIdSize, BYTE* extendedPropertyId, UINT32 __propertyValueSize, BYTE* propertyValue)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus) SetPropertyByExtendedIdAsync(UINT32 __extendedPropertyIdSize, ubyte* extendedPropertyId, UINT32 __propertyValueSize, ubyte* propertyValue)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus) _ret;
 		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceController2).abi_SetPropertyByExtendedIdAsync(__extendedPropertyIdSize, extendedPropertyId, __propertyValueSize, propertyValue, &_ret));

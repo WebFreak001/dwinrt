@@ -486,8 +486,8 @@ extern(Windows):
 	HRESULT abi_RetainDevice();
 	HRESULT abi_SetErrorReportingType(Windows.Devices.PointOfService.MagneticStripeReaderErrorReportingType value);
 	HRESULT abi_RetrieveDeviceAuthenticationDataAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_operation);
-	HRESULT abi_AuthenticateDeviceAsync(UINT32 __responseTokenSize, BYTE* responseToken, Windows.Foundation.IAsyncAction* return_result);
-	HRESULT abi_DeAuthenticateDeviceAsync(UINT32 __responseTokenSize, BYTE* responseToken, Windows.Foundation.IAsyncAction* return_result);
+	HRESULT abi_AuthenticateDeviceAsync(UINT32 __responseTokenSize, ubyte* responseToken, Windows.Foundation.IAsyncAction* return_result);
+	HRESULT abi_DeAuthenticateDeviceAsync(UINT32 __responseTokenSize, ubyte* responseToken, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_UpdateKeyAsync(HSTRING key, HSTRING keyName, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_ResetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_UpdateStatisticsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) statistics, Windows.Foundation.IAsyncAction* return_result);
@@ -2103,13 +2103,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_RetrieveDeviceAuthenticationDataAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction AuthenticateDeviceAsync(UINT32 __responseTokenSize, BYTE* responseToken)
+	final Windows.Foundation.IAsyncAction AuthenticateDeviceAsync(UINT32 __responseTokenSize, ubyte* responseToken)
 	{
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_AuthenticateDeviceAsync(__responseTokenSize, responseToken, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction DeAuthenticateDeviceAsync(UINT32 __responseTokenSize, BYTE* responseToken)
+	final Windows.Foundation.IAsyncAction DeAuthenticateDeviceAsync(UINT32 __responseTokenSize, ubyte* responseToken)
 	{
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).abi_DeAuthenticateDeviceAsync(__responseTokenSize, responseToken, &_ret));

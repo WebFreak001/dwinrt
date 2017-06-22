@@ -4,10 +4,10 @@ import dwinrt;
 
 struct BandwidthStatistics
 {
-	UINT64 OutboundBitsPerSecond;
-	UINT64 InboundBitsPerSecond;
-	UINT64 OutboundBitsPerSecondInstability;
-	UINT64 InboundBitsPerSecondInstability;
+	ulong OutboundBitsPerSecond;
+	ulong InboundBitsPerSecond;
+	ulong OutboundBitsPerSecondInstability;
+	ulong InboundBitsPerSecondInstability;
 	bool OutboundBandwidthPeaked;
 	bool InboundBandwidthPeaked;
 }
@@ -127,8 +127,8 @@ interface IDatagramSocketControl : IInspectable
 extern(Windows):
 	HRESULT get_QualityOfService(Windows.Networking.Sockets.SocketQualityOfService* return_value);
 	HRESULT set_QualityOfService(Windows.Networking.Sockets.SocketQualityOfService value);
-	HRESULT get_OutboundUnicastHopLimit(BYTE* return_value);
-	HRESULT set_OutboundUnicastHopLimit(BYTE value);
+	HRESULT get_OutboundUnicastHopLimit(ubyte* return_value);
+	HRESULT set_OutboundUnicastHopLimit(ubyte value);
 }
 
 @uuid("33ead5c2-979c-4415-82a1-3cfaf646c192")
@@ -344,8 +344,8 @@ extern(Windows):
 	HRESULT set_OutboundBufferSizeInBytes(UINT32 value);
 	HRESULT get_QualityOfService(Windows.Networking.Sockets.SocketQualityOfService* return_value);
 	HRESULT set_QualityOfService(Windows.Networking.Sockets.SocketQualityOfService value);
-	HRESULT get_OutboundUnicastHopLimit(BYTE* return_value);
-	HRESULT set_OutboundUnicastHopLimit(BYTE value);
+	HRESULT get_OutboundUnicastHopLimit(ubyte* return_value);
+	HRESULT set_OutboundUnicastHopLimit(ubyte value);
 }
 
 @uuid("c2d09a56-060f-44c1-b8e2-1fbf60bd62c5")
@@ -463,8 +463,8 @@ extern(Windows):
 	HRESULT set_KeepAlive(bool value);
 	HRESULT get_OutboundBufferSizeInBytes(UINT32* return_value);
 	HRESULT set_OutboundBufferSizeInBytes(UINT32 value);
-	HRESULT get_OutboundUnicastHopLimit(BYTE* return_value);
-	HRESULT set_OutboundUnicastHopLimit(BYTE value);
+	HRESULT get_OutboundUnicastHopLimit(ubyte* return_value);
+	HRESULT set_OutboundUnicastHopLimit(ubyte value);
 }
 
 @uuid("e62ba82f-a63a-430b-bf62-29e93e5633b4")
@@ -803,13 +803,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl).set_QualityOfService(value));
 	}
-	final BYTE OutboundUnicastHopLimit()
+	final ubyte OutboundUnicastHopLimit()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl).get_OutboundUnicastHopLimit(&_ret));
 		return _ret;
 	}
-	final void OutboundUnicastHopLimit(BYTE value)
+	final void OutboundUnicastHopLimit(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl).set_OutboundUnicastHopLimit(value));
 	}
@@ -1334,13 +1334,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).set_QualityOfService(value));
 	}
-	final BYTE OutboundUnicastHopLimit()
+	final ubyte OutboundUnicastHopLimit()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).get_OutboundUnicastHopLimit(&_ret));
 		return _ret;
 	}
-	final void OutboundUnicastHopLimit(BYTE value)
+	final void OutboundUnicastHopLimit(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).set_OutboundUnicastHopLimit(value));
 	}
@@ -1592,13 +1592,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).set_OutboundBufferSizeInBytes(value));
 	}
-	final BYTE OutboundUnicastHopLimit()
+	final ubyte OutboundUnicastHopLimit()
 	{
-		BYTE _ret;
+		ubyte _ret;
 		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).get_OutboundUnicastHopLimit(&_ret));
 		return _ret;
 	}
-	final void OutboundUnicastHopLimit(BYTE value)
+	final void OutboundUnicastHopLimit(ubyte value)
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).set_OutboundUnicastHopLimit(value));
 	}
