@@ -1791,7 +1791,8 @@ Alias[] aliases = [
 		"size_t"), Alias("DOUBLE", "double"), Alias("BSTR", "wchar*"),
 	Alias("UINT", "uint"), Alias("BOOLEAN", "bool"), Alias("USHORT", "ushort"),
 	Alias("UINT64", "ulong"), Alias("WCHAR", "wchar"), Alias("SIZE_T", "size_t"),
-	Alias("FLOAT", "float"), Alias("BYTE", "ubyte"), Alias("LPVOID", "void*")
+	Alias("FLOAT", "float"), Alias("BYTE", "ubyte"), Alias("LPVOID", "void*"),
+	Alias("ULONGLONG", "ulong")
 ];
 
 /// async base in Windows.Foundation

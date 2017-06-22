@@ -1037,7 +1037,7 @@ struct D3D11_VIDEO_CONTENT_PROTECTION_CAPS
 	uint Caps;
 	uint KeyExchangeTypeCount;
 	uint BlockAlignmentSize;
-	ULONGLONG ProtectedMemorySize;
+	ulong ProtectedMemorySize;
 }
 
 struct D3D11_VIDEO_PROCESSOR_CUSTOM_RATE
