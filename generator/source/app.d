@@ -301,67 +301,87 @@ string[] blockedInterfaces = [
 ];
 
 string[] defines;
+bool directx;
 
 void main(string[] args)
 {
-	auto res = getopt(args, "d|define", &defines);
+	auto res = getopt(args, "d|define", &defines, "x|directx", &directx);
 	if (res.helpWanted)
 	{
 		defaultGetoptPrinter("WinRT IDL to D generator.", res.options);
 		return;
 	}
 
-	foreach (ref obj; modules[0].interfaces) // Implementations of built-in types
+	if (directx)
+		modules = [];
+	else
 	{
-		auto num = obj.methods.length;
-		for (int i = 0; i < num; i++)
+		foreach (ref obj; modules[0].interfaces) // Implementations of built-in types
 		{
-			auto copy = obj.methods[i];
-			if (copy.implementation.length)
-				continue;
-			copy.implement("Windows.Foundation." ~ obj.name ~ "!(" ~ obj.templateArgs.join(
-					", ") ~ ")");
-			obj.methods ~= copy;
+			auto num = obj.methods.length;
+			for (int i = 0; i < num; i++)
+			{
+				auto copy = obj.methods[i];
+				if (copy.implementation.length)
+					continue;
+				copy.implement(
+						"Windows.Foundation." ~ obj.name ~ "!(" ~ obj.templateArgs.join(", ") ~ ")");
+				obj.methods ~= copy;
+			}
 		}
 	}
-	dirEntries(`C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\winrt`,
-			SpanMode.shallow).array.sort!"a < b".each!(processIDL);
+	dirEntries(directx ? `directx\base`
+			: `C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\winrt`, SpanMode.shallow)
+		.array.sort!"a < b".each!(processIDL);
 	foreach (ref mod; modules)
 		mod.fixTypes;
 	foreach (ref mod; modules)
 		mod.implement;
-	foreach (mod; modules)
+	if (directx)
 	{
-		auto fileName = buildPath("source", mod.fileName);
-		mkdirRecurse(fileName.dirName);
-		writeln("Writing to ", fileName);
-		std.file.write(fileName, mod.toString);
+		foreach (mod; modules)
+		{
+			auto fileName = buildPath("directx", mod.fileName);
+			mkdirRecurse(fileName.dirName);
+			writeln("Writing to ", fileName);
+			std.file.write(fileName, mod.toString);
+		}
 	}
-	append(buildPath("source", "Windows", "Foundation", "package.d"), foundationSuffix);
-	writeln("Finding template UUIDs");
-	dirEntries(`C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0`, SpanMode.breadth).filter!(
-			a => a.extension == ".h").array.sort!"a < b".each!findUUIDs;
-	if (templateUUIDs.length)
+	else
 	{
-		string uuidsIfs = "\t" ~ templateUUIDs.to!(string[])
-			.map!indent.join("\n")["\telse ".length .. $];
-		//dfmt off
-		string uuidsContent = [
-			"module dwinrt.uuids;",
-			"",
-			"import dwinrt;",
-			"",
-			"GUID uuidOfInstanced(string T)",
-			"{",
-			uuidsIfs,
-			"\telse",
-			"\t\treturn GUID.init;",
-			"}"
-		].join("\n");
-		//dfmt on
-		std.file.write(buildPath("source", "dwinrt", "uuids.d"), uuidsContent);
+		foreach (mod; modules)
+		{
+			auto fileName = buildPath("source", mod.fileName);
+			mkdirRecurse(fileName.dirName);
+			writeln("Writing to ", fileName);
+			std.file.write(fileName, mod.toString);
+		}
+		append(buildPath("source", "Windows", "Foundation", "package.d"), foundationSuffix);
+		writeln("Finding template UUIDs");
+		dirEntries(`C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0`, SpanMode.breadth).filter!(
+				a => a.extension == ".h").array.sort!"a < b".each!findUUIDs;
+		if (templateUUIDs.length)
+		{
+			string uuidsIfs = "\t" ~ templateUUIDs.to!(string[])
+				.map!indent.join("\n")["\telse ".length .. $];
+			//dfmt off
+			string uuidsContent = [
+				"module dwinrt.uuids;",
+				"",
+				"import dwinrt;",
+				"",
+				"GUID uuidOfInstanced(string T)",
+				"{",
+				uuidsIfs,
+				"\telse",
+				"\t\treturn GUID.init;",
+				"}"
+			].join("\n");
+			//dfmt on
+			std.file.write(buildPath("source", "dwinrt", "uuids.d"), uuidsContent);
+		}
+		modules.each!(mod => writeln("public static import " ~ mod.name.join(".") ~ ";"));
 	}
-	modules.each!(mod => writeln("public static import " ~ mod.name.join(".") ~ ";"));
 }
 
 struct TemplateUUID
@@ -576,9 +596,11 @@ void processIDL(string file)
 			case "IDL.apicontract":
 				break;
 			case "IDL.type_id_dcl":
-				enforce(node.children.length == 1);
 				if (node.children[0].name == "IDL.enum_typedef")
 				{
+					enforce(node.children.length == 2, node.toString);
+					enforce(node.children[1].name == "IDL.cidentifier", node.toString);
+					string name = node.children[1].matches.join("");
 					EnumMember[] members;
 					bool found = false;
 					foreach (enumBody; node.children[0].children)
@@ -586,15 +608,17 @@ void processIDL(string file)
 						if (enumBody.name != "IDL.enum_body")
 							continue;
 						found = true;
-						parseEnumBody(enumBody, members);
+						parseEnumBody(enumBody, members, name);
 					}
 					if (!found)
 						break; // Forward declaration
-					string name = node.matches[$ - 1];
 					makeMod(namespace).enums ~= Enum(name, false, members);
 				}
 				else if (node.children[0].name == "IDL.struct_typedef")
 				{
+					enforce(node.children.length == 2, node.toString);
+					enforce(node.children[1].name == "IDL.cidentifier", node.toString);
+					string name = node.children[1].matches.join("");
 					StructMember[] members;
 					bool found = false;
 					foreach (memberList; node.children[0].children)
@@ -606,8 +630,18 @@ void processIDL(string file)
 					}
 					if (!found)
 						break; // Forward declaration
-					string name = node.matches[$ - 1];
 					makeMod(namespace).structs ~= Struct(name, members);
+				}
+				else if (node.children[0].name == "IDL.union_typedef")
+				{
+					enforce(node.children.length == 2, node.toString);
+					enforce(node.children[1].name == "IDL.cidentifier", node.toString);
+					string name = node.children[1].matches.join("");
+					writeln("TODO ", node);
+				}
+				else if (node.children[0].name == "IDL.delegate_typedef")
+				{
+					writeln("TODO ", node);
 				}
 				else
 					throw new Exception("Unsupported type_id_dcl " ~ node.toString);
@@ -791,12 +825,23 @@ void processIDL(string file)
 						}
 					EnumMember[] members;
 					enforce(type.children.length == 1);
-					parseEnumBody(type.children[0], members);
+					parseEnumBody(type.children[0], members, name);
 					makeMod(namespace).enums ~= Enum(name, flags, members);
 					break;
 				default:
 					throw new Exception("Unknown type dcl: " ~ type.name);
 				}
+				break;
+			case "IDL.const_dcl":
+				enforce(node.children.length == 3);
+				auto type = node.children[0];
+				enforce(type.name == "IDL.type");
+				auto identifier = node.children[1];
+				enforce(identifier.name == "IDL.cidentifier");
+				auto value = node.children[2];
+				enforce(value.name == "IDL.const_exp");
+				makeMod(namespace).constants ~= Const(type.matches.join("")
+						.translateType, identifier.matches[0], value.matches.join(""));
 				break;
 			default:
 				writeln("Skipping unknown node ", node);
@@ -808,7 +853,7 @@ void processIDL(string file)
 	process(spec.children);
 }
 
-void parseEnumBody(ParseTree enumBody, ref EnumMember[] members)
+void parseEnumBody(ParseTree enumBody, ref EnumMember[] members, string name)
 {
 	enforce(enumBody.name == "IDL.enum_body");
 	foreach (member; enumBody.children)
@@ -817,7 +862,7 @@ void parseEnumBody(ParseTree enumBody, ref EnumMember[] members)
 		enforce(member.matches.length >= 3 || member.matches.length == 1, member.toString);
 		if (member.matches.length == 1)
 		{
-			members ~= EnumMember(member.matches[0]);
+			members ~= EnumMember(member.matches[0].fixEnumName(name));
 		}
 		else
 		{
@@ -826,9 +871,32 @@ void parseEnumBody(ParseTree enumBody, ref EnumMember[] members)
 				skip += child.matches.length;
 			auto value = member.children[$ - 1];
 			enforce(value.name == "IDL.const_exp");
-			members ~= EnumMember(member.matches[skip], value.matches.join(""));
+			members ~= EnumMember(member.matches[skip].fixEnumName(name),
+					value.matches.join("").fixEnumName(name, true));
 		}
 	}
+}
+
+string fixEnumName(string name, string enumName, bool value = false)
+{
+	if (value && name.isNumeric)
+		return name;
+	if (value && name.length >= 3 && name[0] == '0' && name[1] == 'x' && name[2 .. $].isNumeric)
+		return name;
+	string ret = name;
+	if ((enumName.endsWith("_MODE") || enumName.endsWith("_TYPE")
+			|| enumName.endsWith("_FLAG")) && name.startsWith(enumName[0 .. $ - 4]))
+		ret = name[enumName.length - 4 .. $];
+	else if ((enumName.endsWith("_FLAGS") || enumName.endsWith("_HINTS"))
+			&& name.startsWith(enumName[0 .. $ - 5]))
+		ret = name[enumName.length - 5 .. $];
+	else if (name.startsWith(enumName ~ '_'))
+		ret = name[enumName.length + 1 .. $];
+	else if (name.startsWith("D3D_"))
+		ret = name[4 .. $];
+	else if (name.startsWith("D3D10_") || name.startsWith("D3D11_"))
+		ret = name[6 .. $];
+	return ret.makeDSafe;
 }
 
 void parseMemberList(ParseTree memberList, ref StructMember[] members)
@@ -846,24 +914,40 @@ void parseMemberList(ParseTree memberList, ref StructMember[] members)
 		}
 		if (offset)
 			member.children = member.children[offset .. $];
-		enforce(member.children.length == 2, member.toString);
-		auto type = member.children[0].children[0];
-		enforce(type.name == "IDL.type");
-		auto declarator = member.children[1].children[0];
-		enforce(declarator.name == "IDL.declarator", declarator.toString);
-		auto spec = declarator.children[0];
-		enforce(spec.name == "IDL.simple_declarator");
-		enforce(spec.matches.length == 1 || spec.matches.length >= 3, spec.toString);
-		StructMember mem;
-		mem.name = spec.matches[0];
-		if (spec.matches.length >= 3)
+		if (member.children.length == 2)
 		{
-			enforce(spec.matches[1] == "[");
-			enforce(spec.matches[$ - 1] == "]");
-			mem.type ~= spec.matches[1 .. $].join("");
+			auto type = member.children[0].children[0];
+			enforce(type.name == "IDL.type");
+			auto declarator = member.children[1].children[0];
+			enforce(declarator.name == "IDL.declarator", declarator.toString);
+			auto spec = declarator.children[0];
+			enforce(spec.name == "IDL.simple_declarator");
+			enforce(spec.matches.length == 1 || spec.matches.length >= 3, spec.toString);
+			StructMember mem;
+			mem.name = spec.matches[0];
+			if (spec.matches.length >= 3)
+			{
+				enforce(spec.matches[1] == "[");
+				enforce(spec.matches[$ - 1] == "]");
+				mem.type ~= spec.matches[1 .. $].join("");
+			}
+			mem.type = type.matches.join("").translateType;
+			members ~= mem;
 		}
-		mem.type = type.matches.join("").translateType;
-		members ~= mem;
+		else
+		{
+			enforce(member.children.length > 0, member.toString);
+			if (member.children[0].name == "IDL.union_typedef")
+			{
+
+			}
+			else if (member.children[0].name == "IDL.struct_typedef")
+			{
+
+			}
+			else
+				throw new Exception("Unknown member: " ~ member.toString);
+		}
 	}
 }
 
@@ -1077,6 +1161,8 @@ string makeDSafe(string name)
 			|| name == "body" || name == "function" || name == "package"
 			|| name == "scope" || name == "align")
 		return name ~ '_';
+	else if (!name.length || (name[0] >= '0' && name[0] <= '9'))
+		return '_' ~ name;
 	else
 		return name;
 }
@@ -1109,6 +1195,8 @@ struct Module
 			obj.fixTypes();
 		foreach (ref obj; structs)
 			obj.fixTypes();
+		foreach (ref obj; constants)
+			obj.type.fixType;
 	}
 
 	void implement()
@@ -1120,6 +1208,7 @@ struct Module
 	Interface[] interfaces;
 	Enum[] enums;
 	Struct[] structs;
+	Const[] constants;
 
 	string toString() const
 	{
@@ -1129,6 +1218,10 @@ struct Module
 		foreach (dep; dependencies)
 			ret ~= "import " ~ dep ~ ";\n";
 		ret ~= "\n";
+		foreach (obj; constants)
+			ret ~= obj.toString ~ "\n";
+		if (constants.length)
+			ret ~= "\n";
 		foreach (obj; structs)
 			ret ~= obj.toString ~ "\n\n";
 		foreach (obj; interfaces)
@@ -1152,7 +1245,7 @@ bool moduleExists(string[] name)
 ref Module makeMod(string[] name, string[] deps = [])
 {
 	if (name.length == 0)
-		name = ["Windows", "Foundation"];
+		name = directx ? ["directx"] : ["Windows", "Foundation"];
 	foreach (ref mod; modules)
 	{
 		if (mod.name == name)
@@ -1198,6 +1291,18 @@ Interface findInterface(string fullname)
 			~ parts[0 .. $ - 1].join("."));
 }
 
+struct Const
+{
+	string type;
+	string name;
+	string rawValue;
+
+	string toString() const
+	{
+		return "enum " ~ type ~ " " ~ name ~ " = " ~ rawValue ~ ";";
+	}
+}
+
 struct Enum
 {
 	string name;
@@ -1231,7 +1336,7 @@ struct EnumMember
 	string toString() const
 	{
 		string ret;
-		ret ~= name;
+		ret ~= name.makeDSafe;
 		if (rawValue.length)
 			ret ~= " = " ~ rawValue;
 		return ret;
@@ -1519,7 +1624,8 @@ struct InterfaceMethod
 			ret ~= "remove_";
 			break;
 		case call:
-			ret ~= "abi_";
+			if (!directx)
+				ret ~= "abi_";
 			break;
 		}
 		ret ~= name;
@@ -1556,6 +1662,8 @@ void fixType(ref string type)
 	const isConst = type.startsWith("const");
 	if (isConst)
 		type = type["const".length .. $].strip;
+	type = type.replace(" const ", " ").replace("*const ", "* ")
+		.replace(" const*", " *").replace("*const*", "**"); // don't care for T*const* types
 	int numPointers = 0;
 	foreach_reverse (c; type)
 	{
@@ -1680,7 +1788,10 @@ void addAlias(string from, string to)
 
 Alias[] aliases = [
 	Alias("unsigned", "uint"), Alias("ULONG32", "uint"), Alias("__int3264",
-		"size_t"), Alias("DOUBLE", "double"), Alias("BSTR", "wchar*")
+		"size_t"), Alias("DOUBLE", "double"), Alias("BSTR", "wchar*"),
+	Alias("UINT", "uint"), Alias("BOOL", "bool"), Alias("USHORT", "ushort"),
+	Alias("UINT64", "ulong"), Alias("WCHAR", "wchar"), Alias("SIZE_T", "size_t"),
+	Alias("FLOAT", "float"), Alias("BYTE", "ubyte"), Alias("LPVOID", "void*")
 ];
 
 /// async base in Windows.Foundation

@@ -95,23 +95,16 @@ IDL:
 	interface_require_spec < "requires" type ( "," type )*
 	interface_name    <  scoped_name
 	scoped_name       <  "."? identifier ( "." identifier )*
-	const_dcl         <  "const" type identifier "=" ( "(" type ")" )? const_exp
+	cidentifier       <- identifier
+	const_dcl         <  "const" type cidentifier "=" ( "(" type ")" )? const_exp
 	const_exp         <  or_expr
-	or_expr           <  xor_expr / or_expr "|" xor_expr
-	xor_expr          <  and_expr / xor_expr "^" and_expr
-	and_expr          <  shift_expr / and_expr "&" shift_expr
-	shift_expr        <  add_expr
-	                   / shift_expr ">>" add_expr
-	                   / shift_expr "<<" add_expr
-	add_expr          <  mult_expr
-	                   / add_expr "+" mult_expr
-	                   / add_expr "-" mult_expr
-	mult_expr         <  unary_expr
-	                   / mult_expr "*" unary_expr
-	                   / mult_expr "/" unary_expr
-	                   / mult_expr "%" unary_expr
-	unary_expr        <  unary_operator primary_expr
-	                   / primary_expr
+	or_expr           <  xor_expr ( "|" xor_expr )*
+	xor_expr          <  and_expr ( "^" and_expr )*
+	and_expr          <  shift_expr ( "&" shift_expr )*
+	shift_expr        <  add_expr ( ( ">>" / "<<" ) add_expr )*
+	add_expr          <  mult_expr ( ( "+" / "-" ) mult_expr )*
+	mult_expr         <  unary_expr ( ( "*" / "/" / "%" ) unary_expr )*
+	unary_expr        <  unary_operator? primary_expr
 	unary_operator    <  "-" / "+" / "~"
 	primary_expr      <  scoped_name / literal / "(" const_exp ")"
 	literal           <  integer_literal
@@ -134,7 +127,7 @@ IDL:
 	constr_type_spec  <  struct_type / union_type / enum_type
 	declarators       <  declarator ( "," declarator )*
 	declarator        <  simple_declarator / complex_declarator
-	simple_declarator <  identifier ( "[" digit* "]" )?
+	simple_declarator <  identifier ( "[" const_exp "]" )*
 	complex_declarator <  array_declarator
 	floating_pt_type  <  "float" / "FLOAT" / "double" / "DOUBLE" / "long" "double" / "LONG" "DOUBLE"
 	integer_type      <  signed_int / unsigned_int
@@ -150,8 +143,8 @@ IDL:
 	boolean_type      <  "boolean"
 	struct_type       <  "struct" identifier "{" member_list "}"
 	member_list       <  member+
-	member            <  definition_attribute* type_spec declarators ";"
-	union_type        <  "union" identifier "switch" "(" switch_type_spec ")" "{" switch_body "}"
+	member            <  ( definition_attribute* type_spec declarators ( ":" digit+ )? / union_typedef / struct_typedef identifier ) ";"
+	union_type        <  "union" identifier "{" member_list "}"
 	switch_type_spec  <  integer_type / char_type / boolean_type / enum_type / scoped_name
 	switch_body       <  case_+
 	case_             <  case_label+ element_spec ";"
@@ -190,9 +183,9 @@ IDL:
 	op_length_is_attribute < "length_is" "(" ","? "*"* identifier ")"
 	op_iid_is_attribute < "iid_is" "(" identifier ")"
 	op_annotation_attribute < "annotation" "(" string_literal ")"
-	parameter_dcls    <  "(" param_dcl ( "," param_dcl )* ")" / "(" ")"
+	parameter_dcls    <  "(" param_dcl ( "," param_dcl )* ")" / "(" "void"? ")"
 	# Multiple param_attribute
-	param_dcl         <  param_attribute+ type simple_declarator
+	param_dcl         <  param_attribute* type simple_declarator
 	# added retval & square brackets
 	param_attribute   <  "[" param_attr_spec ( "," param_attr_spec )* "]"
 	param_attr_spec   < "in"
@@ -211,16 +204,18 @@ IDL:
 	import_           <  "import" imported_scope ";"
 	imported_scope    <  scoped_name / string_literal
 	# modified to allow typedef, removed typeid
-	type_id_dcl       <  "typedef" ( enum_typedef / struct_typedef ) ( string_literal / identifier )
+	type_id_dcl       <  "typedef" ( ( enum_typedef / struct_typedef / union_typedef ) ( string_literal / cidentifier ) ~( "," "*"* identifier )* / delegate_typedef )
 	enum_typedef      <  "enum" ( scoped_name ("{" enum_body "}")? / "{" enum_body "}" )
 	struct_typedef    <  "struct" ( scoped_name ("{" member_list "}")? / "{" member_list "}" )
+	union_typedef     <  "union" ( scoped_name ("{" member_list "}")? / "{" member_list "}" )
+	delegate_typedef  <  "void" "(" "__stdcall"? "*" identifier ")" "(" type identifier? ( "," type identifier? )* ")"
 	attr_spec         <  "attribute" type ( attr_declarator / "{" member* "}" )
 	attr_declarator   <  simple_declarator ( "," simple_declarator )*
 
 	# Additions
 
 	integer_literal   <~ sign? unsigned
-	unsigned          <~ ( "0" [0-8]+ / ( "0x" / "0X" ) [0-8a-fA-F]+ / digit+ )
+	unsigned          <~ ( "0" [0-8]+ / ( "0x" / "0X" ) [0-9a-fA-F]+ / digit+ ) "U"? "L"?
 	sign              <- "-" / "+"
 	character_literal <~ quote (!quote (escape_sequence / .)) quote
 	wide_character_literal <- "L" character_literal
