@@ -127,7 +127,7 @@ IDL:
 	constr_type_spec  <  struct_type / union_type / enum_type
 	declarators       <  declarator ( "," declarator )*
 	declarator        <  simple_declarator / complex_declarator
-	simple_declarator <  identifier ( "[" const_exp "]" )*
+	simple_declarator <  identifier ( "[" const_exp? "]" )*
 	complex_declarator <  array_declarator
 	floating_pt_type  <  "float" / "FLOAT" / "double" / "DOUBLE" / "long" "double" / "LONG" "DOUBLE"
 	integer_type      <  signed_int / unsigned_int
