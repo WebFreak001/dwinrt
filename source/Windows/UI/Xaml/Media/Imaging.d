@@ -398,6 +398,24 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(BitmapSource, BitmapSource, Windows.UI.Xaml.Media.Imaging.IBitmapSourceFactory)
+class BitmapSourceT(Base) : AgileObject!Base, BitmapSource
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_PixelWidth(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).get_PixelWidth(return_value); }
+	override HRESULT get_PixelHeight(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).get_PixelHeight(return_value); }
+	override HRESULT abi_SetSource(Windows.Storage.Streams.IRandomAccessStream streamSource) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).abi_SetSource(streamSource); }
+	override HRESULT abi_SetSourceAsync(Windows.Storage.Streams.IRandomAccessStream streamSource, Windows.Foundation.IAsyncAction* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).abi_SetSourceAsync(streamSource, return_returnValue); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface DownloadProgressEventArgs : Windows.UI.Xaml.Media.Imaging.IDownloadProgressEventArgs
 {
@@ -467,6 +485,20 @@ extern(Windows):
 interface SurfaceImageSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.ISurfaceImageSource
 {
 }
+@makable!(SurfaceImageSource, SurfaceImageSource, Windows.UI.Xaml.Media.Imaging.ISurfaceImageSourceFactory)
+class SurfaceImageSourceT(Base) : AgileObject!Base, SurfaceImageSource
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface SvgImageSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.ISvgImageSource
 {
@@ -528,6 +560,31 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(SvgImageSource, SvgImageSource, Windows.UI.Xaml.Media.Imaging.ISvgImageSourceFactory)
+class SvgImageSourceT(Base) : AgileObject!Base, SvgImageSource
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_UriSource(Windows.Foundation.Uri* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).get_UriSource(return_value); }
+	override HRESULT set_UriSource(Windows.Foundation.Uri value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_UriSource(value); }
+	override HRESULT get_RasterizePixelWidth(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).get_RasterizePixelWidth(return_value); }
+	override HRESULT set_RasterizePixelWidth(double value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_RasterizePixelWidth(value); }
+	override HRESULT get_RasterizePixelHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).get_RasterizePixelHeight(return_value); }
+	override HRESULT set_RasterizePixelHeight(double value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_RasterizePixelHeight(value); }
+	override HRESULT add_Opened(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).add_Opened(value, return_token); }
+	override HRESULT remove_Opened(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).remove_Opened(token); }
+	override HRESULT add_OpenFailed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).add_OpenFailed(value, return_token); }
+	override HRESULT remove_OpenFailed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).remove_OpenFailed(token); }
+	override HRESULT abi_SetSourceAsync(Windows.Storage.Streams.IRandomAccessStream streamSource, Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).abi_SetSourceAsync(streamSource, return_returnValue); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface SvgImageSourceFailedEventArgs : Windows.UI.Xaml.Media.Imaging.ISvgImageSourceFailedEventArgs
 {
@@ -565,11 +622,23 @@ extern(Windows):
 
 interface XamlRenderingBackgroundTask : Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTask, Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTaskOverrides
 {
-extern(Windows):
-	final void OnRun(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance)
+}
+@makable!(XamlRenderingBackgroundTask, XamlRenderingBackgroundTask, Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTaskFactory)
+class XamlRenderingBackgroundTaskT(Base) : AgileObject!Base, XamlRenderingBackgroundTask
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTaskOverrides).abi_OnRun(taskInstance));
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
 	}
+
+	override HRESULT abi_OnRun(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance) { this.OnRun(taskInstance); return S_OK; }
+	void OnRun(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTaskOverrides).abi_OnRun(taskInstance)); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 @bitflags

@@ -246,6 +246,22 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPath).set_Data(value));
 	}
 }
+@makable!(Path, Path, Windows.UI.Xaml.Shapes.IPathFactory)
+class PathT(Base) : AgileObject!Base, Path
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Data(Windows.UI.Xaml.Media.Geometry* return_value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IPath).get_Data(return_value); }
+	override HRESULT set_Data(Windows.UI.Xaml.Media.Geometry value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IPath).set_Data(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface Polygon : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IPolygon
 {
@@ -447,4 +463,43 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape2).abi_GetAlphaMask(&_ret));
 		return _ret;
 	}
+}
+@makable!(Shape, Shape, Windows.UI.Xaml.Shapes.IShapeFactory)
+class ShapeT(Base) : AgileObject!Base, Shape
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Fill(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).get_Fill(return_value); }
+	override HRESULT set_Fill(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).set_Fill(value); }
+	override HRESULT get_Stroke(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).get_Stroke(return_value); }
+	override HRESULT set_Stroke(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).set_Stroke(value); }
+	override HRESULT get_StrokeMiterLimit(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeMiterLimit(return_value); }
+	override HRESULT set_StrokeMiterLimit(double value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeMiterLimit(value); }
+	override HRESULT get_StrokeThickness(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeThickness(return_value); }
+	override HRESULT set_StrokeThickness(double value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeThickness(value); }
+	override HRESULT get_StrokeStartLineCap(Windows.UI.Xaml.Media.PenLineCap* return_value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeStartLineCap(return_value); }
+	override HRESULT set_StrokeStartLineCap(Windows.UI.Xaml.Media.PenLineCap value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeStartLineCap(value); }
+	override HRESULT get_StrokeEndLineCap(Windows.UI.Xaml.Media.PenLineCap* return_value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeEndLineCap(return_value); }
+	override HRESULT set_StrokeEndLineCap(Windows.UI.Xaml.Media.PenLineCap value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeEndLineCap(value); }
+	override HRESULT get_StrokeLineJoin(Windows.UI.Xaml.Media.PenLineJoin* return_value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeLineJoin(return_value); }
+	override HRESULT set_StrokeLineJoin(Windows.UI.Xaml.Media.PenLineJoin value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeLineJoin(value); }
+	override HRESULT get_StrokeDashOffset(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeDashOffset(return_value); }
+	override HRESULT set_StrokeDashOffset(double value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeDashOffset(value); }
+	override HRESULT get_StrokeDashCap(Windows.UI.Xaml.Media.PenLineCap* return_value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeDashCap(return_value); }
+	override HRESULT set_StrokeDashCap(Windows.UI.Xaml.Media.PenLineCap value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeDashCap(value); }
+	override HRESULT get_StrokeDashArray(Windows.UI.Xaml.Media.DoubleCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).get_StrokeDashArray(return_value); }
+	override HRESULT set_StrokeDashArray(Windows.UI.Xaml.Media.DoubleCollection value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).set_StrokeDashArray(value); }
+	override HRESULT get_Stretch(Windows.UI.Xaml.Media.Stretch* return_value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).get_Stretch(return_value); }
+	override HRESULT set_Stretch(Windows.UI.Xaml.Media.Stretch value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).set_Stretch(value); }
+	override HRESULT get_GeometryTransform(Windows.UI.Xaml.Media.Transform* return_value) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape).get_GeometryTransform(return_value); }
+
+	override HRESULT abi_GetAlphaMask(Windows.UI.Composition.CompositionBrush* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Shapes.IShape2).abi_GetAlphaMask(return_returnValue); }
+
+	this() {}
+	IInspectable m_inner;
 }

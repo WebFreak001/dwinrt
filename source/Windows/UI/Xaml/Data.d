@@ -437,9 +437,60 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding2).set_UpdateSourceTrigger(value));
 	}
 }
+@makable!(Binding, Binding, Windows.UI.Xaml.Data.IBindingFactory)
+class BindingT(Base) : AgileObject!Base, Binding
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Path(Windows.UI.Xaml.PropertyPath* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).get_Path(return_value); }
+	override HRESULT set_Path(Windows.UI.Xaml.PropertyPath value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).set_Path(value); }
+	override HRESULT get_Mode(Windows.UI.Xaml.Data.BindingMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).get_Mode(return_value); }
+	override HRESULT set_Mode(Windows.UI.Xaml.Data.BindingMode value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).set_Mode(value); }
+	override HRESULT get_Source(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).get_Source(return_value); }
+	override HRESULT set_Source(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).set_Source(value); }
+	override HRESULT get_RelativeSource(Windows.UI.Xaml.Data.RelativeSource* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).get_RelativeSource(return_value); }
+	override HRESULT set_RelativeSource(Windows.UI.Xaml.Data.RelativeSource value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).set_RelativeSource(value); }
+	override HRESULT get_ElementName(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).get_ElementName(return_value); }
+	override HRESULT set_ElementName(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).set_ElementName(value); }
+	override HRESULT get_Converter(Windows.UI.Xaml.Data.IValueConverter* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).get_Converter(return_value); }
+	override HRESULT set_Converter(Windows.UI.Xaml.Data.IValueConverter value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).set_Converter(value); }
+	override HRESULT get_ConverterParameter(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).get_ConverterParameter(return_value); }
+	override HRESULT set_ConverterParameter(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).set_ConverterParameter(value); }
+	override HRESULT get_ConverterLanguage(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).get_ConverterLanguage(return_value); }
+	override HRESULT set_ConverterLanguage(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding).set_ConverterLanguage(value); }
+
+	override HRESULT get_FallbackValue(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding2).get_FallbackValue(return_value); }
+	override HRESULT set_FallbackValue(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding2).set_FallbackValue(value); }
+	override HRESULT get_TargetNullValue(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding2).get_TargetNullValue(return_value); }
+	override HRESULT set_TargetNullValue(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding2).set_TargetNullValue(value); }
+	override HRESULT get_UpdateSourceTrigger(Windows.UI.Xaml.Data.UpdateSourceTrigger* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding2).get_UpdateSourceTrigger(return_value); }
+	override HRESULT set_UpdateSourceTrigger(Windows.UI.Xaml.Data.UpdateSourceTrigger value) { return m_inner.as!(Windows.UI.Xaml.Data.IBinding2).set_UpdateSourceTrigger(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface BindingBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.IBindingBase
 {
+}
+@makable!(BindingBase, BindingBase, Windows.UI.Xaml.Data.IBindingBaseFactory)
+class BindingBaseT(Base) : AgileObject!Base, BindingBase
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface BindingExpression : Windows.UI.Xaml.Data.BindingExpressionBase, Windows.UI.Xaml.Data.IBindingExpression
@@ -462,9 +513,40 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBindingExpression).abi_UpdateSource());
 	}
 }
+@makable!(BindingExpression, BindingExpression, Windows.UI.Xaml.Data.IBindingExpressionFactory)
+class BindingExpressionT(Base) : AgileObject!Base, BindingExpression
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_DataItem(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IBindingExpression).get_DataItem(return_value); }
+	override HRESULT get_ParentBinding(Windows.UI.Xaml.Data.Binding* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IBindingExpression).get_ParentBinding(return_value); }
+	override HRESULT abi_UpdateSource() { return m_inner.as!(Windows.UI.Xaml.Data.IBindingExpression).abi_UpdateSource(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface BindingExpressionBase : Windows.UI.Xaml.Data.IBindingExpressionBase
 {
+}
+@makable!(BindingExpressionBase, BindingExpressionBase, Windows.UI.Xaml.Data.IBindingExpressionBaseFactory)
+class BindingExpressionBaseT(Base) : AgileObject!Base, BindingExpressionBase
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface BindingOperations : Windows.UI.Xaml.Data.IBindingOperations
@@ -532,6 +614,23 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(CurrentChangingEventArgs, CurrentChangingEventArgs, Windows.UI.Xaml.Data.ICurrentChangingEventArgsFactory)
+class CurrentChangingEventArgsT(Base) : AgileObject!Base, CurrentChangingEventArgs
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Cancel(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.ICurrentChangingEventArgs).get_Cancel(return_value); }
+	override HRESULT set_Cancel(bool value) { return m_inner.as!(Windows.UI.Xaml.Data.ICurrentChangingEventArgs).set_Cancel(value); }
+	override HRESULT get_IsCancelable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.ICurrentChangingEventArgs).get_IsCancelable(return_value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ItemIndexRange : Windows.UI.Xaml.Data.IItemIndexRange
 {
@@ -555,6 +654,23 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(ItemIndexRange, ItemIndexRange, Windows.UI.Xaml.Data.IItemIndexRangeFactory)
+class ItemIndexRangeT(Base) : AgileObject!Base, ItemIndexRange
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_FirstIndex(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IItemIndexRange).get_FirstIndex(return_value); }
+	override HRESULT get_Length(UINT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IItemIndexRange).get_Length(return_value); }
+	override HRESULT get_LastIndex(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IItemIndexRange).get_LastIndex(return_value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface PropertyChangedEventArgs : Windows.UI.Xaml.Data.IPropertyChangedEventArgs
 {
@@ -565,6 +681,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Data.IPropertyChangedEventArgs).get_PropertyName(&_ret));
 		return _ret;
 	}
+}
+@makable!(PropertyChangedEventArgs, PropertyChangedEventArgs, Windows.UI.Xaml.Data.IPropertyChangedEventArgsFactory)
+class PropertyChangedEventArgsT(Base) : AgileObject!Base, PropertyChangedEventArgs
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_PropertyName(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IPropertyChangedEventArgs).get_PropertyName(return_value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface RelativeSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.IRelativeSource
@@ -580,6 +711,22 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Data.IRelativeSource).set_Mode(value));
 	}
+}
+@makable!(RelativeSource, RelativeSource, Windows.UI.Xaml.Data.IRelativeSourceFactory)
+class RelativeSourceT(Base) : AgileObject!Base, RelativeSource
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Mode(Windows.UI.Xaml.Data.RelativeSourceMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Data.IRelativeSource).get_Mode(return_value); }
+	override HRESULT set_Mode(Windows.UI.Xaml.Data.RelativeSourceMode value) { return m_inner.as!(Windows.UI.Xaml.Data.IRelativeSource).set_Mode(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 enum BindingMode

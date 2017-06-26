@@ -1740,6 +1740,24 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IAdaptiveTrigger).set_MinWindowHeight(value));
 	}
 }
+@makable!(AdaptiveTrigger, AdaptiveTrigger, Windows.UI.Xaml.IAdaptiveTriggerFactory)
+class AdaptiveTriggerT(Base) : AgileObject!Base, AdaptiveTrigger
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_MinWindowWidth(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IAdaptiveTrigger).get_MinWindowWidth(return_value); }
+	override HRESULT set_MinWindowWidth(double value) { return m_inner.as!(Windows.UI.Xaml.IAdaptiveTrigger).set_MinWindowWidth(value); }
+	override HRESULT get_MinWindowHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IAdaptiveTrigger).get_MinWindowHeight(return_value); }
+	override HRESULT set_MinWindowHeight(double value) { return m_inner.as!(Windows.UI.Xaml.IAdaptiveTrigger).set_MinWindowHeight(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface Application : Windows.UI.Xaml.IApplication, Windows.UI.Xaml.IApplicationOverrides, Windows.UI.Xaml.IApplication2, Windows.UI.Xaml.IApplicationOverrides2, Windows.UI.Xaml.IApplication3
 {
@@ -1792,42 +1810,6 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).abi_Exit());
 	}
-	final void OnActivated(Windows.ApplicationModel.Activation.IActivatedEventArgs args)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnActivated(args));
-	}
-	final void OnLaunched(Windows.ApplicationModel.Activation.LaunchActivatedEventArgs args)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnLaunched(args));
-	}
-	final void OnFileActivated(Windows.ApplicationModel.Activation.FileActivatedEventArgs args)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnFileActivated(args));
-	}
-	final void OnSearchActivated(Windows.ApplicationModel.Activation.SearchActivatedEventArgs args)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnSearchActivated(args));
-	}
-	final void OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs args)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnShareTargetActivated(args));
-	}
-	final void OnFileOpenPickerActivated(Windows.ApplicationModel.Activation.FileOpenPickerActivatedEventArgs args)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnFileOpenPickerActivated(args));
-	}
-	final void OnFileSavePickerActivated(Windows.ApplicationModel.Activation.FileSavePickerActivatedEventArgs args)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnFileSavePickerActivated(args));
-	}
-	final void OnCachedFileUpdaterActivated(Windows.ApplicationModel.Activation.CachedFileUpdaterActivatedEventArgs args)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnCachedFileUpdaterActivated(args));
-	}
-	final void OnWindowCreated(Windows.UI.Xaml.WindowCreatedEventArgs args)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnWindowCreated(args));
-	}
 	final Windows.UI.Xaml.FocusVisualKind FocusVisualKind()
 	{
 		Windows.UI.Xaml.FocusVisualKind _ret;
@@ -1856,10 +1838,6 @@ extern(Windows):
 	{
 		Debug.OK(remove_EnteredBackground(token));
 	}
-	final void OnBackgroundActivated(Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs args)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplicationOverrides2).abi_OnBackgroundActivated(args));
-	}
 	final Windows.UI.Xaml.ApplicationHighContrastAdjustment HighContrastAdjustment()
 	{
 		Windows.UI.Xaml.ApplicationHighContrastAdjustment _ret;
@@ -1870,6 +1848,66 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IApplication3).set_HighContrastAdjustment(value));
 	}
+}
+@makable!(Application, Application, Windows.UI.Xaml.IApplicationFactory)
+abstract class ApplicationT(Base) : AgileObject!Base, Application
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Resources(Windows.UI.Xaml.ResourceDictionary* return_value) { return m_inner.as!(Windows.UI.Xaml.IApplication).get_Resources(return_value); }
+	override HRESULT set_Resources(Windows.UI.Xaml.ResourceDictionary value) { return m_inner.as!(Windows.UI.Xaml.IApplication).set_Resources(value); }
+	override HRESULT get_DebugSettings(Windows.UI.Xaml.DebugSettings* return_value) { return m_inner.as!(Windows.UI.Xaml.IApplication).get_DebugSettings(return_value); }
+	override HRESULT get_RequestedTheme(Windows.UI.Xaml.ApplicationTheme* return_value) { return m_inner.as!(Windows.UI.Xaml.IApplication).get_RequestedTheme(return_value); }
+	override HRESULT set_RequestedTheme(Windows.UI.Xaml.ApplicationTheme value) { return m_inner.as!(Windows.UI.Xaml.IApplication).set_RequestedTheme(value); }
+	override HRESULT add_UnhandledException(Windows.UI.Xaml.UnhandledExceptionEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IApplication).add_UnhandledException(value, return_token); }
+	override HRESULT remove_UnhandledException(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IApplication).remove_UnhandledException(token); }
+	override HRESULT add_Suspending(Windows.UI.Xaml.SuspendingEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IApplication).add_Suspending(value, return_token); }
+	override HRESULT remove_Suspending(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IApplication).remove_Suspending(token); }
+	override HRESULT add_Resuming(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IApplication).add_Resuming(value, return_token); }
+	override HRESULT remove_Resuming(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IApplication).remove_Resuming(token); }
+	override HRESULT abi_Exit() { return m_inner.as!(Windows.UI.Xaml.IApplication).abi_Exit(); }
+
+	override HRESULT abi_OnActivated(Windows.ApplicationModel.Activation.IActivatedEventArgs args) { this.OnActivated(args); return S_OK; }
+	void OnActivated(Windows.ApplicationModel.Activation.IActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnActivated(args)); }
+	override HRESULT abi_OnLaunched(Windows.ApplicationModel.Activation.LaunchActivatedEventArgs args) { this.OnLaunched(args); return S_OK; }
+	void OnLaunched(Windows.ApplicationModel.Activation.LaunchActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnLaunched(args)); }
+	override HRESULT abi_OnFileActivated(Windows.ApplicationModel.Activation.FileActivatedEventArgs args) { this.OnFileActivated(args); return S_OK; }
+	void OnFileActivated(Windows.ApplicationModel.Activation.FileActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnFileActivated(args)); }
+	override HRESULT abi_OnSearchActivated(Windows.ApplicationModel.Activation.SearchActivatedEventArgs args) { this.OnSearchActivated(args); return S_OK; }
+	void OnSearchActivated(Windows.ApplicationModel.Activation.SearchActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnSearchActivated(args)); }
+	override HRESULT abi_OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs args) { this.OnShareTargetActivated(args); return S_OK; }
+	void OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnShareTargetActivated(args)); }
+	override HRESULT abi_OnFileOpenPickerActivated(Windows.ApplicationModel.Activation.FileOpenPickerActivatedEventArgs args) { this.OnFileOpenPickerActivated(args); return S_OK; }
+	void OnFileOpenPickerActivated(Windows.ApplicationModel.Activation.FileOpenPickerActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnFileOpenPickerActivated(args)); }
+	override HRESULT abi_OnFileSavePickerActivated(Windows.ApplicationModel.Activation.FileSavePickerActivatedEventArgs args) { this.OnFileSavePickerActivated(args); return S_OK; }
+	void OnFileSavePickerActivated(Windows.ApplicationModel.Activation.FileSavePickerActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnFileSavePickerActivated(args)); }
+	override HRESULT abi_OnCachedFileUpdaterActivated(Windows.ApplicationModel.Activation.CachedFileUpdaterActivatedEventArgs args) { this.OnCachedFileUpdaterActivated(args); return S_OK; }
+	void OnCachedFileUpdaterActivated(Windows.ApplicationModel.Activation.CachedFileUpdaterActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnCachedFileUpdaterActivated(args)); }
+	override HRESULT abi_OnWindowCreated(Windows.UI.Xaml.WindowCreatedEventArgs args) { this.OnWindowCreated(args); return S_OK; }
+	void OnWindowCreated(Windows.UI.Xaml.WindowCreatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnWindowCreated(args)); }
+
+	override HRESULT get_FocusVisualKind(Windows.UI.Xaml.FocusVisualKind* return_value) { return m_inner.as!(Windows.UI.Xaml.IApplication2).get_FocusVisualKind(return_value); }
+	override HRESULT set_FocusVisualKind(Windows.UI.Xaml.FocusVisualKind value) { return m_inner.as!(Windows.UI.Xaml.IApplication2).set_FocusVisualKind(value); }
+	override HRESULT get_RequiresPointerMode(Windows.UI.Xaml.ApplicationRequiresPointerMode* return_value) { return m_inner.as!(Windows.UI.Xaml.IApplication2).get_RequiresPointerMode(return_value); }
+	override HRESULT set_RequiresPointerMode(Windows.UI.Xaml.ApplicationRequiresPointerMode value) { return m_inner.as!(Windows.UI.Xaml.IApplication2).set_RequiresPointerMode(value); }
+	override HRESULT add_LeavingBackground(Windows.UI.Xaml.LeavingBackgroundEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IApplication2).add_LeavingBackground(value, return_token); }
+	override HRESULT remove_LeavingBackground(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IApplication2).remove_LeavingBackground(token); }
+	override HRESULT add_EnteredBackground(Windows.UI.Xaml.EnteredBackgroundEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IApplication2).add_EnteredBackground(value, return_token); }
+	override HRESULT remove_EnteredBackground(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IApplication2).remove_EnteredBackground(token); }
+
+	override HRESULT abi_OnBackgroundActivated(Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs args) { this.OnBackgroundActivated(args); return S_OK; }
+	void OnBackgroundActivated(Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides2).abi_OnBackgroundActivated(args)); }
+
+	override HRESULT get_HighContrastAdjustment(Windows.UI.Xaml.ApplicationHighContrastAdjustment* return_value) { return m_inner.as!(Windows.UI.Xaml.IApplication3).get_HighContrastAdjustment(return_value); }
+	override HRESULT set_HighContrastAdjustment(Windows.UI.Xaml.ApplicationHighContrastAdjustment value) { return m_inner.as!(Windows.UI.Xaml.IApplication3).set_HighContrastAdjustment(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ApplicationInitializationCallbackParams : Windows.UI.Xaml.IApplicationInitializationCallbackParams
@@ -1947,6 +1985,21 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(DataTemplate, DataTemplate, Windows.UI.Xaml.IDataTemplateFactory)
+class DataTemplateT(Base) : AgileObject!Base, DataTemplate
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT abi_LoadContent(Windows.UI.Xaml.DependencyObject* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IDataTemplate).abi_LoadContent(return_returnValue); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface DataTemplateKey : Windows.UI.Xaml.IDataTemplateKey
 {
@@ -1961,6 +2014,22 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IDataTemplateKey).set_DataType(value));
 	}
+}
+@makable!(DataTemplateKey, DataTemplateKey, Windows.UI.Xaml.IDataTemplateKeyFactory)
+class DataTemplateKeyT(Base) : AgileObject!Base, DataTemplateKey
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_DataType(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.IDataTemplateKey).get_DataType(return_value); }
+	override HRESULT set_DataType(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.IDataTemplateKey).set_DataType(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface DebugSettings : Windows.UI.Xaml.IDebugSettings, Windows.UI.Xaml.IDebugSettings2, Windows.UI.Xaml.IDebugSettings3
@@ -2068,6 +2137,29 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyObject2).abi_UnregisterPropertyChangedCallback(dp, token));
 	}
 }
+@makable!(DependencyObject, DependencyObject, Windows.UI.Xaml.IDependencyObjectFactory)
+class DependencyObjectT(Base) : AgileObject!Base, DependencyObject
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT abi_GetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject).abi_GetValue(dp, return_returnValue); }
+	override HRESULT abi_SetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable value) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject).abi_SetValue(dp, value); }
+	override HRESULT abi_ClearValue(Windows.UI.Xaml.DependencyProperty dp) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject).abi_ClearValue(dp); }
+	override HRESULT abi_ReadLocalValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject).abi_ReadLocalValue(dp, return_returnValue); }
+	override HRESULT abi_GetAnimationBaseValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject).abi_GetAnimationBaseValue(dp, return_returnValue); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject).get_Dispatcher(return_value); }
+
+	override HRESULT abi_RegisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.DependencyPropertyChangedCallback callback, INT64* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject2).abi_RegisterPropertyChangedCallback(dp, callback, return_returnValue); }
+	override HRESULT abi_UnregisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, INT64 token) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject2).abi_UnregisterPropertyChangedCallback(dp, token); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface DependencyObjectCollection : Windows.UI.Xaml.DependencyObject, Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.DependencyObject), Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.DependencyObject)
 {
@@ -2134,6 +2226,37 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.DependencyObject)).abi_First(out_first));
 	}
+}
+@makable!(DependencyObjectCollection, DependencyObjectCollection, Windows.UI.Xaml.IDependencyObjectCollectionFactory)
+class DependencyObjectCollectionT(Base) : AgileObject!Base, DependencyObjectCollection
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT add_VectorChanged(Windows.Foundation.Collections.VectorChangedEventHandler!(Windows.UI.Xaml.DependencyObject) handler, EventRegistrationToken* return_token) { return m_inner.as!(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.DependencyObject)).add_VectorChanged(handler, return_token); }
+	override HRESULT remove_VectorChanged(EventRegistrationToken token) { return m_inner.as!(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.DependencyObject)).remove_VectorChanged(token); }
+
+	override HRESULT get_GetAt(uint index, Windows.UI.Xaml.DependencyObject* return_item) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).get_GetAt(index, return_item); }
+	override HRESULT get_Size(uint* return_size) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).get_Size(return_size); }
+	override HRESULT abi_GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.DependencyObject)* out_view) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_GetView(out_view); }
+	override HRESULT get_IndexOf(Windows.UI.Xaml.DependencyObject value, uint* return_index, bool* out_found) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).get_IndexOf(value, return_index, out_found); }
+	override HRESULT abi_SetAt(uint index, Windows.UI.Xaml.DependencyObject item) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_SetAt(index, item); }
+	override HRESULT abi_InsertAt(uint index, Windows.UI.Xaml.DependencyObject item) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_InsertAt(index, item); }
+	override HRESULT abi_RemoveAt(uint index) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_RemoveAt(index); }
+	override HRESULT abi_Append(Windows.UI.Xaml.DependencyObject item) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_Append(item); }
+	override HRESULT abi_RemoveAtEnd() { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_RemoveAtEnd(); }
+	override HRESULT abi_Clear() { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_Clear(); }
+	override HRESULT abi_GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.DependencyObject* out_value, uint* out_actual) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_GetMany(startIndex, capacity, out_value, out_actual); }
+	override HRESULT abi_ReplaceAll(uint count, Windows.UI.Xaml.DependencyObject* out_value) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_ReplaceAll(count, out_value); }
+
+	override HRESULT abi_First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.DependencyObject)* out_first) { return m_inner.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.DependencyObject)).abi_First(out_first); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface DependencyProperty : Windows.UI.Xaml.IDependencyProperty
@@ -2207,6 +2330,27 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IDispatcherTimer).abi_Stop());
 	}
+}
+@makable!(DispatcherTimer, DispatcherTimer, Windows.UI.Xaml.IDispatcherTimerFactory)
+class DispatcherTimerT(Base) : AgileObject!Base, DispatcherTimer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Interval(Windows.Foundation.TimeSpan* return_value) { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).get_Interval(return_value); }
+	override HRESULT set_Interval(Windows.Foundation.TimeSpan value) { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).set_Interval(value); }
+	override HRESULT get_IsEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).get_IsEnabled(return_value); }
+	override HRESULT add_Tick(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).add_Tick(value, return_token); }
+	override HRESULT remove_Tick(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).remove_Tick(token); }
+	override HRESULT abi_Start() { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).abi_Start(); }
+	override HRESULT abi_Stop() { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).abi_Stop(); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface DragEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.IDragEventArgs, Windows.UI.Xaml.IDragEventArgs2, Windows.UI.Xaml.IDragEventArgs3
@@ -2478,6 +2622,21 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(ExceptionRoutedEventArgs, ExceptionRoutedEventArgs, Windows.UI.Xaml.IExceptionRoutedEventArgsFactory)
+class ExceptionRoutedEventArgsT(Base) : AgileObject!Base, ExceptionRoutedEventArgs
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_ErrorMessage(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.IExceptionRoutedEventArgs).get_ErrorMessage(return_value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface FrameworkElement : Windows.UI.Xaml.UIElement, Windows.UI.Xaml.IFrameworkElement, Windows.UI.Xaml.IFrameworkElementOverrides, Windows.UI.Xaml.IFrameworkElement2, Windows.UI.Xaml.IFrameworkElementOverrides2, Windows.UI.Xaml.IFrameworkElement3, Windows.UI.Xaml.IFrameworkElement4
 {
@@ -2704,22 +2863,6 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).abi_SetBinding(dp, binding));
 	}
-	final Windows.Foundation.Size MeasureOverride(Windows.Foundation.Size availableSize)
-	{
-		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElementOverrides).abi_MeasureOverride(availableSize, &_ret));
-		return _ret;
-	}
-	final Windows.Foundation.Size ArrangeOverride(Windows.Foundation.Size finalSize)
-	{
-		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElementOverrides).abi_ArrangeOverride(finalSize, &_ret));
-		return _ret;
-	}
-	final void OnApplyTemplate()
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElementOverrides).abi_OnApplyTemplate());
-	}
 	final Windows.UI.Xaml.ElementTheme RequestedTheme()
 	{
 		Windows.UI.Xaml.ElementTheme _ret;
@@ -2744,12 +2887,6 @@ extern(Windows):
 	{
 		Windows.UI.Xaml.Data.BindingExpression _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement2).abi_GetBindingExpression(dp, &_ret));
-		return _ret;
-	}
-	final bool GoToElementStateCore(HSTRING stateName, bool useTransitions)
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElementOverrides2).abi_GoToElementStateCore(stateName, useTransitions, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnLoading(void delegate(Windows.UI.Xaml.FrameworkElement, IInspectable) fn)
@@ -2833,9 +2970,118 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).set_AllowFocusWhenDisabled(value));
 	}
 }
+@makable!(FrameworkElement, FrameworkElement, Windows.UI.Xaml.IFrameworkElementFactory)
+class FrameworkElementT(Base) : AgileObject!Base, FrameworkElement
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Triggers(Windows.UI.Xaml.TriggerCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Triggers(return_value); }
+	override HRESULT get_Resources(Windows.UI.Xaml.ResourceDictionary* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Resources(return_value); }
+	override HRESULT set_Resources(Windows.UI.Xaml.ResourceDictionary value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Resources(value); }
+	override HRESULT get_Tag(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Tag(return_value); }
+	override HRESULT set_Tag(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Tag(value); }
+	override HRESULT get_Language(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Language(return_value); }
+	override HRESULT set_Language(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Language(value); }
+	override HRESULT get_ActualWidth(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_ActualWidth(return_value); }
+	override HRESULT get_ActualHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_ActualHeight(return_value); }
+	override HRESULT get_Width(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Width(return_value); }
+	override HRESULT set_Width(double value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Width(value); }
+	override HRESULT get_Height(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Height(return_value); }
+	override HRESULT set_Height(double value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Height(value); }
+	override HRESULT get_MinWidth(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_MinWidth(return_value); }
+	override HRESULT set_MinWidth(double value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_MinWidth(value); }
+	override HRESULT get_MaxWidth(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_MaxWidth(return_value); }
+	override HRESULT set_MaxWidth(double value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_MaxWidth(value); }
+	override HRESULT get_MinHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_MinHeight(return_value); }
+	override HRESULT set_MinHeight(double value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_MinHeight(value); }
+	override HRESULT get_MaxHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_MaxHeight(return_value); }
+	override HRESULT set_MaxHeight(double value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_MaxHeight(value); }
+	override HRESULT get_HorizontalAlignment(Windows.UI.Xaml.HorizontalAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_HorizontalAlignment(return_value); }
+	override HRESULT set_HorizontalAlignment(Windows.UI.Xaml.HorizontalAlignment value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_HorizontalAlignment(value); }
+	override HRESULT get_VerticalAlignment(Windows.UI.Xaml.VerticalAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_VerticalAlignment(return_value); }
+	override HRESULT set_VerticalAlignment(Windows.UI.Xaml.VerticalAlignment value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_VerticalAlignment(value); }
+	override HRESULT get_Margin(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Margin(return_value); }
+	override HRESULT set_Margin(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Margin(value); }
+	override HRESULT get_Name(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Name(return_value); }
+	override HRESULT set_Name(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Name(value); }
+	override HRESULT get_BaseUri(Windows.Foundation.Uri* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_BaseUri(return_value); }
+	override HRESULT get_DataContext(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_DataContext(return_value); }
+	override HRESULT set_DataContext(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_DataContext(value); }
+	override HRESULT get_Style(Windows.UI.Xaml.Style* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Style(return_value); }
+	override HRESULT set_Style(Windows.UI.Xaml.Style value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Style(value); }
+	override HRESULT get_Parent(Windows.UI.Xaml.DependencyObject* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Parent(return_value); }
+	override HRESULT get_FlowDirection(Windows.UI.Xaml.FlowDirection* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_FlowDirection(return_value); }
+	override HRESULT set_FlowDirection(Windows.UI.Xaml.FlowDirection value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_FlowDirection(value); }
+	override HRESULT add_Loaded(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).add_Loaded(value, return_token); }
+	override HRESULT remove_Loaded(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).remove_Loaded(token); }
+	override HRESULT add_Unloaded(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).add_Unloaded(value, return_token); }
+	override HRESULT remove_Unloaded(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).remove_Unloaded(token); }
+	override HRESULT add_SizeChanged(Windows.UI.Xaml.SizeChangedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).add_SizeChanged(value, return_token); }
+	override HRESULT remove_SizeChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).remove_SizeChanged(token); }
+	override HRESULT add_LayoutUpdated(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).add_LayoutUpdated(value, return_token); }
+	override HRESULT remove_LayoutUpdated(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).remove_LayoutUpdated(token); }
+	override HRESULT abi_FindName(HSTRING name, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).abi_FindName(name, return_returnValue); }
+	override HRESULT abi_SetBinding(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.Data.BindingBase binding) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).abi_SetBinding(dp, binding); }
+
+	override HRESULT abi_MeasureOverride(Windows.Foundation.Size availableSize, Windows.Foundation.Size* return_returnValue) { this.MeasureOverride(availableSize, return_returnValue); return S_OK; }
+	void MeasureOverride(Windows.Foundation.Size availableSize, Windows.Foundation.Size* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IFrameworkElementOverrides).abi_MeasureOverride(availableSize, return_returnValue)); }
+	override HRESULT abi_ArrangeOverride(Windows.Foundation.Size finalSize, Windows.Foundation.Size* return_returnValue) { this.ArrangeOverride(finalSize, return_returnValue); return S_OK; }
+	void ArrangeOverride(Windows.Foundation.Size finalSize, Windows.Foundation.Size* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IFrameworkElementOverrides).abi_ArrangeOverride(finalSize, return_returnValue)); }
+	override HRESULT abi_OnApplyTemplate() { this.OnApplyTemplate(); return S_OK; }
+	void OnApplyTemplate() { Debug.OK(m_inner.as!(Windows.UI.Xaml.IFrameworkElementOverrides).abi_OnApplyTemplate()); }
+
+	override HRESULT get_RequestedTheme(Windows.UI.Xaml.ElementTheme* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement2).get_RequestedTheme(return_value); }
+	override HRESULT set_RequestedTheme(Windows.UI.Xaml.ElementTheme value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement2).set_RequestedTheme(value); }
+	override HRESULT add_DataContextChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement2).add_DataContextChanged(value, return_token); }
+	override HRESULT remove_DataContextChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement2).remove_DataContextChanged(token); }
+	override HRESULT abi_GetBindingExpression(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.Data.BindingExpression* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement2).abi_GetBindingExpression(dp, return_returnValue); }
+
+	override HRESULT abi_GoToElementStateCore(HSTRING stateName, bool useTransitions, bool* return_returnValue) { this.GoToElementStateCore(stateName, useTransitions, return_returnValue); return S_OK; }
+	void GoToElementStateCore(HSTRING stateName, bool useTransitions, bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IFrameworkElementOverrides2).abi_GoToElementStateCore(stateName, useTransitions, return_returnValue)); }
+
+	override HRESULT add_Loading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement3).add_Loading(value, return_token); }
+	override HRESULT remove_Loading(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement3).remove_Loading(token); }
+
+	override HRESULT get_AllowFocusOnInteraction(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_AllowFocusOnInteraction(return_value); }
+	override HRESULT set_AllowFocusOnInteraction(bool value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_AllowFocusOnInteraction(value); }
+	override HRESULT get_FocusVisualMargin(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualMargin(return_value); }
+	override HRESULT set_FocusVisualMargin(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualMargin(value); }
+	override HRESULT get_FocusVisualSecondaryThickness(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualSecondaryThickness(return_value); }
+	override HRESULT set_FocusVisualSecondaryThickness(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualSecondaryThickness(value); }
+	override HRESULT get_FocusVisualPrimaryThickness(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualPrimaryThickness(return_value); }
+	override HRESULT set_FocusVisualPrimaryThickness(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualPrimaryThickness(value); }
+	override HRESULT get_FocusVisualSecondaryBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualSecondaryBrush(return_value); }
+	override HRESULT set_FocusVisualSecondaryBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualSecondaryBrush(value); }
+	override HRESULT get_FocusVisualPrimaryBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualPrimaryBrush(return_value); }
+	override HRESULT set_FocusVisualPrimaryBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualPrimaryBrush(value); }
+	override HRESULT get_AllowFocusWhenDisabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_AllowFocusWhenDisabled(return_value); }
+	override HRESULT set_AllowFocusWhenDisabled(bool value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_AllowFocusWhenDisabled(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface FrameworkTemplate : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IFrameworkTemplate
 {
+}
+@makable!(FrameworkTemplate, FrameworkTemplate, Windows.UI.Xaml.IFrameworkTemplateFactory)
+class FrameworkTemplateT(Base) : AgileObject!Base, FrameworkTemplate
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface FrameworkView : Windows.UI.Xaml.IFrameworkView, Windows.ApplicationModel.Core.IFrameworkView
@@ -2908,6 +3154,22 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IPropertyMetadata).get_CreateDefaultValueCallback(&_ret));
 		return _ret;
 	}
+}
+@makable!(PropertyMetadata, PropertyMetadata, Windows.UI.Xaml.IPropertyMetadataFactory)
+class PropertyMetadataT(Base) : AgileObject!Base, PropertyMetadata
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_DefaultValue(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.IPropertyMetadata).get_DefaultValue(return_value); }
+	override HRESULT get_CreateDefaultValueCallback(Windows.UI.Xaml.CreateDefaultValueCallback* return_value) { return m_inner.as!(Windows.UI.Xaml.IPropertyMetadata).get_CreateDefaultValueCallback(return_value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface PropertyPath : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IPropertyPath
@@ -2993,6 +3255,34 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))).abi_First(out_first));
 	}
 }
+@makable!(ResourceDictionary, ResourceDictionary, Windows.UI.Xaml.IResourceDictionaryFactory)
+class ResourceDictionaryT(Base) : AgileObject!Base, ResourceDictionary
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Source(Windows.Foundation.Uri* return_value) { return m_inner.as!(Windows.UI.Xaml.IResourceDictionary).get_Source(return_value); }
+	override HRESULT set_Source(Windows.Foundation.Uri value) { return m_inner.as!(Windows.UI.Xaml.IResourceDictionary).set_Source(value); }
+	override HRESULT get_MergedDictionaries(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.ResourceDictionary)* return_value) { return m_inner.as!(Windows.UI.Xaml.IResourceDictionary).get_MergedDictionaries(return_value); }
+	override HRESULT get_ThemeDictionaries(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)* return_value) { return m_inner.as!(Windows.UI.Xaml.IResourceDictionary).get_ThemeDictionaries(return_value); }
+
+	override HRESULT abi_Lookup(IInspectable key,  IInspectable* return_value) { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Lookup(key, return_value); }
+	override HRESULT get_Size(uint* return_size) { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).get_Size(return_size); }
+	override HRESULT abi_HasKey(IInspectable key, bool* return_found) { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_HasKey(key, return_found); }
+	override HRESULT abi_GetView(Windows.Foundation.Collections.IMapView!(IInspectable,	 IInspectable)* return_view) { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_GetView(return_view); }
+	override HRESULT abi_Insert(IInspectable key,  IInspectable value, bool* return_replaced) { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Insert(key, value, return_replaced); }
+	override HRESULT abi_Remove(IInspectable key) { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Remove(key); }
+	override HRESULT abi_Clear() { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Clear(); }
+
+	override HRESULT abi_First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))* out_first) { return m_inner.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))).abi_First(out_first); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface RoutedEvent : Windows.UI.Xaml.IRoutedEvent
 {
@@ -3007,6 +3297,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IRoutedEventArgs).get_OriginalSource(&_ret));
 		return _ret;
 	}
+}
+@makable!(RoutedEventArgs, RoutedEventArgs, Windows.UI.Xaml.IRoutedEventArgsFactory)
+class RoutedEventArgsT(Base) : AgileObject!Base, RoutedEventArgs
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_OriginalSource(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.IRoutedEventArgs).get_OriginalSource(return_value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface Setter : Windows.UI.Xaml.SetterBase, Windows.UI.Xaml.ISetter, Windows.UI.Xaml.ISetter2
@@ -3053,6 +3358,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.ISetterBase).get_IsSealed(&_ret));
 		return _ret;
 	}
+}
+@makable!(SetterBase, SetterBase, Windows.UI.Xaml.ISetterBaseFactory)
+class SetterBaseT(Base) : AgileObject!Base, SetterBase
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_IsSealed(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.ISetterBase).get_IsSealed(return_value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface SetterBaseCollection : Windows.UI.Xaml.ISetterBaseCollection, Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.SetterBase)
@@ -3168,6 +3488,22 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IStateTriggerBaseProtected).abi_SetActive(IsActive));
 	}
 }
+@makable!(StateTriggerBase, StateTriggerBase, Windows.UI.Xaml.IStateTriggerBaseFactory)
+class StateTriggerBaseT(Base) : AgileObject!Base, StateTriggerBase
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_SetActive(bool IsActive) { return m_inner.as!(Windows.UI.Xaml.IStateTriggerBaseProtected).abi_SetActive(IsActive); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface Style : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IStyle
 {
@@ -3242,6 +3578,20 @@ interface ThicknessHelper : Windows.UI.Xaml.IThicknessHelper
 interface TriggerAction : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.ITriggerAction
 {
 }
+@makable!(TriggerAction, TriggerAction, Windows.UI.Xaml.ITriggerActionFactory)
+class TriggerActionT(Base) : AgileObject!Base, TriggerAction
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface TriggerActionCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.TriggerAction)
 {
@@ -3308,6 +3658,20 @@ extern(Windows):
 
 interface TriggerBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.ITriggerBase
 {
+}
+@makable!(TriggerBase, TriggerBase, Windows.UI.Xaml.ITriggerBaseFactory)
+class TriggerBaseT(Base) : AgileObject!Base, TriggerBase
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface TriggerCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.TriggerBase)
@@ -3702,22 +4066,6 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).abi_UpdateLayout());
 	}
-	final Windows.UI.Xaml.Automation.Peers.AutomationPeer OnCreateAutomationPeer()
-	{
-		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElementOverrides).abi_OnCreateAutomationPeer(&_ret));
-		return _ret;
-	}
-	final void OnDisconnectVisualChildren()
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElementOverrides).abi_OnDisconnectVisualChildren());
-	}
-	final Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point)) FindSubElementsForTouchTargeting(Windows.Foundation.Point point, Windows.Foundation.Rect boundingRect)
-	{
-		Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point)) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElementOverrides).abi_FindSubElementsForTouchTargeting(point, boundingRect, &_ret));
-		return _ret;
-	}
 	final Windows.UI.Xaml.Media.ElementCompositeMode CompositeMode()
 	{
 		Windows.UI.Xaml.Media.ElementCompositeMode _ret;
@@ -4025,6 +4373,188 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).abi_StartBringIntoViewWithOptions(options));
 	}
 }
+@makable!(UIElement, UIElement, Windows.UI.Xaml.IUIElementFactory)
+class UIElementT(Base) : AgileObject!Base, UIElement
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_DesiredSize(Windows.Foundation.Size* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_DesiredSize(return_value); }
+	override HRESULT get_AllowDrop(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_AllowDrop(return_value); }
+	override HRESULT set_AllowDrop(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_AllowDrop(value); }
+	override HRESULT get_Opacity(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_Opacity(return_value); }
+	override HRESULT set_Opacity(double value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_Opacity(value); }
+	override HRESULT get_Clip(Windows.UI.Xaml.Media.RectangleGeometry* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_Clip(return_value); }
+	override HRESULT set_Clip(Windows.UI.Xaml.Media.RectangleGeometry value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_Clip(value); }
+	override HRESULT get_RenderTransform(Windows.UI.Xaml.Media.Transform* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_RenderTransform(return_value); }
+	override HRESULT set_RenderTransform(Windows.UI.Xaml.Media.Transform value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_RenderTransform(value); }
+	override HRESULT get_Projection(Windows.UI.Xaml.Media.Projection* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_Projection(return_value); }
+	override HRESULT set_Projection(Windows.UI.Xaml.Media.Projection value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_Projection(value); }
+	override HRESULT get_RenderTransformOrigin(Windows.Foundation.Point* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_RenderTransformOrigin(return_value); }
+	override HRESULT set_RenderTransformOrigin(Windows.Foundation.Point value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_RenderTransformOrigin(value); }
+	override HRESULT get_IsHitTestVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_IsHitTestVisible(return_value); }
+	override HRESULT set_IsHitTestVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_IsHitTestVisible(value); }
+	override HRESULT get_Visibility(Windows.UI.Xaml.Visibility* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_Visibility(return_value); }
+	override HRESULT set_Visibility(Windows.UI.Xaml.Visibility value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_Visibility(value); }
+	override HRESULT get_RenderSize(Windows.Foundation.Size* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_RenderSize(return_value); }
+	override HRESULT get_UseLayoutRounding(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_UseLayoutRounding(return_value); }
+	override HRESULT set_UseLayoutRounding(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_UseLayoutRounding(value); }
+	override HRESULT get_Transitions(Windows.UI.Xaml.Media.Animation.TransitionCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_Transitions(return_value); }
+	override HRESULT set_Transitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_Transitions(value); }
+	override HRESULT get_CacheMode(Windows.UI.Xaml.Media.CacheMode* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_CacheMode(return_value); }
+	override HRESULT set_CacheMode(Windows.UI.Xaml.Media.CacheMode value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_CacheMode(value); }
+	override HRESULT get_IsTapEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_IsTapEnabled(return_value); }
+	override HRESULT set_IsTapEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_IsTapEnabled(value); }
+	override HRESULT get_IsDoubleTapEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_IsDoubleTapEnabled(return_value); }
+	override HRESULT set_IsDoubleTapEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_IsDoubleTapEnabled(value); }
+	override HRESULT get_IsRightTapEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_IsRightTapEnabled(return_value); }
+	override HRESULT set_IsRightTapEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_IsRightTapEnabled(value); }
+	override HRESULT get_IsHoldingEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_IsHoldingEnabled(return_value); }
+	override HRESULT set_IsHoldingEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_IsHoldingEnabled(value); }
+	override HRESULT get_ManipulationMode(Windows.UI.Xaml.Input.ManipulationModes* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_ManipulationMode(return_value); }
+	override HRESULT set_ManipulationMode(Windows.UI.Xaml.Input.ManipulationModes value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_ManipulationMode(value); }
+	override HRESULT get_PointerCaptures(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Input.Pointer)* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_PointerCaptures(return_value); }
+	override HRESULT add_KeyUp(Windows.UI.Xaml.Input.KeyEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_KeyUp(value, return_token); }
+	override HRESULT remove_KeyUp(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_KeyUp(token); }
+	override HRESULT add_KeyDown(Windows.UI.Xaml.Input.KeyEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_KeyDown(value, return_token); }
+	override HRESULT remove_KeyDown(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_KeyDown(token); }
+	override HRESULT add_GotFocus(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_GotFocus(value, return_token); }
+	override HRESULT remove_GotFocus(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_GotFocus(token); }
+	override HRESULT add_LostFocus(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_LostFocus(value, return_token); }
+	override HRESULT remove_LostFocus(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_LostFocus(token); }
+	override HRESULT add_DragEnter(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_DragEnter(value, return_token); }
+	override HRESULT remove_DragEnter(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_DragEnter(token); }
+	override HRESULT add_DragLeave(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_DragLeave(value, return_token); }
+	override HRESULT remove_DragLeave(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_DragLeave(token); }
+	override HRESULT add_DragOver(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_DragOver(value, return_token); }
+	override HRESULT remove_DragOver(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_DragOver(token); }
+	override HRESULT add_Drop(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_Drop(value, return_token); }
+	override HRESULT remove_Drop(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_Drop(token); }
+	override HRESULT add_PointerPressed(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerPressed(value, return_token); }
+	override HRESULT remove_PointerPressed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerPressed(token); }
+	override HRESULT add_PointerMoved(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerMoved(value, return_token); }
+	override HRESULT remove_PointerMoved(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerMoved(token); }
+	override HRESULT add_PointerReleased(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerReleased(value, return_token); }
+	override HRESULT remove_PointerReleased(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerReleased(token); }
+	override HRESULT add_PointerEntered(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerEntered(value, return_token); }
+	override HRESULT remove_PointerEntered(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerEntered(token); }
+	override HRESULT add_PointerExited(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerExited(value, return_token); }
+	override HRESULT remove_PointerExited(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerExited(token); }
+	override HRESULT add_PointerCaptureLost(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerCaptureLost(value, return_token); }
+	override HRESULT remove_PointerCaptureLost(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerCaptureLost(token); }
+	override HRESULT add_PointerCanceled(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerCanceled(value, return_token); }
+	override HRESULT remove_PointerCanceled(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerCanceled(token); }
+	override HRESULT add_PointerWheelChanged(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerWheelChanged(value, return_token); }
+	override HRESULT remove_PointerWheelChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerWheelChanged(token); }
+	override HRESULT add_Tapped(Windows.UI.Xaml.Input.TappedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_Tapped(value, return_token); }
+	override HRESULT remove_Tapped(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_Tapped(token); }
+	override HRESULT add_DoubleTapped(Windows.UI.Xaml.Input.DoubleTappedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_DoubleTapped(value, return_token); }
+	override HRESULT remove_DoubleTapped(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_DoubleTapped(token); }
+	override HRESULT add_Holding(Windows.UI.Xaml.Input.HoldingEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_Holding(value, return_token); }
+	override HRESULT remove_Holding(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_Holding(token); }
+	override HRESULT add_RightTapped(Windows.UI.Xaml.Input.RightTappedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_RightTapped(value, return_token); }
+	override HRESULT remove_RightTapped(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_RightTapped(token); }
+	override HRESULT add_ManipulationStarting(Windows.UI.Xaml.Input.ManipulationStartingEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_ManipulationStarting(value, return_token); }
+	override HRESULT remove_ManipulationStarting(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationStarting(token); }
+	override HRESULT add_ManipulationInertiaStarting(Windows.UI.Xaml.Input.ManipulationInertiaStartingEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_ManipulationInertiaStarting(value, return_token); }
+	override HRESULT remove_ManipulationInertiaStarting(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationInertiaStarting(token); }
+	override HRESULT add_ManipulationStarted(Windows.UI.Xaml.Input.ManipulationStartedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_ManipulationStarted(value, return_token); }
+	override HRESULT remove_ManipulationStarted(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationStarted(token); }
+	override HRESULT add_ManipulationDelta(Windows.UI.Xaml.Input.ManipulationDeltaEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_ManipulationDelta(value, return_token); }
+	override HRESULT remove_ManipulationDelta(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationDelta(token); }
+	override HRESULT add_ManipulationCompleted(Windows.UI.Xaml.Input.ManipulationCompletedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_ManipulationCompleted(value, return_token); }
+	override HRESULT remove_ManipulationCompleted(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationCompleted(token); }
+	override HRESULT abi_Measure(Windows.Foundation.Size availableSize) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_Measure(availableSize); }
+	override HRESULT abi_Arrange(Windows.Foundation.Rect finalRect) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_Arrange(finalRect); }
+	override HRESULT abi_CapturePointer(Windows.UI.Xaml.Input.Pointer value, bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_CapturePointer(value, return_returnValue); }
+	override HRESULT abi_ReleasePointerCapture(Windows.UI.Xaml.Input.Pointer value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_ReleasePointerCapture(value); }
+	override HRESULT abi_ReleasePointerCaptures() { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_ReleasePointerCaptures(); }
+	override HRESULT abi_AddHandler(Windows.UI.Xaml.RoutedEvent routedEvent, IInspectable handler, bool handledEventsToo) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_AddHandler(routedEvent, handler, handledEventsToo); }
+	override HRESULT abi_RemoveHandler(Windows.UI.Xaml.RoutedEvent routedEvent, IInspectable handler) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_RemoveHandler(routedEvent, handler); }
+	override HRESULT abi_TransformToVisual(Windows.UI.Xaml.UIElement visual, Windows.UI.Xaml.Media.GeneralTransform* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_TransformToVisual(visual, return_returnValue); }
+	override HRESULT abi_InvalidateMeasure() { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_InvalidateMeasure(); }
+	override HRESULT abi_InvalidateArrange() { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_InvalidateArrange(); }
+	override HRESULT abi_UpdateLayout() { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_UpdateLayout(); }
+
+	override HRESULT abi_OnCreateAutomationPeer(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { this.OnCreateAutomationPeer(return_returnValue); return S_OK; }
+	void OnCreateAutomationPeer(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IUIElementOverrides).abi_OnCreateAutomationPeer(return_returnValue)); }
+	override HRESULT abi_OnDisconnectVisualChildren() { this.OnDisconnectVisualChildren(); return S_OK; }
+	void OnDisconnectVisualChildren() { Debug.OK(m_inner.as!(Windows.UI.Xaml.IUIElementOverrides).abi_OnDisconnectVisualChildren()); }
+	override HRESULT abi_FindSubElementsForTouchTargeting(Windows.Foundation.Point point, Windows.Foundation.Rect boundingRect, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point))* return_returnValue) { this.FindSubElementsForTouchTargeting(point, boundingRect, return_returnValue); return S_OK; }
+	void FindSubElementsForTouchTargeting(Windows.Foundation.Point point, Windows.Foundation.Rect boundingRect, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point))* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IUIElementOverrides).abi_FindSubElementsForTouchTargeting(point, boundingRect, return_returnValue)); }
+
+	override HRESULT get_CompositeMode(Windows.UI.Xaml.Media.ElementCompositeMode* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement2).get_CompositeMode(return_value); }
+	override HRESULT set_CompositeMode(Windows.UI.Xaml.Media.ElementCompositeMode value) { return m_inner.as!(Windows.UI.Xaml.IUIElement2).set_CompositeMode(value); }
+	override HRESULT abi_CancelDirectManipulations(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IUIElement2).abi_CancelDirectManipulations(return_returnValue); }
+
+	override HRESULT get_Transform3D(Windows.UI.Xaml.Media.Media3D.Transform3D* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).get_Transform3D(return_value); }
+	override HRESULT set_Transform3D(Windows.UI.Xaml.Media.Media3D.Transform3D value) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).set_Transform3D(value); }
+	override HRESULT get_CanDrag(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).get_CanDrag(return_value); }
+	override HRESULT set_CanDrag(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).set_CanDrag(value); }
+	override HRESULT add_DragStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).add_DragStarting(value, return_token); }
+	override HRESULT remove_DragStarting(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).remove_DragStarting(token); }
+	override HRESULT add_DropCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).add_DropCompleted(value, return_token); }
+	override HRESULT remove_DropCompleted(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).remove_DropCompleted(token); }
+	override HRESULT abi_StartDragAsync(Windows.UI.Input.PointerPoint pointerPoint, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).abi_StartDragAsync(pointerPoint, return_returnValue); }
+
+	override HRESULT get_ContextFlyout(Windows.UI.Xaml.Controls.Primitives.FlyoutBase* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).get_ContextFlyout(return_value); }
+	override HRESULT set_ContextFlyout(Windows.UI.Xaml.Controls.Primitives.FlyoutBase value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).set_ContextFlyout(value); }
+	override HRESULT get_ExitDisplayModeOnAccessKeyInvoked(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).get_ExitDisplayModeOnAccessKeyInvoked(return_value); }
+	override HRESULT set_ExitDisplayModeOnAccessKeyInvoked(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).set_ExitDisplayModeOnAccessKeyInvoked(value); }
+	override HRESULT get_IsAccessKeyScope(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).get_IsAccessKeyScope(return_value); }
+	override HRESULT set_IsAccessKeyScope(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).set_IsAccessKeyScope(value); }
+	override HRESULT get_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).get_AccessKeyScopeOwner(return_value); }
+	override HRESULT set_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).set_AccessKeyScopeOwner(value); }
+	override HRESULT get_AccessKey(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).get_AccessKey(return_value); }
+	override HRESULT set_AccessKey(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).set_AccessKey(value); }
+	override HRESULT add_ContextRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).add_ContextRequested(value, return_token); }
+	override HRESULT remove_ContextRequested(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).remove_ContextRequested(token); }
+	override HRESULT add_ContextCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).add_ContextCanceled(value, return_token); }
+	override HRESULT remove_ContextCanceled(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).remove_ContextCanceled(token); }
+	override HRESULT add_AccessKeyDisplayRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).add_AccessKeyDisplayRequested(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayRequested(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).remove_AccessKeyDisplayRequested(token); }
+	override HRESULT add_AccessKeyDisplayDismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).add_AccessKeyDisplayDismissed(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayDismissed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).remove_AccessKeyDisplayDismissed(token); }
+	override HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).add_AccessKeyInvoked(value, return_token); }
+	override HRESULT remove_AccessKeyInvoked(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).remove_AccessKeyInvoked(token); }
+
+	override HRESULT get_Lights(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.XamlLight)* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_Lights(return_value); }
+	override HRESULT get_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_KeyTipPlacementMode(return_value); }
+	override HRESULT set_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_KeyTipPlacementMode(value); }
+	override HRESULT get_KeyTipHorizontalOffset(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_KeyTipHorizontalOffset(return_value); }
+	override HRESULT set_KeyTipHorizontalOffset(double value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_KeyTipHorizontalOffset(value); }
+	override HRESULT get_KeyTipVerticalOffset(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_KeyTipVerticalOffset(return_value); }
+	override HRESULT set_KeyTipVerticalOffset(double value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_KeyTipVerticalOffset(value); }
+	override HRESULT get_XYFocusKeyboardNavigation(Windows.UI.Xaml.Input.XYFocusKeyboardNavigationMode* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusKeyboardNavigation(return_value); }
+	override HRESULT set_XYFocusKeyboardNavigation(Windows.UI.Xaml.Input.XYFocusKeyboardNavigationMode value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusKeyboardNavigation(value); }
+	override HRESULT get_XYFocusUpNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusUpNavigationStrategy(return_value); }
+	override HRESULT set_XYFocusUpNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusUpNavigationStrategy(value); }
+	override HRESULT get_XYFocusDownNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusDownNavigationStrategy(return_value); }
+	override HRESULT set_XYFocusDownNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusDownNavigationStrategy(value); }
+	override HRESULT get_XYFocusLeftNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusLeftNavigationStrategy(return_value); }
+	override HRESULT set_XYFocusLeftNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusLeftNavigationStrategy(value); }
+	override HRESULT get_XYFocusRightNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusRightNavigationStrategy(return_value); }
+	override HRESULT set_XYFocusRightNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusRightNavigationStrategy(value); }
+	override HRESULT get_HighContrastAdjustment(Windows.UI.Xaml.ElementHighContrastAdjustment* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_HighContrastAdjustment(return_value); }
+	override HRESULT set_HighContrastAdjustment(Windows.UI.Xaml.ElementHighContrastAdjustment value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_HighContrastAdjustment(value); }
+	override HRESULT get_TabFocusNavigation(Windows.UI.Xaml.Input.KeyboardNavigationMode* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_TabFocusNavigation(return_value); }
+	override HRESULT set_TabFocusNavigation(Windows.UI.Xaml.Input.KeyboardNavigationMode value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_TabFocusNavigation(value); }
+	override HRESULT add_GettingFocus(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).add_GettingFocus(value, return_token); }
+	override HRESULT remove_GettingFocus(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).remove_GettingFocus(token); }
+	override HRESULT add_LosingFocus(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).add_LosingFocus(value, return_token); }
+	override HRESULT remove_LosingFocus(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).remove_LosingFocus(token); }
+	override HRESULT add_NoFocusCandidateFound(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).add_NoFocusCandidateFound(value, return_token); }
+	override HRESULT remove_NoFocusCandidateFound(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).remove_NoFocusCandidateFound(token); }
+	override HRESULT abi_StartBringIntoView() { return m_inner.as!(Windows.UI.Xaml.IUIElement5).abi_StartBringIntoView(); }
+	override HRESULT abi_StartBringIntoViewWithOptions(Windows.UI.Xaml.BringIntoViewOptions options) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).abi_StartBringIntoViewWithOptions(options); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface UnhandledExceptionEventArgs : Windows.UI.Xaml.IUnhandledExceptionEventArgs
 {
@@ -4161,12 +4691,6 @@ extern(Windows):
 interface VisualStateManager : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IVisualStateManager, Windows.UI.Xaml.IVisualStateManagerOverrides, Windows.UI.Xaml.IVisualStateManagerProtected
 {
 extern(Windows):
-	final bool GoToStateCore(Windows.UI.Xaml.Controls.Control control, Windows.UI.Xaml.FrameworkElement templateRoot, HSTRING stateName, Windows.UI.Xaml.VisualStateGroup group, Windows.UI.Xaml.VisualState state, bool useTransitions)
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateManagerOverrides).abi_GoToStateCore(control, templateRoot, stateName, group, state, useTransitions, &_ret));
-		return _ret;
-	}
 	final void RaiseCurrentStateChanging(Windows.UI.Xaml.VisualStateGroup stateGroup, Windows.UI.Xaml.VisualState oldState, Windows.UI.Xaml.VisualState newState, Windows.UI.Xaml.Controls.Control control)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateManagerProtected).abi_RaiseCurrentStateChanging(stateGroup, oldState, newState, control));
@@ -4175,6 +4699,26 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateManagerProtected).abi_RaiseCurrentStateChanged(stateGroup, oldState, newState, control));
 	}
+}
+@makable!(VisualStateManager, VisualStateManager, Windows.UI.Xaml.IVisualStateManagerFactory)
+class VisualStateManagerT(Base) : AgileObject!Base, VisualStateManager
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_GoToStateCore(Windows.UI.Xaml.Controls.Control control, Windows.UI.Xaml.FrameworkElement templateRoot, HSTRING stateName, Windows.UI.Xaml.VisualStateGroup group, Windows.UI.Xaml.VisualState state, bool useTransitions, bool* return_returnValue) { this.GoToStateCore(control, templateRoot, stateName, group, state, useTransitions, return_returnValue); return S_OK; }
+	void GoToStateCore(Windows.UI.Xaml.Controls.Control control, Windows.UI.Xaml.FrameworkElement templateRoot, HSTRING stateName, Windows.UI.Xaml.VisualStateGroup group, Windows.UI.Xaml.VisualState state, bool useTransitions, bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IVisualStateManagerOverrides).abi_GoToStateCore(control, templateRoot, stateName, group, state, useTransitions, return_returnValue)); }
+
+	override HRESULT abi_RaiseCurrentStateChanging(Windows.UI.Xaml.VisualStateGroup stateGroup, Windows.UI.Xaml.VisualState oldState, Windows.UI.Xaml.VisualState newState, Windows.UI.Xaml.Controls.Control control) { return m_inner.as!(Windows.UI.Xaml.IVisualStateManagerProtected).abi_RaiseCurrentStateChanging(stateGroup, oldState, newState, control); }
+	override HRESULT abi_RaiseCurrentStateChanged(Windows.UI.Xaml.VisualStateGroup stateGroup, Windows.UI.Xaml.VisualState oldState, Windows.UI.Xaml.VisualState newState, Windows.UI.Xaml.Controls.Control control) { return m_inner.as!(Windows.UI.Xaml.IVisualStateManagerProtected).abi_RaiseCurrentStateChanged(stateGroup, oldState, newState, control); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface VisualTransition : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IVisualTransition
@@ -4230,6 +4774,30 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IVisualTransition).set_Storyboard(value));
 	}
+}
+@makable!(VisualTransition, VisualTransition, Windows.UI.Xaml.IVisualTransitionFactory)
+class VisualTransitionT(Base) : AgileObject!Base, VisualTransition
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_GeneratedDuration(Windows.UI.Xaml.Duration* return_value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).get_GeneratedDuration(return_value); }
+	override HRESULT set_GeneratedDuration(Windows.UI.Xaml.Duration value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).set_GeneratedDuration(value); }
+	override HRESULT get_GeneratedEasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase* return_value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).get_GeneratedEasingFunction(return_value); }
+	override HRESULT set_GeneratedEasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).set_GeneratedEasingFunction(value); }
+	override HRESULT get_To(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).get_To(return_value); }
+	override HRESULT set_To(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).set_To(value); }
+	override HRESULT get_From(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).get_From(return_value); }
+	override HRESULT set_From(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).set_From(value); }
+	override HRESULT get_Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard* return_value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).get_Storyboard(return_value); }
+	override HRESULT set_Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).set_Storyboard(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface Window : Windows.UI.Xaml.IWindow, Windows.UI.Xaml.IWindow2, Windows.UI.Xaml.IWindow3

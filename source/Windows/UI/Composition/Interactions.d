@@ -541,6 +541,20 @@ extern(Windows):
 interface InteractionTrackerInertiaModifier : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.Interactions.IInteractionTrackerInertiaModifier
 {
 }
+@makable!(InteractionTrackerInertiaModifier, InteractionTrackerInertiaModifier, Windows.UI.Composition.Interactions.IInteractionTrackerInertiaModifierFactory)
+class InteractionTrackerInertiaModifierT(Base) : AgileObject!Base, InteractionTrackerInertiaModifier
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface InteractionTrackerInertiaMotion : Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier, Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotion
 {
@@ -843,6 +857,53 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureDeltaScaleModifiers(conditionalValues));
 	}
+}
+@makable!(VisualInteractionSource, VisualInteractionSource, Windows.UI.Composition.Interactions.IVisualInteractionSourceObjectFactory)
+class VisualInteractionSourceT(Base) : AgileObject!Base, VisualInteractionSource
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_IsPositionXRailsEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_IsPositionXRailsEnabled(return_value); }
+	override HRESULT set_IsPositionXRailsEnabled(bool value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_IsPositionXRailsEnabled(value); }
+	override HRESULT get_IsPositionYRailsEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_IsPositionYRailsEnabled(return_value); }
+	override HRESULT set_IsPositionYRailsEnabled(bool value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_IsPositionYRailsEnabled(value); }
+	override HRESULT get_ManipulationRedirectionMode(Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_ManipulationRedirectionMode(return_value); }
+	override HRESULT set_ManipulationRedirectionMode(Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_ManipulationRedirectionMode(value); }
+	override HRESULT get_PositionXChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_PositionXChainingMode(return_value); }
+	override HRESULT set_PositionXChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_PositionXChainingMode(value); }
+	override HRESULT get_PositionXSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_PositionXSourceMode(return_value); }
+	override HRESULT set_PositionXSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_PositionXSourceMode(value); }
+	override HRESULT get_PositionYChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_PositionYChainingMode(return_value); }
+	override HRESULT set_PositionYChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_PositionYChainingMode(value); }
+	override HRESULT get_PositionYSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_PositionYSourceMode(return_value); }
+	override HRESULT set_PositionYSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_PositionYSourceMode(value); }
+	override HRESULT get_ScaleChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_ScaleChainingMode(return_value); }
+	override HRESULT set_ScaleChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_ScaleChainingMode(value); }
+	override HRESULT get_ScaleSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_ScaleSourceMode(return_value); }
+	override HRESULT set_ScaleSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_ScaleSourceMode(value); }
+	override HRESULT get_Source(Windows.UI.Composition.Visual* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_Source(return_value); }
+	override HRESULT abi_TryRedirectForManipulation(Windows.UI.Input.PointerPoint pointerPoint) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).abi_TryRedirectForManipulation(pointerPoint); }
+
+
+	override HRESULT get_DeltaPosition(Windows.Foundation.Numerics.Vector3* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_DeltaPosition(return_value); }
+	override HRESULT get_DeltaScale(float* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_DeltaScale(return_value); }
+	override HRESULT get_Position(Windows.Foundation.Numerics.Vector3* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_Position(return_value); }
+	override HRESULT get_PositionVelocity(Windows.Foundation.Numerics.Vector3* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_PositionVelocity(return_value); }
+	override HRESULT get_Scale(float* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_Scale(return_value); }
+	override HRESULT get_ScaleVelocity(float* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_ScaleVelocity(return_value); }
+	override HRESULT abi_ConfigureCenterPointXModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureCenterPointXModifiers(conditionalValues); }
+	override HRESULT abi_ConfigureCenterPointYModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureCenterPointYModifiers(conditionalValues); }
+	override HRESULT abi_ConfigureDeltaPositionXModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureDeltaPositionXModifiers(conditionalValues); }
+	override HRESULT abi_ConfigureDeltaPositionYModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureDeltaPositionYModifiers(conditionalValues); }
+	override HRESULT abi_ConfigureDeltaScaleModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureDeltaScaleModifiers(conditionalValues); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 enum InteractionChainingMode

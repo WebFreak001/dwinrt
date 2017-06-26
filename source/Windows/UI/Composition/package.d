@@ -1012,6 +1012,36 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionAnimation2).set_Target(value));
 	}
 }
+@makable!(CompositionAnimation, CompositionAnimation, Windows.UI.Composition.ICompositionAnimationFactory)
+class CompositionAnimationT(Base) : AgileObject!Base, CompositionAnimation
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT abi_ClearAllParameters() { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation).abi_ClearAllParameters(); }
+	override HRESULT abi_ClearParameter(HSTRING key) { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation).abi_ClearParameter(key); }
+	override HRESULT abi_SetColorParameter(HSTRING key, Windows.UI.Color value) { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation).abi_SetColorParameter(key, value); }
+	override HRESULT abi_SetMatrix3x2Parameter(HSTRING key, Windows.Foundation.Numerics.Matrix3x2 value) { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation).abi_SetMatrix3x2Parameter(key, value); }
+	override HRESULT abi_SetMatrix4x4Parameter(HSTRING key, Windows.Foundation.Numerics.Matrix4x4 value) { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation).abi_SetMatrix4x4Parameter(key, value); }
+	override HRESULT abi_SetQuaternionParameter(HSTRING key, Windows.Foundation.Numerics.Quaternion value) { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation).abi_SetQuaternionParameter(key, value); }
+	override HRESULT abi_SetReferenceParameter(HSTRING key, Windows.UI.Composition.CompositionObject compositionObject) { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation).abi_SetReferenceParameter(key, compositionObject); }
+	override HRESULT abi_SetScalarParameter(HSTRING key, float value) { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation).abi_SetScalarParameter(key, value); }
+	override HRESULT abi_SetVector2Parameter(HSTRING key, Windows.Foundation.Numerics.Vector2 value) { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation).abi_SetVector2Parameter(key, value); }
+	override HRESULT abi_SetVector3Parameter(HSTRING key, Windows.Foundation.Numerics.Vector3 value) { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation).abi_SetVector3Parameter(key, value); }
+	override HRESULT abi_SetVector4Parameter(HSTRING key, Windows.Foundation.Numerics.Vector4 value) { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation).abi_SetVector4Parameter(key, value); }
+
+	override HRESULT abi_SetBooleanParameter(HSTRING key, bool value) { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation2).abi_SetBooleanParameter(key, value); }
+	override HRESULT get_Target(HSTRING* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation2).get_Target(return_value); }
+	override HRESULT set_Target(HSTRING value) { return m_inner.as!(Windows.UI.Composition.ICompositionAnimation2).set_Target(value); }
+
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface CompositionAnimationGroup : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionAnimationGroup, Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.CompositionAnimation), Windows.UI.Composition.ICompositionAnimationBase
 {
@@ -1050,6 +1080,20 @@ interface CompositionBatchCompletedEventArgs : Windows.UI.Composition.Compositio
 
 interface CompositionBrush : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionBrush
 {
+}
+@makable!(CompositionBrush, CompositionBrush, Windows.UI.Composition.ICompositionBrushFactory)
+class CompositionBrushT(Base) : AgileObject!Base, CompositionBrush
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface CompositionCapabilities : Windows.UI.Composition.ICompositionCapabilities
@@ -1153,6 +1197,35 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionClip2).set_TransformMatrix(value));
 	}
 }
+@makable!(CompositionClip, CompositionClip, Windows.UI.Composition.ICompositionClipFactory)
+class CompositionClipT(Base) : AgileObject!Base, CompositionClip
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_AnchorPoint(Windows.Foundation.Numerics.Vector2* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).get_AnchorPoint(return_value); }
+	override HRESULT set_AnchorPoint(Windows.Foundation.Numerics.Vector2 value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).set_AnchorPoint(value); }
+	override HRESULT get_CenterPoint(Windows.Foundation.Numerics.Vector2* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).get_CenterPoint(return_value); }
+	override HRESULT set_CenterPoint(Windows.Foundation.Numerics.Vector2 value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).set_CenterPoint(value); }
+	override HRESULT get_Offset(Windows.Foundation.Numerics.Vector2* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).get_Offset(return_value); }
+	override HRESULT set_Offset(Windows.Foundation.Numerics.Vector2 value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).set_Offset(value); }
+	override HRESULT get_RotationAngle(float* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).get_RotationAngle(return_value); }
+	override HRESULT set_RotationAngle(float value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).set_RotationAngle(value); }
+	override HRESULT get_RotationAngleInDegrees(float* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).get_RotationAngleInDegrees(return_value); }
+	override HRESULT set_RotationAngleInDegrees(float value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).set_RotationAngleInDegrees(value); }
+	override HRESULT get_Scale(Windows.Foundation.Numerics.Vector2* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).get_Scale(return_value); }
+	override HRESULT set_Scale(Windows.Foundation.Numerics.Vector2 value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).set_Scale(value); }
+	override HRESULT get_TransformMatrix(Windows.Foundation.Numerics.Matrix3x2* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).get_TransformMatrix(return_value); }
+	override HRESULT set_TransformMatrix(Windows.Foundation.Numerics.Matrix3x2 value) { return m_inner.as!(Windows.UI.Composition.ICompositionClip2).set_TransformMatrix(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface CompositionColorBrush : Windows.UI.Composition.CompositionBrush, Windows.UI.Composition.ICompositionColorBrush
 {
@@ -1244,9 +1317,48 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionDrawingSurface2).abi_ScrollRectWithClip(offset, clipRect, scrollRect));
 	}
 }
+@makable!(CompositionDrawingSurface, CompositionDrawingSurface, Windows.UI.Composition.ICompositionDrawingSurfaceFactory)
+class CompositionDrawingSurfaceT(Base) : AgileObject!Base, CompositionDrawingSurface
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_AlphaMode(Windows.Graphics.DirectX.DirectXAlphaMode* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionDrawingSurface).get_AlphaMode(return_value); }
+	override HRESULT get_PixelFormat(Windows.Graphics.DirectX.DirectXPixelFormat* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionDrawingSurface).get_PixelFormat(return_value); }
+	override HRESULT get_Size(Windows.Foundation.Size* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionDrawingSurface).get_Size(return_value); }
+
+
+	override HRESULT get_SizeInt32(Windows.Graphics.SizeInt32* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionDrawingSurface2).get_SizeInt32(return_value); }
+	override HRESULT abi_Resize(Windows.Graphics.SizeInt32 sizePixels) { return m_inner.as!(Windows.UI.Composition.ICompositionDrawingSurface2).abi_Resize(sizePixels); }
+	override HRESULT abi_Scroll(Windows.Graphics.PointInt32 offset) { return m_inner.as!(Windows.UI.Composition.ICompositionDrawingSurface2).abi_Scroll(offset); }
+	override HRESULT abi_ScrollRect(Windows.Graphics.PointInt32 offset, Windows.Graphics.RectInt32 scrollRect) { return m_inner.as!(Windows.UI.Composition.ICompositionDrawingSurface2).abi_ScrollRect(offset, scrollRect); }
+	override HRESULT abi_ScrollWithClip(Windows.Graphics.PointInt32 offset, Windows.Graphics.RectInt32 clipRect) { return m_inner.as!(Windows.UI.Composition.ICompositionDrawingSurface2).abi_ScrollWithClip(offset, clipRect); }
+	override HRESULT abi_ScrollRectWithClip(Windows.Graphics.PointInt32 offset, Windows.Graphics.RectInt32 clipRect, Windows.Graphics.RectInt32 scrollRect) { return m_inner.as!(Windows.UI.Composition.ICompositionDrawingSurface2).abi_ScrollRectWithClip(offset, clipRect, scrollRect); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface CompositionEasingFunction : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionEasingFunction
 {
+}
+@makable!(CompositionEasingFunction, CompositionEasingFunction, Windows.UI.Composition.ICompositionEasingFunctionFactory)
+class CompositionEasingFunctionT(Base) : AgileObject!Base, CompositionEasingFunction
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface CompositionEffectBrush : Windows.UI.Composition.CompositionBrush, Windows.UI.Composition.ICompositionEffectBrush
@@ -1340,6 +1452,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionLight).get_Targets(&_ret));
 		return _ret;
 	}
+}
+@makable!(CompositionLight, CompositionLight, Windows.UI.Composition.ICompositionLightFactory)
+class CompositionLightT(Base) : AgileObject!Base, CompositionLight
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Targets(Windows.UI.Composition.VisualUnorderedCollection* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionLight).get_Targets(return_value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface CompositionMaskBrush : Windows.UI.Composition.CompositionBrush, Windows.UI.Composition.ICompositionMaskBrush
@@ -1550,6 +1677,34 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionObject2).abi_StopAnimationGroup(value));
 	}
 }
+@makable!(CompositionObject, CompositionObject, Windows.UI.Composition.ICompositionObjectFactory)
+class CompositionObjectT(Base) : AgileObject!Base, CompositionObject
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionObject).get_Compositor(return_value); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionObject).get_Dispatcher(return_value); }
+	override HRESULT get_Properties(Windows.UI.Composition.CompositionPropertySet* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionObject).get_Properties(return_value); }
+	override HRESULT abi_StartAnimation(HSTRING propertyName, Windows.UI.Composition.CompositionAnimation animation) { return m_inner.as!(Windows.UI.Composition.ICompositionObject).abi_StartAnimation(propertyName, animation); }
+	override HRESULT abi_StopAnimation(HSTRING propertyName) { return m_inner.as!(Windows.UI.Composition.ICompositionObject).abi_StopAnimation(propertyName); }
+
+	override HRESULT abi_Close() { return m_inner.as!(Windows.Foundation.IClosable).abi_Close(); }
+
+	override HRESULT get_Comment(HSTRING* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionObject2).get_Comment(return_value); }
+	override HRESULT set_Comment(HSTRING value) { return m_inner.as!(Windows.UI.Composition.ICompositionObject2).set_Comment(value); }
+	override HRESULT get_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection* return_value) { return m_inner.as!(Windows.UI.Composition.ICompositionObject2).get_ImplicitAnimations(return_value); }
+	override HRESULT set_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection value) { return m_inner.as!(Windows.UI.Composition.ICompositionObject2).set_ImplicitAnimations(value); }
+	override HRESULT abi_StartAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return m_inner.as!(Windows.UI.Composition.ICompositionObject2).abi_StartAnimationGroup(value); }
+	override HRESULT abi_StopAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return m_inner.as!(Windows.UI.Composition.ICompositionObject2).abi_StopAnimationGroup(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface CompositionPropertySet : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionPropertySet, Windows.UI.Composition.ICompositionPropertySet2
 {
@@ -1687,6 +1842,20 @@ extern(Windows):
 
 interface CompositionShadow : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionShadow
 {
+}
+@makable!(CompositionShadow, CompositionShadow, Windows.UI.Composition.ICompositionShadowFactory)
+class CompositionShadowT(Base) : AgileObject!Base, CompositionShadow
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface CompositionSurfaceBrush : Windows.UI.Composition.CompositionBrush, Windows.UI.Composition.ICompositionSurfaceBrush, Windows.UI.Composition.ICompositionSurfaceBrush2
@@ -1836,6 +2005,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionVirtualDrawingSurface).abi_Trim(__rectsSize, rects));
 	}
+}
+@makable!(CompositionVirtualDrawingSurface, CompositionVirtualDrawingSurface, Windows.UI.Composition.ICompositionVirtualDrawingSurfaceFactory)
+class CompositionVirtualDrawingSurfaceT(Base) : AgileObject!Base, CompositionVirtualDrawingSurface
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT abi_Trim(UINT32 __rectsSize, Windows.Graphics.RectInt32* rects) { return m_inner.as!(Windows.UI.Composition.ICompositionVirtualDrawingSurface).abi_Trim(__rectsSize, rects); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface Compositor : Windows.UI.Composition.ICompositor, Windows.Foundation.IClosable, Windows.UI.Composition.ICompositor2, Windows.UI.Composition.ICompositor3
@@ -2084,6 +2268,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.IContainerVisual).get_Children(&_ret));
 		return _ret;
 	}
+}
+@makable!(ContainerVisual, ContainerVisual, Windows.UI.Composition.IContainerVisualFactory)
+class ContainerVisualT(Base) : AgileObject!Base, ContainerVisual
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Children(Windows.UI.Composition.VisualCollection* return_value) { return m_inner.as!(Windows.UI.Composition.IContainerVisual).get_Children(return_value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface CubicBezierEasingFunction : Windows.UI.Composition.CompositionEasingFunction, Windows.UI.Composition.ICubicBezierEasingFunction
@@ -2387,6 +2586,39 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IKeyFrameAnimation3).set_DelayBehavior(value));
 	}
+}
+@makable!(KeyFrameAnimation, KeyFrameAnimation, Windows.UI.Composition.IKeyFrameAnimationFactory)
+class KeyFrameAnimationT(Base) : AgileObject!Base, KeyFrameAnimation
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_DelayTime(Windows.Foundation.TimeSpan* return_value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation).get_DelayTime(return_value); }
+	override HRESULT set_DelayTime(Windows.Foundation.TimeSpan value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation).set_DelayTime(value); }
+	override HRESULT get_Duration(Windows.Foundation.TimeSpan* return_value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation).get_Duration(return_value); }
+	override HRESULT set_Duration(Windows.Foundation.TimeSpan value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation).set_Duration(value); }
+	override HRESULT get_IterationBehavior(Windows.UI.Composition.AnimationIterationBehavior* return_value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation).get_IterationBehavior(return_value); }
+	override HRESULT set_IterationBehavior(Windows.UI.Composition.AnimationIterationBehavior value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation).set_IterationBehavior(value); }
+	override HRESULT get_IterationCount(INT32* return_value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation).get_IterationCount(return_value); }
+	override HRESULT set_IterationCount(INT32 value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation).set_IterationCount(value); }
+	override HRESULT get_KeyFrameCount(INT32* return_value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation).get_KeyFrameCount(return_value); }
+	override HRESULT get_StopBehavior(Windows.UI.Composition.AnimationStopBehavior* return_value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation).get_StopBehavior(return_value); }
+	override HRESULT set_StopBehavior(Windows.UI.Composition.AnimationStopBehavior value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation).set_StopBehavior(value); }
+	override HRESULT abi_InsertExpressionKeyFrame(float normalizedProgressKey, HSTRING value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation).abi_InsertExpressionKeyFrame(normalizedProgressKey, value); }
+	override HRESULT abi_InsertExpressionKeyFrameWithEasingFunction(float normalizedProgressKey, HSTRING value, Windows.UI.Composition.CompositionEasingFunction easingFunction) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation).abi_InsertExpressionKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction); }
+
+	override HRESULT get_Direction(Windows.UI.Composition.AnimationDirection* return_value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation2).get_Direction(return_value); }
+	override HRESULT set_Direction(Windows.UI.Composition.AnimationDirection value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation2).set_Direction(value); }
+
+	override HRESULT get_DelayBehavior(Windows.UI.Composition.AnimationDelayBehavior* return_value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation3).get_DelayBehavior(return_value); }
+	override HRESULT set_DelayBehavior(Windows.UI.Composition.AnimationDelayBehavior value) { return m_inner.as!(Windows.UI.Composition.IKeyFrameAnimation3).set_DelayBehavior(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface LayerVisual : Windows.UI.Composition.ContainerVisual, Windows.UI.Composition.ILayerVisual
@@ -2953,6 +3185,60 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.IVisual2).set_RelativeSizeAdjustment(value));
 	}
+}
+@makable!(Visual, Visual, Windows.UI.Composition.IVisualFactory)
+class VisualT(Base) : AgileObject!Base, Visual
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_AnchorPoint(Windows.Foundation.Numerics.Vector2* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_AnchorPoint(return_value); }
+	override HRESULT set_AnchorPoint(Windows.Foundation.Numerics.Vector2 value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_AnchorPoint(value); }
+	override HRESULT get_BackfaceVisibility(Windows.UI.Composition.CompositionBackfaceVisibility* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_BackfaceVisibility(return_value); }
+	override HRESULT set_BackfaceVisibility(Windows.UI.Composition.CompositionBackfaceVisibility value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_BackfaceVisibility(value); }
+	override HRESULT get_BorderMode(Windows.UI.Composition.CompositionBorderMode* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_BorderMode(return_value); }
+	override HRESULT set_BorderMode(Windows.UI.Composition.CompositionBorderMode value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_BorderMode(value); }
+	override HRESULT get_CenterPoint(Windows.Foundation.Numerics.Vector3* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_CenterPoint(return_value); }
+	override HRESULT set_CenterPoint(Windows.Foundation.Numerics.Vector3 value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_CenterPoint(value); }
+	override HRESULT get_Clip(Windows.UI.Composition.CompositionClip* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_Clip(return_value); }
+	override HRESULT set_Clip(Windows.UI.Composition.CompositionClip value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_Clip(value); }
+	override HRESULT get_CompositeMode(Windows.UI.Composition.CompositionCompositeMode* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_CompositeMode(return_value); }
+	override HRESULT set_CompositeMode(Windows.UI.Composition.CompositionCompositeMode value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_CompositeMode(value); }
+	override HRESULT get_IsVisible(bool* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_IsVisible(return_value); }
+	override HRESULT set_IsVisible(bool value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_IsVisible(value); }
+	override HRESULT get_Offset(Windows.Foundation.Numerics.Vector3* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_Offset(return_value); }
+	override HRESULT set_Offset(Windows.Foundation.Numerics.Vector3 value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_Offset(value); }
+	override HRESULT get_Opacity(float* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_Opacity(return_value); }
+	override HRESULT set_Opacity(float value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_Opacity(value); }
+	override HRESULT get_Orientation(Windows.Foundation.Numerics.Quaternion* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_Orientation(return_value); }
+	override HRESULT set_Orientation(Windows.Foundation.Numerics.Quaternion value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_Orientation(value); }
+	override HRESULT get_Parent(Windows.UI.Composition.ContainerVisual* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_Parent(return_value); }
+	override HRESULT get_RotationAngle(float* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_RotationAngle(return_value); }
+	override HRESULT set_RotationAngle(float value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_RotationAngle(value); }
+	override HRESULT get_RotationAngleInDegrees(float* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_RotationAngleInDegrees(return_value); }
+	override HRESULT set_RotationAngleInDegrees(float value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_RotationAngleInDegrees(value); }
+	override HRESULT get_RotationAxis(Windows.Foundation.Numerics.Vector3* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_RotationAxis(return_value); }
+	override HRESULT set_RotationAxis(Windows.Foundation.Numerics.Vector3 value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_RotationAxis(value); }
+	override HRESULT get_Scale(Windows.Foundation.Numerics.Vector3* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_Scale(return_value); }
+	override HRESULT set_Scale(Windows.Foundation.Numerics.Vector3 value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_Scale(value); }
+	override HRESULT get_Size(Windows.Foundation.Numerics.Vector2* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_Size(return_value); }
+	override HRESULT set_Size(Windows.Foundation.Numerics.Vector2 value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_Size(value); }
+	override HRESULT get_TransformMatrix(Windows.Foundation.Numerics.Matrix4x4* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual).get_TransformMatrix(return_value); }
+	override HRESULT set_TransformMatrix(Windows.Foundation.Numerics.Matrix4x4 value) { return m_inner.as!(Windows.UI.Composition.IVisual).set_TransformMatrix(value); }
+
+	override HRESULT get_ParentForTransform(Windows.UI.Composition.Visual* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual2).get_ParentForTransform(return_value); }
+	override HRESULT set_ParentForTransform(Windows.UI.Composition.Visual value) { return m_inner.as!(Windows.UI.Composition.IVisual2).set_ParentForTransform(value); }
+	override HRESULT get_RelativeOffsetAdjustment(Windows.Foundation.Numerics.Vector3* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual2).get_RelativeOffsetAdjustment(return_value); }
+	override HRESULT set_RelativeOffsetAdjustment(Windows.Foundation.Numerics.Vector3 value) { return m_inner.as!(Windows.UI.Composition.IVisual2).set_RelativeOffsetAdjustment(value); }
+	override HRESULT get_RelativeSizeAdjustment(Windows.Foundation.Numerics.Vector2* return_value) { return m_inner.as!(Windows.UI.Composition.IVisual2).get_RelativeSizeAdjustment(return_value); }
+	override HRESULT set_RelativeSizeAdjustment(Windows.Foundation.Numerics.Vector2 value) { return m_inner.as!(Windows.UI.Composition.IVisual2).set_RelativeSizeAdjustment(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface VisualCollection : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.IVisualCollection, Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Visual)

@@ -1189,6 +1189,27 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).abi_Complete());
 	}
 }
+@makable!(ManipulationStartedRoutedEventArgs, ManipulationStartedRoutedEventArgs, Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgsFactory)
+class ManipulationStartedRoutedEventArgsT(Base) : AgileObject!Base, ManipulationStartedRoutedEventArgs
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Container(Windows.UI.Xaml.UIElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).get_Container(return_value); }
+	override HRESULT get_Position(Windows.Foundation.Point* return_value) { return m_inner.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).get_Position(return_value); }
+	override HRESULT get_Handled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).get_Handled(return_value); }
+	override HRESULT set_Handled(bool value) { return m_inner.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).set_Handled(value); }
+	override HRESULT get_PointerDeviceType(Windows.Devices.Input.PointerDeviceType* return_value) { return m_inner.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).get_PointerDeviceType(return_value); }
+	override HRESULT get_Cumulative(Windows.UI.Input.ManipulationDelta* return_value) { return m_inner.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).get_Cumulative(return_value); }
+	override HRESULT abi_Complete() { return m_inner.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).abi_Complete(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ManipulationStartingRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IManipulationStartingRoutedEventArgs
 {

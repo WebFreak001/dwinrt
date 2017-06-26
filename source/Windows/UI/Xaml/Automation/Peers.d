@@ -1379,13 +1379,72 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(AppBarAutomationPeer, AppBarAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAppBarAutomationPeerFactory)
+class AppBarAutomationPeerT(Base) : AgileObject!Base, AppBarAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(return_value); }
+	override HRESULT abi_Toggle() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle(); }
+
+	override HRESULT get_ExpandCollapseState(Windows.UI.Xaml.Automation.ExpandCollapseState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).get_ExpandCollapseState(return_value); }
+	override HRESULT abi_Collapse() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Collapse(); }
+	override HRESULT abi_Expand() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Expand(); }
+
+	override HRESULT get_IsModal(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsModal(return_value); }
+	override HRESULT get_IsTopmost(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsTopmost(return_value); }
+	override HRESULT get_Maximizable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Maximizable(return_value); }
+	override HRESULT get_Minimizable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Minimizable(return_value); }
+	override HRESULT get_InteractionState(Windows.UI.Xaml.Automation.WindowInteractionState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_InteractionState(return_value); }
+	override HRESULT get_VisualState(Windows.UI.Xaml.Automation.WindowVisualState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_VisualState(return_value); }
+	override HRESULT abi_Close() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_Close(); }
+	override HRESULT abi_SetVisualState(Windows.UI.Xaml.Automation.WindowVisualState state) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_SetVisualState(state); }
+	override HRESULT abi_WaitForInputIdle(INT32 milliseconds, bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_WaitForInputIdle(milliseconds, return_returnValue); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface AppBarButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAppBarButtonAutomationPeer
 {
 }
+@makable!(AppBarButtonAutomationPeer, AppBarButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAppBarButtonAutomationPeerFactory)
+class AppBarButtonAutomationPeerT(Base) : AgileObject!Base, AppBarButtonAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface AppBarToggleButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAppBarToggleButtonAutomationPeer
 {
+}
+@makable!(AppBarToggleButtonAutomationPeer, AppBarToggleButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAppBarToggleButtonAutomationPeerFactory)
+class AppBarToggleButtonAutomationPeerT(Base) : AgileObject!Base, AppBarToggleButtonAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface AutoSuggestBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAutoSuggestBoxAutomationPeer
@@ -1585,166 +1644,6 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetLiveSetting(&_ret));
 		return _ret;
 	}
-	final IInspectable GetPatternCore(Windows.UI.Xaml.Automation.Peers.PatternInterface patternInterface)
-	{
-		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetPatternCore(patternInterface, &_ret));
-		return _ret;
-	}
-	final HSTRING GetAcceleratorKeyCore()
-	{
-		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAcceleratorKeyCore(&_ret));
-		return _ret;
-	}
-	final HSTRING GetAccessKeyCore()
-	{
-		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAccessKeyCore(&_ret));
-		return _ret;
-	}
-	final Windows.UI.Xaml.Automation.Peers.AutomationControlType GetAutomationControlTypeCore()
-	{
-		Windows.UI.Xaml.Automation.Peers.AutomationControlType _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAutomationControlTypeCore(&_ret));
-		return _ret;
-	}
-	final HSTRING GetAutomationIdCore()
-	{
-		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAutomationIdCore(&_ret));
-		return _ret;
-	}
-	final Windows.Foundation.Rect GetBoundingRectangleCore()
-	{
-		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetBoundingRectangleCore(&_ret));
-		return _ret;
-	}
-	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetChildrenCore()
-	{
-		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetChildrenCore(&_ret));
-		return _ret;
-	}
-	final HSTRING GetClassNameCore()
-	{
-		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetClassNameCore(&_ret));
-		return _ret;
-	}
-	final Windows.Foundation.Point GetClickablePointCore()
-	{
-		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetClickablePointCore(&_ret));
-		return _ret;
-	}
-	final HSTRING GetHelpTextCore()
-	{
-		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetHelpTextCore(&_ret));
-		return _ret;
-	}
-	final HSTRING GetItemStatusCore()
-	{
-		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetItemStatusCore(&_ret));
-		return _ret;
-	}
-	final HSTRING GetItemTypeCore()
-	{
-		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetItemTypeCore(&_ret));
-		return _ret;
-	}
-	final Windows.UI.Xaml.Automation.Peers.AutomationPeer GetLabeledByCore()
-	{
-		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetLabeledByCore(&_ret));
-		return _ret;
-	}
-	final HSTRING GetLocalizedControlTypeCore()
-	{
-		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetLocalizedControlTypeCore(&_ret));
-		return _ret;
-	}
-	final HSTRING GetNameCore()
-	{
-		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetNameCore(&_ret));
-		return _ret;
-	}
-	final Windows.UI.Xaml.Automation.Peers.AutomationOrientation GetOrientationCore()
-	{
-		Windows.UI.Xaml.Automation.Peers.AutomationOrientation _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetOrientationCore(&_ret));
-		return _ret;
-	}
-	final bool HasKeyboardFocusCore()
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_HasKeyboardFocusCore(&_ret));
-		return _ret;
-	}
-	final bool IsContentElementCore()
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsContentElementCore(&_ret));
-		return _ret;
-	}
-	final bool IsControlElementCore()
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsControlElementCore(&_ret));
-		return _ret;
-	}
-	final bool IsEnabledCore()
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsEnabledCore(&_ret));
-		return _ret;
-	}
-	final bool IsKeyboardFocusableCore()
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsKeyboardFocusableCore(&_ret));
-		return _ret;
-	}
-	final bool IsOffscreenCore()
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsOffscreenCore(&_ret));
-		return _ret;
-	}
-	final bool IsPasswordCore()
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsPasswordCore(&_ret));
-		return _ret;
-	}
-	final bool IsRequiredForFormCore()
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsRequiredForFormCore(&_ret));
-		return _ret;
-	}
-	final void SetFocusCore()
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_SetFocusCore());
-	}
-	final Windows.UI.Xaml.Automation.Peers.AutomationPeer GetPeerFromPointCore(Windows.Foundation.Point point)
-	{
-		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetPeerFromPointCore(point, &_ret));
-		return _ret;
-	}
-	final Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting GetLiveSettingCore()
-	{
-		Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetLiveSettingCore(&_ret));
-		return _ret;
-	}
 	final Windows.UI.Xaml.Automation.Peers.AutomationPeer PeerFromProvider(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple provider)
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
@@ -1755,16 +1654,6 @@ extern(Windows):
 	{
 		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected).abi_ProviderFromPeer(peer, &_ret));
-		return _ret;
-	}
-	final void ShowContextMenuCore()
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2).abi_ShowContextMenuCore());
-	}
-	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetControlledPeersCore()
-	{
-		Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2).abi_GetControlledPeersCore(&_ret));
 		return _ret;
 	}
 	final IInspectable Navigate(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction)
@@ -1831,48 +1720,6 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_RaiseStructureChangedEvent(structureChangeType, child));
 	}
-	final IInspectable NavigateCore(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction)
-	{
-		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_NavigateCore(direction, &_ret));
-		return _ret;
-	}
-	final IInspectable GetElementFromPointCore(Windows.Foundation.Point pointInWindowCoordinates)
-	{
-		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetElementFromPointCore(pointInWindowCoordinates, &_ret));
-		return _ret;
-	}
-	final IInspectable GetFocusedElementCore()
-	{
-		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetFocusedElementCore(&_ret));
-		return _ret;
-	}
-	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation) GetAnnotationsCore()
-	{
-		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetAnnotationsCore(&_ret));
-		return _ret;
-	}
-	final INT32 GetPositionInSetCore()
-	{
-		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetPositionInSetCore(&_ret));
-		return _ret;
-	}
-	final INT32 GetSizeOfSetCore()
-	{
-		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetSizeOfSetCore(&_ret));
-		return _ret;
-	}
-	final INT32 GetLevelCore()
-	{
-		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetLevelCore(&_ret));
-		return _ret;
-	}
 	final Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType GetLandmarkType()
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType _ret;
@@ -1883,18 +1730,6 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4).abi_GetLocalizedLandmarkType(&_ret));
-		return _ret;
-	}
-	final Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType GetLandmarkTypeCore()
-	{
-		Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4).abi_GetLandmarkTypeCore(&_ret));
-		return _ret;
-	}
-	final HSTRING GetLocalizedLandmarkTypeCore()
-	{
-		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4).abi_GetLocalizedLandmarkTypeCore(&_ret));
 		return _ret;
 	}
 	final bool IsPeripheral()
@@ -1915,54 +1750,181 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5).abi_GetFullDescription(&_ret));
 		return _ret;
 	}
-	final bool IsPeripheralCore()
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_IsPeripheralCore(&_ret));
-		return _ret;
-	}
-	final bool IsDataValidForFormCore()
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_IsDataValidForFormCore(&_ret));
-		return _ret;
-	}
-	final HSTRING GetFullDescriptionCore()
-	{
-		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetFullDescriptionCore(&_ret));
-		return _ret;
-	}
-	final Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetDescribedByCore()
-	{
-		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetDescribedByCore(&_ret));
-		return _ret;
-	}
-	final Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetFlowsToCore()
-	{
-		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetFlowsToCore(&_ret));
-		return _ret;
-	}
-	final Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetFlowsFromCore()
-	{
-		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetFlowsFromCore(&_ret));
-		return _ret;
-	}
 	final INT32 GetCulture()
 	{
 		INT32 _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer6).abi_GetCulture(&_ret));
 		return _ret;
 	}
-	final INT32 GetCultureCore()
+}
+@makable!(AutomationPeer, AutomationPeer, Windows.UI.Xaml.Automation.Peers.IAutomationPeerFactory)
+class AutomationPeerT(Base) : AgileObject!Base, AutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
 	{
-		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6).abi_GetCultureCore(&_ret));
-		return _ret;
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
 	}
+	override HRESULT get_EventsSource(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).get_EventsSource(return_value); }
+	override HRESULT set_EventsSource(Windows.UI.Xaml.Automation.Peers.AutomationPeer value) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).set_EventsSource(value); }
+	override HRESULT abi_GetPattern(Windows.UI.Xaml.Automation.Peers.PatternInterface patternInterface, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetPattern(patternInterface, return_returnValue); }
+	override HRESULT abi_RaiseAutomationEvent(Windows.UI.Xaml.Automation.Peers.AutomationEvents eventId) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_RaiseAutomationEvent(eventId); }
+	override HRESULT abi_RaisePropertyChangedEvent(Windows.UI.Xaml.Automation.AutomationProperty automationProperty, IInspectable oldValue, IInspectable newValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_RaisePropertyChangedEvent(automationProperty, oldValue, newValue); }
+	override HRESULT abi_GetAcceleratorKey(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAcceleratorKey(return_returnValue); }
+	override HRESULT abi_GetAccessKey(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAccessKey(return_returnValue); }
+	override HRESULT abi_GetAutomationControlType(Windows.UI.Xaml.Automation.Peers.AutomationControlType* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAutomationControlType(return_returnValue); }
+	override HRESULT abi_GetAutomationId(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAutomationId(return_returnValue); }
+	override HRESULT abi_GetBoundingRectangle(Windows.Foundation.Rect* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetBoundingRectangle(return_returnValue); }
+	override HRESULT abi_GetChildren(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetChildren(return_returnValue); }
+	override HRESULT abi_GetClassName(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetClassName(return_returnValue); }
+	override HRESULT abi_GetClickablePoint(Windows.Foundation.Point* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetClickablePoint(return_returnValue); }
+	override HRESULT abi_GetHelpText(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetHelpText(return_returnValue); }
+	override HRESULT abi_GetItemStatus(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetItemStatus(return_returnValue); }
+	override HRESULT abi_GetItemType(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetItemType(return_returnValue); }
+	override HRESULT abi_GetLabeledBy(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetLabeledBy(return_returnValue); }
+	override HRESULT abi_GetLocalizedControlType(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetLocalizedControlType(return_returnValue); }
+	override HRESULT abi_GetName(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetName(return_returnValue); }
+	override HRESULT abi_GetOrientation(Windows.UI.Xaml.Automation.Peers.AutomationOrientation* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetOrientation(return_returnValue); }
+	override HRESULT abi_HasKeyboardFocus(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_HasKeyboardFocus(return_returnValue); }
+	override HRESULT abi_IsContentElement(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsContentElement(return_returnValue); }
+	override HRESULT abi_IsControlElement(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsControlElement(return_returnValue); }
+	override HRESULT abi_IsEnabled(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsEnabled(return_returnValue); }
+	override HRESULT abi_IsKeyboardFocusable(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsKeyboardFocusable(return_returnValue); }
+	override HRESULT abi_IsOffscreen(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsOffscreen(return_returnValue); }
+	override HRESULT abi_IsPassword(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsPassword(return_returnValue); }
+	override HRESULT abi_IsRequiredForForm(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsRequiredForForm(return_returnValue); }
+	override HRESULT abi_SetFocus() { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_SetFocus(); }
+	override HRESULT abi_GetParent(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetParent(return_returnValue); }
+	override HRESULT abi_InvalidatePeer() { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_InvalidatePeer(); }
+	override HRESULT abi_GetPeerFromPoint(Windows.Foundation.Point point, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetPeerFromPoint(point, return_returnValue); }
+	override HRESULT abi_GetLiveSetting(Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetLiveSetting(return_returnValue); }
+
+	override HRESULT abi_GetPatternCore(Windows.UI.Xaml.Automation.Peers.PatternInterface patternInterface, IInspectable* return_returnValue) { this.GetPatternCore(patternInterface, return_returnValue); return S_OK; }
+	void GetPatternCore(Windows.UI.Xaml.Automation.Peers.PatternInterface patternInterface, IInspectable* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetPatternCore(patternInterface, return_returnValue)); }
+	override HRESULT abi_GetAcceleratorKeyCore(HSTRING* return_returnValue) { this.GetAcceleratorKeyCore(return_returnValue); return S_OK; }
+	void GetAcceleratorKeyCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAcceleratorKeyCore(return_returnValue)); }
+	override HRESULT abi_GetAccessKeyCore(HSTRING* return_returnValue) { this.GetAccessKeyCore(return_returnValue); return S_OK; }
+	void GetAccessKeyCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAccessKeyCore(return_returnValue)); }
+	override HRESULT abi_GetAutomationControlTypeCore(Windows.UI.Xaml.Automation.Peers.AutomationControlType* return_returnValue) { this.GetAutomationControlTypeCore(return_returnValue); return S_OK; }
+	void GetAutomationControlTypeCore(Windows.UI.Xaml.Automation.Peers.AutomationControlType* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAutomationControlTypeCore(return_returnValue)); }
+	override HRESULT abi_GetAutomationIdCore(HSTRING* return_returnValue) { this.GetAutomationIdCore(return_returnValue); return S_OK; }
+	void GetAutomationIdCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAutomationIdCore(return_returnValue)); }
+	override HRESULT abi_GetBoundingRectangleCore(Windows.Foundation.Rect* return_returnValue) { this.GetBoundingRectangleCore(return_returnValue); return S_OK; }
+	void GetBoundingRectangleCore(Windows.Foundation.Rect* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetBoundingRectangleCore(return_returnValue)); }
+	override HRESULT abi_GetChildrenCore(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { this.GetChildrenCore(return_returnValue); return S_OK; }
+	void GetChildrenCore(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetChildrenCore(return_returnValue)); }
+	override HRESULT abi_GetClassNameCore(HSTRING* return_returnValue) { this.GetClassNameCore(return_returnValue); return S_OK; }
+	void GetClassNameCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetClassNameCore(return_returnValue)); }
+	override HRESULT abi_GetClickablePointCore(Windows.Foundation.Point* return_returnValue) { this.GetClickablePointCore(return_returnValue); return S_OK; }
+	void GetClickablePointCore(Windows.Foundation.Point* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetClickablePointCore(return_returnValue)); }
+	override HRESULT abi_GetHelpTextCore(HSTRING* return_returnValue) { this.GetHelpTextCore(return_returnValue); return S_OK; }
+	void GetHelpTextCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetHelpTextCore(return_returnValue)); }
+	override HRESULT abi_GetItemStatusCore(HSTRING* return_returnValue) { this.GetItemStatusCore(return_returnValue); return S_OK; }
+	void GetItemStatusCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetItemStatusCore(return_returnValue)); }
+	override HRESULT abi_GetItemTypeCore(HSTRING* return_returnValue) { this.GetItemTypeCore(return_returnValue); return S_OK; }
+	void GetItemTypeCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetItemTypeCore(return_returnValue)); }
+	override HRESULT abi_GetLabeledByCore(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { this.GetLabeledByCore(return_returnValue); return S_OK; }
+	void GetLabeledByCore(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetLabeledByCore(return_returnValue)); }
+	override HRESULT abi_GetLocalizedControlTypeCore(HSTRING* return_returnValue) { this.GetLocalizedControlTypeCore(return_returnValue); return S_OK; }
+	void GetLocalizedControlTypeCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetLocalizedControlTypeCore(return_returnValue)); }
+	override HRESULT abi_GetNameCore(HSTRING* return_returnValue) { this.GetNameCore(return_returnValue); return S_OK; }
+	void GetNameCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetNameCore(return_returnValue)); }
+	override HRESULT abi_GetOrientationCore(Windows.UI.Xaml.Automation.Peers.AutomationOrientation* return_returnValue) { this.GetOrientationCore(return_returnValue); return S_OK; }
+	void GetOrientationCore(Windows.UI.Xaml.Automation.Peers.AutomationOrientation* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetOrientationCore(return_returnValue)); }
+	override HRESULT abi_HasKeyboardFocusCore(bool* return_returnValue) { this.HasKeyboardFocusCore(return_returnValue); return S_OK; }
+	void HasKeyboardFocusCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_HasKeyboardFocusCore(return_returnValue)); }
+	override HRESULT abi_IsContentElementCore(bool* return_returnValue) { this.IsContentElementCore(return_returnValue); return S_OK; }
+	void IsContentElementCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsContentElementCore(return_returnValue)); }
+	override HRESULT abi_IsControlElementCore(bool* return_returnValue) { this.IsControlElementCore(return_returnValue); return S_OK; }
+	void IsControlElementCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsControlElementCore(return_returnValue)); }
+	override HRESULT abi_IsEnabledCore(bool* return_returnValue) { this.IsEnabledCore(return_returnValue); return S_OK; }
+	void IsEnabledCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsEnabledCore(return_returnValue)); }
+	override HRESULT abi_IsKeyboardFocusableCore(bool* return_returnValue) { this.IsKeyboardFocusableCore(return_returnValue); return S_OK; }
+	void IsKeyboardFocusableCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsKeyboardFocusableCore(return_returnValue)); }
+	override HRESULT abi_IsOffscreenCore(bool* return_returnValue) { this.IsOffscreenCore(return_returnValue); return S_OK; }
+	void IsOffscreenCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsOffscreenCore(return_returnValue)); }
+	override HRESULT abi_IsPasswordCore(bool* return_returnValue) { this.IsPasswordCore(return_returnValue); return S_OK; }
+	void IsPasswordCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsPasswordCore(return_returnValue)); }
+	override HRESULT abi_IsRequiredForFormCore(bool* return_returnValue) { this.IsRequiredForFormCore(return_returnValue); return S_OK; }
+	void IsRequiredForFormCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsRequiredForFormCore(return_returnValue)); }
+	override HRESULT abi_SetFocusCore() { this.SetFocusCore(); return S_OK; }
+	void SetFocusCore() { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_SetFocusCore()); }
+	override HRESULT abi_GetPeerFromPointCore(Windows.Foundation.Point point, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { this.GetPeerFromPointCore(point, return_returnValue); return S_OK; }
+	void GetPeerFromPointCore(Windows.Foundation.Point point, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetPeerFromPointCore(point, return_returnValue)); }
+	override HRESULT abi_GetLiveSettingCore(Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting* return_returnValue) { this.GetLiveSettingCore(return_returnValue); return S_OK; }
+	void GetLiveSettingCore(Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetLiveSettingCore(return_returnValue)); }
+
+	override HRESULT abi_PeerFromProvider(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple provider, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected).abi_PeerFromProvider(provider, return_returnValue); }
+	override HRESULT abi_ProviderFromPeer(Windows.UI.Xaml.Automation.Peers.AutomationPeer peer, Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected).abi_ProviderFromPeer(peer, return_returnValue); }
+
+
+	override HRESULT abi_ShowContextMenuCore() { this.ShowContextMenuCore(); return S_OK; }
+	void ShowContextMenuCore() { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2).abi_ShowContextMenuCore()); }
+	override HRESULT abi_GetControlledPeersCore(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { this.GetControlledPeersCore(return_returnValue); return S_OK; }
+	void GetControlledPeersCore(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2).abi_GetControlledPeersCore(return_returnValue)); }
+
+	override HRESULT abi_Navigate(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_Navigate(direction, return_returnValue); }
+	override HRESULT abi_GetElementFromPoint(Windows.Foundation.Point pointInWindowCoordinates, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetElementFromPoint(pointInWindowCoordinates, return_returnValue); }
+	override HRESULT abi_GetFocusedElement(IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetFocusedElement(return_returnValue); }
+	override HRESULT abi_ShowContextMenu() { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_ShowContextMenu(); }
+	override HRESULT abi_GetControlledPeers(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetControlledPeers(return_returnValue); }
+	override HRESULT abi_GetAnnotations(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetAnnotations(return_returnValue); }
+	override HRESULT abi_SetParent(Windows.UI.Xaml.Automation.Peers.AutomationPeer peer) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_SetParent(peer); }
+	override HRESULT abi_RaiseTextEditTextChangedEvent(Windows.UI.Xaml.Automation.AutomationTextEditChangeType automationTextEditChangeType, Windows.Foundation.Collections.IVectorView!(HSTRING) changedData) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_RaiseTextEditTextChangedEvent(automationTextEditChangeType, changedData); }
+	override HRESULT abi_GetPositionInSet(INT32* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetPositionInSet(return_returnValue); }
+	override HRESULT abi_GetSizeOfSet(INT32* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetSizeOfSet(return_returnValue); }
+	override HRESULT abi_GetLevel(INT32* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetLevel(return_returnValue); }
+	override HRESULT abi_RaiseStructureChangedEvent(Windows.UI.Xaml.Automation.Peers.AutomationStructureChangeType structureChangeType, Windows.UI.Xaml.Automation.Peers.AutomationPeer child) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_RaiseStructureChangedEvent(structureChangeType, child); }
+
+	override HRESULT abi_NavigateCore(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction, IInspectable* return_returnValue) { this.NavigateCore(direction, return_returnValue); return S_OK; }
+	void NavigateCore(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction, IInspectable* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_NavigateCore(direction, return_returnValue)); }
+	override HRESULT abi_GetElementFromPointCore(Windows.Foundation.Point pointInWindowCoordinates, IInspectable* return_returnValue) { this.GetElementFromPointCore(pointInWindowCoordinates, return_returnValue); return S_OK; }
+	void GetElementFromPointCore(Windows.Foundation.Point pointInWindowCoordinates, IInspectable* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetElementFromPointCore(pointInWindowCoordinates, return_returnValue)); }
+	override HRESULT abi_GetFocusedElementCore(IInspectable* return_returnValue) { this.GetFocusedElementCore(return_returnValue); return S_OK; }
+	void GetFocusedElementCore(IInspectable* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetFocusedElementCore(return_returnValue)); }
+	override HRESULT abi_GetAnnotationsCore(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation)* return_returnValue) { this.GetAnnotationsCore(return_returnValue); return S_OK; }
+	void GetAnnotationsCore(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation)* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetAnnotationsCore(return_returnValue)); }
+	override HRESULT abi_GetPositionInSetCore(INT32* return_returnValue) { this.GetPositionInSetCore(return_returnValue); return S_OK; }
+	void GetPositionInSetCore(INT32* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetPositionInSetCore(return_returnValue)); }
+	override HRESULT abi_GetSizeOfSetCore(INT32* return_returnValue) { this.GetSizeOfSetCore(return_returnValue); return S_OK; }
+	void GetSizeOfSetCore(INT32* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetSizeOfSetCore(return_returnValue)); }
+	override HRESULT abi_GetLevelCore(INT32* return_returnValue) { this.GetLevelCore(return_returnValue); return S_OK; }
+	void GetLevelCore(INT32* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetLevelCore(return_returnValue)); }
+
+	override HRESULT abi_GetLandmarkType(Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4).abi_GetLandmarkType(return_returnValue); }
+	override HRESULT abi_GetLocalizedLandmarkType(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4).abi_GetLocalizedLandmarkType(return_returnValue); }
+
+	override HRESULT abi_GetLandmarkTypeCore(Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType* return_returnValue) { this.GetLandmarkTypeCore(return_returnValue); return S_OK; }
+	void GetLandmarkTypeCore(Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4).abi_GetLandmarkTypeCore(return_returnValue)); }
+	override HRESULT abi_GetLocalizedLandmarkTypeCore(HSTRING* return_returnValue) { this.GetLocalizedLandmarkTypeCore(return_returnValue); return S_OK; }
+	void GetLocalizedLandmarkTypeCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4).abi_GetLocalizedLandmarkTypeCore(return_returnValue)); }
+
+	override HRESULT abi_IsPeripheral(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5).abi_IsPeripheral(return_returnValue); }
+	override HRESULT abi_IsDataValidForForm(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5).abi_IsDataValidForForm(return_returnValue); }
+	override HRESULT abi_GetFullDescription(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5).abi_GetFullDescription(return_returnValue); }
+
+	override HRESULT abi_IsPeripheralCore(bool* return_returnValue) { this.IsPeripheralCore(return_returnValue); return S_OK; }
+	void IsPeripheralCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_IsPeripheralCore(return_returnValue)); }
+	override HRESULT abi_IsDataValidForFormCore(bool* return_returnValue) { this.IsDataValidForFormCore(return_returnValue); return S_OK; }
+	void IsDataValidForFormCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_IsDataValidForFormCore(return_returnValue)); }
+	override HRESULT abi_GetFullDescriptionCore(HSTRING* return_returnValue) { this.GetFullDescriptionCore(return_returnValue); return S_OK; }
+	void GetFullDescriptionCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetFullDescriptionCore(return_returnValue)); }
+	override HRESULT abi_GetDescribedByCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { this.GetDescribedByCore(return_returnValue); return S_OK; }
+	void GetDescribedByCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetDescribedByCore(return_returnValue)); }
+	override HRESULT abi_GetFlowsToCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { this.GetFlowsToCore(return_returnValue); return S_OK; }
+	void GetFlowsToCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetFlowsToCore(return_returnValue)); }
+	override HRESULT abi_GetFlowsFromCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { this.GetFlowsFromCore(return_returnValue); return S_OK; }
+	void GetFlowsFromCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetFlowsFromCore(return_returnValue)); }
+
+	override HRESULT abi_GetCulture(INT32* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer6).abi_GetCulture(return_returnValue); }
+
+	override HRESULT abi_GetCultureCore(INT32* return_returnValue) { this.GetCultureCore(return_returnValue); return S_OK; }
+	void GetCultureCore(INT32* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6).abi_GetCultureCore(return_returnValue)); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface AutomationPeerAnnotation : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation
@@ -1998,17 +1960,75 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke());
 	}
 }
+@makable!(ButtonAutomationPeer, ButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IButtonAutomationPeerFactory)
+class ButtonAutomationPeerT(Base) : AgileObject!Base, ButtonAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_Invoke() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ButtonBaseAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IButtonBaseAutomationPeer
 {
+}
+@makable!(ButtonBaseAutomationPeer, ButtonBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IButtonBaseAutomationPeerFactory)
+class ButtonBaseAutomationPeerT(Base) : AgileObject!Base, ButtonBaseAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface CaptureElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ICaptureElementAutomationPeer
 {
 }
+@makable!(CaptureElementAutomationPeer, CaptureElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ICaptureElementAutomationPeerFactory)
+class CaptureElementAutomationPeerT(Base) : AgileObject!Base, CaptureElementAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface CheckBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.ICheckBoxAutomationPeer
 {
+}
+@makable!(CheckBoxAutomationPeer, CheckBoxAutomationPeer, Windows.UI.Xaml.Automation.Peers.ICheckBoxAutomationPeerFactory)
+class CheckBoxAutomationPeerT(Base) : AgileObject!Base, CheckBoxAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ComboBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer, Windows.UI.Xaml.Automation.Peers.IComboBoxAutomationPeer, Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider, Windows.UI.Xaml.Automation.Provider.IValueProvider, Windows.UI.Xaml.Automation.Provider.IWindowProvider
@@ -2095,9 +2115,55 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(ComboBoxAutomationPeer, ComboBoxAutomationPeer, Windows.UI.Xaml.Automation.Peers.IComboBoxAutomationPeerFactory)
+class ComboBoxAutomationPeerT(Base) : AgileObject!Base, ComboBoxAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_ExpandCollapseState(Windows.UI.Xaml.Automation.ExpandCollapseState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).get_ExpandCollapseState(return_value); }
+	override HRESULT abi_Collapse() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Collapse(); }
+	override HRESULT abi_Expand() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Expand(); }
+
+	override HRESULT get_IsReadOnly(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IValueProvider).get_IsReadOnly(return_value); }
+	override HRESULT get_Value(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IValueProvider).get_Value(return_value); }
+	override HRESULT abi_SetValue(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IValueProvider).abi_SetValue(value); }
+
+	override HRESULT get_IsModal(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsModal(return_value); }
+	override HRESULT get_IsTopmost(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsTopmost(return_value); }
+	override HRESULT get_Maximizable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Maximizable(return_value); }
+	override HRESULT get_Minimizable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Minimizable(return_value); }
+	override HRESULT get_InteractionState(Windows.UI.Xaml.Automation.WindowInteractionState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_InteractionState(return_value); }
+	override HRESULT get_VisualState(Windows.UI.Xaml.Automation.WindowVisualState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_VisualState(return_value); }
+	override HRESULT abi_Close() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_Close(); }
+	override HRESULT abi_SetVisualState(Windows.UI.Xaml.Automation.WindowVisualState state) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_SetVisualState(state); }
+	override HRESULT abi_WaitForInputIdle(INT32 milliseconds, bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_WaitForInputIdle(milliseconds, return_returnValue); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ComboBoxItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IComboBoxItemAutomationPeer
 {
+}
+@makable!(ComboBoxItemAutomationPeer, ComboBoxItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IComboBoxItemAutomationPeerFactory)
+class ComboBoxItemAutomationPeerT(Base) : AgileObject!Base, ComboBoxItemAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ComboBoxItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IComboBoxItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
@@ -2108,9 +2174,39 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
 	}
 }
+@makable!(ComboBoxItemDataAutomationPeer, ComboBoxItemDataAutomationPeer, Windows.UI.Xaml.Automation.Peers.IComboBoxItemDataAutomationPeerFactory)
+class ComboBoxItemDataAutomationPeerT(Base) : AgileObject!Base, ComboBoxItemDataAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_ScrollIntoView() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface DatePickerAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IDatePickerAutomationPeer
 {
+}
+@makable!(DatePickerAutomationPeer, DatePickerAutomationPeer, Windows.UI.Xaml.Automation.Peers.IDatePickerAutomationPeerFactory)
+class DatePickerAutomationPeerT(Base) : AgileObject!Base, DatePickerAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface DatePickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IDatePickerFlyoutPresenterAutomationPeer
@@ -2120,9 +2216,37 @@ interface DatePickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.P
 interface FlipViewAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlipViewAutomationPeer
 {
 }
+@makable!(FlipViewAutomationPeer, FlipViewAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlipViewAutomationPeerFactory)
+class FlipViewAutomationPeerT(Base) : AgileObject!Base, FlipViewAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface FlipViewItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlipViewItemAutomationPeer
 {
+}
+@makable!(FlipViewItemAutomationPeer, FlipViewItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlipViewItemAutomationPeerFactory)
+class FlipViewItemAutomationPeerT(Base) : AgileObject!Base, FlipViewItemAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface FlipViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlipViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
@@ -2133,9 +2257,39 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
 	}
 }
+@makable!(FlipViewItemDataAutomationPeer, FlipViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlipViewItemDataAutomationPeerFactory)
+class FlipViewItemDataAutomationPeerT(Base) : AgileObject!Base, FlipViewItemDataAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_ScrollIntoView() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface FlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlyoutPresenterAutomationPeer
 {
+}
+@makable!(FlyoutPresenterAutomationPeer, FlyoutPresenterAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlyoutPresenterAutomationPeerFactory)
+class FlyoutPresenterAutomationPeerT(Base) : AgileObject!Base, FlyoutPresenterAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface FrameworkElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer, Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeer
@@ -2148,17 +2302,74 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(FrameworkElementAutomationPeer, FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeerFactory)
+class FrameworkElementAutomationPeerT(Base) : AgileObject!Base, FrameworkElementAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Owner(Windows.UI.Xaml.UIElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeer).get_Owner(return_value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface GridViewAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewAutomationPeer
 {
+}
+@makable!(GridViewAutomationPeer, GridViewAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewAutomationPeerFactory)
+class GridViewAutomationPeerT(Base) : AgileObject!Base, GridViewAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface GridViewHeaderItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewHeaderItemAutomationPeer
 {
 }
+@makable!(GridViewHeaderItemAutomationPeer, GridViewHeaderItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewHeaderItemAutomationPeerFactory)
+class GridViewHeaderItemAutomationPeerT(Base) : AgileObject!Base, GridViewHeaderItemAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface GridViewItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewItemAutomationPeer
 {
+}
+@makable!(GridViewItemAutomationPeer, GridViewItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewItemAutomationPeerFactory)
+class GridViewItemAutomationPeerT(Base) : AgileObject!Base, GridViewItemAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface GridViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
@@ -2169,13 +2380,57 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
 	}
 }
+@makable!(GridViewItemDataAutomationPeer, GridViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewItemDataAutomationPeerFactory)
+class GridViewItemDataAutomationPeerT(Base) : AgileObject!Base, GridViewItemDataAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_ScrollIntoView() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface GroupItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGroupItemAutomationPeer
 {
 }
+@makable!(GroupItemAutomationPeer, GroupItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGroupItemAutomationPeerFactory)
+class GroupItemAutomationPeerT(Base) : AgileObject!Base, GroupItemAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface HubAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IHubAutomationPeer
 {
+}
+@makable!(HubAutomationPeer, HubAutomationPeer, Windows.UI.Xaml.Automation.Peers.IHubAutomationPeerFactory)
+class HubAutomationPeerT(Base) : AgileObject!Base, HubAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface HubSectionAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IHubSectionAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
@@ -2186,6 +2441,22 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
 	}
 }
+@makable!(HubSectionAutomationPeer, HubSectionAutomationPeer, Windows.UI.Xaml.Automation.Peers.IHubSectionAutomationPeerFactory)
+class HubSectionAutomationPeerT(Base) : AgileObject!Base, HubSectionAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_ScrollIntoView() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface HyperlinkButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IHyperlinkButtonAutomationPeer, Windows.UI.Xaml.Automation.Provider.IInvokeProvider
 {
@@ -2195,9 +2466,39 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke());
 	}
 }
+@makable!(HyperlinkButtonAutomationPeer, HyperlinkButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IHyperlinkButtonAutomationPeerFactory)
+class HyperlinkButtonAutomationPeerT(Base) : AgileObject!Base, HyperlinkButtonAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_Invoke() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ImageAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IImageAutomationPeer
 {
+}
+@makable!(ImageAutomationPeer, ImageAutomationPeer, Windows.UI.Xaml.Automation.Peers.IImageAutomationPeerFactory)
+class ImageAutomationPeerT(Base) : AgileObject!Base, ImageAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface InkToolbarAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IInkToolbarAutomationPeer
@@ -2224,6 +2525,24 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider).abi_Realize());
 	}
 }
+@makable!(ItemAutomationPeer, ItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IItemAutomationPeerFactory)
+class ItemAutomationPeerT(Base) : AgileObject!Base, ItemAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Item(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer).get_Item(return_value); }
+	override HRESULT get_ItemsControlAutomationPeer(Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer).get_ItemsControlAutomationPeer(return_value); }
+
+	override HRESULT abi_Realize() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider).abi_Realize(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ItemsControlAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer, Windows.UI.Xaml.Automation.Provider.IItemContainerProvider, Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer2, Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeerOverrides2
 {
@@ -2240,20 +2559,63 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer2).abi_CreateItemAutomationPeer(item, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer OnCreateItemAutomationPeer(IInspectable item)
+}
+@makable!(ItemsControlAutomationPeer, ItemsControlAutomationPeer, Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeerFactory)
+class ItemsControlAutomationPeerT(Base) : AgileObject!Base, ItemsControlAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
 	{
-		Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeerOverrides2).abi_OnCreateItemAutomationPeer(item, &_ret));
-		return _ret;
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
 	}
+
+	override HRESULT abi_FindItemByProperty(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple startAfter, Windows.UI.Xaml.Automation.AutomationProperty automationProperty, IInspectable value, Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IItemContainerProvider).abi_FindItemByProperty(startAfter, automationProperty, value, return_returnValue); }
+
+	override HRESULT abi_CreateItemAutomationPeer(IInspectable item, Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer2).abi_CreateItemAutomationPeer(item, return_returnValue); }
+
+	override HRESULT abi_OnCreateItemAutomationPeer(IInspectable item, Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer* return_returnValue) { this.OnCreateItemAutomationPeer(item, return_returnValue); return S_OK; }
+	void OnCreateItemAutomationPeer(IInspectable item, Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeerOverrides2).abi_OnCreateItemAutomationPeer(item, return_returnValue)); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ListBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListBoxAutomationPeer
 {
 }
+@makable!(ListBoxAutomationPeer, ListBoxAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListBoxAutomationPeerFactory)
+class ListBoxAutomationPeerT(Base) : AgileObject!Base, ListBoxAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ListBoxItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListBoxItemAutomationPeer
 {
+}
+@makable!(ListBoxItemAutomationPeer, ListBoxItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListBoxItemAutomationPeerFactory)
+class ListBoxItemAutomationPeerT(Base) : AgileObject!Base, ListBoxItemAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ListBoxItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListBoxItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
@@ -2264,6 +2626,22 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
 	}
 }
+@makable!(ListBoxItemDataAutomationPeer, ListBoxItemDataAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListBoxItemDataAutomationPeerFactory)
+class ListBoxItemDataAutomationPeerT(Base) : AgileObject!Base, ListBoxItemDataAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_ScrollIntoView() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ListPickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListPickerFlyoutPresenterAutomationPeer
 {
@@ -2271,6 +2649,20 @@ interface ListPickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.P
 
 interface ListViewAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewAutomationPeer
 {
+}
+@makable!(ListViewAutomationPeer, ListViewAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewAutomationPeerFactory)
+class ListViewAutomationPeerT(Base) : AgileObject!Base, ListViewAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ListViewBaseAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewBaseAutomationPeer, Windows.UI.Xaml.Automation.Provider.IDropTargetProvider
@@ -2289,17 +2681,76 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(ListViewBaseAutomationPeer, ListViewBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewBaseAutomationPeerFactory)
+class ListViewBaseAutomationPeerT(Base) : AgileObject!Base, ListViewBaseAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_DropEffect(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider).get_DropEffect(return_value); }
+	override HRESULT get_DropEffects(UINT32* out___valueSize, HSTRING** return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider).get_DropEffects(out___valueSize, return_value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ListViewBaseHeaderItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewBaseHeaderItemAutomationPeer
 {
+}
+@makable!(ListViewBaseHeaderItemAutomationPeer, ListViewBaseHeaderItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewBaseHeaderItemAutomationPeerFactory)
+class ListViewBaseHeaderItemAutomationPeerT(Base) : AgileObject!Base, ListViewBaseHeaderItemAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ListViewHeaderItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewHeaderItemAutomationPeer
 {
 }
+@makable!(ListViewHeaderItemAutomationPeer, ListViewHeaderItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewHeaderItemAutomationPeerFactory)
+class ListViewHeaderItemAutomationPeerT(Base) : AgileObject!Base, ListViewHeaderItemAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ListViewItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewItemAutomationPeer
 {
+}
+@makable!(ListViewItemAutomationPeer, ListViewItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewItemAutomationPeerFactory)
+class ListViewItemAutomationPeerT(Base) : AgileObject!Base, ListViewItemAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ListViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider
@@ -2309,6 +2760,22 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
 	}
+}
+@makable!(ListViewItemDataAutomationPeer, ListViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewItemDataAutomationPeerFactory)
+class ListViewItemDataAutomationPeerT(Base) : AgileObject!Base, ListViewItemDataAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_ScrollIntoView() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView(); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface LoopingSelectorAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ILoopingSelectorAutomationPeer, Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider, Windows.UI.Xaml.Automation.Provider.IItemContainerProvider, Windows.UI.Xaml.Automation.Provider.IScrollProvider, Windows.UI.Xaml.Automation.Provider.ISelectionProvider
@@ -2554,13 +3021,55 @@ extern(Windows):
 interface MediaElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMediaElementAutomationPeer
 {
 }
+@makable!(MediaElementAutomationPeer, MediaElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMediaElementAutomationPeerFactory)
+class MediaElementAutomationPeerT(Base) : AgileObject!Base, MediaElementAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface MediaPlayerElementAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMediaPlayerElementAutomationPeer
 {
 }
+@makable!(MediaPlayerElementAutomationPeer, MediaPlayerElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMediaPlayerElementAutomationPeerFactory)
+class MediaPlayerElementAutomationPeerT(Base) : AgileObject!Base, MediaPlayerElementAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface MediaTransportControlsAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMediaTransportControlsAutomationPeer
 {
+}
+@makable!(MediaTransportControlsAutomationPeer, MediaTransportControlsAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMediaTransportControlsAutomationPeerFactory)
+class MediaTransportControlsAutomationPeerT(Base) : AgileObject!Base, MediaTransportControlsAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface MenuFlyoutItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMenuFlyoutItemAutomationPeer, Windows.UI.Xaml.Automation.Provider.IInvokeProvider
@@ -2571,13 +3080,57 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke());
 	}
 }
+@makable!(MenuFlyoutItemAutomationPeer, MenuFlyoutItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMenuFlyoutItemAutomationPeerFactory)
+class MenuFlyoutItemAutomationPeerT(Base) : AgileObject!Base, MenuFlyoutItemAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_Invoke() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface MenuFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMenuFlyoutPresenterAutomationPeer
 {
 }
+@makable!(MenuFlyoutPresenterAutomationPeer, MenuFlyoutPresenterAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMenuFlyoutPresenterAutomationPeerFactory)
+class MenuFlyoutPresenterAutomationPeerT(Base) : AgileObject!Base, MenuFlyoutPresenterAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface PasswordBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IPasswordBoxAutomationPeer
 {
+}
+@makable!(PasswordBoxAutomationPeer, PasswordBoxAutomationPeer, Windows.UI.Xaml.Automation.Peers.IPasswordBoxAutomationPeerFactory)
+class PasswordBoxAutomationPeerT(Base) : AgileObject!Base, PasswordBoxAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface PickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IPickerFlyoutPresenterAutomationPeer
@@ -2695,9 +3248,37 @@ extern(Windows):
 interface ProgressBarAutomationPeer : Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IProgressBarAutomationPeer
 {
 }
+@makable!(ProgressBarAutomationPeer, ProgressBarAutomationPeer, Windows.UI.Xaml.Automation.Peers.IProgressBarAutomationPeerFactory)
+class ProgressBarAutomationPeerT(Base) : AgileObject!Base, ProgressBarAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ProgressRingAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IProgressRingAutomationPeer
 {
+}
+@makable!(ProgressRingAutomationPeer, ProgressRingAutomationPeer, Windows.UI.Xaml.Automation.Peers.IProgressRingAutomationPeerFactory)
+class ProgressRingAutomationPeerT(Base) : AgileObject!Base, ProgressRingAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface RadioButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRadioButtonAutomationPeer, Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider
@@ -2727,6 +3308,26 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select());
 	}
+}
+@makable!(RadioButtonAutomationPeer, RadioButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRadioButtonAutomationPeerFactory)
+class RadioButtonAutomationPeerT(Base) : AgileObject!Base, RadioButtonAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_IsSelected(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_IsSelected(return_value); }
+	override HRESULT get_SelectionContainer(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_SelectionContainer(return_value); }
+	override HRESULT abi_AddToSelection() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_AddToSelection(); }
+	override HRESULT abi_RemoveFromSelection() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_RemoveFromSelection(); }
+	override HRESULT abi_Select() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select(); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface RangeBaseAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRangeBaseAutomationPeer, Windows.UI.Xaml.Automation.Provider.IRangeValueProvider
@@ -2773,6 +3374,28 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).abi_SetValue(value));
 	}
 }
+@makable!(RangeBaseAutomationPeer, RangeBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRangeBaseAutomationPeerFactory)
+class RangeBaseAutomationPeerT(Base) : AgileObject!Base, RangeBaseAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_IsReadOnly(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_IsReadOnly(return_value); }
+	override HRESULT get_LargeChange(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_LargeChange(return_value); }
+	override HRESULT get_Maximum(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_Maximum(return_value); }
+	override HRESULT get_Minimum(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_Minimum(return_value); }
+	override HRESULT get_SmallChange(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_SmallChange(return_value); }
+	override HRESULT get_Value(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_Value(return_value); }
+	override HRESULT abi_SetValue(double value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).abi_SetValue(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface RepeatButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRepeatButtonAutomationPeer, Windows.UI.Xaml.Automation.Provider.IInvokeProvider
 {
@@ -2782,21 +3405,93 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke());
 	}
 }
+@makable!(RepeatButtonAutomationPeer, RepeatButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRepeatButtonAutomationPeerFactory)
+class RepeatButtonAutomationPeerT(Base) : AgileObject!Base, RepeatButtonAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_Invoke() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface RichEditBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRichEditBoxAutomationPeer
 {
+}
+@makable!(RichEditBoxAutomationPeer, RichEditBoxAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRichEditBoxAutomationPeerFactory)
+class RichEditBoxAutomationPeerT(Base) : AgileObject!Base, RichEditBoxAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface RichTextBlockAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRichTextBlockAutomationPeer
 {
 }
+@makable!(RichTextBlockAutomationPeer, RichTextBlockAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRichTextBlockAutomationPeerFactory)
+class RichTextBlockAutomationPeerT(Base) : AgileObject!Base, RichTextBlockAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface RichTextBlockOverflowAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRichTextBlockOverflowAutomationPeer
 {
 }
+@makable!(RichTextBlockOverflowAutomationPeer, RichTextBlockOverflowAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRichTextBlockOverflowAutomationPeerFactory)
+class RichTextBlockOverflowAutomationPeerT(Base) : AgileObject!Base, RichTextBlockOverflowAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ScrollBarAutomationPeer : Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IScrollBarAutomationPeer
 {
+}
+@makable!(ScrollBarAutomationPeer, ScrollBarAutomationPeer, Windows.UI.Xaml.Automation.Peers.IScrollBarAutomationPeerFactory)
+class ScrollBarAutomationPeerT(Base) : AgileObject!Base, ScrollBarAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ScrollViewerAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IScrollViewerAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollProvider
@@ -2847,9 +3542,46 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_SetScrollPercent(horizontalPercent, verticalPercent));
 	}
 }
+@makable!(ScrollViewerAutomationPeer, ScrollViewerAutomationPeer, Windows.UI.Xaml.Automation.Peers.IScrollViewerAutomationPeerFactory)
+class ScrollViewerAutomationPeerT(Base) : AgileObject!Base, ScrollViewerAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_HorizontallyScrollable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontallyScrollable(return_value); }
+	override HRESULT get_HorizontalScrollPercent(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalScrollPercent(return_value); }
+	override HRESULT get_HorizontalViewSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalViewSize(return_value); }
+	override HRESULT get_VerticallyScrollable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticallyScrollable(return_value); }
+	override HRESULT get_VerticalScrollPercent(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalScrollPercent(return_value); }
+	override HRESULT get_VerticalViewSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalViewSize(return_value); }
+	override HRESULT abi_Scroll(Windows.UI.Xaml.Automation.ScrollAmount horizontalAmount, Windows.UI.Xaml.Automation.ScrollAmount verticalAmount) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_Scroll(horizontalAmount, verticalAmount); }
+	override HRESULT abi_SetScrollPercent(double horizontalPercent, double verticalPercent) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_SetScrollPercent(horizontalPercent, verticalPercent); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface SearchBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISearchBoxAutomationPeer
 {
+}
+@makable!(SearchBoxAutomationPeer, SearchBoxAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISearchBoxAutomationPeerFactory)
+class SearchBoxAutomationPeerT(Base) : AgileObject!Base, SearchBoxAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface SelectorAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISelectorAutomationPeer, Windows.UI.Xaml.Automation.Provider.ISelectionProvider
@@ -2873,6 +3605,24 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).abi_GetSelection(out___returnValueSize, &_ret));
 		return _ret;
 	}
+}
+@makable!(SelectorAutomationPeer, SelectorAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISelectorAutomationPeerFactory)
+class SelectorAutomationPeerT(Base) : AgileObject!Base, SelectorAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_CanSelectMultiple(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_CanSelectMultiple(return_value); }
+	override HRESULT get_IsSelectionRequired(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_IsSelectionRequired(return_value); }
+	override HRESULT abi_GetSelection(UINT32* out___returnValueSize, Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple** return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).abi_GetSelection(out___returnValueSize, return_returnValue); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface SelectorItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider
@@ -2903,6 +3653,26 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select());
 	}
 }
+@makable!(SelectorItemAutomationPeer, SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISelectorItemAutomationPeerFactory)
+class SelectorItemAutomationPeerT(Base) : AgileObject!Base, SelectorItemAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_IsSelected(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_IsSelected(return_value); }
+	override HRESULT get_SelectionContainer(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_SelectionContainer(return_value); }
+	override HRESULT abi_AddToSelection() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_AddToSelection(); }
+	override HRESULT abi_RemoveFromSelection() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_RemoveFromSelection(); }
+	override HRESULT abi_Select() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface SemanticZoomAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISemanticZoomAutomationPeer, Windows.UI.Xaml.Automation.Provider.IToggleProvider
 {
@@ -2918,29 +3688,130 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
 	}
 }
+@makable!(SemanticZoomAutomationPeer, SemanticZoomAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISemanticZoomAutomationPeerFactory)
+class SemanticZoomAutomationPeerT(Base) : AgileObject!Base, SemanticZoomAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(return_value); }
+	override HRESULT abi_Toggle() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface SettingsFlyoutAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISettingsFlyoutAutomationPeer
 {
+}
+@makable!(SettingsFlyoutAutomationPeer, SettingsFlyoutAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISettingsFlyoutAutomationPeerFactory)
+class SettingsFlyoutAutomationPeerT(Base) : AgileObject!Base, SettingsFlyoutAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface SliderAutomationPeer : Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISliderAutomationPeer
 {
 }
+@makable!(SliderAutomationPeer, SliderAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISliderAutomationPeerFactory)
+class SliderAutomationPeerT(Base) : AgileObject!Base, SliderAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface TextBlockAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ITextBlockAutomationPeer
 {
+}
+@makable!(TextBlockAutomationPeer, TextBlockAutomationPeer, Windows.UI.Xaml.Automation.Peers.ITextBlockAutomationPeerFactory)
+class TextBlockAutomationPeerT(Base) : AgileObject!Base, TextBlockAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface TextBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ITextBoxAutomationPeer
 {
 }
+@makable!(TextBoxAutomationPeer, TextBoxAutomationPeer, Windows.UI.Xaml.Automation.Peers.ITextBoxAutomationPeerFactory)
+class TextBoxAutomationPeerT(Base) : AgileObject!Base, TextBoxAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ThumbAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IThumbAutomationPeer
 {
 }
+@makable!(ThumbAutomationPeer, ThumbAutomationPeer, Windows.UI.Xaml.Automation.Peers.IThumbAutomationPeerFactory)
+class ThumbAutomationPeerT(Base) : AgileObject!Base, ThumbAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface TimePickerAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ITimePickerAutomationPeer
 {
+}
+@makable!(TimePickerAutomationPeer, TimePickerAutomationPeer, Windows.UI.Xaml.Automation.Peers.ITimePickerAutomationPeerFactory)
+class TimePickerAutomationPeerT(Base) : AgileObject!Base, TimePickerAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface TimePickerFlyoutPresenterAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.ITimePickerFlyoutPresenterAutomationPeer
@@ -2961,6 +3832,23 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
 	}
 }
+@makable!(ToggleButtonAutomationPeer, ToggleButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleButtonAutomationPeerFactory)
+class ToggleButtonAutomationPeerT(Base) : AgileObject!Base, ToggleButtonAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(return_value); }
+	override HRESULT abi_Toggle() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ToggleMenuFlyoutItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleMenuFlyoutItemAutomationPeer, Windows.UI.Xaml.Automation.Provider.IToggleProvider
 {
@@ -2976,6 +3864,23 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
 	}
 }
+@makable!(ToggleMenuFlyoutItemAutomationPeer, ToggleMenuFlyoutItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleMenuFlyoutItemAutomationPeerFactory)
+class ToggleMenuFlyoutItemAutomationPeerT(Base) : AgileObject!Base, ToggleMenuFlyoutItemAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(return_value); }
+	override HRESULT abi_Toggle() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ToggleSwitchAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleSwitchAutomationPeer, Windows.UI.Xaml.Automation.Provider.IToggleProvider
 {
@@ -2990,6 +3895,23 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
 	}
+}
+@makable!(ToggleSwitchAutomationPeer, ToggleSwitchAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleSwitchAutomationPeerFactory)
+class ToggleSwitchAutomationPeerT(Base) : AgileObject!Base, ToggleSwitchAutomationPeer
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(return_value); }
+	override HRESULT abi_Toggle() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle(); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 enum AccessibilityView

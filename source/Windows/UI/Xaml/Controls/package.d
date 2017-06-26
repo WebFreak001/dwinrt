@@ -7299,14 +7299,6 @@ extern(Windows):
 	{
 		Debug.OK(remove_Closed(token));
 	}
-	final void OnClosed(IInspectable e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarOverrides).abi_OnClosed(e));
-	}
-	final void OnOpened(IInspectable e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarOverrides).abi_OnOpened(e));
-	}
 	final Windows.UI.Xaml.Controls.AppBarClosedDisplayMode ClosedDisplayMode()
 	{
 		Windows.UI.Xaml.Controls.AppBarClosedDisplayMode _ret;
@@ -7343,14 +7335,6 @@ extern(Windows):
 	{
 		Debug.OK(remove_Closing(token));
 	}
-	final void OnClosing(IInspectable e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarOverrides3).abi_OnClosing(e));
-	}
-	final void OnOpening(IInspectable e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBarOverrides3).abi_OnOpening(e));
-	}
 	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
 	{
 		Windows.UI.Xaml.Controls.LightDismissOverlayMode _ret;
@@ -7361,6 +7345,50 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IAppBar4).set_LightDismissOverlayMode(value));
 	}
+}
+@makable!(AppBar, AppBar, Windows.UI.Xaml.Controls.IAppBarFactory)
+class AppBarT(Base) : AgileObject!Base, AppBar
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_IsOpen(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar).get_IsOpen(return_value); }
+	override HRESULT set_IsOpen(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar).set_IsOpen(value); }
+	override HRESULT get_IsSticky(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar).get_IsSticky(return_value); }
+	override HRESULT set_IsSticky(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar).set_IsSticky(value); }
+	override HRESULT add_Opened(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar).add_Opened(value, return_token); }
+	override HRESULT remove_Opened(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar).remove_Opened(token); }
+	override HRESULT add_Closed(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar).add_Closed(value, return_token); }
+	override HRESULT remove_Closed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar).remove_Closed(token); }
+
+	override HRESULT abi_OnClosed(IInspectable e) { this.OnClosed(e); return S_OK; }
+	void OnClosed(IInspectable e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IAppBarOverrides).abi_OnClosed(e)); }
+	override HRESULT abi_OnOpened(IInspectable e) { this.OnOpened(e); return S_OK; }
+	void OnOpened(IInspectable e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IAppBarOverrides).abi_OnOpened(e)); }
+
+	override HRESULT get_ClosedDisplayMode(Windows.UI.Xaml.Controls.AppBarClosedDisplayMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar2).get_ClosedDisplayMode(return_value); }
+	override HRESULT set_ClosedDisplayMode(Windows.UI.Xaml.Controls.AppBarClosedDisplayMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar2).set_ClosedDisplayMode(value); }
+
+	override HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.AppBarTemplateSettings* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar3).get_TemplateSettings(return_value); }
+	override HRESULT add_Opening(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar3).add_Opening(value, return_token); }
+	override HRESULT remove_Opening(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar3).remove_Opening(token); }
+	override HRESULT add_Closing(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar3).add_Closing(value, return_token); }
+	override HRESULT remove_Closing(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar3).remove_Closing(token); }
+
+	override HRESULT abi_OnClosing(IInspectable e) { this.OnClosing(e); return S_OK; }
+	void OnClosing(IInspectable e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IAppBarOverrides3).abi_OnClosing(e)); }
+	override HRESULT abi_OnOpening(IInspectable e) { this.OnOpening(e); return S_OK; }
+	void OnOpening(IInspectable e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IAppBarOverrides3).abi_OnOpening(e)); }
+
+	override HRESULT get_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar4).get_LightDismissOverlayMode(return_value); }
+	override HRESULT set_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBar4).set_LightDismissOverlayMode(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface AppBarButton : Windows.UI.Xaml.Controls.Button, Windows.UI.Xaml.Controls.IAppBarButton, Windows.UI.Xaml.Controls.ICommandBarElement, Windows.UI.Xaml.Controls.IAppBarButton3, Windows.UI.Xaml.Controls.ICommandBarElement2
@@ -7423,6 +7451,34 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).set_DynamicOverflowOrder(value));
 	}
 }
+@makable!(AppBarButton, AppBarButton, Windows.UI.Xaml.Controls.IAppBarButtonFactory)
+class AppBarButtonT(Base) : AgileObject!Base, AppBarButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Label(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBarButton).get_Label(return_value); }
+	override HRESULT set_Label(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBarButton).set_Label(value); }
+	override HRESULT get_Icon(Windows.UI.Xaml.Controls.IconElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBarButton).get_Icon(return_value); }
+	override HRESULT set_Icon(Windows.UI.Xaml.Controls.IconElement value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBarButton).set_Icon(value); }
+
+	override HRESULT get_IsCompact(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement).get_IsCompact(return_value); }
+	override HRESULT set_IsCompact(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement).set_IsCompact(value); }
+
+	override HRESULT get_LabelPosition(Windows.UI.Xaml.Controls.CommandBarLabelPosition* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBarButton3).get_LabelPosition(return_value); }
+	override HRESULT set_LabelPosition(Windows.UI.Xaml.Controls.CommandBarLabelPosition value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBarButton3).set_LabelPosition(value); }
+
+	override HRESULT get_IsInOverflow(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).get_IsInOverflow(return_value); }
+	override HRESULT get_DynamicOverflowOrder(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).get_DynamicOverflowOrder(return_value); }
+	override HRESULT set_DynamicOverflowOrder(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).set_DynamicOverflowOrder(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface AppBarSeparator : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IAppBarSeparator, Windows.UI.Xaml.Controls.ICommandBarElement, Windows.UI.Xaml.Controls.ICommandBarElement2
 {
@@ -7453,6 +7509,27 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).set_DynamicOverflowOrder(value));
 	}
+}
+@makable!(AppBarSeparator, AppBarSeparator, Windows.UI.Xaml.Controls.IAppBarSeparatorFactory)
+class AppBarSeparatorT(Base) : AgileObject!Base, AppBarSeparator
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_IsCompact(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement).get_IsCompact(return_value); }
+	override HRESULT set_IsCompact(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement).set_IsCompact(value); }
+
+	override HRESULT get_IsInOverflow(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).get_IsInOverflow(return_value); }
+	override HRESULT get_DynamicOverflowOrder(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).get_DynamicOverflowOrder(return_value); }
+	override HRESULT set_DynamicOverflowOrder(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).set_DynamicOverflowOrder(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface AppBarToggleButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.UI.Xaml.Controls.IAppBarToggleButton, Windows.UI.Xaml.Controls.ICommandBarElement, Windows.UI.Xaml.Controls.IAppBarToggleButton3, Windows.UI.Xaml.Controls.ICommandBarElement2
@@ -7514,6 +7591,34 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).set_DynamicOverflowOrder(value));
 	}
+}
+@makable!(AppBarToggleButton, AppBarToggleButton, Windows.UI.Xaml.Controls.IAppBarToggleButtonFactory)
+class AppBarToggleButtonT(Base) : AgileObject!Base, AppBarToggleButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Label(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBarToggleButton).get_Label(return_value); }
+	override HRESULT set_Label(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBarToggleButton).set_Label(value); }
+	override HRESULT get_Icon(Windows.UI.Xaml.Controls.IconElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBarToggleButton).get_Icon(return_value); }
+	override HRESULT set_Icon(Windows.UI.Xaml.Controls.IconElement value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBarToggleButton).set_Icon(value); }
+
+	override HRESULT get_IsCompact(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement).get_IsCompact(return_value); }
+	override HRESULT set_IsCompact(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement).set_IsCompact(value); }
+
+	override HRESULT get_LabelPosition(Windows.UI.Xaml.Controls.CommandBarLabelPosition* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBarToggleButton3).get_LabelPosition(return_value); }
+	override HRESULT set_LabelPosition(Windows.UI.Xaml.Controls.CommandBarLabelPosition value) { return m_inner.as!(Windows.UI.Xaml.Controls.IAppBarToggleButton3).set_LabelPosition(value); }
+
+	override HRESULT get_IsInOverflow(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).get_IsInOverflow(return_value); }
+	override HRESULT get_DynamicOverflowOrder(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).get_DynamicOverflowOrder(return_value); }
+	override HRESULT set_DynamicOverflowOrder(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBarElement2).set_DynamicOverflowOrder(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface AutoSuggestBox : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.IAutoSuggestBox, Windows.UI.Xaml.Controls.IAutoSuggestBox2, Windows.UI.Xaml.Controls.IAutoSuggestBox3
@@ -7749,6 +7854,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IBitmapIcon2).set_ShowAsMonochrome(value));
 	}
 }
+@makable!(BitmapIcon, BitmapIcon, Windows.UI.Xaml.Controls.IBitmapIconFactory)
+class BitmapIconT(Base) : AgileObject!Base, BitmapIcon
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_UriSource(Windows.Foundation.Uri* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IBitmapIcon).get_UriSource(return_value); }
+	override HRESULT set_UriSource(Windows.Foundation.Uri value) { return m_inner.as!(Windows.UI.Xaml.Controls.IBitmapIcon).set_UriSource(value); }
+
+	override HRESULT get_ShowAsMonochrome(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IBitmapIcon2).get_ShowAsMonochrome(return_value); }
+	override HRESULT set_ShowAsMonochrome(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IBitmapIcon2).set_ShowAsMonochrome(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface Border : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IBorder
 {
@@ -7838,6 +7962,23 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IButtonWithFlyout).set_Flyout(value));
 	}
+}
+@makable!(Button, Button, Windows.UI.Xaml.Controls.IButtonFactory)
+class ButtonT(Base) : AgileObject!Base, Button
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_Flyout(Windows.UI.Xaml.Controls.Primitives.FlyoutBase* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IButtonWithFlyout).get_Flyout(return_value); }
+	override HRESULT set_Flyout(Windows.UI.Xaml.Controls.Primitives.FlyoutBase value) { return m_inner.as!(Windows.UI.Xaml.Controls.IButtonWithFlyout).set_Flyout(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface CalendarDatePicker : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ICalendarDatePicker, Windows.UI.Xaml.Controls.ICalendarDatePicker2
@@ -8055,6 +8196,65 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker2).set_LightDismissOverlayMode(value));
 	}
+}
+@makable!(CalendarDatePicker, CalendarDatePicker, Windows.UI.Xaml.Controls.ICalendarDatePickerFactory)
+class CalendarDatePickerT(Base) : AgileObject!Base, CalendarDatePicker
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Date(Windows.Foundation.IReference!(Windows.Foundation.DateTime)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_Date(return_value); }
+	override HRESULT set_Date(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_Date(value); }
+	override HRESULT get_IsCalendarOpen(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_IsCalendarOpen(return_value); }
+	override HRESULT set_IsCalendarOpen(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_IsCalendarOpen(value); }
+	override HRESULT get_DateFormat(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_DateFormat(return_value); }
+	override HRESULT set_DateFormat(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_DateFormat(value); }
+	override HRESULT get_PlaceholderText(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_PlaceholderText(return_value); }
+	override HRESULT set_PlaceholderText(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_PlaceholderText(value); }
+	override HRESULT get_Header(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_Header(return_value); }
+	override HRESULT set_Header(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_Header(value); }
+	override HRESULT get_HeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_HeaderTemplate(return_value); }
+	override HRESULT set_HeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_HeaderTemplate(value); }
+	override HRESULT get_CalendarViewStyle(Windows.UI.Xaml.Style* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_CalendarViewStyle(return_value); }
+	override HRESULT set_CalendarViewStyle(Windows.UI.Xaml.Style value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_CalendarViewStyle(value); }
+	override HRESULT get_MinDate(Windows.Foundation.DateTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_MinDate(return_value); }
+	override HRESULT set_MinDate(Windows.Foundation.DateTime value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_MinDate(value); }
+	override HRESULT get_MaxDate(Windows.Foundation.DateTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_MaxDate(return_value); }
+	override HRESULT set_MaxDate(Windows.Foundation.DateTime value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_MaxDate(value); }
+	override HRESULT get_IsTodayHighlighted(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_IsTodayHighlighted(return_value); }
+	override HRESULT set_IsTodayHighlighted(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_IsTodayHighlighted(value); }
+	override HRESULT get_DisplayMode(Windows.UI.Xaml.Controls.CalendarViewDisplayMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_DisplayMode(return_value); }
+	override HRESULT set_DisplayMode(Windows.UI.Xaml.Controls.CalendarViewDisplayMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_DisplayMode(value); }
+	override HRESULT get_FirstDayOfWeek(Windows.Globalization.DayOfWeek* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_FirstDayOfWeek(return_value); }
+	override HRESULT set_FirstDayOfWeek(Windows.Globalization.DayOfWeek value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_FirstDayOfWeek(value); }
+	override HRESULT get_DayOfWeekFormat(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_DayOfWeekFormat(return_value); }
+	override HRESULT set_DayOfWeekFormat(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_DayOfWeekFormat(value); }
+	override HRESULT get_CalendarIdentifier(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_CalendarIdentifier(return_value); }
+	override HRESULT set_CalendarIdentifier(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_CalendarIdentifier(value); }
+	override HRESULT get_IsOutOfScopeEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_IsOutOfScopeEnabled(return_value); }
+	override HRESULT set_IsOutOfScopeEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_IsOutOfScopeEnabled(value); }
+	override HRESULT get_IsGroupLabelVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).get_IsGroupLabelVisible(return_value); }
+	override HRESULT set_IsGroupLabelVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).set_IsGroupLabelVisible(value); }
+	override HRESULT add_CalendarViewDayItemChanging(Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).add_CalendarViewDayItemChanging(value, return_token); }
+	override HRESULT remove_CalendarViewDayItemChanging(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).remove_CalendarViewDayItemChanging(token); }
+	override HRESULT add_DateChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarDatePicker, Windows.UI.Xaml.Controls.CalendarDatePickerDateChangedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).add_DateChanged(value, return_token); }
+	override HRESULT remove_DateChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).remove_DateChanged(token); }
+	override HRESULT add_Opened(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).add_Opened(value, return_token); }
+	override HRESULT remove_Opened(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).remove_Opened(token); }
+	override HRESULT add_Closed(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).add_Closed(value, return_token); }
+	override HRESULT remove_Closed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).remove_Closed(token); }
+	override HRESULT abi_SetDisplayDate(Windows.Foundation.DateTime date) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).abi_SetDisplayDate(date); }
+	override HRESULT abi_SetYearDecadeDisplayDimensions(INT32 columns, INT32 rows) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker).abi_SetYearDecadeDisplayDimensions(columns, rows); }
+
+	override HRESULT get_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker2).get_LightDismissOverlayMode(return_value); }
+	override HRESULT set_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarDatePicker2).set_LightDismissOverlayMode(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface CalendarDatePickerDateChangedEventArgs : Windows.UI.Xaml.Controls.ICalendarDatePickerDateChangedEventArgs
@@ -8608,6 +8808,126 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarView).abi_SetYearDecadeDisplayDimensions(columns, rows));
 	}
 }
+@makable!(CalendarView, CalendarView, Windows.UI.Xaml.Controls.ICalendarViewFactory)
+class CalendarViewT(Base) : AgileObject!Base, CalendarView
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_CalendarIdentifier(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_CalendarIdentifier(return_value); }
+	override HRESULT set_CalendarIdentifier(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarIdentifier(value); }
+	override HRESULT get_DayOfWeekFormat(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_DayOfWeekFormat(return_value); }
+	override HRESULT set_DayOfWeekFormat(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_DayOfWeekFormat(value); }
+	override HRESULT get_IsGroupLabelVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_IsGroupLabelVisible(return_value); }
+	override HRESULT set_IsGroupLabelVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_IsGroupLabelVisible(value); }
+	override HRESULT get_DisplayMode(Windows.UI.Xaml.Controls.CalendarViewDisplayMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_DisplayMode(return_value); }
+	override HRESULT set_DisplayMode(Windows.UI.Xaml.Controls.CalendarViewDisplayMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_DisplayMode(value); }
+	override HRESULT get_FirstDayOfWeek(Windows.Globalization.DayOfWeek* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstDayOfWeek(return_value); }
+	override HRESULT set_FirstDayOfWeek(Windows.Globalization.DayOfWeek value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstDayOfWeek(value); }
+	override HRESULT get_IsOutOfScopeEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_IsOutOfScopeEnabled(return_value); }
+	override HRESULT set_IsOutOfScopeEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_IsOutOfScopeEnabled(value); }
+	override HRESULT get_IsTodayHighlighted(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_IsTodayHighlighted(return_value); }
+	override HRESULT set_IsTodayHighlighted(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_IsTodayHighlighted(value); }
+	override HRESULT get_MaxDate(Windows.Foundation.DateTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_MaxDate(return_value); }
+	override HRESULT set_MaxDate(Windows.Foundation.DateTime value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_MaxDate(value); }
+	override HRESULT get_MinDate(Windows.Foundation.DateTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_MinDate(return_value); }
+	override HRESULT set_MinDate(Windows.Foundation.DateTime value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_MinDate(value); }
+	override HRESULT get_NumberOfWeeksInView(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_NumberOfWeeksInView(return_value); }
+	override HRESULT set_NumberOfWeeksInView(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_NumberOfWeeksInView(value); }
+	override HRESULT get_SelectedDates(Windows.Foundation.Collections.IVector!(Windows.Foundation.DateTime)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_SelectedDates(return_value); }
+	override HRESULT get_SelectionMode(Windows.UI.Xaml.Controls.CalendarViewSelectionMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_SelectionMode(return_value); }
+	override HRESULT set_SelectionMode(Windows.UI.Xaml.Controls.CalendarViewSelectionMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_SelectionMode(value); }
+	override HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.CalendarViewTemplateSettings* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_TemplateSettings(return_value); }
+	override HRESULT get_FocusBorderBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FocusBorderBrush(return_value); }
+	override HRESULT set_FocusBorderBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FocusBorderBrush(value); }
+	override HRESULT get_SelectedHoverBorderBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_SelectedHoverBorderBrush(return_value); }
+	override HRESULT set_SelectedHoverBorderBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_SelectedHoverBorderBrush(value); }
+	override HRESULT get_SelectedPressedBorderBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_SelectedPressedBorderBrush(return_value); }
+	override HRESULT set_SelectedPressedBorderBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_SelectedPressedBorderBrush(value); }
+	override HRESULT get_SelectedBorderBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_SelectedBorderBrush(return_value); }
+	override HRESULT set_SelectedBorderBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_SelectedBorderBrush(value); }
+	override HRESULT get_HoverBorderBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_HoverBorderBrush(return_value); }
+	override HRESULT set_HoverBorderBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_HoverBorderBrush(value); }
+	override HRESULT get_PressedBorderBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_PressedBorderBrush(return_value); }
+	override HRESULT set_PressedBorderBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_PressedBorderBrush(value); }
+	override HRESULT get_CalendarItemBorderBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_CalendarItemBorderBrush(return_value); }
+	override HRESULT set_CalendarItemBorderBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarItemBorderBrush(value); }
+	override HRESULT get_OutOfScopeBackground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_OutOfScopeBackground(return_value); }
+	override HRESULT set_OutOfScopeBackground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_OutOfScopeBackground(value); }
+	override HRESULT get_CalendarItemBackground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_CalendarItemBackground(return_value); }
+	override HRESULT set_CalendarItemBackground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarItemBackground(value); }
+	override HRESULT get_PressedForeground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_PressedForeground(return_value); }
+	override HRESULT set_PressedForeground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_PressedForeground(value); }
+	override HRESULT get_TodayForeground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_TodayForeground(return_value); }
+	override HRESULT set_TodayForeground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_TodayForeground(value); }
+	override HRESULT get_BlackoutForeground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_BlackoutForeground(return_value); }
+	override HRESULT set_BlackoutForeground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_BlackoutForeground(value); }
+	override HRESULT get_SelectedForeground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_SelectedForeground(return_value); }
+	override HRESULT set_SelectedForeground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_SelectedForeground(value); }
+	override HRESULT get_OutOfScopeForeground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_OutOfScopeForeground(return_value); }
+	override HRESULT set_OutOfScopeForeground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_OutOfScopeForeground(value); }
+	override HRESULT get_CalendarItemForeground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_CalendarItemForeground(return_value); }
+	override HRESULT set_CalendarItemForeground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarItemForeground(value); }
+	override HRESULT get_DayItemFontFamily(Windows.UI.Xaml.Media.FontFamily* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_DayItemFontFamily(return_value); }
+	override HRESULT set_DayItemFontFamily(Windows.UI.Xaml.Media.FontFamily value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_DayItemFontFamily(value); }
+	override HRESULT get_DayItemFontSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_DayItemFontSize(return_value); }
+	override HRESULT set_DayItemFontSize(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_DayItemFontSize(value); }
+	override HRESULT get_DayItemFontStyle(Windows.UI.Text.FontStyle* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_DayItemFontStyle(return_value); }
+	override HRESULT set_DayItemFontStyle(Windows.UI.Text.FontStyle value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_DayItemFontStyle(value); }
+	override HRESULT get_DayItemFontWeight(Windows.UI.Text.FontWeight* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_DayItemFontWeight(return_value); }
+	override HRESULT set_DayItemFontWeight(Windows.UI.Text.FontWeight value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_DayItemFontWeight(value); }
+	override HRESULT get_TodayFontWeight(Windows.UI.Text.FontWeight* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_TodayFontWeight(return_value); }
+	override HRESULT set_TodayFontWeight(Windows.UI.Text.FontWeight value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_TodayFontWeight(value); }
+	override HRESULT get_FirstOfMonthLabelFontFamily(Windows.UI.Xaml.Media.FontFamily* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfMonthLabelFontFamily(return_value); }
+	override HRESULT set_FirstOfMonthLabelFontFamily(Windows.UI.Xaml.Media.FontFamily value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfMonthLabelFontFamily(value); }
+	override HRESULT get_FirstOfMonthLabelFontSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfMonthLabelFontSize(return_value); }
+	override HRESULT set_FirstOfMonthLabelFontSize(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfMonthLabelFontSize(value); }
+	override HRESULT get_FirstOfMonthLabelFontStyle(Windows.UI.Text.FontStyle* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfMonthLabelFontStyle(return_value); }
+	override HRESULT set_FirstOfMonthLabelFontStyle(Windows.UI.Text.FontStyle value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfMonthLabelFontStyle(value); }
+	override HRESULT get_FirstOfMonthLabelFontWeight(Windows.UI.Text.FontWeight* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfMonthLabelFontWeight(return_value); }
+	override HRESULT set_FirstOfMonthLabelFontWeight(Windows.UI.Text.FontWeight value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfMonthLabelFontWeight(value); }
+	override HRESULT get_MonthYearItemFontFamily(Windows.UI.Xaml.Media.FontFamily* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_MonthYearItemFontFamily(return_value); }
+	override HRESULT set_MonthYearItemFontFamily(Windows.UI.Xaml.Media.FontFamily value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_MonthYearItemFontFamily(value); }
+	override HRESULT get_MonthYearItemFontSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_MonthYearItemFontSize(return_value); }
+	override HRESULT set_MonthYearItemFontSize(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_MonthYearItemFontSize(value); }
+	override HRESULT get_MonthYearItemFontStyle(Windows.UI.Text.FontStyle* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_MonthYearItemFontStyle(return_value); }
+	override HRESULT set_MonthYearItemFontStyle(Windows.UI.Text.FontStyle value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_MonthYearItemFontStyle(value); }
+	override HRESULT get_MonthYearItemFontWeight(Windows.UI.Text.FontWeight* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_MonthYearItemFontWeight(return_value); }
+	override HRESULT set_MonthYearItemFontWeight(Windows.UI.Text.FontWeight value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_MonthYearItemFontWeight(value); }
+	override HRESULT get_FirstOfYearDecadeLabelFontFamily(Windows.UI.Xaml.Media.FontFamily* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfYearDecadeLabelFontFamily(return_value); }
+	override HRESULT set_FirstOfYearDecadeLabelFontFamily(Windows.UI.Xaml.Media.FontFamily value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfYearDecadeLabelFontFamily(value); }
+	override HRESULT get_FirstOfYearDecadeLabelFontSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfYearDecadeLabelFontSize(return_value); }
+	override HRESULT set_FirstOfYearDecadeLabelFontSize(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfYearDecadeLabelFontSize(value); }
+	override HRESULT get_FirstOfYearDecadeLabelFontStyle(Windows.UI.Text.FontStyle* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfYearDecadeLabelFontStyle(return_value); }
+	override HRESULT set_FirstOfYearDecadeLabelFontStyle(Windows.UI.Text.FontStyle value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfYearDecadeLabelFontStyle(value); }
+	override HRESULT get_FirstOfYearDecadeLabelFontWeight(Windows.UI.Text.FontWeight* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_FirstOfYearDecadeLabelFontWeight(return_value); }
+	override HRESULT set_FirstOfYearDecadeLabelFontWeight(Windows.UI.Text.FontWeight value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_FirstOfYearDecadeLabelFontWeight(value); }
+	override HRESULT get_HorizontalDayItemAlignment(Windows.UI.Xaml.HorizontalAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_HorizontalDayItemAlignment(return_value); }
+	override HRESULT set_HorizontalDayItemAlignment(Windows.UI.Xaml.HorizontalAlignment value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_HorizontalDayItemAlignment(value); }
+	override HRESULT get_VerticalDayItemAlignment(Windows.UI.Xaml.VerticalAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_VerticalDayItemAlignment(return_value); }
+	override HRESULT set_VerticalDayItemAlignment(Windows.UI.Xaml.VerticalAlignment value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_VerticalDayItemAlignment(value); }
+	override HRESULT get_HorizontalFirstOfMonthLabelAlignment(Windows.UI.Xaml.HorizontalAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_HorizontalFirstOfMonthLabelAlignment(return_value); }
+	override HRESULT set_HorizontalFirstOfMonthLabelAlignment(Windows.UI.Xaml.HorizontalAlignment value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_HorizontalFirstOfMonthLabelAlignment(value); }
+	override HRESULT get_VerticalFirstOfMonthLabelAlignment(Windows.UI.Xaml.VerticalAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_VerticalFirstOfMonthLabelAlignment(return_value); }
+	override HRESULT set_VerticalFirstOfMonthLabelAlignment(Windows.UI.Xaml.VerticalAlignment value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_VerticalFirstOfMonthLabelAlignment(value); }
+	override HRESULT get_CalendarItemBorderThickness(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_CalendarItemBorderThickness(return_value); }
+	override HRESULT set_CalendarItemBorderThickness(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarItemBorderThickness(value); }
+	override HRESULT get_CalendarViewDayItemStyle(Windows.UI.Xaml.Style* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).get_CalendarViewDayItemStyle(return_value); }
+	override HRESULT set_CalendarViewDayItemStyle(Windows.UI.Xaml.Style value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).set_CalendarViewDayItemStyle(value); }
+	override HRESULT add_CalendarViewDayItemChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).add_CalendarViewDayItemChanging(value, return_token); }
+	override HRESULT remove_CalendarViewDayItemChanging(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).remove_CalendarViewDayItemChanging(token); }
+	override HRESULT add_SelectedDatesChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CalendarView, Windows.UI.Xaml.Controls.CalendarViewSelectedDatesChangedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).add_SelectedDatesChanged(value, return_token); }
+	override HRESULT remove_SelectedDatesChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).remove_SelectedDatesChanged(token); }
+	override HRESULT abi_SetDisplayDate(Windows.Foundation.DateTime date) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).abi_SetDisplayDate(date); }
+	override HRESULT abi_SetYearDecadeDisplayDimensions(INT32 columns, INT32 rows) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarView).abi_SetYearDecadeDisplayDimensions(columns, rows); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface CalendarViewDayItem : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ICalendarViewDayItem
 {
@@ -8632,6 +8952,24 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItem).abi_SetDensityColors(colors));
 	}
+}
+@makable!(CalendarViewDayItem, CalendarViewDayItem, Windows.UI.Xaml.Controls.ICalendarViewDayItemFactory)
+class CalendarViewDayItemT(Base) : AgileObject!Base, CalendarViewDayItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_IsBlackout(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItem).get_IsBlackout(return_value); }
+	override HRESULT set_IsBlackout(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItem).set_IsBlackout(value); }
+	override HRESULT get_Date(Windows.Foundation.DateTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItem).get_Date(return_value); }
+	override HRESULT abi_SetDensityColors(Windows.Foundation.Collections.IIterable!(Windows.UI.Color) colors) { return m_inner.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItem).abi_SetDensityColors(colors); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface CalendarViewDayItemChangingEventArgs : Windows.UI.Xaml.Controls.ICalendarViewDayItemChangingEventArgs
@@ -8696,6 +9034,20 @@ extern(Windows):
 interface Canvas : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.ICanvas
 {
 }
+@makable!(Canvas, Canvas, Windows.UI.Xaml.Controls.ICanvasFactory)
+class CanvasT(Base) : AgileObject!Base, Canvas
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface CaptureElement : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.ICaptureElement
 {
@@ -8724,6 +9076,20 @@ extern(Windows):
 
 interface CheckBox : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.UI.Xaml.Controls.ICheckBox
 {
+}
+@makable!(CheckBox, CheckBox, Windows.UI.Xaml.Controls.ICheckBoxFactory)
+class CheckBoxT(Base) : AgileObject!Base, CheckBox
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ChoosingGroupHeaderContainerEventArgs : Windows.UI.Xaml.Controls.IChoosingGroupHeaderContainerEventArgs
@@ -8994,14 +9360,6 @@ extern(Windows):
 	{
 		Debug.OK(remove_DropDownOpened(token));
 	}
-	final void OnDropDownClosed(IInspectable e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBoxOverrides).abi_OnDropDownClosed(e));
-	}
-	final void OnDropDownOpened(IInspectable e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBoxOverrides).abi_OnDropDownOpened(e));
-	}
 	final IInspectable Header()
 	{
 		IInspectable _ret;
@@ -9063,9 +9421,70 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IComboBox4).set_SelectionChangedTrigger(value));
 	}
 }
+@makable!(ComboBox, ComboBox, Windows.UI.Xaml.Controls.IComboBoxFactory)
+class ComboBoxT(Base) : AgileObject!Base, ComboBox
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_IsDropDownOpen(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox).get_IsDropDownOpen(return_value); }
+	override HRESULT set_IsDropDownOpen(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox).set_IsDropDownOpen(value); }
+	override HRESULT get_IsEditable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox).get_IsEditable(return_value); }
+	override HRESULT get_IsSelectionBoxHighlighted(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox).get_IsSelectionBoxHighlighted(return_value); }
+	override HRESULT get_MaxDropDownHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox).get_MaxDropDownHeight(return_value); }
+	override HRESULT set_MaxDropDownHeight(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox).set_MaxDropDownHeight(value); }
+	override HRESULT get_SelectionBoxItem(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox).get_SelectionBoxItem(return_value); }
+	override HRESULT get_SelectionBoxItemTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox).get_SelectionBoxItemTemplate(return_value); }
+	override HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.ComboBoxTemplateSettings* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox).get_TemplateSettings(return_value); }
+	override HRESULT add_DropDownClosed(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox).add_DropDownClosed(value, return_token); }
+	override HRESULT remove_DropDownClosed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox).remove_DropDownClosed(token); }
+	override HRESULT add_DropDownOpened(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox).add_DropDownOpened(value, return_token); }
+	override HRESULT remove_DropDownOpened(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox).remove_DropDownOpened(token); }
+
+	override HRESULT abi_OnDropDownClosed(IInspectable e) { this.OnDropDownClosed(e); return S_OK; }
+	void OnDropDownClosed(IInspectable e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IComboBoxOverrides).abi_OnDropDownClosed(e)); }
+	override HRESULT abi_OnDropDownOpened(IInspectable e) { this.OnDropDownOpened(e); return S_OK; }
+	void OnDropDownOpened(IInspectable e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IComboBoxOverrides).abi_OnDropDownOpened(e)); }
+
+	override HRESULT get_Header(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox2).get_Header(return_value); }
+	override HRESULT set_Header(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox2).set_Header(value); }
+	override HRESULT get_HeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox2).get_HeaderTemplate(return_value); }
+	override HRESULT set_HeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox2).set_HeaderTemplate(value); }
+	override HRESULT get_PlaceholderText(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox2).get_PlaceholderText(return_value); }
+	override HRESULT set_PlaceholderText(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox2).set_PlaceholderText(value); }
+
+	override HRESULT get_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox3).get_LightDismissOverlayMode(return_value); }
+	override HRESULT set_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox3).set_LightDismissOverlayMode(value); }
+	override HRESULT get_IsTextSearchEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox3).get_IsTextSearchEnabled(return_value); }
+	override HRESULT set_IsTextSearchEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox3).set_IsTextSearchEnabled(value); }
+
+	override HRESULT get_SelectionChangedTrigger(Windows.UI.Xaml.Controls.ComboBoxSelectionChangedTrigger* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox4).get_SelectionChangedTrigger(return_value); }
+	override HRESULT set_SelectionChangedTrigger(Windows.UI.Xaml.Controls.ComboBoxSelectionChangedTrigger value) { return m_inner.as!(Windows.UI.Xaml.Controls.IComboBox4).set_SelectionChangedTrigger(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ComboBoxItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IComboBoxItem
 {
+}
+@makable!(ComboBoxItem, ComboBoxItem, Windows.UI.Xaml.Controls.IComboBoxItemFactory)
+class ComboBoxItemT(Base) : AgileObject!Base, ComboBoxItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface CommandBar : Windows.UI.Xaml.Controls.AppBar, Windows.UI.Xaml.Controls.ICommandBar, Windows.UI.Xaml.Controls.ICommandBar2, Windows.UI.Xaml.Controls.ICommandBar3
@@ -9140,9 +9559,52 @@ extern(Windows):
 		Debug.OK(remove_DynamicOverflowItemsChanging(token));
 	}
 }
+@makable!(CommandBar, CommandBar, Windows.UI.Xaml.Controls.ICommandBarFactory)
+class CommandBarT(Base) : AgileObject!Base, CommandBar
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_PrimaryCommands(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.Controls.ICommandBarElement)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBar).get_PrimaryCommands(return_value); }
+	override HRESULT get_SecondaryCommands(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.Controls.ICommandBarElement)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBar).get_SecondaryCommands(return_value); }
+
+	override HRESULT get_CommandBarOverflowPresenterStyle(Windows.UI.Xaml.Style* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBar2).get_CommandBarOverflowPresenterStyle(return_value); }
+	override HRESULT set_CommandBarOverflowPresenterStyle(Windows.UI.Xaml.Style value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBar2).set_CommandBarOverflowPresenterStyle(value); }
+	override HRESULT get_CommandBarTemplateSettings(Windows.UI.Xaml.Controls.Primitives.CommandBarTemplateSettings* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBar2).get_CommandBarTemplateSettings(return_value); }
+
+	override HRESULT get_DefaultLabelPosition(Windows.UI.Xaml.Controls.CommandBarDefaultLabelPosition* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBar3).get_DefaultLabelPosition(return_value); }
+	override HRESULT set_DefaultLabelPosition(Windows.UI.Xaml.Controls.CommandBarDefaultLabelPosition value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBar3).set_DefaultLabelPosition(value); }
+	override HRESULT get_OverflowButtonVisibility(Windows.UI.Xaml.Controls.CommandBarOverflowButtonVisibility* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBar3).get_OverflowButtonVisibility(return_value); }
+	override HRESULT set_OverflowButtonVisibility(Windows.UI.Xaml.Controls.CommandBarOverflowButtonVisibility value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBar3).set_OverflowButtonVisibility(value); }
+	override HRESULT get_IsDynamicOverflowEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBar3).get_IsDynamicOverflowEnabled(return_value); }
+	override HRESULT set_IsDynamicOverflowEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBar3).set_IsDynamicOverflowEnabled(value); }
+	override HRESULT add_DynamicOverflowItemsChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.CommandBar, Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBar3).add_DynamicOverflowItemsChanging(value, return_token); }
+	override HRESULT remove_DynamicOverflowItemsChanging(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ICommandBar3).remove_DynamicOverflowItemsChanging(token); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface CommandBarOverflowPresenter : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.ICommandBarOverflowPresenter
 {
+}
+@makable!(CommandBarOverflowPresenter, CommandBarOverflowPresenter, Windows.UI.Xaml.Controls.ICommandBarOverflowPresenterFactory)
+class CommandBarOverflowPresenterT(Base) : AgileObject!Base, CommandBarOverflowPresenter
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ContainerContentChangingEventArgs : Windows.UI.Xaml.Controls.IContainerContentChangingEventArgs
@@ -9241,24 +9703,43 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControl).set_ContentTransitions(value));
 	}
-	final void OnContentChanged(IInspectable oldContent, IInspectable newContent)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControlOverrides).abi_OnContentChanged(oldContent, newContent));
-	}
-	final void OnContentTemplateChanged(Windows.UI.Xaml.DataTemplate oldContentTemplate, Windows.UI.Xaml.DataTemplate newContentTemplate)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControlOverrides).abi_OnContentTemplateChanged(oldContentTemplate, newContentTemplate));
-	}
-	final void OnContentTemplateSelectorChanged(Windows.UI.Xaml.Controls.DataTemplateSelector oldContentTemplateSelector, Windows.UI.Xaml.Controls.DataTemplateSelector newContentTemplateSelector)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControlOverrides).abi_OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector));
-	}
 	final Windows.UI.Xaml.UIElement ContentTemplateRoot()
 	{
 		Windows.UI.Xaml.UIElement _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentControl2).get_ContentTemplateRoot(&_ret));
 		return _ret;
 	}
+}
+@makable!(ContentControl, ContentControl, Windows.UI.Xaml.Controls.IContentControlFactory)
+class ContentControlT(Base) : AgileObject!Base, ContentControl
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Content(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentControl).get_Content(return_value); }
+	override HRESULT set_Content(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentControl).set_Content(value); }
+	override HRESULT get_ContentTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentControl).get_ContentTemplate(return_value); }
+	override HRESULT set_ContentTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentControl).set_ContentTemplate(value); }
+	override HRESULT get_ContentTemplateSelector(Windows.UI.Xaml.Controls.DataTemplateSelector* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentControl).get_ContentTemplateSelector(return_value); }
+	override HRESULT set_ContentTemplateSelector(Windows.UI.Xaml.Controls.DataTemplateSelector value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentControl).set_ContentTemplateSelector(value); }
+	override HRESULT get_ContentTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentControl).get_ContentTransitions(return_value); }
+	override HRESULT set_ContentTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentControl).set_ContentTransitions(value); }
+
+	override HRESULT abi_OnContentChanged(IInspectable oldContent, IInspectable newContent) { this.OnContentChanged(oldContent, newContent); return S_OK; }
+	void OnContentChanged(IInspectable oldContent, IInspectable newContent) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IContentControlOverrides).abi_OnContentChanged(oldContent, newContent)); }
+	override HRESULT abi_OnContentTemplateChanged(Windows.UI.Xaml.DataTemplate oldContentTemplate, Windows.UI.Xaml.DataTemplate newContentTemplate) { this.OnContentTemplateChanged(oldContentTemplate, newContentTemplate); return S_OK; }
+	void OnContentTemplateChanged(Windows.UI.Xaml.DataTemplate oldContentTemplate, Windows.UI.Xaml.DataTemplate newContentTemplate) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IContentControlOverrides).abi_OnContentTemplateChanged(oldContentTemplate, newContentTemplate)); }
+	override HRESULT abi_OnContentTemplateSelectorChanged(Windows.UI.Xaml.Controls.DataTemplateSelector oldContentTemplateSelector, Windows.UI.Xaml.Controls.DataTemplateSelector newContentTemplateSelector) { this.OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector); return S_OK; }
+	void OnContentTemplateSelectorChanged(Windows.UI.Xaml.Controls.DataTemplateSelector oldContentTemplateSelector, Windows.UI.Xaml.Controls.DataTemplateSelector newContentTemplateSelector) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IContentControlOverrides).abi_OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector)); }
+
+	override HRESULT get_ContentTemplateRoot(Windows.UI.Xaml.UIElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentControl2).get_ContentTemplateRoot(return_value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ContentDialog : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IContentDialog, Windows.UI.Xaml.Controls.IContentDialog2
@@ -9515,6 +9996,71 @@ extern(Windows):
 		Debug.OK(remove_CloseButtonClick(token));
 	}
 }
+@makable!(ContentDialog, ContentDialog, Windows.UI.Xaml.Controls.IContentDialogFactory)
+class ContentDialogT(Base) : AgileObject!Base, ContentDialog
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Title(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).get_Title(return_value); }
+	override HRESULT set_Title(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).set_Title(value); }
+	override HRESULT get_TitleTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).get_TitleTemplate(return_value); }
+	override HRESULT set_TitleTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).set_TitleTemplate(value); }
+	override HRESULT get_FullSizeDesired(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).get_FullSizeDesired(return_value); }
+	override HRESULT set_FullSizeDesired(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).set_FullSizeDesired(value); }
+	override HRESULT get_PrimaryButtonText(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).get_PrimaryButtonText(return_value); }
+	override HRESULT set_PrimaryButtonText(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).set_PrimaryButtonText(value); }
+	override HRESULT get_SecondaryButtonText(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).get_SecondaryButtonText(return_value); }
+	override HRESULT set_SecondaryButtonText(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).set_SecondaryButtonText(value); }
+	override HRESULT get_PrimaryButtonCommand(Windows.UI.Xaml.Input.ICommand* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).get_PrimaryButtonCommand(return_value); }
+	override HRESULT set_PrimaryButtonCommand(Windows.UI.Xaml.Input.ICommand value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).set_PrimaryButtonCommand(value); }
+	override HRESULT get_SecondaryButtonCommand(Windows.UI.Xaml.Input.ICommand* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).get_SecondaryButtonCommand(return_value); }
+	override HRESULT set_SecondaryButtonCommand(Windows.UI.Xaml.Input.ICommand value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).set_SecondaryButtonCommand(value); }
+	override HRESULT get_PrimaryButtonCommandParameter(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).get_PrimaryButtonCommandParameter(return_value); }
+	override HRESULT set_PrimaryButtonCommandParameter(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).set_PrimaryButtonCommandParameter(value); }
+	override HRESULT get_SecondaryButtonCommandParameter(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).get_SecondaryButtonCommandParameter(return_value); }
+	override HRESULT set_SecondaryButtonCommandParameter(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).set_SecondaryButtonCommandParameter(value); }
+	override HRESULT get_IsPrimaryButtonEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).get_IsPrimaryButtonEnabled(return_value); }
+	override HRESULT set_IsPrimaryButtonEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).set_IsPrimaryButtonEnabled(value); }
+	override HRESULT get_IsSecondaryButtonEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).get_IsSecondaryButtonEnabled(return_value); }
+	override HRESULT set_IsSecondaryButtonEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).set_IsSecondaryButtonEnabled(value); }
+	override HRESULT add_Closing(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).add_Closing(value, return_token); }
+	override HRESULT remove_Closing(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).remove_Closing(token); }
+	override HRESULT add_Closed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogClosedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).add_Closed(value, return_token); }
+	override HRESULT remove_Closed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).remove_Closed(token); }
+	override HRESULT add_Opened(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogOpenedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).add_Opened(value, return_token); }
+	override HRESULT remove_Opened(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).remove_Opened(token); }
+	override HRESULT add_PrimaryButtonClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).add_PrimaryButtonClick(value, return_token); }
+	override HRESULT remove_PrimaryButtonClick(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).remove_PrimaryButtonClick(token); }
+	override HRESULT add_SecondaryButtonClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).add_SecondaryButtonClick(value, return_token); }
+	override HRESULT remove_SecondaryButtonClick(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).remove_SecondaryButtonClick(token); }
+	override HRESULT abi_Hide() { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).abi_Hide(); }
+	override HRESULT abi_ShowAsync(Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Controls.ContentDialogResult)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog).abi_ShowAsync(return_returnValue); }
+
+	override HRESULT get_CloseButtonText(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_CloseButtonText(return_value); }
+	override HRESULT set_CloseButtonText(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_CloseButtonText(value); }
+	override HRESULT get_CloseButtonCommand(Windows.UI.Xaml.Input.ICommand* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_CloseButtonCommand(return_value); }
+	override HRESULT set_CloseButtonCommand(Windows.UI.Xaml.Input.ICommand value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_CloseButtonCommand(value); }
+	override HRESULT get_CloseButtonCommandParameter(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_CloseButtonCommandParameter(return_value); }
+	override HRESULT set_CloseButtonCommandParameter(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_CloseButtonCommandParameter(value); }
+	override HRESULT get_PrimaryButtonStyle(Windows.UI.Xaml.Style* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_PrimaryButtonStyle(return_value); }
+	override HRESULT set_PrimaryButtonStyle(Windows.UI.Xaml.Style value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_PrimaryButtonStyle(value); }
+	override HRESULT get_SecondaryButtonStyle(Windows.UI.Xaml.Style* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_SecondaryButtonStyle(return_value); }
+	override HRESULT set_SecondaryButtonStyle(Windows.UI.Xaml.Style value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_SecondaryButtonStyle(value); }
+	override HRESULT get_CloseButtonStyle(Windows.UI.Xaml.Style* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_CloseButtonStyle(return_value); }
+	override HRESULT set_CloseButtonStyle(Windows.UI.Xaml.Style value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_CloseButtonStyle(value); }
+	override HRESULT get_DefaultButton(Windows.UI.Xaml.Controls.ContentDialogButton* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).get_DefaultButton(return_value); }
+	override HRESULT set_DefaultButton(Windows.UI.Xaml.Controls.ContentDialogButton value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).set_DefaultButton(value); }
+	override HRESULT add_CloseButtonClick(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ContentDialog, Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).add_CloseButtonClick(value, return_token); }
+	override HRESULT remove_CloseButtonClick(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentDialog2).remove_CloseButtonClick(token); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ContentDialogButtonClickDeferral : Windows.UI.Xaml.Controls.IContentDialogButtonClickDeferral
 {
@@ -9710,14 +10256,6 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_Foreground(value));
 	}
-	final void OnContentTemplateChanged(Windows.UI.Xaml.DataTemplate oldContentTemplate, Windows.UI.Xaml.DataTemplate newContentTemplate)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenterOverrides).abi_OnContentTemplateChanged(oldContentTemplate, newContentTemplate));
-	}
-	final void OnContentTemplateSelectorChanged(Windows.UI.Xaml.Controls.DataTemplateSelector oldContentTemplateSelector, Windows.UI.Xaml.Controls.DataTemplateSelector newContentTemplateSelector)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenterOverrides).abi_OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector));
-	}
 	final Windows.UI.Xaml.OpticalMarginAlignment OpticalMarginAlignment()
 	{
 		Windows.UI.Xaml.OpticalMarginAlignment _ret;
@@ -9858,6 +10396,78 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_VerticalContentAlignment(value));
 	}
+}
+@makable!(ContentPresenter, ContentPresenter, Windows.UI.Xaml.Controls.IContentPresenterFactory)
+class ContentPresenterT(Base) : AgileObject!Base, ContentPresenter
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Content(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_Content(return_value); }
+	override HRESULT set_Content(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_Content(value); }
+	override HRESULT get_ContentTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_ContentTemplate(return_value); }
+	override HRESULT set_ContentTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_ContentTemplate(value); }
+	override HRESULT get_ContentTemplateSelector(Windows.UI.Xaml.Controls.DataTemplateSelector* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_ContentTemplateSelector(return_value); }
+	override HRESULT set_ContentTemplateSelector(Windows.UI.Xaml.Controls.DataTemplateSelector value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_ContentTemplateSelector(value); }
+	override HRESULT get_ContentTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_ContentTransitions(return_value); }
+	override HRESULT set_ContentTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_ContentTransitions(value); }
+	override HRESULT get_FontSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_FontSize(return_value); }
+	override HRESULT set_FontSize(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_FontSize(value); }
+	override HRESULT get_FontFamily(Windows.UI.Xaml.Media.FontFamily* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_FontFamily(return_value); }
+	override HRESULT set_FontFamily(Windows.UI.Xaml.Media.FontFamily value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_FontFamily(value); }
+	override HRESULT get_FontWeight(Windows.UI.Text.FontWeight* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_FontWeight(return_value); }
+	override HRESULT set_FontWeight(Windows.UI.Text.FontWeight value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_FontWeight(value); }
+	override HRESULT get_FontStyle(Windows.UI.Text.FontStyle* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_FontStyle(return_value); }
+	override HRESULT set_FontStyle(Windows.UI.Text.FontStyle value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_FontStyle(value); }
+	override HRESULT get_FontStretch(Windows.UI.Text.FontStretch* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_FontStretch(return_value); }
+	override HRESULT set_FontStretch(Windows.UI.Text.FontStretch value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_FontStretch(value); }
+	override HRESULT get_CharacterSpacing(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_CharacterSpacing(return_value); }
+	override HRESULT set_CharacterSpacing(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_CharacterSpacing(value); }
+	override HRESULT get_Foreground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).get_Foreground(return_value); }
+	override HRESULT set_Foreground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter).set_Foreground(value); }
+
+	override HRESULT abi_OnContentTemplateChanged(Windows.UI.Xaml.DataTemplate oldContentTemplate, Windows.UI.Xaml.DataTemplate newContentTemplate) { this.OnContentTemplateChanged(oldContentTemplate, newContentTemplate); return S_OK; }
+	void OnContentTemplateChanged(Windows.UI.Xaml.DataTemplate oldContentTemplate, Windows.UI.Xaml.DataTemplate newContentTemplate) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenterOverrides).abi_OnContentTemplateChanged(oldContentTemplate, newContentTemplate)); }
+	override HRESULT abi_OnContentTemplateSelectorChanged(Windows.UI.Xaml.Controls.DataTemplateSelector oldContentTemplateSelector, Windows.UI.Xaml.Controls.DataTemplateSelector newContentTemplateSelector) { this.OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector); return S_OK; }
+	void OnContentTemplateSelectorChanged(Windows.UI.Xaml.Controls.DataTemplateSelector oldContentTemplateSelector, Windows.UI.Xaml.Controls.DataTemplateSelector newContentTemplateSelector) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenterOverrides).abi_OnContentTemplateSelectorChanged(oldContentTemplateSelector, newContentTemplateSelector)); }
+
+	override HRESULT get_OpticalMarginAlignment(Windows.UI.Xaml.OpticalMarginAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter2).get_OpticalMarginAlignment(return_value); }
+	override HRESULT set_OpticalMarginAlignment(Windows.UI.Xaml.OpticalMarginAlignment value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter2).set_OpticalMarginAlignment(value); }
+	override HRESULT get_TextLineBounds(Windows.UI.Xaml.TextLineBounds* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter2).get_TextLineBounds(return_value); }
+	override HRESULT set_TextLineBounds(Windows.UI.Xaml.TextLineBounds value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter2).set_TextLineBounds(value); }
+
+	override HRESULT get_IsTextScaleFactorEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter3).get_IsTextScaleFactorEnabled(return_value); }
+	override HRESULT set_IsTextScaleFactorEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter3).set_IsTextScaleFactorEnabled(value); }
+
+	override HRESULT get_TextWrapping(Windows.UI.Xaml.TextWrapping* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_TextWrapping(return_value); }
+	override HRESULT set_TextWrapping(Windows.UI.Xaml.TextWrapping value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_TextWrapping(value); }
+	override HRESULT get_MaxLines(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_MaxLines(return_value); }
+	override HRESULT set_MaxLines(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_MaxLines(value); }
+	override HRESULT get_LineStackingStrategy(Windows.UI.Xaml.LineStackingStrategy* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_LineStackingStrategy(return_value); }
+	override HRESULT set_LineStackingStrategy(Windows.UI.Xaml.LineStackingStrategy value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_LineStackingStrategy(value); }
+	override HRESULT get_LineHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_LineHeight(return_value); }
+	override HRESULT set_LineHeight(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_LineHeight(value); }
+	override HRESULT get_BorderBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_BorderBrush(return_value); }
+	override HRESULT set_BorderBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_BorderBrush(value); }
+	override HRESULT get_BorderThickness(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_BorderThickness(return_value); }
+	override HRESULT set_BorderThickness(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_BorderThickness(value); }
+	override HRESULT get_CornerRadius(Windows.UI.Xaml.CornerRadius* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_CornerRadius(return_value); }
+	override HRESULT set_CornerRadius(Windows.UI.Xaml.CornerRadius value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_CornerRadius(value); }
+	override HRESULT get_Padding(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_Padding(return_value); }
+	override HRESULT set_Padding(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_Padding(value); }
+	override HRESULT get_Background(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_Background(return_value); }
+	override HRESULT set_Background(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_Background(value); }
+	override HRESULT get_HorizontalContentAlignment(Windows.UI.Xaml.HorizontalAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_HorizontalContentAlignment(return_value); }
+	override HRESULT set_HorizontalContentAlignment(Windows.UI.Xaml.HorizontalAlignment value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_HorizontalContentAlignment(value); }
+	override HRESULT get_VerticalContentAlignment(Windows.UI.Xaml.VerticalAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).get_VerticalContentAlignment(return_value); }
+	override HRESULT set_VerticalContentAlignment(Windows.UI.Xaml.VerticalAlignment value) { return m_inner.as!(Windows.UI.Xaml.Controls.IContentPresenter4).set_VerticalContentAlignment(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ContextMenuEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.IContextMenuEventArgs
@@ -10092,106 +10702,6 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl).abi_Focus(value, &_ret));
 		return _ret;
 	}
-	final void OnPointerEntered(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerEntered(e));
-	}
-	final void OnPointerPressed(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerPressed(e));
-	}
-	final void OnPointerMoved(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerMoved(e));
-	}
-	final void OnPointerReleased(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerReleased(e));
-	}
-	final void OnPointerExited(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerExited(e));
-	}
-	final void OnPointerCaptureLost(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerCaptureLost(e));
-	}
-	final void OnPointerCanceled(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerCanceled(e));
-	}
-	final void OnPointerWheelChanged(Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerWheelChanged(e));
-	}
-	final void OnTapped(Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnTapped(e));
-	}
-	final void OnDoubleTapped(Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDoubleTapped(e));
-	}
-	final void OnHolding(Windows.UI.Xaml.Input.HoldingRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnHolding(e));
-	}
-	final void OnRightTapped(Windows.UI.Xaml.Input.RightTappedRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnRightTapped(e));
-	}
-	final void OnManipulationStarting(Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationStarting(e));
-	}
-	final void OnManipulationInertiaStarting(Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationInertiaStarting(e));
-	}
-	final void OnManipulationStarted(Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationStarted(e));
-	}
-	final void OnManipulationDelta(Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationDelta(e));
-	}
-	final void OnManipulationCompleted(Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationCompleted(e));
-	}
-	final void OnKeyUp(Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnKeyUp(e));
-	}
-	final void OnKeyDown(Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnKeyDown(e));
-	}
-	final void OnGotFocus(Windows.UI.Xaml.RoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnGotFocus(e));
-	}
-	final void OnLostFocus(Windows.UI.Xaml.RoutedEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnLostFocus(e));
-	}
-	final void OnDragEnter(Windows.UI.Xaml.DragEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDragEnter(e));
-	}
-	final void OnDragLeave(Windows.UI.Xaml.DragEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDragLeave(e));
-	}
-	final void OnDragOver(Windows.UI.Xaml.DragEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDragOver(e));
-	}
-	final void OnDrop(Windows.UI.Xaml.DragEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDrop(e));
-	}
 	final IInspectable DefaultStyleKey()
 	{
 		IInspectable _ret;
@@ -10343,6 +10853,147 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IControl5).set_DefaultStyleResourceUri(value));
 	}
 }
+@makable!(Control, Control, Windows.UI.Xaml.Controls.IControlFactory)
+class ControlT(Base) : AgileObject!Base, Control
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_FontSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_FontSize(return_value); }
+	override HRESULT set_FontSize(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_FontSize(value); }
+	override HRESULT get_FontFamily(Windows.UI.Xaml.Media.FontFamily* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_FontFamily(return_value); }
+	override HRESULT set_FontFamily(Windows.UI.Xaml.Media.FontFamily value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_FontFamily(value); }
+	override HRESULT get_FontWeight(Windows.UI.Text.FontWeight* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_FontWeight(return_value); }
+	override HRESULT set_FontWeight(Windows.UI.Text.FontWeight value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_FontWeight(value); }
+	override HRESULT get_FontStyle(Windows.UI.Text.FontStyle* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_FontStyle(return_value); }
+	override HRESULT set_FontStyle(Windows.UI.Text.FontStyle value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_FontStyle(value); }
+	override HRESULT get_FontStretch(Windows.UI.Text.FontStretch* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_FontStretch(return_value); }
+	override HRESULT set_FontStretch(Windows.UI.Text.FontStretch value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_FontStretch(value); }
+	override HRESULT get_CharacterSpacing(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_CharacterSpacing(return_value); }
+	override HRESULT set_CharacterSpacing(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_CharacterSpacing(value); }
+	override HRESULT get_Foreground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_Foreground(return_value); }
+	override HRESULT set_Foreground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_Foreground(value); }
+	override HRESULT get_IsTabStop(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_IsTabStop(return_value); }
+	override HRESULT set_IsTabStop(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_IsTabStop(value); }
+	override HRESULT get_IsEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_IsEnabled(return_value); }
+	override HRESULT set_IsEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_IsEnabled(value); }
+	override HRESULT get_TabIndex(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_TabIndex(return_value); }
+	override HRESULT set_TabIndex(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_TabIndex(value); }
+	override HRESULT get_TabNavigation(Windows.UI.Xaml.Input.KeyboardNavigationMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_TabNavigation(return_value); }
+	override HRESULT set_TabNavigation(Windows.UI.Xaml.Input.KeyboardNavigationMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_TabNavigation(value); }
+	override HRESULT get_Template(Windows.UI.Xaml.Controls.ControlTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_Template(return_value); }
+	override HRESULT set_Template(Windows.UI.Xaml.Controls.ControlTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_Template(value); }
+	override HRESULT get_Padding(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_Padding(return_value); }
+	override HRESULT set_Padding(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_Padding(value); }
+	override HRESULT get_HorizontalContentAlignment(Windows.UI.Xaml.HorizontalAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_HorizontalContentAlignment(return_value); }
+	override HRESULT set_HorizontalContentAlignment(Windows.UI.Xaml.HorizontalAlignment value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_HorizontalContentAlignment(value); }
+	override HRESULT get_VerticalContentAlignment(Windows.UI.Xaml.VerticalAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_VerticalContentAlignment(return_value); }
+	override HRESULT set_VerticalContentAlignment(Windows.UI.Xaml.VerticalAlignment value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_VerticalContentAlignment(value); }
+	override HRESULT get_Background(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_Background(return_value); }
+	override HRESULT set_Background(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_Background(value); }
+	override HRESULT get_BorderThickness(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_BorderThickness(return_value); }
+	override HRESULT set_BorderThickness(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_BorderThickness(value); }
+	override HRESULT get_BorderBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_BorderBrush(return_value); }
+	override HRESULT set_BorderBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).set_BorderBrush(value); }
+	override HRESULT get_FocusState(Windows.UI.Xaml.FocusState* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).get_FocusState(return_value); }
+	override HRESULT add_IsEnabledChanged(Windows.UI.Xaml.DependencyPropertyChangedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).add_IsEnabledChanged(value, return_token); }
+	override HRESULT remove_IsEnabledChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).remove_IsEnabledChanged(token); }
+	override HRESULT abi_ApplyTemplate(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).abi_ApplyTemplate(return_returnValue); }
+	override HRESULT abi_Focus(Windows.UI.Xaml.FocusState value, bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl).abi_Focus(value, return_returnValue); }
+
+	override HRESULT abi_OnPointerEntered(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { this.OnPointerEntered(e); return S_OK; }
+	void OnPointerEntered(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerEntered(e)); }
+	override HRESULT abi_OnPointerPressed(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { this.OnPointerPressed(e); return S_OK; }
+	void OnPointerPressed(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerPressed(e)); }
+	override HRESULT abi_OnPointerMoved(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { this.OnPointerMoved(e); return S_OK; }
+	void OnPointerMoved(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerMoved(e)); }
+	override HRESULT abi_OnPointerReleased(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { this.OnPointerReleased(e); return S_OK; }
+	void OnPointerReleased(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerReleased(e)); }
+	override HRESULT abi_OnPointerExited(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { this.OnPointerExited(e); return S_OK; }
+	void OnPointerExited(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerExited(e)); }
+	override HRESULT abi_OnPointerCaptureLost(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { this.OnPointerCaptureLost(e); return S_OK; }
+	void OnPointerCaptureLost(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerCaptureLost(e)); }
+	override HRESULT abi_OnPointerCanceled(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { this.OnPointerCanceled(e); return S_OK; }
+	void OnPointerCanceled(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerCanceled(e)); }
+	override HRESULT abi_OnPointerWheelChanged(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { this.OnPointerWheelChanged(e); return S_OK; }
+	void OnPointerWheelChanged(Windows.UI.Xaml.Input.PointerRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnPointerWheelChanged(e)); }
+	override HRESULT abi_OnTapped(Windows.UI.Xaml.Input.TappedRoutedEventArgs e) { this.OnTapped(e); return S_OK; }
+	void OnTapped(Windows.UI.Xaml.Input.TappedRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnTapped(e)); }
+	override HRESULT abi_OnDoubleTapped(Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e) { this.OnDoubleTapped(e); return S_OK; }
+	void OnDoubleTapped(Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDoubleTapped(e)); }
+	override HRESULT abi_OnHolding(Windows.UI.Xaml.Input.HoldingRoutedEventArgs e) { this.OnHolding(e); return S_OK; }
+	void OnHolding(Windows.UI.Xaml.Input.HoldingRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnHolding(e)); }
+	override HRESULT abi_OnRightTapped(Windows.UI.Xaml.Input.RightTappedRoutedEventArgs e) { this.OnRightTapped(e); return S_OK; }
+	void OnRightTapped(Windows.UI.Xaml.Input.RightTappedRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnRightTapped(e)); }
+	override HRESULT abi_OnManipulationStarting(Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs e) { this.OnManipulationStarting(e); return S_OK; }
+	void OnManipulationStarting(Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationStarting(e)); }
+	override HRESULT abi_OnManipulationInertiaStarting(Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs e) { this.OnManipulationInertiaStarting(e); return S_OK; }
+	void OnManipulationInertiaStarting(Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationInertiaStarting(e)); }
+	override HRESULT abi_OnManipulationStarted(Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs e) { this.OnManipulationStarted(e); return S_OK; }
+	void OnManipulationStarted(Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationStarted(e)); }
+	override HRESULT abi_OnManipulationDelta(Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs e) { this.OnManipulationDelta(e); return S_OK; }
+	void OnManipulationDelta(Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationDelta(e)); }
+	override HRESULT abi_OnManipulationCompleted(Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs e) { this.OnManipulationCompleted(e); return S_OK; }
+	void OnManipulationCompleted(Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnManipulationCompleted(e)); }
+	override HRESULT abi_OnKeyUp(Windows.UI.Xaml.Input.KeyRoutedEventArgs e) { this.OnKeyUp(e); return S_OK; }
+	void OnKeyUp(Windows.UI.Xaml.Input.KeyRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnKeyUp(e)); }
+	override HRESULT abi_OnKeyDown(Windows.UI.Xaml.Input.KeyRoutedEventArgs e) { this.OnKeyDown(e); return S_OK; }
+	void OnKeyDown(Windows.UI.Xaml.Input.KeyRoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnKeyDown(e)); }
+	override HRESULT abi_OnGotFocus(Windows.UI.Xaml.RoutedEventArgs e) { this.OnGotFocus(e); return S_OK; }
+	void OnGotFocus(Windows.UI.Xaml.RoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnGotFocus(e)); }
+	override HRESULT abi_OnLostFocus(Windows.UI.Xaml.RoutedEventArgs e) { this.OnLostFocus(e); return S_OK; }
+	void OnLostFocus(Windows.UI.Xaml.RoutedEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnLostFocus(e)); }
+	override HRESULT abi_OnDragEnter(Windows.UI.Xaml.DragEventArgs e) { this.OnDragEnter(e); return S_OK; }
+	void OnDragEnter(Windows.UI.Xaml.DragEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDragEnter(e)); }
+	override HRESULT abi_OnDragLeave(Windows.UI.Xaml.DragEventArgs e) { this.OnDragLeave(e); return S_OK; }
+	void OnDragLeave(Windows.UI.Xaml.DragEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDragLeave(e)); }
+	override HRESULT abi_OnDragOver(Windows.UI.Xaml.DragEventArgs e) { this.OnDragOver(e); return S_OK; }
+	void OnDragOver(Windows.UI.Xaml.DragEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDragOver(e)); }
+	override HRESULT abi_OnDrop(Windows.UI.Xaml.DragEventArgs e) { this.OnDrop(e); return S_OK; }
+	void OnDrop(Windows.UI.Xaml.DragEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IControlOverrides).abi_OnDrop(e)); }
+
+	override HRESULT get_DefaultStyleKey(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControlProtected).get_DefaultStyleKey(return_value); }
+	override HRESULT set_DefaultStyleKey(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControlProtected).set_DefaultStyleKey(value); }
+	override HRESULT abi_GetTemplateChild(HSTRING childName, Windows.UI.Xaml.DependencyObject* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IControlProtected).abi_GetTemplateChild(childName, return_returnValue); }
+
+	override HRESULT get_IsTextScaleFactorEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl2).get_IsTextScaleFactorEnabled(return_value); }
+	override HRESULT set_IsTextScaleFactorEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl2).set_IsTextScaleFactorEnabled(value); }
+
+	override HRESULT get_UseSystemFocusVisuals(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl3).get_UseSystemFocusVisuals(return_value); }
+	override HRESULT set_UseSystemFocusVisuals(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl3).set_UseSystemFocusVisuals(value); }
+
+	override HRESULT get_IsFocusEngagementEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).get_IsFocusEngagementEnabled(return_value); }
+	override HRESULT set_IsFocusEngagementEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).set_IsFocusEngagementEnabled(value); }
+	override HRESULT get_IsFocusEngaged(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).get_IsFocusEngaged(return_value); }
+	override HRESULT set_IsFocusEngaged(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).set_IsFocusEngaged(value); }
+	override HRESULT get_RequiresPointer(Windows.UI.Xaml.Controls.RequiresPointer* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).get_RequiresPointer(return_value); }
+	override HRESULT set_RequiresPointer(Windows.UI.Xaml.Controls.RequiresPointer value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).set_RequiresPointer(value); }
+	override HRESULT get_XYFocusLeft(Windows.UI.Xaml.DependencyObject* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).get_XYFocusLeft(return_value); }
+	override HRESULT set_XYFocusLeft(Windows.UI.Xaml.DependencyObject value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).set_XYFocusLeft(value); }
+	override HRESULT get_XYFocusRight(Windows.UI.Xaml.DependencyObject* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).get_XYFocusRight(return_value); }
+	override HRESULT set_XYFocusRight(Windows.UI.Xaml.DependencyObject value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).set_XYFocusRight(value); }
+	override HRESULT get_XYFocusUp(Windows.UI.Xaml.DependencyObject* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).get_XYFocusUp(return_value); }
+	override HRESULT set_XYFocusUp(Windows.UI.Xaml.DependencyObject value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).set_XYFocusUp(value); }
+	override HRESULT get_XYFocusDown(Windows.UI.Xaml.DependencyObject* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).get_XYFocusDown(return_value); }
+	override HRESULT set_XYFocusDown(Windows.UI.Xaml.DependencyObject value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).set_XYFocusDown(value); }
+	override HRESULT get_ElementSoundMode(Windows.UI.Xaml.ElementSoundMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).get_ElementSoundMode(return_value); }
+	override HRESULT set_ElementSoundMode(Windows.UI.Xaml.ElementSoundMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).set_ElementSoundMode(value); }
+	override HRESULT add_FocusEngaged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.FocusEngagedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).add_FocusEngaged(value, return_token); }
+	override HRESULT remove_FocusEngaged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).remove_FocusEngaged(token); }
+	override HRESULT add_FocusDisengaged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.FocusDisengagedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).add_FocusDisengaged(value, return_token); }
+	override HRESULT remove_FocusDisengaged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).remove_FocusDisengaged(token); }
+	override HRESULT abi_RemoveFocusEngagement() { return m_inner.as!(Windows.UI.Xaml.Controls.IControl4).abi_RemoveFocusEngagement(); }
+
+	override HRESULT get_DefaultStyleResourceUri(Windows.Foundation.Uri* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl5).get_DefaultStyleResourceUri(return_value); }
+	override HRESULT set_DefaultStyleResourceUri(Windows.Foundation.Uri value) { return m_inner.as!(Windows.UI.Xaml.Controls.IControl5).set_DefaultStyleResourceUri(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ControlTemplate : Windows.UI.Xaml.FrameworkTemplate, Windows.UI.Xaml.Controls.IControlTemplate
 {
@@ -10368,24 +11019,35 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDataTemplateSelector).abi_SelectTemplate(item, container, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Xaml.DataTemplate SelectTemplateCore(IInspectable item, Windows.UI.Xaml.DependencyObject container)
-	{
-		Windows.UI.Xaml.DataTemplate _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDataTemplateSelectorOverrides).abi_SelectTemplateCore(item, container, &_ret));
-		return _ret;
-	}
 	final Windows.UI.Xaml.DataTemplate SelectTemplateForItem(IInspectable item)
 	{
 		Windows.UI.Xaml.DataTemplate _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDataTemplateSelector2).abi_SelectTemplateForItem(item, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Xaml.DataTemplate SelectTemplateForItemCore(IInspectable item)
+}
+@makable!(DataTemplateSelector, DataTemplateSelector, Windows.UI.Xaml.Controls.IDataTemplateSelectorFactory)
+class DataTemplateSelectorT(Base) : AgileObject!Base, DataTemplateSelector
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
 	{
-		Windows.UI.Xaml.DataTemplate _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDataTemplateSelectorOverrides2).abi_SelectTemplateForItemCore(item, &_ret));
-		return _ret;
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
 	}
+	override HRESULT abi_SelectTemplate(IInspectable item, Windows.UI.Xaml.DependencyObject container, Windows.UI.Xaml.DataTemplate* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IDataTemplateSelector).abi_SelectTemplate(item, container, return_returnValue); }
+
+	override HRESULT abi_SelectTemplateCore(IInspectable item, Windows.UI.Xaml.DependencyObject container, Windows.UI.Xaml.DataTemplate* return_returnValue) { this.SelectTemplateCore(item, container, return_returnValue); return S_OK; }
+	void SelectTemplateCore(IInspectable item, Windows.UI.Xaml.DependencyObject container, Windows.UI.Xaml.DataTemplate* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IDataTemplateSelectorOverrides).abi_SelectTemplateCore(item, container, return_returnValue)); }
+
+	override HRESULT abi_SelectTemplateForItem(IInspectable item, Windows.UI.Xaml.DataTemplate* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IDataTemplateSelector2).abi_SelectTemplateForItem(item, return_returnValue); }
+
+	override HRESULT abi_SelectTemplateForItemCore(IInspectable item, Windows.UI.Xaml.DataTemplate* return_returnValue) { this.SelectTemplateForItemCore(item, return_returnValue); return S_OK; }
+	void SelectTemplateForItemCore(IInspectable item, Windows.UI.Xaml.DataTemplate* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IDataTemplateSelectorOverrides2).abi_SelectTemplateForItemCore(item, return_returnValue)); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface DatePickedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IDatePickedEventArgs
@@ -10558,6 +11220,51 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDatePicker2).set_LightDismissOverlayMode(value));
 	}
+}
+@makable!(DatePicker, DatePicker, Windows.UI.Xaml.Controls.IDatePickerFactory)
+class DatePickerT(Base) : AgileObject!Base, DatePicker
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Header(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).get_Header(return_value); }
+	override HRESULT set_Header(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).set_Header(value); }
+	override HRESULT get_HeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).get_HeaderTemplate(return_value); }
+	override HRESULT set_HeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).set_HeaderTemplate(value); }
+	override HRESULT get_CalendarIdentifier(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).get_CalendarIdentifier(return_value); }
+	override HRESULT set_CalendarIdentifier(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).set_CalendarIdentifier(value); }
+	override HRESULT get_Date(Windows.Foundation.DateTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).get_Date(return_value); }
+	override HRESULT set_Date(Windows.Foundation.DateTime value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).set_Date(value); }
+	override HRESULT get_DayVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).get_DayVisible(return_value); }
+	override HRESULT set_DayVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).set_DayVisible(value); }
+	override HRESULT get_MonthVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).get_MonthVisible(return_value); }
+	override HRESULT set_MonthVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).set_MonthVisible(value); }
+	override HRESULT get_YearVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).get_YearVisible(return_value); }
+	override HRESULT set_YearVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).set_YearVisible(value); }
+	override HRESULT get_DayFormat(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).get_DayFormat(return_value); }
+	override HRESULT set_DayFormat(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).set_DayFormat(value); }
+	override HRESULT get_MonthFormat(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).get_MonthFormat(return_value); }
+	override HRESULT set_MonthFormat(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).set_MonthFormat(value); }
+	override HRESULT get_YearFormat(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).get_YearFormat(return_value); }
+	override HRESULT set_YearFormat(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).set_YearFormat(value); }
+	override HRESULT get_MinYear(Windows.Foundation.DateTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).get_MinYear(return_value); }
+	override HRESULT set_MinYear(Windows.Foundation.DateTime value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).set_MinYear(value); }
+	override HRESULT get_MaxYear(Windows.Foundation.DateTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).get_MaxYear(return_value); }
+	override HRESULT set_MaxYear(Windows.Foundation.DateTime value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).set_MaxYear(value); }
+	override HRESULT get_Orientation(Windows.UI.Xaml.Controls.Orientation* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).get_Orientation(return_value); }
+	override HRESULT set_Orientation(Windows.UI.Xaml.Controls.Orientation value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).set_Orientation(value); }
+	override HRESULT add_DateChanged(Windows.Foundation.EventHandler!(Windows.UI.Xaml.Controls.DatePickerValueChangedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).add_DateChanged(value, return_token); }
+	override HRESULT remove_DateChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker).remove_DateChanged(token); }
+
+	override HRESULT get_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker2).get_LightDismissOverlayMode(return_value); }
+	override HRESULT set_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.IDatePicker2).set_LightDismissOverlayMode(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface DatePickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase, Windows.UI.Xaml.Controls.IDatePickerFlyout, Windows.UI.Xaml.Controls.IDatePickerFlyout2
@@ -10820,9 +11527,40 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFlipView2).set_UseTouchAnimationsForAllNavigation(value));
 	}
 }
+@makable!(FlipView, FlipView, Windows.UI.Xaml.Controls.IFlipViewFactory)
+class FlipViewT(Base) : AgileObject!Base, FlipView
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_UseTouchAnimationsForAllNavigation(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFlipView2).get_UseTouchAnimationsForAllNavigation(return_value); }
+	override HRESULT set_UseTouchAnimationsForAllNavigation(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFlipView2).set_UseTouchAnimationsForAllNavigation(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface FlipViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IFlipViewItem
 {
+}
+@makable!(FlipViewItem, FlipViewItem, Windows.UI.Xaml.Controls.IFlipViewItemFactory)
+class FlipViewItemT(Base) : AgileObject!Base, FlipViewItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface Flyout : Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.IFlyout
@@ -10849,9 +11587,41 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFlyout).set_FlyoutPresenterStyle(value));
 	}
 }
+@makable!(Flyout, Flyout, Windows.UI.Xaml.Controls.IFlyoutFactory)
+class FlyoutT(Base) : AgileObject!Base, Flyout
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Content(Windows.UI.Xaml.UIElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFlyout).get_Content(return_value); }
+	override HRESULT set_Content(Windows.UI.Xaml.UIElement value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFlyout).set_Content(value); }
+	override HRESULT get_FlyoutPresenterStyle(Windows.UI.Xaml.Style* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFlyout).get_FlyoutPresenterStyle(return_value); }
+	override HRESULT set_FlyoutPresenterStyle(Windows.UI.Xaml.Style value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFlyout).set_FlyoutPresenterStyle(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface FlyoutPresenter : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IFlyoutPresenter
 {
+}
+@makable!(FlyoutPresenter, FlyoutPresenter, Windows.UI.Xaml.Controls.IFlyoutPresenterFactory)
+class FlyoutPresenterT(Base) : AgileObject!Base, FlyoutPresenter
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface FocusDisengagedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.IFocusDisengagedEventArgs
@@ -10946,6 +11716,36 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFontIcon3).set_MirroredWhenRightToLeft(value));
 	}
+}
+@makable!(FontIcon, FontIcon, Windows.UI.Xaml.Controls.IFontIconFactory)
+class FontIconT(Base) : AgileObject!Base, FontIcon
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Glyph(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon).get_Glyph(return_value); }
+	override HRESULT set_Glyph(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon).set_Glyph(value); }
+	override HRESULT get_FontSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon).get_FontSize(return_value); }
+	override HRESULT set_FontSize(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon).set_FontSize(value); }
+	override HRESULT get_FontFamily(Windows.UI.Xaml.Media.FontFamily* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon).get_FontFamily(return_value); }
+	override HRESULT set_FontFamily(Windows.UI.Xaml.Media.FontFamily value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon).set_FontFamily(value); }
+	override HRESULT get_FontWeight(Windows.UI.Text.FontWeight* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon).get_FontWeight(return_value); }
+	override HRESULT set_FontWeight(Windows.UI.Text.FontWeight value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon).set_FontWeight(value); }
+	override HRESULT get_FontStyle(Windows.UI.Text.FontStyle* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon).get_FontStyle(return_value); }
+	override HRESULT set_FontStyle(Windows.UI.Text.FontStyle value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon).set_FontStyle(value); }
+
+	override HRESULT get_IsTextScaleFactorEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon2).get_IsTextScaleFactorEnabled(return_value); }
+	override HRESULT set_IsTextScaleFactorEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon2).set_IsTextScaleFactorEnabled(value); }
+
+	override HRESULT get_MirroredWhenRightToLeft(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon3).get_MirroredWhenRightToLeft(return_value); }
+	override HRESULT set_MirroredWhenRightToLeft(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFontIcon3).set_MirroredWhenRightToLeft(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface Frame : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IFrame, Windows.UI.Xaml.Controls.INavigate, Windows.UI.Xaml.Controls.IFrame2, Windows.UI.Xaml.Controls.IFrame3, Windows.UI.Xaml.Controls.IFrame4
@@ -11068,6 +11868,51 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IFrame4).abi_SetNavigationStateWithNavigationControl(navigationState, suppressNavigate));
 	}
 }
+@makable!(Frame, Frame, Windows.UI.Xaml.Controls.IFrameFactory)
+class FrameT(Base) : AgileObject!Base, Frame
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_CacheSize(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).get_CacheSize(return_value); }
+	override HRESULT set_CacheSize(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).set_CacheSize(value); }
+	override HRESULT get_CanGoBack(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).get_CanGoBack(return_value); }
+	override HRESULT get_CanGoForward(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).get_CanGoForward(return_value); }
+	override HRESULT get_CurrentSourcePageType(Windows.UI.Xaml.Interop.TypeName* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).get_CurrentSourcePageType(return_value); }
+	override HRESULT get_SourcePageType(Windows.UI.Xaml.Interop.TypeName* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).get_SourcePageType(return_value); }
+	override HRESULT set_SourcePageType(Windows.UI.Xaml.Interop.TypeName value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).set_SourcePageType(value); }
+	override HRESULT get_BackStackDepth(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).get_BackStackDepth(return_value); }
+	override HRESULT add_Navigated(Windows.UI.Xaml.Navigation.NavigatedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).add_Navigated(value, return_token); }
+	override HRESULT remove_Navigated(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).remove_Navigated(token); }
+	override HRESULT add_Navigating(Windows.UI.Xaml.Navigation.NavigatingCancelEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).add_Navigating(value, return_token); }
+	override HRESULT remove_Navigating(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).remove_Navigating(token); }
+	override HRESULT add_NavigationFailed(Windows.UI.Xaml.Navigation.NavigationFailedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).add_NavigationFailed(value, return_token); }
+	override HRESULT remove_NavigationFailed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).remove_NavigationFailed(token); }
+	override HRESULT add_NavigationStopped(Windows.UI.Xaml.Navigation.NavigationStoppedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).add_NavigationStopped(value, return_token); }
+	override HRESULT remove_NavigationStopped(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).remove_NavigationStopped(token); }
+	override HRESULT abi_GoBack() { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).abi_GoBack(); }
+	override HRESULT abi_GoForward() { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).abi_GoForward(); }
+	override HRESULT abi_Navigate(Windows.UI.Xaml.Interop.TypeName sourcePageType, IInspectable parameter, bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).abi_Navigate(sourcePageType, parameter, return_returnValue); }
+	override HRESULT abi_GetNavigationState(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).abi_GetNavigationState(return_returnValue); }
+	override HRESULT abi_SetNavigationState(HSTRING navigationState) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame).abi_SetNavigationState(navigationState); }
+
+	override HRESULT abi_Navigate(Windows.UI.Xaml.Interop.TypeName sourcePageType, bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.INavigate).abi_Navigate(sourcePageType, return_returnValue); }
+
+	override HRESULT get_BackStack(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Navigation.PageStackEntry)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame2).get_BackStack(return_value); }
+	override HRESULT get_ForwardStack(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Navigation.PageStackEntry)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame2).get_ForwardStack(return_value); }
+	override HRESULT abi_Navigate(Windows.UI.Xaml.Interop.TypeName sourcePageType, IInspectable parameter, Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo infoOverride, bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame2).abi_Navigate(sourcePageType, parameter, infoOverride, return_returnValue); }
+
+	override HRESULT abi_GoBack(Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo transitionInfoOverride) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame3).abi_GoBack(transitionInfoOverride); }
+
+	override HRESULT abi_SetNavigationStateWithNavigationControl(HSTRING navigationState, bool suppressNavigate) { return m_inner.as!(Windows.UI.Xaml.Controls.IFrame4).abi_SetNavigationStateWithNavigationControl(navigationState, suppressNavigate); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface Grid : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IGrid, Windows.UI.Xaml.Controls.IGrid2
 {
@@ -11125,13 +11970,66 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGrid2).set_Padding(value));
 	}
 }
+@makable!(Grid, Grid, Windows.UI.Xaml.Controls.IGridFactory)
+class GridT(Base) : AgileObject!Base, Grid
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_RowDefinitions(Windows.UI.Xaml.Controls.RowDefinitionCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGrid).get_RowDefinitions(return_value); }
+	override HRESULT get_ColumnDefinitions(Windows.UI.Xaml.Controls.ColumnDefinitionCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGrid).get_ColumnDefinitions(return_value); }
+
+	override HRESULT get_BorderBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGrid2).get_BorderBrush(return_value); }
+	override HRESULT set_BorderBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGrid2).set_BorderBrush(value); }
+	override HRESULT get_BorderThickness(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGrid2).get_BorderThickness(return_value); }
+	override HRESULT set_BorderThickness(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGrid2).set_BorderThickness(value); }
+	override HRESULT get_CornerRadius(Windows.UI.Xaml.CornerRadius* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGrid2).get_CornerRadius(return_value); }
+	override HRESULT set_CornerRadius(Windows.UI.Xaml.CornerRadius value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGrid2).set_CornerRadius(value); }
+	override HRESULT get_Padding(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGrid2).get_Padding(return_value); }
+	override HRESULT set_Padding(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGrid2).set_Padding(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface GridView : Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.IGridView
 {
 }
+@makable!(GridView, GridView, Windows.UI.Xaml.Controls.IGridViewFactory)
+class GridViewT(Base) : AgileObject!Base, GridView
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface GridViewHeaderItem : Windows.UI.Xaml.Controls.ListViewBaseHeaderItem, Windows.UI.Xaml.Controls.IGridViewHeaderItem
 {
+}
+@makable!(GridViewHeaderItem, GridViewHeaderItem, Windows.UI.Xaml.Controls.IGridViewHeaderItemFactory)
+class GridViewHeaderItemT(Base) : AgileObject!Base, GridViewHeaderItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface GridViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IGridViewItem
@@ -11144,9 +12042,38 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(GridViewItem, GridViewItem, Windows.UI.Xaml.Controls.IGridViewItemFactory)
+class GridViewItemT(Base) : AgileObject!Base, GridViewItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.GridViewItemTemplateSettings* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGridViewItem).get_TemplateSettings(return_value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface GroupItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IGroupItem
 {
+}
+@makable!(GroupItem, GroupItem, Windows.UI.Xaml.Controls.IGroupItemFactory)
+class GroupItemT(Base) : AgileObject!Base, GroupItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface GroupStyle : Windows.UI.Xaml.Controls.IGroupStyle, Windows.UI.Xaml.Data.INotifyPropertyChanged, Windows.UI.Xaml.Controls.IGroupStyle2
@@ -11231,6 +12158,38 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle2).set_HeaderContainerStyle(value));
 	}
 }
+@makable!(GroupStyle, GroupStyle, Windows.UI.Xaml.Controls.IGroupStyleFactory)
+class GroupStyleT(Base) : AgileObject!Base, GroupStyle
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Panel(Windows.UI.Xaml.Controls.ItemsPanelTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle).get_Panel(return_value); }
+	override HRESULT set_Panel(Windows.UI.Xaml.Controls.ItemsPanelTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle).set_Panel(value); }
+	override HRESULT get_ContainerStyle(Windows.UI.Xaml.Style* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle).get_ContainerStyle(return_value); }
+	override HRESULT set_ContainerStyle(Windows.UI.Xaml.Style value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle).set_ContainerStyle(value); }
+	override HRESULT get_ContainerStyleSelector(Windows.UI.Xaml.Controls.StyleSelector* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle).get_ContainerStyleSelector(return_value); }
+	override HRESULT set_ContainerStyleSelector(Windows.UI.Xaml.Controls.StyleSelector value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle).set_ContainerStyleSelector(value); }
+	override HRESULT get_HeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle).get_HeaderTemplate(return_value); }
+	override HRESULT set_HeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle).set_HeaderTemplate(value); }
+	override HRESULT get_HeaderTemplateSelector(Windows.UI.Xaml.Controls.DataTemplateSelector* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle).get_HeaderTemplateSelector(return_value); }
+	override HRESULT set_HeaderTemplateSelector(Windows.UI.Xaml.Controls.DataTemplateSelector value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle).set_HeaderTemplateSelector(value); }
+	override HRESULT get_HidesIfEmpty(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle).get_HidesIfEmpty(return_value); }
+	override HRESULT set_HidesIfEmpty(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle).set_HidesIfEmpty(value); }
+
+	override HRESULT add_PropertyChanged(Windows.UI.Xaml.Data.PropertyChangedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Data.INotifyPropertyChanged).add_PropertyChanged(value, return_token); }
+	override HRESULT remove_PropertyChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Data.INotifyPropertyChanged).remove_PropertyChanged(token); }
+
+	override HRESULT get_HeaderContainerStyle(Windows.UI.Xaml.Style* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle2).get_HeaderContainerStyle(return_value); }
+	override HRESULT set_HeaderContainerStyle(Windows.UI.Xaml.Style value) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyle2).set_HeaderContainerStyle(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface GroupStyleSelector : Windows.UI.Xaml.Controls.IGroupStyleSelector, Windows.UI.Xaml.Controls.IGroupStyleSelectorOverrides
 {
@@ -11241,12 +12200,24 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyleSelector).abi_SelectGroupStyle(group, level, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Xaml.Controls.GroupStyle SelectGroupStyleCore(IInspectable group, UINT32 level)
+}
+@makable!(GroupStyleSelector, GroupStyleSelector, Windows.UI.Xaml.Controls.IGroupStyleSelectorFactory)
+class GroupStyleSelectorT(Base) : AgileObject!Base, GroupStyleSelector
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
 	{
-		Windows.UI.Xaml.Controls.GroupStyle _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyleSelectorOverrides).abi_SelectGroupStyleCore(group, level, &_ret));
-		return _ret;
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
 	}
+	override HRESULT abi_SelectGroupStyle(IInspectable group, UINT32 level, Windows.UI.Xaml.Controls.GroupStyle* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyleSelector).abi_SelectGroupStyle(group, level, return_returnValue); }
+
+	override HRESULT abi_SelectGroupStyleCore(IInspectable group, UINT32 level, Windows.UI.Xaml.Controls.GroupStyle* return_returnValue) { this.SelectGroupStyleCore(group, level, return_returnValue); return S_OK; }
+	void SelectGroupStyleCore(IInspectable group, UINT32 level, Windows.UI.Xaml.Controls.GroupStyle* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IGroupStyleSelectorOverrides).abi_SelectGroupStyleCore(group, level, return_returnValue)); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface Hub : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IHub, Windows.UI.Xaml.Controls.ISemanticZoomInformation
@@ -11381,6 +12352,50 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_CompleteViewChangeTo(source, destination));
 	}
 }
+@makable!(Hub, Hub, Windows.UI.Xaml.Controls.IHubFactory)
+class HubT(Base) : AgileObject!Base, Hub
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Header(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).get_Header(return_value); }
+	override HRESULT set_Header(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).set_Header(value); }
+	override HRESULT get_HeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).get_HeaderTemplate(return_value); }
+	override HRESULT set_HeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).set_HeaderTemplate(value); }
+	override HRESULT get_Orientation(Windows.UI.Xaml.Controls.Orientation* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).get_Orientation(return_value); }
+	override HRESULT set_Orientation(Windows.UI.Xaml.Controls.Orientation value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).set_Orientation(value); }
+	override HRESULT get_DefaultSectionIndex(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).get_DefaultSectionIndex(return_value); }
+	override HRESULT set_DefaultSectionIndex(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).set_DefaultSectionIndex(value); }
+	override HRESULT get_Sections(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).get_Sections(return_value); }
+	override HRESULT get_SectionsInView(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).get_SectionsInView(return_value); }
+	override HRESULT get_SectionHeaders(Windows.Foundation.Collections.IObservableVector!(IInspectable)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).get_SectionHeaders(return_value); }
+	override HRESULT add_SectionHeaderClick(Windows.UI.Xaml.Controls.HubSectionHeaderClickEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).add_SectionHeaderClick(value, return_token); }
+	override HRESULT remove_SectionHeaderClick(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).remove_SectionHeaderClick(token); }
+	override HRESULT add_SectionsInViewChanged(Windows.UI.Xaml.Controls.SectionsInViewChangedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).add_SectionsInViewChanged(value, return_token); }
+	override HRESULT remove_SectionsInViewChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).remove_SectionsInViewChanged(token); }
+	override HRESULT abi_ScrollToSection(Windows.UI.Xaml.Controls.HubSection section) { return m_inner.as!(Windows.UI.Xaml.Controls.IHub).abi_ScrollToSection(section); }
+
+	override HRESULT get_SemanticZoomOwner(Windows.UI.Xaml.Controls.SemanticZoom* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).get_SemanticZoomOwner(return_value); }
+	override HRESULT set_SemanticZoomOwner(Windows.UI.Xaml.Controls.SemanticZoom value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).set_SemanticZoomOwner(value); }
+	override HRESULT get_IsActiveView(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).get_IsActiveView(return_value); }
+	override HRESULT set_IsActiveView(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).set_IsActiveView(value); }
+	override HRESULT get_IsZoomedInView(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).get_IsZoomedInView(return_value); }
+	override HRESULT set_IsZoomedInView(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).set_IsZoomedInView(value); }
+	override HRESULT abi_InitializeViewChange() { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_InitializeViewChange(); }
+	override HRESULT abi_CompleteViewChange() { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_CompleteViewChange(); }
+	override HRESULT abi_MakeVisible(Windows.UI.Xaml.Controls.SemanticZoomLocation item) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_MakeVisible(item); }
+	override HRESULT abi_StartViewChangeFrom(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_StartViewChangeFrom(source, destination); }
+	override HRESULT abi_StartViewChangeTo(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_StartViewChangeTo(source, destination); }
+	override HRESULT abi_CompleteViewChangeFrom(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_CompleteViewChangeFrom(source, destination); }
+	override HRESULT abi_CompleteViewChangeTo(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_CompleteViewChangeTo(source, destination); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface HubSection : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IHubSection
 {
@@ -11425,6 +12440,28 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHubSection).set_IsHeaderInteractive(value));
 	}
+}
+@makable!(HubSection, HubSection, Windows.UI.Xaml.Controls.IHubSectionFactory)
+class HubSectionT(Base) : AgileObject!Base, HubSection
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Header(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHubSection).get_Header(return_value); }
+	override HRESULT set_Header(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHubSection).set_Header(value); }
+	override HRESULT get_HeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHubSection).get_HeaderTemplate(return_value); }
+	override HRESULT set_HeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHubSection).set_HeaderTemplate(value); }
+	override HRESULT get_ContentTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHubSection).get_ContentTemplate(return_value); }
+	override HRESULT set_ContentTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHubSection).set_ContentTemplate(value); }
+	override HRESULT get_IsHeaderInteractive(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHubSection).get_IsHeaderInteractive(return_value); }
+	override HRESULT set_IsHeaderInteractive(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHubSection).set_IsHeaderInteractive(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface HubSectionCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Controls.HubSection)
@@ -11515,6 +12552,22 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IHyperlinkButton).set_NavigateUri(value));
 	}
 }
+@makable!(HyperlinkButton, HyperlinkButton, Windows.UI.Xaml.Controls.IHyperlinkButtonFactory)
+class HyperlinkButtonT(Base) : AgileObject!Base, HyperlinkButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_NavigateUri(Windows.Foundation.Uri* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHyperlinkButton).get_NavigateUri(return_value); }
+	override HRESULT set_NavigateUri(Windows.Foundation.Uri value) { return m_inner.as!(Windows.UI.Xaml.Controls.IHyperlinkButton).set_NavigateUri(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface IconElement : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IIconElement
 {
@@ -11529,6 +12582,22 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IIconElement).set_Foreground(value));
 	}
+}
+@makable!(IconElement, IconElement, Windows.UI.Xaml.Controls.IIconElementFactory)
+class IconElementT(Base) : AgileObject!Base, IconElement
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Foreground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IIconElement).get_Foreground(return_value); }
+	override HRESULT set_Foreground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.IIconElement).set_Foreground(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface Image : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IImage, Windows.UI.Xaml.Controls.IImage2, Windows.UI.Xaml.Controls.IImage3
@@ -11602,6 +12671,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkCanvas).get_InkPresenter(&_ret));
 		return _ret;
 	}
+}
+@makable!(InkCanvas, InkCanvas, Windows.UI.Xaml.Controls.IInkCanvasFactory)
+class InkCanvasT(Base) : AgileObject!Base, InkCanvas
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_InkPresenter(Windows.UI.Input.Inking.InkPresenter* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkCanvas).get_InkPresenter(return_value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface InkToolbar : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IInkToolbar, Windows.UI.Xaml.Controls.IInkToolbar2
@@ -11760,9 +12844,67 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(InkToolbar, InkToolbar, Windows.UI.Xaml.Controls.IInkToolbarFactory)
+class InkToolbarT(Base) : AgileObject!Base, InkToolbar
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_InitialControls(Windows.UI.Xaml.Controls.InkToolbarInitialControls* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).get_InitialControls(return_value); }
+	override HRESULT set_InitialControls(Windows.UI.Xaml.Controls.InkToolbarInitialControls value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).set_InitialControls(value); }
+	override HRESULT get_Children(Windows.UI.Xaml.DependencyObjectCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).get_Children(return_value); }
+	override HRESULT get_ActiveTool(Windows.UI.Xaml.Controls.InkToolbarToolButton* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).get_ActiveTool(return_value); }
+	override HRESULT set_ActiveTool(Windows.UI.Xaml.Controls.InkToolbarToolButton value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).set_ActiveTool(value); }
+	override HRESULT get_InkDrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).get_InkDrawingAttributes(return_value); }
+	override HRESULT get_IsRulerButtonChecked(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).get_IsRulerButtonChecked(return_value); }
+	override HRESULT set_IsRulerButtonChecked(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).set_IsRulerButtonChecked(value); }
+	override HRESULT get_TargetInkCanvas(Windows.UI.Xaml.Controls.InkCanvas* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).get_TargetInkCanvas(return_value); }
+	override HRESULT set_TargetInkCanvas(Windows.UI.Xaml.Controls.InkCanvas value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).set_TargetInkCanvas(value); }
+	override HRESULT add_ActiveToolChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).add_ActiveToolChanged(value, return_token); }
+	override HRESULT remove_ActiveToolChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).remove_ActiveToolChanged(token); }
+	override HRESULT add_InkDrawingAttributesChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).add_InkDrawingAttributesChanged(value, return_token); }
+	override HRESULT remove_InkDrawingAttributesChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).remove_InkDrawingAttributesChanged(token); }
+	override HRESULT add_EraseAllClicked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).add_EraseAllClicked(value, return_token); }
+	override HRESULT remove_EraseAllClicked(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).remove_EraseAllClicked(token); }
+	override HRESULT add_IsRulerButtonCheckedChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).add_IsRulerButtonCheckedChanged(value, return_token); }
+	override HRESULT remove_IsRulerButtonCheckedChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).remove_IsRulerButtonCheckedChanged(token); }
+	override HRESULT abi_GetToolButton(Windows.UI.Xaml.Controls.InkToolbarTool tool, Windows.UI.Xaml.Controls.InkToolbarToolButton* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).abi_GetToolButton(tool, return_returnValue); }
+	override HRESULT abi_GetToggleButton(Windows.UI.Xaml.Controls.InkToolbarToggle tool, Windows.UI.Xaml.Controls.InkToolbarToggleButton* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar).abi_GetToggleButton(tool, return_returnValue); }
+
+	override HRESULT get_IsStencilButtonChecked(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar2).get_IsStencilButtonChecked(return_value); }
+	override HRESULT set_IsStencilButtonChecked(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar2).set_IsStencilButtonChecked(value); }
+	override HRESULT get_ButtonFlyoutPlacement(Windows.UI.Xaml.Controls.InkToolbarButtonFlyoutPlacement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar2).get_ButtonFlyoutPlacement(return_value); }
+	override HRESULT set_ButtonFlyoutPlacement(Windows.UI.Xaml.Controls.InkToolbarButtonFlyoutPlacement value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar2).set_ButtonFlyoutPlacement(value); }
+	override HRESULT get_Orientation(Windows.UI.Xaml.Controls.Orientation* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar2).get_Orientation(return_value); }
+	override HRESULT set_Orientation(Windows.UI.Xaml.Controls.Orientation value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar2).set_Orientation(value); }
+	override HRESULT add_IsStencilButtonCheckedChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbar, Windows.UI.Xaml.Controls.InkToolbarIsStencilButtonCheckedChangedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar2).add_IsStencilButtonCheckedChanged(value, return_token); }
+	override HRESULT remove_IsStencilButtonCheckedChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar2).remove_IsStencilButtonCheckedChanged(token); }
+	override HRESULT abi_GetMenuButton(Windows.UI.Xaml.Controls.InkToolbarMenuKind menu, Windows.UI.Xaml.Controls.InkToolbarMenuButton* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbar2).abi_GetMenuButton(menu, return_returnValue); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface InkToolbarBallpointPenButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarBallpointPenButton
 {
+}
+@makable!(InkToolbarBallpointPenButton, InkToolbarBallpointPenButton, Windows.UI.Xaml.Controls.IInkToolbarBallpointPenButtonFactory)
+class InkToolbarBallpointPenButtonT(Base) : AgileObject!Base, InkToolbarBallpointPenButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface InkToolbarCustomPen : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IInkToolbarCustomPen, Windows.UI.Xaml.Controls.IInkToolbarCustomPenOverrides
@@ -11774,12 +12916,24 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPen).abi_CreateInkDrawingAttributes(brush, strokeWidth, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Input.Inking.InkDrawingAttributes CreateInkDrawingAttributesCore(Windows.UI.Xaml.Media.Brush brush, double strokeWidth)
+}
+@makable!(InkToolbarCustomPen, InkToolbarCustomPen, Windows.UI.Xaml.Controls.IInkToolbarCustomPenFactory)
+class InkToolbarCustomPenT(Base) : AgileObject!Base, InkToolbarCustomPen
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
 	{
-		Windows.UI.Input.Inking.InkDrawingAttributes _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPenOverrides).abi_CreateInkDrawingAttributesCore(brush, strokeWidth, &_ret));
-		return _ret;
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
 	}
+	override HRESULT abi_CreateInkDrawingAttributes(Windows.UI.Xaml.Media.Brush brush, double strokeWidth, Windows.UI.Input.Inking.InkDrawingAttributes* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPen).abi_CreateInkDrawingAttributes(brush, strokeWidth, return_returnValue); }
+
+	override HRESULT abi_CreateInkDrawingAttributesCore(Windows.UI.Xaml.Media.Brush brush, double strokeWidth, Windows.UI.Input.Inking.InkDrawingAttributes* return_returnValue) { this.CreateInkDrawingAttributesCore(brush, strokeWidth, return_returnValue); return S_OK; }
+	void CreateInkDrawingAttributesCore(Windows.UI.Xaml.Media.Brush brush, double strokeWidth, Windows.UI.Input.Inking.InkDrawingAttributes* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPenOverrides).abi_CreateInkDrawingAttributesCore(brush, strokeWidth, return_returnValue)); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface InkToolbarCustomPenButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarCustomPenButton
@@ -11806,9 +12960,41 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPenButton).set_ConfigurationContent(value));
 	}
 }
+@makable!(InkToolbarCustomPenButton, InkToolbarCustomPenButton, Windows.UI.Xaml.Controls.IInkToolbarCustomPenButtonFactory)
+class InkToolbarCustomPenButtonT(Base) : AgileObject!Base, InkToolbarCustomPenButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_CustomPen(Windows.UI.Xaml.Controls.InkToolbarCustomPen* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPenButton).get_CustomPen(return_value); }
+	override HRESULT set_CustomPen(Windows.UI.Xaml.Controls.InkToolbarCustomPen value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPenButton).set_CustomPen(value); }
+	override HRESULT get_ConfigurationContent(Windows.UI.Xaml.UIElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPenButton).get_ConfigurationContent(return_value); }
+	override HRESULT set_ConfigurationContent(Windows.UI.Xaml.UIElement value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPenButton).set_ConfigurationContent(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface InkToolbarCustomToggleButton : Windows.UI.Xaml.Controls.InkToolbarToggleButton, Windows.UI.Xaml.Controls.IInkToolbarCustomToggleButton
 {
+}
+@makable!(InkToolbarCustomToggleButton, InkToolbarCustomToggleButton, Windows.UI.Xaml.Controls.IInkToolbarCustomToggleButtonFactory)
+class InkToolbarCustomToggleButtonT(Base) : AgileObject!Base, InkToolbarCustomToggleButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface InkToolbarCustomToolButton : Windows.UI.Xaml.Controls.InkToolbarToolButton, Windows.UI.Xaml.Controls.IInkToolbarCustomToolButton
@@ -11825,6 +13011,22 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomToolButton).set_ConfigurationContent(value));
 	}
 }
+@makable!(InkToolbarCustomToolButton, InkToolbarCustomToolButton, Windows.UI.Xaml.Controls.IInkToolbarCustomToolButtonFactory)
+class InkToolbarCustomToolButtonT(Base) : AgileObject!Base, InkToolbarCustomToolButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_ConfigurationContent(Windows.UI.Xaml.UIElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomToolButton).get_ConfigurationContent(return_value); }
+	override HRESULT set_ConfigurationContent(Windows.UI.Xaml.UIElement value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomToolButton).set_ConfigurationContent(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface InkToolbarEraserButton : Windows.UI.Xaml.Controls.InkToolbarToolButton, Windows.UI.Xaml.Controls.IInkToolbarEraserButton, Windows.UI.Xaml.Controls.IInkToolbarEraserButton2
 {
@@ -11839,6 +13041,23 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarEraserButton2).set_IsClearAllVisible(value));
 	}
+}
+@makable!(InkToolbarEraserButton, InkToolbarEraserButton, Windows.UI.Xaml.Controls.IInkToolbarEraserButtonFactory)
+class InkToolbarEraserButtonT(Base) : AgileObject!Base, InkToolbarEraserButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_IsClearAllVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarEraserButton2).get_IsClearAllVisible(return_value); }
+	override HRESULT set_IsClearAllVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarEraserButton2).set_IsClearAllVisible(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface InkToolbarFlyoutItem : Windows.UI.Xaml.Controls.Primitives.ButtonBase, Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem
@@ -11885,9 +13104,45 @@ extern(Windows):
 		Debug.OK(remove_Unchecked(token));
 	}
 }
+@makable!(InkToolbarFlyoutItem, InkToolbarFlyoutItem, Windows.UI.Xaml.Controls.IInkToolbarFlyoutItemFactory)
+class InkToolbarFlyoutItemT(Base) : AgileObject!Base, InkToolbarFlyoutItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Kind(Windows.UI.Xaml.Controls.InkToolbarFlyoutItemKind* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).get_Kind(return_value); }
+	override HRESULT set_Kind(Windows.UI.Xaml.Controls.InkToolbarFlyoutItemKind value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).set_Kind(value); }
+	override HRESULT get_IsChecked(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).get_IsChecked(return_value); }
+	override HRESULT set_IsChecked(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).set_IsChecked(value); }
+	override HRESULT add_Checked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbarFlyoutItem, IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).add_Checked(value, return_token); }
+	override HRESULT remove_Checked(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).remove_Checked(token); }
+	override HRESULT add_Unchecked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.InkToolbarFlyoutItem, IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).add_Unchecked(value, return_token); }
+	override HRESULT remove_Unchecked(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItem).remove_Unchecked(token); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface InkToolbarHighlighterButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarHighlighterButton
 {
+}
+@makable!(InkToolbarHighlighterButton, InkToolbarHighlighterButton, Windows.UI.Xaml.Controls.IInkToolbarHighlighterButtonFactory)
+class InkToolbarHighlighterButtonT(Base) : AgileObject!Base, InkToolbarHighlighterButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface InkToolbarIsStencilButtonCheckedChangedEventArgs : Windows.UI.Xaml.Controls.IInkToolbarIsStencilButtonCheckedChangedEventArgs
@@ -11926,6 +13181,23 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarMenuButton).set_IsExtensionGlyphShown(value));
 	}
+}
+@makable!(InkToolbarMenuButton, InkToolbarMenuButton, Windows.UI.Xaml.Controls.IInkToolbarMenuButtonFactory)
+class InkToolbarMenuButtonT(Base) : AgileObject!Base, InkToolbarMenuButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_MenuKind(Windows.UI.Xaml.Controls.InkToolbarMenuKind* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarMenuButton).get_MenuKind(return_value); }
+	override HRESULT get_IsExtensionGlyphShown(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarMenuButton).get_IsExtensionGlyphShown(return_value); }
+	override HRESULT set_IsExtensionGlyphShown(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarMenuButton).set_IsExtensionGlyphShown(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface InkToolbarPenButton : Windows.UI.Xaml.Controls.InkToolbarToolButton, Windows.UI.Xaml.Controls.IInkToolbarPenButton
@@ -11988,6 +13260,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).set_SelectedStrokeWidth(value));
 	}
 }
+@makable!(InkToolbarPenButton, InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarPenButtonFactory)
+class InkToolbarPenButtonT(Base) : AgileObject!Base, InkToolbarPenButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Palette(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).get_Palette(return_value); }
+	override HRESULT set_Palette(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush) value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).set_Palette(value); }
+	override HRESULT get_MinStrokeWidth(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).get_MinStrokeWidth(return_value); }
+	override HRESULT set_MinStrokeWidth(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).set_MinStrokeWidth(value); }
+	override HRESULT get_MaxStrokeWidth(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).get_MaxStrokeWidth(return_value); }
+	override HRESULT set_MaxStrokeWidth(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).set_MaxStrokeWidth(value); }
+	override HRESULT get_SelectedBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).get_SelectedBrush(return_value); }
+	override HRESULT get_SelectedBrushIndex(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).get_SelectedBrushIndex(return_value); }
+	override HRESULT set_SelectedBrushIndex(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).set_SelectedBrushIndex(value); }
+	override HRESULT get_SelectedStrokeWidth(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).get_SelectedStrokeWidth(return_value); }
+	override HRESULT set_SelectedStrokeWidth(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarPenButton).set_SelectedStrokeWidth(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface InkToolbarPenConfigurationControl : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IInkToolbarPenConfigurationControl
 {
@@ -11999,9 +13296,38 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(InkToolbarPenConfigurationControl, InkToolbarPenConfigurationControl, Windows.UI.Xaml.Controls.IInkToolbarPenConfigurationControlFactory)
+class InkToolbarPenConfigurationControlT(Base) : AgileObject!Base, InkToolbarPenConfigurationControl
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_PenButton(Windows.UI.Xaml.Controls.InkToolbarPenButton* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarPenConfigurationControl).get_PenButton(return_value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface InkToolbarPencilButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarPencilButton
 {
+}
+@makable!(InkToolbarPencilButton, InkToolbarPencilButton, Windows.UI.Xaml.Controls.IInkToolbarPencilButtonFactory)
+class InkToolbarPencilButtonT(Base) : AgileObject!Base, InkToolbarPencilButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface InkToolbarRulerButton : Windows.UI.Xaml.Controls.InkToolbarToggleButton, Windows.UI.Xaml.Controls.IInkToolbarRulerButton
@@ -12014,6 +13340,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarRulerButton).get_Ruler(&_ret));
 		return _ret;
 	}
+}
+@makable!(InkToolbarRulerButton, InkToolbarRulerButton, Windows.UI.Xaml.Controls.IInkToolbarRulerButtonFactory)
+class InkToolbarRulerButtonT(Base) : AgileObject!Base, InkToolbarRulerButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Ruler(Windows.UI.Input.Inking.InkPresenterRuler* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarRulerButton).get_Ruler(return_value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface InkToolbarStencilButton : Windows.UI.Xaml.Controls.InkToolbarMenuButton, Windows.UI.Xaml.Controls.IInkToolbarStencilButton
@@ -12062,6 +13403,28 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).set_IsProtractorItemVisible(value));
 	}
 }
+@makable!(InkToolbarStencilButton, InkToolbarStencilButton, Windows.UI.Xaml.Controls.IInkToolbarStencilButtonFactory)
+class InkToolbarStencilButtonT(Base) : AgileObject!Base, InkToolbarStencilButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Ruler(Windows.UI.Input.Inking.InkPresenterRuler* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).get_Ruler(return_value); }
+	override HRESULT get_Protractor(Windows.UI.Input.Inking.InkPresenterProtractor* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).get_Protractor(return_value); }
+	override HRESULT get_SelectedStencil(Windows.UI.Xaml.Controls.InkToolbarStencilKind* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).get_SelectedStencil(return_value); }
+	override HRESULT set_SelectedStencil(Windows.UI.Xaml.Controls.InkToolbarStencilKind value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).set_SelectedStencil(value); }
+	override HRESULT get_IsRulerItemVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).get_IsRulerItemVisible(return_value); }
+	override HRESULT set_IsRulerItemVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).set_IsRulerItemVisible(value); }
+	override HRESULT get_IsProtractorItemVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).get_IsProtractorItemVisible(return_value); }
+	override HRESULT set_IsProtractorItemVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButton).set_IsProtractorItemVisible(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface InkToolbarToggleButton : Windows.UI.Xaml.Controls.CheckBox, Windows.UI.Xaml.Controls.IInkToolbarToggleButton
 {
@@ -12072,6 +13435,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarToggleButton).get_ToggleKind(&_ret));
 		return _ret;
 	}
+}
+@makable!(InkToolbarToggleButton, InkToolbarToggleButton, Windows.UI.Xaml.Controls.IInkToolbarToggleButtonFactory)
+class InkToolbarToggleButtonT(Base) : AgileObject!Base, InkToolbarToggleButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_ToggleKind(Windows.UI.Xaml.Controls.InkToolbarToggle* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarToggleButton).get_ToggleKind(return_value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface InkToolbarToolButton : Windows.UI.Xaml.Controls.RadioButton, Windows.UI.Xaml.Controls.IInkToolbarToolButton
@@ -12093,6 +13471,23 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarToolButton).set_IsExtensionGlyphShown(value));
 	}
+}
+@makable!(InkToolbarToolButton, InkToolbarToolButton, Windows.UI.Xaml.Controls.IInkToolbarToolButtonFactory)
+class InkToolbarToolButtonT(Base) : AgileObject!Base, InkToolbarToolButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_ToolKind(Windows.UI.Xaml.Controls.InkToolbarTool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarToolButton).get_ToolKind(return_value); }
+	override HRESULT get_IsExtensionGlyphShown(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarToolButton).get_IsExtensionGlyphShown(return_value); }
+	override HRESULT set_IsExtensionGlyphShown(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IInkToolbarToolButton).set_IsExtensionGlyphShown(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ItemClickEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.IItemClickEventArgs
@@ -12375,50 +13770,6 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl).get_IsGrouping(&_ret));
 		return _ret;
 	}
-	final bool IsItemItsOwnContainerOverride(IInspectable item)
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_IsItemItsOwnContainerOverride(item, &_ret));
-		return _ret;
-	}
-	final Windows.UI.Xaml.DependencyObject GetContainerForItemOverride()
-	{
-		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_GetContainerForItemOverride(&_ret));
-		return _ret;
-	}
-	final void ClearContainerForItemOverride(Windows.UI.Xaml.DependencyObject element, IInspectable item)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_ClearContainerForItemOverride(element, item));
-	}
-	final void PrepareContainerForItemOverride(Windows.UI.Xaml.DependencyObject element, IInspectable item)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_PrepareContainerForItemOverride(element, item));
-	}
-	final void OnItemsChanged(IInspectable e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemsChanged(e));
-	}
-	final void OnItemContainerStyleChanged(Windows.UI.Xaml.Style oldItemContainerStyle, Windows.UI.Xaml.Style newItemContainerStyle)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemContainerStyleChanged(oldItemContainerStyle, newItemContainerStyle));
-	}
-	final void OnItemContainerStyleSelectorChanged(Windows.UI.Xaml.Controls.StyleSelector oldItemContainerStyleSelector, Windows.UI.Xaml.Controls.StyleSelector newItemContainerStyleSelector)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemContainerStyleSelectorChanged(oldItemContainerStyleSelector, newItemContainerStyleSelector));
-	}
-	final void OnItemTemplateChanged(Windows.UI.Xaml.DataTemplate oldItemTemplate, Windows.UI.Xaml.DataTemplate newItemTemplate)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemTemplateChanged(oldItemTemplate, newItemTemplate));
-	}
-	final void OnItemTemplateSelectorChanged(Windows.UI.Xaml.Controls.DataTemplateSelector oldItemTemplateSelector, Windows.UI.Xaml.Controls.DataTemplateSelector newItemTemplateSelector)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemTemplateSelectorChanged(oldItemTemplateSelector, newItemTemplateSelector));
-	}
-	final void OnGroupStyleSelectorChanged(Windows.UI.Xaml.Controls.GroupStyleSelector oldGroupStyleSelector, Windows.UI.Xaml.Controls.GroupStyleSelector newGroupStyleSelector)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnGroupStyleSelectorChanged(oldGroupStyleSelector, newGroupStyleSelector));
-	}
 	final Windows.UI.Xaml.Controls.Panel ItemsPanelRoot()
 	{
 		Windows.UI.Xaml.Controls.Panel _ret;
@@ -12455,6 +13806,72 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IItemsControl3).abi_GroupHeaderContainerFromItemContainer(itemContainer, &_ret));
 		return _ret;
 	}
+}
+@makable!(ItemsControl, ItemsControl, Windows.UI.Xaml.Controls.IItemsControlFactory)
+class ItemsControlT(Base) : AgileObject!Base, ItemsControl
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_ItemsSource(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemsSource(return_value); }
+	override HRESULT set_ItemsSource(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemsSource(value); }
+	override HRESULT get_Items(Windows.UI.Xaml.Controls.ItemCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).get_Items(return_value); }
+	override HRESULT get_ItemTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemTemplate(return_value); }
+	override HRESULT set_ItemTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemTemplate(value); }
+	override HRESULT get_ItemTemplateSelector(Windows.UI.Xaml.Controls.DataTemplateSelector* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemTemplateSelector(return_value); }
+	override HRESULT set_ItemTemplateSelector(Windows.UI.Xaml.Controls.DataTemplateSelector value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemTemplateSelector(value); }
+	override HRESULT get_ItemsPanel(Windows.UI.Xaml.Controls.ItemsPanelTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemsPanel(return_value); }
+	override HRESULT set_ItemsPanel(Windows.UI.Xaml.Controls.ItemsPanelTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemsPanel(value); }
+	override HRESULT get_DisplayMemberPath(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).get_DisplayMemberPath(return_value); }
+	override HRESULT set_DisplayMemberPath(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).set_DisplayMemberPath(value); }
+	override HRESULT get_ItemContainerStyle(Windows.UI.Xaml.Style* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemContainerStyle(return_value); }
+	override HRESULT set_ItemContainerStyle(Windows.UI.Xaml.Style value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemContainerStyle(value); }
+	override HRESULT get_ItemContainerStyleSelector(Windows.UI.Xaml.Controls.StyleSelector* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemContainerStyleSelector(return_value); }
+	override HRESULT set_ItemContainerStyleSelector(Windows.UI.Xaml.Controls.StyleSelector value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemContainerStyleSelector(value); }
+	override HRESULT get_ItemContainerGenerator(Windows.UI.Xaml.Controls.ItemContainerGenerator* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemContainerGenerator(return_value); }
+	override HRESULT get_ItemContainerTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).get_ItemContainerTransitions(return_value); }
+	override HRESULT set_ItemContainerTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).set_ItemContainerTransitions(value); }
+	override HRESULT get_GroupStyle(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.Controls.GroupStyle)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).get_GroupStyle(return_value); }
+	override HRESULT get_GroupStyleSelector(Windows.UI.Xaml.Controls.GroupStyleSelector* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).get_GroupStyleSelector(return_value); }
+	override HRESULT set_GroupStyleSelector(Windows.UI.Xaml.Controls.GroupStyleSelector value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).set_GroupStyleSelector(value); }
+	override HRESULT get_IsGrouping(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl).get_IsGrouping(return_value); }
+
+	override HRESULT abi_IsItemItsOwnContainerOverride(IInspectable item, bool* return_returnValue) { this.IsItemItsOwnContainerOverride(item, return_returnValue); return S_OK; }
+	void IsItemItsOwnContainerOverride(IInspectable item, bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_IsItemItsOwnContainerOverride(item, return_returnValue)); }
+	override HRESULT abi_GetContainerForItemOverride(Windows.UI.Xaml.DependencyObject* return_returnValue) { this.GetContainerForItemOverride(return_returnValue); return S_OK; }
+	void GetContainerForItemOverride(Windows.UI.Xaml.DependencyObject* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_GetContainerForItemOverride(return_returnValue)); }
+	override HRESULT abi_ClearContainerForItemOverride(Windows.UI.Xaml.DependencyObject element, IInspectable item) { this.ClearContainerForItemOverride(element, item); return S_OK; }
+	void ClearContainerForItemOverride(Windows.UI.Xaml.DependencyObject element, IInspectable item) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_ClearContainerForItemOverride(element, item)); }
+	override HRESULT abi_PrepareContainerForItemOverride(Windows.UI.Xaml.DependencyObject element, IInspectable item) { this.PrepareContainerForItemOverride(element, item); return S_OK; }
+	void PrepareContainerForItemOverride(Windows.UI.Xaml.DependencyObject element, IInspectable item) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_PrepareContainerForItemOverride(element, item)); }
+	override HRESULT abi_OnItemsChanged(IInspectable e) { this.OnItemsChanged(e); return S_OK; }
+	void OnItemsChanged(IInspectable e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemsChanged(e)); }
+	override HRESULT abi_OnItemContainerStyleChanged(Windows.UI.Xaml.Style oldItemContainerStyle, Windows.UI.Xaml.Style newItemContainerStyle) { this.OnItemContainerStyleChanged(oldItemContainerStyle, newItemContainerStyle); return S_OK; }
+	void OnItemContainerStyleChanged(Windows.UI.Xaml.Style oldItemContainerStyle, Windows.UI.Xaml.Style newItemContainerStyle) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemContainerStyleChanged(oldItemContainerStyle, newItemContainerStyle)); }
+	override HRESULT abi_OnItemContainerStyleSelectorChanged(Windows.UI.Xaml.Controls.StyleSelector oldItemContainerStyleSelector, Windows.UI.Xaml.Controls.StyleSelector newItemContainerStyleSelector) { this.OnItemContainerStyleSelectorChanged(oldItemContainerStyleSelector, newItemContainerStyleSelector); return S_OK; }
+	void OnItemContainerStyleSelectorChanged(Windows.UI.Xaml.Controls.StyleSelector oldItemContainerStyleSelector, Windows.UI.Xaml.Controls.StyleSelector newItemContainerStyleSelector) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemContainerStyleSelectorChanged(oldItemContainerStyleSelector, newItemContainerStyleSelector)); }
+	override HRESULT abi_OnItemTemplateChanged(Windows.UI.Xaml.DataTemplate oldItemTemplate, Windows.UI.Xaml.DataTemplate newItemTemplate) { this.OnItemTemplateChanged(oldItemTemplate, newItemTemplate); return S_OK; }
+	void OnItemTemplateChanged(Windows.UI.Xaml.DataTemplate oldItemTemplate, Windows.UI.Xaml.DataTemplate newItemTemplate) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemTemplateChanged(oldItemTemplate, newItemTemplate)); }
+	override HRESULT abi_OnItemTemplateSelectorChanged(Windows.UI.Xaml.Controls.DataTemplateSelector oldItemTemplateSelector, Windows.UI.Xaml.Controls.DataTemplateSelector newItemTemplateSelector) { this.OnItemTemplateSelectorChanged(oldItemTemplateSelector, newItemTemplateSelector); return S_OK; }
+	void OnItemTemplateSelectorChanged(Windows.UI.Xaml.Controls.DataTemplateSelector oldItemTemplateSelector, Windows.UI.Xaml.Controls.DataTemplateSelector newItemTemplateSelector) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnItemTemplateSelectorChanged(oldItemTemplateSelector, newItemTemplateSelector)); }
+	override HRESULT abi_OnGroupStyleSelectorChanged(Windows.UI.Xaml.Controls.GroupStyleSelector oldGroupStyleSelector, Windows.UI.Xaml.Controls.GroupStyleSelector newGroupStyleSelector) { this.OnGroupStyleSelectorChanged(oldGroupStyleSelector, newGroupStyleSelector); return S_OK; }
+	void OnGroupStyleSelectorChanged(Windows.UI.Xaml.Controls.GroupStyleSelector oldGroupStyleSelector, Windows.UI.Xaml.Controls.GroupStyleSelector newGroupStyleSelector) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IItemsControlOverrides).abi_OnGroupStyleSelectorChanged(oldGroupStyleSelector, newGroupStyleSelector)); }
+
+	override HRESULT get_ItemsPanelRoot(Windows.UI.Xaml.Controls.Panel* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl2).get_ItemsPanelRoot(return_value); }
+
+	override HRESULT abi_ItemFromContainer(Windows.UI.Xaml.DependencyObject container, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemContainerMapping).abi_ItemFromContainer(container, return_returnValue); }
+	override HRESULT abi_ContainerFromItem(IInspectable item, Windows.UI.Xaml.DependencyObject* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemContainerMapping).abi_ContainerFromItem(item, return_returnValue); }
+	override HRESULT abi_IndexFromContainer(Windows.UI.Xaml.DependencyObject container, INT32* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemContainerMapping).abi_IndexFromContainer(container, return_returnValue); }
+	override HRESULT abi_ContainerFromIndex(INT32 index, Windows.UI.Xaml.DependencyObject* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemContainerMapping).abi_ContainerFromIndex(index, return_returnValue); }
+
+	override HRESULT abi_GroupHeaderContainerFromItemContainer(Windows.UI.Xaml.DependencyObject itemContainer, Windows.UI.Xaml.DependencyObject* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IItemsControl3).abi_GroupHeaderContainerFromItemContainer(itemContainer, return_returnValue); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ItemsPanelTemplate : Windows.UI.Xaml.FrameworkTemplate, Windows.UI.Xaml.Controls.IItemsPanelTemplate
@@ -12845,9 +14262,45 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListBox2).set_SingleSelectionFollowsFocus(value));
 	}
 }
+@makable!(ListBox, ListBox, Windows.UI.Xaml.Controls.IListBoxFactory)
+class ListBoxT(Base) : AgileObject!Base, ListBox
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_SelectedItems(Windows.Foundation.Collections.IVector!(IInspectable)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListBox).get_SelectedItems(return_value); }
+	override HRESULT get_SelectionMode(Windows.UI.Xaml.Controls.SelectionMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListBox).get_SelectionMode(return_value); }
+	override HRESULT set_SelectionMode(Windows.UI.Xaml.Controls.SelectionMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListBox).set_SelectionMode(value); }
+	override HRESULT abi_ScrollIntoView(IInspectable item) { return m_inner.as!(Windows.UI.Xaml.Controls.IListBox).abi_ScrollIntoView(item); }
+	override HRESULT abi_SelectAll() { return m_inner.as!(Windows.UI.Xaml.Controls.IListBox).abi_SelectAll(); }
+
+	override HRESULT get_SingleSelectionFollowsFocus(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListBox2).get_SingleSelectionFollowsFocus(return_value); }
+	override HRESULT set_SingleSelectionFollowsFocus(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListBox2).set_SingleSelectionFollowsFocus(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ListBoxItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IListBoxItem
 {
+}
+@makable!(ListBoxItem, ListBoxItem, Windows.UI.Xaml.Controls.IListBoxItemFactory)
+class ListBoxItemT(Base) : AgileObject!Base, ListBoxItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ListPickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase, Windows.UI.Xaml.Controls.IListPickerFlyout
@@ -12963,6 +14416,20 @@ interface ListPickerFlyoutPresenter : Windows.UI.Xaml.Controls.Control, Windows.
 
 interface ListView : Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.IListView
 {
+}
+@makable!(ListView, ListView, Windows.UI.Xaml.Controls.IListViewFactory)
+class ListViewT(Base) : AgileObject!Base, ListView
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ListViewBase : Windows.UI.Xaml.Controls.Primitives.Selector, Windows.UI.Xaml.Controls.IListViewBase, Windows.UI.Xaml.Controls.ISemanticZoomInformation, Windows.UI.Xaml.Controls.IListViewBase2, Windows.UI.Xaml.Controls.IListViewBase3, Windows.UI.Xaml.Controls.IListViewBase4, Windows.UI.Xaml.Controls.IListViewBase5, Windows.UI.Xaml.Controls.IListViewBase6
@@ -13315,13 +14782,134 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(ListViewBase, ListViewBase, Windows.UI.Xaml.Controls.IListViewBaseFactory)
+class ListViewBaseT(Base) : AgileObject!Base, ListViewBase
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_SelectedItems(Windows.Foundation.Collections.IVector!(IInspectable)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).get_SelectedItems(return_value); }
+	override HRESULT get_SelectionMode(Windows.UI.Xaml.Controls.ListViewSelectionMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).get_SelectionMode(return_value); }
+	override HRESULT set_SelectionMode(Windows.UI.Xaml.Controls.ListViewSelectionMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).set_SelectionMode(value); }
+	override HRESULT get_IsSwipeEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).get_IsSwipeEnabled(return_value); }
+	override HRESULT set_IsSwipeEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).set_IsSwipeEnabled(value); }
+	override HRESULT get_CanDragItems(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).get_CanDragItems(return_value); }
+	override HRESULT set_CanDragItems(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).set_CanDragItems(value); }
+	override HRESULT get_CanReorderItems(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).get_CanReorderItems(return_value); }
+	override HRESULT set_CanReorderItems(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).set_CanReorderItems(value); }
+	override HRESULT get_IsItemClickEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).get_IsItemClickEnabled(return_value); }
+	override HRESULT set_IsItemClickEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).set_IsItemClickEnabled(value); }
+	override HRESULT get_DataFetchSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).get_DataFetchSize(return_value); }
+	override HRESULT set_DataFetchSize(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).set_DataFetchSize(value); }
+	override HRESULT get_IncrementalLoadingThreshold(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).get_IncrementalLoadingThreshold(return_value); }
+	override HRESULT set_IncrementalLoadingThreshold(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).set_IncrementalLoadingThreshold(value); }
+	override HRESULT get_IncrementalLoadingTrigger(Windows.UI.Xaml.Controls.IncrementalLoadingTrigger* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).get_IncrementalLoadingTrigger(return_value); }
+	override HRESULT set_IncrementalLoadingTrigger(Windows.UI.Xaml.Controls.IncrementalLoadingTrigger value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).set_IncrementalLoadingTrigger(value); }
+	override HRESULT add_ItemClick(Windows.UI.Xaml.Controls.ItemClickEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).add_ItemClick(value, return_token); }
+	override HRESULT remove_ItemClick(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).remove_ItemClick(token); }
+	override HRESULT add_DragItemsStarting(Windows.UI.Xaml.Controls.DragItemsStartingEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).add_DragItemsStarting(value, return_token); }
+	override HRESULT remove_DragItemsStarting(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).remove_DragItemsStarting(token); }
+	override HRESULT abi_ScrollIntoView(IInspectable item) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).abi_ScrollIntoView(item); }
+	override HRESULT abi_SelectAll() { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).abi_SelectAll(); }
+	override HRESULT abi_LoadMoreItemsAsync(Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Data.LoadMoreItemsResult)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).abi_LoadMoreItemsAsync(return_returnValue); }
+	override HRESULT abi_ScrollIntoViewWithAlignment(IInspectable item, Windows.UI.Xaml.Controls.ScrollIntoViewAlignment alignment) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).abi_ScrollIntoViewWithAlignment(item, alignment); }
+	override HRESULT get_Header(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).get_Header(return_value); }
+	override HRESULT set_Header(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).set_Header(value); }
+	override HRESULT get_HeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).get_HeaderTemplate(return_value); }
+	override HRESULT set_HeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).set_HeaderTemplate(value); }
+	override HRESULT get_HeaderTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).get_HeaderTransitions(return_value); }
+	override HRESULT set_HeaderTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase).set_HeaderTransitions(value); }
+
+	override HRESULT get_SemanticZoomOwner(Windows.UI.Xaml.Controls.SemanticZoom* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).get_SemanticZoomOwner(return_value); }
+	override HRESULT set_SemanticZoomOwner(Windows.UI.Xaml.Controls.SemanticZoom value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).set_SemanticZoomOwner(value); }
+	override HRESULT get_IsActiveView(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).get_IsActiveView(return_value); }
+	override HRESULT set_IsActiveView(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).set_IsActiveView(value); }
+	override HRESULT get_IsZoomedInView(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).get_IsZoomedInView(return_value); }
+	override HRESULT set_IsZoomedInView(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).set_IsZoomedInView(value); }
+	override HRESULT abi_InitializeViewChange() { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_InitializeViewChange(); }
+	override HRESULT abi_CompleteViewChange() { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_CompleteViewChange(); }
+	override HRESULT abi_MakeVisible(Windows.UI.Xaml.Controls.SemanticZoomLocation item) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_MakeVisible(item); }
+	override HRESULT abi_StartViewChangeFrom(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_StartViewChangeFrom(source, destination); }
+	override HRESULT abi_StartViewChangeTo(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_StartViewChangeTo(source, destination); }
+	override HRESULT abi_CompleteViewChangeFrom(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_CompleteViewChangeFrom(source, destination); }
+	override HRESULT abi_CompleteViewChangeTo(Windows.UI.Xaml.Controls.SemanticZoomLocation source, Windows.UI.Xaml.Controls.SemanticZoomLocation destination) { return m_inner.as!(Windows.UI.Xaml.Controls.ISemanticZoomInformation).abi_CompleteViewChangeTo(source, destination); }
+
+	override HRESULT get_ShowsScrollingPlaceholders(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase2).get_ShowsScrollingPlaceholders(return_value); }
+	override HRESULT set_ShowsScrollingPlaceholders(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase2).set_ShowsScrollingPlaceholders(value); }
+	override HRESULT add_ContainerContentChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase2).add_ContainerContentChanging(value, return_token); }
+	override HRESULT remove_ContainerContentChanging(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase2).remove_ContainerContentChanging(token); }
+	override HRESULT abi_SetDesiredContainerUpdateDuration(Windows.Foundation.TimeSpan duration) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase2).abi_SetDesiredContainerUpdateDuration(duration); }
+	override HRESULT get_Footer(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase2).get_Footer(return_value); }
+	override HRESULT set_Footer(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase2).set_Footer(value); }
+	override HRESULT get_FooterTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase2).get_FooterTemplate(return_value); }
+	override HRESULT set_FooterTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase2).set_FooterTemplate(value); }
+	override HRESULT get_FooterTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase2).get_FooterTransitions(return_value); }
+	override HRESULT set_FooterTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase2).set_FooterTransitions(value); }
+
+	override HRESULT get_ReorderMode(Windows.UI.Xaml.Controls.ListViewReorderMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase3).get_ReorderMode(return_value); }
+	override HRESULT set_ReorderMode(Windows.UI.Xaml.Controls.ListViewReorderMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase3).set_ReorderMode(value); }
+
+	override HRESULT get_SelectedRanges(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Data.ItemIndexRange)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase4).get_SelectedRanges(return_value); }
+	override HRESULT get_IsMultiSelectCheckBoxEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase4).get_IsMultiSelectCheckBoxEnabled(return_value); }
+	override HRESULT set_IsMultiSelectCheckBoxEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase4).set_IsMultiSelectCheckBoxEnabled(value); }
+	override HRESULT add_DragItemsCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.DragItemsCompletedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase4).add_DragItemsCompleted(value, return_token); }
+	override HRESULT remove_DragItemsCompleted(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase4).remove_DragItemsCompleted(token); }
+	override HRESULT add_ChoosingItemContainer(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ChoosingItemContainerEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase4).add_ChoosingItemContainer(value, return_token); }
+	override HRESULT remove_ChoosingItemContainer(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase4).remove_ChoosingItemContainer(token); }
+	override HRESULT add_ChoosingGroupHeaderContainer(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.ChoosingGroupHeaderContainerEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase4).add_ChoosingGroupHeaderContainer(value, return_token); }
+	override HRESULT remove_ChoosingGroupHeaderContainer(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase4).remove_ChoosingGroupHeaderContainer(token); }
+	override HRESULT abi_SelectRange(Windows.UI.Xaml.Data.ItemIndexRange itemIndexRange) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase4).abi_SelectRange(itemIndexRange); }
+	override HRESULT abi_DeselectRange(Windows.UI.Xaml.Data.ItemIndexRange itemIndexRange) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase4).abi_DeselectRange(itemIndexRange); }
+
+	override HRESULT get_SingleSelectionFollowsFocus(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase5).get_SingleSelectionFollowsFocus(return_value); }
+	override HRESULT set_SingleSelectionFollowsFocus(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase5).set_SingleSelectionFollowsFocus(value); }
+	override HRESULT abi_IsDragSource(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase5).abi_IsDragSource(return_returnValue); }
+
+	override HRESULT abi_TryStartConnectedAnimationAsync(Windows.UI.Xaml.Media.Animation.ConnectedAnimation animation, IInspectable item, HSTRING elementName, Windows.Foundation.IAsyncOperation!(bool)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase6).abi_TryStartConnectedAnimationAsync(animation, item, elementName, return_returnValue); }
+	override HRESULT abi_PrepareConnectedAnimation(HSTRING key, IInspectable item, HSTRING elementName, Windows.UI.Xaml.Media.Animation.ConnectedAnimation* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewBase6).abi_PrepareConnectedAnimation(key, item, elementName, return_returnValue); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ListViewBaseHeaderItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IListViewBaseHeaderItem
 {
 }
+@makable!(ListViewBaseHeaderItem, ListViewBaseHeaderItem, Windows.UI.Xaml.Controls.IListViewBaseHeaderItemFactory)
+class ListViewBaseHeaderItemT(Base) : AgileObject!Base, ListViewBaseHeaderItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ListViewHeaderItem : Windows.UI.Xaml.Controls.ListViewBaseHeaderItem, Windows.UI.Xaml.Controls.IListViewHeaderItem
 {
+}
+@makable!(ListViewHeaderItem, ListViewHeaderItem, Windows.UI.Xaml.Controls.IListViewHeaderItemFactory)
+class ListViewHeaderItemT(Base) : AgileObject!Base, ListViewHeaderItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ListViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IListViewItem
@@ -13333,6 +14921,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewItem).get_TemplateSettings(&_ret));
 		return _ret;
 	}
+}
+@makable!(ListViewItem, ListViewItem, Windows.UI.Xaml.Controls.IListViewItemFactory)
+class ListViewItemT(Base) : AgileObject!Base, ListViewItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.ListViewItemTemplateSettings* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IListViewItem).get_TemplateSettings(return_value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ListViewPersistenceHelper : Windows.UI.Xaml.Controls.IListViewPersistenceHelper
@@ -13857,6 +15460,36 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).abi_SetMediaPlayer(mediaPlayer));
 	}
 }
+@makable!(MediaPlayerElement, MediaPlayerElement, Windows.UI.Xaml.Controls.IMediaPlayerElementFactory)
+class MediaPlayerElementT(Base) : AgileObject!Base, MediaPlayerElement
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Source(Windows.Media.Playback.IMediaPlaybackSource* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_Source(return_value); }
+	override HRESULT set_Source(Windows.Media.Playback.IMediaPlaybackSource value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_Source(value); }
+	override HRESULT get_TransportControls(Windows.UI.Xaml.Controls.MediaTransportControls* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_TransportControls(return_value); }
+	override HRESULT set_TransportControls(Windows.UI.Xaml.Controls.MediaTransportControls value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_TransportControls(value); }
+	override HRESULT get_AreTransportControlsEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_AreTransportControlsEnabled(return_value); }
+	override HRESULT set_AreTransportControlsEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_AreTransportControlsEnabled(value); }
+	override HRESULT get_PosterSource(Windows.UI.Xaml.Media.ImageSource* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_PosterSource(return_value); }
+	override HRESULT set_PosterSource(Windows.UI.Xaml.Media.ImageSource value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_PosterSource(value); }
+	override HRESULT get_Stretch(Windows.UI.Xaml.Media.Stretch* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_Stretch(return_value); }
+	override HRESULT set_Stretch(Windows.UI.Xaml.Media.Stretch value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_Stretch(value); }
+	override HRESULT get_AutoPlay(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_AutoPlay(return_value); }
+	override HRESULT set_AutoPlay(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_AutoPlay(value); }
+	override HRESULT get_IsFullWindow(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_IsFullWindow(return_value); }
+	override HRESULT set_IsFullWindow(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).set_IsFullWindow(value); }
+	override HRESULT get_MediaPlayer(Windows.Media.Playback.MediaPlayer* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).get_MediaPlayer(return_value); }
+	override HRESULT abi_SetMediaPlayer(Windows.Media.Playback.MediaPlayer mediaPlayer) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerElement).abi_SetMediaPlayer(mediaPlayer); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface MediaPlayerPresenter : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IMediaPlayerPresenter
 {
@@ -13891,6 +15524,26 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenter).set_IsFullWindow(value));
 	}
+}
+@makable!(MediaPlayerPresenter, MediaPlayerPresenter, Windows.UI.Xaml.Controls.IMediaPlayerPresenterFactory)
+class MediaPlayerPresenterT(Base) : AgileObject!Base, MediaPlayerPresenter
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_MediaPlayer(Windows.Media.Playback.MediaPlayer* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenter).get_MediaPlayer(return_value); }
+	override HRESULT set_MediaPlayer(Windows.Media.Playback.MediaPlayer value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenter).set_MediaPlayer(value); }
+	override HRESULT get_Stretch(Windows.UI.Xaml.Media.Stretch* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenter).get_Stretch(return_value); }
+	override HRESULT set_Stretch(Windows.UI.Xaml.Media.Stretch value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenter).set_Stretch(value); }
+	override HRESULT get_IsFullWindow(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenter).get_IsFullWindow(return_value); }
+	override HRESULT set_IsFullWindow(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenter).set_IsFullWindow(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface MediaTransportControls : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IMediaTransportControls, Windows.UI.Xaml.Controls.IMediaTransportControls2
@@ -14147,6 +15800,71 @@ extern(Windows):
 		Debug.OK(remove_ThumbnailRequested(token));
 	}
 }
+@makable!(MediaTransportControls, MediaTransportControls, Windows.UI.Xaml.Controls.IMediaTransportControlsFactory)
+class MediaTransportControlsT(Base) : AgileObject!Base, MediaTransportControls
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_IsFullWindowButtonVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsFullWindowButtonVisible(return_value); }
+	override HRESULT set_IsFullWindowButtonVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsFullWindowButtonVisible(value); }
+	override HRESULT get_IsFullWindowEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsFullWindowEnabled(return_value); }
+	override HRESULT set_IsFullWindowEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsFullWindowEnabled(value); }
+	override HRESULT get_IsZoomButtonVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsZoomButtonVisible(return_value); }
+	override HRESULT set_IsZoomButtonVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsZoomButtonVisible(value); }
+	override HRESULT get_IsZoomEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsZoomEnabled(return_value); }
+	override HRESULT set_IsZoomEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsZoomEnabled(value); }
+	override HRESULT get_IsFastForwardButtonVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsFastForwardButtonVisible(return_value); }
+	override HRESULT set_IsFastForwardButtonVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsFastForwardButtonVisible(value); }
+	override HRESULT get_IsFastForwardEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsFastForwardEnabled(return_value); }
+	override HRESULT set_IsFastForwardEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsFastForwardEnabled(value); }
+	override HRESULT get_IsFastRewindButtonVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsFastRewindButtonVisible(return_value); }
+	override HRESULT set_IsFastRewindButtonVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsFastRewindButtonVisible(value); }
+	override HRESULT get_IsFastRewindEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsFastRewindEnabled(return_value); }
+	override HRESULT set_IsFastRewindEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsFastRewindEnabled(value); }
+	override HRESULT get_IsStopButtonVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsStopButtonVisible(return_value); }
+	override HRESULT set_IsStopButtonVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsStopButtonVisible(value); }
+	override HRESULT get_IsStopEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsStopEnabled(return_value); }
+	override HRESULT set_IsStopEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsStopEnabled(value); }
+	override HRESULT get_IsVolumeButtonVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsVolumeButtonVisible(return_value); }
+	override HRESULT set_IsVolumeButtonVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsVolumeButtonVisible(value); }
+	override HRESULT get_IsVolumeEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsVolumeEnabled(return_value); }
+	override HRESULT set_IsVolumeEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsVolumeEnabled(value); }
+	override HRESULT get_IsPlaybackRateButtonVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsPlaybackRateButtonVisible(return_value); }
+	override HRESULT set_IsPlaybackRateButtonVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsPlaybackRateButtonVisible(value); }
+	override HRESULT get_IsPlaybackRateEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsPlaybackRateEnabled(return_value); }
+	override HRESULT set_IsPlaybackRateEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsPlaybackRateEnabled(value); }
+	override HRESULT get_IsSeekBarVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsSeekBarVisible(return_value); }
+	override HRESULT set_IsSeekBarVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsSeekBarVisible(value); }
+	override HRESULT get_IsSeekEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsSeekEnabled(return_value); }
+	override HRESULT set_IsSeekEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsSeekEnabled(value); }
+	override HRESULT get_IsCompact(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).get_IsCompact(return_value); }
+	override HRESULT set_IsCompact(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls).set_IsCompact(value); }
+
+	override HRESULT get_IsSkipForwardButtonVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_IsSkipForwardButtonVisible(return_value); }
+	override HRESULT set_IsSkipForwardButtonVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_IsSkipForwardButtonVisible(value); }
+	override HRESULT get_IsSkipForwardEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_IsSkipForwardEnabled(return_value); }
+	override HRESULT set_IsSkipForwardEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_IsSkipForwardEnabled(value); }
+	override HRESULT get_IsSkipBackwardButtonVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_IsSkipBackwardButtonVisible(return_value); }
+	override HRESULT set_IsSkipBackwardButtonVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_IsSkipBackwardButtonVisible(value); }
+	override HRESULT get_IsSkipBackwardEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_IsSkipBackwardEnabled(return_value); }
+	override HRESULT set_IsSkipBackwardEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_IsSkipBackwardEnabled(value); }
+	override HRESULT get_IsNextTrackButtonVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_IsNextTrackButtonVisible(return_value); }
+	override HRESULT set_IsNextTrackButtonVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_IsNextTrackButtonVisible(value); }
+	override HRESULT get_IsPreviousTrackButtonVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_IsPreviousTrackButtonVisible(return_value); }
+	override HRESULT set_IsPreviousTrackButtonVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_IsPreviousTrackButtonVisible(value); }
+	override HRESULT get_FastPlayFallbackBehaviour(Windows.UI.Xaml.Media.FastPlayFallbackBehaviour* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).get_FastPlayFallbackBehaviour(return_value); }
+	override HRESULT set_FastPlayFallbackBehaviour(Windows.UI.Xaml.Media.FastPlayFallbackBehaviour value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).set_FastPlayFallbackBehaviour(value); }
+	override HRESULT add_ThumbnailRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.MediaTransportControls, Windows.UI.Xaml.Media.MediaTransportControlsThumbnailRequestedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).add_ThumbnailRequested(value, return_token); }
+	override HRESULT remove_ThumbnailRequested(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IMediaTransportControls2).remove_ThumbnailRequested(token); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface MediaTransportControlsHelper : Windows.UI.Xaml.Controls.IMediaTransportControlsHelper
 {
@@ -14175,6 +15893,25 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyout2).abi_ShowAt(targetElement, point));
 	}
+}
+@makable!(MenuFlyout, MenuFlyout, Windows.UI.Xaml.Controls.IMenuFlyoutFactory)
+class MenuFlyoutT(Base) : AgileObject!Base, MenuFlyout
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Items(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.MenuFlyoutItemBase)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyout).get_Items(return_value); }
+	override HRESULT get_MenuFlyoutPresenterStyle(Windows.UI.Xaml.Style* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyout).get_MenuFlyoutPresenterStyle(return_value); }
+	override HRESULT set_MenuFlyoutPresenterStyle(Windows.UI.Xaml.Style value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyout).set_MenuFlyoutPresenterStyle(value); }
+
+	override HRESULT abi_ShowAt(Windows.UI.Xaml.UIElement targetElement, Windows.Foundation.Point point) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyout2).abi_ShowAt(targetElement, point); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface MenuFlyoutItem : Windows.UI.Xaml.Controls.MenuFlyoutItemBase, Windows.UI.Xaml.Controls.IMenuFlyoutItem, Windows.UI.Xaml.Controls.IMenuFlyoutItem2
@@ -14225,9 +15962,48 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem2).set_Icon(value));
 	}
 }
+@makable!(MenuFlyoutItem, MenuFlyoutItem, Windows.UI.Xaml.Controls.IMenuFlyoutItemFactory)
+class MenuFlyoutItemT(Base) : AgileObject!Base, MenuFlyoutItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Text(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).get_Text(return_value); }
+	override HRESULT set_Text(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).set_Text(value); }
+	override HRESULT get_Command(Windows.UI.Xaml.Input.ICommand* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).get_Command(return_value); }
+	override HRESULT set_Command(Windows.UI.Xaml.Input.ICommand value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).set_Command(value); }
+	override HRESULT get_CommandParameter(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).get_CommandParameter(return_value); }
+	override HRESULT set_CommandParameter(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).set_CommandParameter(value); }
+	override HRESULT add_Click(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).add_Click(value, return_token); }
+	override HRESULT remove_Click(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem).remove_Click(token); }
+
+	override HRESULT get_Icon(Windows.UI.Xaml.Controls.IconElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem2).get_Icon(return_value); }
+	override HRESULT set_Icon(Windows.UI.Xaml.Controls.IconElement value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItem2).set_Icon(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface MenuFlyoutItemBase : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IMenuFlyoutItemBase
 {
+}
+@makable!(MenuFlyoutItemBase, MenuFlyoutItemBase, Windows.UI.Xaml.Controls.IMenuFlyoutItemBaseFactory)
+class MenuFlyoutItemBaseT(Base) : AgileObject!Base, MenuFlyoutItemBase
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface MenuFlyoutPresenter : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.IMenuFlyoutPresenter, Windows.UI.Xaml.Controls.IMenuFlyoutPresenter2
@@ -14240,9 +16016,39 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(MenuFlyoutPresenter, MenuFlyoutPresenter, Windows.UI.Xaml.Controls.IMenuFlyoutPresenterFactory)
+class MenuFlyoutPresenterT(Base) : AgileObject!Base, MenuFlyoutPresenter
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.MenuFlyoutPresenterTemplateSettings* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IMenuFlyoutPresenter2).get_TemplateSettings(return_value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface MenuFlyoutSeparator : Windows.UI.Xaml.Controls.MenuFlyoutItemBase, Windows.UI.Xaml.Controls.IMenuFlyoutSeparator
 {
+}
+@makable!(MenuFlyoutSeparator, MenuFlyoutSeparator, Windows.UI.Xaml.Controls.IMenuFlyoutSeparatorFactory)
+class MenuFlyoutSeparatorT(Base) : AgileObject!Base, MenuFlyoutSeparator
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface MenuFlyoutSubItem : Windows.UI.Xaml.Controls.MenuFlyoutItemBase, Windows.UI.Xaml.Controls.IMenuFlyoutSubItem, Windows.UI.Xaml.Controls.IMenuFlyoutSubItem2
@@ -14332,18 +16138,34 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPage).set_BottomAppBar(value));
 	}
-	final void OnNavigatedFrom(Windows.UI.Xaml.Navigation.NavigationEventArgs e)
+}
+@makable!(Page, Page, Windows.UI.Xaml.Controls.IPageFactory)
+class PageT(Base) : AgileObject!Base, Page
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPageOverrides).abi_OnNavigatedFrom(e));
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
 	}
-	final void OnNavigatedTo(Windows.UI.Xaml.Navigation.NavigationEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPageOverrides).abi_OnNavigatedTo(e));
-	}
-	final void OnNavigatingFrom(Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPageOverrides).abi_OnNavigatingFrom(e));
-	}
+	override HRESULT get_Frame(Windows.UI.Xaml.Controls.Frame* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPage).get_Frame(return_value); }
+	override HRESULT get_NavigationCacheMode(Windows.UI.Xaml.Navigation.NavigationCacheMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPage).get_NavigationCacheMode(return_value); }
+	override HRESULT set_NavigationCacheMode(Windows.UI.Xaml.Navigation.NavigationCacheMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPage).set_NavigationCacheMode(value); }
+	override HRESULT get_TopAppBar(Windows.UI.Xaml.Controls.AppBar* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPage).get_TopAppBar(return_value); }
+	override HRESULT set_TopAppBar(Windows.UI.Xaml.Controls.AppBar value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPage).set_TopAppBar(value); }
+	override HRESULT get_BottomAppBar(Windows.UI.Xaml.Controls.AppBar* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPage).get_BottomAppBar(return_value); }
+	override HRESULT set_BottomAppBar(Windows.UI.Xaml.Controls.AppBar value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPage).set_BottomAppBar(value); }
+
+	override HRESULT abi_OnNavigatedFrom(Windows.UI.Xaml.Navigation.NavigationEventArgs e) { this.OnNavigatedFrom(e); return S_OK; }
+	void OnNavigatedFrom(Windows.UI.Xaml.Navigation.NavigationEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IPageOverrides).abi_OnNavigatedFrom(e)); }
+	override HRESULT abi_OnNavigatedTo(Windows.UI.Xaml.Navigation.NavigationEventArgs e) { this.OnNavigatedTo(e); return S_OK; }
+	void OnNavigatedTo(Windows.UI.Xaml.Navigation.NavigationEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IPageOverrides).abi_OnNavigatedTo(e)); }
+	override HRESULT abi_OnNavigatingFrom(Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs e) { this.OnNavigatingFrom(e); return S_OK; }
+	void OnNavigatingFrom(Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs e) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IPageOverrides).abi_OnNavigatingFrom(e)); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface Panel : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Controls.IPanel
@@ -14381,6 +16203,26 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPanel).set_ChildrenTransitions(value));
 	}
+}
+@makable!(Panel, Panel, Windows.UI.Xaml.Controls.IPanelFactory)
+class PanelT(Base) : AgileObject!Base, Panel
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Children(Windows.UI.Xaml.Controls.UIElementCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPanel).get_Children(return_value); }
+	override HRESULT get_Background(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPanel).get_Background(return_value); }
+	override HRESULT set_Background(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPanel).set_Background(value); }
+	override HRESULT get_IsItemsHost(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPanel).get_IsItemsHost(return_value); }
+	override HRESULT get_ChildrenTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPanel).get_ChildrenTransitions(return_value); }
+	override HRESULT set_ChildrenTransitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPanel).set_ChildrenTransitions(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface PasswordBox : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IPasswordBox, Windows.UI.Xaml.Controls.IPasswordBox2, Windows.UI.Xaml.Controls.IPasswordBox3
@@ -14539,6 +16381,22 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPathIcon).set_Data(value));
 	}
+}
+@makable!(PathIcon, PathIcon, Windows.UI.Xaml.Controls.IPathIconFactory)
+class PathIconT(Base) : AgileObject!Base, PathIcon
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Data(Windows.UI.Xaml.Media.Geometry* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPathIcon).get_Data(return_value); }
+	override HRESULT set_Data(Windows.UI.Xaml.Media.Geometry value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPathIcon).set_Data(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface PickerConfirmedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IPickerConfirmedEventArgs
@@ -14758,6 +16616,56 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivot3).set_IsHeaderItemsCarouselEnabled(value));
 	}
 }
+@makable!(Pivot, Pivot, Windows.UI.Xaml.Controls.IPivotFactory)
+class PivotT(Base) : AgileObject!Base, Pivot
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Title(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).get_Title(return_value); }
+	override HRESULT set_Title(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).set_Title(value); }
+	override HRESULT get_TitleTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).get_TitleTemplate(return_value); }
+	override HRESULT set_TitleTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).set_TitleTemplate(value); }
+	override HRESULT get_HeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).get_HeaderTemplate(return_value); }
+	override HRESULT set_HeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).set_HeaderTemplate(value); }
+	override HRESULT get_SelectedIndex(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).get_SelectedIndex(return_value); }
+	override HRESULT set_SelectedIndex(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).set_SelectedIndex(value); }
+	override HRESULT get_SelectedItem(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).get_SelectedItem(return_value); }
+	override HRESULT set_SelectedItem(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).set_SelectedItem(value); }
+	override HRESULT get_IsLocked(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).get_IsLocked(return_value); }
+	override HRESULT set_IsLocked(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).set_IsLocked(value); }
+	override HRESULT add_SelectionChanged(Windows.UI.Xaml.Controls.SelectionChangedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).add_SelectionChanged(value, return_token); }
+	override HRESULT remove_SelectionChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).remove_SelectionChanged(token); }
+	override HRESULT add_PivotItemLoading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).add_PivotItemLoading(value, return_token); }
+	override HRESULT remove_PivotItemLoading(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).remove_PivotItemLoading(token); }
+	override HRESULT add_PivotItemLoaded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).add_PivotItemLoaded(value, return_token); }
+	override HRESULT remove_PivotItemLoaded(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).remove_PivotItemLoaded(token); }
+	override HRESULT add_PivotItemUnloading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).add_PivotItemUnloading(value, return_token); }
+	override HRESULT remove_PivotItemUnloading(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).remove_PivotItemUnloading(token); }
+	override HRESULT add_PivotItemUnloaded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Pivot, Windows.UI.Xaml.Controls.PivotItemEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).add_PivotItemUnloaded(value, return_token); }
+	override HRESULT remove_PivotItemUnloaded(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot).remove_PivotItemUnloaded(token); }
+
+	override HRESULT get_LeftHeader(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot2).get_LeftHeader(return_value); }
+	override HRESULT set_LeftHeader(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot2).set_LeftHeader(value); }
+	override HRESULT get_LeftHeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot2).get_LeftHeaderTemplate(return_value); }
+	override HRESULT set_LeftHeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot2).set_LeftHeaderTemplate(value); }
+	override HRESULT get_RightHeader(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot2).get_RightHeader(return_value); }
+	override HRESULT set_RightHeader(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot2).set_RightHeader(value); }
+	override HRESULT get_RightHeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot2).get_RightHeaderTemplate(return_value); }
+	override HRESULT set_RightHeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot2).set_RightHeaderTemplate(value); }
+
+	override HRESULT get_HeaderFocusVisualPlacement(Windows.UI.Xaml.Controls.PivotHeaderFocusVisualPlacement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot3).get_HeaderFocusVisualPlacement(return_value); }
+	override HRESULT set_HeaderFocusVisualPlacement(Windows.UI.Xaml.Controls.PivotHeaderFocusVisualPlacement value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot3).set_HeaderFocusVisualPlacement(value); }
+	override HRESULT get_IsHeaderItemsCarouselEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot3).get_IsHeaderItemsCarouselEnabled(return_value); }
+	override HRESULT set_IsHeaderItemsCarouselEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivot3).set_IsHeaderItemsCarouselEnabled(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface PivotItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IPivotItem
 {
@@ -14772,6 +16680,22 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IPivotItem).set_Header(value));
 	}
+}
+@makable!(PivotItem, PivotItem, Windows.UI.Xaml.Controls.IPivotItemFactory)
+class PivotItemT(Base) : AgileObject!Base, PivotItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Header(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivotItem).get_Header(return_value); }
+	override HRESULT set_Header(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IPivotItem).set_Header(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface PivotItemEventArgs : Windows.UI.Xaml.Controls.IPivotItemEventArgs
@@ -14829,6 +16753,27 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(ProgressBar, ProgressBar, Windows.UI.Xaml.Controls.IProgressBarFactory)
+class ProgressBarT(Base) : AgileObject!Base, ProgressBar
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_IsIndeterminate(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IProgressBar).get_IsIndeterminate(return_value); }
+	override HRESULT set_IsIndeterminate(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IProgressBar).set_IsIndeterminate(value); }
+	override HRESULT get_ShowError(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IProgressBar).get_ShowError(return_value); }
+	override HRESULT set_ShowError(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IProgressBar).set_ShowError(value); }
+	override HRESULT get_ShowPaused(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IProgressBar).get_ShowPaused(return_value); }
+	override HRESULT set_ShowPaused(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IProgressBar).set_ShowPaused(value); }
+	override HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.ProgressBarTemplateSettings* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IProgressBar).get_TemplateSettings(return_value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ProgressRing : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IProgressRing
 {
@@ -14864,6 +16809,22 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRadioButton).set_GroupName(value));
 	}
+}
+@makable!(RadioButton, RadioButton, Windows.UI.Xaml.Controls.IRadioButtonFactory)
+class RadioButtonT(Base) : AgileObject!Base, RadioButton
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_GroupName(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRadioButton).get_GroupName(return_value); }
+	override HRESULT set_GroupName(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRadioButton).set_GroupName(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface RelativePanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IRelativePanel
@@ -14909,6 +16870,28 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRelativePanel).set_Padding(value));
 	}
+}
+@makable!(RelativePanel, RelativePanel, Windows.UI.Xaml.Controls.IRelativePanelFactory)
+class RelativePanelT(Base) : AgileObject!Base, RelativePanel
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_BorderBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRelativePanel).get_BorderBrush(return_value); }
+	override HRESULT set_BorderBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRelativePanel).set_BorderBrush(value); }
+	override HRESULT get_BorderThickness(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRelativePanel).get_BorderThickness(return_value); }
+	override HRESULT set_BorderThickness(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRelativePanel).set_BorderThickness(value); }
+	override HRESULT get_CornerRadius(Windows.UI.Xaml.CornerRadius* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRelativePanel).get_CornerRadius(return_value); }
+	override HRESULT set_CornerRadius(Windows.UI.Xaml.CornerRadius value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRelativePanel).set_CornerRadius(value); }
+	override HRESULT get_Padding(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRelativePanel).get_Padding(return_value); }
+	override HRESULT set_Padding(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRelativePanel).set_Padding(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface RichEditBox : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IRichEditBox, Windows.UI.Xaml.Controls.IRichEditBox2, Windows.UI.Xaml.Controls.IRichEditBox3, Windows.UI.Xaml.Controls.IRichEditBox4, Windows.UI.Xaml.Controls.IRichEditBox5
@@ -15172,6 +17155,80 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IRichEditBox5).set_MaxLength(value));
 	}
+}
+@makable!(RichEditBox, RichEditBox, Windows.UI.Xaml.Controls.IRichEditBoxFactory)
+class RichEditBoxT(Base) : AgileObject!Base, RichEditBox
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_IsReadOnly(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_IsReadOnly(return_value); }
+	override HRESULT set_IsReadOnly(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_IsReadOnly(value); }
+	override HRESULT get_AcceptsReturn(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_AcceptsReturn(return_value); }
+	override HRESULT set_AcceptsReturn(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_AcceptsReturn(value); }
+	override HRESULT get_TextAlignment(Windows.UI.Xaml.TextAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_TextAlignment(return_value); }
+	override HRESULT set_TextAlignment(Windows.UI.Xaml.TextAlignment value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_TextAlignment(value); }
+	override HRESULT get_TextWrapping(Windows.UI.Xaml.TextWrapping* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_TextWrapping(return_value); }
+	override HRESULT set_TextWrapping(Windows.UI.Xaml.TextWrapping value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_TextWrapping(value); }
+	override HRESULT get_IsSpellCheckEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_IsSpellCheckEnabled(return_value); }
+	override HRESULT set_IsSpellCheckEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_IsSpellCheckEnabled(value); }
+	override HRESULT get_IsTextPredictionEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_IsTextPredictionEnabled(return_value); }
+	override HRESULT set_IsTextPredictionEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_IsTextPredictionEnabled(value); }
+	override HRESULT get_Document(Windows.UI.Text.ITextDocument* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_Document(return_value); }
+	override HRESULT get_InputScope(Windows.UI.Xaml.Input.InputScope* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).get_InputScope(return_value); }
+	override HRESULT set_InputScope(Windows.UI.Xaml.Input.InputScope value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).set_InputScope(value); }
+	override HRESULT add_TextChanged(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).add_TextChanged(value, return_token); }
+	override HRESULT remove_TextChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).remove_TextChanged(token); }
+	override HRESULT add_SelectionChanged(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).add_SelectionChanged(value, return_token); }
+	override HRESULT remove_SelectionChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).remove_SelectionChanged(token); }
+	override HRESULT add_ContextMenuOpening(Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).add_ContextMenuOpening(value, return_token); }
+	override HRESULT remove_ContextMenuOpening(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox).remove_ContextMenuOpening(token); }
+
+	override HRESULT get_Header(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).get_Header(return_value); }
+	override HRESULT set_Header(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).set_Header(value); }
+	override HRESULT get_HeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).get_HeaderTemplate(return_value); }
+	override HRESULT set_HeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).set_HeaderTemplate(value); }
+	override HRESULT get_PlaceholderText(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).get_PlaceholderText(return_value); }
+	override HRESULT set_PlaceholderText(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).set_PlaceholderText(value); }
+	override HRESULT get_SelectionHighlightColor(Windows.UI.Xaml.Media.SolidColorBrush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).get_SelectionHighlightColor(return_value); }
+	override HRESULT set_SelectionHighlightColor(Windows.UI.Xaml.Media.SolidColorBrush value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).set_SelectionHighlightColor(value); }
+	override HRESULT get_PreventKeyboardDisplayOnProgrammaticFocus(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).get_PreventKeyboardDisplayOnProgrammaticFocus(return_value); }
+	override HRESULT set_PreventKeyboardDisplayOnProgrammaticFocus(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).set_PreventKeyboardDisplayOnProgrammaticFocus(value); }
+	override HRESULT get_IsColorFontEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).get_IsColorFontEnabled(return_value); }
+	override HRESULT set_IsColorFontEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).set_IsColorFontEnabled(value); }
+	override HRESULT add_Paste(Windows.UI.Xaml.Controls.TextControlPasteEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).add_Paste(value, return_token); }
+	override HRESULT remove_Paste(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox2).remove_Paste(token); }
+
+	override HRESULT add_TextCompositionStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).add_TextCompositionStarted(value, return_token); }
+	override HRESULT remove_TextCompositionStarted(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).remove_TextCompositionStarted(token); }
+	override HRESULT add_TextCompositionChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).add_TextCompositionChanged(value, return_token); }
+	override HRESULT remove_TextCompositionChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).remove_TextCompositionChanged(token); }
+	override HRESULT add_TextCompositionEnded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).add_TextCompositionEnded(value, return_token); }
+	override HRESULT remove_TextCompositionEnded(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).remove_TextCompositionEnded(token); }
+	override HRESULT get_TextReadingOrder(Windows.UI.Xaml.TextReadingOrder* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).get_TextReadingOrder(return_value); }
+	override HRESULT set_TextReadingOrder(Windows.UI.Xaml.TextReadingOrder value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).set_TextReadingOrder(value); }
+	override HRESULT get_DesiredCandidateWindowAlignment(Windows.UI.Xaml.Controls.CandidateWindowAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).get_DesiredCandidateWindowAlignment(return_value); }
+	override HRESULT set_DesiredCandidateWindowAlignment(Windows.UI.Xaml.Controls.CandidateWindowAlignment value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).set_DesiredCandidateWindowAlignment(value); }
+	override HRESULT add_CandidateWindowBoundsChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).add_CandidateWindowBoundsChanged(value, return_token); }
+	override HRESULT remove_CandidateWindowBoundsChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).remove_CandidateWindowBoundsChanged(token); }
+	override HRESULT add_TextChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.RichEditBox, Windows.UI.Xaml.Controls.RichEditBoxTextChangingEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).add_TextChanging(value, return_token); }
+	override HRESULT remove_TextChanging(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox3).remove_TextChanging(token); }
+
+	override HRESULT abi_GetLinguisticAlternativesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox4).abi_GetLinguisticAlternativesAsync(return_returnValue); }
+	override HRESULT get_ClipboardCopyFormat(Windows.UI.Xaml.Controls.RichEditClipboardFormat* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox4).get_ClipboardCopyFormat(return_value); }
+	override HRESULT set_ClipboardCopyFormat(Windows.UI.Xaml.Controls.RichEditClipboardFormat value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox4).set_ClipboardCopyFormat(value); }
+
+	override HRESULT get_SelectionHighlightColorWhenNotFocused(Windows.UI.Xaml.Media.SolidColorBrush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox5).get_SelectionHighlightColorWhenNotFocused(return_value); }
+	override HRESULT set_SelectionHighlightColorWhenNotFocused(Windows.UI.Xaml.Media.SolidColorBrush value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox5).set_SelectionHighlightColorWhenNotFocused(value); }
+	override HRESULT get_MaxLength(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox5).get_MaxLength(return_value); }
+	override HRESULT set_MaxLength(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.IRichEditBox5).set_MaxLength(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface RichEditBoxTextChangingEventArgs : Windows.UI.Xaml.Controls.IRichEditBoxTextChangingEventArgs, Windows.UI.Xaml.Controls.IRichEditBoxTextChangingEventArgs2
@@ -16383,6 +18440,43 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISearchBox).abi_SetLocalContentSuggestionSettings(settings));
 	}
 }
+@makable!(SearchBox, SearchBox, Windows.UI.Xaml.Controls.ISearchBoxFactory)
+class SearchBoxT(Base) : AgileObject!Base, SearchBox
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_SearchHistoryEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).get_SearchHistoryEnabled(return_value); }
+	override HRESULT set_SearchHistoryEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).set_SearchHistoryEnabled(value); }
+	override HRESULT get_SearchHistoryContext(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).get_SearchHistoryContext(return_value); }
+	override HRESULT set_SearchHistoryContext(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).set_SearchHistoryContext(value); }
+	override HRESULT get_PlaceholderText(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).get_PlaceholderText(return_value); }
+	override HRESULT set_PlaceholderText(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).set_PlaceholderText(value); }
+	override HRESULT get_QueryText(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).get_QueryText(return_value); }
+	override HRESULT set_QueryText(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).set_QueryText(value); }
+	override HRESULT get_FocusOnKeyboardInput(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).get_FocusOnKeyboardInput(return_value); }
+	override HRESULT set_FocusOnKeyboardInput(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).set_FocusOnKeyboardInput(value); }
+	override HRESULT get_ChooseSuggestionOnEnter(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).get_ChooseSuggestionOnEnter(return_value); }
+	override HRESULT set_ChooseSuggestionOnEnter(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).set_ChooseSuggestionOnEnter(value); }
+	override HRESULT add_QueryChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxQueryChangedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).add_QueryChanged(value, return_token); }
+	override HRESULT remove_QueryChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).remove_QueryChanged(token); }
+	override HRESULT add_SuggestionsRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxSuggestionsRequestedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).add_SuggestionsRequested(value, return_token); }
+	override HRESULT remove_SuggestionsRequested(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).remove_SuggestionsRequested(token); }
+	override HRESULT add_QuerySubmitted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxQuerySubmittedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).add_QuerySubmitted(value, return_token); }
+	override HRESULT remove_QuerySubmitted(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).remove_QuerySubmitted(token); }
+	override HRESULT add_ResultSuggestionChosen(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.Controls.SearchBoxResultSuggestionChosenEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).add_ResultSuggestionChosen(value, return_token); }
+	override HRESULT remove_ResultSuggestionChosen(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).remove_ResultSuggestionChosen(token); }
+	override HRESULT add_PrepareForFocusOnKeyboardInput(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SearchBox, Windows.UI.Xaml.RoutedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).add_PrepareForFocusOnKeyboardInput(value, return_token); }
+	override HRESULT remove_PrepareForFocusOnKeyboardInput(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).remove_PrepareForFocusOnKeyboardInput(token); }
+	override HRESULT abi_SetLocalContentSuggestionSettings(Windows.ApplicationModel.Search.LocalContentSuggestionSettings settings) { return m_inner.as!(Windows.UI.Xaml.Controls.ISearchBox).abi_SetLocalContentSuggestionSettings(settings); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface SearchBoxQueryChangedEventArgs : Windows.UI.Xaml.Controls.ISearchBoxQueryChangedEventArgs
 {
@@ -16498,6 +18592,22 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(SectionsInViewChangedEventArgs, SectionsInViewChangedEventArgs, Windows.UI.Xaml.Controls.ISectionsInViewChangedEventArgsFactory)
+class SectionsInViewChangedEventArgsT(Base) : AgileObject!Base, SectionsInViewChangedEventArgs
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_AddedSections(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISectionsInViewChangedEventArgs).get_AddedSections(return_value); }
+	override HRESULT get_RemovedSections(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Controls.HubSection)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISectionsInViewChangedEventArgs).get_RemovedSections(return_value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface SelectionChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.ISelectionChangedEventArgs
 {
@@ -16514,6 +18624,22 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISelectionChangedEventArgs).get_RemovedItems(&_ret));
 		return _ret;
 	}
+}
+@makable!(SelectionChangedEventArgs, SelectionChangedEventArgs, Windows.UI.Xaml.Controls.ISelectionChangedEventArgsFactory)
+class SelectionChangedEventArgsT(Base) : AgileObject!Base, SelectionChangedEventArgs
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_AddedItems(Windows.Foundation.Collections.IVector!(IInspectable)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISelectionChangedEventArgs).get_AddedItems(return_value); }
+	override HRESULT get_RemovedItems(Windows.Foundation.Collections.IVector!(IInspectable)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISelectionChangedEventArgs).get_RemovedItems(return_value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface SemanticZoom : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ISemanticZoom
@@ -16709,6 +18835,34 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).abi_Hide());
 	}
 }
+@makable!(SettingsFlyout, SettingsFlyout, Windows.UI.Xaml.Controls.ISettingsFlyoutFactory)
+class SettingsFlyoutT(Base) : AgileObject!Base, SettingsFlyout
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Title(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).get_Title(return_value); }
+	override HRESULT set_Title(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).set_Title(value); }
+	override HRESULT get_HeaderBackground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).get_HeaderBackground(return_value); }
+	override HRESULT set_HeaderBackground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).set_HeaderBackground(value); }
+	override HRESULT get_HeaderForeground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).get_HeaderForeground(return_value); }
+	override HRESULT set_HeaderForeground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).set_HeaderForeground(value); }
+	override HRESULT get_IconSource(Windows.UI.Xaml.Media.ImageSource* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).get_IconSource(return_value); }
+	override HRESULT set_IconSource(Windows.UI.Xaml.Media.ImageSource value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).set_IconSource(value); }
+	override HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.SettingsFlyoutTemplateSettings* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).get_TemplateSettings(return_value); }
+	override HRESULT add_BackClick(Windows.UI.Xaml.Controls.BackClickEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).add_BackClick(value, return_token); }
+	override HRESULT remove_BackClick(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).remove_BackClick(token); }
+	override HRESULT abi_Show() { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).abi_Show(); }
+	override HRESULT abi_ShowIndependent() { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).abi_ShowIndependent(); }
+	override HRESULT abi_Hide() { return m_inner.as!(Windows.UI.Xaml.Controls.ISettingsFlyout).abi_Hide(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface Slider : Windows.UI.Xaml.Controls.Primitives.RangeBase, Windows.UI.Xaml.Controls.ISlider, Windows.UI.Xaml.Controls.ISlider2
 {
@@ -16823,6 +18977,43 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISlider2).set_HeaderTemplate(value));
 	}
+}
+@makable!(Slider, Slider, Windows.UI.Xaml.Controls.ISliderFactory)
+class SliderT(Base) : AgileObject!Base, Slider
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_IntermediateValue(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).get_IntermediateValue(return_value); }
+	override HRESULT set_IntermediateValue(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).set_IntermediateValue(value); }
+	override HRESULT get_StepFrequency(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).get_StepFrequency(return_value); }
+	override HRESULT set_StepFrequency(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).set_StepFrequency(value); }
+	override HRESULT get_SnapsTo(Windows.UI.Xaml.Controls.Primitives.SliderSnapsTo* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).get_SnapsTo(return_value); }
+	override HRESULT set_SnapsTo(Windows.UI.Xaml.Controls.Primitives.SliderSnapsTo value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).set_SnapsTo(value); }
+	override HRESULT get_TickFrequency(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).get_TickFrequency(return_value); }
+	override HRESULT set_TickFrequency(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).set_TickFrequency(value); }
+	override HRESULT get_TickPlacement(Windows.UI.Xaml.Controls.Primitives.TickPlacement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).get_TickPlacement(return_value); }
+	override HRESULT set_TickPlacement(Windows.UI.Xaml.Controls.Primitives.TickPlacement value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).set_TickPlacement(value); }
+	override HRESULT get_Orientation(Windows.UI.Xaml.Controls.Orientation* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).get_Orientation(return_value); }
+	override HRESULT set_Orientation(Windows.UI.Xaml.Controls.Orientation value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).set_Orientation(value); }
+	override HRESULT get_IsDirectionReversed(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).get_IsDirectionReversed(return_value); }
+	override HRESULT set_IsDirectionReversed(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).set_IsDirectionReversed(value); }
+	override HRESULT get_IsThumbToolTipEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).get_IsThumbToolTipEnabled(return_value); }
+	override HRESULT set_IsThumbToolTipEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).set_IsThumbToolTipEnabled(value); }
+	override HRESULT get_ThumbToolTipValueConverter(Windows.UI.Xaml.Data.IValueConverter* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).get_ThumbToolTipValueConverter(return_value); }
+	override HRESULT set_ThumbToolTipValueConverter(Windows.UI.Xaml.Data.IValueConverter value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider).set_ThumbToolTipValueConverter(value); }
+
+	override HRESULT get_Header(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider2).get_Header(return_value); }
+	override HRESULT set_Header(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider2).set_Header(value); }
+	override HRESULT get_HeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider2).get_HeaderTemplate(return_value); }
+	override HRESULT set_HeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISlider2).set_HeaderTemplate(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface SplitView : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ISplitView, Windows.UI.Xaml.Controls.ISplitView2
@@ -16944,6 +19135,44 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISplitView2).set_LightDismissOverlayMode(value));
 	}
+}
+@makable!(SplitView, SplitView, Windows.UI.Xaml.Controls.ISplitViewFactory)
+class SplitViewT(Base) : AgileObject!Base, SplitView
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Content(Windows.UI.Xaml.UIElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).get_Content(return_value); }
+	override HRESULT set_Content(Windows.UI.Xaml.UIElement value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).set_Content(value); }
+	override HRESULT get_Pane(Windows.UI.Xaml.UIElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).get_Pane(return_value); }
+	override HRESULT set_Pane(Windows.UI.Xaml.UIElement value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).set_Pane(value); }
+	override HRESULT get_IsPaneOpen(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).get_IsPaneOpen(return_value); }
+	override HRESULT set_IsPaneOpen(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).set_IsPaneOpen(value); }
+	override HRESULT get_OpenPaneLength(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).get_OpenPaneLength(return_value); }
+	override HRESULT set_OpenPaneLength(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).set_OpenPaneLength(value); }
+	override HRESULT get_CompactPaneLength(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).get_CompactPaneLength(return_value); }
+	override HRESULT set_CompactPaneLength(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).set_CompactPaneLength(value); }
+	override HRESULT get_PanePlacement(Windows.UI.Xaml.Controls.SplitViewPanePlacement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).get_PanePlacement(return_value); }
+	override HRESULT set_PanePlacement(Windows.UI.Xaml.Controls.SplitViewPanePlacement value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).set_PanePlacement(value); }
+	override HRESULT get_DisplayMode(Windows.UI.Xaml.Controls.SplitViewDisplayMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).get_DisplayMode(return_value); }
+	override HRESULT set_DisplayMode(Windows.UI.Xaml.Controls.SplitViewDisplayMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).set_DisplayMode(value); }
+	override HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.SplitViewTemplateSettings* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).get_TemplateSettings(return_value); }
+	override HRESULT get_PaneBackground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).get_PaneBackground(return_value); }
+	override HRESULT set_PaneBackground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).set_PaneBackground(value); }
+	override HRESULT add_PaneClosing(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SplitView, Windows.UI.Xaml.Controls.SplitViewPaneClosingEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).add_PaneClosing(value, return_token); }
+	override HRESULT remove_PaneClosing(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).remove_PaneClosing(token); }
+	override HRESULT add_PaneClosed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SplitView, IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).add_PaneClosed(value, return_token); }
+	override HRESULT remove_PaneClosed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView).remove_PaneClosed(token); }
+
+	override HRESULT get_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView2).get_LightDismissOverlayMode(return_value); }
+	override HRESULT set_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISplitView2).set_LightDismissOverlayMode(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface SplitViewPaneClosingEventArgs : Windows.UI.Xaml.Controls.ISplitViewPaneClosingEventArgs
@@ -17073,6 +19302,44 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInsertionPanel).abi_GetInsertionIndexes(position, out_first, out_second));
 	}
 }
+@makable!(StackPanel, StackPanel, Windows.UI.Xaml.Controls.IStackPanelFactory)
+class StackPanelT(Base) : AgileObject!Base, StackPanel
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_AreScrollSnapPointsRegular(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IStackPanel).get_AreScrollSnapPointsRegular(return_value); }
+	override HRESULT set_AreScrollSnapPointsRegular(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IStackPanel).set_AreScrollSnapPointsRegular(value); }
+	override HRESULT get_Orientation(Windows.UI.Xaml.Controls.Orientation* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IStackPanel).get_Orientation(return_value); }
+	override HRESULT set_Orientation(Windows.UI.Xaml.Controls.Orientation value) { return m_inner.as!(Windows.UI.Xaml.Controls.IStackPanel).set_Orientation(value); }
+
+	override HRESULT get_AreHorizontalSnapPointsRegular(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreHorizontalSnapPointsRegular(return_value); }
+	override HRESULT get_AreVerticalSnapPointsRegular(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).get_AreVerticalSnapPointsRegular(return_value); }
+	override HRESULT add_HorizontalSnapPointsChanged(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).add_HorizontalSnapPointsChanged(value, return_token); }
+	override HRESULT remove_HorizontalSnapPointsChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).remove_HorizontalSnapPointsChanged(token); }
+	override HRESULT add_VerticalSnapPointsChanged(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).add_VerticalSnapPointsChanged(value, return_token); }
+	override HRESULT remove_VerticalSnapPointsChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).remove_VerticalSnapPointsChanged(token); }
+	override HRESULT abi_GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, Windows.Foundation.Collections.IVectorView!(float)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetIrregularSnapPoints(orientation, alignment, return_returnValue); }
+	override HRESULT abi_GetRegularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, float* out_offset, float* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, return_returnValue); }
+
+	override HRESULT get_BorderBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IStackPanel2).get_BorderBrush(return_value); }
+	override HRESULT set_BorderBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Controls.IStackPanel2).set_BorderBrush(value); }
+	override HRESULT get_BorderThickness(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IStackPanel2).get_BorderThickness(return_value); }
+	override HRESULT set_BorderThickness(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.Controls.IStackPanel2).set_BorderThickness(value); }
+	override HRESULT get_CornerRadius(Windows.UI.Xaml.CornerRadius* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IStackPanel2).get_CornerRadius(return_value); }
+	override HRESULT set_CornerRadius(Windows.UI.Xaml.CornerRadius value) { return m_inner.as!(Windows.UI.Xaml.Controls.IStackPanel2).set_CornerRadius(value); }
+	override HRESULT get_Padding(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IStackPanel2).get_Padding(return_value); }
+	override HRESULT set_Padding(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.Controls.IStackPanel2).set_Padding(value); }
+
+	override HRESULT abi_GetInsertionIndexes(Windows.Foundation.Point position, INT32* out_first, INT32* out_second) { return m_inner.as!(Windows.UI.Xaml.Controls.IInsertionPanel).abi_GetInsertionIndexes(position, out_first, out_second); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface StyleSelector : Windows.UI.Xaml.Controls.IStyleSelector, Windows.UI.Xaml.Controls.IStyleSelectorOverrides
 {
@@ -17083,12 +19350,24 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStyleSelector).abi_SelectStyle(item, container, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Xaml.Style SelectStyleCore(IInspectable item, Windows.UI.Xaml.DependencyObject container)
+}
+@makable!(StyleSelector, StyleSelector, Windows.UI.Xaml.Controls.IStyleSelectorFactory)
+class StyleSelectorT(Base) : AgileObject!Base, StyleSelector
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
 	{
-		Windows.UI.Xaml.Style _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStyleSelectorOverrides).abi_SelectStyleCore(item, container, &_ret));
-		return _ret;
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
 	}
+	override HRESULT abi_SelectStyle(IInspectable item, Windows.UI.Xaml.DependencyObject container, Windows.UI.Xaml.Style* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.IStyleSelector).abi_SelectStyle(item, container, return_returnValue); }
+
+	override HRESULT abi_SelectStyleCore(IInspectable item, Windows.UI.Xaml.DependencyObject container, Windows.UI.Xaml.Style* return_returnValue) { this.SelectStyleCore(item, container, return_returnValue); return S_OK; }
+	void SelectStyleCore(IInspectable item, Windows.UI.Xaml.DependencyObject container, Windows.UI.Xaml.Style* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IStyleSelectorOverrides).abi_SelectStyleCore(item, container, return_returnValue)); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface SwapChainBackgroundPanel : Windows.UI.Xaml.Controls.Grid, Windows.UI.Xaml.Controls.ISwapChainBackgroundPanel, Windows.UI.Xaml.Controls.ISwapChainBackgroundPanel2
@@ -17100,6 +19379,22 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISwapChainBackgroundPanel2).abi_CreateCoreIndependentInputSource(deviceTypes, &_ret));
 		return _ret;
 	}
+}
+@makable!(SwapChainBackgroundPanel, SwapChainBackgroundPanel, Windows.UI.Xaml.Controls.ISwapChainBackgroundPanelFactory)
+class SwapChainBackgroundPanelT(Base) : AgileObject!Base, SwapChainBackgroundPanel
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_CreateCoreIndependentInputSource(Windows.UI.Core.CoreInputDeviceTypes deviceTypes, Windows.UI.Core.CoreIndependentInputSource* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.ISwapChainBackgroundPanel2).abi_CreateCoreIndependentInputSource(deviceTypes, return_returnValue); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface SwapChainPanel : Windows.UI.Xaml.Controls.Grid, Windows.UI.Xaml.Controls.ISwapChainPanel
@@ -17133,6 +19428,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISwapChainPanel).abi_CreateCoreIndependentInputSource(deviceTypes, &_ret));
 		return _ret;
 	}
+}
+@makable!(SwapChainPanel, SwapChainPanel, Windows.UI.Xaml.Controls.ISwapChainPanelFactory)
+class SwapChainPanelT(Base) : AgileObject!Base, SwapChainPanel
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_CompositionScaleX(float* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISwapChainPanel).get_CompositionScaleX(return_value); }
+	override HRESULT get_CompositionScaleY(float* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ISwapChainPanel).get_CompositionScaleY(return_value); }
+	override HRESULT add_CompositionScaleChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.SwapChainPanel, IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISwapChainPanel).add_CompositionScaleChanged(value, return_token); }
+	override HRESULT remove_CompositionScaleChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ISwapChainPanel).remove_CompositionScaleChanged(token); }
+	override HRESULT abi_CreateCoreIndependentInputSource(Windows.UI.Core.CoreInputDeviceTypes deviceTypes, Windows.UI.Core.CoreIndependentInputSource* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.ISwapChainPanel).abi_CreateCoreIndependentInputSource(deviceTypes, return_returnValue); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface SymbolIcon : Windows.UI.Xaml.Controls.IconElement, Windows.UI.Xaml.Controls.ISymbolIcon
@@ -17755,6 +20069,88 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITextBox5).set_SelectionHighlightColorWhenNotFocused(value));
 	}
 }
+@makable!(TextBox, TextBox, Windows.UI.Xaml.Controls.ITextBoxFactory)
+class TextBoxT(Base) : AgileObject!Base, TextBox
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Text(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).get_Text(return_value); }
+	override HRESULT set_Text(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).set_Text(value); }
+	override HRESULT get_SelectedText(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).get_SelectedText(return_value); }
+	override HRESULT set_SelectedText(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).set_SelectedText(value); }
+	override HRESULT get_SelectionLength(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).get_SelectionLength(return_value); }
+	override HRESULT set_SelectionLength(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).set_SelectionLength(value); }
+	override HRESULT get_SelectionStart(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).get_SelectionStart(return_value); }
+	override HRESULT set_SelectionStart(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).set_SelectionStart(value); }
+	override HRESULT get_MaxLength(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).get_MaxLength(return_value); }
+	override HRESULT set_MaxLength(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).set_MaxLength(value); }
+	override HRESULT get_IsReadOnly(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).get_IsReadOnly(return_value); }
+	override HRESULT set_IsReadOnly(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).set_IsReadOnly(value); }
+	override HRESULT get_AcceptsReturn(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).get_AcceptsReturn(return_value); }
+	override HRESULT set_AcceptsReturn(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).set_AcceptsReturn(value); }
+	override HRESULT get_TextAlignment(Windows.UI.Xaml.TextAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).get_TextAlignment(return_value); }
+	override HRESULT set_TextAlignment(Windows.UI.Xaml.TextAlignment value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).set_TextAlignment(value); }
+	override HRESULT get_TextWrapping(Windows.UI.Xaml.TextWrapping* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).get_TextWrapping(return_value); }
+	override HRESULT set_TextWrapping(Windows.UI.Xaml.TextWrapping value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).set_TextWrapping(value); }
+	override HRESULT get_IsSpellCheckEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).get_IsSpellCheckEnabled(return_value); }
+	override HRESULT set_IsSpellCheckEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).set_IsSpellCheckEnabled(value); }
+	override HRESULT get_IsTextPredictionEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).get_IsTextPredictionEnabled(return_value); }
+	override HRESULT set_IsTextPredictionEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).set_IsTextPredictionEnabled(value); }
+	override HRESULT get_InputScope(Windows.UI.Xaml.Input.InputScope* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).get_InputScope(return_value); }
+	override HRESULT set_InputScope(Windows.UI.Xaml.Input.InputScope value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).set_InputScope(value); }
+	override HRESULT add_TextChanged(Windows.UI.Xaml.Controls.TextChangedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).add_TextChanged(value, return_token); }
+	override HRESULT remove_TextChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).remove_TextChanged(token); }
+	override HRESULT add_SelectionChanged(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).add_SelectionChanged(value, return_token); }
+	override HRESULT remove_SelectionChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).remove_SelectionChanged(token); }
+	override HRESULT add_ContextMenuOpening(Windows.UI.Xaml.Controls.ContextMenuOpeningEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).add_ContextMenuOpening(value, return_token); }
+	override HRESULT remove_ContextMenuOpening(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).remove_ContextMenuOpening(token); }
+	override HRESULT abi_Select(INT32 start, INT32 length) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).abi_Select(start, length); }
+	override HRESULT abi_SelectAll() { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).abi_SelectAll(); }
+	override HRESULT abi_GetRectFromCharacterIndex(INT32 charIndex, bool trailingEdge, Windows.Foundation.Rect* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox).abi_GetRectFromCharacterIndex(charIndex, trailingEdge, return_returnValue); }
+
+	override HRESULT get_Header(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).get_Header(return_value); }
+	override HRESULT set_Header(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).set_Header(value); }
+	override HRESULT get_HeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).get_HeaderTemplate(return_value); }
+	override HRESULT set_HeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).set_HeaderTemplate(value); }
+	override HRESULT get_PlaceholderText(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).get_PlaceholderText(return_value); }
+	override HRESULT set_PlaceholderText(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).set_PlaceholderText(value); }
+	override HRESULT get_SelectionHighlightColor(Windows.UI.Xaml.Media.SolidColorBrush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).get_SelectionHighlightColor(return_value); }
+	override HRESULT set_SelectionHighlightColor(Windows.UI.Xaml.Media.SolidColorBrush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).set_SelectionHighlightColor(value); }
+	override HRESULT get_PreventKeyboardDisplayOnProgrammaticFocus(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).get_PreventKeyboardDisplayOnProgrammaticFocus(return_value); }
+	override HRESULT set_PreventKeyboardDisplayOnProgrammaticFocus(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).set_PreventKeyboardDisplayOnProgrammaticFocus(value); }
+	override HRESULT get_IsColorFontEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).get_IsColorFontEnabled(return_value); }
+	override HRESULT set_IsColorFontEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).set_IsColorFontEnabled(value); }
+	override HRESULT add_Paste(Windows.UI.Xaml.Controls.TextControlPasteEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).add_Paste(value, return_token); }
+	override HRESULT remove_Paste(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox2).remove_Paste(token); }
+
+	override HRESULT add_TextCompositionStarted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).add_TextCompositionStarted(value, return_token); }
+	override HRESULT remove_TextCompositionStarted(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).remove_TextCompositionStarted(token); }
+	override HRESULT add_TextCompositionChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).add_TextCompositionChanged(value, return_token); }
+	override HRESULT remove_TextCompositionChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).remove_TextCompositionChanged(token); }
+	override HRESULT add_TextCompositionEnded(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).add_TextCompositionEnded(value, return_token); }
+	override HRESULT remove_TextCompositionEnded(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).remove_TextCompositionEnded(token); }
+	override HRESULT get_TextReadingOrder(Windows.UI.Xaml.TextReadingOrder* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).get_TextReadingOrder(return_value); }
+	override HRESULT set_TextReadingOrder(Windows.UI.Xaml.TextReadingOrder value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).set_TextReadingOrder(value); }
+	override HRESULT get_DesiredCandidateWindowAlignment(Windows.UI.Xaml.Controls.CandidateWindowAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).get_DesiredCandidateWindowAlignment(return_value); }
+	override HRESULT set_DesiredCandidateWindowAlignment(Windows.UI.Xaml.Controls.CandidateWindowAlignment value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).set_DesiredCandidateWindowAlignment(value); }
+	override HRESULT add_CandidateWindowBoundsChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).add_CandidateWindowBoundsChanged(value, return_token); }
+	override HRESULT remove_CandidateWindowBoundsChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).remove_CandidateWindowBoundsChanged(token); }
+	override HRESULT add_TextChanging(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.TextBox, Windows.UI.Xaml.Controls.TextBoxTextChangingEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).add_TextChanging(value, return_token); }
+	override HRESULT remove_TextChanging(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox3).remove_TextChanging(token); }
+
+	override HRESULT abi_GetLinguisticAlternativesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox4).abi_GetLinguisticAlternativesAsync(return_returnValue); }
+
+	override HRESULT get_SelectionHighlightColorWhenNotFocused(Windows.UI.Xaml.Media.SolidColorBrush* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox5).get_SelectionHighlightColorWhenNotFocused(return_value); }
+	override HRESULT set_SelectionHighlightColorWhenNotFocused(Windows.UI.Xaml.Media.SolidColorBrush value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITextBox5).set_SelectionHighlightColorWhenNotFocused(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface TextBoxTextChangingEventArgs : Windows.UI.Xaml.Controls.ITextBoxTextChangingEventArgs, Windows.UI.Xaml.Controls.ITextBoxTextChangingEventArgs2
 {
@@ -17928,6 +20324,35 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ITimePicker2).set_LightDismissOverlayMode(value));
 	}
 }
+@makable!(TimePicker, TimePicker, Windows.UI.Xaml.Controls.ITimePickerFactory)
+class TimePickerT(Base) : AgileObject!Base, TimePicker
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Header(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker).get_Header(return_value); }
+	override HRESULT set_Header(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker).set_Header(value); }
+	override HRESULT get_HeaderTemplate(Windows.UI.Xaml.DataTemplate* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker).get_HeaderTemplate(return_value); }
+	override HRESULT set_HeaderTemplate(Windows.UI.Xaml.DataTemplate value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker).set_HeaderTemplate(value); }
+	override HRESULT get_ClockIdentifier(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker).get_ClockIdentifier(return_value); }
+	override HRESULT set_ClockIdentifier(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker).set_ClockIdentifier(value); }
+	override HRESULT get_MinuteIncrement(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker).get_MinuteIncrement(return_value); }
+	override HRESULT set_MinuteIncrement(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker).set_MinuteIncrement(value); }
+	override HRESULT get_Time(Windows.Foundation.TimeSpan* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker).get_Time(return_value); }
+	override HRESULT set_Time(Windows.Foundation.TimeSpan value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker).set_Time(value); }
+	override HRESULT add_TimeChanged(Windows.Foundation.EventHandler!(Windows.UI.Xaml.Controls.TimePickerValueChangedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker).add_TimeChanged(value, return_token); }
+	override HRESULT remove_TimeChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker).remove_TimeChanged(token); }
+
+	override HRESULT get_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker2).get_LightDismissOverlayMode(return_value); }
+	override HRESULT set_LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.ITimePicker2).set_LightDismissOverlayMode(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface TimePickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase, Windows.UI.Xaml.Controls.ITimePickerFlyout
 {
@@ -18015,6 +20440,22 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleMenuFlyoutItem).set_IsChecked(value));
 	}
 }
+@makable!(ToggleMenuFlyoutItem, ToggleMenuFlyoutItem, Windows.UI.Xaml.Controls.IToggleMenuFlyoutItemFactory)
+class ToggleMenuFlyoutItemT(Base) : AgileObject!Base, ToggleMenuFlyoutItem
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_IsChecked(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IToggleMenuFlyoutItem).get_IsChecked(return_value); }
+	override HRESULT set_IsChecked(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IToggleMenuFlyoutItem).set_IsChecked(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ToggleSwitch : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IToggleSwitch, Windows.UI.Xaml.Controls.IToggleSwitchOverrides
 {
@@ -18099,22 +20540,6 @@ extern(Windows):
 	{
 		Debug.OK(remove_Toggled(token));
 	}
-	final void OnToggled()
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitchOverrides).abi_OnToggled());
-	}
-	final void OnOnContentChanged(IInspectable oldContent, IInspectable newContent)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitchOverrides).abi_OnOnContentChanged(oldContent, newContent));
-	}
-	final void OnOffContentChanged(IInspectable oldContent, IInspectable newContent)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitchOverrides).abi_OnOffContentChanged(oldContent, newContent));
-	}
-	final void OnHeaderChanged(IInspectable oldContent, IInspectable newContent)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IToggleSwitchOverrides).abi_OnHeaderChanged(oldContent, newContent));
-	}
 }
 
 interface ToolTip : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IToolTip
@@ -18184,6 +20609,35 @@ extern(Windows):
 	{
 		Debug.OK(remove_Opened(token));
 	}
+}
+@makable!(ToolTip, ToolTip, Windows.UI.Xaml.Controls.IToolTipFactory)
+class ToolTipT(Base) : AgileObject!Base, ToolTip
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_HorizontalOffset(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).get_HorizontalOffset(return_value); }
+	override HRESULT set_HorizontalOffset(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).set_HorizontalOffset(value); }
+	override HRESULT get_IsOpen(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).get_IsOpen(return_value); }
+	override HRESULT set_IsOpen(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).set_IsOpen(value); }
+	override HRESULT get_Placement(Windows.UI.Xaml.Controls.Primitives.PlacementMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).get_Placement(return_value); }
+	override HRESULT set_Placement(Windows.UI.Xaml.Controls.Primitives.PlacementMode value) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).set_Placement(value); }
+	override HRESULT get_PlacementTarget(Windows.UI.Xaml.UIElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).get_PlacementTarget(return_value); }
+	override HRESULT set_PlacementTarget(Windows.UI.Xaml.UIElement value) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).set_PlacementTarget(value); }
+	override HRESULT get_VerticalOffset(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).get_VerticalOffset(return_value); }
+	override HRESULT set_VerticalOffset(double value) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).set_VerticalOffset(value); }
+	override HRESULT get_TemplateSettings(Windows.UI.Xaml.Controls.Primitives.ToolTipTemplateSettings* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).get_TemplateSettings(return_value); }
+	override HRESULT add_Closed(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).add_Closed(value, return_token); }
+	override HRESULT remove_Closed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).remove_Closed(token); }
+	override HRESULT add_Opened(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).add_Opened(value, return_token); }
+	override HRESULT remove_Opened(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.IToolTip).remove_Opened(token); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ToolTipService : Windows.UI.Xaml.Controls.IToolTipService
@@ -18270,6 +20724,22 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IUserControl).set_Content(value));
 	}
+}
+@makable!(UserControl, UserControl, Windows.UI.Xaml.Controls.IUserControlFactory)
+class UserControlT(Base) : AgileObject!Base, UserControl
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Content(Windows.UI.Xaml.UIElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IUserControl).get_Content(return_value); }
+	override HRESULT set_Content(Windows.UI.Xaml.UIElement value) { return m_inner.as!(Windows.UI.Xaml.Controls.IUserControl).set_Content(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface VariableSizedWrapGrid : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.IVariableSizedWrapGrid
@@ -18381,18 +20851,6 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingPanel).get_ItemContainerGenerator(&_ret));
 		return _ret;
 	}
-	final void OnItemsChanged(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.ItemsChangedEventArgs args)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelOverrides).abi_OnItemsChanged(sender, args));
-	}
-	final void OnClearChildren()
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelOverrides).abi_OnClearChildren());
-	}
-	final void BringIndexIntoView(INT32 index)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelOverrides).abi_BringIndexIntoView(index));
-	}
 	final void AddInternalChild(Windows.UI.Xaml.UIElement child)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelProtected).abi_AddInternalChild(child));
@@ -18405,6 +20863,32 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelProtected).abi_RemoveInternalChildRange(index, range));
 	}
+}
+@makable!(VirtualizingPanel, VirtualizingPanel, Windows.UI.Xaml.Controls.IVirtualizingPanelFactory)
+class VirtualizingPanelT(Base) : AgileObject!Base, VirtualizingPanel
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_ItemContainerGenerator(Windows.UI.Xaml.Controls.ItemContainerGenerator* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.IVirtualizingPanel).get_ItemContainerGenerator(return_value); }
+
+	override HRESULT abi_OnItemsChanged(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.ItemsChangedEventArgs args) { this.OnItemsChanged(sender, args); return S_OK; }
+	void OnItemsChanged(IInspectable sender, Windows.UI.Xaml.Controls.Primitives.ItemsChangedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelOverrides).abi_OnItemsChanged(sender, args)); }
+	override HRESULT abi_OnClearChildren() { this.OnClearChildren(); return S_OK; }
+	void OnClearChildren() { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelOverrides).abi_OnClearChildren()); }
+	override HRESULT abi_BringIndexIntoView(INT32 index) { this.BringIndexIntoView(index); return S_OK; }
+	void BringIndexIntoView(INT32 index) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelOverrides).abi_BringIndexIntoView(index)); }
+
+	override HRESULT abi_AddInternalChild(Windows.UI.Xaml.UIElement child) { return m_inner.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelProtected).abi_AddInternalChild(child); }
+	override HRESULT abi_InsertInternalChild(INT32 index, Windows.UI.Xaml.UIElement child) { return m_inner.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelProtected).abi_InsertInternalChild(index, child); }
+	override HRESULT abi_RemoveInternalChildRange(INT32 index, INT32 range) { return m_inner.as!(Windows.UI.Xaml.Controls.IVirtualizingPanelProtected).abi_RemoveInternalChildRange(index, range); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface VirtualizingStackPanel : Windows.UI.Xaml.Controls.Primitives.OrientedVirtualizingPanel, Windows.UI.Xaml.Controls.IVirtualizingStackPanel, Windows.UI.Xaml.Controls.IVirtualizingStackPanelOverrides
@@ -18433,10 +20917,6 @@ extern(Windows):
 	final void removeCleanUpVirtualizedItemEvent(EventRegistrationToken token)
 	{
 		Debug.OK(remove_CleanUpVirtualizedItemEvent(token));
-	}
-	final void OnCleanUpVirtualizedItem(Windows.UI.Xaml.Controls.CleanUpVirtualizedItemEventArgs e)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IVirtualizingStackPanelOverrides).abi_OnCleanUpVirtualizedItem(e));
 	}
 }
 

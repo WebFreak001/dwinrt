@@ -1022,6 +1022,22 @@ extern(Windows):
 		Debug.OK(remove_BitmapRequested(token));
 	}
 }
+@makable!(CustomMapTileDataSource, CustomMapTileDataSource, Windows.UI.Xaml.Controls.Maps.ICustomMapTileDataSourceFactory)
+class CustomMapTileDataSourceT(Base) : AgileObject!Base, CustomMapTileDataSource
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT add_BitmapRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.ICustomMapTileDataSource).add_BitmapRequested(value, return_token); }
+	override HRESULT remove_BitmapRequested(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.ICustomMapTileDataSource).remove_BitmapRequested(token); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface HttpMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource, Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource
 {
@@ -1063,6 +1079,27 @@ extern(Windows):
 		Debug.OK(remove_UriRequested(token));
 	}
 }
+@makable!(HttpMapTileDataSource, HttpMapTileDataSource, Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSourceFactory)
+class HttpMapTileDataSourceT(Base) : AgileObject!Base, HttpMapTileDataSource
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_UriFormatString(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).get_UriFormatString(return_value); }
+	override HRESULT set_UriFormatString(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).set_UriFormatString(value); }
+	override HRESULT get_AdditionalRequestHeaders(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).get_AdditionalRequestHeaders(return_value); }
+	override HRESULT get_AllowCaching(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).get_AllowCaching(return_value); }
+	override HRESULT set_AllowCaching(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).set_AllowCaching(value); }
+	override HRESULT add_UriRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).add_UriRequested(value, return_token); }
+	override HRESULT remove_UriRequested(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).remove_UriRequested(token); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface LocalMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource, Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource
 {
@@ -1087,6 +1124,24 @@ extern(Windows):
 	{
 		Debug.OK(remove_UriRequested(token));
 	}
+}
+@makable!(LocalMapTileDataSource, LocalMapTileDataSource, Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSourceFactory)
+class LocalMapTileDataSourceT(Base) : AgileObject!Base, LocalMapTileDataSource
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_UriFormatString(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource).get_UriFormatString(return_value); }
+	override HRESULT set_UriFormatString(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource).set_UriFormatString(value); }
+	override HRESULT add_UriRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource).add_UriRequested(value, return_token); }
+	override HRESULT remove_UriRequested(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource).remove_UriRequested(token); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface MapActualCameraChangedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangedEventArgs, Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangedEventArgs2
@@ -2145,6 +2200,20 @@ extern(Windows):
 interface MapCustomExperience : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapCustomExperience
 {
 }
+@makable!(MapCustomExperience, MapCustomExperience, Windows.UI.Xaml.Controls.Maps.IMapCustomExperienceFactory)
+class MapCustomExperienceT(Base) : AgileObject!Base, MapCustomExperience
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface MapCustomExperienceChangedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapCustomExperienceChangedEventArgs
 {
@@ -2183,6 +2252,27 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElement2).set_MapTabIndex(value));
 	}
+}
+@makable!(MapElement, MapElement, Windows.UI.Xaml.Controls.Maps.IMapElementFactory)
+class MapElementT(Base) : AgileObject!Base, MapElement
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_ZIndex(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapElement).get_ZIndex(return_value); }
+	override HRESULT set_ZIndex(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapElement).set_ZIndex(value); }
+	override HRESULT get_Visible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapElement).get_Visible(return_value); }
+	override HRESULT set_Visible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapElement).set_Visible(value); }
+
+	override HRESULT get_MapTabIndex(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapElement2).get_MapTabIndex(return_value); }
+	override HRESULT set_MapTabIndex(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapElement2).set_MapTabIndex(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface MapElementClickEventArgs : Windows.UI.Xaml.Controls.Maps.IMapElementClickEventArgs
@@ -2510,6 +2600,25 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(MapRouteView, MapRouteView, Windows.UI.Xaml.Controls.Maps.IMapRouteViewFactory)
+class MapRouteViewT(Base) : AgileObject!Base, MapRouteView
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_RouteColor(Windows.UI.Color* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapRouteView).get_RouteColor(return_value); }
+	override HRESULT set_RouteColor(Windows.UI.Color value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapRouteView).set_RouteColor(value); }
+	override HRESULT get_OutlineColor(Windows.UI.Color* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapRouteView).get_OutlineColor(return_value); }
+	override HRESULT set_OutlineColor(Windows.UI.Color value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapRouteView).set_OutlineColor(value); }
+	override HRESULT get_Route(Windows.Services.Maps.MapRoute* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapRouteView).get_Route(return_value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface MapScene : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapScene
 {
@@ -2614,6 +2723,20 @@ extern(Windows):
 
 interface MapTileDataSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapTileDataSource
 {
+}
+@makable!(MapTileDataSource, MapTileDataSource, Windows.UI.Xaml.Controls.Maps.IMapTileDataSourceFactory)
+class MapTileDataSourceT(Base) : AgileObject!Base, MapTileDataSource
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface MapTileSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapTileSource
@@ -2729,6 +2852,42 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_Visible(value));
 	}
+}
+@makable!(MapTileSource, MapTileSource, Windows.UI.Xaml.Controls.Maps.IMapTileSourceFactory)
+class MapTileSourceT(Base) : AgileObject!Base, MapTileSource
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_DataSource(Windows.UI.Xaml.Controls.Maps.MapTileDataSource* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_DataSource(return_value); }
+	override HRESULT set_DataSource(Windows.UI.Xaml.Controls.Maps.MapTileDataSource value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_DataSource(value); }
+	override HRESULT get_Layer(Windows.UI.Xaml.Controls.Maps.MapTileLayer* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_Layer(return_value); }
+	override HRESULT set_Layer(Windows.UI.Xaml.Controls.Maps.MapTileLayer value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_Layer(value); }
+	override HRESULT get_ZoomLevelRange(Windows.UI.Xaml.Controls.Maps.MapZoomLevelRange* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_ZoomLevelRange(return_value); }
+	override HRESULT set_ZoomLevelRange(Windows.UI.Xaml.Controls.Maps.MapZoomLevelRange value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_ZoomLevelRange(value); }
+	override HRESULT get_Bounds(Windows.Devices.Geolocation.GeoboundingBox* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_Bounds(return_value); }
+	override HRESULT set_Bounds(Windows.Devices.Geolocation.GeoboundingBox value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_Bounds(value); }
+	override HRESULT get_AllowOverstretch(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_AllowOverstretch(return_value); }
+	override HRESULT set_AllowOverstretch(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_AllowOverstretch(value); }
+	override HRESULT get_IsFadingEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_IsFadingEnabled(return_value); }
+	override HRESULT set_IsFadingEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_IsFadingEnabled(value); }
+	override HRESULT get_IsTransparencyEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_IsTransparencyEnabled(return_value); }
+	override HRESULT set_IsTransparencyEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_IsTransparencyEnabled(value); }
+	override HRESULT get_IsRetryEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_IsRetryEnabled(return_value); }
+	override HRESULT set_IsRetryEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_IsRetryEnabled(value); }
+	override HRESULT get_ZIndex(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_ZIndex(return_value); }
+	override HRESULT set_ZIndex(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_ZIndex(value); }
+	override HRESULT get_TilePixelSize(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_TilePixelSize(return_value); }
+	override HRESULT set_TilePixelSize(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_TilePixelSize(value); }
+	override HRESULT get_Visible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).get_Visible(return_value); }
+	override HRESULT set_Visible(bool value) { return m_inner.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_Visible(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface MapTileUriRequest : Windows.UI.Xaml.Controls.Maps.IMapTileUriRequest

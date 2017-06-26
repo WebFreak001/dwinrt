@@ -139,6 +139,25 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(NotifyCollectionChangedEventArgs, NotifyCollectionChangedEventArgs, Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgsFactory)
+class NotifyCollectionChangedEventArgsT(Base) : AgileObject!Base, NotifyCollectionChangedEventArgs
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Action(Windows.UI.Xaml.Interop.NotifyCollectionChangedAction* return_value) { return m_inner.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_Action(return_value); }
+	override HRESULT get_NewItems(Windows.UI.Xaml.Interop.IBindableVector* return_value) { return m_inner.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_NewItems(return_value); }
+	override HRESULT get_OldItems(Windows.UI.Xaml.Interop.IBindableVector* return_value) { return m_inner.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_OldItems(return_value); }
+	override HRESULT get_NewStartingIndex(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_NewStartingIndex(return_value); }
+	override HRESULT get_OldStartingIndex(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_OldStartingIndex(return_value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 enum NotifyCollectionChangedAction
 {

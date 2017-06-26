@@ -1566,6 +1566,24 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).set_KeyTime(value));
 	}
 }
+@makable!(ColorKeyFrame, ColorKeyFrame, Windows.UI.Xaml.Media.Animation.IColorKeyFrameFactory)
+class ColorKeyFrameT(Base) : AgileObject!Base, ColorKeyFrame
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Value(Windows.UI.Color* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).get_Value(return_value); }
+	override HRESULT set_Value(Windows.UI.Color value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).set_Value(value); }
+	override HRESULT get_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).get_KeyTime(return_value); }
+	override HRESULT set_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).set_KeyTime(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface ColorKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)
 {
@@ -1887,6 +1905,24 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).set_KeyTime(value));
 	}
 }
+@makable!(DoubleKeyFrame, DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.IDoubleKeyFrameFactory)
+class DoubleKeyFrameT(Base) : AgileObject!Base, DoubleKeyFrame
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Value(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).get_Value(return_value); }
+	override HRESULT set_Value(double value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).set_Value(value); }
+	override HRESULT get_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).get_KeyTime(return_value); }
+	override HRESULT set_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).set_KeyTime(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface DoubleKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)
 {
@@ -2160,6 +2196,23 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(EasingFunctionBase, EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IEasingFunctionBaseFactory)
+class EasingFunctionBaseT(Base) : AgileObject!Base, EasingFunctionBase
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_EasingMode(Windows.UI.Xaml.Media.Animation.EasingMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase).get_EasingMode(return_value); }
+	override HRESULT set_EasingMode(Windows.UI.Xaml.Media.Animation.EasingMode value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase).set_EasingMode(value); }
+	override HRESULT abi_Ease(double normalizedTime, double* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase).abi_Ease(normalizedTime, return_returnValue); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface EasingPointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame, Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrame
 {
@@ -2358,17 +2411,25 @@ extern(Windows):
 
 interface NavigationTransitionInfo : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.INavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides
 {
-extern(Windows):
-	final HSTRING GetNavigationStateCore()
+}
+@makable!(NavigationTransitionInfo, NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoFactory)
+class NavigationTransitionInfoT(Base) : AgileObject!Base, NavigationTransitionInfo
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
 	{
-		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides).abi_GetNavigationStateCore(&_ret));
-		return _ret;
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
 	}
-	final void SetNavigationStateCore(HSTRING navigationState)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides).abi_SetNavigationStateCore(navigationState));
-	}
+
+	override HRESULT abi_GetNavigationStateCore(HSTRING* return_returnValue) { this.GetNavigationStateCore(return_returnValue); return S_OK; }
+	void GetNavigationStateCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides).abi_GetNavigationStateCore(return_returnValue)); }
+	override HRESULT abi_SetNavigationStateCore(HSTRING navigationState) { this.SetNavigationStateCore(navigationState); return S_OK; }
+	void SetNavigationStateCore(HSTRING navigationState) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides).abi_SetNavigationStateCore(navigationState)); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ObjectAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFrames
@@ -2415,6 +2476,24 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).set_KeyTime(value));
 	}
+}
+@makable!(ObjectKeyFrame, ObjectKeyFrame, Windows.UI.Xaml.Media.Animation.IObjectKeyFrameFactory)
+class ObjectKeyFrameT(Base) : AgileObject!Base, ObjectKeyFrame
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Value(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).get_Value(return_value); }
+	override HRESULT set_Value(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).set_Value(value); }
+	override HRESULT get_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).get_KeyTime(return_value); }
+	override HRESULT set_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).set_KeyTime(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface ObjectKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)
@@ -2594,6 +2673,24 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).set_KeyTime(value));
 	}
+}
+@makable!(PointKeyFrame, PointKeyFrame, Windows.UI.Xaml.Media.Animation.IPointKeyFrameFactory)
+class PointKeyFrameT(Base) : AgileObject!Base, PointKeyFrame
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Value(Windows.Foundation.Point* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).get_Value(return_value); }
+	override HRESULT set_Value(Windows.Foundation.Point value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).set_Value(value); }
+	override HRESULT get_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).get_KeyTime(return_value); }
+	override HRESULT set_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).set_KeyTime(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface PointKeyFrameCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)
@@ -3331,6 +3428,34 @@ extern(Windows):
 		Debug.OK(remove_Completed(token));
 	}
 }
+@makable!(Timeline, Timeline, Windows.UI.Xaml.Media.Animation.ITimelineFactory)
+class TimelineT(Base) : AgileObject!Base, Timeline
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_AutoReverse(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_AutoReverse(return_value); }
+	override HRESULT set_AutoReverse(bool value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_AutoReverse(value); }
+	override HRESULT get_BeginTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_BeginTime(return_value); }
+	override HRESULT set_BeginTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_BeginTime(value); }
+	override HRESULT get_Duration(Windows.UI.Xaml.Duration* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_Duration(return_value); }
+	override HRESULT set_Duration(Windows.UI.Xaml.Duration value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_Duration(value); }
+	override HRESULT get_SpeedRatio(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_SpeedRatio(return_value); }
+	override HRESULT set_SpeedRatio(double value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_SpeedRatio(value); }
+	override HRESULT get_FillBehavior(Windows.UI.Xaml.Media.Animation.FillBehavior* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_FillBehavior(return_value); }
+	override HRESULT set_FillBehavior(Windows.UI.Xaml.Media.Animation.FillBehavior value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_FillBehavior(value); }
+	override HRESULT get_RepeatBehavior(Windows.UI.Xaml.Media.Animation.RepeatBehavior* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_RepeatBehavior(return_value); }
+	override HRESULT set_RepeatBehavior(Windows.UI.Xaml.Media.Animation.RepeatBehavior value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_RepeatBehavior(value); }
+	override HRESULT add_Completed(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).add_Completed(value, return_token); }
+	override HRESULT remove_Completed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).remove_Completed(token); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface TimelineCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Timeline)
 {
@@ -3397,6 +3522,20 @@ extern(Windows):
 
 interface Transition : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.ITransition
 {
+}
+@makable!(Transition, Transition, Windows.UI.Xaml.Media.Animation.ITransitionFactory)
+class TransitionT(Base) : AgileObject!Base, Transition
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface TransitionCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Transition)

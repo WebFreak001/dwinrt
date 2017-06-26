@@ -324,8 +324,7 @@ void main(string[] args)
 				auto copy = obj.methods[i];
 				if (copy.implementation.length)
 					continue;
-				copy.implement(
-						"Windows.Foundation." ~ obj.name ~ "!(" ~ obj.templateArgs.join(", ") ~ ")");
+				copy.implement("Windows.Foundation." ~ obj.name ~ "!(" ~ obj.templateArgs.join(", ") ~ ")");
 				obj.methods ~= copy;
 			}
 		}
@@ -580,8 +579,7 @@ void processIDL(string file)
 					enforce(content.name == "IDL.definition_content");
 					if (content.children.length == 1 && content.children[0].name == "IDL.uuid")
 					{
-						uuid = content.children[0].children.map!(a => a.matches[0])
-							.join("-").toLower;
+						uuid = content.children[0].children.map!(a => a.matches[0]).join("-").toLower;
 						return;
 					}
 				}
@@ -715,17 +713,23 @@ void processIDL(string file)
 				if (blockedInterfaces.canFind(obj.name))
 					break;
 				fetchUUID(obj.uuid);
-			exclusiveto_search: foreach_reverse (attrib; attributes)
+				foreach_reverse (attrib; attributes)
 				{
 					foreach_reverse (content; attrib.children)
 					{
 						enforce(content.name == "IDL.definition_content");
-						if (content.children.length == 1
-								&& content.children[0].name == "IDL.exclusiveto")
+						if (content.children.length == 1)
 						{
-							enforce(content.children[0].children[0].name == "IDL.scoped_name");
-							obj.exclusiveto = content.children[0].children[0].matches.join("");
-							break exclusiveto_search;
+							if (content.children[0].name == "IDL.exclusiveto")
+							{
+								enforce(content.children[0].children[0].name == "IDL.scoped_name");
+								obj.exclusiveto = content.children[0].children[0].matches.join("");
+							}
+							else if (content.children[0].name == "IDL.composable")
+							{
+								enforce(content.children[0].children[0].name == "IDL.scoped_name");
+								obj.composable = content.children[0].children[0].matches.join("");
+							}
 						}
 					}
 				}
@@ -779,7 +783,16 @@ void processIDL(string file)
 							{
 								enforce(opdcl.children.length == 1);
 								enforce(opdcl.children[0].name == "IDL.type");
-								obj.implements ~= opdcl.children[0].matches.join("").translateType;
+								bool overridable = false;
+								foreach_reverse (attrib; attributes)
+									foreach_reverse (content; attrib.children)
+										if (content.matches.length && content.matches[0] == "overridable")
+										{
+											overridable = true;
+											break;
+										}
+								obj.implements ~= Implement(opdcl.children[0].matches.join("")
+										.translateType, overridable);
 							}
 							else
 							{
@@ -997,8 +1010,7 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 				}
 				else
 				{
-					if (spec.children.length == 1
-							&& spec.children[0].name == "IDL.op_overload_attribute")
+					if (spec.children.length == 1 && spec.children[0].name == "IDL.op_overload_attribute")
 					{
 						enforce(spec.children[0].children.length == 1);
 						method.name = spec.children[0].children[0].parseString;
@@ -1042,8 +1054,7 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 									argument.direction |= ArgumentDirection.out_;
 									break;
 								case "inout":
-									argument.direction |= ArgumentDirection.in_
-										| ArgumentDirection.out_;
+									argument.direction |= ArgumentDirection.in_ | ArgumentDirection.out_;
 									break;
 								case "retval":
 									argument.direction |= ArgumentDirection.retval;
@@ -1052,8 +1063,7 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 								case "unique":
 									break;
 								default:
-									throw new Exception(
-											"Invalid parameter attribute: " ~ attr.matches[0]);
+									throw new Exception("Invalid parameter attribute: " ~ attr.matches[0]);
 								}
 							}
 						}
@@ -1287,8 +1297,8 @@ Interface findInterface(string fullname)
 		}
 	}
 	throw new Exception(
-			"Interface not found: " ~ fullname ~ ", searched for " ~ name ~ " in "
-			~ parts[0 .. $ - 1].join("."));
+			"Interface not found: " ~ fullname ~ ", searched for " ~ name ~ " in " ~ parts[0 .. $ - 1].join(
+			"."));
 }
 
 struct Const
@@ -1376,18 +1386,25 @@ struct StructMember
 	}
 }
 
+struct Implement
+{
+	string type;
+	bool overridable;
+}
+
 struct Interface
 {
 	string name;
 	string[] inherits;
 	string[] requires;
-	string[] implements;
+	Implement[] implements;
 	string[] templateArgs;
 	string uuid;
 	string exclusiveto;
 	bool isDelegate;
 	bool isRuntimeClass;
 	InterfaceMethod[] methods;
+	string composable;
 
 	Interface instance(string[] types)
 	{
@@ -1414,6 +1431,7 @@ struct Interface
 			}
 			instanced.methods ~= copy;
 		}
+		instanced.composable = composable;
 		return instanced;
 	}
 
@@ -1424,7 +1442,7 @@ struct Interface
 		foreach (ref type; requires)
 			type.fixType;
 		foreach (ref type; implements)
-			type.fixType;
+			type.type.fixType;
 		foreach (ref method; methods)
 			method.fixTypes();
 	}
@@ -1433,18 +1451,20 @@ struct Interface
 	{
 		if (!isRuntimeClass)
 			return;
-		enforce(methods.length == 0,
-				"Is runtime class but got " ~ methods.to!string ~ " as methods.");
+		enforce(methods.length == 0, "Is runtime class but got " ~ methods.to!string ~ " as methods.");
 		foreach (base; implements)
-			implement(base, findInterface(base));
+			implement(base, findInterface(base.type));
 	}
 
-	void implement(string baseName, Interface base)
+	void implement(Implement baseImplement, Interface base)
 	{
+		if (baseImplement.overridable)
+			return;
+		string baseName = baseImplement.type;
 		if (base == Interface.init)
 			return;
 		foreach (mem; base.inherits)
-			implement(mem, findInterface(mem));
+			implement(Implement(mem, baseImplement.overridable), findInterface(mem));
 		foreach ( /* noref */ method; base.methods)
 		{
 			if (method.implementation.length)
@@ -1468,7 +1488,7 @@ struct Interface
 		if (templateArgs.length)
 			ret ~= "(" ~ templateArgs.join(", ") ~ ")";
 		if (inherits.length + implements.length)
-			ret ~= " : " ~ (inherits ~ implements).join(", ");
+			ret ~= " : " ~ (inherits ~ implements.map!"a.type".array).join(", ");
 		ret ~= "\n{\n";
 		if (methods.length)
 			ret ~= "extern(Windows):\n";
@@ -1489,6 +1509,27 @@ struct Interface
 			if (templateArgs.length)
 				ret ~= "!(" ~ templateArgs.join(", ") ~ ")";
 			ret ~= ", " ~ requires.join(", ") ~ " {}";
+		}
+		if (composable.length)
+		{
+			ret ~= "\n@makable!(" ~ name ~ ", " ~ name ~ ", " ~ composable ~ ")\n";
+			ret ~= "class " ~ name ~ "T(Base) : AgileObject!Base, " ~ name ~ "\n{\n";
+			ret ~= "\toverride HRESULT QueryInterface(const(IID)* riid, void** ppv)\n\t{\n";
+			ret ~= "\t\tauto ret = super.QueryInterface(riid, ppv);\n";
+			ret ~= "\t\tif (ret == E_NOINTERFACE)\n";
+			ret ~= "\t\t\treturn m_inner.QueryInterface(riid, ppv);\n";
+			ret ~= "\t\treturn ret;\n";
+			ret ~= "\t}\n";
+			foreach (implement; implements)
+			{
+				auto obj = findInterface(implement.type);
+				foreach (method; obj.methods)
+					ret ~= method.toComposeString(implement.type, implement.overridable).indent ~ "\n";
+				ret ~= "\n";
+			}
+			ret ~= "\tthis() {}\n";
+			ret ~= "\tIInspectable m_inner;\n";
+			ret ~= "}";
 		}
 		return ret;
 	}
@@ -1522,12 +1563,11 @@ struct InterfaceMethod
 				enforce(arguments[1].type == "EventRegistrationToken*", arguments[1].type);
 				string type = arguments[0].type;
 				string args = type["Windows.Foundation.TypedEventHandler!(".length .. $ - 1];
-				arguments = [InterfaceArgument(ArgumentDirection.in_,
-						"void delegate(" ~ args ~ ")", "fn")];
+				arguments = [InterfaceArgument(ArgumentDirection.in_, "void delegate(" ~ args ~ ")", "fn")];
 				name = "On" ~ name;
 				returnType = "EventRegistrationToken";
-				string registerCall = "Debug.OK(" ~ fname ~ "(event!(" ~ type
-					~ ", " ~ args ~ ")(fn), &tok));";
+				string registerCall = "Debug.OK(" ~ fname ~ "(event!(" ~ type ~ ", "
+					~ args ~ ")(fn), &tok));";
 				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
 			}
 			else if (arguments[0].type.startsWith("Windows.Foundation.EventHandler!("))
@@ -1583,8 +1623,8 @@ struct InterfaceMethod
 				if (argsPost.length)
 					args ~= ", " ~ argsPost;
 				string post = "\nreturn _ret;";
-				implementation = pre ~ "Debug.OK(this.as!(" ~ baseName ~ ")."
-					~ fname ~ "(" ~ args ~ "));" ~ post;
+				implementation = pre ~ "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname
+					~ "(" ~ args ~ "));" ~ post;
 			}
 			else
 			{
@@ -1650,6 +1690,38 @@ struct InterfaceMethod
 			ret ~= "\n{\n" ~ implementation.indent ~ "\n}";
 		else
 			ret ~= ";";
+		return ret;
+	}
+
+	string toComposeString(string as, bool overridable) const
+	{
+		string ret;
+		ret ~= "override HRESULT " ~ fullName ~ "(";
+		ret ~= arguments.to!(string[]).join(", ");
+		ret ~= ")";
+		ret ~= " {";
+		if (overridable)
+		{
+			ret ~= " this." ~ name ~ "(";
+			ret ~= arguments.map!"a.fullName".join(", ");
+			ret ~= "); return S_OK; ";
+			ret ~= "}\n";
+			ret ~= "void " ~ name ~ "(";
+			ret ~= arguments.to!(string[]).join(", ");
+			ret ~= ") { Debug.OK(";
+		}
+		else
+			ret ~= " return ";
+
+		ret ~= "m_inner.as!(";
+		ret ~= as;
+		ret ~= ")." ~ fullName ~ "(";
+		ret ~= arguments.map!"a.fullName".join(", ");
+		if (overridable)
+			ret ~= "));";
+		else
+			ret ~= ");";
+		ret ~= " }";
 		return ret;
 	}
 }

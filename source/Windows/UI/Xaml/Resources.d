@@ -35,11 +35,21 @@ extern(Windows):
 
 interface CustomXamlResourceLoader : Windows.UI.Xaml.Resources.ICustomXamlResourceLoader, Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderOverrides
 {
-extern(Windows):
-	final IInspectable GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType)
+}
+@makable!(CustomXamlResourceLoader, CustomXamlResourceLoader, Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderFactory)
+class CustomXamlResourceLoaderT(Base) : AgileObject!Base, CustomXamlResourceLoader
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
 	{
-		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderOverrides).abi_GetResource(resourceId, objectType, propertyName, propertyType, &_ret));
-		return _ret;
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
 	}
+
+	override HRESULT abi_GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType, IInspectable* return_returnValue) { this.GetResource(resourceId, objectType, propertyName, propertyType, return_returnValue); return S_OK; }
+	void GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType, IInspectable* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderOverrides).abi_GetResource(resourceId, objectType, propertyName, propertyType, return_returnValue)); }
+
+	this() {}
+	IInspectable m_inner;
 }

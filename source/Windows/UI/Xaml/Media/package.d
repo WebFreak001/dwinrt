@@ -1251,6 +1251,26 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).set_RelativeTransform(value));
 	}
 }
+@makable!(Brush, Brush, Windows.UI.Xaml.Media.IBrushFactory)
+class BrushT(Base) : AgileObject!Base, Brush
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Opacity(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IBrush).get_Opacity(return_value); }
+	override HRESULT set_Opacity(double value) { return m_inner.as!(Windows.UI.Xaml.Media.IBrush).set_Opacity(value); }
+	override HRESULT get_Transform(Windows.UI.Xaml.Media.Transform* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IBrush).get_Transform(return_value); }
+	override HRESULT set_Transform(Windows.UI.Xaml.Media.Transform value) { return m_inner.as!(Windows.UI.Xaml.Media.IBrush).set_Transform(value); }
+	override HRESULT get_RelativeTransform(Windows.UI.Xaml.Media.Transform* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IBrush).get_RelativeTransform(return_value); }
+	override HRESULT set_RelativeTransform(Windows.UI.Xaml.Media.Transform value) { return m_inner.as!(Windows.UI.Xaml.Media.IBrush).set_RelativeTransform(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface BrushCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Brush)
 {
@@ -1317,6 +1337,20 @@ extern(Windows):
 
 interface CacheMode : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.ICacheMode
 {
+}
+@makable!(CacheMode, CacheMode, Windows.UI.Xaml.Media.ICacheModeFactory)
+class CacheModeT(Base) : AgileObject!Base, CacheMode
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface CompositeTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.ICompositeTransform
@@ -1526,6 +1560,21 @@ extern(Windows):
 		return _ret;
 	}
 }
+@makable!(FontFamily, FontFamily, Windows.UI.Xaml.Media.IFontFamilyFactory)
+class FontFamilyT(Base) : AgileObject!Base, FontFamily
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Source(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IFontFamily).get_Source(return_value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface GeneralTransform : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IGeneralTransform, Windows.UI.Xaml.Media.IGeneralTransformOverrides
 {
@@ -1554,24 +1603,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TransformBounds(rect, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Xaml.Media.GeneralTransform InverseCore()
+}
+@makable!(GeneralTransform, GeneralTransform, Windows.UI.Xaml.Media.IGeneralTransformFactory)
+class GeneralTransformT(Base) : AgileObject!Base, GeneralTransform
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
 	{
-		Windows.UI.Xaml.Media.GeneralTransform _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransformOverrides).get_InverseCore(&_ret));
-		return _ret;
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
 	}
-	final bool TryTransformCore(Windows.Foundation.Point inPoint, Windows.Foundation.Point* out_outPoint)
-	{
-		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransformOverrides).abi_TryTransformCore(inPoint, out_outPoint, &_ret));
-		return _ret;
-	}
-	final Windows.Foundation.Rect TransformBoundsCore(Windows.Foundation.Rect rect)
-	{
-		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransformOverrides).abi_TransformBoundsCore(rect, &_ret));
-		return _ret;
-	}
+	override HRESULT get_Inverse(Windows.UI.Xaml.Media.GeneralTransform* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransform).get_Inverse(return_value); }
+	override HRESULT abi_TransformPoint(Windows.Foundation.Point point, Windows.Foundation.Point* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TransformPoint(point, return_returnValue); }
+	override HRESULT abi_TryTransform(Windows.Foundation.Point inPoint, Windows.Foundation.Point* out_outPoint, bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TryTransform(inPoint, out_outPoint, return_returnValue); }
+	override HRESULT abi_TransformBounds(Windows.Foundation.Rect rect, Windows.Foundation.Rect* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TransformBounds(rect, return_returnValue); }
+
+	override HRESULT get_InverseCore(Windows.UI.Xaml.Media.GeneralTransform* return_value) { this.InverseCore(return_value); return S_OK; }
+	void InverseCore(Windows.UI.Xaml.Media.GeneralTransform* return_value) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransformOverrides).get_InverseCore(return_value)); }
+	override HRESULT abi_TryTransformCore(Windows.Foundation.Point inPoint, Windows.Foundation.Point* out_outPoint, bool* return_returnValue) { this.TryTransformCore(inPoint, out_outPoint, return_returnValue); return S_OK; }
+	void TryTransformCore(Windows.Foundation.Point inPoint, Windows.Foundation.Point* out_outPoint, bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransformOverrides).abi_TryTransformCore(inPoint, out_outPoint, return_returnValue)); }
+	override HRESULT abi_TransformBoundsCore(Windows.Foundation.Rect rect, Windows.Foundation.Rect* return_returnValue) { this.TransformBoundsCore(rect, return_returnValue); return S_OK; }
+	void TransformBoundsCore(Windows.Foundation.Rect rect, Windows.Foundation.Rect* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransformOverrides).abi_TransformBoundsCore(rect, return_returnValue)); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface Geometry : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IGeometry
@@ -1593,6 +1649,23 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometry).get_Bounds(&_ret));
 		return _ret;
 	}
+}
+@makable!(Geometry, Geometry, Windows.UI.Xaml.Media.IGeometryFactory)
+class GeometryT(Base) : AgileObject!Base, Geometry
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Transform(Windows.UI.Xaml.Media.Transform* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGeometry).get_Transform(return_value); }
+	override HRESULT set_Transform(Windows.UI.Xaml.Media.Transform value) { return m_inner.as!(Windows.UI.Xaml.Media.IGeometry).set_Transform(value); }
+	override HRESULT get_Bounds(Windows.Foundation.Rect* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGeometry).get_Bounds(return_value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface GeometryCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Geometry)
@@ -1727,6 +1800,28 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).set_GradientStops(value));
 	}
 }
+@makable!(GradientBrush, GradientBrush, Windows.UI.Xaml.Media.IGradientBrushFactory)
+class GradientBrushT(Base) : AgileObject!Base, GradientBrush
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_SpreadMethod(Windows.UI.Xaml.Media.GradientSpreadMethod* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).get_SpreadMethod(return_value); }
+	override HRESULT set_SpreadMethod(Windows.UI.Xaml.Media.GradientSpreadMethod value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).set_SpreadMethod(value); }
+	override HRESULT get_MappingMode(Windows.UI.Xaml.Media.BrushMappingMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).get_MappingMode(return_value); }
+	override HRESULT set_MappingMode(Windows.UI.Xaml.Media.BrushMappingMode value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).set_MappingMode(value); }
+	override HRESULT get_ColorInterpolationMode(Windows.UI.Xaml.Media.ColorInterpolationMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).get_ColorInterpolationMode(return_value); }
+	override HRESULT set_ColorInterpolationMode(Windows.UI.Xaml.Media.ColorInterpolationMode value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).set_ColorInterpolationMode(value); }
+	override HRESULT get_GradientStops(Windows.UI.Xaml.Media.GradientStopCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).get_GradientStops(return_value); }
+	override HRESULT set_GradientStops(Windows.UI.Xaml.Media.GradientStopCollection value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).set_GradientStops(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface GradientStop : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IGradientStop
 {
@@ -1841,6 +1936,20 @@ extern(Windows):
 
 interface ImageSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IImageSource
 {
+}
+@makable!(ImageSource, ImageSource, Windows.UI.Xaml.Media.IImageSourceFactory)
+class ImageSourceT(Base) : AgileObject!Base, ImageSource
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface LineGeometry : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.ILineGeometry
@@ -2158,6 +2267,20 @@ extern(Windows):
 interface PathSegment : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IPathSegment
 {
 }
+@makable!(PathSegment, PathSegment, Windows.UI.Xaml.Media.IPathSegmentFactory)
+class PathSegmentT(Base) : AgileObject!Base, PathSegment
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface PathSegmentCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.PathSegment)
 {
@@ -2464,6 +2587,20 @@ extern(Windows):
 interface Projection : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IProjection
 {
 }
+@makable!(Projection, Projection, Windows.UI.Xaml.Media.IProjectionFactory)
+class ProjectionT(Base) : AgileObject!Base, Projection
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface QuadraticBezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IQuadraticBezierSegment
 {
@@ -2694,6 +2831,26 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).set_Stretch(value));
 	}
 }
+@makable!(TileBrush, TileBrush, Windows.UI.Xaml.Media.ITileBrushFactory)
+class TileBrushT(Base) : AgileObject!Base, TileBrush
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_AlignmentX(Windows.UI.Xaml.Media.AlignmentX* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.ITileBrush).get_AlignmentX(return_value); }
+	override HRESULT set_AlignmentX(Windows.UI.Xaml.Media.AlignmentX value) { return m_inner.as!(Windows.UI.Xaml.Media.ITileBrush).set_AlignmentX(value); }
+	override HRESULT get_AlignmentY(Windows.UI.Xaml.Media.AlignmentY* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.ITileBrush).get_AlignmentY(return_value); }
+	override HRESULT set_AlignmentY(Windows.UI.Xaml.Media.AlignmentY value) { return m_inner.as!(Windows.UI.Xaml.Media.ITileBrush).set_AlignmentY(value); }
+	override HRESULT get_Stretch(Windows.UI.Xaml.Media.Stretch* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.ITileBrush).get_Stretch(return_value); }
+	override HRESULT set_Stretch(Windows.UI.Xaml.Media.Stretch value) { return m_inner.as!(Windows.UI.Xaml.Media.ITileBrush).set_Stretch(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface TimelineMarker : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.ITimelineMarker
 {
@@ -2810,6 +2967,20 @@ extern(Windows):
 
 interface Transform : Windows.UI.Xaml.Media.GeneralTransform, Windows.UI.Xaml.Media.ITransform
 {
+}
+@makable!(Transform, Transform, Windows.UI.Xaml.Media.ITransformFactory)
+class TransformT(Base) : AgileObject!Base, Transform
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface TransformCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Transform)
@@ -2938,14 +3109,6 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBase).set_FallbackColor(value));
 	}
-	final void OnConnected()
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides).abi_OnConnected());
-	}
-	final void OnDisconnected()
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides).abi_OnDisconnected());
-	}
 	final Windows.UI.Composition.CompositionBrush CompositionBrush()
 	{
 		Windows.UI.Composition.CompositionBrush _ret;
@@ -2957,24 +3120,34 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected).set_CompositionBrush(value));
 	}
 }
+@makable!(XamlCompositionBrushBase, XamlCompositionBrushBase, Windows.UI.Xaml.Media.IXamlCompositionBrushBaseFactory)
+class XamlCompositionBrushBaseT(Base) : AgileObject!Base, XamlCompositionBrushBase
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_FallbackColor(Windows.UI.Color* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBase).get_FallbackColor(return_value); }
+	override HRESULT set_FallbackColor(Windows.UI.Color value) { return m_inner.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBase).set_FallbackColor(value); }
+
+	override HRESULT abi_OnConnected() { this.OnConnected(); return S_OK; }
+	void OnConnected() { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides).abi_OnConnected()); }
+	override HRESULT abi_OnDisconnected() { this.OnDisconnected(); return S_OK; }
+	void OnDisconnected() { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides).abi_OnDisconnected()); }
+
+	override HRESULT get_CompositionBrush(Windows.UI.Composition.CompositionBrush* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected).get_CompositionBrush(return_value); }
+	override HRESULT set_CompositionBrush(Windows.UI.Composition.CompositionBrush value) { return m_inner.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected).set_CompositionBrush(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface XamlLight : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IXamlLight, Windows.UI.Xaml.Media.IXamlLightOverrides, Windows.UI.Xaml.Media.IXamlLightProtected
 {
 extern(Windows):
-	final HSTRING GetId()
-	{
-		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlLightOverrides).abi_GetId(&_ret));
-		return _ret;
-	}
-	final void OnConnected(Windows.UI.Xaml.UIElement newElement)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlLightOverrides).abi_OnConnected(newElement));
-	}
-	final void OnDisconnected(Windows.UI.Xaml.UIElement oldElement)
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlLightOverrides).abi_OnDisconnected(oldElement));
-	}
 	final Windows.UI.Composition.CompositionLight CompositionLight()
 	{
 		Windows.UI.Composition.CompositionLight _ret;
@@ -2985,6 +3158,30 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlLightProtected).set_CompositionLight(value));
 	}
+}
+@makable!(XamlLight, XamlLight, Windows.UI.Xaml.Media.IXamlLightFactory)
+class XamlLightT(Base) : AgileObject!Base, XamlLight
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	override HRESULT abi_GetId(HSTRING* return_returnValue) { this.GetId(return_returnValue); return S_OK; }
+	void GetId(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IXamlLightOverrides).abi_GetId(return_returnValue)); }
+	override HRESULT abi_OnConnected(Windows.UI.Xaml.UIElement newElement) { this.OnConnected(newElement); return S_OK; }
+	void OnConnected(Windows.UI.Xaml.UIElement newElement) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IXamlLightOverrides).abi_OnConnected(newElement)); }
+	override HRESULT abi_OnDisconnected(Windows.UI.Xaml.UIElement oldElement) { this.OnDisconnected(oldElement); return S_OK; }
+	void OnDisconnected(Windows.UI.Xaml.UIElement oldElement) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IXamlLightOverrides).abi_OnDisconnected(oldElement)); }
+
+	override HRESULT get_CompositionLight(Windows.UI.Composition.CompositionLight* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IXamlLightProtected).get_CompositionLight(return_value); }
+	override HRESULT set_CompositionLight(Windows.UI.Composition.CompositionLight value) { return m_inner.as!(Windows.UI.Xaml.Media.IXamlLightProtected).set_CompositionLight(value); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 enum AlignmentX

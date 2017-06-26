@@ -164,6 +164,32 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_InvalidatePreview());
 	}
 }
+@makable!(PrintDocument, PrintDocument, Windows.UI.Xaml.Printing.IPrintDocumentFactory)
+class PrintDocumentT(Base) : AgileObject!Base, PrintDocument
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_DocumentSource(Windows.Graphics.Printing.IPrintDocumentSource* return_value) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).get_DocumentSource(return_value); }
+	override HRESULT add_Paginate(Windows.UI.Xaml.Printing.PaginateEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).add_Paginate(value, return_token); }
+	override HRESULT remove_Paginate(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_Paginate(token); }
+	override HRESULT add_GetPreviewPage(Windows.UI.Xaml.Printing.GetPreviewPageEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).add_GetPreviewPage(value, return_token); }
+	override HRESULT remove_GetPreviewPage(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_GetPreviewPage(token); }
+	override HRESULT add_AddPages(Windows.UI.Xaml.Printing.AddPagesEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).add_AddPages(value, return_token); }
+	override HRESULT remove_AddPages(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_AddPages(token); }
+	override HRESULT abi_AddPage(Windows.UI.Xaml.UIElement pageVisual) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_AddPage(pageVisual); }
+	override HRESULT abi_AddPagesComplete() { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_AddPagesComplete(); }
+	override HRESULT abi_SetPreviewPageCount(INT32 count, Windows.UI.Xaml.Printing.PreviewPageCountType type) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_SetPreviewPageCount(count, type); }
+	override HRESULT abi_SetPreviewPage(INT32 pageNumber, Windows.UI.Xaml.UIElement pageVisual) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_SetPreviewPage(pageNumber, pageVisual); }
+	override HRESULT abi_InvalidatePreview() { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_InvalidatePreview(); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 enum PreviewPageCountType
 {

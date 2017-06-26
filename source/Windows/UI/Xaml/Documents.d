@@ -634,6 +634,28 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).set_Margin(value));
 	}
 }
+@makable!(Block, Block, Windows.UI.Xaml.Documents.IBlockFactory)
+class BlockT(Base) : AgileObject!Base, Block
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_TextAlignment(Windows.UI.Xaml.TextAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).get_TextAlignment(return_value); }
+	override HRESULT set_TextAlignment(Windows.UI.Xaml.TextAlignment value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).set_TextAlignment(value); }
+	override HRESULT get_LineHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).get_LineHeight(return_value); }
+	override HRESULT set_LineHeight(double value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).set_LineHeight(value); }
+	override HRESULT get_LineStackingStrategy(Windows.UI.Xaml.LineStackingStrategy* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).get_LineStackingStrategy(return_value); }
+	override HRESULT set_LineStackingStrategy(Windows.UI.Xaml.LineStackingStrategy value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).set_LineStackingStrategy(value); }
+	override HRESULT get_Margin(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).get_Margin(return_value); }
+	override HRESULT set_Margin(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).set_Margin(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface BlockCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Documents.Block)
 {
@@ -959,6 +981,20 @@ interface HyperlinkClickEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.
 interface Inline : Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Documents.IInline
 {
 }
+@makable!(Inline, Inline, Windows.UI.Xaml.Documents.IInlineFactory)
+class InlineT(Base) : AgileObject!Base, Inline
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface InlineCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Documents.Inline)
 {
@@ -1106,6 +1142,22 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ISpan).set_Inlines(value));
 	}
 }
+@makable!(Span, Span, Windows.UI.Xaml.Documents.ISpanFactory)
+class SpanT(Base) : AgileObject!Base, Span
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Inlines(Windows.UI.Xaml.Documents.InlineCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ISpan).get_Inlines(return_value); }
+	override HRESULT set_Inlines(Windows.UI.Xaml.Documents.InlineCollection value) { return m_inner.as!(Windows.UI.Xaml.Documents.ISpan).set_Inlines(value); }
+
+	this() {}
+	IInspectable m_inner;
+}
 
 interface TextElement : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Documents.ITextElement, Windows.UI.Xaml.Documents.ITextElementOverrides, Windows.UI.Xaml.Documents.ITextElement2, Windows.UI.Xaml.Documents.ITextElement3, Windows.UI.Xaml.Documents.ITextElement4
 {
@@ -1225,10 +1277,6 @@ extern(Windows):
 		IInspectable _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).abi_FindName(name, &_ret));
 		return _ret;
-	}
-	final void OnDisconnectVisualChildren()
-	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElementOverrides).abi_OnDisconnectVisualChildren());
 	}
 	final bool IsTextScaleFactorEnabled()
 	{
@@ -1360,6 +1408,74 @@ extern(Windows):
 	{
 		Debug.OK(remove_AccessKeyInvoked(token));
 	}
+}
+@makable!(TextElement, TextElement, Windows.UI.Xaml.Documents.ITextElementFactory)
+class TextElementT(Base) : AgileObject!Base, TextElement
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+	override HRESULT get_Name(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_Name(return_value); }
+	override HRESULT get_FontSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontSize(return_value); }
+	override HRESULT set_FontSize(double value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontSize(value); }
+	override HRESULT get_FontFamily(Windows.UI.Xaml.Media.FontFamily* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontFamily(return_value); }
+	override HRESULT set_FontFamily(Windows.UI.Xaml.Media.FontFamily value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontFamily(value); }
+	override HRESULT get_FontWeight(Windows.UI.Text.FontWeight* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontWeight(return_value); }
+	override HRESULT set_FontWeight(Windows.UI.Text.FontWeight value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontWeight(value); }
+	override HRESULT get_FontStyle(Windows.UI.Text.FontStyle* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontStyle(return_value); }
+	override HRESULT set_FontStyle(Windows.UI.Text.FontStyle value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontStyle(value); }
+	override HRESULT get_FontStretch(Windows.UI.Text.FontStretch* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontStretch(return_value); }
+	override HRESULT set_FontStretch(Windows.UI.Text.FontStretch value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontStretch(value); }
+	override HRESULT get_CharacterSpacing(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_CharacterSpacing(return_value); }
+	override HRESULT set_CharacterSpacing(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_CharacterSpacing(value); }
+	override HRESULT get_Foreground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_Foreground(return_value); }
+	override HRESULT set_Foreground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_Foreground(value); }
+	override HRESULT get_Language(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_Language(return_value); }
+	override HRESULT set_Language(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_Language(value); }
+	override HRESULT get_ContentStart(Windows.UI.Xaml.Documents.TextPointer* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_ContentStart(return_value); }
+	override HRESULT get_ContentEnd(Windows.UI.Xaml.Documents.TextPointer* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_ContentEnd(return_value); }
+	override HRESULT get_ElementStart(Windows.UI.Xaml.Documents.TextPointer* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_ElementStart(return_value); }
+	override HRESULT get_ElementEnd(Windows.UI.Xaml.Documents.TextPointer* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_ElementEnd(return_value); }
+	override HRESULT abi_FindName(HSTRING name, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).abi_FindName(name, return_returnValue); }
+
+	override HRESULT abi_OnDisconnectVisualChildren() { this.OnDisconnectVisualChildren(); return S_OK; }
+	void OnDisconnectVisualChildren() { Debug.OK(m_inner.as!(Windows.UI.Xaml.Documents.ITextElementOverrides).abi_OnDisconnectVisualChildren()); }
+
+	override HRESULT get_IsTextScaleFactorEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement2).get_IsTextScaleFactorEnabled(return_value); }
+	override HRESULT set_IsTextScaleFactorEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement2).set_IsTextScaleFactorEnabled(value); }
+
+	override HRESULT get_AllowFocusOnInteraction(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement3).get_AllowFocusOnInteraction(return_value); }
+	override HRESULT set_AllowFocusOnInteraction(bool value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement3).set_AllowFocusOnInteraction(value); }
+	override HRESULT get_AccessKey(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement3).get_AccessKey(return_value); }
+	override HRESULT set_AccessKey(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement3).set_AccessKey(value); }
+	override HRESULT get_ExitDisplayModeOnAccessKeyInvoked(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement3).get_ExitDisplayModeOnAccessKeyInvoked(return_value); }
+	override HRESULT set_ExitDisplayModeOnAccessKeyInvoked(bool value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement3).set_ExitDisplayModeOnAccessKeyInvoked(value); }
+
+	override HRESULT get_TextDecorations(Windows.UI.Text.TextDecorations* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).get_TextDecorations(return_value); }
+	override HRESULT set_TextDecorations(Windows.UI.Text.TextDecorations value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).set_TextDecorations(value); }
+	override HRESULT get_IsAccessKeyScope(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).get_IsAccessKeyScope(return_value); }
+	override HRESULT set_IsAccessKeyScope(bool value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).set_IsAccessKeyScope(value); }
+	override HRESULT get_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).get_AccessKeyScopeOwner(return_value); }
+	override HRESULT set_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).set_AccessKeyScopeOwner(value); }
+	override HRESULT get_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).get_KeyTipPlacementMode(return_value); }
+	override HRESULT set_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipPlacementMode(value); }
+	override HRESULT get_KeyTipHorizontalOffset(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).get_KeyTipHorizontalOffset(return_value); }
+	override HRESULT set_KeyTipHorizontalOffset(double value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipHorizontalOffset(value); }
+	override HRESULT get_KeyTipVerticalOffset(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).get_KeyTipVerticalOffset(return_value); }
+	override HRESULT set_KeyTipVerticalOffset(double value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipVerticalOffset(value); }
+	override HRESULT add_AccessKeyDisplayRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).add_AccessKeyDisplayRequested(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayRequested(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).remove_AccessKeyDisplayRequested(token); }
+	override HRESULT add_AccessKeyDisplayDismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).add_AccessKeyDisplayDismissed(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayDismissed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).remove_AccessKeyDisplayDismissed(token); }
+	override HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).add_AccessKeyInvoked(value, return_token); }
+	override HRESULT remove_AccessKeyInvoked(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).remove_AccessKeyInvoked(token); }
+
+	this() {}
+	IInspectable m_inner;
 }
 
 interface TextPointer : Windows.UI.Xaml.Documents.ITextPointer

@@ -295,3 +295,17 @@ extern(Windows):
 interface Transform3D : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Media3D.ITransform3D
 {
 }
+@makable!(Transform3D, Transform3D, Windows.UI.Xaml.Media.Media3D.ITransform3DFactory)
+class Transform3DT(Base) : AgileObject!Base, Transform3D
+{
+	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
+	{
+		auto ret = super.QueryInterface(riid, ppv);
+		if (ret == E_NOINTERFACE)
+			return m_inner.QueryInterface(riid, ppv);
+		return ret;
+	}
+
+	this() {}
+	IInspectable m_inner;
+}

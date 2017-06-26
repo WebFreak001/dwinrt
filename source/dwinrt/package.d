@@ -1269,7 +1269,9 @@ struct makable(Composable, Class, Interface)
 
 auto make(T, Args...)(Args args)
 {
-	foreach (attr; __traits(getAttributes, T))
+	import std.traits : BaseClassesTuple;
+
+	foreach (attr; __traits(getAttributes, BaseClassesTuple!T[0]))
 	{
 		static if (is(attr : makable!(Composable, Class, Interface), Composable, Class, Interface))
 		{
